@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [a4b](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_alexaforbusiness.html).
@@ -7,759 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class A4b extends PolicyStatement {
   public servicePrefix = 'a4b';
-  protected actionList: Actions = {
-    "ApproveSkill": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ApproveSkill.html",
-      "description": "Associates a skill with the organization under the customer's AWS account. If a skill is private, the user implicitly accepts access to this skill during enablement.",
-      "accessLevel": "Write"
-    },
-    "AssociateContactWithAddressBook": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_AssociateContactWithAddressBook.html",
-      "description": "Associates a contact with a given address book.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "addressbook": {
-          "required": true
-        },
-        "contact": {
-          "required": true
-        }
-      }
-    },
-    "AssociateDeviceWithRoom": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_AssociateDeviceWithRoom.html",
-      "description": "Associates device with given room.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "device": {
-          "required": true
-        },
-        "room": {
-          "required": true
-        }
-      }
-    },
-    "AssociateSkillGroupWithRoom": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_AssociateSkillGroupWithRoom.html",
-      "description": "Associates the skill group with given room. SkillGroup ARN and Room ARN must be specified.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "room": {
-          "required": true
-        },
-        "skillgroup": {
-          "required": true
-        }
-      }
-    },
-    "AssociateSkillWithSkillGroup": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_AssociateSkillWithSkillGroup.html",
-      "description": "Associates a skill with a skill group.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "skillgroup": {
-          "required": true
-        }
-      }
-    },
-    "AssociateSkillWithUsers": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_AssociateSkillWithUsers.html",
-      "description": "Makes a private skill available for enrolled users to enable on their devices.",
-      "accessLevel": "Write"
-    },
-    "CompleteRegistration": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/ag/manage-devices.html",
-      "description": "Completes the operation of registering an Alexa device.",
-      "accessLevel": "Write"
-    },
-    "CreateAddressBook": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateAddressBook.html",
-      "description": "Creates an address book with the specified details.",
-      "accessLevel": "Write"
-    },
-    "CreateBusinessReportSchedule": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateBusinessReportSchedule.html",
-      "description": "Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or weekly interval.",
-      "accessLevel": "Write"
-    },
-    "CreateConferenceProvider": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateConferenceProvider.html",
-      "description": "Adds a new conference provider under the user's AWS account.",
-      "accessLevel": "Write"
-    },
-    "CreateContact": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateContact.html",
-      "description": "Creates a contact with the specified details.",
-      "accessLevel": "Write"
-    },
-    "CreateProfile": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateProfile.html",
-      "description": "Creates a new profile.",
-      "accessLevel": "Write"
-    },
-    "CreateRoom": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateRoom.html",
-      "description": "Create room with the specified details.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "profile": {
-          "required": true
-        }
-      }
-    },
-    "CreateSkillGroup": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateSkillGroup.html",
-      "description": "Creates a skill group with given name and description.",
-      "accessLevel": "Write"
-    },
-    "CreateUser": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateUser.html",
-      "description": "Creates a user.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    },
-    "DeleteAddressBook": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteAddressBook.html",
-      "description": "Deletes an address book by the address book ARN.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "addressbook": {
-          "required": true
-        }
-      }
-    },
-    "DeleteBusinessReportSchedule": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteBusinessReportSchedule.html",
-      "description": "Deletes the recurring report delivery schedule with the specified schedule ARN.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "schedule": {
-          "required": true
-        }
-      }
-    },
-    "DeleteConferenceProvider": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteConferenceProvider.html",
-      "description": "Deletes a conference provider.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "conferenceprovider": {
-          "required": true
-        }
-      }
-    },
-    "DeleteContact": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteContact.html",
-      "description": "Deletes a contact by the contact ARN.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "contact": {
-          "required": true
-        }
-      }
-    },
-    "DeleteDevice": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteDevice.html",
-      "description": "Removes a device from Alexa For Business.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "device": {
-          "required": true
-        }
-      }
-    },
-    "DeleteProfile": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteProfile.html",
-      "description": "Delete profile by profile ARN.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "profile": {
-          "required": true
-        }
-      }
-    },
-    "DeleteRoom": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteRoom.html",
-      "description": "Delete room.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "room": {
-          "required": true
-        }
-      }
-    },
-    "DeleteRoomSkillParameter": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteRoomSkillParameter.html",
-      "description": "Delete a parameter from a skill and room.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "room": {
-          "required": true
-        }
-      }
-    },
-    "DeleteSkillAuthorization": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteSkillAuthorization.html",
-      "description": "Unlinks a third-party account from a skill.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "room": {
-          "required": true
-        }
-      }
-    },
-    "DeleteSkillGroup": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteSkillGroup.html",
-      "description": "Deletes skill group with skill group ARN. Skillgroup ARN must be specified.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "skillgroup": {
-          "required": true
-        }
-      }
-    },
-    "DeleteUser": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteUser.html",
-      "description": "Delete a user.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    },
-    "DisassociateContactFromAddressBook": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DisassociateContactFromAddressBook.html",
-      "description": "Disassociates a contact from a given address book.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "addressbook": {
-          "required": true
-        },
-        "contact": {
-          "required": true
-        }
-      }
-    },
-    "DisassociateDeviceFromRoom": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DisassociateDeviceFromRoom.html",
-      "description": "Disassociates device from its current room.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "device": {
-          "required": true
-        }
-      }
-    },
-    "DisassociateSkillFromSkillGroup": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DisassociateSkillFromSkillGroup.html",
-      "description": "Disassociates a skill from a skill group.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "skillgroup": {
-          "required": true
-        }
-      }
-    },
-    "DisassociateSkillFromUsers": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DisassociateSkillFromUsers.html",
-      "description": "Makes a private skill unavailable for enrolled users and prevents them from enabling it on their devices.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    },
-    "DisassociateSkillGroupFromRoom": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_DisassociateSkillGroupFromRoom.html",
-      "description": "Disassociates the skill group from given room. SkillGroup ARN and Room ARN must be specified.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "room": {
-          "required": true
-        },
-        "skillgroup": {
-          "required": true
-        }
-      }
-    },
-    "ForgetSmartHomeAppliances": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ForgetSmartHomeAppliances.html",
-      "description": "Forgets smart home appliances associated to a room.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "room": {
-          "required": true
-        }
-      }
-    },
-    "GetAddressBook": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetAddressBook.html",
-      "description": "Gets the address book details by the address book ARN.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "addressbook": {
-          "required": true
-        }
-      }
-    },
-    "GetConferencePreference": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetConferencePreference.html",
-      "description": "Retrieves the existing conference preferences.",
-      "accessLevel": "Read"
-    },
-    "GetConferenceProvider": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetConferenceProvider.html",
-      "description": "Gets details about a specific conference provider.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "conferenceprovider": {
-          "required": true
-        }
-      }
-    },
-    "GetContact": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetContact.html",
-      "description": "Gets the contact details by the contact ARN.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "contact": {
-          "required": true
-        }
-      }
-    },
-    "GetDevice": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetDevice.html",
-      "description": "Get device details.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "device": {
-          "required": true
-        }
-      }
-    },
-    "GetNetworkProfile": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetNetworkProfile.html",
-      "description": "Gets the network profile details by the network profile ARN.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "networkprofile": {
-          "required": true
-        }
-      }
-    },
-    "GetProfile": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetProfile.html",
-      "description": "Gets profile when provided with Profile ARN.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "profile": {
-          "required": true
-        }
-      }
-    },
-    "GetRoom": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetRoom.html",
-      "description": "Get room details.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "room": {
-          "required": true
-        }
-      }
-    },
-    "GetRoomSkillParameter": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetRoomSkillParameter.html",
-      "description": "Get an existing parameter that has been set for a skill and room.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "room": {
-          "required": true
-        }
-      }
-    },
-    "GetSkillGroup": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetSkillGroup.html",
-      "description": "Gets skill group details with skill group ARN. Skillgroup ARN must be specified.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "skillgroup": {
-          "required": true
-        }
-      }
-    },
-    "ListBusinessReportSchedules": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListBusinessReportSchedules.html",
-      "description": "Lists the details of the schedules that a user configured.",
-      "accessLevel": "List"
-    },
-    "ListConferenceProviders": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListConferenceProviders.html",
-      "description": "Lists conference providers under a specific AWS account.",
-      "accessLevel": "List"
-    },
-    "ListDeviceEvents": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListDeviceEvents.html",
-      "description": "Lists the device event history, including device connection status, for up to 30 days.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "device": {
-          "required": true
-        }
-      }
-    },
-    "ListSkills": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListSkills.html",
-      "description": "Lists skills.",
-      "accessLevel": "List"
-    },
-    "ListSkillsStoreCategories": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListSkillsStoreCategories.html",
-      "description": "Lists all categories in the Alexa skill store.",
-      "accessLevel": "List"
-    },
-    "ListSkillsStoreSkillsByCategory": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListSkillsStoreSkillsByCategory.html",
-      "description": "Lists all skills in the Alexa skill store by category.",
-      "accessLevel": "List"
-    },
-    "ListSmartHomeAppliances": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListSmartHomeAppliances.html",
-      "description": "Lists all of the smart home appliances associated with a room.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "room": {
-          "required": true
-        }
-      }
-    },
-    "ListTags": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListTags.html",
-      "description": "Lists all tags on a resource.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "device": {
-          "required": false
-        },
-        "room": {
-          "required": false
-        },
-        "user": {
-          "required": false
-        }
-      }
-    },
-    "PutConferencePreference": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_PutConferencePreference.html",
-      "description": "Sets the conference preferences on a specific conference provider at the account level.",
-      "accessLevel": "Write"
-    },
-    "PutDeviceSetupEvents": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/ag/manage-devices.html",
-      "description": "Publishes Alexa device setup events.",
-      "accessLevel": "Write"
-    },
-    "PutRoomSkillParameter": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_PutRoomSkillParameter.html",
-      "description": "Put a room specific parameter for a skill.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "room": {
-          "required": true
-        }
-      }
-    },
-    "PutSkillAuthorization": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_PutSkillAuthorization.html",
-      "description": "Links a user's account to a third-party skill provider. If this API operation is called by an assumed IAM role, the skill being linked must be a private skill. Also, the skill must be owned by the AWS account that assumed the IAM role.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "room": {
-          "required": true
-        }
-      }
-    },
-    "RegisterAVSDevice": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_RegisterAVSDevice.html",
-      "description": "Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service (AVS).",
-      "accessLevel": "Write"
-    },
-    "RegisterDevice": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/ag/manage-devices.html",
-      "description": "Registers an Alexa device.",
-      "accessLevel": "Write"
-    },
-    "RejectSkill": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_RejectSkill.html",
-      "description": "Disassociates a skill from the organization under a user's AWS account. If the skill is a private skill, it moves to an AcceptStatus of PENDING.",
-      "accessLevel": "Write"
-    },
-    "ResolveRoom": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ResolveRoom.html",
-      "description": "Returns resolved room information.",
-      "accessLevel": "Read"
-    },
-    "RevokeInvitation": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_RevokeInvitation.html",
-      "description": "Revoke an invitation.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    },
-    "SearchAddressBooks": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchAddressBooks.html",
-      "description": "Searches address books and lists the ones that meet a set of filter and sort criteria.",
-      "accessLevel": "List"
-    },
-    "SearchContacts": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchContacts.html",
-      "description": "Searches contacts and lists the ones that meet a set of filter and sort criteria.",
-      "accessLevel": "List"
-    },
-    "SearchDevices": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchDevices.html",
-      "description": "Search for devices.",
-      "accessLevel": "List"
-    },
-    "SearchNetworkProfiles": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchNetworkProfiles.html",
-      "description": "Searches network profiles and lists the ones that meet a set of filter and sort criteria.",
-      "accessLevel": "List"
-    },
-    "SearchProfiles": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchProfiles.html",
-      "description": "Search for profiles.",
-      "accessLevel": "List"
-    },
-    "SearchRooms": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchRooms.html",
-      "description": "Search for rooms.",
-      "accessLevel": "List"
-    },
-    "SearchSkillGroups": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchSkillGroups.html",
-      "description": "Search for skill groups.",
-      "accessLevel": "List"
-    },
-    "SearchUsers": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchUsers.html",
-      "description": "Search for users.",
-      "accessLevel": "List"
-    },
-    "SendInvitation": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_SendInvitation.html",
-      "description": "Send an invitation to a user.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    },
-    "StartDeviceSync": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_StartDeviceSync.html",
-      "description": "Restore the device and its account to its known, default settings by clearing all information and settings set by its previous users.",
-      "accessLevel": "Write"
-    },
-    "StartSmartHomeApplianceDiscovery": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_StartSmartHomeApplianceDiscovery.html",
-      "description": "Initiates the discovery of any smart home appliances associated with the room.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "room": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_TagResource.html",
-      "description": "Adds metadata tags to a resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "device": {
-          "required": false
-        },
-        "room": {
-          "required": false
-        },
-        "user": {
-          "required": false
-        }
-      }
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_UntagResource.html",
-      "description": "Removes metadata tags from a resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "device": {
-          "required": false
-        },
-        "room": {
-          "required": false
-        },
-        "user": {
-          "required": false
-        }
-      }
-    },
-    "UpdateAddressBook": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateAddressBook.html",
-      "description": "Updates address book details by the address book ARN.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "addressbook": {
-          "required": true
-        }
-      }
-    },
-    "UpdateBusinessReportSchedule": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateBusinessReportSchedule.html",
-      "description": "Updates the configuration of the report delivery schedule with the specified schedule ARN.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "schedule": {
-          "required": true
-        }
-      }
-    },
-    "UpdateConferenceProvider": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateConferenceProvider.html",
-      "description": "Updates an existing conference provider's settings.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "conferenceprovider": {
-          "required": true
-        }
-      }
-    },
-    "UpdateContact": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateContact.html",
-      "description": "Updates the contact details by the contact ARN.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "contact": {
-          "required": true
-        }
-      }
-    },
-    "UpdateDevice": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateDevice.html",
-      "description": "Updates device name.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "device": {
-          "required": true
-        }
-      }
-    },
-    "UpdateProfile": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateProfile.html",
-      "description": "Updates an existing profile.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "profile": {
-          "required": true
-        }
-      }
-    },
-    "UpdateRoom": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateRoom.html",
-      "description": "Update room details.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "room": {
-          "required": true
-        }
-      }
-    },
-    "UpdateSkillGroup": {
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateSkillGroup.html",
-      "description": "Updates skill group details with skill group ARN. Skillgroup ARN must be specified.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "skillgroup": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "profile": {
-      "name": "profile",
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_Profile.html",
-      "arn": "arn:${Partition}:a4b:${Region}:${Account}:profile/${Resource_id}",
-      "conditionKeys": []
-    },
-    "room": {
-      "name": "room",
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_Room.html",
-      "arn": "arn:${Partition}:a4b:${Region}:${Account}:room/${Resource_id}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "device": {
-      "name": "device",
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_Device.html",
-      "arn": "arn:${Partition}:a4b:${Region}:${Account}:device/${Resource_id}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "skillgroup": {
-      "name": "skillgroup",
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_SkillGroup.html",
-      "arn": "arn:${Partition}:a4b:${Region}:${Account}:skill-group/${Resource_id}",
-      "conditionKeys": []
-    },
-    "user": {
-      "name": "user",
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_UserData.html",
-      "arn": "arn:${Partition}:a4b:${Region}:${Account}:user/${Resource_id}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "addressbook": {
-      "name": "addressbook",
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_AddressBook.html",
-      "arn": "arn:${Partition}:a4b:${Region}:${Account}:address-book/${Resource_id}",
-      "conditionKeys": []
-    },
-    "conferenceprovider": {
-      "name": "conferenceprovider",
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ConferenceProvider.html",
-      "arn": "arn:${Partition}:a4b:${Region}:${Account}:conference-provider/${Resource_id}",
-      "conditionKeys": []
-    },
-    "contact": {
-      "name": "contact",
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_Contact.html",
-      "arn": "arn:${Partition}:a4b:${Region}:${Account}:contact/${Resource_id}",
-      "conditionKeys": []
-    },
-    "schedule": {
-      "name": "schedule",
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_BusinessReportSchedule.html",
-      "arn": "arn:${Partition}:a4b:${Region}:${Account}:schedule/${Resource_id}",
-      "conditionKeys": []
-    },
-    "networkprofile": {
-      "name": "networkprofile",
-      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_NetworkProfile.html",
-      "arn": "arn:${Partition}:a4b:${Region}:${Account}:network-profile/${Resource_id}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [a4b](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_alexaforbusiness.html).
@@ -1729,6 +977,97 @@ export class A4b extends PolicyStatement {
     this.to('a4b:UpdateSkillGroup');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "ApproveSkill",
+      "AssociateContactWithAddressBook",
+      "AssociateDeviceWithRoom",
+      "AssociateSkillGroupWithRoom",
+      "AssociateSkillWithSkillGroup",
+      "AssociateSkillWithUsers",
+      "CompleteRegistration",
+      "CreateAddressBook",
+      "CreateBusinessReportSchedule",
+      "CreateConferenceProvider",
+      "CreateContact",
+      "CreateProfile",
+      "CreateRoom",
+      "CreateSkillGroup",
+      "CreateUser",
+      "DeleteAddressBook",
+      "DeleteBusinessReportSchedule",
+      "DeleteConferenceProvider",
+      "DeleteContact",
+      "DeleteDevice",
+      "DeleteProfile",
+      "DeleteRoom",
+      "DeleteRoomSkillParameter",
+      "DeleteSkillAuthorization",
+      "DeleteSkillGroup",
+      "DeleteUser",
+      "DisassociateContactFromAddressBook",
+      "DisassociateDeviceFromRoom",
+      "DisassociateSkillFromSkillGroup",
+      "DisassociateSkillFromUsers",
+      "DisassociateSkillGroupFromRoom",
+      "ForgetSmartHomeAppliances",
+      "PutConferencePreference",
+      "PutDeviceSetupEvents",
+      "PutRoomSkillParameter",
+      "PutSkillAuthorization",
+      "RegisterAVSDevice",
+      "RegisterDevice",
+      "RejectSkill",
+      "RevokeInvitation",
+      "SendInvitation",
+      "StartDeviceSync",
+      "UpdateAddressBook",
+      "UpdateBusinessReportSchedule",
+      "UpdateConferenceProvider",
+      "UpdateContact",
+      "UpdateDevice",
+      "UpdateProfile",
+      "UpdateRoom",
+      "UpdateSkillGroup"
+    ],
+    "Read": [
+      "GetAddressBook",
+      "GetConferencePreference",
+      "GetConferenceProvider",
+      "GetContact",
+      "GetDevice",
+      "GetNetworkProfile",
+      "GetProfile",
+      "GetRoom",
+      "GetRoomSkillParameter",
+      "GetSkillGroup",
+      "ListTags",
+      "ResolveRoom",
+      "StartSmartHomeApplianceDiscovery"
+    ],
+    "List": [
+      "ListBusinessReportSchedules",
+      "ListConferenceProviders",
+      "ListDeviceEvents",
+      "ListSkills",
+      "ListSkillsStoreCategories",
+      "ListSkillsStoreSkillsByCategory",
+      "ListSmartHomeAppliances",
+      "SearchAddressBooks",
+      "SearchContacts",
+      "SearchDevices",
+      "SearchNetworkProfiles",
+      "SearchProfiles",
+      "SearchRooms",
+      "SearchSkillGroups",
+      "SearchUsers"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type profile to the statement

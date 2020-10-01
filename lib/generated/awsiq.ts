@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [iq](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiq.html).
@@ -7,14 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Iq extends PolicyStatement {
   public servicePrefix = 'iq';
-  protected actionList: Actions = {
-    "CreateProject": {
-      "url": "https://aws.amazon.com/iq/",
-      "description": "Grants permission to submit new project requests",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [iq](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiq.html).
@@ -36,4 +29,10 @@ export class Iq extends PolicyStatement {
     this.to('iq:CreateProject');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateProject"
+    ]
+  };
 }

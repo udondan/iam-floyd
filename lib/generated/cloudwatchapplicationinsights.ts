@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [applicationinsights](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_cloudwatchapplicationinsights.html).
@@ -7,94 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Applicationinsights extends PolicyStatement {
   public servicePrefix = 'applicationinsights';
-  protected actionList: Actions = {
-    "CreateApplication": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_CreateApplication.html",
-      "description": "Creates an application from a resource group",
-      "accessLevel": "Write"
-    },
-    "CreateComponent": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_CreateComponent.html",
-      "description": "Creates a component from a group of resources",
-      "accessLevel": "Write"
-    },
-    "DeleteApplication": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DeleteApplication.html",
-      "description": "Deletes an application",
-      "accessLevel": "Write"
-    },
-    "DeleteComponent": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DeleteComponent.html",
-      "description": "Deletes a component",
-      "accessLevel": "Write"
-    },
-    "DescribeApplication": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeApplication.html",
-      "description": "Describes an application",
-      "accessLevel": "Read"
-    },
-    "DescribeComponent": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponent.html",
-      "description": "Describes a component",
-      "accessLevel": "Read"
-    },
-    "DescribeComponentConfiguration": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponentConfiguration.html",
-      "description": "Describes a component configuration",
-      "accessLevel": "Read"
-    },
-    "DescribeComponentConfigurationRecommendation": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponentConfigurationRecommendation.html",
-      "description": "Describe the recommended application component configuration",
-      "accessLevel": "Read"
-    },
-    "DescribeObservation": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeObservation.html",
-      "description": "Describes an observation",
-      "accessLevel": "Read"
-    },
-    "DescribeProblem": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeProblem.html",
-      "description": "Describes a problem",
-      "accessLevel": "Read"
-    },
-    "DescribeProblemObservations": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeProblemObservations.html",
-      "description": "Describes the observation in a problem",
-      "accessLevel": "Read"
-    },
-    "ListApplications": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListApplications.html",
-      "description": "Lists all applications",
-      "accessLevel": "List"
-    },
-    "ListComponents": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListComponents.html",
-      "description": "List an application's components",
-      "accessLevel": "List"
-    },
-    "ListProblems": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListProblems.html",
-      "description": "Lists the problems in an application",
-      "accessLevel": "List"
-    },
-    "UpdateApplication": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateApplication.html",
-      "description": "Updates an application",
-      "accessLevel": "Write"
-    },
-    "UpdateComponent": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateComponent.html",
-      "description": "Updates a component",
-      "accessLevel": "Write"
-    },
-    "UpdateComponentConfiguration": {
-      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateComponentConfiguration.html",
-      "description": "Updates a component configuration",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [applicationinsights](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_cloudwatchapplicationinsights.html).
@@ -308,4 +221,30 @@ export class Applicationinsights extends PolicyStatement {
     this.to('applicationinsights:UpdateComponentConfiguration');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateApplication",
+      "CreateComponent",
+      "DeleteApplication",
+      "DeleteComponent",
+      "UpdateApplication",
+      "UpdateComponent",
+      "UpdateComponentConfiguration"
+    ],
+    "Read": [
+      "DescribeApplication",
+      "DescribeComponent",
+      "DescribeComponentConfiguration",
+      "DescribeComponentConfigurationRecommendation",
+      "DescribeObservation",
+      "DescribeProblem",
+      "DescribeProblemObservations"
+    ],
+    "List": [
+      "ListApplications",
+      "ListComponents",
+      "ListProblems"
+    ]
+  };
 }

@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [ebs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html).
@@ -7,87 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Ebs extends PolicyStatement {
   public servicePrefix = 'ebs';
-  protected actionList: Actions = {
-    "CompleteSnapshot": {
-      "url": "https://docs.aws.amazon.com/ebs/latest/APIReference/API_CompleteSnapshot.html",
-      "description": "Grants permission to seal and complete the snapshot after all of the required blocks of data have been written to it.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "snapshot": {
-          "required": true
-        }
-      }
-    },
-    "GetSnapshotBlock": {
-      "url": "https://docs.aws.amazon.com/ebs/latest/APIReference/API_GetSnapshotBlock.html",
-      "description": "Grants permission to return the data of a block in an Amazon Elastic Block Store (EBS) snapshot",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "snapshot": {
-          "required": true
-        }
-      }
-    },
-    "ListChangedBlocks": {
-      "url": "https://docs.aws.amazon.com/ebs/latest/APIReference/API_ListChangedBlocks.html",
-      "description": "Grants permission to list the blocks that are different between two Amazon Elastic Block Store (EBS) snapshots of the same volume/snapshot lineage",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "snapshot": {
-          "required": true
-        }
-      }
-    },
-    "ListSnapshotBlocks": {
-      "url": "https://docs.aws.amazon.com/ebs/latest/APIReference/API_ListSnapshotBlocks.html",
-      "description": "Grants permission to list the blocks in an Amazon Elastic Block Store (EBS) snapshot.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "snapshot": {
-          "required": true
-        }
-      }
-    },
-    "PutSnapshotBlock": {
-      "url": "https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html",
-      "description": "Grants permission to write a block of data to a snapshot created by the StartSnapshot operation.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "snapshot": {
-          "required": true
-        }
-      }
-    },
-    "StartSnapshot": {
-      "url": "https://docs.aws.amazon.com/ebs/latest/APIReference/API_StartSnapshot.html",
-      "description": "Grants permission to create a new EBS snapshot.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "snapshot": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "snapshot": {
-      "name": "snapshot",
-      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format",
-      "arn": "arn:${Partition}:ec2:${Region}::snapshot/${SnapshotId}",
-      "conditionKeys": [
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}",
-        "aws:TagKeys",
-        "ebs:Description",
-        "ebs:ParentSnapshot",
-        "ebs:VolumeSize"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [ebs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html).
@@ -173,6 +93,19 @@ export class Ebs extends PolicyStatement {
     this.to('ebs:StartSnapshot');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CompleteSnapshot",
+      "PutSnapshotBlock",
+      "StartSnapshot"
+    ],
+    "Read": [
+      "GetSnapshotBlock",
+      "ListChangedBlocks",
+      "ListSnapshotBlocks"
+    ]
+  };
 
   /**
    * Adds a resource of type snapshot to the statement

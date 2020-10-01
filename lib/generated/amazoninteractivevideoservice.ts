@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [ivs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoninteractivevideoservice.html).
@@ -7,304 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Ivs extends PolicyStatement {
   public servicePrefix = 'ivs';
-  protected actionList: Actions = {
-    "BatchGetChannel": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_BatchGetChannel.html",
-      "description": "Grants permission to get multiple channels simultaneously by channel ARN.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "Channel": {
-          "required": true
-        }
-      }
-    },
-    "BatchGetStreamKey": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_BatchGetStreamKey.html",
-      "description": "Grants permission to get multiple stream keys simultaneously by stream key ARN.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "Stream-Key": {
-          "required": true
-        }
-      }
-    },
-    "CreateChannel": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateChannel.html",
-      "description": "Grants permission to create a new channel and an associated stream key.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "Channel": {
-          "required": true
-        },
-        "Stream-Key": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "CreateStreamKey": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateStreamKey.html",
-      "description": "Grants permission to create a stream key.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "Stream-Key": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "DeleteChannel": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteChannel.html",
-      "description": "Grants permission to delete a channel and channel's stream keys.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "Channel": {
-          "required": true
-        },
-        "Stream-Key": {
-          "required": true
-        }
-      }
-    },
-    "DeletePlaybackKeyPair": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeletePlaybackKeyPair.html",
-      "description": "Grants permission to delete the playback key pair for a specified ARN",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "Playback-Key-Pair": {
-          "required": true
-        }
-      }
-    },
-    "DeleteStreamKey": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteStreamKey.html",
-      "description": "Grants permission to delete the stream key for a specified ARN",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "Stream-Key": {
-          "required": true
-        }
-      }
-    },
-    "GetChannel": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetChannel.html",
-      "description": "Grants permission to get the channel configuration for a specified channel ARN",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "Channel": {
-          "required": true
-        }
-      }
-    },
-    "GetPlaybackKeyPair": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetPlaybackKeyPair.html",
-      "description": "Grants permission to get the playback keypair information for a specified ARN",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "Playback-Key-Pair": {
-          "required": true
-        }
-      }
-    },
-    "GetStream": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStream.html",
-      "description": "Grants permission to get information about the active (live) stream on a specified channel",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "Channel": {
-          "required": true
-        }
-      }
-    },
-    "GetStreamKey": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStreamKey.html",
-      "description": "Grants permission to get stream-key information for a specified ARN",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "Stream-Key": {
-          "required": true
-        }
-      }
-    },
-    "ImportPlaybackKeyPair": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_ImportPlaybackKeyPair.html",
-      "description": "Grants permission to import the public key.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "Playback-Key-Pair": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "ListChannels": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListChannels.html",
-      "description": "Grants permission to get summary information about channels",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "Channel": {
-          "required": true
-        }
-      }
-    },
-    "ListPlaybackKeyPairs": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListPlaybackKeyPairs.html",
-      "description": "Grants permission to get summary information about playback key pairs",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "Playback-Key-Pair": {
-          "required": true
-        }
-      }
-    },
-    "ListStreamKeys": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreamKeys.html",
-      "description": "Grants permission to get summary information about stream keys",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "Channel": {
-          "required": true
-        },
-        "Stream-Key": {
-          "required": true
-        }
-      }
-    },
-    "ListStreams": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreams.html",
-      "description": "Grants permission to get summary information about live streams",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "Channel": {
-          "required": true
-        }
-      }
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Grants permission to get information about the tags for a specified ARN",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "Channel": {
-          "required": false
-        },
-        "Playback-Key-Pair": {
-          "required": false
-        },
-        "Stream-Key": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "PutMetadata": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_PutMetadata.html",
-      "description": "Grants permission to insert metadata into an RTMP stream for a specified channel",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "Channel": {
-          "required": true
-        }
-      }
-    },
-    "StopStream": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_StopStream.html",
-      "description": "Grants permission to disconnect a streamer on a specified channel",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "Channel": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_TagResource.html",
-      "description": "Grants permission to add or update tags for a resource with a specified ARN",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "Channel": {
-          "required": false
-        },
-        "Playback-Key-Pair": {
-          "required": false
-        },
-        "Stream-Key": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_UntagResource.html",
-      "description": "Grants permission to remove tags for a resource with a specified ARN",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "Channel": {
-          "required": false
-        },
-        "Playback-Key-Pair": {
-          "required": false
-        },
-        "Stream-Key": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateChannel": {
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_UpdateChannel.html",
-      "description": "Grants permission to update a channel's configuration",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "Channel": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "Channel": {
-      "name": "Channel",
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_Channel.html",
-      "arn": "arn:${Partition}:ivs::${Account}:channel/${ResourceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "Stream-Key": {
-      "name": "Stream-Key",
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_StreamKey.html",
-      "arn": "arn:${Partition}:ivs::${Account}:stream-key/${ResourceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "Playback-Key-Pair": {
-      "name": "Playback-Key-Pair",
-      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_PlaybackKeyPair.html",
-      "arn": "arn:${Partition}:ivs::${Account}:playback-key/${ResourceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [ivs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoninteractivevideoservice.html).
@@ -601,6 +304,39 @@ export class Ivs extends PolicyStatement {
     this.to('ivs:UpdateChannel');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "BatchGetChannel",
+      "BatchGetStreamKey",
+      "GetChannel",
+      "GetPlaybackKeyPair",
+      "GetStream",
+      "GetStreamKey"
+    ],
+    "Write": [
+      "CreateChannel",
+      "CreateStreamKey",
+      "DeleteChannel",
+      "DeletePlaybackKeyPair",
+      "DeleteStreamKey",
+      "ImportPlaybackKeyPair",
+      "PutMetadata",
+      "StopStream",
+      "UpdateChannel"
+    ],
+    "List": [
+      "ListChannels",
+      "ListPlaybackKeyPairs",
+      "ListStreamKeys",
+      "ListStreams"
+    ],
+    "Tagging": [
+      "ListTagsForResource",
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type Channel to the statement

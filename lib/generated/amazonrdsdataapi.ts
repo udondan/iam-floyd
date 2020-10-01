@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [rds-data](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsdataapi.html).
@@ -7,45 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class RdsData extends PolicyStatement {
   public servicePrefix = 'rds-data';
-  protected actionList: Actions = {
-    "BatchExecuteStatement": {
-      "url": "https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BatchExecuteStatement.html",
-      "description": "Runs a batch SQL statement over an array of data.",
-      "accessLevel": "Write"
-    },
-    "BeginTransaction": {
-      "url": "https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BeginTransaction.html",
-      "description": "Starts a SQL transaction.",
-      "accessLevel": "Write"
-    },
-    "CommitTransaction": {
-      "url": "https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_CommitTransaction.html",
-      "description": "Ends a SQL transaction started with the BeginTransaction operation and commits the changes.",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "rds-data:BeginTransaction"
-      ]
-    },
-    "ExecuteSql": {
-      "url": "https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteSql.html",
-      "description": "Runs one or more SQL statements. This operation is deprecated. Use the BatchExecuteStatement or ExecuteStatement operation.",
-      "accessLevel": "Write"
-    },
-    "ExecuteStatement": {
-      "url": "https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteStatement.html",
-      "description": "Runs a SQL statement against a database.",
-      "accessLevel": "Write"
-    },
-    "RollbackTransaction": {
-      "url": "https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_RollbackTransaction.html",
-      "description": "Performs a rollback of a transaction. Rolling back a transaction cancels its changes.",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "rds-data:BeginTransaction"
-      ]
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [rds-data](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsdataapi.html).
@@ -133,4 +95,15 @@ export class RdsData extends PolicyStatement {
     this.to('rds-data:RollbackTransaction');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "BatchExecuteStatement",
+      "BeginTransaction",
+      "CommitTransaction",
+      "ExecuteSql",
+      "ExecuteStatement",
+      "RollbackTransaction"
+    ]
+  };
 }

@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [macie](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacieclassic.html).
@@ -7,53 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Macie extends PolicyStatement {
   public servicePrefix = 'macie';
-  protected actionList: Actions = {
-    "AssociateMemberAccount": {
-      "url": "https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateMemberAccount.html",
-      "description": "Enables the user to associate a specified AWS account with Amazon Macie as a member account.",
-      "accessLevel": "Write"
-    },
-    "AssociateS3Resources": {
-      "url": "https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateS3Resources.html",
-      "description": "Enables the user to associate specified S3 resources with Amazon Macie for monitoring and data classification.",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:SourceArn"
-      ]
-    },
-    "DisassociateMemberAccount": {
-      "url": "https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateMemberAccount.html",
-      "description": "Enables the user to remove the specified member account from Amazon Macie.",
-      "accessLevel": "Write"
-    },
-    "DisassociateS3Resources": {
-      "url": "https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateS3Resources.html",
-      "description": "Enables the user to remove specified S3 resources from being monitored by Amazon Macie.",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:SourceArn"
-      ]
-    },
-    "ListMemberAccounts": {
-      "url": "https://docs.aws.amazon.com/macie/1.0/APIReference/API_ListMemberAccounts.html",
-      "description": "Enables the user to list all Amazon Macie member accounts for the current Macie master account.",
-      "accessLevel": "List"
-    },
-    "ListS3Resources": {
-      "url": "https://docs.aws.amazon.com/macie/1.0/APIReference/API_ListS3Resources.html",
-      "description": "Enables the user to list all the S3 resources associated with Amazon Macie.",
-      "accessLevel": "List"
-    },
-    "UpdateS3Resources": {
-      "url": "https://docs.aws.amazon.com/macie/1.0/APIReference/API_UpdateS3Resources.html",
-      "description": "Enables the user to update the classification types for the specified S3 resources.",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:SourceArn"
-      ]
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [macie](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacieclassic.html).
@@ -156,4 +110,18 @@ export class Macie extends PolicyStatement {
     this.to('macie:UpdateS3Resources');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "AssociateMemberAccount",
+      "AssociateS3Resources",
+      "DisassociateMemberAccount",
+      "DisassociateS3Resources",
+      "UpdateS3Resources"
+    ],
+    "List": [
+      "ListMemberAccounts",
+      "ListS3Resources"
+    ]
+  };
 }

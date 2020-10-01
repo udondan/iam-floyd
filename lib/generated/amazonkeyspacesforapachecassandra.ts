@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [cassandra](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkeyspacesforapachecassandra.html).
@@ -7,141 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Cassandra extends PolicyStatement {
   public servicePrefix = 'cassandra';
-  protected actionList: Actions = {
-    "Alter": {
-      "url": "",
-      "description": "Grants permission to alter a keyspace or table",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "keyspace": {
-          "required": false
-        },
-        "table": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "Create": {
-      "url": "",
-      "description": "Grants permission to create a keyspace or table",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "keyspace": {
-          "required": false
-        },
-        "table": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "Drop": {
-      "url": "",
-      "description": "Grants permission to drop a keyspace or table",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "keyspace": {
-          "required": false
-        },
-        "table": {
-          "required": false
-        }
-      }
-    },
-    "Modify": {
-      "url": "",
-      "description": "Grants permission to INSERT, UPDATE or DELETE data in a table",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "Restore": {
-      "url": "",
-      "description": "Grants permission to restore table from a backup",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "Select": {
-      "url": "",
-      "description": "Grants permission to SELECT data from a table",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "",
-      "description": "Grants permission to tag a keyspace or table",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "keyspace": {
-          "required": false
-        },
-        "table": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UntagResource": {
-      "url": "",
-      "description": "Grants permission to untag a keyspace or table",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "keyspace": {
-          "required": false
-        },
-        "table": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "keyspace": {
-      "name": "keyspace",
-      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is.html",
-      "arn": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "table": {
-      "name": "table",
-      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is.html",
-      "arn": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${TableName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [cassandra](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkeyspacesforapachecassandra.html).
@@ -251,6 +117,23 @@ export class Cassandra extends PolicyStatement {
     this.to('cassandra:UntagResource');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "Alter",
+      "Create",
+      "Drop",
+      "Modify",
+      "Restore"
+    ],
+    "Read": [
+      "Select"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type keyspace to the statement

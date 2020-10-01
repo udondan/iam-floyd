@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [directconnect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdirectconnect.html).
@@ -7,688 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Directconnect extends PolicyStatement {
   public servicePrefix = 'directconnect';
-  protected actionList: Actions = {
-    "AcceptDirectConnectGatewayAssociationProposal": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AcceptDirectConnectGatewayAssociationProposal.html",
-      "description": "Accepts a proposal request to attach a virtual private gateway to a Direct Connect gateway.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dx-gateway": {
-          "required": true
-        }
-      }
-    },
-    "AllocateConnectionOnInterconnect": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocateConnectionOnInterconnect.html",
-      "description": "Creates a hosted connection on an interconnect.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": true
-        }
-      }
-    },
-    "AllocateHostedConnection": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocateHostedConnection.html",
-      "description": "Creates a new hosted connection between a AWS Direct Connect partner's network and a specific AWS Direct Connect location.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "AllocatePrivateVirtualInterface": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocatePrivateVirtualInterface.html",
-      "description": "Provisions a private virtual interface to be owned by a different customer.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "AllocatePublicVirtualInterface": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocatePublicVirtualInterface.html",
-      "description": "Provisions a public virtual interface to be owned by a different customer.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "AllocateTransitVirtualInterface": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocateTransitVirtualInterface.html",
-      "description": "Provisions a transit virtual interface to be owned by a different customer.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "AssociateConnectionWithLag": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AssociateConnectionWithLag.html",
-      "description": "Associates a connection with a LAG.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": true
-        },
-        "dxlag": {
-          "required": true
-        }
-      }
-    },
-    "AssociateHostedConnection": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AssociateHostedConnection.html",
-      "description": "Associates a hosted connection and its virtual interfaces with a link aggregation group (LAG) or interconnect.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        }
-      }
-    },
-    "AssociateVirtualInterface": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AssociateVirtualInterface.html",
-      "description": "Associates a virtual interface with a specified link aggregation group (LAG) or connection.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxvif": {
-          "required": true
-        },
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        }
-      }
-    },
-    "ConfirmConnection": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmConnection.html",
-      "description": "Confirm the creation of a hosted connection on an interconnect.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": true
-        }
-      }
-    },
-    "ConfirmPrivateVirtualInterface": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmPrivateVirtualInterface.html",
-      "description": "Accept ownership of a private virtual interface created by another customer.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxvif": {
-          "required": true
-        }
-      }
-    },
-    "ConfirmPublicVirtualInterface": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmPublicVirtualInterface.html",
-      "description": "Accept ownership of a public virtual interface created by another customer",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxvif": {
-          "required": true
-        }
-      }
-    },
-    "ConfirmTransitVirtualInterface": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmTransitVirtualInterface.html",
-      "description": "Accept ownership of a transit virtual interface created by another customer",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxvif": {
-          "required": true
-        }
-      }
-    },
-    "CreateBGPPeer": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateBGPPeer.html",
-      "description": "Creates a BGP peer on the specified virtual interface.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxvif": {
-          "required": true
-        }
-      }
-    },
-    "CreateConnection": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateConnection.html",
-      "description": "Creates a new connection between the customer network and a specific AWS Direct Connect location.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxlag": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateDirectConnectGateway": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateDirectConnectGateway.html",
-      "description": "Creates a Direct Connect gateway, which is an intermediate object that enables you to connect a set of virtual interfaces and virtual private gateways.",
-      "accessLevel": "Write"
-    },
-    "CreateDirectConnectGatewayAssociation": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateDirectConnectGatewayAssociation.html",
-      "description": "Creates an association between a Direct Connect gateway and a virtual private gateway.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dx-gateway": {
-          "required": true
-        }
-      }
-    },
-    "CreateDirectConnectGatewayAssociationProposal": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateDirectConnectGatewayAssociationProposal.html",
-      "description": "Creates a proposal to associate the specified virtual private gateway with the specified Direct Connect gateway.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dx-gateway": {
-          "required": true
-        }
-      }
-    },
-    "CreateInterconnect": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateInterconnect.html",
-      "description": "Creates a new interconnect between a AWS Direct Connect partner's network and a specific AWS Direct Connect location.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxlag": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateLag": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateLag.html",
-      "description": "Creates a link aggregation group (LAG) with the specified number of bundled physical connections between the customer network and a specific AWS Direct Connect location.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreatePrivateVirtualInterface": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreatePrivateVirtualInterface.html",
-      "description": "Creates a new private virtual interface.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreatePublicVirtualInterface": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreatePublicVirtualInterface.html",
-      "description": "Creates a new public virtual interface.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateTransitVirtualInterface": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateTransitVirtualInterface.html",
-      "description": "Creates a new transit virtual interface.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "DeleteBGPPeer": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteBGPPeer.html",
-      "description": "Deletes the specified BGP peer on the specified virtual interface with the specified customer address and ASN.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxvif": {
-          "required": true
-        }
-      }
-    },
-    "DeleteConnection": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteConnection.html",
-      "description": "Deletes the connection.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": true
-        }
-      }
-    },
-    "DeleteDirectConnectGateway": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteDirectConnectGateway.html",
-      "description": "Deletes the specified Direct Connect gateway.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dx-gateway": {
-          "required": true
-        }
-      }
-    },
-    "DeleteDirectConnectGatewayAssociation": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteDirectConnectGatewayAssociation.html",
-      "description": "Deletes the association between the specified Direct Connect gateway and virtual private gateway.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dx-gateway": {
-          "required": true
-        }
-      }
-    },
-    "DeleteDirectConnectGatewayAssociationProposal": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteDirectConnectGatewayAssociationProposal.html",
-      "description": "Deletes the association proposal request between the specified Direct Connect gateway and virtual private gateway.",
-      "accessLevel": "Write"
-    },
-    "DeleteInterconnect": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteInterconnect.html",
-      "description": "Deletes the specified interconnect.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": true
-        }
-      }
-    },
-    "DeleteLag": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteLag.html",
-      "description": "Deletes the specified link aggregation group (LAG).",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxlag": {
-          "required": true
-        }
-      }
-    },
-    "DeleteVirtualInterface": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteVirtualInterface.html",
-      "description": "Deletes a virtual interface.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxvif": {
-          "required": true
-        }
-      }
-    },
-    "DescribeConnectionLoa": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeConnectionLoa.html",
-      "description": "Returns the LOA-CFA for a Connection.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dxcon": {
-          "required": true
-        }
-      }
-    },
-    "DescribeConnections": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeConnections.html",
-      "description": "Displays all connections in this region.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        }
-      }
-    },
-    "DescribeConnectionsOnInterconnect": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeConnectionsOnInterconnect.html",
-      "description": "Return a list of connections that have been provisioned on the given interconnect.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dxcon": {
-          "required": true
-        }
-      }
-    },
-    "DescribeDirectConnectGatewayAssociationProposals": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeDirectConnectGatewayAssociationProposals.html",
-      "description": "Describes one or more association proposals for connection between a virtual private gateway and a Direct Connect gateway.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dx-gateway": {
-          "required": false
-        }
-      }
-    },
-    "DescribeDirectConnectGatewayAssociations": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeDirectConnectGatewayAssociations.html",
-      "description": "Lists the associations between your Direct Connect gateways and virtual private gateways.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dx-gateway": {
-          "required": false
-        }
-      }
-    },
-    "DescribeDirectConnectGatewayAttachments": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeDirectConnectGatewayAttachments.html",
-      "description": "Lists the attachments between your Direct Connect gateways and virtual interfaces.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dx-gateway": {
-          "required": false
-        }
-      }
-    },
-    "DescribeDirectConnectGateways": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeDirectConnectGateways.html",
-      "description": "Lists all your Direct Connect gateways or only the specified Direct Connect gateway.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dx-gateway": {
-          "required": false
-        }
-      }
-    },
-    "DescribeHostedConnections": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeHostedConnections.html",
-      "description": "Lists the hosted connections that have been provisioned on the specified interconnect or link aggregation group (LAG).",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        }
-      }
-    },
-    "DescribeInterconnectLoa": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeInterconnectLoa.html",
-      "description": "Returns the LOA-CFA for an Interconnect.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dxcon": {
-          "required": true
-        }
-      }
-    },
-    "DescribeInterconnects": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeInterconnects.html",
-      "description": "Returns a list of interconnects owned by the AWS account.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        }
-      }
-    },
-    "DescribeLags": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeLags.html",
-      "description": "Describes all your link aggregation groups (LAG) or the specified LAG.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dxlag": {
-          "required": false
-        }
-      }
-    },
-    "DescribeLoa": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeLoa.html",
-      "description": "Gets the LOA-CFA for a connection, interconnect, or link aggregation group (LAG).",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        }
-      }
-    },
-    "DescribeLocations": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeLocations.html",
-      "description": "Returns the list of AWS Direct Connect locations in the current AWS region.",
-      "accessLevel": "List"
-    },
-    "DescribeTags": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeTags.html",
-      "description": "Describes the tags associated with the specified AWS Direct Connect resources.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        },
-        "dxvif": {
-          "required": false
-        }
-      }
-    },
-    "DescribeVirtualGateways": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeVirtualGateways.html",
-      "description": "Returns a list of virtual private gateways owned by the AWS account.",
-      "accessLevel": "Read"
-    },
-    "DescribeVirtualInterfaces": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeVirtualInterfaces.html",
-      "description": "Displays all virtual interfaces for an AWS account.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        },
-        "dxvif": {
-          "required": false
-        }
-      }
-    },
-    "DisassociateConnectionFromLag": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DisassociateConnectionFromLag.html",
-      "description": "Disassociates a connection from a link aggregation group (LAG).",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxcon": {
-          "required": true
-        },
-        "dxlag": {
-          "required": true
-        }
-      }
-    },
-    "ListVirtualInterfaceTestHistory": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html",
-      "description": "Lists the virtual interface failover test history.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "dxvif": {
-          "required": true
-        }
-      }
-    },
-    "StartBgpFailoverTest": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StartBgpFailoverTest.html",
-      "description": "Starts the virtual interface failover test that verifies your configuration meets your resiliency requirements by placing the BGP peering session in the DOWN state. You can then send traffic to verify that there are no outages.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxvif": {
-          "required": true
-        }
-      }
-    },
-    "StopBgpFailoverTest": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html",
-      "description": "Stops the virtual interface failover test.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxvif": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_TagResource.html",
-      "description": "Adds the specified tags to the specified AWS Direct Connect resource. Each resource can have a maximum of 50 tags.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        },
-        "dxvif": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UntagResource.html",
-      "description": "Removes one or more tags from the specified AWS Direct Connect resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "dxcon": {
-          "required": false
-        },
-        "dxlag": {
-          "required": false
-        },
-        "dxvif": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateDirectConnectGatewayAssociation": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateDirectConnectGatewayAssociation.html",
-      "description": "Updates the specified attributes of the Direct Connect gateway association.",
-      "accessLevel": "Write"
-    },
-    "UpdateLag": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateLag.html",
-      "description": "Updates the attributes of the specified link aggregation group (LAG).",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxlag": {
-          "required": true
-        }
-      }
-    },
-    "UpdateVirtualInterfaceAttributes": {
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateVirtualInterfaceAttributes.html",
-      "description": "Updates the specified attributes of the specified virtual private interface.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dxvif": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "dxcon": {
-      "name": "dxcon",
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html",
-      "arn": "arn:${Partition}:directconnect:${Region}:${Account}:dxcon/${ConnectionId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "dxlag": {
-      "name": "dxlag",
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Lag.html",
-      "arn": "arn:${Partition}:directconnect:${Region}:${Account}:dxlag/${LagId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "dxvif": {
-      "name": "dxvif",
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html",
-      "arn": "arn:${Partition}:directconnect:${Region}:${Account}:dxvif/${VirtualInterfaceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "dx-gateway": {
-      "name": "dx-gateway",
-      "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html",
-      "arn": "arn:${Partition}:directconnect::${Account}:dx-gateway/${DirectConnectGatewayId}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [directconnect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdirectconnect.html).
@@ -1417,6 +736,73 @@ export class Directconnect extends PolicyStatement {
     this.to('directconnect:UpdateVirtualInterfaceAttributes');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "AcceptDirectConnectGatewayAssociationProposal",
+      "AllocateConnectionOnInterconnect",
+      "AllocateHostedConnection",
+      "AllocatePrivateVirtualInterface",
+      "AllocatePublicVirtualInterface",
+      "AllocateTransitVirtualInterface",
+      "AssociateConnectionWithLag",
+      "AssociateHostedConnection",
+      "AssociateVirtualInterface",
+      "ConfirmConnection",
+      "ConfirmPrivateVirtualInterface",
+      "ConfirmPublicVirtualInterface",
+      "ConfirmTransitVirtualInterface",
+      "CreateBGPPeer",
+      "CreateConnection",
+      "CreateDirectConnectGateway",
+      "CreateDirectConnectGatewayAssociation",
+      "CreateDirectConnectGatewayAssociationProposal",
+      "CreateInterconnect",
+      "CreateLag",
+      "CreatePrivateVirtualInterface",
+      "CreatePublicVirtualInterface",
+      "CreateTransitVirtualInterface",
+      "DeleteBGPPeer",
+      "DeleteConnection",
+      "DeleteDirectConnectGateway",
+      "DeleteDirectConnectGatewayAssociation",
+      "DeleteDirectConnectGatewayAssociationProposal",
+      "DeleteInterconnect",
+      "DeleteLag",
+      "DeleteVirtualInterface",
+      "DisassociateConnectionFromLag",
+      "StartBgpFailoverTest",
+      "StopBgpFailoverTest",
+      "UpdateDirectConnectGatewayAssociation",
+      "UpdateLag",
+      "UpdateVirtualInterfaceAttributes"
+    ],
+    "Read": [
+      "DescribeConnectionLoa",
+      "DescribeConnections",
+      "DescribeConnectionsOnInterconnect",
+      "DescribeDirectConnectGatewayAssociationProposals",
+      "DescribeDirectConnectGatewayAssociations",
+      "DescribeDirectConnectGatewayAttachments",
+      "DescribeDirectConnectGateways",
+      "DescribeHostedConnections",
+      "DescribeInterconnectLoa",
+      "DescribeInterconnects",
+      "DescribeLags",
+      "DescribeLoa",
+      "DescribeTags",
+      "DescribeVirtualGateways",
+      "DescribeVirtualInterfaces"
+    ],
+    "List": [
+      "DescribeLocations",
+      "ListVirtualInterfaceTestHistory"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type dxcon to the statement

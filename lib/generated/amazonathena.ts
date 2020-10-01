@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [athena](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonathena.html).
@@ -7,330 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Athena extends PolicyStatement {
   public servicePrefix = 'athena';
-  protected actionList: Actions = {
-    "BatchGetNamedQuery": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetNamedQuery.html",
-      "description": "Grants permissions to get information about one or more named queries.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "BatchGetQueryExecution": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetQueryExecution.html",
-      "description": "Grants permissions to get information about one or more query executions.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "CreateDataCatalog": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateDataCatalog.html",
-      "description": "Grants permissions to create a datacatalog.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "datacatalog": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateNamedQuery": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateNamedQuery.html",
-      "description": "Grants permissions to create a named query.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "CreateWorkGroup": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateWorkGroup.html",
-      "description": "Grants permissions to create a workgroup.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "DeleteDataCatalog": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteDataCatalog.html",
-      "description": "Grants permissions to delete a datacatalog.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "datacatalog": {
-          "required": true
-        }
-      }
-    },
-    "DeleteNamedQuery": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteNamedQuery.html",
-      "description": "Grants permissions to delete a named query specified.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "DeleteWorkGroup": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteWorkGroup.html",
-      "description": "Grants permissions to delete a workgroup.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "GetDataCatalog": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetDataCatalog.html",
-      "description": "Grants permissions to get a datacatalog.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "datacatalog": {
-          "required": true
-        }
-      }
-    },
-    "GetDatabase": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetDatabase.html",
-      "description": "Grants permissions to get a database for a given datacatalog.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "datacatalog": {
-          "required": true
-        }
-      }
-    },
-    "GetNamedQuery": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetNamedQuery.html",
-      "description": "Grants permissions to get information about the specified named query.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "GetQueryExecution": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryExecution.html",
-      "description": "Grants permissions to get information about the specified query execution.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "GetQueryResults": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryResults.html",
-      "description": "Grants permissions to get the query results.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "GetQueryResultsStream": {
-      "url": "https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies",
-      "description": "Grants permissions to get the query results stream.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "GetTableMetadata": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ GetTableMetadata.html",
-      "description": "Grants permissions to get a metadata about a table for a given datacatalog.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "datacatalog": {
-          "required": true
-        }
-      }
-    },
-    "GetWorkGroup": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetWorkGroup.html",
-      "description": "Grants permissions to get a workgroup.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "ListDataCatalogs": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListDataCatalogs.html",
-      "description": "Grants permissions to return a list of datacatalogs for the specified AWS account.",
-      "accessLevel": "List"
-    },
-    "ListDatabases": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListDatabases.html",
-      "description": "Grants permissions to return a list of databases for a given datacatalog.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "datacatalog": {
-          "required": true
-        }
-      }
-    },
-    "ListNamedQueries": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListNamedQueries.html",
-      "description": "Grants permissions to return a list of named queries in Amazon Athena for the specified AWS account.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "ListQueryExecutions": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListQueryExecutions.html",
-      "description": "Grants permissions to return a list of query executions for the specified AWS account.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "ListTableMetadata": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListTableMetadata.html",
-      "description": "Grants permissions to return a list of table metadata in a database for a given datacatalog.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "datacatalog": {
-          "required": true
-        }
-      }
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Grants permissions to return a list of tags for a resource.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "datacatalog": {
-          "required": true
-        },
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "ListWorkGroups": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_ListWorkGroups.html",
-      "description": "Grants permissions to return a list of workgroups for the specified AWS account.",
-      "accessLevel": "List"
-    },
-    "StartQueryExecution": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_StartQueryExecution.html",
-      "description": "Grants permissions to start a query execution using an SQL query provided as a string.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "StopQueryExecution": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_StopQueryExecution.html",
-      "description": "Grants permissions to stop the specified query execution.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_TagResource.html",
-      "description": "Grants permissions to add a tag to a resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "datacatalog": {
-          "required": true
-        },
-        "workgroup": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_UntagResource.html",
-      "description": "Grants permissions to remove a tag from a resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "datacatalog": {
-          "required": true
-        },
-        "workgroup": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateDataCatalog": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateDataCatalog.html",
-      "description": "Grants permissions to update a datacatalog.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "datacatalog": {
-          "required": true
-        }
-      }
-    },
-    "UpdateWorkGroup": {
-      "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateWorkGroup.html",
-      "description": "Grants permissions to update a workgroup.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "workgroup": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "datacatalog": {
-      "name": "datacatalog",
-      "url": "https://docs.aws.amazon.com/athena/latest/ug/datacatalogs-example-policies.html",
-      "arn": "arn:${Partition}:athena:${Region}:${Account}:datacatalog/${DataCatalogName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "workgroup": {
-      "name": "workgroup",
-      "url": "https://docs.aws.amazon.com/athena/latest/ug/example-policies-workgroup.html",
-      "arn": "arn:${Partition}:athena:${Region}:${Account}:workgroup/${WorkGroupName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [athena](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonathena.html).
@@ -703,6 +380,46 @@ export class Athena extends PolicyStatement {
     this.to('athena:UpdateWorkGroup');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "BatchGetNamedQuery",
+      "BatchGetQueryExecution",
+      "GetDataCatalog",
+      "GetDatabase",
+      "GetNamedQuery",
+      "GetQueryExecution",
+      "GetQueryResults",
+      "GetQueryResultsStream",
+      "GetTableMetadata",
+      "GetWorkGroup",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "CreateDataCatalog",
+      "CreateWorkGroup",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Write": [
+      "CreateNamedQuery",
+      "DeleteDataCatalog",
+      "DeleteNamedQuery",
+      "DeleteWorkGroup",
+      "StartQueryExecution",
+      "StopQueryExecution",
+      "UpdateDataCatalog",
+      "UpdateWorkGroup"
+    ],
+    "List": [
+      "ListDataCatalogs",
+      "ListDatabases",
+      "ListNamedQueries",
+      "ListQueryExecutions",
+      "ListTableMetadata",
+      "ListWorkGroups"
+    ]
+  };
 
   /**
    * Adds a resource of type datacatalog to the statement

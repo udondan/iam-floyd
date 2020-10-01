@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [states](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsstepfunctions.html).
@@ -7,255 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class States extends PolicyStatement {
   public servicePrefix = 'states';
-  protected actionList: Actions = {
-    "CreateActivity": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html",
-      "description": "Creates an activity. Activities must poll Step Functions using the GetActivityTask and respond using SendTask* API calls.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "activity": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateStateMachine": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateStateMachine.html",
-      "description": "Creates a state machine.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "statemachine": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "DeleteActivity": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DeleteActivity.html",
-      "description": "Deletes an activity.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "activity": {
-          "required": true
-        }
-      }
-    },
-    "DeleteStateMachine": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DeleteStateMachine.html",
-      "description": "Deletes a state machine.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "statemachine": {
-          "required": true
-        }
-      }
-    },
-    "DescribeActivity": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeActivity.html",
-      "description": "Describes an activity.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "activity": {
-          "required": true
-        }
-      }
-    },
-    "DescribeExecution": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeExecution.html",
-      "description": "Describes an execution.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "execution": {
-          "required": true
-        }
-      }
-    },
-    "DescribeStateMachine": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachine.html",
-      "description": "Describes a state machine.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "statemachine": {
-          "required": true
-        }
-      }
-    },
-    "DescribeStateMachineForExecution": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachineForExecution.html",
-      "description": "Describes state machine for an execution.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "execution": {
-          "required": true
-        }
-      }
-    },
-    "GetActivityTask": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_GetActivityTask.html",
-      "description": "Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for execution by a running state machine.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "activity": {
-          "required": true
-        }
-      }
-    },
-    "GetExecutionHistory": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_GetExecutionHistory.html",
-      "description": "Returns the history of the specified execution as a list of events. By default, the results are returned in ascending order of the timeStamp of the events.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "execution": {
-          "required": true
-        }
-      }
-    },
-    "ListActivities": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListActivities.html",
-      "description": "Lists the existing activities. The results may be split into multiple pages.",
-      "accessLevel": "List"
-    },
-    "ListExecutions": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListExecutions.html",
-      "description": "Lists the executions of a state machine that meet the filtering criteria. The results may be split into multiple pages.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "statemachine": {
-          "required": true
-        }
-      }
-    },
-    "ListStateMachines": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListStateMachines.html",
-      "description": "Lists the existing state machines. The results may be split into multiple pages.",
-      "accessLevel": "List"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListTagsForResource.html",
-      "description": "This action lists tags for an AWS Step Functions resource.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "activity": {
-          "required": false
-        },
-        "statemachine": {
-          "required": false
-        }
-      }
-    },
-    "SendTaskFailure": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskFailure.html",
-      "description": "Used by workers to report that the task identified by the taskToken failed.",
-      "accessLevel": "Write"
-    },
-    "SendTaskHeartbeat": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskHeartbeat.html",
-      "description": "Used by workers to report to the service that the task represented by the specified taskToken is still making progress.",
-      "accessLevel": "Write"
-    },
-    "SendTaskSuccess": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskSuccess.html",
-      "description": "Used by workers to report that the task identified by the taskToken completed successfully.",
-      "accessLevel": "Write"
-    },
-    "StartExecution": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html",
-      "description": "Starts a state machine execution.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "statemachine": {
-          "required": true
-        }
-      }
-    },
-    "StopExecution": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_StopExecution.html",
-      "description": "Stops an execution.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "execution": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_TagResource.html",
-      "description": "This action tags an AWS Step Functions resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "activity": {
-          "required": false
-        },
-        "statemachine": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_UntagResource.html",
-      "description": "This action removes a tag from an AWS Step Functions resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "activity": {
-          "required": false
-        },
-        "statemachine": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateStateMachine": {
-      "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_UpdateStateMachine.html",
-      "description": "Updates a state machine.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "statemachine": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "activity": {
-      "name": "activity",
-      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html",
-      "arn": "arn:${Partition}:states:${Region}:${Account}:activity:${ActivityName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "execution": {
-      "name": "execution",
-      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-executions.html",
-      "arn": "arn:${Partition}:states:${Region}:${Account}:execution:${StateMachineName}:${ExecutionId}",
-      "conditionKeys": []
-    },
-    "statemachine": {
-      "name": "statemachine",
-      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html",
-      "arn": "arn:${Partition}:states:${Region}:${Account}:stateMachine:${StateMachineName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [states](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsstepfunctions.html).
@@ -548,6 +300,39 @@ export class States extends PolicyStatement {
     this.to('states:UpdateStateMachine');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateActivity",
+      "CreateStateMachine",
+      "DeleteActivity",
+      "DeleteStateMachine",
+      "GetActivityTask",
+      "SendTaskFailure",
+      "SendTaskHeartbeat",
+      "SendTaskSuccess",
+      "StartExecution",
+      "StopExecution",
+      "UpdateStateMachine"
+    ],
+    "Read": [
+      "DescribeActivity",
+      "DescribeExecution",
+      "DescribeStateMachine",
+      "DescribeStateMachineForExecution",
+      "GetExecutionHistory",
+      "ListExecutions",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListActivities",
+      "ListStateMachines"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type activity to the statement

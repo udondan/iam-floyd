@@ -1,3 +1,7 @@
+export interface AccessLevelList {
+  [key: string]: string[];
+}
+
 /**
  * Access level classifications for the actions in a service
  *

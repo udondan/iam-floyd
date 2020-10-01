@@ -1,6 +1,7 @@
 import RegexParser = require('regex-parser');
 
 import { AccessLevel } from '../access-level';
+import { AccessLevelList } from '../access-level';
 import { PolicyStatementWithCondition } from './2-conditions';
 
 export interface Action {
@@ -12,15 +13,11 @@ export interface Action {
   dependentActions?: string[];
 }
 
-export interface Actions {
-  [key: string]: Action;
-}
-
 /**
  * Adds "action" functionality to the Policy Statement
  */
 export class PolicyStatementWithActions extends PolicyStatementWithCondition {
-  protected actionList: Actions = {};
+  protected accessLevelList: AccessLevelList = {};
   private useNotActions = false;
   protected actions: string[] = [];
   private cdkActionsApplied = false;
@@ -120,10 +117,12 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    */
   public allMatchingActions(...expressions: string[]) {
     expressions.forEach((expression) => {
-      for (const [name] of Object.entries(this.actionList)) {
-        if (name.match(RegexParser(expression))) {
-          this.to(`${this.servicePrefix}:${name}`);
-        }
+      for (const [_, actions] of Object.entries(this.accessLevelList)) {
+        actions.forEach((action) => {
+          if (action.match(RegexParser(expression))) {
+            this.to(`${this.servicePrefix}:${action}`);
+          }
+        });
       }
     });
     return this;
@@ -189,12 +188,10 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   }
 
   private addAccessLevel(accessLevel: AccessLevel) {
-    for (const [name, action] of Object.entries(this.actionList)) {
-      if (Object.values(AccessLevel).includes(accessLevel)) {
-        if (accessLevel == action.accessLevel) {
-          this.to(`${this.servicePrefix}:${name}`);
-        }
-      }
+    if (accessLevel in this.accessLevelList) {
+      this.accessLevelList[accessLevel].forEach((action) => {
+        this.to(`${this.servicePrefix}:${action}`);
+      });
     }
     return this;
   }

@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [quicksight](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonquicksight.html).
@@ -7,764 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Quicksight extends PolicyStatement {
   public servicePrefix = 'quicksight';
-  protected actionList: Actions = {
-    "CreateAdmin": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
-      "description": "CreateAdmin enables the user to provision Amazon QuickSight administrators, authors, and readers.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    },
-    "CreateDashboard": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDashboard.html",
-      "description": "Creates a dashboard from a template",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dashboard": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateGroup": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateGroup.html",
-      "description": "Create a QuickSight group.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "group": {
-          "required": true
-        }
-      }
-    },
-    "CreateGroupMembership": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateGroupMembership.html",
-      "description": "Add a QuickSight user to a QuickSight group.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "group": {
-          "required": true,
-          "conditions": [
-            "quicksight:UserName"
-          ]
-        }
-      }
-    },
-    "CreateIAMPolicyAssignment": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateIAMPolicyAssignment.html",
-      "description": "Creates an assignment with one specified IAM Policy ARN that will be assigned to specified groups or users of QuickSight.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "assignment": {
-          "required": true
-        }
-      }
-    },
-    "CreateReader": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
-      "description": "CreateReader enables the user to provision Amazon QuickSight readers.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    },
-    "CreateTemplate": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html",
-      "description": "Creates a template from an existing QuickSight analysis or template",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "template": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateTemplateAlias": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplateAlias.html",
-      "description": "Creates a template alias for a template",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "template": {
-          "required": true
-        }
-      }
-    },
-    "CreateTheme": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTheme.html",
-      "description": "Creates a QuickSight theme",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "theme": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateThemeAlias": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateThemeAlias.html",
-      "description": "Creates a theme alias for a theme",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "theme": {
-          "required": true
-        }
-      }
-    },
-    "CreateUser": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
-      "description": "CreateUser enables the user to provision Amazon QuickSight authors and readers.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    },
-    "DeleteDashboard": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteDashboard.html",
-      "description": "Deletes a dashboard",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dashboard": {
-          "required": true
-        }
-      }
-    },
-    "DeleteGroup": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteGroup.html",
-      "description": "Remove a user group from QuickSight.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "group": {
-          "required": true
-        }
-      }
-    },
-    "DeleteGroupMembership": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteGroupMembership.html",
-      "description": "Remove a user from a group so that he/she is no longer a member of the group.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "group": {
-          "required": true,
-          "conditions": [
-            "quicksight:UserName"
-          ]
-        }
-      }
-    },
-    "DeleteIAMPolicyAssignment": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteIAMPolicyAssignment.html",
-      "description": "Update an existing assignment.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "assignment": {
-          "required": true
-        }
-      }
-    },
-    "DeleteTemplate": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteTemplate.html",
-      "description": "Deletes a template",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "template": {
-          "required": true
-        }
-      }
-    },
-    "DeleteTemplateAlias": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteTemplateAlias.html",
-      "description": "Deletes the item that the specified template alias points to",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "template": {
-          "required": true
-        }
-      }
-    },
-    "DeleteTheme": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteTheme.html",
-      "description": "Deletes a theme",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "theme": {
-          "required": true
-        }
-      }
-    },
-    "DeleteThemeAlias": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteThemeAlias.html",
-      "description": "Deletes the item that the specified theme alias points to",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "theme": {
-          "required": true
-        }
-      }
-    },
-    "DeleteUser": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteUser.html",
-      "description": "Delete the QuickSight user that is associated with the identity of the IAM user/role making the call. The IAM user is not deleted as a result of this call.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    },
-    "DeleteUserByPrincipalId": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteUserByPrincipalId.html",
-      "description": "Deletes a user identified by its principal ID.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    },
-    "DescribeDashboard": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboard.html",
-      "description": "Provides a summary for a dashboard",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dashboard": {
-          "required": true
-        }
-      }
-    },
-    "DescribeDashboardPermissions": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboardPermissions.html",
-      "description": "Describes read and write permissions for a dashboard",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dashboard": {
-          "required": true
-        }
-      }
-    },
-    "DescribeGroup": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeGroup.html",
-      "description": "Return a QuickSight group’s description and ARN.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "group": {
-          "required": true
-        }
-      }
-    },
-    "DescribeIAMPolicyAssignment": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeIAMPolicyAssignment.html",
-      "description": "Describe an existing assignment.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "assignment": {
-          "required": true
-        }
-      }
-    },
-    "DescribeTemplate": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplate.html",
-      "description": "Describes a template's metadata",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "template": {
-          "required": true
-        }
-      }
-    },
-    "DescribeTemplateAlias": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplateAlias.html",
-      "description": "Describes the template alias for a template",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "template": {
-          "required": true
-        }
-      }
-    },
-    "DescribeTemplatePermissions": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplatePermissions.html",
-      "description": "Describes read and write permissions on a template",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "template": {
-          "required": true
-        }
-      }
-    },
-    "DescribeTheme": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTheme.html",
-      "description": "Describes a theme's metadata",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "theme": {
-          "required": true
-        }
-      }
-    },
-    "DescribeThemeAlias": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemeAlias.html",
-      "description": "Describes the theme alias for a theme",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "theme": {
-          "required": true
-        }
-      }
-    },
-    "DescribeThemePermissions": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemePermissions.html",
-      "description": "Describes read and write permissions on a theme",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "theme": {
-          "required": true
-        }
-      }
-    },
-    "DescribeUser": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html",
-      "description": "Return information about a user, given the user name.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    },
-    "GetAuthCode": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
-      "description": "Return an auth code representing a QuickSight user.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    },
-    "GetDashboardEmbedUrl": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html",
-      "description": "Return a QuickSight dashboard embedding URL.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dashboard": {
-          "required": true
-        }
-      }
-    },
-    "GetGroupMapping": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
-      "description": "GetGroupMapping is used only in Amazon QuickSight Enterprise edition accounts. It enables the user to use Amazon QuickSight to identify and display the Microsoft Active Directory (Microsoft Active Directory) directory groups that are mapped to roles in Amazon QuickSight.",
-      "accessLevel": "Read"
-    },
-    "ListDashboardVersions": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListDashboardVersions.html",
-      "description": "Lists all the versions of the dashboards in the QuickSight subscription",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "dashboard": {
-          "required": true
-        }
-      }
-    },
-    "ListDashboards": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListDashboards.html",
-      "description": "Lists dashboards in an AWS account",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "dashboard": {
-          "required": true
-        }
-      }
-    },
-    "ListGroupMemberships": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListGroupMemberships.html",
-      "description": "Return a list of member users in a group.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "group": {
-          "required": true
-        }
-      }
-    },
-    "ListGroups": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListGroups.html",
-      "description": "Get a list of all user groups in QuickSight.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "group": {
-          "required": true
-        }
-      }
-    },
-    "ListIAMPolicyAssignments": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListIAMPolicyAssignments.html",
-      "description": "List all assignments in the current Amazon QuickSight account.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "assignment": {
-          "required": true
-        }
-      }
-    },
-    "ListIAMPolicyAssignmentsForUser": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListIAMPolicyAssignmentsForUser.html",
-      "description": "List all assignments assigned to a user and the groups it belongs",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "assignment": {
-          "required": true
-        }
-      }
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListTagsForResource.html",
-      "description": "List tags of a QuickSight resource.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "dashboard": {
-          "required": false
-        },
-        "template": {
-          "required": false
-        },
-        "theme": {
-          "required": false
-        }
-      }
-    },
-    "ListTemplateAliases": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListTemplateAliases.html",
-      "description": "Lists all the aliases of a template",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "template": {
-          "required": true
-        }
-      }
-    },
-    "ListTemplateVersions": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListTemplateVersions.html",
-      "description": "Lists all the versions of the templates in the current Amazon QuickSight account",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "template": {
-          "required": true
-        }
-      }
-    },
-    "ListTemplates": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListTemplates.html",
-      "description": "Lists all the templates in the current Amazon QuickSight account",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "template": {
-          "required": true
-        }
-      }
-    },
-    "ListThemeAliases": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListThemeAliases.html",
-      "description": "Lists all the aliases of a theme",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "theme": {
-          "required": true
-        }
-      }
-    },
-    "ListThemeVersions": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListThemeVersions.html",
-      "description": "Lists all the versions of a theme",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "theme": {
-          "required": true
-        }
-      }
-    },
-    "ListThemes": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListThemes.html",
-      "description": "Lists all the themes in the current Amazon QuickSight account",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "theme": {
-          "required": true
-        }
-      }
-    },
-    "ListUserGroups": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListUserGroups.html",
-      "description": "Return a list of groups that a given user is a member of.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    },
-    "ListUsers": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListUsers.html",
-      "description": "Return a list of all of the QuickSight users belonging to this account.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    },
-    "RegisterUser": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html",
-      "description": "Create a QuickSight user, whose identity is associated with the IAM identity/role specified in the request.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "user": {
-          "required": true,
-          "conditions": [
-            "quicksight:IamArn",
-            "quicksight:SessionName"
-          ]
-        }
-      }
-    },
-    "SearchDirectoryGroups": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
-      "description": "SearchDirectoryGroups is used only in Amazon QuickSight Enterprise edition accounts. It enables the user to use Amazon QuickSight to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight.",
-      "accessLevel": "Write"
-    },
-    "SetGroupMapping": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
-      "description": "SearchDirectoryGroups is used only in Amazon QuickSight Enterprise edition accounts. It enables the user to use Amazon QuickSight to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight.",
-      "accessLevel": "Write"
-    },
-    "Subscribe": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
-      "description": "Subscribe enables the user to subscribe to Amazon QuickSight. Enabling this action also allows the user to upgrade the subscription to Enterprise edition.",
-      "accessLevel": "Write"
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagResource.html",
-      "description": "Add tags to a QuickSight resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "dashboard": {
-          "required": false
-        },
-        "template": {
-          "required": false
-        },
-        "theme": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "Unsubscribe": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
-      "description": "Unsubscribe enables the user to unsubscribe from Amazon QuickSight, which permanently deletes all users and their resources from Amazon QuickSight.",
-      "accessLevel": "Write"
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UntagResource.html",
-      "description": "Remove tags from a QuickSight resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "dashboard": {
-          "required": false
-        },
-        "template": {
-          "required": false
-        },
-        "theme": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateDashboard": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboard.html",
-      "description": "Updates a dashboard in an AWS account",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dashboard": {
-          "required": true
-        }
-      }
-    },
-    "UpdateDashboardPermissions": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPermissions.html",
-      "description": "Updates read and write permissions on a dashboard",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dashboard": {
-          "required": true
-        }
-      }
-    },
-    "UpdateDashboardPublishedVersion": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPublishedVersion.html",
-      "description": "Updates the published version of a dashboard",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dashboard": {
-          "required": true
-        }
-      }
-    },
-    "UpdateGroup": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateGroup.html",
-      "description": "Change group description.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "group": {
-          "required": true
-        }
-      }
-    },
-    "UpdateIAMPolicyAssignment": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateIAMPolicyAssignment.html",
-      "description": "Update an existing assignment.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "assignment": {
-          "required": true
-        }
-      }
-    },
-    "UpdateTemplate": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTemplate.html",
-      "description": "Updates a template from an existing Amazon QuickSight analysis or another template",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "template": {
-          "required": true
-        }
-      }
-    },
-    "UpdateTemplateAlias": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTemplateAlias.html",
-      "description": "Updates the template alias of a template",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "template": {
-          "required": true
-        }
-      }
-    },
-    "UpdateTemplatePermissions": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTemplatePermissions.html",
-      "description": "Updates the resource permissions for a template",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "template": {
-          "required": true
-        }
-      }
-    },
-    "UpdateTheme": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTheme.html",
-      "description": "Updates a theme",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "theme": {
-          "required": true
-        }
-      }
-    },
-    "UpdateThemeAlias": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemeAlias.html",
-      "description": "Updates the theme alias of a theme",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "theme": {
-          "required": true
-        }
-      }
-    },
-    "UpdateThemePermissions": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html",
-      "description": "Updates the resource permissions for a theme",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "theme": {
-          "required": true
-        }
-      }
-    },
-    "UpdateUser": {
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html",
-      "description": "Updates an Amazon QuickSight user.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "user": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "user": {
-      "name": "user",
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_User.html",
-      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:user/${ResourceId}",
-      "conditionKeys": []
-    },
-    "group": {
-      "name": "group",
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Group.html",
-      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:group/${ResourceId}",
-      "conditionKeys": []
-    },
-    "dashboard": {
-      "name": "dashboard",
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Dashboard.html",
-      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:dashboard/${ResourceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "template": {
-      "name": "template",
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Template.html",
-      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:template/${ResourceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "theme": {
-      "name": "theme",
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Theme.html",
-      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:theme/${ResourceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "assignment": {
-      "name": "assignment",
-      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_IAMPolicyAssignment.html",
-      "arn": "arn:${Partition}:quicksight::${Account}:assignment/${ResourceId}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [quicksight](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonquicksight.html).
@@ -1621,6 +864,86 @@ export class Quicksight extends PolicyStatement {
     this.to('quicksight:UpdateUser');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateAdmin",
+      "CreateDashboard",
+      "CreateGroup",
+      "CreateGroupMembership",
+      "CreateIAMPolicyAssignment",
+      "CreateReader",
+      "CreateTemplate",
+      "CreateTemplateAlias",
+      "CreateTheme",
+      "CreateThemeAlias",
+      "CreateUser",
+      "DeleteDashboard",
+      "DeleteGroup",
+      "DeleteGroupMembership",
+      "DeleteIAMPolicyAssignment",
+      "DeleteTemplate",
+      "DeleteTemplateAlias",
+      "DeleteTheme",
+      "DeleteThemeAlias",
+      "DeleteUser",
+      "DeleteUserByPrincipalId",
+      "RegisterUser",
+      "SearchDirectoryGroups",
+      "SetGroupMapping",
+      "Subscribe",
+      "Unsubscribe",
+      "UpdateDashboard",
+      "UpdateDashboardPermissions",
+      "UpdateDashboardPublishedVersion",
+      "UpdateGroup",
+      "UpdateIAMPolicyAssignment",
+      "UpdateTemplate",
+      "UpdateTemplateAlias",
+      "UpdateTemplatePermissions",
+      "UpdateTheme",
+      "UpdateThemeAlias",
+      "UpdateThemePermissions",
+      "UpdateUser"
+    ],
+    "Read": [
+      "DescribeDashboard",
+      "DescribeDashboardPermissions",
+      "DescribeGroup",
+      "DescribeIAMPolicyAssignment",
+      "DescribeTemplate",
+      "DescribeTemplateAlias",
+      "DescribeTemplatePermissions",
+      "DescribeTheme",
+      "DescribeThemeAlias",
+      "DescribeThemePermissions",
+      "DescribeUser",
+      "GetAuthCode",
+      "GetDashboardEmbedUrl",
+      "GetGroupMapping"
+    ],
+    "List": [
+      "ListDashboardVersions",
+      "ListDashboards",
+      "ListGroupMemberships",
+      "ListGroups",
+      "ListIAMPolicyAssignments",
+      "ListIAMPolicyAssignmentsForUser",
+      "ListTagsForResource",
+      "ListTemplateAliases",
+      "ListTemplateVersions",
+      "ListTemplates",
+      "ListThemeAliases",
+      "ListThemeVersions",
+      "ListThemes",
+      "ListUserGroups",
+      "ListUsers"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type user to the statement

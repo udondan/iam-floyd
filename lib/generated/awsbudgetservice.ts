@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [budgets](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbudgetservice.html).
@@ -7,36 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Budgets extends PolicyStatement {
   public servicePrefix = 'budgets';
-  protected actionList: Actions = {
-    "ModifyBudget": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
-      "description": "Grants permissions to modify budgets and budget details",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "budget": {
-          "required": true
-        }
-      }
-    },
-    "ViewBudget": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
-      "description": "Grants permissions to view budgets and budget details",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "budget": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "budget": {
-      "name": "budget",
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html",
-      "arn": "arn:${Partition}:budgets::${Account}:budget/${BudgetName}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [budgets](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbudgetservice.html).
@@ -70,6 +41,15 @@ export class Budgets extends PolicyStatement {
     this.to('budgets:ViewBudget');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "ModifyBudget"
+    ],
+    "Read": [
+      "ViewBudget"
+    ]
+  };
 
   /**
    * Adds a resource of type budget to the statement

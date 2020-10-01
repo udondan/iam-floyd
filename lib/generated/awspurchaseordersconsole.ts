@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [purchase-orders](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awspurchaseordersconsole.html).
@@ -7,19 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class PurchaseOrders extends PolicyStatement {
   public servicePrefix = 'purchase-orders';
-  protected actionList: Actions = {
-    "ModifyPurchaseOrders": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
-      "description": "Modify purchase orders and details",
-      "accessLevel": "Write"
-    },
-    "ViewPurchaseOrders": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
-      "description": "View purchase orders and details",
-      "accessLevel": "Read"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [purchase-orders](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awspurchaseordersconsole.html).
@@ -53,4 +41,13 @@ export class PurchaseOrders extends PolicyStatement {
     this.to('purchase-orders:ViewPurchaseOrders');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "ModifyPurchaseOrders"
+    ],
+    "Read": [
+      "ViewPurchaseOrders"
+    ]
+  };
 }

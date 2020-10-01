@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [aws-marketplace-entitlement-service](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceentitlementservice.html).
@@ -7,14 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class AwsMarketplaceEntitlementService extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-entitlement-service';
-  protected actionList: Actions = {
-    "GetEntitlements": {
-      "url": "",
-      "description": "Retrieves entitlement values for a given product. The results can be filtered based on customer identifier or product dimensions",
-      "accessLevel": "Read"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [aws-marketplace-entitlement-service](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceentitlementservice.html).
@@ -34,4 +27,10 @@ export class AwsMarketplaceEntitlementService extends PolicyStatement {
     this.to('aws-marketplace-entitlement-service:GetEntitlements');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "GetEntitlements"
+    ]
+  };
 }

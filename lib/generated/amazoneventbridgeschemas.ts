@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [schemas](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoneventbridgeschemas.html).
@@ -7,354 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Schemas extends PolicyStatement {
   public servicePrefix = 'schemas';
-  protected actionList: Actions = {
-    "CreateDiscoverer": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#CreateDiscoverer",
-      "description": "Creates an event schema discoverer. Once created, your events will be automatically map into corresponding schema documents",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "discoverer": {
-          "required": true
-        }
-      }
-    },
-    "CreateRegistry": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#CreateRegistry",
-      "description": "Create a new schema registry in your account.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "registry": {
-          "required": true
-        }
-      }
-    },
-    "CreateSchema": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#CreateSchema",
-      "description": "Create a new schema in your account.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "schema": {
-          "required": true
-        }
-      }
-    },
-    "DeleteDiscoverer": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#DeleteDiscoverer",
-      "description": "Deletes discoverer in your account.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "discoverer": {
-          "required": true
-        }
-      }
-    },
-    "DeleteRegistry": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#DeleteRegistry",
-      "description": "Deletes an existing registry in your account.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "registry": {
-          "required": true
-        }
-      }
-    },
-    "DeleteResourcePolicy": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-policy.html#DeleteResourcePolicy",
-      "description": "Delete the resource-based policy attached to a given registry.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "registry": {
-          "required": true
-        }
-      }
-    },
-    "DeleteSchema": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#DeleteSchema",
-      "description": "Deletes an existing schema in your account.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "schema": {
-          "required": true
-        }
-      }
-    },
-    "DeleteSchemaVersion": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-version-schemaversion.html#DeleteSchemaVersion",
-      "description": "Deletes a specific version of schema in your account.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "schema": {
-          "required": true
-        }
-      }
-    },
-    "DescribeCodeBinding": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-language-language.html#DescribeCodeBinding",
-      "description": "Retrieves metadata for generated code for specific schema in your account.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "schema": {
-          "required": true
-        }
-      }
-    },
-    "DescribeDiscoverer": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#DescribeDiscoverer",
-      "description": "Retrieves discoverer metadata in your account.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "discoverer": {
-          "required": true
-        }
-      }
-    },
-    "DescribeRegistry": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#DescribeRegistry",
-      "description": "Describes an existing registry metadata in your account.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "registry": {
-          "required": true
-        }
-      }
-    },
-    "DescribeSchema": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#DescribeSchema",
-      "description": "Retrieves an existing schema in your account.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "schema": {
-          "required": true
-        }
-      }
-    },
-    "GetCodeBindingSource": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-language-language-source.html#GetCodeBindingSource",
-      "description": "Retrieves metadata for generated code for specific schema in your account.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "schema": {
-          "required": true
-        }
-      }
-    },
-    "GetDiscoveredSchema": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discover.html#GetDiscoveredSchema",
-      "description": "Retrieves schema for the provided list of sample events.",
-      "accessLevel": "Read"
-    },
-    "GetResourcePolicy": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-policy.html#GetResourcePolicy",
-      "description": "Retrieves the resource-based policy attached to a given registry.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "registry": {
-          "required": true
-        }
-      }
-    },
-    "ListDiscoverers": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#ListDiscoverers",
-      "description": "Lists all the discoverers in your account.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "discoverer": {
-          "required": true
-        }
-      }
-    },
-    "ListRegistries": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries.html#ListRegistries",
-      "description": "List all discoverers in your account.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "registry": {
-          "required": true
-        }
-      }
-    },
-    "ListSchemaVersions": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-versions.html#ListSchemaVersions",
-      "description": "List all versions of a schema.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "schema": {
-          "required": true
-        }
-      }
-    },
-    "ListSchemas": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas.html#ListSchemas",
-      "description": "List all schemas.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "schema": {
-          "required": true
-        }
-      }
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#ListTagsForResource",
-      "description": "This action lists tags for a resource.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "discoverer": {
-          "required": true
-        },
-        "registry": {
-          "required": true
-        },
-        "schema": {
-          "required": true
-        }
-      }
-    },
-    "PutCodeBinding": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-language-language.html#PutCodeBinding",
-      "description": "Generates code for specific schema in your account.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "schema": {
-          "required": true
-        }
-      }
-    },
-    "PutResourcePolicy": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-policy.html#PutResourcePolicy",
-      "description": "Attach resource-based policy to the specific registry.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "registry": {
-          "required": true
-        }
-      }
-    },
-    "SearchSchemas": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-search.html#SearchSchemas",
-      "description": "Searches schemas based on specified keywords in your account.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "schema": {
-          "required": true
-        }
-      }
-    },
-    "StartDiscoverer": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#StartDiscoverer",
-      "description": "Starts the specified discoverer. Once started the discoverer will automatically register schemas for published events to configured source in your account",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "discoverer": {
-          "required": true
-        }
-      }
-    },
-    "StopDiscoverer": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#StopDiscoverer",
-      "description": "Starts the specified discoverer. Once started the discoverer will automatically register schemas for published events to configured source in your account",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "discoverer": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#TagResource",
-      "description": "This action tags an resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "discoverer": {
-          "required": true
-        },
-        "registry": {
-          "required": true
-        },
-        "schema": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#UntagResource",
-      "description": "This action removes a tag from on a resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "discoverer": {
-          "required": true
-        },
-        "registry": {
-          "required": true
-        },
-        "schema": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateDiscoverer": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#UpdateDiscoverer",
-      "description": "Updates an existing discoverer in your account.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "discoverer": {
-          "required": true
-        }
-      }
-    },
-    "UpdateRegistry": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#UpdateRegistry",
-      "description": "Updates an existing registry metadata in your account.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "registry": {
-          "required": true
-        }
-      }
-    },
-    "UpdateSchema": {
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#UpdateSchema",
-      "description": "Updates an existing schema in your account.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "schema": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "discoverer": {
-      "name": "discoverer",
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html",
-      "arn": "arn:${Partition}:schemas:${Region}:${Account}:discoverer/${DiscovererId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "registry": {
-      "name": "registry",
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html",
-      "arn": "arn:${Partition}:schemas:${Region}:${Account}:registry/${RegistryName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "schema": {
-      "name": "schema",
-      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html",
-      "arn": "arn:${Partition}:schemas:${Region}:${Account}:schema/${RegistryName}/${SchemaName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [schemas](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoneventbridgeschemas.html).
@@ -731,6 +384,47 @@ export class Schemas extends PolicyStatement {
     this.to('schemas:UpdateSchema');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateDiscoverer",
+      "CreateRegistry",
+      "CreateSchema",
+      "DeleteDiscoverer",
+      "DeleteRegistry",
+      "DeleteResourcePolicy",
+      "DeleteSchema",
+      "DeleteSchemaVersion",
+      "PutCodeBinding",
+      "PutResourcePolicy",
+      "StartDiscoverer",
+      "StopDiscoverer",
+      "UpdateDiscoverer",
+      "UpdateRegistry",
+      "UpdateSchema"
+    ],
+    "Read": [
+      "DescribeCodeBinding",
+      "DescribeDiscoverer",
+      "DescribeRegistry",
+      "DescribeSchema",
+      "GetCodeBindingSource",
+      "GetDiscoveredSchema",
+      "GetResourcePolicy"
+    ],
+    "List": [
+      "ListDiscoverers",
+      "ListRegistries",
+      "ListSchemaVersions",
+      "ListSchemas",
+      "ListTagsForResource",
+      "SearchSchemas"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type discoverer to the statement

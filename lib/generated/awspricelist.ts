@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [pricing](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awspricelist.html).
@@ -7,24 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Pricing extends PolicyStatement {
   public servicePrefix = 'pricing';
-  protected actionList: Actions = {
-    "DescribeServices": {
-      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeServices.html",
-      "description": "Returns the service details for all (paginated) services (if serviceCode is not set) or service detail for a particular service (if given serviceCode).",
-      "accessLevel": "Read"
-    },
-    "GetAttributeValues": {
-      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAttributeValues.html",
-      "description": "Returns all (paginated) possible values for a given attribute.",
-      "accessLevel": "Read"
-    },
-    "GetProducts": {
-      "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetProducts.html",
-      "description": "Returns all matching products with given search criteria.",
-      "accessLevel": "Read"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [pricing](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awspricelist.html).
@@ -70,4 +53,12 @@ export class Pricing extends PolicyStatement {
     this.to('pricing:GetProducts');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "DescribeServices",
+      "GetAttributeValues",
+      "GetProducts"
+    ]
+  };
 }

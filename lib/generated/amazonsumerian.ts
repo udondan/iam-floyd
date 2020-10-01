@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [sumerian](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsumerian.html).
@@ -7,31 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Sumerian extends PolicyStatement {
   public servicePrefix = 'sumerian';
-  protected actionList: Actions = {
-    "Login": {
-      "url": "https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html",
-      "description": "Grant login access to the Sumerian console.",
-      "accessLevel": "Write"
-    },
-    "ViewRelease": {
-      "url": "https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html",
-      "description": "Grant access to view a project release.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "project": {
-      "name": "project",
-      "url": "",
-      "arn": "arn:${Partition}:sumerian:${Region}:${Account}:project:${ProjectName}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [sumerian](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsumerian.html).
@@ -65,6 +41,15 @@ export class Sumerian extends PolicyStatement {
     this.to('sumerian:ViewRelease');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "Login"
+    ],
+    "Read": [
+      "ViewRelease"
+    ]
+  };
 
   /**
    * Adds a resource of type project to the statement

@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [kinesis](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesis.html).
@@ -7,291 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Kinesis extends PolicyStatement {
   public servicePrefix = 'kinesis';
-  protected actionList: Actions = {
-    "AddTagsToStream": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_AddTagsToStream.html",
-      "description": "Adds or updates tags for the specified Amazon Kinesis stream. Each stream can have up to 10 tags.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "CreateStream": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html",
-      "description": "Creates a Amazon Kinesis stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "DecreaseStreamRetentionPeriod": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DecreaseStreamRetentionPeriod.html",
-      "description": "Decreases the stream's retention period, which is the length of time data records are accessible after they are added to the stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "DeleteStream": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteStream.html",
-      "description": "Deletes a stream and all its shards and data.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "DeregisterStreamConsumer": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeregisterStreamConsumer.html",
-      "description": "Deregisters a stream consumer with a Kinesis data stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "consumer": {
-          "required": true
-        },
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "DescribeLimits": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeLimits.html",
-      "description": "Describes the shard limits and usage for the account.",
-      "accessLevel": "Read"
-    },
-    "DescribeStream": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStream.html",
-      "description": "Describes the specified stream.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "DescribeStreamConsumer": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStreamConsumer.html",
-      "description": "Gets the description of a registered stream consumer.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "consumer": {
-          "required": true
-        },
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "DescribeStreamSummary": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStreamSummary.html",
-      "description": "Provides a summarized description of the specified Kinesis data stream without the shard list.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "DisableEnhancedMonitoring": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DisableEnhancedMonitoring.html",
-      "description": "Disables enhanced monitoring.",
-      "accessLevel": "Write"
-    },
-    "EnableEnhancedMonitoring": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_EnableEnhancedMonitoring.html",
-      "description": "API_EnableEnhancedMonitoring.html",
-      "accessLevel": "Write"
-    },
-    "GetRecords": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html",
-      "description": "Gets data records from a shard.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "GetShardIterator": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html",
-      "description": "Gets a shard iterator. A shard iterator expires five minutes after it is returned to the requester.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "IncreaseStreamRetentionPeriod": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_IncreaseStreamRetentionPeriod.html",
-      "description": "Increases the stream's retention period, which is the length of time data records are accessible after they are added to the stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "ListShards": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListShards.html",
-      "description": "Lists the shards in a stream and provides information about each shard.",
-      "accessLevel": "List"
-    },
-    "ListStreamConsumers": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreamConsumers.html",
-      "description": "Lists the stream consumers registered to receive data from a Kinesis stream using enhanced fan-out, and provides information about each consumer.",
-      "accessLevel": "List"
-    },
-    "ListStreams": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreams.html",
-      "description": "Lists your streams.",
-      "accessLevel": "List"
-    },
-    "ListTagsForStream": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListTagsForStream.html",
-      "description": "Lists the tags for the specified Amazon Kinesis stream.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "MergeShards": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_MergeShards.html",
-      "description": "Merges two adjacent shards in a stream and combines them into a single shard to reduce the stream's capacity to ingest and transport data.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "PutRecord": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html",
-      "description": "Writes a single data record from a producer into an Amazon Kinesis stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "PutRecords": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecords.html",
-      "description": "Writes multiple data records from a producer into an Amazon Kinesis stream in a single call (also referred to as a PutRecords request).",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "RegisterStreamConsumer": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_RegisterStreamConsumer.html",
-      "description": "Registers a stream consumer with a Kinesis data stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "consumer": {
-          "required": true
-        },
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "RemoveTagsFromStream": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_RemoveTagsFromStream.html",
-      "description": "Description for SplitShard",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "SplitShard": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_SplitShard.html",
-      "description": "Description for SplitShard",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "StartStreamEncryption": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_StartStreamEncryption.html",
-      "description": "Grants permission to enable or update server-side encryption using an AWS KMS key for a specified stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "kmsKey": {
-          "required": true
-        },
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "StopStreamEncryption": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_StopStreamEncryption.html",
-      "description": "Grants permission to disable server-side encryption for a specified stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "kmsKey": {
-          "required": true
-        },
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "SubscribeToShard": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_SubscribeToShard.html",
-      "description": "Listening to a specific shard with enhanced fan-out.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "consumer": {
-          "required": true
-        },
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "UpdateShardCount": {
-      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateShardCount.html",
-      "description": "Updates the shard count of the specified stream to the specified number of shards.",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "stream": {
-      "name": "stream",
-      "url": "https://docs.aws.amazon.com/kinesis/latest/dev/amazon-kinesis-streams.html",
-      "arn": "arn:${Partition}:kinesis:${Region}:${Account}:stream/${StreamName}",
-      "conditionKeys": []
-    },
-    "consumer": {
-      "name": "consumer",
-      "url": "https://docs.aws.amazon.com/kinesis/latest/dev/amazon-kinesis-consumers.html",
-      "arn": "arn:${Partition}:kinesis:${Region}:${Account}:${StreamType}/${StreamName}/consumer/${ConsumerName}:${ConsumerCreationTimpstamp}",
-      "conditionKeys": []
-    },
-    "kmsKey": {
-      "name": "kmsKey",
-      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys",
-      "arn": "arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [kinesis](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesis.html).
@@ -637,6 +353,45 @@ export class Kinesis extends PolicyStatement {
     this.to('kinesis:UpdateShardCount');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Tagging": [
+      "AddTagsToStream",
+      "RemoveTagsFromStream"
+    ],
+    "Write": [
+      "CreateStream",
+      "DecreaseStreamRetentionPeriod",
+      "DeleteStream",
+      "DeregisterStreamConsumer",
+      "DisableEnhancedMonitoring",
+      "EnableEnhancedMonitoring",
+      "IncreaseStreamRetentionPeriod",
+      "MergeShards",
+      "PutRecord",
+      "PutRecords",
+      "RegisterStreamConsumer",
+      "SplitShard",
+      "StartStreamEncryption",
+      "StopStreamEncryption",
+      "UpdateShardCount"
+    ],
+    "Read": [
+      "DescribeLimits",
+      "DescribeStream",
+      "DescribeStreamConsumer",
+      "DescribeStreamSummary",
+      "GetRecords",
+      "GetShardIterator",
+      "ListTagsForStream",
+      "SubscribeToShard"
+    ],
+    "List": [
+      "ListShards",
+      "ListStreamConsumers",
+      "ListStreams"
+    ]
+  };
 
   /**
    * Adds a resource of type stream to the statement

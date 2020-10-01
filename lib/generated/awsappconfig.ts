@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [appconfig](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappconfig.html).
@@ -7,550 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Appconfig extends PolicyStatement {
   public servicePrefix = 'appconfig';
-  protected actionList: Actions = {
-    "CreateApplication": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateApplication.html",
-      "description": "Grants permission to create an application",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateConfigurationProfile": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateConfigurationProfile.html",
-      "description": "Grants permission to create a configuration profile",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "configurationprofile": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateDeploymentStrategy": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateDeploymentStrategy.html",
-      "description": "Grants permission to create a deployment strategy",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deploymentstrategy": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateEnvironment": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateEnvironment.html",
-      "description": "Grants permission to create an environment",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "environment": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateHostedConfigurationVersion": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateHostedConfigurationVersion.html",
-      "description": "Grants permission to create a hosted configuration version",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "configurationprofile": {
-          "required": true
-        },
-        "hostedconfigurationversion": {
-          "required": true
-        }
-      }
-    },
-    "DeleteApplication": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteApplication.html",
-      "description": "Grants permission to delete an application",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        }
-      }
-    },
-    "DeleteConfigurationProfile": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteConfigurationProfile.html",
-      "description": "Grants permission to delete a configuration profile",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "configurationprofile": {
-          "required": true
-        }
-      }
-    },
-    "DeleteDeploymentStrategy": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteDeploymentStrategy.html",
-      "description": "Grants permission to delete a deployment strategy",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deploymentstrategy": {
-          "required": true
-        }
-      }
-    },
-    "DeleteEnvironment": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteEnvironment.html",
-      "description": "Grants permission to delete an environment",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "environment": {
-          "required": true
-        }
-      }
-    },
-    "DeleteHostedConfigurationVersion": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteHostedConfigurationVersion.html",
-      "description": "Grants permission to delete a hosted configuration version",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "configurationprofile": {
-          "required": true
-        },
-        "hostedconfigurationversion": {
-          "required": true
-        }
-      }
-    },
-    "GetApplication": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetApplication.html",
-      "description": "Grants permission to view details about an application",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "GetConfiguration": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetConfiguration.html",
-      "description": "Grants permission to view details about a configuration",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "configurationprofile": {
-          "required": true
-        },
-        "environment": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "GetConfigurationProfile": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetConfigurationProfile.html",
-      "description": "Grants permission to view details about a configuration profile",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "configurationprofile": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "GetDeployment": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetDeployment.html",
-      "description": "Grants permission to view details about a deployment",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "deployment": {
-          "required": true
-        },
-        "environment": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "GetDeploymentStrategy": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetDeploymentStrategy.html",
-      "description": "Grants permission to view details about a deployment strategy",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "deploymentstrategy": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "GetEnvironment": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetEnvironment.html",
-      "description": "Grants permission to view details about an environment",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "environment": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "GetHostedConfigurationVersion": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetHostedConfigurationVersion.html",
-      "description": "Grants permission to view details about a hosted configuration version",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "configurationprofile": {
-          "required": true
-        },
-        "hostedconfigurationversion": {
-          "required": true
-        }
-      }
-    },
-    "ListApplications": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListApplications.html",
-      "description": "Grants permission to list the applications in your account",
-      "accessLevel": "List"
-    },
-    "ListConfigurationProfiles": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListConfigurationProfiles.html",
-      "description": "Grants permission to list the configuration profiles for an application",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        }
-      }
-    },
-    "ListDeploymentStrategies": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListDeploymentStrategies.html",
-      "description": "Grants permission to list the deployment strategies for your account",
-      "accessLevel": "List"
-    },
-    "ListDeployments": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListDeployments.html",
-      "description": "Grants permission to list the deployments for an environment",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "environment": {
-          "required": true
-        }
-      }
-    },
-    "ListEnvironments": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListEnvironments.html",
-      "description": "Grants permission to list the environments for an application",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        }
-      }
-    },
-    "ListHostedConfigurationVersions": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListHostedConfigurationVersions.html",
-      "description": "Grants permission to list the hosted configuration versions for a configuration profile",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "configurationprofile": {
-          "required": true
-        }
-      }
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListTagsForResource.html",
-      "description": "Grants permission to view a list of resource tags for a specified resource",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "application": {
-          "required": false
-        },
-        "configurationprofile": {
-          "required": false
-        },
-        "deployment": {
-          "required": false
-        },
-        "deploymentstrategy": {
-          "required": false
-        },
-        "environment": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "StartDeployment": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StartDeployment.html",
-      "description": "Grants permission to initiate a deployment",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "configurationprofile": {
-          "required": true
-        },
-        "deployment": {
-          "required": true
-        },
-        "deploymentstrategy": {
-          "required": true
-        },
-        "environment": {
-          "required": true
-        }
-      }
-    },
-    "StopDeployment": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StopDeployment.html",
-      "description": "Grants permission to stop a deployment",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "deployment": {
-          "required": true
-        },
-        "environment": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_TagResource.html",
-      "description": "Grants permission to tag an appconfig resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "application": {
-          "required": false
-        },
-        "configurationprofile": {
-          "required": false
-        },
-        "deployment": {
-          "required": false
-        },
-        "deploymentstrategy": {
-          "required": false
-        },
-        "environment": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UntagResource.html",
-      "description": "Grants permission to untag an appconfig resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "application": {
-          "required": false
-        },
-        "configurationprofile": {
-          "required": false
-        },
-        "deployment": {
-          "required": false
-        },
-        "deploymentstrategy": {
-          "required": false
-        },
-        "environment": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateApplication": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateApplication.html",
-      "description": "Grants permission to modify an application",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "UpdateConfigurationProfile": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateConfigurationProfile.html",
-      "description": "Grants permission to modify a configuration profile",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "configurationprofile": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "UpdateDeploymentStrategy": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateDeploymentStrategy.html",
-      "description": "Grants permission to modify a deployment strategy",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deploymentstrategy": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "UpdateEnvironment": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateEnvironment.html",
-      "description": "Grants permission to modify an environment",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "environment": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "ValidateConfiguration": {
-      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ValidateConfiguration.html",
-      "description": "Grants permission to validate a configuration",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "application": {
-          "required": true
-        },
-        "configurationprofile": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "application": {
-      "name": "application",
-      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-application.html",
-      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "environment": {
-      "name": "environment",
-      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-environment.html",
-      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "configurationprofile": {
-      "name": "configurationprofile",
-      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html",
-      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/configurationprofile/${ConfigurationProfileId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "deploymentstrategy": {
-      "name": "deploymentstrategy",
-      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-deployment-strategy.html",
-      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:deploymentstrategy/${DeploymentStrategyId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "deployment": {
-      "name": "deployment",
-      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-deploying.html",
-      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}/deployment/${DeploymentNumber}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "hostedconfigurationversion": {
-      "name": "hostedconfigurationversion",
-      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html",
-      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/configurationprofile/${ConfigurationProfileId}/hostedconfigurationversion/${VersionNumber}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [appconfig](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappconfig.html).
@@ -1013,6 +470,50 @@ export class Appconfig extends PolicyStatement {
     this.to('appconfig:ValidateConfiguration');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateApplication",
+      "CreateConfigurationProfile",
+      "CreateDeploymentStrategy",
+      "CreateEnvironment",
+      "CreateHostedConfigurationVersion",
+      "DeleteApplication",
+      "DeleteConfigurationProfile",
+      "DeleteDeploymentStrategy",
+      "DeleteEnvironment",
+      "DeleteHostedConfigurationVersion",
+      "StartDeployment",
+      "StopDeployment",
+      "UpdateApplication",
+      "UpdateConfigurationProfile",
+      "UpdateDeploymentStrategy",
+      "UpdateEnvironment",
+      "ValidateConfiguration"
+    ],
+    "Read": [
+      "GetApplication",
+      "GetConfiguration",
+      "GetConfigurationProfile",
+      "GetDeployment",
+      "GetDeploymentStrategy",
+      "GetEnvironment",
+      "GetHostedConfigurationVersion",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListApplications",
+      "ListConfigurationProfiles",
+      "ListDeploymentStrategies",
+      "ListDeployments",
+      "ListEnvironments",
+      "ListHostedConfigurationVersions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type application to the statement

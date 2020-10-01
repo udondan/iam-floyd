@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [savingsplans](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssavingsplans.html).
@@ -7,113 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Savingsplans extends PolicyStatement {
   public servicePrefix = 'savingsplans';
-  protected actionList: Actions = {
-    "CreateSavingsPlan": {
-      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_CreateSavingsPlan.html",
-      "description": "Grants permission to create a savings plan",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "DeleteQueuedSavingsPlan": {
-      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DeleteQueuedSavingsPlan.html",
-      "description": "Grants permission to delete the queued savings plan associated with customers account",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "savingsplan": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "DescribeSavingsPlanRates": {
-      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlanRates.html",
-      "description": "Grants permission to describe the rates associated with customers savings plan",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "savingsplan": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "DescribeSavingsPlans": {
-      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlans.html",
-      "description": "Grants permission to describe the savings plans associated with customers account",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "savingsplan": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "DescribeSavingsPlansOfferingRates": {
-      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlansOfferingRates.html",
-      "description": "Grants permission to describe the rates assciated with savings plans offerings",
-      "accessLevel": "Read"
-    },
-    "DescribeSavingsPlansOfferings": {
-      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlansOfferings.html",
-      "description": "Grants permission to describe the savings plans offerings that customer is eligible to purchase",
-      "accessLevel": "Read"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Grants permission to list tags for a savings plan",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "savingsplan": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_TagResource.html",
-      "description": "Grants permission to tag a savings plan",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "savingsplan": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_UntagResource.html",
-      "description": "Grants permission to untag a savings plan",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "savingsplan": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "savingsplan": {
-      "name": "savingsplan",
-      "url": "https://docs.aws.amazon.com/savingsplans/latest/userguide/API_SavingsPlan.html",
-      "arn": "arn:${Partition}:savingsplans::${Account}:savingsplan/${ResourceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [savingsplans](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssavingsplans.html).
@@ -251,6 +145,26 @@ export class Savingsplans extends PolicyStatement {
     this.to('savingsplans:UntagResource');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateSavingsPlan",
+      "DeleteQueuedSavingsPlan"
+    ],
+    "Read": [
+      "DescribeSavingsPlanRates",
+      "DescribeSavingsPlans",
+      "DescribeSavingsPlansOfferingRates",
+      "DescribeSavingsPlansOfferings"
+    ],
+    "List": [
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type savingsplan to the statement

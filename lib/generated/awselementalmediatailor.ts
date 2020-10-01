@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [mediatailor](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediatailor.html).
@@ -7,80 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Mediatailor extends PolicyStatement {
   public servicePrefix = 'mediatailor';
-  protected actionList: Actions = {
-    "DeletePlaybackConfiguration": {
-      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html",
-      "description": "Deletes the playback configuration for the specified name",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "playbackConfiguration": {
-          "required": true
-        }
-      }
-    },
-    "GetPlaybackConfiguration": {
-      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html",
-      "description": "Grants permission to retrieve the configuration for the specified name",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "playbackConfiguration": {
-          "required": true
-        }
-      }
-    },
-    "ListPlaybackConfigurations": {
-      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfigurations.html",
-      "description": "Grants permission to retrieve the list of available configurations",
-      "accessLevel": "List"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html",
-      "description": "Returns a list of the tags assigned to the specified playback configuration resource.",
-      "accessLevel": "Read"
-    },
-    "PutPlaybackConfiguration": {
-      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration.html",
-      "description": "Grants permission to add a new configuration",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "playbackConfiguration": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html",
-      "description": "Adds tags to the specified playback configuration resource.",
-      "accessLevel": "Tagging",
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html",
-      "description": "Removes tags from the specified playback configuration resource.",
-      "accessLevel": "Tagging",
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "playbackConfiguration": {
-      "name": "playbackConfiguration",
-      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration.html",
-      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:playbackConfiguration/${ResourceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [mediatailor](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediatailor.html).
@@ -186,6 +113,24 @@ export class Mediatailor extends PolicyStatement {
     this.to('mediatailor:UntagResource');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "DeletePlaybackConfiguration",
+      "PutPlaybackConfiguration"
+    ],
+    "Read": [
+      "GetPlaybackConfiguration",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListPlaybackConfigurations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type playbackConfiguration to the statement

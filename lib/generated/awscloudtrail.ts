@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [cloudtrail](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudtrail.html).
@@ -7,174 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Cloudtrail extends PolicyStatement {
   public servicePrefix = 'cloudtrail';
-  protected actionList: Actions = {
-    "AddTags": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AddTags.html",
-      "description": "Grants permission to add one or more tags to a trail, up to a limit of 10",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "trail": {
-          "required": true
-        }
-      }
-    },
-    "CreateTrail": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateTrail.html",
-      "description": "Grants permission to create a trail that specifies the settings for delivery of log data to an Amazon S3 bucket",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "s3:PutObject"
-      ],
-      "resourceTypes": {
-        "trail": {
-          "required": true
-        }
-      }
-    },
-    "DeleteTrail": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DeleteTrail.html",
-      "description": "Grants permission to delete a trail",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "trail": {
-          "required": true
-        }
-      }
-    },
-    "DescribeTrails": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DescribeTrails.html",
-      "description": "Grants permission to list settings for the trails associated with the current region for your account",
-      "accessLevel": "Read"
-    },
-    "GetEventSelectors": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetEventSelectors.html",
-      "description": "Grants permission to list settings for event selectors configured for a trail",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "trail": {
-          "required": true
-        }
-      }
-    },
-    "GetInsightSelectors": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetInsightSelectors.html",
-      "description": "Grants permission to list CloudTrail Insights selectors that are configured for a trail",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "trail": {
-          "required": true
-        }
-      }
-    },
-    "GetTrail": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetTrail.html",
-      "description": "Grants permission to list settings for the trail",
-      "accessLevel": "Read"
-    },
-    "GetTrailStatus": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetTrailStatus.html",
-      "description": "Grants permission to retrieve a JSON-formatted list of information about the specified trail",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "trail": {
-          "required": true
-        }
-      }
-    },
-    "ListPublicKeys": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListPublicKeys.html",
-      "description": "Grants permission to list the public keys whose private keys were used to sign trail digest files within a specified time range",
-      "accessLevel": "Read"
-    },
-    "ListTags": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListTags.html",
-      "description": "Grants permission to list the tags for trails in the current region",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "trail": {
-          "required": true
-        }
-      }
-    },
-    "ListTrails": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListTrails.html",
-      "description": "Grants permission to list trails associated with the current region for your account",
-      "accessLevel": "List"
-    },
-    "LookupEvents": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html",
-      "description": "Grants permission to look up API activity events captured by CloudTrail that create, update, or delete resources in your account",
-      "accessLevel": "Read"
-    },
-    "PutEventSelectors": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_PutEventSelectors.html",
-      "description": "Grants permission to create and update event selectors for a trail",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "trail": {
-          "required": true
-        }
-      }
-    },
-    "PutInsightSelectors": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_PutInsightSelectors.html",
-      "description": "Grants permission to create and update CloudTrail Insights selectors for a trail",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "trail": {
-          "required": true
-        }
-      }
-    },
-    "RemoveTags": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_RemoveTags.html",
-      "description": "Grants permission to remove tags from a trail",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "trail": {
-          "required": true
-        }
-      }
-    },
-    "StartLogging": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StartLogging.html",
-      "description": "Grants permission to start the recording of AWS API calls and log file delivery for a trail",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "trail": {
-          "required": true
-        }
-      }
-    },
-    "StopLogging": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StopLogging.html",
-      "description": "Grants permission to stop the recording of AWS API calls and log file delivery for a trail",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "trail": {
-          "required": true
-        }
-      }
-    },
-    "UpdateTrail": {
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateTrail.html",
-      "description": "Grants permission to update the settings that specify delivery of log files",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "trail": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "trail": {
-      "name": "trail",
-      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/how-cloudtrail-works.html",
-      "arn": "arn:${Partition}:cloudtrail:${Region}:${Account}:trail/${TrailName}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [cloudtrail](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudtrail.html).
@@ -403,6 +236,35 @@ export class Cloudtrail extends PolicyStatement {
     this.to('cloudtrail:UpdateTrail');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Tagging": [
+      "AddTags",
+      "RemoveTags"
+    ],
+    "Write": [
+      "CreateTrail",
+      "DeleteTrail",
+      "PutEventSelectors",
+      "PutInsightSelectors",
+      "StartLogging",
+      "StopLogging",
+      "UpdateTrail"
+    ],
+    "Read": [
+      "DescribeTrails",
+      "GetEventSelectors",
+      "GetInsightSelectors",
+      "GetTrail",
+      "GetTrailStatus",
+      "ListPublicKeys",
+      "ListTags",
+      "LookupEvents"
+    ],
+    "List": [
+      "ListTrails"
+    ]
+  };
 
   /**
    * Adds a resource of type trail to the statement

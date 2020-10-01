@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [robomaker](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsrobomaker.html).
@@ -7,507 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Robomaker extends PolicyStatement {
   public servicePrefix = 'robomaker';
-  protected actionList: Actions = {
-    "BatchDescribeSimulationJob": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_BatchDescribeSimulationJob.html",
-      "description": "Describe multiple simulation jobs",
-      "accessLevel": "Read"
-    },
-    "CancelDeploymentJob": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CancelDeploymentJob.html",
-      "description": "Cancel a deployment job",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deploymentJob": {
-          "required": true
-        }
-      }
-    },
-    "CancelSimulationJob": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CancelSimulationJob.html",
-      "description": "Cancel a simulation job",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "simulationJob": {
-          "required": true
-        }
-      }
-    },
-    "CancelSimulationJobBatch": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CancelSimulationJobBatch.html",
-      "description": "Cancel a simulation job batch",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "simulationJobBatch": {
-          "required": true
-        }
-      }
-    },
-    "CreateDeploymentJob": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateDeploymentJob.html",
-      "description": "Create a deployment job",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "iam:CreateServiceLinkedRole"
-      ],
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "CreateFleet": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateFleet.html",
-      "description": "Create a deployment fleet that represents a logical group of robots running the same robot application",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "CreateRobot": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobot.html",
-      "description": "Create a robot that can be registered to a fleet",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "iam:CreateServiceLinkedRole"
-      ],
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "CreateRobotApplication": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobotApplication.html",
-      "description": "Create a robot application",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "CreateRobotApplicationVersion": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobotApplicationVersion.html",
-      "description": "Create a snapshot of a robot application",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "s3:GetObject"
-      ],
-      "resourceTypes": {
-        "robotApplication": {
-          "required": true
-        }
-      }
-    },
-    "CreateSimulationApplication": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationApplication.html",
-      "description": "Create a simulation application",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "CreateSimulationApplicationVersion": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationApplicationVersion.html",
-      "description": "Create a snapshot of a simulation application",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "s3:GetObject"
-      ],
-      "resourceTypes": {
-        "simulationApplication": {
-          "required": true
-        }
-      }
-    },
-    "CreateSimulationJob": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationJob.html",
-      "description": "Create a simulation job",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "iam:CreateServiceLinkedRole"
-      ],
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "DeleteFleet": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_DeleteFleet.html",
-      "description": "Delete a deployment fleet",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deploymentFleet": {
-          "required": true
-        }
-      }
-    },
-    "DeleteRobot": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_DeleteRobot.html",
-      "description": "Delete a robot",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "robot": {
-          "required": true
-        }
-      }
-    },
-    "DeleteRobotApplication": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_DeleteRobotApplication.html",
-      "description": "Delete a robot application",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "robotApplication": {
-          "required": true
-        }
-      }
-    },
-    "DeleteSimulationApplication": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_DeleteSimulationApplication.html",
-      "description": "Delete a simulation application",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "simulationApplication": {
-          "required": true
-        }
-      }
-    },
-    "DeregisterRobot": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_DeregisterRobot.html",
-      "description": "Deregister a robot from a fleet",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deploymentFleet": {
-          "required": true
-        },
-        "robot": {
-          "required": true
-        }
-      }
-    },
-    "DescribeDeploymentJob": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeDeploymentJob.html",
-      "description": "Describe a deployment job",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "deploymentJob": {
-          "required": true
-        }
-      }
-    },
-    "DescribeFleet": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeFleet.html",
-      "description": "Describe a deployment fleet",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "deploymentFleet": {
-          "required": true
-        }
-      }
-    },
-    "DescribeRobot": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeRobot.html",
-      "description": "Describe a robot",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "robot": {
-          "required": true
-        }
-      }
-    },
-    "DescribeRobotApplication": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeRobotApplication.html",
-      "description": "Describe a robot application",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "robotApplication": {
-          "required": true
-        }
-      }
-    },
-    "DescribeSimulationApplication": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeSimulationApplication.html",
-      "description": "Describe a simulation application",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "simulationApplication": {
-          "required": true
-        }
-      }
-    },
-    "DescribeSimulationJob": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeSimulationJob.html",
-      "description": "Describe a simulation job",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "simulationJob": {
-          "required": true
-        }
-      }
-    },
-    "DescribeSimulationJobBatch": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeSimulationJobBatch.html",
-      "description": "Describe a simulation job batch",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "simulationJobBatch": {
-          "required": true
-        }
-      }
-    },
-    "ListDeploymentJobs": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_ListDeploymentJobs.html",
-      "description": "List deployment jobs",
-      "accessLevel": "List"
-    },
-    "ListFleets": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_ListFleets.html",
-      "description": "List fleets",
-      "accessLevel": "List"
-    },
-    "ListRobotApplications": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_ListRobotApplications.html",
-      "description": "List robot applications",
-      "accessLevel": "List"
-    },
-    "ListRobots": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_ListRobots.html",
-      "description": "List robots",
-      "accessLevel": "List"
-    },
-    "ListSimulationApplications": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_ListSimulationApplications.html",
-      "description": "List simulation applications",
-      "accessLevel": "List"
-    },
-    "ListSimulationJobBatches": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_ListSimulationJobBatches.html",
-      "description": "List simulation job batches",
-      "accessLevel": "List"
-    },
-    "ListSimulationJobs": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_ListSimulationJobs.html",
-      "description": "List simulation jobs",
-      "accessLevel": "List"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_ListTagsForResource.html",
-      "description": "List tags for a RoboMaker resource.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "deploymentFleet": {
-          "required": false
-        },
-        "deploymentJob": {
-          "required": false
-        },
-        "robot": {
-          "required": false
-        },
-        "robotApplication": {
-          "required": false
-        },
-        "simulationApplication": {
-          "required": false
-        },
-        "simulationJob": {
-          "required": false
-        },
-        "simulationJobBatch": {
-          "required": false
-        }
-      }
-    },
-    "RegisterRobot": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_RegisterRobot.html",
-      "description": "Register a robot to a fleet",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deploymentFleet": {
-          "required": true
-        },
-        "robot": {
-          "required": true
-        }
-      }
-    },
-    "RestartSimulationJob": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_RestartSimulationJob.html",
-      "description": "Restart a running simulation job",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "simulationJob": {
-          "required": true
-        }
-      }
-    },
-    "StartSimulationJobBatch": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_StartSimulationJobBatch.html",
-      "description": "Create a simulation job batch",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "iam:CreateServiceLinkedRole"
-      ],
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "SyncDeploymentJob": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_SyncDeploymentJob.html",
-      "description": "Ensures the most recently deployed robot application is deployed to all robots in the fleet",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "iam:CreateServiceLinkedRole"
-      ],
-      "resourceTypes": {
-        "deploymentFleet": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html",
-      "description": "Add tags to a RoboMaker resource",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deploymentFleet": {
-          "required": false
-        },
-        "deploymentJob": {
-          "required": false
-        },
-        "robot": {
-          "required": false
-        },
-        "robotApplication": {
-          "required": false
-        },
-        "simulationApplication": {
-          "required": false
-        },
-        "simulationJob": {
-          "required": false
-        },
-        "simulationJobBatch": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_UntagResource.html",
-      "description": "Remove tags from a RoboMaker resource",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deploymentFleet": {
-          "required": false
-        },
-        "deploymentJob": {
-          "required": false
-        },
-        "robot": {
-          "required": false
-        },
-        "robotApplication": {
-          "required": false
-        },
-        "simulationApplication": {
-          "required": false
-        },
-        "simulationJob": {
-          "required": false
-        },
-        "simulationJobBatch": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateRobotApplication": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_UpdateRobotApplication.html",
-      "description": "Update a robot application",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "robotApplication": {
-          "required": true
-        }
-      }
-    },
-    "UpdateSimulationApplication": {
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_UpdateSimulationApplication.html",
-      "description": "Update a simulation application",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "simulationApplication": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "robotApplication": {
-      "name": "robotApplication",
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/managing-robot-applications.html",
-      "arn": "arn:${Partition}:robomaker:${Region}:${Account}:robot-application/${ApplicationName}/${CreatedOnEpoch}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "simulationApplication": {
-      "name": "simulationApplication",
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/managing-simulation-applications.html",
-      "arn": "arn:${Partition}:robomaker:${Region}:${Account}:simulation-application/${ApplicationName}/${CreatedOnEpoch}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "simulationJob": {
-      "name": "simulationJob",
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/simulation.html",
-      "arn": "arn:${Partition}:robomaker:${Region}:${Account}:simulation-job/${SimulationJobId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "simulationJobBatch": {
-      "name": "simulationJobBatch",
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/simulation-job-batch.html",
-      "arn": "arn:${Partition}:robomaker:${Region}:${Account}:simulation-job-batch/${SimulationJobBatchId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "deploymentJob": {
-      "name": "deploymentJob",
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/deployment.html",
-      "arn": "arn:${Partition}:robomaker:${Region}:${Account}:deployment-job/${DeploymentJobId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "robot": {
-      "name": "robot",
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html",
-      "arn": "arn:${Partition}:robomaker:${Region}:${Account}:robot/${RobotName}/${CreatedOnEpoch}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "deploymentFleet": {
-      "name": "deploymentFleet",
-      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/managing-simulation-applications.html",
-      "arn": "arn:${Partition}:robomaker:${Region}:${Account}:deployment-fleet/${FleetName}/${CreatedOnEpoch}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [robomaker](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsrobomaker.html).
@@ -1053,6 +553,55 @@ export class Robomaker extends PolicyStatement {
     this.to('robomaker:UpdateSimulationApplication');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "BatchDescribeSimulationJob",
+      "DescribeDeploymentJob",
+      "DescribeFleet",
+      "DescribeRobot",
+      "DescribeRobotApplication",
+      "DescribeSimulationApplication",
+      "DescribeSimulationJob",
+      "DescribeSimulationJobBatch"
+    ],
+    "Write": [
+      "CancelDeploymentJob",
+      "CancelSimulationJob",
+      "CancelSimulationJobBatch",
+      "CreateDeploymentJob",
+      "CreateFleet",
+      "CreateRobot",
+      "CreateRobotApplication",
+      "CreateRobotApplicationVersion",
+      "CreateSimulationApplication",
+      "CreateSimulationApplicationVersion",
+      "CreateSimulationJob",
+      "DeleteFleet",
+      "DeleteRobot",
+      "DeleteRobotApplication",
+      "DeleteSimulationApplication",
+      "DeregisterRobot",
+      "RegisterRobot",
+      "RestartSimulationJob",
+      "StartSimulationJobBatch",
+      "SyncDeploymentJob",
+      "TagResource",
+      "UntagResource",
+      "UpdateRobotApplication",
+      "UpdateSimulationApplication"
+    ],
+    "List": [
+      "ListDeploymentJobs",
+      "ListFleets",
+      "ListRobotApplications",
+      "ListRobots",
+      "ListSimulationApplications",
+      "ListSimulationJobBatches",
+      "ListSimulationJobs",
+      "ListTagsForResource"
+    ]
+  };
 
   /**
    * Adds a resource of type robotApplication to the statement

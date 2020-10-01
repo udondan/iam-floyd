@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [mediapackage-vod](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackagevod.html).
@@ -7,191 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class MediapackageVod extends PolicyStatement {
   public servicePrefix = 'mediapackage-vod';
-  protected actionList: Actions = {
-    "CreateAsset": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets.html#assetspost",
-      "description": "Grants permission to create an asset in AWS Elemental MediaPackage",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreatePackagingConfiguration": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations.html#packaging_configurationspost",
-      "description": "Grants permission to create a packaging configuration in AWS Elemental MediaPackage",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreatePackagingGroup": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups.html#packaging_groupspost",
-      "description": "Grants permission to create a packaging group in AWS Elemental MediaPackage",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "DeleteAsset": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets-id.html#assets-iddelete",
-      "description": "Grants permission to delete an asset in AWS Elemental MediaPackage",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "assets": {
-          "required": true
-        }
-      }
-    },
-    "DeletePackagingConfiguration": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations-id.html#packaging_configurations-iddelete",
-      "description": "Grants permission to delete a packaging configuration in AWS Elemental MediaPackage",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "packaging-configurations": {
-          "required": true
-        }
-      }
-    },
-    "DeletePackagingGroup": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups-id.html#packaging_groups-iddelete",
-      "description": "Grants permission to delete a packaging group in AWS Elemental MediaPackage",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "packaging-groups": {
-          "required": true
-        }
-      }
-    },
-    "DescribeAsset": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets-id.html#assets-idget",
-      "description": "Grants permission to view the details of an asset in AWS Elemental MediaPackage",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "assets": {
-          "required": true
-        }
-      }
-    },
-    "DescribePackagingConfiguration": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations-id.html#packaging_configurations-idget",
-      "description": "Grants permission to view the details of a packaging configuration in AWS Elemental MediaPackage",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "packaging-configurations": {
-          "required": true
-        }
-      }
-    },
-    "DescribePackagingGroup": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups-id.html#packaging_groups-idget",
-      "description": "Grants permission to view the details of a packaging group in AWS Elemental MediaPackage",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "packaging-groups": {
-          "required": true
-        }
-      }
-    },
-    "ListAssets": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets.html#assetsget",
-      "description": "Grants permission to view a list of assets in AWS Elemental MediaPackage",
-      "accessLevel": "List"
-    },
-    "ListPackagingConfigurations": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations.html#packaging_configurationsget",
-      "description": "Grants permission to view a list of packaging configurations in AWS Elemental MediaPackage",
-      "accessLevel": "List"
-    },
-    "ListPackagingGroups": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups.html#packaging_groupsget",
-      "description": "Grants permission to view a list of packaging groups in AWS Elemental MediaPackage",
-      "accessLevel": "List"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/tags-resource-arn.html#tags-resource-arnget",
-      "description": "Grants permission to list the tags assigned to a PackagingGroup, PackagingConfiguration, or Asset.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "assets": {
-          "required": false
-        },
-        "packaging-configurations": {
-          "required": false
-        },
-        "packaging-groups": {
-          "required": false
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/tags-resource-arn.html#tags-resource-arnpost",
-      "description": "Grants permission to assign tags to a PackagingGroup, PackagingConfiguration, or Asset.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "assets": {
-          "required": false
-        },
-        "packaging-configurations": {
-          "required": false
-        },
-        "packaging-groups": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/tags-resource-arn.html#tags-resource-arndelete",
-      "description": "Grants permission to delete tags from a PackagingGroup, PackagingConfiguration, or Asset.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "assets": {
-          "required": false
-        },
-        "packaging-configurations": {
-          "required": false
-        },
-        "packaging-groups": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "assets": {
-      "name": "assets",
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/asset.html",
-      "arn": "arn:${Partition}:mediapackage-vod:${Region}:${Account}:assets/${AssetIdentifier}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "packaging-configurations": {
-      "name": "packaging-configurations",
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/pkg-cfig.html",
-      "arn": "arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-configurations/${PackagingConfigurationIdentifier}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "packaging-groups": {
-      "name": "packaging-groups",
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/pkg-group.html",
-      "arn": "arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-groups/${PackagingGroupIdentifier}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [mediapackage-vod](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackagevod.html).
@@ -400,6 +216,30 @@ export class MediapackageVod extends PolicyStatement {
     this.to('mediapackage-vod:UntagResource');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateAsset",
+      "CreatePackagingConfiguration",
+      "CreatePackagingGroup",
+      "DeleteAsset",
+      "DeletePackagingConfiguration",
+      "DeletePackagingGroup",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "DescribeAsset",
+      "DescribePackagingConfiguration",
+      "DescribePackagingGroup",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListAssets",
+      "ListPackagingConfigurations",
+      "ListPackagingGroups"
+    ]
+  };
 
   /**
    * Adds a resource of type assets to the statement

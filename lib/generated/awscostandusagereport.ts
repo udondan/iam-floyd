@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [cur](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscostandusagereport.html).
@@ -7,51 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Cur extends PolicyStatement {
   public servicePrefix = 'cur';
-  protected actionList: Actions = {
-    "DeleteReportDefinition": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html",
-      "description": "Delete Cost and Usage Report Definition",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "cur": {
-          "required": true
-        }
-      }
-    },
-    "DescribeReportDefinitions": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html",
-      "description": "Get Cost and Usage Report Definitions",
-      "accessLevel": "Read"
-    },
-    "ModifyReportDefinition": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/modify-report-definition.html",
-      "description": "Modify Cost and Usage Report Definition",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "cur": {
-          "required": true
-        }
-      }
-    },
-    "PutReportDefinition": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html",
-      "description": "Write Cost and Usage Report Definition",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "cur": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "cur": {
-      "name": "cur",
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports.html#enhanced-reports",
-      "arn": "arn:${Partition}:cur:${Region}:${Account}:definition/${ReportName}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [cur](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscostandusagereport.html).
@@ -109,6 +65,17 @@ export class Cur extends PolicyStatement {
     this.to('cur:PutReportDefinition');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "DeleteReportDefinition",
+      "ModifyReportDefinition",
+      "PutReportDefinition"
+    ],
+    "Read": [
+      "DescribeReportDefinitions"
+    ]
+  };
 
   /**
    * Adds a resource of type cur to the statement

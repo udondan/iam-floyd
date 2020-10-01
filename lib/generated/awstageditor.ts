@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [resource-explorer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstageditor.html).
@@ -7,27 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class ResourceExplorer extends PolicyStatement {
   public servicePrefix = 'resource-explorer';
-  protected actionList: Actions = {
-    "ListResourceTypes": {
-      "url": "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te",
-      "description": "Grants permission to retrieve the resource types currently supported by Tag Editor",
-      "accessLevel": "List"
-    },
-    "ListResources": {
-      "url": "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te",
-      "description": "Grants permission to retrieve the identifiers of the resources in the AWS account",
-      "accessLevel": "List"
-    },
-    "ListTags": {
-      "url": "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te",
-      "description": "Grants permission to retrieve the tags attached to the specified resource identifiers",
-      "accessLevel": "Read",
-      "dependentActions": [
-        "tag:GetResources"
-      ]
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [resource-explorer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstageditor.html).
@@ -76,4 +56,14 @@ export class ResourceExplorer extends PolicyStatement {
     this.to('resource-explorer:ListTags');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "List": [
+      "ListResourceTypes",
+      "ListResources"
+    ],
+    "Read": [
+      "ListTags"
+    ]
+  };
 }

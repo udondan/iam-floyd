@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [rds-db](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsiamauthentication.html).
@@ -7,26 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class RdsDb extends PolicyStatement {
   public servicePrefix = 'rds-db';
-  protected actionList: Actions = {
-    "connect": {
-      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.IAMPolicy.html",
-      "description": "Allows IAM role or user to connect to RDS database",
-      "accessLevel": "Permissions management",
-      "resourceTypes": {
-        "db-user": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "db-user": {
-      "name": "db-user",
-      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.DBAccounts.html",
-      "arn": "arn:${Partition}:rds-db:${Region}:${Account}:dbuser:${DbiResourceId}/${DbUserName}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [rds-db](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsiamauthentication.html).
@@ -48,6 +29,12 @@ export class RdsDb extends PolicyStatement {
     this.to('rds-db:connect');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Permissions management": [
+      "connect"
+    ]
+  };
 
   /**
    * Adds a resource of type db-user to the statement

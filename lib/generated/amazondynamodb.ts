@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [dynamodb](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondynamodb.html).
@@ -7,557 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Dynamodb extends PolicyStatement {
   public servicePrefix = 'dynamodb';
-  protected actionList: Actions = {
-    "BatchGetItem": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html",
-      "description": "Returns the attributes of one or more items from one or more tables",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "dynamodb:Attributes",
-        "dynamodb:LeadingKeys",
-        "dynamodb:ReturnConsumedCapacity",
-        "dynamodb:Select"
-      ]
-    },
-    "BatchWriteItem": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html",
-      "description": "Puts or deletes multiple items in one or more tables",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "dynamodb:Attributes",
-        "dynamodb:LeadingKeys",
-        "dynamodb:ReturnConsumedCapacity"
-      ]
-    },
-    "ConditionCheckItem": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ConditionCheckItem.html",
-      "description": "The ConditionCheckItem operation checks the existence of a set of attributes for the item with the given primary key",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "dynamodb:Attributes",
-        "dynamodb:LeadingKeys",
-        "dynamodb:ReturnConsumedCapacity",
-        "dynamodb:ReturnValues"
-      ]
-    },
-    "CreateBackup": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateBackup.html",
-      "description": "Creates a backup for an existing table",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "CreateGlobalTable": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateGlobalTable.html",
-      "description": "Enables the user to create a global table from an existing table",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-table": {
-          "required": true
-        },
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "CreateTable": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html",
-      "description": "The CreateTable operation adds a new table to your account",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "CreateTableReplica": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/V2gt_IAM.html",
-      "description": "Adds a new replica table",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "DeleteBackup": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteBackup.html",
-      "description": "Deletes an existing backup of a table",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "backup": {
-          "required": true
-        }
-      }
-    },
-    "DeleteItem": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html",
-      "description": "Deletes a single item in a table by primary key",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "dynamodb:Attributes",
-        "dynamodb:EnclosingOperation",
-        "dynamodb:LeadingKeys",
-        "dynamodb:ReturnConsumedCapacity",
-        "dynamodb:ReturnValues"
-      ]
-    },
-    "DeleteTable": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteTable.html",
-      "description": "The DeleteTable operation deletes a table and all of its items",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "DeleteTableReplica": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/V2gt_IAM.html",
-      "description": "Deletes a replica table and all of its items",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "DescribeBackup": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeBackup.html",
-      "description": "Describes an existing backup of a table",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "backup": {
-          "required": true
-        }
-      }
-    },
-    "DescribeContinuousBackups": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeContinuousBackups.html",
-      "description": "Checks the status of the backup restore settings on the specified table",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "DescribeContributorInsights": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeContributorInsights.html",
-      "description": "Describes the contributor insights status and related details for a given table or global secondary index",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        },
-        "index": {
-          "required": false
-        }
-      }
-    },
-    "DescribeGlobalTable": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeGlobalTable.html",
-      "description": "Returns information about the specified global table",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "global-table": {
-          "required": true
-        }
-      }
-    },
-    "DescribeGlobalTableSettings": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeGlobalTableSettings.html",
-      "description": "Returns settings information about the specified global table",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "global-table": {
-          "required": true
-        }
-      }
-    },
-    "DescribeLimits": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeLimits.html",
-      "description": "Returns the current provisioned-capacity limits for your AWS account in a region, both for the region as a whole and for any one DynamoDB table that you create there",
-      "accessLevel": "Read"
-    },
-    "DescribeReservedCapacity": {
-      "url": "",
-      "description": "Describes one or more of the Reserved Capacity purchased",
-      "accessLevel": "Read"
-    },
-    "DescribeReservedCapacityOfferings": {
-      "url": "",
-      "description": "Describes Reserved Capacity offerings that are available for purchase",
-      "accessLevel": "Read"
-    },
-    "DescribeStream": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeStream.html",
-      "description": "Returns information about a stream, including the current status of the stream, its Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "DescribeTable": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html",
-      "description": "Returns information about the table",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "DescribeTableReplicaAutoScaling": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTableReplicaAutoScaling.html",
-      "description": "Describes the auto scaling settings across all replicas of the global table",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "DescribeTimeToLive": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTimeToLive.html",
-      "description": "Gives a description of the Time to Live (TTL) status on the specified table.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "GetItem": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html",
-      "description": "The GetItem operation returns a set of attributes for the item with the given primary key",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "dynamodb:Attributes",
-        "dynamodb:EnclosingOperation",
-        "dynamodb:LeadingKeys",
-        "dynamodb:ReturnConsumedCapacity",
-        "dynamodb:Select"
-      ]
-    },
-    "GetRecords": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetRecords.html",
-      "description": "Retrieves the stream records from a given shard",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "GetShardIterator": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetShardIterator.html",
-      "description": "Returns a shard iterator",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "ListBackups": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListBackups.html",
-      "description": "List backups associated with the account and endpoint",
-      "accessLevel": "List"
-    },
-    "ListContributorInsights": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListContributorInsights.html",
-      "description": "Lists the ContributorInsightsSummary for all tables and global secondary indexes associated with the current account and endpoint",
-      "accessLevel": "List"
-    },
-    "ListGlobalTables": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListGlobalTables.html",
-      "description": "Lists all global tables that have a replica in the specified region",
-      "accessLevel": "List"
-    },
-    "ListStreams": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListStreams.html",
-      "description": "Returns an array of stream ARNs associated with the current account and endpoint",
-      "accessLevel": "Read"
-    },
-    "ListTables": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListTables.html",
-      "description": "Returns an array of table names associated with the current account and endpoint",
-      "accessLevel": "List"
-    },
-    "ListTagsOfResource": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListTagsOfResource.html",
-      "description": "List all tags on an Amazon DynamoDB resource",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "PurchaseReservedCapacityOfferings": {
-      "url": "",
-      "description": "Purchases Reserved Capacity for use with your account",
-      "accessLevel": "Write"
-    },
-    "PutItem": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html",
-      "description": "Creates a new item, or replaces an old item with a new item",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "dynamodb:Attributes",
-        "dynamodb:EnclosingOperation",
-        "dynamodb:LeadingKeys",
-        "dynamodb:ReturnConsumedCapacity",
-        "dynamodb:ReturnValues"
-      ]
-    },
-    "Query": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html",
-      "description": "Uses the primary key of a table or a secondary index to directly access items from that table or index",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        },
-        "index": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "dynamodb:Attributes",
-        "dynamodb:LeadingKeys",
-        "dynamodb:ReturnConsumedCapacity",
-        "dynamodb:ReturnValues",
-        "dynamodb:Select"
-      ]
-    },
-    "RestoreTableFromBackup": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableFromBackup.html",
-      "description": "Creates a new table from an existing backup",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "backup": {
-          "required": true
-        },
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "RestoreTableToPointInTime": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableToPointInTime.html",
-      "description": "Restores a table to a point in time",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "Scan": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Scan.html",
-      "description": "Returns one or more items and item attributes by accessing every item in a table or a secondary index",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        },
-        "index": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "dynamodb:Attributes",
-        "dynamodb:ReturnConsumedCapacity",
-        "dynamodb:ReturnValues",
-        "dynamodb:Select"
-      ]
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TagResource.html",
-      "description": "Associate a set of tags with an Amazon DynamoDB resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UntagResource.html",
-      "description": "Removes the association of tags from an Amazon DynamoDB resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "UpdateContinuousBackups": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateContinuousBackups.html",
-      "description": "Enables or disables continuous backups",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "UpdateContributorInsights": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateContributorInsights.html",
-      "description": "Updates the status for contributor insights for a specific table or global secondary index",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        },
-        "index": {
-          "required": false
-        }
-      }
-    },
-    "UpdateGlobalTable": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateGlobalTable.html",
-      "description": "Enables the user to add or remove replicas in the specified global table",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-table": {
-          "required": true
-        },
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "UpdateGlobalTableSettings": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateGlobalTableSettings.html",
-      "description": "Enables the user to update settings of the specified global table",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-table": {
-          "required": true
-        },
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "UpdateItem": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html",
-      "description": "Edits an existing item's attributes, or adds a new item to the table if it does not already exist",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "dynamodb:Attributes",
-        "dynamodb:EnclosingOperation",
-        "dynamodb:LeadingKeys",
-        "dynamodb:ReturnConsumedCapacity",
-        "dynamodb:ReturnValues"
-      ]
-    },
-    "UpdateTable": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html",
-      "description": "Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "UpdateTableReplicaAutoScaling": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTableReplicaAutoScaling.html",
-      "description": "Updates auto scaling settings on your replica table",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    },
-    "UpdateTimeToLive": {
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTimeToLive.html",
-      "description": "Enables or disables TTL for the specified table",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "table": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "index": {
-      "name": "index",
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey",
-      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/index/${IndexName}",
-      "conditionKeys": []
-    },
-    "stream": {
-      "name": "stream",
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.Streams",
-      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/stream/${StreamLabel}",
-      "conditionKeys": []
-    },
-    "table": {
-      "name": "table",
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.TablesItemsAttributes",
-      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}",
-      "conditionKeys": []
-    },
-    "backup": {
-      "name": "backup",
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/backuprestore_HowItWorks.html",
-      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/backup/${BackupName}",
-      "conditionKeys": []
-    },
-    "global-table": {
-      "name": "global-table",
-      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_HowItWorks.html",
-      "arn": "arn:${Partition}:dynamodb::${Account}:global-table/${GlobalTableName}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [dynamodb](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondynamodb.html).
@@ -1195,6 +645,65 @@ export class Dynamodb extends PolicyStatement {
     this.to('dynamodb:UpdateTimeToLive');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "BatchGetItem",
+      "ConditionCheckItem",
+      "DescribeBackup",
+      "DescribeContinuousBackups",
+      "DescribeContributorInsights",
+      "DescribeGlobalTable",
+      "DescribeGlobalTableSettings",
+      "DescribeLimits",
+      "DescribeReservedCapacity",
+      "DescribeReservedCapacityOfferings",
+      "DescribeStream",
+      "DescribeTable",
+      "DescribeTableReplicaAutoScaling",
+      "DescribeTimeToLive",
+      "GetItem",
+      "GetRecords",
+      "GetShardIterator",
+      "ListStreams",
+      "ListTagsOfResource",
+      "Query",
+      "Scan"
+    ],
+    "Write": [
+      "BatchWriteItem",
+      "CreateBackup",
+      "CreateGlobalTable",
+      "CreateTable",
+      "CreateTableReplica",
+      "DeleteBackup",
+      "DeleteItem",
+      "DeleteTable",
+      "DeleteTableReplica",
+      "PurchaseReservedCapacityOfferings",
+      "PutItem",
+      "RestoreTableFromBackup",
+      "RestoreTableToPointInTime",
+      "UpdateContinuousBackups",
+      "UpdateContributorInsights",
+      "UpdateGlobalTable",
+      "UpdateGlobalTableSettings",
+      "UpdateItem",
+      "UpdateTable",
+      "UpdateTableReplicaAutoScaling",
+      "UpdateTimeToLive"
+    ],
+    "List": [
+      "ListBackups",
+      "ListContributorInsights",
+      "ListGlobalTables",
+      "ListTables"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type index to the statement

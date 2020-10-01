@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [codebuild](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodebuild.html).
@@ -7,504 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Codebuild extends PolicyStatement {
   public servicePrefix = 'codebuild';
-  protected actionList: Actions = {
-    "BatchDeleteBuilds": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchDeleteBuilds.html",
-      "description": "Deletes one or more builds.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "BatchGetBuildBatches": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetBuildBatches.html",
-      "description": "Gets information about one or more build batches.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "BatchGetBuilds": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetBuilds.html",
-      "description": "Gets information about one or more builds.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "BatchGetProjects": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetProjects.html",
-      "description": "Gets information about one or more build projects.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "BatchGetReportGroups": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetReportGroups.html",
-      "description": "Returns an array of ReportGroup objects that are specified by the input reportGroupArns parameter.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "report-group": {
-          "required": true
-        }
-      }
-    },
-    "BatchGetReports": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetReports.html",
-      "description": "Returns an array of the Report objects specified by the input reportArns parameter.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "report-group": {
-          "required": true
-        }
-      }
-    },
-    "BatchPutCodeCoverages": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies",
-      "description": "Adds or updates information about a report.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "report-group": {
-          "required": true
-        }
-      }
-    },
-    "BatchPutTestCases": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies",
-      "description": "Adds or updates information about a report.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "report-group": {
-          "required": true
-        }
-      }
-    },
-    "CreateProject": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateProject.html",
-      "description": "Creates a build project.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateReport": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies",
-      "description": "Creates a report. A report is created when tests specified in the buildspec file for a report groups run during the build of a project.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "report-group": {
-          "required": true
-        }
-      }
-    },
-    "CreateReportGroup": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateReportGroup.html",
-      "description": "Creates a report group.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "report-group": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateWebhook": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateWebhook.html",
-      "description": "For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "DeleteBuildBatch": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteBuildBatch.html",
-      "description": "Deletes a build batch.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "DeleteOAuthToken": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies",
-      "description": "Deletes an OAuth token from a connected third-party OAuth provider. Only used in the AWS CodeBuild console.",
-      "accessLevel": "Write"
-    },
-    "DeleteProject": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteProject.html",
-      "description": "Deletes a build project.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "DeleteReport": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html",
-      "description": "Deletes a report.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "report-group": {
-          "required": true
-        }
-      }
-    },
-    "DeleteReportGroup": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReportGroup.html",
-      "description": "Deletes a report group.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "report-group": {
-          "required": true
-        }
-      }
-    },
-    "DeleteResourcePolicy": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteResourcePolicy.html",
-      "description": "Deletes a resource policy for the associated project or report group.",
-      "accessLevel": "Permissions management",
-      "resourceTypes": {
-        "project": {
-          "required": false
-        },
-        "report-group": {
-          "required": false
-        }
-      }
-    },
-    "DeleteSourceCredentials": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteSourceCredentials.html",
-      "description": "Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.",
-      "accessLevel": "Write"
-    },
-    "DeleteWebhook": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteWebhook.html",
-      "description": "For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to the repository.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "DescribeCodeCoverages": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DescribeCodeCoverages.html",
-      "description": "Returns an array of CodeCoverage objects.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "report-group": {
-          "required": true
-        }
-      }
-    },
-    "DescribeTestCases": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DescribeTestCases.html",
-      "description": "Returns an array of TestCase objects.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "report-group": {
-          "required": true
-        }
-      }
-    },
-    "GetResourcePolicy": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_GetResourcePolicy.html",
-      "description": "Returns a resource policy for the specified project or report group.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "project": {
-          "required": false
-        },
-        "report-group": {
-          "required": false
-        }
-      }
-    },
-    "ImportSourceCredentials": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ImportSourceCredentials.html",
-      "description": "Imports the source repository credentials for an AWS CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.",
-      "accessLevel": "Write"
-    },
-    "InvalidateProjectCache": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_InvalidateProjectCache.html",
-      "description": "Resets the cache for a project.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "ListBuildBatches": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildBatches.html",
-      "description": "Gets a list of build batch IDs, with each build batch ID representing a single build batch.",
-      "accessLevel": "List"
-    },
-    "ListBuildBatchesForProject": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildBatchesForProject.html",
-      "description": "Gets a list of build batch IDs for the specified build project, with each build batch ID representing a single build batch.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "ListBuilds": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuilds.html",
-      "description": "Gets a list of build IDs, with each build ID representing a single build.",
-      "accessLevel": "List"
-    },
-    "ListBuildsForProject": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildsForProject.html",
-      "description": "Gets a list of build IDs for the specified build project, with each build ID representing a single build.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "ListConnectedOAuthAccounts": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies",
-      "description": "Lists connected third-party OAuth providers. Only used in the AWS CodeBuild console.",
-      "accessLevel": "List"
-    },
-    "ListCuratedEnvironmentImages": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListCuratedEnvironmentImages.html",
-      "description": "Gets information about Docker images that are managed by AWS CodeBuild.",
-      "accessLevel": "List"
-    },
-    "ListProjects": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListProjects.html",
-      "description": "Gets a list of build project names, with each build project name representing a single build project.",
-      "accessLevel": "List"
-    },
-    "ListReportGroups": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportGroups.html",
-      "description": "Returns a list of report group ARNs. Each report group ARN represents one report group.",
-      "accessLevel": "List"
-    },
-    "ListReports": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReports.html",
-      "description": "Returns a list of report ARNs. Each report ARN representing one report.",
-      "accessLevel": "List"
-    },
-    "ListReportsForReportGroup": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html",
-      "description": "Returns a list of report ARNs that belong to the specified report group. Each report ARN represents one report.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "report-group": {
-          "required": true
-        }
-      }
-    },
-    "ListRepositories": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies",
-      "description": "Lists source code repositories from a connected third-party OAuth provider. Only used in the AWS CodeBuild console.",
-      "accessLevel": "List"
-    },
-    "ListSharedProjects": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListSharedProjects.html",
-      "description": "Returns a list of project ARNs that have been shared with the requester. Each project ARN represents one project.",
-      "accessLevel": "List"
-    },
-    "ListSharedReportGroups": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListSharedReportGroups.html",
-      "description": "Returns a list of report group ARNs that have been shared with the requester. Each report group ARN represents one report group.",
-      "accessLevel": "List"
-    },
-    "ListSourceCredentials": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListSourceCredentials.html",
-      "description": "Returns a list of SourceCredentialsInfo objects.",
-      "accessLevel": "List"
-    },
-    "PersistOAuthToken": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies",
-      "description": "Saves an OAuth token from a connected third-party OAuth provider. Only used in the AWS CodeBuild console.",
-      "accessLevel": "Write"
-    },
-    "PutResourcePolicy": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_PutResourcePolicy.html",
-      "description": "Creates a resource policy for the associated project or report group.",
-      "accessLevel": "Permissions management",
-      "resourceTypes": {
-        "project": {
-          "required": false
-        },
-        "report-group": {
-          "required": false
-        }
-      }
-    },
-    "RetryBuild": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_RetryBuild.html",
-      "description": "Retries a build.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "RetryBuildBatch": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_RetryBuildBatch.html",
-      "description": "Retries a build batch.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "StartBuild": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuild.html",
-      "description": "Starts running a build.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "StartBuildBatch": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuildBatch.html",
-      "description": "Starts running a build batch.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "StopBuild": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopBuild.html",
-      "description": "Attempts to stop running a build.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "StopBuildBatch": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopBuildBatch.html",
-      "description": "Attempts to stop running a build batch.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    },
-    "UpdateProject": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateProject.html",
-      "description": "Changes the settings of an existing build project.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateReport": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies",
-      "description": "Updates information about a report.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "report-group": {
-          "required": true
-        }
-      }
-    },
-    "UpdateReportGroup": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateReportGroup.html",
-      "description": "Changes the settings of an existing report group.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "report-group": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateWebhook": {
-      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateWebhook.html",
-      "description": "Updates the webhook associated with an AWS CodeBuild build project.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "project": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "build": {
-      "name": "build",
-      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
-      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:build/${BuildId}",
-      "conditionKeys": []
-    },
-    "build-batch": {
-      "name": "build-batch",
-      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
-      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:build-batch/${BuildBatchId}",
-      "conditionKeys": []
-    },
-    "project": {
-      "name": "project",
-      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
-      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:project/${ProjectName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "report-group": {
-      "name": "report-group",
-      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
-      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:report-group/${ReportGroupName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "report": {
-      "name": "report",
-      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
-      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:report/${ReportGroupName}:${ReportId}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [codebuild](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodebuild.html).
@@ -1142,6 +645,68 @@ export class Codebuild extends PolicyStatement {
     this.to('codebuild:UpdateWebhook');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "BatchDeleteBuilds",
+      "BatchPutCodeCoverages",
+      "BatchPutTestCases",
+      "CreateProject",
+      "CreateReport",
+      "CreateReportGroup",
+      "CreateWebhook",
+      "DeleteBuildBatch",
+      "DeleteOAuthToken",
+      "DeleteProject",
+      "DeleteReport",
+      "DeleteReportGroup",
+      "DeleteSourceCredentials",
+      "DeleteWebhook",
+      "ImportSourceCredentials",
+      "InvalidateProjectCache",
+      "PersistOAuthToken",
+      "RetryBuild",
+      "RetryBuildBatch",
+      "StartBuild",
+      "StartBuildBatch",
+      "StopBuild",
+      "StopBuildBatch",
+      "UpdateProject",
+      "UpdateReport",
+      "UpdateReportGroup",
+      "UpdateWebhook"
+    ],
+    "Read": [
+      "BatchGetBuildBatches",
+      "BatchGetBuilds",
+      "BatchGetProjects",
+      "BatchGetReportGroups",
+      "BatchGetReports",
+      "DescribeCodeCoverages",
+      "DescribeTestCases",
+      "GetResourcePolicy"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutResourcePolicy"
+    ],
+    "List": [
+      "ListBuildBatches",
+      "ListBuildBatchesForProject",
+      "ListBuilds",
+      "ListBuildsForProject",
+      "ListConnectedOAuthAccounts",
+      "ListCuratedEnvironmentImages",
+      "ListProjects",
+      "ListReportGroups",
+      "ListReports",
+      "ListReportsForReportGroup",
+      "ListRepositories",
+      "ListSharedProjects",
+      "ListSharedReportGroups",
+      "ListSourceCredentials"
+    ]
+  };
 
   /**
    * Adds a resource of type build to the statement

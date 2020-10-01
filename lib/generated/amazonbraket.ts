@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [braket](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonbraket.html).
@@ -7,39 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Braket extends PolicyStatement {
   public servicePrefix = 'braket';
-  protected actionList: Actions = {
-    "CancelQuantumTask": {
-      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_CancelQuantumTask.html",
-      "description": "Grants permission to cancel a quantum task.",
-      "accessLevel": "Write"
-    },
-    "CreateQuantumTask": {
-      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateQuantumTask.html",
-      "description": "Grants permission to create a quantum task.",
-      "accessLevel": "Write"
-    },
-    "GetDevice": {
-      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_GetDevice.html",
-      "description": "Grants permission to retrieve information about the devices available in Amazon Braket.",
-      "accessLevel": "Read"
-    },
-    "GetQuantumTask": {
-      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_GetQuantumTask.html",
-      "description": "Grants permission to retrieve quantum tasks.",
-      "accessLevel": "Read"
-    },
-    "SearchDevices": {
-      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchDevices.html",
-      "description": "Grants permission to search for devices available in Amazon Braket.",
-      "accessLevel": "Read"
-    },
-    "SearchQuantumTasks": {
-      "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchQuantumTasks.html",
-      "description": "Grants permission to search for quantum tasks.",
-      "accessLevel": "Read"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [braket](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonbraket.html).
@@ -121,4 +89,17 @@ export class Braket extends PolicyStatement {
     this.to('braket:SearchQuantumTasks');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CancelQuantumTask",
+      "CreateQuantumTask"
+    ],
+    "Read": [
+      "GetDevice",
+      "GetQuantumTask",
+      "SearchDevices",
+      "SearchQuantumTasks"
+    ]
+  };
 }

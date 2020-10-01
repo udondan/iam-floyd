@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [lambda](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html).
@@ -7,555 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Lambda extends PolicyStatement {
   public servicePrefix = 'lambda';
-  protected actionList: Actions = {
-    "AddLayerVersionPermission": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_AddLayerVersionPermission.html",
-      "description": "Grants permission to add permissions to the resource-based policy of a version of an AWS Lambda layer",
-      "accessLevel": "Permissions management",
-      "resourceTypes": {
-        "layerVersion": {
-          "required": true
-        }
-      }
-    },
-    "AddPermission": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html",
-      "description": "Grants permission to give an AWS service or another account permission to use an AWS Lambda function",
-      "accessLevel": "Permissions management",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "lambda:Principal"
-      ]
-    },
-    "CreateAlias": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateAlias.html",
-      "description": "Grants permission to create an alias for a Lambda function version",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "CreateEventSourceMapping": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateEventSourceMapping.html",
-      "description": "Grants permission to create a mapping between an event source and an AWS Lambda function",
-      "accessLevel": "Write",
-      "conditions": [
-        "lambda:FunctionArn"
-      ]
-    },
-    "CreateFunction": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html",
-      "description": "Grants permission to create an AWS Lambda function",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "lambda:Layer",
-        "lambda:VpcIds",
-        "lambda:SubnetIds",
-        "lambda:SecurityGroupIds"
-      ]
-    },
-    "DeleteAlias": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteAlias.html",
-      "description": "Grants permission to delete an AWS Lambda function alias",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "DeleteEventSourceMapping": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteEventSourceMapping.html",
-      "description": "Grants permission to delete an AWS Lambda event source mapping",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "eventSourceMapping": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "lambda:FunctionArn"
-      ]
-    },
-    "DeleteFunction": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunction.html",
-      "description": "Grants permission to delete an AWS Lambda function",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "DeleteFunctionConcurrency": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionConcurrency.html",
-      "description": "Grants permission to remove a concurrent execution limit from an AWS Lambda function",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "DeleteFunctionEventInvokeConfig": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionEventInvokeConfig.html",
-      "description": "Grants permission to delete the configuration for asynchronous invocation for an AWS Lambda function, version, or alias",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "DeleteLayerVersion": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteLayerVersion.html",
-      "description": "Grants permission to delete a version of an AWS Lambda layer",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "layerVersion": {
-          "required": true
-        }
-      }
-    },
-    "DeleteProvisionedConcurrencyConfig": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteProvisionedConcurrencyConfig.html",
-      "description": "Grants permission to delete the provisioned concurrency configuration for an AWS Lambda function",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function alias": {
-          "required": false
-        },
-        "function version": {
-          "required": false
-        }
-      }
-    },
-    "DisableReplication": {
-      "url": "",
-      "description": "Grants permission to disable replication for a Lambda@Edge function",
-      "accessLevel": "Permissions management",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "EnableReplication": {
-      "url": "",
-      "description": "Grants permission to enable replication for a Lambda@Edge function",
-      "accessLevel": "Permissions management",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "GetAccountSettings": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetAccountSettings.html",
-      "description": "Grants permission to view details about an account's limits and usage in an AWS Region",
-      "accessLevel": "Read"
-    },
-    "GetAlias": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetAlias.html",
-      "description": "Grants permission to view details about an AWS Lambda function alias",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "GetEventSourceMapping": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetEventSourceMapping.html",
-      "description": "Grants permission to view details about an AWS Lambda event source mapping",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "eventSourceMapping": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "lambda:FunctionArn"
-      ]
-    },
-    "GetFunction": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunction.html",
-      "description": "Grants permission to view details about an AWS Lambda function",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "GetFunctionConcurrency": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConcurrency.html",
-      "description": "Grants permission to view details about the reserved concurrency configuration for a function",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "GetFunctionConfiguration": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html",
-      "description": "Grants permission to view details about the version-specific settings of an AWS Lambda function or version",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "GetFunctionEventInvokeConfig": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionEventInvokeConfig.html",
-      "description": "Grants permission to view the configuration for asynchronous invocation for a function, version, or alias",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "GetLayerVersion": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetLayerVersion.html",
-      "description": "Grants permission to view details about a version of an AWS Lambda layer. Note this action also supports GetLayerVersionByArn API",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "layerVersion": {
-          "required": true
-        }
-      }
-    },
-    "GetLayerVersionPolicy": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetLayerVersionPolicy.html",
-      "description": "Grants permission to view the resource-based policy for a version of an AWS Lambda layer",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "layerVersion": {
-          "required": true
-        }
-      }
-    },
-    "GetPolicy": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetPolicy.html",
-      "description": "Grants permission to view the resource-based policy for an AWS Lambda function, version, or alias",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "GetProvisionedConcurrencyConfig": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetProvisionedConcurrencyConfig.html",
-      "description": "Grants permission to view the provisioned concurrency configuration for an AWS Lambda function's alias or version",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "function alias": {
-          "required": false
-        },
-        "function version": {
-          "required": false
-        }
-      }
-    },
-    "InvokeAsync": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_InvokeAsync.html",
-      "description": "(Deprecated) Grants permission to invoke a function asynchronously",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "InvokeFunction": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html",
-      "description": "Grants permission to invoke an AWS Lambda function",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "ListAliases": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListAliases.html",
-      "description": "Grants permission to retrieve a list of aliases for an AWS Lambda function",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "ListEventSourceMappings": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListEventSourceMappings.html",
-      "description": "Grants permission to retrieve a list of AWS Lambda event source mappings",
-      "accessLevel": "List"
-    },
-    "ListFunctionEventInvokeConfigs": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctionEventInvokeConfigs.html",
-      "description": "Grants permission to retrieve a list of configurations for asynchronous invocation for a function",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "ListFunctions": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctions.html",
-      "description": "Grants permission to retrieve a list of AWS Lambda functions, with the version-specific configuration of each function",
-      "accessLevel": "List"
-    },
-    "ListLayerVersions": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListLayerVersions.html",
-      "description": "Grants permission to retrieve a list of versions of an AWS Lambda layer",
-      "accessLevel": "List"
-    },
-    "ListLayers": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListLayers.html",
-      "description": "Grants permission to retrieve a list of AWS Lambda layers, with details about the latest version of each layer",
-      "accessLevel": "List"
-    },
-    "ListProvisionedConcurrencyConfigs": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListProvisionedConcurrencyConfigs.html",
-      "description": "Grants permission to retrieve a list of provisioned concurrency configurations for an AWS Lambda function",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "ListTags": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListTags.html",
-      "description": "Grants permission to retrieve a list of tags for an AWS Lambda function",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "ListVersionsByFunction": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListVersionsByFunction.html",
-      "description": "Grants permission to retrieve a list of versions for an AWS Lambda function",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "PublishLayerVersion": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html",
-      "description": "Grants permission to create an AWS Lambda layer",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "layer": {
-          "required": true
-        }
-      }
-    },
-    "PublishVersion": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PublishVersion.html",
-      "description": "Grants permission to create an AWS Lambda function version",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "PutFunctionConcurrency": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionConcurrency.html",
-      "description": "Grants permission to configure reserved concurrency for an AWS Lambda function",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "PutFunctionEventInvokeConfig": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionEventInvokeConfig.html",
-      "description": "Grants permission to configures options for asynchronous invocation on an AWS Lambda function, version, or alias",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "PutProvisionedConcurrencyConfig": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutProvisionedConcurrencyConfig.html",
-      "description": "Grants permission to configure provisioned concurrency for an AWS Lambda function's alias or version",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function alias": {
-          "required": false
-        },
-        "function version": {
-          "required": false
-        }
-      }
-    },
-    "RemoveLayerVersionPermission": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_RemoveLayerVersionPermission.html",
-      "description": "Grants permission to remove a statement from the permissions policy for a version of an AWS Lambda layer",
-      "accessLevel": "Permissions management",
-      "resourceTypes": {
-        "layerVersion": {
-          "required": true
-        }
-      }
-    },
-    "RemovePermission": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html",
-      "description": "Grants permission to revoke function-use permission from an AWS service or another account",
-      "accessLevel": "Permissions management",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "lambda:Principal"
-      ]
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_TagResources.html",
-      "description": "Grants permission to add tags to an AWS Lambda function",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UntagResource.html",
-      "description": "Grants permission to remove tags from an AWS Lambda function",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "UpdateAlias": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateAlias.html",
-      "description": "Grants permission to update the configuration of an AWS Lambda function's alias",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "UpdateEventSourceMapping": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateEventSourceMapping.html",
-      "description": "Grants permission to update the configuration of an AWS Lambda event source mapping",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "eventSourceMapping": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "lambda:FunctionArn"
-      ]
-    },
-    "UpdateFunctionCode": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCode.html",
-      "description": "Grants permission to update the code of an AWS Lambda function",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    },
-    "UpdateFunctionConfiguration": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionConfiguration.html",
-      "description": "Grants permission to modify the version-specific settings of an AWS Lambda function",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "lambda:Layer",
-        "lambda:VpcIds",
-        "lambda:SubnetIds",
-        "lambda:SecurityGroupIds"
-      ]
-    },
-    "UpdateFunctionEventInvokeConfig": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionEventInvokeConfig.html",
-      "description": "Grants permission to modify the configuration for asynchronous invocation for an AWS Lambda function, version, or alias",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "function": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "function": {
-      "name": "function",
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
-      "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}",
-      "conditionKeys": []
-    },
-    "function version": {
-      "name": "function version",
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
-      "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Version}",
-      "conditionKeys": []
-    },
-    "function alias": {
-      "name": "function alias",
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
-      "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Alias}",
-      "conditionKeys": []
-    },
-    "layer": {
-      "name": "layer",
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
-      "arn": "arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}",
-      "conditionKeys": []
-    },
-    "layerVersion": {
-      "name": "layerVersion",
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
-      "arn": "arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}:${LayerVersion}",
-      "conditionKeys": []
-    },
-    "eventSourceMapping": {
-      "name": "eventSourceMapping",
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
-      "arn": "arn:${Partition}:lambda:${Region}:${Account}:event-source-mapping:${UUID}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [lambda](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html).
@@ -1191,6 +643,67 @@ export class Lambda extends PolicyStatement {
     this.to('lambda:UpdateFunctionEventInvokeConfig');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Permissions management": [
+      "AddLayerVersionPermission",
+      "AddPermission",
+      "DisableReplication",
+      "EnableReplication",
+      "RemoveLayerVersionPermission",
+      "RemovePermission"
+    ],
+    "Write": [
+      "CreateAlias",
+      "CreateEventSourceMapping",
+      "CreateFunction",
+      "DeleteAlias",
+      "DeleteEventSourceMapping",
+      "DeleteFunction",
+      "DeleteFunctionConcurrency",
+      "DeleteFunctionEventInvokeConfig",
+      "DeleteLayerVersion",
+      "DeleteProvisionedConcurrencyConfig",
+      "InvokeAsync",
+      "InvokeFunction",
+      "PublishLayerVersion",
+      "PublishVersion",
+      "PutFunctionConcurrency",
+      "PutFunctionEventInvokeConfig",
+      "PutProvisionedConcurrencyConfig",
+      "TagResource",
+      "UntagResource",
+      "UpdateAlias",
+      "UpdateEventSourceMapping",
+      "UpdateFunctionCode",
+      "UpdateFunctionConfiguration",
+      "UpdateFunctionEventInvokeConfig"
+    ],
+    "Read": [
+      "GetAccountSettings",
+      "GetAlias",
+      "GetEventSourceMapping",
+      "GetFunction",
+      "GetFunctionConcurrency",
+      "GetFunctionConfiguration",
+      "GetFunctionEventInvokeConfig",
+      "GetLayerVersion",
+      "GetLayerVersionPolicy",
+      "GetPolicy",
+      "GetProvisionedConcurrencyConfig",
+      "ListTags"
+    ],
+    "List": [
+      "ListAliases",
+      "ListEventSourceMappings",
+      "ListFunctionEventInvokeConfigs",
+      "ListFunctions",
+      "ListLayerVersions",
+      "ListLayers",
+      "ListProvisionedConcurrencyConfigs",
+      "ListVersionsByFunction"
+    ]
+  };
 
   /**
    * Adds a resource of type function to the statement

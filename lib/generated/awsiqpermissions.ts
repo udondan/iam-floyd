@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [iq-permission](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiqpermissions.html).
@@ -7,14 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class IqPermission extends PolicyStatement {
   public servicePrefix = 'iq-permission';
-  protected actionList: Actions = {
-    "ApproveAccessGrant": {
-      "url": "https://aws.amazon.com/iq/",
-      "description": "Grants permission to approve an access grant",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [iq-permission](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiqpermissions.html).
@@ -36,4 +29,10 @@ export class IqPermission extends PolicyStatement {
     this.to('iq-permission:ApproveAccessGrant');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "ApproveAccessGrant"
+    ]
+  };
 }

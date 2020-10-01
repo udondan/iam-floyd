@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [cloudfront](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudfront.html).
@@ -7,490 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Cloudfront extends PolicyStatement {
   public servicePrefix = 'cloudfront';
-  protected actionList: Actions = {
-    "CreateCachePolicy": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCachePolicy.html",
-      "description": "This action adds a new cache policy to CloudFront.",
-      "accessLevel": "Write"
-    },
-    "CreateCloudFrontOriginAccessIdentity": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCloudFrontOriginAccessIdentity.html",
-      "description": "This action creates a new CloudFront origin access identity.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "origin-access-identity": {
-          "required": true
-        }
-      }
-    },
-    "CreateDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html",
-      "description": "This action creates a new web distribution.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "distribution": {
-          "required": true
-        }
-      }
-    },
-    "CreateDistributionWithTags": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistributionWithTags.html",
-      "description": "This action creates a new web distribution with tags.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "distribution": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateFieldLevelEncryptionConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFieldLevelEncryptionConfig.html",
-      "description": "This action creates a new field-level encryption configuration.",
-      "accessLevel": "Write"
-    },
-    "CreateFieldLevelEncryptionProfile": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFieldLevelEncryptionProfile.html",
-      "description": "This action creates a field-level encryption profile.",
-      "accessLevel": "Write"
-    },
-    "CreateInvalidation": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateInvalidation.html",
-      "description": "This action creates a new invalidation batch request.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "distribution": {
-          "required": true
-        }
-      }
-    },
-    "CreateOriginRequestPolicy": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateOriginRequestPolicy.html",
-      "description": "This action adds a new origin request policy to CloudFront.",
-      "accessLevel": "Write"
-    },
-    "CreatePublicKey": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreatePublicKey.html",
-      "description": "This action adds a new public key to CloudFront.",
-      "accessLevel": "Write"
-    },
-    "CreateStreamingDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateStreamingDistribution.html",
-      "description": "This action creates a new RTMP distribution.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "streaming-distribution": {
-          "required": true
-        }
-      }
-    },
-    "CreateStreamingDistributionWithTags": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateStreamingDistributionWithTags.html",
-      "description": "This action creates a new RTMP distribution with tags.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "streaming-distribution": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "DeleteCachePolicy": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteCachePolicy.html",
-      "description": "This action deletes a cache policy.",
-      "accessLevel": "Write"
-    },
-    "DeleteCloudFrontOriginAccessIdentity": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteCloudFrontOriginAccessIdentity.html",
-      "description": "This action deletes a CloudFront origin access identity.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "origin-access-identity": {
-          "required": true
-        }
-      }
-    },
-    "DeleteDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteDistribution.html",
-      "description": "This action deletes a web distribution.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "distribution": {
-          "required": true
-        }
-      }
-    },
-    "DeleteFieldLevelEncryptionConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteFieldLevelEncryptionConfig.html",
-      "description": "This action deletes a field-level encryption configuration.",
-      "accessLevel": "Write"
-    },
-    "DeleteFieldLevelEncryptionProfile": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteFieldLevelEncryptionProfile.html",
-      "description": "This action deletes a field-level encryption profile.",
-      "accessLevel": "Write"
-    },
-    "DeleteOriginRequestPolicy": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteOriginRequestPolicy.html",
-      "description": "This action deletes an origin request policy.",
-      "accessLevel": "Write"
-    },
-    "DeletePublicKey": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeletePublicKey.html",
-      "description": "This action deletes a public key from CloudFront.",
-      "accessLevel": "Write"
-    },
-    "DeleteStreamingDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteStreamingDistribution.html",
-      "description": "This action deletes an RTMP distribution.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "streaming-distribution": {
-          "required": true
-        }
-      }
-    },
-    "GetCachePolicy": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCachePolicy.html",
-      "description": "Get the cache policy",
-      "accessLevel": "Read"
-    },
-    "GetCachePolicyConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCachePolicyConfig.html",
-      "description": "Get the cache policy configuration",
-      "accessLevel": "Read"
-    },
-    "GetCloudFrontOriginAccessIdentity": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCloudFrontOriginAccessIdentity.html",
-      "description": "Get the information about a CloudFront origin access identity.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "origin-access-identity": {
-          "required": true
-        }
-      }
-    },
-    "GetCloudFrontOriginAccessIdentityConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCloudFrontOriginAccessIdentityConfig.html",
-      "description": "Get the configuration information about a Cloudfront origin access identity.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "origin-access-identity": {
-          "required": true
-        }
-      }
-    },
-    "GetDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html",
-      "description": "Get the information about a web distribution.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "distribution": {
-          "required": true
-        }
-      }
-    },
-    "GetDistributionConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html",
-      "description": "Get the configuration information about a distribution.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "distribution": {
-          "required": true
-        }
-      }
-    },
-    "GetFieldLevelEncryption": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryption.html",
-      "description": "Get the field-level encryption configuration information.",
-      "accessLevel": "Read"
-    },
-    "GetFieldLevelEncryptionConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionConfig.html",
-      "description": "Get the field-level encryption configuration information.",
-      "accessLevel": "Read"
-    },
-    "GetFieldLevelEncryptionProfile": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionProfile.html",
-      "description": "Get the field-level encryption configuration information.",
-      "accessLevel": "Read"
-    },
-    "GetFieldLevelEncryptionProfileConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionProfileConfig.html",
-      "description": "Get the field-level encryption profile configuration information.",
-      "accessLevel": "Read"
-    },
-    "GetInvalidation": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetInvalidation.html",
-      "description": "Get the information about an invalidation.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "distribution": {
-          "required": true
-        }
-      }
-    },
-    "GetOriginRequestPolicy": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetOriginRequestPolicy.html",
-      "description": "Get the origin request policy",
-      "accessLevel": "Read"
-    },
-    "GetOriginRequestPolicyConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetOriginRequestPolicyConfig.html",
-      "description": "Get the origin request policy configuration",
-      "accessLevel": "Read"
-    },
-    "GetPublicKey": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetPublicKey.html",
-      "description": "Get the public key information.",
-      "accessLevel": "Read"
-    },
-    "GetPublicKeyConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetPublicKeyConfig.html",
-      "description": "Get the public key configuration information.",
-      "accessLevel": "Read"
-    },
-    "GetStreamingDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetStreamingDistribution.html",
-      "description": "Get the information about an RTMP distribution.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "streaming-distribution": {
-          "required": true
-        }
-      }
-    },
-    "GetStreamingDistributionConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetStreamingDistributionConfig.html",
-      "description": "Get the configuration information about a streaming distribution.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "streaming-distribution": {
-          "required": true
-        }
-      }
-    },
-    "ListCachePolicies": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListCachePolicies.html",
-      "description": "List all cache policies that have been created in CloudFront for this account.",
-      "accessLevel": "List"
-    },
-    "ListCloudFrontOriginAccessIdentities": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListCloudFrontOriginAccessIdentities.html",
-      "description": "List your CloudFront origin access identities.",
-      "accessLevel": "List"
-    },
-    "ListDistributions": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributions.html",
-      "description": "List the distributions associated with your AWS account.",
-      "accessLevel": "List"
-    },
-    "ListDistributionsByCachePolicyId": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByCachePolicyId.html",
-      "description": "List distribution IDs for distributions that have a cache behavior that's associated with the specified cache policy.",
-      "accessLevel": "List"
-    },
-    "ListDistributionsByOriginRequestPolicyId": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByOriginRequestPolicyId.html",
-      "description": "List distribution IDs for distributions that have a cache behavior that's associated with the specified origin request policy.",
-      "accessLevel": "List"
-    },
-    "ListDistributionsByWebACLId": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html",
-      "description": "List the distributions associated with your AWS account with given AWS WAF web ACL.",
-      "accessLevel": "List"
-    },
-    "ListFieldLevelEncryptionConfigs": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListFieldLevelEncryptionConfigs.html",
-      "description": "List all field-level encryption configurations that have been created in CloudFront for this account.",
-      "accessLevel": "List"
-    },
-    "ListFieldLevelEncryptionProfiles": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListFieldLevelEncryptionProfiles.html",
-      "description": "List all field-level encryption profiles that have been created in CloudFront for this account.",
-      "accessLevel": "List"
-    },
-    "ListInvalidations": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListInvalidations.html",
-      "description": "List your invalidation batches.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "distribution": {
-          "required": true
-        }
-      }
-    },
-    "ListOriginRequestPolicies": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListOriginRequestPolicies.html",
-      "description": "List all origin request policies that have been created in CloudFront for this account.",
-      "accessLevel": "List"
-    },
-    "ListPublicKeys": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListPublicKeys.html",
-      "description": "List all public keys that have been added to CloudFront for this account.",
-      "accessLevel": "List"
-    },
-    "ListStreamingDistributions": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListStreamingDistributions.html",
-      "description": "List your RTMP distributions.",
-      "accessLevel": "List"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListTagsForResource.html",
-      "description": "List tags for a CloudFront resource.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "distribution": {
-          "required": false
-        },
-        "streaming-distribution": {
-          "required": false
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html",
-      "description": "Add tags to a CloudFront resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "distribution": {
-          "required": false
-        },
-        "streaming-distribution": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UntagResource.html",
-      "description": "Remove tags from a CloudFront resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "distribution": {
-          "required": false
-        },
-        "streaming-distribution": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateCachePolicy": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateCachePolicy.html",
-      "description": "This action updates a cache policy.",
-      "accessLevel": "Write"
-    },
-    "UpdateCloudFrontOriginAccessIdentity": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateCloudFrontOriginAccessIdentity.html",
-      "description": "This action sets the configuration for a CloudFront origin access identity.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "origin-access-identity": {
-          "required": true
-        }
-      }
-    },
-    "UpdateDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html",
-      "description": "This action updates the configuration for a web distribution.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "distribution": {
-          "required": true
-        }
-      }
-    },
-    "UpdateFieldLevelEncryptionConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateFieldLevelEncryptionConfig.html",
-      "description": "This action updates a field-level encryption configuration.",
-      "accessLevel": "Write"
-    },
-    "UpdateFieldLevelEncryptionProfile": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateFieldLevelEncryptionProfile.html",
-      "description": "This action updates a field-level encryption profile.",
-      "accessLevel": "Write"
-    },
-    "UpdateOriginRequestPolicy": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateOriginRequestPolicy.html",
-      "description": "This action updates an origin request policy.",
-      "accessLevel": "Write"
-    },
-    "UpdatePublicKey": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdatePublicKey.html",
-      "description": "This action updates public key information.",
-      "accessLevel": "Write"
-    },
-    "UpdateStreamingDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateStreamingDistribution.html",
-      "description": "This action updates the configuration for an RTMP distribution.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "streaming-distribution": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "distribution": {
-      "name": "distribution",
-      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html",
-      "arn": "arn:${Partition}:cloudfront::${Account}:distribution/${DistributionId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "streaming-distribution": {
-      "name": "streaming-distribution",
-      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html",
-      "arn": "arn:${Partition}:cloudfront::${Account}:streaming-distribution/${DistributionId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "origin-access-identity": {
-      "name": "origin-access-identity",
-      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#private-content-restricting-access-to-s3-overview",
-      "arn": "arn:${Partition}:cloudfront::${Account}:origin-access-identity/${Id}",
-      "conditionKeys": []
-    },
-    "field-level-encryption": {
-      "name": "field-level-encryption",
-      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html",
-      "arn": "arn:${Partition}:cloudfront::${Account}:field-level-encryption/${Id}",
-      "conditionKeys": []
-    },
-    "field-level-encryption-profile": {
-      "name": "field-level-encryption-profile",
-      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html",
-      "arn": "arn:${Partition}:cloudfront::${Account}:field-level-encryption-profile/${Id}",
-      "conditionKeys": []
-    },
-    "cache-policy": {
-      "name": "cache-policy",
-      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html",
-      "arn": "arn:${Partition}:cloudfront::${Account}:cache-policy/${Id}",
-      "conditionKeys": []
-    },
-    "origin-request-policy": {
-      "name": "origin-request-policy",
-      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html",
-      "arn": "arn:${Partition}:cloudfront::${Account}:origin-request-policy/${Id}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [cloudfront](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudfront.html).
@@ -1223,6 +740,76 @@ export class Cloudfront extends PolicyStatement {
     this.to('cloudfront:UpdateStreamingDistribution');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateCachePolicy",
+      "CreateCloudFrontOriginAccessIdentity",
+      "CreateDistribution",
+      "CreateFieldLevelEncryptionConfig",
+      "CreateFieldLevelEncryptionProfile",
+      "CreateInvalidation",
+      "CreateOriginRequestPolicy",
+      "CreatePublicKey",
+      "CreateStreamingDistribution",
+      "DeleteCachePolicy",
+      "DeleteCloudFrontOriginAccessIdentity",
+      "DeleteDistribution",
+      "DeleteFieldLevelEncryptionConfig",
+      "DeleteFieldLevelEncryptionProfile",
+      "DeleteOriginRequestPolicy",
+      "DeletePublicKey",
+      "DeleteStreamingDistribution",
+      "UpdateCachePolicy",
+      "UpdateCloudFrontOriginAccessIdentity",
+      "UpdateDistribution",
+      "UpdateFieldLevelEncryptionConfig",
+      "UpdateFieldLevelEncryptionProfile",
+      "UpdateOriginRequestPolicy",
+      "UpdatePublicKey",
+      "UpdateStreamingDistribution"
+    ],
+    "Tagging": [
+      "CreateDistributionWithTags",
+      "CreateStreamingDistributionWithTags",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "GetCachePolicy",
+      "GetCachePolicyConfig",
+      "GetCloudFrontOriginAccessIdentity",
+      "GetCloudFrontOriginAccessIdentityConfig",
+      "GetDistribution",
+      "GetDistributionConfig",
+      "GetFieldLevelEncryption",
+      "GetFieldLevelEncryptionConfig",
+      "GetFieldLevelEncryptionProfile",
+      "GetFieldLevelEncryptionProfileConfig",
+      "GetInvalidation",
+      "GetOriginRequestPolicy",
+      "GetOriginRequestPolicyConfig",
+      "GetPublicKey",
+      "GetPublicKeyConfig",
+      "GetStreamingDistribution",
+      "GetStreamingDistributionConfig",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListCachePolicies",
+      "ListCloudFrontOriginAccessIdentities",
+      "ListDistributions",
+      "ListDistributionsByCachePolicyId",
+      "ListDistributionsByOriginRequestPolicyId",
+      "ListDistributionsByWebACLId",
+      "ListFieldLevelEncryptionConfigs",
+      "ListFieldLevelEncryptionProfiles",
+      "ListInvalidations",
+      "ListOriginRequestPolicies",
+      "ListPublicKeys",
+      "ListStreamingDistributions"
+    ]
+  };
 
   /**
    * Adds a resource of type distribution to the statement

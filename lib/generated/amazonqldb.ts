@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [qldb](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonqldb.html).
@@ -7,257 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Qldb extends PolicyStatement {
   public servicePrefix = 'qldb';
-  protected actionList: Actions = {
-    "CancelJournalKinesisStream": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_CancelJournalKinesisStream.html",
-      "description": "Grants permission to cancel a journal kinesis stream",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "CreateLedger": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_CreateLedger.html",
-      "description": "Grants permission to create a ledger",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "ledger": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "DeleteLedger": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_DeleteLedger.html",
-      "description": "Grants permission to delete a ledger",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "ledger": {
-          "required": true
-        }
-      }
-    },
-    "DescribeJournalKinesisStream": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_DescribeJournalKinesisStream.html",
-      "description": "Grants permission to describe information about a journal kinesis stream",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "DescribeJournalS3Export": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_DescribeJournalS3Export.html",
-      "description": "Grants permission to describe information about a journal export job",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "ledger": {
-          "required": true
-        }
-      }
-    },
-    "DescribeLedger": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_DescribeLedger.html",
-      "description": "Grants permission to describe a ledger",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "ledger": {
-          "required": true
-        }
-      }
-    },
-    "ExecuteStatement": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html",
-      "description": "Grants permission to send commands to a ledger via the console",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "ledger": {
-          "required": true
-        }
-      }
-    },
-    "ExportJournalToS3": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_ExportJournalToS3.html",
-      "description": "Grants permission to export journal contents to an Amazon S3 bucket",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "ledger": {
-          "required": true
-        }
-      }
-    },
-    "GetBlock": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_GetBlock.html",
-      "description": "Grants permission to retrieve a block from a ledger for a given BlockAddress",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "ledger": {
-          "required": true
-        }
-      }
-    },
-    "GetDigest": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_GetDigest.html",
-      "description": "Grants permission to retrieve a digest from a ledger for a given BlockAddress",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "ledger": {
-          "required": true
-        }
-      }
-    },
-    "GetRevision": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_GetRevision.html",
-      "description": "Grants permission to retrieve a revision for a given document ID and a given BlockAddress",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "ledger": {
-          "required": true
-        }
-      }
-    },
-    "InsertSampleData": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html",
-      "description": "Grants permission to insert sample application data via the console",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "ledger": {
-          "required": true
-        }
-      }
-    },
-    "ListJournalKinesisStreamsForLedger": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListJournalKinesisStreamsForLedger.html",
-      "description": "Grants permission to list journal kinesis streams for a specified ledger",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "ListJournalS3Exports": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListJournalS3Exports.html",
-      "description": "Grants permission to list journal export jobs for all ledgers",
-      "accessLevel": "List"
-    },
-    "ListJournalS3ExportsForLedger": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListJournalS3ExportsForLedger.html",
-      "description": "Grants permission to list journal export jobs for a specified ledger",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "ledger": {
-          "required": true
-        }
-      }
-    },
-    "ListLedgers": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListLedgers.html",
-      "description": "Grants permission to list existing ledgers",
-      "accessLevel": "List"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListTagsForResource.html",
-      "description": "Grants permission to list tags for a resource",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "ledger": {
-          "required": false
-        }
-      }
-    },
-    "SendCommand": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/Using.API.html",
-      "description": "Grants permission to send commands to a ledger",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "ledger": {
-          "required": true
-        }
-      }
-    },
-    "ShowCatalog": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html",
-      "description": "Grants permission to view a ledger's catalog via the console",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "ledger": {
-          "required": true
-        }
-      }
-    },
-    "StreamJournalToKinesis": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_StreamJournalToKinesis.html",
-      "description": "Grants permission to stream journal contents to a Kinesis Data Stream",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "stream": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_TagResource.html",
-      "description": "Grants permission to add one or more tags to a resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "ledger": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_UntagResource.html",
-      "description": "Grants permission to remove one or more tags to a resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "ledger": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateLedger": {
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_UpdateLedger.html",
-      "description": "Grants permission to update properties on a ledger",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "ledger": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "ledger": {
-      "name": "ledger",
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/what-is.html",
-      "arn": "arn:${Partition}:qldb:${Region}:${Account}:ledger/${LedgerName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "stream": {
-      "name": "stream",
-      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/what-is.html",
-      "arn": "arn:${Partition}:qldb:${Region}:${Account}:stream/${LedgerName}/${StreamId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [qldb](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonqldb.html).
@@ -554,6 +304,40 @@ export class Qldb extends PolicyStatement {
     this.to('qldb:UpdateLedger');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CancelJournalKinesisStream",
+      "CreateLedger",
+      "DeleteLedger",
+      "ExecuteStatement",
+      "ExportJournalToS3",
+      "InsertSampleData",
+      "SendCommand",
+      "ShowCatalog",
+      "StreamJournalToKinesis",
+      "UpdateLedger"
+    ],
+    "Read": [
+      "DescribeJournalKinesisStream",
+      "DescribeJournalS3Export",
+      "DescribeLedger",
+      "GetBlock",
+      "GetDigest",
+      "GetRevision",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListJournalKinesisStreamsForLedger",
+      "ListJournalS3Exports",
+      "ListJournalS3ExportsForLedger",
+      "ListLedgers"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type ledger to the statement

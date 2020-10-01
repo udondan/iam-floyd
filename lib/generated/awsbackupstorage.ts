@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [backup-storage](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbackupstorage.html).
@@ -7,14 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class BackupStorage extends PolicyStatement {
   public servicePrefix = 'backup-storage';
-  protected actionList: Actions = {
-    "MountCapsule": {
-      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupVault.html",
-      "description": "Associates a KMS key to a backup vault",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [backup-storage](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbackupstorage.html).
@@ -36,4 +29,10 @@ export class BackupStorage extends PolicyStatement {
     this.to('backup-storage:MountCapsule');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "MountCapsule"
+    ]
+  };
 }

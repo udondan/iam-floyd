@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [awsconnector](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconnectorservice.html).
@@ -7,24 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Awsconnector extends PolicyStatement {
   public servicePrefix = 'awsconnector';
-  protected actionList: Actions = {
-    "GetConnectorHealth": {
-      "url": "https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions",
-      "description": "Retrieves all health metrics that were published from the Server Migration Connector.",
-      "accessLevel": "Read"
-    },
-    "RegisterConnector": {
-      "url": "https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions",
-      "description": "Registers AWS Connector with AWS Connector Service.",
-      "accessLevel": "Write"
-    },
-    "ValidateConnectorId": {
-      "url": "https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions",
-      "description": "Validates Server Migration Connector Id that was registered with AWS Connector Service.",
-      "accessLevel": "Read"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [awsconnector](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconnectorservice.html).
@@ -70,4 +53,14 @@ export class Awsconnector extends PolicyStatement {
     this.to('awsconnector:ValidateConnectorId');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "GetConnectorHealth",
+      "ValidateConnectorId"
+    ],
+    "Write": [
+      "RegisterConnector"
+    ]
+  };
 }

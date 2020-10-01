@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [polly](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpolly.html).
@@ -7,84 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Polly extends PolicyStatement {
   public servicePrefix = 'polly';
-  protected actionList: Actions = {
-    "DeleteLexicon": {
-      "url": "https://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html",
-      "description": "Deletes the specified pronunciation lexicon stored in an AWS Region",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "lexicon": {
-          "required": true
-        }
-      }
-    },
-    "DescribeVoices": {
-      "url": "https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html",
-      "description": "Returns the list of voices that are available for use when requesting speech synthesis.",
-      "accessLevel": "List"
-    },
-    "GetLexicon": {
-      "url": "https://docs.aws.amazon.com/polly/latest/dg/API_GetLexicon.html",
-      "description": "Returns the content of the specified pronunciation lexicon stored in an AWS Region.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "lexicon": {
-          "required": true
-        }
-      }
-    },
-    "GetSpeechSynthesisTask": {
-      "url": "https://docs.aws.amazon.com/polly/latest/dg/API_GetSpeechSynthesisTask.html",
-      "description": "Enables the user to get information about specific speech synthesis task.",
-      "accessLevel": "Read"
-    },
-    "ListLexicons": {
-      "url": "https://docs.aws.amazon.com/polly/latest/dg/API_ListLexicons.html",
-      "description": "Returns a list of pronunciation lexicons stored in an AWS Region.",
-      "accessLevel": "List"
-    },
-    "ListSpeechSynthesisTasks": {
-      "url": "https://docs.aws.amazon.com/polly/latest/dg/API_ListSpeechSynthesisTasks.html",
-      "description": "Enables the user to list requested speech synthesis tasks.",
-      "accessLevel": "List"
-    },
-    "PutLexicon": {
-      "url": "https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html",
-      "description": "Stores a pronunciation lexicon in an AWS Region.",
-      "accessLevel": "Write"
-    },
-    "StartSpeechSynthesisTask": {
-      "url": "https://docs.aws.amazon.com/polly/latest/dg/API_StartSpeechSynthesisTask.html",
-      "description": "Enables the user to synthesize long inputs to provided S3 location.",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "s3:PutObject"
-      ],
-      "resourceTypes": {
-        "lexicon": {
-          "required": false
-        }
-      }
-    },
-    "SynthesizeSpeech": {
-      "url": "https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html",
-      "description": "Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "lexicon": {
-          "required": false
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "lexicon": {
-      "name": "lexicon",
-      "url": "https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html",
-      "arn": "arn:${Partition}:polly:${Region}:${Account}:lexicon/${LexiconName}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [polly](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpolly.html).
@@ -205,6 +128,24 @@ export class Polly extends PolicyStatement {
     this.to('polly:SynthesizeSpeech');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "DeleteLexicon",
+      "PutLexicon",
+      "StartSpeechSynthesisTask"
+    ],
+    "List": [
+      "DescribeVoices",
+      "ListLexicons",
+      "ListSpeechSynthesisTasks"
+    ],
+    "Read": [
+      "GetLexicon",
+      "GetSpeechSynthesisTask",
+      "SynthesizeSpeech"
+    ]
+  };
 
   /**
    * Adds a resource of type lexicon to the statement

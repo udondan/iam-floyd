@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [aws-marketplace-management](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacemanagementportal.html).
@@ -7,34 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class AwsMarketplaceManagement extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-management';
-  protected actionList: Actions = {
-    "uploadFiles": {
-      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions",
-      "description": "Allows access to the File Upload page inside the AWS Marketplace Management Portal.",
-      "accessLevel": "Write"
-    },
-    "viewMarketing": {
-      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions",
-      "description": "Allows access to the Marketing page inside the AWS Marketplace Management Portal.",
-      "accessLevel": "List"
-    },
-    "viewReports": {
-      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions",
-      "description": "Allows access to the Reports page inside the AWS Marketplace Management Portal.",
-      "accessLevel": "List"
-    },
-    "viewSettings": {
-      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions",
-      "description": "Allows access to the Settings page inside the AWS Marketplace Management Portal.",
-      "accessLevel": "List"
-    },
-    "viewSupport": {
-      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions",
-      "description": "Allows access to the Customer Support Eligibility page inside the AWS Marketplace Management Portal.",
-      "accessLevel": "List"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [aws-marketplace-management](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacemanagementportal.html).
@@ -104,4 +77,16 @@ export class AwsMarketplaceManagement extends PolicyStatement {
     this.to('aws-marketplace-management:viewSupport');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "uploadFiles"
+    ],
+    "List": [
+      "viewMarketing",
+      "viewReports",
+      "viewSettings",
+      "viewSupport"
+    ]
+  };
 }

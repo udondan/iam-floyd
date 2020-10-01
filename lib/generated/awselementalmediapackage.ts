@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [mediapackage](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackage.html).
@@ -7,170 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Mediapackage extends PolicyStatement {
   public servicePrefix = 'mediapackage';
-  protected actionList: Actions = {
-    "CreateChannel": {
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelspost",
-      "description": "Grants permission to create a channel in AWS Elemental MediaPackage.",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateOriginEndpoint": {
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointspost",
-      "description": "Grants permission to create an endpoint in AWS Elemental MediaPackage.",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "DeleteChannel": {
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-iddelete",
-      "description": "Grants permission to delete a channel in AWS Elemental MediaPackage.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "channels": {
-          "required": true
-        }
-      }
-    },
-    "DeleteOriginEndpoint": {
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-iddelete",
-      "description": "Grants permission to delete an endpoint in AWS Elemental MediaPackage.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "origin_endpoints": {
-          "required": true
-        }
-      }
-    },
-    "DescribeChannel": {
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-idget",
-      "description": "Grants permission to view the details of a channel in AWS Elemental MediaPackage.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "channels": {
-          "required": true
-        }
-      }
-    },
-    "DescribeOriginEndpoint": {
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-idget",
-      "description": "Grants permission to view the details of an endpoint in AWS Elemental MediaPackage.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "origin_endpoints": {
-          "required": true
-        }
-      }
-    },
-    "ListChannels": {
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelsget",
-      "description": "Grants permission to view a list of channels in AWS Elemental MediaPackage.",
-      "accessLevel": "Read"
-    },
-    "ListOriginEndpoints": {
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointsget",
-      "description": "Grants permission to view a list of endpoints in AWS Elemental MediaPackage.",
-      "accessLevel": "Read"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arnget",
-      "description": "Grants permission to list the tags assigned to a Channel or OriginEndpoint.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "channels": {
-          "required": false
-        },
-        "origin_endpoints": {
-          "required": false
-        }
-      }
-    },
-    "RotateIngestEndpointCredentials": {
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id-ingest_endpoints-ingest_endpoint_id-credentials.html#channels-id-ingest_endpoints-ingest_endpoint_id-credentialsput",
-      "description": "Grants permission to rotate IngestEndpoint credentials for a Channel in AWS Elemental MediaPackage.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "channels": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arnpost",
-      "description": "Grants permission to assign tags to a Channel or OriginEndpoint.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "channels": {
-          "required": false
-        },
-        "origin_endpoints": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arndelete",
-      "description": "Grants permission to delete tags to a Channel or OriginEndpoint.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "channels": {
-          "required": false
-        },
-        "origin_endpoints": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateChannel": {
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-idput",
-      "description": "Grants permission to make changes to a channel in AWS Elemental MediaPackage.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "channels": {
-          "required": true
-        }
-      }
-    },
-    "UpdateOriginEndpoint": {
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-idput",
-      "description": "Grants permission to make changes to an endpoint in AWS Elemental MediaPackage.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "origin_endpoints": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "channels": {
-      "name": "channels",
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/channels.html",
-      "arn": "arn:${Partition}:mediapackage:${Region}:${Account}:channels/${ChannelIdentifier}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "origin_endpoints": {
-      "name": "origin_endpoints",
-      "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/endpoints.html",
-      "arn": "arn:${Partition}:mediapackage:${Region}:${Account}:origin_endpoints/${OriginEndpointIdentifier}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [mediapackage](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackage.html).
@@ -363,6 +200,27 @@ export class Mediapackage extends PolicyStatement {
     this.to('mediapackage:UpdateOriginEndpoint');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateChannel",
+      "CreateOriginEndpoint",
+      "DeleteChannel",
+      "DeleteOriginEndpoint",
+      "RotateIngestEndpointCredentials",
+      "TagResource",
+      "UntagResource",
+      "UpdateChannel",
+      "UpdateOriginEndpoint"
+    ],
+    "Read": [
+      "DescribeChannel",
+      "DescribeOriginEndpoint",
+      "ListChannels",
+      "ListOriginEndpoints",
+      "ListTagsForResource"
+    ]
+  };
 
   /**
    * Adds a resource of type channels to the statement

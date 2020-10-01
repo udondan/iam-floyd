@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [launchwizard](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_launchwizard.html).
@@ -7,49 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Launchwizard extends PolicyStatement {
   public servicePrefix = 'launchwizard';
-  protected actionList: Actions = {
-    "DeleteApp": {
-      "url": "https://docs.aws.amazon.com/launchwizard/",
-      "description": "Delete an application",
-      "accessLevel": "Write"
-    },
-    "DescribeProvisionedApp": {
-      "url": "https://docs.aws.amazon.com/launchwizard/",
-      "description": "Describe provisioning applications",
-      "accessLevel": "Read"
-    },
-    "DescribeProvisioningEvents": {
-      "url": "https://docs.aws.amazon.com/launchwizard/",
-      "description": "Describe provisioning events",
-      "accessLevel": "Read"
-    },
-    "GetInfrastructureSuggestion": {
-      "url": "https://docs.aws.amazon.com/launchwizard/",
-      "description": "Get infrastructure suggestion",
-      "accessLevel": "Read"
-    },
-    "GetIpAddress": {
-      "url": "https://docs.aws.amazon.com/launchwizard/",
-      "description": "Get customer's ip address",
-      "accessLevel": "Read"
-    },
-    "GetResourceCostEstimate": {
-      "url": "https://docs.aws.amazon.com/launchwizard/",
-      "description": "Get resource cost estimate",
-      "accessLevel": "Read"
-    },
-    "ListProvisionedApps": {
-      "url": "https://docs.aws.amazon.com/launchwizard/",
-      "description": "List provisioning applications",
-      "accessLevel": "List"
-    },
-    "StartProvisioning": {
-      "url": "https://docs.aws.amazon.com/launchwizard/",
-      "description": "Start a provisioning",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [launchwizard](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_launchwizard.html).
@@ -155,4 +113,21 @@ export class Launchwizard extends PolicyStatement {
     this.to('launchwizard:StartProvisioning');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "DeleteApp",
+      "StartProvisioning"
+    ],
+    "Read": [
+      "DescribeProvisionedApp",
+      "DescribeProvisioningEvents",
+      "GetInfrastructureSuggestion",
+      "GetIpAddress",
+      "GetResourceCostEstimate"
+    ],
+    "List": [
+      "ListProvisionedApps"
+    ]
+  };
 }

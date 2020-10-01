@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [elastic-inference](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticinference.html).
@@ -7,26 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class ElasticInference extends PolicyStatement {
   public servicePrefix = 'elastic-inference';
-  protected actionList: Actions = {
-    "Connect": {
-      "url": "",
-      "description": "Connects customer to Elastic Inference accelerator",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "accelerator": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "accelerator": {
-      "name": "accelerator",
-      "url": "",
-      "arn": "arn:${Partition}:elastic-inference:${Region}:${Account}:elastic-inference-accelerator/${AcceleratorId}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [elastic-inference](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticinference.html).
@@ -46,6 +27,12 @@ export class ElasticInference extends PolicyStatement {
     this.to('elastic-inference:Connect');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "Connect"
+    ]
+  };
 
   /**
    * Adds a resource of type accelerator to the statement

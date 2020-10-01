@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [artifact](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsartifact.html).
@@ -7,71 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Artifact extends PolicyStatement {
   public servicePrefix = 'artifact';
-  protected actionList: Actions = {
-    "AcceptAgreement": {
-      "url": "https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html",
-      "description": "Grants permission to accept an AWS agreement that has not yet been accepted by the customer account.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "agreement": {
-          "required": true
-        }
-      }
-    },
-    "DownloadAgreement": {
-      "url": "https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html",
-      "description": "Grants permission to download an AWS agreement that has not yet been accepted or a customer agreement that has been accepted by the customer account.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "agreement": {
-          "required": false
-        },
-        "customer-agreement": {
-          "required": false
-        }
-      }
-    },
-    "Get": {
-      "url": "https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html",
-      "description": "Grants permission to download an AWS compliance report package.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "report-package": {
-          "required": true
-        }
-      }
-    },
-    "TerminateAgreement": {
-      "url": "https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html",
-      "description": "Grants permission to terminate a customer agreement that was previously accepted by the customer account.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "customer-agreement": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "report-package": {
-      "name": "report-package",
-      "url": "https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html",
-      "arn": "arn:${Partition}:artifact:::report-package/${ResourceName}",
-      "conditionKeys": []
-    },
-    "customer-agreement": {
-      "name": "customer-agreement",
-      "url": "https://docs.aws.amazon.com/artifact/latest/ug/$managingagreements.html",
-      "arn": "arn:${Partition}:artifact::${Account}:customer-agreement/${ResourceName}",
-      "conditionKeys": []
-    },
-    "agreement": {
-      "name": "agreement",
-      "url": "https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html",
-      "arn": "arn:${Partition}:artifact:::agreement/${ResourceName}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [artifact](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsartifact.html).
@@ -129,6 +65,17 @@ export class Artifact extends PolicyStatement {
     this.to('artifact:TerminateAgreement');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "AcceptAgreement",
+      "TerminateAgreement"
+    ],
+    "Read": [
+      "DownloadAgreement",
+      "Get"
+    ]
+  };
 
   /**
    * Adds a resource of type report-package to the statement
