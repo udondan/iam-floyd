@@ -348,7 +348,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ActivateEventSource.html
    */
   public toActivateEventSource() {
-    this.add('events:ActivateEventSource');
+    this.to('events:ActivateEventSource');
     return this;
   }
 
@@ -364,7 +364,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventBus.html
    */
   public toCreateEventBus() {
-    this.add('events:CreateEventBus');
+    this.to('events:CreateEventBus');
     return this;
   }
 
@@ -376,7 +376,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreatePartnerEventSource.html
    */
   public toCreatePartnerEventSource() {
-    this.add('events:CreatePartnerEventSource');
+    this.to('events:CreatePartnerEventSource');
     return this;
   }
 
@@ -388,7 +388,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeactivateEventSource.html
    */
   public toDeactivateEventSource() {
-    this.add('events:DeactivateEventSource');
+    this.to('events:DeactivateEventSource');
     return this;
   }
 
@@ -400,7 +400,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeletePartnerEventSource
    */
   public toDeleteEventBus() {
-    this.add('events:DeleteEventBus');
+    this.to('events:DeleteEventBus');
     return this;
   }
 
@@ -412,7 +412,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeletePartnerEventSource
    */
   public toDeletePartnerEventSource() {
-    this.add('events:DeletePartnerEventSource');
+    this.to('events:DeletePartnerEventSource');
     return this;
   }
 
@@ -424,7 +424,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteRule.html
    */
   public toDeleteRule() {
-    this.add('events:DeleteRule');
+    this.to('events:DeleteRule');
     return this;
   }
 
@@ -436,7 +436,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventBus.html
    */
   public toDescribeEventBus() {
-    this.add('events:DescribeEventBus');
+    this.to('events:DescribeEventBus');
     return this;
   }
 
@@ -448,7 +448,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventSource.html
    */
   public toDescribeEventSource() {
-    this.add('events:DescribeEventSource');
+    this.to('events:DescribeEventSource');
     return this;
   }
 
@@ -460,7 +460,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribePartnerEventSource.html
    */
   public toDescribePartnerEventSource() {
-    this.add('events:DescribePartnerEventSource');
+    this.to('events:DescribePartnerEventSource');
     return this;
   }
 
@@ -472,7 +472,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeRule.html
    */
   public toDescribeRule() {
-    this.add('events:DescribeRule');
+    this.to('events:DescribeRule');
     return this;
   }
 
@@ -484,7 +484,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DisableRule.html
    */
   public toDisableRule() {
-    this.add('events:DisableRule');
+    this.to('events:DisableRule');
     return this;
   }
 
@@ -496,7 +496,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_EnableRule.html
    */
   public toEnableRule() {
-    this.add('events:EnableRule');
+    this.to('events:EnableRule');
     return this;
   }
 
@@ -508,7 +508,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListEventBuses.html
    */
   public toListEventBuses() {
-    this.add('events:ListEventBuses');
+    this.to('events:ListEventBuses');
     return this;
   }
 
@@ -520,7 +520,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListEventSources.html
    */
   public toListEventSources() {
-    this.add('events:ListEventSources');
+    this.to('events:ListEventSources');
     return this;
   }
 
@@ -532,7 +532,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListPartnerEventSourceAccounts.html
    */
   public toListPartnerEventSourceAccounts() {
-    this.add('events:ListPartnerEventSourceAccounts');
+    this.to('events:ListPartnerEventSourceAccounts');
     return this;
   }
 
@@ -544,7 +544,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListPartnerEventSources.html
    */
   public toListPartnerEventSources() {
-    this.add('events:ListPartnerEventSources');
+    this.to('events:ListPartnerEventSources');
     return this;
   }
 
@@ -556,7 +556,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListRuleNamesByTarget.html
    */
   public toListRuleNamesByTarget() {
-    this.add('events:ListRuleNamesByTarget');
+    this.to('events:ListRuleNamesByTarget');
     return this;
   }
 
@@ -568,7 +568,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListRules.html
    */
   public toListRules() {
-    this.add('events:ListRules');
+    this.to('events:ListRules');
     return this;
   }
 
@@ -580,7 +580,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('events:ListTagsForResource');
+    this.to('events:ListTagsForResource');
     return this;
   }
 
@@ -592,7 +592,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTargetsByRule.html
    */
   public toListTargetsByRule() {
-    this.add('events:ListTargetsByRule');
+    this.to('events:ListTargetsByRule');
     return this;
   }
 
@@ -604,7 +604,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html
    */
   public toPutEvents() {
-    this.add('events:PutEvents');
+    this.to('events:PutEvents');
     return this;
   }
 
@@ -616,7 +616,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPartnerEvents.html
    */
   public toPutPartnerEvents() {
-    this.add('events:PutPartnerEvents');
+    this.to('events:PutPartnerEvents');
     return this;
   }
 
@@ -628,7 +628,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPermission.html
    */
   public toPutPermission() {
-    this.add('events:PutPermission');
+    this.to('events:PutPermission');
     return this;
   }
 
@@ -649,7 +649,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutRule.html
    */
   public toPutRule() {
-    this.add('events:PutRule');
+    this.to('events:PutRule');
     return this;
   }
 
@@ -664,7 +664,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html
    */
   public toPutTargets() {
-    this.add('events:PutTargets');
+    this.to('events:PutTargets');
     return this;
   }
 
@@ -676,7 +676,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html
    */
   public toRemovePermission() {
-    this.add('events:RemovePermission');
+    this.to('events:RemovePermission');
     return this;
   }
 
@@ -688,7 +688,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemoveTargets.html
    */
   public toRemoveTargets() {
-    this.add('events:RemoveTargets');
+    this.to('events:RemoveTargets');
     return this;
   }
 
@@ -704,7 +704,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.add('events:TagResource');
+    this.to('events:TagResource');
     return this;
   }
 
@@ -716,7 +716,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TestEventPattern.html
    */
   public toTestEventPattern() {
-    this.add('events:TestEventPattern');
+    this.to('events:TestEventPattern');
     return this;
   }
 
@@ -731,7 +731,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('events:UntagResource');
+    this.to('events:UntagResource');
     return this;
   }
 

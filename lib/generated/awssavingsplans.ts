@@ -136,7 +136,7 @@ export class Savingsplans extends PolicyStatement {
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_CreateSavingsPlan.html
    */
   public toCreateSavingsPlan() {
-    this.add('savingsplans:CreateSavingsPlan');
+    this.to('savingsplans:CreateSavingsPlan');
     return this;
   }
 
@@ -151,7 +151,7 @@ export class Savingsplans extends PolicyStatement {
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DeleteQueuedSavingsPlan.html
    */
   public toDeleteQueuedSavingsPlan() {
-    this.add('savingsplans:DeleteQueuedSavingsPlan');
+    this.to('savingsplans:DeleteQueuedSavingsPlan');
     return this;
   }
 
@@ -166,7 +166,7 @@ export class Savingsplans extends PolicyStatement {
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlanRates.html
    */
   public toDescribeSavingsPlanRates() {
-    this.add('savingsplans:DescribeSavingsPlanRates');
+    this.to('savingsplans:DescribeSavingsPlanRates');
     return this;
   }
 
@@ -181,7 +181,7 @@ export class Savingsplans extends PolicyStatement {
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlans.html
    */
   public toDescribeSavingsPlans() {
-    this.add('savingsplans:DescribeSavingsPlans');
+    this.to('savingsplans:DescribeSavingsPlans');
     return this;
   }
 
@@ -193,7 +193,7 @@ export class Savingsplans extends PolicyStatement {
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlansOfferingRates.html
    */
   public toDescribeSavingsPlansOfferingRates() {
-    this.add('savingsplans:DescribeSavingsPlansOfferingRates');
+    this.to('savingsplans:DescribeSavingsPlansOfferingRates');
     return this;
   }
 
@@ -205,7 +205,7 @@ export class Savingsplans extends PolicyStatement {
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlansOfferings.html
    */
   public toDescribeSavingsPlansOfferings() {
-    this.add('savingsplans:DescribeSavingsPlansOfferings');
+    this.to('savingsplans:DescribeSavingsPlansOfferings');
     return this;
   }
 
@@ -217,7 +217,7 @@ export class Savingsplans extends PolicyStatement {
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('savingsplans:ListTagsForResource');
+    this.to('savingsplans:ListTagsForResource');
     return this;
   }
 
@@ -233,7 +233,7 @@ export class Savingsplans extends PolicyStatement {
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.add('savingsplans:TagResource');
+    this.to('savingsplans:TagResource');
     return this;
   }
 
@@ -248,7 +248,7 @@ export class Savingsplans extends PolicyStatement {
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('savingsplans:UntagResource');
+    this.to('savingsplans:UntagResource');
     return this;
   }
 

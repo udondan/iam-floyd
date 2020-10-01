@@ -430,7 +430,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AddListenerCertificates.html
    */
   public toAddListenerCertificates() {
-    this.add('elasticloadbalancing-v2:AddListenerCertificates');
+    this.to('elasticloadbalancing-v2:AddListenerCertificates');
     return this;
   }
 
@@ -442,7 +442,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AddTags.html
    */
   public toAddTags() {
-    this.add('elasticloadbalancing-v2:AddTags');
+    this.to('elasticloadbalancing-v2:AddTags');
     return this;
   }
 
@@ -454,7 +454,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateListener.html
    */
   public toCreateListener() {
-    this.add('elasticloadbalancing-v2:CreateListener');
+    this.to('elasticloadbalancing-v2:CreateListener');
     return this;
   }
 
@@ -466,7 +466,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateLoadBalancer.html
    */
   public toCreateLoadBalancer() {
-    this.add('elasticloadbalancing-v2:CreateLoadBalancer');
+    this.to('elasticloadbalancing-v2:CreateLoadBalancer');
     return this;
   }
 
@@ -478,7 +478,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateRule.html
    */
   public toCreateRule() {
-    this.add('elasticloadbalancing-v2:CreateRule');
+    this.to('elasticloadbalancing-v2:CreateRule');
     return this;
   }
 
@@ -490,7 +490,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateTargetGroup.html
    */
   public toCreateTargetGroup() {
-    this.add('elasticloadbalancing-v2:CreateTargetGroup');
+    this.to('elasticloadbalancing-v2:CreateTargetGroup');
     return this;
   }
 
@@ -502,7 +502,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteListener.html
    */
   public toDeleteListener() {
-    this.add('elasticloadbalancing-v2:DeleteListener');
+    this.to('elasticloadbalancing-v2:DeleteListener');
     return this;
   }
 
@@ -514,7 +514,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteLoadBalancer.html
    */
   public toDeleteLoadBalancer() {
-    this.add('elasticloadbalancing-v2:DeleteLoadBalancer');
+    this.to('elasticloadbalancing-v2:DeleteLoadBalancer');
     return this;
   }
 
@@ -526,7 +526,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteRule.html
    */
   public toDeleteRule() {
-    this.add('elasticloadbalancing-v2:DeleteRule');
+    this.to('elasticloadbalancing-v2:DeleteRule');
     return this;
   }
 
@@ -538,7 +538,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteTargetGroup.html
    */
   public toDeleteTargetGroup() {
-    this.add('elasticloadbalancing-v2:DeleteTargetGroup');
+    this.to('elasticloadbalancing-v2:DeleteTargetGroup');
     return this;
   }
 
@@ -550,7 +550,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeregisterTargets.html
    */
   public toDeregisterTargets() {
-    this.add('elasticloadbalancing-v2:DeregisterTargets');
+    this.to('elasticloadbalancing-v2:DeregisterTargets');
     return this;
   }
 
@@ -562,7 +562,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeAccountLimits.html
    */
   public toDescribeAccountLimits() {
-    this.add('elasticloadbalancing-v2:DescribeAccountLimits');
+    this.to('elasticloadbalancing-v2:DescribeAccountLimits');
     return this;
   }
 
@@ -574,7 +574,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeListenerCertificates.html
    */
   public toDescribeListenerCertificates() {
-    this.add('elasticloadbalancing-v2:DescribeListenerCertificates');
+    this.to('elasticloadbalancing-v2:DescribeListenerCertificates');
     return this;
   }
 
@@ -586,7 +586,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeListeners.html
    */
   public toDescribeListeners() {
-    this.add('elasticloadbalancing-v2:DescribeListeners');
+    this.to('elasticloadbalancing-v2:DescribeListeners');
     return this;
   }
 
@@ -598,7 +598,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancerAttributes.html
    */
   public toDescribeLoadBalancerAttributes() {
-    this.add('elasticloadbalancing-v2:DescribeLoadBalancerAttributes');
+    this.to('elasticloadbalancing-v2:DescribeLoadBalancerAttributes');
     return this;
   }
 
@@ -610,7 +610,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html
    */
   public toDescribeLoadBalancers() {
-    this.add('elasticloadbalancing-v2:DescribeLoadBalancers');
+    this.to('elasticloadbalancing-v2:DescribeLoadBalancers');
     return this;
   }
 
@@ -622,7 +622,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeRules.html
    */
   public toDescribeRules() {
-    this.add('elasticloadbalancing-v2:DescribeRules');
+    this.to('elasticloadbalancing-v2:DescribeRules');
     return this;
   }
 
@@ -634,7 +634,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeSSLPolicies.html
    */
   public toDescribeSSLPolicies() {
-    this.add('elasticloadbalancing-v2:DescribeSSLPolicies');
+    this.to('elasticloadbalancing-v2:DescribeSSLPolicies');
     return this;
   }
 
@@ -646,7 +646,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTags.html
    */
   public toDescribeTags() {
-    this.add('elasticloadbalancing-v2:DescribeTags');
+    this.to('elasticloadbalancing-v2:DescribeTags');
     return this;
   }
 
@@ -658,7 +658,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroupAttributes.html
    */
   public toDescribeTargetGroupAttributes() {
-    this.add('elasticloadbalancing-v2:DescribeTargetGroupAttributes');
+    this.to('elasticloadbalancing-v2:DescribeTargetGroupAttributes');
     return this;
   }
 
@@ -670,7 +670,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html
    */
   public toDescribeTargetGroups() {
-    this.add('elasticloadbalancing-v2:DescribeTargetGroups');
+    this.to('elasticloadbalancing-v2:DescribeTargetGroups');
     return this;
   }
 
@@ -682,7 +682,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetHealth.html
    */
   public toDescribeTargetHealth() {
-    this.add('elasticloadbalancing-v2:DescribeTargetHealth');
+    this.to('elasticloadbalancing-v2:DescribeTargetHealth');
     return this;
   }
 
@@ -694,7 +694,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyListener.html
    */
   public toModifyListener() {
-    this.add('elasticloadbalancing-v2:ModifyListener');
+    this.to('elasticloadbalancing-v2:ModifyListener');
     return this;
   }
 
@@ -706,7 +706,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyLoadBalancerAttributes.html
    */
   public toModifyLoadBalancerAttributes() {
-    this.add('elasticloadbalancing-v2:ModifyLoadBalancerAttributes');
+    this.to('elasticloadbalancing-v2:ModifyLoadBalancerAttributes');
     return this;
   }
 
@@ -718,7 +718,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyRule.html
    */
   public toModifyRule() {
-    this.add('elasticloadbalancing-v2:ModifyRule');
+    this.to('elasticloadbalancing-v2:ModifyRule');
     return this;
   }
 
@@ -730,7 +730,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyTargetGroup.html
    */
   public toModifyTargetGroup() {
-    this.add('elasticloadbalancing-v2:ModifyTargetGroup');
+    this.to('elasticloadbalancing-v2:ModifyTargetGroup');
     return this;
   }
 
@@ -742,7 +742,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyTargetGroupAttributes.html
    */
   public toModifyTargetGroupAttributes() {
-    this.add('elasticloadbalancing-v2:ModifyTargetGroupAttributes');
+    this.to('elasticloadbalancing-v2:ModifyTargetGroupAttributes');
     return this;
   }
 
@@ -754,7 +754,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_RegisterTargets.html
    */
   public toRegisterTargets() {
-    this.add('elasticloadbalancing-v2:RegisterTargets');
+    this.to('elasticloadbalancing-v2:RegisterTargets');
     return this;
   }
 
@@ -766,7 +766,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_RemoveListenerCertificates.html
    */
   public toRemoveListenerCertificates() {
-    this.add('elasticloadbalancing-v2:RemoveListenerCertificates');
+    this.to('elasticloadbalancing-v2:RemoveListenerCertificates');
     return this;
   }
 
@@ -778,7 +778,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_RemoveTags.html
    */
   public toRemoveTags() {
-    this.add('elasticloadbalancing-v2:RemoveTags');
+    this.to('elasticloadbalancing-v2:RemoveTags');
     return this;
   }
 
@@ -790,7 +790,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetIpAddressType.html
    */
   public toSetIpAddressType() {
-    this.add('elasticloadbalancing-v2:SetIpAddressType');
+    this.to('elasticloadbalancing-v2:SetIpAddressType');
     return this;
   }
 
@@ -802,7 +802,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetRulePriorities.html
    */
   public toSetRulePriorities() {
-    this.add('elasticloadbalancing-v2:SetRulePriorities');
+    this.to('elasticloadbalancing-v2:SetRulePriorities');
     return this;
   }
 
@@ -814,7 +814,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetSecurityGroups.html
    */
   public toSetSecurityGroups() {
-    this.add('elasticloadbalancing-v2:SetSecurityGroups');
+    this.to('elasticloadbalancing-v2:SetSecurityGroups');
     return this;
   }
 
@@ -826,7 +826,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetSubnets.html
    */
   public toSetSubnets() {
-    this.add('elasticloadbalancing-v2:SetSubnets');
+    this.to('elasticloadbalancing-v2:SetSubnets');
     return this;
   }
 
@@ -836,7 +836,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Access Level: Write
    */
   public toSetWebAcl() {
-    this.add('elasticloadbalancing-v2:SetWebAcl');
+    this.to('elasticloadbalancing-v2:SetWebAcl');
     return this;
   }
 

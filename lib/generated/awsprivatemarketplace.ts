@@ -108,7 +108,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toAssociateProductsWithPrivateMarketplace() {
-    this.add('aws-marketplace-private:AssociateProductsWithPrivateMarketplace');
+    this.to('aws-marketplace-private:AssociateProductsWithPrivateMarketplace');
     return this;
   }
 
@@ -120,7 +120,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toCreatePrivateMarketplace() {
-    this.add('aws-marketplace-private:CreatePrivateMarketplace');
+    this.to('aws-marketplace-private:CreatePrivateMarketplace');
     return this;
   }
 
@@ -132,7 +132,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toCreatePrivateMarketplaceProfile() {
-    this.add('aws-marketplace-private:CreatePrivateMarketplaceProfile');
+    this.to('aws-marketplace-private:CreatePrivateMarketplaceProfile');
     return this;
   }
 
@@ -144,7 +144,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toCreatePrivateMarketplaceRequests() {
-    this.add('aws-marketplace-private:CreatePrivateMarketplaceRequests');
+    this.to('aws-marketplace-private:CreatePrivateMarketplaceRequests');
     return this;
   }
 
@@ -156,7 +156,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toDescribePrivateMarketplaceProducts() {
-    this.add('aws-marketplace-private:DescribePrivateMarketplaceProducts');
+    this.to('aws-marketplace-private:DescribePrivateMarketplaceProducts');
     return this;
   }
 
@@ -168,7 +168,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toDescribePrivateMarketplaceProfile() {
-    this.add('aws-marketplace-private:DescribePrivateMarketplaceProfile');
+    this.to('aws-marketplace-private:DescribePrivateMarketplaceProfile');
     return this;
   }
 
@@ -180,7 +180,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toDescribePrivateMarketplaceRequests() {
-    this.add('aws-marketplace-private:DescribePrivateMarketplaceRequests');
+    this.to('aws-marketplace-private:DescribePrivateMarketplaceRequests');
     return this;
   }
 
@@ -192,7 +192,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toDescribePrivateMarketplaceSettings() {
-    this.add('aws-marketplace-private:DescribePrivateMarketplaceSettings');
+    this.to('aws-marketplace-private:DescribePrivateMarketplaceSettings');
     return this;
   }
 
@@ -204,7 +204,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toDescribePrivateMarketplaceStatus() {
-    this.add('aws-marketplace-private:DescribePrivateMarketplaceStatus');
+    this.to('aws-marketplace-private:DescribePrivateMarketplaceStatus');
     return this;
   }
 
@@ -216,7 +216,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toDisassociateProductsFromPrivateMarketplace() {
-    this.add('aws-marketplace-private:DisassociateProductsFromPrivateMarketplace');
+    this.to('aws-marketplace-private:DisassociateProductsFromPrivateMarketplace');
     return this;
   }
 
@@ -228,7 +228,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toListPrivateMarketplaceProducts() {
-    this.add('aws-marketplace-private:ListPrivateMarketplaceProducts');
+    this.to('aws-marketplace-private:ListPrivateMarketplaceProducts');
     return this;
   }
 
@@ -240,7 +240,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toListPrivateMarketplaceRequests() {
-    this.add('aws-marketplace-private:ListPrivateMarketplaceRequests');
+    this.to('aws-marketplace-private:ListPrivateMarketplaceRequests');
     return this;
   }
 
@@ -252,7 +252,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toStartPrivateMarketplace() {
-    this.add('aws-marketplace-private:StartPrivateMarketplace');
+    this.to('aws-marketplace-private:StartPrivateMarketplace');
     return this;
   }
 
@@ -264,7 +264,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toStopPrivateMarketplace() {
-    this.add('aws-marketplace-private:StopPrivateMarketplace');
+    this.to('aws-marketplace-private:StopPrivateMarketplace');
     return this;
   }
 
@@ -276,7 +276,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toUpdatePrivateMarketplaceProfile() {
-    this.add('aws-marketplace-private:UpdatePrivateMarketplaceProfile');
+    this.to('aws-marketplace-private:UpdatePrivateMarketplaceProfile');
     return this;
   }
 
@@ -288,7 +288,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html
    */
   public toUpdatePrivateMarketplaceSettings() {
-    this.add('aws-marketplace-private:UpdatePrivateMarketplaceSettings');
+    this.to('aws-marketplace-private:UpdatePrivateMarketplaceSettings');
     return this;
   }
 }

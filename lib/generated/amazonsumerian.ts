@@ -50,7 +50,7 @@ export class Sumerian extends PolicyStatement {
    * https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html
    */
   public toLogin() {
-    this.add('sumerian:Login');
+    this.to('sumerian:Login');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Sumerian extends PolicyStatement {
    * https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html
    */
   public toViewRelease() {
-    this.add('sumerian:ViewRelease');
+    this.to('sumerian:ViewRelease');
     return this;
   }
 

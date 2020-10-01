@@ -75,11 +75,28 @@ Every available IAM `action`_ is represented by a distinct method. These methods
           .to_start_instances() \
           .to_stop_instances()
 
-..
-   TODO: The to() method should be public. Uncomment when done:
-   In case of `missing actions <faq.html#are-all-actions-conditions-resource-types-covered>`__, you can just add any action key yourself via ``to()``:
 
-   ... + code example
+In case of `missing actions <faq.html#are-all-actions-conditions-resource-types-covered>`__, you can just add any action key yourself via ``to()``:
+
+.. tabs::
+
+   .. code-tab:: ts
+
+      new statement.Ec2()
+        .allow()
+        .to('missingAction');
+
+   .. code-tab:: js
+
+      new statement.Ec2()
+        .allow()
+        .to('missingAction');
+
+   .. code-tab:: py
+
+      statement.Ec2() \
+          .allow() \
+          .to("missingAction")
 
 **all** (Action)
 ----------------

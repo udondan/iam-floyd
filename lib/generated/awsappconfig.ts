@@ -573,7 +573,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateApplication.html
    */
   public toCreateApplication() {
-    this.add('appconfig:CreateApplication');
+    this.to('appconfig:CreateApplication');
     return this;
   }
 
@@ -589,7 +589,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateConfigurationProfile.html
    */
   public toCreateConfigurationProfile() {
-    this.add('appconfig:CreateConfigurationProfile');
+    this.to('appconfig:CreateConfigurationProfile');
     return this;
   }
 
@@ -605,7 +605,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateDeploymentStrategy.html
    */
   public toCreateDeploymentStrategy() {
-    this.add('appconfig:CreateDeploymentStrategy');
+    this.to('appconfig:CreateDeploymentStrategy');
     return this;
   }
 
@@ -621,7 +621,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateEnvironment.html
    */
   public toCreateEnvironment() {
-    this.add('appconfig:CreateEnvironment');
+    this.to('appconfig:CreateEnvironment');
     return this;
   }
 
@@ -633,7 +633,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateHostedConfigurationVersion.html
    */
   public toCreateHostedConfigurationVersion() {
-    this.add('appconfig:CreateHostedConfigurationVersion');
+    this.to('appconfig:CreateHostedConfigurationVersion');
     return this;
   }
 
@@ -645,7 +645,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteApplication.html
    */
   public toDeleteApplication() {
-    this.add('appconfig:DeleteApplication');
+    this.to('appconfig:DeleteApplication');
     return this;
   }
 
@@ -657,7 +657,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteConfigurationProfile.html
    */
   public toDeleteConfigurationProfile() {
-    this.add('appconfig:DeleteConfigurationProfile');
+    this.to('appconfig:DeleteConfigurationProfile');
     return this;
   }
 
@@ -669,7 +669,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteDeploymentStrategy.html
    */
   public toDeleteDeploymentStrategy() {
-    this.add('appconfig:DeleteDeploymentStrategy');
+    this.to('appconfig:DeleteDeploymentStrategy');
     return this;
   }
 
@@ -681,7 +681,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteEnvironment.html
    */
   public toDeleteEnvironment() {
-    this.add('appconfig:DeleteEnvironment');
+    this.to('appconfig:DeleteEnvironment');
     return this;
   }
 
@@ -693,7 +693,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteHostedConfigurationVersion.html
    */
   public toDeleteHostedConfigurationVersion() {
-    this.add('appconfig:DeleteHostedConfigurationVersion');
+    this.to('appconfig:DeleteHostedConfigurationVersion');
     return this;
   }
 
@@ -708,7 +708,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetApplication.html
    */
   public toGetApplication() {
-    this.add('appconfig:GetApplication');
+    this.to('appconfig:GetApplication');
     return this;
   }
 
@@ -723,7 +723,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetConfiguration.html
    */
   public toGetConfiguration() {
-    this.add('appconfig:GetConfiguration');
+    this.to('appconfig:GetConfiguration');
     return this;
   }
 
@@ -738,7 +738,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetConfigurationProfile.html
    */
   public toGetConfigurationProfile() {
-    this.add('appconfig:GetConfigurationProfile');
+    this.to('appconfig:GetConfigurationProfile');
     return this;
   }
 
@@ -753,7 +753,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetDeployment.html
    */
   public toGetDeployment() {
-    this.add('appconfig:GetDeployment');
+    this.to('appconfig:GetDeployment');
     return this;
   }
 
@@ -768,7 +768,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetDeploymentStrategy.html
    */
   public toGetDeploymentStrategy() {
-    this.add('appconfig:GetDeploymentStrategy');
+    this.to('appconfig:GetDeploymentStrategy');
     return this;
   }
 
@@ -783,7 +783,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetEnvironment.html
    */
   public toGetEnvironment() {
-    this.add('appconfig:GetEnvironment');
+    this.to('appconfig:GetEnvironment');
     return this;
   }
 
@@ -795,7 +795,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetHostedConfigurationVersion.html
    */
   public toGetHostedConfigurationVersion() {
-    this.add('appconfig:GetHostedConfigurationVersion');
+    this.to('appconfig:GetHostedConfigurationVersion');
     return this;
   }
 
@@ -807,7 +807,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListApplications.html
    */
   public toListApplications() {
-    this.add('appconfig:ListApplications');
+    this.to('appconfig:ListApplications');
     return this;
   }
 
@@ -819,7 +819,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListConfigurationProfiles.html
    */
   public toListConfigurationProfiles() {
-    this.add('appconfig:ListConfigurationProfiles');
+    this.to('appconfig:ListConfigurationProfiles');
     return this;
   }
 
@@ -831,7 +831,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListDeploymentStrategies.html
    */
   public toListDeploymentStrategies() {
-    this.add('appconfig:ListDeploymentStrategies');
+    this.to('appconfig:ListDeploymentStrategies');
     return this;
   }
 
@@ -843,7 +843,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListDeployments.html
    */
   public toListDeployments() {
-    this.add('appconfig:ListDeployments');
+    this.to('appconfig:ListDeployments');
     return this;
   }
 
@@ -855,7 +855,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListEnvironments.html
    */
   public toListEnvironments() {
-    this.add('appconfig:ListEnvironments');
+    this.to('appconfig:ListEnvironments');
     return this;
   }
 
@@ -867,7 +867,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListHostedConfigurationVersions.html
    */
   public toListHostedConfigurationVersions() {
-    this.add('appconfig:ListHostedConfigurationVersions');
+    this.to('appconfig:ListHostedConfigurationVersions');
     return this;
   }
 
@@ -882,7 +882,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('appconfig:ListTagsForResource');
+    this.to('appconfig:ListTagsForResource');
     return this;
   }
 
@@ -894,7 +894,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StartDeployment.html
    */
   public toStartDeployment() {
-    this.add('appconfig:StartDeployment');
+    this.to('appconfig:StartDeployment');
     return this;
   }
 
@@ -906,7 +906,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StopDeployment.html
    */
   public toStopDeployment() {
-    this.add('appconfig:StopDeployment');
+    this.to('appconfig:StopDeployment');
     return this;
   }
 
@@ -923,7 +923,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.add('appconfig:TagResource');
+    this.to('appconfig:TagResource');
     return this;
   }
 
@@ -938,7 +938,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('appconfig:UntagResource');
+    this.to('appconfig:UntagResource');
     return this;
   }
 
@@ -953,7 +953,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateApplication.html
    */
   public toUpdateApplication() {
-    this.add('appconfig:UpdateApplication');
+    this.to('appconfig:UpdateApplication');
     return this;
   }
 
@@ -968,7 +968,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateConfigurationProfile.html
    */
   public toUpdateConfigurationProfile() {
-    this.add('appconfig:UpdateConfigurationProfile');
+    this.to('appconfig:UpdateConfigurationProfile');
     return this;
   }
 
@@ -983,7 +983,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateDeploymentStrategy.html
    */
   public toUpdateDeploymentStrategy() {
-    this.add('appconfig:UpdateDeploymentStrategy');
+    this.to('appconfig:UpdateDeploymentStrategy');
     return this;
   }
 
@@ -998,7 +998,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateEnvironment.html
    */
   public toUpdateEnvironment() {
-    this.add('appconfig:UpdateEnvironment');
+    this.to('appconfig:UpdateEnvironment');
     return this;
   }
 
@@ -1010,7 +1010,7 @@ export class Appconfig extends PolicyStatement {
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ValidateConfiguration.html
    */
   public toValidateConfiguration() {
-    this.add('appconfig:ValidateConfiguration');
+    this.to('appconfig:ValidateConfiguration');
     return this;
   }
 

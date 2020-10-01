@@ -975,7 +975,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateDevicePool.html
    */
   public toCreateDevicePool() {
-    this.add('devicefarm:CreateDevicePool');
+    this.to('devicefarm:CreateDevicePool');
     return this;
   }
 
@@ -987,7 +987,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateInstanceProfile.html
    */
   public toCreateInstanceProfile() {
-    this.add('devicefarm:CreateInstanceProfile');
+    this.to('devicefarm:CreateInstanceProfile');
     return this;
   }
 
@@ -999,7 +999,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateNetworkProfile.html
    */
   public toCreateNetworkProfile() {
-    this.add('devicefarm:CreateNetworkProfile');
+    this.to('devicefarm:CreateNetworkProfile');
     return this;
   }
 
@@ -1015,7 +1015,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateProject.html
    */
   public toCreateProject() {
-    this.add('devicefarm:CreateProject');
+    this.to('devicefarm:CreateProject');
     return this;
   }
 
@@ -1027,7 +1027,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateRemoteAccessSession.html
    */
   public toCreateRemoteAccessSession() {
-    this.add('devicefarm:CreateRemoteAccessSession');
+    this.to('devicefarm:CreateRemoteAccessSession');
     return this;
   }
 
@@ -1039,7 +1039,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateTestGridProject.html
    */
   public toCreateTestGridProject() {
-    this.add('devicefarm:CreateTestGridProject');
+    this.to('devicefarm:CreateTestGridProject');
     return this;
   }
 
@@ -1051,7 +1051,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateTestGridUrl.html
    */
   public toCreateTestGridUrl() {
-    this.add('devicefarm:CreateTestGridUrl');
+    this.to('devicefarm:CreateTestGridUrl');
     return this;
   }
 
@@ -1063,7 +1063,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateUpload.html
    */
   public toCreateUpload() {
-    this.add('devicefarm:CreateUpload');
+    this.to('devicefarm:CreateUpload');
     return this;
   }
 
@@ -1075,7 +1075,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateVPCEConfiguration.html
    */
   public toCreateVPCEConfiguration() {
-    this.add('devicefarm:CreateVPCEConfiguration');
+    this.to('devicefarm:CreateVPCEConfiguration');
     return this;
   }
 
@@ -1087,7 +1087,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteDevicePool.html
    */
   public toDeleteDevicePool() {
-    this.add('devicefarm:DeleteDevicePool');
+    this.to('devicefarm:DeleteDevicePool');
     return this;
   }
 
@@ -1099,7 +1099,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteInstanceProfile.html
    */
   public toDeleteInstanceProfile() {
-    this.add('devicefarm:DeleteInstanceProfile');
+    this.to('devicefarm:DeleteInstanceProfile');
     return this;
   }
 
@@ -1111,7 +1111,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/DeleteNetworkProfile.html
    */
   public toDeleteNetworkProfile() {
-    this.add('devicefarm:DeleteNetworkProfile');
+    this.to('devicefarm:DeleteNetworkProfile');
     return this;
   }
 
@@ -1123,7 +1123,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteProject.html
    */
   public toDeleteProject() {
-    this.add('devicefarm:DeleteProject');
+    this.to('devicefarm:DeleteProject');
     return this;
   }
 
@@ -1135,7 +1135,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteRemoteAccessSession.html
    */
   public toDeleteRemoteAccessSession() {
-    this.add('devicefarm:DeleteRemoteAccessSession');
+    this.to('devicefarm:DeleteRemoteAccessSession');
     return this;
   }
 
@@ -1147,7 +1147,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteRun.html
    */
   public toDeleteRun() {
-    this.add('devicefarm:DeleteRun');
+    this.to('devicefarm:DeleteRun');
     return this;
   }
 
@@ -1159,7 +1159,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteTestGridProject.html
    */
   public toDeleteTestGridProject() {
-    this.add('devicefarm:DeleteTestGridProject');
+    this.to('devicefarm:DeleteTestGridProject');
     return this;
   }
 
@@ -1171,7 +1171,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteUpload.html
    */
   public toDeleteUpload() {
-    this.add('devicefarm:DeleteUpload');
+    this.to('devicefarm:DeleteUpload');
     return this;
   }
 
@@ -1183,7 +1183,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteVPCEConfiguration.html
    */
   public toDeleteVPCEConfiguration() {
-    this.add('devicefarm:DeleteVPCEConfiguration');
+    this.to('devicefarm:DeleteVPCEConfiguration');
     return this;
   }
 
@@ -1195,7 +1195,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetAccountSettings.html
    */
   public toGetAccountSettings() {
-    this.add('devicefarm:GetAccountSettings');
+    this.to('devicefarm:GetAccountSettings');
     return this;
   }
 
@@ -1207,7 +1207,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevice.html
    */
   public toGetDevice() {
-    this.add('devicefarm:GetDevice');
+    this.to('devicefarm:GetDevice');
     return this;
   }
 
@@ -1219,7 +1219,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDeviceInstance.html
    */
   public toGetDeviceInstance() {
-    this.add('devicefarm:GetDeviceInstance');
+    this.to('devicefarm:GetDeviceInstance');
     return this;
   }
 
@@ -1231,7 +1231,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevicePool.html
    */
   public toGetDevicePool() {
-    this.add('devicefarm:GetDevicePool');
+    this.to('devicefarm:GetDevicePool');
     return this;
   }
 
@@ -1243,7 +1243,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevicePoolCompatibility.html
    */
   public toGetDevicePoolCompatibility() {
-    this.add('devicefarm:GetDevicePoolCompatibility');
+    this.to('devicefarm:GetDevicePoolCompatibility');
     return this;
   }
 
@@ -1255,7 +1255,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetInstanceProfile.html
    */
   public toGetInstanceProfile() {
-    this.add('devicefarm:GetInstanceProfile');
+    this.to('devicefarm:GetInstanceProfile');
     return this;
   }
 
@@ -1267,7 +1267,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetJob.html
    */
   public toGetJob() {
-    this.add('devicefarm:GetJob');
+    this.to('devicefarm:GetJob');
     return this;
   }
 
@@ -1279,7 +1279,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetNetworkProfile.html
    */
   public toGetNetworkProfile() {
-    this.add('devicefarm:GetNetworkProfile');
+    this.to('devicefarm:GetNetworkProfile');
     return this;
   }
 
@@ -1291,7 +1291,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetOfferingStatus.html
    */
   public toGetOfferingStatus() {
-    this.add('devicefarm:GetOfferingStatus');
+    this.to('devicefarm:GetOfferingStatus');
     return this;
   }
 
@@ -1303,7 +1303,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetProject.html
    */
   public toGetProject() {
-    this.add('devicefarm:GetProject');
+    this.to('devicefarm:GetProject');
     return this;
   }
 
@@ -1315,7 +1315,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetRemoteAccessSession.html
    */
   public toGetRemoteAccessSession() {
-    this.add('devicefarm:GetRemoteAccessSession');
+    this.to('devicefarm:GetRemoteAccessSession');
     return this;
   }
 
@@ -1327,7 +1327,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetRun.html
    */
   public toGetRun() {
-    this.add('devicefarm:GetRun');
+    this.to('devicefarm:GetRun');
     return this;
   }
 
@@ -1339,7 +1339,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetSuite.html
    */
   public toGetSuite() {
-    this.add('devicefarm:GetSuite');
+    this.to('devicefarm:GetSuite');
     return this;
   }
 
@@ -1351,7 +1351,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetTest.html
    */
   public toGetTest() {
-    this.add('devicefarm:GetTest');
+    this.to('devicefarm:GetTest');
     return this;
   }
 
@@ -1363,7 +1363,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetTestGridProject.html
    */
   public toGetTestGridProject() {
-    this.add('devicefarm:GetTestGridProject');
+    this.to('devicefarm:GetTestGridProject');
     return this;
   }
 
@@ -1375,7 +1375,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetTestGridSession.html
    */
   public toGetTestGridSession() {
-    this.add('devicefarm:GetTestGridSession');
+    this.to('devicefarm:GetTestGridSession');
     return this;
   }
 
@@ -1387,7 +1387,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetUpload.html
    */
   public toGetUpload() {
-    this.add('devicefarm:GetUpload');
+    this.to('devicefarm:GetUpload');
     return this;
   }
 
@@ -1399,7 +1399,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetVPCEConfiguration.html
    */
   public toGetVPCEConfiguration() {
-    this.add('devicefarm:GetVPCEConfiguration');
+    this.to('devicefarm:GetVPCEConfiguration');
     return this;
   }
 
@@ -1411,7 +1411,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstallToRemoteAccessSession.html
    */
   public toInstallToRemoteAccessSession() {
-    this.add('devicefarm:InstallToRemoteAccessSession');
+    this.to('devicefarm:InstallToRemoteAccessSession');
     return this;
   }
 
@@ -1423,7 +1423,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListArtifacts.html
    */
   public toListArtifacts() {
-    this.add('devicefarm:ListArtifacts');
+    this.to('devicefarm:ListArtifacts');
     return this;
   }
 
@@ -1435,7 +1435,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDeviceInstances.html
    */
   public toListDeviceInstances() {
-    this.add('devicefarm:ListDeviceInstances');
+    this.to('devicefarm:ListDeviceInstances');
     return this;
   }
 
@@ -1447,7 +1447,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDevicePools.html
    */
   public toListDevicePools() {
-    this.add('devicefarm:ListDevicePools');
+    this.to('devicefarm:ListDevicePools');
     return this;
   }
 
@@ -1459,7 +1459,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDevices.html
    */
   public toListDevices() {
-    this.add('devicefarm:ListDevices');
+    this.to('devicefarm:ListDevices');
     return this;
   }
 
@@ -1471,7 +1471,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListInstanceProfiles.html
    */
   public toListInstanceProfiles() {
-    this.add('devicefarm:ListInstanceProfiles');
+    this.to('devicefarm:ListInstanceProfiles');
     return this;
   }
 
@@ -1483,7 +1483,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListJobs.html
    */
   public toListJobs() {
-    this.add('devicefarm:ListJobs');
+    this.to('devicefarm:ListJobs');
     return this;
   }
 
@@ -1495,7 +1495,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListNetworkProfiles.html
    */
   public toListNetworkProfiles() {
-    this.add('devicefarm:ListNetworkProfiles');
+    this.to('devicefarm:ListNetworkProfiles');
     return this;
   }
 
@@ -1507,7 +1507,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListOfferingPromotions.html
    */
   public toListOfferingPromotions() {
-    this.add('devicefarm:ListOfferingPromotions');
+    this.to('devicefarm:ListOfferingPromotions');
     return this;
   }
 
@@ -1519,7 +1519,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListOfferingTransactions.html
    */
   public toListOfferingTransactions() {
-    this.add('devicefarm:ListOfferingTransactions');
+    this.to('devicefarm:ListOfferingTransactions');
     return this;
   }
 
@@ -1531,7 +1531,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListOfferings.html
    */
   public toListOfferings() {
-    this.add('devicefarm:ListOfferings');
+    this.to('devicefarm:ListOfferings');
     return this;
   }
 
@@ -1543,7 +1543,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListProjects.html
    */
   public toListProjects() {
-    this.add('devicefarm:ListProjects');
+    this.to('devicefarm:ListProjects');
     return this;
   }
 
@@ -1555,7 +1555,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListRemoteAccessSessions.html
    */
   public toListRemoteAccessSessions() {
-    this.add('devicefarm:ListRemoteAccessSessions');
+    this.to('devicefarm:ListRemoteAccessSessions');
     return this;
   }
 
@@ -1567,7 +1567,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListRuns.html
    */
   public toListRuns() {
-    this.add('devicefarm:ListRuns');
+    this.to('devicefarm:ListRuns');
     return this;
   }
 
@@ -1579,7 +1579,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListSamples.html
    */
   public toListSamples() {
-    this.add('devicefarm:ListSamples');
+    this.to('devicefarm:ListSamples');
     return this;
   }
 
@@ -1591,7 +1591,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListSuites.html
    */
   public toListSuites() {
-    this.add('devicefarm:ListSuites');
+    this.to('devicefarm:ListSuites');
     return this;
   }
 
@@ -1603,7 +1603,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('devicefarm:ListTagsForResource');
+    this.to('devicefarm:ListTagsForResource');
     return this;
   }
 
@@ -1615,7 +1615,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTestGridProjects.html
    */
   public toListTestGridProjects() {
-    this.add('devicefarm:ListTestGridProjects');
+    this.to('devicefarm:ListTestGridProjects');
     return this;
   }
 
@@ -1627,7 +1627,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTestGridSessionActions.html
    */
   public toListTestGridSessionActions() {
-    this.add('devicefarm:ListTestGridSessionActions');
+    this.to('devicefarm:ListTestGridSessionActions');
     return this;
   }
 
@@ -1639,7 +1639,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTestGridSessionArtifacts.html
    */
   public toListTestGridSessionArtifacts() {
-    this.add('devicefarm:ListTestGridSessionArtifacts');
+    this.to('devicefarm:ListTestGridSessionArtifacts');
     return this;
   }
 
@@ -1651,7 +1651,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTestGridSessions.html
    */
   public toListTestGridSessions() {
-    this.add('devicefarm:ListTestGridSessions');
+    this.to('devicefarm:ListTestGridSessions');
     return this;
   }
 
@@ -1663,7 +1663,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTests.html
    */
   public toListTests() {
-    this.add('devicefarm:ListTests');
+    this.to('devicefarm:ListTests');
     return this;
   }
 
@@ -1675,7 +1675,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListUniqueProblems.html
    */
   public toListUniqueProblems() {
-    this.add('devicefarm:ListUniqueProblems');
+    this.to('devicefarm:ListUniqueProblems');
     return this;
   }
 
@@ -1687,7 +1687,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListUploads.html
    */
   public toListUploads() {
-    this.add('devicefarm:ListUploads');
+    this.to('devicefarm:ListUploads');
     return this;
   }
 
@@ -1699,7 +1699,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListVPCEConfigurations.html
    */
   public toListVPCEConfigurations() {
-    this.add('devicefarm:ListVPCEConfigurations');
+    this.to('devicefarm:ListVPCEConfigurations');
     return this;
   }
 
@@ -1711,7 +1711,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_PurchaseOffering.html
    */
   public toPurchaseOffering() {
-    this.add('devicefarm:PurchaseOffering');
+    this.to('devicefarm:PurchaseOffering');
     return this;
   }
 
@@ -1723,7 +1723,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_RenewOffering.html
    */
   public toRenewOffering() {
-    this.add('devicefarm:RenewOffering');
+    this.to('devicefarm:RenewOffering');
     return this;
   }
 
@@ -1735,7 +1735,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ScheduleRun.html
    */
   public toScheduleRun() {
-    this.add('devicefarm:ScheduleRun');
+    this.to('devicefarm:ScheduleRun');
     return this;
   }
 
@@ -1747,7 +1747,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_StopJob.html
    */
   public toStopJob() {
-    this.add('devicefarm:StopJob');
+    this.to('devicefarm:StopJob');
     return this;
   }
 
@@ -1759,7 +1759,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_StopRemoteAccessSession.html
    */
   public toStopRemoteAccessSession() {
-    this.add('devicefarm:StopRemoteAccessSession');
+    this.to('devicefarm:StopRemoteAccessSession');
     return this;
   }
 
@@ -1771,7 +1771,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_StopRun.html
    */
   public toStopRun() {
-    this.add('devicefarm:StopRun');
+    this.to('devicefarm:StopRun');
     return this;
   }
 
@@ -1787,7 +1787,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.add('devicefarm:TagResource');
+    this.to('devicefarm:TagResource');
     return this;
   }
 
@@ -1802,7 +1802,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('devicefarm:UntagResource');
+    this.to('devicefarm:UntagResource');
     return this;
   }
 
@@ -1814,7 +1814,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateDeviceInstance.html
    */
   public toUpdateDeviceInstance() {
-    this.add('devicefarm:UpdateDeviceInstance');
+    this.to('devicefarm:UpdateDeviceInstance');
     return this;
   }
 
@@ -1826,7 +1826,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateDevicePool.html
    */
   public toUpdateDevicePool() {
-    this.add('devicefarm:UpdateDevicePool');
+    this.to('devicefarm:UpdateDevicePool');
     return this;
   }
 
@@ -1838,7 +1838,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateInstanceProfile.html
    */
   public toUpdateInstanceProfile() {
-    this.add('devicefarm:UpdateInstanceProfile');
+    this.to('devicefarm:UpdateInstanceProfile');
     return this;
   }
 
@@ -1850,7 +1850,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateNetworkProfile.html
    */
   public toUpdateNetworkProfile() {
-    this.add('devicefarm:UpdateNetworkProfile');
+    this.to('devicefarm:UpdateNetworkProfile');
     return this;
   }
 
@@ -1862,7 +1862,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateProject.html
    */
   public toUpdateProject() {
-    this.add('devicefarm:UpdateProject');
+    this.to('devicefarm:UpdateProject');
     return this;
   }
 
@@ -1874,7 +1874,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateTestGridProject.html
    */
   public toUpdateTestGridProject() {
-    this.add('devicefarm:UpdateTestGridProject');
+    this.to('devicefarm:UpdateTestGridProject');
     return this;
   }
 
@@ -1886,7 +1886,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateUpload.html
    */
   public toUpdateUpload() {
-    this.add('devicefarm:UpdateUpload');
+    this.to('devicefarm:UpdateUpload');
     return this;
   }
 
@@ -1898,7 +1898,7 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateVPCEConfiguration.html
    */
   public toUpdateVPCEConfiguration() {
-    this.add('devicefarm:UpdateVPCEConfiguration');
+    this.to('devicefarm:UpdateVPCEConfiguration');
     return this;
   }
 

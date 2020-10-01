@@ -33,7 +33,7 @@ export class Codeguru extends PolicyStatement {
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetCodeGuruFreeTrialSummary.html
    */
   public toGetCodeGuruFreeTrialSummary() {
-    this.add('codeguru:GetCodeGuruFreeTrialSummary');
+    this.to('codeguru:GetCodeGuruFreeTrialSummary');
     return this;
   }
 }

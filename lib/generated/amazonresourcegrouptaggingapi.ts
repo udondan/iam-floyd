@@ -68,7 +68,7 @@ export class Tag extends PolicyStatement {
    * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_DescribeReportCreation.html
    */
   public toDescribeReportCreation() {
-    this.add('tag:DescribeReportCreation');
+    this.to('tag:DescribeReportCreation');
     return this;
   }
 
@@ -80,7 +80,7 @@ export class Tag extends PolicyStatement {
    * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetComplianceSummary.html
    */
   public toGetComplianceSummary() {
-    this.add('tag:GetComplianceSummary');
+    this.to('tag:GetComplianceSummary');
     return this;
   }
 
@@ -92,7 +92,7 @@ export class Tag extends PolicyStatement {
    * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html
    */
   public toGetResources() {
-    this.add('tag:GetResources');
+    this.to('tag:GetResources');
     return this;
   }
 
@@ -104,7 +104,7 @@ export class Tag extends PolicyStatement {
    * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagKeys.html
    */
   public toGetTagKeys() {
-    this.add('tag:GetTagKeys');
+    this.to('tag:GetTagKeys');
     return this;
   }
 
@@ -116,7 +116,7 @@ export class Tag extends PolicyStatement {
    * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagValues.html
    */
   public toGetTagValues() {
-    this.add('tag:GetTagValues');
+    this.to('tag:GetTagValues');
     return this;
   }
 
@@ -128,7 +128,7 @@ export class Tag extends PolicyStatement {
    * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_StartReportCreation.html
    */
   public toStartReportCreation() {
-    this.add('tag:StartReportCreation');
+    this.to('tag:StartReportCreation');
     return this;
   }
 
@@ -140,7 +140,7 @@ export class Tag extends PolicyStatement {
    * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html
    */
   public toTagResources() {
-    this.add('tag:TagResources');
+    this.to('tag:TagResources');
     return this;
   }
 
@@ -152,7 +152,7 @@ export class Tag extends PolicyStatement {
    * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntagResources.html
    */
   public toUntagResources() {
-    this.add('tag:UntagResources');
+    this.to('tag:UntagResources');
     return this;
   }
 }

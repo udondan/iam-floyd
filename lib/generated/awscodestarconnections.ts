@@ -199,7 +199,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateConnection.html
    */
   public toCreateConnection() {
-    this.add('codestar-connections:CreateConnection');
+    this.to('codestar-connections:CreateConnection');
     return this;
   }
 
@@ -211,7 +211,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_DeleteConnection.html
    */
   public toDeleteConnection() {
-    this.add('codestar-connections:DeleteConnection');
+    this.to('codestar-connections:DeleteConnection');
     return this;
   }
 
@@ -223,7 +223,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetConnection.html
    */
   public toGetConnection() {
-    this.add('codestar-connections:GetConnection');
+    this.to('codestar-connections:GetConnection');
     return this;
   }
 
@@ -239,7 +239,7 @@ export class CodestarConnections extends PolicyStatement {
    * - codestar-connections:StartOAuthHandshake
    */
   public toGetIndividualAccessToken() {
-    this.add('codestar-connections:GetIndividualAccessToken');
+    this.to('codestar-connections:GetIndividualAccessToken');
     return this;
   }
 
@@ -252,7 +252,7 @@ export class CodestarConnections extends PolicyStatement {
    * - .ifProviderType()
    */
   public toGetInstallationUrl() {
-    this.add('codestar-connections:GetInstallationUrl');
+    this.to('codestar-connections:GetInstallationUrl');
     return this;
   }
 
@@ -267,7 +267,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListConnections.html
    */
   public toListConnections() {
-    this.add('codestar-connections:ListConnections');
+    this.to('codestar-connections:ListConnections');
     return this;
   }
 
@@ -281,7 +281,7 @@ export class CodestarConnections extends PolicyStatement {
    * - codestar-connections:StartOAuthHandshake
    */
   public toListInstallationTargets() {
-    this.add('codestar-connections:ListInstallationTargets');
+    this.to('codestar-connections:ListInstallationTargets');
     return this;
   }
 
@@ -293,7 +293,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('codestar-connections:ListTagsForResource');
+    this.to('codestar-connections:ListTagsForResource');
     return this;
   }
 
@@ -306,7 +306,7 @@ export class CodestarConnections extends PolicyStatement {
    * - .ifPassedToService()
    */
   public toPassConnection() {
-    this.add('codestar-connections:PassConnection');
+    this.to('codestar-connections:PassConnection');
     return this;
   }
 
@@ -319,7 +319,7 @@ export class CodestarConnections extends PolicyStatement {
    * - .ifProviderType()
    */
   public toStartOAuthHandshake() {
-    this.add('codestar-connections:StartOAuthHandshake');
+    this.to('codestar-connections:StartOAuthHandshake');
     return this;
   }
 
@@ -335,7 +335,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.add('codestar-connections:TagResource');
+    this.to('codestar-connections:TagResource');
     return this;
   }
 
@@ -351,7 +351,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('codestar-connections:UntagResource');
+    this.to('codestar-connections:UntagResource');
     return this;
   }
 
@@ -370,7 +370,7 @@ export class CodestarConnections extends PolicyStatement {
    * - codestar-connections:StartOAuthHandshake
    */
   public toUpdateConnectionInstallation() {
-    this.add('codestar-connections:UpdateConnectionInstallation');
+    this.to('codestar-connections:UpdateConnectionInstallation');
     return this;
   }
 
@@ -385,7 +385,7 @@ export class CodestarConnections extends PolicyStatement {
    * - .ifProviderPermissionsRequired()
    */
   public toUseConnection() {
-    this.add('codestar-connections:UseConnection');
+    this.to('codestar-connections:UseConnection');
     return this;
   }
 

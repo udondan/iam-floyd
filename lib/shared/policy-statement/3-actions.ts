@@ -92,7 +92,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    *
    * @param action Actions that will be added to the statement.
    */
-  public add(action: string) {
+  public to(action: string) {
     this.actions.push(action);
     return this;
   }
@@ -102,9 +102,9 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    */
   public allActions() {
     if (this.servicePrefix.length) {
-      this.add(`${this.servicePrefix}:*`);
+      this.to(`${this.servicePrefix}:*`);
     } else {
-      this.add('*');
+      this.to('*');
     }
     return this;
   }
@@ -122,7 +122,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
     expressions.forEach((expression) => {
       for (const [name] of Object.entries(this.actionList)) {
         if (name.match(RegexParser(expression))) {
-          this.add(`${this.servicePrefix}:${name}`);
+          this.to(`${this.servicePrefix}:${name}`);
         }
       }
     });
@@ -192,7 +192,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
     for (const [name, action] of Object.entries(this.actionList)) {
       if (Object.values(AccessLevel).includes(accessLevel)) {
         if (accessLevel == action.accessLevel) {
-          this.add(`${this.servicePrefix}:${name}`);
+          this.to(`${this.servicePrefix}:${name}`);
         }
       }
     }

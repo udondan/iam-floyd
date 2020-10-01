@@ -601,7 +601,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html
    */
   public toCancelUpdateStack() {
-    this.add('cloudformation:CancelUpdateStack');
+    this.to('cloudformation:CancelUpdateStack');
     return this;
   }
 
@@ -616,7 +616,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ContinueUpdateRollback.html
    */
   public toContinueUpdateRollback() {
-    this.add('cloudformation:ContinueUpdateRollback');
+    this.to('cloudformation:ContinueUpdateRollback');
     return this;
   }
 
@@ -638,7 +638,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html
    */
   public toCreateChangeSet() {
-    this.add('cloudformation:CreateChangeSet');
+    this.to('cloudformation:CreateChangeSet');
     return this;
   }
 
@@ -658,7 +658,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStack.html
    */
   public toCreateStack() {
-    this.add('cloudformation:CreateStack');
+    this.to('cloudformation:CreateStack');
     return this;
   }
 
@@ -670,7 +670,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html
    */
   public toCreateStackInstances() {
-    this.add('cloudformation:CreateStackInstances');
+    this.to('cloudformation:CreateStackInstances');
     return this;
   }
 
@@ -688,7 +688,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackSet.html
    */
   public toCreateStackSet() {
-    this.add('cloudformation:CreateStackSet');
+    this.to('cloudformation:CreateStackSet');
     return this;
   }
 
@@ -698,7 +698,7 @@ export class Cloudformation extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateUploadBucket() {
-    this.add('cloudformation:CreateUploadBucket');
+    this.to('cloudformation:CreateUploadBucket');
     return this;
   }
 
@@ -713,7 +713,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteChangeSet.html
    */
   public toDeleteChangeSet() {
-    this.add('cloudformation:DeleteChangeSet');
+    this.to('cloudformation:DeleteChangeSet');
     return this;
   }
 
@@ -728,7 +728,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStack.html
    */
   public toDeleteStack() {
-    this.add('cloudformation:DeleteStack');
+    this.to('cloudformation:DeleteStack');
     return this;
   }
 
@@ -740,7 +740,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStackInstances.html
    */
   public toDeleteStackInstances() {
-    this.add('cloudformation:DeleteStackInstances');
+    this.to('cloudformation:DeleteStackInstances');
     return this;
   }
 
@@ -752,7 +752,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStackSet.html
    */
   public toDeleteStackSet() {
-    this.add('cloudformation:DeleteStackSet');
+    this.to('cloudformation:DeleteStackSet');
     return this;
   }
 
@@ -764,7 +764,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html
    */
   public toDeregisterType() {
-    this.add('cloudformation:DeregisterType');
+    this.to('cloudformation:DeregisterType');
     return this;
   }
 
@@ -776,7 +776,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeAccountLimits.html
    */
   public toDescribeAccountLimits() {
-    this.add('cloudformation:DescribeAccountLimits');
+    this.to('cloudformation:DescribeAccountLimits');
     return this;
   }
 
@@ -791,7 +791,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSet.html
    */
   public toDescribeChangeSet() {
-    this.add('cloudformation:DescribeChangeSet');
+    this.to('cloudformation:DescribeChangeSet');
     return this;
   }
 
@@ -803,7 +803,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackDriftDetectionStatus.html
    */
   public toDescribeStackDriftDetectionStatus() {
-    this.add('cloudformation:DescribeStackDriftDetectionStatus');
+    this.to('cloudformation:DescribeStackDriftDetectionStatus');
     return this;
   }
 
@@ -815,7 +815,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackEvents.html
    */
   public toDescribeStackEvents() {
-    this.add('cloudformation:DescribeStackEvents');
+    this.to('cloudformation:DescribeStackEvents');
     return this;
   }
 
@@ -827,7 +827,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackInstance.html
    */
   public toDescribeStackInstance() {
-    this.add('cloudformation:DescribeStackInstance');
+    this.to('cloudformation:DescribeStackInstance');
     return this;
   }
 
@@ -839,7 +839,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResource.html
    */
   public toDescribeStackResource() {
-    this.add('cloudformation:DescribeStackResource');
+    this.to('cloudformation:DescribeStackResource');
     return this;
   }
 
@@ -851,7 +851,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResourceDrifts.html
    */
   public toDescribeStackResourceDrifts() {
-    this.add('cloudformation:DescribeStackResourceDrifts');
+    this.to('cloudformation:DescribeStackResourceDrifts');
     return this;
   }
 
@@ -863,7 +863,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResources.html
    */
   public toDescribeStackResources() {
-    this.add('cloudformation:DescribeStackResources');
+    this.to('cloudformation:DescribeStackResources');
     return this;
   }
 
@@ -875,7 +875,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackSet.html
    */
   public toDescribeStackSet() {
-    this.add('cloudformation:DescribeStackSet');
+    this.to('cloudformation:DescribeStackSet');
     return this;
   }
 
@@ -887,7 +887,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackSetOperation.html
    */
   public toDescribeStackSetOperation() {
-    this.add('cloudformation:DescribeStackSetOperation');
+    this.to('cloudformation:DescribeStackSetOperation');
     return this;
   }
 
@@ -899,7 +899,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStacks.html
    */
   public toDescribeStacks() {
-    this.add('cloudformation:DescribeStacks');
+    this.to('cloudformation:DescribeStacks');
     return this;
   }
 
@@ -911,7 +911,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html
    */
   public toDescribeType() {
-    this.add('cloudformation:DescribeType');
+    this.to('cloudformation:DescribeType');
     return this;
   }
 
@@ -923,7 +923,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeTypeRegistration.html
    */
   public toDescribeTypeRegistration() {
-    this.add('cloudformation:DescribeTypeRegistration');
+    this.to('cloudformation:DescribeTypeRegistration');
     return this;
   }
 
@@ -935,7 +935,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DetectStackDrift.html
    */
   public toDetectStackDrift() {
-    this.add('cloudformation:DetectStackDrift');
+    this.to('cloudformation:DetectStackDrift');
     return this;
   }
 
@@ -947,7 +947,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DetectStackResourceDrift.html
    */
   public toDetectStackResourceDrift() {
-    this.add('cloudformation:DetectStackResourceDrift');
+    this.to('cloudformation:DetectStackResourceDrift');
     return this;
   }
 
@@ -959,7 +959,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DetectStackSetDrift.html
    */
   public toDetectStackSetDrift() {
-    this.add('cloudformation:DetectStackSetDrift');
+    this.to('cloudformation:DetectStackSetDrift');
     return this;
   }
 
@@ -971,7 +971,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_EstimateTemplateCost.html
    */
   public toEstimateTemplateCost() {
-    this.add('cloudformation:EstimateTemplateCost');
+    this.to('cloudformation:EstimateTemplateCost');
     return this;
   }
 
@@ -986,7 +986,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html
    */
   public toExecuteChangeSet() {
-    this.add('cloudformation:ExecuteChangeSet');
+    this.to('cloudformation:ExecuteChangeSet');
     return this;
   }
 
@@ -998,7 +998,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetStackPolicy.html
    */
   public toGetStackPolicy() {
-    this.add('cloudformation:GetStackPolicy');
+    this.to('cloudformation:GetStackPolicy');
     return this;
   }
 
@@ -1010,7 +1010,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplate.html
    */
   public toGetTemplate() {
-    this.add('cloudformation:GetTemplate');
+    this.to('cloudformation:GetTemplate');
     return this;
   }
 
@@ -1022,7 +1022,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplateSummary.html
    */
   public toGetTemplateSummary() {
-    this.add('cloudformation:GetTemplateSummary');
+    this.to('cloudformation:GetTemplateSummary');
     return this;
   }
 
@@ -1034,7 +1034,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListChangeSets.html
    */
   public toListChangeSets() {
-    this.add('cloudformation:ListChangeSets');
+    this.to('cloudformation:ListChangeSets');
     return this;
   }
 
@@ -1046,7 +1046,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListExports.html
    */
   public toListExports() {
-    this.add('cloudformation:ListExports');
+    this.to('cloudformation:ListExports');
     return this;
   }
 
@@ -1058,7 +1058,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListImports.html
    */
   public toListImports() {
-    this.add('cloudformation:ListImports');
+    this.to('cloudformation:ListImports');
     return this;
   }
 
@@ -1070,7 +1070,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSets.html
    */
   public toListStackInstances() {
-    this.add('cloudformation:ListStackInstances');
+    this.to('cloudformation:ListStackInstances');
     return this;
   }
 
@@ -1082,7 +1082,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackResources.html
    */
   public toListStackResources() {
-    this.add('cloudformation:ListStackResources');
+    this.to('cloudformation:ListStackResources');
     return this;
   }
 
@@ -1094,7 +1094,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetOperationResults.html
    */
   public toListStackSetOperationResults() {
-    this.add('cloudformation:ListStackSetOperationResults');
+    this.to('cloudformation:ListStackSetOperationResults');
     return this;
   }
 
@@ -1106,7 +1106,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetOperations.html
    */
   public toListStackSetOperations() {
-    this.add('cloudformation:ListStackSetOperations');
+    this.to('cloudformation:ListStackSetOperations');
     return this;
   }
 
@@ -1118,7 +1118,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSets.html
    */
   public toListStackSets() {
-    this.add('cloudformation:ListStackSets');
+    this.to('cloudformation:ListStackSets');
     return this;
   }
 
@@ -1130,7 +1130,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStacks.html
    */
   public toListStacks() {
-    this.add('cloudformation:ListStacks');
+    this.to('cloudformation:ListStacks');
     return this;
   }
 
@@ -1142,7 +1142,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListTypeRegistrations.html
    */
   public toListTypeRegistrations() {
-    this.add('cloudformation:ListTypeRegistrations');
+    this.to('cloudformation:ListTypeRegistrations');
     return this;
   }
 
@@ -1154,7 +1154,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListTypeVersions.html
    */
   public toListTypeVersions() {
-    this.add('cloudformation:ListTypeVersions');
+    this.to('cloudformation:ListTypeVersions');
     return this;
   }
 
@@ -1166,7 +1166,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListTypes.html
    */
   public toListTypes() {
-    this.add('cloudformation:ListTypes');
+    this.to('cloudformation:ListTypes');
     return this;
   }
 
@@ -1178,7 +1178,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html
    */
   public toRegisterType() {
-    this.add('cloudformation:RegisterType');
+    this.to('cloudformation:RegisterType');
     return this;
   }
 
@@ -1193,7 +1193,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetStackPolicy.html
    */
   public toSetStackPolicy() {
-    this.add('cloudformation:SetStackPolicy');
+    this.to('cloudformation:SetStackPolicy');
     return this;
   }
 
@@ -1205,7 +1205,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeDefaultVersion.html
    */
   public toSetTypeDefaultVersion() {
-    this.add('cloudformation:SetTypeDefaultVersion');
+    this.to('cloudformation:SetTypeDefaultVersion');
     return this;
   }
 
@@ -1217,7 +1217,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SignalResource.html
    */
   public toSignalResource() {
-    this.add('cloudformation:SignalResource');
+    this.to('cloudformation:SignalResource');
     return this;
   }
 
@@ -1229,7 +1229,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StopStackSetOperation.html
    */
   public toStopStackSetOperation() {
-    this.add('cloudformation:StopStackSetOperation');
+    this.to('cloudformation:StopStackSetOperation');
     return this;
   }
 
@@ -1239,7 +1239,7 @@ export class Cloudformation extends PolicyStatement {
    * Access Level: Tagging
    */
   public toTagResource() {
-    this.add('cloudformation:TagResource');
+    this.to('cloudformation:TagResource');
     return this;
   }
 
@@ -1249,7 +1249,7 @@ export class Cloudformation extends PolicyStatement {
    * Access Level: Tagging
    */
   public toUntagResource() {
-    this.add('cloudformation:UntagResource');
+    this.to('cloudformation:UntagResource');
     return this;
   }
 
@@ -1269,7 +1269,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html
    */
   public toUpdateStack() {
-    this.add('cloudformation:UpdateStack');
+    this.to('cloudformation:UpdateStack');
     return this;
   }
 
@@ -1281,7 +1281,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackInstances.html
    */
   public toUpdateStackInstances() {
-    this.add('cloudformation:UpdateStackInstances');
+    this.to('cloudformation:UpdateStackInstances');
     return this;
   }
 
@@ -1299,7 +1299,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html
    */
   public toUpdateStackSet() {
-    this.add('cloudformation:UpdateStackSet');
+    this.to('cloudformation:UpdateStackSet');
     return this;
   }
 
@@ -1311,7 +1311,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateTerminationProtection.html
    */
   public toUpdateTerminationProtection() {
-    this.add('cloudformation:UpdateTerminationProtection');
+    this.to('cloudformation:UpdateTerminationProtection');
     return this;
   }
 
@@ -1323,7 +1323,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ValidateTemplate.html
    */
   public toValidateTemplate() {
-    this.add('cloudformation:ValidateTemplate');
+    this.to('cloudformation:ValidateTemplate');
     return this;
   }
 

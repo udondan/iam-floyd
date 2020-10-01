@@ -274,7 +274,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_AddTagsToResource.html
    */
   public toAddTagsToResource() {
-    this.add('cloudhsm:AddTagsToResource');
+    this.to('cloudhsm:AddTagsToResource');
     return this;
   }
 
@@ -290,7 +290,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CopyBackupToRegion.html
    */
   public toCopyBackupToRegion() {
-    this.add('cloudhsm:CopyBackupToRegion');
+    this.to('cloudhsm:CopyBackupToRegion');
     return this;
   }
 
@@ -306,7 +306,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateCluster.html
    */
   public toCreateCluster() {
-    this.add('cloudhsm:CreateCluster');
+    this.to('cloudhsm:CreateCluster');
     return this;
   }
 
@@ -318,7 +318,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateHapg.html
    */
   public toCreateHapg() {
-    this.add('cloudhsm:CreateHapg');
+    this.to('cloudhsm:CreateHapg');
     return this;
   }
 
@@ -330,7 +330,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html
    */
   public toCreateHsm() {
-    this.add('cloudhsm:CreateHsm');
+    this.to('cloudhsm:CreateHsm');
     return this;
   }
 
@@ -342,7 +342,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateLunaClient.html
    */
   public toCreateLunaClient() {
-    this.add('cloudhsm:CreateLunaClient');
+    this.to('cloudhsm:CreateLunaClient');
     return this;
   }
 
@@ -354,7 +354,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteBackup.html
    */
   public toDeleteBackup() {
-    this.add('cloudhsm:DeleteBackup');
+    this.to('cloudhsm:DeleteBackup');
     return this;
   }
 
@@ -366,7 +366,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteCluster.html
    */
   public toDeleteCluster() {
-    this.add('cloudhsm:DeleteCluster');
+    this.to('cloudhsm:DeleteCluster');
     return this;
   }
 
@@ -378,7 +378,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteHapg.html
    */
   public toDeleteHapg() {
-    this.add('cloudhsm:DeleteHapg');
+    this.to('cloudhsm:DeleteHapg');
     return this;
   }
 
@@ -390,7 +390,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteHsm.html
    */
   public toDeleteHsm() {
-    this.add('cloudhsm:DeleteHsm');
+    this.to('cloudhsm:DeleteHsm');
     return this;
   }
 
@@ -402,7 +402,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteLunaClient.html
    */
   public toDeleteLunaClient() {
-    this.add('cloudhsm:DeleteLunaClient');
+    this.to('cloudhsm:DeleteLunaClient');
     return this;
   }
 
@@ -414,7 +414,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeBackups.html
    */
   public toDescribeBackups() {
-    this.add('cloudhsm:DescribeBackups');
+    this.to('cloudhsm:DescribeBackups');
     return this;
   }
 
@@ -426,7 +426,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html
    */
   public toDescribeClusters() {
-    this.add('cloudhsm:DescribeClusters');
+    this.to('cloudhsm:DescribeClusters');
     return this;
   }
 
@@ -438,7 +438,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeHapg.html
    */
   public toDescribeHapg() {
-    this.add('cloudhsm:DescribeHapg');
+    this.to('cloudhsm:DescribeHapg');
     return this;
   }
 
@@ -450,7 +450,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeHsm.html
    */
   public toDescribeHsm() {
-    this.add('cloudhsm:DescribeHsm');
+    this.to('cloudhsm:DescribeHsm');
     return this;
   }
 
@@ -462,7 +462,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeLunaClient.html
    */
   public toDescribeLunaClient() {
-    this.add('cloudhsm:DescribeLunaClient');
+    this.to('cloudhsm:DescribeLunaClient');
     return this;
   }
 
@@ -474,7 +474,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_GetConfig.html
    */
   public toGetConfig() {
-    this.add('cloudhsm:GetConfig');
+    this.to('cloudhsm:GetConfig');
     return this;
   }
 
@@ -486,7 +486,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_InitializeCluster.html
    */
   public toInitializeCluster() {
-    this.add('cloudhsm:InitializeCluster');
+    this.to('cloudhsm:InitializeCluster');
     return this;
   }
 
@@ -498,7 +498,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListAvailableZones.html
    */
   public toListAvailableZones() {
-    this.add('cloudhsm:ListAvailableZones');
+    this.to('cloudhsm:ListAvailableZones');
     return this;
   }
 
@@ -510,7 +510,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListHapgs.html
    */
   public toListHapgs() {
-    this.add('cloudhsm:ListHapgs');
+    this.to('cloudhsm:ListHapgs');
     return this;
   }
 
@@ -522,7 +522,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListHsms.html
    */
   public toListHsms() {
-    this.add('cloudhsm:ListHsms');
+    this.to('cloudhsm:ListHsms');
     return this;
   }
 
@@ -534,7 +534,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListLunaClients.html
    */
   public toListLunaClients() {
-    this.add('cloudhsm:ListLunaClients');
+    this.to('cloudhsm:ListLunaClients');
     return this;
   }
 
@@ -546,7 +546,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_ListTags.html
    */
   public toListTags() {
-    this.add('cloudhsm:ListTags');
+    this.to('cloudhsm:ListTags');
     return this;
   }
 
@@ -558,7 +558,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('cloudhsm:ListTagsForResource');
+    this.to('cloudhsm:ListTagsForResource');
     return this;
   }
 
@@ -570,7 +570,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyHapg.html
    */
   public toModifyHapg() {
-    this.add('cloudhsm:ModifyHapg');
+    this.to('cloudhsm:ModifyHapg');
     return this;
   }
 
@@ -582,7 +582,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyHsm.html
    */
   public toModifyHsm() {
-    this.add('cloudhsm:ModifyHsm');
+    this.to('cloudhsm:ModifyHsm');
     return this;
   }
 
@@ -594,7 +594,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyLunaClient.html
    */
   public toModifyLunaClient() {
-    this.add('cloudhsm:ModifyLunaClient');
+    this.to('cloudhsm:ModifyLunaClient');
     return this;
   }
 
@@ -606,7 +606,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_RemoveTagsFromResource.html
    */
   public toRemoveTagsFromResource() {
-    this.add('cloudhsm:RemoveTagsFromResource');
+    this.to('cloudhsm:RemoveTagsFromResource');
     return this;
   }
 
@@ -618,7 +618,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_RestoreBackup.html
    */
   public toRestoreBackup() {
-    this.add('cloudhsm:RestoreBackup');
+    this.to('cloudhsm:RestoreBackup');
     return this;
   }
 
@@ -634,7 +634,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.add('cloudhsm:TagResource');
+    this.to('cloudhsm:TagResource');
     return this;
   }
 
@@ -649,7 +649,7 @@ export class Cloudhsm extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('cloudhsm:UntagResource');
+    this.to('cloudhsm:UntagResource');
     return this;
   }
 

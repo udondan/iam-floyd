@@ -171,7 +171,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * - iam:CreateServiceLinkedRole
    */
   public toAssociateRepository() {
-    this.add('codeguru-reviewer:AssociateRepository');
+    this.to('codeguru-reviewer:AssociateRepository');
     return this;
   }
 
@@ -181,7 +181,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * Access Level: Read
    */
   public toCreateConnectionToken() {
-    this.add('codeguru-reviewer:CreateConnectionToken');
+    this.to('codeguru-reviewer:CreateConnectionToken');
     return this;
   }
 
@@ -191,7 +191,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeCodeReview() {
-    this.add('codeguru-reviewer:DescribeCodeReview');
+    this.to('codeguru-reviewer:DescribeCodeReview');
     return this;
   }
 
@@ -201,7 +201,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeRecommendationFeedback() {
-    this.add('codeguru-reviewer:DescribeRecommendationFeedback');
+    this.to('codeguru-reviewer:DescribeRecommendationFeedback');
     return this;
   }
 
@@ -211,7 +211,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeRepositoryAssociation() {
-    this.add('codeguru-reviewer:DescribeRepositoryAssociation');
+    this.to('codeguru-reviewer:DescribeRepositoryAssociation');
     return this;
   }
 
@@ -226,7 +226,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * - events:RemoveTargets
    */
   public toDisassociateRepository() {
-    this.add('codeguru-reviewer:DisassociateRepository');
+    this.to('codeguru-reviewer:DisassociateRepository');
     return this;
   }
 
@@ -236,7 +236,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * Access Level: Read
    */
   public toGetMetricsData() {
-    this.add('codeguru-reviewer:GetMetricsData');
+    this.to('codeguru-reviewer:GetMetricsData');
     return this;
   }
 
@@ -246,7 +246,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * Access Level: List
    */
   public toListCodeReviews() {
-    this.add('codeguru-reviewer:ListCodeReviews');
+    this.to('codeguru-reviewer:ListCodeReviews');
     return this;
   }
 
@@ -256,7 +256,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * Access Level: List
    */
   public toListRecommendationFeedback() {
-    this.add('codeguru-reviewer:ListRecommendationFeedback');
+    this.to('codeguru-reviewer:ListRecommendationFeedback');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * Access Level: List
    */
   public toListRecommendations() {
-    this.add('codeguru-reviewer:ListRecommendations');
+    this.to('codeguru-reviewer:ListRecommendations');
     return this;
   }
 
@@ -276,7 +276,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * Access Level: List
    */
   public toListRepositoryAssociations() {
-    this.add('codeguru-reviewer:ListRepositoryAssociations');
+    this.to('codeguru-reviewer:ListRepositoryAssociations');
     return this;
   }
 
@@ -286,7 +286,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * Access Level: Read
    */
   public toListThirdPartyRepositories() {
-    this.add('codeguru-reviewer:ListThirdPartyRepositories');
+    this.to('codeguru-reviewer:ListThirdPartyRepositories');
     return this;
   }
 
@@ -296,7 +296,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * Access Level: Write
    */
   public toPutRecommendationFeedback() {
-    this.add('codeguru-reviewer:PutRecommendationFeedback');
+    this.to('codeguru-reviewer:PutRecommendationFeedback');
     return this;
   }
 

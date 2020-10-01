@@ -131,7 +131,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_AssociateServiceQuotaTemplate.html
    */
   public toAssociateServiceQuotaTemplate() {
-    this.add('servicequotas:AssociateServiceQuotaTemplate');
+    this.to('servicequotas:AssociateServiceQuotaTemplate');
     return this;
   }
 
@@ -143,7 +143,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_DeleteServiceQuotaIncreaseRequestFromTemplate.html
    */
   public toDeleteServiceQuotaIncreaseRequestFromTemplate() {
-    this.add('servicequotas:DeleteServiceQuotaIncreaseRequestFromTemplate');
+    this.to('servicequotas:DeleteServiceQuotaIncreaseRequestFromTemplate');
     return this;
   }
 
@@ -155,7 +155,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_DisassociateServiceQuotaTemplate.html
    */
   public toDisassociateServiceQuotaTemplate() {
-    this.add('servicequotas:DisassociateServiceQuotaTemplate');
+    this.to('servicequotas:DisassociateServiceQuotaTemplate');
     return this;
   }
 
@@ -167,7 +167,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetAWSDefaultServiceQuota.html
    */
   public toGetAWSDefaultServiceQuota() {
-    this.add('servicequotas:GetAWSDefaultServiceQuota');
+    this.to('servicequotas:GetAWSDefaultServiceQuota');
     return this;
   }
 
@@ -179,7 +179,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetAssociationForServiceQuotaTemplate.html
    */
   public toGetAssociationForServiceQuotaTemplate() {
-    this.add('servicequotas:GetAssociationForServiceQuotaTemplate');
+    this.to('servicequotas:GetAssociationForServiceQuotaTemplate');
     return this;
   }
 
@@ -191,7 +191,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetRequestedServiceQuotaChange.html
    */
   public toGetRequestedServiceQuotaChange() {
-    this.add('servicequotas:GetRequestedServiceQuotaChange');
+    this.to('servicequotas:GetRequestedServiceQuotaChange');
     return this;
   }
 
@@ -203,7 +203,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetServiceQuota.html
    */
   public toGetServiceQuota() {
-    this.add('servicequotas:GetServiceQuota');
+    this.to('servicequotas:GetServiceQuota');
     return this;
   }
 
@@ -215,7 +215,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetServiceQuotaIncreaseRequestFromTemplate.html
    */
   public toGetServiceQuotaIncreaseRequestFromTemplate() {
-    this.add('servicequotas:GetServiceQuotaIncreaseRequestFromTemplate');
+    this.to('servicequotas:GetServiceQuotaIncreaseRequestFromTemplate');
     return this;
   }
 
@@ -227,7 +227,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListAWSDefaultServiceQuotas.html
    */
   public toListAWSDefaultServiceQuotas() {
-    this.add('servicequotas:ListAWSDefaultServiceQuotas');
+    this.to('servicequotas:ListAWSDefaultServiceQuotas');
     return this;
   }
 
@@ -239,7 +239,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListRequestedServiceQuotaChangeHistory.html
    */
   public toListRequestedServiceQuotaChangeHistory() {
-    this.add('servicequotas:ListRequestedServiceQuotaChangeHistory');
+    this.to('servicequotas:ListRequestedServiceQuotaChangeHistory');
     return this;
   }
 
@@ -251,7 +251,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListRequestedServiceQuotaChangeHistoryByQuota.html
    */
   public toListRequestedServiceQuotaChangeHistoryByQuota() {
-    this.add('servicequotas:ListRequestedServiceQuotaChangeHistoryByQuota');
+    this.to('servicequotas:ListRequestedServiceQuotaChangeHistoryByQuota');
     return this;
   }
 
@@ -263,7 +263,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotaIncreaseRequestsInTemplate
    */
   public toListServiceQuotaIncreaseRequestsInTemplate() {
-    this.add('servicequotas:ListServiceQuotaIncreaseRequestsInTemplate');
+    this.to('servicequotas:ListServiceQuotaIncreaseRequestsInTemplate');
     return this;
   }
 
@@ -275,7 +275,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html
    */
   public toListServiceQuotas() {
-    this.add('servicequotas:ListServiceQuotas');
+    this.to('servicequotas:ListServiceQuotas');
     return this;
   }
 
@@ -287,7 +287,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServices.html
    */
   public toListServices() {
-    this.add('servicequotas:ListServices');
+    this.to('servicequotas:ListServices');
     return this;
   }
 
@@ -302,7 +302,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_PutServiceQuotaIncreaseRequestIntoTemplate.html
    */
   public toPutServiceQuotaIncreaseRequestIntoTemplate() {
-    this.add('servicequotas:PutServiceQuotaIncreaseRequestIntoTemplate');
+    this.to('servicequotas:PutServiceQuotaIncreaseRequestIntoTemplate');
     return this;
   }
 
@@ -317,7 +317,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html
    */
   public toRequestServiceQuotaIncrease() {
-    this.add('servicequotas:RequestServiceQuotaIncrease');
+    this.to('servicequotas:RequestServiceQuotaIncrease');
     return this;
   }
 

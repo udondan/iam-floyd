@@ -46,7 +46,7 @@ export class ResourceExplorer extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te
    */
   public toListResourceTypes() {
-    this.add('resource-explorer:ListResourceTypes');
+    this.to('resource-explorer:ListResourceTypes');
     return this;
   }
 
@@ -58,7 +58,7 @@ export class ResourceExplorer extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te
    */
   public toListResources() {
-    this.add('resource-explorer:ListResources');
+    this.to('resource-explorer:ListResources');
     return this;
   }
 
@@ -73,7 +73,7 @@ export class ResourceExplorer extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te
    */
   public toListTags() {
-    this.add('resource-explorer:ListTags');
+    this.to('resource-explorer:ListTags');
     return this;
   }
 }

@@ -1178,7 +1178,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_AcceptReservedNodeExchange.html
    */
   public toAcceptReservedNodeExchange() {
-    this.add('redshift:AcceptReservedNodeExchange');
+    this.to('redshift:AcceptReservedNodeExchange');
     return this;
   }
 
@@ -1190,7 +1190,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_AuthorizeClusterSecurityGroupIngress.html
    */
   public toAuthorizeClusterSecurityGroupIngress() {
-    this.add('redshift:AuthorizeClusterSecurityGroupIngress');
+    this.to('redshift:AuthorizeClusterSecurityGroupIngress');
     return this;
   }
 
@@ -1202,7 +1202,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_AuthorizeSnapshotAccess.html
    */
   public toAuthorizeSnapshotAccess() {
-    this.add('redshift:AuthorizeSnapshotAccess');
+    this.to('redshift:AuthorizeSnapshotAccess');
     return this;
   }
 
@@ -1214,7 +1214,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_BatchDeleteClusterSnapshots.html
    */
   public toBatchDeleteClusterSnapshots() {
-    this.add('redshift:BatchDeleteClusterSnapshots');
+    this.to('redshift:BatchDeleteClusterSnapshots');
     return this;
   }
 
@@ -1226,7 +1226,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_BatchModifyClusterSnapshots.html
    */
   public toBatchModifyClusterSnapshots() {
-    this.add('redshift:BatchModifyClusterSnapshots');
+    this.to('redshift:BatchModifyClusterSnapshots');
     return this;
   }
 
@@ -1238,7 +1238,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toCancelQuery() {
-    this.add('redshift:CancelQuery');
+    this.to('redshift:CancelQuery');
     return this;
   }
 
@@ -1250,7 +1250,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toCancelQuerySession() {
-    this.add('redshift:CancelQuerySession');
+    this.to('redshift:CancelQuerySession');
     return this;
   }
 
@@ -1262,7 +1262,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CancelResize.html
    */
   public toCancelResize() {
-    this.add('redshift:CancelResize');
+    this.to('redshift:CancelResize');
     return this;
   }
 
@@ -1274,7 +1274,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CopyClusterSnapshot.html
    */
   public toCopyClusterSnapshot() {
-    this.add('redshift:CopyClusterSnapshot');
+    this.to('redshift:CopyClusterSnapshot');
     return this;
   }
 
@@ -1290,7 +1290,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateCluster.html
    */
   public toCreateCluster() {
-    this.add('redshift:CreateCluster');
+    this.to('redshift:CreateCluster');
     return this;
   }
 
@@ -1306,7 +1306,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterParameterGroup.html
    */
   public toCreateClusterParameterGroup() {
-    this.add('redshift:CreateClusterParameterGroup');
+    this.to('redshift:CreateClusterParameterGroup');
     return this;
   }
 
@@ -1322,7 +1322,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSecurityGroup.html
    */
   public toCreateClusterSecurityGroup() {
-    this.add('redshift:CreateClusterSecurityGroup');
+    this.to('redshift:CreateClusterSecurityGroup');
     return this;
   }
 
@@ -1338,7 +1338,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSnapshot.html
    */
   public toCreateClusterSnapshot() {
-    this.add('redshift:CreateClusterSnapshot');
+    this.to('redshift:CreateClusterSnapshot');
     return this;
   }
 
@@ -1354,7 +1354,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSubnetGroup.html
    */
   public toCreateClusterSubnetGroup() {
-    this.add('redshift:CreateClusterSubnetGroup');
+    this.to('redshift:CreateClusterSubnetGroup');
     return this;
   }
 
@@ -1369,7 +1369,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/generating-iam-credentials-role-permissions.html
    */
   public toCreateClusterUser() {
-    this.add('redshift:CreateClusterUser');
+    this.to('redshift:CreateClusterUser');
     return this;
   }
 
@@ -1385,7 +1385,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateEventSubscription.html
    */
   public toCreateEventSubscription() {
-    this.add('redshift:CreateEventSubscription');
+    this.to('redshift:CreateEventSubscription');
     return this;
   }
 
@@ -1401,7 +1401,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateHsmClientCertificate.html
    */
   public toCreateHsmClientCertificate() {
-    this.add('redshift:CreateHsmClientCertificate');
+    this.to('redshift:CreateHsmClientCertificate');
     return this;
   }
 
@@ -1417,7 +1417,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateHsmConfiguration.html
    */
   public toCreateHsmConfiguration() {
-    this.add('redshift:CreateHsmConfiguration');
+    this.to('redshift:CreateHsmConfiguration');
     return this;
   }
 
@@ -1429,7 +1429,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toCreateSavedQuery() {
-    this.add('redshift:CreateSavedQuery');
+    this.to('redshift:CreateSavedQuery');
     return this;
   }
 
@@ -1441,7 +1441,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateScheduledAction.html
    */
   public toCreateScheduledAction() {
-    this.add('redshift:CreateScheduledAction');
+    this.to('redshift:CreateScheduledAction');
     return this;
   }
 
@@ -1457,7 +1457,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateSnapshotCopyGrant.html
    */
   public toCreateSnapshotCopyGrant() {
-    this.add('redshift:CreateSnapshotCopyGrant');
+    this.to('redshift:CreateSnapshotCopyGrant');
     return this;
   }
 
@@ -1473,7 +1473,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateSnapshotSchedule.html
    */
   public toCreateSnapshotSchedule() {
-    this.add('redshift:CreateSnapshotSchedule');
+    this.to('redshift:CreateSnapshotSchedule');
     return this;
   }
 
@@ -1489,7 +1489,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateTags.html
    */
   public toCreateTags() {
-    this.add('redshift:CreateTags');
+    this.to('redshift:CreateTags');
     return this;
   }
 
@@ -1501,7 +1501,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteCluster.html
    */
   public toDeleteCluster() {
-    this.add('redshift:DeleteCluster');
+    this.to('redshift:DeleteCluster');
     return this;
   }
 
@@ -1513,7 +1513,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteClusterParameterGroup.html
    */
   public toDeleteClusterParameterGroup() {
-    this.add('redshift:DeleteClusterParameterGroup');
+    this.to('redshift:DeleteClusterParameterGroup');
     return this;
   }
 
@@ -1525,7 +1525,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteClusterSecurityGroup.html
    */
   public toDeleteClusterSecurityGroup() {
-    this.add('redshift:DeleteClusterSecurityGroup');
+    this.to('redshift:DeleteClusterSecurityGroup');
     return this;
   }
 
@@ -1537,7 +1537,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteClusterSnapshot.html
    */
   public toDeleteClusterSnapshot() {
-    this.add('redshift:DeleteClusterSnapshot');
+    this.to('redshift:DeleteClusterSnapshot');
     return this;
   }
 
@@ -1549,7 +1549,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteClusterSubnetGroup.html
    */
   public toDeleteClusterSubnetGroup() {
-    this.add('redshift:DeleteClusterSubnetGroup');
+    this.to('redshift:DeleteClusterSubnetGroup');
     return this;
   }
 
@@ -1561,7 +1561,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteEventSubscription.html
    */
   public toDeleteEventSubscription() {
-    this.add('redshift:DeleteEventSubscription');
+    this.to('redshift:DeleteEventSubscription');
     return this;
   }
 
@@ -1573,7 +1573,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteHsmClientCertificate.html
    */
   public toDeleteHsmClientCertificate() {
-    this.add('redshift:DeleteHsmClientCertificate');
+    this.to('redshift:DeleteHsmClientCertificate');
     return this;
   }
 
@@ -1585,7 +1585,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteHsmConfiguration.html
    */
   public toDeleteHsmConfiguration() {
-    this.add('redshift:DeleteHsmConfiguration');
+    this.to('redshift:DeleteHsmConfiguration');
     return this;
   }
 
@@ -1597,7 +1597,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toDeleteSavedQueries() {
-    this.add('redshift:DeleteSavedQueries');
+    this.to('redshift:DeleteSavedQueries');
     return this;
   }
 
@@ -1607,7 +1607,7 @@ export class Redshift extends PolicyStatement {
    * Access Level: Write
    */
   public toDeleteScheduledAction() {
-    this.add('redshift:DeleteScheduledAction');
+    this.to('redshift:DeleteScheduledAction');
     return this;
   }
 
@@ -1619,7 +1619,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteSnapshotCopyGrant.html
    */
   public toDeleteSnapshotCopyGrant() {
-    this.add('redshift:DeleteSnapshotCopyGrant');
+    this.to('redshift:DeleteSnapshotCopyGrant');
     return this;
   }
 
@@ -1631,7 +1631,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteSnapshotSchedule.html
    */
   public toDeleteSnapshotSchedule() {
-    this.add('redshift:DeleteSnapshotSchedule');
+    this.to('redshift:DeleteSnapshotSchedule');
     return this;
   }
 
@@ -1646,7 +1646,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteTags.html
    */
   public toDeleteTags() {
-    this.add('redshift:DeleteTags');
+    this.to('redshift:DeleteTags');
     return this;
   }
 
@@ -1658,7 +1658,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeAccountAttributes.html
    */
   public toDescribeAccountAttributes() {
-    this.add('redshift:DescribeAccountAttributes');
+    this.to('redshift:DescribeAccountAttributes');
     return this;
   }
 
@@ -1670,7 +1670,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterDbRevisions.html
    */
   public toDescribeClusterDbRevisions() {
-    this.add('redshift:DescribeClusterDbRevisions');
+    this.to('redshift:DescribeClusterDbRevisions');
     return this;
   }
 
@@ -1682,7 +1682,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterParameterGroups.html
    */
   public toDescribeClusterParameterGroups() {
-    this.add('redshift:DescribeClusterParameterGroups');
+    this.to('redshift:DescribeClusterParameterGroups');
     return this;
   }
 
@@ -1694,7 +1694,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterParameters.html
    */
   public toDescribeClusterParameters() {
-    this.add('redshift:DescribeClusterParameters');
+    this.to('redshift:DescribeClusterParameters');
     return this;
   }
 
@@ -1706,7 +1706,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterSecurityGroups.html
    */
   public toDescribeClusterSecurityGroups() {
-    this.add('redshift:DescribeClusterSecurityGroups');
+    this.to('redshift:DescribeClusterSecurityGroups');
     return this;
   }
 
@@ -1718,7 +1718,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterSnapshots.html
    */
   public toDescribeClusterSnapshots() {
-    this.add('redshift:DescribeClusterSnapshots');
+    this.to('redshift:DescribeClusterSnapshots');
     return this;
   }
 
@@ -1730,7 +1730,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterSubnetGroups.html
    */
   public toDescribeClusterSubnetGroups() {
-    this.add('redshift:DescribeClusterSubnetGroups');
+    this.to('redshift:DescribeClusterSubnetGroups');
     return this;
   }
 
@@ -1742,7 +1742,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterTracks.html
    */
   public toDescribeClusterTracks() {
-    this.add('redshift:DescribeClusterTracks');
+    this.to('redshift:DescribeClusterTracks');
     return this;
   }
 
@@ -1754,7 +1754,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterVersions.html
    */
   public toDescribeClusterVersions() {
-    this.add('redshift:DescribeClusterVersions');
+    this.to('redshift:DescribeClusterVersions');
     return this;
   }
 
@@ -1766,7 +1766,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusters.html
    */
   public toDescribeClusters() {
-    this.add('redshift:DescribeClusters');
+    this.to('redshift:DescribeClusters');
     return this;
   }
 
@@ -1778,7 +1778,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeDefaultClusterParameters.html
    */
   public toDescribeDefaultClusterParameters() {
-    this.add('redshift:DescribeDefaultClusterParameters');
+    this.to('redshift:DescribeDefaultClusterParameters');
     return this;
   }
 
@@ -1790,7 +1790,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeEventCategories.html
    */
   public toDescribeEventCategories() {
-    this.add('redshift:DescribeEventCategories');
+    this.to('redshift:DescribeEventCategories');
     return this;
   }
 
@@ -1802,7 +1802,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeEventSubscriptions.html
    */
   public toDescribeEventSubscriptions() {
-    this.add('redshift:DescribeEventSubscriptions');
+    this.to('redshift:DescribeEventSubscriptions');
     return this;
   }
 
@@ -1814,7 +1814,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeEvents.html
    */
   public toDescribeEvents() {
-    this.add('redshift:DescribeEvents');
+    this.to('redshift:DescribeEvents');
     return this;
   }
 
@@ -1826,7 +1826,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeHsmClientCertificates.html
    */
   public toDescribeHsmClientCertificates() {
-    this.add('redshift:DescribeHsmClientCertificates');
+    this.to('redshift:DescribeHsmClientCertificates');
     return this;
   }
 
@@ -1838,7 +1838,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeHsmConfigurations.html
    */
   public toDescribeHsmConfigurations() {
-    this.add('redshift:DescribeHsmConfigurations');
+    this.to('redshift:DescribeHsmConfigurations');
     return this;
   }
 
@@ -1850,7 +1850,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeLoggingStatus.html
    */
   public toDescribeLoggingStatus() {
-    this.add('redshift:DescribeLoggingStatus');
+    this.to('redshift:DescribeLoggingStatus');
     return this;
   }
 
@@ -1862,7 +1862,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeNodeConfigurationOptions.html
    */
   public toDescribeNodeConfigurationOptions() {
-    this.add('redshift:DescribeNodeConfigurationOptions');
+    this.to('redshift:DescribeNodeConfigurationOptions');
     return this;
   }
 
@@ -1874,7 +1874,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeOrderableClusterOptions.html
    */
   public toDescribeOrderableClusterOptions() {
-    this.add('redshift:DescribeOrderableClusterOptions');
+    this.to('redshift:DescribeOrderableClusterOptions');
     return this;
   }
 
@@ -1886,7 +1886,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toDescribeQuery() {
-    this.add('redshift:DescribeQuery');
+    this.to('redshift:DescribeQuery');
     return this;
   }
 
@@ -1898,7 +1898,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeReservedNodeOfferings.html
    */
   public toDescribeReservedNodeOfferings() {
-    this.add('redshift:DescribeReservedNodeOfferings');
+    this.to('redshift:DescribeReservedNodeOfferings');
     return this;
   }
 
@@ -1910,7 +1910,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeReservedNodes.html
    */
   public toDescribeReservedNodes() {
-    this.add('redshift:DescribeReservedNodes');
+    this.to('redshift:DescribeReservedNodes');
     return this;
   }
 
@@ -1922,7 +1922,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeResize.html
    */
   public toDescribeResize() {
-    this.add('redshift:DescribeResize');
+    this.to('redshift:DescribeResize');
     return this;
   }
 
@@ -1934,7 +1934,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toDescribeSavedQueries() {
-    this.add('redshift:DescribeSavedQueries');
+    this.to('redshift:DescribeSavedQueries');
     return this;
   }
 
@@ -1944,7 +1944,7 @@ export class Redshift extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeScheduledActions() {
-    this.add('redshift:DescribeScheduledActions');
+    this.to('redshift:DescribeScheduledActions');
     return this;
   }
 
@@ -1956,7 +1956,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeSnapshotCopyGrants.html
    */
   public toDescribeSnapshotCopyGrants() {
-    this.add('redshift:DescribeSnapshotCopyGrants');
+    this.to('redshift:DescribeSnapshotCopyGrants');
     return this;
   }
 
@@ -1968,7 +1968,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeSnapshotSchedules.html
    */
   public toDescribeSnapshotSchedules() {
-    this.add('redshift:DescribeSnapshotSchedules');
+    this.to('redshift:DescribeSnapshotSchedules');
     return this;
   }
 
@@ -1980,7 +1980,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeStorage.html
    */
   public toDescribeStorage() {
-    this.add('redshift:DescribeStorage');
+    this.to('redshift:DescribeStorage');
     return this;
   }
 
@@ -1992,7 +1992,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toDescribeTable() {
-    this.add('redshift:DescribeTable');
+    this.to('redshift:DescribeTable');
     return this;
   }
 
@@ -2004,7 +2004,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeTableRestoreStatus.html
    */
   public toDescribeTableRestoreStatus() {
-    this.add('redshift:DescribeTableRestoreStatus');
+    this.to('redshift:DescribeTableRestoreStatus');
     return this;
   }
 
@@ -2016,7 +2016,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeTags.html
    */
   public toDescribeTags() {
-    this.add('redshift:DescribeTags');
+    this.to('redshift:DescribeTags');
     return this;
   }
 
@@ -2028,7 +2028,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DisableLogging.html
    */
   public toDisableLogging() {
-    this.add('redshift:DisableLogging');
+    this.to('redshift:DisableLogging');
     return this;
   }
 
@@ -2040,7 +2040,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DisableSnapshotCopy.html
    */
   public toDisableSnapshotCopy() {
-    this.add('redshift:DisableSnapshotCopy');
+    this.to('redshift:DisableSnapshotCopy');
     return this;
   }
 
@@ -2052,7 +2052,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_EnableLogging.html
    */
   public toEnableLogging() {
-    this.add('redshift:EnableLogging');
+    this.to('redshift:EnableLogging');
     return this;
   }
 
@@ -2064,7 +2064,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_EnableSnapshotCopy.html
    */
   public toEnableSnapshotCopy() {
-    this.add('redshift:EnableSnapshotCopy');
+    this.to('redshift:EnableSnapshotCopy');
     return this;
   }
 
@@ -2076,7 +2076,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toExecuteQuery() {
-    this.add('redshift:ExecuteQuery');
+    this.to('redshift:ExecuteQuery');
     return this;
   }
 
@@ -2088,7 +2088,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toFetchResults() {
-    this.add('redshift:FetchResults');
+    this.to('redshift:FetchResults');
     return this;
   }
 
@@ -2105,7 +2105,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html
    */
   public toGetClusterCredentials() {
-    this.add('redshift:GetClusterCredentials');
+    this.to('redshift:GetClusterCredentials');
     return this;
   }
 
@@ -2117,7 +2117,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetReservedNodeExchangeOfferings.html
    */
   public toGetReservedNodeExchangeOfferings() {
-    this.add('redshift:GetReservedNodeExchangeOfferings');
+    this.to('redshift:GetReservedNodeExchangeOfferings');
     return this;
   }
 
@@ -2129,7 +2129,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html
    */
   public toJoinGroup() {
-    this.add('redshift:JoinGroup');
+    this.to('redshift:JoinGroup');
     return this;
   }
 
@@ -2141,7 +2141,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toListDatabases() {
-    this.add('redshift:ListDatabases');
+    this.to('redshift:ListDatabases');
     return this;
   }
 
@@ -2153,7 +2153,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toListSavedQueries() {
-    this.add('redshift:ListSavedQueries');
+    this.to('redshift:ListSavedQueries');
     return this;
   }
 
@@ -2165,7 +2165,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toListSchemas() {
-    this.add('redshift:ListSchemas');
+    this.to('redshift:ListSchemas');
     return this;
   }
 
@@ -2177,7 +2177,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toListTables() {
-    this.add('redshift:ListTables');
+    this.to('redshift:ListTables');
     return this;
   }
 
@@ -2189,7 +2189,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyCluster.html
    */
   public toModifyCluster() {
-    this.add('redshift:ModifyCluster');
+    this.to('redshift:ModifyCluster');
     return this;
   }
 
@@ -2201,7 +2201,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterDbRevision.html
    */
   public toModifyClusterDbRevision() {
-    this.add('redshift:ModifyClusterDbRevision');
+    this.to('redshift:ModifyClusterDbRevision');
     return this;
   }
 
@@ -2213,7 +2213,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterIamRoles.html
    */
   public toModifyClusterIamRoles() {
-    this.add('redshift:ModifyClusterIamRoles');
+    this.to('redshift:ModifyClusterIamRoles');
     return this;
   }
 
@@ -2225,7 +2225,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterMaintenance.html
    */
   public toModifyClusterMaintenance() {
-    this.add('redshift:ModifyClusterMaintenance');
+    this.to('redshift:ModifyClusterMaintenance');
     return this;
   }
 
@@ -2237,7 +2237,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterParameterGroup.html
    */
   public toModifyClusterParameterGroup() {
-    this.add('redshift:ModifyClusterParameterGroup');
+    this.to('redshift:ModifyClusterParameterGroup');
     return this;
   }
 
@@ -2249,7 +2249,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterSnapshot.html
    */
   public toModifyClusterSnapshot() {
-    this.add('redshift:ModifyClusterSnapshot');
+    this.to('redshift:ModifyClusterSnapshot');
     return this;
   }
 
@@ -2261,7 +2261,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterSnapshotSchedule.html
    */
   public toModifyClusterSnapshotSchedule() {
-    this.add('redshift:ModifyClusterSnapshotSchedule');
+    this.to('redshift:ModifyClusterSnapshotSchedule');
     return this;
   }
 
@@ -2273,7 +2273,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyClusterSubnetGroup.html
    */
   public toModifyClusterSubnetGroup() {
-    this.add('redshift:ModifyClusterSubnetGroup');
+    this.to('redshift:ModifyClusterSubnetGroup');
     return this;
   }
 
@@ -2285,7 +2285,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyEventSubscription.html
    */
   public toModifyEventSubscription() {
-    this.add('redshift:ModifyEventSubscription');
+    this.to('redshift:ModifyEventSubscription');
     return this;
   }
 
@@ -2297,7 +2297,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toModifySavedQuery() {
-    this.add('redshift:ModifySavedQuery');
+    this.to('redshift:ModifySavedQuery');
     return this;
   }
 
@@ -2309,7 +2309,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyScheduledAction.html
    */
   public toModifyScheduledAction() {
-    this.add('redshift:ModifyScheduledAction');
+    this.to('redshift:ModifyScheduledAction');
     return this;
   }
 
@@ -2321,7 +2321,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifySnapshotCopyRetentionPeriod.html
    */
   public toModifySnapshotCopyRetentionPeriod() {
-    this.add('redshift:ModifySnapshotCopyRetentionPeriod');
+    this.to('redshift:ModifySnapshotCopyRetentionPeriod');
     return this;
   }
 
@@ -2333,7 +2333,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifySnapshotSchedule.html
    */
   public toModifySnapshotSchedule() {
-    this.add('redshift:ModifySnapshotSchedule');
+    this.to('redshift:ModifySnapshotSchedule');
     return this;
   }
 
@@ -2345,7 +2345,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_PauseCluster.html
    */
   public toPauseCluster() {
-    this.add('redshift:PauseCluster');
+    this.to('redshift:PauseCluster');
     return this;
   }
 
@@ -2357,7 +2357,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_PurchaseReservedNodeOffering.html
    */
   public toPurchaseReservedNodeOffering() {
-    this.add('redshift:PurchaseReservedNodeOffering');
+    this.to('redshift:PurchaseReservedNodeOffering');
     return this;
   }
 
@@ -2369,7 +2369,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RebootCluster.html
    */
   public toRebootCluster() {
-    this.add('redshift:RebootCluster');
+    this.to('redshift:RebootCluster');
     return this;
   }
 
@@ -2381,7 +2381,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ResetClusterParameterGroup.html
    */
   public toResetClusterParameterGroup() {
-    this.add('redshift:ResetClusterParameterGroup');
+    this.to('redshift:ResetClusterParameterGroup');
     return this;
   }
 
@@ -2393,7 +2393,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ResizeCluster.html
    */
   public toResizeCluster() {
-    this.add('redshift:ResizeCluster');
+    this.to('redshift:ResizeCluster');
     return this;
   }
 
@@ -2405,7 +2405,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RestoreFromClusterSnapshot.html
    */
   public toRestoreFromClusterSnapshot() {
-    this.add('redshift:RestoreFromClusterSnapshot');
+    this.to('redshift:RestoreFromClusterSnapshot');
     return this;
   }
 
@@ -2417,7 +2417,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RestoreTableFromClusterSnapshot.html
    */
   public toRestoreTableFromClusterSnapshot() {
-    this.add('redshift:RestoreTableFromClusterSnapshot');
+    this.to('redshift:RestoreTableFromClusterSnapshot');
     return this;
   }
 
@@ -2429,7 +2429,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ResumeCluster.html
    */
   public toResumeCluster() {
-    this.add('redshift:ResumeCluster');
+    this.to('redshift:ResumeCluster');
     return this;
   }
 
@@ -2441,7 +2441,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RevokeClusterSecurityGroupIngress.html
    */
   public toRevokeClusterSecurityGroupIngress() {
-    this.add('redshift:RevokeClusterSecurityGroupIngress');
+    this.to('redshift:RevokeClusterSecurityGroupIngress');
     return this;
   }
 
@@ -2453,7 +2453,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RevokeSnapshotAccess.html
    */
   public toRevokeSnapshotAccess() {
-    this.add('redshift:RevokeSnapshotAccess');
+    this.to('redshift:RevokeSnapshotAccess');
     return this;
   }
 
@@ -2465,7 +2465,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RotateEncryptionKey.html
    */
   public toRotateEncryptionKey() {
-    this.add('redshift:RotateEncryptionKey');
+    this.to('redshift:RotateEncryptionKey');
     return this;
   }
 
@@ -2477,7 +2477,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toViewQueriesFromConsole() {
-    this.add('redshift:ViewQueriesFromConsole');
+    this.to('redshift:ViewQueriesFromConsole');
     return this;
   }
 
@@ -2489,7 +2489,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
    */
   public toViewQueriesInConsole() {
-    this.add('redshift:ViewQueriesInConsole');
+    this.to('redshift:ViewQueriesInConsole');
     return this;
   }
 

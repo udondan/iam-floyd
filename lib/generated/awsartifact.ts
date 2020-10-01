@@ -90,7 +90,7 @@ export class Artifact extends PolicyStatement {
    * https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html
    */
   public toAcceptAgreement() {
-    this.add('artifact:AcceptAgreement');
+    this.to('artifact:AcceptAgreement');
     return this;
   }
 
@@ -102,7 +102,7 @@ export class Artifact extends PolicyStatement {
    * https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html
    */
   public toDownloadAgreement() {
-    this.add('artifact:DownloadAgreement');
+    this.to('artifact:DownloadAgreement');
     return this;
   }
 
@@ -114,7 +114,7 @@ export class Artifact extends PolicyStatement {
    * https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html
    */
   public toGet() {
-    this.add('artifact:Get');
+    this.to('artifact:Get');
     return this;
   }
 
@@ -126,7 +126,7 @@ export class Artifact extends PolicyStatement {
    * https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html
    */
   public toTerminateAgreement() {
-    this.add('artifact:TerminateAgreement');
+    this.to('artifact:TerminateAgreement');
     return this;
   }
 

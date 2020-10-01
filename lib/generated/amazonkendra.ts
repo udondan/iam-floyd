@@ -344,7 +344,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html
    */
   public toBatchDeleteDocument() {
-    this.add('kendra:BatchDeleteDocument');
+    this.to('kendra:BatchDeleteDocument');
     return this;
   }
 
@@ -356,7 +356,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html
    */
   public toBatchPutDocument() {
-    this.add('kendra:BatchPutDocument');
+    this.to('kendra:BatchPutDocument');
     return this;
   }
 
@@ -372,7 +372,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateDataSource.html
    */
   public toCreateDataSource() {
-    this.add('kendra:CreateDataSource');
+    this.to('kendra:CreateDataSource');
     return this;
   }
 
@@ -388,7 +388,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateFaq.html
    */
   public toCreateFaq() {
-    this.add('kendra:CreateFaq');
+    this.to('kendra:CreateFaq');
     return this;
   }
 
@@ -404,7 +404,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html
    */
   public toCreateIndex() {
-    this.add('kendra:CreateIndex');
+    this.to('kendra:CreateIndex');
     return this;
   }
 
@@ -416,7 +416,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteDataSource.html
    */
   public toDeleteDataSource() {
-    this.add('kendra:DeleteDataSource');
+    this.to('kendra:DeleteDataSource');
     return this;
   }
 
@@ -428,7 +428,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteFaq.html
    */
   public toDeleteFaq() {
-    this.add('kendra:DeleteFaq');
+    this.to('kendra:DeleteFaq');
     return this;
   }
 
@@ -440,7 +440,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteIndex.html
    */
   public toDeleteIndex() {
-    this.add('kendra:DeleteIndex');
+    this.to('kendra:DeleteIndex');
     return this;
   }
 
@@ -452,7 +452,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeDataSource.html
    */
   public toDescribeDataSource() {
-    this.add('kendra:DescribeDataSource');
+    this.to('kendra:DescribeDataSource');
     return this;
   }
 
@@ -464,7 +464,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeFaq.html
    */
   public toDescribeFaq() {
-    this.add('kendra:DescribeFaq');
+    this.to('kendra:DescribeFaq');
     return this;
   }
 
@@ -476,7 +476,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeIndex.html
    */
   public toDescribeIndex() {
-    this.add('kendra:DescribeIndex');
+    this.to('kendra:DescribeIndex');
     return this;
   }
 
@@ -488,7 +488,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListDataSourceSyncJobs.html
    */
   public toListDataSourceSyncJobs() {
-    this.add('kendra:ListDataSourceSyncJobs');
+    this.to('kendra:ListDataSourceSyncJobs');
     return this;
   }
 
@@ -500,7 +500,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListDataSources.html
    */
   public toListDataSources() {
-    this.add('kendra:ListDataSources');
+    this.to('kendra:ListDataSources');
     return this;
   }
 
@@ -512,7 +512,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListFaqs.html
    */
   public toListFaqs() {
-    this.add('kendra:ListFaqs');
+    this.to('kendra:ListFaqs');
     return this;
   }
 
@@ -524,7 +524,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListIndices.html
    */
   public toListIndices() {
-    this.add('kendra:ListIndices');
+    this.to('kendra:ListIndices');
     return this;
   }
 
@@ -536,7 +536,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('kendra:ListTagsForResource');
+    this.to('kendra:ListTagsForResource');
     return this;
   }
 
@@ -548,7 +548,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html
    */
   public toQuery() {
-    this.add('kendra:Query');
+    this.to('kendra:Query');
     return this;
   }
 
@@ -560,7 +560,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_StartDataSourceSyncJob.html
    */
   public toStartDataSourceSyncJob() {
-    this.add('kendra:StartDataSourceSyncJob');
+    this.to('kendra:StartDataSourceSyncJob');
     return this;
   }
 
@@ -572,7 +572,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_StopDataSourceSyncJob.html
    */
   public toStopDataSourceSyncJob() {
-    this.add('kendra:StopDataSourceSyncJob');
+    this.to('kendra:StopDataSourceSyncJob');
     return this;
   }
 
@@ -584,7 +584,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_SubmitFeedback.html
    */
   public toSubmitFeedback() {
-    this.add('kendra:SubmitFeedback');
+    this.to('kendra:SubmitFeedback');
     return this;
   }
 
@@ -600,7 +600,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_TagResource.html
    */
   public toTagResource() {
-    this.add('kendra:TagResource');
+    this.to('kendra:TagResource');
     return this;
   }
 
@@ -615,7 +615,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('kendra:UntagResource');
+    this.to('kendra:UntagResource');
     return this;
   }
 
@@ -627,7 +627,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateDataSource.html
    */
   public toUpdateDataSource() {
-    this.add('kendra:UpdateDataSource');
+    this.to('kendra:UpdateDataSource');
     return this;
   }
 
@@ -639,7 +639,7 @@ export class Kendra extends PolicyStatement {
    * https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateIndex.html
    */
   public toUpdateIndex() {
-    this.add('kendra:UpdateIndex');
+    this.to('kendra:UpdateIndex');
     return this;
   }
 

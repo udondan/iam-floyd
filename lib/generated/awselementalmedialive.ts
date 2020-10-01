@@ -528,7 +528,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/batching-actions.html
    */
   public toBatchUpdateSchedule() {
-    this.add('medialive:BatchUpdateSchedule');
+    this.to('medialive:BatchUpdateSchedule');
     return this;
   }
 
@@ -544,7 +544,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/creating-channel-scratch.html
    */
   public toCreateChannel() {
-    this.add('medialive:CreateChannel');
+    this.to('medialive:CreateChannel');
     return this;
   }
 
@@ -560,7 +560,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/creating-input.html
    */
   public toCreateInput() {
-    this.add('medialive:CreateInput');
+    this.to('medialive:CreateInput');
     return this;
   }
 
@@ -576,7 +576,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/working-with-input-security-groups.html
    */
   public toCreateInputSecurityGroup() {
-    this.add('medialive:CreateInputSecurityGroup');
+    this.to('medialive:CreateInputSecurityGroup');
     return this;
   }
 
@@ -592,7 +592,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/creating-multiplex.html
    */
   public toCreateMultiplex() {
-    this.add('medialive:CreateMultiplex');
+    this.to('medialive:CreateMultiplex');
     return this;
   }
 
@@ -608,7 +608,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/tagging.html
    */
   public toCreateTags() {
-    this.add('medialive:CreateTags');
+    this.to('medialive:CreateTags');
     return this;
   }
 
@@ -620,7 +620,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/editing-deleting-channel.html
    */
   public toDeleteChannel() {
-    this.add('medialive:DeleteChannel');
+    this.to('medialive:DeleteChannel');
     return this;
   }
 
@@ -632,7 +632,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/delete-input.html
    */
   public toDeleteInput() {
-    this.add('medialive:DeleteInput');
+    this.to('medialive:DeleteInput');
     return this;
   }
 
@@ -644,7 +644,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/delete-input-security-group.html
    */
   public toDeleteInputSecurityGroup() {
-    this.add('medialive:DeleteInputSecurityGroup');
+    this.to('medialive:DeleteInputSecurityGroup');
     return this;
   }
 
@@ -656,7 +656,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/delete-multiplex.html
    */
   public toDeleteMultiplex() {
-    this.add('medialive:DeleteMultiplex');
+    this.to('medialive:DeleteMultiplex');
     return this;
   }
 
@@ -668,7 +668,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/deleting-reservations.html
    */
   public toDeleteReservation() {
-    this.add('medialive:DeleteReservation');
+    this.to('medialive:DeleteReservation');
     return this;
   }
 
@@ -683,7 +683,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/tagging.html
    */
   public toDeleteTags() {
-    this.add('medialive:DeleteTags');
+    this.to('medialive:DeleteTags');
     return this;
   }
 
@@ -695,7 +695,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/viewing-channel-configuration.html
    */
   public toDescribeChannel() {
-    this.add('medialive:DescribeChannel');
+    this.to('medialive:DescribeChannel');
     return this;
   }
 
@@ -707,7 +707,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input.html
    */
   public toDescribeInput() {
-    this.add('medialive:DescribeInput');
+    this.to('medialive:DescribeInput');
     return this;
   }
 
@@ -719,7 +719,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-device.html
    */
   public toDescribeInputDevice() {
-    this.add('medialive:DescribeInputDevice');
+    this.to('medialive:DescribeInputDevice');
     return this;
   }
 
@@ -731,7 +731,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-device.html
    */
   public toDescribeInputDeviceThumbnail() {
-    this.add('medialive:DescribeInputDeviceThumbnail');
+    this.to('medialive:DescribeInputDeviceThumbnail');
     return this;
   }
 
@@ -743,7 +743,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-security-group.html
    */
   public toDescribeInputSecurityGroup() {
-    this.add('medialive:DescribeInputSecurityGroup');
+    this.to('medialive:DescribeInputSecurityGroup');
     return this;
   }
 
@@ -755,7 +755,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/viewing-multiplex-configuration.html
    */
   public toDescribeMultiplex() {
-    this.add('medialive:DescribeMultiplex');
+    this.to('medialive:DescribeMultiplex');
     return this;
   }
 
@@ -767,7 +767,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/purchasing-reservations.html
    */
   public toDescribeOffering() {
-    this.add('medialive:DescribeOffering');
+    this.to('medialive:DescribeOffering');
     return this;
   }
 
@@ -779,7 +779,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/view-reservations.html
    */
   public toDescribeReservation() {
-    this.add('medialive:DescribeReservation');
+    this.to('medialive:DescribeReservation');
     return this;
   }
 
@@ -791,7 +791,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/viewing-actions-schedule.html
    */
   public toDescribeSchedule() {
-    this.add('medialive:DescribeSchedule');
+    this.to('medialive:DescribeSchedule');
     return this;
   }
 
@@ -803,7 +803,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/viewing-channel-configuration.html
    */
   public toListChannels() {
-    this.add('medialive:ListChannels');
+    this.to('medialive:ListChannels');
     return this;
   }
 
@@ -815,7 +815,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-device.html
    */
   public toListInputDevices() {
-    this.add('medialive:ListInputDevices');
+    this.to('medialive:ListInputDevices');
     return this;
   }
 
@@ -827,7 +827,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-security-group.html
    */
   public toListInputSecurityGroups() {
-    this.add('medialive:ListInputSecurityGroups');
+    this.to('medialive:ListInputSecurityGroups');
     return this;
   }
 
@@ -839,7 +839,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input.html
    */
   public toListInputs() {
-    this.add('medialive:ListInputs');
+    this.to('medialive:ListInputs');
     return this;
   }
 
@@ -851,7 +851,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/viewing-multiplex-configuration.html
    */
   public toListMultiplexes() {
-    this.add('medialive:ListMultiplexes');
+    this.to('medialive:ListMultiplexes');
     return this;
   }
 
@@ -863,7 +863,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/purchasing-reservations.html
    */
   public toListOfferings() {
-    this.add('medialive:ListOfferings');
+    this.to('medialive:ListOfferings');
     return this;
   }
 
@@ -875,7 +875,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/view-reservations.html
    */
   public toListReservations() {
-    this.add('medialive:ListReservations');
+    this.to('medialive:ListReservations');
     return this;
   }
 
@@ -887,7 +887,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/tagging.html
    */
   public toListTagsForResource() {
-    this.add('medialive:ListTagsForResource');
+    this.to('medialive:ListTagsForResource');
     return this;
   }
 
@@ -903,7 +903,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/purchasing-reservations.html
    */
   public toPurchaseOffering() {
-    this.add('medialive:PurchaseOffering');
+    this.to('medialive:PurchaseOffering');
     return this;
   }
 
@@ -915,7 +915,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html
    */
   public toStartChannel() {
-    this.add('medialive:StartChannel');
+    this.to('medialive:StartChannel');
     return this;
   }
 
@@ -927,7 +927,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-a-multiplex.html
    */
   public toStartMultiplex() {
-    this.add('medialive:StartMultiplex');
+    this.to('medialive:StartMultiplex');
     return this;
   }
 
@@ -939,7 +939,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html
    */
   public toStopChannel() {
-    this.add('medialive:StopChannel');
+    this.to('medialive:StopChannel');
     return this;
   }
 
@@ -951,7 +951,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-a-multiplex.html
    */
   public toStopMultiplex() {
-    this.add('medialive:StopMultiplex');
+    this.to('medialive:StopMultiplex');
     return this;
   }
 
@@ -963,7 +963,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/editing-deleting-channel.html
    */
   public toUpdateChannel() {
-    this.add('medialive:UpdateChannel');
+    this.to('medialive:UpdateChannel');
     return this;
   }
 
@@ -975,7 +975,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/editing-deleting-channel.html
    */
   public toUpdateChannelClass() {
-    this.add('medialive:UpdateChannelClass');
+    this.to('medialive:UpdateChannelClass');
     return this;
   }
 
@@ -987,7 +987,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input.html
    */
   public toUpdateInput() {
-    this.add('medialive:UpdateInput');
+    this.to('medialive:UpdateInput');
     return this;
   }
 
@@ -999,7 +999,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-device.html
    */
   public toUpdateInputDevice() {
-    this.add('medialive:UpdateInputDevice');
+    this.to('medialive:UpdateInputDevice');
     return this;
   }
 
@@ -1011,7 +1011,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-security-group.html
    */
   public toUpdateInputSecurityGroup() {
-    this.add('medialive:UpdateInputSecurityGroup');
+    this.to('medialive:UpdateInputSecurityGroup');
     return this;
   }
 
@@ -1023,7 +1023,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex.html
    */
   public toUpdateMultiplex() {
-    this.add('medialive:UpdateMultiplex');
+    this.to('medialive:UpdateMultiplex');
     return this;
   }
 
@@ -1035,7 +1035,7 @@ export class Medialive extends PolicyStatement {
    * https://docs.aws.amazon.com/medialive/latest/ug/reservations.html
    */
   public toUpdateReservation() {
-    this.add('medialive:UpdateReservation');
+    this.to('medialive:UpdateReservation');
     return this;
   }
 

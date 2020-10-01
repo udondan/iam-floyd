@@ -200,7 +200,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/cancel-job.html
    */
   public toCancelJob() {
-    this.add('elastictranscoder:CancelJob');
+    this.to('elastictranscoder:CancelJob');
     return this;
   }
 
@@ -212,7 +212,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-job.html
    */
   public toCreateJob() {
-    this.add('elastictranscoder:CreateJob');
+    this.to('elastictranscoder:CreateJob');
     return this;
   }
 
@@ -224,7 +224,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-pipeline.html
    */
   public toCreatePipeline() {
-    this.add('elastictranscoder:CreatePipeline');
+    this.to('elastictranscoder:CreatePipeline');
     return this;
   }
 
@@ -236,7 +236,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-preset.html
    */
   public toCreatePreset() {
-    this.add('elastictranscoder:CreatePreset');
+    this.to('elastictranscoder:CreatePreset');
     return this;
   }
 
@@ -248,7 +248,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-pipeline.html
    */
   public toDeletePipeline() {
-    this.add('elastictranscoder:DeletePipeline');
+    this.to('elastictranscoder:DeletePipeline');
     return this;
   }
 
@@ -260,7 +260,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-preset.html
    */
   public toDeletePreset() {
-    this.add('elastictranscoder:DeletePreset');
+    this.to('elastictranscoder:DeletePreset');
     return this;
   }
 
@@ -272,7 +272,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-jobs-by-pipeline.html
    */
   public toListJobsByPipeline() {
-    this.add('elastictranscoder:ListJobsByPipeline');
+    this.to('elastictranscoder:ListJobsByPipeline');
     return this;
   }
 
@@ -284,7 +284,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-jobs-by-status.html
    */
   public toListJobsByStatus() {
-    this.add('elastictranscoder:ListJobsByStatus');
+    this.to('elastictranscoder:ListJobsByStatus');
     return this;
   }
 
@@ -296,7 +296,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-pipelines.html
    */
   public toListPipelines() {
-    this.add('elastictranscoder:ListPipelines');
+    this.to('elastictranscoder:ListPipelines');
     return this;
   }
 
@@ -308,7 +308,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-presets.html
    */
   public toListPresets() {
-    this.add('elastictranscoder:ListPresets');
+    this.to('elastictranscoder:ListPresets');
     return this;
   }
 
@@ -320,7 +320,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-job.html
    */
   public toReadJob() {
-    this.add('elastictranscoder:ReadJob');
+    this.to('elastictranscoder:ReadJob');
     return this;
   }
 
@@ -332,7 +332,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-pipeline.html
    */
   public toReadPipeline() {
-    this.add('elastictranscoder:ReadPipeline');
+    this.to('elastictranscoder:ReadPipeline');
     return this;
   }
 
@@ -344,7 +344,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-preset.html
    */
   public toReadPreset() {
-    this.add('elastictranscoder:ReadPreset');
+    this.to('elastictranscoder:ReadPreset');
     return this;
   }
 
@@ -356,7 +356,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/test-pipeline-role.html
    */
   public toTestRole() {
-    this.add('elastictranscoder:TestRole');
+    this.to('elastictranscoder:TestRole');
     return this;
   }
 
@@ -368,7 +368,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline.html
    */
   public toUpdatePipeline() {
-    this.add('elastictranscoder:UpdatePipeline');
+    this.to('elastictranscoder:UpdatePipeline');
     return this;
   }
 
@@ -380,7 +380,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-notifications.html
    */
   public toUpdatePipelineNotifications() {
-    this.add('elastictranscoder:UpdatePipelineNotifications');
+    this.to('elastictranscoder:UpdatePipelineNotifications');
     return this;
   }
 
@@ -392,7 +392,7 @@ export class Elastictranscoder extends PolicyStatement {
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-status.html
    */
   public toUpdatePipelineStatus() {
-    this.add('elastictranscoder:UpdatePipelineStatus');
+    this.to('elastictranscoder:UpdatePipelineStatus');
     return this;
   }
 

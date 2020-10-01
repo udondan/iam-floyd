@@ -74,7 +74,7 @@ export class SmsVoice extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets.html
    */
   public toCreateConfigurationSet() {
-    this.add('sms-voice:CreateConfigurationSet');
+    this.to('sms-voice:CreateConfigurationSet');
     return this;
   }
 
@@ -89,7 +89,7 @@ export class SmsVoice extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html
    */
   public toCreateConfigurationSetEventDestination() {
-    this.add('sms-voice:CreateConfigurationSetEventDestination');
+    this.to('sms-voice:CreateConfigurationSetEventDestination');
     return this;
   }
 
@@ -101,7 +101,7 @@ export class SmsVoice extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname.html
    */
   public toDeleteConfigurationSet() {
-    this.add('sms-voice:DeleteConfigurationSet');
+    this.to('sms-voice:DeleteConfigurationSet');
     return this;
   }
 
@@ -113,7 +113,7 @@ export class SmsVoice extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html
    */
   public toDeleteConfigurationSetEventDestination() {
-    this.add('sms-voice:DeleteConfigurationSetEventDestination');
+    this.to('sms-voice:DeleteConfigurationSetEventDestination');
     return this;
   }
 
@@ -125,7 +125,7 @@ export class SmsVoice extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html
    */
   public toGetConfigurationSetEventDestinations() {
-    this.add('sms-voice:GetConfigurationSetEventDestinations');
+    this.to('sms-voice:GetConfigurationSetEventDestinations');
     return this;
   }
 
@@ -137,7 +137,7 @@ export class SmsVoice extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets.html
    */
   public toListConfigurationSets() {
-    this.add('sms-voice:ListConfigurationSets');
+    this.to('sms-voice:ListConfigurationSets');
     return this;
   }
 
@@ -149,7 +149,7 @@ export class SmsVoice extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-voice-message.html
    */
   public toSendVoiceMessage() {
-    this.add('sms-voice:SendVoiceMessage');
+    this.to('sms-voice:SendVoiceMessage');
     return this;
   }
 
@@ -164,7 +164,7 @@ export class SmsVoice extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html
    */
   public toUpdateConfigurationSetEventDestination() {
-    this.add('sms-voice:UpdateConfigurationSetEventDestination');
+    this.to('sms-voice:UpdateConfigurationSetEventDestination');
     return this;
   }
 }

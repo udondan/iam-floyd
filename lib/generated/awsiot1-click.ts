@@ -314,7 +314,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_AssociateDeviceWithPlacement.html
    */
   public toAssociateDeviceWithPlacement() {
-    this.add('iot1click:AssociateDeviceWithPlacement');
+    this.to('iot1click:AssociateDeviceWithPlacement');
     return this;
   }
 
@@ -326,7 +326,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/claims-claimcode.html
    */
   public toClaimDevicesByClaimCode() {
-    this.add('iot1click:ClaimDevicesByClaimCode');
+    this.to('iot1click:ClaimDevicesByClaimCode');
     return this;
   }
 
@@ -338,7 +338,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_CreatePlacement.html
    */
   public toCreatePlacement() {
-    this.add('iot1click:CreatePlacement');
+    this.to('iot1click:CreatePlacement');
     return this;
   }
 
@@ -354,7 +354,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_CreateProject.html
    */
   public toCreateProject() {
-    this.add('iot1click:CreateProject');
+    this.to('iot1click:CreateProject');
     return this;
   }
 
@@ -366,7 +366,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_DeletePlacement.html
    */
   public toDeletePlacement() {
-    this.add('iot1click:DeletePlacement');
+    this.to('iot1click:DeletePlacement');
     return this;
   }
 
@@ -378,7 +378,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_DeleteProject.html
    */
   public toDeleteProject() {
-    this.add('iot1click:DeleteProject');
+    this.to('iot1click:DeleteProject');
     return this;
   }
 
@@ -390,7 +390,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/devices-deviceid.html
    */
   public toDescribeDevice() {
-    this.add('iot1click:DescribeDevice');
+    this.to('iot1click:DescribeDevice');
     return this;
   }
 
@@ -402,7 +402,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_DescribePlacement.html
    */
   public toDescribePlacement() {
-    this.add('iot1click:DescribePlacement');
+    this.to('iot1click:DescribePlacement');
     return this;
   }
 
@@ -414,7 +414,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_DescribeProject.html
    */
   public toDescribeProject() {
-    this.add('iot1click:DescribeProject');
+    this.to('iot1click:DescribeProject');
     return this;
   }
 
@@ -426,7 +426,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_DissacociateDeviceFromPlacement.html
    */
   public toDisassociateDeviceFromPlacement() {
-    this.add('iot1click:DisassociateDeviceFromPlacement');
+    this.to('iot1click:DisassociateDeviceFromPlacement');
     return this;
   }
 
@@ -442,7 +442,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/devices-deviceid-finalize-claim.html
    */
   public toFinalizeDeviceClaim() {
-    this.add('iot1click:FinalizeDeviceClaim');
+    this.to('iot1click:FinalizeDeviceClaim');
     return this;
   }
 
@@ -454,7 +454,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/devices-deviceid-methods.html
    */
   public toGetDeviceMethods() {
-    this.add('iot1click:GetDeviceMethods');
+    this.to('iot1click:GetDeviceMethods');
     return this;
   }
 
@@ -466,7 +466,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_GetDevicesInPlacement.html
    */
   public toGetDevicesInPlacement() {
-    this.add('iot1click:GetDevicesInPlacement');
+    this.to('iot1click:GetDevicesInPlacement');
     return this;
   }
 
@@ -478,7 +478,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/devices-deviceid-initiate-claim.html
    */
   public toInitiateDeviceClaim() {
-    this.add('iot1click:InitiateDeviceClaim');
+    this.to('iot1click:InitiateDeviceClaim');
     return this;
   }
 
@@ -490,7 +490,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/devices-deviceid-methods.html
    */
   public toInvokeDeviceMethod() {
-    this.add('iot1click:InvokeDeviceMethod');
+    this.to('iot1click:InvokeDeviceMethod');
     return this;
   }
 
@@ -502,7 +502,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/devices-deviceid-events.html
    */
   public toListDeviceEvents() {
-    this.add('iot1click:ListDeviceEvents');
+    this.to('iot1click:ListDeviceEvents');
     return this;
   }
 
@@ -514,7 +514,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/devices.html
    */
   public toListDevices() {
-    this.add('iot1click:ListDevices');
+    this.to('iot1click:ListDevices');
     return this;
   }
 
@@ -526,7 +526,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_ListPlacements.html
    */
   public toListPlacements() {
-    this.add('iot1click:ListPlacements');
+    this.to('iot1click:ListPlacements');
     return this;
   }
 
@@ -538,7 +538,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_ListProjects.html
    */
   public toListProjects() {
-    this.add('iot1click:ListProjects');
+    this.to('iot1click:ListProjects');
     return this;
   }
 
@@ -550,7 +550,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('iot1click:ListTagsForResource');
+    this.to('iot1click:ListTagsForResource');
     return this;
   }
 
@@ -566,7 +566,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_TagResource.html
    */
   public toTagResource() {
-    this.add('iot1click:TagResource');
+    this.to('iot1click:TagResource');
     return this;
   }
 
@@ -578,7 +578,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/devices-deviceid-unclaim.html
    */
   public toUnclaimDevice() {
-    this.add('iot1click:UnclaimDevice');
+    this.to('iot1click:UnclaimDevice');
     return this;
   }
 
@@ -593,7 +593,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('iot1click:UntagResource');
+    this.to('iot1click:UntagResource');
     return this;
   }
 
@@ -605,7 +605,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/devices-deviceid-state.html
    */
   public toUpdateDeviceState() {
-    this.add('iot1click:UpdateDeviceState');
+    this.to('iot1click:UpdateDeviceState');
     return this;
   }
 
@@ -617,7 +617,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_UpdatePlacement.html
    */
   public toUpdatePlacement() {
-    this.add('iot1click:UpdatePlacement');
+    this.to('iot1click:UpdatePlacement');
     return this;
   }
 
@@ -629,7 +629,7 @@ export class Iot1click extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_UpdateProject.html
    */
   public toUpdateProject() {
-    this.add('iot1click:UpdateProject');
+    this.to('iot1click:UpdateProject');
     return this;
   }
 

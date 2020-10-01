@@ -33,7 +33,7 @@ export class Arsenal extends PolicyStatement {
    * https://docs.aws.amazon.com/setting-up.html#setting-up-user-policy
    */
   public toRegisterOnPremisesAgent() {
-    this.add('arsenal:RegisterOnPremisesAgent');
+    this.to('arsenal:RegisterOnPremisesAgent');
     return this;
   }
 }

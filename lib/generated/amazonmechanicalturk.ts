@@ -223,7 +223,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_AcceptQualificationRequestOperation.html
    */
   public toAcceptQualificationRequest() {
-    this.add('mechanicalturk:AcceptQualificationRequest');
+    this.to('mechanicalturk:AcceptQualificationRequest');
     return this;
   }
 
@@ -235,7 +235,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ApproveAssignmentOperation.html
    */
   public toApproveAssignment() {
-    this.add('mechanicalturk:ApproveAssignment');
+    this.to('mechanicalturk:ApproveAssignment');
     return this;
   }
 
@@ -247,7 +247,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_AssociateQualificationWithWorkerOperation.html
    */
   public toAssociateQualificationWithWorker() {
-    this.add('mechanicalturk:AssociateQualificationWithWorker');
+    this.to('mechanicalturk:AssociateQualificationWithWorker');
     return this;
   }
 
@@ -259,7 +259,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_CreateAdditionalAssignmentsForHITOperation.html
    */
   public toCreateAdditionalAssignmentsForHIT() {
-    this.add('mechanicalturk:CreateAdditionalAssignmentsForHIT');
+    this.to('mechanicalturk:CreateAdditionalAssignmentsForHIT');
     return this;
   }
 
@@ -271,7 +271,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_CreateHITOperation.html
    */
   public toCreateHIT() {
-    this.add('mechanicalturk:CreateHIT');
+    this.to('mechanicalturk:CreateHIT');
     return this;
   }
 
@@ -283,7 +283,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_CreateHITTypeOperation.html
    */
   public toCreateHITType() {
-    this.add('mechanicalturk:CreateHITType');
+    this.to('mechanicalturk:CreateHITType');
     return this;
   }
 
@@ -295,7 +295,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_CreateHITWithHITTypeOperation.html
    */
   public toCreateHITWithHITType() {
-    this.add('mechanicalturk:CreateHITWithHITType');
+    this.to('mechanicalturk:CreateHITWithHITType');
     return this;
   }
 
@@ -307,7 +307,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_CreateQualificationTypeOperation.html
    */
   public toCreateQualificationType() {
-    this.add('mechanicalturk:CreateQualificationType');
+    this.to('mechanicalturk:CreateQualificationType');
     return this;
   }
 
@@ -319,7 +319,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_CreateWorkerBlockOperation.html
    */
   public toCreateWorkerBlock() {
-    this.add('mechanicalturk:CreateWorkerBlock');
+    this.to('mechanicalturk:CreateWorkerBlock');
     return this;
   }
 
@@ -331,7 +331,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_DeleteHITOperation.html
    */
   public toDeleteHIT() {
-    this.add('mechanicalturk:DeleteHIT');
+    this.to('mechanicalturk:DeleteHIT');
     return this;
   }
 
@@ -343,7 +343,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_DeleteQualificationTypeOperation.html
    */
   public toDeleteQualificationType() {
-    this.add('mechanicalturk:DeleteQualificationType');
+    this.to('mechanicalturk:DeleteQualificationType');
     return this;
   }
 
@@ -355,7 +355,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_DeleteWorkerBlockOperation.html
    */
   public toDeleteWorkerBlock() {
-    this.add('mechanicalturk:DeleteWorkerBlock');
+    this.to('mechanicalturk:DeleteWorkerBlock');
     return this;
   }
 
@@ -367,7 +367,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_DisassociateQualificationFromWorkerOperation.html
    */
   public toDisassociateQualificationFromWorker() {
-    this.add('mechanicalturk:DisassociateQualificationFromWorker');
+    this.to('mechanicalturk:DisassociateQualificationFromWorker');
     return this;
   }
 
@@ -379,7 +379,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_GetAccountBalanceOperation.html
    */
   public toGetAccountBalance() {
-    this.add('mechanicalturk:GetAccountBalance');
+    this.to('mechanicalturk:GetAccountBalance');
     return this;
   }
 
@@ -391,7 +391,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_GetAssignmentOperation.html
    */
   public toGetAssignment() {
-    this.add('mechanicalturk:GetAssignment');
+    this.to('mechanicalturk:GetAssignment');
     return this;
   }
 
@@ -403,7 +403,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_GetFileUploadURLOperation.html
    */
   public toGetFileUploadURL() {
-    this.add('mechanicalturk:GetFileUploadURL');
+    this.to('mechanicalturk:GetFileUploadURL');
     return this;
   }
 
@@ -415,7 +415,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_GetHITOperation.html
    */
   public toGetHIT() {
-    this.add('mechanicalturk:GetHIT');
+    this.to('mechanicalturk:GetHIT');
     return this;
   }
 
@@ -427,7 +427,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_GetQualificationScoreOperation.html
    */
   public toGetQualificationScore() {
-    this.add('mechanicalturk:GetQualificationScore');
+    this.to('mechanicalturk:GetQualificationScore');
     return this;
   }
 
@@ -439,7 +439,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_GetQualificationTypeOperation.html
    */
   public toGetQualificationType() {
-    this.add('mechanicalturk:GetQualificationType');
+    this.to('mechanicalturk:GetQualificationType');
     return this;
   }
 
@@ -451,7 +451,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ListAssignmentsForHITOperation.html
    */
   public toListAssignmentsForHIT() {
-    this.add('mechanicalturk:ListAssignmentsForHIT');
+    this.to('mechanicalturk:ListAssignmentsForHIT');
     return this;
   }
 
@@ -463,7 +463,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ListBonusPaymentsOperation.html
    */
   public toListBonusPayments() {
-    this.add('mechanicalturk:ListBonusPayments');
+    this.to('mechanicalturk:ListBonusPayments');
     return this;
   }
 
@@ -475,7 +475,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ListHITsOperation.html
    */
   public toListHITs() {
-    this.add('mechanicalturk:ListHITs');
+    this.to('mechanicalturk:ListHITs');
     return this;
   }
 
@@ -487,7 +487,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ListHITsForQualificationTypeOperation.html
    */
   public toListHITsForQualificationType() {
-    this.add('mechanicalturk:ListHITsForQualificationType');
+    this.to('mechanicalturk:ListHITsForQualificationType');
     return this;
   }
 
@@ -499,7 +499,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ListQualificationRequestsOperation.html
    */
   public toListQualificationRequests() {
-    this.add('mechanicalturk:ListQualificationRequests');
+    this.to('mechanicalturk:ListQualificationRequests');
     return this;
   }
 
@@ -511,7 +511,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ListQualificationTypesOperation.html
    */
   public toListQualificationTypes() {
-    this.add('mechanicalturk:ListQualificationTypes');
+    this.to('mechanicalturk:ListQualificationTypes');
     return this;
   }
 
@@ -523,7 +523,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ListReviewPolicyResultsForHITOperation.html
    */
   public toListReviewPolicyResultsForHIT() {
-    this.add('mechanicalturk:ListReviewPolicyResultsForHIT');
+    this.to('mechanicalturk:ListReviewPolicyResultsForHIT');
     return this;
   }
 
@@ -535,7 +535,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ListReviewableHITsOperation.html
    */
   public toListReviewableHITs() {
-    this.add('mechanicalturk:ListReviewableHITs');
+    this.to('mechanicalturk:ListReviewableHITs');
     return this;
   }
 
@@ -547,7 +547,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ListWorkerBlocksOperation.html
    */
   public toListWorkerBlocks() {
-    this.add('mechanicalturk:ListWorkerBlocks');
+    this.to('mechanicalturk:ListWorkerBlocks');
     return this;
   }
 
@@ -559,7 +559,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ListWorkersWithQualificationTypeOperation.html
    */
   public toListWorkersWithQualificationType() {
-    this.add('mechanicalturk:ListWorkersWithQualificationType');
+    this.to('mechanicalturk:ListWorkersWithQualificationType');
     return this;
   }
 
@@ -571,7 +571,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_NotifyWorkersOperation.html
    */
   public toNotifyWorkers() {
-    this.add('mechanicalturk:NotifyWorkers');
+    this.to('mechanicalturk:NotifyWorkers');
     return this;
   }
 
@@ -583,7 +583,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_RejectAssignmentOperation.html
    */
   public toRejectAssignment() {
-    this.add('mechanicalturk:RejectAssignment');
+    this.to('mechanicalturk:RejectAssignment');
     return this;
   }
 
@@ -595,7 +595,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_RejectQualificationRequestOperation.html
    */
   public toRejectQualificationRequest() {
-    this.add('mechanicalturk:RejectQualificationRequest');
+    this.to('mechanicalturk:RejectQualificationRequest');
     return this;
   }
 
@@ -607,7 +607,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_SendBonusOperation.html
    */
   public toSendBonus() {
-    this.add('mechanicalturk:SendBonus');
+    this.to('mechanicalturk:SendBonus');
     return this;
   }
 
@@ -619,7 +619,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_SendTestEventNotificationOperation.html
    */
   public toSendTestEventNotification() {
-    this.add('mechanicalturk:SendTestEventNotification');
+    this.to('mechanicalturk:SendTestEventNotification');
     return this;
   }
 
@@ -631,7 +631,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_UpdateExpirationForHITOperation.html
    */
   public toUpdateExpirationForHIT() {
-    this.add('mechanicalturk:UpdateExpirationForHIT');
+    this.to('mechanicalturk:UpdateExpirationForHIT');
     return this;
   }
 
@@ -643,7 +643,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_UpdateHITReviewStatusOperation.html
    */
   public toUpdateHITReviewStatus() {
-    this.add('mechanicalturk:UpdateHITReviewStatus');
+    this.to('mechanicalturk:UpdateHITReviewStatus');
     return this;
   }
 
@@ -655,7 +655,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_UpdateHITTypeOfHITOperation.html
    */
   public toUpdateHITTypeOfHIT() {
-    this.add('mechanicalturk:UpdateHITTypeOfHIT');
+    this.to('mechanicalturk:UpdateHITTypeOfHIT');
     return this;
   }
 
@@ -667,7 +667,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_UpdateNotificationSettingsOperation.html
    */
   public toUpdateNotificationSettings() {
-    this.add('mechanicalturk:UpdateNotificationSettings');
+    this.to('mechanicalturk:UpdateNotificationSettings');
     return this;
   }
 
@@ -679,7 +679,7 @@ export class Mechanicalturk extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_UpdateQualificationTypeOperation.html
    */
   public toUpdateQualificationType() {
-    this.add('mechanicalturk:UpdateQualificationType');
+    this.to('mechanicalturk:UpdateQualificationType');
     return this;
   }
 }

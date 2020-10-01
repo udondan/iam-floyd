@@ -310,7 +310,7 @@ export function createModule(module: Module): Promise<void> {
       scope: Scope.Public,
     });
     method.setBodyText(
-      [`this.add('${module.name}:${name}');`, 'return this;'].join('\n')
+      [`this.to('${module.name}:${name}');`, 'return this;'].join('\n')
     );
 
     var desc = `\n${action.description}\n\nAccess Level: ${action.accessLevel}`;

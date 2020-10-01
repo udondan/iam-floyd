@@ -314,7 +314,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateApiKey.html
    */
   public toCreateApiKey() {
-    this.add('appsync:CreateApiKey');
+    this.to('appsync:CreateApiKey');
     return this;
   }
 
@@ -326,7 +326,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateDataSource.html
    */
   public toCreateDataSource() {
-    this.add('appsync:CreateDataSource');
+    this.to('appsync:CreateDataSource');
     return this;
   }
 
@@ -338,7 +338,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateFunction.html
    */
   public toCreateFunction() {
-    this.add('appsync:CreateFunction');
+    this.to('appsync:CreateFunction');
     return this;
   }
 
@@ -357,7 +357,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateGraphqlApi.html
    */
   public toCreateGraphqlApi() {
-    this.add('appsync:CreateGraphqlApi');
+    this.to('appsync:CreateGraphqlApi');
     return this;
   }
 
@@ -369,7 +369,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateResolver.html
    */
   public toCreateResolver() {
-    this.add('appsync:CreateResolver');
+    this.to('appsync:CreateResolver');
     return this;
   }
 
@@ -381,7 +381,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateType.html
    */
   public toCreateType() {
-    this.add('appsync:CreateType');
+    this.to('appsync:CreateType');
     return this;
   }
 
@@ -393,7 +393,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteApiKey.html
    */
   public toDeleteApiKey() {
-    this.add('appsync:DeleteApiKey');
+    this.to('appsync:DeleteApiKey');
     return this;
   }
 
@@ -405,7 +405,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteDataSource.html
    */
   public toDeleteDataSource() {
-    this.add('appsync:DeleteDataSource');
+    this.to('appsync:DeleteDataSource');
     return this;
   }
 
@@ -417,7 +417,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteFunction.html
    */
   public toDeleteFunction() {
-    this.add('appsync:DeleteFunction');
+    this.to('appsync:DeleteFunction');
     return this;
   }
 
@@ -432,7 +432,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteGraphqlApi.html
    */
   public toDeleteGraphqlApi() {
-    this.add('appsync:DeleteGraphqlApi');
+    this.to('appsync:DeleteGraphqlApi');
     return this;
   }
 
@@ -444,7 +444,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteResolver.html
    */
   public toDeleteResolver() {
-    this.add('appsync:DeleteResolver');
+    this.to('appsync:DeleteResolver');
     return this;
   }
 
@@ -456,7 +456,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteType.html
    */
   public toDeleteType() {
-    this.add('appsync:DeleteType');
+    this.to('appsync:DeleteType');
     return this;
   }
 
@@ -468,7 +468,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetDataSource.html
    */
   public toGetDataSource() {
-    this.add('appsync:GetDataSource');
+    this.to('appsync:GetDataSource');
     return this;
   }
 
@@ -480,7 +480,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetFunction.html
    */
   public toGetFunction() {
-    this.add('appsync:GetFunction');
+    this.to('appsync:GetFunction');
     return this;
   }
 
@@ -495,7 +495,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetGraphqlApi.html
    */
   public toGetGraphqlApi() {
-    this.add('appsync:GetGraphqlApi');
+    this.to('appsync:GetGraphqlApi');
     return this;
   }
 
@@ -507,7 +507,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetIntrospectionSchema.html
    */
   public toGetIntrospectionSchema() {
-    this.add('appsync:GetIntrospectionSchema');
+    this.to('appsync:GetIntrospectionSchema');
     return this;
   }
 
@@ -519,7 +519,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetResolver.html
    */
   public toGetResolver() {
-    this.add('appsync:GetResolver');
+    this.to('appsync:GetResolver');
     return this;
   }
 
@@ -531,7 +531,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetSchemaCreationStatus.html
    */
   public toGetSchemaCreationStatus() {
-    this.add('appsync:GetSchemaCreationStatus');
+    this.to('appsync:GetSchemaCreationStatus');
     return this;
   }
 
@@ -543,7 +543,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetType.html
    */
   public toGetType() {
-    this.add('appsync:GetType');
+    this.to('appsync:GetType');
     return this;
   }
 
@@ -555,7 +555,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/devguide/using-your-api.html
    */
   public toGraphQL() {
-    this.add('appsync:GraphQL');
+    this.to('appsync:GraphQL');
     return this;
   }
 
@@ -567,7 +567,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListApiKeys.html
    */
   public toListApiKeys() {
-    this.add('appsync:ListApiKeys');
+    this.to('appsync:ListApiKeys');
     return this;
   }
 
@@ -579,7 +579,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListDataSources.html
    */
   public toListDataSources() {
-    this.add('appsync:ListDataSources');
+    this.to('appsync:ListDataSources');
     return this;
   }
 
@@ -591,7 +591,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListFunctions.html
    */
   public toListFunctions() {
-    this.add('appsync:ListFunctions');
+    this.to('appsync:ListFunctions');
     return this;
   }
 
@@ -603,7 +603,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListGraphqlApis.html
    */
   public toListGraphqlApis() {
-    this.add('appsync:ListGraphqlApis');
+    this.to('appsync:ListGraphqlApis');
     return this;
   }
 
@@ -615,7 +615,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListResolvers.html
    */
   public toListResolvers() {
-    this.add('appsync:ListResolvers');
+    this.to('appsync:ListResolvers');
     return this;
   }
 
@@ -627,7 +627,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListResolversByFunction.html
    */
   public toListResolversByFunction() {
-    this.add('appsync:ListResolversByFunction');
+    this.to('appsync:ListResolversByFunction');
     return this;
   }
 
@@ -642,7 +642,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('appsync:ListTagsForResource');
+    this.to('appsync:ListTagsForResource');
     return this;
   }
 
@@ -654,7 +654,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListTypes.html
    */
   public toListTypes() {
-    this.add('appsync:ListTypes');
+    this.to('appsync:ListTypes');
     return this;
   }
 
@@ -666,7 +666,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_StartSchemaCreation.html
    */
   public toStartSchemaCreation() {
-    this.add('appsync:StartSchemaCreation');
+    this.to('appsync:StartSchemaCreation');
     return this;
   }
 
@@ -683,7 +683,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.add('appsync:TagResource');
+    this.to('appsync:TagResource');
     return this;
   }
 
@@ -698,7 +698,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('appsync:UntagResource');
+    this.to('appsync:UntagResource');
     return this;
   }
 
@@ -710,7 +710,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateApiKey.html
    */
   public toUpdateApiKey() {
-    this.add('appsync:UpdateApiKey');
+    this.to('appsync:UpdateApiKey');
     return this;
   }
 
@@ -722,7 +722,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateDataSource.html
    */
   public toUpdateDataSource() {
-    this.add('appsync:UpdateDataSource');
+    this.to('appsync:UpdateDataSource');
     return this;
   }
 
@@ -734,7 +734,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateFunction.html
    */
   public toUpdateFunction() {
-    this.add('appsync:UpdateFunction');
+    this.to('appsync:UpdateFunction');
     return this;
   }
 
@@ -752,7 +752,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateGraphqlApi.html
    */
   public toUpdateGraphqlApi() {
-    this.add('appsync:UpdateGraphqlApi');
+    this.to('appsync:UpdateGraphqlApi');
     return this;
   }
 
@@ -764,7 +764,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateResolver.html
    */
   public toUpdateResolver() {
-    this.add('appsync:UpdateResolver');
+    this.to('appsync:UpdateResolver');
     return this;
   }
 
@@ -776,7 +776,7 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateType.html
    */
   public toUpdateType() {
-    this.add('appsync:UpdateType');
+    this.to('appsync:UpdateType');
     return this;
   }
 

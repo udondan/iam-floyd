@@ -130,7 +130,7 @@ export class Sdb extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchDeleteAttributes.html
    */
   public toBatchDeleteAttributes() {
-    this.add('sdb:BatchDeleteAttributes');
+    this.to('sdb:BatchDeleteAttributes');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class Sdb extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchPutAttributes.html
    */
   public toBatchPutAttributes() {
-    this.add('sdb:BatchPutAttributes');
+    this.to('sdb:BatchPutAttributes');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Sdb extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_CreateDomain.html
    */
   public toCreateDomain() {
-    this.add('sdb:CreateDomain');
+    this.to('sdb:CreateDomain');
     return this;
   }
 
@@ -166,7 +166,7 @@ export class Sdb extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DeleteAttributes.html
    */
   public toDeleteAttributes() {
-    this.add('sdb:DeleteAttributes');
+    this.to('sdb:DeleteAttributes');
     return this;
   }
 
@@ -178,7 +178,7 @@ export class Sdb extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DeleteDomain.html
    */
   public toDeleteDomain() {
-    this.add('sdb:DeleteDomain');
+    this.to('sdb:DeleteDomain');
     return this;
   }
 
@@ -190,7 +190,7 @@ export class Sdb extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DomainMetadata.html
    */
   public toDomainMetadata() {
-    this.add('sdb:DomainMetadata');
+    this.to('sdb:DomainMetadata');
     return this;
   }
 
@@ -202,7 +202,7 @@ export class Sdb extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_GetAttributes.html
    */
   public toGetAttributes() {
-    this.add('sdb:GetAttributes');
+    this.to('sdb:GetAttributes');
     return this;
   }
 
@@ -214,7 +214,7 @@ export class Sdb extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_ListDomains.html
    */
   public toListDomains() {
-    this.add('sdb:ListDomains');
+    this.to('sdb:ListDomains');
     return this;
   }
 
@@ -226,7 +226,7 @@ export class Sdb extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_PutAttributes.html
    */
   public toPutAttributes() {
-    this.add('sdb:PutAttributes');
+    this.to('sdb:PutAttributes');
     return this;
   }
 
@@ -238,7 +238,7 @@ export class Sdb extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_Select.html
    */
   public toSelect() {
-    this.add('sdb:Select');
+    this.to('sdb:Select');
     return this;
   }
 

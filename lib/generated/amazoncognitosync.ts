@@ -232,7 +232,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_BulkPublish.html
    */
   public toBulkPublish() {
-    this.add('cognito-sync:BulkPublish');
+    this.to('cognito-sync:BulkPublish');
     return this;
   }
 
@@ -244,7 +244,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DeleteDataset.html
    */
   public toDeleteDataset() {
-    this.add('cognito-sync:DeleteDataset');
+    this.to('cognito-sync:DeleteDataset');
     return this;
   }
 
@@ -256,7 +256,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeDataset.html
    */
   public toDescribeDataset() {
-    this.add('cognito-sync:DescribeDataset');
+    this.to('cognito-sync:DescribeDataset');
     return this;
   }
 
@@ -268,7 +268,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeIdentityPoolUsage.html
    */
   public toDescribeIdentityPoolUsage() {
-    this.add('cognito-sync:DescribeIdentityPoolUsage');
+    this.to('cognito-sync:DescribeIdentityPoolUsage');
     return this;
   }
 
@@ -280,7 +280,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeIdentityUsage.html
    */
   public toDescribeIdentityUsage() {
-    this.add('cognito-sync:DescribeIdentityUsage');
+    this.to('cognito-sync:DescribeIdentityUsage');
     return this;
   }
 
@@ -292,7 +292,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetBulkPublishDetails.html
    */
   public toGetBulkPublishDetails() {
-    this.add('cognito-sync:GetBulkPublishDetails');
+    this.to('cognito-sync:GetBulkPublishDetails');
     return this;
   }
 
@@ -304,7 +304,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetCognitoEvents.html
    */
   public toGetCognitoEvents() {
-    this.add('cognito-sync:GetCognitoEvents');
+    this.to('cognito-sync:GetCognitoEvents');
     return this;
   }
 
@@ -316,7 +316,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetIdentityPoolConfiguration.html
    */
   public toGetIdentityPoolConfiguration() {
-    this.add('cognito-sync:GetIdentityPoolConfiguration');
+    this.to('cognito-sync:GetIdentityPoolConfiguration');
     return this;
   }
 
@@ -328,7 +328,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListDatasets.html
    */
   public toListDatasets() {
-    this.add('cognito-sync:ListDatasets');
+    this.to('cognito-sync:ListDatasets');
     return this;
   }
 
@@ -340,7 +340,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListIdentityPoolUsage.html
    */
   public toListIdentityPoolUsage() {
-    this.add('cognito-sync:ListIdentityPoolUsage');
+    this.to('cognito-sync:ListIdentityPoolUsage');
     return this;
   }
 
@@ -352,7 +352,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListRecords.html
    */
   public toListRecords() {
-    this.add('cognito-sync:ListRecords');
+    this.to('cognito-sync:ListRecords');
     return this;
   }
 
@@ -362,7 +362,7 @@ export class CognitoSync extends PolicyStatement {
    * Access Level: Read
    */
   public toQueryRecords() {
-    this.add('cognito-sync:QueryRecords');
+    this.to('cognito-sync:QueryRecords');
     return this;
   }
 
@@ -374,7 +374,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_RegisterDevice.html
    */
   public toRegisterDevice() {
-    this.add('cognito-sync:RegisterDevice');
+    this.to('cognito-sync:RegisterDevice');
     return this;
   }
 
@@ -386,7 +386,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SetCognitoEvents.html
    */
   public toSetCognitoEvents() {
-    this.add('cognito-sync:SetCognitoEvents');
+    this.to('cognito-sync:SetCognitoEvents');
     return this;
   }
 
@@ -396,7 +396,7 @@ export class CognitoSync extends PolicyStatement {
    * Access Level: Write
    */
   public toSetDatasetConfiguration() {
-    this.add('cognito-sync:SetDatasetConfiguration');
+    this.to('cognito-sync:SetDatasetConfiguration');
     return this;
   }
 
@@ -408,7 +408,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SetIdentityPoolConfiguration.html
    */
   public toSetIdentityPoolConfiguration() {
-    this.add('cognito-sync:SetIdentityPoolConfiguration');
+    this.to('cognito-sync:SetIdentityPoolConfiguration');
     return this;
   }
 
@@ -420,7 +420,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SubscribeToDataset.html
    */
   public toSubscribeToDataset() {
-    this.add('cognito-sync:SubscribeToDataset');
+    this.to('cognito-sync:SubscribeToDataset');
     return this;
   }
 
@@ -432,7 +432,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_UnsubscribeFromDataset.html
    */
   public toUnsubscribeFromDataset() {
-    this.add('cognito-sync:UnsubscribeFromDataset');
+    this.to('cognito-sync:UnsubscribeFromDataset');
     return this;
   }
 
@@ -444,7 +444,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_UpdateRecords.html
    */
   public toUpdateRecords() {
-    this.add('cognito-sync:UpdateRecords');
+    this.to('cognito-sync:UpdateRecords');
     return this;
   }
 

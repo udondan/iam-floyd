@@ -204,7 +204,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html
    */
   public toAssumeRole() {
-    this.add('sts:AssumeRole');
+    this.to('sts:AssumeRole');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html
    */
   public toAssumeRoleWithSAML() {
-    this.add('sts:AssumeRoleWithSAML');
+    this.to('sts:AssumeRoleWithSAML');
     return this;
   }
 
@@ -282,7 +282,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html
    */
   public toAssumeRoleWithWebIdentity() {
-    this.add('sts:AssumeRoleWithWebIdentity');
+    this.to('sts:AssumeRoleWithWebIdentity');
     return this;
   }
 
@@ -294,7 +294,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_DecodeAuthorizationMessage.html
    */
   public toDecodeAuthorizationMessage() {
-    this.add('sts:DecodeAuthorizationMessage');
+    this.to('sts:DecodeAuthorizationMessage');
     return this;
   }
 
@@ -306,7 +306,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetAccessKeyInfo.html
    */
   public toGetAccessKeyInfo() {
-    this.add('sts:GetAccessKeyInfo');
+    this.to('sts:GetAccessKeyInfo');
     return this;
   }
 
@@ -318,7 +318,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html
    */
   public toGetCallerIdentity() {
-    this.add('sts:GetCallerIdentity');
+    this.to('sts:GetCallerIdentity');
     return this;
   }
 
@@ -335,7 +335,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html
    */
   public toGetFederationToken() {
-    this.add('sts:GetFederationToken');
+    this.to('sts:GetFederationToken');
     return this;
   }
 
@@ -347,7 +347,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_bearer.html
    */
   public toGetServiceBearerToken() {
-    this.add('sts:GetServiceBearerToken');
+    this.to('sts:GetServiceBearerToken');
     return this;
   }
 
@@ -359,7 +359,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html
    */
   public toGetSessionToken() {
-    this.add('sts:GetSessionToken');
+    this.to('sts:GetSessionToken');
     return this;
   }
 
@@ -377,7 +377,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html
    */
   public toTagSession() {
-    this.add('sts:TagSession');
+    this.to('sts:TagSession');
     return this;
   }
 
