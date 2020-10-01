@@ -672,7 +672,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AcceptPortfolioShare.html
    */
   public toAcceptPortfolioShare() {
-    this.add('servicecatalog:AcceptPortfolioShare');
+    this.to('servicecatalog:AcceptPortfolioShare');
     return this;
   }
 
@@ -684,7 +684,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateBudgetWithResource.html
    */
   public toAssociateBudgetWithResource() {
-    this.add('servicecatalog:AssociateBudgetWithResource');
+    this.to('servicecatalog:AssociateBudgetWithResource');
     return this;
   }
 
@@ -696,7 +696,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociatePrincipalWithPortfolio.html
    */
   public toAssociatePrincipalWithPortfolio() {
-    this.add('servicecatalog:AssociatePrincipalWithPortfolio');
+    this.to('servicecatalog:AssociatePrincipalWithPortfolio');
     return this;
   }
 
@@ -708,7 +708,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateProductWithPortfolio.html
    */
   public toAssociateProductWithPortfolio() {
-    this.add('servicecatalog:AssociateProductWithPortfolio');
+    this.to('servicecatalog:AssociateProductWithPortfolio');
     return this;
   }
 
@@ -720,7 +720,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateServiceActionWithProvisioningArtifact.html
    */
   public toAssociateServiceActionWithProvisioningArtifact() {
-    this.add('servicecatalog:AssociateServiceActionWithProvisioningArtifact');
+    this.to('servicecatalog:AssociateServiceActionWithProvisioningArtifact');
     return this;
   }
 
@@ -732,7 +732,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateTagOptionWithResource.html
    */
   public toAssociateTagOptionWithResource() {
-    this.add('servicecatalog:AssociateTagOptionWithResource');
+    this.to('servicecatalog:AssociateTagOptionWithResource');
     return this;
   }
 
@@ -744,7 +744,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_BatchAssociateServiceActionWithProvisioningArtifact.html
    */
   public toBatchAssociateServiceActionWithProvisioningArtifact() {
-    this.add('servicecatalog:BatchAssociateServiceActionWithProvisioningArtifact');
+    this.to('servicecatalog:BatchAssociateServiceActionWithProvisioningArtifact');
     return this;
   }
 
@@ -756,7 +756,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_BatchDisassociateServiceActionFromProvisioningArtifact.html
    */
   public toBatchDisassociateServiceActionFromProvisioningArtifact() {
-    this.add('servicecatalog:BatchDisassociateServiceActionFromProvisioningArtifact');
+    this.to('servicecatalog:BatchDisassociateServiceActionFromProvisioningArtifact');
     return this;
   }
 
@@ -768,7 +768,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CopyProduct.html
    */
   public toCopyProduct() {
-    this.add('servicecatalog:CopyProduct');
+    this.to('servicecatalog:CopyProduct');
     return this;
   }
 
@@ -780,7 +780,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateConstraint.html
    */
   public toCreateConstraint() {
-    this.add('servicecatalog:CreateConstraint');
+    this.to('servicecatalog:CreateConstraint');
     return this;
   }
 
@@ -796,7 +796,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreatePortfolio.html
    */
   public toCreatePortfolio() {
-    this.add('servicecatalog:CreatePortfolio');
+    this.to('servicecatalog:CreatePortfolio');
     return this;
   }
 
@@ -808,7 +808,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreatePortfolioShare.html
    */
   public toCreatePortfolioShare() {
-    this.add('servicecatalog:CreatePortfolioShare');
+    this.to('servicecatalog:CreatePortfolioShare');
     return this;
   }
 
@@ -824,7 +824,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProduct.html
    */
   public toCreateProduct() {
-    this.add('servicecatalog:CreateProduct');
+    this.to('servicecatalog:CreateProduct');
     return this;
   }
 
@@ -836,7 +836,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProvisionedProductPlan.html
    */
   public toCreateProvisionedProductPlan() {
-    this.add('servicecatalog:CreateProvisionedProductPlan');
+    this.to('servicecatalog:CreateProvisionedProductPlan');
     return this;
   }
 
@@ -848,7 +848,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProvisioningArtifact.html
    */
   public toCreateProvisioningArtifact() {
-    this.add('servicecatalog:CreateProvisioningArtifact');
+    this.to('servicecatalog:CreateProvisioningArtifact');
     return this;
   }
 
@@ -860,7 +860,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateServiceAction.html
    */
   public toCreateServiceAction() {
-    this.add('servicecatalog:CreateServiceAction');
+    this.to('servicecatalog:CreateServiceAction');
     return this;
   }
 
@@ -872,7 +872,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateTagOption.html
    */
   public toCreateTagOption() {
-    this.add('servicecatalog:CreateTagOption');
+    this.to('servicecatalog:CreateTagOption');
     return this;
   }
 
@@ -884,7 +884,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteConstraint.html
    */
   public toDeleteConstraint() {
-    this.add('servicecatalog:DeleteConstraint');
+    this.to('servicecatalog:DeleteConstraint');
     return this;
   }
 
@@ -896,7 +896,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeletePortfolio.html
    */
   public toDeletePortfolio() {
-    this.add('servicecatalog:DeletePortfolio');
+    this.to('servicecatalog:DeletePortfolio');
     return this;
   }
 
@@ -908,7 +908,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeletePortfolioShare.html
    */
   public toDeletePortfolioShare() {
-    this.add('servicecatalog:DeletePortfolioShare');
+    this.to('servicecatalog:DeletePortfolioShare');
     return this;
   }
 
@@ -920,7 +920,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProduct.html
    */
   public toDeleteProduct() {
-    this.add('servicecatalog:DeleteProduct');
+    this.to('servicecatalog:DeleteProduct');
     return this;
   }
 
@@ -932,7 +932,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProvisionedProductPlan.html
    */
   public toDeleteProvisionedProductPlan() {
-    this.add('servicecatalog:DeleteProvisionedProductPlan');
+    this.to('servicecatalog:DeleteProvisionedProductPlan');
     return this;
   }
 
@@ -944,7 +944,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProvisioningArtifact.html
    */
   public toDeleteProvisioningArtifact() {
-    this.add('servicecatalog:DeleteProvisioningArtifact');
+    this.to('servicecatalog:DeleteProvisioningArtifact');
     return this;
   }
 
@@ -956,7 +956,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteServiceAction.html
    */
   public toDeleteServiceAction() {
-    this.add('servicecatalog:DeleteServiceAction');
+    this.to('servicecatalog:DeleteServiceAction');
     return this;
   }
 
@@ -968,7 +968,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteTagOption.html
    */
   public toDeleteTagOption() {
-    this.add('servicecatalog:DeleteTagOption');
+    this.to('servicecatalog:DeleteTagOption');
     return this;
   }
 
@@ -980,7 +980,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeConstraint.html
    */
   public toDescribeConstraint() {
-    this.add('servicecatalog:DescribeConstraint');
+    this.to('servicecatalog:DescribeConstraint');
     return this;
   }
 
@@ -992,7 +992,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeCopyProductStatus.html
    */
   public toDescribeCopyProductStatus() {
-    this.add('servicecatalog:DescribeCopyProductStatus');
+    this.to('servicecatalog:DescribeCopyProductStatus');
     return this;
   }
 
@@ -1004,7 +1004,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribePortfolio.html
    */
   public toDescribePortfolio() {
-    this.add('servicecatalog:DescribePortfolio');
+    this.to('servicecatalog:DescribePortfolio');
     return this;
   }
 
@@ -1016,7 +1016,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribePortfolioShareStatus.html
    */
   public toDescribePortfolioShareStatus() {
-    this.add('servicecatalog:DescribePortfolioShareStatus');
+    this.to('servicecatalog:DescribePortfolioShareStatus');
     return this;
   }
 
@@ -1028,7 +1028,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProduct.html
    */
   public toDescribeProduct() {
-    this.add('servicecatalog:DescribeProduct');
+    this.to('servicecatalog:DescribeProduct');
     return this;
   }
 
@@ -1040,7 +1040,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProductAsAdmin.html
    */
   public toDescribeProductAsAdmin() {
-    this.add('servicecatalog:DescribeProductAsAdmin');
+    this.to('servicecatalog:DescribeProductAsAdmin');
     return this;
   }
 
@@ -1052,7 +1052,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProductView.html
    */
   public toDescribeProductView() {
-    this.add('servicecatalog:DescribeProductView');
+    this.to('servicecatalog:DescribeProductView');
     return this;
   }
 
@@ -1064,7 +1064,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisionedProduct.html
    */
   public toDescribeProvisionedProduct() {
-    this.add('servicecatalog:DescribeProvisionedProduct');
+    this.to('servicecatalog:DescribeProvisionedProduct');
     return this;
   }
 
@@ -1076,7 +1076,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisionedProductPlan.html
    */
   public toDescribeProvisionedProductPlan() {
-    this.add('servicecatalog:DescribeProvisionedProductPlan');
+    this.to('servicecatalog:DescribeProvisionedProductPlan');
     return this;
   }
 
@@ -1088,7 +1088,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisioningArtifact.html
    */
   public toDescribeProvisioningArtifact() {
-    this.add('servicecatalog:DescribeProvisioningArtifact');
+    this.to('servicecatalog:DescribeProvisioningArtifact');
     return this;
   }
 
@@ -1100,7 +1100,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisioningParameters.html
    */
   public toDescribeProvisioningParameters() {
-    this.add('servicecatalog:DescribeProvisioningParameters');
+    this.to('servicecatalog:DescribeProvisioningParameters');
     return this;
   }
 
@@ -1117,7 +1117,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeRecord.html
    */
   public toDescribeRecord() {
-    this.add('servicecatalog:DescribeRecord');
+    this.to('servicecatalog:DescribeRecord');
     return this;
   }
 
@@ -1129,7 +1129,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeServiceAction.html
    */
   public toDescribeServiceAction() {
-    this.add('servicecatalog:DescribeServiceAction');
+    this.to('servicecatalog:DescribeServiceAction');
     return this;
   }
 
@@ -1141,7 +1141,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeServiceActionExecutionParameters.html
    */
   public toDescribeServiceActionExecutionParameters() {
-    this.add('servicecatalog:DescribeServiceActionExecutionParameters');
+    this.to('servicecatalog:DescribeServiceActionExecutionParameters');
     return this;
   }
 
@@ -1153,7 +1153,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeTagOption.html
    */
   public toDescribeTagOption() {
-    this.add('servicecatalog:DescribeTagOption');
+    this.to('servicecatalog:DescribeTagOption');
     return this;
   }
 
@@ -1165,7 +1165,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisableAWSOrganizationsAccess.html
    */
   public toDisableAWSOrganizationsAccess() {
-    this.add('servicecatalog:DisableAWSOrganizationsAccess');
+    this.to('servicecatalog:DisableAWSOrganizationsAccess');
     return this;
   }
 
@@ -1177,7 +1177,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateBudgetFromResource.html
    */
   public toDisassociateBudgetFromResource() {
-    this.add('servicecatalog:DisassociateBudgetFromResource');
+    this.to('servicecatalog:DisassociateBudgetFromResource');
     return this;
   }
 
@@ -1189,7 +1189,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociatePrincipalFromPortfolio.html
    */
   public toDisassociatePrincipalFromPortfolio() {
-    this.add('servicecatalog:DisassociatePrincipalFromPortfolio');
+    this.to('servicecatalog:DisassociatePrincipalFromPortfolio');
     return this;
   }
 
@@ -1201,7 +1201,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateProductFromPortfolio.html
    */
   public toDisassociateProductFromPortfolio() {
-    this.add('servicecatalog:DisassociateProductFromPortfolio');
+    this.to('servicecatalog:DisassociateProductFromPortfolio');
     return this;
   }
 
@@ -1213,7 +1213,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateServiceActionFromProvisioningArtifact.html
    */
   public toDisassociateServiceActionFromProvisioningArtifact() {
-    this.add('servicecatalog:DisassociateServiceActionFromProvisioningArtifact');
+    this.to('servicecatalog:DisassociateServiceActionFromProvisioningArtifact');
     return this;
   }
 
@@ -1225,7 +1225,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateTagOptionFromResource.html
    */
   public toDisassociateTagOptionFromResource() {
-    this.add('servicecatalog:DisassociateTagOptionFromResource');
+    this.to('servicecatalog:DisassociateTagOptionFromResource');
     return this;
   }
 
@@ -1237,7 +1237,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_EnableAWSOrganizationsAccess.html
    */
   public toEnableAWSOrganizationsAccess() {
-    this.add('servicecatalog:EnableAWSOrganizationsAccess');
+    this.to('servicecatalog:EnableAWSOrganizationsAccess');
     return this;
   }
 
@@ -1249,7 +1249,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ExecuteProvisionedProductPlan.html
    */
   public toExecuteProvisionedProductPlan() {
-    this.add('servicecatalog:ExecuteProvisionedProductPlan');
+    this.to('servicecatalog:ExecuteProvisionedProductPlan');
     return this;
   }
 
@@ -1261,7 +1261,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ExecuteProvisionedProductServiceAction.html
    */
   public toExecuteProvisionedProductServiceAction() {
-    this.add('servicecatalog:ExecuteProvisionedProductServiceAction');
+    this.to('servicecatalog:ExecuteProvisionedProductServiceAction');
     return this;
   }
 
@@ -1273,7 +1273,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_GetAWSOrganizationsAccessStatus.html
    */
   public toGetAWSOrganizationsAccessStatus() {
-    this.add('servicecatalog:GetAWSOrganizationsAccessStatus');
+    this.to('servicecatalog:GetAWSOrganizationsAccessStatus');
     return this;
   }
 
@@ -1285,7 +1285,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListAcceptedPortfolioShares.html
    */
   public toListAcceptedPortfolioShares() {
-    this.add('servicecatalog:ListAcceptedPortfolioShares');
+    this.to('servicecatalog:ListAcceptedPortfolioShares');
     return this;
   }
 
@@ -1297,7 +1297,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListBudgetsForResource.html
    */
   public toListBudgetsForResource() {
-    this.add('servicecatalog:ListBudgetsForResource');
+    this.to('servicecatalog:ListBudgetsForResource');
     return this;
   }
 
@@ -1309,7 +1309,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListConstraintsForPortfolio.html
    */
   public toListConstraintsForPortfolio() {
-    this.add('servicecatalog:ListConstraintsForPortfolio');
+    this.to('servicecatalog:ListConstraintsForPortfolio');
     return this;
   }
 
@@ -1321,7 +1321,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListLaunchPaths.html
    */
   public toListLaunchPaths() {
-    this.add('servicecatalog:ListLaunchPaths');
+    this.to('servicecatalog:ListLaunchPaths');
     return this;
   }
 
@@ -1333,7 +1333,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListOrganizationPortfolioAccess.html
    */
   public toListOrganizationPortfolioAccess() {
-    this.add('servicecatalog:ListOrganizationPortfolioAccess');
+    this.to('servicecatalog:ListOrganizationPortfolioAccess');
     return this;
   }
 
@@ -1345,7 +1345,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPortfolioAccess.html
    */
   public toListPortfolioAccess() {
-    this.add('servicecatalog:ListPortfolioAccess');
+    this.to('servicecatalog:ListPortfolioAccess');
     return this;
   }
 
@@ -1357,7 +1357,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPortfolios.html
    */
   public toListPortfolios() {
-    this.add('servicecatalog:ListPortfolios');
+    this.to('servicecatalog:ListPortfolios');
     return this;
   }
 
@@ -1369,7 +1369,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPortfoliosForProduct.html
    */
   public toListPortfoliosForProduct() {
-    this.add('servicecatalog:ListPortfoliosForProduct');
+    this.to('servicecatalog:ListPortfoliosForProduct');
     return this;
   }
 
@@ -1381,7 +1381,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPrincipalsForPortfolio.html
    */
   public toListPrincipalsForPortfolio() {
-    this.add('servicecatalog:ListPrincipalsForPortfolio');
+    this.to('servicecatalog:ListPrincipalsForPortfolio');
     return this;
   }
 
@@ -1393,7 +1393,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisionedProductPlans.html
    */
   public toListProvisionedProductPlans() {
-    this.add('servicecatalog:ListProvisionedProductPlans');
+    this.to('servicecatalog:ListProvisionedProductPlans');
     return this;
   }
 
@@ -1405,7 +1405,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisioningArtifacts.html
    */
   public toListProvisioningArtifacts() {
-    this.add('servicecatalog:ListProvisioningArtifacts');
+    this.to('servicecatalog:ListProvisioningArtifacts');
     return this;
   }
 
@@ -1417,7 +1417,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisioningArtifactsForServiceAction.html
    */
   public toListProvisioningArtifactsForServiceAction() {
-    this.add('servicecatalog:ListProvisioningArtifactsForServiceAction');
+    this.to('servicecatalog:ListProvisioningArtifactsForServiceAction');
     return this;
   }
 
@@ -1434,7 +1434,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListRecordHistory.html
    */
   public toListRecordHistory() {
-    this.add('servicecatalog:ListRecordHistory');
+    this.to('servicecatalog:ListRecordHistory');
     return this;
   }
 
@@ -1446,7 +1446,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListResourcesForTagOption.html
    */
   public toListResourcesForTagOption() {
-    this.add('servicecatalog:ListResourcesForTagOption');
+    this.to('servicecatalog:ListResourcesForTagOption');
     return this;
   }
 
@@ -1458,7 +1458,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListServiceActions.html
    */
   public toListServiceActions() {
-    this.add('servicecatalog:ListServiceActions');
+    this.to('servicecatalog:ListServiceActions');
     return this;
   }
 
@@ -1470,7 +1470,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListServiceActionsForProvisioningArtifact.html
    */
   public toListServiceActionsForProvisioningArtifact() {
-    this.add('servicecatalog:ListServiceActionsForProvisioningArtifact');
+    this.to('servicecatalog:ListServiceActionsForProvisioningArtifact');
     return this;
   }
 
@@ -1482,7 +1482,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListStackInstancesForProvisionedProduct.html
    */
   public toListStackInstancesForProvisionedProduct() {
-    this.add('servicecatalog:ListStackInstancesForProvisionedProduct');
+    this.to('servicecatalog:ListStackInstancesForProvisionedProduct');
     return this;
   }
 
@@ -1494,7 +1494,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListTagOptions.html
    */
   public toListTagOptions() {
-    this.add('servicecatalog:ListTagOptions');
+    this.to('servicecatalog:ListTagOptions');
     return this;
   }
 
@@ -1506,7 +1506,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ProvisionProduct.html
    */
   public toProvisionProduct() {
-    this.add('servicecatalog:ProvisionProduct');
+    this.to('servicecatalog:ProvisionProduct');
     return this;
   }
 
@@ -1518,7 +1518,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_RejectPortfolioShare.html
    */
   public toRejectPortfolioShare() {
-    this.add('servicecatalog:RejectPortfolioShare');
+    this.to('servicecatalog:RejectPortfolioShare');
     return this;
   }
 
@@ -1535,7 +1535,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ScanProvisionedProducts.html
    */
   public toScanProvisionedProducts() {
-    this.add('servicecatalog:ScanProvisionedProducts');
+    this.to('servicecatalog:ScanProvisionedProducts');
     return this;
   }
 
@@ -1547,7 +1547,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProducts.html
    */
   public toSearchProducts() {
-    this.add('servicecatalog:SearchProducts');
+    this.to('servicecatalog:SearchProducts');
     return this;
   }
 
@@ -1559,7 +1559,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProductsAsAdmin.html
    */
   public toSearchProductsAsAdmin() {
-    this.add('servicecatalog:SearchProductsAsAdmin');
+    this.to('servicecatalog:SearchProductsAsAdmin');
     return this;
   }
 
@@ -1576,7 +1576,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProvisionedProducts.html
    */
   public toSearchProvisionedProducts() {
-    this.add('servicecatalog:SearchProvisionedProducts');
+    this.to('servicecatalog:SearchProvisionedProducts');
     return this;
   }
 
@@ -1593,7 +1593,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_TerminateProvisionedProduct.html
    */
   public toTerminateProvisionedProduct() {
-    this.add('servicecatalog:TerminateProvisionedProduct');
+    this.to('servicecatalog:TerminateProvisionedProduct');
     return this;
   }
 
@@ -1605,7 +1605,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateConstraint.html
    */
   public toUpdateConstraint() {
-    this.add('servicecatalog:UpdateConstraint');
+    this.to('servicecatalog:UpdateConstraint');
     return this;
   }
 
@@ -1621,7 +1621,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdatePortfolio.html
    */
   public toUpdatePortfolio() {
-    this.add('servicecatalog:UpdatePortfolio');
+    this.to('servicecatalog:UpdatePortfolio');
     return this;
   }
 
@@ -1637,7 +1637,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProduct.html
    */
   public toUpdateProduct() {
-    this.add('servicecatalog:UpdateProduct');
+    this.to('servicecatalog:UpdateProduct');
     return this;
   }
 
@@ -1654,7 +1654,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProvisionedProduct.html
    */
   public toUpdateProvisionedProduct() {
-    this.add('servicecatalog:UpdateProvisionedProduct');
+    this.to('servicecatalog:UpdateProvisionedProduct');
     return this;
   }
 
@@ -1666,7 +1666,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProvisionedProductProperties.html
    */
   public toUpdateProvisionedProductProperties() {
-    this.add('servicecatalog:UpdateProvisionedProductProperties');
+    this.to('servicecatalog:UpdateProvisionedProductProperties');
     return this;
   }
 
@@ -1678,7 +1678,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProvisioningArtifact.html
    */
   public toUpdateProvisioningArtifact() {
-    this.add('servicecatalog:UpdateProvisioningArtifact');
+    this.to('servicecatalog:UpdateProvisioningArtifact');
     return this;
   }
 
@@ -1690,7 +1690,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateServiceAction.html
    */
   public toUpdateServiceAction() {
-    this.add('servicecatalog:UpdateServiceAction');
+    this.to('servicecatalog:UpdateServiceAction');
     return this;
   }
 
@@ -1702,7 +1702,7 @@ export class Servicecatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateTagOption.html
    */
   public toUpdateTagOption() {
-    this.add('servicecatalog:UpdateTagOption');
+    this.to('servicecatalog:UpdateTagOption');
     return this;
   }
 

@@ -167,7 +167,7 @@ export class Firehose extends PolicyStatement {
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html
    */
   public toCreateDeliveryStream() {
-    this.add('firehose:CreateDeliveryStream');
+    this.to('firehose:CreateDeliveryStream');
     return this;
   }
 
@@ -179,7 +179,7 @@ export class Firehose extends PolicyStatement {
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_DeleteDeliveryStream.html
    */
   public toDeleteDeliveryStream() {
-    this.add('firehose:DeleteDeliveryStream');
+    this.to('firehose:DeleteDeliveryStream');
     return this;
   }
 
@@ -191,7 +191,7 @@ export class Firehose extends PolicyStatement {
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_DescribeDeliveryStream.html
    */
   public toDescribeDeliveryStream() {
-    this.add('firehose:DescribeDeliveryStream');
+    this.to('firehose:DescribeDeliveryStream');
     return this;
   }
 
@@ -203,7 +203,7 @@ export class Firehose extends PolicyStatement {
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_ListDeliveryStreams.html
    */
   public toListDeliveryStreams() {
-    this.add('firehose:ListDeliveryStreams');
+    this.to('firehose:ListDeliveryStreams');
     return this;
   }
 
@@ -215,7 +215,7 @@ export class Firehose extends PolicyStatement {
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_ListTagsForDeliveryStream.html
    */
   public toListTagsForDeliveryStream() {
-    this.add('firehose:ListTagsForDeliveryStream');
+    this.to('firehose:ListTagsForDeliveryStream');
     return this;
   }
 
@@ -227,7 +227,7 @@ export class Firehose extends PolicyStatement {
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecord.html
    */
   public toPutRecord() {
-    this.add('firehose:PutRecord');
+    this.to('firehose:PutRecord');
     return this;
   }
 
@@ -239,7 +239,7 @@ export class Firehose extends PolicyStatement {
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html
    */
   public toPutRecordBatch() {
-    this.add('firehose:PutRecordBatch');
+    this.to('firehose:PutRecordBatch');
     return this;
   }
 
@@ -251,7 +251,7 @@ export class Firehose extends PolicyStatement {
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_StartDeliveryStreamEncryption.html
    */
   public toStartDeliveryStreamEncryption() {
-    this.add('firehose:StartDeliveryStreamEncryption');
+    this.to('firehose:StartDeliveryStreamEncryption');
     return this;
   }
 
@@ -263,7 +263,7 @@ export class Firehose extends PolicyStatement {
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_StopDeliveryStreamEncryption.html
    */
   public toStopDeliveryStreamEncryption() {
-    this.add('firehose:StopDeliveryStreamEncryption');
+    this.to('firehose:StopDeliveryStreamEncryption');
     return this;
   }
 
@@ -279,7 +279,7 @@ export class Firehose extends PolicyStatement {
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_TagDeliveryStream.html
    */
   public toTagDeliveryStream() {
-    this.add('firehose:TagDeliveryStream');
+    this.to('firehose:TagDeliveryStream');
     return this;
   }
 
@@ -294,7 +294,7 @@ export class Firehose extends PolicyStatement {
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_UntagDeliveryStream.html
    */
   public toUntagDeliveryStream() {
-    this.add('firehose:UntagDeliveryStream');
+    this.to('firehose:UntagDeliveryStream');
     return this;
   }
 
@@ -306,7 +306,7 @@ export class Firehose extends PolicyStatement {
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_UpdateDestination.html
    */
   public toUpdateDestination() {
-    this.add('firehose:UpdateDestination');
+    this.to('firehose:UpdateDestination');
     return this;
   }
 

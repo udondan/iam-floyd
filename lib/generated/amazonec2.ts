@@ -5764,7 +5764,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptReservedInstancesExchangeQuote.html
    */
   public toAcceptReservedInstancesExchangeQuote() {
-    this.add('ec2:AcceptReservedInstancesExchangeQuote');
+    this.to('ec2:AcceptReservedInstancesExchangeQuote');
     return this;
   }
 
@@ -5776,7 +5776,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptTransitGatewayPeeringAttachment.html
    */
   public toAcceptTransitGatewayPeeringAttachment() {
-    this.add('ec2:AcceptTransitGatewayPeeringAttachment');
+    this.to('ec2:AcceptTransitGatewayPeeringAttachment');
     return this;
   }
 
@@ -5788,7 +5788,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptTransitGatewayVpcAttachment.html
    */
   public toAcceptTransitGatewayVpcAttachment() {
-    this.add('ec2:AcceptTransitGatewayVpcAttachment');
+    this.to('ec2:AcceptTransitGatewayVpcAttachment');
     return this;
   }
 
@@ -5800,7 +5800,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptVpcEndpointConnections.html
    */
   public toAcceptVpcEndpointConnections() {
-    this.add('ec2:AcceptVpcEndpointConnections');
+    this.to('ec2:AcceptVpcEndpointConnections');
     return this;
   }
 
@@ -5812,7 +5812,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptVpcPeeringConnection.html
    */
   public toAcceptVpcPeeringConnection() {
-    this.add('ec2:AcceptVpcPeeringConnection');
+    this.to('ec2:AcceptVpcPeeringConnection');
     return this;
   }
 
@@ -5824,7 +5824,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AdvertiseByoipCidr.html
    */
   public toAdvertiseByoipCidr() {
-    this.add('ec2:AdvertiseByoipCidr');
+    this.to('ec2:AdvertiseByoipCidr');
     return this;
   }
 
@@ -5836,7 +5836,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateAddress.html
    */
   public toAllocateAddress() {
-    this.add('ec2:AllocateAddress');
+    this.to('ec2:AllocateAddress');
     return this;
   }
 
@@ -5848,7 +5848,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateHosts.html
    */
   public toAllocateHosts() {
-    this.add('ec2:AllocateHosts');
+    this.to('ec2:AllocateHosts');
     return this;
   }
 
@@ -5860,7 +5860,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ApplySecurityGroupsToClientVpnTargetNetwork.html
    */
   public toApplySecurityGroupsToClientVpnTargetNetwork() {
-    this.add('ec2:ApplySecurityGroupsToClientVpnTargetNetwork');
+    this.to('ec2:ApplySecurityGroupsToClientVpnTargetNetwork');
     return this;
   }
 
@@ -5872,7 +5872,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssignIpv6Addresses.html
    */
   public toAssignIpv6Addresses() {
-    this.add('ec2:AssignIpv6Addresses');
+    this.to('ec2:AssignIpv6Addresses');
     return this;
   }
 
@@ -5884,7 +5884,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssignPrivateIpAddresses.html
    */
   public toAssignPrivateIpAddresses() {
-    this.add('ec2:AssignPrivateIpAddresses');
+    this.to('ec2:AssignPrivateIpAddresses');
     return this;
   }
 
@@ -5896,7 +5896,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateAddress.html
    */
   public toAssociateAddress() {
-    this.add('ec2:AssociateAddress');
+    this.to('ec2:AssociateAddress');
     return this;
   }
 
@@ -5908,7 +5908,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateClientVpnTargetNetwork.html
    */
   public toAssociateClientVpnTargetNetwork() {
-    this.add('ec2:AssociateClientVpnTargetNetwork');
+    this.to('ec2:AssociateClientVpnTargetNetwork');
     return this;
   }
 
@@ -5920,7 +5920,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateDhcpOptions.html
    */
   public toAssociateDhcpOptions() {
-    this.add('ec2:AssociateDhcpOptions');
+    this.to('ec2:AssociateDhcpOptions');
     return this;
   }
 
@@ -5935,7 +5935,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html
    */
   public toAssociateIamInstanceProfile() {
-    this.add('ec2:AssociateIamInstanceProfile');
+    this.to('ec2:AssociateIamInstanceProfile');
     return this;
   }
 
@@ -5947,7 +5947,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateRouteTable.html
    */
   public toAssociateRouteTable() {
-    this.add('ec2:AssociateRouteTable');
+    this.to('ec2:AssociateRouteTable');
     return this;
   }
 
@@ -5959,7 +5959,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateSubnetCidrBlock.html
    */
   public toAssociateSubnetCidrBlock() {
-    this.add('ec2:AssociateSubnetCidrBlock');
+    this.to('ec2:AssociateSubnetCidrBlock');
     return this;
   }
 
@@ -5971,7 +5971,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateTransitGatewayMulticastDomain.html
    */
   public toAssociateTransitGatewayMulticastDomain() {
-    this.add('ec2:AssociateTransitGatewayMulticastDomain');
+    this.to('ec2:AssociateTransitGatewayMulticastDomain');
     return this;
   }
 
@@ -5983,7 +5983,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateTransitGatewayRouteTable.html
    */
   public toAssociateTransitGatewayRouteTable() {
-    this.add('ec2:AssociateTransitGatewayRouteTable');
+    this.to('ec2:AssociateTransitGatewayRouteTable');
     return this;
   }
 
@@ -5995,7 +5995,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateVpcCidrBlock.html
    */
   public toAssociateVpcCidrBlock() {
-    this.add('ec2:AssociateVpcCidrBlock');
+    this.to('ec2:AssociateVpcCidrBlock');
     return this;
   }
 
@@ -6007,7 +6007,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachClassicLinkVpc.html
    */
   public toAttachClassicLinkVpc() {
-    this.add('ec2:AttachClassicLinkVpc');
+    this.to('ec2:AttachClassicLinkVpc');
     return this;
   }
 
@@ -6019,7 +6019,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachInternetGateway.html
    */
   public toAttachInternetGateway() {
-    this.add('ec2:AttachInternetGateway');
+    this.to('ec2:AttachInternetGateway');
     return this;
   }
 
@@ -6031,7 +6031,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachNetworkInterface.html
    */
   public toAttachNetworkInterface() {
-    this.add('ec2:AttachNetworkInterface');
+    this.to('ec2:AttachNetworkInterface');
     return this;
   }
 
@@ -6043,7 +6043,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachVolume.html
    */
   public toAttachVolume() {
-    this.add('ec2:AttachVolume');
+    this.to('ec2:AttachVolume');
     return this;
   }
 
@@ -6055,7 +6055,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachVpnGateway.html
    */
   public toAttachVpnGateway() {
-    this.add('ec2:AttachVpnGateway');
+    this.to('ec2:AttachVpnGateway');
     return this;
   }
 
@@ -6067,7 +6067,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeClientVpnIngress.html
    */
   public toAuthorizeClientVpnIngress() {
-    this.add('ec2:AuthorizeClientVpnIngress');
+    this.to('ec2:AuthorizeClientVpnIngress');
     return this;
   }
 
@@ -6079,7 +6079,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeSecurityGroupEgress.html
    */
   public toAuthorizeSecurityGroupEgress() {
-    this.add('ec2:AuthorizeSecurityGroupEgress');
+    this.to('ec2:AuthorizeSecurityGroupEgress');
     return this;
   }
 
@@ -6091,7 +6091,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeSecurityGroupIngress.html
    */
   public toAuthorizeSecurityGroupIngress() {
-    this.add('ec2:AuthorizeSecurityGroupIngress');
+    this.to('ec2:AuthorizeSecurityGroupIngress');
     return this;
   }
 
@@ -6103,7 +6103,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BundleInstance.html
    */
   public toBundleInstance() {
-    this.add('ec2:BundleInstance');
+    this.to('ec2:BundleInstance');
     return this;
   }
 
@@ -6115,7 +6115,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelBundleTask.html
    */
   public toCancelBundleTask() {
-    this.add('ec2:CancelBundleTask');
+    this.to('ec2:CancelBundleTask');
     return this;
   }
 
@@ -6127,7 +6127,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelCapacityReservation.html
    */
   public toCancelCapacityReservation() {
-    this.add('ec2:CancelCapacityReservation');
+    this.to('ec2:CancelCapacityReservation');
     return this;
   }
 
@@ -6139,7 +6139,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelConversionTask.html
    */
   public toCancelConversionTask() {
-    this.add('ec2:CancelConversionTask');
+    this.to('ec2:CancelConversionTask');
     return this;
   }
 
@@ -6151,7 +6151,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelExportTask.html
    */
   public toCancelExportTask() {
-    this.add('ec2:CancelExportTask');
+    this.to('ec2:CancelExportTask');
     return this;
   }
 
@@ -6163,7 +6163,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelImportTask.html
    */
   public toCancelImportTask() {
-    this.add('ec2:CancelImportTask');
+    this.to('ec2:CancelImportTask');
     return this;
   }
 
@@ -6175,7 +6175,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelReservedInstancesListing.html
    */
   public toCancelReservedInstancesListing() {
-    this.add('ec2:CancelReservedInstancesListing');
+    this.to('ec2:CancelReservedInstancesListing');
     return this;
   }
 
@@ -6187,7 +6187,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests.html
    */
   public toCancelSpotFleetRequests() {
-    this.add('ec2:CancelSpotFleetRequests');
+    this.to('ec2:CancelSpotFleetRequests');
     return this;
   }
 
@@ -6199,7 +6199,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotInstanceRequests.html
    */
   public toCancelSpotInstanceRequests() {
-    this.add('ec2:CancelSpotInstanceRequests');
+    this.to('ec2:CancelSpotInstanceRequests');
     return this;
   }
 
@@ -6211,7 +6211,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ConfirmProductInstance.html
    */
   public toConfirmProductInstance() {
-    this.add('ec2:ConfirmProductInstance');
+    this.to('ec2:ConfirmProductInstance');
     return this;
   }
 
@@ -6223,7 +6223,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyFpgaImage.html
    */
   public toCopyFpgaImage() {
-    this.add('ec2:CopyFpgaImage');
+    this.to('ec2:CopyFpgaImage');
     return this;
   }
 
@@ -6235,7 +6235,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html
    */
   public toCopyImage() {
-    this.add('ec2:CopyImage');
+    this.to('ec2:CopyImage');
     return this;
   }
 
@@ -6247,7 +6247,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html
    */
   public toCopySnapshot() {
-    this.add('ec2:CopySnapshot');
+    this.to('ec2:CopySnapshot');
     return this;
   }
 
@@ -6259,7 +6259,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCapacityReservation.html
    */
   public toCreateCapacityReservation() {
-    this.add('ec2:CreateCapacityReservation');
+    this.to('ec2:CreateCapacityReservation');
     return this;
   }
 
@@ -6271,7 +6271,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCarrierGateway.html
    */
   public toCreateCarrierGateway() {
-    this.add('ec2:CreateCarrierGateway');
+    this.to('ec2:CreateCarrierGateway');
     return this;
   }
 
@@ -6283,7 +6283,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateClientVpnEndpoint.html
    */
   public toCreateClientVpnEndpoint() {
-    this.add('ec2:CreateClientVpnEndpoint');
+    this.to('ec2:CreateClientVpnEndpoint');
     return this;
   }
 
@@ -6295,7 +6295,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateClientVpnRoute.html
    */
   public toCreateClientVpnRoute() {
-    this.add('ec2:CreateClientVpnRoute');
+    this.to('ec2:CreateClientVpnRoute');
     return this;
   }
 
@@ -6307,7 +6307,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCustomerGateway.html
    */
   public toCreateCustomerGateway() {
-    this.add('ec2:CreateCustomerGateway');
+    this.to('ec2:CreateCustomerGateway');
     return this;
   }
 
@@ -6319,7 +6319,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDefaultSubnet.html
    */
   public toCreateDefaultSubnet() {
-    this.add('ec2:CreateDefaultSubnet');
+    this.to('ec2:CreateDefaultSubnet');
     return this;
   }
 
@@ -6331,7 +6331,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDefaultVpc.html
    */
   public toCreateDefaultVpc() {
-    this.add('ec2:CreateDefaultVpc');
+    this.to('ec2:CreateDefaultVpc');
     return this;
   }
 
@@ -6343,7 +6343,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDhcpOptions.html
    */
   public toCreateDhcpOptions() {
-    this.add('ec2:CreateDhcpOptions');
+    this.to('ec2:CreateDhcpOptions');
     return this;
   }
 
@@ -6355,7 +6355,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateEgressOnlyInternetGateway.html
    */
   public toCreateEgressOnlyInternetGateway() {
-    this.add('ec2:CreateEgressOnlyInternetGateway');
+    this.to('ec2:CreateEgressOnlyInternetGateway');
     return this;
   }
 
@@ -6367,7 +6367,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet.html
    */
   public toCreateFleet() {
-    this.add('ec2:CreateFleet');
+    this.to('ec2:CreateFleet');
     return this;
   }
 
@@ -6382,7 +6382,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFlowLogs.html
    */
   public toCreateFlowLogs() {
-    this.add('ec2:CreateFlowLogs');
+    this.to('ec2:CreateFlowLogs');
     return this;
   }
 
@@ -6394,7 +6394,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFpgaImage.html
    */
   public toCreateFpgaImage() {
-    this.add('ec2:CreateFpgaImage');
+    this.to('ec2:CreateFpgaImage');
     return this;
   }
 
@@ -6406,7 +6406,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html
    */
   public toCreateImage() {
-    this.add('ec2:CreateImage');
+    this.to('ec2:CreateImage');
     return this;
   }
 
@@ -6418,7 +6418,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInstanceExportTask.html
    */
   public toCreateInstanceExportTask() {
-    this.add('ec2:CreateInstanceExportTask');
+    this.to('ec2:CreateInstanceExportTask');
     return this;
   }
 
@@ -6430,7 +6430,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInternetGateway.html
    */
   public toCreateInternetGateway() {
-    this.add('ec2:CreateInternetGateway');
+    this.to('ec2:CreateInternetGateway');
     return this;
   }
 
@@ -6442,7 +6442,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html
    */
   public toCreateKeyPair() {
-    this.add('ec2:CreateKeyPair');
+    this.to('ec2:CreateKeyPair');
     return this;
   }
 
@@ -6454,7 +6454,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html
    */
   public toCreateLaunchTemplate() {
-    this.add('ec2:CreateLaunchTemplate');
+    this.to('ec2:CreateLaunchTemplate');
     return this;
   }
 
@@ -6466,7 +6466,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html
    */
   public toCreateLaunchTemplateVersion() {
-    this.add('ec2:CreateLaunchTemplateVersion');
+    this.to('ec2:CreateLaunchTemplateVersion');
     return this;
   }
 
@@ -6478,7 +6478,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLocalGatewayRoute.html
    */
   public toCreateLocalGatewayRoute() {
-    this.add('ec2:CreateLocalGatewayRoute');
+    this.to('ec2:CreateLocalGatewayRoute');
     return this;
   }
 
@@ -6490,7 +6490,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLocalGatewayRouteTableVpcAssociation.html
    */
   public toCreateLocalGatewayRouteTableVpcAssociation() {
-    this.add('ec2:CreateLocalGatewayRouteTableVpcAssociation');
+    this.to('ec2:CreateLocalGatewayRouteTableVpcAssociation');
     return this;
   }
 
@@ -6502,7 +6502,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateManagedPrefixList.html
    */
   public toCreateManagedPrefixList() {
-    this.add('ec2:CreateManagedPrefixList');
+    this.to('ec2:CreateManagedPrefixList');
     return this;
   }
 
@@ -6514,7 +6514,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNatGateway.html
    */
   public toCreateNatGateway() {
-    this.add('ec2:CreateNatGateway');
+    this.to('ec2:CreateNatGateway');
     return this;
   }
 
@@ -6526,7 +6526,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkAcl.html
    */
   public toCreateNetworkAcl() {
-    this.add('ec2:CreateNetworkAcl');
+    this.to('ec2:CreateNetworkAcl');
     return this;
   }
 
@@ -6538,7 +6538,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkAclEntry.html
    */
   public toCreateNetworkAclEntry() {
-    this.add('ec2:CreateNetworkAclEntry');
+    this.to('ec2:CreateNetworkAclEntry');
     return this;
   }
 
@@ -6550,7 +6550,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html
    */
   public toCreateNetworkInterface() {
-    this.add('ec2:CreateNetworkInterface');
+    this.to('ec2:CreateNetworkInterface');
     return this;
   }
 
@@ -6562,7 +6562,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterfacePermission.html
    */
   public toCreateNetworkInterfacePermission() {
-    this.add('ec2:CreateNetworkInterfacePermission');
+    this.to('ec2:CreateNetworkInterfacePermission');
     return this;
   }
 
@@ -6574,7 +6574,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreatePlacementGroup.html
    */
   public toCreatePlacementGroup() {
-    this.add('ec2:CreatePlacementGroup');
+    this.to('ec2:CreatePlacementGroup');
     return this;
   }
 
@@ -6586,7 +6586,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateReservedInstancesListing.html
    */
   public toCreateReservedInstancesListing() {
-    this.add('ec2:CreateReservedInstancesListing');
+    this.to('ec2:CreateReservedInstancesListing');
     return this;
   }
 
@@ -6598,7 +6598,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRoute.html
    */
   public toCreateRoute() {
-    this.add('ec2:CreateRoute');
+    this.to('ec2:CreateRoute');
     return this;
   }
 
@@ -6610,7 +6610,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRouteTable.html
    */
   public toCreateRouteTable() {
-    this.add('ec2:CreateRouteTable');
+    this.to('ec2:CreateRouteTable');
     return this;
   }
 
@@ -6622,7 +6622,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html
    */
   public toCreateSecurityGroup() {
-    this.add('ec2:CreateSecurityGroup');
+    this.to('ec2:CreateSecurityGroup');
     return this;
   }
 
@@ -6634,7 +6634,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshot.html
    */
   public toCreateSnapshot() {
-    this.add('ec2:CreateSnapshot');
+    this.to('ec2:CreateSnapshot');
     return this;
   }
 
@@ -6646,7 +6646,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html
    */
   public toCreateSnapshots() {
-    this.add('ec2:CreateSnapshots');
+    this.to('ec2:CreateSnapshots');
     return this;
   }
 
@@ -6658,7 +6658,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSpotDatafeedSubscription.html
    */
   public toCreateSpotDatafeedSubscription() {
-    this.add('ec2:CreateSpotDatafeedSubscription');
+    this.to('ec2:CreateSpotDatafeedSubscription');
     return this;
   }
 
@@ -6670,7 +6670,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSubnet.html
    */
   public toCreateSubnet() {
-    this.add('ec2:CreateSubnet');
+    this.to('ec2:CreateSubnet');
     return this;
   }
 
@@ -6685,7 +6685,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html
    */
   public toCreateTags() {
-    this.add('ec2:CreateTags');
+    this.to('ec2:CreateTags');
     return this;
   }
 
@@ -6697,7 +6697,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.html
    */
   public toCreateTrafficMirrorFilter() {
-    this.add('ec2:CreateTrafficMirrorFilter');
+    this.to('ec2:CreateTrafficMirrorFilter');
     return this;
   }
 
@@ -6709,7 +6709,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilterRule.html
    */
   public toCreateTrafficMirrorFilterRule() {
-    this.add('ec2:CreateTrafficMirrorFilterRule');
+    this.to('ec2:CreateTrafficMirrorFilterRule');
     return this;
   }
 
@@ -6721,7 +6721,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorSession.html
    */
   public toCreateTrafficMirrorSession() {
-    this.add('ec2:CreateTrafficMirrorSession');
+    this.to('ec2:CreateTrafficMirrorSession');
     return this;
   }
 
@@ -6733,7 +6733,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorTarget.html
    */
   public toCreateTrafficMirrorTarget() {
-    this.add('ec2:CreateTrafficMirrorTarget');
+    this.to('ec2:CreateTrafficMirrorTarget');
     return this;
   }
 
@@ -6745,7 +6745,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGateway.html
    */
   public toCreateTransitGateway() {
-    this.add('ec2:CreateTransitGateway');
+    this.to('ec2:CreateTransitGateway');
     return this;
   }
 
@@ -6757,7 +6757,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayMulticastDomain.html
    */
   public toCreateTransitGatewayMulticastDomain() {
-    this.add('ec2:CreateTransitGatewayMulticastDomain');
+    this.to('ec2:CreateTransitGatewayMulticastDomain');
     return this;
   }
 
@@ -6769,7 +6769,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayPeeringAttachment.html
    */
   public toCreateTransitGatewayPeeringAttachment() {
-    this.add('ec2:CreateTransitGatewayPeeringAttachment');
+    this.to('ec2:CreateTransitGatewayPeeringAttachment');
     return this;
   }
 
@@ -6781,7 +6781,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayPrefixListReference.html
    */
   public toCreateTransitGatewayPrefixListReference() {
-    this.add('ec2:CreateTransitGatewayPrefixListReference');
+    this.to('ec2:CreateTransitGatewayPrefixListReference');
     return this;
   }
 
@@ -6793,7 +6793,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayRoute.html
    */
   public toCreateTransitGatewayRoute() {
-    this.add('ec2:CreateTransitGatewayRoute');
+    this.to('ec2:CreateTransitGatewayRoute');
     return this;
   }
 
@@ -6805,7 +6805,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayRouteTable.html
    */
   public toCreateTransitGatewayRouteTable() {
-    this.add('ec2:CreateTransitGatewayRouteTable');
+    this.to('ec2:CreateTransitGatewayRouteTable');
     return this;
   }
 
@@ -6817,7 +6817,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayVpcAttachment.html
    */
   public toCreateTransitGatewayVpcAttachment() {
-    this.add('ec2:CreateTransitGatewayVpcAttachment');
+    this.to('ec2:CreateTransitGatewayVpcAttachment');
     return this;
   }
 
@@ -6829,7 +6829,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html
    */
   public toCreateVolume() {
-    this.add('ec2:CreateVolume');
+    this.to('ec2:CreateVolume');
     return this;
   }
 
@@ -6841,7 +6841,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpc.html
    */
   public toCreateVpc() {
-    this.add('ec2:CreateVpc');
+    this.to('ec2:CreateVpc');
     return this;
   }
 
@@ -6856,7 +6856,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpoint.html
    */
   public toCreateVpcEndpoint() {
-    this.add('ec2:CreateVpcEndpoint');
+    this.to('ec2:CreateVpcEndpoint');
     return this;
   }
 
@@ -6868,7 +6868,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpointConnectionNotification.html
    */
   public toCreateVpcEndpointConnectionNotification() {
-    this.add('ec2:CreateVpcEndpointConnectionNotification');
+    this.to('ec2:CreateVpcEndpointConnectionNotification');
     return this;
   }
 
@@ -6880,7 +6880,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpointServiceConfiguration.html
    */
   public toCreateVpcEndpointServiceConfiguration() {
-    this.add('ec2:CreateVpcEndpointServiceConfiguration');
+    this.to('ec2:CreateVpcEndpointServiceConfiguration');
     return this;
   }
 
@@ -6892,7 +6892,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcPeeringConnection.html
    */
   public toCreateVpcPeeringConnection() {
-    this.add('ec2:CreateVpcPeeringConnection');
+    this.to('ec2:CreateVpcPeeringConnection');
     return this;
   }
 
@@ -6904,7 +6904,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnConnection.html
    */
   public toCreateVpnConnection() {
-    this.add('ec2:CreateVpnConnection');
+    this.to('ec2:CreateVpnConnection');
     return this;
   }
 
@@ -6916,7 +6916,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnConnectionRoute.html
    */
   public toCreateVpnConnectionRoute() {
-    this.add('ec2:CreateVpnConnectionRoute');
+    this.to('ec2:CreateVpnConnectionRoute');
     return this;
   }
 
@@ -6928,7 +6928,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnGateway.html
    */
   public toCreateVpnGateway() {
-    this.add('ec2:CreateVpnGateway');
+    this.to('ec2:CreateVpnGateway');
     return this;
   }
 
@@ -6940,7 +6940,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteCarrierGateway.html
    */
   public toDeleteCarrierGateway() {
-    this.add('ec2:DeleteCarrierGateway');
+    this.to('ec2:DeleteCarrierGateway');
     return this;
   }
 
@@ -6952,7 +6952,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteClientVpnEndpoint.html
    */
   public toDeleteClientVpnEndpoint() {
-    this.add('ec2:DeleteClientVpnEndpoint');
+    this.to('ec2:DeleteClientVpnEndpoint');
     return this;
   }
 
@@ -6964,7 +6964,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteClientVpnRoute.html
    */
   public toDeleteClientVpnRoute() {
-    this.add('ec2:DeleteClientVpnRoute');
+    this.to('ec2:DeleteClientVpnRoute');
     return this;
   }
 
@@ -6976,7 +6976,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteCustomerGateway.html
    */
   public toDeleteCustomerGateway() {
-    this.add('ec2:DeleteCustomerGateway');
+    this.to('ec2:DeleteCustomerGateway');
     return this;
   }
 
@@ -6988,7 +6988,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteDhcpOptions.html
    */
   public toDeleteDhcpOptions() {
-    this.add('ec2:DeleteDhcpOptions');
+    this.to('ec2:DeleteDhcpOptions');
     return this;
   }
 
@@ -7000,7 +7000,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteEgressOnlyInternetGateway.html
    */
   public toDeleteEgressOnlyInternetGateway() {
-    this.add('ec2:DeleteEgressOnlyInternetGateway');
+    this.to('ec2:DeleteEgressOnlyInternetGateway');
     return this;
   }
 
@@ -7012,7 +7012,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFleets.html
    */
   public toDeleteFleets() {
-    this.add('ec2:DeleteFleets');
+    this.to('ec2:DeleteFleets');
     return this;
   }
 
@@ -7024,7 +7024,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFlowLogs.html
    */
   public toDeleteFlowLogs() {
-    this.add('ec2:DeleteFlowLogs');
+    this.to('ec2:DeleteFlowLogs');
     return this;
   }
 
@@ -7036,7 +7036,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFpgaImage.html
    */
   public toDeleteFpgaImage() {
-    this.add('ec2:DeleteFpgaImage');
+    this.to('ec2:DeleteFpgaImage');
     return this;
   }
 
@@ -7048,7 +7048,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteInternetGateway.html
    */
   public toDeleteInternetGateway() {
-    this.add('ec2:DeleteInternetGateway');
+    this.to('ec2:DeleteInternetGateway');
     return this;
   }
 
@@ -7060,7 +7060,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteKeyPair.html
    */
   public toDeleteKeyPair() {
-    this.add('ec2:DeleteKeyPair');
+    this.to('ec2:DeleteKeyPair');
     return this;
   }
 
@@ -7072,7 +7072,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLaunchTemplate.html
    */
   public toDeleteLaunchTemplate() {
-    this.add('ec2:DeleteLaunchTemplate');
+    this.to('ec2:DeleteLaunchTemplate');
     return this;
   }
 
@@ -7084,7 +7084,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLaunchTemplateVersions.html
    */
   public toDeleteLaunchTemplateVersions() {
-    this.add('ec2:DeleteLaunchTemplateVersions');
+    this.to('ec2:DeleteLaunchTemplateVersions');
     return this;
   }
 
@@ -7096,7 +7096,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLocalGatewayRoute.html
    */
   public toDeleteLocalGatewayRoute() {
-    this.add('ec2:DeleteLocalGatewayRoute');
+    this.to('ec2:DeleteLocalGatewayRoute');
     return this;
   }
 
@@ -7108,7 +7108,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLocalGatewayRouteTableVpcAssociation.html
    */
   public toDeleteLocalGatewayRouteTableVpcAssociation() {
-    this.add('ec2:DeleteLocalGatewayRouteTableVpcAssociation');
+    this.to('ec2:DeleteLocalGatewayRouteTableVpcAssociation');
     return this;
   }
 
@@ -7120,7 +7120,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteManagedPrefixList.html
    */
   public toDeleteManagedPrefixList() {
-    this.add('ec2:DeleteManagedPrefixList');
+    this.to('ec2:DeleteManagedPrefixList');
     return this;
   }
 
@@ -7132,7 +7132,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNatGateway.html
    */
   public toDeleteNatGateway() {
-    this.add('ec2:DeleteNatGateway');
+    this.to('ec2:DeleteNatGateway');
     return this;
   }
 
@@ -7144,7 +7144,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkAcl.html
    */
   public toDeleteNetworkAcl() {
-    this.add('ec2:DeleteNetworkAcl');
+    this.to('ec2:DeleteNetworkAcl');
     return this;
   }
 
@@ -7156,7 +7156,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkAclEntry.html
    */
   public toDeleteNetworkAclEntry() {
-    this.add('ec2:DeleteNetworkAclEntry');
+    this.to('ec2:DeleteNetworkAclEntry');
     return this;
   }
 
@@ -7168,7 +7168,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkInterface.html
    */
   public toDeleteNetworkInterface() {
-    this.add('ec2:DeleteNetworkInterface');
+    this.to('ec2:DeleteNetworkInterface');
     return this;
   }
 
@@ -7180,7 +7180,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkInterfacePermission.html
    */
   public toDeleteNetworkInterfacePermission() {
-    this.add('ec2:DeleteNetworkInterfacePermission');
+    this.to('ec2:DeleteNetworkInterfacePermission');
     return this;
   }
 
@@ -7192,7 +7192,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeletePlacementGroup.html
    */
   public toDeletePlacementGroup() {
-    this.add('ec2:DeletePlacementGroup');
+    this.to('ec2:DeletePlacementGroup');
     return this;
   }
 
@@ -7204,7 +7204,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html
    */
   public toDeleteRoute() {
-    this.add('ec2:DeleteRoute');
+    this.to('ec2:DeleteRoute');
     return this;
   }
 
@@ -7216,7 +7216,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRouteTable.html
    */
   public toDeleteRouteTable() {
-    this.add('ec2:DeleteRouteTable');
+    this.to('ec2:DeleteRouteTable');
     return this;
   }
 
@@ -7228,7 +7228,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSecurityGroup.html
    */
   public toDeleteSecurityGroup() {
-    this.add('ec2:DeleteSecurityGroup');
+    this.to('ec2:DeleteSecurityGroup');
     return this;
   }
 
@@ -7240,7 +7240,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html
    */
   public toDeleteSnapshot() {
-    this.add('ec2:DeleteSnapshot');
+    this.to('ec2:DeleteSnapshot');
     return this;
   }
 
@@ -7252,7 +7252,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSpotDatafeedSubscription.html
    */
   public toDeleteSpotDatafeedSubscription() {
-    this.add('ec2:DeleteSpotDatafeedSubscription');
+    this.to('ec2:DeleteSpotDatafeedSubscription');
     return this;
   }
 
@@ -7264,7 +7264,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSubnet.html
    */
   public toDeleteSubnet() {
-    this.add('ec2:DeleteSubnet');
+    this.to('ec2:DeleteSubnet');
     return this;
   }
 
@@ -7276,7 +7276,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTags.html
    */
   public toDeleteTags() {
-    this.add('ec2:DeleteTags');
+    this.to('ec2:DeleteTags');
     return this;
   }
 
@@ -7288,7 +7288,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTrafficMirrorFilter.html
    */
   public toDeleteTrafficMirrorFilter() {
-    this.add('ec2:DeleteTrafficMirrorFilter');
+    this.to('ec2:DeleteTrafficMirrorFilter');
     return this;
   }
 
@@ -7300,7 +7300,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTrafficMirrorFilterRule.html
    */
   public toDeleteTrafficMirrorFilterRule() {
-    this.add('ec2:DeleteTrafficMirrorFilterRule');
+    this.to('ec2:DeleteTrafficMirrorFilterRule');
     return this;
   }
 
@@ -7312,7 +7312,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTrafficMirrorSession.html
    */
   public toDeleteTrafficMirrorSession() {
-    this.add('ec2:DeleteTrafficMirrorSession');
+    this.to('ec2:DeleteTrafficMirrorSession');
     return this;
   }
 
@@ -7324,7 +7324,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTrafficMirrorTarget.html
    */
   public toDeleteTrafficMirrorTarget() {
-    this.add('ec2:DeleteTrafficMirrorTarget');
+    this.to('ec2:DeleteTrafficMirrorTarget');
     return this;
   }
 
@@ -7336,7 +7336,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGateway.html
    */
   public toDeleteTransitGateway() {
-    this.add('ec2:DeleteTransitGateway');
+    this.to('ec2:DeleteTransitGateway');
     return this;
   }
 
@@ -7348,7 +7348,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayMulticastDomain.html
    */
   public toDeleteTransitGatewayMulticastDomain() {
-    this.add('ec2:DeleteTransitGatewayMulticastDomain');
+    this.to('ec2:DeleteTransitGatewayMulticastDomain');
     return this;
   }
 
@@ -7360,7 +7360,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayPeeringAttachment.html
    */
   public toDeleteTransitGatewayPeeringAttachment() {
-    this.add('ec2:DeleteTransitGatewayPeeringAttachment');
+    this.to('ec2:DeleteTransitGatewayPeeringAttachment');
     return this;
   }
 
@@ -7372,7 +7372,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayPrefixListReference.html
    */
   public toDeleteTransitGatewayPrefixListReference() {
-    this.add('ec2:DeleteTransitGatewayPrefixListReference');
+    this.to('ec2:DeleteTransitGatewayPrefixListReference');
     return this;
   }
 
@@ -7384,7 +7384,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayRoute.html
    */
   public toDeleteTransitGatewayRoute() {
-    this.add('ec2:DeleteTransitGatewayRoute');
+    this.to('ec2:DeleteTransitGatewayRoute');
     return this;
   }
 
@@ -7396,7 +7396,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayRouteTable.html
    */
   public toDeleteTransitGatewayRouteTable() {
-    this.add('ec2:DeleteTransitGatewayRouteTable');
+    this.to('ec2:DeleteTransitGatewayRouteTable');
     return this;
   }
 
@@ -7408,7 +7408,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayVpcAttachment.html
    */
   public toDeleteTransitGatewayVpcAttachment() {
-    this.add('ec2:DeleteTransitGatewayVpcAttachment');
+    this.to('ec2:DeleteTransitGatewayVpcAttachment');
     return this;
   }
 
@@ -7420,7 +7420,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVolume.html
    */
   public toDeleteVolume() {
-    this.add('ec2:DeleteVolume');
+    this.to('ec2:DeleteVolume');
     return this;
   }
 
@@ -7432,7 +7432,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpc.html
    */
   public toDeleteVpc() {
-    this.add('ec2:DeleteVpc');
+    this.to('ec2:DeleteVpc');
     return this;
   }
 
@@ -7444,7 +7444,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEndpointConnectionNotifications.html
    */
   public toDeleteVpcEndpointConnectionNotifications() {
-    this.add('ec2:DeleteVpcEndpointConnectionNotifications');
+    this.to('ec2:DeleteVpcEndpointConnectionNotifications');
     return this;
   }
 
@@ -7456,7 +7456,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEndpointServiceConfigurations.html
    */
   public toDeleteVpcEndpointServiceConfigurations() {
-    this.add('ec2:DeleteVpcEndpointServiceConfigurations');
+    this.to('ec2:DeleteVpcEndpointServiceConfigurations');
     return this;
   }
 
@@ -7468,7 +7468,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEndpoints.html
    */
   public toDeleteVpcEndpoints() {
-    this.add('ec2:DeleteVpcEndpoints');
+    this.to('ec2:DeleteVpcEndpoints');
     return this;
   }
 
@@ -7480,7 +7480,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcPeeringConnection.html
    */
   public toDeleteVpcPeeringConnection() {
-    this.add('ec2:DeleteVpcPeeringConnection');
+    this.to('ec2:DeleteVpcPeeringConnection');
     return this;
   }
 
@@ -7492,7 +7492,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnConnection.html
    */
   public toDeleteVpnConnection() {
-    this.add('ec2:DeleteVpnConnection');
+    this.to('ec2:DeleteVpnConnection');
     return this;
   }
 
@@ -7504,7 +7504,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnConnectionRoute.html
    */
   public toDeleteVpnConnectionRoute() {
-    this.add('ec2:DeleteVpnConnectionRoute');
+    this.to('ec2:DeleteVpnConnectionRoute');
     return this;
   }
 
@@ -7516,7 +7516,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnGateway.html
    */
   public toDeleteVpnGateway() {
-    this.add('ec2:DeleteVpnGateway');
+    this.to('ec2:DeleteVpnGateway');
     return this;
   }
 
@@ -7528,7 +7528,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionByoipCidr.html
    */
   public toDeprovisionByoipCidr() {
-    this.add('ec2:DeprovisionByoipCidr');
+    this.to('ec2:DeprovisionByoipCidr');
     return this;
   }
 
@@ -7540,7 +7540,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterImage.html
    */
   public toDeregisterImage() {
-    this.add('ec2:DeregisterImage');
+    this.to('ec2:DeregisterImage');
     return this;
   }
 
@@ -7552,7 +7552,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterInstanceEventNotificationAttributes.html
    */
   public toDeregisterInstanceEventNotificationAttributes() {
-    this.add('ec2:DeregisterInstanceEventNotificationAttributes');
+    this.to('ec2:DeregisterInstanceEventNotificationAttributes');
     return this;
   }
 
@@ -7564,7 +7564,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterTransitGatewayMulticastGroupMembers.html
    */
   public toDeregisterTransitGatewayMulticastGroupMembers() {
-    this.add('ec2:DeregisterTransitGatewayMulticastGroupMembers');
+    this.to('ec2:DeregisterTransitGatewayMulticastGroupMembers');
     return this;
   }
 
@@ -7576,7 +7576,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterTransitGatewayMulticastGroupSources.html
    */
   public toDeregisterTransitGatewayMulticastGroupSources() {
-    this.add('ec2:DeregisterTransitGatewayMulticastGroupSources');
+    this.to('ec2:DeregisterTransitGatewayMulticastGroupSources');
     return this;
   }
 
@@ -7588,7 +7588,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAccountAttributes.html
    */
   public toDescribeAccountAttributes() {
-    this.add('ec2:DescribeAccountAttributes');
+    this.to('ec2:DescribeAccountAttributes');
     return this;
   }
 
@@ -7600,7 +7600,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddresses.html
    */
   public toDescribeAddresses() {
-    this.add('ec2:DescribeAddresses');
+    this.to('ec2:DescribeAddresses');
     return this;
   }
 
@@ -7612,7 +7612,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAggregateIdFormat.html
    */
   public toDescribeAggregateIdFormat() {
-    this.add('ec2:DescribeAggregateIdFormat');
+    this.to('ec2:DescribeAggregateIdFormat');
     return this;
   }
 
@@ -7624,7 +7624,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html
    */
   public toDescribeAvailabilityZones() {
-    this.add('ec2:DescribeAvailabilityZones');
+    this.to('ec2:DescribeAvailabilityZones');
     return this;
   }
 
@@ -7636,7 +7636,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeBundleTasks.html
    */
   public toDescribeBundleTasks() {
-    this.add('ec2:DescribeBundleTasks');
+    this.to('ec2:DescribeBundleTasks');
     return this;
   }
 
@@ -7648,7 +7648,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeByoipCidrs.html
    */
   public toDescribeByoipCidrs() {
-    this.add('ec2:DescribeByoipCidrs');
+    this.to('ec2:DescribeByoipCidrs');
     return this;
   }
 
@@ -7660,7 +7660,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityReservations.html
    */
   public toDescribeCapacityReservations() {
-    this.add('ec2:DescribeCapacityReservations');
+    this.to('ec2:DescribeCapacityReservations');
     return this;
   }
 
@@ -7672,7 +7672,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCarrierGateways.html
    */
   public toDescribeCarrierGateways() {
-    this.add('ec2:DescribeCarrierGateways');
+    this.to('ec2:DescribeCarrierGateways');
     return this;
   }
 
@@ -7684,7 +7684,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClassicLinkInstances.html
    */
   public toDescribeClassicLinkInstances() {
-    this.add('ec2:DescribeClassicLinkInstances');
+    this.to('ec2:DescribeClassicLinkInstances');
     return this;
   }
 
@@ -7696,7 +7696,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnAuthorizationRules.html
    */
   public toDescribeClientVpnAuthorizationRules() {
-    this.add('ec2:DescribeClientVpnAuthorizationRules');
+    this.to('ec2:DescribeClientVpnAuthorizationRules');
     return this;
   }
 
@@ -7708,7 +7708,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnConnections.html
    */
   public toDescribeClientVpnConnections() {
-    this.add('ec2:DescribeClientVpnConnections');
+    this.to('ec2:DescribeClientVpnConnections');
     return this;
   }
 
@@ -7720,7 +7720,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnEndpoints.html
    */
   public toDescribeClientVpnEndpoints() {
-    this.add('ec2:DescribeClientVpnEndpoints');
+    this.to('ec2:DescribeClientVpnEndpoints');
     return this;
   }
 
@@ -7732,7 +7732,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnRoutes.html
    */
   public toDescribeClientVpnRoutes() {
-    this.add('ec2:DescribeClientVpnRoutes');
+    this.to('ec2:DescribeClientVpnRoutes');
     return this;
   }
 
@@ -7744,7 +7744,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnTargetNetworks.html
    */
   public toDescribeClientVpnTargetNetworks() {
-    this.add('ec2:DescribeClientVpnTargetNetworks');
+    this.to('ec2:DescribeClientVpnTargetNetworks');
     return this;
   }
 
@@ -7756,7 +7756,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCoipPools.html
    */
   public toDescribeCoipPools() {
-    this.add('ec2:DescribeCoipPools');
+    this.to('ec2:DescribeCoipPools');
     return this;
   }
 
@@ -7768,7 +7768,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeConversionTasks.html
    */
   public toDescribeConversionTasks() {
-    this.add('ec2:DescribeConversionTasks');
+    this.to('ec2:DescribeConversionTasks');
     return this;
   }
 
@@ -7780,7 +7780,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCustomerGateways.html
    */
   public toDescribeCustomerGateways() {
-    this.add('ec2:DescribeCustomerGateways');
+    this.to('ec2:DescribeCustomerGateways');
     return this;
   }
 
@@ -7792,7 +7792,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeDhcpOptions.html
    */
   public toDescribeDhcpOptions() {
-    this.add('ec2:DescribeDhcpOptions');
+    this.to('ec2:DescribeDhcpOptions');
     return this;
   }
 
@@ -7804,7 +7804,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeEgressOnlyInternetGateways.html
    */
   public toDescribeEgressOnlyInternetGateways() {
-    this.add('ec2:DescribeEgressOnlyInternetGateways');
+    this.to('ec2:DescribeEgressOnlyInternetGateways');
     return this;
   }
 
@@ -7816,7 +7816,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeElasticGpus.html
    */
   public toDescribeElasticGpus() {
-    this.add('ec2:DescribeElasticGpus');
+    this.to('ec2:DescribeElasticGpus');
     return this;
   }
 
@@ -7828,7 +7828,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeExportImageTasks.html
    */
   public toDescribeExportImageTasks() {
-    this.add('ec2:DescribeExportImageTasks');
+    this.to('ec2:DescribeExportImageTasks');
     return this;
   }
 
@@ -7840,7 +7840,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeExportTasks.html
    */
   public toDescribeExportTasks() {
-    this.add('ec2:DescribeExportTasks');
+    this.to('ec2:DescribeExportTasks');
     return this;
   }
 
@@ -7852,7 +7852,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFastSnapshotRestores.html
    */
   public toDescribeFastSnapshotRestores() {
-    this.add('ec2:DescribeFastSnapshotRestores');
+    this.to('ec2:DescribeFastSnapshotRestores');
     return this;
   }
 
@@ -7864,7 +7864,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFleetHistory.html
    */
   public toDescribeFleetHistory() {
-    this.add('ec2:DescribeFleetHistory');
+    this.to('ec2:DescribeFleetHistory');
     return this;
   }
 
@@ -7876,7 +7876,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFleetInstances.html
    */
   public toDescribeFleetInstances() {
-    this.add('ec2:DescribeFleetInstances');
+    this.to('ec2:DescribeFleetInstances');
     return this;
   }
 
@@ -7888,7 +7888,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFleets.html
    */
   public toDescribeFleets() {
-    this.add('ec2:DescribeFleets');
+    this.to('ec2:DescribeFleets');
     return this;
   }
 
@@ -7900,7 +7900,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFlowLogs.html
    */
   public toDescribeFlowLogs() {
-    this.add('ec2:DescribeFlowLogs');
+    this.to('ec2:DescribeFlowLogs');
     return this;
   }
 
@@ -7912,7 +7912,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFpgaImageAttribute.html
    */
   public toDescribeFpgaImageAttribute() {
-    this.add('ec2:DescribeFpgaImageAttribute');
+    this.to('ec2:DescribeFpgaImageAttribute');
     return this;
   }
 
@@ -7924,7 +7924,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFpgaImages.html
    */
   public toDescribeFpgaImages() {
-    this.add('ec2:DescribeFpgaImages');
+    this.to('ec2:DescribeFpgaImages');
     return this;
   }
 
@@ -7936,7 +7936,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHostReservationOfferings.html
    */
   public toDescribeHostReservationOfferings() {
-    this.add('ec2:DescribeHostReservationOfferings');
+    this.to('ec2:DescribeHostReservationOfferings');
     return this;
   }
 
@@ -7948,7 +7948,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHostReservations.html
    */
   public toDescribeHostReservations() {
-    this.add('ec2:DescribeHostReservations');
+    this.to('ec2:DescribeHostReservations');
     return this;
   }
 
@@ -7960,7 +7960,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHosts.html
    */
   public toDescribeHosts() {
-    this.add('ec2:DescribeHosts');
+    this.to('ec2:DescribeHosts');
     return this;
   }
 
@@ -7972,7 +7972,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIamInstanceProfileAssociations.html
    */
   public toDescribeIamInstanceProfileAssociations() {
-    this.add('ec2:DescribeIamInstanceProfileAssociations');
+    this.to('ec2:DescribeIamInstanceProfileAssociations');
     return this;
   }
 
@@ -7984,7 +7984,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIdFormat.html
    */
   public toDescribeIdFormat() {
-    this.add('ec2:DescribeIdFormat');
+    this.to('ec2:DescribeIdFormat');
     return this;
   }
 
@@ -7996,7 +7996,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIdentityIdFormat.html
    */
   public toDescribeIdentityIdFormat() {
-    this.add('ec2:DescribeIdentityIdFormat');
+    this.to('ec2:DescribeIdentityIdFormat');
     return this;
   }
 
@@ -8008,7 +8008,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html
    */
   public toDescribeImageAttribute() {
-    this.add('ec2:DescribeImageAttribute');
+    this.to('ec2:DescribeImageAttribute');
     return this;
   }
 
@@ -8020,7 +8020,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html
    */
   public toDescribeImages() {
-    this.add('ec2:DescribeImages');
+    this.to('ec2:DescribeImages');
     return this;
   }
 
@@ -8032,7 +8032,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImportImageTasks.html
    */
   public toDescribeImportImageTasks() {
-    this.add('ec2:DescribeImportImageTasks');
+    this.to('ec2:DescribeImportImageTasks');
     return this;
   }
 
@@ -8044,7 +8044,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImportSnapshotTasks.html
    */
   public toDescribeImportSnapshotTasks() {
-    this.add('ec2:DescribeImportSnapshotTasks');
+    this.to('ec2:DescribeImportSnapshotTasks');
     return this;
   }
 
@@ -8056,7 +8056,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceAttribute.html
    */
   public toDescribeInstanceAttribute() {
-    this.add('ec2:DescribeInstanceAttribute');
+    this.to('ec2:DescribeInstanceAttribute');
     return this;
   }
 
@@ -8068,7 +8068,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceCreditSpecifications.html
    */
   public toDescribeInstanceCreditSpecifications() {
-    this.add('ec2:DescribeInstanceCreditSpecifications');
+    this.to('ec2:DescribeInstanceCreditSpecifications');
     return this;
   }
 
@@ -8080,7 +8080,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceEventNotificationAttributes.html
    */
   public toDescribeInstanceEventNotificationAttributes() {
-    this.add('ec2:DescribeInstanceEventNotificationAttributes');
+    this.to('ec2:DescribeInstanceEventNotificationAttributes');
     return this;
   }
 
@@ -8092,7 +8092,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceStatus.html
    */
   public toDescribeInstanceStatus() {
-    this.add('ec2:DescribeInstanceStatus');
+    this.to('ec2:DescribeInstanceStatus');
     return this;
   }
 
@@ -8104,7 +8104,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypeOfferings.html
    */
   public toDescribeInstanceTypeOfferings() {
-    this.add('ec2:DescribeInstanceTypeOfferings');
+    this.to('ec2:DescribeInstanceTypeOfferings');
     return this;
   }
 
@@ -8116,7 +8116,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypes.html
    */
   public toDescribeInstanceTypes() {
-    this.add('ec2:DescribeInstanceTypes');
+    this.to('ec2:DescribeInstanceTypes');
     return this;
   }
 
@@ -8128,7 +8128,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html
    */
   public toDescribeInstances() {
-    this.add('ec2:DescribeInstances');
+    this.to('ec2:DescribeInstances');
     return this;
   }
 
@@ -8140,7 +8140,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInternetGateways.html
    */
   public toDescribeInternetGateways() {
-    this.add('ec2:DescribeInternetGateways');
+    this.to('ec2:DescribeInternetGateways');
     return this;
   }
 
@@ -8152,7 +8152,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeKeyPairs.html
    */
   public toDescribeKeyPairs() {
-    this.add('ec2:DescribeKeyPairs');
+    this.to('ec2:DescribeKeyPairs');
     return this;
   }
 
@@ -8164,7 +8164,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplateVersions.html
    */
   public toDescribeLaunchTemplateVersions() {
-    this.add('ec2:DescribeLaunchTemplateVersions');
+    this.to('ec2:DescribeLaunchTemplateVersions');
     return this;
   }
 
@@ -8176,7 +8176,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html
    */
   public toDescribeLaunchTemplates() {
-    this.add('ec2:DescribeLaunchTemplates');
+    this.to('ec2:DescribeLaunchTemplates');
     return this;
   }
 
@@ -8188,7 +8188,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations.html
    */
   public toDescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations() {
-    this.add('ec2:DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations');
+    this.to('ec2:DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations');
     return this;
   }
 
@@ -8200,7 +8200,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayRouteTableVpcAssociations.html
    */
   public toDescribeLocalGatewayRouteTableVpcAssociations() {
-    this.add('ec2:DescribeLocalGatewayRouteTableVpcAssociations');
+    this.to('ec2:DescribeLocalGatewayRouteTableVpcAssociations');
     return this;
   }
 
@@ -8212,7 +8212,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayRouteTables.html
    */
   public toDescribeLocalGatewayRouteTables() {
-    this.add('ec2:DescribeLocalGatewayRouteTables');
+    this.to('ec2:DescribeLocalGatewayRouteTables');
     return this;
   }
 
@@ -8224,7 +8224,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayVirtualInterfaceGroups.html
    */
   public toDescribeLocalGatewayVirtualInterfaceGroups() {
-    this.add('ec2:DescribeLocalGatewayVirtualInterfaceGroups');
+    this.to('ec2:DescribeLocalGatewayVirtualInterfaceGroups');
     return this;
   }
 
@@ -8236,7 +8236,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayVirtualInterfaces.html
    */
   public toDescribeLocalGatewayVirtualInterfaces() {
-    this.add('ec2:DescribeLocalGatewayVirtualInterfaces');
+    this.to('ec2:DescribeLocalGatewayVirtualInterfaces');
     return this;
   }
 
@@ -8248,7 +8248,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGateways.html
    */
   public toDescribeLocalGateways() {
-    this.add('ec2:DescribeLocalGateways');
+    this.to('ec2:DescribeLocalGateways');
     return this;
   }
 
@@ -8260,7 +8260,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeManagedPrefixLists.html
    */
   public toDescribeManagedPrefixLists() {
-    this.add('ec2:DescribeManagedPrefixLists');
+    this.to('ec2:DescribeManagedPrefixLists');
     return this;
   }
 
@@ -8272,7 +8272,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeMovingAddresses.html
    */
   public toDescribeMovingAddresses() {
-    this.add('ec2:DescribeMovingAddresses');
+    this.to('ec2:DescribeMovingAddresses');
     return this;
   }
 
@@ -8284,7 +8284,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNatGateways.html
    */
   public toDescribeNatGateways() {
-    this.add('ec2:DescribeNatGateways');
+    this.to('ec2:DescribeNatGateways');
     return this;
   }
 
@@ -8296,7 +8296,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkAcls.html
    */
   public toDescribeNetworkAcls() {
-    this.add('ec2:DescribeNetworkAcls');
+    this.to('ec2:DescribeNetworkAcls');
     return this;
   }
 
@@ -8308,7 +8308,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInterfaceAttribute.html
    */
   public toDescribeNetworkInterfaceAttribute() {
-    this.add('ec2:DescribeNetworkInterfaceAttribute');
+    this.to('ec2:DescribeNetworkInterfaceAttribute');
     return this;
   }
 
@@ -8320,7 +8320,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInterfacePermissions.html
    */
   public toDescribeNetworkInterfacePermissions() {
-    this.add('ec2:DescribeNetworkInterfacePermissions');
+    this.to('ec2:DescribeNetworkInterfacePermissions');
     return this;
   }
 
@@ -8332,7 +8332,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInterfaces.html
    */
   public toDescribeNetworkInterfaces() {
-    this.add('ec2:DescribeNetworkInterfaces');
+    this.to('ec2:DescribeNetworkInterfaces');
     return this;
   }
 
@@ -8344,7 +8344,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePlacementGroups.html
    */
   public toDescribePlacementGroups() {
-    this.add('ec2:DescribePlacementGroups');
+    this.to('ec2:DescribePlacementGroups');
     return this;
   }
 
@@ -8356,7 +8356,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePrefixLists.html
    */
   public toDescribePrefixLists() {
-    this.add('ec2:DescribePrefixLists');
+    this.to('ec2:DescribePrefixLists');
     return this;
   }
 
@@ -8368,7 +8368,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePrincipalIdFormat.html
    */
   public toDescribePrincipalIdFormat() {
-    this.add('ec2:DescribePrincipalIdFormat');
+    this.to('ec2:DescribePrincipalIdFormat');
     return this;
   }
 
@@ -8380,7 +8380,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePublicIpv4Pools.html
    */
   public toDescribePublicIpv4Pools() {
-    this.add('ec2:DescribePublicIpv4Pools');
+    this.to('ec2:DescribePublicIpv4Pools');
     return this;
   }
 
@@ -8392,7 +8392,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRegions.html
    */
   public toDescribeRegions() {
-    this.add('ec2:DescribeRegions');
+    this.to('ec2:DescribeRegions');
     return this;
   }
 
@@ -8404,7 +8404,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstances.html
    */
   public toDescribeReservedInstances() {
-    this.add('ec2:DescribeReservedInstances');
+    this.to('ec2:DescribeReservedInstances');
     return this;
   }
 
@@ -8416,7 +8416,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstancesListings.html
    */
   public toDescribeReservedInstancesListings() {
-    this.add('ec2:DescribeReservedInstancesListings');
+    this.to('ec2:DescribeReservedInstancesListings');
     return this;
   }
 
@@ -8428,7 +8428,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstancesModifications.html
    */
   public toDescribeReservedInstancesModifications() {
-    this.add('ec2:DescribeReservedInstancesModifications');
+    this.to('ec2:DescribeReservedInstancesModifications');
     return this;
   }
 
@@ -8440,7 +8440,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstancesOfferings.html
    */
   public toDescribeReservedInstancesOfferings() {
-    this.add('ec2:DescribeReservedInstancesOfferings');
+    this.to('ec2:DescribeReservedInstancesOfferings');
     return this;
   }
 
@@ -8452,7 +8452,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteTables.html
    */
   public toDescribeRouteTables() {
-    this.add('ec2:DescribeRouteTables');
+    this.to('ec2:DescribeRouteTables');
     return this;
   }
 
@@ -8464,7 +8464,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeScheduledInstanceAvailability.html
    */
   public toDescribeScheduledInstanceAvailability() {
-    this.add('ec2:DescribeScheduledInstanceAvailability');
+    this.to('ec2:DescribeScheduledInstanceAvailability');
     return this;
   }
 
@@ -8476,7 +8476,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeScheduledInstances.html
    */
   public toDescribeScheduledInstances() {
-    this.add('ec2:DescribeScheduledInstances');
+    this.to('ec2:DescribeScheduledInstances');
     return this;
   }
 
@@ -8488,7 +8488,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroupReferences.html
    */
   public toDescribeSecurityGroupReferences() {
-    this.add('ec2:DescribeSecurityGroupReferences');
+    this.to('ec2:DescribeSecurityGroupReferences');
     return this;
   }
 
@@ -8500,7 +8500,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html
    */
   public toDescribeSecurityGroups() {
-    this.add('ec2:DescribeSecurityGroups');
+    this.to('ec2:DescribeSecurityGroups');
     return this;
   }
 
@@ -8512,7 +8512,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshotAttribute.html
    */
   public toDescribeSnapshotAttribute() {
-    this.add('ec2:DescribeSnapshotAttribute');
+    this.to('ec2:DescribeSnapshotAttribute');
     return this;
   }
 
@@ -8524,7 +8524,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html
    */
   public toDescribeSnapshots() {
-    this.add('ec2:DescribeSnapshots');
+    this.to('ec2:DescribeSnapshots');
     return this;
   }
 
@@ -8536,7 +8536,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotDatafeedSubscription.html
    */
   public toDescribeSpotDatafeedSubscription() {
-    this.add('ec2:DescribeSpotDatafeedSubscription');
+    this.to('ec2:DescribeSpotDatafeedSubscription');
     return this;
   }
 
@@ -8548,7 +8548,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotFleetInstances.html
    */
   public toDescribeSpotFleetInstances() {
-    this.add('ec2:DescribeSpotFleetInstances');
+    this.to('ec2:DescribeSpotFleetInstances');
     return this;
   }
 
@@ -8560,7 +8560,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotFleetRequestHistory.html
    */
   public toDescribeSpotFleetRequestHistory() {
-    this.add('ec2:DescribeSpotFleetRequestHistory');
+    this.to('ec2:DescribeSpotFleetRequestHistory');
     return this;
   }
 
@@ -8572,7 +8572,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotFleetRequests.html
    */
   public toDescribeSpotFleetRequests() {
-    this.add('ec2:DescribeSpotFleetRequests');
+    this.to('ec2:DescribeSpotFleetRequests');
     return this;
   }
 
@@ -8584,7 +8584,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotInstanceRequests.html
    */
   public toDescribeSpotInstanceRequests() {
-    this.add('ec2:DescribeSpotInstanceRequests');
+    this.to('ec2:DescribeSpotInstanceRequests');
     return this;
   }
 
@@ -8596,7 +8596,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotPriceHistory.html
    */
   public toDescribeSpotPriceHistory() {
-    this.add('ec2:DescribeSpotPriceHistory');
+    this.to('ec2:DescribeSpotPriceHistory');
     return this;
   }
 
@@ -8608,7 +8608,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeStaleSecurityGroups.html
    */
   public toDescribeStaleSecurityGroups() {
-    this.add('ec2:DescribeStaleSecurityGroups');
+    this.to('ec2:DescribeStaleSecurityGroups');
     return this;
   }
 
@@ -8620,7 +8620,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSubnets.html
    */
   public toDescribeSubnets() {
-    this.add('ec2:DescribeSubnets');
+    this.to('ec2:DescribeSubnets');
     return this;
   }
 
@@ -8632,7 +8632,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTags.html
    */
   public toDescribeTags() {
-    this.add('ec2:DescribeTags');
+    this.to('ec2:DescribeTags');
     return this;
   }
 
@@ -8644,7 +8644,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTrafficMirrorFilters.html
    */
   public toDescribeTrafficMirrorFilters() {
-    this.add('ec2:DescribeTrafficMirrorFilters');
+    this.to('ec2:DescribeTrafficMirrorFilters');
     return this;
   }
 
@@ -8656,7 +8656,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTrafficMirrorSessions.html
    */
   public toDescribeTrafficMirrorSessions() {
-    this.add('ec2:DescribeTrafficMirrorSessions');
+    this.to('ec2:DescribeTrafficMirrorSessions');
     return this;
   }
 
@@ -8668,7 +8668,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTrafficMirrorTargets.html
    */
   public toDescribeTrafficMirrorTargets() {
-    this.add('ec2:DescribeTrafficMirrorTargets');
+    this.to('ec2:DescribeTrafficMirrorTargets');
     return this;
   }
 
@@ -8680,7 +8680,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayAttachments.html
    */
   public toDescribeTransitGatewayAttachments() {
-    this.add('ec2:DescribeTransitGatewayAttachments');
+    this.to('ec2:DescribeTransitGatewayAttachments');
     return this;
   }
 
@@ -8692,7 +8692,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayMulticastDomains.html
    */
   public toDescribeTransitGatewayMulticastDomains() {
-    this.add('ec2:DescribeTransitGatewayMulticastDomains');
+    this.to('ec2:DescribeTransitGatewayMulticastDomains');
     return this;
   }
 
@@ -8704,7 +8704,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayPeeringAttachments.html
    */
   public toDescribeTransitGatewayPeeringAttachments() {
-    this.add('ec2:DescribeTransitGatewayPeeringAttachments');
+    this.to('ec2:DescribeTransitGatewayPeeringAttachments');
     return this;
   }
 
@@ -8716,7 +8716,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayRouteTables.html
    */
   public toDescribeTransitGatewayRouteTables() {
-    this.add('ec2:DescribeTransitGatewayRouteTables');
+    this.to('ec2:DescribeTransitGatewayRouteTables');
     return this;
   }
 
@@ -8728,7 +8728,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayVpcAttachments.html
    */
   public toDescribeTransitGatewayVpcAttachments() {
-    this.add('ec2:DescribeTransitGatewayVpcAttachments');
+    this.to('ec2:DescribeTransitGatewayVpcAttachments');
     return this;
   }
 
@@ -8740,7 +8740,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGateways.html
    */
   public toDescribeTransitGateways() {
-    this.add('ec2:DescribeTransitGateways');
+    this.to('ec2:DescribeTransitGateways');
     return this;
   }
 
@@ -8752,7 +8752,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumeAttribute.html
    */
   public toDescribeVolumeAttribute() {
-    this.add('ec2:DescribeVolumeAttribute');
+    this.to('ec2:DescribeVolumeAttribute');
     return this;
   }
 
@@ -8764,7 +8764,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumeStatus.html
    */
   public toDescribeVolumeStatus() {
-    this.add('ec2:DescribeVolumeStatus');
+    this.to('ec2:DescribeVolumeStatus');
     return this;
   }
 
@@ -8776,7 +8776,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumes.html
    */
   public toDescribeVolumes() {
-    this.add('ec2:DescribeVolumes');
+    this.to('ec2:DescribeVolumes');
     return this;
   }
 
@@ -8788,7 +8788,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html
    */
   public toDescribeVolumesModifications() {
-    this.add('ec2:DescribeVolumesModifications');
+    this.to('ec2:DescribeVolumesModifications');
     return this;
   }
 
@@ -8800,7 +8800,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcAttribute.html
    */
   public toDescribeVpcAttribute() {
-    this.add('ec2:DescribeVpcAttribute');
+    this.to('ec2:DescribeVpcAttribute');
     return this;
   }
 
@@ -8812,7 +8812,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcClassicLink.html
    */
   public toDescribeVpcClassicLink() {
-    this.add('ec2:DescribeVpcClassicLink');
+    this.to('ec2:DescribeVpcClassicLink');
     return this;
   }
 
@@ -8824,7 +8824,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcClassicLinkDnsSupport.html
    */
   public toDescribeVpcClassicLinkDnsSupport() {
-    this.add('ec2:DescribeVpcClassicLinkDnsSupport');
+    this.to('ec2:DescribeVpcClassicLinkDnsSupport');
     return this;
   }
 
@@ -8836,7 +8836,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointConnectionNotifications.html
    */
   public toDescribeVpcEndpointConnectionNotifications() {
-    this.add('ec2:DescribeVpcEndpointConnectionNotifications');
+    this.to('ec2:DescribeVpcEndpointConnectionNotifications');
     return this;
   }
 
@@ -8848,7 +8848,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointConnections.html
    */
   public toDescribeVpcEndpointConnections() {
-    this.add('ec2:DescribeVpcEndpointConnections');
+    this.to('ec2:DescribeVpcEndpointConnections');
     return this;
   }
 
@@ -8860,7 +8860,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointServiceConfigurations.html
    */
   public toDescribeVpcEndpointServiceConfigurations() {
-    this.add('ec2:DescribeVpcEndpointServiceConfigurations');
+    this.to('ec2:DescribeVpcEndpointServiceConfigurations');
     return this;
   }
 
@@ -8872,7 +8872,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointServicePermissions.html
    */
   public toDescribeVpcEndpointServicePermissions() {
-    this.add('ec2:DescribeVpcEndpointServicePermissions');
+    this.to('ec2:DescribeVpcEndpointServicePermissions');
     return this;
   }
 
@@ -8884,7 +8884,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointServices.html
    */
   public toDescribeVpcEndpointServices() {
-    this.add('ec2:DescribeVpcEndpointServices');
+    this.to('ec2:DescribeVpcEndpointServices');
     return this;
   }
 
@@ -8896,7 +8896,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpoints.html
    */
   public toDescribeVpcEndpoints() {
-    this.add('ec2:DescribeVpcEndpoints');
+    this.to('ec2:DescribeVpcEndpoints');
     return this;
   }
 
@@ -8908,7 +8908,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcPeeringConnections.html
    */
   public toDescribeVpcPeeringConnections() {
-    this.add('ec2:DescribeVpcPeeringConnections');
+    this.to('ec2:DescribeVpcPeeringConnections');
     return this;
   }
 
@@ -8920,7 +8920,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcs.html
    */
   public toDescribeVpcs() {
-    this.add('ec2:DescribeVpcs');
+    this.to('ec2:DescribeVpcs');
     return this;
   }
 
@@ -8932,7 +8932,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html
    */
   public toDescribeVpnConnections() {
-    this.add('ec2:DescribeVpnConnections');
+    this.to('ec2:DescribeVpnConnections');
     return this;
   }
 
@@ -8944,7 +8944,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnGateways.html
    */
   public toDescribeVpnGateways() {
-    this.add('ec2:DescribeVpnGateways');
+    this.to('ec2:DescribeVpnGateways');
     return this;
   }
 
@@ -8956,7 +8956,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachClassicLinkVpc.html
    */
   public toDetachClassicLinkVpc() {
-    this.add('ec2:DetachClassicLinkVpc');
+    this.to('ec2:DetachClassicLinkVpc');
     return this;
   }
 
@@ -8968,7 +8968,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachInternetGateway.html
    */
   public toDetachInternetGateway() {
-    this.add('ec2:DetachInternetGateway');
+    this.to('ec2:DetachInternetGateway');
     return this;
   }
 
@@ -8980,7 +8980,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachNetworkInterface.html
    */
   public toDetachNetworkInterface() {
-    this.add('ec2:DetachNetworkInterface');
+    this.to('ec2:DetachNetworkInterface');
     return this;
   }
 
@@ -8992,7 +8992,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachVolume.html
    */
   public toDetachVolume() {
-    this.add('ec2:DetachVolume');
+    this.to('ec2:DetachVolume');
     return this;
   }
 
@@ -9004,7 +9004,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachVpnGateway.html
    */
   public toDetachVpnGateway() {
-    this.add('ec2:DetachVpnGateway');
+    this.to('ec2:DetachVpnGateway');
     return this;
   }
 
@@ -9016,7 +9016,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableEbsEncryptionByDefault.html
    */
   public toDisableEbsEncryptionByDefault() {
-    this.add('ec2:DisableEbsEncryptionByDefault');
+    this.to('ec2:DisableEbsEncryptionByDefault');
     return this;
   }
 
@@ -9028,7 +9028,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableFastSnapshotRestores.html
    */
   public toDisableFastSnapshotRestores() {
-    this.add('ec2:DisableFastSnapshotRestores');
+    this.to('ec2:DisableFastSnapshotRestores');
     return this;
   }
 
@@ -9040,7 +9040,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableTransitGatewayRouteTablePropagation.html
    */
   public toDisableTransitGatewayRouteTablePropagation() {
-    this.add('ec2:DisableTransitGatewayRouteTablePropagation');
+    this.to('ec2:DisableTransitGatewayRouteTablePropagation');
     return this;
   }
 
@@ -9052,7 +9052,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableVgwRoutePropagation.html
    */
   public toDisableVgwRoutePropagation() {
-    this.add('ec2:DisableVgwRoutePropagation');
+    this.to('ec2:DisableVgwRoutePropagation');
     return this;
   }
 
@@ -9064,7 +9064,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableVpcClassicLink.html
    */
   public toDisableVpcClassicLink() {
-    this.add('ec2:DisableVpcClassicLink');
+    this.to('ec2:DisableVpcClassicLink');
     return this;
   }
 
@@ -9076,7 +9076,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableVpcClassicLinkDnsSupport.html
    */
   public toDisableVpcClassicLinkDnsSupport() {
-    this.add('ec2:DisableVpcClassicLinkDnsSupport');
+    this.to('ec2:DisableVpcClassicLinkDnsSupport');
     return this;
   }
 
@@ -9088,7 +9088,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateAddress.html
    */
   public toDisassociateAddress() {
-    this.add('ec2:DisassociateAddress');
+    this.to('ec2:DisassociateAddress');
     return this;
   }
 
@@ -9100,7 +9100,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateClientVpnTargetNetwork.html
    */
   public toDisassociateClientVpnTargetNetwork() {
-    this.add('ec2:DisassociateClientVpnTargetNetwork');
+    this.to('ec2:DisassociateClientVpnTargetNetwork');
     return this;
   }
 
@@ -9112,7 +9112,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html
    */
   public toDisassociateIamInstanceProfile() {
-    this.add('ec2:DisassociateIamInstanceProfile');
+    this.to('ec2:DisassociateIamInstanceProfile');
     return this;
   }
 
@@ -9124,7 +9124,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateRouteTable.html
    */
   public toDisassociateRouteTable() {
-    this.add('ec2:DisassociateRouteTable');
+    this.to('ec2:DisassociateRouteTable');
     return this;
   }
 
@@ -9136,7 +9136,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateSubnetCidrBlock.html
    */
   public toDisassociateSubnetCidrBlock() {
-    this.add('ec2:DisassociateSubnetCidrBlock');
+    this.to('ec2:DisassociateSubnetCidrBlock');
     return this;
   }
 
@@ -9148,7 +9148,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateTransitGatewayMulticastDomain.html
    */
   public toDisassociateTransitGatewayMulticastDomain() {
-    this.add('ec2:DisassociateTransitGatewayMulticastDomain');
+    this.to('ec2:DisassociateTransitGatewayMulticastDomain');
     return this;
   }
 
@@ -9160,7 +9160,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateTransitGatewayRouteTable.html
    */
   public toDisassociateTransitGatewayRouteTable() {
-    this.add('ec2:DisassociateTransitGatewayRouteTable');
+    this.to('ec2:DisassociateTransitGatewayRouteTable');
     return this;
   }
 
@@ -9172,7 +9172,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateVpcCidrBlock.html
    */
   public toDisassociateVpcCidrBlock() {
-    this.add('ec2:DisassociateVpcCidrBlock');
+    this.to('ec2:DisassociateVpcCidrBlock');
     return this;
   }
 
@@ -9184,7 +9184,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableEbsEncryptionByDefault.html
    */
   public toEnableEbsEncryptionByDefault() {
-    this.add('ec2:EnableEbsEncryptionByDefault');
+    this.to('ec2:EnableEbsEncryptionByDefault');
     return this;
   }
 
@@ -9196,7 +9196,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableFastSnapshotRestores.html
    */
   public toEnableFastSnapshotRestores() {
-    this.add('ec2:EnableFastSnapshotRestores');
+    this.to('ec2:EnableFastSnapshotRestores');
     return this;
   }
 
@@ -9208,7 +9208,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableTransitGatewayRouteTablePropagation.html
    */
   public toEnableTransitGatewayRouteTablePropagation() {
-    this.add('ec2:EnableTransitGatewayRouteTablePropagation');
+    this.to('ec2:EnableTransitGatewayRouteTablePropagation');
     return this;
   }
 
@@ -9220,7 +9220,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVgwRoutePropagation.html
    */
   public toEnableVgwRoutePropagation() {
-    this.add('ec2:EnableVgwRoutePropagation');
+    this.to('ec2:EnableVgwRoutePropagation');
     return this;
   }
 
@@ -9232,7 +9232,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVolumeIO.html
    */
   public toEnableVolumeIO() {
-    this.add('ec2:EnableVolumeIO');
+    this.to('ec2:EnableVolumeIO');
     return this;
   }
 
@@ -9244,7 +9244,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVpcClassicLink.html
    */
   public toEnableVpcClassicLink() {
-    this.add('ec2:EnableVpcClassicLink');
+    this.to('ec2:EnableVpcClassicLink');
     return this;
   }
 
@@ -9256,7 +9256,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVpcClassicLinkDnsSupport.html
    */
   public toEnableVpcClassicLinkDnsSupport() {
-    this.add('ec2:EnableVpcClassicLinkDnsSupport');
+    this.to('ec2:EnableVpcClassicLinkDnsSupport');
     return this;
   }
 
@@ -9268,7 +9268,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ExportClientVpnClientCertificateRevocationList.html
    */
   public toExportClientVpnClientCertificateRevocationList() {
-    this.add('ec2:ExportClientVpnClientCertificateRevocationList');
+    this.to('ec2:ExportClientVpnClientCertificateRevocationList');
     return this;
   }
 
@@ -9280,7 +9280,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ExportClientVpnClientConfiguration.html
    */
   public toExportClientVpnClientConfiguration() {
-    this.add('ec2:ExportClientVpnClientConfiguration');
+    this.to('ec2:ExportClientVpnClientConfiguration');
     return this;
   }
 
@@ -9292,7 +9292,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ExportImage.html
    */
   public toExportImage() {
-    this.add('ec2:ExportImage');
+    this.to('ec2:ExportImage');
     return this;
   }
 
@@ -9304,7 +9304,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ExportTransitGatewayRoutes.html
    */
   public toExportTransitGatewayRoutes() {
-    this.add('ec2:ExportTransitGatewayRoutes');
+    this.to('ec2:ExportTransitGatewayRoutes');
     return this;
   }
 
@@ -9316,7 +9316,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetCapacityReservationUsage.html
    */
   public toGetCapacityReservationUsage() {
-    this.add('ec2:GetCapacityReservationUsage');
+    this.to('ec2:GetCapacityReservationUsage');
     return this;
   }
 
@@ -9328,7 +9328,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetCoipPoolUsage.html
    */
   public toGetCoipPoolUsage() {
-    this.add('ec2:GetCoipPoolUsage');
+    this.to('ec2:GetCoipPoolUsage');
     return this;
   }
 
@@ -9340,7 +9340,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetConsoleOutput.html
    */
   public toGetConsoleOutput() {
-    this.add('ec2:GetConsoleOutput');
+    this.to('ec2:GetConsoleOutput');
     return this;
   }
 
@@ -9352,7 +9352,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetConsoleScreenshot.html
    */
   public toGetConsoleScreenshot() {
-    this.add('ec2:GetConsoleScreenshot');
+    this.to('ec2:GetConsoleScreenshot');
     return this;
   }
 
@@ -9364,7 +9364,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetDefaultCreditSpecification.html
    */
   public toGetDefaultCreditSpecification() {
-    this.add('ec2:GetDefaultCreditSpecification');
+    this.to('ec2:GetDefaultCreditSpecification');
     return this;
   }
 
@@ -9376,7 +9376,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetEbsDefaultKmsKeyId.html
    */
   public toGetEbsDefaultKmsKeyId() {
-    this.add('ec2:GetEbsDefaultKmsKeyId');
+    this.to('ec2:GetEbsDefaultKmsKeyId');
     return this;
   }
 
@@ -9388,7 +9388,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetEbsEncryptionByDefault.html
    */
   public toGetEbsEncryptionByDefault() {
-    this.add('ec2:GetEbsEncryptionByDefault');
+    this.to('ec2:GetEbsEncryptionByDefault');
     return this;
   }
 
@@ -9400,7 +9400,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetHostReservationPurchasePreview.html
    */
   public toGetHostReservationPurchasePreview() {
-    this.add('ec2:GetHostReservationPurchasePreview');
+    this.to('ec2:GetHostReservationPurchasePreview');
     return this;
   }
 
@@ -9412,7 +9412,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetLaunchTemplateData.html
    */
   public toGetLaunchTemplateData() {
-    this.add('ec2:GetLaunchTemplateData');
+    this.to('ec2:GetLaunchTemplateData');
     return this;
   }
 
@@ -9424,7 +9424,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetManagedPrefixListAssociations.html
    */
   public toGetManagedPrefixListAssociations() {
-    this.add('ec2:GetManagedPrefixListAssociations');
+    this.to('ec2:GetManagedPrefixListAssociations');
     return this;
   }
 
@@ -9436,7 +9436,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetManagedPrefixListEntries.html
    */
   public toGetManagedPrefixListEntries() {
-    this.add('ec2:GetManagedPrefixListEntries');
+    this.to('ec2:GetManagedPrefixListEntries');
     return this;
   }
 
@@ -9448,7 +9448,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetPasswordData.html
    */
   public toGetPasswordData() {
-    this.add('ec2:GetPasswordData');
+    this.to('ec2:GetPasswordData');
     return this;
   }
 
@@ -9460,7 +9460,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetReservedInstancesExchangeQuote.html
    */
   public toGetReservedInstancesExchangeQuote() {
-    this.add('ec2:GetReservedInstancesExchangeQuote');
+    this.to('ec2:GetReservedInstancesExchangeQuote');
     return this;
   }
 
@@ -9472,7 +9472,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayAttachmentPropagations.html
    */
   public toGetTransitGatewayAttachmentPropagations() {
-    this.add('ec2:GetTransitGatewayAttachmentPropagations');
+    this.to('ec2:GetTransitGatewayAttachmentPropagations');
     return this;
   }
 
@@ -9484,7 +9484,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayMulticastDomainAssociations.html
    */
   public toGetTransitGatewayMulticastDomainAssociations() {
-    this.add('ec2:GetTransitGatewayMulticastDomainAssociations');
+    this.to('ec2:GetTransitGatewayMulticastDomainAssociations');
     return this;
   }
 
@@ -9496,7 +9496,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayPrefixListReference.html
    */
   public toGetTransitGatewayPrefixListReferences() {
-    this.add('ec2:GetTransitGatewayPrefixListReferences');
+    this.to('ec2:GetTransitGatewayPrefixListReferences');
     return this;
   }
 
@@ -9508,7 +9508,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayRouteTableAssociations.html
    */
   public toGetTransitGatewayRouteTableAssociations() {
-    this.add('ec2:GetTransitGatewayRouteTableAssociations');
+    this.to('ec2:GetTransitGatewayRouteTableAssociations');
     return this;
   }
 
@@ -9520,7 +9520,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayRouteTablePropagations.html
    */
   public toGetTransitGatewayRouteTablePropagations() {
-    this.add('ec2:GetTransitGatewayRouteTablePropagations');
+    this.to('ec2:GetTransitGatewayRouteTablePropagations');
     return this;
   }
 
@@ -9532,7 +9532,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportClientVpnClientCertificateRevocationList.html
    */
   public toImportClientVpnClientCertificateRevocationList() {
-    this.add('ec2:ImportClientVpnClientCertificateRevocationList');
+    this.to('ec2:ImportClientVpnClientCertificateRevocationList');
     return this;
   }
 
@@ -9544,7 +9544,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html
    */
   public toImportImage() {
-    this.add('ec2:ImportImage');
+    this.to('ec2:ImportImage');
     return this;
   }
 
@@ -9556,7 +9556,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html
    */
   public toImportInstance() {
-    this.add('ec2:ImportInstance');
+    this.to('ec2:ImportInstance');
     return this;
   }
 
@@ -9568,7 +9568,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html
    */
   public toImportKeyPair() {
-    this.add('ec2:ImportKeyPair');
+    this.to('ec2:ImportKeyPair');
     return this;
   }
 
@@ -9580,7 +9580,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportSnapshot.html
    */
   public toImportSnapshot() {
-    this.add('ec2:ImportSnapshot');
+    this.to('ec2:ImportSnapshot');
     return this;
   }
 
@@ -9592,7 +9592,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportVolume.html
    */
   public toImportVolume() {
-    this.add('ec2:ImportVolume');
+    this.to('ec2:ImportVolume');
     return this;
   }
 
@@ -9604,7 +9604,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyCapacityReservation.html
    */
   public toModifyCapacityReservation() {
-    this.add('ec2:ModifyCapacityReservation');
+    this.to('ec2:ModifyCapacityReservation');
     return this;
   }
 
@@ -9616,7 +9616,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyClientVpnEndpoint.html
    */
   public toModifyClientVpnEndpoint() {
-    this.add('ec2:ModifyClientVpnEndpoint');
+    this.to('ec2:ModifyClientVpnEndpoint');
     return this;
   }
 
@@ -9628,7 +9628,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyDefaultCreditSpecification.html
    */
   public toModifyDefaultCreditSpecification() {
-    this.add('ec2:ModifyDefaultCreditSpecification');
+    this.to('ec2:ModifyDefaultCreditSpecification');
     return this;
   }
 
@@ -9640,7 +9640,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html
    */
   public toModifyEbsDefaultKmsKeyId() {
-    this.add('ec2:ModifyEbsDefaultKmsKeyId');
+    this.to('ec2:ModifyEbsDefaultKmsKeyId');
     return this;
   }
 
@@ -9652,7 +9652,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFleet.html
    */
   public toModifyFleet() {
-    this.add('ec2:ModifyFleet');
+    this.to('ec2:ModifyFleet');
     return this;
   }
 
@@ -9664,7 +9664,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFpgaImageAttribute.html
    */
   public toModifyFpgaImageAttribute() {
-    this.add('ec2:ModifyFpgaImageAttribute');
+    this.to('ec2:ModifyFpgaImageAttribute');
     return this;
   }
 
@@ -9676,7 +9676,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyHosts.html
    */
   public toModifyHosts() {
-    this.add('ec2:ModifyHosts');
+    this.to('ec2:ModifyHosts');
     return this;
   }
 
@@ -9688,7 +9688,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIdFormat.html
    */
   public toModifyIdFormat() {
-    this.add('ec2:ModifyIdFormat');
+    this.to('ec2:ModifyIdFormat');
     return this;
   }
 
@@ -9700,7 +9700,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIdentityIdFormat.html
    */
   public toModifyIdentityIdFormat() {
-    this.add('ec2:ModifyIdentityIdFormat');
+    this.to('ec2:ModifyIdentityIdFormat');
     return this;
   }
 
@@ -9712,7 +9712,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html
    */
   public toModifyImageAttribute() {
-    this.add('ec2:ModifyImageAttribute');
+    this.to('ec2:ModifyImageAttribute');
     return this;
   }
 
@@ -9724,7 +9724,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html
    */
   public toModifyInstanceAttribute() {
-    this.add('ec2:ModifyInstanceAttribute');
+    this.to('ec2:ModifyInstanceAttribute');
     return this;
   }
 
@@ -9736,7 +9736,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCapacityReservationAttributes.html
    */
   public toModifyInstanceCapacityReservationAttributes() {
-    this.add('ec2:ModifyInstanceCapacityReservationAttributes');
+    this.to('ec2:ModifyInstanceCapacityReservationAttributes');
     return this;
   }
 
@@ -9748,7 +9748,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html
    */
   public toModifyInstanceCreditSpecification() {
-    this.add('ec2:ModifyInstanceCreditSpecification');
+    this.to('ec2:ModifyInstanceCreditSpecification');
     return this;
   }
 
@@ -9760,7 +9760,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceEventStartTime.html
    */
   public toModifyInstanceEventStartTime() {
-    this.add('ec2:ModifyInstanceEventStartTime');
+    this.to('ec2:ModifyInstanceEventStartTime');
     return this;
   }
 
@@ -9772,7 +9772,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceMetadataOptions.html
    */
   public toModifyInstanceMetadataOptions() {
-    this.add('ec2:ModifyInstanceMetadataOptions');
+    this.to('ec2:ModifyInstanceMetadataOptions');
     return this;
   }
 
@@ -9784,7 +9784,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstancePlacement.html
    */
   public toModifyInstancePlacement() {
-    this.add('ec2:ModifyInstancePlacement');
+    this.to('ec2:ModifyInstancePlacement');
     return this;
   }
 
@@ -9796,7 +9796,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyLaunchTemplate.html
    */
   public toModifyLaunchTemplate() {
-    this.add('ec2:ModifyLaunchTemplate');
+    this.to('ec2:ModifyLaunchTemplate');
     return this;
   }
 
@@ -9808,7 +9808,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyManagedPrefixList.html
    */
   public toModifyManagedPrefixList() {
-    this.add('ec2:ModifyManagedPrefixList');
+    this.to('ec2:ModifyManagedPrefixList');
     return this;
   }
 
@@ -9820,7 +9820,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html
    */
   public toModifyNetworkInterfaceAttribute() {
-    this.add('ec2:ModifyNetworkInterfaceAttribute');
+    this.to('ec2:ModifyNetworkInterfaceAttribute');
     return this;
   }
 
@@ -9832,7 +9832,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyReservedInstances.html
    */
   public toModifyReservedInstances() {
-    this.add('ec2:ModifyReservedInstances');
+    this.to('ec2:ModifyReservedInstances');
     return this;
   }
 
@@ -9844,7 +9844,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySnapshotAttribute.html
    */
   public toModifySnapshotAttribute() {
-    this.add('ec2:ModifySnapshotAttribute');
+    this.to('ec2:ModifySnapshotAttribute');
     return this;
   }
 
@@ -9856,7 +9856,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySpotFleetRequest.html
    */
   public toModifySpotFleetRequest() {
-    this.add('ec2:ModifySpotFleetRequest');
+    this.to('ec2:ModifySpotFleetRequest');
     return this;
   }
 
@@ -9868,7 +9868,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySubnetAttribute.html
    */
   public toModifySubnetAttribute() {
-    this.add('ec2:ModifySubnetAttribute');
+    this.to('ec2:ModifySubnetAttribute');
     return this;
   }
 
@@ -9880,7 +9880,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorFilterNetworkServices.html
    */
   public toModifyTrafficMirrorFilterNetworkServices() {
-    this.add('ec2:ModifyTrafficMirrorFilterNetworkServices');
+    this.to('ec2:ModifyTrafficMirrorFilterNetworkServices');
     return this;
   }
 
@@ -9892,7 +9892,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorFilterRule.html
    */
   public toModifyTrafficMirrorFilterRule() {
-    this.add('ec2:ModifyTrafficMirrorFilterRule');
+    this.to('ec2:ModifyTrafficMirrorFilterRule');
     return this;
   }
 
@@ -9904,7 +9904,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorSession.html
    */
   public toModifyTrafficMirrorSession() {
-    this.add('ec2:ModifyTrafficMirrorSession');
+    this.to('ec2:ModifyTrafficMirrorSession');
     return this;
   }
 
@@ -9916,7 +9916,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGateway.html
    */
   public toModifyTransitGateway() {
-    this.add('ec2:ModifyTransitGateway');
+    this.to('ec2:ModifyTransitGateway');
     return this;
   }
 
@@ -9928,7 +9928,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGatewayPrefixListReference.html
    */
   public toModifyTransitGatewayPrefixListReference() {
-    this.add('ec2:ModifyTransitGatewayPrefixListReference');
+    this.to('ec2:ModifyTransitGatewayPrefixListReference');
     return this;
   }
 
@@ -9940,7 +9940,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGatewayVpcAttachment.html
    */
   public toModifyTransitGatewayVpcAttachment() {
-    this.add('ec2:ModifyTransitGatewayVpcAttachment');
+    this.to('ec2:ModifyTransitGatewayVpcAttachment');
     return this;
   }
 
@@ -9952,7 +9952,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVolume.html
    */
   public toModifyVolume() {
-    this.add('ec2:ModifyVolume');
+    this.to('ec2:ModifyVolume');
     return this;
   }
 
@@ -9964,7 +9964,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVolumeAttribute.html
    */
   public toModifyVolumeAttribute() {
-    this.add('ec2:ModifyVolumeAttribute');
+    this.to('ec2:ModifyVolumeAttribute');
     return this;
   }
 
@@ -9976,7 +9976,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcAttribute.html
    */
   public toModifyVpcAttribute() {
-    this.add('ec2:ModifyVpcAttribute');
+    this.to('ec2:ModifyVpcAttribute');
     return this;
   }
 
@@ -9988,7 +9988,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html
    */
   public toModifyVpcEndpoint() {
-    this.add('ec2:ModifyVpcEndpoint');
+    this.to('ec2:ModifyVpcEndpoint');
     return this;
   }
 
@@ -10000,7 +10000,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpointConnectionNotification.html
    */
   public toModifyVpcEndpointConnectionNotification() {
-    this.add('ec2:ModifyVpcEndpointConnectionNotification');
+    this.to('ec2:ModifyVpcEndpointConnectionNotification');
     return this;
   }
 
@@ -10012,7 +10012,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpointServiceConfiguration.html
    */
   public toModifyVpcEndpointServiceConfiguration() {
-    this.add('ec2:ModifyVpcEndpointServiceConfiguration');
+    this.to('ec2:ModifyVpcEndpointServiceConfiguration');
     return this;
   }
 
@@ -10024,7 +10024,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpointServicePermissions.html
    */
   public toModifyVpcEndpointServicePermissions() {
-    this.add('ec2:ModifyVpcEndpointServicePermissions');
+    this.to('ec2:ModifyVpcEndpointServicePermissions');
     return this;
   }
 
@@ -10036,7 +10036,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcPeeringConnectionOptions.html
    */
   public toModifyVpcPeeringConnectionOptions() {
-    this.add('ec2:ModifyVpcPeeringConnectionOptions');
+    this.to('ec2:ModifyVpcPeeringConnectionOptions');
     return this;
   }
 
@@ -10048,7 +10048,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcTenancy.html
    */
   public toModifyVpcTenancy() {
-    this.add('ec2:ModifyVpcTenancy');
+    this.to('ec2:ModifyVpcTenancy');
     return this;
   }
 
@@ -10060,7 +10060,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpnConnection.html
    */
   public toModifyVpnConnection() {
-    this.add('ec2:ModifyVpnConnection');
+    this.to('ec2:ModifyVpnConnection');
     return this;
   }
 
@@ -10072,7 +10072,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpnTunnelCertificate
    */
   public toModifyVpnTunnelCertificate() {
-    this.add('ec2:ModifyVpnTunnelCertificate');
+    this.to('ec2:ModifyVpnTunnelCertificate');
     return this;
   }
 
@@ -10084,7 +10084,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpnTunnelOptions.html
    */
   public toModifyVpnTunnelOptions() {
-    this.add('ec2:ModifyVpnTunnelOptions');
+    this.to('ec2:ModifyVpnTunnelOptions');
     return this;
   }
 
@@ -10096,7 +10096,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_MonitorInstances.html
    */
   public toMonitorInstances() {
-    this.add('ec2:MonitorInstances');
+    this.to('ec2:MonitorInstances');
     return this;
   }
 
@@ -10108,7 +10108,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_MoveAddressToVpc.html
    */
   public toMoveAddressToVpc() {
-    this.add('ec2:MoveAddressToVpc');
+    this.to('ec2:MoveAddressToVpc');
     return this;
   }
 
@@ -10120,7 +10120,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ProvisionByoipCidr.html
    */
   public toProvisionByoipCidr() {
-    this.add('ec2:ProvisionByoipCidr');
+    this.to('ec2:ProvisionByoipCidr');
     return this;
   }
 
@@ -10132,7 +10132,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_PurchaseHostReservation.html
    */
   public toPurchaseHostReservation() {
-    this.add('ec2:PurchaseHostReservation');
+    this.to('ec2:PurchaseHostReservation');
     return this;
   }
 
@@ -10144,7 +10144,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_PurchaseReservedInstancesOffering.html
    */
   public toPurchaseReservedInstancesOffering() {
-    this.add('ec2:PurchaseReservedInstancesOffering');
+    this.to('ec2:PurchaseReservedInstancesOffering');
     return this;
   }
 
@@ -10156,7 +10156,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_PurchaseScheduledInstances.html
    */
   public toPurchaseScheduledInstances() {
-    this.add('ec2:PurchaseScheduledInstances');
+    this.to('ec2:PurchaseScheduledInstances');
     return this;
   }
 
@@ -10168,7 +10168,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RebootInstances.html
    */
   public toRebootInstances() {
-    this.add('ec2:RebootInstances');
+    this.to('ec2:RebootInstances');
     return this;
   }
 
@@ -10180,7 +10180,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterImage.html
    */
   public toRegisterImage() {
-    this.add('ec2:RegisterImage');
+    this.to('ec2:RegisterImage');
     return this;
   }
 
@@ -10192,7 +10192,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterInstanceEventNotificationAttributes.html
    */
   public toRegisterInstanceEventNotificationAttributes() {
-    this.add('ec2:RegisterInstanceEventNotificationAttributes');
+    this.to('ec2:RegisterInstanceEventNotificationAttributes');
     return this;
   }
 
@@ -10204,7 +10204,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterTransitGatewayMulticastGroupMembers.html
    */
   public toRegisterTransitGatewayMulticastGroupMembers() {
-    this.add('ec2:RegisterTransitGatewayMulticastGroupMembers');
+    this.to('ec2:RegisterTransitGatewayMulticastGroupMembers');
     return this;
   }
 
@@ -10216,7 +10216,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterTransitGatewayMulticastGroupSources.html
    */
   public toRegisterTransitGatewayMulticastGroupSources() {
-    this.add('ec2:RegisterTransitGatewayMulticastGroupSources');
+    this.to('ec2:RegisterTransitGatewayMulticastGroupSources');
     return this;
   }
 
@@ -10228,7 +10228,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RejectTransitGatewayPeeringAttachment.html
    */
   public toRejectTransitGatewayPeeringAttachment() {
-    this.add('ec2:RejectTransitGatewayPeeringAttachment');
+    this.to('ec2:RejectTransitGatewayPeeringAttachment');
     return this;
   }
 
@@ -10240,7 +10240,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RejectTransitGatewayVpcAttachment.html
    */
   public toRejectTransitGatewayVpcAttachment() {
-    this.add('ec2:RejectTransitGatewayVpcAttachment');
+    this.to('ec2:RejectTransitGatewayVpcAttachment');
     return this;
   }
 
@@ -10252,7 +10252,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RejectVpcEndpointConnections.html
    */
   public toRejectVpcEndpointConnections() {
-    this.add('ec2:RejectVpcEndpointConnections');
+    this.to('ec2:RejectVpcEndpointConnections');
     return this;
   }
 
@@ -10264,7 +10264,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RejectVpcPeeringConnection.html
    */
   public toRejectVpcPeeringConnection() {
-    this.add('ec2:RejectVpcPeeringConnection');
+    this.to('ec2:RejectVpcPeeringConnection');
     return this;
   }
 
@@ -10276,7 +10276,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseAddress.html
    */
   public toReleaseAddress() {
-    this.add('ec2:ReleaseAddress');
+    this.to('ec2:ReleaseAddress');
     return this;
   }
 
@@ -10288,7 +10288,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseHosts.html
    */
   public toReleaseHosts() {
-    this.add('ec2:ReleaseHosts');
+    this.to('ec2:ReleaseHosts');
     return this;
   }
 
@@ -10303,7 +10303,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceIamInstanceProfileAssociation.html
    */
   public toReplaceIamInstanceProfileAssociation() {
-    this.add('ec2:ReplaceIamInstanceProfileAssociation');
+    this.to('ec2:ReplaceIamInstanceProfileAssociation');
     return this;
   }
 
@@ -10315,7 +10315,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceNetworkAclAssociation.html
    */
   public toReplaceNetworkAclAssociation() {
-    this.add('ec2:ReplaceNetworkAclAssociation');
+    this.to('ec2:ReplaceNetworkAclAssociation');
     return this;
   }
 
@@ -10327,7 +10327,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceNetworkAclEntry.html
    */
   public toReplaceNetworkAclEntry() {
-    this.add('ec2:ReplaceNetworkAclEntry');
+    this.to('ec2:ReplaceNetworkAclEntry');
     return this;
   }
 
@@ -10339,7 +10339,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceRoute.html
    */
   public toReplaceRoute() {
-    this.add('ec2:ReplaceRoute');
+    this.to('ec2:ReplaceRoute');
     return this;
   }
 
@@ -10351,7 +10351,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceRouteTableAssociation.html
    */
   public toReplaceRouteTableAssociation() {
-    this.add('ec2:ReplaceRouteTableAssociation');
+    this.to('ec2:ReplaceRouteTableAssociation');
     return this;
   }
 
@@ -10363,7 +10363,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceTransitGatewayRoute.html
    */
   public toReplaceTransitGatewayRoute() {
-    this.add('ec2:ReplaceTransitGatewayRoute');
+    this.to('ec2:ReplaceTransitGatewayRoute');
     return this;
   }
 
@@ -10375,7 +10375,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReportInstanceStatus.html
    */
   public toReportInstanceStatus() {
-    this.add('ec2:ReportInstanceStatus');
+    this.to('ec2:ReportInstanceStatus');
     return this;
   }
 
@@ -10387,7 +10387,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html
    */
   public toRequestSpotFleet() {
-    this.add('ec2:RequestSpotFleet');
+    this.to('ec2:RequestSpotFleet');
     return this;
   }
 
@@ -10399,7 +10399,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html
    */
   public toRequestSpotInstances() {
-    this.add('ec2:RequestSpotInstances');
+    this.to('ec2:RequestSpotInstances');
     return this;
   }
 
@@ -10411,7 +10411,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetEbsDefaultKmsKeyId.html
    */
   public toResetEbsDefaultKmsKeyId() {
-    this.add('ec2:ResetEbsDefaultKmsKeyId');
+    this.to('ec2:ResetEbsDefaultKmsKeyId');
     return this;
   }
 
@@ -10423,7 +10423,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetFpgaImageAttribute.html
    */
   public toResetFpgaImageAttribute() {
-    this.add('ec2:ResetFpgaImageAttribute');
+    this.to('ec2:ResetFpgaImageAttribute');
     return this;
   }
 
@@ -10435,7 +10435,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetImageAttribute.html
    */
   public toResetImageAttribute() {
-    this.add('ec2:ResetImageAttribute');
+    this.to('ec2:ResetImageAttribute');
     return this;
   }
 
@@ -10447,7 +10447,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetInstanceAttribute.html
    */
   public toResetInstanceAttribute() {
-    this.add('ec2:ResetInstanceAttribute');
+    this.to('ec2:ResetInstanceAttribute');
     return this;
   }
 
@@ -10459,7 +10459,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetNetworkInterfaceAttribute.html
    */
   public toResetNetworkInterfaceAttribute() {
-    this.add('ec2:ResetNetworkInterfaceAttribute');
+    this.to('ec2:ResetNetworkInterfaceAttribute');
     return this;
   }
 
@@ -10471,7 +10471,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetSnapshotAttribute.html
    */
   public toResetSnapshotAttribute() {
-    this.add('ec2:ResetSnapshotAttribute');
+    this.to('ec2:ResetSnapshotAttribute');
     return this;
   }
 
@@ -10483,7 +10483,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RestoreAddressToClassic.html
    */
   public toRestoreAddressToClassic() {
-    this.add('ec2:RestoreAddressToClassic');
+    this.to('ec2:RestoreAddressToClassic');
     return this;
   }
 
@@ -10495,7 +10495,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RestoreManagedPrefixListVersion.html
    */
   public toRestoreManagedPrefixListVersion() {
-    this.add('ec2:RestoreManagedPrefixListVersion');
+    this.to('ec2:RestoreManagedPrefixListVersion');
     return this;
   }
 
@@ -10507,7 +10507,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeClientVpnIngress.html
    */
   public toRevokeClientVpnIngress() {
-    this.add('ec2:RevokeClientVpnIngress');
+    this.to('ec2:RevokeClientVpnIngress');
     return this;
   }
 
@@ -10519,7 +10519,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeSecurityGroupEgress.html
    */
   public toRevokeSecurityGroupEgress() {
-    this.add('ec2:RevokeSecurityGroupEgress');
+    this.to('ec2:RevokeSecurityGroupEgress');
     return this;
   }
 
@@ -10531,7 +10531,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeSecurityGroupIngress.html
    */
   public toRevokeSecurityGroupIngress() {
-    this.add('ec2:RevokeSecurityGroupIngress');
+    this.to('ec2:RevokeSecurityGroupIngress');
     return this;
   }
 
@@ -10543,7 +10543,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html
    */
   public toRunInstances() {
-    this.add('ec2:RunInstances');
+    this.to('ec2:RunInstances');
     return this;
   }
 
@@ -10555,7 +10555,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunScheduledInstances.html
    */
   public toRunScheduledInstances() {
-    this.add('ec2:RunScheduledInstances');
+    this.to('ec2:RunScheduledInstances');
     return this;
   }
 
@@ -10567,7 +10567,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchLocalGatewayRoutes.html
    */
   public toSearchLocalGatewayRoutes() {
-    this.add('ec2:SearchLocalGatewayRoutes');
+    this.to('ec2:SearchLocalGatewayRoutes');
     return this;
   }
 
@@ -10579,7 +10579,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html
    */
   public toSearchTransitGatewayMulticastGroups() {
-    this.add('ec2:SearchTransitGatewayMulticastGroups');
+    this.to('ec2:SearchTransitGatewayMulticastGroups');
     return this;
   }
 
@@ -10591,7 +10591,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayRoutes.html
    */
   public toSearchTransitGatewayRoutes() {
-    this.add('ec2:SearchTransitGatewayRoutes');
+    this.to('ec2:SearchTransitGatewayRoutes');
     return this;
   }
 
@@ -10603,7 +10603,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SendDiagnosticInterrupt.html
    */
   public toSendDiagnosticInterrupt() {
-    this.add('ec2:SendDiagnosticInterrupt');
+    this.to('ec2:SendDiagnosticInterrupt');
     return this;
   }
 
@@ -10615,7 +10615,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartInstances.html
    */
   public toStartInstances() {
-    this.add('ec2:StartInstances');
+    this.to('ec2:StartInstances');
     return this;
   }
 
@@ -10627,7 +10627,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartVpcEndpointServicePrivateDnsVerification.html
    */
   public toStartVpcEndpointServicePrivateDnsVerification() {
-    this.add('ec2:StartVpcEndpointServicePrivateDnsVerification');
+    this.to('ec2:StartVpcEndpointServicePrivateDnsVerification');
     return this;
   }
 
@@ -10639,7 +10639,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StopInstances.html
    */
   public toStopInstances() {
-    this.add('ec2:StopInstances');
+    this.to('ec2:StopInstances');
     return this;
   }
 
@@ -10651,7 +10651,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateClientVpnConnections.html
    */
   public toTerminateClientVpnConnections() {
-    this.add('ec2:TerminateClientVpnConnections');
+    this.to('ec2:TerminateClientVpnConnections');
     return this;
   }
 
@@ -10663,7 +10663,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html
    */
   public toTerminateInstances() {
-    this.add('ec2:TerminateInstances');
+    this.to('ec2:TerminateInstances');
     return this;
   }
 
@@ -10675,7 +10675,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnassignIpv6Addresses.html
    */
   public toUnassignIpv6Addresses() {
-    this.add('ec2:UnassignIpv6Addresses');
+    this.to('ec2:UnassignIpv6Addresses');
     return this;
   }
 
@@ -10687,7 +10687,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnassignPrivateIpAddresses.html
    */
   public toUnassignPrivateIpAddresses() {
-    this.add('ec2:UnassignPrivateIpAddresses');
+    this.to('ec2:UnassignPrivateIpAddresses');
     return this;
   }
 
@@ -10699,7 +10699,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnmonitorInstances.html
    */
   public toUnmonitorInstances() {
-    this.add('ec2:UnmonitorInstances');
+    this.to('ec2:UnmonitorInstances');
     return this;
   }
 
@@ -10711,7 +10711,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UpdateSecurityGroupRuleDescriptionsEgress.html
    */
   public toUpdateSecurityGroupRuleDescriptionsEgress() {
-    this.add('ec2:UpdateSecurityGroupRuleDescriptionsEgress');
+    this.to('ec2:UpdateSecurityGroupRuleDescriptionsEgress');
     return this;
   }
 
@@ -10723,7 +10723,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UpdateSecurityGroupRuleDescriptionsIngress.html
    */
   public toUpdateSecurityGroupRuleDescriptionsIngress() {
-    this.add('ec2:UpdateSecurityGroupRuleDescriptionsIngress');
+    this.to('ec2:UpdateSecurityGroupRuleDescriptionsIngress');
     return this;
   }
 
@@ -10735,7 +10735,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_WithdrawByoipCidr.html
    */
   public toWithdrawByoipCidr() {
-    this.add('ec2:WithdrawByoipCidr');
+    this.to('ec2:WithdrawByoipCidr');
     return this;
   }
 

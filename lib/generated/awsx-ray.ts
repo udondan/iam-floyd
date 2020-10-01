@@ -269,7 +269,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html
    */
   public toBatchGetTraces() {
-    this.add('xray:BatchGetTraces');
+    this.to('xray:BatchGetTraces');
     return this;
   }
 
@@ -285,7 +285,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_CreateGroup.html
    */
   public toCreateGroup() {
-    this.add('xray:CreateGroup');
+    this.to('xray:CreateGroup');
     return this;
   }
 
@@ -301,7 +301,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_CreateSamplingRule.html
    */
   public toCreateSamplingRule() {
-    this.add('xray:CreateSamplingRule');
+    this.to('xray:CreateSamplingRule');
     return this;
   }
 
@@ -316,7 +316,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_DeleteGroup.html
    */
   public toDeleteGroup() {
-    this.add('xray:DeleteGroup');
+    this.to('xray:DeleteGroup');
     return this;
   }
 
@@ -331,7 +331,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_DeleteSamplingRule.html
    */
   public toDeleteSamplingRule() {
-    this.add('xray:DeleteSamplingRule');
+    this.to('xray:DeleteSamplingRule');
     return this;
   }
 
@@ -343,7 +343,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_GetEncryptionConfig.html
    */
   public toGetEncryptionConfig() {
-    this.add('xray:GetEncryptionConfig');
+    this.to('xray:GetEncryptionConfig');
     return this;
   }
 
@@ -358,7 +358,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_GetGroup.html
    */
   public toGetGroup() {
-    this.add('xray:GetGroup');
+    this.to('xray:GetGroup');
     return this;
   }
 
@@ -370,7 +370,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_GetGroups.html
    */
   public toGetGroups() {
-    this.add('xray:GetGroups');
+    this.to('xray:GetGroups');
     return this;
   }
 
@@ -382,7 +382,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_GetInsight.html
    */
   public toGetInsight() {
-    this.add('xray:GetInsight');
+    this.to('xray:GetInsight');
     return this;
   }
 
@@ -394,7 +394,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_GetInsightEvents.html
    */
   public toGetInsightEvents() {
-    this.add('xray:GetInsightEvents');
+    this.to('xray:GetInsightEvents');
     return this;
   }
 
@@ -406,7 +406,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_GetInsightImpactGraph.html
    */
   public toGetInsightImpactGraph() {
-    this.add('xray:GetInsightImpactGraph');
+    this.to('xray:GetInsightImpactGraph');
     return this;
   }
 
@@ -418,7 +418,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_GetInsightSummaries.html
    */
   public toGetInsightSummaries() {
-    this.add('xray:GetInsightSummaries');
+    this.to('xray:GetInsightSummaries');
     return this;
   }
 
@@ -430,7 +430,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html
    */
   public toGetSamplingRules() {
-    this.add('xray:GetSamplingRules');
+    this.to('xray:GetSamplingRules');
     return this;
   }
 
@@ -442,7 +442,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingStatisticSummaries.html
    */
   public toGetSamplingStatisticSummaries() {
-    this.add('xray:GetSamplingStatisticSummaries');
+    this.to('xray:GetSamplingStatisticSummaries');
     return this;
   }
 
@@ -454,7 +454,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html
    */
   public toGetSamplingTargets() {
-    this.add('xray:GetSamplingTargets');
+    this.to('xray:GetSamplingTargets');
     return this;
   }
 
@@ -466,7 +466,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_GetServiceGraph.html
    */
   public toGetServiceGraph() {
-    this.add('xray:GetServiceGraph');
+    this.to('xray:GetServiceGraph');
     return this;
   }
 
@@ -478,7 +478,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_GetTimeSeriesServiceStatistics.html
    */
   public toGetTimeSeriesServiceStatistics() {
-    this.add('xray:GetTimeSeriesServiceStatistics');
+    this.to('xray:GetTimeSeriesServiceStatistics');
     return this;
   }
 
@@ -490,7 +490,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_GetTraceGraph.html
    */
   public toGetTraceGraph() {
-    this.add('xray:GetTraceGraph');
+    this.to('xray:GetTraceGraph');
     return this;
   }
 
@@ -502,7 +502,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_GetTraceSummaries.html
    */
   public toGetTraceSummaries() {
-    this.add('xray:GetTraceSummaries');
+    this.to('xray:GetTraceSummaries');
     return this;
   }
 
@@ -514,7 +514,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('xray:ListTagsForResource');
+    this.to('xray:ListTagsForResource');
     return this;
   }
 
@@ -526,7 +526,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_PutEncryptionConfig.html
    */
   public toPutEncryptionConfig() {
-    this.add('xray:PutEncryptionConfig');
+    this.to('xray:PutEncryptionConfig');
     return this;
   }
 
@@ -538,7 +538,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_PutTelemetryRecords.html
    */
   public toPutTelemetryRecords() {
-    this.add('xray:PutTelemetryRecords');
+    this.to('xray:PutTelemetryRecords');
     return this;
   }
 
@@ -550,7 +550,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html
    */
   public toPutTraceSegments() {
-    this.add('xray:PutTraceSegments');
+    this.to('xray:PutTraceSegments');
     return this;
   }
 
@@ -566,7 +566,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_TagResource.html
    */
   public toTagResource() {
-    this.add('xray:TagResource');
+    this.to('xray:TagResource');
     return this;
   }
 
@@ -581,7 +581,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('xray:UntagResource');
+    this.to('xray:UntagResource');
     return this;
   }
 
@@ -596,7 +596,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_UpdateGroup.html
    */
   public toUpdateGroup() {
-    this.add('xray:UpdateGroup');
+    this.to('xray:UpdateGroup');
     return this;
   }
 
@@ -611,7 +611,7 @@ export class Xray extends PolicyStatement {
    * https://docs.aws.amazon.com/xray/latest/api/API_UpdateSamplingRule.html
    */
   public toUpdateSamplingRule() {
-    this.add('xray:UpdateSamplingRule');
+    this.to('xray:UpdateSamplingRule');
     return this;
   }
 

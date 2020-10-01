@@ -213,7 +213,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toAddMemberToGroup() {
-    this.add('sso-directory:AddMemberToGroup');
+    this.to('sso-directory:AddMemberToGroup');
     return this;
   }
 
@@ -225,7 +225,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCompleteVirtualMfaDeviceRegistration() {
-    this.add('sso-directory:CompleteVirtualMfaDeviceRegistration');
+    this.to('sso-directory:CompleteVirtualMfaDeviceRegistration');
     return this;
   }
 
@@ -237,7 +237,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateAlias() {
-    this.add('sso-directory:CreateAlias');
+    this.to('sso-directory:CreateAlias');
     return this;
   }
 
@@ -249,7 +249,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateBearerToken() {
-    this.add('sso-directory:CreateBearerToken');
+    this.to('sso-directory:CreateBearerToken');
     return this;
   }
 
@@ -261,7 +261,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateExternalIdPConfigurationForDirectory() {
-    this.add('sso-directory:CreateExternalIdPConfigurationForDirectory');
+    this.to('sso-directory:CreateExternalIdPConfigurationForDirectory');
     return this;
   }
 
@@ -273,7 +273,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateGroup() {
-    this.add('sso-directory:CreateGroup');
+    this.to('sso-directory:CreateGroup');
     return this;
   }
 
@@ -285,7 +285,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateProvisioningTenant() {
-    this.add('sso-directory:CreateProvisioningTenant');
+    this.to('sso-directory:CreateProvisioningTenant');
     return this;
   }
 
@@ -297,7 +297,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateUser() {
-    this.add('sso-directory:CreateUser');
+    this.to('sso-directory:CreateUser');
     return this;
   }
 
@@ -309,7 +309,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteBearerToken() {
-    this.add('sso-directory:DeleteBearerToken');
+    this.to('sso-directory:DeleteBearerToken');
     return this;
   }
 
@@ -321,7 +321,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteExternalIdPConfigurationForDirectory() {
-    this.add('sso-directory:DeleteExternalIdPConfigurationForDirectory');
+    this.to('sso-directory:DeleteExternalIdPConfigurationForDirectory');
     return this;
   }
 
@@ -333,7 +333,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteGroup() {
-    this.add('sso-directory:DeleteGroup');
+    this.to('sso-directory:DeleteGroup');
     return this;
   }
 
@@ -345,7 +345,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteMfaDeviceForUser() {
-    this.add('sso-directory:DeleteMfaDeviceForUser');
+    this.to('sso-directory:DeleteMfaDeviceForUser');
     return this;
   }
 
@@ -357,7 +357,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteProvisioningTenant() {
-    this.add('sso-directory:DeleteProvisioningTenant');
+    this.to('sso-directory:DeleteProvisioningTenant');
     return this;
   }
 
@@ -369,7 +369,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteUser() {
-    this.add('sso-directory:DeleteUser');
+    this.to('sso-directory:DeleteUser');
     return this;
   }
 
@@ -381,7 +381,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDescribeDirectory() {
-    this.add('sso-directory:DescribeDirectory');
+    this.to('sso-directory:DescribeDirectory');
     return this;
   }
 
@@ -393,7 +393,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDescribeGroups() {
-    this.add('sso-directory:DescribeGroups');
+    this.to('sso-directory:DescribeGroups');
     return this;
   }
 
@@ -405,7 +405,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDescribeUsers() {
-    this.add('sso-directory:DescribeUsers');
+    this.to('sso-directory:DescribeUsers');
     return this;
   }
 
@@ -417,7 +417,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDisableExternalIdPConfigurationForDirectory() {
-    this.add('sso-directory:DisableExternalIdPConfigurationForDirectory');
+    this.to('sso-directory:DisableExternalIdPConfigurationForDirectory');
     return this;
   }
 
@@ -429,7 +429,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDisableUser() {
-    this.add('sso-directory:DisableUser');
+    this.to('sso-directory:DisableUser');
     return this;
   }
 
@@ -441,7 +441,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toEnableExternalIdPConfigurationForDirectory() {
-    this.add('sso-directory:EnableExternalIdPConfigurationForDirectory');
+    this.to('sso-directory:EnableExternalIdPConfigurationForDirectory');
     return this;
   }
 
@@ -453,7 +453,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toEnableUser() {
-    this.add('sso-directory:EnableUser');
+    this.to('sso-directory:EnableUser');
     return this;
   }
 
@@ -465,7 +465,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetAWSSPConfigurationForDirectory() {
-    this.add('sso-directory:GetAWSSPConfigurationForDirectory');
+    this.to('sso-directory:GetAWSSPConfigurationForDirectory');
     return this;
   }
 
@@ -477,7 +477,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListBearerTokens() {
-    this.add('sso-directory:ListBearerTokens');
+    this.to('sso-directory:ListBearerTokens');
     return this;
   }
 
@@ -489,7 +489,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListExternalIdPConfigurationsForDirectory() {
-    this.add('sso-directory:ListExternalIdPConfigurationsForDirectory');
+    this.to('sso-directory:ListExternalIdPConfigurationsForDirectory');
     return this;
   }
 
@@ -501,7 +501,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListGroupsForUser() {
-    this.add('sso-directory:ListGroupsForUser');
+    this.to('sso-directory:ListGroupsForUser');
     return this;
   }
 
@@ -513,7 +513,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListMembersInGroup() {
-    this.add('sso-directory:ListMembersInGroup');
+    this.to('sso-directory:ListMembersInGroup');
     return this;
   }
 
@@ -525,7 +525,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListMfaDevicesForUser() {
-    this.add('sso-directory:ListMfaDevicesForUser');
+    this.to('sso-directory:ListMfaDevicesForUser');
     return this;
   }
 
@@ -537,7 +537,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListProvisioningTenants() {
-    this.add('sso-directory:ListProvisioningTenants');
+    this.to('sso-directory:ListProvisioningTenants');
     return this;
   }
 
@@ -549,7 +549,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toRemoveMemberFromGroup() {
-    this.add('sso-directory:RemoveMemberFromGroup');
+    this.to('sso-directory:RemoveMemberFromGroup');
     return this;
   }
 
@@ -561,7 +561,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toSearchGroups() {
-    this.add('sso-directory:SearchGroups');
+    this.to('sso-directory:SearchGroups');
     return this;
   }
 
@@ -573,7 +573,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toSearchUsers() {
-    this.add('sso-directory:SearchUsers');
+    this.to('sso-directory:SearchUsers');
     return this;
   }
 
@@ -585,7 +585,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toStartVirtualMfaDeviceRegistration() {
-    this.add('sso-directory:StartVirtualMfaDeviceRegistration');
+    this.to('sso-directory:StartVirtualMfaDeviceRegistration');
     return this;
   }
 
@@ -597,7 +597,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateExternalIdPConfigurationForDirectory() {
-    this.add('sso-directory:UpdateExternalIdPConfigurationForDirectory');
+    this.to('sso-directory:UpdateExternalIdPConfigurationForDirectory');
     return this;
   }
 
@@ -609,7 +609,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateGroup() {
-    this.add('sso-directory:UpdateGroup');
+    this.to('sso-directory:UpdateGroup');
     return this;
   }
 
@@ -621,7 +621,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdatePassword() {
-    this.add('sso-directory:UpdatePassword');
+    this.to('sso-directory:UpdatePassword');
     return this;
   }
 
@@ -633,7 +633,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateUser() {
-    this.add('sso-directory:UpdateUser');
+    this.to('sso-directory:UpdateUser');
     return this;
   }
 
@@ -645,7 +645,7 @@ export class SsoDirectory extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toVerifyEmail() {
-    this.add('sso-directory:VerifyEmail');
+    this.to('sso-directory:VerifyEmail');
     return this;
   }
 }

@@ -117,7 +117,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toCreateQuote() {
-    this.add('elemental-appliances-software:CreateQuote');
+    this.to('elemental-appliances-software:CreateQuote');
     return this;
   }
 
@@ -129,7 +129,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toGetQuote() {
-    this.add('elemental-appliances-software:GetQuote');
+    this.to('elemental-appliances-software:GetQuote');
     return this;
   }
 
@@ -141,7 +141,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toListQuotes() {
-    this.add('elemental-appliances-software:ListQuotes');
+    this.to('elemental-appliances-software:ListQuotes');
     return this;
   }
 
@@ -153,7 +153,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toListTagsForResource() {
-    this.add('elemental-appliances-software:ListTagsForResource');
+    this.to('elemental-appliances-software:ListTagsForResource');
     return this;
   }
 
@@ -169,7 +169,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toTagResource() {
-    this.add('elemental-appliances-software:TagResource');
+    this.to('elemental-appliances-software:TagResource');
     return this;
   }
 
@@ -184,7 +184,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toUntagResource() {
-    this.add('elemental-appliances-software:UntagResource');
+    this.to('elemental-appliances-software:UntagResource');
     return this;
   }
 
@@ -196,7 +196,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toUpdateQuote() {
-    this.add('elemental-appliances-software:UpdateQuote');
+    this.to('elemental-appliances-software:UpdateQuote');
     return this;
   }
 

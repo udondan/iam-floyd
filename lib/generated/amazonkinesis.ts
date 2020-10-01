@@ -310,7 +310,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_AddTagsToStream.html
    */
   public toAddTagsToStream() {
-    this.add('kinesis:AddTagsToStream');
+    this.to('kinesis:AddTagsToStream');
     return this;
   }
 
@@ -322,7 +322,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html
    */
   public toCreateStream() {
-    this.add('kinesis:CreateStream');
+    this.to('kinesis:CreateStream');
     return this;
   }
 
@@ -334,7 +334,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DecreaseStreamRetentionPeriod.html
    */
   public toDecreaseStreamRetentionPeriod() {
-    this.add('kinesis:DecreaseStreamRetentionPeriod');
+    this.to('kinesis:DecreaseStreamRetentionPeriod');
     return this;
   }
 
@@ -346,7 +346,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteStream.html
    */
   public toDeleteStream() {
-    this.add('kinesis:DeleteStream');
+    this.to('kinesis:DeleteStream');
     return this;
   }
 
@@ -358,7 +358,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeregisterStreamConsumer.html
    */
   public toDeregisterStreamConsumer() {
-    this.add('kinesis:DeregisterStreamConsumer');
+    this.to('kinesis:DeregisterStreamConsumer');
     return this;
   }
 
@@ -370,7 +370,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeLimits.html
    */
   public toDescribeLimits() {
-    this.add('kinesis:DescribeLimits');
+    this.to('kinesis:DescribeLimits');
     return this;
   }
 
@@ -382,7 +382,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStream.html
    */
   public toDescribeStream() {
-    this.add('kinesis:DescribeStream');
+    this.to('kinesis:DescribeStream');
     return this;
   }
 
@@ -394,7 +394,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStreamConsumer.html
    */
   public toDescribeStreamConsumer() {
-    this.add('kinesis:DescribeStreamConsumer');
+    this.to('kinesis:DescribeStreamConsumer');
     return this;
   }
 
@@ -406,7 +406,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStreamSummary.html
    */
   public toDescribeStreamSummary() {
-    this.add('kinesis:DescribeStreamSummary');
+    this.to('kinesis:DescribeStreamSummary');
     return this;
   }
 
@@ -418,7 +418,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DisableEnhancedMonitoring.html
    */
   public toDisableEnhancedMonitoring() {
-    this.add('kinesis:DisableEnhancedMonitoring');
+    this.to('kinesis:DisableEnhancedMonitoring');
     return this;
   }
 
@@ -430,7 +430,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_EnableEnhancedMonitoring.html
    */
   public toEnableEnhancedMonitoring() {
-    this.add('kinesis:EnableEnhancedMonitoring');
+    this.to('kinesis:EnableEnhancedMonitoring');
     return this;
   }
 
@@ -442,7 +442,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html
    */
   public toGetRecords() {
-    this.add('kinesis:GetRecords');
+    this.to('kinesis:GetRecords');
     return this;
   }
 
@@ -454,7 +454,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html
    */
   public toGetShardIterator() {
-    this.add('kinesis:GetShardIterator');
+    this.to('kinesis:GetShardIterator');
     return this;
   }
 
@@ -466,7 +466,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_IncreaseStreamRetentionPeriod.html
    */
   public toIncreaseStreamRetentionPeriod() {
-    this.add('kinesis:IncreaseStreamRetentionPeriod');
+    this.to('kinesis:IncreaseStreamRetentionPeriod');
     return this;
   }
 
@@ -478,7 +478,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListShards.html
    */
   public toListShards() {
-    this.add('kinesis:ListShards');
+    this.to('kinesis:ListShards');
     return this;
   }
 
@@ -490,7 +490,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreamConsumers.html
    */
   public toListStreamConsumers() {
-    this.add('kinesis:ListStreamConsumers');
+    this.to('kinesis:ListStreamConsumers');
     return this;
   }
 
@@ -502,7 +502,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreams.html
    */
   public toListStreams() {
-    this.add('kinesis:ListStreams');
+    this.to('kinesis:ListStreams');
     return this;
   }
 
@@ -514,7 +514,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListTagsForStream.html
    */
   public toListTagsForStream() {
-    this.add('kinesis:ListTagsForStream');
+    this.to('kinesis:ListTagsForStream');
     return this;
   }
 
@@ -526,7 +526,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_MergeShards.html
    */
   public toMergeShards() {
-    this.add('kinesis:MergeShards');
+    this.to('kinesis:MergeShards');
     return this;
   }
 
@@ -538,7 +538,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html
    */
   public toPutRecord() {
-    this.add('kinesis:PutRecord');
+    this.to('kinesis:PutRecord');
     return this;
   }
 
@@ -550,7 +550,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecords.html
    */
   public toPutRecords() {
-    this.add('kinesis:PutRecords');
+    this.to('kinesis:PutRecords');
     return this;
   }
 
@@ -562,7 +562,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_RegisterStreamConsumer.html
    */
   public toRegisterStreamConsumer() {
-    this.add('kinesis:RegisterStreamConsumer');
+    this.to('kinesis:RegisterStreamConsumer');
     return this;
   }
 
@@ -574,7 +574,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_RemoveTagsFromStream.html
    */
   public toRemoveTagsFromStream() {
-    this.add('kinesis:RemoveTagsFromStream');
+    this.to('kinesis:RemoveTagsFromStream');
     return this;
   }
 
@@ -586,7 +586,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_SplitShard.html
    */
   public toSplitShard() {
-    this.add('kinesis:SplitShard');
+    this.to('kinesis:SplitShard');
     return this;
   }
 
@@ -598,7 +598,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_StartStreamEncryption.html
    */
   public toStartStreamEncryption() {
-    this.add('kinesis:StartStreamEncryption');
+    this.to('kinesis:StartStreamEncryption');
     return this;
   }
 
@@ -610,7 +610,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_StopStreamEncryption.html
    */
   public toStopStreamEncryption() {
-    this.add('kinesis:StopStreamEncryption');
+    this.to('kinesis:StopStreamEncryption');
     return this;
   }
 
@@ -622,7 +622,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_SubscribeToShard.html
    */
   public toSubscribeToShard() {
-    this.add('kinesis:SubscribeToShard');
+    this.to('kinesis:SubscribeToShard');
     return this;
   }
 
@@ -634,7 +634,7 @@ export class Kinesis extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateShardCount.html
    */
   public toUpdateShardCount() {
-    this.add('kinesis:UpdateShardCount');
+    this.to('kinesis:UpdateShardCount');
     return this;
   }
 

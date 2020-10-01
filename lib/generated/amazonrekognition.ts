@@ -414,7 +414,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_CompareFaces.html
    */
   public toCompareFaces() {
-    this.add('rekognition:CompareFaces');
+    this.to('rekognition:CompareFaces');
     return this;
   }
 
@@ -426,7 +426,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateCollection.html
    */
   public toCreateCollection() {
-    this.add('rekognition:CreateCollection');
+    this.to('rekognition:CreateCollection');
     return this;
   }
 
@@ -438,7 +438,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProject.html
    */
   public toCreateProject() {
-    this.add('rekognition:CreateProject');
+    this.to('rekognition:CreateProject');
     return this;
   }
 
@@ -450,7 +450,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProjectVersion.html
    */
   public toCreateProjectVersion() {
-    this.add('rekognition:CreateProjectVersion');
+    this.to('rekognition:CreateProjectVersion');
     return this;
   }
 
@@ -462,7 +462,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateStreamProcessor.html
    */
   public toCreateStreamProcessor() {
-    this.add('rekognition:CreateStreamProcessor');
+    this.to('rekognition:CreateStreamProcessor');
     return this;
   }
 
@@ -474,7 +474,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteCollection.html
    */
   public toDeleteCollection() {
-    this.add('rekognition:DeleteCollection');
+    this.to('rekognition:DeleteCollection');
     return this;
   }
 
@@ -486,7 +486,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteFaces.html
    */
   public toDeleteFaces() {
-    this.add('rekognition:DeleteFaces');
+    this.to('rekognition:DeleteFaces');
     return this;
   }
 
@@ -498,7 +498,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteProject.html
    */
   public toDeleteProject() {
-    this.add('rekognition:DeleteProject');
+    this.to('rekognition:DeleteProject');
     return this;
   }
 
@@ -510,7 +510,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteProjectVersion.html
    */
   public toDeleteProjectVersion() {
-    this.add('rekognition:DeleteProjectVersion');
+    this.to('rekognition:DeleteProjectVersion');
     return this;
   }
 
@@ -522,7 +522,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteStreamProcessor.html
    */
   public toDeleteStreamProcessor() {
-    this.add('rekognition:DeleteStreamProcessor');
+    this.to('rekognition:DeleteStreamProcessor');
     return this;
   }
 
@@ -534,7 +534,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeCollection.html
    */
   public toDescribeCollection() {
-    this.add('rekognition:DescribeCollection');
+    this.to('rekognition:DescribeCollection');
     return this;
   }
 
@@ -546,7 +546,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjectVersions.html
    */
   public toDescribeProjectVersions() {
-    this.add('rekognition:DescribeProjectVersions');
+    this.to('rekognition:DescribeProjectVersions');
     return this;
   }
 
@@ -558,7 +558,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjects.html
    */
   public toDescribeProjects() {
-    this.add('rekognition:DescribeProjects');
+    this.to('rekognition:DescribeProjects');
     return this;
   }
 
@@ -570,7 +570,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeStreamProcessorh.html
    */
   public toDescribeStreamProcessor() {
-    this.add('rekognition:DescribeStreamProcessor');
+    this.to('rekognition:DescribeStreamProcessor');
     return this;
   }
 
@@ -582,7 +582,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectCustomLabels.html
    */
   public toDetectCustomLabels() {
-    this.add('rekognition:DetectCustomLabels');
+    this.to('rekognition:DetectCustomLabels');
     return this;
   }
 
@@ -594,7 +594,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectFaces.html
    */
   public toDetectFaces() {
-    this.add('rekognition:DetectFaces');
+    this.to('rekognition:DetectFaces');
     return this;
   }
 
@@ -606,7 +606,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectLabels.html
    */
   public toDetectLabels() {
-    this.add('rekognition:DetectLabels');
+    this.to('rekognition:DetectLabels');
     return this;
   }
 
@@ -618,7 +618,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectModerationLabels.html
    */
   public toDetectModerationLabels() {
-    this.add('rekognition:DetectModerationLabels');
+    this.to('rekognition:DetectModerationLabels');
     return this;
   }
 
@@ -630,7 +630,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectText.html
    */
   public toDetectText() {
-    this.add('rekognition:DetectText');
+    this.to('rekognition:DetectText');
     return this;
   }
 
@@ -642,7 +642,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetCelebrityInfo.html
    */
   public toGetCelebrityInfo() {
-    this.add('rekognition:GetCelebrityInfo');
+    this.to('rekognition:GetCelebrityInfo');
     return this;
   }
 
@@ -654,7 +654,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetCelebrityRecognition.html
    */
   public toGetCelebrityRecognition() {
-    this.add('rekognition:GetCelebrityRecognition');
+    this.to('rekognition:GetCelebrityRecognition');
     return this;
   }
 
@@ -666,7 +666,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetContentModeration.html
    */
   public toGetContentModeration() {
-    this.add('rekognition:GetContentModeration');
+    this.to('rekognition:GetContentModeration');
     return this;
   }
 
@@ -678,7 +678,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetFaceDetection.html
    */
   public toGetFaceDetection() {
-    this.add('rekognition:GetFaceDetection');
+    this.to('rekognition:GetFaceDetection');
     return this;
   }
 
@@ -690,7 +690,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetFaceSearch.html
    */
   public toGetFaceSearch() {
-    this.add('rekognition:GetFaceSearch');
+    this.to('rekognition:GetFaceSearch');
     return this;
   }
 
@@ -702,7 +702,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetLabelDetection.html
    */
   public toGetLabelDetection() {
-    this.add('rekognition:GetLabelDetection');
+    this.to('rekognition:GetLabelDetection');
     return this;
   }
 
@@ -714,7 +714,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetPersonTracking.html
    */
   public toGetPersonTracking() {
-    this.add('rekognition:GetPersonTracking');
+    this.to('rekognition:GetPersonTracking');
     return this;
   }
 
@@ -726,7 +726,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetSegmentDetection.html
    */
   public toGetSegmentDetection() {
-    this.add('rekognition:GetSegmentDetection');
+    this.to('rekognition:GetSegmentDetection');
     return this;
   }
 
@@ -738,7 +738,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetTextDetection.html
    */
   public toGetTextDetection() {
-    this.add('rekognition:GetTextDetection');
+    this.to('rekognition:GetTextDetection');
     return this;
   }
 
@@ -750,7 +750,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_IndexFaces.html
    */
   public toIndexFaces() {
-    this.add('rekognition:IndexFaces');
+    this.to('rekognition:IndexFaces');
     return this;
   }
 
@@ -762,7 +762,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListCollections.html
    */
   public toListCollections() {
-    this.add('rekognition:ListCollections');
+    this.to('rekognition:ListCollections');
     return this;
   }
 
@@ -774,7 +774,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListFaces.html
    */
   public toListFaces() {
-    this.add('rekognition:ListFaces');
+    this.to('rekognition:ListFaces');
     return this;
   }
 
@@ -786,7 +786,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListStreamProcessors.html
    */
   public toListStreamProcessors() {
-    this.add('rekognition:ListStreamProcessors');
+    this.to('rekognition:ListStreamProcessors');
     return this;
   }
 
@@ -798,7 +798,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_RecognizeCelebrities.html
    */
   public toRecognizeCelebrities() {
-    this.add('rekognition:RecognizeCelebrities');
+    this.to('rekognition:RecognizeCelebrities');
     return this;
   }
 
@@ -810,7 +810,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_SearchFaces.html
    */
   public toSearchFaces() {
-    this.add('rekognition:SearchFaces');
+    this.to('rekognition:SearchFaces');
     return this;
   }
 
@@ -822,7 +822,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_SearchFacesByImage.html
    */
   public toSearchFacesByImage() {
-    this.add('rekognition:SearchFacesByImage');
+    this.to('rekognition:SearchFacesByImage');
     return this;
   }
 
@@ -834,7 +834,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartCelebrityRecognition.html
    */
   public toStartCelebrityRecognition() {
-    this.add('rekognition:StartCelebrityRecognition');
+    this.to('rekognition:StartCelebrityRecognition');
     return this;
   }
 
@@ -846,7 +846,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartContentModeration.html
    */
   public toStartContentModeration() {
-    this.add('rekognition:StartContentModeration');
+    this.to('rekognition:StartContentModeration');
     return this;
   }
 
@@ -858,7 +858,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartFaceDetection.html
    */
   public toStartFaceDetection() {
-    this.add('rekognition:StartFaceDetection');
+    this.to('rekognition:StartFaceDetection');
     return this;
   }
 
@@ -870,7 +870,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartFaceSearch.html
    */
   public toStartFaceSearch() {
-    this.add('rekognition:StartFaceSearch');
+    this.to('rekognition:StartFaceSearch');
     return this;
   }
 
@@ -882,7 +882,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartLabelDetection.html
    */
   public toStartLabelDetection() {
-    this.add('rekognition:StartLabelDetection');
+    this.to('rekognition:StartLabelDetection');
     return this;
   }
 
@@ -894,7 +894,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartPersonTracking.html
    */
   public toStartPersonTracking() {
-    this.add('rekognition:StartPersonTracking');
+    this.to('rekognition:StartPersonTracking');
     return this;
   }
 
@@ -906,7 +906,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartProjectVersion.html
    */
   public toStartProjectVersion() {
-    this.add('rekognition:StartProjectVersion');
+    this.to('rekognition:StartProjectVersion');
     return this;
   }
 
@@ -918,7 +918,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartSegmentDetection.html
    */
   public toStartSegmentDetection() {
-    this.add('rekognition:StartSegmentDetection');
+    this.to('rekognition:StartSegmentDetection');
     return this;
   }
 
@@ -930,7 +930,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartStreamProcessor.html
    */
   public toStartStreamProcessor() {
-    this.add('rekognition:StartStreamProcessor');
+    this.to('rekognition:StartStreamProcessor');
     return this;
   }
 
@@ -942,7 +942,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartTextDetection.html
    */
   public toStartTextDetection() {
-    this.add('rekognition:StartTextDetection');
+    this.to('rekognition:StartTextDetection');
     return this;
   }
 
@@ -954,7 +954,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StopProjectVersion.html
    */
   public toStopProjectVersion() {
-    this.add('rekognition:StopProjectVersion');
+    this.to('rekognition:StopProjectVersion');
     return this;
   }
 
@@ -966,7 +966,7 @@ export class Rekognition extends PolicyStatement {
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StopStreamProcessor.html
    */
   public toStopStreamProcessor() {
-    this.add('rekognition:StopStreamProcessor');
+    this.to('rekognition:StopStreamProcessor');
     return this;
   }
 

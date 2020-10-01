@@ -45,7 +45,7 @@ export class RdsDb extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.IAMPolicy.html
    */
   public toconnect() {
-    this.add('rds-db:connect');
+    this.to('rds-db:connect');
     return this;
   }
 

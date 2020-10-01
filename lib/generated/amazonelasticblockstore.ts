@@ -106,7 +106,7 @@ export class Ebs extends PolicyStatement {
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_CompleteSnapshot.html
    */
   public toCompleteSnapshot() {
-    this.add('ebs:CompleteSnapshot');
+    this.to('ebs:CompleteSnapshot');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class Ebs extends PolicyStatement {
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_GetSnapshotBlock.html
    */
   public toGetSnapshotBlock() {
-    this.add('ebs:GetSnapshotBlock');
+    this.to('ebs:GetSnapshotBlock');
     return this;
   }
 
@@ -130,7 +130,7 @@ export class Ebs extends PolicyStatement {
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_ListChangedBlocks.html
    */
   public toListChangedBlocks() {
-    this.add('ebs:ListChangedBlocks');
+    this.to('ebs:ListChangedBlocks');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class Ebs extends PolicyStatement {
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_ListSnapshotBlocks.html
    */
   public toListSnapshotBlocks() {
-    this.add('ebs:ListSnapshotBlocks');
+    this.to('ebs:ListSnapshotBlocks');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Ebs extends PolicyStatement {
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html
    */
   public toPutSnapshotBlock() {
-    this.add('ebs:PutSnapshotBlock');
+    this.to('ebs:PutSnapshotBlock');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Ebs extends PolicyStatement {
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_StartSnapshot.html
    */
   public toStartSnapshot() {
-    this.add('ebs:StartSnapshot');
+    this.to('ebs:StartSnapshot');
     return this;
   }
 

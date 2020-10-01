@@ -224,7 +224,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CreateIdentityPool.html
    */
   public toCreateIdentityPool() {
-    this.add('cognito-identity:CreateIdentityPool');
+    this.to('cognito-identity:CreateIdentityPool');
     return this;
   }
 
@@ -236,7 +236,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DeleteIdentities.html
    */
   public toDeleteIdentities() {
-    this.add('cognito-identity:DeleteIdentities');
+    this.to('cognito-identity:DeleteIdentities');
     return this;
   }
 
@@ -248,7 +248,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DeleteIdentityPool.html
    */
   public toDeleteIdentityPool() {
-    this.add('cognito-identity:DeleteIdentityPool');
+    this.to('cognito-identity:DeleteIdentityPool');
     return this;
   }
 
@@ -260,7 +260,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DescribeIdentity.html
    */
   public toDescribeIdentity() {
-    this.add('cognito-identity:DescribeIdentity');
+    this.to('cognito-identity:DescribeIdentity');
     return this;
   }
 
@@ -272,7 +272,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DescribeIdentityPool.html
    */
   public toDescribeIdentityPool() {
-    this.add('cognito-identity:DescribeIdentityPool');
+    this.to('cognito-identity:DescribeIdentityPool');
     return this;
   }
 
@@ -284,7 +284,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html
    */
   public toGetCredentialsForIdentity() {
-    this.add('cognito-identity:GetCredentialsForIdentity');
+    this.to('cognito-identity:GetCredentialsForIdentity');
     return this;
   }
 
@@ -296,7 +296,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html
    */
   public toGetId() {
-    this.add('cognito-identity:GetId');
+    this.to('cognito-identity:GetId');
     return this;
   }
 
@@ -308,7 +308,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html
    */
   public toGetIdentityPoolRoles() {
-    this.add('cognito-identity:GetIdentityPoolRoles');
+    this.to('cognito-identity:GetIdentityPoolRoles');
     return this;
   }
 
@@ -320,7 +320,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetOpenIdToken.html
    */
   public toGetOpenIdToken() {
-    this.add('cognito-identity:GetOpenIdToken');
+    this.to('cognito-identity:GetOpenIdToken');
     return this;
   }
 
@@ -332,7 +332,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetOpenIdTokenForDeveloperIdentity.html
    */
   public toGetOpenIdTokenForDeveloperIdentity() {
-    this.add('cognito-identity:GetOpenIdTokenForDeveloperIdentity');
+    this.to('cognito-identity:GetOpenIdTokenForDeveloperIdentity');
     return this;
   }
 
@@ -344,7 +344,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_ListIdentities.html
    */
   public toListIdentities() {
-    this.add('cognito-identity:ListIdentities');
+    this.to('cognito-identity:ListIdentities');
     return this;
   }
 
@@ -356,7 +356,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_ListIdentityPools.html
    */
   public toListIdentityPools() {
-    this.add('cognito-identity:ListIdentityPools');
+    this.to('cognito-identity:ListIdentityPools');
     return this;
   }
 
@@ -371,7 +371,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('cognito-identity:ListTagsForResource');
+    this.to('cognito-identity:ListTagsForResource');
     return this;
   }
 
@@ -383,7 +383,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_LookupDeveloperIdentity.html
    */
   public toLookupDeveloperIdentity() {
-    this.add('cognito-identity:LookupDeveloperIdentity');
+    this.to('cognito-identity:LookupDeveloperIdentity');
     return this;
   }
 
@@ -395,7 +395,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_MergeDeveloperIdentities.html
    */
   public toMergeDeveloperIdentities() {
-    this.add('cognito-identity:MergeDeveloperIdentities');
+    this.to('cognito-identity:MergeDeveloperIdentities');
     return this;
   }
 
@@ -407,7 +407,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_SetIdentityPoolRoles.html
    */
   public toSetIdentityPoolRoles() {
-    this.add('cognito-identity:SetIdentityPoolRoles');
+    this.to('cognito-identity:SetIdentityPoolRoles');
     return this;
   }
 
@@ -424,7 +424,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.add('cognito-identity:TagResource');
+    this.to('cognito-identity:TagResource');
     return this;
   }
 
@@ -436,7 +436,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UnlinkDeveloperIdentity.html
    */
   public toUnlinkDeveloperIdentity() {
-    this.add('cognito-identity:UnlinkDeveloperIdentity');
+    this.to('cognito-identity:UnlinkDeveloperIdentity');
     return this;
   }
 
@@ -448,7 +448,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UnlinkIdentity.html
    */
   public toUnlinkIdentity() {
-    this.add('cognito-identity:UnlinkIdentity');
+    this.to('cognito-identity:UnlinkIdentity');
     return this;
   }
 
@@ -464,7 +464,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('cognito-identity:UntagResource');
+    this.to('cognito-identity:UntagResource');
     return this;
   }
 
@@ -476,7 +476,7 @@ export class CognitoIdentity extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UpdateIdentityPool.html
    */
   public toUpdateIdentityPool() {
-    this.add('cognito-identity:UpdateIdentityPool');
+    this.to('cognito-identity:UpdateIdentityPool');
     return this;
   }
 

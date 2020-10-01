@@ -289,7 +289,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html#deepracer-clone-trained-model
    */
   public toCloneReinforcementLearningModel() {
-    this.add('deepracer:CloneReinforcementLearningModel');
+    this.to('deepracer:CloneReinforcementLearningModel');
     return this;
   }
 
@@ -301,7 +301,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toCreateAccountResources() {
-    this.add('deepracer:CreateAccountResources');
+    this.to('deepracer:CreateAccountResources');
     return this;
   }
 
@@ -313,7 +313,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
   public toCreateLeaderboardSubmission() {
-    this.add('deepracer:CreateLeaderboardSubmission');
+    this.to('deepracer:CreateLeaderboardSubmission');
     return this;
   }
 
@@ -325,7 +325,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toCreateReinforcementLearningModel() {
-    this.add('deepracer:CreateReinforcementLearningModel');
+    this.to('deepracer:CreateReinforcementLearningModel');
     return this;
   }
 
@@ -337,7 +337,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toDeleteAccountResources() {
-    this.add('deepracer:DeleteAccountResources');
+    this.to('deepracer:DeleteAccountResources');
     return this;
   }
 
@@ -349,7 +349,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toDeleteModel() {
-    this.add('deepracer:DeleteModel');
+    this.to('deepracer:DeleteModel');
     return this;
   }
 
@@ -361,7 +361,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toGetAccountResources() {
-    this.add('deepracer:GetAccountResources');
+    this.to('deepracer:GetAccountResources');
     return this;
   }
 
@@ -373,7 +373,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
   public toGetAlias() {
-    this.add('deepracer:GetAlias');
+    this.to('deepracer:GetAlias');
     return this;
   }
 
@@ -385,7 +385,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html
    */
   public toGetEvaluation() {
-    this.add('deepracer:GetEvaluation');
+    this.to('deepracer:GetEvaluation');
     return this;
   }
 
@@ -397,7 +397,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
   public toGetLatestUserSubmission() {
-    this.add('deepracer:GetLatestUserSubmission');
+    this.to('deepracer:GetLatestUserSubmission');
     return this;
   }
 
@@ -409,7 +409,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
   public toGetLeaderboard() {
-    this.add('deepracer:GetLeaderboard');
+    this.to('deepracer:GetLeaderboard');
     return this;
   }
 
@@ -421,7 +421,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toGetModel() {
-    this.add('deepracer:GetModel');
+    this.to('deepracer:GetModel');
     return this;
   }
 
@@ -433,7 +433,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
   public toGetRankedUserSubmission() {
-    this.add('deepracer:GetRankedUserSubmission');
+    this.to('deepracer:GetRankedUserSubmission');
     return this;
   }
 
@@ -445,7 +445,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html
    */
   public toGetTrack() {
-    this.add('deepracer:GetTrack');
+    this.to('deepracer:GetTrack');
     return this;
   }
 
@@ -457,7 +457,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toGetTrainingJob() {
-    this.add('deepracer:GetTrainingJob');
+    this.to('deepracer:GetTrainingJob');
     return this;
   }
 
@@ -469,7 +469,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html
    */
   public toListEvaluations() {
-    this.add('deepracer:ListEvaluations');
+    this.to('deepracer:ListEvaluations');
     return this;
   }
 
@@ -481,7 +481,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
   public toListLeaderboardSubmissions() {
-    this.add('deepracer:ListLeaderboardSubmissions');
+    this.to('deepracer:ListLeaderboardSubmissions');
     return this;
   }
 
@@ -493,7 +493,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
   public toListLeaderboards() {
-    this.add('deepracer:ListLeaderboards');
+    this.to('deepracer:ListLeaderboards');
     return this;
   }
 
@@ -505,7 +505,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toListModels() {
-    this.add('deepracer:ListModels');
+    this.to('deepracer:ListModels');
     return this;
   }
 
@@ -517,7 +517,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html
    */
   public toListTracks() {
-    this.add('deepracer:ListTracks');
+    this.to('deepracer:ListTracks');
     return this;
   }
 
@@ -529,7 +529,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toListTrainingJobs() {
-    this.add('deepracer:ListTrainingJobs');
+    this.to('deepracer:ListTrainingJobs');
     return this;
   }
 
@@ -541,7 +541,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
   public toSetAlias() {
-    this.add('deepracer:SetAlias');
+    this.to('deepracer:SetAlias');
     return this;
   }
 
@@ -553,7 +553,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html
    */
   public toStartEvaluation() {
-    this.add('deepracer:StartEvaluation');
+    this.to('deepracer:StartEvaluation');
     return this;
   }
 
@@ -565,7 +565,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html
    */
   public toStopEvaluation() {
-    this.add('deepracer:StopEvaluation');
+    this.to('deepracer:StopEvaluation');
     return this;
   }
 
@@ -577,7 +577,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toStopTrainingReinforcementLearningModel() {
-    this.add('deepracer:StopTrainingReinforcementLearningModel');
+    this.to('deepracer:StopTrainingReinforcementLearningModel');
     return this;
   }
 
@@ -589,7 +589,7 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html#deepracer-train-models-define-reward-function
    */
   public toTestRewardFunction() {
-    this.add('deepracer:TestRewardFunction');
+    this.to('deepracer:TestRewardFunction');
     return this;
   }
 

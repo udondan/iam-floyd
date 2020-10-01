@@ -153,7 +153,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_AssociateConfigurationItemsToApplication.html
    */
   public toAssociateConfigurationItemsToApplication() {
-    this.add('discovery:AssociateConfigurationItemsToApplication');
+    this.to('discovery:AssociateConfigurationItemsToApplication');
     return this;
   }
 
@@ -165,7 +165,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_BatchDeleteImportData.html
    */
   public toBatchDeleteImportData() {
-    this.add('discovery:BatchDeleteImportData');
+    this.to('discovery:BatchDeleteImportData');
     return this;
   }
 
@@ -177,7 +177,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_CreateApplication.html
    */
   public toCreateApplication() {
-    this.add('discovery:CreateApplication');
+    this.to('discovery:CreateApplication');
     return this;
   }
 
@@ -189,7 +189,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_CreateTags.html
    */
   public toCreateTags() {
-    this.add('discovery:CreateTags');
+    this.to('discovery:CreateTags');
     return this;
   }
 
@@ -201,7 +201,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DeleteApplications.html
    */
   public toDeleteApplications() {
-    this.add('discovery:DeleteApplications');
+    this.to('discovery:DeleteApplications');
     return this;
   }
 
@@ -213,7 +213,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DeleteTags.html
    */
   public toDeleteTags() {
-    this.add('discovery:DeleteTags');
+    this.to('discovery:DeleteTags');
     return this;
   }
 
@@ -225,7 +225,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html
    */
   public toDescribeAgents() {
-    this.add('discovery:DescribeAgents');
+    this.to('discovery:DescribeAgents');
     return this;
   }
 
@@ -237,7 +237,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeConfigurations.html
    */
   public toDescribeConfigurations() {
-    this.add('discovery:DescribeConfigurations');
+    this.to('discovery:DescribeConfigurations');
     return this;
   }
 
@@ -249,7 +249,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeContinuousExports.html
    */
   public toDescribeContinuousExports() {
-    this.add('discovery:DescribeContinuousExports');
+    this.to('discovery:DescribeContinuousExports');
     return this;
   }
 
@@ -261,7 +261,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportConfigurations.html
    */
   public toDescribeExportConfigurations() {
-    this.add('discovery:DescribeExportConfigurations');
+    this.to('discovery:DescribeExportConfigurations');
     return this;
   }
 
@@ -273,7 +273,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html
    */
   public toDescribeExportTasks() {
-    this.add('discovery:DescribeExportTasks');
+    this.to('discovery:DescribeExportTasks');
     return this;
   }
 
@@ -285,7 +285,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeImportTasks.html
    */
   public toDescribeImportTasks() {
-    this.add('discovery:DescribeImportTasks');
+    this.to('discovery:DescribeImportTasks');
     return this;
   }
 
@@ -297,7 +297,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeTags.html
    */
   public toDescribeTags() {
-    this.add('discovery:DescribeTags');
+    this.to('discovery:DescribeTags');
     return this;
   }
 
@@ -309,7 +309,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DisassociateConfigurationItemsFromApplication.html
    */
   public toDisassociateConfigurationItemsFromApplication() {
-    this.add('discovery:DisassociateConfigurationItemsFromApplication');
+    this.to('discovery:DisassociateConfigurationItemsFromApplication');
     return this;
   }
 
@@ -321,7 +321,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportConfigurations.html
    */
   public toExportConfigurations() {
-    this.add('discovery:ExportConfigurations');
+    this.to('discovery:ExportConfigurations');
     return this;
   }
 
@@ -333,7 +333,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_GetDiscoverySummary.html
    */
   public toGetDiscoverySummary() {
-    this.add('discovery:GetDiscoverySummary');
+    this.to('discovery:GetDiscoverySummary');
     return this;
   }
 
@@ -345,7 +345,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ListConfigurations.html
    */
   public toListConfigurations() {
-    this.add('discovery:ListConfigurations');
+    this.to('discovery:ListConfigurations');
     return this;
   }
 
@@ -357,7 +357,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ListServerNeighbors.html
    */
   public toListServerNeighbors() {
-    this.add('discovery:ListServerNeighbors');
+    this.to('discovery:ListServerNeighbors');
     return this;
   }
 
@@ -369,7 +369,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartContinuousExport.html
    */
   public toStartContinuousExport() {
-    this.add('discovery:StartContinuousExport');
+    this.to('discovery:StartContinuousExport');
     return this;
   }
 
@@ -381,7 +381,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartDataCollectionByAgentIds.html
    */
   public toStartDataCollectionByAgentIds() {
-    this.add('discovery:StartDataCollectionByAgentIds');
+    this.to('discovery:StartDataCollectionByAgentIds');
     return this;
   }
 
@@ -393,7 +393,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html
    */
   public toStartExportTask() {
-    this.add('discovery:StartExportTask');
+    this.to('discovery:StartExportTask');
     return this;
   }
 
@@ -405,7 +405,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartImportTask.html
    */
   public toStartImportTask() {
-    this.add('discovery:StartImportTask');
+    this.to('discovery:StartImportTask');
     return this;
   }
 
@@ -417,7 +417,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StopContinuousExport.html
    */
   public toStopContinuousExport() {
-    this.add('discovery:StopContinuousExport');
+    this.to('discovery:StopContinuousExport');
     return this;
   }
 
@@ -429,7 +429,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StopDataCollectionByAgentIds.html
    */
   public toStopDataCollectionByAgentIds() {
-    this.add('discovery:StopDataCollectionByAgentIds');
+    this.to('discovery:StopDataCollectionByAgentIds');
     return this;
   }
 
@@ -441,7 +441,7 @@ export class Discovery extends PolicyStatement {
    * https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_UpdateApplication.html
    */
   public toUpdateApplication() {
-    this.add('discovery:UpdateApplication');
+    this.to('discovery:UpdateApplication');
     return this;
   }
 }

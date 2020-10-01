@@ -485,7 +485,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CloneReceiptRuleSet.html
    */
   public toCloneReceiptRuleSet() {
-    this.add('ses:CloneReceiptRuleSet');
+    this.to('ses:CloneReceiptRuleSet');
     return this;
   }
 
@@ -497,7 +497,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSet.html
    */
   public toCreateConfigurationSet() {
-    this.add('ses:CreateConfigurationSet');
+    this.to('ses:CreateConfigurationSet');
     return this;
   }
 
@@ -509,7 +509,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSetEventDestination.html
    */
   public toCreateConfigurationSetEventDestination() {
-    this.add('ses:CreateConfigurationSetEventDestination');
+    this.to('ses:CreateConfigurationSetEventDestination');
     return this;
   }
 
@@ -521,7 +521,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSetTrackingOptions.html
    */
   public toCreateConfigurationSetTrackingOptions() {
-    this.add('ses:CreateConfigurationSetTrackingOptions');
+    this.to('ses:CreateConfigurationSetTrackingOptions');
     return this;
   }
 
@@ -533,7 +533,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateCustomVerificationEmailTemplate.html
    */
   public toCreateCustomVerificationEmailTemplate() {
-    this.add('ses:CreateCustomVerificationEmailTemplate');
+    this.to('ses:CreateCustomVerificationEmailTemplate');
     return this;
   }
 
@@ -545,7 +545,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptFilter.html
    */
   public toCreateReceiptFilter() {
-    this.add('ses:CreateReceiptFilter');
+    this.to('ses:CreateReceiptFilter');
     return this;
   }
 
@@ -557,7 +557,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html
    */
   public toCreateReceiptRule() {
-    this.add('ses:CreateReceiptRule');
+    this.to('ses:CreateReceiptRule');
     return this;
   }
 
@@ -569,7 +569,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRuleSet.html
    */
   public toCreateReceiptRuleSet() {
-    this.add('ses:CreateReceiptRuleSet');
+    this.to('ses:CreateReceiptRuleSet');
     return this;
   }
 
@@ -581,7 +581,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateTemplate.html
    */
   public toCreateTemplate() {
-    this.add('ses:CreateTemplate');
+    this.to('ses:CreateTemplate');
     return this;
   }
 
@@ -593,7 +593,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSet.html
    */
   public toDeleteConfigurationSet() {
-    this.add('ses:DeleteConfigurationSet');
+    this.to('ses:DeleteConfigurationSet');
     return this;
   }
 
@@ -605,7 +605,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSetEventDestination.html
    */
   public toDeleteConfigurationSetEventDestination() {
-    this.add('ses:DeleteConfigurationSetEventDestination');
+    this.to('ses:DeleteConfigurationSetEventDestination');
     return this;
   }
 
@@ -617,7 +617,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSetTrackingOptions.html
    */
   public toDeleteConfigurationSetTrackingOptions() {
-    this.add('ses:DeleteConfigurationSetTrackingOptions');
+    this.to('ses:DeleteConfigurationSetTrackingOptions');
     return this;
   }
 
@@ -629,7 +629,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteCustomVerificationEmailTemplate.html
    */
   public toDeleteCustomVerificationEmailTemplate() {
-    this.add('ses:DeleteCustomVerificationEmailTemplate');
+    this.to('ses:DeleteCustomVerificationEmailTemplate');
     return this;
   }
 
@@ -641,7 +641,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentity.html
    */
   public toDeleteIdentity() {
-    this.add('ses:DeleteIdentity');
+    this.to('ses:DeleteIdentity');
     return this;
   }
 
@@ -653,7 +653,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentityPolicy.html
    */
   public toDeleteIdentityPolicy() {
-    this.add('ses:DeleteIdentityPolicy');
+    this.to('ses:DeleteIdentityPolicy');
     return this;
   }
 
@@ -665,7 +665,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptFilter.html
    */
   public toDeleteReceiptFilter() {
-    this.add('ses:DeleteReceiptFilter');
+    this.to('ses:DeleteReceiptFilter');
     return this;
   }
 
@@ -677,7 +677,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptRule.html
    */
   public toDeleteReceiptRule() {
-    this.add('ses:DeleteReceiptRule');
+    this.to('ses:DeleteReceiptRule');
     return this;
   }
 
@@ -689,7 +689,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptRuleSet.html
    */
   public toDeleteReceiptRuleSet() {
-    this.add('ses:DeleteReceiptRuleSet');
+    this.to('ses:DeleteReceiptRuleSet');
     return this;
   }
 
@@ -701,7 +701,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteTemplate.html
    */
   public toDeleteTemplate() {
-    this.add('ses:DeleteTemplate');
+    this.to('ses:DeleteTemplate');
     return this;
   }
 
@@ -713,7 +713,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteVerifiedEmailAddress.html
    */
   public toDeleteVerifiedEmailAddress() {
-    this.add('ses:DeleteVerifiedEmailAddress');
+    this.to('ses:DeleteVerifiedEmailAddress');
     return this;
   }
 
@@ -725,7 +725,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeActiveReceiptRuleSet.html
    */
   public toDescribeActiveReceiptRuleSet() {
-    this.add('ses:DescribeActiveReceiptRuleSet');
+    this.to('ses:DescribeActiveReceiptRuleSet');
     return this;
   }
 
@@ -737,7 +737,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeConfigurationSet.html
    */
   public toDescribeConfigurationSet() {
-    this.add('ses:DescribeConfigurationSet');
+    this.to('ses:DescribeConfigurationSet');
     return this;
   }
 
@@ -749,7 +749,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeReceiptRule.html
    */
   public toDescribeReceiptRule() {
-    this.add('ses:DescribeReceiptRule');
+    this.to('ses:DescribeReceiptRule');
     return this;
   }
 
@@ -761,7 +761,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeReceiptRuleSet.html
    */
   public toDescribeReceiptRuleSet() {
-    this.add('ses:DescribeReceiptRuleSet');
+    this.to('ses:DescribeReceiptRuleSet');
     return this;
   }
 
@@ -773,7 +773,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetAccountSendingEnabled.html
    */
   public toGetAccountSendingEnabled() {
-    this.add('ses:GetAccountSendingEnabled');
+    this.to('ses:GetAccountSendingEnabled');
     return this;
   }
 
@@ -785,7 +785,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetCustomVerificationEmailTemplate.html
    */
   public toGetCustomVerificationEmailTemplate() {
-    this.add('ses:GetCustomVerificationEmailTemplate');
+    this.to('ses:GetCustomVerificationEmailTemplate');
     return this;
   }
 
@@ -797,7 +797,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityDkimAttributes.html
    */
   public toGetIdentityDkimAttributes() {
-    this.add('ses:GetIdentityDkimAttributes');
+    this.to('ses:GetIdentityDkimAttributes');
     return this;
   }
 
@@ -809,7 +809,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityMailFromDomainAttributes.html
    */
   public toGetIdentityMailFromDomainAttributes() {
-    this.add('ses:GetIdentityMailFromDomainAttributes');
+    this.to('ses:GetIdentityMailFromDomainAttributes');
     return this;
   }
 
@@ -821,7 +821,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityNotificationAttributes.html
    */
   public toGetIdentityNotificationAttributes() {
-    this.add('ses:GetIdentityNotificationAttributes');
+    this.to('ses:GetIdentityNotificationAttributes');
     return this;
   }
 
@@ -833,7 +833,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityPolicies.html
    */
   public toGetIdentityPolicies() {
-    this.add('ses:GetIdentityPolicies');
+    this.to('ses:GetIdentityPolicies');
     return this;
   }
 
@@ -845,7 +845,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityVerificationAttributes.html
    */
   public toGetIdentityVerificationAttributes() {
-    this.add('ses:GetIdentityVerificationAttributes');
+    this.to('ses:GetIdentityVerificationAttributes');
     return this;
   }
 
@@ -857,7 +857,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetSendQuota.html
    */
   public toGetSendQuota() {
-    this.add('ses:GetSendQuota');
+    this.to('ses:GetSendQuota');
     return this;
   }
 
@@ -869,7 +869,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetSendStatistics.html
    */
   public toGetSendStatistics() {
-    this.add('ses:GetSendStatistics');
+    this.to('ses:GetSendStatistics');
     return this;
   }
 
@@ -881,7 +881,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_GetTemplate.html
    */
   public toGetTemplate() {
-    this.add('ses:GetTemplate');
+    this.to('ses:GetTemplate');
     return this;
   }
 
@@ -893,7 +893,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListConfigurationSets.html
    */
   public toListConfigurationSets() {
-    this.add('ses:ListConfigurationSets');
+    this.to('ses:ListConfigurationSets');
     return this;
   }
 
@@ -905,7 +905,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListCustomVerificationEmailTemplates.html
    */
   public toListCustomVerificationEmailTemplates() {
-    this.add('ses:ListCustomVerificationEmailTemplates');
+    this.to('ses:ListCustomVerificationEmailTemplates');
     return this;
   }
 
@@ -917,7 +917,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentities.html
    */
   public toListIdentities() {
-    this.add('ses:ListIdentities');
+    this.to('ses:ListIdentities');
     return this;
   }
 
@@ -929,7 +929,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentityPolicies.html
    */
   public toListIdentityPolicies() {
-    this.add('ses:ListIdentityPolicies');
+    this.to('ses:ListIdentityPolicies');
     return this;
   }
 
@@ -941,7 +941,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListReceiptFilters.html
    */
   public toListReceiptFilters() {
-    this.add('ses:ListReceiptFilters');
+    this.to('ses:ListReceiptFilters');
     return this;
   }
 
@@ -953,7 +953,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListReceiptRuleSets.html
    */
   public toListReceiptRuleSets() {
-    this.add('ses:ListReceiptRuleSets');
+    this.to('ses:ListReceiptRuleSets');
     return this;
   }
 
@@ -965,7 +965,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListTemplates.html
    */
   public toListTemplates() {
-    this.add('ses:ListTemplates');
+    this.to('ses:ListTemplates');
     return this;
   }
 
@@ -977,7 +977,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListVerifiedEmailAddresses.html
    */
   public toListVerifiedEmailAddresses() {
-    this.add('ses:ListVerifiedEmailAddresses');
+    this.to('ses:ListVerifiedEmailAddresses');
     return this;
   }
 
@@ -989,7 +989,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_PutIdentityPolicy.html
    */
   public toPutIdentityPolicy() {
-    this.add('ses:PutIdentityPolicy');
+    this.to('ses:PutIdentityPolicy');
     return this;
   }
 
@@ -1001,7 +1001,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ReorderReceiptRuleSet.html
    */
   public toReorderReceiptRuleSet() {
-    this.add('ses:ReorderReceiptRuleSet');
+    this.to('ses:ReorderReceiptRuleSet');
     return this;
   }
 
@@ -1016,7 +1016,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBounce.html
    */
   public toSendBounce() {
-    this.add('ses:SendBounce');
+    this.to('ses:SendBounce');
     return this;
   }
 
@@ -1034,7 +1034,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html
    */
   public toSendBulkTemplatedEmail() {
-    this.add('ses:SendBulkTemplatedEmail');
+    this.to('ses:SendBulkTemplatedEmail');
     return this;
   }
 
@@ -1052,7 +1052,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendCustomVerificationEmail.html
    */
   public toSendCustomVerificationEmail() {
-    this.add('ses:SendCustomVerificationEmail');
+    this.to('ses:SendCustomVerificationEmail');
     return this;
   }
 
@@ -1070,7 +1070,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendEmail.html
    */
   public toSendEmail() {
-    this.add('ses:SendEmail');
+    this.to('ses:SendEmail');
     return this;
   }
 
@@ -1088,7 +1088,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendRawEmail.html
    */
   public toSendRawEmail() {
-    this.add('ses:SendRawEmail');
+    this.to('ses:SendRawEmail');
     return this;
   }
 
@@ -1106,7 +1106,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html
    */
   public toSendTemplatedEmail() {
-    this.add('ses:SendTemplatedEmail');
+    this.to('ses:SendTemplatedEmail');
     return this;
   }
 
@@ -1118,7 +1118,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SetActiveReceiptRuleSet.html
    */
   public toSetActiveReceiptRuleSet() {
-    this.add('ses:SetActiveReceiptRuleSet');
+    this.to('ses:SetActiveReceiptRuleSet');
     return this;
   }
 
@@ -1130,7 +1130,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityDkimEnabled.html
    */
   public toSetIdentityDkimEnabled() {
-    this.add('ses:SetIdentityDkimEnabled');
+    this.to('ses:SetIdentityDkimEnabled');
     return this;
   }
 
@@ -1142,7 +1142,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html
    */
   public toSetIdentityFeedbackForwardingEnabled() {
-    this.add('ses:SetIdentityFeedbackForwardingEnabled');
+    this.to('ses:SetIdentityFeedbackForwardingEnabled');
     return this;
   }
 
@@ -1154,7 +1154,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityHeadersInNotificationsEnabled.html
    */
   public toSetIdentityHeadersInNotificationsEnabled() {
-    this.add('ses:SetIdentityHeadersInNotificationsEnabled');
+    this.to('ses:SetIdentityHeadersInNotificationsEnabled');
     return this;
   }
 
@@ -1166,7 +1166,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityMailFromDomain.html
    */
   public toSetIdentityMailFromDomain() {
-    this.add('ses:SetIdentityMailFromDomain');
+    this.to('ses:SetIdentityMailFromDomain');
     return this;
   }
 
@@ -1178,7 +1178,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityNotificationTopic.html
    */
   public toSetIdentityNotificationTopic() {
-    this.add('ses:SetIdentityNotificationTopic');
+    this.to('ses:SetIdentityNotificationTopic');
     return this;
   }
 
@@ -1190,7 +1190,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SetReceiptRulePosition.html
    */
   public toSetReceiptRulePosition() {
-    this.add('ses:SetReceiptRulePosition');
+    this.to('ses:SetReceiptRulePosition');
     return this;
   }
 
@@ -1202,7 +1202,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_TestRenderTemplate.html
    */
   public toTestRenderTemplate() {
-    this.add('ses:TestRenderTemplate');
+    this.to('ses:TestRenderTemplate');
     return this;
   }
 
@@ -1214,7 +1214,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateAccountSendingEnabled.html
    */
   public toUpdateAccountSendingEnabled() {
-    this.add('ses:UpdateAccountSendingEnabled');
+    this.to('ses:UpdateAccountSendingEnabled');
     return this;
   }
 
@@ -1226,7 +1226,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetEventDestination.html
    */
   public toUpdateConfigurationSetEventDestination() {
-    this.add('ses:UpdateConfigurationSetEventDestination');
+    this.to('ses:UpdateConfigurationSetEventDestination');
     return this;
   }
 
@@ -1238,7 +1238,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetReputationMetricsEnabled.html
    */
   public toUpdateConfigurationSetReputationMetricsEnabled() {
-    this.add('ses:UpdateConfigurationSetReputationMetricsEnabled');
+    this.to('ses:UpdateConfigurationSetReputationMetricsEnabled');
     return this;
   }
 
@@ -1250,7 +1250,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetSendingEnabled.html
    */
   public toUpdateConfigurationSetSendingEnabled() {
-    this.add('ses:UpdateConfigurationSetSendingEnabled');
+    this.to('ses:UpdateConfigurationSetSendingEnabled');
     return this;
   }
 
@@ -1262,7 +1262,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetTrackingOptions.html
    */
   public toUpdateConfigurationSetTrackingOptions() {
-    this.add('ses:UpdateConfigurationSetTrackingOptions');
+    this.to('ses:UpdateConfigurationSetTrackingOptions');
     return this;
   }
 
@@ -1274,7 +1274,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateCustomVerificationEmailTemplate.html
    */
   public toUpdateCustomVerificationEmailTemplate() {
-    this.add('ses:UpdateCustomVerificationEmailTemplate');
+    this.to('ses:UpdateCustomVerificationEmailTemplate');
     return this;
   }
 
@@ -1286,7 +1286,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateReceiptRule.html
    */
   public toUpdateReceiptRule() {
-    this.add('ses:UpdateReceiptRule');
+    this.to('ses:UpdateReceiptRule');
     return this;
   }
 
@@ -1298,7 +1298,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateTemplate.html
    */
   public toUpdateTemplate() {
-    this.add('ses:UpdateTemplate');
+    this.to('ses:UpdateTemplate');
     return this;
   }
 
@@ -1310,7 +1310,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyDomainDkim.html
    */
   public toVerifyDomainDkim() {
-    this.add('ses:VerifyDomainDkim');
+    this.to('ses:VerifyDomainDkim');
     return this;
   }
 
@@ -1322,7 +1322,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyDomainIdentity.html
    */
   public toVerifyDomainIdentity() {
-    this.add('ses:VerifyDomainIdentity');
+    this.to('ses:VerifyDomainIdentity');
     return this;
   }
 
@@ -1334,7 +1334,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailAddress.html
    */
   public toVerifyEmailAddress() {
-    this.add('ses:VerifyEmailAddress');
+    this.to('ses:VerifyEmailAddress');
     return this;
   }
 
@@ -1346,7 +1346,7 @@ export class Ses extends PolicyStatement {
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html
    */
   public toVerifyEmailIdentity() {
-    this.add('ses:VerifyEmailIdentity');
+    this.to('ses:VerifyEmailIdentity');
     return this;
   }
 

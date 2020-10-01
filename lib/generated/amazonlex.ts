@@ -520,7 +520,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_CreateBotVersion.html
    */
   public toCreateBotVersion() {
-    this.add('lex:CreateBotVersion');
+    this.to('lex:CreateBotVersion');
     return this;
   }
 
@@ -532,7 +532,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_CreateIntentVersion.html
    */
   public toCreateIntentVersion() {
-    this.add('lex:CreateIntentVersion');
+    this.to('lex:CreateIntentVersion');
     return this;
   }
 
@@ -544,7 +544,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_CreateSlotTypeVersion.html
    */
   public toCreateSlotTypeVersion() {
-    this.add('lex:CreateSlotTypeVersion');
+    this.to('lex:CreateSlotTypeVersion');
     return this;
   }
 
@@ -556,7 +556,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBot.html
    */
   public toDeleteBot() {
-    this.add('lex:DeleteBot');
+    this.to('lex:DeleteBot');
     return this;
   }
 
@@ -568,7 +568,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBotAlias.html
    */
   public toDeleteBotAlias() {
-    this.add('lex:DeleteBotAlias');
+    this.to('lex:DeleteBotAlias');
     return this;
   }
 
@@ -580,7 +580,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBotChannelAssociation.html
    */
   public toDeleteBotChannelAssociation() {
-    this.add('lex:DeleteBotChannelAssociation');
+    this.to('lex:DeleteBotChannelAssociation');
     return this;
   }
 
@@ -592,7 +592,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBotVersion.html
    */
   public toDeleteBotVersion() {
-    this.add('lex:DeleteBotVersion');
+    this.to('lex:DeleteBotVersion');
     return this;
   }
 
@@ -604,7 +604,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteIntent.html
    */
   public toDeleteIntent() {
-    this.add('lex:DeleteIntent');
+    this.to('lex:DeleteIntent');
     return this;
   }
 
@@ -616,7 +616,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteIntentVersion.html
    */
   public toDeleteIntentVersion() {
-    this.add('lex:DeleteIntentVersion');
+    this.to('lex:DeleteIntentVersion');
     return this;
   }
 
@@ -628,7 +628,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_DeleteSession.html
    */
   public toDeleteSession() {
-    this.add('lex:DeleteSession');
+    this.to('lex:DeleteSession');
     return this;
   }
 
@@ -640,7 +640,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteSlotType.html
    */
   public toDeleteSlotType() {
-    this.add('lex:DeleteSlotType');
+    this.to('lex:DeleteSlotType');
     return this;
   }
 
@@ -652,7 +652,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteSlotTypeVersion.html
    */
   public toDeleteSlotTypeVersion() {
-    this.add('lex:DeleteSlotTypeVersion');
+    this.to('lex:DeleteSlotTypeVersion');
     return this;
   }
 
@@ -664,7 +664,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteUtterances.html
    */
   public toDeleteUtterances() {
-    this.add('lex:DeleteUtterances');
+    this.to('lex:DeleteUtterances');
     return this;
   }
 
@@ -676,7 +676,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBot.html
    */
   public toGetBot() {
-    this.add('lex:GetBot');
+    this.to('lex:GetBot');
     return this;
   }
 
@@ -688,7 +688,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotAlias.html
    */
   public toGetBotAlias() {
-    this.add('lex:GetBotAlias');
+    this.to('lex:GetBotAlias');
     return this;
   }
 
@@ -700,7 +700,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotAliases.html
    */
   public toGetBotAliases() {
-    this.add('lex:GetBotAliases');
+    this.to('lex:GetBotAliases');
     return this;
   }
 
@@ -712,7 +712,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotChannelAssociation.html
    */
   public toGetBotChannelAssociation() {
-    this.add('lex:GetBotChannelAssociation');
+    this.to('lex:GetBotChannelAssociation');
     return this;
   }
 
@@ -724,7 +724,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotChannelAssociations.html
    */
   public toGetBotChannelAssociations() {
-    this.add('lex:GetBotChannelAssociations');
+    this.to('lex:GetBotChannelAssociations');
     return this;
   }
 
@@ -736,7 +736,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotVersions.html
    */
   public toGetBotVersions() {
-    this.add('lex:GetBotVersions');
+    this.to('lex:GetBotVersions');
     return this;
   }
 
@@ -748,7 +748,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBots.html
    */
   public toGetBots() {
-    this.add('lex:GetBots');
+    this.to('lex:GetBots');
     return this;
   }
 
@@ -760,7 +760,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBuiltinIntent.html
    */
   public toGetBuiltinIntent() {
-    this.add('lex:GetBuiltinIntent');
+    this.to('lex:GetBuiltinIntent');
     return this;
   }
 
@@ -772,7 +772,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBuiltinIntents.html
    */
   public toGetBuiltinIntents() {
-    this.add('lex:GetBuiltinIntents');
+    this.to('lex:GetBuiltinIntents');
     return this;
   }
 
@@ -784,7 +784,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBuiltinSlotTypes.html
    */
   public toGetBuiltinSlotTypes() {
-    this.add('lex:GetBuiltinSlotTypes');
+    this.to('lex:GetBuiltinSlotTypes');
     return this;
   }
 
@@ -796,7 +796,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetExport.html
    */
   public toGetExport() {
-    this.add('lex:GetExport');
+    this.to('lex:GetExport');
     return this;
   }
 
@@ -808,7 +808,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetImport.html
    */
   public toGetImport() {
-    this.add('lex:GetImport');
+    this.to('lex:GetImport');
     return this;
   }
 
@@ -820,7 +820,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetIntent.html
    */
   public toGetIntent() {
-    this.add('lex:GetIntent');
+    this.to('lex:GetIntent');
     return this;
   }
 
@@ -832,7 +832,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetIntentVersions.html
    */
   public toGetIntentVersions() {
-    this.add('lex:GetIntentVersions');
+    this.to('lex:GetIntentVersions');
     return this;
   }
 
@@ -844,7 +844,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetIntents.html
    */
   public toGetIntents() {
-    this.add('lex:GetIntents');
+    this.to('lex:GetIntents');
     return this;
   }
 
@@ -856,7 +856,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_GetSession.html
    */
   public toGetSession() {
-    this.add('lex:GetSession');
+    this.to('lex:GetSession');
     return this;
   }
 
@@ -868,7 +868,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetSlotType.html
    */
   public toGetSlotType() {
-    this.add('lex:GetSlotType');
+    this.to('lex:GetSlotType');
     return this;
   }
 
@@ -880,7 +880,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetSlotTypeVersions.html
    */
   public toGetSlotTypeVersions() {
-    this.add('lex:GetSlotTypeVersions');
+    this.to('lex:GetSlotTypeVersions');
     return this;
   }
 
@@ -892,7 +892,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetSlotTypes.html
    */
   public toGetSlotTypes() {
-    this.add('lex:GetSlotTypes');
+    this.to('lex:GetSlotTypes');
     return this;
   }
 
@@ -904,7 +904,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetUtterancesView.html
    */
   public toGetUtterancesView() {
-    this.add('lex:GetUtterancesView');
+    this.to('lex:GetUtterancesView');
     return this;
   }
 
@@ -916,7 +916,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('lex:ListTagsForResource');
+    this.to('lex:ListTagsForResource');
     return this;
   }
 
@@ -928,7 +928,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html
    */
   public toPostContent() {
-    this.add('lex:PostContent');
+    this.to('lex:PostContent');
     return this;
   }
 
@@ -940,7 +940,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html
    */
   public toPostText() {
-    this.add('lex:PostText');
+    this.to('lex:PostText');
     return this;
   }
 
@@ -956,7 +956,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html
    */
   public toPutBot() {
-    this.add('lex:PutBot');
+    this.to('lex:PutBot');
     return this;
   }
 
@@ -972,7 +972,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutBotAlias.html
    */
   public toPutBotAlias() {
-    this.add('lex:PutBotAlias');
+    this.to('lex:PutBotAlias');
     return this;
   }
 
@@ -984,7 +984,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutIntent.html
    */
   public toPutIntent() {
-    this.add('lex:PutIntent');
+    this.to('lex:PutIntent');
     return this;
   }
 
@@ -996,7 +996,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PutSession.html
    */
   public toPutSession() {
-    this.add('lex:PutSession');
+    this.to('lex:PutSession');
     return this;
   }
 
@@ -1008,7 +1008,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutSlotType.html
    */
   public toPutSlotType() {
-    this.add('lex:PutSlotType');
+    this.to('lex:PutSlotType');
     return this;
   }
 
@@ -1020,7 +1020,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_StartImport.html
    */
   public toStartImport() {
-    this.add('lex:StartImport');
+    this.to('lex:StartImport');
     return this;
   }
 
@@ -1036,7 +1036,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_TagResource.html
    */
   public toTagResource() {
-    this.add('lex:TagResource');
+    this.to('lex:TagResource');
     return this;
   }
 
@@ -1052,7 +1052,7 @@ export class Lex extends PolicyStatement {
    * https://docs.aws.amazon.com/lex/latest/dg/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('lex:UntagResource');
+    this.to('lex:UntagResource');
     return this;
   }
 

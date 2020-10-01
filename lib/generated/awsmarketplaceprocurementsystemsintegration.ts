@@ -38,7 +38,7 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html
    */
   public toDescribeProcurementSystemConfiguration() {
-    this.add('aws-marketplace-procurement-systems-integration:DescribeProcurementSystemConfiguration');
+    this.to('aws-marketplace-procurement-systems-integration:DescribeProcurementSystemConfiguration');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html
    */
   public toPutProcurementSystemConfiguration() {
-    this.add('aws-marketplace-procurement-systems-integration:PutProcurementSystemConfiguration');
+    this.to('aws-marketplace-procurement-systems-integration:PutProcurementSystemConfiguration');
     return this;
   }
 }

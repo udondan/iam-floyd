@@ -449,7 +449,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toCreateApp() {
-    this.add('amplify:CreateApp');
+    this.to('amplify:CreateApp');
     return this;
   }
 
@@ -461,7 +461,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toCreateBackendEnvironment() {
-    this.add('amplify:CreateBackendEnvironment');
+    this.to('amplify:CreateBackendEnvironment');
     return this;
   }
 
@@ -477,7 +477,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toCreateBranch() {
-    this.add('amplify:CreateBranch');
+    this.to('amplify:CreateBranch');
     return this;
   }
 
@@ -489,7 +489,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toCreateDeployment() {
-    this.add('amplify:CreateDeployment');
+    this.to('amplify:CreateDeployment');
     return this;
   }
 
@@ -505,7 +505,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toCreateDomainAssociation() {
-    this.add('amplify:CreateDomainAssociation');
+    this.to('amplify:CreateDomainAssociation');
     return this;
   }
 
@@ -517,7 +517,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toCreateWebHook() {
-    this.add('amplify:CreateWebHook');
+    this.to('amplify:CreateWebHook');
     return this;
   }
 
@@ -529,7 +529,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toDeleteApp() {
-    this.add('amplify:DeleteApp');
+    this.to('amplify:DeleteApp');
     return this;
   }
 
@@ -541,7 +541,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toDeleteBackendEnvironment() {
-    this.add('amplify:DeleteBackendEnvironment');
+    this.to('amplify:DeleteBackendEnvironment');
     return this;
   }
 
@@ -553,7 +553,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toDeleteBranch() {
-    this.add('amplify:DeleteBranch');
+    this.to('amplify:DeleteBranch');
     return this;
   }
 
@@ -565,7 +565,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toDeleteDomainAssociation() {
-    this.add('amplify:DeleteDomainAssociation');
+    this.to('amplify:DeleteDomainAssociation');
     return this;
   }
 
@@ -577,7 +577,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toDeleteJob() {
-    this.add('amplify:DeleteJob');
+    this.to('amplify:DeleteJob');
     return this;
   }
 
@@ -589,7 +589,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toDeleteWebHook() {
-    this.add('amplify:DeleteWebHook');
+    this.to('amplify:DeleteWebHook');
     return this;
   }
 
@@ -601,7 +601,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toGenerateAccessLogs() {
-    this.add('amplify:GenerateAccessLogs');
+    this.to('amplify:GenerateAccessLogs');
     return this;
   }
 
@@ -613,7 +613,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toGetApp() {
-    this.add('amplify:GetApp');
+    this.to('amplify:GetApp');
     return this;
   }
 
@@ -625,7 +625,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toGetArtifactUrl() {
-    this.add('amplify:GetArtifactUrl');
+    this.to('amplify:GetArtifactUrl');
     return this;
   }
 
@@ -637,7 +637,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toGetBackendEnvironment() {
-    this.add('amplify:GetBackendEnvironment');
+    this.to('amplify:GetBackendEnvironment');
     return this;
   }
 
@@ -649,7 +649,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toGetBranch() {
-    this.add('amplify:GetBranch');
+    this.to('amplify:GetBranch');
     return this;
   }
 
@@ -661,7 +661,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toGetDomainAssociation() {
-    this.add('amplify:GetDomainAssociation');
+    this.to('amplify:GetDomainAssociation');
     return this;
   }
 
@@ -673,7 +673,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toGetJob() {
-    this.add('amplify:GetJob');
+    this.to('amplify:GetJob');
     return this;
   }
 
@@ -685,7 +685,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toGetWebHook() {
-    this.add('amplify:GetWebHook');
+    this.to('amplify:GetWebHook');
     return this;
   }
 
@@ -697,7 +697,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toListApps() {
-    this.add('amplify:ListApps');
+    this.to('amplify:ListApps');
     return this;
   }
 
@@ -709,7 +709,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toListArtifacts() {
-    this.add('amplify:ListArtifacts');
+    this.to('amplify:ListArtifacts');
     return this;
   }
 
@@ -721,7 +721,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toListBackendEnvironments() {
-    this.add('amplify:ListBackendEnvironments');
+    this.to('amplify:ListBackendEnvironments');
     return this;
   }
 
@@ -733,7 +733,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toListBranches() {
-    this.add('amplify:ListBranches');
+    this.to('amplify:ListBranches');
     return this;
   }
 
@@ -745,7 +745,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toListDomainAssociations() {
-    this.add('amplify:ListDomainAssociations');
+    this.to('amplify:ListDomainAssociations');
     return this;
   }
 
@@ -757,7 +757,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toListJobs() {
-    this.add('amplify:ListJobs');
+    this.to('amplify:ListJobs');
     return this;
   }
 
@@ -769,7 +769,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toListWebHooks() {
-    this.add('amplify:ListWebHooks');
+    this.to('amplify:ListWebHooks');
     return this;
   }
 
@@ -781,7 +781,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toStartDeployment() {
-    this.add('amplify:StartDeployment');
+    this.to('amplify:StartDeployment');
     return this;
   }
 
@@ -793,7 +793,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toStartJob() {
-    this.add('amplify:StartJob');
+    this.to('amplify:StartJob');
     return this;
   }
 
@@ -805,7 +805,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toStopJob() {
-    this.add('amplify:StopJob');
+    this.to('amplify:StopJob');
     return this;
   }
 
@@ -821,7 +821,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toTagResource() {
-    this.add('amplify:TagResource');
+    this.to('amplify:TagResource');
     return this;
   }
 
@@ -836,7 +836,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toUntagResource() {
-    this.add('amplify:UntagResource');
+    this.to('amplify:UntagResource');
     return this;
   }
 
@@ -848,7 +848,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toUpdateApp() {
-    this.add('amplify:UpdateApp');
+    this.to('amplify:UpdateApp');
     return this;
   }
 
@@ -860,7 +860,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toUpdateBranch() {
-    this.add('amplify:UpdateBranch');
+    this.to('amplify:UpdateBranch');
     return this;
   }
 
@@ -872,7 +872,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toUpdateDomainAssociation() {
-    this.add('amplify:UpdateDomainAssociation');
+    this.to('amplify:UpdateDomainAssociation');
     return this;
   }
 
@@ -884,7 +884,7 @@ export class Amplify extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toUpdateWebHook() {
-    this.add('amplify:UpdateWebHook');
+    this.to('amplify:UpdateWebHook');
     return this;
   }
 

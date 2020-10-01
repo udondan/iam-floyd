@@ -228,7 +228,7 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CancelDataRepositoryTask.html
    */
   public toCancelDataRepositoryTask() {
-    this.add('fsx:CancelDataRepositoryTask');
+    this.to('fsx:CancelDataRepositoryTask');
     return this;
   }
 
@@ -244,7 +244,7 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateBackup.html
    */
   public toCreateBackup() {
-    this.add('fsx:CreateBackup');
+    this.to('fsx:CreateBackup');
     return this;
   }
 
@@ -260,7 +260,7 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateDataRepositoryTask.html
    */
   public toCreateDataRepositoryTask() {
-    this.add('fsx:CreateDataRepositoryTask');
+    this.to('fsx:CreateDataRepositoryTask');
     return this;
   }
 
@@ -276,7 +276,7 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystem.html
    */
   public toCreateFileSystem() {
-    this.add('fsx:CreateFileSystem');
+    this.to('fsx:CreateFileSystem');
     return this;
   }
 
@@ -292,7 +292,7 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystemFromBackup.html
    */
   public toCreateFileSystemFromBackup() {
-    this.add('fsx:CreateFileSystemFromBackup');
+    this.to('fsx:CreateFileSystemFromBackup');
     return this;
   }
 
@@ -304,7 +304,7 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteBackup.html
    */
   public toDeleteBackup() {
-    this.add('fsx:DeleteBackup');
+    this.to('fsx:DeleteBackup');
     return this;
   }
 
@@ -316,7 +316,7 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteFileSystem.html
    */
   public toDeleteFileSystem() {
-    this.add('fsx:DeleteFileSystem');
+    this.to('fsx:DeleteFileSystem');
     return this;
   }
 
@@ -328,7 +328,7 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeBackups.html
    */
   public toDescribeBackups() {
-    this.add('fsx:DescribeBackups');
+    this.to('fsx:DescribeBackups');
     return this;
   }
 
@@ -340,7 +340,7 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeDataRepositoryTasks.html
    */
   public toDescribeDataRepositoryTasks() {
-    this.add('fsx:DescribeDataRepositoryTasks');
+    this.to('fsx:DescribeDataRepositoryTasks');
     return this;
   }
 
@@ -352,7 +352,7 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html
    */
   public toDescribeFileSystems() {
-    this.add('fsx:DescribeFileSystems');
+    this.to('fsx:DescribeFileSystems');
     return this;
   }
 
@@ -364,7 +364,7 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('fsx:ListTagsForResource');
+    this.to('fsx:ListTagsForResource');
     return this;
   }
 
@@ -380,7 +380,7 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.add('fsx:TagResource');
+    this.to('fsx:TagResource');
     return this;
   }
 
@@ -395,7 +395,7 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('fsx:UntagResource');
+    this.to('fsx:UntagResource');
     return this;
   }
 
@@ -407,7 +407,7 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateFileSystem.html
    */
   public toUpdateFileSystem() {
-    this.add('fsx:UpdateFileSystem');
+    this.to('fsx:UpdateFileSystem');
     return this;
   }
 

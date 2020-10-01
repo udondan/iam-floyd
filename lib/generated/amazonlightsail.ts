@@ -1181,7 +1181,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AllocateStaticIp.html
    */
   public toAllocateStaticIp() {
-    this.add('lightsail:AllocateStaticIp');
+    this.to('lightsail:AllocateStaticIp');
     return this;
   }
 
@@ -1193,7 +1193,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachDisk.html
    */
   public toAttachDisk() {
-    this.add('lightsail:AttachDisk');
+    this.to('lightsail:AttachDisk');
     return this;
   }
 
@@ -1205,7 +1205,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachInstancesToLoadBalancer.html
    */
   public toAttachInstancesToLoadBalancer() {
-    this.add('lightsail:AttachInstancesToLoadBalancer');
+    this.to('lightsail:AttachInstancesToLoadBalancer');
     return this;
   }
 
@@ -1217,7 +1217,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachLoadBalancerTlsCertificate.html
    */
   public toAttachLoadBalancerTlsCertificate() {
-    this.add('lightsail:AttachLoadBalancerTlsCertificate');
+    this.to('lightsail:AttachLoadBalancerTlsCertificate');
     return this;
   }
 
@@ -1229,7 +1229,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachStaticIp.html
    */
   public toAttachStaticIp() {
-    this.add('lightsail:AttachStaticIp');
+    this.to('lightsail:AttachStaticIp');
     return this;
   }
 
@@ -1241,7 +1241,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CloseInstancePublicPorts.html
    */
   public toCloseInstancePublicPorts() {
-    this.add('lightsail:CloseInstancePublicPorts');
+    this.to('lightsail:CloseInstancePublicPorts');
     return this;
   }
 
@@ -1253,7 +1253,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CopySnapshot.html
    */
   public toCopySnapshot() {
-    this.add('lightsail:CopySnapshot');
+    this.to('lightsail:CopySnapshot');
     return this;
   }
 
@@ -1265,7 +1265,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCloudFormationStack.html
    */
   public toCreateCloudFormationStack() {
-    this.add('lightsail:CreateCloudFormationStack');
+    this.to('lightsail:CreateCloudFormationStack');
     return this;
   }
 
@@ -1281,7 +1281,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDisk.html
    */
   public toCreateDisk() {
-    this.add('lightsail:CreateDisk');
+    this.to('lightsail:CreateDisk');
     return this;
   }
 
@@ -1297,7 +1297,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDiskFromSnapshot.html
    */
   public toCreateDiskFromSnapshot() {
-    this.add('lightsail:CreateDiskFromSnapshot');
+    this.to('lightsail:CreateDiskFromSnapshot');
     return this;
   }
 
@@ -1313,7 +1313,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDiskSnapshot.html
    */
   public toCreateDiskSnapshot() {
-    this.add('lightsail:CreateDiskSnapshot');
+    this.to('lightsail:CreateDiskSnapshot');
     return this;
   }
 
@@ -1329,7 +1329,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomain.html
    */
   public toCreateDomain() {
-    this.add('lightsail:CreateDomain');
+    this.to('lightsail:CreateDomain');
     return this;
   }
 
@@ -1341,7 +1341,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomainEntry.html
    */
   public toCreateDomainEntry() {
-    this.add('lightsail:CreateDomainEntry');
+    this.to('lightsail:CreateDomainEntry');
     return this;
   }
 
@@ -1357,7 +1357,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstanceSnapshot.html
    */
   public toCreateInstanceSnapshot() {
-    this.add('lightsail:CreateInstanceSnapshot');
+    this.to('lightsail:CreateInstanceSnapshot');
     return this;
   }
 
@@ -1373,7 +1373,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstances.html
    */
   public toCreateInstances() {
-    this.add('lightsail:CreateInstances');
+    this.to('lightsail:CreateInstances');
     return this;
   }
 
@@ -1389,7 +1389,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstancesFromSnapshot.html
    */
   public toCreateInstancesFromSnapshot() {
-    this.add('lightsail:CreateInstancesFromSnapshot');
+    this.to('lightsail:CreateInstancesFromSnapshot');
     return this;
   }
 
@@ -1405,7 +1405,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateKeyPair.html
    */
   public toCreateKeyPair() {
-    this.add('lightsail:CreateKeyPair');
+    this.to('lightsail:CreateKeyPair');
     return this;
   }
 
@@ -1421,7 +1421,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html
    */
   public toCreateLoadBalancer() {
-    this.add('lightsail:CreateLoadBalancer');
+    this.to('lightsail:CreateLoadBalancer');
     return this;
   }
 
@@ -1433,7 +1433,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancerTlsCertificate.html
    */
   public toCreateLoadBalancerTlsCertificate() {
-    this.add('lightsail:CreateLoadBalancerTlsCertificate');
+    this.to('lightsail:CreateLoadBalancerTlsCertificate');
     return this;
   }
 
@@ -1449,7 +1449,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabase.html
    */
   public toCreateRelationalDatabase() {
-    this.add('lightsail:CreateRelationalDatabase');
+    this.to('lightsail:CreateRelationalDatabase');
     return this;
   }
 
@@ -1465,7 +1465,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabaseFromSnapshot.html
    */
   public toCreateRelationalDatabaseFromSnapshot() {
-    this.add('lightsail:CreateRelationalDatabaseFromSnapshot');
+    this.to('lightsail:CreateRelationalDatabaseFromSnapshot');
     return this;
   }
 
@@ -1481,7 +1481,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabaseSnapshot.html
    */
   public toCreateRelationalDatabaseSnapshot() {
-    this.add('lightsail:CreateRelationalDatabaseSnapshot');
+    this.to('lightsail:CreateRelationalDatabaseSnapshot');
     return this;
   }
 
@@ -1493,7 +1493,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDisk.html
    */
   public toDeleteDisk() {
-    this.add('lightsail:DeleteDisk');
+    this.to('lightsail:DeleteDisk');
     return this;
   }
 
@@ -1505,7 +1505,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDiskSnapshot.html
    */
   public toDeleteDiskSnapshot() {
-    this.add('lightsail:DeleteDiskSnapshot');
+    this.to('lightsail:DeleteDiskSnapshot');
     return this;
   }
 
@@ -1517,7 +1517,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDomain.html
    */
   public toDeleteDomain() {
-    this.add('lightsail:DeleteDomain');
+    this.to('lightsail:DeleteDomain');
     return this;
   }
 
@@ -1529,7 +1529,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDomainEntry.html
    */
   public toDeleteDomainEntry() {
-    this.add('lightsail:DeleteDomainEntry');
+    this.to('lightsail:DeleteDomainEntry');
     return this;
   }
 
@@ -1541,7 +1541,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteInstance.html
    */
   public toDeleteInstance() {
-    this.add('lightsail:DeleteInstance');
+    this.to('lightsail:DeleteInstance');
     return this;
   }
 
@@ -1553,7 +1553,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteInstanceSnapshot.html
    */
   public toDeleteInstanceSnapshot() {
-    this.add('lightsail:DeleteInstanceSnapshot');
+    this.to('lightsail:DeleteInstanceSnapshot');
     return this;
   }
 
@@ -1565,7 +1565,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteKeyPair.html
    */
   public toDeleteKeyPair() {
-    this.add('lightsail:DeleteKeyPair');
+    this.to('lightsail:DeleteKeyPair');
     return this;
   }
 
@@ -1577,7 +1577,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteKnownHostKeys.html
    */
   public toDeleteKnownHostKeys() {
-    this.add('lightsail:DeleteKnownHostKeys');
+    this.to('lightsail:DeleteKnownHostKeys');
     return this;
   }
 
@@ -1589,7 +1589,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancer.html
    */
   public toDeleteLoadBalancer() {
-    this.add('lightsail:DeleteLoadBalancer');
+    this.to('lightsail:DeleteLoadBalancer');
     return this;
   }
 
@@ -1601,7 +1601,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancerTlsCertificate.html
    */
   public toDeleteLoadBalancerTlsCertificate() {
-    this.add('lightsail:DeleteLoadBalancerTlsCertificate');
+    this.to('lightsail:DeleteLoadBalancerTlsCertificate');
     return this;
   }
 
@@ -1613,7 +1613,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteRelationalDatabase.html
    */
   public toDeleteRelationalDatabase() {
-    this.add('lightsail:DeleteRelationalDatabase');
+    this.to('lightsail:DeleteRelationalDatabase');
     return this;
   }
 
@@ -1625,7 +1625,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteRelationalDatabaseSnapshot.html
    */
   public toDeleteRelationalDatabaseSnapshot() {
-    this.add('lightsail:DeleteRelationalDatabaseSnapshot');
+    this.to('lightsail:DeleteRelationalDatabaseSnapshot');
     return this;
   }
 
@@ -1637,7 +1637,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachDisk.html
    */
   public toDetachDisk() {
-    this.add('lightsail:DetachDisk');
+    this.to('lightsail:DetachDisk');
     return this;
   }
 
@@ -1649,7 +1649,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachInstancesFromLoadBalancer.html
    */
   public toDetachInstancesFromLoadBalancer() {
-    this.add('lightsail:DetachInstancesFromLoadBalancer');
+    this.to('lightsail:DetachInstancesFromLoadBalancer');
     return this;
   }
 
@@ -1661,7 +1661,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachStaticIp.html
    */
   public toDetachStaticIp() {
-    this.add('lightsail:DetachStaticIp');
+    this.to('lightsail:DetachStaticIp');
     return this;
   }
 
@@ -1673,7 +1673,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html
    */
   public toDownloadDefaultKeyPair() {
-    this.add('lightsail:DownloadDefaultKeyPair');
+    this.to('lightsail:DownloadDefaultKeyPair');
     return this;
   }
 
@@ -1685,7 +1685,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshot.html
    */
   public toExportSnapshot() {
-    this.add('lightsail:ExportSnapshot');
+    this.to('lightsail:ExportSnapshot');
     return this;
   }
 
@@ -1697,7 +1697,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetActiveNames.html
    */
   public toGetActiveNames() {
-    this.add('lightsail:GetActiveNames');
+    this.to('lightsail:GetActiveNames');
     return this;
   }
 
@@ -1709,7 +1709,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBlueprints.html
    */
   public toGetBlueprints() {
-    this.add('lightsail:GetBlueprints');
+    this.to('lightsail:GetBlueprints');
     return this;
   }
 
@@ -1721,7 +1721,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBundles.html
    */
   public toGetBundles() {
-    this.add('lightsail:GetBundles');
+    this.to('lightsail:GetBundles');
     return this;
   }
 
@@ -1733,7 +1733,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCloudFormationStackRecords.html
    */
   public toGetCloudFormationStackRecords() {
-    this.add('lightsail:GetCloudFormationStackRecords');
+    this.to('lightsail:GetCloudFormationStackRecords');
     return this;
   }
 
@@ -1745,7 +1745,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDisk.html
    */
   public toGetDisk() {
-    this.add('lightsail:GetDisk');
+    this.to('lightsail:GetDisk');
     return this;
   }
 
@@ -1757,7 +1757,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDiskSnapshot.html
    */
   public toGetDiskSnapshot() {
-    this.add('lightsail:GetDiskSnapshot');
+    this.to('lightsail:GetDiskSnapshot');
     return this;
   }
 
@@ -1769,7 +1769,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDiskSnapshots.html
    */
   public toGetDiskSnapshots() {
-    this.add('lightsail:GetDiskSnapshots');
+    this.to('lightsail:GetDiskSnapshots');
     return this;
   }
 
@@ -1781,7 +1781,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDisks.html
    */
   public toGetDisks() {
-    this.add('lightsail:GetDisks');
+    this.to('lightsail:GetDisks');
     return this;
   }
 
@@ -1793,7 +1793,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDomain.html
    */
   public toGetDomain() {
-    this.add('lightsail:GetDomain');
+    this.to('lightsail:GetDomain');
     return this;
   }
 
@@ -1805,7 +1805,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDomains.html
    */
   public toGetDomains() {
-    this.add('lightsail:GetDomains');
+    this.to('lightsail:GetDomains');
     return this;
   }
 
@@ -1817,7 +1817,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetExportSnapshotRecords.html
    */
   public toGetExportSnapshotRecords() {
-    this.add('lightsail:GetExportSnapshotRecords');
+    this.to('lightsail:GetExportSnapshotRecords');
     return this;
   }
 
@@ -1829,7 +1829,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstance.html
    */
   public toGetInstance() {
-    this.add('lightsail:GetInstance');
+    this.to('lightsail:GetInstance');
     return this;
   }
 
@@ -1841,7 +1841,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceAccessDetails.html
    */
   public toGetInstanceAccessDetails() {
-    this.add('lightsail:GetInstanceAccessDetails');
+    this.to('lightsail:GetInstanceAccessDetails');
     return this;
   }
 
@@ -1853,7 +1853,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceMetricData.html
    */
   public toGetInstanceMetricData() {
-    this.add('lightsail:GetInstanceMetricData');
+    this.to('lightsail:GetInstanceMetricData');
     return this;
   }
 
@@ -1865,7 +1865,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstancePortStates.html
    */
   public toGetInstancePortStates() {
-    this.add('lightsail:GetInstancePortStates');
+    this.to('lightsail:GetInstancePortStates');
     return this;
   }
 
@@ -1877,7 +1877,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceSnapshot.html
    */
   public toGetInstanceSnapshot() {
-    this.add('lightsail:GetInstanceSnapshot');
+    this.to('lightsail:GetInstanceSnapshot');
     return this;
   }
 
@@ -1889,7 +1889,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceSnapshots.html
    */
   public toGetInstanceSnapshots() {
-    this.add('lightsail:GetInstanceSnapshots');
+    this.to('lightsail:GetInstanceSnapshots');
     return this;
   }
 
@@ -1901,7 +1901,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceState.html
    */
   public toGetInstanceState() {
-    this.add('lightsail:GetInstanceState');
+    this.to('lightsail:GetInstanceState');
     return this;
   }
 
@@ -1913,7 +1913,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstances.html
    */
   public toGetInstances() {
-    this.add('lightsail:GetInstances');
+    this.to('lightsail:GetInstances');
     return this;
   }
 
@@ -1925,7 +1925,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetKeyPair.html
    */
   public toGetKeyPair() {
-    this.add('lightsail:GetKeyPair');
+    this.to('lightsail:GetKeyPair');
     return this;
   }
 
@@ -1937,7 +1937,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetKeyPairs.html
    */
   public toGetKeyPairs() {
-    this.add('lightsail:GetKeyPairs');
+    this.to('lightsail:GetKeyPairs');
     return this;
   }
 
@@ -1949,7 +1949,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancer.html
    */
   public toGetLoadBalancer() {
-    this.add('lightsail:GetLoadBalancer');
+    this.to('lightsail:GetLoadBalancer');
     return this;
   }
 
@@ -1961,7 +1961,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerMetricData.html
    */
   public toGetLoadBalancerMetricData() {
-    this.add('lightsail:GetLoadBalancerMetricData');
+    this.to('lightsail:GetLoadBalancerMetricData');
     return this;
   }
 
@@ -1973,7 +1973,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancerTlsCertificate.html
    */
   public toGetLoadBalancerTlsCertificates() {
-    this.add('lightsail:GetLoadBalancerTlsCertificates');
+    this.to('lightsail:GetLoadBalancerTlsCertificates');
     return this;
   }
 
@@ -1985,7 +1985,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancers.html
    */
   public toGetLoadBalancers() {
-    this.add('lightsail:GetLoadBalancers');
+    this.to('lightsail:GetLoadBalancers');
     return this;
   }
 
@@ -1997,7 +1997,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperation.html
    */
   public toGetOperation() {
-    this.add('lightsail:GetOperation');
+    this.to('lightsail:GetOperation');
     return this;
   }
 
@@ -2009,7 +2009,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperations.html
    */
   public toGetOperations() {
-    this.add('lightsail:GetOperations');
+    this.to('lightsail:GetOperations');
     return this;
   }
 
@@ -2021,7 +2021,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperationsForResource.html
    */
   public toGetOperationsForResource() {
-    this.add('lightsail:GetOperationsForResource');
+    this.to('lightsail:GetOperationsForResource');
     return this;
   }
 
@@ -2033,7 +2033,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html
    */
   public toGetRegions() {
-    this.add('lightsail:GetRegions');
+    this.to('lightsail:GetRegions');
     return this;
   }
 
@@ -2045,7 +2045,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabase.html
    */
   public toGetRelationalDatabase() {
-    this.add('lightsail:GetRelationalDatabase');
+    this.to('lightsail:GetRelationalDatabase');
     return this;
   }
 
@@ -2057,7 +2057,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html
    */
   public toGetRelationalDatabaseBlueprints() {
-    this.add('lightsail:GetRelationalDatabaseBlueprints');
+    this.to('lightsail:GetRelationalDatabaseBlueprints');
     return this;
   }
 
@@ -2069,7 +2069,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBundles.html
    */
   public toGetRelationalDatabaseBundles() {
-    this.add('lightsail:GetRelationalDatabaseBundles');
+    this.to('lightsail:GetRelationalDatabaseBundles');
     return this;
   }
 
@@ -2081,7 +2081,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseEvents.html
    */
   public toGetRelationalDatabaseEvents() {
-    this.add('lightsail:GetRelationalDatabaseEvents');
+    this.to('lightsail:GetRelationalDatabaseEvents');
     return this;
   }
 
@@ -2093,7 +2093,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseLogEvents.html
    */
   public toGetRelationalDatabaseLogEvents() {
-    this.add('lightsail:GetRelationalDatabaseLogEvents');
+    this.to('lightsail:GetRelationalDatabaseLogEvents');
     return this;
   }
 
@@ -2105,7 +2105,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseLogStreams.html
    */
   public toGetRelationalDatabaseLogStreams() {
-    this.add('lightsail:GetRelationalDatabaseLogStreams');
+    this.to('lightsail:GetRelationalDatabaseLogStreams');
     return this;
   }
 
@@ -2117,7 +2117,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseMasterUserPassword.html
    */
   public toGetRelationalDatabaseMasterUserPassword() {
-    this.add('lightsail:GetRelationalDatabaseMasterUserPassword');
+    this.to('lightsail:GetRelationalDatabaseMasterUserPassword');
     return this;
   }
 
@@ -2129,7 +2129,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseMetricData.html
    */
   public toGetRelationalDatabaseMetricData() {
-    this.add('lightsail:GetRelationalDatabaseMetricData');
+    this.to('lightsail:GetRelationalDatabaseMetricData');
     return this;
   }
 
@@ -2141,7 +2141,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseParameters.html
    */
   public toGetRelationalDatabaseParameters() {
-    this.add('lightsail:GetRelationalDatabaseParameters');
+    this.to('lightsail:GetRelationalDatabaseParameters');
     return this;
   }
 
@@ -2153,7 +2153,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseSnapshot.html
    */
   public toGetRelationalDatabaseSnapshot() {
-    this.add('lightsail:GetRelationalDatabaseSnapshot');
+    this.to('lightsail:GetRelationalDatabaseSnapshot');
     return this;
   }
 
@@ -2165,7 +2165,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseSnapshots.html
    */
   public toGetRelationalDatabaseSnapshots() {
-    this.add('lightsail:GetRelationalDatabaseSnapshots');
+    this.to('lightsail:GetRelationalDatabaseSnapshots');
     return this;
   }
 
@@ -2177,7 +2177,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabases.html
    */
   public toGetRelationalDatabases() {
-    this.add('lightsail:GetRelationalDatabases');
+    this.to('lightsail:GetRelationalDatabases');
     return this;
   }
 
@@ -2189,7 +2189,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetStaticIp.html
    */
   public toGetStaticIp() {
-    this.add('lightsail:GetStaticIp');
+    this.to('lightsail:GetStaticIp');
     return this;
   }
 
@@ -2201,7 +2201,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetStaticIps.html
    */
   public toGetStaticIps() {
-    this.add('lightsail:GetStaticIps');
+    this.to('lightsail:GetStaticIps');
     return this;
   }
 
@@ -2213,7 +2213,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ImportKeyPair.html
    */
   public toImportKeyPair() {
-    this.add('lightsail:ImportKeyPair');
+    this.to('lightsail:ImportKeyPair');
     return this;
   }
 
@@ -2225,7 +2225,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_IsVpcPeered.html
    */
   public toIsVpcPeered() {
-    this.add('lightsail:IsVpcPeered');
+    this.to('lightsail:IsVpcPeered');
     return this;
   }
 
@@ -2237,7 +2237,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_OpenInstancePublicPorts.html
    */
   public toOpenInstancePublicPorts() {
-    this.add('lightsail:OpenInstancePublicPorts');
+    this.to('lightsail:OpenInstancePublicPorts');
     return this;
   }
 
@@ -2249,7 +2249,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_PeerVpc.html
    */
   public toPeerVpc() {
-    this.add('lightsail:PeerVpc');
+    this.to('lightsail:PeerVpc');
     return this;
   }
 
@@ -2261,7 +2261,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_PutInstancePublicPorts.html
    */
   public toPutInstancePublicPorts() {
-    this.add('lightsail:PutInstancePublicPorts');
+    this.to('lightsail:PutInstancePublicPorts');
     return this;
   }
 
@@ -2273,7 +2273,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RebootInstance.html
    */
   public toRebootInstance() {
-    this.add('lightsail:RebootInstance');
+    this.to('lightsail:RebootInstance');
     return this;
   }
 
@@ -2285,7 +2285,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RebootRelationalDatabase.html
    */
   public toRebootRelationalDatabase() {
-    this.add('lightsail:RebootRelationalDatabase');
+    this.to('lightsail:RebootRelationalDatabase');
     return this;
   }
 
@@ -2297,7 +2297,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ReleaseStaticIp.html
    */
   public toReleaseStaticIp() {
-    this.add('lightsail:ReleaseStaticIp');
+    this.to('lightsail:ReleaseStaticIp');
     return this;
   }
 
@@ -2309,7 +2309,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartInstance.html
    */
   public toStartInstance() {
-    this.add('lightsail:StartInstance');
+    this.to('lightsail:StartInstance');
     return this;
   }
 
@@ -2321,7 +2321,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartRelationalDatabase.html
    */
   public toStartRelationalDatabase() {
-    this.add('lightsail:StartRelationalDatabase');
+    this.to('lightsail:StartRelationalDatabase');
     return this;
   }
 
@@ -2333,7 +2333,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StopInstance.html
    */
   public toStopInstance() {
-    this.add('lightsail:StopInstance');
+    this.to('lightsail:StopInstance');
     return this;
   }
 
@@ -2345,7 +2345,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StopRelationalDatabase.html
    */
   public toStopRelationalDatabase() {
-    this.add('lightsail:StopRelationalDatabase');
+    this.to('lightsail:StopRelationalDatabase');
     return this;
   }
 
@@ -2361,7 +2361,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html
    */
   public toTagResource() {
-    this.add('lightsail:TagResource');
+    this.to('lightsail:TagResource');
     return this;
   }
 
@@ -2373,7 +2373,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UnpeerVpc.html
    */
   public toUnpeerVpc() {
-    this.add('lightsail:UnpeerVpc');
+    this.to('lightsail:UnpeerVpc');
     return this;
   }
 
@@ -2389,7 +2389,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('lightsail:UntagResource');
+    this.to('lightsail:UntagResource');
     return this;
   }
 
@@ -2401,7 +2401,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateDomainEntry.html
    */
   public toUpdateDomainEntry() {
-    this.add('lightsail:UpdateDomainEntry');
+    this.to('lightsail:UpdateDomainEntry');
     return this;
   }
 
@@ -2413,7 +2413,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachInstancesFromLoadBalancer.html
    */
   public toUpdateLoadBalancerAttribute() {
-    this.add('lightsail:UpdateLoadBalancerAttribute');
+    this.to('lightsail:UpdateLoadBalancerAttribute');
     return this;
   }
 
@@ -2425,7 +2425,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateRelationalDatabase.html
    */
   public toUpdateRelationalDatabase() {
-    this.add('lightsail:UpdateRelationalDatabase');
+    this.to('lightsail:UpdateRelationalDatabase');
     return this;
   }
 
@@ -2437,7 +2437,7 @@ export class Lightsail extends PolicyStatement {
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateRelationalDatabaseParameters.html
    */
   public toUpdateRelationalDatabaseParameters() {
-    this.add('lightsail:UpdateRelationalDatabaseParameters');
+    this.to('lightsail:UpdateRelationalDatabaseParameters');
     return this;
   }
 

@@ -72,7 +72,7 @@ export class Macie extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateMemberAccount.html
    */
   public toAssociateMemberAccount() {
-    this.add('macie:AssociateMemberAccount');
+    this.to('macie:AssociateMemberAccount');
     return this;
   }
 
@@ -87,7 +87,7 @@ export class Macie extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateS3Resources.html
    */
   public toAssociateS3Resources() {
-    this.add('macie:AssociateS3Resources');
+    this.to('macie:AssociateS3Resources');
     return this;
   }
 
@@ -99,7 +99,7 @@ export class Macie extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateMemberAccount.html
    */
   public toDisassociateMemberAccount() {
-    this.add('macie:DisassociateMemberAccount');
+    this.to('macie:DisassociateMemberAccount');
     return this;
   }
 
@@ -114,7 +114,7 @@ export class Macie extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateS3Resources.html
    */
   public toDisassociateS3Resources() {
-    this.add('macie:DisassociateS3Resources');
+    this.to('macie:DisassociateS3Resources');
     return this;
   }
 
@@ -126,7 +126,7 @@ export class Macie extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_ListMemberAccounts.html
    */
   public toListMemberAccounts() {
-    this.add('macie:ListMemberAccounts');
+    this.to('macie:ListMemberAccounts');
     return this;
   }
 
@@ -138,7 +138,7 @@ export class Macie extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_ListS3Resources.html
    */
   public toListS3Resources() {
-    this.add('macie:ListS3Resources');
+    this.to('macie:ListS3Resources');
     return this;
   }
 
@@ -153,7 +153,7 @@ export class Macie extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_UpdateS3Resources.html
    */
   public toUpdateS3Resources() {
-    this.add('macie:UpdateS3Resources');
+    this.to('macie:UpdateS3Resources');
     return this;
   }
 }

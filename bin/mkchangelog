@@ -38,11 +38,11 @@ function getNewServices() {
 }
 
 function getNewActions() {
-  gitDiffModules | grep "^+.*this.add(" | sed "s/.*('/- /g" | sed "s/'.*$//g"
+  gitDiffModules | grep "^+.*this.to(" | sed "s/.*('/- /g" | sed "s/'.*$//g"
 }
 
 function getRemovedActions() {
-  gitDiffModules | grep "^-.*this.add(" | sed "s/.*('/- /g" | sed "s/'.*$//g"
+  gitDiffModules | grep "^-.*this.to(" | sed "s/.*('/- /g" | sed "s/'.*$//g"
 }
 
 function getNewResourceTypes() {

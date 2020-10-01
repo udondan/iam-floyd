@@ -1014,7 +1014,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toAcceptDelegate() {
-    this.add('chime:AcceptDelegate');
+    this.to('chime:AcceptDelegate');
     return this;
   }
 
@@ -1026,7 +1026,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/manage-access.html
    */
   public toActivateUsers() {
-    this.add('chime:ActivateUsers');
+    this.to('chime:ActivateUsers');
     return this;
   }
 
@@ -1038,7 +1038,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/claim-domain.html
    */
   public toAddDomain() {
-    this.add('chime:AddDomain');
+    this.to('chime:AddDomain');
     return this;
   }
 
@@ -1050,7 +1050,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html
    */
   public toAddOrUpdateGroups() {
-    this.add('chime:AddOrUpdateGroups');
+    this.to('chime:AddOrUpdateGroups');
     return this;
   }
 
@@ -1062,7 +1062,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_AssociatePhoneNumberWithUser.html
    */
   public toAssociatePhoneNumberWithUser() {
-    this.add('chime:AssociatePhoneNumberWithUser');
+    this.to('chime:AssociatePhoneNumberWithUser');
     return this;
   }
 
@@ -1074,7 +1074,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_AssociatePhoneNumbersWithVoiceConnector.html
    */
   public toAssociatePhoneNumbersWithVoiceConnector() {
-    this.add('chime:AssociatePhoneNumbersWithVoiceConnector');
+    this.to('chime:AssociatePhoneNumbersWithVoiceConnector');
     return this;
   }
 
@@ -1086,7 +1086,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_AssociatePhoneNumbersWithVoiceConnectorGroup.html
    */
   public toAssociatePhoneNumbersWithVoiceConnectorGroup() {
-    this.add('chime:AssociatePhoneNumbersWithVoiceConnectorGroup');
+    this.to('chime:AssociatePhoneNumbersWithVoiceConnectorGroup');
     return this;
   }
 
@@ -1098,7 +1098,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_AssociateSigninDelegateGroupsWithAccount.html
    */
   public toAssociateSigninDelegateGroupsWithAccount() {
-    this.add('chime:AssociateSigninDelegateGroupsWithAccount');
+    this.to('chime:AssociateSigninDelegateGroupsWithAccount');
     return this;
   }
 
@@ -1110,7 +1110,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toAuthorizeDirectory() {
-    this.add('chime:AuthorizeDirectory');
+    this.to('chime:AuthorizeDirectory');
     return this;
   }
 
@@ -1122,7 +1122,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchCreateAttendee.html
    */
   public toBatchCreateAttendee() {
-    this.add('chime:BatchCreateAttendee');
+    this.to('chime:BatchCreateAttendee');
     return this;
   }
 
@@ -1132,7 +1132,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toBatchCreateRoomMembership() {
-    this.add('chime:BatchCreateRoomMembership');
+    this.to('chime:BatchCreateRoomMembership');
     return this;
   }
 
@@ -1144,7 +1144,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchDeletePhoneNumber.html
    */
   public toBatchDeletePhoneNumber() {
-    this.add('chime:BatchDeletePhoneNumber');
+    this.to('chime:BatchDeletePhoneNumber');
     return this;
   }
 
@@ -1156,7 +1156,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchSuspendUser.html
    */
   public toBatchSuspendUser() {
-    this.add('chime:BatchSuspendUser');
+    this.to('chime:BatchSuspendUser');
     return this;
   }
 
@@ -1168,7 +1168,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchUnsuspendUser.html
    */
   public toBatchUnsuspendUser() {
-    this.add('chime:BatchUnsuspendUser');
+    this.to('chime:BatchUnsuspendUser');
     return this;
   }
 
@@ -1180,7 +1180,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchUpdatePhoneNumber.html
    */
   public toBatchUpdatePhoneNumber() {
-    this.add('chime:BatchUpdatePhoneNumber');
+    this.to('chime:BatchUpdatePhoneNumber');
     return this;
   }
 
@@ -1192,7 +1192,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchUpdateUser.html
    */
   public toBatchUpdateUser() {
-    this.add('chime:BatchUpdateUser');
+    this.to('chime:BatchUpdateUser');
     return this;
   }
 
@@ -1207,7 +1207,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/active_directory.html
    */
   public toConnectDirectory() {
-    this.add('chime:ConnectDirectory');
+    this.to('chime:ConnectDirectory');
     return this;
   }
 
@@ -1219,7 +1219,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAccount.html
    */
   public toCreateAccount() {
-    this.add('chime:CreateAccount');
+    this.to('chime:CreateAccount');
     return this;
   }
 
@@ -1231,7 +1231,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html
    */
   public toCreateApiKey() {
-    this.add('chime:CreateApiKey');
+    this.to('chime:CreateApiKey');
     return this;
   }
 
@@ -1243,7 +1243,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html
    */
   public toCreateAttendee() {
-    this.add('chime:CreateAttendee');
+    this.to('chime:CreateAttendee');
     return this;
   }
 
@@ -1253,7 +1253,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateBot() {
-    this.add('chime:CreateBot');
+    this.to('chime:CreateBot');
     return this;
   }
 
@@ -1263,7 +1263,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateBotMembership() {
-    this.add('chime:CreateBotMembership');
+    this.to('chime:CreateBotMembership');
     return this;
   }
 
@@ -1279,7 +1279,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/manage-access.html
    */
   public toCreateCDRBucket() {
-    this.add('chime:CreateCDRBucket');
+    this.to('chime:CreateCDRBucket');
     return this;
   }
 
@@ -1295,7 +1295,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateMeeting.html
    */
   public toCreateMeeting() {
-    this.add('chime:CreateMeeting');
+    this.to('chime:CreateMeeting');
     return this;
   }
 
@@ -1311,7 +1311,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateMeetingWithAttendees.html
    */
   public toCreateMeetingWithAttendees() {
-    this.add('chime:CreateMeetingWithAttendees');
+    this.to('chime:CreateMeetingWithAttendees');
     return this;
   }
 
@@ -1323,7 +1323,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreatePhoneNumberOrder.html
    */
   public toCreatePhoneNumberOrder() {
-    this.add('chime:CreatePhoneNumberOrder');
+    this.to('chime:CreatePhoneNumberOrder');
     return this;
   }
 
@@ -1335,7 +1335,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateProxySession.html
    */
   public toCreateProxySession() {
-    this.add('chime:CreateProxySession');
+    this.to('chime:CreateProxySession');
     return this;
   }
 
@@ -1345,7 +1345,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateRoom() {
-    this.add('chime:CreateRoom');
+    this.to('chime:CreateRoom');
     return this;
   }
 
@@ -1355,7 +1355,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateRoomMembership() {
-    this.add('chime:CreateRoomMembership');
+    this.to('chime:CreateRoomMembership');
     return this;
   }
 
@@ -1367,7 +1367,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateUser.html
    */
   public toCreateUser() {
-    this.add('chime:CreateUser');
+    this.to('chime:CreateUser');
     return this;
   }
 
@@ -1379,7 +1379,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateVoiceConnector.html
    */
   public toCreateVoiceConnector() {
-    this.add('chime:CreateVoiceConnector');
+    this.to('chime:CreateVoiceConnector');
     return this;
   }
 
@@ -1391,7 +1391,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateVoiceConnectorGroup.html
    */
   public toCreateVoiceConnectorGroup() {
-    this.add('chime:CreateVoiceConnectorGroup');
+    this.to('chime:CreateVoiceConnectorGroup');
     return this;
   }
 
@@ -1403,7 +1403,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteAccount.html
    */
   public toDeleteAccount() {
-    this.add('chime:DeleteAccount');
+    this.to('chime:DeleteAccount');
     return this;
   }
 
@@ -1415,7 +1415,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html
    */
   public toDeleteAccountOpenIdConfig() {
-    this.add('chime:DeleteAccountOpenIdConfig');
+    this.to('chime:DeleteAccountOpenIdConfig');
     return this;
   }
 
@@ -1427,7 +1427,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html
    */
   public toDeleteApiKey() {
-    this.add('chime:DeleteApiKey');
+    this.to('chime:DeleteApiKey');
     return this;
   }
 
@@ -1439,7 +1439,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteAttendee.html
    */
   public toDeleteAttendee() {
-    this.add('chime:DeleteAttendee');
+    this.to('chime:DeleteAttendee');
     return this;
   }
 
@@ -1454,7 +1454,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toDeleteCDRBucket() {
-    this.add('chime:DeleteCDRBucket');
+    this.to('chime:DeleteCDRBucket');
     return this;
   }
 
@@ -1466,7 +1466,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toDeleteDelegate() {
-    this.add('chime:DeleteDelegate');
+    this.to('chime:DeleteDelegate');
     return this;
   }
 
@@ -1478,7 +1478,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/claim-domain.html
    */
   public toDeleteDomain() {
-    this.add('chime:DeleteDomain');
+    this.to('chime:DeleteDomain');
     return this;
   }
 
@@ -1488,7 +1488,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toDeleteEventsConfiguration() {
-    this.add('chime:DeleteEventsConfiguration');
+    this.to('chime:DeleteEventsConfiguration');
     return this;
   }
 
@@ -1500,7 +1500,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toDeleteGroups() {
-    this.add('chime:DeleteGroups');
+    this.to('chime:DeleteGroups');
     return this;
   }
 
@@ -1512,7 +1512,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteMeeting.html
    */
   public toDeleteMeeting() {
-    this.add('chime:DeleteMeeting');
+    this.to('chime:DeleteMeeting');
     return this;
   }
 
@@ -1524,7 +1524,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeletePhoneNumber.html
    */
   public toDeletePhoneNumber() {
-    this.add('chime:DeletePhoneNumber');
+    this.to('chime:DeletePhoneNumber');
     return this;
   }
 
@@ -1536,7 +1536,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteProxySession.html
    */
   public toDeleteProxySession() {
-    this.add('chime:DeleteProxySession');
+    this.to('chime:DeleteProxySession');
     return this;
   }
 
@@ -1546,7 +1546,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toDeleteRoom() {
-    this.add('chime:DeleteRoom');
+    this.to('chime:DeleteRoom');
     return this;
   }
 
@@ -1556,7 +1556,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toDeleteRoomMembership() {
-    this.add('chime:DeleteRoomMembership');
+    this.to('chime:DeleteRoomMembership');
     return this;
   }
 
@@ -1568,7 +1568,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnector.html
    */
   public toDeleteVoiceConnector() {
-    this.add('chime:DeleteVoiceConnector');
+    this.to('chime:DeleteVoiceConnector');
     return this;
   }
 
@@ -1580,7 +1580,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorEmergencyCallingConfiguration.html
    */
   public toDeleteVoiceConnectorEmergencyCallingConfiguration() {
-    this.add('chime:DeleteVoiceConnectorEmergencyCallingConfiguration');
+    this.to('chime:DeleteVoiceConnectorEmergencyCallingConfiguration');
     return this;
   }
 
@@ -1592,7 +1592,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorGroup.html
    */
   public toDeleteVoiceConnectorGroup() {
-    this.add('chime:DeleteVoiceConnectorGroup');
+    this.to('chime:DeleteVoiceConnectorGroup');
     return this;
   }
 
@@ -1604,7 +1604,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorOrigination.html
    */
   public toDeleteVoiceConnectorOrigination() {
-    this.add('chime:DeleteVoiceConnectorOrigination');
+    this.to('chime:DeleteVoiceConnectorOrigination');
     return this;
   }
 
@@ -1616,7 +1616,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorProxy.html
    */
   public toDeleteVoiceConnectorProxy() {
-    this.add('chime:DeleteVoiceConnectorProxy');
+    this.to('chime:DeleteVoiceConnectorProxy');
     return this;
   }
 
@@ -1628,7 +1628,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorStreamingConfiguration.html
    */
   public toDeleteVoiceConnectorStreamingConfiguration() {
-    this.add('chime:DeleteVoiceConnectorStreamingConfiguration');
+    this.to('chime:DeleteVoiceConnectorStreamingConfiguration');
     return this;
   }
 
@@ -1640,7 +1640,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorTermination.html
    */
   public toDeleteVoiceConnectorTermination() {
-    this.add('chime:DeleteVoiceConnectorTermination');
+    this.to('chime:DeleteVoiceConnectorTermination');
     return this;
   }
 
@@ -1652,7 +1652,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorTerminationCredentials.html
    */
   public toDeleteVoiceConnectorTerminationCredentials() {
-    this.add('chime:DeleteVoiceConnectorTerminationCredentials');
+    this.to('chime:DeleteVoiceConnectorTerminationCredentials');
     return this;
   }
 
@@ -1664,7 +1664,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DisassociatePhoneNumberFromUser.html
    */
   public toDisassociatePhoneNumberFromUser() {
-    this.add('chime:DisassociatePhoneNumberFromUser');
+    this.to('chime:DisassociatePhoneNumberFromUser');
     return this;
   }
 
@@ -1676,7 +1676,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DisassociatePhoneNumbersFromVoiceConnector.html
    */
   public toDisassociatePhoneNumbersFromVoiceConnector() {
-    this.add('chime:DisassociatePhoneNumbersFromVoiceConnector');
+    this.to('chime:DisassociatePhoneNumbersFromVoiceConnector');
     return this;
   }
 
@@ -1688,7 +1688,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DisassociatePhoneNumbersFromVoiceConnectorGroup.html
    */
   public toDisassociatePhoneNumbersFromVoiceConnectorGroup() {
-    this.add('chime:DisassociatePhoneNumbersFromVoiceConnectorGroup');
+    this.to('chime:DisassociatePhoneNumbersFromVoiceConnectorGroup');
     return this;
   }
 
@@ -1700,7 +1700,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_DisassociateSigninDelegateGroupsFromAccount.html
    */
   public toDisassociateSigninDelegateGroupsFromAccount() {
-    this.add('chime:DisassociateSigninDelegateGroupsFromAccount');
+    this.to('chime:DisassociateSigninDelegateGroupsFromAccount');
     return this;
   }
 
@@ -1712,7 +1712,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toDisconnectDirectory() {
-    this.add('chime:DisconnectDirectory');
+    this.to('chime:DisconnectDirectory');
     return this;
   }
 
@@ -1724,7 +1724,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetAccount.html
    */
   public toGetAccount() {
-    this.add('chime:GetAccount');
+    this.to('chime:GetAccount');
     return this;
   }
 
@@ -1736,7 +1736,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toGetAccountResource() {
-    this.add('chime:GetAccountResource');
+    this.to('chime:GetAccountResource');
     return this;
   }
 
@@ -1748,7 +1748,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetAccountSettings.html
    */
   public toGetAccountSettings() {
-    this.add('chime:GetAccountSettings');
+    this.to('chime:GetAccountSettings');
     return this;
   }
 
@@ -1760,7 +1760,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html
    */
   public toGetAccountWithOpenIdConfig() {
-    this.add('chime:GetAccountWithOpenIdConfig');
+    this.to('chime:GetAccountWithOpenIdConfig');
     return this;
   }
 
@@ -1772,7 +1772,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetAttendee.html
    */
   public toGetAttendee() {
-    this.add('chime:GetAttendee');
+    this.to('chime:GetAttendee');
     return this;
   }
 
@@ -1782,7 +1782,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Read
    */
   public toGetBot() {
-    this.add('chime:GetBot');
+    this.to('chime:GetBot');
     return this;
   }
 
@@ -1801,7 +1801,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toGetCDRBucket() {
-    this.add('chime:GetCDRBucket');
+    this.to('chime:GetCDRBucket');
     return this;
   }
 
@@ -1813,7 +1813,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/claim-domain.html
    */
   public toGetDomain() {
-    this.add('chime:GetDomain');
+    this.to('chime:GetDomain');
     return this;
   }
 
@@ -1823,7 +1823,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Read
    */
   public toGetEventsConfiguration() {
-    this.add('chime:GetEventsConfiguration');
+    this.to('chime:GetEventsConfiguration');
     return this;
   }
 
@@ -1835,7 +1835,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetGlobalSettings.html
    */
   public toGetGlobalSettings() {
-    this.add('chime:GetGlobalSettings');
+    this.to('chime:GetGlobalSettings');
     return this;
   }
 
@@ -1847,7 +1847,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetMeeting.html
    */
   public toGetMeeting() {
-    this.add('chime:GetMeeting');
+    this.to('chime:GetMeeting');
     return this;
   }
 
@@ -1859,7 +1859,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toGetMeetingDetail() {
-    this.add('chime:GetMeetingDetail');
+    this.to('chime:GetMeetingDetail');
     return this;
   }
 
@@ -1871,7 +1871,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetPhoneNumber.html
    */
   public toGetPhoneNumber() {
-    this.add('chime:GetPhoneNumber');
+    this.to('chime:GetPhoneNumber');
     return this;
   }
 
@@ -1883,7 +1883,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetPhoneNumberOrder.html
    */
   public toGetPhoneNumberOrder() {
-    this.add('chime:GetPhoneNumberOrder');
+    this.to('chime:GetPhoneNumberOrder');
     return this;
   }
 
@@ -1895,7 +1895,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetPhoneNumberSettings.html
    */
   public toGetPhoneNumberSettings() {
-    this.add('chime:GetPhoneNumberSettings');
+    this.to('chime:GetPhoneNumberSettings');
     return this;
   }
 
@@ -1907,7 +1907,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetProxySession.html
    */
   public toGetProxySession() {
-    this.add('chime:GetProxySession');
+    this.to('chime:GetProxySession');
     return this;
   }
 
@@ -1917,7 +1917,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Read
    */
   public toGetRetentionSettings() {
-    this.add('chime:GetRetentionSettings');
+    this.to('chime:GetRetentionSettings');
     return this;
   }
 
@@ -1927,7 +1927,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Read
    */
   public toGetRoom() {
-    this.add('chime:GetRoom');
+    this.to('chime:GetRoom');
     return this;
   }
 
@@ -1939,7 +1939,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/phone-numbers.html
    */
   public toGetTelephonyLimits() {
-    this.add('chime:GetTelephonyLimits');
+    this.to('chime:GetTelephonyLimits');
     return this;
   }
 
@@ -1951,7 +1951,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetUser.html
    */
   public toGetUser() {
-    this.add('chime:GetUser');
+    this.to('chime:GetUser');
     return this;
   }
 
@@ -1963,7 +1963,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/user-details.html
    */
   public toGetUserActivityReportData() {
-    this.add('chime:GetUserActivityReportData');
+    this.to('chime:GetUserActivityReportData');
     return this;
   }
 
@@ -1975,7 +1975,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/user-details.html
    */
   public toGetUserByEmail() {
-    this.add('chime:GetUserByEmail');
+    this.to('chime:GetUserByEmail');
     return this;
   }
 
@@ -1987,7 +1987,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetUserSettings.html
    */
   public toGetUserSettings() {
-    this.add('chime:GetUserSettings');
+    this.to('chime:GetUserSettings');
     return this;
   }
 
@@ -1999,7 +1999,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnector.html
    */
   public toGetVoiceConnector() {
-    this.add('chime:GetVoiceConnector');
+    this.to('chime:GetVoiceConnector');
     return this;
   }
 
@@ -2011,7 +2011,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorEmergencyCallingConfiguration.html
    */
   public toGetVoiceConnectorEmergencyCallingConfiguration() {
-    this.add('chime:GetVoiceConnectorEmergencyCallingConfiguration');
+    this.to('chime:GetVoiceConnectorEmergencyCallingConfiguration');
     return this;
   }
 
@@ -2023,7 +2023,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorGroup.html
    */
   public toGetVoiceConnectorGroup() {
-    this.add('chime:GetVoiceConnectorGroup');
+    this.to('chime:GetVoiceConnectorGroup');
     return this;
   }
 
@@ -2035,7 +2035,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorLoggingConfiguration.html
    */
   public toGetVoiceConnectorLoggingConfiguration() {
-    this.add('chime:GetVoiceConnectorLoggingConfiguration');
+    this.to('chime:GetVoiceConnectorLoggingConfiguration');
     return this;
   }
 
@@ -2047,7 +2047,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorOrigination.html
    */
   public toGetVoiceConnectorOrigination() {
-    this.add('chime:GetVoiceConnectorOrigination');
+    this.to('chime:GetVoiceConnectorOrigination');
     return this;
   }
 
@@ -2059,7 +2059,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorProxy.html
    */
   public toGetVoiceConnectorProxy() {
-    this.add('chime:GetVoiceConnectorProxy');
+    this.to('chime:GetVoiceConnectorProxy');
     return this;
   }
 
@@ -2071,7 +2071,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorStreamingConfiguration.html
    */
   public toGetVoiceConnectorStreamingConfiguration() {
-    this.add('chime:GetVoiceConnectorStreamingConfiguration');
+    this.to('chime:GetVoiceConnectorStreamingConfiguration');
     return this;
   }
 
@@ -2083,7 +2083,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorTermination.html
    */
   public toGetVoiceConnectorTermination() {
-    this.add('chime:GetVoiceConnectorTermination');
+    this.to('chime:GetVoiceConnectorTermination');
     return this;
   }
 
@@ -2095,7 +2095,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorTerminationHealth.html
    */
   public toGetVoiceConnectorTerminationHealth() {
-    this.add('chime:GetVoiceConnectorTerminationHealth');
+    this.to('chime:GetVoiceConnectorTerminationHealth');
     return this;
   }
 
@@ -2107,7 +2107,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toInviteDelegate() {
-    this.add('chime:InviteDelegate');
+    this.to('chime:InviteDelegate');
     return this;
   }
 
@@ -2119,7 +2119,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_InviteUsers.html
    */
   public toInviteUsers() {
-    this.add('chime:InviteUsers');
+    this.to('chime:InviteUsers');
     return this;
   }
 
@@ -2129,7 +2129,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toInviteUsersFromProvider() {
-    this.add('chime:InviteUsersFromProvider');
+    this.to('chime:InviteUsersFromProvider');
     return this;
   }
 
@@ -2141,7 +2141,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/view-reports.html
    */
   public toListAccountUsageReportData() {
-    this.add('chime:ListAccountUsageReportData');
+    this.to('chime:ListAccountUsageReportData');
     return this;
   }
 
@@ -2153,7 +2153,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListAccounts.html
    */
   public toListAccounts() {
-    this.add('chime:ListAccounts');
+    this.to('chime:ListAccounts');
     return this;
   }
 
@@ -2165,7 +2165,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html
    */
   public toListApiKeys() {
-    this.add('chime:ListApiKeys');
+    this.to('chime:ListApiKeys');
     return this;
   }
 
@@ -2177,7 +2177,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListAttendeeTags.html
    */
   public toListAttendeeTags() {
-    this.add('chime:ListAttendeeTags');
+    this.to('chime:ListAttendeeTags');
     return this;
   }
 
@@ -2189,7 +2189,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListAttendees.html
    */
   public toListAttendees() {
-    this.add('chime:ListAttendees');
+    this.to('chime:ListAttendees');
     return this;
   }
 
@@ -2199,7 +2199,7 @@ export class Chime extends PolicyStatement {
    * Access Level: List
    */
   public toListBots() {
-    this.add('chime:ListBots');
+    this.to('chime:ListBots');
     return this;
   }
 
@@ -2215,7 +2215,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toListCDRBucket() {
-    this.add('chime:ListCDRBucket');
+    this.to('chime:ListCDRBucket');
     return this;
   }
 
@@ -2227,7 +2227,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/phone-numbers.html
    */
   public toListCallingRegions() {
-    this.add('chime:ListCallingRegions');
+    this.to('chime:ListCallingRegions');
     return this;
   }
 
@@ -2239,7 +2239,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toListDelegates() {
-    this.add('chime:ListDelegates');
+    this.to('chime:ListDelegates');
     return this;
   }
 
@@ -2251,7 +2251,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toListDirectories() {
-    this.add('chime:ListDirectories');
+    this.to('chime:ListDirectories');
     return this;
   }
 
@@ -2263,7 +2263,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/claim-domain.html
    */
   public toListDomains() {
-    this.add('chime:ListDomains');
+    this.to('chime:ListDomains');
     return this;
   }
 
@@ -2275,7 +2275,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toListGroups() {
-    this.add('chime:ListGroups');
+    this.to('chime:ListGroups');
     return this;
   }
 
@@ -2287,7 +2287,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/view-reports.html
    */
   public toListMeetingEvents() {
-    this.add('chime:ListMeetingEvents');
+    this.to('chime:ListMeetingEvents');
     return this;
   }
 
@@ -2299,7 +2299,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListMeetingTags.html
    */
   public toListMeetingTags() {
-    this.add('chime:ListMeetingTags');
+    this.to('chime:ListMeetingTags');
     return this;
   }
 
@@ -2311,7 +2311,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListMeetings.html
    */
   public toListMeetings() {
-    this.add('chime:ListMeetings');
+    this.to('chime:ListMeetings');
     return this;
   }
 
@@ -2323,7 +2323,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/view-reports.html
    */
   public toListMeetingsReportData() {
-    this.add('chime:ListMeetingsReportData');
+    this.to('chime:ListMeetingsReportData');
     return this;
   }
 
@@ -2335,7 +2335,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListPhoneNumberOrders.html
    */
   public toListPhoneNumberOrders() {
-    this.add('chime:ListPhoneNumberOrders');
+    this.to('chime:ListPhoneNumberOrders');
     return this;
   }
 
@@ -2347,7 +2347,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListPhoneNumbers.html
    */
   public toListPhoneNumbers() {
-    this.add('chime:ListPhoneNumbers');
+    this.to('chime:ListPhoneNumbers');
     return this;
   }
 
@@ -2359,7 +2359,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListProxySessions.html
    */
   public toListProxySessions() {
-    this.add('chime:ListProxySessions');
+    this.to('chime:ListProxySessions');
     return this;
   }
 
@@ -2369,7 +2369,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Read
    */
   public toListRoomMemberships() {
-    this.add('chime:ListRoomMemberships');
+    this.to('chime:ListRoomMemberships');
     return this;
   }
 
@@ -2379,7 +2379,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Read
    */
   public toListRooms() {
-    this.add('chime:ListRooms');
+    this.to('chime:ListRooms');
     return this;
   }
 
@@ -2391,7 +2391,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('chime:ListTagsForResource');
+    this.to('chime:ListTagsForResource');
     return this;
   }
 
@@ -2403,7 +2403,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListUsers.html
    */
   public toListUsers() {
-    this.add('chime:ListUsers');
+    this.to('chime:ListUsers');
     return this;
   }
 
@@ -2415,7 +2415,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListVoiceConnectorGroups.html
    */
   public toListVoiceConnectorGroups() {
-    this.add('chime:ListVoiceConnectorGroups');
+    this.to('chime:ListVoiceConnectorGroups');
     return this;
   }
 
@@ -2427,7 +2427,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListVoiceConnectorTerminationCredentials.html
    */
   public toListVoiceConnectorTerminationCredentials() {
-    this.add('chime:ListVoiceConnectorTerminationCredentials');
+    this.to('chime:ListVoiceConnectorTerminationCredentials');
     return this;
   }
 
@@ -2439,7 +2439,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListVoiceConnectors.html
    */
   public toListVoiceConnectors() {
-    this.add('chime:ListVoiceConnectors');
+    this.to('chime:ListVoiceConnectors');
     return this;
   }
 
@@ -2451,7 +2451,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_LogoutUser.html
    */
   public toLogoutUser() {
-    this.add('chime:LogoutUser');
+    this.to('chime:LogoutUser');
     return this;
   }
 
@@ -2461,7 +2461,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toPutEventsConfiguration() {
-    this.add('chime:PutEventsConfiguration');
+    this.to('chime:PutEventsConfiguration');
     return this;
   }
 
@@ -2471,7 +2471,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toPutRetentionSettings() {
-    this.add('chime:PutRetentionSettings');
+    this.to('chime:PutRetentionSettings');
     return this;
   }
 
@@ -2483,7 +2483,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorEmergencyCallingConfiguration.html
    */
   public toPutVoiceConnectorEmergencyCallingConfiguration() {
-    this.add('chime:PutVoiceConnectorEmergencyCallingConfiguration');
+    this.to('chime:PutVoiceConnectorEmergencyCallingConfiguration');
     return this;
   }
 
@@ -2503,7 +2503,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorLoggingConfiguration.html
    */
   public toPutVoiceConnectorLoggingConfiguration() {
-    this.add('chime:PutVoiceConnectorLoggingConfiguration');
+    this.to('chime:PutVoiceConnectorLoggingConfiguration');
     return this;
   }
 
@@ -2515,7 +2515,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorOrigination.html
    */
   public toPutVoiceConnectorOrigination() {
-    this.add('chime:PutVoiceConnectorOrigination');
+    this.to('chime:PutVoiceConnectorOrigination');
     return this;
   }
 
@@ -2527,7 +2527,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorProxy.html
    */
   public toPutVoiceConnectorProxy() {
-    this.add('chime:PutVoiceConnectorProxy');
+    this.to('chime:PutVoiceConnectorProxy');
     return this;
   }
 
@@ -2539,7 +2539,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorStreamingConfiguration.html
    */
   public toPutVoiceConnectorStreamingConfiguration() {
-    this.add('chime:PutVoiceConnectorStreamingConfiguration');
+    this.to('chime:PutVoiceConnectorStreamingConfiguration');
     return this;
   }
 
@@ -2551,7 +2551,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorTermination.html
    */
   public toPutVoiceConnectorTermination() {
-    this.add('chime:PutVoiceConnectorTermination');
+    this.to('chime:PutVoiceConnectorTermination');
     return this;
   }
 
@@ -2563,7 +2563,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorTerminationCredentials.html
    */
   public toPutVoiceConnectorTerminationCredentials() {
-    this.add('chime:PutVoiceConnectorTerminationCredentials');
+    this.to('chime:PutVoiceConnectorTerminationCredentials');
     return this;
   }
 
@@ -2573,7 +2573,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toRedactConversationMessage() {
-    this.add('chime:RedactConversationMessage');
+    this.to('chime:RedactConversationMessage');
     return this;
   }
 
@@ -2583,7 +2583,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toRedactRoomMessage() {
-    this.add('chime:RedactRoomMessage');
+    this.to('chime:RedactRoomMessage');
     return this;
   }
 
@@ -2593,7 +2593,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toRegenerateSecurityToken() {
-    this.add('chime:RegenerateSecurityToken');
+    this.to('chime:RegenerateSecurityToken');
     return this;
   }
 
@@ -2605,7 +2605,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/rename-account.html
    */
   public toRenameAccount() {
-    this.add('chime:RenameAccount');
+    this.to('chime:RenameAccount');
     return this;
   }
 
@@ -2617,7 +2617,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toRenewDelegate() {
-    this.add('chime:RenewDelegate');
+    this.to('chime:RenewDelegate');
     return this;
   }
 
@@ -2629,7 +2629,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toResetAccountResource() {
-    this.add('chime:ResetAccountResource');
+    this.to('chime:ResetAccountResource');
     return this;
   }
 
@@ -2641,7 +2641,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ResetPersonalPIN.html
    */
   public toResetPersonalPIN() {
-    this.add('chime:ResetPersonalPIN');
+    this.to('chime:ResetPersonalPIN');
     return this;
   }
 
@@ -2653,7 +2653,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_RestorePhoneNumber.html
    */
   public toRestorePhoneNumber() {
-    this.add('chime:RestorePhoneNumber');
+    this.to('chime:RestorePhoneNumber');
     return this;
   }
 
@@ -2665,7 +2665,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/request-attachments.html
    */
   public toRetrieveDataExports() {
-    this.add('chime:RetrieveDataExports');
+    this.to('chime:RetrieveDataExports');
     return this;
   }
 
@@ -2677,7 +2677,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_SearchAvailablePhoneNumbers.html
    */
   public toSearchAvailablePhoneNumbers() {
-    this.add('chime:SearchAvailablePhoneNumbers');
+    this.to('chime:SearchAvailablePhoneNumbers');
     return this;
   }
 
@@ -2689,7 +2689,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/request-attachments.html
    */
   public toStartDataExport() {
-    this.add('chime:StartDataExport');
+    this.to('chime:StartDataExport');
     return this;
   }
 
@@ -2701,7 +2701,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/chime-getting-admin-support.html
    */
   public toSubmitSupportRequest() {
-    this.add('chime:SubmitSupportRequest');
+    this.to('chime:SubmitSupportRequest');
     return this;
   }
 
@@ -2713,7 +2713,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/manage-access.html
    */
   public toSuspendUsers() {
-    this.add('chime:SuspendUsers');
+    this.to('chime:SuspendUsers');
     return this;
   }
 
@@ -2725,7 +2725,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_TagAttendee.html
    */
   public toTagAttendee() {
-    this.add('chime:TagAttendee');
+    this.to('chime:TagAttendee');
     return this;
   }
 
@@ -2742,7 +2742,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_TagMeeting.html
    */
   public toTagMeeting() {
-    this.add('chime:TagMeeting');
+    this.to('chime:TagMeeting');
     return this;
   }
 
@@ -2759,7 +2759,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.add('chime:TagResource');
+    this.to('chime:TagResource');
     return this;
   }
 
@@ -2771,7 +2771,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toUnauthorizeDirectory() {
-    this.add('chime:UnauthorizeDirectory');
+    this.to('chime:UnauthorizeDirectory');
     return this;
   }
 
@@ -2783,7 +2783,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UntagAttendee.html
    */
   public toUntagAttendee() {
-    this.add('chime:UntagAttendee');
+    this.to('chime:UntagAttendee');
     return this;
   }
 
@@ -2795,7 +2795,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UntagMeeting.html
    */
   public toUntagMeeting() {
-    this.add('chime:UntagMeeting');
+    this.to('chime:UntagMeeting');
     return this;
   }
 
@@ -2807,7 +2807,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('chime:UntagResource');
+    this.to('chime:UntagResource');
     return this;
   }
 
@@ -2819,7 +2819,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateAccount.html
    */
   public toUpdateAccount() {
-    this.add('chime:UpdateAccount');
+    this.to('chime:UpdateAccount');
     return this;
   }
 
@@ -2831,7 +2831,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html
    */
   public toUpdateAccountOpenIdConfig() {
-    this.add('chime:UpdateAccountOpenIdConfig');
+    this.to('chime:UpdateAccountOpenIdConfig');
     return this;
   }
 
@@ -2843,7 +2843,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toUpdateAccountResource() {
-    this.add('chime:UpdateAccountResource');
+    this.to('chime:UpdateAccountResource');
     return this;
   }
 
@@ -2855,7 +2855,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateAccountSettings.html
    */
   public toUpdateAccountSettings() {
-    this.add('chime:UpdateAccountSettings');
+    this.to('chime:UpdateAccountSettings');
     return this;
   }
 
@@ -2865,7 +2865,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toUpdateBot() {
-    this.add('chime:UpdateBot');
+    this.to('chime:UpdateBot');
     return this;
   }
 
@@ -2882,7 +2882,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toUpdateCDRSettings() {
-    this.add('chime:UpdateCDRSettings');
+    this.to('chime:UpdateCDRSettings');
     return this;
   }
 
@@ -2894,7 +2894,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateGlobalSettings.html
    */
   public toUpdateGlobalSettings() {
-    this.add('chime:UpdateGlobalSettings');
+    this.to('chime:UpdateGlobalSettings');
     return this;
   }
 
@@ -2906,7 +2906,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdatePhoneNumber.html
    */
   public toUpdatePhoneNumber() {
-    this.add('chime:UpdatePhoneNumber');
+    this.to('chime:UpdatePhoneNumber');
     return this;
   }
 
@@ -2918,7 +2918,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdatePhoneNumberSettings.html
    */
   public toUpdatePhoneNumberSettings() {
-    this.add('chime:UpdatePhoneNumberSettings');
+    this.to('chime:UpdatePhoneNumberSettings');
     return this;
   }
 
@@ -2930,7 +2930,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateProxySession.html
    */
   public toUpdateProxySession() {
-    this.add('chime:UpdateProxySession');
+    this.to('chime:UpdateProxySession');
     return this;
   }
 
@@ -2940,7 +2940,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toUpdateRoom() {
-    this.add('chime:UpdateRoom');
+    this.to('chime:UpdateRoom');
     return this;
   }
 
@@ -2950,7 +2950,7 @@ export class Chime extends PolicyStatement {
    * Access Level: Write
    */
   public toUpdateRoomMembership() {
-    this.add('chime:UpdateRoomMembership');
+    this.to('chime:UpdateRoomMembership');
     return this;
   }
 
@@ -2962,7 +2962,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/manage-access.html
    */
   public toUpdateSupportedLicenses() {
-    this.add('chime:UpdateSupportedLicenses');
+    this.to('chime:UpdateSupportedLicenses');
     return this;
   }
 
@@ -2974,7 +2974,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateUser.html
    */
   public toUpdateUser() {
-    this.add('chime:UpdateUser');
+    this.to('chime:UpdateUser');
     return this;
   }
 
@@ -2986,7 +2986,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/manage-access.html
    */
   public toUpdateUserLicenses() {
-    this.add('chime:UpdateUserLicenses');
+    this.to('chime:UpdateUserLicenses');
     return this;
   }
 
@@ -2998,7 +2998,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateUserSettings.html
    */
   public toUpdateUserSettings() {
-    this.add('chime:UpdateUserSettings');
+    this.to('chime:UpdateUserSettings');
     return this;
   }
 
@@ -3010,7 +3010,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateVoiceConnector.html
    */
   public toUpdateVoiceConnector() {
-    this.add('chime:UpdateVoiceConnector');
+    this.to('chime:UpdateVoiceConnector');
     return this;
   }
 
@@ -3022,7 +3022,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateVoiceConnectorGroup.html
    */
   public toUpdateVoiceConnectorGroup() {
-    this.add('chime:UpdateVoiceConnectorGroup');
+    this.to('chime:UpdateVoiceConnectorGroup');
     return this;
   }
 
@@ -3034,7 +3034,7 @@ export class Chime extends PolicyStatement {
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public toValidateAccountResource() {
-    this.add('chime:ValidateAccountResource');
+    this.to('chime:ValidateAccountResource');
     return this;
   }
 

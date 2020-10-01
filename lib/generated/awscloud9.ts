@@ -213,7 +213,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentEC2.html
    */
   public toCreateEnvironmentEC2() {
-    this.add('cloud9:CreateEnvironmentEC2');
+    this.to('cloud9:CreateEnvironmentEC2');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentMembership.html
    */
   public toCreateEnvironmentMembership() {
-    this.add('cloud9:CreateEnvironmentMembership');
+    this.to('cloud9:CreateEnvironmentMembership');
     return this;
   }
 
@@ -245,7 +245,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DeleteEnvironment.html
    */
   public toDeleteEnvironment() {
-    this.add('cloud9:DeleteEnvironment');
+    this.to('cloud9:DeleteEnvironment');
     return this;
   }
 
@@ -257,7 +257,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DeleteEnvironmentMembership.html
    */
   public toDeleteEnvironmentMembership() {
-    this.add('cloud9:DeleteEnvironmentMembership');
+    this.to('cloud9:DeleteEnvironmentMembership');
     return this;
   }
 
@@ -273,7 +273,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironmentMemberships.html
    */
   public toDescribeEnvironmentMemberships() {
-    this.add('cloud9:DescribeEnvironmentMemberships');
+    this.to('cloud9:DescribeEnvironmentMemberships');
     return this;
   }
 
@@ -285,7 +285,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironmentStatus.html
    */
   public toDescribeEnvironmentStatus() {
-    this.add('cloud9:DescribeEnvironmentStatus');
+    this.to('cloud9:DescribeEnvironmentStatus');
     return this;
   }
 
@@ -297,7 +297,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironments.html
    */
   public toDescribeEnvironments() {
-    this.add('cloud9:DescribeEnvironments');
+    this.to('cloud9:DescribeEnvironments');
     return this;
   }
 
@@ -309,7 +309,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/user-guide/settings-user.html
    */
   public toGetUserSettings() {
-    this.add('cloud9:GetUserSettings');
+    this.to('cloud9:GetUserSettings');
     return this;
   }
 
@@ -321,7 +321,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_ListEnvironments.html
    */
   public toListEnvironments() {
-    this.add('cloud9:ListEnvironments');
+    this.to('cloud9:ListEnvironments');
     return this;
   }
 
@@ -333,7 +333,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.add('cloud9:ListTagsForResource');
+    this.to('cloud9:ListTagsForResource');
     return this;
   }
 
@@ -349,7 +349,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.add('cloud9:TagResource');
+    this.to('cloud9:TagResource');
     return this;
   }
 
@@ -364,7 +364,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.add('cloud9:UntagResource');
+    this.to('cloud9:UntagResource');
     return this;
   }
 
@@ -376,7 +376,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UpdateEnvironment.html
    */
   public toUpdateEnvironment() {
-    this.add('cloud9:UpdateEnvironment');
+    this.to('cloud9:UpdateEnvironment');
     return this;
   }
 
@@ -393,7 +393,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UpdateEnvironmentMembership.html
    */
   public toUpdateEnvironmentMembership() {
-    this.add('cloud9:UpdateEnvironmentMembership');
+    this.to('cloud9:UpdateEnvironmentMembership');
     return this;
   }
 
@@ -405,7 +405,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/user-guide/settings-user.html
    */
   public toUpdateUserSettings() {
-    this.add('cloud9:UpdateUserSettings');
+    this.to('cloud9:UpdateUserSettings');
     return this;
   }
 

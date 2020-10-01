@@ -1264,7 +1264,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-app.html#rest-api-app-methods
    */
   public toCreateApp() {
-    this.add('mobiletargeting:CreateApp');
+    this.to('mobiletargeting:CreateApp');
     return this;
   }
 
@@ -1281,7 +1281,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaigns.html#rest-api-campaigns-methods
    */
   public toCreateCampaign() {
-    this.add('mobiletargeting:CreateCampaign');
+    this.to('mobiletargeting:CreateCampaign');
     return this;
   }
 
@@ -1298,7 +1298,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-http-methods
    */
   public toCreateEmailTemplate() {
-    this.add('mobiletargeting:CreateEmailTemplate');
+    this.to('mobiletargeting:CreateEmailTemplate');
     return this;
   }
 
@@ -1310,7 +1310,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-export-jobs.html#rest-api-export-jobs-methods
    */
   public toCreateExportJob() {
-    this.add('mobiletargeting:CreateExportJob');
+    this.to('mobiletargeting:CreateExportJob');
     return this;
   }
 
@@ -1322,7 +1322,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-import-jobs.html#rest-api-import-jobs-methods
    */
   public toCreateImportJob() {
-    this.add('mobiletargeting:CreateImportJob');
+    this.to('mobiletargeting:CreateImportJob');
     return this;
   }
 
@@ -1339,7 +1339,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id.html#apps-application-id-journeys-journey-id-http-methods
    */
   public toCreateJourney() {
-    this.add('mobiletargeting:CreateJourney');
+    this.to('mobiletargeting:CreateJourney');
     return this;
   }
 
@@ -1356,7 +1356,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-push.html#templates-template-name-push-http-methods
    */
   public toCreatePushTemplate() {
-    this.add('mobiletargeting:CreatePushTemplate');
+    this.to('mobiletargeting:CreatePushTemplate');
     return this;
   }
 
@@ -1368,7 +1368,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders.html#CreateRecommenderConfiguration
    */
   public toCreateRecommenderConfiguration() {
-    this.add('mobiletargeting:CreateRecommenderConfiguration');
+    this.to('mobiletargeting:CreateRecommenderConfiguration');
     return this;
   }
 
@@ -1385,7 +1385,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segments.html#rest-api-segments-methods
    */
   public toCreateSegment() {
-    this.add('mobiletargeting:CreateSegment');
+    this.to('mobiletargeting:CreateSegment');
     return this;
   }
 
@@ -1402,7 +1402,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-sms.html#templates-template-name-sms-http-methods
    */
   public toCreateSmsTemplate() {
-    this.add('mobiletargeting:CreateSmsTemplate');
+    this.to('mobiletargeting:CreateSmsTemplate');
     return this;
   }
 
@@ -1419,7 +1419,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-voice.html#templates-template-name-voice-http-methods
    */
   public toCreateVoiceTemplate() {
-    this.add('mobiletargeting:CreateVoiceTemplate');
+    this.to('mobiletargeting:CreateVoiceTemplate');
     return this;
   }
 
@@ -1431,7 +1431,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-adm-channel.html#rest-api-adm-channel-methods
    */
   public toDeleteAdmChannel() {
-    this.add('mobiletargeting:DeleteAdmChannel');
+    this.to('mobiletargeting:DeleteAdmChannel');
     return this;
   }
 
@@ -1443,7 +1443,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-apns-channel.html#rest-api-apns-channel-methods
    */
   public toDeleteApnsChannel() {
-    this.add('mobiletargeting:DeleteApnsChannel');
+    this.to('mobiletargeting:DeleteApnsChannel');
     return this;
   }
 
@@ -1455,7 +1455,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-apns-sandbox-channel.html#rest-api-apns-sandbox-channel-methods
    */
   public toDeleteApnsSandboxChannel() {
-    this.add('mobiletargeting:DeleteApnsSandboxChannel');
+    this.to('mobiletargeting:DeleteApnsSandboxChannel');
     return this;
   }
 
@@ -1467,7 +1467,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-apns-voip-channel.html#rest-api-apns-voip-channel-methods
    */
   public toDeleteApnsVoipChannel() {
-    this.add('mobiletargeting:DeleteApnsVoipChannel');
+    this.to('mobiletargeting:DeleteApnsVoipChannel');
     return this;
   }
 
@@ -1479,7 +1479,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-apns-voip-sandbox-channel.html#rest-api-apns-voip-sandbox-channel-methods
    */
   public toDeleteApnsVoipSandboxChannel() {
-    this.add('mobiletargeting:DeleteApnsVoipSandboxChannel');
+    this.to('mobiletargeting:DeleteApnsVoipSandboxChannel');
     return this;
   }
 
@@ -1491,7 +1491,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-app.html#rest-api-app-methods
    */
   public toDeleteApp() {
-    this.add('mobiletargeting:DeleteApp');
+    this.to('mobiletargeting:DeleteApp');
     return this;
   }
 
@@ -1503,7 +1503,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-baidu-channel.html#rest-api-baidu-channel-methods
    */
   public toDeleteBaiduChannel() {
-    this.add('mobiletargeting:DeleteBaiduChannel');
+    this.to('mobiletargeting:DeleteBaiduChannel');
     return this;
   }
 
@@ -1515,7 +1515,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaign.html#rest-api-campaign-methods
    */
   public toDeleteCampaign() {
-    this.add('mobiletargeting:DeleteCampaign');
+    this.to('mobiletargeting:DeleteCampaign');
     return this;
   }
 
@@ -1527,7 +1527,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-email-channel.html#rest-api-email-channel-methods
    */
   public toDeleteEmailChannel() {
-    this.add('mobiletargeting:DeleteEmailChannel');
+    this.to('mobiletargeting:DeleteEmailChannel');
     return this;
   }
 
@@ -1539,7 +1539,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-http-methods
    */
   public toDeleteEmailTemplate() {
-    this.add('mobiletargeting:DeleteEmailTemplate');
+    this.to('mobiletargeting:DeleteEmailTemplate');
     return this;
   }
 
@@ -1551,7 +1551,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-endpoint.html#rest-api-endpoint-methods
    */
   public toDeleteEndpoint() {
-    this.add('mobiletargeting:DeleteEndpoint');
+    this.to('mobiletargeting:DeleteEndpoint');
     return this;
   }
 
@@ -1563,7 +1563,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-event-stream.html#rest-api-event-stream-methods
    */
   public toDeleteEventStream() {
-    this.add('mobiletargeting:DeleteEventStream');
+    this.to('mobiletargeting:DeleteEventStream');
     return this;
   }
 
@@ -1575,7 +1575,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-gcm-channel.html#rest-api-gcm-channel-methods
    */
   public toDeleteGcmChannel() {
-    this.add('mobiletargeting:DeleteGcmChannel');
+    this.to('mobiletargeting:DeleteGcmChannel');
     return this;
   }
 
@@ -1587,7 +1587,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id.html#apps-application-id-journeys-journey-id-http-methods
    */
   public toDeleteJourney() {
-    this.add('mobiletargeting:DeleteJourney');
+    this.to('mobiletargeting:DeleteJourney');
     return this;
   }
 
@@ -1599,7 +1599,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-push.html#templates-template-name-push-http-methods
    */
   public toDeletePushTemplate() {
-    this.add('mobiletargeting:DeletePushTemplate');
+    this.to('mobiletargeting:DeletePushTemplate');
     return this;
   }
 
@@ -1611,7 +1611,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders-recommender-id.html#DeleteRecommenderConfiguration
    */
   public toDeleteRecommenderConfiguration() {
-    this.add('mobiletargeting:DeleteRecommenderConfiguration');
+    this.to('mobiletargeting:DeleteRecommenderConfiguration');
     return this;
   }
 
@@ -1623,7 +1623,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segment.html#rest-api-segment-methods
    */
   public toDeleteSegment() {
-    this.add('mobiletargeting:DeleteSegment');
+    this.to('mobiletargeting:DeleteSegment');
     return this;
   }
 
@@ -1635,7 +1635,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-sms-channel.html#rest-api-sms-channel-methods
    */
   public toDeleteSmsChannel() {
-    this.add('mobiletargeting:DeleteSmsChannel');
+    this.to('mobiletargeting:DeleteSmsChannel');
     return this;
   }
 
@@ -1647,7 +1647,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-sms.html#templates-template-name-sms-http-methods
    */
   public toDeleteSmsTemplate() {
-    this.add('mobiletargeting:DeleteSmsTemplate');
+    this.to('mobiletargeting:DeleteSmsTemplate');
     return this;
   }
 
@@ -1659,7 +1659,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-user.html#rest-api-user-methods
    */
   public toDeleteUserEndpoints() {
-    this.add('mobiletargeting:DeleteUserEndpoints');
+    this.to('mobiletargeting:DeleteUserEndpoints');
     return this;
   }
 
@@ -1671,7 +1671,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-voice-channel.html#rest-api-voice-channel-methods
    */
   public toDeleteVoiceChannel() {
-    this.add('mobiletargeting:DeleteVoiceChannel');
+    this.to('mobiletargeting:DeleteVoiceChannel');
     return this;
   }
 
@@ -1683,7 +1683,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-voice.html#templates-template-name-voice-http-methods
    */
   public toDeleteVoiceTemplate() {
-    this.add('mobiletargeting:DeleteVoiceTemplate');
+    this.to('mobiletargeting:DeleteVoiceTemplate');
     return this;
   }
 
@@ -1695,7 +1695,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-adm-channel.html#rest-api-adm-channel-methods
    */
   public toGetAdmChannel() {
-    this.add('mobiletargeting:GetAdmChannel');
+    this.to('mobiletargeting:GetAdmChannel');
     return this;
   }
 
@@ -1707,7 +1707,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-apns-channel.html#rest-api-apns-channel-methods
    */
   public toGetApnsChannel() {
-    this.add('mobiletargeting:GetApnsChannel');
+    this.to('mobiletargeting:GetApnsChannel');
     return this;
   }
 
@@ -1719,7 +1719,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-apns-sandbox-channel.html#rest-api-apns-sandbox-channel-methods
    */
   public toGetApnsSandboxChannel() {
-    this.add('mobiletargeting:GetApnsSandboxChannel');
+    this.to('mobiletargeting:GetApnsSandboxChannel');
     return this;
   }
 
@@ -1731,7 +1731,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-apns-voip-channel.html#rest-api-apns-voip-channel-methods
    */
   public toGetApnsVoipChannel() {
-    this.add('mobiletargeting:GetApnsVoipChannel');
+    this.to('mobiletargeting:GetApnsVoipChannel');
     return this;
   }
 
@@ -1743,7 +1743,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-apns-voip-sandbox-channel.html#rest-api-apns-voip-sandbox-channel-methods
    */
   public toGetApnsVoipSandboxChannel() {
-    this.add('mobiletargeting:GetApnsVoipSandboxChannel');
+    this.to('mobiletargeting:GetApnsVoipSandboxChannel');
     return this;
   }
 
@@ -1755,7 +1755,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-app.html#rest-api-app-methods
    */
   public toGetApp() {
-    this.add('mobiletargeting:GetApp');
+    this.to('mobiletargeting:GetApp');
     return this;
   }
 
@@ -1767,7 +1767,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-settings.html#rest-api-settings-methods
    */
   public toGetApplicationSettings() {
-    this.add('mobiletargeting:GetApplicationSettings');
+    this.to('mobiletargeting:GetApplicationSettings');
     return this;
   }
 
@@ -1779,7 +1779,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-apps.html#rest-api-apps-methods
    */
   public toGetApps() {
-    this.add('mobiletargeting:GetApps');
+    this.to('mobiletargeting:GetApps');
     return this;
   }
 
@@ -1791,7 +1791,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-baidu-channel.html#rest-api-baidu-channel-methods
    */
   public toGetBaiduChannel() {
-    this.add('mobiletargeting:GetBaiduChannel');
+    this.to('mobiletargeting:GetBaiduChannel');
     return this;
   }
 
@@ -1803,7 +1803,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaign.html#rest-api-campaign-methods
    */
   public toGetCampaign() {
-    this.add('mobiletargeting:GetCampaign');
+    this.to('mobiletargeting:GetCampaign');
     return this;
   }
 
@@ -1815,7 +1815,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaign-activities.html#rest-api-campaign-activities-methods
    */
   public toGetCampaignActivities() {
-    this.add('mobiletargeting:GetCampaignActivities');
+    this.to('mobiletargeting:GetCampaignActivities');
     return this;
   }
 
@@ -1827,7 +1827,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaign-version.html#rest-api-campaign-version-methods
    */
   public toGetCampaignVersion() {
-    this.add('mobiletargeting:GetCampaignVersion');
+    this.to('mobiletargeting:GetCampaignVersion');
     return this;
   }
 
@@ -1839,7 +1839,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaign-versions.html#rest-api-campaign-versions-methods
    */
   public toGetCampaignVersions() {
-    this.add('mobiletargeting:GetCampaignVersions');
+    this.to('mobiletargeting:GetCampaignVersions');
     return this;
   }
 
@@ -1851,7 +1851,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaigns.html#rest-api-campaigns-methods
    */
   public toGetCampaigns() {
-    this.add('mobiletargeting:GetCampaigns');
+    this.to('mobiletargeting:GetCampaigns');
     return this;
   }
 
@@ -1863,7 +1863,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-channels.html#rest-api-channels-methods
    */
   public toGetChannels() {
-    this.add('mobiletargeting:GetChannels');
+    this.to('mobiletargeting:GetChannels');
     return this;
   }
 
@@ -1875,7 +1875,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-email-channel.html#rest-api-email-channel-methods
    */
   public toGetEmailChannel() {
-    this.add('mobiletargeting:GetEmailChannel');
+    this.to('mobiletargeting:GetEmailChannel');
     return this;
   }
 
@@ -1887,7 +1887,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-http-methods
    */
   public toGetEmailTemplate() {
-    this.add('mobiletargeting:GetEmailTemplate');
+    this.to('mobiletargeting:GetEmailTemplate');
     return this;
   }
 
@@ -1899,7 +1899,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-endpoint.html#rest-api-endpoint-methods
    */
   public toGetEndpoint() {
-    this.add('mobiletargeting:GetEndpoint');
+    this.to('mobiletargeting:GetEndpoint');
     return this;
   }
 
@@ -1911,7 +1911,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-event-stream.html#rest-api-event-stream-methods
    */
   public toGetEventStream() {
-    this.add('mobiletargeting:GetEventStream');
+    this.to('mobiletargeting:GetEventStream');
     return this;
   }
 
@@ -1923,7 +1923,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-export-jobs.html#rest-api-export-jobs-methods
    */
   public toGetExportJob() {
-    this.add('mobiletargeting:GetExportJob');
+    this.to('mobiletargeting:GetExportJob');
     return this;
   }
 
@@ -1935,7 +1935,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-export-jobs.html#rest-api-export-jobs-methods
    */
   public toGetExportJobs() {
-    this.add('mobiletargeting:GetExportJobs');
+    this.to('mobiletargeting:GetExportJobs');
     return this;
   }
 
@@ -1947,7 +1947,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-gcm-channel.html#rest-api-gcm-channel-methods
    */
   public toGetGcmChannel() {
-    this.add('mobiletargeting:GetGcmChannel');
+    this.to('mobiletargeting:GetGcmChannel');
     return this;
   }
 
@@ -1959,7 +1959,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-import-job.html#rest-api-import-job-methods
    */
   public toGetImportJob() {
-    this.add('mobiletargeting:GetImportJob');
+    this.to('mobiletargeting:GetImportJob');
     return this;
   }
 
@@ -1971,7 +1971,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-import-jobs.html#rest-api-import-jobs-methods
    */
   public toGetImportJobs() {
-    this.add('mobiletargeting:GetImportJobs');
+    this.to('mobiletargeting:GetImportJobs');
     return this;
   }
 
@@ -1983,7 +1983,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id.html#apps-application-id-journeys-journey-id-http-methods
    */
   public toGetJourney() {
-    this.add('mobiletargeting:GetJourney');
+    this.to('mobiletargeting:GetJourney');
     return this;
   }
 
@@ -1995,7 +1995,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-push.html#templates-template-name-push-http-methods
    */
   public toGetPushTemplate() {
-    this.add('mobiletargeting:GetPushTemplate');
+    this.to('mobiletargeting:GetPushTemplate');
     return this;
   }
 
@@ -2007,7 +2007,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders-recommender-id.html#GetRecommenderConfiguration
    */
   public toGetRecommenderConfiguration() {
-    this.add('mobiletargeting:GetRecommenderConfiguration');
+    this.to('mobiletargeting:GetRecommenderConfiguration');
     return this;
   }
 
@@ -2019,7 +2019,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders.html#GetRecommenderConfigurations
    */
   public toGetRecommenderConfigurations() {
-    this.add('mobiletargeting:GetRecommenderConfigurations');
+    this.to('mobiletargeting:GetRecommenderConfigurations');
     return this;
   }
 
@@ -2031,7 +2031,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segment.html#rest-api-segment-methods
    */
   public toGetSegment() {
-    this.add('mobiletargeting:GetSegment');
+    this.to('mobiletargeting:GetSegment');
     return this;
   }
 
@@ -2043,7 +2043,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-export-jobs.html#rest-api-export-jobs-methods
    */
   public toGetSegmentExportJobs() {
-    this.add('mobiletargeting:GetSegmentExportJobs');
+    this.to('mobiletargeting:GetSegmentExportJobs');
     return this;
   }
 
@@ -2055,7 +2055,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-import-jobs.html#rest-api-import-jobs-methods
    */
   public toGetSegmentImportJobs() {
-    this.add('mobiletargeting:GetSegmentImportJobs');
+    this.to('mobiletargeting:GetSegmentImportJobs');
     return this;
   }
 
@@ -2067,7 +2067,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segment-version.html#rest-api-segment-version-methods
    */
   public toGetSegmentVersion() {
-    this.add('mobiletargeting:GetSegmentVersion');
+    this.to('mobiletargeting:GetSegmentVersion');
     return this;
   }
 
@@ -2079,7 +2079,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segment-versions.html#rest-api-segment-versions-methods
    */
   public toGetSegmentVersions() {
-    this.add('mobiletargeting:GetSegmentVersions');
+    this.to('mobiletargeting:GetSegmentVersions');
     return this;
   }
 
@@ -2091,7 +2091,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segments.html#rest-api-segments-methods
    */
   public toGetSegments() {
-    this.add('mobiletargeting:GetSegments');
+    this.to('mobiletargeting:GetSegments');
     return this;
   }
 
@@ -2103,7 +2103,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-sms-channel.html#rest-api-sms-channel-methods
    */
   public toGetSmsChannel() {
-    this.add('mobiletargeting:GetSmsChannel');
+    this.to('mobiletargeting:GetSmsChannel');
     return this;
   }
 
@@ -2115,7 +2115,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-sms.html#templates-template-name-sms-http-methods
    */
   public toGetSmsTemplate() {
-    this.add('mobiletargeting:GetSmsTemplate');
+    this.to('mobiletargeting:GetSmsTemplate');
     return this;
   }
 
@@ -2127,7 +2127,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-user.html#rest-api-user-methods
    */
   public toGetUserEndpoints() {
-    this.add('mobiletargeting:GetUserEndpoints');
+    this.to('mobiletargeting:GetUserEndpoints');
     return this;
   }
 
@@ -2139,7 +2139,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-voice-channel.html#rest-api-voice-channel-methods
    */
   public toGetVoiceChannel() {
-    this.add('mobiletargeting:GetVoiceChannel');
+    this.to('mobiletargeting:GetVoiceChannel');
     return this;
   }
 
@@ -2151,7 +2151,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-voice.html#templates-template-name-voice-http-methods
    */
   public toGetVoiceTemplate() {
-    this.add('mobiletargeting:GetVoiceTemplate');
+    this.to('mobiletargeting:GetVoiceTemplate');
     return this;
   }
 
@@ -2163,7 +2163,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys.html#apps-application-id-journeys-http-methods
    */
   public toListJourneys() {
-    this.add('mobiletargeting:ListJourneys');
+    this.to('mobiletargeting:ListJourneys');
     return this;
   }
 
@@ -2175,7 +2175,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-tags.html#rest-api-tags-methods-get
    */
   public toListTagsForResource() {
-    this.add('mobiletargeting:ListTagsForResource');
+    this.to('mobiletargeting:ListTagsForResource');
     return this;
   }
 
@@ -2187,7 +2187,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-template-type-versions.html#templates-template-name-template-type-versions-http-methods
    */
   public toListTemplateVersions() {
-    this.add('mobiletargeting:ListTemplateVersions');
+    this.to('mobiletargeting:ListTemplateVersions');
     return this;
   }
 
@@ -2199,7 +2199,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates.html#templates-http-methods
    */
   public toListTemplates() {
-    this.add('mobiletargeting:ListTemplates');
+    this.to('mobiletargeting:ListTemplates');
     return this;
   }
 
@@ -2211,7 +2211,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-phone-number-validate.html#rest-api-phone-number-validate-methods
    */
   public toPhoneNumberValidate() {
-    this.add('mobiletargeting:PhoneNumberValidate');
+    this.to('mobiletargeting:PhoneNumberValidate');
     return this;
   }
 
@@ -2223,7 +2223,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-event-stream.html#rest-api-event-stream-methods
    */
   public toPutEventStream() {
-    this.add('mobiletargeting:PutEventStream');
+    this.to('mobiletargeting:PutEventStream');
     return this;
   }
 
@@ -2235,7 +2235,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-events.html#rest-api-events-methods
    */
   public toPutEvents() {
-    this.add('mobiletargeting:PutEvents');
+    this.to('mobiletargeting:PutEvents');
     return this;
   }
 
@@ -2247,7 +2247,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-app.html#rest-api-app-methods
    */
   public toRemoveAttributes() {
-    this.add('mobiletargeting:RemoveAttributes');
+    this.to('mobiletargeting:RemoveAttributes');
     return this;
   }
 
@@ -2259,7 +2259,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-messages.html#rest-api-messages-methods
    */
   public toSendMessages() {
-    this.add('mobiletargeting:SendMessages');
+    this.to('mobiletargeting:SendMessages');
     return this;
   }
 
@@ -2271,7 +2271,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-users-messages.html#rest-api-users-messages-methods
    */
   public toSendUsersMessages() {
-    this.add('mobiletargeting:SendUsersMessages');
+    this.to('mobiletargeting:SendUsersMessages');
     return this;
   }
 
@@ -2287,7 +2287,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-tags.html#rest-api-tags-methods-post
    */
   public toTagResource() {
-    this.add('mobiletargeting:TagResource');
+    this.to('mobiletargeting:TagResource');
     return this;
   }
 
@@ -2303,7 +2303,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-tags.html#rest-api-tags-methods-delete
    */
   public toUntagResource() {
-    this.add('mobiletargeting:UntagResource');
+    this.to('mobiletargeting:UntagResource');
     return this;
   }
 
@@ -2315,7 +2315,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-adm-channel.html#rest-api-adm-channel-methods
    */
   public toUpdateAdmChannel() {
-    this.add('mobiletargeting:UpdateAdmChannel');
+    this.to('mobiletargeting:UpdateAdmChannel');
     return this;
   }
 
@@ -2327,7 +2327,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-apns-channel.html#rest-api-apns-channel-methods
    */
   public toUpdateApnsChannel() {
-    this.add('mobiletargeting:UpdateApnsChannel');
+    this.to('mobiletargeting:UpdateApnsChannel');
     return this;
   }
 
@@ -2339,7 +2339,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-apns-sandbox-channel.html#rest-api-apns-sandbox-channel-methods
    */
   public toUpdateApnsSandboxChannel() {
-    this.add('mobiletargeting:UpdateApnsSandboxChannel');
+    this.to('mobiletargeting:UpdateApnsSandboxChannel');
     return this;
   }
 
@@ -2351,7 +2351,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-apns-voip-channel.html#rest-api-apns-voip-channel-methods
    */
   public toUpdateApnsVoipChannel() {
-    this.add('mobiletargeting:UpdateApnsVoipChannel');
+    this.to('mobiletargeting:UpdateApnsVoipChannel');
     return this;
   }
 
@@ -2363,7 +2363,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-apns-voip-sandbox-channel.html#rest-api-apns-voip-sandbox-channel-methods
    */
   public toUpdateApnsVoipSandboxChannel() {
-    this.add('mobiletargeting:UpdateApnsVoipSandboxChannel');
+    this.to('mobiletargeting:UpdateApnsVoipSandboxChannel');
     return this;
   }
 
@@ -2375,7 +2375,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-settings.html#rest-api-settings-methods
    */
   public toUpdateApplicationSettings() {
-    this.add('mobiletargeting:UpdateApplicationSettings');
+    this.to('mobiletargeting:UpdateApplicationSettings');
     return this;
   }
 
@@ -2387,7 +2387,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-baidu-channel.html#rest-api-baidu-channel-methods
    */
   public toUpdateBaiduChannel() {
-    this.add('mobiletargeting:UpdateBaiduChannel');
+    this.to('mobiletargeting:UpdateBaiduChannel');
     return this;
   }
 
@@ -2403,7 +2403,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaign.html#rest-api-campaign-methods
    */
   public toUpdateCampaign() {
-    this.add('mobiletargeting:UpdateCampaign');
+    this.to('mobiletargeting:UpdateCampaign');
     return this;
   }
 
@@ -2415,7 +2415,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-email-channel.html#rest-api-email-channel-methods
    */
   public toUpdateEmailChannel() {
-    this.add('mobiletargeting:UpdateEmailChannel');
+    this.to('mobiletargeting:UpdateEmailChannel');
     return this;
   }
 
@@ -2431,7 +2431,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-http-methods
    */
   public toUpdateEmailTemplate() {
-    this.add('mobiletargeting:UpdateEmailTemplate');
+    this.to('mobiletargeting:UpdateEmailTemplate');
     return this;
   }
 
@@ -2443,7 +2443,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-endpoint.html#rest-api-endpoint-methods
    */
   public toUpdateEndpoint() {
-    this.add('mobiletargeting:UpdateEndpoint');
+    this.to('mobiletargeting:UpdateEndpoint');
     return this;
   }
 
@@ -2455,7 +2455,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-endpoints.html#rest-api-endpoints-methods
    */
   public toUpdateEndpointsBatch() {
-    this.add('mobiletargeting:UpdateEndpointsBatch');
+    this.to('mobiletargeting:UpdateEndpointsBatch');
     return this;
   }
 
@@ -2467,7 +2467,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-gcm-channel.html#rest-api-gcm-channel-methods
    */
   public toUpdateGcmChannel() {
-    this.add('mobiletargeting:UpdateGcmChannel');
+    this.to('mobiletargeting:UpdateGcmChannel');
     return this;
   }
 
@@ -2483,7 +2483,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id.html#apps-application-id-journeys-journey-id-http-methods
    */
   public toUpdateJourney() {
-    this.add('mobiletargeting:UpdateJourney');
+    this.to('mobiletargeting:UpdateJourney');
     return this;
   }
 
@@ -2499,7 +2499,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-state.html#apps-application-id-journeys-journey-id-state-http-methods
    */
   public toUpdateJourneyState() {
-    this.add('mobiletargeting:UpdateJourneyState');
+    this.to('mobiletargeting:UpdateJourneyState');
     return this;
   }
 
@@ -2515,7 +2515,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-push.html#templates-template-name-push-http-methods
    */
   public toUpdatePushTemplate() {
-    this.add('mobiletargeting:UpdatePushTemplate');
+    this.to('mobiletargeting:UpdatePushTemplate');
     return this;
   }
 
@@ -2527,7 +2527,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders-recommender-id.html#UpdateRecommenderConfiguration
    */
   public toUpdateRecommenderConfiguration() {
-    this.add('mobiletargeting:UpdateRecommenderConfiguration');
+    this.to('mobiletargeting:UpdateRecommenderConfiguration');
     return this;
   }
 
@@ -2543,7 +2543,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segment.html#rest-api-segment-methods
    */
   public toUpdateSegment() {
-    this.add('mobiletargeting:UpdateSegment');
+    this.to('mobiletargeting:UpdateSegment');
     return this;
   }
 
@@ -2555,7 +2555,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-sms-channel.html#rest-api-sms-channel-methods
    */
   public toUpdateSmsChannel() {
-    this.add('mobiletargeting:UpdateSmsChannel');
+    this.to('mobiletargeting:UpdateSmsChannel');
     return this;
   }
 
@@ -2571,7 +2571,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-sms.html#templates-template-name-sms-http-methods
    */
   public toUpdateSmsTemplate() {
-    this.add('mobiletargeting:UpdateSmsTemplate');
+    this.to('mobiletargeting:UpdateSmsTemplate');
     return this;
   }
 
@@ -2583,7 +2583,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-template-type-versions.html#templates-template-name-template-type-versions-http-methods
    */
   public toUpdateTemplateActiveVersion() {
-    this.add('mobiletargeting:UpdateTemplateActiveVersion');
+    this.to('mobiletargeting:UpdateTemplateActiveVersion');
     return this;
   }
 
@@ -2595,7 +2595,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-voice-channel.html#rest-api-voice-channel-methods
    */
   public toUpdateVoiceChannel() {
-    this.add('mobiletargeting:UpdateVoiceChannel');
+    this.to('mobiletargeting:UpdateVoiceChannel');
     return this;
   }
 
@@ -2611,7 +2611,7 @@ export class Mobiletargeting extends PolicyStatement {
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-voice.html#templates-template-name-voice-http-methods
    */
   public toUpdateVoiceTemplate() {
-    this.add('mobiletargeting:UpdateVoiceTemplate');
+    this.to('mobiletargeting:UpdateVoiceTemplate');
     return this;
   }
 

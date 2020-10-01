@@ -98,7 +98,7 @@ export class AwsMarketplace extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
   public toAcceptAgreementApprovalRequest() {
-    this.add('aws-marketplace:AcceptAgreementApprovalRequest');
+    this.to('aws-marketplace:AcceptAgreementApprovalRequest');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class AwsMarketplace extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
   public toCancelAgreementRequest() {
-    this.add('aws-marketplace:CancelAgreementRequest');
+    this.to('aws-marketplace:CancelAgreementRequest');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class AwsMarketplace extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
   public toDescribeAgreement() {
-    this.add('aws-marketplace:DescribeAgreement');
+    this.to('aws-marketplace:DescribeAgreement');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class AwsMarketplace extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
   public toGetAgreementApprovalRequest() {
-    this.add('aws-marketplace:GetAgreementApprovalRequest');
+    this.to('aws-marketplace:GetAgreementApprovalRequest');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class AwsMarketplace extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
   public toGetAgreementRequest() {
-    this.add('aws-marketplace:GetAgreementRequest');
+    this.to('aws-marketplace:GetAgreementRequest');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class AwsMarketplace extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
   public toGetAgreementTerms() {
-    this.add('aws-marketplace:GetAgreementTerms');
+    this.to('aws-marketplace:GetAgreementTerms');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class AwsMarketplace extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
   public toListAgreementApprovalRequests() {
-    this.add('aws-marketplace:ListAgreementApprovalRequests');
+    this.to('aws-marketplace:ListAgreementApprovalRequests');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class AwsMarketplace extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
   public toListAgreementRequests() {
-    this.add('aws-marketplace:ListAgreementRequests');
+    this.to('aws-marketplace:ListAgreementRequests');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class AwsMarketplace extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
   public toRejectAgreementApprovalRequest() {
-    this.add('aws-marketplace:RejectAgreementApprovalRequest');
+    this.to('aws-marketplace:RejectAgreementApprovalRequest');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class AwsMarketplace extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
   public toSearchAgreements() {
-    this.add('aws-marketplace:SearchAgreements');
+    this.to('aws-marketplace:SearchAgreements');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class AwsMarketplace extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
   public toSubscribe() {
-    this.add('aws-marketplace:Subscribe');
+    this.to('aws-marketplace:Subscribe');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class AwsMarketplace extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
   public toUnsubscribe() {
-    this.add('aws-marketplace:Unsubscribe');
+    this.to('aws-marketplace:Unsubscribe');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class AwsMarketplace extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
   public toUpdateAgreementApprovalRequest() {
-    this.add('aws-marketplace:UpdateAgreementApprovalRequest');
+    this.to('aws-marketplace:UpdateAgreementApprovalRequest');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class AwsMarketplace extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
   public toViewSubscriptions() {
-    this.add('aws-marketplace:ViewSubscriptions');
+    this.to('aws-marketplace:ViewSubscriptions');
     return this;
   }
 

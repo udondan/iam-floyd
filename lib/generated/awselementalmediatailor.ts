@@ -99,7 +99,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html
    */
   public toDeletePlaybackConfiguration() {
-    this.add('mediatailor:DeletePlaybackConfiguration');
+    this.to('mediatailor:DeletePlaybackConfiguration');
     return this;
   }
 
@@ -111,7 +111,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html
    */
   public toGetPlaybackConfiguration() {
-    this.add('mediatailor:GetPlaybackConfiguration');
+    this.to('mediatailor:GetPlaybackConfiguration');
     return this;
   }
 
@@ -123,7 +123,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfigurations.html
    */
   public toListPlaybackConfigurations() {
-    this.add('mediatailor:ListPlaybackConfigurations');
+    this.to('mediatailor:ListPlaybackConfigurations');
     return this;
   }
 
@@ -135,7 +135,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html
    */
   public toListTagsForResource() {
-    this.add('mediatailor:ListTagsForResource');
+    this.to('mediatailor:ListTagsForResource');
     return this;
   }
 
@@ -151,7 +151,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration.html
    */
   public toPutPlaybackConfiguration() {
-    this.add('mediatailor:PutPlaybackConfiguration');
+    this.to('mediatailor:PutPlaybackConfiguration');
     return this;
   }
 
@@ -167,7 +167,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html
    */
   public toTagResource() {
-    this.add('mediatailor:TagResource');
+    this.to('mediatailor:TagResource');
     return this;
   }
 
@@ -183,7 +183,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html
    */
   public toUntagResource() {
-    this.add('mediatailor:UntagResource');
+    this.to('mediatailor:UntagResource');
     return this;
   }
 
