@@ -2749,10 +2749,10 @@ export class Sagemaker extends PolicyStatement {
    * - .toUpdateUserProfile()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifDomainSharingOutputKmsKey(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:DomainSharingOutputKmsKey`, value, operator || 'ArnEquals');
+    return this.if(`sagemaker:DomainSharingOutputKmsKey`, value, operator || 'ArnLike');
   }
 
   /**
@@ -2828,10 +2828,10 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateDomain()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifHomeEfsFileSystemKmsKey(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:HomeEfsFileSystemKmsKey`, value, operator || 'ArnEquals');
+    return this.if(`sagemaker:HomeEfsFileSystemKmsKey`, value, operator || 'ArnLike');
   }
 
   /**
@@ -2908,10 +2908,10 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateTransformJob()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifModelArn(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:ModelArn`, value, operator || 'ArnEquals');
+    return this.if(`sagemaker:ModelArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -2949,10 +2949,10 @@ export class Sagemaker extends PolicyStatement {
    * - .toUpdateMonitoringSchedule()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifOutputKmsKey(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:OutputKmsKey`, value, operator || 'ArnEquals');
+    return this.if(`sagemaker:OutputKmsKey`, value, operator || 'ArnLike');
   }
 
   /**
@@ -3052,10 +3052,10 @@ export class Sagemaker extends PolicyStatement {
    * - .toUpdateMonitoringSchedule()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifVolumeKmsKey(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:VolumeKmsKey`, value, operator || 'ArnEquals');
+    return this.if(`sagemaker:VolumeKmsKey`, value, operator || 'ArnLike');
   }
 
   /**
@@ -3117,10 +3117,10 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateLabelingJob()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifWorkteamArn(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:WorkteamArn`, value, operator || 'ArnEquals');
+    return this.if(`sagemaker:WorkteamArn`, value, operator || 'ArnLike');
   }
 
   /**

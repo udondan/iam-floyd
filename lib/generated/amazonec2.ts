@@ -6774,10 +6774,10 @@ export class Ec2 extends PolicyStatement {
    * - vpc-peering-connection
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifAccepterVpc(value: string | string[], operator?: string) {
-    return this.if(`ec2:AccepterVpc`, value, operator || 'ArnEquals');
+    return this.if(`ec2:AccepterVpc`, value, operator || 'ArnLike');
   }
 
   /**
@@ -7149,10 +7149,10 @@ export class Ec2 extends PolicyStatement {
    * - instance
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifInstanceProfile(value: string | string[], operator?: string) {
-    return this.if(`ec2:InstanceProfile`, value, operator || 'ArnEquals');
+    return this.if(`ec2:InstanceProfile`, value, operator || 'ArnLike');
   }
 
   /**
@@ -7213,10 +7213,10 @@ export class Ec2 extends PolicyStatement {
    * - .toRunInstances()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifLaunchTemplate(value: string | string[], operator?: string) {
-    return this.if(`ec2:LaunchTemplate`, value, operator || 'ArnEquals');
+    return this.if(`ec2:LaunchTemplate`, value, operator || 'ArnLike');
   }
 
   /**
@@ -7306,10 +7306,10 @@ export class Ec2 extends PolicyStatement {
    * - volume
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifParentSnapshot(value: string | string[], operator?: string) {
-    return this.if(`ec2:ParentSnapshot`, value, operator || 'ArnEquals');
+    return this.if(`ec2:ParentSnapshot`, value, operator || 'ArnLike');
   }
 
   /**
@@ -7331,10 +7331,10 @@ export class Ec2 extends PolicyStatement {
    * - snapshot
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifParentVolume(value: string | string[], operator?: string) {
-    return this.if(`ec2:ParentVolume`, value, operator || 'ArnEquals');
+    return this.if(`ec2:ParentVolume`, value, operator || 'ArnLike');
   }
 
   /**
@@ -7531,10 +7531,10 @@ export class Ec2 extends PolicyStatement {
    * - instance
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifPlacementGroup(value: string | string[], operator?: string) {
-    return this.if(`ec2:PlacementGroup`, value, operator || 'ArnEquals');
+    return this.if(`ec2:PlacementGroup`, value, operator || 'ArnLike');
   }
 
   /**
@@ -7886,10 +7886,10 @@ export class Ec2 extends PolicyStatement {
    * - vpc-peering-connection
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifRequesterVpc(value: string | string[], operator?: string) {
-    return this.if(`ec2:RequesterVpc`, value, operator || 'ArnEquals');
+    return this.if(`ec2:RequesterVpc`, value, operator || 'ArnLike');
   }
 
   /**
@@ -8217,10 +8217,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifSourceInstanceARN(value: string | string[], operator?: string) {
-    return this.if(`ec2:SourceInstanceARN`, value, operator || 'ArnEquals');
+    return this.if(`ec2:SourceInstanceARN`, value, operator || 'ArnLike');
   }
 
   /**
@@ -8238,10 +8238,10 @@ export class Ec2 extends PolicyStatement {
    * - network-interface
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifSubnet(value: string | string[], operator?: string) {
-    return this.if(`ec2:Subnet`, value, operator || 'ArnEquals');
+    return this.if(`ec2:Subnet`, value, operator || 'ArnLike');
   }
 
   /**
@@ -8398,10 +8398,10 @@ export class Ec2 extends PolicyStatement {
    * - subnet
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifVpc(value: string | string[], operator?: string) {
-    return this.if(`ec2:Vpc`, value, operator || 'ArnEquals');
+    return this.if(`ec2:Vpc`, value, operator || 'ArnLike');
   }
 
   /**

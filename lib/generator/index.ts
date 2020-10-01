@@ -40,7 +40,7 @@ const conditionTypeDefaults: {
   arn: {
     url:
       'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN',
-    default: 'ArnEquals',
+    default: 'ArnLike',
     type: ['string'],
   },
   numeric: {

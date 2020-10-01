@@ -386,10 +386,10 @@ export class Datapipeline extends PolicyStatement {
    * - .toValidatePipelineDefinition()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifPipelineCreator(value: string | string[], operator?: string) {
-    return this.if(`datapipeline:PipelineCreator`, value, operator || 'ArnEquals');
+    return this.if(`datapipeline:PipelineCreator`, value, operator || 'ArnLike');
   }
 
   /**
@@ -414,10 +414,10 @@ export class Datapipeline extends PolicyStatement {
    * - .toValidatePipelineDefinition()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTag(value: string | string[], operator?: string) {
-    return this.if(`datapipeline:Tag`, value, operator || 'ArnEquals');
+    return this.if(`datapipeline:Tag`, value, operator || 'ArnLike');
   }
 
   /**
@@ -434,9 +434,9 @@ export class Datapipeline extends PolicyStatement {
    * - .toValidatePipelineDefinition()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifWorkerGroup(value: string | string[], operator?: string) {
-    return this.if(`datapipeline:workerGroup`, value, operator || 'ArnEquals');
+    return this.if(`datapipeline:workerGroup`, value, operator || 'ArnLike');
   }
 }

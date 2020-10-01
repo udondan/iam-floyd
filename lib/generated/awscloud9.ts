@@ -367,9 +367,9 @@ export class Cloud9 extends PolicyStatement {
    * - .toUpdateEnvironmentMembership()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifUserArn(value: string | string[], operator?: string) {
-    return this.if(`cloud9:UserArn`, value, operator || 'ArnEquals');
+    return this.if(`cloud9:UserArn`, value, operator || 'ArnLike');
   }
 }

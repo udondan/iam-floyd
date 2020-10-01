@@ -835,10 +835,10 @@ export class Lambda extends PolicyStatement {
    * - .toUpdateEventSourceMapping()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFunctionArn(value: string | string[], operator?: string) {
-    return this.if(`lambda:FunctionArn`, value, operator || 'ArnEquals');
+    return this.if(`lambda:FunctionArn`, value, operator || 'ArnLike');
   }
 
   /**

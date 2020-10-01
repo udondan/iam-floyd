@@ -2190,10 +2190,10 @@ export class Iam extends PolicyStatement {
    * - .toPassRole()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifAssociatedResourceArn(value: string | string[], operator?: string) {
-    return this.if(`iam:AssociatedResourceArn`, value, operator || 'ArnEquals');
+    return this.if(`iam:AssociatedResourceArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -2268,10 +2268,10 @@ export class Iam extends PolicyStatement {
    * - .toDetachUserPolicy()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifPolicyARN(value: string | string[], operator?: string) {
-    return this.if(`iam:PolicyARN`, value, operator || 'ArnEquals');
+    return this.if(`iam:PolicyARN`, value, operator || 'ArnLike');
   }
 
   /**

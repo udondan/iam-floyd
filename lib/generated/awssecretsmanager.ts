@@ -537,10 +537,10 @@ export class Secretsmanager extends PolicyStatement {
    * - .toRotateSecret()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifRotationLambdaARN(value: string | string[], operator?: string) {
-    return this.if(`secretsmanager:RotationLambdaARN`, value, operator || 'ArnEquals');
+    return this.if(`secretsmanager:RotationLambdaARN`, value, operator || 'ArnLike');
   }
 
   /**
@@ -567,10 +567,10 @@ export class Secretsmanager extends PolicyStatement {
    * - .toValidateResourcePolicy()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifSecretId(value: string | string[], operator?: string) {
-    return this.if(`secretsmanager:SecretId`, value, operator || 'ArnEquals');
+    return this.if(`secretsmanager:SecretId`, value, operator || 'ArnLike');
   }
 
   /**
@@ -632,9 +632,9 @@ export class Secretsmanager extends PolicyStatement {
    *
    * @param allowRotationLambdaArn The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifResource(allowRotationLambdaArn: string, value: string | string[], operator?: string) {
-    return this.if(`secretsmanager:resource/${ allowRotationLambdaArn }`, value, operator || 'ArnEquals');
+    return this.if(`secretsmanager:resource/${ allowRotationLambdaArn }`, value, operator || 'ArnLike');
   }
 }
