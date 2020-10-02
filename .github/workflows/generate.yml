@@ -35,10 +35,13 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' }}
 
       - name: Commit and push changes
+        container: ubuntu:18.04
         run: |
           set -x
           test -e lib/index.ts || exit 1
           git diff --quiet || (
+            apt update
+            apt-get install -y pcregrep
             perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION &&
             make update-version-refs &&
             make stats &&
