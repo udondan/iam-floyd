@@ -46,7 +46,9 @@ function getRemovedActions() {
 }
 
 function getNewResourceTypes() {
-  gitDiffModules | grep "^+.*var arn =" | sed 's|\${[[:alpha:]]\{1,\}}||g' | sed 's/.*arn::/- /g' | sed 's/:\{2,\}/:/g' | tr -cd '[[:space:]][:alnum:]:\r\n-'
+  gitDiffModules | pcregrep -Mi "^\+  public on[a-z]+\([^(]+\) {\n.*arn:" |\
+    sed 's|/\{0,1\}\${[[:alpha:]]\{1,\}}||g' |\
+    perl -0777 -pe "s/\+\s*public on([A-Za-z]+)\(.*\n.*arn:+([\w-]+).*/- \2:\l\1/gm"
 }
 
 function getNewConditions() {
