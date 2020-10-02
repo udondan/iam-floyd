@@ -61,3 +61,4 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
    [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.74.0
    [libraries.io]: https://libraries.io/search?q=iam-floyd
+   [AWS CDK]: https://aws.amazon.com/cdk/
