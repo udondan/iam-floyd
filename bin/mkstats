@@ -5,7 +5,7 @@ function getNoServices() {
 }
 
 function getNoActions() {
-  grep -R --include="*.ts" --exclude-dir=".cache" "this.add" lib/generated | wc -l | xargs
+  grep -R --include="*.ts" --exclude-dir=".cache" "this.to" lib/generated | wc -l | xargs
 }
 
 function getNoResourceTypes() {
