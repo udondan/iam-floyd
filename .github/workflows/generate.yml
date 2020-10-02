@@ -39,9 +39,10 @@ jobs:
         run: |
           set -x
           test -e lib/index.ts || exit 1
+          apt update
+          apt-get install -y git
           git diff --quiet || (
-            apt update &&
-            apt-get install -y pcregrep git make &&
+            apt-get install -y pcregrep make &&
             perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION &&
             make update-version-refs &&
             make stats &&
