@@ -7,7 +7,7 @@ import glob = require('glob');
 import request = require('request');
 import { Project, Scope, SourceFile } from 'ts-morph';
 
-import { ResourceTypes } from '../shared';
+import { Operator, ResourceTypes } from '../shared';
 import { AccessLevelList } from '../shared/access-level';
 import { Conditions } from './condition';
 import { arnFixer, conditionFixer, fixes, serviceFixer } from './fixes';
@@ -27,32 +27,32 @@ timeThreshold.setHours(timeThreshold.getHours() - threshold);
 const conditionTypeDefaults: {
   [key: string]: {
     url: string;
-    default: string;
+    default: Operator;
     type: string[];
   };
 } = {
   string: {
     url:
       'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String',
-    default: 'StringLike',
+    default: new Operator().stringLike(),
     type: ['string'],
   },
   arn: {
     url:
       'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN',
-    default: 'ArnLike',
+    default: new Operator().arnLike(),
     type: ['string'],
   },
   numeric: {
     url:
       'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric',
-    default: 'NumericEquals',
+    default: new Operator().numericEquals(),
     type: ['number'],
   },
   date: {
     url:
       'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date',
-    default: 'DateEquals',
+    default: new Operator().dateEquals(),
     type: ['Date', 'string'],
   },
 };
@@ -260,11 +260,6 @@ export function createModule(module: Module): Promise<void> {
   const description = `\nStatement provider for service [${module.name}](${module.url}).\n\n@param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement`;
 
   sourceFile.addImportDeclaration({
-    namedImports: ['PolicyStatement'],
-    moduleSpecifier: '../shared',
-  });
-
-  sourceFile.addImportDeclaration({
     namedImports: ['AccessLevelList'],
     moduleSpecifier: '../shared/access-level',
   });
@@ -403,6 +398,8 @@ export function createModule(module: Module): Promise<void> {
     method.setBodyText(methodBody.join('\n'));
   }
 
+  let hasConditions = false;
+
   for (let [key, condition] of Object.entries(module.conditions!)) {
     condition = conditionFixer(module.filename, condition);
 
@@ -412,6 +409,8 @@ export function createModule(module: Module): Promise<void> {
     if (name[0] == 'aws' && name[1] != 'FederatedProvider') {
       continue;
     }
+
+    hasConditions = true;
 
     var desc = '';
 
@@ -495,10 +494,12 @@ export function createModule(module: Module): Promise<void> {
         type: types.join(' | '),
       });
 
-      desc += `\n@param operator Works with [${type} operators](${conditionTypeDefaults[type].url}). **Default:** \`${conditionTypeDefaults[type].default}\``;
+      desc += `\n@param operator Works with [${type} operators](${
+        conditionTypeDefaults[type].url
+      }). **Default:** \`${conditionTypeDefaults[type].default.toString()}\``;
       method.addParameter({
         name: 'operator',
-        type: 'string',
+        type: 'Operator | string',
         hasQuestionToken: true,
       });
 
@@ -518,7 +519,9 @@ export function createModule(module: Module): Promise<void> {
       }
 
       methodBody.push(
-        `return this.if(\`${propsKey}\`, value, operator || '${conditionTypeDefaults[type].default}')`
+        `return this.if(\`${propsKey}\`, value, operator || '${conditionTypeDefaults[
+          type
+        ].default.toString()}')`
       );
     } else if (type == 'bool' || type == 'boolean') {
       desc += '\n@param value `true` or `false`. **Default:** `true`';
@@ -542,6 +545,15 @@ export function createModule(module: Module): Promise<void> {
 
     method.setBodyText(methodBody.join('\n'));
   }
+
+  const sharedClasses = ['PolicyStatement'];
+  if (hasConditions) {
+    sharedClasses.push('Operator');
+  }
+  sourceFile.addImportDeclaration({
+    namedImports: sharedClasses,
+    moduleSpecifier: '../shared',
+  });
 
   formatCode(sourceFile);
   const done = sourceFile.save();

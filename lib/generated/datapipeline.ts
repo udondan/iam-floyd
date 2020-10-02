@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [datapipeline](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_datapipeline.html).
@@ -388,7 +388,7 @@ export class Datapipeline extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifPipelineCreator(value: string | string[], operator?: string) {
+  public ifPipelineCreator(value: string | string[], operator?: Operator | string) {
     return this.if(`datapipeline:PipelineCreator`, value, operator || 'ArnLike');
   }
 
@@ -416,7 +416,7 @@ export class Datapipeline extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifTag(value: string | string[], operator?: string) {
+  public ifTag(value: string | string[], operator?: Operator | string) {
     return this.if(`datapipeline:Tag`, value, operator || 'ArnLike');
   }
 
@@ -436,7 +436,7 @@ export class Datapipeline extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifWorkerGroup(value: string | string[], operator?: string) {
+  public ifWorkerGroup(value: string | string[], operator?: Operator | string) {
     return this.if(`datapipeline:workerGroup`, value, operator || 'ArnLike');
   }
 }

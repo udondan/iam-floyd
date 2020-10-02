@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [ebs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html).
@@ -141,7 +141,7 @@ export class Ebs extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDescription(value: string | string[], operator?: string) {
+  public ifDescription(value: string | string[], operator?: Operator | string) {
     return this.if(`ebs:Description`, value, operator || 'StringLike');
   }
 
@@ -154,7 +154,7 @@ export class Ebs extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifParentSnapshot(value: string | string[], operator?: string) {
+  public ifParentSnapshot(value: string | string[], operator?: Operator | string) {
     return this.if(`ebs:ParentSnapshot`, value, operator || 'StringLike');
   }
 
@@ -167,7 +167,7 @@ export class Ebs extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifVolumeSize(value: number | number[], operator?: string) {
+  public ifVolumeSize(value: number | number[], operator?: Operator | string) {
     return this.if(`ebs:VolumeSize`, value, operator || 'NumericEquals');
   }
 }

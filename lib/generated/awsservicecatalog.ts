@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [servicecatalog](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsservicecatalog.html).
@@ -1214,7 +1214,7 @@ export class Servicecatalog extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAccountLevel(value: string | string[], operator?: string) {
+  public ifAccountLevel(value: string | string[], operator?: Operator | string) {
     return this.if(`servicecatalog:accountLevel`, value, operator || 'StringLike');
   }
 
@@ -1234,7 +1234,7 @@ export class Servicecatalog extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRoleLevel(value: string | string[], operator?: string) {
+  public ifRoleLevel(value: string | string[], operator?: Operator | string) {
     return this.if(`servicecatalog:roleLevel`, value, operator || 'StringLike');
   }
 
@@ -1254,7 +1254,7 @@ export class Servicecatalog extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifUserLevel(value: string | string[], operator?: string) {
+  public ifUserLevel(value: string | string[], operator?: Operator | string) {
     return this.if(`servicecatalog:userLevel`, value, operator || 'StringLike');
   }
 }

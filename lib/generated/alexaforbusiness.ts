@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [a4b](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_alexaforbusiness.html).
@@ -1276,7 +1276,7 @@ export class A4b extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAmazonId(value: string | string[], operator?: string) {
+  public ifAmazonId(value: string | string[], operator?: Operator | string) {
     return this.if(`a4b:amazonId`, value, operator || 'StringLike');
   }
 
@@ -1288,7 +1288,7 @@ export class A4b extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifFiltersDeviceType(value: string | string[], operator?: string) {
+  public ifFiltersDeviceType(value: string | string[], operator?: Operator | string) {
     return this.if(`a4b:filters_deviceType`, value, operator || 'StringLike');
   }
 }

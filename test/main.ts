@@ -38,3 +38,13 @@ printPolicyWithStatements([
 printPolicyWithStatements([
   new statement.Ec2().allow().allPermissionManagementActions(),
 ]);
+
+printPolicyWithStatements([
+  new statement.Ec2()
+    .allow()
+    .allPermissionManagementActions()
+    .ifAwsSourceIp(
+      '1.2.3.4',
+      new statement.Operator().notIpAddress().ifExists()
+    ),
+]);

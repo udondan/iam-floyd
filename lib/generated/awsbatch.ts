@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [batch](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html).
@@ -323,7 +323,7 @@ export class Batch extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAWSLogsGroup(value: string | string[], operator?: string) {
+  public ifAWSLogsGroup(value: string | string[], operator?: Operator | string) {
     return this.if(`batch:AWSLogsGroup`, value, operator || 'StringLike');
   }
 
@@ -338,7 +338,7 @@ export class Batch extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAWSLogsRegion(value: string | string[], operator?: string) {
+  public ifAWSLogsRegion(value: string | string[], operator?: Operator | string) {
     return this.if(`batch:AWSLogsRegion`, value, operator || 'StringLike');
   }
 
@@ -353,7 +353,7 @@ export class Batch extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAWSLogsStreamPrefix(value: string | string[], operator?: string) {
+  public ifAWSLogsStreamPrefix(value: string | string[], operator?: Operator | string) {
     return this.if(`batch:AWSLogsStreamPrefix`, value, operator || 'StringLike');
   }
 
@@ -368,7 +368,7 @@ export class Batch extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifImage(value: string | string[], operator?: string) {
+  public ifImage(value: string | string[], operator?: Operator | string) {
     return this.if(`batch:Image`, value, operator || 'StringLike');
   }
 
@@ -383,7 +383,7 @@ export class Batch extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifLogDriver(value: string | string[], operator?: string) {
+  public ifLogDriver(value: string | string[], operator?: Operator | string) {
     return this.if(`batch:LogDriver`, value, operator || 'StringLike');
   }
 
@@ -412,7 +412,7 @@ export class Batch extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifUser(value: string | string[], operator?: string) {
+  public ifUser(value: string | string[], operator?: Operator | string) {
     return this.if(`batch:User`, value, operator || 'StringLike');
   }
 }

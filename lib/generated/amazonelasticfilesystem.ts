@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [elasticfilesystem](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticfilesystem.html).
@@ -495,7 +495,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAccessPointArn(value: string | string[], operator?: string) {
+  public ifAccessPointArn(value: string | string[], operator?: Operator | string) {
     return this.if(`elasticfilesystem:AccessPointArn`, value, operator || 'StringLike');
   }
 

@@ -1,3 +1,4 @@
+import { Operator } from '../operators';
 import { PolicyStatementBase } from './1-base';
 
 /**
@@ -75,15 +76,22 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The value(s) to check for
    * @param operator [Operator](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html) of the condition. **Default:** `StringLike`
    */
-  public if(key: string, value: any, operator?: string) {
+  public if(key: string, value: any, operator?: Operator | string) {
     if (typeof operator === 'undefined') {
-      operator = 'StringLike';
+      operator = new Operator().stringLike();
     }
 
-    if (!(operator in this.conditions)) {
-      this.conditions[operator] = {};
+    var op = '';
+    if (typeof operator.toString === 'function') {
+      op = operator.toString();
+    } else {
+      op = operator as string;
     }
-    this.conditions[operator][key] = value;
+
+    if (!(op in this.conditions)) {
+      this.conditions[op] = {};
+    }
+    this.conditions[op][key] = value;
 
     return this;
   }
@@ -101,11 +109,14 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ForAnyValue:StringEquals`
    */
 
-  public ifAwsCalledVia(value: string | string[], operator?: string) {
+  public ifAwsCalledVia(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(
       'aws:CalledVia',
       value,
-      operator || 'ForAnyValue:StringEquals'
+      operator || new Operator().forAnyValue().stringEquals()
     );
   }
 
@@ -119,7 +130,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The service(s) to check for
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsCalledViaFirst(value: string | string[], operator?: string) {
+  public ifAwsCalledViaFirst(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if('aws:CalledViaFirst', value, operator);
   }
 
@@ -133,7 +147,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The service(s) to check for
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsCalledViaLast(value: string | string[], operator?: string) {
+  public ifAwsCalledViaLast(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if('aws:CalledViaLast', value, operator);
   }
 
@@ -149,7 +166,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsCurrentTime(
     value: Date | string | (Date | string)[],
-    operator?: string
+    operator?: Operator | string
   ) {
     if (typeof (value as Date).getMonth === 'function') {
       value = (value as Date).toISOString();
@@ -161,7 +178,11 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
         return item;
       });
     }
-    return this.if('aws:CurrentTime', value, operator || 'DateLessThanEquals');
+    return this.if(
+      'aws:CurrentTime',
+      value,
+      operator || new Operator().dateLessThanEquals()
+    );
   }
 
   /**
@@ -176,7 +197,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    */
   public ifAwsEpochTime(
     value: number | Date | string | (number | Date | string)[],
-    operator?: string
+    operator?: Operator | string
   ) {
     if (typeof (value as Date).getMonth === 'function') {
       value = (value as Date).toISOString();
@@ -188,7 +209,11 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
         return item;
       });
     }
-    return this.if('aws:EpochTime', value, operator || 'DateLessThanEquals');
+    return this.if(
+      'aws:EpochTime',
+      value,
+      operator || new Operator().dateLessThanEquals()
+    );
   }
 
   /**
@@ -202,11 +227,14 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericLessThan`
    */
 
-  public ifAwsMultiFactorAuthAge(value: number | number[], operator?: string) {
+  public ifAwsMultiFactorAuthAge(
+    value: number | number[],
+    operator?: Operator | string
+  ) {
     return this.if(
       'aws:MultiFactorAuthAge',
       value,
-      operator || 'NumericLessThan'
+      operator || new Operator().numericLessThan()
     );
   }
 
@@ -227,7 +255,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       `aws:MultiFactorAuthPresent`,
       typeof value !== 'undefined' ? value : true,
-      'Bool'
+      new Operator().bool()
     );
   }
 
@@ -241,7 +269,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value Account identifier(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsPrincipalAccount(value: string | string[], operator?: string) {
+  public ifAwsPrincipalAccount(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if('aws:PrincipalAccount', value, operator);
   }
 
@@ -257,8 +288,15 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value Principle ARN(s)
    * @param operator Works with [ARN operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN) and [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ArnLike`
    */
-  public ifAwsPrincipalArn(value: string | string[], operator?: string) {
-    return this.if('aws:PrincipalArn', value, operator || 'ArnLike');
+  public ifAwsPrincipalArn(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      'aws:PrincipalArn',
+      value,
+      operator || new Operator().arnLike()
+    );
   }
 
   /**
@@ -273,7 +311,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value Organization ID(s) in format `o-xxxxxxxxxxx`
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsPrincipalOrgID(value: string | string[], operator?: string) {
+  public ifAwsPrincipalOrgID(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if('aws:PrincipalOrgID', value, operator);
   }
 
@@ -293,7 +334,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value Organization path(s) in the format of `o-xxxxxxxxxxx/r-xxxxxxxxxx/ou-xxxx-xxxxxxxx/ou-xxxx-xxxxxxxx/`
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifAwsPrincipalOrgPaths(value: string | string[], operator?: string) {
+  public ifAwsPrincipalOrgPaths(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if('aws:PrincipalOrgPaths', value, operator);
   }
 
@@ -313,7 +357,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
   public ifAwsPrincipalTag(
     key: string,
     value: string | string[],
-    operator?: string
+    operator?: Operator | string
   ) {
     return this.if(`aws:PrincipalTag/${key}`, value, operator);
   }
@@ -328,7 +372,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The principal type(s). Any of `Account`, `User`, `FederatedUser`, `AssumedRole`, `Anonymous`
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifAwsPrincipalType(value: string | string[], operator?: string) {
+  public ifAwsPrincipalType(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if('aws:PrincipalType', value, operator);
   }
 
@@ -346,7 +393,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The referer url(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsReferer(value: string | string[], operator?: string) {
+  public ifAwsReferer(value: string | string[], operator?: Operator | string) {
     return this.if('aws:Referer', value, operator);
   }
 
@@ -364,7 +411,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The region(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifAwsRequestedRegion(value: string | string[], operator?: string) {
+  public ifAwsRequestedRegion(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if('aws:RequestedRegion', value, operator);
   }
 
@@ -384,7 +434,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
   public ifAwsRequestTag(
     key: string,
     value: string | string[],
-    operator?: string
+    operator?: Operator | string
   ) {
     return this.if(`aws:RequestTag/${key}`, value, operator);
   }
@@ -403,7 +453,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
   public ifAwsResourceTag(
     key: string,
     value: string | string[],
-    operator?: string
+    operator?: Operator | string
   ) {
     return this.if(`aws:ResourceTag/${key}`, value, operator);
   }
@@ -421,7 +471,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       `aws:SecureTransport`,
       typeof value !== 'undefined' ? value : true,
-      'Bool'
+      new Operator().bool()
     );
   }
 
@@ -437,7 +487,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The account ID(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsSourceAccount(value: string | string[], operator?: string) {
+  public ifAwsSourceAccount(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if('aws:SourceAccount', value, operator);
   }
 
@@ -455,8 +508,15 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The source ARN(s)
    * @param operator Works with [ARN operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN) and [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ArnLike`
    */
-  public ifAwsSourceArn(value: string | string[], operator?: string) {
-    return this.if('aws:SourceArn', value, operator || 'ArnLike');
+  public ifAwsSourceArn(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      'aws:SourceArn',
+      value,
+      operator || new Operator().arnLike()
+    );
   }
 
   /**
@@ -471,8 +531,12 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The source IP(s)
    * @param operator Works with IP [address operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress). **Default:** `IpAddress`
    */
-  public ifAwsSourceIp(value: string | string[], operator?: string) {
-    return this.if('aws:SourceIp', value, operator || 'IpAddress');
+  public ifAwsSourceIp(value: string | string[], operator?: Operator | string) {
+    return this.if(
+      'aws:SourceIp',
+      value,
+      operator || new Operator().ipAddress()
+    );
   }
 
   /**
@@ -485,7 +549,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The VPS ID(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifAwsSourceVpc(value: string | string[], operator?: string) {
+  public ifAwsSourceVpc(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if('aws:SourceVpc', value, operator);
   }
 
@@ -499,7 +566,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The VPC Endpoint ID(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsSourceVpce(value: string | string[], operator?: string) {
+  public ifAwsSourceVpce(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if('aws:SourceVpce', value, operator);
   }
 
@@ -517,7 +587,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The tag key(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if('aws:TagKeys', value, operator);
   }
 
@@ -533,11 +603,14 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The date and time to check for. Can be a string in one of the [W3C implementations of the ISO 8601 date](https://www.w3.org/TR/NOTE-datetime) (e.g. `2020-04-01T00:00:00Z`) or in epoch (UNIX) time or a `Date()` object (JavaScript only)
    * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateGreaterThanEquals`
    */
-  public ifAwsTokenIssueTime(value: string | Date, operator?: string) {
+  public ifAwsTokenIssueTime(
+    value: string | Date,
+    operator?: Operator | string
+  ) {
     return this.if(
       'aws:TokenIssueTime',
       dateToString(value),
-      operator || 'DateGreaterThanEquals'
+      operator || new Operator().dateGreaterThanEquals()
     );
   }
 
@@ -553,7 +626,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The User Agent string(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsUserAgent(value: string | string[], operator?: string) {
+  public ifAwsUserAgent(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if('aws:UserAgent', value, operator);
   }
 
@@ -567,7 +643,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The principal identifier(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsUserid(value: string | string[], operator?: string) {
+  public ifAwsUserid(value: string | string[], operator?: Operator | string) {
     return this.if('aws:userid', value, operator);
   }
 
@@ -581,7 +657,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The user name(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsUsername(value: string | string[], operator?: string) {
+  public ifAwsUsername(value: string | string[], operator?: Operator | string) {
     return this.if('aws:username', value, operator);
   }
 
@@ -608,7 +684,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       `aws:ViaAWSService`,
       typeof value !== 'undefined' ? value : true,
-      'Bool'
+      new Operator().bool()
     );
   }
 
@@ -624,8 +700,15 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value The VPC source IP(s)
    * @param operator Works with IP [address operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress). **Default:** `IpAddress`
    */
-  public ifAwsVpcSourceIp(value: string | string[], operator?: string) {
-    return this.if('aws:VpcSourceIp', value, operator || 'IpAddress');
+  public ifAwsVpcSourceIp(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      'aws:VpcSourceIp',
+      value,
+      operator || new Operator().ipAddress()
+    );
   }
 }
 

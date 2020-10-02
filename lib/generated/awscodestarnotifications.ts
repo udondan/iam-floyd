@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [codestar-notifications](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarnotifications.html).
@@ -292,7 +292,7 @@ export class CodestarNotifications extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifNotificationsForResource(value: string | string[], operator?: string) {
+  public ifNotificationsForResource(value: string | string[], operator?: Operator | string) {
     return this.if(`codestar-notifications:NotificationsForResource`, value, operator || 'ArnLike');
   }
 }
