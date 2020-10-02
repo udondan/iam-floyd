@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [acm-pca](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscertificatemanagerprivatecertificateauthority.html).
@@ -375,7 +375,7 @@ export class AcmPca extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTemplateArn(value: string | string[], operator?: string) {
+  public ifTemplateArn(value: string | string[], operator?: Operator | string) {
     return this.if(`acm-pca:TemplateArn`, value, operator || 'StringLike');
   }
 }

@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [ssm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssystemsmanager.html).
@@ -2091,7 +2091,7 @@ export class Ssm extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifOverwrite(value: string | string[], operator?: string) {
+  public ifOverwrite(value: string | string[], operator?: Operator | string) {
     return this.if(`ssm:Overwrite`, value, operator || 'StringLike');
   }
 
@@ -2103,7 +2103,7 @@ export class Ssm extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRecursive(value: string | string[], operator?: string) {
+  public ifRecursive(value: string | string[], operator?: Operator | string) {
     return this.if(`ssm:Recursive`, value, operator || 'StringLike');
   }
 
@@ -2133,7 +2133,7 @@ export class Ssm extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSyncType(value: string | string[], operator?: string) {
+  public ifSyncType(value: string | string[], operator?: Operator | string) {
     return this.if(`ssm:SyncType`, value, operator || 'StringLike');
   }
 
@@ -2157,7 +2157,7 @@ export class Ssm extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagkey: string, value: string | string[], operator?: string) {
+  public ifResourceTag(tagkey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`ssm:resourceTag/${ tagkey }`, value, operator || 'StringLike');
   }
 }

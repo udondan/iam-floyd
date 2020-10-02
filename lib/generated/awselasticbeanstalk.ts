@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [elasticbeanstalk](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselasticbeanstalk.html).
@@ -863,7 +863,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifFromApplication(value: string | string[], operator?: string) {
+  public ifFromApplication(value: string | string[], operator?: Operator | string) {
     return this.if(`elasticbeanstalk:FromApplication`, value, operator || 'ArnLike');
   }
 
@@ -881,7 +881,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifFromApplicationVersion(value: string | string[], operator?: string) {
+  public ifFromApplicationVersion(value: string | string[], operator?: Operator | string) {
     return this.if(`elasticbeanstalk:FromApplicationVersion`, value, operator || 'ArnLike');
   }
 
@@ -899,7 +899,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifFromConfigurationTemplate(value: string | string[], operator?: string) {
+  public ifFromConfigurationTemplate(value: string | string[], operator?: Operator | string) {
     return this.if(`elasticbeanstalk:FromConfigurationTemplate`, value, operator || 'ArnLike');
   }
 
@@ -916,7 +916,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifFromEnvironment(value: string | string[], operator?: string) {
+  public ifFromEnvironment(value: string | string[], operator?: Operator | string) {
     return this.if(`elasticbeanstalk:FromEnvironment`, value, operator || 'ArnLike');
   }
 
@@ -934,7 +934,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifFromPlatform(value: string | string[], operator?: string) {
+  public ifFromPlatform(value: string | string[], operator?: Operator | string) {
     return this.if(`elasticbeanstalk:FromPlatform`, value, operator || 'ArnLike');
   }
 
@@ -952,7 +952,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifFromSolutionStack(value: string | string[], operator?: string) {
+  public ifFromSolutionStack(value: string | string[], operator?: Operator | string) {
     return this.if(`elasticbeanstalk:FromSolutionStack`, value, operator || 'ArnLike');
   }
 
@@ -998,7 +998,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifInApplication(value: string | string[], operator?: string) {
+  public ifInApplication(value: string | string[], operator?: Operator | string) {
     return this.if(`elasticbeanstalk:InApplication`, value, operator || 'ArnLike');
   }
 }

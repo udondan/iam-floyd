@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [securityhub](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecurityhub.html).
@@ -649,7 +649,7 @@ export class Securityhub extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifASFFSyntaxPath(aSFFSyntaxPath: string, value: string | string[], operator?: string) {
+  public ifASFFSyntaxPath(aSFFSyntaxPath: string, value: string | string[], operator?: Operator | string) {
     return this.if(`securityhub:ASFFSyntaxPath/${ aSFFSyntaxPath }`, value, operator || 'StringLike');
   }
 
@@ -664,7 +664,7 @@ export class Securityhub extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTargetAccount(value: string | string[], operator?: string) {
+  public ifTargetAccount(value: string | string[], operator?: Operator | string) {
     return this.if(`securityhub:TargetAccount`, value, operator || 'StringLike');
   }
 }

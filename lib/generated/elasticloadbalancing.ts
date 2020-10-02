@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [elasticloadbalancing](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elasticloadbalancing.html).
@@ -434,7 +434,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTagExists(value: string | string[], operator?: string) {
+  public ifResourceTagExists(value: string | string[], operator?: Operator | string) {
     return this.if(`elasticloadbalancing:ResourceTag/`, value, operator || 'StringLike');
   }
 
@@ -448,7 +448,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`elasticloadbalancing:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

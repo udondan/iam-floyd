@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [ram](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsresourceaccessmanager.html).
@@ -484,7 +484,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifPermissionArn(value: string | string[], operator?: string) {
+  public ifPermissionArn(value: string | string[], operator?: Operator | string) {
     return this.if(`ram:PermissionArn`, value, operator || 'ArnLike');
   }
 
@@ -501,7 +501,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPrincipal(value: string | string[], operator?: string) {
+  public ifPrincipal(value: string | string[], operator?: Operator | string) {
     return this.if(`ram:Principal`, value, operator || 'StringLike');
   }
 
@@ -533,7 +533,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRequestedResourceType(value: string | string[], operator?: string) {
+  public ifRequestedResourceType(value: string | string[], operator?: Operator | string) {
     return this.if(`ram:RequestedResourceType`, value, operator || 'StringLike');
   }
 
@@ -550,7 +550,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifResourceArn(value: string | string[], operator?: string) {
+  public ifResourceArn(value: string | string[], operator?: Operator | string) {
     return this.if(`ram:ResourceArn`, value, operator || 'ArnLike');
   }
 
@@ -574,7 +574,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceShareName(value: string | string[], operator?: string) {
+  public ifResourceShareName(value: string | string[], operator?: Operator | string) {
     return this.if(`ram:ResourceShareName`, value, operator || 'StringLike');
   }
 
@@ -590,7 +590,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifShareOwnerAccountId(value: string | string[], operator?: string) {
+  public ifShareOwnerAccountId(value: string | string[], operator?: Operator | string) {
     return this.if(`ram:ShareOwnerAccountId`, value, operator || 'StringLike');
   }
 }

@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [transcribe](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html).
@@ -471,7 +471,7 @@ export class Transcribe extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifOutputBucketName(value: string | string[], operator?: string) {
+  public ifOutputBucketName(value: string | string[], operator?: Operator | string) {
     return this.if(`transcribe:OutputBucketName`, value, operator || 'StringLike');
   }
 
@@ -484,7 +484,7 @@ export class Transcribe extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifOutputEncryptionKMSKeyId(value: string | string[], operator?: string) {
+  public ifOutputEncryptionKMSKeyId(value: string | string[], operator?: Operator | string) {
     return this.if(`transcribe:OutputEncryptionKMSKeyId`, value, operator || 'StringLike');
   }
 }

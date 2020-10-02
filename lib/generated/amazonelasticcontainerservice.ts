@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [ecs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerservice.html).
@@ -985,7 +985,7 @@ export class Ecs extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`ecs:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1004,7 +1004,7 @@ export class Ecs extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifCapacityProvider(value: string | string[], operator?: string) {
+  public ifCapacityProvider(value: string | string[], operator?: Operator | string) {
     return this.if(`ecs:capacity-provider`, value, operator || 'ArnLike');
   }
 
@@ -1040,7 +1040,7 @@ export class Ecs extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifCluster(value: string | string[], operator?: string) {
+  public ifCluster(value: string | string[], operator?: Operator | string) {
     return this.if(`ecs:cluster`, value, operator || 'ArnLike');
   }
 
@@ -1055,7 +1055,7 @@ export class Ecs extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifContainerInstances(value: string | string[], operator?: string) {
+  public ifContainerInstances(value: string | string[], operator?: Operator | string) {
     return this.if(`ecs:container-instances`, value, operator || 'ArnLike');
   }
 
@@ -1073,7 +1073,7 @@ export class Ecs extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifService(value: string | string[], operator?: string) {
+  public ifService(value: string | string[], operator?: Operator | string) {
     return this.if(`ecs:service`, value, operator || 'ArnLike');
   }
 
@@ -1090,7 +1090,7 @@ export class Ecs extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifTaskDefinition(value: string | string[], operator?: string) {
+  public ifTaskDefinition(value: string | string[], operator?: Operator | string) {
     return this.if(`ecs:task-definition`, value, operator || 'ArnLike');
   }
 }

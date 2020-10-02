@@ -390,7 +390,7 @@ In case of `missing conditions <faq.html#are-all-actions-conditions-resource-typ
 Operators
 ^^^^^^^^^
 
-`Condition operators <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html>`_ can just be passed as strings. Or you can use the helpers ``statement.Operator`` and ``statement.OperatorModifier``:
+`Condition operators <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html>`_ can just be passed as strings. Or you can use the class ``statement.Operator()``:
 
 .. tabs::
 
@@ -402,7 +402,7 @@ Operators
         .onTable('Thread')
         .ifAttributes(
           ['ID', 'Message', 'Tags'],
-          statement.Operator.stringEquals(statement.OperatorModifier.FOR_ALL_VALUES)
+          new statement.Operator().stringEquals().forAllValues()
         );
 
    .. code-tab:: js
@@ -413,7 +413,7 @@ Operators
         .onTable('Thread')
         .ifAttributes(
           ['ID', 'Message', 'Tags'],
-          statement.Operator.stringEquals(statement.OperatorModifier.FOR_ALL_VALUES)
+          new statement.Operator().stringEquals().forAllValues()
         );
 
    .. code-tab:: py
@@ -423,8 +423,7 @@ Operators
           .to_get_item() \
           .if_attributes(
               ["ID", "Message", "Tags"],
-              statement.Operator.string_equals(
-                  statement.OperatorModifier.FOR_ALL_VALUES))
+              statement.Operator().string_equals().for_all_values())
 
 .. tabs::
 
@@ -436,7 +435,7 @@ Operators
         .onTable('Thread')
         .ifAttributes(
           ['ID', 'PostDateTime'],
-          statement.Operator.stringEquals(statement.OperatorModifier.FOR_ANY_VALUE)
+          new statement.Operator().stringEquals().forAnyValue()
         );
 
    .. code-tab:: js
@@ -447,7 +446,7 @@ Operators
         .onTable('Thread')
         .ifAttributes(
           ['ID', 'PostDateTime'],
-          statement.Operator.stringEquals(statement.OperatorModifier.FOR_ANY_VALUE)
+          new statement.Operator().stringEquals().forAnyValue()
         );
 
    .. code-tab:: py
@@ -457,8 +456,7 @@ Operators
           .to_put_item() \
           .if_attributes(
               ["ID", "PostDateTime"],
-              statement.Operator.string_equals(
-                  statement.OperatorModifier.FOR_ANY_VALUES))
+              statement.Operator().string_equals().for_any_value())
 
 .. tabs::
 
@@ -470,7 +468,7 @@ Operators
         .ifAwsRequestTag(
           'Environment',
           ['Production', 'Staging', 'Dev'],
-          statement.Operator.stringEquals(statement.OperatorModifier.IF_EXISTS)
+          new statement.Operator().stringEquals().ifExists()
         );
 
    .. code-tab:: js
@@ -481,7 +479,7 @@ Operators
         .ifAwsRequestTag(
           'Environment',
           ['Production', 'Staging', 'Dev'],
-          statement.Operator.stringEquals(statement.OperatorModifier.IF_EXISTS)
+          new statement.Operator().stringEquals().ifExists()
         );
 
    .. code-tab:: py
@@ -492,8 +490,7 @@ Operators
           .if_aws_request_tag(
               "Environment",
               ["Production", "Staging", "Dev"],
-              statement.Operator.string_equals(
-                  statement.OperatorModifier.IF_EXISTS))
+              statement.Operator().string_equals().if_exists())
 
 **on** (Resource)
 -----------------

@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [account](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsaccounts.html).
@@ -74,7 +74,7 @@ export class Account extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTargetRegion(value: string | string[], operator?: string) {
+  public ifTargetRegion(value: string | string[], operator?: Operator | string) {
     return this.if(`account:TargetRegion`, value, operator || 'StringLike');
   }
 }

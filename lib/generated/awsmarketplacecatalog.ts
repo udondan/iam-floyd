@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [aws-marketplace-catalog](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacecatalog.html).
@@ -207,7 +207,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifChangeType(value: string | string[], operator?: string) {
+  public ifChangeType(value: string | string[], operator?: Operator | string) {
     return this.if(`catalog:ChangeType`, value, operator || 'StringLike');
   }
 }

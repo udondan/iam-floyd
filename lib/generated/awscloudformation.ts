@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [cloudformation](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudformation.html).
@@ -903,7 +903,7 @@ export class Cloudformation extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifChangeSetName(value: string | string[], operator?: string) {
+  public ifChangeSetName(value: string | string[], operator?: Operator | string) {
     return this.if(`cloudformation:ChangeSetName`, value, operator || 'StringLike');
   }
 
@@ -916,7 +916,7 @@ export class Cloudformation extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifImportResourceTypes(value: string | string[], operator?: string) {
+  public ifImportResourceTypes(value: string | string[], operator?: Operator | string) {
     return this.if(`cloudformation:ImportResourceTypes`, value, operator || 'StringLike');
   }
 
@@ -931,7 +931,7 @@ export class Cloudformation extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTypes(value: string | string[], operator?: string) {
+  public ifResourceTypes(value: string | string[], operator?: Operator | string) {
     return this.if(`cloudformation:ResourceTypes`, value, operator || 'StringLike');
   }
 
@@ -950,7 +950,7 @@ export class Cloudformation extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifRoleArn(value: string | string[], operator?: string) {
+  public ifRoleArn(value: string | string[], operator?: Operator | string) {
     return this.if(`cloudformation:RoleArn`, value, operator || 'ArnLike');
   }
 
@@ -966,7 +966,7 @@ export class Cloudformation extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifStackPolicyUrl(value: string | string[], operator?: string) {
+  public ifStackPolicyUrl(value: string | string[], operator?: Operator | string) {
     return this.if(`cloudformation:StackPolicyUrl`, value, operator || 'StringLike');
   }
 
@@ -983,7 +983,7 @@ export class Cloudformation extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTemplateUrl(value: string | string[], operator?: string) {
+  public ifTemplateUrl(value: string | string[], operator?: Operator | string) {
     return this.if(`cloudformation:TemplateUrl`, value, operator || 'StringLike');
   }
 }

@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [organizations](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsorganizations.html).
@@ -935,7 +935,7 @@ export class Organizations extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPolicyType(value: string | string[], operator?: string) {
+  public ifPolicyType(value: string | string[], operator?: Operator | string) {
     return this.if(`organizations:PolicyType`, value, operator || 'StringLike');
   }
 
@@ -954,7 +954,7 @@ export class Organizations extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifServicePrincipal(value: string | string[], operator?: string) {
+  public ifServicePrincipal(value: string | string[], operator?: Operator | string) {
     return this.if(`organizations:ServicePrincipal`, value, operator || 'StringLike');
   }
 }

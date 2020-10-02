@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [redshift](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonredshift.html).
@@ -1819,7 +1819,7 @@ export class Redshift extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDbName(value: string | string[], operator?: string) {
+  public ifDbName(value: string | string[], operator?: Operator | string) {
     return this.if(`redshift:DbName`, value, operator || 'StringLike');
   }
 
@@ -1835,7 +1835,7 @@ export class Redshift extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDbUser(value: string | string[], operator?: string) {
+  public ifDbUser(value: string | string[], operator?: Operator | string) {
     return this.if(`redshift:DbUser`, value, operator || 'StringLike');
   }
 
@@ -1850,7 +1850,7 @@ export class Redshift extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDurationSeconds(value: string | string[], operator?: string) {
+  public ifDurationSeconds(value: string | string[], operator?: Operator | string) {
     return this.if(`redshift:DurationSeconds`, value, operator || 'StringLike');
   }
 }

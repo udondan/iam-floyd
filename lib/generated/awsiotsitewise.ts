@@ -1,5 +1,5 @@
-import { PolicyStatement } from "../shared";
 import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [iotsitewise](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotsitewise.html).
@@ -940,7 +940,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAssetHierarchyPath(value: string | string[], operator?: string) {
+  public ifAssetHierarchyPath(value: string | string[], operator?: Operator | string) {
     return this.if(`iotsitewise:assetHierarchyPath`, value, operator || 'StringLike');
   }
 
@@ -952,7 +952,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifChildAssetId(value: string | string[], operator?: string) {
+  public ifChildAssetId(value: string | string[], operator?: Operator | string) {
     return this.if(`iotsitewise:childAssetId`, value, operator || 'StringLike');
   }
 
@@ -964,7 +964,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifGroup(value: string | string[], operator?: string) {
+  public ifGroup(value: string | string[], operator?: Operator | string) {
     return this.if(`iotsitewise:group`, value, operator || 'StringLike');
   }
 
@@ -976,7 +976,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPortal(value: string | string[], operator?: string) {
+  public ifPortal(value: string | string[], operator?: Operator | string) {
     return this.if(`iotsitewise:portal`, value, operator || 'StringLike');
   }
 
@@ -988,7 +988,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifProject(value: string | string[], operator?: string) {
+  public ifProject(value: string | string[], operator?: Operator | string) {
     return this.if(`iotsitewise:project`, value, operator || 'StringLike');
   }
 
@@ -1000,7 +1000,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPropertyId(value: string | string[], operator?: string) {
+  public ifPropertyId(value: string | string[], operator?: Operator | string) {
     return this.if(`iotsitewise:propertyId`, value, operator || 'StringLike');
   }
 
@@ -1012,7 +1012,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifUser(value: string | string[], operator?: string) {
+  public ifUser(value: string | string[], operator?: Operator | string) {
     return this.if(`iotsitewise:user`, value, operator || 'StringLike');
   }
 }
