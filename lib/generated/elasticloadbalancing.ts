@@ -23,6 +23,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_AddTags.html
    */
   public toAddTags() {
@@ -94,6 +98,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    * Creates a load balancer
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLoadBalancer.html
    */
@@ -311,6 +319,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_RemoveTags.html
    */
   public toRemoveTags() {
@@ -394,29 +406,6 @@ export class Elasticloadbalancing extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type listener to the statement
-   *
-   * https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html
-   *
-   * @param loadBalancerName - Identifier for the loadBalancerName.
-   * @param loadBalancerId - Identifier for the loadBalancerId.
-   * @param listenerId - Identifier for the listenerId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   */
-  public onListener(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}';
-    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
-    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
-    arn = arn.replace('${ListenerId}', listenerId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
    * Adds a resource of type loadbalancer to the statement
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html
@@ -427,8 +416,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
   public onLoadbalancer(loadBalancerName: string, account?: string, region?: string, partition?: string) {

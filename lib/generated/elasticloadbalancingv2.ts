@@ -35,6 +35,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AddTags.html
    */
   public toAddTags() {
@@ -46,6 +50,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Creates a listener for the specified Application Load Balancer
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateListener.html
    */
@@ -59,6 +67,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateLoadBalancer.html
    */
   public toCreateLoadBalancer() {
@@ -71,6 +83,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateRule.html
    */
   public toCreateRule() {
@@ -82,6 +98,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Creates a target group.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateTargetGroup.html
    */
@@ -235,7 +255,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the tags associated with the specified load balancers
+   * Describes the tags associated with the specified resource
    *
    * Access Level: Read
    *
@@ -371,6 +391,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_RemoveTags.html
    */
   public toRemoveTags() {
@@ -491,6 +515,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onListenerApp(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/app/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}';
@@ -515,6 +543,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onListenerRuleApp(loadBalancerName: string, loadBalancerId: string, listenerId: string, listenerRuleId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener-rule/app/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}/${ListenerRuleId}';
@@ -539,6 +571,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onListenerNet(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/net/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}';
@@ -563,6 +599,10 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onListenerRuleNet(loadBalancerName: string, loadBalancerId: string, listenerId: string, listenerRuleId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener-rule/net/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}/${ListenerRuleId}';
@@ -588,8 +628,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
   public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
@@ -614,8 +653,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
   public onLoadbalancerNet(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
@@ -640,8 +678,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
   public onTargetgroup(targetGroupName: string, targetGroupId: string, account?: string, region?: string, partition?: string) {
@@ -655,9 +692,13 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * A tag key and value pair.
+   * A tag key and value pair
    *
    * Applies to resource types:
+   * - listener/app
+   * - listener-rule/app
+   * - listener/net
+   * - listener-rule/net
    * - loadbalancer/app/
    * - loadbalancer/net/
    * - targetgroup

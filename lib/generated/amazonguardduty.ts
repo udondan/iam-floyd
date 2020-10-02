@@ -19,7 +19,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to accept invitations to become a GuardDuty member account.
+   * Grants permission to accept invitations to become a GuardDuty member account
    *
    * Access Level: Write
    *
@@ -31,7 +31,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to archive GuardDuty findings.
+   * Grants permission to archive GuardDuty findings
    *
    * Access Level: Write
    *
@@ -43,7 +43,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a detector.
+   * Grants permission to create a detector
    *
    * Access Level: Write
    *
@@ -59,7 +59,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create GuardDuty filters. A filters defines finding attributes and conditions used to filter findings.
+   * Grants permission to create GuardDuty filters. A filters defines finding attributes and conditions used to filter findings
    *
    * Access Level: Write
    *
@@ -75,7 +75,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an IPSet.
+   * Grants permission to create an IPSet
    *
    * Access Level: Write
    *
@@ -91,7 +91,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create GuardDuty member accounts. The account used to create a member becomes the GuardDuty master account.
+   * Grants permission to create GuardDuty member accounts, where the account used to create a member becomes the GuardDuty administrator account
    *
    * Access Level: Write
    *
@@ -103,7 +103,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a publishing destination.
+   * Grants permission to create a publishing destination
    *
    * Access Level: Write
    *
@@ -119,7 +119,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create sample findings.
+   * Grants permission to create sample findings
    *
    * Access Level: Write
    *
@@ -131,7 +131,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create GuardDuty ThreatIntelSets. A ThreatIntelSet consists of known malicious IP addresses used by GuardDuty to generate findings.
+   * Grants permission to create GuardDuty ThreatIntelSets, where a ThreatIntelSet consists of known malicious IP addresses used by GuardDuty to generate findings
    *
    * Access Level: Write
    *
@@ -147,7 +147,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to decline invitations to become a GuardDuty member account.
+   * Grants permission to decline invitations to become a GuardDuty member account
    *
    * Access Level: Write
    *
@@ -159,7 +159,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete GuardDuty detectors.
+   * Grants permission to delete GuardDuty detectors
    *
    * Access Level: Write
    *
@@ -171,7 +171,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete GuardDuty filters.
+   * Grants permission to delete GuardDuty filters
    *
    * Access Level: Write
    *
@@ -183,7 +183,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete GuardDuty IPSets.
+   * Grants permission to delete GuardDuty IPSets
    *
    * Access Level: Write
    *
@@ -195,7 +195,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete invitations to become a GuardDuty member account.
+   * Grants permission to delete invitations to become a GuardDuty member account
    *
    * Access Level: Write
    *
@@ -207,7 +207,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete GuardDuty member accounts.
+   * Grants permission to delete GuardDuty member accounts
    *
    * Access Level: Write
    *
@@ -219,7 +219,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a publishing destination.
+   * Grants permission to delete a publishing destination
    *
    * Access Level: Write
    *
@@ -231,7 +231,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete GuardDuty ThreatIntelSets.
+   * Grants permission to delete GuardDuty ThreatIntelSets
    *
    * Access Level: Write
    *
@@ -243,7 +243,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve details about the delegated administrator associated with a GuardDuty detector.
+   * Grants permission to retrieve details about the delegated administrator associated with a GuardDuty detector
    *
    * Access Level: Read
    *
@@ -255,7 +255,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve details about a publishing destination.
+   * Grants permission to retrieve details about a publishing destination
    *
    * Access Level: Read
    *
@@ -267,7 +267,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disable the organization delegated administrator for GuardDuty.
+   * Grants permission to disable the organization delegated administrator for GuardDuty
    *
    * Access Level: Write
    *
@@ -279,7 +279,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate a GuardDuty member account from its GuardDuty master account.
+   * Grants permission to disassociate a GuardDuty member account from its GuardDuty master account
    *
    * Access Level: Write
    *
@@ -291,7 +291,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate GuardDuty member accounts from their master GuardDuty account.
+   * Grants permission to disassociate GuardDuty member accounts from their master GuardDuty account
    *
    * Access Level: Write
    *
@@ -303,7 +303,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable an organization delegated administrator for GuardDuty.
+   * Grants permission to enable an organization delegated administrator for GuardDuty
    *
    * Access Level: Write
    *
@@ -315,7 +315,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve GuardDuty detectors.
+   * Grants permission to retrieve GuardDuty detectors
    *
    * Access Level: Read
    *
@@ -327,7 +327,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve GuardDuty filters.
+   * Grants permission to retrieve GuardDuty filters
    *
    * Access Level: Read
    *
@@ -339,7 +339,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve GuardDuty findings.
+   * Grants permission to retrieve GuardDuty findings
    *
    * Access Level: Read
    *
@@ -351,7 +351,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of GuardDuty finding statistics.
+   * Grants permission to retrieve a list of GuardDuty finding statistics
    *
    * Access Level: Read
    *
@@ -363,7 +363,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permsission to retrieve GuardDuty IPSets.
+   * Grants permsission to retrieve GuardDuty IPSets
    *
    * Access Level: Read
    *
@@ -375,7 +375,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the count of all GuardDuty invitations sent to a specified account. The count does not include an accepted invitation.
+   * Grants permission to retrieve the count of all GuardDuty invitations sent to a specified account, which does not include the accepted invitation
    *
    * Access Level: Read
    *
@@ -387,7 +387,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve details of the GuardDuty master account associated with a member account.
+   * Grants permission to retrieve details of the GuardDuty master account associated with a member account
    *
    * Access Level: Read
    *
@@ -399,7 +399,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the member accounts associated with a master account.
+   * Grants permission to retrieve the member accounts associated with a master account
    *
    * Access Level: Read
    *
@@ -411,7 +411,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve GuardDuty ThreatIntelSets.
+   * Grants permission to retrieve GuardDuty ThreatIntelSets
    *
    * Access Level: Read
    *
@@ -423,7 +423,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to invite other AWS accounts to enable GuardDuty and become GuardDuty member accounts.
+   * Grants permission to invite other AWS accounts to enable GuardDuty and become GuardDuty member accounts
    *
    * Access Level: Write
    *
@@ -435,7 +435,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of GuardDuty detectors.
+   * Grants permission to retrieve a list of GuardDuty detectors
    *
    * Access Level: List
    *
@@ -447,7 +447,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of GuardDuty filters.
+   * Grants permission to retrieve a list of GuardDuty filters
    *
    * Access Level: List
    *
@@ -459,7 +459,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of GuardDuty findings.
+   * Grants permission to retrieve a list of GuardDuty findings
    *
    * Access Level: List
    *
@@ -471,7 +471,19 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a lists of all of the GuardDuty membership invitations that were sent to an AWS account.
+   * Grants permission to retrieve a list of GuardDuty IPSets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListIPSets.html
+   */
+  public toListIPSets() {
+    this.to('guardduty:ListIPSets');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve a lists of all of the GuardDuty membership invitations that were sent to an AWS account
    *
    * Access Level: List
    *
@@ -483,7 +495,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrierve a lsit of GuardDuty member accounts associated with a master account.
+   * Grants permission to retrierve a lsit of GuardDuty member accounts associated with a master account
    *
    * Access Level: List
    *
@@ -495,7 +507,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list details about the organization delegated administrator for GuardDuty.
+   * Grants permission to list details about the organization delegated administrator for GuardDuty
    *
    * Access Level: List
    *
@@ -507,7 +519,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of publishing destinations.
+   * Grants permission to retrieve a list of publishing destinations
    *
    * Access Level: List
    *
@@ -519,7 +531,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of tags associated with a GuardDuty resource.
+   * Grants permission to retrieve a list of tags associated with a GuardDuty resource
    *
    * Access Level: List
    *
@@ -531,7 +543,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of GuardDuty ThreatIntelSets.
+   * Grants permission to retrieve a list of GuardDuty ThreatIntelSets
    *
    * Access Level: List
    *
@@ -543,7 +555,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to a master account to monitor findings from GuardDuty member accounts. Use this after disabling monitoring of member accounts using the StopMonitoringMembers operation.
+   * Grants permission to a GuardDuty administrator account to monitor findings from GuardDuty member accounts
    *
    * Access Level: Write
    *
@@ -555,7 +567,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disable monitoring findings from member accounts.
+   * Grants permission to disable monitoring findings from member accounts
    *
    * Access Level: Write
    *
@@ -567,7 +579,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to a GuardDuty resource. There is a limit of 50 tags per resource.
+   * Grants permission to add tags to a GuardDuty resource
    *
    * Access Level: Write
    *
@@ -583,7 +595,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to unarchive GuardDuty findings.
+   * Grants permission to unarchive GuardDuty findings
    *
    * Access Level: Write
    *
@@ -595,7 +607,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from a GuardDuty resource.
+   * Grants permission to remove tags from a GuardDuty resource
    *
    * Access Level: Write
    *
@@ -610,7 +622,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update GuardDuty detectors.
+   * Grants permission to update GuardDuty detectors
    *
    * Access Level: Write
    *
@@ -622,7 +634,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to updates GuardDuty filters.
+   * Grants permission to updates GuardDuty filters
    *
    * Access Level: Write
    *
@@ -634,7 +646,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update findings feedback to mark GuardDuty findings as useful or not useful.
+   * Grants permission to update findings feedback to mark GuardDuty findings as useful or not useful
    *
    * Access Level: Write
    *
@@ -646,7 +658,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update GuardDuty IPSets.
+   * Grants permission to update GuardDuty IPSets
    *
    * Access Level: Write
    *
@@ -658,7 +670,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the delegated administrator configuration associated with a GuardDuty detector.
+   * Grants permission to update the delegated administrator configuration associated with a GuardDuty detector
    *
    * Access Level: Write
    *
@@ -670,7 +682,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a publishing destination.
+   * Grants permission to update a publishing destination
    *
    * Access Level: Write
    *
@@ -686,7 +698,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to updates the GuardDuty ThreatIntelSets.
+   * Grants permission to updates the GuardDuty ThreatIntelSets
    *
    * Access Level: Write
    *
@@ -751,6 +763,7 @@ export class Guardduty extends PolicyStatement {
       "ListDetectors",
       "ListFilters",
       "ListFindings",
+      "ListIPSets",
       "ListInvitations",
       "ListMembers",
       "ListOrganizationAdminAccounts",
@@ -855,7 +868,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type publishingdestination to the statement
+   * Adds a resource of type publishingDestination to the statement
    *
    * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
    *
@@ -865,8 +878,8 @@ export class Guardduty extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onPublishingdestination(detectorId: string, publishingDestinationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/threatintelset/${PublishingDestinationId}';
+  public onPublishingDestination(detectorId: string, publishingDestinationId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/publishingDestination/${PublishingDestinationId}';
     arn = arn.replace('${DetectorId}', detectorId);
     arn = arn.replace('${PublishingDestinationId}', publishingDestinationId);
     arn = arn.replace('${Account}', account || '*');
