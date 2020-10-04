@@ -21,13 +21,15 @@ policy = {
         .all_actions() \
         .on('arn:aws:s3:::cdktoolkit-stagingbucket-*') \
         .to_json(),
-        # even when triggered via CFN, do not allow modifications of the account
+        # even when triggered via CFN, do not allow modifications of the
+        #  account
         statement.Account() \
         .deny() \
         .all_permission_management_actions() \
         .all_write_actions() \
         .to_json(),
-        # even when triggered via CFN, do not allow modifications of the organization
+        # even when triggered via CFN, do not allow modifications of the
+        #  organization
         statement.Organizations() \
         .deny() \
         .all_permission_management_actions() \
