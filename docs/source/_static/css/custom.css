@@ -10,6 +10,7 @@
 .sphinx-tabs .ui.segment.sphinx-tab {
   padding: 0 !important;
   margin: 0 !important;
+  width: 100% !important;
 }
 
 .sphinx-tabs .code-tab.tab {
