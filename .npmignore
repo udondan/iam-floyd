@@ -20,5 +20,6 @@ test/*
 VERSION
 CHANGELOG/*
 docs/*
+examples/*
 README.md
 Makefile

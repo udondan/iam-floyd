@@ -42,7 +42,8 @@
       "bin/*",
       "lib/generator/*",
       "test/*",
-      "**/*CDK*"
+      "**/*CDK*",
+      "examples/*"
     ],
     "targets": {
       "python": {
