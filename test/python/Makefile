@@ -8,7 +8,7 @@ install-cdk:
 
 
 test: install
-	@python3 test.py
+	@find ../../examples -iname "*.py" -exec echo Testing {} \; -exec python3 {} \;
 
 test-cdk: install-cdk
 	@python3 test-cdk.py
