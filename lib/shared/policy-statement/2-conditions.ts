@@ -82,10 +82,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     }
 
     var op = '';
-    if (typeof operator.toString === 'function') {
-      op = operator.toString();
+    if (typeof operator === 'string') {
+      op = operator;
     } else {
-      op = operator as string;
+      op = operator.toString();
     }
 
     if (!(op in this.conditions)) {
