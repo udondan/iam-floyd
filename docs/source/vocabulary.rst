@@ -156,7 +156,7 @@ Every possible `principal <https://docs.aws.amazon.com/IAM/latest/UserGuide/refe
 
 The CDK variant of the package has an additional method ``forCdkPrincipal``, which takes any number of `iam.IPrincipal <https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.IPrincipal.html>`_ objects:
 
-.. example:: principal-cdk
+.. example:: principal.cdk
 
 **not** (notAction, notResource and notPrincipal)
 -------------------------------------------------
