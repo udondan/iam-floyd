@@ -8,7 +8,7 @@ install-cdk:
 
 
 test: install
-	@find ../../examples -iname "*.py" -exec echo Testing {} \; -exec python3 {} \;
+	@find ../../examples -iname "*.py" ! -name '*.cdk.py' -exec echo Testing {} \; -exec python3 {} \;
 
 test-cdk: install-cdk
-	@python3 test-cdk.py
+	@find ../../examples -iname "*cdk.py" -exec echo Testing {} \; -exec python3 {} \;
