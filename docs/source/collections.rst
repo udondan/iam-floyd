@@ -6,50 +6,11 @@ Collections
 
 IAM Floyd provides commonly used statement collections. These can be called via:
 
-.. tabs::
-
-   .. code-tab:: ts
-
-      new statement.Collection().nameOfTheCollection();
-
-   .. code-tab:: js
-
-      new statement.Collection().nameOfTheCollection();
-
-   .. code-tab:: py
-
-      statement.Collection().name_of_the_collection()
+.. example:: collection
 
 Collections return a list of statements, which then can be used in a policy like this:
 
-.. tabs::
-
-   .. code-tab:: ts
-
-      const policy = {
-        Version: '2012-10-17',
-        Statement: [
-          ...new statement.Collection().nameOfTheCollection(),
-        ],
-      }
-
-   .. code-tab:: js
-
-      const policy = {
-        Version: '2012-10-17',
-        Statement: [
-          ...new statement.Collection().nameOfTheCollection(),
-        ],
-      }
-
-   .. code-tab:: py
-
-      statements = statement.Collection().name_of_the_collection()
-
-      policy = {
-          "Version": "2012-10-17",
-          "Statement": list(map(lambda x: x.to_json(), statements)),
-      }
+.. example:: collection-policy
 
 Available collections
 ---------------------

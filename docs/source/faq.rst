@@ -26,40 +26,15 @@ Limiting actions to specific resources via ARN is cumbersome. In this package, f
     "Action": "s3:*",
     "Resource": [
       "arn:aws:s3:::example-bucket"
-      "arn:aws:s3:::example-bucket/*"
+      "arn:aws:s3:::example-bucket/some/path/*"
     ]
   }
 
-
 The first resource element is for the bucket itself. The second element is for the contained objects.
 
-A beginner might make the mistake to think the first entry is superfluous and remove it. This package has distinct methods to limit actions to a bucket and/or objects:
+A beginner might make the mistake to think the first *or* the last entry is superfluous and remove it. This package has distinct methods to limit actions to a bucket and/or objects:
 
-.. tabs::
-
-   .. code-tab:: ts
-
-      new statement.S3()
-        .allow()
-        .allActions()
-        .onBucket('example-bucket')
-        .onObject('example-bucket', '*');
-
-   .. code-tab:: js
-
-      new statement.S3()
-        .allow()
-        .allActions()
-        .onBucket('example-bucket')
-        .onObject('example-bucket', '*');
-
-   .. code-tab:: py
-
-      statement.S3() \
-          .allow() \
-          .all_actions() \
-          .on_bucket("example-bucket") \
-          .on_object("example-bucket", "*")
+.. example:: resource
 
 And yes, it's shorter too.
 
@@ -94,28 +69,7 @@ I don't like method chaining!
 
 That's not a question. But yes, you can completely avoid method chaining:
 
-.. tabs::
-
-   .. code-tab:: ts
-
-      const myStatement = new statement.Ec2()
-      myStatement.allow()
-      myStatement.toStartInstances()
-      myStatement.toStopInstances();
-
-   .. code-tab:: js
-
-      const myStatement = new statement.Ec2()
-      myStatement.allow()
-      myStatement.toStartInstances()
-      myStatement.toStopInstances();
-
-   .. code-tab:: py
-
-      my_statement = statement.Ec2()
-      my_statement.allow()
-      my_statement.to_start_instances()
-      my_statement.to_stop_instances()
+.. example:: no-chaining
 
 Floyd?
 ------
