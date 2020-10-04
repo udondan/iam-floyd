@@ -2,8 +2,6 @@
    :description: AWS IAM policy statement generator with fluent interface
    :keywords: aws, iam, policy, statement, generator, cdk, aws-cdk, iam-floyd, floyd
 
-.. example:: test1
-
 .. toctree::
    :maxdepth: 3
    :hidden:

@@ -8,14 +8,6 @@ Depending on your scenario, you need to either install/import ``iam-floyd`` or `
 
 .. tabs::
 
-   .. code-tab:: bash TypeScript
-
-      # for use without AWS CDK use the iam-floyd package
-      npm install iam-floyd
-
-      # for use with CDK use the cdk-iam-floyd package
-      npm install cdk-iam-floyd
-
    .. code-tab:: bash JavaScript
 
       # for use without AWS CDK use the iam-floyd package
@@ -60,91 +52,19 @@ Depending on your scenario, you need to either install/import ``iam-floyd`` or `
 
 Both packages contain a statement provider for each AWS service, e.g. ``Ec2``. A statement provider is a class with methods for each and every available action, resource type and condition. Calling such method will add the action/resource/condition to the statement:
 
-.. tabs::
-
-   .. code-tab:: ts
-
-      new statement.Ec2().toStartInstances();
-
-   .. code-tab:: js
-
-      new statement.Ec2().toStartInstances();
-
-   .. code-tab:: py
-
-      statement.Ec2().to_start_instances()
+.. example:: action-single
 
 Every method returns the statement provider, so you can chain method calls:
 
-.. tabs::
-
-   .. code-tab:: ts
-
-      new statement.Ec2()
-        .toStartInstances()
-        .toStopInstances();
-
-   .. code-tab:: js
-
-      new statement.Ec2()
-        .toStartInstances()
-        .toStopInstances();
-
-   .. code-tab:: py
-
-      statement.Ec2() \
-          .to_start_instances() \
-          .to_stop_instances()
+.. example:: action-chaining
 
 The default effect of any statement is ``Allow``. To add some linguistic sugar you can explicitly call the ``allow()`` method:
 
-.. tabs::
-
-   .. code-tab:: ts
-
-      new statement.Ec2()
-        .allow()
-        .toStartInstances()
-        .toStopInstances();
-
-   .. code-tab:: js
-
-      new statement.Ec2()
-        .allow()
-        .toStartInstances()
-        .toStopInstances();
-
-   .. code-tab:: py
-
-      statement.Ec2() \
-          .allow() \
-          .to_start_instances() \
-          .to_stop_instances()
+.. example:: allow
 
 Or ``deny()``:
 
-.. tabs::
-
-   .. code-tab:: ts
-
-      new statement.Ec2()
-        .deny()
-        .toStartInstances()
-        .toStopInstances();
-
-   .. code-tab:: js
-
-      new statement.Ec2()
-        .deny()
-        .toStartInstances()
-        .toStopInstances();
-
-   .. code-tab:: py
-
-      statement.Ec2() \
-          .deny() \
-          .to_start_instances() \
-          .to_stop_instances()
+.. example:: deny
 
 You can work with `access levels <access-levels_>`_. For every access level there are distinct methods available to add all related actions to the statement:
 
