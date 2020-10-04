@@ -15,7 +15,8 @@ def make_example(dir):
     line_no = 0
     for line in lines:
         line_no += 1
-        rst.append(line.format(path).rstrip(), 'example.rst', line_no)
+        line = line.format(path).rstrip()
+        rst.append(line, 'example.rst', line_no)
     return rst
 
 

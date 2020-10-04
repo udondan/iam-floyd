@@ -1,4 +1,5 @@
-.sphinx-tabs pre {
+.sphinx-tabs pre,
+.highlight pre {
   background-color: #282a36 !important;
 }
 
