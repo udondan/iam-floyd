@@ -1,0 +1,16 @@
+.sphinx-tabs pre {
+  background-color: #282a36 !important;
+}
+
+.sphinx-tabs div[class*='highlight-'] {
+  margin: 0 !important;
+}
+
+.sphinx-tabs .ui.segment.sphinx-tab {
+  padding: 0 !important;
+}
+
+.sphinx-tabs .code-tab.tab {
+  padding: 0 !important;
+  border: 0 !important;
+}
