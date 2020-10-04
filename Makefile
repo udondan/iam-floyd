@@ -84,7 +84,7 @@ docs:
 	@cd docs && $(MAKE) clean html
 
 test-python:
-	$(MAKE) -f ./Python.Test.Makefile test
+	$(MAKE) -f --no-print-directory ./Python.Test.Makefile test
 
 test-python-cdk:
-	$(MAKE) -f ./Python.Test.Makefile test-cdk
+	$(MAKE) -f --no-print-directory ./Python.Test.Makefile test-cdk
