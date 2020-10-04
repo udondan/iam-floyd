@@ -6,7 +6,6 @@ Vocabulary
 
 IAM Floyd provides a fluid interface and enables you to define policy statements in a human readable and easy to understand phrase.
 
-
 **allow** | **deny** (Effect)
 -----------------------------
 
