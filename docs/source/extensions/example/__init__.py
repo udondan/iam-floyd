@@ -20,13 +20,10 @@ def make_example(dir):
 
 
 class ExampleDirective(SphinxDirective):
-    has_content = False
-    option_spec = {
-        'dir': str,
-    }
+    has_content = True
 
     def run(self):
-        dir = self.options['dir']
+        dir = self.content[0]
         rst = make_example(dir)
         node = nodes.section()
         node.document = self.state.document
