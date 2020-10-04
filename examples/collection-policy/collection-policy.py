@@ -1,7 +1,7 @@
 import iam_floyd as statement
 
 # doc-start
-statements = statement.Collection().name_of_the_collection()
+statements = statement.Collection().allow_ec2_instance_delete_by_owner()
 
 policy = {
     'Version': '2012-10-17',

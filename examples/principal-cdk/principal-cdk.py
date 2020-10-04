@@ -1,4 +1,4 @@
-import iam_floyd as statement
+import cdk_iam_floyd as statement
 import aws_cdk.aws_iam as iam
 
 # doc-start

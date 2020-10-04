@@ -8,7 +8,7 @@ statement.Sts() \
 
 statement.Sts() \
     .allow() \
-    .to_assume_role_with_sAML() \
+    .to_assume_role_with_saml() \
     .for_service('lambda.amazonaws.com')
 
 statement.Sts() \
@@ -23,27 +23,27 @@ statement.Sts() \
 
 statement.Sts() \
     .allow() \
-    .to_assume_role_with_sAML() \
+    .to_assume_role_with_saml() \
     .for_federated_cognito()
 
 statement.Sts() \
     .allow() \
-    .to_assume_role_with_sAML() \
+    .to_assume_role_with_saml() \
     .for_federated_amazon()
 
 statement.Sts() \
     .allow() \
-    .to_assume_role_with_sAML() \
+    .to_assume_role_with_saml() \
     .for_federated_google()
 
 statement.Sts() \
     .allow() \
-    .to_assume_role_with_sAML() \
+    .to_assume_role_with_saml() \
     .for_federated_facebook()
 
 statement.Sts() \
     .allow() \
-    .to_assume_role_with_sAML() \
+    .to_assume_role_with_saml() \
     .for_saml('1234567890', 'saml-provider')
 
 statement.Sts() \
@@ -64,4 +64,4 @@ statement.Sts() \
 statement.Sts() \
     .allow() \
     .to_assume_role() \
-    .for('arn:foo:bar')
+    .for_('arn:foo:bar')
