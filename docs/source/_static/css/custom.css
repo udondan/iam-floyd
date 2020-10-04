@@ -8,9 +8,15 @@
 
 .sphinx-tabs .ui.segment.sphinx-tab {
   padding: 0 !important;
+  margin: 0 !important;
 }
 
 .sphinx-tabs .code-tab.tab {
   padding: 0 !important;
+  border: 0 !important;
+}
+
+.rst-content pre.literal-block,
+.rst-content div[class^='highlight'] {
   border: 0 !important;
 }
