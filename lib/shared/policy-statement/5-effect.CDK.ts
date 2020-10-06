@@ -10,7 +10,7 @@ import { PolicyStatementWithResources } from './4-resources';
 export class PolicyStatementWithEffect extends PolicyStatementWithResources {
   /** When `true`, an "Effect: Allow" will be put into the policy statement.
    * By default it will be omitted, since `Allow` is the default anyway.
-   * */
+   */
   protected explicitAllow = false;
 
   /**
