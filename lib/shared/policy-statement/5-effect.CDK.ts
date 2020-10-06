@@ -8,6 +8,11 @@ import { PolicyStatementWithResources } from './4-resources';
  * Adds "effect" functionality to the Policy Statement
  */
 export class PolicyStatementWithEffect extends PolicyStatementWithResources {
+  /** When true, an "Effect: Allow" will be put in the policy.
+   * By default it will be omitted, since Allow is teh default anyway.
+   * */
+  private explicitAllow = false;
+
   /**
    * Injects effect into the statement.
    *
@@ -21,7 +26,7 @@ export class PolicyStatementWithEffect extends PolicyStatementWithResources {
     const statement = super.toJSON();
 
     // @ts-ignore only available after swapping 1-base
-    if (this.effect != iam.Effect.ALLOW) {
+    if (this.effect != iam.Effect.ALLOW || this.explicitAllow) {
       // @ts-ignore only available after swapping 1-base
       statement.Effect = this.effect;
     }
@@ -31,8 +36,15 @@ export class PolicyStatementWithEffect extends PolicyStatementWithResources {
 
   /**
    * Allow the actions in this statement
+   *
+   * The default `Effect` is `Allow`. Therefore by default the `Effect` key
+   * will not be present in the statement. To enforce the `Effect` key, pass
+   * `true` as argument.
+   *
+   * @param explicit Enforce the `Effect` key to be present in the statement
    */
-  public allow() {
+  public allow(explicit?: boolean) {
+    this.explicitAllow = explicit || false;
     // @ts-ignore only available after swapping 1-base
     this.effect = iam.Effect.ALLOW;
     return this;
