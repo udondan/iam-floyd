@@ -22,3 +22,10 @@
 .rst-content div[class^='highlight'] {
   border: 0 !important;
 }
+
+#github-corner {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 0;
+}
