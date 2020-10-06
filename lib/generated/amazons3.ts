@@ -141,6 +141,9 @@ export class S3 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html
    */
   public toCreateJob() {
@@ -353,7 +356,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the configuration parameters and status for a batch operations job.
+   * Grants permission to retrieve the configuration parameters and status for a batch operations job
    *
    * Access Level: Read
    *
@@ -1788,6 +1791,9 @@ export class S3 extends PolicyStatement {
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html
    */
   public toPutReplicationConfiguration() {
@@ -2267,7 +2273,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Requires that an existing object tag has a specific tag key and value.
+   * Filters access by existing object tag key and value
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
    *
@@ -2352,7 +2358,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Restricts the tag keys and values allowed on objects
+   * Filters access by the tag keys and values to be added to objects
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
    *
@@ -2371,7 +2377,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Restricts the tag keys allowed on objects
+   * Filters access by the tag keys to be added to objects
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
    *
@@ -2401,7 +2407,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Restricts incoming requests to a specific authentication method
+   * Filters access by authentication method
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html
    *
@@ -2508,7 +2514,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Requires the delimiter parameter
+   * Filters access by delimiter parameter
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/walkthrough1.html
    *
@@ -2540,7 +2546,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Limits the maximum number of keys returned in a ListBucket request
+   * Filters access by maximum number of keys returned in a ListBucket request
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#example-numeric-condition-operators
    *
@@ -2556,7 +2562,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Enables enforcement of the specified object legal hold status
+   * Filters access by object legal hold status
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-legal-holds
    *
@@ -2573,7 +2579,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Enables enforcement of the specified object retention mode (COMPLIANCE or GOVERNANCE)
+   * Filters access by object retention mode (COMPLIANCE or GOVERNANCE)
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
@@ -2588,7 +2594,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Enables enforcement of an object relative to the remaining retention days
+   * Filters access by remaining object retention days
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-managing.html#object-lock-managing-retention-limits
    *
@@ -2605,7 +2611,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Enables enforcement of a specific retain-until-date
+   * Filters access by object retain-until date
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-periods
    *
@@ -2638,7 +2644,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Identifies the length of time, in milliseconds, that a signature is valid in an authenticated request
+   * Filters access by the age in milliseconds of the request signature
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html
    *
@@ -2745,7 +2751,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Identifies the version of AWS Signature that is supported for authenticated requests
+   * Filters access by the version of AWS Signature used on the request
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html
    *
@@ -2874,7 +2880,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Requires the x-amz-acl header with a specific canned ACL in a request
+   * Filters access by canned ACL in the request's x-amz-acl header
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
    *
@@ -2895,7 +2901,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Disallows unsigned content in your bucket
+   * Filters access to unsigned content in your bucket
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html
    *
@@ -3000,7 +3006,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Restricts the copy source to a specific bucket, prefix, or object
+   * Filters access to requests with a specific bucket, prefix, or object as the copy source
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#putobject-limit-copy-source-3
    *
@@ -3016,7 +3022,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Requires the x-amz-grant-full-control (full control) header in a request
+   * Filters access to requests with the x-amz-grant-full-control (full control) header
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
    *
@@ -3036,7 +3042,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Requires the x-amz-grant-read (read access) header in a request
+   * Filters access to requests with the x-amz-grant-read (read access) header
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
    *
@@ -3056,7 +3062,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Requires the x-amz-grant-read-acp (read permissions for the ACL) header in a request
+   * Filters access to requests with the x-amz-grant-read-acp (read permissions for the ACL) header
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
    *
@@ -3076,7 +3082,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Requires the x-amz-grant-write (write access) header in a request
+   * Filters access to requests with the x-amz-grant-write (write access) header
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
    *
@@ -3096,7 +3102,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Requires the x-amz-grant-write-acp (write permissions for the ACL) header in a request
+   * Filters access to requests with the x-amz-grant-write-acp (write permissions for the ACL) header
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
    *
@@ -3116,7 +3122,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Enables enforcement of object metadata behavior (COPY or REPLACE) when objects are copied
+   * Filters access by object metadata behavior (COPY or REPLACE) when objects are copied
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html
    *
@@ -3132,7 +3138,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Requires server-side encryption
+   * Filters access by server-side encryption
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html
    *
@@ -3149,7 +3155,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Requires a specific AWS KMS customer managed CMK for server-side encryption
+   * Filters access by AWS KMS customer managed CMK for server-side encryption
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html#require-sse-kms
    *
