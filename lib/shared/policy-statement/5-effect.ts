@@ -14,8 +14,8 @@ export enum Effect {
 export class PolicyStatementWithEffect extends PolicyStatementWithResources {
   public effect = Effect.ALLOW;
 
-  /** When true, an "Effect: Allow" will be put in the policy.
-   * By default it will be omitted, since Allow is teh default anyway.
+  /** When `true`, an "Effect: Allow" will be put into the policy statement.
+   * By default it will be omitted, since `Allow` is the default anyway.
    * */
   protected explicitAllow = false;
 
