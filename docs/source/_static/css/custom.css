@@ -29,3 +29,19 @@
   right: 0;
   border: 0;
 }
+
+#co2-neutral {
+  text-align: center;
+}
+
+#co2-neutral a {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  z-index: 999;
+}
+
+#co2-neutral a image {
+  width: 150px;
+  height: auto;
+}

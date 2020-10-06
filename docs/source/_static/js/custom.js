@@ -6,7 +6,6 @@ $(function () {
   });
 
   // Thanks to https://github.com/tholman/github-corners
-
   $('body').append(
     '<a href="https://github.com/udondan/iam-floyd" id="github-corner" aria-label="View source on GitHub">\
     <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">\
@@ -16,4 +15,16 @@ $(function () {
     </svg>\
   </a>'
   );
+
+  $('.wy-side-scroll, .sphinxsidebarwrapper').append(
+    '<div id="co2-neutral">\
+      <a href="https://tree-nation.com/profile/impact/daniel-schroeder#co2" target="_blank">\
+        <img src="https://tree-nation.com/images/tracking/label-co2-website-white-en.png" />\
+      </a>\
+    </div>'
+  );
+
+  $.getScript('https://tree-nation.com/js/track.js', function () {
+    treenation_track('5f7b1e0dcc956');
+  });
 });
