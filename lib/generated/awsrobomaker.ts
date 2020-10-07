@@ -19,6 +19,18 @@ export class Robomaker extends PolicyStatement {
   }
 
   /**
+   * Delete one or more worlds in a batch operation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_BatchDeleteWorlds.html
+   */
+  public toBatchDeleteWorlds() {
+    this.to('robomaker:BatchDeleteWorlds');
+    return this;
+  }
+
+  /**
    * Describe multiple simulation jobs
    *
    * Access Level: Read
@@ -63,6 +75,30 @@ export class Robomaker extends PolicyStatement {
    */
   public toCancelSimulationJobBatch() {
     this.to('robomaker:CancelSimulationJobBatch');
+    return this;
+  }
+
+  /**
+   * Cancel a world export job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_CancelWorldExportJob.html
+   */
+  public toCancelWorldExportJob() {
+    this.to('robomaker:CancelWorldExportJob');
+    return this;
+  }
+
+  /**
+   * Cancel a world generation job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_CancelWorldGenerationJob.html
+   */
+  public toCancelWorldGenerationJob() {
+    this.to('robomaker:CancelWorldGenerationJob');
     return this;
   }
 
@@ -202,6 +238,42 @@ export class Robomaker extends PolicyStatement {
   }
 
   /**
+   * Create a world export job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateWorldExportJob.html
+   */
+  public toCreateWorldExportJob() {
+    this.to('robomaker:CreateWorldExportJob');
+    return this;
+  }
+
+  /**
+   * Create a world generation job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateWorldGenerationJob.html
+   */
+  public toCreateWorldGenerationJob() {
+    this.to('robomaker:CreateWorldGenerationJob');
+    return this;
+  }
+
+  /**
+   * Create a world template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateWorldTemplate.html
+   */
+  public toCreateWorldTemplate() {
+    this.to('robomaker:CreateWorldTemplate');
+    return this;
+  }
+
+  /**
    * Delete a deployment fleet
    *
    * Access Level: Write
@@ -246,6 +318,18 @@ export class Robomaker extends PolicyStatement {
    */
   public toDeleteSimulationApplication() {
     this.to('robomaker:DeleteSimulationApplication');
+    return this;
+  }
+
+  /**
+   * Delete a world template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_DeleteWorldTemplate.html
+   */
+  public toDeleteWorldTemplate() {
+    this.to('robomaker:DeleteWorldTemplate');
     return this;
   }
 
@@ -346,6 +430,66 @@ export class Robomaker extends PolicyStatement {
   }
 
   /**
+   * Describe a world
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeWorld.html
+   */
+  public toDescribeWorld() {
+    this.to('robomaker:DescribeWorld');
+    return this;
+  }
+
+  /**
+   * Describe a world export job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeWorldExportJob.html
+   */
+  public toDescribeWorldExportJob() {
+    this.to('robomaker:DescribeWorldExportJob');
+    return this;
+  }
+
+  /**
+   * Describe a world generation job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeWorldGenerationJob.html
+   */
+  public toDescribeWorldGenerationJob() {
+    this.to('robomaker:DescribeWorldGenerationJob');
+    return this;
+  }
+
+  /**
+   * Describe a world template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeWorldTemplate.html
+   */
+  public toDescribeWorldTemplate() {
+    this.to('robomaker:DescribeWorldTemplate');
+    return this;
+  }
+
+  /**
+   * Get the body of a world template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_GetWorldTemplateBody.html
+   */
+  public toGetWorldTemplateBody() {
+    this.to('robomaker:GetWorldTemplateBody');
+    return this;
+  }
+
+  /**
    * List deployment jobs
    *
    * Access Level: List
@@ -430,6 +574,16 @@ export class Robomaker extends PolicyStatement {
   }
 
   /**
+   * Lists supported availability zones
+   *
+   * Access Level: List
+   */
+  public toListSupportedAvailabilityZones() {
+    this.to('robomaker:ListSupportedAvailabilityZones');
+    return this;
+  }
+
+  /**
    * List tags for a RoboMaker resource.
    *
    * Access Level: List
@@ -438,6 +592,54 @@ export class Robomaker extends PolicyStatement {
    */
   public toListTagsForResource() {
     this.to('robomaker:ListTagsForResource');
+    return this;
+  }
+
+  /**
+   * List world export jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListWorldExportJobs.html
+   */
+  public toListWorldExportJobs() {
+    this.to('robomaker:ListWorldExportJobs');
+    return this;
+  }
+
+  /**
+   * List world generation jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListWorldGenerationJobs.html
+   */
+  public toListWorldGenerationJobs() {
+    this.to('robomaker:ListWorldGenerationJobs');
+    return this;
+  }
+
+  /**
+   * List world templates
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListWorldTemplates.html
+   */
+  public toListWorldTemplates() {
+    this.to('robomaker:ListWorldTemplates');
+    return this;
+  }
+
+  /**
+   * List worlds
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListWorlds.html
+   */
+  public toListWorlds() {
+    this.to('robomaker:ListWorlds');
     return this;
   }
 
@@ -543,6 +745,16 @@ export class Robomaker extends PolicyStatement {
   }
 
   /**
+   * Report the deployment status for an individual robot
+   *
+   * Access Level: Write
+   */
+  public toUpdateRobotDeployment() {
+    this.to('robomaker:UpdateRobotDeployment');
+    return this;
+  }
+
+  /**
    * Update a simulation application
    *
    * Access Level: Write
@@ -554,21 +766,26 @@ export class Robomaker extends PolicyStatement {
     return this;
   }
 
+  /**
+   * Update a world template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/API_UpdateWorldTemplate.html
+   */
+  public toUpdateWorldTemplate() {
+    this.to('robomaker:UpdateWorldTemplate');
+    return this;
+  }
+
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "BatchDescribeSimulationJob",
-      "DescribeDeploymentJob",
-      "DescribeFleet",
-      "DescribeRobot",
-      "DescribeRobotApplication",
-      "DescribeSimulationApplication",
-      "DescribeSimulationJob",
-      "DescribeSimulationJobBatch"
-    ],
     "Write": [
+      "BatchDeleteWorlds",
       "CancelDeploymentJob",
       "CancelSimulationJob",
       "CancelSimulationJobBatch",
+      "CancelWorldExportJob",
+      "CancelWorldGenerationJob",
       "CreateDeploymentJob",
       "CreateFleet",
       "CreateRobot",
@@ -577,10 +794,14 @@ export class Robomaker extends PolicyStatement {
       "CreateSimulationApplication",
       "CreateSimulationApplicationVersion",
       "CreateSimulationJob",
+      "CreateWorldExportJob",
+      "CreateWorldGenerationJob",
+      "CreateWorldTemplate",
       "DeleteFleet",
       "DeleteRobot",
       "DeleteRobotApplication",
       "DeleteSimulationApplication",
+      "DeleteWorldTemplate",
       "DeregisterRobot",
       "RegisterRobot",
       "RestartSimulationJob",
@@ -589,7 +810,24 @@ export class Robomaker extends PolicyStatement {
       "TagResource",
       "UntagResource",
       "UpdateRobotApplication",
-      "UpdateSimulationApplication"
+      "UpdateRobotDeployment",
+      "UpdateSimulationApplication",
+      "UpdateWorldTemplate"
+    ],
+    "Read": [
+      "BatchDescribeSimulationJob",
+      "DescribeDeploymentJob",
+      "DescribeFleet",
+      "DescribeRobot",
+      "DescribeRobotApplication",
+      "DescribeSimulationApplication",
+      "DescribeSimulationJob",
+      "DescribeSimulationJobBatch",
+      "DescribeWorld",
+      "DescribeWorldExportJob",
+      "DescribeWorldGenerationJob",
+      "DescribeWorldTemplate",
+      "GetWorldTemplateBody"
     ],
     "List": [
       "ListDeploymentJobs",
@@ -599,7 +837,12 @@ export class Robomaker extends PolicyStatement {
       "ListSimulationApplications",
       "ListSimulationJobBatches",
       "ListSimulationJobs",
-      "ListTagsForResource"
+      "ListSupportedAvailabilityZones",
+      "ListTagsForResource",
+      "ListWorldExportJobs",
+      "ListWorldGenerationJobs",
+      "ListWorldTemplates",
+      "ListWorlds"
     ]
   };
 
@@ -759,6 +1002,94 @@ export class Robomaker extends PolicyStatement {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:deployment-fleet/${FleetName}/${CreatedOnEpoch}';
     arn = arn.replace('${FleetName}', fleetName);
     arn = arn.replace('${CreatedOnEpoch}', createdOnEpoch);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type worldGenerationJob to the statement
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-generation-jobs.html
+   *
+   * @param worldGenerationJobId - Identifier for the worldGenerationJobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorldGenerationJob(worldGenerationJobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:world-generation-job/${WorldGenerationJobId}';
+    arn = arn.replace('${WorldGenerationJobId}', worldGenerationJobId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type worldExportJob to the statement
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-export-jobs.html
+   *
+   * @param worldExportJobId - Identifier for the worldExportJobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorldExportJob(worldExportJobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:world-export-job/${WorldExportJobId}';
+    arn = arn.replace('${WorldExportJobId}', worldExportJobId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type worldTemplate to the statement
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-simworld-templates.html
+   *
+   * @param worldTemplateJobId - Identifier for the worldTemplateJobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorldTemplate(worldTemplateJobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:world-template/${WorldTemplateJobId}';
+    arn = arn.replace('${WorldTemplateJobId}', worldTemplateJobId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type world to the statement
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-generated-worlds.html
+   *
+   * @param worldId - Identifier for the worldId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorld(worldId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:world/${WorldId}';
+    arn = arn.replace('${WorldId}', worldId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

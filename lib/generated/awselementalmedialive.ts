@@ -19,6 +19,42 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete channels, inputs, input security groups, and multiplexes.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/editing-deleting-channel.html
+   */
+  public toBatchDelete() {
+    this.to('medialive:BatchDelete');
+    return this;
+  }
+
+  /**
+   * Grants permission to start channels and multiplexes.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html
+   */
+  public toBatchStart() {
+    this.to('medialive:BatchStart');
+    return this;
+  }
+
+  /**
+   * Grants permission to stop channels and multiplexes.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html
+   */
+  public toBatchStop() {
+    this.to('medialive:BatchStop');
+    return this;
+  }
+
+  /**
    * Grants permission to add and remove actions from a channel's schedule.
    *
    * Access Level: Write
@@ -539,6 +575,9 @@ export class Medialive extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "BatchDelete",
+      "BatchStart",
+      "BatchStop",
       "BatchUpdateSchedule",
       "DeleteChannel",
       "DeleteInput",
