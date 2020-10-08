@@ -225,6 +225,30 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
+   * The CreateUser action creates a new user.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateUser.html
+   */
+  public toCreateUser() {
+    this.to('elasticache:CreateUser');
+    return this;
+  }
+
+  /**
+   * The CreateUserGroup action creates a new user group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateUserGroup.html
+   */
+  public toCreateUserGroup() {
+    this.to('elasticache:CreateUserGroup');
+    return this;
+  }
+
+  /**
    * The DecreaseNodeGroupsInGlobalReplicationGroup action dec a global datastore.
    *
    * Access Level: Write
@@ -357,6 +381,30 @@ export class Elasticache extends PolicyStatement {
    */
   public toDeleteSnapshot() {
     this.to('elasticache:DeleteSnapshot');
+    return this;
+  }
+
+  /**
+   * The DeleteUser action deletes an existing user.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteUser.html
+   */
+  public toDeleteUser() {
+    this.to('elasticache:DeleteUser');
+    return this;
+  }
+
+  /**
+   * The DeleteUserGroup action deletes an existing user group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteUserGroup.html
+   */
+  public toDeleteUserGroup() {
+    this.to('elasticache:DeleteUserGroup');
     return this;
   }
 
@@ -541,6 +589,30 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
+   * The DescribeUserGroups action returns information about all user groups for this account, or a particular user group.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeUserGroups.html
+   */
+  public toDescribeUserGroups() {
+    this.to('elasticache:DescribeUserGroups');
+    return this;
+  }
+
+  /**
+   * The DescribeUsers action returns information about all users for this account, or a particular user.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeUsers.html
+   */
+  public toDescribeUsers() {
+    this.to('elasticache:DescribeUsers');
+    return this;
+  }
+
+  /**
    * The DisassociateGlobalReplicationGroup action removes a secondary Replication Group from the Global Datastore.
    *
    * Access Level: Write
@@ -706,6 +778,30 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
+   * The ModifyUser action modifies an existing user.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyUser.html
+   */
+  public toModifyUser() {
+    this.to('elasticache:ModifyUser');
+    return this;
+  }
+
+  /**
+   * The ModifyUserGroup action modifies an existing user group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyUserGroup.html
+   */
+  public toModifyUserGroup() {
+    this.to('elasticache:ModifyUserGroup');
+    return this;
+  }
+
+  /**
    * The PurchaseReservedCacheNodesOffering action allows you to purchase a reserved cache node offering.
    *
    * Access Level: Write
@@ -829,6 +925,8 @@ export class Elasticache extends PolicyStatement {
       "CreateGlobalReplicationGroup",
       "CreateReplicationGroup",
       "CreateSnapshot",
+      "CreateUser",
+      "CreateUserGroup",
       "DecreaseNodeGroupsInGlobalReplicationGroup",
       "DecreaseReplicaCount",
       "DeleteCacheCluster",
@@ -838,6 +936,8 @@ export class Elasticache extends PolicyStatement {
       "DeleteGlobalReplicationGroup",
       "DeleteReplicationGroup",
       "DeleteSnapshot",
+      "DeleteUser",
+      "DeleteUserGroup",
       "DisassociateGlobalReplicationGroup",
       "FailoverGlobalReplicationGroup",
       "IncreaseNodeGroupsInGlobalReplicationGroup",
@@ -848,6 +948,8 @@ export class Elasticache extends PolicyStatement {
       "ModifyGlobalReplicationGroup",
       "ModifyReplicationGroup",
       "ModifyReplicationGroupShardConfiguration",
+      "ModifyUser",
+      "ModifyUserGroup",
       "PurchaseReservedCacheNodesOffering",
       "RebalanceSlotsInGlobalReplicationGroup",
       "RebootCacheCluster",
@@ -872,6 +974,8 @@ export class Elasticache extends PolicyStatement {
       "DescribeServiceUpdates",
       "DescribeSnapshots",
       "DescribeUpdateActions",
+      "DescribeUserGroups",
+      "DescribeUsers",
       "ListAllowedNodeTypeModifications"
     ],
     "Read": [
@@ -1009,6 +1113,40 @@ export class Elasticache extends PolicyStatement {
     var arn = 'arn:${Partition}:elasticache::${Account}:globalreplicationgroup:${GlobalReplicationGroupId}';
     arn = arn.replace('${GlobalReplicationGroupId}', globalReplicationGroupId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type user to the statement
+   *
+   * @param userId - Identifier for the userId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onUser(userId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:user:${UserId}';
+    arn = arn.replace('${UserId}', userId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type usergroup to the statement
+   *
+   * @param userGroupId - Identifier for the userGroupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onUsergroup(userGroupId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:usergroup:${UserGroupId}';
+    arn = arn.replace('${UserGroupId}', userGroupId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

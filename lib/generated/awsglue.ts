@@ -69,7 +69,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to delete one or more versions of a table
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTableVersion
    */
@@ -497,7 +497,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to delete a version of a table
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTableVersion
    */
@@ -1551,6 +1551,7 @@ export class Glue extends PolicyStatement {
       "BatchDeleteConnection",
       "BatchDeletePartition",
       "BatchDeleteTable",
+      "BatchDeleteTableVersion",
       "BatchStopJobRun",
       "CancelMLTaskRun",
       "CreateClassifier",
@@ -1578,6 +1579,7 @@ export class Glue extends PolicyStatement {
       "DeleteResourcePolicy",
       "DeleteSecurityConfiguration",
       "DeleteTable",
+      "DeleteTableVersion",
       "DeleteTrigger",
       "DeleteUserDefinedFunction",
       "DeleteWorkflow",
@@ -1615,14 +1617,12 @@ export class Glue extends PolicyStatement {
       "UseMLTransforms"
     ],
     "Read": [
-      "BatchDeleteTableVersion",
       "BatchGetCrawlers",
       "BatchGetDevEndpoints",
       "BatchGetJobs",
       "BatchGetPartition",
       "BatchGetTriggers",
       "BatchGetWorkflows",
-      "DeleteTableVersion",
       "GetCatalogImportStatus",
       "GetClassifier",
       "GetClassifiers",

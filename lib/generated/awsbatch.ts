@@ -35,6 +35,10 @@ export class Batch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html
    */
   public toCreateComputeEnvironment() {
@@ -46,6 +50,10 @@ export class Batch extends PolicyStatement {
    * Creates an AWS Batch job queue.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html
    */
@@ -151,6 +159,18 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * List tags for the specified resource.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    this.to('batch:ListTagsForResource');
+    return this;
+  }
+
+  /**
    * Registers an AWS Batch job definition.
    *
    * Access Level: Write
@@ -164,6 +184,8 @@ export class Batch extends PolicyStatement {
    * - .ifAWSLogsRegion()
    * - .ifAWSLogsStreamPrefix()
    * - .ifAWSLogsCreateGroup()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html
    */
@@ -177,10 +199,30 @@ export class Batch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html
    */
   public toSubmitJob() {
     this.to('batch:SubmitJob');
+    return this;
+  }
+
+  /**
+   * Tags the specified resource.
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    this.to('batch:TagResource');
     return this;
   }
 
@@ -193,6 +235,21 @@ export class Batch extends PolicyStatement {
    */
   public toTerminateJob() {
     this.to('batch:TerminateJob');
+    return this;
+  }
+
+  /**
+   * Untags the specified resource.
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    this.to('batch:UntagResource');
     return this;
   }
 
@@ -241,17 +298,27 @@ export class Batch extends PolicyStatement {
       "DescribeJobs"
     ],
     "List": [
-      "ListJobs"
+      "ListJobs",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
   /**
    * Adds a resource of type compute-environment to the statement
    *
+   * https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.htmlcompute_environments.html
+   *
    * @param computeEnvironmentName - Identifier for the computeEnvironmentName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onComputeEnvironment(computeEnvironmentName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:batch:${Region}:${Account}:compute-environment/${ComputeEnvironmentName}';
@@ -265,10 +332,15 @@ export class Batch extends PolicyStatement {
   /**
    * Adds a resource of type job-queue to the statement
    *
+   * https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.htmljob_queues.html
+   *
    * @param jobQueueName - Identifier for the jobQueueName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onJobQueue(jobQueueName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:batch:${Region}:${Account}:job-queue/${JobQueueName}';
@@ -282,16 +354,43 @@ export class Batch extends PolicyStatement {
   /**
    * Adds a resource of type job-definition to the statement
    *
+   * https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.htmljob_definitions.html
+   *
    * @param jobDefinitionName - Identifier for the jobDefinitionName.
    * @param revision - Identifier for the revision.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onJobDefinition(jobDefinitionName: string, revision: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}';
     arn = arn.replace('${JobDefinitionName}', jobDefinitionName);
     arn = arn.replace('${Revision}', revision);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type job to the statement
+   *
+   * https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.htmljobs.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onJob(jobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:batch:${Region}:${Account}:job/${JobId}';
+    arn = arn.replace('${JobId}', jobId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
