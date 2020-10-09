@@ -48,7 +48,7 @@ If you believe something is missing, feel free to report it in the `IAM Floyd re
 How often will there be updates to reflect IAM changes?
 -------------------------------------------------------
 
-Once per hour the `AWS Documentation`_ is checked for updates. If anything changes, a new package will be released immediately.
+Once per day, at 2am UTC, the `AWS Documentation`_ is checked for updates. If anything changes, a new package will be released immediately.
 
 Do you release new packages when a new CDK version is released?
 ---------------------------------------------------------------

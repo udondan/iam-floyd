@@ -3,7 +3,10 @@ name: Generate Code from AWS documentation
 
 on:
   schedule:
-    - cron: "42 * * * *"
+    # Why 1:57 not and 2:00? Because most hourly jobs probably run at the hour.
+    # Keeping concurrent jobs low reduces hardware requirements, being nice to
+    # GitHub and the environment.
+    - cron: 57 1 * * *
   workflow_dispatch:
     inputs:
       command:
