@@ -16,7 +16,7 @@ const project = new Project();
 const modules: Module[] = [];
 const timeThreshold = new Date();
 
-var threshold = 2;
+var threshold = 25;
 const thresholdOverride = process.env.NOCACHE;
 if (typeof thresholdOverride !== 'undefined' && thresholdOverride.length) {
   threshold += 999999999;
