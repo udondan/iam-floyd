@@ -227,7 +227,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Terminates jobs in a job queue.
+   * Terminates a job in an AWS Batch job queue.
    *
    * Access Level: Write
    *
@@ -310,7 +310,7 @@ export class Batch extends PolicyStatement {
   /**
    * Adds a resource of type compute-environment to the statement
    *
-   * https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.htmlcompute_environments.html
+   * https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html
    *
    * @param computeEnvironmentName - Identifier for the computeEnvironmentName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -332,7 +332,7 @@ export class Batch extends PolicyStatement {
   /**
    * Adds a resource of type job-queue to the statement
    *
-   * https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.htmljob_queues.html
+   * https://docs.aws.amazon.com/batch/latest/userguide/job_queues.html
    *
    * @param jobQueueName - Identifier for the jobQueueName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -354,7 +354,7 @@ export class Batch extends PolicyStatement {
   /**
    * Adds a resource of type job-definition to the statement
    *
-   * https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.htmljob_definitions.html
+   * https://docs.aws.amazon.com/batch/latest/userguide/job_definitions.html
    *
    * @param jobDefinitionName - Identifier for the jobDefinitionName.
    * @param revision - Identifier for the revision.
@@ -378,7 +378,7 @@ export class Batch extends PolicyStatement {
   /**
    * Adds a resource of type job to the statement
    *
-   * https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.htmljobs.html
+   * https://docs.aws.amazon.com/batch/latest/userguide/jobs.html
    *
    * @param jobId - Identifier for the jobId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

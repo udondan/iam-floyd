@@ -504,7 +504,7 @@ export class Sso extends PolicyStatement {
   /**
    * Lists the status of the AWS account assignment creation requests for a specified SSO instance.
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -516,7 +516,7 @@ export class Sso extends PolicyStatement {
   /**
    * Lists the status of the AWS account assignment deletion requests for a specified SSO instance.
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -528,7 +528,7 @@ export class Sso extends PolicyStatement {
   /**
    * Lists the assignee of the specified AWS account with the specified permission set.
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -540,7 +540,7 @@ export class Sso extends PolicyStatement {
   /**
    * Lists all the AWS accounts where the specified permission set is provisioned.
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -552,7 +552,7 @@ export class Sso extends PolicyStatement {
   /**
    * Retrieve all of the certificates for a given application instance
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -579,7 +579,7 @@ export class Sso extends PolicyStatement {
   /**
    * Retrieve all supported application templates
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Dependent actions:
    * - sso:GetApplicationTemplate
@@ -594,7 +594,7 @@ export class Sso extends PolicyStatement {
   /**
    * Retrieve all supported applications
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -606,7 +606,7 @@ export class Sso extends PolicyStatement {
   /**
    * Retrieve details about the directory connected to AWS Single Sign-On
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -618,7 +618,7 @@ export class Sso extends PolicyStatement {
   /**
    * Lists the SSO Instances that the caller has access to.
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -630,7 +630,7 @@ export class Sso extends PolicyStatement {
   /**
    * Lists the AWS managed policies that are attached to a specified permission set.
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -642,7 +642,7 @@ export class Sso extends PolicyStatement {
   /**
    * Lists the status of the Permission Set Provisioning requests for a specified SSO instance.
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -654,7 +654,7 @@ export class Sso extends PolicyStatement {
   /**
    * Retrieve all permission sets
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -666,7 +666,7 @@ export class Sso extends PolicyStatement {
   /**
    * Lists all the permission sets that are provisioned to a specified AWS account.
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -678,7 +678,7 @@ export class Sso extends PolicyStatement {
   /**
    * Retrieve the directory user or group associated with the profile
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -690,7 +690,7 @@ export class Sso extends PolicyStatement {
   /**
    * Retrieve all profiles for an application instance
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Dependent actions:
    * - sso:GetProfile
@@ -705,7 +705,7 @@ export class Sso extends PolicyStatement {
   /**
    * Lists the tags that are attached to a specified resource.
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -1023,12 +1023,15 @@ export class Sso extends PolicyStatement {
       "GetSSOStatus",
       "GetSharedSsoConfiguration",
       "GetSsoConfiguration",
-      "GetTrust",
+      "GetTrust"
+    ],
+    "List": [
       "ListAccountAssignmentCreationStatus",
       "ListAccountAssignmentDeletionStatus",
       "ListAccountAssignments",
       "ListAccountsForProvisionedPermissionSet",
       "ListApplicationInstanceCertificates",
+      "ListApplicationInstances",
       "ListApplicationTemplates",
       "ListApplications",
       "ListDirectoryAssociations",
@@ -1040,9 +1043,6 @@ export class Sso extends PolicyStatement {
       "ListProfileAssociations",
       "ListProfiles",
       "ListTagsForResource"
-    ],
-    "List": [
-      "ListApplicationInstances"
     ],
     "Tagging": [
       "TagResource",

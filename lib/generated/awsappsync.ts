@@ -371,6 +371,18 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Gives WebAcl permissions to WAF.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_SetWebACL.html
+   */
+  public toSetWebACL() {
+    this.to('appsync:SetWebACL');
+    return this;
+  }
+
+  /**
    * Adds a new schema to your GraphQL API. This operation is asynchronous - GetSchemaCreationStatus can show when it has completed.
    *
    * Access Level: Write
@@ -506,6 +518,7 @@ export class Appsync extends PolicyStatement {
       "DeleteResolver",
       "DeleteType",
       "GraphQL",
+      "SetWebACL",
       "StartSchemaCreation",
       "UpdateApiKey",
       "UpdateDataSource",
