@@ -235,6 +235,18 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
+   * Detects Protective Equipment in the input image.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectProtectiveEquipment.html
+   */
+  public toDetectProtectiveEquipment() {
+    this.to('rekognition:DetectProtectiveEquipment');
+    return this;
+  }
+
+  /**
    * Detects text in the input image and converts it into machine-readable text.
    *
    * Access Level: Read
@@ -593,6 +605,7 @@ export class Rekognition extends PolicyStatement {
       "DetectFaces",
       "DetectLabels",
       "DetectModerationLabels",
+      "DetectProtectiveEquipment",
       "DetectText",
       "GetCelebrityInfo",
       "GetCelebrityRecognition",

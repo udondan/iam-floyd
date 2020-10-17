@@ -36,6 +36,21 @@ export class CodestarConnections extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a host resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifProviderType()
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateHost.html
+   */
+  public toCreateHost() {
+    this.to('codestar-connections:CreateHost');
+    return this;
+  }
+
+  /**
    * Grants permission to delete a Connection resource
    *
    * Access Level: Write
@@ -48,6 +63,18 @@ export class CodestarConnections extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a host resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_DeleteHost.html
+   */
+  public toDeleteHost() {
+    this.to('codestar-connections:DeleteHost');
+    return this;
+  }
+
+  /**
    * Grants permission to get details about a Connection resource
    *
    * Access Level: Read
@@ -56,6 +83,18 @@ export class CodestarConnections extends PolicyStatement {
    */
   public toGetConnection() {
     this.to('codestar-connections:GetConnection');
+    return this;
+  }
+
+  /**
+   * Grants permission to get details about a host resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetHost.html
+   */
+  public toGetHost() {
+    this.to('codestar-connections:GetHost');
     return this;
   }
 
@@ -104,6 +143,21 @@ export class CodestarConnections extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list host resources
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifProviderTypeFilter()
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListHosts.html
+   */
+  public toListHosts() {
+    this.to('codestar-connections:ListHosts');
+    return this;
+  }
+
+  /**
    * Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection
    *
    * Access Level: List
@@ -139,6 +193,32 @@ export class CodestarConnections extends PolicyStatement {
    */
   public toPassConnection() {
     this.to('codestar-connections:PassConnection');
+    return this;
+  }
+
+  /**
+   * Grants permission to associate a third party server, such as a GitHub Enterprise Server instance, with a Host
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifHostArn()
+   */
+  public toRegisterAppCode() {
+    this.to('codestar-connections:RegisterAppCode');
+    return this;
+  }
+
+  /**
+   * Grants permission to associate a third party server, such as a GitHub Enterprise Server instance, with a Host
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifHostArn()
+   */
+  public toStartAppRegistrationHandshake() {
+    this.to('codestar-connections:StartAppRegistrationHandshake');
     return this;
   }
 
@@ -224,19 +304,25 @@ export class CodestarConnections extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CreateConnection",
+      "CreateHost",
       "DeleteConnection",
+      "DeleteHost",
       "UpdateConnectionInstallation"
     ],
     "Read": [
       "GetConnection",
+      "GetHost",
       "GetIndividualAccessToken",
       "GetInstallationUrl",
       "PassConnection",
+      "RegisterAppCode",
+      "StartAppRegistrationHandshake",
       "StartOAuthHandshake",
       "UseConnection"
     ],
     "List": [
       "ListConnections",
+      "ListHosts",
       "ListInstallationTargets",
       "ListTagsForResource"
     ],
@@ -259,6 +345,25 @@ export class CodestarConnections extends PolicyStatement {
   public onConnection(connectionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codestar-connections:${Region}:${Account}:connection/${ConnectionId}';
     arn = arn.replace('${ConnectionId}', connectionId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Host to the statement
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections.html/API_Host.html
+   *
+   * @param hostId - Identifier for the hostId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onHost(hostId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codestar-connections:${Region}:${Account}:host/${HostId}';
+    arn = arn.replace('${HostId}', hostId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -290,6 +395,22 @@ export class CodestarConnections extends PolicyStatement {
    */
   public ifFullRepositoryId(value: string | string[], operator?: Operator | string) {
     return this.if(`codestar-connections:FullRepositoryId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the host resource associated with the connection used in the request
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-hosts
+   *
+   * Applies to actions:
+   * - .toRegisterAppCode()
+   * - .toStartAppRegistrationHandshake()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifHostArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`codestar-connections:HostArn`, value, operator || 'StringLike');
   }
 
   /**
@@ -371,6 +492,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateConnection()
+   * - .toCreateHost()
    * - .toGetIndividualAccessToken()
    * - .toGetInstallationUrl()
    * - .toStartOAuthHandshake()
@@ -389,6 +511,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * Applies to actions:
    * - .toListConnections()
+   * - .toListHosts()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

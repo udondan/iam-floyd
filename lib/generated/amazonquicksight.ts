@@ -19,6 +19,22 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an account customization for QuickSight account or namespace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateAccountCustomization.html
+   */
+  public toCreateAccountCustomization() {
+    this.to('quicksight:CreateAccountCustomization');
+    return this;
+  }
+
+  /**
    * CreateAdmin enables the user to provision Amazon QuickSight administrators, authors, and readers.
    *
    * Access Level: Write
@@ -27,6 +43,18 @@ export class Quicksight extends PolicyStatement {
    */
   public toCreateAdmin() {
     this.to('quicksight:CreateAdmin');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a custom permissions resource for restricting user access
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toCreateCustomPermissions() {
+    this.to('quicksight:CreateCustomPermissions');
     return this;
   }
 
@@ -79,6 +107,18 @@ export class Quicksight extends PolicyStatement {
    */
   public toCreateIAMPolicyAssignment() {
     this.to('quicksight:CreateIAMPolicyAssignment');
+    return this;
+  }
+
+  /**
+   * Grants permission to create an QuickSight namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateNamespace.html
+   */
+  public toCreateNamespace() {
+    this.to('quicksight:CreateNamespace');
     return this;
   }
 
@@ -163,6 +203,18 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an account customization for QuickSight account or namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteAccountCustomization.html
+   */
+  public toDeleteAccountCustomization() {
+    this.to('quicksight:DeleteAccountCustomization');
+    return this;
+  }
+
+  /**
    * Deletes a dashboard
    *
    * Access Level: Write
@@ -207,6 +259,18 @@ export class Quicksight extends PolicyStatement {
    */
   public toDeleteIAMPolicyAssignment() {
     this.to('quicksight:DeleteIAMPolicyAssignment');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a QuickSight namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteNamespace.html
+   */
+  public toDeleteNamespace() {
+    this.to('quicksight:DeleteNamespace');
     return this;
   }
 
@@ -283,6 +347,42 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an account customization for QuickSight account or namespace
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAccountCustomization.html
+   */
+  public toDescribeAccountCustomization() {
+    this.to('quicksight:DescribeAccountCustomization');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe the administrative account settings for QuickSight account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAccountSettings.html
+   */
+  public toDescribeAccountSettings() {
+    this.to('quicksight:DescribeAccountSettings');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe a custom permissions resource in a QuickSight account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toDescribeCustomPermissions() {
+    this.to('quicksight:DescribeCustomPermissions');
+    return this;
+  }
+
+  /**
    * Provides a summary for a dashboard
    *
    * Access Level: Read
@@ -327,6 +427,18 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeIAMPolicyAssignment() {
     this.to('quicksight:DescribeIAMPolicyAssignment');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe a QuickSight namespace
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeNamespace.html
+   */
+  public toDescribeNamespace() {
+    this.to('quicksight:DescribeNamespace');
     return this;
   }
 
@@ -451,6 +563,30 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a URL to embed QuickSight console experience.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetSessionEmbedUrl.html
+   */
+  public toGetSessionEmbedUrl() {
+    this.to('quicksight:GetSessionEmbedUrl');
+    return this;
+  }
+
+  /**
+   * Grants permission to list custom permissions resources in QuickSight account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toListCustomPermissions() {
+    this.to('quicksight:ListCustomPermissions');
+    return this;
+  }
+
+  /**
    * Lists all the versions of the dashboards in the QuickSight subscription
    *
    * Access Level: List
@@ -519,6 +655,18 @@ export class Quicksight extends PolicyStatement {
    */
   public toListIAMPolicyAssignmentsForUser() {
     this.to('quicksight:ListIAMPolicyAssignmentsForUser');
+    return this;
+  }
+
+  /**
+   * Grants permission to lists all namespaces in a QuickSight account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListNamespaces.html
+   */
+  public toListNamespaces() {
+    this.to('quicksight:ListNamespaces');
     return this;
   }
 
@@ -722,6 +870,42 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an account customization for QuickSight account or namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAccountCustomization.html
+   */
+  public toUpdateAccountCustomization() {
+    this.to('quicksight:UpdateAccountCustomization');
+    return this;
+  }
+
+  /**
+   * Grants permission to update the administrative account settings for QuickSight account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAccountSettings.html
+   */
+  public toUpdateAccountSettings() {
+    this.to('quicksight:UpdateAccountSettings');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a custom permissions resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toUpdateCustomPermissions() {
+    this.to('quicksight:UpdateCustomPermissions');
+    return this;
+  }
+
+  /**
    * Updates a dashboard in an AWS account
    *
    * Access Level: Write
@@ -867,32 +1051,43 @@ export class Quicksight extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "CreateAccountCustomization",
       "CreateAdmin",
+      "CreateCustomPermissions",
       "CreateDashboard",
       "CreateGroup",
       "CreateGroupMembership",
       "CreateIAMPolicyAssignment",
+      "CreateNamespace",
       "CreateReader",
       "CreateTemplate",
       "CreateTemplateAlias",
       "CreateTheme",
       "CreateThemeAlias",
       "CreateUser",
+      "DeleteAccountCustomization",
       "DeleteDashboard",
       "DeleteGroup",
       "DeleteGroupMembership",
       "DeleteIAMPolicyAssignment",
+      "DeleteNamespace",
       "DeleteTemplate",
       "DeleteTemplateAlias",
       "DeleteTheme",
       "DeleteThemeAlias",
       "DeleteUser",
       "DeleteUserByPrincipalId",
+      "DescribeCustomPermissions",
+      "ListCustomPermissions",
+      "ListNamespaces",
       "RegisterUser",
       "SearchDirectoryGroups",
       "SetGroupMapping",
       "Subscribe",
       "Unsubscribe",
+      "UpdateAccountCustomization",
+      "UpdateAccountSettings",
+      "UpdateCustomPermissions",
       "UpdateDashboard",
       "UpdateDashboardPermissions",
       "UpdateDashboardPublishedVersion",
@@ -907,10 +1102,13 @@ export class Quicksight extends PolicyStatement {
       "UpdateUser"
     ],
     "Read": [
+      "DescribeAccountCustomization",
+      "DescribeAccountSettings",
       "DescribeDashboard",
       "DescribeDashboardPermissions",
       "DescribeGroup",
       "DescribeIAMPolicyAssignment",
+      "DescribeNamespace",
       "DescribeTemplate",
       "DescribeTemplateAlias",
       "DescribeTemplatePermissions",
@@ -920,7 +1118,8 @@ export class Quicksight extends PolicyStatement {
       "DescribeUser",
       "GetAuthCode",
       "GetDashboardEmbedUrl",
-      "GetGroupMapping"
+      "GetGroupMapping",
+      "GetSessionEmbedUrl"
     ],
     "List": [
       "ListDashboardVersions",
@@ -1060,6 +1259,43 @@ export class Quicksight extends PolicyStatement {
    */
   public onAssignment(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:quicksight::${Account}:assignment/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type customization to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AccountCustomization.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustomization(resourceId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:quicksight::${Account}:customization/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type namespace to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Namespace.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onNamespace(resourceId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:quicksight::${Account}:namespace/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

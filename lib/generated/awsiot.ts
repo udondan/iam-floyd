@@ -230,6 +230,10 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateAuthorizer.html
    */
   public toCreateAuthorizer() {
@@ -289,6 +293,7 @@ export class Iot extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifDomainName()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateDomainConfiguration.html
    */
@@ -378,6 +383,10 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicy.html
    */
   public toCreatePolicy() {
@@ -414,6 +423,10 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html
    */
   public toCreateProvisioningTemplate() {
@@ -437,6 +450,10 @@ export class Iot extends PolicyStatement {
    * Creates a role alias.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateRoleAlias.html
    */
@@ -2148,6 +2165,10 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCACertificate.html
    */
   public toRegisterCACertificate() {
@@ -2391,6 +2412,8 @@ export class Iot extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_TagResource.html
    */
   public toTagResource() {
     this.to('iot:TagResource');
@@ -2440,6 +2463,8 @@ export class Iot extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UntagResource.html
    */
   public toUntagResource() {
     this.to('iot:UntagResource');
@@ -2474,6 +2499,8 @@ export class Iot extends PolicyStatement {
    * Updates an authorizer
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateAuthorizer.html
    */
   public toUpdateAuthorizer() {
     this.to('iot:UpdateAuthorizer');
@@ -2520,6 +2547,8 @@ export class Iot extends PolicyStatement {
    * Updates the definition for a dimension.
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateDimension.html
    */
   public toUpdateDimension() {
     this.to('iot:UpdateDimension');
@@ -2602,6 +2631,8 @@ export class Iot extends PolicyStatement {
    * Updates the definition for the specified mitigation action.
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateMitigationAction.html
    */
   public toUpdateMitigationAction() {
     this.to('iot:UpdateMitigationAction');
@@ -2612,6 +2643,8 @@ export class Iot extends PolicyStatement {
    * Updates a fleet provisioning template.
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateProvisioningTemplate.html
    */
   public toUpdateProvisioningTemplate() {
     this.to('iot:UpdateProvisioningTemplate');
@@ -2622,6 +2655,8 @@ export class Iot extends PolicyStatement {
    * Updates the role alias
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateRoleAlias.html
    */
   public toUpdateRoleAlias() {
     this.to('iot:UpdateRoleAlias');
@@ -2632,6 +2667,8 @@ export class Iot extends PolicyStatement {
    * Updates a scheduled audit, including what checks are performed and how often the audit takes place.
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateScheduledAudit.html
    */
   public toUpdateScheduledAudit() {
     this.to('iot:UpdateScheduledAudit');
@@ -2642,6 +2679,8 @@ export class Iot extends PolicyStatement {
    * Updates a Device Defender security profile.
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateSecurityProfile.html
    */
   public toUpdateSecurityProfile() {
     this.to('iot:UpdateSecurityProfile');
@@ -2712,6 +2751,8 @@ export class Iot extends PolicyStatement {
    * Validates a Device Defender security profile behaviors specification.
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ValidateSecurityProfileBehaviors.html
    */
   public toValidateSecurityProfileBehaviors() {
     this.to('iot:ValidateSecurityProfileBehaviors');
@@ -3188,6 +3229,9 @@ export class Iot extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRolealias(roleAlias: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:rolealias/${RoleAlias}';
@@ -3207,6 +3251,9 @@ export class Iot extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onAuthorizer(authorizerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:authorizer/${AuthorizerName}';
@@ -3226,6 +3273,9 @@ export class Iot extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onPolicy(policyName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:policy/${PolicyName}';
@@ -3264,6 +3314,9 @@ export class Iot extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCacert(cACertificate: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:cacert/${CACertificate}';
@@ -3437,6 +3490,9 @@ export class Iot extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onProvisioningtemplate(provisioningTemplate: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:provisioningtemplate/${ProvisioningTemplate}';
@@ -3456,6 +3512,9 @@ export class Iot extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDomainconfiguration(domainConfigurationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:domainconfiguration/${DomainConfigurationName}';
@@ -3476,6 +3535,19 @@ export class Iot extends PolicyStatement {
    */
   public ifDelete(value?: boolean) {
     return this.if(`iot:Delete`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters actions based on the domain name of an IoT DomainConfiguration
+   *
+   * Applies to actions:
+   * - .toCreateDomainConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDomainName(value: string | string[], operator?: Operator | string) {
+    return this.if(`iot:DomainName`, value, operator || 'StringLike');
   }
 
   /**

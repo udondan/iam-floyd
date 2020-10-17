@@ -212,6 +212,24 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete ownership controls on a bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketOwnershipControls.html
+   */
+  public toDeleteBucketOwnershipControls() {
+    this.to('s3:DeleteBucketOwnershipControls');
+    return this;
+  }
+
+  /**
    * Grants permission to delete the policy on a specified bucket
    *
    * Access Level: Permissions management
@@ -588,6 +606,24 @@ export class S3 extends PolicyStatement {
    */
   public toGetBucketObjectLockConfiguration() {
     this.to('s3:GetBucketObjectLockConfiguration');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve ownership controls on a bucket
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketOwnershipControls.html
+   */
+  public toGetBucketOwnershipControls() {
+    this.to('s3:GetBucketOwnershipControls');
     return this;
   }
 
@@ -1116,7 +1152,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to list in-progress multipart uploads
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifDataAccessPointAccount()
@@ -1137,7 +1173,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to list metadata about all the versions of objects in an Amazon S3 bucket
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifDataAccessPointAccount()
@@ -1161,7 +1197,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to list current jobs and jobs that have ended recently
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -1179,7 +1215,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to list the parts that have been uploaded for a specific multipart upload
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifDataAccessPointAccount()
@@ -1382,6 +1418,24 @@ export class S3 extends PolicyStatement {
    */
   public toPutBucketObjectLockConfiguration() {
     this.to('s3:PutBucketObjectLockConfiguration');
+    return this;
+  }
+
+  /**
+   * Grants permission to add or replace ownership controls on a bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketOwnershipControls.html
+   */
+  public toPutBucketOwnershipControls() {
+    this.to('s3:PutBucketOwnershipControls');
     return this;
   }
 
@@ -1627,7 +1681,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set the access control list (ACL) permissions for an object that already exists in a bucket
+   * Grants permission to set the access control list (ACL) permissions for new or existing objects in an S3 bucket.
    *
    * Access Level: Permissions management
    *
@@ -1928,6 +1982,7 @@ export class S3 extends PolicyStatement {
       "CreateJob",
       "DeleteAccessPoint",
       "DeleteBucket",
+      "DeleteBucketOwnershipControls",
       "DeleteBucketWebsite",
       "DeleteObject",
       "DeleteObjectVersion",
@@ -1937,6 +1992,7 @@ export class S3 extends PolicyStatement {
       "PutBucketLogging",
       "PutBucketNotification",
       "PutBucketObjectLockConfiguration",
+      "PutBucketOwnershipControls",
       "PutBucketRequestPayment",
       "PutBucketVersioning",
       "PutBucketWebsite",
@@ -1991,6 +2047,7 @@ export class S3 extends PolicyStatement {
       "GetBucketLogging",
       "GetBucketNotification",
       "GetBucketObjectLockConfiguration",
+      "GetBucketOwnershipControls",
       "GetBucketPolicy",
       "GetBucketPolicyStatus",
       "GetBucketPublicAccessBlock",
@@ -2015,15 +2072,15 @@ export class S3 extends PolicyStatement {
       "GetObjectVersionTagging",
       "GetObjectVersionTorrent",
       "GetReplicationConfiguration",
-      "ListAccessPoints",
+      "ListAccessPoints"
+    ],
+    "List": [
+      "ListAllMyBuckets",
+      "ListBucket",
       "ListBucketMultipartUploads",
       "ListBucketVersions",
       "ListJobs",
       "ListMultipartUploadParts"
-    ],
-    "List": [
-      "ListAllMyBuckets",
-      "ListBucket"
     ]
   };
 
@@ -2420,6 +2477,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteBucket()
+   * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -2439,6 +2497,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketLogging()
    * - .toGetBucketNotification()
    * - .toGetBucketObjectLockConfiguration()
+   * - .toGetBucketOwnershipControls()
    * - .toGetBucketPolicy()
    * - .toGetBucketPolicyStatus()
    * - .toGetBucketPublicAccessBlock()
@@ -2480,6 +2539,7 @@ export class S3 extends PolicyStatement {
    * - .toPutBucketLogging()
    * - .toPutBucketNotification()
    * - .toPutBucketObjectLockConfiguration()
+   * - .toPutBucketOwnershipControls()
    * - .toPutBucketPolicy()
    * - .toPutBucketPublicAccessBlock()
    * - .toPutBucketRequestPayment()
@@ -2657,6 +2717,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteBucket()
+   * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -2676,6 +2737,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketLogging()
    * - .toGetBucketNotification()
    * - .toGetBucketObjectLockConfiguration()
+   * - .toGetBucketOwnershipControls()
    * - .toGetBucketPolicy()
    * - .toGetBucketPolicyStatus()
    * - .toGetBucketPublicAccessBlock()
@@ -2717,6 +2779,7 @@ export class S3 extends PolicyStatement {
    * - .toPutBucketLogging()
    * - .toPutBucketNotification()
    * - .toPutBucketObjectLockConfiguration()
+   * - .toPutBucketOwnershipControls()
    * - .toPutBucketPolicy()
    * - .toPutBucketPublicAccessBlock()
    * - .toPutBucketRequestPayment()
@@ -2764,6 +2827,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteBucket()
+   * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -2783,6 +2847,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketLogging()
    * - .toGetBucketNotification()
    * - .toGetBucketObjectLockConfiguration()
+   * - .toGetBucketOwnershipControls()
    * - .toGetBucketPolicy()
    * - .toGetBucketPolicyStatus()
    * - .toGetBucketPublicAccessBlock()
@@ -2824,6 +2889,7 @@ export class S3 extends PolicyStatement {
    * - .toPutBucketLogging()
    * - .toPutBucketNotification()
    * - .toPutBucketObjectLockConfiguration()
+   * - .toPutBucketOwnershipControls()
    * - .toPutBucketPolicy()
    * - .toPutBucketPublicAccessBlock()
    * - .toPutBucketRequestPayment()
@@ -2914,6 +2980,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteBucket()
+   * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -2932,6 +2999,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketCORS()
    * - .toGetBucketLogging()
    * - .toGetBucketNotification()
+   * - .toGetBucketOwnershipControls()
    * - .toGetBucketPolicy()
    * - .toGetBucketPolicyStatus()
    * - .toGetBucketPublicAccessBlock()
@@ -2972,6 +3040,7 @@ export class S3 extends PolicyStatement {
    * - .toPutBucketCORS()
    * - .toPutBucketLogging()
    * - .toPutBucketNotification()
+   * - .toPutBucketOwnershipControls()
    * - .toPutBucketPolicy()
    * - .toPutBucketPublicAccessBlock()
    * - .toPutBucketRequestPayment()
