@@ -47,3 +47,7 @@
   height: auto;
   border: 0;
 }
+
+.wy-nav-content-wrap.shift {
+  z-index: 1;
+}
