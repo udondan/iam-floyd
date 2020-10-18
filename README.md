@@ -28,7 +28,7 @@ Support for:
 
 Find the documentation at [Read the Docs][documentation].
 
-[![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/main/docs/movie-preview.png)](https://www.youtube.com/watch?v=ivG6VnbwMB0 "Auto completion demo")
+[![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/main/docs/movie-preview.png)](https://www.youtube.com/watch?v=4dHY8qPHbKA "Auto completion demo")
 
 ## Packages
 
