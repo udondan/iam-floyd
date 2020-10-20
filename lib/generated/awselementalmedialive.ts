@@ -69,7 +69,7 @@ export class Medialive extends PolicyStatement {
   /**
    * Grants permission to create a channel
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -85,7 +85,7 @@ export class Medialive extends PolicyStatement {
   /**
    * Grants permission to create an input
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -101,7 +101,7 @@ export class Medialive extends PolicyStatement {
   /**
    * Grants permission to create an input security group
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -117,7 +117,7 @@ export class Medialive extends PolicyStatement {
   /**
    * Grants permission to create a multiplex
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -127,6 +127,18 @@ export class Medialive extends PolicyStatement {
    */
   public toCreateMultiplex() {
     this.to('medialive:CreateMultiplex');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a multiplex program
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/multiplex-create.html
+   */
+  public toCreateMultiplexProgram() {
+    this.to('medialive:CreateMultiplexProgram');
     return this;
   }
 
@@ -191,6 +203,18 @@ export class Medialive extends PolicyStatement {
    */
   public toDeleteMultiplex() {
     this.to('medialive:DeleteMultiplex');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a multiplex program
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/delete-multiplex-program.html
+   */
+  public toDeleteMultiplexProgram() {
+    this.to('medialive:DeleteMultiplexProgram');
     return this;
   }
 
@@ -294,6 +318,18 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a multiplex program
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitoring-multiplex-console.html
+   */
+  public toDescribeMultiplexProgram() {
+    this.to('medialive:DescribeMultiplexProgram');
+    return this;
+  }
+
+  /**
    * Grants permission to get details about a reservation offering
    *
    * Access Level: Read
@@ -378,6 +414,18 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list multiplex programs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitoring-multiplex-console.html
+   */
+  public toListMultiplexPrograms() {
+    this.to('medialive:ListMultiplexPrograms');
+    return this;
+  }
+
+  /**
    * Grants permission to list multiplexes
    *
    * Access Level: List
@@ -428,7 +476,7 @@ export class Medialive extends PolicyStatement {
   /**
    * Grants permission to purchase a reservation offering
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -562,6 +610,18 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a multiplex program
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex-program-channel.html
+   */
+  public toUpdateMultiplexProgram() {
+    this.to('medialive:UpdateMultiplexProgram');
+    return this;
+  }
+
+  /**
    * Grants permission to update a reservation
    *
    * Access Level: Write
@@ -579,11 +639,18 @@ export class Medialive extends PolicyStatement {
       "BatchStart",
       "BatchStop",
       "BatchUpdateSchedule",
+      "CreateChannel",
+      "CreateInput",
+      "CreateInputSecurityGroup",
+      "CreateMultiplex",
+      "CreateMultiplexProgram",
       "DeleteChannel",
       "DeleteInput",
       "DeleteInputSecurityGroup",
       "DeleteMultiplex",
+      "DeleteMultiplexProgram",
       "DeleteReservation",
+      "PurchaseOffering",
       "StartChannel",
       "StartMultiplex",
       "StopChannel",
@@ -594,16 +661,12 @@ export class Medialive extends PolicyStatement {
       "UpdateInputDevice",
       "UpdateInputSecurityGroup",
       "UpdateMultiplex",
+      "UpdateMultiplexProgram",
       "UpdateReservation"
     ],
     "Tagging": [
-      "CreateChannel",
-      "CreateInput",
-      "CreateInputSecurityGroup",
-      "CreateMultiplex",
       "CreateTags",
-      "DeleteTags",
-      "PurchaseOffering"
+      "DeleteTags"
     ],
     "Read": [
       "DescribeChannel",
@@ -612,6 +675,7 @@ export class Medialive extends PolicyStatement {
       "DescribeInputDeviceThumbnail",
       "DescribeInputSecurityGroup",
       "DescribeMultiplex",
+      "DescribeMultiplexProgram",
       "DescribeOffering",
       "DescribeReservation",
       "DescribeSchedule"
@@ -621,6 +685,7 @@ export class Medialive extends PolicyStatement {
       "ListInputDevices",
       "ListInputSecurityGroups",
       "ListInputs",
+      "ListMultiplexPrograms",
       "ListMultiplexes",
       "ListOfferings",
       "ListReservations",
