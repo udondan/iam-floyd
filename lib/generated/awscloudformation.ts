@@ -882,7 +882,7 @@ export class Cloudformation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onChangeset(changeSetName: string, id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:changeSet/${ChangeSetName}:${Id}';
+    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:changeSet/${ChangeSetName}/${Id}';
     arn = arn.replace('${ChangeSetName}', changeSetName);
     arn = arn.replace('${Id}', id);
     arn = arn.replace('${Account}', account || '*');

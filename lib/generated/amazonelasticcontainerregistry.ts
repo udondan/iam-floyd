@@ -241,7 +241,7 @@ export class Ecr extends PolicyStatement {
   /**
    * Grants permission to list the tags for an Amazon ECR resource
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListTagsForResource.html
    */
@@ -384,8 +384,7 @@ export class Ecr extends PolicyStatement {
       "GetDownloadUrlForLayer",
       "GetLifecyclePolicy",
       "GetLifecyclePolicyPreview",
-      "GetRepositoryPolicy",
-      "ListTagsForResource"
+      "GetRepositoryPolicy"
     ],
     "Write": [
       "BatchDeleteImage",
@@ -405,7 +404,8 @@ export class Ecr extends PolicyStatement {
     ],
     "List": [
       "DescribeRepositories",
-      "ListImages"
+      "ListImages",
+      "ListTagsForResource"
     ],
     "Permissions management": [
       "SetRepositoryPolicy"
@@ -440,7 +440,7 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on tag-value associated with the resource.
+   * Filters actions based on tag-value associated with the resource
    *
    * Applies to resource types:
    * - repository

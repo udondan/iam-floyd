@@ -23,7 +23,7 @@ export class SmsVoice extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets.html
+   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-configuration-sets.html
    */
   public toCreateConfigurationSet() {
     this.to('sms-voice:CreateConfigurationSet');
@@ -38,7 +38,7 @@ export class SmsVoice extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html
+   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html
    */
   public toCreateConfigurationSetEventDestination() {
     this.to('sms-voice:CreateConfigurationSetEventDestination');
@@ -50,7 +50,7 @@ export class SmsVoice extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname.html
+   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-configuration-sets-configurationsetname.html
    */
   public toDeleteConfigurationSet() {
     this.to('sms-voice:DeleteConfigurationSet');
@@ -62,7 +62,7 @@ export class SmsVoice extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html
+   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html
    */
   public toDeleteConfigurationSetEventDestination() {
     this.to('sms-voice:DeleteConfigurationSetEventDestination');
@@ -74,7 +74,7 @@ export class SmsVoice extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html
+   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html
    */
   public toGetConfigurationSetEventDestinations() {
     this.to('sms-voice:GetConfigurationSetEventDestinations');
@@ -86,7 +86,7 @@ export class SmsVoice extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets.html
+   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-configuration-sets.html
    */
   public toListConfigurationSets() {
     this.to('sms-voice:ListConfigurationSets');
@@ -98,7 +98,7 @@ export class SmsVoice extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-voice-message.html
+   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-voice-message.html
    */
   public toSendVoiceMessage() {
     this.to('sms-voice:SendVoiceMessage');
@@ -113,7 +113,7 @@ export class SmsVoice extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html
+   * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/APIReference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html
    */
   public toUpdateConfigurationSetEventDestination() {
     this.to('sms-voice:UpdateConfigurationSetEventDestination');

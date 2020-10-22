@@ -154,7 +154,7 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifAppNetworkAccess()
+   * - .ifAppNetworkAccessType()
    * - .ifInstanceTypes()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
@@ -2708,7 +2708,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * App network access associated with the resource in the request.
+   * App network access type associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -2718,8 +2718,8 @@ export class Sagemaker extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAppNetworkAccess(value: string | string[], operator?: Operator | string) {
-    return this.if(`sagemaker:AppNetworkAccess`, value, operator || 'StringLike');
+  public ifAppNetworkAccessType(value: string | string[], operator?: Operator | string) {
+    return this.if(`sagemaker:AppNetworkAccessType`, value, operator || 'StringLike');
   }
 
   /**
