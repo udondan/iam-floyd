@@ -151,6 +151,18 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
+   * List the tags that are applied to the specified server or backup.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    this.to('opsworks-cm:ListTagsForResource');
+    return this;
+  }
+
+  /**
    * Applies a backup to specified server. Possibly swaps out the ec2-instance if specified.
    *
    * Access Level: Write
@@ -171,6 +183,30 @@ export class OpsworksCm extends PolicyStatement {
    */
   public toStartMaintenance() {
     this.to('opsworks-cm:StartMaintenance');
+    return this;
+  }
+
+  /**
+   * Applies tags to the specified server or backup.
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    this.to('opsworks-cm:TagResource');
+    return this;
+  }
+
+  /**
+   * Removes tags from the specified server or backup.
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    this.to('opsworks-cm:UntagResource');
     return this;
   }
 
@@ -216,7 +252,12 @@ export class OpsworksCm extends PolicyStatement {
       "DescribeBackups",
       "DescribeEvents",
       "DescribeNodeAssociationStatus",
-      "DescribeServers"
+      "DescribeServers",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 }

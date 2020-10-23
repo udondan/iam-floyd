@@ -23,6 +23,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ds:AuthorizeApplication
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toAssociateDirectory() {
@@ -322,6 +325,9 @@ export class Sso extends PolicyStatement {
    * Disassociate a directory to be used by AWS Single Sign-On
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ds:UnauthorizeApplication
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -763,9 +769,43 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Search for groups within the associated directory
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - ds:DescribeDirectories
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toSearchGroups() {
+    this.to('sso:SearchGroups');
+    return this;
+  }
+
+  /**
+   * Search for users within the associated directory
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - ds:DescribeDirectories
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toSearchUsers() {
+    this.to('sso:SearchUsers');
+    return this;
+  }
+
+  /**
    * Initialize AWS Single Sign-On
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - organization:DescribeOrganization
+   * - organizations:EnableAWSServiceAccess
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -1023,7 +1063,9 @@ export class Sso extends PolicyStatement {
       "GetSSOStatus",
       "GetSharedSsoConfiguration",
       "GetSsoConfiguration",
-      "GetTrust"
+      "GetTrust",
+      "SearchGroups",
+      "SearchUsers"
     ],
     "List": [
       "ListAccountAssignmentCreationStatus",
