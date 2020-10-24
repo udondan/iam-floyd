@@ -275,6 +275,18 @@ export class Ram extends PolicyStatement {
   }
 
   /**
+   * Lists the shareable resource types supported by AWS RAM
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResourceTypes.html
+   */
+  public toListResourceTypes() {
+    this.to('ram:ListResourceTypes');
+    return this;
+  }
+
+  /**
    * Lists the resources that you added to a resource shares or the resources that are shared with you
    *
    * Access Level: List
@@ -283,6 +295,18 @@ export class Ram extends PolicyStatement {
    */
   public toListResources() {
     this.to('ram:ListResources');
+    return this;
+  }
+
+  /**
+   * Use this API action to promote the resource share
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html
+   */
+  public toPromoteResourceShareCreatedFromPolicy() {
+    this.to('ram:PromoteResourceShareCreatedFromPolicy');
     return this;
   }
 
@@ -361,6 +385,7 @@ export class Ram extends PolicyStatement {
       "DisassociateResourceShare",
       "DisassociateResourceSharePermission",
       "EnableSharingWithAwsOrganization",
+      "PromoteResourceShareCreatedFromPolicy",
       "RejectResourceShareInvitation",
       "TagResource",
       "UntagResource",
@@ -378,6 +403,7 @@ export class Ram extends PolicyStatement {
       "ListPermissions",
       "ListPrincipals",
       "ListResourceSharePermissions",
+      "ListResourceTypes",
       "ListResources"
     ]
   };
@@ -457,6 +483,7 @@ export class Ram extends PolicyStatement {
    * - .toDisassociateResourceShare()
    * - .toDisassociateResourceSharePermission()
    * - .toListResourceSharePermissions()
+   * - .toPromoteResourceShareCreatedFromPolicy()
    * - .toUpdateResourceShare()
    *
    * Applies to resource types:
@@ -566,6 +593,7 @@ export class Ram extends PolicyStatement {
    * - .toDisassociateResourceShare()
    * - .toDisassociateResourceSharePermission()
    * - .toListResourceSharePermissions()
+   * - .toPromoteResourceShareCreatedFromPolicy()
    * - .toUpdateResourceShare()
    *
    * Applies to resource types:

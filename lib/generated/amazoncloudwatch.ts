@@ -19,7 +19,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Deletes all specified alarms. In the event of an error, no alarms are deleted
+   * Grants permission to delete a collection of alarms
    *
    * Access Level: Write
    *
@@ -31,7 +31,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified anomaly detection model from your account.
+   * Grants permission to delete the specified anomaly detection model from your account.
    *
    * Access Level: Write
    *
@@ -43,7 +43,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Deletes all CloudWatch dashboards that you specify
+   * Grants permission to delete all CloudWatch dashboards that you specify
    *
    * Access Level: Write
    *
@@ -55,7 +55,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a collection of insight rules.
+   * Grants permission to delete a collection of insight rules
    *
    * Access Level: Write
    *
@@ -67,7 +67,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Retrieves history for the specified alarm
+   * Grants permission to retrieve the history for the specified alarm
    *
    * Access Level: Read
    *
@@ -79,7 +79,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Retrieves alarms with the specified names
+   * Grants permission to describe all alarms, currently owned by the user's account
    *
    * Access Level: Read
    *
@@ -91,7 +91,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Retrieves all alarms for a single metric
+   * Grants permission to describe all alarms configured on the specified metric, currently owned by the user's account
    *
    * Access Level: Read
    *
@@ -103,7 +103,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Lists the anomaly detection models that you have created in your account.
+   * Grants permission to lists the anomaly detection models that you have created in your account.
    *
    * Access Level: Read
    *
@@ -115,7 +115,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe all insight rules, currently owned by the user's account.
+   * Grants permission to describe all insight rules, currently owned by the user's account
    *
    * Access Level: Read
    *
@@ -127,7 +127,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Disables actions for the specified alarms
+   * Grants permission to disable actions for a collection of alarms
    *
    * Access Level: Write
    *
@@ -139,7 +139,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disable a collection of insight rules.
+   * Grants permission to disable a collection of insight rules
    *
    * Access Level: Write
    *
@@ -151,7 +151,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Enables actions for the specified alarms
+   * Grants permission to enable actions for a collection of alarms
    *
    * Access Level: Write
    *
@@ -163,7 +163,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable a collection of insight rules.
+   * Grants permission to enable a collection of insight rules
    *
    * Access Level: Write
    *
@@ -175,7 +175,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Displays the details of the CloudWatch dashboard you specify
+   * Grants permission to display the details of the CloudWatch dashboard you specify
    *
    * Access Level: Read
    *
@@ -187,7 +187,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return the top-N report of unique contributors over a time range for a given insight rule.
+   * Grants permission to return the top-N report of unique contributors over a time range for a given insight rule
    *
    * Access Level: Read
    *
@@ -199,7 +199,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Required to retrieve batch amounts of CloudWatch metric data and perform metric math on retrieved data
+   * Grants permission to retrieve batch amounts of CloudWatch metric data and perform metric math on retrieved data
    *
    * Access Level: Read
    *
@@ -211,7 +211,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Gets statistics for the specified metric
+   * Grants permission to retrieve statistics for the specified metric
    *
    * Access Level: Read
    *
@@ -223,7 +223,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Required to retrieve snapshots of metric widgets
+   * Grants permission to retrieve snapshots of metric widgets
    *
    * Access Level: Read
    *
@@ -235,7 +235,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Returns a list of all CloudWatch dashboards in your account
+   * Grants permission to return a list of all CloudWatch dashboards in your account
    *
    * Access Level: List
    *
@@ -247,7 +247,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Returns a list of valid metrics stored for the AWS account owner
+   * Grants permission to retrieve a list of valid metrics stored for the AWS account owner
    *
    * Access Level: List
    *
@@ -259,7 +259,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * This action lists tags for an Amazon CloudWatch resource.
+   * Grants permission to list tags for an Amazon CloudWatch resource
    *
    * Access Level: List
    *
@@ -271,7 +271,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Creates or updates an anomaly detection model for a CloudWatch metric.
+   * Grants permission to create or update an anomaly detection model for a CloudWatch metric.
    *
    * Access Level: Write
    *
@@ -283,7 +283,23 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Creates a CloudWatch dashboard, or updates an existing dashboard if it already exists
+   * Grants permission to create or update a composite alarm
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutCompositeAlarm.html
+   */
+  public toPutCompositeAlarm() {
+    this.to('cloudwatch:PutCompositeAlarm');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a CloudWatch dashboard, or update an existing dashboard if it already exists
    *
    * Access Level: Write
    *
@@ -295,7 +311,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new insight rule or replace an existing insight rule.
+   * Grants permission to create a new insight rule or replace an existing insight rule
    *
    * Access Level: Write
    *
@@ -311,7 +327,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric
+   * Grants permission to create or update an alarm and associates it with the specified Amazon CloudWatch metric
    *
    * Access Level: Write
    *
@@ -327,7 +343,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Publishes metric data points to Amazon CloudWatch
+   * Grants permission to publish metric data points to Amazon CloudWatch
    *
    * Access Level: Write
    *
@@ -342,7 +358,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Temporarily sets the state of an alarm for testing purposes
+   * Grants permission to temporarily set the state of an alarm for testing purposes
    *
    * Access Level: Write
    *
@@ -354,7 +370,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * This action tags an Amazon CloudWatch resource.
+   * Grants permission to add tags to an Amazon CloudWatch resource
    *
    * Access Level: Tagging
    *
@@ -370,7 +386,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * This action removes a tag from an Amazon CloudWatch resource.
+   * Grants permission to remove a tag from an Amazon CloudWatch resource
    *
    * Access Level: Tagging
    *
@@ -395,6 +411,7 @@ export class Cloudwatch extends PolicyStatement {
       "EnableAlarmActions",
       "EnableInsightRules",
       "PutAnomalyDetector",
+      "PutCompositeAlarm",
       "PutDashboard",
       "PutInsightRule",
       "PutMetricAlarm",

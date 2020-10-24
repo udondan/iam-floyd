@@ -453,6 +453,18 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to access a resource in the remote Region when executing cross-Region operations, such as cross-Region snapshot copy or cross-Region read replica creation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   */
+  public toCrossRegionCommunication() {
+    this.to('rds:CrossRegionCommunication');
+    return this;
+  }
+
+  /**
    * Grants permission to delete a previously provisioned DB cluster
    *
    * Access Level: Write
@@ -549,7 +561,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a DB security group.
+   * Grants permission to delete a DB security group
    *
    * Access Level: Write
    *
@@ -1423,7 +1435,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove metadata tags from an Amazon RDS resource.
+   * Grants permission to remove metadata tags from an Amazon RDS resource
    *
    * Access Level: Tagging
    *
@@ -1712,6 +1724,7 @@ export class Rds extends PolicyStatement {
       "CreateEventSubscription",
       "CreateGlobalCluster",
       "CreateOptionGroup",
+      "CrossRegionCommunication",
       "DeleteDBCluster",
       "DeleteDBClusterEndpoint",
       "DeleteDBClusterParameterGroup",
@@ -1846,6 +1859,8 @@ export class Rds extends PolicyStatement {
 
   /**
    * Adds a resource of type cluster-endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DBClusterEndpoint.html
    *
    * @param dbClusterEndpoint - Identifier for the dbClusterEndpoint.
    * @param account - Account of the resource; defaults to empty string: all accounts.

@@ -23,6 +23,9 @@ export class Route53 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html
    */
   public toAssociateVPCWithHostedZone() {
@@ -70,6 +73,9 @@ export class Route53 extends PolicyStatement {
    * Grants permission to create a public hosted zone, which you use to specify how the Domain Name System (DNS) routes traffic on the Internet for a domain, such as example.com, and its subdomains
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html
    */
@@ -238,6 +244,9 @@ export class Route53 extends PolicyStatement {
    * Grants permission to disassociate an Amazon Virtual Private Cloud from a Route 53 private hosted zone
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DisassociateVPCFromHostedZone.html
    */
@@ -499,6 +508,21 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of all the private hosted zones that a specified VPC is associated with
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html
+   */
+  public toListHostedZonesByVPC() {
+    this.to('route53:ListHostedZonesByVPC');
+    return this;
+  }
+
+  /**
    * Grants permission to list the configurations for DNS query logging that are associated with the current AWS account or the configuration that is associated with a specified hosted zone.
    *
    * Access Level: List
@@ -537,7 +561,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to list tags for one health check or hosted zone
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTagsForResource.html
    */
@@ -549,7 +573,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to list tags for up to 10 health checks or hosted zones
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTagsForResources.html
    */
@@ -561,7 +585,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to get information about the latest version for every traffic policy that is associated with the current AWS account. Policies are listed in the order in which they were created.
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html
    */
@@ -573,7 +597,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to get information about the traffic policy instances that you created by using the current AWS account
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicyInstances.html
    */
@@ -585,7 +609,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to get information about the traffic policy instances that you created in a specified hosted zone
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicyInstancesByHostedZone.html
    */
@@ -597,7 +621,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to get information about the traffic policy instances that you created using a specified traffic policy version
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicyInstancesByPolicy.html
    */
@@ -609,7 +633,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to get information about all the versions for a specified traffic policy
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicyVersions.html
    */
@@ -621,7 +645,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to get a list of the VPCs that were created by other accounts and that can be associated with a specified hosted zone
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListVPCAssociationAuthorizations.html
    */
@@ -727,14 +751,6 @@ export class Route53 extends PolicyStatement {
       "GetTrafficPolicy",
       "GetTrafficPolicyInstance",
       "GetTrafficPolicyInstanceCount",
-      "ListTagsForResource",
-      "ListTagsForResources",
-      "ListTrafficPolicies",
-      "ListTrafficPolicyInstances",
-      "ListTrafficPolicyInstancesByHostedZone",
-      "ListTrafficPolicyInstancesByPolicy",
-      "ListTrafficPolicyVersions",
-      "ListVPCAssociationAuthorizations",
       "TestDNSAnswer"
     ],
     "List": [
@@ -751,9 +767,18 @@ export class Route53 extends PolicyStatement {
       "ListHealthChecks",
       "ListHostedZones",
       "ListHostedZonesByName",
+      "ListHostedZonesByVPC",
       "ListQueryLoggingConfigs",
       "ListResourceRecordSets",
-      "ListReusableDelegationSets"
+      "ListReusableDelegationSets",
+      "ListTagsForResource",
+      "ListTagsForResources",
+      "ListTrafficPolicies",
+      "ListTrafficPolicyInstances",
+      "ListTrafficPolicyInstancesByHostedZone",
+      "ListTrafficPolicyInstancesByPolicy",
+      "ListTrafficPolicyVersions",
+      "ListVPCAssociationAuthorizations"
     ]
   };
 
@@ -858,6 +883,25 @@ export class Route53 extends PolicyStatement {
   public onQueryloggingconfig(id: string, partition?: string) {
     var arn = 'arn:${Partition}:route53:::queryloggingconfig/${Id}';
     arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type vpc to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html
+   *
+   * @param vpcId - Identifier for the vpcId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onVpc(vpcId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpc/${VpcId}';
+    arn = arn.replace('${VpcId}', vpcId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
