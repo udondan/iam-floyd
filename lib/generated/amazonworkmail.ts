@@ -55,6 +55,18 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Cancels a currently running mailbox export job.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_CancelMailboxExportJob.html
+   */
+  public toCancelMailboxExportJob() {
+    this.to('workmail:CancelMailboxExportJob');
+    return this;
+  }
+
+  /**
    * Adds an alias to the set of a given member (user or group) of WorkMail.
    *
    * Access Level: Write
@@ -427,6 +439,18 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Retrieve details of a mailbox export job.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeMailboxExportJob.html
+   */
+  public toDescribeMailboxExportJob() {
+    this.to('workmail:DescribeMailboxExportJob');
+    return this;
+  }
+
+  /**
    * Provides more information regarding a given organization based on its identifier.
    *
    * Access Level: List
@@ -763,6 +787,18 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * List mailbox export jobs.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListMailboxExportJobs.html
+   */
+  public toListMailboxExportJobs() {
+    this.to('workmail:ListMailboxExportJobs');
+    return this;
+  }
+
+  /**
    * Lists the mailbox permissions associated with a user, group, or resource mailbox.
    *
    * Access Level: List
@@ -1039,6 +1075,18 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Start a new mailbox export job.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_StartMailboxExportJob.html
+   */
+  public toStartMailboxExportJob() {
+    this.to('workmail:StartMailboxExportJob');
+    return this;
+  }
+
+  /**
    * Grants permission to tag the specified Amazon WorkMail organization resource.
    *
    * Access Level: Tagging
@@ -1175,6 +1223,7 @@ export class Workmail extends PolicyStatement {
       "AddMembersToGroup",
       "AssociateDelegateToResource",
       "AssociateMemberToGroup",
+      "CancelMailboxExportJob",
       "CreateAlias",
       "CreateGroup",
       "CreateInboundMailFlowRule",
@@ -1219,6 +1268,7 @@ export class Workmail extends PolicyStatement {
       "SetMailGroupDetails",
       "SetMailUserDetails",
       "SetMobilePolicyDetails",
+      "StartMailboxExportJob",
       "TestInboundMailFlowRules",
       "TestOutboundMailFlowRules",
       "UpdateInboundMailFlowRule",
@@ -1245,6 +1295,7 @@ export class Workmail extends PolicyStatement {
       "ListGroupMembers",
       "ListGroups",
       "ListInboundMailFlowRules",
+      "ListMailboxExportJobs",
       "ListMailboxPermissions",
       "ListOrganizations",
       "ListOutboundMailFlowRules",
@@ -1256,6 +1307,7 @@ export class Workmail extends PolicyStatement {
     ],
     "Read": [
       "DescribeInboundMailFlowRule",
+      "DescribeMailboxExportJob",
       "DescribeOutboundMailFlowRule",
       "DescribeSmtpGateway",
       "GetAccessControlEffect",

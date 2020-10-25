@@ -19,7 +19,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Adds member to the group in the directory that AWS SSO provides by default
+   * Grants permission to add a member to a group in the directory that AWS SSO provides by default
    *
    * Access Level: Write
    *
@@ -31,7 +31,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Completes the creation process of a virtual MFA device
+   * Grants permission to complete the creation process of a virtual MFA device
    *
    * Access Level: Write
    *
@@ -43,7 +43,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Creates an alias for the directory that AWS SSO provides by default
+   * Grants permission to create an alias for the directory that AWS SSO provides by default
    *
    * Access Level: Write
    *
@@ -55,7 +55,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Creates a bearer token for a given provisioning tenant.
+   * Grants permission to create a bearer token for a given provisioning tenant
    *
    * Access Level: Write
    *
@@ -67,7 +67,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Create an External Identity Provider configuration for the directory
+   * Grants permission to create an External Identity Provider configuration for the directory
    *
    * Access Level: Write
    *
@@ -79,7 +79,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Creates a group in the directory that AWS SSO provides by default
+   * Grants permission to create a group in the directory that AWS SSO provides by default
    *
    * Access Level: Write
    *
@@ -91,7 +91,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Creates a provisioning tenant for a given directory.
+   * Grants permission to create a provisioning tenant for a given directory
    *
    * Access Level: Write
    *
@@ -103,7 +103,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Creates a user in the directory that AWS SSO provides by default
+   * Grants permission to create a user in the directory that AWS SSO provides by default
    *
    * Access Level: Write
    *
@@ -115,7 +115,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Deletes the bearer token.
+   * Grants permission to delete a bearer token
    *
    * Access Level: Write
    *
@@ -127,7 +127,19 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Delete an External Identity Provider configuration associated with the directory
+   * Grants permission to delete the given external IdP certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDeleteExternalIdPCertificate() {
+    this.to('sso-directory:DeleteExternalIdPCertificate');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete an External Identity Provider configuration associated with the directory
    *
    * Access Level: Write
    *
@@ -139,7 +151,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Deletes a group from the directory that AWS SSO provides by default
+   * Grants permission to delete a group from the directory that AWS SSO provides by default
    *
    * Access Level: Write
    *
@@ -151,7 +163,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Deletes a MFA device by device name for a given user
+   * Grants permission to delete a MFA device by device name for a given user
    *
    * Access Level: Write
    *
@@ -163,7 +175,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Deletes the provisioning tenant.
+   * Grants permission to delete the provisioning tenant
    *
    * Access Level: Write
    *
@@ -175,7 +187,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Deletes a user from the directory that AWS SSO provides by default
+   * Grants permission to delete a user from the directory that AWS SSO provides by default
    *
    * Access Level: Write
    *
@@ -187,7 +199,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about the directory that AWS SSO provides by default
+   * Grants permission to retrieve information about the directory that AWS SSO provides by default
    *
    * Access Level: Read
    *
@@ -199,7 +211,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieves information about group from the directory that AWS SSO provides by default
+   * Grants permission to retrieve information about a group from the directory that AWS SSO provides by default
    *
    * Access Level: List
    *
@@ -211,7 +223,19 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieves information about user from the directory that AWS SSO provides by default
+   * Grants permission to retrieve information about a user from the directory that AWS SSO provides by default
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDescribeUser() {
+    this.to('sso-directory:DescribeUser');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve information about user from the directory that AWS SSO provides by default
    *
    * Access Level: List
    *
@@ -223,7 +247,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Disable authentication of end users with an External Identity Provider
+   * Grants permission to disable authentication of end users with an External Identity Provider
    *
    * Access Level: Write
    *
@@ -235,7 +259,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Deactivates user in the directory that AWS SSO provides by default
+   * Grants permission to deactivate a user in the directory that AWS SSO provides by default
    *
    * Access Level: Write
    *
@@ -247,7 +271,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Enable authentication of end users with an External Identity Provider
+   * Grants permission to enable authentication of end users with an External Identity Provider
    *
    * Access Level: Write
    *
@@ -259,7 +283,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Activates user in the directory that AWS SSO provides by default
+   * Grants permission to activate user in the directory that AWS SSO provides by default
    *
    * Access Level: Write
    *
@@ -271,7 +295,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieve the AWS SSO Service Provider configurations for the directory
+   * Grants permission to retrieve the AWS SSO Service Provider configurations for the directory
    *
    * Access Level: Read
    *
@@ -283,7 +307,31 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Lists bearer tokens for a given provisioning tenant.
+   * Grants permission to import the IdP certificate used for verifying external IdP responses
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toImportExternalIdPCertificate() {
+    this.to('sso-directory:ImportExternalIdPCertificate');
+    return this;
+  }
+
+  /**
+   * Grants permission to check if a member is a part of the group in the directory that AWS SSO provides by default
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toIsMemberInGroup() {
+    this.to('sso-directory:IsMemberInGroup');
+    return this;
+  }
+
+  /**
+   * Grants permission to list bearer tokens for a given provisioning tenant
    *
    * Access Level: List
    *
@@ -295,7 +343,19 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * List all the External Identity Provider configurations created for the directory
+   * Grants permission to list the external IdP certificates of a given directory and IdP
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toListExternalIdPCertificates() {
+    this.to('sso-directory:ListExternalIdPCertificates');
+    return this;
+  }
+
+  /**
+   * Grants permission to list all the External Identity Provider configurations created for the directory
    *
    * Access Level: List
    *
@@ -307,7 +367,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Lists groups for a user from the directory that AWS SSO provides by default
+   * Grants permission to list groups for a user from the directory that AWS SSO provides by default
    *
    * Access Level: List
    *
@@ -319,7 +379,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Retrieves all members that are part of the group in the directory that AWS SSO provides by default
+   * Grants permission to retrieve all members that are part of a group in the directory that AWS SSO provides by default
    *
    * Access Level: List
    *
@@ -331,7 +391,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Lists all active MFA devices and their MFA device metadata for a user
+   * Grants permission to list all active MFA devices and their MFA device metadata for a user
    *
    * Access Level: List
    *
@@ -343,7 +403,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Lists provisioning tenants for a given directory.
+   * Grants permission to list provisioning tenants for a given directory
    *
    * Access Level: List
    *
@@ -355,7 +415,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Removes member that are part of the group in the directory that AWS SSO provides by default
+   * Grants permission to remove a member that is part of a group in the directory that AWS SSO provides by default
    *
    * Access Level: Write
    *
@@ -367,7 +427,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Search for groups within the associated directory
+   * Grants permission to search for groups within the associated directory
    *
    * Access Level: Read
    *
@@ -379,7 +439,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Search for users within the associated directory
+   * Grants permission to search for users within the associated directory
    *
    * Access Level: Read
    *
@@ -391,7 +451,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Begins the creation process of virtual mfa device
+   * Grants permission to begin the creation process of virtual mfa device
    *
    * Access Level: Write
    *
@@ -403,7 +463,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Update an External Identity Provider configuration associated with the directory
+   * Grants permission to update an External Identity Provider configuration associated with the directory
    *
    * Access Level: Write
    *
@@ -415,7 +475,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Updates information about group in the directory that AWS SSO provides by default
+   * Grants permission to update information about a group in the directory that AWS SSO provides by default
    *
    * Access Level: Write
    *
@@ -427,7 +487,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Updates password by sending password reset link via email or generating one time password for a user in the directory that AWS SSO provides by default
+   * Grants permission to update a password by sending password reset link via email or generating one time password for a user in the directory that AWS SSO provides by default
    *
    * Access Level: Write
    *
@@ -439,7 +499,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Updates user information in the directory that AWS SSO provides by default
+   * Grants permission to update user information in the directory that AWS SSO provides by default
    *
    * Access Level: Write
    *
@@ -451,7 +511,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Verify email address of an User
+   * Grants permission to verify an email address of an User
    *
    * Access Level: Write
    *
@@ -473,6 +533,7 @@ export class SsoDirectory extends PolicyStatement {
       "CreateProvisioningTenant",
       "CreateUser",
       "DeleteBearerToken",
+      "DeleteExternalIdPCertificate",
       "DeleteExternalIdPConfigurationForDirectory",
       "DeleteGroup",
       "DeleteMfaDeviceForUser",
@@ -482,6 +543,7 @@ export class SsoDirectory extends PolicyStatement {
       "DisableUser",
       "EnableExternalIdPConfigurationForDirectory",
       "EnableUser",
+      "ImportExternalIdPCertificate",
       "RemoveMemberFromGroup",
       "StartVirtualMfaDeviceRegistration",
       "UpdateExternalIdPConfigurationForDirectory",
@@ -492,7 +554,9 @@ export class SsoDirectory extends PolicyStatement {
     ],
     "Read": [
       "DescribeDirectory",
+      "DescribeUser",
       "GetAWSSPConfigurationForDirectory",
+      "IsMemberInGroup",
       "SearchGroups",
       "SearchUsers"
     ],
@@ -500,6 +564,7 @@ export class SsoDirectory extends PolicyStatement {
       "DescribeGroups",
       "DescribeUsers",
       "ListBearerTokens",
+      "ListExternalIdPCertificates",
       "ListExternalIdPConfigurationsForDirectory",
       "ListGroupsForUser",
       "ListMembersInGroup",
