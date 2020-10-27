@@ -373,6 +373,18 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Returns a list of images created by the specified pipeline
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImagePipelineImages.html
+   */
+  public toListImagePipelineImages() {
+    this.to('imagebuilder:ListImagePipelineImages');
+    return this;
+  }
+
+  /**
    * List the image pipelines in your account
    *
    * Access Level: List
@@ -605,6 +617,7 @@ export class Imagebuilder extends PolicyStatement {
       "ListComponents",
       "ListDistributionConfigurations",
       "ListImageBuildVersions",
+      "ListImagePipelineImages",
       "ListImagePipelines",
       "ListImageRecipes",
       "ListImages",
