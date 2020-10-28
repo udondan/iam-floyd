@@ -517,6 +517,18 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Used internally by AWS services. If a rule is created by an AWS service on your behalf, the value is the principal name of the service that created the rule.
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifManagedBy(value: string | string[], operator?: Operator | string) {
+    return this.if(`events:ManagedBy`, value, operator || 'StringLike');
+  }
+
+  /**
    * The ARN of a target that can be put to a rule.
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limiting-access-to-targets
