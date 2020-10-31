@@ -381,7 +381,7 @@ export class Personalize extends PolicyStatement {
   /**
    * Gets a re-ranked list of recommendations
    *
-   * Access Level: Write
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_RS_GetPersonalizedRanking.html
    */
@@ -559,6 +559,30 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Ingest Items data
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UBS_PutItems.html
+   */
+  public toPutItems() {
+    this.to('personalize:PutItems');
+    return this;
+  }
+
+  /**
+   * Ingest Users data
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UBS_PutUsers.html
+   */
+  public toPutUsers() {
+    this.to('personalize:PutUsers');
+    return this;
+  }
+
+  /**
    * Updates a campaign
    *
    * Access Level: Write
@@ -589,8 +613,9 @@ export class Personalize extends PolicyStatement {
       "DeleteFilter",
       "DeleteSchema",
       "DeleteSolution",
-      "GetPersonalizedRanking",
       "PutEvents",
+      "PutItems",
+      "PutUsers",
       "UpdateCampaign"
     ],
     "Read": [
@@ -607,6 +632,7 @@ export class Personalize extends PolicyStatement {
       "DescribeSchema",
       "DescribeSolution",
       "DescribeSolutionVersion",
+      "GetPersonalizedRanking",
       "GetRecommendations",
       "GetSolutionMetrics"
     ],

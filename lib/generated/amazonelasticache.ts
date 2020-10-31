@@ -986,6 +986,8 @@ export class Elasticache extends PolicyStatement {
   /**
    * Adds a resource of type parametergroup to the statement
    *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html
+   *
    * @param cacheParameterGroupName - Identifier for the cacheParameterGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -1002,6 +1004,8 @@ export class Elasticache extends PolicyStatement {
 
   /**
    * Adds a resource of type securitygroup to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html
    *
    * @param cacheSecurityGroupName - Identifier for the cacheSecurityGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1020,6 +1024,8 @@ export class Elasticache extends PolicyStatement {
   /**
    * Adds a resource of type subnetgroup to the statement
    *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html
+   *
    * @param cacheSubnetGroupName - Identifier for the cacheSubnetGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -1036,6 +1042,8 @@ export class Elasticache extends PolicyStatement {
 
   /**
    * Adds a resource of type replicationgroup to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Replication.html
    *
    * @param replicationGroupId - Identifier for the replicationGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1054,6 +1062,8 @@ export class Elasticache extends PolicyStatement {
   /**
    * Adds a resource of type cluster to the statement
    *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html
+   *
    * @param cacheClusterId - Identifier for the cacheClusterId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -1070,6 +1080,8 @@ export class Elasticache extends PolicyStatement {
 
   /**
    * Adds a resource of type reserved-instance to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/reserved-nodes.html
    *
    * @param reservedCacheNodeId - Identifier for the reservedCacheNodeId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1088,6 +1100,8 @@ export class Elasticache extends PolicyStatement {
   /**
    * Adds a resource of type snapshot to the statement
    *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups.html
+   *
    * @param snapshotName - Identifier for the snapshotName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -1105,6 +1119,8 @@ export class Elasticache extends PolicyStatement {
   /**
    * Adds a resource of type globalreplicationgroup to the statement
    *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html
+   *
    * @param globalReplicationGroupId - Identifier for the globalReplicationGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -1119,6 +1135,8 @@ export class Elasticache extends PolicyStatement {
 
   /**
    * Adds a resource of type user to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html
    *
    * @param userId - Identifier for the userId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1136,6 +1154,8 @@ export class Elasticache extends PolicyStatement {
 
   /**
    * Adds a resource of type usergroup to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html
    *
    * @param userGroupId - Identifier for the userGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
