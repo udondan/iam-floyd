@@ -35,6 +35,22 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a harvest job in AWS Elemental MediaPackage.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/apireference/harvest_jobs.html#harvest_jobspost
+   */
+  public toCreateHarvestJob() {
+    this.to('mediapackage:CreateHarvestJob');
+    return this;
+  }
+
+  /**
    * Grants permission to create an endpoint in AWS Elemental MediaPackage.
    *
    * Access Level: Write
@@ -87,6 +103,18 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view the details of a harvest job in AWS Elemental MediaPackage.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/apireference/harvest_jobs-id.html#harvest_jobs-idget
+   */
+  public toDescribeHarvestJob() {
+    this.to('mediapackage:DescribeHarvestJob');
+    return this;
+  }
+
+  /**
    * Grants permission to view the details of an endpoint in AWS Elemental MediaPackage.
    *
    * Access Level: Read
@@ -107,6 +135,18 @@ export class Mediapackage extends PolicyStatement {
    */
   public toListChannels() {
     this.to('mediapackage:ListChannels');
+    return this;
+  }
+
+  /**
+   * Grants permission to view a list of harvest jobs in AWS Elemental MediaPackage.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/apireference/harvest_jobs.html#harvest_jobsget
+   */
+  public toListHarvestJobs() {
+    this.to('mediapackage:ListHarvestJobs');
     return this;
   }
 
@@ -147,7 +187,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to assign tags to a Channel or OriginEndpoint.
+   *
    *
    * Access Level: Write
    *
@@ -155,7 +195,7 @@ export class Mediapackage extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arnpost
+   * https://docs.aws.amazon.com/mediapackage/latest/apireference/hj-create.html
    */
   public toTagResource() {
     this.to('mediapackage:TagResource');
@@ -204,6 +244,7 @@ export class Mediapackage extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CreateChannel",
+      "CreateHarvestJob",
       "CreateOriginEndpoint",
       "DeleteChannel",
       "DeleteOriginEndpoint",
@@ -215,8 +256,10 @@ export class Mediapackage extends PolicyStatement {
     ],
     "Read": [
       "DescribeChannel",
+      "DescribeHarvestJob",
       "DescribeOriginEndpoint",
       "ListChannels",
+      "ListHarvestJobs",
       "ListOriginEndpoints",
       "ListTagsForResource"
     ]
@@ -260,6 +303,28 @@ export class Mediapackage extends PolicyStatement {
   public onOriginEndpoints(originEndpointIdentifier: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediapackage:${Region}:${Account}:origin_endpoints/${OriginEndpointIdentifier}';
     arn = arn.replace('${OriginEndpointIdentifier}', originEndpointIdentifier);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type harvest_jobs to the statement
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/ug/harvest-jobs.html
+   *
+   * @param harvestJobIdentifier - Identifier for the harvestJobIdentifier.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onHarvestJobs(harvestJobIdentifier: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediapackage:${Region}:${Account}:harvest_jobs/${HarvestJobIdentifier}';
+    arn = arn.replace('${HarvestJobIdentifier}', harvestJobIdentifier);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

@@ -35,6 +35,10 @@ export class Braket extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateQuantumTask.html
    */
   public toCreateQuantumTask() {
@@ -67,6 +71,18 @@ export class Braket extends PolicyStatement {
   }
 
   /**
+   * Lists the tags that have been applied to the quantum task resource.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/braket/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    this.to('braket:ListTagsForResource');
+    return this;
+  }
+
+  /**
    * Grants permission to search for devices available in Amazon Braket.
    *
    * Access Level: Read
@@ -90,6 +106,37 @@ export class Braket extends PolicyStatement {
     return this;
   }
 
+  /**
+   * Adds one or more tags to a quantum task.
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/braket/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    this.to('braket:TagResource');
+    return this;
+  }
+
+  /**
+   * Remove one or more tags from a quantum task resource. A tag consists of a key-value pair
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/braket/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    this.to('braket:UntagResource');
+    return this;
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CancelQuantumTask",
@@ -98,8 +145,35 @@ export class Braket extends PolicyStatement {
     "Read": [
       "GetDevice",
       "GetQuantumTask",
+      "ListTagsForResource",
       "SearchDevices",
       "SearchQuantumTasks"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
+
+  /**
+   * Adds a resource of type quantum-task to the statement
+   *
+   * https://docs.aws.amazon.com/braket/latest/developerguide/braket-manage-access.html#resources
+   *
+   * @param randomId - Identifier for the randomId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onQuantumTask(randomId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:braket:${Region}:${Account}:quantum-task/${RandomId}';
+    arn = arn.replace('${RandomId}', randomId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
 }

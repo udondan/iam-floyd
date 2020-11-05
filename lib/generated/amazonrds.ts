@@ -1860,7 +1860,7 @@ export class Rds extends PolicyStatement {
   /**
    * Adds a resource of type cluster-endpoint to the statement
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DBClusterEndpoint.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Overview.Endpoints.html
    *
    * @param dbClusterEndpoint - Identifier for the dbClusterEndpoint.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1982,7 +1982,7 @@ export class Rds extends PolicyStatement {
   /**
    * Adds a resource of type global-cluster to the statement
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.Aurora.GlobalDB.html
    *
    * @param globalCluster - Identifier for the globalCluster.
    * @param account - Account of the resource; defaults to empty string: all accounts.

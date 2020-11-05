@@ -108,6 +108,8 @@ export class CodestarConnections extends PolicyStatement {
    *
    * Dependent actions:
    * - codestar-connections:StartOAuthHandshake
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toGetIndividualAccessToken() {
     this.to('codestar-connections:GetIndividualAccessToken');
@@ -121,6 +123,8 @@ export class CodestarConnections extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifProviderType()
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toGetInstallationUrl() {
     this.to('codestar-connections:GetInstallationUrl');
@@ -165,6 +169,8 @@ export class CodestarConnections extends PolicyStatement {
    * Dependent actions:
    * - codestar-connections:GetIndividualAccessToken
    * - codestar-connections:StartOAuthHandshake
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toListInstallationTargets() {
     this.to('codestar-connections:ListInstallationTargets');
@@ -190,6 +196,8 @@ export class CodestarConnections extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifPassedToService()
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-passconnection
    */
   public toPassConnection() {
     this.to('codestar-connections:PassConnection');
@@ -203,6 +211,8 @@ export class CodestarConnections extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifHostArn()
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#connections-permissions-actions-host-registration
    */
   public toRegisterAppCode() {
     this.to('codestar-connections:RegisterAppCode');
@@ -216,6 +226,8 @@ export class CodestarConnections extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifHostArn()
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#connections-permissions-actions-host-registration
    */
   public toStartAppRegistrationHandshake() {
     this.to('codestar-connections:StartAppRegistrationHandshake');
@@ -229,6 +241,8 @@ export class CodestarConnections extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifProviderType()
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toStartOAuthHandshake() {
     this.to('codestar-connections:StartOAuthHandshake');
@@ -280,6 +294,8 @@ export class CodestarConnections extends PolicyStatement {
    * - codestar-connections:GetInstallationUrl
    * - codestar-connections:ListInstallationTargets
    * - codestar-connections:StartOAuthHandshake
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toUpdateConnectionInstallation() {
     this.to('codestar-connections:UpdateConnectionInstallation');
@@ -295,6 +311,8 @@ export class CodestarConnections extends PolicyStatement {
    * - .ifFullRepositoryId()
    * - .ifProviderAction()
    * - .ifProviderPermissionsRequired()
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
    */
   public toUseConnection() {
     this.to('codestar-connections:UseConnection');
@@ -335,7 +353,7 @@ export class CodestarConnections extends PolicyStatement {
   /**
    * Adds a resource of type Connection to the statement
    *
-   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections.html/API_Connection.html
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/connections.html
    *
    * @param connectionId - Identifier for the connectionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -354,7 +372,7 @@ export class CodestarConnections extends PolicyStatement {
   /**
    * Adds a resource of type Host to the statement
    *
-   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections.html/API_Host.html
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/connections-hosts.html
    *
    * @param hostId - Identifier for the hostId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -373,7 +391,7 @@ export class CodestarConnections extends PolicyStatement {
   /**
    * Filters access by the branch name that is passed in the request. Applies only to UseConnection requests for access to a specific repository branch
    *
-   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -385,7 +403,7 @@ export class CodestarConnections extends PolicyStatement {
   /**
    * Filters access by the repository that is passed in the request. Applies only to UseConnection requests for access to a specific repository
    *
-   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
    *
    * Applies to actions:
    * - .toUseConnection()
@@ -400,7 +418,7 @@ export class CodestarConnections extends PolicyStatement {
   /**
    * Filters access by the host resource associated with the connection used in the request
    *
-   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-hosts
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-hosts
    *
    * Applies to actions:
    * - .toRegisterAppCode()
@@ -416,7 +434,7 @@ export class CodestarConnections extends PolicyStatement {
   /**
    * Filters access by the third-party ID (such as the Bitbucket App installation ID for CodeStar Connections) that is used to update a Connection. Allows you to restrict which third-party App installations can be used to make a Connection
    *
-   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-permissions-actions-handshake
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    *
    * Applies to actions:
    * - .toUpdateConnectionInstallation()
@@ -431,7 +449,7 @@ export class CodestarConnections extends PolicyStatement {
   /**
    * Filters access by the owner of the third-party repository. Applies only to UseConnection requests for access to repositories owned by a specific user
    *
-   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -443,7 +461,7 @@ export class CodestarConnections extends PolicyStatement {
   /**
    * Filters access by the service to which the principal is allowed to pass a Connection
    *
-   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-passconnection
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-passconnection
    *
    * Applies to actions:
    * - .toPassConnection()
@@ -458,7 +476,7 @@ export class CodestarConnections extends PolicyStatement {
   /**
    * Filters access by the provider action in a UseConnection request such as ListRepositories. See documentation for all valid values
    *
-   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use-provider
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-access
    *
    * Applies to actions:
    * - .toUseConnection()
@@ -473,7 +491,7 @@ export class CodestarConnections extends PolicyStatement {
   /**
    * Filters access by the write permissions of a provider action in a UseConnection request. Valid types include read_only and read_write
    *
-   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
    *
    * Applies to actions:
    * - .toUseConnection()
@@ -488,7 +506,7 @@ export class CodestarConnections extends PolicyStatement {
   /**
    * Filters access by the type of third-party provider passed in the request
    *
-   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-permissions-actions
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-managing
    *
    * Applies to actions:
    * - .toCreateConnection()
@@ -507,7 +525,7 @@ export class CodestarConnections extends PolicyStatement {
   /**
    * Filters access by the type of third-party provider used to filter results
    *
-   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-permissions-actions
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-managing
    *
    * Applies to actions:
    * - .toListConnections()
@@ -523,7 +541,7 @@ export class CodestarConnections extends PolicyStatement {
   /**
    * Filters access by the repository name that is passed in the request. Applies only to UseConnection requests for creating new repositories
    *
-   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

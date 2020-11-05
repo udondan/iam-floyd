@@ -17,8 +17,8 @@
 Support for:
 
 - 241 Services
-- 8111 Actions
-- 799 Resource Types
+- 8117 Actions
+- 801 Resource Types
 - 487 Conditions
 <!-- /stats -->
 
@@ -59,6 +59,6 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [Maven]: https://github.com/udondan/iam-floyd/packages/258358
    [license]: https://github.com/udondan/iam-floyd/blob/main/LICENSE
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
-   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.88.0
+   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.89.0
    [libraries.io]: https://libraries.io/search?q=iam-floyd
    [AWS CDK]: https://aws.amazon.com/cdk/
