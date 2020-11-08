@@ -57,8 +57,8 @@ function getNewConditions() {
 
 function getUpdatedAccessLevels() {
   gitDiffModules |\
-    pcregrep -Mi "^-   \* Access Level: .*\n^\+   \* Access Level: .*\n(.*\n)*?^     this.to\('(.*)'" |\
-    perl -0777 -pe "s/-   \* Access Level: (.*?)\n\+   \* Access Level: (.*)(?:.|\n)+?this\.to\('(.*)'\);/- \3: \1 -> \2/gm"
+    pcregrep -Mi "^-   \* Access Level: .*?\n^\+   \* Access Level: .*?\n(.*\n)*?^     this.to\('(.*?)'"|\
+    perl -0777 -pe "s/-   \* Access Level: (.*?)\n\+   \* Access Level: (.*)\n(?:^[^-]*|\n)+this\.to\('(.*)'\);/- \3: \1 -> \2/gm"
 }
 
 file="CHANGELOG/$(getVersion).md"
