@@ -27,6 +27,22 @@ export class Mq extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateNetworkInterfacePermission
+   * - ec2:CreateSecurityGroup
+   * - ec2:CreateVpcEndpoint
+   * - ec2:DescribeInternetGateways
+   * - ec2:DescribeNetworkInterfacePermissions
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcEndpoints
+   * - ec2:DescribeVpcs
+   * - ec2:ModifyNetworkInterfaceAttribute
+   * - iam:CreateServiceLinkedRole
+   * - route53:AssociateVPCWithHostedZone
+   *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post
    */
   public toCreateBroker() {
@@ -82,6 +98,12 @@ export class Mq extends PolicyStatement {
    * Grants permission to delete a broker.
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DeleteNetworkInterfacePermission
+   * - ec2:DeleteVpcEndpoints
+   * - ec2:DetachNetworkInterface
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-delete
    */

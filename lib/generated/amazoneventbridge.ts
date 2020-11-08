@@ -19,7 +19,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Activates a partner event source that has been deactivated. Once activated, your matching event bus will start receiving events from the event source.
+   * Grants permission to activate partner event sources
    *
    * Access Level: Write
    *
@@ -31,7 +31,31 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Creates a new event bus within your account. This can be a custom event bus which you can use to receive events from your own custom applications and services, or it can be a partner event bus which can be matched to a partner event source.
+   * Grants permission to cancel a replay
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CancelReplay.html
+   */
+  public toCancelReplay() {
+    this.to('events:CancelReplay');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a new archive
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateArchive.html
+   */
+  public toCreateArchive() {
+    this.to('events:CreateArchive');
+    return this;
+  }
+
+  /**
+   * Grants permission to create event buses
    *
    * Access Level: Write
    *
@@ -47,7 +71,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Called by an AWS partner to create a partner event source.
+   * Grants permission to create partner event sources
    *
    * Access Level: Write
    *
@@ -59,7 +83,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Called by an AWS partner to create a partner event source.
+   * Grants permission to deactivate event sources
    *
    * Access Level: Write
    *
@@ -71,7 +95,19 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified custom event bus or partner event bus. All rules associated with this event bus are also deleted. You can't delete your account's default event bus.
+   * Grants permission to delete an archive
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteArchive.html
+   */
+  public toDeleteArchive() {
+    this.to('events:DeleteArchive');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete event buses
    *
    * Access Level: Write
    *
@@ -83,7 +119,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Called by an AWS partner to delete a partner event source.
+   * Grants permission to delete partner event sources
    *
    * Access Level: Write
    *
@@ -95,7 +131,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Deletes a rule. You must remove all targets from a rule using RemoveTargets before you can delete the rule.
+   * Grants permission to delete rules
    *
    * Access Level: Write
    *
@@ -107,7 +143,19 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Displays the external AWS accounts that are permitted to write events to your account using your account's event bus, and the associated policy.
+   * Grants permission to retrieve details about an archive
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeArchive.html
+   */
+  public toDescribeArchive() {
+    this.to('events:DescribeArchive');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve details about event buses
    *
    * Access Level: Read
    *
@@ -119,7 +167,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Describes the details of the specified partner event source that is shared with your account.
+   * Grants permission to retrieve details about event sources
    *
    * Access Level: Read
    *
@@ -131,7 +179,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Called by an AWS partner describe the details of the specified partner event source that they have created.
+   * Grants permission to retrieve details about partner event sources
    *
    * Access Level: Read
    *
@@ -143,7 +191,19 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Describes the details of the specified rule.
+   * Grants permission to retrieve the details of a replay
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeReplay.html
+   */
+  public toDescribeReplay() {
+    this.to('events:DescribeReplay');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve details about rules
    *
    * Access Level: Read
    *
@@ -155,7 +215,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Disables a rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule expression.
+   * Grants permission to disable rules
    *
    * Access Level: Write
    *
@@ -167,7 +227,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Enables a rule. If the rule does not exist, the operation fails.
+   * Grants permissions to enable rules
    *
    * Access Level: Write
    *
@@ -179,7 +239,19 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Lists all the event buses in your account, including the default event bus, custom event buses, and partner event buses.
+   * Grants permission to retrieve a list of archives
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListArchives.html
+   */
+  public toListArchives() {
+    this.to('events:ListArchives');
+    return this;
+  }
+
+  /**
+   * Grants permission to to retrieve a list of the event buses in your account
    *
    * Access Level: List
    *
@@ -191,7 +263,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Lists the event sources shared with this account.
+   * Grants permission to to retrieve a list of event sources shared with this account
    *
    * Access Level: List
    *
@@ -203,7 +275,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Called by an AWS partner to display the AWS account ID that the specified partner event source is associated with.
+   * Grants permission to retrieve a list of AWS account IDs associated with an event source
    *
    * Access Level: List
    *
@@ -215,7 +287,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Called by an AWS partner to list all the partner event sources that they have created.
+   * Grants permission to retrieve a list partner event sources
    *
    * Access Level: List
    *
@@ -227,7 +299,19 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Lists the names of the rules that the given target is put to.
+   * Grants permission to retrieve a list of replays
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListReplays.html
+   */
+  public toListReplays() {
+    this.to('events:ListReplays');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve a list of the names of the rules associated with a target
    *
    * Access Level: List
    *
@@ -239,7 +323,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Lists the Amazon EventBridge rules in your account.
+   * Grants permission to retrieve a list of the Amazon EventBridge rules in the account
    *
    * Access Level: List
    *
@@ -251,7 +335,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * This action lists tags for an Amazon EventBridge resource.
+   * Grants permission to retrieve a list of tags associated with an Amazon EventBridge resource
    *
    * Access Level: List
    *
@@ -263,7 +347,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Lists of targets assigned to the rule.
+   * Grants permission to retrieve a list of targets defined for a rule
    *
    * Access Level: List
    *
@@ -275,7 +359,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Sends custom events to Amazon EventBridge so that they can be matched to rules.
+   * Grants permission to send custom events to Amazon EventBridge
    *
    * Access Level: Write
    *
@@ -287,7 +371,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Sends custom events to Amazon EventBridge so that they can be matched to rules.
+   * Grants permission to sends custom events to Amazon EventBridge
    *
    * Access Level: Write
    *
@@ -299,7 +383,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Running PutPermission permits the specified AWS account to put events to your account's default event bus.
+   * Grants permission to use the PutPermission action to grants permission to another AWS account to put events to your default event bus
    *
    * Access Level: Write
    *
@@ -311,7 +395,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Creates or updates a rule. Rules are enabled by default, or based on value of the State parameter.
+   * Grants permission to create or updates rules
    *
    * Access Level: Tagging
    *
@@ -332,7 +416,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Adds target(s) to a rule. Targets are the resources that can be invoked when a rule is triggered.
+   * Grants permission to add targets to a rule
    *
    * Access Level: Write
    *
@@ -347,7 +431,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Revokes the permission of another AWS account to be able to put events to your default event bus.
+   * Grants permission to revoke the permission of another AWS account to put events to your default event bus
    *
    * Access Level: Write
    *
@@ -359,7 +443,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Removes target(s) from a rule so that when the rule is triggered, those targets will no longer be invoked.
+   * Grants permission to removes targets from a rule
    *
    * Access Level: Write
    *
@@ -371,7 +455,19 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * This action tags an Amazon EventBridge resource.
+   * Grants permission to start a replay of an archive
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_StartReplay.html
+   */
+  public toStartReplay() {
+    this.to('events:StartReplay');
+    return this;
+  }
+
+  /**
+   * Grants permission to add a tag to an Amazon EventBridge resource
    *
    * Access Level: Tagging
    *
@@ -387,7 +483,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Tests whether an event pattern matches the provided event.
+   * Grants permissions to test whether an event pattern matches the provided event
    *
    * Access Level: Read
    *
@@ -399,7 +495,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * This action removes a tag from an Amazon EventBridge resource.
+   * Grants permission to remove a tag from an Amazon EventBridge resource
    *
    * Access Level: Tagging
    *
@@ -413,12 +509,27 @@ export class Events extends PolicyStatement {
     return this;
   }
 
+  /**
+   * Grants permission to update an archive
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateArchive.html
+   */
+  public toUpdateArchive() {
+    this.to('events:UpdateArchive');
+    return this;
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "ActivateEventSource",
+      "CancelReplay",
+      "CreateArchive",
       "CreateEventBus",
       "CreatePartnerEventSource",
       "DeactivateEventSource",
+      "DeleteArchive",
       "DeleteEventBus",
       "DeletePartnerEventSource",
       "DeleteRule",
@@ -429,20 +540,26 @@ export class Events extends PolicyStatement {
       "PutPermission",
       "PutTargets",
       "RemovePermission",
-      "RemoveTargets"
+      "RemoveTargets",
+      "StartReplay",
+      "UpdateArchive"
     ],
     "Read": [
+      "DescribeArchive",
       "DescribeEventBus",
       "DescribeEventSource",
       "DescribePartnerEventSource",
+      "DescribeReplay",
       "DescribeRule",
       "TestEventPattern"
     ],
     "List": [
+      "ListArchives",
       "ListEventBuses",
       "ListEventSources",
       "ListPartnerEventSourceAccounts",
       "ListPartnerEventSources",
+      "ListReplays",
       "ListRuleNamesByTarget",
       "ListRules",
       "ListTagsForResource",
@@ -510,6 +627,44 @@ export class Events extends PolicyStatement {
   public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:events:${Region}:${Account}:rule/${RuleName}';
     arn = arn.replace('${RuleName}', ruleName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type archive to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   *
+   * @param archiveName - Identifier for the archiveName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onArchive(archiveName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:events:${Region}:${Account}:archive/${ArchiveName}';
+    arn = arn.replace('${ArchiveName}', archiveName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type replay to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   *
+   * @param replayName - Identifier for the replayName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onReplay(replayName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:events:${Region}:${Account}:replay/${ReplayName}';
+    arn = arn.replace('${ReplayName}', replayName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

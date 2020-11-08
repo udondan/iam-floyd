@@ -151,6 +151,18 @@ export class Frauddetector extends PolicyStatement {
   }
 
   /**
+   * Deletes an entity type. You cannot delete an entity type that is included in an event type.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEntityType
+   */
+  public toDeleteEntityType() {
+    this.to('frauddetector:DeleteEntityType');
+    return this;
+  }
+
+  /**
    * Deletes the specified event.
    *
    * Access Level: Write
@@ -163,6 +175,78 @@ export class Frauddetector extends PolicyStatement {
   }
 
   /**
+   * Deletes an event type. You cannot delete an event type that is used in a detector or a model.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEventType
+   */
+  public toDeleteEventType() {
+    this.to('frauddetector:DeleteEventType');
+    return this;
+  }
+
+  /**
+   * Removes a SageMaker model from Amazon Fraud Detector. You can remove an Amazon SageMaker model if it is not associated with a detector version.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteExternalModel
+   */
+  public toDeleteExternalModel() {
+    this.to('frauddetector:DeleteExternalModel');
+    return this;
+  }
+
+  /**
+   * Deletes a label. You cannot delete labels that are included in an event type in Amazon Fraud Detector. You cannot delete a label assigned to an event ID. You must first delete the relevant event ID.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteLabel
+   */
+  public toDeleteLabel() {
+    this.to('frauddetector:DeleteLabel');
+    return this;
+  }
+
+  /**
+   * Deletes a model. You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a detector version.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteModel
+   */
+  public toDeleteModel() {
+    this.to('frauddetector:DeleteModel');
+    return this;
+  }
+
+  /**
+   * Deletes a model version. You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a detector version.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteModelVersion
+   */
+  public toDeleteModelVersion() {
+    this.to('frauddetector:DeleteModelVersion');
+    return this;
+  }
+
+  /**
+   * Deletes an outcome. You cannot delete an outcome that is used in a rule version.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteOutcome
+   */
+  public toDeleteOutcome() {
+    this.to('frauddetector:DeleteOutcome');
+    return this;
+  }
+
+  /**
    * Deletes the rule. You cannot delete a rule if it is used by an ACTIVE or INACTIVE detector version.
    *
    * Access Level: Write
@@ -171,6 +255,18 @@ export class Frauddetector extends PolicyStatement {
    */
   public toDeleteRule() {
     this.to('frauddetector:DeleteRule');
+    return this;
+  }
+
+  /**
+   * Deletes a variable. You cannot delete variables that are included in an event type in Amazon Fraud Detector.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteVariable
+   */
+  public toDeleteVariable() {
+    this.to('frauddetector:DeleteVariable');
     return this;
   }
 
@@ -632,8 +728,16 @@ export class Frauddetector extends PolicyStatement {
       "CreateVariable",
       "DeleteDetector",
       "DeleteDetectorVersion",
+      "DeleteEntityType",
       "DeleteEvent",
+      "DeleteEventType",
+      "DeleteExternalModel",
+      "DeleteLabel",
+      "DeleteModel",
+      "DeleteModelVersion",
+      "DeleteOutcome",
       "DeleteRule",
+      "DeleteVariable",
       "PutDetector",
       "PutEntityType",
       "PutEventType",

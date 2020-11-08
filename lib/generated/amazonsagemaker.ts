@@ -87,11 +87,29 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifInstanceTypes()
+   * - .ifImageArns()
+   * - .ifImageVersionArns()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateApp.html
    */
   public toCreateApp() {
     this.to('sagemaker:CreateApp');
+    return this;
+  }
+
+  /**
+   * Grants permission to create an AppImageConfig
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateAppImageConfig.html
+   */
+  public toCreateAppImageConfig() {
+    this.to('sagemaker:CreateAppImageConfig');
     return this;
   }
 
@@ -160,6 +178,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifVpcSubnets()
    * - .ifDomainSharingOutputKmsKey()
    * - .ifHomeEfsFileSystemKmsKey()
+   * - .ifImageArns()
+   * - .ifImageVersionArns()
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -289,6 +309,37 @@ export class Sagemaker extends PolicyStatement {
    */
   public toCreateHyperParameterTuningJob() {
     this.to('sagemaker:CreateHyperParameterTuningJob');
+    return this;
+  }
+
+  /**
+   * Grants permissions to create a SageMaker Image.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateImage.html
+   */
+  public toCreateImage() {
+    this.to('sagemaker:CreateImage');
+    return this;
+  }
+
+  /**
+   * Grants permissions to create a SageMaker ImageVersion.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateImageVersion.html
+   */
+  public toCreateImageVersion() {
+    this.to('sagemaker:CreateImageVersion');
     return this;
   }
 
@@ -558,6 +609,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifVpcSecurityGroupIds()
    * - .ifInstanceTypes()
    * - .ifDomainSharingOutputKmsKey()
+   * - .ifImageArns()
+   * - .ifImageVersionArns()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -622,6 +675,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteApp() {
     this.to('sagemaker:DeleteApp');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete an AppImageConfig
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteAppImageConfig.html
+   */
+  public toDeleteAppImageConfig() {
+    this.to('sagemaker:DeleteAppImageConfig');
     return this;
   }
 
@@ -706,6 +771,30 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteHumanLoop() {
     this.to('sagemaker:DeleteHumanLoop');
+    return this;
+  }
+
+  /**
+   * Grants permissions to delete a SageMaker Image.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteImage.html
+   */
+  public toDeleteImage() {
+    this.to('sagemaker:DeleteImage');
+    return this;
+  }
+
+  /**
+   * Grants permissions to delete a SageMaker ImageVersion.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteImageVersion.html
+   */
+  public toDeleteImageVersion() {
+    this.to('sagemaker:DeleteImageVersion');
     return this;
   }
 
@@ -869,6 +958,18 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an AppImageConfig
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeAppImageConfig.html
+   */
+  public toDescribeAppImageConfig() {
+    this.to('sagemaker:DescribeAppImageConfig');
+    return this;
+  }
+
+  /**
    * Describes an automl job that was created via CreateAutoMLJob API.
    *
    * Access Level: Read
@@ -997,6 +1098,30 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeHyperParameterTuningJob() {
     this.to('sagemaker:DescribeHyperParameterTuningJob');
+    return this;
+  }
+
+  /**
+   * Grants permissions to return information about a SageMaker Image.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeImage.html
+   */
+  public toDescribeImage() {
+    this.to('sagemaker:DescribeImage');
+    return this;
+  }
+
+  /**
+   * Grants permissions to return information about a SageMaker ImageVersion.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeImageVersion.html
+   */
+  public toDescribeImageVersion() {
+    this.to('sagemaker:DescribeImageVersion');
     return this;
   }
 
@@ -1232,6 +1357,18 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the AppImageConfigs in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListAppImageConfigs.html
+   */
+  public toListAppImageConfigs() {
+    this.to('sagemaker:ListAppImageConfigs');
+    return this;
+  }
+
+  /**
    * Grants permission to list the Apps in your account
    *
    * Access Level: List
@@ -1384,6 +1521,30 @@ export class Sagemaker extends PolicyStatement {
    */
   public toListHyperParameterTuningJobs() {
     this.to('sagemaker:ListHyperParameterTuningJobs');
+    return this;
+  }
+
+  /**
+   * Grants permissions to list ImageVersions that belong to a SageMaker Image.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListImageVersions.html
+   */
+  public toListImageVersions() {
+    this.to('sagemaker:ListImageVersions');
+    return this;
+  }
+
+  /**
+   * Grants permissions to list SageMaker Images in your account.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListImages.html
+   */
+  public toListImages() {
+    this.to('sagemaker:ListImages');
     return this;
   }
 
@@ -1799,6 +1960,18 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an AppImageConfig
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateAppImageConfig.html
+   */
+  public toUpdateAppImageConfig() {
+    this.to('sagemaker:UpdateAppImageConfig');
+    return this;
+  }
+
+  /**
    * Updates a code repository.
    *
    * Access Level: Write
@@ -1819,6 +1992,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifVpcSecurityGroupIds()
    * - .ifInstanceTypes()
    * - .ifDomainSharingOutputKmsKey()
+   * - .ifImageArns()
+   * - .ifImageVersionArns()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateDomain.html
    */
@@ -1860,6 +2035,21 @@ export class Sagemaker extends PolicyStatement {
    */
   public toUpdateExperiment() {
     this.to('sagemaker:UpdateExperiment');
+    return this;
+  }
+
+  /**
+   * Grants permissions to update the properties of a SageMaker Image.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateImage.html
+   */
+  public toUpdateImage() {
+    this.to('sagemaker:UpdateImage');
     return this;
   }
 
@@ -1952,6 +2142,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifVpcSecurityGroupIds()
    * - .ifInstanceTypes()
    * - .ifDomainSharingOutputKmsKey()
+   * - .ifImageArns()
+   * - .ifImageVersionArns()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateUserProfile.html
    */
@@ -1994,6 +2186,7 @@ export class Sagemaker extends PolicyStatement {
       "BatchPutMetrics",
       "CreateAlgorithm",
       "CreateApp",
+      "CreateAppImageConfig",
       "CreateAutoMLJob",
       "CreateCodeRepository",
       "CreateCompilationJob",
@@ -2004,6 +2197,8 @@ export class Sagemaker extends PolicyStatement {
       "CreateFlowDefinition",
       "CreateHumanTaskUi",
       "CreateHyperParameterTuningJob",
+      "CreateImage",
+      "CreateImageVersion",
       "CreateLabelingJob",
       "CreateModel",
       "CreateModelPackage",
@@ -2022,6 +2217,7 @@ export class Sagemaker extends PolicyStatement {
       "CreateWorkteam",
       "DeleteAlgorithm",
       "DeleteApp",
+      "DeleteAppImageConfig",
       "DeleteCodeRepository",
       "DeleteDomain",
       "DeleteEndpoint",
@@ -2029,6 +2225,8 @@ export class Sagemaker extends PolicyStatement {
       "DeleteExperiment",
       "DeleteFlowDefinition",
       "DeleteHumanLoop",
+      "DeleteImage",
+      "DeleteImageVersion",
       "DeleteModel",
       "DeleteModelPackage",
       "DeleteMonitoringSchedule",
@@ -2053,11 +2251,13 @@ export class Sagemaker extends PolicyStatement {
       "StopProcessingJob",
       "StopTrainingJob",
       "StopTransformJob",
+      "UpdateAppImageConfig",
       "UpdateCodeRepository",
       "UpdateDomain",
       "UpdateEndpoint",
       "UpdateEndpointWeightsAndCapacities",
       "UpdateExperiment",
+      "UpdateImage",
       "UpdateMonitoringSchedule",
       "UpdateNotebookInstance",
       "UpdateNotebookInstanceLifecycleConfig",
@@ -2071,6 +2271,7 @@ export class Sagemaker extends PolicyStatement {
       "BatchGetMetrics",
       "DescribeAlgorithm",
       "DescribeApp",
+      "DescribeAppImageConfig",
       "DescribeAutoMLJob",
       "DescribeCodeRepository",
       "DescribeCompilationJob",
@@ -2082,6 +2283,8 @@ export class Sagemaker extends PolicyStatement {
       "DescribeHumanLoop",
       "DescribeHumanTaskUi",
       "DescribeHyperParameterTuningJob",
+      "DescribeImage",
+      "DescribeImageVersion",
       "DescribeLabelingJob",
       "DescribeModel",
       "DescribeModelPackage",
@@ -2104,6 +2307,7 @@ export class Sagemaker extends PolicyStatement {
     ],
     "List": [
       "ListAlgorithms",
+      "ListAppImageConfigs",
       "ListApps",
       "ListAutoMLJobs",
       "ListCandidatesForAutoMLJob",
@@ -2117,6 +2321,8 @@ export class Sagemaker extends PolicyStatement {
       "ListHumanLoops",
       "ListHumanTaskUis",
       "ListHyperParameterTuningJobs",
+      "ListImageVersions",
+      "ListImages",
       "ListLabelingJobs",
       "ListLabelingJobsForWorkteam",
       "ListModelPackages",
@@ -2333,6 +2539,27 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type app-image-config to the statement
+   *
+   * @param appImageConfigName - Identifier for the appImageConfigName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onAppImageConfig(appImageConfigName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:app-image-config/${AppImageConfigName}';
+    arn = arn.replace('${AppImageConfigName}', appImageConfigName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type notebook-instance to the statement
    *
    * @param notebookInstanceName - Identifier for the notebookInstanceName.
@@ -2381,6 +2608,46 @@ export class Sagemaker extends PolicyStatement {
   public onCodeRepository(codeRepositoryName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:code-repository/${CodeRepositoryName}';
     arn = arn.replace('${CodeRepositoryName}', codeRepositoryName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type image to the statement
+   *
+   * @param imageName - Identifier for the imageName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onImage(imageName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:image/${ImageName}';
+    arn = arn.replace('${ImageName}', imageName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type image-version to the statement
+   *
+   * @param imageName - Identifier for the imageName.
+   * @param version - Identifier for the version.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onImageVersion(imageName: string, version: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:image-version/${ImageName}/${Version}';
+    arn = arn.replace('${ImageName}', imageName);
+    arn = arn.replace('${Version}', version);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -2835,6 +3102,44 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Filters access by the list of all image arns associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateApp()
+   * - .toCreateDomain()
+   * - .toCreateUserProfile()
+   * - .toUpdateDomain()
+   * - .toUpdateUserProfile()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifImageArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`sagemaker:ImageArns`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the list of all image version arns associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateApp()
+   * - .toCreateDomain()
+   * - .toCreateUserProfile()
+   * - .toUpdateDomain()
+   * - .toUpdateUserProfile()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifImageVersionArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`sagemaker:ImageVersionArns`, value, operator || 'StringLike');
+  }
+
+  /**
    * The list of all instance types associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
@@ -2981,7 +3286,9 @@ export class Sagemaker extends PolicyStatement {
    * - domain
    * - user-profile
    * - app
+   * - app-image-config
    * - notebook-instance
+   * - image
    * - training-job
    * - processing-job
    * - hyper-parameter-tuning-job

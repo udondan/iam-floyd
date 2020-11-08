@@ -19,6 +19,18 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to apply an archive rule.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ApplyArchiveRule.html
+   */
+  public toApplyArchiveRule() {
+    this.to('access-analyzer:ApplyArchiveRule');
+    return this;
+  }
+
+  /**
    * Grants permission to create an analyzer.
    *
    * Access Level: Write
@@ -256,6 +268,7 @@ export class AccessAnalyzer extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "ApplyArchiveRule",
       "CreateAnalyzer",
       "CreateArchiveRule",
       "DeleteAnalyzer",

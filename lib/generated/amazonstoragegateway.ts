@@ -19,7 +19,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation activates the gateway you previously deployed on your host.
+   * Grants permission to activate the gateway you previously deployed on your host
    *
    * Access Level: Write
    *
@@ -35,7 +35,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation configures one or more gateway local disks as cache for a cached-volume gateway.
+   * Grants permission to configure one or more gateway local disks as cache for a cached-volume gateway
    *
    * Access Level: Write
    *
@@ -47,7 +47,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation adds one or more tags to the specified resource.
+   * Grants permission to add one or more tags to the specified resource
    *
    * Access Level: Tagging
    *
@@ -63,7 +63,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation configures one or more gateway local disks as upload buffer for a specified gateway.
+   * Grants permission to configure one or more gateway local disks as upload buffer for a specified gateway
    *
    * Access Level: Write
    *
@@ -75,7 +75,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation configures one or more gateway local disks as working storage for a gateway.
+   * Grants permission to configure one or more gateway local disks as working storage for a gateway
    *
    * Access Level: Write
    *
@@ -87,7 +87,19 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation connects a volume to an iSCSI connection and then attaches the volume to the specified gateway.
+   * Grants permission to move a tape to the target pool specified
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AssignTapePool.html
+   */
+  public toAssignTapePool() {
+    this.to('storagegateway:AssignTapePool');
+    return this;
+  }
+
+  /**
+   * Grants permission to connect a volume to an iSCSI connection and then attaches the volume to the specified gateway
    *
    * Access Level: Write
    *
@@ -99,7 +111,19 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving process is initiated.
+   * Grants permission to allow the governance retention lock on a pool to be bypassed
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/userguide/CreatingCustomTapePool.html#TapeRetentionLock
+   */
+  public toBypassGovernanceRetention() {
+    this.to('storagegateway:BypassGovernanceRetention');
+    return this;
+  }
+
+  /**
+   * Grants permission to cancel archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving process is initiated
    *
    * Access Level: Write
    *
@@ -111,7 +135,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a gateway after the retrieval process is initiated.
+   * Grants permission to cancel retrieval of a virtual tape from the virtual tape shelf (VTS) to a gateway after the retrieval process is initiated
    *
    * Access Level: Write
    *
@@ -123,7 +147,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation creates a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached volume architecture.
+   * Grants permission to create a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached volume architecture
    *
    * Access Level: Write
    *
@@ -139,7 +163,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation creates a NFS file share on an existing file gateway.
+   * Grants permission to create a NFS file share on an existing file gateway
    *
    * Access Level: Write
    *
@@ -155,7 +179,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation creates a SMB file share on an existing file gateway.
+   * Grants permission to create a SMB file share on an existing file gateway
    *
    * Access Level: Write
    *
@@ -171,7 +195,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation initiates a snapshot of a volume.
+   * Grants permission to initiate a snapshot of a volume
    *
    * Access Level: Write
    *
@@ -183,7 +207,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation initiates a snapshot of a gateway from a volume recovery point.
+   * Grants permission to initiate a snapshot of a gateway from a volume recovery point
    *
    * Access Level: Write
    *
@@ -195,7 +219,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation creates a volume on a specified gateway.
+   * Grants permission to create a volume on a specified gateway
    *
    * Access Level: Write
    *
@@ -211,7 +235,23 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Creates a virtual tape by using your own barcode.
+   * Grants permission to create a tape pool
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateTapePool.html
+   */
+  public toCreateTapePool() {
+    this.to('storagegateway:CreateTapePool');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a virtual tape by using your own barcode
    *
    * Access Level: Write
    *
@@ -227,7 +267,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes.
+   * Grants permission to create one or more virtual tapes. You write data to the virtual tapes and then archive the tapes
    *
    * Access Level: Write
    *
@@ -243,7 +283,19 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation deletes the bandwidth rate limits of a gateway.
+   * Grants permission to delete the automatic tape creation policy configured on a gateway-VTL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteAutomaticTapeCreationPolicy.html
+   */
+  public toDeleteAutomaticTapeCreationPolicy() {
+    this.to('storagegateway:DeleteAutomaticTapeCreationPolicy');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete the bandwidth rate limits of a gateway
    *
    * Access Level: Write
    *
@@ -255,7 +307,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target and initiator pair.
+   * Grants permission to delete Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target and initiator pair
    *
    * Access Level: Write
    *
@@ -267,7 +319,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation deletes a file share from a file gateway.
+   * Grants permission to delete a file share from a file gateway
    *
    * Access Level: Write
    *
@@ -279,7 +331,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation deletes a gateway.
+   * Grants permission to delete a gateway
    *
    * Access Level: Write
    *
@@ -291,7 +343,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation deletes a snapshot of a volume.
+   * Grants permission to delete a snapshot of a volume
    *
    * Access Level: Write
    *
@@ -303,7 +355,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified virtual tape.
+   * Grants permission to delete the specified virtual tape
    *
    * Access Level: Write
    *
@@ -315,7 +367,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified virtual tape from the virtual tape shelf (VTS).
+   * Grants permission to delete the specified virtual tape from the virtual tape shelf (VTS)
    *
    * Access Level: Write
    *
@@ -327,7 +379,19 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation deletes the specified gateway volume that you previously created using the CreateCachediSCSIVolume or CreateStorediSCSIVolume API.
+   * Grants permission to delete the specified tape pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteTapePool.html
+   */
+  public toDeleteTapePool() {
+    this.to('storagegateway:DeleteTapePool');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete the specified gateway volume that you previously created using the CreateCachediSCSIVolume or CreateStorediSCSIVolume API
    *
    * Access Level: Write
    *
@@ -339,7 +403,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation returns the bandwidth rate limits of a gateway.
+   * Grants permission to get the bandwidth rate limits of a gateway
    *
    * Access Level: Read
    *
@@ -351,7 +415,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation returns information about the cache of a gateway. This operation is supported only for the gateway-cached volume architecture.
+   * Grants permission to get information about the cache of a gateway. This operation is supported only for the gateway-cached volume architecture
    *
    * Access Level: Read
    *
@@ -363,7 +427,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation returns a description of the gateway volumes specified in the request. This operation is supported only for the gateway-cached volume architecture.
+   * Grants permission to get a description of the gateway volumes specified in the request. This operation is supported only for the gateway-cached volume architecture
    *
    * Access Level: Read
    *
@@ -375,7 +439,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials information for a specified iSCSI target, one for each target-initiator pair.
+   * Grants permission to get an array of Challenge-Handshake Authentication Protocol (CHAP) credentials information for a specified iSCSI target, one for each target-initiator pair
    *
    * Access Level: Read
    *
@@ -387,7 +451,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation returns metadata about a gateway such as its name, network interfaces, configured time zone, and the state (whether the gateway is running or not).
+   * Grants permission to get metadata about a gateway such as its name, network interfaces, configured time zone, and the state (whether the gateway is running or not)
    *
    * Access Level: Read
    *
@@ -399,7 +463,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation returns your gateway's weekly maintenance start time including the day and time of the week.
+   * Grants permission to get your gateway's weekly maintenance start time including the day and time of the week
    *
    * Access Level: Read
    *
@@ -411,7 +475,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation gets a description for one or more file shares from a file gateway.
+   * Grants permission to get a description for one or more file shares from a file gateway
    *
    * Access Level: Read
    *
@@ -423,7 +487,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation gets a description for one or more file shares from a file gateway.
+   * Grants permission to get a description for one or more file shares from a file gateway
    *
    * Access Level: Read
    *
@@ -435,7 +499,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation gets a description of a Server Message Block (SMB) file share settings from a file gateway.
+   * Grants permission to get a description of a Server Message Block (SMB) file share settings from a file gateway
    *
    * Access Level: Read
    *
@@ -447,7 +511,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation describes the snapshot schedule for the specified gateway volume.
+   * Grants permission to describe the snapshot schedule for the specified gateway volume
    *
    * Access Level: Read
    *
@@ -459,7 +523,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation returns the description of the gateway volumes specified in the request.
+   * Grants permission to get the description of the gateway volumes specified in the request
    *
    * Access Level: Read
    *
@@ -471,7 +535,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
+   * Grants permission to get a description of specified virtual tapes in the virtual tape shelf (VTS)
    *
    * Access Level: Read
    *
@@ -483,7 +547,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Returns a list of virtual tape recovery points that are available for the specified gateway-VTL.
+   * Grants permission to get a list of virtual tape recovery points that are available for the specified gateway-VTL
    *
    * Access Level: Read
    *
@@ -495,7 +559,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes.
+   * Grants permission to get a description of the specified Amazon Resource Name (ARN) of virtual tapes
    *
    * Access Level: Read
    *
@@ -507,7 +571,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation returns information about the upload buffer of a gateway.
+   * Grants permission to get information about the upload buffer of a gateway
    *
    * Access Level: Read
    *
@@ -519,7 +583,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Returns a description of virtual tape library (VTL) devices for the specified gateway.
+   * Grants permission to get a description of virtual tape library (VTL) devices for the specified gateway
    *
    * Access Level: Read
    *
@@ -531,7 +595,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation returns information about the working storage of a gateway.
+   * Grants permission to get information about the working storage of a gateway
    *
    * Access Level: Read
    *
@@ -543,7 +607,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation disconnects a volume from an iSCSI connection and then detaches the volume from the specified gateway.
+   * Grants permission to disconnect a volume from an iSCSI connection and then detaches the volume from the specified gateway
    *
    * Access Level: Write
    *
@@ -555,7 +619,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Disables a gateway when the gateway is no longer functioning.
+   * Grants permission to disable a gateway when the gateway is no longer functioning
    *
    * Access Level: Write
    *
@@ -567,7 +631,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation enables you to join an Active Directory Domain.
+   * Grants permission to enable you to join an Active Directory Domain
    *
    * Access Level: Write
    *
@@ -579,7 +643,19 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation gets a list of the file shares for a specific file gateway, or the list of file shares that belong to the calling user account.
+   * Grants permission to list the automatic tape creation policies configured on the specified gateway-VTL or all gateway-VTLs owned by your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListAutomaticTapeCreationPolicies.html
+   */
+  public toListAutomaticTapeCreationPolicies() {
+    this.to('storagegateway:ListAutomaticTapeCreationPolicies');
+    return this;
+  }
+
+  /**
+   * Grants permission to get a list of the file shares for a specific file gateway, or the list of file shares that belong to the calling user account
    *
    * Access Level: List
    *
@@ -591,7 +667,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by gateway Amazon Resource Name (ARN).
+   * Grants permission to list gateways owned by an AWS account in a region specified in the request. The returned list is ordered by gateway Amazon Resource Name (ARN)
    *
    * Access Level: List
    *
@@ -603,7 +679,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation returns a list of the gateway's local disks.
+   * Grants permission to get a list of the gateway's local disks
    *
    * Access Level: List
    *
@@ -615,9 +691,9 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation lists the tags that have been added to the specified resource.
+   * Grants permission to get the tags that have been added to the specified resource
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListTagsForResource.html
    */
@@ -627,9 +703,21 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Lists virtual tapes in your virtual tape library (VTL) and your virtual tape shelf (VTS).
+   * Grants permission to list tape pools owned by your AWS account
    *
-   * Access Level: Read
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListTapePools.html
+   */
+  public toListTapePools() {
+    this.to('storagegateway:ListTapePools');
+    return this;
+  }
+
+  /**
+   * Grants permission to list virtual tapes in your virtual tape library (VTL) and your virtual tape shelf (VTS)
+   *
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListTapes.html
    */
@@ -639,9 +727,9 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation lists iSCSI initiators that are connected to a volume.
+   * Grants permission to list iSCSI initiators that are connected to a volume
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListVolumeInitiators.html
    */
@@ -651,7 +739,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation lists the recovery points for a specified gateway.
+   * Grants permission to list the recovery points for a specified gateway
    *
    * Access Level: List
    *
@@ -663,7 +751,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation lists the iSCSI stored volumes of a gateway.
+   * Grants permission to list the iSCSI stored volumes of a gateway
    *
    * Access Level: List
    *
@@ -675,7 +763,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This action sends you a notification through CloudWatch Events when all files written to your NFS file share have been uploaded to Amazon S3.
+   * Grants permission to send you a notification through CloudWatch Events when all files written to your NFS file share have been uploaded to Amazon S3
    *
    * Access Level: Write
    *
@@ -687,7 +775,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation refreshes the cache for the specified file share.
+   * Grants permission to refresh the cache for the specified file share
    *
    * Access Level: Write
    *
@@ -699,7 +787,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation removes one or more tags from the specified resource.
+   * Grants permission to remove one or more tags from the specified resource
    *
    * Access Level: Tagging
    *
@@ -714,7 +802,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation resets all cache disks that have encountered a error and makes the disks available for reconfiguration as cache storage.
+   * Grants permission to reset all cache disks that have encountered a error and makes the disks available for reconfiguration as cache storage
    *
    * Access Level: Write
    *
@@ -726,7 +814,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a gateway-VTL.
+   * Grants permission to retrieve an archived virtual tape from the virtual tape shelf (VTS) to a gateway-VTL
    *
    * Access Level: Write
    *
@@ -738,7 +826,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Retrieves the recovery point for the specified virtual tape.
+   * Grants permission to retrieve the recovery point for the specified virtual tape
    *
    * Access Level: Write
    *
@@ -750,7 +838,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Sets the password for your VM local console.
+   * Grants permission to set the password for your VM local console
    *
    * Access Level: Write
    *
@@ -762,7 +850,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Sets the password for SMB Guest user.
+   * Grants permission to set the password for SMB Guest user
    *
    * Access Level: Write
    *
@@ -774,7 +862,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation shuts down a gateway.
+   * Grants permission to shut down a gateway
    *
    * Access Level: Write
    *
@@ -786,7 +874,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation starts a gateway that you previously shut down.
+   * Grants permission to start a gateway that you previously shut down
    *
    * Access Level: Write
    *
@@ -798,7 +886,19 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation updates the bandwidth rate limits of a gateway.
+   * Grants permission to update the automatic tape creation policy configured on a gateway-VTL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateAutomaticTapeCreationPolicy.html
+   */
+  public toUpdateAutomaticTapeCreationPolicy() {
+    this.to('storagegateway:UpdateAutomaticTapeCreationPolicy');
+    return this;
+  }
+
+  /**
+   * Grants permission to update the bandwidth rate limits of a gateway
    *
    * Access Level: Write
    *
@@ -810,7 +910,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target.
+   * Grants permission to update the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target
    *
    * Access Level: Write
    *
@@ -822,7 +922,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation updates a gateway's metadata, which includes the gateway's name and time zone.
+   * Grants permission to update a gateway's metadata, which includes the gateway's name and time zone
    *
    * Access Level: Write
    *
@@ -834,7 +934,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation updates the gateway virtual machine (VM) software.
+   * Grants permission to update the gateway virtual machine (VM) software
    *
    * Access Level: Write
    *
@@ -846,7 +946,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation updates a gateway's weekly maintenance start time information, including day and time of the week. The maintenance time is the time in your gateway's time zone.
+   * Grants permission to update a gateway's weekly maintenance start time information, including day and time of the week. The maintenance time is the time in your gateway's time zone
    *
    * Access Level: Write
    *
@@ -858,7 +958,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation updates a NFS file share.
+   * Grants permission to update a NFS file share
    *
    * Access Level: Write
    *
@@ -870,7 +970,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation updates a SMB file share.
+   * Grants permission to update a SMB file share
    *
    * Access Level: Write
    *
@@ -882,7 +982,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation updates a snapshot schedule configured for a gateway volume.
+   * Grants permission to update a snapshot schedule configured for a gateway volume
    *
    * Access Level: Write
    *
@@ -894,7 +994,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * This operation updates the type of medium changer in a gateway-VTL.
+   * Grants permission to update the type of medium changer in a gateway-VTL
    *
    * Access Level: Write
    *
@@ -911,7 +1011,9 @@ export class Storagegateway extends PolicyStatement {
       "AddCache",
       "AddUploadBuffer",
       "AddWorkingStorage",
+      "AssignTapePool",
       "AttachVolume",
+      "BypassGovernanceRetention",
       "CancelArchival",
       "CancelRetrieval",
       "CreateCachediSCSIVolume",
@@ -920,8 +1022,10 @@ export class Storagegateway extends PolicyStatement {
       "CreateSnapshot",
       "CreateSnapshotFromVolumeRecoveryPoint",
       "CreateStorediSCSIVolume",
+      "CreateTapePool",
       "CreateTapeWithBarcode",
       "CreateTapes",
+      "DeleteAutomaticTapeCreationPolicy",
       "DeleteBandwidthRateLimit",
       "DeleteChapCredentials",
       "DeleteFileShare",
@@ -929,6 +1033,7 @@ export class Storagegateway extends PolicyStatement {
       "DeleteSnapshotSchedule",
       "DeleteTape",
       "DeleteTapeArchive",
+      "DeleteTapePool",
       "DeleteVolume",
       "DetachVolume",
       "DisableGateway",
@@ -942,6 +1047,7 @@ export class Storagegateway extends PolicyStatement {
       "SetSMBGuestPassword",
       "ShutdownGateway",
       "StartGateway",
+      "UpdateAutomaticTapeCreationPolicy",
       "UpdateBandwidthRateLimit",
       "UpdateChapCredentials",
       "UpdateGatewayInformation",
@@ -973,15 +1079,17 @@ export class Storagegateway extends PolicyStatement {
       "DescribeTapes",
       "DescribeUploadBuffer",
       "DescribeVTLDevices",
-      "DescribeWorkingStorage",
-      "ListTagsForResource",
-      "ListTapes",
-      "ListVolumeInitiators"
+      "DescribeWorkingStorage"
     ],
     "List": [
+      "ListAutomaticTapeCreationPolicies",
       "ListFileShares",
       "ListGateways",
       "ListLocalDisks",
+      "ListTagsForResource",
+      "ListTapePools",
+      "ListTapes",
+      "ListVolumeInitiators",
       "ListVolumeRecoveryPoints",
       "ListVolumes"
     ]
@@ -1068,6 +1176,28 @@ export class Storagegateway extends PolicyStatement {
   public onTape(tapeBarcode: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:tape/${TapeBarcode}';
     arn = arn.replace('${TapeBarcode}', tapeBarcode);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type tapepool to the statement
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/userguide/CreatingCustomTapePool.html
+   *
+   * @param poolId - Identifier for the poolId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTapepool(poolId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:tapepool/${PoolId}';
+    arn = arn.replace('${PoolId}', poolId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
