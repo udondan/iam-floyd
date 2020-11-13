@@ -83,6 +83,18 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
+   * Lists the license configuration operations that failed
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListFailuresForLicenseConfigurationOperations.html
+   */
+  public toListFailuresForLicenseConfigurationOperations() {
+    this.to('license-manager:ListFailuresForLicenseConfigurationOperations');
+    return this;
+  }
+
+  /**
    * Lists license configurations
    *
    * Access Level: List
@@ -221,6 +233,7 @@ export class LicenseManager extends PolicyStatement {
       "GetLicenseConfiguration",
       "GetServiceSettings",
       "ListAssociationsForLicenseConfiguration",
+      "ListFailuresForLicenseConfigurationOperations",
       "ListLicenseConfigurations",
       "ListLicenseSpecificationsForResource",
       "ListResourceInventory",

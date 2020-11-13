@@ -1,5 +1,5 @@
 import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [comprehend](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html).
@@ -98,6 +98,10 @@ export class Comprehend extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_CreateDocumentClassifier.html
    */
@@ -130,6 +134,9 @@ export class Comprehend extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifVolumeKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_CreateEntityRecognizer.html
    */
@@ -503,6 +510,12 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartDocumentClassificationJob.html
    */
   public toStartDocumentClassificationJob() {
@@ -514,6 +527,12 @@ export class Comprehend extends PolicyStatement {
    * Grants permission to start an asynchronous dominant language detection job for a collection of documents
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartDominantLanguageDetectionJob.html
    */
@@ -527,6 +546,12 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartEntitiesDetectionJob.html
    */
   public toStartEntitiesDetectionJob() {
@@ -538,6 +563,12 @@ export class Comprehend extends PolicyStatement {
    * Grants permission to start an asynchronous key phrase detection job for a collection of documents
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartKeyPhrasesDetectionJob.html
    */
@@ -551,6 +582,9 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifOutputKmsKey()
+   *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartPiiEntitiesDetectionJob.html
    */
   public toStartPiiEntitiesDetectionJob() {
@@ -563,6 +597,12 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartSentimentDetectionJob.html
    */
   public toStartSentimentDetectionJob() {
@@ -574,6 +614,12 @@ export class Comprehend extends PolicyStatement {
    * Grants permission to start an asynchronous job to detect the most common topics in the collection of documents and the phrases associated with each topic
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartTopicsDetectionJob.html
    */
@@ -854,5 +900,93 @@ export class Comprehend extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * The output KMS key associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateDocumentClassifier()
+   * - .toStartDocumentClassificationJob()
+   * - .toStartDominantLanguageDetectionJob()
+   * - .toStartEntitiesDetectionJob()
+   * - .toStartKeyPhrasesDetectionJob()
+   * - .toStartPiiEntitiesDetectionJob()
+   * - .toStartSentimentDetectionJob()
+   * - .toStartTopicsDetectionJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifOutputKmsKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`comprehend:OutputKmsKey`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * The volume KMS key associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateDocumentClassifier()
+   * - .toCreateEntityRecognizer()
+   * - .toStartDocumentClassificationJob()
+   * - .toStartDominantLanguageDetectionJob()
+   * - .toStartEntitiesDetectionJob()
+   * - .toStartKeyPhrasesDetectionJob()
+   * - .toStartSentimentDetectionJob()
+   * - .toStartTopicsDetectionJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifVolumeKmsKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`comprehend:VolumeKmsKey`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * The list of all VPC security group ids associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateDocumentClassifier()
+   * - .toCreateEntityRecognizer()
+   * - .toStartDocumentClassificationJob()
+   * - .toStartDominantLanguageDetectionJob()
+   * - .toStartEntitiesDetectionJob()
+   * - .toStartKeyPhrasesDetectionJob()
+   * - .toStartSentimentDetectionJob()
+   * - .toStartTopicsDetectionJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcSecurityGroupIds(value: string | string[], operator?: Operator | string) {
+    return this.if(`comprehend:VpcSecurityGroupIds`, value, operator || 'StringLike');
+  }
+
+  /**
+   * The list of all VPC subnets associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateDocumentClassifier()
+   * - .toCreateEntityRecognizer()
+   * - .toStartDocumentClassificationJob()
+   * - .toStartDominantLanguageDetectionJob()
+   * - .toStartEntitiesDetectionJob()
+   * - .toStartKeyPhrasesDetectionJob()
+   * - .toStartSentimentDetectionJob()
+   * - .toStartTopicsDetectionJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcSubnets(value: string | string[], operator?: Operator | string) {
+    return this.if(`comprehend:VpcSubnets`, value, operator || 'StringLike');
   }
 }
