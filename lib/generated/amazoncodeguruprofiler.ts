@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [codeguru-profiler](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguruprofiler.html).
+ * Statement provider for service [codeguru-profiler](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncodeguruprofiler.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class CodeguruProfiler extends PolicyStatement {
   public servicePrefix = 'codeguru-profiler';
 
   /**
-   * Statement provider for service [codeguru-profiler](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguruprofiler.html).
+   * Statement provider for service [codeguru-profiler](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncodeguruprofiler.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

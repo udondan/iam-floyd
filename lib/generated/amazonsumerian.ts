@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [sumerian](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsumerian.html).
+ * Statement provider for service [sumerian](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsumerian.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Sumerian extends PolicyStatement {
   public servicePrefix = 'sumerian';
 
   /**
-   * Statement provider for service [sumerian](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsumerian.html).
+   * Statement provider for service [sumerian](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsumerian.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

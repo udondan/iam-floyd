@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement, Operator } from "../shared";
 
 /**
- * Statement provider for service [elasticloadbalancing-v2](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elasticloadbalancingv2.html).
+ * Statement provider for service [elasticloadbalancing-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticloadbalancingv2.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   public servicePrefix = 'elasticloadbalancing-v2';
 
   /**
-   * Statement provider for service [elasticloadbalancing-v2](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elasticloadbalancingv2.html).
+   * Statement provider for service [elasticloadbalancing-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticloadbalancingv2.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement, Operator } from "../shared";
 
 /**
- * Statement provider for service [datapipeline](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_datapipeline.html).
+ * Statement provider for service [datapipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_datapipeline.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Datapipeline extends PolicyStatement {
   public servicePrefix = 'datapipeline';
 
   /**
-   * Statement provider for service [datapipeline](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_datapipeline.html).
+   * Statement provider for service [datapipeline](https://docs.aws.amazon.com/service-authorization/latest/reference/list_datapipeline.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

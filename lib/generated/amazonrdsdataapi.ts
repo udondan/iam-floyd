@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [rds-data](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsdataapi.html).
+ * Statement provider for service [rds-data](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrdsdataapi.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class RdsData extends PolicyStatement {
   public servicePrefix = 'rds-data';
 
   /**
-   * Statement provider for service [rds-data](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsdataapi.html).
+   * Statement provider for service [rds-data](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrdsdataapi.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

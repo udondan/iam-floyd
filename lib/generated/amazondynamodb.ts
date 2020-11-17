@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement, Operator } from "../shared";
 
 /**
- * Statement provider for service [dynamodb](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondynamodb.html).
+ * Statement provider for service [dynamodb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Dynamodb extends PolicyStatement {
   public servicePrefix = 'dynamodb';
 
   /**
-   * Statement provider for service [dynamodb](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondynamodb.html).
+   * Statement provider for service [dynamodb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -211,6 +211,18 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Describes an existing Export of a table
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeExport.html
+   */
+  public toDescribeExport() {
+    this.to('dynamodb:DescribeExport');
+    return this;
+  }
+
+  /**
    * Returns information about the specified global table
    *
    * Access Level: Read
@@ -315,6 +327,18 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Initiates an Export of a DynamoDB table to S3
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExportTableToPointInTime.html
+   */
+  public toExportTableToPointInTime() {
+    this.to('dynamodb:ExportTableToPointInTime');
+    return this;
+  }
+
+  /**
    * The GetItem operation returns a set of attributes for the item with the given primary key
    *
    * Access Level: Read
@@ -378,6 +402,18 @@ export class Dynamodb extends PolicyStatement {
    */
   public toListContributorInsights() {
     this.to('dynamodb:ListContributorInsights');
+    return this;
+  }
+
+  /**
+   * List exports associated with the account and endpoint
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListExports.html
+   */
+  public toListExports() {
+    this.to('dynamodb:ListExports');
     return this;
   }
 
@@ -653,6 +689,7 @@ export class Dynamodb extends PolicyStatement {
       "DescribeBackup",
       "DescribeContinuousBackups",
       "DescribeContributorInsights",
+      "DescribeExport",
       "DescribeGlobalTable",
       "DescribeGlobalTableSettings",
       "DescribeLimits",
@@ -680,6 +717,7 @@ export class Dynamodb extends PolicyStatement {
       "DeleteItem",
       "DeleteTable",
       "DeleteTableReplica",
+      "ExportTableToPointInTime",
       "PurchaseReservedCapacityOfferings",
       "PutItem",
       "RestoreTableFromBackup",
@@ -696,6 +734,7 @@ export class Dynamodb extends PolicyStatement {
     "List": [
       "ListBackups",
       "ListContributorInsights",
+      "ListExports",
       "ListGlobalTables",
       "ListTables"
     ],
@@ -781,6 +820,27 @@ export class Dynamodb extends PolicyStatement {
     var arn = 'arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/backup/${BackupName}';
     arn = arn.replace('${TableName}', tableName);
     arn = arn.replace('${BackupName}', backupName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type export to the statement
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/backuprestore_HowItWorks.html
+   *
+   * @param tableName - Identifier for the tableName.
+   * @param exportName - Identifier for the exportName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onExport(tableName: string, exportName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/export/${ExportName}';
+    arn = arn.replace('${TableName}', tableName);
+    arn = arn.replace('${ExportName}', exportName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

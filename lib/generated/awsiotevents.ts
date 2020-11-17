@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [iotevents](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotevents.html).
+ * Statement provider for service [iotevents](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotevents.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Iotevents extends PolicyStatement {
   public servicePrefix = 'iotevents';
 
   /**
-   * Statement provider for service [iotevents](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotevents.html).
+   * Statement provider for service [iotevents](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotevents.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

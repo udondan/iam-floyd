@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [sdb](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsimpledb.html).
+ * Statement provider for service [sdb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpledb.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Sdb extends PolicyStatement {
   public servicePrefix = 'sdb';
 
   /**
-   * Statement provider for service [sdb](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsimpledb.html).
+   * Statement provider for service [sdb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpledb.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

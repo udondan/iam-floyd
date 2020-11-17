@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [fms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsfirewallmanager.html).
+ * Statement provider for service [fms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsfirewallmanager.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Fms extends PolicyStatement {
   public servicePrefix = 'fms';
 
   /**
-   * Statement provider for service [fms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsfirewallmanager.html).
+   * Statement provider for service [fms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsfirewallmanager.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

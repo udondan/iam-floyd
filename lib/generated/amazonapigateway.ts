@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [execute-api](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonapigateway.html).
+ * Statement provider for service [execute-api](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigateway.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class ExecuteApi extends PolicyStatement {
   public servicePrefix = 'execute-api';
 
   /**
-   * Statement provider for service [execute-api](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonapigateway.html).
+   * Statement provider for service [execute-api](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigateway.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

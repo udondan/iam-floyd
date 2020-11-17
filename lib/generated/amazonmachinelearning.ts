@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [machinelearning](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmachinelearning.html).
+ * Statement provider for service [machinelearning](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmachinelearning.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Machinelearning extends PolicyStatement {
   public servicePrefix = 'machinelearning';
 
   /**
-   * Statement provider for service [machinelearning](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmachinelearning.html).
+   * Statement provider for service [machinelearning](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmachinelearning.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

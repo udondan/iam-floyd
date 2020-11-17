@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement, Operator } from "../shared";
 
 /**
- * Statement provider for service [s3-outposts](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3onoutposts.html).
+ * Statement provider for service [s3-outposts](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3onoutposts.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class S3Outposts extends PolicyStatement {
   public servicePrefix = 's3-outposts';
 
   /**
-   * Statement provider for service [s3-outposts](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3onoutposts.html).
+   * Statement provider for service [s3-outposts](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3onoutposts.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

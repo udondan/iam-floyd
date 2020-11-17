@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [aws-marketplace-private](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsprivatemarketplace.html).
+ * Statement provider for service [aws-marketplace-private](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsprivatemarketplace.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class AwsMarketplacePrivate extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-private';
 
   /**
-   * Statement provider for service [aws-marketplace-private](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsprivatemarketplace.html).
+   * Statement provider for service [aws-marketplace-private](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsprivatemarketplace.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement, Operator } from "../shared";
 
 /**
- * Statement provider for service [codestar-connections](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarconnections.html).
+ * Statement provider for service [codestar-connections](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodestarconnections.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class CodestarConnections extends PolicyStatement {
   public servicePrefix = 'codestar-connections';
 
   /**
-   * Statement provider for service [codestar-connections](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarconnections.html).
+   * Statement provider for service [codestar-connections](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodestarconnections.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

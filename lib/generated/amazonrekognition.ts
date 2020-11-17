@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [rekognition](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrekognition.html).
+ * Statement provider for service [rekognition](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrekognition.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Rekognition extends PolicyStatement {
   public servicePrefix = 'rekognition';
 
   /**
-   * Statement provider for service [rekognition](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrekognition.html).
+   * Statement provider for service [rekognition](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrekognition.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

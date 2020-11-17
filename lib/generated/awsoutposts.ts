@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [outposts](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsoutposts.html).
+ * Statement provider for service [outposts](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsoutposts.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Outposts extends PolicyStatement {
   public servicePrefix = 'outposts';
 
   /**
-   * Statement provider for service [outposts](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsoutposts.html).
+   * Statement provider for service [outposts](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsoutposts.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,7 +19,7 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
-   * Creates an Outpost
+   * Grants permission to create an Outpost
    *
    * Access Level: Write
    *
@@ -31,7 +31,31 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
-   * Gets information about the specified Outpost
+   * Grants permission to delete an outpost
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
+   */
+  public toDeleteOutpost() {
+    this.to('outposts:DeleteOutpost');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete an site
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
+   */
+  public toDeleteSite() {
+    this.to('outposts:DeleteSite');
+    return this;
+  }
+
+  /**
+   * Grants permission to get information about the specified Outpost
    *
    * Access Level: Read
    *
@@ -43,7 +67,7 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
-   * Lists the instance types for the specified Outpost
+   * Grants permission to list the instance types for the specified Outpost
    *
    * Access Level: Read
    *
@@ -55,7 +79,7 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
-   * List the Outposts for your AWS account
+   * Grants permission to list the Outposts for your AWS account
    *
    * Access Level: List
    *
@@ -67,7 +91,7 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
-   * Lists the sites for the specified AWS account
+   * Grants permission to list the sites for your AWS account
    *
    * Access Level: List
    *
@@ -80,7 +104,9 @@ export class Outposts extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
-      "CreateOutpost"
+      "CreateOutpost",
+      "DeleteOutpost",
+      "DeleteSite"
     ],
     "Read": [
       "GetOutpost",
@@ -91,61 +117,4 @@ export class Outposts extends PolicyStatement {
       "ListSites"
     ]
   };
-
-  /**
-   * Adds a resource of type Outpost to the statement
-   *
-   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_Outpost.html
-   *
-   * @param outpostId - Identifier for the outpostId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   */
-  public onOutpost(outpostId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:outposts:${Region}:${Account}:outpost/${OutpostId}';
-    arn = arn.replace('${OutpostId}', outpostId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
-   * Adds a resource of type Site to the statement
-   *
-   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_Site.html
-   *
-   * @param siteId - Identifier for the siteId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   */
-  public onSite(siteId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:outposts:${Region}:${Account}:site/${SiteId}';
-    arn = arn.replace('${SiteId}', siteId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
-   * Adds a resource of type Order to the statement
-   *
-   * https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
-   *
-   * @param orderId - Identifier for the orderId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   */
-  public onOrder(orderId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:outposts:${Region}:${Account}:order/${OrderId}';
-    arn = arn.replace('${OrderId}', orderId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
 }

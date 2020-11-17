@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [codedeploy](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodedeploy.html).
+ * Statement provider for service [codedeploy](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodedeploy.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Codedeploy extends PolicyStatement {
   public servicePrefix = 'codedeploy';
 
   /**
-   * Statement provider for service [codedeploy](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodedeploy.html).
+   * Statement provider for service [codedeploy](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodedeploy.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

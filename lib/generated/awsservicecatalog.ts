@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement, Operator } from "../shared";
 
 /**
- * Statement provider for service [servicecatalog](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsservicecatalog.html).
+ * Statement provider for service [servicecatalog](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicecatalog.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Servicecatalog extends PolicyStatement {
   public servicePrefix = 'servicecatalog';
 
   /**
-   * Statement provider for service [servicecatalog](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsservicecatalog.html).
+   * Statement provider for service [servicecatalog](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicecatalog.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -27,6 +27,18 @@ export class Servicecatalog extends PolicyStatement {
    */
   public toAcceptPortfolioShare() {
     this.to('servicecatalog:AcceptPortfolioShare');
+    return this;
+  }
+
+  /**
+   * Grants permission to associate an attribute group with an application.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateAttributeGroup.html
+   */
+  public toAssociateAttributeGroup() {
+    this.to('servicecatalog:AssociateAttributeGroup');
     return this;
   }
 
@@ -63,6 +75,18 @@ export class Servicecatalog extends PolicyStatement {
    */
   public toAssociateProductWithPortfolio() {
     this.to('servicecatalog:AssociateProductWithPortfolio');
+    return this;
+  }
+
+  /**
+   * Grants permission to associate a resource with an application.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateResource.html
+   */
+  public toAssociateResource() {
+    this.to('servicecatalog:AssociateResource');
     return this;
   }
 
@@ -123,6 +147,38 @@ export class Servicecatalog extends PolicyStatement {
    */
   public toCopyProduct() {
     this.to('servicecatalog:CopyProduct');
+    return this;
+  }
+
+  /**
+   * Grants permission to create an application.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateApplication.html
+   */
+  public toCreateApplication() {
+    this.to('servicecatalog:CreateApplication');
+    return this;
+  }
+
+  /**
+   * Grants permission to create an attribute group.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateAttributeGroup.html
+   */
+  public toCreateAttributeGroup() {
+    this.to('servicecatalog:CreateAttributeGroup');
     return this;
   }
 
@@ -227,6 +283,30 @@ export class Servicecatalog extends PolicyStatement {
    */
   public toCreateTagOption() {
     this.to('servicecatalog:CreateTagOption');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete an application if all associations have been removed from the application.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteApplication.html
+   */
+  public toDeleteApplication() {
+    this.to('servicecatalog:DeleteApplication');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete an attribute group if all associations have been removed from the attribute group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteAttributeGroup.html
+   */
+  public toDeleteAttributeGroup() {
+    this.to('servicecatalog:DeleteAttributeGroup');
     return this;
   }
 
@@ -524,6 +604,18 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate an attribute group from an application.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateAttributeGroup.html
+   */
+  public toDisassociateAttributeGroup() {
+    this.to('servicecatalog:DisassociateAttributeGroup');
+    return this;
+  }
+
+  /**
    * Grants permission to disassociate a budget from a resource
    *
    * Access Level: Write
@@ -556,6 +648,18 @@ export class Servicecatalog extends PolicyStatement {
    */
   public toDisassociateProductFromPortfolio() {
     this.to('servicecatalog:DisassociateProductFromPortfolio');
+    return this;
+  }
+
+  /**
+   * Grants permission to disassociate a resource from an application.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateResource.html
+   */
+  public toDisassociateResource() {
+    this.to('servicecatalog:DisassociateResource');
     return this;
   }
 
@@ -632,6 +736,42 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an application.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_GetApplication.html
+   */
+  public toGetApplication() {
+    this.to('servicecatalog:GetApplication');
+    return this;
+  }
+
+  /**
+   * Grants permission to get an attribute group.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_GetAttributeGroup.html
+   */
+  public toGetAttributeGroup() {
+    this.to('servicecatalog:GetAttributeGroup');
+    return this;
+  }
+
+  /**
+   * Grants permission to import a resource into a provisioned product.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ImportAsProvisionedProduct.html
+   */
+  public toImportAsProvisionedProduct() {
+    this.to('servicecatalog:ImportAsProvisionedProduct');
+    return this;
+  }
+
+  /**
    * Grants permission to list the portfolios that have been shared with you and you have accepted
    *
    * Access Level: List
@@ -640,6 +780,54 @@ export class Servicecatalog extends PolicyStatement {
    */
   public toListAcceptedPortfolioShares() {
     this.to('servicecatalog:ListAcceptedPortfolioShares');
+    return this;
+  }
+
+  /**
+   * Grants permission to list the applications in your account.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListApplications.html
+   */
+  public toListApplications() {
+    this.to('servicecatalog:ListApplications');
+    return this;
+  }
+
+  /**
+   * Grants permission to list the attribute groups associated with an application.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListAssociatedAttributeGroups.html
+   */
+  public toListAssociatedAttributeGroups() {
+    this.to('servicecatalog:ListAssociatedAttributeGroups');
+    return this;
+  }
+
+  /**
+   * Grants permission to list the resources associated with an application.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListAssociatedResources.html
+   */
+  public toListAssociatedResources() {
+    this.to('servicecatalog:ListAssociatedResources');
+    return this;
+  }
+
+  /**
+   * Grants permission to list the attribute groups in your account.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListAttributeGroups.html
+   */
+  public toListAttributeGroups() {
+    this.to('servicecatalog:ListAttributeGroups');
     return this;
   }
 
@@ -952,6 +1140,30 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the attributes of an existing application.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateApplication.html
+   */
+  public toUpdateApplication() {
+    this.to('servicecatalog:UpdateApplication');
+    return this;
+  }
+
+  /**
+   * Grants permission to update the attributes of an existing attribute group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateAttributeGroup.html
+   */
+  public toUpdateAttributeGroup() {
+    this.to('servicecatalog:UpdateAttributeGroup');
+    return this;
+  }
+
+  /**
    * Grants permission to update the metadata fields of an existing constraint
    *
    * Access Level: Write
@@ -1063,14 +1275,18 @@ export class Servicecatalog extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AcceptPortfolioShare",
+      "AssociateAttributeGroup",
       "AssociateBudgetWithResource",
       "AssociatePrincipalWithPortfolio",
       "AssociateProductWithPortfolio",
+      "AssociateResource",
       "AssociateServiceActionWithProvisioningArtifact",
       "AssociateTagOptionWithResource",
       "BatchAssociateServiceActionWithProvisioningArtifact",
       "BatchDisassociateServiceActionFromProvisioningArtifact",
       "CopyProduct",
+      "CreateApplication",
+      "CreateAttributeGroup",
       "CreateConstraint",
       "CreatePortfolio",
       "CreateProduct",
@@ -1078,6 +1294,8 @@ export class Servicecatalog extends PolicyStatement {
       "CreateProvisioningArtifact",
       "CreateServiceAction",
       "CreateTagOption",
+      "DeleteApplication",
+      "DeleteAttributeGroup",
       "DeleteConstraint",
       "DeletePortfolio",
       "DeleteProduct",
@@ -1086,17 +1304,22 @@ export class Servicecatalog extends PolicyStatement {
       "DeleteServiceAction",
       "DeleteTagOption",
       "DisableAWSOrganizationsAccess",
+      "DisassociateAttributeGroup",
       "DisassociateBudgetFromResource",
       "DisassociatePrincipalFromPortfolio",
       "DisassociateProductFromPortfolio",
+      "DisassociateResource",
       "DisassociateServiceActionFromProvisioningArtifact",
       "DisassociateTagOptionFromResource",
       "EnableAWSOrganizationsAccess",
       "ExecuteProvisionedProductPlan",
       "ExecuteProvisionedProductServiceAction",
+      "ImportAsProvisionedProduct",
       "ProvisionProduct",
       "RejectPortfolioShare",
       "TerminateProvisionedProduct",
+      "UpdateApplication",
+      "UpdateAttributeGroup",
       "UpdateConstraint",
       "UpdatePortfolio",
       "UpdateProduct",
@@ -1126,10 +1349,16 @@ export class Servicecatalog extends PolicyStatement {
       "DescribeServiceAction",
       "DescribeServiceActionExecutionParameters",
       "DescribeTagOption",
-      "GetAWSOrganizationsAccessStatus"
+      "GetAWSOrganizationsAccessStatus",
+      "GetApplication",
+      "GetAttributeGroup"
     ],
     "List": [
       "ListAcceptedPortfolioShares",
+      "ListApplications",
+      "ListAssociatedAttributeGroups",
+      "ListAssociatedResources",
+      "ListAttributeGroups",
       "ListBudgetsForResource",
       "ListConstraintsForPortfolio",
       "ListLaunchPaths",
@@ -1153,6 +1382,50 @@ export class Servicecatalog extends PolicyStatement {
       "SearchProvisionedProducts"
     ]
   };
+
+  /**
+   * Adds a resource of type Application to the statement
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateApplication.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:servicecatalog:${Region}:${Account}:/applications/${ApplicationId}';
+    arn = arn.replace('${ApplicationId}', applicationId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type AttributeGroup to the statement
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateAttributeGroup.html
+   *
+   * @param attributeGroupId - Identifier for the attributeGroupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAttributeGroup(attributeGroupId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:servicecatalog:${Region}:${Account}:/attribute-groups/${AttributeGroupId}';
+    arn = arn.replace('${AttributeGroupId}', attributeGroupId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
 
   /**
    * Adds a resource of type Portfolio to the statement

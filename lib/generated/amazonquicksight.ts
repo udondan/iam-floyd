@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement, Operator } from "../shared";
 
 /**
- * Statement provider for service [quicksight](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonquicksight.html).
+ * Statement provider for service [quicksight](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,12 +10,28 @@ export class Quicksight extends PolicyStatement {
   public servicePrefix = 'quicksight';
 
   /**
-   * Statement provider for service [quicksight](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonquicksight.html).
+   * Statement provider for service [quicksight](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
   constructor (sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permission to cancel a SPICE ingestions on a dataset
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CancelIngestion.html
+   */
+  public toCancelIngestion() {
+    this.to('quicksight:CancelIngestion');
+    return this;
   }
 
   /**
@@ -47,6 +63,22 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Creates an analysis from a template
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateAnalysis.html
+   */
+  public toCreateAnalysis() {
+    this.to('quicksight:CreateAnalysis');
+    return this;
+  }
+
+  /**
    * Grants permission to create a custom permissions resource for restricting user access
    *
    * Access Level: Write
@@ -71,6 +103,38 @@ export class Quicksight extends PolicyStatement {
    */
   public toCreateDashboard() {
     this.to('quicksight:CreateDashboard');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a dataset
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDataSet.html
+   */
+  public toCreateDataSet() {
+    this.to('quicksight:CreateDataSet');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a data source
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDataSource.html
+   */
+  public toCreateDataSource() {
+    this.to('quicksight:CreateDataSource');
     return this;
   }
 
@@ -107,6 +171,22 @@ export class Quicksight extends PolicyStatement {
    */
   public toCreateIAMPolicyAssignment() {
     this.to('quicksight:CreateIAMPolicyAssignment');
+    return this;
+  }
+
+  /**
+   * Grants permission to start a SPICE ingestion on a dataset
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateIngestion.html
+   */
+  public toCreateIngestion() {
+    this.to('quicksight:CreateIngestion');
     return this;
   }
 
@@ -215,6 +295,18 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Deletes an analysis
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteAnalysis.html
+   */
+  public toDeleteAnalysis() {
+    this.to('quicksight:DeleteAnalysis');
+    return this;
+  }
+
+  /**
    * Deletes a dashboard
    *
    * Access Level: Write
@@ -223,6 +315,38 @@ export class Quicksight extends PolicyStatement {
    */
   public toDeleteDashboard() {
     this.to('quicksight:DeleteDashboard');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a dataset
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteDataSet.html
+   */
+  public toDeleteDataSet() {
+    this.to('quicksight:DeleteDataSet');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a data source
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteDataSource.html
+   */
+  public toDeleteDataSource() {
+    this.to('quicksight:DeleteDataSource');
     return this;
   }
 
@@ -371,6 +495,30 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Provides a summary for an analysis
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysis.html
+   */
+  public toDescribeAnalysis() {
+    this.to('quicksight:DescribeAnalysis');
+    return this;
+  }
+
+  /**
+   * Describes read and write permissions for an analysis
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysisPermissions.html
+   */
+  public toDescribeAnalysisPermissions() {
+    this.to('quicksight:DescribeAnalysisPermissions');
+    return this;
+  }
+
+  /**
    * Grants permission to describe a custom permissions resource in a QuickSight account
    *
    * Access Level: Write
@@ -407,6 +555,70 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a dataset
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDataSet.html
+   */
+  public toDescribeDataSet() {
+    this.to('quicksight:DescribeDataSet');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe the resource policy of a dataset
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDataSetPermissions.html
+   */
+  public toDescribeDataSetPermissions() {
+    this.to('quicksight:DescribeDataSetPermissions');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe a data source
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDataSource.html
+   */
+  public toDescribeDataSource() {
+    this.to('quicksight:DescribeDataSource');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe the resource policy of a data source
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDataSourcePermissions.html
+   */
+  public toDescribeDataSourcePermissions() {
+    this.to('quicksight:DescribeDataSourcePermissions');
+    return this;
+  }
+
+  /**
    * Return a QuickSight group’s description and ARN.
    *
    * Access Level: Read
@@ -427,6 +639,22 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeIAMPolicyAssignment() {
     this.to('quicksight:DescribeIAMPolicyAssignment');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe a SPICE ingestion on a dataset
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeIngestion.html
+   */
+  public toDescribeIngestion() {
+    this.to('quicksight:DescribeIngestion');
     return this;
   }
 
@@ -575,6 +803,18 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Lists analyses in an AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListAnalyses.html
+   */
+  public toListAnalyses() {
+    this.to('quicksight:ListAnalyses');
+    return this;
+  }
+
+  /**
    * Grants permission to list custom permissions resources in QuickSight account
    *
    * Access Level: Write
@@ -607,6 +847,38 @@ export class Quicksight extends PolicyStatement {
    */
   public toListDashboards() {
     this.to('quicksight:ListDashboards');
+    return this;
+  }
+
+  /**
+   * Grants permission to list all datasets
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListDataSets.html
+   */
+  public toListDataSets() {
+    this.to('quicksight:ListDataSets');
+    return this;
+  }
+
+  /**
+   * Grants permission to list all data sources
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListDataSources.html
+   */
+  public toListDataSources() {
+    this.to('quicksight:ListDataSources');
     return this;
   }
 
@@ -655,6 +927,22 @@ export class Quicksight extends PolicyStatement {
    */
   public toListIAMPolicyAssignmentsForUser() {
     this.to('quicksight:ListIAMPolicyAssignmentsForUser');
+    return this;
+  }
+
+  /**
+   * Grants permission to list all SPICE ingestions on a dataset
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListIngestions.html
+   */
+  public toListIngestions() {
+    this.to('quicksight:ListIngestions');
     return this;
   }
 
@@ -779,6 +1067,38 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to use a dataset for a template
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-api-overview.html
+   */
+  public toPassDataSet() {
+    this.to('quicksight:PassDataSet');
+    return this;
+  }
+
+  /**
+   * Grants permission to use a data source for a data set
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-api-overview.html
+   */
+  public toPassDataSource() {
+    this.to('quicksight:PassDataSource');
+    return this;
+  }
+
+  /**
    * Create a QuickSight user, whose identity is associated with the IAM identity/role specified in the request.
    *
    * Access Level: Write
@@ -787,6 +1107,42 @@ export class Quicksight extends PolicyStatement {
    */
   public toRegisterUser() {
     this.to('quicksight:RegisterUser');
+    return this;
+  }
+
+  /**
+   * Restores a deleted analysis
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RestoreAnalysis.html
+   */
+  public toRestoreAnalysis() {
+    this.to('quicksight:RestoreAnalysis');
+    return this;
+  }
+
+  /**
+   * Searches for analyses that belong to the user specified in the filter
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchAnalyses.html
+   */
+  public toSearchAnalyses() {
+    this.to('quicksight:SearchAnalyses');
+    return this;
+  }
+
+  /**
+   * Searches for dashboards that belong to a user
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchDashboards.html
+   */
+  public toSearchDashboards() {
+    this.to('quicksight:SearchDashboards');
     return this;
   }
 
@@ -894,6 +1250,30 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Updates an analysis in an AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAnalysis.html
+   */
+  public toUpdateAnalysis() {
+    this.to('quicksight:UpdateAnalysis');
+    return this;
+  }
+
+  /**
+   * Updates read and write permissions on an analysis
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAnalysisPermissions.html
+   */
+  public toUpdateAnalysisPermissions() {
+    this.to('quicksight:UpdateAnalysisPermissions');
+    return this;
+  }
+
+  /**
    * Grants permission to update a custom permissions resource
    *
    * Access Level: Write
@@ -938,6 +1318,70 @@ export class Quicksight extends PolicyStatement {
    */
   public toUpdateDashboardPublishedVersion() {
     this.to('quicksight:UpdateDashboardPublishedVersion');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a dataset
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDataSet.html
+   */
+  public toUpdateDataSet() {
+    this.to('quicksight:UpdateDataSet');
+    return this;
+  }
+
+  /**
+   * Grants permission to update the resource policy of a dataset
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDataSetPermissions.html
+   */
+  public toUpdateDataSetPermissions() {
+    this.to('quicksight:UpdateDataSetPermissions');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a data source
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDataSource.html
+   */
+  public toUpdateDataSource() {
+    this.to('quicksight:UpdateDataSource');
+    return this;
+  }
+
+  /**
+   * Grants permission to update the resource policy of a data source
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDataSourcePermissions.html
+   */
+  public toUpdateDataSourcePermissions() {
+    this.to('quicksight:UpdateDataSourcePermissions');
     return this;
   }
 
@@ -1051,13 +1495,18 @@ export class Quicksight extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "CancelIngestion",
       "CreateAccountCustomization",
       "CreateAdmin",
+      "CreateAnalysis",
       "CreateCustomPermissions",
       "CreateDashboard",
+      "CreateDataSet",
+      "CreateDataSource",
       "CreateGroup",
       "CreateGroupMembership",
       "CreateIAMPolicyAssignment",
+      "CreateIngestion",
       "CreateNamespace",
       "CreateReader",
       "CreateTemplate",
@@ -1066,7 +1515,10 @@ export class Quicksight extends PolicyStatement {
       "CreateThemeAlias",
       "CreateUser",
       "DeleteAccountCustomization",
+      "DeleteAnalysis",
       "DeleteDashboard",
+      "DeleteDataSet",
+      "DeleteDataSource",
       "DeleteGroup",
       "DeleteGroupMembership",
       "DeleteIAMPolicyAssignment",
@@ -1081,16 +1533,21 @@ export class Quicksight extends PolicyStatement {
       "ListCustomPermissions",
       "ListNamespaces",
       "RegisterUser",
+      "RestoreAnalysis",
       "SearchDirectoryGroups",
       "SetGroupMapping",
       "Subscribe",
       "Unsubscribe",
       "UpdateAccountCustomization",
       "UpdateAccountSettings",
+      "UpdateAnalysis",
+      "UpdateAnalysisPermissions",
       "UpdateCustomPermissions",
       "UpdateDashboard",
       "UpdateDashboardPermissions",
       "UpdateDashboardPublishedVersion",
+      "UpdateDataSet",
+      "UpdateDataSource",
       "UpdateGroup",
       "UpdateIAMPolicyAssignment",
       "UpdateTemplate",
@@ -1104,10 +1561,15 @@ export class Quicksight extends PolicyStatement {
     "Read": [
       "DescribeAccountCustomization",
       "DescribeAccountSettings",
+      "DescribeAnalysis",
+      "DescribeAnalysisPermissions",
       "DescribeDashboard",
       "DescribeDashboardPermissions",
+      "DescribeDataSet",
+      "DescribeDataSource",
       "DescribeGroup",
       "DescribeIAMPolicyAssignment",
+      "DescribeIngestion",
       "DescribeNamespace",
       "DescribeTemplate",
       "DescribeTemplateAlias",
@@ -1119,11 +1581,23 @@ export class Quicksight extends PolicyStatement {
       "GetAuthCode",
       "GetDashboardEmbedUrl",
       "GetGroupMapping",
-      "GetSessionEmbedUrl"
+      "GetSessionEmbedUrl",
+      "ListIngestions",
+      "PassDataSet",
+      "PassDataSource"
+    ],
+    "Permissions management": [
+      "DescribeDataSetPermissions",
+      "DescribeDataSourcePermissions",
+      "UpdateDataSetPermissions",
+      "UpdateDataSourcePermissions"
     ],
     "List": [
+      "ListAnalyses",
       "ListDashboardVersions",
       "ListDashboards",
+      "ListDataSets",
+      "ListDataSources",
       "ListGroupMemberships",
       "ListGroups",
       "ListIAMPolicyAssignments",
@@ -1136,7 +1610,9 @@ export class Quicksight extends PolicyStatement {
       "ListThemeVersions",
       "ListThemes",
       "ListUserGroups",
-      "ListUsers"
+      "ListUsers",
+      "SearchAnalyses",
+      "SearchDashboards"
     ],
     "Tagging": [
       "TagResource",
@@ -1183,6 +1659,28 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type analysis to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Analysis.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAnalysis(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:analysis/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type dashboard to the statement
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Dashboard.html
@@ -1219,6 +1717,74 @@ export class Quicksight extends PolicyStatement {
    */
   public onTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:template/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type datasource to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSource.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDatasource(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:datasource/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type dataset to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSet.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:dataset/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ingestion to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Ingestion.html
+   *
+   * @param datasetId - Identifier for the datasetId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIngestion(datasetId: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:dataset/${DatasetId}/ingestion/${ResourceId}';
+    arn = arn.replace('${DatasetId}', datasetId);
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

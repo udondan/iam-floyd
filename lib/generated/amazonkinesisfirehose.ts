@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [firehose](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisfirehose.html).
+ * Statement provider for service [firehose](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisfirehose.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Firehose extends PolicyStatement {
   public servicePrefix = 'firehose';
 
   /**
-   * Statement provider for service [firehose](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisfirehose.html).
+   * Statement provider for service [firehose](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisfirehose.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

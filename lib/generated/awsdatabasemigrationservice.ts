@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement, Operator } from "../shared";
 
 /**
- * Statement provider for service [dms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdatabasemigrationservice.html).
+ * Statement provider for service [dms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Dms extends PolicyStatement {
   public servicePrefix = 'dms';
 
   /**
-   * Statement provider for service [dms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdatabasemigrationservice.html).
+   * Statement provider for service [dms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

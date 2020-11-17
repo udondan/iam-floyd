@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [autoscaling-plans](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsautoscaling.html).
+ * Statement provider for service [autoscaling-plans](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsautoscaling.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class AutoscalingPlans extends PolicyStatement {
   public servicePrefix = 'autoscaling-plans';
 
   /**
-   * Statement provider for service [autoscaling-plans](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsautoscaling.html).
+   * Statement provider for service [autoscaling-plans](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsautoscaling.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

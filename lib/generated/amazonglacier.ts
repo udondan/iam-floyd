@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement, Operator } from "../shared";
 
 /**
- * Statement provider for service [glacier](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonglacier.html).
+ * Statement provider for service [glacier](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonglacier.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Glacier extends PolicyStatement {
   public servicePrefix = 'glacier';
 
   /**
-   * Statement provider for service [glacier](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonglacier.html).
+   * Statement provider for service [glacier](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonglacier.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

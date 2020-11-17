@@ -163,6 +163,7 @@ export { Mediatailor } from "./awselementalmediatailor";
 export { Fms } from "./awsfirewallmanager";
 export { Globalaccelerator } from "./awsglobalaccelerator";
 export { Glue } from "./awsglue";
+export { Databrew } from "./awsgluedatabrew";
 export { Groundstation } from "./awsgroundstation";
 export { Health } from "./awshealthapisandnotifications";
 export { Identitystore } from "./awsidentitystore";

@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement, Operator } from "../shared";
 
 /**
- * Statement provider for service [dax](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondynamodbacceleratordax.html).
+ * Statement provider for service [dax](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodbacceleratordax.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Dax extends PolicyStatement {
   public servicePrefix = 'dax';
 
   /**
-   * Statement provider for service [dax](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondynamodbacceleratordax.html).
+   * Statement provider for service [dax](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodbacceleratordax.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

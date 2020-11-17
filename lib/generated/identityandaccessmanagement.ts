@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement, Operator } from "../shared";
 
 /**
- * Statement provider for service [iam](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_identityandaccessmanagement.html).
+ * Statement provider for service [iam](https://docs.aws.amazon.com/service-authorization/latest/reference/list_identityandaccessmanagement.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Iam extends PolicyStatement {
   public servicePrefix = 'iam';
 
   /**
-   * Statement provider for service [iam](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_identityandaccessmanagement.html).
+   * Statement provider for service [iam](https://docs.aws.amazon.com/service-authorization/latest/reference/list_identityandaccessmanagement.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

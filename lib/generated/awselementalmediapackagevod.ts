@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [mediapackage-vod](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackagevod.html).
+ * Statement provider for service [mediapackage-vod](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediapackagevod.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class MediapackageVod extends PolicyStatement {
   public servicePrefix = 'mediapackage-vod';
 
   /**
-   * Statement provider for service [mediapackage-vod](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackagevod.html).
+   * Statement provider for service [mediapackage-vod](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediapackagevod.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

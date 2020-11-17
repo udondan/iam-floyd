@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement, Operator } from "../shared";
 
 /**
- * Statement provider for service [cloud9](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html).
+ * Statement provider for service [cloud9](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloud9.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Cloud9 extends PolicyStatement {
   public servicePrefix = 'cloud9';
 
   /**
-   * Statement provider for service [cloud9](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html).
+   * Statement provider for service [cloud9](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloud9.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */

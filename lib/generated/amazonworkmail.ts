@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [workmail](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmail.html).
+ * Statement provider for service [workmail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkmail.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Workmail extends PolicyStatement {
   public servicePrefix = 'workmail';
 
   /**
-   * Statement provider for service [workmail](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmail.html).
+   * Statement provider for service [workmail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkmail.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -127,11 +127,11 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Creates an organization, either using an existing directory or creates a new directory on-the-fly. Also creates and enables the complementary mail domain. Optionally creates KMS key
+   * Creates a new Amazon WorkMail organization.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateOrganization.html
    */
   public toCreateOrganization() {
     this.to('workmail:CreateOrganization');
@@ -271,11 +271,11 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Removes an organization from an account, either removing the directory from directory services or leaving it available for re-use
+   * Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of the organization.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteOrganization.html
    */
   public toDeleteOrganization() {
     this.to('workmail:DeleteOrganization');
