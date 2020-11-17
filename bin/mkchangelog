@@ -51,6 +51,12 @@ function getNewResourceTypes() {
     perl -0777 -pe "s/\+\s*public on([A-Za-z]+)\(.*\n.*arn:+([\w-]+).*/- \2:\l\1/gm"
 }
 
+function getRemovedResourceTypes() {
+  gitDiffModules | pcregrep -Mi "^-  public on[a-z]+\([^(]+\) {\n.*arn:" |\
+    sed 's|/\{0,1\}\${[[:alpha:]]\{1,\}}||g' |\
+    perl -0777 -pe "s/-\s*public on([A-Za-z]+)\(.*\n.*arn:+([\w-]+).*/- \2:\l\1/gm"
+}
+
 function getNewConditions() {
   gitDiffModules | grep "^+.*return this.if"| sed 's/.*(`/- /g' | sed 's/`.*$//g'
 }
@@ -72,6 +78,14 @@ if [ -n "${removedActions}" ]; then
   [[ "${hasContent}" = true ]] && echo "" >> "$file"
   printf ":warning: **Removed actions:**\n\n" >> "$file"
   echo "${removedActions}" >> "$file"
+  hasContent=true
+fi
+
+removedResourceTypes=$(getRemovedResourceTypes)
+if [ -n "${removedResourceTypes}" ]; then
+  [[ "${hasContent}" = true ]] && echo "" >> "$file"
+  printf ":warning: **Removed resource types:**\n\n" >> "$file"
+  echo "${removedResourceTypes}" >> "$file"
   hasContent=true
 fi
 
