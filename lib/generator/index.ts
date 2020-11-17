@@ -91,7 +91,7 @@ export interface ResourceTypeOnAction {
 
 export function getAwsServices(): Promise<string[]> {
   return new Promise((resolve, reject) => {
-    Promise.all([getAwsServicesFromGithub(), getAwsServicesFromIamDocs()])
+    Promise.all([getAwsServicesFromIamDocs()])
       .then((values) => {
         const merged = values[0].concat(values[0]);
         const unique = merged.filter((elem, pos) => {
