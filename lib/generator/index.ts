@@ -175,7 +175,7 @@ export function getContent(service: string): Promise<Module> {
   process.stdout.write('Fetching '.grey);
 
   const urlPattern =
-    'https://docs.aws.amazon.com/IAM/latest/UserGuide/list_%s.html';
+    'https://docs.aws.amazon.com/service-authorization/latest/reference/list_%s.html';
   return new Promise(async (resolve, reject) => {
     try {
       var module: Module = {
@@ -200,7 +200,7 @@ export function getContent(service: string): Promise<Module> {
           const servicePrefix = $('code').first().text().trim();
 
           if (servicePrefix == '') {
-            console.error(`PREFIX NOT FOUND FOR ${service}`.red.bold);
+            console.error(`PREFIX NOT FOUND FOR ${service} / ${url}`.red.bold);
           }
 
           module.name = servicePrefix;
