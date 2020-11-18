@@ -238,5 +238,6 @@ export { AccessAnalyzer } from "./iamaccessanalyzer";
 export { Iam } from "./identityandaccessmanagement";
 export { Launchwizard } from "./launchwizard";
 export { Apigateway } from "./manageamazonapigateway";
+export { NetworkFirewall } from "./networkfirewall";
 export { Networkmanager } from "./networkmanager";
 export { Servicequotas } from "./servicequotas";

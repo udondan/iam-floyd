@@ -187,6 +187,42 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view, in the Trusted Advisor console, all of the accounts in an AWS organization that are contained by a root or organizational unit (OU)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toListAccountsForParent() {
+    this.to('trustedadvisor:ListAccountsForParent');
+    return this;
+  }
+
+  /**
+   * Grants permission to view, in the Trusted Advisor console, all of the organizational units (OUs) in a parent organizational unit or root
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toListOrganizationalUnitsForParent() {
+    this.to('trustedadvisor:ListOrganizationalUnitsForParent');
+    return this;
+  }
+
+  /**
+   * Grants permission to view, in the Trusted Advisor console, all of the roots that are defined in an AWS organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
+   */
+  public toListRoots() {
+    this.to('trustedadvisor:ListRoots');
+    return this;
+  }
+
+  /**
    * Grants permission to refresh an AWS Trusted Advisor check
    *
    * Access Level: Write
@@ -246,7 +282,10 @@ export class Trustedadvisor extends PolicyStatement {
       "DescribeOrganization",
       "DescribeOrganizationAccounts",
       "DescribeReports",
-      "DescribeServiceMetadata"
+      "DescribeServiceMetadata",
+      "ListAccountsForParent",
+      "ListOrganizationalUnitsForParent",
+      "ListRoots"
     ],
     "Write": [
       "ExcludeCheckItems",

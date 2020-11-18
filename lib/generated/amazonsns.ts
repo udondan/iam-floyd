@@ -59,6 +59,9 @@ export class Sns extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/sns/latest/api/API_CreatePlatformApplication.html
    */
   public toCreatePlatformApplication() {
@@ -82,6 +85,9 @@ export class Sns extends PolicyStatement {
    * Creates a topic to which notifications can be published.
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html
    */
@@ -323,6 +329,9 @@ export class Sns extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html
    */
   public toSetPlatformApplicationAttributes() {
@@ -358,6 +367,9 @@ export class Sns extends PolicyStatement {
    * Allows a topic owner to set an attribute of the topic to a new value.
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sns/latest/api/API_SetTopicAttributes.html
    */
