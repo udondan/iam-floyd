@@ -20,7 +20,7 @@ interface Fixes {
  * resourceTypes.$name.arn: Fixes ARN of the given resource type
  */
 export const fixes: Fixes = {
-  amazonec2: {
+  ec2: {
     conditions: {
       SnapshotTime: {
         operator: {
