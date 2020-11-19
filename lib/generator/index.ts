@@ -117,7 +117,12 @@ function getAwsServicesFromIamDocs(): Promise<string[]> {
         if (typeof testOverride !== 'undefined' && testOverride.length) {
           return resolve([testOverride]);
         }
-        resolve(services.sort());
+
+        const unique = services.filter((elem, pos) => {
+          return services.indexOf(elem) == pos;
+        });
+
+        resolve(unique.sort());
       })
       .catch((err) => {
         reject(err);
