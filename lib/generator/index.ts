@@ -140,7 +140,9 @@ export function getContent(service: string): Promise<Module> {
   return new Promise(async (resolve, reject) => {
     try {
       var module: Module = {
-        filename: service.replace(/[^a-z0-9-]/i, '-'),
+        filename: service
+          .replace(/[^a-z0-9-]/i, '-')
+          .replace(/^(amazon|aws)/, ''),
       };
 
       const url = urlPattern.replace('%s', service);
