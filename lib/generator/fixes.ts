@@ -29,9 +29,6 @@ export const fixes: Fixes = {
       },
     },
   },
-  amazonmanagedstreamingforkafka: {
-    service: 'amazonmanagedstreamingforapachekafka', // page has been renamed. this needs to stay until this is fixed: https://github.com/awsdocs/iam-user-guide/pull/200
-  },
   amazonkinesisanalyticsv2: {
     id: 'kinesisanalytics-v2',
   },
