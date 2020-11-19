@@ -38,16 +38,6 @@ export const fixes: Fixes = {
   awsmarketplacecatalog: {
     id: 'aws-marketplace-catalog',
   },
-  awsiotgreengrass: {
-    conditions: {
-      EpochTime: {
-        operator: {
-          type: 'date',
-          override: ['number', 'Date', 'string'],
-        },
-      },
-    },
-  },
   awsmarketplaceentitlementservice: {
     id: 'aws-marketplace-entitlement-service',
   },
