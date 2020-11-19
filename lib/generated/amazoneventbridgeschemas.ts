@@ -163,6 +163,18 @@ export class Schemas extends PolicyStatement {
   }
 
   /**
+   * Allows exporting AWS registry or discovered schemas in OpenAPI 3 format to JSONSchema format.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-policy.html#ExportSchema
+   */
+  public toExportSchema() {
+    this.to('schemas:ExportSchema');
+    return this;
+  }
+
+  /**
    * Retrieves metadata for generated code for specific schema in your account.
    *
    * Access Level: Read
@@ -408,6 +420,7 @@ export class Schemas extends PolicyStatement {
       "DescribeDiscoverer",
       "DescribeRegistry",
       "DescribeSchema",
+      "ExportSchema",
       "GetCodeBindingSource",
       "GetDiscoveredSchema",
       "GetResourcePolicy"
