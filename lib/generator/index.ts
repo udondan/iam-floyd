@@ -138,11 +138,11 @@ export function getContent(service: string): Promise<Module> {
   const urlPattern =
     'https://docs.aws.amazon.com/service-authorization/latest/reference/list_%s.html';
   return new Promise(async (resolve, reject) => {
+    const shortName = service.replace(/^(amazon|aws)/, '');
+
     try {
       var module: Module = {
-        filename: service
-          .replace(/[^a-z0-9-]/i, '-')
-          .replace(/^(amazon|aws)/, ''),
+        filename: shortName.replace(/[^a-z0-9-]/i, '-'),
       };
 
       const url = urlPattern.replace('%s', service);
@@ -169,8 +169,8 @@ export function getContent(service: string): Promise<Module> {
           module.name = servicePrefix;
           module.url = url;
 
-          if (service in fixes) {
-            module.fixes = fixes[service];
+          if (shortName in fixes) {
+            module.fixes = fixes[shortName];
           }
 
           module = addConditions($, module);

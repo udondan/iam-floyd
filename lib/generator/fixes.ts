@@ -29,28 +29,28 @@ export const fixes: Fixes = {
       },
     },
   },
-  amazonkinesisanalyticsv2: {
+  kinesisanalyticsv2: {
     id: 'kinesisanalytics-v2',
   },
-  amazonpinpointemailservice: {
+  pinpointemailservice: {
     id: 'ses-pinpoint',
   },
-  awsmarketplacecatalog: {
+  marketplacecatalog: {
     id: 'aws-marketplace-catalog',
   },
-  awsmarketplaceentitlementservice: {
+  marketplaceentitlementservice: {
     id: 'aws-marketplace-entitlement-service',
   },
-  awsmarketplaceimagebuildingservice: {
+  marketplaceimagebuildingservice: {
     id: 'aws-marketplace-image-building-service',
   },
-  awsmarketplacemeteringservice: {
+  marketplacemeteringservice: {
     id: 'aws-marketplace-metering-service',
   },
-  awsmarketplaceprocurementsystemsintegration: {
+  marketplaceprocurementsystemsintegration: {
     id: 'aws-marketplace-procurement-systems-integration',
   },
-  awsprivatemarketplace: {
+  privatemarketplace: {
     id: 'aws-marketplace-private',
   },
   backup: {
