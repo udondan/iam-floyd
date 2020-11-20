@@ -31,6 +31,18 @@ export class Honeycode extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new tenant within Amazon Honeycode for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/tenant.html#create-tenant
+   */
+  public toCreateTenant() {
+    this.to('honeycode:CreateTenant');
+    return this;
+  }
+
+  /**
    * Grants permission to load the data from a screen
    *
    * Access Level: Read
@@ -67,6 +79,18 @@ export class Honeycode extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all tenants of Amazon Honeycode for your AWS Account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/tenant.html#list-tenants
+   */
+  public toListTenants() {
+    this.to('honeycode:ListTenants');
+    return this;
+  }
+
+  /**
    * Grants permission to reject a team association request for your AWS Account
    *
    * Access Level: Write
@@ -81,6 +105,7 @@ export class Honeycode extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "ApproveTeamAssociation",
+      "CreateTenant",
       "InvokeScreenAutomation",
       "RejectTeamAssociation"
     ],
@@ -88,7 +113,8 @@ export class Honeycode extends PolicyStatement {
       "GetScreenData"
     ],
     "List": [
-      "ListTeamAssociations"
+      "ListTeamAssociations",
+      "ListTenants"
     ]
   };
 

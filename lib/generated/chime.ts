@@ -318,6 +318,18 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to call a phone number to join the specified Amazon Chime SDK meeting
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateMeetingDialOut.html
+   */
+  public toCreateMeetingDialOut() {
+    this.to('chime:CreateMeetingDialOut');
+    return this;
+  }
+
+  /**
    * Grants permission to create a new Amazon Chime SDK meeting in the specified media Region, with a set of attendees
    *
    * Access Level: Write
@@ -378,6 +390,42 @@ export class Chime extends PolicyStatement {
    */
   public toCreateRoomMembership() {
     this.to('chime:CreateRoomMembership');
+    return this;
+  }
+
+  /**
+   * Grants permission to create an Amazon Chime SIP media application under the administrator's AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateSipMediaApplication.html
+   */
+  public toCreateSipMediaApplication() {
+    this.to('chime:CreateSipMediaApplication');
+    return this;
+  }
+
+  /**
+   * Grants permission to create outbound call for Amazon Chime SIP media application under the administrator's AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateSipMediaApplicationCall.html
+   */
+  public toCreateSipMediaApplicationCall() {
+    this.to('chime:CreateSipMediaApplicationCall');
+    return this;
+  }
+
+  /**
+   * Grants permission to create an Amazon Chime SIP rule under the administrator's AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateSipRule.html
+   */
+  public toCreateSipRule() {
+    this.to('chime:CreateSipRule');
     return this;
   }
 
@@ -585,6 +633,30 @@ export class Chime extends PolicyStatement {
    */
   public toDeleteRoomMembership() {
     this.to('chime:DeleteRoomMembership');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete Amazon Chime SIP media application under the administrator's AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteSipMediaApplication.html
+   */
+  public toDeleteSipMediaApplication() {
+    this.to('chime:DeleteSipMediaApplication');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete Amazon Chime SIP rule under the administrator's AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteSipRule.html
+   */
+  public toDeleteSipRule() {
+    this.to('chime:DeleteSipRule');
     return this;
   }
 
@@ -968,6 +1040,42 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details of Amazon Chime SIP media application under the administrator's AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetSipMediaApplication.html
+   */
+  public toGetSipMediaApplication() {
+    this.to('chime:GetSipMediaApplication');
+    return this;
+  }
+
+  /**
+   * Grants permission to get logging configuration settings for Amazon Chime SIP media application under the administrator's AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetSipMediaApplicationLoggingConfiguration.html
+   */
+  public toGetSipMediaApplicationLoggingConfiguration() {
+    this.to('chime:GetSipMediaApplicationLoggingConfiguration');
+    return this;
+  }
+
+  /**
+   * Grants permission to get details of Amazon Chime SIP rule under the administrator's AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetSipRule.html
+   */
+  public toGetSipRule() {
+    this.to('chime:GetSipRule');
+    return this;
+  }
+
+  /**
    * Grants permission to get telephony limits for the AWS account
    *
    * Access Level: Read
@@ -1208,7 +1316,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to list the tags applied to an Amazon Chime SDK attendee resource
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListAttendeeTags.html
    */
@@ -1220,7 +1328,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to list up to 100 attendees for a specified Amazon Chime SDK meeting
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListAttendees.html
    */
@@ -1332,7 +1440,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to list the tags applied to an Amazon Chime SDK meeting resource.
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListMeetingTags.html
    */
@@ -1344,7 +1452,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to list up to 100 active Amazon Chime SDK meetings
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListMeetings.html
    */
@@ -1404,7 +1512,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to list all room members
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListRoomMemberships.html
    */
@@ -1416,7 +1524,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to list rooms
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListRooms.html
    */
@@ -1426,9 +1534,33 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all Amazon Chime SIP media applications under the administrator's AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListSipMediaApplications.html
+   */
+  public toListSipMediaApplications() {
+    this.to('chime:ListSipMediaApplications');
+    return this;
+  }
+
+  /**
+   * Grants permission to list all Amazon Chime SIP rules under the administrator's AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListSipRules.html
+   */
+  public toListSipRules() {
+    this.to('chime:ListSipRules');
+    return this;
+  }
+
+  /**
    * Grants permission to list the tags applied to an Amazon Chime SDK meeting resource.
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListTagsForResource.html
    */
@@ -1518,6 +1650,18 @@ export class Chime extends PolicyStatement {
    */
   public toPutRetentionSettings() {
     this.to('chime:PutRetentionSettings');
+    return this;
+  }
+
+  /**
+   * Grants permission to update logging configuration settings for Amazon Chime SIP media application under the administrator's AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_PutSipMediaApplicationLoggingConfiguration.html
+   */
+  public toPutSipMediaApplicationLoggingConfiguration() {
+    this.to('chime:PutSipMediaApplicationLoggingConfiguration');
     return this;
   }
 
@@ -2013,6 +2157,30 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update properties of Amazon Chime SIP media application under the administrator's AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateSipMediaApplication.html
+   */
+  public toUpdateSipMediaApplication() {
+    this.to('chime:UpdateSipMediaApplication');
+    return this;
+  }
+
+  /**
+   * Grants permission to update properties of Amazon Chime SIP rule under the administrator's AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateSipRule.html
+   */
+  public toUpdateSipRule() {
+    this.to('chime:UpdateSipRule');
+    return this;
+  }
+
+  /**
    * Grants permission to update the supported license tiers available for users in your Amazon Chime account
    *
    * Access Level: Write
@@ -2122,11 +2290,15 @@ export class Chime extends PolicyStatement {
       "CreateBotMembership",
       "CreateCDRBucket",
       "CreateMeeting",
+      "CreateMeetingDialOut",
       "CreateMeetingWithAttendees",
       "CreatePhoneNumberOrder",
       "CreateProxySession",
       "CreateRoom",
       "CreateRoomMembership",
+      "CreateSipMediaApplication",
+      "CreateSipMediaApplicationCall",
+      "CreateSipRule",
       "CreateUser",
       "CreateVoiceConnector",
       "CreateVoiceConnectorGroup",
@@ -2144,6 +2316,8 @@ export class Chime extends PolicyStatement {
       "DeleteProxySession",
       "DeleteRoom",
       "DeleteRoomMembership",
+      "DeleteSipMediaApplication",
+      "DeleteSipRule",
       "DeleteVoiceConnector",
       "DeleteVoiceConnectorEmergencyCallingConfiguration",
       "DeleteVoiceConnectorGroup",
@@ -2163,6 +2337,7 @@ export class Chime extends PolicyStatement {
       "LogoutUser",
       "PutEventsConfiguration",
       "PutRetentionSettings",
+      "PutSipMediaApplicationLoggingConfiguration",
       "PutVoiceConnectorEmergencyCallingConfiguration",
       "PutVoiceConnectorLoggingConfiguration",
       "PutVoiceConnectorOrigination",
@@ -2194,6 +2369,8 @@ export class Chime extends PolicyStatement {
       "UpdateProxySession",
       "UpdateRoom",
       "UpdateRoomMembership",
+      "UpdateSipMediaApplication",
+      "UpdateSipRule",
       "UpdateSupportedLicenses",
       "UpdateUser",
       "UpdateUserLicenses",
@@ -2220,6 +2397,9 @@ export class Chime extends PolicyStatement {
       "GetProxySession",
       "GetRetentionSettings",
       "GetRoom",
+      "GetSipMediaApplication",
+      "GetSipMediaApplicationLoggingConfiguration",
+      "GetSipRule",
       "GetTelephonyLimits",
       "GetUser",
       "GetUserActivityReportData",
@@ -2234,13 +2414,6 @@ export class Chime extends PolicyStatement {
       "GetVoiceConnectorStreamingConfiguration",
       "GetVoiceConnectorTermination",
       "GetVoiceConnectorTerminationHealth",
-      "ListAttendeeTags",
-      "ListAttendees",
-      "ListMeetingTags",
-      "ListMeetings",
-      "ListRoomMemberships",
-      "ListRooms",
-      "ListTagsForResource",
       "SearchAvailablePhoneNumbers",
       "ValidateAccountResource"
     ],
@@ -2248,6 +2421,8 @@ export class Chime extends PolicyStatement {
       "ListAccountUsageReportData",
       "ListAccounts",
       "ListApiKeys",
+      "ListAttendeeTags",
+      "ListAttendees",
       "ListBots",
       "ListCDRBucket",
       "ListCallingRegions",
@@ -2256,10 +2431,17 @@ export class Chime extends PolicyStatement {
       "ListDomains",
       "ListGroups",
       "ListMeetingEvents",
+      "ListMeetingTags",
+      "ListMeetings",
       "ListMeetingsReportData",
       "ListPhoneNumberOrders",
       "ListPhoneNumbers",
       "ListProxySessions",
+      "ListRoomMemberships",
+      "ListRooms",
+      "ListSipMediaApplications",
+      "ListSipRules",
+      "ListTagsForResource",
       "ListUsers",
       "ListVoiceConnectorGroups",
       "ListVoiceConnectorTerminationCredentials",
