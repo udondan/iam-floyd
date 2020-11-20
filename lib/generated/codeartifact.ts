@@ -59,6 +59,10 @@ export class Codeartifact extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateDomain.html
    */
   public toCreateDomain() {
@@ -70,6 +74,10 @@ export class Codeartifact extends PolicyStatement {
    * Grants permission to create a new repository
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html
    */
@@ -355,6 +363,18 @@ export class Codeartifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tags for a CodeArtifact resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    this.to('codeartifact:ListTagsForResource');
+    return this;
+  }
+
+  /**
    * Grants permission to publish assets and metadata to a repository endpoint
    *
    * Access Level: Write
@@ -411,6 +431,37 @@ export class Codeartifact extends PolicyStatement {
    */
   public toReadFromRepository() {
     this.to('codeartifact:ReadFromRepository');
+    return this;
+  }
+
+  /**
+   * Grants permission to tag a CodeArtifact resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    this.to('codeartifact:TagResource');
+    return this;
+  }
+
+  /**
+   * Grants permission to remove a tag from a CodeArtifact resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    this.to('codeartifact:UntagResource');
     return this;
   }
 
@@ -480,7 +531,12 @@ export class Codeartifact extends PolicyStatement {
       "ListPackageVersions",
       "ListPackages",
       "ListRepositories",
-      "ListRepositoriesInDomain"
+      "ListRepositoriesInDomain",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
@@ -493,6 +549,9 @@ export class Codeartifact extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codeartifact:${Region}:${Account}:domain/${DomainName}';
@@ -513,6 +572,9 @@ export class Codeartifact extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRepository(domainName: string, repositoryName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codeartifact:${Region}:${Account}:repository/${DomainName}/${RepositoryName}';

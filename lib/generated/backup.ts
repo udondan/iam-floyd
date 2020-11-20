@@ -1,5 +1,5 @@
 import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [backup](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackup.html).
@@ -19,11 +19,30 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Copy into a backup vault
+   * Allows to copy from a backup vault
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CopyIntoBackupVault.html
+   * Possible conditions:
+   * - .ifCopyTargets()
+   * - .ifCopyTargetOrgPaths()
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartCopyJob.html
+   */
+  public toCopyFromBackupVault() {
+    this.to('backup:CopyFromBackupVault');
+    return this;
+  }
+
+  /**
+   * Allows to copy into a backup vault
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartCopyJob.html
    */
   public toCopyIntoBackupVault() {
     this.to('backup:CopyIntoBackupVault');
@@ -126,7 +145,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Remove notifications from backup vault.
+   * Removes notifications from backup vault.
    *
    * Access Level: Write
    *
@@ -162,7 +181,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Creates a new backup vault with the specified name.
+   * Describes a new backup vault with the specified name.
    *
    * Access Level: Read
    *
@@ -186,6 +205,18 @@ export class Backup extends PolicyStatement {
    */
   public toDescribeCopyJob() {
     this.to('backup:DescribeCopyJob');
+    return this;
+  }
+
+  /**
+   * Describes global settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeGlobalSettings.html
+   */
+  public toDescribeGlobalSettings() {
+    this.to('backup:DescribeGlobalSettings');
     return this;
   }
 
@@ -418,7 +449,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * List copy jobs
+   * Lists copy jobs
    *
    * Access Level: List
    *
@@ -529,7 +560,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Copy a backup from a source region to a destination region.
+   * Copy a backup from a source backup vault to a destination backup vault.
    *
    * Access Level: Write
    *
@@ -618,6 +649,18 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Updates global settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateGlobalSettings.html
+   */
+  public toUpdateGlobalSettings() {
+    this.to('backup:UpdateGlobalSettings');
+    return this;
+  }
+
+  /**
    * Updates the lifecycle of the recovery point.
    *
    * Access Level: Write
@@ -643,6 +686,7 @@ export class Backup extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "CopyFromBackupVault",
       "CopyIntoBackupVault",
       "CreateBackupPlan",
       "CreateBackupSelection",
@@ -660,6 +704,7 @@ export class Backup extends PolicyStatement {
       "StartRestoreJob",
       "StopBackupJob",
       "UpdateBackupPlan",
+      "UpdateGlobalSettings",
       "UpdateRecoveryPointLifecycle",
       "UpdateRegionSettings"
     ],
@@ -667,6 +712,7 @@ export class Backup extends PolicyStatement {
       "DescribeBackupJob",
       "DescribeBackupVault",
       "DescribeCopyJob",
+      "DescribeGlobalSettings",
       "DescribeProtectedResource",
       "DescribeRecoveryPoint",
       "DescribeRegionSettings",
@@ -765,5 +811,31 @@ export class Backup extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the organization unit.
+   *
+   * Applies to actions:
+   * - .toCopyFromBackupVault()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCopyTargetOrgPaths(value: string | string[], operator?: Operator | string) {
+    return this.if(`backup:CopyTargetOrgPaths`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the ARN of an backup vault.
+   *
+   * Applies to actions:
+   * - .toCopyFromBackupVault()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCopyTargets(value: string | string[], operator?: Operator | string) {
+    return this.if(`backup:CopyTargets`, value, operator || 'StringLike');
   }
 }

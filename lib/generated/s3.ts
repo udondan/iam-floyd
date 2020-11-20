@@ -374,6 +374,42 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an existing Amazon S3 Storage Lens configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteStorageLensConfiguration.html
+   */
+  public toDeleteStorageLensConfiguration() {
+    this.to('s3:DeleteStorageLensConfiguration');
+    return this;
+  }
+
+  /**
+   * Grants permission to remove tags from an existing Amazon S3 Storage Lens configuration
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteStorageLensConfigurationTagging.html
+   */
+  public toDeleteStorageLensConfigurationTagging() {
+    this.to('s3:DeleteStorageLensConfigurationTagging');
+    return this;
+  }
+
+  /**
    * Grants permission to retrieve the configuration parameters and status for a batch operations job
    *
    * Access Level: Read
@@ -1090,6 +1126,60 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an Amazon S3 Storage Lens configuration
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetStorageLensConfiguration.html
+   */
+  public toGetStorageLensConfiguration() {
+    this.to('s3:GetStorageLensConfiguration');
+    return this;
+  }
+
+  /**
+   * Grants permission to get the tag set of an existing Amazon S3 Storage Lens configuration
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetStorageLensConfigurationTagging.html
+   */
+  public toGetStorageLensConfigurationTagging() {
+    this.to('s3:GetStorageLensConfigurationTagging');
+    return this;
+  }
+
+  /**
+   * Grants permission to get an Amazon S3 Storage Lens dashboard
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_dashboard.html
+   */
+  public toGetStorageLensDashboard() {
+    this.to('s3:GetStorageLensDashboard');
+    return this;
+  }
+
+  /**
    * Grants permission to list access points
    *
    * Access Level: Read
@@ -1230,6 +1320,24 @@ export class S3 extends PolicyStatement {
    */
   public toListMultipartUploadParts() {
     this.to('s3:ListMultipartUploadParts');
+    return this;
+  }
+
+  /**
+   * Grants permission to list Amazon S3 Storage Lens configurations
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListStorageLensConfigurations.html
+   */
+  public toListStorageLensConfigurations() {
+    this.to('s3:ListStorageLensConfigurations');
     return this;
   }
 
@@ -1856,6 +1964,46 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create or update an Amazon S3 Storage Lens configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutStorageLensConfiguration.html
+   */
+  public toPutStorageLensConfiguration() {
+    this.to('s3:PutStorageLensConfiguration');
+    return this;
+  }
+
+  /**
+   * Grants permission to put or replace tags on an existing Amazon S3 Storage Lens configuration
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutStorageLensConfigurationTagging.html
+   */
+  public toPutStorageLensConfigurationTagging() {
+    this.to('s3:PutStorageLensConfigurationTagging');
+    return this;
+  }
+
+  /**
    * Grants permission to replicate delete markers to the destination bucket
    *
    * Access Level: Write
@@ -1986,6 +2134,7 @@ export class S3 extends PolicyStatement {
       "DeleteBucketWebsite",
       "DeleteObject",
       "DeleteObjectVersion",
+      "DeleteStorageLensConfiguration",
       "PutAccelerateConfiguration",
       "PutAnalyticsConfiguration",
       "PutBucketCORS",
@@ -2004,6 +2153,7 @@ export class S3 extends PolicyStatement {
       "PutObjectLegalHold",
       "PutObjectRetention",
       "PutReplicationConfiguration",
+      "PutStorageLensConfiguration",
       "ReplicateDelete",
       "ReplicateObject",
       "RestoreObject",
@@ -2027,10 +2177,12 @@ export class S3 extends PolicyStatement {
       "DeleteJobTagging",
       "DeleteObjectTagging",
       "DeleteObjectVersionTagging",
+      "DeleteStorageLensConfigurationTagging",
       "PutBucketTagging",
       "PutJobTagging",
       "PutObjectTagging",
       "PutObjectVersionTagging",
+      "PutStorageLensConfigurationTagging",
       "ReplicateTags"
     ],
     "Read": [
@@ -2072,6 +2224,9 @@ export class S3 extends PolicyStatement {
       "GetObjectVersionTagging",
       "GetObjectVersionTorrent",
       "GetReplicationConfiguration",
+      "GetStorageLensConfiguration",
+      "GetStorageLensConfigurationTagging",
+      "GetStorageLensDashboard",
       "ListAccessPoints"
     ],
     "List": [
@@ -2080,7 +2235,8 @@ export class S3 extends PolicyStatement {
       "ListBucketMultipartUploads",
       "ListBucketVersions",
       "ListJobs",
-      "ListMultipartUploadParts"
+      "ListMultipartUploadParts",
+      "ListStorageLensConfigurations"
     ]
   };
 
@@ -2148,6 +2304,28 @@ export class S3 extends PolicyStatement {
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:s3:${Region}:${Account}:job/${JobId}';
     arn = arn.replace('${JobId}', jobId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type storagelensconfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html
+   *
+   * @param configId - Identifier for the configId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onStoragelensconfiguration(configId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:s3:${Region}:${Account}:storage-lens/${ConfigId}';
+    arn = arn.replace('${ConfigId}', configId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -2485,6 +2663,8 @@ export class S3 extends PolicyStatement {
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
    * - .toDeleteObjectVersionTagging()
+   * - .toDeleteStorageLensConfiguration()
+   * - .toDeleteStorageLensConfigurationTagging()
    * - .toDescribeJob()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
@@ -2522,6 +2702,9 @@ export class S3 extends PolicyStatement {
    * - .toGetObjectVersionTagging()
    * - .toGetObjectVersionTorrent()
    * - .toGetReplicationConfiguration()
+   * - .toGetStorageLensConfiguration()
+   * - .toGetStorageLensConfigurationTagging()
+   * - .toGetStorageLensDashboard()
    * - .toListAccessPoints()
    * - .toListAllMyBuckets()
    * - .toListBucket()
@@ -2529,6 +2712,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucketVersions()
    * - .toListJobs()
    * - .toListMultipartUploadParts()
+   * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessPointPolicy()
@@ -2559,6 +2743,8 @@ export class S3 extends PolicyStatement {
    * - .toPutObjectVersionAcl()
    * - .toPutObjectVersionTagging()
    * - .toPutReplicationConfiguration()
+   * - .toPutStorageLensConfiguration()
+   * - .toPutStorageLensConfigurationTagging()
    * - .toReplicateDelete()
    * - .toReplicateObject()
    * - .toReplicateTags()
@@ -2725,6 +2911,8 @@ export class S3 extends PolicyStatement {
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
    * - .toDeleteObjectVersionTagging()
+   * - .toDeleteStorageLensConfiguration()
+   * - .toDeleteStorageLensConfigurationTagging()
    * - .toDescribeJob()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
@@ -2762,6 +2950,9 @@ export class S3 extends PolicyStatement {
    * - .toGetObjectVersionTagging()
    * - .toGetObjectVersionTorrent()
    * - .toGetReplicationConfiguration()
+   * - .toGetStorageLensConfiguration()
+   * - .toGetStorageLensConfigurationTagging()
+   * - .toGetStorageLensDashboard()
    * - .toListAccessPoints()
    * - .toListAllMyBuckets()
    * - .toListBucket()
@@ -2769,6 +2960,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucketVersions()
    * - .toListJobs()
    * - .toListMultipartUploadParts()
+   * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessPointPolicy()
@@ -2799,6 +2991,8 @@ export class S3 extends PolicyStatement {
    * - .toPutObjectVersionAcl()
    * - .toPutObjectVersionTagging()
    * - .toPutReplicationConfiguration()
+   * - .toPutStorageLensConfiguration()
+   * - .toPutStorageLensConfigurationTagging()
    * - .toReplicateDelete()
    * - .toReplicateObject()
    * - .toReplicateTags()
@@ -2835,6 +3029,8 @@ export class S3 extends PolicyStatement {
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
    * - .toDeleteObjectVersionTagging()
+   * - .toDeleteStorageLensConfiguration()
+   * - .toDeleteStorageLensConfigurationTagging()
    * - .toDescribeJob()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
@@ -2872,6 +3068,9 @@ export class S3 extends PolicyStatement {
    * - .toGetObjectVersionTagging()
    * - .toGetObjectVersionTorrent()
    * - .toGetReplicationConfiguration()
+   * - .toGetStorageLensConfiguration()
+   * - .toGetStorageLensConfigurationTagging()
+   * - .toGetStorageLensDashboard()
    * - .toListAccessPoints()
    * - .toListAllMyBuckets()
    * - .toListBucket()
@@ -2879,6 +3078,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucketVersions()
    * - .toListJobs()
    * - .toListMultipartUploadParts()
+   * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessPointPolicy()
@@ -2909,6 +3109,8 @@ export class S3 extends PolicyStatement {
    * - .toPutObjectVersionAcl()
    * - .toPutObjectVersionTagging()
    * - .toPutReplicationConfiguration()
+   * - .toPutStorageLensConfiguration()
+   * - .toPutStorageLensConfigurationTagging()
    * - .toReplicateDelete()
    * - .toReplicateObject()
    * - .toReplicateTags()
@@ -2988,6 +3190,8 @@ export class S3 extends PolicyStatement {
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
    * - .toDeleteObjectVersionTagging()
+   * - .toDeleteStorageLensConfiguration()
+   * - .toDeleteStorageLensConfigurationTagging()
    * - .toDescribeJob()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
@@ -3024,6 +3228,9 @@ export class S3 extends PolicyStatement {
    * - .toGetObjectVersionTagging()
    * - .toGetObjectVersionTorrent()
    * - .toGetReplicationConfiguration()
+   * - .toGetStorageLensConfiguration()
+   * - .toGetStorageLensConfigurationTagging()
+   * - .toGetStorageLensDashboard()
    * - .toListAccessPoints()
    * - .toListAllMyBuckets()
    * - .toListBucket()
@@ -3031,6 +3238,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucketVersions()
    * - .toListJobs()
    * - .toListMultipartUploadParts()
+   * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessPointPolicy()
@@ -3060,6 +3268,8 @@ export class S3 extends PolicyStatement {
    * - .toPutObjectVersionAcl()
    * - .toPutObjectVersionTagging()
    * - .toPutReplicationConfiguration()
+   * - .toPutStorageLensConfiguration()
+   * - .toPutStorageLensConfigurationTagging()
    * - .toReplicateDelete()
    * - .toReplicateObject()
    * - .toReplicateTags()
