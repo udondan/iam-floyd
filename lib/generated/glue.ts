@@ -175,6 +175,18 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a check the validity of schema version
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-CheckSchemaVersionValidity
+   */
+  public toCheckSchemaVersionValidity() {
+    this.to('glue:CheckSchemaVersionValidity');
+    return this;
+  }
+
+  /**
    * Grants permission to create a classifier
    *
    * Access Level: Write
@@ -279,6 +291,30 @@ export class Glue extends PolicyStatement {
    */
   public toCreatePartition() {
     this.to('glue:CreatePartition');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a new schema registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-CreateRegistry
+   */
+  public toCreateRegistry() {
+    this.to('glue:CreateRegistry');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a new schema container
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-CreateSchema
+   */
+  public toCreateSchema() {
+    this.to('glue:CreateSchema');
     return this;
   }
 
@@ -459,6 +495,18 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a schema registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-DeleteRegistry
+   */
+  public toDeleteRegistry() {
+    this.to('glue:DeleteRegistry');
+    return this;
+  }
+
+  /**
    * Grants permission to delete a resource policy
    *
    * Access Level: Write
@@ -467,6 +515,30 @@ export class Glue extends PolicyStatement {
    */
   public toDeleteResourcePolicy() {
     this.to('glue:DeleteResourcePolicy');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a schema container
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-DeleteSchema
+   */
+  public toDeleteSchema() {
+    this.to('glue:DeleteSchema');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a range of schema versions
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-DeleteSchemaVersions
+   */
+  public toDeleteSchemaVersions() {
+    this.to('glue:DeleteSchemaVersions');
     return this;
   }
 
@@ -867,6 +939,18 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a schema registry
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-GetRegistry
+   */
+  public toGetRegistry() {
+    this.to('glue:GetRegistry');
+    return this;
+  }
+
+  /**
    * Grants permission to retrieve a resource policy
    *
    * Access Level: Read
@@ -875,6 +959,54 @@ export class Glue extends PolicyStatement {
    */
   public toGetResourcePolicy() {
     this.to('glue:GetResourcePolicy');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve a schema container
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-GetSchema
+   */
+  public toGetSchema() {
+    this.to('glue:GetSchema');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve a schema version based on schema definition
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-GetSchemaByDefinition
+   */
+  public toGetSchemaByDefinition() {
+    this.to('glue:GetSchemaByDefinition');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve a schema version
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-GetSchemaVersion
+   */
+  public toGetSchemaVersion() {
+    this.to('glue:GetSchemaVersion');
+    return this;
+  }
+
+  /**
+   * Grants permission to compare two schema versions in schema registry
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-GetSchemaVersionsDiff
+   */
+  public toGetSchemaVersionsDiff() {
+    this.to('glue:GetSchemaVersionsDiff');
     return this;
   }
 
@@ -1119,6 +1251,42 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of schema registries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-ListRegistries
+   */
+  public toListRegistries() {
+    this.to('glue:ListRegistries');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve a list of schema versions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-ListSchemaVersions
+   */
+  public toListSchemaVersions() {
+    this.to('glue:ListSchemaVersions');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve a list of schema containers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-ListSchemas
+   */
+  public toListSchemas() {
+    this.to('glue:ListSchemas');
+    return this;
+  }
+
+  /**
    * Grants permission to retrieve all triggers
    *
    * Access Level: List
@@ -1167,6 +1335,18 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add metadata to schema version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-PutSchemaVersionMetadata
+   */
+  public toPutSchemaVersionMetadata() {
+    this.to('glue:PutSchemaVersionMetadata');
+    return this;
+  }
+
+  /**
    * Grants permission to update workflow run properties
    *
    * Access Level: Write
@@ -1175,6 +1355,42 @@ export class Glue extends PolicyStatement {
    */
   public toPutWorkflowRunProperties() {
     this.to('glue:PutWorkflowRunProperties');
+    return this;
+  }
+
+  /**
+   * Grants permission to fetch metadata for a schema version
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-QuerySchemaVersionMetadata
+   */
+  public toQuerySchemaVersionMetadata() {
+    this.to('glue:QuerySchemaVersionMetadata');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a new schema version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-RegisterSchemaVersion
+   */
+  public toRegisterSchemaVersion() {
+    this.to('glue:RegisterSchemaVersion');
+    return this;
+  }
+
+  /**
+   * Grants permission to remove metadata from schema version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-RemoveSchemaVersionMetadata
+   */
+  public toRemoveSchemaVersionMetadata() {
+    this.to('glue:RemoveSchemaVersionMetadata');
     return this;
   }
 
@@ -1486,6 +1702,30 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a schema registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-UpdateRegistry
+   */
+  public toUpdateRegistry() {
+    this.to('glue:UpdateRegistry');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a schema container
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-UpdateSchema
+   */
+  public toUpdateSchema() {
+    this.to('glue:UpdateSchema');
+    return this;
+  }
+
+  /**
    * Grants permission to update a table
    *
    * Access Level: Write
@@ -1562,6 +1802,8 @@ export class Glue extends PolicyStatement {
       "CreateJob",
       "CreateMLTransform",
       "CreatePartition",
+      "CreateRegistry",
+      "CreateSchema",
       "CreateScript",
       "CreateSecurityConfiguration",
       "CreateTable",
@@ -1576,7 +1818,10 @@ export class Glue extends PolicyStatement {
       "DeleteJob",
       "DeleteMLTransform",
       "DeletePartition",
+      "DeleteRegistry",
       "DeleteResourcePolicy",
+      "DeleteSchema",
+      "DeleteSchemaVersions",
       "DeleteSecurityConfiguration",
       "DeleteTable",
       "DeleteTableVersion",
@@ -1587,7 +1832,10 @@ export class Glue extends PolicyStatement {
       "ImportCatalogToGlue",
       "PutDataCatalogEncryptionSettings",
       "PutResourcePolicy",
+      "PutSchemaVersionMetadata",
       "PutWorkflowRunProperties",
+      "RegisterSchemaVersion",
+      "RemoveSchemaVersionMetadata",
       "ResetJobBookmark",
       "StartCrawler",
       "StartCrawlerSchedule",
@@ -1610,6 +1858,8 @@ export class Glue extends PolicyStatement {
       "UpdateJob",
       "UpdateMLTransform",
       "UpdatePartition",
+      "UpdateRegistry",
+      "UpdateSchema",
       "UpdateTable",
       "UpdateTrigger",
       "UpdateUserDefinedFunction",
@@ -1623,6 +1873,7 @@ export class Glue extends PolicyStatement {
       "BatchGetPartition",
       "BatchGetTriggers",
       "BatchGetWorkflows",
+      "CheckSchemaVersionValidity",
       "GetCatalogImportStatus",
       "GetClassifier",
       "GetClassifiers",
@@ -1647,7 +1898,12 @@ export class Glue extends PolicyStatement {
       "GetPartition",
       "GetPartitions",
       "GetPlan",
+      "GetRegistry",
       "GetResourcePolicy",
+      "GetSchema",
+      "GetSchemaByDefinition",
+      "GetSchemaVersion",
+      "GetSchemaVersionsDiff",
       "GetSecurityConfiguration",
       "GetSecurityConfigurations",
       "GetTable",
@@ -1672,8 +1928,12 @@ export class Glue extends PolicyStatement {
       "ListDevEndpoints",
       "ListJobs",
       "ListMLTransforms",
+      "ListRegistries",
+      "ListSchemaVersions",
+      "ListSchemas",
       "ListTriggers",
-      "ListWorkflows"
+      "ListWorkflows",
+      "QuerySchemaVersionMetadata"
     ],
     "Tagging": [
       "TagResource",
@@ -1927,6 +2187,50 @@ export class Glue extends PolicyStatement {
   public onMlTransform(transformId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:mlTransform/${TransformId}';
     arn = arn.replace('${TransformId}', transformId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type registry to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param registryName - Identifier for the registryName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRegistry(registryName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:glue:${Region}:${Account}:registry/${RegistryName}';
+    arn = arn.replace('${RegistryName}', registryName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type schema to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param schemaName - Identifier for the schemaName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSchema(schemaName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:glue:${Region}:${Account}:schema/${SchemaName}';
+    arn = arn.replace('${SchemaName}', schemaName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

@@ -135,6 +135,9 @@ export class Events extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifCreatorAccount()
+   *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteRule.html
    */
   public toDeleteRule() {
@@ -207,6 +210,9 @@ export class Events extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifCreatorAccount()
+   *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeRule.html
    */
   public toDescribeRule() {
@@ -219,6 +225,9 @@ export class Events extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifCreatorAccount()
+   *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DisableRule.html
    */
   public toDisableRule() {
@@ -230,6 +239,9 @@ export class Events extends PolicyStatement {
    * Grants permissions to enable rules
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCreatorAccount()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_EnableRule.html
    */
@@ -339,6 +351,9 @@ export class Events extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifCreatorAccount()
+   *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -351,6 +366,9 @@ export class Events extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifCreatorAccount()
+   *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTargetsByRule.html
    */
   public toListTargetsByRule() {
@@ -362,6 +380,13 @@ export class Events extends PolicyStatement {
    * Grants permission to send custom events to Amazon EventBridge
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDetailType()
+   * - .ifSource()
+   * - .ifEventBusInvocation()
+   * - .ifAwsSourceArn()
+   * - .ifAwsSourceAccount()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html
    */
@@ -407,6 +432,7 @@ export class Events extends PolicyStatement {
    * - .ifDetailEventTypeCode()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifCreatorAccount()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutRule.html
    */
@@ -422,6 +448,7 @@ export class Events extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifTargetArn()
+   * - .ifCreatorAccount()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html
    */
@@ -446,6 +473,9 @@ export class Events extends PolicyStatement {
    * Grants permission to removes targets from a rule
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCreatorAccount()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemoveTargets.html
    */
@@ -474,6 +504,7 @@ export class Events extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifCreatorAccount()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TagResource.html
    */
@@ -501,6 +532,7 @@ export class Events extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifCreatorAccount()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UntagResource.html
    */
@@ -699,11 +731,37 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Filters actions based on the account the rule was created in
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-creator-account
+   *
+   * Applies to actions:
+   * - .toDeleteRule()
+   * - .toDescribeRule()
+   * - .toDisableRule()
+   * - .toEnableRule()
+   * - .toListTagsForResource()
+   * - .toListTargetsByRule()
+   * - .toPutRule()
+   * - .toPutTargets()
+   * - .toRemoveTargets()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCreatorAccount(value: string | string[], operator?: Operator | string) {
+    return this.if(`events:creatorAccount`, value, operator || 'StringLike');
+  }
+
+  /**
    * Matches the literal string of the detail-type filed of the event.
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-pattern-detail-type
    *
    * Applies to actions:
+   * - .toPutEvents()
    * - .toPutRule()
    *
    * @param value The value(s) to check
@@ -759,11 +817,27 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Filters actions based on whether the event was generated via API or cross-account bus invocation
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-bus-invocation
+   *
+   * Applies to actions:
+   * - .toPutEvents()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEventBusInvocation(value: string | string[], operator?: Operator | string) {
+    return this.if(`events:eventBusInvocation`, value, operator || 'StringLike');
+  }
+
+  /**
    * The AWS service or AWS partner event source that generated the event. Matches the literal string of the source field of the event.
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-limit-access-control
    *
    * Applies to actions:
+   * - .toPutEvents()
    * - .toPutRule()
    *
    * @param value The value(s) to check

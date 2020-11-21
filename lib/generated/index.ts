@@ -236,6 +236,8 @@ export { Datasync } from "./datasync";
 export { Elasticloadbalancing } from "./elasticloadbalancing";
 export { ElasticloadbalancingV2 } from "./elasticloadbalancingv2";
 export { ElementalActivations } from "./elementalactivations";
+export { ElementalSupportCases } from "./elementalsupportcases";
+export { ElementalSupportContent } from "./elementalsupportcontent";
 export { AccessAnalyzer } from "./iamaccessanalyzer";
 export { Iam } from "./identityandaccessmanagement";
 export { Launchwizard } from "./launchwizard";

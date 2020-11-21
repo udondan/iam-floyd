@@ -16,10 +16,10 @@
 <!-- stats -->
 Support for:
 
-- 244 Services
-- 8319 Actions
-- 821 Resource Types
-- 495 Conditions
+- 246 Services
+- 8344 Actions
+- 823 Resource Types
+- 497 Conditions
 <!-- /stats -->
 
 ![EXPERIMENTAL](https://img.shields.io/badge/stability-experimantal-orange?style=for-the-badge)**<br>This is an early version of the package. The API will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.**
@@ -59,6 +59,6 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [Maven]: https://github.com/udondan/iam-floyd/packages/258358
    [license]: https://github.com/udondan/iam-floyd/blob/main/LICENSE
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
-   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.95.1
+   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.96.0
    [libraries.io]: https://libraries.io/search?q=iam-floyd
    [AWS CDK]: https://aws.amazon.com/cdk/
