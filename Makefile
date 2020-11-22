@@ -80,7 +80,7 @@ update-version-refs:
 	@perl -pi -e "s/(iam-floyd\@)[0-9.]+/\$${1}$(VERSION)/g" "README.md"
 	@perl -pi -e "s/^(release = ')[0-9.]+/\$${1}${VERSION}/g" "docs/source/conf.py"
 
-docs:
+docs: python-examples-adjust-indention
 	@cd docs && $(MAKE) clean html
 
 test-python:
@@ -88,3 +88,8 @@ test-python:
 
 test-python-cdk:
 	$(MAKE) --no-print-directory -f ./Python.Test.Makefile test-cdk
+
+python-examples-adjust-indention:
+	@ls examples/**/*.py | xargs autopep8 -i
+	@perl -pi -e "s/(?<=^     )(?=[^.])/    /g" examples/**/*.py
+	@perl -pi -e "s/^(\s{4,})\./\1    ./g" examples/**/*.py

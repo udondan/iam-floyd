@@ -4,8 +4,8 @@ import iam_floyd as statement
 s = (
     # doc-start
     statement.Ec2() \
-    .deny() \
-    .all_matching_actions('/vpn/i')
+        .deny() \
+        .all_matching_actions('/vpn/i')
     # doc-end
 ).to_json()
 

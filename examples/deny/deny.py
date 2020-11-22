@@ -4,9 +4,9 @@ import iam_floyd as statement
 s = (
     # doc-start
     statement.Ec2() \
-    .deny() \
-    .to_start_instances() \
-    .to_stop_instances()
+        .deny() \
+        .to_start_instances() \
+        .to_stop_instances()
     # doc-end
 ).to_json()
 

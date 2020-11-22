@@ -5,10 +5,10 @@ import aws_cdk.aws_iam as iam
 s = (
     # doc-start
     statement.Sts() \
-    .allow() \
-    .to_assume_role() \
-    .for_cdk_principal(iam.ServicePrincipal('sns.amazonaws.com'),
-                       iam.ServicePrincipal('lambda.amazonaws.com'))
+        .allow() \
+        .to_assume_role() \
+        .for_cdk_principal(iam.ServicePrincipal('sns.amazonaws.com'),
+                           iam.ServicePrincipal('lambda.amazonaws.com'))
     # doc-end
 ).to_json()
 

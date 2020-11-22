@@ -4,8 +4,8 @@ import iam_floyd as statement
 s = (
     # doc-start
     statement.Ec2() \
-    .allow() \
-    .all_actions()
+        .allow() \
+        .all_actions()
     # doc-end
 ).to_json()
 
