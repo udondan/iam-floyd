@@ -26,14 +26,6 @@ Depending on your scenario, you need to either install/import ``iam-floyd`` or `
 
 .. tabs::
 
-   .. code-tab:: ts
-
-      // for use without AWS CDK use the iam-floyd package
-      import * as statement from 'iam-floyd';
-
-      // for use with CDK use the cdk-iam-floyd package
-      import * as statement from 'cdk-iam-floyd';
-
    .. code-tab:: js
 
       // for use without AWS CDK use the iam-floyd package
@@ -41,6 +33,14 @@ Depending on your scenario, you need to either install/import ``iam-floyd`` or `
 
       // for use with CDK use the cdk-iam-floyd package
       var statement = require('cdk-iam-floyd');
+
+   .. code-tab:: ts
+
+      // for use without AWS CDK use the iam-floyd package
+      import * as statement from 'iam-floyd';
+
+      // for use with CDK use the cdk-iam-floyd package
+      import * as statement from 'cdk-iam-floyd';
 
    .. code-tab:: py
 
