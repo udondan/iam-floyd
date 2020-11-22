@@ -6,8 +6,8 @@ s = (
     statement.S3() \
     .allow() \
     .all_actions() \
-    .on_bucket('some-bucket') \
-    .on_object('some-bucket', 'some/path/*')
+    .on_bucket('example-bucket') \
+    .on_object('example-bucket', 'some/path/*')
     # doc-end
 ).to_json()
 

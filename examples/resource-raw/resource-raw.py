@@ -6,7 +6,7 @@ s = (
     statement.S3() \
     .allow() \
     .all_actions() \
-    .on('arn:aws:s3:::some-bucket',
+    .on('arn:aws:s3:::example-bucket',
         'arn:aws:s3:::another-bucket')
     # doc-end
 ).to_json()

@@ -3,7 +3,7 @@
         "s3:*"
     ],
     "Resource": [
-        "arn:aws:s3:::some-bucket",
+        "arn:aws:s3:::example-bucket",
         "arn:aws:s3:::another-bucket"
     ]
 }

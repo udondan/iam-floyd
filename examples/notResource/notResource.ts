@@ -5,4 +5,4 @@ new statement.S3()
   .allow()
   .notResources()
   .toDeleteBucket()
-  .onBucket('some-bucket');
+  .onBucket('example-bucket');

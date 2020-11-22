@@ -3,6 +3,6 @@
         "s3:DeleteBucket"
     ],
     "NotResource": [
-        "arn:aws:s3:::some-bucket"
+        "arn:aws:s3:::example-bucket"
     ]
 }

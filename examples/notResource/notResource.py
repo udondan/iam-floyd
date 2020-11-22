@@ -7,7 +7,7 @@ s = (
     .allow() \
     .not_resources() \
     .to_delete_bucket() \
-    .on_bucket('some-bucket')
+    .on_bucket('example-bucket')
     # doc-end
 ).to_json()
 
