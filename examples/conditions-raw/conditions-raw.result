@@ -1,0 +1,13 @@
+{
+    "Action": [
+        "ec2:StartInstances"
+    ],
+    "Condition": {
+        "StringLike": {
+            "ec2:missingCondition": "some-value"
+        }
+    },
+    "Resource": [
+        "*"
+    ]
+}

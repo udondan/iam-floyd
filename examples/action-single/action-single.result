@@ -1,0 +1,8 @@
+{
+    "Action": [
+        "ec2:StartInstances"
+    ],
+    "Resource": [
+        "*"
+    ]
+}

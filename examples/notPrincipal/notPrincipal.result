@@ -1,0 +1,11 @@
+{
+    "Action": [
+        "sts:AssumeRole"
+    ],
+    "Effect": "Deny",
+    "NotPrincipal": {
+        "AWS": [
+            "arn:aws:iam::1234567890:user/Bob"
+        ]
+    }
+}

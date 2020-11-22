@@ -1,0 +1,17 @@
+{
+    "Action": [
+        "dynamodb:PutItem"
+    ],
+    "Condition": {
+        "ForAnyValue:StringEquals": {
+            "dynamodb:Attributes": [
+                "ID",
+                "PostDateTime"
+            ]
+        }
+    },
+    "Effect": "Deny",
+    "Resource": [
+        "arn:aws:dynamodb:*:*:table/Thread"
+    ]
+}

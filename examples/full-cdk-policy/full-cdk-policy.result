@@ -1,0 +1,78 @@
+{
+    "Statement": [
+        {
+            "Action": [
+                "cloudformation:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Action": [
+                "*"
+            ],
+            "Condition": {
+                "ForAnyValue:StringEquals": {
+                    "aws:CalledVia": "cloudformation.amazonaws.com"
+                }
+            },
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::cdktoolkit-stagingbucket-*"
+            ]
+        },
+        {
+            "Action": [
+                "account:DisableRegion",
+                "account:EnableRegion"
+            ],
+            "Effect": "Deny",
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Action": [
+                "organizations:AcceptHandshake",
+                "organizations:AttachPolicy",
+                "organizations:CancelHandshake",
+                "organizations:CreateAccount",
+                "organizations:CreateGovCloudAccount",
+                "organizations:CreateOrganization",
+                "organizations:CreateOrganizationalUnit",
+                "organizations:CreatePolicy",
+                "organizations:DeclineHandshake",
+                "organizations:DeleteOrganization",
+                "organizations:DeleteOrganizationalUnit",
+                "organizations:DeletePolicy",
+                "organizations:DeregisterDelegatedAdministrator",
+                "organizations:DetachPolicy",
+                "organizations:DisableAWSServiceAccess",
+                "organizations:DisablePolicyType",
+                "organizations:EnableAWSServiceAccess",
+                "organizations:EnableAllFeatures",
+                "organizations:EnablePolicyType",
+                "organizations:InviteAccountToOrganization",
+                "organizations:LeaveOrganization",
+                "organizations:MoveAccount",
+                "organizations:RegisterDelegatedAdministrator",
+                "organizations:RemoveAccountFromOrganization",
+                "organizations:UpdateOrganizationalUnit",
+                "organizations:UpdatePolicy"
+            ],
+            "Effect": "Deny",
+            "Resource": [
+                "*"
+            ]
+        }
+    ],
+    "Version": "2012-10-17"
+}

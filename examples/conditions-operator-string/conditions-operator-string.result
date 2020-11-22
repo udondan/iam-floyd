@@ -1,0 +1,13 @@
+{
+    "Action": [
+        "ec2:StartInstances"
+    ],
+    "Condition": {
+        "StringEquals": {
+            "aws:RequestTag/TagWithSpecialChars": "*John*"
+        }
+    },
+    "Resource": [
+        "*"
+    ]
+}

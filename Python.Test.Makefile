@@ -10,11 +10,11 @@ test: install
 	@for f in examples/**/*.py; do \
 		[[ "$$f" == *".cdk."* ]]&& continue; \
 		echo "Testing $$(basename $$f)" ;\
-		python3 "$$f" || exit ;\
+		python3 "$$f" > "$${f%.py}.py.result" || exit ;\
 	done
 
 test-cdk: install-cdk
 	@for f in examples/**/*.cdk.py; do \
 		echo "Testing $$(basename $$f)" ;\
-		python3 "$$f" || exit ;\
+		python3 "$$f" > "$${f%.py}.py.result" || exit ;\
 	done

@@ -1,0 +1,143 @@
+{
+    "Action": [
+        "sts:AssumeRole"
+    ],
+    "Effect": "Allow",
+    "Principal": {
+        "AWS": [
+            "arn:aws:iam::1234567890:root"
+        ]
+    }
+}
+{
+    "Action": [
+        "sts:AssumeRoleWithSAML"
+    ],
+    "Effect": "Allow",
+    "Principal": {
+        "Service": [
+            "lambda.amazonaws.com"
+        ]
+    }
+}
+{
+    "Action": [
+        "sts:AssumeRole"
+    ],
+    "Effect": "Allow",
+    "Principal": {
+        "AWS": [
+            "arn:aws:iam::1234567890:user/Bob"
+        ]
+    }
+}
+{
+    "Action": [
+        "sts:AssumeRole"
+    ],
+    "Effect": "Allow",
+    "Principal": {
+        "AWS": [
+            "arn:aws:iam::1234567890:role/role-name"
+        ]
+    }
+}
+{
+    "Action": [
+        "sts:AssumeRoleWithSAML"
+    ],
+    "Effect": "Allow",
+    "Principal": {
+        "Federated": [
+            "cognito-identity.amazonaws.com"
+        ]
+    }
+}
+{
+    "Action": [
+        "sts:AssumeRoleWithSAML"
+    ],
+    "Effect": "Allow",
+    "Principal": {
+        "Federated": [
+            "www.amazon.com"
+        ]
+    }
+}
+{
+    "Action": [
+        "sts:AssumeRoleWithSAML"
+    ],
+    "Effect": "Allow",
+    "Principal": {
+        "Federated": [
+            "accounts.google.com"
+        ]
+    }
+}
+{
+    "Action": [
+        "sts:AssumeRoleWithSAML"
+    ],
+    "Effect": "Allow",
+    "Principal": {
+        "Federated": [
+            "graph.facebook.com"
+        ]
+    }
+}
+{
+    "Action": [
+        "sts:AssumeRoleWithSAML"
+    ],
+    "Effect": "Allow",
+    "Principal": {
+        "Federated": [
+            "arn:aws:iam::1234567890:saml-provider/saml-provider"
+        ]
+    }
+}
+{
+    "Action": [
+        "sts:AssumeRole"
+    ],
+    "Effect": "Allow",
+    "Principal": {
+        "AWS": [
+            "*"
+        ]
+    }
+}
+{
+    "Action": [
+        "sts:AssumeRole"
+    ],
+    "Effect": "Allow",
+    "Principal": {
+        "AWS": [
+            "arn:aws:sts::123456789:assumed-role/role-name/session-name"
+        ]
+    }
+}
+{
+    "Action": [
+        "sts:AssumeRole"
+    ],
+    "Effect": "Allow",
+    "Principal": {
+        "CanonicalUser": [
+            "userID"
+        ]
+    }
+}
+{
+    "Action": [
+        "sts:AssumeRole"
+    ],
+    "Effect": "Allow",
+    "Principal": {
+        "AWS": [
+            "arn:foo:bar"
+        ]
+    }
+}

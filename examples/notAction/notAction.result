@@ -1,0 +1,8 @@
+{
+    "NotAction": [
+        "s3:DeleteBucket"
+    ],
+    "Resource": [
+        "arn:aws:s3:::some-bucket"
+    ]
+}

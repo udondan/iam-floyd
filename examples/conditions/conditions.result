@@ -1,0 +1,21 @@
+{
+    "Action": [
+        "ec2:StartInstances"
+    ],
+    "Condition": {
+        "Bool": {
+            "ec2:AssociatePublicIpAddress": false,
+            "ec2:Encrypted": true
+        },
+        "StringLike": {
+            "aws:RequestTag/Owner": "John",
+            "ec2:InstanceType": [
+                "t3.micro",
+                "t3.nano"
+            ]
+        }
+    },
+    "Resource": [
+        "*"
+    ]
+}

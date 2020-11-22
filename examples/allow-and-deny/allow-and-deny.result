@@ -1,0 +1,17 @@
+{
+    "Action": [
+        "ec2:StartInstances"
+    ],
+    "Resource": [
+        "*"
+    ]
+}
+{
+    "Action": [
+        "ec2:StopInstances"
+    ],
+    "Effect": "Deny",
+    "Resource": [
+        "*"
+    ]
+}

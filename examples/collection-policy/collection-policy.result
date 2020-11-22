@@ -1,0 +1,31 @@
+{
+    "Statement": [
+        {
+            "Action": [
+                "ec2:StartInstances"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "aws:RequestTag/Owner": "${aws:username}"
+                }
+            },
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Action": [
+                "ec2:StopInstances"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "ec2:ResourceTag/Owner": "${aws:username}"
+                }
+            },
+            "Resource": [
+                "*"
+            ]
+        }
+    ],
+    "Version": "2012-10-17"
+}

@@ -1,0 +1,17 @@
+{
+    "Action": [
+        "ec2:StartInstances"
+    ],
+    "Condition": {
+        "StringEqualsIfExists": {
+            "aws:RequestTag/Environment": [
+                "Production",
+                "Staging",
+                "Dev"
+            ]
+        }
+    },
+    "Resource": [
+        "*"
+    ]
+}

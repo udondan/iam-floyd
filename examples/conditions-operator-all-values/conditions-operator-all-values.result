@@ -1,0 +1,17 @@
+{
+    "Action": [
+        "dynamodb:GetItem"
+    ],
+    "Condition": {
+        "ForAllValues:StringEquals": {
+            "dynamodb:Attributes": [
+                "ID",
+                "Message",
+                "Tags"
+            ]
+        }
+    },
+    "Resource": [
+        "arn:aws:dynamodb:*:*:table/Thread"
+    ]
+}
