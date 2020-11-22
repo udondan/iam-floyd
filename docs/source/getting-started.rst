@@ -70,14 +70,6 @@ You can work with `access levels <access-levels_>`_. For every access level ther
 
 .. tabs::
 
-   .. group-tab:: TypeScript
-
-      - ``allListActions()``
-      - ``allReadActions()``
-      - ``allWriteActions()``
-      - ``allPermissionManagementActions()``
-      - ``allTaggingActions()``
-
    .. group-tab:: JavaScript
 
       - ``allListActions()``
