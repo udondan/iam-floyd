@@ -11,8 +11,7 @@ IAM Floyd provides a fluid interface and enables you to define policy statements
 
 The methods ``allow()`` and ``deny()`` control the `Effect <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_effect.html>`_ of the statement.
 
-The default effect of any statement is ``Allow``, so it's not mandatory to add either of these methods to the method chain. Though it is recommended to keep the statement readable.
-improve , so the statement is readable:
+The default effect of any statement is ``Allow``, so it's not mandatory to add either of these methods to the method chain. Though it is recommended to improve readability:
 
 .. example:: allow-and-deny
 
