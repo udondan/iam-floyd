@@ -59,6 +59,7 @@ const conditionTypeDefaults: {
 
 export interface Module {
   name?: string;
+  servicePrefix?: string;
   filename: string;
   url?: string;
   actionList?: Actions;
@@ -167,6 +168,7 @@ export function getContent(service: string): Promise<Module> {
           }
 
           module.name = servicePrefix;
+          module.servicePrefix = servicePrefix;
           module.url = url;
 
           if (shortName in fixes) {
@@ -211,8 +213,8 @@ export function createModule(module: Module): Promise<void> {
 
   process.stdout.write(`Generating `.cyan);
 
-  if (module.fixes && 'id' in module.fixes) {
-    module.name = module.fixes.id;
+  if (module.fixes && 'name' in module.fixes) {
+    module.name = module.fixes.name;
   }
 
   modules.push(module);
@@ -240,7 +242,7 @@ export function createModule(module: Module): Promise<void> {
   classDeclaration.addProperty({
     name: 'servicePrefix',
     scope: Scope.Public,
-    initializer: `'${module.name}'`,
+    initializer: `'${module.servicePrefix}'`,
   });
 
   const constructor = classDeclaration.addConstructor({});

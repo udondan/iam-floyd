@@ -7,7 +7,7 @@ import { PolicyStatement } from "../shared";
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class KinesisanalyticsV2 extends PolicyStatement {
-  public servicePrefix = 'kinesisanalytics-v2';
+  public servicePrefix = 'kinesisanalytics';
 
   /**
    * Statement provider for service [kinesisanalytics-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisanalyticsv2.html).

@@ -7,7 +7,7 @@ import { PolicyStatement } from "../shared";
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class AwsMarketplaceMeteringService extends PolicyStatement {
-  public servicePrefix = 'aws-marketplace-metering-service';
+  public servicePrefix = 'aws-marketplace';
 
   /**
    * Statement provider for service [aws-marketplace-metering-service](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacemeteringservice.html).

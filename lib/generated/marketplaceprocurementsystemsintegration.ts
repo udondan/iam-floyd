@@ -7,7 +7,7 @@ import { PolicyStatement } from "../shared";
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement {
-  public servicePrefix = 'aws-marketplace-procurement-systems-integration';
+  public servicePrefix = 'aws-marketplace';
 
   /**
    * Statement provider for service [aws-marketplace-procurement-systems-integration](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplaceprocurementsystemsintegration.html).

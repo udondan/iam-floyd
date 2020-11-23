@@ -7,7 +7,7 @@ import { PolicyStatement, Operator } from "../shared";
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class ElasticloadbalancingV2 extends PolicyStatement {
-  public servicePrefix = 'elasticloadbalancing-v2';
+  public servicePrefix = 'elasticloadbalancing';
 
   /**
    * Statement provider for service [elasticloadbalancing-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticloadbalancingv2.html).

@@ -7,7 +7,7 @@ import { PolicyStatement, Operator } from "../shared";
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class AwsMarketplaceCatalog extends PolicyStatement {
-  public servicePrefix = 'aws-marketplace-catalog';
+  public servicePrefix = 'aws-marketplace';
 
   /**
    * Statement provider for service [aws-marketplace-catalog](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html).

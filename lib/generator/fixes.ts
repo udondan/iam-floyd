@@ -30,28 +30,28 @@ export const fixes: Fixes = {
     },
   },
   kinesisanalyticsv2: {
-    id: 'kinesisanalytics-v2',
+    name: 'kinesisanalytics-v2',
   },
   pinpointemailservice: {
-    id: 'ses-pinpoint',
+    name: 'ses-pinpoint',
   },
   marketplacecatalog: {
-    id: 'aws-marketplace-catalog',
+    name: 'aws-marketplace-catalog',
   },
   marketplaceentitlementservice: {
-    id: 'aws-marketplace-entitlement-service',
+    name: 'aws-marketplace-entitlement-service',
   },
   marketplaceimagebuildingservice: {
-    id: 'aws-marketplace-image-building-service',
+    name: 'aws-marketplace-image-building-service',
   },
   marketplacemeteringservice: {
-    id: 'aws-marketplace-metering-service',
+    name: 'aws-marketplace-metering-service',
   },
   marketplaceprocurementsystemsintegration: {
-    id: 'aws-marketplace-procurement-systems-integration',
+    name: 'aws-marketplace-procurement-systems-integration',
   },
   privatemarketplace: {
-    id: 'aws-marketplace-private',
+    name: 'aws-marketplace-private',
   },
   backup: {
     resourceTypes: {
@@ -94,7 +94,7 @@ export const fixes: Fixes = {
     },
   },
   elasticloadbalancingv2: {
-    id: 'elasticloadbalancing-v2',
+    name: 'elasticloadbalancing-v2',
   },
   events: {
     resourceTypes: {

@@ -7,7 +7,7 @@ import { PolicyStatement } from "../shared";
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class AwsMarketplaceImageBuildingService extends PolicyStatement {
-  public servicePrefix = 'aws-marketplace-image-building-service';
+  public servicePrefix = 'aws-marketplace';
 
   /**
    * Statement provider for service [aws-marketplace-image-building-service](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplaceimagebuildingservice.html).

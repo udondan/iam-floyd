@@ -7,7 +7,7 @@ import { PolicyStatement, Operator } from "../shared";
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class SesPinpoint extends PolicyStatement {
-  public servicePrefix = 'ses-pinpoint';
+  public servicePrefix = 'ses';
 
   /**
    * Statement provider for service [ses-pinpoint](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpinpointemailservice.html).
