@@ -26,7 +26,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_AssociateApprovalRuleTemplateWithRepository.html
    */
   public toAssociateApprovalRuleTemplateWithRepository() {
-    this.to('codecommit:AssociateApprovalRuleTemplateWithRepository');
+    this.to('AssociateApprovalRuleTemplateWithRepository');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_BatchAssociateApprovalRuleTemplateWithRepositories.html
    */
   public toBatchAssociateApprovalRuleTemplateWithRepositories() {
-    this.to('codecommit:BatchAssociateApprovalRuleTemplateWithRepositories');
+    this.to('BatchAssociateApprovalRuleTemplateWithRepositories');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_BatchDescribeMergeConflicts.html
    */
   public toBatchDescribeMergeConflicts() {
-    this.to('codecommit:BatchDescribeMergeConflicts');
+    this.to('BatchDescribeMergeConflicts');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_BatchDisassociateApprovalRuleTemplateFromRepositories.html
    */
   public toBatchDisassociateApprovalRuleTemplateFromRepositories() {
-    this.to('codecommit:BatchDisassociateApprovalRuleTemplateFromRepositories');
+    this.to('BatchDisassociateApprovalRuleTemplateFromRepositories');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_BatchGetCommits.html
    */
   public toBatchGetCommits() {
-    this.to('codecommit:BatchGetCommits');
+    this.to('BatchGetCommits');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-pr
    */
   public toBatchGetPullRequests() {
-    this.to('codecommit:BatchGetPullRequests');
+    this.to('BatchGetPullRequests');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_BatchGetRepositories.html
    */
   public toBatchGetRepositories() {
-    this.to('codecommit:BatchGetRepositories');
+    this.to('BatchGetRepositories');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-acp
    */
   public toCancelUploadArchive() {
-    this.to('codecommit:CancelUploadArchive');
+    this.to('CancelUploadArchive');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateApprovalRuleTemplate.html
    */
   public toCreateApprovalRuleTemplate() {
-    this.to('codecommit:CreateApprovalRuleTemplate');
+    this.to('CreateApprovalRuleTemplate');
     return this;
   }
 
@@ -137,7 +137,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateBranch.html
    */
   public toCreateBranch() {
-    this.to('codecommit:CreateBranch');
+    this.to('CreateBranch');
     return this;
   }
 
@@ -152,7 +152,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateCommit.html
    */
   public toCreateCommit() {
-    this.to('codecommit:CreateCommit');
+    this.to('CreateCommit');
     return this;
   }
 
@@ -164,7 +164,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreatePullRequest.html
    */
   public toCreatePullRequest() {
-    this.to('codecommit:CreatePullRequest');
+    this.to('CreatePullRequest');
     return this;
   }
 
@@ -176,7 +176,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreatePullRequestApprovalRule.html
    */
   public toCreatePullRequestApprovalRule() {
-    this.to('codecommit:CreatePullRequestApprovalRule');
+    this.to('CreatePullRequestApprovalRule');
     return this;
   }
 
@@ -192,7 +192,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateRepository.html
    */
   public toCreateRepository() {
-    this.to('codecommit:CreateRepository');
+    this.to('CreateRepository');
     return this;
   }
 
@@ -207,7 +207,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateUnreferencedMergeCommit.html
    */
   public toCreateUnreferencedMergeCommit() {
-    this.to('codecommit:CreateUnreferencedMergeCommit');
+    this.to('CreateUnreferencedMergeCommit');
     return this;
   }
 
@@ -219,7 +219,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DeleteApprovalRuleTemplate.html
    */
   public toDeleteApprovalRuleTemplate() {
-    this.to('codecommit:DeleteApprovalRuleTemplate');
+    this.to('DeleteApprovalRuleTemplate');
     return this;
   }
 
@@ -234,7 +234,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DeleteBranch.html
    */
   public toDeleteBranch() {
-    this.to('codecommit:DeleteBranch');
+    this.to('DeleteBranch');
     return this;
   }
 
@@ -246,7 +246,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DeleteCommentContent.html
    */
   public toDeleteCommentContent() {
-    this.to('codecommit:DeleteCommentContent');
+    this.to('DeleteCommentContent');
     return this;
   }
 
@@ -261,7 +261,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DeleteFile.html
    */
   public toDeleteFile() {
-    this.to('codecommit:DeleteFile');
+    this.to('DeleteFile');
     return this;
   }
 
@@ -273,7 +273,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DeletePullRequestApprovalRule.html
    */
   public toDeletePullRequestApprovalRule() {
-    this.to('codecommit:DeletePullRequestApprovalRule');
+    this.to('DeletePullRequestApprovalRule');
     return this;
   }
 
@@ -285,7 +285,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DeleteRepository.html
    */
   public toDeleteRepository() {
-    this.to('codecommit:DeleteRepository');
+    this.to('DeleteRepository');
     return this;
   }
 
@@ -297,7 +297,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DescribeMergeConflicts.html
    */
   public toDescribeMergeConflicts() {
-    this.to('codecommit:DescribeMergeConflicts');
+    this.to('DescribeMergeConflicts');
     return this;
   }
 
@@ -309,7 +309,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DescribePullRequestEvents.html
    */
   public toDescribePullRequestEvents() {
-    this.to('codecommit:DescribePullRequestEvents');
+    this.to('DescribePullRequestEvents');
     return this;
   }
 
@@ -321,7 +321,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DisassociateApprovalRuleTemplateFromRepository.html
    */
   public toDisassociateApprovalRuleTemplateFromRepository() {
-    this.to('codecommit:DisassociateApprovalRuleTemplateFromRepository');
+    this.to('DisassociateApprovalRuleTemplateFromRepository');
     return this;
   }
 
@@ -333,7 +333,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_EvaluatePullRequestApprovalRules.html
    */
   public toEvaluatePullRequestApprovalRules() {
-    this.to('codecommit:EvaluatePullRequestApprovalRules');
+    this.to('EvaluatePullRequestApprovalRules');
     return this;
   }
 
@@ -345,7 +345,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetApprovalRuleTemplate.html
    */
   public toGetApprovalRuleTemplate() {
-    this.to('codecommit:GetApprovalRuleTemplate');
+    this.to('GetApprovalRuleTemplate');
     return this;
   }
 
@@ -357,7 +357,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetBlob.html
    */
   public toGetBlob() {
-    this.to('codecommit:GetBlob');
+    this.to('GetBlob');
     return this;
   }
 
@@ -369,7 +369,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetBranch.html
    */
   public toGetBranch() {
-    this.to('codecommit:GetBranch');
+    this.to('GetBranch');
     return this;
   }
 
@@ -381,7 +381,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetComment.html
    */
   public toGetComment() {
-    this.to('codecommit:GetComment');
+    this.to('GetComment');
     return this;
   }
 
@@ -393,7 +393,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetCommentReactions.html
    */
   public toGetCommentReactions() {
-    this.to('codecommit:GetCommentReactions');
+    this.to('GetCommentReactions');
     return this;
   }
 
@@ -405,7 +405,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetCommentsForComparedCommit.html
    */
   public toGetCommentsForComparedCommit() {
-    this.to('codecommit:GetCommentsForComparedCommit');
+    this.to('GetCommentsForComparedCommit');
     return this;
   }
 
@@ -417,7 +417,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetCommentsForPullRequest.html
    */
   public toGetCommentsForPullRequest() {
-    this.to('codecommit:GetCommentsForPullRequest');
+    this.to('GetCommentsForPullRequest');
     return this;
   }
 
@@ -429,7 +429,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetCommit.html
    */
   public toGetCommit() {
-    this.to('codecommit:GetCommit');
+    this.to('GetCommit');
     return this;
   }
 
@@ -441,7 +441,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
    */
   public toGetCommitHistory() {
-    this.to('codecommit:GetCommitHistory');
+    this.to('GetCommitHistory');
     return this;
   }
 
@@ -453,7 +453,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-pr
    */
   public toGetCommitsFromMergeBase() {
-    this.to('codecommit:GetCommitsFromMergeBase');
+    this.to('GetCommitsFromMergeBase');
     return this;
   }
 
@@ -465,7 +465,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetDifferences.html
    */
   public toGetDifferences() {
-    this.to('codecommit:GetDifferences');
+    this.to('GetDifferences');
     return this;
   }
 
@@ -477,7 +477,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetFile.html
    */
   public toGetFile() {
-    this.to('codecommit:GetFile');
+    this.to('GetFile');
     return this;
   }
 
@@ -489,7 +489,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetFolder.html
    */
   public toGetFolder() {
-    this.to('codecommit:GetFolder');
+    this.to('GetFolder');
     return this;
   }
 
@@ -504,7 +504,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetMergeCommit.html
    */
   public toGetMergeCommit() {
-    this.to('codecommit:GetMergeCommit');
+    this.to('GetMergeCommit');
     return this;
   }
 
@@ -516,7 +516,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetMergeConflicts.html
    */
   public toGetMergeConflicts() {
-    this.to('codecommit:GetMergeConflicts');
+    this.to('GetMergeConflicts');
     return this;
   }
 
@@ -528,7 +528,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetMergeOptions.html
    */
   public toGetMergeOptions() {
-    this.to('codecommit:GetMergeOptions');
+    this.to('GetMergeOptions');
     return this;
   }
 
@@ -540,7 +540,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
    */
   public toGetObjectIdentifier() {
-    this.to('codecommit:GetObjectIdentifier');
+    this.to('GetObjectIdentifier');
     return this;
   }
 
@@ -552,7 +552,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetPullRequest.html
    */
   public toGetPullRequest() {
-    this.to('codecommit:GetPullRequest');
+    this.to('GetPullRequest');
     return this;
   }
 
@@ -564,7 +564,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetPullRequestApprovalStates.html
    */
   public toGetPullRequestApprovalStates() {
-    this.to('codecommit:GetPullRequestApprovalStates');
+    this.to('GetPullRequestApprovalStates');
     return this;
   }
 
@@ -576,7 +576,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetPullRequestOverrideState.html
    */
   public toGetPullRequestOverrideState() {
-    this.to('codecommit:GetPullRequestOverrideState');
+    this.to('GetPullRequestOverrideState');
     return this;
   }
 
@@ -588,7 +588,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
    */
   public toGetReferences() {
-    this.to('codecommit:GetReferences');
+    this.to('GetReferences');
     return this;
   }
 
@@ -600,7 +600,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html
    */
   public toGetRepository() {
-    this.to('codecommit:GetRepository');
+    this.to('GetRepository');
     return this;
   }
 
@@ -612,7 +612,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepositoryTriggers.html
    */
   public toGetRepositoryTriggers() {
-    this.to('codecommit:GetRepositoryTriggers');
+    this.to('GetRepositoryTriggers');
     return this;
   }
 
@@ -624,7 +624,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-code
    */
   public toGetTree() {
-    this.to('codecommit:GetTree');
+    this.to('GetTree');
     return this;
   }
 
@@ -636,7 +636,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-acp
    */
   public toGetUploadArchiveStatus() {
-    this.to('codecommit:GetUploadArchiveStatus');
+    this.to('GetUploadArchiveStatus');
     return this;
   }
 
@@ -648,7 +648,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-git
    */
   public toGitPull() {
-    this.to('codecommit:GitPull');
+    this.to('GitPull');
     return this;
   }
 
@@ -663,7 +663,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-git
    */
   public toGitPush() {
-    this.to('codecommit:GitPush');
+    this.to('GitPush');
     return this;
   }
 
@@ -675,7 +675,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_ListApprovalRuleTemplates.html
    */
   public toListApprovalRuleTemplates() {
-    this.to('codecommit:ListApprovalRuleTemplates');
+    this.to('ListApprovalRuleTemplates');
     return this;
   }
 
@@ -687,7 +687,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_ListAssociatedApprovalRuleTemplatesForRepository.html
    */
   public toListAssociatedApprovalRuleTemplatesForRepository() {
-    this.to('codecommit:ListAssociatedApprovalRuleTemplatesForRepository');
+    this.to('ListAssociatedApprovalRuleTemplatesForRepository');
     return this;
   }
 
@@ -699,7 +699,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_ListBranches.html
    */
   public toListBranches() {
-    this.to('codecommit:ListBranches');
+    this.to('ListBranches');
     return this;
   }
 
@@ -711,7 +711,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_ListPullRequests.html
    */
   public toListPullRequests() {
-    this.to('codecommit:ListPullRequests');
+    this.to('ListPullRequests');
     return this;
   }
 
@@ -723,7 +723,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_ListRepositories.html
    */
   public toListRepositories() {
-    this.to('codecommit:ListRepositories');
+    this.to('ListRepositories');
     return this;
   }
 
@@ -735,7 +735,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_ListRepositoriesForApprovalRuleTemplate.html
    */
   public toListRepositoriesForApprovalRuleTemplate() {
-    this.to('codecommit:ListRepositoriesForApprovalRuleTemplate');
+    this.to('ListRepositoriesForApprovalRuleTemplate');
     return this;
   }
 
@@ -747,7 +747,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('codecommit:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -762,7 +762,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergeBranchesByFastForward.html
    */
   public toMergeBranchesByFastForward() {
-    this.to('codecommit:MergeBranchesByFastForward');
+    this.to('MergeBranchesByFastForward');
     return this;
   }
 
@@ -777,7 +777,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergeBranchesBySquash.html
    */
   public toMergeBranchesBySquash() {
-    this.to('codecommit:MergeBranchesBySquash');
+    this.to('MergeBranchesBySquash');
     return this;
   }
 
@@ -792,7 +792,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergeBranchesByThreeWay.html
    */
   public toMergeBranchesByThreeWay() {
-    this.to('codecommit:MergeBranchesByThreeWay');
+    this.to('MergeBranchesByThreeWay');
     return this;
   }
 
@@ -807,7 +807,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergePullRequestByFastForward.html
    */
   public toMergePullRequestByFastForward() {
-    this.to('codecommit:MergePullRequestByFastForward');
+    this.to('MergePullRequestByFastForward');
     return this;
   }
 
@@ -822,7 +822,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergePullRequestBySquash.html
    */
   public toMergePullRequestBySquash() {
-    this.to('codecommit:MergePullRequestBySquash');
+    this.to('MergePullRequestBySquash');
     return this;
   }
 
@@ -837,7 +837,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergePullRequestByThreeWay.html
    */
   public toMergePullRequestByThreeWay() {
-    this.to('codecommit:MergePullRequestByThreeWay');
+    this.to('MergePullRequestByThreeWay');
     return this;
   }
 
@@ -849,7 +849,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_OverridePullRequestApprovalRules.html
    */
   public toOverridePullRequestApprovalRules() {
-    this.to('codecommit:OverridePullRequestApprovalRules');
+    this.to('OverridePullRequestApprovalRules');
     return this;
   }
 
@@ -861,7 +861,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_PostCommentForComparedCommit.html
    */
   public toPostCommentForComparedCommit() {
-    this.to('codecommit:PostCommentForComparedCommit');
+    this.to('PostCommentForComparedCommit');
     return this;
   }
 
@@ -873,7 +873,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_PostCommentForPullRequest.html
    */
   public toPostCommentForPullRequest() {
-    this.to('codecommit:PostCommentForPullRequest');
+    this.to('PostCommentForPullRequest');
     return this;
   }
 
@@ -885,7 +885,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_PostCommentReply.html
    */
   public toPostCommentReply() {
-    this.to('codecommit:PostCommentReply');
+    this.to('PostCommentReply');
     return this;
   }
 
@@ -897,7 +897,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_PutCommentReaction.html
    */
   public toPutCommentReaction() {
-    this.to('codecommit:PutCommentReaction');
+    this.to('PutCommentReaction');
     return this;
   }
 
@@ -912,7 +912,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_PutFile.html
    */
   public toPutFile() {
-    this.to('codecommit:PutFile');
+    this.to('PutFile');
     return this;
   }
 
@@ -924,7 +924,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_PutRepositoryTriggers.html
    */
   public toPutRepositoryTriggers() {
-    this.to('codecommit:PutRepositoryTriggers');
+    this.to('PutRepositoryTriggers');
     return this;
   }
 
@@ -941,7 +941,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('codecommit:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -953,7 +953,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_TestRepositoryTriggers.html
    */
   public toTestRepositoryTriggers() {
-    this.to('codecommit:TestRepositoryTriggers');
+    this.to('TestRepositoryTriggers');
     return this;
   }
 
@@ -968,7 +968,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('codecommit:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -980,7 +980,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdateApprovalRuleTemplateContent.html
    */
   public toUpdateApprovalRuleTemplateContent() {
-    this.to('codecommit:UpdateApprovalRuleTemplateContent');
+    this.to('UpdateApprovalRuleTemplateContent');
     return this;
   }
 
@@ -992,7 +992,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdateApprovalRuleTemplateDescription.html
    */
   public toUpdateApprovalRuleTemplateDescription() {
-    this.to('codecommit:UpdateApprovalRuleTemplateDescription');
+    this.to('UpdateApprovalRuleTemplateDescription');
     return this;
   }
 
@@ -1004,7 +1004,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdateApprovalRuleTemplateName.html
    */
   public toUpdateApprovalRuleTemplateName() {
-    this.to('codecommit:UpdateApprovalRuleTemplateName');
+    this.to('UpdateApprovalRuleTemplateName');
     return this;
   }
 
@@ -1016,7 +1016,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdateComment.html
    */
   public toUpdateComment() {
-    this.to('codecommit:UpdateComment');
+    this.to('UpdateComment');
     return this;
   }
 
@@ -1028,7 +1028,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdateDefaultBranch.html
    */
   public toUpdateDefaultBranch() {
-    this.to('codecommit:UpdateDefaultBranch');
+    this.to('UpdateDefaultBranch');
     return this;
   }
 
@@ -1040,7 +1040,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdatePullRequestApprovalRuleContent.html
    */
   public toUpdatePullRequestApprovalRuleContent() {
-    this.to('codecommit:UpdatePullRequestApprovalRuleContent');
+    this.to('UpdatePullRequestApprovalRuleContent');
     return this;
   }
 
@@ -1052,7 +1052,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdatePullRequestApprovalState.html
    */
   public toUpdatePullRequestApprovalState() {
-    this.to('codecommit:UpdatePullRequestApprovalState');
+    this.to('UpdatePullRequestApprovalState');
     return this;
   }
 
@@ -1064,7 +1064,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdatePullRequestDescription.html
    */
   public toUpdatePullRequestDescription() {
-    this.to('codecommit:UpdatePullRequestDescription');
+    this.to('UpdatePullRequestDescription');
     return this;
   }
 
@@ -1076,7 +1076,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdatePullRequestStatus.html
    */
   public toUpdatePullRequestStatus() {
-    this.to('codecommit:UpdatePullRequestStatus');
+    this.to('UpdatePullRequestStatus');
     return this;
   }
 
@@ -1088,7 +1088,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdatePullRequestTitle.html
    */
   public toUpdatePullRequestTitle() {
-    this.to('codecommit:UpdatePullRequestTitle');
+    this.to('UpdatePullRequestTitle');
     return this;
   }
 
@@ -1100,7 +1100,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdateRepositoryDescription.html
    */
   public toUpdateRepositoryDescription() {
-    this.to('codecommit:UpdateRepositoryDescription');
+    this.to('UpdateRepositoryDescription');
     return this;
   }
 
@@ -1112,7 +1112,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdateRepositoryName.html
    */
   public toUpdateRepositoryName() {
-    this.to('codecommit:UpdateRepositoryName');
+    this.to('UpdateRepositoryName');
     return this;
   }
 
@@ -1124,7 +1124,7 @@ export class Codecommit extends PolicyStatement {
    * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-acp
    */
   public toUploadArchive() {
-    this.to('codecommit:UploadArchive');
+    this.to('UploadArchive');
     return this;
   }
 

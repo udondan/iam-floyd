@@ -26,7 +26,7 @@ export class Polly extends PolicyStatement {
    * https://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html
    */
   public toDeleteLexicon() {
-    this.to('polly:DeleteLexicon');
+    this.to('DeleteLexicon');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Polly extends PolicyStatement {
    * https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html
    */
   public toDescribeVoices() {
-    this.to('polly:DescribeVoices');
+    this.to('DescribeVoices');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Polly extends PolicyStatement {
    * https://docs.aws.amazon.com/polly/latest/dg/API_GetLexicon.html
    */
   public toGetLexicon() {
-    this.to('polly:GetLexicon');
+    this.to('GetLexicon');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Polly extends PolicyStatement {
    * https://docs.aws.amazon.com/polly/latest/dg/API_GetSpeechSynthesisTask.html
    */
   public toGetSpeechSynthesisTask() {
-    this.to('polly:GetSpeechSynthesisTask');
+    this.to('GetSpeechSynthesisTask');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Polly extends PolicyStatement {
    * https://docs.aws.amazon.com/polly/latest/dg/API_ListLexicons.html
    */
   public toListLexicons() {
-    this.to('polly:ListLexicons');
+    this.to('ListLexicons');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Polly extends PolicyStatement {
    * https://docs.aws.amazon.com/polly/latest/dg/API_ListSpeechSynthesisTasks.html
    */
   public toListSpeechSynthesisTasks() {
-    this.to('polly:ListSpeechSynthesisTasks');
+    this.to('ListSpeechSynthesisTasks');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Polly extends PolicyStatement {
    * https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html
    */
   public toPutLexicon() {
-    this.to('polly:PutLexicon');
+    this.to('PutLexicon');
     return this;
   }
 
@@ -113,7 +113,7 @@ export class Polly extends PolicyStatement {
    * https://docs.aws.amazon.com/polly/latest/dg/API_StartSpeechSynthesisTask.html
    */
   public toStartSpeechSynthesisTask() {
-    this.to('polly:StartSpeechSynthesisTask');
+    this.to('StartSpeechSynthesisTask');
     return this;
   }
 
@@ -125,7 +125,7 @@ export class Polly extends PolicyStatement {
    * https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html
    */
   public toSynthesizeSpeech() {
-    this.to('polly:SynthesizeSpeech');
+    this.to('SynthesizeSpeech');
     return this;
   }
 

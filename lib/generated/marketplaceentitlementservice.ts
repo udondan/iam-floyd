@@ -24,7 +24,7 @@ export class AwsMarketplaceEntitlementService extends PolicyStatement {
    * Access Level: Read
    */
   public toGetEntitlements() {
-    this.to('aws-marketplace-entitlement-service:GetEntitlements');
+    this.to('GetEntitlements');
     return this;
   }
 

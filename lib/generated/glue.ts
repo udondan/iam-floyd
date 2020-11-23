@@ -26,7 +26,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchCreatePartition
    */
   public toBatchCreatePartition() {
-    this.to('glue:BatchCreatePartition');
+    this.to('BatchCreatePartition');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-BatchDeleteConnection
    */
   public toBatchDeleteConnection() {
-    this.to('glue:BatchDeleteConnection');
+    this.to('BatchDeleteConnection');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchDeletePartition
    */
   public toBatchDeletePartition() {
-    this.to('glue:BatchDeletePartition');
+    this.to('BatchDeletePartition');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-BatchDeleteTable
    */
   public toBatchDeleteTable() {
-    this.to('glue:BatchDeleteTable');
+    this.to('BatchDeleteTable');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTableVersion
    */
   public toBatchDeleteTableVersion() {
-    this.to('glue:BatchDeleteTableVersion');
+    this.to('BatchDeleteTableVersion');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-BatchGetCrawlers
    */
   public toBatchGetCrawlers() {
-    this.to('glue:BatchGetCrawlers');
+    this.to('BatchGetCrawlers');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-BatchGetDevEndpoints
    */
   public toBatchGetDevEndpoints() {
-    this.to('glue:BatchGetDevEndpoints');
+    this.to('BatchGetDevEndpoints');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-BatchGetJobs
    */
   public toBatchGetJobs() {
-    this.to('glue:BatchGetJobs');
+    this.to('BatchGetJobs');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchGetPartition
    */
   public toBatchGetPartition() {
-    this.to('glue:BatchGetPartition');
+    this.to('BatchGetPartition');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-BatchGetTriggers
    */
   public toBatchGetTriggers() {
-    this.to('glue:BatchGetTriggers');
+    this.to('BatchGetTriggers');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-BatchGetWorkflows
    */
   public toBatchGetWorkflows() {
-    this.to('glue:BatchGetWorkflows');
+    this.to('BatchGetWorkflows');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-BatchStopStartJobRun
    */
   public toBatchStopJobRun() {
-    this.to('glue:BatchStopJobRun');
+    this.to('BatchStopJobRun');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-CancelMLTaskRun
    */
   public toCancelMLTaskRun() {
-    this.to('glue:CancelMLTaskRun');
+    this.to('CancelMLTaskRun');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-CheckSchemaVersionValidity
    */
   public toCheckSchemaVersionValidity() {
-    this.to('glue:CheckSchemaVersionValidity');
+    this.to('CheckSchemaVersionValidity');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-CreateClassifier
    */
   public toCreateClassifier() {
-    this.to('glue:CreateClassifier');
+    this.to('CreateClassifier');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-CreateConnection
    */
   public toCreateConnection() {
-    this.to('glue:CreateConnection');
+    this.to('CreateConnection');
     return this;
   }
 
@@ -222,7 +222,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-CreateCrawler
    */
   public toCreateCrawler() {
-    this.to('glue:CreateCrawler');
+    this.to('CreateCrawler');
     return this;
   }
 
@@ -234,7 +234,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-CreateDatabase
    */
   public toCreateDatabase() {
-    this.to('glue:CreateDatabase');
+    this.to('CreateDatabase');
     return this;
   }
 
@@ -250,7 +250,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-CreateDevEndpoint
    */
   public toCreateDevEndpoint() {
-    this.to('glue:CreateDevEndpoint');
+    this.to('CreateDevEndpoint');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-CreateJob
    */
   public toCreateJob() {
-    this.to('glue:CreateJob');
+    this.to('CreateJob');
     return this;
   }
 
@@ -278,7 +278,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-CreateMLTransform
    */
   public toCreateMLTransform() {
-    this.to('glue:CreateMLTransform');
+    this.to('CreateMLTransform');
     return this;
   }
 
@@ -290,7 +290,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-CreatePartition
    */
   public toCreatePartition() {
-    this.to('glue:CreatePartition');
+    this.to('CreatePartition');
     return this;
   }
 
@@ -302,7 +302,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-CreateRegistry
    */
   public toCreateRegistry() {
-    this.to('glue:CreateRegistry');
+    this.to('CreateRegistry');
     return this;
   }
 
@@ -314,7 +314,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-CreateSchema
    */
   public toCreateSchema() {
-    this.to('glue:CreateSchema');
+    this.to('CreateSchema');
     return this;
   }
 
@@ -326,7 +326,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-CreateScript
    */
   public toCreateScript() {
-    this.to('glue:CreateScript');
+    this.to('CreateScript');
     return this;
   }
 
@@ -338,7 +338,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-CreateSecurityConfiguration
    */
   public toCreateSecurityConfiguration() {
-    this.to('glue:CreateSecurityConfiguration');
+    this.to('CreateSecurityConfiguration');
     return this;
   }
 
@@ -350,7 +350,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-CreateTable
    */
   public toCreateTable() {
-    this.to('glue:CreateTable');
+    this.to('CreateTable');
     return this;
   }
 
@@ -366,7 +366,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-CreateTrigger
    */
   public toCreateTrigger() {
-    this.to('glue:CreateTrigger');
+    this.to('CreateTrigger');
     return this;
   }
 
@@ -378,7 +378,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-CreateUserDefinedFunction
    */
   public toCreateUserDefinedFunction() {
-    this.to('glue:CreateUserDefinedFunction');
+    this.to('CreateUserDefinedFunction');
     return this;
   }
 
@@ -394,7 +394,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-CreateWorkflow
    */
   public toCreateWorkflow() {
-    this.to('glue:CreateWorkflow');
+    this.to('CreateWorkflow');
     return this;
   }
 
@@ -406,7 +406,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-DeleteClassifier
    */
   public toDeleteClassifier() {
-    this.to('glue:DeleteClassifier');
+    this.to('DeleteClassifier');
     return this;
   }
 
@@ -418,7 +418,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-DeleteConnection
    */
   public toDeleteConnection() {
-    this.to('glue:DeleteConnection');
+    this.to('DeleteConnection');
     return this;
   }
 
@@ -430,7 +430,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-DeleteCrawler
    */
   public toDeleteCrawler() {
-    this.to('glue:DeleteCrawler');
+    this.to('DeleteCrawler');
     return this;
   }
 
@@ -442,7 +442,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-DeleteDatabase
    */
   public toDeleteDatabase() {
-    this.to('glue:DeleteDatabase');
+    this.to('DeleteDatabase');
     return this;
   }
 
@@ -454,7 +454,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-DeleteDevEndpoint
    */
   public toDeleteDevEndpoint() {
-    this.to('glue:DeleteDevEndpoint');
+    this.to('DeleteDevEndpoint');
     return this;
   }
 
@@ -466,7 +466,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-DeleteJob
    */
   public toDeleteJob() {
-    this.to('glue:DeleteJob');
+    this.to('DeleteJob');
     return this;
   }
 
@@ -478,7 +478,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-DeleteMLTransform
    */
   public toDeleteMLTransform() {
-    this.to('glue:DeleteMLTransform');
+    this.to('DeleteMLTransform');
     return this;
   }
 
@@ -490,7 +490,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-DeletePartition
    */
   public toDeletePartition() {
-    this.to('glue:DeletePartition');
+    this.to('DeletePartition');
     return this;
   }
 
@@ -502,7 +502,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-DeleteRegistry
    */
   public toDeleteRegistry() {
-    this.to('glue:DeleteRegistry');
+    this.to('DeleteRegistry');
     return this;
   }
 
@@ -514,7 +514,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-DeleteResourcePolicy
    */
   public toDeleteResourcePolicy() {
-    this.to('glue:DeleteResourcePolicy');
+    this.to('DeleteResourcePolicy');
     return this;
   }
 
@@ -526,7 +526,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-DeleteSchema
    */
   public toDeleteSchema() {
-    this.to('glue:DeleteSchema');
+    this.to('DeleteSchema');
     return this;
   }
 
@@ -538,7 +538,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-DeleteSchemaVersions
    */
   public toDeleteSchemaVersions() {
-    this.to('glue:DeleteSchemaVersions');
+    this.to('DeleteSchemaVersions');
     return this;
   }
 
@@ -550,7 +550,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-DeleteSecurityConfiguration
    */
   public toDeleteSecurityConfiguration() {
-    this.to('glue:DeleteSecurityConfiguration');
+    this.to('DeleteSecurityConfiguration');
     return this;
   }
 
@@ -562,7 +562,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTable
    */
   public toDeleteTable() {
-    this.to('glue:DeleteTable');
+    this.to('DeleteTable');
     return this;
   }
 
@@ -574,7 +574,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTableVersion
    */
   public toDeleteTableVersion() {
-    this.to('glue:DeleteTableVersion');
+    this.to('DeleteTableVersion');
     return this;
   }
 
@@ -586,7 +586,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-DeleteTrigger
    */
   public toDeleteTrigger() {
-    this.to('glue:DeleteTrigger');
+    this.to('DeleteTrigger');
     return this;
   }
 
@@ -598,7 +598,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-DeleteUserDefinedFunction
    */
   public toDeleteUserDefinedFunction() {
-    this.to('glue:DeleteUserDefinedFunction');
+    this.to('DeleteUserDefinedFunction');
     return this;
   }
 
@@ -610,7 +610,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-DeleteWorkflow
    */
   public toDeleteWorkflow() {
-    this.to('glue:DeleteWorkflow');
+    this.to('DeleteWorkflow');
     return this;
   }
 
@@ -622,7 +622,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-migration.html#aws-glue-api-catalog-migration-GetCatalogImportStatus
    */
   public toGetCatalogImportStatus() {
-    this.to('glue:GetCatalogImportStatus');
+    this.to('GetCatalogImportStatus');
     return this;
   }
 
@@ -634,7 +634,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-GetClassifier
    */
   public toGetClassifier() {
-    this.to('glue:GetClassifier');
+    this.to('GetClassifier');
     return this;
   }
 
@@ -646,7 +646,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-GetClassifiers
    */
   public toGetClassifiers() {
-    this.to('glue:GetClassifiers');
+    this.to('GetClassifiers');
     return this;
   }
 
@@ -658,7 +658,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-GetConnection
    */
   public toGetConnection() {
-    this.to('glue:GetConnection');
+    this.to('GetConnection');
     return this;
   }
 
@@ -670,7 +670,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-GetConnections
    */
   public toGetConnections() {
-    this.to('glue:GetConnections');
+    this.to('GetConnections');
     return this;
   }
 
@@ -682,7 +682,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-GetCrawler
    */
   public toGetCrawler() {
-    this.to('glue:GetCrawler');
+    this.to('GetCrawler');
     return this;
   }
 
@@ -694,7 +694,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-GetCrawlerMetrics
    */
   public toGetCrawlerMetrics() {
-    this.to('glue:GetCrawlerMetrics');
+    this.to('GetCrawlerMetrics');
     return this;
   }
 
@@ -706,7 +706,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-GetCrawlers
    */
   public toGetCrawlers() {
-    this.to('glue:GetCrawlers');
+    this.to('GetCrawlers');
     return this;
   }
 
@@ -718,7 +718,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-GetDataCatalogEncryptionSettings
    */
   public toGetDataCatalogEncryptionSettings() {
-    this.to('glue:GetDataCatalogEncryptionSettings');
+    this.to('GetDataCatalogEncryptionSettings');
     return this;
   }
 
@@ -730,7 +730,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-GetDatabase
    */
   public toGetDatabase() {
-    this.to('glue:GetDatabase');
+    this.to('GetDatabase');
     return this;
   }
 
@@ -742,7 +742,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-GetDatabases
    */
   public toGetDatabases() {
-    this.to('glue:GetDatabases');
+    this.to('GetDatabases');
     return this;
   }
 
@@ -754,7 +754,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-GetDataflowGraph
    */
   public toGetDataflowGraph() {
-    this.to('glue:GetDataflowGraph');
+    this.to('GetDataflowGraph');
     return this;
   }
 
@@ -766,7 +766,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-GetDevEndpoint
    */
   public toGetDevEndpoint() {
-    this.to('glue:GetDevEndpoint');
+    this.to('GetDevEndpoint');
     return this;
   }
 
@@ -778,7 +778,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-GetDevEndpoints
    */
   public toGetDevEndpoints() {
-    this.to('glue:GetDevEndpoints');
+    this.to('GetDevEndpoints');
     return this;
   }
 
@@ -790,7 +790,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-GetJob
    */
   public toGetJob() {
-    this.to('glue:GetJob');
+    this.to('GetJob');
     return this;
   }
 
@@ -802,7 +802,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-job-GetJobBookmark
    */
   public toGetJobBookmark() {
-    this.to('glue:GetJobBookmark');
+    this.to('GetJobBookmark');
     return this;
   }
 
@@ -814,7 +814,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-GetJobRun
    */
   public toGetJobRun() {
-    this.to('glue:GetJobRun');
+    this.to('GetJobRun');
     return this;
   }
 
@@ -826,7 +826,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-GetJobRuns
    */
   public toGetJobRuns() {
-    this.to('glue:GetJobRuns');
+    this.to('GetJobRuns');
     return this;
   }
 
@@ -838,7 +838,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-GetJobs
    */
   public toGetJobs() {
-    this.to('glue:GetJobs');
+    this.to('GetJobs');
     return this;
   }
 
@@ -850,7 +850,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTaskRun
    */
   public toGetMLTaskRun() {
-    this.to('glue:GetMLTaskRun');
+    this.to('GetMLTaskRun');
     return this;
   }
 
@@ -862,7 +862,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTaskRuns
    */
   public toGetMLTaskRuns() {
-    this.to('glue:GetMLTaskRuns');
+    this.to('GetMLTaskRuns');
     return this;
   }
 
@@ -874,7 +874,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTransform
    */
   public toGetMLTransform() {
-    this.to('glue:GetMLTransform');
+    this.to('GetMLTransform');
     return this;
   }
 
@@ -886,7 +886,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTransforms
    */
   public toGetMLTransforms() {
-    this.to('glue:GetMLTransforms');
+    this.to('GetMLTransforms');
     return this;
   }
 
@@ -898,7 +898,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-GetMapping
    */
   public toGetMapping() {
-    this.to('glue:GetMapping');
+    this.to('GetMapping');
     return this;
   }
 
@@ -910,7 +910,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetPartition
    */
   public toGetPartition() {
-    this.to('glue:GetPartition');
+    this.to('GetPartition');
     return this;
   }
 
@@ -922,7 +922,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetPartitions
    */
   public toGetPartitions() {
-    this.to('glue:GetPartitions');
+    this.to('GetPartitions');
     return this;
   }
 
@@ -934,7 +934,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-GetPlan
    */
   public toGetPlan() {
-    this.to('glue:GetPlan');
+    this.to('GetPlan');
     return this;
   }
 
@@ -946,7 +946,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-GetRegistry
    */
   public toGetRegistry() {
-    this.to('glue:GetRegistry');
+    this.to('GetRegistry');
     return this;
   }
 
@@ -958,7 +958,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-GetResourcePolicy
    */
   public toGetResourcePolicy() {
-    this.to('glue:GetResourcePolicy');
+    this.to('GetResourcePolicy');
     return this;
   }
 
@@ -970,7 +970,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-GetSchema
    */
   public toGetSchema() {
-    this.to('glue:GetSchema');
+    this.to('GetSchema');
     return this;
   }
 
@@ -982,7 +982,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-GetSchemaByDefinition
    */
   public toGetSchemaByDefinition() {
-    this.to('glue:GetSchemaByDefinition');
+    this.to('GetSchemaByDefinition');
     return this;
   }
 
@@ -994,7 +994,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-GetSchemaVersion
    */
   public toGetSchemaVersion() {
-    this.to('glue:GetSchemaVersion');
+    this.to('GetSchemaVersion');
     return this;
   }
 
@@ -1006,7 +1006,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-GetSchemaVersionsDiff
    */
   public toGetSchemaVersionsDiff() {
-    this.to('glue:GetSchemaVersionsDiff');
+    this.to('GetSchemaVersionsDiff');
     return this;
   }
 
@@ -1018,7 +1018,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-GetSecurityConfiguration
    */
   public toGetSecurityConfiguration() {
-    this.to('glue:GetSecurityConfiguration');
+    this.to('GetSecurityConfiguration');
     return this;
   }
 
@@ -1030,7 +1030,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-GetSecurityConfigurations
    */
   public toGetSecurityConfigurations() {
-    this.to('glue:GetSecurityConfigurations');
+    this.to('GetSecurityConfigurations');
     return this;
   }
 
@@ -1042,7 +1042,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTable
    */
   public toGetTable() {
-    this.to('glue:GetTable');
+    this.to('GetTable');
     return this;
   }
 
@@ -1054,7 +1054,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTableVersion
    */
   public toGetTableVersion() {
-    this.to('glue:GetTableVersion');
+    this.to('GetTableVersion');
     return this;
   }
 
@@ -1066,7 +1066,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTableVersions
    */
   public toGetTableVersions() {
-    this.to('glue:GetTableVersions');
+    this.to('GetTableVersions');
     return this;
   }
 
@@ -1078,7 +1078,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTables
    */
   public toGetTables() {
-    this.to('glue:GetTables');
+    this.to('GetTables');
     return this;
   }
 
@@ -1090,7 +1090,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-UntagResource
    */
   public toGetTags() {
-    this.to('glue:GetTags');
+    this.to('GetTags');
     return this;
   }
 
@@ -1102,7 +1102,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-GetTrigger
    */
   public toGetTrigger() {
-    this.to('glue:GetTrigger');
+    this.to('GetTrigger');
     return this;
   }
 
@@ -1114,7 +1114,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-GetTriggers
    */
   public toGetTriggers() {
-    this.to('glue:GetTriggers');
+    this.to('GetTriggers');
     return this;
   }
 
@@ -1126,7 +1126,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-GetUserDefinedFunction
    */
   public toGetUserDefinedFunction() {
-    this.to('glue:GetUserDefinedFunction');
+    this.to('GetUserDefinedFunction');
     return this;
   }
 
@@ -1138,7 +1138,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-GetUserDefinedFunctions
    */
   public toGetUserDefinedFunctions() {
-    this.to('glue:GetUserDefinedFunctions');
+    this.to('GetUserDefinedFunctions');
     return this;
   }
 
@@ -1150,7 +1150,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetWorkflow
    */
   public toGetWorkflow() {
-    this.to('glue:GetWorkflow');
+    this.to('GetWorkflow');
     return this;
   }
 
@@ -1162,7 +1162,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetWorkflowRun
    */
   public toGetWorkflowRun() {
-    this.to('glue:GetWorkflowRun');
+    this.to('GetWorkflowRun');
     return this;
   }
 
@@ -1174,7 +1174,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetWorkflowRunProperties
    */
   public toGetWorkflowRunProperties() {
-    this.to('glue:GetWorkflowRunProperties');
+    this.to('GetWorkflowRunProperties');
     return this;
   }
 
@@ -1186,7 +1186,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetWorkflowRuns
    */
   public toGetWorkflowRuns() {
-    this.to('glue:GetWorkflowRuns');
+    this.to('GetWorkflowRuns');
     return this;
   }
 
@@ -1198,7 +1198,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-migration.html#aws-glue-api-catalog-migration-ImportCatalogToGlue
    */
   public toImportCatalogToGlue() {
-    this.to('glue:ImportCatalogToGlue');
+    this.to('ImportCatalogToGlue');
     return this;
   }
 
@@ -1210,7 +1210,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-ListCrawlers
    */
   public toListCrawlers() {
-    this.to('glue:ListCrawlers');
+    this.to('ListCrawlers');
     return this;
   }
 
@@ -1222,7 +1222,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-ListDevEndpoints
    */
   public toListDevEndpoints() {
-    this.to('glue:ListDevEndpoints');
+    this.to('ListDevEndpoints');
     return this;
   }
 
@@ -1234,7 +1234,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-ListJobs
    */
   public toListJobs() {
-    this.to('glue:ListJobs');
+    this.to('ListJobs');
     return this;
   }
 
@@ -1246,7 +1246,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-ListMLTransforms
    */
   public toListMLTransforms() {
-    this.to('glue:ListMLTransforms');
+    this.to('ListMLTransforms');
     return this;
   }
 
@@ -1258,7 +1258,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-ListRegistries
    */
   public toListRegistries() {
-    this.to('glue:ListRegistries');
+    this.to('ListRegistries');
     return this;
   }
 
@@ -1270,7 +1270,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-ListSchemaVersions
    */
   public toListSchemaVersions() {
-    this.to('glue:ListSchemaVersions');
+    this.to('ListSchemaVersions');
     return this;
   }
 
@@ -1282,7 +1282,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-ListSchemas
    */
   public toListSchemas() {
-    this.to('glue:ListSchemas');
+    this.to('ListSchemas');
     return this;
   }
 
@@ -1294,7 +1294,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-ListTriggers
    */
   public toListTriggers() {
-    this.to('glue:ListTriggers');
+    this.to('ListTriggers');
     return this;
   }
 
@@ -1306,7 +1306,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-ListWorkflows
    */
   public toListWorkflows() {
-    this.to('glue:ListWorkflows');
+    this.to('ListWorkflows');
     return this;
   }
 
@@ -1318,7 +1318,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-PutDataCatalogEncryptionSettings
    */
   public toPutDataCatalogEncryptionSettings() {
-    this.to('glue:PutDataCatalogEncryptionSettings');
+    this.to('PutDataCatalogEncryptionSettings');
     return this;
   }
 
@@ -1330,7 +1330,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-PutResourcePolicy
    */
   public toPutResourcePolicy() {
-    this.to('glue:PutResourcePolicy');
+    this.to('PutResourcePolicy');
     return this;
   }
 
@@ -1342,7 +1342,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-PutSchemaVersionMetadata
    */
   public toPutSchemaVersionMetadata() {
-    this.to('glue:PutSchemaVersionMetadata');
+    this.to('PutSchemaVersionMetadata');
     return this;
   }
 
@@ -1354,7 +1354,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-PutWorkflowRunProperties
    */
   public toPutWorkflowRunProperties() {
-    this.to('glue:PutWorkflowRunProperties');
+    this.to('PutWorkflowRunProperties');
     return this;
   }
 
@@ -1366,7 +1366,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-QuerySchemaVersionMetadata
    */
   public toQuerySchemaVersionMetadata() {
-    this.to('glue:QuerySchemaVersionMetadata');
+    this.to('QuerySchemaVersionMetadata');
     return this;
   }
 
@@ -1378,7 +1378,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-RegisterSchemaVersion
    */
   public toRegisterSchemaVersion() {
-    this.to('glue:RegisterSchemaVersion');
+    this.to('RegisterSchemaVersion');
     return this;
   }
 
@@ -1390,7 +1390,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-RemoveSchemaVersionMetadata
    */
   public toRemoveSchemaVersionMetadata() {
-    this.to('glue:RemoveSchemaVersionMetadata');
+    this.to('RemoveSchemaVersionMetadata');
     return this;
   }
 
@@ -1402,7 +1402,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-ResetJobBookmark
    */
   public toResetJobBookmark() {
-    this.to('glue:ResetJobBookmark');
+    this.to('ResetJobBookmark');
     return this;
   }
 
@@ -1414,7 +1414,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-SearchTables
    */
   public toSearchTables() {
-    this.to('glue:SearchTables');
+    this.to('SearchTables');
     return this;
   }
 
@@ -1426,7 +1426,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-StartCrawler
    */
   public toStartCrawler() {
-    this.to('glue:StartCrawler');
+    this.to('StartCrawler');
     return this;
   }
 
@@ -1438,7 +1438,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-scheduler.html#aws-glue-api-crawler-scheduler-StartCrawlerSchedule
    */
   public toStartCrawlerSchedule() {
-    this.to('glue:StartCrawlerSchedule');
+    this.to('StartCrawlerSchedule');
     return this;
   }
 
@@ -1450,7 +1450,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartExportLabelsTaskRun
    */
   public toStartExportLabelsTaskRun() {
-    this.to('glue:StartExportLabelsTaskRun');
+    this.to('StartExportLabelsTaskRun');
     return this;
   }
 
@@ -1462,7 +1462,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartImportLabelsTaskRun
    */
   public toStartImportLabelsTaskRun() {
-    this.to('glue:StartImportLabelsTaskRun');
+    this.to('StartImportLabelsTaskRun');
     return this;
   }
 
@@ -1474,7 +1474,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-StartJobRun
    */
   public toStartJobRun() {
-    this.to('glue:StartJobRun');
+    this.to('StartJobRun');
     return this;
   }
 
@@ -1486,7 +1486,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartMLEvaluationTaskRun
    */
   public toStartMLEvaluationTaskRun() {
-    this.to('glue:StartMLEvaluationTaskRun');
+    this.to('StartMLEvaluationTaskRun');
     return this;
   }
 
@@ -1498,7 +1498,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartMLLabelingSetGenerationTaskRun
    */
   public toStartMLLabelingSetGenerationTaskRun() {
-    this.to('glue:StartMLLabelingSetGenerationTaskRun');
+    this.to('StartMLLabelingSetGenerationTaskRun');
     return this;
   }
 
@@ -1510,7 +1510,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-StartTrigger
    */
   public toStartTrigger() {
-    this.to('glue:StartTrigger');
+    this.to('StartTrigger');
     return this;
   }
 
@@ -1522,7 +1522,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-StartWorkflowRun
    */
   public toStartWorkflowRun() {
-    this.to('glue:StartWorkflowRun');
+    this.to('StartWorkflowRun');
     return this;
   }
 
@@ -1534,7 +1534,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-StopCrawler
    */
   public toStopCrawler() {
-    this.to('glue:StopCrawler');
+    this.to('StopCrawler');
     return this;
   }
 
@@ -1546,7 +1546,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-scheduler.html#aws-glue-api-crawler-scheduler-StopCrawlerSchedule
    */
   public toStopCrawlerSchedule() {
-    this.to('glue:StopCrawlerSchedule');
+    this.to('StopCrawlerSchedule');
     return this;
   }
 
@@ -1558,7 +1558,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-StopTrigger
    */
   public toStopTrigger() {
-    this.to('glue:StopTrigger');
+    this.to('StopTrigger');
     return this;
   }
 
@@ -1574,7 +1574,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-TagResource
    */
   public toTagResource() {
-    this.to('glue:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -1589,7 +1589,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-UntagResource
    */
   public toUntagResource() {
-    this.to('glue:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -1601,7 +1601,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-UpdateClassifier
    */
   public toUpdateClassifier() {
-    this.to('glue:UpdateClassifier');
+    this.to('UpdateClassifier');
     return this;
   }
 
@@ -1613,7 +1613,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-UpdateConnection
    */
   public toUpdateConnection() {
-    this.to('glue:UpdateConnection');
+    this.to('UpdateConnection');
     return this;
   }
 
@@ -1625,7 +1625,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-UpdateCrawler
    */
   public toUpdateCrawler() {
-    this.to('glue:UpdateCrawler');
+    this.to('UpdateCrawler');
     return this;
   }
 
@@ -1637,7 +1637,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-scheduler.html#aws-glue-api-crawler-scheduler-UpdateCrawlerSchedule
    */
   public toUpdateCrawlerSchedule() {
-    this.to('glue:UpdateCrawlerSchedule');
+    this.to('UpdateCrawlerSchedule');
     return this;
   }
 
@@ -1649,7 +1649,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-UpdateDatabase
    */
   public toUpdateDatabase() {
-    this.to('glue:UpdateDatabase');
+    this.to('UpdateDatabase');
     return this;
   }
 
@@ -1661,7 +1661,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-UpdateDevEndpoint
    */
   public toUpdateDevEndpoint() {
-    this.to('glue:UpdateDevEndpoint');
+    this.to('UpdateDevEndpoint');
     return this;
   }
 
@@ -1673,7 +1673,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-UpdateJob
    */
   public toUpdateJob() {
-    this.to('glue:UpdateJob');
+    this.to('UpdateJob');
     return this;
   }
 
@@ -1685,7 +1685,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-UpdateMLTransform
    */
   public toUpdateMLTransform() {
-    this.to('glue:UpdateMLTransform');
+    this.to('UpdateMLTransform');
     return this;
   }
 
@@ -1697,7 +1697,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-UpdatePartition
    */
   public toUpdatePartition() {
-    this.to('glue:UpdatePartition');
+    this.to('UpdatePartition');
     return this;
   }
 
@@ -1709,7 +1709,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-UpdateRegistry
    */
   public toUpdateRegistry() {
-    this.to('glue:UpdateRegistry');
+    this.to('UpdateRegistry');
     return this;
   }
 
@@ -1721,7 +1721,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-schema-registry-api.html#aws-glue-api-schema-registry-api-UpdateSchema
    */
   public toUpdateSchema() {
-    this.to('glue:UpdateSchema');
+    this.to('UpdateSchema');
     return this;
   }
 
@@ -1733,7 +1733,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-UpdateTable
    */
   public toUpdateTable() {
-    this.to('glue:UpdateTable');
+    this.to('UpdateTable');
     return this;
   }
 
@@ -1745,7 +1745,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-UpdateTrigger
    */
   public toUpdateTrigger() {
-    this.to('glue:UpdateTrigger');
+    this.to('UpdateTrigger');
     return this;
   }
 
@@ -1757,7 +1757,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-UpdateUserDefinedFunction
    */
   public toUpdateUserDefinedFunction() {
-    this.to('glue:UpdateUserDefinedFunction');
+    this.to('UpdateUserDefinedFunction');
     return this;
   }
 
@@ -1769,7 +1769,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-UpdateWorkflow
    */
   public toUpdateWorkflow() {
-    this.to('glue:UpdateWorkflow');
+    this.to('UpdateWorkflow');
     return this;
   }
 
@@ -1781,7 +1781,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html
    */
   public toUseMLTransforms() {
-    this.to('glue:UseMLTransforms');
+    this.to('UseMLTransforms');
     return this;
   }
 

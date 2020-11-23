@@ -24,7 +24,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateApplication() {
-    this.to('serverlessrepo:CreateApplication');
+    this.to('CreateApplication');
     return this;
   }
 
@@ -34,7 +34,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateApplicationVersion() {
-    this.to('serverlessrepo:CreateApplicationVersion');
+    this.to('CreateApplicationVersion');
     return this;
   }
 
@@ -47,7 +47,7 @@ export class Serverlessrepo extends PolicyStatement {
    * - .ifApplicationType()
    */
   public toCreateCloudFormationChangeSet() {
-    this.to('serverlessrepo:CreateCloudFormationChangeSet');
+    this.to('CreateCloudFormationChangeSet');
     return this;
   }
 
@@ -60,7 +60,7 @@ export class Serverlessrepo extends PolicyStatement {
    * - .ifApplicationType()
    */
   public toCreateCloudFormationTemplate() {
-    this.to('serverlessrepo:CreateCloudFormationTemplate');
+    this.to('CreateCloudFormationTemplate');
     return this;
   }
 
@@ -70,7 +70,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Access Level: Write
    */
   public toDeleteApplication() {
-    this.to('serverlessrepo:DeleteApplication');
+    this.to('DeleteApplication');
     return this;
   }
 
@@ -83,7 +83,7 @@ export class Serverlessrepo extends PolicyStatement {
    * - .ifApplicationType()
    */
   public toGetApplication() {
-    this.to('serverlessrepo:GetApplication');
+    this.to('GetApplication');
     return this;
   }
 
@@ -93,7 +93,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Access Level: Read
    */
   public toGetApplicationPolicy() {
-    this.to('serverlessrepo:GetApplicationPolicy');
+    this.to('GetApplicationPolicy');
     return this;
   }
 
@@ -103,7 +103,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Access Level: Read
    */
   public toGetCloudFormationTemplate() {
-    this.to('serverlessrepo:GetCloudFormationTemplate');
+    this.to('GetCloudFormationTemplate');
     return this;
   }
 
@@ -116,7 +116,7 @@ export class Serverlessrepo extends PolicyStatement {
    * - .ifApplicationType()
    */
   public toListApplicationDependencies() {
-    this.to('serverlessrepo:ListApplicationDependencies');
+    this.to('ListApplicationDependencies');
     return this;
   }
 
@@ -129,7 +129,7 @@ export class Serverlessrepo extends PolicyStatement {
    * - .ifApplicationType()
    */
   public toListApplicationVersions() {
-    this.to('serverlessrepo:ListApplicationVersions');
+    this.to('ListApplicationVersions');
     return this;
   }
 
@@ -139,7 +139,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Access Level: List
    */
   public toListApplications() {
-    this.to('serverlessrepo:ListApplications');
+    this.to('ListApplications');
     return this;
   }
 
@@ -149,7 +149,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Access Level: Write
    */
   public toPutApplicationPolicy() {
-    this.to('serverlessrepo:PutApplicationPolicy');
+    this.to('PutApplicationPolicy');
     return this;
   }
 
@@ -162,7 +162,7 @@ export class Serverlessrepo extends PolicyStatement {
    * - .ifApplicationType()
    */
   public toSearchApplications() {
-    this.to('serverlessrepo:SearchApplications');
+    this.to('SearchApplications');
     return this;
   }
 
@@ -172,7 +172,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Access Level: Write
    */
   public toUnshareApplication() {
-    this.to('serverlessrepo:UnshareApplication');
+    this.to('UnshareApplication');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Access Level: Write
    */
   public toUpdateApplication() {
-    this.to('serverlessrepo:UpdateApplication');
+    this.to('UpdateApplication');
     return this;
   }
 

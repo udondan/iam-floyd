@@ -26,7 +26,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_CreateContainer.html
    */
   public toCreateContainer() {
-    this.to('mediastore:CreateContainer');
+    this.to('CreateContainer');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteContainer.html
    */
   public toDeleteContainer() {
-    this.to('mediastore:DeleteContainer');
+    this.to('DeleteContainer');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteContainerPolicy.html
    */
   public toDeleteContainerPolicy() {
-    this.to('mediastore:DeleteContainerPolicy');
+    this.to('DeleteContainerPolicy');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteCorsPolicy.html
    */
   public toDeleteCorsPolicy() {
-    this.to('mediastore:DeleteCorsPolicy');
+    this.to('DeleteCorsPolicy');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteLifecyclePolicy.html
    */
   public toDeleteLifecyclePolicy() {
-    this.to('mediastore:DeleteLifecyclePolicy');
+    this.to('DeleteLifecyclePolicy');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteMetricPolicy.html
    */
   public toDeleteMetricPolicy() {
-    this.to('mediastore:DeleteMetricPolicy');
+    this.to('DeleteMetricPolicy');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_DeleteObject.html
    */
   public toDeleteObject() {
-    this.to('mediastore:DeleteObject');
+    this.to('DeleteObject');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_DescribeContainer.html
    */
   public toDescribeContainer() {
-    this.to('mediastore:DescribeContainer');
+    this.to('DescribeContainer');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_DescribeObject.html
    */
   public toDescribeObject() {
-    this.to('mediastore:DescribeObject');
+    this.to('DescribeObject');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetContainerPolicy.html
    */
   public toGetContainerPolicy() {
-    this.to('mediastore:GetContainerPolicy');
+    this.to('GetContainerPolicy');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetCorsPolicy.html
    */
   public toGetCorsPolicy() {
-    this.to('mediastore:GetCorsPolicy');
+    this.to('GetCorsPolicy');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetLifecyclePolicy.html
    */
   public toGetLifecyclePolicy() {
-    this.to('mediastore:GetLifecyclePolicy');
+    this.to('GetLifecyclePolicy');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetMetricPolicy.html
    */
   public toGetMetricPolicy() {
-    this.to('mediastore:GetMetricPolicy');
+    this.to('GetMetricPolicy');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_GetObject.html
    */
   public toGetObject() {
-    this.to('mediastore:GetObject');
+    this.to('GetObject');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_ListContainers.html
    */
   public toListContainers() {
-    this.to('mediastore:ListContainers');
+    this.to('ListContainers');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_ListItems.html
    */
   public toListItems() {
-    this.to('mediastore:ListItems');
+    this.to('ListItems');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('mediastore:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutContainerPolicy.html
    */
   public toPutContainerPolicy() {
-    this.to('mediastore:PutContainerPolicy');
+    this.to('PutContainerPolicy');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutCorsPolicy.html
    */
   public toPutCorsPolicy() {
-    this.to('mediastore:PutCorsPolicy');
+    this.to('PutCorsPolicy');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutLifecyclePolicy.html
    */
   public toPutLifecyclePolicy() {
-    this.to('mediastore:PutLifecyclePolicy');
+    this.to('PutLifecyclePolicy');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutMetricPolicy.html
    */
   public toPutMetricPolicy() {
-    this.to('mediastore:PutMetricPolicy');
+    this.to('PutMetricPolicy');
     return this;
   }
 
@@ -278,7 +278,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_PutObject.html
    */
   public toPutObject() {
-    this.to('mediastore:PutObject');
+    this.to('PutObject');
     return this;
   }
 
@@ -290,7 +290,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_StartAccessLogging.html
    */
   public toStartAccessLogging() {
-    this.to('mediastore:StartAccessLogging');
+    this.to('StartAccessLogging');
     return this;
   }
 
@@ -302,7 +302,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_StopAccessLogging.html
    */
   public toStopAccessLogging() {
-    this.to('mediastore:StopAccessLogging');
+    this.to('StopAccessLogging');
     return this;
   }
 
@@ -314,7 +314,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('mediastore:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -326,7 +326,7 @@ export class Mediastore extends PolicyStatement {
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('mediastore:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 

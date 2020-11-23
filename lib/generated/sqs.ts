@@ -26,7 +26,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html
    */
   public toAddPermission() {
-    this.to('sqs:AddPermission');
+    this.to('AddPermission');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibility.html
    */
   public toChangeMessageVisibility() {
-    this.to('sqs:ChangeMessageVisibility');
+    this.to('ChangeMessageVisibility');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibilityBatch.html
    */
   public toChangeMessageVisibilityBatch() {
-    this.to('sqs:ChangeMessageVisibilityBatch');
+    this.to('ChangeMessageVisibilityBatch');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html
    */
   public toCreateQueue() {
-    this.to('sqs:CreateQueue');
+    this.to('CreateQueue');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessage.html
    */
   public toDeleteMessage() {
-    this.to('sqs:DeleteMessage');
+    this.to('DeleteMessage');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessageBatch.html
    */
   public toDeleteMessageBatch() {
-    this.to('sqs:DeleteMessageBatch');
+    this.to('DeleteMessageBatch');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteQueue.html
    */
   public toDeleteQueue() {
-    this.to('sqs:DeleteQueue');
+    this.to('DeleteQueue');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html
    */
   public toGetQueueAttributes() {
-    this.to('sqs:GetQueueAttributes');
+    this.to('GetQueueAttributes');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueUrl.html
    */
   public toGetQueueUrl() {
-    this.to('sqs:GetQueueUrl');
+    this.to('GetQueueUrl');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListDeadLetterSourceQueues.html
    */
   public toListDeadLetterSourceQueues() {
-    this.to('sqs:ListDeadLetterSourceQueues');
+    this.to('ListDeadLetterSourceQueues');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueueTags.html
    */
   public toListQueueTags() {
-    this.to('sqs:ListQueueTags');
+    this.to('ListQueueTags');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueues.html
    */
   public toListQueues() {
-    this.to('sqs:ListQueues');
+    this.to('ListQueues');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_PurgeQueue.html
    */
   public toPurgeQueue() {
-    this.to('sqs:PurgeQueue');
+    this.to('PurgeQueue');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html
    */
   public toReceiveMessage() {
-    this.to('sqs:ReceiveMessage');
+    this.to('ReceiveMessage');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_RemovePermission.html
    */
   public toRemovePermission() {
-    this.to('sqs:RemovePermission');
+    this.to('RemovePermission');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html
    */
   public toSendMessage() {
-    this.to('sqs:SendMessage');
+    this.to('SendMessage');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html
    */
   public toSendMessageBatch() {
-    this.to('sqs:SendMessageBatch');
+    this.to('SendMessageBatch');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html
    */
   public toSetQueueAttributes() {
-    this.to('sqs:SetQueueAttributes');
+    this.to('SetQueueAttributes');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_TagQueue.html
    */
   public toTagQueue() {
-    this.to('sqs:TagQueue');
+    this.to('TagQueue');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class Sqs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_UntagQueue.html
    */
   public toUntagQueue() {
-    this.to('sqs:UntagQueue');
+    this.to('UntagQueue');
     return this;
   }
 

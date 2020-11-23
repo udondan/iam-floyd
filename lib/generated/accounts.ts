@@ -27,7 +27,7 @@ export class Account extends PolicyStatement {
    * - .ifTargetRegion()
    */
   public toDisableRegion() {
-    this.to('account:DisableRegion');
+    this.to('DisableRegion');
     return this;
   }
 
@@ -40,7 +40,7 @@ export class Account extends PolicyStatement {
    * - .ifTargetRegion()
    */
   public toEnableRegion() {
-    this.to('account:EnableRegion');
+    this.to('EnableRegion');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Account extends PolicyStatement {
    * Access Level: List
    */
   public toListRegions() {
-    this.to('account:ListRegions');
+    this.to('ListRegions');
     return this;
   }
 

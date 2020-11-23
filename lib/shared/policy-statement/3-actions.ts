@@ -87,9 +87,15 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    *
    * The mode can be switched by calling `notActions()`.
    *
+   * If the action does not contain a colon, the action will be prefixed with the service prefix of the class, e.g. `ec2:`
+   *
    * @param action Actions that will be added to the statement.
    */
   public to(action: string) {
+    if (action.indexOf(':') < 0) {
+      action = this.servicePrefix + ':' + action;
+    }
+
     this.actions.push(action);
     return this;
   }

@@ -30,7 +30,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelspost
    */
   public toCreateChannel() {
-    this.to('mediapackage:CreateChannel');
+    this.to('CreateChannel');
     return this;
   }
 
@@ -46,7 +46,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/harvest_jobs.html#harvest_jobspost
    */
   public toCreateHarvestJob() {
-    this.to('mediapackage:CreateHarvestJob');
+    this.to('CreateHarvestJob');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointspost
    */
   public toCreateOriginEndpoint() {
-    this.to('mediapackage:CreateOriginEndpoint');
+    this.to('CreateOriginEndpoint');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-iddelete
    */
   public toDeleteChannel() {
-    this.to('mediapackage:DeleteChannel');
+    this.to('DeleteChannel');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-iddelete
    */
   public toDeleteOriginEndpoint() {
-    this.to('mediapackage:DeleteOriginEndpoint');
+    this.to('DeleteOriginEndpoint');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-idget
    */
   public toDescribeChannel() {
-    this.to('mediapackage:DescribeChannel');
+    this.to('DescribeChannel');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/harvest_jobs-id.html#harvest_jobs-idget
    */
   public toDescribeHarvestJob() {
-    this.to('mediapackage:DescribeHarvestJob');
+    this.to('DescribeHarvestJob');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-idget
    */
   public toDescribeOriginEndpoint() {
-    this.to('mediapackage:DescribeOriginEndpoint');
+    this.to('DescribeOriginEndpoint');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelsget
    */
   public toListChannels() {
-    this.to('mediapackage:ListChannels');
+    this.to('ListChannels');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/harvest_jobs.html#harvest_jobsget
    */
   public toListHarvestJobs() {
-    this.to('mediapackage:ListHarvestJobs');
+    this.to('ListHarvestJobs');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointsget
    */
   public toListOriginEndpoints() {
-    this.to('mediapackage:ListOriginEndpoints');
+    this.to('ListOriginEndpoints');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arnget
    */
   public toListTagsForResource() {
-    this.to('mediapackage:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id-ingest_endpoints-ingest_endpoint_id-credentials.html#channels-id-ingest_endpoints-ingest_endpoint_id-credentialsput
    */
   public toRotateIngestEndpointCredentials() {
-    this.to('mediapackage:RotateIngestEndpointCredentials');
+    this.to('RotateIngestEndpointCredentials');
     return this;
   }
 
@@ -198,7 +198,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/hj-create.html
    */
   public toTagResource() {
-    this.to('mediapackage:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -213,7 +213,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arndelete
    */
   public toUntagResource() {
-    this.to('mediapackage:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -225,7 +225,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-idput
    */
   public toUpdateChannel() {
-    this.to('mediapackage:UpdateChannel');
+    this.to('UpdateChannel');
     return this;
   }
 
@@ -237,7 +237,7 @@ export class Mediapackage extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-idput
    */
   public toUpdateOriginEndpoint() {
-    this.to('mediapackage:UpdateOriginEndpoint');
+    this.to('UpdateOriginEndpoint');
     return this;
   }
 

@@ -26,7 +26,7 @@ export class Awsconnector extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions
    */
   public toGetConnectorHealth() {
-    this.to('awsconnector:GetConnectorHealth');
+    this.to('GetConnectorHealth');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Awsconnector extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions
    */
   public toRegisterConnector() {
-    this.to('awsconnector:RegisterConnector');
+    this.to('RegisterConnector');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Awsconnector extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions
    */
   public toValidateConnectorId() {
-    this.to('awsconnector:ValidateConnectorId');
+    this.to('ValidateConnectorId');
     return this;
   }
 

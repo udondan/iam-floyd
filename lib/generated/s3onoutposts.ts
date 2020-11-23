@@ -35,7 +35,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html
    */
   public toAbortMultipartUpload() {
-    this.to('s3-outposts:AbortMultipartUpload');
+    this.to('AbortMultipartUpload');
     return this;
   }
 
@@ -56,7 +56,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html
    */
   public toCreateAccessPoint() {
-    this.to('s3-outposts:CreateAccessPoint');
+    this.to('CreateAccessPoint');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html
    */
   public toCreateBucket() {
-    this.to('s3-outposts:CreateBucket');
+    this.to('CreateBucket');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html
    */
   public toCreateEndpoint() {
-    this.to('s3-outposts:CreateEndpoint');
+    this.to('CreateEndpoint');
     return this;
   }
 
@@ -107,7 +107,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html
    */
   public toDeleteAccessPoint() {
-    this.to('s3-outposts:DeleteAccessPoint');
+    this.to('DeleteAccessPoint');
     return this;
   }
 
@@ -128,7 +128,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html
    */
   public toDeleteAccessPointPolicy() {
-    this.to('s3-outposts:DeleteAccessPointPolicy');
+    this.to('DeleteAccessPointPolicy');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html
    */
   public toDeleteBucket() {
-    this.to('s3-outposts:DeleteBucket');
+    this.to('DeleteBucket');
     return this;
   }
 
@@ -164,7 +164,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketPolicy.html
    */
   public toDeleteBucketPolicy() {
-    this.to('s3-outposts:DeleteBucketPolicy');
+    this.to('DeleteBucketPolicy');
     return this;
   }
 
@@ -176,7 +176,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html
    */
   public toDeleteEndpoint() {
-    this.to('s3-outposts:DeleteEndpoint');
+    this.to('DeleteEndpoint');
     return this;
   }
 
@@ -197,7 +197,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html
    */
   public toDeleteObject() {
-    this.to('s3-outposts:DeleteObject');
+    this.to('DeleteObject');
     return this;
   }
 
@@ -219,7 +219,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html
    */
   public toDeleteObjectTagging() {
-    this.to('s3-outposts:DeleteObjectTagging');
+    this.to('DeleteObjectTagging');
     return this;
   }
 
@@ -240,7 +240,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html
    */
   public toGetAccessPoint() {
-    this.to('s3-outposts:GetAccessPoint');
+    this.to('GetAccessPoint');
     return this;
   }
 
@@ -261,7 +261,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicy.html
    */
   public toGetAccessPointPolicy() {
-    this.to('s3-outposts:GetAccessPointPolicy');
+    this.to('GetAccessPointPolicy');
     return this;
   }
 
@@ -279,7 +279,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html
    */
   public toGetBucket() {
-    this.to('s3-outposts:GetBucket');
+    this.to('GetBucket');
     return this;
   }
 
@@ -297,7 +297,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketPolicy.html
    */
   public toGetBucketPolicy() {
-    this.to('s3-outposts:GetBucketPolicy');
+    this.to('GetBucketPolicy');
     return this;
   }
 
@@ -315,7 +315,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketTagging.html
    */
   public toGetBucketTagging() {
-    this.to('s3-outposts:GetBucketTagging');
+    this.to('GetBucketTagging');
     return this;
   }
 
@@ -333,7 +333,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html
    */
   public toGetLifecycleConfiguration() {
-    this.to('s3-outposts:GetLifecycleConfiguration');
+    this.to('GetLifecycleConfiguration');
     return this;
   }
 
@@ -355,7 +355,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html
    */
   public toGetObject() {
-    this.to('s3-outposts:GetObject');
+    this.to('GetObject');
     return this;
   }
 
@@ -377,7 +377,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html
    */
   public toGetObjectTagging() {
-    this.to('s3-outposts:GetObjectTagging');
+    this.to('GetObjectTagging');
     return this;
   }
 
@@ -395,7 +395,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html
    */
   public toListAccessPoints() {
-    this.to('s3-outposts:ListAccessPoints');
+    this.to('ListAccessPoints');
     return this;
   }
 
@@ -419,7 +419,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html
    */
   public toListBucket() {
-    this.to('s3-outposts:ListBucket');
+    this.to('ListBucket');
     return this;
   }
 
@@ -440,7 +440,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html
    */
   public toListBucketMultipartUploads() {
-    this.to('s3-outposts:ListBucketMultipartUploads');
+    this.to('ListBucketMultipartUploads');
     return this;
   }
 
@@ -452,7 +452,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html
    */
   public toListEndpoints() {
-    this.to('s3-outposts:ListEndpoints');
+    this.to('ListEndpoints');
     return this;
   }
 
@@ -473,7 +473,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html
    */
   public toListMultipartUploadParts() {
-    this.to('s3-outposts:ListMultipartUploadParts');
+    this.to('ListMultipartUploadParts');
     return this;
   }
 
@@ -491,7 +491,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListRegionalBuckets.html
    */
   public toListRegionalBuckets() {
-    this.to('s3-outposts:ListRegionalBuckets');
+    this.to('ListRegionalBuckets');
     return this;
   }
 
@@ -512,7 +512,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html
    */
   public toPutAccessPointPolicy() {
-    this.to('s3-outposts:PutAccessPointPolicy');
+    this.to('PutAccessPointPolicy');
     return this;
   }
 
@@ -530,7 +530,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketPolicy.html
    */
   public toPutBucketPolicy() {
-    this.to('s3-outposts:PutBucketPolicy');
+    this.to('PutBucketPolicy');
     return this;
   }
 
@@ -548,7 +548,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html
    */
   public toPutBucketTagging() {
-    this.to('s3-outposts:PutBucketTagging');
+    this.to('PutBucketTagging');
     return this;
   }
 
@@ -566,7 +566,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html
    */
   public toPutLifecycleConfiguration() {
-    this.to('s3-outposts:PutLifecycleConfiguration');
+    this.to('PutLifecycleConfiguration');
     return this;
   }
 
@@ -594,7 +594,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html
    */
   public toPutObject() {
-    this.to('s3-outposts:PutObject');
+    this.to('PutObject');
     return this;
   }
 
@@ -618,7 +618,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html
    */
   public toPutObjectAcl() {
-    this.to('s3-outposts:PutObjectAcl');
+    this.to('PutObjectAcl');
     return this;
   }
 
@@ -642,7 +642,7 @@ export class S3Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html
    */
   public toPutObjectTagging() {
-    this.to('s3-outposts:PutObjectTagging');
+    this.to('PutObjectTagging');
     return this;
   }
 

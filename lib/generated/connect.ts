@@ -29,7 +29,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateRoutingProfileQueues.html
    */
   public toAssociateRoutingProfileQueues() {
-    this.to('connect:AssociateRoutingProfileQueues');
+    this.to('AssociateRoutingProfileQueues');
     return this;
   }
 
@@ -45,7 +45,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlow.html
    */
   public toCreateContactFlow() {
-    this.to('connect:CreateContactFlow');
+    this.to('CreateContactFlow');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
   public toCreateInstance() {
-    this.to('connect:CreateInstance');
+    this.to('CreateInstance');
     return this;
   }
 
@@ -90,7 +90,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateRoutingProfile.html
    */
   public toCreateRoutingProfile() {
-    this.to('connect:CreateRoutingProfile');
+    this.to('CreateRoutingProfile');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUser.html
    */
   public toCreateUser() {
-    this.to('connect:CreateUser');
+    this.to('CreateUser');
     return this;
   }
 
@@ -121,7 +121,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUser.html
    */
   public toDeleteUser() {
-    this.to('connect:DeleteUser');
+    this.to('DeleteUser');
     return this;
   }
 
@@ -136,7 +136,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContactFlow.html
    */
   public toDescribeContactFlow() {
-    this.to('connect:DescribeContactFlow');
+    this.to('DescribeContactFlow');
     return this;
   }
 
@@ -157,7 +157,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
   public toDescribeInstance() {
-    this.to('connect:DescribeInstance');
+    this.to('DescribeInstance');
     return this;
   }
 
@@ -172,7 +172,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html
    */
   public toDescribeRoutingProfile() {
-    this.to('connect:DescribeRoutingProfile');
+    this.to('DescribeRoutingProfile');
     return this;
   }
 
@@ -187,7 +187,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html
    */
   public toDescribeUser() {
-    this.to('connect:DescribeUser');
+    this.to('DescribeUser');
     return this;
   }
 
@@ -199,7 +199,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUserHierarchyGroup.html
    */
   public toDescribeUserHierarchyGroup() {
-    this.to('connect:DescribeUserHierarchyGroup');
+    this.to('DescribeUserHierarchyGroup');
     return this;
   }
 
@@ -211,7 +211,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUserHierarchyStructure.html
    */
   public toDescribeUserHierarchyStructure() {
-    this.to('connect:DescribeUserHierarchyStructure');
+    this.to('DescribeUserHierarchyStructure');
     return this;
   }
 
@@ -223,7 +223,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
   public toDestroyInstance() {
-    this.to('connect:DestroyInstance');
+    this.to('DestroyInstance');
     return this;
   }
 
@@ -238,7 +238,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateRoutingProfileQueues.html
    */
   public toDisassociateRoutingProfileQueues() {
-    this.to('connect:DisassociateRoutingProfileQueues');
+    this.to('DisassociateRoutingProfileQueues');
     return this;
   }
 
@@ -250,7 +250,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetContactAttributes.html
    */
   public toGetContactAttributes() {
-    this.to('connect:GetContactAttributes');
+    this.to('GetContactAttributes');
     return this;
   }
 
@@ -262,7 +262,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetCurrentMetricData.html
    */
   public toGetCurrentMetricData() {
-    this.to('connect:GetCurrentMetricData');
+    this.to('GetCurrentMetricData');
     return this;
   }
 
@@ -274,7 +274,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetFederationToken.html
    */
   public toGetFederationToken() {
-    this.to('connect:GetFederationToken');
+    this.to('GetFederationToken');
     return this;
   }
 
@@ -291,7 +291,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
   public toGetFederationTokens() {
-    this.to('connect:GetFederationTokens');
+    this.to('GetFederationTokens');
     return this;
   }
 
@@ -303,7 +303,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html
    */
   public toGetMetricData() {
-    this.to('connect:GetMetricData');
+    this.to('GetMetricData');
     return this;
   }
 
@@ -315,7 +315,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactFlows.html
    */
   public toListContactFlows() {
-    this.to('connect:ListContactFlows');
+    this.to('ListContactFlows');
     return this;
   }
 
@@ -327,7 +327,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListHoursOfOperations.html
    */
   public toListHoursOfOperations() {
-    this.to('connect:ListHoursOfOperations');
+    this.to('ListHoursOfOperations');
     return this;
   }
 
@@ -339,7 +339,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
   public toListInstances() {
-    this.to('connect:ListInstances');
+    this.to('ListInstances');
     return this;
   }
 
@@ -351,7 +351,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html
    */
   public toListPhoneNumbers() {
-    this.to('connect:ListPhoneNumbers');
+    this.to('ListPhoneNumbers');
     return this;
   }
 
@@ -363,7 +363,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPrompts.html
    */
   public toListPrompts() {
-    this.to('connect:ListPrompts');
+    this.to('ListPrompts');
     return this;
   }
 
@@ -375,7 +375,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListQueues.html
    */
   public toListQueues() {
-    this.to('connect:ListQueues');
+    this.to('ListQueues');
     return this;
   }
 
@@ -390,7 +390,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRoutingProfileQueues.html
    */
   public toListRoutingProfileQueues() {
-    this.to('connect:ListRoutingProfileQueues');
+    this.to('ListRoutingProfileQueues');
     return this;
   }
 
@@ -402,7 +402,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRoutingProfiles.html
    */
   public toListRoutingProfiles() {
-    this.to('connect:ListRoutingProfiles');
+    this.to('ListRoutingProfiles');
     return this;
   }
 
@@ -414,7 +414,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListSecurityProfiles.html
    */
   public toListSecurityProfiles() {
-    this.to('connect:ListSecurityProfiles');
+    this.to('ListSecurityProfiles');
     return this;
   }
 
@@ -429,7 +429,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('connect:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -441,7 +441,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUserHierarchyGroups.html
    */
   public toListUserHierarchyGroups() {
-    this.to('connect:ListUserHierarchyGroups');
+    this.to('ListUserHierarchyGroups');
     return this;
   }
 
@@ -453,7 +453,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUsers.html
    */
   public toListUsers() {
-    this.to('connect:ListUsers');
+    this.to('ListUsers');
     return this;
   }
 
@@ -478,7 +478,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
   public toModifyInstance() {
-    this.to('connect:ModifyInstance');
+    this.to('ModifyInstance');
     return this;
   }
 
@@ -490,7 +490,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ResumeContactRecording.html
    */
   public toResumeContactRecording() {
-    this.to('connect:ResumeContactRecording');
+    this.to('ResumeContactRecording');
     return this;
   }
 
@@ -502,7 +502,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html
    */
   public toStartChatContact() {
-    this.to('connect:StartChatContact');
+    this.to('StartChatContact');
     return this;
   }
 
@@ -514,7 +514,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactRecording.html
    */
   public toStartContactRecording() {
-    this.to('connect:StartContactRecording');
+    this.to('StartContactRecording');
     return this;
   }
 
@@ -526,7 +526,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundVoiceContact.html
    */
   public toStartOutboundVoiceContact() {
-    this.to('connect:StartOutboundVoiceContact');
+    this.to('StartOutboundVoiceContact');
     return this;
   }
 
@@ -538,7 +538,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContact.html
    */
   public toStopContact() {
-    this.to('connect:StopContact');
+    this.to('StopContact');
     return this;
   }
 
@@ -550,7 +550,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactRecording.html
    */
   public toStopContactRecording() {
-    this.to('connect:StopContactRecording');
+    this.to('StopContactRecording');
     return this;
   }
 
@@ -562,7 +562,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SuspendContactRecording.html
    */
   public toSuspendContactRecording() {
-    this.to('connect:SuspendContactRecording');
+    this.to('SuspendContactRecording');
     return this;
   }
 
@@ -579,7 +579,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('connect:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -595,7 +595,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('connect:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -607,7 +607,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactAttributes.html
    */
   public toUpdateContactAttributes() {
-    this.to('connect:UpdateContactAttributes');
+    this.to('UpdateContactAttributes');
     return this;
   }
 
@@ -622,7 +622,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowContent.html
    */
   public toUpdateContactFlowContent() {
-    this.to('connect:UpdateContactFlowContent');
+    this.to('UpdateContactFlowContent');
     return this;
   }
 
@@ -637,7 +637,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowName.html
    */
   public toUpdateContactFlowName() {
-    this.to('connect:UpdateContactFlowName');
+    this.to('UpdateContactFlowName');
     return this;
   }
 
@@ -652,7 +652,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileConcurrency.html
    */
   public toUpdateRoutingProfileConcurrency() {
-    this.to('connect:UpdateRoutingProfileConcurrency');
+    this.to('UpdateRoutingProfileConcurrency');
     return this;
   }
 
@@ -667,7 +667,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileDefaultOutboundQueue.html
    */
   public toUpdateRoutingProfileDefaultOutboundQueue() {
-    this.to('connect:UpdateRoutingProfileDefaultOutboundQueue');
+    this.to('UpdateRoutingProfileDefaultOutboundQueue');
     return this;
   }
 
@@ -682,7 +682,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileName.html
    */
   public toUpdateRoutingProfileName() {
-    this.to('connect:UpdateRoutingProfileName');
+    this.to('UpdateRoutingProfileName');
     return this;
   }
 
@@ -697,7 +697,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileQueues.html
    */
   public toUpdateRoutingProfileQueues() {
-    this.to('connect:UpdateRoutingProfileQueues');
+    this.to('UpdateRoutingProfileQueues');
     return this;
   }
 
@@ -712,7 +712,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchy.html
    */
   public toUpdateUserHierarchy() {
-    this.to('connect:UpdateUserHierarchy');
+    this.to('UpdateUserHierarchy');
     return this;
   }
 
@@ -727,7 +727,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserIdentityInfo.html
    */
   public toUpdateUserIdentityInfo() {
-    this.to('connect:UpdateUserIdentityInfo');
+    this.to('UpdateUserIdentityInfo');
     return this;
   }
 
@@ -742,7 +742,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserPhoneConfig.html
    */
   public toUpdateUserPhoneConfig() {
-    this.to('connect:UpdateUserPhoneConfig');
+    this.to('UpdateUserPhoneConfig');
     return this;
   }
 
@@ -757,7 +757,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserRoutingProfile.html
    */
   public toUpdateUserRoutingProfile() {
-    this.to('connect:UpdateUserRoutingProfile');
+    this.to('UpdateUserRoutingProfile');
     return this;
   }
 
@@ -772,7 +772,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserSecurityProfiles.html
    */
   public toUpdateUserSecurityProfiles() {
-    this.to('connect:UpdateUserSecurityProfiles');
+    this.to('UpdateUserSecurityProfiles');
     return this;
   }
 

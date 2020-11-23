@@ -30,7 +30,7 @@ export class Dlm extends PolicyStatement {
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_CreateLifecyclePolicy.html
    */
   public toCreateLifecyclePolicy() {
-    this.to('dlm:CreateLifecyclePolicy');
+    this.to('CreateLifecyclePolicy');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class Dlm extends PolicyStatement {
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_DeleteLifecyclePolicy.html
    */
   public toDeleteLifecyclePolicy() {
-    this.to('dlm:DeleteLifecyclePolicy');
+    this.to('DeleteLifecyclePolicy');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Dlm extends PolicyStatement {
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicies.html
    */
   public toGetLifecyclePolicies() {
-    this.to('dlm:GetLifecyclePolicies');
+    this.to('GetLifecyclePolicies');
     return this;
   }
 
@@ -66,7 +66,7 @@ export class Dlm extends PolicyStatement {
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html
    */
   public toGetLifecyclePolicy() {
-    this.to('dlm:GetLifecyclePolicy');
+    this.to('GetLifecyclePolicy');
     return this;
   }
 
@@ -78,7 +78,7 @@ export class Dlm extends PolicyStatement {
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('dlm:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -90,7 +90,7 @@ export class Dlm extends PolicyStatement {
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('dlm:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -102,7 +102,7 @@ export class Dlm extends PolicyStatement {
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('dlm:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -114,7 +114,7 @@ export class Dlm extends PolicyStatement {
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_UpdateLifecyclePolicy.html
    */
   public toUpdateLifecyclePolicy() {
-    this.to('dlm:UpdateLifecyclePolicy');
+    this.to('UpdateLifecyclePolicy');
     return this;
   }
 

@@ -26,7 +26,7 @@ export class Support extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddAttachmentsToSet.html
    */
   public toAddAttachmentsToSet() {
-    this.to('support:AddAttachmentsToSet');
+    this.to('AddAttachmentsToSet');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Support extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html
    */
   public toAddCommunicationToCase() {
-    this.to('support:AddCommunicationToCase');
+    this.to('AddCommunicationToCase');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Support extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html
    */
   public toCreateCase() {
-    this.to('support:CreateCase');
+    this.to('CreateCase');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Support extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeAttachment.html
    */
   public toDescribeAttachment() {
-    this.to('support:DescribeAttachment');
+    this.to('DescribeAttachment');
     return this;
   }
 
@@ -72,7 +72,7 @@ export class Support extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeCaseAttributes() {
-    this.to('support:DescribeCaseAttributes');
+    this.to('DescribeCaseAttributes');
     return this;
   }
 
@@ -84,7 +84,7 @@ export class Support extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html
    */
   public toDescribeCases() {
-    this.to('support:DescribeCases');
+    this.to('DescribeCases');
     return this;
   }
 
@@ -96,7 +96,7 @@ export class Support extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCommunications.html
    */
   public toDescribeCommunications() {
-    this.to('support:DescribeCommunications');
+    this.to('DescribeCommunications');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class Support extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeIssueTypes() {
-    this.to('support:DescribeIssueTypes');
+    this.to('DescribeIssueTypes');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class Support extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html
    */
   public toDescribeServices() {
-    this.to('support:DescribeServices');
+    this.to('DescribeServices');
     return this;
   }
 
@@ -130,7 +130,7 @@ export class Support extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html
    */
   public toDescribeSeverityLevels() {
-    this.to('support:DescribeSeverityLevels');
+    this.to('DescribeSeverityLevels');
     return this;
   }
 
@@ -140,7 +140,7 @@ export class Support extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeSupportLevel() {
-    this.to('support:DescribeSupportLevel');
+    this.to('DescribeSupportLevel');
     return this;
   }
 
@@ -152,7 +152,7 @@ export class Support extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckRefreshStatuses.html
    */
   public toDescribeTrustedAdvisorCheckRefreshStatuses() {
-    this.to('support:DescribeTrustedAdvisorCheckRefreshStatuses');
+    this.to('DescribeTrustedAdvisorCheckRefreshStatuses');
     return this;
   }
 
@@ -164,7 +164,7 @@ export class Support extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckResult.html
    */
   public toDescribeTrustedAdvisorCheckResult() {
-    this.to('support:DescribeTrustedAdvisorCheckResult');
+    this.to('DescribeTrustedAdvisorCheckResult');
     return this;
   }
 
@@ -176,7 +176,7 @@ export class Support extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html
    */
   public toDescribeTrustedAdvisorCheckSummaries() {
-    this.to('support:DescribeTrustedAdvisorCheckSummaries');
+    this.to('DescribeTrustedAdvisorCheckSummaries');
     return this;
   }
 
@@ -188,7 +188,7 @@ export class Support extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html
    */
   public toDescribeTrustedAdvisorChecks() {
-    this.to('support:DescribeTrustedAdvisorChecks');
+    this.to('DescribeTrustedAdvisorChecks');
     return this;
   }
 
@@ -198,7 +198,7 @@ export class Support extends PolicyStatement {
    * Access Level: Write
    */
   public toInitiateCallForCase() {
-    this.to('support:InitiateCallForCase');
+    this.to('InitiateCallForCase');
     return this;
   }
 
@@ -208,7 +208,7 @@ export class Support extends PolicyStatement {
    * Access Level: Write
    */
   public toInitiateChatForCase() {
-    this.to('support:InitiateChatForCase');
+    this.to('InitiateChatForCase');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Support extends PolicyStatement {
    * Access Level: Write
    */
   public toPutCaseAttributes() {
-    this.to('support:PutCaseAttributes');
+    this.to('PutCaseAttributes');
     return this;
   }
 
@@ -228,7 +228,7 @@ export class Support extends PolicyStatement {
    * Access Level: Write
    */
   public toRateCaseCommunication() {
-    this.to('support:RateCaseCommunication');
+    this.to('RateCaseCommunication');
     return this;
   }
 
@@ -240,7 +240,7 @@ export class Support extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html
    */
   public toRefreshTrustedAdvisorCheck() {
-    this.to('support:RefreshTrustedAdvisorCheck');
+    this.to('RefreshTrustedAdvisorCheck');
     return this;
   }
 
@@ -252,7 +252,7 @@ export class Support extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html
    */
   public toResolveCase() {
-    this.to('support:ResolveCase');
+    this.to('ResolveCase');
     return this;
   }
 
@@ -262,7 +262,7 @@ export class Support extends PolicyStatement {
    * Access Level: Read
    */
   public toSearchForCases() {
-    this.to('support:SearchForCases');
+    this.to('SearchForCases');
     return this;
   }
 

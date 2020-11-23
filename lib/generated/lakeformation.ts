@@ -26,7 +26,7 @@ export class Lakeformation extends PolicyStatement {
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html
    */
   public toBatchGrantPermissions() {
-    this.to('lakeformation:BatchGrantPermissions');
+    this.to('BatchGrantPermissions');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Lakeformation extends PolicyStatement {
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html
    */
   public toBatchRevokePermissions() {
-    this.to('lakeformation:BatchRevokePermissions');
+    this.to('BatchRevokePermissions');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Lakeformation extends PolicyStatement {
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html
    */
   public toDeregisterResource() {
-    this.to('lakeformation:DeregisterResource');
+    this.to('DeregisterResource');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Lakeformation extends PolicyStatement {
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html
    */
   public toDescribeResource() {
-    this.to('lakeformation:DescribeResource');
+    this.to('DescribeResource');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Lakeformation extends PolicyStatement {
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html
    */
   public toGetDataAccess() {
-    this.to('lakeformation:GetDataAccess');
+    this.to('GetDataAccess');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Lakeformation extends PolicyStatement {
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html
    */
   public toGetDataLakeSettings() {
-    this.to('lakeformation:GetDataLakeSettings');
+    this.to('GetDataLakeSettings');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Lakeformation extends PolicyStatement {
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html
    */
   public toGetEffectivePermissionsForPath() {
-    this.to('lakeformation:GetEffectivePermissionsForPath');
+    this.to('GetEffectivePermissionsForPath');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Lakeformation extends PolicyStatement {
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html
    */
   public toGrantPermissions() {
-    this.to('lakeformation:GrantPermissions');
+    this.to('GrantPermissions');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Lakeformation extends PolicyStatement {
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html
    */
   public toListPermissions() {
-    this.to('lakeformation:ListPermissions');
+    this.to('ListPermissions');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Lakeformation extends PolicyStatement {
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html
    */
   public toListResources() {
-    this.to('lakeformation:ListResources');
+    this.to('ListResources');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Lakeformation extends PolicyStatement {
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html
    */
   public toPutDataLakeSettings() {
-    this.to('lakeformation:PutDataLakeSettings');
+    this.to('PutDataLakeSettings');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Lakeformation extends PolicyStatement {
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html
    */
   public toRegisterResource() {
-    this.to('lakeformation:RegisterResource');
+    this.to('RegisterResource');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Lakeformation extends PolicyStatement {
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html
    */
   public toRevokePermissions() {
-    this.to('lakeformation:RevokePermissions');
+    this.to('RevokePermissions');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Lakeformation extends PolicyStatement {
    * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html
    */
   public toUpdateResource() {
-    this.to('lakeformation:UpdateResource');
+    this.to('UpdateResource');
     return this;
   }
 

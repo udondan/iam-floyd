@@ -26,7 +26,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetNamedQuery.html
    */
   public toBatchGetNamedQuery() {
-    this.to('athena:BatchGetNamedQuery');
+    this.to('BatchGetNamedQuery');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetQueryExecution.html
    */
   public toBatchGetQueryExecution() {
-    this.to('athena:BatchGetQueryExecution');
+    this.to('BatchGetQueryExecution');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateDataCatalog.html
    */
   public toCreateDataCatalog() {
-    this.to('athena:CreateDataCatalog');
+    this.to('CreateDataCatalog');
     return this;
   }
 
@@ -66,7 +66,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateNamedQuery.html
    */
   public toCreateNamedQuery() {
-    this.to('athena:CreateNamedQuery');
+    this.to('CreateNamedQuery');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateWorkGroup.html
    */
   public toCreateWorkGroup() {
-    this.to('athena:CreateWorkGroup');
+    this.to('CreateWorkGroup');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteDataCatalog.html
    */
   public toDeleteDataCatalog() {
-    this.to('athena:DeleteDataCatalog');
+    this.to('DeleteDataCatalog');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteNamedQuery.html
    */
   public toDeleteNamedQuery() {
-    this.to('athena:DeleteNamedQuery');
+    this.to('DeleteNamedQuery');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteWorkGroup.html
    */
   public toDeleteWorkGroup() {
-    this.to('athena:DeleteWorkGroup');
+    this.to('DeleteWorkGroup');
     return this;
   }
 
@@ -130,7 +130,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetDataCatalog.html
    */
   public toGetDataCatalog() {
-    this.to('athena:GetDataCatalog');
+    this.to('GetDataCatalog');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetDatabase.html
    */
   public toGetDatabase() {
-    this.to('athena:GetDatabase');
+    this.to('GetDatabase');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetNamedQuery.html
    */
   public toGetNamedQuery() {
-    this.to('athena:GetNamedQuery');
+    this.to('GetNamedQuery');
     return this;
   }
 
@@ -166,7 +166,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryExecution.html
    */
   public toGetQueryExecution() {
-    this.to('athena:GetQueryExecution');
+    this.to('GetQueryExecution');
     return this;
   }
 
@@ -178,7 +178,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryResults.html
    */
   public toGetQueryResults() {
-    this.to('athena:GetQueryResults');
+    this.to('GetQueryResults');
     return this;
   }
 
@@ -190,7 +190,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies
    */
   public toGetQueryResultsStream() {
-    this.to('athena:GetQueryResultsStream');
+    this.to('GetQueryResultsStream');
     return this;
   }
 
@@ -202,7 +202,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ GetTableMetadata.html
    */
   public toGetTableMetadata() {
-    this.to('athena:GetTableMetadata');
+    this.to('GetTableMetadata');
     return this;
   }
 
@@ -214,7 +214,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetWorkGroup.html
    */
   public toGetWorkGroup() {
-    this.to('athena:GetWorkGroup');
+    this.to('GetWorkGroup');
     return this;
   }
 
@@ -226,7 +226,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListDataCatalogs.html
    */
   public toListDataCatalogs() {
-    this.to('athena:ListDataCatalogs');
+    this.to('ListDataCatalogs');
     return this;
   }
 
@@ -238,7 +238,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListDatabases.html
    */
   public toListDatabases() {
-    this.to('athena:ListDatabases');
+    this.to('ListDatabases');
     return this;
   }
 
@@ -250,7 +250,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListNamedQueries.html
    */
   public toListNamedQueries() {
-    this.to('athena:ListNamedQueries');
+    this.to('ListNamedQueries');
     return this;
   }
 
@@ -262,7 +262,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListQueryExecutions.html
    */
   public toListQueryExecutions() {
-    this.to('athena:ListQueryExecutions');
+    this.to('ListQueryExecutions');
     return this;
   }
 
@@ -274,7 +274,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListTableMetadata.html
    */
   public toListTableMetadata() {
-    this.to('athena:ListTableMetadata');
+    this.to('ListTableMetadata');
     return this;
   }
 
@@ -286,7 +286,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('athena:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -298,7 +298,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListWorkGroups.html
    */
   public toListWorkGroups() {
-    this.to('athena:ListWorkGroups');
+    this.to('ListWorkGroups');
     return this;
   }
 
@@ -310,7 +310,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_StartQueryExecution.html
    */
   public toStartQueryExecution() {
-    this.to('athena:StartQueryExecution');
+    this.to('StartQueryExecution');
     return this;
   }
 
@@ -322,7 +322,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_StopQueryExecution.html
    */
   public toStopQueryExecution() {
-    this.to('athena:StopQueryExecution');
+    this.to('StopQueryExecution');
     return this;
   }
 
@@ -338,7 +338,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('athena:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -353,7 +353,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('athena:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -365,7 +365,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateDataCatalog.html
    */
   public toUpdateDataCatalog() {
-    this.to('athena:UpdateDataCatalog');
+    this.to('UpdateDataCatalog');
     return this;
   }
 
@@ -377,7 +377,7 @@ export class Athena extends PolicyStatement {
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateWorkGroup.html
    */
   public toUpdateWorkGroup() {
-    this.to('athena:UpdateWorkGroup');
+    this.to('UpdateWorkGroup');
     return this;
   }
 

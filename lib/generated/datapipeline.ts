@@ -31,7 +31,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ActivatePipeline.html
    */
   public toActivatePipeline() {
-    this.to('datapipeline:ActivatePipeline');
+    this.to('ActivatePipeline');
     return this;
   }
 
@@ -47,7 +47,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_AddTags.html
    */
   public toAddTags() {
-    this.to('datapipeline:AddTags');
+    this.to('AddTags');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_CreatePipeline.html
    */
   public toCreatePipeline() {
-    this.to('datapipeline:CreatePipeline');
+    this.to('CreatePipeline');
     return this;
   }
 
@@ -79,7 +79,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeactivatePipeline.html
    */
   public toDeactivatePipeline() {
-    this.to('datapipeline:DeactivatePipeline');
+    this.to('DeactivatePipeline');
     return this;
   }
 
@@ -95,7 +95,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeletePipeline.html
    */
   public toDeletePipeline() {
-    this.to('datapipeline:DeletePipeline');
+    this.to('DeletePipeline');
     return this;
   }
 
@@ -111,7 +111,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribeObjects.html
    */
   public toDescribeObjects() {
-    this.to('datapipeline:DescribeObjects');
+    this.to('DescribeObjects');
     return this;
   }
 
@@ -127,7 +127,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribePipelines.html
    */
   public toDescribePipelines() {
-    this.to('datapipeline:DescribePipelines');
+    this.to('DescribePipelines');
     return this;
   }
 
@@ -143,7 +143,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_EvaluateExpression.html
    */
   public toEvaluateExpression() {
-    this.to('datapipeline:EvaluateExpression');
+    this.to('EvaluateExpression');
     return this;
   }
 
@@ -155,7 +155,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetAccountLimits.html
    */
   public toGetAccountLimits() {
-    this.to('datapipeline:GetAccountLimits');
+    this.to('GetAccountLimits');
     return this;
   }
 
@@ -172,7 +172,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetPipelineDefinition.html
    */
   public toGetPipelineDefinition() {
-    this.to('datapipeline:GetPipelineDefinition');
+    this.to('GetPipelineDefinition');
     return this;
   }
 
@@ -184,7 +184,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ListPipelines.html
    */
   public toListPipelines() {
-    this.to('datapipeline:ListPipelines');
+    this.to('ListPipelines');
     return this;
   }
 
@@ -199,7 +199,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PollForTask.html
    */
   public toPollForTask() {
-    this.to('datapipeline:PollForTask');
+    this.to('PollForTask');
     return this;
   }
 
@@ -211,7 +211,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutAccountLimits.html
    */
   public toPutAccountLimits() {
-    this.to('datapipeline:PutAccountLimits');
+    this.to('PutAccountLimits');
     return this;
   }
 
@@ -228,7 +228,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutPipelineDefinition.html
    */
   public toPutPipelineDefinition() {
-    this.to('datapipeline:PutPipelineDefinition');
+    this.to('PutPipelineDefinition');
     return this;
   }
 
@@ -244,7 +244,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_QueryObjects.html
    */
   public toQueryObjects() {
-    this.to('datapipeline:QueryObjects');
+    this.to('QueryObjects');
     return this;
   }
 
@@ -260,7 +260,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_RemoveTags.html
    */
   public toRemoveTags() {
-    this.to('datapipeline:RemoveTags');
+    this.to('RemoveTags');
     return this;
   }
 
@@ -272,7 +272,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ReportTaskProgress.html
    */
   public toReportTaskProgress() {
-    this.to('datapipeline:ReportTaskProgress');
+    this.to('ReportTaskProgress');
     return this;
   }
 
@@ -284,7 +284,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ReportTaskRunnerHeartbeat.html
    */
   public toReportTaskRunnerHeartbeat() {
-    this.to('datapipeline:ReportTaskRunnerHeartbeat');
+    this.to('ReportTaskRunnerHeartbeat');
     return this;
   }
 
@@ -300,7 +300,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetStatus.html
    */
   public toSetStatus() {
-    this.to('datapipeline:SetStatus');
+    this.to('SetStatus');
     return this;
   }
 
@@ -312,7 +312,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetTaskStatus.html
    */
   public toSetTaskStatus() {
-    this.to('datapipeline:SetTaskStatus');
+    this.to('SetTaskStatus');
     return this;
   }
 
@@ -329,7 +329,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ValidatePipelineDefinition.html
    */
   public toValidatePipelineDefinition() {
-    this.to('datapipeline:ValidatePipelineDefinition');
+    this.to('ValidatePipelineDefinition');
     return this;
   }
 

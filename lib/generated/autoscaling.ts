@@ -26,7 +26,7 @@ export class AutoscalingPlans extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CreateScalingPlan.html
    */
   public toCreateScalingPlan() {
-    this.to('autoscaling-plans:CreateScalingPlan');
+    this.to('CreateScalingPlan');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class AutoscalingPlans extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DeleteScalingPlan.html
    */
   public toDeleteScalingPlan() {
-    this.to('autoscaling-plans:DeleteScalingPlan');
+    this.to('DeleteScalingPlan');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class AutoscalingPlans extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DescribeScalingPlanResources.html
    */
   public toDescribeScalingPlanResources() {
-    this.to('autoscaling-plans:DescribeScalingPlanResources');
+    this.to('DescribeScalingPlanResources');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class AutoscalingPlans extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DescribeScalingPlans.html
    */
   public toDescribeScalingPlans() {
-    this.to('autoscaling-plans:DescribeScalingPlans');
+    this.to('DescribeScalingPlans');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class AutoscalingPlans extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_GetScalingPlanResourceForecastData.html
    */
   public toGetScalingPlanResourceForecastData() {
-    this.to('autoscaling-plans:GetScalingPlanResourceForecastData');
+    this.to('GetScalingPlanResourceForecastData');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class AutoscalingPlans extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_UpdateScalingPlan.html
    */
   public toUpdateScalingPlan() {
-    this.to('autoscaling-plans:UpdateScalingPlan');
+    this.to('UpdateScalingPlan');
     return this;
   }
 

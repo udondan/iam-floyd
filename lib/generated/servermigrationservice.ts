@@ -26,7 +26,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_CreateApp.html
    */
   public toCreateApp() {
-    this.to('sms:CreateApp');
+    this.to('CreateApp');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_CreateReplicationJob.html
    */
   public toCreateReplicationJob() {
-    this.to('sms:CreateReplicationJob');
+    this.to('CreateReplicationJob');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteApp.html
    */
   public toDeleteApp() {
-    this.to('sms:DeleteApp');
+    this.to('DeleteApp');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteAppLaunchConfiguration.html
    */
   public toDeleteAppLaunchConfiguration() {
-    this.to('sms:DeleteAppLaunchConfiguration');
+    this.to('DeleteAppLaunchConfiguration');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteAppReplicationConfiguration.html
    */
   public toDeleteAppReplicationConfiguration() {
-    this.to('sms:DeleteAppReplicationConfiguration');
+    this.to('DeleteAppReplicationConfiguration');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteAppValidationConfiguration.html
    */
   public toDeleteAppValidationConfiguration() {
-    this.to('sms:DeleteAppValidationConfiguration');
+    this.to('DeleteAppValidationConfiguration');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteReplicationJob.html
    */
   public toDeleteReplicationJob() {
-    this.to('sms:DeleteReplicationJob');
+    this.to('DeleteReplicationJob');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteServerCatalog.html
    */
   public toDeleteServerCatalog() {
-    this.to('sms:DeleteServerCatalog');
+    this.to('DeleteServerCatalog');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DisassociateConnector.html
    */
   public toDisassociateConnector() {
-    this.to('sms:DisassociateConnector');
+    this.to('DisassociateConnector');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GenerateChangeSet.html
    */
   public toGenerateChangeSet() {
-    this.to('sms:GenerateChangeSet');
+    this.to('GenerateChangeSet');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GenerateTemplate.html
    */
   public toGenerateTemplate() {
-    this.to('sms:GenerateTemplate');
+    this.to('GenerateTemplate');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetApp.html
    */
   public toGetApp() {
-    this.to('sms:GetApp');
+    this.to('GetApp');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppLaunchConfiguration.html
    */
   public toGetAppLaunchConfiguration() {
-    this.to('sms:GetAppLaunchConfiguration');
+    this.to('GetAppLaunchConfiguration');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppReplicationConfiguration.html
    */
   public toGetAppReplicationConfiguration() {
-    this.to('sms:GetAppReplicationConfiguration');
+    this.to('GetAppReplicationConfiguration');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppValidationConfiguration.html
    */
   public toGetAppValidationConfiguration() {
-    this.to('sms:GetAppValidationConfiguration');
+    this.to('GetAppValidationConfiguration');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppValidationOutput.html
    */
   public toGetAppValidationOutput() {
-    this.to('sms:GetAppValidationOutput');
+    this.to('GetAppValidationOutput');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetConnectors.html
    */
   public toGetConnectors() {
-    this.to('sms:GetConnectors');
+    this.to('GetConnectors');
     return this;
   }
 
@@ -228,7 +228,7 @@ export class Sms extends PolicyStatement {
    * Access Level: Read
    */
   public toGetMessages() {
-    this.to('sms:GetMessages');
+    this.to('GetMessages');
     return this;
   }
 
@@ -240,7 +240,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetReplicationJobs.html
    */
   public toGetReplicationJobs() {
-    this.to('sms:GetReplicationJobs');
+    this.to('GetReplicationJobs');
     return this;
   }
 
@@ -252,7 +252,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetReplicationRuns.html
    */
   public toGetReplicationRuns() {
-    this.to('sms:GetReplicationRuns');
+    this.to('GetReplicationRuns');
     return this;
   }
 
@@ -264,7 +264,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetServers.html
    */
   public toGetServers() {
-    this.to('sms:GetServers');
+    this.to('GetServers');
     return this;
   }
 
@@ -276,7 +276,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ImportAppCatalog.html
    */
   public toImportAppCatalog() {
-    this.to('sms:ImportAppCatalog');
+    this.to('ImportAppCatalog');
     return this;
   }
 
@@ -288,7 +288,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ImportServerCatalog.html
    */
   public toImportServerCatalog() {
-    this.to('sms:ImportServerCatalog');
+    this.to('ImportServerCatalog');
     return this;
   }
 
@@ -300,7 +300,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_LaunchApp.html
    */
   public toLaunchApp() {
-    this.to('sms:LaunchApp');
+    this.to('LaunchApp');
     return this;
   }
 
@@ -312,7 +312,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ListAppss.html
    */
   public toListApps() {
-    this.to('sms:ListApps');
+    this.to('ListApps');
     return this;
   }
 
@@ -324,7 +324,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_NotifyAppValidationOutput.html
    */
   public toNotifyAppValidationOutput() {
-    this.to('sms:NotifyAppValidationOutput');
+    this.to('NotifyAppValidationOutput');
     return this;
   }
 
@@ -336,7 +336,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_PutAppLaunchConfiguration.html
    */
   public toPutAppLaunchConfiguration() {
-    this.to('sms:PutAppLaunchConfiguration');
+    this.to('PutAppLaunchConfiguration');
     return this;
   }
 
@@ -348,7 +348,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_PutAppReplicationConfiguration.html
    */
   public toPutAppReplicationConfiguration() {
-    this.to('sms:PutAppReplicationConfiguration');
+    this.to('PutAppReplicationConfiguration');
     return this;
   }
 
@@ -360,7 +360,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_PutAppValidationConfiguration.html
    */
   public toPutAppValidationConfiguration() {
-    this.to('sms:PutAppValidationConfiguration');
+    this.to('PutAppValidationConfiguration');
     return this;
   }
 
@@ -370,7 +370,7 @@ export class Sms extends PolicyStatement {
    * Access Level: Write
    */
   public toSendMessage() {
-    this.to('sms:SendMessage');
+    this.to('SendMessage');
     return this;
   }
 
@@ -382,7 +382,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StartAppReplication.html
    */
   public toStartAppReplication() {
-    this.to('sms:StartAppReplication');
+    this.to('StartAppReplication');
     return this;
   }
 
@@ -394,7 +394,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StartOnDemandAppReplication.html
    */
   public toStartOnDemandAppReplication() {
-    this.to('sms:StartOnDemandAppReplication');
+    this.to('StartOnDemandAppReplication');
     return this;
   }
 
@@ -406,7 +406,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StartOnDemandReplicationRun.html
    */
   public toStartOnDemandReplicationRun() {
-    this.to('sms:StartOnDemandReplicationRun');
+    this.to('StartOnDemandReplicationRun');
     return this;
   }
 
@@ -418,7 +418,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StopAppReplication.html
    */
   public toStopAppReplication() {
-    this.to('sms:StopAppReplication');
+    this.to('StopAppReplication');
     return this;
   }
 
@@ -430,7 +430,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_TerminateApp.html
    */
   public toTerminateApp() {
-    this.to('sms:TerminateApp');
+    this.to('TerminateApp');
     return this;
   }
 
@@ -442,7 +442,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_UpdateApp.html
    */
   public toUpdateApp() {
-    this.to('sms:UpdateApp');
+    this.to('UpdateApp');
     return this;
   }
 
@@ -454,7 +454,7 @@ export class Sms extends PolicyStatement {
    * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_UpdateReplicationJob.html
    */
   public toUpdateReplicationJob() {
-    this.to('sms:UpdateReplicationJob');
+    this.to('UpdateReplicationJob');
     return this;
   }
 

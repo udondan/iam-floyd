@@ -33,7 +33,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html
    */
   public toCreateServer() {
-    this.to('transfer:CreateServer');
+    this.to('CreateServer');
     return this;
   }
 
@@ -52,7 +52,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateUser.html
    */
   public toCreateUser() {
-    this.to('transfer:CreateUser');
+    this.to('CreateUser');
     return this;
   }
 
@@ -64,7 +64,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteServer.html
    */
   public toDeleteServer() {
-    this.to('transfer:DeleteServer');
+    this.to('DeleteServer');
     return this;
   }
 
@@ -76,7 +76,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteSshPublicKey.html
    */
   public toDeleteSshPublicKey() {
-    this.to('transfer:DeleteSshPublicKey');
+    this.to('DeleteSshPublicKey');
     return this;
   }
 
@@ -88,7 +88,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteUser.html
    */
   public toDeleteUser() {
-    this.to('transfer:DeleteUser');
+    this.to('DeleteUser');
     return this;
   }
 
@@ -100,7 +100,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeServer.html
    */
   public toDescribeServer() {
-    this.to('transfer:DescribeServer');
+    this.to('DescribeServer');
     return this;
   }
 
@@ -112,7 +112,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeUser.html
    */
   public toDescribeUser() {
-    this.to('transfer:DescribeUser');
+    this.to('DescribeUser');
     return this;
   }
 
@@ -124,7 +124,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ImportSshPublicKey.html
    */
   public toImportSshPublicKey() {
-    this.to('transfer:ImportSshPublicKey');
+    this.to('ImportSshPublicKey');
     return this;
   }
 
@@ -136,7 +136,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListServers.html
    */
   public toListServers() {
-    this.to('transfer:ListServers');
+    this.to('ListServers');
     return this;
   }
 
@@ -148,7 +148,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('transfer:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -160,7 +160,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListUsers.html
    */
   public toListUsers() {
-    this.to('transfer:ListUsers');
+    this.to('ListUsers');
     return this;
   }
 
@@ -172,7 +172,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_StartServer.html
    */
   public toStartServer() {
-    this.to('transfer:StartServer');
+    this.to('StartServer');
     return this;
   }
 
@@ -184,7 +184,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_StopServer.html
    */
   public toStopServer() {
-    this.to('transfer:StopServer');
+    this.to('StopServer');
     return this;
   }
 
@@ -200,7 +200,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_TagResource.html
    */
   public toTagResource() {
-    this.to('transfer:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -212,7 +212,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_TestIdentityProvider.html
    */
   public toTestIdentityProvider() {
-    this.to('transfer:TestIdentityProvider');
+    this.to('TestIdentityProvider');
     return this;
   }
 
@@ -227,7 +227,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('transfer:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html
    */
   public toUpdateServer() {
-    this.to('transfer:UpdateServer');
+    this.to('UpdateServer');
     return this;
   }
 
@@ -257,7 +257,7 @@ export class Transfer extends PolicyStatement {
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateUser.html
    */
   public toUpdateUser() {
-    this.to('transfer:UpdateUser');
+    this.to('UpdateUser');
     return this;
   }
 

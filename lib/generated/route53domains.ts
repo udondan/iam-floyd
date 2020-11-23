@@ -26,7 +26,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CheckDomainAvailability.html
    */
   public toCheckDomainAvailability() {
-    this.to('route53domains:CheckDomainAvailability');
+    this.to('CheckDomainAvailability');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DeleteTagsForDomain.html
    */
   public toDeleteTagsForDomain() {
-    this.to('route53domains:DeleteTagsForDomain');
+    this.to('DeleteTagsForDomain');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DisableDomainAutoRenew.html
    */
   public toDisableDomainAutoRenew() {
-    this.to('route53domains:DisableDomainAutoRenew');
+    this.to('DisableDomainAutoRenew');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DisableDomainTransferLock.html
    */
   public toDisableDomainTransferLock() {
-    this.to('route53domains:DisableDomainTransferLock');
+    this.to('DisableDomainTransferLock');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DisableDomainAutoRenew.html
    */
   public toEnableDomainAutoRenew() {
-    this.to('route53domains:EnableDomainAutoRenew');
+    this.to('EnableDomainAutoRenew');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_EnableDomainTransferLock.html
    */
   public toEnableDomainTransferLock() {
-    this.to('route53domains:EnableDomainTransferLock');
+    this.to('EnableDomainTransferLock');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetContactReachabilityStatus.html
    */
   public toGetContactReachabilityStatus() {
-    this.to('route53domains:GetContactReachabilityStatus');
+    this.to('GetContactReachabilityStatus');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html
    */
   public toGetDomainDetail() {
-    this.to('route53domains:GetDomainDetail');
+    this.to('GetDomainDetail');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainSuggestions.html
    */
   public toGetDomainSuggestions() {
-    this.to('route53domains:GetDomainSuggestions');
+    this.to('GetDomainSuggestions');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html
    */
   public toGetOperationDetail() {
-    this.to('route53domains:GetOperationDetail');
+    this.to('GetOperationDetail');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListDomains.html
    */
   public toListDomains() {
-    this.to('route53domains:ListDomains');
+    this.to('ListDomains');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html
    */
   public toListOperations() {
-    this.to('route53domains:ListOperations');
+    this.to('ListOperations');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListTagsForDomain.html
    */
   public toListTagsForDomain() {
-    this.to('route53domains:ListTagsForDomain');
+    this.to('ListTagsForDomain');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RegisterDomain.html
    */
   public toRegisterDomain() {
-    this.to('route53domains:RegisterDomain');
+    this.to('RegisterDomain');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RenewDomain.html
    */
   public toRenewDomain() {
-    this.to('route53domains:RenewDomain');
+    this.to('RenewDomain');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendContactReachabilityEmail.html
    */
   public toResendContactReachabilityEmail() {
-    this.to('route53domains:ResendContactReachabilityEmail');
+    this.to('ResendContactReachabilityEmail');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RetrieveDomainAuthCode.html
    */
   public toRetrieveDomainAuthCode() {
-    this.to('route53domains:RetrieveDomainAuthCode');
+    this.to('RetrieveDomainAuthCode');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomain.html
    */
   public toTransferDomain() {
-    this.to('route53domains:TransferDomain');
+    this.to('TransferDomain');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainContact.html
    */
   public toUpdateDomainContact() {
-    this.to('route53domains:UpdateDomainContact');
+    this.to('UpdateDomainContact');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainContactPrivacy.html
    */
   public toUpdateDomainContactPrivacy() {
-    this.to('route53domains:UpdateDomainContactPrivacy');
+    this.to('UpdateDomainContactPrivacy');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html
    */
   public toUpdateDomainNameservers() {
-    this.to('route53domains:UpdateDomainNameservers');
+    this.to('UpdateDomainNameservers');
     return this;
   }
 
@@ -278,7 +278,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateTagsForDomain.html
    */
   public toUpdateTagsForDomain() {
-    this.to('route53domains:UpdateTagsForDomain');
+    this.to('UpdateTagsForDomain');
     return this;
   }
 
@@ -290,7 +290,7 @@ export class Route53domains extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ViewBilling.html
    */
   public toViewBilling() {
-    this.to('route53domains:ViewBilling');
+    this.to('ViewBilling');
     return this;
   }
 

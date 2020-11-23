@@ -26,7 +26,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateByteMatchSet.html
    */
   public toCreateByteMatchSet() {
-    this.to('waf:CreateByteMatchSet');
+    this.to('CreateByteMatchSet');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateGeoMatchSet.html
    */
   public toCreateGeoMatchSet() {
-    this.to('waf:CreateGeoMatchSet');
+    this.to('CreateGeoMatchSet');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateIPSet.html
    */
   public toCreateIPSet() {
-    this.to('waf:CreateIPSet');
+    this.to('CreateIPSet');
     return this;
   }
 
@@ -66,7 +66,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateRateBasedRule.html
    */
   public toCreateRateBasedRule() {
-    this.to('waf:CreateRateBasedRule');
+    this.to('CreateRateBasedRule');
     return this;
   }
 
@@ -78,7 +78,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateRegexMatchSet.html
    */
   public toCreateRegexMatchSet() {
-    this.to('waf:CreateRegexMatchSet');
+    this.to('CreateRegexMatchSet');
     return this;
   }
 
@@ -90,7 +90,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateRegexPatternSet.html
    */
   public toCreateRegexPatternSet() {
-    this.to('waf:CreateRegexPatternSet');
+    this.to('CreateRegexPatternSet');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateRule.html
    */
   public toCreateRule() {
-    this.to('waf:CreateRule');
+    this.to('CreateRule');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateRuleGroup.html
    */
   public toCreateRuleGroup() {
-    this.to('waf:CreateRuleGroup');
+    this.to('CreateRuleGroup');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateSizeConstraintSet.html
    */
   public toCreateSizeConstraintSet() {
-    this.to('waf:CreateSizeConstraintSet');
+    this.to('CreateSizeConstraintSet');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateSqlInjectionMatchSet.html
    */
   public toCreateSqlInjectionMatchSet() {
-    this.to('waf:CreateSqlInjectionMatchSet');
+    this.to('CreateSqlInjectionMatchSet');
     return this;
   }
 
@@ -162,7 +162,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateWebACL.html
    */
   public toCreateWebACL() {
-    this.to('waf:CreateWebACL');
+    this.to('CreateWebACL');
     return this;
   }
 
@@ -177,7 +177,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateWebACLMigrationStack.html
    */
   public toCreateWebACLMigrationStack() {
-    this.to('waf:CreateWebACLMigrationStack');
+    this.to('CreateWebACLMigrationStack');
     return this;
   }
 
@@ -189,7 +189,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateXssMatchSet.html
    */
   public toCreateXssMatchSet() {
-    this.to('waf:CreateXssMatchSet');
+    this.to('CreateXssMatchSet');
     return this;
   }
 
@@ -201,7 +201,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeleteByteMatchSet.html
    */
   public toDeleteByteMatchSet() {
-    this.to('waf:DeleteByteMatchSet');
+    this.to('DeleteByteMatchSet');
     return this;
   }
 
@@ -213,7 +213,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeleteGeoMatchSet.html
    */
   public toDeleteGeoMatchSet() {
-    this.to('waf:DeleteGeoMatchSet');
+    this.to('DeleteGeoMatchSet');
     return this;
   }
 
@@ -225,7 +225,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeleteIPSet.html
    */
   public toDeleteIPSet() {
-    this.to('waf:DeleteIPSet');
+    this.to('DeleteIPSet');
     return this;
   }
 
@@ -237,7 +237,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeleteLoggingConfiguration.html
    */
   public toDeleteLoggingConfiguration() {
-    this.to('waf:DeleteLoggingConfiguration');
+    this.to('DeleteLoggingConfiguration');
     return this;
   }
 
@@ -249,7 +249,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeletePermissionPolicy.html
    */
   public toDeletePermissionPolicy() {
-    this.to('waf:DeletePermissionPolicy');
+    this.to('DeletePermissionPolicy');
     return this;
   }
 
@@ -261,7 +261,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeleteRateBasedRule.html
    */
   public toDeleteRateBasedRule() {
-    this.to('waf:DeleteRateBasedRule');
+    this.to('DeleteRateBasedRule');
     return this;
   }
 
@@ -273,7 +273,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeleteRegexMatchSet.html
    */
   public toDeleteRegexMatchSet() {
-    this.to('waf:DeleteRegexMatchSet');
+    this.to('DeleteRegexMatchSet');
     return this;
   }
 
@@ -285,7 +285,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeleteRegexPatternSet.html
    */
   public toDeleteRegexPatternSet() {
-    this.to('waf:DeleteRegexPatternSet');
+    this.to('DeleteRegexPatternSet');
     return this;
   }
 
@@ -297,7 +297,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeleteRule.html
    */
   public toDeleteRule() {
-    this.to('waf:DeleteRule');
+    this.to('DeleteRule');
     return this;
   }
 
@@ -309,7 +309,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeleteRuleGroup.html
    */
   public toDeleteRuleGroup() {
-    this.to('waf:DeleteRuleGroup');
+    this.to('DeleteRuleGroup');
     return this;
   }
 
@@ -321,7 +321,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeleteSizeConstraintSet.html
    */
   public toDeleteSizeConstraintSet() {
-    this.to('waf:DeleteSizeConstraintSet');
+    this.to('DeleteSizeConstraintSet');
     return this;
   }
 
@@ -333,7 +333,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeleteSqlInjectionMatchSet.html
    */
   public toDeleteSqlInjectionMatchSet() {
-    this.to('waf:DeleteSqlInjectionMatchSet');
+    this.to('DeleteSqlInjectionMatchSet');
     return this;
   }
 
@@ -345,7 +345,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeleteWebACL.html
    */
   public toDeleteWebACL() {
-    this.to('waf:DeleteWebACL');
+    this.to('DeleteWebACL');
     return this;
   }
 
@@ -357,7 +357,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_DeleteXssMatchSet.html
    */
   public toDeleteXssMatchSet() {
-    this.to('waf:DeleteXssMatchSet');
+    this.to('DeleteXssMatchSet');
     return this;
   }
 
@@ -369,7 +369,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetByteMatchSet.html
    */
   public toGetByteMatchSet() {
-    this.to('waf:GetByteMatchSet');
+    this.to('GetByteMatchSet');
     return this;
   }
 
@@ -381,7 +381,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetChangeToken.html
    */
   public toGetChangeToken() {
-    this.to('waf:GetChangeToken');
+    this.to('GetChangeToken');
     return this;
   }
 
@@ -393,7 +393,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetChangeTokenStatus.html
    */
   public toGetChangeTokenStatus() {
-    this.to('waf:GetChangeTokenStatus');
+    this.to('GetChangeTokenStatus');
     return this;
   }
 
@@ -405,7 +405,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetGeoMatchSet.html
    */
   public toGetGeoMatchSet() {
-    this.to('waf:GetGeoMatchSet');
+    this.to('GetGeoMatchSet');
     return this;
   }
 
@@ -417,7 +417,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetIPSet.html
    */
   public toGetIPSet() {
-    this.to('waf:GetIPSet');
+    this.to('GetIPSet');
     return this;
   }
 
@@ -429,7 +429,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetLoggingConfiguration.html
    */
   public toGetLoggingConfiguration() {
-    this.to('waf:GetLoggingConfiguration');
+    this.to('GetLoggingConfiguration');
     return this;
   }
 
@@ -441,7 +441,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetPermissionPolicy.html
    */
   public toGetPermissionPolicy() {
-    this.to('waf:GetPermissionPolicy');
+    this.to('GetPermissionPolicy');
     return this;
   }
 
@@ -453,7 +453,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetRateBasedRule.html
    */
   public toGetRateBasedRule() {
-    this.to('waf:GetRateBasedRule');
+    this.to('GetRateBasedRule');
     return this;
   }
 
@@ -465,7 +465,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetRateBasedRuleManagedKeys.html
    */
   public toGetRateBasedRuleManagedKeys() {
-    this.to('waf:GetRateBasedRuleManagedKeys');
+    this.to('GetRateBasedRuleManagedKeys');
     return this;
   }
 
@@ -477,7 +477,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetRegexMatchSet.html
    */
   public toGetRegexMatchSet() {
-    this.to('waf:GetRegexMatchSet');
+    this.to('GetRegexMatchSet');
     return this;
   }
 
@@ -489,7 +489,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetRegexPatternSet.html
    */
   public toGetRegexPatternSet() {
-    this.to('waf:GetRegexPatternSet');
+    this.to('GetRegexPatternSet');
     return this;
   }
 
@@ -501,7 +501,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetRule.html
    */
   public toGetRule() {
-    this.to('waf:GetRule');
+    this.to('GetRule');
     return this;
   }
 
@@ -513,7 +513,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetRuleGroup.html
    */
   public toGetRuleGroup() {
-    this.to('waf:GetRuleGroup');
+    this.to('GetRuleGroup');
     return this;
   }
 
@@ -525,7 +525,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetSampledRequests.html
    */
   public toGetSampledRequests() {
-    this.to('waf:GetSampledRequests');
+    this.to('GetSampledRequests');
     return this;
   }
 
@@ -537,7 +537,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetSizeConstraintSet.html
    */
   public toGetSizeConstraintSet() {
-    this.to('waf:GetSizeConstraintSet');
+    this.to('GetSizeConstraintSet');
     return this;
   }
 
@@ -549,7 +549,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetSqlInjectionMatchSet.html
    */
   public toGetSqlInjectionMatchSet() {
-    this.to('waf:GetSqlInjectionMatchSet');
+    this.to('GetSqlInjectionMatchSet');
     return this;
   }
 
@@ -561,7 +561,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetWebACL.html
    */
   public toGetWebACL() {
-    this.to('waf:GetWebACL');
+    this.to('GetWebACL');
     return this;
   }
 
@@ -573,7 +573,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_GetXssMatchSet.html
    */
   public toGetXssMatchSet() {
-    this.to('waf:GetXssMatchSet');
+    this.to('GetXssMatchSet');
     return this;
   }
 
@@ -585,7 +585,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListActivatedRulesInRuleGroup.html
    */
   public toListActivatedRulesInRuleGroup() {
-    this.to('waf:ListActivatedRulesInRuleGroup');
+    this.to('ListActivatedRulesInRuleGroup');
     return this;
   }
 
@@ -597,7 +597,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListByteMatchSets.html
    */
   public toListByteMatchSets() {
-    this.to('waf:ListByteMatchSets');
+    this.to('ListByteMatchSets');
     return this;
   }
 
@@ -609,7 +609,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListGeoMatchSets.html
    */
   public toListGeoMatchSets() {
-    this.to('waf:ListGeoMatchSets');
+    this.to('ListGeoMatchSets');
     return this;
   }
 
@@ -621,7 +621,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListIPSets.html
    */
   public toListIPSets() {
-    this.to('waf:ListIPSets');
+    this.to('ListIPSets');
     return this;
   }
 
@@ -633,7 +633,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListLoggingConfigurations.html
    */
   public toListLoggingConfigurations() {
-    this.to('waf:ListLoggingConfigurations');
+    this.to('ListLoggingConfigurations');
     return this;
   }
 
@@ -645,7 +645,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListRateBasedRules.html
    */
   public toListRateBasedRules() {
-    this.to('waf:ListRateBasedRules');
+    this.to('ListRateBasedRules');
     return this;
   }
 
@@ -657,7 +657,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListRegexMatchSets.html
    */
   public toListRegexMatchSets() {
-    this.to('waf:ListRegexMatchSets');
+    this.to('ListRegexMatchSets');
     return this;
   }
 
@@ -669,7 +669,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListRegexPatternSets.html
    */
   public toListRegexPatternSets() {
-    this.to('waf:ListRegexPatternSets');
+    this.to('ListRegexPatternSets');
     return this;
   }
 
@@ -681,7 +681,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListRuleGroups.html
    */
   public toListRuleGroups() {
-    this.to('waf:ListRuleGroups');
+    this.to('ListRuleGroups');
     return this;
   }
 
@@ -693,7 +693,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListRules.html
    */
   public toListRules() {
-    this.to('waf:ListRules');
+    this.to('ListRules');
     return this;
   }
 
@@ -705,7 +705,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListSizeConstraintSets.html
    */
   public toListSizeConstraintSets() {
-    this.to('waf:ListSizeConstraintSets');
+    this.to('ListSizeConstraintSets');
     return this;
   }
 
@@ -717,7 +717,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListSqlInjectionMatchSets.html
    */
   public toListSqlInjectionMatchSets() {
-    this.to('waf:ListSqlInjectionMatchSets');
+    this.to('ListSqlInjectionMatchSets');
     return this;
   }
 
@@ -729,7 +729,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListSubscribedRuleGroups.html
    */
   public toListSubscribedRuleGroups() {
-    this.to('waf:ListSubscribedRuleGroups');
+    this.to('ListSubscribedRuleGroups');
     return this;
   }
 
@@ -741,7 +741,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('waf:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -753,7 +753,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListWebACLs.html
    */
   public toListWebACLs() {
-    this.to('waf:ListWebACLs');
+    this.to('ListWebACLs');
     return this;
   }
 
@@ -765,7 +765,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ListXssMatchSets.html
    */
   public toListXssMatchSets() {
-    this.to('waf:ListXssMatchSets');
+    this.to('ListXssMatchSets');
     return this;
   }
 
@@ -780,7 +780,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_PutLoggingConfiguration.html
    */
   public toPutLoggingConfiguration() {
-    this.to('waf:PutLoggingConfiguration');
+    this.to('PutLoggingConfiguration');
     return this;
   }
 
@@ -792,7 +792,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_PutPermissionPolicy.html
    */
   public toPutPermissionPolicy() {
-    this.to('waf:PutPermissionPolicy');
+    this.to('PutPermissionPolicy');
     return this;
   }
 
@@ -808,7 +808,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_TagResource.html
    */
   public toTagResource() {
-    this.to('waf:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -823,7 +823,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UntagResource.html
    */
   public toUntagResource() {
-    this.to('waf:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -835,7 +835,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UpdateByteMatchSet.html
    */
   public toUpdateByteMatchSet() {
-    this.to('waf:UpdateByteMatchSet');
+    this.to('UpdateByteMatchSet');
     return this;
   }
 
@@ -847,7 +847,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UpdateGeoMatchSet.html
    */
   public toUpdateGeoMatchSet() {
-    this.to('waf:UpdateGeoMatchSet');
+    this.to('UpdateGeoMatchSet');
     return this;
   }
 
@@ -859,7 +859,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UpdateIPSet.html
    */
   public toUpdateIPSet() {
-    this.to('waf:UpdateIPSet');
+    this.to('UpdateIPSet');
     return this;
   }
 
@@ -871,7 +871,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UpdateRateBasedRule.html
    */
   public toUpdateRateBasedRule() {
-    this.to('waf:UpdateRateBasedRule');
+    this.to('UpdateRateBasedRule');
     return this;
   }
 
@@ -883,7 +883,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UpdateRegexMatchSet.html
    */
   public toUpdateRegexMatchSet() {
-    this.to('waf:UpdateRegexMatchSet');
+    this.to('UpdateRegexMatchSet');
     return this;
   }
 
@@ -895,7 +895,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UpdateRegexPatternSet.html
    */
   public toUpdateRegexPatternSet() {
-    this.to('waf:UpdateRegexPatternSet');
+    this.to('UpdateRegexPatternSet');
     return this;
   }
 
@@ -907,7 +907,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UpdateRule.html
    */
   public toUpdateRule() {
-    this.to('waf:UpdateRule');
+    this.to('UpdateRule');
     return this;
   }
 
@@ -919,7 +919,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UpdateRuleGroup.html
    */
   public toUpdateRuleGroup() {
-    this.to('waf:UpdateRuleGroup');
+    this.to('UpdateRuleGroup');
     return this;
   }
 
@@ -931,7 +931,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UpdateSizeConstraintSet.html
    */
   public toUpdateSizeConstraintSet() {
-    this.to('waf:UpdateSizeConstraintSet');
+    this.to('UpdateSizeConstraintSet');
     return this;
   }
 
@@ -943,7 +943,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UpdateSqlInjectionMatchSet.html
    */
   public toUpdateSqlInjectionMatchSet() {
-    this.to('waf:UpdateSqlInjectionMatchSet');
+    this.to('UpdateSqlInjectionMatchSet');
     return this;
   }
 
@@ -955,7 +955,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UpdateWebACL.html
    */
   public toUpdateWebACL() {
-    this.to('waf:UpdateWebACL');
+    this.to('UpdateWebACL');
     return this;
   }
 
@@ -967,7 +967,7 @@ export class Waf extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UpdateXssMatchSet.html
    */
   public toUpdateXssMatchSet() {
-    this.to('waf:UpdateXssMatchSet');
+    this.to('UpdateXssMatchSet');
     return this;
   }
 

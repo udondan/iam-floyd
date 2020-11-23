@@ -26,7 +26,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchCheckLayerAvailability.html
    */
   public toBatchCheckLayerAvailability() {
-    this.to('ecr:BatchCheckLayerAvailability');
+    this.to('BatchCheckLayerAvailability');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchDeleteImage.html
    */
   public toBatchDeleteImage() {
-    this.to('ecr:BatchDeleteImage');
+    this.to('BatchDeleteImage');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchGetImage.html
    */
   public toBatchGetImage() {
-    this.to('ecr:BatchGetImage');
+    this.to('BatchGetImage');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CompleteLayerUpload.html
    */
   public toCompleteLayerUpload() {
-    this.to('ecr:CompleteLayerUpload');
+    this.to('CompleteLayerUpload');
     return this;
   }
 
@@ -78,7 +78,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CreateRepository.html
    */
   public toCreateRepository() {
-    this.to('ecr:CreateRepository');
+    this.to('CreateRepository');
     return this;
   }
 
@@ -90,7 +90,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteLifecyclePolicy.html
    */
   public toDeleteLifecyclePolicy() {
-    this.to('ecr:DeleteLifecyclePolicy');
+    this.to('DeleteLifecyclePolicy');
     return this;
   }
 
@@ -102,7 +102,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepository.html
    */
   public toDeleteRepository() {
-    this.to('ecr:DeleteRepository');
+    this.to('DeleteRepository');
     return this;
   }
 
@@ -114,7 +114,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepositoryPolicy.html
    */
   public toDeleteRepositoryPolicy() {
-    this.to('ecr:DeleteRepositoryPolicy');
+    this.to('DeleteRepositoryPolicy');
     return this;
   }
 
@@ -126,7 +126,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImageScanFindings.html
    */
   public toDescribeImageScanFindings() {
-    this.to('ecr:DescribeImageScanFindings');
+    this.to('DescribeImageScanFindings');
     return this;
   }
 
@@ -138,7 +138,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImages.html
    */
   public toDescribeImages() {
-    this.to('ecr:DescribeImages');
+    this.to('DescribeImages');
     return this;
   }
 
@@ -150,7 +150,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRepositories.html
    */
   public toDescribeRepositories() {
-    this.to('ecr:DescribeRepositories');
+    this.to('DescribeRepositories');
     return this;
   }
 
@@ -162,7 +162,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetAuthorizationToken.html
    */
   public toGetAuthorizationToken() {
-    this.to('ecr:GetAuthorizationToken');
+    this.to('GetAuthorizationToken');
     return this;
   }
 
@@ -174,7 +174,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetDownloadUrlForLayer.html
    */
   public toGetDownloadUrlForLayer() {
-    this.to('ecr:GetDownloadUrlForLayer');
+    this.to('GetDownloadUrlForLayer');
     return this;
   }
 
@@ -186,7 +186,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetLifecyclePolicy.html
    */
   public toGetLifecyclePolicy() {
-    this.to('ecr:GetLifecyclePolicy');
+    this.to('GetLifecyclePolicy');
     return this;
   }
 
@@ -198,7 +198,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetLifecyclePolicyPreview.html
    */
   public toGetLifecyclePolicyPreview() {
-    this.to('ecr:GetLifecyclePolicyPreview');
+    this.to('GetLifecyclePolicyPreview');
     return this;
   }
 
@@ -210,7 +210,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetRepositoryPolicy.html
    */
   public toGetRepositoryPolicy() {
-    this.to('ecr:GetRepositoryPolicy');
+    this.to('GetRepositoryPolicy');
     return this;
   }
 
@@ -222,7 +222,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_InitiateLayerUpload.html
    */
   public toInitiateLayerUpload() {
-    this.to('ecr:InitiateLayerUpload');
+    this.to('InitiateLayerUpload');
     return this;
   }
 
@@ -234,7 +234,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListImages.html
    */
   public toListImages() {
-    this.to('ecr:ListImages');
+    this.to('ListImages');
     return this;
   }
 
@@ -246,7 +246,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ecr:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -258,7 +258,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImage.html
    */
   public toPutImage() {
-    this.to('ecr:PutImage');
+    this.to('PutImage');
     return this;
   }
 
@@ -270,7 +270,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImageScanningConfiguration.html
    */
   public toPutImageScanningConfiguration() {
-    this.to('ecr:PutImageScanningConfiguration');
+    this.to('PutImageScanningConfiguration');
     return this;
   }
 
@@ -282,7 +282,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImageTagMutability.html
    */
   public toPutImageTagMutability() {
-    this.to('ecr:PutImageTagMutability');
+    this.to('PutImageTagMutability');
     return this;
   }
 
@@ -294,7 +294,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html
    */
   public toPutLifecyclePolicy() {
-    this.to('ecr:PutLifecyclePolicy');
+    this.to('PutLifecyclePolicy');
     return this;
   }
 
@@ -306,7 +306,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_SetRepositoryPolicy.html
    */
   public toSetRepositoryPolicy() {
-    this.to('ecr:SetRepositoryPolicy');
+    this.to('SetRepositoryPolicy');
     return this;
   }
 
@@ -318,7 +318,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html
    */
   public toStartImageScan() {
-    this.to('ecr:StartImageScan');
+    this.to('StartImageScan');
     return this;
   }
 
@@ -330,7 +330,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartLifecyclePolicyPreview.html
    */
   public toStartLifecyclePolicyPreview() {
-    this.to('ecr:StartLifecyclePolicyPreview');
+    this.to('StartLifecyclePolicyPreview');
     return this;
   }
 
@@ -346,7 +346,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('ecr:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -358,7 +358,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('ecr:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -370,7 +370,7 @@ export class Ecr extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UploadLayerPart.html
    */
   public toUploadLayerPart() {
-    this.to('ecr:UploadLayerPart');
+    this.to('UploadLayerPart');
     return this;
   }
 

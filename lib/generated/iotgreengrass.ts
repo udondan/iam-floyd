@@ -26,7 +26,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/associateroletogroup-put.html
    */
   public toAssociateRoleToGroup() {
-    this.to('greengrass:AssociateRoleToGroup');
+    this.to('AssociateRoleToGroup');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/associateserviceroletoaccount-put.html
    */
   public toAssociateServiceRoleToAccount() {
-    this.to('greengrass:AssociateServiceRoleToAccount');
+    this.to('AssociateServiceRoleToAccount');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createconnectordefinition-post.html
    */
   public toCreateConnectorDefinition() {
-    this.to('greengrass:CreateConnectorDefinition');
+    this.to('CreateConnectorDefinition');
     return this;
   }
 
@@ -66,7 +66,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createconnectordefinitionversion-post.html
    */
   public toCreateConnectorDefinitionVersion() {
-    this.to('greengrass:CreateConnectorDefinitionVersion');
+    this.to('CreateConnectorDefinitionVersion');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createcoredefinition-post.html
    */
   public toCreateCoreDefinition() {
-    this.to('greengrass:CreateCoreDefinition');
+    this.to('CreateCoreDefinition');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createcoredefinitionversion-post.html
    */
   public toCreateCoreDefinitionVersion() {
-    this.to('greengrass:CreateCoreDefinitionVersion');
+    this.to('CreateCoreDefinitionVersion');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createdeployment-post.html
    */
   public toCreateDeployment() {
-    this.to('greengrass:CreateDeployment');
+    this.to('CreateDeployment');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createdevicedefinition-post.html
    */
   public toCreateDeviceDefinition() {
-    this.to('greengrass:CreateDeviceDefinition');
+    this.to('CreateDeviceDefinition');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createdevicedefinitionversion-post.html
    */
   public toCreateDeviceDefinitionVersion() {
-    this.to('greengrass:CreateDeviceDefinitionVersion');
+    this.to('CreateDeviceDefinitionVersion');
     return this;
   }
 
@@ -150,7 +150,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createfunctiondefinition-post.html
    */
   public toCreateFunctionDefinition() {
-    this.to('greengrass:CreateFunctionDefinition');
+    this.to('CreateFunctionDefinition');
     return this;
   }
 
@@ -162,7 +162,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createfunctiondefinitionversion-post.html
    */
   public toCreateFunctionDefinitionVersion() {
-    this.to('greengrass:CreateFunctionDefinitionVersion');
+    this.to('CreateFunctionDefinitionVersion');
     return this;
   }
 
@@ -178,7 +178,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/creategroup-post.html
    */
   public toCreateGroup() {
-    this.to('greengrass:CreateGroup');
+    this.to('CreateGroup');
     return this;
   }
 
@@ -190,7 +190,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/creategroupcertificateauthority-post.html
    */
   public toCreateGroupCertificateAuthority() {
-    this.to('greengrass:CreateGroupCertificateAuthority');
+    this.to('CreateGroupCertificateAuthority');
     return this;
   }
 
@@ -202,7 +202,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/creategroupversion-post.html
    */
   public toCreateGroupVersion() {
-    this.to('greengrass:CreateGroupVersion');
+    this.to('CreateGroupVersion');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createloggerdefinition-post.html
    */
   public toCreateLoggerDefinition() {
-    this.to('greengrass:CreateLoggerDefinition');
+    this.to('CreateLoggerDefinition');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createloggerdefinitionversion-post.html
    */
   public toCreateLoggerDefinitionVersion() {
-    this.to('greengrass:CreateLoggerDefinitionVersion');
+    this.to('CreateLoggerDefinitionVersion');
     return this;
   }
 
@@ -246,7 +246,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createresourcedefinition-post.html
    */
   public toCreateResourceDefinition() {
-    this.to('greengrass:CreateResourceDefinition');
+    this.to('CreateResourceDefinition');
     return this;
   }
 
@@ -258,7 +258,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createresourcedefinitionversion-post.html
    */
   public toCreateResourceDefinitionVersion() {
-    this.to('greengrass:CreateResourceDefinitionVersion');
+    this.to('CreateResourceDefinitionVersion');
     return this;
   }
 
@@ -270,7 +270,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createsoftwareupdatejob-post.html
    */
   public toCreateSoftwareUpdateJob() {
-    this.to('greengrass:CreateSoftwareUpdateJob');
+    this.to('CreateSoftwareUpdateJob');
     return this;
   }
 
@@ -286,7 +286,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createsubscriptiondefinition-post.html
    */
   public toCreateSubscriptionDefinition() {
-    this.to('greengrass:CreateSubscriptionDefinition');
+    this.to('CreateSubscriptionDefinition');
     return this;
   }
 
@@ -298,7 +298,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createsubscriptiondefinitionversion-post.html
    */
   public toCreateSubscriptionDefinitionVersion() {
-    this.to('greengrass:CreateSubscriptionDefinitionVersion');
+    this.to('CreateSubscriptionDefinitionVersion');
     return this;
   }
 
@@ -310,7 +310,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deleteconnectordefinition-delete.html
    */
   public toDeleteConnectorDefinition() {
-    this.to('greengrass:DeleteConnectorDefinition');
+    this.to('DeleteConnectorDefinition');
     return this;
   }
 
@@ -322,7 +322,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deletecoredefinition-delete.html
    */
   public toDeleteCoreDefinition() {
-    this.to('greengrass:DeleteCoreDefinition');
+    this.to('DeleteCoreDefinition');
     return this;
   }
 
@@ -334,7 +334,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deletedevicedefinition-delete.html
    */
   public toDeleteDeviceDefinition() {
-    this.to('greengrass:DeleteDeviceDefinition');
+    this.to('DeleteDeviceDefinition');
     return this;
   }
 
@@ -346,7 +346,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deletefunctiondefinition-delete.html
    */
   public toDeleteFunctionDefinition() {
-    this.to('greengrass:DeleteFunctionDefinition');
+    this.to('DeleteFunctionDefinition');
     return this;
   }
 
@@ -358,7 +358,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deletegroup-delete.html
    */
   public toDeleteGroup() {
-    this.to('greengrass:DeleteGroup');
+    this.to('DeleteGroup');
     return this;
   }
 
@@ -370,7 +370,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deleteloggerdefinition-delete.html
    */
   public toDeleteLoggerDefinition() {
-    this.to('greengrass:DeleteLoggerDefinition');
+    this.to('DeleteLoggerDefinition');
     return this;
   }
 
@@ -382,7 +382,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deleteresourcedefinition-delete.html
    */
   public toDeleteResourceDefinition() {
-    this.to('greengrass:DeleteResourceDefinition');
+    this.to('DeleteResourceDefinition');
     return this;
   }
 
@@ -394,7 +394,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deletesubscriptiondefinition-delete.html
    */
   public toDeleteSubscriptionDefinition() {
-    this.to('greengrass:DeleteSubscriptionDefinition');
+    this.to('DeleteSubscriptionDefinition');
     return this;
   }
 
@@ -406,7 +406,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/disassociaterolefromgroup-delete.html
    */
   public toDisassociateRoleFromGroup() {
-    this.to('greengrass:DisassociateRoleFromGroup');
+    this.to('DisassociateRoleFromGroup');
     return this;
   }
 
@@ -418,7 +418,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/disassociateservicerolefromaccount-delete.html
    */
   public toDisassociateServiceRoleFromAccount() {
-    this.to('greengrass:DisassociateServiceRoleFromAccount');
+    this.to('DisassociateServiceRoleFromAccount');
     return this;
   }
 
@@ -430,7 +430,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/developerguide/gg-discover-api.html
    */
   public toDiscover() {
-    this.to('greengrass:Discover');
+    this.to('Discover');
     return this;
   }
 
@@ -442,7 +442,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getassociatedrole-get.html
    */
   public toGetAssociatedRole() {
-    this.to('greengrass:GetAssociatedRole');
+    this.to('GetAssociatedRole');
     return this;
   }
 
@@ -454,7 +454,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getbulkdeploymentstatus-get.html
    */
   public toGetBulkDeploymentStatus() {
-    this.to('greengrass:GetBulkDeploymentStatus');
+    this.to('GetBulkDeploymentStatus');
     return this;
   }
 
@@ -466,7 +466,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectivityinfo-get.html
    */
   public toGetConnectivityInfo() {
-    this.to('greengrass:GetConnectivityInfo');
+    this.to('GetConnectivityInfo');
     return this;
   }
 
@@ -478,7 +478,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectordefinition-get.html
    */
   public toGetConnectorDefinition() {
-    this.to('greengrass:GetConnectorDefinition');
+    this.to('GetConnectorDefinition');
     return this;
   }
 
@@ -490,7 +490,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectordefinitionversion-get.html
    */
   public toGetConnectorDefinitionVersion() {
-    this.to('greengrass:GetConnectorDefinitionVersion');
+    this.to('GetConnectorDefinitionVersion');
     return this;
   }
 
@@ -502,7 +502,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getcoredefinition-get.html
    */
   public toGetCoreDefinition() {
-    this.to('greengrass:GetCoreDefinition');
+    this.to('GetCoreDefinition');
     return this;
   }
 
@@ -514,7 +514,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getcoredefinitionversion-get.html
    */
   public toGetCoreDefinitionVersion() {
-    this.to('greengrass:GetCoreDefinitionVersion');
+    this.to('GetCoreDefinitionVersion');
     return this;
   }
 
@@ -526,7 +526,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getdeploymentstatus-get.html
    */
   public toGetDeploymentStatus() {
-    this.to('greengrass:GetDeploymentStatus');
+    this.to('GetDeploymentStatus');
     return this;
   }
 
@@ -538,7 +538,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getdevicedefinition-get.html
    */
   public toGetDeviceDefinition() {
-    this.to('greengrass:GetDeviceDefinition');
+    this.to('GetDeviceDefinition');
     return this;
   }
 
@@ -550,7 +550,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getdevicedefinitionversion-get.html
    */
   public toGetDeviceDefinitionVersion() {
-    this.to('greengrass:GetDeviceDefinitionVersion');
+    this.to('GetDeviceDefinitionVersion');
     return this;
   }
 
@@ -562,7 +562,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getfunctiondefinition-get.html
    */
   public toGetFunctionDefinition() {
-    this.to('greengrass:GetFunctionDefinition');
+    this.to('GetFunctionDefinition');
     return this;
   }
 
@@ -574,7 +574,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getfunctiondefinitionversion-get.html
    */
   public toGetFunctionDefinitionVersion() {
-    this.to('greengrass:GetFunctionDefinitionVersion');
+    this.to('GetFunctionDefinitionVersion');
     return this;
   }
 
@@ -586,7 +586,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html
    */
   public toGetGroup() {
-    this.to('greengrass:GetGroup');
+    this.to('GetGroup');
     return this;
   }
 
@@ -598,7 +598,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupcertificateauthority-get.html
    */
   public toGetGroupCertificateAuthority() {
-    this.to('greengrass:GetGroupCertificateAuthority');
+    this.to('GetGroupCertificateAuthority');
     return this;
   }
 
@@ -610,7 +610,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupcertificateconfiguration-get.html
    */
   public toGetGroupCertificateConfiguration() {
-    this.to('greengrass:GetGroupCertificateConfiguration');
+    this.to('GetGroupCertificateConfiguration');
     return this;
   }
 
@@ -622,7 +622,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupversion-get.html
    */
   public toGetGroupVersion() {
-    this.to('greengrass:GetGroupVersion');
+    this.to('GetGroupVersion');
     return this;
   }
 
@@ -634,7 +634,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getloggerdefinition-get.html
    */
   public toGetLoggerDefinition() {
-    this.to('greengrass:GetLoggerDefinition');
+    this.to('GetLoggerDefinition');
     return this;
   }
 
@@ -646,7 +646,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getloggerdefinitionversion-get.html
    */
   public toGetLoggerDefinitionVersion() {
-    this.to('greengrass:GetLoggerDefinitionVersion');
+    this.to('GetLoggerDefinitionVersion');
     return this;
   }
 
@@ -658,7 +658,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getresourcedefinition-get.html
    */
   public toGetResourceDefinition() {
-    this.to('greengrass:GetResourceDefinition');
+    this.to('GetResourceDefinition');
     return this;
   }
 
@@ -670,7 +670,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getresourcedefinitionversion-get.html
    */
   public toGetResourceDefinitionVersion() {
-    this.to('greengrass:GetResourceDefinitionVersion');
+    this.to('GetResourceDefinitionVersion');
     return this;
   }
 
@@ -682,7 +682,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getserviceroleforaccount-get.html
    */
   public toGetServiceRoleForAccount() {
-    this.to('greengrass:GetServiceRoleForAccount');
+    this.to('GetServiceRoleForAccount');
     return this;
   }
 
@@ -694,7 +694,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getsubscriptiondefinition-get.html
    */
   public toGetSubscriptionDefinition() {
-    this.to('greengrass:GetSubscriptionDefinition');
+    this.to('GetSubscriptionDefinition');
     return this;
   }
 
@@ -706,7 +706,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getsubscriptiondefinitionversion-get.html
    */
   public toGetSubscriptionDefinitionVersion() {
-    this.to('greengrass:GetSubscriptionDefinitionVersion');
+    this.to('GetSubscriptionDefinitionVersion');
     return this;
   }
 
@@ -718,7 +718,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listbulkdeploymentdetailedreports-get.html
    */
   public toListBulkDeploymentDetailedReports() {
-    this.to('greengrass:ListBulkDeploymentDetailedReports');
+    this.to('ListBulkDeploymentDetailedReports');
     return this;
   }
 
@@ -730,7 +730,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listbulkdeployments-get.html
    */
   public toListBulkDeployments() {
-    this.to('greengrass:ListBulkDeployments');
+    this.to('ListBulkDeployments');
     return this;
   }
 
@@ -742,7 +742,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listconnectordefinitionversions-get.html
    */
   public toListConnectorDefinitionVersions() {
-    this.to('greengrass:ListConnectorDefinitionVersions');
+    this.to('ListConnectorDefinitionVersions');
     return this;
   }
 
@@ -754,7 +754,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listconnectordefinitions-get.html
    */
   public toListConnectorDefinitions() {
-    this.to('greengrass:ListConnectorDefinitions');
+    this.to('ListConnectorDefinitions');
     return this;
   }
 
@@ -766,7 +766,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listcoredefinitionversions-get.html
    */
   public toListCoreDefinitionVersions() {
-    this.to('greengrass:ListCoreDefinitionVersions');
+    this.to('ListCoreDefinitionVersions');
     return this;
   }
 
@@ -778,7 +778,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listcoredefinitions-get.html
    */
   public toListCoreDefinitions() {
-    this.to('greengrass:ListCoreDefinitions');
+    this.to('ListCoreDefinitions');
     return this;
   }
 
@@ -790,7 +790,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listdeployments-get.html
    */
   public toListDeployments() {
-    this.to('greengrass:ListDeployments');
+    this.to('ListDeployments');
     return this;
   }
 
@@ -802,7 +802,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listdevicedefinitionversions-get.html
    */
   public toListDeviceDefinitionVersions() {
-    this.to('greengrass:ListDeviceDefinitionVersions');
+    this.to('ListDeviceDefinitionVersions');
     return this;
   }
 
@@ -814,7 +814,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listdevicedefinitions-get.html
    */
   public toListDeviceDefinitions() {
-    this.to('greengrass:ListDeviceDefinitions');
+    this.to('ListDeviceDefinitions');
     return this;
   }
 
@@ -826,7 +826,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listfunctiondefinitionversions-get.html
    */
   public toListFunctionDefinitionVersions() {
-    this.to('greengrass:ListFunctionDefinitionVersions');
+    this.to('ListFunctionDefinitionVersions');
     return this;
   }
 
@@ -838,7 +838,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listfunctiondefinitions-get.html
    */
   public toListFunctionDefinitions() {
-    this.to('greengrass:ListFunctionDefinitions');
+    this.to('ListFunctionDefinitions');
     return this;
   }
 
@@ -850,7 +850,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listgroupcertificateauthorities-get.html
    */
   public toListGroupCertificateAuthorities() {
-    this.to('greengrass:ListGroupCertificateAuthorities');
+    this.to('ListGroupCertificateAuthorities');
     return this;
   }
 
@@ -862,7 +862,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listgroupversions-get.html
    */
   public toListGroupVersions() {
-    this.to('greengrass:ListGroupVersions');
+    this.to('ListGroupVersions');
     return this;
   }
 
@@ -874,7 +874,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html
    */
   public toListGroups() {
-    this.to('greengrass:ListGroups');
+    this.to('ListGroups');
     return this;
   }
 
@@ -886,7 +886,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listloggerdefinitionversions-get.html
    */
   public toListLoggerDefinitionVersions() {
-    this.to('greengrass:ListLoggerDefinitionVersions');
+    this.to('ListLoggerDefinitionVersions');
     return this;
   }
 
@@ -898,7 +898,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listloggerdefinitions-get.html
    */
   public toListLoggerDefinitions() {
-    this.to('greengrass:ListLoggerDefinitions');
+    this.to('ListLoggerDefinitions');
     return this;
   }
 
@@ -910,7 +910,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listresourcedefinitionversions-get.html
    */
   public toListResourceDefinitionVersions() {
-    this.to('greengrass:ListResourceDefinitionVersions');
+    this.to('ListResourceDefinitionVersions');
     return this;
   }
 
@@ -922,7 +922,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listresourcedefinitions-get.html
    */
   public toListResourceDefinitions() {
-    this.to('greengrass:ListResourceDefinitions');
+    this.to('ListResourceDefinitions');
     return this;
   }
 
@@ -934,7 +934,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listsubscriptiondefinitionversions-get.html
    */
   public toListSubscriptionDefinitionVersions() {
-    this.to('greengrass:ListSubscriptionDefinitionVersions');
+    this.to('ListSubscriptionDefinitionVersions');
     return this;
   }
 
@@ -946,7 +946,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listsubscriptiondefinitions-get.html
    */
   public toListSubscriptionDefinitions() {
-    this.to('greengrass:ListSubscriptionDefinitions');
+    this.to('ListSubscriptionDefinitions');
     return this;
   }
 
@@ -962,7 +962,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listtagsforresource-get.html
    */
   public toListTagsForResource() {
-    this.to('greengrass:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -974,7 +974,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/resetdeployments-post.html
    */
   public toResetDeployments() {
-    this.to('greengrass:ResetDeployments');
+    this.to('ResetDeployments');
     return this;
   }
 
@@ -990,7 +990,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/startbulkdeployment-post.html
    */
   public toStartBulkDeployment() {
-    this.to('greengrass:StartBulkDeployment');
+    this.to('StartBulkDeployment');
     return this;
   }
 
@@ -1002,7 +1002,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/stopbulkdeployment-put.html
    */
   public toStopBulkDeployment() {
-    this.to('greengrass:StopBulkDeployment');
+    this.to('StopBulkDeployment');
     return this;
   }
 
@@ -1018,7 +1018,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/tagresource-post.html
    */
   public toTagResource() {
-    this.to('greengrass:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -1033,7 +1033,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/untagresource-delete.html
    */
   public toUntagResource() {
-    this.to('greengrass:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -1045,7 +1045,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updateconnectivityinfo-put.html
    */
   public toUpdateConnectivityInfo() {
-    this.to('greengrass:UpdateConnectivityInfo');
+    this.to('UpdateConnectivityInfo');
     return this;
   }
 
@@ -1057,7 +1057,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updateconnectordefinition-put.html
    */
   public toUpdateConnectorDefinition() {
-    this.to('greengrass:UpdateConnectorDefinition');
+    this.to('UpdateConnectorDefinition');
     return this;
   }
 
@@ -1069,7 +1069,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updatecoredefinition-put.html
    */
   public toUpdateCoreDefinition() {
-    this.to('greengrass:UpdateCoreDefinition');
+    this.to('UpdateCoreDefinition');
     return this;
   }
 
@@ -1081,7 +1081,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updatedevicedefinition-put.html
    */
   public toUpdateDeviceDefinition() {
-    this.to('greengrass:UpdateDeviceDefinition');
+    this.to('UpdateDeviceDefinition');
     return this;
   }
 
@@ -1093,7 +1093,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updatefunctiondefinition-put.html
    */
   public toUpdateFunctionDefinition() {
-    this.to('greengrass:UpdateFunctionDefinition');
+    this.to('UpdateFunctionDefinition');
     return this;
   }
 
@@ -1105,7 +1105,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updategroup-put.html
    */
   public toUpdateGroup() {
-    this.to('greengrass:UpdateGroup');
+    this.to('UpdateGroup');
     return this;
   }
 
@@ -1117,7 +1117,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updategroupcertificateconfiguration-put.html
    */
   public toUpdateGroupCertificateConfiguration() {
-    this.to('greengrass:UpdateGroupCertificateConfiguration');
+    this.to('UpdateGroupCertificateConfiguration');
     return this;
   }
 
@@ -1129,7 +1129,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updateloggerdefinition-put.html
    */
   public toUpdateLoggerDefinition() {
-    this.to('greengrass:UpdateLoggerDefinition');
+    this.to('UpdateLoggerDefinition');
     return this;
   }
 
@@ -1141,7 +1141,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updateresourcedefinition-put.html
    */
   public toUpdateResourceDefinition() {
-    this.to('greengrass:UpdateResourceDefinition');
+    this.to('UpdateResourceDefinition');
     return this;
   }
 
@@ -1153,7 +1153,7 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updatesubscriptiondefinition-put.html
    */
   public toUpdateSubscriptionDefinition() {
-    this.to('greengrass:UpdateSubscriptionDefinition');
+    this.to('UpdateSubscriptionDefinition');
     return this;
   }
 

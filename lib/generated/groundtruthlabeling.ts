@@ -26,7 +26,7 @@ export class Groundtruthlabeling extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
    */
   public toDescribeConsoleJob() {
-    this.to('groundtruthlabeling:DescribeConsoleJob');
+    this.to('DescribeConsoleJob');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Groundtruthlabeling extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
    */
   public toListDatasetObjects() {
-    this.to('groundtruthlabeling:ListDatasetObjects');
+    this.to('ListDatasetObjects');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Groundtruthlabeling extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-data-filtering
    */
   public toRunFilterOrSampleDatasetJob() {
-    this.to('groundtruthlabeling:RunFilterOrSampleDatasetJob');
+    this.to('RunFilterOrSampleDatasetJob');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Groundtruthlabeling extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
    */
   public toRunGenerateManifestByCrawlingJob() {
-    this.to('groundtruthlabeling:RunGenerateManifestByCrawlingJob');
+    this.to('RunGenerateManifestByCrawlingJob');
     return this;
   }
 

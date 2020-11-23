@@ -26,7 +26,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateAnomalyMonitor.html
    */
   public toCreateAnomalyMonitor() {
-    this.to('ce:CreateAnomalyMonitor');
+    this.to('CreateAnomalyMonitor');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateAnomalySubscription.html
    */
   public toCreateAnomalySubscription() {
-    this.to('ce:CreateAnomalySubscription');
+    this.to('CreateAnomalySubscription');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateCostCategoryDefinition.html
    */
   public toCreateCostCategoryDefinition() {
-    this.to('ce:CreateCostCategoryDefinition');
+    this.to('CreateCostCategoryDefinition');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
    */
   public toCreateNotificationSubscription() {
-    this.to('ce:CreateNotificationSubscription');
+    this.to('CreateNotificationSubscription');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
    */
   public toCreateReport() {
-    this.to('ce:CreateReport');
+    this.to('CreateReport');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteAnomalyMonitor.html
    */
   public toDeleteAnomalyMonitor() {
-    this.to('ce:DeleteAnomalyMonitor');
+    this.to('DeleteAnomalyMonitor');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteAnomalySubscription.html
    */
   public toDeleteAnomalySubscription() {
-    this.to('ce:DeleteAnomalySubscription');
+    this.to('DeleteAnomalySubscription');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteCostCategoryDefinition.html
    */
   public toDeleteCostCategoryDefinition() {
-    this.to('ce:DeleteCostCategoryDefinition');
+    this.to('DeleteCostCategoryDefinition');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
    */
   public toDeleteNotificationSubscription() {
-    this.to('ce:DeleteNotificationSubscription');
+    this.to('DeleteNotificationSubscription');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
    */
   public toDeleteReport() {
-    this.to('ce:DeleteReport');
+    this.to('DeleteReport');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeCostCategoryDefinition.html
    */
   public toDescribeCostCategoryDefinition() {
-    this.to('ce:DescribeCostCategoryDefinition');
+    this.to('DescribeCostCategoryDefinition');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
    */
   public toDescribeNotificationSubscription() {
-    this.to('ce:DescribeNotificationSubscription');
+    this.to('DescribeNotificationSubscription');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
    */
   public toDescribeReport() {
-    this.to('ce:DescribeReport');
+    this.to('DescribeReport');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalies.html
    */
   public toGetAnomalies() {
-    this.to('ce:GetAnomalies');
+    this.to('GetAnomalies');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalyMonitors.html
    */
   public toGetAnomalyMonitors() {
-    this.to('ce:GetAnomalyMonitors');
+    this.to('GetAnomalyMonitors');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalySubscriptions.html
    */
   public toGetAnomalySubscriptions() {
-    this.to('ce:GetAnomalySubscriptions');
+    this.to('GetAnomalySubscriptions');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html
    */
   public toGetCostAndUsage() {
-    this.to('ce:GetCostAndUsage');
+    this.to('GetCostAndUsage');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsageWithResources.html
    */
   public toGetCostAndUsageWithResources() {
-    this.to('ce:GetCostAndUsageWithResources');
+    this.to('GetCostAndUsageWithResources');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostForecast.html
    */
   public toGetCostForecast() {
-    this.to('ce:GetCostForecast');
+    this.to('GetCostForecast');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html
    */
   public toGetDimensionValues() {
-    this.to('ce:GetDimensionValues');
+    this.to('GetDimensionValues');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
    */
   public toGetPreferences() {
-    this.to('ce:GetPreferences');
+    this.to('GetPreferences');
     return this;
   }
 
@@ -278,7 +278,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationCoverage.html
    */
   public toGetReservationCoverage() {
-    this.to('ce:GetReservationCoverage');
+    this.to('GetReservationCoverage');
     return this;
   }
 
@@ -290,7 +290,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationPurchaseRecommendation.html
    */
   public toGetReservationPurchaseRecommendation() {
-    this.to('ce:GetReservationPurchaseRecommendation');
+    this.to('GetReservationPurchaseRecommendation');
     return this;
   }
 
@@ -302,7 +302,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationUtilization.html
    */
   public toGetReservationUtilization() {
-    this.to('ce:GetReservationUtilization');
+    this.to('GetReservationUtilization');
     return this;
   }
 
@@ -314,7 +314,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetRightsizingRecommendation.html
    */
   public toGetRightsizingRecommendation() {
-    this.to('ce:GetRightsizingRecommendation');
+    this.to('GetRightsizingRecommendation');
     return this;
   }
 
@@ -326,7 +326,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansCoverage.html
    */
   public toGetSavingsPlansCoverage() {
-    this.to('ce:GetSavingsPlansCoverage');
+    this.to('GetSavingsPlansCoverage');
     return this;
   }
 
@@ -338,7 +338,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansPurchaseRecommendation.html
    */
   public toGetSavingsPlansPurchaseRecommendation() {
-    this.to('ce:GetSavingsPlansPurchaseRecommendation');
+    this.to('GetSavingsPlansPurchaseRecommendation');
     return this;
   }
 
@@ -350,7 +350,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilization.html
    */
   public toGetSavingsPlansUtilization() {
-    this.to('ce:GetSavingsPlansUtilization');
+    this.to('GetSavingsPlansUtilization');
     return this;
   }
 
@@ -362,7 +362,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilizationDetails.html
    */
   public toGetSavingsPlansUtilizationDetails() {
-    this.to('ce:GetSavingsPlansUtilizationDetails');
+    this.to('GetSavingsPlansUtilizationDetails');
     return this;
   }
 
@@ -374,7 +374,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTags.html
    */
   public toGetTags() {
-    this.to('ce:GetTags');
+    this.to('GetTags');
     return this;
   }
 
@@ -386,7 +386,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetUsageForecast.html
    */
   public toGetUsageForecast() {
-    this.to('ce:GetUsageForecast');
+    this.to('GetUsageForecast');
     return this;
   }
 
@@ -398,7 +398,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCostCategoryDefinitions.html
    */
   public toListCostCategoryDefinitions() {
-    this.to('ce:ListCostCategoryDefinitions');
+    this.to('ListCostCategoryDefinitions');
     return this;
   }
 
@@ -410,7 +410,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProvideAnomalyFeedback.html
    */
   public toProvideAnomalyFeedback() {
-    this.to('ce:ProvideAnomalyFeedback');
+    this.to('ProvideAnomalyFeedback');
     return this;
   }
 
@@ -422,7 +422,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalyMonitor.html
    */
   public toUpdateAnomalyMonitor() {
-    this.to('ce:UpdateAnomalyMonitor');
+    this.to('UpdateAnomalyMonitor');
     return this;
   }
 
@@ -434,7 +434,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html
    */
   public toUpdateAnomalySubscription() {
-    this.to('ce:UpdateAnomalySubscription');
+    this.to('UpdateAnomalySubscription');
     return this;
   }
 
@@ -446,7 +446,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateCostCategoryDefinition.html
    */
   public toUpdateCostCategoryDefinition() {
-    this.to('ce:UpdateCostCategoryDefinition');
+    this.to('UpdateCostCategoryDefinition');
     return this;
   }
 
@@ -458,7 +458,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
    */
   public toUpdateNotificationSubscription() {
-    this.to('ce:UpdateNotificationSubscription');
+    this.to('UpdateNotificationSubscription');
     return this;
   }
 
@@ -470,7 +470,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
    */
   public toUpdatePreferences() {
-    this.to('ce:UpdatePreferences');
+    this.to('UpdatePreferences');
     return this;
   }
 
@@ -482,7 +482,7 @@ export class Ce extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
    */
   public toUpdateReport() {
-    this.to('ce:UpdateReport');
+    this.to('UpdateReport');
     return this;
   }
 

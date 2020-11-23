@@ -24,7 +24,7 @@ export class Deepcomposer extends PolicyStatement {
    * Access Level: Write
    */
   public toAssociateCoupon() {
-    this.to('deepcomposer:AssociateCoupon');
+    this.to('AssociateCoupon');
     return this;
   }
 
@@ -36,7 +36,7 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
   public toCreateAudio() {
-    this.to('deepcomposer:CreateAudio');
+    this.to('CreateAudio');
     return this;
   }
 
@@ -52,7 +52,7 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
   public toCreateComposition() {
-    this.to('deepcomposer:CreateComposition');
+    this.to('CreateComposition');
     return this;
   }
 
@@ -68,7 +68,7 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
   public toCreateModel() {
-    this.to('deepcomposer:CreateModel');
+    this.to('CreateModel');
     return this;
   }
 
@@ -80,7 +80,7 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
   public toDeleteComposition() {
-    this.to('deepcomposer:DeleteComposition');
+    this.to('DeleteComposition');
     return this;
   }
 
@@ -92,7 +92,7 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
   public toDeleteModel() {
-    this.to('deepcomposer:DeleteModel');
+    this.to('DeleteModel');
     return this;
   }
 
@@ -107,7 +107,7 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
   public toGetComposition() {
-    this.to('deepcomposer:GetComposition');
+    this.to('GetComposition');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
   public toGetModel() {
-    this.to('deepcomposer:GetModel');
+    this.to('GetModel');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
   public toGetSampleModel() {
-    this.to('deepcomposer:GetSampleModel');
+    this.to('GetSampleModel');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
   public toListCompositions() {
-    this.to('deepcomposer:ListCompositions');
+    this.to('ListCompositions');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
   public toListModels() {
-    this.to('deepcomposer:ListModels');
+    this.to('ListModels');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
   public toListSampleModels() {
-    this.to('deepcomposer:ListSampleModels');
+    this.to('ListSampleModels');
     return this;
   }
 
@@ -183,7 +183,7 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public toListTagsForResource() {
-    this.to('deepcomposer:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -193,7 +193,7 @@ export class Deepcomposer extends PolicyStatement {
    * Access Level: List
    */
   public toListTrainingTopics() {
-    this.to('deepcomposer:ListTrainingTopics');
+    this.to('ListTrainingTopics');
     return this;
   }
 
@@ -208,7 +208,7 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public toTagResource() {
-    this.to('deepcomposer:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -223,7 +223,7 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public toUntagResource() {
-    this.to('deepcomposer:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -235,7 +235,7 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
   public toUpdateComposition() {
-    this.to('deepcomposer:UpdateComposition');
+    this.to('UpdateComposition');
     return this;
   }
 
@@ -247,7 +247,7 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
   public toUpdateModel() {
-    this.to('deepcomposer:UpdateModel');
+    this.to('UpdateModel');
     return this;
   }
 

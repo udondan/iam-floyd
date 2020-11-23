@@ -24,7 +24,7 @@ export class Ec2messages extends PolicyStatement {
    * Access Level: Write
    */
   public toAcknowledgeMessage() {
-    this.to('ec2messages:AcknowledgeMessage');
+    this.to('AcknowledgeMessage');
     return this;
   }
 
@@ -34,7 +34,7 @@ export class Ec2messages extends PolicyStatement {
    * Access Level: Write
    */
   public toDeleteMessage() {
-    this.to('ec2messages:DeleteMessage');
+    this.to('DeleteMessage');
     return this;
   }
 
@@ -44,7 +44,7 @@ export class Ec2messages extends PolicyStatement {
    * Access Level: Write
    */
   public toFailMessage() {
-    this.to('ec2messages:FailMessage');
+    this.to('FailMessage');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Ec2messages extends PolicyStatement {
    * Access Level: Read
    */
   public toGetEndpoint() {
-    this.to('ec2messages:GetEndpoint');
+    this.to('GetEndpoint');
     return this;
   }
 
@@ -64,7 +64,7 @@ export class Ec2messages extends PolicyStatement {
    * Access Level: Read
    */
   public toGetMessages() {
-    this.to('ec2messages:GetMessages');
+    this.to('GetMessages');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Ec2messages extends PolicyStatement {
    * Access Level: Write
    */
   public toSendReply() {
-    this.to('ec2messages:SendReply');
+    this.to('SendReply');
     return this;
   }
 

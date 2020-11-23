@@ -24,7 +24,7 @@ export class Pi extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeDimensionKeys() {
-    this.to('pi:DescribeDimensionKeys');
+    this.to('DescribeDimensionKeys');
     return this;
   }
 
@@ -34,7 +34,7 @@ export class Pi extends PolicyStatement {
    * Access Level: Read
    */
   public toGetResourceMetrics() {
-    this.to('pi:GetResourceMetrics');
+    this.to('GetResourceMetrics');
     return this;
   }
 

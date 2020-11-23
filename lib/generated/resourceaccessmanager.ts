@@ -29,7 +29,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html
    */
   public toAcceptResourceShareInvitation() {
-    this.to('ram:AcceptResourceShareInvitation');
+    this.to('AcceptResourceShareInvitation');
     return this;
   }
 
@@ -49,7 +49,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceShare.html
    */
   public toAssociateResourceShare() {
-    this.to('ram:AssociateResourceShare');
+    this.to('AssociateResourceShare');
     return this;
   }
 
@@ -67,7 +67,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceSharePermission.html
    */
   public toAssociateResourceSharePermission() {
-    this.to('ram:AssociateResourceSharePermission');
+    this.to('AssociateResourceSharePermission');
     return this;
   }
 
@@ -87,7 +87,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html
    */
   public toCreateResourceShare() {
-    this.to('ram:CreateResourceShare');
+    this.to('CreateResourceShare');
     return this;
   }
 
@@ -104,7 +104,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DeleteResourceShare.html
    */
   public toDeleteResourceShare() {
-    this.to('ram:DeleteResourceShare');
+    this.to('DeleteResourceShare');
     return this;
   }
 
@@ -124,7 +124,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DisassociateResourceShare.html
    */
   public toDisassociateResourceShare() {
-    this.to('ram:DisassociateResourceShare');
+    this.to('DisassociateResourceShare');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DisassociateResourceSharePermission.html
    */
   public toDisassociateResourceSharePermission() {
-    this.to('ram:DisassociateResourceSharePermission');
+    this.to('DisassociateResourceSharePermission');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_EnableSharingWithAwsOrganization.html
    */
   public toEnableSharingWithAwsOrganization() {
-    this.to('ram:EnableSharingWithAwsOrganization');
+    this.to('EnableSharingWithAwsOrganization');
     return this;
   }
 
@@ -169,7 +169,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetPermission.html
    */
   public toGetPermission() {
-    this.to('ram:GetPermission');
+    this.to('GetPermission');
     return this;
   }
 
@@ -181,7 +181,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourcePolicies.html
    */
   public toGetResourcePolicies() {
-    this.to('ram:GetResourcePolicies');
+    this.to('GetResourcePolicies');
     return this;
   }
 
@@ -193,7 +193,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareAssociations.html
    */
   public toGetResourceShareAssociations() {
-    this.to('ram:GetResourceShareAssociations');
+    this.to('GetResourceShareAssociations');
     return this;
   }
 
@@ -205,7 +205,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareInvitations.html
    */
   public toGetResourceShareInvitations() {
-    this.to('ram:GetResourceShareInvitations');
+    this.to('GetResourceShareInvitations');
     return this;
   }
 
@@ -217,7 +217,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShares.html
    */
   public toGetResourceShares() {
-    this.to('ram:GetResourceShares');
+    this.to('GetResourceShares');
     return this;
   }
 
@@ -229,7 +229,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html
    */
   public toListPendingInvitationResources() {
-    this.to('ram:ListPendingInvitationResources');
+    this.to('ListPendingInvitationResources');
     return this;
   }
 
@@ -241,7 +241,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPermissions.html
    */
   public toListPermissions() {
-    this.to('ram:ListPermissions');
+    this.to('ListPermissions');
     return this;
   }
 
@@ -253,7 +253,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPrincipals.html
    */
   public toListPrincipals() {
-    this.to('ram:ListPrincipals');
+    this.to('ListPrincipals');
     return this;
   }
 
@@ -270,7 +270,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResourceSharePermissions.html
    */
   public toListResourceSharePermissions() {
-    this.to('ram:ListResourceSharePermissions');
+    this.to('ListResourceSharePermissions');
     return this;
   }
 
@@ -282,7 +282,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResourceTypes.html
    */
   public toListResourceTypes() {
-    this.to('ram:ListResourceTypes');
+    this.to('ListResourceTypes');
     return this;
   }
 
@@ -294,7 +294,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResources.html
    */
   public toListResources() {
-    this.to('ram:ListResources');
+    this.to('ListResources');
     return this;
   }
 
@@ -306,7 +306,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html
    */
   public toPromoteResourceShareCreatedFromPolicy() {
-    this.to('ram:PromoteResourceShareCreatedFromPolicy');
+    this.to('PromoteResourceShareCreatedFromPolicy');
     return this;
   }
 
@@ -321,7 +321,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_RejectResourceShareInvitation.html
    */
   public toRejectResourceShareInvitation() {
-    this.to('ram:RejectResourceShareInvitation');
+    this.to('RejectResourceShareInvitation');
     return this;
   }
 
@@ -337,7 +337,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('ram:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -353,7 +353,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('ram:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -371,7 +371,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_UpdateResourceShare.html
    */
   public toUpdateResourceShare() {
-    this.to('ram:UpdateResourceShare');
+    this.to('UpdateResourceShare');
     return this;
   }
 

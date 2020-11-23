@@ -26,7 +26,7 @@ export class ElementalActivations extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
   public toDownloadSoftware() {
-    this.to('elemental-activations:DownloadSoftware');
+    this.to('DownloadSoftware');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class ElementalActivations extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
   public toGenerateLicenses() {
-    this.to('elemental-activations:GenerateLicenses');
+    this.to('GenerateLicenses');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class ElementalActivations extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
   public toGetActivation() {
-    this.to('elemental-activations:GetActivation');
+    this.to('GetActivation');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class ElementalActivations extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
   public toListTagsForResource() {
-    this.to('elemental-activations:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -78,7 +78,7 @@ export class ElementalActivations extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
   public toTagResource() {
-    this.to('elemental-activations:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -93,7 +93,7 @@ export class ElementalActivations extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
   public toUntagResource() {
-    this.to('elemental-activations:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 

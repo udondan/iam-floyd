@@ -26,7 +26,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AssociateAdminAccount.html
    */
   public toAssociateAdminAccount() {
-    this.to('fms:AssociateAdminAccount');
+    this.to('AssociateAdminAccount');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteAppsList.html
    */
   public toDeleteAppsList() {
-    this.to('fms:DeleteAppsList');
+    this.to('DeleteAppsList');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteNotificationChannel.html
    */
   public toDeleteNotificationChannel() {
-    this.to('fms:DeleteNotificationChannel');
+    this.to('DeleteNotificationChannel');
     return this;
   }
 
@@ -65,7 +65,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeletePolicy.html
    */
   public toDeletePolicy() {
-    this.to('fms:DeletePolicy');
+    this.to('DeletePolicy');
     return this;
   }
 
@@ -77,7 +77,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteProtocolsList.html
    */
   public toDeleteProtocolsList() {
-    this.to('fms:DeleteProtocolsList');
+    this.to('DeleteProtocolsList');
     return this;
   }
 
@@ -89,7 +89,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DisassociateAdminAccount.html
    */
   public toDisassociateAdminAccount() {
-    this.to('fms:DisassociateAdminAccount');
+    this.to('DisassociateAdminAccount');
     return this;
   }
 
@@ -101,7 +101,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAdminAccount.html
    */
   public toGetAdminAccount() {
-    this.to('fms:GetAdminAccount');
+    this.to('GetAdminAccount');
     return this;
   }
 
@@ -113,7 +113,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAppsList.html
    */
   public toGetAppsList() {
-    this.to('fms:GetAppsList');
+    this.to('GetAppsList');
     return this;
   }
 
@@ -125,7 +125,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetComplianceDetail.html
    */
   public toGetComplianceDetail() {
-    this.to('fms:GetComplianceDetail');
+    this.to('GetComplianceDetail');
     return this;
   }
 
@@ -137,7 +137,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetNotificationChannel.html
    */
   public toGetNotificationChannel() {
-    this.to('fms:GetNotificationChannel');
+    this.to('GetNotificationChannel');
     return this;
   }
 
@@ -149,7 +149,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetPolicy.html
    */
   public toGetPolicy() {
-    this.to('fms:GetPolicy');
+    this.to('GetPolicy');
     return this;
   }
 
@@ -161,7 +161,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetProtectionStatus.html
    */
   public toGetProtectionStatus() {
-    this.to('fms:GetProtectionStatus');
+    this.to('GetProtectionStatus');
     return this;
   }
 
@@ -173,7 +173,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetProtocolsList.html
    */
   public toGetProtocolsList() {
-    this.to('fms:GetProtocolsList');
+    this.to('GetProtocolsList');
     return this;
   }
 
@@ -185,7 +185,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListAppsLists.html
    */
   public toListAppsLists() {
-    this.to('fms:ListAppsLists');
+    this.to('ListAppsLists');
     return this;
   }
 
@@ -197,7 +197,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListComplianceStatus.html
    */
   public toListComplianceStatus() {
-    this.to('fms:ListComplianceStatus');
+    this.to('ListComplianceStatus');
     return this;
   }
 
@@ -209,7 +209,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListMemberAccounts.html
    */
   public toListMemberAccounts() {
-    this.to('fms:ListMemberAccounts');
+    this.to('ListMemberAccounts');
     return this;
   }
 
@@ -221,7 +221,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListPolicies.html
    */
   public toListPolicies() {
-    this.to('fms:ListPolicies');
+    this.to('ListPolicies');
     return this;
   }
 
@@ -233,7 +233,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListProtocolsLists.html
    */
   public toListProtocolsLists() {
-    this.to('fms:ListProtocolsLists');
+    this.to('ListProtocolsLists');
     return this;
   }
 
@@ -245,7 +245,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('fms:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -261,7 +261,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutAppsList.html
    */
   public toPutAppsList() {
-    this.to('fms:PutAppsList');
+    this.to('PutAppsList');
     return this;
   }
 
@@ -273,7 +273,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutNotificationChannel.html
    */
   public toPutNotificationChannel() {
-    this.to('fms:PutNotificationChannel');
+    this.to('PutNotificationChannel');
     return this;
   }
 
@@ -289,7 +289,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutPolicy.html
    */
   public toPutPolicy() {
-    this.to('fms:PutPolicy');
+    this.to('PutPolicy');
     return this;
   }
 
@@ -305,7 +305,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutProtocolsList.html
    */
   public toPutProtocolsList() {
-    this.to('fms:PutProtocolsList');
+    this.to('PutProtocolsList');
     return this;
   }
 
@@ -321,7 +321,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('fms:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -336,7 +336,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('fms:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 

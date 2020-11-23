@@ -29,7 +29,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toAssociateDirectory() {
-    this.to('sso:AssociateDirectory');
+    this.to('AssociateDirectory');
     return this;
   }
 
@@ -41,7 +41,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toAssociateProfile() {
-    this.to('sso:AssociateProfile');
+    this.to('AssociateProfile');
     return this;
   }
 
@@ -53,7 +53,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toAttachManagedPolicyToPermissionSet() {
-    this.to('sso:AttachManagedPolicyToPermissionSet');
+    this.to('AttachManagedPolicyToPermissionSet');
     return this;
   }
 
@@ -65,7 +65,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateAccountAssignment() {
-    this.to('sso:CreateAccountAssignment');
+    this.to('CreateAccountAssignment');
     return this;
   }
 
@@ -77,7 +77,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateApplicationInstance() {
-    this.to('sso:CreateApplicationInstance');
+    this.to('CreateApplicationInstance');
     return this;
   }
 
@@ -89,7 +89,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateApplicationInstanceCertificate() {
-    this.to('sso:CreateApplicationInstanceCertificate');
+    this.to('CreateApplicationInstanceCertificate');
     return this;
   }
 
@@ -101,7 +101,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateManagedApplicationInstance() {
-    this.to('sso:CreateManagedApplicationInstance');
+    this.to('CreateManagedApplicationInstance');
     return this;
   }
 
@@ -113,7 +113,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreatePermissionSet() {
-    this.to('sso:CreatePermissionSet');
+    this.to('CreatePermissionSet');
     return this;
   }
 
@@ -125,7 +125,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateProfile() {
-    this.to('sso:CreateProfile');
+    this.to('CreateProfile');
     return this;
   }
 
@@ -137,7 +137,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateTrust() {
-    this.to('sso:CreateTrust');
+    this.to('CreateTrust');
     return this;
   }
 
@@ -149,7 +149,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteAccountAssignment() {
-    this.to('sso:DeleteAccountAssignment');
+    this.to('DeleteAccountAssignment');
     return this;
   }
 
@@ -161,7 +161,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteApplicationInstance() {
-    this.to('sso:DeleteApplicationInstance');
+    this.to('DeleteApplicationInstance');
     return this;
   }
 
@@ -173,7 +173,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteApplicationInstanceCertificate() {
-    this.to('sso:DeleteApplicationInstanceCertificate');
+    this.to('DeleteApplicationInstanceCertificate');
     return this;
   }
 
@@ -185,7 +185,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteInlinePolicyFromPermissionSet() {
-    this.to('sso:DeleteInlinePolicyFromPermissionSet');
+    this.to('DeleteInlinePolicyFromPermissionSet');
     return this;
   }
 
@@ -197,7 +197,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteManagedApplicationInstance() {
-    this.to('sso:DeleteManagedApplicationInstance');
+    this.to('DeleteManagedApplicationInstance');
     return this;
   }
 
@@ -209,7 +209,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeletePermissionSet() {
-    this.to('sso:DeletePermissionSet');
+    this.to('DeletePermissionSet');
     return this;
   }
 
@@ -221,7 +221,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeletePermissionsPolicy() {
-    this.to('sso:DeletePermissionsPolicy');
+    this.to('DeletePermissionsPolicy');
     return this;
   }
 
@@ -233,7 +233,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteProfile() {
-    this.to('sso:DeleteProfile');
+    this.to('DeleteProfile');
     return this;
   }
 
@@ -245,7 +245,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDescribeAccountAssignmentCreationStatus() {
-    this.to('sso:DescribeAccountAssignmentCreationStatus');
+    this.to('DescribeAccountAssignmentCreationStatus');
     return this;
   }
 
@@ -257,7 +257,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDescribeAccountAssignmentDeletionStatus() {
-    this.to('sso:DescribeAccountAssignmentDeletionStatus');
+    this.to('DescribeAccountAssignmentDeletionStatus');
     return this;
   }
 
@@ -269,7 +269,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDescribePermissionSet() {
-    this.to('sso:DescribePermissionSet');
+    this.to('DescribePermissionSet');
     return this;
   }
 
@@ -281,7 +281,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDescribePermissionSetProvisioningStatus() {
-    this.to('sso:DescribePermissionSetProvisioningStatus');
+    this.to('DescribePermissionSetProvisioningStatus');
     return this;
   }
 
@@ -293,7 +293,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDescribePermissionsPolicies() {
-    this.to('sso:DescribePermissionsPolicies');
+    this.to('DescribePermissionsPolicies');
     return this;
   }
 
@@ -305,7 +305,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDescribeRegisteredRegions() {
-    this.to('sso:DescribeRegisteredRegions');
+    this.to('DescribeRegisteredRegions');
     return this;
   }
 
@@ -317,7 +317,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDetachManagedPolicyFromPermissionSet() {
-    this.to('sso:DetachManagedPolicyFromPermissionSet');
+    this.to('DetachManagedPolicyFromPermissionSet');
     return this;
   }
 
@@ -332,7 +332,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDisassociateDirectory() {
-    this.to('sso:DisassociateDirectory');
+    this.to('DisassociateDirectory');
     return this;
   }
 
@@ -344,7 +344,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDisassociateProfile() {
-    this.to('sso:DisassociateProfile');
+    this.to('DisassociateProfile');
     return this;
   }
 
@@ -356,7 +356,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetApplicationInstance() {
-    this.to('sso:GetApplicationInstance');
+    this.to('GetApplicationInstance');
     return this;
   }
 
@@ -368,7 +368,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetApplicationTemplate() {
-    this.to('sso:GetApplicationTemplate');
+    this.to('GetApplicationTemplate');
     return this;
   }
 
@@ -380,7 +380,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetInlinePolicyForPermissionSet() {
-    this.to('sso:GetInlinePolicyForPermissionSet');
+    this.to('GetInlinePolicyForPermissionSet');
     return this;
   }
 
@@ -392,7 +392,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetManagedApplicationInstance() {
-    this.to('sso:GetManagedApplicationInstance');
+    this.to('GetManagedApplicationInstance');
     return this;
   }
 
@@ -404,7 +404,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetMfaDeviceManagementForDirectory() {
-    this.to('sso:GetMfaDeviceManagementForDirectory');
+    this.to('GetMfaDeviceManagementForDirectory');
     return this;
   }
 
@@ -416,7 +416,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetPermissionSet() {
-    this.to('sso:GetPermissionSet');
+    this.to('GetPermissionSet');
     return this;
   }
 
@@ -431,7 +431,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetPermissionsPolicy() {
-    this.to('sso:GetPermissionsPolicy');
+    this.to('GetPermissionsPolicy');
     return this;
   }
 
@@ -443,7 +443,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetProfile() {
-    this.to('sso:GetProfile');
+    this.to('GetProfile');
     return this;
   }
 
@@ -455,7 +455,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetSSOStatus() {
-    this.to('sso:GetSSOStatus');
+    this.to('GetSSOStatus');
     return this;
   }
 
@@ -467,7 +467,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetSharedSsoConfiguration() {
-    this.to('sso:GetSharedSsoConfiguration');
+    this.to('GetSharedSsoConfiguration');
     return this;
   }
 
@@ -479,7 +479,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetSsoConfiguration() {
-    this.to('sso:GetSsoConfiguration');
+    this.to('GetSsoConfiguration');
     return this;
   }
 
@@ -491,7 +491,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetTrust() {
-    this.to('sso:GetTrust');
+    this.to('GetTrust');
     return this;
   }
 
@@ -503,7 +503,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toImportApplicationInstanceServiceProviderMetadata() {
-    this.to('sso:ImportApplicationInstanceServiceProviderMetadata');
+    this.to('ImportApplicationInstanceServiceProviderMetadata');
     return this;
   }
 
@@ -515,7 +515,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListAccountAssignmentCreationStatus() {
-    this.to('sso:ListAccountAssignmentCreationStatus');
+    this.to('ListAccountAssignmentCreationStatus');
     return this;
   }
 
@@ -527,7 +527,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListAccountAssignmentDeletionStatus() {
-    this.to('sso:ListAccountAssignmentDeletionStatus');
+    this.to('ListAccountAssignmentDeletionStatus');
     return this;
   }
 
@@ -539,7 +539,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListAccountAssignments() {
-    this.to('sso:ListAccountAssignments');
+    this.to('ListAccountAssignments');
     return this;
   }
 
@@ -551,7 +551,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListAccountsForProvisionedPermissionSet() {
-    this.to('sso:ListAccountsForProvisionedPermissionSet');
+    this.to('ListAccountsForProvisionedPermissionSet');
     return this;
   }
 
@@ -563,7 +563,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListApplicationInstanceCertificates() {
-    this.to('sso:ListApplicationInstanceCertificates');
+    this.to('ListApplicationInstanceCertificates');
     return this;
   }
 
@@ -578,7 +578,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListApplicationInstances() {
-    this.to('sso:ListApplicationInstances');
+    this.to('ListApplicationInstances');
     return this;
   }
 
@@ -593,7 +593,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListApplicationTemplates() {
-    this.to('sso:ListApplicationTemplates');
+    this.to('ListApplicationTemplates');
     return this;
   }
 
@@ -605,7 +605,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListApplications() {
-    this.to('sso:ListApplications');
+    this.to('ListApplications');
     return this;
   }
 
@@ -617,7 +617,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListDirectoryAssociations() {
-    this.to('sso:ListDirectoryAssociations');
+    this.to('ListDirectoryAssociations');
     return this;
   }
 
@@ -629,7 +629,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListInstances() {
-    this.to('sso:ListInstances');
+    this.to('ListInstances');
     return this;
   }
 
@@ -641,7 +641,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListManagedPoliciesInPermissionSet() {
-    this.to('sso:ListManagedPoliciesInPermissionSet');
+    this.to('ListManagedPoliciesInPermissionSet');
     return this;
   }
 
@@ -653,7 +653,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListPermissionSetProvisioningStatus() {
-    this.to('sso:ListPermissionSetProvisioningStatus');
+    this.to('ListPermissionSetProvisioningStatus');
     return this;
   }
 
@@ -665,7 +665,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListPermissionSets() {
-    this.to('sso:ListPermissionSets');
+    this.to('ListPermissionSets');
     return this;
   }
 
@@ -677,7 +677,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListPermissionSetsProvisionedToAccount() {
-    this.to('sso:ListPermissionSetsProvisionedToAccount');
+    this.to('ListPermissionSetsProvisionedToAccount');
     return this;
   }
 
@@ -689,7 +689,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListProfileAssociations() {
-    this.to('sso:ListProfileAssociations');
+    this.to('ListProfileAssociations');
     return this;
   }
 
@@ -704,7 +704,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListProfiles() {
-    this.to('sso:ListProfiles');
+    this.to('ListProfiles');
     return this;
   }
 
@@ -716,7 +716,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListTagsForResource() {
-    this.to('sso:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -728,7 +728,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toProvisionPermissionSet() {
-    this.to('sso:ProvisionPermissionSet');
+    this.to('ProvisionPermissionSet');
     return this;
   }
 
@@ -740,7 +740,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toPutInlinePolicyToPermissionSet() {
-    this.to('sso:PutInlinePolicyToPermissionSet');
+    this.to('PutInlinePolicyToPermissionSet');
     return this;
   }
 
@@ -752,7 +752,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toPutMfaDeviceManagementForDirectory() {
-    this.to('sso:PutMfaDeviceManagementForDirectory');
+    this.to('PutMfaDeviceManagementForDirectory');
     return this;
   }
 
@@ -764,7 +764,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toPutPermissionsPolicy() {
-    this.to('sso:PutPermissionsPolicy');
+    this.to('PutPermissionsPolicy');
     return this;
   }
 
@@ -779,7 +779,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toSearchGroups() {
-    this.to('sso:SearchGroups');
+    this.to('SearchGroups');
     return this;
   }
 
@@ -794,7 +794,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toSearchUsers() {
-    this.to('sso:SearchUsers');
+    this.to('SearchUsers');
     return this;
   }
 
@@ -810,7 +810,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toStartSSO() {
-    this.to('sso:StartSSO');
+    this.to('StartSSO');
     return this;
   }
 
@@ -826,7 +826,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toTagResource() {
-    this.to('sso:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -842,7 +842,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUntagResource() {
-    this.to('sso:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -854,7 +854,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateApplicationInstanceActiveCertificate() {
-    this.to('sso:UpdateApplicationInstanceActiveCertificate');
+    this.to('UpdateApplicationInstanceActiveCertificate');
     return this;
   }
 
@@ -866,7 +866,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateApplicationInstanceDisplayData() {
-    this.to('sso:UpdateApplicationInstanceDisplayData');
+    this.to('UpdateApplicationInstanceDisplayData');
     return this;
   }
 
@@ -878,7 +878,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateApplicationInstanceResponseConfiguration() {
-    this.to('sso:UpdateApplicationInstanceResponseConfiguration');
+    this.to('UpdateApplicationInstanceResponseConfiguration');
     return this;
   }
 
@@ -890,7 +890,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateApplicationInstanceResponseSchemaConfiguration() {
-    this.to('sso:UpdateApplicationInstanceResponseSchemaConfiguration');
+    this.to('UpdateApplicationInstanceResponseSchemaConfiguration');
     return this;
   }
 
@@ -902,7 +902,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateApplicationInstanceSecurityConfiguration() {
-    this.to('sso:UpdateApplicationInstanceSecurityConfiguration');
+    this.to('UpdateApplicationInstanceSecurityConfiguration');
     return this;
   }
 
@@ -914,7 +914,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateApplicationInstanceServiceProviderConfiguration() {
-    this.to('sso:UpdateApplicationInstanceServiceProviderConfiguration');
+    this.to('UpdateApplicationInstanceServiceProviderConfiguration');
     return this;
   }
 
@@ -926,7 +926,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateApplicationInstanceStatus() {
-    this.to('sso:UpdateApplicationInstanceStatus');
+    this.to('UpdateApplicationInstanceStatus');
     return this;
   }
 
@@ -938,7 +938,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateDirectoryAssociation() {
-    this.to('sso:UpdateDirectoryAssociation');
+    this.to('UpdateDirectoryAssociation');
     return this;
   }
 
@@ -950,7 +950,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateManagedApplicationInstanceStatus() {
-    this.to('sso:UpdateManagedApplicationInstanceStatus');
+    this.to('UpdateManagedApplicationInstanceStatus');
     return this;
   }
 
@@ -962,7 +962,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdatePermissionSet() {
-    this.to('sso:UpdatePermissionSet');
+    this.to('UpdatePermissionSet');
     return this;
   }
 
@@ -974,7 +974,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateProfile() {
-    this.to('sso:UpdateProfile');
+    this.to('UpdateProfile');
     return this;
   }
 
@@ -986,7 +986,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateSSOConfiguration() {
-    this.to('sso:UpdateSSOConfiguration');
+    this.to('UpdateSSOConfiguration');
     return this;
   }
 
@@ -998,7 +998,7 @@ export class Sso extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateTrust() {
-    this.to('sso:UpdateTrust');
+    this.to('UpdateTrust');
     return this;
   }
 

@@ -30,7 +30,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toCreateQuote() {
-    this.to('elemental-appliances-software:CreateQuote');
+    this.to('CreateQuote');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toGetQuote() {
-    this.to('elemental-appliances-software:GetQuote');
+    this.to('GetQuote');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toListQuotes() {
-    this.to('elemental-appliances-software:ListQuotes');
+    this.to('ListQuotes');
     return this;
   }
 
@@ -66,7 +66,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toListTagsForResource() {
-    this.to('elemental-appliances-software:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toTagResource() {
-    this.to('elemental-appliances-software:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -97,7 +97,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toUntagResource() {
-    this.to('elemental-appliances-software:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -109,7 +109,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toUpdateQuote() {
-    this.to('elemental-appliances-software:UpdateQuote');
+    this.to('UpdateQuote');
     return this;
   }
 

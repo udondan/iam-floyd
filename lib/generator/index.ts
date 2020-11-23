@@ -271,9 +271,7 @@ export function createModule(module: Module): Promise<void> {
       name: `to${name}`,
       scope: Scope.Public,
     });
-    method.setBodyText(
-      [`this.to('${module.name}:${name}');`, 'return this;'].join('\n')
-    );
+    method.setBodyText([`this.to('${name}');`, 'return this;'].join('\n'));
 
     var desc = `\n${action.description}\n\nAccess Level: ${action.accessLevel}`;
 

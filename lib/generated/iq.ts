@@ -26,7 +26,7 @@ export class Iq extends PolicyStatement {
    * https://aws.amazon.com/iq/
    */
   public toCreateProject() {
-    this.to('iq:CreateProject');
+    this.to('CreateProject');
     return this;
   }
 

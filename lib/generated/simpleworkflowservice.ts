@@ -26,7 +26,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CancelTimer.html
    */
   public toCancelTimer() {
-    this.to('swf:CancelTimer');
+    this.to('CancelTimer');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CancelWorkflowExecution.html
    */
   public toCancelWorkflowExecution() {
-    this.to('swf:CancelWorkflowExecution');
+    this.to('CancelWorkflowExecution');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CompleteWorkflowExecution.html
    */
   public toCompleteWorkflowExecution() {
-    this.to('swf:CompleteWorkflowExecution');
+    this.to('CompleteWorkflowExecution');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ContinueAsNewWorkflowExecution.html
    */
   public toContinueAsNewWorkflowExecution() {
-    this.to('swf:ContinueAsNewWorkflowExecution');
+    this.to('ContinueAsNewWorkflowExecution');
     return this;
   }
 
@@ -79,7 +79,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountClosedWorkflowExecutions.html
    */
   public toCountClosedWorkflowExecutions() {
-    this.to('swf:CountClosedWorkflowExecutions');
+    this.to('CountClosedWorkflowExecutions');
     return this;
   }
 
@@ -96,7 +96,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountOpenWorkflowExecutions.html
    */
   public toCountOpenWorkflowExecutions() {
-    this.to('swf:CountOpenWorkflowExecutions');
+    this.to('CountOpenWorkflowExecutions');
     return this;
   }
 
@@ -111,7 +111,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountPendingActivityTasks.html
    */
   public toCountPendingActivityTasks() {
-    this.to('swf:CountPendingActivityTasks');
+    this.to('CountPendingActivityTasks');
     return this;
   }
 
@@ -126,7 +126,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountPendingDecisionTasks.html
    */
   public toCountPendingDecisionTasks() {
-    this.to('swf:CountPendingDecisionTasks');
+    this.to('CountPendingDecisionTasks');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateActivityType.html
    */
   public toDeprecateActivityType() {
-    this.to('swf:DeprecateActivityType');
+    this.to('DeprecateActivityType');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateDomain.html
    */
   public toDeprecateDomain() {
-    this.to('swf:DeprecateDomain');
+    this.to('DeprecateDomain');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateWorkflowType.html
    */
   public toDeprecateWorkflowType() {
-    this.to('swf:DeprecateWorkflowType');
+    this.to('DeprecateWorkflowType');
     return this;
   }
 
@@ -186,7 +186,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeActivityType.html
    */
   public toDescribeActivityType() {
-    this.to('swf:DescribeActivityType');
+    this.to('DescribeActivityType');
     return this;
   }
 
@@ -198,7 +198,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeDomain.html
    */
   public toDescribeDomain() {
-    this.to('swf:DescribeDomain');
+    this.to('DescribeDomain');
     return this;
   }
 
@@ -210,7 +210,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeWorkflowExecution.html
    */
   public toDescribeWorkflowExecution() {
-    this.to('swf:DescribeWorkflowExecution');
+    this.to('DescribeWorkflowExecution');
     return this;
   }
 
@@ -226,7 +226,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeWorkflowType.html
    */
   public toDescribeWorkflowType() {
-    this.to('swf:DescribeWorkflowType');
+    this.to('DescribeWorkflowType');
     return this;
   }
 
@@ -238,7 +238,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_FailWorkflowExecution.html
    */
   public toFailWorkflowExecution() {
-    this.to('swf:FailWorkflowExecution');
+    this.to('FailWorkflowExecution');
     return this;
   }
 
@@ -250,7 +250,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_GetWorkflowExecutionHistory.html
    */
   public toGetWorkflowExecutionHistory() {
-    this.to('swf:GetWorkflowExecutionHistory');
+    this.to('GetWorkflowExecutionHistory');
     return this;
   }
 
@@ -262,7 +262,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListActivityTypes.html
    */
   public toListActivityTypes() {
-    this.to('swf:ListActivityTypes');
+    this.to('ListActivityTypes');
     return this;
   }
 
@@ -279,7 +279,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListClosedWorkflowExecutions.html
    */
   public toListClosedWorkflowExecutions() {
-    this.to('swf:ListClosedWorkflowExecutions');
+    this.to('ListClosedWorkflowExecutions');
     return this;
   }
 
@@ -291,7 +291,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListDomains.html
    */
   public toListDomains() {
-    this.to('swf:ListDomains');
+    this.to('ListDomains');
     return this;
   }
 
@@ -308,7 +308,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListOpenWorkflowExecutions.html
    */
   public toListOpenWorkflowExecutions() {
-    this.to('swf:ListOpenWorkflowExecutions');
+    this.to('ListOpenWorkflowExecutions');
     return this;
   }
 
@@ -320,7 +320,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('swf:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -332,7 +332,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListWorkflowTypes.html
    */
   public toListWorkflowTypes() {
-    this.to('swf:ListWorkflowTypes');
+    this.to('ListWorkflowTypes');
     return this;
   }
 
@@ -347,7 +347,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_PollForActivityTask.html
    */
   public toPollForActivityTask() {
-    this.to('swf:PollForActivityTask');
+    this.to('PollForActivityTask');
     return this;
   }
 
@@ -362,7 +362,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_PollForDecisionTask.html
    */
   public toPollForDecisionTask() {
-    this.to('swf:PollForDecisionTask');
+    this.to('PollForDecisionTask');
     return this;
   }
 
@@ -374,7 +374,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RecordActivityTaskHeartbeat.html
    */
   public toRecordActivityTaskHeartbeat() {
-    this.to('swf:RecordActivityTaskHeartbeat');
+    this.to('RecordActivityTaskHeartbeat');
     return this;
   }
 
@@ -386,7 +386,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RecordMarker.html
    */
   public toRecordMarker() {
-    this.to('swf:RecordMarker');
+    this.to('RecordMarker');
     return this;
   }
 
@@ -403,7 +403,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterActivityType.html
    */
   public toRegisterActivityType() {
-    this.to('swf:RegisterActivityType');
+    this.to('RegisterActivityType');
     return this;
   }
 
@@ -419,7 +419,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterDomain.html
    */
   public toRegisterDomain() {
-    this.to('swf:RegisterDomain');
+    this.to('RegisterDomain');
     return this;
   }
 
@@ -436,7 +436,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterWorkflowType.html
    */
   public toRegisterWorkflowType() {
-    this.to('swf:RegisterWorkflowType');
+    this.to('RegisterWorkflowType');
     return this;
   }
 
@@ -448,7 +448,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RequestCancelActivityTask.html
    */
   public toRequestCancelActivityTask() {
-    this.to('swf:RequestCancelActivityTask');
+    this.to('RequestCancelActivityTask');
     return this;
   }
 
@@ -460,7 +460,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RequestCancelExternalWorkflowExecution.html
    */
   public toRequestCancelExternalWorkflowExecution() {
-    this.to('swf:RequestCancelExternalWorkflowExecution');
+    this.to('RequestCancelExternalWorkflowExecution');
     return this;
   }
 
@@ -472,7 +472,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RequestCancelWorkflowExecution.html
    */
   public toRequestCancelWorkflowExecution() {
-    this.to('swf:RequestCancelWorkflowExecution');
+    this.to('RequestCancelWorkflowExecution');
     return this;
   }
 
@@ -484,7 +484,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskCanceled.html
    */
   public toRespondActivityTaskCanceled() {
-    this.to('swf:RespondActivityTaskCanceled');
+    this.to('RespondActivityTaskCanceled');
     return this;
   }
 
@@ -508,7 +508,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskCompleted.html
    */
   public toRespondActivityTaskCompleted() {
-    this.to('swf:RespondActivityTaskCompleted');
+    this.to('RespondActivityTaskCompleted');
     return this;
   }
 
@@ -520,7 +520,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskFailed.html
    */
   public toRespondActivityTaskFailed() {
-    this.to('swf:RespondActivityTaskFailed');
+    this.to('RespondActivityTaskFailed');
     return this;
   }
 
@@ -532,7 +532,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondDecisionTaskCompleted.html
    */
   public toRespondDecisionTaskCompleted() {
-    this.to('swf:RespondDecisionTaskCompleted');
+    this.to('RespondDecisionTaskCompleted');
     return this;
   }
 
@@ -544,7 +544,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ScheduleActivityTask.html
    */
   public toScheduleActivityTask() {
-    this.to('swf:ScheduleActivityTask');
+    this.to('ScheduleActivityTask');
     return this;
   }
 
@@ -556,7 +556,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_SignalExternalWorkflowExecution.html
    */
   public toSignalExternalWorkflowExecution() {
-    this.to('swf:SignalExternalWorkflowExecution');
+    this.to('SignalExternalWorkflowExecution');
     return this;
   }
 
@@ -568,7 +568,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_SignalWorkflowExecution.html
    */
   public toSignalWorkflowExecution() {
-    this.to('swf:SignalWorkflowExecution');
+    this.to('SignalWorkflowExecution');
     return this;
   }
 
@@ -580,7 +580,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_StartChildWorkflowExecution.html
    */
   public toStartChildWorkflowExecution() {
-    this.to('swf:StartChildWorkflowExecution');
+    this.to('StartChildWorkflowExecution');
     return this;
   }
 
@@ -592,7 +592,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_StartTimer.html
    */
   public toStartTimer() {
-    this.to('swf:StartTimer');
+    this.to('StartTimer');
     return this;
   }
 
@@ -614,7 +614,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_StartWorkflowExecution.html
    */
   public toStartWorkflowExecution() {
-    this.to('swf:StartWorkflowExecution');
+    this.to('StartWorkflowExecution');
     return this;
   }
 
@@ -630,7 +630,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('swf:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -642,7 +642,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_TerminateWorkflowExecution.html
    */
   public toTerminateWorkflowExecution() {
-    this.to('swf:TerminateWorkflowExecution');
+    this.to('TerminateWorkflowExecution');
     return this;
   }
 
@@ -657,7 +657,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('swf:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 

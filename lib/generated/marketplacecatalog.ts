@@ -26,7 +26,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_CancelChangeSet.html
    */
   public toCancelChangeSet() {
-    this.to('aws-marketplace-catalog:CancelChangeSet');
+    this.to('CancelChangeSet');
     return this;
   }
 
@@ -36,7 +36,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * Access Level: Write
    */
   public toCompleteTask() {
-    this.to('aws-marketplace-catalog:CompleteTask');
+    this.to('CompleteTask');
     return this;
   }
 
@@ -48,7 +48,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeChangeSet.html
    */
   public toDescribeChangeSet() {
-    this.to('aws-marketplace-catalog:DescribeChangeSet');
+    this.to('DescribeChangeSet');
     return this;
   }
 
@@ -60,7 +60,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeEntity.html
    */
   public toDescribeEntity() {
-    this.to('aws-marketplace-catalog:DescribeEntity');
+    this.to('DescribeEntity');
     return this;
   }
 
@@ -70,7 +70,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeTask() {
-    this.to('aws-marketplace-catalog:DescribeTask');
+    this.to('DescribeTask');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListChangeSets.html
    */
   public toListChangeSets() {
-    this.to('aws-marketplace-catalog:ListChangeSets');
+    this.to('ListChangeSets');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListEntities.html
    */
   public toListEntities() {
-    this.to('aws-marketplace-catalog:ListEntities');
+    this.to('ListEntities');
     return this;
   }
 
@@ -104,7 +104,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * Access Level: List
    */
   public toListTasks() {
-    this.to('aws-marketplace-catalog:ListTasks');
+    this.to('ListTasks');
     return this;
   }
 
@@ -119,7 +119,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_StartChangeSet.html
    */
   public toStartChangeSet() {
-    this.to('aws-marketplace-catalog:StartChangeSet');
+    this.to('StartChangeSet');
     return this;
   }
 
@@ -129,7 +129,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * Access Level: Write
    */
   public toUpdateTask() {
-    this.to('aws-marketplace-catalog:UpdateTask');
+    this.to('UpdateTask');
     return this;
   }
 

@@ -26,7 +26,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_BatchDeleteWorlds.html
    */
   public toBatchDeleteWorlds() {
-    this.to('robomaker:BatchDeleteWorlds');
+    this.to('BatchDeleteWorlds');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_BatchDescribeSimulationJob.html
    */
   public toBatchDescribeSimulationJob() {
-    this.to('robomaker:BatchDescribeSimulationJob');
+    this.to('BatchDescribeSimulationJob');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CancelDeploymentJob.html
    */
   public toCancelDeploymentJob() {
-    this.to('robomaker:CancelDeploymentJob');
+    this.to('CancelDeploymentJob');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CancelSimulationJob.html
    */
   public toCancelSimulationJob() {
-    this.to('robomaker:CancelSimulationJob');
+    this.to('CancelSimulationJob');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CancelSimulationJobBatch.html
    */
   public toCancelSimulationJobBatch() {
-    this.to('robomaker:CancelSimulationJobBatch');
+    this.to('CancelSimulationJobBatch');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CancelWorldExportJob.html
    */
   public toCancelWorldExportJob() {
-    this.to('robomaker:CancelWorldExportJob');
+    this.to('CancelWorldExportJob');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CancelWorldGenerationJob.html
    */
   public toCancelWorldGenerationJob() {
-    this.to('robomaker:CancelWorldGenerationJob');
+    this.to('CancelWorldGenerationJob');
     return this;
   }
 
@@ -117,7 +117,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateDeploymentJob.html
    */
   public toCreateDeploymentJob() {
-    this.to('robomaker:CreateDeploymentJob');
+    this.to('CreateDeploymentJob');
     return this;
   }
 
@@ -133,7 +133,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateFleet.html
    */
   public toCreateFleet() {
-    this.to('robomaker:CreateFleet');
+    this.to('CreateFleet');
     return this;
   }
 
@@ -152,7 +152,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobot.html
    */
   public toCreateRobot() {
-    this.to('robomaker:CreateRobot');
+    this.to('CreateRobot');
     return this;
   }
 
@@ -168,7 +168,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobotApplication.html
    */
   public toCreateRobotApplication() {
-    this.to('robomaker:CreateRobotApplication');
+    this.to('CreateRobotApplication');
     return this;
   }
 
@@ -183,7 +183,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobotApplicationVersion.html
    */
   public toCreateRobotApplicationVersion() {
-    this.to('robomaker:CreateRobotApplicationVersion');
+    this.to('CreateRobotApplicationVersion');
     return this;
   }
 
@@ -199,7 +199,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationApplication.html
    */
   public toCreateSimulationApplication() {
-    this.to('robomaker:CreateSimulationApplication');
+    this.to('CreateSimulationApplication');
     return this;
   }
 
@@ -214,7 +214,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationApplicationVersion.html
    */
   public toCreateSimulationApplicationVersion() {
-    this.to('robomaker:CreateSimulationApplicationVersion');
+    this.to('CreateSimulationApplicationVersion');
     return this;
   }
 
@@ -233,7 +233,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationJob.html
    */
   public toCreateSimulationJob() {
-    this.to('robomaker:CreateSimulationJob');
+    this.to('CreateSimulationJob');
     return this;
   }
 
@@ -245,7 +245,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateWorldExportJob.html
    */
   public toCreateWorldExportJob() {
-    this.to('robomaker:CreateWorldExportJob');
+    this.to('CreateWorldExportJob');
     return this;
   }
 
@@ -257,7 +257,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateWorldGenerationJob.html
    */
   public toCreateWorldGenerationJob() {
-    this.to('robomaker:CreateWorldGenerationJob');
+    this.to('CreateWorldGenerationJob');
     return this;
   }
 
@@ -269,7 +269,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateWorldTemplate.html
    */
   public toCreateWorldTemplate() {
-    this.to('robomaker:CreateWorldTemplate');
+    this.to('CreateWorldTemplate');
     return this;
   }
 
@@ -281,7 +281,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DeleteFleet.html
    */
   public toDeleteFleet() {
-    this.to('robomaker:DeleteFleet');
+    this.to('DeleteFleet');
     return this;
   }
 
@@ -293,7 +293,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DeleteRobot.html
    */
   public toDeleteRobot() {
-    this.to('robomaker:DeleteRobot');
+    this.to('DeleteRobot');
     return this;
   }
 
@@ -305,7 +305,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DeleteRobotApplication.html
    */
   public toDeleteRobotApplication() {
-    this.to('robomaker:DeleteRobotApplication');
+    this.to('DeleteRobotApplication');
     return this;
   }
 
@@ -317,7 +317,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DeleteSimulationApplication.html
    */
   public toDeleteSimulationApplication() {
-    this.to('robomaker:DeleteSimulationApplication');
+    this.to('DeleteSimulationApplication');
     return this;
   }
 
@@ -329,7 +329,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DeleteWorldTemplate.html
    */
   public toDeleteWorldTemplate() {
-    this.to('robomaker:DeleteWorldTemplate');
+    this.to('DeleteWorldTemplate');
     return this;
   }
 
@@ -341,7 +341,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DeregisterRobot.html
    */
   public toDeregisterRobot() {
-    this.to('robomaker:DeregisterRobot');
+    this.to('DeregisterRobot');
     return this;
   }
 
@@ -353,7 +353,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeDeploymentJob.html
    */
   public toDescribeDeploymentJob() {
-    this.to('robomaker:DescribeDeploymentJob');
+    this.to('DescribeDeploymentJob');
     return this;
   }
 
@@ -365,7 +365,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeFleet.html
    */
   public toDescribeFleet() {
-    this.to('robomaker:DescribeFleet');
+    this.to('DescribeFleet');
     return this;
   }
 
@@ -377,7 +377,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeRobot.html
    */
   public toDescribeRobot() {
-    this.to('robomaker:DescribeRobot');
+    this.to('DescribeRobot');
     return this;
   }
 
@@ -389,7 +389,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeRobotApplication.html
    */
   public toDescribeRobotApplication() {
-    this.to('robomaker:DescribeRobotApplication');
+    this.to('DescribeRobotApplication');
     return this;
   }
 
@@ -401,7 +401,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeSimulationApplication.html
    */
   public toDescribeSimulationApplication() {
-    this.to('robomaker:DescribeSimulationApplication');
+    this.to('DescribeSimulationApplication');
     return this;
   }
 
@@ -413,7 +413,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeSimulationJob.html
    */
   public toDescribeSimulationJob() {
-    this.to('robomaker:DescribeSimulationJob');
+    this.to('DescribeSimulationJob');
     return this;
   }
 
@@ -425,7 +425,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeSimulationJobBatch.html
    */
   public toDescribeSimulationJobBatch() {
-    this.to('robomaker:DescribeSimulationJobBatch');
+    this.to('DescribeSimulationJobBatch');
     return this;
   }
 
@@ -437,7 +437,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeWorld.html
    */
   public toDescribeWorld() {
-    this.to('robomaker:DescribeWorld');
+    this.to('DescribeWorld');
     return this;
   }
 
@@ -449,7 +449,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeWorldExportJob.html
    */
   public toDescribeWorldExportJob() {
-    this.to('robomaker:DescribeWorldExportJob');
+    this.to('DescribeWorldExportJob');
     return this;
   }
 
@@ -461,7 +461,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeWorldGenerationJob.html
    */
   public toDescribeWorldGenerationJob() {
-    this.to('robomaker:DescribeWorldGenerationJob');
+    this.to('DescribeWorldGenerationJob');
     return this;
   }
 
@@ -473,7 +473,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeWorldTemplate.html
    */
   public toDescribeWorldTemplate() {
-    this.to('robomaker:DescribeWorldTemplate');
+    this.to('DescribeWorldTemplate');
     return this;
   }
 
@@ -485,7 +485,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_GetWorldTemplateBody.html
    */
   public toGetWorldTemplateBody() {
-    this.to('robomaker:GetWorldTemplateBody');
+    this.to('GetWorldTemplateBody');
     return this;
   }
 
@@ -497,7 +497,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListDeploymentJobs.html
    */
   public toListDeploymentJobs() {
-    this.to('robomaker:ListDeploymentJobs');
+    this.to('ListDeploymentJobs');
     return this;
   }
 
@@ -509,7 +509,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListFleets.html
    */
   public toListFleets() {
-    this.to('robomaker:ListFleets');
+    this.to('ListFleets');
     return this;
   }
 
@@ -521,7 +521,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListRobotApplications.html
    */
   public toListRobotApplications() {
-    this.to('robomaker:ListRobotApplications');
+    this.to('ListRobotApplications');
     return this;
   }
 
@@ -533,7 +533,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListRobots.html
    */
   public toListRobots() {
-    this.to('robomaker:ListRobots');
+    this.to('ListRobots');
     return this;
   }
 
@@ -545,7 +545,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListSimulationApplications.html
    */
   public toListSimulationApplications() {
-    this.to('robomaker:ListSimulationApplications');
+    this.to('ListSimulationApplications');
     return this;
   }
 
@@ -557,7 +557,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListSimulationJobBatches.html
    */
   public toListSimulationJobBatches() {
-    this.to('robomaker:ListSimulationJobBatches');
+    this.to('ListSimulationJobBatches');
     return this;
   }
 
@@ -569,7 +569,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListSimulationJobs.html
    */
   public toListSimulationJobs() {
-    this.to('robomaker:ListSimulationJobs');
+    this.to('ListSimulationJobs');
     return this;
   }
 
@@ -579,7 +579,7 @@ export class Robomaker extends PolicyStatement {
    * Access Level: List
    */
   public toListSupportedAvailabilityZones() {
-    this.to('robomaker:ListSupportedAvailabilityZones');
+    this.to('ListSupportedAvailabilityZones');
     return this;
   }
 
@@ -591,7 +591,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('robomaker:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -603,7 +603,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListWorldExportJobs.html
    */
   public toListWorldExportJobs() {
-    this.to('robomaker:ListWorldExportJobs');
+    this.to('ListWorldExportJobs');
     return this;
   }
 
@@ -615,7 +615,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListWorldGenerationJobs.html
    */
   public toListWorldGenerationJobs() {
-    this.to('robomaker:ListWorldGenerationJobs');
+    this.to('ListWorldGenerationJobs');
     return this;
   }
 
@@ -627,7 +627,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListWorldTemplates.html
    */
   public toListWorldTemplates() {
-    this.to('robomaker:ListWorldTemplates');
+    this.to('ListWorldTemplates');
     return this;
   }
 
@@ -639,7 +639,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListWorlds.html
    */
   public toListWorlds() {
-    this.to('robomaker:ListWorlds');
+    this.to('ListWorlds');
     return this;
   }
 
@@ -651,7 +651,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_RegisterRobot.html
    */
   public toRegisterRobot() {
-    this.to('robomaker:RegisterRobot');
+    this.to('RegisterRobot');
     return this;
   }
 
@@ -663,7 +663,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_RestartSimulationJob.html
    */
   public toRestartSimulationJob() {
-    this.to('robomaker:RestartSimulationJob');
+    this.to('RestartSimulationJob');
     return this;
   }
 
@@ -682,7 +682,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_StartSimulationJobBatch.html
    */
   public toStartSimulationJobBatch() {
-    this.to('robomaker:StartSimulationJobBatch');
+    this.to('StartSimulationJobBatch');
     return this;
   }
 
@@ -697,7 +697,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_SyncDeploymentJob.html
    */
   public toSyncDeploymentJob() {
-    this.to('robomaker:SyncDeploymentJob');
+    this.to('SyncDeploymentJob');
     return this;
   }
 
@@ -713,7 +713,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html
    */
   public toTagResource() {
-    this.to('robomaker:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -728,7 +728,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('robomaker:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -740,7 +740,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_UpdateRobotApplication.html
    */
   public toUpdateRobotApplication() {
-    this.to('robomaker:UpdateRobotApplication');
+    this.to('UpdateRobotApplication');
     return this;
   }
 
@@ -750,7 +750,7 @@ export class Robomaker extends PolicyStatement {
    * Access Level: Write
    */
   public toUpdateRobotDeployment() {
-    this.to('robomaker:UpdateRobotDeployment');
+    this.to('UpdateRobotDeployment');
     return this;
   }
 
@@ -762,7 +762,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_UpdateSimulationApplication.html
    */
   public toUpdateSimulationApplication() {
-    this.to('robomaker:UpdateSimulationApplication');
+    this.to('UpdateSimulationApplication');
     return this;
   }
 
@@ -774,7 +774,7 @@ export class Robomaker extends PolicyStatement {
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_UpdateWorldTemplate.html
    */
   public toUpdateWorldTemplate() {
-    this.to('robomaker:UpdateWorldTemplate');
+    this.to('UpdateWorldTemplate');
     return this;
   }
 

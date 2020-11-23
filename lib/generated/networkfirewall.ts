@@ -26,7 +26,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_AssociateFirewallPolicy.html
    */
   public toAssociateFirewallPolicy() {
-    this.to('network-firewall:AssociateFirewallPolicy');
+    this.to('AssociateFirewallPolicy');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_AssociateSubnets.html
    */
   public toAssociateSubnets() {
-    this.to('network-firewall:AssociateSubnets');
+    this.to('AssociateSubnets');
     return this;
   }
 
@@ -57,7 +57,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateFirewall.html
    */
   public toCreateFirewall() {
-    this.to('network-firewall:CreateFirewall');
+    this.to('CreateFirewall');
     return this;
   }
 
@@ -73,7 +73,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateFirewallPolicy.html
    */
   public toCreateFirewallPolicy() {
-    this.to('network-firewall:CreateFirewallPolicy');
+    this.to('CreateFirewallPolicy');
     return this;
   }
 
@@ -89,7 +89,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateRuleGroup.html
    */
   public toCreateRuleGroup() {
-    this.to('network-firewall:CreateRuleGroup');
+    this.to('CreateRuleGroup');
     return this;
   }
 
@@ -101,7 +101,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteFirewall.html
    */
   public toDeleteFirewall() {
-    this.to('network-firewall:DeleteFirewall');
+    this.to('DeleteFirewall');
     return this;
   }
 
@@ -113,7 +113,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteFirewallPolicy.html
    */
   public toDeleteFirewallPolicy() {
-    this.to('network-firewall:DeleteFirewallPolicy');
+    this.to('DeleteFirewallPolicy');
     return this;
   }
 
@@ -125,7 +125,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteResourcePolicy.html
    */
   public toDeleteResourcePolicy() {
-    this.to('network-firewall:DeleteResourcePolicy');
+    this.to('DeleteResourcePolicy');
     return this;
   }
 
@@ -137,7 +137,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteRuleGroup.html
    */
   public toDeleteRuleGroup() {
-    this.to('network-firewall:DeleteRuleGroup');
+    this.to('DeleteRuleGroup');
     return this;
   }
 
@@ -149,7 +149,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeFirewall.html
    */
   public toDescribeFirewall() {
-    this.to('network-firewall:DescribeFirewall');
+    this.to('DescribeFirewall');
     return this;
   }
 
@@ -161,7 +161,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeFirewallPolicy.html
    */
   public toDescribeFirewallPolicy() {
-    this.to('network-firewall:DescribeFirewallPolicy');
+    this.to('DescribeFirewallPolicy');
     return this;
   }
 
@@ -173,7 +173,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeLoggingConfiguration.html
    */
   public toDescribeLoggingConfiguration() {
-    this.to('network-firewall:DescribeLoggingConfiguration');
+    this.to('DescribeLoggingConfiguration');
     return this;
   }
 
@@ -185,7 +185,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeResourcePolicy.html
    */
   public toDescribeResourcePolicy() {
-    this.to('network-firewall:DescribeResourcePolicy');
+    this.to('DescribeResourcePolicy');
     return this;
   }
 
@@ -197,7 +197,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html
    */
   public toDescribeRuleGroup() {
-    this.to('network-firewall:DescribeRuleGroup');
+    this.to('DescribeRuleGroup');
     return this;
   }
 
@@ -209,7 +209,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/APIReference/API_DisassociateSubnets.html
    */
   public toDisassociateSubnets() {
-    this.to('network-firewall:DisassociateSubnets');
+    this.to('DisassociateSubnets');
     return this;
   }
 
@@ -221,7 +221,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListFirewallPolicies.html
    */
   public toListFirewallPolicies() {
-    this.to('network-firewall:ListFirewallPolicies');
+    this.to('ListFirewallPolicies');
     return this;
   }
 
@@ -233,7 +233,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListFirewalls.html
    */
   public toListFirewalls() {
-    this.to('network-firewall:ListFirewalls');
+    this.to('ListFirewalls');
     return this;
   }
 
@@ -245,7 +245,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListRuleGroups.html
    */
   public toListRuleGroups() {
-    this.to('network-firewall:ListRuleGroups');
+    this.to('ListRuleGroups');
     return this;
   }
 
@@ -257,7 +257,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('network-firewall:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -269,7 +269,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_PutResourcePolicy.html
    */
   public toPutResourcePolicy() {
-    this.to('network-firewall:PutResourcePolicy');
+    this.to('PutResourcePolicy');
     return this;
   }
 
@@ -285,7 +285,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('network-firewall:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -300,7 +300,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('network-firewall:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -312,7 +312,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateFirewallDeleteProtection.html
    */
   public toUpdateFirewallDeleteProtection() {
-    this.to('network-firewall:UpdateFirewallDeleteProtection');
+    this.to('UpdateFirewallDeleteProtection');
     return this;
   }
 
@@ -324,7 +324,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateFirewallDescription.html
    */
   public toUpdateFirewallDescription() {
-    this.to('network-firewall:UpdateFirewallDescription');
+    this.to('UpdateFirewallDescription');
     return this;
   }
 
@@ -336,7 +336,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateFirewallPolicy.html
    */
   public toUpdateFirewallPolicy() {
-    this.to('network-firewall:UpdateFirewallPolicy');
+    this.to('UpdateFirewallPolicy');
     return this;
   }
 
@@ -348,7 +348,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateFirewallPolicyChangeProtection.html
    */
   public toUpdateFirewallPolicyChangeProtection() {
-    this.to('network-firewall:UpdateFirewallPolicyChangeProtection');
+    this.to('UpdateFirewallPolicyChangeProtection');
     return this;
   }
 
@@ -360,7 +360,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateLoggingConfiguration.html
    */
   public toUpdateLoggingConfiguration() {
-    this.to('network-firewall:UpdateLoggingConfiguration');
+    this.to('UpdateLoggingConfiguration');
     return this;
   }
 
@@ -372,7 +372,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateRuleGroup.html
    */
   public toUpdateRuleGroup() {
-    this.to('network-firewall:UpdateRuleGroup');
+    this.to('UpdateRuleGroup');
     return this;
   }
 
@@ -384,7 +384,7 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateSubnetChangeProtection.html
    */
   public toUpdateSubnetChangeProtection() {
-    this.to('network-firewall:UpdateSubnetChangeProtection');
+    this.to('UpdateSubnetChangeProtection');
     return this;
   }
 

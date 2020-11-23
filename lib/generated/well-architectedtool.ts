@@ -26,7 +26,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html
    */
   public toCreateWorkload() {
-    this.to('wellarchitected:CreateWorkload');
+    this.to('CreateWorkload');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html
    */
   public toCreateWorkloadShare() {
-    this.to('wellarchitected:CreateWorkloadShare');
+    this.to('CreateWorkloadShare');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-delete.html
    */
   public toDeleteWorkload() {
-    this.to('wellarchitected:DeleteWorkload');
+    this.to('DeleteWorkload');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workload-details.html
    */
   public toGetWorkload() {
-    this.to('wellarchitected:GetWorkload');
+    this.to('GetWorkload');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-page.html
    */
   public toListWorkloads() {
-    this.to('wellarchitected:ListWorkloads');
+    this.to('ListWorkloads');
     return this;
   }
 

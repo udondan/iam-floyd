@@ -30,7 +30,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateHttpNamespace.html
    */
   public toCreateHttpNamespace() {
-    this.to('servicediscovery:CreateHttpNamespace');
+    this.to('CreateHttpNamespace');
     return this;
   }
 
@@ -46,7 +46,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePrivateDnsNamespace.html
    */
   public toCreatePrivateDnsNamespace() {
-    this.to('servicediscovery:CreatePrivateDnsNamespace');
+    this.to('CreatePrivateDnsNamespace');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePublicDnsNamespace.html
    */
   public toCreatePublicDnsNamespace() {
-    this.to('servicediscovery:CreatePublicDnsNamespace');
+    this.to('CreatePublicDnsNamespace');
     return this;
   }
 
@@ -79,7 +79,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html
    */
   public toCreateService() {
-    this.to('servicediscovery:CreateService');
+    this.to('CreateService');
     return this;
   }
 
@@ -91,7 +91,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DeleteNamespace.html
    */
   public toDeleteNamespace() {
-    this.to('servicediscovery:DeleteNamespace');
+    this.to('DeleteNamespace');
     return this;
   }
 
@@ -103,7 +103,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DeleteService.html
    */
   public toDeleteService() {
-    this.to('servicediscovery:DeleteService');
+    this.to('DeleteService');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DeregisterInstance.html
    */
   public toDeregisterInstance() {
-    this.to('servicediscovery:DeregisterInstance');
+    this.to('DeregisterInstance');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html
    */
   public toDiscoverInstances() {
-    this.to('servicediscovery:DiscoverInstances');
+    this.to('DiscoverInstances');
     return this;
   }
 
@@ -149,7 +149,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetInstance.html
    */
   public toGetInstance() {
-    this.to('servicediscovery:GetInstance');
+    this.to('GetInstance');
     return this;
   }
 
@@ -164,7 +164,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetInstancesHealthStatus.html
    */
   public toGetInstancesHealthStatus() {
-    this.to('servicediscovery:GetInstancesHealthStatus');
+    this.to('GetInstancesHealthStatus');
     return this;
   }
 
@@ -176,7 +176,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetNamespace.html
    */
   public toGetNamespace() {
-    this.to('servicediscovery:GetNamespace');
+    this.to('GetNamespace');
     return this;
   }
 
@@ -188,7 +188,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html
    */
   public toGetOperation() {
-    this.to('servicediscovery:GetOperation');
+    this.to('GetOperation');
     return this;
   }
 
@@ -200,7 +200,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetService.html
    */
   public toGetService() {
-    this.to('servicediscovery:GetService');
+    this.to('GetService');
     return this;
   }
 
@@ -215,7 +215,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html
    */
   public toListInstances() {
-    this.to('servicediscovery:ListInstances');
+    this.to('ListInstances');
     return this;
   }
 
@@ -227,7 +227,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListNamespaces.html
    */
   public toListNamespaces() {
-    this.to('servicediscovery:ListNamespaces');
+    this.to('ListNamespaces');
     return this;
   }
 
@@ -239,7 +239,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html
    */
   public toListOperations() {
-    this.to('servicediscovery:ListOperations');
+    this.to('ListOperations');
     return this;
   }
 
@@ -251,7 +251,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListServices.html
    */
   public toListServices() {
-    this.to('servicediscovery:ListServices');
+    this.to('ListServices');
     return this;
   }
 
@@ -263,7 +263,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('servicediscovery:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -278,7 +278,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html
    */
   public toRegisterInstance() {
-    this.to('servicediscovery:RegisterInstance');
+    this.to('RegisterInstance');
     return this;
   }
 
@@ -294,7 +294,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_TagResource.html
    */
   public toTagResource() {
-    this.to('servicediscovery:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -310,7 +310,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('servicediscovery:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -325,7 +325,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html
    */
   public toUpdateInstanceCustomHealthStatus() {
-    this.to('servicediscovery:UpdateInstanceCustomHealthStatus');
+    this.to('UpdateInstanceCustomHealthStatus');
     return this;
   }
 
@@ -337,7 +337,7 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateService.html
    */
   public toUpdateService() {
-    this.to('servicediscovery:UpdateService');
+    this.to('UpdateService');
     return this;
   }
 

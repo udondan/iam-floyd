@@ -24,7 +24,7 @@ export class ElasticInference extends PolicyStatement {
    * Access Level: Write
    */
   public toConnect() {
-    this.to('elastic-inference:Connect');
+    this.to('Connect');
     return this;
   }
 

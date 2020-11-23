@@ -29,7 +29,7 @@ export class Budgets extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toCreateBudgetAction() {
-    this.to('budgets:CreateBudgetAction');
+    this.to('CreateBudgetAction');
     return this;
   }
 
@@ -41,7 +41,7 @@ export class Budgets extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toDeleteBudgetAction() {
-    this.to('budgets:DeleteBudgetAction');
+    this.to('DeleteBudgetAction');
     return this;
   }
 
@@ -53,7 +53,7 @@ export class Budgets extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toDescribeBudgetAction() {
-    this.to('budgets:DescribeBudgetAction');
+    this.to('DescribeBudgetAction');
     return this;
   }
 
@@ -65,7 +65,7 @@ export class Budgets extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toDescribeBudgetActionHistories() {
-    this.to('budgets:DescribeBudgetActionHistories');
+    this.to('DescribeBudgetActionHistories');
     return this;
   }
 
@@ -77,7 +77,7 @@ export class Budgets extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toDescribeBudgetActionsForAccount() {
-    this.to('budgets:DescribeBudgetActionsForAccount');
+    this.to('DescribeBudgetActionsForAccount');
     return this;
   }
 
@@ -89,7 +89,7 @@ export class Budgets extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toDescribeBudgetActionsForBudget() {
-    this.to('budgets:DescribeBudgetActionsForBudget');
+    this.to('DescribeBudgetActionsForBudget');
     return this;
   }
 
@@ -101,7 +101,7 @@ export class Budgets extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toExecuteBudgetAction() {
-    this.to('budgets:ExecuteBudgetAction');
+    this.to('ExecuteBudgetAction');
     return this;
   }
 
@@ -113,7 +113,7 @@ export class Budgets extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toModifyBudget() {
-    this.to('budgets:ModifyBudget');
+    this.to('ModifyBudget');
     return this;
   }
 
@@ -128,7 +128,7 @@ export class Budgets extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toUpdateBudgetAction() {
-    this.to('budgets:UpdateBudgetAction');
+    this.to('UpdateBudgetAction');
     return this;
   }
 
@@ -140,7 +140,7 @@ export class Budgets extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toViewBudget() {
-    this.to('budgets:ViewBudget');
+    this.to('ViewBudget');
     return this;
   }
 

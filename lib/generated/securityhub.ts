@@ -26,7 +26,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AcceptInvitation.html
    */
   public toAcceptInvitation() {
-    this.to('securityhub:AcceptInvitation');
+    this.to('AcceptInvitation');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchDisableStandards.html
    */
   public toBatchDisableStandards() {
-    this.to('securityhub:BatchDisableStandards');
+    this.to('BatchDisableStandards');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchEnableStandards.html
    */
   public toBatchEnableStandards() {
-    this.to('securityhub:BatchEnableStandards');
+    this.to('BatchEnableStandards');
     return this;
   }
 
@@ -65,7 +65,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html
    */
   public toBatchImportFindings() {
-    this.to('securityhub:BatchImportFindings');
+    this.to('BatchImportFindings');
     return this;
   }
 
@@ -80,7 +80,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html
    */
   public toBatchUpdateFindings() {
-    this.to('securityhub:BatchUpdateFindings');
+    this.to('BatchUpdateFindings');
     return this;
   }
 
@@ -92,7 +92,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateActionTarget.html
    */
   public toCreateActionTarget() {
-    this.to('securityhub:CreateActionTarget');
+    this.to('CreateActionTarget');
     return this;
   }
 
@@ -104,7 +104,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateInsight.html
    */
   public toCreateInsight() {
-    this.to('securityhub:CreateInsight');
+    this.to('CreateInsight');
     return this;
   }
 
@@ -116,7 +116,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateMembers.html
    */
   public toCreateMembers() {
-    this.to('securityhub:CreateMembers');
+    this.to('CreateMembers');
     return this;
   }
 
@@ -128,7 +128,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeclineInvitations.html
    */
   public toDeclineInvitations() {
-    this.to('securityhub:DeclineInvitations');
+    this.to('DeclineInvitations');
     return this;
   }
 
@@ -140,7 +140,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteActionTarget.html
    */
   public toDeleteActionTarget() {
-    this.to('securityhub:DeleteActionTarget');
+    this.to('DeleteActionTarget');
     return this;
   }
 
@@ -152,7 +152,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteInsight.html
    */
   public toDeleteInsight() {
-    this.to('securityhub:DeleteInsight');
+    this.to('DeleteInsight');
     return this;
   }
 
@@ -164,7 +164,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteInvitations.html
    */
   public toDeleteInvitations() {
-    this.to('securityhub:DeleteInvitations');
+    this.to('DeleteInvitations');
     return this;
   }
 
@@ -176,7 +176,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteMembers.html
    */
   public toDeleteMembers() {
-    this.to('securityhub:DeleteMembers');
+    this.to('DeleteMembers');
     return this;
   }
 
@@ -188,7 +188,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeActionTargets.html
    */
   public toDescribeActionTargets() {
-    this.to('securityhub:DescribeActionTargets');
+    this.to('DescribeActionTargets');
     return this;
   }
 
@@ -200,7 +200,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeHub.html
    */
   public toDescribeHub() {
-    this.to('securityhub:DescribeHub');
+    this.to('DescribeHub');
     return this;
   }
 
@@ -212,7 +212,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeProducts.html
    */
   public toDescribeProducts() {
-    this.to('securityhub:DescribeProducts');
+    this.to('DescribeProducts');
     return this;
   }
 
@@ -224,7 +224,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html
    */
   public toDescribeStandards() {
-    this.to('securityhub:DescribeStandards');
+    this.to('DescribeStandards');
     return this;
   }
 
@@ -236,7 +236,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandardsControls.html
    */
   public toDescribeStandardsControls() {
-    this.to('securityhub:DescribeStandardsControls');
+    this.to('DescribeStandardsControls');
     return this;
   }
 
@@ -248,7 +248,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableImportFindingsForProduct.html
    */
   public toDisableImportFindingsForProduct() {
-    this.to('securityhub:DisableImportFindingsForProduct');
+    this.to('DisableImportFindingsForProduct');
     return this;
   }
 
@@ -260,7 +260,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableSecurityHub.html
    */
   public toDisableSecurityHub() {
-    this.to('securityhub:DisableSecurityHub');
+    this.to('DisableSecurityHub');
     return this;
   }
 
@@ -272,7 +272,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateFromMasterAccount.html
    */
   public toDisassociateFromMasterAccount() {
-    this.to('securityhub:DisassociateFromMasterAccount');
+    this.to('DisassociateFromMasterAccount');
     return this;
   }
 
@@ -284,7 +284,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateMembers.html
    */
   public toDisassociateMembers() {
-    this.to('securityhub:DisassociateMembers');
+    this.to('DisassociateMembers');
     return this;
   }
 
@@ -296,7 +296,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableImportFindingsForProduct.html
    */
   public toEnableImportFindingsForProduct() {
-    this.to('securityhub:EnableImportFindingsForProduct');
+    this.to('EnableImportFindingsForProduct');
     return this;
   }
 
@@ -312,7 +312,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableSecurityHub.html
    */
   public toEnableSecurityHub() {
-    this.to('securityhub:EnableSecurityHub');
+    this.to('EnableSecurityHub');
     return this;
   }
 
@@ -324,7 +324,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetEnabledStandards.html
    */
   public toGetEnabledStandards() {
-    this.to('securityhub:GetEnabledStandards');
+    this.to('GetEnabledStandards');
     return this;
   }
 
@@ -336,7 +336,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindings.html
    */
   public toGetFindings() {
-    this.to('securityhub:GetFindings');
+    this.to('GetFindings');
     return this;
   }
 
@@ -348,7 +348,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsightResults.html
    */
   public toGetInsightResults() {
-    this.to('securityhub:GetInsightResults');
+    this.to('GetInsightResults');
     return this;
   }
 
@@ -360,7 +360,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsights.html
    */
   public toGetInsights() {
-    this.to('securityhub:GetInsights');
+    this.to('GetInsights');
     return this;
   }
 
@@ -372,7 +372,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInvitationsCount.html
    */
   public toGetInvitationsCount() {
-    this.to('securityhub:GetInvitationsCount');
+    this.to('GetInvitationsCount');
     return this;
   }
 
@@ -384,7 +384,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetMasterAccount.html
    */
   public toGetMasterAccount() {
-    this.to('securityhub:GetMasterAccount');
+    this.to('GetMasterAccount');
     return this;
   }
 
@@ -396,7 +396,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetMembers.html
    */
   public toGetMembers() {
-    this.to('securityhub:GetMembers');
+    this.to('GetMembers');
     return this;
   }
 
@@ -408,7 +408,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_InviteMembers.html
    */
   public toInviteMembers() {
-    this.to('securityhub:InviteMembers');
+    this.to('InviteMembers');
     return this;
   }
 
@@ -420,7 +420,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListEnabledProductsForImport.html
    */
   public toListEnabledProductsForImport() {
-    this.to('securityhub:ListEnabledProductsForImport');
+    this.to('ListEnabledProductsForImport');
     return this;
   }
 
@@ -432,7 +432,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListInvitations.html
    */
   public toListInvitations() {
-    this.to('securityhub:ListInvitations');
+    this.to('ListInvitations');
     return this;
   }
 
@@ -444,7 +444,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListMembers.html
    */
   public toListMembers() {
-    this.to('securityhub:ListMembers');
+    this.to('ListMembers');
     return this;
   }
 
@@ -456,7 +456,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('securityhub:ListTagsForResource');
+    this.to('ListTagsForResource');
     return this;
   }
 
@@ -468,7 +468,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('securityhub:TagResource');
+    this.to('TagResource');
     return this;
   }
 
@@ -480,7 +480,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('securityhub:UntagResource');
+    this.to('UntagResource');
     return this;
   }
 
@@ -492,7 +492,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateActionTarget.html
    */
   public toUpdateActionTarget() {
-    this.to('securityhub:UpdateActionTarget');
+    this.to('UpdateActionTarget');
     return this;
   }
 
@@ -504,7 +504,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateFindings.html
    */
   public toUpdateFindings() {
-    this.to('securityhub:UpdateFindings');
+    this.to('UpdateFindings');
     return this;
   }
 
@@ -516,7 +516,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateInsight.html
    */
   public toUpdateInsight() {
-    this.to('securityhub:UpdateInsight');
+    this.to('UpdateInsight');
     return this;
   }
 
@@ -528,7 +528,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateSecurityHubConfiguration.html
    */
   public toUpdateSecurityHubConfiguration() {
-    this.to('securityhub:UpdateSecurityHubConfiguration');
+    this.to('UpdateSecurityHubConfiguration');
     return this;
   }
 
@@ -540,7 +540,7 @@ export class Securityhub extends PolicyStatement {
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html
    */
   public toUpdateStandardsControl() {
-    this.to('securityhub:UpdateStandardsControl');
+    this.to('UpdateStandardsControl');
     return this;
   }
 
