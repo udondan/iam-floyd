@@ -43,6 +43,18 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
+   * Grants permission to complete the registration process of a WebAuthn device
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toCompleteWebAuthnDeviceRegistration() {
+    this.to('CompleteWebAuthnDeviceRegistration');
+    return this;
+  }
+
+  /**
    * Grants permission to create an alias for the directory that AWS SSO provides by default
    *
    * Access Level: Write
@@ -463,6 +475,18 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
+   * Grants permission to begin the registration process of a WebAuthn device
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toStartWebAuthnDeviceRegistration() {
+    this.to('StartWebAuthnDeviceRegistration');
+    return this;
+  }
+
+  /**
    * Grants permission to update an External Identity Provider configuration associated with the directory
    *
    * Access Level: Write
@@ -483,6 +507,18 @@ export class SsoDirectory extends PolicyStatement {
    */
   public toUpdateGroup() {
     this.to('UpdateGroup');
+    return this;
+  }
+
+  /**
+   * Grants permission to update MFA device information
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toUpdateMfaDeviceForUser() {
+    this.to('UpdateMfaDeviceForUser');
     return this;
   }
 
@@ -526,6 +562,7 @@ export class SsoDirectory extends PolicyStatement {
     "Write": [
       "AddMemberToGroup",
       "CompleteVirtualMfaDeviceRegistration",
+      "CompleteWebAuthnDeviceRegistration",
       "CreateAlias",
       "CreateBearerToken",
       "CreateExternalIdPConfigurationForDirectory",
@@ -546,8 +583,10 @@ export class SsoDirectory extends PolicyStatement {
       "ImportExternalIdPCertificate",
       "RemoveMemberFromGroup",
       "StartVirtualMfaDeviceRegistration",
+      "StartWebAuthnDeviceRegistration",
       "UpdateExternalIdPConfigurationForDirectory",
       "UpdateGroup",
+      "UpdateMfaDeviceForUser",
       "UpdatePassword",
       "UpdateUser",
       "VerifyEmail"

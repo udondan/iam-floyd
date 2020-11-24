@@ -1,5 +1,5 @@
 import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [connect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html).
@@ -19,6 +19,78 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to associate approved origin for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toAssociateApprovedOrigin() {
+    this.to('AssociateApprovedOrigin');
+    return this;
+  }
+
+  /**
+   * Grants permissions to associate instance storage for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifStorageResourceType()
+   *
+   * Dependent actions:
+   * - ds:DescribeDirectories
+   * - firehose:DescribeDeliveryStream
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   * - kinesis:DescribeStream
+   * - kms:CreateGrant
+   * - kms:DescribeKey
+   * - s3:GetBucketAcl
+   * - s3:GetBucketLocation
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toAssociateInstanceStorageConfig() {
+    this.to('AssociateInstanceStorageConfig');
+    return this;
+  }
+
+  /**
+   * Grants permissions to associate a Lambda function for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - lambda:AddPermission
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toAssociateLambdaFunction() {
+    this.to('AssociateLambdaFunction');
+    return this;
+  }
+
+  /**
+   * Grants permissions to associate a Lex bot for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   * - lex:GetBot
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toAssociateLexBot() {
+    this.to('AssociateLexBot');
+    return this;
+  }
+
+  /**
    * Grants permissions to associate queues with a routing profile in an Amazon Connect instance.
    *
    * Access Level: Write
@@ -30,6 +102,18 @@ export class Connect extends PolicyStatement {
    */
   public toAssociateRoutingProfileQueues() {
     this.to('AssociateRoutingProfileQueues');
+    return this;
+  }
+
+  /**
+   * Grants permissions to associate a security key for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toAssociateSecurityKey() {
+    this.to('AssociateSecurityKey');
     return this;
   }
 
@@ -55,23 +139,30 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - ds:AuthorizeApplication
+   * - ds:CheckAlias
    * - ds:CreateAlias
-   * - ds:DeleteDirectory
+   * - ds:CreateDirectory
+   * - ds:CreateIdentityPoolDirectory
    * - ds:DescribeDirectories
+   * - ds:UnauthorizeApplication
    * - firehose:DescribeDeliveryStream
    * - firehose:ListDeliveryStreams
+   * - iam:AttachRolePolicy
    * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
    * - kinesis:DescribeStream
    * - kinesis:ListStreams
    * - kms:CreateGrant
    * - kms:DescribeKey
    * - kms:ListAliases
    * - kms:RetireGrant
+   * - logs:CreateLogGroup
    * - s3:CreateBucket
    * - s3:GetBucketLocation
    * - s3:ListAllMyBuckets
    *
-   * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toCreateInstance() {
     this.to('CreateInstance');
@@ -111,6 +202,35 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to create a user hierarchy group in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUserHierarchyGroup.html
+   */
+  public toCreateUserHierarchyGroup() {
+    this.to('CreateUserHierarchyGroup');
+    return this;
+  }
+
+  /**
+   * Grants permissions to delete an Amazon Connect instance. When you remove an instance, the link to an existing AWS directory is also removed.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ds:DeleteDirectory
+   * - ds:DescribeDirectories
+   * - ds:UnauthorizeApplication
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toDeleteInstance() {
+    this.to('DeleteInstance');
+    return this;
+  }
+
+  /**
    * Grants permissions to delete a user in an Amazon Connect instance.
    *
    * Access Level: Write
@@ -122,6 +242,18 @@ export class Connect extends PolicyStatement {
    */
   public toDeleteUser() {
     this.to('DeleteUser');
+    return this;
+  }
+
+  /**
+   * Grants permissions to delete a user hierarchy group in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUserHierarchyGroup.html
+   */
+  public toDeleteUserHierarchyGroup() {
+    this.to('DeleteUserHierarchyGroup');
     return this;
   }
 
@@ -146,6 +278,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Read
    *
    * Dependent actions:
+   * - ds:DescribeDirectories
    * - firehose:DescribeDeliveryStream
    * - firehose:ListDeliveryStreams
    * - kinesis:DescribeStream
@@ -154,10 +287,40 @@ export class Connect extends PolicyStatement {
    * - kms:ListAliases
    * - s3:ListAllMyBuckets
    *
-   * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDescribeInstance() {
     this.to('DescribeInstance');
+    return this;
+  }
+
+  /**
+   * Grants permissions to view the attribute details of an existing Amazon Connect instance.
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAttributeType()
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toDescribeInstanceAttribute() {
+    this.to('DescribeInstanceAttribute');
+    return this;
+  }
+
+  /**
+   * Grants permissions to view the instance storage configuration for an existing Amazon Connect instance.
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifStorageResourceType()
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toDescribeInstanceStorageConfig() {
+    this.to('DescribeInstanceStorageConfig');
     return this;
   }
 
@@ -220,10 +383,69 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDestroyInstance() {
     this.to('DestroyInstance');
+    return this;
+  }
+
+  /**
+   * Grants permissions to disassociate approved origin for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toDisassociateApprovedOrigin() {
+    this.to('DisassociateApprovedOrigin');
+    return this;
+  }
+
+  /**
+   * Grants permissions to disassociate instance storage for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifStorageResourceType()
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toDisassociateInstanceStorageConfig() {
+    this.to('DisassociateInstanceStorageConfig');
+    return this;
+  }
+
+  /**
+   * Grants permissions to disassociate a Lambda function for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - lambda:RemovePermission
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toDisassociateLambdaFunction() {
+    this.to('DisassociateLambdaFunction');
+    return this;
+  }
+
+  /**
+   * Grants permissions to disassociate a Lex bot for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toDisassociateLexBot() {
+    this.to('DisassociateLexBot');
     return this;
   }
 
@@ -239,6 +461,18 @@ export class Connect extends PolicyStatement {
    */
   public toDisassociateRoutingProfileQueues() {
     this.to('DisassociateRoutingProfileQueues');
+    return this;
+  }
+
+  /**
+   * Grants permissions to disassociate the security key for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toDisassociateSecurityKey() {
+    this.to('DisassociateSecurityKey');
     return this;
   }
 
@@ -308,6 +542,18 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to view approved origins of an existing Amazon Connect instance.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toListApprovedOrigins() {
+    this.to('ListApprovedOrigins');
+    return this;
+  }
+
+  /**
    * Grants permissions to list contact flow resources in an Amazon Connect instance.
    *
    * Access Level: List
@@ -332,14 +578,65 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to view the attributes of an existing Amazon Connect instance.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toListInstanceAttributes() {
+    this.to('ListInstanceAttributes');
+    return this;
+  }
+
+  /**
+   * Grants permissions to view storage configurations of an existing Amazon Connect instance.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toListInstanceStorageConfigs() {
+    this.to('ListInstanceStorageConfigs');
+    return this;
+  }
+
+  /**
    * Grants permissions to view the Amazon Connect instances associated with an AWS account.
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
+   * Dependent actions:
+   * - ds:DescribeDirectories
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListInstances() {
     this.to('ListInstances');
+    return this;
+  }
+
+  /**
+   * Grants permissions to view the Lambda functions of an existing Amazon Connect instance.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toListLambdaFunctions() {
+    this.to('ListLambdaFunctions');
+    return this;
+  }
+
+  /**
+   * Grants permissions to view the Lex bots of an existing Amazon Connect instance.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toListLexBots() {
+    this.to('ListLexBots');
     return this;
   }
 
@@ -407,6 +704,18 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to view the security keys of an existing Amazon Connect instance.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toListSecurityKeys() {
+    this.to('ListSecurityKeys');
+    return this;
+  }
+
+  /**
    * Grants permissions to list security profile resources in an Amazon Connect instance.
    *
    * Access Level: List
@@ -458,7 +767,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to modify configuration settings for an existing Amazon Connect instance. The associated required actions grant permission modify the settings for the instance.
+   * Grants permissions to modify configuration settings for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
    *
    * Access Level: Write
    *
@@ -475,7 +784,7 @@ export class Connect extends PolicyStatement {
    * - s3:GetBucketLocation
    * - s3:ListAllMyBuckets
    *
-   * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toModifyInstance() {
     this.to('ModifyInstance');
@@ -642,6 +951,55 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to update the attribute for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAttributeType()
+   *
+   * Dependent actions:
+   * - ds:DescribeDirectories
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   * - logs:CreateLogGroup
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toUpdateInstanceAttribute() {
+    this.to('UpdateInstanceAttribute');
+    return this;
+  }
+
+  /**
+   * Grants permissions to update the storage configuration for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifStorageResourceType()
+   *
+   * Dependent actions:
+   * - ds:DescribeDirectories
+   * - firehose:DescribeDeliveryStream
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   * - kinesis:DescribeStream
+   * - kms:CreateGrant
+   * - kms:DescribeKey
+   * - s3:GetBucketAcl
+   * - s3:GetBucketLocation
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toUpdateInstanceStorageConfig() {
+    this.to('UpdateInstanceStorageConfig');
+    return this;
+  }
+
+  /**
    * Grants permissions to update the concurrency in a routing profile in an Amazon Connect instance.
    *
    * Access Level: Write
@@ -717,6 +1075,30 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to update a user hierarchy group name in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchyGroupName.html
+   */
+  public toUpdateUserHierarchyGroupName() {
+    this.to('UpdateUserHierarchyGroupName');
+    return this;
+  }
+
+  /**
+   * Grants permissions to update user hierarchy structure in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchyStructure.html
+   */
+  public toUpdateUserHierarchyStructure() {
+    this.to('UpdateUserHierarchyStructure');
+    return this;
+  }
+
+  /**
    * Grants permissions to update identity information for a user in an Amazon Connect instance.
    *
    * Access Level: Write
@@ -778,14 +1160,27 @@ export class Connect extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "AssociateApprovedOrigin",
+      "AssociateInstanceStorageConfig",
+      "AssociateLambdaFunction",
+      "AssociateLexBot",
       "AssociateRoutingProfileQueues",
+      "AssociateSecurityKey",
       "CreateContactFlow",
       "CreateInstance",
       "CreateRoutingProfile",
       "CreateUser",
+      "CreateUserHierarchyGroup",
+      "DeleteInstance",
       "DeleteUser",
+      "DeleteUserHierarchyGroup",
       "DestroyInstance",
+      "DisassociateApprovedOrigin",
+      "DisassociateInstanceStorageConfig",
+      "DisassociateLambdaFunction",
+      "DisassociateLexBot",
       "DisassociateRoutingProfileQueues",
+      "DisassociateSecurityKey",
       "GetFederationTokens",
       "ModifyInstance",
       "ResumeContactRecording",
@@ -798,11 +1193,15 @@ export class Connect extends PolicyStatement {
       "UpdateContactAttributes",
       "UpdateContactFlowContent",
       "UpdateContactFlowName",
+      "UpdateInstanceAttribute",
+      "UpdateInstanceStorageConfig",
       "UpdateRoutingProfileConcurrency",
       "UpdateRoutingProfileDefaultOutboundQueue",
       "UpdateRoutingProfileName",
       "UpdateRoutingProfileQueues",
       "UpdateUserHierarchy",
+      "UpdateUserHierarchyGroupName",
+      "UpdateUserHierarchyStructure",
       "UpdateUserIdentityInfo",
       "UpdateUserPhoneConfig",
       "UpdateUserRoutingProfile",
@@ -811,6 +1210,8 @@ export class Connect extends PolicyStatement {
     "Read": [
       "DescribeContactFlow",
       "DescribeInstance",
+      "DescribeInstanceAttribute",
+      "DescribeInstanceStorageConfig",
       "DescribeRoutingProfile",
       "DescribeUser",
       "DescribeUserHierarchyGroup",
@@ -823,13 +1224,19 @@ export class Connect extends PolicyStatement {
       "ListTagsForResource"
     ],
     "List": [
+      "ListApprovedOrigins",
       "ListContactFlows",
       "ListHoursOfOperations",
+      "ListInstanceAttributes",
+      "ListInstanceStorageConfigs",
       "ListInstances",
+      "ListLambdaFunctions",
+      "ListLexBots",
       "ListPhoneNumbers",
       "ListPrompts",
       "ListQueues",
       "ListRoutingProfiles",
+      "ListSecurityKeys",
       "ListSecurityProfiles",
       "ListUserHierarchyGroups",
       "ListUsers"
@@ -1055,5 +1462,39 @@ export class Connect extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters access by the attribute type of the Amazon Connect instance.
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toDescribeInstanceAttribute()
+   * - .toUpdateInstanceAttribute()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAttributeType(value: string | string[], operator?: Operator | string) {
+    return this.if(`connect:AttributeType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by restricting the storage resource type of the Amazon Connect instance storage configuration.
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toAssociateInstanceStorageConfig()
+   * - .toDescribeInstanceStorageConfig()
+   * - .toDisassociateInstanceStorageConfig()
+   * - .toUpdateInstanceStorageConfig()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifStorageResourceType(value: string | string[], operator?: Operator | string) {
+    return this.if(`connect:StorageResourceType`, value, operator || 'StringLike');
   }
 }

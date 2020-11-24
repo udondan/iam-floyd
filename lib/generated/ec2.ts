@@ -187,6 +187,18 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an ACM certificate with an IAM role to be used in an EC2 Enclave
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateEnclaveCertificateIamRole.html
+   */
+  public toAssociateEnclaveCertificateIamRole() {
+    this.to('AssociateEnclaveCertificateIamRole');
+    return this;
+  }
+
+  /**
    * Grants permission to associate an IAM instance profile with a running or stopped instance
    *
    * Access Level: Write
@@ -3367,6 +3379,18 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate an ACM certificate from a IAM role
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateEnclaveCertificateIamRole.html
+   */
+  public toDisassociateEnclaveCertificateIamRole() {
+    this.to('DisassociateEnclaveCertificateIamRole');
+    return this;
+  }
+
+  /**
    * Grants permission to disassociate an IAM instance profile from a running or stopped instance
    *
    * Access Level: Write
@@ -3567,6 +3591,18 @@ export class Ec2 extends PolicyStatement {
    */
   public toExportTransitGatewayRoutes() {
     this.to('ExportTransitGatewayRoutes');
+    return this;
+  }
+
+  /**
+   * Grants permission to get the list of roles associated with an ACM certificate
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetAssociatedEnclaveCertificateIamRoles.html
+   */
+  public toGetAssociatedEnclaveCertificateIamRoles() {
+    this.to('GetAssociatedEnclaveCertificateIamRoles');
     return this;
   }
 
@@ -5017,6 +5053,7 @@ export class Ec2 extends PolicyStatement {
       "AssociateAddress",
       "AssociateClientVpnTargetNetwork",
       "AssociateDhcpOptions",
+      "AssociateEnclaveCertificateIamRole",
       "AssociateIamInstanceProfile",
       "AssociateRouteTable",
       "AssociateSubnetCidrBlock",
@@ -5163,6 +5200,7 @@ export class Ec2 extends PolicyStatement {
       "DisableVpcClassicLinkDnsSupport",
       "DisassociateAddress",
       "DisassociateClientVpnTargetNetwork",
+      "DisassociateEnclaveCertificateIamRole",
       "DisassociateIamInstanceProfile",
       "DisassociateRouteTable",
       "DisassociateSubnetCidrBlock",
@@ -5412,6 +5450,7 @@ export class Ec2 extends PolicyStatement {
       "DescribeTags",
       "DescribeVolumesModifications",
       "DescribeVpnConnections",
+      "GetAssociatedEnclaveCertificateIamRoles",
       "GetCapacityReservationUsage",
       "GetCoipPoolUsage",
       "GetConsoleOutput",
@@ -5481,6 +5520,23 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type certificate to the statement
+   *
+   * @param certificateId - Identifier for the certificateId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:acm:${Region}:${Account}:certificate/${CertificateId}';
+    arn = arn.replace('${CertificateId}', certificateId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type client-vpn-endpoint to the statement
    *
    * https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html
@@ -5494,8 +5550,14 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifClientRootCertificateChainArn()
+   * - .ifCloudwatchLogGroupArn()
+   * - .ifCloudwatchLogStreamArn()
+   * - .ifDirectoryArn()
    * - .ifRegion()
    * - .ifResourceTag()
+   * - .ifSamlProviderArn()
+   * - .ifServerCertificateArn()
    */
   public onClientVpnEndpoint(clientVpnEndpointId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:client-vpn-endpoint/${ClientVpnEndpointId}';
@@ -6192,6 +6254,21 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type role to the statement
+   *
+   * @param roleNameWithPath - Identifier for the roleNameWithPath.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onRole(roleNameWithPath: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}';
+    arn = arn.replace('${RoleNameWithPath}', roleNameWithPath);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type route-table to the statement
    *
    * https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html
@@ -6799,6 +6876,22 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by an attribute being set on a resource
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toModifyClientVpnEndpoint()
+   *
+   * @param attributeName The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAttribute(attributeName: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`ec2:Attribute/${ attributeName }`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the authentication type for the VPN tunnel endpoints
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
@@ -6910,6 +7003,51 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by the ARN of the client root certificate chain
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to resource types:
+   * - client-vpn-endpoint
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifClientRootCertificateChainArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ec2:ClientRootCertificateChainArn`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by the ARN of the CloudWatch Logs log group
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to resource types:
+   * - client-vpn-endpoint
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifCloudwatchLogGroupArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ec2:CloudwatchLogGroupArn`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by the ARN of the CloudWatch Logs log stream
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to resource types:
+   * - client-vpn-endpoint
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifCloudwatchLogStreamArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ec2:CloudwatchLogStreamArn`, value, operator || 'ArnLike');
+  }
+
+  /**
    * Filters access by the name of a resource-creating API action
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/supported-iam-actions-tagging.html
@@ -6941,6 +7079,21 @@ export class Ec2 extends PolicyStatement {
    */
   public ifDPDTimeoutSeconds(value: number | number[], operator?: Operator | string) {
     return this.if(`ec2:DPDTimeoutSeconds`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the ARN of the directory
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to resource types:
+   * - client-vpn-endpoint
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifDirectoryArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ec2:DirectoryArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -8176,6 +8329,36 @@ export class Ec2 extends PolicyStatement {
    */
   public ifRoutingType(value: string | string[], operator?: Operator | string) {
     return this.if(`ec2:RoutingType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of the IAM SAML identity provider
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to resource types:
+   * - client-vpn-endpoint
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifSamlProviderArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ec2:SamlProviderArn`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by the ARN of the server certificate
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to resource types:
+   * - client-vpn-endpoint
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifServerCertificateArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ec2:ServerCertificateArn`, value, operator || 'ArnLike');
   }
 
   /**
