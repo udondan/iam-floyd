@@ -92,7 +92,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    * @param action Actions that will be added to the statement.
    */
   public to(action: string) {
-    if (action.indexOf(':') < 0) {
+    if (this.servicePrefix.length && action.indexOf(':') < 0) {
       action = this.servicePrefix + ':' + action;
     }
 
