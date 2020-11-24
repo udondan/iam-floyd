@@ -26,7 +26,7 @@ export class Comprehendmedical extends PolicyStatement {
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_hera_DetectEntities.html
    */
   public toDetectEntities() {
-    this.to('DetectEntities');
+    this.to('comprehendmedical:DetectEntities');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Comprehendmedical extends PolicyStatement {
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_hera_DetectPHI.html
    */
   public toDetectPHI() {
-    this.to('DetectPHI');
+    this.to('comprehendmedical:DetectPHI');
     return this;
   }
 

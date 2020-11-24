@@ -30,7 +30,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toCreateQuote() {
-    this.to('CreateQuote');
+    this.to('elemental-appliances-software:CreateQuote');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toGetQuote() {
-    this.to('GetQuote');
+    this.to('elemental-appliances-software:GetQuote');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toListQuotes() {
-    this.to('ListQuotes');
+    this.to('elemental-appliances-software:ListQuotes');
     return this;
   }
 
@@ -66,7 +66,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('elemental-appliances-software:ListTagsForResource');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('elemental-appliances-software:TagResource');
     return this;
   }
 
@@ -97,7 +97,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('elemental-appliances-software:UntagResource');
     return this;
   }
 
@@ -109,7 +109,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toUpdateQuote() {
-    this.to('UpdateQuote');
+    this.to('elemental-appliances-software:UpdateQuote');
     return this;
   }
 

@@ -26,7 +26,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AddCustomAttributes.html
    */
   public toAddCustomAttributes() {
-    this.to('AddCustomAttributes');
+    this.to('cognito-idp:AddCustomAttributes');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminAddUserToGroup.html
    */
   public toAdminAddUserToGroup() {
-    this.to('AdminAddUserToGroup');
+    this.to('cognito-idp:AdminAddUserToGroup');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminConfirmSignUp.html
    */
   public toAdminConfirmSignUp() {
-    this.to('AdminConfirmSignUp');
+    this.to('cognito-idp:AdminConfirmSignUp');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminCreateUser.html
    */
   public toAdminCreateUser() {
-    this.to('AdminCreateUser');
+    this.to('cognito-idp:AdminCreateUser');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUser.html
    */
   public toAdminDeleteUser() {
-    this.to('AdminDeleteUser');
+    this.to('cognito-idp:AdminDeleteUser');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUserAttributes.html
    */
   public toAdminDeleteUserAttributes() {
-    this.to('AdminDeleteUserAttributes');
+    this.to('cognito-idp:AdminDeleteUserAttributes');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableProviderForUser.html
    */
   public toAdminDisableProviderForUser() {
-    this.to('AdminDisableProviderForUser');
+    this.to('cognito-idp:AdminDisableProviderForUser');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableUser.html
    */
   public toAdminDisableUser() {
-    this.to('AdminDisableUser');
+    this.to('cognito-idp:AdminDisableUser');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminEnableUser.html
    */
   public toAdminEnableUser() {
-    this.to('AdminEnableUser');
+    this.to('cognito-idp:AdminEnableUser');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminForgetDevice.html
    */
   public toAdminForgetDevice() {
-    this.to('AdminForgetDevice');
+    this.to('cognito-idp:AdminForgetDevice');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetDevice.html
    */
   public toAdminGetDevice() {
-    this.to('AdminGetDevice');
+    this.to('cognito-idp:AdminGetDevice');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetUser.html
    */
   public toAdminGetUser() {
-    this.to('AdminGetUser');
+    this.to('cognito-idp:AdminGetUser');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html
    */
   public toAdminInitiateAuth() {
-    this.to('AdminInitiateAuth');
+    this.to('cognito-idp:AdminInitiateAuth');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html
    */
   public toAdminLinkProviderForUser() {
-    this.to('AdminLinkProviderForUser');
+    this.to('cognito-idp:AdminLinkProviderForUser');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListDevices.html
    */
   public toAdminListDevices() {
-    this.to('AdminListDevices');
+    this.to('cognito-idp:AdminListDevices');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html
    */
   public toAdminListGroupsForUser() {
-    this.to('AdminListGroupsForUser');
+    this.to('cognito-idp:AdminListGroupsForUser');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html
    */
   public toAdminListUserAuthEvents() {
-    this.to('AdminListUserAuthEvents');
+    this.to('cognito-idp:AdminListUserAuthEvents');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRemoveUserFromGroup.html
    */
   public toAdminRemoveUserFromGroup() {
-    this.to('AdminRemoveUserFromGroup');
+    this.to('cognito-idp:AdminRemoveUserFromGroup');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminResetUserPassword.html
    */
   public toAdminResetUserPassword() {
-    this.to('AdminResetUserPassword');
+    this.to('cognito-idp:AdminResetUserPassword');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html
    */
   public toAdminRespondToAuthChallenge() {
-    this.to('AdminRespondToAuthChallenge');
+    this.to('cognito-idp:AdminRespondToAuthChallenge');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html
    */
   public toAdminSetUserMFAPreference() {
-    this.to('AdminSetUserMFAPreference');
+    this.to('cognito-idp:AdminSetUserMFAPreference');
     return this;
   }
 
@@ -278,7 +278,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserPassword.html
    */
   public toAdminSetUserPassword() {
-    this.to('AdminSetUserPassword');
+    this.to('cognito-idp:AdminSetUserPassword');
     return this;
   }
 
@@ -290,7 +290,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserSettings.html
    */
   public toAdminSetUserSettings() {
-    this.to('AdminSetUserSettings');
+    this.to('cognito-idp:AdminSetUserSettings');
     return this;
   }
 
@@ -302,7 +302,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateAuthEventFeedback.html
    */
   public toAdminUpdateAuthEventFeedback() {
-    this.to('AdminUpdateAuthEventFeedback');
+    this.to('cognito-idp:AdminUpdateAuthEventFeedback');
     return this;
   }
 
@@ -314,7 +314,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateDeviceStatus.html
    */
   public toAdminUpdateDeviceStatus() {
-    this.to('AdminUpdateDeviceStatus');
+    this.to('cognito-idp:AdminUpdateDeviceStatus');
     return this;
   }
 
@@ -326,7 +326,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html
    */
   public toAdminUpdateUserAttributes() {
-    this.to('AdminUpdateUserAttributes');
+    this.to('cognito-idp:AdminUpdateUserAttributes');
     return this;
   }
 
@@ -338,7 +338,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUserGlobalSignOut.html
    */
   public toAdminUserGlobalSignOut() {
-    this.to('AdminUserGlobalSignOut');
+    this.to('cognito-idp:AdminUserGlobalSignOut');
     return this;
   }
 
@@ -350,7 +350,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html
    */
   public toAssociateSoftwareToken() {
-    this.to('AssociateSoftwareToken');
+    this.to('cognito-idp:AssociateSoftwareToken');
     return this;
   }
 
@@ -362,7 +362,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ChangePassword.html
    */
   public toChangePassword() {
-    this.to('ChangePassword');
+    this.to('cognito-idp:ChangePassword');
     return this;
   }
 
@@ -374,7 +374,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html
    */
   public toConfirmDevice() {
-    this.to('ConfirmDevice');
+    this.to('cognito-idp:ConfirmDevice');
     return this;
   }
 
@@ -386,7 +386,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html
    */
   public toConfirmForgotPassword() {
-    this.to('ConfirmForgotPassword');
+    this.to('cognito-idp:ConfirmForgotPassword');
     return this;
   }
 
@@ -398,7 +398,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmSignUp.html
    */
   public toConfirmSignUp() {
-    this.to('ConfirmSignUp');
+    this.to('cognito-idp:ConfirmSignUp');
     return this;
   }
 
@@ -410,7 +410,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html
    */
   public toCreateGroup() {
-    this.to('CreateGroup');
+    this.to('cognito-idp:CreateGroup');
     return this;
   }
 
@@ -422,7 +422,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateIdentityProvider.html
    */
   public toCreateIdentityProvider() {
-    this.to('CreateIdentityProvider');
+    this.to('cognito-idp:CreateIdentityProvider');
     return this;
   }
 
@@ -434,7 +434,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateResourceServer.html
    */
   public toCreateResourceServer() {
-    this.to('CreateResourceServer');
+    this.to('cognito-idp:CreateResourceServer');
     return this;
   }
 
@@ -446,7 +446,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserImportJob.html
    */
   public toCreateUserImportJob() {
-    this.to('CreateUserImportJob');
+    this.to('cognito-idp:CreateUserImportJob');
     return this;
   }
 
@@ -463,7 +463,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html
    */
   public toCreateUserPool() {
-    this.to('CreateUserPool');
+    this.to('cognito-idp:CreateUserPool');
     return this;
   }
 
@@ -475,7 +475,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolClient.html
    */
   public toCreateUserPoolClient() {
-    this.to('CreateUserPoolClient');
+    this.to('cognito-idp:CreateUserPoolClient');
     return this;
   }
 
@@ -487,7 +487,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolDomain.html
    */
   public toCreateUserPoolDomain() {
-    this.to('CreateUserPoolDomain');
+    this.to('cognito-idp:CreateUserPoolDomain');
     return this;
   }
 
@@ -499,7 +499,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteGroup.html
    */
   public toDeleteGroup() {
-    this.to('DeleteGroup');
+    this.to('cognito-idp:DeleteGroup');
     return this;
   }
 
@@ -511,7 +511,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteIdentityProvider.html
    */
   public toDeleteIdentityProvider() {
-    this.to('DeleteIdentityProvider');
+    this.to('cognito-idp:DeleteIdentityProvider');
     return this;
   }
 
@@ -523,7 +523,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteResourceServer.html
    */
   public toDeleteResourceServer() {
-    this.to('DeleteResourceServer');
+    this.to('cognito-idp:DeleteResourceServer');
     return this;
   }
 
@@ -535,7 +535,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUser.html
    */
   public toDeleteUser() {
-    this.to('DeleteUser');
+    this.to('cognito-idp:DeleteUser');
     return this;
   }
 
@@ -547,7 +547,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserAttributes.html
    */
   public toDeleteUserAttributes() {
-    this.to('DeleteUserAttributes');
+    this.to('cognito-idp:DeleteUserAttributes');
     return this;
   }
 
@@ -559,7 +559,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPool.html
    */
   public toDeleteUserPool() {
-    this.to('DeleteUserPool');
+    this.to('cognito-idp:DeleteUserPool');
     return this;
   }
 
@@ -571,7 +571,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolClient.html
    */
   public toDeleteUserPoolClient() {
-    this.to('DeleteUserPoolClient');
+    this.to('cognito-idp:DeleteUserPoolClient');
     return this;
   }
 
@@ -583,7 +583,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolDomain.html
    */
   public toDeleteUserPoolDomain() {
-    this.to('DeleteUserPoolDomain');
+    this.to('cognito-idp:DeleteUserPoolDomain');
     return this;
   }
 
@@ -595,7 +595,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeIdentityProvider.html
    */
   public toDescribeIdentityProvider() {
-    this.to('DescribeIdentityProvider');
+    this.to('cognito-idp:DescribeIdentityProvider');
     return this;
   }
 
@@ -607,7 +607,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeResourceServer.html
    */
   public toDescribeResourceServer() {
-    this.to('DescribeResourceServer');
+    this.to('cognito-idp:DescribeResourceServer');
     return this;
   }
 
@@ -619,7 +619,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html
    */
   public toDescribeRiskConfiguration() {
-    this.to('DescribeRiskConfiguration');
+    this.to('cognito-idp:DescribeRiskConfiguration');
     return this;
   }
 
@@ -631,7 +631,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserImportJob.html
    */
   public toDescribeUserImportJob() {
-    this.to('DescribeUserImportJob');
+    this.to('cognito-idp:DescribeUserImportJob');
     return this;
   }
 
@@ -643,7 +643,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html
    */
   public toDescribeUserPool() {
-    this.to('DescribeUserPool');
+    this.to('cognito-idp:DescribeUserPool');
     return this;
   }
 
@@ -655,7 +655,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html
    */
   public toDescribeUserPoolClient() {
-    this.to('DescribeUserPoolClient');
+    this.to('cognito-idp:DescribeUserPoolClient');
     return this;
   }
 
@@ -667,7 +667,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolDomain.html
    */
   public toDescribeUserPoolDomain() {
-    this.to('DescribeUserPoolDomain');
+    this.to('cognito-idp:DescribeUserPoolDomain');
     return this;
   }
 
@@ -679,7 +679,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgetDevice.html
    */
   public toForgetDevice() {
-    this.to('ForgetDevice');
+    this.to('cognito-idp:ForgetDevice');
     return this;
   }
 
@@ -691,7 +691,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html
    */
   public toForgotPassword() {
-    this.to('ForgotPassword');
+    this.to('cognito-idp:ForgotPassword');
     return this;
   }
 
@@ -703,7 +703,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetCSVHeader.html
    */
   public toGetCSVHeader() {
-    this.to('GetCSVHeader');
+    this.to('cognito-idp:GetCSVHeader');
     return this;
   }
 
@@ -715,7 +715,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetDevice.html
    */
   public toGetDevice() {
-    this.to('GetDevice');
+    this.to('cognito-idp:GetDevice');
     return this;
   }
 
@@ -727,7 +727,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetGroup.html
    */
   public toGetGroup() {
-    this.to('GetGroup');
+    this.to('cognito-idp:GetGroup');
     return this;
   }
 
@@ -739,7 +739,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetIdentityProviderByIdentifier.html
    */
   public toGetIdentityProviderByIdentifier() {
-    this.to('GetIdentityProviderByIdentifier');
+    this.to('cognito-idp:GetIdentityProviderByIdentifier');
     return this;
   }
 
@@ -751,7 +751,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetSigningCertificate.html
    */
   public toGetSigningCertificate() {
-    this.to('GetSigningCertificate');
+    this.to('cognito-idp:GetSigningCertificate');
     return this;
   }
 
@@ -763,7 +763,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUICustomization.html
    */
   public toGetUICustomization() {
-    this.to('GetUICustomization');
+    this.to('cognito-idp:GetUICustomization');
     return this;
   }
 
@@ -775,7 +775,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html
    */
   public toGetUser() {
-    this.to('GetUser');
+    this.to('cognito-idp:GetUser');
     return this;
   }
 
@@ -787,7 +787,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserAttributeVerificationCode.html
    */
   public toGetUserAttributeVerificationCode() {
-    this.to('GetUserAttributeVerificationCode');
+    this.to('cognito-idp:GetUserAttributeVerificationCode');
     return this;
   }
 
@@ -799,7 +799,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html
    */
   public toGetUserPoolMfaConfig() {
-    this.to('GetUserPoolMfaConfig');
+    this.to('cognito-idp:GetUserPoolMfaConfig');
     return this;
   }
 
@@ -811,7 +811,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GlobalSignOut.html
    */
   public toGlobalSignOut() {
-    this.to('GlobalSignOut');
+    this.to('cognito-idp:GlobalSignOut');
     return this;
   }
 
@@ -823,7 +823,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html
    */
   public toInitiateAuth() {
-    this.to('InitiateAuth');
+    this.to('cognito-idp:InitiateAuth');
     return this;
   }
 
@@ -835,7 +835,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListDevices.html
    */
   public toListDevices() {
-    this.to('ListDevices');
+    this.to('cognito-idp:ListDevices');
     return this;
   }
 
@@ -847,7 +847,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListGroups.html
    */
   public toListGroups() {
-    this.to('ListGroups');
+    this.to('cognito-idp:ListGroups');
     return this;
   }
 
@@ -859,7 +859,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListIdentityProviders.html
    */
   public toListIdentityProviders() {
-    this.to('ListIdentityProviders');
+    this.to('cognito-idp:ListIdentityProviders');
     return this;
   }
 
@@ -871,7 +871,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListResourceServers.html
    */
   public toListResourceServers() {
-    this.to('ListResourceServers');
+    this.to('cognito-idp:ListResourceServers');
     return this;
   }
 
@@ -883,7 +883,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('cognito-idp:ListTagsForResource');
     return this;
   }
 
@@ -895,7 +895,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserImportJobs.html
    */
   public toListUserImportJobs() {
-    this.to('ListUserImportJobs');
+    this.to('cognito-idp:ListUserImportJobs');
     return this;
   }
 
@@ -907,7 +907,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolClients.html
    */
   public toListUserPoolClients() {
-    this.to('ListUserPoolClients');
+    this.to('cognito-idp:ListUserPoolClients');
     return this;
   }
 
@@ -919,7 +919,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPools.html
    */
   public toListUserPools() {
-    this.to('ListUserPools');
+    this.to('cognito-idp:ListUserPools');
     return this;
   }
 
@@ -931,7 +931,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsers.html
    */
   public toListUsers() {
-    this.to('ListUsers');
+    this.to('cognito-idp:ListUsers');
     return this;
   }
 
@@ -943,7 +943,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsersInGroup.html
    */
   public toListUsersInGroup() {
-    this.to('ListUsersInGroup');
+    this.to('cognito-idp:ListUsersInGroup');
     return this;
   }
 
@@ -955,7 +955,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ResendConfirmationCode.html
    */
   public toResendConfirmationCode() {
-    this.to('ResendConfirmationCode');
+    this.to('cognito-idp:ResendConfirmationCode');
     return this;
   }
 
@@ -967,7 +967,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html
    */
   public toRespondToAuthChallenge() {
-    this.to('RespondToAuthChallenge');
+    this.to('cognito-idp:RespondToAuthChallenge');
     return this;
   }
 
@@ -979,7 +979,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html
    */
   public toSetRiskConfiguration() {
-    this.to('SetRiskConfiguration');
+    this.to('cognito-idp:SetRiskConfiguration');
     return this;
   }
 
@@ -991,7 +991,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUICustomization.html
    */
   public toSetUICustomization() {
-    this.to('SetUICustomization');
+    this.to('cognito-idp:SetUICustomization');
     return this;
   }
 
@@ -1003,7 +1003,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html
    */
   public toSetUserMFAPreference() {
-    this.to('SetUserMFAPreference');
+    this.to('cognito-idp:SetUserMFAPreference');
     return this;
   }
 
@@ -1015,7 +1015,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html
    */
   public toSetUserPoolMfaConfig() {
-    this.to('SetUserPoolMfaConfig');
+    this.to('cognito-idp:SetUserPoolMfaConfig');
     return this;
   }
 
@@ -1027,7 +1027,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserSettings.html
    */
   public toSetUserSettings() {
-    this.to('SetUserSettings');
+    this.to('cognito-idp:SetUserSettings');
     return this;
   }
 
@@ -1039,7 +1039,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html
    */
   public toSignUp() {
-    this.to('SignUp');
+    this.to('cognito-idp:SignUp');
     return this;
   }
 
@@ -1051,7 +1051,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StartUserImportJob.html
    */
   public toStartUserImportJob() {
-    this.to('StartUserImportJob');
+    this.to('cognito-idp:StartUserImportJob');
     return this;
   }
 
@@ -1063,7 +1063,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StopUserImportJob.html
    */
   public toStopUserImportJob() {
-    this.to('StopUserImportJob');
+    this.to('cognito-idp:StopUserImportJob');
     return this;
   }
 
@@ -1079,7 +1079,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('cognito-idp:TagResource');
     return this;
   }
 
@@ -1094,7 +1094,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('cognito-idp:UntagResource');
     return this;
   }
 
@@ -1106,7 +1106,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateAuthEventFeedback.html
    */
   public toUpdateAuthEventFeedback() {
-    this.to('UpdateAuthEventFeedback');
+    this.to('cognito-idp:UpdateAuthEventFeedback');
     return this;
   }
 
@@ -1118,7 +1118,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html
    */
   public toUpdateDeviceStatus() {
-    this.to('UpdateDeviceStatus');
+    this.to('cognito-idp:UpdateDeviceStatus');
     return this;
   }
 
@@ -1130,7 +1130,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateGroup.html
    */
   public toUpdateGroup() {
-    this.to('UpdateGroup');
+    this.to('cognito-idp:UpdateGroup');
     return this;
   }
 
@@ -1142,7 +1142,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateIdentityProvider.html
    */
   public toUpdateIdentityProvider() {
-    this.to('UpdateIdentityProvider');
+    this.to('cognito-idp:UpdateIdentityProvider');
     return this;
   }
 
@@ -1154,7 +1154,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateResourceServer.html
    */
   public toUpdateResourceServer() {
-    this.to('UpdateResourceServer');
+    this.to('cognito-idp:UpdateResourceServer');
     return this;
   }
 
@@ -1166,7 +1166,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html
    */
   public toUpdateUserAttributes() {
-    this.to('UpdateUserAttributes');
+    this.to('cognito-idp:UpdateUserAttributes');
     return this;
   }
 
@@ -1182,7 +1182,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html
    */
   public toUpdateUserPool() {
-    this.to('UpdateUserPool');
+    this.to('cognito-idp:UpdateUserPool');
     return this;
   }
 
@@ -1194,7 +1194,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolClient.html
    */
   public toUpdateUserPoolClient() {
-    this.to('UpdateUserPoolClient');
+    this.to('cognito-idp:UpdateUserPoolClient');
     return this;
   }
 
@@ -1206,7 +1206,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolDomain.html
    */
   public toUpdateUserPoolDomain() {
-    this.to('UpdateUserPoolDomain');
+    this.to('cognito-idp:UpdateUserPoolDomain');
     return this;
   }
 
@@ -1218,7 +1218,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifySoftwareToken.html
    */
   public toVerifySoftwareToken() {
-    this.to('VerifySoftwareToken');
+    this.to('cognito-idp:VerifySoftwareToken');
     return this;
   }
 
@@ -1230,7 +1230,7 @@ export class CognitoIdp extends PolicyStatement {
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html
    */
   public toVerifyUserAttribute() {
-    this.to('VerifyUserAttribute');
+    this.to('cognito-idp:VerifyUserAttribute');
     return this;
   }
 

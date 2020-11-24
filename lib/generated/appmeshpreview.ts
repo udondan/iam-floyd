@@ -26,7 +26,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateGatewayRoute.html
    */
   public toCreateGatewayRoute() {
-    this.to('CreateGatewayRoute');
+    this.to('appmesh-preview:CreateGatewayRoute');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateMesh.html
    */
   public toCreateMesh() {
-    this.to('CreateMesh');
+    this.to('appmesh-preview:CreateMesh');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateRoute.html
    */
   public toCreateRoute() {
-    this.to('CreateRoute');
+    this.to('appmesh-preview:CreateRoute');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualGateway.html
    */
   public toCreateVirtualGateway() {
-    this.to('CreateVirtualGateway');
+    this.to('appmesh-preview:CreateVirtualGateway');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualNode.html
    */
   public toCreateVirtualNode() {
-    this.to('CreateVirtualNode');
+    this.to('appmesh-preview:CreateVirtualNode');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualRouter.html
    */
   public toCreateVirtualRouter() {
-    this.to('CreateVirtualRouter');
+    this.to('appmesh-preview:CreateVirtualRouter');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualService.html
    */
   public toCreateVirtualService() {
-    this.to('CreateVirtualService');
+    this.to('appmesh-preview:CreateVirtualService');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteGatewayRoute.html
    */
   public toDeleteGatewayRoute() {
-    this.to('DeleteGatewayRoute');
+    this.to('appmesh-preview:DeleteGatewayRoute');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteMesh.html
    */
   public toDeleteMesh() {
-    this.to('DeleteMesh');
+    this.to('appmesh-preview:DeleteMesh');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteRoute.html
    */
   public toDeleteRoute() {
-    this.to('DeleteRoute');
+    this.to('appmesh-preview:DeleteRoute');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualGateway.html
    */
   public toDeleteVirtualGateway() {
-    this.to('DeleteVirtualGateway');
+    this.to('appmesh-preview:DeleteVirtualGateway');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualNode.html
    */
   public toDeleteVirtualNode() {
-    this.to('DeleteVirtualNode');
+    this.to('appmesh-preview:DeleteVirtualNode');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualRouter.html
    */
   public toDeleteVirtualRouter() {
-    this.to('DeleteVirtualRouter');
+    this.to('appmesh-preview:DeleteVirtualRouter');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualService.html
    */
   public toDeleteVirtualService() {
-    this.to('DeleteVirtualService');
+    this.to('appmesh-preview:DeleteVirtualService');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeGatewayRoute.html
    */
   public toDescribeGatewayRoute() {
-    this.to('DescribeGatewayRoute');
+    this.to('appmesh-preview:DescribeGatewayRoute');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeMesh.html
    */
   public toDescribeMesh() {
-    this.to('DescribeMesh');
+    this.to('appmesh-preview:DescribeMesh');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeRoute.html
    */
   public toDescribeRoute() {
-    this.to('DescribeRoute');
+    this.to('appmesh-preview:DescribeRoute');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualGateway.html
    */
   public toDescribeVirtualGateway() {
-    this.to('DescribeVirtualGateway');
+    this.to('appmesh-preview:DescribeVirtualGateway');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualNode.html
    */
   public toDescribeVirtualNode() {
-    this.to('DescribeVirtualNode');
+    this.to('appmesh-preview:DescribeVirtualNode');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualRouter.html
    */
   public toDescribeVirtualRouter() {
-    this.to('DescribeVirtualRouter');
+    this.to('appmesh-preview:DescribeVirtualRouter');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualService.html
    */
   public toDescribeVirtualService() {
-    this.to('DescribeVirtualService');
+    this.to('appmesh-preview:DescribeVirtualService');
     return this;
   }
 
@@ -278,7 +278,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListGatewayRoutes.html
    */
   public toListGatewayRoutes() {
-    this.to('ListGatewayRoutes');
+    this.to('appmesh-preview:ListGatewayRoutes');
     return this;
   }
 
@@ -290,7 +290,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListMeshes.html
    */
   public toListMeshes() {
-    this.to('ListMeshes');
+    this.to('appmesh-preview:ListMeshes');
     return this;
   }
 
@@ -302,7 +302,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListRoutes.html
    */
   public toListRoutes() {
-    this.to('ListRoutes');
+    this.to('appmesh-preview:ListRoutes');
     return this;
   }
 
@@ -314,7 +314,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualGateways.html
    */
   public toListVirtualGateways() {
-    this.to('ListVirtualGateways');
+    this.to('appmesh-preview:ListVirtualGateways');
     return this;
   }
 
@@ -326,7 +326,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualNodes.html
    */
   public toListVirtualNodes() {
-    this.to('ListVirtualNodes');
+    this.to('appmesh-preview:ListVirtualNodes');
     return this;
   }
 
@@ -338,7 +338,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualRouters.html
    */
   public toListVirtualRouters() {
-    this.to('ListVirtualRouters');
+    this.to('appmesh-preview:ListVirtualRouters');
     return this;
   }
 
@@ -350,7 +350,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualServices.html
    */
   public toListVirtualServices() {
-    this.to('ListVirtualServices');
+    this.to('appmesh-preview:ListVirtualServices');
     return this;
   }
 
@@ -362,7 +362,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html
    */
   public toStreamAggregatedResources() {
-    this.to('StreamAggregatedResources');
+    this.to('appmesh-preview:StreamAggregatedResources');
     return this;
   }
 
@@ -374,7 +374,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateGatewayRoute.html
    */
   public toUpdateGatewayRoute() {
-    this.to('UpdateGatewayRoute');
+    this.to('appmesh-preview:UpdateGatewayRoute');
     return this;
   }
 
@@ -386,7 +386,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateMesh.html
    */
   public toUpdateMesh() {
-    this.to('UpdateMesh');
+    this.to('appmesh-preview:UpdateMesh');
     return this;
   }
 
@@ -398,7 +398,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateRoute.html
    */
   public toUpdateRoute() {
-    this.to('UpdateRoute');
+    this.to('appmesh-preview:UpdateRoute');
     return this;
   }
 
@@ -410,7 +410,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualGateway.html
    */
   public toUpdateVirtualGateway() {
-    this.to('UpdateVirtualGateway');
+    this.to('appmesh-preview:UpdateVirtualGateway');
     return this;
   }
 
@@ -422,7 +422,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualNode.html
    */
   public toUpdateVirtualNode() {
-    this.to('UpdateVirtualNode');
+    this.to('appmesh-preview:UpdateVirtualNode');
     return this;
   }
 
@@ -434,7 +434,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualRouter.html
    */
   public toUpdateVirtualRouter() {
-    this.to('UpdateVirtualRouter');
+    this.to('appmesh-preview:UpdateVirtualRouter');
     return this;
   }
 
@@ -446,7 +446,7 @@ export class AppmeshPreview extends PolicyStatement {
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualService.html
    */
   public toUpdateVirtualService() {
-    this.to('UpdateVirtualService');
+    this.to('appmesh-preview:UpdateVirtualService');
     return this;
   }
 

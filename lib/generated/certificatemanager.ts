@@ -30,7 +30,7 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_AddTagsToCertificate.html
    */
   public toAddTagsToCertificate() {
-    this.to('AddTagsToCertificate');
+    this.to('acm:AddTagsToCertificate');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_DeleteCertificate.html
    */
   public toDeleteCertificate() {
-    this.to('DeleteCertificate');
+    this.to('acm:DeleteCertificate');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html
    */
   public toDescribeCertificate() {
-    this.to('DescribeCertificate');
+    this.to('acm:DescribeCertificate');
     return this;
   }
 
@@ -66,7 +66,7 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ExportCertificate.html
    */
   public toExportCertificate() {
-    this.to('ExportCertificate');
+    this.to('acm:ExportCertificate');
     return this;
   }
 
@@ -78,7 +78,7 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_GetCertificate.html
    */
   public toGetCertificate() {
-    this.to('GetCertificate');
+    this.to('acm:GetCertificate');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ImportCertificate.html
    */
   public toImportCertificate() {
-    this.to('ImportCertificate');
+    this.to('acm:ImportCertificate');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ListCertificates.html
    */
   public toListCertificates() {
-    this.to('ListCertificates');
+    this.to('acm:ListCertificates');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ListTagsForCertificate.html
    */
   public toListTagsForCertificate() {
-    this.to('ListTagsForCertificate');
+    this.to('acm:ListTagsForCertificate');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_RemoveTagsFromCertificate.html
    */
   public toRemoveTagsFromCertificate() {
-    this.to('RemoveTagsFromCertificate');
+    this.to('acm:RemoveTagsFromCertificate');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_RenewCertificate.html
    */
   public toRenewCertificate() {
-    this.to('RenewCertificate');
+    this.to('acm:RenewCertificate');
     return this;
   }
 
@@ -162,7 +162,7 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html
    */
   public toRequestCertificate() {
-    this.to('RequestCertificate');
+    this.to('acm:RequestCertificate');
     return this;
   }
 
@@ -174,7 +174,7 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ResendValidationEmail.html
    */
   public toResendValidationEmail() {
-    this.to('ResendValidationEmail');
+    this.to('acm:ResendValidationEmail');
     return this;
   }
 
@@ -186,7 +186,7 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_UpdateCertificateOptions.html
    */
   public toUpdateCertificateOptions() {
-    this.to('UpdateCertificateOptions');
+    this.to('acm:UpdateCertificateOptions');
     return this;
   }
 

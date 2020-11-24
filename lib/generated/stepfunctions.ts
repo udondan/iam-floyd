@@ -30,7 +30,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html
    */
   public toCreateActivity() {
-    this.to('CreateActivity');
+    this.to('states:CreateActivity');
     return this;
   }
 
@@ -46,7 +46,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateStateMachine.html
    */
   public toCreateStateMachine() {
-    this.to('CreateStateMachine');
+    this.to('states:CreateStateMachine');
     return this;
   }
 
@@ -58,7 +58,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DeleteActivity.html
    */
   public toDeleteActivity() {
-    this.to('DeleteActivity');
+    this.to('states:DeleteActivity');
     return this;
   }
 
@@ -70,7 +70,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DeleteStateMachine.html
    */
   public toDeleteStateMachine() {
-    this.to('DeleteStateMachine');
+    this.to('states:DeleteStateMachine');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeActivity.html
    */
   public toDescribeActivity() {
-    this.to('DescribeActivity');
+    this.to('states:DescribeActivity');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeExecution.html
    */
   public toDescribeExecution() {
-    this.to('DescribeExecution');
+    this.to('states:DescribeExecution');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachine.html
    */
   public toDescribeStateMachine() {
-    this.to('DescribeStateMachine');
+    this.to('states:DescribeStateMachine');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachineForExecution.html
    */
   public toDescribeStateMachineForExecution() {
-    this.to('DescribeStateMachineForExecution');
+    this.to('states:DescribeStateMachineForExecution');
     return this;
   }
 
@@ -130,7 +130,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_GetActivityTask.html
    */
   public toGetActivityTask() {
-    this.to('GetActivityTask');
+    this.to('states:GetActivityTask');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_GetExecutionHistory.html
    */
   public toGetExecutionHistory() {
-    this.to('GetExecutionHistory');
+    this.to('states:GetExecutionHistory');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListActivities.html
    */
   public toListActivities() {
-    this.to('ListActivities');
+    this.to('states:ListActivities');
     return this;
   }
 
@@ -166,7 +166,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListExecutions.html
    */
   public toListExecutions() {
-    this.to('ListExecutions');
+    this.to('states:ListExecutions');
     return this;
   }
 
@@ -178,7 +178,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListStateMachines.html
    */
   public toListStateMachines() {
-    this.to('ListStateMachines');
+    this.to('states:ListStateMachines');
     return this;
   }
 
@@ -190,7 +190,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('states:ListTagsForResource');
     return this;
   }
 
@@ -202,7 +202,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskFailure.html
    */
   public toSendTaskFailure() {
-    this.to('SendTaskFailure');
+    this.to('states:SendTaskFailure');
     return this;
   }
 
@@ -214,7 +214,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskHeartbeat.html
    */
   public toSendTaskHeartbeat() {
-    this.to('SendTaskHeartbeat');
+    this.to('states:SendTaskHeartbeat');
     return this;
   }
 
@@ -226,7 +226,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskSuccess.html
    */
   public toSendTaskSuccess() {
-    this.to('SendTaskSuccess');
+    this.to('states:SendTaskSuccess');
     return this;
   }
 
@@ -238,7 +238,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html
    */
   public toStartExecution() {
-    this.to('StartExecution');
+    this.to('states:StartExecution');
     return this;
   }
 
@@ -250,7 +250,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_StopExecution.html
    */
   public toStopExecution() {
-    this.to('StopExecution');
+    this.to('states:StopExecution');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('states:TagResource');
     return this;
   }
 
@@ -281,7 +281,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('states:UntagResource');
     return this;
   }
 
@@ -297,7 +297,7 @@ export class States extends PolicyStatement {
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_UpdateStateMachine.html
    */
   public toUpdateStateMachine() {
-    this.to('UpdateStateMachine');
+    this.to('states:UpdateStateMachine');
     return this;
   }
 

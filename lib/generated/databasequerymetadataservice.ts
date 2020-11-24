@@ -26,7 +26,7 @@ export class Dbqms extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#CreateFavoriteQuery
    */
   public toCreateFavoriteQuery() {
-    this.to('CreateFavoriteQuery');
+    this.to('dbqms:CreateFavoriteQuery');
     return this;
   }
 
@@ -36,7 +36,7 @@ export class Dbqms extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateQueryHistory() {
-    this.to('CreateQueryHistory');
+    this.to('dbqms:CreateQueryHistory');
     return this;
   }
 
@@ -48,7 +48,7 @@ export class Dbqms extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#DeleteFavoriteQueries
    */
   public toDeleteFavoriteQueries() {
-    this.to('DeleteFavoriteQueries');
+    this.to('dbqms:DeleteFavoriteQueries');
     return this;
   }
 
@@ -60,7 +60,7 @@ export class Dbqms extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#DeleteQueryHistory
    */
   public toDeleteQueryHistory() {
-    this.to('DeleteQueryHistory');
+    this.to('dbqms:DeleteQueryHistory');
     return this;
   }
 
@@ -72,7 +72,7 @@ export class Dbqms extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#DescribeFavoriteQueries
    */
   public toDescribeFavoriteQueries() {
-    this.to('DescribeFavoriteQueries');
+    this.to('dbqms:DescribeFavoriteQueries');
     return this;
   }
 
@@ -84,7 +84,7 @@ export class Dbqms extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#DescribeQueryHistory
    */
   public toDescribeQueryHistory() {
-    this.to('DescribeQueryHistory');
+    this.to('dbqms:DescribeQueryHistory');
     return this;
   }
 
@@ -96,7 +96,7 @@ export class Dbqms extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#GetQueryString
    */
   public toGetQueryString() {
-    this.to('GetQueryString');
+    this.to('dbqms:GetQueryString');
     return this;
   }
 
@@ -108,7 +108,7 @@ export class Dbqms extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#UpdateFavoriteQuery
    */
   public toUpdateFavoriteQuery() {
-    this.to('UpdateFavoriteQuery');
+    this.to('dbqms:UpdateFavoriteQuery');
     return this;
   }
 
@@ -120,7 +120,7 @@ export class Dbqms extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#UpdateQueryHistory
    */
   public toUpdateQueryHistory() {
-    this.to('UpdateQueryHistory');
+    this.to('dbqms:UpdateQueryHistory');
     return this;
   }
 

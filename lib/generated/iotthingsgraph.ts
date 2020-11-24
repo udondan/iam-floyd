@@ -30,7 +30,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_AssociateEntityToThing.html
    */
   public toAssociateEntityToThing() {
-    this.to('AssociateEntityToThing');
+    this.to('iotthingsgraph:AssociateEntityToThing');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_CreateFlowTemplate.html
    */
   public toCreateFlowTemplate() {
-    this.to('CreateFlowTemplate');
+    this.to('iotthingsgraph:CreateFlowTemplate');
     return this;
   }
 
@@ -58,7 +58,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_CreateSystemInstance.html
    */
   public toCreateSystemInstance() {
-    this.to('CreateSystemInstance');
+    this.to('iotthingsgraph:CreateSystemInstance');
     return this;
   }
 
@@ -70,7 +70,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_CreateSystemTemplate.html
    */
   public toCreateSystemTemplate() {
-    this.to('CreateSystemTemplate');
+    this.to('iotthingsgraph:CreateSystemTemplate');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_DeleteFlowTemplate.html
    */
   public toDeleteFlowTemplate() {
-    this.to('DeleteFlowTemplate');
+    this.to('iotthingsgraph:DeleteFlowTemplate');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_DeleteNamespace.html
    */
   public toDeleteNamespace() {
-    this.to('DeleteNamespace');
+    this.to('iotthingsgraph:DeleteNamespace');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_DeleteSystemInstance.html
    */
   public toDeleteSystemInstance() {
-    this.to('DeleteSystemInstance');
+    this.to('iotthingsgraph:DeleteSystemInstance');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_DeleteSystemTemplate.html
    */
   public toDeleteSystemTemplate() {
-    this.to('DeleteSystemTemplate');
+    this.to('iotthingsgraph:DeleteSystemTemplate');
     return this;
   }
 
@@ -130,7 +130,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_DeploySystemInstance.html
    */
   public toDeploySystemInstance() {
-    this.to('DeploySystemInstance');
+    this.to('iotthingsgraph:DeploySystemInstance');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_DeprecateFlowTemplate.html
    */
   public toDeprecateFlowTemplate() {
-    this.to('DeprecateFlowTemplate');
+    this.to('iotthingsgraph:DeprecateFlowTemplate');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_DeprecateSystemTemplate.html
    */
   public toDeprecateSystemTemplate() {
-    this.to('DeprecateSystemTemplate');
+    this.to('iotthingsgraph:DeprecateSystemTemplate');
     return this;
   }
 
@@ -166,7 +166,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_DescribeNamespace.html
    */
   public toDescribeNamespace() {
-    this.to('DescribeNamespace');
+    this.to('iotthingsgraph:DescribeNamespace');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_DissociateEntityFromThing.html
    */
   public toDissociateEntityFromThing() {
-    this.to('DissociateEntityFromThing');
+    this.to('iotthingsgraph:DissociateEntityFromThing');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_GetEntities.html
    */
   public toGetEntities() {
-    this.to('GetEntities');
+    this.to('iotthingsgraph:GetEntities');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_GetFlowTemplate.html
    */
   public toGetFlowTemplate() {
-    this.to('GetFlowTemplate');
+    this.to('iotthingsgraph:GetFlowTemplate');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_GetFlowTemplateRevisions.html
    */
   public toGetFlowTemplateRevisions() {
-    this.to('GetFlowTemplateRevisions');
+    this.to('iotthingsgraph:GetFlowTemplateRevisions');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_GetNamespaceDeletionStatus.html
    */
   public toGetNamespaceDeletionStatus() {
-    this.to('GetNamespaceDeletionStatus');
+    this.to('iotthingsgraph:GetNamespaceDeletionStatus');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_GetSystemInstance.html
    */
   public toGetSystemInstance() {
-    this.to('GetSystemInstance');
+    this.to('iotthingsgraph:GetSystemInstance');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_GetSystemTemplate.html
    */
   public toGetSystemTemplate() {
-    this.to('GetSystemTemplate');
+    this.to('iotthingsgraph:GetSystemTemplate');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_GetSystemTemplateRevisions.html
    */
   public toGetSystemTemplateRevisions() {
-    this.to('GetSystemTemplateRevisions');
+    this.to('iotthingsgraph:GetSystemTemplateRevisions');
     return this;
   }
 
@@ -278,7 +278,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_GetUploadStatus.html
    */
   public toGetUploadStatus() {
-    this.to('GetUploadStatus');
+    this.to('iotthingsgraph:GetUploadStatus');
     return this;
   }
 
@@ -290,7 +290,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_ListFlowExecutionMessages.html
    */
   public toListFlowExecutionMessages() {
-    this.to('ListFlowExecutionMessages');
+    this.to('iotthingsgraph:ListFlowExecutionMessages');
     return this;
   }
 
@@ -302,7 +302,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('iotthingsgraph:ListTagsForResource');
     return this;
   }
 
@@ -314,7 +314,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_SearchEntities.html
    */
   public toSearchEntities() {
-    this.to('SearchEntities');
+    this.to('iotthingsgraph:SearchEntities');
     return this;
   }
 
@@ -326,7 +326,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_SearchFlowExecutions.html
    */
   public toSearchFlowExecutions() {
-    this.to('SearchFlowExecutions');
+    this.to('iotthingsgraph:SearchFlowExecutions');
     return this;
   }
 
@@ -338,7 +338,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_SearchFlowTemplates.html
    */
   public toSearchFlowTemplates() {
-    this.to('SearchFlowTemplates');
+    this.to('iotthingsgraph:SearchFlowTemplates');
     return this;
   }
 
@@ -350,7 +350,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_SearchSystemInstances.html
    */
   public toSearchSystemInstances() {
-    this.to('SearchSystemInstances');
+    this.to('iotthingsgraph:SearchSystemInstances');
     return this;
   }
 
@@ -362,7 +362,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_SearchSystemTemplates.html
    */
   public toSearchSystemTemplates() {
-    this.to('SearchSystemTemplates');
+    this.to('iotthingsgraph:SearchSystemTemplates');
     return this;
   }
 
@@ -374,7 +374,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_SearchThings.html
    */
   public toSearchThings() {
-    this.to('SearchThings');
+    this.to('iotthingsgraph:SearchThings');
     return this;
   }
 
@@ -390,7 +390,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('iotthingsgraph:TagResource');
     return this;
   }
 
@@ -402,7 +402,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_UndeploySystemInstance.html
    */
   public toUndeploySystemInstance() {
-    this.to('UndeploySystemInstance');
+    this.to('iotthingsgraph:UndeploySystemInstance');
     return this;
   }
 
@@ -417,7 +417,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('iotthingsgraph:UntagResource');
     return this;
   }
 
@@ -429,7 +429,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_UpdateFlowTemplate.html
    */
   public toUpdateFlowTemplate() {
-    this.to('UpdateFlowTemplate');
+    this.to('iotthingsgraph:UpdateFlowTemplate');
     return this;
   }
 
@@ -441,7 +441,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_UpdateSystemTemplate.html
    */
   public toUpdateSystemTemplate() {
-    this.to('UpdateSystemTemplate');
+    this.to('iotthingsgraph:UpdateSystemTemplate');
     return this;
   }
 
@@ -453,7 +453,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_UploadEntityDefinitions.html
    */
   public toUploadEntityDefinitions() {
-    this.to('UploadEntityDefinitions');
+    this.to('iotthingsgraph:UploadEntityDefinitions');
     return this;
   }
 

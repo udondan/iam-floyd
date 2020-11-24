@@ -26,7 +26,7 @@ export class IotDeviceTester extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html
    */
   public toCheckVersion() {
-    this.to('CheckVersion');
+    this.to('iot-device-tester:CheckVersion');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class IotDeviceTester extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html
    */
   public toDownloadTestSuite() {
-    this.to('DownloadTestSuite');
+    this.to('iot-device-tester:DownloadTestSuite');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class IotDeviceTester extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html
    */
   public toLatestIdt() {
-    this.to('LatestIdt');
+    this.to('iot-device-tester:LatestIdt');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class IotDeviceTester extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html
    */
   public toSendMetrics() {
-    this.to('SendMetrics');
+    this.to('iot-device-tester:SendMetrics');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class IotDeviceTester extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html
    */
   public toSupportedVersion() {
-    this.to('SupportedVersion');
+    this.to('iot-device-tester:SupportedVersion');
     return this;
   }
 

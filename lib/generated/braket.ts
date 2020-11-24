@@ -26,7 +26,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_CancelQuantumTask.html
    */
   public toCancelQuantumTask() {
-    this.to('CancelQuantumTask');
+    this.to('braket:CancelQuantumTask');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateQuantumTask.html
    */
   public toCreateQuantumTask() {
-    this.to('CreateQuantumTask');
+    this.to('braket:CreateQuantumTask');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_GetDevice.html
    */
   public toGetDevice() {
-    this.to('GetDevice');
+    this.to('braket:GetDevice');
     return this;
   }
 
@@ -66,7 +66,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_GetQuantumTask.html
    */
   public toGetQuantumTask() {
-    this.to('GetQuantumTask');
+    this.to('braket:GetQuantumTask');
     return this;
   }
 
@@ -78,7 +78,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('braket:ListTagsForResource');
     return this;
   }
 
@@ -90,7 +90,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchDevices.html
    */
   public toSearchDevices() {
-    this.to('SearchDevices');
+    this.to('braket:SearchDevices');
     return this;
   }
 
@@ -102,7 +102,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchQuantumTasks.html
    */
   public toSearchQuantumTasks() {
-    this.to('SearchQuantumTasks');
+    this.to('braket:SearchQuantumTasks');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('braket:TagResource');
     return this;
   }
 
@@ -133,7 +133,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('braket:UntagResource');
     return this;
   }
 

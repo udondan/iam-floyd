@@ -26,7 +26,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeleteScalingPolicy.html
    */
   public toDeleteScalingPolicy() {
-    this.to('DeleteScalingPolicy');
+    this.to('application-autoscaling:DeleteScalingPolicy');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeleteScheduledAction.html
    */
   public toDeleteScheduledAction() {
-    this.to('DeleteScheduledAction');
+    this.to('application-autoscaling:DeleteScheduledAction');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeregisterScalableTarget.html
    */
   public toDeregisterScalableTarget() {
-    this.to('DeregisterScalableTarget');
+    this.to('application-autoscaling:DeregisterScalableTarget');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalableTargets.html
    */
   public toDescribeScalableTargets() {
-    this.to('DescribeScalableTargets');
+    this.to('application-autoscaling:DescribeScalableTargets');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html
    */
   public toDescribeScalingActivities() {
-    this.to('DescribeScalingActivities');
+    this.to('application-autoscaling:DescribeScalingActivities');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingPolicies.html
    */
   public toDescribeScalingPolicies() {
-    this.to('DescribeScalingPolicies');
+    this.to('application-autoscaling:DescribeScalingPolicies');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScheduledActions.html
    */
   public toDescribeScheduledActions() {
-    this.to('DescribeScheduledActions');
+    this.to('application-autoscaling:DescribeScheduledActions');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScalingPolicy.html
    */
   public toPutScalingPolicy() {
-    this.to('PutScalingPolicy');
+    this.to('application-autoscaling:PutScalingPolicy');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScheduledAction.html
    */
   public toPutScheduledAction() {
-    this.to('PutScheduledAction');
+    this.to('application-autoscaling:PutScheduledAction');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html
    */
   public toRegisterScalableTarget() {
-    this.to('RegisterScalableTarget');
+    this.to('application-autoscaling:RegisterScalableTarget');
     return this;
   }
 

@@ -24,7 +24,7 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateChimeWebhookConfiguration() {
-    this.to('CreateChimeWebhookConfiguration');
+    this.to('chatbot:CreateChimeWebhookConfiguration');
     return this;
   }
 
@@ -34,7 +34,7 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateSlackChannelConfiguration() {
-    this.to('CreateSlackChannelConfiguration');
+    this.to('chatbot:CreateSlackChannelConfiguration');
     return this;
   }
 
@@ -44,7 +44,7 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Write
    */
   public toDeleteChimeWebhookConfiguration() {
-    this.to('DeleteChimeWebhookConfiguration');
+    this.to('chatbot:DeleteChimeWebhookConfiguration');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Write
    */
   public toDeleteSlackChannelConfiguration() {
-    this.to('DeleteSlackChannelConfiguration');
+    this.to('chatbot:DeleteSlackChannelConfiguration');
     return this;
   }
 
@@ -64,7 +64,7 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeChimeWebhookConfigurations() {
-    this.to('DescribeChimeWebhookConfigurations');
+    this.to('chatbot:DescribeChimeWebhookConfigurations');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeSlackChannelConfigurations() {
-    this.to('DescribeSlackChannelConfigurations');
+    this.to('chatbot:DescribeSlackChannelConfigurations');
     return this;
   }
 
@@ -84,7 +84,7 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeSlackChannels() {
-    this.to('DescribeSlackChannels');
+    this.to('chatbot:DescribeSlackChannels');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeSlackWorkspaces() {
-    this.to('DescribeSlackWorkspaces');
+    this.to('chatbot:DescribeSlackWorkspaces');
     return this;
   }
 
@@ -104,7 +104,7 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Read
    */
   public toGetSlackOauthParameters() {
-    this.to('GetSlackOauthParameters');
+    this.to('chatbot:GetSlackOauthParameters');
     return this;
   }
 
@@ -114,7 +114,7 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Write
    */
   public toRedeemSlackOauthCode() {
-    this.to('RedeemSlackOauthCode');
+    this.to('chatbot:RedeemSlackOauthCode');
     return this;
   }
 
@@ -124,7 +124,7 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Write
    */
   public toUpdateChimeWebhookConfiguration() {
-    this.to('UpdateChimeWebhookConfiguration');
+    this.to('chatbot:UpdateChimeWebhookConfiguration');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Chatbot extends PolicyStatement {
    * Access Level: Write
    */
   public toUpdateSlackChannelConfiguration() {
-    this.to('UpdateSlackChannelConfiguration');
+    this.to('chatbot:UpdateSlackChannelConfiguration');
     return this;
   }
 

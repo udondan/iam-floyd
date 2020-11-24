@@ -26,7 +26,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CancelJob.html
    */
   public toCancelJob() {
-    this.to('CancelJob');
+    this.to('batch:CancelJob');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html
    */
   public toCreateComputeEnvironment() {
-    this.to('CreateComputeEnvironment');
+    this.to('batch:CreateComputeEnvironment');
     return this;
   }
 
@@ -58,7 +58,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html
    */
   public toCreateJobQueue() {
-    this.to('CreateJobQueue');
+    this.to('batch:CreateJobQueue');
     return this;
   }
 
@@ -70,7 +70,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteComputeEnvironment.html
    */
   public toDeleteComputeEnvironment() {
-    this.to('DeleteComputeEnvironment');
+    this.to('batch:DeleteComputeEnvironment');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteJobQueue.html
    */
   public toDeleteJobQueue() {
-    this.to('DeleteJobQueue');
+    this.to('batch:DeleteJobQueue');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeregisterJobDefinition.html
    */
   public toDeregisterJobDefinition() {
-    this.to('DeregisterJobDefinition');
+    this.to('batch:DeregisterJobDefinition');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeComputeEnvironments.html
    */
   public toDescribeComputeEnvironments() {
-    this.to('DescribeComputeEnvironments');
+    this.to('batch:DescribeComputeEnvironments');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html
    */
   public toDescribeJobDefinitions() {
-    this.to('DescribeJobDefinitions');
+    this.to('batch:DescribeJobDefinitions');
     return this;
   }
 
@@ -130,7 +130,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobQueues.html
    */
   public toDescribeJobQueues() {
-    this.to('DescribeJobQueues');
+    this.to('batch:DescribeJobQueues');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html
    */
   public toDescribeJobs() {
-    this.to('DescribeJobs');
+    this.to('batch:DescribeJobs');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_ListJobs.html
    */
   public toListJobs() {
-    this.to('ListJobs');
+    this.to('batch:ListJobs');
     return this;
   }
 
@@ -166,7 +166,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('batch:ListTagsForResource');
     return this;
   }
 
@@ -190,7 +190,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html
    */
   public toRegisterJobDefinition() {
-    this.to('RegisterJobDefinition');
+    this.to('batch:RegisterJobDefinition');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html
    */
   public toSubmitJob() {
-    this.to('SubmitJob');
+    this.to('batch:SubmitJob');
     return this;
   }
 
@@ -222,7 +222,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('batch:TagResource');
     return this;
   }
 
@@ -234,7 +234,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateJob.html
    */
   public toTerminateJob() {
-    this.to('TerminateJob');
+    this.to('batch:TerminateJob');
     return this;
   }
 
@@ -249,7 +249,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('batch:UntagResource');
     return this;
   }
 
@@ -261,7 +261,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html
    */
   public toUpdateComputeEnvironment() {
-    this.to('UpdateComputeEnvironment');
+    this.to('batch:UpdateComputeEnvironment');
     return this;
   }
 
@@ -273,7 +273,7 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html
    */
   public toUpdateJobQueue() {
-    this.to('UpdateJobQueue');
+    this.to('batch:UpdateJobQueue');
     return this;
   }
 

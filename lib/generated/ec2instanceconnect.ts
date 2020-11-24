@@ -29,7 +29,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSSHPublicKey.html
    */
   public toSendSSHPublicKey() {
-    this.to('SendSSHPublicKey');
+    this.to('ec2-instance-connect:SendSSHPublicKey');
     return this;
   }
 

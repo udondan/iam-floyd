@@ -31,7 +31,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateConnection.html
    */
   public toCreateConnection() {
-    this.to('CreateConnection');
+    this.to('codestar-connections:CreateConnection');
     return this;
   }
 
@@ -46,7 +46,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateHost.html
    */
   public toCreateHost() {
-    this.to('CreateHost');
+    this.to('codestar-connections:CreateHost');
     return this;
   }
 
@@ -58,7 +58,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_DeleteConnection.html
    */
   public toDeleteConnection() {
-    this.to('DeleteConnection');
+    this.to('codestar-connections:DeleteConnection');
     return this;
   }
 
@@ -70,7 +70,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_DeleteHost.html
    */
   public toDeleteHost() {
-    this.to('DeleteHost');
+    this.to('codestar-connections:DeleteHost');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetConnection.html
    */
   public toGetConnection() {
-    this.to('GetConnection');
+    this.to('codestar-connections:GetConnection');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetHost.html
    */
   public toGetHost() {
-    this.to('GetHost');
+    this.to('codestar-connections:GetHost');
     return this;
   }
 
@@ -112,7 +112,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toGetIndividualAccessToken() {
-    this.to('GetIndividualAccessToken');
+    this.to('codestar-connections:GetIndividualAccessToken');
     return this;
   }
 
@@ -127,7 +127,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toGetInstallationUrl() {
-    this.to('GetInstallationUrl');
+    this.to('codestar-connections:GetInstallationUrl');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListConnections.html
    */
   public toListConnections() {
-    this.to('ListConnections');
+    this.to('codestar-connections:ListConnections');
     return this;
   }
 
@@ -157,7 +157,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListHosts.html
    */
   public toListHosts() {
-    this.to('ListHosts');
+    this.to('codestar-connections:ListHosts');
     return this;
   }
 
@@ -173,7 +173,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toListInstallationTargets() {
-    this.to('ListInstallationTargets');
+    this.to('codestar-connections:ListInstallationTargets');
     return this;
   }
 
@@ -185,7 +185,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('codestar-connections:ListTagsForResource');
     return this;
   }
 
@@ -200,7 +200,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-passconnection
    */
   public toPassConnection() {
-    this.to('PassConnection');
+    this.to('codestar-connections:PassConnection');
     return this;
   }
 
@@ -215,7 +215,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#connections-permissions-actions-host-registration
    */
   public toRegisterAppCode() {
-    this.to('RegisterAppCode');
+    this.to('codestar-connections:RegisterAppCode');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#connections-permissions-actions-host-registration
    */
   public toStartAppRegistrationHandshake() {
-    this.to('StartAppRegistrationHandshake');
+    this.to('codestar-connections:StartAppRegistrationHandshake');
     return this;
   }
 
@@ -245,7 +245,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toStartOAuthHandshake() {
-    this.to('StartOAuthHandshake');
+    this.to('codestar-connections:StartOAuthHandshake');
     return this;
   }
 
@@ -261,7 +261,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('codestar-connections:TagResource');
     return this;
   }
 
@@ -277,7 +277,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('codestar-connections:UntagResource');
     return this;
   }
 
@@ -298,7 +298,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toUpdateConnectionInstallation() {
-    this.to('UpdateConnectionInstallation');
+    this.to('codestar-connections:UpdateConnectionInstallation');
     return this;
   }
 
@@ -315,7 +315,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
    */
   public toUseConnection() {
-    this.to('UseConnection');
+    this.to('codestar-connections:UseConnection');
     return this;
   }
 

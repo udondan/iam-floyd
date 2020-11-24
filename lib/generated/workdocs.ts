@@ -26,7 +26,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_AbortDocumentVersionUpload.html
    */
   public toAbortDocumentVersionUpload() {
-    this.to('AbortDocumentVersionUpload');
+    this.to('workdocs:AbortDocumentVersionUpload');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_ActivateUser.html
    */
   public toActivateUser() {
-    this.to('ActivateUser');
+    this.to('workdocs:ActivateUser');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_AddResourcePermissions.html
    */
   public toAddResourcePermissions() {
-    this.to('AddResourcePermissions');
+    this.to('workdocs:AddResourcePermissions');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage_set_admin.html
    */
   public toAddUserToGroup() {
-    this.to('AddUserToGroup');
+    this.to('workdocs:AddUserToGroup');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/adminguide/cloud_quick_start.html
    */
   public toCheckAlias() {
-    this.to('CheckAlias');
+    this.to('workdocs:CheckAlias');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateComment.html
    */
   public toCreateComment() {
-    this.to('CreateComment');
+    this.to('workdocs:CreateComment');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateCustomMetadata.html
    */
   public toCreateCustomMetadata() {
-    this.to('CreateCustomMetadata');
+    this.to('workdocs:CreateCustomMetadata');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateFolder.html
    */
   public toCreateFolder() {
-    this.to('CreateFolder');
+    this.to('workdocs:CreateFolder');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/adminguide/getting_started.html
    */
   public toCreateInstance() {
-    this.to('CreateInstance');
+    this.to('workdocs:CreateInstance');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateLabels.html
    */
   public toCreateLabels() {
-    this.to('CreateLabels');
+    this.to('workdocs:CreateLabels');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateNotificationSubscription.html
    */
   public toCreateNotificationSubscription() {
-    this.to('CreateNotificationSubscription');
+    this.to('workdocs:CreateNotificationSubscription');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html
    */
   public toCreateUser() {
-    this.to('CreateUser');
+    this.to('workdocs:CreateUser');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DeactivateUser.html
    */
   public toDeactivateUser() {
-    this.to('DeactivateUser');
+    this.to('workdocs:DeactivateUser');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DeleteComment.html
    */
   public toDeleteComment() {
-    this.to('DeleteComment');
+    this.to('workdocs:DeleteComment');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DeleteCustomMetadata.html
    */
   public toDeleteCustomMetadata() {
-    this.to('DeleteCustomMetadata');
+    this.to('workdocs:DeleteCustomMetadata');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DeleteDocument.html
    */
   public toDeleteDocument() {
-    this.to('DeleteDocument');
+    this.to('workdocs:DeleteDocument');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DeleteFolder.html
    */
   public toDeleteFolder() {
-    this.to('DeleteFolder');
+    this.to('workdocs:DeleteFolder');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DeleteFolderContents.html
    */
   public toDeleteFolderContents() {
-    this.to('DeleteFolderContents');
+    this.to('workdocs:DeleteFolderContents');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html#delete_site
    */
   public toDeleteInstance() {
-    this.to('DeleteInstance');
+    this.to('workdocs:DeleteInstance');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DeleteLabels.html
    */
   public toDeleteLabels() {
-    this.to('DeleteLabels');
+    this.to('workdocs:DeleteLabels');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DeleteNotificationSubscription.html
    */
   public toDeleteNotificationSubscription() {
-    this.to('DeleteNotificationSubscription');
+    this.to('workdocs:DeleteNotificationSubscription');
     return this;
   }
 
@@ -278,7 +278,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DeleteUser.html
    */
   public toDeleteUser() {
-    this.to('DeleteUser');
+    this.to('workdocs:DeleteUser');
     return this;
   }
 
@@ -290,7 +290,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html#delete_site
    */
   public toDeregisterDirectory() {
-    this.to('DeregisterDirectory');
+    this.to('workdocs:DeregisterDirectory');
     return this;
   }
 
@@ -302,7 +302,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DescribeActivities.html
    */
   public toDescribeActivities() {
-    this.to('DescribeActivities');
+    this.to('workdocs:DescribeActivities');
     return this;
   }
 
@@ -314,7 +314,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/adminguide/getting_started.html
    */
   public toDescribeAvailableDirectories() {
-    this.to('DescribeAvailableDirectories');
+    this.to('workdocs:DescribeAvailableDirectories');
     return this;
   }
 
@@ -326,7 +326,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DescribeComments.html
    */
   public toDescribeComments() {
-    this.to('DescribeComments');
+    this.to('workdocs:DescribeComments');
     return this;
   }
 
@@ -338,7 +338,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DescribeDocumentVersions.html
    */
   public toDescribeDocumentVersions() {
-    this.to('DescribeDocumentVersions');
+    this.to('workdocs:DescribeDocumentVersions');
     return this;
   }
 
@@ -350,7 +350,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DescribeFolderContents.html
    */
   public toDescribeFolderContents() {
-    this.to('DescribeFolderContents');
+    this.to('workdocs:DescribeFolderContents');
     return this;
   }
 
@@ -362,7 +362,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DescribeGroups.html
    */
   public toDescribeGroups() {
-    this.to('DescribeGroups');
+    this.to('workdocs:DescribeGroups');
     return this;
   }
 
@@ -374,7 +374,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/adminguide/getting_started.html
    */
   public toDescribeInstances() {
-    this.to('DescribeInstances');
+    this.to('workdocs:DescribeInstances');
     return this;
   }
 
@@ -386,7 +386,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DescribeNotificationSubscriptions.html
    */
   public toDescribeNotificationSubscriptions() {
-    this.to('DescribeNotificationSubscriptions');
+    this.to('workdocs:DescribeNotificationSubscriptions');
     return this;
   }
 
@@ -398,7 +398,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DescribeResourcePermissions.html
    */
   public toDescribeResourcePermissions() {
-    this.to('DescribeResourcePermissions');
+    this.to('workdocs:DescribeResourcePermissions');
     return this;
   }
 
@@ -410,7 +410,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DescribeRootFolders.html
    */
   public toDescribeRootFolders() {
-    this.to('DescribeRootFolders');
+    this.to('workdocs:DescribeRootFolders');
     return this;
   }
 
@@ -422,7 +422,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_DescribeUsers.html
    */
   public toDescribeUsers() {
-    this.to('DescribeUsers');
+    this.to('workdocs:DescribeUsers');
     return this;
   }
 
@@ -434,7 +434,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_GetDocumentVersion.html
    */
   public toDownloadDocumentVersion() {
-    this.to('DownloadDocumentVersion');
+    this.to('workdocs:DownloadDocumentVersion');
     return this;
   }
 
@@ -446,7 +446,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_GetCurrentUser.html
    */
   public toGetCurrentUser() {
-    this.to('GetCurrentUser');
+    this.to('workdocs:GetCurrentUser');
     return this;
   }
 
@@ -458,7 +458,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_GetDocument.html
    */
   public toGetDocument() {
-    this.to('GetDocument');
+    this.to('workdocs:GetDocument');
     return this;
   }
 
@@ -470,7 +470,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_GetDocumentPath.html
    */
   public toGetDocumentPath() {
-    this.to('GetDocumentPath');
+    this.to('workdocs:GetDocumentPath');
     return this;
   }
 
@@ -482,7 +482,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_GetDocumentVersion.html
    */
   public toGetDocumentVersion() {
-    this.to('GetDocumentVersion');
+    this.to('workdocs:GetDocumentVersion');
     return this;
   }
 
@@ -494,7 +494,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_GetFolder.html
    */
   public toGetFolder() {
-    this.to('GetFolder');
+    this.to('workdocs:GetFolder');
     return this;
   }
 
@@ -506,7 +506,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_GetFolderPath.html
    */
   public toGetFolderPath() {
-    this.to('GetFolderPath');
+    this.to('workdocs:GetFolderPath');
     return this;
   }
 
@@ -518,7 +518,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_GetResources.html
    */
   public toGetResources() {
-    this.to('GetResources');
+    this.to('workdocs:GetResources');
     return this;
   }
 
@@ -530,7 +530,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_InitiateDocumentVersionUpload.html
    */
   public toInitiateDocumentVersionUpload() {
-    this.to('InitiateDocumentVersionUpload');
+    this.to('workdocs:InitiateDocumentVersionUpload');
     return this;
   }
 
@@ -542,7 +542,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/adminguide/existing-dir-setup.html
    */
   public toRegisterDirectory() {
-    this.to('RegisterDirectory');
+    this.to('workdocs:RegisterDirectory');
     return this;
   }
 
@@ -554,7 +554,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_RemoveAllResourcePermissions.html
    */
   public toRemoveAllResourcePermissions() {
-    this.to('RemoveAllResourcePermissions');
+    this.to('workdocs:RemoveAllResourcePermissions');
     return this;
   }
 
@@ -566,7 +566,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_RemoveResourcePermission.html
    */
   public toRemoveResourcePermission() {
-    this.to('RemoveResourcePermission');
+    this.to('workdocs:RemoveResourcePermission');
     return this;
   }
 
@@ -578,7 +578,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_UpdateDocument.html
    */
   public toUpdateDocument() {
-    this.to('UpdateDocument');
+    this.to('workdocs:UpdateDocument');
     return this;
   }
 
@@ -590,7 +590,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_UpdateDocumentVersion.html
    */
   public toUpdateDocumentVersion() {
-    this.to('UpdateDocumentVersion');
+    this.to('workdocs:UpdateDocumentVersion');
     return this;
   }
 
@@ -602,7 +602,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_UpdateFolder.html
    */
   public toUpdateFolder() {
-    this.to('UpdateFolder');
+    this.to('workdocs:UpdateFolder');
     return this;
   }
 
@@ -614,7 +614,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/adminguide/getting_started.html
    */
   public toUpdateInstanceAlias() {
-    this.to('UpdateInstanceAlias');
+    this.to('workdocs:UpdateInstanceAlias');
     return this;
   }
 
@@ -626,7 +626,7 @@ export class Workdocs extends PolicyStatement {
    * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_UpdateUser.html
    */
   public toUpdateUser() {
-    this.to('UpdateUser');
+    this.to('workdocs:UpdateUser');
     return this;
   }
 

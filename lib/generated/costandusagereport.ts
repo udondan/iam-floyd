@@ -26,7 +26,7 @@ export class Cur extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html
    */
   public toDeleteReportDefinition() {
-    this.to('DeleteReportDefinition');
+    this.to('cur:DeleteReportDefinition');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Cur extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html
    */
   public toDescribeReportDefinitions() {
-    this.to('DescribeReportDefinitions');
+    this.to('cur:DescribeReportDefinitions');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Cur extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/modify-report-definition.html
    */
   public toModifyReportDefinition() {
-    this.to('ModifyReportDefinition');
+    this.to('cur:ModifyReportDefinition');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Cur extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html
    */
   public toPutReportDefinition() {
-    this.to('PutReportDefinition');
+    this.to('cur:PutReportDefinition');
     return this;
   }
 

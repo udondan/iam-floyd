@@ -26,7 +26,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html
    */
   public toDeletePlaybackConfiguration() {
-    this.to('DeletePlaybackConfiguration');
+    this.to('mediatailor:DeletePlaybackConfiguration');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html
    */
   public toGetPlaybackConfiguration() {
-    this.to('GetPlaybackConfiguration');
+    this.to('mediatailor:GetPlaybackConfiguration');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfigurations.html
    */
   public toListPlaybackConfigurations() {
-    this.to('ListPlaybackConfigurations');
+    this.to('mediatailor:ListPlaybackConfigurations');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('mediatailor:ListTagsForResource');
     return this;
   }
 
@@ -78,7 +78,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration.html
    */
   public toPutPlaybackConfiguration() {
-    this.to('PutPlaybackConfiguration');
+    this.to('mediatailor:PutPlaybackConfiguration');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('mediatailor:TagResource');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('mediatailor:UntagResource');
     return this;
   }
 

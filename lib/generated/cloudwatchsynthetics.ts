@@ -26,7 +26,7 @@ export class Synthetics extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CreateCanary.html
    */
   public toCreateCanary() {
-    this.to('CreateCanary');
+    this.to('synthetics:CreateCanary');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Synthetics extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html
    */
   public toDeleteCanary() {
-    this.to('DeleteCanary');
+    this.to('synthetics:DeleteCanary');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Synthetics extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html
    */
   public toDescribeCanaries() {
-    this.to('DescribeCanaries');
+    this.to('synthetics:DescribeCanaries');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Synthetics extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanariesLastRun.html
    */
   public toDescribeCanariesLastRun() {
-    this.to('DescribeCanariesLastRun');
+    this.to('synthetics:DescribeCanariesLastRun');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Synthetics extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html
    */
   public toGetCanaryRuns() {
-    this.to('GetCanaryRuns');
+    this.to('synthetics:GetCanaryRuns');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Synthetics extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('synthetics:ListTagsForResource');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Synthetics extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_StartCanary.html
    */
   public toStartCanary() {
-    this.to('StartCanary');
+    this.to('synthetics:StartCanary');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Synthetics extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_StopCanary.html
    */
   public toStopCanary() {
-    this.to('StopCanary');
+    this.to('synthetics:StopCanary');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Synthetics extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('synthetics:TagResource');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Synthetics extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('synthetics:UntagResource');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Synthetics extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html
    */
   public toUpdateCanary() {
-    this.to('UpdateCanary');
+    this.to('synthetics:UpdateCanary');
     return this;
   }
 

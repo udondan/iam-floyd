@@ -26,7 +26,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_BatchGetChannel.html
    */
   public toBatchGetChannel() {
-    this.to('BatchGetChannel');
+    this.to('ivs:BatchGetChannel');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_BatchGetStreamKey.html
    */
   public toBatchGetStreamKey() {
-    this.to('BatchGetStreamKey');
+    this.to('ivs:BatchGetStreamKey');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateChannel.html
    */
   public toCreateChannel() {
-    this.to('CreateChannel');
+    this.to('ivs:CreateChannel');
     return this;
   }
 
@@ -70,7 +70,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateStreamKey.html
    */
   public toCreateStreamKey() {
-    this.to('CreateStreamKey');
+    this.to('ivs:CreateStreamKey');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteChannel.html
    */
   public toDeleteChannel() {
-    this.to('DeleteChannel');
+    this.to('ivs:DeleteChannel');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeletePlaybackKeyPair.html
    */
   public toDeletePlaybackKeyPair() {
-    this.to('DeletePlaybackKeyPair');
+    this.to('ivs:DeletePlaybackKeyPair');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteStreamKey.html
    */
   public toDeleteStreamKey() {
-    this.to('DeleteStreamKey');
+    this.to('ivs:DeleteStreamKey');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetChannel.html
    */
   public toGetChannel() {
-    this.to('GetChannel');
+    this.to('ivs:GetChannel');
     return this;
   }
 
@@ -130,7 +130,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetPlaybackKeyPair.html
    */
   public toGetPlaybackKeyPair() {
-    this.to('GetPlaybackKeyPair');
+    this.to('ivs:GetPlaybackKeyPair');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStream.html
    */
   public toGetStream() {
-    this.to('GetStream');
+    this.to('ivs:GetStream');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStreamKey.html
    */
   public toGetStreamKey() {
-    this.to('GetStreamKey');
+    this.to('ivs:GetStreamKey');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ImportPlaybackKeyPair.html
    */
   public toImportPlaybackKeyPair() {
-    this.to('ImportPlaybackKeyPair');
+    this.to('ivs:ImportPlaybackKeyPair');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListChannels.html
    */
   public toListChannels() {
-    this.to('ListChannels');
+    this.to('ivs:ListChannels');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListPlaybackKeyPairs.html
    */
   public toListPlaybackKeyPairs() {
-    this.to('ListPlaybackKeyPairs');
+    this.to('ivs:ListPlaybackKeyPairs');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreamKeys.html
    */
   public toListStreamKeys() {
-    this.to('ListStreamKeys');
+    this.to('ivs:ListStreamKeys');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreams.html
    */
   public toListStreams() {
-    this.to('ListStreams');
+    this.to('ivs:ListStreams');
     return this;
   }
 
@@ -234,7 +234,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('ivs:ListTagsForResource');
     return this;
   }
 
@@ -246,7 +246,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_PutMetadata.html
    */
   public toPutMetadata() {
-    this.to('PutMetadata');
+    this.to('ivs:PutMetadata');
     return this;
   }
 
@@ -258,7 +258,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_StopStream.html
    */
   public toStopStream() {
-    this.to('StopStream');
+    this.to('ivs:StopStream');
     return this;
   }
 
@@ -274,7 +274,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('ivs:TagResource');
     return this;
   }
 
@@ -289,7 +289,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('ivs:UntagResource');
     return this;
   }
 
@@ -301,7 +301,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_UpdateChannel.html
    */
   public toUpdateChannel() {
-    this.to('UpdateChannel');
+    this.to('ivs:UpdateChannel');
     return this;
   }
 

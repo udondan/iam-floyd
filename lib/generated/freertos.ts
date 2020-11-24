@@ -30,7 +30,7 @@ export class Freertos extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
   public toCreateSoftwareConfiguration() {
-    this.to('CreateSoftwareConfiguration');
+    this.to('freertos:CreateSoftwareConfiguration');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class Freertos extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
   public toDeleteSoftwareConfiguration() {
-    this.to('DeleteSoftwareConfiguration');
+    this.to('freertos:DeleteSoftwareConfiguration');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Freertos extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
   public toDescribeHardwarePlatform() {
-    this.to('DescribeHardwarePlatform');
+    this.to('freertos:DescribeHardwarePlatform');
     return this;
   }
 
@@ -66,7 +66,7 @@ export class Freertos extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
   public toDescribeSoftwareConfiguration() {
-    this.to('DescribeSoftwareConfiguration');
+    this.to('freertos:DescribeSoftwareConfiguration');
     return this;
   }
 
@@ -78,7 +78,7 @@ export class Freertos extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
   public toGetSoftwareURL() {
-    this.to('GetSoftwareURL');
+    this.to('freertos:GetSoftwareURL');
     return this;
   }
 
@@ -90,7 +90,7 @@ export class Freertos extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
   public toGetSoftwareURLForConfiguration() {
-    this.to('GetSoftwareURLForConfiguration');
+    this.to('freertos:GetSoftwareURLForConfiguration');
     return this;
   }
 
@@ -102,7 +102,7 @@ export class Freertos extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
   public toListFreeRTOSVersions() {
-    this.to('ListFreeRTOSVersions');
+    this.to('freertos:ListFreeRTOSVersions');
     return this;
   }
 
@@ -114,7 +114,7 @@ export class Freertos extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
   public toListHardwarePlatforms() {
-    this.to('ListHardwarePlatforms');
+    this.to('freertos:ListHardwarePlatforms');
     return this;
   }
 
@@ -126,7 +126,7 @@ export class Freertos extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
   public toListHardwareVendors() {
-    this.to('ListHardwareVendors');
+    this.to('freertos:ListHardwareVendors');
     return this;
   }
 
@@ -138,7 +138,7 @@ export class Freertos extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
   public toListSoftwareConfigurations() {
-    this.to('ListSoftwareConfigurations');
+    this.to('freertos:ListSoftwareConfigurations');
     return this;
   }
 
@@ -150,7 +150,7 @@ export class Freertos extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
   public toUpdateSoftwareConfiguration() {
-    this.to('UpdateSoftwareConfiguration');
+    this.to('freertos:UpdateSoftwareConfiguration');
     return this;
   }
 

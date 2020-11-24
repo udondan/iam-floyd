@@ -26,7 +26,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#approve-team-association
    */
   public toApproveTeamAssociation() {
-    this.to('ApproveTeamAssociation');
+    this.to('honeycode:ApproveTeamAssociation');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/tenant.html#create-tenant
    */
   public toCreateTenant() {
-    this.to('CreateTenant');
+    this.to('honeycode:CreateTenant');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_GetScreenData.html
    */
   public toGetScreenData() {
-    this.to('GetScreenData');
+    this.to('honeycode:GetScreenData');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_InvokeScreenAutomation.html
    */
   public toInvokeScreenAutomation() {
-    this.to('InvokeScreenAutomation');
+    this.to('honeycode:InvokeScreenAutomation');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#list-team-associations
    */
   public toListTeamAssociations() {
-    this.to('ListTeamAssociations');
+    this.to('honeycode:ListTeamAssociations');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/tenant.html#list-tenants
    */
   public toListTenants() {
-    this.to('ListTenants');
+    this.to('honeycode:ListTenants');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#reject-team-association
    */
   public toRejectTeamAssociation() {
-    this.to('RejectTeamAssociation');
+    this.to('honeycode:RejectTeamAssociation');
     return this;
   }
 

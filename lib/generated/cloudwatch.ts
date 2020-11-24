@@ -26,7 +26,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html
    */
   public toDeleteAlarms() {
-    this.to('DeleteAlarms');
+    this.to('cloudwatch:DeleteAlarms');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAnomalyDetector.html
    */
   public toDeleteAnomalyDetector() {
-    this.to('DeleteAnomalyDetector');
+    this.to('cloudwatch:DeleteAnomalyDetector');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteDashboards.html
    */
   public toDeleteDashboards() {
-    this.to('DeleteDashboards');
+    this.to('cloudwatch:DeleteDashboards');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteInsightRules.html
    */
   public toDeleteInsightRules() {
-    this.to('DeleteInsightRules');
+    this.to('cloudwatch:DeleteInsightRules');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html
    */
   public toDescribeAlarmHistory() {
-    this.to('DescribeAlarmHistory');
+    this.to('cloudwatch:DescribeAlarmHistory');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html
    */
   public toDescribeAlarms() {
-    this.to('DescribeAlarms');
+    this.to('cloudwatch:DescribeAlarms');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmsForMetric.html
    */
   public toDescribeAlarmsForMetric() {
-    this.to('DescribeAlarmsForMetric');
+    this.to('cloudwatch:DescribeAlarmsForMetric');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAnomalyDetectors.html
    */
   public toDescribeAnomalyDetectors() {
-    this.to('DescribeAnomalyDetectors');
+    this.to('cloudwatch:DescribeAnomalyDetectors');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html
    */
   public toDescribeInsightRules() {
-    this.to('DescribeInsightRules');
+    this.to('cloudwatch:DescribeInsightRules');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableAlarmActions.html
    */
   public toDisableAlarmActions() {
-    this.to('DisableAlarmActions');
+    this.to('cloudwatch:DisableAlarmActions');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableInsightRules.html
    */
   public toDisableInsightRules() {
-    this.to('DisableInsightRules');
+    this.to('cloudwatch:DisableInsightRules');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableAlarmActions.html
    */
   public toEnableAlarmActions() {
-    this.to('EnableAlarmActions');
+    this.to('cloudwatch:EnableAlarmActions');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableInsightRules.html
    */
   public toEnableInsightRules() {
-    this.to('EnableInsightRules');
+    this.to('cloudwatch:EnableInsightRules');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDashboard.html
    */
   public toGetDashboard() {
-    this.to('GetDashboard');
+    this.to('cloudwatch:GetDashboard');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html
    */
   public toGetInsightRuleReport() {
-    this.to('GetInsightRuleReport');
+    this.to('cloudwatch:GetInsightRuleReport');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html
    */
   public toGetMetricData() {
-    this.to('GetMetricData');
+    this.to('cloudwatch:GetMetricData');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html
    */
   public toGetMetricStatistics() {
-    this.to('GetMetricStatistics');
+    this.to('cloudwatch:GetMetricStatistics');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricWidgetImage.html
    */
   public toGetMetricWidgetImage() {
-    this.to('GetMetricWidgetImage');
+    this.to('cloudwatch:GetMetricWidgetImage');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListDashboards.html
    */
   public toListDashboards() {
-    this.to('ListDashboards');
+    this.to('cloudwatch:ListDashboards');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html
    */
   public toListMetrics() {
-    this.to('ListMetrics');
+    this.to('cloudwatch:ListMetrics');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('cloudwatch:ListTagsForResource');
     return this;
   }
 
@@ -278,7 +278,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutAnomalyDetector.html
    */
   public toPutAnomalyDetector() {
-    this.to('PutAnomalyDetector');
+    this.to('cloudwatch:PutAnomalyDetector');
     return this;
   }
 
@@ -294,7 +294,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutCompositeAlarm.html
    */
   public toPutCompositeAlarm() {
-    this.to('PutCompositeAlarm');
+    this.to('cloudwatch:PutCompositeAlarm');
     return this;
   }
 
@@ -306,7 +306,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutDashboard.html
    */
   public toPutDashboard() {
-    this.to('PutDashboard');
+    this.to('cloudwatch:PutDashboard');
     return this;
   }
 
@@ -322,7 +322,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutInsightRule.html
    */
   public toPutInsightRule() {
-    this.to('PutInsightRule');
+    this.to('cloudwatch:PutInsightRule');
     return this;
   }
 
@@ -338,7 +338,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html
    */
   public toPutMetricAlarm() {
-    this.to('PutMetricAlarm');
+    this.to('cloudwatch:PutMetricAlarm');
     return this;
   }
 
@@ -353,7 +353,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricData.html
    */
   public toPutMetricData() {
-    this.to('PutMetricData');
+    this.to('cloudwatch:PutMetricData');
     return this;
   }
 
@@ -365,7 +365,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_SetAlarmState.html
    */
   public toSetAlarmState() {
-    this.to('SetAlarmState');
+    this.to('cloudwatch:SetAlarmState');
     return this;
   }
 
@@ -381,7 +381,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('cloudwatch:TagResource');
     return this;
   }
 
@@ -396,7 +396,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('cloudwatch:UntagResource');
     return this;
   }
 

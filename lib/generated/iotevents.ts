@@ -26,7 +26,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html
    */
   public toBatchPutMessage() {
-    this.to('BatchPutMessage');
+    this.to('iotevents:BatchPutMessage');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchUpdateDetector.html
    */
   public toBatchUpdateDetector() {
-    this.to('BatchUpdateDetector');
+    this.to('iotevents:BatchUpdateDetector');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html
    */
   public toCreateDetectorModel() {
-    this.to('CreateDetectorModel');
+    this.to('iotevents:CreateDetectorModel');
     return this;
   }
 
@@ -70,7 +70,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateInput.html
    */
   public toCreateInput() {
-    this.to('CreateInput');
+    this.to('iotevents:CreateInput');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DeleteDetectorModel.html
    */
   public toDeleteDetectorModel() {
-    this.to('DeleteDetectorModel');
+    this.to('iotevents:DeleteDetectorModel');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DeleteInput.html
    */
   public toDeleteInput() {
-    this.to('DeleteInput');
+    this.to('iotevents:DeleteInput');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_DescribeDetector.html
    */
   public toDescribeDetector() {
-    this.to('DescribeDetector');
+    this.to('iotevents:DescribeDetector');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DescribeDetectorModel.html
    */
   public toDescribeDetectorModel() {
-    this.to('DescribeDetectorModel');
+    this.to('iotevents:DescribeDetectorModel');
     return this;
   }
 
@@ -130,7 +130,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DescribeInput.html
    */
   public toDescribeInput() {
-    this.to('DescribeInput');
+    this.to('iotevents:DescribeInput');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DescribeLoggingOptions.html
    */
   public toDescribeLoggingOptions() {
-    this.to('DescribeLoggingOptions');
+    this.to('iotevents:DescribeLoggingOptions');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_ListDetectorModelVersions.html
    */
   public toListDetectorModelVersions() {
-    this.to('ListDetectorModelVersions');
+    this.to('iotevents:ListDetectorModelVersions');
     return this;
   }
 
@@ -166,7 +166,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_ListDetectorModels.html
    */
   public toListDetectorModels() {
-    this.to('ListDetectorModels');
+    this.to('iotevents:ListDetectorModels');
     return this;
   }
 
@@ -178,7 +178,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html
    */
   public toListDetectors() {
-    this.to('ListDetectors');
+    this.to('iotevents:ListDetectors');
     return this;
   }
 
@@ -190,7 +190,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_ListInputs.html
    */
   public toListInputs() {
-    this.to('ListInputs');
+    this.to('iotevents:ListInputs');
     return this;
   }
 
@@ -202,7 +202,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('iotevents:ListTagsForResource');
     return this;
   }
 
@@ -214,7 +214,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_PutLoggingOptions.html
    */
   public toPutLoggingOptions() {
-    this.to('PutLoggingOptions');
+    this.to('iotevents:PutLoggingOptions');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('iotevents:TagResource');
     return this;
   }
 
@@ -245,7 +245,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('iotevents:UntagResource');
     return this;
   }
 
@@ -257,7 +257,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_UpdateDetectorModel.html
    */
   public toUpdateDetectorModel() {
-    this.to('UpdateDetectorModel');
+    this.to('iotevents:UpdateDetectorModel');
     return this;
   }
 
@@ -269,7 +269,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_UpdateInput.html
    */
   public toUpdateInput() {
-    this.to('UpdateInput');
+    this.to('iotevents:UpdateInput');
     return this;
   }
 
@@ -281,7 +281,7 @@ export class Iotevents extends PolicyStatement {
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_UpdateInputRouting.html
    */
   public toUpdateInputRouting() {
-    this.to('UpdateInputRouting');
+    this.to('iotevents:UpdateInputRouting');
     return this;
   }
 

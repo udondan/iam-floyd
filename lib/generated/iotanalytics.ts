@@ -26,7 +26,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html
    */
   public toBatchPutMessage() {
-    this.to('BatchPutMessage');
+    this.to('iotanalytics:BatchPutMessage');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CancelPipelineReprocessing.html
    */
   public toCancelPipelineReprocessing() {
-    this.to('CancelPipelineReprocessing');
+    this.to('iotanalytics:CancelPipelineReprocessing');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateChannel.html
    */
   public toCreateChannel() {
-    this.to('CreateChannel');
+    this.to('iotanalytics:CreateChannel');
     return this;
   }
 
@@ -70,7 +70,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDataset.html
    */
   public toCreateDataset() {
-    this.to('CreateDataset');
+    this.to('iotanalytics:CreateDataset');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDatasetContent.html
    */
   public toCreateDatasetContent() {
-    this.to('CreateDatasetContent');
+    this.to('iotanalytics:CreateDatasetContent');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDatastore.html
    */
   public toCreateDatastore() {
-    this.to('CreateDatastore');
+    this.to('iotanalytics:CreateDatastore');
     return this;
   }
 
@@ -114,7 +114,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreatePipeline.html
    */
   public toCreatePipeline() {
-    this.to('CreatePipeline');
+    this.to('iotanalytics:CreatePipeline');
     return this;
   }
 
@@ -126,7 +126,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteChannel.html
    */
   public toDeleteChannel() {
-    this.to('DeleteChannel');
+    this.to('iotanalytics:DeleteChannel');
     return this;
   }
 
@@ -138,7 +138,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteDataset.html
    */
   public toDeleteDataset() {
-    this.to('DeleteDataset');
+    this.to('iotanalytics:DeleteDataset');
     return this;
   }
 
@@ -150,7 +150,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteDatasetContent.html
    */
   public toDeleteDatasetContent() {
-    this.to('DeleteDatasetContent');
+    this.to('iotanalytics:DeleteDatasetContent');
     return this;
   }
 
@@ -162,7 +162,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteDatastore.html
    */
   public toDeleteDatastore() {
-    this.to('DeleteDatastore');
+    this.to('iotanalytics:DeleteDatastore');
     return this;
   }
 
@@ -174,7 +174,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeletePipeline.html
    */
   public toDeletePipeline() {
-    this.to('DeletePipeline');
+    this.to('iotanalytics:DeletePipeline');
     return this;
   }
 
@@ -186,7 +186,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeChannel.html
    */
   public toDescribeChannel() {
-    this.to('DescribeChannel');
+    this.to('iotanalytics:DescribeChannel');
     return this;
   }
 
@@ -198,7 +198,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeDataset.html
    */
   public toDescribeDataset() {
-    this.to('DescribeDataset');
+    this.to('iotanalytics:DescribeDataset');
     return this;
   }
 
@@ -210,7 +210,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeDatastore.html
    */
   public toDescribeDatastore() {
-    this.to('DescribeDatastore');
+    this.to('iotanalytics:DescribeDatastore');
     return this;
   }
 
@@ -222,7 +222,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeLoggingOptions.html
    */
   public toDescribeLoggingOptions() {
-    this.to('DescribeLoggingOptions');
+    this.to('iotanalytics:DescribeLoggingOptions');
     return this;
   }
 
@@ -234,7 +234,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribePipeline.html
    */
   public toDescribePipeline() {
-    this.to('DescribePipeline');
+    this.to('iotanalytics:DescribePipeline');
     return this;
   }
 
@@ -246,7 +246,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_GetDatasetContent.html
    */
   public toGetDatasetContent() {
-    this.to('GetDatasetContent');
+    this.to('iotanalytics:GetDatasetContent');
     return this;
   }
 
@@ -258,7 +258,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListChannels.html
    */
   public toListChannels() {
-    this.to('ListChannels');
+    this.to('iotanalytics:ListChannels');
     return this;
   }
 
@@ -270,7 +270,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListDatasets.html
    */
   public toListDatasets() {
-    this.to('ListDatasets');
+    this.to('iotanalytics:ListDatasets');
     return this;
   }
 
@@ -282,7 +282,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListDatastores.html
    */
   public toListDatastores() {
-    this.to('ListDatastores');
+    this.to('iotanalytics:ListDatastores');
     return this;
   }
 
@@ -294,7 +294,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListPipelines.html
    */
   public toListPipelines() {
-    this.to('ListPipelines');
+    this.to('iotanalytics:ListPipelines');
     return this;
   }
 
@@ -306,7 +306,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('iotanalytics:ListTagsForResource');
     return this;
   }
 
@@ -318,7 +318,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_PutLoggingOptions.html
    */
   public toPutLoggingOptions() {
-    this.to('PutLoggingOptions');
+    this.to('iotanalytics:PutLoggingOptions');
     return this;
   }
 
@@ -330,7 +330,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_RunPipelineActivity.html
    */
   public toRunPipelineActivity() {
-    this.to('RunPipelineActivity');
+    this.to('iotanalytics:RunPipelineActivity');
     return this;
   }
 
@@ -342,7 +342,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_SampleChannelData.html
    */
   public toSampleChannelData() {
-    this.to('SampleChannelData');
+    this.to('iotanalytics:SampleChannelData');
     return this;
   }
 
@@ -354,7 +354,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_StartPipelineReprocessing.html
    */
   public toStartPipelineReprocessing() {
-    this.to('StartPipelineReprocessing');
+    this.to('iotanalytics:StartPipelineReprocessing');
     return this;
   }
 
@@ -370,7 +370,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('iotanalytics:TagResource');
     return this;
   }
 
@@ -386,7 +386,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('iotanalytics:UntagResource');
     return this;
   }
 
@@ -398,7 +398,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdateChannel.html
    */
   public toUpdateChannel() {
-    this.to('UpdateChannel');
+    this.to('iotanalytics:UpdateChannel');
     return this;
   }
 
@@ -410,7 +410,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdateDataset.html
    */
   public toUpdateDataset() {
-    this.to('UpdateDataset');
+    this.to('iotanalytics:UpdateDataset');
     return this;
   }
 
@@ -422,7 +422,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdateDatastore.html
    */
   public toUpdateDatastore() {
-    this.to('UpdateDatastore');
+    this.to('iotanalytics:UpdateDatastore');
     return this;
   }
 
@@ -434,7 +434,7 @@ export class Iotanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdatePipeline.html
    */
   public toUpdatePipeline() {
-    this.to('UpdatePipeline');
+    this.to('iotanalytics:UpdatePipeline');
     return this;
   }
 

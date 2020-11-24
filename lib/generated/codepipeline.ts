@@ -26,7 +26,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_AcknowledgeJob.html
    */
   public toAcknowledgeJob() {
-    this.to('AcknowledgeJob');
+    this.to('codepipeline:AcknowledgeJob');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_AcknowledgeThirdPartyJob.html
    */
   public toAcknowledgeThirdPartyJob() {
-    this.to('AcknowledgeThirdPartyJob');
+    this.to('codepipeline:AcknowledgeThirdPartyJob');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_CreateCustomActionType.html
    */
   public toCreateCustomActionType() {
-    this.to('CreateCustomActionType');
+    this.to('codepipeline:CreateCustomActionType');
     return this;
   }
 
@@ -70,7 +70,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_CreatePipeline.html
    */
   public toCreatePipeline() {
-    this.to('CreatePipeline');
+    this.to('codepipeline:CreatePipeline');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DeleteCustomActionType.html
    */
   public toDeleteCustomActionType() {
-    this.to('DeleteCustomActionType');
+    this.to('codepipeline:DeleteCustomActionType');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DeletePipeline.html
    */
   public toDeletePipeline() {
-    this.to('DeletePipeline');
+    this.to('codepipeline:DeletePipeline');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DeleteWebhook.html
    */
   public toDeleteWebhook() {
-    this.to('DeleteWebhook');
+    this.to('codepipeline:DeleteWebhook');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DeregisterWebhookWithThirdParty.html
    */
   public toDeregisterWebhookWithThirdParty() {
-    this.to('DeregisterWebhookWithThirdParty');
+    this.to('codepipeline:DeregisterWebhookWithThirdParty');
     return this;
   }
 
@@ -130,7 +130,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DisableStageTransition.html
    */
   public toDisableStageTransition() {
-    this.to('DisableStageTransition');
+    this.to('codepipeline:DisableStageTransition');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_EnableStageTransition.html
    */
   public toEnableStageTransition() {
-    this.to('EnableStageTransition');
+    this.to('codepipeline:EnableStageTransition');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetJobDetails.html
    */
   public toGetJobDetails() {
-    this.to('GetJobDetails');
+    this.to('codepipeline:GetJobDetails');
     return this;
   }
 
@@ -166,7 +166,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetPipeline.html
    */
   public toGetPipeline() {
-    this.to('GetPipeline');
+    this.to('codepipeline:GetPipeline');
     return this;
   }
 
@@ -178,7 +178,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetPipelineExecution.html
    */
   public toGetPipelineExecution() {
-    this.to('GetPipelineExecution');
+    this.to('codepipeline:GetPipelineExecution');
     return this;
   }
 
@@ -190,7 +190,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetPipelineState.html
    */
   public toGetPipelineState() {
-    this.to('GetPipelineState');
+    this.to('codepipeline:GetPipelineState');
     return this;
   }
 
@@ -202,7 +202,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetThirdPartyJobDetails.html
    */
   public toGetThirdPartyJobDetails() {
-    this.to('GetThirdPartyJobDetails');
+    this.to('codepipeline:GetThirdPartyJobDetails');
     return this;
   }
 
@@ -214,7 +214,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListActionExecutions.html
    */
   public toListActionExecutions() {
-    this.to('ListActionExecutions');
+    this.to('codepipeline:ListActionExecutions');
     return this;
   }
 
@@ -226,7 +226,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListActionTypes.html
    */
   public toListActionTypes() {
-    this.to('ListActionTypes');
+    this.to('codepipeline:ListActionTypes');
     return this;
   }
 
@@ -238,7 +238,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListPipelineExecutions.html
    */
   public toListPipelineExecutions() {
-    this.to('ListPipelineExecutions');
+    this.to('codepipeline:ListPipelineExecutions');
     return this;
   }
 
@@ -250,7 +250,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListPipelines.html
    */
   public toListPipelines() {
-    this.to('ListPipelines');
+    this.to('codepipeline:ListPipelines');
     return this;
   }
 
@@ -262,7 +262,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('codepipeline:ListTagsForResource');
     return this;
   }
 
@@ -274,7 +274,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListWebhooks.html
    */
   public toListWebhooks() {
-    this.to('ListWebhooks');
+    this.to('codepipeline:ListWebhooks');
     return this;
   }
 
@@ -286,7 +286,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PollForJobs.html
    */
   public toPollForJobs() {
-    this.to('PollForJobs');
+    this.to('codepipeline:PollForJobs');
     return this;
   }
 
@@ -298,7 +298,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PollForThirdPartyJobs.html
    */
   public toPollForThirdPartyJobs() {
-    this.to('PollForThirdPartyJobs');
+    this.to('codepipeline:PollForThirdPartyJobs');
     return this;
   }
 
@@ -310,7 +310,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutActionRevision.html
    */
   public toPutActionRevision() {
-    this.to('PutActionRevision');
+    this.to('codepipeline:PutActionRevision');
     return this;
   }
 
@@ -322,7 +322,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutApprovalResult.html
    */
   public toPutApprovalResult() {
-    this.to('PutApprovalResult');
+    this.to('codepipeline:PutApprovalResult');
     return this;
   }
 
@@ -334,7 +334,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutJobFailureResult.html
    */
   public toPutJobFailureResult() {
-    this.to('PutJobFailureResult');
+    this.to('codepipeline:PutJobFailureResult');
     return this;
   }
 
@@ -346,7 +346,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutJobSuccessResult.html
    */
   public toPutJobSuccessResult() {
-    this.to('PutJobSuccessResult');
+    this.to('codepipeline:PutJobSuccessResult');
     return this;
   }
 
@@ -358,7 +358,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutThirdPartyJobFailureResult.html
    */
   public toPutThirdPartyJobFailureResult() {
-    this.to('PutThirdPartyJobFailureResult');
+    this.to('codepipeline:PutThirdPartyJobFailureResult');
     return this;
   }
 
@@ -370,7 +370,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutThirdPartyJobSuccessResult.html
    */
   public toPutThirdPartyJobSuccessResult() {
-    this.to('PutThirdPartyJobSuccessResult');
+    this.to('codepipeline:PutThirdPartyJobSuccessResult');
     return this;
   }
 
@@ -386,7 +386,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutWebhook.html
    */
   public toPutWebhook() {
-    this.to('PutWebhook');
+    this.to('codepipeline:PutWebhook');
     return this;
   }
 
@@ -398,7 +398,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_RegisterWebhookWithThirdParty.html
    */
   public toRegisterWebhookWithThirdParty() {
-    this.to('RegisterWebhookWithThirdParty');
+    this.to('codepipeline:RegisterWebhookWithThirdParty');
     return this;
   }
 
@@ -410,7 +410,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_RetryStageExecution.html
    */
   public toRetryStageExecution() {
-    this.to('RetryStageExecution');
+    this.to('codepipeline:RetryStageExecution');
     return this;
   }
 
@@ -422,7 +422,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_StartPipelineExecution.html
    */
   public toStartPipelineExecution() {
-    this.to('StartPipelineExecution');
+    this.to('codepipeline:StartPipelineExecution');
     return this;
   }
 
@@ -434,7 +434,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_StopPipelineExecution.html
    */
   public toStopPipelineExecution() {
-    this.to('StopPipelineExecution');
+    this.to('codepipeline:StopPipelineExecution');
     return this;
   }
 
@@ -450,7 +450,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('codepipeline:TagResource');
     return this;
   }
 
@@ -465,7 +465,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('codepipeline:UntagResource');
     return this;
   }
 
@@ -477,7 +477,7 @@ export class Codepipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_UpdatePipeline.html
    */
   public toUpdatePipeline() {
-    this.to('UpdatePipeline');
+    this.to('codepipeline:UpdatePipeline');
     return this;
   }
 

@@ -26,7 +26,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toDescribeAccount() {
-    this.to('DescribeAccount');
+    this.to('trustedadvisor:DescribeAccount');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toDescribeAccountAccess() {
-    this.to('DescribeAccountAccess');
+    this.to('trustedadvisor:DescribeAccountAccess');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toDescribeCheckItems() {
-    this.to('DescribeCheckItems');
+    this.to('trustedadvisor:DescribeCheckItems');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toDescribeCheckRefreshStatuses() {
-    this.to('DescribeCheckRefreshStatuses');
+    this.to('trustedadvisor:DescribeCheckRefreshStatuses');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toDescribeCheckSummaries() {
-    this.to('DescribeCheckSummaries');
+    this.to('trustedadvisor:DescribeCheckSummaries');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toDescribeChecks() {
-    this.to('DescribeChecks');
+    this.to('trustedadvisor:DescribeChecks');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toDescribeNotificationPreferences() {
-    this.to('DescribeNotificationPreferences');
+    this.to('trustedadvisor:DescribeNotificationPreferences');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toDescribeOrganization() {
-    this.to('DescribeOrganization');
+    this.to('trustedadvisor:DescribeOrganization');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toDescribeOrganizationAccounts() {
-    this.to('DescribeOrganizationAccounts');
+    this.to('trustedadvisor:DescribeOrganizationAccounts');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toDescribeReports() {
-    this.to('DescribeReports');
+    this.to('trustedadvisor:DescribeReports');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toDescribeServiceMetadata() {
-    this.to('DescribeServiceMetadata');
+    this.to('trustedadvisor:DescribeServiceMetadata');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toExcludeCheckItems() {
-    this.to('ExcludeCheckItems');
+    this.to('trustedadvisor:ExcludeCheckItems');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toGenerateReport() {
-    this.to('GenerateReport');
+    this.to('trustedadvisor:GenerateReport');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toIncludeCheckItems() {
-    this.to('IncludeCheckItems');
+    this.to('trustedadvisor:IncludeCheckItems');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toListAccountsForParent() {
-    this.to('ListAccountsForParent');
+    this.to('trustedadvisor:ListAccountsForParent');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toListOrganizationalUnitsForParent() {
-    this.to('ListOrganizationalUnitsForParent');
+    this.to('trustedadvisor:ListOrganizationalUnitsForParent');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toListRoots() {
-    this.to('ListRoots');
+    this.to('trustedadvisor:ListRoots');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toRefreshCheck() {
-    this.to('RefreshCheck');
+    this.to('trustedadvisor:RefreshCheck');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toSetAccountAccess() {
-    this.to('SetAccountAccess');
+    this.to('trustedadvisor:SetAccountAccess');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toSetOrganizationAccess() {
-    this.to('SetOrganizationAccess');
+    this.to('trustedadvisor:SetOrganizationAccess');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class Trustedadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
    */
   public toUpdateNotificationPreferences() {
-    this.to('UpdateNotificationPreferences');
+    this.to('trustedadvisor:UpdateNotificationPreferences');
     return this;
   }
 

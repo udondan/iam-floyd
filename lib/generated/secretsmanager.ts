@@ -31,7 +31,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toCancelRotateSecret() {
-    this.to('CancelRotateSecret');
+    this.to('secretsmanager:CancelRotateSecret');
     return this;
   }
 
@@ -51,7 +51,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toCreateSecret() {
-    this.to('CreateSecret');
+    this.to('secretsmanager:CreateSecret');
     return this;
   }
 
@@ -68,7 +68,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toDeleteResourcePolicy() {
-    this.to('DeleteResourcePolicy');
+    this.to('secretsmanager:DeleteResourcePolicy');
     return this;
   }
 
@@ -87,7 +87,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toDeleteSecret() {
-    this.to('DeleteSecret');
+    this.to('secretsmanager:DeleteSecret');
     return this;
   }
 
@@ -104,7 +104,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toDescribeSecret() {
-    this.to('DescribeSecret');
+    this.to('secretsmanager:DescribeSecret');
     return this;
   }
 
@@ -116,7 +116,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toGetRandomPassword() {
-    this.to('GetRandomPassword');
+    this.to('secretsmanager:GetRandomPassword');
     return this;
   }
 
@@ -133,7 +133,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toGetResourcePolicy() {
-    this.to('GetResourcePolicy');
+    this.to('secretsmanager:GetResourcePolicy');
     return this;
   }
 
@@ -152,7 +152,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toGetSecretValue() {
-    this.to('GetSecretValue');
+    this.to('secretsmanager:GetSecretValue');
     return this;
   }
 
@@ -169,7 +169,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toListSecretVersionIds() {
-    this.to('ListSecretVersionIds');
+    this.to('secretsmanager:ListSecretVersionIds');
     return this;
   }
 
@@ -181,7 +181,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toListSecrets() {
-    this.to('ListSecrets');
+    this.to('secretsmanager:ListSecrets');
     return this;
   }
 
@@ -199,7 +199,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toPutResourcePolicy() {
-    this.to('PutResourcePolicy');
+    this.to('secretsmanager:PutResourcePolicy');
     return this;
   }
 
@@ -216,7 +216,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toPutSecretValue() {
-    this.to('PutSecretValue');
+    this.to('secretsmanager:PutSecretValue');
     return this;
   }
 
@@ -233,7 +233,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toRestoreSecret() {
-    this.to('RestoreSecret');
+    this.to('secretsmanager:RestoreSecret');
     return this;
   }
 
@@ -251,7 +251,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toRotateSecret() {
-    this.to('RotateSecret');
+    this.to('secretsmanager:RotateSecret');
     return this;
   }
 
@@ -270,7 +270,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('secretsmanager:TagResource');
     return this;
   }
 
@@ -288,7 +288,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('secretsmanager:UntagResource');
     return this;
   }
 
@@ -307,7 +307,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toUpdateSecret() {
-    this.to('UpdateSecret');
+    this.to('secretsmanager:UpdateSecret');
     return this;
   }
 
@@ -325,7 +325,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toUpdateSecretVersionStage() {
-    this.to('UpdateSecretVersionStage');
+    this.to('secretsmanager:UpdateSecretVersionStage');
     return this;
   }
 
@@ -342,7 +342,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toValidateResourcePolicy() {
-    this.to('ValidateResourcePolicy');
+    this.to('secretsmanager:ValidateResourcePolicy');
     return this;
   }
 

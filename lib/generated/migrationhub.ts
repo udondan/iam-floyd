@@ -26,7 +26,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateCreatedArtifact.html
    */
   public toAssociateCreatedArtifact() {
-    this.to('AssociateCreatedArtifact');
+    this.to('mgh:AssociateCreatedArtifact');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateDiscoveredResource.html
    */
   public toAssociateDiscoveredResource() {
-    this.to('AssociateDiscoveredResource');
+    this.to('mgh:AssociateDiscoveredResource');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_CreateHomeRegionControl.html
    */
   public toCreateHomeRegionControl() {
-    this.to('CreateHomeRegionControl');
+    this.to('mgh:CreateHomeRegionControl');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_CreateProgressUpdateStream.html
    */
   public toCreateProgressUpdateStream() {
-    this.to('CreateProgressUpdateStream');
+    this.to('mgh:CreateProgressUpdateStream');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DeleteProgressUpdateStream.html
    */
   public toDeleteProgressUpdateStream() {
-    this.to('DeleteProgressUpdateStream');
+    this.to('mgh:DeleteProgressUpdateStream');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeApplicationState.html
    */
   public toDescribeApplicationState() {
-    this.to('DescribeApplicationState');
+    this.to('mgh:DescribeApplicationState');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeHomeRegionControls.html
    */
   public toDescribeHomeRegionControls() {
-    this.to('DescribeHomeRegionControls');
+    this.to('mgh:DescribeHomeRegionControls');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeMigrationTask.html
    */
   public toDescribeMigrationTask() {
-    this.to('DescribeMigrationTask');
+    this.to('mgh:DescribeMigrationTask');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateCreatedArtifact.html
    */
   public toDisassociateCreatedArtifact() {
-    this.to('DisassociateCreatedArtifact');
+    this.to('mgh:DisassociateCreatedArtifact');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateDiscoveredResource.html
    */
   public toDisassociateDiscoveredResource() {
-    this.to('DisassociateDiscoveredResource');
+    this.to('mgh:DisassociateDiscoveredResource');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_GetHomeRegion.html
    */
   public toGetHomeRegion() {
-    this.to('GetHomeRegion');
+    this.to('mgh:GetHomeRegion');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ImportMigrationTask.html
    */
   public toImportMigrationTask() {
-    this.to('ImportMigrationTask');
+    this.to('mgh:ImportMigrationTask');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListCreatedArtifacts.html
    */
   public toListCreatedArtifacts() {
-    this.to('ListCreatedArtifacts');
+    this.to('mgh:ListCreatedArtifacts');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListDiscoveredResources.html
    */
   public toListDiscoveredResources() {
-    this.to('ListDiscoveredResources');
+    this.to('mgh:ListDiscoveredResources');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListMigrationTasks.html
    */
   public toListMigrationTasks() {
-    this.to('ListMigrationTasks');
+    this.to('mgh:ListMigrationTasks');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListProgressUpdateStreams.html
    */
   public toListProgressUpdateStreams() {
-    this.to('ListProgressUpdateStreams');
+    this.to('mgh:ListProgressUpdateStreams');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_NotifyApplicationState.html
    */
   public toNotifyApplicationState() {
-    this.to('NotifyApplicationState');
+    this.to('mgh:NotifyApplicationState');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_NotifyMigrationTaskState.html
    */
   public toNotifyMigrationTaskState() {
-    this.to('NotifyMigrationTaskState');
+    this.to('mgh:NotifyMigrationTaskState');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html
    */
   public toPutResourceAttributes() {
-    this.to('PutResourceAttributes');
+    this.to('mgh:PutResourceAttributes');
     return this;
   }
 

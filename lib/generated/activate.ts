@@ -24,7 +24,7 @@ export class Activate extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateForm() {
-    this.to('CreateForm');
+    this.to('activate:CreateForm');
     return this;
   }
 
@@ -34,7 +34,7 @@ export class Activate extends PolicyStatement {
    * Access Level: Read
    */
   public toGetAccountContact() {
-    this.to('GetAccountContact');
+    this.to('activate:GetAccountContact');
     return this;
   }
 
@@ -44,7 +44,7 @@ export class Activate extends PolicyStatement {
    * Access Level: Read
    */
   public toGetContentInfo() {
-    this.to('GetContentInfo');
+    this.to('activate:GetContentInfo');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Activate extends PolicyStatement {
    * Access Level: Read
    */
   public toGetCosts() {
-    this.to('GetCosts');
+    this.to('activate:GetCosts');
     return this;
   }
 
@@ -64,7 +64,7 @@ export class Activate extends PolicyStatement {
    * Access Level: Read
    */
   public toGetCredits() {
-    this.to('GetCredits');
+    this.to('activate:GetCredits');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Activate extends PolicyStatement {
    * Access Level: Read
    */
   public toGetMemberInfo() {
-    this.to('GetMemberInfo');
+    this.to('activate:GetMemberInfo');
     return this;
   }
 
@@ -84,7 +84,7 @@ export class Activate extends PolicyStatement {
    * Access Level: Read
    */
   public toGetProgram() {
-    this.to('GetProgram');
+    this.to('activate:GetProgram');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Activate extends PolicyStatement {
    * Access Level: Write
    */
   public toPutMemberInfo() {
-    this.to('PutMemberInfo');
+    this.to('activate:PutMemberInfo');
     return this;
   }
 

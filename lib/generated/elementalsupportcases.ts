@@ -26,7 +26,7 @@ export class ElementalSupportCases extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toCreateCase() {
-    this.to('CreateCase');
+    this.to('elemental-support-cases:CreateCase');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class ElementalSupportCases extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toGetCase() {
-    this.to('GetCase');
+    this.to('elemental-support-cases:GetCase');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class ElementalSupportCases extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toGetCases() {
-    this.to('GetCases');
+    this.to('elemental-support-cases:GetCases');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class ElementalSupportCases extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toUpdateCase() {
-    this.to('UpdateCase');
+    this.to('elemental-support-cases:UpdateCase');
     return this;
   }
 

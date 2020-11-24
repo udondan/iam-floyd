@@ -26,7 +26,7 @@ export class Mediaconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs.html
    */
   public toAddFlowOutputs() {
-    this.to('AddFlowOutputs');
+    this.to('mediaconnect:AddFlowOutputs');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Mediaconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html
    */
   public toCreateFlow() {
-    this.to('CreateFlow');
+    this.to('mediaconnect:CreateFlow');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Mediaconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html
    */
   public toDeleteFlow() {
-    this.to('DeleteFlow');
+    this.to('mediaconnect:DeleteFlow');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Mediaconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html
    */
   public toDescribeFlow() {
-    this.to('DescribeFlow');
+    this.to('mediaconnect:DescribeFlow');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Mediaconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements.html
    */
   public toGrantFlowEntitlements() {
-    this.to('GrantFlowEntitlements');
+    this.to('mediaconnect:GrantFlowEntitlements');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Mediaconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-entitlements.html
    */
   public toListEntitlements() {
-    this.to('ListEntitlements');
+    this.to('mediaconnect:ListEntitlements');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Mediaconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html
    */
   public toListFlows() {
-    this.to('ListFlows');
+    this.to('mediaconnect:ListFlows');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Mediaconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs-outputarn.html
    */
   public toRemoveFlowOutput() {
-    this.to('RemoveFlowOutput');
+    this.to('mediaconnect:RemoveFlowOutput');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Mediaconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements-entitlementarn.html
    */
   public toRevokeFlowEntitlement() {
-    this.to('RevokeFlowEntitlement');
+    this.to('mediaconnect:RevokeFlowEntitlement');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Mediaconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-start-flowarn.html
    */
   public toStartFlow() {
-    this.to('StartFlow');
+    this.to('mediaconnect:StartFlow');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Mediaconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-stop-flowarn.html
    */
   public toStopFlow() {
-    this.to('StopFlow');
+    this.to('mediaconnect:StopFlow');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Mediaconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements-entitlementarn.html
    */
   public toUpdateFlowEntitlement() {
-    this.to('UpdateFlowEntitlement');
+    this.to('mediaconnect:UpdateFlowEntitlement');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Mediaconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs-outputarn.html
    */
   public toUpdateFlowOutput() {
-    this.to('UpdateFlowOutput');
+    this.to('mediaconnect:UpdateFlowOutput');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Mediaconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-sourcearn.html
    */
   public toUpdateFlowSource() {
-    this.to('UpdateFlowSource');
+    this.to('mediaconnect:UpdateFlowSource');
     return this;
   }
 

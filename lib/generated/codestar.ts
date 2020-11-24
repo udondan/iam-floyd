@@ -26,7 +26,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_AssociateTeamMember.html
    */
   public toAssociateTeamMember() {
-    this.to('AssociateTeamMember');
+    this.to('codestar:AssociateTeamMember');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_CreateProject.html
    */
   public toCreateProject() {
-    this.to('CreateProject');
+    this.to('codestar:CreateProject');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_CreateUserProfile.html
    */
   public toCreateUserProfile() {
-    this.to('CreateUserProfile');
+    this.to('codestar:CreateUserProfile');
     return this;
   }
 
@@ -64,7 +64,7 @@ export class Codestar extends PolicyStatement {
    * Access Level: Write
    */
   public toDeleteExtendedAccess() {
-    this.to('DeleteExtendedAccess');
+    this.to('codestar:DeleteExtendedAccess');
     return this;
   }
 
@@ -76,7 +76,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteProject.html
    */
   public toDeleteProject() {
-    this.to('DeleteProject');
+    this.to('codestar:DeleteProject');
     return this;
   }
 
@@ -88,7 +88,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteUserProfile.html
    */
   public toDeleteUserProfile() {
-    this.to('DeleteUserProfile');
+    this.to('codestar:DeleteUserProfile');
     return this;
   }
 
@@ -100,7 +100,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DescribeProject.html
    */
   public toDescribeProject() {
-    this.to('DescribeProject');
+    this.to('codestar:DescribeProject');
     return this;
   }
 
@@ -112,7 +112,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DescribeUserProfile.html
    */
   public toDescribeUserProfile() {
-    this.to('DescribeUserProfile');
+    this.to('codestar:DescribeUserProfile');
     return this;
   }
 
@@ -124,7 +124,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DisassociateTeamMember.html
    */
   public toDisassociateTeamMember() {
-    this.to('DisassociateTeamMember');
+    this.to('codestar:DisassociateTeamMember');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Codestar extends PolicyStatement {
    * Access Level: Read
    */
   public toGetExtendedAccess() {
-    this.to('GetExtendedAccess');
+    this.to('codestar:GetExtendedAccess');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListProjects.html
    */
   public toListProjects() {
-    this.to('ListProjects');
+    this.to('codestar:ListProjects');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListResources.html
    */
   public toListResources() {
-    this.to('ListResources');
+    this.to('codestar:ListResources');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListTagsForProject.html
    */
   public toListTagsForProject() {
-    this.to('ListTagsForProject');
+    this.to('codestar:ListTagsForProject');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListTeamMembers.html
    */
   public toListTeamMembers() {
-    this.to('ListTeamMembers');
+    this.to('codestar:ListTeamMembers');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListUserProfiles.html
    */
   public toListUserProfiles() {
-    this.to('ListUserProfiles');
+    this.to('codestar:ListUserProfiles');
     return this;
   }
 
@@ -204,7 +204,7 @@ export class Codestar extends PolicyStatement {
    * Access Level: Write
    */
   public toPutExtendedAccess() {
-    this.to('PutExtendedAccess');
+    this.to('codestar:PutExtendedAccess');
     return this;
   }
 
@@ -220,7 +220,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_TagProject.html
    */
   public toTagProject() {
-    this.to('TagProject');
+    this.to('codestar:TagProject');
     return this;
   }
 
@@ -235,7 +235,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UntagProject.html
    */
   public toUntagProject() {
-    this.to('UntagProject');
+    this.to('codestar:UntagProject');
     return this;
   }
 
@@ -247,7 +247,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateProject.html
    */
   public toUpdateProject() {
-    this.to('UpdateProject');
+    this.to('codestar:UpdateProject');
     return this;
   }
 
@@ -259,7 +259,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateTeamMember.html
    */
   public toUpdateTeamMember() {
-    this.to('UpdateTeamMember');
+    this.to('codestar:UpdateTeamMember');
     return this;
   }
 
@@ -271,7 +271,7 @@ export class Codestar extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateUserProfile.html
    */
   public toUpdateUserProfile() {
-    this.to('UpdateUserProfile');
+    this.to('codestar:UpdateUserProfile');
     return this;
   }
 

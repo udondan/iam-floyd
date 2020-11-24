@@ -26,7 +26,7 @@ export class Wam extends PolicyStatement {
    * https://docs.aws.amazon.com/wam/latest/adminguide/iam.html
    */
   public toAuthenticatePackager() {
-    this.to('AuthenticatePackager');
+    this.to('wam:AuthenticatePackager');
     return this;
   }
 

@@ -30,7 +30,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateDRTLogBucket.html
    */
   public toAssociateDRTLogBucket() {
-    this.to('AssociateDRTLogBucket');
+    this.to('shield:AssociateDRTLogBucket');
     return this;
   }
 
@@ -47,7 +47,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateDRTRole.html
    */
   public toAssociateDRTRole() {
-    this.to('AssociateDRTRole');
+    this.to('shield:AssociateDRTRole');
     return this;
   }
 
@@ -59,7 +59,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateProtection.html
    */
   public toCreateProtection() {
-    this.to('CreateProtection');
+    this.to('shield:CreateProtection');
     return this;
   }
 
@@ -71,7 +71,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html
    */
   public toCreateSubscription() {
-    this.to('CreateSubscription');
+    this.to('shield:CreateSubscription');
     return this;
   }
 
@@ -83,7 +83,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteProtection.html
    */
   public toDeleteProtection() {
-    this.to('DeleteProtection');
+    this.to('shield:DeleteProtection');
     return this;
   }
 
@@ -95,7 +95,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteSubscription.html
    */
   public toDeleteSubscription() {
-    this.to('DeleteSubscription');
+    this.to('shield:DeleteSubscription');
     return this;
   }
 
@@ -107,7 +107,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeAttack.html
    */
   public toDescribeAttack() {
-    this.to('DescribeAttack');
+    this.to('shield:DescribeAttack');
     return this;
   }
 
@@ -119,7 +119,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeDRTAccess.html
    */
   public toDescribeDRTAccess() {
-    this.to('DescribeDRTAccess');
+    this.to('shield:DescribeDRTAccess');
     return this;
   }
 
@@ -131,7 +131,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeEmergencyContactSettings.html
    */
   public toDescribeEmergencyContactSettings() {
-    this.to('DescribeEmergencyContactSettings');
+    this.to('shield:DescribeEmergencyContactSettings');
     return this;
   }
 
@@ -143,7 +143,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeProtection.html
    */
   public toDescribeProtection() {
-    this.to('DescribeProtection');
+    this.to('shield:DescribeProtection');
     return this;
   }
 
@@ -155,7 +155,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeSubscription.html
    */
   public toDescribeSubscription() {
-    this.to('DescribeSubscription');
+    this.to('shield:DescribeSubscription');
     return this;
   }
 
@@ -172,7 +172,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DisassociateDRTLogBucket.html
    */
   public toDisassociateDRTLogBucket() {
-    this.to('DisassociateDRTLogBucket');
+    this.to('shield:DisassociateDRTLogBucket');
     return this;
   }
 
@@ -184,7 +184,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DisassociateDRTRole.html
    */
   public toDisassociateDRTRole() {
-    this.to('DisassociateDRTRole');
+    this.to('shield:DisassociateDRTRole');
     return this;
   }
 
@@ -196,7 +196,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_GetSubscriptionState.html
    */
   public toGetSubscriptionState() {
-    this.to('GetSubscriptionState');
+    this.to('shield:GetSubscriptionState');
     return this;
   }
 
@@ -208,7 +208,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListAttacks.html
    */
   public toListAttacks() {
-    this.to('ListAttacks');
+    this.to('shield:ListAttacks');
     return this;
   }
 
@@ -220,7 +220,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListProtections.html
    */
   public toListProtections() {
-    this.to('ListProtections');
+    this.to('shield:ListProtections');
     return this;
   }
 
@@ -232,7 +232,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UpdateEmergencyContactSettings.html
    */
   public toUpdateEmergencyContactSettings() {
-    this.to('UpdateEmergencyContactSettings');
+    this.to('shield:UpdateEmergencyContactSettings');
     return this;
   }
 
@@ -244,7 +244,7 @@ export class Shield extends PolicyStatement {
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UpdateSubscription.html
    */
   public toUpdateSubscription() {
-    this.to('UpdateSubscription');
+    this.to('shield:UpdateSubscription');
     return this;
   }
 

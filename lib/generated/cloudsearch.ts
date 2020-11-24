@@ -26,7 +26,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_AddTags.html
    */
   public toAddTags() {
-    this.to('AddTags');
+    this.to('cloudsearch:AddTags');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_BuildSuggesters.html
    */
   public toBuildSuggesters() {
-    this.to('BuildSuggesters');
+    this.to('cloudsearch:BuildSuggesters');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_CreateDomain.html
    */
   public toCreateDomain() {
-    this.to('CreateDomain');
+    this.to('cloudsearch:CreateDomain');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DefineAnalysisScheme.html
    */
   public toDefineAnalysisScheme() {
-    this.to('DefineAnalysisScheme');
+    this.to('cloudsearch:DefineAnalysisScheme');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DefineExpression.html
    */
   public toDefineExpression() {
-    this.to('DefineExpression');
+    this.to('cloudsearch:DefineExpression');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DefineIndexField.html
    */
   public toDefineIndexField() {
-    this.to('DefineIndexField');
+    this.to('cloudsearch:DefineIndexField');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DefineSuggester.html
    */
   public toDefineSuggester() {
-    this.to('DefineSuggester');
+    this.to('cloudsearch:DefineSuggester');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DeleteAnalysisScheme.html
    */
   public toDeleteAnalysisScheme() {
-    this.to('DeleteAnalysisScheme');
+    this.to('cloudsearch:DeleteAnalysisScheme');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DeleteDomain.html
    */
   public toDeleteDomain() {
-    this.to('DeleteDomain');
+    this.to('cloudsearch:DeleteDomain');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DeleteExpression.html
    */
   public toDeleteExpression() {
-    this.to('DeleteExpression');
+    this.to('cloudsearch:DeleteExpression');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DeleteIndexField.html
    */
   public toDeleteIndexField() {
-    this.to('DeleteIndexField');
+    this.to('cloudsearch:DeleteIndexField');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DeleteSuggester.html
    */
   public toDeleteSuggester() {
-    this.to('DeleteSuggester');
+    this.to('cloudsearch:DeleteSuggester');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DescribeAnalysisSchemes.html
    */
   public toDescribeAnalysisSchemes() {
-    this.to('DescribeAnalysisSchemes');
+    this.to('cloudsearch:DescribeAnalysisSchemes');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DescribeAvailabilityOptions.html
    */
   public toDescribeAvailabilityOptions() {
-    this.to('DescribeAvailabilityOptions');
+    this.to('cloudsearch:DescribeAvailabilityOptions');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DescribeDomainEndpointOptions.html
    */
   public toDescribeDomainEndpointOptions() {
-    this.to('DescribeDomainEndpointOptions');
+    this.to('cloudsearch:DescribeDomainEndpointOptions');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DescribeDomains.html
    */
   public toDescribeDomains() {
-    this.to('DescribeDomains');
+    this.to('cloudsearch:DescribeDomains');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DescribeExpressions.html
    */
   public toDescribeExpressions() {
-    this.to('DescribeExpressions');
+    this.to('cloudsearch:DescribeExpressions');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DescribeIndexFields.html
    */
   public toDescribeIndexFields() {
-    this.to('DescribeIndexFields');
+    this.to('cloudsearch:DescribeIndexFields');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DescribeScalingParameters.html
    */
   public toDescribeScalingParameters() {
-    this.to('DescribeScalingParameters');
+    this.to('cloudsearch:DescribeScalingParameters');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DescribeServiceAccessPolicies.html
    */
   public toDescribeServiceAccessPolicies() {
-    this.to('DescribeServiceAccessPolicies');
+    this.to('cloudsearch:DescribeServiceAccessPolicies');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DescribeSuggesters.html
    */
   public toDescribeSuggesters() {
-    this.to('DescribeSuggesters');
+    this.to('cloudsearch:DescribeSuggesters');
     return this;
   }
 
@@ -278,7 +278,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_IndexDocuments.html
    */
   public toIndexDocuments() {
-    this.to('IndexDocuments');
+    this.to('cloudsearch:IndexDocuments');
     return this;
   }
 
@@ -290,7 +290,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_ListDomainNames.html
    */
   public toListDomainNames() {
-    this.to('ListDomainNames');
+    this.to('cloudsearch:ListDomainNames');
     return this;
   }
 
@@ -302,7 +302,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_ListTags.html
    */
   public toListTags() {
-    this.to('ListTags');
+    this.to('cloudsearch:ListTags');
     return this;
   }
 
@@ -314,7 +314,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_RemoveTags.html
    */
   public toRemoveTags() {
-    this.to('RemoveTags');
+    this.to('cloudsearch:RemoveTags');
     return this;
   }
 
@@ -326,7 +326,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_UpdateAvailabilityOptions.html
    */
   public toUpdateAvailabilityOptions() {
-    this.to('UpdateAvailabilityOptions');
+    this.to('cloudsearch:UpdateAvailabilityOptions');
     return this;
   }
 
@@ -338,7 +338,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_UpdateDomainEndpointOptions.html
    */
   public toUpdateDomainEndpointOptions() {
-    this.to('UpdateDomainEndpointOptions');
+    this.to('cloudsearch:UpdateDomainEndpointOptions');
     return this;
   }
 
@@ -350,7 +350,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_UpdateScalingParameters.html
    */
   public toUpdateScalingParameters() {
-    this.to('UpdateScalingParameters');
+    this.to('cloudsearch:UpdateScalingParameters');
     return this;
   }
 
@@ -362,7 +362,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_UpdateServiceAccessPolicies.html
    */
   public toUpdateServiceAccessPolicies() {
-    this.to('UpdateServiceAccessPolicies');
+    this.to('cloudsearch:UpdateServiceAccessPolicies');
     return this;
   }
 
@@ -374,7 +374,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions
    */
   public todocument() {
-    this.to('document');
+    this.to('cloudsearch:document');
     return this;
   }
 
@@ -386,7 +386,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions
    */
   public tosearch() {
-    this.to('search');
+    this.to('cloudsearch:search');
     return this;
   }
 
@@ -398,7 +398,7 @@ export class Cloudsearch extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions
    */
   public tosuggest() {
-    this.to('suggest');
+    this.to('cloudsearch:suggest');
     return this;
   }
 

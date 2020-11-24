@@ -30,7 +30,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ActivateGateway.html
    */
   public toActivateGateway() {
-    this.to('ActivateGateway');
+    this.to('storagegateway:ActivateGateway');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddCache.html
    */
   public toAddCache() {
-    this.to('AddCache');
+    this.to('storagegateway:AddCache');
     return this;
   }
 
@@ -58,7 +58,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddTagsToResource.html
    */
   public toAddTagsToResource() {
-    this.to('AddTagsToResource');
+    this.to('storagegateway:AddTagsToResource');
     return this;
   }
 
@@ -70,7 +70,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddUploadBuffer.html
    */
   public toAddUploadBuffer() {
-    this.to('AddUploadBuffer');
+    this.to('storagegateway:AddUploadBuffer');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddWorkingStorage.html
    */
   public toAddWorkingStorage() {
-    this.to('AddWorkingStorage');
+    this.to('storagegateway:AddWorkingStorage');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AssignTapePool.html
    */
   public toAssignTapePool() {
-    this.to('AssignTapePool');
+    this.to('storagegateway:AssignTapePool');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AttachVolume.html
    */
   public toAttachVolume() {
-    this.to('AttachVolume');
+    this.to('storagegateway:AttachVolume');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/userguide/CreatingCustomTapePool.html#TapeRetentionLock
    */
   public toBypassGovernanceRetention() {
-    this.to('BypassGovernanceRetention');
+    this.to('storagegateway:BypassGovernanceRetention');
     return this;
   }
 
@@ -130,7 +130,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CancelArchival.html
    */
   public toCancelArchival() {
-    this.to('CancelArchival');
+    this.to('storagegateway:CancelArchival');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CancelRetrieval.html
    */
   public toCancelRetrieval() {
-    this.to('CancelRetrieval');
+    this.to('storagegateway:CancelRetrieval');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateCachediSCSIVolume.html
    */
   public toCreateCachediSCSIVolume() {
-    this.to('CreateCachediSCSIVolume');
+    this.to('storagegateway:CreateCachediSCSIVolume');
     return this;
   }
 
@@ -174,7 +174,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateNFSFileShare.html
    */
   public toCreateNFSFileShare() {
-    this.to('CreateNFSFileShare');
+    this.to('storagegateway:CreateNFSFileShare');
     return this;
   }
 
@@ -190,7 +190,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSMBFileShare.html
    */
   public toCreateSMBFileShare() {
-    this.to('CreateSMBFileShare');
+    this.to('storagegateway:CreateSMBFileShare');
     return this;
   }
 
@@ -202,7 +202,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSnapshot.html
    */
   public toCreateSnapshot() {
-    this.to('CreateSnapshot');
+    this.to('storagegateway:CreateSnapshot');
     return this;
   }
 
@@ -214,7 +214,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSnapshotFromVolumeRecoveryPoint.html
    */
   public toCreateSnapshotFromVolumeRecoveryPoint() {
-    this.to('CreateSnapshotFromVolumeRecoveryPoint');
+    this.to('storagegateway:CreateSnapshotFromVolumeRecoveryPoint');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateStorediSCSIVolume.html
    */
   public toCreateStorediSCSIVolume() {
-    this.to('CreateStorediSCSIVolume');
+    this.to('storagegateway:CreateStorediSCSIVolume');
     return this;
   }
 
@@ -246,7 +246,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateTapePool.html
    */
   public toCreateTapePool() {
-    this.to('CreateTapePool');
+    this.to('storagegateway:CreateTapePool');
     return this;
   }
 
@@ -262,7 +262,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateTapeWithBarcode.html
    */
   public toCreateTapeWithBarcode() {
-    this.to('CreateTapeWithBarcode');
+    this.to('storagegateway:CreateTapeWithBarcode');
     return this;
   }
 
@@ -278,7 +278,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateTapes.html
    */
   public toCreateTapes() {
-    this.to('CreateTapes');
+    this.to('storagegateway:CreateTapes');
     return this;
   }
 
@@ -290,7 +290,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteAutomaticTapeCreationPolicy.html
    */
   public toDeleteAutomaticTapeCreationPolicy() {
-    this.to('DeleteAutomaticTapeCreationPolicy');
+    this.to('storagegateway:DeleteAutomaticTapeCreationPolicy');
     return this;
   }
 
@@ -302,7 +302,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteBandwidthRateLimit.html
    */
   public toDeleteBandwidthRateLimit() {
-    this.to('DeleteBandwidthRateLimit');
+    this.to('storagegateway:DeleteBandwidthRateLimit');
     return this;
   }
 
@@ -314,7 +314,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteChapCredentials.html
    */
   public toDeleteChapCredentials() {
-    this.to('DeleteChapCredentials');
+    this.to('storagegateway:DeleteChapCredentials');
     return this;
   }
 
@@ -326,7 +326,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteFileShare.html
    */
   public toDeleteFileShare() {
-    this.to('DeleteFileShare');
+    this.to('storagegateway:DeleteFileShare');
     return this;
   }
 
@@ -338,7 +338,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteGateway.html
    */
   public toDeleteGateway() {
-    this.to('DeleteGateway');
+    this.to('storagegateway:DeleteGateway');
     return this;
   }
 
@@ -350,7 +350,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteSnapshotSchedule.html
    */
   public toDeleteSnapshotSchedule() {
-    this.to('DeleteSnapshotSchedule');
+    this.to('storagegateway:DeleteSnapshotSchedule');
     return this;
   }
 
@@ -362,7 +362,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteTape.html
    */
   public toDeleteTape() {
-    this.to('DeleteTape');
+    this.to('storagegateway:DeleteTape');
     return this;
   }
 
@@ -374,7 +374,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteTapeArchive.html
    */
   public toDeleteTapeArchive() {
-    this.to('DeleteTapeArchive');
+    this.to('storagegateway:DeleteTapeArchive');
     return this;
   }
 
@@ -386,7 +386,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteTapePool.html
    */
   public toDeleteTapePool() {
-    this.to('DeleteTapePool');
+    this.to('storagegateway:DeleteTapePool');
     return this;
   }
 
@@ -398,7 +398,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteVolume.html
    */
   public toDeleteVolume() {
-    this.to('DeleteVolume');
+    this.to('storagegateway:DeleteVolume');
     return this;
   }
 
@@ -410,7 +410,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeBandwidthRateLimit.html
    */
   public toDescribeBandwidthRateLimit() {
-    this.to('DescribeBandwidthRateLimit');
+    this.to('storagegateway:DescribeBandwidthRateLimit');
     return this;
   }
 
@@ -422,7 +422,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeCache.html
    */
   public toDescribeCache() {
-    this.to('DescribeCache');
+    this.to('storagegateway:DescribeCache');
     return this;
   }
 
@@ -434,7 +434,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeCachediSCSIVolumes.html
    */
   public toDescribeCachediSCSIVolumes() {
-    this.to('DescribeCachediSCSIVolumes');
+    this.to('storagegateway:DescribeCachediSCSIVolumes');
     return this;
   }
 
@@ -446,7 +446,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeChapCredentials.html
    */
   public toDescribeChapCredentials() {
-    this.to('DescribeChapCredentials');
+    this.to('storagegateway:DescribeChapCredentials');
     return this;
   }
 
@@ -458,7 +458,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeGatewayInformation.html
    */
   public toDescribeGatewayInformation() {
-    this.to('DescribeGatewayInformation');
+    this.to('storagegateway:DescribeGatewayInformation');
     return this;
   }
 
@@ -470,7 +470,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeMaintenanceStartTime.html
    */
   public toDescribeMaintenanceStartTime() {
-    this.to('DescribeMaintenanceStartTime');
+    this.to('storagegateway:DescribeMaintenanceStartTime');
     return this;
   }
 
@@ -482,7 +482,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeNFSFileShares.html
    */
   public toDescribeNFSFileShares() {
-    this.to('DescribeNFSFileShares');
+    this.to('storagegateway:DescribeNFSFileShares');
     return this;
   }
 
@@ -494,7 +494,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeSMBFileShares.html
    */
   public toDescribeSMBFileShares() {
-    this.to('DescribeSMBFileShares');
+    this.to('storagegateway:DescribeSMBFileShares');
     return this;
   }
 
@@ -506,7 +506,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeSMBSettings.html
    */
   public toDescribeSMBSettings() {
-    this.to('DescribeSMBSettings');
+    this.to('storagegateway:DescribeSMBSettings');
     return this;
   }
 
@@ -518,7 +518,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeSnapshotSchedule.html
    */
   public toDescribeSnapshotSchedule() {
-    this.to('DescribeSnapshotSchedule');
+    this.to('storagegateway:DescribeSnapshotSchedule');
     return this;
   }
 
@@ -530,7 +530,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeStorediSCSIVolumes.html
    */
   public toDescribeStorediSCSIVolumes() {
-    this.to('DescribeStorediSCSIVolumes');
+    this.to('storagegateway:DescribeStorediSCSIVolumes');
     return this;
   }
 
@@ -542,7 +542,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeTapeArchives.html
    */
   public toDescribeTapeArchives() {
-    this.to('DescribeTapeArchives');
+    this.to('storagegateway:DescribeTapeArchives');
     return this;
   }
 
@@ -554,7 +554,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeTapeRecoveryPoints.html
    */
   public toDescribeTapeRecoveryPoints() {
-    this.to('DescribeTapeRecoveryPoints');
+    this.to('storagegateway:DescribeTapeRecoveryPoints');
     return this;
   }
 
@@ -566,7 +566,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeTapes.html
    */
   public toDescribeTapes() {
-    this.to('DescribeTapes');
+    this.to('storagegateway:DescribeTapes');
     return this;
   }
 
@@ -578,7 +578,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeUploadBuffer.html
    */
   public toDescribeUploadBuffer() {
-    this.to('DescribeUploadBuffer');
+    this.to('storagegateway:DescribeUploadBuffer');
     return this;
   }
 
@@ -590,7 +590,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeVTLDevices.html
    */
   public toDescribeVTLDevices() {
-    this.to('DescribeVTLDevices');
+    this.to('storagegateway:DescribeVTLDevices');
     return this;
   }
 
@@ -602,7 +602,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeWorkingStorage.html
    */
   public toDescribeWorkingStorage() {
-    this.to('DescribeWorkingStorage');
+    this.to('storagegateway:DescribeWorkingStorage');
     return this;
   }
 
@@ -614,7 +614,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DetachVolume.html
    */
   public toDetachVolume() {
-    this.to('DetachVolume');
+    this.to('storagegateway:DetachVolume');
     return this;
   }
 
@@ -626,7 +626,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DisableGateway.html
    */
   public toDisableGateway() {
-    this.to('DisableGateway');
+    this.to('storagegateway:DisableGateway');
     return this;
   }
 
@@ -638,7 +638,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_JoinDomain.html
    */
   public toJoinDomain() {
-    this.to('JoinDomain');
+    this.to('storagegateway:JoinDomain');
     return this;
   }
 
@@ -650,7 +650,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListAutomaticTapeCreationPolicies.html
    */
   public toListAutomaticTapeCreationPolicies() {
-    this.to('ListAutomaticTapeCreationPolicies');
+    this.to('storagegateway:ListAutomaticTapeCreationPolicies');
     return this;
   }
 
@@ -662,7 +662,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListFileShares.html
    */
   public toListFileShares() {
-    this.to('ListFileShares');
+    this.to('storagegateway:ListFileShares');
     return this;
   }
 
@@ -674,7 +674,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListGateways.html
    */
   public toListGateways() {
-    this.to('ListGateways');
+    this.to('storagegateway:ListGateways');
     return this;
   }
 
@@ -686,7 +686,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListLocalDisks.html
    */
   public toListLocalDisks() {
-    this.to('ListLocalDisks');
+    this.to('storagegateway:ListLocalDisks');
     return this;
   }
 
@@ -698,7 +698,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('storagegateway:ListTagsForResource');
     return this;
   }
 
@@ -710,7 +710,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListTapePools.html
    */
   public toListTapePools() {
-    this.to('ListTapePools');
+    this.to('storagegateway:ListTapePools');
     return this;
   }
 
@@ -722,7 +722,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListTapes.html
    */
   public toListTapes() {
-    this.to('ListTapes');
+    this.to('storagegateway:ListTapes');
     return this;
   }
 
@@ -734,7 +734,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListVolumeInitiators.html
    */
   public toListVolumeInitiators() {
-    this.to('ListVolumeInitiators');
+    this.to('storagegateway:ListVolumeInitiators');
     return this;
   }
 
@@ -746,7 +746,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListVolumeRecoveryPoints.html
    */
   public toListVolumeRecoveryPoints() {
-    this.to('ListVolumeRecoveryPoints');
+    this.to('storagegateway:ListVolumeRecoveryPoints');
     return this;
   }
 
@@ -758,7 +758,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListVolumes.html
    */
   public toListVolumes() {
-    this.to('ListVolumes');
+    this.to('storagegateway:ListVolumes');
     return this;
   }
 
@@ -770,7 +770,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_NotifyWhenUploaded.html
    */
   public toNotifyWhenUploaded() {
-    this.to('NotifyWhenUploaded');
+    this.to('storagegateway:NotifyWhenUploaded');
     return this;
   }
 
@@ -782,7 +782,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RefreshCache.html
    */
   public toRefreshCache() {
-    this.to('RefreshCache');
+    this.to('storagegateway:RefreshCache');
     return this;
   }
 
@@ -797,7 +797,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RemoveTagsFromResource.html
    */
   public toRemoveTagsFromResource() {
-    this.to('RemoveTagsFromResource');
+    this.to('storagegateway:RemoveTagsFromResource');
     return this;
   }
 
@@ -809,7 +809,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ResetCache.html
    */
   public toResetCache() {
-    this.to('ResetCache');
+    this.to('storagegateway:ResetCache');
     return this;
   }
 
@@ -821,7 +821,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RetrieveTapeArchive.html
    */
   public toRetrieveTapeArchive() {
-    this.to('RetrieveTapeArchive');
+    this.to('storagegateway:RetrieveTapeArchive');
     return this;
   }
 
@@ -833,7 +833,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RetrieveTapeRecoveryPoint.html
    */
   public toRetrieveTapeRecoveryPoint() {
-    this.to('RetrieveTapeRecoveryPoint');
+    this.to('storagegateway:RetrieveTapeRecoveryPoint');
     return this;
   }
 
@@ -845,7 +845,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_SetLocalConsolePassword.html
    */
   public toSetLocalConsolePassword() {
-    this.to('SetLocalConsolePassword');
+    this.to('storagegateway:SetLocalConsolePassword');
     return this;
   }
 
@@ -857,7 +857,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_SetSMBGuestPassword.html
    */
   public toSetSMBGuestPassword() {
-    this.to('SetSMBGuestPassword');
+    this.to('storagegateway:SetSMBGuestPassword');
     return this;
   }
 
@@ -869,7 +869,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ShutdownGateway.html
    */
   public toShutdownGateway() {
-    this.to('ShutdownGateway');
+    this.to('storagegateway:ShutdownGateway');
     return this;
   }
 
@@ -881,7 +881,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_StartGateway.html
    */
   public toStartGateway() {
-    this.to('StartGateway');
+    this.to('storagegateway:StartGateway');
     return this;
   }
 
@@ -893,7 +893,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateAutomaticTapeCreationPolicy.html
    */
   public toUpdateAutomaticTapeCreationPolicy() {
-    this.to('UpdateAutomaticTapeCreationPolicy');
+    this.to('storagegateway:UpdateAutomaticTapeCreationPolicy');
     return this;
   }
 
@@ -905,7 +905,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateBandwidthRateLimit.html
    */
   public toUpdateBandwidthRateLimit() {
-    this.to('UpdateBandwidthRateLimit');
+    this.to('storagegateway:UpdateBandwidthRateLimit');
     return this;
   }
 
@@ -917,7 +917,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateChapCredentials.html
    */
   public toUpdateChapCredentials() {
-    this.to('UpdateChapCredentials');
+    this.to('storagegateway:UpdateChapCredentials');
     return this;
   }
 
@@ -929,7 +929,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateGatewayInformation.html
    */
   public toUpdateGatewayInformation() {
-    this.to('UpdateGatewayInformation');
+    this.to('storagegateway:UpdateGatewayInformation');
     return this;
   }
 
@@ -941,7 +941,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateGatewaySoftwareNow.html
    */
   public toUpdateGatewaySoftwareNow() {
-    this.to('UpdateGatewaySoftwareNow');
+    this.to('storagegateway:UpdateGatewaySoftwareNow');
     return this;
   }
 
@@ -953,7 +953,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateMaintenanceStartTime.html
    */
   public toUpdateMaintenanceStartTime() {
-    this.to('UpdateMaintenanceStartTime');
+    this.to('storagegateway:UpdateMaintenanceStartTime');
     return this;
   }
 
@@ -965,7 +965,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateNFSFileShare.html
    */
   public toUpdateNFSFileShare() {
-    this.to('UpdateNFSFileShare');
+    this.to('storagegateway:UpdateNFSFileShare');
     return this;
   }
 
@@ -977,7 +977,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateSMBFileShare.html
    */
   public toUpdateSMBFileShare() {
-    this.to('UpdateSMBFileShare');
+    this.to('storagegateway:UpdateSMBFileShare');
     return this;
   }
 
@@ -989,7 +989,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateSnapshotSchedule.html
    */
   public toUpdateSnapshotSchedule() {
-    this.to('UpdateSnapshotSchedule');
+    this.to('storagegateway:UpdateSnapshotSchedule');
     return this;
   }
 
@@ -1001,7 +1001,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateVTLDeviceType.html
    */
   public toUpdateVTLDeviceType() {
-    this.to('UpdateVTLDeviceType');
+    this.to('storagegateway:UpdateVTLDeviceType');
     return this;
   }
 

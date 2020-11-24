@@ -26,7 +26,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_AddTagsToOnPremisesInstances.html
    */
   public toAddTagsToOnPremisesInstances() {
-    this.to('AddTagsToOnPremisesInstances');
+    this.to('codedeploy:AddTagsToOnPremisesInstances');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetApplicationRevisions.html
    */
   public toBatchGetApplicationRevisions() {
-    this.to('BatchGetApplicationRevisions');
+    this.to('codedeploy:BatchGetApplicationRevisions');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetApplications.html
    */
   public toBatchGetApplications() {
-    this.to('BatchGetApplications');
+    this.to('codedeploy:BatchGetApplications');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeploymentGroups.html
    */
   public toBatchGetDeploymentGroups() {
-    this.to('BatchGetDeploymentGroups');
+    this.to('codedeploy:BatchGetDeploymentGroups');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeploymentInstances.html
    */
   public toBatchGetDeploymentInstances() {
-    this.to('BatchGetDeploymentInstances');
+    this.to('codedeploy:BatchGetDeploymentInstances');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeploymentTargets.html
    */
   public toBatchGetDeploymentTargets() {
-    this.to('BatchGetDeploymentTargets');
+    this.to('codedeploy:BatchGetDeploymentTargets');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeployments.html
    */
   public toBatchGetDeployments() {
-    this.to('BatchGetDeployments');
+    this.to('codedeploy:BatchGetDeployments');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetOnPremisesInstances.html
    */
   public toBatchGetOnPremisesInstances() {
-    this.to('BatchGetOnPremisesInstances');
+    this.to('codedeploy:BatchGetOnPremisesInstances');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ContinueDeployment.html
    */
   public toContinueDeployment() {
-    this.to('ContinueDeployment');
+    this.to('codedeploy:ContinueDeployment');
     return this;
   }
 
@@ -138,7 +138,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateApplication.html
    */
   public toCreateApplication() {
-    this.to('CreateApplication');
+    this.to('codedeploy:CreateApplication');
     return this;
   }
 
@@ -148,7 +148,7 @@ export class Codedeploy extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateCloudFormationDeployment() {
-    this.to('CreateCloudFormationDeployment');
+    this.to('codedeploy:CreateCloudFormationDeployment');
     return this;
   }
 
@@ -160,7 +160,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html
    */
   public toCreateDeployment() {
-    this.to('CreateDeployment');
+    this.to('codedeploy:CreateDeployment');
     return this;
   }
 
@@ -172,7 +172,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentConfig.html
    */
   public toCreateDeploymentConfig() {
-    this.to('CreateDeploymentConfig');
+    this.to('codedeploy:CreateDeploymentConfig');
     return this;
   }
 
@@ -188,7 +188,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentGroup.html
    */
   public toCreateDeploymentGroup() {
-    this.to('CreateDeploymentGroup');
+    this.to('codedeploy:CreateDeploymentGroup');
     return this;
   }
 
@@ -200,7 +200,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteApplication.html
    */
   public toDeleteApplication() {
-    this.to('DeleteApplication');
+    this.to('codedeploy:DeleteApplication');
     return this;
   }
 
@@ -212,7 +212,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteDeploymentConfig.html
    */
   public toDeleteDeploymentConfig() {
-    this.to('DeleteDeploymentConfig');
+    this.to('codedeploy:DeleteDeploymentConfig');
     return this;
   }
 
@@ -224,7 +224,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteDeploymentGroup.html
    */
   public toDeleteDeploymentGroup() {
-    this.to('DeleteDeploymentGroup');
+    this.to('codedeploy:DeleteDeploymentGroup');
     return this;
   }
 
@@ -236,7 +236,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteGitHubAccountToken.html
    */
   public toDeleteGitHubAccountToken() {
-    this.to('DeleteGitHubAccountToken');
+    this.to('codedeploy:DeleteGitHubAccountToken');
     return this;
   }
 
@@ -248,7 +248,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteResourcesByExternalId.html
    */
   public toDeleteResourcesByExternalId() {
-    this.to('DeleteResourcesByExternalId');
+    this.to('codedeploy:DeleteResourcesByExternalId');
     return this;
   }
 
@@ -260,7 +260,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeregisterOnPremisesInstance.html
    */
   public toDeregisterOnPremisesInstance() {
-    this.to('DeregisterOnPremisesInstance');
+    this.to('codedeploy:DeregisterOnPremisesInstance');
     return this;
   }
 
@@ -272,7 +272,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetApplication.html
    */
   public toGetApplication() {
-    this.to('GetApplication');
+    this.to('codedeploy:GetApplication');
     return this;
   }
 
@@ -284,7 +284,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetApplicationRevision.html
    */
   public toGetApplicationRevision() {
-    this.to('GetApplicationRevision');
+    this.to('codedeploy:GetApplicationRevision');
     return this;
   }
 
@@ -296,7 +296,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeployment.html
    */
   public toGetDeployment() {
-    this.to('GetDeployment');
+    this.to('codedeploy:GetDeployment');
     return this;
   }
 
@@ -308,7 +308,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentConfig.html
    */
   public toGetDeploymentConfig() {
-    this.to('GetDeploymentConfig');
+    this.to('codedeploy:GetDeploymentConfig');
     return this;
   }
 
@@ -320,7 +320,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentGroup.html
    */
   public toGetDeploymentGroup() {
-    this.to('GetDeploymentGroup');
+    this.to('codedeploy:GetDeploymentGroup');
     return this;
   }
 
@@ -332,7 +332,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentInstance.html
    */
   public toGetDeploymentInstance() {
-    this.to('GetDeploymentInstance');
+    this.to('codedeploy:GetDeploymentInstance');
     return this;
   }
 
@@ -344,7 +344,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentTarget.html
    */
   public toGetDeploymentTarget() {
-    this.to('GetDeploymentTarget');
+    this.to('codedeploy:GetDeploymentTarget');
     return this;
   }
 
@@ -356,7 +356,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetOnPremisesInstance.html
    */
   public toGetOnPremisesInstance() {
-    this.to('GetOnPremisesInstance');
+    this.to('codedeploy:GetOnPremisesInstance');
     return this;
   }
 
@@ -368,7 +368,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListApplicationRevisions.html
    */
   public toListApplicationRevisions() {
-    this.to('ListApplicationRevisions');
+    this.to('codedeploy:ListApplicationRevisions');
     return this;
   }
 
@@ -380,7 +380,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListApplications.html
    */
   public toListApplications() {
-    this.to('ListApplications');
+    this.to('codedeploy:ListApplications');
     return this;
   }
 
@@ -392,7 +392,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentConfigs.html
    */
   public toListDeploymentConfigs() {
-    this.to('ListDeploymentConfigs');
+    this.to('codedeploy:ListDeploymentConfigs');
     return this;
   }
 
@@ -404,7 +404,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentGroups.html
    */
   public toListDeploymentGroups() {
-    this.to('ListDeploymentGroups');
+    this.to('codedeploy:ListDeploymentGroups');
     return this;
   }
 
@@ -416,7 +416,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentInstances.html
    */
   public toListDeploymentInstances() {
-    this.to('ListDeploymentInstances');
+    this.to('codedeploy:ListDeploymentInstances');
     return this;
   }
 
@@ -428,7 +428,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentTargets.html
    */
   public toListDeploymentTargets() {
-    this.to('ListDeploymentTargets');
+    this.to('codedeploy:ListDeploymentTargets');
     return this;
   }
 
@@ -440,7 +440,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeployments.html
    */
   public toListDeployments() {
-    this.to('ListDeployments');
+    this.to('codedeploy:ListDeployments');
     return this;
   }
 
@@ -452,7 +452,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ ListGitHubAccountTokenNames.html
    */
   public toListGitHubAccountTokenNames() {
-    this.to('ListGitHubAccountTokenNames');
+    this.to('codedeploy:ListGitHubAccountTokenNames');
     return this;
   }
 
@@ -464,7 +464,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListOnPremisesInstances.html
    */
   public toListOnPremisesInstances() {
-    this.to('ListOnPremisesInstances');
+    this.to('codedeploy:ListOnPremisesInstances');
     return this;
   }
 
@@ -476,7 +476,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('codedeploy:ListTagsForResource');
     return this;
   }
 
@@ -488,7 +488,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_PutLifecycleEventHookExecutionStatus.html
    */
   public toPutLifecycleEventHookExecutionStatus() {
-    this.to('PutLifecycleEventHookExecutionStatus');
+    this.to('codedeploy:PutLifecycleEventHookExecutionStatus');
     return this;
   }
 
@@ -500,7 +500,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RegisterApplicationRevision.html
    */
   public toRegisterApplicationRevision() {
-    this.to('RegisterApplicationRevision');
+    this.to('codedeploy:RegisterApplicationRevision');
     return this;
   }
 
@@ -512,7 +512,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RegisterOnPremisesInstance.html
    */
   public toRegisterOnPremisesInstance() {
-    this.to('RegisterOnPremisesInstance');
+    this.to('codedeploy:RegisterOnPremisesInstance');
     return this;
   }
 
@@ -524,7 +524,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RemoveTagsFromOnPremisesInstances.html
    */
   public toRemoveTagsFromOnPremisesInstances() {
-    this.to('RemoveTagsFromOnPremisesInstances');
+    this.to('codedeploy:RemoveTagsFromOnPremisesInstances');
     return this;
   }
 
@@ -536,7 +536,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ SkipWaitTimeForInstanceTermination.html
    */
   public toSkipWaitTimeForInstanceTermination() {
-    this.to('SkipWaitTimeForInstanceTermination');
+    this.to('codedeploy:SkipWaitTimeForInstanceTermination');
     return this;
   }
 
@@ -548,7 +548,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_StopDeployment.html
    */
   public toStopDeployment() {
-    this.to('StopDeployment');
+    this.to('codedeploy:StopDeployment');
     return this;
   }
 
@@ -564,7 +564,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('codedeploy:TagResource');
     return this;
   }
 
@@ -579,7 +579,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('codedeploy:UntagResource');
     return this;
   }
 
@@ -591,7 +591,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UpdateApplication.html
    */
   public toUpdateApplication() {
-    this.to('UpdateApplication');
+    this.to('codedeploy:UpdateApplication');
     return this;
   }
 
@@ -603,7 +603,7 @@ export class Codedeploy extends PolicyStatement {
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UpdateDeploymentGroup.html
    */
   public toUpdateDeploymentGroup() {
-    this.to('UpdateDeploymentGroup');
+    this.to('codedeploy:UpdateDeploymentGroup');
     return this;
   }
 

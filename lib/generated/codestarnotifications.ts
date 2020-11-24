@@ -31,7 +31,7 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_CreateNotificationRule.html
    */
   public toCreateNotificationRule() {
-    this.to('CreateNotificationRule');
+    this.to('codestar-notifications:CreateNotificationRule');
     return this;
   }
 
@@ -49,7 +49,7 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DeleteNotificationRule.html
    */
   public toDeleteNotificationRule() {
-    this.to('DeleteNotificationRule');
+    this.to('codestar-notifications:DeleteNotificationRule');
     return this;
   }
 
@@ -65,7 +65,7 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DeleteTarget.html
    */
   public toDeleteTarget() {
-    this.to('DeleteTarget');
+    this.to('codestar-notifications:DeleteTarget');
     return this;
   }
 
@@ -83,7 +83,7 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DescribeNotificationRule.html
    */
   public toDescribeNotificationRule() {
-    this.to('DescribeNotificationRule');
+    this.to('codestar-notifications:DescribeNotificationRule');
     return this;
   }
 
@@ -95,7 +95,7 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListEventTypes.html
    */
   public toListEventTypes() {
-    this.to('ListEventTypes');
+    this.to('codestar-notifications:ListEventTypes');
     return this;
   }
 
@@ -107,7 +107,7 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListNotificationRules.html
    */
   public toListNotificationRules() {
-    this.to('ListNotificationRules');
+    this.to('codestar-notifications:ListNotificationRules');
     return this;
   }
 
@@ -123,7 +123,7 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('codestar-notifications:ListTagsForResource');
     return this;
   }
 
@@ -139,7 +139,7 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListTargets.html
    */
   public toListTargets() {
-    this.to('ListTargets');
+    this.to('codestar-notifications:ListTargets');
     return this;
   }
 
@@ -157,7 +157,7 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_Subscribe.html
    */
   public toSubscribe() {
-    this.to('Subscribe');
+    this.to('codestar-notifications:Subscribe');
     return this;
   }
 
@@ -174,7 +174,7 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('codestar-notifications:TagResource');
     return this;
   }
 
@@ -192,7 +192,7 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_Unsubscribe.html
    */
   public toUnsubscribe() {
-    this.to('Unsubscribe');
+    this.to('codestar-notifications:Unsubscribe');
     return this;
   }
 
@@ -208,7 +208,7 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('codestar-notifications:UntagResource');
     return this;
   }
 
@@ -226,7 +226,7 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_UpdateNotificationRule.html
    */
   public toUpdateNotificationRule() {
-    this.to('UpdateNotificationRule');
+    this.to('codestar-notifications:UpdateNotificationRule');
     return this;
   }
 

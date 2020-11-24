@@ -26,7 +26,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CancelImageCreation.html
    */
   public toCancelImageCreation() {
-    this.to('CancelImageCreation');
+    this.to('imagebuilder:CancelImageCreation');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html
    */
   public toCreateComponent() {
-    this.to('CreateComponent');
+    this.to('imagebuilder:CreateComponent');
     return this;
   }
 
@@ -58,7 +58,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateDistributionConfiguration.html
    */
   public toCreateDistributionConfiguration() {
-    this.to('CreateDistributionConfiguration');
+    this.to('imagebuilder:CreateDistributionConfiguration');
     return this;
   }
 
@@ -78,7 +78,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImage.html
    */
   public toCreateImage() {
-    this.to('CreateImage');
+    this.to('imagebuilder:CreateImage');
     return this;
   }
 
@@ -97,7 +97,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImagePipeline.html
    */
   public toCreateImagePipeline() {
-    this.to('CreateImagePipeline');
+    this.to('imagebuilder:CreateImagePipeline');
     return this;
   }
 
@@ -116,7 +116,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImageRecipe.html
    */
   public toCreateImageRecipe() {
-    this.to('CreateImageRecipe');
+    this.to('imagebuilder:CreateImageRecipe');
     return this;
   }
 
@@ -137,7 +137,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateInfrastructureConfiguration.html
    */
   public toCreateInfrastructureConfiguration() {
-    this.to('CreateInfrastructureConfiguration');
+    this.to('imagebuilder:CreateInfrastructureConfiguration');
     return this;
   }
 
@@ -149,7 +149,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteComponent.html
    */
   public toDeleteComponent() {
-    this.to('DeleteComponent');
+    this.to('imagebuilder:DeleteComponent');
     return this;
   }
 
@@ -161,7 +161,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteDistributionConfiguration.html
    */
   public toDeleteDistributionConfiguration() {
-    this.to('DeleteDistributionConfiguration');
+    this.to('imagebuilder:DeleteDistributionConfiguration');
     return this;
   }
 
@@ -173,7 +173,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteImage.html
    */
   public toDeleteImage() {
-    this.to('DeleteImage');
+    this.to('imagebuilder:DeleteImage');
     return this;
   }
 
@@ -185,7 +185,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteImagePipeline.html
    */
   public toDeleteImagePipeline() {
-    this.to('DeleteImagePipeline');
+    this.to('imagebuilder:DeleteImagePipeline');
     return this;
   }
 
@@ -197,7 +197,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteImageRecipe.html
    */
   public toDeleteImageRecipe() {
-    this.to('DeleteImageRecipe');
+    this.to('imagebuilder:DeleteImageRecipe');
     return this;
   }
 
@@ -209,7 +209,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteInfrastructureConfiguration.html
    */
   public toDeleteInfrastructureConfiguration() {
-    this.to('DeleteInfrastructureConfiguration');
+    this.to('imagebuilder:DeleteInfrastructureConfiguration');
     return this;
   }
 
@@ -221,7 +221,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetComponent.html
    */
   public toGetComponent() {
-    this.to('GetComponent');
+    this.to('imagebuilder:GetComponent');
     return this;
   }
 
@@ -233,7 +233,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetComponentPolicy.html
    */
   public toGetComponentPolicy() {
-    this.to('GetComponentPolicy');
+    this.to('imagebuilder:GetComponentPolicy');
     return this;
   }
 
@@ -245,7 +245,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetDistributionConfiguration.html
    */
   public toGetDistributionConfiguration() {
-    this.to('GetDistributionConfiguration');
+    this.to('imagebuilder:GetDistributionConfiguration');
     return this;
   }
 
@@ -260,7 +260,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImage.html
    */
   public toGetImage() {
-    this.to('GetImage');
+    this.to('imagebuilder:GetImage');
     return this;
   }
 
@@ -272,7 +272,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImagePipeline.html
    */
   public toGetImagePipeline() {
-    this.to('GetImagePipeline');
+    this.to('imagebuilder:GetImagePipeline');
     return this;
   }
 
@@ -284,7 +284,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImagePolicy.html
    */
   public toGetImagePolicy() {
-    this.to('GetImagePolicy');
+    this.to('imagebuilder:GetImagePolicy');
     return this;
   }
 
@@ -296,7 +296,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImageRecipe.html
    */
   public toGetImageRecipe() {
-    this.to('GetImageRecipe');
+    this.to('imagebuilder:GetImageRecipe');
     return this;
   }
 
@@ -308,7 +308,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImageRecipePolicy.html
    */
   public toGetImageRecipePolicy() {
-    this.to('GetImageRecipePolicy');
+    this.to('imagebuilder:GetImageRecipePolicy');
     return this;
   }
 
@@ -320,7 +320,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetInfrastructureConfiguration.html
    */
   public toGetInfrastructureConfiguration() {
-    this.to('GetInfrastructureConfiguration');
+    this.to('imagebuilder:GetInfrastructureConfiguration');
     return this;
   }
 
@@ -332,7 +332,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListComponentBuildVersions.html
    */
   public toListComponentBuildVersions() {
-    this.to('ListComponentBuildVersions');
+    this.to('imagebuilder:ListComponentBuildVersions');
     return this;
   }
 
@@ -344,7 +344,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListComponents.html
    */
   public toListComponents() {
-    this.to('ListComponents');
+    this.to('imagebuilder:ListComponents');
     return this;
   }
 
@@ -356,7 +356,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListDistributionConfigurations.html
    */
   public toListDistributionConfigurations() {
-    this.to('ListDistributionConfigurations');
+    this.to('imagebuilder:ListDistributionConfigurations');
     return this;
   }
 
@@ -368,7 +368,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImageBuildVersions.html
    */
   public toListImageBuildVersions() {
-    this.to('ListImageBuildVersions');
+    this.to('imagebuilder:ListImageBuildVersions');
     return this;
   }
 
@@ -380,7 +380,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImagePipelineImages.html
    */
   public toListImagePipelineImages() {
-    this.to('ListImagePipelineImages');
+    this.to('imagebuilder:ListImagePipelineImages');
     return this;
   }
 
@@ -392,7 +392,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImagePipelines.html
    */
   public toListImagePipelines() {
-    this.to('ListImagePipelines');
+    this.to('imagebuilder:ListImagePipelines');
     return this;
   }
 
@@ -404,7 +404,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImageRecipes.html
    */
   public toListImageRecipes() {
-    this.to('ListImageRecipes');
+    this.to('imagebuilder:ListImageRecipes');
     return this;
   }
 
@@ -416,7 +416,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImages.html
    */
   public toListImages() {
-    this.to('ListImages');
+    this.to('imagebuilder:ListImages');
     return this;
   }
 
@@ -428,7 +428,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListInfrastructureConfigurations.html
    */
   public toListInfrastructureConfigurations() {
-    this.to('ListInfrastructureConfigurations');
+    this.to('imagebuilder:ListInfrastructureConfigurations');
     return this;
   }
 
@@ -443,7 +443,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('imagebuilder:ListTagsForResource');
     return this;
   }
 
@@ -455,7 +455,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutComponentPolicy.html
    */
   public toPutComponentPolicy() {
-    this.to('PutComponentPolicy');
+    this.to('imagebuilder:PutComponentPolicy');
     return this;
   }
 
@@ -467,7 +467,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutImagePolicy.html
    */
   public toPutImagePolicy() {
-    this.to('PutImagePolicy');
+    this.to('imagebuilder:PutImagePolicy');
     return this;
   }
 
@@ -479,7 +479,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutImageRecipePolicy.html
    */
   public toPutImageRecipePolicy() {
-    this.to('PutImageRecipePolicy');
+    this.to('imagebuilder:PutImageRecipePolicy');
     return this;
   }
 
@@ -494,7 +494,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartImagePipelineExecution.html
    */
   public toStartImagePipelineExecution() {
-    this.to('StartImagePipelineExecution');
+    this.to('imagebuilder:StartImagePipelineExecution');
     return this;
   }
 
@@ -511,7 +511,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('imagebuilder:TagResource');
     return this;
   }
 
@@ -527,7 +527,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('imagebuilder:UntagResource');
     return this;
   }
 
@@ -539,7 +539,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateDistributionConfiguration.html
    */
   public toUpdateDistributionConfiguration() {
-    this.to('UpdateDistributionConfiguration');
+    this.to('imagebuilder:UpdateDistributionConfiguration');
     return this;
   }
 
@@ -551,7 +551,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateImagePipeline.html
    */
   public toUpdateImagePipeline() {
-    this.to('UpdateImagePipeline');
+    this.to('imagebuilder:UpdateImagePipeline');
     return this;
   }
 
@@ -571,7 +571,7 @@ export class Imagebuilder extends PolicyStatement {
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateInfrastructureConfiguration.html
    */
   public toUpdateInfrastructureConfiguration() {
-    this.to('UpdateInfrastructureConfiguration');
+    this.to('imagebuilder:UpdateInfrastructureConfiguration');
     return this;
   }
 

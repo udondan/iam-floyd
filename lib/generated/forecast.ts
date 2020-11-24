@@ -30,7 +30,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDataset.html
    */
   public toCreateDataset() {
-    this.to('CreateDataset');
+    this.to('forecast:CreateDataset');
     return this;
   }
 
@@ -46,7 +46,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetGroup.html
    */
   public toCreateDatasetGroup() {
-    this.to('CreateDatasetGroup');
+    this.to('forecast:CreateDatasetGroup');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetImportJob.html
    */
   public toCreateDatasetImportJob() {
-    this.to('CreateDatasetImportJob');
+    this.to('forecast:CreateDatasetImportJob');
     return this;
   }
 
@@ -78,7 +78,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecast.html
    */
   public toCreateForecast() {
-    this.to('CreateForecast');
+    this.to('forecast:CreateForecast');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecastExportJob.html
    */
   public toCreateForecastExportJob() {
-    this.to('CreateForecastExportJob');
+    this.to('forecast:CreateForecastExportJob');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreatePredictor.html
    */
   public toCreatePredictor() {
-    this.to('CreatePredictor');
+    this.to('forecast:CreatePredictor');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDataset.html
    */
   public toDeleteDataset() {
-    this.to('DeleteDataset');
+    this.to('forecast:DeleteDataset');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDatasetGroup.html
    */
   public toDeleteDatasetGroup() {
-    this.to('DeleteDatasetGroup');
+    this.to('forecast:DeleteDatasetGroup');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDatasetImportJob.html
    */
   public toDeleteDatasetImportJob() {
-    this.to('DeleteDatasetImportJob');
+    this.to('forecast:DeleteDatasetImportJob');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteForecast.html
    */
   public toDeleteForecast() {
-    this.to('DeleteForecast');
+    this.to('forecast:DeleteForecast');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteForecastExportJob.html
    */
   public toDeleteForecastExportJob() {
-    this.to('DeleteForecastExportJob');
+    this.to('forecast:DeleteForecastExportJob');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeletePredictor.html
    */
   public toDeletePredictor() {
-    this.to('DeletePredictor');
+    this.to('forecast:DeletePredictor');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDataset.html
    */
   public toDescribeDataset() {
-    this.to('DescribeDataset');
+    this.to('forecast:DescribeDataset');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDatasetGroup.html
    */
   public toDescribeDatasetGroup() {
-    this.to('DescribeDatasetGroup');
+    this.to('forecast:DescribeDatasetGroup');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDatasetImportJob.html
    */
   public toDescribeDatasetImportJob() {
-    this.to('DescribeDatasetImportJob');
+    this.to('forecast:DescribeDatasetImportJob');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeForecast.html
    */
   public toDescribeForecast() {
-    this.to('DescribeForecast');
+    this.to('forecast:DescribeForecast');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeForecastExportJob.html
    */
   public toDescribeForecastExportJob() {
-    this.to('DescribeForecastExportJob');
+    this.to('forecast:DescribeForecastExportJob');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribePredictor.html
    */
   public toDescribePredictor() {
-    this.to('DescribePredictor');
+    this.to('forecast:DescribePredictor');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_GetAccuracyMetrics.html
    */
   public toGetAccuracyMetrics() {
-    this.to('GetAccuracyMetrics');
+    this.to('forecast:GetAccuracyMetrics');
     return this;
   }
 
@@ -278,7 +278,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasetGroups.html
    */
   public toListDatasetGroups() {
-    this.to('ListDatasetGroups');
+    this.to('forecast:ListDatasetGroups');
     return this;
   }
 
@@ -290,7 +290,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasetImportJobs.html
    */
   public toListDatasetImportJobs() {
-    this.to('ListDatasetImportJobs');
+    this.to('forecast:ListDatasetImportJobs');
     return this;
   }
 
@@ -302,7 +302,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasets.html
    */
   public toListDatasets() {
-    this.to('ListDatasets');
+    this.to('forecast:ListDatasets');
     return this;
   }
 
@@ -314,7 +314,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListForecastExportJobs.html
    */
   public toListForecastExportJobs() {
-    this.to('ListForecastExportJobs');
+    this.to('forecast:ListForecastExportJobs');
     return this;
   }
 
@@ -326,7 +326,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListForecasts.html
    */
   public toListForecasts() {
-    this.to('ListForecasts');
+    this.to('forecast:ListForecasts');
     return this;
   }
 
@@ -338,7 +338,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListPredictors.html
    */
   public toListPredictors() {
-    this.to('ListPredictors');
+    this.to('forecast:ListPredictors');
     return this;
   }
 
@@ -350,7 +350,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('forecast:ListTagsForResource');
     return this;
   }
 
@@ -362,7 +362,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_forecastquery_QueryForecast.html
    */
   public toQueryForecast() {
-    this.to('QueryForecast');
+    this.to('forecast:QueryForecast');
     return this;
   }
 
@@ -378,7 +378,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('forecast:TagResource');
     return this;
   }
 
@@ -393,7 +393,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('forecast:UntagResource');
     return this;
   }
 
@@ -405,7 +405,7 @@ export class Forecast extends PolicyStatement {
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_UpdateDatasetGroup.html
    */
   public toUpdateDatasetGroup() {
-    this.to('UpdateDatasetGroup');
+    this.to('forecast:UpdateDatasetGroup');
     return this;
   }
 

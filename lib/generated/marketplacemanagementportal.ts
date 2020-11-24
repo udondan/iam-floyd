@@ -26,7 +26,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
   public touploadFiles() {
-    this.to('uploadFiles');
+    this.to('aws-marketplace-management:uploadFiles');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
   public toviewMarketing() {
-    this.to('viewMarketing');
+    this.to('aws-marketplace-management:viewMarketing');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
   public toviewReports() {
-    this.to('viewReports');
+    this.to('aws-marketplace-management:viewReports');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
   public toviewSettings() {
-    this.to('viewSettings');
+    this.to('aws-marketplace-management:viewSettings');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
   public toviewSupport() {
-    this.to('viewSupport');
+    this.to('aws-marketplace-management:viewSupport');
     return this;
   }
 

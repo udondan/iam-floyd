@@ -26,7 +26,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html
    */
   public toBatchMeterUsage() {
-    this.to('BatchMeterUsage');
+    this.to('aws-marketplace:BatchMeterUsage');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html
    */
   public toMeterUsage() {
-    this.to('MeterUsage');
+    this.to('aws-marketplace:MeterUsage');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_RegisterUsage.html
    */
   public toRegisterUsage() {
-    this.to('RegisterUsage');
+    this.to('aws-marketplace:RegisterUsage');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html
    */
   public toResolveCustomer() {
-    this.to('ResolveCustomer');
+    this.to('aws-marketplace:ResolveCustomer');
     return this;
   }
 

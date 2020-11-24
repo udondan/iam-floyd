@@ -26,7 +26,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/certificates.html
    */
   public toAssociateCertificate() {
-    this.to('AssociateCertificate');
+    this.to('mediaconvert:AssociateCertificate');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs-id.html
    */
   public toCancelJob() {
-    this.to('CancelJob');
+    this.to('mediaconvert:CancelJob');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html
    */
   public toCreateJob() {
-    this.to('CreateJob');
+    this.to('mediaconvert:CreateJob');
     return this;
   }
 
@@ -66,7 +66,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs-id.html
    */
   public toCreateJobTemplate() {
-    this.to('CreateJobTemplate');
+    this.to('mediaconvert:CreateJobTemplate');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets.html
    */
   public toCreatePreset() {
-    this.to('CreatePreset');
+    this.to('mediaconvert:CreatePreset');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues.html
    */
   public toCreateQueue() {
-    this.to('CreateQueue');
+    this.to('mediaconvert:CreateQueue');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates-name.html
    */
   public toDeleteJobTemplate() {
-    this.to('DeleteJobTemplate');
+    this.to('mediaconvert:DeleteJobTemplate');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets-name.html
    */
   public toDeletePreset() {
-    this.to('DeletePreset');
+    this.to('mediaconvert:DeletePreset');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues-name.html
    */
   public toDeleteQueue() {
-    this.to('DeleteQueue');
+    this.to('mediaconvert:DeleteQueue');
     return this;
   }
 
@@ -146,7 +146,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/endpoints.html
    */
   public toDescribeEndpoints() {
-    this.to('DescribeEndpoints');
+    this.to('mediaconvert:DescribeEndpoints');
     return this;
   }
 
@@ -158,7 +158,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/certificates-arn.html
    */
   public toDisassociateCertificate() {
-    this.to('DisassociateCertificate');
+    this.to('mediaconvert:DisassociateCertificate');
     return this;
   }
 
@@ -170,7 +170,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs-id.html
    */
   public toGetJob() {
-    this.to('GetJob');
+    this.to('mediaconvert:GetJob');
     return this;
   }
 
@@ -182,7 +182,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates-name.html
    */
   public toGetJobTemplate() {
-    this.to('GetJobTemplate');
+    this.to('mediaconvert:GetJobTemplate');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets-name.html
    */
   public toGetPreset() {
-    this.to('GetPreset');
+    this.to('mediaconvert:GetPreset');
     return this;
   }
 
@@ -206,7 +206,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues-name.html
    */
   public toGetQueue() {
-    this.to('GetQueue');
+    this.to('mediaconvert:GetQueue');
     return this;
   }
 
@@ -218,7 +218,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates.html
    */
   public toListJobTemplates() {
-    this.to('ListJobTemplates');
+    this.to('mediaconvert:ListJobTemplates');
     return this;
   }
 
@@ -230,7 +230,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html
    */
   public toListJobs() {
-    this.to('ListJobs');
+    this.to('mediaconvert:ListJobs');
     return this;
   }
 
@@ -242,7 +242,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets.html
    */
   public toListPresets() {
-    this.to('ListPresets');
+    this.to('mediaconvert:ListPresets');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues.html
    */
   public toListQueues() {
-    this.to('ListQueues');
+    this.to('mediaconvert:ListQueues');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags-arn.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('mediaconvert:ListTagsForResource');
     return this;
   }
 
@@ -282,7 +282,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('mediaconvert:TagResource');
     return this;
   }
 
@@ -297,7 +297,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags-arn.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('mediaconvert:UntagResource');
     return this;
   }
 
@@ -309,7 +309,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates-name.html
    */
   public toUpdateJobTemplate() {
-    this.to('UpdateJobTemplate');
+    this.to('mediaconvert:UpdateJobTemplate');
     return this;
   }
 
@@ -321,7 +321,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets-name.html
    */
   public toUpdatePreset() {
-    this.to('UpdatePreset');
+    this.to('mediaconvert:UpdatePreset');
     return this;
   }
 
@@ -333,7 +333,7 @@ export class Mediaconvert extends PolicyStatement {
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues-name.html
    */
   public toUpdateQueue() {
-    this.to('UpdateQueue');
+    this.to('mediaconvert:UpdateQueue');
     return this;
   }
 

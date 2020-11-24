@@ -26,7 +26,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_CancelStatement.html
    */
   public toCancelStatement() {
-    this.to('CancelStatement');
+    this.to('redshift-data:CancelStatement');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeStatement.html
    */
   public toDescribeStatement() {
-    this.to('DescribeStatement');
+    this.to('redshift-data:DescribeStatement');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeTable.html
    */
   public toDescribeTable() {
-    this.to('DescribeTable');
+    this.to('redshift-data:DescribeTable');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ExecuteStatement.html
    */
   public toExecuteStatement() {
-    this.to('ExecuteStatement');
+    this.to('redshift-data:ExecuteStatement');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_GetStatementResult.html
    */
   public toGetStatementResult() {
-    this.to('GetStatementResult');
+    this.to('redshift-data:GetStatementResult');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListDatabases.html
    */
   public toListDatabases() {
-    this.to('ListDatabases');
+    this.to('redshift-data:ListDatabases');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListSchemas.html
    */
   public toListSchemas() {
-    this.to('ListSchemas');
+    this.to('redshift-data:ListSchemas');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListStatements.html
    */
   public toListStatements() {
-    this.to('ListStatements');
+    this.to('redshift-data:ListStatements');
     return this;
   }
 
@@ -122,7 +122,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html
    */
   public toListTables() {
-    this.to('ListTables');
+    this.to('redshift-data:ListTables');
     return this;
   }
 

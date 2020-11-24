@@ -26,7 +26,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_CreateConnectorProfile.html
    */
   public toCreateConnectorProfile() {
-    this.to('CreateConnectorProfile');
+    this.to('appflow:CreateConnectorProfile');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_CreateFlow.html
    */
   public toCreateFlow() {
-    this.to('CreateFlow');
+    this.to('appflow:CreateFlow');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeConnectorProfiles.html
    */
   public toDeleteConnectorProfile() {
-    this.to('DeleteConnectorProfile');
+    this.to('appflow:DeleteConnectorProfile');
     return this;
   }
 
@@ -70,7 +70,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DeleteFlow.html
    */
   public toDeleteFlow() {
-    this.to('DeleteFlow');
+    this.to('appflow:DeleteFlow');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeConnectorEntity.html
    */
   public toDescribeConnectorEntity() {
-    this.to('DescribeConnectorEntity');
+    this.to('appflow:DescribeConnectorEntity');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
    */
   public toDescribeConnectorFields() {
-    this.to('DescribeConnectorFields');
+    this.to('appflow:DescribeConnectorFields');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeConnectorProfiles.html
    */
   public toDescribeConnectorProfiles() {
-    this.to('DescribeConnectorProfiles');
+    this.to('appflow:DescribeConnectorProfiles');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeConnectors.html
    */
   public toDescribeConnectors() {
-    this.to('DescribeConnectors');
+    this.to('appflow:DescribeConnectors');
     return this;
   }
 
@@ -130,7 +130,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeFlow.html
    */
   public toDescribeFlow() {
-    this.to('DescribeFlow');
+    this.to('appflow:DescribeFlow');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
    */
   public toDescribeFlowExecution() {
-    this.to('DescribeFlowExecution');
+    this.to('appflow:DescribeFlowExecution');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeFlowExecutionRecords.html
    */
   public toDescribeFlowExecutionRecords() {
-    this.to('DescribeFlowExecutionRecords');
+    this.to('appflow:DescribeFlowExecutionRecords');
     return this;
   }
 
@@ -166,7 +166,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
    */
   public toDescribeFlows() {
-    this.to('DescribeFlows');
+    this.to('appflow:DescribeFlows');
     return this;
   }
 
@@ -178,7 +178,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ListConnectorEntities.html
    */
   public toListConnectorEntities() {
-    this.to('ListConnectorEntities');
+    this.to('appflow:ListConnectorEntities');
     return this;
   }
 
@@ -190,7 +190,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
    */
   public toListConnectorFields() {
-    this.to('ListConnectorFields');
+    this.to('appflow:ListConnectorFields');
     return this;
   }
 
@@ -202,7 +202,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ListFlows.html
    */
   public toListFlows() {
-    this.to('ListFlows');
+    this.to('appflow:ListFlows');
     return this;
   }
 
@@ -214,7 +214,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('appflow:ListTagsForResource');
     return this;
   }
 
@@ -226,7 +226,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
    */
   public toRunFlow() {
-    this.to('RunFlow');
+    this.to('appflow:RunFlow');
     return this;
   }
 
@@ -238,7 +238,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_StartFlow.html
    */
   public toStartFlow() {
-    this.to('StartFlow');
+    this.to('appflow:StartFlow');
     return this;
   }
 
@@ -250,7 +250,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_StopFlow.html
    */
   public toStopFlow() {
-    this.to('StopFlow');
+    this.to('appflow:StopFlow');
     return this;
   }
 
@@ -266,7 +266,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('appflow:TagResource');
     return this;
   }
 
@@ -281,7 +281,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('appflow:UntagResource');
     return this;
   }
 
@@ -293,7 +293,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UpdateConnectorProfile.html
    */
   public toUpdateConnectorProfile() {
-    this.to('UpdateConnectorProfile');
+    this.to('appflow:UpdateConnectorProfile');
     return this;
   }
 
@@ -305,7 +305,7 @@ export class Appflow extends PolicyStatement {
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UpdateFlow.html
    */
   public toUpdateFlow() {
-    this.to('UpdateFlow');
+    this.to('appflow:UpdateFlow');
     return this;
   }
 

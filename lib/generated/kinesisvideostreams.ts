@@ -26,7 +26,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ConnectAsMaster.html
    */
   public toConnectAsMaster() {
-    this.to('ConnectAsMaster');
+    this.to('kinesisvideo:ConnectAsMaster');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ConnectAsViewer.html
    */
   public toConnectAsViewer() {
-    this.to('ConnectAsViewer');
+    this.to('kinesisvideo:ConnectAsViewer');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_CreateSignalingChannel.html
    */
   public toCreateSignalingChannel() {
-    this.to('CreateSignalingChannel');
+    this.to('kinesisvideo:CreateSignalingChannel');
     return this;
   }
 
@@ -70,7 +70,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_CreateStream.html
    */
   public toCreateStream() {
-    this.to('CreateStream');
+    this.to('kinesisvideo:CreateStream');
     return this;
   }
 
@@ -82,7 +82,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DeleteSignalingChannel.html
    */
   public toDeleteSignalingChannel() {
-    this.to('DeleteSignalingChannel');
+    this.to('kinesisvideo:DeleteSignalingChannel');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DeleteStream.html
    */
   public toDeleteStream() {
-    this.to('DeleteStream');
+    this.to('kinesisvideo:DeleteStream');
     return this;
   }
 
@@ -106,7 +106,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeSignalingChannel.html
    */
   public toDescribeSignalingChannel() {
-    this.to('DescribeSignalingChannel');
+    this.to('kinesisvideo:DescribeSignalingChannel');
     return this;
   }
 
@@ -118,7 +118,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html
    */
   public toDescribeStream() {
-    this.to('DescribeStream');
+    this.to('kinesisvideo:DescribeStream');
     return this;
   }
 
@@ -130,7 +130,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetClip.html
    */
   public toGetClip() {
-    this.to('GetClip');
+    this.to('kinesisvideo:GetClip');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetDASHStreamingSessionURL.html
    */
   public toGetDASHStreamingSessionURL() {
-    this.to('GetDASHStreamingSessionURL');
+    this.to('kinesisvideo:GetDASHStreamingSessionURL');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetDataEndpoint.html
    */
   public toGetDataEndpoint() {
-    this.to('GetDataEndpoint');
+    this.to('kinesisvideo:GetDataEndpoint');
     return this;
   }
 
@@ -166,7 +166,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetHLSStreamingSessionURL.html
    */
   public toGetHLSStreamingSessionURL() {
-    this.to('GetHLSStreamingSessionURL');
+    this.to('kinesisvideo:GetHLSStreamingSessionURL');
     return this;
   }
 
@@ -178,7 +178,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetIceServerConfig.html
    */
   public toGetIceServerConfig() {
-    this.to('GetIceServerConfig');
+    this.to('kinesisvideo:GetIceServerConfig');
     return this;
   }
 
@@ -190,7 +190,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetMedia.html
    */
   public toGetMedia() {
-    this.to('GetMedia');
+    this.to('kinesisvideo:GetMedia');
     return this;
   }
 
@@ -202,7 +202,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetMediaForFragmentList.html
    */
   public toGetMediaForFragmentList() {
-    this.to('GetMediaForFragmentList');
+    this.to('kinesisvideo:GetMediaForFragmentList');
     return this;
   }
 
@@ -214,7 +214,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetSignalingChannelEndpoint.html
    */
   public toGetSignalingChannelEndpoint() {
-    this.to('GetSignalingChannelEndpoint');
+    this.to('kinesisvideo:GetSignalingChannelEndpoint');
     return this;
   }
 
@@ -226,7 +226,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListFragments.html
    */
   public toListFragments() {
-    this.to('ListFragments');
+    this.to('kinesisvideo:ListFragments');
     return this;
   }
 
@@ -238,7 +238,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListSignalingChannels.html
    */
   public toListSignalingChannels() {
-    this.to('ListSignalingChannels');
+    this.to('kinesisvideo:ListSignalingChannels');
     return this;
   }
 
@@ -250,7 +250,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListStreams.html
    */
   public toListStreams() {
-    this.to('ListStreams');
+    this.to('kinesisvideo:ListStreams');
     return this;
   }
 
@@ -262,7 +262,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('kinesisvideo:ListTagsForResource');
     return this;
   }
 
@@ -274,7 +274,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListTagsForStream.html
    */
   public toListTagsForStream() {
-    this.to('ListTagsForStream');
+    this.to('kinesisvideo:ListTagsForStream');
     return this;
   }
 
@@ -286,7 +286,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_PutMedia.html
    */
   public toPutMedia() {
-    this.to('PutMedia');
+    this.to('kinesisvideo:PutMedia');
     return this;
   }
 
@@ -298,7 +298,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_SendAlexaOfferToMaster.html
    */
   public toSendAlexaOfferToMaster() {
-    this.to('SendAlexaOfferToMaster');
+    this.to('kinesisvideo:SendAlexaOfferToMaster');
     return this;
   }
 
@@ -314,7 +314,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('kinesisvideo:TagResource');
     return this;
   }
 
@@ -330,7 +330,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_TagStream.html
    */
   public toTagStream() {
-    this.to('TagStream');
+    this.to('kinesisvideo:TagStream');
     return this;
   }
 
@@ -345,7 +345,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('kinesisvideo:UntagResource');
     return this;
   }
 
@@ -360,7 +360,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UntagStream.html
    */
   public toUntagStream() {
-    this.to('UntagStream');
+    this.to('kinesisvideo:UntagStream');
     return this;
   }
 
@@ -372,7 +372,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateDataRetention.html
    */
   public toUpdateDataRetention() {
-    this.to('UpdateDataRetention');
+    this.to('kinesisvideo:UpdateDataRetention');
     return this;
   }
 
@@ -384,7 +384,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateSignalingChannel.html
    */
   public toUpdateSignalingChannel() {
-    this.to('UpdateSignalingChannel');
+    this.to('kinesisvideo:UpdateSignalingChannel');
     return this;
   }
 
@@ -396,7 +396,7 @@ export class Kinesisvideo extends PolicyStatement {
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateStream.html
    */
   public toUpdateStream() {
-    this.to('UpdateStream');
+    this.to('kinesisvideo:UpdateStream');
     return this;
   }
 

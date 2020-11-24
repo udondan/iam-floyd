@@ -26,7 +26,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toDeleteApp() {
-    this.to('DeleteApp');
+    this.to('launchwizard:DeleteApp');
     return this;
   }
 
@@ -38,7 +38,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toDescribeProvisionedApp() {
-    this.to('DescribeProvisionedApp');
+    this.to('launchwizard:DescribeProvisionedApp');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toDescribeProvisioningEvents() {
-    this.to('DescribeProvisioningEvents');
+    this.to('launchwizard:DescribeProvisioningEvents');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toGetInfrastructureSuggestion() {
-    this.to('GetInfrastructureSuggestion');
+    this.to('launchwizard:GetInfrastructureSuggestion');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toGetIpAddress() {
-    this.to('GetIpAddress');
+    this.to('launchwizard:GetIpAddress');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toGetResourceCostEstimate() {
-    this.to('GetResourceCostEstimate');
+    this.to('launchwizard:GetResourceCostEstimate');
     return this;
   }
 
@@ -98,7 +98,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toListProvisionedApps() {
-    this.to('ListProvisionedApps');
+    this.to('launchwizard:ListProvisionedApps');
     return this;
   }
 
@@ -110,7 +110,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toStartProvisioning() {
-    this.to('StartProvisioning');
+    this.to('launchwizard:StartProvisioning');
     return this;
   }
 

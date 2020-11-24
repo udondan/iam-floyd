@@ -28,7 +28,7 @@ export class Cassandra extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public toAlter() {
-    this.to('Alter');
+    this.to('cassandra:Alter');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class Cassandra extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public toCreate() {
-    this.to('Create');
+    this.to('cassandra:Create');
     return this;
   }
 
@@ -52,7 +52,7 @@ export class Cassandra extends PolicyStatement {
    * Access Level: Write
    */
   public toDrop() {
-    this.to('Drop');
+    this.to('cassandra:Drop');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class Cassandra extends PolicyStatement {
    * Access Level: Write
    */
   public toModify() {
-    this.to('Modify');
+    this.to('cassandra:Modify');
     return this;
   }
 
@@ -76,7 +76,7 @@ export class Cassandra extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public toRestore() {
-    this.to('Restore');
+    this.to('cassandra:Restore');
     return this;
   }
 
@@ -86,7 +86,7 @@ export class Cassandra extends PolicyStatement {
    * Access Level: Read
    */
   public toSelect() {
-    this.to('Select');
+    this.to('cassandra:Select');
     return this;
   }
 
@@ -100,7 +100,7 @@ export class Cassandra extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('cassandra:TagResource');
     return this;
   }
 
@@ -114,7 +114,7 @@ export class Cassandra extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('cassandra:UntagResource');
     return this;
   }
 

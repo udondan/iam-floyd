@@ -30,7 +30,7 @@ export class Apigateway extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/api-reference/API_DELETE.html
    */
   public toDELETE() {
-    this.to('DELETE');
+    this.to('apigateway:DELETE');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class Apigateway extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/api-reference/API_GET.html
    */
   public toGET() {
-    this.to('GET');
+    this.to('apigateway:GET');
     return this;
   }
 
@@ -58,7 +58,7 @@ export class Apigateway extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/api-reference/API_PATCH.html
    */
   public toPATCH() {
-    this.to('PATCH');
+    this.to('apigateway:PATCH');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Apigateway extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/api-reference/API_POST.html
    */
   public toPOST() {
-    this.to('POST');
+    this.to('apigateway:POST');
     return this;
   }
 
@@ -90,7 +90,7 @@ export class Apigateway extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/api-reference/API_PUT.html
    */
   public toPUT() {
-    this.to('PUT');
+    this.to('apigateway:PUT');
     return this;
   }
 
@@ -102,7 +102,7 @@ export class Apigateway extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/api-reference/WEBACL_SET.html
    */
   public toSetWebACL() {
-    this.to('SetWebACL');
+    this.to('apigateway:SetWebACL');
     return this;
   }
 
@@ -112,7 +112,7 @@ export class Apigateway extends PolicyStatement {
    * Access Level: Write
    */
   public toUpdateRestApiPolicy() {
-    this.to('UpdateRestApiPolicy');
+    this.to('apigateway:UpdateRestApiPolicy');
     return this;
   }
 

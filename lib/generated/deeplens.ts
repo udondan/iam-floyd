@@ -24,7 +24,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Permissions management
    */
   public toAssociateServiceRoleToAccount() {
-    this.to('AssociateServiceRoleToAccount');
+    this.to('deeplens:AssociateServiceRoleToAccount');
     return this;
   }
 
@@ -34,7 +34,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Read
    */
   public toBatchGetDevice() {
-    this.to('BatchGetDevice');
+    this.to('deeplens:BatchGetDevice');
     return this;
   }
 
@@ -44,7 +44,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Read
    */
   public toBatchGetModel() {
-    this.to('BatchGetModel');
+    this.to('deeplens:BatchGetModel');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Read
    */
   public toBatchGetProject() {
-    this.to('BatchGetProject');
+    this.to('deeplens:BatchGetProject');
     return this;
   }
 
@@ -64,7 +64,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateDeviceCertificates() {
-    this.to('CreateDeviceCertificates');
+    this.to('deeplens:CreateDeviceCertificates');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateModel() {
-    this.to('CreateModel');
+    this.to('deeplens:CreateModel');
     return this;
   }
 
@@ -84,7 +84,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Write
    */
   public toCreateProject() {
-    this.to('CreateProject');
+    this.to('deeplens:CreateProject');
     return this;
   }
 
@@ -94,7 +94,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Write
    */
   public toDeleteModel() {
-    this.to('DeleteModel');
+    this.to('deeplens:DeleteModel');
     return this;
   }
 
@@ -104,7 +104,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Write
    */
   public toDeleteProject() {
-    this.to('DeleteProject');
+    this.to('deeplens:DeleteProject');
     return this;
   }
 
@@ -114,7 +114,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Write
    */
   public toDeployProject() {
-    this.to('DeployProject');
+    this.to('deeplens:DeployProject');
     return this;
   }
 
@@ -124,7 +124,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Write
    */
   public toDeregisterDevice() {
-    this.to('DeregisterDevice');
+    this.to('deeplens:DeregisterDevice');
     return this;
   }
 
@@ -134,7 +134,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Read
    */
   public toGetAssociatedResources() {
-    this.to('GetAssociatedResources');
+    this.to('deeplens:GetAssociatedResources');
     return this;
   }
 
@@ -144,7 +144,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Read
    */
   public toGetDeploymentStatus() {
-    this.to('GetDeploymentStatus');
+    this.to('deeplens:GetDeploymentStatus');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Read
    */
   public toGetDevice() {
-    this.to('GetDevice');
+    this.to('deeplens:GetDevice');
     return this;
   }
 
@@ -164,7 +164,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Read
    */
   public toGetModel() {
-    this.to('GetModel');
+    this.to('deeplens:GetModel');
     return this;
   }
 
@@ -174,7 +174,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Read
    */
   public toGetProject() {
-    this.to('GetProject');
+    this.to('deeplens:GetProject');
     return this;
   }
 
@@ -184,7 +184,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Write
    */
   public toImportProjectFromTemplate() {
-    this.to('ImportProjectFromTemplate');
+    this.to('deeplens:ImportProjectFromTemplate');
     return this;
   }
 
@@ -194,7 +194,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: List
    */
   public toListDeployments() {
-    this.to('ListDeployments');
+    this.to('deeplens:ListDeployments');
     return this;
   }
 
@@ -204,7 +204,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: List
    */
   public toListDevices() {
-    this.to('ListDevices');
+    this.to('deeplens:ListDevices');
     return this;
   }
 
@@ -214,7 +214,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: List
    */
   public toListModels() {
-    this.to('ListModels');
+    this.to('deeplens:ListModels');
     return this;
   }
 
@@ -224,7 +224,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: List
    */
   public toListProjects() {
-    this.to('ListProjects');
+    this.to('deeplens:ListProjects');
     return this;
   }
 
@@ -234,7 +234,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Write
    */
   public toRegisterDevice() {
-    this.to('RegisterDevice');
+    this.to('deeplens:RegisterDevice');
     return this;
   }
 
@@ -244,7 +244,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Write
    */
   public toRemoveProject() {
-    this.to('RemoveProject');
+    this.to('deeplens:RemoveProject');
     return this;
   }
 
@@ -254,7 +254,7 @@ export class Deeplens extends PolicyStatement {
    * Access Level: Write
    */
   public toUpdateProject() {
-    this.to('UpdateProject');
+    this.to('deeplens:UpdateProject');
     return this;
   }
 

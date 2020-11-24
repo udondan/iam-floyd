@@ -26,7 +26,7 @@ export class NeptuneDb extends PolicyStatement {
    * https://docs.aws.amazon.com/neptune/latest/userguide/get-started.html
    */
   public toconnect() {
-    this.to('connect');
+    this.to('neptune-db:connect');
     return this;
   }
 

@@ -26,7 +26,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_AcceptHandshake.html
    */
   public toAcceptHandshake() {
-    this.to('AcceptHandshake');
+    this.to('organizations:AcceptHandshake');
     return this;
   }
 
@@ -41,7 +41,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_AttachPolicy.html
    */
   public toAttachPolicy() {
-    this.to('AttachPolicy');
+    this.to('organizations:AttachPolicy');
     return this;
   }
 
@@ -53,7 +53,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CancelHandshake.html
    */
   public toCancelHandshake() {
-    this.to('CancelHandshake');
+    this.to('organizations:CancelHandshake');
     return this;
   }
 
@@ -69,7 +69,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateAccount.html
    */
   public toCreateAccount() {
-    this.to('CreateAccount');
+    this.to('organizations:CreateAccount');
     return this;
   }
 
@@ -85,7 +85,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateGovCloudAccount.html
    */
   public toCreateGovCloudAccount() {
-    this.to('CreateGovCloudAccount');
+    this.to('organizations:CreateGovCloudAccount');
     return this;
   }
 
@@ -97,7 +97,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateOrganization.html
    */
   public toCreateOrganization() {
-    this.to('CreateOrganization');
+    this.to('organizations:CreateOrganization');
     return this;
   }
 
@@ -113,7 +113,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateOrganizationalUnit.html
    */
   public toCreateOrganizationalUnit() {
-    this.to('CreateOrganizationalUnit');
+    this.to('organizations:CreateOrganizationalUnit');
     return this;
   }
 
@@ -130,7 +130,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreatePolicy.html
    */
   public toCreatePolicy() {
-    this.to('CreatePolicy');
+    this.to('organizations:CreatePolicy');
     return this;
   }
 
@@ -142,7 +142,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeclineHandshake.html
    */
   public toDeclineHandshake() {
-    this.to('DeclineHandshake');
+    this.to('organizations:DeclineHandshake');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeleteOrganization.html
    */
   public toDeleteOrganization() {
-    this.to('DeleteOrganization');
+    this.to('organizations:DeleteOrganization');
     return this;
   }
 
@@ -166,7 +166,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeleteOrganizationalUnit.html
    */
   public toDeleteOrganizationalUnit() {
-    this.to('DeleteOrganizationalUnit');
+    this.to('organizations:DeleteOrganizationalUnit');
     return this;
   }
 
@@ -181,7 +181,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeletePolicy.html
    */
   public toDeletePolicy() {
-    this.to('DeletePolicy');
+    this.to('organizations:DeletePolicy');
     return this;
   }
 
@@ -196,7 +196,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeregisterDelegatedAdministrator.html
    */
   public toDeregisterDelegatedAdministrator() {
-    this.to('DeregisterDelegatedAdministrator');
+    this.to('organizations:DeregisterDelegatedAdministrator');
     return this;
   }
 
@@ -208,7 +208,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeAccount.html
    */
   public toDescribeAccount() {
-    this.to('DescribeAccount');
+    this.to('organizations:DescribeAccount');
     return this;
   }
 
@@ -220,7 +220,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeCreateAccountStatus.html
    */
   public toDescribeCreateAccountStatus() {
-    this.to('DescribeCreateAccountStatus');
+    this.to('organizations:DescribeCreateAccountStatus');
     return this;
   }
 
@@ -235,7 +235,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeEffectivePolicy.html
    */
   public toDescribeEffectivePolicy() {
-    this.to('DescribeEffectivePolicy');
+    this.to('organizations:DescribeEffectivePolicy');
     return this;
   }
 
@@ -247,7 +247,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeHandshake.html
    */
   public toDescribeHandshake() {
-    this.to('DescribeHandshake');
+    this.to('organizations:DescribeHandshake');
     return this;
   }
 
@@ -259,7 +259,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeOrganization.html
    */
   public toDescribeOrganization() {
-    this.to('DescribeOrganization');
+    this.to('organizations:DescribeOrganization');
     return this;
   }
 
@@ -271,7 +271,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeOrganizationalUnit.html
    */
   public toDescribeOrganizationalUnit() {
-    this.to('DescribeOrganizationalUnit');
+    this.to('organizations:DescribeOrganizationalUnit');
     return this;
   }
 
@@ -286,7 +286,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribePolicy.html
    */
   public toDescribePolicy() {
-    this.to('DescribePolicy');
+    this.to('organizations:DescribePolicy');
     return this;
   }
 
@@ -301,7 +301,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DetachPolicy.html
    */
   public toDetachPolicy() {
-    this.to('DetachPolicy');
+    this.to('organizations:DetachPolicy');
     return this;
   }
 
@@ -316,7 +316,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DisableAWSServiceAccess.html
    */
   public toDisableAWSServiceAccess() {
-    this.to('DisableAWSServiceAccess');
+    this.to('organizations:DisableAWSServiceAccess');
     return this;
   }
 
@@ -331,7 +331,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DisablePolicyType.html
    */
   public toDisablePolicyType() {
-    this.to('DisablePolicyType');
+    this.to('organizations:DisablePolicyType');
     return this;
   }
 
@@ -346,7 +346,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html
    */
   public toEnableAWSServiceAccess() {
-    this.to('EnableAWSServiceAccess');
+    this.to('organizations:EnableAWSServiceAccess');
     return this;
   }
 
@@ -358,7 +358,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAllFeatures.html
    */
   public toEnableAllFeatures() {
-    this.to('EnableAllFeatures');
+    this.to('organizations:EnableAllFeatures');
     return this;
   }
 
@@ -373,7 +373,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnablePolicyType.html
    */
   public toEnablePolicyType() {
-    this.to('EnablePolicyType');
+    this.to('organizations:EnablePolicyType');
     return this;
   }
 
@@ -389,7 +389,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_InviteAccountToOrganization.html
    */
   public toInviteAccountToOrganization() {
-    this.to('InviteAccountToOrganization');
+    this.to('organizations:InviteAccountToOrganization');
     return this;
   }
 
@@ -401,7 +401,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_LeaveOrganization.html
    */
   public toLeaveOrganization() {
-    this.to('LeaveOrganization');
+    this.to('organizations:LeaveOrganization');
     return this;
   }
 
@@ -413,7 +413,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListAWSServiceAccessForOrganization.html
    */
   public toListAWSServiceAccessForOrganization() {
-    this.to('ListAWSServiceAccessForOrganization');
+    this.to('organizations:ListAWSServiceAccessForOrganization');
     return this;
   }
 
@@ -425,7 +425,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListAccounts.html
    */
   public toListAccounts() {
-    this.to('ListAccounts');
+    this.to('organizations:ListAccounts');
     return this;
   }
 
@@ -437,7 +437,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListAccountsForParent.html
    */
   public toListAccountsForParent() {
-    this.to('ListAccountsForParent');
+    this.to('organizations:ListAccountsForParent');
     return this;
   }
 
@@ -449,7 +449,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListChildren.html
    */
   public toListChildren() {
-    this.to('ListChildren');
+    this.to('organizations:ListChildren');
     return this;
   }
 
@@ -461,7 +461,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListCreateAccountStatus.html
    */
   public toListCreateAccountStatus() {
-    this.to('ListCreateAccountStatus');
+    this.to('organizations:ListCreateAccountStatus');
     return this;
   }
 
@@ -476,7 +476,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListDelegatedAdministrators.html
    */
   public toListDelegatedAdministrators() {
-    this.to('ListDelegatedAdministrators');
+    this.to('organizations:ListDelegatedAdministrators');
     return this;
   }
 
@@ -488,7 +488,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListDelegatedServicesForAccount.html
    */
   public toListDelegatedServicesForAccount() {
-    this.to('ListDelegatedServicesForAccount');
+    this.to('organizations:ListDelegatedServicesForAccount');
     return this;
   }
 
@@ -500,7 +500,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListHandshakesForAccount.html
    */
   public toListHandshakesForAccount() {
-    this.to('ListHandshakesForAccount');
+    this.to('organizations:ListHandshakesForAccount');
     return this;
   }
 
@@ -512,7 +512,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListHandshakesForOrganization.html
    */
   public toListHandshakesForOrganization() {
-    this.to('ListHandshakesForOrganization');
+    this.to('organizations:ListHandshakesForOrganization');
     return this;
   }
 
@@ -524,7 +524,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListOrganizationalUnitsForParent.html
    */
   public toListOrganizationalUnitsForParent() {
-    this.to('ListOrganizationalUnitsForParent');
+    this.to('organizations:ListOrganizationalUnitsForParent');
     return this;
   }
 
@@ -536,7 +536,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListParents.html
    */
   public toListParents() {
-    this.to('ListParents');
+    this.to('organizations:ListParents');
     return this;
   }
 
@@ -551,7 +551,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListPolicies.html
    */
   public toListPolicies() {
-    this.to('ListPolicies');
+    this.to('organizations:ListPolicies');
     return this;
   }
 
@@ -566,7 +566,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListPoliciesForTarget.html
    */
   public toListPoliciesForTarget() {
-    this.to('ListPoliciesForTarget');
+    this.to('organizations:ListPoliciesForTarget');
     return this;
   }
 
@@ -578,7 +578,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html
    */
   public toListRoots() {
-    this.to('ListRoots');
+    this.to('organizations:ListRoots');
     return this;
   }
 
@@ -590,7 +590,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('organizations:ListTagsForResource');
     return this;
   }
 
@@ -605,7 +605,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListTargetsForPolicy.html
    */
   public toListTargetsForPolicy() {
-    this.to('ListTargetsForPolicy');
+    this.to('organizations:ListTargetsForPolicy');
     return this;
   }
 
@@ -617,7 +617,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_MoveAccount.html
    */
   public toMoveAccount() {
-    this.to('MoveAccount');
+    this.to('organizations:MoveAccount');
     return this;
   }
 
@@ -632,7 +632,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_RegisterDelegatedAdministrator.html
    */
   public toRegisterDelegatedAdministrator() {
-    this.to('RegisterDelegatedAdministrator');
+    this.to('organizations:RegisterDelegatedAdministrator');
     return this;
   }
 
@@ -644,7 +644,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_RemoveAccountFromOrganization.html
    */
   public toRemoveAccountFromOrganization() {
-    this.to('RemoveAccountFromOrganization');
+    this.to('organizations:RemoveAccountFromOrganization');
     return this;
   }
 
@@ -660,7 +660,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('organizations:TagResource');
     return this;
   }
 
@@ -675,7 +675,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('organizations:UntagResource');
     return this;
   }
 
@@ -687,7 +687,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_UpdateOrganizationalUnit.html
    */
   public toUpdateOrganizationalUnit() {
-    this.to('UpdateOrganizationalUnit');
+    this.to('organizations:UpdateOrganizationalUnit');
     return this;
   }
 
@@ -702,7 +702,7 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_UpdatePolicy.html
    */
   public toUpdatePolicy() {
-    this.to('UpdatePolicy');
+    this.to('organizations:UpdatePolicy');
     return this;
   }
 

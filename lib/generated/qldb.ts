@@ -26,7 +26,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_CancelJournalKinesisStream.html
    */
   public toCancelJournalKinesisStream() {
-    this.to('CancelJournalKinesisStream');
+    this.to('qldb:CancelJournalKinesisStream');
     return this;
   }
 
@@ -42,7 +42,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_CreateLedger.html
    */
   public toCreateLedger() {
-    this.to('CreateLedger');
+    this.to('qldb:CreateLedger');
     return this;
   }
 
@@ -54,7 +54,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_DeleteLedger.html
    */
   public toDeleteLedger() {
-    this.to('DeleteLedger');
+    this.to('qldb:DeleteLedger');
     return this;
   }
 
@@ -66,7 +66,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_DescribeJournalKinesisStream.html
    */
   public toDescribeJournalKinesisStream() {
-    this.to('DescribeJournalKinesisStream');
+    this.to('qldb:DescribeJournalKinesisStream');
     return this;
   }
 
@@ -78,7 +78,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_DescribeJournalS3Export.html
    */
   public toDescribeJournalS3Export() {
-    this.to('DescribeJournalS3Export');
+    this.to('qldb:DescribeJournalS3Export');
     return this;
   }
 
@@ -90,7 +90,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_DescribeLedger.html
    */
   public toDescribeLedger() {
-    this.to('DescribeLedger');
+    this.to('qldb:DescribeLedger');
     return this;
   }
 
@@ -102,7 +102,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
    */
   public toExecuteStatement() {
-    this.to('ExecuteStatement');
+    this.to('qldb:ExecuteStatement');
     return this;
   }
 
@@ -114,7 +114,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_ExportJournalToS3.html
    */
   public toExportJournalToS3() {
-    this.to('ExportJournalToS3');
+    this.to('qldb:ExportJournalToS3');
     return this;
   }
 
@@ -126,7 +126,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_GetBlock.html
    */
   public toGetBlock() {
-    this.to('GetBlock');
+    this.to('qldb:GetBlock');
     return this;
   }
 
@@ -138,7 +138,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_GetDigest.html
    */
   public toGetDigest() {
-    this.to('GetDigest');
+    this.to('qldb:GetDigest');
     return this;
   }
 
@@ -150,7 +150,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_GetRevision.html
    */
   public toGetRevision() {
-    this.to('GetRevision');
+    this.to('qldb:GetRevision');
     return this;
   }
 
@@ -162,7 +162,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
    */
   public toInsertSampleData() {
-    this.to('InsertSampleData');
+    this.to('qldb:InsertSampleData');
     return this;
   }
 
@@ -174,7 +174,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListJournalKinesisStreamsForLedger.html
    */
   public toListJournalKinesisStreamsForLedger() {
-    this.to('ListJournalKinesisStreamsForLedger');
+    this.to('qldb:ListJournalKinesisStreamsForLedger');
     return this;
   }
 
@@ -186,7 +186,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListJournalS3Exports.html
    */
   public toListJournalS3Exports() {
-    this.to('ListJournalS3Exports');
+    this.to('qldb:ListJournalS3Exports');
     return this;
   }
 
@@ -198,7 +198,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListJournalS3ExportsForLedger.html
    */
   public toListJournalS3ExportsForLedger() {
-    this.to('ListJournalS3ExportsForLedger');
+    this.to('qldb:ListJournalS3ExportsForLedger');
     return this;
   }
 
@@ -210,7 +210,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListLedgers.html
    */
   public toListLedgers() {
-    this.to('ListLedgers');
+    this.to('qldb:ListLedgers');
     return this;
   }
 
@@ -222,7 +222,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ListTagsForResource');
+    this.to('qldb:ListTagsForResource');
     return this;
   }
 
@@ -234,7 +234,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/Using.API.html
    */
   public toSendCommand() {
-    this.to('SendCommand');
+    this.to('qldb:SendCommand');
     return this;
   }
 
@@ -246,7 +246,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
    */
   public toShowCatalog() {
-    this.to('ShowCatalog');
+    this.to('qldb:ShowCatalog');
     return this;
   }
 
@@ -258,7 +258,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_StreamJournalToKinesis.html
    */
   public toStreamJournalToKinesis() {
-    this.to('StreamJournalToKinesis');
+    this.to('qldb:StreamJournalToKinesis');
     return this;
   }
 
@@ -274,7 +274,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_TagResource.html
    */
   public toTagResource() {
-    this.to('TagResource');
+    this.to('qldb:TagResource');
     return this;
   }
 
@@ -289,7 +289,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('UntagResource');
+    this.to('qldb:UntagResource');
     return this;
   }
 
@@ -301,7 +301,7 @@ export class Qldb extends PolicyStatement {
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_UpdateLedger.html
    */
   public toUpdateLedger() {
-    this.to('UpdateLedger');
+    this.to('qldb:UpdateLedger');
     return this;
   }
 

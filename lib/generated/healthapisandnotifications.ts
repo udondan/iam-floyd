@@ -29,7 +29,7 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html
    */
   public toDescribeAffectedAccountsForOrganization() {
-    this.to('DescribeAffectedAccountsForOrganization');
+    this.to('health:DescribeAffectedAccountsForOrganization');
     return this;
   }
 
@@ -45,7 +45,7 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html
    */
   public toDescribeAffectedEntities() {
-    this.to('DescribeAffectedEntities');
+    this.to('health:DescribeAffectedEntities');
     return this;
   }
 
@@ -60,7 +60,7 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html
    */
   public toDescribeAffectedEntitiesForOrganization() {
-    this.to('DescribeAffectedEntitiesForOrganization');
+    this.to('health:DescribeAffectedEntitiesForOrganization');
     return this;
   }
 
@@ -72,7 +72,7 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html
    */
   public toDescribeEntityAggregates() {
-    this.to('DescribeEntityAggregates');
+    this.to('health:DescribeEntityAggregates');
     return this;
   }
 
@@ -84,7 +84,7 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html
    */
   public toDescribeEventAggregates() {
-    this.to('DescribeEventAggregates');
+    this.to('health:DescribeEventAggregates');
     return this;
   }
 
@@ -100,7 +100,7 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html
    */
   public toDescribeEventDetails() {
-    this.to('DescribeEventDetails');
+    this.to('health:DescribeEventDetails');
     return this;
   }
 
@@ -115,7 +115,7 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html
    */
   public toDescribeEventDetailsForOrganization() {
-    this.to('DescribeEventDetailsForOrganization');
+    this.to('health:DescribeEventDetailsForOrganization');
     return this;
   }
 
@@ -127,7 +127,7 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html
    */
   public toDescribeEventTypes() {
-    this.to('DescribeEventTypes');
+    this.to('health:DescribeEventTypes');
     return this;
   }
 
@@ -139,7 +139,7 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html
    */
   public toDescribeEvents() {
-    this.to('DescribeEvents');
+    this.to('health:DescribeEvents');
     return this;
   }
 
@@ -154,7 +154,7 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html
    */
   public toDescribeEventsForOrganization() {
-    this.to('DescribeEventsForOrganization');
+    this.to('health:DescribeEventsForOrganization');
     return this;
   }
 
@@ -169,7 +169,7 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html
    */
   public toDescribeHealthServiceStatusForOrganization() {
-    this.to('DescribeHealthServiceStatusForOrganization');
+    this.to('health:DescribeHealthServiceStatusForOrganization');
     return this;
   }
 
@@ -185,7 +185,7 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DisableHealthServiceAccessForOrganization.html
    */
   public toDisableHealthServiceAccessForOrganization() {
-    this.to('DisableHealthServiceAccessForOrganization');
+    this.to('health:DisableHealthServiceAccessForOrganization');
     return this;
   }
 
@@ -202,7 +202,7 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html
    */
   public toEnableHealthServiceAccessForOrganization() {
-    this.to('EnableHealthServiceAccessForOrganization');
+    this.to('health:EnableHealthServiceAccessForOrganization');
     return this;
   }
 

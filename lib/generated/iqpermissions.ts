@@ -26,7 +26,7 @@ export class IqPermission extends PolicyStatement {
    * https://aws.amazon.com/iq/
    */
   public toApproveAccessGrant() {
-    this.to('ApproveAccessGrant');
+    this.to('iq-permission:ApproveAccessGrant');
     return this;
   }
 
