@@ -319,6 +319,18 @@ export class Worklink extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list devices for an Amazon WorkLink fleet
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/worklink/latest/ag/manage-devices.html
+   */
+  public toSearchEntity() {
+    this.to('worklink:SearchEntity');
+    return this;
+  }
+
+  /**
    * Grants permission to sign out a user from an Amazon WorkLink fleet
    *
    * Access Level: Write
@@ -469,7 +481,8 @@ export class Worklink extends PolicyStatement {
       "ListDomains",
       "ListFleets",
       "ListWebsiteAuthorizationProviders",
-      "ListWebsiteCertificateAuthorities"
+      "ListWebsiteCertificateAuthorities",
+      "SearchEntity"
     ],
     "Tagging": [
       "TagResource",
@@ -480,7 +493,7 @@ export class Worklink extends PolicyStatement {
   /**
    * Adds a resource of type fleet to the statement
    *
-   * https://docs.aws.amazon.com/worklink/latest/api/worklink-resources.html#Fleet
+   * https://docs.aws.amazon.com/worklink/latest/api/API_CreateFleet.html
    *
    * @param fleetName - Identifier for the fleetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.

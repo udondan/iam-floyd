@@ -58,6 +58,18 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an AWS Lambda code signing config
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateCodeSigningConfig.html
+   */
+  public toCreateCodeSigningConfig() {
+    this.to('lambda:CreateCodeSigningConfig');
+    return this;
+  }
+
+  /**
    * Grants permission to create a mapping between an event source and an AWS Lambda function
    *
    * Access Level: Write
@@ -103,6 +115,18 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an AWS Lambda code signing config
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteCodeSigningConfig.html
+   */
+  public toDeleteCodeSigningConfig() {
+    this.to('lambda:DeleteCodeSigningConfig');
+    return this;
+  }
+
+  /**
    * Grants permission to delete an AWS Lambda event source mapping
    *
    * Access Level: Write
@@ -126,6 +150,18 @@ export class Lambda extends PolicyStatement {
    */
   public toDeleteFunction() {
     this.to('lambda:DeleteFunction');
+    return this;
+  }
+
+  /**
+   * Grants permission to detach a code signing config from an AWS Lambda function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionCodeSigningConfig.html
+   */
+  public toDeleteFunctionCodeSigningConfig() {
+    this.to('lambda:DeleteFunctionCodeSigningConfig');
     return this;
   }
 
@@ -222,6 +258,18 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details about an AWS Lambda code signing config
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_GetCodeSigningConfig.html
+   */
+  public toGetCodeSigningConfig() {
+    this.to('lambda:GetCodeSigningConfig');
+    return this;
+  }
+
+  /**
    * Grants permission to view details about an AWS Lambda event source mapping
    *
    * Access Level: Read
@@ -245,6 +293,18 @@ export class Lambda extends PolicyStatement {
    */
   public toGetFunction() {
     this.to('lambda:GetFunction');
+    return this;
+  }
+
+  /**
+   * Grants permission to view the code signing config arn attached to an AWS Lambda function
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionCodeSigningConfig.html
+   */
+  public toGetFunctionCodeSigningConfig() {
+    this.to('lambda:GetFunctionCodeSigningConfig');
     return this;
   }
 
@@ -369,6 +429,18 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of AWS Lambda code signing configs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_ListCodeSigningConfigs.html
+   */
+  public toListCodeSigningConfigs() {
+    this.to('lambda:ListCodeSigningConfigs');
+    return this;
+  }
+
+  /**
    * Grants permission to retrieve a list of AWS Lambda event source mappings
    *
    * Access Level: List
@@ -401,6 +473,18 @@ export class Lambda extends PolicyStatement {
    */
   public toListFunctions() {
     this.to('lambda:ListFunctions');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve a list of AWS Lambda functions by the code signing config assigned
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctionsByCodeSigningConfig.html
+   */
+  public toListFunctionsByCodeSigningConfig() {
+    this.to('lambda:ListFunctionsByCodeSigningConfig');
     return this;
   }
 
@@ -485,6 +569,18 @@ export class Lambda extends PolicyStatement {
    */
   public toPublishVersion() {
     this.to('lambda:PublishVersion');
+    return this;
+  }
+
+  /**
+   * Grants permission to attach a code signing config to an AWS Lambda function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionCodeSigningConfig.html
+   */
+  public toPutFunctionCodeSigningConfig() {
+    this.to('lambda:PutFunctionCodeSigningConfig');
     return this;
   }
 
@@ -588,6 +684,18 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an AWS Lambda code signing config
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateCodeSigningConfig.html
+   */
+  public toUpdateCodeSigningConfig() {
+    this.to('lambda:UpdateCodeSigningConfig');
+    return this;
+  }
+
+  /**
    * Grants permission to update the configuration of an AWS Lambda event source mapping
    *
    * Access Level: Write
@@ -611,6 +719,18 @@ export class Lambda extends PolicyStatement {
    */
   public toUpdateFunctionCode() {
     this.to('lambda:UpdateFunctionCode');
+    return this;
+  }
+
+  /**
+   * Grants permission to update the code signing config of an AWS Lambda function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCodeSigningConfig.html
+   */
+  public toUpdateFunctionCodeSigningConfig() {
+    this.to('lambda:UpdateFunctionCodeSigningConfig');
     return this;
   }
 
@@ -655,11 +775,14 @@ export class Lambda extends PolicyStatement {
     ],
     "Write": [
       "CreateAlias",
+      "CreateCodeSigningConfig",
       "CreateEventSourceMapping",
       "CreateFunction",
       "DeleteAlias",
+      "DeleteCodeSigningConfig",
       "DeleteEventSourceMapping",
       "DeleteFunction",
+      "DeleteFunctionCodeSigningConfig",
       "DeleteFunctionConcurrency",
       "DeleteFunctionEventInvokeConfig",
       "DeleteLayerVersion",
@@ -668,22 +791,27 @@ export class Lambda extends PolicyStatement {
       "InvokeFunction",
       "PublishLayerVersion",
       "PublishVersion",
+      "PutFunctionCodeSigningConfig",
       "PutFunctionConcurrency",
       "PutFunctionEventInvokeConfig",
       "PutProvisionedConcurrencyConfig",
       "TagResource",
       "UntagResource",
       "UpdateAlias",
+      "UpdateCodeSigningConfig",
       "UpdateEventSourceMapping",
       "UpdateFunctionCode",
+      "UpdateFunctionCodeSigningConfig",
       "UpdateFunctionConfiguration",
       "UpdateFunctionEventInvokeConfig"
     ],
     "Read": [
       "GetAccountSettings",
       "GetAlias",
+      "GetCodeSigningConfig",
       "GetEventSourceMapping",
       "GetFunction",
+      "GetFunctionCodeSigningConfig",
       "GetFunctionConcurrency",
       "GetFunctionConfiguration",
       "GetFunctionEventInvokeConfig",
@@ -695,15 +823,55 @@ export class Lambda extends PolicyStatement {
     ],
     "List": [
       "ListAliases",
+      "ListCodeSigningConfigs",
       "ListEventSourceMappings",
       "ListFunctionEventInvokeConfigs",
       "ListFunctions",
+      "ListFunctionsByCodeSigningConfig",
       "ListLayerVersions",
       "ListLayers",
       "ListProvisionedConcurrencyConfigs",
       "ListVersionsByFunction"
     ]
   };
+
+  /**
+   * Adds a resource of type code signing config to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param codeSigningConfigId - Identifier for the codeSigningConfigId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCodeSigningConfig(codeSigningConfigId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lambda:${Region}:${Account}:codesigningconfig:${CodeSigningConfigId}';
+    arn = arn.replace('${CodeSigningConfigId}', codeSigningConfigId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type eventSourceMapping to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param uUID - Identifier for the uUID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onEventSourceMapping(uUID: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lambda:${Region}:${Account}:event-source-mapping:${UUID}';
+    arn = arn.replace('${UUID}', uUID);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
 
   /**
    * Adds a resource of type function to the statement
@@ -725,27 +893,6 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type function version to the statement
-   *
-   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
-   *
-   * @param functionName - Identifier for the functionName.
-   * @param version - Identifier for the version.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   */
-  public onFunctionVersion(functionName: string, version: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Version}';
-    arn = arn.replace('${FunctionName}', functionName);
-    arn = arn.replace('${Version}', version);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
    * Adds a resource of type function alias to the statement
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
@@ -760,6 +907,27 @@ export class Lambda extends PolicyStatement {
     var arn = 'arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Alias}';
     arn = arn.replace('${FunctionName}', functionName);
     arn = arn.replace('${Alias}', alias);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type function version to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param functionName - Identifier for the functionName.
+   * @param version - Identifier for the version.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onFunctionVersion(functionName: string, version: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Version}';
+    arn = arn.replace('${FunctionName}', functionName);
+    arn = arn.replace('${Version}', version);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -807,22 +975,13 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type eventSourceMapping to the statement
+   * Filters access by the ARN of an AWS Lambda code signing config
    *
-   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
-   *
-   * @param uUID - Identifier for the uUID.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public onEventSourceMapping(uUID: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lambda:${Region}:${Account}:event-source-mapping:${UUID}';
-    arn = arn.replace('${UUID}', uUID);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+  public ifCodeSigningConfigArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`lambda:CodeSigningConfigArn`, value, operator || 'StringLike');
   }
 
   /**

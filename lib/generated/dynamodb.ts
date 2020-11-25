@@ -466,6 +466,78 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a single item in a table by primary key
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAttributes()
+   * - .ifEnclosingOperation()
+   * - .ifLeadingKeys()
+   * - .ifReturnValues()
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html
+   */
+  public toPartiQLDelete() {
+    this.to('dynamodb:PartiQLDelete');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a new item, if an item with same primary key does not exist in the table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAttributes()
+   * - .ifEnclosingOperation()
+   * - .ifLeadingKeys()
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html
+   */
+  public toPartiQLInsert() {
+    this.to('dynamodb:PartiQLInsert');
+    return this;
+  }
+
+  /**
+   * Grants permission to read a set of attributes for items from a table or index
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAttributes()
+   * - .ifEnclosingOperation()
+   * - .ifFullTableScan()
+   * - .ifLeadingKeys()
+   * - .ifSelect()
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html
+   */
+  public toPartiQLSelect() {
+    this.to('dynamodb:PartiQLSelect');
+    return this;
+  }
+
+  /**
+   * Grants permission to edit an existing item's attributes
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAttributes()
+   * - .ifEnclosingOperation()
+   * - .ifLeadingKeys()
+   * - .ifReturnValues()
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html
+   */
+  public toPartiQLUpdate() {
+    this.to('dynamodb:PartiQLUpdate');
+    return this;
+  }
+
+  /**
    * Purchases Reserved Capacity for use with your account
    *
    * Access Level: Write
@@ -704,6 +776,7 @@ export class Dynamodb extends PolicyStatement {
       "GetShardIterator",
       "ListStreams",
       "ListTagsOfResource",
+      "PartiQLSelect",
       "Query",
       "Scan"
     ],
@@ -718,6 +791,9 @@ export class Dynamodb extends PolicyStatement {
       "DeleteTable",
       "DeleteTableReplica",
       "ExportTableToPointInTime",
+      "PartiQLDelete",
+      "PartiQLInsert",
+      "PartiQLUpdate",
       "PurchaseReservedCapacityOfferings",
       "PutItem",
       "RestoreTableFromBackup",
@@ -829,7 +905,7 @@ export class Dynamodb extends PolicyStatement {
   /**
    * Adds a resource of type export to the statement
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/backuprestore_HowItWorks.html
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataExport.HowItWorks.html
    *
    * @param tableName - Identifier for the tableName.
    * @param exportName - Identifier for the exportName.
@@ -875,6 +951,10 @@ export class Dynamodb extends PolicyStatement {
    * - .toConditionCheckItem()
    * - .toDeleteItem()
    * - .toGetItem()
+   * - .toPartiQLDelete()
+   * - .toPartiQLInsert()
+   * - .toPartiQLSelect()
+   * - .toPartiQLUpdate()
    * - .toPutItem()
    * - .toQuery()
    * - .toScan()
@@ -895,6 +975,10 @@ export class Dynamodb extends PolicyStatement {
    * Applies to actions:
    * - .toDeleteItem()
    * - .toGetItem()
+   * - .toPartiQLDelete()
+   * - .toPartiQLInsert()
+   * - .toPartiQLSelect()
+   * - .toPartiQLUpdate()
    * - .toPutItem()
    * - .toUpdateItem()
    *
@@ -903,6 +987,20 @@ export class Dynamodb extends PolicyStatement {
    */
   public ifEnclosingOperation(value: string | string[], operator?: Operator | string) {
     return this.if(`dynamodb:EnclosingOperation`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Used to block full table scan.
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-iam.html
+   *
+   * Applies to actions:
+   * - .toPartiQLSelect()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifFullTableScan(value?: boolean) {
+    return this.if(`dynamodb:FullTableScan`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -916,6 +1014,10 @@ export class Dynamodb extends PolicyStatement {
    * - .toConditionCheckItem()
    * - .toDeleteItem()
    * - .toGetItem()
+   * - .toPartiQLDelete()
+   * - .toPartiQLInsert()
+   * - .toPartiQLSelect()
+   * - .toPartiQLUpdate()
    * - .toPutItem()
    * - .toQuery()
    * - .toUpdateItem()
@@ -958,6 +1060,8 @@ export class Dynamodb extends PolicyStatement {
    * Applies to actions:
    * - .toConditionCheckItem()
    * - .toDeleteItem()
+   * - .toPartiQLDelete()
+   * - .toPartiQLUpdate()
    * - .toPutItem()
    * - .toQuery()
    * - .toScan()
@@ -978,6 +1082,7 @@ export class Dynamodb extends PolicyStatement {
    * Applies to actions:
    * - .toBatchGetItem()
    * - .toGetItem()
+   * - .toPartiQLSelect()
    * - .toQuery()
    * - .toScan()
    *

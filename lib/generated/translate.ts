@@ -19,7 +19,31 @@ export class Translate extends PolicyStatement {
   }
 
   /**
-   * A synchronous action that deletes a custom terminology.
+   * Grants permission to create a Parallel Data
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/translate/latest/dg/API_CreateParallelData.html
+   */
+  public toCreateParallelData() {
+    this.to('translate:CreateParallelData');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a Parallel Data
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/translate/latest/dg/API_DeleteParallelData.html
+   */
+  public toDeleteParallelData() {
+    this.to('translate:DeleteParallelData');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a terminology
    *
    * Access Level: Write
    *
@@ -31,7 +55,7 @@ export class Translate extends PolicyStatement {
   }
 
   /**
-   * Gets the properties associated with an asynchronous batch translation job including name, ID, status, source and target languages, input/output S3 buckets, and so on.
+   * Grants permission to get the properties associated with an asynchronous batch translation job
    *
    * Access Level: Read
    *
@@ -43,7 +67,19 @@ export class Translate extends PolicyStatement {
   }
 
   /**
-   * Retrieves a custom terminology.
+   * Grants permission to get a Parallel Data
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/translate/latest/dg/API_GetParallelData.html
+   */
+  public toGetParallelData() {
+    this.to('translate:GetParallelData');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve a terminology
    *
    * Access Level: Read
    *
@@ -55,7 +91,7 @@ export class Translate extends PolicyStatement {
   }
 
   /**
-   * Creates or updates a custom terminology, depending on whether or not one already exists for the given terminology name.
+   * Grants permission to create or update a terminology, depending on whether or not one already exists for the given terminology name
    *
    * Access Level: Write
    *
@@ -67,9 +103,21 @@ export class Translate extends PolicyStatement {
   }
 
   /**
-   * Provides a list of custom terminologies associated with your account.
+   * Grants permission to list Parallel Data associated with your account
    *
-   * Access Level: Read
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/translate/latest/dg/API_ListParallelData.html
+   */
+  public toListParallelData() {
+    this.to('translate:ListParallelData');
+    return this;
+  }
+
+  /**
+   * Grants permission to list terminologies associated with your account
+   *
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_ListTerminologies.html
    */
@@ -79,9 +127,9 @@ export class Translate extends PolicyStatement {
   }
 
   /**
-   * Gets a list of the batch translation jobs that you have submitted.
+   * Grants permission to list batch translation jobs that you have submitted
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_ListTextTranslationJobs.html
    */
@@ -91,7 +139,7 @@ export class Translate extends PolicyStatement {
   }
 
   /**
-   * Starts an asynchronous batch translation job. Batch translation jobs can be used to translate large volumes of text across multiple documents at once.
+   * Grants permission to start an asynchronous batch translation job. Batch translation jobs can be used to translate large volumes of text across multiple documents at once
    *
    * Access Level: Write
    *
@@ -103,7 +151,7 @@ export class Translate extends PolicyStatement {
   }
 
   /**
-   * Stops an asynchronous batch translation job that is in progress.
+   * Grants permission to stop an asynchronous batch translation job that is in progress
    *
    * Access Level: Write
    *
@@ -115,7 +163,7 @@ export class Translate extends PolicyStatement {
   }
 
   /**
-   * Translate text from a source language to a target language.
+   * Grants permission to translate text from a source language to a target language
    *
    * Access Level: Read
    *
@@ -126,19 +174,38 @@ export class Translate extends PolicyStatement {
     return this;
   }
 
+  /**
+   * Grants permission to update an existing Parallel Data
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/translate/latest/dg/API_UpdateParallelData.html
+   */
+  public toUpdateParallelData() {
+    this.to('translate:UpdateParallelData');
+    return this;
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "CreateParallelData",
+      "DeleteParallelData",
       "DeleteTerminology",
       "ImportTerminology",
       "StartTextTranslationJob",
-      "StopTextTranslationJob"
+      "StopTextTranslationJob",
+      "UpdateParallelData"
     ],
     "Read": [
       "DescribeTextTranslationJob",
+      "GetParallelData",
       "GetTerminology",
-      "ListTerminologies",
-      "ListTextTranslationJobs",
       "TranslateText"
+    ],
+    "List": [
+      "ListParallelData",
+      "ListTerminologies",
+      "ListTextTranslationJobs"
     ]
   };
 }

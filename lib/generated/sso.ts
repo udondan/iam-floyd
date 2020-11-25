@@ -94,6 +94,18 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable the instance for ABAC and specify the attributes
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateInstanceAccessControlAttributeConfiguration.html
+   */
+  public toCreateInstanceAccessControlAttributeConfiguration() {
+    this.to('sso:CreateInstanceAccessControlAttributeConfiguration');
+    return this;
+  }
+
+  /**
    * Add a managed application instance to AWS Single Sign-On
    *
    * Access Level: Write
@@ -190,6 +202,18 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable ABAC and remove the attributes list for the instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteInstanceAccessControlAttributeConfiguration.html
+   */
+  public toDeleteInstanceAccessControlAttributeConfiguration() {
+    this.to('sso:DeleteInstanceAccessControlAttributeConfiguration');
+    return this;
+  }
+
+  /**
    * Delete the managed application instance
    *
    * Access Level: Write
@@ -258,6 +282,18 @@ export class Sso extends PolicyStatement {
    */
   public toDescribeAccountAssignmentDeletionStatus() {
     this.to('sso:DescribeAccountAssignmentDeletionStatus');
+    return this;
+  }
+
+  /**
+   * Grants permission to get the list of attributes used by the instance for ABAC
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeInstanceAccessControlAttributeConfiguration.html
+   */
+  public toDescribeInstanceAccessControlAttributeConfiguration() {
+    this.to('sso:DescribeInstanceAccessControlAttributeConfiguration');
     return this;
   }
 
@@ -943,6 +979,18 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the attributes to use with the instance for ABAC
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdateInstanceAccessControlAttributeConfiguration.html
+   */
+  public toUpdateInstanceAccessControlAttributeConfiguration() {
+    this.to('sso:UpdateInstanceAccessControlAttributeConfiguration');
+    return this;
+  }
+
+  /**
    * Update the status of a managed application instance
    *
    * Access Level: Write
@@ -1010,6 +1058,7 @@ export class Sso extends PolicyStatement {
       "CreateAccountAssignment",
       "CreateApplicationInstance",
       "CreateApplicationInstanceCertificate",
+      "CreateInstanceAccessControlAttributeConfiguration",
       "CreateManagedApplicationInstance",
       "CreatePermissionSet",
       "CreateProfile",
@@ -1018,6 +1067,7 @@ export class Sso extends PolicyStatement {
       "DeleteApplicationInstance",
       "DeleteApplicationInstanceCertificate",
       "DeleteInlinePolicyFromPermissionSet",
+      "DeleteInstanceAccessControlAttributeConfiguration",
       "DeleteManagedApplicationInstance",
       "DeletePermissionSet",
       "DeletePermissionsPolicy",
@@ -1039,6 +1089,7 @@ export class Sso extends PolicyStatement {
       "UpdateApplicationInstanceServiceProviderConfiguration",
       "UpdateApplicationInstanceStatus",
       "UpdateDirectoryAssociation",
+      "UpdateInstanceAccessControlAttributeConfiguration",
       "UpdateManagedApplicationInstanceStatus",
       "UpdatePermissionSet",
       "UpdateProfile",
@@ -1048,6 +1099,7 @@ export class Sso extends PolicyStatement {
     "Read": [
       "DescribeAccountAssignmentCreationStatus",
       "DescribeAccountAssignmentDeletionStatus",
+      "DescribeInstanceAccessControlAttributeConfiguration",
       "DescribePermissionSet",
       "DescribePermissionSetProvisioningStatus",
       "DescribePermissionsPolicies",

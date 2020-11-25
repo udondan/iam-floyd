@@ -205,6 +205,18 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the organization configuration for Security Hub
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeOrganizationConfiguration.html
+   */
+  public toDescribeOrganizationConfiguration() {
+    this.to('securityhub:DescribeOrganizationConfiguration');
+    return this;
+  }
+
+  /**
    * Grants permission to retrieve information about the available Security Hub product integrations
    *
    * Access Level: Read
@@ -253,6 +265,18 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove the Security Hub administrator account for your organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableOrganizationAdminAccount.html
+   */
+  public toDisableOrganizationAdminAccount() {
+    this.to('securityhub:DisableOrganizationAdminAccount');
+    return this;
+  }
+
+  /**
    * Grants permission to disable Security Hub
    *
    * Access Level: Write
@@ -297,6 +321,18 @@ export class Securityhub extends PolicyStatement {
    */
   public toEnableImportFindingsForProduct() {
     this.to('securityhub:EnableImportFindingsForProduct');
+    return this;
+  }
+
+  /**
+   * Grants permission to designate a Security Hub administrator account for your organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableOrganizationAdminAccount.html
+   */
+  public toEnableOrganizationAdminAccount() {
+    this.to('securityhub:EnableOrganizationAdminAccount');
     return this;
   }
 
@@ -449,6 +485,18 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the Security Hub administrator accounts for your organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListOrganizationAdminAccounts.html
+   */
+  public toListOrganizationAdminAccounts() {
+    this.to('securityhub:ListOrganizationAdminAccounts');
+    return this;
+  }
+
+  /**
    * Grants permission to list of tags associated with a resource
    *
    * Access Level: List
@@ -521,6 +569,18 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the organization configuration for Security Hub
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateOrganizationConfiguration.html
+   */
+  public toUpdateOrganizationConfiguration() {
+    this.to('securityhub:UpdateOrganizationConfiguration');
+    return this;
+  }
+
+  /**
    * Grants permission to update Security Hub configuration
    *
    * Access Level: Write
@@ -560,10 +620,12 @@ export class Securityhub extends PolicyStatement {
       "DeleteInvitations",
       "DeleteMembers",
       "DisableImportFindingsForProduct",
+      "DisableOrganizationAdminAccount",
       "DisableSecurityHub",
       "DisassociateFromMasterAccount",
       "DisassociateMembers",
       "EnableImportFindingsForProduct",
+      "EnableOrganizationAdminAccount",
       "EnableSecurityHub",
       "InviteMembers",
       "TagResource",
@@ -571,12 +633,14 @@ export class Securityhub extends PolicyStatement {
       "UpdateActionTarget",
       "UpdateFindings",
       "UpdateInsight",
+      "UpdateOrganizationConfiguration",
       "UpdateSecurityHubConfiguration",
       "UpdateStandardsControl"
     ],
     "Read": [
       "DescribeActionTargets",
       "DescribeHub",
+      "DescribeOrganizationConfiguration",
       "DescribeProducts",
       "DescribeStandards",
       "DescribeStandardsControls",
@@ -592,6 +656,7 @@ export class Securityhub extends PolicyStatement {
       "ListEnabledProductsForImport",
       "ListInvitations",
       "ListMembers",
+      "ListOrganizationAdminAccounts",
       "ListTagsForResource"
     ]
   };
