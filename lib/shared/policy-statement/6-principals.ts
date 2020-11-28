@@ -33,10 +33,6 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
       return super.toJSON();
     }
 
-    if (this.hasPrincipals()) {
-      this.explicitAllow = true;
-    }
-
     const mode = this.useNotPrincipals ? 'NotPrincipal' : 'Principal';
     const statement = super.toJSON();
 

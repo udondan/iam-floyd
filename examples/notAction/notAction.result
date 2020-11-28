@@ -1,4 +1,5 @@
 {
+    "Effect": "Allow",
     "NotAction": [
         "s3:DeleteBucket"
     ],

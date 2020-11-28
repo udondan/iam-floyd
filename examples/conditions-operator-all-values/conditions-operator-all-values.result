@@ -11,6 +11,7 @@
             ]
         }
     },
+    "Effect": "Allow",
     "Resource": [
         "arn:aws:dynamodb:*:*:table/Thread"
     ]

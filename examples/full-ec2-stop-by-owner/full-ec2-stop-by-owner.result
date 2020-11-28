@@ -9,6 +9,7 @@
                     "aws:RequestTag/Owner": "${aws:username}"
                 }
             },
+            "Effect": "Allow",
             "Resource": [
                 "*"
             ]
@@ -22,6 +23,7 @@
                     "ec2:ResourceTag/Owner": "${aws:username}"
                 }
             },
+            "Effect": "Allow",
             "Resource": [
                 "*"
             ]
@@ -167,6 +169,7 @@
                 "ec2:GetPasswordData",
                 "ec2:GetReservedInstancesExchangeQuote"
             ],
+            "Effect": "Allow",
             "Resource": [
                 "*"
             ]

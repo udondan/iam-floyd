@@ -1,11 +1,14 @@
 {
     "Action": [
-        "sts:AssumeRole"
+        "s3:*"
     ],
-    "Effect": "Deny",
+    "Effect": "Allow",
     "NotPrincipal": {
         "AWS": [
             "arn:aws:iam::1234567890:user/Bob"
         ]
-    }
+    },
+    "Resource": [
+        "arn:aws:s3:::example-bucket/*"
+    ]
 }

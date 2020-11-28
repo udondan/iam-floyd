@@ -3,6 +3,7 @@
         "ec2:CreateTags",
         "ec2:DeleteTags"
     ],
+    "Effect": "Allow",
     "Resource": [
         "*"
     ]

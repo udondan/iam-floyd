@@ -2,6 +2,7 @@
     "Action": [
         "ec2:missingAction"
     ],
+    "Effect": "Allow",
     "Resource": [
         "*"
     ]

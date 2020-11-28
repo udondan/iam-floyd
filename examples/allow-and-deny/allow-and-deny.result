@@ -2,6 +2,7 @@
     "Action": [
         "ec2:StartInstances"
     ],
+    "Effect": "Allow",
     "Resource": [
         "*"
     ]
