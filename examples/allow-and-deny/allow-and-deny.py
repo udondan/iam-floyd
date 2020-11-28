@@ -1,20 +1,32 @@
-import json
 import iam_floyd as statement
+import importlib
+import os
+import sys
+import inspect
+
+currentdir = os.path.dirname(os.path.abspath(
+    inspect.getfile(inspect.currentframe())))
+helperDir = '%s/../../helper/python' % currentdir
+sys.path.insert(0, helperDir)
+
+test = importlib.import_module('python_test')
+out = getattr(test, 'out')
+deploy = getattr(test, 'deploy')
 
 
 def statements():
     # doc-start
     s1 = statement.Ec2() \
-                .allow() \
-                .to_start_instances()
+        .allow() \
+        .to_start_instances()
 
     s2 = statement.Ec2() \
-                .deny() \
-                .to_stop_instances()
+        .deny() \
+        .to_stop_instances()
     # doc-end
     return [s1, s2]
 
 
-for s in statements():
-    pretty = json.dumps(s.to_json(), indent=4, sort_keys=True)
-    print(pretty)
+all = statements()
+out(all)
+deploy(all)

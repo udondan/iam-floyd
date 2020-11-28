@@ -1,8 +1,9 @@
 import * as statement from 'iam-floyd';
 
 // doc-start
-new statement.Sts()
-  .deny()
+new statement.S3()
+  .allow()
+  .allActions()
   .notPrincipals()
-  .toAssumeRole()
-  .forUser('1234567890', 'Bob');
+  .forUser('1234567890', 'Bob')
+  .onObject('example-bucket', '*');
