@@ -29,6 +29,9 @@ jobs:
       - name: Update version references
         run: make update-version-refs
 
+      - name: Re-format Python documentation examples
+        run: make python-examples-adjust-indention
+
       - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
