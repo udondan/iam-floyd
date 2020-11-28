@@ -9,3 +9,4 @@ test/package-lock.json
 test/cdk.out
 docs/build
 examples/*/*.*.result
+**/*.pyc

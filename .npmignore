@@ -21,6 +21,7 @@ VERSION
 CHANGELOG/*
 docs/*
 examples/*
+helper/*
 README.md
 Makefile
 cdk
