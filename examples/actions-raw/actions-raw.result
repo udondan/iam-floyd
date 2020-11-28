@@ -1,6 +1,6 @@
 {
     "Action": [
-        "missingAction"
+        "ec2:missingAction"
     ],
     "Resource": [
         "*"
