@@ -53,6 +53,9 @@ jobs:
 
       - name: Test Python package
         run: make test-python
+        with:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Store packages as artifacts
         uses: actions/upload-artifact@v2
@@ -76,6 +79,9 @@ jobs:
 
       - name: Test Python package
         run: make test-python-cdk
+        with:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Store packages as artifacts
         uses: actions/upload-artifact@v2
