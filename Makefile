@@ -84,10 +84,10 @@ docs: python-examples-adjust-indention
 	@cd docs && $(MAKE) clean html
 
 test-python:
-	$(MAKE) --no-print-directory -f ./Python.Test.Makefile test
+	$(MAKE) --no-print-directory -f ./Test.Python.Makefile test
 
 test-python-cdk:
-	$(MAKE) --no-print-directory -f ./Python.Test.Makefile test-cdk
+	$(MAKE) --no-print-directory -f ./Test.Python.Makefile test-cdk
 
 python-examples-adjust-indention:
 	@ls examples/**/*.py | xargs autopep8 -i
