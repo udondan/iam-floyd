@@ -30,7 +30,9 @@ jobs:
         run: make update-version-refs
 
       - name: Re-format Python documentation examples
-        run: make python-examples-adjust-indention
+        run: |
+          pip install autopep8
+          make python-examples-adjust-indention
 
       - name: Commit changes
         run: |
