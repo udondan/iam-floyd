@@ -1,5 +1,6 @@
 import iam = require('@aws-cdk/aws-iam');
-import * as statement from 'cdk-iam-floyd';
+
+import * as statement from '../../lib';
 
 // doc-start
 new statement.Sts()

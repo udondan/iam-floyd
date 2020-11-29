@@ -1,4 +1,4 @@
-import * as statement from 'iam-floyd';
+import * as statement from '../../lib';
 
 // doc-start
 const myStatement = new statement.Ec2();
