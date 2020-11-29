@@ -83,6 +83,12 @@ update-version-refs:
 docs: python-examples-adjust-indention
 	@cd docs && $(MAKE) clean html
 
+test-typescript: install
+	$(MAKE) --no-print-directory -f ./Test.TypeScript.Makefile test
+
+test-typescript-cdk: install
+	$(MAKE) --no-print-directory -f ./Test.TypeScript.Makefile test-cdk
+
 test-python:
 	$(MAKE) --no-print-directory -f ./Test.Python.Makefile test
 

@@ -54,6 +54,12 @@ jobs:
         with:
           BUILD_PACKAGES: true
 
+      - name: Test npm package
+        run: make test-typescript
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
       - name: Test Python package
         run: make test-python
         env:
@@ -79,6 +85,12 @@ jobs:
         uses: udondan/jsii-publish@v0.12.0
         with:
           BUILD_PACKAGES: true
+
+      - name: Test npm package
+        run: make test-typescript-cdk
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Test Python package
         run: make test-python-cdk

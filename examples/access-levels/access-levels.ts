@@ -1,11 +1,22 @@
+import { deploy, out } from '../../helper/typescript/typescript_test';
 import * as statement from '../../lib';
 
-// doc-start
-new statement.Ec2() //
-  .deny()
-  .allPermissionManagementActions();
+function getStatements() {
+  function wrap() {
+    // doc-start
+    const s1 = new statement.Ec2() //
+      .deny()
+      .allPermissionManagementActions();
 
-new statement.Ec2() //
-  .allow()
-  .allListActions()
-  .allReadActions();
+    const s2 = new statement.Ec2() //
+      .allow()
+      .allListActions()
+      .allReadActions();
+    // doc-end
+    return [s1, s2];
+  }
+  return wrap();
+}
+const s = getStatements();
+out(s);
+deploy(s);

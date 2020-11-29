@@ -1,7 +1,16 @@
+import { deploy, out } from '../../helper/typescript/typescript_test';
 import * as statement from '../../lib';
 
-// doc-start
-new statement.Ec2()
-  .allow()
-  .toStartInstances()
-  .if('ec2:missingCondition', 'some-value');
+function getStatement() {
+  return (
+    // doc-start
+    new statement.Ec2()
+      .allow()
+      .toStartInstances()
+      .if('ec2:missingCondition', 'some-value')
+    // doc-end
+  );
+}
+const s = [getStatement()];
+out(s);
+deploy(s);
