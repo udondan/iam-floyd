@@ -58,7 +58,7 @@ stats:
 clean:
 	@echo -e "$(TARGET_COLOR)Running clean$(NO_COLOR)"
 	@rm -rf node_modules package-lock.json test/node_modules test/package-lock.json
-	@find . -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
+	@find . -not -path "./docs/*" -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
 
 install: clean
 	@echo -e "$(TARGET_COLOR)Running install$(NO_COLOR)"
