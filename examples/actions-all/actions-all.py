@@ -16,8 +16,8 @@ deploy = getattr(test, 'deploy')
 s = (
     # doc-start
     statement.Ec2() \
-    .allow() \
-    .all_actions()
+        .allow() \
+        .all_actions()
     # doc-end
 )
 

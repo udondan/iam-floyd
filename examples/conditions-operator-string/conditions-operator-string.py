@@ -16,9 +16,9 @@ deploy = getattr(test, 'deploy')
 s = (
     # doc-start
     statement.Ec2() \
-    .allow() \
-    .to_start_instances() \
-    .if_aws_request_tag('TagWithSpecialChars', '*John*', 'StringEquals')
+        .allow() \
+        .to_start_instances() \
+        .if_aws_request_tag('TagWithSpecialChars', '*John*', 'StringEquals')
     # doc-end
 )
 

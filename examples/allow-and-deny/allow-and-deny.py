@@ -17,12 +17,12 @@ deploy = getattr(test, 'deploy')
 def statements():
     # doc-start
     s1 = statement.Ec2() \
-        .allow() \
-        .to_start_instances()
+                .allow() \
+                .to_start_instances()
 
     s2 = statement.Ec2() \
-        .deny() \
-        .to_stop_instances()
+                .deny() \
+                .to_stop_instances()
     # doc-end
     return [s1, s2]
 

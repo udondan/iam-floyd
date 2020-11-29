@@ -16,9 +16,9 @@ deploy = getattr(test, 'deploy')
 s = (
     # doc-start
     statement.Ec2() \
-    .allow() \
-    .to_start_instances() \
-    .if_('ec2:missingCondition', 'some-value')
+        .allow() \
+        .to_start_instances() \
+        .if_('ec2:missingCondition', 'some-value')
     # doc-end
 )
 

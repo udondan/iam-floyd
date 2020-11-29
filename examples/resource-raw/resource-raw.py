@@ -16,10 +16,10 @@ deploy = getattr(test, 'deploy')
 s = (
     # doc-start
     statement.S3() \
-    .allow() \
-    .all_actions() \
-    .on('arn:aws:s3:::example-bucket',
-        'arn:aws:s3:::another-bucket')
+        .allow() \
+        .all_actions() \
+        .on('arn:aws:s3:::example-bucket',
+            'arn:aws:s3:::another-bucket')
     # doc-end
 )
 

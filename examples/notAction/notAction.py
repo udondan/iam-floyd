@@ -16,10 +16,10 @@ deploy = getattr(test, 'deploy')
 s = (
     # doc-start
     statement.S3() \
-    .allow() \
-    .not_actions() \
-    .to_delete_bucket() \
-    .on_bucket('example-bucket')
+        .allow() \
+        .not_actions() \
+        .to_delete_bucket() \
+        .on_bucket('example-bucket')
     # doc-end
 )
 

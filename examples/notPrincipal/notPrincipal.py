@@ -16,11 +16,11 @@ deploy = getattr(test, 'deploy')
 s = (
     # doc-start
     statement.S3() \
-    .allow() \
-    .all_actions() \
-    .not_principals() \
-    .for_user('1234567890', 'Bob')
-    .on_object('example-bucket', '*')
+        .allow() \
+        .all_actions() \
+        .not_principals() \
+        .for_user('1234567890', 'Bob')
+        .on_object('example-bucket', '*')
     # doc-end
 )
 

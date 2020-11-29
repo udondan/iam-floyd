@@ -16,8 +16,8 @@ deploy = getattr(test, 'deploy')
 s = (
     # doc-start
     statement.Ec2() \
-    .allow() \
-    .all_permission_management_actions()
+        .allow() \
+        .all_permission_management_actions()
     # doc-end
 )
 
