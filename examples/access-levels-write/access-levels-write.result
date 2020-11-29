@@ -273,8 +273,8 @@
         "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
         "ec2:WithdrawByoipCidr"
     ],
-    "Effect": "Allow",
     "Resource": [
         "*"
-    ]
+    ],
+    "Effect": "Allow"
 }

@@ -1,7 +1,4 @@
 {
-    "Action": [
-        "ec2:StartInstances"
-    ],
     "Condition": {
         "StringEqualsIfExists": {
             "aws:RequestTag/Environment": [
@@ -11,8 +8,11 @@
             ]
         }
     },
-    "Effect": "Allow",
+    "Action": [
+        "ec2:StartInstances"
+    ],
     "Resource": [
         "*"
-    ]
+    ],
+    "Effect": "Allow"
 }

@@ -28,5 +28,5 @@ def get_policy():
     return policy
 
 
-pretty = json.dumps(get_policy(), indent=4, sort_keys=True)
+pretty = json.dumps(get_policy(), indent=4)
 print(pretty)

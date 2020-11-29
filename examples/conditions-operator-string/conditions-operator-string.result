@@ -1,14 +1,14 @@
 {
-    "Action": [
-        "ec2:StartInstances"
-    ],
     "Condition": {
         "StringEquals": {
             "aws:RequestTag/TagWithSpecialChars": "*John*"
         }
     },
-    "Effect": "Allow",
+    "Action": [
+        "ec2:StartInstances"
+    ],
     "Resource": [
         "*"
-    ]
+    ],
+    "Effect": "Allow"
 }

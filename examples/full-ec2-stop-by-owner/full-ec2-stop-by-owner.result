@@ -1,32 +1,33 @@
 {
+    "Version": "2012-10-17",
     "Statement": [
         {
-            "Action": [
-                "ec2:StartInstances"
-            ],
             "Condition": {
                 "StringLike": {
                     "aws:RequestTag/Owner": "${aws:username}"
                 }
             },
-            "Effect": "Allow",
+            "Action": [
+                "ec2:StartInstances"
+            ],
             "Resource": [
                 "*"
-            ]
+            ],
+            "Effect": "Allow"
         },
         {
-            "Action": [
-                "ec2:StopInstances"
-            ],
             "Condition": {
                 "StringLike": {
                     "ec2:ResourceTag/Owner": "${aws:username}"
                 }
             },
-            "Effect": "Allow",
+            "Action": [
+                "ec2:StopInstances"
+            ],
             "Resource": [
                 "*"
-            ]
+            ],
+            "Effect": "Allow"
         },
         {
             "Action": [
@@ -169,11 +170,10 @@
                 "ec2:GetPasswordData",
                 "ec2:GetReservedInstancesExchangeQuote"
             ],
-            "Effect": "Allow",
             "Resource": [
                 "*"
-            ]
+            ],
+            "Effect": "Allow"
         }
-    ],
-    "Version": "2012-10-17"
+    ]
 }

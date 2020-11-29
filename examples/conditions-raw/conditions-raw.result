@@ -1,14 +1,14 @@
 {
-    "Action": [
-        "ec2:StartInstances"
-    ],
     "Condition": {
         "StringLike": {
             "ec2:missingCondition": "some-value"
         }
     },
-    "Effect": "Allow",
+    "Action": [
+        "ec2:StartInstances"
+    ],
     "Resource": [
         "*"
-    ]
+    ],
+    "Effect": "Allow"
 }

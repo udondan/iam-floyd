@@ -118,8 +118,8 @@
         "ec2:SearchTransitGatewayMulticastGroups",
         "ec2:SearchTransitGatewayRoutes"
     ],
-    "Effect": "Allow",
     "Resource": [
         "*"
-    ]
+    ],
+    "Effect": "Allow"
 }

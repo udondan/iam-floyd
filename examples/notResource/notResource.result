@@ -2,8 +2,8 @@
     "Action": [
         "s3:DeleteBucket"
     ],
-    "Effect": "Allow",
     "NotResource": [
         "arn:aws:s3:::example-bucket"
-    ]
+    ],
+    "Effect": "Allow"
 }

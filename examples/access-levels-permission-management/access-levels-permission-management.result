@@ -6,8 +6,8 @@
         "ec2:ModifyVpcEndpointServicePermissions",
         "ec2:ResetSnapshotAttribute"
     ],
-    "Effect": "Allow",
     "Resource": [
         "*"
-    ]
+    ],
+    "Effect": "Allow"
 }

@@ -10,7 +10,7 @@ account_id = boto3.client('sts').get_caller_identity().get('Account')
 
 def out(statements):
     for s in statements:
-        pretty = json.dumps(s.to_json(), indent=4, sort_keys=True)
+        pretty = json.dumps(s.to_json(), indent=4)
         print(pretty)
 
 
@@ -108,7 +108,7 @@ def make_policy_document(statements, filter=None, filter_options=None):
     if filter is not None:
         j = filter(j, filter_options)
 
-    return json.dumps(j, indent=4, sort_keys=True)
+    return json.dumps(j, indent=4)
 
 
 def new_random_name():

@@ -1,7 +1,4 @@
 {
-    "Action": [
-        "dynamodb:GetItem"
-    ],
     "Condition": {
         "ForAllValues:StringEquals": {
             "dynamodb:Attributes": [
@@ -11,8 +8,11 @@
             ]
         }
     },
-    "Effect": "Allow",
+    "Action": [
+        "dynamodb:GetItem"
+    ],
     "Resource": [
         "arn:aws:dynamodb:*:*:table/Thread"
-    ]
+    ],
+    "Effect": "Allow"
 }

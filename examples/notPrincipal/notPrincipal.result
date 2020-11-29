@@ -2,13 +2,13 @@
     "Action": [
         "s3:*"
     ],
+    "Resource": [
+        "arn:aws:s3:::example-bucket/*"
+    ],
     "Effect": "Allow",
     "NotPrincipal": {
         "AWS": [
             "arn:aws:iam::1234567890:user/Bob"
         ]
-    },
-    "Resource": [
-        "arn:aws:s3:::example-bucket/*"
-    ]
+    }
 }

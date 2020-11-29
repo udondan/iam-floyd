@@ -3,7 +3,6 @@ import iam_floyd as statement
 
 
 def get_policy():
-
     # doc-start
     statements = statement.Collection().allow_ec2_instance_delete_by_owner()
     policy = {
@@ -14,5 +13,5 @@ def get_policy():
     return policy
 
 
-pretty = json.dumps(get_policy(), indent=4, sort_keys=True)
+pretty = json.dumps(get_policy(), indent=4)
 print(pretty)

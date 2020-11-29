@@ -2,17 +2,17 @@
     "Action": [
         "ec2:StartInstances"
     ],
-    "Effect": "Allow",
     "Resource": [
         "*"
-    ]
+    ],
+    "Effect": "Allow"
 }
 {
     "Action": [
         "ec2:StopInstances"
     ],
-    "Effect": "Deny",
     "Resource": [
         "*"
-    ]
+    ],
+    "Effect": "Deny"
 }
