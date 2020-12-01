@@ -99,3 +99,10 @@ python-examples-adjust-indention:
 	@ls examples/**/*.py | xargs autopep8 -i
 	@perl -pi -e "s/(?<=^     )(?=[^.])/    /g" examples/**/*.py
 	@perl -pi -e "s/^(\s{4,})\./\1    ./g" examples/**/*.py
+
+regenerate-code-example-results:
+	@for f in examples/**/*.ts; do \
+		[[ "$$f" == *".cdk."* ]]&& continue; \
+		echo "Caching result of $$(basename $$f)" ;\
+		npx ts-node "$$f" > "$${f%.ts}.result" || exit ;\
+	done
