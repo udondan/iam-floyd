@@ -12,6 +12,10 @@ import { AccessLevelList } from '../shared/access-level';
 import { Conditions } from './condition';
 import { arnFixer, conditionFixer, fixes, serviceFixer } from './fixes';
 
+// tmp solution. the cheerio/types is currently not working
+type CheerioStatic = any;
+type CheerioElement = any;
+
 const project = new Project();
 const modules: Module[] = [];
 const timeThreshold = new Date();
@@ -190,7 +194,7 @@ export function getContent(service: string): Promise<Module> {
   });
 }
 
-export function createModules(services: string[]) {
+export function createModules(services: string[]): Promise<void> {
   createCache();
   return new Promise(async (resolve, reject) => {
     for (const service of services) {
