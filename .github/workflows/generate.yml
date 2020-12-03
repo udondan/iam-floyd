@@ -38,7 +38,7 @@ jobs:
           args: make ${{ github.event.inputs.command }}
         if: ${{ github.event_name == 'workflow_dispatch' }}
 
-      - name: Generate code
+      - name: Regenerate code example results
         uses: udondan/cdk-nodejs@v0.2.0
         with:
           args: make regenerate-code-example-results
