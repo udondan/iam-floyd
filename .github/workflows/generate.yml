@@ -38,11 +38,6 @@ jobs:
           args: make ${{ github.event.inputs.command }}
         if: ${{ github.event_name == 'workflow_dispatch' }}
 
-      - name: Regenerate code example results
-        uses: udondan/cdk-nodejs@v0.2.0
-        with:
-          args: make regenerate-code-example-results
-
       - name: Commit and push changes
         run: |
           set -x
@@ -56,6 +51,7 @@ jobs:
             make stats &&
             make changelog &&
             git add CHANGELOG/* &&
+            make regenerate-code-example-results &&
             git config --local user.email "deemes79@googlemail.com" &&
             git config --local user.name "udondan" &&
             rm -rf node_modules tsconfig.json &&
