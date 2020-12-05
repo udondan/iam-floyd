@@ -5,11 +5,11 @@ function getNoServices() {
 }
 
 function getNoActions() {
-  grep -R --include="*.ts" --exclude-dir=".cache" "this.to" lib/generated | wc -l | xargs
+  wc -l < stats/actions | xargs
 }
 
 function getNoResourceTypes() {
-  grep -R --include="*.ts" --exclude-dir=".cache" "public on" lib/generated | wc -l | xargs
+  wc -l < stats/resources | xargs
 }
 
 function getNoGlobalConditions() {
@@ -17,7 +17,7 @@ function getNoGlobalConditions() {
 }
 
 function getNoServiceConditions() {
-  grep -R --include="*.ts" --exclude-dir=".cache" "public if" lib/generated | grep -cv "public ifAws"
+  wc -l < stats/conditions | xargs
 }
 
 function getNoConditions() {
