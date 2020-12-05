@@ -17,11 +17,10 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    container: ubuntu:18.04
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
           persist-credentials: false
           fetch-depth: 0
@@ -38,37 +37,54 @@ jobs:
           args: make ${{ github.event.inputs.command }}
         if: ${{ github.event_name == 'workflow_dispatch' }}
 
-      - name: Setup git
-        run: |
-          set -x
-          apt update
-          apt-get install -y git
-          git config --local user.email "deemes79@googlemail.com"
-          git config --local user.name "udondan"
-
       - name: Check for changes
         id: changes
         run: |
-          set -x
+          set -x +e
           git diff --quiet
           echo ::set-output name=CHANGED::$?
 
-      - name: TESTING
-        run: echo ${{ steps.changes.outputs.CHANGED }}
-#      - name: Commit and push changes
-#        run: |
-#          set -x
-#          test -e lib/index.ts || exit 1
-#          git diff --quiet || (
-#            apt-get install -y pcregrep make &&
-#            perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION &&
-#            make update-version-refs &&
-#            make stats &&
-#            make changelog &&
-#            git add CHANGELOG/* &&
-#            make regenerate-code-example-results &&
-#            rm -rf node_modules tsconfig.json &&
-#            git add * &&
-#            git commit -m "Adds latest IAM updates from AWS" &&
-#            git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
-#          )
+      # fail if the index file does not exist.
+      # this could happen if we cannot reach the AWS documentation, or the
+      # format of the documentation has changed and therefore cannot generate
+      # code.
+      - name: Failsafe
+        run: test -e lib/index.ts || exit 1
+
+      - name: Configure git
+        run: |
+          set -x
+          git config --local user.email "deemes79@googlemail.com"
+          git config --local user.name "udondan"
+        if: steps.changes.outputs.CHANGED == '1'
+
+      - name: Update version refs
+        run: |
+          set -x
+          perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION
+          make update-version-refs
+        if: steps.changes.outputs.CHANGED == '1'
+
+      - name: Update stats in documentation
+        run: make stats
+        if: steps.changes.outputs.CHANGED == '1'
+
+      - name: Generate changelog for next release
+        run: |
+          set -x
+          make changelog
+          git add CHANGELOG/*
+        if: steps.changes.outputs.CHANGED == '1'
+
+      - name: Regenerate code example results
+        run: make regenerate-code-example-results
+        if: steps.changes.outputs.CHANGED == '1'
+
+      - name: Commit and push all changes
+        run: |
+          set -x
+          rm -rf node_modules tsconfig.json &&
+          git add * &&
+          git commit -m "Adds latest IAM updates from AWS" &&
+          git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
+        if: steps.changes.outputs.CHANGED == '1'
