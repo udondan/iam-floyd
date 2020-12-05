@@ -19,7 +19,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Creates an activity. Activities must poll Step Functions using the GetActivityTask and respond using SendTask* API calls.
+   * Grants permission to create an activity
    *
    * Access Level: Write
    *
@@ -35,7 +35,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Creates a state machine.
+   * Grants permission to create a state machine
    *
    * Access Level: Write
    *
@@ -51,7 +51,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Deletes an activity.
+   * Grants permission to delete an activity
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Deletes a state machine.
+   * Grants permission to delete a state machine
    *
    * Access Level: Write
    *
@@ -75,7 +75,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Describes an activity.
+   * Grants permission to describe an activity
    *
    * Access Level: Read
    *
@@ -87,7 +87,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Describes an execution.
+   * Grants permission to describe an execution
    *
    * Access Level: Read
    *
@@ -99,7 +99,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Describes a state machine.
+   * Grants permission to describe a state machine
    *
    * Access Level: Read
    *
@@ -111,7 +111,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Describes state machine for an execution.
+   * Grants permission to describe the state machine for an execution
    *
    * Access Level: Read
    *
@@ -123,7 +123,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for execution by a running state machine.
+   * Grants permission to be used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for execution by a running state machine
    *
    * Access Level: Write
    *
@@ -135,7 +135,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Returns the history of the specified execution as a list of events. By default, the results are returned in ascending order of the timeStamp of the events.
+   * Grants permission to return the history of the specified execution as a list of events
    *
    * Access Level: Read
    *
@@ -147,7 +147,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Lists the existing activities. The results may be split into multiple pages.
+   * Grants permission to list the existing activities
    *
    * Access Level: List
    *
@@ -159,7 +159,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Lists the executions of a state machine that meet the filtering criteria. The results may be split into multiple pages.
+   * Grants permission to list the executions of a state machine
    *
    * Access Level: Read
    *
@@ -171,7 +171,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Lists the existing state machines. The results may be split into multiple pages.
+   * Grants permission to lists the existing state machines
    *
    * Access Level: List
    *
@@ -183,7 +183,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * This action lists tags for an AWS Step Functions resource.
+   * Grants permission to list tags for an AWS Step Functions resource
    *
    * Access Level: Read
    *
@@ -195,7 +195,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Used by workers to report that the task identified by the taskToken failed.
+   * Grants permission to report that the task identified by the taskToken failed
    *
    * Access Level: Write
    *
@@ -207,7 +207,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Used by workers to report to the service that the task represented by the specified taskToken is still making progress.
+   * Grants permission to report to the service that the task represented by the specified taskToken is still making progress
    *
    * Access Level: Write
    *
@@ -219,7 +219,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Used by workers to report that the task identified by the taskToken completed successfully.
+   * Grants permission to report that the task identified by the taskToken completed successfully
    *
    * Access Level: Write
    *
@@ -231,7 +231,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Starts a state machine execution.
+   * Grants permission to start a state machine execution
    *
    * Access Level: Write
    *
@@ -243,7 +243,19 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Stops an execution.
+   * Grants permission to start a Synchronous Express state machine execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartSyncExecution.html
+   */
+  public toStartSyncExecution() {
+    this.to('states:StartSyncExecution');
+    return this;
+  }
+
+  /**
+   * Grants permission to stop an execution
    *
    * Access Level: Write
    *
@@ -255,7 +267,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * This action tags an AWS Step Functions resource.
+   * Grants permission to tag an AWS Step Functions resource
    *
    * Access Level: Tagging
    *
@@ -271,7 +283,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * This action removes a tag from an AWS Step Functions resource.
+   * Grants permission to remove a tag from an AWS Step Functions resource
    *
    * Access Level: Tagging
    *
@@ -286,7 +298,7 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Updates a state machine.
+   * Grants permission to update a state machine
    *
    * Access Level: Write
    *
@@ -312,6 +324,7 @@ export class States extends PolicyStatement {
       "SendTaskHeartbeat",
       "SendTaskSuccess",
       "StartExecution",
+      "StartSyncExecution",
       "StopExecution",
       "UpdateStateMachine"
     ],

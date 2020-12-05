@@ -19,7 +19,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified pronunciation lexicon stored in an AWS Region
+   * Grants permissions to delete the specified pronunciation lexicon stored in an AWS Region
    *
    * Access Level: Write
    *
@@ -31,7 +31,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Returns the list of voices that are available for use when requesting speech synthesis.
+   * Grants permissions to describe the list of voices that are available for use when requesting speech synthesis
    *
    * Access Level: List
    *
@@ -43,7 +43,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Returns the content of the specified pronunciation lexicon stored in an AWS Region.
+   * Grants permissions to retrieve the content of the specified pronunciation lexicon stored in an AWS Region
    *
    * Access Level: Read
    *
@@ -55,7 +55,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Enables the user to get information about specific speech synthesis task.
+   * Grants permissions to get information about specific speech synthesis task
    *
    * Access Level: Read
    *
@@ -67,7 +67,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Returns a list of pronunciation lexicons stored in an AWS Region.
+   * Grants permisions to list the pronunciation lexicons stored in an AWS Region
    *
    * Access Level: List
    *
@@ -79,7 +79,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Enables the user to list requested speech synthesis tasks.
+   * Grants permissions to list requested speech synthesis tasks
    *
    * Access Level: List
    *
@@ -91,7 +91,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Stores a pronunciation lexicon in an AWS Region.
+   * Grants permissions to store a pronunciation lexicon in an AWS Region
    *
    * Access Level: Write
    *
@@ -103,7 +103,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Enables the user to synthesize long inputs to provided S3 location.
+   * Grants permissions to synthesize long inputs to the provided S3 location
    *
    * Access Level: Write
    *
@@ -118,7 +118,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes.
+   * Grants permissions to synthesize speech
    *
    * Access Level: Read
    *

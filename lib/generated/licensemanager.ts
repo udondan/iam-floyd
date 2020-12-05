@@ -19,7 +19,91 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Creates a new license configuration
+   * Grants permission to accept a grant
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_AcceptGrant.html
+   */
+  public toAcceptGrant() {
+    this.to('license-manager:AcceptGrant');
+    return this;
+  }
+
+  /**
+   * Grants permission to check in license entitlements back to pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CheckInLicense.html
+   */
+  public toCheckInLicense() {
+    this.to('license-manager:CheckInLicense');
+    return this;
+  }
+
+  /**
+   * Grants permission to check out license entitlements for borrow use case
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CheckoutBorrowLicense.html
+   */
+  public toCheckoutBorrowLicense() {
+    this.to('license-manager:CheckoutBorrowLicense');
+    return this;
+  }
+
+  /**
+   * Grants permission to check out license entitlements
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CheckoutLicense.html
+   */
+  public toCheckoutLicense() {
+    this.to('license-manager:CheckoutLicense');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a new grant for license
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateGrant.html
+   */
+  public toCreateGrant() {
+    this.to('license-manager:CreateGrant');
+    return this;
+  }
+
+  /**
+   * Grants permission to create new version of grant
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateGrantVersion.html
+   */
+  public toCreateGrantVersion() {
+    this.to('license-manager:CreateGrantVersion');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a new license
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicense.html
+   */
+  public toCreateLicense() {
+    this.to('license-manager:CreateLicense');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a new license configuration
    *
    * Access Level: Tagging
    *
@@ -35,7 +119,55 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes a license configuration
+   * Grants permission to create new version of license.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseVersion.html
+   */
+  public toCreateLicenseVersion() {
+    this.to('license-manager:CreateLicenseVersion');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a new token for license
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateToken.html
+   */
+  public toCreateToken() {
+    this.to('license-manager:CreateToken');
+    return this;
+  }
+
+  /**
+   * Deletes a grant
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteGrant.html
+   */
+  public toDeleteGrant() {
+    this.to('license-manager:DeleteGrant');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a license
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicense.html
+   */
+  public toDeleteLicense() {
+    this.to('license-manager:DeleteLicense');
+    return this;
+  }
+
+  /**
+   * Grants permission to permanently delete a license configuration
    *
    * Access Level: Write
    *
@@ -47,7 +179,67 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Gets a license configuration
+   * Grants permission to delete token
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteToken.html
+   */
+  public toDeleteToken() {
+    this.to('license-manager:DeleteToken');
+    return this;
+  }
+
+  /**
+   * Grants permission to extend consumption period of already checkout license entitlements
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ExtendLicenseConsumption.html
+   */
+  public toExtendLicenseConsumption() {
+    this.to('license-manager:ExtendLicenseConsumption');
+    return this;
+  }
+
+  /**
+   * Grants permission to get access token
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetAccessToken.html
+   */
+  public toGetAccessToken() {
+    this.to('license-manager:GetAccessToken');
+    return this;
+  }
+
+  /**
+   * Grants permission to get a grant
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetGrant.html
+   */
+  public toGetGrant() {
+    this.to('license-manager:GetGrant');
+    return this;
+  }
+
+  /**
+   * Grants permission to get a license
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicense.html
+   */
+  public toGetLicense() {
+    this.to('license-manager:GetLicense');
+    return this;
+  }
+
+  /**
+   * Grants permission to get a license configuration
    *
    * Access Level: List
    *
@@ -59,7 +251,19 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Gets service settings
+   * Grants permission to get a license usage
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseUsage.html
+   */
+  public toGetLicenseUsage() {
+    this.to('license-manager:GetLicenseUsage');
+    return this;
+  }
+
+  /**
+   * Grants permission to get service settings
    *
    * Access Level: List
    *
@@ -71,7 +275,7 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Lists associations for a selected license configuration
+   * Grants permission to list associations for a selected license configuration
    *
    * Access Level: List
    *
@@ -83,7 +287,19 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Lists the license configuration operations that failed
+   * Grants permission to list distributed grants
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListDistributedGrants.html
+   */
+  public toListDistributedGrants() {
+    this.to('license-manager:ListDistributedGrants');
+    return this;
+  }
+
+  /**
+   * Grants permission to list the license configuration operations that failed
    *
    * Access Level: List
    *
@@ -95,7 +311,7 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Lists license configurations
+   * Grants permission to list license configurations
    *
    * Access Level: List
    *
@@ -107,7 +323,7 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Lists license specifications associated with a selected resource
+   * Grants permission to list license specifications associated with a selected resource
    *
    * Access Level: List
    *
@@ -119,7 +335,55 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Lists resource inventory
+   * Grants permission to list license versions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseVersions.html
+   */
+  public toListLicenseVersions() {
+    this.to('license-manager:ListLicenseVersions');
+    return this;
+  }
+
+  /**
+   * Grants permission to list licenses
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenses.html
+   */
+  public toListLicenses() {
+    this.to('license-manager:ListLicenses');
+    return this;
+  }
+
+  /**
+   * Grants permission to list received grants
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListReceivedGrants.html
+   */
+  public toListReceivedGrants() {
+    this.to('license-manager:ListReceivedGrants');
+    return this;
+  }
+
+  /**
+   * Grants permission to list received licenses
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListReceivedLicenses.html
+   */
+  public toListReceivedLicensess() {
+    this.to('license-manager:ListReceivedLicensess');
+    return this;
+  }
+
+  /**
+   * Grants permission to list resource inventory
    *
    * Access Level: List
    *
@@ -131,7 +395,7 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Lists tags for a selected resource
+   * Grants permission to list tags for a selected resource
    *
    * Access Level: List
    *
@@ -143,7 +407,19 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Lists usage records for selected license configuration
+   * Grants permission to list tokens
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListTokens.html
+   */
+  public toListTokens() {
+    this.to('license-manager:ListTokens');
+    return this;
+  }
+
+  /**
+   * Grants permission to list usage records for selected license configuration
    *
    * Access Level: List
    *
@@ -155,7 +431,19 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Tags a selected resource
+   * Grants permission to reject a grant
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_RejectGrant.html
+   */
+  public toRejectGrant() {
+    this.to('license-manager:RejectGrant');
+    return this;
+  }
+
+  /**
+   * Grants permission to tag a selected resource
    *
    * Access Level: Tagging
    *
@@ -171,7 +459,7 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Untags a selected resource
+   * Grants permission to untag a selected resource
    *
    * Access Level: Tagging
    *
@@ -183,7 +471,7 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Updates an existing license configuration
+   * Grants permission to update an existing license configuration
    *
    * Access Level: Write
    *
@@ -195,7 +483,7 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Updates license specifications for a selected resource
+   * Grants permission to updates license specifications for a selected resource
    *
    * Access Level: Write
    *
@@ -207,7 +495,7 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Updates service settings
+   * Grants permission to updates service settings
    *
    * Access Level: Permissions management
    *
@@ -219,25 +507,51 @@ export class LicenseManager extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "AcceptGrant",
+      "CheckInLicense",
+      "CheckoutBorrowLicense",
+      "CheckoutLicense",
+      "CreateGrant",
+      "CreateGrantVersion",
+      "CreateLicense",
+      "CreateLicenseVersion",
+      "CreateToken",
+      "DeleteGrant",
+      "DeleteLicense",
+      "DeleteLicenseConfiguration",
+      "DeleteToken",
+      "ExtendLicenseConsumption",
+      "RejectGrant",
+      "UpdateLicenseConfiguration",
+      "UpdateLicenseSpecificationsForResource"
+    ],
     "Tagging": [
       "CreateLicenseConfiguration",
       "TagResource",
       "UntagResource"
     ],
-    "Write": [
-      "DeleteLicenseConfiguration",
-      "UpdateLicenseConfiguration",
-      "UpdateLicenseSpecificationsForResource"
+    "Read": [
+      "GetAccessToken",
+      "GetGrant",
+      "GetLicense",
+      "GetLicenseUsage"
     ],
     "List": [
       "GetLicenseConfiguration",
       "GetServiceSettings",
       "ListAssociationsForLicenseConfiguration",
+      "ListDistributedGrants",
       "ListFailuresForLicenseConfigurationOperations",
       "ListLicenseConfigurations",
       "ListLicenseSpecificationsForResource",
+      "ListLicenseVersions",
+      "ListLicenses",
+      "ListReceivedGrants",
+      "ListReceivedLicensess",
       "ListResourceInventory",
       "ListTagsForResource",
+      "ListTokens",
       "ListUsageForLicenseConfiguration"
     ],
     "Permissions management": [
@@ -247,6 +561,8 @@ export class LicenseManager extends PolicyStatement {
 
   /**
    * Adds a resource of type license-configuration to the statement
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/userguide/license-configurations.html
    *
    * @param licenseConfigurationId - Identifier for the licenseConfigurationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -266,7 +582,43 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type license to the statement
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/userguide/seller-issued-licenses.html
+   *
+   * @param licenseId - Identifier for the licenseId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onLicense(licenseId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:license-manager::${Account}:license:${LicenseId}';
+    arn = arn.replace('${LicenseId}', licenseId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type grant to the statement
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html
+   *
+   * @param grantId - Identifier for the grantId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onGrant(grantId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:license-manager::${Account}:grant:${GrantId}';
+    arn = arn.replace('${GrantId}', grantId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Filters actions based on tag-value associated with the resource.
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/userguide/identity-access-management.html
    *
    * Applies to resource types:
    * - license-configuration

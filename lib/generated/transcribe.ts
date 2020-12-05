@@ -366,6 +366,7 @@ export class Transcribe extends PolicyStatement {
    * Possible conditions:
    * - .ifOutputBucketName()
    * - .ifOutputEncryptionKMSKeyId()
+   * - .ifOutputKey()
    *
    * Dependent actions:
    * - s3:GetObject
@@ -465,6 +466,8 @@ export class Transcribe extends PolicyStatement {
   /**
    * Enables you to control access based on the output bucket name included in the request
    *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html#amazontranscribe-policy-keys
+   *
    * Applies to actions:
    * - .toStartTranscriptionJob()
    *
@@ -478,6 +481,8 @@ export class Transcribe extends PolicyStatement {
   /**
    * Enables you to control access based on the KMS key id included in the request
    *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html#amazontranscribe-policy-keys
+   *
    * Applies to actions:
    * - .toStartTranscriptionJob()
    *
@@ -486,5 +491,20 @@ export class Transcribe extends PolicyStatement {
    */
   public ifOutputEncryptionKMSKeyId(value: string | string[], operator?: Operator | string) {
     return this.if(`transcribe:OutputEncryptionKMSKeyId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Enables you to control access based on the output key included in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html#amazontranscribe-policy-keys
+   *
+   * Applies to actions:
+   * - .toStartTranscriptionJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifOutputKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`transcribe:OutputKey`, value, operator || 'StringLike');
   }
 }

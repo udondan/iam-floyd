@@ -19,7 +19,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Creates a dataset
+   * Grants permission to create a dataset
    *
    * Access Level: Write
    *
@@ -35,7 +35,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Creates a dataset group
+   * Grants permission to create a dataset group
    *
    * Access Level: Write
    *
@@ -51,7 +51,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Creates a dataset import job
+   * Grants permission to create a dataset import job
    *
    * Access Level: Write
    *
@@ -67,7 +67,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Creates a forecast
+   * Grants permission to create a forecast
    *
    * Access Level: Write
    *
@@ -83,7 +83,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Creates a forecast export job
+   * Grants permission to create a forecast export job using a forecast resource
    *
    * Access Level: Write
    *
@@ -99,7 +99,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Creates a predictor
+   * Grants permission to create a predictor
    *
    * Access Level: Write
    *
@@ -115,7 +115,23 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Deletes a dataset
+   * Grants permission to create a predictor backtest export job using a predictor
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreatePredictorBacktestExportJob.html
+   */
+  public toCreatePredictorBacktestExportJob() {
+    this.to('forecast:CreatePredictorBacktestExportJob');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a dataset
    *
    * Access Level: Write
    *
@@ -127,7 +143,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Deletes a dataset group
+   * Grants permission to delete a dataset group
    *
    * Access Level: Write
    *
@@ -139,7 +155,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Deletes a dataset import job
+   * Grants permission to delete a dataset import job
    *
    * Access Level: Write
    *
@@ -151,7 +167,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Deletes a forecast
+   * Grants permission to delete a forecast
    *
    * Access Level: Write
    *
@@ -163,7 +179,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Deletes a forecast export job
+   * Grants permission to delete a forecast export job
    *
    * Access Level: Write
    *
@@ -175,7 +191,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Deletes a predictor
+   * Grants permission to delete a predictor
    *
    * Access Level: Write
    *
@@ -187,7 +203,19 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Describes a dataset
+   * Grants permission to delete a predictor backtest export job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeletePredictorBacktestExportJob.html
+   */
+  public toDeletePredictorBacktestExportJob() {
+    this.to('forecast:DeletePredictorBacktestExportJob');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe a dataset
    *
    * Access Level: Read
    *
@@ -199,7 +227,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Describes a dataset group
+   * Grants permission to describe a dataset group
    *
    * Access Level: Read
    *
@@ -211,7 +239,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Describes a dataset import job
+   * Grants permission to describe a dataset import job
    *
    * Access Level: Read
    *
@@ -223,7 +251,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Describes a forecast
+   * Grants permission to describe a forecast
    *
    * Access Level: Read
    *
@@ -235,7 +263,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Describes a forecast export job
+   * Grants permission to describe a forecast export job
    *
    * Access Level: Read
    *
@@ -247,7 +275,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Describes a predictor
+   * Grants permission to describe a predictor
    *
    * Access Level: Read
    *
@@ -259,7 +287,19 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Gets Accuracy Metrics for a predictor
+   * Grants permission to describe a predictor backtest export job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribePredictorBacktestExportJob.html
+   */
+  public toDescribePredictorBacktestExportJob() {
+    this.to('forecast:DescribePredictorBacktestExportJob');
+    return this;
+  }
+
+  /**
+   * Grants permission to get the Accuracy Metrics for a predictor
    *
    * Access Level: Read
    *
@@ -271,7 +311,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Lists dataset groups
+   * Grants permission to list all the dataset groups
    *
    * Access Level: List
    *
@@ -283,7 +323,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Lists dataset import jobs
+   * Grants permission to list all the dataset import jobs
    *
    * Access Level: List
    *
@@ -295,7 +335,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Lists datasets
+   * Grants permission to list all the datasets
    *
    * Access Level: List
    *
@@ -307,7 +347,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Lists forecast export jobs
+   * Grants permission to list all the forecast export jobs
    *
    * Access Level: List
    *
@@ -319,7 +359,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Lists forecasts
+   * Grants permission to list all the forecasts
    *
    * Access Level: List
    *
@@ -331,7 +371,19 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Lists predictors
+   * Grants permission to list all the predictor backtest export jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListPredictorBacktestExportJobs.html
+   */
+  public toListPredictorBacktestExportJobs() {
+    this.to('forecast:ListPredictorBacktestExportJobs');
+    return this;
+  }
+
+  /**
+   * Grants permission to list all the predictors
    *
    * Access Level: List
    *
@@ -343,7 +395,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Lists the tags for an Amazon Forecast resource
+   * Grants permission to list the tags for an Amazon Forecast resource
    *
    * Access Level: List
    *
@@ -355,7 +407,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Retrieves a forecast for a single item
+   * Grants permission to retrieve a forecast for a single item
    *
    * Access Level: Read
    *
@@ -367,7 +419,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Associates the specified tags to a resource
+   * Grants permission to associate the specified tags to a resource
    *
    * Access Level: Tagging
    *
@@ -383,7 +435,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified tags for a resource
+   * Grants permission to delete the specified tags for a resource
    *
    * Access Level: Tagging
    *
@@ -398,7 +450,7 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
-   * Updates a dataset group
+   * Grants permission to update a dataset group
    *
    * Access Level: Write
    *
@@ -417,12 +469,14 @@ export class Forecast extends PolicyStatement {
       "CreateForecast",
       "CreateForecastExportJob",
       "CreatePredictor",
+      "CreatePredictorBacktestExportJob",
       "DeleteDataset",
       "DeleteDatasetGroup",
       "DeleteDatasetImportJob",
       "DeleteForecast",
       "DeleteForecastExportJob",
       "DeletePredictor",
+      "DeletePredictorBacktestExportJob",
       "UpdateDatasetGroup"
     ],
     "Read": [
@@ -432,6 +486,7 @@ export class Forecast extends PolicyStatement {
       "DescribeForecast",
       "DescribeForecastExportJob",
       "DescribePredictor",
+      "DescribePredictorBacktestExportJob",
       "GetAccuracyMetrics",
       "QueryForecast"
     ],
@@ -441,6 +496,7 @@ export class Forecast extends PolicyStatement {
       "ListDatasets",
       "ListForecastExportJobs",
       "ListForecasts",
+      "ListPredictorBacktestExportJobs",
       "ListPredictors",
       "ListTagsForResource"
     ],
@@ -536,6 +592,26 @@ export class Forecast extends PolicyStatement {
    */
   public onPredictor(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:predictor/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type predictorBacktestExportJob to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPredictorBacktestExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:forecast:${Region}:${Account}:predictor-backtest-export-job/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

@@ -254,6 +254,18 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the properties associated with an Events detection job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeEventsDetectionJob.html
+   */
+  public toDescribeEventsDetectionJob() {
+    this.to('comprehend:DescribeEventsDetectionJob');
+    return this;
+  }
+
+  /**
    * Grants permission to get the properties associated with a key phrases detection job
    *
    * Access Level: Read
@@ -446,6 +458,18 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of Events detection jobs that you have submitted
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEventsDetectionJobs.html
+   */
+  public toListEventsDetectionJobs() {
+    this.to('comprehend:ListEventsDetectionJobs');
+    return this;
+  }
+
+  /**
    * Grants permission to get a list of key phrase detection jobs that you have submitted
    *
    * Access Level: List
@@ -560,6 +584,21 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an asynchronous Events detection job for a collection of documents
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifOutputKmsKey()
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartEventsDetectionJob.html
+   */
+  public toStartEventsDetectionJob() {
+    this.to('comprehend:StartEventsDetectionJob');
+    return this;
+  }
+
+  /**
    * Grants permission to start an asynchronous key phrase detection job for a collection of documents
    *
    * Access Level: Write
@@ -649,6 +688,18 @@ export class Comprehend extends PolicyStatement {
    */
   public toStopEntitiesDetectionJob() {
     this.to('comprehend:StopEntitiesDetectionJob');
+    return this;
+  }
+
+  /**
+   * Grants permission to stop an Events detection job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopEventsDetectionJob.html
+   */
+  public toStopEventsDetectionJob() {
+    this.to('comprehend:StopEventsDetectionJob');
     return this;
   }
 
@@ -769,6 +820,7 @@ export class Comprehend extends PolicyStatement {
       "DescribeEndpoint",
       "DescribeEntitiesDetectionJob",
       "DescribeEntityRecognizer",
+      "DescribeEventsDetectionJob",
       "DescribeKeyPhrasesDetectionJob",
       "DescribePiiEntitiesDetectionJob",
       "DescribeSentimentDetectionJob",
@@ -790,12 +842,14 @@ export class Comprehend extends PolicyStatement {
       "StartDocumentClassificationJob",
       "StartDominantLanguageDetectionJob",
       "StartEntitiesDetectionJob",
+      "StartEventsDetectionJob",
       "StartKeyPhrasesDetectionJob",
       "StartPiiEntitiesDetectionJob",
       "StartSentimentDetectionJob",
       "StartTopicsDetectionJob",
       "StopDominantLanguageDetectionJob",
       "StopEntitiesDetectionJob",
+      "StopEventsDetectionJob",
       "StopKeyPhrasesDetectionJob",
       "StopPiiEntitiesDetectionJob",
       "StopSentimentDetectionJob",
@@ -810,6 +864,7 @@ export class Comprehend extends PolicyStatement {
       "ListEndpoints",
       "ListEntitiesDetectionJobs",
       "ListEntityRecognizers",
+      "ListEventsDetectionJobs",
       "ListKeyPhrasesDetectionJobs",
       "ListPiiEntitiesDetectionJobs",
       "ListSentimentDetectionJobs",
@@ -903,7 +958,7 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
-   * The output KMS key associated with the resource in the request.
+   * Filters access by the output KMS key associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
    *
@@ -912,6 +967,7 @@ export class Comprehend extends PolicyStatement {
    * - .toStartDocumentClassificationJob()
    * - .toStartDominantLanguageDetectionJob()
    * - .toStartEntitiesDetectionJob()
+   * - .toStartEventsDetectionJob()
    * - .toStartKeyPhrasesDetectionJob()
    * - .toStartPiiEntitiesDetectionJob()
    * - .toStartSentimentDetectionJob()
@@ -925,7 +981,7 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
-   * The volume KMS key associated with the resource in the request.
+   * Filters access by the volume KMS key associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
    *
@@ -947,7 +1003,7 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
-   * The list of all VPC security group ids associated with the resource in the request.
+   * Filters access by the list of all VPC security group ids associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
    *
@@ -969,7 +1025,7 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
-   * The list of all VPC subnets associated with the resource in the request.
+   * Filters access by the list of all VPC subnets associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
    *

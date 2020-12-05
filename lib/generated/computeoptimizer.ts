@@ -67,6 +67,18 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get recommendations for the provided ebs volumes.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEBSVolumeRecommendations.html
+   */
+  public toGetEBSVolumeRecommendations() {
+    this.to('compute-optimizer:GetEBSVolumeRecommendations');
+    return this;
+  }
+
+  /**
    * Grants permission to get recommendations for the provided EC2 instances.
    *
    * Access Level: List
@@ -130,6 +142,7 @@ export class ComputeOptimizer extends PolicyStatement {
     "List": [
       "DescribeRecommendationExportJobs",
       "GetAutoScalingGroupRecommendations",
+      "GetEBSVolumeRecommendations",
       "GetEC2InstanceRecommendations",
       "GetEC2RecommendationProjectedMetrics",
       "GetEnrollmentStatus",

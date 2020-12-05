@@ -19,6 +19,34 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Permission to view Kubernetes objects via AWS EKS console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/view-workloads.html
+   */
+  public toAccessKubernetesApi() {
+    this.to('eks:AccessKubernetesApi');
+    return this;
+  }
+
+  /**
+   * Creates an Amazon EKS add-on.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateAddon.html
+   */
+  public toCreateAddon() {
+    this.to('eks:CreateAddon');
+    return this;
+  }
+
+  /**
    * Creates an Amazon EKS cluster.
    *
    * Access Level: Write
@@ -67,6 +95,18 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Deletes an Amazon EKS add-on.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteAddon.html
+   */
+  public toDeleteAddon() {
+    this.to('eks:DeleteAddon');
+    return this;
+  }
+
+  /**
    * Deletes an Amazon EKS cluster.
    *
    * Access Level: Write
@@ -99,6 +139,30 @@ export class Eks extends PolicyStatement {
    */
   public toDeleteNodegroup() {
     this.to('eks:DeleteNodegroup');
+    return this;
+  }
+
+  /**
+   * Returns descriptive information about an Amazon EKS add-on.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddon.html
+   */
+  public toDescribeAddon() {
+    this.to('eks:DescribeAddon');
+    return this;
+  }
+
+  /**
+   * Returns descriptive version information about the add-ons that Amazon EKS Add-ons supports.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html
+   */
+  public toDescribeAddonVersions() {
+    this.to('eks:DescribeAddonVersions');
     return this;
   }
 
@@ -139,7 +203,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Describes a given update for a given Amazon EKS cluster/nodegroup (in the specified or default region).
+   * Describes a given update for a given Amazon EKS cluster/nodegroup/add-on (in the specified or default region).
    *
    * Access Level: Read
    *
@@ -147,6 +211,18 @@ export class Eks extends PolicyStatement {
    */
   public toDescribeUpdate() {
     this.to('eks:DescribeUpdate');
+    return this;
+  }
+
+  /**
+   * Lists the Amazon EKS add-ons in your AWS account (in the specified or default region) for a given cluster.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html
+   */
+  public toListAddons() {
+    this.to('eks:ListAddons');
     return this;
   }
 
@@ -199,7 +275,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Lists the updates for a given Amazon EKS cluster/nodegroup (in the specified or default region).
+   * Lists the updates for a given Amazon EKS cluster/nodegroup/add-on (in the specified or default region).
    *
    * Access Level: List
    *
@@ -238,6 +314,18 @@ export class Eks extends PolicyStatement {
    */
   public toUntagResource() {
     this.to('eks:UntagResource');
+    return this;
+  }
+
+  /**
+   * Update Amazon EKS add-on configurations, such as the VPC-CNI version.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html
+   */
+  public toUpdateAddon() {
+    this.to('eks:UpdateAddon');
     return this;
   }
 
@@ -290,25 +378,32 @@ export class Eks extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateCluster",
-      "CreateFargateProfile",
-      "CreateNodegroup",
-      "DeleteCluster",
-      "DeleteFargateProfile",
-      "DeleteNodegroup",
-      "UpdateClusterConfig",
-      "UpdateClusterVersion",
-      "UpdateNodegroupConfig",
-      "UpdateNodegroupVersion"
-    ],
     "Read": [
+      "AccessKubernetesApi",
+      "DescribeAddon",
+      "DescribeAddonVersions",
       "DescribeCluster",
       "DescribeFargateProfile",
       "DescribeNodegroup",
       "DescribeUpdate"
     ],
+    "Write": [
+      "CreateAddon",
+      "CreateCluster",
+      "CreateFargateProfile",
+      "CreateNodegroup",
+      "DeleteAddon",
+      "DeleteCluster",
+      "DeleteFargateProfile",
+      "DeleteNodegroup",
+      "UpdateAddon",
+      "UpdateClusterConfig",
+      "UpdateClusterVersion",
+      "UpdateNodegroupConfig",
+      "UpdateNodegroupVersion"
+    ],
     "List": [
+      "ListAddons",
       "ListClusters",
       "ListFargateProfiles",
       "ListNodegroups",
@@ -362,6 +457,32 @@ export class Eks extends PolicyStatement {
     var arn = 'arn:${Partition}:eks:${Region}:${Account}:nodegroup/${ClusterName}/${NodegroupName}/${UUID}';
     arn = arn.replace('${ClusterName}', clusterName);
     arn = arn.replace('${NodegroupName}', nodegroupName);
+    arn = arn.replace('${UUID}', uUID);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type addon to the statement
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/managed-addons.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param addonName - Identifier for the addonName.
+   * @param uUID - Identifier for the uUID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAddon(clusterName: string, addonName: string, uUID: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:eks:${Region}:${Account}:addon/${ClusterName}/${AddonName}/${UUID}';
+    arn = arn.replace('${ClusterName}', clusterName);
+    arn = arn.replace('${AddonName}', addonName);
     arn = arn.replace('${UUID}', uUID);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

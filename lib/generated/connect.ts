@@ -840,6 +840,18 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to initiate a task using the Amazon Connect API.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartTaskContact.html
+   */
+  public toStartTaskContact() {
+    this.to('connect:StartTaskContact');
+    return this;
+  }
+
+  /**
    * Grants permissions to stop contacts that were initiated using the Amazon Connect API. If you use this operation on an active contact the contact ends, even if the agent is active on a call with a customer.
    *
    * Access Level: Write
@@ -1187,6 +1199,7 @@ export class Connect extends PolicyStatement {
       "StartChatContact",
       "StartContactRecording",
       "StartOutboundVoiceContact",
+      "StartTaskContact",
       "StopContact",
       "StopContactRecording",
       "SuspendContactRecording",

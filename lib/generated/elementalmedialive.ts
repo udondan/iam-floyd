@@ -19,6 +19,18 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to accept an input device transfer
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html
+   */
+  public toAcceptInputDeviceTransfer() {
+    this.to('medialive:AcceptInputDeviceTransfer');
+    return this;
+  }
+
+  /**
    * Grants permission to delete channels, inputs, input security groups, and multiplexes.
    *
    * Access Level: Write
@@ -63,6 +75,18 @@ export class Medialive extends PolicyStatement {
    */
   public toBatchUpdateSchedule() {
     this.to('medialive:BatchUpdateSchedule');
+    return this;
+  }
+
+  /**
+   * Grants permission to cancel an input device transfer
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html
+   */
+  public toCancelInputDeviceTransfer() {
+    this.to('medialive:CancelInputDeviceTransfer');
     return this;
   }
 
@@ -378,6 +402,18 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list input device transfers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html
+   */
+  public toListInputDeviceTransfers() {
+    this.to('medialive:ListInputDeviceTransfers');
+    return this;
+  }
+
+  /**
    * Grants permission to list input devices
    *
    * Access Level: List
@@ -490,6 +526,18 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reject an input device transfer
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html
+   */
+  public toRejectInputDeviceTransfer() {
+    this.to('medialive:RejectInputDeviceTransfer');
+    return this;
+  }
+
+  /**
    * Grants permission to start a channel
    *
    * Access Level: Write
@@ -534,6 +582,18 @@ export class Medialive extends PolicyStatement {
    */
   public toStopMultiplex() {
     this.to('medialive:StopMultiplex');
+    return this;
+  }
+
+  /**
+   * Grants permission to transfer an input device
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html
+   */
+  public toTransferInputDevice() {
+    this.to('medialive:TransferInputDevice');
     return this;
   }
 
@@ -635,10 +695,12 @@ export class Medialive extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "AcceptInputDeviceTransfer",
       "BatchDelete",
       "BatchStart",
       "BatchStop",
       "BatchUpdateSchedule",
+      "CancelInputDeviceTransfer",
       "CreateChannel",
       "CreateInput",
       "CreateInputSecurityGroup",
@@ -651,10 +713,12 @@ export class Medialive extends PolicyStatement {
       "DeleteMultiplexProgram",
       "DeleteReservation",
       "PurchaseOffering",
+      "RejectInputDeviceTransfer",
       "StartChannel",
       "StartMultiplex",
       "StopChannel",
       "StopMultiplex",
+      "TransferInputDevice",
       "UpdateChannel",
       "UpdateChannelClass",
       "UpdateInput",
@@ -682,6 +746,7 @@ export class Medialive extends PolicyStatement {
     ],
     "List": [
       "ListChannels",
+      "ListInputDeviceTransfers",
       "ListInputDevices",
       "ListInputSecurityGroups",
       "ListInputs",

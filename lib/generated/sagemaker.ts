@@ -19,6 +19,18 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a lineage entity (artifact, context, action, experiment, experiment-trial-component) to another.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AddAssociation.html
+   */
+  public toAddAssociation() {
+    this.to('sagemaker:AddAssociation');
+    return this;
+  }
+
+  /**
    * Adds or overwrites one or more tags for the specified Amazon SageMaker resource.
    *
    * Access Level: Tagging
@@ -67,9 +79,29 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Create an algorithm.
+   * Grants permission to create an action.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateAction.html
+   */
+  public toCreateAction() {
+    this.to('sagemaker:CreateAction');
+    return this;
+  }
+
+  /**
+   * Grants permission to create an algorithm.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateAlgorithm.html
    */
@@ -114,6 +146,22 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an artifact.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateArtifact.html
+   */
+  public toCreateArtifact() {
+    this.to('sagemaker:CreateArtifact');
+    return this;
+  }
+
+  /**
    * Creates automl job.
    *
    * Access Level: Write
@@ -138,9 +186,13 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Create a code repository.
+   * Grants permission to create a CodeRepository.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateCodeRepository.html
    */
@@ -165,6 +217,22 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a context.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateContext.html
+   */
+  public toCreateContext() {
+    this.to('sagemaker:CreateContext');
+    return this;
+  }
+
+  /**
    * Grants permission to create a Domain for SageMaker Studio
    *
    * Access Level: Write
@@ -177,7 +245,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    * - .ifDomainSharingOutputKmsKey()
-   * - .ifHomeEfsFileSystemKmsKey()
+   * - .ifVolumeKmsKey()
    * - .ifImageArns()
    * - .ifImageVersionArns()
    *
@@ -241,6 +309,28 @@ export class Sagemaker extends PolicyStatement {
    */
   public toCreateExperiment() {
     this.to('sagemaker:CreateExperiment');
+    return this;
+  }
+
+  /**
+   * Creates feature group.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifFeatureGroupOnlineStoreKmsKey()
+   * - .ifFeatureGroupOfflineStoreKmsKey()
+   * - .ifFeatureGroupOfflineStoreS3Uri()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFeatureGroup.html
+   */
+  public toCreateFeatureGroup() {
+    this.to('sagemaker:CreateFeatureGroup');
     return this;
   }
 
@@ -389,14 +479,34 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Create a model package.
+   * Grants permission to create a ModelPackage.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModelPackage.html
    */
   public toCreateModelPackage() {
     this.to('sagemaker:CreateModelPackage');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a ModelPackageGroup.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModelPackageGroup.html
+   */
+  public toCreateModelPackageGroup() {
+    this.to('sagemaker:CreateModelPackageGroup');
     return this;
   }
 
@@ -465,6 +575,25 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a pipeline.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreatePipeline.html
+   */
+  public toCreatePipeline() {
+    this.to('sagemaker:CreatePipeline');
+    return this;
+  }
+
+  /**
    * Grants permission to return a URL that you can use from your browser to connect to the Domain as a specified UserProfile when AuthMode is 'IAM'
    *
    * Access Level: Write
@@ -512,6 +641,22 @@ export class Sagemaker extends PolicyStatement {
    */
   public toCreateProcessingJob() {
     this.to('sagemaker:CreateProcessingJob');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a Project.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateProject.html
+   */
+  public toCreateProject() {
+    this.to('sagemaker:CreateProject');
     return this;
   }
 
@@ -655,7 +800,19 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes an algorithm.
+   * Grants permission to delete an action.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteAction.html
+   */
+  public toDeleteAction() {
+    this.to('sagemaker:DeleteAction');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete an algorithm.
    *
    * Access Level: Write
    *
@@ -691,7 +848,31 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes a code repository.
+   * Grants permission to delete an artifact.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteArtifact.html
+   */
+  public toDeleteArtifact() {
+    this.to('sagemaker:DeleteArtifact');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete the association from a lineage entity (artifact, context, action, experiment, experiment-trial-component) to another.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteAssociation.html
+   */
+  public toDeleteAssociation() {
+    this.to('sagemaker:DeleteAssociation');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a CodeRepository.
    *
    * Access Level: Write
    *
@@ -699,6 +880,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteCodeRepository() {
     this.to('sagemaker:DeleteCodeRepository');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a context.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteContext.html
+   */
+  public toDeleteContext() {
+    this.to('sagemaker:DeleteContext');
     return this;
   }
 
@@ -747,6 +940,21 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteExperiment() {
     this.to('sagemaker:DeleteExperiment');
+    return this;
+  }
+
+  /**
+   * Deletes a feature group.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteFeatureGroup.html
+   */
+  public toDeleteFeatureGroup() {
+    this.to('sagemaker:DeleteFeatureGroup');
     return this;
   }
 
@@ -811,7 +1019,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes a model package.
+   * Grants permission to delete a ModelPackage.
    *
    * Access Level: Write
    *
@@ -819,6 +1027,30 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteModelPackage() {
     this.to('sagemaker:DeleteModelPackage');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a ModelPackageGroup.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteModelPackageGroup.html
+   */
+  public toDeleteModelPackageGroup() {
+    this.to('sagemaker:DeleteModelPackageGroup');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a ModelPackageGroup policy.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteModelPackageGroupPolicy.html
+   */
+  public toDeleteModelPackageGroupPolicy() {
+    this.to('sagemaker:DeleteModelPackageGroupPolicy');
     return this;
   }
 
@@ -855,6 +1087,42 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteNotebookInstanceLifecycleConfig() {
     this.to('sagemaker:DeleteNotebookInstanceLifecycleConfig');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a pipeline.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeletePipeline.html
+   */
+  public toDeletePipeline() {
+    this.to('sagemaker:DeletePipeline');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a project.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteProject.html
+   */
+  public toDeleteProject() {
+    this.to('sagemaker:DeleteProject');
+    return this;
+  }
+
+  /**
+   * Delete a record from a feature group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteRecord.html
+   */
+  public toDeleteRecord() {
+    this.to('sagemaker:DeleteRecord');
     return this;
   }
 
@@ -934,7 +1202,19 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about an algorithm.
+   * Grants permission to get information about an action.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeAction.html
+   */
+  public toDescribeAction() {
+    this.to('sagemaker:DescribeAction');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe an algorithm.
    *
    * Access Level: Read
    *
@@ -970,6 +1250,18 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about an artifact.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeArtifact.html
+   */
+  public toDescribeArtifact() {
+    this.to('sagemaker:DescribeArtifact');
+    return this;
+  }
+
+  /**
    * Describes an automl job that was created via CreateAutoMLJob API.
    *
    * Access Level: Read
@@ -982,7 +1274,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a code repository.
+   * Grants permission to describe a CodeRepository.
    *
    * Access Level: Read
    *
@@ -1002,6 +1294,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeCompilationJob() {
     this.to('sagemaker:DescribeCompilationJob');
+    return this;
+  }
+
+  /**
+   * Grants permission to get information about a context.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeContext.html
+   */
+  public toDescribeContext() {
+    this.to('sagemaker:DescribeContext');
     return this;
   }
 
@@ -1050,6 +1354,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeExperiment() {
     this.to('sagemaker:DescribeExperiment');
+    return this;
+  }
+
+  /**
+   * Returns information about a feature group.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeFeatureGroup.html
+   */
+  public toDescribeFeatureGroup() {
+    this.to('sagemaker:DescribeFeatureGroup');
     return this;
   }
 
@@ -1150,7 +1466,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a model package.
+   * Grants permission to describe a ModelPackage.
    *
    * Access Level: Read
    *
@@ -1158,6 +1474,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeModelPackage() {
     this.to('sagemaker:DescribeModelPackage');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe a ModelPackageGroup.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeModelPackageGroup.html
+   */
+  public toDescribeModelPackageGroup() {
+    this.to('sagemaker:DescribeModelPackageGroup');
     return this;
   }
 
@@ -1198,6 +1526,42 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about a pipeline.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribePipeline.html
+   */
+  public toDescribePipeline() {
+    this.to('sagemaker:DescribePipeline');
+    return this;
+  }
+
+  /**
+   * Grants permission to get the pipeline definition for a pipeline execution.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribePipelineDefinitionForExecution.html
+   */
+  public toDescribePipelineDefinitionForExecution() {
+    this.to('sagemaker:DescribePipelineDefinitionForExecution');
+    return this;
+  }
+
+  /**
+   * Grants permission to get information about a pipeline execution.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribePipelineExecution.html
+   */
+  public toDescribePipelineExecution() {
+    this.to('sagemaker:DescribePipelineExecution');
+    return this;
+  }
+
+  /**
    * Returns information about a processing job.
    *
    * Access Level: Read
@@ -1206,6 +1570,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeProcessingJob() {
     this.to('sagemaker:DescribeProcessingJob');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe a project.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeProject.html
+   */
+  public toDescribeProject() {
+    this.to('sagemaker:DescribeProject');
     return this;
   }
 
@@ -1306,6 +1682,18 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable a SageMaker Service Catalog Portfolio.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DisableSagemakerServicecatalogPortfolio.html
+   */
+  public toDisableSagemakerServicecatalogPortfolio() {
+    this.to('sagemaker:DisableSagemakerServicecatalogPortfolio');
+    return this;
+  }
+
+  /**
    * Disassociate a trial component with a trial.
    *
    * Access Level: Write
@@ -1314,6 +1702,54 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDisassociateTrialComponent() {
     this.to('sagemaker:DisassociateTrialComponent');
+    return this;
+  }
+
+  /**
+   * Grants permission to enable a SageMaker Service Catalog Portfolio.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_EnableSagemakerServicecatalogPortfolio.html
+   */
+  public toEnableSagemakerServicecatalogPortfolio() {
+    this.to('sagemaker:EnableSagemakerServicecatalogPortfolio');
+    return this;
+  }
+
+  /**
+   * Grants permission to get a ModelPackageGroup policy.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetModelPackageGroupPolicy.html
+   */
+  public toGetModelPackageGroupPolicy() {
+    this.to('sagemaker:GetModelPackageGroupPolicy');
+    return this;
+  }
+
+  /**
+   * Get a record from a feature group.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetRecord.html
+   */
+  public toGetRecord() {
+    this.to('sagemaker:GetRecord');
+    return this;
+  }
+
+  /**
+   * Grants permission to get a SageMaker Service Catalog Portfolio.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetSagemakerServicecatalogPortfolioStatus.html
+   */
+  public toGetSagemakerServicecatalogPortfolioStatus() {
+    this.to('sagemaker:GetSagemakerServicecatalogPortfolioStatus');
     return this;
   }
 
@@ -1345,7 +1781,19 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists algorithms.
+   * Grants permission to list actions.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListActions.html
+   */
+  public toListActions() {
+    this.to('sagemaker:ListActions');
+    return this;
+  }
+
+  /**
+   * Grants permission to list Algorithms.
    *
    * Access Level: List
    *
@@ -1381,6 +1829,30 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list artifacts.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListArtifacts.html
+   */
+  public toListArtifacts() {
+    this.to('sagemaker:ListArtifacts');
+    return this;
+  }
+
+  /**
+   * Grants permission to list associations.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListAssociations.html
+   */
+  public toListAssociations() {
+    this.to('sagemaker:ListAssociations');
+    return this;
+  }
+
+  /**
    * Lists automl jobs created via the CreateAutoMLJob.
    *
    * Access Level: List
@@ -1405,7 +1877,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists code repositories.
+   * Grants permission to list code repositories.
    *
    * Access Level: List
    *
@@ -1425,6 +1897,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toListCompilationJobs() {
     this.to('sagemaker:ListCompilationJobs');
+    return this;
+  }
+
+  /**
+   * Grants permission to list contexts.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListContexts.html
+   */
+  public toListContexts() {
+    this.to('sagemaker:ListContexts');
     return this;
   }
 
@@ -1473,6 +1957,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toListExperiments() {
     this.to('sagemaker:ListExperiments');
+    return this;
+  }
+
+  /**
+   * Lists feature groups.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListFeatureGroups.html
+   */
+  public toListFeatureGroups() {
+    this.to('sagemaker:ListFeatureGroups');
     return this;
   }
 
@@ -1573,7 +2069,19 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists model packages.
+   * Grants permission to list ModelPackageGroups.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListModelPackageGroups.html
+   */
+  public toListModelPackageGroups() {
+    this.to('sagemaker:ListModelPackageGroups');
+    return this;
+  }
+
+  /**
+   * Grants permission to list ModelPackages.
    *
    * Access Level: List
    *
@@ -1645,6 +2153,54 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list steps for a pipeline execution
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListPipelineExecutionSteps.html
+   */
+  public toListPipelineExecutionSteps() {
+    this.to('sagemaker:ListPipelineExecutionSteps');
+    return this;
+  }
+
+  /**
+   * Grants permission to list executions for a pipeline
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListPipelineExecutions.html
+   */
+  public toListPipelineExecutions() {
+    this.to('sagemaker:ListPipelineExecutions');
+    return this;
+  }
+
+  /**
+   * Grants permission to list parameters for a pipeline execution
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListPipelineParametersForExecution.html
+   */
+  public toListPipelineParametersForExecution() {
+    this.to('sagemaker:ListPipelineParametersForExecution');
+    return this;
+  }
+
+  /**
+   * Grants permission to list pipelines.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListPipelines.html
+   */
+  public toListPipelines() {
+    this.to('sagemaker:ListPipelines');
+    return this;
+  }
+
+  /**
    * Lists processing jobs.
    *
    * Access Level: List
@@ -1653,6 +2209,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toListProcessingJobs() {
     this.to('sagemaker:ListProcessingJobs');
+    return this;
+  }
+
+  /**
+   * Grants permission to list Projects.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListProjects.html
+   */
+  public toListProjects() {
+    this.to('sagemaker:ListProjects');
     return this;
   }
 
@@ -1777,6 +2345,30 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put a ModelPackageGroup policy.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_PutModelPackageGroupPolicy.html
+   */
+  public toPutModelPackageGroupPolicy() {
+    this.to('sagemaker:PutModelPackageGroupPolicy');
+    return this;
+  }
+
+  /**
+   * Put a record to a feature group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_PutRecord.html
+   */
+  public toPutRecord() {
+    this.to('sagemaker:PutRecord');
+    return this;
+  }
+
+  /**
    * Render a UI template used for a human annotation task.
    *
    * Access Level: Read
@@ -1836,6 +2428,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toStartNotebookInstance() {
     this.to('sagemaker:StartNotebookInstance');
+    return this;
+  }
+
+  /**
+   * Grants permission to start a pipeline execution.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StartPipelineExecution.html
+   */
+  public toStartPipelineExecution() {
+    this.to('sagemaker:StartPipelineExecution');
     return this;
   }
 
@@ -1924,6 +2528,18 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop a pipeline execution.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopPipelineExecution.html
+   */
+  public toStopPipelineExecution() {
+    this.to('sagemaker:StopPipelineExecution');
+    return this;
+  }
+
+  /**
    * Stops a processing job. To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds.
    *
    * Access Level: Write
@@ -1960,6 +2576,18 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an action.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateAction.html
+   */
+  public toUpdateAction() {
+    this.to('sagemaker:UpdateAction');
+    return this;
+  }
+
+  /**
    * Grants permission to update an AppImageConfig
    *
    * Access Level: Write
@@ -1972,7 +2600,19 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Updates a code repository.
+   * Grants permission to update an artifact.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateArtifact.html
+   */
+  public toUpdateArtifact() {
+    this.to('sagemaker:UpdateArtifact');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a CodeRepository.
    *
    * Access Level: Write
    *
@@ -1980,6 +2620,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toUpdateCodeRepository() {
     this.to('sagemaker:UpdateCodeRepository');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a context.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateContext.html
+   */
+  public toUpdateContext() {
+    this.to('sagemaker:UpdateContext');
     return this;
   }
 
@@ -2054,6 +2706,18 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a ModelPackage.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateModelPackage.html
+   */
+  public toUpdateModelPackage() {
+    this.to('sagemaker:UpdateModelPackage');
+    return this;
+  }
+
+  /**
    * Updates a monitoring schedule.
    *
    * Access Level: Write
@@ -2105,6 +2769,33 @@ export class Sagemaker extends PolicyStatement {
    */
   public toUpdateNotebookInstanceLifecycleConfig() {
     this.to('sagemaker:UpdateNotebookInstanceLifecycleConfig');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a pipeline.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdatePipeline.html
+   */
+  public toUpdatePipeline() {
+    this.to('sagemaker:UpdatePipeline');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a pipeline execution.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdatePipelineExecution.html
+   */
+  public toUpdatePipelineExecution() {
+    this.to('sagemaker:UpdatePipelineExecution');
     return this;
   }
 
@@ -2177,23 +2868,24 @@ export class Sagemaker extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Tagging": [
-      "AddTags",
-      "DeleteTags"
-    ],
     "Write": [
+      "AddAssociation",
       "AssociateTrialComponent",
       "BatchPutMetrics",
+      "CreateAction",
       "CreateAlgorithm",
       "CreateApp",
       "CreateAppImageConfig",
+      "CreateArtifact",
       "CreateAutoMLJob",
       "CreateCodeRepository",
       "CreateCompilationJob",
+      "CreateContext",
       "CreateDomain",
       "CreateEndpoint",
       "CreateEndpointConfig",
       "CreateExperiment",
+      "CreateFeatureGroup",
       "CreateFlowDefinition",
       "CreateHumanTaskUi",
       "CreateHyperParameterTuningJob",
@@ -2202,12 +2894,15 @@ export class Sagemaker extends PolicyStatement {
       "CreateLabelingJob",
       "CreateModel",
       "CreateModelPackage",
+      "CreateModelPackageGroup",
       "CreateMonitoringSchedule",
       "CreateNotebookInstance",
       "CreateNotebookInstanceLifecycleConfig",
+      "CreatePipeline",
       "CreatePresignedDomainUrl",
       "CreatePresignedNotebookInstanceUrl",
       "CreateProcessingJob",
+      "CreateProject",
       "CreateTrainingJob",
       "CreateTransformJob",
       "CreateTrial",
@@ -2215,32 +2910,47 @@ export class Sagemaker extends PolicyStatement {
       "CreateUserProfile",
       "CreateWorkforce",
       "CreateWorkteam",
+      "DeleteAction",
       "DeleteAlgorithm",
       "DeleteApp",
       "DeleteAppImageConfig",
+      "DeleteArtifact",
+      "DeleteAssociation",
       "DeleteCodeRepository",
+      "DeleteContext",
       "DeleteDomain",
       "DeleteEndpoint",
       "DeleteEndpointConfig",
       "DeleteExperiment",
+      "DeleteFeatureGroup",
       "DeleteFlowDefinition",
       "DeleteHumanLoop",
       "DeleteImage",
       "DeleteImageVersion",
       "DeleteModel",
       "DeleteModelPackage",
+      "DeleteModelPackageGroup",
+      "DeleteModelPackageGroupPolicy",
       "DeleteMonitoringSchedule",
       "DeleteNotebookInstance",
       "DeleteNotebookInstanceLifecycleConfig",
+      "DeletePipeline",
+      "DeleteProject",
+      "DeleteRecord",
       "DeleteTrial",
       "DeleteTrialComponent",
       "DeleteUserProfile",
       "DeleteWorkforce",
       "DeleteWorkteam",
+      "DisableSagemakerServicecatalogPortfolio",
       "DisassociateTrialComponent",
+      "EnableSagemakerServicecatalogPortfolio",
+      "PutModelPackageGroupPolicy",
+      "PutRecord",
       "StartHumanLoop",
       "StartMonitoringSchedule",
       "StartNotebookInstance",
+      "StartPipelineExecution",
       "StopAutoMLJob",
       "StopCompilationJob",
       "StopHumanLoop",
@@ -2248,37 +2958,52 @@ export class Sagemaker extends PolicyStatement {
       "StopLabelingJob",
       "StopMonitoringSchedule",
       "StopNotebookInstance",
+      "StopPipelineExecution",
       "StopProcessingJob",
       "StopTrainingJob",
       "StopTransformJob",
+      "UpdateAction",
       "UpdateAppImageConfig",
+      "UpdateArtifact",
       "UpdateCodeRepository",
+      "UpdateContext",
       "UpdateDomain",
       "UpdateEndpoint",
       "UpdateEndpointWeightsAndCapacities",
       "UpdateExperiment",
       "UpdateImage",
+      "UpdateModelPackage",
       "UpdateMonitoringSchedule",
       "UpdateNotebookInstance",
       "UpdateNotebookInstanceLifecycleConfig",
+      "UpdatePipeline",
+      "UpdatePipelineExecution",
       "UpdateTrial",
       "UpdateTrialComponent",
       "UpdateUserProfile",
       "UpdateWorkforce",
       "UpdateWorkteam"
     ],
+    "Tagging": [
+      "AddTags",
+      "DeleteTags"
+    ],
     "Read": [
       "BatchGetMetrics",
+      "DescribeAction",
       "DescribeAlgorithm",
       "DescribeApp",
       "DescribeAppImageConfig",
+      "DescribeArtifact",
       "DescribeAutoMLJob",
       "DescribeCodeRepository",
       "DescribeCompilationJob",
+      "DescribeContext",
       "DescribeDomain",
       "DescribeEndpoint",
       "DescribeEndpointConfig",
       "DescribeExperiment",
+      "DescribeFeatureGroup",
       "DescribeFlowDefinition",
       "DescribeHumanLoop",
       "DescribeHumanTaskUi",
@@ -2288,10 +3013,15 @@ export class Sagemaker extends PolicyStatement {
       "DescribeLabelingJob",
       "DescribeModel",
       "DescribeModelPackage",
+      "DescribeModelPackageGroup",
       "DescribeMonitoringSchedule",
       "DescribeNotebookInstance",
       "DescribeNotebookInstanceLifecycleConfig",
+      "DescribePipeline",
+      "DescribePipelineDefinitionForExecution",
+      "DescribePipelineExecution",
       "DescribeProcessingJob",
+      "DescribeProject",
       "DescribeSubscribedWorkteam",
       "DescribeTrainingJob",
       "DescribeTransformJob",
@@ -2300,23 +3030,31 @@ export class Sagemaker extends PolicyStatement {
       "DescribeUserProfile",
       "DescribeWorkforce",
       "DescribeWorkteam",
+      "GetModelPackageGroupPolicy",
+      "GetRecord",
+      "GetSagemakerServicecatalogPortfolioStatus",
       "GetSearchSuggestions",
       "InvokeEndpoint",
       "RenderUiTemplate",
       "Search"
     ],
     "List": [
+      "ListActions",
       "ListAlgorithms",
       "ListAppImageConfigs",
       "ListApps",
+      "ListArtifacts",
+      "ListAssociations",
       "ListAutoMLJobs",
       "ListCandidatesForAutoMLJob",
       "ListCodeRepositories",
       "ListCompilationJobs",
+      "ListContexts",
       "ListDomains",
       "ListEndpointConfigs",
       "ListEndpoints",
       "ListExperiments",
+      "ListFeatureGroups",
       "ListFlowDefinitions",
       "ListHumanLoops",
       "ListHumanTaskUis",
@@ -2325,13 +3063,19 @@ export class Sagemaker extends PolicyStatement {
       "ListImages",
       "ListLabelingJobs",
       "ListLabelingJobsForWorkteam",
+      "ListModelPackageGroups",
       "ListModelPackages",
       "ListModels",
       "ListMonitoringExecutions",
       "ListMonitoringSchedules",
       "ListNotebookInstanceLifecycleConfigs",
       "ListNotebookInstances",
+      "ListPipelineExecutionSteps",
+      "ListPipelineExecutions",
+      "ListPipelineParametersForExecution",
+      "ListPipelines",
       "ListProcessingJobs",
+      "ListProjects",
       "ListSubscribedWorkteams",
       "ListTags",
       "ListTrainingJobs",
@@ -2604,6 +3348,10 @@ export class Sagemaker extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onCodeRepository(codeRepositoryName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:code-repository/${CodeRepositoryName}';
@@ -2661,6 +3409,10 @@ export class Sagemaker extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onAlgorithm(algorithmName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:algorithm/${AlgorithmName}';
@@ -2735,16 +3487,62 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type project to the statement
+   *
+   * @param projectName - Identifier for the projectName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onProject(projectName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:project/${ProjectName}';
+    arn = arn.replace('${ProjectName}', projectName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type model-package to the statement
    *
    * @param modelPackageName - Identifier for the modelPackageName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onModelPackage(modelPackageName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:model-package/${ModelPackageName}';
     arn = arn.replace('${ModelPackageName}', modelPackageName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type model-package-group to the statement
+   *
+   * @param modelPackageGroupName - Identifier for the modelPackageGroupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onModelPackageGroup(modelPackageGroupName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:model-package-group/${ModelPackageGroupName}';
+    arn = arn.replace('${ModelPackageGroupName}', modelPackageGroupName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -2958,6 +3756,130 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type feature-group to the statement
+   *
+   * @param featureGroupName - Identifier for the featureGroupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onFeatureGroup(featureGroupName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:feature-group/${FeatureGroupName}';
+    arn = arn.replace('${FeatureGroupName}', featureGroupName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type pipeline to the statement
+   *
+   * @param pipelineName - Identifier for the pipelineName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:pipeline/${PipelineName}';
+    arn = arn.replace('${PipelineName}', pipelineName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type pipeline-execution to the statement
+   *
+   * @param pipelineName - Identifier for the pipelineName.
+   * @param randomString - Identifier for the randomString.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onPipelineExecution(pipelineName: string, randomString: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:pipeline/${PipelineName}/execution/${RandomString}';
+    arn = arn.replace('${PipelineName}', pipelineName);
+    arn = arn.replace('${RandomString}', randomString);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type artifact to the statement
+   *
+   * @param hashOfArtifactSource - Identifier for the hashOfArtifactSource.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onArtifact(hashOfArtifactSource: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:artifact/${HashOfArtifactSource}';
+    arn = arn.replace('${HashOfArtifactSource}', hashOfArtifactSource);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type context to the statement
+   *
+   * @param contextName - Identifier for the contextName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onContext(contextName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:context/${ContextName}';
+    arn = arn.replace('${ContextName}', contextName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type action to the statement
+   *
+   * @param actionName - Identifier for the actionName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onAction(actionName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:action/${ActionName}';
+    arn = arn.replace('${ActionName}', actionName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * The list of all accelerator types associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
@@ -3020,6 +3942,51 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifDomainSharingOutputKmsKey(value: string | string[], operator?: Operator | string) {
     return this.if(`sagemaker:DomainSharingOutputKmsKey`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * The offline store kms key associated with the feature group resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateFeatureGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifFeatureGroupOfflineStoreKmsKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`sagemaker:FeatureGroupOfflineStoreKmsKey`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * The offline store s3 uri associated with the feature group resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateFeatureGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFeatureGroupOfflineStoreS3Uri(value: string | string[], operator?: Operator | string) {
+    return this.if(`sagemaker:FeatureGroupOfflineStoreS3Uri`, value, operator || 'StringLike');
+  }
+
+  /**
+   * The online store kms key associated with the feature group resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateFeatureGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifFeatureGroupOnlineStoreKmsKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`sagemaker:FeatureGroupOnlineStoreKmsKey`, value, operator || 'ArnLike');
   }
 
   /**
@@ -3087,12 +4054,9 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The KMS Key Id of the EFS File System used for UserProfile home directories, which is associated with the resource in the request.
+   * This key is deprecated. It has been replaced by sagemaker:VolumeKmsKey.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
-   *
-   * Applies to actions:
-   * - .toCreateDomain()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -3288,10 +4252,15 @@ export class Sagemaker extends PolicyStatement {
    * - app
    * - app-image-config
    * - notebook-instance
+   * - code-repository
    * - image
+   * - algorithm
    * - training-job
    * - processing-job
    * - hyper-parameter-tuning-job
+   * - project
+   * - model-package
+   * - model-package-group
    * - model
    * - endpoint-config
    * - endpoint
@@ -3301,6 +4270,11 @@ export class Sagemaker extends PolicyStatement {
    * - experiment
    * - experiment-trial
    * - experiment-trial-component
+   * - feature-group
+   * - pipeline
+   * - artifact
+   * - context
+   * - action
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3348,6 +4322,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAutoMLJob()
+   * - .toCreateDomain()
    * - .toCreateEndpointConfig()
    * - .toCreateHyperParameterTuningJob()
    * - .toCreateLabelingJob()

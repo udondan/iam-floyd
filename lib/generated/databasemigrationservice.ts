@@ -19,7 +19,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Adds metadata tags to a DMS resource, including replication instance, endpoint, security group, and migration task
+   * Grants permission to add metadata tags to DMS resources, including replication instances, endpoints, security groups, and migration tasks
    *
    * Access Level: Tagging
    *
@@ -36,7 +36,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Applies a pending maintenance action to a resource (for example, to a replication instance).
+   * Grants permission to apply a pending maintenance action to a resource (for example, to a replication instance)
    *
    * Access Level: Write
    *
@@ -48,7 +48,19 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Creates an endpoint using the provided settings
+   * Grants permission to cancel a single premigration assessment run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CancelReplicationTaskAssessmentRun.html
+   */
+  public toCancelReplicationTaskAssessmentRun() {
+    this.to('dms:CancelReplicationTaskAssessmentRun');
+    return this;
+  }
+
+  /**
+   * Grants permission to create an endpoint using the provided settings
    *
    * Access Level: Write
    *
@@ -65,7 +77,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Creates an AWS DMS event notification subscription.
+   * Grants permission to create an AWS DMS event notification subscription
    *
    * Access Level: Write
    *
@@ -82,7 +94,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Creates the replication instance using the specified parameters
+   * Grants permission to create a replication instance using the specified parameters
    *
    * Access Level: Write
    *
@@ -99,7 +111,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Creates a replication subnet group given a list of the subnet IDs in a VPC
+   * Grants permission to create a replication subnet group given a list of the subnet IDs in a VPC
    *
    * Access Level: Write
    *
@@ -116,7 +128,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Creates a replication task using the specified parameters
+   * Grants permission to create a replication task using the specified parameters
    *
    * Access Level: Write
    *
@@ -133,7 +145,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified certificate
+   * Grants permission to delete the specified certificate
    *
    * Access Level: Write
    *
@@ -145,7 +157,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified endpoint
+   * Grants permission to delete the specified endpoint
    *
    * Access Level: Write
    *
@@ -157,7 +169,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Deletes an AWS DMS event subscription.
+   * Grants permission to delete an AWS DMS event subscription
    *
    * Access Level: Write
    *
@@ -169,7 +181,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified replication instance
+   * Grants permission to delete the specified replication instance
    *
    * Access Level: Write
    *
@@ -181,7 +193,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Deletes a subnet group
+   * Grants permission to deletes a subnet group
    *
    * Access Level: Write
    *
@@ -193,7 +205,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified replication task
+   * Grants permission to delete the specified replication task
    *
    * Access Level: Write
    *
@@ -205,7 +217,19 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Lists all of the AWS DMS attributes for a customer account
+   * Grants permission to delete the record of a single premigration assessment run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTaskAssessmentRun.html
+   */
+  public toDeleteReplicationTaskAssessmentRun() {
+    this.to('dms:DeleteReplicationTaskAssessmentRun');
+    return this;
+  }
+
+  /**
+   * Grants permission to list all of the AWS DMS attributes for a customer account
    *
    * Access Level: Read
    *
@@ -217,7 +241,19 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Provides a description of the certificate.
+   * Grants permission to list individual assessments that you can specify for a new premigration assessment run
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeApplicableIndividualAssessments.html
+   */
+  public toDescribeApplicableIndividualAssessments() {
+    this.to('dms:DescribeApplicableIndividualAssessments');
+    return this;
+  }
+
+  /**
+   * Grants permission to provide a description of the certificate
    *
    * Access Level: Read
    *
@@ -229,7 +265,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Describes the status of the connections that have been made between the replication instance and an endpoint
+   * Grants permission to describe the status of the connections that have been made between the replication instance and an endpoint
    *
    * Access Level: Read
    *
@@ -241,7 +277,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Returns information about the type of endpoints available
+   * Grants permission to return information about the type of endpoints available
    *
    * Access Level: Read
    *
@@ -253,7 +289,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Returns information about the endpoints for your account in the current region
+   * Grants permission to return information about the endpoints for your account in the current region
    *
    * Access Level: Read
    *
@@ -265,7 +301,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Lists categories for all event source types, or, if specified, for a specified source type.
+   * Grants permission to list categories for all event source types, or, if specified, for a specified source type
    *
    * Access Level: Read
    *
@@ -277,7 +313,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Lists all the event subscriptions for a customer account.
+   * Grants permission to list all the event subscriptions for a customer account
    *
    * Access Level: Read
    *
@@ -289,7 +325,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Lists events for a given source identifier and source type.
+   * Grants permission to list events for a given source identifier and source type
    *
    * Access Level: Read
    *
@@ -301,7 +337,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Returns information about the replication instance types that can be created in the specified region
+   * Grants permission to return information about the replication instance types that can be created in the specified region
    *
    * Access Level: Read
    *
@@ -313,7 +349,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Returns the status of the RefreshSchemas operation
+   * Grants permission to returns the status of the RefreshSchemas operation
    *
    * Access Level: Read
    *
@@ -325,7 +361,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Returns information about the task logs for the specified task.
+   * Grants permission to return information about the task logs for the specified task
    *
    * Access Level: Read
    *
@@ -341,7 +377,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Returns information about replication instances for your account in the current region
+   * Grants permission to return information about replication instances for your account in the current region
    *
    * Access Level: Read
    *
@@ -353,7 +389,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Returns information about the replication subnet groups
+   * Grants permission to return information about the replication subnet groups
    *
    * Access Level: Read
    *
@@ -365,7 +401,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Returns the task assessment results from Amazon S3. This action always returns the latest results.
+   * Grants permission to return the latest task assessment results from Amazon S3
    *
    * Access Level: Read
    *
@@ -377,7 +413,31 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Returns information about replication tasks for your account in the current region
+   * Grants permission to return a paginated list of premigration assessment runs based on filter settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTaskAssessmentRuns.html
+   */
+  public toDescribeReplicationTaskAssessmentRuns() {
+    this.to('dms:DescribeReplicationTaskAssessmentRuns');
+    return this;
+  }
+
+  /**
+   * Grants permission to return a paginated list of individual assessments based on filter settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTaskIndividualAssessments.html
+   */
+  public toDescribeReplicationTaskIndividualAssessments() {
+    this.to('dms:DescribeReplicationTaskIndividualAssessments');
+    return this;
+  }
+
+  /**
+   * Grants permission to return information about replication tasks for your account in the current region
    *
    * Access Level: Read
    *
@@ -389,7 +449,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Returns information about the schema for the specified endpoint
+   * Grants permission to return information about the schema for the specified endpoint
    *
    * Access Level: Read
    *
@@ -401,7 +461,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Returns table statistics on the database migration task, including table name, rows inserted, rows updated, and rows deleted
+   * Grants permission to return table statistics on the database migration task, including table name, rows inserted, rows updated, and rows deleted
    *
    * Access Level: Read
    *
@@ -413,7 +473,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Uploads the specified certificate.
+   * Grants permission to upload the specified certificate
    *
    * Access Level: Write
    *
@@ -429,7 +489,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Lists all tags for an AWS DMS resource
+   * Grants permission to list all tags for an AWS DMS resource
    *
    * Access Level: List
    *
@@ -441,7 +501,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Modifies the specified endpoint
+   * Grants permission to modify the specified endpoint
    *
    * Access Level: Write
    *
@@ -453,7 +513,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Modifies an existing AWS DMS event notification subscription.
+   * Grants permission to modify an existing AWS DMS event notification subscription
    *
    * Access Level: Write
    *
@@ -465,7 +525,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Modifies the replication instance to apply new settings
+   * Grants permission to modify the replication instance to apply new settings
    *
    * Access Level: Write
    *
@@ -477,7 +537,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Modifies the settings for the specified replication subnet group
+   * Grants permission to modify the settings for the specified replication subnet group
    *
    * Access Level: Write
    *
@@ -489,7 +549,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Modifies the specified replication task.
+   * Grants permission to modify the specified replication task
    *
    * Access Level: Write
    *
@@ -501,7 +561,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance becomes available again.
+   * Grants permission to reboot a replication instance. Rebooting results in a momentary outage, until the replication instance becomes available again
    *
    * Access Level: Write
    *
@@ -513,7 +573,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Populates the schema for the specified endpoint
+   * Grants permission to populate the schema for the specified endpoint
    *
    * Access Level: Write
    *
@@ -525,7 +585,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Reloads the target database table with the source data.
+   * Grants permission to reload the target database table with the source data
    *
    * Access Level: Write
    *
@@ -537,7 +597,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Removes metadata tags from a DMS resource
+   * Grants permission to remove metadata tags from a DMS resource
    *
    * Access Level: Tagging
    *
@@ -552,7 +612,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Starts the replication task
+   * Grants permission to start the replication task
    *
    * Access Level: Write
    *
@@ -564,7 +624,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Starts the replication task assessment for unsupported data types in the source database.
+   * Grants permission to start the replication task assessment for unsupported data types in the source database
    *
    * Access Level: Write
    *
@@ -576,7 +636,19 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Stops the replication task
+   * Grants permission to start a new premigration assessment run for one or more individual assessments of a migration task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html
+   */
+  public toStartReplicationTaskAssessmentRun() {
+    this.to('dms:StartReplicationTaskAssessmentRun');
+    return this;
+  }
+
+  /**
+   * Grants permission to stop the replication task
    *
    * Access Level: Write
    *
@@ -588,7 +660,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Tests the connection between the replication instance and the endpoint
+   * Grants permission to test the connection between the replication instance and the endpoint
    *
    * Access Level: Read
    *
@@ -606,6 +678,7 @@ export class Dms extends PolicyStatement {
     ],
     "Write": [
       "ApplyPendingMaintenanceAction",
+      "CancelReplicationTaskAssessmentRun",
       "CreateEndpoint",
       "CreateEventSubscription",
       "CreateReplicationInstance",
@@ -617,6 +690,7 @@ export class Dms extends PolicyStatement {
       "DeleteReplicationInstance",
       "DeleteReplicationSubnetGroup",
       "DeleteReplicationTask",
+      "DeleteReplicationTaskAssessmentRun",
       "ImportCertificate",
       "ModifyEndpoint",
       "ModifyEventSubscription",
@@ -628,10 +702,12 @@ export class Dms extends PolicyStatement {
       "ReloadTables",
       "StartReplicationTask",
       "StartReplicationTaskAssessment",
+      "StartReplicationTaskAssessmentRun",
       "StopReplicationTask"
     ],
     "Read": [
       "DescribeAccountAttributes",
+      "DescribeApplicableIndividualAssessments",
       "DescribeCertificates",
       "DescribeConnections",
       "DescribeEndpointTypes",
@@ -645,6 +721,8 @@ export class Dms extends PolicyStatement {
       "DescribeReplicationInstances",
       "DescribeReplicationSubnetGroups",
       "DescribeReplicationTaskAssessmentResults",
+      "DescribeReplicationTaskAssessmentRuns",
+      "DescribeReplicationTaskIndividualAssessments",
       "DescribeReplicationTasks",
       "DescribeSchemas",
       "DescribeTableStatistics",
@@ -656,32 +734,9 @@ export class Dms extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type ReplicationInstance to the statement
+   * Adds a resource of type Certificate to the statement
    *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationInstance.html
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifRepTag()
-   */
-  public onReplicationInstance(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dms:${Region}:${Account}:rep:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
-   * Adds a resource of type ReplicationTask to the statement
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationTask.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_Certificate.html
    *
    * @param resourceName - Identifier for the resourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -690,10 +745,10 @@ export class Dms extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
-   * - .ifTaskTag()
+   * - .ifCertTag()
    */
-  public onReplicationTask(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dms:${Region}:${Account}:task:${ResourceName}';
+  public onCertificate(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dms:${Region}:${Account}:cert:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
@@ -725,29 +780,6 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type Certificate to the statement
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_Certificate.html
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifCertTag()
-   */
-  public onCertificate(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dms:${Region}:${Account}:cert:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
    * Adds a resource of type EventSubscription to the statement
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_EventSubscription.html
@@ -763,6 +795,29 @@ export class Dms extends PolicyStatement {
    */
   public onEventSubscription(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dms:${Region}:${Account}:es:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ReplicationInstance to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationInstance.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifRepTag()
+   */
+  public onReplicationInstance(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dms:${Region}:${Account}:rep:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
@@ -794,7 +849,68 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of tag keys in the request for Certificate
+   * Adds a resource of type ReplicationTask to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationTask.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifTaskTag()
+   */
+  public onReplicationTask(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dms:${Region}:${Account}:task:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ReplicationTaskAssessmentRun to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationTaskAssessmentRun.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onReplicationTaskAssessmentRun(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dms:${Region}:${Account}:assessment-run:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ReplicationTaskIndividualAssessment to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationTaskIndividualAssessment.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onReplicationTaskIndividualAssessment(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dms:${Region}:${Account}:individual-assessment:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Filters access based on the presence of tag keys in the request for Certificate
    *
    * Applies to resource types:
    * - Certificate
@@ -808,7 +924,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of tag keys in the request for Endpoint
+   * Filters access based on the presence of tag keys in the request for Endpoint
    *
    * Applies to resource types:
    * - Endpoint
@@ -822,7 +938,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of tag keys in the request for EventSubscription
+   * Filters access based on the presence of tag keys in the request for EventSubscription
    *
    * Applies to resource types:
    * - EventSubscription
@@ -836,7 +952,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of tag keys in the request for ReplicationInstance
+   * Filters access based on the presence of tag keys in the request for ReplicationInstance
    *
    * Applies to resource types:
    * - ReplicationInstance
@@ -850,7 +966,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of tag key-value pairs in the request
+   * Filters access based on the presence of tag key-value pairs in the request
    *
    * Applies to actions:
    * - .toAddTagsToResource()
@@ -869,7 +985,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of tag keys in the request for ReplicationSubnetGroup
+   * Filters access based on the presence of tag keys in the request for ReplicationSubnetGroup
    *
    * Applies to resource types:
    * - ReplicationSubnetGroup
@@ -883,7 +999,7 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of tag keys in the request for ReplicationTask
+   * Filters access based on the presence of tag keys in the request for ReplicationTask
    *
    * Applies to resource types:
    * - ReplicationTask

@@ -19,7 +19,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to create a server.
+   * Grants permission to create a server
    *
    * Access Level: Write
    *
@@ -38,7 +38,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to add a user associated with a server.
+   * Grants permission to add a user associated with a server
    *
    * Access Level: Write
    *
@@ -57,7 +57,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to delete a server.
+   * Grants permission to delete a server
    *
    * Access Level: Write
    *
@@ -69,7 +69,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to delete an SSH public key from a user.
+   * Grants permission to delete an SSH public key from a user
    *
    * Access Level: Write
    *
@@ -81,7 +81,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to delete a user associated with a server.
+   * Grants permission to delete a user associated with a server
    *
    * Access Level: Write
    *
@@ -93,7 +93,19 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to describe a server.
+   * Grants permission to describe a security policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeSecurityPolicy.html
+   */
+  public toDescribeSecurityPolicy() {
+    this.to('transfer:DescribeSecurityPolicy');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe a server
    *
    * Access Level: Read
    *
@@ -105,7 +117,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to describe a user associated with a server.
+   * Grants permission to describe a user associated with a server
    *
    * Access Level: Read
    *
@@ -117,7 +129,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to add an SSH public key to a user.
+   * Grants permission to add an SSH public key to a user
    *
    * Access Level: Write
    *
@@ -129,7 +141,19 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to list servers
+   * Grants permission to list security policies
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListSecurityPolicies.html
+   */
+  public toListSecurityPolicies() {
+    this.to('transfer:ListSecurityPolicies');
+    return this;
+  }
+
+  /**
+   * Grants permission to list servers
    *
    * Access Level: List
    *
@@ -141,7 +165,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to list tags for a server or a user.
+   * Grants permission to list tags for a server or a user
    *
    * Access Level: Read
    *
@@ -153,7 +177,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to list users associated with a server.
+   * Grants permission to list users associated with a server
    *
    * Access Level: List
    *
@@ -165,7 +189,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to start a server.
+   * Grants permission to start a server
    *
    * Access Level: Write
    *
@@ -177,7 +201,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to stop a server.
+   * Grants permission to stop a server
    *
    * Access Level: Write
    *
@@ -189,7 +213,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to tag a server or a user.
+   * Grants permission to tag a server or a user
    *
    * Access Level: Tagging
    *
@@ -205,7 +229,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to test a server's custom identity provider.
+   * Grants permission to test a server's custom identity provider
    *
    * Access Level: Read
    *
@@ -217,7 +241,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to untag a server or a user.
+   * Grants permission to untag a server or a user
    *
    * Access Level: Tagging
    *
@@ -232,7 +256,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to update the configuration of a server
+   * Grants permission to update the configuration of a server
    *
    * Access Level: Write
    *
@@ -247,7 +271,7 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
-   * Enables the caller to update the configuration of a user
+   * Grants permission to update the configuration of a user
    *
    * Access Level: Write
    *
@@ -275,12 +299,14 @@ export class Transfer extends PolicyStatement {
       "UpdateUser"
     ],
     "Read": [
+      "DescribeSecurityPolicy",
       "DescribeServer",
       "DescribeUser",
       "ListTagsForResource",
       "TestIdentityProvider"
     ],
     "List": [
+      "ListSecurityPolicies",
       "ListServers",
       "ListUsers"
     ],

@@ -95,6 +95,18 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the registry policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRegistryPolicy.html
+   */
+  public toDeleteRegistryPolicy() {
+    this.to('ecr:DeleteRegistryPolicy');
+    return this;
+  }
+
+  /**
    * Grants permission to delete an existing image repository
    *
    * Access Level: Write
@@ -139,6 +151,18 @@ export class Ecr extends PolicyStatement {
    */
   public toDescribeImages() {
     this.to('ecr:DescribeImages');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe the registry settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRegistry.html
+   */
+  public toDescribeRegistry() {
+    this.to('ecr:DescribeRegistry');
     return this;
   }
 
@@ -199,6 +223,18 @@ export class Ecr extends PolicyStatement {
    */
   public toGetLifecyclePolicyPreview() {
     this.to('ecr:GetLifecyclePolicyPreview');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve the registry policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetRegistryPolicy.html
+   */
+  public toGetRegistryPolicy() {
+    this.to('ecr:GetRegistryPolicy');
     return this;
   }
 
@@ -299,6 +335,42 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the registry policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutRegistryPolicy.html
+   */
+  public toPutRegistryPolicy() {
+    this.to('ecr:PutRegistryPolicy');
+    return this;
+  }
+
+  /**
+   * Grants permission to update the replication configuration for the registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutReplicationConfiguration.html
+   */
+  public toPutReplicationConfiguration() {
+    this.to('ecr:PutReplicationConfiguration');
+    return this;
+  }
+
+  /**
+   * Grants permission to replicate images to the destination registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html
+   */
+  public toReplicateImage() {
+    this.to('ecr:ReplicateImage');
+    return this;
+  }
+
+  /**
    * Grants permission to apply a repository policy on a specified repository to control access permissions
    *
    * Access Level: Permissions management
@@ -380,10 +452,12 @@ export class Ecr extends PolicyStatement {
       "BatchGetImage",
       "DescribeImageScanFindings",
       "DescribeImages",
+      "DescribeRegistry",
       "GetAuthorizationToken",
       "GetDownloadUrlForLayer",
       "GetLifecyclePolicy",
       "GetLifecyclePolicyPreview",
+      "GetRegistryPolicy",
       "GetRepositoryPolicy"
     ],
     "Write": [
@@ -391,6 +465,7 @@ export class Ecr extends PolicyStatement {
       "CompleteLayerUpload",
       "CreateRepository",
       "DeleteLifecyclePolicy",
+      "DeleteRegistryPolicy",
       "DeleteRepository",
       "DeleteRepositoryPolicy",
       "InitiateLayerUpload",
@@ -398,6 +473,9 @@ export class Ecr extends PolicyStatement {
       "PutImageScanningConfiguration",
       "PutImageTagMutability",
       "PutLifecyclePolicy",
+      "PutRegistryPolicy",
+      "PutReplicationConfiguration",
+      "ReplicateImage",
       "StartImageScan",
       "StartLifecyclePolicyPreview",
       "UploadLayerPart"
@@ -419,7 +497,7 @@ export class Ecr extends PolicyStatement {
   /**
    * Adds a resource of type repository to the statement
    *
-   * https://docs.aws.amazon.com/AmazonECR/latest/userguide/iam-policy-structure.html#ECR_ARN_Format
+   * https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html
    *
    * @param repositoryName - Identifier for the repositoryName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -441,6 +519,8 @@ export class Ecr extends PolicyStatement {
 
   /**
    * Filters actions based on tag-value associated with the resource
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to resource types:
    * - repository

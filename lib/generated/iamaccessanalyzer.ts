@@ -39,6 +39,9 @@ export class AccessAnalyzer extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateAnalyzer.html
    */
   public toCreateAnalyzer() {
@@ -62,10 +65,6 @@ export class AccessAnalyzer extends PolicyStatement {
    * Grants permission to delete the specified analyzer.
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteAnalyzer.html
    */
