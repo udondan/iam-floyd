@@ -25,3 +25,4 @@ helper/*
 README.md
 Makefile
 cdk
+stats

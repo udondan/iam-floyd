@@ -28,6 +28,14 @@ if (typeof thresholdOverride !== 'undefined' && thresholdOverride.length) {
 
 timeThreshold.setHours(timeThreshold.getHours() - threshold);
 
+const stats: {
+  [key: string]: string[];
+} = {
+  actions: [],
+  conditions: [],
+  resources: [],
+};
+
 const conditionTypeDefaults: {
   [key: string]: {
     url: string;
@@ -200,7 +208,27 @@ export function createModules(services: string[]): Promise<void> {
     for (const service of services) {
       await getContent(service).then(createModule).catch(reject);
     }
+    writeStats();
     resolve();
+  });
+}
+
+function writeStats() {
+  Object.keys(stats).forEach(function (key) {
+    const filePath = `./stats/${key}`;
+    process.stdout.write(`Generating stats for for ${key}`.cyan);
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath);
+    }
+
+    const uniqueValues = stats[key]
+      .filter(function (elem, pos) {
+        return stats[key].indexOf(elem) == pos;
+      })
+      .sort();
+
+    const content = uniqueValues.join('\n');
+    fs.writeFileSync(filePath, content);
   });
 }
 
@@ -271,10 +299,15 @@ export function createModule(module: Module): Promise<void> {
     }
     accessLevelList[action.accessLevel].push(name);
 
+    stats['actions'].push(
+      `${module.servicePrefix}:${name};${action.accessLevel}`
+    );
+
     const method = classDeclaration.addMethod({
       name: `to${name}`,
       scope: Scope.Public,
     });
+
     method.setBodyText(
       [`this.to('${module.servicePrefix}:${name}');`, 'return this;'].join('\n')
     );
@@ -313,6 +346,8 @@ export function createModule(module: Module): Promise<void> {
       name: `on${camelCase(name)}`,
       scope: Scope.Public,
     });
+
+    stats['resources'].push(`${module.servicePrefix}:${name}`);
 
     const params = getArnPlaceholders(resourceType.arn);
     params.forEach((param) => {
@@ -373,6 +408,8 @@ export function createModule(module: Module): Promise<void> {
     condition = conditionFixer(module.filename, condition);
 
     const name = key.split(/[:/]/);
+
+    stats['conditions'].push(`${module.servicePrefix}:${name[1]}`);
 
     // we have to skip global conditions, since we simply cannot override global conditions due to JSII limitations: https://github.com/aws/jsii/issues/1935
     if (name[0] == 'aws' && name[1] != 'FederatedProvider') {

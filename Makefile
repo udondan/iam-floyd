@@ -4,7 +4,7 @@ VERSION := $(shell cat VERSION)
 NO_COLOR=\x1b[0m
 TARGET_COLOR=\x1b[96m
 
-.PHONY: build generate package test tag untag release re-release changelog cdk docs
+.PHONY: build generate package test tag untag release re-release changelog cdk docs stats
 
 build:
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
