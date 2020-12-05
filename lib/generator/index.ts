@@ -34,6 +34,7 @@ const stats: {
   actions: [],
   conditions: [],
   resources: [],
+  services: [],
 };
 
 const conditionTypeDefaults: {
@@ -233,6 +234,7 @@ function writeStats() {
 }
 
 export function createModule(module: Module): Promise<void> {
+  stats['services'].push(module.filename);
   if (typeof module.name === 'undefined') {
     //it was skipped, restore from cache
     fs.renameSync(
