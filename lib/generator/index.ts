@@ -227,7 +227,7 @@ function writeStats() {
       })
       .sort();
 
-    const content = uniqueValues.join('\n');
+    const content = uniqueValues.join('\n') + '\n';
     fs.writeFileSync(filePath, content);
   });
 }
