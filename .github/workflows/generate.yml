@@ -38,24 +38,37 @@ jobs:
           args: make ${{ github.event.inputs.command }}
         if: ${{ github.event_name == 'workflow_dispatch' }}
 
-      - name: Commit and push changes
+      - name: Setup git
         run: |
           set -x
-          test -e lib/index.ts || exit 1
           apt update
           apt-get install -y git
-          git diff --quiet || (
-            apt-get install -y pcregrep make &&
-            perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION &&
-            make update-version-refs &&
-            make stats &&
-            make changelog &&
-            git add CHANGELOG/* &&
-            make regenerate-code-example-results &&
-            git config --local user.email "deemes79@googlemail.com" &&
-            git config --local user.name "udondan" &&
-            rm -rf node_modules tsconfig.json &&
-            git add * &&
-            git commit -m "Adds latest IAM updates from AWS" &&
-            git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
-          )
+          git config --local user.email "deemes79@googlemail.com"
+          git config --local user.name "udondan"
+
+      - name: Check for changes
+        id: changes
+        run: |
+          set -x
+          git diff --quiet
+          echo ::set-output name=CHANGED::$?
+
+      - name: TESTING
+        run: echo ${{ steps.changes.outputs.CHANGED }}
+#      - name: Commit and push changes
+#        run: |
+#          set -x
+#          test -e lib/index.ts || exit 1
+#          git diff --quiet || (
+#            apt-get install -y pcregrep make &&
+#            perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION &&
+#            make update-version-refs &&
+#            make stats &&
+#            make changelog &&
+#            git add CHANGELOG/* &&
+#            make regenerate-code-example-results &&
+#            rm -rf node_modules tsconfig.json &&
+#            git add * &&
+#            git commit -m "Adds latest IAM updates from AWS" &&
+#            git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
+#          )
