@@ -12,11 +12,7 @@
             "aws:RequestTag/Owner": "John"
         }
     },
-    "Action": [
-        "ec2:StartInstances"
-    ],
-    "Resource": [
-        "*"
-    ],
+    "Action": "ec2:StartInstances",
+    "Resource": "*",
     "Effect": "Allow"
 }

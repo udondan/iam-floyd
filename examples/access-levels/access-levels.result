@@ -6,9 +6,7 @@
         "ec2:ModifyVpcEndpointServicePermissions",
         "ec2:ResetSnapshotAttribute"
     ],
-    "Resource": [
-        "*"
-    ],
+    "Resource": "*",
     "Effect": "Deny"
 }
 {
@@ -152,8 +150,6 @@
         "ec2:GetPasswordData",
         "ec2:GetReservedInstancesExchangeQuote"
     ],
-    "Resource": [
-        "*"
-    ],
+    "Resource": "*",
     "Effect": "Allow"
 }

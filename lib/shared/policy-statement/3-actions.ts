@@ -38,9 +38,10 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
     const self = this;
 
     if (this.hasActions()) {
-      statement[mode] = this.actions.filter((elem, pos) => {
+      const actions = this.actions.filter((elem, pos) => {
         return self.actions.indexOf(elem) == pos;
       });
+      statement[mode] = actions.length > 1 ? actions : actions[0];
     }
 
     return statement;

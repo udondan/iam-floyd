@@ -4,12 +4,8 @@
             "aws:RequestTag/Owner": "${aws:username}"
         }
     },
-    "Action": [
-        "ec2:StartInstances"
-    ],
-    "Resource": [
-        "*"
-    ],
+    "Action": "ec2:StartInstances",
+    "Resource": "*",
     "Effect": "Allow"
 }
 {
@@ -18,11 +14,7 @@
             "ec2:ResourceTag/Owner": "${aws:username}"
         }
     },
-    "Action": [
-        "ec2:StopInstances"
-    ],
-    "Resource": [
-        "*"
-    ],
+    "Action": "ec2:StopInstances",
+    "Resource": "*",
     "Effect": "Allow"
 }

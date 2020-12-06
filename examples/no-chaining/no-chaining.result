@@ -3,8 +3,6 @@
         "ec2:StartInstances",
         "ec2:StopInstances"
     ],
-    "Resource": [
-        "*"
-    ],
+    "Resource": "*",
     "Effect": "Allow"
 }

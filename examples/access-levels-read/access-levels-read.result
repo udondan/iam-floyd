@@ -22,8 +22,6 @@
         "ec2:GetPasswordData",
         "ec2:GetReservedInstancesExchangeQuote"
     ],
-    "Resource": [
-        "*"
-    ],
+    "Resource": "*",
     "Effect": "Allow"
 }

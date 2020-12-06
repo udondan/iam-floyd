@@ -1,10 +1,6 @@
 {
-    "Action": [
-        "s3:*"
-    ],
-    "Resource": [
-        "arn:aws:s3:::example-bucket/*"
-    ],
+    "Action": "s3:*",
+    "Resource": "arn:aws:s3:::example-bucket/*",
     "Effect": "Allow",
     "NotPrincipal": {
         "AWS": [

@@ -1,9 +1,5 @@
 {
-    "Action": [
-        "ec2:*"
-    ],
-    "Resource": [
-        "*"
-    ],
+    "Action": "ec2:*",
+    "Resource": "*",
     "Effect": "Allow"
 }

@@ -2,12 +2,8 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Action": [
-                "cloudformation:*"
-            ],
-            "Resource": [
-                "*"
-            ],
+            "Action": "cloudformation:*",
+            "Resource": "*",
             "Effect": "Allow"
         },
         {
@@ -16,21 +12,13 @@
                     "aws:CalledVia": "cloudformation.amazonaws.com"
                 }
             },
-            "Action": [
-                "*"
-            ],
-            "Resource": [
-                "*"
-            ],
+            "Action": "*",
+            "Resource": "*",
             "Effect": "Allow"
         },
         {
-            "Action": [
-                "s3:*"
-            ],
-            "Resource": [
-                "arn:aws:s3:::cdktoolkit-stagingbucket-*"
-            ],
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::cdktoolkit-stagingbucket-*",
             "Effect": "Allow"
         },
         {
@@ -38,9 +26,7 @@
                 "account:DisableRegion",
                 "account:EnableRegion"
             ],
-            "Resource": [
-                "*"
-            ],
+            "Resource": "*",
             "Effect": "Deny"
         },
         {
@@ -72,9 +58,7 @@
                 "organizations:UpdateOrganizationalUnit",
                 "organizations:UpdatePolicy"
             ],
-            "Resource": [
-                "*"
-            ],
+            "Resource": "*",
             "Effect": "Deny"
         }
     ]

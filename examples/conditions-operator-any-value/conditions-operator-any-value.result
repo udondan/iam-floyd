@@ -7,11 +7,7 @@
             ]
         }
     },
-    "Action": [
-        "dynamodb:PutItem"
-    ],
-    "Resource": [
-        "arn:aws:dynamodb:*:*:table/Thread"
-    ],
+    "Action": "dynamodb:PutItem",
+    "Resource": "arn:aws:dynamodb:*:*:table/Thread",
     "Effect": "Deny"
 }

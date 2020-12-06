@@ -8,11 +8,7 @@
             ]
         }
     },
-    "Action": [
-        "dynamodb:GetItem"
-    ],
-    "Resource": [
-        "arn:aws:dynamodb:*:*:table/Thread"
-    ],
+    "Action": "dynamodb:GetItem",
+    "Resource": "arn:aws:dynamodb:*:*:table/Thread",
     "Effect": "Allow"
 }

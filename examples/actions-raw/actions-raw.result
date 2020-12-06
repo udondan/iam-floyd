@@ -1,9 +1,5 @@
 {
-    "Action": [
-        "ec2:missingAction"
-    ],
-    "Resource": [
-        "*"
-    ],
+    "Action": "ec2:missingAction",
+    "Resource": "*",
     "Effect": "Allow"
 }

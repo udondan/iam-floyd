@@ -1,7 +1,5 @@
 {
-    "Action": [
-        "sts:AssumeRole"
-    ],
+    "Action": "sts:AssumeRole",
     "Effect": "Allow",
     "Principal": {
         "AWS": [
@@ -10,9 +8,7 @@
     }
 }
 {
-    "Action": [
-        "sts:AssumeRoleWithSAML"
-    ],
+    "Action": "sts:AssumeRoleWithSAML",
     "Effect": "Allow",
     "Principal": {
         "Service": [
@@ -21,9 +17,7 @@
     }
 }
 {
-    "Action": [
-        "sts:AssumeRole"
-    ],
+    "Action": "sts:AssumeRole",
     "Effect": "Allow",
     "Principal": {
         "AWS": [
@@ -32,9 +26,7 @@
     }
 }
 {
-    "Action": [
-        "sts:AssumeRole"
-    ],
+    "Action": "sts:AssumeRole",
     "Effect": "Allow",
     "Principal": {
         "AWS": [
@@ -43,9 +35,7 @@
     }
 }
 {
-    "Action": [
-        "sts:AssumeRoleWithSAML"
-    ],
+    "Action": "sts:AssumeRoleWithSAML",
     "Effect": "Allow",
     "Principal": {
         "Federated": [
@@ -54,9 +44,7 @@
     }
 }
 {
-    "Action": [
-        "sts:AssumeRoleWithSAML"
-    ],
+    "Action": "sts:AssumeRoleWithSAML",
     "Effect": "Allow",
     "Principal": {
         "Federated": [
@@ -65,9 +53,7 @@
     }
 }
 {
-    "Action": [
-        "sts:AssumeRoleWithSAML"
-    ],
+    "Action": "sts:AssumeRoleWithSAML",
     "Effect": "Allow",
     "Principal": {
         "Federated": [
@@ -76,9 +62,7 @@
     }
 }
 {
-    "Action": [
-        "sts:AssumeRoleWithSAML"
-    ],
+    "Action": "sts:AssumeRoleWithSAML",
     "Effect": "Allow",
     "Principal": {
         "Federated": [
@@ -87,9 +71,7 @@
     }
 }
 {
-    "Action": [
-        "sts:AssumeRoleWithSAML"
-    ],
+    "Action": "sts:AssumeRoleWithSAML",
     "Effect": "Allow",
     "Principal": {
         "Federated": [
@@ -98,9 +80,7 @@
     }
 }
 {
-    "Action": [
-        "sts:AssumeRole"
-    ],
+    "Action": "sts:AssumeRole",
     "Effect": "Allow",
     "Principal": {
         "AWS": [
@@ -109,9 +89,7 @@
     }
 }
 {
-    "Action": [
-        "sts:AssumeRole"
-    ],
+    "Action": "sts:AssumeRole",
     "Effect": "Allow",
     "Principal": {
         "AWS": [
@@ -120,9 +98,7 @@
     }
 }
 {
-    "Action": [
-        "sts:AssumeRole"
-    ],
+    "Action": "sts:AssumeRole",
     "Effect": "Allow",
     "Principal": {
         "CanonicalUser": [
@@ -131,9 +107,7 @@
     }
 }
 {
-    "Action": [
-        "sts:AssumeRole"
-    ],
+    "Action": "sts:AssumeRole",
     "Effect": "Allow",
     "Principal": {
         "AWS": [

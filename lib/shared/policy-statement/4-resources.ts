@@ -38,9 +38,10 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
     this.ensureResource();
 
     if (this.resources.length) {
-      statement[mode] = this.resources.filter((elem, pos) => {
+      const resources = this.resources.filter((elem, pos) => {
         return self.resources.indexOf(elem) == pos;
       });
+      statement[mode] = resources.length > 1 ? resources : resources[0];
     }
 
     return statement;

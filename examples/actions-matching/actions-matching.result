@@ -33,8 +33,6 @@
         "ec2:ExportClientVpnClientConfiguration",
         "ec2:DescribeVpnConnections"
     ],
-    "Resource": [
-        "*"
-    ],
+    "Resource": "*",
     "Effect": "Deny"
 }
