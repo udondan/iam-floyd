@@ -814,7 +814,6 @@ export class Codebuild extends PolicyStatement {
 
 export type CodebuildActionsWrite = 'BatchDeleteBuilds' | 'BatchPutCodeCoverages' | 'BatchPutTestCases' | 'CreateProject' | 'CreateReport' | 'CreateReportGroup' | 'CreateWebhook' | 'DeleteBuildBatch' | 'DeleteOAuthToken' | 'DeleteProject' | 'DeleteReport' | 'DeleteReportGroup' | 'DeleteSourceCredentials' | 'DeleteWebhook' | 'ImportSourceCredentials' | 'InvalidateProjectCache' | 'PersistOAuthToken' | 'RetryBuild' | 'RetryBuildBatch' | 'StartBuild' | 'StartBuildBatch' | 'StopBuild' | 'StopBuildBatch' | 'UpdateProject' | 'UpdateReport' | 'UpdateReportGroup' | 'UpdateWebhook';
 export type CodebuildActionsRead = 'BatchGetBuildBatches' | 'BatchGetBuilds' | 'BatchGetProjects' | 'BatchGetReportGroups' | 'BatchGetReports' | 'DescribeCodeCoverages' | 'DescribeTestCases' | 'GetResourcePolicy';
-export type CodebuildActionsPermissions management = 'DeleteResourcePolicy' | 'PutResourcePolicy';
-
+export type CodebuildActionsPermissionsManagement = 'DeleteResourcePolicy' | 'PutResourcePolicy';
 export type CodebuildActionsList = 'ListBuildBatches' | 'ListBuildBatchesForProject' | 'ListBuilds' | 'ListBuildsForProject' | 'ListConnectedOAuthAccounts' | 'ListCuratedEnvironmentImages' | 'ListProjects' | 'ListReportGroups' | 'ListReports' | 'ListReportsForReportGroup' | 'ListRepositories' | 'ListSharedProjects' | 'ListSharedReportGroups' | 'ListSourceCredentials';
-export type CodebuildActions = CodebuildActionsWrite | CodebuildActionsRead | CodebuildActionsPermissions management | CodebuildActionsList;
+export type CodebuildActions = CodebuildActionsWrite | CodebuildActionsRead | CodebuildActionsPermissionsManagement | CodebuildActionsList;

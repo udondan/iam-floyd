@@ -382,8 +382,7 @@ export class AcmPca extends PolicyStatement {
 
 export type AcmPcaActionsTagging = 'CreateCertificateAuthority' | 'TagCertificateAuthority' | 'UntagCertificateAuthority';
 export type AcmPcaActionsWrite = 'CreateCertificateAuthorityAuditReport' | 'DeleteCertificateAuthority' | 'ImportCertificateAuthorityCertificate' | 'IssueCertificate' | 'RestoreCertificateAuthority' | 'RevokeCertificate' | 'UpdateCertificateAuthority';
-export type AcmPcaActionsPermissions management = 'CreatePermission' | 'DeletePermission' | 'DeletePolicy' | 'PutPolicy';
-
+export type AcmPcaActionsPermissionsManagement = 'CreatePermission' | 'DeletePermission' | 'DeletePolicy' | 'PutPolicy';
 export type AcmPcaActionsRead = 'DescribeCertificateAuthority' | 'DescribeCertificateAuthorityAuditReport' | 'GetCertificate' | 'GetCertificateAuthorityCertificate' | 'GetCertificateAuthorityCsr' | 'GetPolicy' | 'ListPermissions' | 'ListTags';
 export type AcmPcaActionsList = 'ListCertificateAuthorities';
-export type AcmPcaActions = AcmPcaActionsTagging | AcmPcaActionsWrite | AcmPcaActionsPermissions management | AcmPcaActionsRead | AcmPcaActionsList;
+export type AcmPcaActions = AcmPcaActionsTagging | AcmPcaActionsWrite | AcmPcaActionsPermissionsManagement | AcmPcaActionsRead | AcmPcaActionsList;

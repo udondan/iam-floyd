@@ -636,6 +636,5 @@ export type LicenseManagerActionsWrite = 'AcceptGrant' | 'CheckInLicense' | 'Che
 export type LicenseManagerActionsTagging = 'CreateLicenseConfiguration' | 'TagResource' | 'UntagResource';
 export type LicenseManagerActionsRead = 'GetAccessToken' | 'GetGrant' | 'GetLicense' | 'GetLicenseUsage';
 export type LicenseManagerActionsList = 'GetLicenseConfiguration' | 'GetServiceSettings' | 'ListAssociationsForLicenseConfiguration' | 'ListDistributedGrants' | 'ListFailuresForLicenseConfigurationOperations' | 'ListLicenseConfigurations' | 'ListLicenseSpecificationsForResource' | 'ListLicenseVersions' | 'ListLicenses' | 'ListReceivedGrants' | 'ListReceivedLicensess' | 'ListResourceInventory' | 'ListTagsForResource' | 'ListTokens' | 'ListUsageForLicenseConfiguration';
-export type LicenseManagerActionsPermissions management = 'UpdateServiceSettings';
-
-export type LicenseManagerActions = LicenseManagerActionsWrite | LicenseManagerActionsTagging | LicenseManagerActionsRead | LicenseManagerActionsList | LicenseManagerActionsPermissions management;
+export type LicenseManagerActionsPermissionsManagement = 'UpdateServiceSettings';
+export type LicenseManagerActions = LicenseManagerActionsWrite | LicenseManagerActionsTagging | LicenseManagerActionsRead | LicenseManagerActionsList | LicenseManagerActionsPermissionsManagement;

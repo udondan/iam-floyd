@@ -534,10 +534,9 @@ export class Sns extends PolicyStatement {
   }
 }
 
-export type SnsActionsPermissions management = 'AddPermission' | 'RemovePermission';
-
+export type SnsActionsPermissionsManagement = 'AddPermission' | 'RemovePermission';
 export type SnsActionsRead = 'CheckIfPhoneNumberIsOptedOut' | 'GetEndpointAttributes' | 'GetPlatformApplicationAttributes' | 'GetSMSAttributes' | 'GetSubscriptionAttributes' | 'GetTopicAttributes' | 'ListPhoneNumbersOptedOut' | 'ListTagsForResource';
 export type SnsActionsWrite = 'ConfirmSubscription' | 'CreatePlatformApplication' | 'CreatePlatformEndpoint' | 'CreateTopic' | 'DeleteEndpoint' | 'DeletePlatformApplication' | 'DeleteTopic' | 'OptInPhoneNumber' | 'Publish' | 'SetEndpointAttributes' | 'SetPlatformApplicationAttributes' | 'SetSMSAttributes' | 'SetSubscriptionAttributes' | 'SetTopicAttributes' | 'Subscribe' | 'Unsubscribe';
 export type SnsActionsList = 'ListEndpointsByPlatformApplication' | 'ListPlatformApplications' | 'ListSubscriptions' | 'ListSubscriptionsByTopic' | 'ListTopics';
 export type SnsActionsTagging = 'TagResource' | 'UntagResource';
-export type SnsActions = SnsActionsPermissions management | SnsActionsRead | SnsActionsWrite | SnsActionsList | SnsActionsTagging;
+export type SnsActions = SnsActionsPermissionsManagement | SnsActionsRead | SnsActionsWrite | SnsActionsList | SnsActionsTagging;

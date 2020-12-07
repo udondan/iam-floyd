@@ -58,6 +58,5 @@ export class RdsDb extends PolicyStatement {
   }
 }
 
-export type RdsDbActionsPermissions management = 'connect';
-
-export type RdsDbActions = RdsDbActionsPermissions management;
+export type RdsDbActionsPermissionsManagement = 'connect';
+export type RdsDbActions = RdsDbActionsPermissionsManagement;

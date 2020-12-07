@@ -338,7 +338,8 @@ export function createModule(module: Module): Promise<void> {
 
   const allActions: string[] = [];
   for (const [accessLevel, actions] of Object.entries(accessLevelList)) {
-    const typeName = camelCase(module.name) + 'Actions' + accessLevel;
+    const typeName =
+      camelCase(module.name) + 'Actions' + camelCase(accessLevel);
     allActions.push(typeName);
     sourceFile.addTypeAlias({
       isExported: true,

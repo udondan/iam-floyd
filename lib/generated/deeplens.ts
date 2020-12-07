@@ -345,9 +345,8 @@ export class Deeplens extends PolicyStatement {
   }
 }
 
-export type DeeplensActionsPermissions management = 'AssociateServiceRoleToAccount';
-
+export type DeeplensActionsPermissionsManagement = 'AssociateServiceRoleToAccount';
 export type DeeplensActionsRead = 'BatchGetDevice' | 'BatchGetModel' | 'BatchGetProject' | 'GetAssociatedResources' | 'GetDeploymentStatus' | 'GetDevice' | 'GetModel' | 'GetProject';
 export type DeeplensActionsWrite = 'CreateDeviceCertificates' | 'CreateModel' | 'CreateProject' | 'DeleteModel' | 'DeleteProject' | 'DeployProject' | 'DeregisterDevice' | 'ImportProjectFromTemplate' | 'RegisterDevice' | 'RemoveProject' | 'UpdateProject';
 export type DeeplensActionsList = 'ListDeployments' | 'ListDevices' | 'ListModels' | 'ListProjects';
-export type DeeplensActions = DeeplensActionsPermissions management | DeeplensActionsRead | DeeplensActionsWrite | DeeplensActionsList;
+export type DeeplensActions = DeeplensActionsPermissionsManagement | DeeplensActionsRead | DeeplensActionsWrite | DeeplensActionsList;

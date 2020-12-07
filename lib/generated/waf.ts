@@ -1279,9 +1279,8 @@ export class Waf extends PolicyStatement {
 }
 
 export type WafActionsWrite = 'CreateByteMatchSet' | 'CreateGeoMatchSet' | 'CreateIPSet' | 'CreateRateBasedRule' | 'CreateRegexMatchSet' | 'CreateRegexPatternSet' | 'CreateRule' | 'CreateRuleGroup' | 'CreateSizeConstraintSet' | 'CreateSqlInjectionMatchSet' | 'CreateWebACLMigrationStack' | 'CreateXssMatchSet' | 'DeleteByteMatchSet' | 'DeleteGeoMatchSet' | 'DeleteIPSet' | 'DeleteLoggingConfiguration' | 'DeleteRateBasedRule' | 'DeleteRegexMatchSet' | 'DeleteRegexPatternSet' | 'DeleteRule' | 'DeleteRuleGroup' | 'DeleteSizeConstraintSet' | 'DeleteSqlInjectionMatchSet' | 'DeleteXssMatchSet' | 'PutLoggingConfiguration' | 'UpdateByteMatchSet' | 'UpdateGeoMatchSet' | 'UpdateIPSet' | 'UpdateRateBasedRule' | 'UpdateRegexMatchSet' | 'UpdateRegexPatternSet' | 'UpdateRule' | 'UpdateRuleGroup' | 'UpdateSizeConstraintSet' | 'UpdateSqlInjectionMatchSet' | 'UpdateXssMatchSet';
-export type WafActionsPermissions management = 'CreateWebACL' | 'DeletePermissionPolicy' | 'DeleteWebACL' | 'PutPermissionPolicy' | 'UpdateWebACL';
-
+export type WafActionsPermissionsManagement = 'CreateWebACL' | 'DeletePermissionPolicy' | 'DeleteWebACL' | 'PutPermissionPolicy' | 'UpdateWebACL';
 export type WafActionsRead = 'GetByteMatchSet' | 'GetChangeToken' | 'GetChangeTokenStatus' | 'GetGeoMatchSet' | 'GetIPSet' | 'GetLoggingConfiguration' | 'GetPermissionPolicy' | 'GetRateBasedRule' | 'GetRateBasedRuleManagedKeys' | 'GetRegexMatchSet' | 'GetRegexPatternSet' | 'GetRule' | 'GetRuleGroup' | 'GetSampledRequests' | 'GetSizeConstraintSet' | 'GetSqlInjectionMatchSet' | 'GetWebACL' | 'GetXssMatchSet' | 'ListTagsForResource';
 export type WafActionsList = 'ListActivatedRulesInRuleGroup' | 'ListByteMatchSets' | 'ListGeoMatchSets' | 'ListIPSets' | 'ListLoggingConfigurations' | 'ListRateBasedRules' | 'ListRegexMatchSets' | 'ListRegexPatternSets' | 'ListRuleGroups' | 'ListRules' | 'ListSizeConstraintSets' | 'ListSqlInjectionMatchSets' | 'ListSubscribedRuleGroups' | 'ListWebACLs' | 'ListXssMatchSets';
 export type WafActionsTagging = 'TagResource' | 'UntagResource';
-export type WafActions = WafActionsWrite | WafActionsPermissions management | WafActionsRead | WafActionsList | WafActionsTagging;
+export type WafActions = WafActionsWrite | WafActionsPermissionsManagement | WafActionsRead | WafActionsList | WafActionsTagging;

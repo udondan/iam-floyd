@@ -874,8 +874,7 @@ export class Imagebuilder extends PolicyStatement {
 
 export type ImagebuilderActionsWrite = 'CancelImageCreation' | 'CreateComponent' | 'CreateDistributionConfiguration' | 'CreateImage' | 'CreateImagePipeline' | 'CreateImageRecipe' | 'CreateInfrastructureConfiguration' | 'DeleteComponent' | 'DeleteDistributionConfiguration' | 'DeleteImage' | 'DeleteImagePipeline' | 'DeleteImageRecipe' | 'DeleteInfrastructureConfiguration' | 'StartImagePipelineExecution' | 'UpdateDistributionConfiguration' | 'UpdateImagePipeline' | 'UpdateInfrastructureConfiguration';
 export type ImagebuilderActionsRead = 'GetComponent' | 'GetDistributionConfiguration' | 'GetImage' | 'GetImagePipeline' | 'GetImageRecipe' | 'GetInfrastructureConfiguration' | 'ListTagsForResource';
-export type ImagebuilderActionsPermissions management = 'GetComponentPolicy' | 'GetImagePolicy' | 'GetImageRecipePolicy' | 'PutComponentPolicy' | 'PutImagePolicy' | 'PutImageRecipePolicy';
-
+export type ImagebuilderActionsPermissionsManagement = 'GetComponentPolicy' | 'GetImagePolicy' | 'GetImageRecipePolicy' | 'PutComponentPolicy' | 'PutImagePolicy' | 'PutImageRecipePolicy';
 export type ImagebuilderActionsList = 'ListComponentBuildVersions' | 'ListComponents' | 'ListDistributionConfigurations' | 'ListImageBuildVersions' | 'ListImagePipelineImages' | 'ListImagePipelines' | 'ListImageRecipes' | 'ListImages' | 'ListInfrastructureConfigurations';
 export type ImagebuilderActionsTagging = 'TagResource' | 'UntagResource';
-export type ImagebuilderActions = ImagebuilderActionsWrite | ImagebuilderActionsRead | ImagebuilderActionsPermissions management | ImagebuilderActionsList | ImagebuilderActionsTagging;
+export type ImagebuilderActions = ImagebuilderActionsWrite | ImagebuilderActionsRead | ImagebuilderActionsPermissionsManagement | ImagebuilderActionsList | ImagebuilderActionsTagging;

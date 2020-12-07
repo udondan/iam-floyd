@@ -348,10 +348,9 @@ export class Signer extends PolicyStatement {
   }
 }
 
-export type SignerActionsPermissions management = 'AddProfilePermission' | 'ListProfilePermissions' | 'RemoveProfilePermission';
-
+export type SignerActionsPermissionsManagement = 'AddProfilePermission' | 'ListProfilePermissions' | 'RemoveProfilePermission';
 export type SignerActionsWrite = 'CancelSigningProfile' | 'PutSigningProfile' | 'RevokeSignature' | 'RevokeSigningProfile' | 'StartSigningJob';
 export type SignerActionsRead = 'DescribeSigningJob' | 'GetSigningPlatform' | 'GetSigningProfile' | 'ListTagsForResource';
 export type SignerActionsList = 'ListSigningJobs' | 'ListSigningPlatforms' | 'ListSigningProfiles';
 export type SignerActionsTagging = 'TagResource' | 'UntagResource';
-export type SignerActions = SignerActionsPermissions management | SignerActionsWrite | SignerActionsRead | SignerActionsList | SignerActionsTagging;
+export type SignerActions = SignerActionsPermissionsManagement | SignerActionsWrite | SignerActionsRead | SignerActionsList | SignerActionsTagging;

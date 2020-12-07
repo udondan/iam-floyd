@@ -515,9 +515,8 @@ export class Glacier extends PolicyStatement {
 }
 
 export type GlacierActionsWrite = 'AbortMultipartUpload' | 'CompleteMultipartUpload' | 'CreateVault' | 'DeleteArchive' | 'DeleteVault' | 'DeleteVaultNotifications' | 'InitiateJob' | 'InitiateMultipartUpload' | 'PurchaseProvisionedCapacity' | 'SetVaultNotifications' | 'UploadArchive' | 'UploadMultipartPart';
-export type GlacierActionsPermissions management = 'AbortVaultLock' | 'CompleteVaultLock' | 'DeleteVaultAccessPolicy' | 'InitiateVaultLock' | 'SetDataRetrievalPolicy' | 'SetVaultAccessPolicy';
-
+export type GlacierActionsPermissionsManagement = 'AbortVaultLock' | 'CompleteVaultLock' | 'DeleteVaultAccessPolicy' | 'InitiateVaultLock' | 'SetDataRetrievalPolicy' | 'SetVaultAccessPolicy';
 export type GlacierActionsTagging = 'AddTagsToVault' | 'RemoveTagsFromVault';
 export type GlacierActionsRead = 'DescribeJob' | 'DescribeVault' | 'GetDataRetrievalPolicy' | 'GetJobOutput' | 'GetVaultAccessPolicy' | 'GetVaultLock' | 'GetVaultNotifications';
 export type GlacierActionsList = 'ListJobs' | 'ListMultipartUploads' | 'ListParts' | 'ListProvisionedCapacity' | 'ListTagsForVault' | 'ListVaults';
-export type GlacierActions = GlacierActionsWrite | GlacierActionsPermissions management | GlacierActionsTagging | GlacierActionsRead | GlacierActionsList;
+export type GlacierActions = GlacierActionsWrite | GlacierActionsPermissionsManagement | GlacierActionsTagging | GlacierActionsRead | GlacierActionsList;

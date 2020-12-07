@@ -461,8 +461,7 @@ export class Xray extends PolicyStatement {
 
 export type XrayActionsList = 'BatchGetTraces' | 'ListTagsForResource';
 export type XrayActionsWrite = 'CreateGroup' | 'CreateSamplingRule' | 'DeleteGroup' | 'DeleteSamplingRule' | 'PutTelemetryRecords' | 'PutTraceSegments' | 'UpdateGroup' | 'UpdateSamplingRule';
-export type XrayActionsPermissions management = 'GetEncryptionConfig' | 'PutEncryptionConfig';
-
+export type XrayActionsPermissionsManagement = 'GetEncryptionConfig' | 'PutEncryptionConfig';
 export type XrayActionsRead = 'GetGroup' | 'GetGroups' | 'GetInsight' | 'GetInsightEvents' | 'GetInsightImpactGraph' | 'GetInsightSummaries' | 'GetSamplingRules' | 'GetSamplingStatisticSummaries' | 'GetSamplingTargets' | 'GetServiceGraph' | 'GetTimeSeriesServiceStatistics' | 'GetTraceGraph' | 'GetTraceSummaries';
 export type XrayActionsTagging = 'TagResource' | 'UntagResource';
-export type XrayActions = XrayActionsList | XrayActionsWrite | XrayActionsPermissions management | XrayActionsRead | XrayActionsTagging;
+export type XrayActions = XrayActionsList | XrayActionsWrite | XrayActionsPermissionsManagement | XrayActionsRead | XrayActionsTagging;

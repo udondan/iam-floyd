@@ -649,6 +649,5 @@ export type ElasticmapreduceActionsWrite = 'AddInstanceFleet' | 'AddInstanceGrou
 export type ElasticmapreduceActionsTagging = 'AddTags' | 'RemoveTags';
 export type ElasticmapreduceActionsRead = 'DescribeCluster' | 'DescribeEditor' | 'DescribeJobFlows' | 'DescribeSecurityConfiguration' | 'DescribeStep' | 'GetBlockPublicAccessConfiguration' | 'GetManagedScalingPolicy' | 'ListBootstrapActions' | 'ListInstanceFleets' | 'ListInstanceGroups' | 'ListInstances' | 'ListSteps';
 export type ElasticmapreduceActionsList = 'ListClusters' | 'ListEditors' | 'ListSecurityConfigurations' | 'ViewEventsFromAllClustersInConsole';
-export type ElasticmapreduceActionsPermissions management = 'PutBlockPublicAccessConfiguration';
-
-export type ElasticmapreduceActions = ElasticmapreduceActionsWrite | ElasticmapreduceActionsTagging | ElasticmapreduceActionsRead | ElasticmapreduceActionsList | ElasticmapreduceActionsPermissions management;
+export type ElasticmapreduceActionsPermissionsManagement = 'PutBlockPublicAccessConfiguration';
+export type ElasticmapreduceActions = ElasticmapreduceActionsWrite | ElasticmapreduceActionsTagging | ElasticmapreduceActionsRead | ElasticmapreduceActionsList | ElasticmapreduceActionsPermissionsManagement;

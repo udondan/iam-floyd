@@ -390,9 +390,8 @@ export class Mediastore extends PolicyStatement {
 }
 
 export type MediastoreActionsWrite = 'CreateContainer' | 'DeleteContainer' | 'DeleteCorsPolicy' | 'DeleteLifecyclePolicy' | 'DeleteMetricPolicy' | 'DeleteObject' | 'PutCorsPolicy' | 'PutLifecyclePolicy' | 'PutMetricPolicy' | 'PutObject' | 'StartAccessLogging' | 'StopAccessLogging';
-export type MediastoreActionsPermissions management = 'DeleteContainerPolicy' | 'PutContainerPolicy';
-
+export type MediastoreActionsPermissionsManagement = 'DeleteContainerPolicy' | 'PutContainerPolicy';
 export type MediastoreActionsList = 'DescribeContainer' | 'DescribeObject' | 'ListContainers' | 'ListItems';
 export type MediastoreActionsRead = 'GetContainerPolicy' | 'GetCorsPolicy' | 'GetLifecyclePolicy' | 'GetMetricPolicy' | 'GetObject' | 'ListTagsForResource';
 export type MediastoreActionsTagging = 'TagResource' | 'UntagResource';
-export type MediastoreActions = MediastoreActionsWrite | MediastoreActionsPermissions management | MediastoreActionsList | MediastoreActionsRead | MediastoreActionsTagging;
+export type MediastoreActions = MediastoreActionsWrite | MediastoreActionsPermissionsManagement | MediastoreActionsList | MediastoreActionsRead | MediastoreActionsTagging;

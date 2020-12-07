@@ -364,10 +364,9 @@ export class Codestar extends PolicyStatement {
   }
 }
 
-export type CodestarActionsPermissions management = 'AssociateTeamMember' | 'CreateProject' | 'DeleteProject' | 'DisassociateTeamMember' | 'UpdateTeamMember';
-
+export type CodestarActionsPermissionsManagement = 'AssociateTeamMember' | 'CreateProject' | 'DeleteProject' | 'DisassociateTeamMember' | 'UpdateTeamMember';
 export type CodestarActionsWrite = 'CreateUserProfile' | 'DeleteExtendedAccess' | 'DeleteUserProfile' | 'PutExtendedAccess' | 'UpdateProject' | 'UpdateUserProfile';
 export type CodestarActionsRead = 'DescribeProject' | 'DescribeUserProfile' | 'GetExtendedAccess';
 export type CodestarActionsList = 'ListProjects' | 'ListResources' | 'ListTagsForProject' | 'ListTeamMembers' | 'ListUserProfiles';
 export type CodestarActionsTagging = 'TagProject' | 'UntagProject';
-export type CodestarActions = CodestarActionsPermissions management | CodestarActionsWrite | CodestarActionsRead | CodestarActionsList | CodestarActionsTagging;
+export type CodestarActions = CodestarActionsPermissionsManagement | CodestarActionsWrite | CodestarActionsRead | CodestarActionsList | CodestarActionsTagging;

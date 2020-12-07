@@ -311,10 +311,9 @@ export class Sqs extends PolicyStatement {
   }
 }
 
-export type SqsActionsPermissions management = 'AddPermission' | 'RemovePermission';
-
+export type SqsActionsPermissionsManagement = 'AddPermission' | 'RemovePermission';
 export type SqsActionsWrite = 'ChangeMessageVisibility' | 'ChangeMessageVisibilityBatch' | 'CreateQueue' | 'DeleteMessage' | 'DeleteMessageBatch' | 'DeleteQueue' | 'PurgeQueue' | 'SendMessage' | 'SendMessageBatch' | 'SetQueueAttributes';
 export type SqsActionsRead = 'GetQueueAttributes' | 'GetQueueUrl' | 'ListDeadLetterSourceQueues' | 'ListQueueTags' | 'ReceiveMessage';
 export type SqsActionsList = 'ListQueues';
 export type SqsActionsTagging = 'TagQueue' | 'UntagQueue';
-export type SqsActions = SqsActionsPermissions management | SqsActionsWrite | SqsActionsRead | SqsActionsList | SqsActionsTagging;
+export type SqsActions = SqsActionsPermissionsManagement | SqsActionsWrite | SqsActionsRead | SqsActionsList | SqsActionsTagging;

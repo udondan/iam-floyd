@@ -327,6 +327,5 @@ export class EcrPublic extends PolicyStatement {
 export type EcrPublicActionsRead = 'BatchCheckLayerAvailability' | 'DescribeImages' | 'GetAuthorizationToken' | 'GetRegistryCatalogData' | 'GetRepositoryCatalogData' | 'GetRepositoryPolicy';
 export type EcrPublicActionsWrite = 'BatchDeleteImage' | 'CompleteLayerUpload' | 'CreateRepository' | 'DeleteRepository' | 'DeleteRepositoryPolicy' | 'InitiateLayerUpload' | 'PutImage' | 'PutRegistryCatalogData' | 'PutRepositoryCatalogData' | 'UploadLayerPart';
 export type EcrPublicActionsList = 'DescribeImageTags' | 'DescribeRegistries' | 'DescribeRepositories';
-export type EcrPublicActionsPermissions management = 'SetRepositoryPolicy';
-
-export type EcrPublicActions = EcrPublicActionsRead | EcrPublicActionsWrite | EcrPublicActionsList | EcrPublicActionsPermissions management;
+export type EcrPublicActionsPermissionsManagement = 'SetRepositoryPolicy';
+export type EcrPublicActions = EcrPublicActionsRead | EcrPublicActionsWrite | EcrPublicActionsList | EcrPublicActionsPermissionsManagement;

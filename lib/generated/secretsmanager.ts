@@ -640,9 +640,8 @@ export class Secretsmanager extends PolicyStatement {
 }
 
 export type SecretsmanagerActionsWrite = 'CancelRotateSecret' | 'CreateSecret' | 'DeleteSecret' | 'PutSecretValue' | 'RestoreSecret' | 'RotateSecret' | 'UpdateSecret' | 'UpdateSecretVersionStage';
-export type SecretsmanagerActionsPermissions management = 'DeleteResourcePolicy' | 'PutResourcePolicy' | 'ValidateResourcePolicy';
-
+export type SecretsmanagerActionsPermissionsManagement = 'DeleteResourcePolicy' | 'PutResourcePolicy' | 'ValidateResourcePolicy';
 export type SecretsmanagerActionsRead = 'DescribeSecret' | 'GetRandomPassword' | 'GetResourcePolicy' | 'GetSecretValue' | 'ListSecretVersionIds';
 export type SecretsmanagerActionsList = 'ListSecrets';
 export type SecretsmanagerActionsTagging = 'TagResource' | 'UntagResource';
-export type SecretsmanagerActions = SecretsmanagerActionsWrite | SecretsmanagerActionsPermissions management | SecretsmanagerActionsRead | SecretsmanagerActionsList | SecretsmanagerActionsTagging;
+export type SecretsmanagerActions = SecretsmanagerActionsWrite | SecretsmanagerActionsPermissionsManagement | SecretsmanagerActionsRead | SecretsmanagerActionsList | SecretsmanagerActionsTagging;
