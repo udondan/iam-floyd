@@ -274,3 +274,7 @@ export class Servicequotas extends PolicyStatement {
     return this.if(`servicequotas:service`, value, operator || 'StringLike');
   }
 }
+
+export type ServicequotasActionsWrite = 'AssociateServiceQuotaTemplate' | 'DeleteServiceQuotaIncreaseRequestFromTemplate' | 'DisassociateServiceQuotaTemplate' | 'PutServiceQuotaIncreaseRequestIntoTemplate' | 'RequestServiceQuotaIncrease';
+export type ServicequotasActionsRead = 'GetAWSDefaultServiceQuota' | 'GetAssociationForServiceQuotaTemplate' | 'GetRequestedServiceQuotaChange' | 'GetServiceQuota' | 'GetServiceQuotaIncreaseRequestFromTemplate' | 'ListAWSDefaultServiceQuotas' | 'ListRequestedServiceQuotaChangeHistory' | 'ListRequestedServiceQuotaChangeHistoryByQuota' | 'ListServiceQuotaIncreaseRequestsInTemplate' | 'ListServiceQuotas' | 'ListServices';
+export type ServicequotasActions = ServicequotasActionsWrite | ServicequotasActionsRead;

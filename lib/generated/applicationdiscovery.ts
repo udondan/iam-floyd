@@ -354,3 +354,9 @@ export class Discovery extends PolicyStatement {
     ]
   };
 }
+
+export type DiscoveryActionsWrite = 'AssociateConfigurationItemsToApplication' | 'BatchDeleteImportData' | 'CreateApplication' | 'DeleteApplications' | 'DisassociateConfigurationItemsFromApplication' | 'ExportConfigurations' | 'StartContinuousExport' | 'StartDataCollectionByAgentIds' | 'StartExportTask' | 'StartImportTask' | 'StopContinuousExport' | 'StopDataCollectionByAgentIds' | 'UpdateApplication';
+export type DiscoveryActionsTagging = 'CreateTags' | 'DeleteTags';
+export type DiscoveryActionsRead = 'DescribeAgents' | 'DescribeConfigurations' | 'DescribeContinuousExports' | 'DescribeExportConfigurations' | 'DescribeExportTasks' | 'DescribeTags' | 'GetDiscoverySummary';
+export type DiscoveryActionsList = 'DescribeImportTasks' | 'ListConfigurations' | 'ListServerNeighbors';
+export type DiscoveryActions = DiscoveryActionsWrite | DiscoveryActionsTagging | DiscoveryActionsRead | DiscoveryActionsList;

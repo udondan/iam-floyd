@@ -238,3 +238,9 @@ export class Airflow extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type AirflowActionsWrite = 'CreateCliToken' | 'CreateEnvironment' | 'CreateWebLoginToken' | 'DeleteEnvironment' | 'PublishMetrics' | 'UpdateEnvironment';
+export type AirflowActionsRead = 'GetEnvironment' | 'ListTagsForResource';
+export type AirflowActionsList = 'ListEnvironments';
+export type AirflowActionsTagging = 'TagResource' | 'UntagResource';
+export type AirflowActions = AirflowActionsWrite | AirflowActionsRead | AirflowActionsList | AirflowActionsTagging;

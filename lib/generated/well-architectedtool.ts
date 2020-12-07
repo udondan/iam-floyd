@@ -111,3 +111,8 @@ export class Wellarchitected extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type WellarchitectedActionsWrite = 'CreateWorkload' | 'CreateWorkloadShare' | 'DeleteWorkload';
+export type WellarchitectedActionsRead = 'GetWorkload';
+export type WellarchitectedActionsList = 'ListWorkloads';
+export type WellarchitectedActions = WellarchitectedActionsWrite | WellarchitectedActionsRead | WellarchitectedActionsList;

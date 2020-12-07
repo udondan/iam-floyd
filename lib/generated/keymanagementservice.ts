@@ -1254,3 +1254,11 @@ export class Kms extends PolicyStatement {
     return this.if(`kms:WrappingKeySpec`, value, operator || 'StringLike');
   }
 }
+
+export type KmsActionsWrite = 'CancelKeyDeletion' | 'ConnectCustomKeyStore' | 'CreateAlias' | 'CreateCustomKeyStore' | 'CreateKey' | 'Decrypt' | 'DeleteAlias' | 'DeleteCustomKeyStore' | 'DeleteImportedKeyMaterial' | 'DisableKey' | 'DisableKeyRotation' | 'DisconnectCustomKeyStore' | 'EnableKey' | 'EnableKeyRotation' | 'Encrypt' | 'GenerateDataKey' | 'GenerateDataKeyPair' | 'GenerateDataKeyPairWithoutPlaintext' | 'GenerateDataKeyWithoutPlaintext' | 'GenerateRandom' | 'ImportKeyMaterial' | 'ReEncryptFrom' | 'ReEncryptTo' | 'ScheduleKeyDeletion' | 'Sign' | 'UpdateAlias' | 'UpdateCustomKeyStore' | 'UpdateKeyDescription' | 'Verify';
+export type KmsActionsPermissions management = 'CreateGrant' | 'PutKeyPolicy' | 'RetireGrant' | 'RevokeGrant';
+
+export type KmsActionsRead = 'DescribeCustomKeyStores' | 'DescribeKey' | 'GetKeyPolicy' | 'GetKeyRotationStatus' | 'GetParametersForImport' | 'GetPublicKey' | 'ListResourceTags';
+export type KmsActionsList = 'ListAliases' | 'ListGrants' | 'ListKeyPolicies' | 'ListKeys' | 'ListRetirableGrants';
+export type KmsActionsTagging = 'TagResource' | 'UntagResource';
+export type KmsActions = KmsActionsWrite | KmsActionsPermissions management | KmsActionsRead | KmsActionsList | KmsActionsTagging;

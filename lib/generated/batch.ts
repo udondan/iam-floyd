@@ -515,3 +515,9 @@ export class Batch extends PolicyStatement {
     return this.if(`batch:User`, value, operator || 'StringLike');
   }
 }
+
+export type BatchActionsWrite = 'CancelJob' | 'CreateComputeEnvironment' | 'CreateJobQueue' | 'DeleteComputeEnvironment' | 'DeleteJobQueue' | 'DeregisterJobDefinition' | 'RegisterJobDefinition' | 'SubmitJob' | 'TerminateJob' | 'UpdateComputeEnvironment' | 'UpdateJobQueue';
+export type BatchActionsRead = 'DescribeComputeEnvironments' | 'DescribeJobDefinitions' | 'DescribeJobQueues' | 'DescribeJobs';
+export type BatchActionsList = 'ListJobs' | 'ListTagsForResource';
+export type BatchActionsTagging = 'TagResource' | 'UntagResource';
+export type BatchActions = BatchActionsWrite | BatchActionsRead | BatchActionsList | BatchActionsTagging;

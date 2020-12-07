@@ -475,3 +475,8 @@ export class Deepracer extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type DeepracerActionsWrite = 'CloneReinforcementLearningModel' | 'CreateAccountResources' | 'CreateLeaderboardSubmission' | 'CreateReinforcementLearningModel' | 'DeleteAccountResources' | 'DeleteModel' | 'SetAlias' | 'StartEvaluation' | 'StopEvaluation' | 'StopTrainingReinforcementLearningModel' | 'TestRewardFunction';
+export type DeepracerActionsRead = 'GetAccountResources' | 'GetAlias' | 'GetEvaluation' | 'GetLatestUserSubmission' | 'GetLeaderboard' | 'GetModel' | 'GetRankedUserSubmission' | 'GetTrack' | 'GetTrainingJob';
+export type DeepracerActionsList = 'ListEvaluations' | 'ListLeaderboardSubmissions' | 'ListLeaderboards' | 'ListModels' | 'ListTracks' | 'ListTrainingJobs';
+export type DeepracerActions = DeepracerActionsWrite | DeepracerActionsRead | DeepracerActionsList;

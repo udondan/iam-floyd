@@ -336,6 +336,23 @@ export function createModule(module: Module): Promise<void> {
     });
   }
 
+  const allActions: string[] = [];
+  for (const [accessLevel, actions] of Object.entries(accessLevelList)) {
+    const typeName = camelCase(module.name) + 'Actions' + accessLevel;
+    allActions.push(typeName);
+    sourceFile.addTypeAlias({
+      isExported: true,
+      name: typeName,
+      type: "'" + actions.join("' | '") + "'",
+    });
+  }
+
+  sourceFile.addTypeAlias({
+    isExported: true,
+    name: camelCase(module.name) + 'Actions',
+    type: allActions.join(' | '),
+  });
+
   classDeclaration.addProperty({
     name: 'accessLevelList',
     scope: Scope.Protected,
@@ -586,6 +603,12 @@ export function createIndex() {
     const exports = [];
 
     source.getClasses().forEach((item) => {
+      if (item.isExported()) {
+        exports.push(item.getName());
+      }
+    });
+
+    source.getTypeAliases().forEach((item) => {
       if (item.isExported()) {
         exports.push(item.getName());
       }

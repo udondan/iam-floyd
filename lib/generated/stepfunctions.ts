@@ -412,3 +412,9 @@ export class States extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type StatesActionsWrite = 'CreateActivity' | 'CreateStateMachine' | 'DeleteActivity' | 'DeleteStateMachine' | 'GetActivityTask' | 'SendTaskFailure' | 'SendTaskHeartbeat' | 'SendTaskSuccess' | 'StartExecution' | 'StartSyncExecution' | 'StopExecution' | 'UpdateStateMachine';
+export type StatesActionsRead = 'DescribeActivity' | 'DescribeExecution' | 'DescribeStateMachine' | 'DescribeStateMachineForExecution' | 'GetExecutionHistory' | 'ListExecutions' | 'ListTagsForResource';
+export type StatesActionsList = 'ListActivities' | 'ListStateMachines';
+export type StatesActionsTagging = 'TagResource' | 'UntagResource';
+export type StatesActions = StatesActionsWrite | StatesActionsRead | StatesActionsList | StatesActionsTagging;

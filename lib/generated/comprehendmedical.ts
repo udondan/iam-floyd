@@ -49,3 +49,6 @@ export class Comprehendmedical extends PolicyStatement {
     ]
   };
 }
+
+export type ComprehendmedicalActionsRead = 'DetectEntities' | 'DetectPHI';
+export type ComprehendmedicalActions = ComprehendmedicalActionsRead;

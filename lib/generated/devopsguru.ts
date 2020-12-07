@@ -288,3 +288,8 @@ export class DevopsGuru extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type DevopsGuruActionsWrite = 'AddNotificationChannel' | 'PutFeedback' | 'RemoveNotificationChannel' | 'UpdateResourceCollection' | 'UpdateServiceIntegration';
+export type DevopsGuruActionsRead = 'DescribeAccountHealth' | 'DescribeAccountOverview' | 'DescribeAnomaly' | 'DescribeInsight' | 'DescribeResourceCollectionHealth' | 'DescribeServiceIntegration' | 'GetResourceCollection';
+export type DevopsGuruActionsList = 'ListAnomaliesForInsight' | 'ListEvents' | 'ListInsights' | 'ListNotificationChannels' | 'ListRecommendations' | 'SearchInsights';
+export type DevopsGuruActions = DevopsGuruActionsWrite | DevopsGuruActionsRead | DevopsGuruActionsList;

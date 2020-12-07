@@ -442,3 +442,9 @@ export class Fms extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type FmsActionsWrite = 'AssociateAdminAccount' | 'DeleteAppsList' | 'DeleteNotificationChannel' | 'DeletePolicy' | 'DeleteProtocolsList' | 'DisassociateAdminAccount' | 'PutAppsList' | 'PutNotificationChannel' | 'PutPolicy' | 'PutProtocolsList';
+export type FmsActionsRead = 'GetAdminAccount' | 'GetAppsList' | 'GetComplianceDetail' | 'GetNotificationChannel' | 'GetPolicy' | 'GetProtectionStatus' | 'GetProtocolsList' | 'ListTagsForResource';
+export type FmsActionsList = 'ListAppsLists' | 'ListComplianceStatus' | 'ListMemberAccounts' | 'ListPolicies' | 'ListProtocolsLists';
+export type FmsActionsTagging = 'TagResource' | 'UntagResource';
+export type FmsActions = FmsActionsWrite | FmsActionsRead | FmsActionsList | FmsActionsTagging;

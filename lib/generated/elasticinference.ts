@@ -51,3 +51,6 @@ export class ElasticInference extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ElasticInferenceActionsWrite = 'Connect';
+export type ElasticInferenceActions = ElasticInferenceActionsWrite;

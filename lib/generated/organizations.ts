@@ -958,3 +958,9 @@ export class Organizations extends PolicyStatement {
     return this.if(`organizations:ServicePrincipal`, value, operator || 'StringLike');
   }
 }
+
+export type OrganizationsActionsWrite = 'AcceptHandshake' | 'AttachPolicy' | 'CancelHandshake' | 'CreateAccount' | 'CreateGovCloudAccount' | 'CreateOrganization' | 'CreateOrganizationalUnit' | 'CreatePolicy' | 'DeclineHandshake' | 'DeleteOrganization' | 'DeleteOrganizationalUnit' | 'DeletePolicy' | 'DeregisterDelegatedAdministrator' | 'DetachPolicy' | 'DisableAWSServiceAccess' | 'DisablePolicyType' | 'EnableAWSServiceAccess' | 'EnableAllFeatures' | 'EnablePolicyType' | 'InviteAccountToOrganization' | 'LeaveOrganization' | 'MoveAccount' | 'RegisterDelegatedAdministrator' | 'RemoveAccountFromOrganization' | 'UpdateOrganizationalUnit' | 'UpdatePolicy';
+export type OrganizationsActionsRead = 'DescribeAccount' | 'DescribeCreateAccountStatus' | 'DescribeEffectivePolicy' | 'DescribeHandshake' | 'DescribeOrganization' | 'DescribeOrganizationalUnit' | 'DescribePolicy';
+export type OrganizationsActionsList = 'ListAWSServiceAccessForOrganization' | 'ListAccounts' | 'ListAccountsForParent' | 'ListChildren' | 'ListCreateAccountStatus' | 'ListDelegatedAdministrators' | 'ListDelegatedServicesForAccount' | 'ListHandshakesForAccount' | 'ListHandshakesForOrganization' | 'ListOrganizationalUnitsForParent' | 'ListParents' | 'ListPolicies' | 'ListPoliciesForTarget' | 'ListRoots' | 'ListTagsForResource' | 'ListTargetsForPolicy';
+export type OrganizationsActionsTagging = 'TagResource' | 'UntagResource';
+export type OrganizationsActions = OrganizationsActionsWrite | OrganizationsActionsRead | OrganizationsActionsList | OrganizationsActionsTagging;

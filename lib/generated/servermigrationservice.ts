@@ -504,3 +504,8 @@ export class Sms extends PolicyStatement {
     ]
   };
 }
+
+export type SmsActionsWrite = 'CreateApp' | 'CreateReplicationJob' | 'DeleteApp' | 'DeleteAppLaunchConfiguration' | 'DeleteAppReplicationConfiguration' | 'DeleteAppValidationConfiguration' | 'DeleteReplicationJob' | 'DeleteServerCatalog' | 'DisassociateConnector' | 'GenerateChangeSet' | 'GenerateTemplate' | 'ImportAppCatalog' | 'ImportServerCatalog' | 'LaunchApp' | 'NotifyAppValidationOutput' | 'PutAppLaunchConfiguration' | 'PutAppReplicationConfiguration' | 'PutAppValidationConfiguration' | 'SendMessage' | 'StartAppReplication' | 'StartOnDemandAppReplication' | 'StartOnDemandReplicationRun' | 'StopAppReplication' | 'TerminateApp' | 'UpdateApp' | 'UpdateReplicationJob';
+export type SmsActionsRead = 'GetApp' | 'GetAppLaunchConfiguration' | 'GetAppReplicationConfiguration' | 'GetAppValidationConfiguration' | 'GetAppValidationOutput' | 'GetConnectors' | 'GetMessages' | 'GetReplicationJobs' | 'GetReplicationRuns' | 'GetServers';
+export type SmsActionsList = 'ListApps';
+export type SmsActions = SmsActionsWrite | SmsActionsRead | SmsActionsList;

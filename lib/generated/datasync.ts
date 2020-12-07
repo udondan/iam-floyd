@@ -558,3 +558,9 @@ export class Datasync extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type DatasyncActionsWrite = 'CancelTaskExecution' | 'CreateAgent' | 'CreateLocationEfs' | 'CreateLocationFsxWindows' | 'CreateLocationNfs' | 'CreateLocationObjectStorage' | 'CreateLocationS3' | 'CreateLocationSmb' | 'CreateTask' | 'DeleteAgent' | 'DeleteLocation' | 'DeleteTask' | 'StartTaskExecution' | 'TagResource' | 'UpdateAgent' | 'UpdateTask';
+export type DatasyncActionsRead = 'DescribeAgent' | 'DescribeLocationEfs' | 'DescribeLocationFsxWindows' | 'DescribeLocationNfs' | 'DescribeLocationObjectStorage' | 'DescribeLocationS3' | 'DescribeLocationSmb' | 'DescribeTask' | 'DescribeTaskExecution' | 'ListTagsForResource';
+export type DatasyncActionsList = 'ListAgents' | 'ListLocations' | 'ListTaskExecutions' | 'ListTasks';
+export type DatasyncActionsTagging = 'UntagResource';
+export type DatasyncActions = DatasyncActionsWrite | DatasyncActionsRead | DatasyncActionsList | DatasyncActionsTagging;

@@ -338,3 +338,9 @@ export class AccessAnalyzer extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type AccessAnalyzerActionsWrite = 'ApplyArchiveRule' | 'CreateAnalyzer' | 'CreateArchiveRule' | 'DeleteAnalyzer' | 'DeleteArchiveRule' | 'StartResourceScan' | 'UpdateArchiveRule' | 'UpdateFindings';
+export type AccessAnalyzerActionsRead = 'GetAnalyzedResource' | 'GetAnalyzer' | 'GetArchiveRule' | 'GetFinding' | 'ListAnalyzedResources' | 'ListFindings' | 'ListTagsForResource';
+export type AccessAnalyzerActionsList = 'ListAnalyzers' | 'ListArchiveRules';
+export type AccessAnalyzerActionsTagging = 'TagResource' | 'UntagResource';
+export type AccessAnalyzerActions = AccessAnalyzerActionsWrite | AccessAnalyzerActionsRead | AccessAnalyzerActionsList | AccessAnalyzerActionsTagging;

@@ -785,3 +785,9 @@ export class Lex extends PolicyStatement {
     return this.if(`lex:channelType`, value, operator || 'StringLike');
   }
 }
+
+export type LexActionsWrite = 'CreateBotVersion' | 'CreateIntentVersion' | 'CreateSlotTypeVersion' | 'DeleteBot' | 'DeleteBotAlias' | 'DeleteBotChannelAssociation' | 'DeleteBotVersion' | 'DeleteIntent' | 'DeleteIntentVersion' | 'DeleteSession' | 'DeleteSlotType' | 'DeleteSlotTypeVersion' | 'DeleteUtterances' | 'PostContent' | 'PostText' | 'PutBot' | 'PutBotAlias' | 'PutIntent' | 'PutSession' | 'PutSlotType' | 'StartImport';
+export type LexActionsRead = 'GetBot' | 'GetBotAlias' | 'GetBotChannelAssociation' | 'GetBuiltinIntent' | 'GetBuiltinIntents' | 'GetBuiltinSlotTypes' | 'GetExport' | 'GetImport' | 'GetIntent' | 'GetSession' | 'GetSlotType' | 'ListTagsForResource';
+export type LexActionsList = 'GetBotAliases' | 'GetBotChannelAssociations' | 'GetBotVersions' | 'GetBots' | 'GetIntentVersions' | 'GetIntents' | 'GetSlotTypeVersions' | 'GetSlotTypes' | 'GetUtterancesView';
+export type LexActionsTagging = 'TagResource' | 'UntagResource';
+export type LexActions = LexActionsWrite | LexActionsRead | LexActionsList | LexActionsTagging;

@@ -550,3 +550,9 @@ export class CodestarConnections extends PolicyStatement {
     return this.if(`codestar-connections:RepositoryName`, value, operator || 'StringLike');
   }
 }
+
+export type CodestarConnectionsActionsWrite = 'CreateConnection' | 'CreateHost' | 'DeleteConnection' | 'DeleteHost' | 'UpdateConnectionInstallation';
+export type CodestarConnectionsActionsRead = 'GetConnection' | 'GetHost' | 'GetIndividualAccessToken' | 'GetInstallationUrl' | 'PassConnection' | 'RegisterAppCode' | 'StartAppRegistrationHandshake' | 'StartOAuthHandshake' | 'UseConnection';
+export type CodestarConnectionsActionsList = 'ListConnections' | 'ListHosts' | 'ListInstallationTargets' | 'ListTagsForResource';
+export type CodestarConnectionsActionsTagging = 'TagResource' | 'UntagResource';
+export type CodestarConnectionsActions = CodestarConnectionsActionsWrite | CodestarConnectionsActionsRead | CodestarConnectionsActionsList | CodestarConnectionsActionsTagging;

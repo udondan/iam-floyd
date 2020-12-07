@@ -707,3 +707,9 @@ export class Panorama extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type PanoramaActionsWrite = 'CreateApp' | 'CreateAppDeployment' | 'CreateAppVersion' | 'CreateDataSource' | 'CreateDeploymentConfiguration' | 'CreateDevice' | 'CreateDeviceUpdate' | 'CreateInputs' | 'CreateModel' | 'CreateStreams' | 'DeleteApp' | 'DeleteAppVersion' | 'DeleteDataSource' | 'DeleteDevice' | 'DeleteModel' | 'UpdateApp' | 'UpdateAppConfiguration' | 'UpdateDataSource' | 'UpdateDevice';
+export type PanoramaActionsRead = 'DescribeApp' | 'DescribeAppDeployment' | 'DescribeAppVersion' | 'DescribeDataSource' | 'DescribeDevice' | 'DescribeDeviceUpdate' | 'DescribeModel' | 'DescribeSoftware' | 'GetDeploymentConfiguration' | 'GetInputs' | 'GetStreams' | 'GetWebSocketURL';
+export type PanoramaActionsList = 'ListAppDeploymentOperations' | 'ListAppVersions' | 'ListApps' | 'ListDataSources' | 'ListDeploymentConfigurations' | 'ListDeviceUpdates' | 'ListDevices' | 'ListModels' | 'ListTagsForResource';
+export type PanoramaActionsTagging = 'TagResource' | 'UntagResource';
+export type PanoramaActions = PanoramaActionsWrite | PanoramaActionsRead | PanoramaActionsList | PanoramaActionsTagging;

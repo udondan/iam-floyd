@@ -298,3 +298,8 @@ export class Fsx extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type FsxActionsWrite = 'CancelDataRepositoryTask' | 'DeleteBackup' | 'DeleteFileSystem' | 'UpdateFileSystem';
+export type FsxActionsTagging = 'CreateBackup' | 'CreateDataRepositoryTask' | 'CreateFileSystem' | 'CreateFileSystemFromBackup' | 'TagResource' | 'UntagResource';
+export type FsxActionsRead = 'DescribeBackups' | 'DescribeDataRepositoryTasks' | 'DescribeFileSystems' | 'ListTagsForResource';
+export type FsxActions = FsxActionsWrite | FsxActionsTagging | FsxActionsRead;

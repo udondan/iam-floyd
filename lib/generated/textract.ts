@@ -115,3 +115,7 @@ export class Textract extends PolicyStatement {
     ]
   };
 }
+
+export type TextractActionsRead = 'AnalyzeDocument' | 'DetectDocumentText' | 'GetDocumentAnalysis' | 'GetDocumentTextDetection';
+export type TextractActionsWrite = 'StartDocumentAnalysis' | 'StartDocumentTextDetection';
+export type TextractActions = TextractActionsRead | TextractActionsWrite;

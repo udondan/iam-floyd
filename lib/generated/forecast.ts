@@ -659,3 +659,9 @@ export class Forecast extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ForecastActionsWrite = 'CreateDataset' | 'CreateDatasetGroup' | 'CreateDatasetImportJob' | 'CreateForecast' | 'CreateForecastExportJob' | 'CreatePredictor' | 'CreatePredictorBacktestExportJob' | 'DeleteDataset' | 'DeleteDatasetGroup' | 'DeleteDatasetImportJob' | 'DeleteForecast' | 'DeleteForecastExportJob' | 'DeletePredictor' | 'DeletePredictorBacktestExportJob' | 'UpdateDatasetGroup';
+export type ForecastActionsRead = 'DescribeDataset' | 'DescribeDatasetGroup' | 'DescribeDatasetImportJob' | 'DescribeForecast' | 'DescribeForecastExportJob' | 'DescribePredictor' | 'DescribePredictorBacktestExportJob' | 'GetAccuracyMetrics' | 'QueryForecast';
+export type ForecastActionsList = 'ListDatasetGroups' | 'ListDatasetImportJobs' | 'ListDatasets' | 'ListForecastExportJobs' | 'ListForecasts' | 'ListPredictorBacktestExportJobs' | 'ListPredictors' | 'ListTagsForResource';
+export type ForecastActionsTagging = 'TagResource' | 'UntagResource';
+export type ForecastActions = ForecastActionsWrite | ForecastActionsRead | ForecastActionsList | ForecastActionsTagging;

@@ -229,3 +229,8 @@ export class AwsMarketplace extends PolicyStatement {
     return this.if(`aws-marketplace:PartyType`, value, operator || 'StringLike');
   }
 }
+
+export type AwsMarketplaceActionsWrite = 'AcceptAgreementApprovalRequest' | 'CancelAgreementRequest' | 'RejectAgreementApprovalRequest' | 'Subscribe' | 'Unsubscribe' | 'UpdateAgreementApprovalRequest';
+export type AwsMarketplaceActionsRead = 'DescribeAgreement' | 'GetAgreementApprovalRequest' | 'GetAgreementRequest';
+export type AwsMarketplaceActionsList = 'GetAgreementTerms' | 'ListAgreementApprovalRequests' | 'ListAgreementRequests' | 'SearchAgreements' | 'ViewSubscriptions';
+export type AwsMarketplaceActions = AwsMarketplaceActionsWrite | AwsMarketplaceActionsRead | AwsMarketplaceActionsList;

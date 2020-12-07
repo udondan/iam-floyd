@@ -36,3 +36,6 @@ export class Arsenal extends PolicyStatement {
     ]
   };
 }
+
+export type ArsenalActionsWrite = 'RegisterOnPremisesAgent';
+export type ArsenalActions = ArsenalActionsWrite;

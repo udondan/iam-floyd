@@ -906,3 +906,9 @@ export class Medialive extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type MedialiveActionsWrite = 'AcceptInputDeviceTransfer' | 'BatchDelete' | 'BatchStart' | 'BatchStop' | 'BatchUpdateSchedule' | 'CancelInputDeviceTransfer' | 'CreateChannel' | 'CreateInput' | 'CreateInputSecurityGroup' | 'CreateMultiplex' | 'CreateMultiplexProgram' | 'DeleteChannel' | 'DeleteInput' | 'DeleteInputSecurityGroup' | 'DeleteMultiplex' | 'DeleteMultiplexProgram' | 'DeleteReservation' | 'PurchaseOffering' | 'RejectInputDeviceTransfer' | 'StartChannel' | 'StartMultiplex' | 'StopChannel' | 'StopMultiplex' | 'TransferInputDevice' | 'UpdateChannel' | 'UpdateChannelClass' | 'UpdateInput' | 'UpdateInputDevice' | 'UpdateInputSecurityGroup' | 'UpdateMultiplex' | 'UpdateMultiplexProgram' | 'UpdateReservation';
+export type MedialiveActionsTagging = 'CreateTags' | 'DeleteTags';
+export type MedialiveActionsRead = 'DescribeChannel' | 'DescribeInput' | 'DescribeInputDevice' | 'DescribeInputDeviceThumbnail' | 'DescribeInputSecurityGroup' | 'DescribeMultiplex' | 'DescribeMultiplexProgram' | 'DescribeOffering' | 'DescribeReservation' | 'DescribeSchedule';
+export type MedialiveActionsList = 'ListChannels' | 'ListInputDeviceTransfers' | 'ListInputDevices' | 'ListInputSecurityGroups' | 'ListInputs' | 'ListMultiplexPrograms' | 'ListMultiplexes' | 'ListOfferings' | 'ListReservations' | 'ListTagsForResource';
+export type MedialiveActions = MedialiveActionsWrite | MedialiveActionsTagging | MedialiveActionsRead | MedialiveActionsList;

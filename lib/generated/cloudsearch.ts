@@ -466,3 +466,11 @@ export class Cloudsearch extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type CloudsearchActionsTagging = 'AddTags' | 'RemoveTags';
+export type CloudsearchActionsWrite = 'BuildSuggesters' | 'CreateDomain' | 'DefineAnalysisScheme' | 'DefineExpression' | 'DefineIndexField' | 'DefineSuggester' | 'DeleteAnalysisScheme' | 'DeleteDomain' | 'DeleteExpression' | 'DeleteIndexField' | 'DeleteSuggester' | 'IndexDocuments' | 'UpdateAvailabilityOptions' | 'UpdateDomainEndpointOptions' | 'UpdateScalingParameters' | 'document';
+export type CloudsearchActionsRead = 'DescribeAnalysisSchemes' | 'DescribeAvailabilityOptions' | 'DescribeDomainEndpointOptions' | 'DescribeExpressions' | 'DescribeIndexFields' | 'DescribeScalingParameters' | 'DescribeServiceAccessPolicies' | 'DescribeSuggesters' | 'ListTags' | 'search' | 'suggest';
+export type CloudsearchActionsList = 'DescribeDomains' | 'ListDomainNames';
+export type CloudsearchActionsPermissions management = 'UpdateServiceAccessPolicies';
+
+export type CloudsearchActions = CloudsearchActionsTagging | CloudsearchActionsWrite | CloudsearchActionsRead | CloudsearchActionsList | CloudsearchActionsPermissions management;

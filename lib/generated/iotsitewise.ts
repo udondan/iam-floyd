@@ -1016,3 +1016,11 @@ export class Iotsitewise extends PolicyStatement {
     return this.if(`iotsitewise:user`, value, operator || 'StringLike');
   }
 }
+
+export type IotsitewiseActionsWrite = 'AssociateAssets' | 'BatchAssociateProjectAssets' | 'BatchDisassociateProjectAssets' | 'BatchPutAssetPropertyValue' | 'CreateAsset' | 'CreateAssetModel' | 'CreateDashboard' | 'CreateGateway' | 'CreatePortal' | 'CreateProject' | 'DeleteAsset' | 'DeleteAssetModel' | 'DeleteDashboard' | 'DeleteGateway' | 'DeletePortal' | 'DeleteProject' | 'DisassociateAssets' | 'PutLoggingOptions' | 'UpdateAsset' | 'UpdateAssetModel' | 'UpdateAssetProperty' | 'UpdateDashboard' | 'UpdateGateway' | 'UpdateGatewayCapabilityConfiguration' | 'UpdatePortal' | 'UpdateProject';
+export type IotsitewiseActionsPermissions management = 'CreateAccessPolicy' | 'DeleteAccessPolicy' | 'DescribeAccessPolicy' | 'ListAccessPolicies' | 'UpdateAccessPolicy';
+
+export type IotsitewiseActionsRead = 'DescribeAsset' | 'DescribeAssetModel' | 'DescribeAssetProperty' | 'DescribeDashboard' | 'DescribeGateway' | 'DescribeGatewayCapabilityConfiguration' | 'DescribeLoggingOptions' | 'DescribePortal' | 'DescribeProject' | 'GetAssetPropertyAggregates' | 'GetAssetPropertyValue' | 'GetAssetPropertyValueHistory' | 'ListTagsForResource';
+export type IotsitewiseActionsList = 'ListAssetModels' | 'ListAssets' | 'ListAssociatedAssets' | 'ListDashboards' | 'ListGateways' | 'ListPortals' | 'ListProjectAssets' | 'ListProjects';
+export type IotsitewiseActionsTagging = 'TagResource' | 'UntagResource';
+export type IotsitewiseActions = IotsitewiseActionsWrite | IotsitewiseActionsPermissions management | IotsitewiseActionsRead | IotsitewiseActionsList | IotsitewiseActionsTagging;

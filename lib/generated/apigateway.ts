@@ -85,3 +85,6 @@ export class ExecuteApi extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ExecuteApiActionsWrite = 'InvalidateCache' | 'Invoke' | 'ManageConnections';
+export type ExecuteApiActions = ExecuteApiActionsWrite;

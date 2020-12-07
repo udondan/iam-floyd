@@ -78,3 +78,7 @@ export class Account extends PolicyStatement {
     return this.if(`account:TargetRegion`, value, operator || 'StringLike');
   }
 }
+
+export type AccountActionsWrite = 'DisableRegion' | 'EnableRegion';
+export type AccountActionsList = 'ListRegions';
+export type AccountActions = AccountActionsWrite | AccountActionsList;

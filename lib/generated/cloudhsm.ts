@@ -491,3 +491,9 @@ export class Cloudhsm extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type CloudhsmActionsTagging = 'AddTagsToResource' | 'RemoveTagsFromResource' | 'TagResource' | 'UntagResource';
+export type CloudhsmActionsWrite = 'CopyBackupToRegion' | 'CreateCluster' | 'CreateHapg' | 'CreateHsm' | 'CreateLunaClient' | 'DeleteBackup' | 'DeleteCluster' | 'DeleteHapg' | 'DeleteHsm' | 'DeleteLunaClient' | 'InitializeCluster' | 'ModifyHapg' | 'ModifyHsm' | 'ModifyLunaClient' | 'RestoreBackup';
+export type CloudhsmActionsRead = 'DescribeBackups' | 'DescribeClusters' | 'DescribeHapg' | 'DescribeHsm' | 'DescribeLunaClient' | 'GetConfig' | 'ListTags' | 'ListTagsForResource';
+export type CloudhsmActionsList = 'ListAvailableZones' | 'ListHapgs' | 'ListHsms' | 'ListLunaClients';
+export type CloudhsmActions = CloudhsmActionsTagging | CloudhsmActionsWrite | CloudhsmActionsRead | CloudhsmActionsList;

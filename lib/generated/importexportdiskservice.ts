@@ -105,3 +105,8 @@ export class Importexport extends PolicyStatement {
     ]
   };
 }
+
+export type ImportexportActionsWrite = 'CancelJob' | 'CreateJob' | 'UpdateJob';
+export type ImportexportActionsRead = 'GetShippingLabel' | 'GetStatus';
+export type ImportexportActionsList = 'ListJobs';
+export type ImportexportActions = ImportexportActionsWrite | ImportexportActionsRead | ImportexportActionsList;

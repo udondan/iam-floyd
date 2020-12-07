@@ -373,3 +373,7 @@ export class Cloud9 extends PolicyStatement {
     return this.if(`cloud9:UserArn`, value, operator || 'ArnLike');
   }
 }
+
+export type Cloud9ActionsWrite = 'CreateEnvironmentEC2' | 'CreateEnvironmentMembership' | 'DeleteEnvironment' | 'DeleteEnvironmentMembership' | 'TagResource' | 'UntagResource' | 'UpdateEnvironment' | 'UpdateEnvironmentMembership' | 'UpdateUserSettings';
+export type Cloud9ActionsRead = 'DescribeEnvironmentMemberships' | 'DescribeEnvironmentStatus' | 'DescribeEnvironments' | 'GetUserSettings' | 'ListEnvironments' | 'ListTagsForResource';
+export type Cloud9Actions = Cloud9ActionsWrite | Cloud9ActionsRead;

@@ -517,3 +517,9 @@ export class Cloudwatch extends PolicyStatement {
     return this.if(`cloudwatch:namespace`, value, operator || 'StringLike');
   }
 }
+
+export type CloudwatchActionsWrite = 'DeleteAlarms' | 'DeleteAnomalyDetector' | 'DeleteDashboards' | 'DeleteInsightRules' | 'DisableAlarmActions' | 'DisableInsightRules' | 'EnableAlarmActions' | 'EnableInsightRules' | 'PutAnomalyDetector' | 'PutCompositeAlarm' | 'PutDashboard' | 'PutInsightRule' | 'PutMetricAlarm' | 'PutMetricData' | 'SetAlarmState';
+export type CloudwatchActionsRead = 'DescribeAlarmHistory' | 'DescribeAlarms' | 'DescribeAlarmsForMetric' | 'DescribeAnomalyDetectors' | 'DescribeInsightRules' | 'GetDashboard' | 'GetInsightRuleReport' | 'GetMetricData' | 'GetMetricStatistics' | 'GetMetricWidgetImage';
+export type CloudwatchActionsList = 'ListDashboards' | 'ListMetrics' | 'ListTagsForResource';
+export type CloudwatchActionsTagging = 'TagResource' | 'UntagResource';
+export type CloudwatchActions = CloudwatchActionsWrite | CloudwatchActionsRead | CloudwatchActionsList | CloudwatchActionsTagging;

@@ -388,3 +388,11 @@ export class Mediastore extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type MediastoreActionsWrite = 'CreateContainer' | 'DeleteContainer' | 'DeleteCorsPolicy' | 'DeleteLifecyclePolicy' | 'DeleteMetricPolicy' | 'DeleteObject' | 'PutCorsPolicy' | 'PutLifecyclePolicy' | 'PutMetricPolicy' | 'PutObject' | 'StartAccessLogging' | 'StopAccessLogging';
+export type MediastoreActionsPermissions management = 'DeleteContainerPolicy' | 'PutContainerPolicy';
+
+export type MediastoreActionsList = 'DescribeContainer' | 'DescribeObject' | 'ListContainers' | 'ListItems';
+export type MediastoreActionsRead = 'GetContainerPolicy' | 'GetCorsPolicy' | 'GetLifecyclePolicy' | 'GetMetricPolicy' | 'GetObject' | 'ListTagsForResource';
+export type MediastoreActionsTagging = 'TagResource' | 'UntagResource';
+export type MediastoreActions = MediastoreActionsWrite | MediastoreActionsPermissions management | MediastoreActionsList | MediastoreActionsRead | MediastoreActionsTagging;

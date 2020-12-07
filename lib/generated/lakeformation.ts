@@ -211,3 +211,10 @@ export class Lakeformation extends PolicyStatement {
     ]
   };
 }
+
+export type LakeformationActionsPermissions management = 'BatchGrantPermissions' | 'BatchRevokePermissions' | 'GrantPermissions' | 'PutDataLakeSettings' | 'RevokePermissions';
+
+export type LakeformationActionsWrite = 'DeregisterResource' | 'GetDataAccess' | 'RegisterResource' | 'UpdateResource';
+export type LakeformationActionsRead = 'DescribeResource' | 'GetDataLakeSettings' | 'GetEffectivePermissionsForPath';
+export type LakeformationActionsList = 'ListPermissions' | 'ListResources';
+export type LakeformationActions = LakeformationActionsPermissions management | LakeformationActionsWrite | LakeformationActionsRead | LakeformationActionsList;

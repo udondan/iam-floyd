@@ -281,3 +281,8 @@ export class Health extends PolicyStatement {
     return this.if(`health:service`, value, operator || 'StringLike');
   }
 }
+
+export type HealthActionsRead = 'DescribeAffectedAccountsForOrganization' | 'DescribeAffectedEntities' | 'DescribeAffectedEntitiesForOrganization' | 'DescribeEntityAggregates' | 'DescribeEventAggregates' | 'DescribeEventDetails' | 'DescribeEventDetailsForOrganization' | 'DescribeEventTypes' | 'DescribeEvents' | 'DescribeEventsForOrganization';
+export type HealthActionsPermissions management = 'DescribeHealthServiceStatusForOrganization' | 'DisableHealthServiceAccessForOrganization' | 'EnableHealthServiceAccessForOrganization';
+
+export type HealthActions = HealthActionsRead | HealthActionsPermissions management;

@@ -77,3 +77,7 @@ export class Groundtruthlabeling extends PolicyStatement {
     ]
   };
 }
+
+export type GroundtruthlabelingActionsRead = 'DescribeConsoleJob' | 'ListDatasetObjects';
+export type GroundtruthlabelingActionsWrite = 'RunFilterOrSampleDatasetJob' | 'RunGenerateManifestByCrawlingJob';
+export type GroundtruthlabelingActions = GroundtruthlabelingActionsRead | GroundtruthlabelingActionsWrite;

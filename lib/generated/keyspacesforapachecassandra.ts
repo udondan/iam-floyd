@@ -181,3 +181,8 @@ export class Cassandra extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type CassandraActionsWrite = 'Alter' | 'Create' | 'Drop' | 'Modify' | 'Restore';
+export type CassandraActionsRead = 'Select';
+export type CassandraActionsTagging = 'TagResource' | 'UntagResource';
+export type CassandraActions = CassandraActionsWrite | CassandraActionsRead | CassandraActionsTagging;

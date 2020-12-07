@@ -651,3 +651,9 @@ export class Codepipeline extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type CodepipelineActionsWrite = 'AcknowledgeJob' | 'AcknowledgeThirdPartyJob' | 'DeleteCustomActionType' | 'DeletePipeline' | 'DeleteWebhook' | 'DeregisterWebhookWithThirdParty' | 'DisableStageTransition' | 'EnableStageTransition' | 'PollForJobs' | 'PollForThirdPartyJobs' | 'PutActionRevision' | 'PutApprovalResult' | 'PutJobFailureResult' | 'PutJobSuccessResult' | 'PutThirdPartyJobFailureResult' | 'PutThirdPartyJobSuccessResult' | 'RegisterWebhookWithThirdParty' | 'RetryStageExecution' | 'StartPipelineExecution' | 'StopPipelineExecution' | 'UpdatePipeline';
+export type CodepipelineActionsTagging = 'CreateCustomActionType' | 'CreatePipeline' | 'PutWebhook' | 'TagResource' | 'UntagResource';
+export type CodepipelineActionsRead = 'GetJobDetails' | 'GetPipeline' | 'GetPipelineExecution' | 'GetPipelineState' | 'GetThirdPartyJobDetails' | 'ListActionExecutions' | 'ListActionTypes' | 'ListTagsForResource';
+export type CodepipelineActionsList = 'ListPipelineExecutions' | 'ListPipelines' | 'ListWebhooks';
+export type CodepipelineActions = CodepipelineActionsWrite | CodepipelineActionsTagging | CodepipelineActionsRead | CodepipelineActionsList;

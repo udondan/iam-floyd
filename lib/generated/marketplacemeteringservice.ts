@@ -75,3 +75,6 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
     ]
   };
 }
+
+export type AwsMarketplaceMeteringServiceActionsWrite = 'BatchMeterUsage' | 'MeterUsage' | 'RegisterUsage' | 'ResolveCustomer';
+export type AwsMarketplaceMeteringServiceActions = AwsMarketplaceMeteringServiceActionsWrite;

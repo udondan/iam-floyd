@@ -90,3 +90,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
     ]
   };
 }
+
+export type AwsMarketplaceManagementActionsWrite = 'uploadFiles';
+export type AwsMarketplaceManagementActionsList = 'viewMarketing' | 'viewReports' | 'viewSettings' | 'viewSupport';
+export type AwsMarketplaceManagementActions = AwsMarketplaceManagementActionsWrite | AwsMarketplaceManagementActionsList;

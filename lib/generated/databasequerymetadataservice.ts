@@ -142,3 +142,8 @@ export class Dbqms extends PolicyStatement {
     ]
   };
 }
+
+export type DbqmsActionsWrite = 'CreateFavoriteQuery' | 'CreateQueryHistory' | 'DeleteFavoriteQueries' | 'DeleteQueryHistory' | 'UpdateFavoriteQuery' | 'UpdateQueryHistory';
+export type DbqmsActionsList = 'DescribeFavoriteQueries' | 'DescribeQueryHistory';
+export type DbqmsActionsRead = 'GetQueryString';
+export type DbqmsActions = DbqmsActionsWrite | DbqmsActionsList | DbqmsActionsRead;

@@ -839,3 +839,9 @@ export class Backup extends PolicyStatement {
     return this.if(`backup:CopyTargets`, value, operator || 'StringLike');
   }
 }
+
+export type BackupActionsWrite = 'CopyFromBackupVault' | 'CopyIntoBackupVault' | 'CreateBackupPlan' | 'CreateBackupSelection' | 'CreateBackupVault' | 'DeleteBackupPlan' | 'DeleteBackupSelection' | 'DeleteBackupVault' | 'DeleteBackupVaultAccessPolicy' | 'DeleteBackupVaultNotifications' | 'DeleteRecoveryPoint' | 'PutBackupVaultAccessPolicy' | 'PutBackupVaultNotifications' | 'StartBackupJob' | 'StartCopyJob' | 'StartRestoreJob' | 'StopBackupJob' | 'UpdateBackupPlan' | 'UpdateGlobalSettings' | 'UpdateRecoveryPointLifecycle' | 'UpdateRegionSettings';
+export type BackupActionsRead = 'DescribeBackupJob' | 'DescribeBackupVault' | 'DescribeCopyJob' | 'DescribeGlobalSettings' | 'DescribeProtectedResource' | 'DescribeRecoveryPoint' | 'DescribeRegionSettings' | 'DescribeRestoreJob' | 'ExportBackupPlanTemplate' | 'GetBackupPlan' | 'GetBackupPlanFromJSON' | 'GetBackupPlanFromTemplate' | 'GetBackupSelection' | 'GetBackupVaultAccessPolicy' | 'GetBackupVaultNotifications' | 'GetRecoveryPointRestoreMetadata' | 'GetSupportedResourceTypes';
+export type BackupActionsList = 'ListBackupJobs' | 'ListBackupPlanTemplates' | 'ListBackupPlanVersions' | 'ListBackupPlans' | 'ListBackupSelections' | 'ListBackupVaults' | 'ListCopyJobs' | 'ListProtectedResources' | 'ListRecoveryPointsByBackupVault' | 'ListRecoveryPointsByResource' | 'ListRestoreJobs' | 'ListTags';
+export type BackupActionsTagging = 'TagResource' | 'UntagResource';
+export type BackupActions = BackupActionsWrite | BackupActionsRead | BackupActionsList | BackupActionsTagging;

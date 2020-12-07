@@ -261,3 +261,8 @@ export class OpsworksCm extends PolicyStatement {
     ]
   };
 }
+
+export type OpsworksCmActionsWrite = 'AssociateNode' | 'CreateBackup' | 'CreateServer' | 'DeleteBackup' | 'DeleteServer' | 'DisassociateNode' | 'RestoreServer' | 'StartMaintenance' | 'UpdateServer' | 'UpdateServerEngineAttributes';
+export type OpsworksCmActionsList = 'DescribeAccountAttributes' | 'DescribeBackups' | 'DescribeEvents' | 'DescribeNodeAssociationStatus' | 'DescribeServers' | 'ListTagsForResource';
+export type OpsworksCmActionsTagging = 'TagResource' | 'UntagResource';
+export type OpsworksCmActions = OpsworksCmActionsWrite | OpsworksCmActionsList | OpsworksCmActionsTagging;

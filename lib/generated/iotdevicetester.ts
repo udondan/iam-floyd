@@ -90,3 +90,7 @@ export class IotDeviceTester extends PolicyStatement {
     ]
   };
 }
+
+export type IotDeviceTesterActionsRead = 'CheckVersion' | 'DownloadTestSuite' | 'LatestIdt' | 'SupportedVersion';
+export type IotDeviceTesterActionsWrite = 'SendMetrics';
+export type IotDeviceTesterActions = IotDeviceTesterActionsRead | IotDeviceTesterActionsWrite;

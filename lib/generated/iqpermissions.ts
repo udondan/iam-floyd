@@ -36,3 +36,6 @@ export class IqPermission extends PolicyStatement {
     ]
   };
 }
+
+export type IqPermissionActionsWrite = 'ApproveAccessGrant';
+export type IqPermissionActions = IqPermissionActionsWrite;

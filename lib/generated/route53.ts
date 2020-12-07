@@ -906,3 +906,9 @@ export class Route53 extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type Route53ActionsWrite = 'AssociateVPCWithHostedZone' | 'ChangeResourceRecordSets' | 'CreateHealthCheck' | 'CreateHostedZone' | 'CreateQueryLoggingConfig' | 'CreateReusableDelegationSet' | 'CreateTrafficPolicy' | 'CreateTrafficPolicyInstance' | 'CreateTrafficPolicyVersion' | 'CreateVPCAssociationAuthorization' | 'DeleteHealthCheck' | 'DeleteHostedZone' | 'DeleteQueryLoggingConfig' | 'DeleteReusableDelegationSet' | 'DeleteTrafficPolicy' | 'DeleteTrafficPolicyInstance' | 'DeleteVPCAssociationAuthorization' | 'DisassociateVPCFromHostedZone' | 'UpdateHealthCheck' | 'UpdateHostedZoneComment' | 'UpdateTrafficPolicyComment' | 'UpdateTrafficPolicyInstance';
+export type Route53ActionsTagging = 'ChangeTagsForResource';
+export type Route53ActionsRead = 'GetAccountLimit' | 'GetHealthCheck' | 'GetHostedZoneLimit' | 'GetQueryLoggingConfig' | 'GetReusableDelegationSetLimit' | 'GetTrafficPolicy' | 'GetTrafficPolicyInstance' | 'GetTrafficPolicyInstanceCount' | 'TestDNSAnswer';
+export type Route53ActionsList = 'GetChange' | 'GetCheckerIpRanges' | 'GetGeoLocation' | 'GetHealthCheckCount' | 'GetHealthCheckLastFailureReason' | 'GetHealthCheckStatus' | 'GetHostedZone' | 'GetHostedZoneCount' | 'GetReusableDelegationSet' | 'ListGeoLocations' | 'ListHealthChecks' | 'ListHostedZones' | 'ListHostedZonesByName' | 'ListHostedZonesByVPC' | 'ListQueryLoggingConfigs' | 'ListResourceRecordSets' | 'ListReusableDelegationSets' | 'ListTagsForResource' | 'ListTagsForResources' | 'ListTrafficPolicies' | 'ListTrafficPolicyInstances' | 'ListTrafficPolicyInstancesByHostedZone' | 'ListTrafficPolicyInstancesByPolicy' | 'ListTrafficPolicyVersions' | 'ListVPCAssociationAuthorizations';
+export type Route53Actions = Route53ActionsWrite | Route53ActionsTagging | Route53ActionsRead | Route53ActionsList;

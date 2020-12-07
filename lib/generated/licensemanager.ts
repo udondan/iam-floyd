@@ -631,3 +631,11 @@ export class LicenseManager extends PolicyStatement {
     return this.if(`license-manager:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }
+
+export type LicenseManagerActionsWrite = 'AcceptGrant' | 'CheckInLicense' | 'CheckoutBorrowLicense' | 'CheckoutLicense' | 'CreateGrant' | 'CreateGrantVersion' | 'CreateLicense' | 'CreateLicenseVersion' | 'CreateToken' | 'DeleteGrant' | 'DeleteLicense' | 'DeleteLicenseConfiguration' | 'DeleteToken' | 'ExtendLicenseConsumption' | 'RejectGrant' | 'UpdateLicenseConfiguration' | 'UpdateLicenseSpecificationsForResource';
+export type LicenseManagerActionsTagging = 'CreateLicenseConfiguration' | 'TagResource' | 'UntagResource';
+export type LicenseManagerActionsRead = 'GetAccessToken' | 'GetGrant' | 'GetLicense' | 'GetLicenseUsage';
+export type LicenseManagerActionsList = 'GetLicenseConfiguration' | 'GetServiceSettings' | 'ListAssociationsForLicenseConfiguration' | 'ListDistributedGrants' | 'ListFailuresForLicenseConfigurationOperations' | 'ListLicenseConfigurations' | 'ListLicenseSpecificationsForResource' | 'ListLicenseVersions' | 'ListLicenses' | 'ListReceivedGrants' | 'ListReceivedLicensess' | 'ListResourceInventory' | 'ListTagsForResource' | 'ListTokens' | 'ListUsageForLicenseConfiguration';
+export type LicenseManagerActionsPermissions management = 'UpdateServiceSettings';
+
+export type LicenseManagerActions = LicenseManagerActionsWrite | LicenseManagerActionsTagging | LicenseManagerActionsRead | LicenseManagerActionsList | LicenseManagerActionsPermissions management;

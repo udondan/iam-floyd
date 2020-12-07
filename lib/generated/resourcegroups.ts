@@ -218,3 +218,9 @@ export class ResourceGroups extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ResourceGroupsActionsWrite = 'CreateGroup' | 'DeleteGroup' | 'UpdateGroup' | 'UpdateGroupQuery';
+export type ResourceGroupsActionsRead = 'GetGroup' | 'GetGroupQuery' | 'GetTags';
+export type ResourceGroupsActionsList = 'ListGroupResources' | 'ListGroups' | 'SearchResources';
+export type ResourceGroupsActionsTagging = 'Tag' | 'Untag';
+export type ResourceGroupsActions = ResourceGroupsActionsWrite | ResourceGroupsActionsRead | ResourceGroupsActionsList | ResourceGroupsActionsTagging;

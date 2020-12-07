@@ -309,3 +309,8 @@ export class Shield extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ShieldActionsWrite = 'AssociateDRTLogBucket' | 'AssociateDRTRole' | 'CreateProtection' | 'CreateSubscription' | 'DeleteProtection' | 'DeleteSubscription' | 'DisassociateDRTLogBucket' | 'DisassociateDRTRole' | 'UpdateEmergencyContactSettings' | 'UpdateSubscription';
+export type ShieldActionsRead = 'DescribeAttack' | 'DescribeDRTAccess' | 'DescribeEmergencyContactSettings' | 'DescribeProtection' | 'DescribeSubscription' | 'GetSubscriptionState';
+export type ShieldActionsList = 'ListAttacks' | 'ListProtections';
+export type ShieldActions = ShieldActionsWrite | ShieldActionsRead | ShieldActionsList;

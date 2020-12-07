@@ -77,3 +77,7 @@ export class Identitystore extends PolicyStatement {
     ]
   };
 }
+
+export type IdentitystoreActionsRead = 'DescribeGroup' | 'DescribeUser';
+export type IdentitystoreActionsList = 'ListGroups' | 'ListUsers';
+export type IdentitystoreActions = IdentitystoreActionsRead | IdentitystoreActionsList;

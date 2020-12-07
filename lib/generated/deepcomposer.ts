@@ -343,3 +343,9 @@ export class Deepcomposer extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type DeepcomposerActionsWrite = 'AssociateCoupon' | 'CreateAudio' | 'CreateComposition' | 'CreateModel' | 'DeleteComposition' | 'DeleteModel' | 'UpdateComposition' | 'UpdateModel';
+export type DeepcomposerActionsRead = 'GetComposition' | 'GetModel' | 'GetSampleModel';
+export type DeepcomposerActionsList = 'ListCompositions' | 'ListModels' | 'ListSampleModels' | 'ListTagsForResource' | 'ListTrainingTopics';
+export type DeepcomposerActionsTagging = 'TagResource' | 'UntagResource';
+export type DeepcomposerActions = DeepcomposerActionsWrite | DeepcomposerActionsRead | DeepcomposerActionsList | DeepcomposerActionsTagging;

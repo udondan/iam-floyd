@@ -553,3 +553,9 @@ export class Networkmanager extends PolicyStatement {
     return this.if(`networkmanager:tgwArn`, value, operator || 'StringLike');
   }
 }
+
+export type NetworkmanagerActionsWrite = 'AssociateCustomerGateway' | 'AssociateLink' | 'CreateDevice' | 'CreateGlobalNetwork' | 'CreateLink' | 'CreateSite' | 'DeleteDevice' | 'DeleteGlobalNetwork' | 'DeleteLink' | 'DeleteSite' | 'DeregisterTransitGateway' | 'DisassociateCustomerGateway' | 'DisassociateLink' | 'RegisterTransitGateway' | 'UpdateDevice' | 'UpdateGlobalNetwork' | 'UpdateLink' | 'UpdateSite';
+export type NetworkmanagerActionsList = 'DescribeGlobalNetworks' | 'GetCustomerGatewayAssociations' | 'GetDevices' | 'GetLinkAssociations' | 'GetLinks' | 'GetSites' | 'GetTransitGatewayRegistrations';
+export type NetworkmanagerActionsRead = 'ListTagsForResource';
+export type NetworkmanagerActionsTagging = 'TagResource' | 'UntagResource';
+export type NetworkmanagerActions = NetworkmanagerActionsWrite | NetworkmanagerActionsList | NetworkmanagerActionsRead | NetworkmanagerActionsTagging;

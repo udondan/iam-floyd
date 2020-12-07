@@ -595,3 +595,9 @@ export class Iotanalytics extends PolicyStatement {
     return this.if(`iotanalytics:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }
+
+export type IotanalyticsActionsWrite = 'BatchPutMessage' | 'CancelPipelineReprocessing' | 'CreateChannel' | 'CreateDataset' | 'CreateDatasetContent' | 'CreateDatastore' | 'CreatePipeline' | 'DeleteChannel' | 'DeleteDataset' | 'DeleteDatasetContent' | 'DeleteDatastore' | 'DeletePipeline' | 'PutLoggingOptions' | 'StartPipelineReprocessing' | 'UpdateChannel' | 'UpdateDataset' | 'UpdateDatastore' | 'UpdatePipeline';
+export type IotanalyticsActionsRead = 'DescribeChannel' | 'DescribeDataset' | 'DescribeDatastore' | 'DescribeLoggingOptions' | 'DescribePipeline' | 'GetDatasetContent' | 'ListTagsForResource' | 'RunPipelineActivity' | 'SampleChannelData';
+export type IotanalyticsActionsList = 'ListChannels' | 'ListDatasets' | 'ListDatastores' | 'ListPipelines';
+export type IotanalyticsActionsTagging = 'TagResource' | 'UntagResource';
+export type IotanalyticsActions = IotanalyticsActionsWrite | IotanalyticsActionsRead | IotanalyticsActionsList | IotanalyticsActionsTagging;

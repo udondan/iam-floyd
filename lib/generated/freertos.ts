@@ -196,3 +196,8 @@ export class Freertos extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type FreertosActionsWrite = 'CreateSoftwareConfiguration' | 'DeleteSoftwareConfiguration' | 'UpdateSoftwareConfiguration';
+export type FreertosActionsRead = 'DescribeHardwarePlatform' | 'DescribeSoftwareConfiguration' | 'GetSoftwareURL' | 'GetSoftwareURLForConfiguration';
+export type FreertosActionsList = 'ListFreeRTOSVersions' | 'ListHardwarePlatforms' | 'ListHardwareVendors' | 'ListSoftwareConfigurations';
+export type FreertosActions = FreertosActionsWrite | FreertosActionsRead | FreertosActionsList;

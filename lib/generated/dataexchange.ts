@@ -450,3 +450,9 @@ export class Dataexchange extends PolicyStatement {
     return this.if(`dataexchange:JobType`, value, operator || 'StringLike');
   }
 }
+
+export type DataexchangeActionsWrite = 'CancelJob' | 'CreateAsset' | 'CreateDataSet' | 'CreateJob' | 'CreateRevision' | 'DeleteAsset' | 'DeleteDataSet' | 'DeleteRevision' | 'GetJob' | 'StartJob' | 'UpdateAsset' | 'UpdateDataSet' | 'UpdateRevision';
+export type DataexchangeActionsRead = 'GetAsset' | 'GetDataSet' | 'GetRevision' | 'ListTagsForResource';
+export type DataexchangeActionsList = 'ListDataSetRevisions' | 'ListDataSets' | 'ListJobs' | 'ListRevisionAssets';
+export type DataexchangeActionsTagging = 'TagResource' | 'UntagResource';
+export type DataexchangeActions = DataexchangeActionsWrite | DataexchangeActionsRead | DataexchangeActionsList | DataexchangeActionsTagging;

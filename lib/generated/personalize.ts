@@ -855,3 +855,8 @@ export class Personalize extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type PersonalizeActionsWrite = 'CreateBatchInferenceJob' | 'CreateCampaign' | 'CreateDataset' | 'CreateDatasetGroup' | 'CreateDatasetImportJob' | 'CreateEventTracker' | 'CreateFilter' | 'CreateSchema' | 'CreateSolution' | 'CreateSolutionVersion' | 'DeleteCampaign' | 'DeleteDataset' | 'DeleteDatasetGroup' | 'DeleteEventTracker' | 'DeleteFilter' | 'DeleteSchema' | 'DeleteSolution' | 'PutEvents' | 'PutItems' | 'PutUsers' | 'UpdateCampaign';
+export type PersonalizeActionsRead = 'DescribeAlgorithm' | 'DescribeBatchInferenceJob' | 'DescribeCampaign' | 'DescribeDataset' | 'DescribeDatasetGroup' | 'DescribeDatasetImportJob' | 'DescribeEventTracker' | 'DescribeFeatureTransformation' | 'DescribeFilter' | 'DescribeRecipe' | 'DescribeSchema' | 'DescribeSolution' | 'DescribeSolutionVersion' | 'GetPersonalizedRanking' | 'GetRecommendations' | 'GetSolutionMetrics';
+export type PersonalizeActionsList = 'ListBatchInferenceJobs' | 'ListCampaigns' | 'ListDatasetGroups' | 'ListDatasetImportJobs' | 'ListDatasets' | 'ListEventTrackers' | 'ListFilters' | 'ListRecipes' | 'ListSchemas' | 'ListSolutionVersions' | 'ListSolutions';
+export type PersonalizeActions = PersonalizeActionsWrite | PersonalizeActionsRead | PersonalizeActionsList;

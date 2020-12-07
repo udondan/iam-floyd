@@ -613,3 +613,11 @@ export class Codeartifact extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type CodeartifactActionsWrite = 'AssociateExternalConnection' | 'AssociateWithDownstreamRepository' | 'CopyPackageVersions' | 'CreateDomain' | 'CreateRepository' | 'DeleteDomain' | 'DeletePackageVersions' | 'DeleteRepository' | 'DisassociateExternalConnection' | 'DisposePackageVersions' | 'PublishPackageVersion' | 'PutDomainPermissionsPolicy' | 'PutPackageMetadata' | 'PutRepositoryPermissionsPolicy' | 'UpdatePackageVersionsStatus' | 'UpdateRepository';
+export type CodeartifactActionsPermissions management = 'DeleteDomainPermissionsPolicy' | 'DeleteRepositoryPermissionsPolicy';
+
+export type CodeartifactActionsRead = 'DescribeDomain' | 'DescribePackageVersion' | 'DescribeRepository' | 'GetAuthorizationToken' | 'GetDomainPermissionsPolicy' | 'GetPackageVersionAsset' | 'GetPackageVersionReadme' | 'GetRepositoryEndpoint' | 'GetRepositoryPermissionsPolicy' | 'ReadFromRepository';
+export type CodeartifactActionsList = 'ListDomains' | 'ListPackageVersionAssets' | 'ListPackageVersionDependencies' | 'ListPackageVersions' | 'ListPackages' | 'ListRepositories' | 'ListRepositoriesInDomain' | 'ListTagsForResource';
+export type CodeartifactActionsTagging = 'TagResource' | 'UntagResource';
+export type CodeartifactActions = CodeartifactActionsWrite | CodeartifactActionsPermissions management | CodeartifactActionsRead | CodeartifactActionsList | CodeartifactActionsTagging;

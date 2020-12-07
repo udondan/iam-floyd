@@ -144,3 +144,8 @@ export class RedshiftData extends PolicyStatement {
     ]
   };
 }
+
+export type RedshiftDataActionsWrite = 'CancelStatement' | 'ExecuteStatement';
+export type RedshiftDataActionsRead = 'DescribeStatement' | 'DescribeTable' | 'GetStatementResult';
+export type RedshiftDataActionsList = 'ListDatabases' | 'ListSchemas' | 'ListStatements' | 'ListTables';
+export type RedshiftDataActions = RedshiftDataActionsWrite | RedshiftDataActionsRead | RedshiftDataActionsList;

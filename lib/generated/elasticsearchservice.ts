@@ -529,3 +529,9 @@ export class Es extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type EsActionsWrite = 'AcceptInboundCrossClusterSearchConnection' | 'CreateElasticsearchDomain' | 'CreateElasticsearchServiceRole' | 'CreateOutboundCrossClusterSearchConnection' | 'DeleteElasticsearchDomain' | 'DeleteElasticsearchServiceRole' | 'DeleteInboundCrossClusterSearchConnection' | 'DeleteOutboundCrossClusterSearchConnection' | 'ESHttpDelete' | 'ESHttpPatch' | 'ESHttpPost' | 'ESHttpPut' | 'PurchaseReservedElasticsearchInstanceOffering' | 'RejectInboundCrossClusterSearchConnection' | 'UpdateElasticsearchDomainConfig' | 'UpgradeElasticsearchDomain';
+export type EsActionsTagging = 'AddTags' | 'RemoveTags';
+export type EsActionsRead = 'DescribeElasticsearchDomain' | 'DescribeElasticsearchDomainConfig' | 'ESCrossClusterGet' | 'ESHttpGet' | 'ESHttpHead' | 'GetUpgradeHistory' | 'GetUpgradeStatus' | 'ListTags';
+export type EsActionsList = 'DescribeElasticsearchDomains' | 'DescribeElasticsearchInstanceTypeLimits' | 'DescribeInboundCrossClusterSearchConnections' | 'DescribeOutboundCrossClusterSearchConnections' | 'DescribeReservedElasticsearchInstanceOfferings' | 'DescribeReservedElasticsearchInstances' | 'GetCompatibleElasticsearchVersions' | 'ListDomainNames' | 'ListElasticsearchInstanceTypeDetails' | 'ListElasticsearchInstanceTypes' | 'ListElasticsearchVersions';
+export type EsActions = EsActionsWrite | EsActionsTagging | EsActionsRead | EsActionsList;

@@ -113,3 +113,7 @@ export class Activate extends PolicyStatement {
     ]
   };
 }
+
+export type ActivateActionsWrite = 'CreateForm' | 'PutMemberInfo';
+export type ActivateActionsRead = 'GetAccountContact' | 'GetContentInfo' | 'GetCosts' | 'GetCredits' | 'GetMemberInfo' | 'GetProgram';
+export type ActivateActions = ActivateActionsWrite | ActivateActionsRead;

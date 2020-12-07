@@ -67,3 +67,7 @@ export class ResourceExplorer extends PolicyStatement {
     ]
   };
 }
+
+export type ResourceExplorerActionsList = 'ListResourceTypes' | 'ListResources';
+export type ResourceExplorerActionsRead = 'ListTags';
+export type ResourceExplorerActions = ResourceExplorerActionsList | ResourceExplorerActionsRead;

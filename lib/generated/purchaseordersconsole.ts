@@ -51,3 +51,7 @@ export class PurchaseOrders extends PolicyStatement {
     ]
   };
 }
+
+export type PurchaseOrdersActionsWrite = 'ModifyPurchaseOrders';
+export type PurchaseOrdersActionsRead = 'ViewPurchaseOrders';
+export type PurchaseOrdersActions = PurchaseOrdersActionsWrite | PurchaseOrdersActionsRead;

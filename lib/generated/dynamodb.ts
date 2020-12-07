@@ -1093,3 +1093,9 @@ export class Dynamodb extends PolicyStatement {
     return this.if(`dynamodb:Select`, value, operator || 'StringLike');
   }
 }
+
+export type DynamodbActionsRead = 'BatchGetItem' | 'ConditionCheckItem' | 'DescribeBackup' | 'DescribeContinuousBackups' | 'DescribeContributorInsights' | 'DescribeExport' | 'DescribeGlobalTable' | 'DescribeGlobalTableSettings' | 'DescribeLimits' | 'DescribeReservedCapacity' | 'DescribeReservedCapacityOfferings' | 'DescribeStream' | 'DescribeTable' | 'DescribeTableReplicaAutoScaling' | 'DescribeTimeToLive' | 'GetItem' | 'GetRecords' | 'GetShardIterator' | 'ListStreams' | 'ListTagsOfResource' | 'PartiQLSelect' | 'Query' | 'Scan';
+export type DynamodbActionsWrite = 'BatchWriteItem' | 'CreateBackup' | 'CreateGlobalTable' | 'CreateTable' | 'CreateTableReplica' | 'DeleteBackup' | 'DeleteItem' | 'DeleteTable' | 'DeleteTableReplica' | 'ExportTableToPointInTime' | 'PartiQLDelete' | 'PartiQLInsert' | 'PartiQLUpdate' | 'PurchaseReservedCapacityOfferings' | 'PutItem' | 'RestoreTableFromBackup' | 'RestoreTableToPointInTime' | 'UpdateContinuousBackups' | 'UpdateContributorInsights' | 'UpdateGlobalTable' | 'UpdateGlobalTableSettings' | 'UpdateItem' | 'UpdateTable' | 'UpdateTableReplicaAutoScaling' | 'UpdateTimeToLive';
+export type DynamodbActionsList = 'ListBackups' | 'ListContributorInsights' | 'ListExports' | 'ListGlobalTables' | 'ListTables';
+export type DynamodbActionsTagging = 'TagResource' | 'UntagResource';
+export type DynamodbActions = DynamodbActionsRead | DynamodbActionsWrite | DynamodbActionsList | DynamodbActionsTagging;

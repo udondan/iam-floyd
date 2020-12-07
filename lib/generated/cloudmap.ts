@@ -484,3 +484,9 @@ export class Servicediscovery extends PolicyStatement {
     return this.if(`servicediscovery:ServiceName`, value, operator || 'StringLike');
   }
 }
+
+export type ServicediscoveryActionsWrite = 'CreateHttpNamespace' | 'CreatePrivateDnsNamespace' | 'CreatePublicDnsNamespace' | 'CreateService' | 'DeleteNamespace' | 'DeleteService' | 'DeregisterInstance' | 'RegisterInstance' | 'UpdateInstanceCustomHealthStatus' | 'UpdateService';
+export type ServicediscoveryActionsRead = 'DiscoverInstances' | 'GetInstance' | 'GetInstancesHealthStatus' | 'GetNamespace' | 'GetOperation' | 'GetService';
+export type ServicediscoveryActionsList = 'ListInstances' | 'ListNamespaces' | 'ListOperations' | 'ListServices' | 'ListTagsForResource';
+export type ServicediscoveryActionsTagging = 'TagResource' | 'UntagResource';
+export type ServicediscoveryActions = ServicediscoveryActionsWrite | ServicediscoveryActionsRead | ServicediscoveryActionsList | ServicediscoveryActionsTagging;

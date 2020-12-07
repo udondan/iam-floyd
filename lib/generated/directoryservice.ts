@@ -931,3 +931,9 @@ export class Ds extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type DsActionsWrite = 'AcceptSharedDirectory' | 'AddIpRoutes' | 'AuthorizeApplication' | 'CancelSchemaExtension' | 'CreateAlias' | 'CreateComputer' | 'CreateConditionalForwarder' | 'CreateLogSubscription' | 'CreateSnapshot' | 'CreateTrust' | 'DeleteConditionalForwarder' | 'DeleteDirectory' | 'DeleteLogSubscription' | 'DeleteSnapshot' | 'DeleteTrust' | 'DeregisterCertificate' | 'DeregisterEventTopic' | 'DisableLDAPS' | 'DisableRadius' | 'DisableSso' | 'EnableLDAPS' | 'EnableRadius' | 'EnableSso' | 'RegisterCertificate' | 'RegisterEventTopic' | 'RejectSharedDirectory' | 'RemoveIpRoutes' | 'ResetUserPassword' | 'RestoreFromSnapshot' | 'ShareDirectory' | 'StartSchemaExtension' | 'UnauthorizeApplication' | 'UnshareDirectory' | 'UpdateConditionalForwarder' | 'UpdateNumberOfDomainControllers' | 'UpdateRadius' | 'UpdateTrust';
+export type DsActionsTagging = 'AddTagsToResource' | 'ConnectDirectory' | 'CreateDirectory' | 'CreateIdentityPoolDirectory' | 'CreateMicrosoftAD' | 'RemoveTagsFromResource';
+export type DsActionsRead = 'CheckAlias' | 'DescribeCertificate' | 'DescribeConditionalForwarders' | 'DescribeDomainControllers' | 'DescribeEventTopics' | 'DescribeLDAPSSettings' | 'DescribeSharedDirectories' | 'DescribeSnapshots' | 'DescribeTrusts' | 'GetAuthorizedApplicationDetails' | 'GetDirectoryLimits' | 'GetSnapshotLimits' | 'ListAuthorizedApplications' | 'ListIpRoutes' | 'ListLogSubscriptions' | 'ListTagsForResource' | 'VerifyTrust';
+export type DsActionsList = 'DescribeDirectories' | 'ListCertificates' | 'ListSchemaExtensions';
+export type DsActions = DsActionsWrite | DsActionsTagging | DsActionsRead | DsActionsList;

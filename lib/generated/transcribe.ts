@@ -508,3 +508,8 @@ export class Transcribe extends PolicyStatement {
     return this.if(`transcribe:OutputKey`, value, operator || 'StringLike');
   }
 }
+
+export type TranscribeActionsWrite = 'CreateLanguageModel' | 'CreateMedicalVocabulary' | 'CreateVocabulary' | 'CreateVocabularyFilter' | 'DeleteLanguageModel' | 'DeleteMedicalTranscriptionJob' | 'DeleteMedicalVocabulary' | 'DeleteTranscriptionJob' | 'DeleteVocabulary' | 'DeleteVocabularyFilter' | 'StartMedicalStreamTranscription' | 'StartMedicalStreamTranscriptionWebSocket' | 'StartMedicalTranscriptionJob' | 'StartStreamTranscription' | 'StartStreamTranscriptionWebSocket' | 'StartTranscriptionJob' | 'UpdateMedicalVocabulary' | 'UpdateVocabulary' | 'UpdateVocabularyFilter';
+export type TranscribeActionsRead = 'DescribeLanguageModel' | 'GetMedicalTranscriptionJob' | 'GetMedicalVocabulary' | 'GetTranscriptionJob' | 'GetVocabulary' | 'GetVocabularyFilter';
+export type TranscribeActionsList = 'ListLanguageModels' | 'ListMedicalTranscriptionJobs' | 'ListMedicalVocabularies' | 'ListTranscriptionJobs' | 'ListVocabularies' | 'ListVocabularyFilters';
+export type TranscribeActions = TranscribeActionsWrite | TranscribeActionsRead | TranscribeActionsList;

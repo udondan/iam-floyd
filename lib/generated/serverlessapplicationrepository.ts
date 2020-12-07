@@ -245,3 +245,8 @@ export class Serverlessrepo extends PolicyStatement {
     return this.if(`serverlessrepo:applicationType`, value, operator || 'StringLike');
   }
 }
+
+export type ServerlessrepoActionsWrite = 'CreateApplication' | 'CreateApplicationVersion' | 'CreateCloudFormationChangeSet' | 'CreateCloudFormationTemplate' | 'DeleteApplication' | 'PutApplicationPolicy' | 'UnshareApplication' | 'UpdateApplication';
+export type ServerlessrepoActionsRead = 'GetApplication' | 'GetApplicationPolicy' | 'GetCloudFormationTemplate' | 'SearchApplications';
+export type ServerlessrepoActionsList = 'ListApplicationDependencies' | 'ListApplicationVersions' | 'ListApplications';
+export type ServerlessrepoActions = ServerlessrepoActionsWrite | ServerlessrepoActionsRead | ServerlessrepoActionsList;

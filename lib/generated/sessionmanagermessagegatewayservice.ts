@@ -67,3 +67,6 @@ export class Ssmmessages extends PolicyStatement {
     ]
   };
 }
+
+export type SsmmessagesActionsWrite = 'CreateControlChannel' | 'CreateDataChannel' | 'OpenControlChannel' | 'OpenDataChannel';
+export type SsmmessagesActions = SsmmessagesActionsWrite;

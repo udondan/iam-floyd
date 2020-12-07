@@ -159,3 +159,9 @@ export class Dlm extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type DlmActionsWrite = 'CreateLifecyclePolicy' | 'DeleteLifecyclePolicy' | 'UpdateLifecyclePolicy';
+export type DlmActionsList = 'GetLifecyclePolicies';
+export type DlmActionsRead = 'GetLifecyclePolicy' | 'ListTagsForResource';
+export type DlmActionsTagging = 'TagResource' | 'UntagResource';
+export type DlmActions = DlmActionsWrite | DlmActionsList | DlmActionsRead | DlmActionsTagging;

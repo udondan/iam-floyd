@@ -690,3 +690,8 @@ export class Workdocs extends PolicyStatement {
     ]
   };
 }
+
+export type WorkdocsActionsWrite = 'AbortDocumentVersionUpload' | 'ActivateUser' | 'AddResourcePermissions' | 'AddUserToGroup' | 'CreateComment' | 'CreateCustomMetadata' | 'CreateFolder' | 'CreateInstance' | 'CreateLabels' | 'CreateNotificationSubscription' | 'CreateUser' | 'DeactivateUser' | 'DeleteComment' | 'DeleteCustomMetadata' | 'DeleteDocument' | 'DeleteFolder' | 'DeleteFolderContents' | 'DeleteInstance' | 'DeleteLabels' | 'DeleteNotificationSubscription' | 'DeleteUser' | 'DeregisterDirectory' | 'InitiateDocumentVersionUpload' | 'RegisterDirectory' | 'RemoveAllResourcePermissions' | 'RemoveResourcePermission' | 'UpdateDocument' | 'UpdateDocumentVersion' | 'UpdateFolder' | 'UpdateInstanceAlias' | 'UpdateUser';
+export type WorkdocsActionsRead = 'CheckAlias' | 'DownloadDocumentVersion' | 'GetCurrentUser' | 'GetDocument' | 'GetDocumentPath' | 'GetDocumentVersion' | 'GetFolder' | 'GetFolderPath' | 'GetResources';
+export type WorkdocsActionsList = 'DescribeActivities' | 'DescribeAvailableDirectories' | 'DescribeComments' | 'DescribeDocumentVersions' | 'DescribeFolderContents' | 'DescribeGroups' | 'DescribeInstances' | 'DescribeNotificationSubscriptions' | 'DescribeResourcePermissions' | 'DescribeRootFolders' | 'DescribeUsers';
+export type WorkdocsActions = WorkdocsActionsWrite | WorkdocsActionsRead | WorkdocsActionsList;

@@ -362,3 +362,9 @@ export class Transfer extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type TransferActionsWrite = 'CreateServer' | 'CreateUser' | 'DeleteServer' | 'DeleteSshPublicKey' | 'DeleteUser' | 'ImportSshPublicKey' | 'StartServer' | 'StopServer' | 'UpdateServer' | 'UpdateUser';
+export type TransferActionsRead = 'DescribeSecurityPolicy' | 'DescribeServer' | 'DescribeUser' | 'ListTagsForResource' | 'TestIdentityProvider';
+export type TransferActionsList = 'ListSecurityPolicies' | 'ListServers' | 'ListUsers';
+export type TransferActionsTagging = 'TagResource' | 'UntagResource';
+export type TransferActions = TransferActionsWrite | TransferActionsRead | TransferActionsList | TransferActionsTagging;

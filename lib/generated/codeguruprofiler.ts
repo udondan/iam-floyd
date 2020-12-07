@@ -364,3 +364,11 @@ export class CodeguruProfiler extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type CodeguruProfilerActionsWrite = 'AddNotificationChannels' | 'ConfigureAgent' | 'CreateProfilingGroup' | 'DeleteProfilingGroup' | 'PostAgentProfile' | 'RemoveNotificationChannel' | 'SubmitFeedback' | 'UpdateProfilingGroup';
+export type CodeguruProfilerActionsList = 'BatchGetFrameMetricData' | 'ListFindingsReports' | 'ListProfileTimes' | 'ListProfilingGroups';
+export type CodeguruProfilerActionsRead = 'DescribeProfilingGroup' | 'GetFindingsReportAccountSummary' | 'GetNotificationConfiguration' | 'GetPolicy' | 'GetProfile' | 'GetRecommendations';
+export type CodeguruProfilerActionsTagging = 'ListTagsForResource' | 'TagResource' | 'UntagResource';
+export type CodeguruProfilerActionsPermissions management = 'PutPermission' | 'RemovePermission';
+
+export type CodeguruProfilerActions = CodeguruProfilerActionsWrite | CodeguruProfilerActionsList | CodeguruProfilerActionsRead | CodeguruProfilerActionsTagging | CodeguruProfilerActionsPermissions management;

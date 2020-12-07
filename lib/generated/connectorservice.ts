@@ -64,3 +64,7 @@ export class Awsconnector extends PolicyStatement {
     ]
   };
 }
+
+export type AwsconnectorActionsRead = 'GetConnectorHealth' | 'ValidateConnectorId';
+export type AwsconnectorActionsWrite = 'RegisterConnector';
+export type AwsconnectorActions = AwsconnectorActionsRead | AwsconnectorActionsWrite;

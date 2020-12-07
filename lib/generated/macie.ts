@@ -829,3 +829,9 @@ export class Macie2 extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type Macie2ActionsWrite = 'AcceptInvitation' | 'ArchiveFindings' | 'CreateClassificationJob' | 'CreateCustomDataIdentifier' | 'CreateFindingsFilter' | 'CreateInvitations' | 'CreateMember' | 'CreateSampleFindings' | 'DeclineInvitations' | 'DeleteCustomDataIdentifier' | 'DeleteFindingsFilter' | 'DeleteInvitations' | 'DeleteMember' | 'DisableMacie' | 'DisableOrganizationAdminAccount' | 'DisassociateFromMasterAccount' | 'DisassociateMember' | 'EnableMacie' | 'EnableOrganizationAdminAccount' | 'PutClassificationExportConfiguration' | 'TestCustomDataIdentifier' | 'UnarchiveFindings' | 'UpdateClassificationJob' | 'UpdateFindingsFilter' | 'UpdateMacieSession' | 'UpdateMemberSession' | 'UpdateOrganizationConfiguration';
+export type Macie2ActionsRead = 'BatchGetCustomDataIdentifiers' | 'DescribeBuckets' | 'DescribeClassificationJob' | 'DescribeOrganizationConfiguration' | 'GetBucketStatistics' | 'GetClassificationExportConfiguration' | 'GetCustomDataIdentifier' | 'GetFindingStatistics' | 'GetFindings' | 'GetFindingsFilter' | 'GetInvitationsCount' | 'GetMacieSession' | 'GetMasterAccount' | 'GetMember' | 'GetUsageStatistics' | 'GetUsageTotals';
+export type Macie2ActionsList = 'ListClassificationJobs' | 'ListCustomDataIdentifiers' | 'ListFindings' | 'ListFindingsFilters' | 'ListInvitations' | 'ListMembers' | 'ListOrganizationAdminAccounts' | 'ListTagsForResources';
+export type Macie2ActionsTagging = 'TagResource' | 'UntagResource';
+export type Macie2Actions = Macie2ActionsWrite | Macie2ActionsRead | Macie2ActionsList | Macie2ActionsTagging;

@@ -341,3 +341,9 @@ export class CognitoIdentity extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type CognitoIdentityActionsWrite = 'CreateIdentityPool' | 'DeleteIdentities' | 'DeleteIdentityPool' | 'GetId' | 'MergeDeveloperIdentities' | 'SetIdentityPoolRoles' | 'UnlinkDeveloperIdentity' | 'UnlinkIdentity' | 'UpdateIdentityPool';
+export type CognitoIdentityActionsRead = 'DescribeIdentity' | 'DescribeIdentityPool' | 'GetCredentialsForIdentity' | 'GetIdentityPoolRoles' | 'GetOpenIdToken' | 'GetOpenIdTokenForDeveloperIdentity' | 'LookupDeveloperIdentity';
+export type CognitoIdentityActionsList = 'ListIdentities' | 'ListIdentityPools' | 'ListTagsForResource';
+export type CognitoIdentityActionsTagging = 'TagResource' | 'UntagResource';
+export type CognitoIdentityActions = CognitoIdentityActionsWrite | CognitoIdentityActionsRead | CognitoIdentityActionsList | CognitoIdentityActionsTagging;

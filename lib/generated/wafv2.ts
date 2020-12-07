@@ -802,3 +802,11 @@ export class Wafv2 extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type Wafv2ActionsWrite = 'AssociateWebACL' | 'CreateIPSet' | 'CreateRegexPatternSet' | 'CreateRuleGroup' | 'DeleteFirewallManagerRuleGroups' | 'DeleteIPSet' | 'DeleteLoggingConfiguration' | 'DeleteRegexPatternSet' | 'DeleteRuleGroup' | 'DisassociateFirewallManager' | 'DisassociateWebACL' | 'PutFirewallManagerRuleGroups' | 'PutLoggingConfiguration' | 'UpdateIPSet' | 'UpdateRegexPatternSet' | 'UpdateRuleGroup';
+export type Wafv2ActionsRead = 'CheckCapacity' | 'GetIPSet' | 'GetLoggingConfiguration' | 'GetPermissionPolicy' | 'GetRateBasedStatementManagedKeys' | 'GetRegexPatternSet' | 'GetRuleGroup' | 'GetSampledRequests' | 'GetWebACL' | 'GetWebACLForResource' | 'ListTagsForResource';
+export type Wafv2ActionsPermissions management = 'CreateWebACL' | 'DeletePermissionPolicy' | 'DeleteWebACL' | 'PutPermissionPolicy' | 'UpdateWebACL';
+
+export type Wafv2ActionsList = 'DescribeManagedRuleGroup' | 'ListAvailableManagedRuleGroups' | 'ListIPSets' | 'ListLoggingConfigurations' | 'ListRegexPatternSets' | 'ListResourcesForWebACL' | 'ListRuleGroups' | 'ListWebACLs';
+export type Wafv2ActionsTagging = 'TagResource' | 'UntagResource';
+export type Wafv2Actions = Wafv2ActionsWrite | Wafv2ActionsRead | Wafv2ActionsPermissions management | Wafv2ActionsList | Wafv2ActionsTagging;

@@ -638,3 +638,11 @@ export class Secretsmanager extends PolicyStatement {
     return this.if(`secretsmanager:resource/${ allowRotationLambdaArn }`, value, operator || 'ArnLike');
   }
 }
+
+export type SecretsmanagerActionsWrite = 'CancelRotateSecret' | 'CreateSecret' | 'DeleteSecret' | 'PutSecretValue' | 'RestoreSecret' | 'RotateSecret' | 'UpdateSecret' | 'UpdateSecretVersionStage';
+export type SecretsmanagerActionsPermissions management = 'DeleteResourcePolicy' | 'PutResourcePolicy' | 'ValidateResourcePolicy';
+
+export type SecretsmanagerActionsRead = 'DescribeSecret' | 'GetRandomPassword' | 'GetResourcePolicy' | 'GetSecretValue' | 'ListSecretVersionIds';
+export type SecretsmanagerActionsList = 'ListSecrets';
+export type SecretsmanagerActionsTagging = 'TagResource' | 'UntagResource';
+export type SecretsmanagerActions = SecretsmanagerActionsWrite | SecretsmanagerActionsPermissions management | SecretsmanagerActionsRead | SecretsmanagerActionsList | SecretsmanagerActionsTagging;

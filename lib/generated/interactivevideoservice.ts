@@ -398,3 +398,9 @@ export class Ivs extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type IvsActionsRead = 'BatchGetChannel' | 'BatchGetStreamKey' | 'GetChannel' | 'GetPlaybackKeyPair' | 'GetStream' | 'GetStreamKey';
+export type IvsActionsWrite = 'CreateChannel' | 'CreateStreamKey' | 'DeleteChannel' | 'DeletePlaybackKeyPair' | 'DeleteStreamKey' | 'ImportPlaybackKeyPair' | 'PutMetadata' | 'StopStream' | 'UpdateChannel';
+export type IvsActionsList = 'ListChannels' | 'ListPlaybackKeyPairs' | 'ListStreamKeys' | 'ListStreams';
+export type IvsActionsTagging = 'ListTagsForResource' | 'TagResource' | 'UntagResource';
+export type IvsActions = IvsActionsRead | IvsActionsWrite | IvsActionsList | IvsActionsTagging;

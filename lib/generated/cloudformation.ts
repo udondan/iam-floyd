@@ -987,3 +987,11 @@ export class Cloudformation extends PolicyStatement {
     return this.if(`cloudformation:TemplateUrl`, value, operator || 'StringLike');
   }
 }
+
+export type CloudformationActionsWrite = 'CancelUpdateStack' | 'ContinueUpdateRollback' | 'CreateChangeSet' | 'CreateStack' | 'CreateStackInstances' | 'CreateStackSet' | 'CreateUploadBucket' | 'DeleteChangeSet' | 'DeleteStack' | 'DeleteStackInstances' | 'DeleteStackSet' | 'DeregisterType' | 'ExecuteChangeSet' | 'RegisterType' | 'SetTypeDefaultVersion' | 'SignalResource' | 'StopStackSetOperation' | 'UpdateStack' | 'UpdateStackInstances' | 'UpdateStackSet' | 'UpdateTerminationProtection';
+export type CloudformationActionsRead = 'DescribeAccountLimits' | 'DescribeChangeSet' | 'DescribeStackDriftDetectionStatus' | 'DescribeStackEvents' | 'DescribeStackInstance' | 'DescribeStackResource' | 'DescribeStackResourceDrifts' | 'DescribeStackResources' | 'DescribeStackSet' | 'DescribeStackSetOperation' | 'DescribeType' | 'DescribeTypeRegistration' | 'DetectStackDrift' | 'DetectStackResourceDrift' | 'DetectStackSetDrift' | 'EstimateTemplateCost' | 'GetStackPolicy' | 'GetTemplate' | 'GetTemplateSummary' | 'ValidateTemplate';
+export type CloudformationActionsList = 'DescribeStacks' | 'ListChangeSets' | 'ListExports' | 'ListImports' | 'ListStackInstances' | 'ListStackResources' | 'ListStackSetOperationResults' | 'ListStackSetOperations' | 'ListStackSets' | 'ListStacks' | 'ListTypeRegistrations' | 'ListTypeVersions' | 'ListTypes';
+export type CloudformationActionsPermissions management = 'SetStackPolicy';
+
+export type CloudformationActionsTagging = 'TagResource' | 'UntagResource';
+export type CloudformationActions = CloudformationActionsWrite | CloudformationActionsRead | CloudformationActionsList | CloudformationActionsPermissions management | CloudformationActionsTagging;

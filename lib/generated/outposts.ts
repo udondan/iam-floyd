@@ -118,3 +118,8 @@ export class Outposts extends PolicyStatement {
     ]
   };
 }
+
+export type OutpostsActionsWrite = 'CreateOutpost' | 'DeleteOutpost' | 'DeleteSite';
+export type OutpostsActionsRead = 'GetOutpost' | 'GetOutpostInstanceTypes';
+export type OutpostsActionsList = 'ListOutposts' | 'ListSites';
+export type OutpostsActions = OutpostsActionsWrite | OutpostsActionsRead | OutpostsActionsList;

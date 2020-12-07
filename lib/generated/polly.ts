@@ -166,3 +166,8 @@ export class Polly extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type PollyActionsWrite = 'DeleteLexicon' | 'PutLexicon' | 'StartSpeechSynthesisTask';
+export type PollyActionsList = 'DescribeVoices' | 'ListLexicons' | 'ListSpeechSynthesisTasks';
+export type PollyActionsRead = 'GetLexicon' | 'GetSpeechSynthesisTask' | 'SynthesizeSpeech';
+export type PollyActions = PollyActionsWrite | PollyActionsList | PollyActionsRead;

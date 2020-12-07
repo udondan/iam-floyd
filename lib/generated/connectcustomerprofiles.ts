@@ -483,3 +483,9 @@ export class Profile extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ProfileActionsWrite = 'AddProfileKey' | 'CreateDomain' | 'CreateProfile' | 'DeleteDomain' | 'DeleteIntegration' | 'DeleteProfile' | 'DeleteProfileKey' | 'DeleteProfileObject' | 'DeleteProfileObjectType' | 'PutIntegration' | 'PutProfileObject' | 'PutProfileObjectType' | 'UpdateDomain' | 'UpdateProfile';
+export type ProfileActionsRead = 'GetDomain' | 'GetIntegration' | 'GetProfileObjectType' | 'GetProfileObjectTypeTemplate' | 'SearchProfiles';
+export type ProfileActionsList = 'ListAccountIntegrations' | 'ListDomains' | 'ListIntegrations' | 'ListProfileObjectTypeTemplates' | 'ListProfileObjectTypes' | 'ListProfileObjects' | 'ListTagsForResource';
+export type ProfileActionsTagging = 'TagResource' | 'UntagResource';
+export type ProfileActions = ProfileActionsWrite | ProfileActionsRead | ProfileActionsList | ProfileActionsTagging;

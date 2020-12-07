@@ -521,3 +521,9 @@ export class Workspaces extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type WorkspacesActionsWrite = 'AssociateIpGroups' | 'AuthorizeIpRules' | 'CreateIpGroup' | 'CreateWorkspaces' | 'DeleteIpGroup' | 'DeleteTags' | 'DeleteWorkspaceImage' | 'DisassociateIpGroups' | 'ImportWorkspaceImage' | 'ModifyAccount' | 'ModifyClientProperties' | 'ModifyWorkspaceProperties' | 'ModifyWorkspaceState' | 'RebootWorkspaces' | 'RebuildWorkspaces' | 'RevokeIpRules' | 'StartWorkspaces' | 'StopWorkspaces' | 'TerminateWorkspaces' | 'UpdateRulesOfIpGroup';
+export type WorkspacesActionsTagging = 'CreateTags';
+export type WorkspacesActionsList = 'DescribeAccount' | 'DescribeAccountModifications' | 'DescribeClientProperties' | 'DescribeIpGroups' | 'DescribeTags' | 'DescribeWorkspaceBundles' | 'DescribeWorkspaceDirectories' | 'DescribeWorkspaceImages' | 'DescribeWorkspaces' | 'ListAvailableManagementCidrRanges';
+export type WorkspacesActionsRead = 'DescribeWorkspacesConnectionStatus';
+export type WorkspacesActions = WorkspacesActionsWrite | WorkspacesActionsTagging | WorkspacesActionsList | WorkspacesActionsRead;

@@ -135,3 +135,7 @@ export class SmsVoice extends PolicyStatement {
     ]
   };
 }
+
+export type SmsVoiceActionsWrite = 'CreateConfigurationSet' | 'CreateConfigurationSetEventDestination' | 'DeleteConfigurationSet' | 'DeleteConfigurationSetEventDestination' | 'SendVoiceMessage' | 'UpdateConfigurationSetEventDestination';
+export type SmsVoiceActionsRead = 'GetConfigurationSetEventDestinations' | 'ListConfigurationSets';
+export type SmsVoiceActions = SmsVoiceActionsWrite | SmsVoiceActionsRead;

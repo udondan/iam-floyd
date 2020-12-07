@@ -155,3 +155,7 @@ export class ComputeOptimizer extends PolicyStatement {
     ]
   };
 }
+
+export type ComputeOptimizerActionsList = 'DescribeRecommendationExportJobs' | 'GetAutoScalingGroupRecommendations' | 'GetEBSVolumeRecommendations' | 'GetEC2InstanceRecommendations' | 'GetEC2RecommendationProjectedMetrics' | 'GetEnrollmentStatus' | 'GetRecommendationSummaries';
+export type ComputeOptimizerActionsWrite = 'ExportAutoScalingGroupRecommendations' | 'ExportEC2InstanceRecommendations' | 'UpdateEnrollmentStatus';
+export type ComputeOptimizerActions = ComputeOptimizerActionsList | ComputeOptimizerActionsWrite;

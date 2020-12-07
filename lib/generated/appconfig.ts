@@ -656,3 +656,9 @@ export class Appconfig extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type AppconfigActionsWrite = 'CreateApplication' | 'CreateConfigurationProfile' | 'CreateDeploymentStrategy' | 'CreateEnvironment' | 'CreateHostedConfigurationVersion' | 'DeleteApplication' | 'DeleteConfigurationProfile' | 'DeleteDeploymentStrategy' | 'DeleteEnvironment' | 'DeleteHostedConfigurationVersion' | 'StartDeployment' | 'StopDeployment' | 'UpdateApplication' | 'UpdateConfigurationProfile' | 'UpdateDeploymentStrategy' | 'UpdateEnvironment' | 'ValidateConfiguration';
+export type AppconfigActionsRead = 'GetApplication' | 'GetConfiguration' | 'GetConfigurationProfile' | 'GetDeployment' | 'GetDeploymentStrategy' | 'GetEnvironment' | 'GetHostedConfigurationVersion' | 'ListTagsForResource';
+export type AppconfigActionsList = 'ListApplications' | 'ListConfigurationProfiles' | 'ListDeploymentStrategies' | 'ListDeployments' | 'ListEnvironments' | 'ListHostedConfigurationVersions';
+export type AppconfigActionsTagging = 'TagResource' | 'UntagResource';
+export type AppconfigActions = AppconfigActionsWrite | AppconfigActionsRead | AppconfigActionsList | AppconfigActionsTagging;

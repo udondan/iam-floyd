@@ -489,3 +489,9 @@ export class Kinesisvideo extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type KinesisvideoActionsWrite = 'ConnectAsMaster' | 'ConnectAsViewer' | 'CreateSignalingChannel' | 'CreateStream' | 'DeleteSignalingChannel' | 'DeleteStream' | 'PutMedia' | 'SendAlexaOfferToMaster' | 'UpdateDataRetention' | 'UpdateSignalingChannel' | 'UpdateStream';
+export type KinesisvideoActionsList = 'DescribeSignalingChannel' | 'DescribeStream' | 'ListFragments' | 'ListSignalingChannels' | 'ListStreams';
+export type KinesisvideoActionsRead = 'GetClip' | 'GetDASHStreamingSessionURL' | 'GetDataEndpoint' | 'GetHLSStreamingSessionURL' | 'GetIceServerConfig' | 'GetMedia' | 'GetMediaForFragmentList' | 'GetSignalingChannelEndpoint' | 'ListTagsForResource' | 'ListTagsForStream';
+export type KinesisvideoActionsTagging = 'TagResource' | 'TagStream' | 'UntagResource' | 'UntagStream';
+export type KinesisvideoActions = KinesisvideoActionsWrite | KinesisvideoActionsList | KinesisvideoActionsRead | KinesisvideoActionsTagging;

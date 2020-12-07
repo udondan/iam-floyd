@@ -1070,3 +1070,10 @@ export class Lambda extends PolicyStatement {
     return this.if(`lambda:VpcIds`, value, operator || 'StringLike');
   }
 }
+
+export type LambdaActionsPermissions management = 'AddLayerVersionPermission' | 'AddPermission' | 'DisableReplication' | 'EnableReplication' | 'RemoveLayerVersionPermission' | 'RemovePermission';
+
+export type LambdaActionsWrite = 'CreateAlias' | 'CreateCodeSigningConfig' | 'CreateEventSourceMapping' | 'CreateFunction' | 'DeleteAlias' | 'DeleteCodeSigningConfig' | 'DeleteEventSourceMapping' | 'DeleteFunction' | 'DeleteFunctionCodeSigningConfig' | 'DeleteFunctionConcurrency' | 'DeleteFunctionEventInvokeConfig' | 'DeleteLayerVersion' | 'DeleteProvisionedConcurrencyConfig' | 'InvokeAsync' | 'InvokeFunction' | 'PublishLayerVersion' | 'PublishVersion' | 'PutFunctionCodeSigningConfig' | 'PutFunctionConcurrency' | 'PutFunctionEventInvokeConfig' | 'PutProvisionedConcurrencyConfig' | 'TagResource' | 'UntagResource' | 'UpdateAlias' | 'UpdateCodeSigningConfig' | 'UpdateEventSourceMapping' | 'UpdateFunctionCode' | 'UpdateFunctionCodeSigningConfig' | 'UpdateFunctionConfiguration' | 'UpdateFunctionEventInvokeConfig';
+export type LambdaActionsRead = 'GetAccountSettings' | 'GetAlias' | 'GetCodeSigningConfig' | 'GetEventSourceMapping' | 'GetFunction' | 'GetFunctionCodeSigningConfig' | 'GetFunctionConcurrency' | 'GetFunctionConfiguration' | 'GetFunctionEventInvokeConfig' | 'GetLayerVersion' | 'GetLayerVersionPolicy' | 'GetPolicy' | 'GetProvisionedConcurrencyConfig' | 'ListTags';
+export type LambdaActionsList = 'ListAliases' | 'ListCodeSigningConfigs' | 'ListEventSourceMappings' | 'ListFunctionEventInvokeConfigs' | 'ListFunctions' | 'ListFunctionsByCodeSigningConfig' | 'ListLayerVersions' | 'ListLayers' | 'ListProvisionedConcurrencyConfigs' | 'ListVersionsByFunction';
+export type LambdaActions = LambdaActionsPermissions management | LambdaActionsWrite | LambdaActionsRead | LambdaActionsList;

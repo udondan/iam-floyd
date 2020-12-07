@@ -51,3 +51,7 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
     ]
   };
 }
+
+export type AwsMarketplaceProcurementSystemsIntegrationActionsRead = 'DescribeProcurementSystemConfiguration';
+export type AwsMarketplaceProcurementSystemsIntegrationActionsWrite = 'PutProcurementSystemConfiguration';
+export type AwsMarketplaceProcurementSystemsIntegrationActions = AwsMarketplaceProcurementSystemsIntegrationActionsRead | AwsMarketplaceProcurementSystemsIntegrationActionsWrite;

@@ -285,3 +285,9 @@ export class Cloudtrail extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type CloudtrailActionsTagging = 'AddTags' | 'RemoveTags';
+export type CloudtrailActionsWrite = 'CreateTrail' | 'DeleteTrail' | 'PutEventSelectors' | 'PutInsightSelectors' | 'StartLogging' | 'StopLogging' | 'UpdateTrail';
+export type CloudtrailActionsRead = 'DescribeTrails' | 'GetEventSelectors' | 'GetInsightSelectors' | 'GetTrail' | 'GetTrailStatus' | 'ListPublicKeys' | 'ListTags' | 'LookupEvents';
+export type CloudtrailActionsList = 'ListTrails';
+export type CloudtrailActions = CloudtrailActionsTagging | CloudtrailActionsWrite | CloudtrailActionsRead | CloudtrailActionsList;

@@ -1374,3 +1374,11 @@ export class WafRegional extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type WafRegionalActionsWrite = 'AssociateWebACL' | 'CreateByteMatchSet' | 'CreateGeoMatchSet' | 'CreateIPSet' | 'CreateRateBasedRule' | 'CreateRegexMatchSet' | 'CreateRegexPatternSet' | 'CreateRule' | 'CreateRuleGroup' | 'CreateSizeConstraintSet' | 'CreateSqlInjectionMatchSet' | 'CreateWebACLMigrationStack' | 'CreateXssMatchSet' | 'DeleteByteMatchSet' | 'DeleteGeoMatchSet' | 'DeleteIPSet' | 'DeleteLoggingConfiguration' | 'DeleteRateBasedRule' | 'DeleteRegexMatchSet' | 'DeleteRegexPatternSet' | 'DeleteRule' | 'DeleteRuleGroup' | 'DeleteSizeConstraintSet' | 'DeleteSqlInjectionMatchSet' | 'DeleteXssMatchSet' | 'DisassociateWebACL' | 'PutLoggingConfiguration' | 'UpdateByteMatchSet' | 'UpdateGeoMatchSet' | 'UpdateIPSet' | 'UpdateRateBasedRule' | 'UpdateRegexMatchSet' | 'UpdateRegexPatternSet' | 'UpdateRule' | 'UpdateRuleGroup' | 'UpdateSizeConstraintSet' | 'UpdateSqlInjectionMatchSet' | 'UpdateXssMatchSet';
+export type WafRegionalActionsPermissions management = 'CreateWebACL' | 'DeletePermissionPolicy' | 'DeleteWebACL' | 'PutPermissionPolicy' | 'UpdateWebACL';
+
+export type WafRegionalActionsRead = 'GetByteMatchSet' | 'GetChangeToken' | 'GetChangeTokenStatus' | 'GetGeoMatchSet' | 'GetIPSet' | 'GetLoggingConfiguration' | 'GetPermissionPolicy' | 'GetRateBasedRule' | 'GetRateBasedRuleManagedKeys' | 'GetRegexMatchSet' | 'GetRegexPatternSet' | 'GetRule' | 'GetRuleGroup' | 'GetSampledRequests' | 'GetSizeConstraintSet' | 'GetSqlInjectionMatchSet' | 'GetWebACL' | 'GetWebACLForResource' | 'GetXssMatchSet' | 'ListTagsForResource';
+export type WafRegionalActionsList = 'ListActivatedRulesInRuleGroup' | 'ListByteMatchSets' | 'ListGeoMatchSets' | 'ListIPSets' | 'ListLoggingConfigurations' | 'ListRateBasedRules' | 'ListRegexMatchSets' | 'ListRegexPatternSets' | 'ListResourcesForWebACL' | 'ListRuleGroups' | 'ListRules' | 'ListSizeConstraintSets' | 'ListSqlInjectionMatchSets' | 'ListSubscribedRuleGroups' | 'ListWebACLs' | 'ListXssMatchSets';
+export type WafRegionalActionsTagging = 'TagResource' | 'UntagResource';
+export type WafRegionalActions = WafRegionalActionsWrite | WafRegionalActionsPermissions management | WafRegionalActionsRead | WafRegionalActionsList | WafRegionalActionsTagging;

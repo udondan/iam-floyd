@@ -465,3 +465,9 @@ export class Athena extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type AthenaActionsRead = 'BatchGetNamedQuery' | 'BatchGetQueryExecution' | 'GetDataCatalog' | 'GetDatabase' | 'GetNamedQuery' | 'GetQueryExecution' | 'GetQueryResults' | 'GetQueryResultsStream' | 'GetTableMetadata' | 'GetWorkGroup' | 'ListTagsForResource';
+export type AthenaActionsTagging = 'CreateDataCatalog' | 'CreateWorkGroup' | 'TagResource' | 'UntagResource';
+export type AthenaActionsWrite = 'CreateNamedQuery' | 'DeleteDataCatalog' | 'DeleteNamedQuery' | 'DeleteWorkGroup' | 'StartQueryExecution' | 'StopQueryExecution' | 'UpdateDataCatalog' | 'UpdateWorkGroup';
+export type AthenaActionsList = 'ListDataCatalogs' | 'ListDatabases' | 'ListNamedQueries' | 'ListQueryExecutions' | 'ListTableMetadata' | 'ListWorkGroups';
+export type AthenaActions = AthenaActionsRead | AthenaActionsTagging | AthenaActionsWrite | AthenaActionsList;

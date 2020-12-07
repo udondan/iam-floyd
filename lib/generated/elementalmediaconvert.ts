@@ -477,3 +477,9 @@ export class Mediaconvert extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type MediaconvertActionsWrite = 'AssociateCertificate' | 'CancelJob' | 'CreateJob' | 'CreateJobTemplate' | 'CreatePreset' | 'CreateQueue' | 'DeleteJobTemplate' | 'DeletePreset' | 'DeleteQueue' | 'DisassociateCertificate' | 'UpdateJobTemplate' | 'UpdatePreset' | 'UpdateQueue';
+export type MediaconvertActionsList = 'DescribeEndpoints' | 'ListJobTemplates' | 'ListJobs' | 'ListPresets' | 'ListQueues';
+export type MediaconvertActionsRead = 'GetJob' | 'GetJobTemplate' | 'GetPreset' | 'GetQueue' | 'ListTagsForResource';
+export type MediaconvertActionsTagging = 'TagResource' | 'UntagResource';
+export type MediaconvertActions = MediaconvertActionsWrite | MediaconvertActionsList | MediaconvertActionsRead | MediaconvertActionsTagging;

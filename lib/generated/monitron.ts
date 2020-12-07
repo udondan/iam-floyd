@@ -257,3 +257,11 @@ export class Monitron extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type MonitronActionsPermissions management = 'AssociateProjectAdminUser' | 'DisassociateProjectAdminUser' | 'ListProjectAdminUsers';
+
+export type MonitronActionsWrite = 'CreateProject' | 'DeleteProject' | 'UpdateProject';
+export type MonitronActionsRead = 'GetProject' | 'GetProjectAdminUser' | 'ListTagsForResource';
+export type MonitronActionsList = 'ListProjects';
+export type MonitronActionsTagging = 'TagResource' | 'UntagResource';
+export type MonitronActions = MonitronActionsPermissions management | MonitronActionsWrite | MonitronActionsRead | MonitronActionsList | MonitronActionsTagging;

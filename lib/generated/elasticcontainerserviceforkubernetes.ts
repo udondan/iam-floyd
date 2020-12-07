@@ -516,3 +516,9 @@ export class Eks extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type EksActionsRead = 'AccessKubernetesApi' | 'DescribeAddon' | 'DescribeAddonVersions' | 'DescribeCluster' | 'DescribeFargateProfile' | 'DescribeNodegroup' | 'DescribeUpdate';
+export type EksActionsWrite = 'CreateAddon' | 'CreateCluster' | 'CreateFargateProfile' | 'CreateNodegroup' | 'DeleteAddon' | 'DeleteCluster' | 'DeleteFargateProfile' | 'DeleteNodegroup' | 'UpdateAddon' | 'UpdateClusterConfig' | 'UpdateClusterVersion' | 'UpdateNodegroupConfig' | 'UpdateNodegroupVersion';
+export type EksActionsList = 'ListAddons' | 'ListClusters' | 'ListFargateProfiles' | 'ListNodegroups' | 'ListTagsForResource' | 'ListUpdates';
+export type EksActionsTagging = 'TagResource' | 'UntagResource';
+export type EksActions = EksActionsRead | EksActionsWrite | EksActionsList | EksActionsTagging;

@@ -472,3 +472,8 @@ export class Amplifybackend extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type AmplifybackendActionsWrite = 'CloneBackend' | 'CreateBackend' | 'CreateBackendAPI' | 'CreateBackendAuth' | 'CreateBackendConfig' | 'CreateToken' | 'DeleteBackend' | 'DeleteBackendAPI' | 'DeleteBackendAuth' | 'DeleteToken' | 'GenerateBackendAPIModels' | 'RemoveAllBackends' | 'RemoveBackendConfig' | 'UpdateBackendAPI' | 'UpdateBackendAuth' | 'UpdateBackendConfig' | 'UpdateBackendJob';
+export type AmplifybackendActionsRead = 'GetBackend' | 'GetBackendAPI' | 'GetBackendAPIModels' | 'GetBackendAuth' | 'GetBackendJob' | 'GetToken';
+export type AmplifybackendActionsList = 'ListBackendJobs';
+export type AmplifybackendActions = AmplifybackendActionsWrite | AmplifybackendActionsRead | AmplifybackendActionsList;

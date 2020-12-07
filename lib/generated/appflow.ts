@@ -384,3 +384,9 @@ export class Appflow extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type AppflowActionsWrite = 'CreateConnectorProfile' | 'CreateFlow' | 'DeleteConnectorProfile' | 'DeleteFlow' | 'RunFlow' | 'StartFlow' | 'StopFlow' | 'UpdateConnectorProfile' | 'UpdateFlow';
+export type AppflowActionsRead = 'DescribeConnectorEntity' | 'DescribeConnectorFields' | 'DescribeConnectorProfiles' | 'DescribeConnectors' | 'DescribeFlow' | 'DescribeFlowExecution' | 'DescribeFlowExecutionRecords' | 'DescribeFlows' | 'ListConnectorFields';
+export type AppflowActionsList = 'ListConnectorEntities' | 'ListFlows' | 'ListTagsForResource';
+export type AppflowActionsTagging = 'TagResource' | 'UntagResource';
+export type AppflowActions = AppflowActionsWrite | AppflowActionsRead | AppflowActionsList | AppflowActionsTagging;

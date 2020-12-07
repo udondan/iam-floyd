@@ -293,3 +293,8 @@ export class Mediaconnect extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type MediaconnectActionsWrite = 'AddFlowOutputs' | 'CreateFlow' | 'DeleteFlow' | 'GrantFlowEntitlements' | 'RemoveFlowOutput' | 'RevokeFlowEntitlement' | 'StartFlow' | 'StopFlow' | 'UpdateFlowEntitlement' | 'UpdateFlowOutput' | 'UpdateFlowSource';
+export type MediaconnectActionsRead = 'DescribeFlow';
+export type MediaconnectActionsList = 'ListEntitlements' | 'ListFlows';
+export type MediaconnectActions = MediaconnectActionsWrite | MediaconnectActionsRead | MediaconnectActionsList;

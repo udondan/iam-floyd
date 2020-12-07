@@ -257,3 +257,8 @@ export class Detective extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type DetectiveActionsWrite = 'AcceptInvitation' | 'CreateGraph' | 'CreateMembers' | 'DeleteGraph' | 'DeleteMembers' | 'DisassociateMembership' | 'RejectInvitation' | 'StartMonitoringMember';
+export type DetectiveActionsRead = 'GetFreeTrialEligibility' | 'GetGraphIngestState' | 'GetMembers' | 'GetPricingInformation' | 'GetUsageInformation' | 'SearchGraph';
+export type DetectiveActionsList = 'ListGraphs' | 'ListInvitations' | 'ListMembers';
+export type DetectiveActions = DetectiveActionsWrite | DetectiveActionsRead | DetectiveActionsList;

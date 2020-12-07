@@ -134,3 +134,8 @@ export class ElementalActivations extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ElementalActivationsActionsList = 'DownloadSoftware' | 'GenerateLicenses';
+export type ElementalActivationsActionsRead = 'GetActivation' | 'ListTagsForResource';
+export type ElementalActivationsActionsTagging = 'TagResource' | 'UntagResource';
+export type ElementalActivationsActions = ElementalActivationsActionsList | ElementalActivationsActionsRead | ElementalActivationsActionsTagging;

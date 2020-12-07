@@ -68,3 +68,7 @@ export class Sumerian extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type SumerianActionsWrite = 'Login';
+export type SumerianActionsRead = 'ViewRelease';
+export type SumerianActions = SumerianActionsWrite | SumerianActionsRead;

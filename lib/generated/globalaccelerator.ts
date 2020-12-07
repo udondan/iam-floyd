@@ -431,3 +431,9 @@ export class Globalaccelerator extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type GlobalacceleratorActionsWrite = 'AdvertiseByoipCidr' | 'CreateAccelerator' | 'CreateEndpointGroup' | 'CreateListener' | 'DeleteAccelerator' | 'DeleteEndpointGroup' | 'DeleteListener' | 'DeprovisionByoipCidr' | 'ProvisionByoipCidr' | 'UpdateAccelerator' | 'UpdateAcceleratorAttributes' | 'UpdateEndpointGroup' | 'UpdateListener' | 'WithdrawByoipCidr';
+export type GlobalacceleratorActionsRead = 'DescribeAccelerator' | 'DescribeAcceleratorAttributes' | 'DescribeEndpointGroup' | 'DescribeListener' | 'ListTagsForResource';
+export type GlobalacceleratorActionsList = 'ListAccelerators' | 'ListByoipCidrs' | 'ListEndpointGroups' | 'ListListeners';
+export type GlobalacceleratorActionsTagging = 'TagResource' | 'UntagResource';
+export type GlobalacceleratorActions = GlobalacceleratorActionsWrite | GlobalacceleratorActionsRead | GlobalacceleratorActionsList | GlobalacceleratorActionsTagging;

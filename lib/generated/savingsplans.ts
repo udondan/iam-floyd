@@ -186,3 +186,9 @@ export class Savingsplans extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type SavingsplansActionsWrite = 'CreateSavingsPlan' | 'DeleteQueuedSavingsPlan';
+export type SavingsplansActionsRead = 'DescribeSavingsPlanRates' | 'DescribeSavingsPlans' | 'DescribeSavingsPlansOfferingRates' | 'DescribeSavingsPlansOfferings';
+export type SavingsplansActionsList = 'ListTagsForResource';
+export type SavingsplansActionsTagging = 'TagResource' | 'UntagResource';
+export type SavingsplansActions = SavingsplansActionsWrite | SavingsplansActionsRead | SavingsplansActionsList | SavingsplansActionsTagging;

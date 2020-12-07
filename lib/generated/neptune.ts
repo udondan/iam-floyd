@@ -57,3 +57,6 @@ export class NeptuneDb extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type NeptuneDbActionsWrite = 'connect';
+export type NeptuneDbActions = NeptuneDbActionsWrite;
