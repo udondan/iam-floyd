@@ -93,8 +93,8 @@ def replace_s3_examples(j, bucket_name):
             '1234567890', account_id)
 
     if 'Resource' in j['Statement'][0]:
-        j['Statement'][0]['Resource'][0] = \
-            j['Statement'][0]['Resource'][0].replace(
+        j['Statement'][0]['Resource'] = \
+            j['Statement'][0]['Resource'].replace(
             'example-bucket', bucket_name)
     return j
 
