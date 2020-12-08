@@ -250,10 +250,10 @@ export function createModule(module: Module): Promise<void> {
   };
   if (typeof module.name === 'undefined') {
     //it was skipped, restore from cache
-    fs.renameSync(
-      `lib/generated/.cache/${module.filename}.ts`,
-      `lib/generated/${module.filename}.ts`
-    );
+    restoreFileFromCache(`lib/generated/${module.filename}.ts`);
+    restoreFileFromCache(`stats/actions/${module.filename}`);
+    restoreFileFromCache(`stats/conditions/${module.filename}`);
+    restoreFileFromCache(`stats/resources/${module.filename}`);
     modules.push(module);
     return Promise.resolve();
   }
@@ -684,16 +684,43 @@ function formatCode(file: SourceFile) {
 }
 
 function createCache() {
+  createLibCache();
+  createStatsCache();
+}
+
+function createLibCache() {
   const dir = 'lib/generated';
+  mkDirCache(dir, '*.ts');
+}
+
+function createStatsCache() {
+  ['actions', 'conditions', 'resources'].forEach((dirName) => {
+    const dir = `stats/${dirName}`;
+    mkDirCache(dir, '*');
+  });
+}
+
+function mkDirCache(dir: string, pattern: string) {
   const cacheDir = `${dir}/.cache`;
   if (!fs.existsSync(cacheDir)) {
     fs.mkdirSync(cacheDir);
   }
-
-  for (let file of glob.sync(`${dir}/*.ts`)) {
+  for (let file of glob.sync(`${dir}/${pattern}`)) {
     const fileName = (file as string).split('/').slice(-1)[0];
     fs.renameSync(file, `${cacheDir}/${fileName}`);
   }
+}
+
+function restoreFileFromCache(filename: string) {
+  const splitPath = filename.split('/');
+  const file = splitPath.pop();
+  splitPath.push('.cache');
+  splitPath.push(file);
+  const cachedFile = splitPath.join('/');
+  if (!fs.existsSync(cachedFile)) {
+    return;
+  }
+  fs.renameSync(cachedFile, filename);
 }
 
 function getLastModified(url: string): Promise<Date> {
