@@ -1,0 +1,7 @@
+storagegateway:device
+storagegateway:gateway
+storagegateway:share
+storagegateway:tape
+storagegateway:tapepool
+storagegateway:target
+storagegateway:volume

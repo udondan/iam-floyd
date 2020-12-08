@@ -1,0 +1,8 @@
+ecs:RequestTag
+ecs:ResourceTag
+ecs:TagKeys
+ecs:capacity-provider
+ecs:cluster
+ecs:container-instances
+ecs:service
+ecs:task-definition

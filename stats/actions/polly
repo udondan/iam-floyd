@@ -1,0 +1,9 @@
+polly:DeleteLexicon;Write
+polly:DescribeVoices;List
+polly:GetLexicon;Read
+polly:GetSpeechSynthesisTask;Read
+polly:ListLexicons;List
+polly:ListSpeechSynthesisTasks;List
+polly:PutLexicon;Write
+polly:StartSpeechSynthesisTask;Write
+polly:SynthesizeSpeech;Read

@@ -1,0 +1,8 @@
+activate:CreateForm;Write
+activate:GetAccountContact;Read
+activate:GetContentInfo;Read
+activate:GetCosts;Read
+activate:GetCredits;Read
+activate:GetMemberInfo;Read
+activate:GetProgram;Read
+activate:PutMemberInfo;Write

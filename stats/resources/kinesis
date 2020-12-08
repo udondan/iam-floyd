@@ -1,0 +1,3 @@
+kinesis:consumer
+kinesis:kmsKey
+kinesis:stream

@@ -1,0 +1,3 @@
+globalaccelerator:accelerator
+globalaccelerator:endpointgroup
+globalaccelerator:listener

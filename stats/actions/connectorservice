@@ -1,0 +1,3 @@
+awsconnector:GetConnectorHealth;Read
+awsconnector:RegisterConnector;Write
+awsconnector:ValidateConnectorId;Read

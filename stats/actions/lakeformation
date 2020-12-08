@@ -1,0 +1,14 @@
+lakeformation:BatchGrantPermissions;Permissions management
+lakeformation:BatchRevokePermissions;Permissions management
+lakeformation:DeregisterResource;Write
+lakeformation:DescribeResource;Read
+lakeformation:GetDataAccess;Write
+lakeformation:GetDataLakeSettings;Read
+lakeformation:GetEffectivePermissionsForPath;Read
+lakeformation:GrantPermissions;Permissions management
+lakeformation:ListPermissions;List
+lakeformation:ListResources;List
+lakeformation:PutDataLakeSettings;Permissions management
+lakeformation:RegisterResource;Write
+lakeformation:RevokePermissions;Permissions management
+lakeformation:UpdateResource;Write

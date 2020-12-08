@@ -1,0 +1,7 @@
+lambda:CodeSigningConfigArn
+lambda:FunctionArn
+lambda:Layer
+lambda:Principal
+lambda:SecurityGroupIds
+lambda:SubnetIds
+lambda:VpcIds

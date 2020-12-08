@@ -1,0 +1,9 @@
+proton:environment
+proton:environment-template
+proton:environment-template-major-version
+proton:environment-template-minor-version
+proton:service
+proton:service-instance
+proton:service-template
+proton:service-template-major-version
+proton:service-template-minor-version

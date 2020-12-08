@@ -1,0 +1,106 @@
+redshift:AcceptReservedNodeExchange;Write
+redshift:AuthorizeClusterSecurityGroupIngress;Permissions management
+redshift:AuthorizeSnapshotAccess;Permissions management
+redshift:BatchDeleteClusterSnapshots;Write
+redshift:BatchModifyClusterSnapshots;Write
+redshift:CancelQuery;Write
+redshift:CancelQuerySession;Write
+redshift:CancelResize;Write
+redshift:CopyClusterSnapshot;Write
+redshift:CreateCluster;Write
+redshift:CreateClusterParameterGroup;Write
+redshift:CreateClusterSecurityGroup;Write
+redshift:CreateClusterSnapshot;Write
+redshift:CreateClusterSubnetGroup;Write
+redshift:CreateClusterUser;Permissions management
+redshift:CreateEventSubscription;Write
+redshift:CreateHsmClientCertificate;Write
+redshift:CreateHsmConfiguration;Write
+redshift:CreateSavedQuery;Write
+redshift:CreateScheduledAction;Write
+redshift:CreateSnapshotCopyGrant;Permissions management
+redshift:CreateSnapshotSchedule;Write
+redshift:CreateTags;Tagging
+redshift:DeleteCluster;Write
+redshift:DeleteClusterParameterGroup;Write
+redshift:DeleteClusterSecurityGroup;Write
+redshift:DeleteClusterSnapshot;Write
+redshift:DeleteClusterSubnetGroup;Write
+redshift:DeleteEventSubscription;Write
+redshift:DeleteHsmClientCertificate;Write
+redshift:DeleteHsmConfiguration;Write
+redshift:DeleteSavedQueries;Write
+redshift:DeleteScheduledAction;Write
+redshift:DeleteSnapshotCopyGrant;Write
+redshift:DeleteSnapshotSchedule;Write
+redshift:DeleteTags;Tagging
+redshift:DescribeAccountAttributes;Read
+redshift:DescribeClusterDbRevisions;List
+redshift:DescribeClusterParameterGroups;Read
+redshift:DescribeClusterParameters;Read
+redshift:DescribeClusterSecurityGroups;Read
+redshift:DescribeClusterSnapshots;Read
+redshift:DescribeClusterSubnetGroups;Read
+redshift:DescribeClusterTracks;List
+redshift:DescribeClusterVersions;Read
+redshift:DescribeClusters;List
+redshift:DescribeDefaultClusterParameters;Read
+redshift:DescribeEventCategories;Read
+redshift:DescribeEventSubscriptions;Read
+redshift:DescribeEvents;List
+redshift:DescribeHsmClientCertificates;Read
+redshift:DescribeHsmConfigurations;Read
+redshift:DescribeLoggingStatus;Read
+redshift:DescribeNodeConfigurationOptions;List
+redshift:DescribeOrderableClusterOptions;Read
+redshift:DescribeQuery;Read
+redshift:DescribeReservedNodeOfferings;Read
+redshift:DescribeReservedNodes;Read
+redshift:DescribeResize;Read
+redshift:DescribeSavedQueries;Read
+redshift:DescribeScheduledActions;Read
+redshift:DescribeSnapshotCopyGrants;Read
+redshift:DescribeSnapshotSchedules;Read
+redshift:DescribeStorage;Read
+redshift:DescribeTable;Read
+redshift:DescribeTableRestoreStatus;Read
+redshift:DescribeTags;Read
+redshift:DisableLogging;Write
+redshift:DisableSnapshotCopy;Write
+redshift:EnableLogging;Write
+redshift:EnableSnapshotCopy;Write
+redshift:ExecuteQuery;Write
+redshift:FetchResults;Read
+redshift:GetClusterCredentials;Write
+redshift:GetReservedNodeExchangeOfferings;Read
+redshift:JoinGroup;Permissions management
+redshift:ListDatabases;List
+redshift:ListSavedQueries;List
+redshift:ListSchemas;List
+redshift:ListTables;List
+redshift:ModifyCluster;Write
+redshift:ModifyClusterDbRevision;Write
+redshift:ModifyClusterIamRoles;Permissions management
+redshift:ModifyClusterMaintenance;Write
+redshift:ModifyClusterParameterGroup;Write
+redshift:ModifyClusterSnapshot;Write
+redshift:ModifyClusterSnapshotSchedule;Write
+redshift:ModifyClusterSubnetGroup;Write
+redshift:ModifyEventSubscription;Write
+redshift:ModifySavedQuery;Write
+redshift:ModifyScheduledAction;Write
+redshift:ModifySnapshotCopyRetentionPeriod;Write
+redshift:ModifySnapshotSchedule;Write
+redshift:PauseCluster;Write
+redshift:PurchaseReservedNodeOffering;Write
+redshift:RebootCluster;Write
+redshift:ResetClusterParameterGroup;Write
+redshift:ResizeCluster;Write
+redshift:RestoreFromClusterSnapshot;Write
+redshift:RestoreTableFromClusterSnapshot;Write
+redshift:ResumeCluster;Write
+redshift:RevokeClusterSecurityGroupIngress;Permissions management
+redshift:RevokeSnapshotAccess;Permissions management
+redshift:RotateEncryptionKey;Permissions management
+redshift:ViewQueriesFromConsole;List
+redshift:ViewQueriesInConsole;List

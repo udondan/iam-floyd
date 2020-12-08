@@ -1,0 +1,5 @@
+securityhub:ASFFSyntaxPath
+securityhub:RequestTag
+securityhub:ResourceTag
+securityhub:TagKeys
+securityhub:TargetAccount

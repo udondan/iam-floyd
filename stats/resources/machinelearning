@@ -1,0 +1,4 @@
+machinelearning:batchprediction
+machinelearning:datasource
+machinelearning:evaluation
+machinelearning:mlmodel

@@ -1,0 +1,10 @@
+connect:contact
+connect:contact-flow
+connect:hierarchy-group
+connect:hours-of-operation
+connect:instance
+connect:phone-number
+connect:queue
+connect:routing-profile
+connect:security-profile
+connect:user

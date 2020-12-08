@@ -1,0 +1,13 @@
+codestar-notifications:CreateNotificationRule;Write
+codestar-notifications:DeleteNotificationRule;Write
+codestar-notifications:DeleteTarget;Write
+codestar-notifications:DescribeNotificationRule;Read
+codestar-notifications:ListEventTypes;List
+codestar-notifications:ListNotificationRules;List
+codestar-notifications:ListTagsForResource;List
+codestar-notifications:ListTargets;List
+codestar-notifications:Subscribe;Write
+codestar-notifications:TagResource;Tagging
+codestar-notifications:Unsubscribe;Write
+codestar-notifications:UntagResource;Tagging
+codestar-notifications:UpdateNotificationRule;Write

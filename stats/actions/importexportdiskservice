@@ -1,0 +1,6 @@
+importexport:CancelJob;Write
+importexport:CreateJob;Write
+importexport:GetShippingLabel;Read
+importexport:GetStatus;Read
+importexport:ListJobs;List
+importexport:UpdateJob;Write

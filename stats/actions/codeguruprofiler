@@ -1,0 +1,23 @@
+codeguru-profiler:AddNotificationChannels;Write
+codeguru-profiler:BatchGetFrameMetricData;List
+codeguru-profiler:ConfigureAgent;Write
+codeguru-profiler:CreateProfilingGroup;Write
+codeguru-profiler:DeleteProfilingGroup;Write
+codeguru-profiler:DescribeProfilingGroup;Read
+codeguru-profiler:GetFindingsReportAccountSummary;Read
+codeguru-profiler:GetNotificationConfiguration;Read
+codeguru-profiler:GetPolicy;Read
+codeguru-profiler:GetProfile;Read
+codeguru-profiler:GetRecommendations;Read
+codeguru-profiler:ListFindingsReports;List
+codeguru-profiler:ListProfileTimes;List
+codeguru-profiler:ListProfilingGroups;List
+codeguru-profiler:ListTagsForResource;Tagging
+codeguru-profiler:PostAgentProfile;Write
+codeguru-profiler:PutPermission;Permissions management
+codeguru-profiler:RemoveNotificationChannel;Write
+codeguru-profiler:RemovePermission;Permissions management
+codeguru-profiler:SubmitFeedback;Write
+codeguru-profiler:TagResource;Tagging
+codeguru-profiler:UntagResource;Tagging
+codeguru-profiler:UpdateProfilingGroup;Write

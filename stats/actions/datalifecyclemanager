@@ -1,0 +1,8 @@
+dlm:CreateLifecyclePolicy;Write
+dlm:DeleteLifecyclePolicy;Write
+dlm:GetLifecyclePolicies;List
+dlm:GetLifecyclePolicy;Read
+dlm:ListTagsForResource;Read
+dlm:TagResource;Tagging
+dlm:UntagResource;Tagging
+dlm:UpdateLifecyclePolicy;Write

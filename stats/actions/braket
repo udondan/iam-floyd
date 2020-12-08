@@ -1,0 +1,9 @@
+braket:CancelQuantumTask;Write
+braket:CreateQuantumTask;Write
+braket:GetDevice;Read
+braket:GetQuantumTask;Read
+braket:ListTagsForResource;Read
+braket:SearchDevices;Read
+braket:SearchQuantumTasks;Read
+braket:TagResource;Tagging
+braket:UntagResource;Tagging

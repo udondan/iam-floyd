@@ -1,0 +1,16 @@
+ssm:association
+ssm:automation-definition
+ssm:automation-execution
+ssm:document
+ssm:instance
+ssm:maintenancewindow
+ssm:managed-instance
+ssm:managed-instance-inventory
+ssm:opsitem
+ssm:parameter
+ssm:patchbaseline
+ssm:resourcedatasync
+ssm:servicesetting
+ssm:session
+ssm:windowtarget
+ssm:windowtask

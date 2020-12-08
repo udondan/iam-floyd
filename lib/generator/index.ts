@@ -28,14 +28,12 @@ if (typeof thresholdOverride !== 'undefined' && thresholdOverride.length) {
 
 timeThreshold.setHours(timeThreshold.getHours() - threshold);
 
-const stats: {
-  [key: string]: string[];
-} = {
-  actions: [],
-  conditions: [],
-  resources: [],
-  services: [],
+type Stats = {
+  actions: string[];
+  conditions: string[];
+  resources: string[];
 };
+const serviceStats: string[] = [];
 
 const conditionTypeDefaults: {
   [key: string]: {
@@ -209,32 +207,47 @@ export function createModules(services: string[]): Promise<void> {
     for (const service of services) {
       await getContent(service).then(createModule).catch(reject);
     }
-    writeStats();
+    writeServiceStats();
     resolve();
   });
 }
 
-function writeStats() {
+function writeStatsFile(file: string, data: string[]) {
+  if (fs.existsSync(file)) {
+    fs.unlinkSync(file);
+  }
+  if (!data.length) {
+    return;
+  }
+  const uniqueValues = data
+    .filter(function (elem, pos) {
+      return data.indexOf(elem) == pos;
+    })
+    .sort();
+  const content = uniqueValues.join('\n') + '\n';
+  fs.writeFileSync(file, content);
+}
+
+function writeStats(module: string, stats: Stats) {
+  process.stdout.write('Stats '.grey);
   Object.keys(stats).forEach(function (key) {
-    const filePath = `./stats/${key}`;
-    process.stdout.write(`Generating stats for for ${key}`.cyan);
-    if (fs.existsSync(filePath)) {
-      fs.unlinkSync(filePath);
-    }
-
-    const uniqueValues = stats[key]
-      .filter(function (elem, pos) {
-        return stats[key].indexOf(elem) == pos;
-      })
-      .sort();
-
-    const content = uniqueValues.join('\n') + '\n';
-    fs.writeFileSync(filePath, content);
+    const filePath = `./stats/${key}/${module}`;
+    writeStatsFile(filePath, stats[key]);
   });
 }
 
+function writeServiceStats() {
+  writeStatsFile('./stats/services', serviceStats);
+}
+
 export function createModule(module: Module): Promise<void> {
-  stats['services'].push(module.filename);
+  serviceStats.push(module.filename);
+
+  const stats: Stats = {
+    actions: [],
+    conditions: [],
+    resources: [],
+  };
   if (typeof module.name === 'undefined') {
     //it was skipped, restore from cache
     fs.renameSync(
@@ -301,9 +314,7 @@ export function createModule(module: Module): Promise<void> {
     }
     accessLevelList[action.accessLevel].push(name);
 
-    stats['actions'].push(
-      `${module.servicePrefix}:${name};${action.accessLevel}`
-    );
+    stats.actions.push(`${module.servicePrefix}:${name};${action.accessLevel}`);
 
     const method = classDeclaration.addMethod({
       name: `to${name}`,
@@ -349,7 +360,7 @@ export function createModule(module: Module): Promise<void> {
       scope: Scope.Public,
     });
 
-    stats['resources'].push(`${module.servicePrefix}:${name}`);
+    stats.resources.push(`${module.servicePrefix}:${name}`);
 
     const params = getArnPlaceholders(resourceType.arn);
     params.forEach((param) => {
@@ -411,7 +422,7 @@ export function createModule(module: Module): Promise<void> {
 
     const name = key.split(/[:/]/);
 
-    stats['conditions'].push(`${module.servicePrefix}:${name[1]}`);
+    stats.conditions.push(`${module.servicePrefix}:${name[1]}`);
 
     // we have to skip global conditions, since we simply cannot override global conditions due to JSII limitations: https://github.com/aws/jsii/issues/1935
     if (name[0] == 'aws' && name[1] != 'FederatedProvider') {
@@ -565,6 +576,7 @@ export function createModule(module: Module): Promise<void> {
 
   formatCode(sourceFile);
   const done = sourceFile.save();
+  writeStats(module.filename, stats);
   console.log('Done'.green);
   return done;
 }

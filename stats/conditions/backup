@@ -1,0 +1,5 @@
+backup:CopyTargetOrgPaths
+backup:CopyTargets
+backup:RequestTag
+backup:ResourceTag
+backup:TagKeys

@@ -1,0 +1,8 @@
+ssm:Overwrite
+ssm:Recursive
+ssm:RequestTag
+ssm:ResourceTag
+ssm:SessionDocumentAccessCheck
+ssm:SyncType
+ssm:TagKeys
+ssm:resourceTag

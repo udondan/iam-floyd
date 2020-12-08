@@ -1,0 +1,20 @@
+sqs:AddPermission;Permissions management
+sqs:ChangeMessageVisibility;Write
+sqs:ChangeMessageVisibilityBatch;Write
+sqs:CreateQueue;Write
+sqs:DeleteMessage;Write
+sqs:DeleteMessageBatch;Write
+sqs:DeleteQueue;Write
+sqs:GetQueueAttributes;Read
+sqs:GetQueueUrl;Read
+sqs:ListDeadLetterSourceQueues;Read
+sqs:ListQueueTags;Read
+sqs:ListQueues;List
+sqs:PurgeQueue;Write
+sqs:ReceiveMessage;Read
+sqs:RemovePermission;Permissions management
+sqs:SendMessage;Write
+sqs:SendMessageBatch;Write
+sqs:SetQueueAttributes;Write
+sqs:TagQueue;Tagging
+sqs:UntagQueue;Tagging

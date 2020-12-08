@@ -1,0 +1,33 @@
+sns:AddPermission;Permissions management
+sns:CheckIfPhoneNumberIsOptedOut;Read
+sns:ConfirmSubscription;Write
+sns:CreatePlatformApplication;Write
+sns:CreatePlatformEndpoint;Write
+sns:CreateTopic;Write
+sns:DeleteEndpoint;Write
+sns:DeletePlatformApplication;Write
+sns:DeleteTopic;Write
+sns:GetEndpointAttributes;Read
+sns:GetPlatformApplicationAttributes;Read
+sns:GetSMSAttributes;Read
+sns:GetSubscriptionAttributes;Read
+sns:GetTopicAttributes;Read
+sns:ListEndpointsByPlatformApplication;List
+sns:ListPhoneNumbersOptedOut;Read
+sns:ListPlatformApplications;List
+sns:ListSubscriptions;List
+sns:ListSubscriptionsByTopic;List
+sns:ListTagsForResource;Read
+sns:ListTopics;List
+sns:OptInPhoneNumber;Write
+sns:Publish;Write
+sns:RemovePermission;Permissions management
+sns:SetEndpointAttributes;Write
+sns:SetPlatformApplicationAttributes;Write
+sns:SetSMSAttributes;Write
+sns:SetSubscriptionAttributes;Write
+sns:SetTopicAttributes;Write
+sns:Subscribe;Write
+sns:TagResource;Tagging
+sns:Unsubscribe;Write
+sns:UntagResource;Tagging

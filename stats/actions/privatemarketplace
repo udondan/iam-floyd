@@ -1,0 +1,16 @@
+aws-marketplace:AssociateProductsWithPrivateMarketplace;Write
+aws-marketplace:CreatePrivateMarketplace;Write
+aws-marketplace:CreatePrivateMarketplaceProfile;Write
+aws-marketplace:CreatePrivateMarketplaceRequests;Write
+aws-marketplace:DescribePrivateMarketplaceProducts;List
+aws-marketplace:DescribePrivateMarketplaceProfile;Read
+aws-marketplace:DescribePrivateMarketplaceRequests;List
+aws-marketplace:DescribePrivateMarketplaceSettings;Read
+aws-marketplace:DescribePrivateMarketplaceStatus;Read
+aws-marketplace:DisassociateProductsFromPrivateMarketplace;Write
+aws-marketplace:ListPrivateMarketplaceProducts;List
+aws-marketplace:ListPrivateMarketplaceRequests;List
+aws-marketplace:StartPrivateMarketplace;Write
+aws-marketplace:StopPrivateMarketplace;Write
+aws-marketplace:UpdatePrivateMarketplaceProfile;Write
+aws-marketplace:UpdatePrivateMarketplaceSettings;Write

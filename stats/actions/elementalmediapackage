@@ -1,0 +1,17 @@
+mediapackage:CreateChannel;Write
+mediapackage:CreateHarvestJob;Write
+mediapackage:CreateOriginEndpoint;Write
+mediapackage:DeleteChannel;Write
+mediapackage:DeleteOriginEndpoint;Write
+mediapackage:DescribeChannel;Read
+mediapackage:DescribeHarvestJob;Read
+mediapackage:DescribeOriginEndpoint;Read
+mediapackage:ListChannels;Read
+mediapackage:ListHarvestJobs;Read
+mediapackage:ListOriginEndpoints;Read
+mediapackage:ListTagsForResource;Read
+mediapackage:RotateIngestEndpointCredentials;Write
+mediapackage:TagResource;Write
+mediapackage:UntagResource;Write
+mediapackage:UpdateChannel;Write
+mediapackage:UpdateOriginEndpoint;Write

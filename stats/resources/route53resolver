@@ -1,0 +1,3 @@
+route53resolver:resolver-endpoint
+route53resolver:resolver-query-log-config
+route53resolver:resolver-rule

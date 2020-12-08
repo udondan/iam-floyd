@@ -1,0 +1,14 @@
+fsx:CancelDataRepositoryTask;Write
+fsx:CreateBackup;Tagging
+fsx:CreateDataRepositoryTask;Tagging
+fsx:CreateFileSystem;Tagging
+fsx:CreateFileSystemFromBackup;Tagging
+fsx:DeleteBackup;Write
+fsx:DeleteFileSystem;Write
+fsx:DescribeBackups;Read
+fsx:DescribeDataRepositoryTasks;Read
+fsx:DescribeFileSystems;Read
+fsx:ListTagsForResource;Read
+fsx:TagResource;Tagging
+fsx:UntagResource;Tagging
+fsx:UpdateFileSystem;Write

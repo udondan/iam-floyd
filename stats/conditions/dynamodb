@@ -1,0 +1,7 @@
+dynamodb:Attributes
+dynamodb:EnclosingOperation
+dynamodb:FullTableScan
+dynamodb:LeadingKeys
+dynamodb:ReturnConsumedCapacity
+dynamodb:ReturnValues
+dynamodb:Select

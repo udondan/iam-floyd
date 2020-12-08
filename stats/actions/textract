@@ -1,0 +1,6 @@
+textract:AnalyzeDocument;Read
+textract:DetectDocumentText;Read
+textract:GetDocumentAnalysis;Read
+textract:GetDocumentTextDetection;Read
+textract:StartDocumentAnalysis;Write
+textract:StartDocumentTextDetection;Write

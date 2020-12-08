@@ -1,0 +1,6 @@
+lex:RequestTag
+lex:ResourceTag
+lex:TagKeys
+lex:associatedIntents
+lex:associatedSlotTypes
+lex:channelType

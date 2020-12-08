@@ -1,0 +1,4 @@
+sns:Endpoint
+sns:Protocol
+sns:RequestTag
+sns:TagKeys
