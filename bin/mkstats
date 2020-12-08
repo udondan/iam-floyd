@@ -5,11 +5,11 @@ function getNoServices() {
 }
 
 function getNoActions() {
-  wc -l < stats/actions | xargs
+  cat stats/actions/* | sort | uniq | wc -l | xargs
 }
 
 function getNoResourceTypes() {
-  wc -l < stats/resources | xargs
+  cat stats/resources/* | sort | uniq | wc -l | xargs
 }
 
 function getNoGlobalConditions() {
@@ -17,7 +17,7 @@ function getNoGlobalConditions() {
 }
 
 function getNoServiceConditions() {
-  wc -l < stats/conditions | xargs
+  cat stats/conditions/* | sort | uniq | wc -l | xargs
 }
 
 function getNoConditions() {
