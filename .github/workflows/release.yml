@@ -150,8 +150,8 @@ jobs:
           name: cdk-packages
           path: dist/**/*
 
-  test-base:
-    name: Test base package
+  test-base-npm:
+    name: Test base npm package
     needs: build-base
     runs-on: ubuntu-latest
     container:
@@ -185,14 +185,43 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
+  test-base-python:
+    name: Test base Python package
+    needs: build-base
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: packages
+          path: dist
+
       - name: Test Python package
         run: make test-python
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-  test-cdk:
-    name: Test CDK package
+  test-cdk-npm:
+    name: Test CDK npm package
     needs: build-cdk
     runs-on: ubuntu-latest
     container:
@@ -226,6 +255,35 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
+  test-cdk-python:
+    name: Test CDK Python package
+    needs: build-cdk
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: cdk-packages
+          path: dist
+
       - name: Test Python package
         run: make test-python-cdk
         env:
@@ -235,8 +293,10 @@ jobs:
   release:
     name: Release
     needs:
-      - test-base
-      - test-cdk
+      - test-base-npm
+      - test-base-python
+      - test-cdk-npm
+      - test-cdk-python
     runs-on: ubuntu-latest
     steps:
       - name: Fetch latest SHA
