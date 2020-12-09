@@ -255,10 +255,8 @@ jobs:
           name: cdk-packages
           path: dist
 
-      - name: Install dependencies
-        run: |
-          make install cdk
-          npm i
+      - name: Build CDK variant
+        run: make install cdk
 
       - name: Test npm package
         run: make test-typescript-cdk
