@@ -46,7 +46,7 @@ jobs:
       - name: Push changes
         run: >
           [[ "${{ github.ref }}" == refs/tags/* ]] ||
-          git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" main
+          git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" "${GITHUB_REF##*/}"
 
       - name: Get current SHA
         run: git rev-parse HEAD > /tmp/sha
