@@ -1,4 +1,4 @@
-import * as statement from 'iam-floyd';
+import * as statement from '../../lib';
 
 function getPolicy() {
   function wrap() {

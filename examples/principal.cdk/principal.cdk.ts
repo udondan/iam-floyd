@@ -1,7 +1,7 @@
 import iam = require('@aws-cdk/aws-iam');
-import * as statement from 'cdk-iam-floyd';
 
 import { deploy, out } from '../../helper/typescript/typescript_test';
+import * as statement from '../../lib';
 
 function getStatement() {
   return (

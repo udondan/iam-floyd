@@ -180,10 +180,8 @@ jobs:
           name: packages
           path: dist
 
-      - name: Install package
-        run: |
-          sed -i "s/iam-floyd/iam-dummy/g" package*
-          npm i dist/js/iam-floyd@*.jsii.tgz
+      - name: Install dependencies
+        run: npm i
 
       - name: Test npm package
         run: make test-typescript
@@ -257,10 +255,8 @@ jobs:
           name: cdk-packages
           path: dist
 
-      - name: Install package
-        run: |
-          sed -i "s/iam-floyd/iam-dummy/g" package*
-          npm i dist/js/cdk-iam-floyd@*.jsii.tgz
+      - name: Install dependencies
+        run: npm i
 
       - name: Test npm package
         run: make test-typescript-cdk
