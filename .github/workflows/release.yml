@@ -10,11 +10,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
-    name: Release
+  finalize:
+    name: Finalize
     runs-on: ubuntu-latest
-    container:
-      image: jsii/superchain
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -45,6 +43,43 @@ jobs:
           [[ "${{ github.ref }}" == refs/tags/* ]] ||
           git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" main
 
+      - name: Get current SHA
+        run: git rev-parse HEAD > /tmp/sha
+
+      - name: Store SHA as artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+  build-base:
+    name: Build base package
+    needs: finalize
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(cat VERSION)
+
       - name: Build source
         uses: udondan/jsii-publish@v0.12.0
         with:
@@ -56,23 +91,39 @@ jobs:
         with:
           BUILD_PACKAGES: true
 
-      - name: Test npm package
-        run: make test-typescript
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
-      - name: Test Python package
-        run: make test-python
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
       - name: Store packages as artifacts
         uses: actions/upload-artifact@v2
         with:
           name: packages
           path: dist/**/*
+
+  build-cdk:
+    name: Build CDK package
+    needs: finalize
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(cat VERSION)
 
       - name: Build CDK variant
         run: make cdk
@@ -88,6 +139,82 @@ jobs:
         with:
           BUILD_PACKAGES: true
 
+      - name: Store packages as artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: cdk-packages
+          path: dist/**/*
+
+  test-base:
+    name: Test base package
+    needs: build-base
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: packages
+          path: dist
+
+      - name: Test npm package
+        run: make test-typescript
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Test Python package
+        run: make test-python
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  test-cdk:
+    name: Test CDK package
+    needs: build-cdk
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: cdk-packages
+          path: dist
+
       - name: Test npm package
         run: make test-typescript-cdk
         env:
@@ -100,147 +227,165 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      - name: Store packages as artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: cdk-packages
-          path: dist/**/*
-
-      - name: Create tag
-        run: |
-          git config --local user.email "deemes79@googlemail.com"
-          git config --local user.name "udondan"
-          git tag -a "v${{ steps.get_version.outputs.VERSION }}" -m "Creates tag v${{ steps.get_version.outputs.VERSION }}"
-          git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
-          touch CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
-
-      - name: Create release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{ steps.get_version.outputs.VERSION }}
-          release_name: v${{ steps.get_version.outputs.VERSION }}
-          body_path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
-
-  publish-base-npm:
-    name: Publish base to npm
-    needs: release
+  release:
+    name: Release
+    needs:
+      - test-base
+      - test-cdk
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v2
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
         with:
-          name: packages
-          path: dist
+          name: sha
+          path: /tmp/sha
 
-      - name: Publish to npm
-        uses: udondan/jsii-publish@v0.12.0
-        with:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha)
 
-  publish-base-pypi:
-    name: Publish base to PyPI
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
         with:
-          name: packages
-          path: dist
-
-      - name: Publish to PyPI
-        uses: udondan/jsii-publish@v0.12.0
-        with:
-          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
-
-  publish-base-nuget:
-    name: Publish base to NuGet
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: packages
-          path: dist
-
-      - name: Publish to NuGet
-        uses: udondan/jsii-publish@v0.12.0
-        with:
-          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
-
-  publish-base-maven-github:
-    name: Publish base to Maven GitHub
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: packages
-          path: dist
-
-      - name: Publish to Maven GitHub
-        uses: udondan/jsii-publish@v0.12.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-
-  publish-cdk-npm:
-    name: Publish CDK to npm
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: cdk-packages
-          path: dist
-
-      - name: Publish to npm
-        uses: udondan/jsii-publish@v0.12.0
-        with:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  publish-cdk-pypi:
-    name: Publish CDK to PyPI
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: cdk-packages
-          path: dist
-
-      - name: Publish to PyPI
-        uses: udondan/jsii-publish@v0.12.0
-        with:
-          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
-
-  publish-cdk-nuget:
-    name: Publish CDK to NuGet
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: cdk-packages
-          path: dist
-
-      - name: Publish to NuGet
-        uses: udondan/jsii-publish@v0.12.0
-        with:
-          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
-
-  publish-cdk-maven-github:
-    name: Publish CDK to Maven GitHub
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: cdk-packages
-          path: dist
-
-      - name: Publish to Maven GitHub
-        uses: udondan/jsii-publish@v0.12.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+#
+#      - name: Create tag
+#        run: |
+#          git config --local user.email "deemes79@googlemail.com"
+#          git config --local user.name "udondan"
+#          git tag -a "v${{ steps.get_version.outputs.VERSION }}" -m "Creates tag v${{ steps.get_version.outputs.VERSION }}"
+#          git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
+#          touch CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
+#
+#      - name: Create release
+#        uses: actions/create-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          tag_name: v${{ steps.get_version.outputs.VERSION }}
+#          release_name: v${{ steps.get_version.outputs.VERSION }}
+#          body_path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
+#
+#  publish-base-npm:
+#    name: Publish base to npm
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: packages
+#          path: dist
+#
+#      - name: Publish to npm
+#        uses: udondan/jsii-publish@v0.12.0
+#        with:
+#          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+#
+#  publish-base-pypi:
+#    name: Publish base to PyPI
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: packages
+#          path: dist
+#
+#      - name: Publish to PyPI
+#        uses: udondan/jsii-publish@v0.12.0
+#        with:
+#          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+#
+#  publish-base-nuget:
+#    name: Publish base to NuGet
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: packages
+#          path: dist
+#
+#      - name: Publish to NuGet
+#        uses: udondan/jsii-publish@v0.12.0
+#        with:
+#          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+#
+#  publish-base-maven-github:
+#    name: Publish base to Maven GitHub
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: packages
+#          path: dist
+#
+#      - name: Publish to Maven GitHub
+#        uses: udondan/jsii-publish@v0.12.0
+#        with:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          GITHUB_REPOSITORY: ${{ github.repository }}
+#
+#  publish-cdk-npm:
+#    name: Publish CDK to npm
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: cdk-packages
+#          path: dist
+#
+#      - name: Publish to npm
+#        uses: udondan/jsii-publish@v0.12.0
+#        with:
+#          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+#
+#  publish-cdk-pypi:
+#    name: Publish CDK to PyPI
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: cdk-packages
+#          path: dist
+#
+#      - name: Publish to PyPI
+#        uses: udondan/jsii-publish@v0.12.0
+#        with:
+#          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+#
+#  publish-cdk-nuget:
+#    name: Publish CDK to NuGet
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: cdk-packages
+#          path: dist
+#
+#      - name: Publish to NuGet
+#        uses: udondan/jsii-publish@v0.12.0
+#        with:
+#          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+#
+#  publish-cdk-maven-github:
+#    name: Publish CDK to Maven GitHub
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: cdk-packages
+#          path: dist
+#
+#      - name: Publish to Maven GitHub
+#        uses: udondan/jsii-publish@v0.12.0
+#        with:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          GITHUB_REPOSITORY: ${{ github.repository }}
