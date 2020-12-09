@@ -256,7 +256,9 @@ jobs:
           path: dist
 
       - name: Install dependencies
-        run: npm i
+        run: |
+          make install cdk
+          npm i
 
       - name: Test npm package
         run: make test-typescript-cdk
