@@ -246,6 +246,11 @@ jobs:
       - name: Build CDK variant
         run: make install cdk
 
+      - name: debug
+        run: |
+          git status
+          git diff
+
       - name: Test npm package
         run: make test-typescript-cdk
         env:
