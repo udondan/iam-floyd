@@ -131,7 +131,7 @@ jobs:
         run: echo ::set-output name=VERSION::$(cat VERSION)
 
       - name: Build CDK variant
-        run: make cdk
+        run: make install cdk
 
       - name: Build source
         uses: udondan/jsii-publish@v0.12.0
