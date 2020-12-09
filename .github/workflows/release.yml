@@ -174,12 +174,6 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
-      - name: Download package
-        uses: actions/download-artifact@v2
-        with:
-          name: packages
-          path: dist
-
       - name: Install dependencies
         run: npm i
 
@@ -248,12 +242,6 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
-
-      - name: Download package
-        uses: actions/download-artifact@v2
-        with:
-          name: cdk-packages
-          path: dist
 
       - name: Build CDK variant
         run: make install cdk
