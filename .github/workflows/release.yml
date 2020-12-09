@@ -181,7 +181,9 @@ jobs:
           path: dist
 
       - name: Install package
-        run: npm i dist/js/iam-floyd@*.jsii.tgz
+        run: |
+          rm package*
+          npm i dist/js/iam-floyd@*.jsii.tgz
 
       - name: Test npm package
         run: make test-typescript
@@ -256,7 +258,9 @@ jobs:
           path: dist
 
       - name: Install package
-        run: npm i dist/js/cdk-iam-floyd@*.jsii.tgz
+        run: |
+          rm package*
+          npm i dist/js/cdk-iam-floyd@*.jsii.tgz
 
       - name: Test npm package
         run: make test-typescript-cdk
