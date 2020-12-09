@@ -57,8 +57,8 @@ jobs:
           name: sha
           path: /tmp/sha
 
-  build-base:
-    name: Build base package
+  build-standalone:
+    name: "STANDALONE: Build package"
     needs: finalize
     runs-on: ubuntu-latest
     container:
@@ -103,7 +103,7 @@ jobs:
           path: dist/**/*
 
   build-cdk:
-    name: Build CDK package
+    name: "CDK: Build package"
     needs: finalize
     runs-on: ubuntu-latest
     container:
@@ -150,9 +150,9 @@ jobs:
           name: cdk-packages
           path: dist/**/*
 
-  test-base-npm:
-    name: Test base npm package
-    needs: build-base
+  test-standalone-node:
+    name: "STANDALONE: Test Node.js package"
+    needs: build-standalone
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain
@@ -183,9 +183,9 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-  test-base-python:
-    name: Test base Python package
-    needs: build-base
+  test-standalone-python:
+    name: "STANDALONE: Test Python package"
+    needs: build-standalone
     runs-on: ubuntu-latest
     container:
       image: jsii/superchain
@@ -219,8 +219,8 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-  test-cdk-npm:
-    name: Test CDK npm package
+  test-cdk-node:
+    name: "CDK: Test Node.js package"
     needs: build-cdk
     runs-on: ubuntu-latest
     container:
@@ -253,7 +253,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
   test-cdk-python:
-    name: Test CDK Python package
+    name: "CDK: Test Python package"
     needs: build-cdk
     runs-on: ubuntu-latest
     container:
@@ -291,9 +291,9 @@ jobs:
   release:
     name: Release
     needs:
-      - test-base-npm
-      - test-base-python
-      - test-cdk-npm
+      - test-standalone-node
+      - test-standalone-python
+      - test-cdk-node
       - test-cdk-python
     runs-on: ubuntu-latest
     steps:
@@ -331,8 +331,8 @@ jobs:
           release_name: v${{ steps.get_version.outputs.VERSION }}
           body_path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
 
-  publish-base-npm:
-    name: Publish base to npm
+  publish-standalone-npm:
+    name: "STANDALONE: Publish to npm"
     needs: release
     runs-on: ubuntu-latest
     steps:
@@ -347,8 +347,8 @@ jobs:
         with:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  publish-base-pypi:
-    name: Publish base to PyPI
+  publish-standalone-pypi:
+    name: "STANDALONE: Publish to PyPI"
     needs: release
     runs-on: ubuntu-latest
     steps:
@@ -363,8 +363,8 @@ jobs:
         with:
           PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
 
-  publish-base-nuget:
-    name: Publish base to NuGet
+  publish-standalone-nuget:
+    name: "STANDALONE: Publish to NuGet"
     needs: release
     runs-on: ubuntu-latest
     steps:
@@ -379,8 +379,8 @@ jobs:
         with:
           NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
 
-  publish-base-maven-github:
-    name: Publish base to Maven GitHub
+  publish-standalone-maven-github:
+    name: "STANDALONE: Publish to Maven GitHub"
     needs: release
     runs-on: ubuntu-latest
     steps:
@@ -397,7 +397,7 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
 
   publish-cdk-npm:
-    name: Publish CDK to npm
+    name: "CDK: Publish to npm"
     needs: release
     runs-on: ubuntu-latest
     steps:
@@ -413,7 +413,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-cdk-pypi:
-    name: Publish CDK to PyPI
+    name: "CDK: Publish to PyPI"
     needs: release
     runs-on: ubuntu-latest
     steps:
@@ -429,7 +429,7 @@ jobs:
           PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
 
   publish-cdk-nuget:
-    name: Publish CDK to NuGet
+    name: "CDK: Publish to NuGet"
     needs: release
     runs-on: ubuntu-latest
     steps:
@@ -445,7 +445,7 @@ jobs:
           NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
 
   publish-cdk-maven-github:
-    name: Publish CDK to Maven GitHub
+    name: "CDK: Publish to Maven GitHub"
     needs: release
     runs-on: ubuntu-latest
     steps:
