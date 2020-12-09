@@ -1,5 +1,6 @@
+import * as statement from 'iam-floyd';
+
 import { deploy, out } from '../../helper/typescript/typescript_test';
-import * as statement from '../../lib';
 
 function getStatement() {
   function wrap() {

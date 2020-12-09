@@ -174,10 +174,14 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
-      - uses: actions/download-artifact@v2
+      - name: Download package
+        uses: actions/download-artifact@v2
         with:
           name: packages
           path: dist
+
+      - name: Install package
+        run: npm i dist/js/iam-floyd@*.jsii.tgz
 
       - name: Test npm package
         run: make test-typescript
@@ -209,7 +213,8 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
-      - uses: actions/download-artifact@v2
+      - name: Download package
+        uses: actions/download-artifact@v2
         with:
           name: packages
           path: dist
@@ -244,10 +249,14 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
-      - uses: actions/download-artifact@v2
+      - name: Download package
+        uses: actions/download-artifact@v2
         with:
           name: cdk-packages
           path: dist
+
+      - name: Install package
+        run: npm i dist/js/cdk-iam-floyd@*.jsii.tgz
 
       - name: Test npm package
         run: make test-typescript-cdk
@@ -279,7 +288,8 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
-      - uses: actions/download-artifact@v2
+      - name: Download package
+        uses: actions/download-artifact@v2
         with:
           name: cdk-packages
           path: dist
@@ -338,7 +348,8 @@ jobs:
 #    needs: release
 #    runs-on: ubuntu-latest
 #    steps:
-#      - uses: actions/download-artifact@v2
+#      - name: Download package
+#        uses: actions/download-artifact@v2
 #        with:
 #          name: packages
 #          path: dist
@@ -353,7 +364,8 @@ jobs:
 #    needs: release
 #    runs-on: ubuntu-latest
 #    steps:
-#      - uses: actions/download-artifact@v2
+#      - name: Download package
+#        uses: actions/download-artifact@v2
 #        with:
 #          name: packages
 #          path: dist
@@ -368,7 +380,8 @@ jobs:
 #    needs: release
 #    runs-on: ubuntu-latest
 #    steps:
-#      - uses: actions/download-artifact@v2
+#      - name: Download package
+#        uses: actions/download-artifact@v2
 #        with:
 #          name: packages
 #          path: dist
@@ -383,7 +396,8 @@ jobs:
 #    needs: release
 #    runs-on: ubuntu-latest
 #    steps:
-#      - uses: actions/download-artifact@v2
+#      - name: Download package
+#        uses: actions/download-artifact@v2
 #        with:
 #          name: packages
 #          path: dist
@@ -399,7 +413,8 @@ jobs:
 #    needs: release
 #    runs-on: ubuntu-latest
 #    steps:
-#      - uses: actions/download-artifact@v2
+#      - name: Download package
+#        uses: actions/download-artifact@v2
 #        with:
 #          name: cdk-packages
 #          path: dist
@@ -414,7 +429,8 @@ jobs:
 #    needs: release
 #    runs-on: ubuntu-latest
 #    steps:
-#      - uses: actions/download-artifact@v2
+#      - name: Download package
+#        uses: actions/download-artifact@v2
 #        with:
 #          name: cdk-packages
 #          path: dist
@@ -429,7 +445,8 @@ jobs:
 #    needs: release
 #    runs-on: ubuntu-latest
 #    steps:
-#      - uses: actions/download-artifact@v2
+#      - name: Download package
+#        uses: actions/download-artifact@v2
 #        with:
 #          name: cdk-packages
 #          path: dist
@@ -444,7 +461,8 @@ jobs:
 #    needs: release
 #    runs-on: ubuntu-latest
 #    steps:
-#      - uses: actions/download-artifact@v2
+#      - name: Download package
+#        uses: actions/download-artifact@v2
 #        with:
 #          name: cdk-packages
 #          path: dist
