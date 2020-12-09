@@ -182,7 +182,7 @@ jobs:
 
       - name: Install package
         run: |
-          rm package*
+          sed -i "s/iam-floyd/iam-dummy/g" package*
           npm i dist/js/iam-floyd@*.jsii.tgz
 
       - name: Test npm package
@@ -259,7 +259,7 @@ jobs:
 
       - name: Install package
         run: |
-          rm package*
+          sed -i "s/iam-floyd/iam-dummy/g" package*
           npm i dist/js/cdk-iam-floyd@*.jsii.tgz
 
       - name: Test npm package
