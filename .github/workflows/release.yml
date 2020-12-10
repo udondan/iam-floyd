@@ -332,6 +332,10 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(cat VERSION)
+
       - name: Create tag
         run: |
           git config --local user.email "deemes79@googlemail.com"
