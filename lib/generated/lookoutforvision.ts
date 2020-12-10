@@ -314,3 +314,8 @@ export class Lookoutvision extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type LookoutvisionActionsWrite = 'CreateDataset' | 'CreateModel' | 'CreateProject' | 'DeleteDataset' | 'DeleteModel' | 'DeleteProject' | 'StartModel' | 'StartTrialDetection' | 'StopModel' | 'UpdateDatasetEntries';
+export type LookoutvisionActionsRead = 'DescribeDataset' | 'DescribeModel' | 'DescribeProject' | 'DescribeTrialDetection' | 'DetectAnomalies';
+export type LookoutvisionActionsList = 'ListDatasetEntries' | 'ListModels' | 'ListProjects' | 'ListTrialDetections';
+export type LookoutvisionActions = LookoutvisionActionsWrite | LookoutvisionActionsRead | LookoutvisionActionsList;

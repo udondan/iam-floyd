@@ -296,3 +296,9 @@ export class CodestarNotifications extends PolicyStatement {
     return this.if(`codestar-notifications:NotificationsForResource`, value, operator || 'ArnLike');
   }
 }
+
+export type CodestarNotificationsActionsWrite = 'CreateNotificationRule' | 'DeleteNotificationRule' | 'DeleteTarget' | 'Subscribe' | 'Unsubscribe' | 'UpdateNotificationRule';
+export type CodestarNotificationsActionsRead = 'DescribeNotificationRule';
+export type CodestarNotificationsActionsList = 'ListEventTypes' | 'ListNotificationRules' | 'ListTagsForResource' | 'ListTargets';
+export type CodestarNotificationsActionsTagging = 'TagResource' | 'UntagResource';
+export type CodestarNotificationsActions = CodestarNotificationsActionsWrite | CodestarNotificationsActionsRead | CodestarNotificationsActionsList | CodestarNotificationsActionsTagging;

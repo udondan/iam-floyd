@@ -835,3 +835,8 @@ export class Proton extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ProtonActionsWrite = 'CreateEnvironment' | 'CreateEnvironmentTemplate' | 'CreateEnvironmentTemplateMajorVersion' | 'CreateEnvironmentTemplateMinorVersion' | 'CreateService' | 'CreateServiceTemplate' | 'CreateServiceTemplateMajorVersion' | 'CreateServiceTemplateMinorVersion' | 'DeleteAccountRoles' | 'DeleteEnvironment' | 'DeleteEnvironmentTemplate' | 'DeleteEnvironmentTemplateMajorVersion' | 'DeleteEnvironmentTemplateMinorVersion' | 'DeleteService' | 'DeleteServiceTemplate' | 'DeleteServiceTemplateMajorVersion' | 'DeleteServiceTemplateMinorVersion' | 'UpdateAccountRoles' | 'UpdateEnvironment' | 'UpdateEnvironmentTemplate' | 'UpdateEnvironmentTemplateMajorVersion' | 'UpdateEnvironmentTemplateMinorVersion' | 'UpdateService' | 'UpdateServiceInstance' | 'UpdateServicePipeline' | 'UpdateServiceTemplate' | 'UpdateServiceTemplateMajorVersion' | 'UpdateServiceTemplateMinorVersion';
+export type ProtonActionsRead = 'GetAccountRoles' | 'GetEnvironment' | 'GetEnvironmentTemplate' | 'GetEnvironmentTemplateMajorVersion' | 'GetEnvironmentTemplateMinorVersion' | 'GetService' | 'GetServiceInstance' | 'GetServiceTemplate' | 'GetServiceTemplateMajorVersion' | 'GetServiceTemplateMinorVersion';
+export type ProtonActionsList = 'ListEnvironmentTemplateMajorVersions' | 'ListEnvironmentTemplateMinorVersions' | 'ListEnvironmentTemplates' | 'ListEnvironments' | 'ListServiceInstances' | 'ListServiceTemplateMajorVersions' | 'ListServiceTemplateMinorVersions' | 'ListServiceTemplates' | 'ListServices';
+export type ProtonActions = ProtonActionsWrite | ProtonActionsRead | ProtonActionsList;

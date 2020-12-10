@@ -185,3 +185,7 @@ export class Synthetics extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type SyntheticsActionsWrite = 'CreateCanary' | 'DeleteCanary' | 'StartCanary' | 'StopCanary' | 'TagResource' | 'UntagResource' | 'UpdateCanary';
+export type SyntheticsActionsRead = 'DescribeCanaries' | 'DescribeCanariesLastRun' | 'GetCanaryRuns' | 'ListTagsForResource';
+export type SyntheticsActions = SyntheticsActionsWrite | SyntheticsActionsRead;

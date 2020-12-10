@@ -314,3 +314,8 @@ export class Mgh extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type MghActionsWrite = 'AssociateCreatedArtifact' | 'AssociateDiscoveredResource' | 'CreateHomeRegionControl' | 'CreateProgressUpdateStream' | 'DeleteProgressUpdateStream' | 'DisassociateCreatedArtifact' | 'DisassociateDiscoveredResource' | 'ImportMigrationTask' | 'NotifyApplicationState' | 'NotifyMigrationTaskState' | 'PutResourceAttributes';
+export type MghActionsRead = 'DescribeApplicationState' | 'DescribeMigrationTask' | 'GetHomeRegion';
+export type MghActionsList = 'DescribeHomeRegionControls' | 'ListCreatedArtifacts' | 'ListDiscoveredResources' | 'ListMigrationTasks' | 'ListProgressUpdateStreams';
+export type MghActions = MghActionsWrite | MghActionsRead | MghActionsList;

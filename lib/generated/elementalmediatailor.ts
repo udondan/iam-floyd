@@ -154,3 +154,9 @@ export class Mediatailor extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type MediatailorActionsWrite = 'DeletePlaybackConfiguration' | 'PutPlaybackConfiguration';
+export type MediatailorActionsRead = 'GetPlaybackConfiguration' | 'ListTagsForResource';
+export type MediatailorActionsList = 'ListPlaybackConfigurations';
+export type MediatailorActionsTagging = 'TagResource' | 'UntagResource';
+export type MediatailorActions = MediatailorActionsWrite | MediatailorActionsRead | MediatailorActionsList | MediatailorActionsTagging;

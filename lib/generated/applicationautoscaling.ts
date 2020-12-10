@@ -155,3 +155,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
     ]
   };
 }
+
+export type ApplicationAutoscalingActionsWrite = 'DeleteScalingPolicy' | 'DeleteScheduledAction' | 'DeregisterScalableTarget' | 'PutScalingPolicy' | 'PutScheduledAction' | 'RegisterScalableTarget';
+export type ApplicationAutoscalingActionsRead = 'DescribeScalableTargets' | 'DescribeScalingActivities' | 'DescribeScalingPolicies' | 'DescribeScheduledActions';
+export type ApplicationAutoscalingActions = ApplicationAutoscalingActionsWrite | ApplicationAutoscalingActionsRead;

@@ -469,3 +469,9 @@ export class Machinelearning extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type MachinelearningActionsTagging = 'AddTags' | 'DeleteTags';
+export type MachinelearningActionsWrite = 'CreateBatchPrediction' | 'CreateDataSourceFromRDS' | 'CreateDataSourceFromRedshift' | 'CreateDataSourceFromS3' | 'CreateEvaluation' | 'CreateMLModel' | 'CreateRealtimeEndpoint' | 'DeleteBatchPrediction' | 'DeleteDataSource' | 'DeleteEvaluation' | 'DeleteMLModel' | 'DeleteRealtimeEndpoint' | 'Predict' | 'UpdateBatchPrediction' | 'UpdateDataSource' | 'UpdateEvaluation' | 'UpdateMLModel';
+export type MachinelearningActionsList = 'DescribeBatchPredictions' | 'DescribeDataSources' | 'DescribeEvaluations' | 'DescribeMLModels' | 'DescribeTags';
+export type MachinelearningActionsRead = 'GetBatchPrediction' | 'GetDataSource' | 'GetEvaluation' | 'GetMLModel';
+export type MachinelearningActions = MachinelearningActionsTagging | MachinelearningActionsWrite | MachinelearningActionsList | MachinelearningActionsRead;

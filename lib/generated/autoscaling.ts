@@ -103,3 +103,7 @@ export class AutoscalingPlans extends PolicyStatement {
     ]
   };
 }
+
+export type AutoscalingPlansActionsWrite = 'CreateScalingPlan' | 'DeleteScalingPlan' | 'UpdateScalingPlan';
+export type AutoscalingPlansActionsRead = 'DescribeScalingPlanResources' | 'DescribeScalingPlans' | 'GetScalingPlanResourceForecastData';
+export type AutoscalingPlansActions = AutoscalingPlansActionsWrite | AutoscalingPlansActionsRead;

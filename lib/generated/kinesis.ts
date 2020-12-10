@@ -456,3 +456,9 @@ export class Kinesis extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type KinesisActionsTagging = 'AddTagsToStream' | 'RemoveTagsFromStream';
+export type KinesisActionsWrite = 'CreateStream' | 'DecreaseStreamRetentionPeriod' | 'DeleteStream' | 'DeregisterStreamConsumer' | 'DisableEnhancedMonitoring' | 'EnableEnhancedMonitoring' | 'IncreaseStreamRetentionPeriod' | 'MergeShards' | 'PutRecord' | 'PutRecords' | 'RegisterStreamConsumer' | 'SplitShard' | 'StartStreamEncryption' | 'StopStreamEncryption' | 'UpdateShardCount';
+export type KinesisActionsRead = 'DescribeLimits' | 'DescribeStream' | 'DescribeStreamConsumer' | 'DescribeStreamSummary' | 'GetRecords' | 'GetShardIterator' | 'ListTagsForStream' | 'SubscribeToShard';
+export type KinesisActionsList = 'ListShards' | 'ListStreamConsumers' | 'ListStreams';
+export type KinesisActions = KinesisActionsTagging | KinesisActionsWrite | KinesisActionsRead | KinesisActionsList;

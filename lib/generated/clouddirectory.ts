@@ -917,3 +917,9 @@ export class Clouddirectory extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ClouddirectoryActionsWrite = 'AddFacetToObject' | 'ApplySchema' | 'AttachObject' | 'AttachPolicy' | 'AttachToIndex' | 'AttachTypedLink' | 'BatchWrite' | 'CreateDirectory' | 'CreateFacet' | 'CreateIndex' | 'CreateObject' | 'CreateSchema' | 'CreateTypedLinkFacet' | 'DeleteDirectory' | 'DeleteFacet' | 'DeleteObject' | 'DeleteSchema' | 'DeleteTypedLinkFacet' | 'DetachFromIndex' | 'DetachObject' | 'DetachPolicy' | 'DetachTypedLink' | 'DisableDirectory' | 'EnableDirectory' | 'PublishSchema' | 'PutSchemaFromJson' | 'RemoveFacetFromObject' | 'UpdateFacet' | 'UpdateLinkAttributes' | 'UpdateObjectAttributes' | 'UpdateSchema' | 'UpdateTypedLinkFacet';
+export type ClouddirectoryActionsRead = 'BatchRead' | 'GetDirectory' | 'GetFacet' | 'GetLinkAttributes' | 'GetObjectAttributes' | 'GetObjectInformation' | 'GetSchemaAsJson' | 'GetTypedLinkFacetInformation' | 'ListAttachedIndices' | 'ListFacetAttributes' | 'ListFacetNames' | 'ListIncomingTypedLinks' | 'ListIndex' | 'ListObjectAttributes' | 'ListObjectChildren' | 'ListObjectParentPaths' | 'ListObjectParents' | 'ListObjectPolicies' | 'ListOutgoingTypedLinks' | 'ListPolicyAttachments' | 'ListTagsForResource' | 'ListTypedLinkFacetAttributes' | 'ListTypedLinkFacetNames' | 'LookupPolicy';
+export type ClouddirectoryActionsList = 'ListAppliedSchemaArns' | 'ListDevelopmentSchemaArns' | 'ListDirectories' | 'ListPublishedSchemaArns';
+export type ClouddirectoryActionsTagging = 'TagResource' | 'UntagResource';
+export type ClouddirectoryActions = ClouddirectoryActionsWrite | ClouddirectoryActionsRead | ClouddirectoryActionsList | ClouddirectoryActionsTagging;

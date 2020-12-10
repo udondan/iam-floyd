@@ -458,3 +458,10 @@ export class Xray extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type XrayActionsList = 'BatchGetTraces' | 'ListTagsForResource';
+export type XrayActionsWrite = 'CreateGroup' | 'CreateSamplingRule' | 'DeleteGroup' | 'DeleteSamplingRule' | 'PutTelemetryRecords' | 'PutTraceSegments' | 'UpdateGroup' | 'UpdateSamplingRule';
+export type XrayActionsPermissionsManagement = 'GetEncryptionConfig' | 'PutEncryptionConfig';
+export type XrayActionsRead = 'GetGroup' | 'GetGroups' | 'GetInsight' | 'GetInsightEvents' | 'GetInsightImpactGraph' | 'GetInsightSummaries' | 'GetSamplingRules' | 'GetSamplingStatisticSummaries' | 'GetSamplingTargets' | 'GetServiceGraph' | 'GetTimeSeriesServiceStatistics' | 'GetTraceGraph' | 'GetTraceSummaries';
+export type XrayActionsTagging = 'TagResource' | 'UntagResource';
+export type XrayActions = XrayActionsList | XrayActionsWrite | XrayActionsPermissionsManagement | XrayActionsRead | XrayActionsTagging;

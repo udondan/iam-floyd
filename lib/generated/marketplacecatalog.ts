@@ -211,3 +211,8 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
     return this.if(`catalog:ChangeType`, value, operator || 'StringLike');
   }
 }
+
+export type AwsMarketplaceCatalogActionsWrite = 'CancelChangeSet' | 'CompleteTask' | 'StartChangeSet' | 'UpdateTask';
+export type AwsMarketplaceCatalogActionsRead = 'DescribeChangeSet' | 'DescribeEntity' | 'DescribeTask' | 'ListChangeSets' | 'ListEntities';
+export type AwsMarketplaceCatalogActionsList = 'ListTasks';
+export type AwsMarketplaceCatalogActions = AwsMarketplaceCatalogActionsWrite | AwsMarketplaceCatalogActionsRead | AwsMarketplaceCatalogActionsList;

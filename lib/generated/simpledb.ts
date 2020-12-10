@@ -176,3 +176,8 @@ export class Sdb extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type SdbActionsWrite = 'BatchDeleteAttributes' | 'BatchPutAttributes' | 'CreateDomain' | 'DeleteAttributes' | 'DeleteDomain' | 'PutAttributes';
+export type SdbActionsRead = 'DomainMetadata' | 'GetAttributes' | 'Select';
+export type SdbActionsList = 'ListDomains';
+export type SdbActions = SdbActionsWrite | SdbActionsRead | SdbActionsList;

@@ -336,3 +336,8 @@ export class Honeycode extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type HoneycodeActionsWrite = 'ApproveTeamAssociation' | 'BatchCreateTableRows' | 'BatchDeleteTableRows' | 'BatchUpdateTableRows' | 'BatchUpsertTableRows' | 'CreateTenant' | 'InvokeScreenAutomation' | 'RejectTeamAssociation' | 'StartTableDataImportJob';
+export type HoneycodeActionsRead = 'DescribeTableDataImportJob' | 'GetScreenData' | 'QueryTableRows';
+export type HoneycodeActionsList = 'ListTableColumns' | 'ListTableRows' | 'ListTables' | 'ListTeamAssociations' | 'ListTenants';
+export type HoneycodeActions = HoneycodeActionsWrite | HoneycodeActionsRead | HoneycodeActionsList;

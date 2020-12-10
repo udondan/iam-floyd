@@ -319,3 +319,7 @@ export class Trustedadvisor extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type TrustedadvisorActionsRead = 'DescribeAccount' | 'DescribeAccountAccess' | 'DescribeCheckItems' | 'DescribeCheckRefreshStatuses' | 'DescribeCheckSummaries' | 'DescribeChecks' | 'DescribeNotificationPreferences' | 'DescribeOrganization' | 'DescribeOrganizationAccounts' | 'DescribeReports' | 'DescribeServiceMetadata' | 'ListAccountsForParent' | 'ListOrganizationalUnitsForParent' | 'ListRoots';
+export type TrustedadvisorActionsWrite = 'ExcludeCheckItems' | 'GenerateReport' | 'IncludeCheckItems' | 'RefreshCheck' | 'SetAccountAccess' | 'SetOrganizationAccess' | 'UpdateNotificationPreferences';
+export type TrustedadvisorActions = TrustedadvisorActionsRead | TrustedadvisorActionsWrite;

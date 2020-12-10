@@ -214,3 +214,7 @@ export class Firehose extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type FirehoseActionsWrite = 'CreateDeliveryStream' | 'DeleteDeliveryStream' | 'PutRecord' | 'PutRecordBatch' | 'StartDeliveryStreamEncryption' | 'StopDeliveryStreamEncryption' | 'TagDeliveryStream' | 'UntagDeliveryStream' | 'UpdateDestination';
+export type FirehoseActionsList = 'DescribeDeliveryStream' | 'ListDeliveryStreams' | 'ListTagsForDeliveryStream';
+export type FirehoseActions = FirehoseActionsWrite | FirehoseActionsList;

@@ -1012,3 +1012,9 @@ export class Dms extends PolicyStatement {
     return this.if(`dms:task-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 }
+
+export type DmsActionsTagging = 'AddTagsToResource' | 'RemoveTagsFromResource';
+export type DmsActionsWrite = 'ApplyPendingMaintenanceAction' | 'CancelReplicationTaskAssessmentRun' | 'CreateEndpoint' | 'CreateEventSubscription' | 'CreateReplicationInstance' | 'CreateReplicationSubnetGroup' | 'CreateReplicationTask' | 'DeleteCertificate' | 'DeleteEndpoint' | 'DeleteEventSubscription' | 'DeleteReplicationInstance' | 'DeleteReplicationSubnetGroup' | 'DeleteReplicationTask' | 'DeleteReplicationTaskAssessmentRun' | 'ImportCertificate' | 'ModifyEndpoint' | 'ModifyEventSubscription' | 'ModifyReplicationInstance' | 'ModifyReplicationSubnetGroup' | 'ModifyReplicationTask' | 'RebootReplicationInstance' | 'RefreshSchemas' | 'ReloadTables' | 'StartReplicationTask' | 'StartReplicationTaskAssessment' | 'StartReplicationTaskAssessmentRun' | 'StopReplicationTask';
+export type DmsActionsRead = 'DescribeAccountAttributes' | 'DescribeApplicableIndividualAssessments' | 'DescribeCertificates' | 'DescribeConnections' | 'DescribeEndpointTypes' | 'DescribeEndpoints' | 'DescribeEventCategories' | 'DescribeEventSubscriptions' | 'DescribeEvents' | 'DescribeOrderableReplicationInstances' | 'DescribeRefreshSchemasStatus' | 'DescribeReplicationInstanceTaskLogs' | 'DescribeReplicationInstances' | 'DescribeReplicationSubnetGroups' | 'DescribeReplicationTaskAssessmentResults' | 'DescribeReplicationTaskAssessmentRuns' | 'DescribeReplicationTaskIndividualAssessments' | 'DescribeReplicationTasks' | 'DescribeSchemas' | 'DescribeTableStatistics' | 'TestConnection';
+export type DmsActionsList = 'ListTagsForResource';
+export type DmsActions = DmsActionsTagging | DmsActionsWrite | DmsActionsRead | DmsActionsList;

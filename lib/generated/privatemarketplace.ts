@@ -235,3 +235,8 @@ export class AwsMarketplacePrivate extends PolicyStatement {
     ]
   };
 }
+
+export type AwsMarketplacePrivateActionsWrite = 'AssociateProductsWithPrivateMarketplace' | 'CreatePrivateMarketplace' | 'CreatePrivateMarketplaceProfile' | 'CreatePrivateMarketplaceRequests' | 'DisassociateProductsFromPrivateMarketplace' | 'StartPrivateMarketplace' | 'StopPrivateMarketplace' | 'UpdatePrivateMarketplaceProfile' | 'UpdatePrivateMarketplaceSettings';
+export type AwsMarketplacePrivateActionsList = 'DescribePrivateMarketplaceProducts' | 'DescribePrivateMarketplaceRequests' | 'ListPrivateMarketplaceProducts' | 'ListPrivateMarketplaceRequests';
+export type AwsMarketplacePrivateActionsRead = 'DescribePrivateMarketplaceProfile' | 'DescribePrivateMarketplaceSettings' | 'DescribePrivateMarketplaceStatus';
+export type AwsMarketplacePrivateActions = AwsMarketplacePrivateActionsWrite | AwsMarketplacePrivateActionsList | AwsMarketplacePrivateActionsRead;

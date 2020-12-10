@@ -36,3 +36,6 @@ export class Iq extends PolicyStatement {
     ]
   };
 }
+
+export type IqActionsWrite = 'CreateProject';
+export type IqActions = IqActionsWrite;

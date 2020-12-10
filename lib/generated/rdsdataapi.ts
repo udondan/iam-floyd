@@ -107,3 +107,6 @@ export class RdsData extends PolicyStatement {
     ]
   };
 }
+
+export type RdsDataActionsWrite = 'BatchExecuteStatement' | 'BeginTransaction' | 'CommitTransaction' | 'ExecuteSql' | 'ExecuteStatement' | 'RollbackTransaction';
+export type RdsDataActions = RdsDataActionsWrite;

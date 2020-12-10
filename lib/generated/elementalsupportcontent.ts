@@ -36,3 +36,6 @@ export class ElementalSupportContent extends PolicyStatement {
     ]
   };
 }
+
+export type ElementalSupportContentActionsRead = 'Query';
+export type ElementalSupportContentActions = ElementalSupportContentActionsRead;

@@ -116,3 +116,7 @@ export class AwsPortal extends PolicyStatement {
     ]
   };
 }
+
+export type AwsPortalActionsWrite = 'ModifyAccount' | 'ModifyBilling' | 'ModifyPaymentMethods';
+export type AwsPortalActionsRead = 'ViewAccount' | 'ViewBilling' | 'ViewPaymentMethods' | 'ViewUsage';
+export type AwsPortalActions = AwsPortalActionsWrite | AwsPortalActionsRead;

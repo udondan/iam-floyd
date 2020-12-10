@@ -1096,3 +1096,8 @@ export class Robomaker extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type RobomakerActionsWrite = 'BatchDeleteWorlds' | 'CancelDeploymentJob' | 'CancelSimulationJob' | 'CancelSimulationJobBatch' | 'CancelWorldExportJob' | 'CancelWorldGenerationJob' | 'CreateDeploymentJob' | 'CreateFleet' | 'CreateRobot' | 'CreateRobotApplication' | 'CreateRobotApplicationVersion' | 'CreateSimulationApplication' | 'CreateSimulationApplicationVersion' | 'CreateSimulationJob' | 'CreateWorldExportJob' | 'CreateWorldGenerationJob' | 'CreateWorldTemplate' | 'DeleteFleet' | 'DeleteRobot' | 'DeleteRobotApplication' | 'DeleteSimulationApplication' | 'DeleteWorldTemplate' | 'DeregisterRobot' | 'RegisterRobot' | 'RestartSimulationJob' | 'StartSimulationJobBatch' | 'SyncDeploymentJob' | 'TagResource' | 'UntagResource' | 'UpdateRobotApplication' | 'UpdateRobotDeployment' | 'UpdateSimulationApplication' | 'UpdateWorldTemplate';
+export type RobomakerActionsRead = 'BatchDescribeSimulationJob' | 'DescribeDeploymentJob' | 'DescribeFleet' | 'DescribeRobot' | 'DescribeRobotApplication' | 'DescribeSimulationApplication' | 'DescribeSimulationJob' | 'DescribeSimulationJobBatch' | 'DescribeWorld' | 'DescribeWorldExportJob' | 'DescribeWorldGenerationJob' | 'DescribeWorldTemplate' | 'GetWorldTemplateBody';
+export type RobomakerActionsList = 'ListDeploymentJobs' | 'ListFleets' | 'ListRobotApplications' | 'ListRobots' | 'ListSimulationApplications' | 'ListSimulationJobBatches' | 'ListSimulationJobs' | 'ListSupportedAvailabilityZones' | 'ListTagsForResource' | 'ListWorldExportJobs' | 'ListWorldGenerationJobs' | 'ListWorldTemplates' | 'ListWorlds';
+export type RobomakerActions = RobomakerActionsWrite | RobomakerActionsRead | RobomakerActionsList;

@@ -1010,3 +1010,9 @@ export class Swf extends PolicyStatement {
     return this.if(`swf:workflowType.version`, value, operator || 'StringLike');
   }
 }
+
+export type SwfActionsWrite = 'CancelTimer' | 'CancelWorkflowExecution' | 'CompleteWorkflowExecution' | 'ContinueAsNewWorkflowExecution' | 'DeprecateActivityType' | 'DeprecateDomain' | 'DeprecateWorkflowType' | 'FailWorkflowExecution' | 'PollForActivityTask' | 'PollForDecisionTask' | 'RecordActivityTaskHeartbeat' | 'RecordMarker' | 'RegisterActivityType' | 'RegisterDomain' | 'RegisterWorkflowType' | 'RequestCancelActivityTask' | 'RequestCancelExternalWorkflowExecution' | 'RequestCancelWorkflowExecution' | 'RespondActivityTaskCanceled' | 'RespondActivityTaskCompleted' | 'RespondActivityTaskFailed' | 'RespondDecisionTaskCompleted' | 'ScheduleActivityTask' | 'SignalExternalWorkflowExecution' | 'SignalWorkflowExecution' | 'StartChildWorkflowExecution' | 'StartTimer' | 'StartWorkflowExecution' | 'TerminateWorkflowExecution';
+export type SwfActionsRead = 'CountClosedWorkflowExecutions' | 'CountOpenWorkflowExecutions' | 'CountPendingActivityTasks' | 'CountPendingDecisionTasks' | 'DescribeActivityType' | 'DescribeDomain' | 'DescribeWorkflowExecution' | 'DescribeWorkflowType' | 'GetWorkflowExecutionHistory';
+export type SwfActionsList = 'ListActivityTypes' | 'ListClosedWorkflowExecutions' | 'ListDomains' | 'ListOpenWorkflowExecutions' | 'ListTagsForResource' | 'ListWorkflowTypes';
+export type SwfActionsTagging = 'TagResource' | 'UntagResource';
+export type SwfActions = SwfActionsWrite | SwfActionsRead | SwfActionsList | SwfActionsTagging;

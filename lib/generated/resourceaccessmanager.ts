@@ -622,3 +622,8 @@ export class Ram extends PolicyStatement {
     return this.if(`ram:ShareOwnerAccountId`, value, operator || 'StringLike');
   }
 }
+
+export type RamActionsWrite = 'AcceptResourceShareInvitation' | 'AssociateResourceShare' | 'AssociateResourceSharePermission' | 'CreateResourceShare' | 'DeleteResourceShare' | 'DisassociateResourceShare' | 'DisassociateResourceSharePermission' | 'EnableSharingWithAwsOrganization' | 'PromoteResourceShareCreatedFromPolicy' | 'RejectResourceShareInvitation' | 'TagResource' | 'UntagResource' | 'UpdateResourceShare';
+export type RamActionsRead = 'GetPermission' | 'GetResourcePolicies' | 'GetResourceShareAssociations' | 'GetResourceShareInvitations' | 'GetResourceShares' | 'ListPendingInvitationResources';
+export type RamActionsList = 'ListPermissions' | 'ListPrincipals' | 'ListResourceSharePermissions' | 'ListResourceTypes' | 'ListResources';
+export type RamActions = RamActionsWrite | RamActionsRead | RamActionsList;

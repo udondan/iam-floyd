@@ -609,3 +609,9 @@ export class Amplify extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type AmplifyActionsWrite = 'CreateApp' | 'CreateBackendEnvironment' | 'CreateBranch' | 'CreateDeployment' | 'CreateDomainAssociation' | 'CreateWebHook' | 'DeleteApp' | 'DeleteBackendEnvironment' | 'DeleteBranch' | 'DeleteDomainAssociation' | 'DeleteJob' | 'DeleteWebHook' | 'GenerateAccessLogs' | 'StartDeployment' | 'StartJob' | 'StopJob' | 'UpdateApp' | 'UpdateBranch' | 'UpdateDomainAssociation' | 'UpdateWebHook';
+export type AmplifyActionsRead = 'GetApp' | 'GetArtifactUrl' | 'GetBackendEnvironment' | 'GetBranch' | 'GetDomainAssociation' | 'GetJob' | 'GetWebHook';
+export type AmplifyActionsList = 'ListApps' | 'ListArtifacts' | 'ListBackendEnvironments' | 'ListBranches' | 'ListDomainAssociations' | 'ListJobs' | 'ListWebHooks';
+export type AmplifyActionsTagging = 'TagResource' | 'UntagResource';
+export type AmplifyActions = AmplifyActionsWrite | AmplifyActionsRead | AmplifyActionsList | AmplifyActionsTagging;

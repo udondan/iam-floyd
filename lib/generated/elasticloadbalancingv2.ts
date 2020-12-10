@@ -711,3 +711,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     return this.if(`elasticloadbalancing:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }
+
+export type ElasticloadbalancingV2ActionsWrite = 'AddListenerCertificates' | 'CreateListener' | 'CreateLoadBalancer' | 'CreateRule' | 'CreateTargetGroup' | 'DeleteListener' | 'DeleteLoadBalancer' | 'DeleteRule' | 'DeleteTargetGroup' | 'DeregisterTargets' | 'ModifyListener' | 'ModifyLoadBalancerAttributes' | 'ModifyRule' | 'ModifyTargetGroup' | 'ModifyTargetGroupAttributes' | 'RegisterTargets' | 'RemoveListenerCertificates' | 'SetIpAddressType' | 'SetRulePriorities' | 'SetSecurityGroups' | 'SetSubnets' | 'SetWebAcl';
+export type ElasticloadbalancingV2ActionsTagging = 'AddTags' | 'RemoveTags';
+export type ElasticloadbalancingV2ActionsRead = 'DescribeAccountLimits' | 'DescribeListenerCertificates' | 'DescribeListeners' | 'DescribeLoadBalancerAttributes' | 'DescribeLoadBalancers' | 'DescribeRules' | 'DescribeSSLPolicies' | 'DescribeTags' | 'DescribeTargetGroupAttributes' | 'DescribeTargetGroups' | 'DescribeTargetHealth';
+export type ElasticloadbalancingV2Actions = ElasticloadbalancingV2ActionsWrite | ElasticloadbalancingV2ActionsTagging | ElasticloadbalancingV2ActionsRead;

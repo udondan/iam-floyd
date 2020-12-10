@@ -36,3 +36,6 @@ export class BackupStorage extends PolicyStatement {
     ]
   };
 }
+
+export type BackupStorageActionsWrite = 'MountCapsule';
+export type BackupStorageActions = BackupStorageActionsWrite;

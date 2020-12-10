@@ -644,3 +644,8 @@ export class AppmeshPreview extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type AppmeshPreviewActionsWrite = 'CreateGatewayRoute' | 'CreateMesh' | 'CreateRoute' | 'CreateVirtualGateway' | 'CreateVirtualNode' | 'CreateVirtualRouter' | 'CreateVirtualService' | 'DeleteGatewayRoute' | 'DeleteMesh' | 'DeleteRoute' | 'DeleteVirtualGateway' | 'DeleteVirtualNode' | 'DeleteVirtualRouter' | 'DeleteVirtualService' | 'UpdateGatewayRoute' | 'UpdateMesh' | 'UpdateRoute' | 'UpdateVirtualGateway' | 'UpdateVirtualNode' | 'UpdateVirtualRouter' | 'UpdateVirtualService';
+export type AppmeshPreviewActionsRead = 'DescribeGatewayRoute' | 'DescribeMesh' | 'DescribeRoute' | 'DescribeVirtualGateway' | 'DescribeVirtualNode' | 'DescribeVirtualRouter' | 'DescribeVirtualService' | 'StreamAggregatedResources';
+export type AppmeshPreviewActionsList = 'ListGatewayRoutes' | 'ListMeshes' | 'ListRoutes' | 'ListVirtualGateways' | 'ListVirtualNodes' | 'ListVirtualRouters' | 'ListVirtualServices';
+export type AppmeshPreviewActions = AppmeshPreviewActionsWrite | AppmeshPreviewActionsRead | AppmeshPreviewActionsList;

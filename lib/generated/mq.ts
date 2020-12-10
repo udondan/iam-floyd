@@ -390,3 +390,8 @@ export class Mq extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type MqActionsWrite = 'CreateBroker' | 'CreateConfiguration' | 'CreateTags' | 'CreateUser' | 'DeleteBroker' | 'DeleteTags' | 'DeleteUser' | 'RebootBroker' | 'UpdateBroker' | 'UpdateConfiguration' | 'UpdateUser';
+export type MqActionsRead = 'DescribeBroker' | 'DescribeBrokerEngineTypes' | 'DescribeBrokerInstanceOptions' | 'DescribeConfiguration' | 'DescribeConfigurationRevision' | 'DescribeUser';
+export type MqActionsList = 'ListBrokers' | 'ListConfigurationRevisions' | 'ListConfigurations' | 'ListTags' | 'ListUsers';
+export type MqActions = MqActionsWrite | MqActionsRead | MqActionsList;

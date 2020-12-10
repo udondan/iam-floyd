@@ -209,3 +209,8 @@ export class Translate extends PolicyStatement {
     ]
   };
 }
+
+export type TranslateActionsWrite = 'CreateParallelData' | 'DeleteParallelData' | 'DeleteTerminology' | 'ImportTerminology' | 'StartTextTranslationJob' | 'StopTextTranslationJob' | 'UpdateParallelData';
+export type TranslateActionsRead = 'DescribeTextTranslationJob' | 'GetParallelData' | 'GetTerminology' | 'TranslateText';
+export type TranslateActionsList = 'ListParallelData' | 'ListTerminologies' | 'ListTextTranslationJobs';
+export type TranslateActions = TranslateActionsWrite | TranslateActionsRead | TranslateActionsList;

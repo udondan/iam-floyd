@@ -661,3 +661,9 @@ export class Appsync extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type AppsyncActionsWrite = 'CreateApiKey' | 'CreateDataSource' | 'CreateFunction' | 'CreateResolver' | 'CreateType' | 'DeleteApiKey' | 'DeleteDataSource' | 'DeleteFunction' | 'DeleteGraphqlApi' | 'DeleteResolver' | 'DeleteType' | 'GraphQL' | 'SetWebACL' | 'StartSchemaCreation' | 'UpdateApiKey' | 'UpdateDataSource' | 'UpdateFunction' | 'UpdateGraphqlApi' | 'UpdateResolver' | 'UpdateType';
+export type AppsyncActionsTagging = 'CreateGraphqlApi' | 'TagResource' | 'UntagResource';
+export type AppsyncActionsRead = 'GetDataSource' | 'GetFunction' | 'GetGraphqlApi' | 'GetIntrospectionSchema' | 'GetResolver' | 'GetSchemaCreationStatus' | 'GetType' | 'ListTagsForResource';
+export type AppsyncActionsList = 'ListApiKeys' | 'ListDataSources' | 'ListFunctions' | 'ListGraphqlApis' | 'ListResolvers' | 'ListResolversByFunction' | 'ListTypes';
+export type AppsyncActions = AppsyncActionsWrite | AppsyncActionsTagging | AppsyncActionsRead | AppsyncActionsList;

@@ -445,3 +445,9 @@ export class Inspector extends PolicyStatement {
     ]
   };
 }
+
+export type InspectorActionsWrite = 'AddAttributesToFindings' | 'CreateAssessmentTarget' | 'CreateAssessmentTemplate' | 'CreateResourceGroup' | 'DeleteAssessmentRun' | 'DeleteAssessmentTarget' | 'DeleteAssessmentTemplate' | 'RegisterCrossAccountAccessRole' | 'RemoveAttributesFromFindings' | 'StartAssessmentRun' | 'StopAssessmentRun' | 'SubscribeToEvent' | 'UnsubscribeFromEvent' | 'UpdateAssessmentTarget';
+export type InspectorActionsRead = 'DescribeAssessmentRuns' | 'DescribeAssessmentTargets' | 'DescribeAssessmentTemplates' | 'DescribeCrossAccountAccessRole' | 'DescribeFindings' | 'DescribeResourceGroups' | 'DescribeRulesPackages' | 'GetTelemetryMetadata' | 'PreviewAgents';
+export type InspectorActionsList = 'ListAssessmentRunAgents' | 'ListAssessmentRuns' | 'ListAssessmentTargets' | 'ListAssessmentTemplates' | 'ListEventSubscriptions' | 'ListFindings' | 'ListRulesPackages' | 'ListTagsForResource';
+export type InspectorActionsTagging = 'SetTagsForResource';
+export type InspectorActions = InspectorActionsWrite | InspectorActionsRead | InspectorActionsList | InspectorActionsTagging;

@@ -150,3 +150,7 @@ export class Apigateway extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ApigatewayActionsWrite = 'DELETE' | 'PATCH' | 'POST' | 'PUT' | 'SetWebACL' | 'UpdateRestApiPolicy';
+export type ApigatewayActionsRead = 'GET';
+export type ApigatewayActions = ApigatewayActionsWrite | ApigatewayActionsRead;

@@ -131,3 +131,8 @@ export class Launchwizard extends PolicyStatement {
     ]
   };
 }
+
+export type LaunchwizardActionsWrite = 'DeleteApp' | 'StartProvisioning';
+export type LaunchwizardActionsRead = 'DescribeProvisionedApp' | 'DescribeProvisioningEvents' | 'GetInfrastructureSuggestion' | 'GetIpAddress' | 'GetResourceCostEstimate';
+export type LaunchwizardActionsList = 'ListProvisionedApps';
+export type LaunchwizardActions = LaunchwizardActionsWrite | LaunchwizardActionsRead | LaunchwizardActionsList;

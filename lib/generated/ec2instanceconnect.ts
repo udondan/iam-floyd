@@ -93,3 +93,6 @@ export class Ec2InstanceConnect extends PolicyStatement {
     return this.if(`ec2:osuser`, value, operator || 'StringLike');
   }
 }
+
+export type Ec2InstanceConnectActionsWrite = 'SendSSHPublicKey';
+export type Ec2InstanceConnectActions = Ec2InstanceConnectActionsWrite;

@@ -361,3 +361,9 @@ export class Iotevents extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type IoteventsActionsWrite = 'BatchPutMessage' | 'BatchUpdateDetector' | 'CreateDetectorModel' | 'CreateInput' | 'DeleteDetectorModel' | 'DeleteInput' | 'PutLoggingOptions' | 'UpdateDetectorModel' | 'UpdateInput' | 'UpdateInputRouting';
+export type IoteventsActionsRead = 'DescribeDetector' | 'DescribeDetectorModel' | 'DescribeInput' | 'DescribeLoggingOptions' | 'ListTagsForResource';
+export type IoteventsActionsList = 'ListDetectorModelVersions' | 'ListDetectorModels' | 'ListDetectors' | 'ListInputs';
+export type IoteventsActionsTagging = 'TagResource' | 'UntagResource';
+export type IoteventsActions = IoteventsActionsWrite | IoteventsActionsRead | IoteventsActionsList | IoteventsActionsTagging;

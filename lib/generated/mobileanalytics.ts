@@ -60,3 +60,7 @@ export class Mobileanalytics extends PolicyStatement {
     ]
   };
 }
+
+export type MobileanalyticsActionsRead = 'GetFinancialReports' | 'GetReports';
+export type MobileanalyticsActionsWrite = 'PutEvents';
+export type MobileanalyticsActions = MobileanalyticsActionsRead | MobileanalyticsActionsWrite;

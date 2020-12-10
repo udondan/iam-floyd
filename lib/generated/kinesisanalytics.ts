@@ -283,3 +283,9 @@ export class Kinesisanalytics extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type KinesisanalyticsActionsWrite = 'AddApplicationInput' | 'AddApplicationOutput' | 'AddApplicationReferenceDataSource' | 'CreateApplication' | 'DeleteApplication' | 'DeleteApplicationOutput' | 'DeleteApplicationReferenceDataSource' | 'StartApplication' | 'StopApplication' | 'UpdateApplication';
+export type KinesisanalyticsActionsRead = 'DescribeApplication' | 'DiscoverInputSchema' | 'GetApplicationState' | 'ListTagsForResource';
+export type KinesisanalyticsActionsList = 'ListApplications';
+export type KinesisanalyticsActionsTagging = 'TagResource' | 'UntagResource';
+export type KinesisanalyticsActions = KinesisanalyticsActionsWrite | KinesisanalyticsActionsRead | KinesisanalyticsActionsList | KinesisanalyticsActionsTagging;

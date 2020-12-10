@@ -310,3 +310,10 @@ export class Sqs extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type SqsActionsPermissionsManagement = 'AddPermission' | 'RemovePermission';
+export type SqsActionsWrite = 'ChangeMessageVisibility' | 'ChangeMessageVisibilityBatch' | 'CreateQueue' | 'DeleteMessage' | 'DeleteMessageBatch' | 'DeleteQueue' | 'PurgeQueue' | 'SendMessage' | 'SendMessageBatch' | 'SetQueueAttributes';
+export type SqsActionsRead = 'GetQueueAttributes' | 'GetQueueUrl' | 'ListDeadLetterSourceQueues' | 'ListQueueTags' | 'ReceiveMessage';
+export type SqsActionsList = 'ListQueues';
+export type SqsActionsTagging = 'TagQueue' | 'UntagQueue';
+export type SqsActions = SqsActionsPermissionsManagement | SqsActionsWrite | SqsActionsRead | SqsActionsList | SqsActionsTagging;

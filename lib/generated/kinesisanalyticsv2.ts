@@ -400,3 +400,9 @@ export class KinesisanalyticsV2 extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type KinesisanalyticsV2ActionsWrite = 'AddApplicationCloudWatchLoggingOption' | 'AddApplicationInput' | 'AddApplicationInputProcessingConfiguration' | 'AddApplicationOutput' | 'AddApplicationReferenceDataSource' | 'AddApplicationVpcConfiguration' | 'CreateApplication' | 'CreateApplicationSnapshot' | 'DeleteApplication' | 'DeleteApplicationCloudWatchLoggingOption' | 'DeleteApplicationInputProcessingConfiguration' | 'DeleteApplicationOutput' | 'DeleteApplicationReferenceDataSource' | 'DeleteApplicationSnapshot' | 'DeleteApplicationVpcConfiguration' | 'StartApplication' | 'StopApplication' | 'UpdateApplication';
+export type KinesisanalyticsV2ActionsRead = 'DescribeApplication' | 'DescribeApplicationSnapshot' | 'DiscoverInputSchema' | 'ListApplicationSnapshots' | 'ListTagsForResource';
+export type KinesisanalyticsV2ActionsList = 'ListApplications';
+export type KinesisanalyticsV2ActionsTagging = 'TagResource' | 'UntagResource';
+export type KinesisanalyticsV2Actions = KinesisanalyticsV2ActionsWrite | KinesisanalyticsV2ActionsRead | KinesisanalyticsV2ActionsList | KinesisanalyticsV2ActionsTagging;

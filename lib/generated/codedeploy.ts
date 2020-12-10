@@ -744,3 +744,9 @@ export class Codedeploy extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type CodedeployActionsTagging = 'AddTagsToOnPremisesInstances' | 'RemoveTagsFromOnPremisesInstances' | 'TagResource' | 'UntagResource';
+export type CodedeployActionsRead = 'BatchGetApplicationRevisions' | 'BatchGetApplications' | 'BatchGetDeploymentGroups' | 'BatchGetDeploymentInstances' | 'BatchGetDeploymentTargets' | 'BatchGetDeployments' | 'BatchGetOnPremisesInstances' | 'GetDeploymentTarget';
+export type CodedeployActionsWrite = 'ContinueDeployment' | 'CreateApplication' | 'CreateCloudFormationDeployment' | 'CreateDeployment' | 'CreateDeploymentConfig' | 'CreateDeploymentGroup' | 'DeleteApplication' | 'DeleteDeploymentConfig' | 'DeleteDeploymentGroup' | 'DeleteGitHubAccountToken' | 'DeleteResourcesByExternalId' | 'DeregisterOnPremisesInstance' | 'PutLifecycleEventHookExecutionStatus' | 'RegisterApplicationRevision' | 'RegisterOnPremisesInstance' | 'SkipWaitTimeForInstanceTermination' | 'StopDeployment' | 'UpdateApplication' | 'UpdateDeploymentGroup';
+export type CodedeployActionsList = 'GetApplication' | 'GetApplicationRevision' | 'GetDeployment' | 'GetDeploymentConfig' | 'GetDeploymentGroup' | 'GetDeploymentInstance' | 'GetOnPremisesInstance' | 'ListApplicationRevisions' | 'ListApplications' | 'ListDeploymentConfigs' | 'ListDeploymentGroups' | 'ListDeploymentInstances' | 'ListDeploymentTargets' | 'ListDeployments' | 'ListGitHubAccountTokenNames' | 'ListOnPremisesInstances' | 'ListTagsForResource';
+export type CodedeployActions = CodedeployActionsTagging | CodedeployActionsRead | CodedeployActionsWrite | CodedeployActionsList;

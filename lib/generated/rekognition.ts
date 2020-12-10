@@ -727,3 +727,8 @@ export class Rekognition extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type RekognitionActionsRead = 'CompareFaces' | 'DescribeCollection' | 'DescribeProjectVersions' | 'DescribeProjects' | 'DescribeStreamProcessor' | 'DetectCustomLabels' | 'DetectFaces' | 'DetectLabels' | 'DetectModerationLabels' | 'DetectProtectiveEquipment' | 'DetectText' | 'GetCelebrityInfo' | 'GetCelebrityRecognition' | 'GetContentModeration' | 'GetFaceDetection' | 'GetFaceSearch' | 'GetLabelDetection' | 'GetPersonTracking' | 'GetSegmentDetection' | 'GetTextDetection' | 'ListCollections' | 'ListFaces' | 'RecognizeCelebrities' | 'SearchFaces' | 'SearchFacesByImage';
+export type RekognitionActionsWrite = 'CreateCollection' | 'CreateProject' | 'CreateProjectVersion' | 'CreateStreamProcessor' | 'DeleteCollection' | 'DeleteFaces' | 'DeleteProject' | 'DeleteProjectVersion' | 'DeleteStreamProcessor' | 'IndexFaces' | 'StartCelebrityRecognition' | 'StartContentModeration' | 'StartFaceDetection' | 'StartFaceSearch' | 'StartLabelDetection' | 'StartPersonTracking' | 'StartProjectVersion' | 'StartSegmentDetection' | 'StartStreamProcessor' | 'StartTextDetection' | 'StopProjectVersion' | 'StopStreamProcessor';
+export type RekognitionActionsList = 'ListStreamProcessors';
+export type RekognitionActions = RekognitionActionsRead | RekognitionActionsWrite | RekognitionActionsList;

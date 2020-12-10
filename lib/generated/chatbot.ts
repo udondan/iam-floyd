@@ -174,3 +174,7 @@ export class Chatbot extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ChatbotActionsWrite = 'CreateChimeWebhookConfiguration' | 'CreateSlackChannelConfiguration' | 'DeleteChimeWebhookConfiguration' | 'DeleteSlackChannelConfiguration' | 'RedeemSlackOauthCode' | 'UpdateChimeWebhookConfiguration' | 'UpdateSlackChannelConfiguration';
+export type ChatbotActionsRead = 'DescribeChimeWebhookConfigurations' | 'DescribeSlackChannelConfigurations' | 'DescribeSlackChannels' | 'DescribeSlackWorkspaces' | 'GetSlackOauthParameters';
+export type ChatbotActions = ChatbotActionsWrite | ChatbotActionsRead;

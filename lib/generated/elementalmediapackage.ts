@@ -331,3 +331,7 @@ export class Mediapackage extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type MediapackageActionsWrite = 'CreateChannel' | 'CreateHarvestJob' | 'CreateOriginEndpoint' | 'DeleteChannel' | 'DeleteOriginEndpoint' | 'RotateIngestEndpointCredentials' | 'TagResource' | 'UntagResource' | 'UpdateChannel' | 'UpdateOriginEndpoint';
+export type MediapackageActionsRead = 'DescribeChannel' | 'DescribeHarvestJob' | 'DescribeOriginEndpoint' | 'ListChannels' | 'ListHarvestJobs' | 'ListOriginEndpoints' | 'ListTagsForResource';
+export type MediapackageActions = MediapackageActionsWrite | MediapackageActionsRead;

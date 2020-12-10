@@ -305,3 +305,8 @@ export class Elastictranscoder extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ElastictranscoderActionsWrite = 'CancelJob' | 'CreateJob' | 'CreatePipeline' | 'CreatePreset' | 'DeletePipeline' | 'DeletePreset' | 'TestRole' | 'UpdatePipeline' | 'UpdatePipelineNotifications' | 'UpdatePipelineStatus';
+export type ElastictranscoderActionsList = 'ListJobsByPipeline' | 'ListJobsByStatus' | 'ListPipelines' | 'ListPresets';
+export type ElastictranscoderActionsRead = 'ReadJob' | 'ReadPipeline' | 'ReadPreset';
+export type ElastictranscoderActions = ElastictranscoderActionsWrite | ElastictranscoderActionsList | ElastictranscoderActionsRead;

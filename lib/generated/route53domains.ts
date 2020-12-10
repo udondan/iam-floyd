@@ -328,3 +328,9 @@ export class Route53domains extends PolicyStatement {
     ]
   };
 }
+
+export type Route53domainsActionsRead = 'CheckDomainAvailability' | 'GetContactReachabilityStatus' | 'GetDomainDetail' | 'GetDomainSuggestions' | 'GetOperationDetail' | 'ViewBilling';
+export type Route53domainsActionsTagging = 'DeleteTagsForDomain' | 'UpdateTagsForDomain';
+export type Route53domainsActionsWrite = 'DisableDomainAutoRenew' | 'DisableDomainTransferLock' | 'EnableDomainAutoRenew' | 'EnableDomainTransferLock' | 'RegisterDomain' | 'RenewDomain' | 'ResendContactReachabilityEmail' | 'RetrieveDomainAuthCode' | 'TransferDomain' | 'UpdateDomainContact' | 'UpdateDomainContactPrivacy' | 'UpdateDomainNameservers';
+export type Route53domainsActionsList = 'ListDomains' | 'ListOperations' | 'ListTagsForDomain';
+export type Route53domainsActions = Route53domainsActionsRead | Route53domainsActionsTagging | Route53domainsActionsWrite | Route53domainsActionsList;

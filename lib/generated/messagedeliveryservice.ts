@@ -91,3 +91,7 @@ export class Ec2messages extends PolicyStatement {
     ]
   };
 }
+
+export type Ec2messagesActionsWrite = 'AcknowledgeMessage' | 'DeleteMessage' | 'FailMessage' | 'SendReply';
+export type Ec2messagesActionsRead = 'GetEndpoint' | 'GetMessages';
+export type Ec2messagesActions = Ec2messagesActionsWrite | Ec2messagesActionsRead;

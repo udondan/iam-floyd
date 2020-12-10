@@ -384,3 +384,8 @@ export class Managedblockchain extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ManagedblockchainActionsWrite = 'CreateMember' | 'CreateNetwork' | 'CreateNode' | 'CreateProposal' | 'DeleteMember' | 'DeleteNode' | 'RejectInvitation' | 'UpdateMember' | 'UpdateNode' | 'VoteOnProposal';
+export type ManagedblockchainActionsRead = 'GetMember' | 'GetNetwork' | 'GetNode' | 'GetProposal';
+export type ManagedblockchainActionsList = 'ListInvitations' | 'ListMembers' | 'ListNetworks' | 'ListNodes' | 'ListProposalVotes' | 'ListProposals';
+export type ManagedblockchainActions = ManagedblockchainActionsWrite | ManagedblockchainActionsRead | ManagedblockchainActionsList;

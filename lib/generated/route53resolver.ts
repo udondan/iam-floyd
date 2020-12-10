@@ -511,3 +511,9 @@ export class Route53resolver extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type Route53resolverActionsWrite = 'AssociateResolverEndpointIpAddress' | 'AssociateResolverQueryLogConfig' | 'AssociateResolverRule' | 'CreateResolverEndpoint' | 'CreateResolverQueryLogConfig' | 'CreateResolverRule' | 'DeleteResolverEndpoint' | 'DeleteResolverQueryLogConfig' | 'DeleteResolverRule' | 'DisassociateResolverEndpointIpAddress' | 'DisassociateResolverQueryLogConfig' | 'DisassociateResolverRule' | 'PutResolverQueryLogConfigPolicy' | 'PutResolverRulePolicy' | 'UpdateResolverEndpoint' | 'UpdateResolverRule';
+export type Route53resolverActionsRead = 'GetResolverEndpoint' | 'GetResolverQueryLogConfig' | 'GetResolverQueryLogConfigAssociation' | 'GetResolverQueryLogConfigPolicy' | 'GetResolverRule' | 'GetResolverRuleAssociation' | 'GetResolverRulePolicy' | 'ListTagsForResource';
+export type Route53resolverActionsList = 'ListResolverEndpointIpAddresses' | 'ListResolverEndpoints' | 'ListResolverQueryLogConfigAssociations' | 'ListResolverQueryLogConfigs' | 'ListResolverRuleAssociations' | 'ListResolverRules';
+export type Route53resolverActionsTagging = 'TagResource' | 'UntagResource';
+export type Route53resolverActions = Route53resolverActionsWrite | Route53resolverActionsRead | Route53resolverActionsList | Route53resolverActionsTagging;

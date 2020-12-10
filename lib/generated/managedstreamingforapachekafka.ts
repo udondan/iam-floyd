@@ -417,3 +417,9 @@ export class Kafka extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type KafkaActionsWrite = 'BatchAssociateScramSecret' | 'BatchDisassociateScramSecret' | 'CreateCluster' | 'CreateConfiguration' | 'DeleteCluster' | 'DeleteConfiguration' | 'UpdateBrokerCount' | 'UpdateBrokerStorage' | 'UpdateClusterConfiguration' | 'UpdateClusterKafkaVersion' | 'UpdateConfiguration' | 'UpdateMonitoring';
+export type KafkaActionsRead = 'DescribeCluster' | 'DescribeClusterOperation' | 'DescribeConfiguration' | 'DescribeConfigurationRevision' | 'GetBootstrapBrokers';
+export type KafkaActionsList = 'GetCompatibleKafkaVersions' | 'ListClusterOperations' | 'ListClusters' | 'ListConfigurations' | 'ListNodes' | 'ListScramSecrets' | 'ListTagsForResource';
+export type KafkaActionsTagging = 'TagResource' | 'UntagResource';
+export type KafkaActions = KafkaActionsWrite | KafkaActionsRead | KafkaActionsList | KafkaActionsTagging;

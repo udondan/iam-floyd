@@ -177,3 +177,8 @@ export class Braket extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type BraketActionsWrite = 'CancelQuantumTask' | 'CreateQuantumTask';
+export type BraketActionsRead = 'GetDevice' | 'GetQuantumTask' | 'ListTagsForResource' | 'SearchDevices' | 'SearchQuantumTasks';
+export type BraketActionsTagging = 'TagResource' | 'UntagResource';
+export type BraketActions = BraketActionsWrite | BraketActionsRead | BraketActionsTagging;

@@ -333,3 +333,8 @@ export class CognitoSync extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type CognitoSyncActionsWrite = 'BulkPublish' | 'DeleteDataset' | 'RegisterDevice' | 'SetCognitoEvents' | 'SetDatasetConfiguration' | 'SetIdentityPoolConfiguration' | 'SubscribeToDataset' | 'UnsubscribeFromDataset' | 'UpdateRecords';
+export type CognitoSyncActionsRead = 'DescribeDataset' | 'DescribeIdentityPoolUsage' | 'DescribeIdentityUsage' | 'GetBulkPublishDetails' | 'GetCognitoEvents' | 'GetIdentityPoolConfiguration' | 'ListIdentityPoolUsage' | 'ListRecords' | 'QueryRecords';
+export type CognitoSyncActionsList = 'ListDatasets';
+export type CognitoSyncActions = CognitoSyncActionsWrite | CognitoSyncActionsRead | CognitoSyncActionsList;

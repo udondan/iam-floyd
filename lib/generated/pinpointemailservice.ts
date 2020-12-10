@@ -737,3 +737,9 @@ export class SesPinpoint extends PolicyStatement {
     return this.if(`ses:Recipients`, value, operator || 'StringLike');
   }
 }
+
+export type SesPinpointActionsWrite = 'CreateConfigurationSet' | 'CreateConfigurationSetEventDestination' | 'CreateDedicatedIpPool' | 'CreateDeliverabilityTestReport' | 'CreateEmailIdentity' | 'DeleteConfigurationSet' | 'DeleteConfigurationSetEventDestination' | 'DeleteDedicatedIpPool' | 'DeleteEmailIdentity' | 'PutAccountDedicatedIpWarmupAttributes' | 'PutAccountSendingAttributes' | 'PutConfigurationSetDeliveryOptions' | 'PutConfigurationSetReputationOptions' | 'PutConfigurationSetSendingOptions' | 'PutConfigurationSetTrackingOptions' | 'PutDedicatedIpInPool' | 'PutDedicatedIpWarmupAttributes' | 'PutDeliverabilityDashboardOption' | 'PutEmailIdentityDkimAttributes' | 'PutEmailIdentityFeedbackAttributes' | 'PutEmailIdentityMailFromAttributes' | 'SendEmail' | 'UpdateConfigurationSetEventDestination';
+export type SesPinpointActionsRead = 'GetAccount' | 'GetBlacklistReports' | 'GetConfigurationSet' | 'GetConfigurationSetEventDestinations' | 'GetDedicatedIp' | 'GetDedicatedIps' | 'GetDeliverabilityDashboardOptions' | 'GetDeliverabilityTestReport' | 'GetDomainStatisticsReport' | 'GetEmailIdentity' | 'ListTagsForResource';
+export type SesPinpointActionsList = 'ListConfigurationSets' | 'ListDedicatedIpPools' | 'ListDeliverabilityTestReports' | 'ListEmailIdentities';
+export type SesPinpointActionsTagging = 'TagResource' | 'UntagResource';
+export type SesPinpointActions = SesPinpointActionsWrite | SesPinpointActionsRead | SesPinpointActionsList | SesPinpointActionsTagging;

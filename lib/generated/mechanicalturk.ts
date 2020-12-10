@@ -534,3 +534,8 @@ export class Mechanicalturk extends PolicyStatement {
     ]
   };
 }
+
+export type MechanicalturkActionsWrite = 'AcceptQualificationRequest' | 'ApproveAssignment' | 'AssociateQualificationWithWorker' | 'CreateAdditionalAssignmentsForHIT' | 'CreateHIT' | 'CreateHITType' | 'CreateHITWithHITType' | 'CreateQualificationType' | 'CreateWorkerBlock' | 'DeleteHIT' | 'DeleteQualificationType' | 'DeleteWorkerBlock' | 'DisassociateQualificationFromWorker' | 'NotifyWorkers' | 'RejectAssignment' | 'RejectQualificationRequest' | 'SendBonus' | 'SendTestEventNotification' | 'UpdateExpirationForHIT' | 'UpdateHITReviewStatus' | 'UpdateHITTypeOfHIT' | 'UpdateNotificationSettings' | 'UpdateQualificationType';
+export type MechanicalturkActionsRead = 'GetAccountBalance' | 'GetAssignment' | 'GetFileUploadURL' | 'GetHIT' | 'GetQualificationScore' | 'GetQualificationType';
+export type MechanicalturkActionsList = 'ListAssignmentsForHIT' | 'ListBonusPayments' | 'ListHITs' | 'ListHITsForQualificationType' | 'ListQualificationRequests' | 'ListQualificationTypes' | 'ListReviewPolicyResultsForHIT' | 'ListReviewableHITs' | 'ListWorkerBlocks' | 'ListWorkersWithQualificationType';
+export type MechanicalturkActions = MechanicalturkActionsWrite | MechanicalturkActionsRead | MechanicalturkActionsList;

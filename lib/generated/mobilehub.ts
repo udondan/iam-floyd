@@ -345,3 +345,8 @@ export class Mobilehub extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type MobilehubActionsWrite = 'CreateProject' | 'CreateServiceRole' | 'DeleteProject' | 'DeleteProjectSnapshot' | 'DeployToStage' | 'GenerateProjectParameters' | 'ImportProject' | 'InstallBundle' | 'SynchronizeProject' | 'UpdateProject';
+export type MobilehubActionsRead = 'DescribeBundle' | 'ExportBundle' | 'ExportProject' | 'GetProject' | 'GetProjectSnapshot' | 'ValidateProject' | 'VerifyServiceRole';
+export type MobilehubActionsList = 'ListAvailableConnectors' | 'ListAvailableFeatures' | 'ListAvailableRegions' | 'ListBundles' | 'ListProjectSnapshots' | 'ListProjects';
+export type MobilehubActions = MobilehubActionsWrite | MobilehubActionsRead | MobilehubActionsList;

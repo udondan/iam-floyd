@@ -236,3 +236,9 @@ export class Acm extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type AcmActionsTagging = 'AddTagsToCertificate' | 'RemoveTagsFromCertificate';
+export type AcmActionsWrite = 'DeleteCertificate' | 'ImportCertificate' | 'RenewCertificate' | 'RequestCertificate' | 'ResendValidationEmail' | 'UpdateCertificateOptions';
+export type AcmActionsRead = 'DescribeCertificate' | 'ExportCertificate' | 'GetCertificate' | 'ListTagsForCertificate';
+export type AcmActionsList = 'ListCertificates';
+export type AcmActions = AcmActionsTagging | AcmActionsWrite | AcmActionsRead | AcmActionsList;

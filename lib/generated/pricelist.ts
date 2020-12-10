@@ -62,3 +62,6 @@ export class Pricing extends PolicyStatement {
     ]
   };
 }
+
+export type PricingActionsRead = 'DescribeServices' | 'GetAttributeValues' | 'GetProducts';
+export type PricingActions = PricingActionsRead;

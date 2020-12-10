@@ -248,3 +248,8 @@ export class Applicationinsights extends PolicyStatement {
     ]
   };
 }
+
+export type ApplicationinsightsActionsWrite = 'CreateApplication' | 'CreateComponent' | 'DeleteApplication' | 'DeleteComponent' | 'UpdateApplication' | 'UpdateComponent' | 'UpdateComponentConfiguration';
+export type ApplicationinsightsActionsRead = 'DescribeApplication' | 'DescribeComponent' | 'DescribeComponentConfiguration' | 'DescribeComponentConfigurationRecommendation' | 'DescribeObservation' | 'DescribeProblem' | 'DescribeProblemObservations';
+export type ApplicationinsightsActionsList = 'ListApplications' | 'ListComponents' | 'ListProblems';
+export type ApplicationinsightsActions = ApplicationinsightsActionsWrite | ApplicationinsightsActionsRead | ApplicationinsightsActionsList;

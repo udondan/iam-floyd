@@ -236,3 +236,8 @@ export class CodeguruReviewer extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type CodeguruReviewerActionsWrite = 'AssociateRepository' | 'DisassociateRepository' | 'PutRecommendationFeedback';
+export type CodeguruReviewerActionsRead = 'CreateConnectionToken' | 'DescribeCodeReview' | 'DescribeRecommendationFeedback' | 'DescribeRepositoryAssociation' | 'GetMetricsData' | 'ListThirdPartyRepositories';
+export type CodeguruReviewerActionsList = 'ListCodeReviews' | 'ListRecommendationFeedback' | 'ListRecommendations' | 'ListRepositoryAssociations';
+export type CodeguruReviewerActions = CodeguruReviewerActionsWrite | CodeguruReviewerActionsRead | CodeguruReviewerActionsList;

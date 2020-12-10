@@ -533,3 +533,10 @@ export class Ecr extends PolicyStatement {
     return this.if(`ecr:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }
+
+export type EcrActionsRead = 'BatchCheckLayerAvailability' | 'BatchGetImage' | 'DescribeImageScanFindings' | 'DescribeImages' | 'DescribeRegistry' | 'GetAuthorizationToken' | 'GetDownloadUrlForLayer' | 'GetLifecyclePolicy' | 'GetLifecyclePolicyPreview' | 'GetRegistryPolicy' | 'GetRepositoryPolicy';
+export type EcrActionsWrite = 'BatchDeleteImage' | 'CompleteLayerUpload' | 'CreateRepository' | 'DeleteLifecyclePolicy' | 'DeleteRegistryPolicy' | 'DeleteRepository' | 'DeleteRepositoryPolicy' | 'InitiateLayerUpload' | 'PutImage' | 'PutImageScanningConfiguration' | 'PutImageTagMutability' | 'PutLifecyclePolicy' | 'PutRegistryPolicy' | 'PutReplicationConfiguration' | 'ReplicateImage' | 'StartImageScan' | 'StartLifecyclePolicyPreview' | 'UploadLayerPart';
+export type EcrActionsList = 'DescribeRepositories' | 'ListImages' | 'ListTagsForResource';
+export type EcrActionsPermissionsManagement = 'SetRepositoryPolicy';
+export type EcrActionsTagging = 'TagResource' | 'UntagResource';
+export type EcrActions = EcrActionsRead | EcrActionsWrite | EcrActionsList | EcrActionsPermissionsManagement | EcrActionsTagging;

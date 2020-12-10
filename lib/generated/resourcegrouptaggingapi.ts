@@ -131,3 +131,8 @@ export class Tag extends PolicyStatement {
     ]
   };
 }
+
+export type TagActionsRead = 'DescribeReportCreation' | 'GetComplianceSummary' | 'GetResources' | 'GetTagKeys' | 'GetTagValues';
+export type TagActionsWrite = 'StartReportCreation';
+export type TagActionsTagging = 'TagResources' | 'UntagResources';
+export type TagActions = TagActionsRead | TagActionsWrite | TagActionsTagging;

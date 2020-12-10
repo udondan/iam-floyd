@@ -197,3 +197,7 @@ export class Budgets extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type BudgetsActionsWrite = 'CreateBudgetAction' | 'DeleteBudgetAction' | 'ExecuteBudgetAction' | 'ModifyBudget' | 'UpdateBudgetAction';
+export type BudgetsActionsRead = 'DescribeBudgetAction' | 'DescribeBudgetActionHistories' | 'DescribeBudgetActionsForAccount' | 'DescribeBudgetActionsForBudget' | 'ViewBudget';
+export type BudgetsActions = BudgetsActionsWrite | BudgetsActionsRead;

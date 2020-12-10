@@ -440,3 +440,9 @@ export class Datapipeline extends PolicyStatement {
     return this.if(`datapipeline:workerGroup`, value, operator || 'ArnLike');
   }
 }
+
+export type DatapipelineActionsWrite = 'ActivatePipeline' | 'CreatePipeline' | 'DeactivatePipeline' | 'DeletePipeline' | 'PollForTask' | 'PutAccountLimits' | 'PutPipelineDefinition' | 'ReportTaskProgress' | 'ReportTaskRunnerHeartbeat' | 'SetStatus' | 'SetTaskStatus';
+export type DatapipelineActionsTagging = 'AddTags' | 'RemoveTags';
+export type DatapipelineActionsRead = 'DescribeObjects' | 'EvaluateExpression' | 'GetPipelineDefinition' | 'QueryObjects' | 'ValidatePipelineDefinition';
+export type DatapipelineActionsList = 'DescribePipelines' | 'GetAccountLimits' | 'ListPipelines';
+export type DatapipelineActions = DatapipelineActionsWrite | DatapipelineActionsTagging | DatapipelineActionsRead | DatapipelineActionsList;

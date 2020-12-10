@@ -563,3 +563,9 @@ export class Iotthingsgraph extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type IotthingsgraphActionsWrite = 'AssociateEntityToThing' | 'CreateFlowTemplate' | 'CreateSystemTemplate' | 'DeleteFlowTemplate' | 'DeleteNamespace' | 'DeleteSystemInstance' | 'DeleteSystemTemplate' | 'DeploySystemInstance' | 'DeprecateFlowTemplate' | 'DeprecateSystemTemplate' | 'DissociateEntityFromThing' | 'UndeploySystemInstance' | 'UpdateFlowTemplate' | 'UpdateSystemTemplate' | 'UploadEntityDefinitions';
+export type IotthingsgraphActionsTagging = 'CreateSystemInstance' | 'TagResource' | 'UntagResource';
+export type IotthingsgraphActionsRead = 'DescribeNamespace' | 'GetEntities' | 'GetFlowTemplate' | 'GetFlowTemplateRevisions' | 'GetNamespaceDeletionStatus' | 'GetSystemInstance' | 'GetSystemTemplate' | 'GetSystemTemplateRevisions' | 'GetUploadStatus' | 'SearchEntities' | 'SearchFlowExecutions' | 'SearchFlowTemplates' | 'SearchSystemInstances' | 'SearchSystemTemplates' | 'SearchThings';
+export type IotthingsgraphActionsList = 'ListFlowExecutionMessages' | 'ListTagsForResource';
+export type IotthingsgraphActions = IotthingsgraphActionsWrite | IotthingsgraphActionsTagging | IotthingsgraphActionsRead | IotthingsgraphActionsList;

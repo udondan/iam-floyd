@@ -59,3 +59,6 @@ export class Workmailmessageflow extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type WorkmailmessageflowActionsRead = 'GetRawMessageContent';
+export type WorkmailmessageflowActions = WorkmailmessageflowActionsRead;

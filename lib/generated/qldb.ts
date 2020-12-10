@@ -385,3 +385,9 @@ export class Qldb extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type QldbActionsWrite = 'CancelJournalKinesisStream' | 'CreateLedger' | 'DeleteLedger' | 'ExecuteStatement' | 'ExportJournalToS3' | 'InsertSampleData' | 'SendCommand' | 'ShowCatalog' | 'StreamJournalToKinesis' | 'UpdateLedger';
+export type QldbActionsRead = 'DescribeJournalKinesisStream' | 'DescribeJournalS3Export' | 'DescribeLedger' | 'GetBlock' | 'GetDigest' | 'GetRevision' | 'ListTagsForResource';
+export type QldbActionsList = 'ListJournalKinesisStreamsForLedger' | 'ListJournalS3Exports' | 'ListJournalS3ExportsForLedger' | 'ListLedgers';
+export type QldbActionsTagging = 'TagResource' | 'UntagResource';
+export type QldbActions = QldbActionsWrite | QldbActionsRead | QldbActionsList | QldbActionsTagging;

@@ -171,3 +171,7 @@ export class Ebs extends PolicyStatement {
     return this.if(`ebs:VolumeSize`, value, operator || 'NumericEquals');
   }
 }
+
+export type EbsActionsWrite = 'CompleteSnapshot' | 'PutSnapshotBlock' | 'StartSnapshot';
+export type EbsActionsRead = 'GetSnapshotBlock' | 'ListChangedBlocks' | 'ListSnapshotBlocks';
+export type EbsActions = EbsActionsWrite | EbsActionsRead;

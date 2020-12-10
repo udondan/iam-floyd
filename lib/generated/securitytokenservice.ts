@@ -974,3 +974,8 @@ export class Sts extends PolicyStatement {
     return this.if(`www.amazon.com:user_id`, value, operator || 'StringLike');
   }
 }
+
+export type StsActionsWrite = 'AssumeRole' | 'AssumeRoleWithSAML' | 'AssumeRoleWithWebIdentity' | 'DecodeAuthorizationMessage';
+export type StsActionsRead = 'GetAccessKeyInfo' | 'GetCallerIdentity' | 'GetFederationToken' | 'GetServiceBearerToken' | 'GetSessionToken';
+export type StsActionsTagging = 'TagSession';
+export type StsActions = StsActionsWrite | StsActionsRead | StsActionsTagging;

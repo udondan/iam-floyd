@@ -248,3 +248,8 @@ export class Snowball extends PolicyStatement {
     ]
   };
 }
+
+export type SnowballActionsWrite = 'CancelCluster' | 'CancelJob' | 'CreateAddress' | 'CreateCluster' | 'CreateJob' | 'UpdateCluster' | 'UpdateJob';
+export type SnowballActionsRead = 'DescribeAddress' | 'DescribeCluster' | 'DescribeJob' | 'GetJobManifest' | 'GetJobUnlockCode' | 'GetSnowballUsage';
+export type SnowballActionsList = 'DescribeAddresses' | 'ListClusterJobs' | 'ListClusters' | 'ListJobs';
+export type SnowballActions = SnowballActionsWrite | SnowballActionsRead | SnowballActionsList;

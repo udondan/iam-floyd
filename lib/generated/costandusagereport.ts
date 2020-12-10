@@ -96,3 +96,7 @@ export class Cur extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type CurActionsWrite = 'DeleteReportDefinition' | 'ModifyReportDefinition' | 'PutReportDefinition';
+export type CurActionsRead = 'DescribeReportDefinitions';
+export type CurActions = CurActionsWrite | CurActionsRead;

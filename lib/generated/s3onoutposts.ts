@@ -1215,3 +1215,10 @@ export class S3Outposts extends PolicyStatement {
     return this.if(`s3-outposts:x-amz-storage-class`, value, operator || 'StringLike');
   }
 }
+
+export type S3OutpostsActionsWrite = 'AbortMultipartUpload' | 'CreateAccessPoint' | 'CreateBucket' | 'CreateEndpoint' | 'DeleteAccessPoint' | 'DeleteBucket' | 'DeleteEndpoint' | 'DeleteObject' | 'PutLifecycleConfiguration' | 'PutObject';
+export type S3OutpostsActionsPermissionsManagement = 'DeleteAccessPointPolicy' | 'DeleteBucketPolicy' | 'PutAccessPointPolicy' | 'PutBucketPolicy' | 'PutObjectAcl';
+export type S3OutpostsActionsTagging = 'DeleteObjectTagging' | 'PutBucketTagging' | 'PutObjectTagging';
+export type S3OutpostsActionsRead = 'GetAccessPoint' | 'GetAccessPointPolicy' | 'GetBucket' | 'GetBucketPolicy' | 'GetBucketTagging' | 'GetLifecycleConfiguration' | 'GetObject' | 'GetObjectTagging';
+export type S3OutpostsActionsList = 'ListAccessPoints' | 'ListBucket' | 'ListBucketMultipartUploads' | 'ListEndpoints' | 'ListMultipartUploadParts' | 'ListRegionalBuckets';
+export type S3OutpostsActions = S3OutpostsActionsWrite | S3OutpostsActionsPermissionsManagement | S3OutpostsActionsTagging | S3OutpostsActionsRead | S3OutpostsActionsList;

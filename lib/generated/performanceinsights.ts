@@ -64,3 +64,6 @@ export class Pi extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type PiActionsRead = 'DescribeDimensionKeys' | 'GetResourceMetrics';
+export type PiActions = PiActionsRead;

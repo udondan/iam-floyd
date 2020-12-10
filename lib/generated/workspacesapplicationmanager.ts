@@ -36,3 +36,6 @@ export class Wam extends PolicyStatement {
     ]
   };
 }
+
+export type WamActionsWrite = 'AuthenticatePackager';
+export type WamActions = WamActionsWrite;

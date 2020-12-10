@@ -510,3 +510,9 @@ export class Worklink extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type WorklinkActionsWrite = 'AssociateDomain' | 'AssociateWebsiteAuthorizationProvider' | 'AssociateWebsiteCertificateAuthority' | 'CreateFleet' | 'DeleteFleet' | 'DisassociateDomain' | 'DisassociateWebsiteAuthorizationProvider' | 'DisassociateWebsiteCertificateAuthority' | 'RestoreDomainAccess' | 'RevokeDomainAccess' | 'SignOutUser' | 'UpdateAuditStreamConfiguration' | 'UpdateCompanyNetworkConfiguration' | 'UpdateDevicePolicyConfiguration' | 'UpdateDomainMetadata' | 'UpdateFleetMetadata' | 'UpdateIdentityProviderConfiguration';
+export type WorklinkActionsRead = 'DescribeAuditStreamConfiguration' | 'DescribeCompanyNetworkConfiguration' | 'DescribeDevice' | 'DescribeDevicePolicyConfiguration' | 'DescribeDomain' | 'DescribeFleetMetadata' | 'DescribeIdentityProviderConfiguration' | 'DescribeWebsiteCertificateAuthority' | 'ListTagsForResource';
+export type WorklinkActionsList = 'ListDevices' | 'ListDomains' | 'ListFleets' | 'ListWebsiteAuthorizationProviders' | 'ListWebsiteCertificateAuthorities' | 'SearchEntity';
+export type WorklinkActionsTagging = 'TagResource' | 'UntagResource';
+export type WorklinkActions = WorklinkActionsWrite | WorklinkActionsRead | WorklinkActionsList | WorklinkActionsTagging;

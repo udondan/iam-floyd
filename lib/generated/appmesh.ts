@@ -739,3 +739,8 @@ export class Appmesh extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type AppmeshActionsWrite = 'CreateGatewayRoute' | 'CreateMesh' | 'CreateRoute' | 'CreateVirtualGateway' | 'CreateVirtualNode' | 'CreateVirtualRouter' | 'CreateVirtualService' | 'DeleteGatewayRoute' | 'DeleteMesh' | 'DeleteRoute' | 'DeleteVirtualGateway' | 'DeleteVirtualNode' | 'DeleteVirtualRouter' | 'DeleteVirtualService' | 'TagResource' | 'UntagResource' | 'UpdateGatewayRoute' | 'UpdateMesh' | 'UpdateRoute' | 'UpdateVirtualGateway' | 'UpdateVirtualNode' | 'UpdateVirtualRouter' | 'UpdateVirtualService';
+export type AppmeshActionsRead = 'DescribeGatewayRoute' | 'DescribeMesh' | 'DescribeRoute' | 'DescribeVirtualGateway' | 'DescribeVirtualNode' | 'DescribeVirtualRouter' | 'DescribeVirtualService' | 'StreamAggregatedResources';
+export type AppmeshActionsList = 'ListGatewayRoutes' | 'ListMeshes' | 'ListRoutes' | 'ListTagsForResource' | 'ListVirtualGateways' | 'ListVirtualNodes' | 'ListVirtualRouters' | 'ListVirtualServices';
+export type AppmeshActions = AppmeshActionsWrite | AppmeshActionsRead | AppmeshActionsList;

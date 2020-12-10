@@ -363,3 +363,10 @@ export class Codestar extends PolicyStatement {
     return this.if(`iam:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }
+
+export type CodestarActionsPermissionsManagement = 'AssociateTeamMember' | 'CreateProject' | 'DeleteProject' | 'DisassociateTeamMember' | 'UpdateTeamMember';
+export type CodestarActionsWrite = 'CreateUserProfile' | 'DeleteExtendedAccess' | 'DeleteUserProfile' | 'PutExtendedAccess' | 'UpdateProject' | 'UpdateUserProfile';
+export type CodestarActionsRead = 'DescribeProject' | 'DescribeUserProfile' | 'GetExtendedAccess';
+export type CodestarActionsList = 'ListProjects' | 'ListResources' | 'ListTagsForProject' | 'ListTeamMembers' | 'ListUserProfiles';
+export type CodestarActionsTagging = 'TagProject' | 'UntagProject';
+export type CodestarActions = CodestarActionsPermissionsManagement | CodestarActionsWrite | CodestarActionsRead | CodestarActionsList | CodestarActionsTagging;

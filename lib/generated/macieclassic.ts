@@ -125,3 +125,7 @@ export class Macie extends PolicyStatement {
     ]
   };
 }
+
+export type MacieActionsWrite = 'AssociateMemberAccount' | 'AssociateS3Resources' | 'DisassociateMemberAccount' | 'DisassociateS3Resources' | 'UpdateS3Resources';
+export type MacieActionsList = 'ListMemberAccounts' | 'ListS3Resources';
+export type MacieActions = MacieActionsWrite | MacieActionsList;

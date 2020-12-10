@@ -612,3 +612,8 @@ export class SsoDirectory extends PolicyStatement {
     ]
   };
 }
+
+export type SsoDirectoryActionsWrite = 'AddMemberToGroup' | 'CompleteVirtualMfaDeviceRegistration' | 'CompleteWebAuthnDeviceRegistration' | 'CreateAlias' | 'CreateBearerToken' | 'CreateExternalIdPConfigurationForDirectory' | 'CreateGroup' | 'CreateProvisioningTenant' | 'CreateUser' | 'DeleteBearerToken' | 'DeleteExternalIdPCertificate' | 'DeleteExternalIdPConfigurationForDirectory' | 'DeleteGroup' | 'DeleteMfaDeviceForUser' | 'DeleteProvisioningTenant' | 'DeleteUser' | 'DisableExternalIdPConfigurationForDirectory' | 'DisableUser' | 'EnableExternalIdPConfigurationForDirectory' | 'EnableUser' | 'ImportExternalIdPCertificate' | 'RemoveMemberFromGroup' | 'StartVirtualMfaDeviceRegistration' | 'StartWebAuthnDeviceRegistration' | 'UpdateExternalIdPConfigurationForDirectory' | 'UpdateGroup' | 'UpdateMfaDeviceForUser' | 'UpdatePassword' | 'UpdateUser' | 'VerifyEmail';
+export type SsoDirectoryActionsRead = 'DescribeDirectory' | 'DescribeUser' | 'GetAWSSPConfigurationForDirectory' | 'IsMemberInGroup' | 'SearchGroups' | 'SearchUsers';
+export type SsoDirectoryActionsList = 'DescribeGroups' | 'DescribeUsers' | 'ListBearerTokens' | 'ListExternalIdPCertificates' | 'ListExternalIdPConfigurationsForDirectory' | 'ListGroupsForUser' | 'ListMembersInGroup' | 'ListMfaDevicesForUser' | 'ListProvisioningTenants';
+export type SsoDirectoryActions = SsoDirectoryActionsWrite | SsoDirectoryActionsRead | SsoDirectoryActionsList;

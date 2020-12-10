@@ -124,3 +124,7 @@ export class Artifact extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ArtifactActionsWrite = 'AcceptAgreement' | 'TerminateAgreement';
+export type ArtifactActionsRead = 'DownloadAgreement' | 'Get';
+export type ArtifactActions = ArtifactActionsWrite | ArtifactActionsRead;

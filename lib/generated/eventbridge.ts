@@ -847,3 +847,9 @@ export class Events extends PolicyStatement {
     return this.if(`events:source`, value, operator || 'StringLike');
   }
 }
+
+export type EventsActionsWrite = 'ActivateEventSource' | 'CancelReplay' | 'CreateArchive' | 'CreateEventBus' | 'CreatePartnerEventSource' | 'DeactivateEventSource' | 'DeleteArchive' | 'DeleteEventBus' | 'DeletePartnerEventSource' | 'DeleteRule' | 'DisableRule' | 'EnableRule' | 'PutEvents' | 'PutPartnerEvents' | 'PutPermission' | 'PutTargets' | 'RemovePermission' | 'RemoveTargets' | 'StartReplay' | 'UpdateArchive';
+export type EventsActionsRead = 'DescribeArchive' | 'DescribeEventBus' | 'DescribeEventSource' | 'DescribePartnerEventSource' | 'DescribeReplay' | 'DescribeRule' | 'TestEventPattern';
+export type EventsActionsList = 'ListArchives' | 'ListEventBuses' | 'ListEventSources' | 'ListPartnerEventSourceAccounts' | 'ListPartnerEventSources' | 'ListReplays' | 'ListRuleNamesByTarget' | 'ListRules' | 'ListTagsForResource' | 'ListTargetsByRule';
+export type EventsActionsTagging = 'PutRule' | 'TagResource' | 'UntagResource';
+export type EventsActions = EventsActionsWrite | EventsActionsRead | EventsActionsList | EventsActionsTagging;

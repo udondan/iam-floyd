@@ -888,3 +888,8 @@ export class Guardduty extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type GuarddutyActionsWrite = 'AcceptInvitation' | 'ArchiveFindings' | 'CreateDetector' | 'CreateFilter' | 'CreateIPSet' | 'CreateMembers' | 'CreatePublishingDestination' | 'CreateSampleFindings' | 'CreateThreatIntelSet' | 'DeclineInvitations' | 'DeleteDetector' | 'DeleteFilter' | 'DeleteIPSet' | 'DeleteInvitations' | 'DeleteMembers' | 'DeletePublishingDestination' | 'DeleteThreatIntelSet' | 'DisableOrganizationAdminAccount' | 'DisassociateFromMasterAccount' | 'DisassociateMembers' | 'EnableOrganizationAdminAccount' | 'InviteMembers' | 'StartMonitoringMembers' | 'StopMonitoringMembers' | 'TagResource' | 'UnarchiveFindings' | 'UntagResource' | 'UpdateDetector' | 'UpdateFilter' | 'UpdateFindingsFeedback' | 'UpdateIPSet' | 'UpdateOrganizationConfiguration' | 'UpdatePublishingDestination' | 'UpdateThreatIntelSet';
+export type GuarddutyActionsRead = 'DescribeOrganizationConfiguration' | 'DescribePublishingDestination' | 'GetDetector' | 'GetFilter' | 'GetFindings' | 'GetFindingsStatistics' | 'GetIPSet' | 'GetInvitationsCount' | 'GetMasterAccount' | 'GetMembers' | 'GetThreatIntelSet';
+export type GuarddutyActionsList = 'ListDetectors' | 'ListFilters' | 'ListFindings' | 'ListIPSets' | 'ListInvitations' | 'ListMembers' | 'ListOrganizationAdminAccounts' | 'ListPublishingDestinations' | 'ListTagsForResource' | 'ListThreatIntelSets';
+export type GuarddutyActions = GuarddutyActionsWrite | GuarddutyActionsRead | GuarddutyActionsList;

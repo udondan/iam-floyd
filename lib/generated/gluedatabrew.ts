@@ -654,3 +654,9 @@ export class Databrew extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type DatabrewActionsWrite = 'BatchDeleteRecipeVersion' | 'CreateDataset' | 'CreateProfileJob' | 'CreateProject' | 'CreateRecipe' | 'CreateRecipeJob' | 'CreateSchedule' | 'DeleteDataset' | 'DeleteJob' | 'DeleteProject' | 'DeleteRecipeVersion' | 'DeleteSchedule' | 'PublishRecipe' | 'SendProjectSessionAction' | 'StartJobRun' | 'StartProjectSession' | 'StopJobRun' | 'UpdateDataset' | 'UpdateProfileJob' | 'UpdateProject' | 'UpdateRecipe' | 'UpdateRecipeJob' | 'UpdateSchedule';
+export type DatabrewActionsRead = 'DescribeDataset' | 'DescribeJob' | 'DescribeProject' | 'DescribeRecipe' | 'DescribeSchedule';
+export type DatabrewActionsList = 'ListDatasets' | 'ListJobRuns' | 'ListJobs' | 'ListProjects' | 'ListRecipeVersions' | 'ListRecipes' | 'ListSchedules' | 'ListTagsForResource';
+export type DatabrewActionsTagging = 'TagResource' | 'UntagResource';
+export type DatabrewActions = DatabrewActionsWrite | DatabrewActionsRead | DatabrewActionsList | DatabrewActionsTagging;

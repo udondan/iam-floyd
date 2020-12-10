@@ -1094,3 +1094,9 @@ export class Ecs extends PolicyStatement {
     return this.if(`ecs:task-definition`, value, operator || 'ArnLike');
   }
 }
+
+export type EcsActionsWrite = 'CreateCapacityProvider' | 'CreateCluster' | 'CreateService' | 'CreateTaskSet' | 'DeleteAccountSetting' | 'DeleteAttributes' | 'DeleteCapacityProvider' | 'DeleteCluster' | 'DeleteService' | 'DeleteTaskSet' | 'DeregisterContainerInstance' | 'DeregisterTaskDefinition' | 'DiscoverPollEndpoint' | 'Poll' | 'PutAccountSetting' | 'PutAccountSettingDefault' | 'PutAttributes' | 'PutClusterCapacityProviders' | 'RegisterContainerInstance' | 'RegisterTaskDefinition' | 'RunTask' | 'StartTask' | 'StartTelemetrySession' | 'StopTask' | 'SubmitAttachmentStateChanges' | 'SubmitContainerStateChange' | 'SubmitTaskStateChange' | 'UpdateClusterSettings' | 'UpdateContainerAgent' | 'UpdateContainerInstancesState' | 'UpdateService' | 'UpdateServicePrimaryTaskSet' | 'UpdateTaskSet';
+export type EcsActionsRead = 'DescribeCapacityProviders' | 'DescribeClusters' | 'DescribeContainerInstances' | 'DescribeServices' | 'DescribeTaskDefinition' | 'DescribeTaskSets' | 'DescribeTasks';
+export type EcsActionsList = 'ListAccountSettings' | 'ListAttributes' | 'ListClusters' | 'ListContainerInstances' | 'ListServices' | 'ListTagsForResource' | 'ListTaskDefinitionFamilies' | 'ListTaskDefinitions' | 'ListTasks';
+export type EcsActionsTagging = 'TagResource' | 'UntagResource';
+export type EcsActions = EcsActionsWrite | EcsActionsRead | EcsActionsList | EcsActionsTagging;

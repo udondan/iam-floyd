@@ -631,3 +631,8 @@ export class Logs extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type LogsActionsWrite = 'AssociateKmsKey' | 'CancelExportTask' | 'CreateExportTask' | 'CreateLogDelivery' | 'CreateLogGroup' | 'CreateLogStream' | 'DeleteDestination' | 'DeleteLogDelivery' | 'DeleteLogGroup' | 'DeleteLogStream' | 'DeleteMetricFilter' | 'DeleteResourcePolicy' | 'DeleteRetentionPolicy' | 'DeleteSubscriptionFilter' | 'DisassociateKmsKey' | 'PutDestination' | 'PutDestinationPolicy' | 'PutLogEvents' | 'PutMetricFilter' | 'PutResourcePolicy' | 'PutRetentionPolicy' | 'PutSubscriptionFilter' | 'TagLogGroup' | 'UntagLogGroup' | 'UpdateLogDelivery';
+export type LogsActionsList = 'DescribeDestinations' | 'DescribeExportTasks' | 'DescribeLogGroups' | 'DescribeLogStreams' | 'DescribeMetricFilters' | 'DescribeQueries' | 'DescribeResourcePolicies' | 'DescribeSubscriptionFilters' | 'ListLogDeliveries' | 'ListTagsLogGroup';
+export type LogsActionsRead = 'FilterLogEvents' | 'GetLogDelivery' | 'GetLogEvents' | 'GetLogGroupFields' | 'GetLogRecord' | 'GetQueryResults' | 'StartQuery' | 'StopQuery' | 'TestMetricFilter';
+export type LogsActions = LogsActionsWrite | LogsActionsList | LogsActionsRead;

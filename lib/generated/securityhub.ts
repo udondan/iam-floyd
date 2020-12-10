@@ -733,3 +733,8 @@ export class Securityhub extends PolicyStatement {
     return this.if(`securityhub:TargetAccount`, value, operator || 'StringLike');
   }
 }
+
+export type SecurityhubActionsWrite = 'AcceptInvitation' | 'BatchDisableStandards' | 'BatchEnableStandards' | 'BatchImportFindings' | 'BatchUpdateFindings' | 'CreateActionTarget' | 'CreateInsight' | 'CreateMembers' | 'DeclineInvitations' | 'DeleteActionTarget' | 'DeleteInsight' | 'DeleteInvitations' | 'DeleteMembers' | 'DisableImportFindingsForProduct' | 'DisableOrganizationAdminAccount' | 'DisableSecurityHub' | 'DisassociateFromMasterAccount' | 'DisassociateMembers' | 'EnableImportFindingsForProduct' | 'EnableOrganizationAdminAccount' | 'EnableSecurityHub' | 'InviteMembers' | 'TagResource' | 'UntagResource' | 'UpdateActionTarget' | 'UpdateFindings' | 'UpdateInsight' | 'UpdateOrganizationConfiguration' | 'UpdateSecurityHubConfiguration' | 'UpdateStandardsControl';
+export type SecurityhubActionsRead = 'DescribeActionTargets' | 'DescribeHub' | 'DescribeOrganizationConfiguration' | 'DescribeProducts' | 'DescribeStandards' | 'DescribeStandardsControls' | 'GetFindings' | 'GetInsightResults' | 'GetInvitationsCount' | 'GetMasterAccount' | 'GetMembers';
+export type SecurityhubActionsList = 'GetEnabledStandards' | 'GetInsights' | 'ListEnabledProductsForImport' | 'ListInvitations' | 'ListMembers' | 'ListOrganizationAdminAccounts' | 'ListTagsForResource';
+export type SecurityhubActions = SecurityhubActionsWrite | SecurityhubActionsRead | SecurityhubActionsList;

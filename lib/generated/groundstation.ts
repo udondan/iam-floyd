@@ -607,3 +607,9 @@ export class Groundstation extends PolicyStatement {
     return this.if(`groundstation:satelliteId`, value, operator || 'StringLike');
   }
 }
+
+export type GroundstationActionsWrite = 'CancelContact' | 'CreateConfig' | 'CreateDataflowEndpointGroup' | 'CreateMissionProfile' | 'DeleteConfig' | 'DeleteDataflowEndpointGroup' | 'DeleteMissionProfile' | 'ReserveContact' | 'UpdateConfig' | 'UpdateMissionProfile';
+export type GroundstationActionsRead = 'DescribeContact' | 'GetConfig' | 'GetDataflowEndpointGroup' | 'GetMinuteUsage' | 'GetMissionProfile' | 'GetSatellite' | 'ListTagsForResource';
+export type GroundstationActionsList = 'ListConfigs' | 'ListContacts' | 'ListDataflowEndpointGroups' | 'ListGroundStations' | 'ListMissionProfiles' | 'ListSatellites';
+export type GroundstationActionsTagging = 'TagResource' | 'UntagResource';
+export type GroundstationActions = GroundstationActionsWrite | GroundstationActionsRead | GroundstationActionsList | GroundstationActionsTagging;

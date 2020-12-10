@@ -424,3 +424,8 @@ export class Iot1click extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type Iot1clickActionsWrite = 'AssociateDeviceWithPlacement' | 'CreatePlacement' | 'CreateProject' | 'DeletePlacement' | 'DeleteProject' | 'DisassociateDeviceFromPlacement' | 'InvokeDeviceMethod' | 'TagResource' | 'UntagResource' | 'UpdateDeviceState' | 'UpdatePlacement' | 'UpdateProject';
+export type Iot1clickActionsRead = 'ClaimDevicesByClaimCode' | 'DescribeDevice' | 'DescribePlacement' | 'DescribeProject' | 'FinalizeDeviceClaim' | 'GetDeviceMethods' | 'GetDevicesInPlacement' | 'InitiateDeviceClaim' | 'ListDeviceEvents' | 'ListPlacements' | 'UnclaimDevice';
+export type Iot1clickActionsList = 'ListDevices' | 'ListProjects' | 'ListTagsForResource';
+export type Iot1clickActions = Iot1clickActionsWrite | Iot1clickActionsRead | Iot1clickActionsList;

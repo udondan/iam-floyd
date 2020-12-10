@@ -307,3 +307,8 @@ export class MediapackageVod extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type MediapackageVodActionsWrite = 'CreateAsset' | 'CreatePackagingConfiguration' | 'CreatePackagingGroup' | 'DeleteAsset' | 'DeletePackagingConfiguration' | 'DeletePackagingGroup' | 'TagResource' | 'UntagResource';
+export type MediapackageVodActionsRead = 'DescribeAsset' | 'DescribePackagingConfiguration' | 'DescribePackagingGroup' | 'ListTagsForResource';
+export type MediapackageVodActionsList = 'ListAssets' | 'ListPackagingConfigurations' | 'ListPackagingGroups';
+export type MediapackageVodActions = MediapackageVodActionsWrite | MediapackageVodActionsRead | MediapackageVodActionsList;

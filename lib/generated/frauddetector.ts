@@ -1002,3 +1002,9 @@ export class Frauddetector extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type FrauddetectorActionsWrite = 'BatchCreateVariable' | 'CreateDetectorVersion' | 'CreateModel' | 'CreateModelVersion' | 'CreateRule' | 'CreateVariable' | 'DeleteDetector' | 'DeleteDetectorVersion' | 'DeleteEntityType' | 'DeleteEvent' | 'DeleteEventType' | 'DeleteExternalModel' | 'DeleteLabel' | 'DeleteModel' | 'DeleteModelVersion' | 'DeleteOutcome' | 'DeleteRule' | 'DeleteVariable' | 'PutDetector' | 'PutEntityType' | 'PutEventType' | 'PutExternalModel' | 'PutKMSEncryptionKey' | 'PutLabel' | 'PutOutcome' | 'UpdateDetectorVersion' | 'UpdateDetectorVersionMetadata' | 'UpdateDetectorVersionStatus' | 'UpdateModel' | 'UpdateModelVersion' | 'UpdateModelVersionStatus' | 'UpdateRuleMetadata' | 'UpdateRuleVersion' | 'UpdateVariable';
+export type FrauddetectorActionsList = 'BatchGetVariable' | 'GetDetectorVersion' | 'GetDetectors' | 'GetEntityTypes' | 'GetEventTypes' | 'GetExternalModels' | 'GetLabels' | 'GetModelVersion' | 'GetModels' | 'GetOutcomes' | 'GetRules' | 'GetVariables' | 'ListTagsForResource';
+export type FrauddetectorActionsRead = 'DescribeDetector' | 'DescribeModelVersions' | 'GetEventPrediction' | 'GetKMSEncryptionKey';
+export type FrauddetectorActionsTagging = 'TagResource' | 'UntagResource';
+export type FrauddetectorActions = FrauddetectorActionsWrite | FrauddetectorActionsList | FrauddetectorActionsRead | FrauddetectorActionsTagging;

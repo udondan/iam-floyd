@@ -478,3 +478,9 @@ export class Dax extends PolicyStatement {
     return this.if(`dax:EnclosingOperation`, value, operator || 'StringLike');
   }
 }
+
+export type DaxActionsRead = 'BatchGetItem' | 'ConditionCheckItem' | 'DescribeParameters' | 'GetItem' | 'ListTags' | 'Query' | 'Scan';
+export type DaxActionsWrite = 'BatchWriteItem' | 'CreateCluster' | 'CreateParameterGroup' | 'CreateSubnetGroup' | 'DecreaseReplicationFactor' | 'DeleteCluster' | 'DeleteItem' | 'DeleteParameterGroup' | 'DeleteSubnetGroup' | 'IncreaseReplicationFactor' | 'PutItem' | 'RebootNode' | 'UpdateCluster' | 'UpdateItem' | 'UpdateParameterGroup' | 'UpdateSubnetGroup';
+export type DaxActionsList = 'DescribeClusters' | 'DescribeDefaultParameters' | 'DescribeEvents' | 'DescribeParameterGroups' | 'DescribeSubnetGroups';
+export type DaxActionsTagging = 'TagResource' | 'UntagResource';
+export type DaxActions = DaxActionsRead | DaxActionsWrite | DaxActionsList | DaxActionsTagging;

@@ -534,3 +534,8 @@ export class Ce extends PolicyStatement {
     ]
   };
 }
+
+export type CeActionsWrite = 'CreateAnomalyMonitor' | 'CreateAnomalySubscription' | 'CreateCostCategoryDefinition' | 'CreateNotificationSubscription' | 'CreateReport' | 'DeleteAnomalyMonitor' | 'DeleteAnomalySubscription' | 'DeleteCostCategoryDefinition' | 'DeleteNotificationSubscription' | 'DeleteReport' | 'ProvideAnomalyFeedback' | 'UpdateAnomalyMonitor' | 'UpdateAnomalySubscription' | 'UpdateCostCategoryDefinition' | 'UpdateNotificationSubscription' | 'UpdatePreferences' | 'UpdateReport';
+export type CeActionsRead = 'DescribeCostCategoryDefinition' | 'DescribeNotificationSubscription' | 'DescribeReport' | 'GetAnomalies' | 'GetAnomalyMonitors' | 'GetAnomalySubscriptions' | 'GetCostAndUsage' | 'GetCostAndUsageWithResources' | 'GetCostForecast' | 'GetDimensionValues' | 'GetPreferences' | 'GetReservationCoverage' | 'GetReservationPurchaseRecommendation' | 'GetReservationUtilization' | 'GetRightsizingRecommendation' | 'GetSavingsPlansCoverage' | 'GetSavingsPlansPurchaseRecommendation' | 'GetSavingsPlansUtilization' | 'GetSavingsPlansUtilizationDetails' | 'GetTags' | 'GetUsageForecast';
+export type CeActionsList = 'ListCostCategoryDefinitions';
+export type CeActions = CeActionsWrite | CeActionsRead | CeActionsList;

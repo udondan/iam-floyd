@@ -644,3 +644,10 @@ export class Elasticmapreduce extends PolicyStatement {
     return this.if(`elasticmapreduce:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }
+
+export type ElasticmapreduceActionsWrite = 'AddInstanceFleet' | 'AddInstanceGroups' | 'AddJobFlowSteps' | 'CancelSteps' | 'CreateEditor' | 'CreateSecurityConfiguration' | 'DeleteEditor' | 'DeleteSecurityConfiguration' | 'ModifyCluster' | 'ModifyInstanceFleet' | 'ModifyInstanceGroups' | 'OpenEditorInConsole' | 'PutAutoScalingPolicy' | 'PutManagedScalingPolicy' | 'RemoveAutoScalingPolicy' | 'RemoveManagedScalingPolicy' | 'RunJobFlow' | 'SetTerminationProtection' | 'StartEditor' | 'StopEditor' | 'TerminateJobFlows';
+export type ElasticmapreduceActionsTagging = 'AddTags' | 'RemoveTags';
+export type ElasticmapreduceActionsRead = 'DescribeCluster' | 'DescribeEditor' | 'DescribeJobFlows' | 'DescribeSecurityConfiguration' | 'DescribeStep' | 'GetBlockPublicAccessConfiguration' | 'GetManagedScalingPolicy' | 'ListBootstrapActions' | 'ListInstanceFleets' | 'ListInstanceGroups' | 'ListInstances' | 'ListSteps';
+export type ElasticmapreduceActionsList = 'ListClusters' | 'ListEditors' | 'ListSecurityConfigurations' | 'ViewEventsFromAllClustersInConsole';
+export type ElasticmapreduceActionsPermissionsManagement = 'PutBlockPublicAccessConfiguration';
+export type ElasticmapreduceActions = ElasticmapreduceActionsWrite | ElasticmapreduceActionsTagging | ElasticmapreduceActionsRead | ElasticmapreduceActionsList | ElasticmapreduceActionsPermissionsManagement;

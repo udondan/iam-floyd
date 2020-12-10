@@ -295,3 +295,7 @@ export class Support extends PolicyStatement {
     ]
   };
 }
+
+export type SupportActionsWrite = 'AddAttachmentsToSet' | 'AddCommunicationToCase' | 'CreateCase' | 'InitiateCallForCase' | 'InitiateChatForCase' | 'PutCaseAttributes' | 'RateCaseCommunication' | 'RefreshTrustedAdvisorCheck' | 'ResolveCase';
+export type SupportActionsRead = 'DescribeAttachment' | 'DescribeCaseAttributes' | 'DescribeCases' | 'DescribeCommunications' | 'DescribeIssueTypes' | 'DescribeServices' | 'DescribeSeverityLevels' | 'DescribeSupportLevel' | 'DescribeTrustedAdvisorCheckRefreshStatuses' | 'DescribeTrustedAdvisorCheckResult' | 'DescribeTrustedAdvisorCheckSummaries' | 'DescribeTrustedAdvisorChecks' | 'SearchForCases';
+export type SupportActions = SupportActionsWrite | SupportActionsRead;

@@ -337,3 +337,9 @@ export class Timestream extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type TimestreamActionsWrite = 'CancelQuery' | 'CreateDatabase' | 'CreateTable' | 'DeleteDatabase' | 'DeleteTable' | 'UpdateDatabase' | 'UpdateTable' | 'WriteRecords';
+export type TimestreamActionsRead = 'DescribeDatabase' | 'DescribeTable' | 'Select' | 'SelectValues';
+export type TimestreamActionsList = 'DescribeEndpoints' | 'ListDatabases' | 'ListMeasures' | 'ListTables' | 'ListTagsForResource';
+export type TimestreamActionsTagging = 'TagResource' | 'UntagResource';
+export type TimestreamActions = TimestreamActionsWrite | TimestreamActionsRead | TimestreamActionsList | TimestreamActionsTagging;

@@ -511,3 +511,9 @@ export class Elasticfilesystem extends PolicyStatement {
     return this.if(`elasticfilesystem:Encrypted`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 }
+
+export type ElasticfilesystemActionsWrite = 'Backup' | 'ClientRootAccess' | 'ClientWrite' | 'CreateAccessPoint' | 'CreateMountTarget' | 'DeleteAccessPoint' | 'DeleteFileSystem' | 'DeleteFileSystemPolicy' | 'DeleteMountTarget' | 'ModifyMountTargetSecurityGroups' | 'PutBackupPolicy' | 'PutFileSystemPolicy' | 'PutLifecycleConfiguration' | 'Restore' | 'UpdateFileSystem';
+export type ElasticfilesystemActionsRead = 'ClientMount' | 'DescribeBackupPolicy' | 'DescribeFileSystemPolicy' | 'DescribeLifecycleConfiguration' | 'DescribeMountTargetSecurityGroups' | 'DescribeMountTargets' | 'DescribeTags' | 'ListTagsForResource';
+export type ElasticfilesystemActionsTagging = 'CreateFileSystem' | 'CreateTags' | 'DeleteTags' | 'TagResource' | 'UntagResource';
+export type ElasticfilesystemActionsList = 'DescribeAccessPoints' | 'DescribeFileSystems';
+export type ElasticfilesystemActions = ElasticfilesystemActionsWrite | ElasticfilesystemActionsRead | ElasticfilesystemActionsTagging | ElasticfilesystemActionsList;

@@ -34,3 +34,6 @@ export class AwsMarketplaceEntitlementService extends PolicyStatement {
     ]
   };
 }
+
+export type AwsMarketplaceEntitlementServiceActionsRead = 'GetEntitlements';
+export type AwsMarketplaceEntitlementServiceActions = AwsMarketplaceEntitlementServiceActionsRead;

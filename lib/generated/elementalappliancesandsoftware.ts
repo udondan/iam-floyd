@@ -153,3 +153,9 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type ElementalAppliancesSoftwareActionsTagging = 'CreateQuote' | 'TagResource' | 'UntagResource';
+export type ElementalAppliancesSoftwareActionsRead = 'GetQuote' | 'ListTagsForResource';
+export type ElementalAppliancesSoftwareActionsList = 'ListQuotes';
+export type ElementalAppliancesSoftwareActionsWrite = 'UpdateQuote';
+export type ElementalAppliancesSoftwareActions = ElementalAppliancesSoftwareActionsTagging | ElementalAppliancesSoftwareActionsRead | ElementalAppliancesSoftwareActionsList | ElementalAppliancesSoftwareActionsWrite;

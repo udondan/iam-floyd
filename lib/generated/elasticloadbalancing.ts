@@ -452,3 +452,9 @@ export class Elasticloadbalancing extends PolicyStatement {
     return this.if(`elasticloadbalancing:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }
+
+export type ElasticloadbalancingActionsTagging = 'AddTags' | 'RemoveTags';
+export type ElasticloadbalancingActionsWrite = 'ApplySecurityGroupsToLoadBalancer' | 'AttachLoadBalancerToSubnets' | 'ConfigureHealthCheck' | 'CreateAppCookieStickinessPolicy' | 'CreateLBCookieStickinessPolicy' | 'CreateLoadBalancer' | 'CreateLoadBalancerListeners' | 'CreateLoadBalancerPolicy' | 'DeleteLoadBalancer' | 'DeleteLoadBalancerListeners' | 'DeleteLoadBalancerPolicy' | 'DeregisterInstancesFromLoadBalancer' | 'DetachLoadBalancerFromSubnets' | 'DisableAvailabilityZonesForLoadBalancer' | 'EnableAvailabilityZonesForLoadBalancer' | 'ModifyLoadBalancerAttributes' | 'RegisterInstancesWithLoadBalancer' | 'SetLoadBalancerListenerSSLCertificate' | 'SetLoadBalancerPoliciesForBackendServer' | 'SetLoadBalancerPoliciesOfListener';
+export type ElasticloadbalancingActionsRead = 'DescribeInstanceHealth' | 'DescribeLoadBalancerAttributes' | 'DescribeLoadBalancerPolicies' | 'DescribeLoadBalancerPolicyTypes' | 'DescribeTags';
+export type ElasticloadbalancingActionsList = 'DescribeLoadBalancers';
+export type ElasticloadbalancingActions = ElasticloadbalancingActionsTagging | ElasticloadbalancingActionsWrite | ElasticloadbalancingActionsRead | ElasticloadbalancingActionsList;

@@ -507,3 +507,9 @@ export class Schemas extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type SchemasActionsWrite = 'CreateDiscoverer' | 'CreateRegistry' | 'CreateSchema' | 'DeleteDiscoverer' | 'DeleteRegistry' | 'DeleteResourcePolicy' | 'DeleteSchema' | 'DeleteSchemaVersion' | 'PutCodeBinding' | 'PutResourcePolicy' | 'StartDiscoverer' | 'StopDiscoverer' | 'UpdateDiscoverer' | 'UpdateRegistry' | 'UpdateSchema';
+export type SchemasActionsRead = 'DescribeCodeBinding' | 'DescribeDiscoverer' | 'DescribeRegistry' | 'DescribeSchema' | 'ExportSchema' | 'GetCodeBindingSource' | 'GetDiscoveredSchema' | 'GetResourcePolicy';
+export type SchemasActionsList = 'ListDiscoverers' | 'ListRegistries' | 'ListSchemaVersions' | 'ListSchemas' | 'ListTagsForResource' | 'SearchSchemas';
+export type SchemasActionsTagging = 'TagResource' | 'UntagResource';
+export type SchemasActions = SchemasActionsWrite | SchemasActionsRead | SchemasActionsList | SchemasActionsTagging;

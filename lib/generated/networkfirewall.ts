@@ -516,3 +516,9 @@ export class NetworkFirewall extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type NetworkFirewallActionsWrite = 'AssociateFirewallPolicy' | 'AssociateSubnets' | 'CreateFirewall' | 'CreateFirewallPolicy' | 'CreateRuleGroup' | 'DeleteFirewall' | 'DeleteFirewallPolicy' | 'DeleteResourcePolicy' | 'DeleteRuleGroup' | 'DisassociateSubnets' | 'PutResourcePolicy' | 'UpdateFirewallDeleteProtection' | 'UpdateFirewallDescription' | 'UpdateFirewallPolicy' | 'UpdateFirewallPolicyChangeProtection' | 'UpdateLoggingConfiguration' | 'UpdateRuleGroup' | 'UpdateSubnetChangeProtection';
+export type NetworkFirewallActionsRead = 'DescribeFirewall' | 'DescribeFirewallPolicy' | 'DescribeLoggingConfiguration' | 'DescribeResourcePolicy' | 'DescribeRuleGroup';
+export type NetworkFirewallActionsList = 'ListFirewallPolicies' | 'ListFirewalls' | 'ListRuleGroups' | 'ListTagsForResource';
+export type NetworkFirewallActionsTagging = 'TagResource' | 'UntagResource';
+export type NetworkFirewallActions = NetworkFirewallActionsWrite | NetworkFirewallActionsRead | NetworkFirewallActionsList | NetworkFirewallActionsTagging;

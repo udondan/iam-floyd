@@ -77,3 +77,7 @@ export class ElementalSupportCases extends PolicyStatement {
     ]
   };
 }
+
+export type ElementalSupportCasesActionsWrite = 'CreateCase' | 'UpdateCase';
+export type ElementalSupportCasesActionsRead = 'GetCase' | 'GetCases';
+export type ElementalSupportCasesActions = ElementalSupportCasesActionsWrite | ElementalSupportCasesActionsRead;

@@ -1002,3 +1002,9 @@ export class Elasticbeanstalk extends PolicyStatement {
     return this.if(`elasticbeanstalk:InApplication`, value, operator || 'ArnLike');
   }
 }
+
+export type ElasticbeanstalkActionsWrite = 'AbortEnvironmentUpdate' | 'ApplyEnvironmentManagedAction' | 'AssociateEnvironmentOperationsRole' | 'ComposeEnvironments' | 'CreateApplication' | 'CreateApplicationVersion' | 'CreateConfigurationTemplate' | 'CreateEnvironment' | 'CreatePlatformVersion' | 'CreateStorageLocation' | 'DeleteApplication' | 'DeleteApplicationVersion' | 'DeleteConfigurationTemplate' | 'DeleteEnvironmentConfiguration' | 'DeletePlatformVersion' | 'DisassociateEnvironmentOperationsRole' | 'PutInstanceStatistics' | 'RebuildEnvironment' | 'RestartAppServer' | 'SwapEnvironmentCNAMEs' | 'TerminateEnvironment' | 'UpdateApplication' | 'UpdateApplicationResourceLifecycle' | 'UpdateApplicationVersion' | 'UpdateConfigurationTemplate' | 'UpdateEnvironment';
+export type ElasticbeanstalkActionsTagging = 'AddTags' | 'RemoveTags';
+export type ElasticbeanstalkActionsRead = 'CheckDNSAvailability' | 'DescribeAccountAttributes' | 'DescribeConfigurationOptions' | 'DescribeConfigurationSettings' | 'DescribeEnvironmentHealth' | 'DescribeEnvironmentManagedActionHistory' | 'DescribeEnvironmentManagedActions' | 'DescribeEnvironmentResources' | 'DescribeEvents' | 'DescribeInstancesHealth' | 'DescribePlatformVersion' | 'ListTagsForResource' | 'RequestEnvironmentInfo' | 'RetrieveEnvironmentInfo' | 'ValidateConfigurationSettings';
+export type ElasticbeanstalkActionsList = 'DescribeApplicationVersions' | 'DescribeApplications' | 'DescribeEnvironments' | 'ListAvailableSolutionStacks' | 'ListPlatformBranches' | 'ListPlatformVersions';
+export type ElasticbeanstalkActions = ElasticbeanstalkActionsWrite | ElasticbeanstalkActionsTagging | ElasticbeanstalkActionsRead | ElasticbeanstalkActionsList;

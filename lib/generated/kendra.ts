@@ -430,3 +430,9 @@ export class Kendra extends PolicyStatement {
     return this.on(arn);
   }
 }
+
+export type KendraActionsWrite = 'BatchDeleteDocument' | 'BatchPutDocument' | 'CreateDataSource' | 'CreateFaq' | 'CreateIndex' | 'DeleteDataSource' | 'DeleteFaq' | 'DeleteIndex' | 'StartDataSourceSyncJob' | 'StopDataSourceSyncJob' | 'SubmitFeedback' | 'UpdateDataSource' | 'UpdateIndex';
+export type KendraActionsRead = 'DescribeDataSource' | 'DescribeFaq' | 'DescribeIndex' | 'Query';
+export type KendraActionsList = 'ListDataSourceSyncJobs' | 'ListDataSources' | 'ListFaqs' | 'ListIndices' | 'ListTagsForResource';
+export type KendraActionsTagging = 'TagResource' | 'UntagResource';
+export type KendraActions = KendraActionsWrite | KendraActionsRead | KendraActionsList | KendraActionsTagging;

@@ -860,3 +860,8 @@ export class Appstream extends PolicyStatement {
     return this.if(`appstream:userId`, value, operator || 'StringLike');
   }
 }
+
+export type AppstreamActionsWrite = 'AssociateFleet' | 'BatchAssociateUserStack' | 'BatchDisassociateUserStack' | 'CopyImage' | 'CreateDirectoryConfig' | 'CreateFleet' | 'CreateImageBuilder' | 'CreateImageBuilderStreamingURL' | 'CreateStack' | 'CreateStreamingURL' | 'CreateUsageReportSubscription' | 'CreateUser' | 'DeleteDirectoryConfig' | 'DeleteFleet' | 'DeleteImage' | 'DeleteImageBuilder' | 'DeleteImagePermissions' | 'DeleteStack' | 'DeleteUsageReportSubscription' | 'DeleteUser' | 'DisableUser' | 'DisassociateFleet' | 'EnableUser' | 'ExpireSession' | 'GetParametersForThemeAssetUpload' | 'StartFleet' | 'StartImageBuilder' | 'StopFleet' | 'StopImageBuilder' | 'Stream' | 'UpdateDirectoryConfig' | 'UpdateFleet' | 'UpdateImagePermissions' | 'UpdateStack';
+export type AppstreamActionsRead = 'DescribeDirectoryConfigs' | 'DescribeFleets' | 'DescribeImageBuilders' | 'DescribeImagePermissions' | 'DescribeImages' | 'DescribeSessions' | 'DescribeStacks' | 'DescribeUsageReportSubscriptions' | 'DescribeUserStackAssociations' | 'DescribeUsers' | 'GetImageBuilders' | 'ListAssociatedFleets' | 'ListAssociatedStacks' | 'ListTagsForResource';
+export type AppstreamActionsTagging = 'TagResource' | 'UntagResource';
+export type AppstreamActions = AppstreamActionsWrite | AppstreamActionsRead | AppstreamActionsTagging;

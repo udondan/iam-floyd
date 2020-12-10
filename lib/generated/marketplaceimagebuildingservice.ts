@@ -64,3 +64,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
     ]
   };
 }
+
+export type AwsMarketplaceImageBuildingServiceActionsRead = 'DescribeBuilds' | 'ListBuilds';
+export type AwsMarketplaceImageBuildingServiceActionsWrite = 'StartBuild';
+export type AwsMarketplaceImageBuildingServiceActions = AwsMarketplaceImageBuildingServiceActionsRead | AwsMarketplaceImageBuildingServiceActionsWrite;

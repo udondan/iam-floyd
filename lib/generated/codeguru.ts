@@ -36,3 +36,6 @@ export class Codeguru extends PolicyStatement {
     ]
   };
 }
+
+export type CodeguruActionsRead = 'GetCodeGuruFreeTrialSummary';
+export type CodeguruActions = CodeguruActionsRead;
