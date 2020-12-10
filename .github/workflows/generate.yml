@@ -26,13 +26,13 @@ jobs:
           fetch-depth: 0
 
       - name: Generate code
-        uses: udondan/cdk-nodejs@v0.2.0
+        uses: udondan/cdk-nodejs@v0.4.0
         with:
           args: make generate
         if: ${{ github.event_name == 'schedule' }}
 
       - name: Generate code
-        uses: udondan/cdk-nodejs@v0.2.0
+        uses: udondan/cdk-nodejs@v0.4.0
         with:
           args: make ${{ github.event.inputs.command }}
         if: ${{ github.event_name == 'workflow_dispatch' }}
