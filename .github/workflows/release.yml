@@ -261,7 +261,7 @@ jobs:
       - name: Install package
         run: |
           sed -i "s/iam-floyd/iam-dummy/g" package*
-          sed -i "s/import.*'..\/..\/lib';/import * as statement from 'cdk=iam-floyd';/g" examples/*/*.ts
+          sed -i "s/import.*'..\/..\/lib';/import * as statement from 'cdk-iam-floyd';/g" examples/*/*.ts
           npm i dist/js/cdk-iam-floyd@*.jsii.tgz
 
       - name: Test npm package
