@@ -1,17 +1,24 @@
 .PHONY: test test-cdk
 
 test:
-	@for f in examples/**/*.ts; do \
+	@find examples/** -type f \( -iname "*.ts" ! -iname "*.cdk.ts" \) > /tmp/ts.result
+	@echo "Compiling TypeScript to JS"
+	@tsc @/tmp/ts.result
+	@rm /tmp/ts.result
+	@for f in examples/**/*.js; do \
 		[[ "$$f" == *".cdk."* ]]&& continue; \
 		echo "Testing $$(basename $$f)" ;\
-		npx ts-node "$$f" > "$${f%.ts}.ts.result" || exit ;\
-		diff "$${f%.ts}.ts.result" "$${f%.ts}.result" || exit ;\
+		node "$$f" > "$${f%.js}.ts.result" || exit ;\
+		diff "$${f%.js}.ts.result" "$${f%.js}.result" || exit ;\
 	done
 
-
 test-cdk:
-	@for f in examples/**/*.cdk.ts; do \
+	@find examples/** -type f -iname "*.cdk.ts" > /tmp/ts.result
+	@echo "Compiling TypeScript to JS"
+	@tsc @/tmp/ts.result
+	@rm /tmp/ts.result
+	@for f in examples/**/*.cdk.js; do \
 		echo "Testing $$(basename $$f)" ;\
-		npx ts-node "$$f" > "$${f%.ts}.ts.result" || exit ;\
-		diff "$${f%.ts}.ts.result" "$${f%.ts}.result" || exit ;\
+		node "$$f" > "$${f%.js}.ts.result" || exit ;\
+		diff "$${f%.js}.ts.result" "$${f%.js}.result" || exit ;\
 	done

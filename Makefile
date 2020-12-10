@@ -101,8 +101,12 @@ python-examples-adjust-indention:
 	@perl -pi -e "s/^(\s{4,})\./\1    ./g" examples/**/*.py
 
 regenerate-code-example-results:
-	@for f in examples/**/*.ts; do \
+	@find examples/** -type f \( -iname "*.ts" ! -iname "*.cdk.ts" \) > /tmp/ts.result
+	@echo "Compiling TypeScript to JS"
+	@tsc @/tmp/ts.result
+	@rm /tmp/ts.result
+	@for f in examples/**/*.js; do \
 		[[ "$$f" == *".cdk."* ]]&& continue; \
 		echo "Caching result of $$(basename $$f)" ;\
-		npx ts-node "$$f" > "$${f%.ts}.result" || exit ;\
+		node "$$f" > "$${f%.js}.result" || exit ;\
 	done
