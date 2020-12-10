@@ -10,12 +10,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
-    name: Release
+  finalize:
+    name: Finalize
     runs-on: ubuntu-latest
-    container:
-      image: jsii/superchain
     steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
       - name: Checkout code
         uses: actions/checkout@v2
         with:
@@ -43,7 +46,44 @@ jobs:
       - name: Push changes
         run: >
           [[ "${{ github.ref }}" == refs/tags/* ]] ||
-          git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" main
+          git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" "${GITHUB_REF##*/}"
+
+      - name: Get current SHA
+        run: git rev-parse HEAD > /tmp/sha
+
+      - name: Store SHA as artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+  build-standalone:
+    name: "STANDALONE: Build package"
+    needs: finalize
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(cat VERSION)
 
       - name: Build source
         uses: udondan/jsii-publish@v0.12.0
@@ -55,18 +95,6 @@ jobs:
         uses: udondan/jsii-publish@v0.12.0
         with:
           BUILD_PACKAGES: true
-
-      - name: Test npm package
-        run: make test-typescript
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
-      - name: Test Python package
-        run: make test-python
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Store packages as artifacts
         uses: actions/upload-artifact@v2
@@ -74,8 +102,36 @@ jobs:
           name: packages
           path: dist/**/*
 
+  build-cdk:
+    name: "CDK: Build package"
+    needs: finalize
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(cat VERSION)
+
       - name: Build CDK variant
-        run: make cdk
+        run: make install cdk
 
       - name: Build source
         uses: udondan/jsii-publish@v0.12.0
@@ -88,11 +144,161 @@ jobs:
         with:
           BUILD_PACKAGES: true
 
+      - name: Store packages as artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: cdk-packages
+          path: dist/**/*
+
+  test-standalone-node:
+    name: "STANDALONE: Test Node.js package"
+    needs: build-standalone
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Download package
+        uses: actions/download-artifact@v2
+        with:
+          name: packages
+          path: dist
+
+      - name: Install package
+        run: |
+          sed -i "s/iam-floyd/iam-dummy/g" package*
+          sed -i "s/import.*'..\/..\/lib';/import * as statement from 'iam-floyd';/g" examples/*/*.ts
+          npm i dist/js/iam-floyd@*.jsii.tgz
+
+      - name: Test npm package
+        run: make test-typescript
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  test-standalone-python:
+    name: "STANDALONE: Test Python package"
+    needs: build-standalone
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Download package
+        uses: actions/download-artifact@v2
+        with:
+          name: packages
+          path: dist
+
+      - name: Test Python package
+        run: make test-python
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  test-cdk-node:
+    name: "CDK: Test Node.js package"
+    needs: build-cdk
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Download package
+        uses: actions/download-artifact@v2
+        with:
+          name: cdk-packages
+          path: dist
+
+      - name: Install package
+        run: |
+          sed -i "s/iam-floyd/iam-dummy/g" package*
+          sed -i "s/import.*'..\/..\/lib';/import * as statement from 'cdk-iam-floyd';/g" examples/*/*.ts
+          npm i dist/js/cdk-iam-floyd@*.jsii.tgz
+
       - name: Test npm package
         run: make test-typescript-cdk
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  test-cdk-python:
+    name: "CDK: Test Python package"
+    needs: build-cdk
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
+        with:
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Download package
+        uses: actions/download-artifact@v2
+        with:
+          name: cdk-packages
+          path: dist
 
       - name: Test Python package
         run: make test-python-cdk
@@ -100,11 +306,35 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      - name: Store packages as artifacts
-        uses: actions/upload-artifact@v2
+  release:
+    name: Release
+    needs:
+      - test-standalone-node
+      - test-standalone-python
+      - test-cdk-node
+      - test-cdk-python
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch latest SHA
+        uses: actions/download-artifact@v2
         with:
-          name: cdk-packages
-          path: dist/**/*
+          name: sha
+          path: /tmp/sha
+
+      - name: Store latest SHA as output
+        id: get_sha
+        run: echo ::set-output name=SHA::$(cat /tmp/sha/sha)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ steps.get_sha.outputs.SHA }}
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(cat VERSION)
 
       - name: Create tag
         run: |
@@ -123,12 +353,13 @@ jobs:
           release_name: v${{ steps.get_version.outputs.VERSION }}
           body_path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
 
-  publish-base-npm:
-    name: Publish base to npm
+  publish-standalone-npm:
+    name: "STANDALONE: Publish to npm"
     needs: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v2
+      - name: Download package
+        uses: actions/download-artifact@v2
         with:
           name: packages
           path: dist
@@ -138,12 +369,13 @@ jobs:
         with:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  publish-base-pypi:
-    name: Publish base to PyPI
+  publish-standalone-pypi:
+    name: "STANDALONE: Publish to PyPI"
     needs: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v2
+      - name: Download package
+        uses: actions/download-artifact@v2
         with:
           name: packages
           path: dist
@@ -153,12 +385,13 @@ jobs:
         with:
           PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
 
-  publish-base-nuget:
-    name: Publish base to NuGet
+  publish-standalone-nuget:
+    name: "STANDALONE: Publish to NuGet"
     needs: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v2
+      - name: Download package
+        uses: actions/download-artifact@v2
         with:
           name: packages
           path: dist
@@ -168,12 +401,13 @@ jobs:
         with:
           NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
 
-  publish-base-maven-github:
-    name: Publish base to Maven GitHub
+  publish-standalone-maven-github:
+    name: "STANDALONE: Publish to Maven GitHub"
     needs: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v2
+      - name: Download package
+        uses: actions/download-artifact@v2
         with:
           name: packages
           path: dist
@@ -185,11 +419,12 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
 
   publish-cdk-npm:
-    name: Publish CDK to npm
+    name: "CDK: Publish to npm"
     needs: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v2
+      - name: Download package
+        uses: actions/download-artifact@v2
         with:
           name: cdk-packages
           path: dist
@@ -200,11 +435,12 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-cdk-pypi:
-    name: Publish CDK to PyPI
+    name: "CDK: Publish to PyPI"
     needs: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v2
+      - name: Download package
+        uses: actions/download-artifact@v2
         with:
           name: cdk-packages
           path: dist
@@ -215,11 +451,12 @@ jobs:
           PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
 
   publish-cdk-nuget:
-    name: Publish CDK to NuGet
+    name: "CDK: Publish to NuGet"
     needs: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v2
+      - name: Download package
+        uses: actions/download-artifact@v2
         with:
           name: cdk-packages
           path: dist
@@ -230,11 +467,12 @@ jobs:
           NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
 
   publish-cdk-maven-github:
-    name: Publish CDK to Maven GitHub
+    name: "CDK: Publish to Maven GitHub"
     needs: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v2
+      - name: Download package
+        uses: actions/download-artifact@v2
         with:
           name: cdk-packages
           path: dist

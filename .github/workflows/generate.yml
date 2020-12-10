@@ -50,6 +50,7 @@ jobs:
       # code.
       - name: Failsafe
         run: test -e lib/index.ts || exit 1
+        if: steps.changes.outputs.CHANGED == '1'
 
       - name: Configure git
         run: |
