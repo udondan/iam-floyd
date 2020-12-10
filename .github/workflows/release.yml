@@ -174,8 +174,11 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
-      - name: Install dependencies
-        run: npm i
+      - name: Install package
+        run: |
+          sed -i "s/iam-floyd/iam-dummy/g" package*
+          sed -i "s/import.*'..\/..\/lib';/import * as statement from 'iam-floyd';/g" examples/*/*.ts
+          npm i dist/js/iam-floyd@*.jsii.tgz
 
       - name: Test npm package
         run: make test-typescript
@@ -243,13 +246,11 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.get_sha.outputs.SHA }}
 
-      - name: Build CDK variant
-        run: make install cdk
-
-      - name: debug
+      - name: Install package
         run: |
-          git status
-          git diff
+          sed -i "s/iam-floyd/iam-dummy/g" package*
+          sed -i "s/import.*'..\/..\/lib';/import * as statement from 'cdk=iam-floyd';/g" examples/*/*.ts
+          npm i dist/js/cdk-iam-floyd@*.jsii.tgz
 
       - name: Test npm package
         run: make test-typescript-cdk
