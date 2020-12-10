@@ -342,7 +342,7 @@ jobs:
           git config --local user.name "udondan"
           git tag -a "v${{ steps.get_version.outputs.VERSION }}" -m "Creates tag v${{ steps.get_version.outputs.VERSION }}"
           git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
-          touch CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
+          touch CHANGELOG/v$(cat VERSION).md
 
       - name: Create release
         uses: actions/create-release@v1
