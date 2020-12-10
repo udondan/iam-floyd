@@ -41,6 +41,7 @@ jobs:
         id: changes
         run: |
           set -x +e
+          git stash -- package-lock.json
           git diff
           git diff --quiet
           echo ::set-output name=CHANGED::$?
