@@ -41,7 +41,7 @@ jobs:
         id: changes
         run: |
           set -x +e
-          git diff --quiet
+          git diff
           echo ::set-output name=CHANGED::$?
 
       # fail if the index file does not exist.
