@@ -14,3 +14,5 @@ License
 -------
 
 IAM Floyd is licensed under `Apache License 2.0 <https://github.com/udondan/iam-floyd/blob/main/LICENSE>`_.
+
+Dependencies might be released under different licenses. Especially the bundled packages `regex-parser <https://www.npmjs.com/package/regex-parser>`_ and `common-substrings <https://www.npmjs.com/package/common-substrings>`_ are released under the MIT License.

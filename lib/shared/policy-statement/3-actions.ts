@@ -1,3 +1,4 @@
+import substrings from '@udondan/common-substrings';
 import RegexParser = require('regex-parser');
 
 import { AccessLevel } from '../access-level';
@@ -21,6 +22,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   private useNotActions = false;
   protected actions: string[] = [];
   private cdkActionsApplied = false;
+  private isCompact = false;
 
   /**
    * Injects actions into the statement.
@@ -38,6 +40,9 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
     const self = this;
 
     if (this.hasActions()) {
+      if (this.isCompact) {
+        this.compactActions();
+      }
       const actions = this.actions.filter((elem, pos) => {
         return self.actions.indexOf(elem) == pos;
       });
@@ -57,6 +62,9 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
     if (!this.cdkActionsApplied) {
       const mode = this.useNotActions ? 'addNotActions' : 'addActions';
       const self = this;
+      if (this.isCompact) {
+        this.compactActions();
+      }
       const uniqueActions = this.actions.filter((elem, pos) => {
         return self.actions.indexOf(elem) == pos;
       });
@@ -201,5 +209,100 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
       });
     }
     return this;
+  }
+
+  /**
+   * Condense action list down to a list of patterns.
+   *
+   * Using this method can help to reduce the policy size.
+   *
+   * For example, all actions with access level `list` could be reduced to a small pattern `List*`.
+   */
+  public compact() {
+    this.isCompact = true;
+    return this;
+  }
+
+  private compactActions() {
+    // actions that will be included, service prefix is removed
+    const includeActions = this.actions.map((elem) => {
+      return elem.substr(elem.indexOf(':') + 1);
+    });
+
+    // actions that will not be included, the opposite of includeActions
+    const excludeActions: string[] = [];
+    for (const [_, actions] of Object.entries(this.accessLevelList)) {
+      actions.forEach((action) => {
+        if (!includeActions.includes(action)) {
+          excludeActions.push(`^${action}$`);
+        }
+      });
+    }
+
+    // will contain the index of elements that are covered by substrings
+    let covered: number[] = [];
+
+    const subs = substrings(
+      includeActions.map((action) => {
+        return `^${action}$`;
+      }),
+      {
+        minLength: 3,
+        minOccurrence: 2,
+      }
+    )
+      .filter((sub) => {
+        // remove all substrings, that match an action we have not selected
+        for (let action of excludeActions) {
+          if (action.includes(sub.name)) {
+            return false;
+          }
+        }
+        return true;
+      })
+      .sort((a, b) => {
+        // sort list by the number of matches
+        if (a.source.length < b.source.length) return 1;
+        if (a.source.length > b.source.length) return -1;
+        return 0;
+      })
+      .filter((sub) => {
+        // removes substrings, that have already been covered by other substrings
+        const sources = sub.source.filter((source) => {
+          return !covered.includes(source);
+        });
+        if (sources.length > 1) {
+          //add list of sources to the global list of covered actions
+          covered = covered.concat(sources);
+          return true;
+        }
+        return false;
+      });
+
+    // stores the list of patterns
+    const compactActionList: string[] = [];
+    subs.forEach((sub) => {
+      compactActionList.push(
+        `${this.servicePrefix}:*${sub.name}*`
+          .replace('*^', '')
+          .replace('$*', '')
+      );
+      sub.source.forEach((source) => {
+        includeActions[source] = ''; // invalidate, will be filtered later
+      });
+    });
+
+    includeActions
+      .filter((action) => {
+        // remove elements that have been covered by patterns, we invalidated them above
+        return action.length > 0;
+      })
+      .forEach((action) => {
+        // add actions that have not been covered by patterns to the new action list
+        compactActionList.push(`${this.servicePrefix}:${action}`);
+      });
+
+    // we're done. override action list
+    this.actions = compactActionList;
   }
 }

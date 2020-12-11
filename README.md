@@ -53,6 +53,8 @@ AWS and their services are trademarks, registered trademarks or trade dress of A
 
 This project is not affiliated, funded, or in any way associated with AWS.
 
+IAM Floyd is licensed under [Apache License 2.0][license]. Dependencies might be released under different licenses. Especially the bundled packages [regex-parser](https://www.npmjs.com/package/regex-parser) and [common-substrings](https://www.npmjs.com/package/common-substrings) are released under the MIT License.
+
    [source]: https://github.com/udondan/iam-floyd
    [documentation]: https://iam-floyd.readthedocs.io/en/latest/
    [npm]: https://www.npmjs.com/package/iam-floyd
