@@ -1,10 +1,10 @@
 {
     "Action": [
         "ec2:Describe*",
-        "ec2:Get*",
         "ec2:ExportClientVpnClientC*",
-        "ec2:SearchTransitGateway*",
-        "ec2:SearchLocalGatewayRoutes"
+        "ec2:Get*",
+        "ec2:SearchLocalGatewayRoutes",
+        "ec2:SearchTransitGateway*"
     ],
     "Resource": "*",
     "Effect": "Allow"

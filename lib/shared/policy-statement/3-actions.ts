@@ -43,9 +43,11 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
       if (this.isCompact) {
         this.compactActions();
       }
-      const actions = this.actions.filter((elem, pos) => {
-        return self.actions.indexOf(elem) == pos;
-      });
+      const actions = this.actions
+        .filter((elem, pos) => {
+          return self.actions.indexOf(elem) == pos;
+        })
+        .sort();
       statement[mode] = actions.length > 1 ? actions : actions[0];
     }
 
@@ -65,9 +67,11 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
       if (this.isCompact) {
         this.compactActions();
       }
-      const uniqueActions = this.actions.filter((elem, pos) => {
-        return self.actions.indexOf(elem) == pos;
-      });
+      const uniqueActions = this.actions
+        .filter((elem, pos) => {
+          return self.actions.indexOf(elem) == pos;
+        })
+        .sort();
       // @ts-ignore only available after swapping 1-base
       this[mode](...uniqueActions);
     }
