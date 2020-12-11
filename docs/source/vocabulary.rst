@@ -59,6 +59,11 @@ To add all actions of a certain `access level <access-levels_>`_ to the statemen
 .. ATTENTION::
    The list of actions is compiled at run time. The generated statement object contains an exact list of actions that matched when you build it. If AWS later adds/removes actions or changes the level, you need to re-generate the statements.
 
+.. NOTE::
+   When working with access levels the policy size limits may be exceeded quickly, just because there are so many actions available for some services like EC2.
+
+   In these cases you should use the `compact`_ method, to compile the action list to a list of wildcard patterns.
+
 allListActions
 """"""""""""""
 
@@ -183,3 +188,13 @@ notPrincipals
 Switches the policy provider to use `NotPrincipal`_.
 
 .. example:: notPrincipal
+
+**compact**
+-----------
+
+This method can be used to convert a list of actions down to a list of wildcard patterns. This can be handy to reduce the policy size, especially when you work with `Access levels`_.
+
+.. ATTENTION::
+   When AWS later adds new actions, the patterns might match additional actions.
+
+.. example:: compact
