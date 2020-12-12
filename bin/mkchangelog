@@ -111,7 +111,7 @@ fi
 
 if [ -n "${removedConditions}" ]; then
   [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf ":warning: **Removed conditions:**\n\n" >> "$file"
+  printf ":warning: **Removed condition keys:**\n\n" >> "$file"
   echo "${removedConditions}" >> "$file"
   hasContent=true
 fi
@@ -153,7 +153,7 @@ fi
 
 if [ -n "${newConditions}" ]; then
   [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**New conditions:**\n\n" >> "$file"
+  printf "**New condition keys:**\n\n" >> "$file"
   echo "${newConditions}" >> "$file"
   hasContent=true
 fi
