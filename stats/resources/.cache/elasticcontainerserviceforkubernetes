@@ -1,4 +1,0 @@
-eks:addon
-eks:cluster
-eks:fargateprofile
-eks:nodegroup

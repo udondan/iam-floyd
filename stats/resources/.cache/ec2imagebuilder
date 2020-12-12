@@ -1,9 +1,0 @@
-imagebuilder:component
-imagebuilder:componentVersion
-imagebuilder:distributionConfiguration
-imagebuilder:image
-imagebuilder:imagePipeline
-imagebuilder:imageRecipe
-imagebuilder:imageVersion
-imagebuilder:infrastructureConfiguration
-imagebuilder:kmsKey

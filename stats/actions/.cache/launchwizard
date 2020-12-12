@@ -1,8 +1,0 @@
-launchwizard:DeleteApp;Write
-launchwizard:DescribeProvisionedApp;Read
-launchwizard:DescribeProvisioningEvents;Read
-launchwizard:GetInfrastructureSuggestion;Read
-launchwizard:GetIpAddress;Read
-launchwizard:GetResourceCostEstimate;Read
-launchwizard:ListProvisionedApps;List
-launchwizard:StartProvisioning;Write

@@ -1,8 +1,0 @@
-gamelift:alias
-gamelift:build
-gamelift:fleet
-gamelift:gameServerGroup
-gamelift:gameSessionQueue
-gamelift:matchmakingConfiguration
-gamelift:matchmakingRuleSet
-gamelift:script

@@ -5,6 +5,7 @@ dist
 **/*.js
 **/*.d.ts
 lib/generated/.cache
+stats/*/.cache
 test/package-lock.json
 test/cdk.out
 docs/build

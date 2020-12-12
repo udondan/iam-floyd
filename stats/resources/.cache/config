@@ -1,7 +1,0 @@
-config:AggregationAuthorization
-config:ConfigRule
-config:ConfigurationAggregator
-config:ConformancePack
-config:OrganizationConfigRule
-config:OrganizationConformancePack
-config:RemediationConfiguration

@@ -1,8 +1,0 @@
-forecast:algorithm
-forecast:dataset
-forecast:datasetGroup
-forecast:datasetImportJob
-forecast:forecast
-forecast:forecastExport
-forecast:predictor
-forecast:predictorBacktestExportJob

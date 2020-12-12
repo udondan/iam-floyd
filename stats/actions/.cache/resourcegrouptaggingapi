@@ -1,8 +1,0 @@
-tag:DescribeReportCreation;Read
-tag:GetComplianceSummary;Read
-tag:GetResources;Read
-tag:GetTagKeys;Read
-tag:GetTagValues;Read
-tag:StartReportCreation;Write
-tag:TagResources;Tagging
-tag:UntagResources;Tagging

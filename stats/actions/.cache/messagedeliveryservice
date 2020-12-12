@@ -1,6 +1,0 @@
-ec2messages:AcknowledgeMessage;Write
-ec2messages:DeleteMessage;Write
-ec2messages:FailMessage;Write
-ec2messages:GetEndpoint;Read
-ec2messages:GetMessages;Read
-ec2messages:SendReply;Write

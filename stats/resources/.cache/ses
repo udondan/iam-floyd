@@ -1,8 +1,0 @@
-ses:configuration-set
-ses:custom-verification-email-template
-ses:event-destination
-ses:identity
-ses:receipt-filter
-ses:receipt-rule
-ses:receipt-rule-set
-ses:template

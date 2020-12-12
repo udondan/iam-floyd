@@ -1,5 +1,0 @@
-events:archive
-events:event-bus
-events:event-source
-events:replay
-events:rule

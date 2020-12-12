@@ -1,7 +1,0 @@
-ecs:capacity-provider
-ecs:cluster
-ecs:container-instance
-ecs:service
-ecs:task
-ecs:task-definition
-ecs:task-set

@@ -1,7 +1,0 @@
-comprehend:OutputKmsKey
-comprehend:RequestTag
-comprehend:ResourceTag
-comprehend:TagKeys
-comprehend:VolumeKmsKey
-comprehend:VpcSecurityGroupIds
-comprehend:VpcSubnets

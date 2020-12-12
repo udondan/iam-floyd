@@ -1,9 +1,0 @@
-dbqms:CreateFavoriteQuery;Write
-dbqms:CreateQueryHistory;Write
-dbqms:DeleteFavoriteQueries;Write
-dbqms:DeleteQueryHistory;Write
-dbqms:DescribeFavoriteQueries;List
-dbqms:DescribeQueryHistory;List
-dbqms:GetQueryString;Read
-dbqms:UpdateFavoriteQuery;Write
-dbqms:UpdateQueryHistory;Write

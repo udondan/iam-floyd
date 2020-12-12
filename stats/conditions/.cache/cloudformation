@@ -1,9 +1,0 @@
-cloudformation:ChangeSetName
-cloudformation:ImportResourceTypes
-cloudformation:RequestTag
-cloudformation:ResourceTag
-cloudformation:ResourceTypes
-cloudformation:RoleArn
-cloudformation:StackPolicyUrl
-cloudformation:TagKeys
-cloudformation:TemplateUrl

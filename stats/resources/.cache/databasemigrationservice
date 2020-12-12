@@ -1,8 +1,0 @@
-dms:Certificate
-dms:Endpoint
-dms:EventSubscription
-dms:ReplicationInstance
-dms:ReplicationSubnetGroup
-dms:ReplicationTask
-dms:ReplicationTaskAssessmentRun
-dms:ReplicationTaskIndividualAssessment

@@ -1,4 +1,0 @@
-network-firewall:Firewall
-network-firewall:FirewallPolicy
-network-firewall:StatefulRuleGroup
-network-firewall:StatelessRuleGroup

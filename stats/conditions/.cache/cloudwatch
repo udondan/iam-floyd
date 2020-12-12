@@ -1,4 +1,0 @@
-cloudwatch:RequestTag
-cloudwatch:ResourceTag
-cloudwatch:TagKeys
-cloudwatch:namespace

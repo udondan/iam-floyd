@@ -1,3 +1,0 @@
-transcribe:OutputBucketName
-transcribe:OutputEncryptionKMSKeyId
-transcribe:OutputKey

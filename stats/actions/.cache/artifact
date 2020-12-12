@@ -1,4 +1,0 @@
-artifact:AcceptAgreement;Write
-artifact:DownloadAgreement;Read
-artifact:Get;Read
-artifact:TerminateAgreement;Write
