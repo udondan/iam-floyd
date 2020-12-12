@@ -1,0 +1,3 @@
+cloudwatch:alarm
+cloudwatch:dashboard
+cloudwatch:insight-rule

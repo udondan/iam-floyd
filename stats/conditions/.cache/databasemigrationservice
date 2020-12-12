@@ -1,0 +1,10 @@
+dms:RequestTag
+dms:ResourceTag
+dms:TagKeys
+dms:cert-tag
+dms:endpoint-tag
+dms:es-tag
+dms:rep-tag
+dms:req-tag
+dms:subgrp-tag
+dms:task-tag

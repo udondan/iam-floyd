@@ -1,0 +1,3 @@
+pricing:DescribeServices;Read
+pricing:GetAttributeValues;Read
+pricing:GetProducts;Read

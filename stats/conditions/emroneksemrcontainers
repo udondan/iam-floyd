@@ -1,0 +1,4 @@
+emr-containers:ExecutionRoleArn
+emr-containers:RequestTag
+emr-containers:ResourceTag
+emr-containers:TagKeys

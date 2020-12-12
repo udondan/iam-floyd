@@ -1,0 +1,17 @@
+honeycode:ApproveTeamAssociation;Write
+honeycode:BatchCreateTableRows;Write
+honeycode:BatchDeleteTableRows;Write
+honeycode:BatchUpdateTableRows;Write
+honeycode:BatchUpsertTableRows;Write
+honeycode:CreateTenant;Write
+honeycode:DescribeTableDataImportJob;Read
+honeycode:GetScreenData;Read
+honeycode:InvokeScreenAutomation;Write
+honeycode:ListTableColumns;List
+honeycode:ListTableRows;List
+honeycode:ListTables;List
+honeycode:ListTeamAssociations;List
+honeycode:ListTenants;List
+honeycode:QueryTableRows;Read
+honeycode:RejectTeamAssociation;Write
+honeycode:StartTableDataImportJob;Write

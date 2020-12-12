@@ -1,0 +1,7 @@
+appmesh:gatewayRoute
+appmesh:mesh
+appmesh:route
+appmesh:virtualGateway
+appmesh:virtualNode
+appmesh:virtualRouter
+appmesh:virtualService

@@ -1,0 +1,10 @@
+elasticbeanstalk:FromApplication
+elasticbeanstalk:FromApplicationVersion
+elasticbeanstalk:FromConfigurationTemplate
+elasticbeanstalk:FromEnvironment
+elasticbeanstalk:FromPlatform
+elasticbeanstalk:FromSolutionStack
+elasticbeanstalk:InApplication
+elasticbeanstalk:RequestTag
+elasticbeanstalk:ResourceTag
+elasticbeanstalk:TagKeys

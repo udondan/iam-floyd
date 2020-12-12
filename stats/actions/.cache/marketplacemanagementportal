@@ -1,0 +1,5 @@
+aws-marketplace-management:uploadFiles;Write
+aws-marketplace-management:viewMarketing;List
+aws-marketplace-management:viewReports;List
+aws-marketplace-management:viewSettings;List
+aws-marketplace-management:viewSupport;List

@@ -1,0 +1,17 @@
+detective:AcceptInvitation;Write
+detective:CreateGraph;Write
+detective:CreateMembers;Write
+detective:DeleteGraph;Write
+detective:DeleteMembers;Write
+detective:DisassociateMembership;Write
+detective:GetFreeTrialEligibility;Read
+detective:GetGraphIngestState;Read
+detective:GetMembers;Read
+detective:GetPricingInformation;Read
+detective:GetUsageInformation;Read
+detective:ListGraphs;List
+detective:ListInvitations;List
+detective:ListMembers;List
+detective:RejectInvitation;Write
+detective:SearchGraph;Read
+detective:StartMonitoringMember;Write

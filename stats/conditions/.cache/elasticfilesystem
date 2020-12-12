@@ -1,0 +1,5 @@
+elasticfilesystem:AccessPointArn
+elasticfilesystem:Encrypted
+elasticfilesystem:RequestTag
+elasticfilesystem:ResourceTag
+elasticfilesystem:TagKeys

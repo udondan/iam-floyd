@@ -233,6 +233,52 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a data quality job definition.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceTypes()
+   * - .ifInterContainerTrafficEncryption()
+   * - .ifMaxRuntimeInSeconds()
+   * - .ifNetworkIsolation()
+   * - .ifOutputKmsKey()
+   * - .ifVolumeKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateDataQualityJobDefinition.html
+   */
+  public toCreateDataQualityJobDefinition() {
+    this.to('sagemaker:CreateDataQualityJobDefinition');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a device fleet
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateDeviceFleet.html
+   */
+  public toCreateDeviceFleet() {
+    this.to('sagemaker:CreateDeviceFleet');
+    return this;
+  }
+
+  /**
    * Grants permission to create a Domain for SageMaker Studio
    *
    * Access Level: Write
@@ -257,6 +303,25 @@ export class Sagemaker extends PolicyStatement {
    */
   public toCreateDomain() {
     this.to('sagemaker:CreateDomain');
+    return this;
+  }
+
+  /**
+   * Grants permission to create an edge packaging job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEdgePackagingJob.html
+   */
+  public toCreateEdgePackagingJob() {
+    this.to('sagemaker:CreateEdgePackagingJob');
     return this;
   }
 
@@ -479,6 +544,60 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a model bias job definition.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceTypes()
+   * - .ifInterContainerTrafficEncryption()
+   * - .ifMaxRuntimeInSeconds()
+   * - .ifNetworkIsolation()
+   * - .ifOutputKmsKey()
+   * - .ifVolumeKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModelBiasJobDefinition.html
+   */
+  public toCreateModelBiasJobDefinition() {
+    this.to('sagemaker:CreateModelBiasJobDefinition');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a model explainability job definition.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceTypes()
+   * - .ifInterContainerTrafficEncryption()
+   * - .ifMaxRuntimeInSeconds()
+   * - .ifNetworkIsolation()
+   * - .ifOutputKmsKey()
+   * - .ifVolumeKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModelExplainabilityJobDefinition.html
+   */
+  public toCreateModelExplainabilityJobDefinition() {
+    this.to('sagemaker:CreateModelExplainabilityJobDefinition');
+    return this;
+  }
+
+  /**
    * Grants permission to create a ModelPackage.
    *
    * Access Level: Write
@@ -511,7 +630,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Creates a monitoring schedule.
+   * Grants permission to create a model quality job definition.
    *
    * Access Level: Write
    *
@@ -519,6 +638,34 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifInstanceTypes()
+   * - .ifInterContainerTrafficEncryption()
+   * - .ifMaxRuntimeInSeconds()
+   * - .ifNetworkIsolation()
+   * - .ifOutputKmsKey()
+   * - .ifVolumeKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModelQualityJobDefinition.html
+   */
+  public toCreateModelQualityJobDefinition() {
+    this.to('sagemaker:CreateModelQualityJobDefinition');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a monitoring schedule.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceTypes()
+   * - .ifInterContainerTrafficEncryption()
    * - .ifMaxRuntimeInSeconds()
    * - .ifNetworkIsolation()
    * - .ifOutputKmsKey()
@@ -896,6 +1043,30 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the data quality job definition created using the CreateDataQualityJobDefinition API.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteDataQualityJobDefinition.html
+   */
+  public toDeleteDataQualityJobDefinition() {
+    this.to('sagemaker:DeleteDataQualityJobDefinition');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a device fleet
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteDeviceFleet.html
+   */
+  public toDeleteDeviceFleet() {
+    this.to('sagemaker:DeleteDeviceFleet');
+    return this;
+  }
+
+  /**
    * Grants permission to delete a Domain
    *
    * Access Level: Write
@@ -1019,6 +1190,30 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the model bias job definition created using the CreateModelBiasJobDefinition API.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteModelBiasJobDefinition.html
+   */
+  public toDeleteModelBiasJobDefinition() {
+    this.to('sagemaker:DeleteModelBiasJobDefinition');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete the model explainability job definition created using the CreateModelExplainabilityJobDefinition API.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteModelExplainabilityJobDefinition.html
+   */
+  public toDeleteModelExplainabilityJobDefinition() {
+    this.to('sagemaker:DeleteModelExplainabilityJobDefinition');
+    return this;
+  }
+
+  /**
    * Grants permission to delete a ModelPackage.
    *
    * Access Level: Write
@@ -1055,7 +1250,19 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes a monitoring schedule. Amazon SageMaker will no longer run the scheduled monitoring.
+   * Grants permission to delete the model quality job definition created using the CreateModelQualityJobDefinition API.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteModelQualityJobDefinition.html
+   */
+  public toDeleteModelQualityJobDefinition() {
+    this.to('sagemaker:DeleteModelQualityJobDefinition');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a monitoring schedule.
    *
    * Access Level: Write
    *
@@ -1202,6 +1409,18 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deregister a set of devices
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeregisterDevices.html
+   */
+  public toDeregisterDevices() {
+    this.to('sagemaker:DeregisterDevices');
+    return this;
+  }
+
+  /**
    * Grants permission to get information about an action.
    *
    * Access Level: Read
@@ -1310,6 +1529,42 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about a data quality job definition.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeDataQualityJobDefinition.html
+   */
+  public toDescribeDataQualityJobDefinition() {
+    this.to('sagemaker:DescribeDataQualityJobDefinition');
+    return this;
+  }
+
+  /**
+   * Grants permission to access information about a device
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeDevice.html
+   */
+  public toDescribeDevice() {
+    this.to('sagemaker:DescribeDevice');
+    return this;
+  }
+
+  /**
+   * Grants permission to access information about a device fleet
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeDeviceFleet.html
+   */
+  public toDescribeDeviceFleet() {
+    this.to('sagemaker:DescribeDeviceFleet');
+    return this;
+  }
+
+  /**
    * Grants permission to describe a Domain
    *
    * Access Level: Read
@@ -1318,6 +1573,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeDomain() {
     this.to('sagemaker:DescribeDomain');
+    return this;
+  }
+
+  /**
+   * Grants permission to access information about an edge packaging job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEdgePackagingJob.html
+   */
+  public toDescribeEdgePackagingJob() {
+    this.to('sagemaker:DescribeEdgePackagingJob');
     return this;
   }
 
@@ -1466,6 +1733,30 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about a model bias job definition.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeModelBiasJobDefinition.html
+   */
+  public toDescribeModelBiasJobDefinition() {
+    this.to('sagemaker:DescribeModelBiasJobDefinition');
+    return this;
+  }
+
+  /**
+   * Grants permission to return information about a model explainability job definition.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeModelExplainabilityJobDefinition.html
+   */
+  public toDescribeModelExplainabilityJobDefinition() {
+    this.to('sagemaker:DescribeModelExplainabilityJobDefinition');
+    return this;
+  }
+
+  /**
    * Grants permission to describe a ModelPackage.
    *
    * Access Level: Read
@@ -1490,7 +1781,19 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a monitoring schedule.
+   * Grants permission to return information about a model quality job definition.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeModelQualityJobDefinition.html
+   */
+  public toDescribeModelQualityJobDefinition() {
+    this.to('sagemaker:DescribeModelQualityJobDefinition');
+    return this;
+  }
+
+  /**
+   * Grants permission to return information about a monitoring schedule.
    *
    * Access Level: Read
    *
@@ -1718,6 +2021,30 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to access a summary of the devices in a device fleet
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetDeviceFleetReport.html
+   */
+  public toGetDeviceFleetReport() {
+    this.to('sagemaker:GetDeviceFleetReport');
+    return this;
+  }
+
+  /**
+   * Grants permission to get device registration. After you deploy a model onto edge devices this api is used to get current device registration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetDeviceRegistration.html
+   */
+  public toGetDeviceRegistration() {
+    this.to('sagemaker:GetDeviceRegistration');
+    return this;
+  }
+
+  /**
    * Grants permission to get a ModelPackageGroup policy.
    *
    * Access Level: Read
@@ -1913,6 +2240,42 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list data quality job definitions.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListDataQualityJobDefinitions.html
+   */
+  public toListDataQualityJobDefinitions() {
+    this.to('sagemaker:ListDataQualityJobDefinitions');
+    return this;
+  }
+
+  /**
+   * Grants permission to list device fleets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListDeviceFleets.html
+   */
+  public toListDeviceFleets() {
+    this.to('sagemaker:ListDeviceFleets');
+    return this;
+  }
+
+  /**
+   * Grants permission to list devices.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListDevices.html
+   */
+  public toListDevices() {
+    this.to('sagemaker:ListDevices');
+    return this;
+  }
+
+  /**
    * Grants permission to list the Domains in your account
    *
    * Access Level: List
@@ -1921,6 +2284,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toListDomains() {
     this.to('sagemaker:ListDomains');
+    return this;
+  }
+
+  /**
+   * Grants permission to list edge packaging jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListEdgePackagingJobs.html
+   */
+  public toListEdgePackagingJobs() {
+    this.to('sagemaker:ListEdgePackagingJobs');
     return this;
   }
 
@@ -2069,6 +2444,30 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list model bias job definitions.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListModelBiasJobDefinitions.html
+   */
+  public toListModelBiasJobDefinitions() {
+    this.to('sagemaker:ListModelBiasJobDefinitions');
+    return this;
+  }
+
+  /**
+   * Grants permission to list model explainability job definitions.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListModelExplainabilityJobDefinitions.html
+   */
+  public toListModelExplainabilityJobDefinitions() {
+    this.to('sagemaker:ListModelExplainabilityJobDefinitions');
+    return this;
+  }
+
+  /**
    * Grants permission to list ModelPackageGroups.
    *
    * Access Level: List
@@ -2093,6 +2492,18 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list model quality job definitions.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListModelQualityJobDefinitions.html
+   */
+  public toListModelQualityJobDefinitions() {
+    this.to('sagemaker:ListModelQualityJobDefinitions');
+    return this;
+  }
+
+  /**
    * Lists the models created with the CreateModel API.
    *
    * Access Level: List
@@ -2105,7 +2516,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists monitoring executions.
+   * Grants permission to list monitoring executions.
    *
    * Access Level: List
    *
@@ -2117,7 +2528,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists monitoring schedules.
+   * Grants permission to list monitoring schedules.
    *
    * Access Level: List
    *
@@ -2369,6 +2780,22 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to register a set of devices
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_RegisterDevices.html
+   */
+  public toRegisterDevices() {
+    this.to('sagemaker:RegisterDevices');
+    return this;
+  }
+
+  /**
    * Render a UI template used for a human annotation task.
    *
    * Access Level: Read
@@ -2392,6 +2819,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toSearch() {
     this.to('sagemaker:Search');
+    return this;
+  }
+
+  /**
+   * Grants permission to publish heartbeat data from devices. After you deploy a model onto edge devices this api is used to report device status
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_SendHeartbeat.html
+   */
+  public toSendHeartbeat() {
+    this.to('sagemaker:SendHeartbeat');
     return this;
   }
 
@@ -2464,6 +2903,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public toStopCompilationJob() {
     this.to('sagemaker:StopCompilationJob');
+    return this;
+  }
+
+  /**
+   * Grants permission to stop an edge packaging job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopEdgePackagingJob.html
+   */
+  public toStopEdgePackagingJob() {
+    this.to('sagemaker:StopEdgePackagingJob');
     return this;
   }
 
@@ -2636,6 +3087,30 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a device fleet
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateDeviceFleet.html
+   */
+  public toUpdateDeviceFleet() {
+    this.to('sagemaker:UpdateDeviceFleet');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a set of devices
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateDevices.html
+   */
+  public toUpdateDevices() {
+    this.to('sagemaker:UpdateDevices');
+    return this;
+  }
+
+  /**
    * Grants permission to update a Domain
    *
    * Access Level: Write
@@ -2732,6 +3207,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifVolumeKmsKey()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
+   * - .ifInterContainerTrafficEncryption()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -2796,6 +3272,21 @@ export class Sagemaker extends PolicyStatement {
    */
   public toUpdatePipelineExecution() {
     this.to('sagemaker:UpdatePipelineExecution');
+    return this;
+  }
+
+  /**
+   * Updates a training job.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceTypes()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateTrainingJob.html
+   */
+  public toUpdateTrainingJob() {
+    this.to('sagemaker:UpdateTrainingJob');
     return this;
   }
 
@@ -2881,7 +3372,10 @@ export class Sagemaker extends PolicyStatement {
       "CreateCodeRepository",
       "CreateCompilationJob",
       "CreateContext",
+      "CreateDataQualityJobDefinition",
+      "CreateDeviceFleet",
       "CreateDomain",
+      "CreateEdgePackagingJob",
       "CreateEndpoint",
       "CreateEndpointConfig",
       "CreateExperiment",
@@ -2893,8 +3387,11 @@ export class Sagemaker extends PolicyStatement {
       "CreateImageVersion",
       "CreateLabelingJob",
       "CreateModel",
+      "CreateModelBiasJobDefinition",
+      "CreateModelExplainabilityJobDefinition",
       "CreateModelPackage",
       "CreateModelPackageGroup",
+      "CreateModelQualityJobDefinition",
       "CreateMonitoringSchedule",
       "CreateNotebookInstance",
       "CreateNotebookInstanceLifecycleConfig",
@@ -2918,6 +3415,8 @@ export class Sagemaker extends PolicyStatement {
       "DeleteAssociation",
       "DeleteCodeRepository",
       "DeleteContext",
+      "DeleteDataQualityJobDefinition",
+      "DeleteDeviceFleet",
       "DeleteDomain",
       "DeleteEndpoint",
       "DeleteEndpointConfig",
@@ -2928,9 +3427,12 @@ export class Sagemaker extends PolicyStatement {
       "DeleteImage",
       "DeleteImageVersion",
       "DeleteModel",
+      "DeleteModelBiasJobDefinition",
+      "DeleteModelExplainabilityJobDefinition",
       "DeleteModelPackage",
       "DeleteModelPackageGroup",
       "DeleteModelPackageGroupPolicy",
+      "DeleteModelQualityJobDefinition",
       "DeleteMonitoringSchedule",
       "DeleteNotebookInstance",
       "DeleteNotebookInstanceLifecycleConfig",
@@ -2942,17 +3444,21 @@ export class Sagemaker extends PolicyStatement {
       "DeleteUserProfile",
       "DeleteWorkforce",
       "DeleteWorkteam",
+      "DeregisterDevices",
       "DisableSagemakerServicecatalogPortfolio",
       "DisassociateTrialComponent",
       "EnableSagemakerServicecatalogPortfolio",
       "PutModelPackageGroupPolicy",
       "PutRecord",
+      "RegisterDevices",
+      "SendHeartbeat",
       "StartHumanLoop",
       "StartMonitoringSchedule",
       "StartNotebookInstance",
       "StartPipelineExecution",
       "StopAutoMLJob",
       "StopCompilationJob",
+      "StopEdgePackagingJob",
       "StopHumanLoop",
       "StopHyperParameterTuningJob",
       "StopLabelingJob",
@@ -2967,6 +3473,8 @@ export class Sagemaker extends PolicyStatement {
       "UpdateArtifact",
       "UpdateCodeRepository",
       "UpdateContext",
+      "UpdateDeviceFleet",
+      "UpdateDevices",
       "UpdateDomain",
       "UpdateEndpoint",
       "UpdateEndpointWeightsAndCapacities",
@@ -2978,6 +3486,7 @@ export class Sagemaker extends PolicyStatement {
       "UpdateNotebookInstanceLifecycleConfig",
       "UpdatePipeline",
       "UpdatePipelineExecution",
+      "UpdateTrainingJob",
       "UpdateTrial",
       "UpdateTrialComponent",
       "UpdateUserProfile",
@@ -2999,7 +3508,11 @@ export class Sagemaker extends PolicyStatement {
       "DescribeCodeRepository",
       "DescribeCompilationJob",
       "DescribeContext",
+      "DescribeDataQualityJobDefinition",
+      "DescribeDevice",
+      "DescribeDeviceFleet",
       "DescribeDomain",
+      "DescribeEdgePackagingJob",
       "DescribeEndpoint",
       "DescribeEndpointConfig",
       "DescribeExperiment",
@@ -3012,8 +3525,11 @@ export class Sagemaker extends PolicyStatement {
       "DescribeImageVersion",
       "DescribeLabelingJob",
       "DescribeModel",
+      "DescribeModelBiasJobDefinition",
+      "DescribeModelExplainabilityJobDefinition",
       "DescribeModelPackage",
       "DescribeModelPackageGroup",
+      "DescribeModelQualityJobDefinition",
       "DescribeMonitoringSchedule",
       "DescribeNotebookInstance",
       "DescribeNotebookInstanceLifecycleConfig",
@@ -3030,6 +3546,8 @@ export class Sagemaker extends PolicyStatement {
       "DescribeUserProfile",
       "DescribeWorkforce",
       "DescribeWorkteam",
+      "GetDeviceFleetReport",
+      "GetDeviceRegistration",
       "GetModelPackageGroupPolicy",
       "GetRecord",
       "GetSagemakerServicecatalogPortfolioStatus",
@@ -3050,7 +3568,11 @@ export class Sagemaker extends PolicyStatement {
       "ListCodeRepositories",
       "ListCompilationJobs",
       "ListContexts",
+      "ListDataQualityJobDefinitions",
+      "ListDeviceFleets",
+      "ListDevices",
       "ListDomains",
+      "ListEdgePackagingJobs",
       "ListEndpointConfigs",
       "ListEndpoints",
       "ListExperiments",
@@ -3063,8 +3585,11 @@ export class Sagemaker extends PolicyStatement {
       "ListImages",
       "ListLabelingJobs",
       "ListLabelingJobsForWorkteam",
+      "ListModelBiasJobDefinitions",
+      "ListModelExplainabilityJobDefinitions",
       "ListModelPackageGroups",
       "ListModelPackages",
+      "ListModelQualityJobDefinitions",
       "ListModels",
       "ListMonitoringExecutions",
       "ListMonitoringSchedules",
@@ -3088,6 +3613,71 @@ export class Sagemaker extends PolicyStatement {
       "ListWorkteams"
     ]
   };
+
+  /**
+   * Adds a resource of type device to the statement
+   *
+   * @param deviceFleetName - Identifier for the deviceFleetName.
+   * @param deviceName - Identifier for the deviceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onDevice(deviceFleetName: string, deviceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:device-fleet/${DeviceFleetName}/device/${DeviceName}';
+    arn = arn.replace('${DeviceFleetName}', deviceFleetName);
+    arn = arn.replace('${DeviceName}', deviceName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type device-fleet to the statement
+   *
+   * @param deviceFleetName - Identifier for the deviceFleetName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onDeviceFleet(deviceFleetName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:device-fleet/${DeviceFleetName}';
+    arn = arn.replace('${DeviceFleetName}', deviceFleetName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type edge-packaging-job to the statement
+   *
+   * @param edgePackagingJobName - Identifier for the edgePackagingJobName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onEdgePackagingJob(edgePackagingJobName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:edge-packaging-job/${EdgePackagingJobName}';
+    arn = arn.replace('${EdgePackagingJobName}', edgePackagingJobName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
 
   /**
    * Adds a resource of type human-loop to the statement
@@ -3693,6 +4283,90 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type data-quality-job-definition to the statement
+   *
+   * @param dataQualityJobDefinitionName - Identifier for the dataQualityJobDefinitionName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onDataQualityJobDefinition(dataQualityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:data-quality-job-definition/${DataQualityJobDefinitionName}';
+    arn = arn.replace('${DataQualityJobDefinitionName}', dataQualityJobDefinitionName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type model-quality-job-definition to the statement
+   *
+   * @param modelQualityJobDefinitionName - Identifier for the modelQualityJobDefinitionName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onModelQualityJobDefinition(modelQualityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:model-quality-job-definition/${ModelQualityJobDefinitionName}';
+    arn = arn.replace('${ModelQualityJobDefinitionName}', modelQualityJobDefinitionName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type model-bias-job-definition to the statement
+   *
+   * @param modelBiasJobDefinitionName - Identifier for the modelBiasJobDefinitionName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onModelBiasJobDefinition(modelBiasJobDefinitionName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:model-bias-job-definition/${ModelBiasJobDefinitionName}';
+    arn = arn.replace('${ModelBiasJobDefinitionName}', modelBiasJobDefinitionName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type model-explainability-job-definition to the statement
+   *
+   * @param modelExplainabilityJobDefinitionName - Identifier for the modelExplainabilityJobDefinitionName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onModelExplainabilityJobDefinition(modelExplainabilityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:model-explainability-job-definition/${ModelExplainabilityJobDefinitionName}';
+    arn = arn.replace('${ModelExplainabilityJobDefinitionName}', modelExplainabilityJobDefinitionName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type experiment to the statement
    *
    * @param experimentName - Identifier for the experimentName.
@@ -4110,9 +4784,13 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateApp()
+   * - .toCreateDataQualityJobDefinition()
    * - .toCreateDomain()
    * - .toCreateEndpointConfig()
    * - .toCreateHyperParameterTuningJob()
+   * - .toCreateModelBiasJobDefinition()
+   * - .toCreateModelExplainabilityJobDefinition()
+   * - .toCreateModelQualityJobDefinition()
    * - .toCreateMonitoringSchedule()
    * - .toCreateNotebookInstance()
    * - .toCreateProcessingJob()
@@ -4122,6 +4800,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toUpdateDomain()
    * - .toUpdateMonitoringSchedule()
    * - .toUpdateNotebookInstance()
+   * - .toUpdateTrainingJob()
    * - .toUpdateUserProfile()
    *
    * @param value The value(s) to check
@@ -4138,9 +4817,15 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAutoMLJob()
+   * - .toCreateDataQualityJobDefinition()
    * - .toCreateHyperParameterTuningJob()
+   * - .toCreateModelBiasJobDefinition()
+   * - .toCreateModelExplainabilityJobDefinition()
+   * - .toCreateModelQualityJobDefinition()
+   * - .toCreateMonitoringSchedule()
    * - .toCreateProcessingJob()
    * - .toCreateTrainingJob()
+   * - .toUpdateMonitoringSchedule()
    *
    * @param value `true` or `false`. **Default:** `true`
    */
@@ -4154,7 +4839,11 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
    * Applies to actions:
+   * - .toCreateDataQualityJobDefinition()
    * - .toCreateHyperParameterTuningJob()
+   * - .toCreateModelBiasJobDefinition()
+   * - .toCreateModelExplainabilityJobDefinition()
+   * - .toCreateModelQualityJobDefinition()
    * - .toCreateMonitoringSchedule()
    * - .toCreateProcessingJob()
    * - .toCreateTrainingJob()
@@ -4189,8 +4878,12 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
    * Applies to actions:
+   * - .toCreateDataQualityJobDefinition()
    * - .toCreateHyperParameterTuningJob()
    * - .toCreateModel()
+   * - .toCreateModelBiasJobDefinition()
+   * - .toCreateModelExplainabilityJobDefinition()
+   * - .toCreateModelQualityJobDefinition()
    * - .toCreateMonitoringSchedule()
    * - .toCreateProcessingJob()
    * - .toCreateTrainingJob()
@@ -4209,8 +4902,12 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAutoMLJob()
+   * - .toCreateDataQualityJobDefinition()
    * - .toCreateHyperParameterTuningJob()
    * - .toCreateLabelingJob()
+   * - .toCreateModelBiasJobDefinition()
+   * - .toCreateModelExplainabilityJobDefinition()
+   * - .toCreateModelQualityJobDefinition()
    * - .toCreateMonitoringSchedule()
    * - .toCreateProcessingJob()
    * - .toCreateTrainingJob()
@@ -4242,6 +4939,9 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
    * Applies to resource types:
+   * - device
+   * - device-fleet
+   * - edge-packaging-job
    * - flow-definition
    * - human-task-ui
    * - labeling-job
@@ -4267,6 +4967,10 @@ export class Sagemaker extends PolicyStatement {
    * - transform-job
    * - automl-job
    * - monitoring-schedule
+   * - data-quality-job-definition
+   * - model-quality-job-definition
+   * - model-bias-job-definition
+   * - model-explainability-job-definition
    * - experiment
    * - experiment-trial
    * - experiment-trial-component
@@ -4322,10 +5026,14 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAutoMLJob()
+   * - .toCreateDataQualityJobDefinition()
    * - .toCreateDomain()
    * - .toCreateEndpointConfig()
    * - .toCreateHyperParameterTuningJob()
    * - .toCreateLabelingJob()
+   * - .toCreateModelBiasJobDefinition()
+   * - .toCreateModelExplainabilityJobDefinition()
+   * - .toCreateModelQualityJobDefinition()
    * - .toCreateMonitoringSchedule()
    * - .toCreateNotebookInstance()
    * - .toCreateProcessingJob()
@@ -4347,9 +5055,13 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAutoMLJob()
+   * - .toCreateDataQualityJobDefinition()
    * - .toCreateDomain()
    * - .toCreateHyperParameterTuningJob()
    * - .toCreateModel()
+   * - .toCreateModelBiasJobDefinition()
+   * - .toCreateModelExplainabilityJobDefinition()
+   * - .toCreateModelQualityJobDefinition()
    * - .toCreateMonitoringSchedule()
    * - .toCreateNotebookInstance()
    * - .toCreateProcessingJob()
@@ -4373,9 +5085,13 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAutoMLJob()
+   * - .toCreateDataQualityJobDefinition()
    * - .toCreateDomain()
    * - .toCreateHyperParameterTuningJob()
    * - .toCreateModel()
+   * - .toCreateModelBiasJobDefinition()
+   * - .toCreateModelExplainabilityJobDefinition()
+   * - .toCreateModelQualityJobDefinition()
    * - .toCreateMonitoringSchedule()
    * - .toCreateNotebookInstance()
    * - .toCreateProcessingJob()

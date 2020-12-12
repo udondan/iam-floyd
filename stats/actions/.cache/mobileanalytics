@@ -1,0 +1,3 @@
+mobileanalytics:GetFinancialReports;Read
+mobileanalytics:GetReports;Read
+mobileanalytics:PutEvents;Write

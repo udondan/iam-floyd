@@ -1,0 +1,7 @@
+wafv2:apigateway
+wafv2:appsync
+wafv2:ipset
+wafv2:loadbalancer/app/
+wafv2:regexpatternset
+wafv2:rulegroup
+wafv2:webacl

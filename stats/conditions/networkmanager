@@ -3,3 +3,4 @@ networkmanager:ResourceTag
 networkmanager:TagKeys
 networkmanager:cgwArn
 networkmanager:tgwArn
+networkmanager:tgwConnectPeerArn

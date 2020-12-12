@@ -1,0 +1,15 @@
+cloud9:CreateEnvironmentEC2;Write
+cloud9:CreateEnvironmentMembership;Write
+cloud9:DeleteEnvironment;Write
+cloud9:DeleteEnvironmentMembership;Write
+cloud9:DescribeEnvironmentMemberships;Read
+cloud9:DescribeEnvironmentStatus;Read
+cloud9:DescribeEnvironments;Read
+cloud9:GetUserSettings;Read
+cloud9:ListEnvironments;Read
+cloud9:ListTagsForResource;Read
+cloud9:TagResource;Write
+cloud9:UntagResource;Write
+cloud9:UpdateEnvironment;Write
+cloud9:UpdateEnvironmentMembership;Write
+cloud9:UpdateUserSettings;Write

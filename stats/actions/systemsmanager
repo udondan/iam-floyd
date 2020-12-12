@@ -7,6 +7,7 @@ ssm:CreateAssociationBatch;Write
 ssm:CreateDocument;Write
 ssm:CreateMaintenanceWindow;Write
 ssm:CreateOpsItem;Write
+ssm:CreateOpsMetadata;Write
 ssm:CreatePatchBaseline;Write
 ssm:CreateResourceDataSync;Write
 ssm:DeleteActivation;Write
@@ -14,6 +15,7 @@ ssm:DeleteAssociation;Write
 ssm:DeleteDocument;Write
 ssm:DeleteInventory;Write
 ssm:DeleteMaintenanceWindow;Write
+ssm:DeleteOpsMetadata;Write
 ssm:DeleteParameter;Write
 ssm:DeleteParameters;Write
 ssm:DeletePatchBaseline;Write
@@ -72,6 +74,7 @@ ssm:GetMaintenanceWindowExecutionTaskInvocation;Read
 ssm:GetMaintenanceWindowTask;Read
 ssm:GetManifest;Read
 ssm:GetOpsItem;Read
+ssm:GetOpsMetadata;Read
 ssm:GetOpsSummary;Read
 ssm:GetParameter;Read
 ssm:GetParameterHistory;Read
@@ -91,6 +94,7 @@ ssm:ListDocumentVersions;List
 ssm:ListDocuments;List
 ssm:ListInstanceAssociations;List
 ssm:ListInventoryEntries;List
+ssm:ListOpsMetadata;List
 ssm:ListResourceComplianceSummaries;List
 ssm:ListResourceDataSync;List
 ssm:ListTagsForResource;Read
@@ -124,6 +128,7 @@ ssm:UpdateMaintenanceWindowTarget;Write
 ssm:UpdateMaintenanceWindowTask;Write
 ssm:UpdateManagedInstanceRole;Write
 ssm:UpdateOpsItem;Write
+ssm:UpdateOpsMetadata;Write
 ssm:UpdatePatchBaseline;Write
 ssm:UpdateResourceDataSync;Write
 ssm:UpdateServiceSetting;Write

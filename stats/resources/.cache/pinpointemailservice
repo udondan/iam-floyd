@@ -1,0 +1,5 @@
+ses:configuration-set
+ses:dedicated-ip-pool
+ses:deliverability-test-report
+ses:event-destination
+ses:identity

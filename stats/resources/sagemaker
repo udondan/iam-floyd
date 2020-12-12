@@ -7,7 +7,11 @@ sagemaker:automl-job
 sagemaker:code-repository
 sagemaker:compilation-job
 sagemaker:context
+sagemaker:data-quality-job-definition
+sagemaker:device
+sagemaker:device-fleet
 sagemaker:domain
+sagemaker:edge-packaging-job
 sagemaker:endpoint
 sagemaker:endpoint-config
 sagemaker:experiment
@@ -22,8 +26,11 @@ sagemaker:image
 sagemaker:image-version
 sagemaker:labeling-job
 sagemaker:model
+sagemaker:model-bias-job-definition
+sagemaker:model-explainability-job-definition
 sagemaker:model-package
 sagemaker:model-package-group
+sagemaker:model-quality-job-definition
 sagemaker:monitoring-schedule
 sagemaker:notebook-instance
 sagemaker:notebook-instance-lifecycle-config

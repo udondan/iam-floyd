@@ -1,0 +1,5 @@
+appsync:datasource
+appsync:field
+appsync:function
+appsync:graphqlapi
+appsync:type

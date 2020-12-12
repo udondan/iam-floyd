@@ -1,0 +1,7 @@
+iot:Delete
+iot:DomainName
+iot:RequestTag
+iot:ResourceTag
+iot:TagKeys
+iot:ThingGroupArn
+iot:TunnelDestinationService

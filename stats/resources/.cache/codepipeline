@@ -1,0 +1,5 @@
+codepipeline:action
+codepipeline:actiontype
+codepipeline:pipeline
+codepipeline:stage
+codepipeline:webhook

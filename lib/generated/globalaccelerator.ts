@@ -19,7 +19,19 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Advertises an IPv4 address range that is provisioned for use with your accelerator through bring your own IP addresses (BYOIP).
+   * Grants permission to add a virtual private cloud (VPC) subnet endpoint to a custom routing accelerator endpoint group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_AddCustomRoutingEndpoints.html
+   */
+  public toAddCustomRoutingEndpoints() {
+    this.to('globalaccelerator:AddCustomRoutingEndpoints');
+    return this;
+  }
+
+  /**
+   * Grants permission to advertises an IPv4 address range that is provisioned for use with your accelerator through bring your own IP addresses (BYOIP).
    *
    * Access Level: Write
    *
@@ -31,7 +43,19 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Create an accelerator.
+   * Grants permission to allows custom routing of user traffic to a private destination IP:PORT in a specific VPC subnet.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html
+   */
+  public toAllowCustomRoutingTraffic() {
+    this.to('globalaccelerator:AllowCustomRoutingTraffic');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a standard accelerator.
    *
    * Access Level: Write
    *
@@ -47,7 +71,47 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Add an endpoint group.
+   * Grants permission to create a Custom Routing accelerator
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateCustomRoutingAccelerator.html
+   */
+  public toCreateCustomRoutingAccelerator() {
+    this.to('globalaccelerator:CreateCustomRoutingAccelerator');
+    return this;
+  }
+
+  /**
+   * Grants permission to create an endpoint group for the specified listener for a custom routing accelerator.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateCustomRoutingEndpointGroup.html
+   */
+  public toCreateCustomRoutingEndpointGroup() {
+    this.to('globalaccelerator:CreateCustomRoutingEndpointGroup');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a listener to process inbound connections from clients to a custom routing accelerator.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateCustomRoutingListener.html
+   */
+  public toCreateCustomRoutingListener() {
+    this.to('globalaccelerator:CreateCustomRoutingListener');
+    return this;
+  }
+
+  /**
+   * Grants permission to add an endpoint group to a standard accelerator listener.
    *
    * Access Level: Write
    *
@@ -59,7 +123,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Add a listener.
+   * Grants permission to add a listener to a standard accelerator.
    *
    * Access Level: Write
    *
@@ -71,7 +135,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Delete the accelerator.
+   * Grants permission to delete a standard accelerator.
    *
    * Access Level: Write
    *
@@ -83,7 +147,43 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Delete the endpoint group.
+   * Grants permission to delete a custom routing accelerator.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteCustomRoutingAccelerator.html
+   */
+  public toDeleteCustomRoutingAccelerator() {
+    this.to('globalaccelerator:DeleteCustomRoutingAccelerator');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete an endpoint group from a listener for a custom routing accelerator.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteCustomRoutingEndpointGroup.html
+   */
+  public toDeleteCustomRoutingEndpointGroup() {
+    this.to('globalaccelerator:DeleteCustomRoutingEndpointGroup');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a listener for a custom routing accelerator.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteCustomRoutingListener.html
+   */
+  public toDeleteCustomRoutingListener() {
+    this.to('globalaccelerator:DeleteCustomRoutingListener');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete an endpoint group associated with a standard accelerator listener.
    *
    * Access Level: Write
    *
@@ -95,7 +195,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Delete the listener.
+   * Grants permission to delete a listener from a standard accelerator.
    *
    * Access Level: Write
    *
@@ -107,7 +207,19 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Releases the specified address range that you provisioned for use with your accelerator through bring your own IP addresses (BYOIP) and deletes the corresponding address pool.
+   * Grants permission to disallows custom routing of user traffic to a private destination IP:PORT in a specific VPC subnet.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DenyCustomRoutingTraffic.html
+   */
+  public toDenyCustomRoutingTraffic() {
+    this.to('globalaccelerator:DenyCustomRoutingTraffic');
+    return this;
+  }
+
+  /**
+   * Grants permission to releases the specified address range that you provisioned for use with your accelerator through bring your own IP addresses (BYOIP).
    *
    * Access Level: Write
    *
@@ -119,7 +231,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Describe the accelerator.
+   * Grants permissions to describe a standard accelerator.
    *
    * Access Level: Read
    *
@@ -131,7 +243,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Describe the accelerator Attributes.
+   * Grants permission to describe a standard accelerator attributes.
    *
    * Access Level: Read
    *
@@ -143,7 +255,55 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Describe the endpoint group.
+   * Grants permission to describe a custom routing accelerator.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeCustomRoutingAccelerator.html
+   */
+  public toDescribeCustomRoutingAccelerator() {
+    this.to('globalaccelerator:DescribeCustomRoutingAccelerator');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe the attributes of a custom routing accelerator.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeCustomRoutingAcceleratorAttributes.html
+   */
+  public toDescribeCustomRoutingAcceleratorAttributes() {
+    this.to('globalaccelerator:DescribeCustomRoutingAcceleratorAttributes');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe an endpoint group for a custom routing accelerator.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeCustomRoutingEndpointGroup.html
+   */
+  public toDescribeCustomRoutingEndpointGroup() {
+    this.to('globalaccelerator:DescribeCustomRoutingEndpointGroup');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe a listener for a custom routing accelerator.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeCustomRoutingListener.html
+   */
+  public toDescribeCustomRoutingListener() {
+    this.to('globalaccelerator:DescribeCustomRoutingListener');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe a standard accelerator endpoint group.
    *
    * Access Level: Read
    *
@@ -155,7 +315,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Describe the listener.
+   * Grants permission to describe a standard accelerator listener.
    *
    * Access Level: Read
    *
@@ -167,7 +327,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * List the accelerators.
+   * Grants permission to list all standard accelerators.
    *
    * Access Level: List
    *
@@ -179,7 +339,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * List the byoip cidrs.
+   * Grants permission to list the BYOIP cidrs.
    *
    * Access Level: List
    *
@@ -191,7 +351,67 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * List the endpoint groups.
+   * Grants permission to list the custom routing accelerators for an AWS account.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingAccelerators.html
+   */
+  public toListCustomRoutingAccelerators() {
+    this.to('globalaccelerator:ListCustomRoutingAccelerators');
+    return this;
+  }
+
+  /**
+   * Grants permission to list the endpoint groups that are associated with a listener for a custom routing accelerator.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingEndpointGroups.html
+   */
+  public toListCustomRoutingEndpointGroups() {
+    this.to('globalaccelerator:ListCustomRoutingEndpointGroups');
+    return this;
+  }
+
+  /**
+   * Grants permission to list the listeners for a custom routing accelerator.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingListeners.html
+   */
+  public toListCustomRoutingListeners() {
+    this.to('globalaccelerator:ListCustomRoutingListeners');
+    return this;
+  }
+
+  /**
+   * Grants permission to list the port mappings for a custom routing accelerator.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingPortMappings.html
+   */
+  public toListCustomRoutingPortMappings() {
+    this.to('globalaccelerator:ListCustomRoutingPortMappings');
+    return this;
+  }
+
+  /**
+   * Grants permission to list the port mappings for a specific endpoint IP address (a destination address) in a subnet
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingPortMappingsByDestination.html
+   */
+  public toListCustomRoutingPortMappingsByDestination() {
+    this.to('globalaccelerator:ListCustomRoutingPortMappingsByDestination');
+    return this;
+  }
+
+  /**
+   * Grants permission to list all endpoint groups associated with a standard accelerator listener.
    *
    * Access Level: List
    *
@@ -203,7 +423,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * List the listeners.
+   * Grants permission to list all listeners associated with a standard accelerator.
    *
    * Access Level: List
    *
@@ -215,7 +435,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * List tags for a globalaccelerator resource.
+   * Grants permission to list tags for a globalaccelerator resource.
    *
    * Access Level: Read
    *
@@ -227,7 +447,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Provisions an address range for use with your accelerator through bring your own IP addresses (BYOIP) and creates a corresponding address pool.
+   * Grants permission to provisions an address range for use with your accelerator through bring your own IP addresses (BYOIP).
    *
    * Access Level: Write
    *
@@ -239,7 +459,19 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Add tags to globalaccelerator resource.
+   * Grants permission to remove virtual private cloud (VPC) subnet endpoints from a custom routing accelerator endpoint group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_RemoveCustomRoutingEndpoints.html
+   */
+  public toRemoveCustomRoutingEndpoints() {
+    this.to('globalaccelerator:RemoveCustomRoutingEndpoints');
+    return this;
+  }
+
+  /**
+   * Grants permission to add tags to a globalaccelerator resource.
    *
    * Access Level: Tagging
    *
@@ -255,7 +487,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Remove tags from globalaccelerator resource.
+   * Grants permission to remove tags from a globalaccelerator resource.
    *
    * Access Level: Tagging
    *
@@ -270,7 +502,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Update the accelerator.
+   * Grants permission to update a standard accelerator.
    *
    * Access Level: Write
    *
@@ -282,7 +514,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Update the accelerator attributes.
+   * Grants permission to update a standard accelerator attributes.
    *
    * Access Level: Write
    *
@@ -294,7 +526,43 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Update the endpoint group.
+   * Grants permission to update a custom routing accelerator.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateCustomRoutingAccelerator.html
+   */
+  public toUpdateCustomRoutingAccelerator() {
+    this.to('globalaccelerator:UpdateCustomRoutingAccelerator');
+    return this;
+  }
+
+  /**
+   * Grants permission to update the attributes for a custom routing accelerator.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateCustomRoutingAcceleratorAttributes.html
+   */
+  public toUpdateCustomRoutingAcceleratorAttributes() {
+    this.to('globalaccelerator:UpdateCustomRoutingAcceleratorAttributes');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a listener for a custom routing accelerator.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateCustomRoutingListener.html
+   */
+  public toUpdateCustomRoutingListener() {
+    this.to('globalaccelerator:UpdateCustomRoutingListener');
+    return this;
+  }
+
+  /**
+   * Grants permission to update an endpoint group on a standard accelerator listener.
    *
    * Access Level: Write
    *
@@ -306,7 +574,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Update the listener.
+   * Grants permission to update a listener on a standard accelerator.
    *
    * Access Level: Write
    *
@@ -318,7 +586,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Stops advertising an IPv4 address range that is provisioned as an address pool.
+   * Grants permission to stops advertising a BYOIP IPv4 address.
    *
    * Access Level: Write
    *
@@ -331,17 +599,30 @@ export class Globalaccelerator extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "AddCustomRoutingEndpoints",
       "AdvertiseByoipCidr",
+      "AllowCustomRoutingTraffic",
       "CreateAccelerator",
+      "CreateCustomRoutingAccelerator",
+      "CreateCustomRoutingEndpointGroup",
+      "CreateCustomRoutingListener",
       "CreateEndpointGroup",
       "CreateListener",
       "DeleteAccelerator",
+      "DeleteCustomRoutingAccelerator",
+      "DeleteCustomRoutingEndpointGroup",
+      "DeleteCustomRoutingListener",
       "DeleteEndpointGroup",
       "DeleteListener",
+      "DenyCustomRoutingTraffic",
       "DeprovisionByoipCidr",
       "ProvisionByoipCidr",
+      "RemoveCustomRoutingEndpoints",
       "UpdateAccelerator",
       "UpdateAcceleratorAttributes",
+      "UpdateCustomRoutingAccelerator",
+      "UpdateCustomRoutingAcceleratorAttributes",
+      "UpdateCustomRoutingListener",
       "UpdateEndpointGroup",
       "UpdateListener",
       "WithdrawByoipCidr"
@@ -349,6 +630,10 @@ export class Globalaccelerator extends PolicyStatement {
     "Read": [
       "DescribeAccelerator",
       "DescribeAcceleratorAttributes",
+      "DescribeCustomRoutingAccelerator",
+      "DescribeCustomRoutingAcceleratorAttributes",
+      "DescribeCustomRoutingEndpointGroup",
+      "DescribeCustomRoutingListener",
       "DescribeEndpointGroup",
       "DescribeListener",
       "ListTagsForResource"
@@ -356,6 +641,11 @@ export class Globalaccelerator extends PolicyStatement {
     "List": [
       "ListAccelerators",
       "ListByoipCidrs",
+      "ListCustomRoutingAccelerators",
+      "ListCustomRoutingEndpointGroups",
+      "ListCustomRoutingListeners",
+      "ListCustomRoutingPortMappings",
+      "ListCustomRoutingPortMappingsByDestination",
       "ListEndpointGroups",
       "ListListeners"
     ],

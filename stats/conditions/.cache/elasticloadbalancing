@@ -1,0 +1,3 @@
+elasticloadbalancing:RequestTag
+elasticloadbalancing:ResourceTag
+elasticloadbalancing:TagKeys

@@ -1,0 +1,10 @@
+aws-marketplace:CancelChangeSet;Write
+aws-marketplace:CompleteTask;Write
+aws-marketplace:DescribeChangeSet;Read
+aws-marketplace:DescribeEntity;Read
+aws-marketplace:DescribeTask;Read
+aws-marketplace:ListChangeSets;Read
+aws-marketplace:ListEntities;Read
+aws-marketplace:ListTasks;List
+aws-marketplace:StartChangeSet;Write
+aws-marketplace:UpdateTask;Write

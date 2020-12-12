@@ -1,0 +1,5 @@
+s3:accesspoint
+s3:bucket
+s3:job
+s3:object
+s3:storagelensconfiguration

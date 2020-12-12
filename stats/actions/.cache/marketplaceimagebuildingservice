@@ -1,0 +1,3 @@
+aws-marketplace:DescribeBuilds;Read
+aws-marketplace:ListBuilds;Read
+aws-marketplace:StartBuild;Write

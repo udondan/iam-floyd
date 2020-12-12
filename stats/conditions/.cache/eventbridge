@@ -1,0 +1,14 @@
+events:ManagedBy
+events:RequestTag
+events:ResourceTag
+events:SourceAccount
+events:SourceArn
+events:TagKeys
+events:TargetArn
+events:creatorAccount
+events:detail-type
+events:detail.eventTypeCode
+events:detail.service
+events:detail.userIdentity.principalId
+events:eventBusInvocation
+events:source

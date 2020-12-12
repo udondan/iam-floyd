@@ -1,0 +1,10 @@
+compute-optimizer:DescribeRecommendationExportJobs;List
+compute-optimizer:ExportAutoScalingGroupRecommendations;Write
+compute-optimizer:ExportEC2InstanceRecommendations;Write
+compute-optimizer:GetAutoScalingGroupRecommendations;List
+compute-optimizer:GetEBSVolumeRecommendations;List
+compute-optimizer:GetEC2InstanceRecommendations;List
+compute-optimizer:GetEC2RecommendationProjectedMetrics;List
+compute-optimizer:GetEnrollmentStatus;List
+compute-optimizer:GetRecommendationSummaries;List
+compute-optimizer:UpdateEnrollmentStatus;Write

@@ -1,0 +1,7 @@
+apigateway:DELETE;Write
+apigateway:GET;Read
+apigateway:PATCH;Write
+apigateway:POST;Write
+apigateway:PUT;Write
+apigateway:SetWebACL;Write
+apigateway:UpdateRestApiPolicy;Write

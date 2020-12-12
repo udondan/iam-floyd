@@ -1,0 +1,5 @@
+wellarchitected:CreateWorkload;Write
+wellarchitected:CreateWorkloadShare;Write
+wellarchitected:DeleteWorkload;Write
+wellarchitected:GetWorkload;Read
+wellarchitected:ListWorkloads;List

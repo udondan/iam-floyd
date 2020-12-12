@@ -1,0 +1,7 @@
+outposts:CreateOutpost;Write
+outposts:DeleteOutpost;Write
+outposts:DeleteSite;Write
+outposts:GetOutpost;Read
+outposts:GetOutpostInstanceTypes;Read
+outposts:ListOutposts;List
+outposts:ListSites;List

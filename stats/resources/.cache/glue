@@ -1,0 +1,14 @@
+glue:catalog
+glue:connection
+glue:crawler
+glue:database
+glue:devendpoint
+glue:job
+glue:mlTransform
+glue:registry
+glue:schema
+glue:table
+glue:tableversion
+glue:trigger
+glue:userdefinedfunction
+glue:workflow

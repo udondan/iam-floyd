@@ -138,6 +138,18 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an OpsMetadata object for an AWS resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateOpsMetadata.html
+   */
+  public toCreateOpsMetadata() {
+    this.to('ssm:CreateOpsMetadata');
+    return this;
+  }
+
+  /**
    * Grants permission to create a patch baseline
    *
    * Access Level: Write
@@ -225,6 +237,18 @@ export class Ssm extends PolicyStatement {
    */
   public toDeleteMaintenanceWindow() {
     this.to('ssm:DeleteMaintenanceWindow');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete an OpsMetadata object
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteOpsMetadata.html
+   */
+  public toDeleteOpsMetadata() {
+    this.to('ssm:DeleteOpsMetadata');
     return this;
   }
 
@@ -932,6 +956,18 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an OpsMetadata object
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetOpsMetadata.html
+   */
+  public toGetOpsMetadata() {
+    this.to('ssm:GetOpsMetadata');
+    return this;
+  }
+
+  /**
    * Grants permission to view summary information about OpsItems based on specified filters and aggregators
    *
    * Access Level: Read
@@ -1165,6 +1201,18 @@ export class Ssm extends PolicyStatement {
    */
   public toListInventoryEntries() {
     this.to('ssm:ListInventoryEntries');
+    return this;
+  }
+
+  /**
+   * Grants permission to view a list of OpsMetadata objects
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListOpsMetadata.html
+   */
+  public toListOpsMetadata() {
+    this.to('ssm:ListOpsMetadata');
     return this;
   }
 
@@ -1575,6 +1623,18 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an OpsMetadata object
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateOpsMetadata.html
+   */
+  public toUpdateOpsMetadata() {
+    this.to('ssm:UpdateOpsMetadata');
+    return this;
+  }
+
+  /**
    * Grants permission to update a specified patch baseline
    *
    * Access Level: Write
@@ -1627,6 +1687,7 @@ export class Ssm extends PolicyStatement {
       "CreateDocument",
       "CreateMaintenanceWindow",
       "CreateOpsItem",
+      "CreateOpsMetadata",
       "CreatePatchBaseline",
       "CreateResourceDataSync",
       "DeleteActivation",
@@ -1634,6 +1695,7 @@ export class Ssm extends PolicyStatement {
       "DeleteDocument",
       "DeleteInventory",
       "DeleteMaintenanceWindow",
+      "DeleteOpsMetadata",
       "DeleteParameter",
       "DeleteParameters",
       "DeletePatchBaseline",
@@ -1671,6 +1733,7 @@ export class Ssm extends PolicyStatement {
       "UpdateMaintenanceWindowTask",
       "UpdateManagedInstanceRole",
       "UpdateOpsItem",
+      "UpdateOpsMetadata",
       "UpdatePatchBaseline",
       "UpdateResourceDataSync",
       "UpdateServiceSetting"
@@ -1713,6 +1776,7 @@ export class Ssm extends PolicyStatement {
       "GetMaintenanceWindowTask",
       "GetManifest",
       "GetOpsItem",
+      "GetOpsMetadata",
       "GetOpsSummary",
       "GetParameter",
       "GetParameterHistory",
@@ -1748,6 +1812,7 @@ export class Ssm extends PolicyStatement {
       "ListDocuments",
       "ListInstanceAssociations",
       "ListInventoryEntries",
+      "ListOpsMetadata",
       "ListResourceComplianceSummaries",
       "ListResourceDataSync"
     ]
@@ -1935,6 +2000,25 @@ export class Ssm extends PolicyStatement {
    */
   public onOpsitem(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:opsitem/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type opsmetadata to the statement
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/API_OpsMetadata.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onOpsmetadata(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:opsmetadata/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

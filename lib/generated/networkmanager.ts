@@ -46,6 +46,37 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a transit gateway connect peer to a device
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTgwConnectPeerArn()
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateTransitGatewayConnectPeer.html
+   */
+  public toAssociateTransitGatewayConnectPeer() {
+    this.to('networkmanager:AssociateTransitGatewayConnectPeer');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a new connection
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateConnection.html
+   */
+  public toCreateConnection() {
+    this.to('networkmanager:CreateConnection');
+    return this;
+  }
+
+  /**
    * Grants permission to create a new device
    *
    * Access Level: Write
@@ -109,6 +140,18 @@ export class Networkmanager extends PolicyStatement {
    */
   public toCreateSite() {
     this.to('networkmanager:CreateSite');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteConnection.html
+   */
+  public toDeleteConnection() {
+    this.to('networkmanager:DeleteConnection');
     return this;
   }
 
@@ -215,6 +258,33 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate a transit gateway connect peer from a device
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTgwConnectPeerArn()
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateTransitGatewayConnectPeer.html
+   */
+  public toDisassociateTransitGatewayConnectPeer() {
+    this.to('networkmanager:DisassociateTransitGatewayConnectPeer');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe connections
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetConnections.html
+   */
+  public toGetConnections() {
+    this.to('networkmanager:GetConnections');
+    return this;
+  }
+
+  /**
    * Grants permission to describe customer gateway associations
    *
    * Access Level: List
@@ -271,6 +341,18 @@ export class Networkmanager extends PolicyStatement {
    */
   public toGetSites() {
     this.to('networkmanager:GetSites');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe transit gateway connect peer associations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetTransitGatewayConnectPeerAssociations.html
+   */
+  public toGetTransitGatewayConnectPeerAssociations() {
+    this.to('networkmanager:GetTransitGatewayConnectPeerAssociations');
     return this;
   }
 
@@ -349,6 +431,18 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateConnection.html
+   */
+  public toUpdateConnection() {
+    this.to('networkmanager:UpdateConnection');
+    return this;
+  }
+
+  /**
    * Grants permission to update a device
    *
    * Access Level: Write
@@ -400,10 +494,13 @@ export class Networkmanager extends PolicyStatement {
     "Write": [
       "AssociateCustomerGateway",
       "AssociateLink",
+      "AssociateTransitGatewayConnectPeer",
+      "CreateConnection",
       "CreateDevice",
       "CreateGlobalNetwork",
       "CreateLink",
       "CreateSite",
+      "DeleteConnection",
       "DeleteDevice",
       "DeleteGlobalNetwork",
       "DeleteLink",
@@ -411,7 +508,9 @@ export class Networkmanager extends PolicyStatement {
       "DeregisterTransitGateway",
       "DisassociateCustomerGateway",
       "DisassociateLink",
+      "DisassociateTransitGatewayConnectPeer",
       "RegisterTransitGateway",
+      "UpdateConnection",
       "UpdateDevice",
       "UpdateGlobalNetwork",
       "UpdateLink",
@@ -419,11 +518,13 @@ export class Networkmanager extends PolicyStatement {
     ],
     "List": [
       "DescribeGlobalNetworks",
+      "GetConnections",
       "GetCustomerGatewayAssociations",
       "GetDevices",
       "GetLinkAssociations",
       "GetLinks",
       "GetSites",
+      "GetTransitGatewayConnectPeerAssociations",
       "GetTransitGatewayRegistrations"
     ],
     "Read": [
@@ -438,7 +539,7 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Adds a resource of type global-network to the statement
    *
-   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -458,7 +559,7 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Adds a resource of type site to the statement
    *
-   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
    *
    * @param globalNetworkId - Identifier for the globalNetworkId.
    * @param resourceId - Identifier for the resourceId.
@@ -480,7 +581,7 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Adds a resource of type link to the statement
    *
-   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
    *
    * @param globalNetworkId - Identifier for the globalNetworkId.
    * @param resourceId - Identifier for the resourceId.
@@ -502,7 +603,7 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Adds a resource of type device to the statement
    *
-   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
    *
    * @param globalNetworkId - Identifier for the globalNetworkId.
    * @param resourceId - Identifier for the resourceId.
@@ -514,6 +615,28 @@ export class Networkmanager extends PolicyStatement {
    */
   public onDevice(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:networkmanager::${Account}:device/${GlobalNetworkId}/${ResourceId}';
+    arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type connection to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html
+   *
+   * @param globalNetworkId - Identifier for the globalNetworkId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnection(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:networkmanager::${Account}:connection/${GlobalNetworkId}/${ResourceId}';
     arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
@@ -551,5 +674,21 @@ export class Networkmanager extends PolicyStatement {
    */
   public ifTgwArn(value: string | string[], operator?: Operator | string) {
     return this.if(`networkmanager:tgwArn`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Controls which connect peers can be associated or disassociated
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
+   *
+   * Applies to actions:
+   * - .toAssociateTransitGatewayConnectPeer()
+   * - .toDisassociateTransitGatewayConnectPeer()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTgwConnectPeerArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`networkmanager:tgwConnectPeerArn`, value, operator || 'StringLike');
   }
 }
