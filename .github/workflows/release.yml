@@ -340,7 +340,7 @@ jobs:
 
       - name: Create tag
         run: |
-          git config --local user.email "deemes79@googlemail.com"
+          git config --local user.email "${{ secrets.RELEASE_MAIL }}"
           git config --local user.name "udondan"
           git tag -a "v${{ steps.get_version.outputs.VERSION }}" -m "Creates tag v${{ steps.get_version.outputs.VERSION }}"
           git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags

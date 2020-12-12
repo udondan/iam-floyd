@@ -57,7 +57,7 @@ jobs:
       - name: Configure git
         run: |
           set -x
-          git config --local user.email "deemes79@googlemail.com"
+          git config --local user.email "${{ secrets.RELEASE_MAIL }}"
           git config --local user.name "udondan"
         if: steps.changes.outputs.CHANGED == '1'
 
