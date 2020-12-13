@@ -14,9 +14,9 @@ function getLastTag() {
 # Get diff since last tag
 function getDiff() {
   if [[ -n "${VERSION}" && -n "${BEFORE}" ]]; then
-    git diff --no-color "${BEFORE}..${VERSION}" "$1"
+    git diff --no-color "${BEFORE}..${VERSION}" -- "$1" ":!$1/.cache"
   else
-    git diff --no-color "$(getLastTag)" "$1"
+    git diff --no-color "$(getLastTag)" -- "$1" ":!$1/.cache"
   fi
 }
 
