@@ -3,17 +3,21 @@ kendra:BatchPutDocument;Write
 kendra:CreateDataSource;Write
 kendra:CreateFaq;Write
 kendra:CreateIndex;Write
+kendra:CreateThesaurus;Write
 kendra:DeleteDataSource;Write
 kendra:DeleteFaq;Write
 kendra:DeleteIndex;Write
+kendra:DeleteThesaurus;Write
 kendra:DescribeDataSource;Read
 kendra:DescribeFaq;Read
 kendra:DescribeIndex;Read
+kendra:DescribeThesaurus;Read
 kendra:ListDataSourceSyncJobs;List
 kendra:ListDataSources;List
 kendra:ListFaqs;List
 kendra:ListIndices;List
 kendra:ListTagsForResource;List
+kendra:ListThesauri;List
 kendra:Query;Read
 kendra:StartDataSourceSyncJob;Write
 kendra:StopDataSourceSyncJob;Write
@@ -22,3 +26,4 @@ kendra:TagResource;Tagging
 kendra:UntagResource;Tagging
 kendra:UpdateDataSource;Write
 kendra:UpdateIndex;Write
+kendra:UpdateThesaurus;Write

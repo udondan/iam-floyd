@@ -32,6 +32,7 @@ iotsitewise:GetAssetPropertyValue;Read
 iotsitewise:GetAssetPropertyValueHistory;Read
 iotsitewise:ListAccessPolicies;Permissions management
 iotsitewise:ListAssetModels;List
+iotsitewise:ListAssetRelationships;List
 iotsitewise:ListAssets;List
 iotsitewise:ListAssociatedAssets;List
 iotsitewise:ListDashboards;List

@@ -6,7 +6,7 @@ mobilehub:DeployToStage;Write
 mobilehub:DescribeBundle;Read
 mobilehub:ExportBundle;Read
 mobilehub:ExportProject;Read
-mobilehub:GenerateProjectParameters;Write
+mobilehub:GenerateProjectParameters;Read
 mobilehub:GetProject;Read
 mobilehub:GetProjectSnapshot;Read
 mobilehub:ImportProject;Write

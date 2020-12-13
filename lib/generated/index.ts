@@ -193,6 +193,7 @@ export { Lambda } from "./lambda";
 export { LicenseManager } from "./licensemanager";
 export { AwsMarketplace } from "./marketplace";
 export { AwsMarketplaceCatalog } from "./marketplacecatalog";
+export { Marketplacecommerceanalytics } from "./marketplacecommerceanalyticsservice";
 export { AwsMarketplaceEntitlementService } from "./marketplaceentitlementservice";
 export { AwsMarketplaceImageBuildingService } from "./marketplaceimagebuildingservice";
 export { AwsMarketplaceManagement } from "./marketplacemanagementportal";

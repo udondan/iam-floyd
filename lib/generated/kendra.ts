@@ -19,7 +19,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Batch Delete document
+   * Grant permission to batch delete document
    *
    * Access Level: Write
    *
@@ -31,7 +31,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Batch put document
+   * Grant permission to batch put document
    *
    * Access Level: Write
    *
@@ -43,7 +43,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Create a data source
+   * Grant permission to create a data source
    *
    * Access Level: Write
    *
@@ -59,7 +59,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Create an Faq
+   * Grant permission to create an Faq
    *
    * Access Level: Write
    *
@@ -75,7 +75,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Create an Index
+   * Grant permission to create an Index
    *
    * Access Level: Write
    *
@@ -91,7 +91,23 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Delete a data source
+   * Grant permission to create a Thesaurus
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateThesaurus.html
+   */
+  public toCreateThesaurus() {
+    this.to('kendra:CreateThesaurus');
+    return this;
+  }
+
+  /**
+   * Grant permission to delete a data source
    *
    * Access Level: Write
    *
@@ -103,7 +119,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Delete an Faq
+   * Grant permission to delete an Faq
    *
    * Access Level: Write
    *
@@ -115,7 +131,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Delete an Index
+   * Grant permission to delete an Index
    *
    * Access Level: Write
    *
@@ -127,7 +143,19 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Describe a data source
+   * Grant permission to delete a Thesaurus
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteThesaurus.html
+   */
+  public toDeleteThesaurus() {
+    this.to('kendra:DeleteThesaurus');
+    return this;
+  }
+
+  /**
+   * Grant permission to describe a data source
    *
    * Access Level: Read
    *
@@ -139,7 +167,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Describe an Faq
+   * Grant permission to describe an Faq
    *
    * Access Level: Read
    *
@@ -151,7 +179,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Describe an Index
+   * Grant permission to describe an Index
    *
    * Access Level: Read
    *
@@ -163,7 +191,19 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Get Data Source sync job history
+   * Grant permission to describe a Thesaurus
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeThesaurus.html
+   */
+  public toDescribeThesaurus() {
+    this.to('kendra:DescribeThesaurus');
+    return this;
+  }
+
+  /**
+   * Grant permission to get Data Source sync job history
    *
    * Access Level: List
    *
@@ -175,7 +215,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * List the data sources
+   * Grant permission to list the data sources
    *
    * Access Level: List
    *
@@ -187,7 +227,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * List the Faqs
+   * Grant permission to list the Faqs
    *
    * Access Level: List
    *
@@ -199,7 +239,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * List the indexes
+   * Grant permission to list the indexes
    *
    * Access Level: List
    *
@@ -211,7 +251,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Lists tags for a resource
+   * Grant permission to list tags for a resource
    *
    * Access Level: List
    *
@@ -223,7 +263,19 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Query documents and Faqs
+   * Grant permission to list the Thesauri
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_ListThesauri.html
+   */
+  public toListThesauri() {
+    this.to('kendra:ListThesauri');
+    return this;
+  }
+
+  /**
+   * Grant permission to query documents and faqs
    *
    * Access Level: Read
    *
@@ -235,7 +287,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Start Data Source sync job
+   * Grant permission to start Data Source sync job
    *
    * Access Level: Write
    *
@@ -247,7 +299,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Stop Data Source sync job
+   * Grant permission to stop Data Source sync job
    *
    * Access Level: Write
    *
@@ -259,7 +311,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Send feedback about a query results
+   * Grant permission to send feedback about a query results
    *
    * Access Level: Write
    *
@@ -271,7 +323,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Tags a resource with given key value pairs
+   * Grant permission to tag a resource with given key value pairs
    *
    * Access Level: Tagging
    *
@@ -287,7 +339,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Removes the tag with the given key from a resource
+   * Grant permission to remove the tag with the given key from a resource
    *
    * Access Level: Tagging
    *
@@ -302,7 +354,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Update a data source
+   * Grant permission to update a data source
    *
    * Access Level: Write
    *
@@ -314,7 +366,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Update an Index
+   * Grant permission to update an Index
    *
    * Access Level: Write
    *
@@ -325,6 +377,18 @@ export class Kendra extends PolicyStatement {
     return this;
   }
 
+  /**
+   * Grant permission to update a thesaurus
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateThesaurus.html
+   */
+  public toUpdateThesaurus() {
+    this.to('kendra:UpdateThesaurus');
+    return this;
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "BatchDeleteDocument",
@@ -332,19 +396,23 @@ export class Kendra extends PolicyStatement {
       "CreateDataSource",
       "CreateFaq",
       "CreateIndex",
+      "CreateThesaurus",
       "DeleteDataSource",
       "DeleteFaq",
       "DeleteIndex",
+      "DeleteThesaurus",
       "StartDataSourceSyncJob",
       "StopDataSourceSyncJob",
       "SubmitFeedback",
       "UpdateDataSource",
-      "UpdateIndex"
+      "UpdateIndex",
+      "UpdateThesaurus"
     ],
     "Read": [
       "DescribeDataSource",
       "DescribeFaq",
       "DescribeIndex",
+      "DescribeThesaurus",
       "Query"
     ],
     "List": [
@@ -352,7 +420,8 @@ export class Kendra extends PolicyStatement {
       "ListDataSources",
       "ListFaqs",
       "ListIndices",
-      "ListTagsForResource"
+      "ListTagsForResource",
+      "ListThesauri"
     ],
     "Tagging": [
       "TagResource",
@@ -424,6 +493,30 @@ export class Kendra extends PolicyStatement {
     var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/faq/${FaqId}';
     arn = arn.replace('${IndexId}', indexId);
     arn = arn.replace('${FaqId}', faqId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type thesaurus to the statement
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/thesaurus.html
+   *
+   * @param indexId - Identifier for the indexId.
+   * @param thesaurusId - Identifier for the thesaurusId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onThesaurus(indexId: string, thesaurusId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/thesaurus/${ThesaurusId}';
+    arn = arn.replace('${IndexId}', indexId);
+    arn = arn.replace('${ThesaurusId}', thesaurusId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

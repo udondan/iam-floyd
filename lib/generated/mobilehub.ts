@@ -117,7 +117,7 @@ export class Mobilehub extends PolicyStatement {
   /**
    * Generate project parameters required for code generation
    *
-   * Access Level: Write
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
@@ -301,7 +301,6 @@ export class Mobilehub extends PolicyStatement {
       "DeleteProject",
       "DeleteProjectSnapshot",
       "DeployToStage",
-      "GenerateProjectParameters",
       "ImportProject",
       "InstallBundle",
       "SynchronizeProject",
@@ -311,6 +310,7 @@ export class Mobilehub extends PolicyStatement {
       "DescribeBundle",
       "ExportBundle",
       "ExportProject",
+      "GenerateProjectParameters",
       "GetProject",
       "GetProjectSnapshot",
       "ValidateProject",

@@ -462,6 +462,18 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the asset relationship graph for an asset
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetRelationships.html
+   */
+  public toListAssetRelationships() {
+    this.to('iotsitewise:ListAssetRelationships');
+    return this;
+  }
+
+  /**
    * Grants permission to list all assets
    *
    * Access Level: List
@@ -764,6 +776,7 @@ export class Iotsitewise extends PolicyStatement {
     ],
     "List": [
       "ListAssetModels",
+      "ListAssetRelationships",
       "ListAssets",
       "ListAssociatedAssets",
       "ListDashboards",
@@ -966,6 +979,18 @@ export class Iotsitewise extends PolicyStatement {
    */
   public ifGroup(value: string | string[], operator?: Operator | string) {
     return this.if(`iotsitewise:group`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of an AWS IAM identity
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifIam(value: string | string[], operator?: Operator | string) {
+    return this.if(`iotsitewise:iam`, value, operator || 'StringLike');
   }
 
   /**
