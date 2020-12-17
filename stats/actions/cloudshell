@@ -1,0 +1,5 @@
+cloudshell:CreateEnvironment;Write
+cloudshell:CreateSession;Write
+cloudshell:GetFileDownloadUrls;Write
+cloudshell:GetFileUploadUrls;Write
+cloudshell:PutCredentials;Write

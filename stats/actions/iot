@@ -21,6 +21,7 @@ iot:CreateCertificateFromCsr;Write
 iot:CreateDimension;Write
 iot:CreateDomainConfiguration;Write
 iot:CreateDynamicThingGroup;Tagging
+iot:CreateFleetMetric;Tagging
 iot:CreateJob;Write
 iot:CreateKeysAndCertificate;Write
 iot:CreateMitigationAction;Write
@@ -47,6 +48,7 @@ iot:DeleteCertificate;Write
 iot:DeleteDimension;Write
 iot:DeleteDomainConfiguration;Write
 iot:DeleteDynamicThingGroup;Tagging
+iot:DeleteFleetMetric;Tagging
 iot:DeleteJob;Write
 iot:DeleteJobExecution;Write
 iot:DeleteMitigationAction;Write
@@ -81,6 +83,7 @@ iot:DescribeDimension;Read
 iot:DescribeDomainConfiguration;Read
 iot:DescribeEndpoint;Read
 iot:DescribeEventConfigurations;Read
+iot:DescribeFleetMetric;Read
 iot:DescribeIndex;Read
 iot:DescribeJob;Read
 iot:DescribeJobExecution;Read
@@ -102,6 +105,7 @@ iot:DetachSecurityProfile;Write
 iot:DetachThingPrincipal;Write
 iot:DisableTopicRule;Write
 iot:EnableTopicRule;Write
+iot:GetBucketsAggregation;Read
 iot:GetCardinality;Read
 iot:GetEffectivePolicies;Read
 iot:GetIndexingConfiguration;Read
@@ -131,6 +135,7 @@ iot:ListCertificates;List
 iot:ListCertificatesByCA;List
 iot:ListDimensions;List
 iot:ListDomainConfigurations;List
+iot:ListFleetMetrics;List
 iot:ListIndices;List
 iot:ListJobExecutionsForJob;List
 iot:ListJobExecutionsForThing;List
@@ -205,6 +210,7 @@ iot:UpdateDimension;Write
 iot:UpdateDomainConfiguration;Write
 iot:UpdateDynamicThingGroup;Write
 iot:UpdateEventConfigurations;Write
+iot:UpdateFleetMetric;Write
 iot:UpdateIndexingConfiguration;Write
 iot:UpdateJob;Write
 iot:UpdateJobExecution;Write

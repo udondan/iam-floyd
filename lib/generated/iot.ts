@@ -319,6 +319,22 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Creates a fleet metric
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/iot-indexing.html
+   */
+  public toCreateFleetMetric() {
+    this.to('iot:CreateFleetMetric');
+    return this;
+  }
+
+  /**
    * Creates a job.
    *
    * Access Level: Write
@@ -675,6 +691,18 @@ export class Iot extends PolicyStatement {
    */
   public toDeleteDynamicThingGroup() {
     this.to('iot:DeleteDynamicThingGroup');
+    return this;
+  }
+
+  /**
+   * Deletes the specified fleet metric
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/iot-indexing.html
+   */
+  public toDeleteFleetMetric() {
+    this.to('iot:DeleteFleetMetric');
     return this;
   }
 
@@ -1087,6 +1115,18 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Gets information about the specified fleet metric.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/iot-indexing.html
+   */
+  public toDescribeFleetMetric() {
+    this.to('iot:DescribeFleetMetric');
+    return this;
+  }
+
+  /**
    * Gets information about the specified index.
    *
    * Access Level: Read
@@ -1335,6 +1375,18 @@ export class Iot extends PolicyStatement {
    */
   public toEnableTopicRule() {
     this.to('iot:EnableTopicRule');
+    return this;
+  }
+
+  /**
+   * Get buckets aggregation for IoT fleet index
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/iot-indexing.html.html
+   */
+  public toGetBucketsAggregation() {
+    this.to('iot:GetBucketsAggregation');
     return this;
   }
 
@@ -1683,6 +1735,18 @@ export class Iot extends PolicyStatement {
    */
   public toListDomainConfigurations() {
     this.to('iot:ListDomainConfigurations');
+    return this;
+  }
+
+  /**
+   * Lists the fleet metrics in your account.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/iot-indexing.html
+   */
+  public toListFleetMetrics() {
+    this.to('iot:ListFleetMetrics');
     return this;
   }
 
@@ -2592,6 +2656,18 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Updates a fleet metric
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/iot-indexing.html
+   */
+  public toUpdateFleetMetric() {
+    this.to('iot:UpdateFleetMetric');
+    return this;
+  }
+
+  /**
    * Updates fleet indexing configuration
    *
    * Access Level: Write
@@ -2855,6 +2931,7 @@ export class Iot extends PolicyStatement {
       "UpdateDomainConfiguration",
       "UpdateDynamicThingGroup",
       "UpdateEventConfigurations",
+      "UpdateFleetMetric",
       "UpdateIndexingConfiguration",
       "UpdateJob",
       "UpdateJobExecution",
@@ -2880,10 +2957,12 @@ export class Iot extends PolicyStatement {
     "Tagging": [
       "CreateBillingGroup",
       "CreateDynamicThingGroup",
+      "CreateFleetMetric",
       "CreateThingGroup",
       "CreateThingType",
       "DeleteBillingGroup",
       "DeleteDynamicThingGroup",
+      "DeleteFleetMetric",
       "DeleteThingGroup",
       "DeleteThingType",
       "TagResource",
@@ -2904,6 +2983,7 @@ export class Iot extends PolicyStatement {
       "DescribeDomainConfiguration",
       "DescribeEndpoint",
       "DescribeEventConfigurations",
+      "DescribeFleetMetric",
       "DescribeIndex",
       "DescribeJob",
       "DescribeJobExecution",
@@ -2919,6 +2999,7 @@ export class Iot extends PolicyStatement {
       "DescribeThingRegistrationTask",
       "DescribeThingType",
       "DescribeTunnel",
+      "GetBucketsAggregation",
       "GetCardinality",
       "GetEffectivePolicies",
       "GetIndexingConfiguration",
@@ -2954,6 +3035,7 @@ export class Iot extends PolicyStatement {
       "ListCertificatesByCA",
       "ListDimensions",
       "ListDomainConfigurations",
+      "ListFleetMetrics",
       "ListIndices",
       "ListJobExecutionsForJob",
       "ListJobExecutionsForThing",
@@ -3025,6 +3107,28 @@ export class Iot extends PolicyStatement {
   public onIndex(indexName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:index/${IndexName}';
     arn = arn.replace('${IndexName}', indexName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type fleetmetric to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/iot-indexing.html
+   *
+   * @param fleetMetricName - Identifier for the fleetMetricName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFleetmetric(fleetMetricName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iot:${Region}:${Account}:fleetmetric/${FleetMetricName}';
+    arn = arn.replace('${FleetMetricName}', fleetMetricName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

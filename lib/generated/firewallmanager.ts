@@ -19,7 +19,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Sets the AWS Firewall Manager administrator account and enables the service in all organization accounts
+   * Grants permission to set the AWS Firewall Manager administrator account and enables the service in all organization accounts
    *
    * Access Level: Write
    *
@@ -31,7 +31,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to permanently deletes an AWS Firewall Manager applications list.
+   * Grants permission to permanently deletes an AWS Firewall Manager applications list
    *
    * Access Level: Write
    *
@@ -43,7 +43,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Deletes an AWS Firewall Manager association with the IAM role and the Amazon Simple Notification Service (SNS) topic that is used to notify the FM administrator about major FM events and errors across the organization.
+   * Grants permission to delete an AWS Firewall Manager association with the IAM role and the Amazon Simple Notification Service (SNS) topic that is used to notify the FM administrator about major FM events and errors across the organization
    *
    * Access Level: Write
    *
@@ -55,7 +55,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes an AWS Firewall Manager policy.
+   * Grants permission to permanently delete an AWS Firewall Manager policy
    *
    * Access Level: Write
    *
@@ -70,7 +70,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to permanently deletes an AWS Firewall Manager protocols list.
+   * Grants permission to permanently deletes an AWS Firewall Manager protocols list
    *
    * Access Level: Write
    *
@@ -82,7 +82,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Disassociates the account that has been set as the AWS Firewall Manager administrator account and and disables the service in all organization accounts
+   * Grants permission to disassociate the account that has been set as the AWS Firewall Manager administrator account and and disables the service in all organization accounts
    *
    * Access Level: Write
    *
@@ -94,7 +94,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Returns the AWS Organizations master account that is associated with AWS Firewall Manager as the AWS Firewall Manager administrator.
+   * Grants permission to retrieve the AWS Organizations master account that is associated with AWS Firewall Manager as the AWS Firewall Manager administrator
    *
    * Access Level: Read
    *
@@ -106,7 +106,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about the specified AWS Firewall Manager applications list.
+   * Grants permission to return information about the specified AWS Firewall Manager applications list
    *
    * Access Level: Read
    *
@@ -118,7 +118,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Returns detailed compliance information about the specified member account. Details include resources that are in and out of compliance with the specified policy.
+   * Grants permission to retrieve detailed compliance information about the specified member account. Details include resources that are in and out of compliance with the specified policy
    *
    * Access Level: Read
    *
@@ -130,7 +130,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Returns information about the Amazon Simple Notification Service (SNS) topic that is used to record AWS Firewall Manager SNS logs.
+   * Grants permission to retrieve information about the Amazon Simple Notification Service (SNS) topic that is used to record AWS Firewall Manager SNS logs
    *
    * Access Level: Read
    *
@@ -142,7 +142,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Returns information about the specified AWS Firewall Manager policy.
+   * Grants permission to retrieve information about the specified AWS Firewall Manager policy
    *
    * Access Level: Read
    *
@@ -154,7 +154,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Returns policy-level attack summary information in the event of a potential DDoS attack.
+   * Grants permission to retrieve policy-level attack summary information in the event of a potential DDoS attack
    *
    * Access Level: Read
    *
@@ -166,7 +166,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about the specified AWS Firewall Manager protocols list.
+   * Grants permission to return information about the specified AWS Firewall Manager protocols list
    *
    * Access Level: Read
    *
@@ -178,7 +178,19 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return an array of AppsListDataSummary objects.
+   * Grants permission to retrieve violations for a resource based on the specified AWS Firewall Manager policy and AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetViolationDetails.html
+   */
+  public toGetViolationDetails() {
+    this.to('fms:GetViolationDetails');
+    return this;
+  }
+
+  /**
+   * Grants permission to return an array of AppsListDataSummary objects
    *
    * Access Level: List
    *
@@ -190,7 +202,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Returns an array of PolicyComplianceStatus objects in the response. Use PolicyComplianceStatus to get a summary of which member accounts are protected by the specified policy.
+   * Grants permission to retrieve an array of PolicyComplianceStatus objects in the response. Use PolicyComplianceStatus to get a summary of which member accounts are protected by the specified policy
    *
    * Access Level: List
    *
@@ -202,7 +214,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Returns an array of member account ids if the caller is FMS admin account.
+   * Grants permission to retrieve an array of member account ids if the caller is FMS admin account
    *
    * Access Level: List
    *
@@ -214,7 +226,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Returns an array of PolicySummary objects in the response.
+   * Grants permission to retrieve an array of PolicySummary objects in the response
    *
    * Access Level: List
    *
@@ -226,7 +238,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return an array of ProtocolsListDataSummary objects.
+   * Grants permission to return an array of ProtocolsListDataSummary objects
    *
    * Access Level: List
    *
@@ -238,7 +250,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Lists the Tags for a given resource.
+   * Grants permission to list Tags for a given resource
    *
    * Access Level: Read
    *
@@ -250,7 +262,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an AWS Firewall Manager applications list.
+   * Grants permission to create an AWS Firewall Manager applications list
    *
    * Access Level: Write
    *
@@ -266,7 +278,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS Firewall Manager (FM) could use to notify the FM administrator about major FM events and errors across the organization.
+   * Grants permission to designate the IAM role and Amazon Simple Notification Service (SNS) topic that AWS Firewall Manager (FM) could use to notify the FM administrator about major FM events and errors across the organization
    *
    * Access Level: Write
    *
@@ -278,7 +290,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Creates an AWS Firewall Manager policy.
+   * Grants permission to create an AWS Firewall Manager policy
    *
    * Access Level: Write
    *
@@ -294,7 +306,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to creates an AWS Firewall Manager protocols list.
+   * Grants permission to creates an AWS Firewall Manager protocols list
    *
    * Access Level: Write
    *
@@ -310,7 +322,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Adds a Tag to a given resource.
+   * Grants permission to add a Tag to a given resource
    *
    * Access Level: Tagging
    *
@@ -326,7 +338,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Removes a Tag from a given resource.
+   * Grants permission to remove a Tag from a given resource
    *
    * Access Level: Tagging
    *
@@ -361,6 +373,7 @@ export class Fms extends PolicyStatement {
       "GetPolicy",
       "GetProtectionStatus",
       "GetProtocolsList",
+      "GetViolationDetails",
       "ListTagsForResource"
     ],
     "List": [

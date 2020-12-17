@@ -1,0 +1,13 @@
+iotfleethub:CreateApplication;Write
+iotfleethub:CreateDashboard;Write
+iotfleethub:DeleteApplication;Write
+iotfleethub:DeleteDashboard;Write
+iotfleethub:DescribeApplication;Read
+iotfleethub:DescribeDashboard;Read
+iotfleethub:ListApplications;List
+iotfleethub:ListDashboards;List
+iotfleethub:ListTagsForResource;Read
+iotfleethub:TagResource;Tagging
+iotfleethub:UntagResource;Tagging
+iotfleethub:UpdateApplication;Write
+iotfleethub:UpdateDashboard;Write

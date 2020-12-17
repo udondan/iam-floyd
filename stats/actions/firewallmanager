@@ -11,6 +11,7 @@ fms:GetNotificationChannel;Read
 fms:GetPolicy;Read
 fms:GetProtectionStatus;Read
 fms:GetProtocolsList;Read
+fms:GetViolationDetails;Read
 fms:ListAppsLists;List
 fms:ListComplianceStatus;List
 fms:ListMemberAccounts;List

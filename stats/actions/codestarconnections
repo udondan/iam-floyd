@@ -17,4 +17,5 @@ codestar-connections:StartOAuthHandshake;Read
 codestar-connections:TagResource;Tagging
 codestar-connections:UntagResource;Tagging
 codestar-connections:UpdateConnectionInstallation;Write
+codestar-connections:UpdateHost;Write
 codestar-connections:UseConnection;Read

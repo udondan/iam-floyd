@@ -303,6 +303,18 @@ export class CodestarConnections extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a host resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UpdateHost.html
+   */
+  public toUpdateHost() {
+    this.to('codestar-connections:UpdateHost');
+    return this;
+  }
+
+  /**
    * Grants permission to use a Connection resource to call provider actions
    *
    * Access Level: Read
@@ -325,7 +337,8 @@ export class CodestarConnections extends PolicyStatement {
       "CreateHost",
       "DeleteConnection",
       "DeleteHost",
-      "UpdateConnectionInstallation"
+      "UpdateConnectionInstallation",
+      "UpdateHost"
     ],
     "Read": [
       "GetConnection",

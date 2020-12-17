@@ -893,7 +893,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to create a mapping
    *
-   * Access Level: Write
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-GetMapping
    */
@@ -1828,7 +1828,6 @@ export class Glue extends PolicyStatement {
       "DeleteTrigger",
       "DeleteUserDefinedFunction",
       "DeleteWorkflow",
-      "GetMapping",
       "ImportCatalogToGlue",
       "PutDataCatalogEncryptionSettings",
       "PutResourcePolicy",
@@ -1895,6 +1894,7 @@ export class Glue extends PolicyStatement {
       "GetJobs",
       "GetMLTaskRun",
       "GetMLTransform",
+      "GetMapping",
       "GetPartition",
       "GetPartitions",
       "GetPlan",

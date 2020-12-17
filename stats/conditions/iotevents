@@ -1,3 +1,4 @@
 iotevents:RequestTag
 iotevents:ResourceTag
 iotevents:TagKeys
+iotevents:keyValue

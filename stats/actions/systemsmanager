@@ -90,10 +90,12 @@ ssm:ListCommandInvocations;Read
 ssm:ListCommands;Read
 ssm:ListComplianceItems;List
 ssm:ListComplianceSummaries;List
+ssm:ListDocumentMetadataHistory;Read
 ssm:ListDocumentVersions;List
 ssm:ListDocuments;List
 ssm:ListInstanceAssociations;List
 ssm:ListInventoryEntries;List
+ssm:ListOpsItemEvents;Read
 ssm:ListOpsMetadata;List
 ssm:ListResourceComplianceSummaries;List
 ssm:ListResourceDataSync;List
@@ -114,6 +116,7 @@ ssm:SendAutomationSignal;Write
 ssm:SendCommand;Write
 ssm:StartAssociationsOnce;Write
 ssm:StartAutomationExecution;Write
+ssm:StartChangeRequestExecution;Write
 ssm:StartSession;Write
 ssm:StopAutomationExecution;Write
 ssm:TerminateSession;Write
@@ -121,6 +124,7 @@ ssm:UpdateAssociation;Write
 ssm:UpdateAssociationStatus;Write
 ssm:UpdateDocument;Write
 ssm:UpdateDocumentDefaultVersion;Write
+ssm:UpdateDocumentMetadata;Write
 ssm:UpdateInstanceAssociationStatus;Write
 ssm:UpdateInstanceInformation;Write
 ssm:UpdateMaintenanceWindow;Write

@@ -19,7 +19,7 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
-   * Creates a group with a specified name, description, and resource query.
+   * Grants permission to create a resource group with a specified name, description, and resource query
    *
    * Access Level: Write
    *
@@ -35,7 +35,7 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
-   * Deletes a specified resource group
+   * Grants permission to delete a specified resource group
    *
    * Access Level: Write
    *
@@ -47,7 +47,7 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
-   * Gets information of a specified resource group
+   * Grants permission to get information of a specified resource group
    *
    * Access Level: Read
    *
@@ -59,7 +59,19 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
-   * Gets the query associated with a specified resource group
+   * Grants permission to get the service configuration associated with the specified resource group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroupConfiguration.html
+   */
+  public toGetGroupConfiguration() {
+    this.to('resource-groups:GetGroupConfiguration');
+    return this;
+  }
+
+  /**
+   * Grants permission to get the query associated with a specified resource group
    *
    * Access Level: Read
    *
@@ -71,7 +83,7 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
-   * Gets the tags associated with a specified resource group
+   * Grants permission to get the tags associated with a specified resource group
    *
    * Access Level: Read
    *
@@ -83,9 +95,26 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
-   * Lists the resources that are member of a specified resource group
+   * Grants permission to add the specified resources to the specified group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GroupResources.html
+   */
+  public toGroupResources() {
+    this.to('resource-groups:GroupResources');
+    return this;
+  }
+
+  /**
+   * Grants permission to list the resources that are members of a specified resource group
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - cloudformation:DescribeStacks
+   * - cloudformation:ListStackResources
+   * - tag:GetResources
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroupResources.html
    */
@@ -95,7 +124,7 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
-   * Lists all resource groups
+   * Grants permission to list all resource groups in your account
    *
    * Access Level: List
    *
@@ -107,9 +136,26 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
-   * Returns a list of AWS resource identifiers matching the given query
+   * Grants permission to add a resource-based policy for the specified group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ARG/latest/APIReference/LM_REDIRECT
+   */
+  public toPutGroupPolicy() {
+    this.to('resource-groups:PutGroupPolicy');
+    return this;
+  }
+
+  /**
+   * Grants permission to search for AWS resources matching the given query
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - cloudformation:DescribeStacks
+   * - cloudformation:ListStackResources
+   * - tag:GetResources
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_SearchResources.html
    */
@@ -119,7 +165,7 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
-   * Tags a specified resource group
+   * Grants permission to tag a specified resource group
    *
    * Access Level: Tagging
    *
@@ -135,7 +181,19 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
-   * Removes tags associated with a specified resource group
+   * Grants permission to remove the specified resources from the specified group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ARG/latest/APIReference/API_UngroupResources.html
+   */
+  public toUngroupResources() {
+    this.to('resource-groups:UngroupResources');
+    return this;
+  }
+
+  /**
+   * Grants permission to remove tags associated with a specified resource group
    *
    * Access Level: Tagging
    *
@@ -150,7 +208,7 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
-   * Updates a specified resource group
+   * Grants permission to update a specified resource group
    *
    * Access Level: Write
    *
@@ -162,7 +220,7 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
-   * Updates the query associated with a specified resource group
+   * Grants permission to update the query associated with a specified resource group
    *
    * Access Level: Write
    *
@@ -177,11 +235,15 @@ export class ResourceGroups extends PolicyStatement {
     "Write": [
       "CreateGroup",
       "DeleteGroup",
+      "GroupResources",
+      "PutGroupPolicy",
+      "UngroupResources",
       "UpdateGroup",
       "UpdateGroupQuery"
     ],
     "Read": [
       "GetGroup",
+      "GetGroupConfiguration",
       "GetGroupQuery",
       "GetTags"
     ],

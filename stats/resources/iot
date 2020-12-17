@@ -6,6 +6,7 @@ iot:client
 iot:dimension
 iot:domainconfiguration
 iot:dynamicthinggroup
+iot:fleetmetric
 iot:index
 iot:job
 iot:mitigationaction

@@ -69,7 +69,7 @@ glue:GetMLTaskRun;Read
 glue:GetMLTaskRuns;List
 glue:GetMLTransform;Read
 glue:GetMLTransforms;List
-glue:GetMapping;Write
+glue:GetMapping;Read
 glue:GetPartition;Read
 glue:GetPartitions;Read
 glue:GetPlan;Read

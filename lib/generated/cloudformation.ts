@@ -19,7 +19,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Cancels an update on the specified stack.
+   * Grants permission to cancel an update on the specified stack
    *
    * Access Level: Write
    *
@@ -31,7 +31,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * For a specified stack that is in the UPDATE_ROLLBACK_FAILED state, continues rolling it back to the UPDATE_ROLLBACK_COMPLETE state.
+   * Grants permission to continue rolling back a stack that is in the UPDATE_ROLLBACK_FAILED state to the UPDATE_ROLLBACK_COMPLETE state
    *
    * Access Level: Write
    *
@@ -46,7 +46,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Creates a list of changes for a stack.
+   * Grants permission to create a list of changes for a stack
    *
    * Access Level: Write
    *
@@ -68,7 +68,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Creates a stack as specified in the template.
+   * Grants permission to create a stack as specified in the template
    *
    * Access Level: Write
    *
@@ -88,7 +88,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Creates stack instances for the specified accounts, within the specified regions.
+   * Grants permission to create stack instances for the specified accounts, within the specified regions
    *
    * Access Level: Write
    *
@@ -100,7 +100,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Creates a stackset as specified in the template.
+   * Grants permission to create a stackset as specified in the template
    *
    * Access Level: Write
    *
@@ -118,7 +118,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   *
+   * Grants permission to upload templates to Amazon S3 buckets. Used only by the AWS CloudFormation console and is not documented in the API reference
    *
    * Access Level: Write
    */
@@ -128,7 +128,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified change set. Deleting change sets ensures that no one executes the wrong change set.
+   * Grants permission to delete the specified change set. Deleting change sets ensures that no one executes the wrong change set
    *
    * Access Level: Write
    *
@@ -143,7 +143,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Deletes a specified stack.
+   * Grants permission to delete a specified stack
    *
    * Access Level: Write
    *
@@ -158,7 +158,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Deletes stack instances for the specified accounts, in the specified regions.
+   * Grants permission to delete stack instances for the specified accounts, in the specified regions
    *
    * Access Level: Write
    *
@@ -170,7 +170,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Deletes a specified stackset.
+   * Grants permission to delete a specified stackset
    *
    * Access Level: Write
    *
@@ -182,7 +182,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Deregisters an existing CloudFormation type or type version
+   * Grants permission to deregister an existing CloudFormation type or type version
    *
    * Access Level: Write
    *
@@ -194,7 +194,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Retrieves your account's AWS CloudFormation limits.
+   * Grants permission to retrieve your account's AWS CloudFormation limits
    *
    * Access Level: Read
    *
@@ -206,7 +206,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns the description for the specified change set.
+   * Grants permission to return the description for the specified change set
    *
    * Access Level: Read
    *
@@ -221,7 +221,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns information about a stack drift detection operation.
+   * Grants permission to return information about a stack drift detection operation
    *
    * Access Level: Read
    *
@@ -233,7 +233,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns all stack related events for a specified stack.
+   * Grants permission to return all stack related events for a specified stack
    *
    * Access Level: Read
    *
@@ -245,7 +245,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns the stack instance that's associated with the specified stack set, AWS account, and region.
+   * Grants permission to return the stack instance that's associated with the specified stack set, AWS account, and region
    *
    * Access Level: Read
    *
@@ -257,7 +257,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns a description of the specified resource in the specified stack.
+   * Grants permission to return a description of the specified resource in the specified stack
    *
    * Access Level: Read
    *
@@ -269,7 +269,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns drift information for the resources that have been checked for drift in the specified stack.
+   * Grants permission to return drift information for the resources that have been checked for drift in the specified stack
    *
    * Access Level: Read
    *
@@ -281,7 +281,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns AWS resource descriptions for running and deleted stacks.
+   * Grants permission to return AWS resource descriptions for running and deleted stacks
    *
    * Access Level: Read
    *
@@ -293,7 +293,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns the description of the specified stack set.
+   * Grants permission to return the description of the specified stack set
    *
    * Access Level: Read
    *
@@ -305,7 +305,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns the description of the specified stack set operation.
+   * Grants permission to return the description of the specified stack set operation
    *
    * Access Level: Read
    *
@@ -317,7 +317,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns the description for the specified stack.
+   * Grants permission to return the description for the specified stack
    *
    * Access Level: List
    *
@@ -329,7 +329,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns information about the CloudFormation type requested
+   * Grants permission to return information about the CloudFormation type requested
    *
    * Access Level: Read
    *
@@ -341,7 +341,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns information about the registration process for a CloudFormation type
+   * Grants permission to return information about the registration process for a CloudFormation type
    *
    * Access Level: Read
    *
@@ -353,7 +353,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Detects whether a stack's actual configuration differs, or has drifted, from it's expected configuration, as defined in the stack template and any values specified as template parameters.
+   * Grants permission to detects whether a stack's actual configuration differs, or has drifted, from it's expected configuration, as defined in the stack template and any values specified as template parameters
    *
    * Access Level: Read
    *
@@ -365,7 +365,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns information about whether a resource's actual configuration differs, or has drifted, from it's expected configuration, as defined in the stack template and any values specified as template parameters.
+   * Grants permission to return information about whether a resource's actual configuration differs, or has drifted, from it's expected configuration, as defined in the stack template and any values specified as template parameters
    *
    * Access Level: Read
    *
@@ -377,7 +377,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Enables users to detect drift on a stack set and the stack instances that belong to that stack set.
+   * Grants permission to enable users to detect drift on a stack set and the stack instances that belong to that stack set
    *
    * Access Level: Read
    *
@@ -389,7 +389,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns the estimated monthly cost of a template.
+   * Grants permission to return the estimated monthly cost of a template
    *
    * Access Level: Read
    *
@@ -401,7 +401,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Updates a stack using the input information that was provided when the specified change set was created.
+   * Grants permission to update a stack using the input information that was provided when the specified change set was created
    *
    * Access Level: Write
    *
@@ -416,7 +416,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns the stack policy for a specified stack.
+   * Grants permission to return the stack policy for a specified stack
    *
    * Access Level: Read
    *
@@ -428,7 +428,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns the template body for a specified stack.
+   * Grants permission to return the template body for a specified stack
    *
    * Access Level: Read
    *
@@ -440,7 +440,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns information about a new or existing template.
+   * Grants permission to return information about a new or existing template
    *
    * Access Level: Read
    *
@@ -452,7 +452,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns the ID and status of each active change set for a stack. For example, AWS CloudFormation lists change sets that are in the CREATE_IN_PROGRESS or CREATE_PENDING state.
+   * Grants permission to return the ID and status of each active change set for a stack. For example, AWS CloudFormation lists change sets that are in the CREATE_IN_PROGRESS or CREATE_PENDING state
    *
    * Access Level: List
    *
@@ -464,7 +464,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Lists all exported output values in the account and region in which you call this action.
+   * Grants permission to list all exported output values in the account and region in which you call this action
    *
    * Access Level: List
    *
@@ -476,7 +476,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Lists all stacks that are importing an exported output value.
+   * Grants permission to list all stacks that are importing an exported output value
    *
    * Access Level: List
    *
@@ -488,7 +488,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns summary information about stack instances that are associated with the specified stack set.
+   * Grants permission to return summary information about stack instances that are associated with the specified stack set
    *
    * Access Level: List
    *
@@ -500,7 +500,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns descriptions of all resources of the specified stack.
+   * Grants permission to return descriptions of all resources of the specified stack
    *
    * Access Level: List
    *
@@ -512,7 +512,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns summary information about the results of a stack set operation.
+   * Grants permission to return summary information about the results of a stack set operation
    *
    * Access Level: List
    *
@@ -524,7 +524,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns summary information about operations performed on a stack set.
+   * Grants permission to return summary information about operations performed on a stack set
    *
    * Access Level: List
    *
@@ -536,7 +536,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns summary information about stack sets that are associated with the user.
+   * Grants permission to return summary information about stack sets that are associated with the user
    *
    * Access Level: List
    *
@@ -548,7 +548,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Returns the summary information for stacks whose status matches the specified StackStatusFilter.
+   * Grants permission to return the summary information for stacks whose status matches the specified StackStatusFilter
    *
    * Access Level: List
    *
@@ -560,7 +560,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Lists CloudFormation type registration attempts
+   * Grants permission to list CloudFormation type registration attempts
    *
    * Access Level: List
    *
@@ -572,7 +572,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Lists versions of a particular CloudFormation type
+   * Grants permission to list versions of a particular CloudFormation type
    *
    * Access Level: List
    *
@@ -584,7 +584,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Lists available CloudFormation types
+   * Grants permission to list available CloudFormation types
    *
    * Access Level: List
    *
@@ -596,7 +596,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Registers a new CloudFormation type
+   * Grants permission to register a new CloudFormation type
    *
    * Access Level: Write
    *
@@ -608,7 +608,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Sets a stack policy for a specified stack.
+   * Grants permission to set a stack policy for a specified stack
    *
    * Access Level: Permissions management
    *
@@ -623,7 +623,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Sets which version of a CloudFormation type applies to CloudFormation operations
+   * Grants permission to set which version of a CloudFormation type applies to CloudFormation operations
    *
    * Access Level: Write
    *
@@ -635,7 +635,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Sends a signal to the specified resource with a success or failure status.
+   * Grants permission to send a signal to the specified resource with a success or failure status
    *
    * Access Level: Write
    *
@@ -647,7 +647,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Stops an in-progress operation on a stack set and its associated stack instances.
+   * Grants permission to stop an in-progress operation on a stack set and its associated stack instances
    *
    * Access Level: Write
    *
@@ -659,7 +659,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Tagging cloudformation resources.
+   * Grants permission to tag cloudformation resources
    *
    * Access Level: Tagging
    */
@@ -669,7 +669,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Untagging cloudformation resources.
+   * Grants permission to untag cloudformation resources
    *
    * Access Level: Tagging
    */
@@ -679,7 +679,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Updates a stack as specified in the template.
+   * Grants permission to update a stack as specified in the template
    *
    * Access Level: Write
    *
@@ -699,7 +699,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Updates the parameter values for stack instances for the specified accounts, within the specified regions.
+   * Grants permission to update the parameter values for stack instances for the specified accounts, within the specified regions
    *
    * Access Level: Write
    *
@@ -711,7 +711,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Updates a stackset as specified in the template.
+   * Grants permission to update a stackset as specified in the template
    *
    * Access Level: Write
    *
@@ -729,7 +729,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Updates termination protection for the specified stack.
+   * Grants permission to update termination protection for the specified stack
    *
    * Access Level: Write
    *
@@ -741,7 +741,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Validates a specified template.
+   * Grants permission to validate a specified template
    *
    * Access Level: Read
    *
@@ -823,6 +823,27 @@ export class Cloudformation extends PolicyStatement {
   };
 
   /**
+   * Adds a resource of type changeset to the statement
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#w2ab1b5c15c11
+   *
+   * @param changeSetName - Identifier for the changeSetName.
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onChangeset(changeSetName: string, id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:changeSet/${ChangeSetName}/${Id}';
+    arn = arn.replace('${ChangeSetName}', changeSetName);
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type stack to the statement
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#w2ab1b5c15b9
@@ -871,28 +892,9 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type changeset to the statement
+   * Filters actions based on an AWS CloudFormation change set name. Use to control which change sets IAM users can execute or delete
    *
-   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#w2ab1b5c15c11
-   *
-   * @param changeSetName - Identifier for the changeSetName.
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   */
-  public onChangeset(changeSetName: string, id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:changeSet/${ChangeSetName}/${Id}';
-    arn = arn.replace('${ChangeSetName}', changeSetName);
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
-   * An AWS CloudFormation change set name. Use to control which change sets IAM users can execute or delete.
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
    *
    * Applies to actions:
    * - .toCreateChangeSet()
@@ -908,7 +910,9 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * The template resource types, such as `AWS::EC2::Instance`. Use to control which resource types IAM users can work with when they want to import a resource into a stack.
+   * Filters actions based on the template resource types, such as AWS::EC2::Instance. Use to control which resource types IAM users can work with when they want to import a resource into a stack
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
    *
    * Applies to actions:
    * - .toCreateChangeSet()
@@ -921,7 +925,9 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * The template resource types, such as `AWS::EC2::Instance`. Use to control which resource types IAM users can work with when they create or update a stack.
+   * Filters actions based on the template resource types, such as AWS::EC2::Instance. Use to control which resource types IAM users can work with when they create or update a stack
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
    *
    * Applies to actions:
    * - .toCreateChangeSet()
@@ -936,7 +942,9 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * The ARN of an IAM service role. Use to control which service role IAM users can use to work with stacks or change sets.
+   * Filters actions based on the ARN of an IAM service role. Use to control which service role IAM users can use to work with stacks or change sets
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
    *
    * Applies to actions:
    * - .toContinueUpdateRollback()
@@ -955,7 +963,9 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * An Amazon S3 stack policy URL. Use to control which stack policies IAM users can associate with a stack during a create or update stack action.
+   * Filters actions based on an Amazon S3 stack policy URL. Use to control which stack policies IAM users can associate with a stack during a create or update stack action
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
    *
    * Applies to actions:
    * - .toCreateChangeSet()
@@ -971,7 +981,9 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * An Amazon S3 template URL. Use to control which templates IAM users can use when they create or update stacks.
+   * Filters actions based on an Amazon S3 template URL. Use to control which templates IAM users can use when they create or update stacks
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
    *
    * Applies to actions:
    * - .toCreateChangeSet()

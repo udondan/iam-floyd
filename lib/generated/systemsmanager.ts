@@ -1157,6 +1157,18 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view metadata history about a specified SSM document
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocumentMetadataHistory.html
+   */
+  public toListDocumentMetadataHistory() {
+    this.to('ssm:ListDocumentMetadataHistory');
+    return this;
+  }
+
+  /**
    * Grants permission to list all versions of a specified document
    *
    * Access Level: List
@@ -1201,6 +1213,18 @@ export class Ssm extends PolicyStatement {
    */
   public toListInventoryEntries() {
     this.to('ssm:ListInventoryEntries');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about OpsItemEvents
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListOpsItemEvents.html
+   */
+  public toListOpsItemEvents() {
+    this.to('ssm:ListOpsItemEvents');
     return this;
   }
 
@@ -1454,6 +1478,18 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate the execution of an Automation Change Template document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartChangeRequestExecution.html
+   */
+  public toStartChangeRequestExecution() {
+    this.to('ssm:StartChangeRequestExecution');
+    return this;
+  }
+
+  /**
    * Grants permission to initiate a connection to a specified target for a Session Manager session
    *
    * Access Level: Write
@@ -1537,6 +1573,18 @@ export class Ssm extends PolicyStatement {
    */
   public toUpdateDocumentDefaultVersion() {
     this.to('ssm:UpdateDocumentDefaultVersion');
+    return this;
+  }
+
+  /**
+   * Grants permission to update the metadata of an SSM document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocumentMetadata.html
+   */
+  public toUpdateDocumentMetadata() {
+    this.to('ssm:UpdateDocumentMetadata');
     return this;
   }
 
@@ -1719,6 +1767,7 @@ export class Ssm extends PolicyStatement {
       "SendCommand",
       "StartAssociationsOnce",
       "StartAutomationExecution",
+      "StartChangeRequestExecution",
       "StartSession",
       "StopAutomationExecution",
       "TerminateSession",
@@ -1726,6 +1775,7 @@ export class Ssm extends PolicyStatement {
       "UpdateAssociationStatus",
       "UpdateDocument",
       "UpdateDocumentDefaultVersion",
+      "UpdateDocumentMetadata",
       "UpdateInstanceAssociationStatus",
       "UpdateInstanceInformation",
       "UpdateMaintenanceWindow",
@@ -1787,6 +1837,8 @@ export class Ssm extends PolicyStatement {
       "GetServiceSetting",
       "ListCommandInvocations",
       "ListCommands",
+      "ListDocumentMetadataHistory",
+      "ListOpsItemEvents",
       "ListTagsForResource",
       "PutConfigurePackageResult"
     ],
