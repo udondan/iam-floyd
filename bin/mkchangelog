@@ -64,7 +64,7 @@ function getUpdatedAccessLevels() {
   comm -1 -2 ${TMP_ACTIONS_NEW} ${TMP_ACTIONS_REMOVED} | sed "s/^-//g" | \
   while read -r line; do
     getDiff stats/actions | \
-    grep "$line" | perl -0777 -pe "s/-([^;]+);(.*?)\n\+[^;]+;(.*)/- \1: \3 -> \2/gm"
+    grep "$line" | perl -0777 -pe "s/-([^;]+);(.*?)\n\+[^;]+;(.*)/- \1: \2 -> \3/gm"
   done
 }
 
