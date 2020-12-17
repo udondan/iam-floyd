@@ -29,35 +29,35 @@ function getVersion() {
 }
 
 function getNewServices() {
-  getDiff stats/services | grep '^+[^+]' | sed "s/^+/- /g" | sed "s/;.*//g"
+  getDiff stats/services | grep '^+[^+]' | sed "s/^+/- /g" | sed "s/;.*//g" | sort
 }
 
 function getRemovedServices() {
-  getDiff stats/services | grep '^-[^-]' | sed "s/^-/- /g" | sed "s/;.*//g"
+  getDiff stats/services | grep '^-[^-]' | sed "s/^-/- /g" | sed "s/;.*//g" | sort
 }
 
 function getNewActions() {
-  getDiff stats/actions | grep '^+[^+]' | sed "s/^+/- /g" | sed "s/;.*//g"
+  getDiff stats/actions | grep '^+[^+]' | sed "s/^+/- /g" | sed "s/;.*//g" | sort
 }
 
 function getRemovedActions() {
-  getDiff stats/actions | grep '^-[^-]' | sed "s/^-/- /g" | sed "s/;.*//g"
+  getDiff stats/actions | grep '^-[^-]' | sed "s/^-/- /g" | sed "s/;.*//g" | sort
 }
 
 function getNewResourceTypes() {
-  getDiff stats/resources | grep '^+[^+]' | sed "s/^+/- /g"
+  getDiff stats/resources | grep '^+[^+]' | sed "s/^+/- /g" | sort
 }
 
 function getRemovedResourceTypes() {
-  getDiff stats/resources | grep '^-[^-]' | sed "s/^-/- /g"
+  getDiff stats/resources | grep '^-[^-]' | sed "s/^-/- /g" | sort
 }
 
 function getNewConditions() {
-  getDiff stats/conditions | grep '^+[^+]' | sed "s/^+/- /g"
+  getDiff stats/conditions | grep '^+[^+]' | sed "s/^+/- /g" | sort
 }
 
 function getRemovedConditions() {
-  getDiff stats/conditions | grep '^-[^-]' | sed "s/^-/- /g"
+  getDiff stats/conditions | grep '^-[^-]' | sed "s/^-/- /g" | sort
 }
 
 function getUpdatedAccessLevels() {
