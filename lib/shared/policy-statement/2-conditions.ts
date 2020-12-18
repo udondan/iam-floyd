@@ -88,6 +88,13 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
       op = operator.toString();
     }
 
+    // For boolean/number operators, IAM accepts both, booleans/numbers and
+    // their string representation. To be consistent with how the IAM console
+    // displays/generates the values, we convert them to strings.
+    if (['boolean', 'number'].includes(typeof value)) {
+      value = value.toString();
+    }
+
     if (!(op in this.conditions)) {
       this.conditions[op] = {};
     }
