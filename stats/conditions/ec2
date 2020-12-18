@@ -65,6 +65,7 @@ ec2:TagKeys
 ec2:Tenancy
 ec2:VolumeIops
 ec2:VolumeSize
+ec2:VolumeThroughput
 ec2:VolumeType
 ec2:Vpc
 ec2:VpceServiceName

@@ -28,6 +28,7 @@
         "ec2:ImportClientVpnClientCertificateRevocationList",
         "ec2:ModifyClientVpnEndpoint",
         "ec2:ModifyVpnConnection",
+        "ec2:ModifyVpnConnectionOptions",
         "ec2:ModifyVpnTunnelCertificate",
         "ec2:ModifyVpnTunnelOptions",
         "ec2:RevokeClientVpnIngress",

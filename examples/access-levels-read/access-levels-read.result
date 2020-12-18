@@ -8,6 +8,7 @@
         "ec2:DescribeVolumesModifications",
         "ec2:DescribeVpnConnections",
         "ec2:GetAssociatedEnclaveCertificateIamRoles",
+        "ec2:GetAssociatedIpv6PoolCidrs",
         "ec2:GetCapacityReservationUsage",
         "ec2:GetCoipPoolUsage",
         "ec2:GetConsoleOutput",

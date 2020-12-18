@@ -64,6 +64,7 @@ ec2:CreateManagedPrefixList;Write
 ec2:CreateNatGateway;Write
 ec2:CreateNetworkAcl;Write
 ec2:CreateNetworkAclEntry;Write
+ec2:CreateNetworkInsightsPath;Write
 ec2:CreateNetworkInterface;Write
 ec2:CreateNetworkInterfacePermission;Permissions management
 ec2:CreatePlacementGroup;Write
@@ -115,9 +116,12 @@ ec2:DeleteManagedPrefixList;Write
 ec2:DeleteNatGateway;Write
 ec2:DeleteNetworkAcl;Write
 ec2:DeleteNetworkAclEntry;Write
+ec2:DeleteNetworkInsightsAnalysis;Write
+ec2:DeleteNetworkInsightsPath;Write
 ec2:DeleteNetworkInterface;Write
 ec2:DeleteNetworkInterfacePermission;Permissions management
 ec2:DeletePlacementGroup;Write
+ec2:DeleteQueuedReservedInstances;Write
 ec2:DeleteRoute;Write
 ec2:DeleteRouteTable;Write
 ec2:DeleteSecurityGroup;Write
@@ -130,6 +134,8 @@ ec2:DeleteTrafficMirrorFilterRule;Write
 ec2:DeleteTrafficMirrorSession;Write
 ec2:DeleteTrafficMirrorTarget;Write
 ec2:DeleteTransitGateway;Write
+ec2:DeleteTransitGatewayConnect;Write
+ec2:DeleteTransitGatewayConnectPeer;Write
 ec2:DeleteTransitGatewayMulticastDomain;Write
 ec2:DeleteTransitGatewayPeeringAttachment;Write
 ec2:DeleteTransitGatewayPrefixListReference;Write
@@ -197,6 +203,7 @@ ec2:DescribeInstanceTypeOfferings;List
 ec2:DescribeInstanceTypes;List
 ec2:DescribeInstances;List
 ec2:DescribeInternetGateways;List
+ec2:DescribeIpv6Pools;List
 ec2:DescribeKeyPairs;List
 ec2:DescribeLaunchTemplateVersions;List
 ec2:DescribeLaunchTemplates;List
@@ -296,6 +303,7 @@ ec2:ExportClientVpnClientConfiguration;List
 ec2:ExportImage;Write
 ec2:ExportTransitGatewayRoutes;Write
 ec2:GetAssociatedEnclaveCertificateIamRoles;Read
+ec2:GetAssociatedIpv6PoolCidrs;Read
 ec2:GetCapacityReservationUsage;Read
 ec2:GetCoipPoolUsage;Read
 ec2:GetConsoleOutput;Read
@@ -303,6 +311,7 @@ ec2:GetConsoleScreenshot;Read
 ec2:GetDefaultCreditSpecification;Read
 ec2:GetEbsDefaultKmsKeyId;Read
 ec2:GetEbsEncryptionByDefault;Read
+ec2:GetGroupsForCapacityReservation;List
 ec2:GetHostReservationPurchasePreview;Read
 ec2:GetLaunchTemplateData;Read
 ec2:GetManagedPrefixListAssociations;Read
@@ -320,6 +329,7 @@ ec2:ImportInstance;Write
 ec2:ImportKeyPair;Write
 ec2:ImportSnapshot;Write
 ec2:ImportVolume;Write
+ec2:ModifyAvailabilityZoneGroup;Write
 ec2:ModifyCapacityReservation;Write
 ec2:ModifyClientVpnEndpoint;Write
 ec2:ModifyDefaultCreditSpecification;Write
@@ -359,6 +369,7 @@ ec2:ModifyVpcEndpointServicePermissions;Permissions management
 ec2:ModifyVpcPeeringConnectionOptions;Write
 ec2:ModifyVpcTenancy;Write
 ec2:ModifyVpnConnection;Write
+ec2:ModifyVpnConnectionOptions;Write
 ec2:ModifyVpnTunnelCertificate;Write
 ec2:ModifyVpnTunnelOptions;Write
 ec2:MonitorInstances;Write
@@ -372,6 +383,7 @@ ec2:RegisterImage;Write
 ec2:RegisterInstanceEventNotificationAttributes;Write
 ec2:RegisterTransitGatewayMulticastGroupMembers;Write
 ec2:RegisterTransitGatewayMulticastGroupSources;Write
+ec2:RejectTransitGatewayMulticastDomainAssociations;Write
 ec2:RejectTransitGatewayPeeringAttachment;Write
 ec2:RejectTransitGatewayVpcAttachment;Write
 ec2:RejectVpcEndpointConnections;Write
@@ -405,6 +417,7 @@ ec2:SearchTransitGatewayMulticastGroups;List
 ec2:SearchTransitGatewayRoutes;List
 ec2:SendDiagnosticInterrupt;Write
 ec2:StartInstances;Write
+ec2:StartNetworkInsightsAnalysis;Write
 ec2:StartVpcEndpointServicePrivateDnsVerification;Write
 ec2:StopInstances;Write
 ec2:TerminateClientVpnConnections;Write

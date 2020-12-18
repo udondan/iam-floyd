@@ -63,6 +63,7 @@ export { Firehose } from "./kinesisfirehose";
 export { Kinesisvideo } from "./kinesisvideostreams";
 export { Lex } from "./lex";
 export { Lightsail } from "./lightsail";
+export { Geo } from "./location";
 export { Lookoutvision } from "./lookoutforvision";
 export { Machinelearning } from "./machinelearning";
 export { Macie2 } from "./macie";

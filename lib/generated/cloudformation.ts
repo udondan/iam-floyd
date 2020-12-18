@@ -892,6 +892,44 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type stackset-target to the statement
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html
+   *
+   * @param stackSetTarget - Identifier for the stackSetTarget.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onStacksetTarget(stackSetTarget: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:stackset-target/${StackSetTarget}';
+    arn = arn.replace('${StackSetTarget}', stackSetTarget);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type type to the statement
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html
+   *
+   * @param type - Identifier for the type.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onType(type: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:type/resource/${Type}';
+    arn = arn.replace('${Type}', type);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Filters actions based on an AWS CloudFormation change set name. Use to control which change sets IAM users can execute or delete
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
