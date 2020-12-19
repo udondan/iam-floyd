@@ -171,8 +171,8 @@ function makeStatementCode(language, effect, service, actions, resources, condit
       break;
     case 'Python':
       code = code.replace(/\)\./g, ') \\\n\t.')
-      code = code.replace('.if(', '.if_(')
-      code = code.replace('.for(', '.for_(')
+      code = code.replace(/\.if\(/g, '.if_(')
+      code = code.replace(/\.for\(/g, '.for_(')
       break;
   }
 
