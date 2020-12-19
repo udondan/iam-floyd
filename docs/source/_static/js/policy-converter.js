@@ -137,7 +137,11 @@ function makeStatementCode(language, effect, service, actions, resources, condit
     if (action == '*') {
       code += makeMethodCall('allActions');
     } else {
-      code += makeMethodCall('to ' + action);
+      if (action.indexOf('*') > -1) {
+        code += '.to(\''+ service + ':' + action +'\')';
+      } else {
+        code += makeMethodCall('to ' + action);
+      }
     }
   }
 
