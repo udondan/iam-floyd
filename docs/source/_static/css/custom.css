@@ -78,3 +78,16 @@
 .wy-nav-content-wrap.shift {
   z-index: 1;
 }
+
+/******************************************************************************/
+
+#policyConverterOutput,
+#policyConverterInput {
+  display: block;
+  width: 100%;
+  height: 20em;
+}
+
+#policyConverterError {
+  color: red;
+}
