@@ -121,26 +121,28 @@ function splitActionsByService(actions) {
 
 function makeStatementCode(language, effect, service, actions, resources, conditions, principals) {
   let code = '';
+  let caseFunction = camelCase // default case function
   switch(language) {
     case 'JavaScript':
       code += 'new statement';
       break;
     case 'Python':
       code += 'statement';
+      caseFunction = snakeCase
       break;
   }
 
-  code += makeMethodCall(service, true);
-  code += makeMethodCall(effect);
+  code += makeMethodCall(camelCase(service, true));
+  code += makeMethodCall(camelCase(effect));
 
   for(let action of actions) {
     if (action == '*') {
-      code += makeMethodCall('allActions');
+      code += makeMethodCall(caseFunction('allActions'));
     } else {
       if (action.indexOf('*') > -1) {
         code += '.to(\''+ service + ':' + action +'\')';
       } else {
-        code += makeMethodCall('to ' + action);
+        code += makeMethodCall(caseFunction('to ' + action));
       }
     }
   }
@@ -169,6 +171,8 @@ function makeStatementCode(language, effect, service, actions, resources, condit
       break;
     case 'Python':
       code = code.replace(/\)\./g, ') \\\n\t.')
+      code = code.replace('.if(', '.if_(')
+      code = code.replace('.for(', '.for_(')
       break;
   }
 
@@ -182,6 +186,14 @@ function camelCase(input, includingFirst) {
   });
 }
 
-function makeMethodCall(method, includingFirst) {
-  return '.' + camelCase(method, includingFirst) + '()';
+function snakeCase(input) {
+  return camelCase(input).replace(/[A-Z][a-z]/g, function(match) {
+    return '_' + match.toLowerCase()
+  }).replace(/[A-Z]+/, function(match) { // same regex. we first need to replace all patterns above, before we can run this one again, to replace multiple uppercase letters such as AWS
+    return '_' + match.toLowerCase()
+  })
+}
+
+function makeMethodCall(method) {
+  return '.' + method + '()';
 }
