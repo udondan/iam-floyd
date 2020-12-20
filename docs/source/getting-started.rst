@@ -5,7 +5,7 @@ Getting Started
 .. include:: _links.rst
 
 .. NOTE::
-   Use the online `policy converter <policy-converter.html>`__ to migrate any JSON policy to Floyd code!
+   Use the online `policy converter <https://iam-floyd.readthedocs.io/en/latest/policy-converter.html>`__ to migrate any JSON policy to Floyd code!
 
 Depending on your scenario, you need to either install/import ``iam-floyd`` or ``cdk-iam-floyd``:
 
