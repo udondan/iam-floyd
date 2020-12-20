@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "elasticmapreduce:ListInstanceGroups",
+        "elasticmapreduce:ModifyInstanceGroups",
+        "cloudwatch:PutMetricAlarm",
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:DeleteAlarms"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

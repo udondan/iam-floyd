@@ -1,0 +1,74 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"databrew:*",
+				"glue:GetDatabases",
+				"glue:GetPartitions",
+				"glue:GetTable",
+				"glue:GetTables",
+				"glue:GetDataCatalogEncryptionSettings",
+				"dataexchange:ListDataSets",
+				"dataexchange:ListDataSetRevisions",
+				"dataexchange:ListRevisionAssets",
+				"dataexchange:CreateJob",
+				"dataexchange:StartJob",
+				"dataexchange:GetJob",
+				"kms:DescribeKey",
+				"kms:ListKeys",
+				"kms:ListAliases",
+				"s3:ListAllMyBuckets",
+				"s3:GetBucketCORS",
+				"s3:GetBucketLocation",
+				"s3:GetEncryptionConfiguration",
+				"sts:GetCallerIdentity",
+				"cloudtrail:LookupEvents",
+				"iam:ListRoles",
+				"iam:GetRole"
+			],
+			"Resource": [
+				"*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:ListBucket",
+				"s3:GetObject"
+			],
+			"Resource": [
+				"arn:aws:s3:::databrew-public-datasets-*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"kms:GenerateDataKey"
+			],
+			"Resource": [
+				"*"
+			],
+			"Condition": {
+				"StringLike": {
+					"kms:ViaService": "s3.*.amazonaws.com"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"iam:PassRole"
+			],
+			"Resource": "arn:aws:iam::*:role/*",
+			"Condition": {
+				"StringEquals": {
+					"iam:PassedToService": [
+						"databrew.amazonaws.com"
+					]
+				}
+			}
+		}
+	]
+}

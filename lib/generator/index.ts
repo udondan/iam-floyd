@@ -12,6 +12,8 @@ import { AccessLevelList } from '../shared/access-level';
 import { Conditions } from './condition';
 import { arnFixer, conditionFixer, fixes, serviceFixer } from './fixes';
 
+export { indexManagedPolicies } from './managed-policies';
+
 // tmp solution. the cheerio/types is currently not working
 type CheerioStatic = any;
 type CheerioElement = any;

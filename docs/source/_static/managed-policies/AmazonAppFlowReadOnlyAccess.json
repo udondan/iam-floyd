@@ -1,0 +1,18 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+            "appflow:DescribeConnectors",
+            "appflow:DescribeConnectorProfiles",
+            "appflow:DescribeFlows",
+            "appflow:DescribeFlowExecution",
+            "appflow:DescribeConnectorFields",
+            "appflow:ListConnectorFields",
+            "appflow:ListTagsForResource"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

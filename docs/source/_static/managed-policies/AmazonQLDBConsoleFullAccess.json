@@ -1,0 +1,50 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "qldb:CreateLedger",
+        "qldb:UpdateLedger",
+        "qldb:DeleteLedger",
+        "qldb:ListLedgers",
+        "qldb:DescribeLedger",
+        "qldb:ExportJournalToS3",
+        "qldb:ListJournalS3Exports",
+        "qldb:ListJournalS3ExportsForLedger",
+        "qldb:DescribeJournalS3Export",
+        "qldb:CancelJournalKinesisStream",
+        "qldb:DescribeJournalKinesisStream",
+        "qldb:ListJournalKinesisStreamsForLedger",
+        "qldb:StreamJournalToKinesis",
+        "qldb:GetBlock",
+        "qldb:GetDigest",
+        "qldb:GetRevision",
+        "qldb:GetBlock",
+        "qldb:TagResource",
+        "qldb:UntagResource",
+        "qldb:ListTagsForResource",
+        "qldb:SendCommand",
+        "qldb:ExecuteStatement",
+        "qldb:ShowCatalog",
+        "qldb:InsertSampleData"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "dbqms:*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "kinesis:ListStreams",
+        "kinesis:DescribeStream"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

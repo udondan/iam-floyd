@@ -1,0 +1,42 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "redshift:GetClusterCredentials",
+                "redshift:ListSchemas",
+                "redshift:ListTables",
+                "redshift:ListDatabases",
+                "redshift:ExecuteQuery",
+                "redshift:FetchResults",
+                "redshift:CancelQuery",
+                "redshift:DescribeClusters",
+                "redshift:DescribeQuery",
+                "redshift:DescribeTable",
+                "redshift:ViewQueriesFromConsole",
+                "redshift:DescribeSavedQueries",
+                "redshift:CreateSavedQuery",
+                "redshift:DeleteSavedQueries",
+                "redshift:ModifySavedQuery"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "DataAPIPermissions",
+            "Action": [
+                "redshift-data:ExecuteStatement",
+                "redshift-data:CancelStatement",
+                "redshift-data:ListStatements",
+                "redshift-data:GetStatementResult",
+                "redshift-data:DescribeStatement",
+                "redshift-data:ListDatabases",
+                "redshift-data:ListSchemas",
+                "redshift-data:ListTables",
+                "redshift-data:DescribeTable"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}

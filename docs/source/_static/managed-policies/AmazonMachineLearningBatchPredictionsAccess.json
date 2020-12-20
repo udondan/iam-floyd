@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "machinelearning:CreateBatchPrediction",
+        "machinelearning:DeleteBatchPrediction",
+        "machinelearning:DescribeBatchPredictions",
+        "machinelearning:GetBatchPrediction",
+        "machinelearning:UpdateBatchPrediction"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

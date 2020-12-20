@@ -1,0 +1,49 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "acm-pca:IssueCertificate"
+            ],
+            "Resource": "arn:aws:acm-pca:*:*:certificate-authority/*",
+            "Condition": {
+                "StringLike": {
+                    "acm-pca:TemplateArn": [
+                        "arn:aws:acm-pca:::template/*CACertificate*/V*"
+                    ]
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "acm-pca:IssueCertificate"
+            ],
+            "Resource": "arn:aws:acm-pca:*:*:certificate-authority/*",
+            "Condition": {
+                "StringNotLike": {
+                    "acm-pca:TemplateArn": [
+                        "arn:aws:acm-pca:::template/*CACertificate*/V*"
+                    ]
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "acm-pca:RevokeCertificate",
+                "acm-pca:GetCertificate",
+                "acm-pca:ListPermissions"
+            ],
+            "Resource": "arn:aws:acm-pca:*:*:certificate-authority/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "acm-pca:ListCertificateAuthorities"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

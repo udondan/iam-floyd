@@ -1,0 +1,68 @@
+import IAM = require('aws-sdk/clients/iam');
+import fs = require('fs');
+
+const iam = new IAM();
+
+export function indexManagedPolicies(): Promise<void> {
+  console.log('starting');
+  return new Promise(async (resolve, reject) => {
+    const policies = await getPolicies();
+    console.log(`Fetched metadata of ${policies.length} managed policies`);
+    for (let policyMetadata of policies) {
+      console.log(`Fetching policy document ${policyMetadata.PolicyName}`);
+      const document = await getPolicyDocument(
+        policyMetadata.Arn,
+        policyMetadata.DefaultVersionId
+      );
+      storePolicyDocument(policyMetadata.PolicyName, document);
+    }
+    resolve();
+  });
+}
+
+function getPolicies(marker?: string): Promise<IAM.policyListType> {
+  const results: IAM.policyListType = [];
+  const params: IAM.ListPoliciesRequest = {
+    Scope: 'AWS',
+    Marker: marker,
+    MaxItems: 100,
+  };
+  console.log('Fetching metadata of 100 policies...');
+  return new Promise((resolve, reject) => {
+    iam.listPolicies(params, async function (err, data) {
+      if (err) return reject(err);
+
+      results.push(...data.Policies);
+      if (data.IsTruncated) {
+        await getPolicies(data.Marker).then((policies) => {
+          results.push(...policies);
+        });
+      }
+      resolve(results);
+    });
+  });
+}
+
+function getPolicyDocument(arn: string, version: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    var params = {
+      PolicyArn: arn,
+      VersionId: version,
+    };
+
+    iam.getPolicyVersion(params, function (err, data) {
+      if (err) return reject(err);
+      resolve(data.PolicyVersion.Document);
+    });
+  });
+}
+
+function storePolicyDocument(name: string, document: string) {
+  const path = `${__dirname}/../../docs/source/_static/managed-policies/${name}.json`;
+  document = decodeURIComponent(document);
+  try {
+    fs.writeFileSync(path, document);
+  } catch (err) {
+    console.error(err);
+  }
+}

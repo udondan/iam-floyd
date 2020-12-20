@@ -1,0 +1,28 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "apigateway:GET",
+                "cloudfront:ListDistributions",
+                "cloudfront:ListDistributionsByWebACLId",
+                "cloudwatch:GetMetricData",
+                "cloudwatch:GetMetricStatistics",
+                "cloudwatch:ListMetrics",
+                "ec2:DescribeRegions",
+                "elasticloadbalancing:DescribeLoadBalancers",
+                "appsync:ListGraphqlApis",
+                "waf-regional:Get*",
+                "waf-regional:List*",
+                "waf:Get*",
+                "waf:List*",
+                "wafv2:Describe*",
+                "wafv2:Get*",
+                "wafv2:List*",
+                "wafv2:CheckCapacity"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"servicecatalog:GetApplication",
+				"servicecatalog:ListApplications",
+				"servicecatalog:ListAssociatedResources",
+				"servicecatalog:ListAssociatedAttributeGroups",
+				"servicecatalog:GetAttributeGroup",
+				"servicecatalog:ListAttributeGroups"
+			],
+			"Resource": "*"
+		}
+	]
+}

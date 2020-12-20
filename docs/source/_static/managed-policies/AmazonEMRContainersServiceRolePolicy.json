@@ -1,0 +1,17 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"eks:DescribeCluster",
+				"ec2:DescribeRouteTables",
+				"ec2:DescribeSubnets",
+				"ec2:DescribeSecurityGroups",
+				"elasticloadbalancing:DescribeInstanceHealth",
+				"elasticloadbalancing:DescribeLoadBalancers"
+			],
+			"Resource": "*"
+		}
+	]
+}

@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-import { createIndex, createModules, getAwsServices } from '../lib/generator';
+import { createIndex, createModules, getAwsServices, indexManagedPolicies } from '../lib/generator';
 
 getAwsServices()
   .then(createModules)
   .then(createIndex)
+  .then(indexManagedPolicies)
   .then(() => {
     console.log('ALL DONE');
   })

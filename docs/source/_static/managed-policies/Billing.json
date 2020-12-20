@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Effect": "Allow",
+    "Action": [
+      "aws-portal:*Billing",
+      "aws-portal:*Usage",
+      "aws-portal:*PaymentMethods",
+      "budgets:ViewBudget",
+      "budgets:ModifyBudget",
+      "ce:UpdatePreferences",
+      "ce:CreateReport",
+      "ce:UpdateReport",
+      "ce:DeleteReport",
+      "ce:CreateNotificationSubscription",
+      "ce:UpdateNotificationSubscription",
+      "ce:DeleteNotificationSubscription",
+      "cur:DescribeReportDefinitions",
+      "cur:PutReportDefinition",
+      "cur:ModifyReportDefinition",
+      "cur:DeleteReportDefinition",
+      "purchase-orders:*PurchaseOrders"
+    ],
+    "Resource": "*"
+  }]
+}

@@ -1,0 +1,26 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CloudTrailFullAccess",
+            "Effect": "Allow",
+            "Action": [
+                "cloudtrail:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AwsOrgsAccess",
+            "Effect": "Allow",
+            "Action": [
+                "organizations:DescribeAccount",
+                "organizations:DescribeOrganization",
+                "organizations:ListAccounts",
+                "organizations:ListAWSServiceAccessForOrganization"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}

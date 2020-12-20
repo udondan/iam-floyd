@@ -1,0 +1,165 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ssm:CancelCommand",
+                "ssm:GetCommandInvocation",
+                "ssm:ListCommandInvocations",
+                "ssm:ListCommands",
+                "ssm:SendCommand",
+                "ssm:GetAutomationExecution",
+                "ssm:GetParameters",
+                "ssm:StartAutomationExecution",
+                "ssm:ListTagsForResource"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstanceAttribute",
+                "ec2:DescribeInstanceStatus",
+                "ec2:DescribeInstances"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:InvokeFunction"
+            ],
+            "Resource": [
+                "arn:aws:lambda:*:*:function:SSM*",
+                "arn:aws:lambda:*:*:function:*:SSM*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "states:DescribeExecution",
+                "states:StartExecution"
+            ],
+            "Resource": [
+                "arn:aws:states:*:*:stateMachine:SSM*",
+                "arn:aws:states:*:*:execution:SSM*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "resource-groups:ListGroups",
+                "resource-groups:ListGroupResources",
+		"resource-groups:GetGroupQuery"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:DescribeStacks",
+                "cloudformation:ListStackResources"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "tag:GetResources"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "config:SelectResourceConfig"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "compute-optimizer:GetEC2InstanceRecommendations"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "support:DescribeTrustedAdvisorChecks",
+                "support:DescribeTrustedAdvisorCheckSummaries",
+                "support:DescribeTrustedAdvisorCheckResult",
+                "support:DescribeCases"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "config:DescribeComplianceByConfigRule",
+                "config:DescribeComplianceByResource",
+                "config:DescribeRemediationConfigurations"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "iam:PassedToService": [
+                        "ssm.amazonaws.com"
+                    ]
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": "organizations:DescribeOrganization",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "cloudformation:ListStackSets",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:ListStackInstances",
+                "cloudformation:DescribeStackSetOperation",
+                "cloudformation:DeleteStackSet"
+            ],
+            "Resource": "arn:aws:cloudformation:*:*:stackset/AWS-QuickSetup-SSM*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "cloudformation:DeleteStackInstances",
+            "Resource": [
+                "arn:aws:cloudformation:*:*:stackset/AWS-QuickSetup-SSM*:*",
+                "arn:aws:cloudformation:*:*:stackset-target/AWS-QuickSetup-SSM*:*",
+                "arn:aws:cloudformation:*:*:type/resource/*"
+            ]
+        }
+    ]
+}
