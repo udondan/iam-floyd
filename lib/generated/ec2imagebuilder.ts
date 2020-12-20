@@ -47,6 +47,25 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Create a new Container Recipe
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - imagebuilder:GetComponent
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateContainerRecipe.html
+   */
+  public toCreateContainerRecipe() {
+    this.to('imagebuilder:CreateContainerRecipe');
+    return this;
+  }
+
+  /**
    * Create a new distribution configuration
    *
    * Access Level: Write
@@ -154,6 +173,18 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a container recipe
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteContainerRecipe.html
+   */
+  public toDeleteContainerRecipe() {
+    this.to('imagebuilder:DeleteContainerRecipe');
+    return this;
+  }
+
+  /**
    * Delete a distribution configuration
    *
    * Access Level: Write
@@ -234,6 +265,30 @@ export class Imagebuilder extends PolicyStatement {
    */
   public toGetComponentPolicy() {
     this.to('imagebuilder:GetComponentPolicy');
+    return this;
+  }
+
+  /**
+   * View details about a container recipe
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetContainerRecipe.html
+   */
+  public toGetContainerRecipe() {
+    this.to('imagebuilder:GetContainerRecipe');
+    return this;
+  }
+
+  /**
+   * View the resource policy associated with a container recipe
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetContainerRecipePolicy.html
+   */
+  public toGetContainerRecipePolicy() {
+    this.to('imagebuilder:GetContainerRecipePolicy');
     return this;
   }
 
@@ -349,6 +404,18 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * List the container recipes owned by or shared with your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListContainerRecipes.html
+   */
+  public toListContainerRecipes() {
+    this.to('imagebuilder:ListContainerRecipes');
+    return this;
+  }
+
+  /**
    * List the distribution configurations in your account
    *
    * Access Level: List
@@ -456,6 +523,18 @@ export class Imagebuilder extends PolicyStatement {
    */
   public toPutComponentPolicy() {
     this.to('imagebuilder:PutComponentPolicy');
+    return this;
+  }
+
+  /**
+   * Set the resource policy associated with a container recipe
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutContainerRecipePolicy.html
+   */
+  public toPutContainerRecipePolicy() {
+    this.to('imagebuilder:PutContainerRecipePolicy');
     return this;
   }
 
@@ -579,12 +658,14 @@ export class Imagebuilder extends PolicyStatement {
     "Write": [
       "CancelImageCreation",
       "CreateComponent",
+      "CreateContainerRecipe",
       "CreateDistributionConfiguration",
       "CreateImage",
       "CreateImagePipeline",
       "CreateImageRecipe",
       "CreateInfrastructureConfiguration",
       "DeleteComponent",
+      "DeleteContainerRecipe",
       "DeleteDistributionConfiguration",
       "DeleteImage",
       "DeleteImagePipeline",
@@ -597,6 +678,7 @@ export class Imagebuilder extends PolicyStatement {
     ],
     "Read": [
       "GetComponent",
+      "GetContainerRecipe",
       "GetDistributionConfiguration",
       "GetImage",
       "GetImagePipeline",
@@ -606,15 +688,18 @@ export class Imagebuilder extends PolicyStatement {
     ],
     "Permissions management": [
       "GetComponentPolicy",
+      "GetContainerRecipePolicy",
       "GetImagePolicy",
       "GetImageRecipePolicy",
       "PutComponentPolicy",
+      "PutContainerRecipePolicy",
       "PutImagePolicy",
       "PutImageRecipePolicy"
     ],
     "List": [
       "ListComponentBuildVersions",
       "ListComponents",
+      "ListContainerRecipes",
       "ListDistributionConfigurations",
       "ListImageBuildVersions",
       "ListImagePipelineImages",
@@ -769,6 +854,30 @@ export class Imagebuilder extends PolicyStatement {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image-recipe/${ImageRecipeName}/${ImageRecipeVersion}';
     arn = arn.replace('${ImageRecipeName}', imageRecipeName);
     arn = arn.replace('${ImageRecipeVersion}', imageRecipeVersion);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type containerRecipe to the statement
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ContainerRecipe.html
+   *
+   * @param containerRecipeName - Identifier for the containerRecipeName.
+   * @param containerRecipeVersion - Identifier for the containerRecipeVersion.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onContainerRecipe(containerRecipeName: string, containerRecipeVersion: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:container-recipe/${ContainerRecipeName}/${ContainerRecipeVersion}';
+    arn = arn.replace('${ContainerRecipeName}', containerRecipeName);
+    arn = arn.replace('${ContainerRecipeVersion}', containerRecipeVersion);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

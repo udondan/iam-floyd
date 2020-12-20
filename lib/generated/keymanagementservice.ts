@@ -19,7 +19,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to cancel the scheduled deletion of a customer master key.
+   * Controls permission to cancel the scheduled deletion of a customer master key
    *
    * Access Level: Write
    *
@@ -35,7 +35,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to connect or reconnect a custom key store to its associated AWS CloudHSM cluster.
+   * Controls permission to connect or reconnect a custom key store to its associated AWS CloudHSM cluster
    *
    * Access Level: Write
    *
@@ -47,7 +47,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to create an alias for a customer master key (CMK). Aliases are optional friendly names that you can associate with customer master keys.
+   * Controls permission to create an alias for a customer master key (CMK). Aliases are optional friendly names that you can associate with customer master keys
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to create a custom key store that is associated with an AWS CloudHSM cluster that you own and manage.
+   * Controls permission to create a custom key store that is associated with an AWS CloudHSM cluster that you own and manage
    *
    * Access Level: Write
    *
@@ -78,7 +78,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to add a grant to a customer master key. You can use grants to add permissions without changing the key policy or IAM policy.
+   * Controls permission to add a grant to a customer master key. You can use grants to add permissions without changing the key policy or IAM policy
    *
    * Access Level: Permissions management
    *
@@ -96,7 +96,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to create a customer master key that can be used to protect data keys and other sensitive information.
+   * Controls permission to create a customer master key that can be used to protect data keys and other sensitive information
    *
    * Access Level: Write
    *
@@ -114,7 +114,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to decrypt ciphertext that was encrypted under a customer master key.
+   * Controls permission to decrypt ciphertext that was encrypted under a customer master key
    *
    * Access Level: Write
    *
@@ -132,7 +132,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to delete an alias. Aliases are optional friendly names that you can associate with customer master keys.
+   * Controls permission to delete an alias. Aliases are optional friendly names that you can associate with customer master keys
    *
    * Access Level: Write
    *
@@ -148,7 +148,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to delete a custom key store.
+   * Controls permission to delete a custom key store
    *
    * Access Level: Write
    *
@@ -160,7 +160,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to delete cryptographic material that you imported into a customer master key. This action makes the key unusable.
+   * Controls permission to delete cryptographic material that you imported into a customer master key. This action makes the key unusable
    *
    * Access Level: Write
    *
@@ -176,7 +176,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view detailed information about custom key stores in the account and region.
+   * Controls permission to view detailed information about custom key stores in the account and region
    *
    * Access Level: Read
    *
@@ -188,7 +188,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view detailed information about a customer master key.
+   * Controls permission to view detailed information about a customer master key
    *
    * Access Level: Read
    *
@@ -204,7 +204,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to disable a customer master key, which prevents it from being used in cryptographic operations.
+   * Controls permission to disable a customer master key, which prevents it from being used in cryptographic operations
    *
    * Access Level: Write
    *
@@ -220,7 +220,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to disable automatic rotation of a customer managed customer master key.
+   * Controls permission to disable automatic rotation of a customer managed customer master key
    *
    * Access Level: Write
    *
@@ -236,7 +236,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to disconnect the custom key store from its associated AWS CloudHSM cluster.
+   * Controls permission to disconnect the custom key store from its associated AWS CloudHSM cluster
    *
    * Access Level: Write
    *
@@ -248,7 +248,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to change the state of a customer master key (CMK) to enabled. This allows the CMK to be used in cryptographic operations.
+   * Controls permission to change the state of a customer master key (CMK) to enabled. This allows the CMK to be used in cryptographic operations
    *
    * Access Level: Write
    *
@@ -264,7 +264,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to enable automatic rotation of the cryptographic material in a customer master key.
+   * Controls permission to enable automatic rotation of the cryptographic material in a customer master key
    *
    * Access Level: Write
    *
@@ -280,7 +280,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to use the specified customer master key to encrypt data and data keys.
+   * Controls permission to use the specified customer master key to encrypt data and data keys
    *
    * Access Level: Write
    *
@@ -298,7 +298,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to use the customer master key to generate data keys. You can use the data keys to encrypt data outside of AWS KMS.
+   * Controls permission to use the customer master key to generate data keys. You can use the data keys to encrypt data outside of AWS KMS
    *
    * Access Level: Write
    *
@@ -316,7 +316,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to use the customer master key to generate data key pairs.
+   * Controls permission to use the customer master key to generate data key pairs
    *
    * Access Level: Write
    *
@@ -335,7 +335,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to use the customer master key to generate data key pairs. Unlike the GenerateDataKeyPair operation, this operation returns an encrypted private key without a plaintext copy.
+   * Controls permission to use the customer master key to generate data key pairs. Unlike the GenerateDataKeyPair operation, this operation returns an encrypted private key without a plaintext copy
    *
    * Access Level: Write
    *
@@ -354,7 +354,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to use the customer master key to generate a data key. Unlike the GenerateDataKey operation, this operation returns an encrypted data key without a plaintext version of the data key.
+   * Controls permission to use the customer master key to generate a data key. Unlike the GenerateDataKey operation, this operation returns an encrypted data key without a plaintext version of the data key
    *
    * Access Level: Write
    *
@@ -372,7 +372,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to get a cryptographically secure random byte string from AWS KMS.
+   * Controls permission to get a cryptographically secure random byte string from AWS KMS
    *
    * Access Level: Write
    *
@@ -384,7 +384,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view the key policy for the specified customer master key.
+   * Controls permission to view the key policy for the specified customer master key
    *
    * Access Level: Read
    *
@@ -400,7 +400,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to determine whether automatic key rotation is enabled on the customer master key.
+   * Controls permission to determine whether automatic key rotation is enabled on the customer master key
    *
    * Access Level: Read
    *
@@ -416,7 +416,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to get data that is required to import cryptographic material into a customer managed key, including a public key and import token.
+   * Controls permission to get data that is required to import cryptographic material into a customer managed key, including a public key and import token
    *
    * Access Level: Read
    *
@@ -434,7 +434,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to download the public key of an asymmetric customer master key.
+   * Controls permission to download the public key of an asymmetric customer master key
    *
    * Access Level: Read
    *
@@ -450,7 +450,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to import cryptographic material into a customer master key.
+   * Controls permission to import cryptographic material into a customer master key
    *
    * Access Level: Write
    *
@@ -468,7 +468,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view the aliases that are defined in the account. Aliases are optional friendly names that you can associate with customer master keys.
+   * Controls permission to view the aliases that are defined in the account. Aliases are optional friendly names that you can associate with customer master keys
    *
    * Access Level: List
    *
@@ -480,7 +480,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view all grants for a customer master key.
+   * Controls permission to view all grants for a customer master key
    *
    * Access Level: List
    *
@@ -497,7 +497,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view the names of key policies for a customer master key.
+   * Controls permission to view the names of key policies for a customer master key
    *
    * Access Level: List
    *
@@ -513,7 +513,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view the key ID and Amazon Resource Name (ARN) of all customer master keys in the account.
+   * Controls permission to view the key ID and Amazon Resource Name (ARN) of all customer master keys in the account
    *
    * Access Level: List
    *
@@ -525,9 +525,9 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view all tags that are attached to a customer master key.
+   * Controls permission to view all tags that are attached to a customer master key
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifCallerAccount()
@@ -541,7 +541,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view grants in which the specified principal is the retiring principal. Other principals might be able to retire the grant and this principal might be able to retire other grants.
+   * Controls permission to view grants in which the specified principal is the retiring principal. Other principals might be able to retire the grant and this principal might be able to retire other grants
    *
    * Access Level: List
    *
@@ -553,7 +553,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to replace the key policy for the specified customer master key.
+   * Controls permission to replace the key policy for the specified customer master key
    *
    * Access Level: Permissions management
    *
@@ -570,7 +570,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to decrypt data as part of the process that decrypts and reencrypts the data within AWS KMS.
+   * Controls permission to decrypt data as part of the process that decrypts and reencrypts the data within AWS KMS
    *
    * Access Level: Write
    *
@@ -589,7 +589,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to encrypt data as part of the process that decrypts and reencrypts the data within AWS KMS.
+   * Controls permission to encrypt data as part of the process that decrypts and reencrypts the data within AWS KMS
    *
    * Access Level: Write
    *
@@ -608,7 +608,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to retire a grant. The RetireGrant operation is typically called by the grant user after they complete the tasks that the grant allowed them to perform.
+   * Controls permission to retire a grant. The RetireGrant operation is typically called by the grant user after they complete the tasks that the grant allowed them to perform
    *
    * Access Level: Permissions management
    *
@@ -620,7 +620,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to revoke a grant, which denies permission for all operations that depend on the grant.
+   * Controls permission to revoke a grant, which denies permission for all operations that depend on the grant
    *
    * Access Level: Permissions management
    *
@@ -637,7 +637,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to schedule deletion of a customer master key.
+   * Controls permission to schedule deletion of a customer master key
    *
    * Access Level: Write
    *
@@ -653,7 +653,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to produce a digital signature for a message.
+   * Controls permission to produce a digital signature for a message
    *
    * Access Level: Write
    *
@@ -671,7 +671,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to create or update tags that are attached to a customer master key.
+   * Controls permission to create or update tags that are attached to a customer master key
    *
    * Access Level: Tagging
    *
@@ -687,7 +687,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to delete tags that are attached to a customer master key.
+   * Controls permission to delete tags that are attached to a customer master key
    *
    * Access Level: Tagging
    *
@@ -703,7 +703,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to associate an alias with a different customer master key. An alias is an optional friendly name that you can associate with a customer master key.
+   * Controls permission to associate an alias with a different customer master key. An alias is an optional friendly name that you can associate with a customer master key
    *
    * Access Level: Write
    *
@@ -719,7 +719,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to change the properties of a custom key store.
+   * Controls permission to change the properties of a custom key store
    *
    * Access Level: Write
    *
@@ -731,7 +731,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to delete or change the description of a customer master key.
+   * Controls permission to delete or change the description of a customer master key
    *
    * Access Level: Write
    *
@@ -747,7 +747,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to use the specified customer master key to verify digital signatures.
+   * Controls permission to use the specified customer master key to verify digital signatures
    *
    * Access Level: Write
    *
@@ -808,14 +808,14 @@ export class Kms extends PolicyStatement {
       "GetKeyPolicy",
       "GetKeyRotationStatus",
       "GetParametersForImport",
-      "GetPublicKey",
-      "ListResourceTags"
+      "GetPublicKey"
     ],
     "List": [
       "ListAliases",
       "ListGrants",
       "ListKeyPolicies",
       "ListKeys",
+      "ListResourceTags",
       "ListRetirableGrants"
     ],
     "Tagging": [
@@ -863,7 +863,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the CreateKey and PutKeyPolicy operations based on the value of the BypassPolicyLockoutSafetyCheck parameter in the request.
+   * Filters access to the CreateKey and PutKeyPolicy operations based on the value of the BypassPolicyLockoutSafetyCheck parameter in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-bypass-policy-lockout-safety-check
    *
@@ -878,7 +878,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to specified AWS KMS operations based on the AWS account ID of the caller. You can use this condition key to allow or deny access to all IAM users and roles in an AWS account in a single policy statement.
+   * Filters access to specified AWS KMS operations based on the AWS account ID of the caller. You can use this condition key to allow or deny access to all IAM users and roles in an AWS account in a single policy statement
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-caller-account
    *
@@ -927,7 +927,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to an API operation based on the CustomerMasterKeySpec property of the CMK that is created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource.
+   * Filters access to an API operation based on the CustomerMasterKeySpec property of the CMK that is created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-customer-master-key-spec
    *
@@ -942,7 +942,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to an API operation based on the KeyUsage property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource.
+   * Filters access to an API operation based on the KeyUsage property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-customer-master-key-usage
    *
@@ -957,7 +957,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to GenerateDataKeyPair and GenerateDataKeyPairWithoutPlaintext operations based on the value of the DataKeyPairSpec parameter in the request.
+   * Filters access to GenerateDataKeyPair and GenerateDataKeyPairWithoutPlaintext operations based on the value of the DataKeyPairSpec parameter in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-data-key-pair-spec
    *
@@ -973,7 +973,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to encryption operations based on the value of the encryption algorithm in the request.
+   * Filters access to encryption operations based on the value of the encryption algorithm in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm
    *
@@ -995,7 +995,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access based on the presence of specified keys in the encryption context. The encryption context is an optional element in a cryptographic operation.
+   * Filters access based on the presence of specified keys in the encryption context. The encryption context is an optional element in a cryptographic operation
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context-keys
    *
@@ -1017,7 +1017,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the ImportKeyMaterial operation based on the value of the ExpirationModel parameter in the request.
+   * Filters access to the ImportKeyMaterial operation based on the value of the ExpirationModel parameter in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-expiration-model
    *
@@ -1032,7 +1032,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the CreateGrant operation based on the grant constraint in the request.
+   * Filters access to the CreateGrant operation based on the grant constraint in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-constraint-type
    *
@@ -1047,7 +1047,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the CreateGrant operation when the request comes from a specified AWS service.
+   * Filters access to the CreateGrant operation when the request comes from a specified AWS service
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-is-for-aws-resource
    *
@@ -1063,7 +1063,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the CreateGrant operation based on the operations in the grant.
+   * Filters access to the CreateGrant operation based on the operations in the grant
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-operations
    *
@@ -1075,7 +1075,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the CreateGrant operation based on the grantee principal in the grant.
+   * Filters access to the CreateGrant operation based on the grantee principal in the grant
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grantee-principal
    *
@@ -1087,7 +1087,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to an API operation based on the Origin property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource.
+   * Filters access to an API operation based on the Origin property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-origin
    *
@@ -1102,7 +1102,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the Sign and Verify operations based on the value of the MessageType parameter in the request.
+   * Filters access to the Sign and Verify operations based on the value of the MessageType parameter in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-message-type
    *
@@ -1118,7 +1118,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the ReEncrypt operation when it uses the same customer master key that was used for the Encrypt operation.
+   * Filters access to the ReEncrypt operation when it uses the same customer master key that was used for the Encrypt operation
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-reencrypt-on-same-key
    *
@@ -1133,7 +1133,31 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the CreateGrant operation based on the retiring principal in the grant.
+   * Filters access to cryptographic operations, DescribeKey, and GetPublicKey based on the alias in the request
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-request-alias
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestAlias(value: string | string[], operator?: Operator | string) {
+    return this.if(`kms:RequestAlias`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access to specified AWS KMS operations based on aliases associated with the customer master key
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-resource-aliases
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceAliases(value: string | string[], operator?: Operator | string) {
+    return this.if(`kms:ResourceAliases`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access to the CreateGrant operation based on the retiring principal in the grant
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-retiring-principal
    *
@@ -1145,7 +1169,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the Sign and Verify operations based on the signing algorithm in the request.
+   * Filters access to the Sign and Verify operations based on the signing algorithm in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm
    *
@@ -1161,7 +1185,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the ImportKeyMaterial operation based on the value of the ValidTo parameter in the request. You can use this condition key to allow users to import key material only when it expires by the specified date.
+   * Filters access to the ImportKeyMaterial operation based on the value of the ValidTo parameter in the request. You can use this condition key to allow users to import key material only when it expires by the specified date
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-valid-to
    *
@@ -1176,7 +1200,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access when a request made on the principal's behalf comes from a specified AWS service.
+   * Filters access when a request made on the principal's behalf comes from a specified AWS service
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-via-service
    *
@@ -1225,7 +1249,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the GetParametersForImport operation based on the value of the WrappingAlgorithm parameter in the request.
+   * Filters access to the GetParametersForImport operation based on the value of the WrappingAlgorithm parameter in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-algorithm
    *
@@ -1240,7 +1264,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the GetParametersForImport operation based on the value of the WrappingKeySpec parameter in the request.
+   * Filters access to the GetParametersForImport operation based on the value of the WrappingKeySpec parameter in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-key-spec
    *

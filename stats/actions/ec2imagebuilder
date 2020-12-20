@@ -1,11 +1,13 @@
 imagebuilder:CancelImageCreation;Write
 imagebuilder:CreateComponent;Write
+imagebuilder:CreateContainerRecipe;Write
 imagebuilder:CreateDistributionConfiguration;Write
 imagebuilder:CreateImage;Write
 imagebuilder:CreateImagePipeline;Write
 imagebuilder:CreateImageRecipe;Write
 imagebuilder:CreateInfrastructureConfiguration;Write
 imagebuilder:DeleteComponent;Write
+imagebuilder:DeleteContainerRecipe;Write
 imagebuilder:DeleteDistributionConfiguration;Write
 imagebuilder:DeleteImage;Write
 imagebuilder:DeleteImagePipeline;Write
@@ -13,6 +15,8 @@ imagebuilder:DeleteImageRecipe;Write
 imagebuilder:DeleteInfrastructureConfiguration;Write
 imagebuilder:GetComponent;Read
 imagebuilder:GetComponentPolicy;Permissions management
+imagebuilder:GetContainerRecipe;Read
+imagebuilder:GetContainerRecipePolicy;Permissions management
 imagebuilder:GetDistributionConfiguration;Read
 imagebuilder:GetImage;Read
 imagebuilder:GetImagePipeline;Read
@@ -22,6 +26,7 @@ imagebuilder:GetImageRecipePolicy;Permissions management
 imagebuilder:GetInfrastructureConfiguration;Read
 imagebuilder:ListComponentBuildVersions;List
 imagebuilder:ListComponents;List
+imagebuilder:ListContainerRecipes;List
 imagebuilder:ListDistributionConfigurations;List
 imagebuilder:ListImageBuildVersions;List
 imagebuilder:ListImagePipelineImages;List
@@ -31,6 +36,7 @@ imagebuilder:ListImages;List
 imagebuilder:ListInfrastructureConfigurations;List
 imagebuilder:ListTagsForResource;Read
 imagebuilder:PutComponentPolicy;Permissions management
+imagebuilder:PutContainerRecipePolicy;Permissions management
 imagebuilder:PutImagePolicy;Permissions management
 imagebuilder:PutImageRecipePolicy;Permissions management
 imagebuilder:StartImagePipelineExecution;Write
