@@ -6,9 +6,11 @@ const iam = new IAM();
 export function indexManagedPolicies(): Promise<void> {
   console.log('starting');
   return new Promise(async (resolve, reject) => {
+    const policyNames = [];
     const policies = await getPolicies();
     console.log(`Fetched metadata of ${policies.length} managed policies`);
     for (let policyMetadata of policies) {
+      policyNames.push(policyMetadata.PolicyName);
       console.log(`Fetching policy document ${policyMetadata.PolicyName}`);
       const document = await getPolicyDocument(
         policyMetadata.Arn,
@@ -16,6 +18,7 @@ export function indexManagedPolicies(): Promise<void> {
       );
       storePolicyDocument(policyMetadata.PolicyName, document);
     }
+    storePolicyIndex(policyNames);
     resolve();
   });
 }
@@ -62,6 +65,15 @@ function storePolicyDocument(name: string, document: string) {
   document = decodeURIComponent(document);
   try {
     fs.writeFileSync(path, document);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+function storePolicyIndex(names: string[]) {
+  const path = `${__dirname}/../../docs/source/_static/managed-policies/index.json`;
+  try {
+    fs.writeFileSync(path, JSON.stringify(names));
   } catch (err) {
     console.error(err);
   }
