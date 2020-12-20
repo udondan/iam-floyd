@@ -174,11 +174,18 @@ function makeStatementCode(
     for (const [conditionKey, conditionValue] of Object.entries(
       conditionItems
     )) {
+      let value = conditionValue;
+      if (typeof conditionValue !== 'string') {
+        let newConditionValue = "['";
+        newConditionValue += conditionValue.join("', '");
+        newConditionValue += "']";
+        value = newConditionValue;
+      }
       code +=
         ".if('" +
         conditionKey +
         "', '" +
-        conditionValue +
+        value +
         "', '" +
         conditionOperator +
         "')";
