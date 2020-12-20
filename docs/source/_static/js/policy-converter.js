@@ -223,12 +223,14 @@ function makeStatementCode(
 }
 
 function camelCase(input, includingFirst) {
-  return input.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
-    if (+match === 0) return '';
-    return index === 0 && !includingFirst
-      ? match.toLowerCase()
-      : match.toUpperCase();
-  });
+  return input
+    .replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
+      if (+match === 0) return '';
+      return index === 0 && !includingFirst
+        ? match.toLowerCase()
+        : match.toUpperCase();
+    })
+    .replace('-', '');
 }
 
 function snakeCase(input) {
