@@ -42,9 +42,14 @@ function convert(convertTarget, data) {
     const resources = getResources(statement);
     const conditions = getConditions(statement);
     const principals = getPrincipals(statement);
-    // @TODO: notAction, notResource, notPrincipal
 
-    const serviceActions = splitActionsByService(actions);
+    const options = {
+      NotAction: actions[1],
+      NotPrincipal: principals[1],
+      NotResource: resources[1],
+    };
+
+    const serviceActions = splitActionsByService(actions[0]);
 
     for (let service in serviceActions) {
       const statementCode = makeStatementCode(
@@ -52,9 +57,10 @@ function convert(convertTarget, data) {
         effect,
         service,
         serviceActions[service],
-        resources,
+        resources[0],
         conditions,
-        principals
+        principals[0],
+        options
       );
       statements.push(statementCode);
     }
@@ -71,28 +77,57 @@ function getEffect(statement) {
   return statement.Effect;
 }
 
+function getResourceKey(statement, searchKey, required = false) {
+  let key = '';
+
+  if (statement.hasOwnProperty(searchKey)) {
+    key = searchKey;
+  } else if (statement.hasOwnProperty('Not' + searchKey)) {
+    key = 'Not' + searchKey;
+  }
+
+  if (!key.length && required) {
+    setError('Policy has no element ' + searchKey);
+    return false;
+  }
+
+  return key;
+}
+
+function ensureList(input) {
+  if (typeof input === 'string') {
+    return [input];
+  }
+  return input;
+}
+
 function getActions(statement) {
-  if (!statement.hasOwnProperty('Action')) {
-    return [];
+  const key = getResourceKey(statement, 'Action', true);
+  if (!key) {
+    return [[], false];
   }
 
-  if (typeof statement.Action === 'string') {
-    return [statement.Action];
-  }
-
-  return statement.Action;
+  const actions = ensureList(statement[key]);
+  return [actions, key == 'NotAction'];
 }
 
 function getResources(statement) {
-  if (!statement.hasOwnProperty('Resource')) {
-    return [];
+  const key = getResourceKey(statement, 'Resource');
+  if (!key) {
+    return [[], false];
   }
 
-  if (typeof statement.Resource === 'string') {
-    return [statement.Resource];
+  const resources = ensureList(statement[key]);
+  return [resources, key == 'NotResource'];
+}
+
+function getPrincipals(statement) {
+  const key = getResourceKey(statement, 'Principal');
+  if (!key) {
+    return [{}, false];
   }
 
-  return statement.Resource;
+  return [statement[key], key == 'NotPrincipal'];
 }
 
 function getConditions(statement) {
@@ -101,14 +136,6 @@ function getConditions(statement) {
   }
 
   return statement.Condition;
-}
-
-function getPrincipals(statement) {
-  if (!statement.hasOwnProperty('Principal')) {
-    return {};
-  }
-
-  return statement.Principal;
 }
 
 function splitActionsByService(actions) {
@@ -143,7 +170,8 @@ function makeStatementCode(
   actions,
   resources,
   conditions,
-  principals
+  principals,
+  options
 ) {
   let code = '';
   let caseFunction = camelCase; // default case function
@@ -159,6 +187,16 @@ function makeStatementCode(
 
   code += makeMethodCall(camelCase(service, true));
   code += makeMethodCall(camelCase(effect));
+
+  if (options.NotAction) {
+    code += makeMethodCall(caseFunction('notActions'));
+  }
+  if (options.NotPrincipal) {
+    code += makeMethodCall(caseFunction('notPrincipals'));
+  }
+  if (options.NotResource) {
+    code += makeMethodCall(caseFunction('notResources'));
+  }
 
   for (let action of actions) {
     if (action == '*') {
