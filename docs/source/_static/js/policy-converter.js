@@ -1,6 +1,7 @@
 $(function () {
   populateManagedPolicies();
   $('#policyConverterImport').click(loadManagedPolicy);
+  $('#managedPolicies').change(loadManagedPolicy);
   $('.convertButton').click(function () {
     setError('');
     let input = $('#policyConverterInput').val();
