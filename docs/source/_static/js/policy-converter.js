@@ -1,6 +1,7 @@
 var preferredLanguage = false;
 
 $(function () {
+  activateNavItem();
   populateManagedPolicies();
   $('#policyConverterImport').click(loadManagedPolicy);
   $('#managedPolicies').change(loadManagedPolicy);
@@ -267,4 +268,11 @@ function loadManagedPolicy() {
       }
     },
   });
+}
+
+function activateNavItem() {
+  $('div[role="navigation"] a:contains("Policy Converter")')
+    .addClass('current')
+    .parent()
+    .addClass('current');
 }
