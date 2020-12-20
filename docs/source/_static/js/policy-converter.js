@@ -1,11 +1,12 @@
-$(function() {
-  $('.convertButton').click(function() {
-    setError('')
+$(function () {
+  populateManagedPolicies();
+  $('#policyConverterImport').click(loadManagedPolicy);
+  $('.convertButton').click(function () {
+    setError('');
     let input = $('#policyConverterInput').val();
     try {
       var parsed = JSON.parse(input);
-    }
-    catch (e) {
+    } catch (e) {
       setError('Invalid input policy');
       return;
     }
@@ -13,21 +14,19 @@ $(function() {
   });
 });
 
-
 function setError(value) {
   $('#policyConverterError').html(value);
 }
 
 function convert(convertTarget, data) {
-
   if (!data.hasOwnProperty('Statement')) {
     setError('Policy has no statements');
     return;
   }
 
-  const statements = []
+  const statements = [];
 
-  for(let statement of data.Statement) {
+  for (let statement of data.Statement) {
     const effect = getEffect(statement);
     const actions = getActions(statement);
     const resources = getResources(statement);
@@ -35,13 +34,21 @@ function convert(convertTarget, data) {
     const principals = getPrincipals(statement);
     // @TODO: notAction, notResource, notPrincipal
 
-    const serviceActions = splitActionsByService(actions)
+    const serviceActions = splitActionsByService(actions);
 
     for (let service in serviceActions) {
-      const statementCode = makeStatementCode(convertTarget, effect, service, serviceActions[service], resources, conditions, principals)
-      statements.push(statementCode)
+      const statementCode = makeStatementCode(
+        convertTarget,
+        effect,
+        service,
+        serviceActions[service],
+        resources,
+        conditions,
+        principals
+      );
+      statements.push(statementCode);
     }
-  };
+  }
 
   const output = statements.join('\n\n');
   $('#policyConverterOutput').val(output);
@@ -96,14 +103,14 @@ function getPrincipals(statement) {
 
 function splitActionsByService(actions) {
   const serviceActions = {};
-  for(let action of actions) {
+  for (let action of actions) {
     const split = action.split(':');
-    if(split.length == 1 && action != '*') {
+    if (split.length == 1 && action != '*') {
       setError('Invalid action: ' + action);
       return false;
     }
 
-    let service
+    let service;
     if (action == '*') {
       service = 'all';
     } else {
@@ -119,81 +126,125 @@ function splitActionsByService(actions) {
   return serviceActions;
 }
 
-function makeStatementCode(language, effect, service, actions, resources, conditions, principals) {
+function makeStatementCode(
+  language,
+  effect,
+  service,
+  actions,
+  resources,
+  conditions,
+  principals
+) {
   let code = '';
-  let caseFunction = camelCase // default case function
-  switch(language) {
+  let caseFunction = camelCase; // default case function
+  switch (language) {
     case 'JavaScript':
       code += 'new statement';
       break;
     case 'Python':
       code += 'statement';
-      caseFunction = snakeCase
+      caseFunction = snakeCase;
       break;
   }
 
   code += makeMethodCall(camelCase(service, true));
   code += makeMethodCall(camelCase(effect));
 
-  for(let action of actions) {
+  for (let action of actions) {
     if (action == '*') {
       code += makeMethodCall(caseFunction('allActions'));
     } else {
       if (action.indexOf('*') > -1) {
-        code += '.to(\''+ service + ':' + action +'\')';
+        code += ".to('" + service + ':' + action + "')";
       } else {
         code += makeMethodCall(caseFunction('to ' + action));
       }
     }
   }
 
-  for(let resource of resources) {
-    if(resource != '*') {
-      code += '.on(\''+ resource +'\')';
+  for (let resource of resources) {
+    if (resource != '*') {
+      code += ".on('" + resource + "')";
     }
   }
 
-  for (const [conditionOperator, conditionItems] of Object.entries(conditions)) {
-    for (const [conditionKey, conditionValue] of Object.entries(conditionItems)) {
-      code += '.if(\'' + conditionKey + '\', \'' + conditionValue + '\', \'' + conditionOperator + '\')'
+  for (const [conditionOperator, conditionItems] of Object.entries(
+    conditions
+  )) {
+    for (const [conditionKey, conditionValue] of Object.entries(
+      conditionItems
+    )) {
+      code +=
+        ".if('" +
+        conditionKey +
+        "', '" +
+        conditionValue +
+        "', '" +
+        conditionOperator +
+        "')";
     }
   }
 
   for (const [principalType, principal] of Object.entries(principals)) {
     // @TODO: add principal logic
-    console.log(principalType, principal)
+    console.log(principalType, principal);
   }
 
   // formatting code
-  switch(language) {
+  switch (language) {
     case 'JavaScript':
-      code = code.replace(/\)\./g, ')\n  .') + ';'
+      code = code.replace(/\)\./g, ')\n  .') + ';';
       break;
     case 'Python':
-      code = code.replace(/\)\./g, ') \\\n\t.')
-      code = code.replace(/\.if\(/g, '.if_(')
-      code = code.replace(/\.for\(/g, '.for_(')
+      code = code.replace(/\)\./g, ') \\\n\t.');
+      code = code.replace(/\.if\(/g, '.if_(');
+      code = code.replace(/\.for\(/g, '.for_(');
       break;
   }
 
-  return code
+  return code;
 }
 
 function camelCase(input, includingFirst) {
-  return input.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function(match, index) {
+  return input.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
     if (+match === 0) return '';
-    return index === 0 && !includingFirst ? match.toLowerCase() : match.toUpperCase();
+    return index === 0 && !includingFirst
+      ? match.toLowerCase()
+      : match.toUpperCase();
   });
 }
 
 function snakeCase(input) {
-  return camelCase(input).replace(/[A-Z][a-z]/g, function(match) {
-    return '_' + match.toLowerCase()
-  }).replace(/[A-Z]+/, function(match) { // same regex. we first need to replace all patterns above, before we can run this one again, to replace multiple uppercase letters such as AWS
-    return '_' + match.toLowerCase()
-  })
+  return camelCase(input)
+    .replace(/[A-Z][a-z]/g, function (match) {
+      return '_' + match.toLowerCase();
+    })
+    .replace(/[A-Z]+/, function (match) {
+      // same regex. we first need to replace all patterns above, before we can run this one again, to replace multiple uppercase letters such as AWS
+      return '_' + match.toLowerCase();
+    });
 }
 
 function makeMethodCall(method) {
   return '.' + method + '()';
+}
+
+function populateManagedPolicies() {
+  $.getJSON('_static/managed-policies/index.json', function (data) {
+    $.each(data, function (_, value) {
+      $('#managedPolicies').append(new Option(value, value));
+    });
+  });
+}
+
+function loadManagedPolicy() {
+  const file =
+    '_static/managed-policies/' + $('#managedPolicies').val() + '.json';
+  $.ajax({
+    url: file,
+    dataType: 'text',
+    success: function (data) {
+      $('#policyConverterInput').val(data);
+    },
+  });
 }
