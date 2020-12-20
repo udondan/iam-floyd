@@ -231,6 +231,7 @@ function makeMethodCall(method) {
 
 function populateManagedPolicies() {
   $.getJSON('_static/managed-policies/index.json', function (data) {
+    data.sort();
     $.each(data, function (_, value) {
       $('#managedPolicies').append(new Option(value, value));
     });
