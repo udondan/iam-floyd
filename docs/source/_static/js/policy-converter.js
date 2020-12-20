@@ -164,7 +164,7 @@ function makeStatementCode(
       code += makeMethodCall(caseFunction('allActions'));
     } else {
       if (action.indexOf('*') > -1) {
-        code += ".to('" + service + ':' + action + "')";
+        code += ".to('" + action + "')";
       } else {
         code += makeMethodCall(caseFunction('to ' + action));
       }
