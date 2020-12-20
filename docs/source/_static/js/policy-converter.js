@@ -1,19 +1,27 @@
+var preferredLanguage = false;
+
 $(function () {
   populateManagedPolicies();
   $('#policyConverterImport').click(loadManagedPolicy);
   $('#managedPolicies').change(loadManagedPolicy);
   $('.convertButton').click(function () {
-    setError('');
-    let input = $('#policyConverterInput').val();
-    try {
-      var parsed = JSON.parse(input);
-    } catch (e) {
-      setError('Invalid input policy');
-      return;
-    }
-    convert($(this).attr('value'), parsed);
+    preferredLanguage = $(this).attr('value');
+    convertInputPolicy();
   });
 });
+
+function convertInputPolicy() {
+  setError('');
+  let input = $('#policyConverterInput').val();
+  try {
+    var parsed = JSON.parse(input);
+  } catch (e) {
+    setError('Invalid input policy');
+    return;
+  }
+
+  convert(preferredLanguage, parsed);
+}
 
 function setError(value) {
   $('#policyConverterError').html(value);
@@ -52,7 +60,7 @@ function convert(convertTarget, data) {
   }
 
   const output = statements.join('\n\n');
-  $('#policyConverterOutput').val(output);
+  $('#policyConverterOutput').val(output).show();
 }
 
 function getEffect(statement) {
@@ -254,6 +262,9 @@ function loadManagedPolicy() {
     dataType: 'text',
     success: function (data) {
       $('#policyConverterInput').val(data);
+      if (preferredLanguage) {
+        convertInputPolicy();
+      }
     },
   });
 }
