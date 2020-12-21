@@ -1,5 +1,31 @@
 var preferredLanguage = false;
 
+// holds patterns for detecting principal method
+const principalPattern = {
+  AWS: {
+    _0_Account: /^arn:[a-z]+:iam:[^:]*:(\d+):root$/, // account
+    _1_User: /^arn:[a-z]+:iam:[^:]*:(\d+):user\/([^/]+)$/, // account user
+    _2_Role: /^arn:[a-z]+:iam:[^:]*:(\d+):role\/([^/]+)$/, // account role
+    _3_AssumedRoleSession: /^arn:[a-z]+:sts:[^:]*:(\d+):assumed-role\/([^/]+)\/([^/]+)$/, // account role sessionName
+    _4_Public: /^\*$/,
+    _5_: /^(.*)$/,
+  },
+  Federated: {
+    _0_FederatedFacebook: /^graph\.facebook\.com$/,
+    _1_FederatedCognito: /^cognito-identity\.amazonaws\.com$/,
+    _2_FederatedAmazon: /^www\.amazon\.com$/,
+    _3_FederatedGoogle: /^accounts\.google\.com$/,
+    _4_Saml: /^arn:[a-z]+:iam:[^:]*:(\d+):saml-provider\/(.+)$/, // account providerName
+    _5_Federated: /^(.*)$/,
+  },
+  CanonicalUser: {
+    _0_CanonicalUser: /^(.*)$/,
+  },
+  Service: {
+    _0_Service: /^(.*)$/,
+  },
+};
+
 $(function () {
   activateNavItem();
   populateManagedPolicies();
@@ -67,7 +93,8 @@ function convert(convertTarget, data) {
   }
 
   const output = statements.join('\n\n');
-  $('#policyConverterOutput').val(output).show();
+  $('#policyConverterOutput').val(output);
+  $('#policyConverterResult').show();
 }
 
 function getEffect(statement) {
@@ -203,7 +230,7 @@ function makeStatementCode(
       code += makeMethodCall(caseFunction('allActions'));
     } else {
       if (action.indexOf('*') > -1) {
-        code += ".to('" + action + "')";
+        code += makeMethodCall(caseFunction('to', action));
       } else {
         code += makeMethodCall(caseFunction('to ' + action));
       }
@@ -212,7 +239,7 @@ function makeStatementCode(
 
   for (let resource of resources) {
     if (resource != '*') {
-      code += ".on('" + resource + "')";
+      code += makeMethodCall(caseFunction('on', resource));
     }
   }
 
@@ -222,27 +249,45 @@ function makeStatementCode(
     for (const [conditionKey, conditionValue] of Object.entries(
       conditionItems
     )) {
-      let value = conditionValue;
-      if (typeof conditionValue !== 'string') {
-        let newConditionValue = "['";
-        newConditionValue += conditionValue.join("', '");
-        newConditionValue += "']";
-        value = newConditionValue;
-      }
-      code +=
-        ".if('" +
-        conditionKey +
-        "', '" +
-        value +
-        "', '" +
-        conditionOperator +
-        "')";
+      code += makeMethodCall(caseFunction('if'), [
+        conditionKey,
+        conditionValue,
+        conditionOperator,
+      ]);
     }
   }
 
-  for (const [principalType, principal] of Object.entries(principals)) {
-    // @TODO: add principal logic
-    console.log(principalType, principal);
+  if (typeof principals === 'string') {
+    if (principals == '*') {
+      code += makeMethodCall(caseFunction('forPublic'));
+    } else {
+      setError('Unsupported principal: ' + principals);
+    }
+  } else {
+    for (const [principalType, principal] of Object.entries(principals)) {
+      if (typeof principalPattern[principalType] === 'undefined') {
+        setError('Unsupported principal type: ' + principalType);
+        return;
+      }
+
+      let pFound = false;
+      for (const [pMethod, pPattern] of Object.entries(
+        principalPattern[principalType]
+      )) {
+        const params = pPattern.exec(principal);
+        if (params !== null) {
+          pFound = true;
+          params.shift();
+
+          const methodName = 'for' + pMethod.substring(3);
+          code += makeMethodCall(caseFunction(methodName), params);
+          break;
+        }
+      }
+      if (!pFound) {
+        setError('Unsupported principal: ' + principal);
+      }
+    }
   }
 
   // formatting code
@@ -282,8 +327,21 @@ function snakeCase(input) {
     });
 }
 
-function makeMethodCall(method) {
-  return '.' + method + '()';
+function makeMethodCall(method, params = []) {
+  let code = '.' + method + '(';
+  if (params.length) {
+    const paramList = [];
+    for (let param of params) {
+      if (typeof param === 'string') {
+        paramList.push("'" + param + "'");
+      } else {
+        paramList.push(JSON.stringify(param));
+      }
+    }
+    code += paramList.join(', ');
+  }
+  code += ')';
+  return code;
 }
 
 function populateManagedPolicies() {
