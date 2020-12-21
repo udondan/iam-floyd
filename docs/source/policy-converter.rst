@@ -25,9 +25,10 @@ Use this tool to convert any IAM policy in JSON format to IAM Floyd code.
         <input type="button" class="convertButton" value="Python">
       </p>
     </fieldset>
-    <fieldset>
+    <fieldset id="policyConverterResult" style="display: none;">
+      <legend>Result</legend>
       <p>
-        <textarea id="policyConverterOutput" style="display: none;"></textarea>
+        <textarea id="policyConverterOutput"></textarea>
       </p>
     </fieldset>
     <script src="_static/js/policy-converter.js"></script>
