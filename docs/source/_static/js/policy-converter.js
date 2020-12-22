@@ -239,7 +239,7 @@ function makeStatementCode(
 
   for (let resource of resources) {
     if (resource != '*') {
-      code += makeMethodCall(caseFunction('on', resource));
+      code += makeMethodCall(caseFunction('on'), [resource]);
     }
   }
 
