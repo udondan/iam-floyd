@@ -142,14 +142,23 @@ function convert(convertTarget, data) {
     let package;
     switch (preferredLanguage) {
       case 'TypeScript':
+        if (preferredVariant == 'CDK') {
+          output += "import * as iam from '@aws-cdk/aws-iam';\n";
+        }
         package = preferredVariant == 'CDK' ? 'cdk-iam-floyd' : 'iam-floyd';
         output += "import * as statement from '" + package + "';";
         break;
       case 'JavaScript':
+        if (preferredVariant == 'CDK') {
+          output += "const iam = require('@aws-cdk/aws-iam');\n";
+        }
         package = preferredVariant == 'CDK' ? 'cdk-iam-floyd' : 'iam-floyd';
         output += "const statement = require('" + package + "');";
         break;
       case 'Python':
+        if (preferredVariant == 'CDK') {
+          output += 'from aws_cdk import (\n\taws_iam as iam,\n)\n';
+        }
         package = preferredVariant == 'CDK' ? 'cdk_iam_floyd' : 'iam_floyd';
         output += 'import ' + package + ' as statement';
         break;
@@ -157,7 +166,50 @@ function convert(convertTarget, data) {
     output += '\n\n';
   }
 
-  output += statements.join('\n\n');
+  switch (preferredLanguage) {
+    case 'TypeScript':
+    case 'JavaScript':
+      if (preferredVariant == 'CDK') {
+        output +=
+          'const policy = new iam.PolicyDocument({\n\
+  statements: [\n' +
+          indent(statements.join(',\n'), ' ', 4) +
+          '\n\
+  ]\n\
+};';
+      } else {
+        output +=
+          "const policy = {\n\
+  Version: '2012-10-17',\n\
+  Statement: [\n" +
+          indent(statements.join(',\n'), ' ', 4) +
+          '\n\
+  ]\n\
+};';
+      }
+      break;
+    case 'Python':
+      if (preferredVariant == 'CDK') {
+        output +=
+          'policy = iam.PolicyDocument(\n\
+\tstatements=[\n' +
+          indent(statements.join(',\n'), '\t', 2) +
+          '\n\
+\t]\n\
+};';
+      } else {
+        output +=
+          "policy = {\n\
+\t'Version': '2012-10-17',\n\
+\t'Statement': [\n" +
+          indent(statements.join(',\n'), '\t', 2) +
+          '\n\
+\t]\n\
+}';
+      }
+      break;
+  }
+
   $('#policyConverterOutput').val(output);
   $('#policyConverterResult').show();
 }
@@ -360,7 +412,7 @@ function makeStatementCode(
   switch (language) {
     case 'TypeScript':
     case 'JavaScript':
-      code = code.replace(/\)\./g, ')\n  .') + ';';
+      code = code.replace(/\)\./g, ')\n  .');
       break;
     case 'Python':
       code = code.replace(/\)\./g, ') \\\n\t.');
@@ -440,4 +492,8 @@ function activateNavItem() {
     .addClass('current')
     .parent()
     .addClass('current');
+}
+
+function indent(str, character, amount) {
+  return str.replace(/^/gm, character.repeat(amount));
 }
