@@ -144,7 +144,7 @@ function convert(convertTarget, data) {
         break;
       case 'JavaScript':
         package = preferredVariant == 'CDK' ? 'cdk-iam-floyd' : 'iam-floyd';
-        output += "var statement = require('" + package + "');";
+        output += "const statement = require('" + package + "');";
         break;
       case 'Python':
         package = preferredVariant == 'CDK' ? 'cdk_iam_floyd' : 'iam_floyd';
