@@ -408,6 +408,10 @@ function makeStatementCode(
     }
   }
 
+  if (preferredVariant != 'CDK') {
+    code += makeMethodCall(caseFunction('toJson'));
+  }
+
   // formatting code
   switch (language) {
     case 'TypeScript':
