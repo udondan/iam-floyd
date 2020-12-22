@@ -81,6 +81,9 @@ function beautifySelect() {
 function convertInputPolicy() {
   setError('');
   let input = $('#policyConverterInput').val();
+  if (!input.length) {
+    return;
+  }
   try {
     var parsed = JSON.parse(input);
   } catch (e) {
