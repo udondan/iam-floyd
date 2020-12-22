@@ -230,7 +230,7 @@ function makeStatementCode(
       code += makeMethodCall(caseFunction('allActions'));
     } else {
       if (action.indexOf('*') > -1) {
-        code += makeMethodCall(caseFunction('to', action));
+        code += makeMethodCall(caseFunction('to'), [action]);
       } else {
         code += makeMethodCall(caseFunction('to ' + action));
       }
