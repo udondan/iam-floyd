@@ -1,4 +1,9 @@
-var preferredLanguage = false;
+var preferredLanguage = 'TypeScript';
+var preferredVariant = 'CDK';
+var preferredImports = 'Yes';
+
+var selectFilled = false;
+var selectExtensionLoaded = false;
 
 // holds patterns for detecting principal method
 const principalPattern = {
@@ -29,13 +34,49 @@ const principalPattern = {
 $(function () {
   activateNavItem();
   populateManagedPolicies();
-  $('#policyConverterImport').click(loadManagedPolicy);
   $('#managedPolicies').change(loadManagedPolicy);
-  $('.convertButton').click(function () {
-    preferredLanguage = $(this).attr('value');
+  $(':radio, #policyConverterInput').change(function () {
+    preferredVariant = $("input[name='policyConverterVariant']:checked").val();
+    preferredLanguage = $(
+      "input[name='policyConverterLanguage']:checked"
+    ).val();
+    preferredImports = $("input[name='policyConverterImports']:checked").val();
     convertInputPolicy();
   });
+
+  $('head').append(
+    '<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">',
+    '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">',
+    '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/labelauty/1.1.4/jquery-labelauty.css" integrity="sha512-NUD74ySmYmRWEO5NXZ2EU0FfFhCIVhsxSoi3i4fybJYVhr5DkV+gdyEBd8tO0Pl/CspRwllRSAaUG7theVh1dA==" crossorigin="anonymous" />'
+  );
+
+  $.getScript(
+    '//cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js',
+    function () {
+      selectExtensionLoaded = true;
+      beautifySelect();
+    }
+  );
+
+  $.getScript(
+    '//cdnjs.cloudflare.com/ajax/libs/labelauty/1.1.4/jquery-labelauty.min.js',
+    function () {
+      $('input[type=radio]').labelauty({
+        label: true,
+      });
+    }
+  );
 });
+
+function beautifySelect() {
+  if (!selectExtensionLoaded || !selectFilled) {
+    return;
+  }
+  $('#managedPolicies').chosen({
+    search_contains: true,
+    placeholder_text_single: 'Select policy to import',
+  });
+}
 
 function convertInputPolicy() {
   setError('');
@@ -92,7 +133,28 @@ function convert(convertTarget, data) {
     }
   }
 
-  const output = statements.join('\n\n');
+  let output = '';
+
+  if (preferredImports == 'Yes') {
+    let package;
+    switch (preferredLanguage) {
+      case 'TypeScript':
+        package = preferredVariant == 'CDK' ? 'cdk-iam-floyd' : 'iam-floyd';
+        output += "import * as statement from '" + package + "';";
+        break;
+      case 'JavaScript':
+        package = preferredVariant == 'CDK' ? 'cdk-iam-floyd' : 'iam-floyd';
+        output += "var statement = require('" + package + "');";
+        break;
+      case 'Python':
+        package = preferredVariant == 'CDK' ? 'cdk_iam_floyd' : 'iam_floyd';
+        output += 'import ' + package + ' as statement';
+        break;
+    }
+    output += '\n\n';
+  }
+
+  output += statements.join('\n\n');
   $('#policyConverterOutput').val(output);
   $('#policyConverterResult').show();
 }
@@ -203,6 +265,7 @@ function makeStatementCode(
   let code = '';
   let caseFunction = camelCase; // default case function
   switch (language) {
+    case 'TypeScript':
     case 'JavaScript':
       code += 'new statement';
       break;
@@ -292,6 +355,7 @@ function makeStatementCode(
 
   // formatting code
   switch (language) {
+    case 'TypeScript':
     case 'JavaScript':
       code = code.replace(/\)\./g, ')\n  .') + ';';
       break;
@@ -350,6 +414,8 @@ function populateManagedPolicies() {
     $.each(data, function (_, value) {
       $('#managedPolicies').append(new Option(value, value));
     });
+    selectFilled = true;
+    beautifySelect();
   });
 }
 
@@ -361,9 +427,7 @@ function loadManagedPolicy() {
     dataType: 'text',
     success: function (data) {
       $('#policyConverterInput').val(data);
-      if (preferredLanguage) {
-        convertInputPolicy();
-      }
+      convertInputPolicy();
     },
   });
 }
