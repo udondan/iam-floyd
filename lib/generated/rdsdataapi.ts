@@ -19,9 +19,12 @@ export class RdsData extends PolicyStatement {
   }
 
   /**
-   * Runs a batch SQL statement over an array of data.
+   * Grants permission to run a batch SQL statement over an array of data
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BatchExecuteStatement.html
    */
@@ -31,9 +34,12 @@ export class RdsData extends PolicyStatement {
   }
 
   /**
-   * Starts a SQL transaction.
+   * Grants permission to start a SQL transaction
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BeginTransaction.html
    */
@@ -43,9 +49,12 @@ export class RdsData extends PolicyStatement {
   }
 
   /**
-   * Ends a SQL transaction started with the BeginTransaction operation and commits the changes.
+   * Grants permission to end a SQL transaction started with the BeginTransaction operation and commits the changes
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - rds-data:BeginTransaction
@@ -58,7 +67,7 @@ export class RdsData extends PolicyStatement {
   }
 
   /**
-   * Runs one or more SQL statements. This operation is deprecated. Use the BatchExecuteStatement or ExecuteStatement operation.
+   * Grants permission to run one or more SQL statements. This operation is deprecated. Use the BatchExecuteStatement or ExecuteStatement operation
    *
    * Access Level: Write
    *
@@ -70,9 +79,12 @@ export class RdsData extends PolicyStatement {
   }
 
   /**
-   * Runs a SQL statement against a database.
+   * Grants permission to run a SQL statement against a database
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteStatement.html
    */
@@ -82,9 +94,12 @@ export class RdsData extends PolicyStatement {
   }
 
   /**
-   * Performs a rollback of a transaction. Rolling back a transaction cancels its changes.
+   * Grants permission to perform a rollback of a transaction. Rolling back a transaction cancels its changes
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - rds-data:BeginTransaction

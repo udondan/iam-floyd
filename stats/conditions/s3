@@ -11,6 +11,7 @@ s3:RequestJobPriority
 s3:RequestObjectTag
 s3:RequestObjectTagKeys
 s3:RequestTag
+s3:ResourceAccount
 s3:ResourceTag
 s3:TagKeys
 s3:VersionId

@@ -28,6 +28,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointAccount()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -51,6 +52,7 @@ export class S3 extends PolicyStatement {
    * - .ifRequestObjectTag()
    * - .ifRequestObjectTagKeys()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzAcl()
@@ -89,6 +91,7 @@ export class S3 extends PolicyStatement {
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
    * - .ifLocationconstraint()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzAcl()
@@ -109,6 +112,7 @@ export class S3 extends PolicyStatement {
    * Possible conditions:
    * - .ifAuthType()
    * - .ifLocationconstraint()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzAcl()
@@ -133,6 +137,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -161,6 +166,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointAccount()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -182,6 +188,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointAccount()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -200,6 +207,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -218,6 +226,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -236,6 +245,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -254,6 +264,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -272,6 +283,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -295,6 +307,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -317,6 +330,7 @@ export class S3 extends PolicyStatement {
    * - .ifAccessPointNetworkOrigin()
    * - .ifExistingObjectTag()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -338,6 +352,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifVersionid()
@@ -361,6 +376,7 @@ export class S3 extends PolicyStatement {
    * - .ifAccessPointNetworkOrigin()
    * - .ifExistingObjectTag()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifVersionid()
@@ -380,6 +396,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -398,6 +415,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -416,6 +434,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -434,6 +453,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -455,6 +475,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -476,6 +497,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -497,6 +519,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -515,6 +538,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -533,6 +557,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -551,6 +576,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -569,6 +595,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -599,6 +626,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -617,6 +645,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -635,6 +664,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    *
@@ -652,6 +682,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -670,6 +701,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -688,6 +720,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -706,6 +739,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -724,6 +758,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -742,6 +777,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -760,6 +796,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -778,6 +815,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -796,6 +834,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -814,6 +853,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -832,6 +872,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -850,6 +891,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -868,6 +910,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -890,6 +933,7 @@ export class S3 extends PolicyStatement {
    * - .ifAccessPointNetworkOrigin()
    * - .ifExistingObjectTag()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -912,6 +956,7 @@ export class S3 extends PolicyStatement {
    * - .ifAccessPointNetworkOrigin()
    * - .ifExistingObjectTag()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -933,6 +978,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -954,6 +1000,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -976,6 +1023,7 @@ export class S3 extends PolicyStatement {
    * - .ifAccessPointNetworkOrigin()
    * - .ifExistingObjectTag()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -994,6 +1042,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1016,6 +1065,7 @@ export class S3 extends PolicyStatement {
    * - .ifAccessPointNetworkOrigin()
    * - .ifExistingObjectTag()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifVersionid()
@@ -1039,6 +1089,7 @@ export class S3 extends PolicyStatement {
    * - .ifAccessPointNetworkOrigin()
    * - .ifExistingObjectTag()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifVersionid()
@@ -1058,6 +1109,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1078,6 +1130,7 @@ export class S3 extends PolicyStatement {
    * - .ifAccessPointNetworkOrigin()
    * - .ifExistingObjectTag()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifVersionid()
@@ -1095,6 +1148,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifVersionid()
@@ -1114,6 +1168,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1132,6 +1187,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1150,6 +1206,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1168,6 +1225,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1186,6 +1244,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1204,6 +1263,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1228,6 +1288,7 @@ export class S3 extends PolicyStatement {
    * - .ifDelimiter()
    * - .ifMaxKeys()
    * - .ifPrefix()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1249,6 +1310,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1273,6 +1335,7 @@ export class S3 extends PolicyStatement {
    * - .ifDelimiter()
    * - .ifMaxKeys()
    * - .ifPrefix()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1291,6 +1354,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1312,6 +1376,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1330,6 +1395,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1348,6 +1414,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1366,6 +1433,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1387,6 +1455,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1405,6 +1474,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1423,6 +1493,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1441,6 +1512,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzAcl()
@@ -1465,6 +1537,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1483,6 +1556,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1501,6 +1575,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1519,6 +1594,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    *
@@ -1536,6 +1612,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1554,6 +1631,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1572,6 +1650,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1590,6 +1669,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1608,6 +1688,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1626,6 +1707,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1644,6 +1726,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1662,6 +1745,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1680,6 +1764,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1698,6 +1783,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1720,6 +1806,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1738,6 +1825,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1761,6 +1849,7 @@ export class S3 extends PolicyStatement {
    * - .ifRequestObjectTag()
    * - .ifRequestObjectTagKeys()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzAcl()
@@ -1799,6 +1888,7 @@ export class S3 extends PolicyStatement {
    * - .ifAccessPointNetworkOrigin()
    * - .ifExistingObjectTag()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzAcl()
@@ -1827,6 +1917,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1849,6 +1940,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1876,6 +1968,7 @@ export class S3 extends PolicyStatement {
    * - .ifRequestObjectTag()
    * - .ifRequestObjectTagKeys()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1898,6 +1991,7 @@ export class S3 extends PolicyStatement {
    * - .ifAccessPointNetworkOrigin()
    * - .ifExistingObjectTag()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifVersionid()
@@ -1930,6 +2024,7 @@ export class S3 extends PolicyStatement {
    * - .ifRequestObjectTag()
    * - .ifRequestObjectTagKeys()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifVersionid()
@@ -1949,6 +2044,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1970,6 +2066,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -1990,6 +2087,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -2010,6 +2108,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -2028,6 +2127,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -2048,6 +2148,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -2069,6 +2170,7 @@ export class S3 extends PolicyStatement {
    * - .ifDataAccessPointArn()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -2087,6 +2189,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -2108,6 +2211,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
    * - .ifXAmzContentSha256()
@@ -2627,6 +2731,124 @@ export class S3 extends PolicyStatement {
    */
   public ifRequestObjectTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`s3:RequestObjectTagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the resource owner AWS account ID
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#condition-key-bucket-ops-2
+   *
+   * Applies to actions:
+   * - .toAbortMultipartUpload()
+   * - .toBypassGovernanceRetention()
+   * - .toCreateAccessPoint()
+   * - .toCreateBucket()
+   * - .toCreateJob()
+   * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointPolicy()
+   * - .toDeleteBucket()
+   * - .toDeleteBucketOwnershipControls()
+   * - .toDeleteBucketPolicy()
+   * - .toDeleteBucketWebsite()
+   * - .toDeleteJobTagging()
+   * - .toDeleteObject()
+   * - .toDeleteObjectTagging()
+   * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionTagging()
+   * - .toDeleteStorageLensConfiguration()
+   * - .toDeleteStorageLensConfigurationTagging()
+   * - .toDescribeJob()
+   * - .toGetAccelerateConfiguration()
+   * - .toGetAccessPoint()
+   * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointPolicyStatus()
+   * - .toGetAccountPublicAccessBlock()
+   * - .toGetAnalyticsConfiguration()
+   * - .toGetBucketAcl()
+   * - .toGetBucketCORS()
+   * - .toGetBucketLogging()
+   * - .toGetBucketNotification()
+   * - .toGetBucketObjectLockConfiguration()
+   * - .toGetBucketOwnershipControls()
+   * - .toGetBucketPolicy()
+   * - .toGetBucketPolicyStatus()
+   * - .toGetBucketPublicAccessBlock()
+   * - .toGetBucketRequestPayment()
+   * - .toGetBucketTagging()
+   * - .toGetBucketVersioning()
+   * - .toGetBucketWebsite()
+   * - .toGetEncryptionConfiguration()
+   * - .toGetInventoryConfiguration()
+   * - .toGetJobTagging()
+   * - .toGetLifecycleConfiguration()
+   * - .toGetMetricsConfiguration()
+   * - .toGetObject()
+   * - .toGetObjectAcl()
+   * - .toGetObjectLegalHold()
+   * - .toGetObjectRetention()
+   * - .toGetObjectTagging()
+   * - .toGetObjectTorrent()
+   * - .toGetObjectVersion()
+   * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionForReplication()
+   * - .toGetObjectVersionTagging()
+   * - .toGetObjectVersionTorrent()
+   * - .toGetReplicationConfiguration()
+   * - .toGetStorageLensConfiguration()
+   * - .toGetStorageLensConfigurationTagging()
+   * - .toGetStorageLensDashboard()
+   * - .toListAccessPoints()
+   * - .toListAllMyBuckets()
+   * - .toListBucket()
+   * - .toListBucketMultipartUploads()
+   * - .toListBucketVersions()
+   * - .toListJobs()
+   * - .toListMultipartUploadParts()
+   * - .toListStorageLensConfigurations()
+   * - .toObjectOwnerOverrideToBucketOwner()
+   * - .toPutAccelerateConfiguration()
+   * - .toPutAccessPointPolicy()
+   * - .toPutAccountPublicAccessBlock()
+   * - .toPutAnalyticsConfiguration()
+   * - .toPutBucketAcl()
+   * - .toPutBucketCORS()
+   * - .toPutBucketLogging()
+   * - .toPutBucketNotification()
+   * - .toPutBucketObjectLockConfiguration()
+   * - .toPutBucketOwnershipControls()
+   * - .toPutBucketPolicy()
+   * - .toPutBucketPublicAccessBlock()
+   * - .toPutBucketRequestPayment()
+   * - .toPutBucketTagging()
+   * - .toPutBucketVersioning()
+   * - .toPutBucketWebsite()
+   * - .toPutEncryptionConfiguration()
+   * - .toPutInventoryConfiguration()
+   * - .toPutJobTagging()
+   * - .toPutLifecycleConfiguration()
+   * - .toPutMetricsConfiguration()
+   * - .toPutObject()
+   * - .toPutObjectAcl()
+   * - .toPutObjectLegalHold()
+   * - .toPutObjectRetention()
+   * - .toPutObjectTagging()
+   * - .toPutObjectVersionAcl()
+   * - .toPutObjectVersionTagging()
+   * - .toPutReplicationConfiguration()
+   * - .toPutStorageLensConfiguration()
+   * - .toPutStorageLensConfigurationTagging()
+   * - .toReplicateDelete()
+   * - .toReplicateObject()
+   * - .toReplicateTags()
+   * - .toRestoreObject()
+   * - .toUpdateJobPriority()
+   * - .toUpdateJobStatus()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceAccount(value: string | string[], operator?: Operator | string) {
+    return this.if(`s3:ResourceAccount`, value, operator || 'StringLike');
   }
 
   /**

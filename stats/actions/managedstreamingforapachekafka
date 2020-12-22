@@ -12,10 +12,13 @@ kafka:GetBootstrapBrokers;Read
 kafka:GetCompatibleKafkaVersions;List
 kafka:ListClusterOperations;List
 kafka:ListClusters;List
+kafka:ListConfigurationRevisions;List
 kafka:ListConfigurations;List
+kafka:ListKafkaVersions;List
 kafka:ListNodes;List
 kafka:ListScramSecrets;List
 kafka:ListTagsForResource;List
+kafka:RebootBroker;Write
 kafka:TagResource;Tagging
 kafka:UntagResource;Tagging
 kafka:UpdateBrokerCount;Write

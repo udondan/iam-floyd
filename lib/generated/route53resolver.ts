@@ -163,6 +163,18 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the DNSSEC validation support status for DNS queries within the specified resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverDnssecConfig.html
+   */
+  public toGetResolverDnssecConfig() {
+    this.to('route53resolver:GetResolverDnssecConfig');
+    return this;
+  }
+
+  /**
    * Grants permission to get information about a specified Resolver endpoint, such as whether it's an inbound or an outbound endpoint, and the IP addresses in your VPC that DNS queries are forwarded to on the way into or out of your VPC
    *
    * Access Level: Read
@@ -243,6 +255,18 @@ export class Route53resolver extends PolicyStatement {
    */
   public toGetResolverRulePolicy() {
     this.to('route53resolver:GetResolverRulePolicy');
+    return this;
+  }
+
+  /**
+   * Grants permission to list the DNSSEC validation support status for DNS queries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverDnssecConfigs.html
+   */
+  public toListResolverDnssecConfigs() {
+    this.to('route53resolver:ListResolverDnssecConfigs');
     return this;
   }
 
@@ -379,6 +403,18 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the DNSSEC validation support status for DNS queries within the specified resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverDnssecConfig.html
+   */
+  public toUpdateResolverDnssecConfig() {
+    this.to('route53resolver:UpdateResolverDnssecConfig');
+    return this;
+  }
+
+  /**
    * Grants permission to update selected settings for an inbound or an outbound Resolver endpoint
    *
    * Access Level: Write
@@ -418,10 +454,12 @@ export class Route53resolver extends PolicyStatement {
       "DisassociateResolverRule",
       "PutResolverQueryLogConfigPolicy",
       "PutResolverRulePolicy",
+      "UpdateResolverDnssecConfig",
       "UpdateResolverEndpoint",
       "UpdateResolverRule"
     ],
     "Read": [
+      "GetResolverDnssecConfig",
       "GetResolverEndpoint",
       "GetResolverQueryLogConfig",
       "GetResolverQueryLogConfigAssociation",
@@ -432,6 +470,7 @@ export class Route53resolver extends PolicyStatement {
       "ListTagsForResource"
     ],
     "List": [
+      "ListResolverDnssecConfigs",
       "ListResolverEndpointIpAddresses",
       "ListResolverEndpoints",
       "ListResolverQueryLogConfigAssociations",
@@ -444,6 +483,28 @@ export class Route53resolver extends PolicyStatement {
       "UntagResource"
     ]
   };
+
+  /**
+   * Adds a resource of type resolver-dnssec-config to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onResolverDnssecConfig(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:resolver-dnssec-config/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
 
   /**
    * Adds a resource of type resolver-query-log-config to the statement
