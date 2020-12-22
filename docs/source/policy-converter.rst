@@ -42,7 +42,7 @@ Use this tool to convert any IAM policy in JSON format to IAM Floyd code.
       </p>
     </fieldset>
     <fieldset id="policyConverterResult" style="display: none;">
-      <legend>Result</legend>
+      <legend>IAM Floyd code</legend>
       <p>
         <textarea id="policyConverterOutput"></textarea>
       </p>
