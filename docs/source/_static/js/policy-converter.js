@@ -196,7 +196,7 @@ function convert(convertTarget, data) {
           indent(statements.join(',\n'), '\t', 2) +
           '\n\
 \t]\n\
-};';
+)';
       } else {
         output +=
           "policy = {\n\
@@ -419,7 +419,11 @@ function makeStatementCode(
       code = code.replace(/\)\./g, ')\n  .');
       break;
     case 'Python':
-      code = code.replace(/\)\./g, ') \\\n\t.');
+      if (preferredVariant == 'CDK') {
+        code = code.replace(/\)\./g, ')\n\t.');
+      } else {
+        code = code.replace(/\)\./g, ')\\\n\t.');
+      }
       code = code.replace(/\.if\(/g, '.if_(');
       code = code.replace(/\.for\(/g, '.for_(');
       break;
