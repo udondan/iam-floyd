@@ -74,6 +74,7 @@ glue:GetPartition;Read
 glue:GetPartitions;Read
 glue:GetPlan;Read
 glue:GetRegistry;Read
+glue:GetResourcePolicies;Read
 glue:GetResourcePolicy;Read
 glue:GetSchema;Read
 glue:GetSchemaByDefinition;Read

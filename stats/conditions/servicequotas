@@ -1,1 +1,4 @@
+servicequotas:RequestTag
+servicequotas:ResourceTag
+servicequotas:TagKeys
 servicequotas:service

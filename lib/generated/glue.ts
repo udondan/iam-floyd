@@ -951,6 +951,18 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve resource policies
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-GetResourcePolicies
+   */
+  public toGetResourcePolicies() {
+    this.to('glue:GetResourcePolicies');
+    return this;
+  }
+
+  /**
    * Grants permission to retrieve a resource policy
    *
    * Access Level: Read
@@ -1899,6 +1911,7 @@ export class Glue extends PolicyStatement {
       "GetPartitions",
       "GetPlan",
       "GetRegistry",
+      "GetResourcePolicies",
       "GetResourcePolicy",
       "GetSchema",
       "GetSchemaByDefinition",

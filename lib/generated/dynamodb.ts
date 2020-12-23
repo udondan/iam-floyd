@@ -247,6 +247,18 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the status of Kinesis streaming and related details for a given table
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeKinesisStreamingDestination.html
+   */
+  public toDescribeKinesisStreamingDestination() {
+    this.to('dynamodb:DescribeKinesisStreamingDestination');
+    return this;
+  }
+
+  /**
    * Returns the current provisioned-capacity limits for your AWS account in a region, both for the region as a whole and for any one DynamoDB table that you create there
    *
    * Access Level: Read
@@ -323,6 +335,30 @@ export class Dynamodb extends PolicyStatement {
    */
   public toDescribeTimeToLive() {
     this.to('dynamodb:DescribeTimeToLive');
+    return this;
+  }
+
+  /**
+   * Grants permission to stop replication from the DynamoDB table to the Kinesis data stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DisableKinesisStreamingDestination.html
+   */
+  public toDisableKinesisStreamingDestination() {
+    this.to('dynamodb:DisableKinesisStreamingDestination');
+    return this;
+  }
+
+  /**
+   * Grants permission to start table data replication to the specified Kinesis data stream at a timestamp chosen during the enable workflow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_EnableKinesisStreamingDestination.html
+   */
+  public toEnableKinesisStreamingDestination() {
+    this.to('dynamodb:EnableKinesisStreamingDestination');
     return this;
   }
 
@@ -764,6 +800,7 @@ export class Dynamodb extends PolicyStatement {
       "DescribeExport",
       "DescribeGlobalTable",
       "DescribeGlobalTableSettings",
+      "DescribeKinesisStreamingDestination",
       "DescribeLimits",
       "DescribeReservedCapacity",
       "DescribeReservedCapacityOfferings",
@@ -790,6 +827,8 @@ export class Dynamodb extends PolicyStatement {
       "DeleteItem",
       "DeleteTable",
       "DeleteTableReplica",
+      "DisableKinesisStreamingDestination",
+      "EnableKinesisStreamingDestination",
       "ExportTableToPointInTime",
       "PartiQLDelete",
       "PartiQLInsert",

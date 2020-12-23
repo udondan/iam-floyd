@@ -187,6 +187,18 @@ export class Servicequotas extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view the existing tags on a SQ resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListTagsForResource
+   */
+  public toListTagsForResource() {
+    this.to('servicequotas:ListTagsForResource');
+    return this;
+  }
+
+  /**
    * Grants permission to define and add a quota to the service quota template
    *
    * Access Level: Write
@@ -216,6 +228,30 @@ export class Servicequotas extends PolicyStatement {
     return this;
   }
 
+  /**
+   * Grants permission to associate a set of tags with an existing SQ resource
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_TagResource
+   */
+  public toTagResource() {
+    this.to('servicequotas:TagResource');
+    return this;
+  }
+
+  /**
+   * Grants permission to remove a set of tags from a SQ resource, where tags to be removed match a set of customer-supplied tag keys
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_UntagResource
+   */
+  public toUntagResource() {
+    this.to('servicequotas:UntagResource');
+    return this;
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AssociateServiceQuotaTemplate",
@@ -236,6 +272,13 @@ export class Servicequotas extends PolicyStatement {
       "ListServiceQuotaIncreaseRequestsInTemplate",
       "ListServiceQuotas",
       "ListServices"
+    ],
+    "List": [
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
@@ -262,6 +305,8 @@ export class Servicequotas extends PolicyStatement {
 
   /**
    * Filters or restricts access to a specified AWS service
+   *
+   * https://docs.aws.amazon.com/servicequotas/latest/userguide/servicequotas/latest/userguide/identity-access-management.htmlck_service
    *
    * Applies to actions:
    * - .toPutServiceQuotaIncreaseRequestIntoTemplate()
