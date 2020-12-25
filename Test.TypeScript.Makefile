@@ -1,5 +1,8 @@
 .PHONY: test test-cdk
 
+install-cdk:
+	npm i @aws-cdk/aws-iam
+
 test:
 	@find examples/** -type f \( -iname "*.ts" ! -iname "*.cdk.ts" \) > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
@@ -12,7 +15,7 @@ test:
 		diff "$${f%.js}.ts.result" "$${f%.js}.result" || exit ;\
 	done
 
-test-cdk:
+test-cdk: install-cdk
 	@find examples/** -type f -iname "*.cdk.ts" > /tmp/ts.result
 	@echo "Compiling TypeScript to JS"
 	@tsc @/tmp/ts.result
