@@ -144,28 +144,33 @@ export class Connect extends PolicyStatement {
    * - ds:CreateAlias
    * - ds:CreateDirectory
    * - ds:CreateIdentityPoolDirectory
+   * - ds:DeleteDirectory
    * - ds:DescribeDirectories
    * - ds:UnauthorizeApplication
-   * - firehose:DescribeDeliveryStream
-   * - firehose:ListDeliveryStreams
    * - iam:AttachRolePolicy
    * - iam:CreateServiceLinkedRole
    * - iam:PutRolePolicy
-   * - kinesis:DescribeStream
-   * - kinesis:ListStreams
-   * - kms:CreateGrant
-   * - kms:DescribeKey
-   * - kms:ListAliases
-   * - kms:RetireGrant
-   * - logs:CreateLogGroup
-   * - s3:CreateBucket
-   * - s3:GetBucketLocation
-   * - s3:ListAllMyBuckets
    *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toCreateInstance() {
     this.to('connect:CreateInstance');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a quick connect in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateQuickConnect.html
+   */
+  public toCreateQuickConnect() {
+    this.to('connect:CreateQuickConnect');
     return this;
   }
 
@@ -231,6 +236,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to delete a quick connect in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteQuickConnect.html
+   */
+  public toDeleteQuickConnect() {
+    this.to('connect:DeleteQuickConnect');
+    return this;
+  }
+
+  /**
    * Grants permissions to delete a user in an Amazon Connect instance.
    *
    * Access Level: Write
@@ -279,13 +299,6 @@ export class Connect extends PolicyStatement {
    *
    * Dependent actions:
    * - ds:DescribeDirectories
-   * - firehose:DescribeDeliveryStream
-   * - firehose:ListDeliveryStreams
-   * - kinesis:DescribeStream
-   * - kinesis:ListStreams
-   * - kms:DescribeKey
-   * - kms:ListAliases
-   * - s3:ListAllMyBuckets
    *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -321,6 +334,21 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeInstanceStorageConfig() {
     this.to('connect:DescribeInstanceStorageConfig');
+    return this;
+  }
+
+  /**
+   * Grants permissions to describe a quick connect in an Amazon Connect instance.
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeQuickConnect.html
+   */
+  public toDescribeQuickConnect() {
+    this.to('connect:DescribeQuickConnect');
     return this;
   }
 
@@ -375,18 +403,6 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeUserHierarchyStructure() {
     this.to('connect:DescribeUserHierarchyStructure');
-    return this;
-  }
-
-  /**
-   * Grants permissions to delete an Amazon Connect instance. When you remove an instance, the link to an existing AWS directory is also removed.
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
-   */
-  public toDestroyInstance() {
-    this.to('connect:DestroyInstance');
     return this;
   }
 
@@ -677,6 +693,18 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to list quick connect resources in an Amazon Connect instance.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListQuickConnects.html
+   */
+  public toListQuickConnects() {
+    this.to('connect:ListQuickConnects');
+    return this;
+  }
+
+  /**
    * Grants permissions to list queue resources in a routing profile in an Amazon Connect instance.
    *
    * Access Level: Read
@@ -763,31 +791,6 @@ export class Connect extends PolicyStatement {
    */
   public toListUsers() {
     this.to('connect:ListUsers');
-    return this;
-  }
-
-  /**
-   * Grants permissions to modify configuration settings for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
-   *
-   * Access Level: Write
-   *
-   * Dependent actions:
-   * - firehose:DescribeDeliveryStream
-   * - firehose:ListDeliveryStreams
-   * - kinesis:DescribeStream
-   * - kinesis:ListStreams
-   * - kms:CreateGrant
-   * - kms:DescribeKey
-   * - kms:ListAliases
-   * - kms:RetireGrant
-   * - s3:CreateBucket
-   * - s3:GetBucketLocation
-   * - s3:ListAllMyBuckets
-   *
-   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
-   */
-  public toModifyInstance() {
-    this.to('connect:ModifyInstance');
     return this;
   }
 
@@ -1012,6 +1015,36 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to update the configuration of a quick connect in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQuickConnectConfig.html
+   */
+  public toUpdateQuickConnectConfig() {
+    this.to('connect:UpdateQuickConnectConfig');
+    return this;
+  }
+
+  /**
+   * Grants permissions to update a quick connect name and description in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQuickConnectName.html
+   */
+  public toUpdateQuickConnectName() {
+    this.to('connect:UpdateQuickConnectName');
+    return this;
+  }
+
+  /**
    * Grants permissions to update the concurrency in a routing profile in an Amazon Connect instance.
    *
    * Access Level: Write
@@ -1180,13 +1213,14 @@ export class Connect extends PolicyStatement {
       "AssociateSecurityKey",
       "CreateContactFlow",
       "CreateInstance",
+      "CreateQuickConnect",
       "CreateRoutingProfile",
       "CreateUser",
       "CreateUserHierarchyGroup",
       "DeleteInstance",
+      "DeleteQuickConnect",
       "DeleteUser",
       "DeleteUserHierarchyGroup",
-      "DestroyInstance",
       "DisassociateApprovedOrigin",
       "DisassociateInstanceStorageConfig",
       "DisassociateLambdaFunction",
@@ -1194,7 +1228,6 @@ export class Connect extends PolicyStatement {
       "DisassociateRoutingProfileQueues",
       "DisassociateSecurityKey",
       "GetFederationTokens",
-      "ModifyInstance",
       "ResumeContactRecording",
       "StartChatContact",
       "StartContactRecording",
@@ -1208,6 +1241,8 @@ export class Connect extends PolicyStatement {
       "UpdateContactFlowName",
       "UpdateInstanceAttribute",
       "UpdateInstanceStorageConfig",
+      "UpdateQuickConnectConfig",
+      "UpdateQuickConnectName",
       "UpdateRoutingProfileConcurrency",
       "UpdateRoutingProfileDefaultOutboundQueue",
       "UpdateRoutingProfileName",
@@ -1225,6 +1260,7 @@ export class Connect extends PolicyStatement {
       "DescribeInstance",
       "DescribeInstanceAttribute",
       "DescribeInstanceStorageConfig",
+      "DescribeQuickConnect",
       "DescribeRoutingProfile",
       "DescribeUser",
       "DescribeUserHierarchyGroup",
@@ -1248,6 +1284,7 @@ export class Connect extends PolicyStatement {
       "ListPhoneNumbers",
       "ListPrompts",
       "ListQueues",
+      "ListQuickConnects",
       "ListRoutingProfiles",
       "ListSecurityKeys",
       "ListSecurityProfiles",
@@ -1405,6 +1442,30 @@ export class Connect extends PolicyStatement {
     var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/queue/${QueueId}';
     arn = arn.replace('${InstanceId}', instanceId);
     arn = arn.replace('${QueueId}', queueId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type quick-connect to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param quickConnectId - Identifier for the quickConnectId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onQuickConnect(instanceId: string, quickConnectId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/transfer-destination/${QuickConnectId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${QuickConnectId}', quickConnectId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
