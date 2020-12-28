@@ -76,6 +76,13 @@ function beautifySelect() {
     search_contains: true,
     placeholder_text_single: 'Select policy to import',
   });
+
+  // fallback for when chosen did not apply (e.g. mobile)
+  const currentWidth = $('#managedPolicies').width();
+  const parentWidth = $('#policy-converter').width();
+  if (currentWidth > parentWidth) {
+    $('#managedPolicies').width('100%');
+  }
 }
 
 function convertInputPolicy() {
