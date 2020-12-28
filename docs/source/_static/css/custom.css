@@ -97,6 +97,10 @@
   max-width: 100%;
 }
 
+#policy-converter select {
+  max-width: 100%;
+}
+
 #managedPolicies_chosen div.chosen-drop ul.chosen-results li {
   list-style: none;
   margin-left: 0;
