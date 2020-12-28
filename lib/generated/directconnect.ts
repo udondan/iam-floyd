@@ -26,8 +26,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AcceptDirectConnectGatewayAssociationProposal.html
    */
   public toAcceptDirectConnectGatewayAssociationProposal() {
-    this.to('directconnect:AcceptDirectConnectGatewayAssociationProposal');
-    return this;
+    return this.to('AcceptDirectConnectGatewayAssociationProposal');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocateConnectionOnInterconnect.html
    */
   public toAllocateConnectionOnInterconnect() {
-    this.to('directconnect:AllocateConnectionOnInterconnect');
-    return this;
+    return this.to('AllocateConnectionOnInterconnect');
   }
 
   /**
@@ -54,8 +52,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocateHostedConnection.html
    */
   public toAllocateHostedConnection() {
-    this.to('directconnect:AllocateHostedConnection');
-    return this;
+    return this.to('AllocateHostedConnection');
   }
 
   /**
@@ -70,8 +67,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocatePrivateVirtualInterface.html
    */
   public toAllocatePrivateVirtualInterface() {
-    this.to('directconnect:AllocatePrivateVirtualInterface');
-    return this;
+    return this.to('AllocatePrivateVirtualInterface');
   }
 
   /**
@@ -86,8 +82,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocatePublicVirtualInterface.html
    */
   public toAllocatePublicVirtualInterface() {
-    this.to('directconnect:AllocatePublicVirtualInterface');
-    return this;
+    return this.to('AllocatePublicVirtualInterface');
   }
 
   /**
@@ -102,8 +97,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocateTransitVirtualInterface.html
    */
   public toAllocateTransitVirtualInterface() {
-    this.to('directconnect:AllocateTransitVirtualInterface');
-    return this;
+    return this.to('AllocateTransitVirtualInterface');
   }
 
   /**
@@ -114,8 +108,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AssociateConnectionWithLag.html
    */
   public toAssociateConnectionWithLag() {
-    this.to('directconnect:AssociateConnectionWithLag');
-    return this;
+    return this.to('AssociateConnectionWithLag');
   }
 
   /**
@@ -126,8 +119,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AssociateHostedConnection.html
    */
   public toAssociateHostedConnection() {
-    this.to('directconnect:AssociateHostedConnection');
-    return this;
+    return this.to('AssociateHostedConnection');
   }
 
   /**
@@ -138,8 +130,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AssociateVirtualInterface.html
    */
   public toAssociateVirtualInterface() {
-    this.to('directconnect:AssociateVirtualInterface');
-    return this;
+    return this.to('AssociateVirtualInterface');
   }
 
   /**
@@ -150,8 +141,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmConnection.html
    */
   public toConfirmConnection() {
-    this.to('directconnect:ConfirmConnection');
-    return this;
+    return this.to('ConfirmConnection');
   }
 
   /**
@@ -162,8 +152,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmPrivateVirtualInterface.html
    */
   public toConfirmPrivateVirtualInterface() {
-    this.to('directconnect:ConfirmPrivateVirtualInterface');
-    return this;
+    return this.to('ConfirmPrivateVirtualInterface');
   }
 
   /**
@@ -174,8 +163,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmPublicVirtualInterface.html
    */
   public toConfirmPublicVirtualInterface() {
-    this.to('directconnect:ConfirmPublicVirtualInterface');
-    return this;
+    return this.to('ConfirmPublicVirtualInterface');
   }
 
   /**
@@ -186,8 +174,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmTransitVirtualInterface.html
    */
   public toConfirmTransitVirtualInterface() {
-    this.to('directconnect:ConfirmTransitVirtualInterface');
-    return this;
+    return this.to('ConfirmTransitVirtualInterface');
   }
 
   /**
@@ -198,8 +185,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateBGPPeer.html
    */
   public toCreateBGPPeer() {
-    this.to('directconnect:CreateBGPPeer');
-    return this;
+    return this.to('CreateBGPPeer');
   }
 
   /**
@@ -214,8 +200,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateConnection.html
    */
   public toCreateConnection() {
-    this.to('directconnect:CreateConnection');
-    return this;
+    return this.to('CreateConnection');
   }
 
   /**
@@ -226,8 +211,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateDirectConnectGateway.html
    */
   public toCreateDirectConnectGateway() {
-    this.to('directconnect:CreateDirectConnectGateway');
-    return this;
+    return this.to('CreateDirectConnectGateway');
   }
 
   /**
@@ -238,8 +222,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateDirectConnectGatewayAssociation.html
    */
   public toCreateDirectConnectGatewayAssociation() {
-    this.to('directconnect:CreateDirectConnectGatewayAssociation');
-    return this;
+    return this.to('CreateDirectConnectGatewayAssociation');
   }
 
   /**
@@ -250,8 +233,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateDirectConnectGatewayAssociationProposal.html
    */
   public toCreateDirectConnectGatewayAssociationProposal() {
-    this.to('directconnect:CreateDirectConnectGatewayAssociationProposal');
-    return this;
+    return this.to('CreateDirectConnectGatewayAssociationProposal');
   }
 
   /**
@@ -266,8 +248,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateInterconnect.html
    */
   public toCreateInterconnect() {
-    this.to('directconnect:CreateInterconnect');
-    return this;
+    return this.to('CreateInterconnect');
   }
 
   /**
@@ -282,8 +263,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateLag.html
    */
   public toCreateLag() {
-    this.to('directconnect:CreateLag');
-    return this;
+    return this.to('CreateLag');
   }
 
   /**
@@ -298,8 +278,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreatePrivateVirtualInterface.html
    */
   public toCreatePrivateVirtualInterface() {
-    this.to('directconnect:CreatePrivateVirtualInterface');
-    return this;
+    return this.to('CreatePrivateVirtualInterface');
   }
 
   /**
@@ -314,8 +293,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreatePublicVirtualInterface.html
    */
   public toCreatePublicVirtualInterface() {
-    this.to('directconnect:CreatePublicVirtualInterface');
-    return this;
+    return this.to('CreatePublicVirtualInterface');
   }
 
   /**
@@ -330,8 +308,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateTransitVirtualInterface.html
    */
   public toCreateTransitVirtualInterface() {
-    this.to('directconnect:CreateTransitVirtualInterface');
-    return this;
+    return this.to('CreateTransitVirtualInterface');
   }
 
   /**
@@ -342,8 +319,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteBGPPeer.html
    */
   public toDeleteBGPPeer() {
-    this.to('directconnect:DeleteBGPPeer');
-    return this;
+    return this.to('DeleteBGPPeer');
   }
 
   /**
@@ -354,8 +330,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteConnection.html
    */
   public toDeleteConnection() {
-    this.to('directconnect:DeleteConnection');
-    return this;
+    return this.to('DeleteConnection');
   }
 
   /**
@@ -366,8 +341,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteDirectConnectGateway.html
    */
   public toDeleteDirectConnectGateway() {
-    this.to('directconnect:DeleteDirectConnectGateway');
-    return this;
+    return this.to('DeleteDirectConnectGateway');
   }
 
   /**
@@ -378,8 +352,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteDirectConnectGatewayAssociation.html
    */
   public toDeleteDirectConnectGatewayAssociation() {
-    this.to('directconnect:DeleteDirectConnectGatewayAssociation');
-    return this;
+    return this.to('DeleteDirectConnectGatewayAssociation');
   }
 
   /**
@@ -390,8 +363,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteDirectConnectGatewayAssociationProposal.html
    */
   public toDeleteDirectConnectGatewayAssociationProposal() {
-    this.to('directconnect:DeleteDirectConnectGatewayAssociationProposal');
-    return this;
+    return this.to('DeleteDirectConnectGatewayAssociationProposal');
   }
 
   /**
@@ -402,8 +374,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteInterconnect.html
    */
   public toDeleteInterconnect() {
-    this.to('directconnect:DeleteInterconnect');
-    return this;
+    return this.to('DeleteInterconnect');
   }
 
   /**
@@ -414,8 +385,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteLag.html
    */
   public toDeleteLag() {
-    this.to('directconnect:DeleteLag');
-    return this;
+    return this.to('DeleteLag');
   }
 
   /**
@@ -426,8 +396,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteVirtualInterface.html
    */
   public toDeleteVirtualInterface() {
-    this.to('directconnect:DeleteVirtualInterface');
-    return this;
+    return this.to('DeleteVirtualInterface');
   }
 
   /**
@@ -438,8 +407,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeConnectionLoa.html
    */
   public toDescribeConnectionLoa() {
-    this.to('directconnect:DescribeConnectionLoa');
-    return this;
+    return this.to('DescribeConnectionLoa');
   }
 
   /**
@@ -450,8 +418,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeConnections.html
    */
   public toDescribeConnections() {
-    this.to('directconnect:DescribeConnections');
-    return this;
+    return this.to('DescribeConnections');
   }
 
   /**
@@ -462,8 +429,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeConnectionsOnInterconnect.html
    */
   public toDescribeConnectionsOnInterconnect() {
-    this.to('directconnect:DescribeConnectionsOnInterconnect');
-    return this;
+    return this.to('DescribeConnectionsOnInterconnect');
   }
 
   /**
@@ -474,8 +440,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeDirectConnectGatewayAssociationProposals.html
    */
   public toDescribeDirectConnectGatewayAssociationProposals() {
-    this.to('directconnect:DescribeDirectConnectGatewayAssociationProposals');
-    return this;
+    return this.to('DescribeDirectConnectGatewayAssociationProposals');
   }
 
   /**
@@ -486,8 +451,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeDirectConnectGatewayAssociations.html
    */
   public toDescribeDirectConnectGatewayAssociations() {
-    this.to('directconnect:DescribeDirectConnectGatewayAssociations');
-    return this;
+    return this.to('DescribeDirectConnectGatewayAssociations');
   }
 
   /**
@@ -498,8 +462,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeDirectConnectGatewayAttachments.html
    */
   public toDescribeDirectConnectGatewayAttachments() {
-    this.to('directconnect:DescribeDirectConnectGatewayAttachments');
-    return this;
+    return this.to('DescribeDirectConnectGatewayAttachments');
   }
 
   /**
@@ -510,8 +473,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeDirectConnectGateways.html
    */
   public toDescribeDirectConnectGateways() {
-    this.to('directconnect:DescribeDirectConnectGateways');
-    return this;
+    return this.to('DescribeDirectConnectGateways');
   }
 
   /**
@@ -522,8 +484,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeHostedConnections.html
    */
   public toDescribeHostedConnections() {
-    this.to('directconnect:DescribeHostedConnections');
-    return this;
+    return this.to('DescribeHostedConnections');
   }
 
   /**
@@ -534,8 +495,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeInterconnectLoa.html
    */
   public toDescribeInterconnectLoa() {
-    this.to('directconnect:DescribeInterconnectLoa');
-    return this;
+    return this.to('DescribeInterconnectLoa');
   }
 
   /**
@@ -546,8 +506,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeInterconnects.html
    */
   public toDescribeInterconnects() {
-    this.to('directconnect:DescribeInterconnects');
-    return this;
+    return this.to('DescribeInterconnects');
   }
 
   /**
@@ -558,8 +517,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeLags.html
    */
   public toDescribeLags() {
-    this.to('directconnect:DescribeLags');
-    return this;
+    return this.to('DescribeLags');
   }
 
   /**
@@ -570,8 +528,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeLoa.html
    */
   public toDescribeLoa() {
-    this.to('directconnect:DescribeLoa');
-    return this;
+    return this.to('DescribeLoa');
   }
 
   /**
@@ -582,8 +539,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeLocations.html
    */
   public toDescribeLocations() {
-    this.to('directconnect:DescribeLocations');
-    return this;
+    return this.to('DescribeLocations');
   }
 
   /**
@@ -594,8 +550,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeTags.html
    */
   public toDescribeTags() {
-    this.to('directconnect:DescribeTags');
-    return this;
+    return this.to('DescribeTags');
   }
 
   /**
@@ -606,8 +561,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeVirtualGateways.html
    */
   public toDescribeVirtualGateways() {
-    this.to('directconnect:DescribeVirtualGateways');
-    return this;
+    return this.to('DescribeVirtualGateways');
   }
 
   /**
@@ -618,8 +572,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeVirtualInterfaces.html
    */
   public toDescribeVirtualInterfaces() {
-    this.to('directconnect:DescribeVirtualInterfaces');
-    return this;
+    return this.to('DescribeVirtualInterfaces');
   }
 
   /**
@@ -630,8 +583,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DisassociateConnectionFromLag.html
    */
   public toDisassociateConnectionFromLag() {
-    this.to('directconnect:DisassociateConnectionFromLag');
-    return this;
+    return this.to('DisassociateConnectionFromLag');
   }
 
   /**
@@ -642,8 +594,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html
    */
   public toListVirtualInterfaceTestHistory() {
-    this.to('directconnect:ListVirtualInterfaceTestHistory');
-    return this;
+    return this.to('ListVirtualInterfaceTestHistory');
   }
 
   /**
@@ -654,8 +605,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StartBgpFailoverTest.html
    */
   public toStartBgpFailoverTest() {
-    this.to('directconnect:StartBgpFailoverTest');
-    return this;
+    return this.to('StartBgpFailoverTest');
   }
 
   /**
@@ -666,8 +616,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html
    */
   public toStopBgpFailoverTest() {
-    this.to('directconnect:StopBgpFailoverTest');
-    return this;
+    return this.to('StopBgpFailoverTest');
   }
 
   /**
@@ -682,8 +631,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('directconnect:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -697,8 +645,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('directconnect:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -709,8 +656,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateDirectConnectGatewayAssociation.html
    */
   public toUpdateDirectConnectGatewayAssociation() {
-    this.to('directconnect:UpdateDirectConnectGatewayAssociation');
-    return this;
+    return this.to('UpdateDirectConnectGatewayAssociation');
   }
 
   /**
@@ -721,8 +667,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateLag.html
    */
   public toUpdateLag() {
-    this.to('directconnect:UpdateLag');
-    return this;
+    return this.to('UpdateLag');
   }
 
   /**
@@ -733,8 +678,7 @@ export class Directconnect extends PolicyStatement {
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateVirtualInterfaceAttributes.html
    */
   public toUpdateVirtualInterfaceAttributes() {
-    this.to('directconnect:UpdateVirtualInterfaceAttributes');
-    return this;
+    return this.to('UpdateVirtualInterfaceAttributes');
   }
 
   protected accessLevelList: AccessLevelList = {

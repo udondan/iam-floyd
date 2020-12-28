@@ -46,8 +46,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post
    */
   public toCreateBroker() {
-    this.to('mq:CreateBroker');
-    return this;
+    return this.to('CreateBroker');
   }
 
   /**
@@ -62,8 +61,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-post
    */
   public toCreateConfiguration() {
-    this.to('mq:CreateConfiguration');
-    return this;
+    return this.to('CreateConfiguration');
   }
 
   /**
@@ -78,8 +76,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-post
    */
   public toCreateTags() {
-    this.to('mq:CreateTags');
-    return this;
+    return this.to('CreateTags');
   }
 
   /**
@@ -90,8 +87,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-post
    */
   public toCreateUser() {
-    this.to('mq:CreateUser');
-    return this;
+    return this.to('CreateUser');
   }
 
   /**
@@ -108,8 +104,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-delete
    */
   public toDeleteBroker() {
-    this.to('mq:DeleteBroker');
-    return this;
+    return this.to('DeleteBroker');
   }
 
   /**
@@ -123,8 +118,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-delete
    */
   public toDeleteTags() {
-    this.to('mq:DeleteTags');
-    return this;
+    return this.to('DeleteTags');
   }
 
   /**
@@ -135,8 +129,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-delete
    */
   public toDeleteUser() {
-    this.to('mq:DeleteUser');
-    return this;
+    return this.to('DeleteUser');
   }
 
   /**
@@ -147,8 +140,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get
    */
   public toDescribeBroker() {
-    this.to('mq:DescribeBroker');
-    return this;
+    return this.to('DescribeBroker');
   }
 
   /**
@@ -159,8 +151,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/broker-engine-types.html#broker-engine-types-http-methods
    */
   public toDescribeBrokerEngineTypes() {
-    this.to('mq:DescribeBrokerEngineTypes');
-    return this;
+    return this.to('DescribeBrokerEngineTypes');
   }
 
   /**
@@ -171,8 +162,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/broker-instance-options.html#broker-engine-types-http-methods
    */
   public toDescribeBrokerInstanceOptions() {
-    this.to('mq:DescribeBrokerInstanceOptions');
-    return this;
+    return this.to('DescribeBrokerInstanceOptions');
   }
 
   /**
@@ -183,8 +173,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-get
    */
   public toDescribeConfiguration() {
-    this.to('mq:DescribeConfiguration');
-    return this;
+    return this.to('DescribeConfiguration');
   }
 
   /**
@@ -195,8 +184,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configuration-revision.html#rest-api-configuration-revision-methods-get
    */
   public toDescribeConfigurationRevision() {
-    this.to('mq:DescribeConfigurationRevision');
-    return this;
+    return this.to('DescribeConfigurationRevision');
   }
 
   /**
@@ -207,8 +195,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-get
    */
   public toDescribeUser() {
-    this.to('mq:DescribeUser');
-    return this;
+    return this.to('DescribeUser');
   }
 
   /**
@@ -219,8 +206,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-get
    */
   public toListBrokers() {
-    this.to('mq:ListBrokers');
-    return this;
+    return this.to('ListBrokers');
   }
 
   /**
@@ -231,8 +217,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-revisions.html#rest-api-revisions-methods-get
    */
   public toListConfigurationRevisions() {
-    this.to('mq:ListConfigurationRevisions');
-    return this;
+    return this.to('ListConfigurationRevisions');
   }
 
   /**
@@ -243,8 +228,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-get
    */
   public toListConfigurations() {
-    this.to('mq:ListConfigurations');
-    return this;
+    return this.to('ListConfigurations');
   }
 
   /**
@@ -255,8 +239,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-get
    */
   public toListTags() {
-    this.to('mq:ListTags');
-    return this;
+    return this.to('ListTags');
   }
 
   /**
@@ -267,8 +250,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-users.html#rest-api-users-methods-get
    */
   public toListUsers() {
-    this.to('mq:ListUsers');
-    return this;
+    return this.to('ListUsers');
   }
 
   /**
@@ -279,8 +261,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-restart.html#rest-api-reboot-methods-post
    */
   public toRebootBroker() {
-    this.to('mq:RebootBroker');
-    return this;
+    return this.to('RebootBroker');
   }
 
   /**
@@ -291,8 +272,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get
    */
   public toUpdateBroker() {
-    this.to('mq:UpdateBroker');
-    return this;
+    return this.to('UpdateBroker');
   }
 
   /**
@@ -303,8 +283,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-put
    */
   public toUpdateConfiguration() {
-    this.to('mq:UpdateConfiguration');
-    return this;
+    return this.to('UpdateConfiguration');
   }
 
   /**
@@ -315,8 +294,7 @@ export class Mq extends PolicyStatement {
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-put
    */
   public toUpdateUser() {
-    this.to('mq:UpdateUser');
-    return this;
+    return this.to('UpdateUser');
   }
 
   protected accessLevelList: AccessLevelList = {

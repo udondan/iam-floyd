@@ -10,6 +10,7 @@ route53resolver:DeleteResolverRule;Write
 route53resolver:DisassociateResolverEndpointIpAddress;Write
 route53resolver:DisassociateResolverQueryLogConfig;Write
 route53resolver:DisassociateResolverRule;Write
+route53resolver:GetResolverDnssecConfig;Read
 route53resolver:GetResolverEndpoint;Read
 route53resolver:GetResolverQueryLogConfig;Read
 route53resolver:GetResolverQueryLogConfigAssociation;Read
@@ -17,6 +18,7 @@ route53resolver:GetResolverQueryLogConfigPolicy;Read
 route53resolver:GetResolverRule;Read
 route53resolver:GetResolverRuleAssociation;Read
 route53resolver:GetResolverRulePolicy;Read
+route53resolver:ListResolverDnssecConfigs;List
 route53resolver:ListResolverEndpointIpAddresses;List
 route53resolver:ListResolverEndpoints;List
 route53resolver:ListResolverQueryLogConfigAssociations;List
@@ -28,5 +30,6 @@ route53resolver:PutResolverQueryLogConfigPolicy;Write
 route53resolver:PutResolverRulePolicy;Write
 route53resolver:TagResource;Tagging
 route53resolver:UntagResource;Tagging
+route53resolver:UpdateResolverDnssecConfig;Write
 route53resolver:UpdateResolverEndpoint;Write
 route53resolver:UpdateResolverRule;Write

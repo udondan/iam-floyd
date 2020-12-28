@@ -19,7 +19,7 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate one or more Scram Secrets with an Amazon MSK cluster.
+   * Grants permission to associate one or more Scram Secrets with an Amazon MSK cluster
    *
    * Access Level: Write
    *
@@ -30,12 +30,11 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#BatchAssociateScramSecret
    */
   public toBatchAssociateScramSecret() {
-    this.to('kafka:BatchAssociateScramSecret');
-    return this;
+    return this.to('BatchAssociateScramSecret');
   }
 
   /**
-   * Grants permission to disassociate one or more Scram Secrets from an Amazon MSK cluster.
+   * Grants permission to disassociate one or more Scram Secrets from an Amazon MSK cluster
    *
    * Access Level: Write
    *
@@ -45,12 +44,11 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#BatchDisassociateScramSecret
    */
   public toBatchDisassociateScramSecret() {
-    this.to('kafka:BatchDisassociateScramSecret');
-    return this;
+    return this.to('BatchDisassociateScramSecret');
   }
 
   /**
-   * Grants permission to create a cluster
+   * Grants permission to create an MSK cluster
    *
    * Access Level: Write
    *
@@ -71,192 +69,209 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#CreateCluster
    */
   public toCreateCluster() {
-    this.to('kafka:CreateCluster');
-    return this;
+    return this.to('CreateCluster');
   }
 
   /**
-   * Grants permission to create a configuration.
+   * Grants permission to create an MSK configuration
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration
    */
   public toCreateConfiguration() {
-    this.to('kafka:CreateConfiguration');
-    return this;
+    return this.to('CreateConfiguration');
   }
 
   /**
-   * Grants permission to delete a cluster.
+   * Grants permission to delete an MSK cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DeleteCluster
    */
   public toDeleteCluster() {
-    this.to('kafka:DeleteCluster');
-    return this;
+    return this.to('DeleteCluster');
   }
 
   /**
-   * Grants permission to delete the specified MSK configuration.
+   * Grants permission to delete the specified MSK configuration
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#DeleteConfiguration
    */
   public toDeleteConfiguration() {
-    this.to('kafka:DeleteConfiguration');
-    return this;
+    return this.to('DeleteConfiguration');
   }
 
   /**
-   * Grants permission to describe a cluster.
+   * Grants permission to describe an MSK cluster
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DescribeCluster
    */
   public toDescribeCluster() {
-    this.to('kafka:DescribeCluster');
-    return this;
+    return this.to('DescribeCluster');
   }
 
   /**
-   * Returns a description of the cluster operation specified by the ARN.
+   * Grants permission to describe the cluster operation that is specified by the given ARN
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/operations-clusteroperationarn.html#DescribeClusterOperation
    */
   public toDescribeClusterOperation() {
-    this.to('kafka:DescribeClusterOperation');
-    return this;
+    return this.to('DescribeClusterOperation');
   }
 
   /**
-   * Grants permission to describe a configuration.
+   * Grants permission to describe an MSK configuration
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn.html#DescribeConfiguration
    */
   public toDescribeConfiguration() {
-    this.to('kafka:DescribeConfiguration');
-    return this;
+    return this.to('DescribeConfiguration');
   }
 
   /**
-   * Grants permission to describe a configuration revision.
+   * Grants permission to describe an MSK configuration revision
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn-revision.html#DescribeConfigurationRevision
    */
   public toDescribeConfigurationRevision() {
-    this.to('kafka:DescribeConfigurationRevision');
-    return this;
+    return this.to('DescribeConfigurationRevision');
   }
 
   /**
-   * Grants permission to get connection details for the broker nodes in a cluster.
+   * Grants permission to get connection details for the brokers in an MSK cluster
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-bootstrap-brokers.html#GetBootstrapBrokers
    */
   public toGetBootstrapBrokers() {
-    this.to('kafka:GetBootstrapBrokers');
-    return this;
+    return this.to('GetBootstrapBrokers');
   }
 
   /**
-   * Returns a list of the Apache Kafka versions to which you can update this cluster.
+   * Grants permission to get a list of the Apache Kafka versions to which you can update an MSK cluster
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/compatible-kafka-versions.html#GetCompatibleKafkaVersions
    */
   public toGetCompatibleKafkaVersions() {
-    this.to('kafka:GetCompatibleKafkaVersions');
-    return this;
+    return this.to('GetCompatibleKafkaVersions');
   }
 
   /**
-   * Returns a list of all the operations that have been performed on the specified MSK cluster.
+   * Returns a list of all the operations that have been performed on the specified MSK cluster
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-operations.html#ListClusterOperations
    */
   public toListClusterOperations() {
-    this.to('kafka:ListClusterOperations');
-    return this;
+    return this.to('ListClusterOperations');
   }
 
   /**
-   * Grants permission to return a list of all clusters in the current account.
+   * Grants permission to list all MSK clusters in this account
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#ListClusters
    */
   public toListClusters() {
-    this.to('kafka:ListClusters');
-    return this;
+    return this.to('ListClusters');
   }
 
   /**
-   * Grants permission to return a list of all configurations in the current account.
+   * Grants permission to list all revisions for an MSK configuration in this account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn-revisions.html#ListConfigurationRevisions
+   */
+  public toListConfigurationRevisions() {
+    return this.to('ListConfigurationRevisions');
+  }
+
+  /**
+   * Grants permission to list all MSK configurations in this account
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration
    */
   public toListConfigurations() {
-    this.to('kafka:ListConfigurations');
-    return this;
+    return this.to('ListConfigurations');
   }
 
   /**
-   * Grants permission to return a list of nodes in a cluster.
+   * Grants permission to list all Apache Kafka versions supported by Amazon MSK
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/kafka-versions.html#ListKafkaVersions
+   */
+  public toListKafkaVersions() {
+    return this.to('ListKafkaVersions');
+  }
+
+  /**
+   * Grants permission to list brokers in an MSK cluster
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes.html#ListNodes
    */
   public toListNodes() {
-    this.to('kafka:ListNodes');
-    return this;
+    return this.to('ListNodes');
   }
 
   /**
-   * Grants permission to return a list of the Scram Secrets associated with an Amazon MSK cluster.
+   * Grants permission to list the Scram Secrets associated with an Amazon MSK cluster
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#ListScramSecrets
    */
   public toListScramSecrets() {
-    this.to('kafka:ListScramSecrets');
-    return this;
+    return this.to('ListScramSecrets');
   }
 
   /**
-   * Grants permission to list tags of a MSK resource.
+   * Grants permission to list tags of an MSK resource
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#ListTagsForResource
    */
   public toListTagsForResource() {
-    this.to('kafka:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
-   * Grants permission to tag a MSK resource.
+   * Grants permission to reboot broker
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-reboot-broker.html#RebootBroker
+   */
+  public toRebootBroker() {
+    return this.to('RebootBroker');
+  }
+
+  /**
+   * Grants permission to tag an MSK resource
    *
    * Access Level: Tagging
    *
@@ -267,12 +282,11 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#TagResource
    */
   public toTagResource() {
-    this.to('kafka:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
-   * Grants permission to remove tags from a MSK resource.
+   * Grants permission to remove tags from an MSK resource
    *
    * Access Level: Tagging
    *
@@ -282,80 +296,73 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#UntagResource
    */
   public toUntagResource() {
-    this.to('kafka:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
-   * Updates the number of broker nodes of the cluster.
+   * Updates the number of brokers of the MSK cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-count.html#UpdateBrokerCount
    */
   public toUpdateBrokerCount() {
-    this.to('kafka:UpdateBrokerCount');
-    return this;
+    return this.to('UpdateBrokerCount');
   }
 
   /**
-   * Updates the storage size of the broker nodes of the cluster
+   * Updates the storage size of the brokers of the MSK cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-storage.html#UpdateBrokerStorage
    */
   public toUpdateBrokerStorage() {
-    this.to('kafka:UpdateBrokerStorage');
-    return this;
+    return this.to('UpdateBrokerStorage');
   }
 
   /**
-   * Update Kafka configuration running on a cluster.
+   * Grants permission to update the configuration of the MSK cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-configuration.html#UpdateClusterConfiguration
    */
   public toUpdateClusterConfiguration() {
-    this.to('kafka:UpdateClusterConfiguration');
-    return this;
+    return this.to('UpdateClusterConfiguration');
   }
 
   /**
-   * Updates the cluster to the specified Apache Kafka version.
+   * Grants permission to update the MSK cluster to the specified Apache Kafka version
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-version.html#UpdateClusterKafkaVersion
    */
   public toUpdateClusterKafkaVersion() {
-    this.to('kafka:UpdateClusterKafkaVersion');
-    return this;
+    return this.to('UpdateClusterKafkaVersion');
   }
 
   /**
-   * Grants permission to create a new revision of the configuration.
+   * Grants permission to create a new revision of the MSK configuration
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#updateconfiguration
    */
   public toUpdateConfiguration() {
-    this.to('kafka:UpdateConfiguration');
-    return this;
+    return this.to('UpdateConfiguration');
   }
 
   /**
-   * Updates the monitoring settings for the cluster.
+   * Grants permission to update the monitoring settings for the MSK cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-monitoring.html#UpdateMonitoring
    */
   public toUpdateMonitoring() {
-    this.to('kafka:UpdateMonitoring');
-    return this;
+    return this.to('UpdateMonitoring');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -366,6 +373,7 @@ export class Kafka extends PolicyStatement {
       "CreateConfiguration",
       "DeleteCluster",
       "DeleteConfiguration",
+      "RebootBroker",
       "UpdateBrokerCount",
       "UpdateBrokerStorage",
       "UpdateClusterConfiguration",
@@ -384,7 +392,9 @@ export class Kafka extends PolicyStatement {
       "GetCompatibleKafkaVersions",
       "ListClusterOperations",
       "ListClusters",
+      "ListConfigurationRevisions",
       "ListConfigurations",
+      "ListKafkaVersions",
       "ListNodes",
       "ListScramSecrets",
       "ListTagsForResource"
@@ -397,6 +407,8 @@ export class Kafka extends PolicyStatement {
 
   /**
    * Adds a resource of type cluster to the statement
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html
    *
    * @param clusterName - Identifier for the clusterName.
    * @param uUID - Identifier for the uUID.

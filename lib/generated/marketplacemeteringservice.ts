@@ -26,8 +26,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html
    */
   public toBatchMeterUsage() {
-    this.to('aws-marketplace:BatchMeterUsage');
-    return this;
+    return this.to('BatchMeterUsage');
   }
 
   /**
@@ -38,8 +37,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html
    */
   public toMeterUsage() {
-    this.to('aws-marketplace:MeterUsage');
-    return this;
+    return this.to('MeterUsage');
   }
 
   /**
@@ -50,8 +48,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_RegisterUsage.html
    */
   public toRegisterUsage() {
-    this.to('aws-marketplace:RegisterUsage');
-    return this;
+    return this.to('RegisterUsage');
   }
 
   /**
@@ -62,8 +59,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html
    */
   public toResolveCustomer() {
-    this.to('aws-marketplace:ResolveCustomer');
-    return this;
+    return this.to('ResolveCustomer');
   }
 
   protected accessLevelList: AccessLevelList = {

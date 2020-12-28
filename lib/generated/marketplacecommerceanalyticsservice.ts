@@ -24,8 +24,7 @@ export class Marketplacecommerceanalytics extends PolicyStatement {
    * Access Level: Write
    */
   public toGenerateDataSet() {
-    this.to('marketplacecommerceanalytics:GenerateDataSet');
-    return this;
+    return this.to('GenerateDataSet');
   }
 
   /**
@@ -34,8 +33,7 @@ export class Marketplacecommerceanalytics extends PolicyStatement {
    * Access Level: Write
    */
   public toStartSupportDataExport() {
-    this.to('marketplacecommerceanalytics:StartSupportDataExport');
-    return this;
+    return this.to('StartSupportDataExport');
   }
 
   protected accessLevelList: AccessLevelList = {

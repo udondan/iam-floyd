@@ -35,8 +35,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html
    */
   public toAssumeRole() {
-    this.to('sts:AssumeRole');
-    return this;
+    return this.to('AssumeRole');
   }
 
   /**
@@ -85,8 +84,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html
    */
   public toAssumeRoleWithSAML() {
-    this.to('sts:AssumeRoleWithSAML');
-    return this;
+    return this.to('AssumeRoleWithSAML');
   }
 
   /**
@@ -113,8 +111,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html
    */
   public toAssumeRoleWithWebIdentity() {
-    this.to('sts:AssumeRoleWithWebIdentity');
-    return this;
+    return this.to('AssumeRoleWithWebIdentity');
   }
 
   /**
@@ -125,8 +122,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_DecodeAuthorizationMessage.html
    */
   public toDecodeAuthorizationMessage() {
-    this.to('sts:DecodeAuthorizationMessage');
-    return this;
+    return this.to('DecodeAuthorizationMessage');
   }
 
   /**
@@ -137,8 +133,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetAccessKeyInfo.html
    */
   public toGetAccessKeyInfo() {
-    this.to('sts:GetAccessKeyInfo');
-    return this;
+    return this.to('GetAccessKeyInfo');
   }
 
   /**
@@ -149,8 +144,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html
    */
   public toGetCallerIdentity() {
-    this.to('sts:GetCallerIdentity');
-    return this;
+    return this.to('GetCallerIdentity');
   }
 
   /**
@@ -166,8 +160,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html
    */
   public toGetFederationToken() {
-    this.to('sts:GetFederationToken');
-    return this;
+    return this.to('GetFederationToken');
   }
 
   /**
@@ -178,8 +171,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_bearer.html
    */
   public toGetServiceBearerToken() {
-    this.to('sts:GetServiceBearerToken');
-    return this;
+    return this.to('GetServiceBearerToken');
   }
 
   /**
@@ -190,8 +182,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html
    */
   public toGetSessionToken() {
-    this.to('sts:GetSessionToken');
-    return this;
+    return this.to('GetSessionToken');
   }
 
   /**
@@ -208,8 +199,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html
    */
   public toTagSession() {
-    this.to('sts:TagSession');
-    return this;
+    return this.to('TagSession');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -908,7 +898,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifExternalId(value: string | string[], operator?: Operator | string) {
-    return this.if(`sts:ExternalId`, value, operator || 'StringLike');
+    return this.if(`ExternalId`, value, operator || 'StringLike');
   }
 
   /**
@@ -923,7 +913,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRoleSessionName(value: string | string[], operator?: Operator | string) {
-    return this.if(`sts:RoleSessionName`, value, operator || 'StringLike');
+    return this.if(`RoleSessionName`, value, operator || 'StringLike');
   }
 
   /**
@@ -941,7 +931,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTransitiveTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`sts:TransitiveTagKeys`, value, operator || 'StringLike');
+    return this.if(`TransitiveTagKeys`, value, operator || 'StringLike');
   }
 
   /**

@@ -26,8 +26,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-jobs.html#CancelJob
    */
   public toCancelJob() {
-    this.to('dataexchange:CancelJob');
-    return this;
+    return this.to('CancelJob');
   }
 
   /**
@@ -43,8 +42,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions.html#CreateAsset
    */
   public toCreateAsset() {
-    this.to('dataexchange:CreateAsset');
-    return this;
+    return this.to('CreateAsset');
   }
 
   /**
@@ -60,8 +58,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets.html#CreateDataSet
    */
   public toCreateDataSet() {
-    this.to('dataexchange:CreateDataSet');
-    return this;
+    return this.to('CreateDataSet');
   }
 
   /**
@@ -72,8 +69,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-jobs.html#CreateJob
    */
   public toCreateJob() {
-    this.to('dataexchange:CreateJob');
-    return this;
+    return this.to('CreateJob');
   }
 
   /**
@@ -89,8 +85,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions.html#CreateRevision
    */
   public toCreateRevision() {
-    this.to('dataexchange:CreateRevision');
-    return this;
+    return this.to('CreateRevision');
   }
 
   /**
@@ -101,8 +96,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#DeleteAsset
    */
   public toDeleteAsset() {
-    this.to('dataexchange:DeleteAsset');
-    return this;
+    return this.to('DeleteAsset');
   }
 
   /**
@@ -113,8 +107,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid.html#DeleteDataSet
    */
   public toDeleteDataSet() {
-    this.to('dataexchange:DeleteDataSet');
-    return this;
+    return this.to('DeleteDataSet');
   }
 
   /**
@@ -125,8 +118,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid.html#DeleteRevision
    */
   public toDeleteRevision() {
-    this.to('dataexchange:DeleteRevision');
-    return this;
+    return this.to('DeleteRevision');
   }
 
   /**
@@ -137,8 +129,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#GetAsset
    */
   public toGetAsset() {
-    this.to('dataexchange:GetAsset');
-    return this;
+    return this.to('GetAsset');
   }
 
   /**
@@ -149,8 +140,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid.html#GetDataSet
    */
   public toGetDataSet() {
-    this.to('dataexchange:GetDataSet');
-    return this;
+    return this.to('GetDataSet');
   }
 
   /**
@@ -161,8 +151,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-jobs.html#GetJob
    */
   public toGetJob() {
-    this.to('dataexchange:GetJob');
-    return this;
+    return this.to('GetJob');
   }
 
   /**
@@ -173,8 +162,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid.html#GetRevision
    */
   public toGetRevision() {
-    this.to('dataexchange:GetRevision');
-    return this;
+    return this.to('GetRevision');
   }
 
   /**
@@ -185,8 +173,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions.html#ListDataSetRevisions
    */
   public toListDataSetRevisions() {
-    this.to('dataexchange:ListDataSetRevisions');
-    return this;
+    return this.to('ListDataSetRevisions');
   }
 
   /**
@@ -197,8 +184,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets.html#ListDataSets
    */
   public toListDataSets() {
-    this.to('dataexchange:ListDataSets');
-    return this;
+    return this.to('ListDataSets');
   }
 
   /**
@@ -209,8 +195,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-jobs.html#ListJobs
    */
   public toListJobs() {
-    this.to('dataexchange:ListJobs');
-    return this;
+    return this.to('ListJobs');
   }
 
   /**
@@ -221,8 +206,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid-assets.html#ListRevisionAssets
    */
   public toListRevisionAssets() {
-    this.to('dataexchange:ListRevisionAssets');
-    return this;
+    return this.to('ListRevisionAssets');
   }
 
   /**
@@ -233,8 +217,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/tags-resource-arn.html#ListTagsForResource
    */
   public toListTagsForResource() {
-    this.to('dataexchange:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -245,8 +228,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-jobs.html#StartJob
    */
   public toStartJob() {
-    this.to('dataexchange:StartJob');
-    return this;
+    return this.to('StartJob');
   }
 
   /**
@@ -261,8 +243,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/tags-resource-arn.html#TagResource
    */
   public toTagResource() {
-    this.to('dataexchange:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -276,8 +257,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/tags-resource-arn.html#UntagResource
    */
   public toUntagResource() {
-    this.to('dataexchange:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -288,8 +268,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#UpdateAsset
    */
   public toUpdateAsset() {
-    this.to('dataexchange:UpdateAsset');
-    return this;
+    return this.to('UpdateAsset');
   }
 
   /**
@@ -300,8 +279,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid.html#UpdateDataSet
    */
   public toUpdateDataSet() {
-    this.to('dataexchange:UpdateDataSet');
-    return this;
+    return this.to('UpdateDataSet');
   }
 
   /**
@@ -312,8 +290,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid.html#UpdateRevision
    */
   public toUpdateRevision() {
-    this.to('dataexchange:UpdateRevision');
-    return this;
+    return this.to('UpdateRevision');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -447,6 +424,6 @@ export class Dataexchange extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifJobType(value: string | string[], operator?: Operator | string) {
-    return this.if(`dataexchange:JobType`, value, operator || 'StringLike');
+    return this.if(`JobType`, value, operator || 'StringLike');
   }
 }

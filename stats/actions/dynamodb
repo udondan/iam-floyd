@@ -15,6 +15,7 @@ dynamodb:DescribeContributorInsights;Read
 dynamodb:DescribeExport;Read
 dynamodb:DescribeGlobalTable;Read
 dynamodb:DescribeGlobalTableSettings;Read
+dynamodb:DescribeKinesisStreamingDestination;Read
 dynamodb:DescribeLimits;Read
 dynamodb:DescribeReservedCapacity;Read
 dynamodb:DescribeReservedCapacityOfferings;Read
@@ -22,6 +23,8 @@ dynamodb:DescribeStream;Read
 dynamodb:DescribeTable;Read
 dynamodb:DescribeTableReplicaAutoScaling;Read
 dynamodb:DescribeTimeToLive;Read
+dynamodb:DisableKinesisStreamingDestination;Write
+dynamodb:EnableKinesisStreamingDestination;Write
 dynamodb:ExportTableToPointInTime;Write
 dynamodb:GetItem;Read
 dynamodb:GetRecords;Read

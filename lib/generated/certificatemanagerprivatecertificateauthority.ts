@@ -30,8 +30,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html
    */
   public toCreateCertificateAuthority() {
-    this.to('acm-pca:CreateCertificateAuthority');
-    return this;
+    return this.to('CreateCertificateAuthority');
   }
 
   /**
@@ -42,8 +41,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html
    */
   public toCreateCertificateAuthorityAuditReport() {
-    this.to('acm-pca:CreateCertificateAuthorityAuditReport');
-    return this;
+    return this.to('CreateCertificateAuthorityAuditReport');
   }
 
   /**
@@ -54,8 +52,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html
    */
   public toCreatePermission() {
-    this.to('acm-pca:CreatePermission');
-    return this;
+    return this.to('CreatePermission');
   }
 
   /**
@@ -66,8 +63,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthority.html
    */
   public toDeleteCertificateAuthority() {
-    this.to('acm-pca:DeleteCertificateAuthority');
-    return this;
+    return this.to('DeleteCertificateAuthority');
   }
 
   /**
@@ -78,8 +74,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html
    */
   public toDeletePermission() {
-    this.to('acm-pca:DeletePermission');
-    return this;
+    return this.to('DeletePermission');
   }
 
   /**
@@ -90,8 +85,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html
    */
   public toDeletePolicy() {
-    this.to('acm-pca:DeletePolicy');
-    return this;
+    return this.to('DeletePolicy');
   }
 
   /**
@@ -102,8 +96,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DescribeCertificateAuthority.html
    */
   public toDescribeCertificateAuthority() {
-    this.to('acm-pca:DescribeCertificateAuthority');
-    return this;
+    return this.to('DescribeCertificateAuthority');
   }
 
   /**
@@ -114,8 +107,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DescribeCertificateAuthorityAuditReport.html
    */
   public toDescribeCertificateAuthorityAuditReport() {
-    this.to('acm-pca:DescribeCertificateAuthorityAuditReport');
-    return this;
+    return this.to('DescribeCertificateAuthorityAuditReport');
   }
 
   /**
@@ -126,8 +118,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html
    */
   public toGetCertificate() {
-    this.to('acm-pca:GetCertificate');
-    return this;
+    return this.to('GetCertificate');
   }
 
   /**
@@ -138,8 +129,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html
    */
   public toGetCertificateAuthorityCertificate() {
-    this.to('acm-pca:GetCertificateAuthorityCertificate');
-    return this;
+    return this.to('GetCertificateAuthorityCertificate');
   }
 
   /**
@@ -150,8 +140,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCsr.html
    */
   public toGetCertificateAuthorityCsr() {
-    this.to('acm-pca:GetCertificateAuthorityCsr');
-    return this;
+    return this.to('GetCertificateAuthorityCsr');
   }
 
   /**
@@ -162,8 +151,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetPolicy.html
    */
   public toGetPolicy() {
-    this.to('acm-pca:GetPolicy');
-    return this;
+    return this.to('GetPolicy');
   }
 
   /**
@@ -174,8 +162,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html
    */
   public toImportCertificateAuthorityCertificate() {
-    this.to('acm-pca:ImportCertificateAuthorityCertificate');
-    return this;
+    return this.to('ImportCertificateAuthorityCertificate');
   }
 
   /**
@@ -189,8 +176,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html
    */
   public toIssueCertificate() {
-    this.to('acm-pca:IssueCertificate');
-    return this;
+    return this.to('IssueCertificate');
   }
 
   /**
@@ -201,8 +187,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html
    */
   public toListCertificateAuthorities() {
-    this.to('acm-pca:ListCertificateAuthorities');
-    return this;
+    return this.to('ListCertificateAuthorities');
   }
 
   /**
@@ -213,8 +198,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html
    */
   public toListPermissions() {
-    this.to('acm-pca:ListPermissions');
-    return this;
+    return this.to('ListPermissions');
   }
 
   /**
@@ -225,8 +209,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListTags.html
    */
   public toListTags() {
-    this.to('acm-pca:ListTags');
-    return this;
+    return this.to('ListTags');
   }
 
   /**
@@ -237,8 +220,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html
    */
   public toPutPolicy() {
-    this.to('acm-pca:PutPolicy');
-    return this;
+    return this.to('PutPolicy');
   }
 
   /**
@@ -249,8 +231,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RestoreCertificateAuthority.html
    */
   public toRestoreCertificateAuthority() {
-    this.to('acm-pca:RestoreCertificateAuthority');
-    return this;
+    return this.to('RestoreCertificateAuthority');
   }
 
   /**
@@ -261,8 +242,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html
    */
   public toRevokeCertificate() {
-    this.to('acm-pca:RevokeCertificate');
-    return this;
+    return this.to('RevokeCertificate');
   }
 
   /**
@@ -277,8 +257,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html
    */
   public toTagCertificateAuthority() {
-    this.to('acm-pca:TagCertificateAuthority');
-    return this;
+    return this.to('TagCertificateAuthority');
   }
 
   /**
@@ -292,8 +271,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html
    */
   public toUntagCertificateAuthority() {
-    this.to('acm-pca:UntagCertificateAuthority');
-    return this;
+    return this.to('UntagCertificateAuthority');
   }
 
   /**
@@ -304,8 +282,7 @@ export class AcmPca extends PolicyStatement {
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html
    */
   public toUpdateCertificateAuthority() {
-    this.to('acm-pca:UpdateCertificateAuthority');
-    return this;
+    return this.to('UpdateCertificateAuthority');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -376,6 +353,6 @@ export class AcmPca extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTemplateArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`acm-pca:TemplateArn`, value, operator || 'StringLike');
+    return this.if(`TemplateArn`, value, operator || 'StringLike');
   }
 }

@@ -26,8 +26,7 @@ export class Codeguru extends PolicyStatement {
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetCodeGuruFreeTrialSummary.html
    */
   public toGetCodeGuruFreeTrialSummary() {
-    this.to('codeguru:GetCodeGuruFreeTrialSummary');
-    return this;
+    return this.to('GetCodeGuruFreeTrialSummary');
   }
 
   protected accessLevelList: AccessLevelList = {

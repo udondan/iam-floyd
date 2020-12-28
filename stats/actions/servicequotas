@@ -12,5 +12,8 @@ servicequotas:ListRequestedServiceQuotaChangeHistoryByQuota;Read
 servicequotas:ListServiceQuotaIncreaseRequestsInTemplate;Read
 servicequotas:ListServiceQuotas;Read
 servicequotas:ListServices;Read
+servicequotas:ListTagsForResource;List
 servicequotas:PutServiceQuotaIncreaseRequestIntoTemplate;Write
 servicequotas:RequestServiceQuotaIncrease;Write
+servicequotas:TagResource;Tagging
+servicequotas:UntagResource;Tagging

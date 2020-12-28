@@ -30,8 +30,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateApp.html
    */
   public toCreateApp() {
-    this.to('panorama:CreateApp');
-    return this;
+    return this.to('CreateApp');
   }
 
   /**
@@ -42,8 +41,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateAppDeployment.html
    */
   public toCreateAppDeployment() {
-    this.to('panorama:CreateAppDeployment');
-    return this;
+    return this.to('CreateAppDeployment');
   }
 
   /**
@@ -54,8 +52,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateAppVersion.html
    */
   public toCreateAppVersion() {
-    this.to('panorama:CreateAppVersion');
-    return this;
+    return this.to('CreateAppVersion');
   }
 
   /**
@@ -70,8 +67,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateDataSource.html
    */
   public toCreateDataSource() {
-    this.to('panorama:CreateDataSource');
-    return this;
+    return this.to('CreateDataSource');
   }
 
   /**
@@ -82,8 +78,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateDeploymentConfiguration.html
    */
   public toCreateDeploymentConfiguration() {
-    this.to('panorama:CreateDeploymentConfiguration');
-    return this;
+    return this.to('CreateDeploymentConfiguration');
   }
 
   /**
@@ -98,8 +93,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateDevice.html
    */
   public toCreateDevice() {
-    this.to('panorama:CreateDevice');
-    return this;
+    return this.to('CreateDevice');
   }
 
   /**
@@ -110,8 +104,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateDeviceUpdate.html
    */
   public toCreateDeviceUpdate() {
-    this.to('panorama:CreateDeviceUpdate');
-    return this;
+    return this.to('CreateDeviceUpdate');
   }
 
   /**
@@ -122,8 +115,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateInputList.html
    */
   public toCreateInputs() {
-    this.to('panorama:CreateInputs');
-    return this;
+    return this.to('CreateInputs');
   }
 
   /**
@@ -138,8 +130,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateModel.html
    */
   public toCreateModel() {
-    this.to('panorama:CreateModel');
-    return this;
+    return this.to('CreateModel');
   }
 
   /**
@@ -150,8 +141,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateStreamsList.html
    */
   public toCreateStreams() {
-    this.to('panorama:CreateStreams');
-    return this;
+    return this.to('CreateStreams');
   }
 
   /**
@@ -162,8 +152,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_DeleteApp.html
    */
   public toDeleteApp() {
-    this.to('panorama:DeleteApp');
-    return this;
+    return this.to('DeleteApp');
   }
 
   /**
@@ -174,8 +163,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_DeleteAppVersion.html
    */
   public toDeleteAppVersion() {
-    this.to('panorama:DeleteAppVersion');
-    return this;
+    return this.to('DeleteAppVersion');
   }
 
   /**
@@ -186,8 +174,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_DeleteDataSource.html
    */
   public toDeleteDataSource() {
-    this.to('panorama:DeleteDataSource');
-    return this;
+    return this.to('DeleteDataSource');
   }
 
   /**
@@ -198,8 +185,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_DeleteDevice.html
    */
   public toDeleteDevice() {
-    this.to('panorama:DeleteDevice');
-    return this;
+    return this.to('DeleteDevice');
   }
 
   /**
@@ -210,8 +196,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_DeleteModel.html
    */
   public toDeleteModel() {
-    this.to('panorama:DeleteModel');
-    return this;
+    return this.to('DeleteModel');
   }
 
   /**
@@ -222,8 +207,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribeApp.html
    */
   public toDescribeApp() {
-    this.to('panorama:DescribeApp');
-    return this;
+    return this.to('DescribeApp');
   }
 
   /**
@@ -234,8 +218,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribeAppDeployment.html
    */
   public toDescribeAppDeployment() {
-    this.to('panorama:DescribeAppDeployment');
-    return this;
+    return this.to('DescribeAppDeployment');
   }
 
   /**
@@ -246,8 +229,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribeAppVersion.html
    */
   public toDescribeAppVersion() {
-    this.to('panorama:DescribeAppVersion');
-    return this;
+    return this.to('DescribeAppVersion');
   }
 
   /**
@@ -258,8 +240,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribeDataSource.html
    */
   public toDescribeDataSource() {
-    this.to('panorama:DescribeDataSource');
-    return this;
+    return this.to('DescribeDataSource');
   }
 
   /**
@@ -270,8 +251,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribeDevice.html
    */
   public toDescribeDevice() {
-    this.to('panorama:DescribeDevice');
-    return this;
+    return this.to('DescribeDevice');
   }
 
   /**
@@ -282,8 +262,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribeDeviceUpdate.html
    */
   public toDescribeDeviceUpdate() {
-    this.to('panorama:DescribeDeviceUpdate');
-    return this;
+    return this.to('DescribeDeviceUpdate');
   }
 
   /**
@@ -294,8 +273,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribeModel.html
    */
   public toDescribeModel() {
-    this.to('panorama:DescribeModel');
-    return this;
+    return this.to('DescribeModel');
   }
 
   /**
@@ -306,8 +284,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribeSoftware.html
    */
   public toDescribeSoftware() {
-    this.to('panorama:DescribeSoftware');
-    return this;
+    return this.to('DescribeSoftware');
   }
 
   /**
@@ -318,8 +295,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_GetDeploymentConfiguration.html
    */
   public toGetDeploymentConfiguration() {
-    this.to('panorama:GetDeploymentConfiguration');
-    return this;
+    return this.to('GetDeploymentConfiguration');
   }
 
   /**
@@ -330,8 +306,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_GetInputList.html
    */
   public toGetInputs() {
-    this.to('panorama:GetInputs');
-    return this;
+    return this.to('GetInputs');
   }
 
   /**
@@ -342,8 +317,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_GetStreamsList.html
    */
   public toGetStreams() {
-    this.to('panorama:GetStreams');
-    return this;
+    return this.to('GetStreams');
   }
 
   /**
@@ -354,8 +328,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_GetWebSocketURL.html
    */
   public toGetWebSocketURL() {
-    this.to('panorama:GetWebSocketURL');
-    return this;
+    return this.to('GetWebSocketURL');
   }
 
   /**
@@ -366,8 +339,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_ListAppDeploymentOperations.html
    */
   public toListAppDeploymentOperations() {
-    this.to('panorama:ListAppDeploymentOperations');
-    return this;
+    return this.to('ListAppDeploymentOperations');
   }
 
   /**
@@ -378,8 +350,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_ListAppVersions.html
    */
   public toListAppVersions() {
-    this.to('panorama:ListAppVersions');
-    return this;
+    return this.to('ListAppVersions');
   }
 
   /**
@@ -390,8 +361,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_ListApps.html
    */
   public toListApps() {
-    this.to('panorama:ListApps');
-    return this;
+    return this.to('ListApps');
   }
 
   /**
@@ -402,8 +372,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_ListDataSources.html
    */
   public toListDataSources() {
-    this.to('panorama:ListDataSources');
-    return this;
+    return this.to('ListDataSources');
   }
 
   /**
@@ -414,8 +383,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_ListDeploymentConfigurations.html
    */
   public toListDeploymentConfigurations() {
-    this.to('panorama:ListDeploymentConfigurations');
-    return this;
+    return this.to('ListDeploymentConfigurations');
   }
 
   /**
@@ -426,8 +394,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_ListDeviceUpdates.html
    */
   public toListDeviceUpdates() {
-    this.to('panorama:ListDeviceUpdates');
-    return this;
+    return this.to('ListDeviceUpdates');
   }
 
   /**
@@ -438,8 +405,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_ListDevices.html
    */
   public toListDevices() {
-    this.to('panorama:ListDevices');
-    return this;
+    return this.to('ListDevices');
   }
 
   /**
@@ -450,8 +416,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_ListModels.html
    */
   public toListModels() {
-    this.to('panorama:ListModels');
-    return this;
+    return this.to('ListModels');
   }
 
   /**
@@ -462,8 +427,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('panorama:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -478,8 +442,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_TagResource.html
    */
   public toTagResource() {
-    this.to('panorama:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -493,8 +456,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('panorama:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -505,8 +467,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_UpdateApp.html
    */
   public toUpdateApp() {
-    this.to('panorama:UpdateApp');
-    return this;
+    return this.to('UpdateApp');
   }
 
   /**
@@ -517,8 +478,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_UpdateAppConfiguration.html
    */
   public toUpdateAppConfiguration() {
-    this.to('panorama:UpdateAppConfiguration');
-    return this;
+    return this.to('UpdateAppConfiguration');
   }
 
   /**
@@ -529,8 +489,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_UpdateDataSource.html
    */
   public toUpdateDataSource() {
-    this.to('panorama:UpdateDataSource');
-    return this;
+    return this.to('UpdateDataSource');
   }
 
   /**
@@ -541,8 +500,7 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/API_UpdateDevice.html
    */
   public toUpdateDevice() {
-    this.to('panorama:UpdateDevice');
-    return this;
+    return this.to('UpdateDevice');
   }
 
   protected accessLevelList: AccessLevelList = {

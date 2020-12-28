@@ -13,6 +13,9 @@ kms:GranteePrincipal
 kms:KeyOrigin
 kms:MessageType
 kms:ReEncryptOnSameKey
+kms:RequestAlias
+kms:ResourceAliases
+kms:ResourceTag
 kms:RetiringPrincipal
 kms:SigningAlgorithm
 kms:ValidTo

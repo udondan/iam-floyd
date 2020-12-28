@@ -26,8 +26,7 @@ export class AutoscalingPlans extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CreateScalingPlan.html
    */
   public toCreateScalingPlan() {
-    this.to('autoscaling-plans:CreateScalingPlan');
-    return this;
+    return this.to('CreateScalingPlan');
   }
 
   /**
@@ -38,8 +37,7 @@ export class AutoscalingPlans extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DeleteScalingPlan.html
    */
   public toDeleteScalingPlan() {
-    this.to('autoscaling-plans:DeleteScalingPlan');
-    return this;
+    return this.to('DeleteScalingPlan');
   }
 
   /**
@@ -50,8 +48,7 @@ export class AutoscalingPlans extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DescribeScalingPlanResources.html
    */
   public toDescribeScalingPlanResources() {
-    this.to('autoscaling-plans:DescribeScalingPlanResources');
-    return this;
+    return this.to('DescribeScalingPlanResources');
   }
 
   /**
@@ -62,8 +59,7 @@ export class AutoscalingPlans extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DescribeScalingPlans.html
    */
   public toDescribeScalingPlans() {
-    this.to('autoscaling-plans:DescribeScalingPlans');
-    return this;
+    return this.to('DescribeScalingPlans');
   }
 
   /**
@@ -74,8 +70,7 @@ export class AutoscalingPlans extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_GetScalingPlanResourceForecastData.html
    */
   public toGetScalingPlanResourceForecastData() {
-    this.to('autoscaling-plans:GetScalingPlanResourceForecastData');
-    return this;
+    return this.to('GetScalingPlanResourceForecastData');
   }
 
   /**
@@ -86,8 +81,7 @@ export class AutoscalingPlans extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_UpdateScalingPlan.html
    */
   public toUpdateScalingPlan() {
-    this.to('autoscaling-plans:UpdateScalingPlan');
-    return this;
+    return this.to('UpdateScalingPlan');
   }
 
   protected accessLevelList: AccessLevelList = {

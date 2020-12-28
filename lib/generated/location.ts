@@ -26,8 +26,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_AssociateTrackerConsumer.html
    */
   public toAssociateTrackerConsumer() {
-    this.to('geo:AssociateTrackerConsumer');
-    return this;
+    return this.to('AssociateTrackerConsumer');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_BatchDeleteGeofence.html
    */
   public toBatchDeleteGeofence() {
-    this.to('geo:BatchDeleteGeofence');
-    return this;
+    return this.to('BatchDeleteGeofence');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_BatchEvaluateGeofences.html
    */
   public toBatchEvaluateGeofences() {
-    this.to('geo:BatchEvaluateGeofences');
-    return this;
+    return this.to('BatchEvaluateGeofences');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_BatchGetDevicePosition.html
    */
   public toBatchGetDevicePosition() {
-    this.to('geo:BatchGetDevicePosition');
-    return this;
+    return this.to('BatchGetDevicePosition');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_BatchPutGeofence.html
    */
   public toBatchPutGeofence() {
-    this.to('geo:BatchPutGeofence');
-    return this;
+    return this.to('BatchPutGeofence');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_BatchUpdateDevicePosition.html
    */
   public toBatchUpdateDevicePosition() {
-    this.to('geo:BatchUpdateDevicePosition');
-    return this;
+    return this.to('BatchUpdateDevicePosition');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_CreateGeofenceCollection.html
    */
   public toCreateGeofenceCollection() {
-    this.to('geo:CreateGeofenceCollection');
-    return this;
+    return this.to('CreateGeofenceCollection');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_CreateMap.html
    */
   public toCreateMap() {
-    this.to('geo:CreateMap');
-    return this;
+    return this.to('CreateMap');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_CreatePlaceIndex.html
    */
   public toCreatePlaceIndex() {
-    this.to('geo:CreatePlaceIndex');
-    return this;
+    return this.to('CreatePlaceIndex');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_CreateTracker.html
    */
   public toCreateTracker() {
-    this.to('geo:CreateTracker');
-    return this;
+    return this.to('CreateTracker');
   }
 
   /**
@@ -146,8 +136,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_DeleteGeofenceCollection.html
    */
   public toDeleteGeofenceCollection() {
-    this.to('geo:DeleteGeofenceCollection');
-    return this;
+    return this.to('DeleteGeofenceCollection');
   }
 
   /**
@@ -158,8 +147,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_DeleteMap.html
    */
   public toDeleteMap() {
-    this.to('geo:DeleteMap');
-    return this;
+    return this.to('DeleteMap');
   }
 
   /**
@@ -170,8 +158,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_DeletePlaceIndex.html
    */
   public toDeletePlaceIndex() {
-    this.to('geo:DeletePlaceIndex');
-    return this;
+    return this.to('DeletePlaceIndex');
   }
 
   /**
@@ -182,8 +169,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_DeleteTracker.html
    */
   public toDeleteTracker() {
-    this.to('geo:DeleteTracker');
-    return this;
+    return this.to('DeleteTracker');
   }
 
   /**
@@ -194,8 +180,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_DescribeGeofenceCollection.html
    */
   public toDescribeGeofenceCollection() {
-    this.to('geo:DescribeGeofenceCollection');
-    return this;
+    return this.to('DescribeGeofenceCollection');
   }
 
   /**
@@ -206,8 +191,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_DescribeMap.html
    */
   public toDescribeMap() {
-    this.to('geo:DescribeMap');
-    return this;
+    return this.to('DescribeMap');
   }
 
   /**
@@ -218,8 +202,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_DescribePlaceIndex.html
    */
   public toDescribePlaceIndex() {
-    this.to('geo:DescribePlaceIndex');
-    return this;
+    return this.to('DescribePlaceIndex');
   }
 
   /**
@@ -230,8 +213,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_DescribeTracker.html
    */
   public toDescribeTracker() {
-    this.to('geo:DescribeTracker');
-    return this;
+    return this.to('DescribeTracker');
   }
 
   /**
@@ -242,8 +224,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_DisassociateTrackerConsumer.html
    */
   public toDisassociateTrackerConsumer() {
-    this.to('geo:DisassociateTrackerConsumer');
-    return this;
+    return this.to('DisassociateTrackerConsumer');
   }
 
   /**
@@ -254,8 +235,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_GetDevicePosition.html
    */
   public toGetDevicePosition() {
-    this.to('geo:GetDevicePosition');
-    return this;
+    return this.to('GetDevicePosition');
   }
 
   /**
@@ -266,8 +246,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_GetDevicePositionHistory.html
    */
   public toGetDevicePositionHistory() {
-    this.to('geo:GetDevicePositionHistory');
-    return this;
+    return this.to('GetDevicePositionHistory');
   }
 
   /**
@@ -278,8 +257,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_GetGeofence.html
    */
   public toGetGeofence() {
-    this.to('geo:GetGeofence');
-    return this;
+    return this.to('GetGeofence');
   }
 
   /**
@@ -290,8 +268,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_GetMapGlyphs.html
    */
   public toGetMapGlyphs() {
-    this.to('geo:GetMapGlyphs');
-    return this;
+    return this.to('GetMapGlyphs');
   }
 
   /**
@@ -302,8 +279,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_GetMapSprites.html
    */
   public toGetMapSprites() {
-    this.to('geo:GetMapSprites');
-    return this;
+    return this.to('GetMapSprites');
   }
 
   /**
@@ -314,8 +290,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_GetMapStyleDescriptor.html
    */
   public toGetMapStyleDescriptor() {
-    this.to('geo:GetMapStyleDescriptor');
-    return this;
+    return this.to('GetMapStyleDescriptor');
   }
 
   /**
@@ -326,8 +301,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_GetMapTile.html
    */
   public toGetMapTile() {
-    this.to('geo:GetMapTile');
-    return this;
+    return this.to('GetMapTile');
   }
 
   /**
@@ -338,8 +312,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_GetMapTileJson.html
    */
   public toGetMapTileJson() {
-    this.to('geo:GetMapTileJson');
-    return this;
+    return this.to('GetMapTileJson');
   }
 
   /**
@@ -350,8 +323,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_ListGeofenceCollections.html
    */
   public toListGeofenceCollections() {
-    this.to('geo:ListGeofenceCollections');
-    return this;
+    return this.to('ListGeofenceCollections');
   }
 
   /**
@@ -362,8 +334,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_ListGeofences.html
    */
   public toListGeofences() {
-    this.to('geo:ListGeofences');
-    return this;
+    return this.to('ListGeofences');
   }
 
   /**
@@ -374,8 +345,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_ListMaps.html
    */
   public toListMaps() {
-    this.to('geo:ListMaps');
-    return this;
+    return this.to('ListMaps');
   }
 
   /**
@@ -386,8 +356,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_ListPlaceIndexes.html
    */
   public toListPlaceIndexes() {
-    this.to('geo:ListPlaceIndexes');
-    return this;
+    return this.to('ListPlaceIndexes');
   }
 
   /**
@@ -398,8 +367,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_ListTrackerConsumers.html
    */
   public toListTrackerConsumers() {
-    this.to('geo:ListTrackerConsumers');
-    return this;
+    return this.to('ListTrackerConsumers');
   }
 
   /**
@@ -410,8 +378,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_ListTrackers.html
    */
   public toListTrackers() {
-    this.to('geo:ListTrackers');
-    return this;
+    return this.to('ListTrackers');
   }
 
   /**
@@ -422,8 +389,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_PutGeofence.html
    */
   public toPutGeofence() {
-    this.to('geo:PutGeofence');
-    return this;
+    return this.to('PutGeofence');
   }
 
   /**
@@ -434,8 +400,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_SearchPlaceIndexForPosition.html
    */
   public toSearchPlaceIndexForPosition() {
-    this.to('geo:SearchPlaceIndexForPosition');
-    return this;
+    return this.to('SearchPlaceIndexForPosition');
   }
 
   /**
@@ -446,8 +411,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_SearchPlaceIndexForText.html
    */
   public toSearchPlaceIndexForText() {
-    this.to('geo:SearchPlaceIndexForText');
-    return this;
+    return this.to('SearchPlaceIndexForText');
   }
 
   /**
@@ -458,8 +422,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_UpdateGeofenceCollection.html
    */
   public toUpdateGeofenceCollection() {
-    this.to('geo:UpdateGeofenceCollection');
-    return this;
+    return this.to('UpdateGeofenceCollection');
   }
 
   /**
@@ -470,8 +433,7 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/API_UpdateTracker.html
    */
   public toUpdateTracker() {
-    this.to('geo:UpdateTracker');
-    return this;
+    return this.to('UpdateTracker');
   }
 
   protected accessLevelList: AccessLevelList = {

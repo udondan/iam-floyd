@@ -26,8 +26,7 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html
    */
   public toDescribeProcurementSystemConfiguration() {
-    this.to('aws-marketplace:DescribeProcurementSystemConfiguration');
-    return this;
+    return this.to('DescribeProcurementSystemConfiguration');
   }
 
   /**
@@ -38,8 +37,7 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html
    */
   public toPutProcurementSystemConfiguration() {
-    this.to('aws-marketplace:PutProcurementSystemConfiguration');
-    return this;
+    return this.to('PutProcurementSystemConfiguration');
   }
 
   protected accessLevelList: AccessLevelList = {

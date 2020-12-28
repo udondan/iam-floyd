@@ -26,8 +26,7 @@ export class Arsenal extends PolicyStatement {
    * https://docs.aws.amazon.com/setting-up.html#setting-up-user-policy
    */
   public toRegisterOnPremisesAgent() {
-    this.to('arsenal:RegisterOnPremisesAgent');
-    return this;
+    return this.to('RegisterOnPremisesAgent');
   }
 
   protected accessLevelList: AccessLevelList = {

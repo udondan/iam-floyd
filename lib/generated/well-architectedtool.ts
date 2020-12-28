@@ -26,8 +26,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-add.html
    */
   public toAssociateLenses() {
-    this.to('wellarchitected:AssociateLenses');
-    return this;
+    return this.to('AssociateLenses');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/milestones-save.html
    */
   public toCreateMilestone() {
-    this.to('wellarchitected:CreateMilestone');
-    return this;
+    return this.to('CreateMilestone');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html
    */
   public toCreateWorkload() {
-    this.to('wellarchitected:CreateWorkload');
-    return this;
+    return this.to('CreateWorkload');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html
    */
   public toCreateWorkloadShare() {
-    this.to('wellarchitected:CreateWorkloadShare');
-    return this;
+    return this.to('CreateWorkloadShare');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-delete.html
    */
   public toDeleteWorkload() {
-    this.to('wellarchitected:DeleteWorkload');
-    return this;
+    return this.to('DeleteWorkload');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/sharing-remove.html
    */
   public toDeleteWorkloadShare() {
-    this.to('wellarchitected:DeleteWorkloadShare');
-    return this;
+    return this.to('DeleteWorkloadShare');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-remove.html
    */
   public toDisassociateLenses() {
-    this.to('wellarchitected:DisassociateLenses');
-    return this;
+    return this.to('DisassociateLenses');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/start-workflow-review.html
    */
   public toGetAnswer() {
-    this.to('wellarchitected:GetAnswer');
-    return this;
+    return this.to('GetAnswer');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/start-workflow-review.html
    */
   public toGetLensReview() {
-    this.to('wellarchitected:GetLensReview');
-    return this;
+    return this.to('GetLensReview');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-report.html
    */
   public toGetLensReviewReport() {
-    this.to('wellarchitected:GetLensReviewReport');
-    return this;
+    return this.to('GetLensReviewReport');
   }
 
   /**
@@ -146,8 +136,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-upgrading.html
    */
   public toGetLensVersionDifference() {
-    this.to('wellarchitected:GetLensVersionDifference');
-    return this;
+    return this.to('GetLensVersionDifference');
   }
 
   /**
@@ -158,8 +147,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/milestones-view.html
    */
   public toGetMilestone() {
-    this.to('wellarchitected:GetMilestone');
-    return this;
+    return this.to('GetMilestone');
   }
 
   /**
@@ -170,8 +158,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-page.html
    */
   public toGetWorkload() {
-    this.to('wellarchitected:GetWorkload');
-    return this;
+    return this.to('GetWorkload');
   }
 
   /**
@@ -182,8 +169,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/start-workflow-review.html
    */
   public toListAnswers() {
-    this.to('wellarchitected:ListAnswers');
-    return this;
+    return this.to('ListAnswers');
   }
 
   /**
@@ -194,8 +180,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/tutorial-step3.html
    */
   public toListLensReviewImprovements() {
-    this.to('wellarchitected:ListLensReviewImprovements');
-    return this;
+    return this.to('ListLensReviewImprovements');
   }
 
   /**
@@ -206,8 +191,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-details.html
    */
   public toListLensReviews() {
-    this.to('wellarchitected:ListLensReviews');
-    return this;
+    return this.to('ListLensReviews');
   }
 
   /**
@@ -218,8 +202,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses.html
    */
   public toListLenses() {
-    this.to('wellarchitected:ListLenses');
-    return this;
+    return this.to('ListLenses');
   }
 
   /**
@@ -230,8 +213,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/details-milestones.html
    */
   public toListMilestones() {
-    this.to('wellarchitected:ListMilestones');
-    return this;
+    return this.to('ListMilestones');
   }
 
   /**
@@ -242,8 +224,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-notifications.html
    */
   public toListNotifications() {
-    this.to('wellarchitected:ListNotifications');
-    return this;
+    return this.to('ListNotifications');
   }
 
   /**
@@ -254,8 +235,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/invitations.html
    */
   public toListShareInvitations() {
-    this.to('wellarchitected:ListShareInvitations');
-    return this;
+    return this.to('ListShareInvitations');
   }
 
   /**
@@ -266,8 +246,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html
    */
   public toListWorkloadShares() {
-    this.to('wellarchitected:ListWorkloadShares');
-    return this;
+    return this.to('ListWorkloadShares');
   }
 
   /**
@@ -278,8 +257,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-page.html
    */
   public toListWorkloads() {
-    this.to('wellarchitected:ListWorkloads');
-    return this;
+    return this.to('ListWorkloads');
   }
 
   /**
@@ -290,8 +268,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/start-workflow-review.html
    */
   public toUpdateAnswer() {
-    this.to('wellarchitected:UpdateAnswer');
-    return this;
+    return this.to('UpdateAnswer');
   }
 
   /**
@@ -302,8 +279,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-details.html
    */
   public toUpdateLensReview() {
-    this.to('wellarchitected:UpdateLensReview');
-    return this;
+    return this.to('UpdateLensReview');
   }
 
   /**
@@ -314,8 +290,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workload-sharing.html
    */
   public toUpdateShareInvitation() {
-    this.to('wellarchitected:UpdateShareInvitation');
-    return this;
+    return this.to('UpdateShareInvitation');
   }
 
   /**
@@ -326,8 +301,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workload-edit.html
    */
   public toUpdateWorkload() {
-    this.to('wellarchitected:UpdateWorkload');
-    return this;
+    return this.to('UpdateWorkload');
   }
 
   /**
@@ -338,8 +312,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workload-sharing.html
    */
   public toUpdateWorkloadShare() {
-    this.to('wellarchitected:UpdateWorkloadShare');
-    return this;
+    return this.to('UpdateWorkloadShare');
   }
 
   /**
@@ -350,8 +323,7 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-upgrading.html
    */
   public toUpgradeLensReview() {
-    this.to('wellarchitected:UpgradeLensReview');
-    return this;
+    return this.to('UpgradeLensReview');
   }
 
   protected accessLevelList: AccessLevelList = {

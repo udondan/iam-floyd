@@ -26,8 +26,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toAssociateApprovedOrigin() {
-    this.to('connect:AssociateApprovedOrigin');
-    return this;
+    return this.to('AssociateApprovedOrigin');
   }
 
   /**
@@ -53,8 +52,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toAssociateInstanceStorageConfig() {
-    this.to('connect:AssociateInstanceStorageConfig');
-    return this;
+    return this.to('AssociateInstanceStorageConfig');
   }
 
   /**
@@ -68,8 +66,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toAssociateLambdaFunction() {
-    this.to('connect:AssociateLambdaFunction');
-    return this;
+    return this.to('AssociateLambdaFunction');
   }
 
   /**
@@ -86,8 +83,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toAssociateLexBot() {
-    this.to('connect:AssociateLexBot');
-    return this;
+    return this.to('AssociateLexBot');
   }
 
   /**
@@ -101,8 +97,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateRoutingProfileQueues.html
    */
   public toAssociateRoutingProfileQueues() {
-    this.to('connect:AssociateRoutingProfileQueues');
-    return this;
+    return this.to('AssociateRoutingProfileQueues');
   }
 
   /**
@@ -113,8 +108,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toAssociateSecurityKey() {
-    this.to('connect:AssociateSecurityKey');
-    return this;
+    return this.to('AssociateSecurityKey');
   }
 
   /**
@@ -129,8 +123,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlow.html
    */
   public toCreateContactFlow() {
-    this.to('connect:CreateContactFlow');
-    return this;
+    return this.to('CreateContactFlow');
   }
 
   /**
@@ -144,29 +137,32 @@ export class Connect extends PolicyStatement {
    * - ds:CreateAlias
    * - ds:CreateDirectory
    * - ds:CreateIdentityPoolDirectory
+   * - ds:DeleteDirectory
    * - ds:DescribeDirectories
    * - ds:UnauthorizeApplication
-   * - firehose:DescribeDeliveryStream
-   * - firehose:ListDeliveryStreams
    * - iam:AttachRolePolicy
    * - iam:CreateServiceLinkedRole
    * - iam:PutRolePolicy
-   * - kinesis:DescribeStream
-   * - kinesis:ListStreams
-   * - kms:CreateGrant
-   * - kms:DescribeKey
-   * - kms:ListAliases
-   * - kms:RetireGrant
-   * - logs:CreateLogGroup
-   * - s3:CreateBucket
-   * - s3:GetBucketLocation
-   * - s3:ListAllMyBuckets
    *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toCreateInstance() {
-    this.to('connect:CreateInstance');
-    return this;
+    return this.to('CreateInstance');
+  }
+
+  /**
+   * Grants permission to create a quick connect in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateQuickConnect.html
+   */
+  public toCreateQuickConnect() {
+    return this.to('CreateQuickConnect');
   }
 
   /**
@@ -181,8 +177,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateRoutingProfile.html
    */
   public toCreateRoutingProfile() {
-    this.to('connect:CreateRoutingProfile');
-    return this;
+    return this.to('CreateRoutingProfile');
   }
 
   /**
@@ -197,8 +192,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUser.html
    */
   public toCreateUser() {
-    this.to('connect:CreateUser');
-    return this;
+    return this.to('CreateUser');
   }
 
   /**
@@ -209,8 +203,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUserHierarchyGroup.html
    */
   public toCreateUserHierarchyGroup() {
-    this.to('connect:CreateUserHierarchyGroup');
-    return this;
+    return this.to('CreateUserHierarchyGroup');
   }
 
   /**
@@ -226,8 +219,21 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDeleteInstance() {
-    this.to('connect:DeleteInstance');
-    return this;
+    return this.to('DeleteInstance');
+  }
+
+  /**
+   * Grants permissions to delete a quick connect in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteQuickConnect.html
+   */
+  public toDeleteQuickConnect() {
+    return this.to('DeleteQuickConnect');
   }
 
   /**
@@ -241,8 +247,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUser.html
    */
   public toDeleteUser() {
-    this.to('connect:DeleteUser');
-    return this;
+    return this.to('DeleteUser');
   }
 
   /**
@@ -253,8 +258,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUserHierarchyGroup.html
    */
   public toDeleteUserHierarchyGroup() {
-    this.to('connect:DeleteUserHierarchyGroup');
-    return this;
+    return this.to('DeleteUserHierarchyGroup');
   }
 
   /**
@@ -268,8 +272,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContactFlow.html
    */
   public toDescribeContactFlow() {
-    this.to('connect:DescribeContactFlow');
-    return this;
+    return this.to('DescribeContactFlow');
   }
 
   /**
@@ -279,19 +282,11 @@ export class Connect extends PolicyStatement {
    *
    * Dependent actions:
    * - ds:DescribeDirectories
-   * - firehose:DescribeDeliveryStream
-   * - firehose:ListDeliveryStreams
-   * - kinesis:DescribeStream
-   * - kinesis:ListStreams
-   * - kms:DescribeKey
-   * - kms:ListAliases
-   * - s3:ListAllMyBuckets
    *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDescribeInstance() {
-    this.to('connect:DescribeInstance');
-    return this;
+    return this.to('DescribeInstance');
   }
 
   /**
@@ -305,8 +300,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDescribeInstanceAttribute() {
-    this.to('connect:DescribeInstanceAttribute');
-    return this;
+    return this.to('DescribeInstanceAttribute');
   }
 
   /**
@@ -320,8 +314,21 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDescribeInstanceStorageConfig() {
-    this.to('connect:DescribeInstanceStorageConfig');
-    return this;
+    return this.to('DescribeInstanceStorageConfig');
+  }
+
+  /**
+   * Grants permissions to describe a quick connect in an Amazon Connect instance.
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeQuickConnect.html
+   */
+  public toDescribeQuickConnect() {
+    return this.to('DescribeQuickConnect');
   }
 
   /**
@@ -335,8 +342,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html
    */
   public toDescribeRoutingProfile() {
-    this.to('connect:DescribeRoutingProfile');
-    return this;
+    return this.to('DescribeRoutingProfile');
   }
 
   /**
@@ -350,8 +356,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html
    */
   public toDescribeUser() {
-    this.to('connect:DescribeUser');
-    return this;
+    return this.to('DescribeUser');
   }
 
   /**
@@ -362,8 +367,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUserHierarchyGroup.html
    */
   public toDescribeUserHierarchyGroup() {
-    this.to('connect:DescribeUserHierarchyGroup');
-    return this;
+    return this.to('DescribeUserHierarchyGroup');
   }
 
   /**
@@ -374,20 +378,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUserHierarchyStructure.html
    */
   public toDescribeUserHierarchyStructure() {
-    this.to('connect:DescribeUserHierarchyStructure');
-    return this;
-  }
-
-  /**
-   * Grants permissions to delete an Amazon Connect instance. When you remove an instance, the link to an existing AWS directory is also removed.
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
-   */
-  public toDestroyInstance() {
-    this.to('connect:DestroyInstance');
-    return this;
+    return this.to('DescribeUserHierarchyStructure');
   }
 
   /**
@@ -398,8 +389,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDisassociateApprovedOrigin() {
-    this.to('connect:DisassociateApprovedOrigin');
-    return this;
+    return this.to('DisassociateApprovedOrigin');
   }
 
   /**
@@ -413,8 +403,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDisassociateInstanceStorageConfig() {
-    this.to('connect:DisassociateInstanceStorageConfig');
-    return this;
+    return this.to('DisassociateInstanceStorageConfig');
   }
 
   /**
@@ -428,8 +417,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDisassociateLambdaFunction() {
-    this.to('connect:DisassociateLambdaFunction');
-    return this;
+    return this.to('DisassociateLambdaFunction');
   }
 
   /**
@@ -445,8 +433,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDisassociateLexBot() {
-    this.to('connect:DisassociateLexBot');
-    return this;
+    return this.to('DisassociateLexBot');
   }
 
   /**
@@ -460,8 +447,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateRoutingProfileQueues.html
    */
   public toDisassociateRoutingProfileQueues() {
-    this.to('connect:DisassociateRoutingProfileQueues');
-    return this;
+    return this.to('DisassociateRoutingProfileQueues');
   }
 
   /**
@@ -472,8 +458,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDisassociateSecurityKey() {
-    this.to('connect:DisassociateSecurityKey');
-    return this;
+    return this.to('DisassociateSecurityKey');
   }
 
   /**
@@ -484,8 +469,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetContactAttributes.html
    */
   public toGetContactAttributes() {
-    this.to('connect:GetContactAttributes');
-    return this;
+    return this.to('GetContactAttributes');
   }
 
   /**
@@ -496,8 +480,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetCurrentMetricData.html
    */
   public toGetCurrentMetricData() {
-    this.to('connect:GetCurrentMetricData');
-    return this;
+    return this.to('GetCurrentMetricData');
   }
 
   /**
@@ -508,8 +491,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetFederationToken.html
    */
   public toGetFederationToken() {
-    this.to('connect:GetFederationToken');
-    return this;
+    return this.to('GetFederationToken');
   }
 
   /**
@@ -525,8 +507,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
   public toGetFederationTokens() {
-    this.to('connect:GetFederationTokens');
-    return this;
+    return this.to('GetFederationTokens');
   }
 
   /**
@@ -537,8 +518,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html
    */
   public toGetMetricData() {
-    this.to('connect:GetMetricData');
-    return this;
+    return this.to('GetMetricData');
   }
 
   /**
@@ -549,8 +529,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListApprovedOrigins() {
-    this.to('connect:ListApprovedOrigins');
-    return this;
+    return this.to('ListApprovedOrigins');
   }
 
   /**
@@ -561,8 +540,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactFlows.html
    */
   public toListContactFlows() {
-    this.to('connect:ListContactFlows');
-    return this;
+    return this.to('ListContactFlows');
   }
 
   /**
@@ -573,8 +551,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListHoursOfOperations.html
    */
   public toListHoursOfOperations() {
-    this.to('connect:ListHoursOfOperations');
-    return this;
+    return this.to('ListHoursOfOperations');
   }
 
   /**
@@ -585,8 +562,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListInstanceAttributes() {
-    this.to('connect:ListInstanceAttributes');
-    return this;
+    return this.to('ListInstanceAttributes');
   }
 
   /**
@@ -597,8 +573,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListInstanceStorageConfigs() {
-    this.to('connect:ListInstanceStorageConfigs');
-    return this;
+    return this.to('ListInstanceStorageConfigs');
   }
 
   /**
@@ -612,8 +587,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListInstances() {
-    this.to('connect:ListInstances');
-    return this;
+    return this.to('ListInstances');
   }
 
   /**
@@ -624,8 +598,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListLambdaFunctions() {
-    this.to('connect:ListLambdaFunctions');
-    return this;
+    return this.to('ListLambdaFunctions');
   }
 
   /**
@@ -636,8 +609,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListLexBots() {
-    this.to('connect:ListLexBots');
-    return this;
+    return this.to('ListLexBots');
   }
 
   /**
@@ -648,8 +620,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html
    */
   public toListPhoneNumbers() {
-    this.to('connect:ListPhoneNumbers');
-    return this;
+    return this.to('ListPhoneNumbers');
   }
 
   /**
@@ -660,8 +631,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPrompts.html
    */
   public toListPrompts() {
-    this.to('connect:ListPrompts');
-    return this;
+    return this.to('ListPrompts');
   }
 
   /**
@@ -672,8 +642,18 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListQueues.html
    */
   public toListQueues() {
-    this.to('connect:ListQueues');
-    return this;
+    return this.to('ListQueues');
+  }
+
+  /**
+   * Grants permissions to list quick connect resources in an Amazon Connect instance.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListQuickConnects.html
+   */
+  public toListQuickConnects() {
+    return this.to('ListQuickConnects');
   }
 
   /**
@@ -687,8 +667,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRoutingProfileQueues.html
    */
   public toListRoutingProfileQueues() {
-    this.to('connect:ListRoutingProfileQueues');
-    return this;
+    return this.to('ListRoutingProfileQueues');
   }
 
   /**
@@ -699,8 +678,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRoutingProfiles.html
    */
   public toListRoutingProfiles() {
-    this.to('connect:ListRoutingProfiles');
-    return this;
+    return this.to('ListRoutingProfiles');
   }
 
   /**
@@ -711,8 +689,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListSecurityKeys() {
-    this.to('connect:ListSecurityKeys');
-    return this;
+    return this.to('ListSecurityKeys');
   }
 
   /**
@@ -723,8 +700,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListSecurityProfiles.html
    */
   public toListSecurityProfiles() {
-    this.to('connect:ListSecurityProfiles');
-    return this;
+    return this.to('ListSecurityProfiles');
   }
 
   /**
@@ -738,8 +714,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('connect:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -750,8 +725,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUserHierarchyGroups.html
    */
   public toListUserHierarchyGroups() {
-    this.to('connect:ListUserHierarchyGroups');
-    return this;
+    return this.to('ListUserHierarchyGroups');
   }
 
   /**
@@ -762,33 +736,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUsers.html
    */
   public toListUsers() {
-    this.to('connect:ListUsers');
-    return this;
-  }
-
-  /**
-   * Grants permissions to modify configuration settings for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
-   *
-   * Access Level: Write
-   *
-   * Dependent actions:
-   * - firehose:DescribeDeliveryStream
-   * - firehose:ListDeliveryStreams
-   * - kinesis:DescribeStream
-   * - kinesis:ListStreams
-   * - kms:CreateGrant
-   * - kms:DescribeKey
-   * - kms:ListAliases
-   * - kms:RetireGrant
-   * - s3:CreateBucket
-   * - s3:GetBucketLocation
-   * - s3:ListAllMyBuckets
-   *
-   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
-   */
-  public toModifyInstance() {
-    this.to('connect:ModifyInstance');
-    return this;
+    return this.to('ListUsers');
   }
 
   /**
@@ -799,8 +747,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ResumeContactRecording.html
    */
   public toResumeContactRecording() {
-    this.to('connect:ResumeContactRecording');
-    return this;
+    return this.to('ResumeContactRecording');
   }
 
   /**
@@ -811,8 +758,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html
    */
   public toStartChatContact() {
-    this.to('connect:StartChatContact');
-    return this;
+    return this.to('StartChatContact');
   }
 
   /**
@@ -823,8 +769,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactRecording.html
    */
   public toStartContactRecording() {
-    this.to('connect:StartContactRecording');
-    return this;
+    return this.to('StartContactRecording');
   }
 
   /**
@@ -835,8 +780,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundVoiceContact.html
    */
   public toStartOutboundVoiceContact() {
-    this.to('connect:StartOutboundVoiceContact');
-    return this;
+    return this.to('StartOutboundVoiceContact');
   }
 
   /**
@@ -847,8 +791,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartTaskContact.html
    */
   public toStartTaskContact() {
-    this.to('connect:StartTaskContact');
-    return this;
+    return this.to('StartTaskContact');
   }
 
   /**
@@ -859,8 +802,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContact.html
    */
   public toStopContact() {
-    this.to('connect:StopContact');
-    return this;
+    return this.to('StopContact');
   }
 
   /**
@@ -871,8 +813,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactRecording.html
    */
   public toStopContactRecording() {
-    this.to('connect:StopContactRecording');
-    return this;
+    return this.to('StopContactRecording');
   }
 
   /**
@@ -883,8 +824,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SuspendContactRecording.html
    */
   public toSuspendContactRecording() {
-    this.to('connect:SuspendContactRecording');
-    return this;
+    return this.to('SuspendContactRecording');
   }
 
   /**
@@ -900,8 +840,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('connect:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -916,8 +855,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('connect:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -928,8 +866,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactAttributes.html
    */
   public toUpdateContactAttributes() {
-    this.to('connect:UpdateContactAttributes');
-    return this;
+    return this.to('UpdateContactAttributes');
   }
 
   /**
@@ -943,8 +880,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowContent.html
    */
   public toUpdateContactFlowContent() {
-    this.to('connect:UpdateContactFlowContent');
-    return this;
+    return this.to('UpdateContactFlowContent');
   }
 
   /**
@@ -958,8 +894,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowName.html
    */
   public toUpdateContactFlowName() {
-    this.to('connect:UpdateContactFlowName');
-    return this;
+    return this.to('UpdateContactFlowName');
   }
 
   /**
@@ -980,8 +915,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toUpdateInstanceAttribute() {
-    this.to('connect:UpdateInstanceAttribute');
-    return this;
+    return this.to('UpdateInstanceAttribute');
   }
 
   /**
@@ -1007,8 +941,35 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toUpdateInstanceStorageConfig() {
-    this.to('connect:UpdateInstanceStorageConfig');
-    return this;
+    return this.to('UpdateInstanceStorageConfig');
+  }
+
+  /**
+   * Grants permissions to update the configuration of a quick connect in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQuickConnectConfig.html
+   */
+  public toUpdateQuickConnectConfig() {
+    return this.to('UpdateQuickConnectConfig');
+  }
+
+  /**
+   * Grants permissions to update a quick connect name and description in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQuickConnectName.html
+   */
+  public toUpdateQuickConnectName() {
+    return this.to('UpdateQuickConnectName');
   }
 
   /**
@@ -1022,8 +983,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileConcurrency.html
    */
   public toUpdateRoutingProfileConcurrency() {
-    this.to('connect:UpdateRoutingProfileConcurrency');
-    return this;
+    return this.to('UpdateRoutingProfileConcurrency');
   }
 
   /**
@@ -1037,8 +997,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileDefaultOutboundQueue.html
    */
   public toUpdateRoutingProfileDefaultOutboundQueue() {
-    this.to('connect:UpdateRoutingProfileDefaultOutboundQueue');
-    return this;
+    return this.to('UpdateRoutingProfileDefaultOutboundQueue');
   }
 
   /**
@@ -1052,8 +1011,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileName.html
    */
   public toUpdateRoutingProfileName() {
-    this.to('connect:UpdateRoutingProfileName');
-    return this;
+    return this.to('UpdateRoutingProfileName');
   }
 
   /**
@@ -1067,8 +1025,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileQueues.html
    */
   public toUpdateRoutingProfileQueues() {
-    this.to('connect:UpdateRoutingProfileQueues');
-    return this;
+    return this.to('UpdateRoutingProfileQueues');
   }
 
   /**
@@ -1082,8 +1039,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchy.html
    */
   public toUpdateUserHierarchy() {
-    this.to('connect:UpdateUserHierarchy');
-    return this;
+    return this.to('UpdateUserHierarchy');
   }
 
   /**
@@ -1094,8 +1050,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchyGroupName.html
    */
   public toUpdateUserHierarchyGroupName() {
-    this.to('connect:UpdateUserHierarchyGroupName');
-    return this;
+    return this.to('UpdateUserHierarchyGroupName');
   }
 
   /**
@@ -1106,8 +1061,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchyStructure.html
    */
   public toUpdateUserHierarchyStructure() {
-    this.to('connect:UpdateUserHierarchyStructure');
-    return this;
+    return this.to('UpdateUserHierarchyStructure');
   }
 
   /**
@@ -1121,8 +1075,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserIdentityInfo.html
    */
   public toUpdateUserIdentityInfo() {
-    this.to('connect:UpdateUserIdentityInfo');
-    return this;
+    return this.to('UpdateUserIdentityInfo');
   }
 
   /**
@@ -1136,8 +1089,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserPhoneConfig.html
    */
   public toUpdateUserPhoneConfig() {
-    this.to('connect:UpdateUserPhoneConfig');
-    return this;
+    return this.to('UpdateUserPhoneConfig');
   }
 
   /**
@@ -1151,8 +1103,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserRoutingProfile.html
    */
   public toUpdateUserRoutingProfile() {
-    this.to('connect:UpdateUserRoutingProfile');
-    return this;
+    return this.to('UpdateUserRoutingProfile');
   }
 
   /**
@@ -1166,8 +1117,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserSecurityProfiles.html
    */
   public toUpdateUserSecurityProfiles() {
-    this.to('connect:UpdateUserSecurityProfiles');
-    return this;
+    return this.to('UpdateUserSecurityProfiles');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -1180,13 +1130,14 @@ export class Connect extends PolicyStatement {
       "AssociateSecurityKey",
       "CreateContactFlow",
       "CreateInstance",
+      "CreateQuickConnect",
       "CreateRoutingProfile",
       "CreateUser",
       "CreateUserHierarchyGroup",
       "DeleteInstance",
+      "DeleteQuickConnect",
       "DeleteUser",
       "DeleteUserHierarchyGroup",
-      "DestroyInstance",
       "DisassociateApprovedOrigin",
       "DisassociateInstanceStorageConfig",
       "DisassociateLambdaFunction",
@@ -1194,7 +1145,6 @@ export class Connect extends PolicyStatement {
       "DisassociateRoutingProfileQueues",
       "DisassociateSecurityKey",
       "GetFederationTokens",
-      "ModifyInstance",
       "ResumeContactRecording",
       "StartChatContact",
       "StartContactRecording",
@@ -1208,6 +1158,8 @@ export class Connect extends PolicyStatement {
       "UpdateContactFlowName",
       "UpdateInstanceAttribute",
       "UpdateInstanceStorageConfig",
+      "UpdateQuickConnectConfig",
+      "UpdateQuickConnectName",
       "UpdateRoutingProfileConcurrency",
       "UpdateRoutingProfileDefaultOutboundQueue",
       "UpdateRoutingProfileName",
@@ -1225,6 +1177,7 @@ export class Connect extends PolicyStatement {
       "DescribeInstance",
       "DescribeInstanceAttribute",
       "DescribeInstanceStorageConfig",
+      "DescribeQuickConnect",
       "DescribeRoutingProfile",
       "DescribeUser",
       "DescribeUserHierarchyGroup",
@@ -1248,6 +1201,7 @@ export class Connect extends PolicyStatement {
       "ListPhoneNumbers",
       "ListPrompts",
       "ListQueues",
+      "ListQuickConnects",
       "ListRoutingProfiles",
       "ListSecurityKeys",
       "ListSecurityProfiles",
@@ -1412,6 +1366,30 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type quick-connect to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param quickConnectId - Identifier for the quickConnectId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onQuickConnect(instanceId: string, quickConnectId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/transfer-destination/${QuickConnectId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${QuickConnectId}', quickConnectId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type contact-flow to the statement
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/connect-contact-flows.html
@@ -1490,7 +1468,7 @@ export class Connect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAttributeType(value: string | string[], operator?: Operator | string) {
-    return this.if(`connect:AttributeType`, value, operator || 'StringLike');
+    return this.if(`AttributeType`, value, operator || 'StringLike');
   }
 
   /**
@@ -1508,6 +1486,6 @@ export class Connect extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifStorageResourceType(value: string | string[], operator?: Operator | string) {
-    return this.if(`connect:StorageResourceType`, value, operator || 'StringLike');
+    return this.if(`StorageResourceType`, value, operator || 'StringLike');
   }
 }

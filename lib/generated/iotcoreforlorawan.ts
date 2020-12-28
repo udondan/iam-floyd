@@ -26,8 +26,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateAwsAccountWithPartnerAccount.html
    */
   public toAssociateAwsAccountWithPartnerAccount() {
-    this.to('iotwireless:AssociateAwsAccountWithPartnerAccount');
-    return this;
+    return this.to('AssociateAwsAccountWithPartnerAccount');
   }
 
   /**
@@ -41,8 +40,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessDeviceWithThing.html
    */
   public toAssociateWirelessDeviceWithThing() {
-    this.to('iotwireless:AssociateWirelessDeviceWithThing');
-    return this;
+    return this.to('AssociateWirelessDeviceWithThing');
   }
 
   /**
@@ -53,8 +51,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessGatewayWithCertificate.html
    */
   public toAssociateWirelessGatewayWithCertificate() {
-    this.to('iotwireless:AssociateWirelessGatewayWithCertificate');
-    return this;
+    return this.to('AssociateWirelessGatewayWithCertificate');
   }
 
   /**
@@ -68,8 +65,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessGatewayWithThing.html
    */
   public toAssociateWirelessGatewayWithThing() {
-    this.to('iotwireless:AssociateWirelessGatewayWithThing');
-    return this;
+    return this.to('AssociateWirelessGatewayWithThing');
   }
 
   /**
@@ -84,8 +80,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateDestination.html
    */
   public toCreateDestination() {
-    this.to('iotwireless:CreateDestination');
-    return this;
+    return this.to('CreateDestination');
   }
 
   /**
@@ -100,8 +95,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateDeviceProfile.html
    */
   public toCreateDeviceProfile() {
-    this.to('iotwireless:CreateDeviceProfile');
-    return this;
+    return this.to('CreateDeviceProfile');
   }
 
   /**
@@ -116,8 +110,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateServiceProfile.html
    */
   public toCreateServiceProfile() {
-    this.to('iotwireless:CreateServiceProfile');
-    return this;
+    return this.to('CreateServiceProfile');
   }
 
   /**
@@ -128,8 +121,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessDevice.html
    */
   public toCreateWirelessDevice() {
-    this.to('iotwireless:CreateWirelessDevice');
-    return this;
+    return this.to('CreateWirelessDevice');
   }
 
   /**
@@ -144,8 +136,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGateway.html
    */
   public toCreateWirelessGateway() {
-    this.to('iotwireless:CreateWirelessGateway');
-    return this;
+    return this.to('CreateWirelessGateway');
   }
 
   /**
@@ -156,8 +147,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGatewayTask.html
    */
   public toCreateWirelessGatewayTask() {
-    this.to('iotwireless:CreateWirelessGatewayTask');
-    return this;
+    return this.to('CreateWirelessGatewayTask');
   }
 
   /**
@@ -168,8 +158,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGatewayTaskDefinition.html
    */
   public toCreateWirelessGatewayTaskDefinition() {
-    this.to('iotwireless:CreateWirelessGatewayTaskDefinition');
-    return this;
+    return this.to('CreateWirelessGatewayTaskDefinition');
   }
 
   /**
@@ -180,8 +169,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteDestination.html
    */
   public toDeleteDestination() {
-    this.to('iotwireless:DeleteDestination');
-    return this;
+    return this.to('DeleteDestination');
   }
 
   /**
@@ -192,8 +180,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteDeviceProfile.html
    */
   public toDeleteDeviceProfile() {
-    this.to('iotwireless:DeleteDeviceProfile');
-    return this;
+    return this.to('DeleteDeviceProfile');
   }
 
   /**
@@ -204,8 +191,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteServiceProfile.html
    */
   public toDeleteServiceProfile() {
-    this.to('iotwireless:DeleteServiceProfile');
-    return this;
+    return this.to('DeleteServiceProfile');
   }
 
   /**
@@ -216,8 +202,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessDevice.html
    */
   public toDeleteWirelessDevice() {
-    this.to('iotwireless:DeleteWirelessDevice');
-    return this;
+    return this.to('DeleteWirelessDevice');
   }
 
   /**
@@ -228,8 +213,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessGateway.html
    */
   public toDeleteWirelessGateway() {
-    this.to('iotwireless:DeleteWirelessGateway');
-    return this;
+    return this.to('DeleteWirelessGateway');
   }
 
   /**
@@ -240,8 +224,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessGatewayTask.html
    */
   public toDeleteWirelessGatewayTask() {
-    this.to('iotwireless:DeleteWirelessGatewayTask');
-    return this;
+    return this.to('DeleteWirelessGatewayTask');
   }
 
   /**
@@ -252,8 +235,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessGatewayTaskDefinition.html
    */
   public toDeleteWirelessGatewayTaskDefinition() {
-    this.to('iotwireless:DeleteWirelessGatewayTaskDefinition');
-    return this;
+    return this.to('DeleteWirelessGatewayTaskDefinition');
   }
 
   /**
@@ -264,8 +246,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateAwsAccountFromPartnerAccount.html
    */
   public toDisassociateAwsAccountFromPartnerAccount() {
-    this.to('iotwireless:DisassociateAwsAccountFromPartnerAccount');
-    return this;
+    return this.to('DisassociateAwsAccountFromPartnerAccount');
   }
 
   /**
@@ -279,8 +260,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessDeviceFromThing.html
    */
   public toDisassociateWirelessDeviceFromThing() {
-    this.to('iotwireless:DisassociateWirelessDeviceFromThing');
-    return this;
+    return this.to('DisassociateWirelessDeviceFromThing');
   }
 
   /**
@@ -291,8 +271,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessGatewayFromCertificate.html
    */
   public toDisassociateWirelessGatewayFromCertificate() {
-    this.to('iotwireless:DisassociateWirelessGatewayFromCertificate');
-    return this;
+    return this.to('DisassociateWirelessGatewayFromCertificate');
   }
 
   /**
@@ -306,8 +285,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessGatewayFromThing.html
    */
   public toDisassociateWirelessGatewayFromThing() {
-    this.to('iotwireless:DisassociateWirelessGatewayFromThing');
-    return this;
+    return this.to('DisassociateWirelessGatewayFromThing');
   }
 
   /**
@@ -318,8 +296,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetDestination.html
    */
   public toGetDestination() {
-    this.to('iotwireless:GetDestination');
-    return this;
+    return this.to('GetDestination');
   }
 
   /**
@@ -330,8 +307,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetDeviceProfile.html
    */
   public toGetDeviceProfile() {
-    this.to('iotwireless:GetDeviceProfile');
-    return this;
+    return this.to('GetDeviceProfile');
   }
 
   /**
@@ -342,8 +318,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetPartnerAccount.html
    */
   public toGetPartnerAccount() {
-    this.to('iotwireless:GetPartnerAccount');
-    return this;
+    return this.to('GetPartnerAccount');
   }
 
   /**
@@ -354,8 +329,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetServiceEndpoint.html
    */
   public toGetServiceEndpoint() {
-    this.to('iotwireless:GetServiceEndpoint');
-    return this;
+    return this.to('GetServiceEndpoint');
   }
 
   /**
@@ -366,8 +340,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetServiceProfile.html
    */
   public toGetServiceProfile() {
-    this.to('iotwireless:GetServiceProfile');
-    return this;
+    return this.to('GetServiceProfile');
   }
 
   /**
@@ -378,8 +351,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessDevice.html
    */
   public toGetWirelessDevice() {
-    this.to('iotwireless:GetWirelessDevice');
-    return this;
+    return this.to('GetWirelessDevice');
   }
 
   /**
@@ -390,8 +362,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessDeviceStatistics.html
    */
   public toGetWirelessDeviceStatistics() {
-    this.to('iotwireless:GetWirelessDeviceStatistics');
-    return this;
+    return this.to('GetWirelessDeviceStatistics');
   }
 
   /**
@@ -402,8 +373,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGateway.html
    */
   public toGetWirelessGateway() {
-    this.to('iotwireless:GetWirelessGateway');
-    return this;
+    return this.to('GetWirelessGateway');
   }
 
   /**
@@ -414,8 +384,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayCertificate.html
    */
   public toGetWirelessGatewayCertificate() {
-    this.to('iotwireless:GetWirelessGatewayCertificate');
-    return this;
+    return this.to('GetWirelessGatewayCertificate');
   }
 
   /**
@@ -426,8 +395,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayFirmwareInformation.html
    */
   public toGetWirelessGatewayFirmwareInformation() {
-    this.to('iotwireless:GetWirelessGatewayFirmwareInformation');
-    return this;
+    return this.to('GetWirelessGatewayFirmwareInformation');
   }
 
   /**
@@ -438,8 +406,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayStatistics.html
    */
   public toGetWirelessGatewayStatistics() {
-    this.to('iotwireless:GetWirelessGatewayStatistics');
-    return this;
+    return this.to('GetWirelessGatewayStatistics');
   }
 
   /**
@@ -450,8 +417,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayTask.html
    */
   public toGetWirelessGatewayTask() {
-    this.to('iotwireless:GetWirelessGatewayTask');
-    return this;
+    return this.to('GetWirelessGatewayTask');
   }
 
   /**
@@ -462,8 +428,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayTaskDefinition.html
    */
   public toGetWirelessGatewayTaskDefinition() {
-    this.to('iotwireless:GetWirelessGatewayTaskDefinition');
-    return this;
+    return this.to('GetWirelessGatewayTaskDefinition');
   }
 
   /**
@@ -474,8 +439,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListDestinations.html
    */
   public toListDestinations() {
-    this.to('iotwireless:ListDestinations');
-    return this;
+    return this.to('ListDestinations');
   }
 
   /**
@@ -486,8 +450,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListDeviceProfiles.html
    */
   public toListDeviceProfiles() {
-    this.to('iotwireless:ListDeviceProfiles');
-    return this;
+    return this.to('ListDeviceProfiles');
   }
 
   /**
@@ -498,8 +461,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListPartnerAccounts.html
    */
   public toListPartnerAccounts() {
-    this.to('iotwireless:ListPartnerAccounts');
-    return this;
+    return this.to('ListPartnerAccounts');
   }
 
   /**
@@ -510,8 +472,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListServiceProfiles.html
    */
   public toListServiceProfiles() {
-    this.to('iotwireless:ListServiceProfiles');
-    return this;
+    return this.to('ListServiceProfiles');
   }
 
   /**
@@ -522,8 +483,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('iotwireless:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -534,8 +494,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessDevices.html
    */
   public toListWirelessDevices() {
-    this.to('iotwireless:ListWirelessDevices');
-    return this;
+    return this.to('ListWirelessDevices');
   }
 
   /**
@@ -546,8 +505,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessGatewayTaskDefinitions.html
    */
   public toListWirelessGatewayTaskDefinitions() {
-    this.to('iotwireless:ListWirelessGatewayTaskDefinitions');
-    return this;
+    return this.to('ListWirelessGatewayTaskDefinitions');
   }
 
   /**
@@ -558,8 +516,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessGateways.html
    */
   public toListWirelessGateways() {
-    this.to('iotwireless:ListWirelessGateways');
-    return this;
+    return this.to('ListWirelessGateways');
   }
 
   /**
@@ -570,8 +527,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_SendDataToWirelessDevice.html
    */
   public toSendDataToWirelessDevice() {
-    this.to('iotwireless:SendDataToWirelessDevice');
-    return this;
+    return this.to('SendDataToWirelessDevice');
   }
 
   /**
@@ -586,8 +542,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('iotwireless:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -598,8 +553,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_TestWirelessDevice.html
    */
   public toTestWirelessDevice() {
-    this.to('iotwireless:TestWirelessDevice');
-    return this;
+    return this.to('TestWirelessDevice');
   }
 
   /**
@@ -613,8 +567,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('iotwireless:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -625,8 +578,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateDestination.html
    */
   public toUpdateDestination() {
-    this.to('iotwireless:UpdateDestination');
-    return this;
+    return this.to('UpdateDestination');
   }
 
   /**
@@ -637,8 +589,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdatePartnerAccount.html
    */
   public toUpdatePartnerAccount() {
-    this.to('iotwireless:UpdatePartnerAccount');
-    return this;
+    return this.to('UpdatePartnerAccount');
   }
 
   /**
@@ -649,8 +600,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateWirelessDevice.html
    */
   public toUpdateWirelessDevice() {
-    this.to('iotwireless:UpdateWirelessDevice');
-    return this;
+    return this.to('UpdateWirelessDevice');
   }
 
   /**
@@ -661,8 +611,7 @@ export class Iotwireless extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateWirelessGateway.html
    */
   public toUpdateWirelessGateway() {
-    this.to('iotwireless:UpdateWirelessGateway');
-    return this;
+    return this.to('UpdateWirelessGateway');
   }
 
   protected accessLevelList: AccessLevelList = {

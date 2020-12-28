@@ -26,8 +26,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ApplyArchiveRule.html
    */
   public toApplyArchiveRule() {
-    this.to('access-analyzer:ApplyArchiveRule');
-    return this;
+    return this.to('ApplyArchiveRule');
   }
 
   /**
@@ -45,8 +44,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateAnalyzer.html
    */
   public toCreateAnalyzer() {
-    this.to('access-analyzer:CreateAnalyzer');
-    return this;
+    return this.to('CreateAnalyzer');
   }
 
   /**
@@ -57,8 +55,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateArchiveRule.html
    */
   public toCreateArchiveRule() {
-    this.to('access-analyzer:CreateArchiveRule');
-    return this;
+    return this.to('CreateArchiveRule');
   }
 
   /**
@@ -69,8 +66,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteAnalyzer.html
    */
   public toDeleteAnalyzer() {
-    this.to('access-analyzer:DeleteAnalyzer');
-    return this;
+    return this.to('DeleteAnalyzer');
   }
 
   /**
@@ -81,8 +77,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteArchiveRule.html
    */
   public toDeleteArchiveRule() {
-    this.to('access-analyzer:DeleteArchiveRule');
-    return this;
+    return this.to('DeleteArchiveRule');
   }
 
   /**
@@ -93,8 +88,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzedResource.html
    */
   public toGetAnalyzedResource() {
-    this.to('access-analyzer:GetAnalyzedResource');
-    return this;
+    return this.to('GetAnalyzedResource');
   }
 
   /**
@@ -109,8 +103,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html
    */
   public toGetAnalyzer() {
-    this.to('access-analyzer:GetAnalyzer');
-    return this;
+    return this.to('GetAnalyzer');
   }
 
   /**
@@ -121,8 +114,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetArchiveRule.html
    */
   public toGetArchiveRule() {
-    this.to('access-analyzer:GetArchiveRule');
-    return this;
+    return this.to('GetArchiveRule');
   }
 
   /**
@@ -133,8 +125,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetFinding.html
    */
   public toGetFinding() {
-    this.to('access-analyzer:GetFinding');
-    return this;
+    return this.to('GetFinding');
   }
 
   /**
@@ -145,8 +136,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzedResources.html
    */
   public toListAnalyzedResources() {
-    this.to('access-analyzer:ListAnalyzedResources');
-    return this;
+    return this.to('ListAnalyzedResources');
   }
 
   /**
@@ -157,8 +147,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzers.html
    */
   public toListAnalyzers() {
-    this.to('access-analyzer:ListAnalyzers');
-    return this;
+    return this.to('ListAnalyzers');
   }
 
   /**
@@ -169,8 +158,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListArchiveRules.html
    */
   public toListArchiveRules() {
-    this.to('access-analyzer:ListArchiveRules');
-    return this;
+    return this.to('ListArchiveRules');
   }
 
   /**
@@ -181,8 +169,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListFindings.html
    */
   public toListFindings() {
-    this.to('access-analyzer:ListFindings');
-    return this;
+    return this.to('ListFindings');
   }
 
   /**
@@ -193,8 +180,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('access-analyzer:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -205,8 +191,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_StartResourceScan.html
    */
   public toStartResourceScan() {
-    this.to('access-analyzer:StartResourceScan');
-    return this;
+    return this.to('StartResourceScan');
   }
 
   /**
@@ -221,8 +206,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('access-analyzer:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -237,8 +221,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('access-analyzer:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -249,8 +232,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateArchiveRule.html
    */
   public toUpdateArchiveRule() {
-    this.to('access-analyzer:UpdateArchiveRule');
-    return this;
+    return this.to('UpdateArchiveRule');
   }
 
   /**
@@ -261,8 +243,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateFindings.html
    */
   public toUpdateFindings() {
-    this.to('access-analyzer:UpdateFindings');
-    return this;
+    return this.to('UpdateFindings');
   }
 
   protected accessLevelList: AccessLevelList = {

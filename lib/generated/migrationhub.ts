@@ -26,8 +26,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateCreatedArtifact.html
    */
   public toAssociateCreatedArtifact() {
-    this.to('mgh:AssociateCreatedArtifact');
-    return this;
+    return this.to('AssociateCreatedArtifact');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateDiscoveredResource.html
    */
   public toAssociateDiscoveredResource() {
-    this.to('mgh:AssociateDiscoveredResource');
-    return this;
+    return this.to('AssociateDiscoveredResource');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_CreateHomeRegionControl.html
    */
   public toCreateHomeRegionControl() {
-    this.to('mgh:CreateHomeRegionControl');
-    return this;
+    return this.to('CreateHomeRegionControl');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_CreateProgressUpdateStream.html
    */
   public toCreateProgressUpdateStream() {
-    this.to('mgh:CreateProgressUpdateStream');
-    return this;
+    return this.to('CreateProgressUpdateStream');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DeleteProgressUpdateStream.html
    */
   public toDeleteProgressUpdateStream() {
-    this.to('mgh:DeleteProgressUpdateStream');
-    return this;
+    return this.to('DeleteProgressUpdateStream');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeApplicationState.html
    */
   public toDescribeApplicationState() {
-    this.to('mgh:DescribeApplicationState');
-    return this;
+    return this.to('DescribeApplicationState');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeHomeRegionControls.html
    */
   public toDescribeHomeRegionControls() {
-    this.to('mgh:DescribeHomeRegionControls');
-    return this;
+    return this.to('DescribeHomeRegionControls');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeMigrationTask.html
    */
   public toDescribeMigrationTask() {
-    this.to('mgh:DescribeMigrationTask');
-    return this;
+    return this.to('DescribeMigrationTask');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateCreatedArtifact.html
    */
   public toDisassociateCreatedArtifact() {
-    this.to('mgh:DisassociateCreatedArtifact');
-    return this;
+    return this.to('DisassociateCreatedArtifact');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateDiscoveredResource.html
    */
   public toDisassociateDiscoveredResource() {
-    this.to('mgh:DisassociateDiscoveredResource');
-    return this;
+    return this.to('DisassociateDiscoveredResource');
   }
 
   /**
@@ -146,8 +136,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_GetHomeRegion.html
    */
   public toGetHomeRegion() {
-    this.to('mgh:GetHomeRegion');
-    return this;
+    return this.to('GetHomeRegion');
   }
 
   /**
@@ -158,8 +147,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ImportMigrationTask.html
    */
   public toImportMigrationTask() {
-    this.to('mgh:ImportMigrationTask');
-    return this;
+    return this.to('ImportMigrationTask');
   }
 
   /**
@@ -170,8 +158,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListCreatedArtifacts.html
    */
   public toListCreatedArtifacts() {
-    this.to('mgh:ListCreatedArtifacts');
-    return this;
+    return this.to('ListCreatedArtifacts');
   }
 
   /**
@@ -182,8 +169,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListDiscoveredResources.html
    */
   public toListDiscoveredResources() {
-    this.to('mgh:ListDiscoveredResources');
-    return this;
+    return this.to('ListDiscoveredResources');
   }
 
   /**
@@ -194,8 +180,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListMigrationTasks.html
    */
   public toListMigrationTasks() {
-    this.to('mgh:ListMigrationTasks');
-    return this;
+    return this.to('ListMigrationTasks');
   }
 
   /**
@@ -206,8 +191,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListProgressUpdateStreams.html
    */
   public toListProgressUpdateStreams() {
-    this.to('mgh:ListProgressUpdateStreams');
-    return this;
+    return this.to('ListProgressUpdateStreams');
   }
 
   /**
@@ -218,8 +202,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_NotifyApplicationState.html
    */
   public toNotifyApplicationState() {
-    this.to('mgh:NotifyApplicationState');
-    return this;
+    return this.to('NotifyApplicationState');
   }
 
   /**
@@ -230,8 +213,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_NotifyMigrationTaskState.html
    */
   public toNotifyMigrationTaskState() {
-    this.to('mgh:NotifyMigrationTaskState');
-    return this;
+    return this.to('NotifyMigrationTaskState');
   }
 
   /**
@@ -242,8 +224,7 @@ export class Mgh extends PolicyStatement {
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html
    */
   public toPutResourceAttributes() {
-    this.to('mgh:PutResourceAttributes');
-    return this;
+    return this.to('PutResourceAttributes');
   }
 
   protected accessLevelList: AccessLevelList = {

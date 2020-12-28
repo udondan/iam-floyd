@@ -27,8 +27,7 @@ export class Account extends PolicyStatement {
    * - .ifTargetRegion()
    */
   public toDisableRegion() {
-    this.to('account:DisableRegion');
-    return this;
+    return this.to('DisableRegion');
   }
 
   /**
@@ -40,8 +39,7 @@ export class Account extends PolicyStatement {
    * - .ifTargetRegion()
    */
   public toEnableRegion() {
-    this.to('account:EnableRegion');
-    return this;
+    return this.to('EnableRegion');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Account extends PolicyStatement {
    * Access Level: List
    */
   public toListRegions() {
-    this.to('account:ListRegions');
-    return this;
+    return this.to('ListRegions');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -75,6 +72,6 @@ export class Account extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTargetRegion(value: string | string[], operator?: Operator | string) {
-    return this.if(`account:TargetRegion`, value, operator || 'StringLike');
+    return this.if(`TargetRegion`, value, operator || 'StringLike');
   }
 }

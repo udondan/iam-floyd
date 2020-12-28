@@ -26,8 +26,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ActivateEventSource.html
    */
   public toActivateEventSource() {
-    this.to('events:ActivateEventSource');
-    return this;
+    return this.to('ActivateEventSource');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CancelReplay.html
    */
   public toCancelReplay() {
-    this.to('events:CancelReplay');
-    return this;
+    return this.to('CancelReplay');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateArchive.html
    */
   public toCreateArchive() {
-    this.to('events:CreateArchive');
-    return this;
+    return this.to('CreateArchive');
   }
 
   /**
@@ -66,8 +63,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventBus.html
    */
   public toCreateEventBus() {
-    this.to('events:CreateEventBus');
-    return this;
+    return this.to('CreateEventBus');
   }
 
   /**
@@ -78,8 +74,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreatePartnerEventSource.html
    */
   public toCreatePartnerEventSource() {
-    this.to('events:CreatePartnerEventSource');
-    return this;
+    return this.to('CreatePartnerEventSource');
   }
 
   /**
@@ -90,8 +85,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeactivateEventSource.html
    */
   public toDeactivateEventSource() {
-    this.to('events:DeactivateEventSource');
-    return this;
+    return this.to('DeactivateEventSource');
   }
 
   /**
@@ -102,8 +96,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteArchive.html
    */
   public toDeleteArchive() {
-    this.to('events:DeleteArchive');
-    return this;
+    return this.to('DeleteArchive');
   }
 
   /**
@@ -114,8 +107,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeletePartnerEventSource
    */
   public toDeleteEventBus() {
-    this.to('events:DeleteEventBus');
-    return this;
+    return this.to('DeleteEventBus');
   }
 
   /**
@@ -126,8 +118,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeletePartnerEventSource
    */
   public toDeletePartnerEventSource() {
-    this.to('events:DeletePartnerEventSource');
-    return this;
+    return this.to('DeletePartnerEventSource');
   }
 
   /**
@@ -141,8 +132,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteRule.html
    */
   public toDeleteRule() {
-    this.to('events:DeleteRule');
-    return this;
+    return this.to('DeleteRule');
   }
 
   /**
@@ -153,8 +143,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeArchive.html
    */
   public toDescribeArchive() {
-    this.to('events:DescribeArchive');
-    return this;
+    return this.to('DescribeArchive');
   }
 
   /**
@@ -165,8 +154,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventBus.html
    */
   public toDescribeEventBus() {
-    this.to('events:DescribeEventBus');
-    return this;
+    return this.to('DescribeEventBus');
   }
 
   /**
@@ -177,8 +165,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventSource.html
    */
   public toDescribeEventSource() {
-    this.to('events:DescribeEventSource');
-    return this;
+    return this.to('DescribeEventSource');
   }
 
   /**
@@ -189,8 +176,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribePartnerEventSource.html
    */
   public toDescribePartnerEventSource() {
-    this.to('events:DescribePartnerEventSource');
-    return this;
+    return this.to('DescribePartnerEventSource');
   }
 
   /**
@@ -201,8 +187,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeReplay.html
    */
   public toDescribeReplay() {
-    this.to('events:DescribeReplay');
-    return this;
+    return this.to('DescribeReplay');
   }
 
   /**
@@ -216,8 +201,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeRule.html
    */
   public toDescribeRule() {
-    this.to('events:DescribeRule');
-    return this;
+    return this.to('DescribeRule');
   }
 
   /**
@@ -231,8 +215,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DisableRule.html
    */
   public toDisableRule() {
-    this.to('events:DisableRule');
-    return this;
+    return this.to('DisableRule');
   }
 
   /**
@@ -246,8 +229,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_EnableRule.html
    */
   public toEnableRule() {
-    this.to('events:EnableRule');
-    return this;
+    return this.to('EnableRule');
   }
 
   /**
@@ -258,8 +240,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListArchives.html
    */
   public toListArchives() {
-    this.to('events:ListArchives');
-    return this;
+    return this.to('ListArchives');
   }
 
   /**
@@ -270,8 +251,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListEventBuses.html
    */
   public toListEventBuses() {
-    this.to('events:ListEventBuses');
-    return this;
+    return this.to('ListEventBuses');
   }
 
   /**
@@ -282,8 +262,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListEventSources.html
    */
   public toListEventSources() {
-    this.to('events:ListEventSources');
-    return this;
+    return this.to('ListEventSources');
   }
 
   /**
@@ -294,8 +273,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListPartnerEventSourceAccounts.html
    */
   public toListPartnerEventSourceAccounts() {
-    this.to('events:ListPartnerEventSourceAccounts');
-    return this;
+    return this.to('ListPartnerEventSourceAccounts');
   }
 
   /**
@@ -306,8 +284,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListPartnerEventSources.html
    */
   public toListPartnerEventSources() {
-    this.to('events:ListPartnerEventSources');
-    return this;
+    return this.to('ListPartnerEventSources');
   }
 
   /**
@@ -318,8 +295,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListReplays.html
    */
   public toListReplays() {
-    this.to('events:ListReplays');
-    return this;
+    return this.to('ListReplays');
   }
 
   /**
@@ -330,8 +306,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListRuleNamesByTarget.html
    */
   public toListRuleNamesByTarget() {
-    this.to('events:ListRuleNamesByTarget');
-    return this;
+    return this.to('ListRuleNamesByTarget');
   }
 
   /**
@@ -342,8 +317,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListRules.html
    */
   public toListRules() {
-    this.to('events:ListRules');
-    return this;
+    return this.to('ListRules');
   }
 
   /**
@@ -357,8 +331,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('events:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -372,8 +345,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTargetsByRule.html
    */
   public toListTargetsByRule() {
-    this.to('events:ListTargetsByRule');
-    return this;
+    return this.to('ListTargetsByRule');
   }
 
   /**
@@ -391,8 +363,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html
    */
   public toPutEvents() {
-    this.to('events:PutEvents');
-    return this;
+    return this.to('PutEvents');
   }
 
   /**
@@ -403,8 +374,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPartnerEvents.html
    */
   public toPutPartnerEvents() {
-    this.to('events:PutPartnerEvents');
-    return this;
+    return this.to('PutPartnerEvents');
   }
 
   /**
@@ -415,8 +385,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPermission.html
    */
   public toPutPermission() {
-    this.to('events:PutPermission');
-    return this;
+    return this.to('PutPermission');
   }
 
   /**
@@ -437,8 +406,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutRule.html
    */
   public toPutRule() {
-    this.to('events:PutRule');
-    return this;
+    return this.to('PutRule');
   }
 
   /**
@@ -453,8 +421,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html
    */
   public toPutTargets() {
-    this.to('events:PutTargets');
-    return this;
+    return this.to('PutTargets');
   }
 
   /**
@@ -465,8 +432,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html
    */
   public toRemovePermission() {
-    this.to('events:RemovePermission');
-    return this;
+    return this.to('RemovePermission');
   }
 
   /**
@@ -480,8 +446,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemoveTargets.html
    */
   public toRemoveTargets() {
-    this.to('events:RemoveTargets');
-    return this;
+    return this.to('RemoveTargets');
   }
 
   /**
@@ -492,8 +457,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_StartReplay.html
    */
   public toStartReplay() {
-    this.to('events:StartReplay');
-    return this;
+    return this.to('StartReplay');
   }
 
   /**
@@ -509,8 +473,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('events:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -521,8 +484,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TestEventPattern.html
    */
   public toTestEventPattern() {
-    this.to('events:TestEventPattern');
-    return this;
+    return this.to('TestEventPattern');
   }
 
   /**
@@ -537,8 +499,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('events:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -549,8 +510,7 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateArchive.html
    */
   public toUpdateArchive() {
-    this.to('events:UpdateArchive');
-    return this;
+    return this.to('UpdateArchive');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -712,7 +672,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifManagedBy(value: string | string[], operator?: Operator | string) {
-    return this.if(`events:ManagedBy`, value, operator || 'StringLike');
+    return this.if(`ManagedBy`, value, operator || 'StringLike');
   }
 
   /**
@@ -727,7 +687,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTargetArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`events:TargetArn`, value, operator || 'ArnLike');
+    return this.if(`TargetArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -752,7 +712,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCreatorAccount(value: string | string[], operator?: Operator | string) {
-    return this.if(`events:creatorAccount`, value, operator || 'StringLike');
+    return this.if(`creatorAccount`, value, operator || 'StringLike');
   }
 
   /**
@@ -768,7 +728,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDetailType(value: string | string[], operator?: Operator | string) {
-    return this.if(`events:detail-type`, value, operator || 'StringLike');
+    return this.if(`detail-type`, value, operator || 'StringLike');
   }
 
   /**
@@ -783,7 +743,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDetailEventTypeCode(value: string | string[], operator?: Operator | string) {
-    return this.if(`events:detail.eventTypeCode`, value, operator || 'StringLike');
+    return this.if(`detail.eventTypeCode`, value, operator || 'StringLike');
   }
 
   /**
@@ -798,7 +758,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDetailService(value: string | string[], operator?: Operator | string) {
-    return this.if(`events:detail.service`, value, operator || 'StringLike');
+    return this.if(`detail.service`, value, operator || 'StringLike');
   }
 
   /**
@@ -813,7 +773,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDetailUserIdentityPrincipalId(value: string | string[], operator?: Operator | string) {
-    return this.if(`events:detail.userIdentity.principalId`, value, operator || 'StringLike');
+    return this.if(`detail.userIdentity.principalId`, value, operator || 'StringLike');
   }
 
   /**
@@ -828,7 +788,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEventBusInvocation(value: string | string[], operator?: Operator | string) {
-    return this.if(`events:eventBusInvocation`, value, operator || 'StringLike');
+    return this.if(`eventBusInvocation`, value, operator || 'StringLike');
   }
 
   /**
@@ -844,6 +804,6 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSource(value: string | string[], operator?: Operator | string) {
-    return this.if(`events:source`, value, operator || 'StringLike');
+    return this.if(`source`, value, operator || 'StringLike');
   }
 }

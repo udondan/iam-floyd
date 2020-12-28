@@ -26,8 +26,7 @@ export class Pricing extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeServices.html
    */
   public toDescribeServices() {
-    this.to('pricing:DescribeServices');
-    return this;
+    return this.to('DescribeServices');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Pricing extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAttributeValues.html
    */
   public toGetAttributeValues() {
-    this.to('pricing:GetAttributeValues');
-    return this;
+    return this.to('GetAttributeValues');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Pricing extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetProducts.html
    */
   public toGetProducts() {
-    this.to('pricing:GetProducts');
-    return this;
+    return this.to('GetProducts');
   }
 
   protected accessLevelList: AccessLevelList = {

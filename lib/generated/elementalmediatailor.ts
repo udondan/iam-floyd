@@ -26,8 +26,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html
    */
   public toDeletePlaybackConfiguration() {
-    this.to('mediatailor:DeletePlaybackConfiguration');
-    return this;
+    return this.to('DeletePlaybackConfiguration');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html
    */
   public toGetPlaybackConfiguration() {
-    this.to('mediatailor:GetPlaybackConfiguration');
-    return this;
+    return this.to('GetPlaybackConfiguration');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfigurations.html
    */
   public toListPlaybackConfigurations() {
-    this.to('mediatailor:ListPlaybackConfigurations');
-    return this;
+    return this.to('ListPlaybackConfigurations');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html
    */
   public toListTagsForResource() {
-    this.to('mediatailor:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -78,8 +74,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration.html
    */
   public toPutPlaybackConfiguration() {
-    this.to('mediatailor:PutPlaybackConfiguration');
-    return this;
+    return this.to('PutPlaybackConfiguration');
   }
 
   /**
@@ -94,8 +89,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html
    */
   public toTagResource() {
-    this.to('mediatailor:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -110,8 +104,7 @@ export class Mediatailor extends PolicyStatement {
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html
    */
   public toUntagResource() {
-    this.to('mediatailor:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   protected accessLevelList: AccessLevelList = {

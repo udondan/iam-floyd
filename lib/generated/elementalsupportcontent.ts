@@ -26,8 +26,7 @@ export class ElementalSupportContent extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toQuery() {
-    this.to('elemental-support-content:Query');
-    return this;
+    return this.to('Query');
   }
 
   protected accessLevelList: AccessLevelList = {

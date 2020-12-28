@@ -31,8 +31,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_AddTagsToResource.html
    */
   public toAddTagsToResource() {
-    this.to('dms:AddTagsToResource');
-    return this;
+    return this.to('AddTagsToResource');
   }
 
   /**
@@ -43,8 +42,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ApplyPendingMaintenanceAction.html
    */
   public toApplyPendingMaintenanceAction() {
-    this.to('dms:ApplyPendingMaintenanceAction');
-    return this;
+    return this.to('ApplyPendingMaintenanceAction');
   }
 
   /**
@@ -55,8 +53,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CancelReplicationTaskAssessmentRun.html
    */
   public toCancelReplicationTaskAssessmentRun() {
-    this.to('dms:CancelReplicationTaskAssessmentRun');
-    return this;
+    return this.to('CancelReplicationTaskAssessmentRun');
   }
 
   /**
@@ -72,8 +69,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEndpoint.html
    */
   public toCreateEndpoint() {
-    this.to('dms:CreateEndpoint');
-    return this;
+    return this.to('CreateEndpoint');
   }
 
   /**
@@ -89,8 +85,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEventSubscription.html
    */
   public toCreateEventSubscription() {
-    this.to('dms:CreateEventSubscription');
-    return this;
+    return this.to('CreateEventSubscription');
   }
 
   /**
@@ -106,8 +101,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html
    */
   public toCreateReplicationInstance() {
-    this.to('dms:CreateReplicationInstance');
-    return this;
+    return this.to('CreateReplicationInstance');
   }
 
   /**
@@ -123,8 +117,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationSubnetGroup.html
    */
   public toCreateReplicationSubnetGroup() {
-    this.to('dms:CreateReplicationSubnetGroup');
-    return this;
+    return this.to('CreateReplicationSubnetGroup');
   }
 
   /**
@@ -140,8 +133,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html
    */
   public toCreateReplicationTask() {
-    this.to('dms:CreateReplicationTask');
-    return this;
+    return this.to('CreateReplicationTask');
   }
 
   /**
@@ -152,8 +144,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteCertificate.html
    */
   public toDeleteCertificate() {
-    this.to('dms:DeleteCertificate');
-    return this;
+    return this.to('DeleteCertificate');
   }
 
   /**
@@ -164,8 +155,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteEndpoint.html
    */
   public toDeleteEndpoint() {
-    this.to('dms:DeleteEndpoint');
-    return this;
+    return this.to('DeleteEndpoint');
   }
 
   /**
@@ -176,8 +166,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteEventSubscription.html
    */
   public toDeleteEventSubscription() {
-    this.to('dms:DeleteEventSubscription');
-    return this;
+    return this.to('DeleteEventSubscription');
   }
 
   /**
@@ -188,8 +177,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationInstance.html
    */
   public toDeleteReplicationInstance() {
-    this.to('dms:DeleteReplicationInstance');
-    return this;
+    return this.to('DeleteReplicationInstance');
   }
 
   /**
@@ -200,8 +188,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html
    */
   public toDeleteReplicationSubnetGroup() {
-    this.to('dms:DeleteReplicationSubnetGroup');
-    return this;
+    return this.to('DeleteReplicationSubnetGroup');
   }
 
   /**
@@ -212,8 +199,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html
    */
   public toDeleteReplicationTask() {
-    this.to('dms:DeleteReplicationTask');
-    return this;
+    return this.to('DeleteReplicationTask');
   }
 
   /**
@@ -224,8 +210,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTaskAssessmentRun.html
    */
   public toDeleteReplicationTaskAssessmentRun() {
-    this.to('dms:DeleteReplicationTaskAssessmentRun');
-    return this;
+    return this.to('DeleteReplicationTaskAssessmentRun');
   }
 
   /**
@@ -236,8 +221,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeAccountAttributes.html
    */
   public toDescribeAccountAttributes() {
-    this.to('dms:DescribeAccountAttributes');
-    return this;
+    return this.to('DescribeAccountAttributes');
   }
 
   /**
@@ -248,8 +232,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeApplicableIndividualAssessments.html
    */
   public toDescribeApplicableIndividualAssessments() {
-    this.to('dms:DescribeApplicableIndividualAssessments');
-    return this;
+    return this.to('DescribeApplicableIndividualAssessments');
   }
 
   /**
@@ -260,8 +243,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeCertificates.html
    */
   public toDescribeCertificates() {
-    this.to('dms:DescribeCertificates');
-    return this;
+    return this.to('DescribeCertificates');
   }
 
   /**
@@ -272,8 +254,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeConnections.html
    */
   public toDescribeConnections() {
-    this.to('dms:DescribeConnections');
-    return this;
+    return this.to('DescribeConnections');
   }
 
   /**
@@ -284,8 +265,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEndpointTypes.html
    */
   public toDescribeEndpointTypes() {
-    this.to('dms:DescribeEndpointTypes');
-    return this;
+    return this.to('DescribeEndpointTypes');
   }
 
   /**
@@ -296,8 +276,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEndpoints.html
    */
   public toDescribeEndpoints() {
-    this.to('dms:DescribeEndpoints');
-    return this;
+    return this.to('DescribeEndpoints');
   }
 
   /**
@@ -308,8 +287,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEventCategories.html
    */
   public toDescribeEventCategories() {
-    this.to('dms:DescribeEventCategories');
-    return this;
+    return this.to('DescribeEventCategories');
   }
 
   /**
@@ -320,8 +298,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEventSubscriptions.html
    */
   public toDescribeEventSubscriptions() {
-    this.to('dms:DescribeEventSubscriptions');
-    return this;
+    return this.to('DescribeEventSubscriptions');
   }
 
   /**
@@ -332,8 +309,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEvents.html
    */
   public toDescribeEvents() {
-    this.to('dms:DescribeEvents');
-    return this;
+    return this.to('DescribeEvents');
   }
 
   /**
@@ -344,8 +320,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeOrderableReplicationInstances.html
    */
   public toDescribeOrderableReplicationInstances() {
-    this.to('dms:DescribeOrderableReplicationInstances');
-    return this;
+    return this.to('DescribeOrderableReplicationInstances');
   }
 
   /**
@@ -356,8 +331,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeRefreshSchemasStatus.html
    */
   public toDescribeRefreshSchemasStatus() {
-    this.to('dms:DescribeRefreshSchemasStatus');
-    return this;
+    return this.to('DescribeRefreshSchemasStatus');
   }
 
   /**
@@ -372,8 +346,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationInstanceTaskLogs.html
    */
   public toDescribeReplicationInstanceTaskLogs() {
-    this.to('dms:DescribeReplicationInstanceTaskLogs');
-    return this;
+    return this.to('DescribeReplicationInstanceTaskLogs');
   }
 
   /**
@@ -384,8 +357,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationInstances.html
    */
   public toDescribeReplicationInstances() {
-    this.to('dms:DescribeReplicationInstances');
-    return this;
+    return this.to('DescribeReplicationInstances');
   }
 
   /**
@@ -396,8 +368,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationSubnetGroups.html
    */
   public toDescribeReplicationSubnetGroups() {
-    this.to('dms:DescribeReplicationSubnetGroups');
-    return this;
+    return this.to('DescribeReplicationSubnetGroups');
   }
 
   /**
@@ -408,8 +379,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTaskAssessmentResults.html
    */
   public toDescribeReplicationTaskAssessmentResults() {
-    this.to('dms:DescribeReplicationTaskAssessmentResults');
-    return this;
+    return this.to('DescribeReplicationTaskAssessmentResults');
   }
 
   /**
@@ -420,8 +390,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTaskAssessmentRuns.html
    */
   public toDescribeReplicationTaskAssessmentRuns() {
-    this.to('dms:DescribeReplicationTaskAssessmentRuns');
-    return this;
+    return this.to('DescribeReplicationTaskAssessmentRuns');
   }
 
   /**
@@ -432,8 +401,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTaskIndividualAssessments.html
    */
   public toDescribeReplicationTaskIndividualAssessments() {
-    this.to('dms:DescribeReplicationTaskIndividualAssessments');
-    return this;
+    return this.to('DescribeReplicationTaskIndividualAssessments');
   }
 
   /**
@@ -444,8 +412,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTasks.html
    */
   public toDescribeReplicationTasks() {
-    this.to('dms:DescribeReplicationTasks');
-    return this;
+    return this.to('DescribeReplicationTasks');
   }
 
   /**
@@ -456,8 +423,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeSchemas.html
    */
   public toDescribeSchemas() {
-    this.to('dms:DescribeSchemas');
-    return this;
+    return this.to('DescribeSchemas');
   }
 
   /**
@@ -468,8 +434,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTableStatistics.html
    */
   public toDescribeTableStatistics() {
-    this.to('dms:DescribeTableStatistics');
-    return this;
+    return this.to('DescribeTableStatistics');
   }
 
   /**
@@ -484,8 +449,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ImportCertificate.html
    */
   public toImportCertificate() {
-    this.to('dms:ImportCertificate');
-    return this;
+    return this.to('ImportCertificate');
   }
 
   /**
@@ -496,8 +460,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('dms:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -508,8 +471,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyEndpoint.html
    */
   public toModifyEndpoint() {
-    this.to('dms:ModifyEndpoint');
-    return this;
+    return this.to('ModifyEndpoint');
   }
 
   /**
@@ -520,8 +482,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyEventSubscription.html
    */
   public toModifyEventSubscription() {
-    this.to('dms:ModifyEventSubscription');
-    return this;
+    return this.to('ModifyEventSubscription');
   }
 
   /**
@@ -532,8 +493,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationInstance.html
    */
   public toModifyReplicationInstance() {
-    this.to('dms:ModifyReplicationInstance');
-    return this;
+    return this.to('ModifyReplicationInstance');
   }
 
   /**
@@ -544,8 +504,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationSubnetGroup.html
    */
   public toModifyReplicationSubnetGroup() {
-    this.to('dms:ModifyReplicationSubnetGroup');
-    return this;
+    return this.to('ModifyReplicationSubnetGroup');
   }
 
   /**
@@ -556,8 +515,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html
    */
   public toModifyReplicationTask() {
-    this.to('dms:ModifyReplicationTask');
-    return this;
+    return this.to('ModifyReplicationTask');
   }
 
   /**
@@ -568,8 +526,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_RebootReplicationInstance.html
    */
   public toRebootReplicationInstance() {
-    this.to('dms:RebootReplicationInstance');
-    return this;
+    return this.to('RebootReplicationInstance');
   }
 
   /**
@@ -580,8 +537,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_RefreshSchemas.html
    */
   public toRefreshSchemas() {
-    this.to('dms:RefreshSchemas');
-    return this;
+    return this.to('RefreshSchemas');
   }
 
   /**
@@ -592,8 +548,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReloadTables.html
    */
   public toReloadTables() {
-    this.to('dms:ReloadTables');
-    return this;
+    return this.to('ReloadTables');
   }
 
   /**
@@ -607,8 +562,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_RemoveTagsFromResource.html
    */
   public toRemoveTagsFromResource() {
-    this.to('dms:RemoveTagsFromResource');
-    return this;
+    return this.to('RemoveTagsFromResource');
   }
 
   /**
@@ -619,8 +573,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html
    */
   public toStartReplicationTask() {
-    this.to('dms:StartReplicationTask');
-    return this;
+    return this.to('StartReplicationTask');
   }
 
   /**
@@ -631,8 +584,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html
    */
   public toStartReplicationTaskAssessment() {
-    this.to('dms:StartReplicationTaskAssessment');
-    return this;
+    return this.to('StartReplicationTaskAssessment');
   }
 
   /**
@@ -643,8 +595,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html
    */
   public toStartReplicationTaskAssessmentRun() {
-    this.to('dms:StartReplicationTaskAssessmentRun');
-    return this;
+    return this.to('StartReplicationTaskAssessmentRun');
   }
 
   /**
@@ -655,8 +606,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html
    */
   public toStopReplicationTask() {
-    this.to('dms:StopReplicationTask');
-    return this;
+    return this.to('StopReplicationTask');
   }
 
   /**
@@ -667,8 +617,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_TestConnection.html
    */
   public toTestConnection() {
-    this.to('dms:TestConnection');
-    return this;
+    return this.to('TestConnection');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -920,7 +869,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCertTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`dms:cert-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`cert-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
@@ -934,7 +883,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEndpointTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`dms:endpoint-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`endpoint-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
@@ -948,7 +897,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEsTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`dms:es-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`es-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
@@ -962,7 +911,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRepTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`dms:rep-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`rep-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
@@ -981,7 +930,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifReqTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`dms:req-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`req-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
@@ -995,7 +944,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSubgrpTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`dms:subgrp-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`subgrp-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
@@ -1009,6 +958,6 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTaskTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`dms:task-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`task-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

@@ -30,8 +30,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_AddNotificationChannel.html
    */
   public toAddNotificationChannel() {
-    this.to('devops-guru:AddNotificationChannel');
-    return this;
+    return this.to('AddNotificationChannel');
   }
 
   /**
@@ -42,8 +41,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeAccountHealth.html
    */
   public toDescribeAccountHealth() {
-    this.to('devops-guru:DescribeAccountHealth');
-    return this;
+    return this.to('DescribeAccountHealth');
   }
 
   /**
@@ -54,8 +52,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeAccountOverview.html
    */
   public toDescribeAccountOverview() {
-    this.to('devops-guru:DescribeAccountOverview');
-    return this;
+    return this.to('DescribeAccountOverview');
   }
 
   /**
@@ -66,8 +63,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeAnomaly.html
    */
   public toDescribeAnomaly() {
-    this.to('devops-guru:DescribeAnomaly');
-    return this;
+    return this.to('DescribeAnomaly');
   }
 
   /**
@@ -78,8 +74,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeInsight.html
    */
   public toDescribeInsight() {
-    this.to('devops-guru:DescribeInsight');
-    return this;
+    return this.to('DescribeInsight');
   }
 
   /**
@@ -90,8 +85,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeResourceCollectionHealth.html
    */
   public toDescribeResourceCollectionHealth() {
-    this.to('devops-guru:DescribeResourceCollectionHealth');
-    return this;
+    return this.to('DescribeResourceCollectionHealth');
   }
 
   /**
@@ -102,8 +96,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeServiceIntegration.html
    */
   public toDescribeServiceIntegration() {
-    this.to('devops-guru:DescribeServiceIntegration');
-    return this;
+    return this.to('DescribeServiceIntegration');
   }
 
   /**
@@ -114,8 +107,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_GetResourceCollection.html
    */
   public toGetResourceCollection() {
-    this.to('devops-guru:GetResourceCollection');
-    return this;
+    return this.to('GetResourceCollection');
   }
 
   /**
@@ -126,8 +118,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListAnomaliesForInsight.html
    */
   public toListAnomaliesForInsight() {
-    this.to('devops-guru:ListAnomaliesForInsight');
-    return this;
+    return this.to('ListAnomaliesForInsight');
   }
 
   /**
@@ -138,8 +129,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListEvents.html
    */
   public toListEvents() {
-    this.to('devops-guru:ListEvents');
-    return this;
+    return this.to('ListEvents');
   }
 
   /**
@@ -150,8 +140,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListInsights.html
    */
   public toListInsights() {
-    this.to('devops-guru:ListInsights');
-    return this;
+    return this.to('ListInsights');
   }
 
   /**
@@ -162,8 +151,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListNotificationChannels.html
    */
   public toListNotificationChannels() {
-    this.to('devops-guru:ListNotificationChannels');
-    return this;
+    return this.to('ListNotificationChannels');
   }
 
   /**
@@ -174,8 +162,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListRecommendations.html
    */
   public toListRecommendations() {
-    this.to('devops-guru:ListRecommendations');
-    return this;
+    return this.to('ListRecommendations');
   }
 
   /**
@@ -186,8 +173,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PutFeedback.html
    */
   public toPutFeedback() {
-    this.to('devops-guru:PutFeedback');
-    return this;
+    return this.to('PutFeedback');
   }
 
   /**
@@ -202,8 +188,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_RemoveNotificationChannel.html
    */
   public toRemoveNotificationChannel() {
-    this.to('devops-guru:RemoveNotificationChannel');
-    return this;
+    return this.to('RemoveNotificationChannel');
   }
 
   /**
@@ -214,8 +199,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_SearchInsights.html
    */
   public toSearchInsights() {
-    this.to('devops-guru:SearchInsights');
-    return this;
+    return this.to('SearchInsights');
   }
 
   /**
@@ -226,8 +210,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_UpdateResourceCollection.html
    */
   public toUpdateResourceCollection() {
-    this.to('devops-guru:UpdateResourceCollection');
-    return this;
+    return this.to('UpdateResourceCollection');
   }
 
   /**
@@ -238,8 +221,7 @@ export class DevopsGuru extends PolicyStatement {
    * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_UpdateServiceIntegration.html
    */
   public toUpdateServiceIntegration() {
-    this.to('devops-guru:UpdateServiceIntegration');
-    return this;
+    return this.to('UpdateServiceIntegration');
   }
 
   protected accessLevelList: AccessLevelList = {

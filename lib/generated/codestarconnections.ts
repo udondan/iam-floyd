@@ -31,8 +31,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateConnection.html
    */
   public toCreateConnection() {
-    this.to('codestar-connections:CreateConnection');
-    return this;
+    return this.to('CreateConnection');
   }
 
   /**
@@ -46,8 +45,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateHost.html
    */
   public toCreateHost() {
-    this.to('codestar-connections:CreateHost');
-    return this;
+    return this.to('CreateHost');
   }
 
   /**
@@ -58,8 +56,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_DeleteConnection.html
    */
   public toDeleteConnection() {
-    this.to('codestar-connections:DeleteConnection');
-    return this;
+    return this.to('DeleteConnection');
   }
 
   /**
@@ -70,8 +67,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_DeleteHost.html
    */
   public toDeleteHost() {
-    this.to('codestar-connections:DeleteHost');
-    return this;
+    return this.to('DeleteHost');
   }
 
   /**
@@ -82,8 +78,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetConnection.html
    */
   public toGetConnection() {
-    this.to('codestar-connections:GetConnection');
-    return this;
+    return this.to('GetConnection');
   }
 
   /**
@@ -94,8 +89,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetHost.html
    */
   public toGetHost() {
-    this.to('codestar-connections:GetHost');
-    return this;
+    return this.to('GetHost');
   }
 
   /**
@@ -112,8 +106,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toGetIndividualAccessToken() {
-    this.to('codestar-connections:GetIndividualAccessToken');
-    return this;
+    return this.to('GetIndividualAccessToken');
   }
 
   /**
@@ -127,8 +120,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toGetInstallationUrl() {
-    this.to('codestar-connections:GetInstallationUrl');
-    return this;
+    return this.to('GetInstallationUrl');
   }
 
   /**
@@ -142,8 +134,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListConnections.html
    */
   public toListConnections() {
-    this.to('codestar-connections:ListConnections');
-    return this;
+    return this.to('ListConnections');
   }
 
   /**
@@ -157,8 +148,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListHosts.html
    */
   public toListHosts() {
-    this.to('codestar-connections:ListHosts');
-    return this;
+    return this.to('ListHosts');
   }
 
   /**
@@ -173,8 +163,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toListInstallationTargets() {
-    this.to('codestar-connections:ListInstallationTargets');
-    return this;
+    return this.to('ListInstallationTargets');
   }
 
   /**
@@ -185,8 +174,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('codestar-connections:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -200,8 +188,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-passconnection
    */
   public toPassConnection() {
-    this.to('codestar-connections:PassConnection');
-    return this;
+    return this.to('PassConnection');
   }
 
   /**
@@ -215,8 +202,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#connections-permissions-actions-host-registration
    */
   public toRegisterAppCode() {
-    this.to('codestar-connections:RegisterAppCode');
-    return this;
+    return this.to('RegisterAppCode');
   }
 
   /**
@@ -230,8 +216,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#connections-permissions-actions-host-registration
    */
   public toStartAppRegistrationHandshake() {
-    this.to('codestar-connections:StartAppRegistrationHandshake');
-    return this;
+    return this.to('StartAppRegistrationHandshake');
   }
 
   /**
@@ -245,8 +230,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toStartOAuthHandshake() {
-    this.to('codestar-connections:StartOAuthHandshake');
-    return this;
+    return this.to('StartOAuthHandshake');
   }
 
   /**
@@ -261,8 +245,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('codestar-connections:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -277,8 +260,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('codestar-connections:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -298,8 +280,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
    */
   public toUpdateConnectionInstallation() {
-    this.to('codestar-connections:UpdateConnectionInstallation');
-    return this;
+    return this.to('UpdateConnectionInstallation');
   }
 
   /**
@@ -310,8 +291,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UpdateHost.html
    */
   public toUpdateHost() {
-    this.to('codestar-connections:UpdateHost');
-    return this;
+    return this.to('UpdateHost');
   }
 
   /**
@@ -327,8 +307,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
    */
   public toUseConnection() {
-    this.to('codestar-connections:UseConnection');
-    return this;
+    return this.to('UseConnection');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -410,7 +389,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifBranchName(value: string | string[], operator?: Operator | string) {
-    return this.if(`codestar-connections:BranchName`, value, operator || 'StringLike');
+    return this.if(`BranchName`, value, operator || 'StringLike');
   }
 
   /**
@@ -425,7 +404,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFullRepositoryId(value: string | string[], operator?: Operator | string) {
-    return this.if(`codestar-connections:FullRepositoryId`, value, operator || 'StringLike');
+    return this.if(`FullRepositoryId`, value, operator || 'StringLike');
   }
 
   /**
@@ -441,7 +420,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifHostArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`codestar-connections:HostArn`, value, operator || 'StringLike');
+    return this.if(`HostArn`, value, operator || 'StringLike');
   }
 
   /**
@@ -456,7 +435,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifInstallationId(value: string | string[], operator?: Operator | string) {
-    return this.if(`codestar-connections:InstallationId`, value, operator || 'StringLike');
+    return this.if(`InstallationId`, value, operator || 'StringLike');
   }
 
   /**
@@ -468,7 +447,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifOwnerId(value: string | string[], operator?: Operator | string) {
-    return this.if(`codestar-connections:OwnerId`, value, operator || 'StringLike');
+    return this.if(`OwnerId`, value, operator || 'StringLike');
   }
 
   /**
@@ -483,7 +462,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPassedToService(value: string | string[], operator?: Operator | string) {
-    return this.if(`codestar-connections:PassedToService`, value, operator || 'StringLike');
+    return this.if(`PassedToService`, value, operator || 'StringLike');
   }
 
   /**
@@ -498,7 +477,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProviderAction(value: string | string[], operator?: Operator | string) {
-    return this.if(`codestar-connections:ProviderAction`, value, operator || 'StringLike');
+    return this.if(`ProviderAction`, value, operator || 'StringLike');
   }
 
   /**
@@ -513,7 +492,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProviderPermissionsRequired(value: string | string[], operator?: Operator | string) {
-    return this.if(`codestar-connections:ProviderPermissionsRequired`, value, operator || 'StringLike');
+    return this.if(`ProviderPermissionsRequired`, value, operator || 'StringLike');
   }
 
   /**
@@ -532,7 +511,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProviderType(value: string | string[], operator?: Operator | string) {
-    return this.if(`codestar-connections:ProviderType`, value, operator || 'StringLike');
+    return this.if(`ProviderType`, value, operator || 'StringLike');
   }
 
   /**
@@ -548,7 +527,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProviderTypeFilter(value: string | string[], operator?: Operator | string) {
-    return this.if(`codestar-connections:ProviderTypeFilter`, value, operator || 'StringLike');
+    return this.if(`ProviderTypeFilter`, value, operator || 'StringLike');
   }
 
   /**
@@ -560,6 +539,6 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRepositoryName(value: string | string[], operator?: Operator | string) {
-    return this.if(`codestar-connections:RepositoryName`, value, operator || 'StringLike');
+    return this.if(`RepositoryName`, value, operator || 'StringLike');
   }
 }

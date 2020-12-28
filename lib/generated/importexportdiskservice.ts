@@ -26,8 +26,7 @@ export class Importexport extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCancelJob.html
    */
   public toCancelJob() {
-    this.to('importexport:CancelJob');
-    return this;
+    return this.to('CancelJob');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Importexport extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCreateJob.html
    */
   public toCreateJob() {
-    this.to('importexport:CreateJob');
-    return this;
+    return this.to('CreateJob');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Importexport extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetShippingLabel.html
    */
   public toGetShippingLabel() {
-    this.to('importexport:GetShippingLabel');
-    return this;
+    return this.to('GetShippingLabel');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Importexport extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetStatus.html
    */
   public toGetStatus() {
-    this.to('importexport:GetStatus');
-    return this;
+    return this.to('GetStatus');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Importexport extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebListJobs.html
    */
   public toListJobs() {
-    this.to('importexport:ListJobs');
-    return this;
+    return this.to('ListJobs');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Importexport extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebUpdateJob.html
    */
   public toUpdateJob() {
-    this.to('importexport:UpdateJob');
-    return this;
+    return this.to('UpdateJob');
   }
 
   protected accessLevelList: AccessLevelList = {

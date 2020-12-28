@@ -26,8 +26,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateMember.html
    */
   public toCreateMember() {
-    this.to('managedblockchain:CreateMember');
-    return this;
+    return this.to('CreateMember');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateNetwork.html
    */
   public toCreateNetwork() {
-    this.to('managedblockchain:CreateNetwork');
-    return this;
+    return this.to('CreateNetwork');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateNode.html
    */
   public toCreateNode() {
-    this.to('managedblockchain:CreateNode');
-    return this;
+    return this.to('CreateNode');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateProposal.html
    */
   public toCreateProposal() {
-    this.to('managedblockchain:CreateProposal');
-    return this;
+    return this.to('CreateProposal');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_DeleteMember.html
    */
   public toDeleteMember() {
-    this.to('managedblockchain:DeleteMember');
-    return this;
+    return this.to('DeleteMember');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_DeleteNode.html
    */
   public toDeleteNode() {
-    this.to('managedblockchain:DeleteNode');
-    return this;
+    return this.to('DeleteNode');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetMember.html
    */
   public toGetMember() {
-    this.to('managedblockchain:GetMember');
-    return this;
+    return this.to('GetMember');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetNetwork.html
    */
   public toGetNetwork() {
-    this.to('managedblockchain:GetNetwork');
-    return this;
+    return this.to('GetNetwork');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetNode.html
    */
   public toGetNode() {
-    this.to('managedblockchain:GetNode');
-    return this;
+    return this.to('GetNode');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetProposal.html
    */
   public toGetProposal() {
-    this.to('managedblockchain:GetProposal');
-    return this;
+    return this.to('GetProposal');
   }
 
   /**
@@ -146,8 +136,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListInvitations.html
    */
   public toListInvitations() {
-    this.to('managedblockchain:ListInvitations');
-    return this;
+    return this.to('ListInvitations');
   }
 
   /**
@@ -158,8 +147,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListMembers.html
    */
   public toListMembers() {
-    this.to('managedblockchain:ListMembers');
-    return this;
+    return this.to('ListMembers');
   }
 
   /**
@@ -170,8 +158,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListNetworks.html
    */
   public toListNetworks() {
-    this.to('managedblockchain:ListNetworks');
-    return this;
+    return this.to('ListNetworks');
   }
 
   /**
@@ -182,8 +169,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListNodes.html
    */
   public toListNodes() {
-    this.to('managedblockchain:ListNodes');
-    return this;
+    return this.to('ListNodes');
   }
 
   /**
@@ -194,8 +180,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListProposalVotes.html
    */
   public toListProposalVotes() {
-    this.to('managedblockchain:ListProposalVotes');
-    return this;
+    return this.to('ListProposalVotes');
   }
 
   /**
@@ -206,8 +191,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListProposals.html
    */
   public toListProposals() {
-    this.to('managedblockchain:ListProposals');
-    return this;
+    return this.to('ListProposals');
   }
 
   /**
@@ -218,8 +202,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_RejectInvitation.html
    */
   public toRejectInvitation() {
-    this.to('managedblockchain:RejectInvitation');
-    return this;
+    return this.to('RejectInvitation');
   }
 
   /**
@@ -233,8 +216,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UpdateMember.html
    */
   public toUpdateMember() {
-    this.to('managedblockchain:UpdateMember');
-    return this;
+    return this.to('UpdateMember');
   }
 
   /**
@@ -248,8 +230,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UpdateNode.html
    */
   public toUpdateNode() {
-    this.to('managedblockchain:UpdateNode');
-    return this;
+    return this.to('UpdateNode');
   }
 
   /**
@@ -260,8 +241,7 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_VoteOnProposal.html
    */
   public toVoteOnProposal() {
-    this.to('managedblockchain:VoteOnProposal');
-    return this;
+    return this.to('VoteOnProposal');
   }
 
   protected accessLevelList: AccessLevelList = {

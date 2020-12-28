@@ -26,8 +26,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_AddPermission.html
    */
   public toAddPermission() {
-    this.to('sns:AddPermission');
-    return this;
+    return this.to('AddPermission');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_CheckIfPhoneNumberIsOptedOut.html
    */
   public toCheckIfPhoneNumberIsOptedOut() {
-    this.to('sns:CheckIfPhoneNumberIsOptedOut');
-    return this;
+    return this.to('CheckIfPhoneNumberIsOptedOut');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_ConfirmSubscription.html
    */
   public toConfirmSubscription() {
-    this.to('sns:ConfirmSubscription');
-    return this;
+    return this.to('ConfirmSubscription');
   }
 
   /**
@@ -65,8 +62,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_CreatePlatformApplication.html
    */
   public toCreatePlatformApplication() {
-    this.to('sns:CreatePlatformApplication');
-    return this;
+    return this.to('CreatePlatformApplication');
   }
 
   /**
@@ -77,8 +73,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_CreatePlatformEndpoint.html
    */
   public toCreatePlatformEndpoint() {
-    this.to('sns:CreatePlatformEndpoint');
-    return this;
+    return this.to('CreatePlatformEndpoint');
   }
 
   /**
@@ -92,8 +87,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html
    */
   public toCreateTopic() {
-    this.to('sns:CreateTopic');
-    return this;
+    return this.to('CreateTopic');
   }
 
   /**
@@ -104,8 +98,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_DeleteEndpoint.html
    */
   public toDeleteEndpoint() {
-    this.to('sns:DeleteEndpoint');
-    return this;
+    return this.to('DeleteEndpoint');
   }
 
   /**
@@ -116,8 +109,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_DeletePlatformApplication.html
    */
   public toDeletePlatformApplication() {
-    this.to('sns:DeletePlatformApplication');
-    return this;
+    return this.to('DeletePlatformApplication');
   }
 
   /**
@@ -128,8 +120,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_DeleteTopic.html
    */
   public toDeleteTopic() {
-    this.to('sns:DeleteTopic');
-    return this;
+    return this.to('DeleteTopic');
   }
 
   /**
@@ -140,8 +131,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_GetEndpointAttributes.html
    */
   public toGetEndpointAttributes() {
-    this.to('sns:GetEndpointAttributes');
-    return this;
+    return this.to('GetEndpointAttributes');
   }
 
   /**
@@ -152,8 +142,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_GetPlatformApplicationAttributes.html
    */
   public toGetPlatformApplicationAttributes() {
-    this.to('sns:GetPlatformApplicationAttributes');
-    return this;
+    return this.to('GetPlatformApplicationAttributes');
   }
 
   /**
@@ -164,8 +153,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_GetSMSAttributes.html
    */
   public toGetSMSAttributes() {
-    this.to('sns:GetSMSAttributes');
-    return this;
+    return this.to('GetSMSAttributes');
   }
 
   /**
@@ -176,8 +164,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html
    */
   public toGetSubscriptionAttributes() {
-    this.to('sns:GetSubscriptionAttributes');
-    return this;
+    return this.to('GetSubscriptionAttributes');
   }
 
   /**
@@ -188,8 +175,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_GetTopicAttributes.html
    */
   public toGetTopicAttributes() {
-    this.to('sns:GetTopicAttributes');
-    return this;
+    return this.to('GetTopicAttributes');
   }
 
   /**
@@ -200,8 +186,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_ListEndpointsByPlatformApplication.html
    */
   public toListEndpointsByPlatformApplication() {
-    this.to('sns:ListEndpointsByPlatformApplication');
-    return this;
+    return this.to('ListEndpointsByPlatformApplication');
   }
 
   /**
@@ -212,8 +197,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_ListPhoneNumbersOptedOut.html
    */
   public toListPhoneNumbersOptedOut() {
-    this.to('sns:ListPhoneNumbersOptedOut');
-    return this;
+    return this.to('ListPhoneNumbersOptedOut');
   }
 
   /**
@@ -224,8 +208,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_ListPlatformApplications.html
    */
   public toListPlatformApplications() {
-    this.to('sns:ListPlatformApplications');
-    return this;
+    return this.to('ListPlatformApplications');
   }
 
   /**
@@ -236,8 +219,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_ListSubscriptions.html
    */
   public toListSubscriptions() {
-    this.to('sns:ListSubscriptions');
-    return this;
+    return this.to('ListSubscriptions');
   }
 
   /**
@@ -248,8 +230,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_ListSubscriptionsByTopic.html
    */
   public toListSubscriptionsByTopic() {
-    this.to('sns:ListSubscriptionsByTopic');
-    return this;
+    return this.to('ListSubscriptionsByTopic');
   }
 
   /**
@@ -260,8 +241,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('sns:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -272,8 +252,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html
    */
   public toListTopics() {
-    this.to('sns:ListTopics');
-    return this;
+    return this.to('ListTopics');
   }
 
   /**
@@ -284,8 +263,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_OptInPhoneNumber.html
    */
   public toOptInPhoneNumber() {
-    this.to('sns:OptInPhoneNumber');
-    return this;
+    return this.to('OptInPhoneNumber');
   }
 
   /**
@@ -296,8 +274,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_Publish.html
    */
   public toPublish() {
-    this.to('sns:Publish');
-    return this;
+    return this.to('Publish');
   }
 
   /**
@@ -308,8 +285,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_RemovePermission.html
    */
   public toRemovePermission() {
-    this.to('sns:RemovePermission');
-    return this;
+    return this.to('RemovePermission');
   }
 
   /**
@@ -320,8 +296,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html
    */
   public toSetEndpointAttributes() {
-    this.to('sns:SetEndpointAttributes');
-    return this;
+    return this.to('SetEndpointAttributes');
   }
 
   /**
@@ -335,8 +310,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html
    */
   public toSetPlatformApplicationAttributes() {
-    this.to('sns:SetPlatformApplicationAttributes');
-    return this;
+    return this.to('SetPlatformApplicationAttributes');
   }
 
   /**
@@ -347,8 +321,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html
    */
   public toSetSMSAttributes() {
-    this.to('sns:SetSMSAttributes');
-    return this;
+    return this.to('SetSMSAttributes');
   }
 
   /**
@@ -359,8 +332,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_SetSubscriptionAttributes.html
    */
   public toSetSubscriptionAttributes() {
-    this.to('sns:SetSubscriptionAttributes');
-    return this;
+    return this.to('SetSubscriptionAttributes');
   }
 
   /**
@@ -374,8 +346,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_SetTopicAttributes.html
    */
   public toSetTopicAttributes() {
-    this.to('sns:SetTopicAttributes');
-    return this;
+    return this.to('SetTopicAttributes');
   }
 
   /**
@@ -390,8 +361,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html
    */
   public toSubscribe() {
-    this.to('sns:Subscribe');
-    return this;
+    return this.to('Subscribe');
   }
 
   /**
@@ -406,8 +376,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_TagResource.html
    */
   public toTagResource() {
-    this.to('sns:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -418,8 +387,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_Unsubscribe.html
    */
   public toUnsubscribe() {
-    this.to('sns:Unsubscribe');
-    return this;
+    return this.to('Unsubscribe');
   }
 
   /**
@@ -434,8 +402,7 @@ export class Sns extends PolicyStatement {
    * https://docs.aws.amazon.com/sns/latest/api/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('sns:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -515,7 +482,7 @@ export class Sns extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEndpoint(value: string | string[], operator?: Operator | string) {
-    return this.if(`sns:Endpoint`, value, operator || 'StringLike');
+    return this.if(`Endpoint`, value, operator || 'StringLike');
   }
 
   /**
@@ -530,6 +497,6 @@ export class Sns extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProtocol(value: string | string[], operator?: Operator | string) {
-    return this.if(`sns:Protocol`, value, operator || 'StringLike');
+    return this.if(`Protocol`, value, operator || 'StringLike');
   }
 }

@@ -319,13 +319,11 @@ export function createModule(module: Module): Promise<void> {
     stats.actions.push(`${module.servicePrefix}:${name};${action.accessLevel}`);
 
     const method = classDeclaration.addMethod({
-      name: `to${name}`,
+      name: `to${upperFirst(name)}`,
       scope: Scope.Public,
     });
 
-    method.setBodyText(
-      [`this.to('${module.servicePrefix}:${name}');`, 'return this;'].join('\n')
-    );
+    method.setBodyText(`return this.to('${name}');`);
 
     var desc = `\n${action.description}\n\nAccess Level: ${action.accessLevel}`;
 
@@ -482,7 +480,13 @@ export function createModule(module: Module): Promise<void> {
       scope: Scope.Public,
     });
 
-    var propsKey = `${name[0]}:${name[1]}`;
+    let propsKey = '';
+
+    if (name[0] != module.servicePrefix) {
+      propsKey += name[0] + ':';
+    }
+
+    propsKey += name[1];
 
     if (name.length > 2) {
       // it is one of those tag keys

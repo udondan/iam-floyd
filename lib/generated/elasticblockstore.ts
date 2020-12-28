@@ -26,8 +26,7 @@ export class Ebs extends PolicyStatement {
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_CompleteSnapshot.html
    */
   public toCompleteSnapshot() {
-    this.to('ebs:CompleteSnapshot');
-    return this;
+    return this.to('CompleteSnapshot');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Ebs extends PolicyStatement {
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_GetSnapshotBlock.html
    */
   public toGetSnapshotBlock() {
-    this.to('ebs:GetSnapshotBlock');
-    return this;
+    return this.to('GetSnapshotBlock');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Ebs extends PolicyStatement {
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_ListChangedBlocks.html
    */
   public toListChangedBlocks() {
-    this.to('ebs:ListChangedBlocks');
-    return this;
+    return this.to('ListChangedBlocks');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Ebs extends PolicyStatement {
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_ListSnapshotBlocks.html
    */
   public toListSnapshotBlocks() {
-    this.to('ebs:ListSnapshotBlocks');
-    return this;
+    return this.to('ListSnapshotBlocks');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Ebs extends PolicyStatement {
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html
    */
   public toPutSnapshotBlock() {
-    this.to('ebs:PutSnapshotBlock');
-    return this;
+    return this.to('PutSnapshotBlock');
   }
 
   /**
@@ -90,8 +85,7 @@ export class Ebs extends PolicyStatement {
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_StartSnapshot.html
    */
   public toStartSnapshot() {
-    this.to('ebs:StartSnapshot');
-    return this;
+    return this.to('StartSnapshot');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -142,7 +136,7 @@ export class Ebs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDescription(value: string | string[], operator?: Operator | string) {
-    return this.if(`ebs:Description`, value, operator || 'StringLike');
+    return this.if(`Description`, value, operator || 'StringLike');
   }
 
   /**
@@ -155,7 +149,7 @@ export class Ebs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifParentSnapshot(value: string | string[], operator?: Operator | string) {
-    return this.if(`ebs:ParentSnapshot`, value, operator || 'StringLike');
+    return this.if(`ParentSnapshot`, value, operator || 'StringLike');
   }
 
   /**
@@ -168,6 +162,6 @@ export class Ebs extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifVolumeSize(value: number | number[], operator?: Operator | string) {
-    return this.if(`ebs:VolumeSize`, value, operator || 'NumericEquals');
+    return this.if(`VolumeSize`, value, operator || 'NumericEquals');
   }
 }

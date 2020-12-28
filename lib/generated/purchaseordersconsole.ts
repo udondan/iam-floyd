@@ -26,8 +26,7 @@ export class PurchaseOrders extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toModifyPurchaseOrders() {
-    this.to('purchase-orders:ModifyPurchaseOrders');
-    return this;
+    return this.to('ModifyPurchaseOrders');
   }
 
   /**
@@ -38,8 +37,7 @@ export class PurchaseOrders extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toViewPurchaseOrders() {
-    this.to('purchase-orders:ViewPurchaseOrders');
-    return this;
+    return this.to('ViewPurchaseOrders');
   }
 
   protected accessLevelList: AccessLevelList = {

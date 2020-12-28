@@ -26,8 +26,7 @@ export class Identitystore extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroup.html
    */
   public toDescribeGroup() {
-    this.to('identitystore:DescribeGroup');
-    return this;
+    return this.to('DescribeGroup');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Identitystore extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeUser.html
    */
   public toDescribeUser() {
-    this.to('identitystore:DescribeUser');
-    return this;
+    return this.to('DescribeUser');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Identitystore extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroups.html
    */
   public toListGroups() {
-    this.to('identitystore:ListGroups');
-    return this;
+    return this.to('ListGroups');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Identitystore extends PolicyStatement {
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListUsers.html
    */
   public toListUsers() {
-    this.to('identitystore:ListUsers');
-    return this;
+    return this.to('ListUsers');
   }
 
   protected accessLevelList: AccessLevelList = {

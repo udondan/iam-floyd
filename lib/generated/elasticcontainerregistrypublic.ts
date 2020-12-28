@@ -26,8 +26,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_BatchCheckLayerAvailability.html
    */
   public toBatchCheckLayerAvailability() {
-    this.to('ecr-public:BatchCheckLayerAvailability');
-    return this;
+    return this.to('BatchCheckLayerAvailability');
   }
 
   /**
@@ -38,8 +37,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_BatchDeleteImage.html
    */
   public toBatchDeleteImage() {
-    this.to('ecr-public:BatchDeleteImage');
-    return this;
+    return this.to('BatchDeleteImage');
   }
 
   /**
@@ -50,8 +48,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_CompleteLayerUpload.html
    */
   public toCompleteLayerUpload() {
-    this.to('ecr-public:CompleteLayerUpload');
-    return this;
+    return this.to('CompleteLayerUpload');
   }
 
   /**
@@ -62,8 +59,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_CreateRepository.html
    */
   public toCreateRepository() {
-    this.to('ecr-public:CreateRepository');
-    return this;
+    return this.to('CreateRepository');
   }
 
   /**
@@ -74,8 +70,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_DeleteRepository.html
    */
   public toDeleteRepository() {
-    this.to('ecr-public:DeleteRepository');
-    return this;
+    return this.to('DeleteRepository');
   }
 
   /**
@@ -86,8 +81,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_DeleteRepositoryPolicy.html
    */
   public toDeleteRepositoryPolicy() {
-    this.to('ecr-public:DeleteRepositoryPolicy');
-    return this;
+    return this.to('DeleteRepositoryPolicy');
   }
 
   /**
@@ -98,8 +92,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_DescribeImageTags.html
    */
   public toDescribeImageTags() {
-    this.to('ecr-public:DescribeImageTags');
-    return this;
+    return this.to('DescribeImageTags');
   }
 
   /**
@@ -110,8 +103,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_DescribeImages.html
    */
   public toDescribeImages() {
-    this.to('ecr-public:DescribeImages');
-    return this;
+    return this.to('DescribeImages');
   }
 
   /**
@@ -122,8 +114,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_DescribeRegistries.html
    */
   public toDescribeRegistries() {
-    this.to('ecr-public:DescribeRegistries');
-    return this;
+    return this.to('DescribeRegistries');
   }
 
   /**
@@ -134,8 +125,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_DescribeRepositories.html
    */
   public toDescribeRepositories() {
-    this.to('ecr-public:DescribeRepositories');
-    return this;
+    return this.to('DescribeRepositories');
   }
 
   /**
@@ -146,8 +136,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_GetAuthorizationToken.html
    */
   public toGetAuthorizationToken() {
-    this.to('ecr-public:GetAuthorizationToken');
-    return this;
+    return this.to('GetAuthorizationToken');
   }
 
   /**
@@ -158,8 +147,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_GetRegistryCatalogData.html
    */
   public toGetRegistryCatalogData() {
-    this.to('ecr-public:GetRegistryCatalogData');
-    return this;
+    return this.to('GetRegistryCatalogData');
   }
 
   /**
@@ -170,8 +158,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_GetRepositoryCatalogData.html
    */
   public toGetRepositoryCatalogData() {
-    this.to('ecr-public:GetRepositoryCatalogData');
-    return this;
+    return this.to('GetRepositoryCatalogData');
   }
 
   /**
@@ -182,8 +169,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_GetRepositoryPolicy.html
    */
   public toGetRepositoryPolicy() {
-    this.to('ecr-public:GetRepositoryPolicy');
-    return this;
+    return this.to('GetRepositoryPolicy');
   }
 
   /**
@@ -194,8 +180,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_InitiateLayerUpload.html
    */
   public toInitiateLayerUpload() {
-    this.to('ecr-public:InitiateLayerUpload');
-    return this;
+    return this.to('InitiateLayerUpload');
   }
 
   /**
@@ -206,8 +191,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_PutImage.html
    */
   public toPutImage() {
-    this.to('ecr-public:PutImage');
-    return this;
+    return this.to('PutImage');
   }
 
   /**
@@ -218,8 +202,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_PutRegistryCatalogData.html
    */
   public toPutRegistryCatalogData() {
-    this.to('ecr-public:PutRegistryCatalogData');
-    return this;
+    return this.to('PutRegistryCatalogData');
   }
 
   /**
@@ -230,8 +213,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_PutRepositoryCatalogData.html
    */
   public toPutRepositoryCatalogData() {
-    this.to('ecr-public:PutRepositoryCatalogData');
-    return this;
+    return this.to('PutRepositoryCatalogData');
   }
 
   /**
@@ -242,8 +224,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_SetRepositoryPolicy.html
    */
   public toSetRepositoryPolicy() {
-    this.to('ecr-public:SetRepositoryPolicy');
-    return this;
+    return this.to('SetRepositoryPolicy');
   }
 
   /**
@@ -254,8 +235,7 @@ export class EcrPublic extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_UploadLayerPart.html
    */
   public toUploadLayerPart() {
-    this.to('ecr-public:UploadLayerPart');
-    return this;
+    return this.to('UploadLayerPart');
   }
 
   protected accessLevelList: AccessLevelList = {

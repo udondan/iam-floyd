@@ -30,8 +30,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets.html#assetspost
    */
   public toCreateAsset() {
-    this.to('mediapackage-vod:CreateAsset');
-    return this;
+    return this.to('CreateAsset');
   }
 
   /**
@@ -46,8 +45,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations.html#packaging_configurationspost
    */
   public toCreatePackagingConfiguration() {
-    this.to('mediapackage-vod:CreatePackagingConfiguration');
-    return this;
+    return this.to('CreatePackagingConfiguration');
   }
 
   /**
@@ -62,8 +60,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups.html#packaging_groupspost
    */
   public toCreatePackagingGroup() {
-    this.to('mediapackage-vod:CreatePackagingGroup');
-    return this;
+    return this.to('CreatePackagingGroup');
   }
 
   /**
@@ -74,8 +71,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets-id.html#assets-iddelete
    */
   public toDeleteAsset() {
-    this.to('mediapackage-vod:DeleteAsset');
-    return this;
+    return this.to('DeleteAsset');
   }
 
   /**
@@ -86,8 +82,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations-id.html#packaging_configurations-iddelete
    */
   public toDeletePackagingConfiguration() {
-    this.to('mediapackage-vod:DeletePackagingConfiguration');
-    return this;
+    return this.to('DeletePackagingConfiguration');
   }
 
   /**
@@ -98,8 +93,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups-id.html#packaging_groups-iddelete
    */
   public toDeletePackagingGroup() {
-    this.to('mediapackage-vod:DeletePackagingGroup');
-    return this;
+    return this.to('DeletePackagingGroup');
   }
 
   /**
@@ -110,8 +104,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets-id.html#assets-idget
    */
   public toDescribeAsset() {
-    this.to('mediapackage-vod:DescribeAsset');
-    return this;
+    return this.to('DescribeAsset');
   }
 
   /**
@@ -122,8 +115,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations-id.html#packaging_configurations-idget
    */
   public toDescribePackagingConfiguration() {
-    this.to('mediapackage-vod:DescribePackagingConfiguration');
-    return this;
+    return this.to('DescribePackagingConfiguration');
   }
 
   /**
@@ -134,8 +126,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups-id.html#packaging_groups-idget
    */
   public toDescribePackagingGroup() {
-    this.to('mediapackage-vod:DescribePackagingGroup');
-    return this;
+    return this.to('DescribePackagingGroup');
   }
 
   /**
@@ -146,8 +137,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets.html#assetsget
    */
   public toListAssets() {
-    this.to('mediapackage-vod:ListAssets');
-    return this;
+    return this.to('ListAssets');
   }
 
   /**
@@ -158,8 +148,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations.html#packaging_configurationsget
    */
   public toListPackagingConfigurations() {
-    this.to('mediapackage-vod:ListPackagingConfigurations');
-    return this;
+    return this.to('ListPackagingConfigurations');
   }
 
   /**
@@ -170,8 +159,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups.html#packaging_groupsget
    */
   public toListPackagingGroups() {
-    this.to('mediapackage-vod:ListPackagingGroups');
-    return this;
+    return this.to('ListPackagingGroups');
   }
 
   /**
@@ -182,8 +170,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/tags-resource-arn.html#tags-resource-arnget
    */
   public toListTagsForResource() {
-    this.to('mediapackage-vod:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -198,8 +185,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/tags-resource-arn.html#tags-resource-arnpost
    */
   public toTagResource() {
-    this.to('mediapackage-vod:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -213,8 +199,7 @@ export class MediapackageVod extends PolicyStatement {
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/tags-resource-arn.html#tags-resource-arndelete
    */
   public toUntagResource() {
-    this.to('mediapackage-vod:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   protected accessLevelList: AccessLevelList = {

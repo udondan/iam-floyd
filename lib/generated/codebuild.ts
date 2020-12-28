@@ -26,8 +26,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchDeleteBuilds.html
    */
   public toBatchDeleteBuilds() {
-    this.to('codebuild:BatchDeleteBuilds');
-    return this;
+    return this.to('BatchDeleteBuilds');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetBuildBatches.html
    */
   public toBatchGetBuildBatches() {
-    this.to('codebuild:BatchGetBuildBatches');
-    return this;
+    return this.to('BatchGetBuildBatches');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetBuilds.html
    */
   public toBatchGetBuilds() {
-    this.to('codebuild:BatchGetBuilds');
-    return this;
+    return this.to('BatchGetBuilds');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetProjects.html
    */
   public toBatchGetProjects() {
-    this.to('codebuild:BatchGetProjects');
-    return this;
+    return this.to('BatchGetProjects');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetReportGroups.html
    */
   public toBatchGetReportGroups() {
-    this.to('codebuild:BatchGetReportGroups');
-    return this;
+    return this.to('BatchGetReportGroups');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetReports.html
    */
   public toBatchGetReports() {
-    this.to('codebuild:BatchGetReports');
-    return this;
+    return this.to('BatchGetReports');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
    */
   public toBatchPutCodeCoverages() {
-    this.to('codebuild:BatchPutCodeCoverages');
-    return this;
+    return this.to('BatchPutCodeCoverages');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
    */
   public toBatchPutTestCases() {
-    this.to('codebuild:BatchPutTestCases');
-    return this;
+    return this.to('BatchPutTestCases');
   }
 
   /**
@@ -126,8 +118,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateProject.html
    */
   public toCreateProject() {
-    this.to('codebuild:CreateProject');
-    return this;
+    return this.to('CreateProject');
   }
 
   /**
@@ -138,8 +129,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
    */
   public toCreateReport() {
-    this.to('codebuild:CreateReport');
-    return this;
+    return this.to('CreateReport');
   }
 
   /**
@@ -154,8 +144,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateReportGroup.html
    */
   public toCreateReportGroup() {
-    this.to('codebuild:CreateReportGroup');
-    return this;
+    return this.to('CreateReportGroup');
   }
 
   /**
@@ -166,8 +155,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateWebhook.html
    */
   public toCreateWebhook() {
-    this.to('codebuild:CreateWebhook');
-    return this;
+    return this.to('CreateWebhook');
   }
 
   /**
@@ -178,8 +166,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteBuildBatch.html
    */
   public toDeleteBuildBatch() {
-    this.to('codebuild:DeleteBuildBatch');
-    return this;
+    return this.to('DeleteBuildBatch');
   }
 
   /**
@@ -190,8 +177,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
    */
   public toDeleteOAuthToken() {
-    this.to('codebuild:DeleteOAuthToken');
-    return this;
+    return this.to('DeleteOAuthToken');
   }
 
   /**
@@ -202,8 +188,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteProject.html
    */
   public toDeleteProject() {
-    this.to('codebuild:DeleteProject');
-    return this;
+    return this.to('DeleteProject');
   }
 
   /**
@@ -214,8 +199,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html
    */
   public toDeleteReport() {
-    this.to('codebuild:DeleteReport');
-    return this;
+    return this.to('DeleteReport');
   }
 
   /**
@@ -226,8 +210,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReportGroup.html
    */
   public toDeleteReportGroup() {
-    this.to('codebuild:DeleteReportGroup');
-    return this;
+    return this.to('DeleteReportGroup');
   }
 
   /**
@@ -238,8 +221,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteResourcePolicy.html
    */
   public toDeleteResourcePolicy() {
-    this.to('codebuild:DeleteResourcePolicy');
-    return this;
+    return this.to('DeleteResourcePolicy');
   }
 
   /**
@@ -250,8 +232,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteSourceCredentials.html
    */
   public toDeleteSourceCredentials() {
-    this.to('codebuild:DeleteSourceCredentials');
-    return this;
+    return this.to('DeleteSourceCredentials');
   }
 
   /**
@@ -262,8 +243,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteWebhook.html
    */
   public toDeleteWebhook() {
-    this.to('codebuild:DeleteWebhook');
-    return this;
+    return this.to('DeleteWebhook');
   }
 
   /**
@@ -274,8 +254,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DescribeCodeCoverages.html
    */
   public toDescribeCodeCoverages() {
-    this.to('codebuild:DescribeCodeCoverages');
-    return this;
+    return this.to('DescribeCodeCoverages');
   }
 
   /**
@@ -286,8 +265,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DescribeTestCases.html
    */
   public toDescribeTestCases() {
-    this.to('codebuild:DescribeTestCases');
-    return this;
+    return this.to('DescribeTestCases');
   }
 
   /**
@@ -298,8 +276,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_GetResourcePolicy.html
    */
   public toGetResourcePolicy() {
-    this.to('codebuild:GetResourcePolicy');
-    return this;
+    return this.to('GetResourcePolicy');
   }
 
   /**
@@ -310,8 +287,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ImportSourceCredentials.html
    */
   public toImportSourceCredentials() {
-    this.to('codebuild:ImportSourceCredentials');
-    return this;
+    return this.to('ImportSourceCredentials');
   }
 
   /**
@@ -322,8 +298,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_InvalidateProjectCache.html
    */
   public toInvalidateProjectCache() {
-    this.to('codebuild:InvalidateProjectCache');
-    return this;
+    return this.to('InvalidateProjectCache');
   }
 
   /**
@@ -334,8 +309,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildBatches.html
    */
   public toListBuildBatches() {
-    this.to('codebuild:ListBuildBatches');
-    return this;
+    return this.to('ListBuildBatches');
   }
 
   /**
@@ -346,8 +320,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildBatchesForProject.html
    */
   public toListBuildBatchesForProject() {
-    this.to('codebuild:ListBuildBatchesForProject');
-    return this;
+    return this.to('ListBuildBatchesForProject');
   }
 
   /**
@@ -358,8 +331,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuilds.html
    */
   public toListBuilds() {
-    this.to('codebuild:ListBuilds');
-    return this;
+    return this.to('ListBuilds');
   }
 
   /**
@@ -370,8 +342,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildsForProject.html
    */
   public toListBuildsForProject() {
-    this.to('codebuild:ListBuildsForProject');
-    return this;
+    return this.to('ListBuildsForProject');
   }
 
   /**
@@ -382,8 +353,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
    */
   public toListConnectedOAuthAccounts() {
-    this.to('codebuild:ListConnectedOAuthAccounts');
-    return this;
+    return this.to('ListConnectedOAuthAccounts');
   }
 
   /**
@@ -394,8 +364,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListCuratedEnvironmentImages.html
    */
   public toListCuratedEnvironmentImages() {
-    this.to('codebuild:ListCuratedEnvironmentImages');
-    return this;
+    return this.to('ListCuratedEnvironmentImages');
   }
 
   /**
@@ -406,8 +375,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListProjects.html
    */
   public toListProjects() {
-    this.to('codebuild:ListProjects');
-    return this;
+    return this.to('ListProjects');
   }
 
   /**
@@ -418,8 +386,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportGroups.html
    */
   public toListReportGroups() {
-    this.to('codebuild:ListReportGroups');
-    return this;
+    return this.to('ListReportGroups');
   }
 
   /**
@@ -430,8 +397,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReports.html
    */
   public toListReports() {
-    this.to('codebuild:ListReports');
-    return this;
+    return this.to('ListReports');
   }
 
   /**
@@ -442,8 +408,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html
    */
   public toListReportsForReportGroup() {
-    this.to('codebuild:ListReportsForReportGroup');
-    return this;
+    return this.to('ListReportsForReportGroup');
   }
 
   /**
@@ -454,8 +419,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
    */
   public toListRepositories() {
-    this.to('codebuild:ListRepositories');
-    return this;
+    return this.to('ListRepositories');
   }
 
   /**
@@ -466,8 +430,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListSharedProjects.html
    */
   public toListSharedProjects() {
-    this.to('codebuild:ListSharedProjects');
-    return this;
+    return this.to('ListSharedProjects');
   }
 
   /**
@@ -478,8 +441,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListSharedReportGroups.html
    */
   public toListSharedReportGroups() {
-    this.to('codebuild:ListSharedReportGroups');
-    return this;
+    return this.to('ListSharedReportGroups');
   }
 
   /**
@@ -490,8 +452,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListSourceCredentials.html
    */
   public toListSourceCredentials() {
-    this.to('codebuild:ListSourceCredentials');
-    return this;
+    return this.to('ListSourceCredentials');
   }
 
   /**
@@ -502,8 +463,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
    */
   public toPersistOAuthToken() {
-    this.to('codebuild:PersistOAuthToken');
-    return this;
+    return this.to('PersistOAuthToken');
   }
 
   /**
@@ -514,8 +474,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_PutResourcePolicy.html
    */
   public toPutResourcePolicy() {
-    this.to('codebuild:PutResourcePolicy');
-    return this;
+    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -526,8 +485,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_RetryBuild.html
    */
   public toRetryBuild() {
-    this.to('codebuild:RetryBuild');
-    return this;
+    return this.to('RetryBuild');
   }
 
   /**
@@ -538,8 +496,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_RetryBuildBatch.html
    */
   public toRetryBuildBatch() {
-    this.to('codebuild:RetryBuildBatch');
-    return this;
+    return this.to('RetryBuildBatch');
   }
 
   /**
@@ -550,8 +507,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuild.html
    */
   public toStartBuild() {
-    this.to('codebuild:StartBuild');
-    return this;
+    return this.to('StartBuild');
   }
 
   /**
@@ -562,8 +518,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuildBatch.html
    */
   public toStartBuildBatch() {
-    this.to('codebuild:StartBuildBatch');
-    return this;
+    return this.to('StartBuildBatch');
   }
 
   /**
@@ -574,8 +529,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopBuild.html
    */
   public toStopBuild() {
-    this.to('codebuild:StopBuild');
-    return this;
+    return this.to('StopBuild');
   }
 
   /**
@@ -586,8 +540,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopBuildBatch.html
    */
   public toStopBuildBatch() {
-    this.to('codebuild:StopBuildBatch');
-    return this;
+    return this.to('StopBuildBatch');
   }
 
   /**
@@ -602,8 +555,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateProject.html
    */
   public toUpdateProject() {
-    this.to('codebuild:UpdateProject');
-    return this;
+    return this.to('UpdateProject');
   }
 
   /**
@@ -614,8 +566,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
    */
   public toUpdateReport() {
-    this.to('codebuild:UpdateReport');
-    return this;
+    return this.to('UpdateReport');
   }
 
   /**
@@ -630,8 +581,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateReportGroup.html
    */
   public toUpdateReportGroup() {
-    this.to('codebuild:UpdateReportGroup');
-    return this;
+    return this.to('UpdateReportGroup');
   }
 
   /**
@@ -642,8 +592,7 @@ export class Codebuild extends PolicyStatement {
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateWebhook.html
    */
   public toUpdateWebhook() {
-    this.to('codebuild:UpdateWebhook');
-    return this;
+    return this.to('UpdateWebhook');
   }
 
   protected accessLevelList: AccessLevelList = {

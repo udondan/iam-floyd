@@ -33,8 +33,7 @@ export class Monitron extends PolicyStatement {
    * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
    */
   public toAssociateProjectAdminUser() {
-    this.to('monitron:AssociateProjectAdminUser');
-    return this;
+    return this.to('AssociateProjectAdminUser');
   }
 
   /**
@@ -55,8 +54,7 @@ export class Monitron extends PolicyStatement {
    * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
    */
   public toCreateProject() {
-    this.to('monitron:CreateProject');
-    return this;
+    return this.to('CreateProject');
   }
 
   /**
@@ -70,8 +68,7 @@ export class Monitron extends PolicyStatement {
    * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
    */
   public toDeleteProject() {
-    this.to('monitron:DeleteProject');
-    return this;
+    return this.to('DeleteProject');
   }
 
   /**
@@ -89,8 +86,7 @@ export class Monitron extends PolicyStatement {
    * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
    */
   public toDisassociateProjectAdminUser() {
-    this.to('monitron:DisassociateProjectAdminUser');
-    return this;
+    return this.to('DisassociateProjectAdminUser');
   }
 
   /**
@@ -101,8 +97,7 @@ export class Monitron extends PolicyStatement {
    * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
    */
   public toGetProject() {
-    this.to('monitron:GetProject');
-    return this;
+    return this.to('GetProject');
   }
 
   /**
@@ -117,8 +112,7 @@ export class Monitron extends PolicyStatement {
    * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
    */
   public toGetProjectAdminUser() {
-    this.to('monitron:GetProjectAdminUser');
-    return this;
+    return this.to('GetProjectAdminUser');
   }
 
   /**
@@ -133,8 +127,7 @@ export class Monitron extends PolicyStatement {
    * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
    */
   public toListProjectAdminUsers() {
-    this.to('monitron:ListProjectAdminUsers');
-    return this;
+    return this.to('ListProjectAdminUsers');
   }
 
   /**
@@ -145,8 +138,7 @@ export class Monitron extends PolicyStatement {
    * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
    */
   public toListProjects() {
-    this.to('monitron:ListProjects');
-    return this;
+    return this.to('ListProjects');
   }
 
   /**
@@ -161,8 +153,7 @@ export class Monitron extends PolicyStatement {
    * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
    */
   public toListTagsForResource() {
-    this.to('monitron:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -177,8 +168,7 @@ export class Monitron extends PolicyStatement {
    * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
    */
   public toTagResource() {
-    this.to('monitron:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -192,8 +182,7 @@ export class Monitron extends PolicyStatement {
    * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
    */
   public toUntagResource() {
-    this.to('monitron:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -208,8 +197,7 @@ export class Monitron extends PolicyStatement {
    * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
    */
   public toUpdateProject() {
-    this.to('monitron:UpdateProject');
-    return this;
+    return this.to('UpdateProject');
   }
 
   protected accessLevelList: AccessLevelList = {

@@ -26,8 +26,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_AssociateDomain.html
    */
   public toAssociateDomain() {
-    this.to('worklink:AssociateDomain');
-    return this;
+    return this.to('AssociateDomain');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_AssociateWebsiteAuthorizationProvider.html
    */
   public toAssociateWebsiteAuthorizationProvider() {
-    this.to('worklink:AssociateWebsiteAuthorizationProvider');
-    return this;
+    return this.to('AssociateWebsiteAuthorizationProvider');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_AssociateWebsiteCertificateAuthority.html
    */
   public toAssociateWebsiteCertificateAuthority() {
-    this.to('worklink:AssociateWebsiteCertificateAuthority');
-    return this;
+    return this.to('AssociateWebsiteCertificateAuthority');
   }
 
   /**
@@ -66,8 +63,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_CreateFleet.html
    */
   public toCreateFleet() {
-    this.to('worklink:CreateFleet');
-    return this;
+    return this.to('CreateFleet');
   }
 
   /**
@@ -82,8 +78,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_DeleteFleet.html
    */
   public toDeleteFleet() {
-    this.to('worklink:DeleteFleet');
-    return this;
+    return this.to('DeleteFleet');
   }
 
   /**
@@ -94,8 +89,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeAuditStreamConfiguration.html
    */
   public toDescribeAuditStreamConfiguration() {
-    this.to('worklink:DescribeAuditStreamConfiguration');
-    return this;
+    return this.to('DescribeAuditStreamConfiguration');
   }
 
   /**
@@ -106,8 +100,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeCompanyNetworkConfiguration.html
    */
   public toDescribeCompanyNetworkConfiguration() {
-    this.to('worklink:DescribeCompanyNetworkConfiguration');
-    return this;
+    return this.to('DescribeCompanyNetworkConfiguration');
   }
 
   /**
@@ -118,8 +111,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeDevice.html
    */
   public toDescribeDevice() {
-    this.to('worklink:DescribeDevice');
-    return this;
+    return this.to('DescribeDevice');
   }
 
   /**
@@ -130,8 +122,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeDevicePolicyConfiguration.html
    */
   public toDescribeDevicePolicyConfiguration() {
-    this.to('worklink:DescribeDevicePolicyConfiguration');
-    return this;
+    return this.to('DescribeDevicePolicyConfiguration');
   }
 
   /**
@@ -142,8 +133,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeDomain.html
    */
   public toDescribeDomain() {
-    this.to('worklink:DescribeDomain');
-    return this;
+    return this.to('DescribeDomain');
   }
 
   /**
@@ -158,8 +148,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeFleetMetadata.html
    */
   public toDescribeFleetMetadata() {
-    this.to('worklink:DescribeFleetMetadata');
-    return this;
+    return this.to('DescribeFleetMetadata');
   }
 
   /**
@@ -170,8 +159,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeIdentityProviderConfiguration.html
    */
   public toDescribeIdentityProviderConfiguration() {
-    this.to('worklink:DescribeIdentityProviderConfiguration');
-    return this;
+    return this.to('DescribeIdentityProviderConfiguration');
   }
 
   /**
@@ -182,8 +170,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeWebsiteCertificateAuthority.html
    */
   public toDescribeWebsiteCertificateAuthority() {
-    this.to('worklink:DescribeWebsiteCertificateAuthority');
-    return this;
+    return this.to('DescribeWebsiteCertificateAuthority');
   }
 
   /**
@@ -194,8 +181,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_DisassociateDomain.html
    */
   public toDisassociateDomain() {
-    this.to('worklink:DisassociateDomain');
-    return this;
+    return this.to('DisassociateDomain');
   }
 
   /**
@@ -206,8 +192,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_DisassociateWebsiteAuthorizationProvider.html
    */
   public toDisassociateWebsiteAuthorizationProvider() {
-    this.to('worklink:DisassociateWebsiteAuthorizationProvider');
-    return this;
+    return this.to('DisassociateWebsiteAuthorizationProvider');
   }
 
   /**
@@ -218,8 +203,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_DisassociateWebsiteCertificateAuthority.html
    */
   public toDisassociateWebsiteCertificateAuthority() {
-    this.to('worklink:DisassociateWebsiteCertificateAuthority');
-    return this;
+    return this.to('DisassociateWebsiteCertificateAuthority');
   }
 
   /**
@@ -230,8 +214,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_ListDevices.html
    */
   public toListDevices() {
-    this.to('worklink:ListDevices');
-    return this;
+    return this.to('ListDevices');
   }
 
   /**
@@ -242,8 +225,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_ListDomains.html
    */
   public toListDomains() {
-    this.to('worklink:ListDomains');
-    return this;
+    return this.to('ListDomains');
   }
 
   /**
@@ -254,8 +236,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_ListFleets.html
    */
   public toListFleets() {
-    this.to('worklink:ListFleets');
-    return this;
+    return this.to('ListFleets');
   }
 
   /**
@@ -266,8 +247,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('worklink:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -278,8 +258,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_ListWebsiteAuthorizationProviders.html
    */
   public toListWebsiteAuthorizationProviders() {
-    this.to('worklink:ListWebsiteAuthorizationProviders');
-    return this;
+    return this.to('ListWebsiteAuthorizationProviders');
   }
 
   /**
@@ -290,8 +269,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_ListWebsiteCertificateAuthorities.html
    */
   public toListWebsiteCertificateAuthorities() {
-    this.to('worklink:ListWebsiteCertificateAuthorities');
-    return this;
+    return this.to('ListWebsiteCertificateAuthorities');
   }
 
   /**
@@ -302,8 +280,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_RestoreDomainAccess.html
    */
   public toRestoreDomainAccess() {
-    this.to('worklink:RestoreDomainAccess');
-    return this;
+    return this.to('RestoreDomainAccess');
   }
 
   /**
@@ -314,8 +291,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_RevokeDomainAccess.html
    */
   public toRevokeDomainAccess() {
-    this.to('worklink:RevokeDomainAccess');
-    return this;
+    return this.to('RevokeDomainAccess');
   }
 
   /**
@@ -326,8 +302,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/ag/manage-devices.html
    */
   public toSearchEntity() {
-    this.to('worklink:SearchEntity');
-    return this;
+    return this.to('SearchEntity');
   }
 
   /**
@@ -338,8 +313,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_SignOutUser.html
    */
   public toSignOutUser() {
-    this.to('worklink:SignOutUser');
-    return this;
+    return this.to('SignOutUser');
   }
 
   /**
@@ -354,8 +328,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_TagResource.html
    */
   public toTagResource() {
-    this.to('worklink:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -369,8 +342,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('worklink:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -381,8 +353,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_UpdateAuditStreamConfiguration.html
    */
   public toUpdateAuditStreamConfiguration() {
-    this.to('worklink:UpdateAuditStreamConfiguration');
-    return this;
+    return this.to('UpdateAuditStreamConfiguration');
   }
 
   /**
@@ -393,8 +364,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_UpdateCompanyNetworkConfiguration.html
    */
   public toUpdateCompanyNetworkConfiguration() {
-    this.to('worklink:UpdateCompanyNetworkConfiguration');
-    return this;
+    return this.to('UpdateCompanyNetworkConfiguration');
   }
 
   /**
@@ -405,8 +375,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_UpdateDevicePolicyConfiguration.html
    */
   public toUpdateDevicePolicyConfiguration() {
-    this.to('worklink:UpdateDevicePolicyConfiguration');
-    return this;
+    return this.to('UpdateDevicePolicyConfiguration');
   }
 
   /**
@@ -417,8 +386,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_UpdateDomainMetadata.html
    */
   public toUpdateDomainMetadata() {
-    this.to('worklink:UpdateDomainMetadata');
-    return this;
+    return this.to('UpdateDomainMetadata');
   }
 
   /**
@@ -429,8 +397,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_UpdateFleetMetadata.html
    */
   public toUpdateFleetMetadata() {
-    this.to('worklink:UpdateFleetMetadata');
-    return this;
+    return this.to('UpdateFleetMetadata');
   }
 
   /**
@@ -441,8 +408,7 @@ export class Worklink extends PolicyStatement {
    * https://docs.aws.amazon.com/worklink/latest/api/API_UpdateIdentityProviderConfiguration.html
    */
   public toUpdateIdentityProviderConfiguration() {
-    this.to('worklink:UpdateIdentityProviderConfiguration');
-    return this;
+    return this.to('UpdateIdentityProviderConfiguration');
   }
 
   protected accessLevelList: AccessLevelList = {

@@ -26,8 +26,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_AcceptGrant.html
    */
   public toAcceptGrant() {
-    this.to('license-manager:AcceptGrant');
-    return this;
+    return this.to('AcceptGrant');
   }
 
   /**
@@ -38,8 +37,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CheckInLicense.html
    */
   public toCheckInLicense() {
-    this.to('license-manager:CheckInLicense');
-    return this;
+    return this.to('CheckInLicense');
   }
 
   /**
@@ -50,8 +48,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CheckoutBorrowLicense.html
    */
   public toCheckoutBorrowLicense() {
-    this.to('license-manager:CheckoutBorrowLicense');
-    return this;
+    return this.to('CheckoutBorrowLicense');
   }
 
   /**
@@ -62,8 +59,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CheckoutLicense.html
    */
   public toCheckoutLicense() {
-    this.to('license-manager:CheckoutLicense');
-    return this;
+    return this.to('CheckoutLicense');
   }
 
   /**
@@ -74,8 +70,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateGrant.html
    */
   public toCreateGrant() {
-    this.to('license-manager:CreateGrant');
-    return this;
+    return this.to('CreateGrant');
   }
 
   /**
@@ -86,8 +81,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateGrantVersion.html
    */
   public toCreateGrantVersion() {
-    this.to('license-manager:CreateGrantVersion');
-    return this;
+    return this.to('CreateGrantVersion');
   }
 
   /**
@@ -98,8 +92,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicense.html
    */
   public toCreateLicense() {
-    this.to('license-manager:CreateLicense');
-    return this;
+    return this.to('CreateLicense');
   }
 
   /**
@@ -114,8 +107,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseConfiguration.html
    */
   public toCreateLicenseConfiguration() {
-    this.to('license-manager:CreateLicenseConfiguration');
-    return this;
+    return this.to('CreateLicenseConfiguration');
   }
 
   /**
@@ -126,8 +118,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseVersion.html
    */
   public toCreateLicenseVersion() {
-    this.to('license-manager:CreateLicenseVersion');
-    return this;
+    return this.to('CreateLicenseVersion');
   }
 
   /**
@@ -138,8 +129,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateToken.html
    */
   public toCreateToken() {
-    this.to('license-manager:CreateToken');
-    return this;
+    return this.to('CreateToken');
   }
 
   /**
@@ -150,8 +140,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteGrant.html
    */
   public toDeleteGrant() {
-    this.to('license-manager:DeleteGrant');
-    return this;
+    return this.to('DeleteGrant');
   }
 
   /**
@@ -162,8 +151,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicense.html
    */
   public toDeleteLicense() {
-    this.to('license-manager:DeleteLicense');
-    return this;
+    return this.to('DeleteLicense');
   }
 
   /**
@@ -174,8 +162,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicenseConfiguration.html
    */
   public toDeleteLicenseConfiguration() {
-    this.to('license-manager:DeleteLicenseConfiguration');
-    return this;
+    return this.to('DeleteLicenseConfiguration');
   }
 
   /**
@@ -186,8 +173,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteToken.html
    */
   public toDeleteToken() {
-    this.to('license-manager:DeleteToken');
-    return this;
+    return this.to('DeleteToken');
   }
 
   /**
@@ -198,8 +184,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ExtendLicenseConsumption.html
    */
   public toExtendLicenseConsumption() {
-    this.to('license-manager:ExtendLicenseConsumption');
-    return this;
+    return this.to('ExtendLicenseConsumption');
   }
 
   /**
@@ -210,8 +195,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetAccessToken.html
    */
   public toGetAccessToken() {
-    this.to('license-manager:GetAccessToken');
-    return this;
+    return this.to('GetAccessToken');
   }
 
   /**
@@ -222,8 +206,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetGrant.html
    */
   public toGetGrant() {
-    this.to('license-manager:GetGrant');
-    return this;
+    return this.to('GetGrant');
   }
 
   /**
@@ -234,8 +217,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicense.html
    */
   public toGetLicense() {
-    this.to('license-manager:GetLicense');
-    return this;
+    return this.to('GetLicense');
   }
 
   /**
@@ -246,8 +228,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseConfiguration.html
    */
   public toGetLicenseConfiguration() {
-    this.to('license-manager:GetLicenseConfiguration');
-    return this;
+    return this.to('GetLicenseConfiguration');
   }
 
   /**
@@ -258,8 +239,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseUsage.html
    */
   public toGetLicenseUsage() {
-    this.to('license-manager:GetLicenseUsage');
-    return this;
+    return this.to('GetLicenseUsage');
   }
 
   /**
@@ -270,8 +250,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetServiceSettings.html
    */
   public toGetServiceSettings() {
-    this.to('license-manager:GetServiceSettings');
-    return this;
+    return this.to('GetServiceSettings');
   }
 
   /**
@@ -282,8 +261,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListAssociationsForLicenseConfiguration.html
    */
   public toListAssociationsForLicenseConfiguration() {
-    this.to('license-manager:ListAssociationsForLicenseConfiguration');
-    return this;
+    return this.to('ListAssociationsForLicenseConfiguration');
   }
 
   /**
@@ -294,8 +272,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListDistributedGrants.html
    */
   public toListDistributedGrants() {
-    this.to('license-manager:ListDistributedGrants');
-    return this;
+    return this.to('ListDistributedGrants');
   }
 
   /**
@@ -306,8 +283,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListFailuresForLicenseConfigurationOperations.html
    */
   public toListFailuresForLicenseConfigurationOperations() {
-    this.to('license-manager:ListFailuresForLicenseConfigurationOperations');
-    return this;
+    return this.to('ListFailuresForLicenseConfigurationOperations');
   }
 
   /**
@@ -318,8 +294,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseConfigurations.html
    */
   public toListLicenseConfigurations() {
-    this.to('license-manager:ListLicenseConfigurations');
-    return this;
+    return this.to('ListLicenseConfigurations');
   }
 
   /**
@@ -330,8 +305,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseSpecificationsForResource.html
    */
   public toListLicenseSpecificationsForResource() {
-    this.to('license-manager:ListLicenseSpecificationsForResource');
-    return this;
+    return this.to('ListLicenseSpecificationsForResource');
   }
 
   /**
@@ -342,8 +316,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseVersions.html
    */
   public toListLicenseVersions() {
-    this.to('license-manager:ListLicenseVersions');
-    return this;
+    return this.to('ListLicenseVersions');
   }
 
   /**
@@ -354,8 +327,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenses.html
    */
   public toListLicenses() {
-    this.to('license-manager:ListLicenses');
-    return this;
+    return this.to('ListLicenses');
   }
 
   /**
@@ -366,8 +338,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListReceivedGrants.html
    */
   public toListReceivedGrants() {
-    this.to('license-manager:ListReceivedGrants');
-    return this;
+    return this.to('ListReceivedGrants');
   }
 
   /**
@@ -378,8 +349,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListReceivedLicenses.html
    */
   public toListReceivedLicensess() {
-    this.to('license-manager:ListReceivedLicensess');
-    return this;
+    return this.to('ListReceivedLicensess');
   }
 
   /**
@@ -390,8 +360,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListResourceInventory.html
    */
   public toListResourceInventory() {
-    this.to('license-manager:ListResourceInventory');
-    return this;
+    return this.to('ListResourceInventory');
   }
 
   /**
@@ -402,8 +371,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('license-manager:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -414,8 +382,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListTokens.html
    */
   public toListTokens() {
-    this.to('license-manager:ListTokens');
-    return this;
+    return this.to('ListTokens');
   }
 
   /**
@@ -426,8 +393,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListUsageForLicenseConfiguration.html
    */
   public toListUsageForLicenseConfiguration() {
-    this.to('license-manager:ListUsageForLicenseConfiguration');
-    return this;
+    return this.to('ListUsageForLicenseConfiguration');
   }
 
   /**
@@ -438,8 +404,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_RejectGrant.html
    */
   public toRejectGrant() {
-    this.to('license-manager:RejectGrant');
-    return this;
+    return this.to('RejectGrant');
   }
 
   /**
@@ -454,8 +419,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('license-manager:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -466,8 +430,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('license-manager:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -478,8 +441,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseConfiguration.html
    */
   public toUpdateLicenseConfiguration() {
-    this.to('license-manager:UpdateLicenseConfiguration');
-    return this;
+    return this.to('UpdateLicenseConfiguration');
   }
 
   /**
@@ -490,8 +452,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseSpecificationsForResource.html
    */
   public toUpdateLicenseSpecificationsForResource() {
-    this.to('license-manager:UpdateLicenseSpecificationsForResource');
-    return this;
+    return this.to('UpdateLicenseSpecificationsForResource');
   }
 
   /**
@@ -502,8 +463,7 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateServiceSettings.html
    */
   public toUpdateServiceSettings() {
-    this.to('license-manager:UpdateServiceSettings');
-    return this;
+    return this.to('UpdateServiceSettings');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -628,6 +588,6 @@ export class LicenseManager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`license-manager:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

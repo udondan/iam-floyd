@@ -19,33 +19,40 @@ export class RdsData extends PolicyStatement {
   }
 
   /**
-   * Runs a batch SQL statement over an array of data.
+   * Grants permission to run a batch SQL statement over an array of data
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BatchExecuteStatement.html
    */
   public toBatchExecuteStatement() {
-    this.to('rds-data:BatchExecuteStatement');
-    return this;
+    return this.to('BatchExecuteStatement');
   }
 
   /**
-   * Starts a SQL transaction.
+   * Grants permission to start a SQL transaction
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BeginTransaction.html
    */
   public toBeginTransaction() {
-    this.to('rds-data:BeginTransaction');
-    return this;
+    return this.to('BeginTransaction');
   }
 
   /**
-   * Ends a SQL transaction started with the BeginTransaction operation and commits the changes.
+   * Grants permission to end a SQL transaction started with the BeginTransaction operation and commits the changes
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - rds-data:BeginTransaction
@@ -53,38 +60,41 @@ export class RdsData extends PolicyStatement {
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_CommitTransaction.html
    */
   public toCommitTransaction() {
-    this.to('rds-data:CommitTransaction');
-    return this;
+    return this.to('CommitTransaction');
   }
 
   /**
-   * Runs one or more SQL statements. This operation is deprecated. Use the BatchExecuteStatement or ExecuteStatement operation.
+   * Grants permission to run one or more SQL statements. This operation is deprecated. Use the BatchExecuteStatement or ExecuteStatement operation
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteSql.html
    */
   public toExecuteSql() {
-    this.to('rds-data:ExecuteSql');
-    return this;
+    return this.to('ExecuteSql');
   }
 
   /**
-   * Runs a SQL statement against a database.
+   * Grants permission to run a SQL statement against a database
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteStatement.html
    */
   public toExecuteStatement() {
-    this.to('rds-data:ExecuteStatement');
-    return this;
+    return this.to('ExecuteStatement');
   }
 
   /**
-   * Performs a rollback of a transaction. Rolling back a transaction cancels its changes.
+   * Grants permission to perform a rollback of a transaction. Rolling back a transaction cancels its changes
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - rds-data:BeginTransaction
@@ -92,8 +102,7 @@ export class RdsData extends PolicyStatement {
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_RollbackTransaction.html
    */
   public toRollbackTransaction() {
-    this.to('rds-data:RollbackTransaction');
-    return this;
+    return this.to('RollbackTransaction');
   }
 
   protected accessLevelList: AccessLevelList = {

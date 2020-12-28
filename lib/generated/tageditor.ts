@@ -26,8 +26,7 @@ export class ResourceExplorer extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te
    */
   public toListResourceTypes() {
-    this.to('resource-explorer:ListResourceTypes');
-    return this;
+    return this.to('ListResourceTypes');
   }
 
   /**
@@ -38,8 +37,7 @@ export class ResourceExplorer extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te
    */
   public toListResources() {
-    this.to('resource-explorer:ListResources');
-    return this;
+    return this.to('ListResources');
   }
 
   /**
@@ -53,8 +51,7 @@ export class ResourceExplorer extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te
    */
   public toListTags() {
-    this.to('resource-explorer:ListTags');
-    return this;
+    return this.to('ListTags');
   }
 
   protected accessLevelList: AccessLevelList = {

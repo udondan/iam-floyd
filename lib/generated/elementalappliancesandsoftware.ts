@@ -30,8 +30,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toCreateQuote() {
-    this.to('elemental-appliances-software:CreateQuote');
-    return this;
+    return this.to('CreateQuote');
   }
 
   /**
@@ -42,8 +41,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toGetQuote() {
-    this.to('elemental-appliances-software:GetQuote');
-    return this;
+    return this.to('GetQuote');
   }
 
   /**
@@ -54,8 +52,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toListQuotes() {
-    this.to('elemental-appliances-software:ListQuotes');
-    return this;
+    return this.to('ListQuotes');
   }
 
   /**
@@ -66,8 +63,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toListTagsForResource() {
-    this.to('elemental-appliances-software:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -82,8 +78,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toTagResource() {
-    this.to('elemental-appliances-software:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -97,8 +92,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toUntagResource() {
-    this.to('elemental-appliances-software:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -109,8 +103,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toUpdateQuote() {
-    this.to('elemental-appliances-software:UpdateQuote');
-    return this;
+    return this.to('UpdateQuote');
   }
 
   protected accessLevelList: AccessLevelList = {

@@ -77,6 +77,10 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param operator [Operator](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html) of the condition. **Default:** `StringLike`
    */
   public if(key: string, value: any, operator?: Operator | string) {
+    if (this.servicePrefix.length && key.indexOf(':') < 0) {
+      key = this.servicePrefix + ':' + key;
+    }
+
     if (typeof operator === 'undefined') {
       operator = new Operator().stringLike();
     }

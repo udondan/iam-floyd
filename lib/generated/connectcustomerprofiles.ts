@@ -26,8 +26,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_AddProfileKey.html
    */
   public toAddProfileKey() {
-    this.to('profile:AddProfileKey');
-    return this;
+    return this.to('AddProfileKey');
   }
 
   /**
@@ -42,8 +41,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html
    */
   public toCreateDomain() {
-    this.to('profile:CreateDomain');
-    return this;
+    return this.to('CreateDomain');
   }
 
   /**
@@ -54,8 +52,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateProfile.html
    */
   public toCreateProfile() {
-    this.to('profile:CreateProfile');
-    return this;
+    return this.to('CreateProfile');
   }
 
   /**
@@ -66,8 +63,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteDomain.html
    */
   public toDeleteDomain() {
-    this.to('profile:DeleteDomain');
-    return this;
+    return this.to('DeleteDomain');
   }
 
   /**
@@ -78,8 +74,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteIntegration.html
    */
   public toDeleteIntegration() {
-    this.to('profile:DeleteIntegration');
-    return this;
+    return this.to('DeleteIntegration');
   }
 
   /**
@@ -90,8 +85,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteProfile.html
    */
   public toDeleteProfile() {
-    this.to('profile:DeleteProfile');
-    return this;
+    return this.to('DeleteProfile');
   }
 
   /**
@@ -102,8 +96,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteProfileKey.html
    */
   public toDeleteProfileKey() {
-    this.to('profile:DeleteProfileKey');
-    return this;
+    return this.to('DeleteProfileKey');
   }
 
   /**
@@ -114,8 +107,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteProfileObject.html
    */
   public toDeleteProfileObject() {
-    this.to('profile:DeleteProfileObject');
-    return this;
+    return this.to('DeleteProfileObject');
   }
 
   /**
@@ -126,8 +118,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteProfileObjectType.html
    */
   public toDeleteProfileObjectType() {
-    this.to('profile:DeleteProfileObjectType');
-    return this;
+    return this.to('DeleteProfileObjectType');
   }
 
   /**
@@ -138,8 +129,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetDomain.html
    */
   public toGetDomain() {
-    this.to('profile:GetDomain');
-    return this;
+    return this.to('GetDomain');
   }
 
   /**
@@ -150,8 +140,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetIntegration.html
    */
   public toGetIntegration() {
-    this.to('profile:GetIntegration');
-    return this;
+    return this.to('GetIntegration');
   }
 
   /**
@@ -162,8 +151,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetProfileObjectType.html
    */
   public toGetProfileObjectType() {
-    this.to('profile:GetProfileObjectType');
-    return this;
+    return this.to('GetProfileObjectType');
   }
 
   /**
@@ -174,8 +162,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetProfileObjectTypeTemplate.html
    */
   public toGetProfileObjectTypeTemplate() {
-    this.to('profile:GetProfileObjectTypeTemplate');
-    return this;
+    return this.to('GetProfileObjectTypeTemplate');
   }
 
   /**
@@ -186,8 +173,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListAccountIntegrations.html
    */
   public toListAccountIntegrations() {
-    this.to('profile:ListAccountIntegrations');
-    return this;
+    return this.to('ListAccountIntegrations');
   }
 
   /**
@@ -198,8 +184,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListDomains.html
    */
   public toListDomains() {
-    this.to('profile:ListDomains');
-    return this;
+    return this.to('ListDomains');
   }
 
   /**
@@ -210,8 +195,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListIntegrations.html
    */
   public toListIntegrations() {
-    this.to('profile:ListIntegrations');
-    return this;
+    return this.to('ListIntegrations');
   }
 
   /**
@@ -222,8 +206,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListProfileObjectTypeTemplates.html
    */
   public toListProfileObjectTypeTemplates() {
-    this.to('profile:ListProfileObjectTypeTemplates');
-    return this;
+    return this.to('ListProfileObjectTypeTemplates');
   }
 
   /**
@@ -234,8 +217,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListProfileObjectTypes.html
    */
   public toListProfileObjectTypes() {
-    this.to('profile:ListProfileObjectTypes');
-    return this;
+    return this.to('ListProfileObjectTypes');
   }
 
   /**
@@ -246,8 +228,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListProfileObjects.html
    */
   public toListProfileObjects() {
-    this.to('profile:ListProfileObjects');
-    return this;
+    return this.to('ListProfileObjects');
   }
 
   /**
@@ -258,8 +239,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('profile:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -274,8 +254,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutIntegration.html
    */
   public toPutIntegration() {
-    this.to('profile:PutIntegration');
-    return this;
+    return this.to('PutIntegration');
   }
 
   /**
@@ -286,8 +265,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutProfileObject.html
    */
   public toPutProfileObject() {
-    this.to('profile:PutProfileObject');
-    return this;
+    return this.to('PutProfileObject');
   }
 
   /**
@@ -302,8 +280,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutProfileObjectType.html
    */
   public toPutProfileObjectType() {
-    this.to('profile:PutProfileObjectType');
-    return this;
+    return this.to('PutProfileObjectType');
   }
 
   /**
@@ -314,8 +291,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html
    */
   public toSearchProfiles() {
-    this.to('profile:SearchProfiles');
-    return this;
+    return this.to('SearchProfiles');
   }
 
   /**
@@ -330,8 +306,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('profile:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -346,8 +321,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('profile:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -358,8 +332,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html
    */
   public toUpdateDomain() {
-    this.to('profile:UpdateDomain');
-    return this;
+    return this.to('UpdateDomain');
   }
 
   /**
@@ -370,8 +343,7 @@ export class Profile extends PolicyStatement {
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateProfile.html
    */
   public toUpdateProfile() {
-    this.to('profile:UpdateProfile');
-    return this;
+    return this.to('UpdateProfile');
   }
 
   protected accessLevelList: AccessLevelList = {

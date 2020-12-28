@@ -26,8 +26,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AcceptSharedDirectory.html
    */
   public toAcceptSharedDirectory() {
-    this.to('ds:AcceptSharedDirectory');
-    return this;
+    return this.to('AcceptSharedDirectory');
   }
 
   /**
@@ -43,8 +42,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddIpRoutes.html
    */
   public toAddIpRoutes() {
-    this.to('ds:AddIpRoutes');
-    return this;
+    return this.to('AddIpRoutes');
   }
 
   /**
@@ -62,8 +60,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddTagsToResource.html
    */
   public toAddTagsToResource() {
-    this.to('ds:AddTagsToResource');
-    return this;
+    return this.to('AddTagsToResource');
   }
 
   /**
@@ -72,8 +69,7 @@ export class Ds extends PolicyStatement {
    * Access Level: Write
    */
   public toAuthorizeApplication() {
-    this.to('ds:AuthorizeApplication');
-    return this;
+    return this.to('AuthorizeApplication');
   }
 
   /**
@@ -84,8 +80,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CancelSchemaExtension.html
    */
   public toCancelSchemaExtension() {
-    this.to('ds:CancelSchemaExtension');
-    return this;
+    return this.to('CancelSchemaExtension');
   }
 
   /**
@@ -94,8 +89,7 @@ export class Ds extends PolicyStatement {
    * Access Level: Read
    */
   public toCheckAlias() {
-    this.to('ds:CheckAlias');
-    return this;
+    return this.to('CheckAlias');
   }
 
   /**
@@ -120,8 +114,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ConnectDirectory.html
    */
   public toConnectDirectory() {
-    this.to('ds:ConnectDirectory');
-    return this;
+    return this.to('ConnectDirectory');
   }
 
   /**
@@ -132,8 +125,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateAlias.html
    */
   public toCreateAlias() {
-    this.to('ds:CreateAlias');
-    return this;
+    return this.to('CreateAlias');
   }
 
   /**
@@ -144,8 +136,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateComputer.html
    */
   public toCreateComputer() {
-    this.to('ds:CreateComputer');
-    return this;
+    return this.to('CreateComputer');
   }
 
   /**
@@ -156,8 +147,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateConditionalForwarder.html
    */
   public toCreateConditionalForwarder() {
-    this.to('ds:CreateConditionalForwarder');
-    return this;
+    return this.to('CreateConditionalForwarder');
   }
 
   /**
@@ -182,8 +172,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateDirectory.html
    */
   public toCreateDirectory() {
-    this.to('ds:CreateDirectory');
-    return this;
+    return this.to('CreateDirectory');
   }
 
   /**
@@ -196,8 +185,7 @@ export class Ds extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public toCreateIdentityPoolDirectory() {
-    this.to('ds:CreateIdentityPoolDirectory');
-    return this;
+    return this.to('CreateIdentityPoolDirectory');
   }
 
   /**
@@ -208,8 +196,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateLogSubscription.html
    */
   public toCreateLogSubscription() {
-    this.to('ds:CreateLogSubscription');
-    return this;
+    return this.to('CreateLogSubscription');
   }
 
   /**
@@ -234,8 +221,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateMicrosoftAD.html
    */
   public toCreateMicrosoftAD() {
-    this.to('ds:CreateMicrosoftAD');
-    return this;
+    return this.to('CreateMicrosoftAD');
   }
 
   /**
@@ -246,8 +232,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateSnapshot.html
    */
   public toCreateSnapshot() {
-    this.to('ds:CreateSnapshot');
-    return this;
+    return this.to('CreateSnapshot');
   }
 
   /**
@@ -258,8 +243,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateTrust.html
    */
   public toCreateTrust() {
-    this.to('ds:CreateTrust');
-    return this;
+    return this.to('CreateTrust');
   }
 
   /**
@@ -270,8 +254,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteConditionalForwarder.html
    */
   public toDeleteConditionalForwarder() {
-    this.to('ds:DeleteConditionalForwarder');
-    return this;
+    return this.to('DeleteConditionalForwarder');
   }
 
   /**
@@ -289,8 +272,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteDirectory.html
    */
   public toDeleteDirectory() {
-    this.to('ds:DeleteDirectory');
-    return this;
+    return this.to('DeleteDirectory');
   }
 
   /**
@@ -301,8 +283,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteLogSubscription.html
    */
   public toDeleteLogSubscription() {
-    this.to('ds:DeleteLogSubscription');
-    return this;
+    return this.to('DeleteLogSubscription');
   }
 
   /**
@@ -313,8 +294,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteSnapshot.html
    */
   public toDeleteSnapshot() {
-    this.to('ds:DeleteSnapshot');
-    return this;
+    return this.to('DeleteSnapshot');
   }
 
   /**
@@ -325,8 +305,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/DeleteTrust.html
    */
   public toDeleteTrust() {
-    this.to('ds:DeleteTrust');
-    return this;
+    return this.to('DeleteTrust');
   }
 
   /**
@@ -337,8 +316,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeregisterCertificate.html
    */
   public toDeregisterCertificate() {
-    this.to('ds:DeregisterCertificate');
-    return this;
+    return this.to('DeregisterCertificate');
   }
 
   /**
@@ -349,8 +327,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeregisterEventTopic.html
    */
   public toDeregisterEventTopic() {
-    this.to('ds:DeregisterEventTopic');
-    return this;
+    return this.to('DeregisterEventTopic');
   }
 
   /**
@@ -361,8 +338,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeCertificate.html
    */
   public toDescribeCertificate() {
-    this.to('ds:DescribeCertificate');
-    return this;
+    return this.to('DescribeCertificate');
   }
 
   /**
@@ -373,8 +349,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeConditionalForwarders.html
    */
   public toDescribeConditionalForwarders() {
-    this.to('ds:DescribeConditionalForwarders');
-    return this;
+    return this.to('DescribeConditionalForwarders');
   }
 
   /**
@@ -385,8 +360,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDirectories.html
    */
   public toDescribeDirectories() {
-    this.to('ds:DescribeDirectories');
-    return this;
+    return this.to('DescribeDirectories');
   }
 
   /**
@@ -397,8 +371,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDomainControllers.html
    */
   public toDescribeDomainControllers() {
-    this.to('ds:DescribeDomainControllers');
-    return this;
+    return this.to('DescribeDomainControllers');
   }
 
   /**
@@ -409,8 +382,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeEventTopics.html
    */
   public toDescribeEventTopics() {
-    this.to('ds:DescribeEventTopics');
-    return this;
+    return this.to('DescribeEventTopics');
   }
 
   /**
@@ -421,8 +393,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeLDAPSSettings.html
    */
   public toDescribeLDAPSSettings() {
-    this.to('ds:DescribeLDAPSSettings');
-    return this;
+    return this.to('DescribeLDAPSSettings');
   }
 
   /**
@@ -433,8 +404,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeSharedDirectories.html
    */
   public toDescribeSharedDirectories() {
-    this.to('ds:DescribeSharedDirectories');
-    return this;
+    return this.to('DescribeSharedDirectories');
   }
 
   /**
@@ -445,8 +415,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeSnapshots.html
    */
   public toDescribeSnapshots() {
-    this.to('ds:DescribeSnapshots');
-    return this;
+    return this.to('DescribeSnapshots');
   }
 
   /**
@@ -457,8 +426,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeTrusts.html
    */
   public toDescribeTrusts() {
-    this.to('ds:DescribeTrusts');
-    return this;
+    return this.to('DescribeTrusts');
   }
 
   /**
@@ -469,8 +437,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableLDAPS.html
    */
   public toDisableLDAPS() {
-    this.to('ds:DisableLDAPS');
-    return this;
+    return this.to('DisableLDAPS');
   }
 
   /**
@@ -481,8 +448,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableRadius.html
    */
   public toDisableRadius() {
-    this.to('ds:DisableRadius');
-    return this;
+    return this.to('DisableRadius');
   }
 
   /**
@@ -493,8 +459,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableSso.html
    */
   public toDisableSso() {
-    this.to('ds:DisableSso');
-    return this;
+    return this.to('DisableSso');
   }
 
   /**
@@ -505,8 +470,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableLDAPS.html
    */
   public toEnableLDAPS() {
-    this.to('ds:EnableLDAPS');
-    return this;
+    return this.to('EnableLDAPS');
   }
 
   /**
@@ -517,8 +481,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableRadius.html
    */
   public toEnableRadius() {
-    this.to('ds:EnableRadius');
-    return this;
+    return this.to('EnableRadius');
   }
 
   /**
@@ -529,8 +492,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableSso.html
    */
   public toEnableSso() {
-    this.to('ds:EnableSso');
-    return this;
+    return this.to('EnableSso');
   }
 
   /**
@@ -539,8 +501,7 @@ export class Ds extends PolicyStatement {
    * Access Level: Read
    */
   public toGetAuthorizedApplicationDetails() {
-    this.to('ds:GetAuthorizedApplicationDetails');
-    return this;
+    return this.to('GetAuthorizedApplicationDetails');
   }
 
   /**
@@ -551,8 +512,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_GetDirectoryLimits.html
    */
   public toGetDirectoryLimits() {
-    this.to('ds:GetDirectoryLimits');
-    return this;
+    return this.to('GetDirectoryLimits');
   }
 
   /**
@@ -563,8 +523,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_GetSnapshotLimits.html
    */
   public toGetSnapshotLimits() {
-    this.to('ds:GetSnapshotLimits');
-    return this;
+    return this.to('GetSnapshotLimits');
   }
 
   /**
@@ -573,8 +532,7 @@ export class Ds extends PolicyStatement {
    * Access Level: Read
    */
   public toListAuthorizedApplications() {
-    this.to('ds:ListAuthorizedApplications');
-    return this;
+    return this.to('ListAuthorizedApplications');
   }
 
   /**
@@ -585,8 +543,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListCertificates.html
    */
   public toListCertificates() {
-    this.to('ds:ListCertificates');
-    return this;
+    return this.to('ListCertificates');
   }
 
   /**
@@ -597,8 +554,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListIpRoutes.html
    */
   public toListIpRoutes() {
-    this.to('ds:ListIpRoutes');
-    return this;
+    return this.to('ListIpRoutes');
   }
 
   /**
@@ -609,8 +565,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListLogSubscriptions.html
    */
   public toListLogSubscriptions() {
-    this.to('ds:ListLogSubscriptions');
-    return this;
+    return this.to('ListLogSubscriptions');
   }
 
   /**
@@ -621,8 +576,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListSchemaExtensions.html
    */
   public toListSchemaExtensions() {
-    this.to('ds:ListSchemaExtensions');
-    return this;
+    return this.to('ListSchemaExtensions');
   }
 
   /**
@@ -633,8 +587,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('ds:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -645,8 +598,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RegisterCertificate.html
    */
   public toRegisterCertificate() {
-    this.to('ds:RegisterCertificate');
-    return this;
+    return this.to('RegisterCertificate');
   }
 
   /**
@@ -660,8 +612,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RegisterEventTopic.html
    */
   public toRegisterEventTopic() {
-    this.to('ds:RegisterEventTopic');
-    return this;
+    return this.to('RegisterEventTopic');
   }
 
   /**
@@ -672,8 +623,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RejectSharedDirectory.html
    */
   public toRejectSharedDirectory() {
-    this.to('ds:RejectSharedDirectory');
-    return this;
+    return this.to('RejectSharedDirectory');
   }
 
   /**
@@ -684,8 +634,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveIpRoutes.html
    */
   public toRemoveIpRoutes() {
-    this.to('ds:RemoveIpRoutes');
-    return this;
+    return this.to('RemoveIpRoutes');
   }
 
   /**
@@ -703,8 +652,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveTagsFromResource.html
    */
   public toRemoveTagsFromResource() {
-    this.to('ds:RemoveTagsFromResource');
-    return this;
+    return this.to('RemoveTagsFromResource');
   }
 
   /**
@@ -715,8 +663,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ResetUserPassword.html
    */
   public toResetUserPassword() {
-    this.to('ds:ResetUserPassword');
-    return this;
+    return this.to('ResetUserPassword');
   }
 
   /**
@@ -727,8 +674,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RestoreFromSnapshot.html
    */
   public toRestoreFromSnapshot() {
-    this.to('ds:RestoreFromSnapshot');
-    return this;
+    return this.to('RestoreFromSnapshot');
   }
 
   /**
@@ -739,8 +685,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ShareDirectory.html
    */
   public toShareDirectory() {
-    this.to('ds:ShareDirectory');
-    return this;
+    return this.to('ShareDirectory');
   }
 
   /**
@@ -751,8 +696,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_StartSchemaExtension.html
    */
   public toStartSchemaExtension() {
-    this.to('ds:StartSchemaExtension');
-    return this;
+    return this.to('StartSchemaExtension');
   }
 
   /**
@@ -761,8 +705,7 @@ export class Ds extends PolicyStatement {
    * Access Level: Write
    */
   public toUnauthorizeApplication() {
-    this.to('ds:UnauthorizeApplication');
-    return this;
+    return this.to('UnauthorizeApplication');
   }
 
   /**
@@ -773,8 +716,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UnshareDirectory.html
    */
   public toUnshareDirectory() {
-    this.to('ds:UnshareDirectory');
-    return this;
+    return this.to('UnshareDirectory');
   }
 
   /**
@@ -785,8 +727,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateConditionalForwarder.html
    */
   public toUpdateConditionalForwarder() {
-    this.to('ds:UpdateConditionalForwarder');
-    return this;
+    return this.to('UpdateConditionalForwarder');
   }
 
   /**
@@ -797,8 +738,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateNumberOfDomainControllers.html
    */
   public toUpdateNumberOfDomainControllers() {
-    this.to('ds:UpdateNumberOfDomainControllers');
-    return this;
+    return this.to('UpdateNumberOfDomainControllers');
   }
 
   /**
@@ -809,8 +749,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateRadius.html
    */
   public toUpdateRadius() {
-    this.to('ds:UpdateRadius');
-    return this;
+    return this.to('UpdateRadius');
   }
 
   /**
@@ -821,8 +760,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateTrust.html
    */
   public toUpdateTrust() {
-    this.to('ds:UpdateTrust');
-    return this;
+    return this.to('UpdateTrust');
   }
 
   /**
@@ -833,8 +771,7 @@ export class Ds extends PolicyStatement {
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_VerifyTrust.html
    */
   public toVerifyTrust() {
-    this.to('ds:VerifyTrust');
-    return this;
+    return this.to('VerifyTrust');
   }
 
   protected accessLevelList: AccessLevelList = {

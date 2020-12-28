@@ -9,6 +9,7 @@
     "cdk": "cdk"
   },
   "devDependencies": {
+    "@aws-cdk/aws-iam": "^1.30.0",
     "@aws-cdk/core": "^1.61.1",
     "@types/node": "14.6.2",
     "ts-node": "^9.0.0",

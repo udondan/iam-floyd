@@ -26,8 +26,7 @@ export class BackupStorage extends PolicyStatement {
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupVault.html
    */
   public toMountCapsule() {
-    this.to('backup-storage:MountCapsule');
-    return this;
+    return this.to('MountCapsule');
   }
 
   protected accessLevelList: AccessLevelList = {

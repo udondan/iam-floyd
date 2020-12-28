@@ -26,8 +26,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssociateAssets.html
    */
   public toAssociateAssets() {
-    this.to('iotsitewise:AssociateAssets');
-    return this;
+    return this.to('AssociateAssets');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchAssociateProjectAssets.html
    */
   public toBatchAssociateProjectAssets() {
-    this.to('iotsitewise:BatchAssociateProjectAssets');
-    return this;
+    return this.to('BatchAssociateProjectAssets');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchDisassociateProjectAssets.html
    */
   public toBatchDisassociateProjectAssets() {
-    this.to('iotsitewise:BatchDisassociateProjectAssets');
-    return this;
+    return this.to('BatchDisassociateProjectAssets');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html
    */
   public toBatchPutAssetPropertyValue() {
-    this.to('iotsitewise:BatchPutAssetPropertyValue');
-    return this;
+    return this.to('BatchPutAssetPropertyValue');
   }
 
   /**
@@ -78,8 +74,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAccessPolicy.html
    */
   public toCreateAccessPolicy() {
-    this.to('iotsitewise:CreateAccessPolicy');
-    return this;
+    return this.to('CreateAccessPolicy');
   }
 
   /**
@@ -94,8 +89,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAsset.html
    */
   public toCreateAsset() {
-    this.to('iotsitewise:CreateAsset');
-    return this;
+    return this.to('CreateAsset');
   }
 
   /**
@@ -110,8 +104,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html
    */
   public toCreateAssetModel() {
-    this.to('iotsitewise:CreateAssetModel');
-    return this;
+    return this.to('CreateAssetModel');
   }
 
   /**
@@ -126,8 +119,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDashboard.html
    */
   public toCreateDashboard() {
-    this.to('iotsitewise:CreateDashboard');
-    return this;
+    return this.to('CreateDashboard');
   }
 
   /**
@@ -142,8 +134,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateGateway.html
    */
   public toCreateGateway() {
-    this.to('iotsitewise:CreateGateway');
-    return this;
+    return this.to('CreateGateway');
   }
 
   /**
@@ -162,8 +153,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePortal.html
    */
   public toCreatePortal() {
-    this.to('iotsitewise:CreatePortal');
-    return this;
+    return this.to('CreatePortal');
   }
 
   /**
@@ -178,8 +168,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateProject.html
    */
   public toCreateProject() {
-    this.to('iotsitewise:CreateProject');
-    return this;
+    return this.to('CreateProject');
   }
 
   /**
@@ -190,8 +179,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAccessPolicy.html
    */
   public toDeleteAccessPolicy() {
-    this.to('iotsitewise:DeleteAccessPolicy');
-    return this;
+    return this.to('DeleteAccessPolicy');
   }
 
   /**
@@ -202,8 +190,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAsset.html
    */
   public toDeleteAsset() {
-    this.to('iotsitewise:DeleteAsset');
-    return this;
+    return this.to('DeleteAsset');
   }
 
   /**
@@ -214,8 +201,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAssetModel.html
    */
   public toDeleteAssetModel() {
-    this.to('iotsitewise:DeleteAssetModel');
-    return this;
+    return this.to('DeleteAssetModel');
   }
 
   /**
@@ -226,8 +212,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteDashboard.html
    */
   public toDeleteDashboard() {
-    this.to('iotsitewise:DeleteDashboard');
-    return this;
+    return this.to('DeleteDashboard');
   }
 
   /**
@@ -238,8 +223,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteGateway.html
    */
   public toDeleteGateway() {
-    this.to('iotsitewise:DeleteGateway');
-    return this;
+    return this.to('DeleteGateway');
   }
 
   /**
@@ -253,8 +237,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeletePortal.html
    */
   public toDeletePortal() {
-    this.to('iotsitewise:DeletePortal');
-    return this;
+    return this.to('DeletePortal');
   }
 
   /**
@@ -265,8 +248,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteProject.html
    */
   public toDeleteProject() {
-    this.to('iotsitewise:DeleteProject');
-    return this;
+    return this.to('DeleteProject');
   }
 
   /**
@@ -277,8 +259,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAccessPolicy.html
    */
   public toDescribeAccessPolicy() {
-    this.to('iotsitewise:DescribeAccessPolicy');
-    return this;
+    return this.to('DescribeAccessPolicy');
   }
 
   /**
@@ -289,8 +270,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html
    */
   public toDescribeAsset() {
-    this.to('iotsitewise:DescribeAsset');
-    return this;
+    return this.to('DescribeAsset');
   }
 
   /**
@@ -301,8 +281,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html
    */
   public toDescribeAssetModel() {
-    this.to('iotsitewise:DescribeAssetModel');
-    return this;
+    return this.to('DescribeAssetModel');
   }
 
   /**
@@ -313,8 +292,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html
    */
   public toDescribeAssetProperty() {
-    this.to('iotsitewise:DescribeAssetProperty');
-    return this;
+    return this.to('DescribeAssetProperty');
   }
 
   /**
@@ -325,8 +303,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeDashboard.html
    */
   public toDescribeDashboard() {
-    this.to('iotsitewise:DescribeDashboard');
-    return this;
+    return this.to('DescribeDashboard');
   }
 
   /**
@@ -337,8 +314,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html
    */
   public toDescribeGateway() {
-    this.to('iotsitewise:DescribeGateway');
-    return this;
+    return this.to('DescribeGateway');
   }
 
   /**
@@ -349,8 +325,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html
    */
   public toDescribeGatewayCapabilityConfiguration() {
-    this.to('iotsitewise:DescribeGatewayCapabilityConfiguration');
-    return this;
+    return this.to('DescribeGatewayCapabilityConfiguration');
   }
 
   /**
@@ -361,8 +336,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeLoggingOptions.html
    */
   public toDescribeLoggingOptions() {
-    this.to('iotsitewise:DescribeLoggingOptions');
-    return this;
+    return this.to('DescribeLoggingOptions');
   }
 
   /**
@@ -373,8 +347,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribePortal.html
    */
   public toDescribePortal() {
-    this.to('iotsitewise:DescribePortal');
-    return this;
+    return this.to('DescribePortal');
   }
 
   /**
@@ -385,8 +358,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeProject.html
    */
   public toDescribeProject() {
-    this.to('iotsitewise:DescribeProject');
-    return this;
+    return this.to('DescribeProject');
   }
 
   /**
@@ -397,8 +369,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html
    */
   public toDisassociateAssets() {
-    this.to('iotsitewise:DisassociateAssets');
-    return this;
+    return this.to('DisassociateAssets');
   }
 
   /**
@@ -409,8 +380,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyAggregates.html
    */
   public toGetAssetPropertyAggregates() {
-    this.to('iotsitewise:GetAssetPropertyAggregates');
-    return this;
+    return this.to('GetAssetPropertyAggregates');
   }
 
   /**
@@ -421,8 +391,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html
    */
   public toGetAssetPropertyValue() {
-    this.to('iotsitewise:GetAssetPropertyValue');
-    return this;
+    return this.to('GetAssetPropertyValue');
   }
 
   /**
@@ -433,8 +402,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValueHistory.html
    */
   public toGetAssetPropertyValueHistory() {
-    this.to('iotsitewise:GetAssetPropertyValueHistory');
-    return this;
+    return this.to('GetAssetPropertyValueHistory');
   }
 
   /**
@@ -445,8 +413,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAccessPolicies.html
    */
   public toListAccessPolicies() {
-    this.to('iotsitewise:ListAccessPolicies');
-    return this;
+    return this.to('ListAccessPolicies');
   }
 
   /**
@@ -457,8 +424,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html
    */
   public toListAssetModels() {
-    this.to('iotsitewise:ListAssetModels');
-    return this;
+    return this.to('ListAssetModels');
   }
 
   /**
@@ -469,8 +435,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetRelationships.html
    */
   public toListAssetRelationships() {
-    this.to('iotsitewise:ListAssetRelationships');
-    return this;
+    return this.to('ListAssetRelationships');
   }
 
   /**
@@ -481,8 +446,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssets.html
    */
   public toListAssets() {
-    this.to('iotsitewise:ListAssets');
-    return this;
+    return this.to('ListAssets');
   }
 
   /**
@@ -493,8 +457,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssociatedAssets.html
    */
   public toListAssociatedAssets() {
-    this.to('iotsitewise:ListAssociatedAssets');
-    return this;
+    return this.to('ListAssociatedAssets');
   }
 
   /**
@@ -505,8 +468,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListDashboards.html
    */
   public toListDashboards() {
-    this.to('iotsitewise:ListDashboards');
-    return this;
+    return this.to('ListDashboards');
   }
 
   /**
@@ -517,8 +479,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListGateways.html
    */
   public toListGateways() {
-    this.to('iotsitewise:ListGateways');
-    return this;
+    return this.to('ListGateways');
   }
 
   /**
@@ -529,8 +490,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListPortals.html
    */
   public toListPortals() {
-    this.to('iotsitewise:ListPortals');
-    return this;
+    return this.to('ListPortals');
   }
 
   /**
@@ -541,8 +501,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListProjectAssets.html
    */
   public toListProjectAssets() {
-    this.to('iotsitewise:ListProjectAssets');
-    return this;
+    return this.to('ListProjectAssets');
   }
 
   /**
@@ -553,8 +512,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListProjects.html
    */
   public toListProjects() {
-    this.to('iotsitewise:ListProjects');
-    return this;
+    return this.to('ListProjects');
   }
 
   /**
@@ -568,8 +526,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('iotsitewise:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -580,8 +537,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutLoggingOptions.html
    */
   public toPutLoggingOptions() {
-    this.to('iotsitewise:PutLoggingOptions');
-    return this;
+    return this.to('PutLoggingOptions');
   }
 
   /**
@@ -596,8 +552,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('iotsitewise:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -611,8 +566,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('iotsitewise:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -623,8 +577,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAccessPolicy.html
    */
   public toUpdateAccessPolicy() {
-    this.to('iotsitewise:UpdateAccessPolicy');
-    return this;
+    return this.to('UpdateAccessPolicy');
   }
 
   /**
@@ -635,8 +588,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAsset.html
    */
   public toUpdateAsset() {
-    this.to('iotsitewise:UpdateAsset');
-    return this;
+    return this.to('UpdateAsset');
   }
 
   /**
@@ -647,8 +599,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html
    */
   public toUpdateAssetModel() {
-    this.to('iotsitewise:UpdateAssetModel');
-    return this;
+    return this.to('UpdateAssetModel');
   }
 
   /**
@@ -659,8 +610,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html
    */
   public toUpdateAssetProperty() {
-    this.to('iotsitewise:UpdateAssetProperty');
-    return this;
+    return this.to('UpdateAssetProperty');
   }
 
   /**
@@ -671,8 +621,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateDashboard.html
    */
   public toUpdateDashboard() {
-    this.to('iotsitewise:UpdateDashboard');
-    return this;
+    return this.to('UpdateDashboard');
   }
 
   /**
@@ -683,8 +632,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateGateway.html
    */
   public toUpdateGateway() {
-    this.to('iotsitewise:UpdateGateway');
-    return this;
+    return this.to('UpdateGateway');
   }
 
   /**
@@ -695,8 +643,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateGatewayCapabilityConfiguration.html
    */
   public toUpdateGatewayCapabilityConfiguration() {
-    this.to('iotsitewise:UpdateGatewayCapabilityConfiguration');
-    return this;
+    return this.to('UpdateGatewayCapabilityConfiguration');
   }
 
   /**
@@ -707,8 +654,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdatePortal.html
    */
   public toUpdatePortal() {
-    this.to('iotsitewise:UpdatePortal');
-    return this;
+    return this.to('UpdatePortal');
   }
 
   /**
@@ -719,8 +665,7 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateProject.html
    */
   public toUpdateProject() {
-    this.to('iotsitewise:UpdateProject');
-    return this;
+    return this.to('UpdateProject');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -954,7 +899,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAssetHierarchyPath(value: string | string[], operator?: Operator | string) {
-    return this.if(`iotsitewise:assetHierarchyPath`, value, operator || 'StringLike');
+    return this.if(`assetHierarchyPath`, value, operator || 'StringLike');
   }
 
   /**
@@ -966,7 +911,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifChildAssetId(value: string | string[], operator?: Operator | string) {
-    return this.if(`iotsitewise:childAssetId`, value, operator || 'StringLike');
+    return this.if(`childAssetId`, value, operator || 'StringLike');
   }
 
   /**
@@ -978,7 +923,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGroup(value: string | string[], operator?: Operator | string) {
-    return this.if(`iotsitewise:group`, value, operator || 'StringLike');
+    return this.if(`group`, value, operator || 'StringLike');
   }
 
   /**
@@ -990,7 +935,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifIam(value: string | string[], operator?: Operator | string) {
-    return this.if(`iotsitewise:iam`, value, operator || 'StringLike');
+    return this.if(`iam`, value, operator || 'StringLike');
   }
 
   /**
@@ -1002,7 +947,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPortal(value: string | string[], operator?: Operator | string) {
-    return this.if(`iotsitewise:portal`, value, operator || 'StringLike');
+    return this.if(`portal`, value, operator || 'StringLike');
   }
 
   /**
@@ -1014,7 +959,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProject(value: string | string[], operator?: Operator | string) {
-    return this.if(`iotsitewise:project`, value, operator || 'StringLike');
+    return this.if(`project`, value, operator || 'StringLike');
   }
 
   /**
@@ -1026,7 +971,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPropertyId(value: string | string[], operator?: Operator | string) {
-    return this.if(`iotsitewise:propertyId`, value, operator || 'StringLike');
+    return this.if(`propertyId`, value, operator || 'StringLike');
   }
 
   /**
@@ -1038,6 +983,6 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUser(value: string | string[], operator?: Operator | string) {
-    return this.if(`iotsitewise:user`, value, operator || 'StringLike');
+    return this.if(`user`, value, operator || 'StringLike');
   }
 }

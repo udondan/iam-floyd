@@ -5,6 +5,7 @@ connect:hours-of-operation
 connect:instance
 connect:phone-number
 connect:queue
+connect:quick-connect
 connect:routing-profile
 connect:security-profile
 connect:user

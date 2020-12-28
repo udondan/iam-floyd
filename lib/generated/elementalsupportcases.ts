@@ -26,8 +26,7 @@ export class ElementalSupportCases extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toCreateCase() {
-    this.to('elemental-support-cases:CreateCase');
-    return this;
+    return this.to('CreateCase');
   }
 
   /**
@@ -38,8 +37,7 @@ export class ElementalSupportCases extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toGetCase() {
-    this.to('elemental-support-cases:GetCase');
-    return this;
+    return this.to('GetCase');
   }
 
   /**
@@ -50,8 +48,7 @@ export class ElementalSupportCases extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toGetCases() {
-    this.to('elemental-support-cases:GetCases');
-    return this;
+    return this.to('GetCases');
   }
 
   /**
@@ -62,8 +59,7 @@ export class ElementalSupportCases extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
   public toUpdateCase() {
-    this.to('elemental-support-cases:UpdateCase');
-    return this;
+    return this.to('UpdateCase');
   }
 
   protected accessLevelList: AccessLevelList = {

@@ -26,8 +26,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_AssociateNode.html
    */
   public toAssociateNode() {
-    this.to('opsworks-cm:AssociateNode');
-    return this;
+    return this.to('AssociateNode');
   }
 
   /**
@@ -38,8 +37,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateBackup.html
    */
   public toCreateBackup() {
-    this.to('opsworks-cm:CreateBackup');
-    return this;
+    return this.to('CreateBackup');
   }
 
   /**
@@ -50,8 +48,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html
    */
   public toCreateServer() {
-    this.to('opsworks-cm:CreateServer');
-    return this;
+    return this.to('CreateServer');
   }
 
   /**
@@ -62,8 +59,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteBackup.html
    */
   public toDeleteBackup() {
-    this.to('opsworks-cm:DeleteBackup');
-    return this;
+    return this.to('DeleteBackup');
   }
 
   /**
@@ -74,8 +70,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteServer.html
    */
   public toDeleteServer() {
-    this.to('opsworks-cm:DeleteServer');
-    return this;
+    return this.to('DeleteServer');
   }
 
   /**
@@ -86,8 +81,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeAccountAttributes.html
    */
   public toDescribeAccountAttributes() {
-    this.to('opsworks-cm:DescribeAccountAttributes');
-    return this;
+    return this.to('DescribeAccountAttributes');
   }
 
   /**
@@ -98,8 +92,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeBackups.html
    */
   public toDescribeBackups() {
-    this.to('opsworks-cm:DescribeBackups');
-    return this;
+    return this.to('DescribeBackups');
   }
 
   /**
@@ -110,8 +103,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeEvents.html
    */
   public toDescribeEvents() {
-    this.to('opsworks-cm:DescribeEvents');
-    return this;
+    return this.to('DescribeEvents');
   }
 
   /**
@@ -122,8 +114,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeNodeAssociationStatus.html
    */
   public toDescribeNodeAssociationStatus() {
-    this.to('opsworks-cm:DescribeNodeAssociationStatus');
-    return this;
+    return this.to('DescribeNodeAssociationStatus');
   }
 
   /**
@@ -134,8 +125,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeServers.html
    */
   public toDescribeServers() {
-    this.to('opsworks-cm:DescribeServers');
-    return this;
+    return this.to('DescribeServers');
   }
 
   /**
@@ -146,8 +136,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DisassociateNode.html
    */
   public toDisassociateNode() {
-    this.to('opsworks-cm:DisassociateNode');
-    return this;
+    return this.to('DisassociateNode');
   }
 
   /**
@@ -158,8 +147,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('opsworks-cm:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -170,8 +158,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_RestoreServer.html
    */
   public toRestoreServer() {
-    this.to('opsworks-cm:RestoreServer');
-    return this;
+    return this.to('RestoreServer');
   }
 
   /**
@@ -182,8 +169,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_StartMaintenance.html
    */
   public toStartMaintenance() {
-    this.to('opsworks-cm:StartMaintenance');
-    return this;
+    return this.to('StartMaintenance');
   }
 
   /**
@@ -194,8 +180,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('opsworks-cm:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -206,8 +191,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('opsworks-cm:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -218,8 +202,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServer.html
    */
   public toUpdateServer() {
-    this.to('opsworks-cm:UpdateServer');
-    return this;
+    return this.to('UpdateServer');
   }
 
   /**
@@ -230,8 +213,7 @@ export class OpsworksCm extends PolicyStatement {
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServerEngineAttributes.html
    */
   public toUpdateServerEngineAttributes() {
-    this.to('opsworks-cm:UpdateServerEngineAttributes');
-    return this;
+    return this.to('UpdateServerEngineAttributes');
   }
 
   protected accessLevelList: AccessLevelList = {

@@ -26,8 +26,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_CancelStatement.html
    */
   public toCancelStatement() {
-    this.to('redshift-data:CancelStatement');
-    return this;
+    return this.to('CancelStatement');
   }
 
   /**
@@ -38,8 +37,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeStatement.html
    */
   public toDescribeStatement() {
-    this.to('redshift-data:DescribeStatement');
-    return this;
+    return this.to('DescribeStatement');
   }
 
   /**
@@ -50,8 +48,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeTable.html
    */
   public toDescribeTable() {
-    this.to('redshift-data:DescribeTable');
-    return this;
+    return this.to('DescribeTable');
   }
 
   /**
@@ -62,8 +59,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ExecuteStatement.html
    */
   public toExecuteStatement() {
-    this.to('redshift-data:ExecuteStatement');
-    return this;
+    return this.to('ExecuteStatement');
   }
 
   /**
@@ -74,8 +70,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_GetStatementResult.html
    */
   public toGetStatementResult() {
-    this.to('redshift-data:GetStatementResult');
-    return this;
+    return this.to('GetStatementResult');
   }
 
   /**
@@ -86,8 +81,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListDatabases.html
    */
   public toListDatabases() {
-    this.to('redshift-data:ListDatabases');
-    return this;
+    return this.to('ListDatabases');
   }
 
   /**
@@ -98,8 +92,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListSchemas.html
    */
   public toListSchemas() {
-    this.to('redshift-data:ListSchemas');
-    return this;
+    return this.to('ListSchemas');
   }
 
   /**
@@ -110,8 +103,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListStatements.html
    */
   public toListStatements() {
-    this.to('redshift-data:ListStatements');
-    return this;
+    return this.to('ListStatements');
   }
 
   /**
@@ -122,8 +114,7 @@ export class RedshiftData extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html
    */
   public toListTables() {
-    this.to('redshift-data:ListTables');
-    return this;
+    return this.to('ListTables');
   }
 
   protected accessLevelList: AccessLevelList = {

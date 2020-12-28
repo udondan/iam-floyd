@@ -19,7 +19,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to cancel the scheduled deletion of a customer master key.
+   * Controls permission to cancel the scheduled deletion of a customer master key
    *
    * Access Level: Write
    *
@@ -30,24 +30,22 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CancelKeyDeletion.html
    */
   public toCancelKeyDeletion() {
-    this.to('kms:CancelKeyDeletion');
-    return this;
+    return this.to('CancelKeyDeletion');
   }
 
   /**
-   * Controls permission to connect or reconnect a custom key store to its associated AWS CloudHSM cluster.
+   * Controls permission to connect or reconnect a custom key store to its associated AWS CloudHSM cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ConnectCustomKeyStore.html
    */
   public toConnectCustomKeyStore() {
-    this.to('kms:ConnectCustomKeyStore');
-    return this;
+    return this.to('ConnectCustomKeyStore');
   }
 
   /**
-   * Controls permission to create an alias for a customer master key (CMK). Aliases are optional friendly names that you can associate with customer master keys.
+   * Controls permission to create an alias for a customer master key (CMK). Aliases are optional friendly names that you can associate with customer master keys
    *
    * Access Level: Write
    *
@@ -58,12 +56,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateAlias.html
    */
   public toCreateAlias() {
-    this.to('kms:CreateAlias');
-    return this;
+    return this.to('CreateAlias');
   }
 
   /**
-   * Controls permission to create a custom key store that is associated with an AWS CloudHSM cluster that you own and manage.
+   * Controls permission to create a custom key store that is associated with an AWS CloudHSM cluster that you own and manage
    *
    * Access Level: Write
    *
@@ -73,12 +70,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html
    */
   public toCreateCustomKeyStore() {
-    this.to('kms:CreateCustomKeyStore');
-    return this;
+    return this.to('CreateCustomKeyStore');
   }
 
   /**
-   * Controls permission to add a grant to a customer master key. You can use grants to add permissions without changing the key policy or IAM policy.
+   * Controls permission to add a grant to a customer master key. You can use grants to add permissions without changing the key policy or IAM policy
    *
    * Access Level: Permissions management
    *
@@ -91,12 +87,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html
    */
   public toCreateGrant() {
-    this.to('kms:CreateGrant');
-    return this;
+    return this.to('CreateGrant');
   }
 
   /**
-   * Controls permission to create a customer master key that can be used to protect data keys and other sensitive information.
+   * Controls permission to create a customer master key that can be used to protect data keys and other sensitive information
    *
    * Access Level: Write
    *
@@ -109,12 +104,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html
    */
   public toCreateKey() {
-    this.to('kms:CreateKey');
-    return this;
+    return this.to('CreateKey');
   }
 
   /**
-   * Controls permission to decrypt ciphertext that was encrypted under a customer master key.
+   * Controls permission to decrypt ciphertext that was encrypted under a customer master key
    *
    * Access Level: Write
    *
@@ -127,12 +121,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html
    */
   public toDecrypt() {
-    this.to('kms:Decrypt');
-    return this;
+    return this.to('Decrypt');
   }
 
   /**
-   * Controls permission to delete an alias. Aliases are optional friendly names that you can associate with customer master keys.
+   * Controls permission to delete an alias. Aliases are optional friendly names that you can associate with customer master keys
    *
    * Access Level: Write
    *
@@ -143,24 +136,22 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteAlias.html
    */
   public toDeleteAlias() {
-    this.to('kms:DeleteAlias');
-    return this;
+    return this.to('DeleteAlias');
   }
 
   /**
-   * Controls permission to delete a custom key store.
+   * Controls permission to delete a custom key store
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteCustomKeyStore.html
    */
   public toDeleteCustomKeyStore() {
-    this.to('kms:DeleteCustomKeyStore');
-    return this;
+    return this.to('DeleteCustomKeyStore');
   }
 
   /**
-   * Controls permission to delete cryptographic material that you imported into a customer master key. This action makes the key unusable.
+   * Controls permission to delete cryptographic material that you imported into a customer master key. This action makes the key unusable
    *
    * Access Level: Write
    *
@@ -171,24 +162,22 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteImportedKeyMaterial.html
    */
   public toDeleteImportedKeyMaterial() {
-    this.to('kms:DeleteImportedKeyMaterial');
-    return this;
+    return this.to('DeleteImportedKeyMaterial');
   }
 
   /**
-   * Controls permission to view detailed information about custom key stores in the account and region.
+   * Controls permission to view detailed information about custom key stores in the account and region
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeCustomKeyStores.html
    */
   public toDescribeCustomKeyStores() {
-    this.to('kms:DescribeCustomKeyStores');
-    return this;
+    return this.to('DescribeCustomKeyStores');
   }
 
   /**
-   * Controls permission to view detailed information about a customer master key.
+   * Controls permission to view detailed information about a customer master key
    *
    * Access Level: Read
    *
@@ -199,12 +188,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html
    */
   public toDescribeKey() {
-    this.to('kms:DescribeKey');
-    return this;
+    return this.to('DescribeKey');
   }
 
   /**
-   * Controls permission to disable a customer master key, which prevents it from being used in cryptographic operations.
+   * Controls permission to disable a customer master key, which prevents it from being used in cryptographic operations
    *
    * Access Level: Write
    *
@@ -215,12 +203,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DisableKey.html
    */
   public toDisableKey() {
-    this.to('kms:DisableKey');
-    return this;
+    return this.to('DisableKey');
   }
 
   /**
-   * Controls permission to disable automatic rotation of a customer managed customer master key.
+   * Controls permission to disable automatic rotation of a customer managed customer master key
    *
    * Access Level: Write
    *
@@ -231,24 +218,22 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DisableKeyRotation.html
    */
   public toDisableKeyRotation() {
-    this.to('kms:DisableKeyRotation');
-    return this;
+    return this.to('DisableKeyRotation');
   }
 
   /**
-   * Controls permission to disconnect the custom key store from its associated AWS CloudHSM cluster.
+   * Controls permission to disconnect the custom key store from its associated AWS CloudHSM cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DisconnectCustomKeyStore.html
    */
   public toDisconnectCustomKeyStore() {
-    this.to('kms:DisconnectCustomKeyStore');
-    return this;
+    return this.to('DisconnectCustomKeyStore');
   }
 
   /**
-   * Controls permission to change the state of a customer master key (CMK) to enabled. This allows the CMK to be used in cryptographic operations.
+   * Controls permission to change the state of a customer master key (CMK) to enabled. This allows the CMK to be used in cryptographic operations
    *
    * Access Level: Write
    *
@@ -259,12 +244,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_EnableKey.html
    */
   public toEnableKey() {
-    this.to('kms:EnableKey');
-    return this;
+    return this.to('EnableKey');
   }
 
   /**
-   * Controls permission to enable automatic rotation of the cryptographic material in a customer master key.
+   * Controls permission to enable automatic rotation of the cryptographic material in a customer master key
    *
    * Access Level: Write
    *
@@ -275,12 +259,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_EnableKeyRotation.html
    */
   public toEnableKeyRotation() {
-    this.to('kms:EnableKeyRotation');
-    return this;
+    return this.to('EnableKeyRotation');
   }
 
   /**
-   * Controls permission to use the specified customer master key to encrypt data and data keys.
+   * Controls permission to use the specified customer master key to encrypt data and data keys
    *
    * Access Level: Write
    *
@@ -293,12 +276,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html
    */
   public toEncrypt() {
-    this.to('kms:Encrypt');
-    return this;
+    return this.to('Encrypt');
   }
 
   /**
-   * Controls permission to use the customer master key to generate data keys. You can use the data keys to encrypt data outside of AWS KMS.
+   * Controls permission to use the customer master key to generate data keys. You can use the data keys to encrypt data outside of AWS KMS
    *
    * Access Level: Write
    *
@@ -311,12 +293,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKey.html
    */
   public toGenerateDataKey() {
-    this.to('kms:GenerateDataKey');
-    return this;
+    return this.to('GenerateDataKey');
   }
 
   /**
-   * Controls permission to use the customer master key to generate data key pairs.
+   * Controls permission to use the customer master key to generate data key pairs
    *
    * Access Level: Write
    *
@@ -330,12 +311,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPair.html
    */
   public toGenerateDataKeyPair() {
-    this.to('kms:GenerateDataKeyPair');
-    return this;
+    return this.to('GenerateDataKeyPair');
   }
 
   /**
-   * Controls permission to use the customer master key to generate data key pairs. Unlike the GenerateDataKeyPair operation, this operation returns an encrypted private key without a plaintext copy.
+   * Controls permission to use the customer master key to generate data key pairs. Unlike the GenerateDataKeyPair operation, this operation returns an encrypted private key without a plaintext copy
    *
    * Access Level: Write
    *
@@ -349,12 +329,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPairWithoutPlaintext.html
    */
   public toGenerateDataKeyPairWithoutPlaintext() {
-    this.to('kms:GenerateDataKeyPairWithoutPlaintext');
-    return this;
+    return this.to('GenerateDataKeyPairWithoutPlaintext');
   }
 
   /**
-   * Controls permission to use the customer master key to generate a data key. Unlike the GenerateDataKey operation, this operation returns an encrypted data key without a plaintext version of the data key.
+   * Controls permission to use the customer master key to generate a data key. Unlike the GenerateDataKey operation, this operation returns an encrypted data key without a plaintext version of the data key
    *
    * Access Level: Write
    *
@@ -367,24 +346,22 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyWithoutPlaintext.html
    */
   public toGenerateDataKeyWithoutPlaintext() {
-    this.to('kms:GenerateDataKeyWithoutPlaintext');
-    return this;
+    return this.to('GenerateDataKeyWithoutPlaintext');
   }
 
   /**
-   * Controls permission to get a cryptographically secure random byte string from AWS KMS.
+   * Controls permission to get a cryptographically secure random byte string from AWS KMS
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateRandom.html
    */
   public toGenerateRandom() {
-    this.to('kms:GenerateRandom');
-    return this;
+    return this.to('GenerateRandom');
   }
 
   /**
-   * Controls permission to view the key policy for the specified customer master key.
+   * Controls permission to view the key policy for the specified customer master key
    *
    * Access Level: Read
    *
@@ -395,12 +372,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyPolicy.html
    */
   public toGetKeyPolicy() {
-    this.to('kms:GetKeyPolicy');
-    return this;
+    return this.to('GetKeyPolicy');
   }
 
   /**
-   * Controls permission to determine whether automatic key rotation is enabled on the customer master key.
+   * Controls permission to determine whether automatic key rotation is enabled on the customer master key
    *
    * Access Level: Read
    *
@@ -411,12 +387,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyRotationStatus.html
    */
   public toGetKeyRotationStatus() {
-    this.to('kms:GetKeyRotationStatus');
-    return this;
+    return this.to('GetKeyRotationStatus');
   }
 
   /**
-   * Controls permission to get data that is required to import cryptographic material into a customer managed key, including a public key and import token.
+   * Controls permission to get data that is required to import cryptographic material into a customer managed key, including a public key and import token
    *
    * Access Level: Read
    *
@@ -429,12 +404,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetParametersForImport.html
    */
   public toGetParametersForImport() {
-    this.to('kms:GetParametersForImport');
-    return this;
+    return this.to('GetParametersForImport');
   }
 
   /**
-   * Controls permission to download the public key of an asymmetric customer master key.
+   * Controls permission to download the public key of an asymmetric customer master key
    *
    * Access Level: Read
    *
@@ -445,12 +419,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html
    */
   public toGetPublicKey() {
-    this.to('kms:GetPublicKey');
-    return this;
+    return this.to('GetPublicKey');
   }
 
   /**
-   * Controls permission to import cryptographic material into a customer master key.
+   * Controls permission to import cryptographic material into a customer master key
    *
    * Access Level: Write
    *
@@ -463,24 +436,22 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ImportKeyMaterial.html
    */
   public toImportKeyMaterial() {
-    this.to('kms:ImportKeyMaterial');
-    return this;
+    return this.to('ImportKeyMaterial');
   }
 
   /**
-   * Controls permission to view the aliases that are defined in the account. Aliases are optional friendly names that you can associate with customer master keys.
+   * Controls permission to view the aliases that are defined in the account. Aliases are optional friendly names that you can associate with customer master keys
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListAliases.html
    */
   public toListAliases() {
-    this.to('kms:ListAliases');
-    return this;
+    return this.to('ListAliases');
   }
 
   /**
-   * Controls permission to view all grants for a customer master key.
+   * Controls permission to view all grants for a customer master key
    *
    * Access Level: List
    *
@@ -492,12 +463,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListGrants.html
    */
   public toListGrants() {
-    this.to('kms:ListGrants');
-    return this;
+    return this.to('ListGrants');
   }
 
   /**
-   * Controls permission to view the names of key policies for a customer master key.
+   * Controls permission to view the names of key policies for a customer master key
    *
    * Access Level: List
    *
@@ -508,26 +478,24 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListKeyPolicies.html
    */
   public toListKeyPolicies() {
-    this.to('kms:ListKeyPolicies');
-    return this;
+    return this.to('ListKeyPolicies');
   }
 
   /**
-   * Controls permission to view the key ID and Amazon Resource Name (ARN) of all customer master keys in the account.
+   * Controls permission to view the key ID and Amazon Resource Name (ARN) of all customer master keys in the account
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListKeys.html
    */
   public toListKeys() {
-    this.to('kms:ListKeys');
-    return this;
+    return this.to('ListKeys');
   }
 
   /**
-   * Controls permission to view all tags that are attached to a customer master key.
+   * Controls permission to view all tags that are attached to a customer master key
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifCallerAccount()
@@ -536,24 +504,22 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListResourceTags.html
    */
   public toListResourceTags() {
-    this.to('kms:ListResourceTags');
-    return this;
+    return this.to('ListResourceTags');
   }
 
   /**
-   * Controls permission to view grants in which the specified principal is the retiring principal. Other principals might be able to retire the grant and this principal might be able to retire other grants.
+   * Controls permission to view grants in which the specified principal is the retiring principal. Other principals might be able to retire the grant and this principal might be able to retire other grants
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListRetirableGrants.html
    */
   public toListRetirableGrants() {
-    this.to('kms:ListRetirableGrants');
-    return this;
+    return this.to('ListRetirableGrants');
   }
 
   /**
-   * Controls permission to replace the key policy for the specified customer master key.
+   * Controls permission to replace the key policy for the specified customer master key
    *
    * Access Level: Permissions management
    *
@@ -565,12 +531,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html
    */
   public toPutKeyPolicy() {
-    this.to('kms:PutKeyPolicy');
-    return this;
+    return this.to('PutKeyPolicy');
   }
 
   /**
-   * Controls permission to decrypt data as part of the process that decrypts and reencrypts the data within AWS KMS.
+   * Controls permission to decrypt data as part of the process that decrypts and reencrypts the data within AWS KMS
    *
    * Access Level: Write
    *
@@ -584,12 +549,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html
    */
   public toReEncryptFrom() {
-    this.to('kms:ReEncryptFrom');
-    return this;
+    return this.to('ReEncryptFrom');
   }
 
   /**
-   * Controls permission to encrypt data as part of the process that decrypts and reencrypts the data within AWS KMS.
+   * Controls permission to encrypt data as part of the process that decrypts and reencrypts the data within AWS KMS
    *
    * Access Level: Write
    *
@@ -603,24 +567,22 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html
    */
   public toReEncryptTo() {
-    this.to('kms:ReEncryptTo');
-    return this;
+    return this.to('ReEncryptTo');
   }
 
   /**
-   * Controls permission to retire a grant. The RetireGrant operation is typically called by the grant user after they complete the tasks that the grant allowed them to perform.
+   * Controls permission to retire a grant. The RetireGrant operation is typically called by the grant user after they complete the tasks that the grant allowed them to perform
    *
    * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html
    */
   public toRetireGrant() {
-    this.to('kms:RetireGrant');
-    return this;
+    return this.to('RetireGrant');
   }
 
   /**
-   * Controls permission to revoke a grant, which denies permission for all operations that depend on the grant.
+   * Controls permission to revoke a grant, which denies permission for all operations that depend on the grant
    *
    * Access Level: Permissions management
    *
@@ -632,12 +594,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html
    */
   public toRevokeGrant() {
-    this.to('kms:RevokeGrant');
-    return this;
+    return this.to('RevokeGrant');
   }
 
   /**
-   * Controls permission to schedule deletion of a customer master key.
+   * Controls permission to schedule deletion of a customer master key
    *
    * Access Level: Write
    *
@@ -648,12 +609,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ScheduleKeyDeletion.html
    */
   public toScheduleKeyDeletion() {
-    this.to('kms:ScheduleKeyDeletion');
-    return this;
+    return this.to('ScheduleKeyDeletion');
   }
 
   /**
-   * Controls permission to produce a digital signature for a message.
+   * Controls permission to produce a digital signature for a message
    *
    * Access Level: Write
    *
@@ -666,12 +626,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Sign.html
    */
   public toSign() {
-    this.to('kms:Sign');
-    return this;
+    return this.to('Sign');
   }
 
   /**
-   * Controls permission to create or update tags that are attached to a customer master key.
+   * Controls permission to create or update tags that are attached to a customer master key
    *
    * Access Level: Tagging
    *
@@ -682,12 +641,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('kms:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
-   * Controls permission to delete tags that are attached to a customer master key.
+   * Controls permission to delete tags that are attached to a customer master key
    *
    * Access Level: Tagging
    *
@@ -698,12 +656,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('kms:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
-   * Controls permission to associate an alias with a different customer master key. An alias is an optional friendly name that you can associate with a customer master key.
+   * Controls permission to associate an alias with a different customer master key. An alias is an optional friendly name that you can associate with a customer master key
    *
    * Access Level: Write
    *
@@ -714,24 +671,22 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateAlias.html
    */
   public toUpdateAlias() {
-    this.to('kms:UpdateAlias');
-    return this;
+    return this.to('UpdateAlias');
   }
 
   /**
-   * Controls permission to change the properties of a custom key store.
+   * Controls permission to change the properties of a custom key store
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateCustomKeyStore.html
    */
   public toUpdateCustomKeyStore() {
-    this.to('kms:UpdateCustomKeyStore');
-    return this;
+    return this.to('UpdateCustomKeyStore');
   }
 
   /**
-   * Controls permission to delete or change the description of a customer master key.
+   * Controls permission to delete or change the description of a customer master key
    *
    * Access Level: Write
    *
@@ -742,12 +697,11 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateKeyDescription.html
    */
   public toUpdateKeyDescription() {
-    this.to('kms:UpdateKeyDescription');
-    return this;
+    return this.to('UpdateKeyDescription');
   }
 
   /**
-   * Controls permission to use the specified customer master key to verify digital signatures.
+   * Controls permission to use the specified customer master key to verify digital signatures
    *
    * Access Level: Write
    *
@@ -760,8 +714,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Verify.html
    */
   public toVerify() {
-    this.to('kms:Verify');
-    return this;
+    return this.to('Verify');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -808,14 +761,14 @@ export class Kms extends PolicyStatement {
       "GetKeyPolicy",
       "GetKeyRotationStatus",
       "GetParametersForImport",
-      "GetPublicKey",
-      "ListResourceTags"
+      "GetPublicKey"
     ],
     "List": [
       "ListAliases",
       "ListGrants",
       "ListKeyPolicies",
       "ListKeys",
+      "ListResourceTags",
       "ListRetirableGrants"
     ],
     "Tagging": [
@@ -863,7 +816,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the CreateKey and PutKeyPolicy operations based on the value of the BypassPolicyLockoutSafetyCheck parameter in the request.
+   * Filters access to the CreateKey and PutKeyPolicy operations based on the value of the BypassPolicyLockoutSafetyCheck parameter in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-bypass-policy-lockout-safety-check
    *
@@ -878,7 +831,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to specified AWS KMS operations based on the AWS account ID of the caller. You can use this condition key to allow or deny access to all IAM users and roles in an AWS account in a single policy statement.
+   * Filters access to specified AWS KMS operations based on the AWS account ID of the caller. You can use this condition key to allow or deny access to all IAM users and roles in an AWS account in a single policy statement
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-caller-account
    *
@@ -923,11 +876,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCallerAccount(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:CallerAccount`, value, operator || 'StringLike');
+    return this.if(`CallerAccount`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to an API operation based on the CustomerMasterKeySpec property of the CMK that is created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource.
+   * Filters access to an API operation based on the CustomerMasterKeySpec property of the CMK that is created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-customer-master-key-spec
    *
@@ -938,11 +891,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCustomerMasterKeySpec(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:CustomerMasterKeySpec`, value, operator || 'StringLike');
+    return this.if(`CustomerMasterKeySpec`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to an API operation based on the KeyUsage property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource.
+   * Filters access to an API operation based on the KeyUsage property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-customer-master-key-usage
    *
@@ -953,11 +906,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCustomerMasterKeyUsage(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:CustomerMasterKeyUsage`, value, operator || 'StringLike');
+    return this.if(`CustomerMasterKeyUsage`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to GenerateDataKeyPair and GenerateDataKeyPairWithoutPlaintext operations based on the value of the DataKeyPairSpec parameter in the request.
+   * Filters access to GenerateDataKeyPair and GenerateDataKeyPairWithoutPlaintext operations based on the value of the DataKeyPairSpec parameter in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-data-key-pair-spec
    *
@@ -969,11 +922,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDataKeyPairSpec(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:DataKeyPairSpec`, value, operator || 'StringLike');
+    return this.if(`DataKeyPairSpec`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to encryption operations based on the value of the encryption algorithm in the request.
+   * Filters access to encryption operations based on the value of the encryption algorithm in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm
    *
@@ -991,11 +944,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEncryptionAlgorithm(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:EncryptionAlgorithm`, value, operator || 'StringLike');
+    return this.if(`EncryptionAlgorithm`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access based on the presence of specified keys in the encryption context. The encryption context is an optional element in a cryptographic operation.
+   * Filters access based on the presence of specified keys in the encryption context. The encryption context is an optional element in a cryptographic operation
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context-keys
    *
@@ -1013,11 +966,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEncryptionContextKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:EncryptionContextKeys`, value, operator || 'StringLike');
+    return this.if(`EncryptionContextKeys`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to the ImportKeyMaterial operation based on the value of the ExpirationModel parameter in the request.
+   * Filters access to the ImportKeyMaterial operation based on the value of the ExpirationModel parameter in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-expiration-model
    *
@@ -1028,11 +981,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifExpirationModel(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:ExpirationModel`, value, operator || 'StringLike');
+    return this.if(`ExpirationModel`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to the CreateGrant operation based on the grant constraint in the request.
+   * Filters access to the CreateGrant operation based on the grant constraint in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-constraint-type
    *
@@ -1043,11 +996,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGrantConstraintType(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:GrantConstraintType`, value, operator || 'StringLike');
+    return this.if(`GrantConstraintType`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to the CreateGrant operation when the request comes from a specified AWS service.
+   * Filters access to the CreateGrant operation when the request comes from a specified AWS service
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-is-for-aws-resource
    *
@@ -1063,7 +1016,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the CreateGrant operation based on the operations in the grant.
+   * Filters access to the CreateGrant operation based on the operations in the grant
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-operations
    *
@@ -1071,11 +1024,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGrantOperations(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:GrantOperations`, value, operator || 'StringLike');
+    return this.if(`GrantOperations`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to the CreateGrant operation based on the grantee principal in the grant.
+   * Filters access to the CreateGrant operation based on the grantee principal in the grant
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grantee-principal
    *
@@ -1083,11 +1036,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGranteePrincipal(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:GranteePrincipal`, value, operator || 'StringLike');
+    return this.if(`GranteePrincipal`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to an API operation based on the Origin property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource.
+   * Filters access to an API operation based on the Origin property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-origin
    *
@@ -1098,11 +1051,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifKeyOrigin(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:KeyOrigin`, value, operator || 'StringLike');
+    return this.if(`KeyOrigin`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to the Sign and Verify operations based on the value of the MessageType parameter in the request.
+   * Filters access to the Sign and Verify operations based on the value of the MessageType parameter in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-message-type
    *
@@ -1114,11 +1067,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifMessageType(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:MessageType`, value, operator || 'StringLike');
+    return this.if(`MessageType`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to the ReEncrypt operation when it uses the same customer master key that was used for the Encrypt operation.
+   * Filters access to the ReEncrypt operation when it uses the same customer master key that was used for the Encrypt operation
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-reencrypt-on-same-key
    *
@@ -1133,7 +1086,31 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls access to the CreateGrant operation based on the retiring principal in the grant.
+   * Filters access to cryptographic operations, DescribeKey, and GetPublicKey based on the alias in the request
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-request-alias
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestAlias(value: string | string[], operator?: Operator | string) {
+    return this.if(`RequestAlias`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access to specified AWS KMS operations based on aliases associated with the customer master key
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-resource-aliases
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceAliases(value: string | string[], operator?: Operator | string) {
+    return this.if(`ResourceAliases`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access to the CreateGrant operation based on the retiring principal in the grant
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-retiring-principal
    *
@@ -1141,11 +1118,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRetiringPrincipal(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:RetiringPrincipal`, value, operator || 'StringLike');
+    return this.if(`RetiringPrincipal`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to the Sign and Verify operations based on the signing algorithm in the request.
+   * Filters access to the Sign and Verify operations based on the signing algorithm in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm
    *
@@ -1157,11 +1134,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSigningAlgorithm(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:SigningAlgorithm`, value, operator || 'StringLike');
+    return this.if(`SigningAlgorithm`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to the ImportKeyMaterial operation based on the value of the ValidTo parameter in the request. You can use this condition key to allow users to import key material only when it expires by the specified date.
+   * Filters access to the ImportKeyMaterial operation based on the value of the ValidTo parameter in the request. You can use this condition key to allow users to import key material only when it expires by the specified date
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-valid-to
    *
@@ -1172,11 +1149,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifValidTo(value: number | number[], operator?: Operator | string) {
-    return this.if(`kms:ValidTo`, value, operator || 'NumericEquals');
+    return this.if(`ValidTo`, value, operator || 'NumericEquals');
   }
 
   /**
-   * Controls access when a request made on the principal's behalf comes from a specified AWS service.
+   * Filters access when a request made on the principal's behalf comes from a specified AWS service
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-via-service
    *
@@ -1221,11 +1198,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifViaService(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:ViaService`, value, operator || 'StringLike');
+    return this.if(`ViaService`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to the GetParametersForImport operation based on the value of the WrappingAlgorithm parameter in the request.
+   * Filters access to the GetParametersForImport operation based on the value of the WrappingAlgorithm parameter in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-algorithm
    *
@@ -1236,11 +1213,11 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifWrappingAlgorithm(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:WrappingAlgorithm`, value, operator || 'StringLike');
+    return this.if(`WrappingAlgorithm`, value, operator || 'StringLike');
   }
 
   /**
-   * Controls access to the GetParametersForImport operation based on the value of the WrappingKeySpec parameter in the request.
+   * Filters access to the GetParametersForImport operation based on the value of the WrappingKeySpec parameter in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-key-spec
    *
@@ -1251,6 +1228,6 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifWrappingKeySpec(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:WrappingKeySpec`, value, operator || 'StringLike');
+    return this.if(`WrappingKeySpec`, value, operator || 'StringLike');
   }
 }

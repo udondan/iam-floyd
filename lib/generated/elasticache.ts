@@ -26,8 +26,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AddTagsToResource.html
    */
   public toAddTagsToResource() {
-    this.to('elasticache:AddTagsToResource');
-    return this;
+    return this.to('AddTagsToResource');
   }
 
   /**
@@ -41,8 +40,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AuthorizeCacheSecurityGroupIngress.html
    */
   public toAuthorizeCacheSecurityGroupIngress() {
-    this.to('elasticache:AuthorizeCacheSecurityGroupIngress');
-    return this;
+    return this.to('AuthorizeCacheSecurityGroupIngress');
   }
 
   /**
@@ -61,8 +59,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_BatchApplyUpdateAction.html
    */
   public toBatchApplyUpdateAction() {
-    this.to('elasticache:BatchApplyUpdateAction');
-    return this;
+    return this.to('BatchApplyUpdateAction');
   }
 
   /**
@@ -73,8 +70,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_BatchStopUpdateAction.html
    */
   public toBatchStopUpdateAction() {
-    this.to('elasticache:BatchStopUpdateAction');
-    return this;
+    return this.to('BatchStopUpdateAction');
   }
 
   /**
@@ -85,8 +81,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CompleteMigration.html
    */
   public toCompleteMigration() {
-    this.to('elasticache:CompleteMigration');
-    return this;
+    return this.to('CompleteMigration');
   }
 
   /**
@@ -103,8 +98,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CopySnapshot.html
    */
   public toCopySnapshot() {
-    this.to('elasticache:CopySnapshot');
-    return this;
+    return this.to('CopySnapshot');
   }
 
   /**
@@ -124,8 +118,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheCluster.html
    */
   public toCreateCacheCluster() {
-    this.to('elasticache:CreateCacheCluster');
-    return this;
+    return this.to('CreateCacheCluster');
   }
 
   /**
@@ -139,8 +132,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheParameterGroup.html
    */
   public toCreateCacheParameterGroup() {
-    this.to('elasticache:CreateCacheParameterGroup');
-    return this;
+    return this.to('CreateCacheParameterGroup');
   }
 
   /**
@@ -154,8 +146,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSecurityGroup.html
    */
   public toCreateCacheSecurityGroup() {
-    this.to('elasticache:CreateCacheSecurityGroup');
-    return this;
+    return this.to('CreateCacheSecurityGroup');
   }
 
   /**
@@ -169,8 +160,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html
    */
   public toCreateCacheSubnetGroup() {
-    this.to('elasticache:CreateCacheSubnetGroup');
-    return this;
+    return this.to('CreateCacheSubnetGroup');
   }
 
   /**
@@ -181,8 +171,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateGlobalReplicationGroup.html
    */
   public toCreateGlobalReplicationGroup() {
-    this.to('elasticache:CreateGlobalReplicationGroup');
-    return this;
+    return this.to('CreateGlobalReplicationGroup');
   }
 
   /**
@@ -202,8 +191,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateReplicationGroup.html
    */
   public toCreateReplicationGroup() {
-    this.to('elasticache:CreateReplicationGroup');
-    return this;
+    return this.to('CreateReplicationGroup');
   }
 
   /**
@@ -220,8 +208,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateSnapshot.html
    */
   public toCreateSnapshot() {
-    this.to('elasticache:CreateSnapshot');
-    return this;
+    return this.to('CreateSnapshot');
   }
 
   /**
@@ -232,8 +219,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateUser.html
    */
   public toCreateUser() {
-    this.to('elasticache:CreateUser');
-    return this;
+    return this.to('CreateUser');
   }
 
   /**
@@ -244,8 +230,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateUserGroup.html
    */
   public toCreateUserGroup() {
-    this.to('elasticache:CreateUserGroup');
-    return this;
+    return this.to('CreateUserGroup');
   }
 
   /**
@@ -256,8 +241,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DecreaseNodeGroupsInGlobalReplicationGroup.html
    */
   public toDecreaseNodeGroupsInGlobalReplicationGroup() {
-    this.to('elasticache:DecreaseNodeGroupsInGlobalReplicationGroup');
-    return this;
+    return this.to('DecreaseNodeGroupsInGlobalReplicationGroup');
   }
 
   /**
@@ -275,8 +259,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DecreaseReplicaCount.html
    */
   public toDecreaseReplicaCount() {
-    this.to('elasticache:DecreaseReplicaCount');
-    return this;
+    return this.to('DecreaseReplicaCount');
   }
 
   /**
@@ -294,8 +277,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheCluster.html
    */
   public toDeleteCacheCluster() {
-    this.to('elasticache:DeleteCacheCluster');
-    return this;
+    return this.to('DeleteCacheCluster');
   }
 
   /**
@@ -306,8 +288,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheParameterGroup.html
    */
   public toDeleteCacheParameterGroup() {
-    this.to('elasticache:DeleteCacheParameterGroup');
-    return this;
+    return this.to('DeleteCacheParameterGroup');
   }
 
   /**
@@ -318,8 +299,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheSecurityGroup.html
    */
   public toDeleteCacheSecurityGroup() {
-    this.to('elasticache:DeleteCacheSecurityGroup');
-    return this;
+    return this.to('DeleteCacheSecurityGroup');
   }
 
   /**
@@ -337,8 +317,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheSubnetGroup.html
    */
   public toDeleteCacheSubnetGroup() {
-    this.to('elasticache:DeleteCacheSubnetGroup');
-    return this;
+    return this.to('DeleteCacheSubnetGroup');
   }
 
   /**
@@ -349,8 +328,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteGlobalReplicationGroup.html
    */
   public toDeleteGlobalReplicationGroup() {
-    this.to('elasticache:DeleteGlobalReplicationGroup');
-    return this;
+    return this.to('DeleteGlobalReplicationGroup');
   }
 
   /**
@@ -368,8 +346,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteReplicationGroup.html
    */
   public toDeleteReplicationGroup() {
-    this.to('elasticache:DeleteReplicationGroup');
-    return this;
+    return this.to('DeleteReplicationGroup');
   }
 
   /**
@@ -380,8 +357,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteSnapshot.html
    */
   public toDeleteSnapshot() {
-    this.to('elasticache:DeleteSnapshot');
-    return this;
+    return this.to('DeleteSnapshot');
   }
 
   /**
@@ -392,8 +368,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteUser.html
    */
   public toDeleteUser() {
-    this.to('elasticache:DeleteUser');
-    return this;
+    return this.to('DeleteUser');
   }
 
   /**
@@ -404,8 +379,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteUserGroup.html
    */
   public toDeleteUserGroup() {
-    this.to('elasticache:DeleteUserGroup');
-    return this;
+    return this.to('DeleteUserGroup');
   }
 
   /**
@@ -416,8 +390,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheClusters.html
    */
   public toDescribeCacheClusters() {
-    this.to('elasticache:DescribeCacheClusters');
-    return this;
+    return this.to('DescribeCacheClusters');
   }
 
   /**
@@ -428,8 +401,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheEngineVersions.html
    */
   public toDescribeCacheEngineVersions() {
-    this.to('elasticache:DescribeCacheEngineVersions');
-    return this;
+    return this.to('DescribeCacheEngineVersions');
   }
 
   /**
@@ -440,8 +412,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheParameterGroups.html
    */
   public toDescribeCacheParameterGroups() {
-    this.to('elasticache:DescribeCacheParameterGroups');
-    return this;
+    return this.to('DescribeCacheParameterGroups');
   }
 
   /**
@@ -452,8 +423,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheParameters.html
    */
   public toDescribeCacheParameters() {
-    this.to('elasticache:DescribeCacheParameters');
-    return this;
+    return this.to('DescribeCacheParameters');
   }
 
   /**
@@ -464,8 +434,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheSecurityGroups.html
    */
   public toDescribeCacheSecurityGroups() {
-    this.to('elasticache:DescribeCacheSecurityGroups');
-    return this;
+    return this.to('DescribeCacheSecurityGroups');
   }
 
   /**
@@ -476,8 +445,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheSubnetGroups.html
    */
   public toDescribeCacheSubnetGroups() {
-    this.to('elasticache:DescribeCacheSubnetGroups');
-    return this;
+    return this.to('DescribeCacheSubnetGroups');
   }
 
   /**
@@ -488,8 +456,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEngineDefaultParameters.html
    */
   public toDescribeEngineDefaultParameters() {
-    this.to('elasticache:DescribeEngineDefaultParameters');
-    return this;
+    return this.to('DescribeEngineDefaultParameters');
   }
 
   /**
@@ -500,8 +467,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html
    */
   public toDescribeEvents() {
-    this.to('elasticache:DescribeEvents');
-    return this;
+    return this.to('DescribeEvents');
   }
 
   /**
@@ -512,8 +478,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeGlobalReplicationGroups.html
    */
   public toDescribeGlobalReplicationGroups() {
-    this.to('elasticache:DescribeGlobalReplicationGroups');
-    return this;
+    return this.to('DescribeGlobalReplicationGroups');
   }
 
   /**
@@ -524,8 +489,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeReplicationGroups.html
    */
   public toDescribeReplicationGroups() {
-    this.to('elasticache:DescribeReplicationGroups');
-    return this;
+    return this.to('DescribeReplicationGroups');
   }
 
   /**
@@ -536,8 +500,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeReservedCacheNodes.html
    */
   public toDescribeReservedCacheNodes() {
-    this.to('elasticache:DescribeReservedCacheNodes');
-    return this;
+    return this.to('DescribeReservedCacheNodes');
   }
 
   /**
@@ -548,8 +511,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeReservedCacheNodesOfferings.html
    */
   public toDescribeReservedCacheNodesOfferings() {
-    this.to('elasticache:DescribeReservedCacheNodesOfferings');
-    return this;
+    return this.to('DescribeReservedCacheNodesOfferings');
   }
 
   /**
@@ -560,8 +522,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeServiceUpdates.html
    */
   public toDescribeServiceUpdates() {
-    this.to('elasticache:DescribeServiceUpdates');
-    return this;
+    return this.to('DescribeServiceUpdates');
   }
 
   /**
@@ -572,8 +533,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeSnapshots.html
    */
   public toDescribeSnapshots() {
-    this.to('elasticache:DescribeSnapshots');
-    return this;
+    return this.to('DescribeSnapshots');
   }
 
   /**
@@ -584,8 +544,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeUpdateActions.html
    */
   public toDescribeUpdateActions() {
-    this.to('elasticache:DescribeUpdateActions');
-    return this;
+    return this.to('DescribeUpdateActions');
   }
 
   /**
@@ -596,8 +555,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeUserGroups.html
    */
   public toDescribeUserGroups() {
-    this.to('elasticache:DescribeUserGroups');
-    return this;
+    return this.to('DescribeUserGroups');
   }
 
   /**
@@ -608,8 +566,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeUsers.html
    */
   public toDescribeUsers() {
-    this.to('elasticache:DescribeUsers');
-    return this;
+    return this.to('DescribeUsers');
   }
 
   /**
@@ -620,8 +577,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DisassociateGlobalReplicationGroup.html
    */
   public toDisassociateGlobalReplicationGroup() {
-    this.to('elasticache:DisassociateGlobalReplicationGroup');
-    return this;
+    return this.to('DisassociateGlobalReplicationGroup');
   }
 
   /**
@@ -632,8 +588,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_FailoverGlobalReplicationGroup.html
    */
   public toFailoverGlobalReplicationGroup() {
-    this.to('elasticache:FailoverGlobalReplicationGroup');
-    return this;
+    return this.to('FailoverGlobalReplicationGroup');
   }
 
   /**
@@ -644,8 +599,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_IncreaseNodeGroupsInGlobalReplicationGroup.html
    */
   public toIncreaseNodeGroupsInGlobalReplicationGroup() {
-    this.to('elasticache:IncreaseNodeGroupsInGlobalReplicationGroup');
-    return this;
+    return this.to('IncreaseNodeGroupsInGlobalReplicationGroup');
   }
 
   /**
@@ -663,8 +617,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_IncreaseReplicaCount.html
    */
   public toIncreaseReplicaCount() {
-    this.to('elasticache:IncreaseReplicaCount');
-    return this;
+    return this.to('IncreaseReplicaCount');
   }
 
   /**
@@ -675,8 +628,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ListAllowedNodeTypeModifications.html
    */
   public toListAllowedNodeTypeModifications() {
-    this.to('elasticache:ListAllowedNodeTypeModifications');
-    return this;
+    return this.to('ListAllowedNodeTypeModifications');
   }
 
   /**
@@ -687,8 +639,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('elasticache:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -699,8 +650,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheCluster.html
    */
   public toModifyCacheCluster() {
-    this.to('elasticache:ModifyCacheCluster');
-    return this;
+    return this.to('ModifyCacheCluster');
   }
 
   /**
@@ -711,8 +661,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html
    */
   public toModifyCacheParameterGroup() {
-    this.to('elasticache:ModifyCacheParameterGroup');
-    return this;
+    return this.to('ModifyCacheParameterGroup');
   }
 
   /**
@@ -723,8 +672,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheSubnetGroup.html
    */
   public toModifyCacheSubnetGroup() {
-    this.to('elasticache:ModifyCacheSubnetGroup');
-    return this;
+    return this.to('ModifyCacheSubnetGroup');
   }
 
   /**
@@ -735,8 +683,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyGlobalReplicationGroup.html
    */
   public toModifyGlobalReplicationGroup() {
-    this.to('elasticache:ModifyGlobalReplicationGroup');
-    return this;
+    return this.to('ModifyGlobalReplicationGroup');
   }
 
   /**
@@ -754,8 +701,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroup.html
    */
   public toModifyReplicationGroup() {
-    this.to('elasticache:ModifyReplicationGroup');
-    return this;
+    return this.to('ModifyReplicationGroup');
   }
 
   /**
@@ -773,8 +719,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html
    */
   public toModifyReplicationGroupShardConfiguration() {
-    this.to('elasticache:ModifyReplicationGroupShardConfiguration');
-    return this;
+    return this.to('ModifyReplicationGroupShardConfiguration');
   }
 
   /**
@@ -785,8 +730,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyUser.html
    */
   public toModifyUser() {
-    this.to('elasticache:ModifyUser');
-    return this;
+    return this.to('ModifyUser');
   }
 
   /**
@@ -797,8 +741,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyUserGroup.html
    */
   public toModifyUserGroup() {
-    this.to('elasticache:ModifyUserGroup');
-    return this;
+    return this.to('ModifyUserGroup');
   }
 
   /**
@@ -812,8 +755,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_PurchaseReservedCacheNodesOffering.html
    */
   public toPurchaseReservedCacheNodesOffering() {
-    this.to('elasticache:PurchaseReservedCacheNodesOffering');
-    return this;
+    return this.to('PurchaseReservedCacheNodesOffering');
   }
 
   /**
@@ -824,8 +766,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RebalanceSlotsInGlobalReplicationGroup.html
    */
   public toRebalanceSlotsInGlobalReplicationGroup() {
-    this.to('elasticache:RebalanceSlotsInGlobalReplicationGroup');
-    return this;
+    return this.to('RebalanceSlotsInGlobalReplicationGroup');
   }
 
   /**
@@ -836,8 +777,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RebootCacheCluster.html
    */
   public toRebootCacheCluster() {
-    this.to('elasticache:RebootCacheCluster');
-    return this;
+    return this.to('RebootCacheCluster');
   }
 
   /**
@@ -848,8 +788,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RemoveTagsFromResource.html
    */
   public toRemoveTagsFromResource() {
-    this.to('elasticache:RemoveTagsFromResource');
-    return this;
+    return this.to('RemoveTagsFromResource');
   }
 
   /**
@@ -860,8 +799,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ResetCacheParameterGroup.html
    */
   public toResetCacheParameterGroup() {
-    this.to('elasticache:ResetCacheParameterGroup');
-    return this;
+    return this.to('ResetCacheParameterGroup');
   }
 
   /**
@@ -872,8 +810,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RevokeCacheSecurityGroupIngress.html
    */
   public toRevokeCacheSecurityGroupIngress() {
-    this.to('elasticache:RevokeCacheSecurityGroupIngress');
-    return this;
+    return this.to('RevokeCacheSecurityGroupIngress');
   }
 
   /**
@@ -884,8 +821,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_StartMigration.html
    */
   public toStartMigration() {
-    this.to('elasticache:StartMigration');
-    return this;
+    return this.to('StartMigration');
   }
 
   /**
@@ -903,8 +839,7 @@ export class Elasticache extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_TestFailover.html
    */
   public toTestFailover() {
-    this.to('elasticache:TestFailover');
-    return this;
+    return this.to('TestFailover');
   }
 
   protected accessLevelList: AccessLevelList = {

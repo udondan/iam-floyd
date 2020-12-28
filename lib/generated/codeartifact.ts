@@ -26,8 +26,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssociateExternalConnection.html
    */
   public toAssociateExternalConnection() {
-    this.to('codeartifact:AssociateExternalConnection');
-    return this;
+    return this.to('AssociateExternalConnection');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/userguide/repos-upstream.html
    */
   public toAssociateWithDownstreamRepository() {
-    this.to('codeartifact:AssociateWithDownstreamRepository');
-    return this;
+    return this.to('AssociateWithDownstreamRepository');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CopyPackageVersions.html
    */
   public toCopyPackageVersions() {
-    this.to('codeartifact:CopyPackageVersions');
-    return this;
+    return this.to('CopyPackageVersions');
   }
 
   /**
@@ -66,8 +63,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateDomain.html
    */
   public toCreateDomain() {
-    this.to('codeartifact:CreateDomain');
-    return this;
+    return this.to('CreateDomain');
   }
 
   /**
@@ -82,8 +78,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html
    */
   public toCreateRepository() {
-    this.to('codeartifact:CreateRepository');
-    return this;
+    return this.to('CreateRepository');
   }
 
   /**
@@ -94,8 +89,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeleteDomain.html
    */
   public toDeleteDomain() {
-    this.to('codeartifact:DeleteDomain');
-    return this;
+    return this.to('DeleteDomain');
   }
 
   /**
@@ -106,8 +100,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeleteDomainPermissionsPolicy.html
    */
   public toDeleteDomainPermissionsPolicy() {
-    this.to('codeartifact:DeleteDomainPermissionsPolicy');
-    return this;
+    return this.to('DeleteDomainPermissionsPolicy');
   }
 
   /**
@@ -118,8 +111,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageVersions.html
    */
   public toDeletePackageVersions() {
-    this.to('codeartifact:DeletePackageVersions');
-    return this;
+    return this.to('DeletePackageVersions');
   }
 
   /**
@@ -130,8 +122,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeleteRepository.html
    */
   public toDeleteRepository() {
-    this.to('codeartifact:DeleteRepository');
-    return this;
+    return this.to('DeleteRepository');
   }
 
   /**
@@ -142,8 +133,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeleteRepositoryPermissionsPolicy.html
    */
   public toDeleteRepositoryPermissionsPolicy() {
-    this.to('codeartifact:DeleteRepositoryPermissionsPolicy');
-    return this;
+    return this.to('DeleteRepositoryPermissionsPolicy');
   }
 
   /**
@@ -154,8 +144,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribeDomain.html
    */
   public toDescribeDomain() {
-    this.to('codeartifact:DescribeDomain');
-    return this;
+    return this.to('DescribeDomain');
   }
 
   /**
@@ -166,8 +155,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html
    */
   public toDescribePackageVersion() {
-    this.to('codeartifact:DescribePackageVersion');
-    return this;
+    return this.to('DescribePackageVersion');
   }
 
   /**
@@ -178,8 +166,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribeRepository.html
    */
   public toDescribeRepository() {
-    this.to('codeartifact:DescribeRepository');
-    return this;
+    return this.to('DescribeRepository');
   }
 
   /**
@@ -190,8 +177,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisassociateExternalConnection.html
    */
   public toDisassociateExternalConnection() {
-    this.to('codeartifact:DisassociateExternalConnection');
-    return this;
+    return this.to('DisassociateExternalConnection');
   }
 
   /**
@@ -202,8 +188,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html
    */
   public toDisposePackageVersions() {
-    this.to('codeartifact:DisposePackageVersions');
-    return this;
+    return this.to('DisposePackageVersions');
   }
 
   /**
@@ -214,8 +199,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetAuthorizationToken.html
    */
   public toGetAuthorizationToken() {
-    this.to('codeartifact:GetAuthorizationToken');
-    return this;
+    return this.to('GetAuthorizationToken');
   }
 
   /**
@@ -226,8 +210,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetDomainPermissionsPolicy.html
    */
   public toGetDomainPermissionsPolicy() {
-    this.to('codeartifact:GetDomainPermissionsPolicy');
-    return this;
+    return this.to('GetDomainPermissionsPolicy');
   }
 
   /**
@@ -238,8 +221,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetPackageVersionAsset.html
    */
   public toGetPackageVersionAsset() {
-    this.to('codeartifact:GetPackageVersionAsset');
-    return this;
+    return this.to('GetPackageVersionAsset');
   }
 
   /**
@@ -250,8 +232,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetPackageVersionReadme.html
    */
   public toGetPackageVersionReadme() {
-    this.to('codeartifact:GetPackageVersionReadme');
-    return this;
+    return this.to('GetPackageVersionReadme');
   }
 
   /**
@@ -262,8 +243,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetRepositoryEndpoint.html
    */
   public toGetRepositoryEndpoint() {
-    this.to('codeartifact:GetRepositoryEndpoint');
-    return this;
+    return this.to('GetRepositoryEndpoint');
   }
 
   /**
@@ -274,8 +254,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetRepositoryPermissionsPolicy.html
    */
   public toGetRepositoryPermissionsPolicy() {
-    this.to('codeartifact:GetRepositoryPermissionsPolicy');
-    return this;
+    return this.to('GetRepositoryPermissionsPolicy');
   }
 
   /**
@@ -286,8 +265,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html
    */
   public toListDomains() {
-    this.to('codeartifact:ListDomains');
-    return this;
+    return this.to('ListDomains');
   }
 
   /**
@@ -298,8 +276,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersionAssets.html
    */
   public toListPackageVersionAssets() {
-    this.to('codeartifact:ListPackageVersionAssets');
-    return this;
+    return this.to('ListPackageVersionAssets');
   }
 
   /**
@@ -310,8 +287,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersionDependencies.html
    */
   public toListPackageVersionDependencies() {
-    this.to('codeartifact:ListPackageVersionDependencies');
-    return this;
+    return this.to('ListPackageVersionDependencies');
   }
 
   /**
@@ -322,8 +298,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html
    */
   public toListPackageVersions() {
-    this.to('codeartifact:ListPackageVersions');
-    return this;
+    return this.to('ListPackageVersions');
   }
 
   /**
@@ -334,8 +309,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html
    */
   public toListPackages() {
-    this.to('codeartifact:ListPackages');
-    return this;
+    return this.to('ListPackages');
   }
 
   /**
@@ -346,8 +320,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html
    */
   public toListRepositories() {
-    this.to('codeartifact:ListRepositories');
-    return this;
+    return this.to('ListRepositories');
   }
 
   /**
@@ -358,8 +331,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositoriesInDomain.html
    */
   public toListRepositoriesInDomain() {
-    this.to('codeartifact:ListRepositoriesInDomain');
-    return this;
+    return this.to('ListRepositoriesInDomain');
   }
 
   /**
@@ -370,8 +342,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('codeartifact:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -382,8 +353,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html
    */
   public toPublishPackageVersion() {
-    this.to('codeartifact:PublishPackageVersion');
-    return this;
+    return this.to('PublishPackageVersion');
   }
 
   /**
@@ -394,8 +364,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PutDomainPermissionsPolicy.html
    */
   public toPutDomainPermissionsPolicy() {
-    this.to('codeartifact:PutDomainPermissionsPolicy');
-    return this;
+    return this.to('PutDomainPermissionsPolicy');
   }
 
   /**
@@ -406,8 +375,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html
    */
   public toPutPackageMetadata() {
-    this.to('codeartifact:PutPackageMetadata');
-    return this;
+    return this.to('PutPackageMetadata');
   }
 
   /**
@@ -418,8 +386,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PutRepositoryPermissionsPolicy.html
    */
   public toPutRepositoryPermissionsPolicy() {
-    this.to('codeartifact:PutRepositoryPermissionsPolicy');
-    return this;
+    return this.to('PutRepositoryPermissionsPolicy');
   }
 
   /**
@@ -430,8 +397,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html
    */
   public toReadFromRepository() {
-    this.to('codeartifact:ReadFromRepository');
-    return this;
+    return this.to('ReadFromRepository');
   }
 
   /**
@@ -446,8 +412,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('codeartifact:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -461,8 +426,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('codeartifact:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -473,8 +437,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html
    */
   public toUpdatePackageVersionsStatus() {
-    this.to('codeartifact:UpdatePackageVersionsStatus');
-    return this;
+    return this.to('UpdatePackageVersionsStatus');
   }
 
   /**
@@ -485,8 +448,7 @@ export class Codeartifact extends PolicyStatement {
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html
    */
   public toUpdateRepository() {
-    this.to('codeartifact:UpdateRepository');
-    return this;
+    return this.to('UpdateRepository');
   }
 
   protected accessLevelList: AccessLevelList = {

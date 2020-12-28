@@ -26,8 +26,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_BatchGetAggregateResourceConfig.html
    */
   public toBatchGetAggregateResourceConfig() {
-    this.to('config:BatchGetAggregateResourceConfig');
-    return this;
+    return this.to('BatchGetAggregateResourceConfig');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_BatchGetResourceConfig.html
    */
   public toBatchGetResourceConfig() {
-    this.to('config:BatchGetResourceConfig');
-    return this;
+    return this.to('BatchGetResourceConfig');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteAggregationAuthorization.html
    */
   public toDeleteAggregationAuthorization() {
-    this.to('config:DeleteAggregationAuthorization');
-    return this;
+    return this.to('DeleteAggregationAuthorization');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigRule.html
    */
   public toDeleteConfigRule() {
-    this.to('config:DeleteConfigRule');
-    return this;
+    return this.to('DeleteConfigRule');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigurationAggregator.html
    */
   public toDeleteConfigurationAggregator() {
-    this.to('config:DeleteConfigurationAggregator');
-    return this;
+    return this.to('DeleteConfigurationAggregator');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigurationRecorder.html
    */
   public toDeleteConfigurationRecorder() {
-    this.to('config:DeleteConfigurationRecorder');
-    return this;
+    return this.to('DeleteConfigurationRecorder');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConformancePack.html
    */
   public toDeleteConformancePack() {
-    this.to('config:DeleteConformancePack');
-    return this;
+    return this.to('DeleteConformancePack');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteDeliveryChannel.html
    */
   public toDeleteDeliveryChannel() {
-    this.to('config:DeleteDeliveryChannel');
-    return this;
+    return this.to('DeleteDeliveryChannel');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteEvaluationResults.html
    */
   public toDeleteEvaluationResults() {
-    this.to('config:DeleteEvaluationResults');
-    return this;
+    return this.to('DeleteEvaluationResults');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteOrganizationConfigRule.html
    */
   public toDeleteOrganizationConfigRule() {
-    this.to('config:DeleteOrganizationConfigRule');
-    return this;
+    return this.to('DeleteOrganizationConfigRule');
   }
 
   /**
@@ -146,8 +136,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteOrganizationConformancePack.html
    */
   public toDeleteOrganizationConformancePack() {
-    this.to('config:DeleteOrganizationConformancePack');
-    return this;
+    return this.to('DeleteOrganizationConformancePack');
   }
 
   /**
@@ -158,8 +147,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeletePendingAggregationRequest.html
    */
   public toDeletePendingAggregationRequest() {
-    this.to('config:DeletePendingAggregationRequest');
-    return this;
+    return this.to('DeletePendingAggregationRequest');
   }
 
   /**
@@ -170,8 +158,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteRemediationConfiguration.html
    */
   public toDeleteRemediationConfiguration() {
-    this.to('config:DeleteRemediationConfiguration');
-    return this;
+    return this.to('DeleteRemediationConfiguration');
   }
 
   /**
@@ -182,8 +169,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteRemediationExceptions.html
    */
   public toDeleteRemediationExceptions() {
-    this.to('config:DeleteRemediationExceptions');
-    return this;
+    return this.to('DeleteRemediationExceptions');
   }
 
   /**
@@ -194,8 +180,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteResourceConfig.html
    */
   public toDeleteResourceConfig() {
-    this.to('config:DeleteResourceConfig');
-    return this;
+    return this.to('DeleteResourceConfig');
   }
 
   /**
@@ -206,8 +191,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteRetentionConfiguration.html
    */
   public toDeleteRetentionConfiguration() {
-    this.to('config:DeleteRetentionConfiguration');
-    return this;
+    return this.to('DeleteRetentionConfiguration');
   }
 
   /**
@@ -218,8 +202,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeliverConfigSnapshot.html
    */
   public toDeliverConfigSnapshot() {
-    this.to('config:DeliverConfigSnapshot');
-    return this;
+    return this.to('DeliverConfigSnapshot');
   }
 
   /**
@@ -230,8 +213,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeAggregateComplianceByConfigRules.html
    */
   public toDescribeAggregateComplianceByConfigRules() {
-    this.to('config:DescribeAggregateComplianceByConfigRules');
-    return this;
+    return this.to('DescribeAggregateComplianceByConfigRules');
   }
 
   /**
@@ -242,8 +224,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeAggregationAuthorizations.html
    */
   public toDescribeAggregationAuthorizations() {
-    this.to('config:DescribeAggregationAuthorizations');
-    return this;
+    return this.to('DescribeAggregationAuthorizations');
   }
 
   /**
@@ -254,8 +235,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeComplianceByConfigRule.html
    */
   public toDescribeComplianceByConfigRule() {
-    this.to('config:DescribeComplianceByConfigRule');
-    return this;
+    return this.to('DescribeComplianceByConfigRule');
   }
 
   /**
@@ -266,8 +246,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeComplianceByResource.html
    */
   public toDescribeComplianceByResource() {
-    this.to('config:DescribeComplianceByResource');
-    return this;
+    return this.to('DescribeComplianceByResource');
   }
 
   /**
@@ -278,8 +257,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigRuleEvaluationStatus.html
    */
   public toDescribeConfigRuleEvaluationStatus() {
-    this.to('config:DescribeConfigRuleEvaluationStatus');
-    return this;
+    return this.to('DescribeConfigRuleEvaluationStatus');
   }
 
   /**
@@ -290,8 +268,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigRules.html
    */
   public toDescribeConfigRules() {
-    this.to('config:DescribeConfigRules');
-    return this;
+    return this.to('DescribeConfigRules');
   }
 
   /**
@@ -302,8 +279,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationAggregatorSourcesStatus.html
    */
   public toDescribeConfigurationAggregatorSourcesStatus() {
-    this.to('config:DescribeConfigurationAggregatorSourcesStatus');
-    return this;
+    return this.to('DescribeConfigurationAggregatorSourcesStatus');
   }
 
   /**
@@ -314,8 +290,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationAggregators.html
    */
   public toDescribeConfigurationAggregators() {
-    this.to('config:DescribeConfigurationAggregators');
-    return this;
+    return this.to('DescribeConfigurationAggregators');
   }
 
   /**
@@ -326,8 +301,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html
    */
   public toDescribeConfigurationRecorderStatus() {
-    this.to('config:DescribeConfigurationRecorderStatus');
-    return this;
+    return this.to('DescribeConfigurationRecorderStatus');
   }
 
   /**
@@ -338,8 +312,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html
    */
   public toDescribeConfigurationRecorders() {
-    this.to('config:DescribeConfigurationRecorders');
-    return this;
+    return this.to('DescribeConfigurationRecorders');
   }
 
   /**
@@ -350,8 +323,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConformancePackCompliance.html
    */
   public toDescribeConformancePackCompliance() {
-    this.to('config:DescribeConformancePackCompliance');
-    return this;
+    return this.to('DescribeConformancePackCompliance');
   }
 
   /**
@@ -362,8 +334,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConformancePackStatus.html
    */
   public toDescribeConformancePackStatus() {
-    this.to('config:DescribeConformancePackStatus');
-    return this;
+    return this.to('DescribeConformancePackStatus');
   }
 
   /**
@@ -374,8 +345,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConformancePacks.html
    */
   public toDescribeConformancePacks() {
-    this.to('config:DescribeConformancePacks');
-    return this;
+    return this.to('DescribeConformancePacks');
   }
 
   /**
@@ -386,8 +356,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeDeliveryChannelStatus.html
    */
   public toDescribeDeliveryChannelStatus() {
-    this.to('config:DescribeDeliveryChannelStatus');
-    return this;
+    return this.to('DescribeDeliveryChannelStatus');
   }
 
   /**
@@ -398,8 +367,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeDeliveryChannels.html
    */
   public toDescribeDeliveryChannels() {
-    this.to('config:DescribeDeliveryChannels');
-    return this;
+    return this.to('DescribeDeliveryChannels');
   }
 
   /**
@@ -410,8 +378,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeOrganizationConfigRuleStatuses.html
    */
   public toDescribeOrganizationConfigRuleStatuses() {
-    this.to('config:DescribeOrganizationConfigRuleStatuses');
-    return this;
+    return this.to('DescribeOrganizationConfigRuleStatuses');
   }
 
   /**
@@ -422,8 +389,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeOrganizationConfigRules.html
    */
   public toDescribeOrganizationConfigRules() {
-    this.to('config:DescribeOrganizationConfigRules');
-    return this;
+    return this.to('DescribeOrganizationConfigRules');
   }
 
   /**
@@ -434,8 +400,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeOrganizationConformancePackStatuses.html
    */
   public toDescribeOrganizationConformancePackStatuses() {
-    this.to('config:DescribeOrganizationConformancePackStatuses');
-    return this;
+    return this.to('DescribeOrganizationConformancePackStatuses');
   }
 
   /**
@@ -446,8 +411,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeOrganizationConformancePacks.html
    */
   public toDescribeOrganizationConformancePacks() {
-    this.to('config:DescribeOrganizationConformancePacks');
-    return this;
+    return this.to('DescribeOrganizationConformancePacks');
   }
 
   /**
@@ -458,8 +422,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribePendingAggregationRequests.html
    */
   public toDescribePendingAggregationRequests() {
-    this.to('config:DescribePendingAggregationRequests');
-    return this;
+    return this.to('DescribePendingAggregationRequests');
   }
 
   /**
@@ -470,8 +433,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeRemediationConfigurations.html
    */
   public toDescribeRemediationConfigurations() {
-    this.to('config:DescribeRemediationConfigurations');
-    return this;
+    return this.to('DescribeRemediationConfigurations');
   }
 
   /**
@@ -482,8 +444,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeRemediationExceptions.html
    */
   public toDescribeRemediationExceptions() {
-    this.to('config:DescribeRemediationExceptions');
-    return this;
+    return this.to('DescribeRemediationExceptions');
   }
 
   /**
@@ -494,8 +455,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeRemediationExecutionStatus.html
    */
   public toDescribeRemediationExecutionStatus() {
-    this.to('config:DescribeRemediationExecutionStatus');
-    return this;
+    return this.to('DescribeRemediationExecutionStatus');
   }
 
   /**
@@ -506,8 +466,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeRetentionConfigurations.html
    */
   public toDescribeRetentionConfigurations() {
-    this.to('config:DescribeRetentionConfigurations');
-    return this;
+    return this.to('DescribeRetentionConfigurations');
   }
 
   /**
@@ -518,8 +477,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetAggregateComplianceDetailsByConfigRule.html
    */
   public toGetAggregateComplianceDetailsByConfigRule() {
-    this.to('config:GetAggregateComplianceDetailsByConfigRule');
-    return this;
+    return this.to('GetAggregateComplianceDetailsByConfigRule');
   }
 
   /**
@@ -530,8 +488,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetAggregateConfigRuleComplianceSummary.html
    */
   public toGetAggregateConfigRuleComplianceSummary() {
-    this.to('config:GetAggregateConfigRuleComplianceSummary');
-    return this;
+    return this.to('GetAggregateConfigRuleComplianceSummary');
   }
 
   /**
@@ -542,8 +499,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetAggregateDiscoveredResourceCounts.html
    */
   public toGetAggregateDiscoveredResourceCounts() {
-    this.to('config:GetAggregateDiscoveredResourceCounts');
-    return this;
+    return this.to('GetAggregateDiscoveredResourceCounts');
   }
 
   /**
@@ -554,8 +510,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetAggregateResourceConfig.html
    */
   public toGetAggregateResourceConfig() {
-    this.to('config:GetAggregateResourceConfig');
-    return this;
+    return this.to('GetAggregateResourceConfig');
   }
 
   /**
@@ -566,8 +521,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceDetailsByConfigRule.html
    */
   public toGetComplianceDetailsByConfigRule() {
-    this.to('config:GetComplianceDetailsByConfigRule');
-    return this;
+    return this.to('GetComplianceDetailsByConfigRule');
   }
 
   /**
@@ -578,8 +532,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceDetailsByResource.html
    */
   public toGetComplianceDetailsByResource() {
-    this.to('config:GetComplianceDetailsByResource');
-    return this;
+    return this.to('GetComplianceDetailsByResource');
   }
 
   /**
@@ -590,8 +543,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceSummaryByConfigRule.html
    */
   public toGetComplianceSummaryByConfigRule() {
-    this.to('config:GetComplianceSummaryByConfigRule');
-    return this;
+    return this.to('GetComplianceSummaryByConfigRule');
   }
 
   /**
@@ -602,8 +554,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceSummaryByResourceType.html
    */
   public toGetComplianceSummaryByResourceType() {
-    this.to('config:GetComplianceSummaryByResourceType');
-    return this;
+    return this.to('GetComplianceSummaryByResourceType');
   }
 
   /**
@@ -614,8 +565,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetConformancePackComplianceDetails.html
    */
   public toGetConformancePackComplianceDetails() {
-    this.to('config:GetConformancePackComplianceDetails');
-    return this;
+    return this.to('GetConformancePackComplianceDetails');
   }
 
   /**
@@ -626,8 +576,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetConformancePackComplianceSummary.html
    */
   public toGetConformancePackComplianceSummary() {
-    this.to('config:GetConformancePackComplianceSummary');
-    return this;
+    return this.to('GetConformancePackComplianceSummary');
   }
 
   /**
@@ -638,8 +587,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetDiscoveredResourceCounts.html
    */
   public toGetDiscoveredResourceCounts() {
-    this.to('config:GetDiscoveredResourceCounts');
-    return this;
+    return this.to('GetDiscoveredResourceCounts');
   }
 
   /**
@@ -650,8 +598,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetOrganizationConfigRuleDetailedStatus.html
    */
   public toGetOrganizationConfigRuleDetailedStatus() {
-    this.to('config:GetOrganizationConfigRuleDetailedStatus');
-    return this;
+    return this.to('GetOrganizationConfigRuleDetailedStatus');
   }
 
   /**
@@ -662,8 +609,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetOrganizationConformancePackDetailedStatus.html
    */
   public toGetOrganizationConformancePackDetailedStatus() {
-    this.to('config:GetOrganizationConformancePackDetailedStatus');
-    return this;
+    return this.to('GetOrganizationConformancePackDetailedStatus');
   }
 
   /**
@@ -674,8 +620,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceConfigHistory.html
    */
   public toGetResourceConfigHistory() {
-    this.to('config:GetResourceConfigHistory');
-    return this;
+    return this.to('GetResourceConfigHistory');
   }
 
   /**
@@ -686,8 +631,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_ListAggregateDiscoveredResources.html
    */
   public toListAggregateDiscoveredResources() {
-    this.to('config:ListAggregateDiscoveredResources');
-    return this;
+    return this.to('ListAggregateDiscoveredResources');
   }
 
   /**
@@ -698,8 +642,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_ListDiscoveredResources.html
    */
   public toListDiscoveredResources() {
-    this.to('config:ListDiscoveredResources');
-    return this;
+    return this.to('ListDiscoveredResources');
   }
 
   /**
@@ -710,8 +653,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('config:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -726,8 +668,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutAggregationAuthorization.html
    */
   public toPutAggregationAuthorization() {
-    this.to('config:PutAggregationAuthorization');
-    return this;
+    return this.to('PutAggregationAuthorization');
   }
 
   /**
@@ -742,8 +683,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html
    */
   public toPutConfigRule() {
-    this.to('config:PutConfigRule');
-    return this;
+    return this.to('PutConfigRule');
   }
 
   /**
@@ -758,8 +698,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationAggregator.html
    */
   public toPutConfigurationAggregator() {
-    this.to('config:PutConfigurationAggregator');
-    return this;
+    return this.to('PutConfigurationAggregator');
   }
 
   /**
@@ -770,8 +709,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationRecorder.html
    */
   public toPutConfigurationRecorder() {
-    this.to('config:PutConfigurationRecorder');
-    return this;
+    return this.to('PutConfigurationRecorder');
   }
 
   /**
@@ -782,8 +720,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html
    */
   public toPutConformancePack() {
-    this.to('config:PutConformancePack');
-    return this;
+    return this.to('PutConformancePack');
   }
 
   /**
@@ -794,8 +731,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutDeliveryChannel.html
    */
   public toPutDeliveryChannel() {
-    this.to('config:PutDeliveryChannel');
-    return this;
+    return this.to('PutDeliveryChannel');
   }
 
   /**
@@ -806,8 +742,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutEvaluations.html
    */
   public toPutEvaluations() {
-    this.to('config:PutEvaluations');
-    return this;
+    return this.to('PutEvaluations');
   }
 
   /**
@@ -818,8 +753,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConfigRule.html
    */
   public toPutOrganizationConfigRule() {
-    this.to('config:PutOrganizationConfigRule');
-    return this;
+    return this.to('PutOrganizationConfigRule');
   }
 
   /**
@@ -830,8 +764,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConformancePack.html
    */
   public toPutOrganizationConformancePack() {
-    this.to('config:PutOrganizationConformancePack');
-    return this;
+    return this.to('PutOrganizationConformancePack');
   }
 
   /**
@@ -842,8 +775,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutRemediationConfigurations.html
    */
   public toPutRemediationConfigurations() {
-    this.to('config:PutRemediationConfigurations');
-    return this;
+    return this.to('PutRemediationConfigurations');
   }
 
   /**
@@ -854,8 +786,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutRemediationExceptions.html
    */
   public toPutRemediationExceptions() {
-    this.to('config:PutRemediationExceptions');
-    return this;
+    return this.to('PutRemediationExceptions');
   }
 
   /**
@@ -866,8 +797,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutResourceConfig.html
    */
   public toPutResourceConfig() {
-    this.to('config:PutResourceConfig');
-    return this;
+    return this.to('PutResourceConfig');
   }
 
   /**
@@ -878,8 +808,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutRetentionConfiguration.html
    */
   public toPutRetentionConfiguration() {
-    this.to('config:PutRetentionConfiguration');
-    return this;
+    return this.to('PutRetentionConfiguration');
   }
 
   /**
@@ -890,8 +819,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_SelectAggregateResourceConfig.html
    */
   public toSelectAggregateResourceConfig() {
-    this.to('config:SelectAggregateResourceConfig');
-    return this;
+    return this.to('SelectAggregateResourceConfig');
   }
 
   /**
@@ -902,8 +830,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_SelectResourceConfig.html
    */
   public toSelectResourceConfig() {
-    this.to('config:SelectResourceConfig');
-    return this;
+    return this.to('SelectResourceConfig');
   }
 
   /**
@@ -914,8 +841,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigRulesEvaluation.html
    */
   public toStartConfigRulesEvaluation() {
-    this.to('config:StartConfigRulesEvaluation');
-    return this;
+    return this.to('StartConfigRulesEvaluation');
   }
 
   /**
@@ -926,8 +852,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigurationRecorder.html
    */
   public toStartConfigurationRecorder() {
-    this.to('config:StartConfigurationRecorder');
-    return this;
+    return this.to('StartConfigurationRecorder');
   }
 
   /**
@@ -938,8 +863,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_StartRemediationExecution.html
    */
   public toStartRemediationExecution() {
-    this.to('config:StartRemediationExecution');
-    return this;
+    return this.to('StartRemediationExecution');
   }
 
   /**
@@ -950,8 +874,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_StopConfigurationRecorder.html
    */
   public toStopConfigurationRecorder() {
-    this.to('config:StopConfigurationRecorder');
-    return this;
+    return this.to('StopConfigurationRecorder');
   }
 
   /**
@@ -966,8 +889,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('config:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -981,8 +903,7 @@ export class Config extends PolicyStatement {
    * https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('config:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   protected accessLevelList: AccessLevelList = {

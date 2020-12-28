@@ -11,3 +11,4 @@ test/cdk.out
 docs/build
 examples/*/*.*.result
 **/*.pyc
+package-lock.json

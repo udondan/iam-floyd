@@ -26,8 +26,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCachePolicy.html
    */
   public toCreateCachePolicy() {
-    this.to('cloudfront:CreateCachePolicy');
-    return this;
+    return this.to('CreateCachePolicy');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCloudFrontOriginAccessIdentity.html
    */
   public toCreateCloudFrontOriginAccessIdentity() {
-    this.to('cloudfront:CreateCloudFrontOriginAccessIdentity');
-    return this;
+    return this.to('CreateCloudFrontOriginAccessIdentity');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html
    */
   public toCreateDistribution() {
-    this.to('cloudfront:CreateDistribution');
-    return this;
+    return this.to('CreateDistribution');
   }
 
   /**
@@ -66,8 +63,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistributionWithTags.html
    */
   public toCreateDistributionWithTags() {
-    this.to('cloudfront:CreateDistributionWithTags');
-    return this;
+    return this.to('CreateDistributionWithTags');
   }
 
   /**
@@ -78,8 +74,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFieldLevelEncryptionConfig.html
    */
   public toCreateFieldLevelEncryptionConfig() {
-    this.to('cloudfront:CreateFieldLevelEncryptionConfig');
-    return this;
+    return this.to('CreateFieldLevelEncryptionConfig');
   }
 
   /**
@@ -90,8 +85,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFieldLevelEncryptionProfile.html
    */
   public toCreateFieldLevelEncryptionProfile() {
-    this.to('cloudfront:CreateFieldLevelEncryptionProfile');
-    return this;
+    return this.to('CreateFieldLevelEncryptionProfile');
   }
 
   /**
@@ -102,8 +96,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateInvalidation.html
    */
   public toCreateInvalidation() {
-    this.to('cloudfront:CreateInvalidation');
-    return this;
+    return this.to('CreateInvalidation');
   }
 
   /**
@@ -114,8 +107,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateOriginRequestPolicy.html
    */
   public toCreateOriginRequestPolicy() {
-    this.to('cloudfront:CreateOriginRequestPolicy');
-    return this;
+    return this.to('CreateOriginRequestPolicy');
   }
 
   /**
@@ -126,8 +118,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreatePublicKey.html
    */
   public toCreatePublicKey() {
-    this.to('cloudfront:CreatePublicKey');
-    return this;
+    return this.to('CreatePublicKey');
   }
 
   /**
@@ -138,8 +129,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateStreamingDistribution.html
    */
   public toCreateStreamingDistribution() {
-    this.to('cloudfront:CreateStreamingDistribution');
-    return this;
+    return this.to('CreateStreamingDistribution');
   }
 
   /**
@@ -154,8 +144,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateStreamingDistributionWithTags.html
    */
   public toCreateStreamingDistributionWithTags() {
-    this.to('cloudfront:CreateStreamingDistributionWithTags');
-    return this;
+    return this.to('CreateStreamingDistributionWithTags');
   }
 
   /**
@@ -166,8 +155,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteCachePolicy.html
    */
   public toDeleteCachePolicy() {
-    this.to('cloudfront:DeleteCachePolicy');
-    return this;
+    return this.to('DeleteCachePolicy');
   }
 
   /**
@@ -178,8 +166,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteCloudFrontOriginAccessIdentity.html
    */
   public toDeleteCloudFrontOriginAccessIdentity() {
-    this.to('cloudfront:DeleteCloudFrontOriginAccessIdentity');
-    return this;
+    return this.to('DeleteCloudFrontOriginAccessIdentity');
   }
 
   /**
@@ -190,8 +177,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteDistribution.html
    */
   public toDeleteDistribution() {
-    this.to('cloudfront:DeleteDistribution');
-    return this;
+    return this.to('DeleteDistribution');
   }
 
   /**
@@ -202,8 +188,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteFieldLevelEncryptionConfig.html
    */
   public toDeleteFieldLevelEncryptionConfig() {
-    this.to('cloudfront:DeleteFieldLevelEncryptionConfig');
-    return this;
+    return this.to('DeleteFieldLevelEncryptionConfig');
   }
 
   /**
@@ -214,8 +199,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteFieldLevelEncryptionProfile.html
    */
   public toDeleteFieldLevelEncryptionProfile() {
-    this.to('cloudfront:DeleteFieldLevelEncryptionProfile');
-    return this;
+    return this.to('DeleteFieldLevelEncryptionProfile');
   }
 
   /**
@@ -226,8 +210,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteOriginRequestPolicy.html
    */
   public toDeleteOriginRequestPolicy() {
-    this.to('cloudfront:DeleteOriginRequestPolicy');
-    return this;
+    return this.to('DeleteOriginRequestPolicy');
   }
 
   /**
@@ -238,8 +221,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeletePublicKey.html
    */
   public toDeletePublicKey() {
-    this.to('cloudfront:DeletePublicKey');
-    return this;
+    return this.to('DeletePublicKey');
   }
 
   /**
@@ -250,8 +232,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteStreamingDistribution.html
    */
   public toDeleteStreamingDistribution() {
-    this.to('cloudfront:DeleteStreamingDistribution');
-    return this;
+    return this.to('DeleteStreamingDistribution');
   }
 
   /**
@@ -262,8 +243,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCachePolicy.html
    */
   public toGetCachePolicy() {
-    this.to('cloudfront:GetCachePolicy');
-    return this;
+    return this.to('GetCachePolicy');
   }
 
   /**
@@ -274,8 +254,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCachePolicyConfig.html
    */
   public toGetCachePolicyConfig() {
-    this.to('cloudfront:GetCachePolicyConfig');
-    return this;
+    return this.to('GetCachePolicyConfig');
   }
 
   /**
@@ -286,8 +265,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCloudFrontOriginAccessIdentity.html
    */
   public toGetCloudFrontOriginAccessIdentity() {
-    this.to('cloudfront:GetCloudFrontOriginAccessIdentity');
-    return this;
+    return this.to('GetCloudFrontOriginAccessIdentity');
   }
 
   /**
@@ -298,8 +276,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCloudFrontOriginAccessIdentityConfig.html
    */
   public toGetCloudFrontOriginAccessIdentityConfig() {
-    this.to('cloudfront:GetCloudFrontOriginAccessIdentityConfig');
-    return this;
+    return this.to('GetCloudFrontOriginAccessIdentityConfig');
   }
 
   /**
@@ -310,8 +287,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html
    */
   public toGetDistribution() {
-    this.to('cloudfront:GetDistribution');
-    return this;
+    return this.to('GetDistribution');
   }
 
   /**
@@ -322,8 +298,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html
    */
   public toGetDistributionConfig() {
-    this.to('cloudfront:GetDistributionConfig');
-    return this;
+    return this.to('GetDistributionConfig');
   }
 
   /**
@@ -334,8 +309,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryption.html
    */
   public toGetFieldLevelEncryption() {
-    this.to('cloudfront:GetFieldLevelEncryption');
-    return this;
+    return this.to('GetFieldLevelEncryption');
   }
 
   /**
@@ -346,8 +320,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionConfig.html
    */
   public toGetFieldLevelEncryptionConfig() {
-    this.to('cloudfront:GetFieldLevelEncryptionConfig');
-    return this;
+    return this.to('GetFieldLevelEncryptionConfig');
   }
 
   /**
@@ -358,8 +331,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionProfile.html
    */
   public toGetFieldLevelEncryptionProfile() {
-    this.to('cloudfront:GetFieldLevelEncryptionProfile');
-    return this;
+    return this.to('GetFieldLevelEncryptionProfile');
   }
 
   /**
@@ -370,8 +342,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionProfileConfig.html
    */
   public toGetFieldLevelEncryptionProfileConfig() {
-    this.to('cloudfront:GetFieldLevelEncryptionProfileConfig');
-    return this;
+    return this.to('GetFieldLevelEncryptionProfileConfig');
   }
 
   /**
@@ -382,8 +353,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetInvalidation.html
    */
   public toGetInvalidation() {
-    this.to('cloudfront:GetInvalidation');
-    return this;
+    return this.to('GetInvalidation');
   }
 
   /**
@@ -394,8 +364,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetOriginRequestPolicy.html
    */
   public toGetOriginRequestPolicy() {
-    this.to('cloudfront:GetOriginRequestPolicy');
-    return this;
+    return this.to('GetOriginRequestPolicy');
   }
 
   /**
@@ -406,8 +375,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetOriginRequestPolicyConfig.html
    */
   public toGetOriginRequestPolicyConfig() {
-    this.to('cloudfront:GetOriginRequestPolicyConfig');
-    return this;
+    return this.to('GetOriginRequestPolicyConfig');
   }
 
   /**
@@ -418,8 +386,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetPublicKey.html
    */
   public toGetPublicKey() {
-    this.to('cloudfront:GetPublicKey');
-    return this;
+    return this.to('GetPublicKey');
   }
 
   /**
@@ -430,8 +397,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetPublicKeyConfig.html
    */
   public toGetPublicKeyConfig() {
-    this.to('cloudfront:GetPublicKeyConfig');
-    return this;
+    return this.to('GetPublicKeyConfig');
   }
 
   /**
@@ -442,8 +408,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetStreamingDistribution.html
    */
   public toGetStreamingDistribution() {
-    this.to('cloudfront:GetStreamingDistribution');
-    return this;
+    return this.to('GetStreamingDistribution');
   }
 
   /**
@@ -454,8 +419,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetStreamingDistributionConfig.html
    */
   public toGetStreamingDistributionConfig() {
-    this.to('cloudfront:GetStreamingDistributionConfig');
-    return this;
+    return this.to('GetStreamingDistributionConfig');
   }
 
   /**
@@ -466,8 +430,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListCachePolicies.html
    */
   public toListCachePolicies() {
-    this.to('cloudfront:ListCachePolicies');
-    return this;
+    return this.to('ListCachePolicies');
   }
 
   /**
@@ -478,8 +441,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListCloudFrontOriginAccessIdentities.html
    */
   public toListCloudFrontOriginAccessIdentities() {
-    this.to('cloudfront:ListCloudFrontOriginAccessIdentities');
-    return this;
+    return this.to('ListCloudFrontOriginAccessIdentities');
   }
 
   /**
@@ -490,8 +452,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributions.html
    */
   public toListDistributions() {
-    this.to('cloudfront:ListDistributions');
-    return this;
+    return this.to('ListDistributions');
   }
 
   /**
@@ -502,8 +463,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByCachePolicyId.html
    */
   public toListDistributionsByCachePolicyId() {
-    this.to('cloudfront:ListDistributionsByCachePolicyId');
-    return this;
+    return this.to('ListDistributionsByCachePolicyId');
   }
 
   /**
@@ -514,8 +474,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByOriginRequestPolicyId.html
    */
   public toListDistributionsByOriginRequestPolicyId() {
-    this.to('cloudfront:ListDistributionsByOriginRequestPolicyId');
-    return this;
+    return this.to('ListDistributionsByOriginRequestPolicyId');
   }
 
   /**
@@ -526,8 +485,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html
    */
   public toListDistributionsByWebACLId() {
-    this.to('cloudfront:ListDistributionsByWebACLId');
-    return this;
+    return this.to('ListDistributionsByWebACLId');
   }
 
   /**
@@ -538,8 +496,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListFieldLevelEncryptionConfigs.html
    */
   public toListFieldLevelEncryptionConfigs() {
-    this.to('cloudfront:ListFieldLevelEncryptionConfigs');
-    return this;
+    return this.to('ListFieldLevelEncryptionConfigs');
   }
 
   /**
@@ -550,8 +507,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListFieldLevelEncryptionProfiles.html
    */
   public toListFieldLevelEncryptionProfiles() {
-    this.to('cloudfront:ListFieldLevelEncryptionProfiles');
-    return this;
+    return this.to('ListFieldLevelEncryptionProfiles');
   }
 
   /**
@@ -562,8 +518,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListInvalidations.html
    */
   public toListInvalidations() {
-    this.to('cloudfront:ListInvalidations');
-    return this;
+    return this.to('ListInvalidations');
   }
 
   /**
@@ -574,8 +529,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListOriginRequestPolicies.html
    */
   public toListOriginRequestPolicies() {
-    this.to('cloudfront:ListOriginRequestPolicies');
-    return this;
+    return this.to('ListOriginRequestPolicies');
   }
 
   /**
@@ -586,8 +540,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListPublicKeys.html
    */
   public toListPublicKeys() {
-    this.to('cloudfront:ListPublicKeys');
-    return this;
+    return this.to('ListPublicKeys');
   }
 
   /**
@@ -598,8 +551,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListStreamingDistributions.html
    */
   public toListStreamingDistributions() {
-    this.to('cloudfront:ListStreamingDistributions');
-    return this;
+    return this.to('ListStreamingDistributions');
   }
 
   /**
@@ -610,8 +562,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('cloudfront:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -626,8 +577,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('cloudfront:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -641,8 +591,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('cloudfront:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -653,8 +602,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateCachePolicy.html
    */
   public toUpdateCachePolicy() {
-    this.to('cloudfront:UpdateCachePolicy');
-    return this;
+    return this.to('UpdateCachePolicy');
   }
 
   /**
@@ -665,8 +613,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateCloudFrontOriginAccessIdentity.html
    */
   public toUpdateCloudFrontOriginAccessIdentity() {
-    this.to('cloudfront:UpdateCloudFrontOriginAccessIdentity');
-    return this;
+    return this.to('UpdateCloudFrontOriginAccessIdentity');
   }
 
   /**
@@ -677,8 +624,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html
    */
   public toUpdateDistribution() {
-    this.to('cloudfront:UpdateDistribution');
-    return this;
+    return this.to('UpdateDistribution');
   }
 
   /**
@@ -689,8 +635,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateFieldLevelEncryptionConfig.html
    */
   public toUpdateFieldLevelEncryptionConfig() {
-    this.to('cloudfront:UpdateFieldLevelEncryptionConfig');
-    return this;
+    return this.to('UpdateFieldLevelEncryptionConfig');
   }
 
   /**
@@ -701,8 +646,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateFieldLevelEncryptionProfile.html
    */
   public toUpdateFieldLevelEncryptionProfile() {
-    this.to('cloudfront:UpdateFieldLevelEncryptionProfile');
-    return this;
+    return this.to('UpdateFieldLevelEncryptionProfile');
   }
 
   /**
@@ -713,8 +657,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateOriginRequestPolicy.html
    */
   public toUpdateOriginRequestPolicy() {
-    this.to('cloudfront:UpdateOriginRequestPolicy');
-    return this;
+    return this.to('UpdateOriginRequestPolicy');
   }
 
   /**
@@ -725,8 +668,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdatePublicKey.html
    */
   public toUpdatePublicKey() {
-    this.to('cloudfront:UpdatePublicKey');
-    return this;
+    return this.to('UpdatePublicKey');
   }
 
   /**
@@ -737,8 +679,7 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateStreamingDistribution.html
    */
   public toUpdateStreamingDistribution() {
-    this.to('cloudfront:UpdateStreamingDistribution');
-    return this;
+    return this.to('UpdateStreamingDistribution');
   }
 
   protected accessLevelList: AccessLevelList = {

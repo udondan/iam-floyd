@@ -30,7 +30,7 @@ kms:ListAliases;List
 kms:ListGrants;List
 kms:ListKeyPolicies;List
 kms:ListKeys;List
-kms:ListResourceTags;Read
+kms:ListResourceTags;List
 kms:ListRetirableGrants;List
 kms:PutKeyPolicy;Permissions management
 kms:ReEncryptFrom;Write

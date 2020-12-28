@@ -26,8 +26,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_AbortEnvironmentUpdate.html
    */
   public toAbortEnvironmentUpdate() {
-    this.to('elasticbeanstalk:AbortEnvironmentUpdate');
-    return this;
+    return this.to('AbortEnvironmentUpdate');
   }
 
   /**
@@ -42,8 +41,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html
    */
   public toAddTags() {
-    this.to('elasticbeanstalk:AddTags');
-    return this;
+    return this.to('AddTags');
   }
 
   /**
@@ -54,8 +52,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ApplyEnvironmentManagedAction.html
    */
   public toApplyEnvironmentManagedAction() {
-    this.to('elasticbeanstalk:ApplyEnvironmentManagedAction');
-    return this;
+    return this.to('ApplyEnvironmentManagedAction');
   }
 
   /**
@@ -66,8 +63,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_AssociateEnvironmentOperationsRole.html
    */
   public toAssociateEnvironmentOperationsRole() {
-    this.to('elasticbeanstalk:AssociateEnvironmentOperationsRole');
-    return this;
+    return this.to('AssociateEnvironmentOperationsRole');
   }
 
   /**
@@ -78,8 +74,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CheckDNSAvailability.html
    */
   public toCheckDNSAvailability() {
-    this.to('elasticbeanstalk:CheckDNSAvailability');
-    return this;
+    return this.to('CheckDNSAvailability');
   }
 
   /**
@@ -90,8 +85,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ComposeEnvironments.html
    */
   public toComposeEnvironments() {
-    this.to('elasticbeanstalk:ComposeEnvironments');
-    return this;
+    return this.to('ComposeEnvironments');
   }
 
   /**
@@ -106,8 +100,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplication.html
    */
   public toCreateApplication() {
-    this.to('elasticbeanstalk:CreateApplication');
-    return this;
+    return this.to('CreateApplication');
   }
 
   /**
@@ -122,8 +115,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplicationVersion.html
    */
   public toCreateApplicationVersion() {
-    this.to('elasticbeanstalk:CreateApplicationVersion');
-    return this;
+    return this.to('CreateApplicationVersion');
   }
 
   /**
@@ -144,8 +136,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateConfigurationTemplate.html
    */
   public toCreateConfigurationTemplate() {
-    this.to('elasticbeanstalk:CreateConfigurationTemplate');
-    return this;
+    return this.to('CreateConfigurationTemplate');
   }
 
   /**
@@ -164,8 +155,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateEnvironment.html
    */
   public toCreateEnvironment() {
-    this.to('elasticbeanstalk:CreateEnvironment');
-    return this;
+    return this.to('CreateEnvironment');
   }
 
   /**
@@ -180,8 +170,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreatePlatformVersion.html
    */
   public toCreatePlatformVersion() {
-    this.to('elasticbeanstalk:CreatePlatformVersion');
-    return this;
+    return this.to('CreatePlatformVersion');
   }
 
   /**
@@ -192,8 +181,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateStorageLocation.html
    */
   public toCreateStorageLocation() {
-    this.to('elasticbeanstalk:CreateStorageLocation');
-    return this;
+    return this.to('CreateStorageLocation');
   }
 
   /**
@@ -204,8 +192,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeleteApplication.html
    */
   public toDeleteApplication() {
-    this.to('elasticbeanstalk:DeleteApplication');
-    return this;
+    return this.to('DeleteApplication');
   }
 
   /**
@@ -216,8 +203,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeleteApplicationVersion.html
    */
   public toDeleteApplicationVersion() {
-    this.to('elasticbeanstalk:DeleteApplicationVersion');
-    return this;
+    return this.to('DeleteApplicationVersion');
   }
 
   /**
@@ -228,8 +214,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeleteConfigurationTemplate.html
    */
   public toDeleteConfigurationTemplate() {
-    this.to('elasticbeanstalk:DeleteConfigurationTemplate');
-    return this;
+    return this.to('DeleteConfigurationTemplate');
   }
 
   /**
@@ -240,8 +225,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeleteEnvironmentConfiguration.html
    */
   public toDeleteEnvironmentConfiguration() {
-    this.to('elasticbeanstalk:DeleteEnvironmentConfiguration');
-    return this;
+    return this.to('DeleteEnvironmentConfiguration');
   }
 
   /**
@@ -252,8 +236,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeletePlatformVersion.html
    */
   public toDeletePlatformVersion() {
-    this.to('elasticbeanstalk:DeletePlatformVersion');
-    return this;
+    return this.to('DeletePlatformVersion');
   }
 
   /**
@@ -264,8 +247,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeAccountAttributes.html
    */
   public toDescribeAccountAttributes() {
-    this.to('elasticbeanstalk:DescribeAccountAttributes');
-    return this;
+    return this.to('DescribeAccountAttributes');
   }
 
   /**
@@ -276,8 +258,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeApplicationVersions.html
    */
   public toDescribeApplicationVersions() {
-    this.to('elasticbeanstalk:DescribeApplicationVersions');
-    return this;
+    return this.to('DescribeApplicationVersions');
   }
 
   /**
@@ -288,8 +269,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeApplications.html
    */
   public toDescribeApplications() {
-    this.to('elasticbeanstalk:DescribeApplications');
-    return this;
+    return this.to('DescribeApplications');
   }
 
   /**
@@ -300,8 +280,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeConfigurationOptions.html
    */
   public toDescribeConfigurationOptions() {
-    this.to('elasticbeanstalk:DescribeConfigurationOptions');
-    return this;
+    return this.to('DescribeConfigurationOptions');
   }
 
   /**
@@ -312,8 +291,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeConfigurationSettings.html
    */
   public toDescribeConfigurationSettings() {
-    this.to('elasticbeanstalk:DescribeConfigurationSettings');
-    return this;
+    return this.to('DescribeConfigurationSettings');
   }
 
   /**
@@ -324,8 +302,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironmentHealth.html
    */
   public toDescribeEnvironmentHealth() {
-    this.to('elasticbeanstalk:DescribeEnvironmentHealth');
-    return this;
+    return this.to('DescribeEnvironmentHealth');
   }
 
   /**
@@ -336,8 +313,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironmentManagedActionHistory.html
    */
   public toDescribeEnvironmentManagedActionHistory() {
-    this.to('elasticbeanstalk:DescribeEnvironmentManagedActionHistory');
-    return this;
+    return this.to('DescribeEnvironmentManagedActionHistory');
   }
 
   /**
@@ -348,8 +324,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironmentManagedActions.html
    */
   public toDescribeEnvironmentManagedActions() {
-    this.to('elasticbeanstalk:DescribeEnvironmentManagedActions');
-    return this;
+    return this.to('DescribeEnvironmentManagedActions');
   }
 
   /**
@@ -360,8 +335,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironmentResources.html
    */
   public toDescribeEnvironmentResources() {
-    this.to('elasticbeanstalk:DescribeEnvironmentResources');
-    return this;
+    return this.to('DescribeEnvironmentResources');
   }
 
   /**
@@ -372,8 +346,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html
    */
   public toDescribeEnvironments() {
-    this.to('elasticbeanstalk:DescribeEnvironments');
-    return this;
+    return this.to('DescribeEnvironments');
   }
 
   /**
@@ -384,8 +357,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEvents.html
    */
   public toDescribeEvents() {
-    this.to('elasticbeanstalk:DescribeEvents');
-    return this;
+    return this.to('DescribeEvents');
   }
 
   /**
@@ -396,8 +368,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeInstancesHealth.html
    */
   public toDescribeInstancesHealth() {
-    this.to('elasticbeanstalk:DescribeInstancesHealth');
-    return this;
+    return this.to('DescribeInstancesHealth');
   }
 
   /**
@@ -408,8 +379,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribePlatformVersion.html
    */
   public toDescribePlatformVersion() {
-    this.to('elasticbeanstalk:DescribePlatformVersion');
-    return this;
+    return this.to('DescribePlatformVersion');
   }
 
   /**
@@ -420,8 +390,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DisassociateEnvironmentOperationsRole.html
    */
   public toDisassociateEnvironmentOperationsRole() {
-    this.to('elasticbeanstalk:DisassociateEnvironmentOperationsRole');
-    return this;
+    return this.to('DisassociateEnvironmentOperationsRole');
   }
 
   /**
@@ -432,8 +401,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html
    */
   public toListAvailableSolutionStacks() {
-    this.to('elasticbeanstalk:ListAvailableSolutionStacks');
-    return this;
+    return this.to('ListAvailableSolutionStacks');
   }
 
   /**
@@ -444,8 +412,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListPlatformBranches.html
    */
   public toListPlatformBranches() {
-    this.to('elasticbeanstalk:ListPlatformBranches');
-    return this;
+    return this.to('ListPlatformBranches');
   }
 
   /**
@@ -456,8 +423,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListPlatformVersions.html
    */
   public toListPlatformVersions() {
-    this.to('elasticbeanstalk:ListPlatformVersions');
-    return this;
+    return this.to('ListPlatformVersions');
   }
 
   /**
@@ -468,8 +434,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('elasticbeanstalk:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -480,8 +445,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html#health-enhanced-authz
    */
   public toPutInstanceStatistics() {
-    this.to('elasticbeanstalk:PutInstanceStatistics');
-    return this;
+    return this.to('PutInstanceStatistics');
   }
 
   /**
@@ -492,8 +456,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html
    */
   public toRebuildEnvironment() {
-    this.to('elasticbeanstalk:RebuildEnvironment');
-    return this;
+    return this.to('RebuildEnvironment');
   }
 
   /**
@@ -507,8 +470,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html
    */
   public toRemoveTags() {
-    this.to('elasticbeanstalk:RemoveTags');
-    return this;
+    return this.to('RemoveTags');
   }
 
   /**
@@ -519,8 +481,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RequestEnvironmentInfo.html
    */
   public toRequestEnvironmentInfo() {
-    this.to('elasticbeanstalk:RequestEnvironmentInfo');
-    return this;
+    return this.to('RequestEnvironmentInfo');
   }
 
   /**
@@ -531,8 +492,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RestartAppServer.html
    */
   public toRestartAppServer() {
-    this.to('elasticbeanstalk:RestartAppServer');
-    return this;
+    return this.to('RestartAppServer');
   }
 
   /**
@@ -543,8 +503,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RetrieveEnvironmentInfo.html
    */
   public toRetrieveEnvironmentInfo() {
-    this.to('elasticbeanstalk:RetrieveEnvironmentInfo');
-    return this;
+    return this.to('RetrieveEnvironmentInfo');
   }
 
   /**
@@ -558,8 +517,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_SwapEnvironmentCNAMEs.html
    */
   public toSwapEnvironmentCNAMEs() {
-    this.to('elasticbeanstalk:SwapEnvironmentCNAMEs');
-    return this;
+    return this.to('SwapEnvironmentCNAMEs');
   }
 
   /**
@@ -570,8 +528,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_TerminateEnvironment.html
    */
   public toTerminateEnvironment() {
-    this.to('elasticbeanstalk:TerminateEnvironment');
-    return this;
+    return this.to('TerminateEnvironment');
   }
 
   /**
@@ -582,8 +539,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateApplication.html
    */
   public toUpdateApplication() {
-    this.to('elasticbeanstalk:UpdateApplication');
-    return this;
+    return this.to('UpdateApplication');
   }
 
   /**
@@ -594,8 +550,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateApplicationResourceLifecycle.html
    */
   public toUpdateApplicationResourceLifecycle() {
-    this.to('elasticbeanstalk:UpdateApplicationResourceLifecycle');
-    return this;
+    return this.to('UpdateApplicationResourceLifecycle');
   }
 
   /**
@@ -606,8 +561,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateApplicationVersion.html
    */
   public toUpdateApplicationVersion() {
-    this.to('elasticbeanstalk:UpdateApplicationVersion');
-    return this;
+    return this.to('UpdateApplicationVersion');
   }
 
   /**
@@ -626,8 +580,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateConfigurationTemplate.html
    */
   public toUpdateConfigurationTemplate() {
-    this.to('elasticbeanstalk:UpdateConfigurationTemplate');
-    return this;
+    return this.to('UpdateConfigurationTemplate');
   }
 
   /**
@@ -644,8 +597,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateEnvironment.html
    */
   public toUpdateEnvironment() {
-    this.to('elasticbeanstalk:UpdateEnvironment');
-    return this;
+    return this.to('UpdateEnvironment');
   }
 
   /**
@@ -656,8 +608,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ValidateConfigurationSettings.html
    */
   public toValidateConfigurationSettings() {
-    this.to('elasticbeanstalk:ValidateConfigurationSettings');
-    return this;
+    return this.to('ValidateConfigurationSettings');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -864,7 +815,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFromApplication(value: string | string[], operator?: Operator | string) {
-    return this.if(`elasticbeanstalk:FromApplication`, value, operator || 'ArnLike');
+    return this.if(`FromApplication`, value, operator || 'ArnLike');
   }
 
   /**
@@ -882,7 +833,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFromApplicationVersion(value: string | string[], operator?: Operator | string) {
-    return this.if(`elasticbeanstalk:FromApplicationVersion`, value, operator || 'ArnLike');
+    return this.if(`FromApplicationVersion`, value, operator || 'ArnLike');
   }
 
   /**
@@ -900,7 +851,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFromConfigurationTemplate(value: string | string[], operator?: Operator | string) {
-    return this.if(`elasticbeanstalk:FromConfigurationTemplate`, value, operator || 'ArnLike');
+    return this.if(`FromConfigurationTemplate`, value, operator || 'ArnLike');
   }
 
   /**
@@ -917,7 +868,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFromEnvironment(value: string | string[], operator?: Operator | string) {
-    return this.if(`elasticbeanstalk:FromEnvironment`, value, operator || 'ArnLike');
+    return this.if(`FromEnvironment`, value, operator || 'ArnLike');
   }
 
   /**
@@ -935,7 +886,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFromPlatform(value: string | string[], operator?: Operator | string) {
-    return this.if(`elasticbeanstalk:FromPlatform`, value, operator || 'ArnLike');
+    return this.if(`FromPlatform`, value, operator || 'ArnLike');
   }
 
   /**
@@ -953,7 +904,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFromSolutionStack(value: string | string[], operator?: Operator | string) {
-    return this.if(`elasticbeanstalk:FromSolutionStack`, value, operator || 'ArnLike');
+    return this.if(`FromSolutionStack`, value, operator || 'ArnLike');
   }
 
   /**
@@ -999,6 +950,6 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifInApplication(value: string | string[], operator?: Operator | string) {
-    return this.if(`elasticbeanstalk:InApplication`, value, operator || 'ArnLike');
+    return this.if(`InApplication`, value, operator || 'ArnLike');
   }
 }

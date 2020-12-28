@@ -26,8 +26,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html
    */
   public toDescribeBuilds() {
-    this.to('aws-marketplace:DescribeBuilds');
-    return this;
+    return this.to('DescribeBuilds');
   }
 
   /**
@@ -38,8 +37,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html
    */
   public toListBuilds() {
-    this.to('aws-marketplace:ListBuilds');
-    return this;
+    return this.to('ListBuilds');
   }
 
   /**
@@ -50,8 +48,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html
    */
   public toStartBuild() {
-    this.to('aws-marketplace:StartBuild');
-    return this;
+    return this.to('StartBuild');
   }
 
   protected accessLevelList: AccessLevelList = {

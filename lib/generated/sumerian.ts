@@ -26,8 +26,7 @@ export class Sumerian extends PolicyStatement {
    * https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html
    */
   public toLogin() {
-    this.to('sumerian:Login');
-    return this;
+    return this.to('Login');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Sumerian extends PolicyStatement {
    * https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html
    */
   public toViewRelease() {
-    this.to('sumerian:ViewRelease');
-    return this;
+    return this.to('ViewRelease');
   }
 
   protected accessLevelList: AccessLevelList = {

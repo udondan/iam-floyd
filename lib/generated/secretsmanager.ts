@@ -31,8 +31,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toCancelRotateSecret() {
-    this.to('secretsmanager:CancelRotateSecret');
-    return this;
+    return this.to('CancelRotateSecret');
   }
 
   /**
@@ -51,8 +50,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toCreateSecret() {
-    this.to('secretsmanager:CreateSecret');
-    return this;
+    return this.to('CreateSecret');
   }
 
   /**
@@ -68,8 +66,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toDeleteResourcePolicy() {
-    this.to('secretsmanager:DeleteResourcePolicy');
-    return this;
+    return this.to('DeleteResourcePolicy');
   }
 
   /**
@@ -87,8 +84,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toDeleteSecret() {
-    this.to('secretsmanager:DeleteSecret');
-    return this;
+    return this.to('DeleteSecret');
   }
 
   /**
@@ -104,8 +100,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toDescribeSecret() {
-    this.to('secretsmanager:DescribeSecret');
-    return this;
+    return this.to('DescribeSecret');
   }
 
   /**
@@ -116,8 +111,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toGetRandomPassword() {
-    this.to('secretsmanager:GetRandomPassword');
-    return this;
+    return this.to('GetRandomPassword');
   }
 
   /**
@@ -133,8 +127,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toGetResourcePolicy() {
-    this.to('secretsmanager:GetResourcePolicy');
-    return this;
+    return this.to('GetResourcePolicy');
   }
 
   /**
@@ -152,8 +145,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toGetSecretValue() {
-    this.to('secretsmanager:GetSecretValue');
-    return this;
+    return this.to('GetSecretValue');
   }
 
   /**
@@ -169,8 +161,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toListSecretVersionIds() {
-    this.to('secretsmanager:ListSecretVersionIds');
-    return this;
+    return this.to('ListSecretVersionIds');
   }
 
   /**
@@ -181,8 +172,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toListSecrets() {
-    this.to('secretsmanager:ListSecrets');
-    return this;
+    return this.to('ListSecrets');
   }
 
   /**
@@ -199,8 +189,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toPutResourcePolicy() {
-    this.to('secretsmanager:PutResourcePolicy');
-    return this;
+    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -216,8 +205,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toPutSecretValue() {
-    this.to('secretsmanager:PutSecretValue');
-    return this;
+    return this.to('PutSecretValue');
   }
 
   /**
@@ -233,8 +221,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toRestoreSecret() {
-    this.to('secretsmanager:RestoreSecret');
-    return this;
+    return this.to('RestoreSecret');
   }
 
   /**
@@ -251,8 +238,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toRotateSecret() {
-    this.to('secretsmanager:RotateSecret');
-    return this;
+    return this.to('RotateSecret');
   }
 
   /**
@@ -270,8 +256,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toTagResource() {
-    this.to('secretsmanager:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -288,8 +273,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toUntagResource() {
-    this.to('secretsmanager:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -307,8 +291,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toUpdateSecret() {
-    this.to('secretsmanager:UpdateSecret');
-    return this;
+    return this.to('UpdateSecret');
   }
 
   /**
@@ -325,8 +308,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toUpdateSecretVersionStage() {
-    this.to('secretsmanager:UpdateSecretVersionStage');
-    return this;
+    return this.to('UpdateSecretVersionStage');
   }
 
   /**
@@ -342,8 +324,7 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public toValidateResourcePolicy() {
-    this.to('secretsmanager:ValidateResourcePolicy');
-    return this;
+    return this.to('ValidateResourcePolicy');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -430,7 +411,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDescription(value: string | string[], operator?: Operator | string) {
-    return this.if(`secretsmanager:Description`, value, operator || 'StringLike');
+    return this.if(`Description`, value, operator || 'StringLike');
   }
 
   /**
@@ -460,7 +441,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifKmsKeyId(value: string | string[], operator?: Operator | string) {
-    return this.if(`secretsmanager:KmsKeyId`, value, operator || 'StringLike');
+    return this.if(`KmsKeyId`, value, operator || 'StringLike');
   }
 
   /**
@@ -475,7 +456,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifName(value: string | string[], operator?: Operator | string) {
-    return this.if(`secretsmanager:Name`, value, operator || 'StringLike');
+    return this.if(`Name`, value, operator || 'StringLike');
   }
 
   /**
@@ -490,7 +471,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifRecoveryWindowInDays(value: number | number[], operator?: Operator | string) {
-    return this.if(`secretsmanager:RecoveryWindowInDays`, value, operator || 'NumericEquals');
+    return this.if(`RecoveryWindowInDays`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -525,7 +506,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagkey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`secretsmanager:ResourceTag/${ tagkey }`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/${ tagkey }`, value, operator || 'StringLike');
   }
 
   /**
@@ -540,7 +521,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifRotationLambdaARN(value: string | string[], operator?: Operator | string) {
-    return this.if(`secretsmanager:RotationLambdaARN`, value, operator || 'ArnLike');
+    return this.if(`RotationLambdaARN`, value, operator || 'ArnLike');
   }
 
   /**
@@ -570,7 +551,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifSecretId(value: string | string[], operator?: Operator | string) {
-    return this.if(`secretsmanager:SecretId`, value, operator || 'ArnLike');
+    return this.if(`SecretId`, value, operator || 'ArnLike');
   }
 
   /**
@@ -585,7 +566,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVersionId(value: string | string[], operator?: Operator | string) {
-    return this.if(`secretsmanager:VersionId`, value, operator || 'StringLike');
+    return this.if(`VersionId`, value, operator || 'StringLike');
   }
 
   /**
@@ -601,7 +582,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVersionStage(value: string | string[], operator?: Operator | string) {
-    return this.if(`secretsmanager:VersionStage`, value, operator || 'StringLike');
+    return this.if(`VersionStage`, value, operator || 'StringLike');
   }
 
   /**
@@ -635,6 +616,6 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifResource(allowRotationLambdaArn: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`secretsmanager:resource/${ allowRotationLambdaArn }`, value, operator || 'ArnLike');
+    return this.if(`resource/${ allowRotationLambdaArn }`, value, operator || 'ArnLike');
   }
 }

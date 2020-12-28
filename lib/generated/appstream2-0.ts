@@ -29,8 +29,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateFleet.html
    */
   public toAssociateFleet() {
-    this.to('appstream:AssociateFleet');
-    return this;
+    return this.to('AssociateFleet');
   }
 
   /**
@@ -44,8 +43,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_BatchAssociateUserStack.html
    */
   public toBatchAssociateUserStack() {
-    this.to('appstream:BatchAssociateUserStack');
-    return this;
+    return this.to('BatchAssociateUserStack');
   }
 
   /**
@@ -59,8 +57,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_BatchDisassociateUserStack.html
    */
   public toBatchDisassociateUserStack() {
-    this.to('appstream:BatchDisassociateUserStack');
-    return this;
+    return this.to('BatchDisassociateUserStack');
   }
 
   /**
@@ -74,8 +71,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CopyImage.html
    */
   public toCopyImage() {
-    this.to('appstream:CopyImage');
-    return this;
+    return this.to('CopyImage');
   }
 
   /**
@@ -86,8 +82,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateDirectoryConfig.html
    */
   public toCreateDirectoryConfig() {
-    this.to('appstream:CreateDirectoryConfig');
-    return this;
+    return this.to('CreateDirectoryConfig');
   }
 
   /**
@@ -102,8 +97,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateFleet.html
    */
   public toCreateFleet() {
-    this.to('appstream:CreateFleet');
-    return this;
+    return this.to('CreateFleet');
   }
 
   /**
@@ -118,8 +112,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImageBuilder.html
    */
   public toCreateImageBuilder() {
-    this.to('appstream:CreateImageBuilder');
-    return this;
+    return this.to('CreateImageBuilder');
   }
 
   /**
@@ -133,8 +126,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImageBuilderStreamingURL.html
    */
   public toCreateImageBuilderStreamingURL() {
-    this.to('appstream:CreateImageBuilderStreamingURL');
-    return this;
+    return this.to('CreateImageBuilderStreamingURL');
   }
 
   /**
@@ -149,8 +141,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStack.html
    */
   public toCreateStack() {
-    this.to('appstream:CreateStack');
-    return this;
+    return this.to('CreateStack');
   }
 
   /**
@@ -164,8 +155,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html
    */
   public toCreateStreamingURL() {
-    this.to('appstream:CreateStreamingURL');
-    return this;
+    return this.to('CreateStreamingURL');
   }
 
   /**
@@ -176,8 +166,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateUsageReportSubscription.html
    */
   public toCreateUsageReportSubscription() {
-    this.to('appstream:CreateUsageReportSubscription');
-    return this;
+    return this.to('CreateUsageReportSubscription');
   }
 
   /**
@@ -188,8 +177,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateUser.html
    */
   public toCreateUser() {
-    this.to('appstream:CreateUser');
-    return this;
+    return this.to('CreateUser');
   }
 
   /**
@@ -200,8 +188,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteDirectoryConfig.html
    */
   public toDeleteDirectoryConfig() {
-    this.to('appstream:DeleteDirectoryConfig');
-    return this;
+    return this.to('DeleteDirectoryConfig');
   }
 
   /**
@@ -215,8 +202,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteFleet.html
    */
   public toDeleteFleet() {
-    this.to('appstream:DeleteFleet');
-    return this;
+    return this.to('DeleteFleet');
   }
 
   /**
@@ -230,8 +216,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteImage.html
    */
   public toDeleteImage() {
-    this.to('appstream:DeleteImage');
-    return this;
+    return this.to('DeleteImage');
   }
 
   /**
@@ -245,8 +230,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteImageBuilder.html
    */
   public toDeleteImageBuilder() {
-    this.to('appstream:DeleteImageBuilder');
-    return this;
+    return this.to('DeleteImageBuilder');
   }
 
   /**
@@ -260,8 +244,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteImagePermissions.html
    */
   public toDeleteImagePermissions() {
-    this.to('appstream:DeleteImagePermissions');
-    return this;
+    return this.to('DeleteImagePermissions');
   }
 
   /**
@@ -275,8 +258,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteStack.html
    */
   public toDeleteStack() {
-    this.to('appstream:DeleteStack');
-    return this;
+    return this.to('DeleteStack');
   }
 
   /**
@@ -287,8 +269,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteUsageReportSubscription.html
    */
   public toDeleteUsageReportSubscription() {
-    this.to('appstream:DeleteUsageReportSubscription');
-    return this;
+    return this.to('DeleteUsageReportSubscription');
   }
 
   /**
@@ -299,8 +280,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteUser.html
    */
   public toDeleteUser() {
-    this.to('appstream:DeleteUser');
-    return this;
+    return this.to('DeleteUser');
   }
 
   /**
@@ -311,8 +291,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeDirectoryConfigs.html
    */
   public toDescribeDirectoryConfigs() {
-    this.to('appstream:DescribeDirectoryConfigs');
-    return this;
+    return this.to('DescribeDirectoryConfigs');
   }
 
   /**
@@ -323,8 +302,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeFleets.html
    */
   public toDescribeFleets() {
-    this.to('appstream:DescribeFleets');
-    return this;
+    return this.to('DescribeFleets');
   }
 
   /**
@@ -335,8 +313,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeImageBuilders.html
    */
   public toDescribeImageBuilders() {
-    this.to('appstream:DescribeImageBuilders');
-    return this;
+    return this.to('DescribeImageBuilders');
   }
 
   /**
@@ -347,8 +324,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeImagePermissions.html
    */
   public toDescribeImagePermissions() {
-    this.to('appstream:DescribeImagePermissions');
-    return this;
+    return this.to('DescribeImagePermissions');
   }
 
   /**
@@ -359,8 +335,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeImages.html
    */
   public toDescribeImages() {
-    this.to('appstream:DescribeImages');
-    return this;
+    return this.to('DescribeImages');
   }
 
   /**
@@ -371,8 +346,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeSessions.html
    */
   public toDescribeSessions() {
-    this.to('appstream:DescribeSessions');
-    return this;
+    return this.to('DescribeSessions');
   }
 
   /**
@@ -383,8 +357,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeStacks.html
    */
   public toDescribeStacks() {
-    this.to('appstream:DescribeStacks');
-    return this;
+    return this.to('DescribeStacks');
   }
 
   /**
@@ -395,8 +368,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeUsageReportSubscriptions.html
    */
   public toDescribeUsageReportSubscriptions() {
-    this.to('appstream:DescribeUsageReportSubscriptions');
-    return this;
+    return this.to('DescribeUsageReportSubscriptions');
   }
 
   /**
@@ -407,8 +379,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeUserStackAssociations.html
    */
   public toDescribeUserStackAssociations() {
-    this.to('appstream:DescribeUserStackAssociations');
-    return this;
+    return this.to('DescribeUserStackAssociations');
   }
 
   /**
@@ -419,8 +390,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeUsers.html
    */
   public toDescribeUsers() {
-    this.to('appstream:DescribeUsers');
-    return this;
+    return this.to('DescribeUsers');
   }
 
   /**
@@ -431,8 +401,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisableUser.html
    */
   public toDisableUser() {
-    this.to('appstream:DisableUser');
-    return this;
+    return this.to('DisableUser');
   }
 
   /**
@@ -446,8 +415,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisassociateFleet.html
    */
   public toDisassociateFleet() {
-    this.to('appstream:DisassociateFleet');
-    return this;
+    return this.to('DisassociateFleet');
   }
 
   /**
@@ -458,8 +426,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_EnableUser.html
    */
   public toEnableUser() {
-    this.to('appstream:EnableUser');
-    return this;
+    return this.to('EnableUser');
   }
 
   /**
@@ -470,8 +437,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ExpireSession.html
    */
   public toExpireSession() {
-    this.to('appstream:ExpireSession');
-    return this;
+    return this.to('ExpireSession');
   }
 
   /**
@@ -482,8 +448,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/developerguide/controlling-administrator-access-with-policies-service-linked-roles.html#managed-policies-required-to-access-appstream-resources
    */
   public toGetImageBuilders() {
-    this.to('appstream:GetImageBuilders');
-    return this;
+    return this.to('GetImageBuilders');
   }
 
   /**
@@ -494,8 +459,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/developerguide/controlling-administrator-access-with-policies-service-linked-roles.html#managed-policies-required-to-access-appstream-resources
    */
   public toGetParametersForThemeAssetUpload() {
-    this.to('appstream:GetParametersForThemeAssetUpload');
-    return this;
+    return this.to('GetParametersForThemeAssetUpload');
   }
 
   /**
@@ -506,8 +470,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListAssociatedFleets.html
    */
   public toListAssociatedFleets() {
-    this.to('appstream:ListAssociatedFleets');
-    return this;
+    return this.to('ListAssociatedFleets');
   }
 
   /**
@@ -518,8 +481,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListAssociatedStacks.html
    */
   public toListAssociatedStacks() {
-    this.to('appstream:ListAssociatedStacks');
-    return this;
+    return this.to('ListAssociatedStacks');
   }
 
   /**
@@ -530,8 +492,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('appstream:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -545,8 +506,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StartFleet.html
    */
   public toStartFleet() {
-    this.to('appstream:StartFleet');
-    return this;
+    return this.to('StartFleet');
   }
 
   /**
@@ -560,8 +520,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StartImageBuilder.html
    */
   public toStartImageBuilder() {
-    this.to('appstream:StartImageBuilder');
-    return this;
+    return this.to('StartImageBuilder');
   }
 
   /**
@@ -575,8 +534,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StopFleet.html
    */
   public toStopFleet() {
-    this.to('appstream:StopFleet');
-    return this;
+    return this.to('StopFleet');
   }
 
   /**
@@ -590,8 +548,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StopImageBuilder.html
    */
   public toStopImageBuilder() {
-    this.to('appstream:StopImageBuilder');
-    return this;
+    return this.to('StopImageBuilder');
   }
 
   /**
@@ -605,8 +562,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/developerguide/external-identity-providers-setting-up-saml.html#external-identity-providers-embed-inline-policy-for-IAM-role
    */
   public toStream() {
-    this.to('appstream:Stream');
-    return this;
+    return this.to('Stream');
   }
 
   /**
@@ -622,8 +578,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('appstream:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -637,8 +592,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('appstream:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -649,8 +603,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateDirectoryConfig.html
    */
   public toUpdateDirectoryConfig() {
-    this.to('appstream:UpdateDirectoryConfig');
-    return this;
+    return this.to('UpdateDirectoryConfig');
   }
 
   /**
@@ -664,8 +617,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateFleet.html
    */
   public toUpdateFleet() {
-    this.to('appstream:UpdateFleet');
-    return this;
+    return this.to('UpdateFleet');
   }
 
   /**
@@ -679,8 +631,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateImagePermissions.html
    */
   public toUpdateImagePermissions() {
-    this.to('appstream:UpdateImagePermissions');
-    return this;
+    return this.to('UpdateImagePermissions');
   }
 
   /**
@@ -694,8 +645,7 @@ export class Appstream extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateStack.html
    */
   public toUpdateStack() {
-    this.to('appstream:UpdateStack');
-    return this;
+    return this.to('UpdateStack');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -857,6 +807,6 @@ export class Appstream extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUserId(value: string | string[], operator?: Operator | string) {
-    return this.if(`appstream:userId`, value, operator || 'StringLike');
+    return this.if(`userId`, value, operator || 'StringLike');
   }
 }
