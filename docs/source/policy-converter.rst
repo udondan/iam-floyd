@@ -48,3 +48,12 @@ Use this tool to convert any IAM policy in JSON format to IAM Floyd code.
       </p>
     </fieldset>
     <script src="_static/js/policy-converter.js"></script>
+
+Limitations
+-----------
+
+This converter produces working code, though not necessarily ideal code. Current limitations include:
+
+- **Resource ARNs are not parsed and converted** to the corresponding methods. Instead all resources ARNs are simply put into ``on`` methods. So when you see something like ``.on('arn:aws:es:*:*:domain/foo')`` it could be manually improved to ``onDomain('foo')``
+- **No reduction to access levels.** If a policy contains all actions with access level *write*, the generated code will not simply have ``.allWriteActions()``, but instead all individual action methods, like ``.toCreateFoo()``, ``.toUpdateFoo()``, ``.toDeleteFoo()`` etc
+- **Wildcards are not resolved.** If the input policy contains actions with wildcards, e.g. ``es:Create*``, the generated code as well will contain ``.to('es:Create*')`` instead of the methods ``.toCreateElasticsearchDomain()``, ``.toCreateElasticsearchServiceRole()``, ``.toCreateOutboundCrossClusterSearchConnection()``
