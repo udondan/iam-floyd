@@ -317,7 +317,7 @@ export function createModule(module: Module): Promise<void> {
     stats.actions.push(`${module.servicePrefix}:${name};${action.accessLevel}`);
 
     const method = classDeclaration.addMethod({
-      name: `to${name}`,
+      name: `to${upperFirst(name)}`,
       scope: Scope.Public,
     });
 
