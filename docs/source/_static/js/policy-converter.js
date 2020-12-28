@@ -176,7 +176,7 @@ function convert(convertTarget, data) {
           indent(statements.join(',\n'), ' ', 4) +
           '\n\
   ]\n\
-};';
+});';
       } else {
         output +=
           "const policy = {\n\
