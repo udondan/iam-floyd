@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "polly:DescribeVoices",
+        "polly:GetLexicon",
+        "polly:GetSpeechSynthesisTask",
+        "polly:ListLexicons",
+        "polly:ListSpeechSynthesisTasks",
+        "polly:SynthesizeSpeech"
+      ],
+      "Resource": [ "*" ]
+    }
+  ]
+}

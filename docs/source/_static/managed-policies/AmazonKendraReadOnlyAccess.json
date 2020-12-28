@@ -1,0 +1,14 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "kendra:Describe*",
+                "kendra:List*",
+                "kendra:Query"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}

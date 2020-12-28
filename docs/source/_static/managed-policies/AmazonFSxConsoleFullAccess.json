@@ -1,0 +1,44 @@
+{
+   "Version": "2012-10-17",
+   "Statement": [
+        {
+           "Effect": "Allow",
+           "Action": [
+               "cloudwatch:DescribeAlarms",
+               "ds:DescribeDirectories",
+               "ec2:DescribeNetworkInterfaceAttribute",
+               "ec2:DescribeSecurityGroups",
+               "ec2:DescribeSubnets",
+               "ec2:DescribeVpcs",
+               "fsx:*",
+               "kms:ListAliases",
+               "s3:ListBucket"
+            ],
+           "Resource": "*"
+        },
+        {
+           "Action": "iam:CreateServiceLinkedRole",
+           "Effect": "Allow",
+           "Resource": "*",
+           "Condition": {
+               "StringLike": {
+                   "iam:AWSServiceName": [
+                       "fsx.amazonaws.com"
+                    ]
+                }
+            }
+        },
+        {
+            "Action": "iam:CreateServiceLinkedRole",
+            "Effect": "Allow",
+            "Resource": "*",
+            "Condition": {
+                "StringLike": {
+                    "iam:AWSServiceName": [
+                        "s3.data-source.lustre.fsx.amazonaws.com"
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,82 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dataexchange:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Action": "s3:GetObject",
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::*aws-data-exchange*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "*",
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "s3:ExistingObjectTag/AWSDataExchange": "true"
+        }
+      }
+    },
+    {
+      "Action": [
+        "s3:PutObject",
+        "s3:PutObjectAcl"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::*aws-data-exchange*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListBucket",
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeEntity",
+        "aws-marketplace:ListEntities",
+        "aws-marketplace:StartChangeSet",
+        "aws-marketplace:ListChangeSets",
+        "aws-marketplace:DescribeChangeSet",
+        "aws-marketplace:CancelChangeSet",
+        "aws-marketplace:GetAgreementApprovalRequest",
+        "aws-marketplace:ListAgreementApprovalRequests",
+        "aws-marketplace:AcceptAgreementApprovalRequest",
+        "aws-marketplace:RejectAgreementApprovalRequest",
+        "aws-marketplace:UpdateAgreementApprovalRequest"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:Subscribe",
+        "aws-marketplace:Unsubscribe",
+        "aws-marketplace:ViewSubscriptions",
+        "aws-marketplace:GetAgreementRequest",
+        "aws-marketplace:ListAgreementRequests",
+        "aws-marketplace:CancelAgreementRequest"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "kms:ListKeys"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "lex:PostContent",
+        "lex:PostText",
+        "lex:PutSession",
+        "lex:GetSession",
+        "lex:DeleteSession"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

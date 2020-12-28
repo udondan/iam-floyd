@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iotanalytics:Describe*",
+        "iotanalytics:List*",
+        "iotanalytics:Get*",
+        "iotanalytics:SampleChannelData"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -70,6 +70,7 @@
     "@types/node": "^14.14.12",
     "@types/request": "^2.48.5",
     "@types/request-promise-native": "^1.0.17",
+    "aws-sdk": "^2.814.0",
     "cheerio": "^1.0.0-rc.3",
     "colors": "^1.4.0",
     "glob": "^7.1.6",

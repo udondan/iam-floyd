@@ -1,0 +1,18 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CloudWatchEventsReadOnlyAccess",
+            "Effect": "Allow",
+            "Action": [
+                "events:DescribeRule",
+                "events:ListRuleNamesByTarget",
+                "events:ListRules",
+                "events:ListTargetsByRule",
+                "events:TestEventPattern",
+                "events:DescribeEventBus"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "qldb:ListLedgers",
+        "qldb:DescribeLedger",
+        "qldb:ListJournalS3Exports",
+        "qldb:ListJournalS3ExportsForLedger",
+        "qldb:DescribeJournalS3Export",
+        "qldb:DescribeJournalKinesisStream",
+        "qldb:ListJournalKinesisStreamsForLedger",
+        "qldb:GetBlock",
+        "qldb:GetDigest",
+        "qldb:GetRevision",
+        "qldb:GetBlock",
+        "qldb:ListTagsForResource"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

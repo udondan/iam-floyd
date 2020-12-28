@@ -1,0 +1,22 @@
+{
+   "Version": "2012-10-17",
+   "Statement": [{
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances", 
+        "ec2:DescribeImages",
+        "organizations:ListAccounts",
+        "organizations:DescribeAccount",
+        "s3:GetBucketPublicAccessBlock",
+        "s3:GetEncryptionConfiguration",
+        "s3:GetBucketTagging",
+        "s3:GetAccountPublicAccessBlock",
+        "s3:ListAllMyBuckets",
+        "s3:GetBucketAcl",
+        "s3:GetBucketPolicy",
+        "s3:GetBucketPolicyStatus"
+      ],
+      "Resource": "*"
+    }
+   ]
+}

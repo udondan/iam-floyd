@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "waf:*",
+                "waf-regional:*",
+                "wafv2:*",
+                "elasticloadbalancing:SetWebACL",
+                "apigateway:SetWebACL",
+                "appsync:SetWebACL"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}

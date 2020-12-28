@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSSSOMemberAccountAdministrator",
+      "Effect": "Allow",
+      "Action": [
+        "ds:DescribeDirectories",
+        "ds:AuthorizeApplication",
+        "ds:UnauthorizeApplication",
+        "ds:DescribeTrusts",
+        "iam:ListPolicies",
+        "organizations:EnableAWSServiceAccess",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeAccount",
+        "organizations:ListRoots",
+        "organizations:ListAccounts",
+        "organizations:ListAccountsForParent",
+        "organizations:ListParents",
+        "organizations:ListChildren",
+        "organizations:ListOrganizationalUnitsForParent",
+        "sso:*",
+        "sso-directory:DescribeDirectory",
+        "ds:CreateAlias"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

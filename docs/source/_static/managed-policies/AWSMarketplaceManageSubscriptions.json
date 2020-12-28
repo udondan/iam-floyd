@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "aws-marketplace:ViewSubscriptions",
+        "aws-marketplace:Subscribe",
+        "aws-marketplace:Unsubscribe"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "aws-marketplace:CreatePrivateMarketplaceRequests",
+        "aws-marketplace:ListPrivateMarketplaceRequests",
+        "aws-marketplace:DescribePrivateMarketplaceRequests"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}

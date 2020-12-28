@@ -32,7 +32,9 @@ release = '0.112.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 sys.path.append(os.path.abspath('extensions'))
-extensions = ['sphinx_tabs.tabs', 'example']
+extensions = ['sphinx_rtd_theme', 'sphinx_tabs.tabs', 'example']
+
+html_theme = "sphinx_rtd_theme"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
