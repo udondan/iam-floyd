@@ -409,7 +409,7 @@ function makeStatementCode(
   }
 
   if (preferredVariant != 'CDK') {
-    code += makeMethodCall(caseFunction('toJson'));
+    code += makeMethodCall(caseFunction('toJSON'));
   }
 
   // formatting code
