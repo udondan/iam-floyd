@@ -29,8 +29,7 @@ export class Textract extends PolicyStatement {
    * https://docs.aws.amazon.com/textract/latest/dg/API_AnalyzeDocument.html
    */
   public toAnalyzeDocument() {
-    this.to('textract:AnalyzeDocument');
-    return this;
+    return this.to('AnalyzeDocument');
   }
 
   /**
@@ -44,8 +43,7 @@ export class Textract extends PolicyStatement {
    * https://docs.aws.amazon.com/textract/latest/dg/API_DetectDocumentText.html
    */
   public toDetectDocumentText() {
-    this.to('textract:DetectDocumentText');
-    return this;
+    return this.to('DetectDocumentText');
   }
 
   /**
@@ -56,8 +54,7 @@ export class Textract extends PolicyStatement {
    * https://docs.aws.amazon.com/textract/latest/dg/API_GetDocumentAnalysis.html
    */
   public toGetDocumentAnalysis() {
-    this.to('textract:GetDocumentAnalysis');
-    return this;
+    return this.to('GetDocumentAnalysis');
   }
 
   /**
@@ -68,8 +65,7 @@ export class Textract extends PolicyStatement {
    * https://docs.aws.amazon.com/textract/latest/dg/API_GetDocumentTextDetection.html
    */
   public toGetDocumentTextDetection() {
-    this.to('textract:GetDocumentTextDetection');
-    return this;
+    return this.to('GetDocumentTextDetection');
   }
 
   /**
@@ -83,8 +79,7 @@ export class Textract extends PolicyStatement {
    * https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentAnalysis.html
    */
   public toStartDocumentAnalysis() {
-    this.to('textract:StartDocumentAnalysis');
-    return this;
+    return this.to('StartDocumentAnalysis');
   }
 
   /**
@@ -98,8 +93,7 @@ export class Textract extends PolicyStatement {
    * https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentTextDetection.html
    */
   public toStartDocumentTextDetection() {
-    this.to('textract:StartDocumentTextDetection');
-    return this;
+    return this.to('StartDocumentTextDetection');
   }
 
   protected accessLevelList: AccessLevelList = {

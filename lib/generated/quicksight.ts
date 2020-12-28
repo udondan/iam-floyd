@@ -30,8 +30,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CancelIngestion.html
    */
   public toCancelIngestion() {
-    this.to('quicksight:CancelIngestion');
-    return this;
+    return this.to('CancelIngestion');
   }
 
   /**
@@ -46,8 +45,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateAccountCustomization.html
    */
   public toCreateAccountCustomization() {
-    this.to('quicksight:CreateAccountCustomization');
-    return this;
+    return this.to('CreateAccountCustomization');
   }
 
   /**
@@ -58,8 +56,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toCreateAdmin() {
-    this.to('quicksight:CreateAdmin');
-    return this;
+    return this.to('CreateAdmin');
   }
 
   /**
@@ -74,8 +71,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateAnalysis.html
    */
   public toCreateAnalysis() {
-    this.to('quicksight:CreateAnalysis');
-    return this;
+    return this.to('CreateAnalysis');
   }
 
   /**
@@ -86,8 +82,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toCreateCustomPermissions() {
-    this.to('quicksight:CreateCustomPermissions');
-    return this;
+    return this.to('CreateCustomPermissions');
   }
 
   /**
@@ -102,8 +97,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDashboard.html
    */
   public toCreateDashboard() {
-    this.to('quicksight:CreateDashboard');
-    return this;
+    return this.to('CreateDashboard');
   }
 
   /**
@@ -118,8 +112,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDataSet.html
    */
   public toCreateDataSet() {
-    this.to('quicksight:CreateDataSet');
-    return this;
+    return this.to('CreateDataSet');
   }
 
   /**
@@ -134,8 +127,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDataSource.html
    */
   public toCreateDataSource() {
-    this.to('quicksight:CreateDataSource');
-    return this;
+    return this.to('CreateDataSource');
   }
 
   /**
@@ -146,8 +138,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateGroup.html
    */
   public toCreateGroup() {
-    this.to('quicksight:CreateGroup');
-    return this;
+    return this.to('CreateGroup');
   }
 
   /**
@@ -158,8 +149,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateGroupMembership.html
    */
   public toCreateGroupMembership() {
-    this.to('quicksight:CreateGroupMembership');
-    return this;
+    return this.to('CreateGroupMembership');
   }
 
   /**
@@ -170,8 +160,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateIAMPolicyAssignment.html
    */
   public toCreateIAMPolicyAssignment() {
-    this.to('quicksight:CreateIAMPolicyAssignment');
-    return this;
+    return this.to('CreateIAMPolicyAssignment');
   }
 
   /**
@@ -186,8 +175,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateIngestion.html
    */
   public toCreateIngestion() {
-    this.to('quicksight:CreateIngestion');
-    return this;
+    return this.to('CreateIngestion');
   }
 
   /**
@@ -198,8 +186,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateNamespace.html
    */
   public toCreateNamespace() {
-    this.to('quicksight:CreateNamespace');
-    return this;
+    return this.to('CreateNamespace');
   }
 
   /**
@@ -210,8 +197,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toCreateReader() {
-    this.to('quicksight:CreateReader');
-    return this;
+    return this.to('CreateReader');
   }
 
   /**
@@ -226,8 +212,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html
    */
   public toCreateTemplate() {
-    this.to('quicksight:CreateTemplate');
-    return this;
+    return this.to('CreateTemplate');
   }
 
   /**
@@ -238,8 +223,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplateAlias.html
    */
   public toCreateTemplateAlias() {
-    this.to('quicksight:CreateTemplateAlias');
-    return this;
+    return this.to('CreateTemplateAlias');
   }
 
   /**
@@ -254,8 +238,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTheme.html
    */
   public toCreateTheme() {
-    this.to('quicksight:CreateTheme');
-    return this;
+    return this.to('CreateTheme');
   }
 
   /**
@@ -266,8 +249,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateThemeAlias.html
    */
   public toCreateThemeAlias() {
-    this.to('quicksight:CreateThemeAlias');
-    return this;
+    return this.to('CreateThemeAlias');
   }
 
   /**
@@ -278,8 +260,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toCreateUser() {
-    this.to('quicksight:CreateUser');
-    return this;
+    return this.to('CreateUser');
   }
 
   /**
@@ -290,8 +271,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteAccountCustomization.html
    */
   public toDeleteAccountCustomization() {
-    this.to('quicksight:DeleteAccountCustomization');
-    return this;
+    return this.to('DeleteAccountCustomization');
   }
 
   /**
@@ -302,8 +282,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteAnalysis.html
    */
   public toDeleteAnalysis() {
-    this.to('quicksight:DeleteAnalysis');
-    return this;
+    return this.to('DeleteAnalysis');
   }
 
   /**
@@ -314,8 +293,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteDashboard.html
    */
   public toDeleteDashboard() {
-    this.to('quicksight:DeleteDashboard');
-    return this;
+    return this.to('DeleteDashboard');
   }
 
   /**
@@ -330,8 +308,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteDataSet.html
    */
   public toDeleteDataSet() {
-    this.to('quicksight:DeleteDataSet');
-    return this;
+    return this.to('DeleteDataSet');
   }
 
   /**
@@ -346,8 +323,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteDataSource.html
    */
   public toDeleteDataSource() {
-    this.to('quicksight:DeleteDataSource');
-    return this;
+    return this.to('DeleteDataSource');
   }
 
   /**
@@ -358,8 +334,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteGroup.html
    */
   public toDeleteGroup() {
-    this.to('quicksight:DeleteGroup');
-    return this;
+    return this.to('DeleteGroup');
   }
 
   /**
@@ -370,8 +345,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteGroupMembership.html
    */
   public toDeleteGroupMembership() {
-    this.to('quicksight:DeleteGroupMembership');
-    return this;
+    return this.to('DeleteGroupMembership');
   }
 
   /**
@@ -382,8 +356,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteIAMPolicyAssignment.html
    */
   public toDeleteIAMPolicyAssignment() {
-    this.to('quicksight:DeleteIAMPolicyAssignment');
-    return this;
+    return this.to('DeleteIAMPolicyAssignment');
   }
 
   /**
@@ -394,8 +367,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteNamespace.html
    */
   public toDeleteNamespace() {
-    this.to('quicksight:DeleteNamespace');
-    return this;
+    return this.to('DeleteNamespace');
   }
 
   /**
@@ -406,8 +378,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteTemplate.html
    */
   public toDeleteTemplate() {
-    this.to('quicksight:DeleteTemplate');
-    return this;
+    return this.to('DeleteTemplate');
   }
 
   /**
@@ -418,8 +389,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteTemplateAlias.html
    */
   public toDeleteTemplateAlias() {
-    this.to('quicksight:DeleteTemplateAlias');
-    return this;
+    return this.to('DeleteTemplateAlias');
   }
 
   /**
@@ -430,8 +400,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteTheme.html
    */
   public toDeleteTheme() {
-    this.to('quicksight:DeleteTheme');
-    return this;
+    return this.to('DeleteTheme');
   }
 
   /**
@@ -442,8 +411,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteThemeAlias.html
    */
   public toDeleteThemeAlias() {
-    this.to('quicksight:DeleteThemeAlias');
-    return this;
+    return this.to('DeleteThemeAlias');
   }
 
   /**
@@ -454,8 +422,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteUser.html
    */
   public toDeleteUser() {
-    this.to('quicksight:DeleteUser');
-    return this;
+    return this.to('DeleteUser');
   }
 
   /**
@@ -466,8 +433,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteUserByPrincipalId.html
    */
   public toDeleteUserByPrincipalId() {
-    this.to('quicksight:DeleteUserByPrincipalId');
-    return this;
+    return this.to('DeleteUserByPrincipalId');
   }
 
   /**
@@ -478,8 +444,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAccountCustomization.html
    */
   public toDescribeAccountCustomization() {
-    this.to('quicksight:DescribeAccountCustomization');
-    return this;
+    return this.to('DescribeAccountCustomization');
   }
 
   /**
@@ -490,8 +455,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAccountSettings.html
    */
   public toDescribeAccountSettings() {
-    this.to('quicksight:DescribeAccountSettings');
-    return this;
+    return this.to('DescribeAccountSettings');
   }
 
   /**
@@ -502,8 +466,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysis.html
    */
   public toDescribeAnalysis() {
-    this.to('quicksight:DescribeAnalysis');
-    return this;
+    return this.to('DescribeAnalysis');
   }
 
   /**
@@ -514,8 +477,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysisPermissions.html
    */
   public toDescribeAnalysisPermissions() {
-    this.to('quicksight:DescribeAnalysisPermissions');
-    return this;
+    return this.to('DescribeAnalysisPermissions');
   }
 
   /**
@@ -526,8 +488,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toDescribeCustomPermissions() {
-    this.to('quicksight:DescribeCustomPermissions');
-    return this;
+    return this.to('DescribeCustomPermissions');
   }
 
   /**
@@ -538,8 +499,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboard.html
    */
   public toDescribeDashboard() {
-    this.to('quicksight:DescribeDashboard');
-    return this;
+    return this.to('DescribeDashboard');
   }
 
   /**
@@ -550,8 +510,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboardPermissions.html
    */
   public toDescribeDashboardPermissions() {
-    this.to('quicksight:DescribeDashboardPermissions');
-    return this;
+    return this.to('DescribeDashboardPermissions');
   }
 
   /**
@@ -566,8 +525,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDataSet.html
    */
   public toDescribeDataSet() {
-    this.to('quicksight:DescribeDataSet');
-    return this;
+    return this.to('DescribeDataSet');
   }
 
   /**
@@ -582,8 +540,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDataSetPermissions.html
    */
   public toDescribeDataSetPermissions() {
-    this.to('quicksight:DescribeDataSetPermissions');
-    return this;
+    return this.to('DescribeDataSetPermissions');
   }
 
   /**
@@ -598,8 +555,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDataSource.html
    */
   public toDescribeDataSource() {
-    this.to('quicksight:DescribeDataSource');
-    return this;
+    return this.to('DescribeDataSource');
   }
 
   /**
@@ -614,8 +570,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDataSourcePermissions.html
    */
   public toDescribeDataSourcePermissions() {
-    this.to('quicksight:DescribeDataSourcePermissions');
-    return this;
+    return this.to('DescribeDataSourcePermissions');
   }
 
   /**
@@ -626,8 +581,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeGroup.html
    */
   public toDescribeGroup() {
-    this.to('quicksight:DescribeGroup');
-    return this;
+    return this.to('DescribeGroup');
   }
 
   /**
@@ -638,8 +592,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeIAMPolicyAssignment.html
    */
   public toDescribeIAMPolicyAssignment() {
-    this.to('quicksight:DescribeIAMPolicyAssignment');
-    return this;
+    return this.to('DescribeIAMPolicyAssignment');
   }
 
   /**
@@ -654,8 +607,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeIngestion.html
    */
   public toDescribeIngestion() {
-    this.to('quicksight:DescribeIngestion');
-    return this;
+    return this.to('DescribeIngestion');
   }
 
   /**
@@ -666,8 +618,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeNamespace.html
    */
   public toDescribeNamespace() {
-    this.to('quicksight:DescribeNamespace');
-    return this;
+    return this.to('DescribeNamespace');
   }
 
   /**
@@ -678,8 +629,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplate.html
    */
   public toDescribeTemplate() {
-    this.to('quicksight:DescribeTemplate');
-    return this;
+    return this.to('DescribeTemplate');
   }
 
   /**
@@ -690,8 +640,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplateAlias.html
    */
   public toDescribeTemplateAlias() {
-    this.to('quicksight:DescribeTemplateAlias');
-    return this;
+    return this.to('DescribeTemplateAlias');
   }
 
   /**
@@ -702,8 +651,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplatePermissions.html
    */
   public toDescribeTemplatePermissions() {
-    this.to('quicksight:DescribeTemplatePermissions');
-    return this;
+    return this.to('DescribeTemplatePermissions');
   }
 
   /**
@@ -714,8 +662,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTheme.html
    */
   public toDescribeTheme() {
-    this.to('quicksight:DescribeTheme');
-    return this;
+    return this.to('DescribeTheme');
   }
 
   /**
@@ -726,8 +673,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemeAlias.html
    */
   public toDescribeThemeAlias() {
-    this.to('quicksight:DescribeThemeAlias');
-    return this;
+    return this.to('DescribeThemeAlias');
   }
 
   /**
@@ -738,8 +684,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemePermissions.html
    */
   public toDescribeThemePermissions() {
-    this.to('quicksight:DescribeThemePermissions');
-    return this;
+    return this.to('DescribeThemePermissions');
   }
 
   /**
@@ -750,8 +695,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html
    */
   public toDescribeUser() {
-    this.to('quicksight:DescribeUser');
-    return this;
+    return this.to('DescribeUser');
   }
 
   /**
@@ -762,8 +706,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toGetAuthCode() {
-    this.to('quicksight:GetAuthCode');
-    return this;
+    return this.to('GetAuthCode');
   }
 
   /**
@@ -774,8 +717,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html
    */
   public toGetDashboardEmbedUrl() {
-    this.to('quicksight:GetDashboardEmbedUrl');
-    return this;
+    return this.to('GetDashboardEmbedUrl');
   }
 
   /**
@@ -786,8 +728,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toGetGroupMapping() {
-    this.to('quicksight:GetGroupMapping');
-    return this;
+    return this.to('GetGroupMapping');
   }
 
   /**
@@ -798,8 +739,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetSessionEmbedUrl.html
    */
   public toGetSessionEmbedUrl() {
-    this.to('quicksight:GetSessionEmbedUrl');
-    return this;
+    return this.to('GetSessionEmbedUrl');
   }
 
   /**
@@ -810,8 +750,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListAnalyses.html
    */
   public toListAnalyses() {
-    this.to('quicksight:ListAnalyses');
-    return this;
+    return this.to('ListAnalyses');
   }
 
   /**
@@ -822,8 +761,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toListCustomPermissions() {
-    this.to('quicksight:ListCustomPermissions');
-    return this;
+    return this.to('ListCustomPermissions');
   }
 
   /**
@@ -834,8 +772,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListDashboardVersions.html
    */
   public toListDashboardVersions() {
-    this.to('quicksight:ListDashboardVersions');
-    return this;
+    return this.to('ListDashboardVersions');
   }
 
   /**
@@ -846,8 +783,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListDashboards.html
    */
   public toListDashboards() {
-    this.to('quicksight:ListDashboards');
-    return this;
+    return this.to('ListDashboards');
   }
 
   /**
@@ -862,8 +798,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListDataSets.html
    */
   public toListDataSets() {
-    this.to('quicksight:ListDataSets');
-    return this;
+    return this.to('ListDataSets');
   }
 
   /**
@@ -878,8 +813,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListDataSources.html
    */
   public toListDataSources() {
-    this.to('quicksight:ListDataSources');
-    return this;
+    return this.to('ListDataSources');
   }
 
   /**
@@ -890,8 +824,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListGroupMemberships.html
    */
   public toListGroupMemberships() {
-    this.to('quicksight:ListGroupMemberships');
-    return this;
+    return this.to('ListGroupMemberships');
   }
 
   /**
@@ -902,8 +835,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListGroups.html
    */
   public toListGroups() {
-    this.to('quicksight:ListGroups');
-    return this;
+    return this.to('ListGroups');
   }
 
   /**
@@ -914,8 +846,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListIAMPolicyAssignments.html
    */
   public toListIAMPolicyAssignments() {
-    this.to('quicksight:ListIAMPolicyAssignments');
-    return this;
+    return this.to('ListIAMPolicyAssignments');
   }
 
   /**
@@ -926,8 +857,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListIAMPolicyAssignmentsForUser.html
    */
   public toListIAMPolicyAssignmentsForUser() {
-    this.to('quicksight:ListIAMPolicyAssignmentsForUser');
-    return this;
+    return this.to('ListIAMPolicyAssignmentsForUser');
   }
 
   /**
@@ -942,8 +872,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListIngestions.html
    */
   public toListIngestions() {
-    this.to('quicksight:ListIngestions');
-    return this;
+    return this.to('ListIngestions');
   }
 
   /**
@@ -954,8 +883,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListNamespaces.html
    */
   public toListNamespaces() {
-    this.to('quicksight:ListNamespaces');
-    return this;
+    return this.to('ListNamespaces');
   }
 
   /**
@@ -966,8 +894,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('quicksight:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -978,8 +905,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListTemplateAliases.html
    */
   public toListTemplateAliases() {
-    this.to('quicksight:ListTemplateAliases');
-    return this;
+    return this.to('ListTemplateAliases');
   }
 
   /**
@@ -990,8 +916,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListTemplateVersions.html
    */
   public toListTemplateVersions() {
-    this.to('quicksight:ListTemplateVersions');
-    return this;
+    return this.to('ListTemplateVersions');
   }
 
   /**
@@ -1002,8 +927,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListTemplates.html
    */
   public toListTemplates() {
-    this.to('quicksight:ListTemplates');
-    return this;
+    return this.to('ListTemplates');
   }
 
   /**
@@ -1014,8 +938,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListThemeAliases.html
    */
   public toListThemeAliases() {
-    this.to('quicksight:ListThemeAliases');
-    return this;
+    return this.to('ListThemeAliases');
   }
 
   /**
@@ -1026,8 +949,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListThemeVersions.html
    */
   public toListThemeVersions() {
-    this.to('quicksight:ListThemeVersions');
-    return this;
+    return this.to('ListThemeVersions');
   }
 
   /**
@@ -1038,8 +960,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListThemes.html
    */
   public toListThemes() {
-    this.to('quicksight:ListThemes');
-    return this;
+    return this.to('ListThemes');
   }
 
   /**
@@ -1050,8 +971,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListUserGroups.html
    */
   public toListUserGroups() {
-    this.to('quicksight:ListUserGroups');
-    return this;
+    return this.to('ListUserGroups');
   }
 
   /**
@@ -1062,8 +982,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListUsers.html
    */
   public toListUsers() {
-    this.to('quicksight:ListUsers');
-    return this;
+    return this.to('ListUsers');
   }
 
   /**
@@ -1078,8 +997,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-api-overview.html
    */
   public toPassDataSet() {
-    this.to('quicksight:PassDataSet');
-    return this;
+    return this.to('PassDataSet');
   }
 
   /**
@@ -1094,8 +1012,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-api-overview.html
    */
   public toPassDataSource() {
-    this.to('quicksight:PassDataSource');
-    return this;
+    return this.to('PassDataSource');
   }
 
   /**
@@ -1106,8 +1023,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html
    */
   public toRegisterUser() {
-    this.to('quicksight:RegisterUser');
-    return this;
+    return this.to('RegisterUser');
   }
 
   /**
@@ -1118,8 +1034,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RestoreAnalysis.html
    */
   public toRestoreAnalysis() {
-    this.to('quicksight:RestoreAnalysis');
-    return this;
+    return this.to('RestoreAnalysis');
   }
 
   /**
@@ -1130,8 +1045,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchAnalyses.html
    */
   public toSearchAnalyses() {
-    this.to('quicksight:SearchAnalyses');
-    return this;
+    return this.to('SearchAnalyses');
   }
 
   /**
@@ -1142,8 +1056,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchDashboards.html
    */
   public toSearchDashboards() {
-    this.to('quicksight:SearchDashboards');
-    return this;
+    return this.to('SearchDashboards');
   }
 
   /**
@@ -1154,8 +1067,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toSearchDirectoryGroups() {
-    this.to('quicksight:SearchDirectoryGroups');
-    return this;
+    return this.to('SearchDirectoryGroups');
   }
 
   /**
@@ -1166,8 +1078,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toSetGroupMapping() {
-    this.to('quicksight:SetGroupMapping');
-    return this;
+    return this.to('SetGroupMapping');
   }
 
   /**
@@ -1178,8 +1089,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toSubscribe() {
-    this.to('quicksight:Subscribe');
-    return this;
+    return this.to('Subscribe');
   }
 
   /**
@@ -1194,8 +1104,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('quicksight:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -1206,8 +1115,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toUnsubscribe() {
-    this.to('quicksight:Unsubscribe');
-    return this;
+    return this.to('Unsubscribe');
   }
 
   /**
@@ -1221,8 +1129,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('quicksight:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -1233,8 +1140,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAccountCustomization.html
    */
   public toUpdateAccountCustomization() {
-    this.to('quicksight:UpdateAccountCustomization');
-    return this;
+    return this.to('UpdateAccountCustomization');
   }
 
   /**
@@ -1245,8 +1151,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAccountSettings.html
    */
   public toUpdateAccountSettings() {
-    this.to('quicksight:UpdateAccountSettings');
-    return this;
+    return this.to('UpdateAccountSettings');
   }
 
   /**
@@ -1257,8 +1162,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAnalysis.html
    */
   public toUpdateAnalysis() {
-    this.to('quicksight:UpdateAnalysis');
-    return this;
+    return this.to('UpdateAnalysis');
   }
 
   /**
@@ -1269,8 +1173,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAnalysisPermissions.html
    */
   public toUpdateAnalysisPermissions() {
-    this.to('quicksight:UpdateAnalysisPermissions');
-    return this;
+    return this.to('UpdateAnalysisPermissions');
   }
 
   /**
@@ -1281,8 +1184,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toUpdateCustomPermissions() {
-    this.to('quicksight:UpdateCustomPermissions');
-    return this;
+    return this.to('UpdateCustomPermissions');
   }
 
   /**
@@ -1293,8 +1195,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboard.html
    */
   public toUpdateDashboard() {
-    this.to('quicksight:UpdateDashboard');
-    return this;
+    return this.to('UpdateDashboard');
   }
 
   /**
@@ -1305,8 +1206,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPermissions.html
    */
   public toUpdateDashboardPermissions() {
-    this.to('quicksight:UpdateDashboardPermissions');
-    return this;
+    return this.to('UpdateDashboardPermissions');
   }
 
   /**
@@ -1317,8 +1217,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPublishedVersion.html
    */
   public toUpdateDashboardPublishedVersion() {
-    this.to('quicksight:UpdateDashboardPublishedVersion');
-    return this;
+    return this.to('UpdateDashboardPublishedVersion');
   }
 
   /**
@@ -1333,8 +1232,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDataSet.html
    */
   public toUpdateDataSet() {
-    this.to('quicksight:UpdateDataSet');
-    return this;
+    return this.to('UpdateDataSet');
   }
 
   /**
@@ -1349,8 +1247,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDataSetPermissions.html
    */
   public toUpdateDataSetPermissions() {
-    this.to('quicksight:UpdateDataSetPermissions');
-    return this;
+    return this.to('UpdateDataSetPermissions');
   }
 
   /**
@@ -1365,8 +1262,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDataSource.html
    */
   public toUpdateDataSource() {
-    this.to('quicksight:UpdateDataSource');
-    return this;
+    return this.to('UpdateDataSource');
   }
 
   /**
@@ -1381,8 +1277,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDataSourcePermissions.html
    */
   public toUpdateDataSourcePermissions() {
-    this.to('quicksight:UpdateDataSourcePermissions');
-    return this;
+    return this.to('UpdateDataSourcePermissions');
   }
 
   /**
@@ -1393,8 +1288,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateGroup.html
    */
   public toUpdateGroup() {
-    this.to('quicksight:UpdateGroup');
-    return this;
+    return this.to('UpdateGroup');
   }
 
   /**
@@ -1405,8 +1299,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateIAMPolicyAssignment.html
    */
   public toUpdateIAMPolicyAssignment() {
-    this.to('quicksight:UpdateIAMPolicyAssignment');
-    return this;
+    return this.to('UpdateIAMPolicyAssignment');
   }
 
   /**
@@ -1417,8 +1310,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTemplate.html
    */
   public toUpdateTemplate() {
-    this.to('quicksight:UpdateTemplate');
-    return this;
+    return this.to('UpdateTemplate');
   }
 
   /**
@@ -1429,8 +1321,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTemplateAlias.html
    */
   public toUpdateTemplateAlias() {
-    this.to('quicksight:UpdateTemplateAlias');
-    return this;
+    return this.to('UpdateTemplateAlias');
   }
 
   /**
@@ -1441,8 +1332,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTemplatePermissions.html
    */
   public toUpdateTemplatePermissions() {
-    this.to('quicksight:UpdateTemplatePermissions');
-    return this;
+    return this.to('UpdateTemplatePermissions');
   }
 
   /**
@@ -1453,8 +1343,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTheme.html
    */
   public toUpdateTheme() {
-    this.to('quicksight:UpdateTheme');
-    return this;
+    return this.to('UpdateTheme');
   }
 
   /**
@@ -1465,8 +1354,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemeAlias.html
    */
   public toUpdateThemeAlias() {
-    this.to('quicksight:UpdateThemeAlias');
-    return this;
+    return this.to('UpdateThemeAlias');
   }
 
   /**
@@ -1477,8 +1365,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html
    */
   public toUpdateThemePermissions() {
-    this.to('quicksight:UpdateThemePermissions');
-    return this;
+    return this.to('UpdateThemePermissions');
   }
 
   /**
@@ -1489,8 +1376,7 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html
    */
   public toUpdateUser() {
-    this.to('quicksight:UpdateUser');
-    return this;
+    return this.to('UpdateUser');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -1880,7 +1766,7 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifIamArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`quicksight:IamArn`, value, operator || 'StringLike');
+    return this.if(`IamArn`, value, operator || 'StringLike');
   }
 
   /**
@@ -1895,7 +1781,7 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSessionName(value: string | string[], operator?: Operator | string) {
-    return this.if(`quicksight:SessionName`, value, operator || 'StringLike');
+    return this.if(`SessionName`, value, operator || 'StringLike');
   }
 
   /**
@@ -1911,6 +1797,6 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUserName(value: string | string[], operator?: Operator | string) {
-    return this.if(`quicksight:UserName`, value, operator || 'StringLike');
+    return this.if(`UserName`, value, operator || 'StringLike');
   }
 }

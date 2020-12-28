@@ -26,8 +26,7 @@ export class ExecuteApi extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/api-reference/api-gateway-caching.html
    */
   public toInvalidateCache() {
-    this.to('execute-api:InvalidateCache');
-    return this;
+    return this.to('InvalidateCache');
   }
 
   /**
@@ -38,8 +37,7 @@ export class ExecuteApi extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/api-reference/how-to-call-api.html
    */
   public toInvoke() {
-    this.to('execute-api:Invoke');
-    return this;
+    return this.to('Invoke');
   }
 
   /**
@@ -50,8 +48,7 @@ export class ExecuteApi extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/api-reference/apigateway-websocket-control-access-iam.html
    */
   public toManageConnections() {
-    this.to('execute-api:ManageConnections');
-    return this;
+    return this.to('ManageConnections');
   }
 
   protected accessLevelList: AccessLevelList = {

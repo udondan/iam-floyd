@@ -31,8 +31,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ActivatePipeline.html
    */
   public toActivatePipeline() {
-    this.to('datapipeline:ActivatePipeline');
-    return this;
+    return this.to('ActivatePipeline');
   }
 
   /**
@@ -47,8 +46,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_AddTags.html
    */
   public toAddTags() {
-    this.to('datapipeline:AddTags');
-    return this;
+    return this.to('AddTags');
   }
 
   /**
@@ -62,8 +60,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_CreatePipeline.html
    */
   public toCreatePipeline() {
-    this.to('datapipeline:CreatePipeline');
-    return this;
+    return this.to('CreatePipeline');
   }
 
   /**
@@ -79,8 +76,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeactivatePipeline.html
    */
   public toDeactivatePipeline() {
-    this.to('datapipeline:DeactivatePipeline');
-    return this;
+    return this.to('DeactivatePipeline');
   }
 
   /**
@@ -95,8 +91,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeletePipeline.html
    */
   public toDeletePipeline() {
-    this.to('datapipeline:DeletePipeline');
-    return this;
+    return this.to('DeletePipeline');
   }
 
   /**
@@ -111,8 +106,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribeObjects.html
    */
   public toDescribeObjects() {
-    this.to('datapipeline:DescribeObjects');
-    return this;
+    return this.to('DescribeObjects');
   }
 
   /**
@@ -127,8 +121,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribePipelines.html
    */
   public toDescribePipelines() {
-    this.to('datapipeline:DescribePipelines');
-    return this;
+    return this.to('DescribePipelines');
   }
 
   /**
@@ -143,8 +136,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_EvaluateExpression.html
    */
   public toEvaluateExpression() {
-    this.to('datapipeline:EvaluateExpression');
-    return this;
+    return this.to('EvaluateExpression');
   }
 
   /**
@@ -155,8 +147,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetAccountLimits.html
    */
   public toGetAccountLimits() {
-    this.to('datapipeline:GetAccountLimits');
-    return this;
+    return this.to('GetAccountLimits');
   }
 
   /**
@@ -172,8 +163,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetPipelineDefinition.html
    */
   public toGetPipelineDefinition() {
-    this.to('datapipeline:GetPipelineDefinition');
-    return this;
+    return this.to('GetPipelineDefinition');
   }
 
   /**
@@ -184,8 +174,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ListPipelines.html
    */
   public toListPipelines() {
-    this.to('datapipeline:ListPipelines');
-    return this;
+    return this.to('ListPipelines');
   }
 
   /**
@@ -199,8 +188,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PollForTask.html
    */
   public toPollForTask() {
-    this.to('datapipeline:PollForTask');
-    return this;
+    return this.to('PollForTask');
   }
 
   /**
@@ -211,8 +199,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutAccountLimits.html
    */
   public toPutAccountLimits() {
-    this.to('datapipeline:PutAccountLimits');
-    return this;
+    return this.to('PutAccountLimits');
   }
 
   /**
@@ -228,8 +215,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutPipelineDefinition.html
    */
   public toPutPipelineDefinition() {
-    this.to('datapipeline:PutPipelineDefinition');
-    return this;
+    return this.to('PutPipelineDefinition');
   }
 
   /**
@@ -244,8 +230,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_QueryObjects.html
    */
   public toQueryObjects() {
-    this.to('datapipeline:QueryObjects');
-    return this;
+    return this.to('QueryObjects');
   }
 
   /**
@@ -260,8 +245,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_RemoveTags.html
    */
   public toRemoveTags() {
-    this.to('datapipeline:RemoveTags');
-    return this;
+    return this.to('RemoveTags');
   }
 
   /**
@@ -272,8 +256,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ReportTaskProgress.html
    */
   public toReportTaskProgress() {
-    this.to('datapipeline:ReportTaskProgress');
-    return this;
+    return this.to('ReportTaskProgress');
   }
 
   /**
@@ -284,8 +267,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ReportTaskRunnerHeartbeat.html
    */
   public toReportTaskRunnerHeartbeat() {
-    this.to('datapipeline:ReportTaskRunnerHeartbeat');
-    return this;
+    return this.to('ReportTaskRunnerHeartbeat');
   }
 
   /**
@@ -300,8 +282,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetStatus.html
    */
   public toSetStatus() {
-    this.to('datapipeline:SetStatus');
-    return this;
+    return this.to('SetStatus');
   }
 
   /**
@@ -312,8 +293,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetTaskStatus.html
    */
   public toSetTaskStatus() {
-    this.to('datapipeline:SetTaskStatus');
-    return this;
+    return this.to('SetTaskStatus');
   }
 
   /**
@@ -329,8 +309,7 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ValidatePipelineDefinition.html
    */
   public toValidatePipelineDefinition() {
-    this.to('datapipeline:ValidatePipelineDefinition');
-    return this;
+    return this.to('ValidatePipelineDefinition');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -389,7 +368,7 @@ export class Datapipeline extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifPipelineCreator(value: string | string[], operator?: Operator | string) {
-    return this.if(`datapipeline:PipelineCreator`, value, operator || 'ArnLike');
+    return this.if(`PipelineCreator`, value, operator || 'ArnLike');
   }
 
   /**
@@ -417,7 +396,7 @@ export class Datapipeline extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTag(value: string | string[], operator?: Operator | string) {
-    return this.if(`datapipeline:Tag`, value, operator || 'ArnLike');
+    return this.if(`Tag`, value, operator || 'ArnLike');
   }
 
   /**
@@ -437,6 +416,6 @@ export class Datapipeline extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifWorkerGroup(value: string | string[], operator?: Operator | string) {
-    return this.if(`datapipeline:workerGroup`, value, operator || 'ArnLike');
+    return this.if(`workerGroup`, value, operator || 'ArnLike');
   }
 }

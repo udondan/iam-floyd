@@ -36,8 +36,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html
    */
   public toAbortMultipartUpload() {
-    this.to('s3:AbortMultipartUpload');
-    return this;
+    return this.to('AbortMultipartUpload');
   }
 
   /**
@@ -76,8 +75,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-managing.html#object-lock-managing-bypass
    */
   public toBypassGovernanceRetention() {
-    this.to('s3:BypassGovernanceRetention');
-    return this;
+    return this.to('BypassGovernanceRetention');
   }
 
   /**
@@ -100,8 +98,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html
    */
   public toCreateAccessPoint() {
-    this.to('s3:CreateAccessPoint');
-    return this;
+    return this.to('CreateAccessPoint');
   }
 
   /**
@@ -126,8 +123,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html
    */
   public toCreateBucket() {
-    this.to('s3:CreateBucket');
-    return this;
+    return this.to('CreateBucket');
   }
 
   /**
@@ -152,8 +148,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html
    */
   public toCreateJob() {
-    this.to('s3:CreateJob');
-    return this;
+    return this.to('CreateJob');
   }
 
   /**
@@ -174,8 +169,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html
    */
   public toDeleteAccessPoint() {
-    this.to('s3:DeleteAccessPoint');
-    return this;
+    return this.to('DeleteAccessPoint');
   }
 
   /**
@@ -196,8 +190,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html
    */
   public toDeleteAccessPointPolicy() {
-    this.to('s3:DeleteAccessPointPolicy');
-    return this;
+    return this.to('DeleteAccessPointPolicy');
   }
 
   /**
@@ -215,8 +208,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html
    */
   public toDeleteBucket() {
-    this.to('s3:DeleteBucket');
-    return this;
+    return this.to('DeleteBucket');
   }
 
   /**
@@ -234,8 +226,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketOwnershipControls.html
    */
   public toDeleteBucketOwnershipControls() {
-    this.to('s3:DeleteBucketOwnershipControls');
-    return this;
+    return this.to('DeleteBucketOwnershipControls');
   }
 
   /**
@@ -253,8 +244,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html
    */
   public toDeleteBucketPolicy() {
-    this.to('s3:DeleteBucketPolicy');
-    return this;
+    return this.to('DeleteBucketPolicy');
   }
 
   /**
@@ -272,8 +262,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketWebsite.html
    */
   public toDeleteBucketWebsite() {
-    this.to('s3:DeleteBucketWebsite');
-    return this;
+    return this.to('DeleteBucketWebsite');
   }
 
   /**
@@ -293,8 +282,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteJobTagging.html
    */
   public toDeleteJobTagging() {
-    this.to('s3:DeleteJobTagging');
-    return this;
+    return this.to('DeleteJobTagging');
   }
 
   /**
@@ -315,8 +303,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html
    */
   public toDeleteObject() {
-    this.to('s3:DeleteObject');
-    return this;
+    return this.to('DeleteObject');
   }
 
   /**
@@ -338,8 +325,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html
    */
   public toDeleteObjectTagging() {
-    this.to('s3:DeleteObjectTagging');
-    return this;
+    return this.to('DeleteObjectTagging');
   }
 
   /**
@@ -361,8 +347,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html
    */
   public toDeleteObjectVersion() {
-    this.to('s3:DeleteObjectVersion');
-    return this;
+    return this.to('DeleteObjectVersion');
   }
 
   /**
@@ -385,8 +370,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html
    */
   public toDeleteObjectVersionTagging() {
-    this.to('s3:DeleteObjectVersionTagging');
-    return this;
+    return this.to('DeleteObjectVersionTagging');
   }
 
   /**
@@ -404,8 +388,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteStorageLensConfiguration.html
    */
   public toDeleteStorageLensConfiguration() {
-    this.to('s3:DeleteStorageLensConfiguration');
-    return this;
+    return this.to('DeleteStorageLensConfiguration');
   }
 
   /**
@@ -423,8 +406,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteStorageLensConfigurationTagging.html
    */
   public toDeleteStorageLensConfigurationTagging() {
-    this.to('s3:DeleteStorageLensConfigurationTagging');
-    return this;
+    return this.to('DeleteStorageLensConfigurationTagging');
   }
 
   /**
@@ -442,8 +424,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html
    */
   public toDescribeJob() {
-    this.to('s3:DescribeJob');
-    return this;
+    return this.to('DescribeJob');
   }
 
   /**
@@ -461,8 +442,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAccelerateConfiguration.html
    */
   public toGetAccelerateConfiguration() {
-    this.to('s3:GetAccelerateConfiguration');
-    return this;
+    return this.to('GetAccelerateConfiguration');
   }
 
   /**
@@ -483,8 +463,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html
    */
   public toGetAccessPoint() {
-    this.to('s3:GetAccessPoint');
-    return this;
+    return this.to('GetAccessPoint');
   }
 
   /**
@@ -505,8 +484,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicy.html
    */
   public toGetAccessPointPolicy() {
-    this.to('s3:GetAccessPointPolicy');
-    return this;
+    return this.to('GetAccessPointPolicy');
   }
 
   /**
@@ -527,8 +505,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyStatus.html
    */
   public toGetAccessPointPolicyStatus() {
-    this.to('s3:GetAccessPointPolicyStatus');
-    return this;
+    return this.to('GetAccessPointPolicyStatus');
   }
 
   /**
@@ -546,8 +523,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetPublicAccessBlock.html
    */
   public toGetAccountPublicAccessBlock() {
-    this.to('s3:GetAccountPublicAccessBlock');
-    return this;
+    return this.to('GetAccountPublicAccessBlock');
   }
 
   /**
@@ -565,8 +541,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAnalyticsConfiguration.html
    */
   public toGetAnalyticsConfiguration() {
-    this.to('s3:GetAnalyticsConfiguration');
-    return this;
+    return this.to('GetAnalyticsConfiguration');
   }
 
   /**
@@ -584,8 +559,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html
    */
   public toGetBucketAcl() {
-    this.to('s3:GetBucketAcl');
-    return this;
+    return this.to('GetBucketAcl');
   }
 
   /**
@@ -603,8 +577,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html
    */
   public toGetBucketCORS() {
-    this.to('s3:GetBucketCORS');
-    return this;
+    return this.to('GetBucketCORS');
   }
 
   /**
@@ -615,8 +588,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLocation.html
    */
   public toGetBucketLocation() {
-    this.to('s3:GetBucketLocation');
-    return this;
+    return this.to('GetBucketLocation');
   }
 
   /**
@@ -634,8 +606,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html
    */
   public toGetBucketLogging() {
-    this.to('s3:GetBucketLogging');
-    return this;
+    return this.to('GetBucketLogging');
   }
 
   /**
@@ -653,8 +624,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotification.html
    */
   public toGetBucketNotification() {
-    this.to('s3:GetBucketNotification');
-    return this;
+    return this.to('GetBucketNotification');
   }
 
   /**
@@ -671,8 +641,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html
    */
   public toGetBucketObjectLockConfiguration() {
-    this.to('s3:GetBucketObjectLockConfiguration');
-    return this;
+    return this.to('GetBucketObjectLockConfiguration');
   }
 
   /**
@@ -690,8 +659,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketOwnershipControls.html
    */
   public toGetBucketOwnershipControls() {
-    this.to('s3:GetBucketOwnershipControls');
-    return this;
+    return this.to('GetBucketOwnershipControls');
   }
 
   /**
@@ -709,8 +677,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html
    */
   public toGetBucketPolicy() {
-    this.to('s3:GetBucketPolicy');
-    return this;
+    return this.to('GetBucketPolicy');
   }
 
   /**
@@ -728,8 +695,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicyStatus.html
    */
   public toGetBucketPolicyStatus() {
-    this.to('s3:GetBucketPolicyStatus');
-    return this;
+    return this.to('GetBucketPolicyStatus');
   }
 
   /**
@@ -747,8 +713,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html
    */
   public toGetBucketPublicAccessBlock() {
-    this.to('s3:GetBucketPublicAccessBlock');
-    return this;
+    return this.to('GetBucketPublicAccessBlock');
   }
 
   /**
@@ -766,8 +731,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketRequestPayment.html
    */
   public toGetBucketRequestPayment() {
-    this.to('s3:GetBucketRequestPayment');
-    return this;
+    return this.to('GetBucketRequestPayment');
   }
 
   /**
@@ -785,8 +749,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html
    */
   public toGetBucketTagging() {
-    this.to('s3:GetBucketTagging');
-    return this;
+    return this.to('GetBucketTagging');
   }
 
   /**
@@ -804,8 +767,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html
    */
   public toGetBucketVersioning() {
-    this.to('s3:GetBucketVersioning');
-    return this;
+    return this.to('GetBucketVersioning');
   }
 
   /**
@@ -823,8 +785,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketWebsite.html
    */
   public toGetBucketWebsite() {
-    this.to('s3:GetBucketWebsite');
-    return this;
+    return this.to('GetBucketWebsite');
   }
 
   /**
@@ -842,8 +803,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html
    */
   public toGetEncryptionConfiguration() {
-    this.to('s3:GetEncryptionConfiguration');
-    return this;
+    return this.to('GetEncryptionConfiguration');
   }
 
   /**
@@ -861,8 +821,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html
    */
   public toGetInventoryConfiguration() {
-    this.to('s3:GetInventoryConfiguration');
-    return this;
+    return this.to('GetInventoryConfiguration');
   }
 
   /**
@@ -880,8 +839,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html
    */
   public toGetJobTagging() {
-    this.to('s3:GetJobTagging');
-    return this;
+    return this.to('GetJobTagging');
   }
 
   /**
@@ -899,8 +857,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html
    */
   public toGetLifecycleConfiguration() {
-    this.to('s3:GetLifecycleConfiguration');
-    return this;
+    return this.to('GetLifecycleConfiguration');
   }
 
   /**
@@ -918,8 +875,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html
    */
   public toGetMetricsConfiguration() {
-    this.to('s3:GetMetricsConfiguration');
-    return this;
+    return this.to('GetMetricsConfiguration');
   }
 
   /**
@@ -941,8 +897,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html
    */
   public toGetObject() {
-    this.to('s3:GetObject');
-    return this;
+    return this.to('GetObject');
   }
 
   /**
@@ -964,8 +919,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html
    */
   public toGetObjectAcl() {
-    this.to('s3:GetObjectAcl');
-    return this;
+    return this.to('GetObjectAcl');
   }
 
   /**
@@ -986,8 +940,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLegalHold.html
    */
   public toGetObjectLegalHold() {
-    this.to('s3:GetObjectLegalHold');
-    return this;
+    return this.to('GetObjectLegalHold');
   }
 
   /**
@@ -1008,8 +961,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectRetention.html
    */
   public toGetObjectRetention() {
-    this.to('s3:GetObjectRetention');
-    return this;
+    return this.to('GetObjectRetention');
   }
 
   /**
@@ -1031,8 +983,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html
    */
   public toGetObjectTagging() {
-    this.to('s3:GetObjectTagging');
-    return this;
+    return this.to('GetObjectTagging');
   }
 
   /**
@@ -1050,8 +1001,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTorrent.html
    */
   public toGetObjectTorrent() {
-    this.to('s3:GetObjectTorrent');
-    return this;
+    return this.to('GetObjectTorrent');
   }
 
   /**
@@ -1074,8 +1024,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html
    */
   public toGetObjectVersion() {
-    this.to('s3:GetObjectVersion');
-    return this;
+    return this.to('GetObjectVersion');
   }
 
   /**
@@ -1098,8 +1047,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html
    */
   public toGetObjectVersionAcl() {
-    this.to('s3:GetObjectVersionAcl');
-    return this;
+    return this.to('GetObjectVersionAcl');
   }
 
   /**
@@ -1115,8 +1063,7 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzContentSha256()
    */
   public toGetObjectVersionForReplication() {
-    this.to('s3:GetObjectVersionForReplication');
-    return this;
+    return this.to('GetObjectVersionForReplication');
   }
 
   /**
@@ -1137,8 +1084,7 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzContentSha256()
    */
   public toGetObjectVersionTagging() {
-    this.to('s3:GetObjectVersionTagging');
-    return this;
+    return this.to('GetObjectVersionTagging');
   }
 
   /**
@@ -1157,8 +1103,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTorrent.html
    */
   public toGetObjectVersionTorrent() {
-    this.to('s3:GetObjectVersionTorrent');
-    return this;
+    return this.to('GetObjectVersionTorrent');
   }
 
   /**
@@ -1176,8 +1121,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html
    */
   public toGetReplicationConfiguration() {
-    this.to('s3:GetReplicationConfiguration');
-    return this;
+    return this.to('GetReplicationConfiguration');
   }
 
   /**
@@ -1195,8 +1139,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetStorageLensConfiguration.html
    */
   public toGetStorageLensConfiguration() {
-    this.to('s3:GetStorageLensConfiguration');
-    return this;
+    return this.to('GetStorageLensConfiguration');
   }
 
   /**
@@ -1214,8 +1157,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetStorageLensConfigurationTagging.html
    */
   public toGetStorageLensConfigurationTagging() {
-    this.to('s3:GetStorageLensConfigurationTagging');
-    return this;
+    return this.to('GetStorageLensConfigurationTagging');
   }
 
   /**
@@ -1233,8 +1175,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_dashboard.html
    */
   public toGetStorageLensDashboard() {
-    this.to('s3:GetStorageLensDashboard');
-    return this;
+    return this.to('GetStorageLensDashboard');
   }
 
   /**
@@ -1252,8 +1193,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html
    */
   public toListAccessPoints() {
-    this.to('s3:ListAccessPoints');
-    return this;
+    return this.to('ListAccessPoints');
   }
 
   /**
@@ -1271,8 +1211,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html
    */
   public toListAllMyBuckets() {
-    this.to('s3:ListAllMyBuckets');
-    return this;
+    return this.to('ListAllMyBuckets');
   }
 
   /**
@@ -1296,8 +1235,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html
    */
   public toListBucket() {
-    this.to('s3:ListBucket');
-    return this;
+    return this.to('ListBucket');
   }
 
   /**
@@ -1318,8 +1256,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html
    */
   public toListBucketMultipartUploads() {
-    this.to('s3:ListBucketMultipartUploads');
-    return this;
+    return this.to('ListBucketMultipartUploads');
   }
 
   /**
@@ -1343,8 +1280,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html
    */
   public toListBucketVersions() {
-    this.to('s3:ListBucketVersions');
-    return this;
+    return this.to('ListBucketVersions');
   }
 
   /**
@@ -1362,8 +1298,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListJobs.html
    */
   public toListJobs() {
-    this.to('s3:ListJobs');
-    return this;
+    return this.to('ListJobs');
   }
 
   /**
@@ -1384,8 +1319,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html
    */
   public toListMultipartUploadParts() {
-    this.to('s3:ListMultipartUploadParts');
-    return this;
+    return this.to('ListMultipartUploadParts');
   }
 
   /**
@@ -1403,8 +1337,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListStorageLensConfigurations.html
    */
   public toListStorageLensConfigurations() {
-    this.to('s3:ListStorageLensConfigurations');
-    return this;
+    return this.to('ListStorageLensConfigurations');
   }
 
   /**
@@ -1422,8 +1355,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html#repl-ownership-add-role-permission
    */
   public toObjectOwnerOverrideToBucketOwner() {
-    this.to('s3:ObjectOwnerOverrideToBucketOwner');
-    return this;
+    return this.to('ObjectOwnerOverrideToBucketOwner');
   }
 
   /**
@@ -1441,8 +1373,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html
    */
   public toPutAccelerateConfiguration() {
-    this.to('s3:PutAccelerateConfiguration');
-    return this;
+    return this.to('PutAccelerateConfiguration');
   }
 
   /**
@@ -1463,8 +1394,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html
    */
   public toPutAccessPointPolicy() {
-    this.to('s3:PutAccessPointPolicy');
-    return this;
+    return this.to('PutAccessPointPolicy');
   }
 
   /**
@@ -1482,8 +1412,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html
    */
   public toPutAccountPublicAccessBlock() {
-    this.to('s3:PutAccountPublicAccessBlock');
-    return this;
+    return this.to('PutAccountPublicAccessBlock');
   }
 
   /**
@@ -1501,8 +1430,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html
    */
   public toPutAnalyticsConfiguration() {
-    this.to('s3:PutAnalyticsConfiguration');
-    return this;
+    return this.to('PutAnalyticsConfiguration');
   }
 
   /**
@@ -1526,8 +1454,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAcl.html
    */
   public toPutBucketAcl() {
-    this.to('s3:PutBucketAcl');
-    return this;
+    return this.to('PutBucketAcl');
   }
 
   /**
@@ -1545,8 +1472,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html
    */
   public toPutBucketCORS() {
-    this.to('s3:PutBucketCORS');
-    return this;
+    return this.to('PutBucketCORS');
   }
 
   /**
@@ -1564,8 +1490,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html
    */
   public toPutBucketLogging() {
-    this.to('s3:PutBucketLogging');
-    return this;
+    return this.to('PutBucketLogging');
   }
 
   /**
@@ -1583,8 +1508,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html
    */
   public toPutBucketNotification() {
-    this.to('s3:PutBucketNotification');
-    return this;
+    return this.to('PutBucketNotification');
   }
 
   /**
@@ -1601,8 +1525,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLockConfiguration.html
    */
   public toPutBucketObjectLockConfiguration() {
-    this.to('s3:PutBucketObjectLockConfiguration');
-    return this;
+    return this.to('PutBucketObjectLockConfiguration');
   }
 
   /**
@@ -1620,8 +1543,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketOwnershipControls.html
    */
   public toPutBucketOwnershipControls() {
-    this.to('s3:PutBucketOwnershipControls');
-    return this;
+    return this.to('PutBucketOwnershipControls');
   }
 
   /**
@@ -1639,8 +1561,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html
    */
   public toPutBucketPolicy() {
-    this.to('s3:PutBucketPolicy');
-    return this;
+    return this.to('PutBucketPolicy');
   }
 
   /**
@@ -1658,8 +1579,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutPublicAccessBlock.html
    */
   public toPutBucketPublicAccessBlock() {
-    this.to('s3:PutBucketPublicAccessBlock');
-    return this;
+    return this.to('PutBucketPublicAccessBlock');
   }
 
   /**
@@ -1677,8 +1597,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketRequestPayment.html
    */
   public toPutBucketRequestPayment() {
-    this.to('s3:PutBucketRequestPayment');
-    return this;
+    return this.to('PutBucketRequestPayment');
   }
 
   /**
@@ -1696,8 +1615,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html
    */
   public toPutBucketTagging() {
-    this.to('s3:PutBucketTagging');
-    return this;
+    return this.to('PutBucketTagging');
   }
 
   /**
@@ -1715,8 +1633,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html
    */
   public toPutBucketVersioning() {
-    this.to('s3:PutBucketVersioning');
-    return this;
+    return this.to('PutBucketVersioning');
   }
 
   /**
@@ -1734,8 +1651,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html
    */
   public toPutBucketWebsite() {
-    this.to('s3:PutBucketWebsite');
-    return this;
+    return this.to('PutBucketWebsite');
   }
 
   /**
@@ -1753,8 +1669,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html
    */
   public toPutEncryptionConfiguration() {
-    this.to('s3:PutEncryptionConfiguration');
-    return this;
+    return this.to('PutEncryptionConfiguration');
   }
 
   /**
@@ -1772,8 +1687,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html
    */
   public toPutInventoryConfiguration() {
-    this.to('s3:PutInventoryConfiguration');
-    return this;
+    return this.to('PutInventoryConfiguration');
   }
 
   /**
@@ -1795,8 +1709,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutJobTagging.html
    */
   public toPutJobTagging() {
-    this.to('s3:PutJobTagging');
-    return this;
+    return this.to('PutJobTagging');
   }
 
   /**
@@ -1814,8 +1727,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html
    */
   public toPutLifecycleConfiguration() {
-    this.to('s3:PutLifecycleConfiguration');
-    return this;
+    return this.to('PutLifecycleConfiguration');
   }
 
   /**
@@ -1833,8 +1745,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html
    */
   public toPutMetricsConfiguration() {
-    this.to('s3:PutMetricsConfiguration');
-    return this;
+    return this.to('PutMetricsConfiguration');
   }
 
   /**
@@ -1873,8 +1784,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html
    */
   public toPutObject() {
-    this.to('s3:PutObject');
-    return this;
+    return this.to('PutObject');
   }
 
   /**
@@ -1903,8 +1813,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html
    */
   public toPutObjectAcl() {
-    this.to('s3:PutObjectAcl');
-    return this;
+    return this.to('PutObjectAcl');
   }
 
   /**
@@ -1926,8 +1835,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLegalHold.html
    */
   public toPutObjectLegalHold() {
-    this.to('s3:PutObjectLegalHold');
-    return this;
+    return this.to('PutObjectLegalHold');
   }
 
   /**
@@ -1951,8 +1859,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html
    */
   public toPutObjectRetention() {
-    this.to('s3:PutObjectRetention');
-    return this;
+    return this.to('PutObjectRetention');
   }
 
   /**
@@ -1976,8 +1883,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html
    */
   public toPutObjectTagging() {
-    this.to('s3:PutObjectTagging');
-    return this;
+    return this.to('PutObjectTagging');
   }
 
   /**
@@ -2007,8 +1913,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html
    */
   public toPutObjectVersionAcl() {
-    this.to('s3:PutObjectVersionAcl');
-    return this;
+    return this.to('PutObjectVersionAcl');
   }
 
   /**
@@ -2033,8 +1938,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html
    */
   public toPutObjectVersionTagging() {
-    this.to('s3:PutObjectVersionTagging');
-    return this;
+    return this.to('PutObjectVersionTagging');
   }
 
   /**
@@ -2055,8 +1959,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html
    */
   public toPutReplicationConfiguration() {
-    this.to('s3:PutReplicationConfiguration');
-    return this;
+    return this.to('PutReplicationConfiguration');
   }
 
   /**
@@ -2076,8 +1979,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutStorageLensConfiguration.html
    */
   public toPutStorageLensConfiguration() {
-    this.to('s3:PutStorageLensConfiguration');
-    return this;
+    return this.to('PutStorageLensConfiguration');
   }
 
   /**
@@ -2097,8 +1999,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutStorageLensConfigurationTagging.html
    */
   public toPutStorageLensConfigurationTagging() {
-    this.to('s3:PutStorageLensConfigurationTagging');
-    return this;
+    return this.to('PutStorageLensConfigurationTagging');
   }
 
   /**
@@ -2116,8 +2017,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
    */
   public toReplicateDelete() {
-    this.to('s3:ReplicateDelete');
-    return this;
+    return this.to('ReplicateDelete');
   }
 
   /**
@@ -2137,8 +2037,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
    */
   public toReplicateObject() {
-    this.to('s3:ReplicateObject');
-    return this;
+    return this.to('ReplicateObject');
   }
 
   /**
@@ -2156,8 +2055,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
    */
   public toReplicateTags() {
-    this.to('s3:ReplicateTags');
-    return this;
+    return this.to('ReplicateTags');
   }
 
   /**
@@ -2178,8 +2076,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html
    */
   public toRestoreObject() {
-    this.to('s3:RestoreObject');
-    return this;
+    return this.to('RestoreObject');
   }
 
   /**
@@ -2200,8 +2097,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobPriority.html
    */
   public toUpdateJobPriority() {
-    this.to('s3:UpdateJobPriority');
-    return this;
+    return this.to('UpdateJobPriority');
   }
 
   /**
@@ -2222,8 +2118,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html
    */
   public toUpdateJobStatus() {
-    this.to('s3:UpdateJobStatus');
-    return this;
+    return this.to('UpdateJobStatus');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -2480,7 +2375,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAccessPointNetworkOrigin(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:AccessPointNetworkOrigin`, value, operator || 'StringLike');
+    return this.if(`AccessPointNetworkOrigin`, value, operator || 'StringLike');
   }
 
   /**
@@ -2527,7 +2422,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDataAccessPointAccount(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:DataAccessPointAccount`, value, operator || 'StringLike');
+    return this.if(`DataAccessPointAccount`, value, operator || 'StringLike');
   }
 
   /**
@@ -2572,7 +2467,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDataAccessPointArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:DataAccessPointArn`, value, operator || 'StringLike');
+    return this.if(`DataAccessPointArn`, value, operator || 'StringLike');
   }
 
   /**
@@ -2590,7 +2485,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifExistingJobOperation(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:ExistingJobOperation`, value, operator || 'StringLike');
+    return this.if(`ExistingJobOperation`, value, operator || 'StringLike');
   }
 
   /**
@@ -2608,7 +2503,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifExistingJobPriority(value: number | number[], operator?: Operator | string) {
-    return this.if(`s3:ExistingJobPriority`, value, operator || 'NumericEquals');
+    return this.if(`ExistingJobPriority`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -2635,7 +2530,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifExistingObjectTag(key: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:ExistingObjectTag/${ key }`, value, operator || 'StringLike');
+    return this.if(`ExistingObjectTag/${ key }`, value, operator || 'StringLike');
   }
 
   /**
@@ -2650,7 +2545,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifJobSuspendedCause(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:JobSuspendedCause`, value, operator || 'StringLike');
+    return this.if(`JobSuspendedCause`, value, operator || 'StringLike');
   }
 
   /**
@@ -2662,7 +2557,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLocationConstraint(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:LocationConstraint`, value, operator || 'StringLike');
+    return this.if(`LocationConstraint`, value, operator || 'StringLike');
   }
 
   /**
@@ -2677,7 +2572,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestJobOperation(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:RequestJobOperation`, value, operator || 'StringLike');
+    return this.if(`RequestJobOperation`, value, operator || 'StringLike');
   }
 
   /**
@@ -2693,7 +2588,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifRequestJobPriority(value: number | number[], operator?: Operator | string) {
-    return this.if(`s3:RequestJobPriority`, value, operator || 'NumericEquals');
+    return this.if(`RequestJobPriority`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -2712,7 +2607,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestObjectTag(key: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:RequestObjectTag/${ key }`, value, operator || 'StringLike');
+    return this.if(`RequestObjectTag/${ key }`, value, operator || 'StringLike');
   }
 
   /**
@@ -2730,7 +2625,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestObjectTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:RequestObjectTagKeys`, value, operator || 'StringLike');
+    return this.if(`RequestObjectTagKeys`, value, operator || 'StringLike');
   }
 
   /**
@@ -2848,7 +2743,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceAccount(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:ResourceAccount`, value, operator || 'StringLike');
+    return this.if(`ResourceAccount`, value, operator || 'StringLike');
   }
 
   /**
@@ -2860,7 +2755,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVersionId(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:VersionId`, value, operator || 'StringLike');
+    return this.if(`VersionId`, value, operator || 'StringLike');
   }
 
   /**
@@ -2978,7 +2873,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAuthType(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:authType`, value, operator || 'StringLike');
+    return this.if(`authType`, value, operator || 'StringLike');
   }
 
   /**
@@ -2994,7 +2889,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDelimiter(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:delimiter`, value, operator || 'StringLike');
+    return this.if(`delimiter`, value, operator || 'StringLike');
   }
 
   /**
@@ -3010,7 +2905,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLocationconstraint(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:locationconstraint`, value, operator || 'StringLike');
+    return this.if(`locationconstraint`, value, operator || 'StringLike');
   }
 
   /**
@@ -3026,7 +2921,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifMaxKeys(value: number | number[], operator?: Operator | string) {
-    return this.if(`s3:max-keys`, value, operator || 'NumericEquals');
+    return this.if(`max-keys`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -3043,7 +2938,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifObjectLockLegalHold(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:object-lock-legal-hold`, value, operator || 'StringLike');
+    return this.if(`object-lock-legal-hold`, value, operator || 'StringLike');
   }
 
   /**
@@ -3058,7 +2953,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifObjectLockMode(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:object-lock-mode`, value, operator || 'StringLike');
+    return this.if(`object-lock-mode`, value, operator || 'StringLike');
   }
 
   /**
@@ -3075,7 +2970,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifObjectLockRemainingRetentionDays(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:object-lock-remaining-retention-days`, value, operator || 'StringLike');
+    return this.if(`object-lock-remaining-retention-days`, value, operator || 'StringLike');
   }
 
   /**
@@ -3092,7 +2987,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifObjectLockRetainUntilDate(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:object-lock-retain-until-date`, value, operator || 'StringLike');
+    return this.if(`object-lock-retain-until-date`, value, operator || 'StringLike');
   }
 
   /**
@@ -3108,7 +3003,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPrefix(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:prefix`, value, operator || 'StringLike');
+    return this.if(`prefix`, value, operator || 'StringLike');
   }
 
   /**
@@ -3226,7 +3121,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifSignatureAge(value: number | number[], operator?: Operator | string) {
-    return this.if(`s3:signatureAge`, value, operator || 'NumericEquals');
+    return this.if(`signatureAge`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -3344,7 +3239,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSignatureversion(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:signatureversion`, value, operator || 'StringLike');
+    return this.if(`signatureversion`, value, operator || 'StringLike');
   }
 
   /**
@@ -3366,7 +3261,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVersionid(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:versionid`, value, operator || 'StringLike');
+    return this.if(`versionid`, value, operator || 'StringLike');
   }
 
   /**
@@ -3387,7 +3282,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzAcl(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:x-amz-acl`, value, operator || 'StringLike');
+    return this.if(`x-amz-acl`, value, operator || 'StringLike');
   }
 
   /**
@@ -3503,7 +3398,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzContentSha256(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:x-amz-content-sha256`, value, operator || 'StringLike');
+    return this.if(`x-amz-content-sha256`, value, operator || 'StringLike');
   }
 
   /**
@@ -3519,7 +3414,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzCopySource(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:x-amz-copy-source`, value, operator || 'StringLike');
+    return this.if(`x-amz-copy-source`, value, operator || 'StringLike');
   }
 
   /**
@@ -3539,7 +3434,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzGrantFullControl(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:x-amz-grant-full-control`, value, operator || 'StringLike');
+    return this.if(`x-amz-grant-full-control`, value, operator || 'StringLike');
   }
 
   /**
@@ -3559,7 +3454,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzGrantRead(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:x-amz-grant-read`, value, operator || 'StringLike');
+    return this.if(`x-amz-grant-read`, value, operator || 'StringLike');
   }
 
   /**
@@ -3579,7 +3474,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzGrantReadAcp(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:x-amz-grant-read-acp`, value, operator || 'StringLike');
+    return this.if(`x-amz-grant-read-acp`, value, operator || 'StringLike');
   }
 
   /**
@@ -3599,7 +3494,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzGrantWrite(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:x-amz-grant-write`, value, operator || 'StringLike');
+    return this.if(`x-amz-grant-write`, value, operator || 'StringLike');
   }
 
   /**
@@ -3619,7 +3514,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzGrantWriteAcp(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:x-amz-grant-write-acp`, value, operator || 'StringLike');
+    return this.if(`x-amz-grant-write-acp`, value, operator || 'StringLike');
   }
 
   /**
@@ -3635,7 +3530,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzMetadataDirective(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:x-amz-metadata-directive`, value, operator || 'StringLike');
+    return this.if(`x-amz-metadata-directive`, value, operator || 'StringLike');
   }
 
   /**
@@ -3652,7 +3547,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzServerSideEncryption(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:x-amz-server-side-encryption`, value, operator || 'StringLike');
+    return this.if(`x-amz-server-side-encryption`, value, operator || 'StringLike');
   }
 
   /**
@@ -3669,7 +3564,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzServerSideEncryptionAwsKmsKeyId(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:x-amz-server-side-encryption-aws-kms-key-id`, value, operator || 'StringLike');
+    return this.if(`x-amz-server-side-encryption-aws-kms-key-id`, value, operator || 'StringLike');
   }
 
   /**
@@ -3687,7 +3582,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzStorageClass(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:x-amz-storage-class`, value, operator || 'StringLike');
+    return this.if(`x-amz-storage-class`, value, operator || 'StringLike');
   }
 
   /**
@@ -3703,6 +3598,6 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzWebsiteRedirectLocation(value: string | string[], operator?: Operator | string) {
-    return this.if(`s3:x-amz-website-redirect-location`, value, operator || 'StringLike');
+    return this.if(`x-amz-website-redirect-location`, value, operator || 'StringLike');
   }
 }

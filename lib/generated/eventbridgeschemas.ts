@@ -26,8 +26,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#CreateDiscoverer
    */
   public toCreateDiscoverer() {
-    this.to('schemas:CreateDiscoverer');
-    return this;
+    return this.to('CreateDiscoverer');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#CreateRegistry
    */
   public toCreateRegistry() {
-    this.to('schemas:CreateRegistry');
-    return this;
+    return this.to('CreateRegistry');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#CreateSchema
    */
   public toCreateSchema() {
-    this.to('schemas:CreateSchema');
-    return this;
+    return this.to('CreateSchema');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#DeleteDiscoverer
    */
   public toDeleteDiscoverer() {
-    this.to('schemas:DeleteDiscoverer');
-    return this;
+    return this.to('DeleteDiscoverer');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#DeleteRegistry
    */
   public toDeleteRegistry() {
-    this.to('schemas:DeleteRegistry');
-    return this;
+    return this.to('DeleteRegistry');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-policy.html#DeleteResourcePolicy
    */
   public toDeleteResourcePolicy() {
-    this.to('schemas:DeleteResourcePolicy');
-    return this;
+    return this.to('DeleteResourcePolicy');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#DeleteSchema
    */
   public toDeleteSchema() {
-    this.to('schemas:DeleteSchema');
-    return this;
+    return this.to('DeleteSchema');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-version-schemaversion.html#DeleteSchemaVersion
    */
   public toDeleteSchemaVersion() {
-    this.to('schemas:DeleteSchemaVersion');
-    return this;
+    return this.to('DeleteSchemaVersion');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-language-language.html#DescribeCodeBinding
    */
   public toDescribeCodeBinding() {
-    this.to('schemas:DescribeCodeBinding');
-    return this;
+    return this.to('DescribeCodeBinding');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#DescribeDiscoverer
    */
   public toDescribeDiscoverer() {
-    this.to('schemas:DescribeDiscoverer');
-    return this;
+    return this.to('DescribeDiscoverer');
   }
 
   /**
@@ -146,8 +136,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#DescribeRegistry
    */
   public toDescribeRegistry() {
-    this.to('schemas:DescribeRegistry');
-    return this;
+    return this.to('DescribeRegistry');
   }
 
   /**
@@ -158,8 +147,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#DescribeSchema
    */
   public toDescribeSchema() {
-    this.to('schemas:DescribeSchema');
-    return this;
+    return this.to('DescribeSchema');
   }
 
   /**
@@ -170,8 +158,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-policy.html#ExportSchema
    */
   public toExportSchema() {
-    this.to('schemas:ExportSchema');
-    return this;
+    return this.to('ExportSchema');
   }
 
   /**
@@ -182,8 +169,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-language-language-source.html#GetCodeBindingSource
    */
   public toGetCodeBindingSource() {
-    this.to('schemas:GetCodeBindingSource');
-    return this;
+    return this.to('GetCodeBindingSource');
   }
 
   /**
@@ -194,8 +180,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discover.html#GetDiscoveredSchema
    */
   public toGetDiscoveredSchema() {
-    this.to('schemas:GetDiscoveredSchema');
-    return this;
+    return this.to('GetDiscoveredSchema');
   }
 
   /**
@@ -206,8 +191,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-policy.html#GetResourcePolicy
    */
   public toGetResourcePolicy() {
-    this.to('schemas:GetResourcePolicy');
-    return this;
+    return this.to('GetResourcePolicy');
   }
 
   /**
@@ -218,8 +202,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#ListDiscoverers
    */
   public toListDiscoverers() {
-    this.to('schemas:ListDiscoverers');
-    return this;
+    return this.to('ListDiscoverers');
   }
 
   /**
@@ -230,8 +213,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries.html#ListRegistries
    */
   public toListRegistries() {
-    this.to('schemas:ListRegistries');
-    return this;
+    return this.to('ListRegistries');
   }
 
   /**
@@ -242,8 +224,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-versions.html#ListSchemaVersions
    */
   public toListSchemaVersions() {
-    this.to('schemas:ListSchemaVersions');
-    return this;
+    return this.to('ListSchemaVersions');
   }
 
   /**
@@ -254,8 +235,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas.html#ListSchemas
    */
   public toListSchemas() {
-    this.to('schemas:ListSchemas');
-    return this;
+    return this.to('ListSchemas');
   }
 
   /**
@@ -266,8 +246,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#ListTagsForResource
    */
   public toListTagsForResource() {
-    this.to('schemas:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -278,8 +257,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-language-language.html#PutCodeBinding
    */
   public toPutCodeBinding() {
-    this.to('schemas:PutCodeBinding');
-    return this;
+    return this.to('PutCodeBinding');
   }
 
   /**
@@ -290,8 +268,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-policy.html#PutResourcePolicy
    */
   public toPutResourcePolicy() {
-    this.to('schemas:PutResourcePolicy');
-    return this;
+    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -302,8 +279,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-search.html#SearchSchemas
    */
   public toSearchSchemas() {
-    this.to('schemas:SearchSchemas');
-    return this;
+    return this.to('SearchSchemas');
   }
 
   /**
@@ -314,8 +290,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#StartDiscoverer
    */
   public toStartDiscoverer() {
-    this.to('schemas:StartDiscoverer');
-    return this;
+    return this.to('StartDiscoverer');
   }
 
   /**
@@ -326,8 +301,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#StopDiscoverer
    */
   public toStopDiscoverer() {
-    this.to('schemas:StopDiscoverer');
-    return this;
+    return this.to('StopDiscoverer');
   }
 
   /**
@@ -342,8 +316,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#TagResource
    */
   public toTagResource() {
-    this.to('schemas:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -357,8 +330,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#UntagResource
    */
   public toUntagResource() {
-    this.to('schemas:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -369,8 +341,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#UpdateDiscoverer
    */
   public toUpdateDiscoverer() {
-    this.to('schemas:UpdateDiscoverer');
-    return this;
+    return this.to('UpdateDiscoverer');
   }
 
   /**
@@ -381,8 +352,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#UpdateRegistry
    */
   public toUpdateRegistry() {
-    this.to('schemas:UpdateRegistry');
-    return this;
+    return this.to('UpdateRegistry');
   }
 
   /**
@@ -393,8 +363,7 @@ export class Schemas extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#UpdateSchema
    */
   public toUpdateSchema() {
-    this.to('schemas:UpdateSchema');
-    return this;
+    return this.to('UpdateSchema');
   }
 
   protected accessLevelList: AccessLevelList = {

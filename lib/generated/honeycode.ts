@@ -26,8 +26,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#approve-team-association
    */
   public toApproveTeamAssociation() {
-    this.to('honeycode:ApproveTeamAssociation');
-    return this;
+    return this.to('ApproveTeamAssociation');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_BatchCreateTableRows.html
    */
   public toBatchCreateTableRows() {
-    this.to('honeycode:BatchCreateTableRows');
-    return this;
+    return this.to('BatchCreateTableRows');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_BatchDeleteTableRows.html
    */
   public toBatchDeleteTableRows() {
-    this.to('honeycode:BatchDeleteTableRows');
-    return this;
+    return this.to('BatchDeleteTableRows');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_BatchUpdateTableRows.html
    */
   public toBatchUpdateTableRows() {
-    this.to('honeycode:BatchUpdateTableRows');
-    return this;
+    return this.to('BatchUpdateTableRows');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_BatchUpsertTableRows.html
    */
   public toBatchUpsertTableRows() {
-    this.to('honeycode:BatchUpsertTableRows');
-    return this;
+    return this.to('BatchUpsertTableRows');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/tenant.html#create-tenant
    */
   public toCreateTenant() {
-    this.to('honeycode:CreateTenant');
-    return this;
+    return this.to('CreateTenant');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_DescribeTableDataImportJob.html
    */
   public toDescribeTableDataImportJob() {
-    this.to('honeycode:DescribeTableDataImportJob');
-    return this;
+    return this.to('DescribeTableDataImportJob');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_GetScreenData.html
    */
   public toGetScreenData() {
-    this.to('honeycode:GetScreenData');
-    return this;
+    return this.to('GetScreenData');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_InvokeScreenAutomation.html
    */
   public toInvokeScreenAutomation() {
-    this.to('honeycode:InvokeScreenAutomation');
-    return this;
+    return this.to('InvokeScreenAutomation');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_ListTableColumns.html
    */
   public toListTableColumns() {
-    this.to('honeycode:ListTableColumns');
-    return this;
+    return this.to('ListTableColumns');
   }
 
   /**
@@ -146,8 +136,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_ListTableRows.html
    */
   public toListTableRows() {
-    this.to('honeycode:ListTableRows');
-    return this;
+    return this.to('ListTableRows');
   }
 
   /**
@@ -158,8 +147,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_ListTables.html
    */
   public toListTables() {
-    this.to('honeycode:ListTables');
-    return this;
+    return this.to('ListTables');
   }
 
   /**
@@ -170,8 +158,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#list-team-associations
    */
   public toListTeamAssociations() {
-    this.to('honeycode:ListTeamAssociations');
-    return this;
+    return this.to('ListTeamAssociations');
   }
 
   /**
@@ -182,8 +169,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/tenant.html#list-tenants
    */
   public toListTenants() {
-    this.to('honeycode:ListTenants');
-    return this;
+    return this.to('ListTenants');
   }
 
   /**
@@ -194,8 +180,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_QueryTableRows.html
    */
   public toQueryTableRows() {
-    this.to('honeycode:QueryTableRows');
-    return this;
+    return this.to('QueryTableRows');
   }
 
   /**
@@ -206,8 +191,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#reject-team-association
    */
   public toRejectTeamAssociation() {
-    this.to('honeycode:RejectTeamAssociation');
-    return this;
+    return this.to('RejectTeamAssociation');
   }
 
   /**
@@ -218,8 +202,7 @@ export class Honeycode extends PolicyStatement {
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_StartTableDataImportJob.html
    */
   public toStartTableDataImportJob() {
-    this.to('honeycode:StartTableDataImportJob');
-    return this;
+    return this.to('StartTableDataImportJob');
   }
 
   protected accessLevelList: AccessLevelList = {

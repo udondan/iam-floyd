@@ -26,8 +26,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toDeleteApp() {
-    this.to('launchwizard:DeleteApp');
-    return this;
+    return this.to('DeleteApp');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toDescribeProvisionedApp() {
-    this.to('launchwizard:DescribeProvisionedApp');
-    return this;
+    return this.to('DescribeProvisionedApp');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toDescribeProvisioningEvents() {
-    this.to('launchwizard:DescribeProvisioningEvents');
-    return this;
+    return this.to('DescribeProvisioningEvents');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toGetInfrastructureSuggestion() {
-    this.to('launchwizard:GetInfrastructureSuggestion');
-    return this;
+    return this.to('GetInfrastructureSuggestion');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toGetIpAddress() {
-    this.to('launchwizard:GetIpAddress');
-    return this;
+    return this.to('GetIpAddress');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toGetResourceCostEstimate() {
-    this.to('launchwizard:GetResourceCostEstimate');
-    return this;
+    return this.to('GetResourceCostEstimate');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toListProvisionedApps() {
-    this.to('launchwizard:ListProvisionedApps');
-    return this;
+    return this.to('ListProvisionedApps');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Launchwizard extends PolicyStatement {
    * https://docs.aws.amazon.com/launchwizard/
    */
   public toStartProvisioning() {
-    this.to('launchwizard:StartProvisioning');
-    return this;
+    return this.to('StartProvisioning');
   }
 
   protected accessLevelList: AccessLevelList = {

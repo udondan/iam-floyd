@@ -26,8 +26,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-acceptinboundcrossclustersearchconnection
    */
   public toAcceptInboundCrossClusterSearchConnection() {
-    this.to('es:AcceptInboundCrossClusterSearchConnection');
-    return this;
+    return this.to('AcceptInboundCrossClusterSearchConnection');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-addtags
    */
   public toAddTags() {
-    this.to('es:AddTags');
-    return this;
+    return this.to('AddTags');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createelasticsearchdomain
    */
   public toCreateElasticsearchDomain() {
-    this.to('es:CreateElasticsearchDomain');
-    return this;
+    return this.to('CreateElasticsearchDomain');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createelasticsearchservicerole
    */
   public toCreateElasticsearchServiceRole() {
-    this.to('es:CreateElasticsearchServiceRole');
-    return this;
+    return this.to('CreateElasticsearchServiceRole');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createoutboundcrossclustersearchconnection
    */
   public toCreateOutboundCrossClusterSearchConnection() {
-    this.to('es:CreateOutboundCrossClusterSearchConnection');
-    return this;
+    return this.to('CreateOutboundCrossClusterSearchConnection');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteelasticsearchdomain
    */
   public toDeleteElasticsearchDomain() {
-    this.to('es:DeleteElasticsearchDomain');
-    return this;
+    return this.to('DeleteElasticsearchDomain');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteelasticsearchservicerole
    */
   public toDeleteElasticsearchServiceRole() {
-    this.to('es:DeleteElasticsearchServiceRole');
-    return this;
+    return this.to('DeleteElasticsearchServiceRole');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteinboundcrossclustersearchconnection
    */
   public toDeleteInboundCrossClusterSearchConnection() {
-    this.to('es:DeleteInboundCrossClusterSearchConnection');
-    return this;
+    return this.to('DeleteInboundCrossClusterSearchConnection');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteoutboundcrossclustersearchconnection
    */
   public toDeleteOutboundCrossClusterSearchConnection() {
-    this.to('es:DeleteOutboundCrossClusterSearchConnection');
-    return this;
+    return this.to('DeleteOutboundCrossClusterSearchConnection');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeelasticsearchdomain
    */
   public toDescribeElasticsearchDomain() {
-    this.to('es:DescribeElasticsearchDomain');
-    return this;
+    return this.to('DescribeElasticsearchDomain');
   }
 
   /**
@@ -146,8 +136,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeelasticsearchdomainconfig
    */
   public toDescribeElasticsearchDomainConfig() {
-    this.to('es:DescribeElasticsearchDomainConfig');
-    return this;
+    return this.to('DescribeElasticsearchDomainConfig');
   }
 
   /**
@@ -158,8 +147,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeelasticsearchdomain
    */
   public toDescribeElasticsearchDomains() {
-    this.to('es:DescribeElasticsearchDomains');
-    return this;
+    return this.to('DescribeElasticsearchDomains');
   }
 
   /**
@@ -170,8 +158,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeinstancetypelimits
    */
   public toDescribeElasticsearchInstanceTypeLimits() {
-    this.to('es:DescribeElasticsearchInstanceTypeLimits');
-    return this;
+    return this.to('DescribeElasticsearchInstanceTypeLimits');
   }
 
   /**
@@ -182,8 +169,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeinboundcrossclustersearchconnections
    */
   public toDescribeInboundCrossClusterSearchConnections() {
-    this.to('es:DescribeInboundCrossClusterSearchConnections');
-    return this;
+    return this.to('DescribeInboundCrossClusterSearchConnections');
   }
 
   /**
@@ -194,8 +180,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeoutboundcrossclustersearchconnections
    */
   public toDescribeOutboundCrossClusterSearchConnections() {
-    this.to('es:DescribeOutboundCrossClusterSearchConnections');
-    return this;
+    return this.to('DescribeOutboundCrossClusterSearchConnections');
   }
 
   /**
@@ -206,8 +191,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describereservedelasticsearchinstanceofferings
    */
   public toDescribeReservedElasticsearchInstanceOfferings() {
-    this.to('es:DescribeReservedElasticsearchInstanceOfferings');
-    return this;
+    return this.to('DescribeReservedElasticsearchInstanceOfferings');
   }
 
   /**
@@ -218,8 +202,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describereservedelasticsearchinstances
    */
   public toDescribeReservedElasticsearchInstances() {
-    this.to('es:DescribeReservedElasticsearchInstances');
-    return this;
+    return this.to('DescribeReservedElasticsearchInstances');
   }
 
   /**
@@ -230,8 +213,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference
    */
   public toESCrossClusterGet() {
-    this.to('es:ESCrossClusterGet');
-    return this;
+    return this.to('ESCrossClusterGet');
   }
 
   /**
@@ -242,8 +224,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference
    */
   public toESHttpDelete() {
-    this.to('es:ESHttpDelete');
-    return this;
+    return this.to('ESHttpDelete');
   }
 
   /**
@@ -254,8 +235,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference
    */
   public toESHttpGet() {
-    this.to('es:ESHttpGet');
-    return this;
+    return this.to('ESHttpGet');
   }
 
   /**
@@ -266,8 +246,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference
    */
   public toESHttpHead() {
-    this.to('es:ESHttpHead');
-    return this;
+    return this.to('ESHttpHead');
   }
 
   /**
@@ -278,8 +257,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference
    */
   public toESHttpPatch() {
-    this.to('es:ESHttpPatch');
-    return this;
+    return this.to('ESHttpPatch');
   }
 
   /**
@@ -290,8 +268,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference
    */
   public toESHttpPost() {
-    this.to('es:ESHttpPost');
-    return this;
+    return this.to('ESHttpPost');
   }
 
   /**
@@ -302,8 +279,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference
    */
   public toESHttpPut() {
-    this.to('es:ESHttpPut');
-    return this;
+    return this.to('ESHttpPut');
   }
 
   /**
@@ -314,8 +290,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-getcompatibleelasticsearchversions
    */
   public toGetCompatibleElasticsearchVersions() {
-    this.to('es:GetCompatibleElasticsearchVersions');
-    return this;
+    return this.to('GetCompatibleElasticsearchVersions');
   }
 
   /**
@@ -326,8 +301,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-getupgradehistory
    */
   public toGetUpgradeHistory() {
-    this.to('es:GetUpgradeHistory');
-    return this;
+    return this.to('GetUpgradeHistory');
   }
 
   /**
@@ -338,8 +312,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-getupgradestatus
    */
   public toGetUpgradeStatus() {
-    this.to('es:GetUpgradeStatus');
-    return this;
+    return this.to('GetUpgradeStatus');
   }
 
   /**
@@ -350,8 +323,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listdomainnames
    */
   public toListDomainNames() {
-    this.to('es:ListDomainNames');
-    return this;
+    return this.to('ListDomainNames');
   }
 
   /**
@@ -362,8 +334,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listelasticsearchinstancetypedetails
    */
   public toListElasticsearchInstanceTypeDetails() {
-    this.to('es:ListElasticsearchInstanceTypeDetails');
-    return this;
+    return this.to('ListElasticsearchInstanceTypeDetails');
   }
 
   /**
@@ -374,8 +345,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listelasticsearchinstancetypes
    */
   public toListElasticsearchInstanceTypes() {
-    this.to('es:ListElasticsearchInstanceTypes');
-    return this;
+    return this.to('ListElasticsearchInstanceTypes');
   }
 
   /**
@@ -386,8 +356,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listelasticsearchversions
    */
   public toListElasticsearchVersions() {
-    this.to('es:ListElasticsearchVersions');
-    return this;
+    return this.to('ListElasticsearchVersions');
   }
 
   /**
@@ -398,8 +367,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listtags
    */
   public toListTags() {
-    this.to('es:ListTags');
-    return this;
+    return this.to('ListTags');
   }
 
   /**
@@ -410,8 +378,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-purchasereservedelasticsearchinstance
    */
   public toPurchaseReservedElasticsearchInstanceOffering() {
-    this.to('es:PurchaseReservedElasticsearchInstanceOffering');
-    return this;
+    return this.to('PurchaseReservedElasticsearchInstanceOffering');
   }
 
   /**
@@ -422,8 +389,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-rejectinboundcrossclustersearchconnection
    */
   public toRejectInboundCrossClusterSearchConnection() {
-    this.to('es:RejectInboundCrossClusterSearchConnection');
-    return this;
+    return this.to('RejectInboundCrossClusterSearchConnection');
   }
 
   /**
@@ -434,8 +400,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listtags
    */
   public toRemoveTags() {
-    this.to('es:RemoveTags');
-    return this;
+    return this.to('RemoveTags');
   }
 
   /**
@@ -446,8 +411,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-updateelasticsearchdomainconfig
    */
   public toUpdateElasticsearchDomainConfig() {
-    this.to('es:UpdateElasticsearchDomainConfig');
-    return this;
+    return this.to('UpdateElasticsearchDomainConfig');
   }
 
   /**
@@ -458,8 +422,7 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-upgradeelasticsearchdomain
    */
   public toUpgradeElasticsearchDomain() {
-    this.to('es:UpgradeElasticsearchDomain');
-    return this;
+    return this.to('UpgradeElasticsearchDomain');
   }
 
   protected accessLevelList: AccessLevelList = {

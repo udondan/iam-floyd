@@ -26,8 +26,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_AddCustomRoutingEndpoints.html
    */
   public toAddCustomRoutingEndpoints() {
-    this.to('globalaccelerator:AddCustomRoutingEndpoints');
-    return this;
+    return this.to('AddCustomRoutingEndpoints');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_AdvertiseByoipCidr.html
    */
   public toAdvertiseByoipCidr() {
-    this.to('globalaccelerator:AdvertiseByoipCidr');
-    return this;
+    return this.to('AdvertiseByoipCidr');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html
    */
   public toAllowCustomRoutingTraffic() {
-    this.to('globalaccelerator:AllowCustomRoutingTraffic');
-    return this;
+    return this.to('AllowCustomRoutingTraffic');
   }
 
   /**
@@ -66,8 +63,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateAccelerator.html
    */
   public toCreateAccelerator() {
-    this.to('globalaccelerator:CreateAccelerator');
-    return this;
+    return this.to('CreateAccelerator');
   }
 
   /**
@@ -82,8 +78,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateCustomRoutingAccelerator.html
    */
   public toCreateCustomRoutingAccelerator() {
-    this.to('globalaccelerator:CreateCustomRoutingAccelerator');
-    return this;
+    return this.to('CreateCustomRoutingAccelerator');
   }
 
   /**
@@ -94,8 +89,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateCustomRoutingEndpointGroup.html
    */
   public toCreateCustomRoutingEndpointGroup() {
-    this.to('globalaccelerator:CreateCustomRoutingEndpointGroup');
-    return this;
+    return this.to('CreateCustomRoutingEndpointGroup');
   }
 
   /**
@@ -106,8 +100,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateCustomRoutingListener.html
    */
   public toCreateCustomRoutingListener() {
-    this.to('globalaccelerator:CreateCustomRoutingListener');
-    return this;
+    return this.to('CreateCustomRoutingListener');
   }
 
   /**
@@ -118,8 +111,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html
    */
   public toCreateEndpointGroup() {
-    this.to('globalaccelerator:CreateEndpointGroup');
-    return this;
+    return this.to('CreateEndpointGroup');
   }
 
   /**
@@ -130,8 +122,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateListener.html
    */
   public toCreateListener() {
-    this.to('globalaccelerator:CreateListener');
-    return this;
+    return this.to('CreateListener');
   }
 
   /**
@@ -142,8 +133,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteAccelerator.html
    */
   public toDeleteAccelerator() {
-    this.to('globalaccelerator:DeleteAccelerator');
-    return this;
+    return this.to('DeleteAccelerator');
   }
 
   /**
@@ -154,8 +144,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteCustomRoutingAccelerator.html
    */
   public toDeleteCustomRoutingAccelerator() {
-    this.to('globalaccelerator:DeleteCustomRoutingAccelerator');
-    return this;
+    return this.to('DeleteCustomRoutingAccelerator');
   }
 
   /**
@@ -166,8 +155,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteCustomRoutingEndpointGroup.html
    */
   public toDeleteCustomRoutingEndpointGroup() {
-    this.to('globalaccelerator:DeleteCustomRoutingEndpointGroup');
-    return this;
+    return this.to('DeleteCustomRoutingEndpointGroup');
   }
 
   /**
@@ -178,8 +166,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteCustomRoutingListener.html
    */
   public toDeleteCustomRoutingListener() {
-    this.to('globalaccelerator:DeleteCustomRoutingListener');
-    return this;
+    return this.to('DeleteCustomRoutingListener');
   }
 
   /**
@@ -190,8 +177,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteEndpointGroup.html
    */
   public toDeleteEndpointGroup() {
-    this.to('globalaccelerator:DeleteEndpointGroup');
-    return this;
+    return this.to('DeleteEndpointGroup');
   }
 
   /**
@@ -202,8 +188,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteListener.html
    */
   public toDeleteListener() {
-    this.to('globalaccelerator:DeleteListener');
-    return this;
+    return this.to('DeleteListener');
   }
 
   /**
@@ -214,8 +199,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DenyCustomRoutingTraffic.html
    */
   public toDenyCustomRoutingTraffic() {
-    this.to('globalaccelerator:DenyCustomRoutingTraffic');
-    return this;
+    return this.to('DenyCustomRoutingTraffic');
   }
 
   /**
@@ -226,8 +210,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeprovisionByoipCidr.html
    */
   public toDeprovisionByoipCidr() {
-    this.to('globalaccelerator:DeprovisionByoipCidr');
-    return this;
+    return this.to('DeprovisionByoipCidr');
   }
 
   /**
@@ -238,8 +221,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html
    */
   public toDescribeAccelerator() {
-    this.to('globalaccelerator:DescribeAccelerator');
-    return this;
+    return this.to('DescribeAccelerator');
   }
 
   /**
@@ -250,8 +232,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAcceleratorAttributes.html
    */
   public toDescribeAcceleratorAttributes() {
-    this.to('globalaccelerator:DescribeAcceleratorAttributes');
-    return this;
+    return this.to('DescribeAcceleratorAttributes');
   }
 
   /**
@@ -262,8 +243,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeCustomRoutingAccelerator.html
    */
   public toDescribeCustomRoutingAccelerator() {
-    this.to('globalaccelerator:DescribeCustomRoutingAccelerator');
-    return this;
+    return this.to('DescribeCustomRoutingAccelerator');
   }
 
   /**
@@ -274,8 +254,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeCustomRoutingAcceleratorAttributes.html
    */
   public toDescribeCustomRoutingAcceleratorAttributes() {
-    this.to('globalaccelerator:DescribeCustomRoutingAcceleratorAttributes');
-    return this;
+    return this.to('DescribeCustomRoutingAcceleratorAttributes');
   }
 
   /**
@@ -286,8 +265,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeCustomRoutingEndpointGroup.html
    */
   public toDescribeCustomRoutingEndpointGroup() {
-    this.to('globalaccelerator:DescribeCustomRoutingEndpointGroup');
-    return this;
+    return this.to('DescribeCustomRoutingEndpointGroup');
   }
 
   /**
@@ -298,8 +276,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeCustomRoutingListener.html
    */
   public toDescribeCustomRoutingListener() {
-    this.to('globalaccelerator:DescribeCustomRoutingListener');
-    return this;
+    return this.to('DescribeCustomRoutingListener');
   }
 
   /**
@@ -310,8 +287,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeEndpointGroup.html
    */
   public toDescribeEndpointGroup() {
-    this.to('globalaccelerator:DescribeEndpointGroup');
-    return this;
+    return this.to('DescribeEndpointGroup');
   }
 
   /**
@@ -322,8 +298,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeListener.html
    */
   public toDescribeListener() {
-    this.to('globalaccelerator:DescribeListener');
-    return this;
+    return this.to('DescribeListener');
   }
 
   /**
@@ -334,8 +309,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListAccelerators.html
    */
   public toListAccelerators() {
-    this.to('globalaccelerator:ListAccelerators');
-    return this;
+    return this.to('ListAccelerators');
   }
 
   /**
@@ -346,8 +320,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListByoipCidrs.html
    */
   public toListByoipCidrs() {
-    this.to('globalaccelerator:ListByoipCidrs');
-    return this;
+    return this.to('ListByoipCidrs');
   }
 
   /**
@@ -358,8 +331,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingAccelerators.html
    */
   public toListCustomRoutingAccelerators() {
-    this.to('globalaccelerator:ListCustomRoutingAccelerators');
-    return this;
+    return this.to('ListCustomRoutingAccelerators');
   }
 
   /**
@@ -370,8 +342,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingEndpointGroups.html
    */
   public toListCustomRoutingEndpointGroups() {
-    this.to('globalaccelerator:ListCustomRoutingEndpointGroups');
-    return this;
+    return this.to('ListCustomRoutingEndpointGroups');
   }
 
   /**
@@ -382,8 +353,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingListeners.html
    */
   public toListCustomRoutingListeners() {
-    this.to('globalaccelerator:ListCustomRoutingListeners');
-    return this;
+    return this.to('ListCustomRoutingListeners');
   }
 
   /**
@@ -394,8 +364,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingPortMappings.html
    */
   public toListCustomRoutingPortMappings() {
-    this.to('globalaccelerator:ListCustomRoutingPortMappings');
-    return this;
+    return this.to('ListCustomRoutingPortMappings');
   }
 
   /**
@@ -406,8 +375,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListCustomRoutingPortMappingsByDestination.html
    */
   public toListCustomRoutingPortMappingsByDestination() {
-    this.to('globalaccelerator:ListCustomRoutingPortMappingsByDestination');
-    return this;
+    return this.to('ListCustomRoutingPortMappingsByDestination');
   }
 
   /**
@@ -418,8 +386,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListEndpointGroups.html
    */
   public toListEndpointGroups() {
-    this.to('globalaccelerator:ListEndpointGroups');
-    return this;
+    return this.to('ListEndpointGroups');
   }
 
   /**
@@ -430,8 +397,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListListeners.html
    */
   public toListListeners() {
-    this.to('globalaccelerator:ListListeners');
-    return this;
+    return this.to('ListListeners');
   }
 
   /**
@@ -442,8 +408,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('globalaccelerator:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -454,8 +419,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ProvisionByoipCidr.html
    */
   public toProvisionByoipCidr() {
-    this.to('globalaccelerator:ProvisionByoipCidr');
-    return this;
+    return this.to('ProvisionByoipCidr');
   }
 
   /**
@@ -466,8 +430,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_RemoveCustomRoutingEndpoints.html
    */
   public toRemoveCustomRoutingEndpoints() {
-    this.to('globalaccelerator:RemoveCustomRoutingEndpoints');
-    return this;
+    return this.to('RemoveCustomRoutingEndpoints');
   }
 
   /**
@@ -482,8 +445,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_TagResource.html
    */
   public toTagResource() {
-    this.to('globalaccelerator:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -497,8 +459,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('globalaccelerator:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -509,8 +470,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateAccelerator.html
    */
   public toUpdateAccelerator() {
-    this.to('globalaccelerator:UpdateAccelerator');
-    return this;
+    return this.to('UpdateAccelerator');
   }
 
   /**
@@ -521,8 +481,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateAcceleratorAttributes.html
    */
   public toUpdateAcceleratorAttributes() {
-    this.to('globalaccelerator:UpdateAcceleratorAttributes');
-    return this;
+    return this.to('UpdateAcceleratorAttributes');
   }
 
   /**
@@ -533,8 +492,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateCustomRoutingAccelerator.html
    */
   public toUpdateCustomRoutingAccelerator() {
-    this.to('globalaccelerator:UpdateCustomRoutingAccelerator');
-    return this;
+    return this.to('UpdateCustomRoutingAccelerator');
   }
 
   /**
@@ -545,8 +503,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateCustomRoutingAcceleratorAttributes.html
    */
   public toUpdateCustomRoutingAcceleratorAttributes() {
-    this.to('globalaccelerator:UpdateCustomRoutingAcceleratorAttributes');
-    return this;
+    return this.to('UpdateCustomRoutingAcceleratorAttributes');
   }
 
   /**
@@ -557,8 +514,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateCustomRoutingListener.html
    */
   public toUpdateCustomRoutingListener() {
-    this.to('globalaccelerator:UpdateCustomRoutingListener');
-    return this;
+    return this.to('UpdateCustomRoutingListener');
   }
 
   /**
@@ -569,8 +525,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html
    */
   public toUpdateEndpointGroup() {
-    this.to('globalaccelerator:UpdateEndpointGroup');
-    return this;
+    return this.to('UpdateEndpointGroup');
   }
 
   /**
@@ -581,8 +536,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateListener.html
    */
   public toUpdateListener() {
-    this.to('globalaccelerator:UpdateListener');
-    return this;
+    return this.to('UpdateListener');
   }
 
   /**
@@ -593,8 +547,7 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_WithdrawByoipCidr.html
    */
   public toWithdrawByoipCidr() {
-    this.to('globalaccelerator:WithdrawByoipCidr');
-    return this;
+    return this.to('WithdrawByoipCidr');
   }
 
   protected accessLevelList: AccessLevelList = {

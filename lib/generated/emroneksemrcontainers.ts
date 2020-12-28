@@ -26,8 +26,7 @@ export class EmrContainers extends PolicyStatement {
    * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_CancelJobRun.html
    */
   public toCancelJobRun() {
-    this.to('emr-containers:CancelJobRun');
-    return this;
+    return this.to('CancelJobRun');
   }
 
   /**
@@ -42,8 +41,7 @@ export class EmrContainers extends PolicyStatement {
    * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_CreateVirtualCluster.html
    */
   public toCreateVirtualCluster() {
-    this.to('emr-containers:CreateVirtualCluster');
-    return this;
+    return this.to('CreateVirtualCluster');
   }
 
   /**
@@ -54,8 +52,7 @@ export class EmrContainers extends PolicyStatement {
    * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_DeleteVirtualCluster.html
    */
   public toDeleteVirtualCluster() {
-    this.to('emr-containers:DeleteVirtualCluster');
-    return this;
+    return this.to('DeleteVirtualCluster');
   }
 
   /**
@@ -66,8 +63,7 @@ export class EmrContainers extends PolicyStatement {
    * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_DescribeJobRun.html
    */
   public toDescribeJobRun() {
-    this.to('emr-containers:DescribeJobRun');
-    return this;
+    return this.to('DescribeJobRun');
   }
 
   /**
@@ -78,8 +74,7 @@ export class EmrContainers extends PolicyStatement {
    * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_DescribeVirtualCluster.html
    */
   public toDescribeVirtualCluster() {
-    this.to('emr-containers:DescribeVirtualCluster');
-    return this;
+    return this.to('DescribeVirtualCluster');
   }
 
   /**
@@ -90,8 +85,7 @@ export class EmrContainers extends PolicyStatement {
    * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_ListJobRuns.html
    */
   public toListJobRuns() {
-    this.to('emr-containers:ListJobRuns');
-    return this;
+    return this.to('ListJobRuns');
   }
 
   /**
@@ -102,8 +96,7 @@ export class EmrContainers extends PolicyStatement {
    * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('emr-containers:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -114,8 +107,7 @@ export class EmrContainers extends PolicyStatement {
    * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_ListVirtualClusters.html
    */
   public toListVirtualClusters() {
-    this.to('emr-containers:ListVirtualClusters');
-    return this;
+    return this.to('ListVirtualClusters');
   }
 
   /**
@@ -131,8 +123,7 @@ export class EmrContainers extends PolicyStatement {
    * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_StartJobRun.html
    */
   public toStartJobRun() {
-    this.to('emr-containers:StartJobRun');
-    return this;
+    return this.to('StartJobRun');
   }
 
   /**
@@ -147,8 +138,7 @@ export class EmrContainers extends PolicyStatement {
    * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('emr-containers:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -162,8 +152,7 @@ export class EmrContainers extends PolicyStatement {
    * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_UnTagResource.html
    */
   public toUntagResource() {
-    this.to('emr-containers:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -250,6 +239,6 @@ export class EmrContainers extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifExecutionRoleArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`emr-containers:ExecutionRoleArn`, value, operator || 'StringLike');
+    return this.if(`ExecutionRoleArn`, value, operator || 'StringLike');
   }
 }

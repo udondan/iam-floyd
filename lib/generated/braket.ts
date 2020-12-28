@@ -26,8 +26,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_CancelQuantumTask.html
    */
   public toCancelQuantumTask() {
-    this.to('braket:CancelQuantumTask');
-    return this;
+    return this.to('CancelQuantumTask');
   }
 
   /**
@@ -42,8 +41,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateQuantumTask.html
    */
   public toCreateQuantumTask() {
-    this.to('braket:CreateQuantumTask');
-    return this;
+    return this.to('CreateQuantumTask');
   }
 
   /**
@@ -54,8 +52,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_GetDevice.html
    */
   public toGetDevice() {
-    this.to('braket:GetDevice');
-    return this;
+    return this.to('GetDevice');
   }
 
   /**
@@ -66,8 +63,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_GetQuantumTask.html
    */
   public toGetQuantumTask() {
-    this.to('braket:GetQuantumTask');
-    return this;
+    return this.to('GetQuantumTask');
   }
 
   /**
@@ -78,8 +74,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('braket:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -90,8 +85,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchDevices.html
    */
   public toSearchDevices() {
-    this.to('braket:SearchDevices');
-    return this;
+    return this.to('SearchDevices');
   }
 
   /**
@@ -102,8 +96,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchQuantumTasks.html
    */
   public toSearchQuantumTasks() {
-    this.to('braket:SearchQuantumTasks');
-    return this;
+    return this.to('SearchQuantumTasks');
   }
 
   /**
@@ -118,8 +111,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('braket:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -133,8 +125,7 @@ export class Braket extends PolicyStatement {
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('braket:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   protected accessLevelList: AccessLevelList = {

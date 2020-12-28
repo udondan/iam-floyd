@@ -26,8 +26,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_AssociateAssessmentReportEvidenceFolder.html
    */
   public toAssociateAssessmentReportEvidenceFolder() {
-    this.to('auditmanager:AssociateAssessmentReportEvidenceFolder');
-    return this;
+    return this.to('AssociateAssessmentReportEvidenceFolder');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html
    */
   public toBatchAssociateAssessmentReportEvidence() {
-    this.to('auditmanager:BatchAssociateAssessmentReportEvidence');
-    return this;
+    return this.to('BatchAssociateAssessmentReportEvidence');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchCreateDelegationByAssessment.html
    */
   public toBatchCreateDelegationByAssessment() {
-    this.to('auditmanager:BatchCreateDelegationByAssessment');
-    return this;
+    return this.to('BatchCreateDelegationByAssessment');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchDeleteDelegationByAssessment.html
    */
   public toBatchDeleteDelegationByAssessment() {
-    this.to('auditmanager:BatchDeleteDelegationByAssessment');
-    return this;
+    return this.to('BatchDeleteDelegationByAssessment');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchDisassociateAssessmentReportEvidence.html
    */
   public toBatchDisassociateAssessmentReportEvidence() {
-    this.to('auditmanager:BatchDisassociateAssessmentReportEvidence');
-    return this;
+    return this.to('BatchDisassociateAssessmentReportEvidence');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchImportEvidenceToAssessmentControl.html
    */
   public toBatchImportEvidenceToAssessmentControl() {
-    this.to('auditmanager:BatchImportEvidenceToAssessmentControl');
-    return this;
+    return this.to('BatchImportEvidenceToAssessmentControl');
   }
 
   /**
@@ -102,8 +96,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html
    */
   public toCreateAssessment() {
-    this.to('auditmanager:CreateAssessment');
-    return this;
+    return this.to('CreateAssessment');
   }
 
   /**
@@ -114,8 +107,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessmentFramework.html
    */
   public toCreateAssessmentFramework() {
-    this.to('auditmanager:CreateAssessmentFramework');
-    return this;
+    return this.to('CreateAssessmentFramework');
   }
 
   /**
@@ -126,8 +118,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessmentReport.html
    */
   public toCreateAssessmentReport() {
-    this.to('auditmanager:CreateAssessmentReport');
-    return this;
+    return this.to('CreateAssessmentReport');
   }
 
   /**
@@ -142,8 +133,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateControl.html
    */
   public toCreateControl() {
-    this.to('auditmanager:CreateControl');
-    return this;
+    return this.to('CreateControl');
   }
 
   /**
@@ -158,8 +148,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessment.html
    */
   public toDeleteAssessment() {
-    this.to('auditmanager:DeleteAssessment');
-    return this;
+    return this.to('DeleteAssessment');
   }
 
   /**
@@ -174,8 +163,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFramework.html
    */
   public toDeleteAssessmentFramework() {
-    this.to('auditmanager:DeleteAssessmentFramework');
-    return this;
+    return this.to('DeleteAssessmentFramework');
   }
 
   /**
@@ -186,8 +174,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentReport.html
    */
   public toDeleteAssessmentReport() {
-    this.to('auditmanager:DeleteAssessmentReport');
-    return this;
+    return this.to('DeleteAssessmentReport');
   }
 
   /**
@@ -202,8 +189,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteControl.html
    */
   public toDeleteControl() {
-    this.to('auditmanager:DeleteControl');
-    return this;
+    return this.to('DeleteControl');
   }
 
   /**
@@ -214,8 +200,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ DeregisterAccount.html
    */
   public toDeregisterAccount() {
-    this.to('auditmanager:DeregisterAccount');
-    return this;
+    return this.to('DeregisterAccount');
   }
 
   /**
@@ -226,8 +211,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterOrganizationAdminAccount.html
    */
   public toDeregisterOrganizationAdminAccount() {
-    this.to('auditmanager:DeregisterOrganizationAdminAccount');
-    return this;
+    return this.to('DeregisterOrganizationAdminAccount');
   }
 
   /**
@@ -238,8 +222,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DisassociateAssessmentReportEvidenceFolder.html
    */
   public toDisassociateAssessmentReportEvidenceFolder() {
-    this.to('auditmanager:DisassociateAssessmentReportEvidenceFolder');
-    return this;
+    return this.to('DisassociateAssessmentReportEvidenceFolder');
   }
 
   /**
@@ -250,8 +233,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetAccountStatus.html
    */
   public toGetAccountStatus() {
-    this.to('auditmanager:GetAccountStatus');
-    return this;
+    return this.to('GetAccountStatus');
   }
 
   /**
@@ -262,8 +244,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetAssessment.html
    */
   public toGetAssessment() {
-    this.to('auditmanager:GetAssessment');
-    return this;
+    return this.to('GetAssessment');
   }
 
   /**
@@ -274,8 +255,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetAssessmentFramework.html
    */
   public toGetAssessmentFramework() {
-    this.to('auditmanager:GetAssessmentFramework');
-    return this;
+    return this.to('GetAssessmentFramework');
   }
 
   /**
@@ -286,8 +266,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetAssessmentReportUrl.html
    */
   public toGetAssessmentReportUrl() {
-    this.to('auditmanager:GetAssessmentReportUrl');
-    return this;
+    return this.to('GetAssessmentReportUrl');
   }
 
   /**
@@ -298,8 +277,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetChangeLogs.html
    */
   public toGetChangeLogs() {
-    this.to('auditmanager:GetChangeLogs');
-    return this;
+    return this.to('GetChangeLogs');
   }
 
   /**
@@ -310,8 +288,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetControl.html
    */
   public toGetControl() {
-    this.to('auditmanager:GetControl');
-    return this;
+    return this.to('GetControl');
   }
 
   /**
@@ -322,8 +299,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetDelegations.html
    */
   public toGetDelegations() {
-    this.to('auditmanager:GetDelegations');
-    return this;
+    return this.to('GetDelegations');
   }
 
   /**
@@ -334,8 +310,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidence.html
    */
   public toGetEvidence() {
-    this.to('auditmanager:GetEvidence');
-    return this;
+    return this.to('GetEvidence');
   }
 
   /**
@@ -346,8 +321,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceByEvidenceFolder.html
    */
   public toGetEvidenceByEvidenceFolder() {
-    this.to('auditmanager:GetEvidenceByEvidenceFolder');
-    return this;
+    return this.to('GetEvidenceByEvidenceFolder');
   }
 
   /**
@@ -358,8 +332,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFolder.html
    */
   public toGetEvidenceFolder() {
-    this.to('auditmanager:GetEvidenceFolder');
-    return this;
+    return this.to('GetEvidenceFolder');
   }
 
   /**
@@ -370,8 +343,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFoldersByAssessment.html
    */
   public toGetEvidenceFoldersByAssessment() {
-    this.to('auditmanager:GetEvidenceFoldersByAssessment');
-    return this;
+    return this.to('GetEvidenceFoldersByAssessment');
   }
 
   /**
@@ -382,8 +354,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFoldersByAssessmentControl.html
    */
   public toGetEvidenceFoldersByAssessmentControl() {
-    this.to('auditmanager:GetEvidenceFoldersByAssessmentControl');
-    return this;
+    return this.to('GetEvidenceFoldersByAssessmentControl');
   }
 
   /**
@@ -394,8 +365,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetOrganizationAdminAccount.html
    */
   public toGetOrganizationAdminAccount() {
-    this.to('auditmanager:GetOrganizationAdminAccount');
-    return this;
+    return this.to('GetOrganizationAdminAccount');
   }
 
   /**
@@ -406,8 +376,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetServicesInScope.html
    */
   public toGetServicesInScope() {
-    this.to('auditmanager:GetServicesInScope');
-    return this;
+    return this.to('GetServicesInScope');
   }
 
   /**
@@ -418,8 +387,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetSettings.html
    */
   public toGetSettings() {
-    this.to('auditmanager:GetSettings');
-    return this;
+    return this.to('GetSettings');
   }
 
   /**
@@ -430,8 +398,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListAssessmentFrameworks.html
    */
   public toListAssessmentFrameworks() {
-    this.to('auditmanager:ListAssessmentFrameworks');
-    return this;
+    return this.to('ListAssessmentFrameworks');
   }
 
   /**
@@ -442,8 +409,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListAssessmentReports.html
    */
   public toListAssessmentReports() {
-    this.to('auditmanager:ListAssessmentReports');
-    return this;
+    return this.to('ListAssessmentReports');
   }
 
   /**
@@ -454,8 +420,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListAssessments.html
    */
   public toListAssessments() {
-    this.to('auditmanager:ListAssessments');
-    return this;
+    return this.to('ListAssessments');
   }
 
   /**
@@ -466,8 +431,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListControls.html
    */
   public toListControls() {
-    this.to('auditmanager:ListControls');
-    return this;
+    return this.to('ListControls');
   }
 
   /**
@@ -478,8 +442,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListKeywordsForDataSource.html
    */
   public toListKeywordsForDataSource() {
-    this.to('auditmanager:ListKeywordsForDataSource');
-    return this;
+    return this.to('ListKeywordsForDataSource');
   }
 
   /**
@@ -490,8 +453,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListNotifications.html
    */
   public toListNotifications() {
-    this.to('auditmanager:ListNotifications');
-    return this;
+    return this.to('ListNotifications');
   }
 
   /**
@@ -502,8 +464,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('auditmanager:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -514,8 +475,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html
    */
   public toRegisterAccount() {
-    this.to('auditmanager:RegisterAccount');
-    return this;
+    return this.to('RegisterAccount');
   }
 
   /**
@@ -526,8 +486,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterOrganizationAdminAccount.html
    */
   public toRegisterOrganizationAdminAccount() {
-    this.to('auditmanager:RegisterOrganizationAdminAccount');
-    return this;
+    return this.to('RegisterOrganizationAdminAccount');
   }
 
   /**
@@ -542,8 +501,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('auditmanager:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -557,8 +515,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('auditmanager:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -569,8 +526,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateAssessment.html
    */
   public toUpdateAssessment() {
-    this.to('auditmanager:UpdateAssessment');
-    return this;
+    return this.to('UpdateAssessment');
   }
 
   /**
@@ -581,8 +537,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateAssessmentControl.html
    */
   public toUpdateAssessmentControl() {
-    this.to('auditmanager:UpdateAssessmentControl');
-    return this;
+    return this.to('UpdateAssessmentControl');
   }
 
   /**
@@ -593,8 +548,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateAssessmentControlSetStatus.html
    */
   public toUpdateAssessmentControlSetStatus() {
-    this.to('auditmanager:UpdateAssessmentControlSetStatus');
-    return this;
+    return this.to('UpdateAssessmentControlSetStatus');
   }
 
   /**
@@ -605,8 +559,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateAssessmentFramework.html
    */
   public toUpdateAssessmentFramework() {
-    this.to('auditmanager:UpdateAssessmentFramework');
-    return this;
+    return this.to('UpdateAssessmentFramework');
   }
 
   /**
@@ -617,8 +570,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateAssessmentStatus.html
    */
   public toUpdateAssessmentStatus() {
-    this.to('auditmanager:UpdateAssessmentStatus');
-    return this;
+    return this.to('UpdateAssessmentStatus');
   }
 
   /**
@@ -629,8 +581,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateControl.html
    */
   public toUpdateControl() {
-    this.to('auditmanager:UpdateControl');
-    return this;
+    return this.to('UpdateControl');
   }
 
   /**
@@ -641,8 +592,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateSettings.html
    */
   public toUpdateSettings() {
-    this.to('auditmanager:UpdateSettings');
-    return this;
+    return this.to('UpdateSettings');
   }
 
   /**
@@ -653,8 +603,7 @@ export class Auditmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ValidateAssessmentReportIntegrity.html
    */
   public toValidateAssessmentReportIntegrity() {
-    this.to('auditmanager:ValidateAssessmentReportIntegrity');
-    return this;
+    return this.to('ValidateAssessmentReportIntegrity');
   }
 
   protected accessLevelList: AccessLevelList = {

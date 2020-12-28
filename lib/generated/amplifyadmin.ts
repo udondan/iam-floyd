@@ -26,8 +26,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-environments-backendenvironmentname-clone.html#CloneBackend
    */
   public toCloneBackend() {
-    this.to('amplifybackend:CloneBackend');
-    return this;
+    return this.to('CloneBackend');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend.html#CreateBackend
    */
   public toCreateBackend() {
-    this.to('amplifybackend:CreateBackend');
-    return this;
+    return this.to('CreateBackend');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-api.html#CreateBackendAPI
    */
   public toCreateBackendAPI() {
-    this.to('amplifybackend:CreateBackendAPI');
-    return this;
+    return this.to('CreateBackendAPI');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-auth.html#CreateBackendAuth
    */
   public toCreateBackendAuth() {
-    this.to('amplifybackend:CreateBackendAuth');
-    return this;
+    return this.to('CreateBackendAuth');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-config.html#CreateBackendConfig
    */
   public toCreateBackendConfig() {
-    this.to('amplifybackend:CreateBackendConfig');
-    return this;
+    return this.to('CreateBackendConfig');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-challenge.html#CreateToken
    */
   public toCreateToken() {
-    this.to('amplifybackend:CreateToken');
-    return this;
+    return this.to('CreateToken');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-environments-backendenvironmentname-remove.html#DeleteBackend
    */
   public toDeleteBackend() {
-    this.to('amplifybackend:DeleteBackend');
-    return this;
+    return this.to('DeleteBackend');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-api-backendenvironmentname-remove.html#DeleteBackendAPI
    */
   public toDeleteBackendAPI() {
-    this.to('amplifybackend:DeleteBackendAPI');
-    return this;
+    return this.to('DeleteBackendAPI');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-auth-backendenvironmentname-remove.html#DeleteBackendAuth
    */
   public toDeleteBackendAuth() {
-    this.to('amplifybackend:DeleteBackendAuth');
-    return this;
+    return this.to('DeleteBackendAuth');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-challenge-sessionid-remove.html#DeleteToken
    */
   public toDeleteToken() {
-    this.to('amplifybackend:DeleteToken');
-    return this;
+    return this.to('DeleteToken');
   }
 
   /**
@@ -146,8 +136,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-api-backendenvironmentname-generatemodels.html#GenerateBackendAPIModels
    */
   public toGenerateBackendAPIModels() {
-    this.to('amplifybackend:GenerateBackendAPIModels');
-    return this;
+    return this.to('GenerateBackendAPIModels');
   }
 
   /**
@@ -158,8 +147,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-details.html#GetBackend
    */
   public toGetBackend() {
-    this.to('amplifybackend:GetBackend');
-    return this;
+    return this.to('GetBackend');
   }
 
   /**
@@ -170,8 +158,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-api-backendenvironmentname-details.html#GetBackendAPI
    */
   public toGetBackendAPI() {
-    this.to('amplifybackend:GetBackendAPI');
-    return this;
+    return this.to('GetBackendAPI');
   }
 
   /**
@@ -182,8 +169,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-api-backendenvironmentname-getmodels.html#GetBackendAPIModels
    */
   public toGetBackendAPIModels() {
-    this.to('amplifybackend:GetBackendAPIModels');
-    return this;
+    return this.to('GetBackendAPIModels');
   }
 
   /**
@@ -194,8 +180,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-auth-backendenvironmentname-details.html#GetBackendAuth
    */
   public toGetBackendAuth() {
-    this.to('amplifybackend:GetBackendAuth');
-    return this;
+    return this.to('GetBackendAuth');
   }
 
   /**
@@ -206,8 +191,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-job-backendenvironmentname-jobid.html#GetBackendJob
    */
   public toGetBackendJob() {
-    this.to('amplifybackend:GetBackendJob');
-    return this;
+    return this.to('GetBackendJob');
   }
 
   /**
@@ -218,8 +202,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-challenge-sessionid.html#GetToken
    */
   public toGetToken() {
-    this.to('amplifybackend:GetToken');
-    return this;
+    return this.to('GetToken');
   }
 
   /**
@@ -230,8 +213,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-job-backendenvironmentname.html#ListBackendJobs
    */
   public toListBackendJobs() {
-    this.to('amplifybackend:ListBackendJobs');
-    return this;
+    return this.to('ListBackendJobs');
   }
 
   /**
@@ -242,8 +224,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-remove.html#RemoveAllBackends
    */
   public toRemoveAllBackends() {
-    this.to('amplifybackend:RemoveAllBackends');
-    return this;
+    return this.to('RemoveAllBackends');
   }
 
   /**
@@ -254,8 +235,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-config-remove.html#RemoveBackendConfig
    */
   public toRemoveBackendConfig() {
-    this.to('amplifybackend:RemoveBackendConfig');
-    return this;
+    return this.to('RemoveBackendConfig');
   }
 
   /**
@@ -266,8 +246,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-api-backendenvironmentname.html#UpdateBackendAPI
    */
   public toUpdateBackendAPI() {
-    this.to('amplifybackend:UpdateBackendAPI');
-    return this;
+    return this.to('UpdateBackendAPI');
   }
 
   /**
@@ -278,8 +257,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-auth-backendenvironmentname.html#UpdateBackendAuth
    */
   public toUpdateBackendAuth() {
-    this.to('amplifybackend:UpdateBackendAuth');
-    return this;
+    return this.to('UpdateBackendAuth');
   }
 
   /**
@@ -290,8 +268,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-config-update.html#UpdateBackendConfig
    */
   public toUpdateBackendConfig() {
-    this.to('amplifybackend:UpdateBackendConfig');
-    return this;
+    return this.to('UpdateBackendConfig');
   }
 
   /**
@@ -302,8 +279,7 @@ export class Amplifybackend extends PolicyStatement {
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-job-backendenvironmentname-jobid.html#UpdateBackendJob
    */
   public toUpdateBackendJob() {
-    this.to('amplifybackend:UpdateBackendJob');
-    return this;
+    return this.to('UpdateBackendJob');
   }
 
   protected accessLevelList: AccessLevelList = {

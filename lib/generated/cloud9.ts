@@ -37,8 +37,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentEC2.html
    */
   public toCreateEnvironmentEC2() {
-    this.to('cloud9:CreateEnvironmentEC2');
-    return this;
+    return this.to('CreateEnvironmentEC2');
   }
 
   /**
@@ -54,8 +53,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentMembership.html
    */
   public toCreateEnvironmentMembership() {
-    this.to('cloud9:CreateEnvironmentMembership');
-    return this;
+    return this.to('CreateEnvironmentMembership');
   }
 
   /**
@@ -69,8 +67,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DeleteEnvironment.html
    */
   public toDeleteEnvironment() {
-    this.to('cloud9:DeleteEnvironment');
-    return this;
+    return this.to('DeleteEnvironment');
   }
 
   /**
@@ -81,8 +78,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DeleteEnvironmentMembership.html
    */
   public toDeleteEnvironmentMembership() {
-    this.to('cloud9:DeleteEnvironmentMembership');
-    return this;
+    return this.to('DeleteEnvironmentMembership');
   }
 
   /**
@@ -97,8 +93,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironmentMemberships.html
    */
   public toDescribeEnvironmentMemberships() {
-    this.to('cloud9:DescribeEnvironmentMemberships');
-    return this;
+    return this.to('DescribeEnvironmentMemberships');
   }
 
   /**
@@ -109,8 +104,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironmentStatus.html
    */
   public toDescribeEnvironmentStatus() {
-    this.to('cloud9:DescribeEnvironmentStatus');
-    return this;
+    return this.to('DescribeEnvironmentStatus');
   }
 
   /**
@@ -121,8 +115,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironments.html
    */
   public toDescribeEnvironments() {
-    this.to('cloud9:DescribeEnvironments');
-    return this;
+    return this.to('DescribeEnvironments');
   }
 
   /**
@@ -133,8 +126,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/user-guide/settings-user.html
    */
   public toGetUserSettings() {
-    this.to('cloud9:GetUserSettings');
-    return this;
+    return this.to('GetUserSettings');
   }
 
   /**
@@ -145,8 +137,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_ListEnvironments.html
    */
   public toListEnvironments() {
-    this.to('cloud9:ListEnvironments');
-    return this;
+    return this.to('ListEnvironments');
   }
 
   /**
@@ -157,8 +148,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('cloud9:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -173,8 +163,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('cloud9:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -188,8 +177,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('cloud9:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -200,8 +188,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UpdateEnvironment.html
    */
   public toUpdateEnvironment() {
-    this.to('cloud9:UpdateEnvironment');
-    return this;
+    return this.to('UpdateEnvironment');
   }
 
   /**
@@ -217,8 +204,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UpdateEnvironmentMembership.html
    */
   public toUpdateEnvironmentMembership() {
-    this.to('cloud9:UpdateEnvironmentMembership');
-    return this;
+    return this.to('UpdateEnvironmentMembership');
   }
 
   /**
@@ -229,8 +215,7 @@ export class Cloud9 extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud9/latest/user-guide/settings-user.html
    */
   public toUpdateUserSettings() {
-    this.to('cloud9:UpdateUserSettings');
-    return this;
+    return this.to('UpdateUserSettings');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -291,7 +276,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEnvironmentId(value: string | string[], operator?: Operator | string) {
-    return this.if(`cloud9:EnvironmentId`, value, operator || 'StringLike');
+    return this.if(`EnvironmentId`, value, operator || 'StringLike');
   }
 
   /**
@@ -306,7 +291,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEnvironmentName(value: string | string[], operator?: Operator | string) {
-    return this.if(`cloud9:EnvironmentName`, value, operator || 'StringLike');
+    return this.if(`EnvironmentName`, value, operator || 'StringLike');
   }
 
   /**
@@ -321,7 +306,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifInstanceType(value: string | string[], operator?: Operator | string) {
-    return this.if(`cloud9:InstanceType`, value, operator || 'StringLike');
+    return this.if(`InstanceType`, value, operator || 'StringLike');
   }
 
   /**
@@ -337,7 +322,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPermissions(value: string | string[], operator?: Operator | string) {
-    return this.if(`cloud9:Permissions`, value, operator || 'StringLike');
+    return this.if(`Permissions`, value, operator || 'StringLike');
   }
 
   /**
@@ -352,7 +337,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSubnetId(value: string | string[], operator?: Operator | string) {
-    return this.if(`cloud9:SubnetId`, value, operator || 'StringLike');
+    return this.if(`SubnetId`, value, operator || 'StringLike');
   }
 
   /**
@@ -370,6 +355,6 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifUserArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`cloud9:UserArn`, value, operator || 'ArnLike');
+    return this.if(`UserArn`, value, operator || 'ArnLike');
   }
 }

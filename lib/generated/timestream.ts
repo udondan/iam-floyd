@@ -26,8 +26,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_CancelQuery.html
    */
   public toCancelQuery() {
-    this.to('timestream:CancelQuery');
-    return this;
+    return this.to('CancelQuery');
   }
 
   /**
@@ -42,8 +41,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_CreateDatabase.html
    */
   public toCreateDatabase() {
-    this.to('timestream:CreateDatabase');
-    return this;
+    return this.to('CreateDatabase');
   }
 
   /**
@@ -58,8 +56,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_CreateTable.html
    */
   public toCreateTable() {
-    this.to('timestream:CreateTable');
-    return this;
+    return this.to('CreateTable');
   }
 
   /**
@@ -70,8 +67,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_DeleteDatabase.html
    */
   public toDeleteDatabase() {
-    this.to('timestream:DeleteDatabase');
-    return this;
+    return this.to('DeleteDatabase');
   }
 
   /**
@@ -82,8 +78,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_DeleteTable.html
    */
   public toDeleteTable() {
-    this.to('timestream:DeleteTable');
-    return this;
+    return this.to('DeleteTable');
   }
 
   /**
@@ -94,8 +89,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_DescribeDatabase.html
    */
   public toDescribeDatabase() {
-    this.to('timestream:DescribeDatabase');
-    return this;
+    return this.to('DescribeDatabase');
   }
 
   /**
@@ -106,8 +100,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_DescribeEndpoints.html
    */
   public toDescribeEndpoints() {
-    this.to('timestream:DescribeEndpoints');
-    return this;
+    return this.to('DescribeEndpoints');
   }
 
   /**
@@ -118,8 +111,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_DescribeTable.html
    */
   public toDescribeTable() {
-    this.to('timestream:DescribeTable');
-    return this;
+    return this.to('DescribeTable');
   }
 
   /**
@@ -130,8 +122,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_ListDatabases.html
    */
   public toListDatabases() {
-    this.to('timestream:ListDatabases');
-    return this;
+    return this.to('ListDatabases');
   }
 
   /**
@@ -142,8 +133,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_ListMeasures.html
    */
   public toListMeasures() {
-    this.to('timestream:ListMeasures');
-    return this;
+    return this.to('ListMeasures');
   }
 
   /**
@@ -154,8 +144,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_ListTables.html
    */
   public toListTables() {
-    this.to('timestream:ListTables');
-    return this;
+    return this.to('ListTables');
   }
 
   /**
@@ -166,8 +155,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('timestream:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -178,8 +166,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_Query.html
    */
   public toSelect() {
-    this.to('timestream:Select');
-    return this;
+    return this.to('Select');
   }
 
   /**
@@ -190,8 +177,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_Query.html
    */
   public toSelectValues() {
-    this.to('timestream:SelectValues');
-    return this;
+    return this.to('SelectValues');
   }
 
   /**
@@ -206,8 +192,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('timestream:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -221,8 +206,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('timestream:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -233,8 +217,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_UpdateDatabase.html
    */
   public toUpdateDatabase() {
-    this.to('timestream:UpdateDatabase');
-    return this;
+    return this.to('UpdateDatabase');
   }
 
   /**
@@ -245,8 +228,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_UpdateTable.html
    */
   public toUpdateTable() {
-    this.to('timestream:UpdateTable');
-    return this;
+    return this.to('UpdateTable');
   }
 
   /**
@@ -257,8 +239,7 @@ export class Timestream extends PolicyStatement {
    * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_WriteRecords.html
    */
   public toWriteRecords() {
-    this.to('timestream:WriteRecords');
-    return this;
+    return this.to('WriteRecords');
   }
 
   protected accessLevelList: AccessLevelList = {

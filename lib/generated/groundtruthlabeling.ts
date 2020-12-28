@@ -26,8 +26,7 @@ export class Groundtruthlabeling extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
    */
   public toDescribeConsoleJob() {
-    this.to('groundtruthlabeling:DescribeConsoleJob');
-    return this;
+    return this.to('DescribeConsoleJob');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Groundtruthlabeling extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
    */
   public toListDatasetObjects() {
-    this.to('groundtruthlabeling:ListDatasetObjects');
-    return this;
+    return this.to('ListDatasetObjects');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Groundtruthlabeling extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-data-filtering
    */
   public toRunFilterOrSampleDatasetJob() {
-    this.to('groundtruthlabeling:RunFilterOrSampleDatasetJob');
-    return this;
+    return this.to('RunFilterOrSampleDatasetJob');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Groundtruthlabeling extends PolicyStatement {
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
    */
   public toRunGenerateManifestByCrawlingJob() {
-    this.to('groundtruthlabeling:RunGenerateManifestByCrawlingJob');
-    return this;
+    return this.to('RunGenerateManifestByCrawlingJob');
   }
 
   protected accessLevelList: AccessLevelList = {

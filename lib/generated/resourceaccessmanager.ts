@@ -29,8 +29,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html
    */
   public toAcceptResourceShareInvitation() {
-    this.to('ram:AcceptResourceShareInvitation');
-    return this;
+    return this.to('AcceptResourceShareInvitation');
   }
 
   /**
@@ -49,8 +48,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceShare.html
    */
   public toAssociateResourceShare() {
-    this.to('ram:AssociateResourceShare');
-    return this;
+    return this.to('AssociateResourceShare');
   }
 
   /**
@@ -67,8 +65,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceSharePermission.html
    */
   public toAssociateResourceSharePermission() {
-    this.to('ram:AssociateResourceSharePermission');
-    return this;
+    return this.to('AssociateResourceSharePermission');
   }
 
   /**
@@ -87,8 +84,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html
    */
   public toCreateResourceShare() {
-    this.to('ram:CreateResourceShare');
-    return this;
+    return this.to('CreateResourceShare');
   }
 
   /**
@@ -104,8 +100,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DeleteResourceShare.html
    */
   public toDeleteResourceShare() {
-    this.to('ram:DeleteResourceShare');
-    return this;
+    return this.to('DeleteResourceShare');
   }
 
   /**
@@ -124,8 +119,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DisassociateResourceShare.html
    */
   public toDisassociateResourceShare() {
-    this.to('ram:DisassociateResourceShare');
-    return this;
+    return this.to('DisassociateResourceShare');
   }
 
   /**
@@ -142,8 +136,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DisassociateResourceSharePermission.html
    */
   public toDisassociateResourceSharePermission() {
-    this.to('ram:DisassociateResourceSharePermission');
-    return this;
+    return this.to('DisassociateResourceSharePermission');
   }
 
   /**
@@ -154,8 +147,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_EnableSharingWithAwsOrganization.html
    */
   public toEnableSharingWithAwsOrganization() {
-    this.to('ram:EnableSharingWithAwsOrganization');
-    return this;
+    return this.to('EnableSharingWithAwsOrganization');
   }
 
   /**
@@ -169,8 +161,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetPermission.html
    */
   public toGetPermission() {
-    this.to('ram:GetPermission');
-    return this;
+    return this.to('GetPermission');
   }
 
   /**
@@ -181,8 +172,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourcePolicies.html
    */
   public toGetResourcePolicies() {
-    this.to('ram:GetResourcePolicies');
-    return this;
+    return this.to('GetResourcePolicies');
   }
 
   /**
@@ -193,8 +183,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareAssociations.html
    */
   public toGetResourceShareAssociations() {
-    this.to('ram:GetResourceShareAssociations');
-    return this;
+    return this.to('GetResourceShareAssociations');
   }
 
   /**
@@ -205,8 +194,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareInvitations.html
    */
   public toGetResourceShareInvitations() {
-    this.to('ram:GetResourceShareInvitations');
-    return this;
+    return this.to('GetResourceShareInvitations');
   }
 
   /**
@@ -217,8 +205,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShares.html
    */
   public toGetResourceShares() {
-    this.to('ram:GetResourceShares');
-    return this;
+    return this.to('GetResourceShares');
   }
 
   /**
@@ -229,8 +216,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html
    */
   public toListPendingInvitationResources() {
-    this.to('ram:ListPendingInvitationResources');
-    return this;
+    return this.to('ListPendingInvitationResources');
   }
 
   /**
@@ -241,8 +227,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPermissions.html
    */
   public toListPermissions() {
-    this.to('ram:ListPermissions');
-    return this;
+    return this.to('ListPermissions');
   }
 
   /**
@@ -253,8 +238,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPrincipals.html
    */
   public toListPrincipals() {
-    this.to('ram:ListPrincipals');
-    return this;
+    return this.to('ListPrincipals');
   }
 
   /**
@@ -270,8 +254,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResourceSharePermissions.html
    */
   public toListResourceSharePermissions() {
-    this.to('ram:ListResourceSharePermissions');
-    return this;
+    return this.to('ListResourceSharePermissions');
   }
 
   /**
@@ -282,8 +265,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResourceTypes.html
    */
   public toListResourceTypes() {
-    this.to('ram:ListResourceTypes');
-    return this;
+    return this.to('ListResourceTypes');
   }
 
   /**
@@ -294,8 +276,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResources.html
    */
   public toListResources() {
-    this.to('ram:ListResources');
-    return this;
+    return this.to('ListResources');
   }
 
   /**
@@ -306,8 +287,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html
    */
   public toPromoteResourceShareCreatedFromPolicy() {
-    this.to('ram:PromoteResourceShareCreatedFromPolicy');
-    return this;
+    return this.to('PromoteResourceShareCreatedFromPolicy');
   }
 
   /**
@@ -321,8 +301,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_RejectResourceShareInvitation.html
    */
   public toRejectResourceShareInvitation() {
-    this.to('ram:RejectResourceShareInvitation');
-    return this;
+    return this.to('RejectResourceShareInvitation');
   }
 
   /**
@@ -337,8 +316,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('ram:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -353,8 +331,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('ram:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -371,8 +348,7 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_UpdateResourceShare.html
    */
   public toUpdateResourceShare() {
-    this.to('ram:UpdateResourceShare');
-    return this;
+    return this.to('UpdateResourceShare');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -512,7 +488,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifPermissionArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ram:PermissionArn`, value, operator || 'ArnLike');
+    return this.if(`PermissionArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -529,7 +505,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPrincipal(value: string | string[], operator?: Operator | string) {
-    return this.if(`ram:Principal`, value, operator || 'StringLike');
+    return this.if(`Principal`, value, operator || 'StringLike');
   }
 
   /**
@@ -561,7 +537,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestedResourceType(value: string | string[], operator?: Operator | string) {
-    return this.if(`ram:RequestedResourceType`, value, operator || 'StringLike');
+    return this.if(`RequestedResourceType`, value, operator || 'StringLike');
   }
 
   /**
@@ -578,7 +554,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifResourceArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ram:ResourceArn`, value, operator || 'ArnLike');
+    return this.if(`ResourceArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -603,7 +579,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceShareName(value: string | string[], operator?: Operator | string) {
-    return this.if(`ram:ResourceShareName`, value, operator || 'StringLike');
+    return this.if(`ResourceShareName`, value, operator || 'StringLike');
   }
 
   /**
@@ -619,6 +595,6 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifShareOwnerAccountId(value: string | string[], operator?: Operator | string) {
-    return this.if(`ram:ShareOwnerAccountId`, value, operator || 'StringLike');
+    return this.if(`ShareOwnerAccountId`, value, operator || 'StringLike');
   }
 }

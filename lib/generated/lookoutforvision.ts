@@ -26,8 +26,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_CreateDataset.html
    */
   public toCreateDataset() {
-    this.to('lookoutvision:CreateDataset');
-    return this;
+    return this.to('CreateDataset');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_CreateModel.html
    */
   public toCreateModel() {
-    this.to('lookoutvision:CreateModel');
-    return this;
+    return this.to('CreateModel');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_CreateProject.html
    */
   public toCreateProject() {
-    this.to('lookoutvision:CreateProject');
-    return this;
+    return this.to('CreateProject');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_DeleteDataset.html
    */
   public toDeleteDataset() {
-    this.to('lookoutvision:DeleteDataset');
-    return this;
+    return this.to('DeleteDataset');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_DeleteModel.html
    */
   public toDeleteModel() {
-    this.to('lookoutvision:DeleteModel');
-    return this;
+    return this.to('DeleteModel');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_DeleteProject.html
    */
   public toDeleteProject() {
-    this.to('lookoutvision:DeleteProject');
-    return this;
+    return this.to('DeleteProject');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_DescribeDataset.html
    */
   public toDescribeDataset() {
-    this.to('lookoutvision:DescribeDataset');
-    return this;
+    return this.to('DescribeDataset');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_DescribeModel.html
    */
   public toDescribeModel() {
-    this.to('lookoutvision:DescribeModel');
-    return this;
+    return this.to('DescribeModel');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_DescribeProject.html
    */
   public toDescribeProject() {
-    this.to('lookoutvision:DescribeProject');
-    return this;
+    return this.to('DescribeProject');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/developer-guide/trial-detection.html
    */
   public toDescribeTrialDetection() {
-    this.to('lookoutvision:DescribeTrialDetection');
-    return this;
+    return this.to('DescribeTrialDetection');
   }
 
   /**
@@ -146,8 +136,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_DetectAnomalies.html
    */
   public toDetectAnomalies() {
-    this.to('lookoutvision:DetectAnomalies');
-    return this;
+    return this.to('DetectAnomalies');
   }
 
   /**
@@ -158,8 +147,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_ListDatasetEntries.html
    */
   public toListDatasetEntries() {
-    this.to('lookoutvision:ListDatasetEntries');
-    return this;
+    return this.to('ListDatasetEntries');
   }
 
   /**
@@ -170,8 +158,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_ListModels.html
    */
   public toListModels() {
-    this.to('lookoutvision:ListModels');
-    return this;
+    return this.to('ListModels');
   }
 
   /**
@@ -182,8 +169,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_ListProjects.html
    */
   public toListProjects() {
-    this.to('lookoutvision:ListProjects');
-    return this;
+    return this.to('ListProjects');
   }
 
   /**
@@ -194,8 +180,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/developer-guide/trial-detection.html
    */
   public toListTrialDetections() {
-    this.to('lookoutvision:ListTrialDetections');
-    return this;
+    return this.to('ListTrialDetections');
   }
 
   /**
@@ -206,8 +191,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_StartModel.html
    */
   public toStartModel() {
-    this.to('lookoutvision:StartModel');
-    return this;
+    return this.to('StartModel');
   }
 
   /**
@@ -218,8 +202,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/developer-guide/trial-detection.html
    */
   public toStartTrialDetection() {
-    this.to('lookoutvision:StartTrialDetection');
-    return this;
+    return this.to('StartTrialDetection');
   }
 
   /**
@@ -230,8 +213,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_StopModel.html
    */
   public toStopModel() {
-    this.to('lookoutvision:StopModel');
-    return this;
+    return this.to('StopModel');
   }
 
   /**
@@ -242,8 +224,7 @@ export class Lookoutvision extends PolicyStatement {
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_UpdateDatasetEntries.html
    */
   public toUpdateDatasetEntries() {
-    this.to('lookoutvision:UpdateDatasetEntries');
-    return this;
+    return this.to('UpdateDatasetEntries');
   }
 
   protected accessLevelList: AccessLevelList = {

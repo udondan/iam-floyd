@@ -29,8 +29,7 @@ export class RdsData extends PolicyStatement {
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BatchExecuteStatement.html
    */
   public toBatchExecuteStatement() {
-    this.to('rds-data:BatchExecuteStatement');
-    return this;
+    return this.to('BatchExecuteStatement');
   }
 
   /**
@@ -44,8 +43,7 @@ export class RdsData extends PolicyStatement {
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BeginTransaction.html
    */
   public toBeginTransaction() {
-    this.to('rds-data:BeginTransaction');
-    return this;
+    return this.to('BeginTransaction');
   }
 
   /**
@@ -62,8 +60,7 @@ export class RdsData extends PolicyStatement {
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_CommitTransaction.html
    */
   public toCommitTransaction() {
-    this.to('rds-data:CommitTransaction');
-    return this;
+    return this.to('CommitTransaction');
   }
 
   /**
@@ -74,8 +71,7 @@ export class RdsData extends PolicyStatement {
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteSql.html
    */
   public toExecuteSql() {
-    this.to('rds-data:ExecuteSql');
-    return this;
+    return this.to('ExecuteSql');
   }
 
   /**
@@ -89,8 +85,7 @@ export class RdsData extends PolicyStatement {
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteStatement.html
    */
   public toExecuteStatement() {
-    this.to('rds-data:ExecuteStatement');
-    return this;
+    return this.to('ExecuteStatement');
   }
 
   /**
@@ -107,8 +102,7 @@ export class RdsData extends PolicyStatement {
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_RollbackTransaction.html
    */
   public toRollbackTransaction() {
-    this.to('rds-data:RollbackTransaction');
-    return this;
+    return this.to('RollbackTransaction');
   }
 
   protected accessLevelList: AccessLevelList = {

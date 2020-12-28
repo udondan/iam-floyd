@@ -26,8 +26,7 @@ export class Macie extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateMemberAccount.html
    */
   public toAssociateMemberAccount() {
-    this.to('macie:AssociateMemberAccount');
-    return this;
+    return this.to('AssociateMemberAccount');
   }
 
   /**
@@ -41,8 +40,7 @@ export class Macie extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateS3Resources.html
    */
   public toAssociateS3Resources() {
-    this.to('macie:AssociateS3Resources');
-    return this;
+    return this.to('AssociateS3Resources');
   }
 
   /**
@@ -53,8 +51,7 @@ export class Macie extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateMemberAccount.html
    */
   public toDisassociateMemberAccount() {
-    this.to('macie:DisassociateMemberAccount');
-    return this;
+    return this.to('DisassociateMemberAccount');
   }
 
   /**
@@ -68,8 +65,7 @@ export class Macie extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateS3Resources.html
    */
   public toDisassociateS3Resources() {
-    this.to('macie:DisassociateS3Resources');
-    return this;
+    return this.to('DisassociateS3Resources');
   }
 
   /**
@@ -80,8 +76,7 @@ export class Macie extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_ListMemberAccounts.html
    */
   public toListMemberAccounts() {
-    this.to('macie:ListMemberAccounts');
-    return this;
+    return this.to('ListMemberAccounts');
   }
 
   /**
@@ -92,8 +87,7 @@ export class Macie extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_ListS3Resources.html
    */
   public toListS3Resources() {
-    this.to('macie:ListS3Resources');
-    return this;
+    return this.to('ListS3Resources');
   }
 
   /**
@@ -107,8 +101,7 @@ export class Macie extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_UpdateS3Resources.html
    */
   public toUpdateS3Resources() {
-    this.to('macie:UpdateS3Resources');
-    return this;
+    return this.to('UpdateS3Resources');
   }
 
   protected accessLevelList: AccessLevelList = {

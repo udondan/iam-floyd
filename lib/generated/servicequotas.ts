@@ -26,8 +26,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_AssociateServiceQuotaTemplate.html
    */
   public toAssociateServiceQuotaTemplate() {
-    this.to('servicequotas:AssociateServiceQuotaTemplate');
-    return this;
+    return this.to('AssociateServiceQuotaTemplate');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_DeleteServiceQuotaIncreaseRequestFromTemplate.html
    */
   public toDeleteServiceQuotaIncreaseRequestFromTemplate() {
-    this.to('servicequotas:DeleteServiceQuotaIncreaseRequestFromTemplate');
-    return this;
+    return this.to('DeleteServiceQuotaIncreaseRequestFromTemplate');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_DisassociateServiceQuotaTemplate.html
    */
   public toDisassociateServiceQuotaTemplate() {
-    this.to('servicequotas:DisassociateServiceQuotaTemplate');
-    return this;
+    return this.to('DisassociateServiceQuotaTemplate');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetAWSDefaultServiceQuota.html
    */
   public toGetAWSDefaultServiceQuota() {
-    this.to('servicequotas:GetAWSDefaultServiceQuota');
-    return this;
+    return this.to('GetAWSDefaultServiceQuota');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetAssociationForServiceQuotaTemplate.html
    */
   public toGetAssociationForServiceQuotaTemplate() {
-    this.to('servicequotas:GetAssociationForServiceQuotaTemplate');
-    return this;
+    return this.to('GetAssociationForServiceQuotaTemplate');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetRequestedServiceQuotaChange.html
    */
   public toGetRequestedServiceQuotaChange() {
-    this.to('servicequotas:GetRequestedServiceQuotaChange');
-    return this;
+    return this.to('GetRequestedServiceQuotaChange');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetServiceQuota.html
    */
   public toGetServiceQuota() {
-    this.to('servicequotas:GetServiceQuota');
-    return this;
+    return this.to('GetServiceQuota');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetServiceQuotaIncreaseRequestFromTemplate.html
    */
   public toGetServiceQuotaIncreaseRequestFromTemplate() {
-    this.to('servicequotas:GetServiceQuotaIncreaseRequestFromTemplate');
-    return this;
+    return this.to('GetServiceQuotaIncreaseRequestFromTemplate');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListAWSDefaultServiceQuotas.html
    */
   public toListAWSDefaultServiceQuotas() {
-    this.to('servicequotas:ListAWSDefaultServiceQuotas');
-    return this;
+    return this.to('ListAWSDefaultServiceQuotas');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListRequestedServiceQuotaChangeHistory.html
    */
   public toListRequestedServiceQuotaChangeHistory() {
-    this.to('servicequotas:ListRequestedServiceQuotaChangeHistory');
-    return this;
+    return this.to('ListRequestedServiceQuotaChangeHistory');
   }
 
   /**
@@ -146,8 +136,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListRequestedServiceQuotaChangeHistoryByQuota.html
    */
   public toListRequestedServiceQuotaChangeHistoryByQuota() {
-    this.to('servicequotas:ListRequestedServiceQuotaChangeHistoryByQuota');
-    return this;
+    return this.to('ListRequestedServiceQuotaChangeHistoryByQuota');
   }
 
   /**
@@ -158,8 +147,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotaIncreaseRequestsInTemplate
    */
   public toListServiceQuotaIncreaseRequestsInTemplate() {
-    this.to('servicequotas:ListServiceQuotaIncreaseRequestsInTemplate');
-    return this;
+    return this.to('ListServiceQuotaIncreaseRequestsInTemplate');
   }
 
   /**
@@ -170,8 +158,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html
    */
   public toListServiceQuotas() {
-    this.to('servicequotas:ListServiceQuotas');
-    return this;
+    return this.to('ListServiceQuotas');
   }
 
   /**
@@ -182,8 +169,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServices.html
    */
   public toListServices() {
-    this.to('servicequotas:ListServices');
-    return this;
+    return this.to('ListServices');
   }
 
   /**
@@ -194,8 +180,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListTagsForResource
    */
   public toListTagsForResource() {
-    this.to('servicequotas:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -209,8 +194,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_PutServiceQuotaIncreaseRequestIntoTemplate.html
    */
   public toPutServiceQuotaIncreaseRequestIntoTemplate() {
-    this.to('servicequotas:PutServiceQuotaIncreaseRequestIntoTemplate');
-    return this;
+    return this.to('PutServiceQuotaIncreaseRequestIntoTemplate');
   }
 
   /**
@@ -224,8 +208,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html
    */
   public toRequestServiceQuotaIncrease() {
-    this.to('servicequotas:RequestServiceQuotaIncrease');
-    return this;
+    return this.to('RequestServiceQuotaIncrease');
   }
 
   /**
@@ -236,8 +219,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_TagResource
    */
   public toTagResource() {
-    this.to('servicequotas:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -248,8 +230,7 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_UntagResource
    */
   public toUntagResource() {
-    this.to('servicequotas:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -316,6 +297,6 @@ export class Servicequotas extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifService(value: string | string[], operator?: Operator | string) {
-    return this.if(`servicequotas:service`, value, operator || 'StringLike');
+    return this.if(`service`, value, operator || 'StringLike');
   }
 }

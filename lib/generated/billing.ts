@@ -26,8 +26,7 @@ export class AwsPortal extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toModifyAccount() {
-    this.to('aws-portal:ModifyAccount');
-    return this;
+    return this.to('ModifyAccount');
   }
 
   /**
@@ -38,8 +37,7 @@ export class AwsPortal extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toModifyBilling() {
-    this.to('aws-portal:ModifyBilling');
-    return this;
+    return this.to('ModifyBilling');
   }
 
   /**
@@ -50,8 +48,7 @@ export class AwsPortal extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toModifyPaymentMethods() {
-    this.to('aws-portal:ModifyPaymentMethods');
-    return this;
+    return this.to('ModifyPaymentMethods');
   }
 
   /**
@@ -62,8 +59,7 @@ export class AwsPortal extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toViewAccount() {
-    this.to('aws-portal:ViewAccount');
-    return this;
+    return this.to('ViewAccount');
   }
 
   /**
@@ -74,8 +70,7 @@ export class AwsPortal extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toViewBilling() {
-    this.to('aws-portal:ViewBilling');
-    return this;
+    return this.to('ViewBilling');
   }
 
   /**
@@ -86,8 +81,7 @@ export class AwsPortal extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toViewPaymentMethods() {
-    this.to('aws-portal:ViewPaymentMethods');
-    return this;
+    return this.to('ViewPaymentMethods');
   }
 
   /**
@@ -98,8 +92,7 @@ export class AwsPortal extends PolicyStatement {
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toViewUsage() {
-    this.to('aws-portal:ViewUsage');
-    return this;
+    return this.to('ViewUsage');
   }
 
   protected accessLevelList: AccessLevelList = {

@@ -26,8 +26,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_AddTags.html
    */
   public toAddTags() {
-    this.to('machinelearning:AddTags');
-    return this;
+    return this.to('AddTags');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateBatchPrediction.html
    */
   public toCreateBatchPrediction() {
-    this.to('machinelearning:CreateBatchPrediction');
-    return this;
+    return this.to('CreateBatchPrediction');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateDataSourceFromRDS.html
    */
   public toCreateDataSourceFromRDS() {
-    this.to('machinelearning:CreateDataSourceFromRDS');
-    return this;
+    return this.to('CreateDataSourceFromRDS');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateDataSourceFromRedshift.html
    */
   public toCreateDataSourceFromRedshift() {
-    this.to('machinelearning:CreateDataSourceFromRedshift');
-    return this;
+    return this.to('CreateDataSourceFromRedshift');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateDataSourceFromS3.html
    */
   public toCreateDataSourceFromS3() {
-    this.to('machinelearning:CreateDataSourceFromS3');
-    return this;
+    return this.to('CreateDataSourceFromS3');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateEvaluation.html
    */
   public toCreateEvaluation() {
-    this.to('machinelearning:CreateEvaluation');
-    return this;
+    return this.to('CreateEvaluation');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateMLModel.html
    */
   public toCreateMLModel() {
-    this.to('machinelearning:CreateMLModel');
-    return this;
+    return this.to('CreateMLModel');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateRealtimeEndpoint.html
    */
   public toCreateRealtimeEndpoint() {
-    this.to('machinelearning:CreateRealtimeEndpoint');
-    return this;
+    return this.to('CreateRealtimeEndpoint');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteBatchPrediction.html
    */
   public toDeleteBatchPrediction() {
-    this.to('machinelearning:DeleteBatchPrediction');
-    return this;
+    return this.to('DeleteBatchPrediction');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteDataSource.html
    */
   public toDeleteDataSource() {
-    this.to('machinelearning:DeleteDataSource');
-    return this;
+    return this.to('DeleteDataSource');
   }
 
   /**
@@ -146,8 +136,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteEvaluation.html
    */
   public toDeleteEvaluation() {
-    this.to('machinelearning:DeleteEvaluation');
-    return this;
+    return this.to('DeleteEvaluation');
   }
 
   /**
@@ -158,8 +147,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteMLModel.html
    */
   public toDeleteMLModel() {
-    this.to('machinelearning:DeleteMLModel');
-    return this;
+    return this.to('DeleteMLModel');
   }
 
   /**
@@ -170,8 +158,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteRealtimeEndpoint.html
    */
   public toDeleteRealtimeEndpoint() {
-    this.to('machinelearning:DeleteRealtimeEndpoint');
-    return this;
+    return this.to('DeleteRealtimeEndpoint');
   }
 
   /**
@@ -182,8 +169,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteTags.html
    */
   public toDeleteTags() {
-    this.to('machinelearning:DeleteTags');
-    return this;
+    return this.to('DeleteTags');
   }
 
   /**
@@ -194,8 +180,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeBatchPredictions.html
    */
   public toDescribeBatchPredictions() {
-    this.to('machinelearning:DescribeBatchPredictions');
-    return this;
+    return this.to('DescribeBatchPredictions');
   }
 
   /**
@@ -206,8 +191,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeDataSources.html
    */
   public toDescribeDataSources() {
-    this.to('machinelearning:DescribeDataSources');
-    return this;
+    return this.to('DescribeDataSources');
   }
 
   /**
@@ -218,8 +202,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeEvaluations.html
    */
   public toDescribeEvaluations() {
-    this.to('machinelearning:DescribeEvaluations');
-    return this;
+    return this.to('DescribeEvaluations');
   }
 
   /**
@@ -230,8 +213,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeMLModels.html
    */
   public toDescribeMLModels() {
-    this.to('machinelearning:DescribeMLModels');
-    return this;
+    return this.to('DescribeMLModels');
   }
 
   /**
@@ -242,8 +224,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeTags.html
    */
   public toDescribeTags() {
-    this.to('machinelearning:DescribeTags');
-    return this;
+    return this.to('DescribeTags');
   }
 
   /**
@@ -254,8 +235,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetBatchPrediction.html
    */
   public toGetBatchPrediction() {
-    this.to('machinelearning:GetBatchPrediction');
-    return this;
+    return this.to('GetBatchPrediction');
   }
 
   /**
@@ -266,8 +246,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetDataSource.html
    */
   public toGetDataSource() {
-    this.to('machinelearning:GetDataSource');
-    return this;
+    return this.to('GetDataSource');
   }
 
   /**
@@ -278,8 +257,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetEvaluation.html
    */
   public toGetEvaluation() {
-    this.to('machinelearning:GetEvaluation');
-    return this;
+    return this.to('GetEvaluation');
   }
 
   /**
@@ -290,8 +268,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetMLModel.html
    */
   public toGetMLModel() {
-    this.to('machinelearning:GetMLModel');
-    return this;
+    return this.to('GetMLModel');
   }
 
   /**
@@ -302,8 +279,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_Predict.html
    */
   public toPredict() {
-    this.to('machinelearning:Predict');
-    return this;
+    return this.to('Predict');
   }
 
   /**
@@ -314,8 +290,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_UpdateBatchPrediction.html
    */
   public toUpdateBatchPrediction() {
-    this.to('machinelearning:UpdateBatchPrediction');
-    return this;
+    return this.to('UpdateBatchPrediction');
   }
 
   /**
@@ -326,8 +301,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_UpdateDataSource.html
    */
   public toUpdateDataSource() {
-    this.to('machinelearning:UpdateDataSource');
-    return this;
+    return this.to('UpdateDataSource');
   }
 
   /**
@@ -338,8 +312,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_UpdateEvaluation.html
    */
   public toUpdateEvaluation() {
-    this.to('machinelearning:UpdateEvaluation');
-    return this;
+    return this.to('UpdateEvaluation');
   }
 
   /**
@@ -350,8 +323,7 @@ export class Machinelearning extends PolicyStatement {
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_UpdateMLModel.html
    */
   public toUpdateMLModel() {
-    this.to('machinelearning:UpdateMLModel');
-    return this;
+    return this.to('UpdateMLModel');
   }
 
   protected accessLevelList: AccessLevelList = {

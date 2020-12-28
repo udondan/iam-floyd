@@ -32,8 +32,7 @@ export class Iotfleethub extends PolicyStatement {
    * - sso:DescribeRegisteredRegions
    */
   public toCreateApplication() {
-    this.to('iotfleethub:CreateApplication');
-    return this;
+    return this.to('CreateApplication');
   }
 
   /**
@@ -46,8 +45,7 @@ export class Iotfleethub extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public toCreateDashboard() {
-    this.to('iotfleethub:CreateDashboard');
-    return this;
+    return this.to('CreateDashboard');
   }
 
   /**
@@ -59,8 +57,7 @@ export class Iotfleethub extends PolicyStatement {
    * - sso:DeleteManagedApplicationInstance
    */
   public toDeleteApplication() {
-    this.to('iotfleethub:DeleteApplication');
-    return this;
+    return this.to('DeleteApplication');
   }
 
   /**
@@ -69,8 +66,7 @@ export class Iotfleethub extends PolicyStatement {
    * Access Level: Write
    */
   public toDeleteDashboard() {
-    this.to('iotfleethub:DeleteDashboard');
-    return this;
+    return this.to('DeleteDashboard');
   }
 
   /**
@@ -79,8 +75,7 @@ export class Iotfleethub extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeApplication() {
-    this.to('iotfleethub:DescribeApplication');
-    return this;
+    return this.to('DescribeApplication');
   }
 
   /**
@@ -89,8 +84,7 @@ export class Iotfleethub extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeDashboard() {
-    this.to('iotfleethub:DescribeDashboard');
-    return this;
+    return this.to('DescribeDashboard');
   }
 
   /**
@@ -99,8 +93,7 @@ export class Iotfleethub extends PolicyStatement {
    * Access Level: List
    */
   public toListApplications() {
-    this.to('iotfleethub:ListApplications');
-    return this;
+    return this.to('ListApplications');
   }
 
   /**
@@ -109,8 +102,7 @@ export class Iotfleethub extends PolicyStatement {
    * Access Level: List
    */
   public toListDashboards() {
-    this.to('iotfleethub:ListDashboards');
-    return this;
+    return this.to('ListDashboards');
   }
 
   /**
@@ -121,8 +113,7 @@ export class Iotfleethub extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/APIReference/API_Operations.htmlAPI_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('iotfleethub:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -137,8 +128,7 @@ export class Iotfleethub extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/APIReference/API_Operations.htmlAPI_TagResource.html
    */
   public toTagResource() {
-    this.to('iotfleethub:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -152,8 +142,7 @@ export class Iotfleethub extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/APIReference/API_Operations.htmlAPI_UntagResource.html
    */
   public toUntagResource() {
-    this.to('iotfleethub:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -162,8 +151,7 @@ export class Iotfleethub extends PolicyStatement {
    * Access Level: Write
    */
   public toUpdateApplication() {
-    this.to('iotfleethub:UpdateApplication');
-    return this;
+    return this.to('UpdateApplication');
   }
 
   /**
@@ -172,8 +160,7 @@ export class Iotfleethub extends PolicyStatement {
    * Access Level: Write
    */
   public toUpdateDashboard() {
-    this.to('iotfleethub:UpdateDashboard');
-    return this;
+    return this.to('UpdateDashboard');
   }
 
   protected accessLevelList: AccessLevelList = {

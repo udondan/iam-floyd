@@ -30,8 +30,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#BatchAssociateScramSecret
    */
   public toBatchAssociateScramSecret() {
-    this.to('kafka:BatchAssociateScramSecret');
-    return this;
+    return this.to('BatchAssociateScramSecret');
   }
 
   /**
@@ -45,8 +44,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#BatchDisassociateScramSecret
    */
   public toBatchDisassociateScramSecret() {
-    this.to('kafka:BatchDisassociateScramSecret');
-    return this;
+    return this.to('BatchDisassociateScramSecret');
   }
 
   /**
@@ -71,8 +69,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#CreateCluster
    */
   public toCreateCluster() {
-    this.to('kafka:CreateCluster');
-    return this;
+    return this.to('CreateCluster');
   }
 
   /**
@@ -83,8 +80,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration
    */
   public toCreateConfiguration() {
-    this.to('kafka:CreateConfiguration');
-    return this;
+    return this.to('CreateConfiguration');
   }
 
   /**
@@ -95,8 +91,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DeleteCluster
    */
   public toDeleteCluster() {
-    this.to('kafka:DeleteCluster');
-    return this;
+    return this.to('DeleteCluster');
   }
 
   /**
@@ -107,8 +102,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#DeleteConfiguration
    */
   public toDeleteConfiguration() {
-    this.to('kafka:DeleteConfiguration');
-    return this;
+    return this.to('DeleteConfiguration');
   }
 
   /**
@@ -119,8 +113,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DescribeCluster
    */
   public toDescribeCluster() {
-    this.to('kafka:DescribeCluster');
-    return this;
+    return this.to('DescribeCluster');
   }
 
   /**
@@ -131,8 +124,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/operations-clusteroperationarn.html#DescribeClusterOperation
    */
   public toDescribeClusterOperation() {
-    this.to('kafka:DescribeClusterOperation');
-    return this;
+    return this.to('DescribeClusterOperation');
   }
 
   /**
@@ -143,8 +135,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn.html#DescribeConfiguration
    */
   public toDescribeConfiguration() {
-    this.to('kafka:DescribeConfiguration');
-    return this;
+    return this.to('DescribeConfiguration');
   }
 
   /**
@@ -155,8 +146,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn-revision.html#DescribeConfigurationRevision
    */
   public toDescribeConfigurationRevision() {
-    this.to('kafka:DescribeConfigurationRevision');
-    return this;
+    return this.to('DescribeConfigurationRevision');
   }
 
   /**
@@ -167,8 +157,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-bootstrap-brokers.html#GetBootstrapBrokers
    */
   public toGetBootstrapBrokers() {
-    this.to('kafka:GetBootstrapBrokers');
-    return this;
+    return this.to('GetBootstrapBrokers');
   }
 
   /**
@@ -179,8 +168,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/compatible-kafka-versions.html#GetCompatibleKafkaVersions
    */
   public toGetCompatibleKafkaVersions() {
-    this.to('kafka:GetCompatibleKafkaVersions');
-    return this;
+    return this.to('GetCompatibleKafkaVersions');
   }
 
   /**
@@ -191,8 +179,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-operations.html#ListClusterOperations
    */
   public toListClusterOperations() {
-    this.to('kafka:ListClusterOperations');
-    return this;
+    return this.to('ListClusterOperations');
   }
 
   /**
@@ -203,8 +190,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#ListClusters
    */
   public toListClusters() {
-    this.to('kafka:ListClusters');
-    return this;
+    return this.to('ListClusters');
   }
 
   /**
@@ -215,8 +201,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn-revisions.html#ListConfigurationRevisions
    */
   public toListConfigurationRevisions() {
-    this.to('kafka:ListConfigurationRevisions');
-    return this;
+    return this.to('ListConfigurationRevisions');
   }
 
   /**
@@ -227,8 +212,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration
    */
   public toListConfigurations() {
-    this.to('kafka:ListConfigurations');
-    return this;
+    return this.to('ListConfigurations');
   }
 
   /**
@@ -239,8 +223,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/kafka-versions.html#ListKafkaVersions
    */
   public toListKafkaVersions() {
-    this.to('kafka:ListKafkaVersions');
-    return this;
+    return this.to('ListKafkaVersions');
   }
 
   /**
@@ -251,8 +234,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes.html#ListNodes
    */
   public toListNodes() {
-    this.to('kafka:ListNodes');
-    return this;
+    return this.to('ListNodes');
   }
 
   /**
@@ -263,8 +245,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#ListScramSecrets
    */
   public toListScramSecrets() {
-    this.to('kafka:ListScramSecrets');
-    return this;
+    return this.to('ListScramSecrets');
   }
 
   /**
@@ -275,8 +256,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#ListTagsForResource
    */
   public toListTagsForResource() {
-    this.to('kafka:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -287,8 +267,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-reboot-broker.html#RebootBroker
    */
   public toRebootBroker() {
-    this.to('kafka:RebootBroker');
-    return this;
+    return this.to('RebootBroker');
   }
 
   /**
@@ -303,8 +282,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#TagResource
    */
   public toTagResource() {
-    this.to('kafka:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -318,8 +296,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#UntagResource
    */
   public toUntagResource() {
-    this.to('kafka:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -330,8 +307,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-count.html#UpdateBrokerCount
    */
   public toUpdateBrokerCount() {
-    this.to('kafka:UpdateBrokerCount');
-    return this;
+    return this.to('UpdateBrokerCount');
   }
 
   /**
@@ -342,8 +318,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-storage.html#UpdateBrokerStorage
    */
   public toUpdateBrokerStorage() {
-    this.to('kafka:UpdateBrokerStorage');
-    return this;
+    return this.to('UpdateBrokerStorage');
   }
 
   /**
@@ -354,8 +329,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-configuration.html#UpdateClusterConfiguration
    */
   public toUpdateClusterConfiguration() {
-    this.to('kafka:UpdateClusterConfiguration');
-    return this;
+    return this.to('UpdateClusterConfiguration');
   }
 
   /**
@@ -366,8 +340,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-version.html#UpdateClusterKafkaVersion
    */
   public toUpdateClusterKafkaVersion() {
-    this.to('kafka:UpdateClusterKafkaVersion');
-    return this;
+    return this.to('UpdateClusterKafkaVersion');
   }
 
   /**
@@ -378,8 +351,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#updateconfiguration
    */
   public toUpdateConfiguration() {
-    this.to('kafka:UpdateConfiguration');
-    return this;
+    return this.to('UpdateConfiguration');
   }
 
   /**
@@ -390,8 +362,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-monitoring.html#UpdateMonitoring
    */
   public toUpdateMonitoring() {
-    this.to('kafka:UpdateMonitoring');
-    return this;
+    return this.to('UpdateMonitoring');
   }
 
   protected accessLevelList: AccessLevelList = {

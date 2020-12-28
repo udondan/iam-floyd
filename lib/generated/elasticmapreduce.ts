@@ -26,8 +26,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_AddInstanceFleet.html
    */
   public toAddInstanceFleet() {
-    this.to('elasticmapreduce:AddInstanceFleet');
-    return this;
+    return this.to('AddInstanceFleet');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_AddInstanceGroups.html
    */
   public toAddInstanceGroups() {
-    this.to('elasticmapreduce:AddInstanceGroups');
-    return this;
+    return this.to('AddInstanceGroups');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_AddJobFlowSteps.html
    */
   public toAddJobFlowSteps() {
-    this.to('elasticmapreduce:AddJobFlowSteps');
-    return this;
+    return this.to('AddJobFlowSteps');
   }
 
   /**
@@ -67,8 +64,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_AddTags.html
    */
   public toAddTags() {
-    this.to('elasticmapreduce:AddTags');
-    return this;
+    return this.to('AddTags');
   }
 
   /**
@@ -79,8 +75,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_CancelSteps.html
    */
   public toCancelSteps() {
-    this.to('elasticmapreduce:CancelSteps');
-    return this;
+    return this.to('CancelSteps');
   }
 
   /**
@@ -96,8 +91,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-create.html
    */
   public toCreateEditor() {
-    this.to('elasticmapreduce:CreateEditor');
-    return this;
+    return this.to('CreateEditor');
   }
 
   /**
@@ -108,8 +102,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_CreateSecurityConfiguration.html
    */
   public toCreateSecurityConfiguration() {
-    this.to('elasticmapreduce:CreateSecurityConfiguration');
-    return this;
+    return this.to('CreateSecurityConfiguration');
   }
 
   /**
@@ -120,8 +113,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-deleting
    */
   public toDeleteEditor() {
-    this.to('elasticmapreduce:DeleteEditor');
-    return this;
+    return this.to('DeleteEditor');
   }
 
   /**
@@ -132,8 +124,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_DeleteSecurityConfiguration.html
    */
   public toDeleteSecurityConfiguration() {
-    this.to('elasticmapreduce:DeleteSecurityConfiguration');
-    return this;
+    return this.to('DeleteSecurityConfiguration');
   }
 
   /**
@@ -144,8 +135,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeCluster.html
    */
   public toDescribeCluster() {
-    this.to('elasticmapreduce:DescribeCluster');
-    return this;
+    return this.to('DescribeCluster');
   }
 
   /**
@@ -154,8 +144,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeEditor() {
-    this.to('elasticmapreduce:DescribeEditor');
-    return this;
+    return this.to('DescribeEditor');
   }
 
   /**
@@ -166,8 +155,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeJobFlows.html
    */
   public toDescribeJobFlows() {
-    this.to('elasticmapreduce:DescribeJobFlows');
-    return this;
+    return this.to('DescribeJobFlows');
   }
 
   /**
@@ -178,8 +166,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeSecurityConfiguration.html
    */
   public toDescribeSecurityConfiguration() {
-    this.to('elasticmapreduce:DescribeSecurityConfiguration');
-    return this;
+    return this.to('DescribeSecurityConfiguration');
   }
 
   /**
@@ -190,8 +177,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeStep.html
    */
   public toDescribeStep() {
-    this.to('elasticmapreduce:DescribeStep');
-    return this;
+    return this.to('DescribeStep');
   }
 
   /**
@@ -202,8 +188,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_GetBlockPublicAccessConfiguration.html
    */
   public toGetBlockPublicAccessConfiguration() {
-    this.to('elasticmapreduce:GetBlockPublicAccessConfiguration');
-    return this;
+    return this.to('GetBlockPublicAccessConfiguration');
   }
 
   /**
@@ -214,8 +199,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_GetManagedScalingPolicy.html
    */
   public toGetManagedScalingPolicy() {
-    this.to('elasticmapreduce:GetManagedScalingPolicy');
-    return this;
+    return this.to('GetManagedScalingPolicy');
   }
 
   /**
@@ -226,8 +210,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_ListBootstrapActions.html
    */
   public toListBootstrapActions() {
-    this.to('elasticmapreduce:ListBootstrapActions');
-    return this;
+    return this.to('ListBootstrapActions');
   }
 
   /**
@@ -238,8 +221,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_ListClusters.html
    */
   public toListClusters() {
-    this.to('elasticmapreduce:ListClusters');
-    return this;
+    return this.to('ListClusters');
   }
 
   /**
@@ -248,8 +230,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * Access Level: List
    */
   public toListEditors() {
-    this.to('elasticmapreduce:ListEditors');
-    return this;
+    return this.to('ListEditors');
   }
 
   /**
@@ -260,8 +241,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_ListInstanceFleets.html
    */
   public toListInstanceFleets() {
-    this.to('elasticmapreduce:ListInstanceFleets');
-    return this;
+    return this.to('ListInstanceFleets');
   }
 
   /**
@@ -272,8 +252,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_ListInstanceGroups.html
    */
   public toListInstanceGroups() {
-    this.to('elasticmapreduce:ListInstanceGroups');
-    return this;
+    return this.to('ListInstanceGroups');
   }
 
   /**
@@ -284,8 +263,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_ListInstances.html
    */
   public toListInstances() {
-    this.to('elasticmapreduce:ListInstances');
-    return this;
+    return this.to('ListInstances');
   }
 
   /**
@@ -296,8 +274,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_ListSecurityConfigurations.html
    */
   public toListSecurityConfigurations() {
-    this.to('elasticmapreduce:ListSecurityConfigurations');
-    return this;
+    return this.to('ListSecurityConfigurations');
   }
 
   /**
@@ -308,8 +285,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_ListSteps.html
    */
   public toListSteps() {
-    this.to('elasticmapreduce:ListSteps');
-    return this;
+    return this.to('ListSteps');
   }
 
   /**
@@ -320,8 +296,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_ModifyCluster.html
    */
   public toModifyCluster() {
-    this.to('elasticmapreduce:ModifyCluster');
-    return this;
+    return this.to('ModifyCluster');
   }
 
   /**
@@ -332,8 +307,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_ModifyInstanceFleet.html
    */
   public toModifyInstanceFleet() {
-    this.to('elasticmapreduce:ModifyInstanceFleet');
-    return this;
+    return this.to('ModifyInstanceFleet');
   }
 
   /**
@@ -344,8 +318,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_ModifyInstanceGroups.html
    */
   public toModifyInstanceGroups() {
-    this.to('elasticmapreduce:ModifyInstanceGroups');
-    return this;
+    return this.to('ModifyInstanceGroups');
   }
 
   /**
@@ -356,8 +329,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
    */
   public toOpenEditorInConsole() {
-    this.to('elasticmapreduce:OpenEditorInConsole');
-    return this;
+    return this.to('OpenEditorInConsole');
   }
 
   /**
@@ -368,8 +340,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_PutAutoScalingPolicy.html
    */
   public toPutAutoScalingPolicy() {
-    this.to('elasticmapreduce:PutAutoScalingPolicy');
-    return this;
+    return this.to('PutAutoScalingPolicy');
   }
 
   /**
@@ -380,8 +351,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_PutBlockPublicAccessConfiguration.html
    */
   public toPutBlockPublicAccessConfiguration() {
-    this.to('elasticmapreduce:PutBlockPublicAccessConfiguration');
-    return this;
+    return this.to('PutBlockPublicAccessConfiguration');
   }
 
   /**
@@ -392,8 +362,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_PutManagedScalingPolicy.html
    */
   public toPutManagedScalingPolicy() {
-    this.to('elasticmapreduce:PutManagedScalingPolicy');
-    return this;
+    return this.to('PutManagedScalingPolicy');
   }
 
   /**
@@ -404,8 +373,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveAutoScalingPolicy.html
    */
   public toRemoveAutoScalingPolicy() {
-    this.to('elasticmapreduce:RemoveAutoScalingPolicy');
-    return this;
+    return this.to('RemoveAutoScalingPolicy');
   }
 
   /**
@@ -416,8 +384,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveManagedScalingPolicy.html
    */
   public toRemoveManagedScalingPolicy() {
-    this.to('elasticmapreduce:RemoveManagedScalingPolicy');
-    return this;
+    return this.to('RemoveManagedScalingPolicy');
   }
 
   /**
@@ -431,8 +398,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveTags.html
    */
   public toRemoveTags() {
-    this.to('elasticmapreduce:RemoveTags');
-    return this;
+    return this.to('RemoveTags');
   }
 
   /**
@@ -448,8 +414,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_RunJobFlow.html
    */
   public toRunJobFlow() {
-    this.to('elasticmapreduce:RunJobFlow');
-    return this;
+    return this.to('RunJobFlow');
   }
 
   /**
@@ -460,8 +425,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_SetTerminationProtection.html
    */
   public toSetTerminationProtection() {
-    this.to('elasticmapreduce:SetTerminationProtection');
-    return this;
+    return this.to('SetTerminationProtection');
   }
 
   /**
@@ -472,8 +436,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
    */
   public toStartEditor() {
-    this.to('elasticmapreduce:StartEditor');
-    return this;
+    return this.to('StartEditor');
   }
 
   /**
@@ -484,8 +447,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html
    */
   public toStopEditor() {
-    this.to('elasticmapreduce:StopEditor');
-    return this;
+    return this.to('StopEditor');
   }
 
   /**
@@ -496,8 +458,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_TerminateJobFlows.html
    */
   public toTerminateJobFlows() {
-    this.to('elasticmapreduce:TerminateJobFlows');
-    return this;
+    return this.to('TerminateJobFlows');
   }
 
   /**
@@ -506,8 +467,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * Access Level: List
    */
   public toViewEventsFromAllClustersInConsole() {
-    this.to('elasticmapreduce:ViewEventsFromAllClustersInConsole');
-    return this;
+    return this.to('ViewEventsFromAllClustersInConsole');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -624,7 +584,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`elasticmapreduce:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
@@ -641,6 +601,6 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`elasticmapreduce:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

@@ -30,8 +30,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CancelKeyDeletion.html
    */
   public toCancelKeyDeletion() {
-    this.to('kms:CancelKeyDeletion');
-    return this;
+    return this.to('CancelKeyDeletion');
   }
 
   /**
@@ -42,8 +41,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ConnectCustomKeyStore.html
    */
   public toConnectCustomKeyStore() {
-    this.to('kms:ConnectCustomKeyStore');
-    return this;
+    return this.to('ConnectCustomKeyStore');
   }
 
   /**
@@ -58,8 +56,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateAlias.html
    */
   public toCreateAlias() {
-    this.to('kms:CreateAlias');
-    return this;
+    return this.to('CreateAlias');
   }
 
   /**
@@ -73,8 +70,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html
    */
   public toCreateCustomKeyStore() {
-    this.to('kms:CreateCustomKeyStore');
-    return this;
+    return this.to('CreateCustomKeyStore');
   }
 
   /**
@@ -91,8 +87,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html
    */
   public toCreateGrant() {
-    this.to('kms:CreateGrant');
-    return this;
+    return this.to('CreateGrant');
   }
 
   /**
@@ -109,8 +104,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html
    */
   public toCreateKey() {
-    this.to('kms:CreateKey');
-    return this;
+    return this.to('CreateKey');
   }
 
   /**
@@ -127,8 +121,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html
    */
   public toDecrypt() {
-    this.to('kms:Decrypt');
-    return this;
+    return this.to('Decrypt');
   }
 
   /**
@@ -143,8 +136,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteAlias.html
    */
   public toDeleteAlias() {
-    this.to('kms:DeleteAlias');
-    return this;
+    return this.to('DeleteAlias');
   }
 
   /**
@@ -155,8 +147,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteCustomKeyStore.html
    */
   public toDeleteCustomKeyStore() {
-    this.to('kms:DeleteCustomKeyStore');
-    return this;
+    return this.to('DeleteCustomKeyStore');
   }
 
   /**
@@ -171,8 +162,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteImportedKeyMaterial.html
    */
   public toDeleteImportedKeyMaterial() {
-    this.to('kms:DeleteImportedKeyMaterial');
-    return this;
+    return this.to('DeleteImportedKeyMaterial');
   }
 
   /**
@@ -183,8 +173,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeCustomKeyStores.html
    */
   public toDescribeCustomKeyStores() {
-    this.to('kms:DescribeCustomKeyStores');
-    return this;
+    return this.to('DescribeCustomKeyStores');
   }
 
   /**
@@ -199,8 +188,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html
    */
   public toDescribeKey() {
-    this.to('kms:DescribeKey');
-    return this;
+    return this.to('DescribeKey');
   }
 
   /**
@@ -215,8 +203,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DisableKey.html
    */
   public toDisableKey() {
-    this.to('kms:DisableKey');
-    return this;
+    return this.to('DisableKey');
   }
 
   /**
@@ -231,8 +218,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DisableKeyRotation.html
    */
   public toDisableKeyRotation() {
-    this.to('kms:DisableKeyRotation');
-    return this;
+    return this.to('DisableKeyRotation');
   }
 
   /**
@@ -243,8 +229,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DisconnectCustomKeyStore.html
    */
   public toDisconnectCustomKeyStore() {
-    this.to('kms:DisconnectCustomKeyStore');
-    return this;
+    return this.to('DisconnectCustomKeyStore');
   }
 
   /**
@@ -259,8 +244,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_EnableKey.html
    */
   public toEnableKey() {
-    this.to('kms:EnableKey');
-    return this;
+    return this.to('EnableKey');
   }
 
   /**
@@ -275,8 +259,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_EnableKeyRotation.html
    */
   public toEnableKeyRotation() {
-    this.to('kms:EnableKeyRotation');
-    return this;
+    return this.to('EnableKeyRotation');
   }
 
   /**
@@ -293,8 +276,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html
    */
   public toEncrypt() {
-    this.to('kms:Encrypt');
-    return this;
+    return this.to('Encrypt');
   }
 
   /**
@@ -311,8 +293,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKey.html
    */
   public toGenerateDataKey() {
-    this.to('kms:GenerateDataKey');
-    return this;
+    return this.to('GenerateDataKey');
   }
 
   /**
@@ -330,8 +311,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPair.html
    */
   public toGenerateDataKeyPair() {
-    this.to('kms:GenerateDataKeyPair');
-    return this;
+    return this.to('GenerateDataKeyPair');
   }
 
   /**
@@ -349,8 +329,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPairWithoutPlaintext.html
    */
   public toGenerateDataKeyPairWithoutPlaintext() {
-    this.to('kms:GenerateDataKeyPairWithoutPlaintext');
-    return this;
+    return this.to('GenerateDataKeyPairWithoutPlaintext');
   }
 
   /**
@@ -367,8 +346,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyWithoutPlaintext.html
    */
   public toGenerateDataKeyWithoutPlaintext() {
-    this.to('kms:GenerateDataKeyWithoutPlaintext');
-    return this;
+    return this.to('GenerateDataKeyWithoutPlaintext');
   }
 
   /**
@@ -379,8 +357,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateRandom.html
    */
   public toGenerateRandom() {
-    this.to('kms:GenerateRandom');
-    return this;
+    return this.to('GenerateRandom');
   }
 
   /**
@@ -395,8 +372,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyPolicy.html
    */
   public toGetKeyPolicy() {
-    this.to('kms:GetKeyPolicy');
-    return this;
+    return this.to('GetKeyPolicy');
   }
 
   /**
@@ -411,8 +387,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyRotationStatus.html
    */
   public toGetKeyRotationStatus() {
-    this.to('kms:GetKeyRotationStatus');
-    return this;
+    return this.to('GetKeyRotationStatus');
   }
 
   /**
@@ -429,8 +404,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetParametersForImport.html
    */
   public toGetParametersForImport() {
-    this.to('kms:GetParametersForImport');
-    return this;
+    return this.to('GetParametersForImport');
   }
 
   /**
@@ -445,8 +419,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html
    */
   public toGetPublicKey() {
-    this.to('kms:GetPublicKey');
-    return this;
+    return this.to('GetPublicKey');
   }
 
   /**
@@ -463,8 +436,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ImportKeyMaterial.html
    */
   public toImportKeyMaterial() {
-    this.to('kms:ImportKeyMaterial');
-    return this;
+    return this.to('ImportKeyMaterial');
   }
 
   /**
@@ -475,8 +447,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListAliases.html
    */
   public toListAliases() {
-    this.to('kms:ListAliases');
-    return this;
+    return this.to('ListAliases');
   }
 
   /**
@@ -492,8 +463,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListGrants.html
    */
   public toListGrants() {
-    this.to('kms:ListGrants');
-    return this;
+    return this.to('ListGrants');
   }
 
   /**
@@ -508,8 +478,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListKeyPolicies.html
    */
   public toListKeyPolicies() {
-    this.to('kms:ListKeyPolicies');
-    return this;
+    return this.to('ListKeyPolicies');
   }
 
   /**
@@ -520,8 +489,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListKeys.html
    */
   public toListKeys() {
-    this.to('kms:ListKeys');
-    return this;
+    return this.to('ListKeys');
   }
 
   /**
@@ -536,8 +504,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListResourceTags.html
    */
   public toListResourceTags() {
-    this.to('kms:ListResourceTags');
-    return this;
+    return this.to('ListResourceTags');
   }
 
   /**
@@ -548,8 +515,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListRetirableGrants.html
    */
   public toListRetirableGrants() {
-    this.to('kms:ListRetirableGrants');
-    return this;
+    return this.to('ListRetirableGrants');
   }
 
   /**
@@ -565,8 +531,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html
    */
   public toPutKeyPolicy() {
-    this.to('kms:PutKeyPolicy');
-    return this;
+    return this.to('PutKeyPolicy');
   }
 
   /**
@@ -584,8 +549,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html
    */
   public toReEncryptFrom() {
-    this.to('kms:ReEncryptFrom');
-    return this;
+    return this.to('ReEncryptFrom');
   }
 
   /**
@@ -603,8 +567,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html
    */
   public toReEncryptTo() {
-    this.to('kms:ReEncryptTo');
-    return this;
+    return this.to('ReEncryptTo');
   }
 
   /**
@@ -615,8 +578,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html
    */
   public toRetireGrant() {
-    this.to('kms:RetireGrant');
-    return this;
+    return this.to('RetireGrant');
   }
 
   /**
@@ -632,8 +594,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html
    */
   public toRevokeGrant() {
-    this.to('kms:RevokeGrant');
-    return this;
+    return this.to('RevokeGrant');
   }
 
   /**
@@ -648,8 +609,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ScheduleKeyDeletion.html
    */
   public toScheduleKeyDeletion() {
-    this.to('kms:ScheduleKeyDeletion');
-    return this;
+    return this.to('ScheduleKeyDeletion');
   }
 
   /**
@@ -666,8 +626,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Sign.html
    */
   public toSign() {
-    this.to('kms:Sign');
-    return this;
+    return this.to('Sign');
   }
 
   /**
@@ -682,8 +641,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('kms:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -698,8 +656,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('kms:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -714,8 +671,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateAlias.html
    */
   public toUpdateAlias() {
-    this.to('kms:UpdateAlias');
-    return this;
+    return this.to('UpdateAlias');
   }
 
   /**
@@ -726,8 +682,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateCustomKeyStore.html
    */
   public toUpdateCustomKeyStore() {
-    this.to('kms:UpdateCustomKeyStore');
-    return this;
+    return this.to('UpdateCustomKeyStore');
   }
 
   /**
@@ -742,8 +697,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateKeyDescription.html
    */
   public toUpdateKeyDescription() {
-    this.to('kms:UpdateKeyDescription');
-    return this;
+    return this.to('UpdateKeyDescription');
   }
 
   /**
@@ -760,8 +714,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Verify.html
    */
   public toVerify() {
-    this.to('kms:Verify');
-    return this;
+    return this.to('Verify');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -923,7 +876,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCallerAccount(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:CallerAccount`, value, operator || 'StringLike');
+    return this.if(`CallerAccount`, value, operator || 'StringLike');
   }
 
   /**
@@ -938,7 +891,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCustomerMasterKeySpec(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:CustomerMasterKeySpec`, value, operator || 'StringLike');
+    return this.if(`CustomerMasterKeySpec`, value, operator || 'StringLike');
   }
 
   /**
@@ -953,7 +906,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCustomerMasterKeyUsage(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:CustomerMasterKeyUsage`, value, operator || 'StringLike');
+    return this.if(`CustomerMasterKeyUsage`, value, operator || 'StringLike');
   }
 
   /**
@@ -969,7 +922,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDataKeyPairSpec(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:DataKeyPairSpec`, value, operator || 'StringLike');
+    return this.if(`DataKeyPairSpec`, value, operator || 'StringLike');
   }
 
   /**
@@ -991,7 +944,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEncryptionAlgorithm(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:EncryptionAlgorithm`, value, operator || 'StringLike');
+    return this.if(`EncryptionAlgorithm`, value, operator || 'StringLike');
   }
 
   /**
@@ -1013,7 +966,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEncryptionContextKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:EncryptionContextKeys`, value, operator || 'StringLike');
+    return this.if(`EncryptionContextKeys`, value, operator || 'StringLike');
   }
 
   /**
@@ -1028,7 +981,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifExpirationModel(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:ExpirationModel`, value, operator || 'StringLike');
+    return this.if(`ExpirationModel`, value, operator || 'StringLike');
   }
 
   /**
@@ -1043,7 +996,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGrantConstraintType(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:GrantConstraintType`, value, operator || 'StringLike');
+    return this.if(`GrantConstraintType`, value, operator || 'StringLike');
   }
 
   /**
@@ -1071,7 +1024,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGrantOperations(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:GrantOperations`, value, operator || 'StringLike');
+    return this.if(`GrantOperations`, value, operator || 'StringLike');
   }
 
   /**
@@ -1083,7 +1036,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGranteePrincipal(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:GranteePrincipal`, value, operator || 'StringLike');
+    return this.if(`GranteePrincipal`, value, operator || 'StringLike');
   }
 
   /**
@@ -1098,7 +1051,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifKeyOrigin(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:KeyOrigin`, value, operator || 'StringLike');
+    return this.if(`KeyOrigin`, value, operator || 'StringLike');
   }
 
   /**
@@ -1114,7 +1067,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifMessageType(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:MessageType`, value, operator || 'StringLike');
+    return this.if(`MessageType`, value, operator || 'StringLike');
   }
 
   /**
@@ -1141,7 +1094,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestAlias(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:RequestAlias`, value, operator || 'StringLike');
+    return this.if(`RequestAlias`, value, operator || 'StringLike');
   }
 
   /**
@@ -1153,7 +1106,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceAliases(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:ResourceAliases`, value, operator || 'StringLike');
+    return this.if(`ResourceAliases`, value, operator || 'StringLike');
   }
 
   /**
@@ -1165,7 +1118,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRetiringPrincipal(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:RetiringPrincipal`, value, operator || 'StringLike');
+    return this.if(`RetiringPrincipal`, value, operator || 'StringLike');
   }
 
   /**
@@ -1181,7 +1134,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSigningAlgorithm(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:SigningAlgorithm`, value, operator || 'StringLike');
+    return this.if(`SigningAlgorithm`, value, operator || 'StringLike');
   }
 
   /**
@@ -1196,7 +1149,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifValidTo(value: number | number[], operator?: Operator | string) {
-    return this.if(`kms:ValidTo`, value, operator || 'NumericEquals');
+    return this.if(`ValidTo`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -1245,7 +1198,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifViaService(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:ViaService`, value, operator || 'StringLike');
+    return this.if(`ViaService`, value, operator || 'StringLike');
   }
 
   /**
@@ -1260,7 +1213,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifWrappingAlgorithm(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:WrappingAlgorithm`, value, operator || 'StringLike');
+    return this.if(`WrappingAlgorithm`, value, operator || 'StringLike');
   }
 
   /**
@@ -1275,6 +1228,6 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifWrappingKeySpec(value: string | string[], operator?: Operator | string) {
-    return this.if(`kms:WrappingKeySpec`, value, operator || 'StringLike');
+    return this.if(`WrappingKeySpec`, value, operator || 'StringLike');
   }
 }

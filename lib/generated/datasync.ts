@@ -26,8 +26,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CancelTaskExecution.html
    */
   public toCancelTaskExecution() {
-    this.to('datasync:CancelTaskExecution');
-    return this;
+    return this.to('CancelTaskExecution');
   }
 
   /**
@@ -42,8 +41,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateAgent.html
    */
   public toCreateAgent() {
-    this.to('datasync:CreateAgent');
-    return this;
+    return this.to('CreateAgent');
   }
 
   /**
@@ -58,8 +56,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationEfs.html
    */
   public toCreateLocationEfs() {
-    this.to('datasync:CreateLocationEfs');
-    return this;
+    return this.to('CreateLocationEfs');
   }
 
   /**
@@ -74,8 +71,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxWindows.html
    */
   public toCreateLocationFsxWindows() {
-    this.to('datasync:CreateLocationFsxWindows');
-    return this;
+    return this.to('CreateLocationFsxWindows');
   }
 
   /**
@@ -90,8 +86,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationNfs.html
    */
   public toCreateLocationNfs() {
-    this.to('datasync:CreateLocationNfs');
-    return this;
+    return this.to('CreateLocationNfs');
   }
 
   /**
@@ -106,8 +101,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationObjectStorage.html
    */
   public toCreateLocationObjectStorage() {
-    this.to('datasync:CreateLocationObjectStorage');
-    return this;
+    return this.to('CreateLocationObjectStorage');
   }
 
   /**
@@ -122,8 +116,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html
    */
   public toCreateLocationS3() {
-    this.to('datasync:CreateLocationS3');
-    return this;
+    return this.to('CreateLocationS3');
   }
 
   /**
@@ -138,8 +131,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationSmb.html
    */
   public toCreateLocationSmb() {
-    this.to('datasync:CreateLocationSmb');
-    return this;
+    return this.to('CreateLocationSmb');
   }
 
   /**
@@ -154,8 +146,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html
    */
   public toCreateTask() {
-    this.to('datasync:CreateTask');
-    return this;
+    return this.to('CreateTask');
   }
 
   /**
@@ -166,8 +157,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DeleteAgent.html
    */
   public toDeleteAgent() {
-    this.to('datasync:DeleteAgent');
-    return this;
+    return this.to('DeleteAgent');
   }
 
   /**
@@ -178,8 +168,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DeleteLocation.html
    */
   public toDeleteLocation() {
-    this.to('datasync:DeleteLocation');
-    return this;
+    return this.to('DeleteLocation');
   }
 
   /**
@@ -190,8 +179,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DeleteTask.html
    */
   public toDeleteTask() {
-    this.to('datasync:DeleteTask');
-    return this;
+    return this.to('DeleteTask');
   }
 
   /**
@@ -202,8 +190,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeAgent.html
    */
   public toDescribeAgent() {
-    this.to('datasync:DescribeAgent');
-    return this;
+    return this.to('DescribeAgent');
   }
 
   /**
@@ -214,8 +201,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationEfs.html
    */
   public toDescribeLocationEfs() {
-    this.to('datasync:DescribeLocationEfs');
-    return this;
+    return this.to('DescribeLocationEfs');
   }
 
   /**
@@ -226,8 +212,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationFsxWindows.html
    */
   public toDescribeLocationFsxWindows() {
-    this.to('datasync:DescribeLocationFsxWindows');
-    return this;
+    return this.to('DescribeLocationFsxWindows');
   }
 
   /**
@@ -238,8 +223,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationNfs.html
    */
   public toDescribeLocationNfs() {
-    this.to('datasync:DescribeLocationNfs');
-    return this;
+    return this.to('DescribeLocationNfs');
   }
 
   /**
@@ -250,8 +234,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationObjectStorage.html
    */
   public toDescribeLocationObjectStorage() {
-    this.to('datasync:DescribeLocationObjectStorage');
-    return this;
+    return this.to('DescribeLocationObjectStorage');
   }
 
   /**
@@ -262,8 +245,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationS3.html
    */
   public toDescribeLocationS3() {
-    this.to('datasync:DescribeLocationS3');
-    return this;
+    return this.to('DescribeLocationS3');
   }
 
   /**
@@ -274,8 +256,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationSmb.html
    */
   public toDescribeLocationSmb() {
-    this.to('datasync:DescribeLocationSmb');
-    return this;
+    return this.to('DescribeLocationSmb');
   }
 
   /**
@@ -286,8 +267,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTask.html
    */
   public toDescribeTask() {
-    this.to('datasync:DescribeTask');
-    return this;
+    return this.to('DescribeTask');
   }
 
   /**
@@ -298,8 +278,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html
    */
   public toDescribeTaskExecution() {
-    this.to('datasync:DescribeTaskExecution');
-    return this;
+    return this.to('DescribeTaskExecution');
   }
 
   /**
@@ -310,8 +289,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html
    */
   public toListAgents() {
-    this.to('datasync:ListAgents');
-    return this;
+    return this.to('ListAgents');
   }
 
   /**
@@ -322,8 +300,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html
    */
   public toListLocations() {
-    this.to('datasync:ListLocations');
-    return this;
+    return this.to('ListLocations');
   }
 
   /**
@@ -334,8 +311,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('datasync:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -346,8 +322,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTaskExecutions.html
    */
   public toListTaskExecutions() {
-    this.to('datasync:ListTaskExecutions');
-    return this;
+    return this.to('ListTaskExecutions');
   }
 
   /**
@@ -358,8 +333,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTasks.html
    */
   public toListTasks() {
-    this.to('datasync:ListTasks');
-    return this;
+    return this.to('ListTasks');
   }
 
   /**
@@ -370,8 +344,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html
    */
   public toStartTaskExecution() {
-    this.to('datasync:StartTaskExecution');
-    return this;
+    return this.to('StartTaskExecution');
   }
 
   /**
@@ -386,8 +359,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_TagResource.html
    */
   public toTagResource() {
-    this.to('datasync:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -401,8 +373,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('datasync:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -413,8 +384,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateAgent.html
    */
   public toUpdateAgent() {
-    this.to('datasync:UpdateAgent');
-    return this;
+    return this.to('UpdateAgent');
   }
 
   /**
@@ -425,8 +395,7 @@ export class Datasync extends PolicyStatement {
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateTask.html
    */
   public toUpdateTask() {
-    this.to('datasync:UpdateTask');
-    return this;
+    return this.to('UpdateTask');
   }
 
   protected accessLevelList: AccessLevelList = {

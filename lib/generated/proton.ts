@@ -29,8 +29,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironment.html
    */
   public toCreateEnvironment() {
-    this.to('proton:CreateEnvironment');
-    return this;
+    return this.to('CreateEnvironment');
   }
 
   /**
@@ -41,8 +40,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironmentTemplate.html
    */
   public toCreateEnvironmentTemplate() {
-    this.to('proton:CreateEnvironmentTemplate');
-    return this;
+    return this.to('CreateEnvironmentTemplate');
   }
 
   /**
@@ -53,8 +51,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironmentTemplateMajorVersion.html
    */
   public toCreateEnvironmentTemplateMajorVersion() {
-    this.to('proton:CreateEnvironmentTemplateMajorVersion');
-    return this;
+    return this.to('CreateEnvironmentTemplateMajorVersion');
   }
 
   /**
@@ -65,8 +62,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironmentTemplateMinorVersion.html
    */
   public toCreateEnvironmentTemplateMinorVersion() {
-    this.to('proton:CreateEnvironmentTemplateMinorVersion');
-    return this;
+    return this.to('CreateEnvironmentTemplateMinorVersion');
   }
 
   /**
@@ -80,8 +76,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateService.html
    */
   public toCreateService() {
-    this.to('proton:CreateService');
-    return this;
+    return this.to('CreateService');
   }
 
   /**
@@ -92,8 +87,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateServiceTemplate.html
    */
   public toCreateServiceTemplate() {
-    this.to('proton:CreateServiceTemplate');
-    return this;
+    return this.to('CreateServiceTemplate');
   }
 
   /**
@@ -104,8 +98,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateServiceTemplateMajorVersion.html
    */
   public toCreateServiceTemplateMajorVersion() {
-    this.to('proton:CreateServiceTemplateMajorVersion');
-    return this;
+    return this.to('CreateServiceTemplateMajorVersion');
   }
 
   /**
@@ -116,8 +109,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateServiceTemplateMinorVersion.html
    */
   public toCreateServiceTemplateMinorVersion() {
-    this.to('proton:CreateServiceTemplateMinorVersion');
-    return this;
+    return this.to('CreateServiceTemplateMinorVersion');
   }
 
   /**
@@ -128,8 +120,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteAccountRoles.html
    */
   public toDeleteAccountRoles() {
-    this.to('proton:DeleteAccountRoles');
-    return this;
+    return this.to('DeleteAccountRoles');
   }
 
   /**
@@ -140,8 +131,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteEnvironment.html
    */
   public toDeleteEnvironment() {
-    this.to('proton:DeleteEnvironment');
-    return this;
+    return this.to('DeleteEnvironment');
   }
 
   /**
@@ -152,8 +142,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteEnvironmentTemplate.html
    */
   public toDeleteEnvironmentTemplate() {
-    this.to('proton:DeleteEnvironmentTemplate');
-    return this;
+    return this.to('DeleteEnvironmentTemplate');
   }
 
   /**
@@ -164,8 +153,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteEnvironmentTemplateMajorVersion.html
    */
   public toDeleteEnvironmentTemplateMajorVersion() {
-    this.to('proton:DeleteEnvironmentTemplateMajorVersion');
-    return this;
+    return this.to('DeleteEnvironmentTemplateMajorVersion');
   }
 
   /**
@@ -176,8 +164,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteEnvironmentTemplateMinorVersion.html
    */
   public toDeleteEnvironmentTemplateMinorVersion() {
-    this.to('proton:DeleteEnvironmentTemplateMinorVersion');
-    return this;
+    return this.to('DeleteEnvironmentTemplateMinorVersion');
   }
 
   /**
@@ -188,8 +175,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteService.html
    */
   public toDeleteService() {
-    this.to('proton:DeleteService');
-    return this;
+    return this.to('DeleteService');
   }
 
   /**
@@ -200,8 +186,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteServiceTemplate.html
    */
   public toDeleteServiceTemplate() {
-    this.to('proton:DeleteServiceTemplate');
-    return this;
+    return this.to('DeleteServiceTemplate');
   }
 
   /**
@@ -212,8 +197,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteServiceTemplateMajorVersion.html
    */
   public toDeleteServiceTemplateMajorVersion() {
-    this.to('proton:DeleteServiceTemplateMajorVersion');
-    return this;
+    return this.to('DeleteServiceTemplateMajorVersion');
   }
 
   /**
@@ -224,8 +208,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteServiceTemplateMinorVersion.html
    */
   public toDeleteServiceTemplateMinorVersion() {
-    this.to('proton:DeleteServiceTemplateMinorVersion');
-    return this;
+    return this.to('DeleteServiceTemplateMinorVersion');
   }
 
   /**
@@ -236,8 +219,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetAccountRoles.html
    */
   public toGetAccountRoles() {
-    this.to('proton:GetAccountRoles');
-    return this;
+    return this.to('GetAccountRoles');
   }
 
   /**
@@ -248,8 +230,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetEnvironment.html
    */
   public toGetEnvironment() {
-    this.to('proton:GetEnvironment');
-    return this;
+    return this.to('GetEnvironment');
   }
 
   /**
@@ -260,8 +241,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetEnvironmentTemplate.html
    */
   public toGetEnvironmentTemplate() {
-    this.to('proton:GetEnvironmentTemplate');
-    return this;
+    return this.to('GetEnvironmentTemplate');
   }
 
   /**
@@ -272,8 +252,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetEnvironmentTemplateMajorVersion.html
    */
   public toGetEnvironmentTemplateMajorVersion() {
-    this.to('proton:GetEnvironmentTemplateMajorVersion');
-    return this;
+    return this.to('GetEnvironmentTemplateMajorVersion');
   }
 
   /**
@@ -284,8 +263,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetEnvironmentTemplateMinorVersion.html
    */
   public toGetEnvironmentTemplateMinorVersion() {
-    this.to('proton:GetEnvironmentTemplateMinorVersion');
-    return this;
+    return this.to('GetEnvironmentTemplateMinorVersion');
   }
 
   /**
@@ -296,8 +274,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetService.html
    */
   public toGetService() {
-    this.to('proton:GetService');
-    return this;
+    return this.to('GetService');
   }
 
   /**
@@ -308,8 +285,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetServiceInstance.html
    */
   public toGetServiceInstance() {
-    this.to('proton:GetServiceInstance');
-    return this;
+    return this.to('GetServiceInstance');
   }
 
   /**
@@ -320,8 +296,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetServiceTemplate.html
    */
   public toGetServiceTemplate() {
-    this.to('proton:GetServiceTemplate');
-    return this;
+    return this.to('GetServiceTemplate');
   }
 
   /**
@@ -332,8 +307,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetServiceTemplateMajorVersion.html
    */
   public toGetServiceTemplateMajorVersion() {
-    this.to('proton:GetServiceTemplateMajorVersion');
-    return this;
+    return this.to('GetServiceTemplateMajorVersion');
   }
 
   /**
@@ -344,8 +318,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetServiceTemplateMinorVersion.html
    */
   public toGetServiceTemplateMinorVersion() {
-    this.to('proton:GetServiceTemplateMinorVersion');
-    return this;
+    return this.to('GetServiceTemplateMinorVersion');
   }
 
   /**
@@ -356,8 +329,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListEnvironmentTemplateMajorVersions.html
    */
   public toListEnvironmentTemplateMajorVersions() {
-    this.to('proton:ListEnvironmentTemplateMajorVersions');
-    return this;
+    return this.to('ListEnvironmentTemplateMajorVersions');
   }
 
   /**
@@ -368,8 +340,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListEnvironmentTemplateMinorVersions.html
    */
   public toListEnvironmentTemplateMinorVersions() {
-    this.to('proton:ListEnvironmentTemplateMinorVersions');
-    return this;
+    return this.to('ListEnvironmentTemplateMinorVersions');
   }
 
   /**
@@ -380,8 +351,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListEnvironmentTemplates.html
    */
   public toListEnvironmentTemplates() {
-    this.to('proton:ListEnvironmentTemplates');
-    return this;
+    return this.to('ListEnvironmentTemplates');
   }
 
   /**
@@ -392,8 +362,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListEnvironments.html
    */
   public toListEnvironments() {
-    this.to('proton:ListEnvironments');
-    return this;
+    return this.to('ListEnvironments');
   }
 
   /**
@@ -404,8 +373,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListServiceInstances.html
    */
   public toListServiceInstances() {
-    this.to('proton:ListServiceInstances');
-    return this;
+    return this.to('ListServiceInstances');
   }
 
   /**
@@ -416,8 +384,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListServiceTemplateMajorVersions.html
    */
   public toListServiceTemplateMajorVersions() {
-    this.to('proton:ListServiceTemplateMajorVersions');
-    return this;
+    return this.to('ListServiceTemplateMajorVersions');
   }
 
   /**
@@ -428,8 +395,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListServiceTemplateMinorVersions.html
    */
   public toListServiceTemplateMinorVersions() {
-    this.to('proton:ListServiceTemplateMinorVersions');
-    return this;
+    return this.to('ListServiceTemplateMinorVersions');
   }
 
   /**
@@ -440,8 +406,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListServiceTemplates.html
    */
   public toListServiceTemplates() {
-    this.to('proton:ListServiceTemplates');
-    return this;
+    return this.to('ListServiceTemplates');
   }
 
   /**
@@ -452,8 +417,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListServices.html
    */
   public toListServices() {
-    this.to('proton:ListServices');
-    return this;
+    return this.to('ListServices');
   }
 
   /**
@@ -467,8 +431,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateAccountRoles.html
    */
   public toUpdateAccountRoles() {
-    this.to('proton:UpdateAccountRoles');
-    return this;
+    return this.to('UpdateAccountRoles');
   }
 
   /**
@@ -482,8 +445,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateEnvironment.html
    */
   public toUpdateEnvironment() {
-    this.to('proton:UpdateEnvironment');
-    return this;
+    return this.to('UpdateEnvironment');
   }
 
   /**
@@ -494,8 +456,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateEnvironmentTemplate.html
    */
   public toUpdateEnvironmentTemplate() {
-    this.to('proton:UpdateEnvironmentTemplate');
-    return this;
+    return this.to('UpdateEnvironmentTemplate');
   }
 
   /**
@@ -506,8 +467,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateEnvironmentTemplateMajorVersion.html
    */
   public toUpdateEnvironmentTemplateMajorVersion() {
-    this.to('proton:UpdateEnvironmentTemplateMajorVersion');
-    return this;
+    return this.to('UpdateEnvironmentTemplateMajorVersion');
   }
 
   /**
@@ -518,8 +478,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateEnvironmentTemplateMinorVersion.html
    */
   public toUpdateEnvironmentTemplateMinorVersion() {
-    this.to('proton:UpdateEnvironmentTemplateMinorVersion');
-    return this;
+    return this.to('UpdateEnvironmentTemplateMinorVersion');
   }
 
   /**
@@ -530,8 +489,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateService.html
    */
   public toUpdateService() {
-    this.to('proton:UpdateService');
-    return this;
+    return this.to('UpdateService');
   }
 
   /**
@@ -542,8 +500,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateServiceInstance.html
    */
   public toUpdateServiceInstance() {
-    this.to('proton:UpdateServiceInstance');
-    return this;
+    return this.to('UpdateServiceInstance');
   }
 
   /**
@@ -554,8 +511,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateServicePipeline.html
    */
   public toUpdateServicePipeline() {
-    this.to('proton:UpdateServicePipeline');
-    return this;
+    return this.to('UpdateServicePipeline');
   }
 
   /**
@@ -566,8 +522,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateServiceTemplate.html
    */
   public toUpdateServiceTemplate() {
-    this.to('proton:UpdateServiceTemplate');
-    return this;
+    return this.to('UpdateServiceTemplate');
   }
 
   /**
@@ -578,8 +533,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateServiceTemplateMajorVersion.html
    */
   public toUpdateServiceTemplateMajorVersion() {
-    this.to('proton:UpdateServiceTemplateMajorVersion');
-    return this;
+    return this.to('UpdateServiceTemplateMajorVersion');
   }
 
   /**
@@ -590,8 +544,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateServiceTemplateMinorVersion.html
    */
   public toUpdateServiceTemplateMinorVersion() {
-    this.to('proton:UpdateServiceTemplateMinorVersion');
-    return this;
+    return this.to('UpdateServiceTemplateMinorVersion');
   }
 
   protected accessLevelList: AccessLevelList = {

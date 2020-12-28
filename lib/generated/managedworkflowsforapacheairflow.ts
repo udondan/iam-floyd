@@ -26,8 +26,7 @@ export class Airflow extends PolicyStatement {
    * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
    */
   public toCreateCliToken() {
-    this.to('airflow:CreateCliToken');
-    return this;
+    return this.to('CreateCliToken');
   }
 
   /**
@@ -43,8 +42,7 @@ export class Airflow extends PolicyStatement {
    * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
    */
   public toCreateEnvironment() {
-    this.to('airflow:CreateEnvironment');
-    return this;
+    return this.to('CreateEnvironment');
   }
 
   /**
@@ -55,8 +53,7 @@ export class Airflow extends PolicyStatement {
    * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
    */
   public toCreateWebLoginToken() {
-    this.to('airflow:CreateWebLoginToken');
-    return this;
+    return this.to('CreateWebLoginToken');
   }
 
   /**
@@ -70,8 +67,7 @@ export class Airflow extends PolicyStatement {
    * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
    */
   public toDeleteEnvironment() {
-    this.to('airflow:DeleteEnvironment');
-    return this;
+    return this.to('DeleteEnvironment');
   }
 
   /**
@@ -85,8 +81,7 @@ export class Airflow extends PolicyStatement {
    * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
    */
   public toGetEnvironment() {
-    this.to('airflow:GetEnvironment');
-    return this;
+    return this.to('GetEnvironment');
   }
 
   /**
@@ -97,8 +92,7 @@ export class Airflow extends PolicyStatement {
    * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
    */
   public toListEnvironments() {
-    this.to('airflow:ListEnvironments');
-    return this;
+    return this.to('ListEnvironments');
   }
 
   /**
@@ -112,8 +106,7 @@ export class Airflow extends PolicyStatement {
    * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
    */
   public toListTagsForResource() {
-    this.to('airflow:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -124,8 +117,7 @@ export class Airflow extends PolicyStatement {
    * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
    */
   public toPublishMetrics() {
-    this.to('airflow:PublishMetrics');
-    return this;
+    return this.to('PublishMetrics');
   }
 
   /**
@@ -141,8 +133,7 @@ export class Airflow extends PolicyStatement {
    * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
    */
   public toTagResource() {
-    this.to('airflow:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -157,8 +148,7 @@ export class Airflow extends PolicyStatement {
    * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
    */
   public toUntagResource() {
-    this.to('airflow:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -172,8 +162,7 @@ export class Airflow extends PolicyStatement {
    * https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-actions-resources.html
    */
   public toUpdateEnvironment() {
-    this.to('airflow:UpdateEnvironment');
-    return this;
+    return this.to('UpdateEnvironment');
   }
 
   protected accessLevelList: AccessLevelList = {

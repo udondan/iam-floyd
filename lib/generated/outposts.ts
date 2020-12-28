@@ -26,8 +26,7 @@ export class Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateOutpost.html
    */
   public toCreateOutpost() {
-    this.to('outposts:CreateOutpost');
-    return this;
+    return this.to('CreateOutpost');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
    */
   public toDeleteOutpost() {
-    this.to('outposts:DeleteOutpost');
-    return this;
+    return this.to('DeleteOutpost');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
    */
   public toDeleteSite() {
-    this.to('outposts:DeleteSite');
-    return this;
+    return this.to('DeleteSite');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpost.html
    */
   public toGetOutpost() {
-    this.to('outposts:GetOutpost');
-    return this;
+    return this.to('GetOutpost');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpostInstanceTypes.html
    */
   public toGetOutpostInstanceTypes() {
-    this.to('outposts:GetOutpostInstanceTypes');
-    return this;
+    return this.to('GetOutpostInstanceTypes');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListOutposts.html
    */
   public toListOutposts() {
-    this.to('outposts:ListOutposts');
-    return this;
+    return this.to('ListOutposts');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Outposts extends PolicyStatement {
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListSites.html
    */
   public toListSites() {
-    this.to('outposts:ListSites');
-    return this;
+    return this.to('ListSites');
   }
 
   protected accessLevelList: AccessLevelList = {

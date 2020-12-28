@@ -26,8 +26,7 @@ export class Aps extends PolicyStatement {
    * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateWorkspace
    */
   public toCreateWorkspace() {
-    this.to('aps:CreateWorkspace');
-    return this;
+    return this.to('CreateWorkspace');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Aps extends PolicyStatement {
    * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteWorkspace
    */
   public toDeleteWorkspace() {
-    this.to('aps:DeleteWorkspace');
-    return this;
+    return this.to('DeleteWorkspace');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Aps extends PolicyStatement {
    * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeWorkspace
    */
   public toDescribeWorkspace() {
-    this.to('aps:DescribeWorkspace');
-    return this;
+    return this.to('DescribeWorkspace');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Aps extends PolicyStatement {
    * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetLabels
    */
   public toGetLabels() {
-    this.to('aps:GetLabels');
-    return this;
+    return this.to('GetLabels');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Aps extends PolicyStatement {
    * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetMetricMetadata
    */
   public toGetMetricMetadata() {
-    this.to('aps:GetMetricMetadata');
-    return this;
+    return this.to('GetMetricMetadata');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Aps extends PolicyStatement {
    * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetSeries
    */
   public toGetSeries() {
-    this.to('aps:GetSeries');
-    return this;
+    return this.to('GetSeries');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Aps extends PolicyStatement {
    * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListWorkspaces
    */
   public toListWorkspaces() {
-    this.to('aps:ListWorkspaces');
-    return this;
+    return this.to('ListWorkspaces');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Aps extends PolicyStatement {
    * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-QueryMetrics
    */
   public toQueryMetrics() {
-    this.to('aps:QueryMetrics');
-    return this;
+    return this.to('QueryMetrics');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Aps extends PolicyStatement {
    * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-RemoteWrite
    */
   public toRemoteWrite() {
-    this.to('aps:RemoteWrite');
-    return this;
+    return this.to('RemoteWrite');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Aps extends PolicyStatement {
    * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UpdateWorkspaceAlias
    */
   public toUpdateWorkspaceAlias() {
-    this.to('aps:UpdateWorkspaceAlias');
-    return this;
+    return this.to('UpdateWorkspaceAlias');
   }
 
   protected accessLevelList: AccessLevelList = {

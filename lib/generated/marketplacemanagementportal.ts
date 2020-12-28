@@ -25,9 +25,8 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
-  public touploadFiles() {
-    this.to('aws-marketplace-management:uploadFiles');
-    return this;
+  public toUploadFiles() {
+    return this.to('uploadFiles');
   }
 
   /**
@@ -37,9 +36,8 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
-  public toviewMarketing() {
-    this.to('aws-marketplace-management:viewMarketing');
-    return this;
+  public toViewMarketing() {
+    return this.to('viewMarketing');
   }
 
   /**
@@ -49,9 +47,8 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
-  public toviewReports() {
-    this.to('aws-marketplace-management:viewReports');
-    return this;
+  public toViewReports() {
+    return this.to('viewReports');
   }
 
   /**
@@ -61,9 +58,8 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
-  public toviewSettings() {
-    this.to('aws-marketplace-management:viewSettings');
-    return this;
+  public toViewSettings() {
+    return this.to('viewSettings');
   }
 
   /**
@@ -73,9 +69,8 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
-  public toviewSupport() {
-    this.to('aws-marketplace-management:viewSupport');
-    return this;
+  public toViewSupport() {
+    return this.to('viewSupport');
   }
 
   protected accessLevelList: AccessLevelList = {

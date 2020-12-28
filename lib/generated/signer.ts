@@ -29,8 +29,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_AddProfilePermission.html
    */
   public toAddProfilePermission() {
-    this.to('signer:AddProfilePermission');
-    return this;
+    return this.to('AddProfilePermission');
   }
 
   /**
@@ -44,8 +43,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_CancelSigningProfile.html
    */
   public toCancelSigningProfile() {
-    this.to('signer:CancelSigningProfile');
-    return this;
+    return this.to('CancelSigningProfile');
   }
 
   /**
@@ -56,8 +54,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_DescribeSigningJob.html
    */
   public toDescribeSigningJob() {
-    this.to('signer:DescribeSigningJob');
-    return this;
+    return this.to('DescribeSigningJob');
   }
 
   /**
@@ -68,8 +65,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_GetSigningPlatform.html
    */
   public toGetSigningPlatform() {
-    this.to('signer:GetSigningPlatform');
-    return this;
+    return this.to('GetSigningPlatform');
   }
 
   /**
@@ -83,8 +79,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_GetSigningProfile.html
    */
   public toGetSigningProfile() {
-    this.to('signer:GetSigningProfile');
-    return this;
+    return this.to('GetSigningProfile');
   }
 
   /**
@@ -95,8 +90,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_ListProfilePermissions.html
    */
   public toListProfilePermissions() {
-    this.to('signer:ListProfilePermissions');
-    return this;
+    return this.to('ListProfilePermissions');
   }
 
   /**
@@ -107,8 +101,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_ListSigningJobs.html
    */
   public toListSigningJobs() {
-    this.to('signer:ListSigningJobs');
-    return this;
+    return this.to('ListSigningJobs');
   }
 
   /**
@@ -119,8 +112,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_ListSigningPlatforms.html
    */
   public toListSigningPlatforms() {
-    this.to('signer:ListSigningPlatforms');
-    return this;
+    return this.to('ListSigningPlatforms');
   }
 
   /**
@@ -131,8 +123,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_ListSigningProfiles.html
    */
   public toListSigningProfiles() {
-    this.to('signer:ListSigningProfiles');
-    return this;
+    return this.to('ListSigningProfiles');
   }
 
   /**
@@ -143,8 +134,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('signer:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -159,8 +149,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_PutSigningProfile.html
    */
   public toPutSigningProfile() {
-    this.to('signer:PutSigningProfile');
-    return this;
+    return this.to('PutSigningProfile');
   }
 
   /**
@@ -174,8 +163,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_RemoveProfilePermission.html
    */
   public toRemoveProfilePermission() {
-    this.to('signer:RemoveProfilePermission');
-    return this;
+    return this.to('RemoveProfilePermission');
   }
 
   /**
@@ -189,8 +177,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_RevokeSignature.html
    */
   public toRevokeSignature() {
-    this.to('signer:RevokeSignature');
-    return this;
+    return this.to('RevokeSignature');
   }
 
   /**
@@ -204,8 +191,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_RevokeSigningProfile.html
    */
   public toRevokeSigningProfile() {
-    this.to('signer:RevokeSigningProfile');
-    return this;
+    return this.to('RevokeSigningProfile');
   }
 
   /**
@@ -219,8 +205,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_StartSigningJob.html
    */
   public toStartSigningJob() {
-    this.to('signer:StartSigningJob');
-    return this;
+    return this.to('StartSigningJob');
   }
 
   /**
@@ -235,8 +220,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_TagResource.html
    */
   public toTagResource() {
-    this.to('signer:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -251,8 +235,7 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/api/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('signer:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -344,6 +327,6 @@ export class Signer extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProfileVersion(value: string | string[], operator?: Operator | string) {
-    return this.if(`signer:ProfileVersion`, value, operator || 'StringLike');
+    return this.if(`ProfileVersion`, value, operator || 'StringLike');
   }
 }

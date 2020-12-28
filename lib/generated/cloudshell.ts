@@ -26,8 +26,7 @@ export class Cloudshell extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#CreateEnvironment
    */
   public toCreateEnvironment() {
-    this.to('cloudshell:CreateEnvironment');
-    return this;
+    return this.to('CreateEnvironment');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Cloudshell extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#CreateSession
    */
   public toCreateSession() {
-    this.to('cloudshell:CreateSession');
-    return this;
+    return this.to('CreateSession');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Cloudshell extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#GetFileDownloadUrls
    */
   public toGetFileDownloadUrls() {
-    this.to('cloudshell:GetFileDownloadUrls');
-    return this;
+    return this.to('GetFileDownloadUrls');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Cloudshell extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#GetFileUploadUrls
    */
   public toGetFileUploadUrls() {
-    this.to('cloudshell:GetFileUploadUrls');
-    return this;
+    return this.to('GetFileUploadUrls');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Cloudshell extends PolicyStatement {
    * https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#PutCredentials
    */
   public toPutCredentials() {
-    this.to('cloudshell:PutCredentials');
-    return this;
+    return this.to('PutCredentials');
   }
 
   protected accessLevelList: AccessLevelList = {

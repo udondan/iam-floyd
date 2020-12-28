@@ -26,8 +26,7 @@ export class Artifact extends PolicyStatement {
    * https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html
    */
   public toAcceptAgreement() {
-    this.to('artifact:AcceptAgreement');
-    return this;
+    return this.to('AcceptAgreement');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Artifact extends PolicyStatement {
    * https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html
    */
   public toDownloadAgreement() {
-    this.to('artifact:DownloadAgreement');
-    return this;
+    return this.to('DownloadAgreement');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Artifact extends PolicyStatement {
    * https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html
    */
   public toGet() {
-    this.to('artifact:Get');
-    return this;
+    return this.to('Get');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Artifact extends PolicyStatement {
    * https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html
    */
   public toTerminateAgreement() {
-    this.to('artifact:TerminateAgreement');
-    return this;
+    return this.to('TerminateAgreement');
   }
 
   protected accessLevelList: AccessLevelList = {

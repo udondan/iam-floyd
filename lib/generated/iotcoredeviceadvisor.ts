@@ -30,8 +30,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-CreateSuiteDefinition
    */
   public toCreateSuiteDefinition() {
-    this.to('iotdeviceadvisor:CreateSuiteDefinition');
-    return this;
+    return this.to('CreateSuiteDefinition');
   }
 
   /**
@@ -42,8 +41,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-DeleteSuiteDefinition
    */
   public toDeleteSuiteDefinition() {
-    this.to('iotdeviceadvisor:DeleteSuiteDefinition');
-    return this;
+    return this.to('DeleteSuiteDefinition');
   }
 
   /**
@@ -54,8 +52,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-GetSuiteDefinition
    */
   public toGetSuiteDefinition() {
-    this.to('iotdeviceadvisor:GetSuiteDefinition');
-    return this;
+    return this.to('GetSuiteDefinition');
   }
 
   /**
@@ -66,8 +63,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-GetSuiteRun
    */
   public toGetSuiteRun() {
-    this.to('iotdeviceadvisor:GetSuiteRun');
-    return this;
+    return this.to('GetSuiteRun');
   }
 
   /**
@@ -78,8 +74,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-GetSuiteRunReport
    */
   public toGetSuiteRunReport() {
-    this.to('iotdeviceadvisor:GetSuiteRunReport');
-    return this;
+    return this.to('GetSuiteRunReport');
   }
 
   /**
@@ -90,8 +85,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-ListSuiteDefinitions
    */
   public toListSuiteDefinitions() {
-    this.to('iotdeviceadvisor:ListSuiteDefinitions');
-    return this;
+    return this.to('ListSuiteDefinitions');
   }
 
   /**
@@ -102,8 +96,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-ListSuiteRuns
    */
   public toListSuiteRuns() {
-    this.to('iotdeviceadvisor:ListSuiteRuns');
-    return this;
+    return this.to('ListSuiteRuns');
   }
 
   /**
@@ -114,8 +107,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-ListTagsForResource
    */
   public toListTagsForResource() {
-    this.to('iotdeviceadvisor:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -126,8 +118,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-ListTestCases
    */
   public toListTestCases() {
-    this.to('iotdeviceadvisor:ListTestCases');
-    return this;
+    return this.to('ListTestCases');
   }
 
   /**
@@ -142,8 +133,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-StartSuiteRun
    */
   public toStartSuiteRun() {
-    this.to('iotdeviceadvisor:StartSuiteRun');
-    return this;
+    return this.to('StartSuiteRun');
   }
 
   /**
@@ -158,8 +148,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-TagResource
    */
   public toTagResource() {
-    this.to('iotdeviceadvisor:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -173,8 +162,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-UntagResource
    */
   public toUntagResource() {
-    this.to('iotdeviceadvisor:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -185,8 +173,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-UpdateSuiteDefinition
    */
   public toUpdateSuiteDefinition() {
-    this.to('iotdeviceadvisor:UpdateSuiteDefinition');
-    return this;
+    return this.to('UpdateSuiteDefinition');
   }
 
   protected accessLevelList: AccessLevelList = {

@@ -26,8 +26,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_AcceptInvitation.html
    */
   public toAcceptInvitation() {
-    this.to('guardduty:AcceptInvitation');
-    return this;
+    return this.to('AcceptInvitation');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ArchiveFindings.html
    */
   public toArchiveFindings() {
-    this.to('guardduty:ArchiveFindings');
-    return this;
+    return this.to('ArchiveFindings');
   }
 
   /**
@@ -54,8 +52,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateDetector.html
    */
   public toCreateDetector() {
-    this.to('guardduty:CreateDetector');
-    return this;
+    return this.to('CreateDetector');
   }
 
   /**
@@ -70,8 +67,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateFilter.html
    */
   public toCreateFilter() {
-    this.to('guardduty:CreateFilter');
-    return this;
+    return this.to('CreateFilter');
   }
 
   /**
@@ -86,8 +82,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateIPSet.html
    */
   public toCreateIPSet() {
-    this.to('guardduty:CreateIPSet');
-    return this;
+    return this.to('CreateIPSet');
   }
 
   /**
@@ -98,8 +93,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html
    */
   public toCreateMembers() {
-    this.to('guardduty:CreateMembers');
-    return this;
+    return this.to('CreateMembers');
   }
 
   /**
@@ -114,8 +108,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreatePublishingDestination.html
    */
   public toCreatePublishingDestination() {
-    this.to('guardduty:CreatePublishingDestination');
-    return this;
+    return this.to('CreatePublishingDestination');
   }
 
   /**
@@ -126,8 +119,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateSampleFindings.html
    */
   public toCreateSampleFindings() {
-    this.to('guardduty:CreateSampleFindings');
-    return this;
+    return this.to('CreateSampleFindings');
   }
 
   /**
@@ -142,8 +134,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateThreatIntelSet.html
    */
   public toCreateThreatIntelSet() {
-    this.to('guardduty:CreateThreatIntelSet');
-    return this;
+    return this.to('CreateThreatIntelSet');
   }
 
   /**
@@ -154,8 +145,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeclineInvitations.html
    */
   public toDeclineInvitations() {
-    this.to('guardduty:DeclineInvitations');
-    return this;
+    return this.to('DeclineInvitations');
   }
 
   /**
@@ -166,8 +156,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteDetector.html
    */
   public toDeleteDetector() {
-    this.to('guardduty:DeleteDetector');
-    return this;
+    return this.to('DeleteDetector');
   }
 
   /**
@@ -178,8 +167,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteFilter.html
    */
   public toDeleteFilter() {
-    this.to('guardduty:DeleteFilter');
-    return this;
+    return this.to('DeleteFilter');
   }
 
   /**
@@ -190,8 +178,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteIPSet.html
    */
   public toDeleteIPSet() {
-    this.to('guardduty:DeleteIPSet');
-    return this;
+    return this.to('DeleteIPSet');
   }
 
   /**
@@ -202,8 +189,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteInvitations.html
    */
   public toDeleteInvitations() {
-    this.to('guardduty:DeleteInvitations');
-    return this;
+    return this.to('DeleteInvitations');
   }
 
   /**
@@ -214,8 +200,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html
    */
   public toDeleteMembers() {
-    this.to('guardduty:DeleteMembers');
-    return this;
+    return this.to('DeleteMembers');
   }
 
   /**
@@ -226,8 +211,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeletePublishingDestination.html
    */
   public toDeletePublishingDestination() {
-    this.to('guardduty:DeletePublishingDestination');
-    return this;
+    return this.to('DeletePublishingDestination');
   }
 
   /**
@@ -238,8 +222,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteThreatIntelSet.html
    */
   public toDeleteThreatIntelSet() {
-    this.to('guardduty:DeleteThreatIntelSet');
-    return this;
+    return this.to('DeleteThreatIntelSet');
   }
 
   /**
@@ -250,8 +233,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeOrganizationConfiguration.html
    */
   public toDescribeOrganizationConfiguration() {
-    this.to('guardduty:DescribeOrganizationConfiguration');
-    return this;
+    return this.to('DescribeOrganizationConfiguration');
   }
 
   /**
@@ -262,8 +244,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribePublishingDestination.html
    */
   public toDescribePublishingDestination() {
-    this.to('guardduty:DescribePublishingDestination');
-    return this;
+    return this.to('DescribePublishingDestination');
   }
 
   /**
@@ -274,8 +255,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DisableOrganizationAdminAccount.html
    */
   public toDisableOrganizationAdminAccount() {
-    this.to('guardduty:DisableOrganizationAdminAccount');
-    return this;
+    return this.to('DisableOrganizationAdminAccount');
   }
 
   /**
@@ -286,8 +266,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DisassociateFromMasterAccount.html
    */
   public toDisassociateFromMasterAccount() {
-    this.to('guardduty:DisassociateFromMasterAccount');
-    return this;
+    return this.to('DisassociateFromMasterAccount');
   }
 
   /**
@@ -298,8 +277,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DisassociateMembers.html
    */
   public toDisassociateMembers() {
-    this.to('guardduty:DisassociateMembers');
-    return this;
+    return this.to('DisassociateMembers');
   }
 
   /**
@@ -310,8 +288,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_EnableOrganizationAdminAccount.html
    */
   public toEnableOrganizationAdminAccount() {
-    this.to('guardduty:EnableOrganizationAdminAccount');
-    return this;
+    return this.to('EnableOrganizationAdminAccount');
   }
 
   /**
@@ -322,8 +299,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetDetector.html
    */
   public toGetDetector() {
-    this.to('guardduty:GetDetector');
-    return this;
+    return this.to('GetDetector');
   }
 
   /**
@@ -334,8 +310,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetFilter.html
    */
   public toGetFilter() {
-    this.to('guardduty:GetFilter');
-    return this;
+    return this.to('GetFilter');
   }
 
   /**
@@ -346,8 +321,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetFindings.html
    */
   public toGetFindings() {
-    this.to('guardduty:GetFindings');
-    return this;
+    return this.to('GetFindings');
   }
 
   /**
@@ -358,8 +332,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetFindingsStatistics.html
    */
   public toGetFindingsStatistics() {
-    this.to('guardduty:GetFindingsStatistics');
-    return this;
+    return this.to('GetFindingsStatistics');
   }
 
   /**
@@ -370,8 +343,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetIPSet.html
    */
   public toGetIPSet() {
-    this.to('guardduty:GetIPSet');
-    return this;
+    return this.to('GetIPSet');
   }
 
   /**
@@ -382,8 +354,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetInvitationsCount.html
    */
   public toGetInvitationsCount() {
-    this.to('guardduty:GetInvitationsCount');
-    return this;
+    return this.to('GetInvitationsCount');
   }
 
   /**
@@ -394,8 +365,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetMasterAccount.html
    */
   public toGetMasterAccount() {
-    this.to('guardduty:GetMasterAccount');
-    return this;
+    return this.to('GetMasterAccount');
   }
 
   /**
@@ -406,8 +376,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetMembers.html
    */
   public toGetMembers() {
-    this.to('guardduty:GetMembers');
-    return this;
+    return this.to('GetMembers');
   }
 
   /**
@@ -418,8 +387,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetThreatIntelSet.html
    */
   public toGetThreatIntelSet() {
-    this.to('guardduty:GetThreatIntelSet');
-    return this;
+    return this.to('GetThreatIntelSet');
   }
 
   /**
@@ -430,8 +398,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html
    */
   public toInviteMembers() {
-    this.to('guardduty:InviteMembers');
-    return this;
+    return this.to('InviteMembers');
   }
 
   /**
@@ -442,8 +409,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html
    */
   public toListDetectors() {
-    this.to('guardduty:ListDetectors');
-    return this;
+    return this.to('ListDetectors');
   }
 
   /**
@@ -454,8 +420,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListFilters.html
    */
   public toListFilters() {
-    this.to('guardduty:ListFilters');
-    return this;
+    return this.to('ListFilters');
   }
 
   /**
@@ -466,8 +431,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListFindings.html
    */
   public toListFindings() {
-    this.to('guardduty:ListFindings');
-    return this;
+    return this.to('ListFindings');
   }
 
   /**
@@ -478,8 +442,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListIPSets.html
    */
   public toListIPSets() {
-    this.to('guardduty:ListIPSets');
-    return this;
+    return this.to('ListIPSets');
   }
 
   /**
@@ -490,8 +453,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListInvitations.html
    */
   public toListInvitations() {
-    this.to('guardduty:ListInvitations');
-    return this;
+    return this.to('ListInvitations');
   }
 
   /**
@@ -502,8 +464,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListMembers.html
    */
   public toListMembers() {
-    this.to('guardduty:ListMembers');
-    return this;
+    return this.to('ListMembers');
   }
 
   /**
@@ -514,8 +475,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListOrganizationAdminAccounts.html
    */
   public toListOrganizationAdminAccounts() {
-    this.to('guardduty:ListOrganizationAdminAccounts');
-    return this;
+    return this.to('ListOrganizationAdminAccounts');
   }
 
   /**
@@ -526,8 +486,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListPublishingDestinations.html
    */
   public toListPublishingDestinations() {
-    this.to('guardduty:ListPublishingDestinations');
-    return this;
+    return this.to('ListPublishingDestinations');
   }
 
   /**
@@ -538,8 +497,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('guardduty:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -550,8 +508,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListThreatIntelSets.html
    */
   public toListThreatIntelSets() {
-    this.to('guardduty:ListThreatIntelSets');
-    return this;
+    return this.to('ListThreatIntelSets');
   }
 
   /**
@@ -562,8 +519,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_StartMonitoringMembers.html
    */
   public toStartMonitoringMembers() {
-    this.to('guardduty:StartMonitoringMembers');
-    return this;
+    return this.to('StartMonitoringMembers');
   }
 
   /**
@@ -574,8 +530,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_StopMonitoringMembers.html
    */
   public toStopMonitoringMembers() {
-    this.to('guardduty:StopMonitoringMembers');
-    return this;
+    return this.to('StopMonitoringMembers');
   }
 
   /**
@@ -590,8 +545,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('guardduty:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -602,8 +556,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UnarchiveFindings.html
    */
   public toUnarchiveFindings() {
-    this.to('guardduty:UnarchiveFindings');
-    return this;
+    return this.to('UnarchiveFindings');
   }
 
   /**
@@ -617,8 +570,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('guardduty:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -629,8 +581,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateDetector.html
    */
   public toUpdateDetector() {
-    this.to('guardduty:UpdateDetector');
-    return this;
+    return this.to('UpdateDetector');
   }
 
   /**
@@ -641,8 +592,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateFilter.html
    */
   public toUpdateFilter() {
-    this.to('guardduty:UpdateFilter');
-    return this;
+    return this.to('UpdateFilter');
   }
 
   /**
@@ -653,8 +603,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateFindingsFeedback.html
    */
   public toUpdateFindingsFeedback() {
-    this.to('guardduty:UpdateFindingsFeedback');
-    return this;
+    return this.to('UpdateFindingsFeedback');
   }
 
   /**
@@ -665,8 +614,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateIPSet.html
    */
   public toUpdateIPSet() {
-    this.to('guardduty:UpdateIPSet');
-    return this;
+    return this.to('UpdateIPSet');
   }
 
   /**
@@ -677,8 +625,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateOrganizationConfiguration.html
    */
   public toUpdateOrganizationConfiguration() {
-    this.to('guardduty:UpdateOrganizationConfiguration');
-    return this;
+    return this.to('UpdateOrganizationConfiguration');
   }
 
   /**
@@ -693,8 +640,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdatePublishingDestination.html
    */
   public toUpdatePublishingDestination() {
-    this.to('guardduty:UpdatePublishingDestination');
-    return this;
+    return this.to('UpdatePublishingDestination');
   }
 
   /**
@@ -705,8 +651,7 @@ export class Guardduty extends PolicyStatement {
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateThreatIntelSet.html
    */
   public toUpdateThreatIntelSet() {
-    this.to('guardduty:UpdateThreatIntelSet');
-    return this;
+    return this.to('UpdateThreatIntelSet');
   }
 
   protected accessLevelList: AccessLevelList = {

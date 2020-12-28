@@ -26,8 +26,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_AddLayerVersionPermission.html
    */
   public toAddLayerVersionPermission() {
-    this.to('lambda:AddLayerVersionPermission');
-    return this;
+    return this.to('AddLayerVersionPermission');
   }
 
   /**
@@ -41,8 +40,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html
    */
   public toAddPermission() {
-    this.to('lambda:AddPermission');
-    return this;
+    return this.to('AddPermission');
   }
 
   /**
@@ -53,8 +51,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateAlias.html
    */
   public toCreateAlias() {
-    this.to('lambda:CreateAlias');
-    return this;
+    return this.to('CreateAlias');
   }
 
   /**
@@ -65,8 +62,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateCodeSigningConfig.html
    */
   public toCreateCodeSigningConfig() {
-    this.to('lambda:CreateCodeSigningConfig');
-    return this;
+    return this.to('CreateCodeSigningConfig');
   }
 
   /**
@@ -80,8 +76,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateEventSourceMapping.html
    */
   public toCreateEventSourceMapping() {
-    this.to('lambda:CreateEventSourceMapping');
-    return this;
+    return this.to('CreateEventSourceMapping');
   }
 
   /**
@@ -98,8 +93,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html
    */
   public toCreateFunction() {
-    this.to('lambda:CreateFunction');
-    return this;
+    return this.to('CreateFunction');
   }
 
   /**
@@ -110,8 +104,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteAlias.html
    */
   public toDeleteAlias() {
-    this.to('lambda:DeleteAlias');
-    return this;
+    return this.to('DeleteAlias');
   }
 
   /**
@@ -122,8 +115,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteCodeSigningConfig.html
    */
   public toDeleteCodeSigningConfig() {
-    this.to('lambda:DeleteCodeSigningConfig');
-    return this;
+    return this.to('DeleteCodeSigningConfig');
   }
 
   /**
@@ -137,8 +129,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteEventSourceMapping.html
    */
   public toDeleteEventSourceMapping() {
-    this.to('lambda:DeleteEventSourceMapping');
-    return this;
+    return this.to('DeleteEventSourceMapping');
   }
 
   /**
@@ -149,8 +140,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunction.html
    */
   public toDeleteFunction() {
-    this.to('lambda:DeleteFunction');
-    return this;
+    return this.to('DeleteFunction');
   }
 
   /**
@@ -161,8 +151,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionCodeSigningConfig.html
    */
   public toDeleteFunctionCodeSigningConfig() {
-    this.to('lambda:DeleteFunctionCodeSigningConfig');
-    return this;
+    return this.to('DeleteFunctionCodeSigningConfig');
   }
 
   /**
@@ -173,8 +162,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionConcurrency.html
    */
   public toDeleteFunctionConcurrency() {
-    this.to('lambda:DeleteFunctionConcurrency');
-    return this;
+    return this.to('DeleteFunctionConcurrency');
   }
 
   /**
@@ -185,8 +173,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionEventInvokeConfig.html
    */
   public toDeleteFunctionEventInvokeConfig() {
-    this.to('lambda:DeleteFunctionEventInvokeConfig');
-    return this;
+    return this.to('DeleteFunctionEventInvokeConfig');
   }
 
   /**
@@ -197,8 +184,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteLayerVersion.html
    */
   public toDeleteLayerVersion() {
-    this.to('lambda:DeleteLayerVersion');
-    return this;
+    return this.to('DeleteLayerVersion');
   }
 
   /**
@@ -209,8 +195,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteProvisionedConcurrencyConfig.html
    */
   public toDeleteProvisionedConcurrencyConfig() {
-    this.to('lambda:DeleteProvisionedConcurrencyConfig');
-    return this;
+    return this.to('DeleteProvisionedConcurrencyConfig');
   }
 
   /**
@@ -219,8 +204,7 @@ export class Lambda extends PolicyStatement {
    * Access Level: Permissions management
    */
   public toDisableReplication() {
-    this.to('lambda:DisableReplication');
-    return this;
+    return this.to('DisableReplication');
   }
 
   /**
@@ -229,8 +213,7 @@ export class Lambda extends PolicyStatement {
    * Access Level: Permissions management
    */
   public toEnableReplication() {
-    this.to('lambda:EnableReplication');
-    return this;
+    return this.to('EnableReplication');
   }
 
   /**
@@ -241,8 +224,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetAccountSettings.html
    */
   public toGetAccountSettings() {
-    this.to('lambda:GetAccountSettings');
-    return this;
+    return this.to('GetAccountSettings');
   }
 
   /**
@@ -253,8 +235,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetAlias.html
    */
   public toGetAlias() {
-    this.to('lambda:GetAlias');
-    return this;
+    return this.to('GetAlias');
   }
 
   /**
@@ -265,8 +246,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetCodeSigningConfig.html
    */
   public toGetCodeSigningConfig() {
-    this.to('lambda:GetCodeSigningConfig');
-    return this;
+    return this.to('GetCodeSigningConfig');
   }
 
   /**
@@ -280,8 +260,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetEventSourceMapping.html
    */
   public toGetEventSourceMapping() {
-    this.to('lambda:GetEventSourceMapping');
-    return this;
+    return this.to('GetEventSourceMapping');
   }
 
   /**
@@ -292,8 +271,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunction.html
    */
   public toGetFunction() {
-    this.to('lambda:GetFunction');
-    return this;
+    return this.to('GetFunction');
   }
 
   /**
@@ -304,8 +282,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionCodeSigningConfig.html
    */
   public toGetFunctionCodeSigningConfig() {
-    this.to('lambda:GetFunctionCodeSigningConfig');
-    return this;
+    return this.to('GetFunctionCodeSigningConfig');
   }
 
   /**
@@ -316,8 +293,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConcurrency.html
    */
   public toGetFunctionConcurrency() {
-    this.to('lambda:GetFunctionConcurrency');
-    return this;
+    return this.to('GetFunctionConcurrency');
   }
 
   /**
@@ -328,8 +304,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html
    */
   public toGetFunctionConfiguration() {
-    this.to('lambda:GetFunctionConfiguration');
-    return this;
+    return this.to('GetFunctionConfiguration');
   }
 
   /**
@@ -340,8 +315,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionEventInvokeConfig.html
    */
   public toGetFunctionEventInvokeConfig() {
-    this.to('lambda:GetFunctionEventInvokeConfig');
-    return this;
+    return this.to('GetFunctionEventInvokeConfig');
   }
 
   /**
@@ -352,8 +326,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetLayerVersion.html
    */
   public toGetLayerVersion() {
-    this.to('lambda:GetLayerVersion');
-    return this;
+    return this.to('GetLayerVersion');
   }
 
   /**
@@ -364,8 +337,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetLayerVersionPolicy.html
    */
   public toGetLayerVersionPolicy() {
-    this.to('lambda:GetLayerVersionPolicy');
-    return this;
+    return this.to('GetLayerVersionPolicy');
   }
 
   /**
@@ -376,8 +348,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetPolicy.html
    */
   public toGetPolicy() {
-    this.to('lambda:GetPolicy');
-    return this;
+    return this.to('GetPolicy');
   }
 
   /**
@@ -388,8 +359,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetProvisionedConcurrencyConfig.html
    */
   public toGetProvisionedConcurrencyConfig() {
-    this.to('lambda:GetProvisionedConcurrencyConfig');
-    return this;
+    return this.to('GetProvisionedConcurrencyConfig');
   }
 
   /**
@@ -400,8 +370,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_InvokeAsync.html
    */
   public toInvokeAsync() {
-    this.to('lambda:InvokeAsync');
-    return this;
+    return this.to('InvokeAsync');
   }
 
   /**
@@ -412,8 +381,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html
    */
   public toInvokeFunction() {
-    this.to('lambda:InvokeFunction');
-    return this;
+    return this.to('InvokeFunction');
   }
 
   /**
@@ -424,8 +392,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListAliases.html
    */
   public toListAliases() {
-    this.to('lambda:ListAliases');
-    return this;
+    return this.to('ListAliases');
   }
 
   /**
@@ -436,8 +403,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListCodeSigningConfigs.html
    */
   public toListCodeSigningConfigs() {
-    this.to('lambda:ListCodeSigningConfigs');
-    return this;
+    return this.to('ListCodeSigningConfigs');
   }
 
   /**
@@ -448,8 +414,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListEventSourceMappings.html
    */
   public toListEventSourceMappings() {
-    this.to('lambda:ListEventSourceMappings');
-    return this;
+    return this.to('ListEventSourceMappings');
   }
 
   /**
@@ -460,8 +425,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctionEventInvokeConfigs.html
    */
   public toListFunctionEventInvokeConfigs() {
-    this.to('lambda:ListFunctionEventInvokeConfigs');
-    return this;
+    return this.to('ListFunctionEventInvokeConfigs');
   }
 
   /**
@@ -472,8 +436,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctions.html
    */
   public toListFunctions() {
-    this.to('lambda:ListFunctions');
-    return this;
+    return this.to('ListFunctions');
   }
 
   /**
@@ -484,8 +447,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctionsByCodeSigningConfig.html
    */
   public toListFunctionsByCodeSigningConfig() {
-    this.to('lambda:ListFunctionsByCodeSigningConfig');
-    return this;
+    return this.to('ListFunctionsByCodeSigningConfig');
   }
 
   /**
@@ -496,8 +458,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListLayerVersions.html
    */
   public toListLayerVersions() {
-    this.to('lambda:ListLayerVersions');
-    return this;
+    return this.to('ListLayerVersions');
   }
 
   /**
@@ -508,8 +469,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListLayers.html
    */
   public toListLayers() {
-    this.to('lambda:ListLayers');
-    return this;
+    return this.to('ListLayers');
   }
 
   /**
@@ -520,8 +480,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListProvisionedConcurrencyConfigs.html
    */
   public toListProvisionedConcurrencyConfigs() {
-    this.to('lambda:ListProvisionedConcurrencyConfigs');
-    return this;
+    return this.to('ListProvisionedConcurrencyConfigs');
   }
 
   /**
@@ -532,8 +491,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListTags.html
    */
   public toListTags() {
-    this.to('lambda:ListTags');
-    return this;
+    return this.to('ListTags');
   }
 
   /**
@@ -544,8 +502,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListVersionsByFunction.html
    */
   public toListVersionsByFunction() {
-    this.to('lambda:ListVersionsByFunction');
-    return this;
+    return this.to('ListVersionsByFunction');
   }
 
   /**
@@ -556,8 +513,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html
    */
   public toPublishLayerVersion() {
-    this.to('lambda:PublishLayerVersion');
-    return this;
+    return this.to('PublishLayerVersion');
   }
 
   /**
@@ -568,8 +524,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_PublishVersion.html
    */
   public toPublishVersion() {
-    this.to('lambda:PublishVersion');
-    return this;
+    return this.to('PublishVersion');
   }
 
   /**
@@ -580,8 +535,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionCodeSigningConfig.html
    */
   public toPutFunctionCodeSigningConfig() {
-    this.to('lambda:PutFunctionCodeSigningConfig');
-    return this;
+    return this.to('PutFunctionCodeSigningConfig');
   }
 
   /**
@@ -592,8 +546,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionConcurrency.html
    */
   public toPutFunctionConcurrency() {
-    this.to('lambda:PutFunctionConcurrency');
-    return this;
+    return this.to('PutFunctionConcurrency');
   }
 
   /**
@@ -604,8 +557,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionEventInvokeConfig.html
    */
   public toPutFunctionEventInvokeConfig() {
-    this.to('lambda:PutFunctionEventInvokeConfig');
-    return this;
+    return this.to('PutFunctionEventInvokeConfig');
   }
 
   /**
@@ -616,8 +568,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_PutProvisionedConcurrencyConfig.html
    */
   public toPutProvisionedConcurrencyConfig() {
-    this.to('lambda:PutProvisionedConcurrencyConfig');
-    return this;
+    return this.to('PutProvisionedConcurrencyConfig');
   }
 
   /**
@@ -628,8 +579,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_RemoveLayerVersionPermission.html
    */
   public toRemoveLayerVersionPermission() {
-    this.to('lambda:RemoveLayerVersionPermission');
-    return this;
+    return this.to('RemoveLayerVersionPermission');
   }
 
   /**
@@ -643,8 +593,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html
    */
   public toRemovePermission() {
-    this.to('lambda:RemovePermission');
-    return this;
+    return this.to('RemovePermission');
   }
 
   /**
@@ -655,8 +604,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_TagResources.html
    */
   public toTagResource() {
-    this.to('lambda:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -667,8 +615,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('lambda:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -679,8 +626,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateAlias.html
    */
   public toUpdateAlias() {
-    this.to('lambda:UpdateAlias');
-    return this;
+    return this.to('UpdateAlias');
   }
 
   /**
@@ -691,8 +637,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateCodeSigningConfig.html
    */
   public toUpdateCodeSigningConfig() {
-    this.to('lambda:UpdateCodeSigningConfig');
-    return this;
+    return this.to('UpdateCodeSigningConfig');
   }
 
   /**
@@ -706,8 +651,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateEventSourceMapping.html
    */
   public toUpdateEventSourceMapping() {
-    this.to('lambda:UpdateEventSourceMapping');
-    return this;
+    return this.to('UpdateEventSourceMapping');
   }
 
   /**
@@ -718,8 +662,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCode.html
    */
   public toUpdateFunctionCode() {
-    this.to('lambda:UpdateFunctionCode');
-    return this;
+    return this.to('UpdateFunctionCode');
   }
 
   /**
@@ -730,8 +673,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCodeSigningConfig.html
    */
   public toUpdateFunctionCodeSigningConfig() {
-    this.to('lambda:UpdateFunctionCodeSigningConfig');
-    return this;
+    return this.to('UpdateFunctionCodeSigningConfig');
   }
 
   /**
@@ -748,8 +690,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionConfiguration.html
    */
   public toUpdateFunctionConfiguration() {
-    this.to('lambda:UpdateFunctionConfiguration');
-    return this;
+    return this.to('UpdateFunctionConfiguration');
   }
 
   /**
@@ -760,8 +701,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionEventInvokeConfig.html
    */
   public toUpdateFunctionEventInvokeConfig() {
-    this.to('lambda:UpdateFunctionEventInvokeConfig');
-    return this;
+    return this.to('UpdateFunctionEventInvokeConfig');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -981,7 +921,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCodeSigningConfigArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`lambda:CodeSigningConfigArn`, value, operator || 'StringLike');
+    return this.if(`CodeSigningConfigArn`, value, operator || 'StringLike');
   }
 
   /**
@@ -997,7 +937,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFunctionArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`lambda:FunctionArn`, value, operator || 'ArnLike');
+    return this.if(`FunctionArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -1011,7 +951,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLayer(value: string | string[], operator?: Operator | string) {
-    return this.if(`lambda:Layer`, value, operator || 'StringLike');
+    return this.if(`Layer`, value, operator || 'StringLike');
   }
 
   /**
@@ -1025,7 +965,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPrincipal(value: string | string[], operator?: Operator | string) {
-    return this.if(`lambda:Principal`, value, operator || 'StringLike');
+    return this.if(`Principal`, value, operator || 'StringLike');
   }
 
   /**
@@ -1039,7 +979,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSecurityGroupIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`lambda:SecurityGroupIds`, value, operator || 'StringLike');
+    return this.if(`SecurityGroupIds`, value, operator || 'StringLike');
   }
 
   /**
@@ -1053,7 +993,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSubnetIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`lambda:SubnetIds`, value, operator || 'StringLike');
+    return this.if(`SubnetIds`, value, operator || 'StringLike');
   }
 
   /**
@@ -1067,6 +1007,6 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVpcIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`lambda:VpcIds`, value, operator || 'StringLike');
+    return this.if(`VpcIds`, value, operator || 'StringLike');
   }
 }

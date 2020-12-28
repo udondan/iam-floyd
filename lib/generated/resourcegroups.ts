@@ -30,8 +30,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html
    */
   public toCreateGroup() {
-    this.to('resource-groups:CreateGroup');
-    return this;
+    return this.to('CreateGroup');
   }
 
   /**
@@ -42,8 +41,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_DeleteGroup.html
    */
   public toDeleteGroup() {
-    this.to('resource-groups:DeleteGroup');
-    return this;
+    return this.to('DeleteGroup');
   }
 
   /**
@@ -54,8 +52,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroup.html
    */
   public toGetGroup() {
-    this.to('resource-groups:GetGroup');
-    return this;
+    return this.to('GetGroup');
   }
 
   /**
@@ -66,8 +63,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroupConfiguration.html
    */
   public toGetGroupConfiguration() {
-    this.to('resource-groups:GetGroupConfiguration');
-    return this;
+    return this.to('GetGroupConfiguration');
   }
 
   /**
@@ -78,8 +74,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroupQuery.html
    */
   public toGetGroupQuery() {
-    this.to('resource-groups:GetGroupQuery');
-    return this;
+    return this.to('GetGroupQuery');
   }
 
   /**
@@ -90,8 +85,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetTags.html
    */
   public toGetTags() {
-    this.to('resource-groups:GetTags');
-    return this;
+    return this.to('GetTags');
   }
 
   /**
@@ -102,8 +96,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GroupResources.html
    */
   public toGroupResources() {
-    this.to('resource-groups:GroupResources');
-    return this;
+    return this.to('GroupResources');
   }
 
   /**
@@ -119,8 +112,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroupResources.html
    */
   public toListGroupResources() {
-    this.to('resource-groups:ListGroupResources');
-    return this;
+    return this.to('ListGroupResources');
   }
 
   /**
@@ -131,8 +123,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroups.html
    */
   public toListGroups() {
-    this.to('resource-groups:ListGroups');
-    return this;
+    return this.to('ListGroups');
   }
 
   /**
@@ -143,8 +134,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/LM_REDIRECT
    */
   public toPutGroupPolicy() {
-    this.to('resource-groups:PutGroupPolicy');
-    return this;
+    return this.to('PutGroupPolicy');
   }
 
   /**
@@ -160,8 +150,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_SearchResources.html
    */
   public toSearchResources() {
-    this.to('resource-groups:SearchResources');
-    return this;
+    return this.to('SearchResources');
   }
 
   /**
@@ -176,8 +165,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_Tag.html
    */
   public toTag() {
-    this.to('resource-groups:Tag');
-    return this;
+    return this.to('Tag');
   }
 
   /**
@@ -188,8 +176,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_UngroupResources.html
    */
   public toUngroupResources() {
-    this.to('resource-groups:UngroupResources');
-    return this;
+    return this.to('UngroupResources');
   }
 
   /**
@@ -203,8 +190,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_Untag.html
    */
   public toUntag() {
-    this.to('resource-groups:Untag');
-    return this;
+    return this.to('Untag');
   }
 
   /**
@@ -215,8 +201,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroup.html
    */
   public toUpdateGroup() {
-    this.to('resource-groups:UpdateGroup');
-    return this;
+    return this.to('UpdateGroup');
   }
 
   /**
@@ -227,8 +212,7 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroupQuery.html
    */
   public toUpdateGroupQuery() {
-    this.to('resource-groups:UpdateGroupQuery');
-    return this;
+    return this.to('UpdateGroupQuery');
   }
 
   protected accessLevelList: AccessLevelList = {

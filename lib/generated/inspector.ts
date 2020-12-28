@@ -26,8 +26,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_AddAttributesToFindings.html
    */
   public toAddAttributesToFindings() {
-    this.to('inspector:AddAttributesToFindings');
-    return this;
+    return this.to('AddAttributesToFindings');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_CreateAssessmentTarget.html
    */
   public toCreateAssessmentTarget() {
-    this.to('inspector:CreateAssessmentTarget');
-    return this;
+    return this.to('CreateAssessmentTarget');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_CreateAssessmentTemplate.html
    */
   public toCreateAssessmentTemplate() {
-    this.to('inspector:CreateAssessmentTemplate');
-    return this;
+    return this.to('CreateAssessmentTemplate');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_CreateResourceGroup.html
    */
   public toCreateResourceGroup() {
-    this.to('inspector:CreateResourceGroup');
-    return this;
+    return this.to('CreateResourceGroup');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_DeleteAssessmentRun.html
    */
   public toDeleteAssessmentRun() {
-    this.to('inspector:DeleteAssessmentRun');
-    return this;
+    return this.to('DeleteAssessmentRun');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_DeleteAssessmentTarget.html
    */
   public toDeleteAssessmentTarget() {
-    this.to('inspector:DeleteAssessmentTarget');
-    return this;
+    return this.to('DeleteAssessmentTarget');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_DeleteAssessmentTemplate.html
    */
   public toDeleteAssessmentTemplate() {
-    this.to('inspector:DeleteAssessmentTemplate');
-    return this;
+    return this.to('DeleteAssessmentTemplate');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_DescribeAssessmentRuns.html
    */
   public toDescribeAssessmentRuns() {
-    this.to('inspector:DescribeAssessmentRuns');
-    return this;
+    return this.to('DescribeAssessmentRuns');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_DescribeAssessmentTargets.html
    */
   public toDescribeAssessmentTargets() {
-    this.to('inspector:DescribeAssessmentTargets');
-    return this;
+    return this.to('DescribeAssessmentTargets');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_DescribeAssessmentTemplates.html
    */
   public toDescribeAssessmentTemplates() {
-    this.to('inspector:DescribeAssessmentTemplates');
-    return this;
+    return this.to('DescribeAssessmentTemplates');
   }
 
   /**
@@ -146,8 +136,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_DescribeCrossAccountAccessRole.html
    */
   public toDescribeCrossAccountAccessRole() {
-    this.to('inspector:DescribeCrossAccountAccessRole');
-    return this;
+    return this.to('DescribeCrossAccountAccessRole');
   }
 
   /**
@@ -158,8 +147,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_DescribeFindings.html
    */
   public toDescribeFindings() {
-    this.to('inspector:DescribeFindings');
-    return this;
+    return this.to('DescribeFindings');
   }
 
   /**
@@ -170,8 +158,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_DescribeResourceGroups.html
    */
   public toDescribeResourceGroups() {
-    this.to('inspector:DescribeResourceGroups');
-    return this;
+    return this.to('DescribeResourceGroups');
   }
 
   /**
@@ -182,8 +169,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_DescribeRulesPackages.html
    */
   public toDescribeRulesPackages() {
-    this.to('inspector:DescribeRulesPackages');
-    return this;
+    return this.to('DescribeRulesPackages');
   }
 
   /**
@@ -194,8 +180,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_GetTelemetryMetadata.html
    */
   public toGetTelemetryMetadata() {
-    this.to('inspector:GetTelemetryMetadata');
-    return this;
+    return this.to('GetTelemetryMetadata');
   }
 
   /**
@@ -206,8 +191,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_ListAssessmentRunAgents.html
    */
   public toListAssessmentRunAgents() {
-    this.to('inspector:ListAssessmentRunAgents');
-    return this;
+    return this.to('ListAssessmentRunAgents');
   }
 
   /**
@@ -218,8 +202,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_ListAssessmentRuns.html
    */
   public toListAssessmentRuns() {
-    this.to('inspector:ListAssessmentRuns');
-    return this;
+    return this.to('ListAssessmentRuns');
   }
 
   /**
@@ -230,8 +213,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_ListAssessmentTargets.html
    */
   public toListAssessmentTargets() {
-    this.to('inspector:ListAssessmentTargets');
-    return this;
+    return this.to('ListAssessmentTargets');
   }
 
   /**
@@ -242,8 +224,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_ListAssessmentTemplates.html
    */
   public toListAssessmentTemplates() {
-    this.to('inspector:ListAssessmentTemplates');
-    return this;
+    return this.to('ListAssessmentTemplates');
   }
 
   /**
@@ -254,8 +235,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_ListEventSubscriptions.html
    */
   public toListEventSubscriptions() {
-    this.to('inspector:ListEventSubscriptions');
-    return this;
+    return this.to('ListEventSubscriptions');
   }
 
   /**
@@ -266,8 +246,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_ListFindings.html
    */
   public toListFindings() {
-    this.to('inspector:ListFindings');
-    return this;
+    return this.to('ListFindings');
   }
 
   /**
@@ -278,8 +257,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_ListRulesPackages.html
    */
   public toListRulesPackages() {
-    this.to('inspector:ListRulesPackages');
-    return this;
+    return this.to('ListRulesPackages');
   }
 
   /**
@@ -290,8 +268,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('inspector:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -302,8 +279,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_PreviewAgents.html
    */
   public toPreviewAgents() {
-    this.to('inspector:PreviewAgents');
-    return this;
+    return this.to('PreviewAgents');
   }
 
   /**
@@ -314,8 +290,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_RegisterCrossAccountAccessRole.html
    */
   public toRegisterCrossAccountAccessRole() {
-    this.to('inspector:RegisterCrossAccountAccessRole');
-    return this;
+    return this.to('RegisterCrossAccountAccessRole');
   }
 
   /**
@@ -326,8 +301,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_RemoveAttributesFromFindings.html
    */
   public toRemoveAttributesFromFindings() {
-    this.to('inspector:RemoveAttributesFromFindings');
-    return this;
+    return this.to('RemoveAttributesFromFindings');
   }
 
   /**
@@ -338,8 +312,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_SetTagsForResource.html
    */
   public toSetTagsForResource() {
-    this.to('inspector:SetTagsForResource');
-    return this;
+    return this.to('SetTagsForResource');
   }
 
   /**
@@ -350,8 +323,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_StartAssessmentRun.html
    */
   public toStartAssessmentRun() {
-    this.to('inspector:StartAssessmentRun');
-    return this;
+    return this.to('StartAssessmentRun');
   }
 
   /**
@@ -362,8 +334,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_StopAssessmentRun.html
    */
   public toStopAssessmentRun() {
-    this.to('inspector:StopAssessmentRun');
-    return this;
+    return this.to('StopAssessmentRun');
   }
 
   /**
@@ -374,8 +345,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_SubscribeToEvent.html
    */
   public toSubscribeToEvent() {
-    this.to('inspector:SubscribeToEvent');
-    return this;
+    return this.to('SubscribeToEvent');
   }
 
   /**
@@ -386,8 +356,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_UnsubscribeFromEvent.html
    */
   public toUnsubscribeFromEvent() {
-    this.to('inspector:UnsubscribeFromEvent');
-    return this;
+    return this.to('UnsubscribeFromEvent');
   }
 
   /**
@@ -398,8 +367,7 @@ export class Inspector extends PolicyStatement {
    * https://docs.aws.amazon.com/inspector/latest/APIReference/API_UpdateAssessmentTarget.html
    */
   public toUpdateAssessmentTarget() {
-    this.to('inspector:UpdateAssessmentTarget');
-    return this;
+    return this.to('UpdateAssessmentTarget');
   }
 
   protected accessLevelList: AccessLevelList = {

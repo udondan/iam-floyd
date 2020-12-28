@@ -26,8 +26,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CancelContact.html
    */
   public toCancelContact() {
-    this.to('groundstation:CancelContact');
-    return this;
+    return this.to('CancelContact');
   }
 
   /**
@@ -42,8 +41,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateConfig.html
    */
   public toCreateConfig() {
-    this.to('groundstation:CreateConfig');
-    return this;
+    return this.to('CreateConfig');
   }
 
   /**
@@ -58,8 +56,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateDataflowEndpointGroup.html
    */
   public toCreateDataflowEndpointGroup() {
-    this.to('groundstation:CreateDataflowEndpointGroup');
-    return this;
+    return this.to('CreateDataflowEndpointGroup');
   }
 
   /**
@@ -74,8 +71,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateMissionProfile.html
    */
   public toCreateMissionProfile() {
-    this.to('groundstation:CreateMissionProfile');
-    return this;
+    return this.to('CreateMissionProfile');
   }
 
   /**
@@ -86,8 +82,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DeleteConfig.html
    */
   public toDeleteConfig() {
-    this.to('groundstation:DeleteConfig');
-    return this;
+    return this.to('DeleteConfig');
   }
 
   /**
@@ -98,8 +93,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DeleteDataflowEndpointGroup.html
    */
   public toDeleteDataflowEndpointGroup() {
-    this.to('groundstation:DeleteDataflowEndpointGroup');
-    return this;
+    return this.to('DeleteDataflowEndpointGroup');
   }
 
   /**
@@ -110,8 +104,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DeleteMissionProfile.html
    */
   public toDeleteMissionProfile() {
-    this.to('groundstation:DeleteMissionProfile');
-    return this;
+    return this.to('DeleteMissionProfile');
   }
 
   /**
@@ -122,8 +115,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DescribeContact.html
    */
   public toDescribeContact() {
-    this.to('groundstation:DescribeContact');
-    return this;
+    return this.to('DescribeContact');
   }
 
   /**
@@ -134,8 +126,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetConfig.html
    */
   public toGetConfig() {
-    this.to('groundstation:GetConfig');
-    return this;
+    return this.to('GetConfig');
   }
 
   /**
@@ -146,8 +137,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetDataflowEndpointGroup.html
    */
   public toGetDataflowEndpointGroup() {
-    this.to('groundstation:GetDataflowEndpointGroup');
-    return this;
+    return this.to('GetDataflowEndpointGroup');
   }
 
   /**
@@ -158,8 +148,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetMinuteUsage.html
    */
   public toGetMinuteUsage() {
-    this.to('groundstation:GetMinuteUsage');
-    return this;
+    return this.to('GetMinuteUsage');
   }
 
   /**
@@ -170,8 +159,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetMissionProfile.html
    */
   public toGetMissionProfile() {
-    this.to('groundstation:GetMissionProfile');
-    return this;
+    return this.to('GetMissionProfile');
   }
 
   /**
@@ -182,8 +170,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetSatellite.html
    */
   public toGetSatellite() {
-    this.to('groundstation:GetSatellite');
-    return this;
+    return this.to('GetSatellite');
   }
 
   /**
@@ -194,8 +181,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListConfigs.html
    */
   public toListConfigs() {
-    this.to('groundstation:ListConfigs');
-    return this;
+    return this.to('ListConfigs');
   }
 
   /**
@@ -206,8 +192,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListContacts.html
    */
   public toListContacts() {
-    this.to('groundstation:ListContacts');
-    return this;
+    return this.to('ListContacts');
   }
 
   /**
@@ -218,8 +203,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListDataflowEndpointGroups.html
    */
   public toListDataflowEndpointGroups() {
-    this.to('groundstation:ListDataflowEndpointGroups');
-    return this;
+    return this.to('ListDataflowEndpointGroups');
   }
 
   /**
@@ -230,8 +214,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListGroundStations.html
    */
   public toListGroundStations() {
-    this.to('groundstation:ListGroundStations');
-    return this;
+    return this.to('ListGroundStations');
   }
 
   /**
@@ -242,8 +225,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListMissionProfiles.html
    */
   public toListMissionProfiles() {
-    this.to('groundstation:ListMissionProfiles');
-    return this;
+    return this.to('ListMissionProfiles');
   }
 
   /**
@@ -254,8 +236,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListSatellites.html
    */
   public toListSatellites() {
-    this.to('groundstation:ListSatellites');
-    return this;
+    return this.to('ListSatellites');
   }
 
   /**
@@ -266,8 +247,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('groundstation:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -282,8 +262,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ReserveContact.html
    */
   public toReserveContact() {
-    this.to('groundstation:ReserveContact');
-    return this;
+    return this.to('ReserveContact');
   }
 
   /**
@@ -298,8 +277,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('groundstation:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -313,8 +291,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('groundstation:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -325,8 +302,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateConfig.html
    */
   public toUpdateConfig() {
-    this.to('groundstation:UpdateConfig');
-    return this;
+    return this.to('UpdateConfig');
   }
 
   /**
@@ -337,8 +313,7 @@ export class Groundstation extends PolicyStatement {
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateMissionProfile.html
    */
   public toUpdateMissionProfile() {
-    this.to('groundstation:UpdateMissionProfile');
-    return this;
+    return this.to('UpdateMissionProfile');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -526,7 +501,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifConfigId(value: string | string[], operator?: Operator | string) {
-    return this.if(`groundstation:configId`, value, operator || 'StringLike');
+    return this.if(`configId`, value, operator || 'StringLike');
   }
 
   /**
@@ -539,7 +514,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifConfigType(value: string | string[], operator?: Operator | string) {
-    return this.if(`groundstation:configType`, value, operator || 'StringLike');
+    return this.if(`configType`, value, operator || 'StringLike');
   }
 
   /**
@@ -552,7 +527,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifContactId(value: string | string[], operator?: Operator | string) {
-    return this.if(`groundstation:contactId`, value, operator || 'StringLike');
+    return this.if(`contactId`, value, operator || 'StringLike');
   }
 
   /**
@@ -565,7 +540,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDataflowEndpointGroupId(value: string | string[], operator?: Operator | string) {
-    return this.if(`groundstation:dataflowEndpointGroupId`, value, operator || 'StringLike');
+    return this.if(`dataflowEndpointGroupId`, value, operator || 'StringLike');
   }
 
   /**
@@ -578,7 +553,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGroundStationId(value: string | string[], operator?: Operator | string) {
-    return this.if(`groundstation:groundStationId`, value, operator || 'StringLike');
+    return this.if(`groundStationId`, value, operator || 'StringLike');
   }
 
   /**
@@ -591,7 +566,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifMissionProfileId(value: string | string[], operator?: Operator | string) {
-    return this.if(`groundstation:missionProfileId`, value, operator || 'StringLike');
+    return this.if(`missionProfileId`, value, operator || 'StringLike');
   }
 
   /**
@@ -604,6 +579,6 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSatelliteId(value: string | string[], operator?: Operator | string) {
-    return this.if(`groundstation:satelliteId`, value, operator || 'StringLike');
+    return this.if(`satelliteId`, value, operator || 'StringLike');
   }
 }

@@ -32,8 +32,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html
    */
   public toBatchGetItem() {
-    this.to('dynamodb:BatchGetItem');
-    return this;
+    return this.to('BatchGetItem');
   }
 
   /**
@@ -49,8 +48,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
    */
   public toBatchWriteItem() {
-    this.to('dynamodb:BatchWriteItem');
-    return this;
+    return this.to('BatchWriteItem');
   }
 
   /**
@@ -67,8 +65,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ConditionCheckItem.html
    */
   public toConditionCheckItem() {
-    this.to('dynamodb:ConditionCheckItem');
-    return this;
+    return this.to('ConditionCheckItem');
   }
 
   /**
@@ -79,8 +76,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateBackup.html
    */
   public toCreateBackup() {
-    this.to('dynamodb:CreateBackup');
-    return this;
+    return this.to('CreateBackup');
   }
 
   /**
@@ -91,8 +87,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateGlobalTable.html
    */
   public toCreateGlobalTable() {
-    this.to('dynamodb:CreateGlobalTable');
-    return this;
+    return this.to('CreateGlobalTable');
   }
 
   /**
@@ -103,8 +98,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html
    */
   public toCreateTable() {
-    this.to('dynamodb:CreateTable');
-    return this;
+    return this.to('CreateTable');
   }
 
   /**
@@ -115,8 +109,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/V2gt_IAM.html
    */
   public toCreateTableReplica() {
-    this.to('dynamodb:CreateTableReplica');
-    return this;
+    return this.to('CreateTableReplica');
   }
 
   /**
@@ -127,8 +120,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteBackup.html
    */
   public toDeleteBackup() {
-    this.to('dynamodb:DeleteBackup');
-    return this;
+    return this.to('DeleteBackup');
   }
 
   /**
@@ -146,8 +138,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html
    */
   public toDeleteItem() {
-    this.to('dynamodb:DeleteItem');
-    return this;
+    return this.to('DeleteItem');
   }
 
   /**
@@ -158,8 +149,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteTable.html
    */
   public toDeleteTable() {
-    this.to('dynamodb:DeleteTable');
-    return this;
+    return this.to('DeleteTable');
   }
 
   /**
@@ -170,8 +160,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/V2gt_IAM.html
    */
   public toDeleteTableReplica() {
-    this.to('dynamodb:DeleteTableReplica');
-    return this;
+    return this.to('DeleteTableReplica');
   }
 
   /**
@@ -182,8 +171,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeBackup.html
    */
   public toDescribeBackup() {
-    this.to('dynamodb:DescribeBackup');
-    return this;
+    return this.to('DescribeBackup');
   }
 
   /**
@@ -194,8 +182,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeContinuousBackups.html
    */
   public toDescribeContinuousBackups() {
-    this.to('dynamodb:DescribeContinuousBackups');
-    return this;
+    return this.to('DescribeContinuousBackups');
   }
 
   /**
@@ -206,8 +193,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeContributorInsights.html
    */
   public toDescribeContributorInsights() {
-    this.to('dynamodb:DescribeContributorInsights');
-    return this;
+    return this.to('DescribeContributorInsights');
   }
 
   /**
@@ -218,8 +204,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeExport.html
    */
   public toDescribeExport() {
-    this.to('dynamodb:DescribeExport');
-    return this;
+    return this.to('DescribeExport');
   }
 
   /**
@@ -230,8 +215,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeGlobalTable.html
    */
   public toDescribeGlobalTable() {
-    this.to('dynamodb:DescribeGlobalTable');
-    return this;
+    return this.to('DescribeGlobalTable');
   }
 
   /**
@@ -242,8 +226,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeGlobalTableSettings.html
    */
   public toDescribeGlobalTableSettings() {
-    this.to('dynamodb:DescribeGlobalTableSettings');
-    return this;
+    return this.to('DescribeGlobalTableSettings');
   }
 
   /**
@@ -254,8 +237,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeKinesisStreamingDestination.html
    */
   public toDescribeKinesisStreamingDestination() {
-    this.to('dynamodb:DescribeKinesisStreamingDestination');
-    return this;
+    return this.to('DescribeKinesisStreamingDestination');
   }
 
   /**
@@ -266,8 +248,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeLimits.html
    */
   public toDescribeLimits() {
-    this.to('dynamodb:DescribeLimits');
-    return this;
+    return this.to('DescribeLimits');
   }
 
   /**
@@ -276,8 +257,7 @@ export class Dynamodb extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeReservedCapacity() {
-    this.to('dynamodb:DescribeReservedCapacity');
-    return this;
+    return this.to('DescribeReservedCapacity');
   }
 
   /**
@@ -286,8 +266,7 @@ export class Dynamodb extends PolicyStatement {
    * Access Level: Read
    */
   public toDescribeReservedCapacityOfferings() {
-    this.to('dynamodb:DescribeReservedCapacityOfferings');
-    return this;
+    return this.to('DescribeReservedCapacityOfferings');
   }
 
   /**
@@ -298,8 +277,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeStream.html
    */
   public toDescribeStream() {
-    this.to('dynamodb:DescribeStream');
-    return this;
+    return this.to('DescribeStream');
   }
 
   /**
@@ -310,8 +288,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html
    */
   public toDescribeTable() {
-    this.to('dynamodb:DescribeTable');
-    return this;
+    return this.to('DescribeTable');
   }
 
   /**
@@ -322,8 +299,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTableReplicaAutoScaling.html
    */
   public toDescribeTableReplicaAutoScaling() {
-    this.to('dynamodb:DescribeTableReplicaAutoScaling');
-    return this;
+    return this.to('DescribeTableReplicaAutoScaling');
   }
 
   /**
@@ -334,8 +310,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTimeToLive.html
    */
   public toDescribeTimeToLive() {
-    this.to('dynamodb:DescribeTimeToLive');
-    return this;
+    return this.to('DescribeTimeToLive');
   }
 
   /**
@@ -346,8 +321,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DisableKinesisStreamingDestination.html
    */
   public toDisableKinesisStreamingDestination() {
-    this.to('dynamodb:DisableKinesisStreamingDestination');
-    return this;
+    return this.to('DisableKinesisStreamingDestination');
   }
 
   /**
@@ -358,8 +332,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_EnableKinesisStreamingDestination.html
    */
   public toEnableKinesisStreamingDestination() {
-    this.to('dynamodb:EnableKinesisStreamingDestination');
-    return this;
+    return this.to('EnableKinesisStreamingDestination');
   }
 
   /**
@@ -370,8 +343,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExportTableToPointInTime.html
    */
   public toExportTableToPointInTime() {
-    this.to('dynamodb:ExportTableToPointInTime');
-    return this;
+    return this.to('ExportTableToPointInTime');
   }
 
   /**
@@ -389,8 +361,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html
    */
   public toGetItem() {
-    this.to('dynamodb:GetItem');
-    return this;
+    return this.to('GetItem');
   }
 
   /**
@@ -401,8 +372,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetRecords.html
    */
   public toGetRecords() {
-    this.to('dynamodb:GetRecords');
-    return this;
+    return this.to('GetRecords');
   }
 
   /**
@@ -413,8 +383,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetShardIterator.html
    */
   public toGetShardIterator() {
-    this.to('dynamodb:GetShardIterator');
-    return this;
+    return this.to('GetShardIterator');
   }
 
   /**
@@ -425,8 +394,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListBackups.html
    */
   public toListBackups() {
-    this.to('dynamodb:ListBackups');
-    return this;
+    return this.to('ListBackups');
   }
 
   /**
@@ -437,8 +405,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListContributorInsights.html
    */
   public toListContributorInsights() {
-    this.to('dynamodb:ListContributorInsights');
-    return this;
+    return this.to('ListContributorInsights');
   }
 
   /**
@@ -449,8 +416,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListExports.html
    */
   public toListExports() {
-    this.to('dynamodb:ListExports');
-    return this;
+    return this.to('ListExports');
   }
 
   /**
@@ -461,8 +427,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListGlobalTables.html
    */
   public toListGlobalTables() {
-    this.to('dynamodb:ListGlobalTables');
-    return this;
+    return this.to('ListGlobalTables');
   }
 
   /**
@@ -473,8 +438,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListStreams.html
    */
   public toListStreams() {
-    this.to('dynamodb:ListStreams');
-    return this;
+    return this.to('ListStreams');
   }
 
   /**
@@ -485,8 +449,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListTables.html
    */
   public toListTables() {
-    this.to('dynamodb:ListTables');
-    return this;
+    return this.to('ListTables');
   }
 
   /**
@@ -497,8 +460,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListTagsOfResource.html
    */
   public toListTagsOfResource() {
-    this.to('dynamodb:ListTagsOfResource');
-    return this;
+    return this.to('ListTagsOfResource');
   }
 
   /**
@@ -515,8 +477,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html
    */
   public toPartiQLDelete() {
-    this.to('dynamodb:PartiQLDelete');
-    return this;
+    return this.to('PartiQLDelete');
   }
 
   /**
@@ -532,8 +493,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html
    */
   public toPartiQLInsert() {
-    this.to('dynamodb:PartiQLInsert');
-    return this;
+    return this.to('PartiQLInsert');
   }
 
   /**
@@ -551,8 +511,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html
    */
   public toPartiQLSelect() {
-    this.to('dynamodb:PartiQLSelect');
-    return this;
+    return this.to('PartiQLSelect');
   }
 
   /**
@@ -569,8 +528,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html
    */
   public toPartiQLUpdate() {
-    this.to('dynamodb:PartiQLUpdate');
-    return this;
+    return this.to('PartiQLUpdate');
   }
 
   /**
@@ -579,8 +537,7 @@ export class Dynamodb extends PolicyStatement {
    * Access Level: Write
    */
   public toPurchaseReservedCapacityOfferings() {
-    this.to('dynamodb:PurchaseReservedCapacityOfferings');
-    return this;
+    return this.to('PurchaseReservedCapacityOfferings');
   }
 
   /**
@@ -598,8 +555,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html
    */
   public toPutItem() {
-    this.to('dynamodb:PutItem');
-    return this;
+    return this.to('PutItem');
   }
 
   /**
@@ -617,8 +573,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html
    */
   public toQuery() {
-    this.to('dynamodb:Query');
-    return this;
+    return this.to('Query');
   }
 
   /**
@@ -629,8 +584,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableFromBackup.html
    */
   public toRestoreTableFromBackup() {
-    this.to('dynamodb:RestoreTableFromBackup');
-    return this;
+    return this.to('RestoreTableFromBackup');
   }
 
   /**
@@ -641,8 +595,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableToPointInTime.html
    */
   public toRestoreTableToPointInTime() {
-    this.to('dynamodb:RestoreTableToPointInTime');
-    return this;
+    return this.to('RestoreTableToPointInTime');
   }
 
   /**
@@ -659,8 +612,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Scan.html
    */
   public toScan() {
-    this.to('dynamodb:Scan');
-    return this;
+    return this.to('Scan');
   }
 
   /**
@@ -671,8 +623,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('dynamodb:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -683,8 +634,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('dynamodb:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -695,8 +645,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateContinuousBackups.html
    */
   public toUpdateContinuousBackups() {
-    this.to('dynamodb:UpdateContinuousBackups');
-    return this;
+    return this.to('UpdateContinuousBackups');
   }
 
   /**
@@ -707,8 +656,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateContributorInsights.html
    */
   public toUpdateContributorInsights() {
-    this.to('dynamodb:UpdateContributorInsights');
-    return this;
+    return this.to('UpdateContributorInsights');
   }
 
   /**
@@ -719,8 +667,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateGlobalTable.html
    */
   public toUpdateGlobalTable() {
-    this.to('dynamodb:UpdateGlobalTable');
-    return this;
+    return this.to('UpdateGlobalTable');
   }
 
   /**
@@ -731,8 +678,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateGlobalTableSettings.html
    */
   public toUpdateGlobalTableSettings() {
-    this.to('dynamodb:UpdateGlobalTableSettings');
-    return this;
+    return this.to('UpdateGlobalTableSettings');
   }
 
   /**
@@ -750,8 +696,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html
    */
   public toUpdateItem() {
-    this.to('dynamodb:UpdateItem');
-    return this;
+    return this.to('UpdateItem');
   }
 
   /**
@@ -762,8 +707,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html
    */
   public toUpdateTable() {
-    this.to('dynamodb:UpdateTable');
-    return this;
+    return this.to('UpdateTable');
   }
 
   /**
@@ -774,8 +718,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTableReplicaAutoScaling.html
    */
   public toUpdateTableReplicaAutoScaling() {
-    this.to('dynamodb:UpdateTableReplicaAutoScaling');
-    return this;
+    return this.to('UpdateTableReplicaAutoScaling');
   }
 
   /**
@@ -786,8 +729,7 @@ export class Dynamodb extends PolicyStatement {
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTimeToLive.html
    */
   public toUpdateTimeToLive() {
-    this.to('dynamodb:UpdateTimeToLive');
-    return this;
+    return this.to('UpdateTimeToLive');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -1003,7 +945,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAttributes(value: string | string[], operator?: Operator | string) {
-    return this.if(`dynamodb:Attributes`, value, operator || 'StringLike');
+    return this.if(`Attributes`, value, operator || 'StringLike');
   }
 
   /**
@@ -1025,7 +967,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEnclosingOperation(value: string | string[], operator?: Operator | string) {
-    return this.if(`dynamodb:EnclosingOperation`, value, operator || 'StringLike');
+    return this.if(`EnclosingOperation`, value, operator || 'StringLike');
   }
 
   /**
@@ -1065,7 +1007,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLeadingKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`dynamodb:LeadingKeys`, value, operator || 'StringLike');
+    return this.if(`LeadingKeys`, value, operator || 'StringLike');
   }
 
   /**
@@ -1088,7 +1030,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifReturnConsumedCapacity(value: string | string[], operator?: Operator | string) {
-    return this.if(`dynamodb:ReturnConsumedCapacity`, value, operator || 'StringLike');
+    return this.if(`ReturnConsumedCapacity`, value, operator || 'StringLike');
   }
 
   /**
@@ -1110,7 +1052,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifReturnValues(value: string | string[], operator?: Operator | string) {
-    return this.if(`dynamodb:ReturnValues`, value, operator || 'StringLike');
+    return this.if(`ReturnValues`, value, operator || 'StringLike');
   }
 
   /**
@@ -1129,6 +1071,6 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSelect(value: string | string[], operator?: Operator | string) {
-    return this.if(`dynamodb:Select`, value, operator || 'StringLike');
+    return this.if(`Select`, value, operator || 'StringLike');
   }
 }

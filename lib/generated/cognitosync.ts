@@ -26,8 +26,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_BulkPublish.html
    */
   public toBulkPublish() {
-    this.to('cognito-sync:BulkPublish');
-    return this;
+    return this.to('BulkPublish');
   }
 
   /**
@@ -38,8 +37,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DeleteDataset.html
    */
   public toDeleteDataset() {
-    this.to('cognito-sync:DeleteDataset');
-    return this;
+    return this.to('DeleteDataset');
   }
 
   /**
@@ -50,8 +48,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeDataset.html
    */
   public toDescribeDataset() {
-    this.to('cognito-sync:DescribeDataset');
-    return this;
+    return this.to('DescribeDataset');
   }
 
   /**
@@ -62,8 +59,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeIdentityPoolUsage.html
    */
   public toDescribeIdentityPoolUsage() {
-    this.to('cognito-sync:DescribeIdentityPoolUsage');
-    return this;
+    return this.to('DescribeIdentityPoolUsage');
   }
 
   /**
@@ -74,8 +70,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeIdentityUsage.html
    */
   public toDescribeIdentityUsage() {
-    this.to('cognito-sync:DescribeIdentityUsage');
-    return this;
+    return this.to('DescribeIdentityUsage');
   }
 
   /**
@@ -86,8 +81,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetBulkPublishDetails.html
    */
   public toGetBulkPublishDetails() {
-    this.to('cognito-sync:GetBulkPublishDetails');
-    return this;
+    return this.to('GetBulkPublishDetails');
   }
 
   /**
@@ -98,8 +92,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetCognitoEvents.html
    */
   public toGetCognitoEvents() {
-    this.to('cognito-sync:GetCognitoEvents');
-    return this;
+    return this.to('GetCognitoEvents');
   }
 
   /**
@@ -110,8 +103,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetIdentityPoolConfiguration.html
    */
   public toGetIdentityPoolConfiguration() {
-    this.to('cognito-sync:GetIdentityPoolConfiguration');
-    return this;
+    return this.to('GetIdentityPoolConfiguration');
   }
 
   /**
@@ -122,8 +114,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListDatasets.html
    */
   public toListDatasets() {
-    this.to('cognito-sync:ListDatasets');
-    return this;
+    return this.to('ListDatasets');
   }
 
   /**
@@ -134,8 +125,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListIdentityPoolUsage.html
    */
   public toListIdentityPoolUsage() {
-    this.to('cognito-sync:ListIdentityPoolUsage');
-    return this;
+    return this.to('ListIdentityPoolUsage');
   }
 
   /**
@@ -146,8 +136,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListRecords.html
    */
   public toListRecords() {
-    this.to('cognito-sync:ListRecords');
-    return this;
+    return this.to('ListRecords');
   }
 
   /**
@@ -156,8 +145,7 @@ export class CognitoSync extends PolicyStatement {
    * Access Level: Read
    */
   public toQueryRecords() {
-    this.to('cognito-sync:QueryRecords');
-    return this;
+    return this.to('QueryRecords');
   }
 
   /**
@@ -168,8 +156,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_RegisterDevice.html
    */
   public toRegisterDevice() {
-    this.to('cognito-sync:RegisterDevice');
-    return this;
+    return this.to('RegisterDevice');
   }
 
   /**
@@ -180,8 +167,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SetCognitoEvents.html
    */
   public toSetCognitoEvents() {
-    this.to('cognito-sync:SetCognitoEvents');
-    return this;
+    return this.to('SetCognitoEvents');
   }
 
   /**
@@ -190,8 +176,7 @@ export class CognitoSync extends PolicyStatement {
    * Access Level: Write
    */
   public toSetDatasetConfiguration() {
-    this.to('cognito-sync:SetDatasetConfiguration');
-    return this;
+    return this.to('SetDatasetConfiguration');
   }
 
   /**
@@ -202,8 +187,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SetIdentityPoolConfiguration.html
    */
   public toSetIdentityPoolConfiguration() {
-    this.to('cognito-sync:SetIdentityPoolConfiguration');
-    return this;
+    return this.to('SetIdentityPoolConfiguration');
   }
 
   /**
@@ -214,8 +198,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SubscribeToDataset.html
    */
   public toSubscribeToDataset() {
-    this.to('cognito-sync:SubscribeToDataset');
-    return this;
+    return this.to('SubscribeToDataset');
   }
 
   /**
@@ -226,8 +209,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_UnsubscribeFromDataset.html
    */
   public toUnsubscribeFromDataset() {
-    this.to('cognito-sync:UnsubscribeFromDataset');
-    return this;
+    return this.to('UnsubscribeFromDataset');
   }
 
   /**
@@ -238,8 +220,7 @@ export class CognitoSync extends PolicyStatement {
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_UpdateRecords.html
    */
   public toUpdateRecords() {
-    this.to('cognito-sync:UpdateRecords');
-    return this;
+    return this.to('UpdateRecords');
   }
 
   protected accessLevelList: AccessLevelList = {

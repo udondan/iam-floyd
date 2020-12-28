@@ -26,8 +26,7 @@ export class ComputeOptimizer extends PolicyStatement {
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_DescribeRecommendationExportJobs.html
    */
   public toDescribeRecommendationExportJobs() {
-    this.to('compute-optimizer:DescribeRecommendationExportJobs');
-    return this;
+    return this.to('DescribeRecommendationExportJobs');
   }
 
   /**
@@ -42,8 +41,7 @@ export class ComputeOptimizer extends PolicyStatement {
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportAutoScalingGroupRecommendations.html
    */
   public toExportAutoScalingGroupRecommendations() {
-    this.to('compute-optimizer:ExportAutoScalingGroupRecommendations');
-    return this;
+    return this.to('ExportAutoScalingGroupRecommendations');
   }
 
   /**
@@ -58,8 +56,7 @@ export class ComputeOptimizer extends PolicyStatement {
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportEC2InstanceRecommendations.html
    */
   public toExportEC2InstanceRecommendations() {
-    this.to('compute-optimizer:ExportEC2InstanceRecommendations');
-    return this;
+    return this.to('ExportEC2InstanceRecommendations');
   }
 
   /**
@@ -73,8 +70,7 @@ export class ComputeOptimizer extends PolicyStatement {
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetAutoScalingGroupRecommendations.html
    */
   public toGetAutoScalingGroupRecommendations() {
-    this.to('compute-optimizer:GetAutoScalingGroupRecommendations');
-    return this;
+    return this.to('GetAutoScalingGroupRecommendations');
   }
 
   /**
@@ -88,8 +84,7 @@ export class ComputeOptimizer extends PolicyStatement {
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEBSVolumeRecommendations.html
    */
   public toGetEBSVolumeRecommendations() {
-    this.to('compute-optimizer:GetEBSVolumeRecommendations');
-    return this;
+    return this.to('GetEBSVolumeRecommendations');
   }
 
   /**
@@ -103,8 +98,7 @@ export class ComputeOptimizer extends PolicyStatement {
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEC2InstanceRecommendations.html
    */
   public toGetEC2InstanceRecommendations() {
-    this.to('compute-optimizer:GetEC2InstanceRecommendations');
-    return this;
+    return this.to('GetEC2InstanceRecommendations');
   }
 
   /**
@@ -118,8 +112,7 @@ export class ComputeOptimizer extends PolicyStatement {
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEC2RecommendationProjectedMetrics.html
    */
   public toGetEC2RecommendationProjectedMetrics() {
-    this.to('compute-optimizer:GetEC2RecommendationProjectedMetrics');
-    return this;
+    return this.to('GetEC2RecommendationProjectedMetrics');
   }
 
   /**
@@ -130,8 +123,7 @@ export class ComputeOptimizer extends PolicyStatement {
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEnrollmentStatus.html
    */
   public toGetEnrollmentStatus() {
-    this.to('compute-optimizer:GetEnrollmentStatus');
-    return this;
+    return this.to('GetEnrollmentStatus');
   }
 
   /**
@@ -146,8 +138,7 @@ export class ComputeOptimizer extends PolicyStatement {
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetLambdaFunctionRecommendations.html
    */
   public toGetLambdaFunctionRecommendations() {
-    this.to('compute-optimizer:GetLambdaFunctionRecommendations');
-    return this;
+    return this.to('GetLambdaFunctionRecommendations');
   }
 
   /**
@@ -158,8 +149,7 @@ export class ComputeOptimizer extends PolicyStatement {
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetRecommendationSummaries.html
    */
   public toGetRecommendationSummaries() {
-    this.to('compute-optimizer:GetRecommendationSummaries');
-    return this;
+    return this.to('GetRecommendationSummaries');
   }
 
   /**
@@ -170,8 +160,7 @@ export class ComputeOptimizer extends PolicyStatement {
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_UpdateEnrollmentStatus.html
    */
   public toUpdateEnrollmentStatus() {
-    this.to('compute-optimizer:UpdateEnrollmentStatus');
-    return this;
+    return this.to('UpdateEnrollmentStatus');
   }
 
   protected accessLevelList: AccessLevelList = {

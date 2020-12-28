@@ -26,8 +26,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_BatchDeleteRecipeVersion.html
    */
   public toBatchDeleteRecipeVersion() {
-    this.to('databrew:BatchDeleteRecipeVersion');
-    return this;
+    return this.to('BatchDeleteRecipeVersion');
   }
 
   /**
@@ -42,8 +41,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_CreateDataset.html
    */
   public toCreateDataset() {
-    this.to('databrew:CreateDataset');
-    return this;
+    return this.to('CreateDataset');
   }
 
   /**
@@ -58,8 +56,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_CreateProfileJob.html
    */
   public toCreateProfileJob() {
-    this.to('databrew:CreateProfileJob');
-    return this;
+    return this.to('CreateProfileJob');
   }
 
   /**
@@ -74,8 +71,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_CreateProject.html
    */
   public toCreateProject() {
-    this.to('databrew:CreateProject');
-    return this;
+    return this.to('CreateProject');
   }
 
   /**
@@ -90,8 +86,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_CreateRecipe.html
    */
   public toCreateRecipe() {
-    this.to('databrew:CreateRecipe');
-    return this;
+    return this.to('CreateRecipe');
   }
 
   /**
@@ -106,8 +101,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_CreateRecipeJob.html
    */
   public toCreateRecipeJob() {
-    this.to('databrew:CreateRecipeJob');
-    return this;
+    return this.to('CreateRecipeJob');
   }
 
   /**
@@ -122,8 +116,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_CreateSchedule.html
    */
   public toCreateSchedule() {
-    this.to('databrew:CreateSchedule');
-    return this;
+    return this.to('CreateSchedule');
   }
 
   /**
@@ -134,8 +127,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_DeleteDataset.html
    */
   public toDeleteDataset() {
-    this.to('databrew:DeleteDataset');
-    return this;
+    return this.to('DeleteDataset');
   }
 
   /**
@@ -146,8 +138,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_DeleteJob.html
    */
   public toDeleteJob() {
-    this.to('databrew:DeleteJob');
-    return this;
+    return this.to('DeleteJob');
   }
 
   /**
@@ -158,8 +149,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_DeleteProject.html
    */
   public toDeleteProject() {
-    this.to('databrew:DeleteProject');
-    return this;
+    return this.to('DeleteProject');
   }
 
   /**
@@ -170,8 +160,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_DeleteRecipeVersion.html
    */
   public toDeleteRecipeVersion() {
-    this.to('databrew:DeleteRecipeVersion');
-    return this;
+    return this.to('DeleteRecipeVersion');
   }
 
   /**
@@ -182,8 +171,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_DeleteSchedule.html
    */
   public toDeleteSchedule() {
-    this.to('databrew:DeleteSchedule');
-    return this;
+    return this.to('DeleteSchedule');
   }
 
   /**
@@ -194,8 +182,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_DescribeDataset.html
    */
   public toDescribeDataset() {
-    this.to('databrew:DescribeDataset');
-    return this;
+    return this.to('DescribeDataset');
   }
 
   /**
@@ -206,8 +193,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_DescribeJob.html
    */
   public toDescribeJob() {
-    this.to('databrew:DescribeJob');
-    return this;
+    return this.to('DescribeJob');
   }
 
   /**
@@ -218,8 +204,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_DescribeProject.html
    */
   public toDescribeProject() {
-    this.to('databrew:DescribeProject');
-    return this;
+    return this.to('DescribeProject');
   }
 
   /**
@@ -230,8 +215,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_DescribeRecipe.html
    */
   public toDescribeRecipe() {
-    this.to('databrew:DescribeRecipe');
-    return this;
+    return this.to('DescribeRecipe');
   }
 
   /**
@@ -242,8 +226,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_DescribeSchedule.html
    */
   public toDescribeSchedule() {
-    this.to('databrew:DescribeSchedule');
-    return this;
+    return this.to('DescribeSchedule');
   }
 
   /**
@@ -254,8 +237,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListDatasets.html
    */
   public toListDatasets() {
-    this.to('databrew:ListDatasets');
-    return this;
+    return this.to('ListDatasets');
   }
 
   /**
@@ -266,8 +248,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListJobRuns.html
    */
   public toListJobRuns() {
-    this.to('databrew:ListJobRuns');
-    return this;
+    return this.to('ListJobRuns');
   }
 
   /**
@@ -278,8 +259,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListJobs.html
    */
   public toListJobs() {
-    this.to('databrew:ListJobs');
-    return this;
+    return this.to('ListJobs');
   }
 
   /**
@@ -290,8 +270,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListProjects.html
    */
   public toListProjects() {
-    this.to('databrew:ListProjects');
-    return this;
+    return this.to('ListProjects');
   }
 
   /**
@@ -302,8 +281,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListRecipeVersions.html
    */
   public toListRecipeVersions() {
-    this.to('databrew:ListRecipeVersions');
-    return this;
+    return this.to('ListRecipeVersions');
   }
 
   /**
@@ -314,8 +292,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListRecipes.html
    */
   public toListRecipes() {
-    this.to('databrew:ListRecipes');
-    return this;
+    return this.to('ListRecipes');
   }
 
   /**
@@ -326,8 +303,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListSchedules.html
    */
   public toListSchedules() {
-    this.to('databrew:ListSchedules');
-    return this;
+    return this.to('ListSchedules');
   }
 
   /**
@@ -338,8 +314,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('databrew:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -350,8 +325,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_PublishRecipe.html
    */
   public toPublishRecipe() {
-    this.to('databrew:PublishRecipe');
-    return this;
+    return this.to('PublishRecipe');
   }
 
   /**
@@ -362,8 +336,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_SendProjectSessionAction.html
    */
   public toSendProjectSessionAction() {
-    this.to('databrew:SendProjectSessionAction');
-    return this;
+    return this.to('SendProjectSessionAction');
   }
 
   /**
@@ -374,8 +347,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_StartJobRun.html
    */
   public toStartJobRun() {
-    this.to('databrew:StartJobRun');
-    return this;
+    return this.to('StartJobRun');
   }
 
   /**
@@ -386,8 +358,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_StartProjectSession.html
    */
   public toStartProjectSession() {
-    this.to('databrew:StartProjectSession');
-    return this;
+    return this.to('StartProjectSession');
   }
 
   /**
@@ -398,8 +369,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_StopJobRun.html
    */
   public toStopJobRun() {
-    this.to('databrew:StopJobRun');
-    return this;
+    return this.to('StopJobRun');
   }
 
   /**
@@ -414,8 +384,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_TagResource.html
    */
   public toTagResource() {
-    this.to('databrew:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -429,8 +398,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('databrew:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -441,8 +409,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_UpdateDataset.html
    */
   public toUpdateDataset() {
-    this.to('databrew:UpdateDataset');
-    return this;
+    return this.to('UpdateDataset');
   }
 
   /**
@@ -453,8 +420,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_UpdateProfileJob.html
    */
   public toUpdateProfileJob() {
-    this.to('databrew:UpdateProfileJob');
-    return this;
+    return this.to('UpdateProfileJob');
   }
 
   /**
@@ -465,8 +431,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_UpdateProject.html
    */
   public toUpdateProject() {
-    this.to('databrew:UpdateProject');
-    return this;
+    return this.to('UpdateProject');
   }
 
   /**
@@ -477,8 +442,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_UpdateRecipe.html
    */
   public toUpdateRecipe() {
-    this.to('databrew:UpdateRecipe');
-    return this;
+    return this.to('UpdateRecipe');
   }
 
   /**
@@ -489,8 +453,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_UpdateRecipeJob.html
    */
   public toUpdateRecipeJob() {
-    this.to('databrew:UpdateRecipeJob');
-    return this;
+    return this.to('UpdateRecipeJob');
   }
 
   /**
@@ -501,8 +464,7 @@ export class Databrew extends PolicyStatement {
    * https://docs.aws.amazon.com/databrew/latest/dg/API_UpdateSchedule.html
    */
   public toUpdateSchedule() {
-    this.to('databrew:UpdateSchedule');
-    return this;
+    return this.to('UpdateSchedule');
   }
 
   protected accessLevelList: AccessLevelList = {

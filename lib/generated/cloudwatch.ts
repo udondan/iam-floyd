@@ -26,8 +26,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html
    */
   public toDeleteAlarms() {
-    this.to('cloudwatch:DeleteAlarms');
-    return this;
+    return this.to('DeleteAlarms');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAnomalyDetector.html
    */
   public toDeleteAnomalyDetector() {
-    this.to('cloudwatch:DeleteAnomalyDetector');
-    return this;
+    return this.to('DeleteAnomalyDetector');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteDashboards.html
    */
   public toDeleteDashboards() {
-    this.to('cloudwatch:DeleteDashboards');
-    return this;
+    return this.to('DeleteDashboards');
   }
 
   /**
@@ -62,8 +59,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteInsightRules.html
    */
   public toDeleteInsightRules() {
-    this.to('cloudwatch:DeleteInsightRules');
-    return this;
+    return this.to('DeleteInsightRules');
   }
 
   /**
@@ -74,8 +70,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html
    */
   public toDescribeAlarmHistory() {
-    this.to('cloudwatch:DescribeAlarmHistory');
-    return this;
+    return this.to('DescribeAlarmHistory');
   }
 
   /**
@@ -86,8 +81,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html
    */
   public toDescribeAlarms() {
-    this.to('cloudwatch:DescribeAlarms');
-    return this;
+    return this.to('DescribeAlarms');
   }
 
   /**
@@ -98,8 +92,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmsForMetric.html
    */
   public toDescribeAlarmsForMetric() {
-    this.to('cloudwatch:DescribeAlarmsForMetric');
-    return this;
+    return this.to('DescribeAlarmsForMetric');
   }
 
   /**
@@ -110,8 +103,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAnomalyDetectors.html
    */
   public toDescribeAnomalyDetectors() {
-    this.to('cloudwatch:DescribeAnomalyDetectors');
-    return this;
+    return this.to('DescribeAnomalyDetectors');
   }
 
   /**
@@ -122,8 +114,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html
    */
   public toDescribeInsightRules() {
-    this.to('cloudwatch:DescribeInsightRules');
-    return this;
+    return this.to('DescribeInsightRules');
   }
 
   /**
@@ -134,8 +125,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableAlarmActions.html
    */
   public toDisableAlarmActions() {
-    this.to('cloudwatch:DisableAlarmActions');
-    return this;
+    return this.to('DisableAlarmActions');
   }
 
   /**
@@ -146,8 +136,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableInsightRules.html
    */
   public toDisableInsightRules() {
-    this.to('cloudwatch:DisableInsightRules');
-    return this;
+    return this.to('DisableInsightRules');
   }
 
   /**
@@ -158,8 +147,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableAlarmActions.html
    */
   public toEnableAlarmActions() {
-    this.to('cloudwatch:EnableAlarmActions');
-    return this;
+    return this.to('EnableAlarmActions');
   }
 
   /**
@@ -170,8 +158,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableInsightRules.html
    */
   public toEnableInsightRules() {
-    this.to('cloudwatch:EnableInsightRules');
-    return this;
+    return this.to('EnableInsightRules');
   }
 
   /**
@@ -182,8 +169,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDashboard.html
    */
   public toGetDashboard() {
-    this.to('cloudwatch:GetDashboard');
-    return this;
+    return this.to('GetDashboard');
   }
 
   /**
@@ -194,8 +180,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html
    */
   public toGetInsightRuleReport() {
-    this.to('cloudwatch:GetInsightRuleReport');
-    return this;
+    return this.to('GetInsightRuleReport');
   }
 
   /**
@@ -206,8 +191,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html
    */
   public toGetMetricData() {
-    this.to('cloudwatch:GetMetricData');
-    return this;
+    return this.to('GetMetricData');
   }
 
   /**
@@ -218,8 +202,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html
    */
   public toGetMetricStatistics() {
-    this.to('cloudwatch:GetMetricStatistics');
-    return this;
+    return this.to('GetMetricStatistics');
   }
 
   /**
@@ -230,8 +213,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricWidgetImage.html
    */
   public toGetMetricWidgetImage() {
-    this.to('cloudwatch:GetMetricWidgetImage');
-    return this;
+    return this.to('GetMetricWidgetImage');
   }
 
   /**
@@ -242,8 +224,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListDashboards.html
    */
   public toListDashboards() {
-    this.to('cloudwatch:ListDashboards');
-    return this;
+    return this.to('ListDashboards');
   }
 
   /**
@@ -254,8 +235,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html
    */
   public toListMetrics() {
-    this.to('cloudwatch:ListMetrics');
-    return this;
+    return this.to('ListMetrics');
   }
 
   /**
@@ -266,8 +246,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
-    this.to('cloudwatch:ListTagsForResource');
-    return this;
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -278,8 +257,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutAnomalyDetector.html
    */
   public toPutAnomalyDetector() {
-    this.to('cloudwatch:PutAnomalyDetector');
-    return this;
+    return this.to('PutAnomalyDetector');
   }
 
   /**
@@ -294,8 +272,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutCompositeAlarm.html
    */
   public toPutCompositeAlarm() {
-    this.to('cloudwatch:PutCompositeAlarm');
-    return this;
+    return this.to('PutCompositeAlarm');
   }
 
   /**
@@ -306,8 +283,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutDashboard.html
    */
   public toPutDashboard() {
-    this.to('cloudwatch:PutDashboard');
-    return this;
+    return this.to('PutDashboard');
   }
 
   /**
@@ -322,8 +298,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutInsightRule.html
    */
   public toPutInsightRule() {
-    this.to('cloudwatch:PutInsightRule');
-    return this;
+    return this.to('PutInsightRule');
   }
 
   /**
@@ -338,8 +313,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html
    */
   public toPutMetricAlarm() {
-    this.to('cloudwatch:PutMetricAlarm');
-    return this;
+    return this.to('PutMetricAlarm');
   }
 
   /**
@@ -353,8 +327,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricData.html
    */
   public toPutMetricData() {
-    this.to('cloudwatch:PutMetricData');
-    return this;
+    return this.to('PutMetricData');
   }
 
   /**
@@ -365,8 +338,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_SetAlarmState.html
    */
   public toSetAlarmState() {
-    this.to('cloudwatch:SetAlarmState');
-    return this;
+    return this.to('SetAlarmState');
   }
 
   /**
@@ -381,8 +353,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
-    this.to('cloudwatch:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -396,8 +367,7 @@ export class Cloudwatch extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
-    this.to('cloudwatch:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -514,6 +484,6 @@ export class Cloudwatch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifNamespace(value: string | string[], operator?: Operator | string) {
-    return this.if(`cloudwatch:namespace`, value, operator || 'StringLike');
+    return this.if(`namespace`, value, operator || 'StringLike');
   }
 }

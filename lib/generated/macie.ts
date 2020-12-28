@@ -26,8 +26,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations-accept.html
    */
   public toAcceptInvitation() {
-    this.to('macie2:AcceptInvitation');
-    return this;
+    return this.to('AcceptInvitation');
   }
 
   /**
@@ -38,8 +37,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-archive.html
    */
   public toArchiveFindings() {
-    this.to('macie2:ArchiveFindings');
-    return this;
+    return this.to('ArchiveFindings');
   }
 
   /**
@@ -50,8 +48,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-get.html
    */
   public toBatchGetCustomDataIdentifiers() {
-    this.to('macie2:BatchGetCustomDataIdentifiers');
-    return this;
+    return this.to('BatchGetCustomDataIdentifiers');
   }
 
   /**
@@ -66,8 +63,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/jobs.html
    */
   public toCreateClassificationJob() {
-    this.to('macie2:CreateClassificationJob');
-    return this;
+    return this.to('CreateClassificationJob');
   }
 
   /**
@@ -82,8 +78,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers.html
    */
   public toCreateCustomDataIdentifier() {
-    this.to('macie2:CreateCustomDataIdentifier');
-    return this;
+    return this.to('CreateCustomDataIdentifier');
   }
 
   /**
@@ -98,8 +93,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters.html
    */
   public toCreateFindingsFilter() {
-    this.to('macie2:CreateFindingsFilter');
-    return this;
+    return this.to('CreateFindingsFilter');
   }
 
   /**
@@ -110,8 +104,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations.html
    */
   public toCreateInvitations() {
-    this.to('macie2:CreateInvitations');
-    return this;
+    return this.to('CreateInvitations');
   }
 
   /**
@@ -126,8 +119,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/members.html
    */
   public toCreateMember() {
-    this.to('macie2:CreateMember');
-    return this;
+    return this.to('CreateMember');
   }
 
   /**
@@ -138,8 +130,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-sample.html
    */
   public toCreateSampleFindings() {
-    this.to('macie2:CreateSampleFindings');
-    return this;
+    return this.to('CreateSampleFindings');
   }
 
   /**
@@ -150,8 +141,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations-decline.html
    */
   public toDeclineInvitations() {
-    this.to('macie2:DeclineInvitations');
-    return this;
+    return this.to('DeclineInvitations');
   }
 
   /**
@@ -162,8 +152,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-id.html
    */
   public toDeleteCustomDataIdentifier() {
-    this.to('macie2:DeleteCustomDataIdentifier');
-    return this;
+    return this.to('DeleteCustomDataIdentifier');
   }
 
   /**
@@ -174,8 +163,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters-id.html
    */
   public toDeleteFindingsFilter() {
-    this.to('macie2:DeleteFindingsFilter');
-    return this;
+    return this.to('DeleteFindingsFilter');
   }
 
   /**
@@ -186,8 +174,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations-delete.html
    */
   public toDeleteInvitations() {
-    this.to('macie2:DeleteInvitations');
-    return this;
+    return this.to('DeleteInvitations');
   }
 
   /**
@@ -198,8 +185,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/members-id.html
    */
   public toDeleteMember() {
-    this.to('macie2:DeleteMember');
-    return this;
+    return this.to('DeleteMember');
   }
 
   /**
@@ -210,8 +196,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html
    */
   public toDescribeBuckets() {
-    this.to('macie2:DescribeBuckets');
-    return this;
+    return this.to('DescribeBuckets');
   }
 
   /**
@@ -222,8 +207,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/jobs-jobid.html
    */
   public toDescribeClassificationJob() {
-    this.to('macie2:DescribeClassificationJob');
-    return this;
+    return this.to('DescribeClassificationJob');
   }
 
   /**
@@ -234,8 +218,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin-configuration.html
    */
   public toDescribeOrganizationConfiguration() {
-    this.to('macie2:DescribeOrganizationConfiguration');
-    return this;
+    return this.to('DescribeOrganizationConfiguration');
   }
 
   /**
@@ -246,8 +229,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie.html
    */
   public toDisableMacie() {
-    this.to('macie2:DisableMacie');
-    return this;
+    return this.to('DisableMacie');
   }
 
   /**
@@ -258,8 +240,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin.html
    */
   public toDisableOrganizationAdminAccount() {
-    this.to('macie2:DisableOrganizationAdminAccount');
-    return this;
+    return this.to('DisableOrganizationAdminAccount');
   }
 
   /**
@@ -270,8 +251,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/master-disassociate.html
    */
   public toDisassociateFromMasterAccount() {
-    this.to('macie2:DisassociateFromMasterAccount');
-    return this;
+    return this.to('DisassociateFromMasterAccount');
   }
 
   /**
@@ -282,8 +262,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/members-disassociate-id.html
    */
   public toDisassociateMember() {
-    this.to('macie2:DisassociateMember');
-    return this;
+    return this.to('DisassociateMember');
   }
 
   /**
@@ -294,8 +273,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie.html
    */
   public toEnableMacie() {
-    this.to('macie2:EnableMacie');
-    return this;
+    return this.to('EnableMacie');
   }
 
   /**
@@ -306,8 +284,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin.html
    */
   public toEnableOrganizationAdminAccount() {
-    this.to('macie2:EnableOrganizationAdminAccount');
-    return this;
+    return this.to('EnableOrganizationAdminAccount');
   }
 
   /**
@@ -318,8 +295,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3-statistics.html
    */
   public toGetBucketStatistics() {
-    this.to('macie2:GetBucketStatistics');
-    return this;
+    return this.to('GetBucketStatistics');
   }
 
   /**
@@ -330,8 +306,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/classification-export-configuration.html
    */
   public toGetClassificationExportConfiguration() {
-    this.to('macie2:GetClassificationExportConfiguration');
-    return this;
+    return this.to('GetClassificationExportConfiguration');
   }
 
   /**
@@ -342,8 +317,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-id.html
    */
   public toGetCustomDataIdentifier() {
-    this.to('macie2:GetCustomDataIdentifier');
-    return this;
+    return this.to('GetCustomDataIdentifier');
   }
 
   /**
@@ -354,8 +328,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-statistics.html
    */
   public toGetFindingStatistics() {
-    this.to('macie2:GetFindingStatistics');
-    return this;
+    return this.to('GetFindingStatistics');
   }
 
   /**
@@ -366,8 +339,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-describe.html
    */
   public toGetFindings() {
-    this.to('macie2:GetFindings');
-    return this;
+    return this.to('GetFindings');
   }
 
   /**
@@ -378,8 +350,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters-id.html
    */
   public toGetFindingsFilter() {
-    this.to('macie2:GetFindingsFilter');
-    return this;
+    return this.to('GetFindingsFilter');
   }
 
   /**
@@ -390,8 +361,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations-count.html
    */
   public toGetInvitationsCount() {
-    this.to('macie2:GetInvitationsCount');
-    return this;
+    return this.to('GetInvitationsCount');
   }
 
   /**
@@ -402,8 +372,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie.html
    */
   public toGetMacieSession() {
-    this.to('macie2:GetMacieSession');
-    return this;
+    return this.to('GetMacieSession');
   }
 
   /**
@@ -414,8 +383,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/master.html
    */
   public toGetMasterAccount() {
-    this.to('macie2:GetMasterAccount');
-    return this;
+    return this.to('GetMasterAccount');
   }
 
   /**
@@ -426,8 +394,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/members-id.html
    */
   public toGetMember() {
-    this.to('macie2:GetMember');
-    return this;
+    return this.to('GetMember');
   }
 
   /**
@@ -438,8 +405,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/usage-statistics.html
    */
   public toGetUsageStatistics() {
-    this.to('macie2:GetUsageStatistics');
-    return this;
+    return this.to('GetUsageStatistics');
   }
 
   /**
@@ -450,8 +416,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/usage.html
    */
   public toGetUsageTotals() {
-    this.to('macie2:GetUsageTotals');
-    return this;
+    return this.to('GetUsageTotals');
   }
 
   /**
@@ -462,8 +427,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/jobs-list.html
    */
   public toListClassificationJobs() {
-    this.to('macie2:ListClassificationJobs');
-    return this;
+    return this.to('ListClassificationJobs');
   }
 
   /**
@@ -474,8 +438,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-list.html
    */
   public toListCustomDataIdentifiers() {
-    this.to('macie2:ListCustomDataIdentifiers');
-    return this;
+    return this.to('ListCustomDataIdentifiers');
   }
 
   /**
@@ -486,8 +449,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings.html
    */
   public toListFindings() {
-    this.to('macie2:ListFindings');
-    return this;
+    return this.to('ListFindings');
   }
 
   /**
@@ -498,8 +460,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters.html
    */
   public toListFindingsFilters() {
-    this.to('macie2:ListFindingsFilters');
-    return this;
+    return this.to('ListFindingsFilters');
   }
 
   /**
@@ -510,8 +471,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations.html
    */
   public toListInvitations() {
-    this.to('macie2:ListInvitations');
-    return this;
+    return this.to('ListInvitations');
   }
 
   /**
@@ -522,8 +482,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/members.html
    */
   public toListMembers() {
-    this.to('macie2:ListMembers');
-    return this;
+    return this.to('ListMembers');
   }
 
   /**
@@ -534,8 +493,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin.html
    */
   public toListOrganizationAdminAccounts() {
-    this.to('macie2:ListOrganizationAdminAccounts');
-    return this;
+    return this.to('ListOrganizationAdminAccounts');
   }
 
   /**
@@ -546,8 +504,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/tags-resourcearn.html
    */
   public toListTagsForResources() {
-    this.to('macie2:ListTagsForResources');
-    return this;
+    return this.to('ListTagsForResources');
   }
 
   /**
@@ -558,8 +515,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/classification-export-configuration.html
    */
   public toPutClassificationExportConfiguration() {
-    this.to('macie2:PutClassificationExportConfiguration');
-    return this;
+    return this.to('PutClassificationExportConfiguration');
   }
 
   /**
@@ -574,8 +530,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/tags-resourcearn.html
    */
   public toTagResource() {
-    this.to('macie2:TagResource');
-    return this;
+    return this.to('TagResource');
   }
 
   /**
@@ -586,8 +541,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-test.html
    */
   public toTestCustomDataIdentifier() {
-    this.to('macie2:TestCustomDataIdentifier');
-    return this;
+    return this.to('TestCustomDataIdentifier');
   }
 
   /**
@@ -598,8 +552,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-unarchive.html
    */
   public toUnarchiveFindings() {
-    this.to('macie2:UnarchiveFindings');
-    return this;
+    return this.to('UnarchiveFindings');
   }
 
   /**
@@ -613,8 +566,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/tags-resourcearn.html
    */
   public toUntagResource() {
-    this.to('macie2:UntagResource');
-    return this;
+    return this.to('UntagResource');
   }
 
   /**
@@ -629,8 +581,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/jobs-jobid.html
    */
   public toUpdateClassificationJob() {
-    this.to('macie2:UpdateClassificationJob');
-    return this;
+    return this.to('UpdateClassificationJob');
   }
 
   /**
@@ -645,8 +596,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters-id.html
    */
   public toUpdateFindingsFilter() {
-    this.to('macie2:UpdateFindingsFilter');
-    return this;
+    return this.to('UpdateFindingsFilter');
   }
 
   /**
@@ -657,8 +607,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie.html
    */
   public toUpdateMacieSession() {
-    this.to('macie2:UpdateMacieSession');
-    return this;
+    return this.to('UpdateMacieSession');
   }
 
   /**
@@ -669,8 +618,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie-members-id.html
    */
   public toUpdateMemberSession() {
-    this.to('macie2:UpdateMemberSession');
-    return this;
+    return this.to('UpdateMemberSession');
   }
 
   /**
@@ -681,8 +629,7 @@ export class Macie2 extends PolicyStatement {
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin-configuration.html
    */
   public toUpdateOrganizationConfiguration() {
-    this.to('macie2:UpdateOrganizationConfiguration');
-    return this;
+    return this.to('UpdateOrganizationConfiguration');
   }
 
   protected accessLevelList: AccessLevelList = {
