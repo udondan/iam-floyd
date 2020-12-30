@@ -1,7 +1,8 @@
 {
   "scripts": {
     "pregenerate": "find lib bin -name \"*.js\" -type f -exec rm -vf {} \\;",
-    "generate": "tsc bin/*.ts lib/generator/*.ts && node bin/generate.js",
+    "generate": "tsc bin/generate.ts lib/generator/*.ts && node bin/generate.js",
+    "index-managed-policies": "tsc bin/index-managed-policies.ts lib/generator/*.ts && node bin/index-managed-policies.js",
     "build": "jsii --silence-warnings reserved-word",
     "build:watch": "jsii -w",
     "package": "jsii-pacmak",

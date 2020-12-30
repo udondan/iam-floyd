@@ -1,0 +1,53 @@
+---
+name: Index managed policies
+
+on:
+  schedule:
+    # Why 0:57 not and 1:00? Because most hourly jobs probably run at the hour.
+    # Keeping concurrent jobs low reduces hardware requirements, being nice to
+    # GitHub and the environment.
+    - cron: 57 0 * * *
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Index managed policies
+        uses: udondan/cdk-nodejs@v0.4.0
+        with:
+          args: make index-managed-policies
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Check for changes
+        id: changes
+        run: |
+          set -x +e
+          git stash -- package-lock.json
+          git diff
+          git diff --quiet
+          echo ::set-output name=CHANGED::$?
+
+      - name: Configure git
+        run: |
+          set -x
+          git config --local user.email "${{ secrets.RELEASE_MAIL }}"
+          git config --local user.name "udondan"
+        if: steps.changes.outputs.CHANGED == '1'
+
+      - name: Commit and push all changes
+        run: |
+          set -x
+          rm -rf package-lock.json node_modules tsconfig.json &&
+          git add * &&
+          git commit -m "Index latest state of AWS managed policies" &&
+          git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
+        if: steps.changes.outputs.CHANGED == '1'

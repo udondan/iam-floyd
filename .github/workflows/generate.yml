@@ -29,16 +29,12 @@ jobs:
         uses: udondan/cdk-nodejs@v0.4.0
         with:
           args: make generate
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         if: ${{ github.event_name == 'schedule' }}
 
       - name: Generate code
         uses: udondan/cdk-nodejs@v0.4.0
         with:
           args: make ${{ github.event.inputs.command }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         if: ${{ github.event_name == 'workflow_dispatch' }}
 
       - name: Check for changes

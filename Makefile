@@ -20,6 +20,11 @@ generate-force:
 	@NOCACHE=1 npm run generate
 	@find lib bin -name "*.js" -type f -exec rm -vf {} \;
 
+index-managed-policies:
+	@echo -e "$(TARGET_COLOR)Running index-managed-policies$(NO_COLOR)"
+	@npm run index-managed-policies
+	@find lib bin -name "*.js" -type f -exec rm -vf {} \;
+
 package: build
 	@echo -e "$(TARGET_COLOR)Running package$(NO_COLOR)"
 	@npm run package
