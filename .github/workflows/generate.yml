@@ -30,12 +30,18 @@ jobs:
         with:
           args: make generate
         if: ${{ github.event_name == 'schedule' }}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Generate code
         uses: udondan/cdk-nodejs@v0.4.0
         with:
           args: make ${{ github.event.inputs.command }}
         if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Check for changes
         id: changes
