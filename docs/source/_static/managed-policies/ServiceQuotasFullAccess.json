@@ -7,6 +7,7 @@
             "autoscaling:DescribeAccountLimits",
             "cloudformation:DescribeAccountLimits",
             "cloudwatch:DescribeAlarmsForMetric",
+            "cloudwatch:DescribeAlarms",
             "cloudwatch:GetMetricData",
             "cloudwatch:GetMetricStatistics",
             "cloudwatch:PutMetricAlarm",
@@ -19,6 +20,8 @@
             "organizations:ListAWSServiceAccessForOrganization",
             "rds:DescribeAccountAttributes",
             "route53:GetAccountLimit",
+            "tag:GetTagKeys",
+            "tag:GetTagValues",
             "servicequotas:*"
          ],
          "Resource":"*"
