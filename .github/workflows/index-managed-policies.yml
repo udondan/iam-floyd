@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  generate:
+  index:
     runs-on: ubuntu-latest
 
     steps:
