@@ -14,15 +14,15 @@ imagebuilder:DeleteImagePipeline;Write
 imagebuilder:DeleteImageRecipe;Write
 imagebuilder:DeleteInfrastructureConfiguration;Write
 imagebuilder:GetComponent;Read
-imagebuilder:GetComponentPolicy;Permissions management
+imagebuilder:GetComponentPolicy;Read
 imagebuilder:GetContainerRecipe;Read
-imagebuilder:GetContainerRecipePolicy;Permissions management
+imagebuilder:GetContainerRecipePolicy;Read
 imagebuilder:GetDistributionConfiguration;Read
 imagebuilder:GetImage;Read
 imagebuilder:GetImagePipeline;Read
-imagebuilder:GetImagePolicy;Permissions management
+imagebuilder:GetImagePolicy;Read
 imagebuilder:GetImageRecipe;Read
-imagebuilder:GetImageRecipePolicy;Permissions management
+imagebuilder:GetImageRecipePolicy;Read
 imagebuilder:GetInfrastructureConfiguration;Read
 imagebuilder:ListComponentBuildVersions;List
 imagebuilder:ListComponents;List

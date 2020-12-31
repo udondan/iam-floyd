@@ -243,7 +243,7 @@ export class Imagebuilder extends PolicyStatement {
   /**
    * View the resource policy associated with a component
    *
-   * Access Level: Permissions management
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetComponentPolicy.html
    */
@@ -265,7 +265,7 @@ export class Imagebuilder extends PolicyStatement {
   /**
    * View the resource policy associated with a container recipe
    *
-   * Access Level: Permissions management
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetContainerRecipePolicy.html
    */
@@ -312,7 +312,7 @@ export class Imagebuilder extends PolicyStatement {
   /**
    * View the resource policy associated with an image
    *
-   * Access Level: Permissions management
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImagePolicy.html
    */
@@ -334,7 +334,7 @@ export class Imagebuilder extends PolicyStatement {
   /**
    * View the resource policy associated with an image recipe
    *
-   * Access Level: Permissions management
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImageRecipePolicy.html
    */
@@ -631,23 +631,17 @@ export class Imagebuilder extends PolicyStatement {
     ],
     "Read": [
       "GetComponent",
+      "GetComponentPolicy",
       "GetContainerRecipe",
+      "GetContainerRecipePolicy",
       "GetDistributionConfiguration",
       "GetImage",
       "GetImagePipeline",
+      "GetImagePolicy",
       "GetImageRecipe",
+      "GetImageRecipePolicy",
       "GetInfrastructureConfiguration",
       "ListTagsForResource"
-    ],
-    "Permissions management": [
-      "GetComponentPolicy",
-      "GetContainerRecipePolicy",
-      "GetImagePolicy",
-      "GetImageRecipePolicy",
-      "PutComponentPolicy",
-      "PutContainerRecipePolicy",
-      "PutImagePolicy",
-      "PutImageRecipePolicy"
     ],
     "List": [
       "ListComponentBuildVersions",
@@ -660,6 +654,12 @@ export class Imagebuilder extends PolicyStatement {
       "ListImageRecipes",
       "ListImages",
       "ListInfrastructureConfigurations"
+    ],
+    "Permissions management": [
+      "PutComponentPolicy",
+      "PutContainerRecipePolicy",
+      "PutImagePolicy",
+      "PutImageRecipePolicy"
     ],
     "Tagging": [
       "TagResource",

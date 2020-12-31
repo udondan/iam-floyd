@@ -2,21 +2,21 @@ iotsitewise:AssociateAssets;Write
 iotsitewise:BatchAssociateProjectAssets;Write
 iotsitewise:BatchDisassociateProjectAssets;Write
 iotsitewise:BatchPutAssetPropertyValue;Write
-iotsitewise:CreateAccessPolicy;Permissions management
+iotsitewise:CreateAccessPolicy;Write
 iotsitewise:CreateAsset;Write
 iotsitewise:CreateAssetModel;Write
 iotsitewise:CreateDashboard;Write
 iotsitewise:CreateGateway;Write
 iotsitewise:CreatePortal;Write
 iotsitewise:CreateProject;Write
-iotsitewise:DeleteAccessPolicy;Permissions management
+iotsitewise:DeleteAccessPolicy;Write
 iotsitewise:DeleteAsset;Write
 iotsitewise:DeleteAssetModel;Write
 iotsitewise:DeleteDashboard;Write
 iotsitewise:DeleteGateway;Write
 iotsitewise:DeletePortal;Write
 iotsitewise:DeleteProject;Write
-iotsitewise:DescribeAccessPolicy;Permissions management
+iotsitewise:DescribeAccessPolicy;Read
 iotsitewise:DescribeAsset;Read
 iotsitewise:DescribeAssetModel;Read
 iotsitewise:DescribeAssetProperty;Read
@@ -30,7 +30,7 @@ iotsitewise:DisassociateAssets;Write
 iotsitewise:GetAssetPropertyAggregates;Read
 iotsitewise:GetAssetPropertyValue;Read
 iotsitewise:GetAssetPropertyValueHistory;Read
-iotsitewise:ListAccessPolicies;Permissions management
+iotsitewise:ListAccessPolicies;List
 iotsitewise:ListAssetModels;List
 iotsitewise:ListAssetRelationships;List
 iotsitewise:ListAssets;List
@@ -44,7 +44,7 @@ iotsitewise:ListTagsForResource;Read
 iotsitewise:PutLoggingOptions;Write
 iotsitewise:TagResource;Tagging
 iotsitewise:UntagResource;Tagging
-iotsitewise:UpdateAccessPolicy;Permissions management
+iotsitewise:UpdateAccessPolicy;Write
 iotsitewise:UpdateAsset;Write
 iotsitewise:UpdateAssetModel;Write
 iotsitewise:UpdateAssetProperty;Write

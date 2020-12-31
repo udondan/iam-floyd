@@ -65,7 +65,7 @@ export class Iotsitewise extends PolicyStatement {
   /**
    * Grants permission to create an access policy for a portal or a project
    *
-   * Access Level: Permissions management
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -174,7 +174,7 @@ export class Iotsitewise extends PolicyStatement {
   /**
    * Grants permission to delete an access policy
    *
-   * Access Level: Permissions management
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAccessPolicy.html
    */
@@ -254,7 +254,7 @@ export class Iotsitewise extends PolicyStatement {
   /**
    * Grants permission to describe an access policy
    *
-   * Access Level: Permissions management
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAccessPolicy.html
    */
@@ -408,7 +408,7 @@ export class Iotsitewise extends PolicyStatement {
   /**
    * Grants permission to list all access policies for an identity or a resource
    *
-   * Access Level: Permissions management
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAccessPolicies.html
    */
@@ -572,7 +572,7 @@ export class Iotsitewise extends PolicyStatement {
   /**
    * Grants permission to update an access policy
    *
-   * Access Level: Permissions management
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAccessPolicy.html
    */
@@ -674,12 +674,14 @@ export class Iotsitewise extends PolicyStatement {
       "BatchAssociateProjectAssets",
       "BatchDisassociateProjectAssets",
       "BatchPutAssetPropertyValue",
+      "CreateAccessPolicy",
       "CreateAsset",
       "CreateAssetModel",
       "CreateDashboard",
       "CreateGateway",
       "CreatePortal",
       "CreateProject",
+      "DeleteAccessPolicy",
       "DeleteAsset",
       "DeleteAssetModel",
       "DeleteDashboard",
@@ -688,6 +690,7 @@ export class Iotsitewise extends PolicyStatement {
       "DeleteProject",
       "DisassociateAssets",
       "PutLoggingOptions",
+      "UpdateAccessPolicy",
       "UpdateAsset",
       "UpdateAssetModel",
       "UpdateAssetProperty",
@@ -697,14 +700,8 @@ export class Iotsitewise extends PolicyStatement {
       "UpdatePortal",
       "UpdateProject"
     ],
-    "Permissions management": [
-      "CreateAccessPolicy",
-      "DeleteAccessPolicy",
-      "DescribeAccessPolicy",
-      "ListAccessPolicies",
-      "UpdateAccessPolicy"
-    ],
     "Read": [
+      "DescribeAccessPolicy",
       "DescribeAsset",
       "DescribeAssetModel",
       "DescribeAssetProperty",
@@ -720,6 +717,7 @@ export class Iotsitewise extends PolicyStatement {
       "ListTagsForResource"
     ],
     "List": [
+      "ListAccessPolicies",
       "ListAssetModels",
       "ListAssetRelationships",
       "ListAssets",

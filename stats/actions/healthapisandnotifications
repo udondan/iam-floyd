@@ -8,6 +8,6 @@ health:DescribeEventDetailsForOrganization;Read
 health:DescribeEventTypes;Read
 health:DescribeEvents;Read
 health:DescribeEventsForOrganization;Read
-health:DescribeHealthServiceStatusForOrganization;Permissions management
+health:DescribeHealthServiceStatusForOrganization;Read
 health:DisableHealthServiceAccessForOrganization;Permissions management
 health:EnableHealthServiceAccessForOrganization;Permissions management

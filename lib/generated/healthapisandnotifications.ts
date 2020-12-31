@@ -151,7 +151,7 @@ export class Health extends PolicyStatement {
   /**
    * Returns the status of enabling or disabling the Organizational View feature
    *
-   * Access Level: Permissions management
+   * Access Level: Read
    *
    * Dependent actions:
    * - organizations:ListAccounts
@@ -204,10 +204,10 @@ export class Health extends PolicyStatement {
       "DescribeEventDetailsForOrganization",
       "DescribeEventTypes",
       "DescribeEvents",
-      "DescribeEventsForOrganization"
+      "DescribeEventsForOrganization",
+      "DescribeHealthServiceStatusForOrganization"
     ],
     "Permissions management": [
-      "DescribeHealthServiceStatusForOrganization",
       "DisableHealthServiceAccessForOrganization",
       "EnableHealthServiceAccessForOrganization"
     ]

@@ -348,8 +348,8 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListReceivedLicenses.html
    */
-  public toListReceivedLicensess() {
-    return this.to('ListReceivedLicensess');
+  public toListReceivedLicenses() {
+    return this.to('ListReceivedLicenses');
   }
 
   /**
@@ -508,7 +508,7 @@ export class LicenseManager extends PolicyStatement {
       "ListLicenseVersions",
       "ListLicenses",
       "ListReceivedGrants",
-      "ListReceivedLicensess",
+      "ListReceivedLicenses",
       "ListResourceInventory",
       "ListTagsForResource",
       "ListTokens",

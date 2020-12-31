@@ -27,7 +27,7 @@ license-manager:ListLicenseSpecificationsForResource;List
 license-manager:ListLicenseVersions;List
 license-manager:ListLicenses;List
 license-manager:ListReceivedGrants;List
-license-manager:ListReceivedLicensess;List
+license-manager:ListReceivedLicenses;List
 license-manager:ListResourceInventory;List
 license-manager:ListTagsForResource;List
 license-manager:ListTokens;List

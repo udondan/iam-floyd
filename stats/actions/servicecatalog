@@ -81,13 +81,17 @@ servicecatalog:ListServiceActions;List
 servicecatalog:ListServiceActionsForProvisioningArtifact;List
 servicecatalog:ListStackInstancesForProvisionedProduct;List
 servicecatalog:ListTagOptions;List
+servicecatalog:ListTagsForResource;List
 servicecatalog:ProvisionProduct;Write
 servicecatalog:RejectPortfolioShare;Write
 servicecatalog:ScanProvisionedProducts;List
 servicecatalog:SearchProducts;List
 servicecatalog:SearchProductsAsAdmin;List
 servicecatalog:SearchProvisionedProducts;List
+servicecatalog:SyncResource;Write
+servicecatalog:TagResource;Tagging
 servicecatalog:TerminateProvisionedProduct;Write
+servicecatalog:UntagResource;Tagging
 servicecatalog:UpdateApplication;Write
 servicecatalog:UpdateAttributeGroup;Write
 servicecatalog:UpdateConstraint;Write

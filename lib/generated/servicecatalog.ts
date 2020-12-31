@@ -34,7 +34,7 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateAttributeGroup.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_AssociateAttributeGroup.html
    */
   public toAssociateAttributeGroup() {
     return this.to('AssociateAttributeGroup');
@@ -78,7 +78,7 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateResource.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_AssociateResource.html
    */
   public toAssociateResource() {
     return this.to('AssociateResource');
@@ -148,7 +148,7 @@ export class Servicecatalog extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateApplication.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_CreateApplication.html
    */
   public toCreateApplication() {
     return this.to('CreateApplication');
@@ -163,7 +163,7 @@ export class Servicecatalog extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateAttributeGroup.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_CreateAttributeGroup.html
    */
   public toCreateAttributeGroup() {
     return this.to('CreateAttributeGroup');
@@ -270,7 +270,7 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteApplication.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_DeleteApplication.html
    */
   public toDeleteApplication() {
     return this.to('DeleteApplication');
@@ -281,7 +281,7 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteAttributeGroup.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_DeleteAttributeGroup.html
    */
   public toDeleteAttributeGroup() {
     return this.to('DeleteAttributeGroup');
@@ -561,7 +561,7 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateAttributeGroup.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_DisassociateAttributeGroup.html
    */
   public toDisassociateAttributeGroup() {
     return this.to('DisassociateAttributeGroup');
@@ -605,7 +605,7 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateResource.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_DisassociateResource.html
    */
   public toDisassociateResource() {
     return this.to('DisassociateResource');
@@ -682,7 +682,7 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_GetApplication.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_GetApplication.html
    */
   public toGetApplication() {
     return this.to('GetApplication');
@@ -693,7 +693,7 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_GetAttributeGroup.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_GetAttributeGroup.html
    */
   public toGetAttributeGroup() {
     return this.to('GetAttributeGroup');
@@ -726,7 +726,7 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListApplications.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_ListApplications.html
    */
   public toListApplications() {
     return this.to('ListApplications');
@@ -737,7 +737,7 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListAssociatedAttributeGroups.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_ListAssociatedAttributeGroups.html
    */
   public toListAssociatedAttributeGroups() {
     return this.to('ListAssociatedAttributeGroups');
@@ -748,7 +748,7 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListAssociatedResources.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_ListAssociatedResources.html
    */
   public toListAssociatedResources() {
     return this.to('ListAssociatedResources');
@@ -759,7 +759,7 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListAttributeGroups.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_ListAttributeGroups.html
    */
   public toListAttributeGroups() {
     return this.to('ListAttributeGroups');
@@ -958,6 +958,17 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the tags for a service catalog appregistry resource.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to provision a product with a specified provisioning artifact and launch parameters
    *
    * Access Level: Write
@@ -1034,6 +1045,32 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to sync a resource with its current state in AppRegistry.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_SyncResource.html
+   */
+  public toSyncResource() {
+    return this.to('SyncResource');
+  }
+
+  /**
+   * Grants permission to tag a service catalog appregistry resource.
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
    * Grants permission to terminate an existing provisioned product
    *
    * Access Level: Write
@@ -1050,11 +1087,26 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove a tag from a service catalog appregistry resource.
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to update the attributes of an existing application.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateApplication.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_UpdateApplication.html
    */
   public toUpdateApplication() {
     return this.to('UpdateApplication');
@@ -1065,7 +1117,7 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateAttributeGroup.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_UpdateAttributeGroup.html
    */
   public toUpdateAttributeGroup() {
     return this.to('UpdateAttributeGroup');
@@ -1217,6 +1269,7 @@ export class Servicecatalog extends PolicyStatement {
       "ImportAsProvisionedProduct",
       "ProvisionProduct",
       "RejectPortfolioShare",
+      "SyncResource",
       "TerminateProvisionedProduct",
       "UpdateApplication",
       "UpdateAttributeGroup",
@@ -1276,17 +1329,22 @@ export class Servicecatalog extends PolicyStatement {
       "ListServiceActionsForProvisioningArtifact",
       "ListStackInstancesForProvisionedProduct",
       "ListTagOptions",
+      "ListTagsForResource",
       "ScanProvisionedProducts",
       "SearchProducts",
       "SearchProductsAsAdmin",
       "SearchProvisionedProducts"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
   /**
    * Adds a resource of type Application to the statement
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateApplication.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_CreateApplication.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1308,7 +1366,7 @@ export class Servicecatalog extends PolicyStatement {
   /**
    * Adds a resource of type AttributeGroup to the statement
    *
-   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateAttributeGroup.html
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_CreateAttributeGroup.html
    *
    * @param attributeGroupId - Identifier for the attributeGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

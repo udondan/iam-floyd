@@ -21,6 +21,9 @@ sagemaker:OutputKmsKey
 sagemaker:RequestTag
 sagemaker:ResourceTag
 sagemaker:RootAccess
+sagemaker:SourceIp
+sagemaker:SourceVpc
+sagemaker:SourceVpce
 sagemaker:TagKeys
 sagemaker:TargetModel
 sagemaker:VolumeKmsKey
