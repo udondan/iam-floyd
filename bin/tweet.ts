@@ -18,9 +18,6 @@ function getChangelog() {
     version = fs.readFileSync('VERSION', 'utf8').trim();
   }
 
-  console.log(version);
-  process.exit(1);
-
   const changelogFile = `CHANGELOG/v${version}.md`;
   console.log(`reading ${changelogFile}`);
   const changelog = fs.readFileSync(changelogFile, 'utf8');
