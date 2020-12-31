@@ -63,7 +63,10 @@ async function main() {
   for (let content of tweets) {
     console.log('tweeting:');
     console.log(content);
-    await tweet(content);
+    await tweet(content).catch((err) => {
+      console.error(err);
+      process.exit(1);
+    });
     console.log('--------------');
   }
 }
