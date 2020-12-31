@@ -28,16 +28,16 @@ jobs:
 
       - name: Tweet latest version
         uses: actions/setup-node@v2
+        run: make tweet
         with:
           node-version: "14"
-          args: make tweet
           VERSION: ${{ steps.get_version.outputs.VERSION }}
         if: ${{ github.event_name == 'schedule' }}
 
       - name: Tweet specified version
         uses: actions/setup-node@v2
+        run: make tweet
         with:
           node-version: "14"
-          args: make tweet
           VERSION: ${{ github.event.inputs.version }}
         if: ${{ github.event_name == 'workflow_dispatch' }}
