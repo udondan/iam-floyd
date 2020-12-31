@@ -64,7 +64,7 @@ function main() {
 
   tweets.forEach((content) => {
     console.log(content);
-    tweet(changelog);
+    tweet(content);
     console.log('-----------------');
   });
 }
