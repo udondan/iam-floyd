@@ -32,15 +32,9 @@ jobs:
           node-version: "14"
 
       - name: Tweet latest version
-        run: make tweet
-        with:
-          node-version: "14"
-          VERSION: ${{ steps.get_version.outputs.VERSION }}
+        run: VERSION=${{ steps.get_version.outputs.VERSION }} make tweet
         if: ${{ github.event_name == 'schedule' }}
 
       - name: Tweet specified version
-        run: make tweet
-        with:
-          node-version: "14"
-          VERSION: ${{ github.event.inputs.version }}
+        run: VERSION=${{ github.event.inputs.version }} make tweet
         if: ${{ github.event_name == 'workflow_dispatch' }}
