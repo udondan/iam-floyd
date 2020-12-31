@@ -21,16 +21,10 @@ function getChangelog() {
 }
 
 function tweet(content: string) {
-  twitter.post(
-    'statuses/update',
-    { status: content },
-    function (err, data, response) {
-      console.log(data, err, response);
-    }
-  );
+  return twitter.post('statuses/update', { status: content });
 }
 
-function main() {
+async function main() {
   const changelog = getChangelog();
 
   const tweets: string[] = [];
@@ -62,11 +56,12 @@ function main() {
     }
   });
 
-  tweets.forEach((content) => {
+  for (let content of tweets) {
+    console.log('tweeting:');
     console.log(content);
-    tweet(content);
-    console.log('-----------------');
-  });
+    await tweet(content);
+    console.log('--------------');
+  }
 }
 
 main();
