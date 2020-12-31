@@ -1,0 +1,43 @@
+---
+name: Tweet IAM changes
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: version to tweet about
+        required: true
+
+jobs:
+  tweet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(cat VERSION)
+        if: ${{ github.event_name == 'schedule' }}
+
+      - name: Tweet latest version
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+          args: make tweet
+          VERSION: ${{ steps.get_version.outputs.VERSION }}
+        if: ${{ github.event_name == 'schedule' }}
+
+      - name: Tweet specified version
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+          args: make tweet
+          VERSION: ${{ github.event.inputs.version }}
+        if: ${{ github.event_name == 'workflow_dispatch' }}

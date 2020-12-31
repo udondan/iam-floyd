@@ -115,3 +115,7 @@ regenerate-code-example-results:
 		echo "Caching result of $$(basename $$f)" ;\
 		node "$$f" > "$${f%.js}.result" || exit ;\
 	done
+
+tweet: install
+	@echo -e "$(TARGET_COLOR)Running tweet$(NO_COLOR)"
+	@npx ts-node bin/tweet.ts
