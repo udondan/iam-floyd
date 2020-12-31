@@ -14,6 +14,10 @@ const twitter = new Twit({
 
 function getChangelog() {
   const version = process.env.VERSION;
+
+  console.log(version);
+  process.exit(1);
+
   const changelogFile = `CHANGELOG/v${version}.md`;
   console.log(`reading ${changelogFile}`);
   const changelog = fs.readFileSync(changelogFile, 'utf8');
