@@ -26,8 +26,12 @@ jobs:
         run: echo ::set-output name=VERSION::$(cat VERSION)
         if: ${{ github.event_name == 'schedule' }}
 
-      - name: Tweet latest version
+      - name: Setup node
         uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Tweet latest version
         run: make tweet
         with:
           node-version: "14"
@@ -35,7 +39,6 @@ jobs:
         if: ${{ github.event_name == 'schedule' }}
 
       - name: Tweet specified version
-        uses: actions/setup-node@v2
         run: make tweet
         with:
           node-version: "14"
