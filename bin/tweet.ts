@@ -13,7 +13,7 @@ const twitter = new Twit({
 });
 
 function getChangelog() {
-  let version = process.env.VERSION || false;
+  let version = process.env.CHANGELOG || false;
   if (!version) {
     version = fs.readFileSync('VERSION', 'utf8').trim();
   }
