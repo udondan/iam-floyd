@@ -1,7 +1,10 @@
+import AWS = require('aws-sdk');
 import fs = require('fs');
 import Twit = require('twit');
 
 const maxLength = 280;
+
+const sqs = new AWS.SQS();
 
 const twitter = new Twit({
   consumer_key: process.env.TWITTER_CONSUMER_KEY!,
@@ -25,7 +28,26 @@ function getChangelog() {
 }
 
 function tweet(content: string) {
-  return twitter.post('statuses/update', { status: content });
+  return enqueueTweet(content).then(() => {
+    return twitter.post('statuses/update', { status: content });
+  });
+}
+
+function enqueueTweet(content: string) {
+  return new Promise((resolve, reject) => {
+    const params: AWS.SQS.SendMessageRequest = {
+      MessageBody: content,
+      QueueUrl: process.env.AWS_SQS_URL!,
+    };
+    sqs.sendMessage(
+      params,
+      function (err: AWS.AWSError, data: AWS.SQS.SendMessageResult) {
+        if (err) return reject(err);
+        console.log(data);
+        resolve(data);
+      }
+    );
+  });
 }
 
 async function main() {
