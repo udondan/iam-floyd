@@ -113,9 +113,6 @@ function authenticateTwitter(): Promise<Twit> {
       }
     );
   });
-  /*
-
-  */
 }
 
 function log(msg: string) {
