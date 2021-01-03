@@ -2,7 +2,7 @@
 
 [![Source](https://img.shields.io/github/stars/udondan/iam-floyd?logo=github&label=GitHub%20Stars)][source]
 [![iam-floyd](https://img.shields.io/github/v/release/udondan/iam-floyd)][source]
-[![Twitter](https://badgen.net/twitter/follow/heyiamfloyd)][twitter]
+[![Twitter](https://badgen.net/twitter/follow/heyiamfloyd?icon=twitter)][twitter]
 [![libraries.io](https://img.shields.io/badge/packages-libraries.io-yellow)][libraries.io]
 [![Documentation](https://img.shields.io/badge/Documentation-Read%20the%20Docs-orange)][documentation]
 [![CDKio](https://img.shields.io/badge/awscdk.io-cdk--iam--floyd-orange)][cdkio]
