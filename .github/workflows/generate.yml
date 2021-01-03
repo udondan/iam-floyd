@@ -19,22 +19,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           persist-credentials: false
           fetch-depth: 0
 
+      - name: Install dependencies
+        run: make install
+
       - name: Generate code
-        uses: udondan/cdk-nodejs@v0.4.0
-        with:
-          args: make generate
+        run: make generate
         if: ${{ github.event_name == 'schedule' }}
 
       - name: Generate code
-        uses: udondan/cdk-nodejs@v0.4.0
-        with:
-          args: make ${{ github.event.inputs.command }}
+        run: make ${{ github.event.inputs.command }}
         if: ${{ github.event_name == 'workflow_dispatch' }}
 
       - name: Check for changes
