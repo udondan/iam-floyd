@@ -38,6 +38,7 @@ function enqueueTweet(content: string) {
     const params: AWS.SQS.SendMessageRequest = {
       MessageBody: content,
       QueueUrl: process.env.AWS_SQS_URL!,
+      MessageGroupId: 'Default',
     };
     sqs.sendMessage(
       params,
