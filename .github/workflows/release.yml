@@ -349,7 +349,7 @@ jobs:
       - name: Create release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
         with:
           tag_name: v${{ steps.get_version.outputs.VERSION }}
           release_name: v${{ steps.get_version.outputs.VERSION }}
