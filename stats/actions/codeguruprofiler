@@ -12,7 +12,7 @@ codeguru-profiler:GetRecommendations;Read
 codeguru-profiler:ListFindingsReports;List
 codeguru-profiler:ListProfileTimes;List
 codeguru-profiler:ListProfilingGroups;List
-codeguru-profiler:ListTagsForResource;Tagging
+codeguru-profiler:ListTagsForResource;List
 codeguru-profiler:PostAgentProfile;Write
 codeguru-profiler:PutPermission;Permissions management
 codeguru-profiler:RemoveNotificationChannel;Write

@@ -179,7 +179,7 @@ export class CodeguruProfiler extends PolicyStatement {
   /**
    * Grants permission to list tags for a Profiling Group
    *
-   * Access Level: Tagging
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListTagsForResource.html
    */
@@ -298,7 +298,8 @@ export class CodeguruProfiler extends PolicyStatement {
       "BatchGetFrameMetricData",
       "ListFindingsReports",
       "ListProfileTimes",
-      "ListProfilingGroups"
+      "ListProfilingGroups",
+      "ListTagsForResource"
     ],
     "Read": [
       "DescribeProfilingGroup",
@@ -308,14 +309,13 @@ export class CodeguruProfiler extends PolicyStatement {
       "GetProfile",
       "GetRecommendations"
     ],
-    "Tagging": [
-      "ListTagsForResource",
-      "TagResource",
-      "UntagResource"
-    ],
     "Permissions management": [
       "PutPermission",
       "RemovePermission"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
