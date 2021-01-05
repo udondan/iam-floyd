@@ -4,7 +4,7 @@ import Twit = require('twit');
 
 const maxLength = 280;
 
-const sqs = new AWS.SQS();
+const sqs = new AWS.SQS({ region: 'us-east-1' });
 
 const twitter = new Twit({
   consumer_key: process.env.TWITTER_CONSUMER_KEY!,
