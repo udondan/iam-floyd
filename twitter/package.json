@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@aws-cdk/assert": "1.81.0",
-    "@aws-cdk/aws-events-targets": "^1.81.0",
-    "@aws-cdk/aws-lambda-nodejs": "^1.81.0",
+    "@aws-cdk/aws-events-targets": "1.81.0",
+    "@aws-cdk/aws-lambda-nodejs": "1.81.0",
     "@aws-cdk/aws-sqs": "1.81.0",
     "@aws-cdk/core": "1.81.0",
     "@types/aws-lambda": "^8.10.68",
