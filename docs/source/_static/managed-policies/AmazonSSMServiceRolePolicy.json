@@ -12,7 +12,8 @@
                 "ssm:GetAutomationExecution",
                 "ssm:GetParameters",
                 "ssm:StartAutomationExecution",
-                "ssm:ListTagsForResource"
+                "ssm:ListTagsForResource",
+                "ssm:GetCalendarState"
             ],
             "Resource": [
                 "*"
