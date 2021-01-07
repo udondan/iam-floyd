@@ -153,6 +153,18 @@
         },
         {
             "Effect": "Allow",
+            "Resource": "arn:aws:secretsmanager:*:*:aws-opsworks-cm-secrets-*",
+            "Action": [
+                "secretsmanager:CreateSecret",
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:UpdateSecret",
+                "secretsmanager:DeleteSecret",
+                "secretsmanager:TagResource",
+                "secretsmanager:UntagResource"
+            ]
+        },
+        {
+            "Effect": "Allow",
             "Action": "ec2:DeleteTags",
             "Resource": [
                 "arn:aws:ec2:*:*:instance/*",
