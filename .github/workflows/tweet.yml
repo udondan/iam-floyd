@@ -28,7 +28,7 @@ jobs:
 
       - name: Tweet latest version
         run: make tweet
-        if: ${{ github.event_name == 'schedule' }}
+        if: ${{ github.event_name == 'release' }}
         env:
           TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
           TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
