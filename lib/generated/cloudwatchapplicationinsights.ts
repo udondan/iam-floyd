@@ -19,7 +19,7 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Creates an application from a resource group
+   * Grants permission to create an application from a resource group
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Creates a component from a group of resources
+   * Grants permission to create a component from a group of resources
    *
    * Access Level: Write
    *
@@ -41,7 +41,18 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Deletes an application
+   * Grants permission to create log a pattern
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_CreateLogPattern.html
+   */
+  public toCreateLogPattern() {
+    return this.to('CreateLogPattern');
+  }
+
+  /**
+   * Grants permission to delete an application
    *
    * Access Level: Write
    *
@@ -52,7 +63,7 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Deletes a component
+   * Grants permission to delete a component
    *
    * Access Level: Write
    *
@@ -63,7 +74,18 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Describes an application
+   * Grants permission to delete a log pattern
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DeleteLogPattern.html
+   */
+  public toDeleteLogPattern() {
+    return this.to('DeleteLogPattern');
+  }
+
+  /**
+   * Grants permission to describe an application
    *
    * Access Level: Read
    *
@@ -74,7 +96,7 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Describes a component
+   * Grants permission to describe a component
    *
    * Access Level: Read
    *
@@ -85,7 +107,7 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Describes a component configuration
+   * Grants permission to describe a component's configuration
    *
    * Access Level: Read
    *
@@ -96,7 +118,7 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Describe the recommended application component configuration
+   * Grants permission to describe the recommended application component configuration
    *
    * Access Level: Read
    *
@@ -107,7 +129,18 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Describes an observation
+   * Grants permission to describe a log pattern
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeLogPattern.html
+   */
+  public toDescribeLogPattern() {
+    return this.to('DescribeLogPattern');
+  }
+
+  /**
+   * Grants permission to describe an observation
    *
    * Access Level: Read
    *
@@ -118,7 +151,7 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Describes a problem
+   * Grants permission to describe a problem
    *
    * Access Level: Read
    *
@@ -129,7 +162,7 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Describes the observation in a problem
+   * Grants permission to describe the observation in a problem
    *
    * Access Level: Read
    *
@@ -140,7 +173,7 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Lists all applications
+   * Grants permission to list all applications
    *
    * Access Level: List
    *
@@ -151,7 +184,7 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * List an application's components
+   * Grants permission to list an application's components
    *
    * Access Level: List
    *
@@ -162,7 +195,40 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Lists the problems in an application
+   * Grants permission to list configuration history
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListConfigurationHistory.html
+   */
+  public toListConfigurationHistory() {
+    return this.to('ListConfigurationHistory');
+  }
+
+  /**
+   * Grants permission to list log pattern sets for an application
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListLogPatternSets.html
+   */
+  public toListLogPatternSets() {
+    return this.to('ListLogPatternSets');
+  }
+
+  /**
+   * Grants permission to list log patterns
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListLogPatterns.html
+   */
+  public toListLogPatterns() {
+    return this.to('ListLogPatterns');
+  }
+
+  /**
+   * Grants permission to list the problems in an application
    *
    * Access Level: List
    *
@@ -173,7 +239,40 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Updates an application
+   * Grants permission to list tags for the resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to tag a resource
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag a resource
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update an application
    *
    * Access Level: Write
    *
@@ -184,7 +283,7 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Updates a component
+   * Grants permission to update a component
    *
    * Access Level: Write
    *
@@ -195,7 +294,7 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   /**
-   * Updates a component configuration
+   * Grants permission to update a component's configuration
    *
    * Access Level: Write
    *
@@ -205,21 +304,36 @@ export class Applicationinsights extends PolicyStatement {
     return this.to('UpdateComponentConfiguration');
   }
 
+  /**
+   * Grants permission to update a log pattern
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateLogPattern.html
+   */
+  public toUpdateLogPattern() {
+    return this.to('UpdateLogPattern');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CreateApplication",
       "CreateComponent",
+      "CreateLogPattern",
       "DeleteApplication",
       "DeleteComponent",
+      "DeleteLogPattern",
       "UpdateApplication",
       "UpdateComponent",
-      "UpdateComponentConfiguration"
+      "UpdateComponentConfiguration",
+      "UpdateLogPattern"
     ],
     "Read": [
       "DescribeApplication",
       "DescribeComponent",
       "DescribeComponentConfiguration",
       "DescribeComponentConfigurationRecommendation",
+      "DescribeLogPattern",
       "DescribeObservation",
       "DescribeProblem",
       "DescribeProblemObservations"
@@ -227,7 +341,15 @@ export class Applicationinsights extends PolicyStatement {
     "List": [
       "ListApplications",
       "ListComponents",
-      "ListProblems"
+      "ListConfigurationHistory",
+      "ListLogPatternSets",
+      "ListLogPatterns",
+      "ListProblems",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 }

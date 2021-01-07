@@ -19,7 +19,7 @@ export class Lookoutvision extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associates a dataset manifest with a project
+   * Grants permission to create a dataset manifest
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Lookoutvision extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a dataset associated with a project
+   * Grants permission to delete a dataset
    *
    * Access Level: Write
    *

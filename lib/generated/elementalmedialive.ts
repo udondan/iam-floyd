@@ -30,7 +30,7 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete channels, inputs, input security groups, and multiplexes.
+   * Grants permission to delete channels, inputs, input security groups, and multiplexes
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start channels and multiplexes.
+   * Grants permission to start channels and multiplexes
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to stop channels and multiplexes.
+   * Grants permission to stop channels and multiplexes
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add and remove actions from a channel's schedule.
+   * Grants permission to add and remove actions from a channel's schedule
    *
    * Access Level: Write
    *
@@ -156,7 +156,7 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create tags for channels, inputs, input security groups, multiplexes, and reservations.
+   * Grants permission to create tags for channels, inputs, input security groups, multiplexes, and reservations
    *
    * Access Level: Tagging
    *
@@ -237,7 +237,18 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete tags from channels, inputs, input security groups, multiplexes, and reservations.
+   * Grants permission to delete all schedule actions for a channel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/schedule-using-console-delete.html
+   */
+  public toDeleteSchedule() {
+    return this.to('DeleteSchedule');
+  }
+
+  /**
+   * Grants permission to delete tags from channels, inputs, input security groups, multiplexes, and reservations
    *
    * Access Level: Tagging
    *
@@ -350,7 +361,7 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view a list of actions scheduled on a channel.
+   * Grants permission to view a list of actions scheduled on a channel
    *
    * Access Level: Read
    *
@@ -460,7 +471,7 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tags for channels, inputs, input security groups, multiplexes, and reservations.
+   * Grants permission to list tags for channels, inputs, input security groups, multiplexes, and reservations
    *
    * Access Level: List
    *
@@ -658,6 +669,7 @@ export class Medialive extends PolicyStatement {
       "DeleteMultiplex",
       "DeleteMultiplexProgram",
       "DeleteReservation",
+      "DeleteSchedule",
       "PurchaseOffering",
       "RejectInputDeviceTransfer",
       "StartChannel",

@@ -16,6 +16,7 @@ medialive:DeleteInputSecurityGroup;Write
 medialive:DeleteMultiplex;Write
 medialive:DeleteMultiplexProgram;Write
 medialive:DeleteReservation;Write
+medialive:DeleteSchedule;Write
 medialive:DeleteTags;Tagging
 medialive:DescribeChannel;Read
 medialive:DescribeInput;Read
