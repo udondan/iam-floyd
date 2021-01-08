@@ -63,7 +63,6 @@ function tweet(data: Envelope): Promise<Envelope> {
   return new Promise(async (resolve, reject) => {
     console.log(`Tweeting: ${data.message.Body}`);
     const twitter = await authenticateTwitter();
-    /*
     twitter
       .post('statuses/update', { status: data.message.Body })
       .then((_: Twit.PromiseResponse) => {
@@ -72,8 +71,6 @@ function tweet(data: Envelope): Promise<Envelope> {
       .catch((err: Error) => {
         reject(err);
       });
-    */
-    resolve(data);
   });
 }
 
