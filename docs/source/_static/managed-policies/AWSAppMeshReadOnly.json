@@ -25,6 +25,15 @@
                 "acm-pca:ListCertificateAuthorities"
             ],
             "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "servicediscovery:ListNamespaces",
+                "servicediscovery:ListServices",
+                "servicediscovery:ListInstances"
+            ],
+            "Resource": "*"
         }
     ]
 }
