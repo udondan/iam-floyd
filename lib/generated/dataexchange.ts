@@ -146,7 +146,7 @@ export class Dataexchange extends PolicyStatement {
   /**
    * Grants permissions to get information about a job.
    *
-   * Access Level: Write
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-jobs.html#GetJob
    */
@@ -303,7 +303,6 @@ export class Dataexchange extends PolicyStatement {
       "DeleteAsset",
       "DeleteDataSet",
       "DeleteRevision",
-      "GetJob",
       "StartJob",
       "UpdateAsset",
       "UpdateDataSet",
@@ -312,6 +311,7 @@ export class Dataexchange extends PolicyStatement {
     "Read": [
       "GetAsset",
       "GetDataSet",
+      "GetJob",
       "GetRevision",
       "ListTagsForResource"
     ],

@@ -19,7 +19,18 @@ export class ElementalActivations extends PolicyStatement {
   }
 
   /**
-   * Download the Software files for AWS Elemental Appliances and Software Purchases
+   * Grants permission to complete the process of uploading a Software file for AWS Elemental Appliances and Software Purchases
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software/
+   */
+  public toCompleteFileUpload() {
+    return this.to('CompleteFileUpload');
+  }
+
+  /**
+   * Grants permission to download the Software files for AWS Elemental Appliances and Software Purchases
    *
    * Access Level: List
    *
@@ -30,7 +41,7 @@ export class ElementalActivations extends PolicyStatement {
   }
 
   /**
-   * Generate Software Licenses for AWS Elemental Appliances and Software Purchases
+   * Grants permission to generate Software Licenses for AWS Elemental Appliances and Software Purchases
    *
    * Access Level: List
    *
@@ -41,7 +52,7 @@ export class ElementalActivations extends PolicyStatement {
   }
 
   /**
-   * Describe an activation
+   * Grants permission to describe an activation
    *
    * Access Level: Read
    *
@@ -52,7 +63,7 @@ export class ElementalActivations extends PolicyStatement {
   }
 
   /**
-   * This action lists tags for an AWS Elemental Activations resource
+   * Grants permission to list tags for an AWS Elemental Activations resource
    *
    * Access Level: Read
    *
@@ -63,7 +74,18 @@ export class ElementalActivations extends PolicyStatement {
   }
 
   /**
-   * This action adds a tag for an AWS Elemental Activations resource
+   * Grants permission to start the process of uploading a Software file for AWS Elemental Appliances and Software Purchases
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software/
+   */
+  public toStartFileUpload() {
+    return this.to('StartFileUpload');
+  }
+
+  /**
+   * Grants permission to add a tag for an AWS Elemental Activations resource
    *
    * Access Level: Tagging
    *
@@ -78,7 +100,7 @@ export class ElementalActivations extends PolicyStatement {
   }
 
   /**
-   * This action removes a tag from an AWS Elemental Activations resource
+   * Grants permission to remove a tag from an AWS Elemental Activations resource
    *
    * Access Level: Tagging
    *
@@ -93,8 +115,10 @@ export class ElementalActivations extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "List": [
+      "CompleteFileUpload",
       "DownloadSoftware",
-      "GenerateLicenses"
+      "GenerateLicenses",
+      "StartFileUpload"
     ],
     "Read": [
       "GetActivation",

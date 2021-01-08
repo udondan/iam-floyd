@@ -3,7 +3,7 @@ signer:CancelSigningProfile;Write
 signer:DescribeSigningJob;Read
 signer:GetSigningPlatform;Read
 signer:GetSigningProfile;Read
-signer:ListProfilePermissions;Permissions management
+signer:ListProfilePermissions;Read
 signer:ListSigningJobs;List
 signer:ListSigningPlatforms;List
 signer:ListSigningProfiles;List

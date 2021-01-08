@@ -8,7 +8,7 @@ dataexchange:DeleteDataSet;Write
 dataexchange:DeleteRevision;Write
 dataexchange:GetAsset;Read
 dataexchange:GetDataSet;Read
-dataexchange:GetJob;Write
+dataexchange:GetJob;Read
 dataexchange:GetRevision;Read
 dataexchange:ListDataSetRevisions;List
 dataexchange:ListDataSets;List

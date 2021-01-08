@@ -217,6 +217,17 @@ export class Ce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to query Cost Catagory names and values for a specified time period
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostCategories.html
+   */
+  public toGetCostCategories() {
+    return this.to('GetCostCategories');
+  }
+
+  /**
    * Grants permission to retrieve a cost forecast for a forecast time period
    *
    * Access Level: Read
@@ -476,6 +487,7 @@ export class Ce extends PolicyStatement {
       "GetAnomalySubscriptions",
       "GetCostAndUsage",
       "GetCostAndUsageWithResources",
+      "GetCostCategories",
       "GetCostForecast",
       "GetDimensionValues",
       "GetPreferences",

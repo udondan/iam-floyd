@@ -19,7 +19,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Starts a backup job for an existing file system.
+   * Grants permission to start a backup job for an existing file system
    *
    * Access Level: Write
    *
@@ -30,12 +30,13 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Permission for allowing read-access to a file system.
+   * Grants permission to allow an NFS client read-access to a file system
    *
    * Access Level: Read
    *
    * Possible conditions:
    * - .ifAccessPointArn()
+   * - .ifAccessedViaMountTarget()
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
    */
@@ -44,12 +45,13 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Permission for allowing root-access to a file system.
+   * Grants permission to allow an NFS client root-access to a file system
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifAccessPointArn()
+   * - .ifAccessedViaMountTarget()
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
    */
@@ -58,12 +60,13 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Permission for allowing write-access to a file system.
+   * Grants permission to allow an NFS client write-access to a file system
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifAccessPointArn()
+   * - .ifAccessedViaMountTarget()
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
    */
@@ -72,7 +75,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Creates an access point for the specified file system.
+   * Grants permission to create an access point for the specified file system
    *
    * Access Level: Write
    *
@@ -83,9 +86,9 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Creates a new, empty file system.
+   * Grants permission to create a new, empty file system
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -99,7 +102,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Creates a mount target for a file system.
+   * Grants permission to create a mount target for a file system
    *
    * Access Level: Write
    *
@@ -110,7 +113,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Creates or overwrites tags associated with a file system.
+   * Grants permission to create or overwrite tags associated with a file system; deprecated, see TagResource
    *
    * Access Level: Tagging
    *
@@ -125,7 +128,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified access point.
+   * Grants permission to delete the specified access point
    *
    * Access Level: Write
    *
@@ -136,7 +139,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Deletes a file system, permanently severing access to its contents.
+   * Grants permission to delete a file system, permanently severing access to its contents
    *
    * Access Level: Write
    *
@@ -147,7 +150,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Clears the resource-level policy for a given file system.
+   * Grants permission to delete the resource-level policy for a file system
    *
    * Access Level: Write
    *
@@ -158,7 +161,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified mount target.
+   * Grants permission to delete the specified mount target
    *
    * Access Level: Write
    *
@@ -169,7 +172,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified tags from a file system.
+   * Grants permission to delete the specified tags from a file system; deprecated, see UntagResource
    *
    * Access Level: Tagging
    *
@@ -183,7 +186,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Returns the descriptions of Amazon EFS access points.
+   * Grants permission to view the descriptions of Amazon EFS access points
    *
    * Access Level: List
    *
@@ -194,7 +197,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Returns the current BackupPolicy object for the specified Amazon EFS file system.
+   * Grants permission to view the BackupPolicy object for an Amazon EFS file system
    *
    * Access Level: Read
    *
@@ -205,7 +208,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Returns the current resource-level policy for a given file system.
+   * Grants permission to view the resource-level policy for an Amazon EFS file system
    *
    * Access Level: Read
    *
@@ -216,7 +219,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Returns the description of a specific Amazon EFS file system if either the file system CreationToken or the FileSystemId is provided; otherwise, returns descriptions of all file systems owned by the caller's AWS account in the AWS region of the endpoint that you're calling.
+   * Grants permission to view the description of an Amazon EFS file system specified by file system CreationToken or FileSystemId; or to view the description of all file systems owned by the caller's AWS account in the AWS region of the endpoint that is being called
    *
    * Access Level: List
    *
@@ -227,7 +230,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Returns the current LifecycleConfiguration object for the specified Amazon EFS file system.
+   * Grants permission to view the LifecycleConfiguration object for an Amazon EFS file system
    *
    * Access Level: Read
    *
@@ -238,7 +241,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Returns the security groups currently in effect for a mount target.
+   * Grants permission to view the security groups in effect for a mount target
    *
    * Access Level: Read
    *
@@ -249,7 +252,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Returns the descriptions of all the current mount targets, or a specific mount target, for a file system.
+   * Grants permission to view the descriptions of all mount targets, or a specific mount target, for a file system
    *
    * Access Level: Read
    *
@@ -260,7 +263,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Returns the tags associated with a file system.
+   * Grants permission to view the tags associated with a file system
    *
    * Access Level: Read
    *
@@ -271,7 +274,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Returns the tags associated with the specified Amazon EFS resource.
+   * Grants permission to view the tags associated with the specified Amazon EFS resource
    *
    * Access Level: Read
    *
@@ -282,7 +285,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Modifies the set of security groups in effect for a mount target.
+   * Grants permission to modify the set of security groups in effect for a mount target
    *
    * Access Level: Write
    *
@@ -293,7 +296,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Enables automatic backups with AWS Backup by creating a new BackupPolicy object.
+   * Grants permission to enable or disable automatic backups with AWS Backup by creating a new BackupPolicy object
    *
    * Access Level: Write
    *
@@ -304,7 +307,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Apply a resource-level policy granting and/or restricting actions from given actors for the specified file system.
+   * Grants permission to apply a resource-level policy that defines the actions allowed or denied from given actors for the specified file system
    *
    * Access Level: Write
    *
@@ -315,7 +318,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Enables lifecycle management by creating a new LifecycleConfiguration object.
+   * Grants permission to enable lifecycle management by creating a new LifecycleConfiguration object
    *
    * Access Level: Write
    *
@@ -326,7 +329,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Starts a restore job for an existing file system.
+   * Grants permission to start a restore job for a backup of a file system
    *
    * Access Level: Write
    *
@@ -337,7 +340,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Creates or overwrites tags associated with the specified Amazon EFS resource.
+   * Grants permission to create or overwrite tags associated with the specified Amazon EFS resource
    *
    * Access Level: Tagging
    *
@@ -348,7 +351,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified tags from a specified Amazon EFS resource.
+   * Grants permission to delete the specified tags from an Amazon EFS resource
    *
    * Access Level: Tagging
    *
@@ -359,7 +362,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Updates the throughput mode or the amount of provisioned throughput of an existing file system.
+   * Grants permission to update the throughput mode or the amount of provisioned throughput of an existing file system
    *
    * Access Level: Write
    *
@@ -375,6 +378,7 @@ export class Elasticfilesystem extends PolicyStatement {
       "ClientRootAccess",
       "ClientWrite",
       "CreateAccessPoint",
+      "CreateFileSystem",
       "CreateMountTarget",
       "DeleteAccessPoint",
       "DeleteFileSystem",
@@ -398,7 +402,6 @@ export class Elasticfilesystem extends PolicyStatement {
       "ListTagsForResource"
     ],
     "Tagging": [
-      "CreateFileSystem",
       "CreateTags",
       "DeleteTags",
       "TagResource",
@@ -455,7 +458,9 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * The ARN of the access point used to mount the file system
+   * Filters access by the ARN of the access point used to mount the file system
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html
    *
    * Applies to actions:
    * - .toClientMount()
@@ -470,7 +475,25 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Control encryption behavior for new EFS file systems
+   * Filters access by whether the file system is accessed via mount targets
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/mounting-fs.html
+   *
+   * Applies to actions:
+   * - .toClientMount()
+   * - .toClientRootAccess()
+   * - .toClientWrite()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifAccessedViaMountTarget(value?: boolean) {
+    return this.if(`elasticfilesystem:AccessedViaMountTarget`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by whether users can create only encrypted or unencrypted file systems
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/encryption.html
    *
    * Applies to actions:
    * - .toCreateFileSystem()

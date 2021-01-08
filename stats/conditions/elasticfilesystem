@@ -1,4 +1,5 @@
 elasticfilesystem:AccessPointArn
+elasticfilesystem:AccessedViaMountTarget
 elasticfilesystem:Encrypted
 elasticfilesystem:RequestTag
 elasticfilesystem:ResourceTag

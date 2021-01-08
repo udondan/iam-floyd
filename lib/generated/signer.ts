@@ -85,7 +85,7 @@ export class Signer extends PolicyStatement {
   /**
    * Grants permission to list the cross-account permissions associated with a Signing Profile
    *
-   * Access Level: Permissions management
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_ListProfilePermissions.html
    */
@@ -241,7 +241,6 @@ export class Signer extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Permissions management": [
       "AddProfilePermission",
-      "ListProfilePermissions",
       "RemoveProfilePermission"
     ],
     "Write": [
@@ -255,6 +254,7 @@ export class Signer extends PolicyStatement {
       "DescribeSigningJob",
       "GetSigningPlatform",
       "GetSigningProfile",
+      "ListProfilePermissions",
       "ListTagsForResource"
     ],
     "List": [

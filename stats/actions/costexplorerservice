@@ -16,6 +16,7 @@ ce:GetAnomalyMonitors;Read
 ce:GetAnomalySubscriptions;Read
 ce:GetCostAndUsage;Read
 ce:GetCostAndUsageWithResources;Read
+ce:GetCostCategories;Read
 ce:GetCostForecast;Read
 ce:GetDimensionValues;Read
 ce:GetPreferences;Read

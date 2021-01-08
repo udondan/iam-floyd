@@ -90,7 +90,7 @@ export class Xray extends PolicyStatement {
   /**
    * Grants permission to retrieve the current encryption configuration for X-Ray data
    *
-   * Access Level: Permissions management
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_GetEncryptionConfig.html
    */
@@ -360,11 +360,8 @@ export class Xray extends PolicyStatement {
       "UpdateGroup",
       "UpdateSamplingRule"
     ],
-    "Permissions management": [
-      "GetEncryptionConfig",
-      "PutEncryptionConfig"
-    ],
     "Read": [
+      "GetEncryptionConfig",
       "GetGroup",
       "GetGroups",
       "GetInsight",
@@ -378,6 +375,9 @@ export class Xray extends PolicyStatement {
       "GetTimeSeriesServiceStatistics",
       "GetTraceGraph",
       "GetTraceSummaries"
+    ],
+    "Permissions management": [
+      "PutEncryptionConfig"
     ],
     "Tagging": [
       "TagResource",

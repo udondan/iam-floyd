@@ -3,7 +3,7 @@ elasticfilesystem:ClientMount;Read
 elasticfilesystem:ClientRootAccess;Write
 elasticfilesystem:ClientWrite;Write
 elasticfilesystem:CreateAccessPoint;Write
-elasticfilesystem:CreateFileSystem;Tagging
+elasticfilesystem:CreateFileSystem;Write
 elasticfilesystem:CreateMountTarget;Write
 elasticfilesystem:CreateTags;Tagging
 elasticfilesystem:DeleteAccessPoint;Write

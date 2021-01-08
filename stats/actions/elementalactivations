@@ -1,6 +1,8 @@
+elemental-activations:CompleteFileUpload;List
 elemental-activations:DownloadSoftware;List
 elemental-activations:GenerateLicenses;List
 elemental-activations:GetActivation;Read
 elemental-activations:ListTagsForResource;Read
+elemental-activations:StartFileUpload;List
 elemental-activations:TagResource;Tagging
 elemental-activations:UntagResource;Tagging

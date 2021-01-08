@@ -3,7 +3,7 @@ xray:CreateGroup;Write
 xray:CreateSamplingRule;Write
 xray:DeleteGroup;Write
 xray:DeleteSamplingRule;Write
-xray:GetEncryptionConfig;Permissions management
+xray:GetEncryptionConfig;Read
 xray:GetGroup;Read
 xray:GetGroups;Read
 xray:GetInsight;Read
