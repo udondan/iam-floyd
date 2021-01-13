@@ -28,6 +28,11 @@
             "Action": "acm:GetCertificate",
             "Resource": "*",
             "Effect": "Allow"
+        },
+        {
+            "Action": "secretsmanager:GetSecretValue",
+            "Resource": "arn:aws:secretsmanager:*:*:aws-opsworks-cm-secrets-*",
+            "Effect": "Allow"
         }
     ]
 }
