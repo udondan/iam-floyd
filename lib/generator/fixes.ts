@@ -29,6 +29,9 @@ export const fixes: Fixes = {
       },
     },
   },
+  iotgreengrassv2: {
+    name: 'greengrass-v2',
+  },
   kinesisanalyticsv2: {
     name: 'kinesisanalytics-v2',
   },
