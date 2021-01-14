@@ -65,16 +65,19 @@ function tweet(data: Envelope): Promise<Envelope> {
     const twitter = await authenticateTwitter();
     twitter
       .post('statuses/update', { status: data.message.Body })
-      .then((_: Twit.PromiseResponse) => {
+      .then((response: Twit.PromiseResponse) => {
+        log(JSON.stringify(response));
         resolve(data);
       })
       .catch((err: Error) => {
+        log(JSON.stringify(err));
         reject(err);
       });
   });
 }
 
 function deleteTweetFromQueue(data: Envelope): Promise<void> {
+  console.log(`Removing tweet from queue: ${data.message.ReceiptHandle}`);
   return new Promise((resolve, reject) => {
     const params: AWS.SQS.DeleteMessageRequest = {
       QueueUrl: data.queue,
