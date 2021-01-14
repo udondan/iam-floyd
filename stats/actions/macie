@@ -1,5 +1,4 @@
 macie2:AcceptInvitation;Write
-macie2:ArchiveFindings;Write
 macie2:BatchGetCustomDataIdentifiers;Read
 macie2:CreateClassificationJob;Write
 macie2:CreateCustomDataIdentifier;Write
@@ -40,11 +39,10 @@ macie2:ListFindingsFilters;List
 macie2:ListInvitations;List
 macie2:ListMembers;List
 macie2:ListOrganizationAdminAccounts;List
-macie2:ListTagsForResources;List
+macie2:ListTagsForResource;List
 macie2:PutClassificationExportConfiguration;Write
 macie2:TagResource;Tagging
 macie2:TestCustomDataIdentifier;Write
-macie2:UnarchiveFindings;Write
 macie2:UntagResource;Tagging
 macie2:UpdateClassificationJob;Write
 macie2:UpdateFindingsFilter;Write

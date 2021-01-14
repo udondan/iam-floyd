@@ -30,17 +30,6 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to archive one or more findings
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/macie/latest/APIReference/findings-archive.html
-   */
-  public toArchiveFindings() {
-    return this.to('ArchiveFindings');
-  }
-
-  /**
    * Grants permission to retrieve information about one or more custom data identifiers
    *
    * Access Level: Read
@@ -503,8 +492,8 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/tags-resourcearn.html
    */
-  public toListTagsForResources() {
-    return this.to('ListTagsForResources');
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -542,17 +531,6 @@ export class Macie2 extends PolicyStatement {
    */
   public toTestCustomDataIdentifier() {
     return this.to('TestCustomDataIdentifier');
-  }
-
-  /**
-   * Grants permission to reactivate (unarchive) one or more findings
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/macie/latest/APIReference/findings-unarchive.html
-   */
-  public toUnarchiveFindings() {
-    return this.to('UnarchiveFindings');
   }
 
   /**
@@ -635,7 +613,6 @@ export class Macie2 extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AcceptInvitation",
-      "ArchiveFindings",
       "CreateClassificationJob",
       "CreateCustomDataIdentifier",
       "CreateFindingsFilter",
@@ -655,7 +632,6 @@ export class Macie2 extends PolicyStatement {
       "EnableOrganizationAdminAccount",
       "PutClassificationExportConfiguration",
       "TestCustomDataIdentifier",
-      "UnarchiveFindings",
       "UpdateClassificationJob",
       "UpdateFindingsFilter",
       "UpdateMacieSession",
@@ -688,7 +664,7 @@ export class Macie2 extends PolicyStatement {
       "ListInvitations",
       "ListMembers",
       "ListOrganizationAdminAccounts",
-      "ListTagsForResources"
+      "ListTagsForResource"
     ],
     "Tagging": [
       "TagResource",
@@ -703,15 +679,17 @@ export class Macie2 extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onClassificationJob(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:macie2::${Account}:classification-job/${ResourceId}';
+  public onClassificationJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:classification-job/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -723,35 +701,17 @@ export class Macie2 extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onCustomDataIdentifier(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:macie2::${Account}:custom-data-identifier/${ResourceId}';
+  public onCustomDataIdentifier(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:custom-data-identifier/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
-   * Adds a resource of type Member to the statement
-   *
-   * https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onMember(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:macie2::${Account}:member/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -763,15 +723,39 @@ export class Macie2 extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onFindingsFilter(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:macie2::${Account}:findings-filter/${ResourceId}';
+  public onFindingsFilter(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:findings-filter/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Member to the statement
+   *
+   * https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMember(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:member/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

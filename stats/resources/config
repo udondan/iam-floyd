@@ -5,3 +5,4 @@ config:ConformancePack
 config:OrganizationConfigRule
 config:OrganizationConformancePack
 config:RemediationConfiguration
+config:StoredQuery

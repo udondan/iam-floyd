@@ -27,10 +27,11 @@ export class Monitron extends PolicyStatement {
    * - sso-directory:DescribeUsers
    * - sso:AssociateProfile
    * - sso:GetManagedApplicationInstance
+   * - sso:GetProfile
    * - sso:ListDirectoryAssociations
    * - sso:ListProfiles
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
+   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/user-management-chapter.html
    */
   public toAssociateProjectAdminUser() {
     return this.to('AssociateProjectAdminUser');
@@ -51,7 +52,7 @@ export class Monitron extends PolicyStatement {
    * - sso:CreateManagedApplicationInstance
    * - sso:DeleteManagedApplicationInstance
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
+   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-creating-project.html
    */
   public toCreateProject() {
     return this.to('CreateProject');
@@ -65,7 +66,7 @@ export class Monitron extends PolicyStatement {
    * Dependent actions:
    * - sso:DeleteManagedApplicationInstance
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
+   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-delete-project.html
    */
   public toDeleteProject() {
     return this.to('DeleteProject');
@@ -80,10 +81,11 @@ export class Monitron extends PolicyStatement {
    * - sso-directory:DescribeUsers
    * - sso:DisassociateProfile
    * - sso:GetManagedApplicationInstance
+   * - sso:GetProfile
    * - sso:ListDirectoryAssociations
    * - sso:ListProfiles
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
+   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mu-remove-project-admin.html
    */
   public toDisassociateProjectAdminUser() {
     return this.to('DisassociateProjectAdminUser');
@@ -94,7 +96,7 @@ export class Monitron extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
+   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-project-tasks.html
    */
   public toGetProject() {
     return this.to('GetProject');
@@ -109,7 +111,7 @@ export class Monitron extends PolicyStatement {
    * - sso-directory:DescribeUsers
    * - sso:GetManagedApplicationInstance
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
+   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-project-tasks.html
    */
   public toGetProjectAdminUser() {
     return this.to('GetProjectAdminUser');
@@ -124,7 +126,7 @@ export class Monitron extends PolicyStatement {
    * - sso-directory:DescribeUsers
    * - sso:GetManagedApplicationInstance
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
+   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/user-management-chapter.html
    */
   public toListProjectAdminUsers() {
     return this.to('ListProjectAdminUsers');
@@ -135,7 +137,7 @@ export class Monitron extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
+   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-project-tasks.html
    */
   public toListProjects() {
     return this.to('ListProjects');
@@ -150,7 +152,7 @@ export class Monitron extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
+   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/tagging.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -165,7 +167,7 @@ export class Monitron extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
+   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/tagging.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -179,7 +181,7 @@ export class Monitron extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
+   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/tagging.html#modify-tag-1
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -194,7 +196,7 @@ export class Monitron extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/monitron-api-permissions-ref.html
+   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/mp-updating-project.html
    */
   public toUpdateProject() {
     return this.to('UpdateProject');
@@ -227,6 +229,8 @@ export class Monitron extends PolicyStatement {
 
   /**
    * Adds a resource of type project to the statement
+   *
+   * https://docs.aws.amazon.com/Monitron/latest/admin-guide/projects-chapter.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

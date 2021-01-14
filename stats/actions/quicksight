@@ -17,8 +17,10 @@ quicksight:CreateTemplateAlias;Write
 quicksight:CreateTheme;Write
 quicksight:CreateThemeAlias;Write
 quicksight:CreateUser;Write
+quicksight:CreateVPCConnection;Write
 quicksight:DeleteAccountCustomization;Write
 quicksight:DeleteAnalysis;Write
+quicksight:DeleteCustomPermissions;Write
 quicksight:DeleteDashboard;Write
 quicksight:DeleteDataSet;Write
 quicksight:DeleteDataSource;Write
@@ -32,6 +34,7 @@ quicksight:DeleteTheme;Write
 quicksight:DeleteThemeAlias;Write
 quicksight:DeleteUser;Write
 quicksight:DeleteUserByPrincipalId;Write
+quicksight:DeleteVPCConnection;Write
 quicksight:DescribeAccountCustomization;Read
 quicksight:DescribeAccountSettings;Read
 quicksight:DescribeAnalysis;Read

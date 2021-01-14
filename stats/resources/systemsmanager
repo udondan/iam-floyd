@@ -1,6 +1,7 @@
 ssm:association
 ssm:automation-definition
 ssm:automation-execution
+ssm:bucket
 ssm:document
 ssm:instance
 ssm:maintenancewindow

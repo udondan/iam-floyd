@@ -1,6 +1,7 @@
 {
     "Action": [
         "ec2:AcceptReservedInstancesExchangeQuote",
+        "ec2:AcceptTransitGatewayMulticastDomainAssociations",
         "ec2:AcceptTransitGatewayPeeringAttachment",
         "ec2:AcceptTransitGatewayVpcAttachment",
         "ec2:AcceptVpcEndpointConnections",
@@ -82,6 +83,8 @@
         "ec2:CreateTrafficMirrorSession",
         "ec2:CreateTrafficMirrorTarget",
         "ec2:CreateTransitGateway",
+        "ec2:CreateTransitGatewayConnect",
+        "ec2:CreateTransitGatewayConnectPeer",
         "ec2:CreateTransitGatewayMulticastDomain",
         "ec2:CreateTransitGatewayPeeringAttachment",
         "ec2:CreateTransitGatewayPrefixListReference",

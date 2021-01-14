@@ -14,6 +14,7 @@ config:DeleteRemediationConfiguration;Write
 config:DeleteRemediationExceptions;Write
 config:DeleteResourceConfig;Write
 config:DeleteRetentionConfiguration;Write
+config:DeleteStoredQuery;Write
 config:DeliverConfigSnapshot;Read
 config:DescribeAggregateComplianceByConfigRules;List
 config:DescribeAggregationAuthorizations;List
@@ -53,8 +54,10 @@ config:GetDiscoveredResourceCounts;Read
 config:GetOrganizationConfigRuleDetailedStatus;Read
 config:GetOrganizationConformancePackDetailedStatus;Read
 config:GetResourceConfigHistory;Read
+config:GetStoredQuery;Read
 config:ListAggregateDiscoveredResources;List
 config:ListDiscoveredResources;List
+config:ListStoredQueries;List
 config:ListTagsForResource;List
 config:PutAggregationAuthorization;Write
 config:PutConfigRule;Write
@@ -63,12 +66,14 @@ config:PutConfigurationRecorder;Write
 config:PutConformancePack;Write
 config:PutDeliveryChannel;Write
 config:PutEvaluations;Write
+config:PutExternalEvaluation;Write
 config:PutOrganizationConfigRule;Write
 config:PutOrganizationConformancePack;Write
 config:PutRemediationConfigurations;Write
 config:PutRemediationExceptions;Write
 config:PutResourceConfig;Write
 config:PutRetentionConfiguration;Write
+config:PutStoredQuery;Write
 config:SelectAggregateResourceConfig;Read
 config:SelectResourceConfig;Read
 config:StartConfigRulesEvaluation;Write

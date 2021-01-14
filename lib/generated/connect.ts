@@ -488,6 +488,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetFederationToken.html
    */
   public toGetFederationToken() {
@@ -1469,6 +1472,21 @@ export class Connect extends PolicyStatement {
    */
   public ifAttributeType(value: string | string[], operator?: Operator | string) {
     return this.if(`AttributeType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by restricting federation into specified connect instances .
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toGetFederationToken()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInstanceId(value: string | string[], operator?: Operator | string) {
+    return this.if(`InstanceId`, value, operator || 'StringLike');
   }
 
   /**

@@ -1,4 +1,5 @@
 connect:AttributeType
+connect:InstanceId
 connect:RequestTag
 connect:ResourceTag
 connect:StorageResourceType

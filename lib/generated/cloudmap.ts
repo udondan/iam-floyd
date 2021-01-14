@@ -19,7 +19,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Creates an HTTP namespace.
+   * Grants permission to create an HTTP namespace
    *
    * Access Level: Write
    *
@@ -34,7 +34,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC.
+   * Grants permission to create a private namespace based on DNS, which will be visible only inside a specified Amazon VPC
    *
    * Access Level: Write
    *
@@ -49,7 +49,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Creates a public namespace based on DNS, which will be visible on the internet.
+   * Grants permission to create a public namespace based on DNS, which will be visible on the internet
    *
    * Access Level: Write
    *
@@ -64,7 +64,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Creates a service.
+   * Grants permission to create a service
    *
    * Access Level: Write
    *
@@ -80,7 +80,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Deletes a specified namespace.
+   * Grants permission to delete a specified namespace
    *
    * Access Level: Write
    *
@@ -91,7 +91,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Deletes a specified service.
+   * Grants permission to delete a specified service
    *
    * Access Level: Write
    *
@@ -102,7 +102,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Deletes the records and the health check, if any, that Amazon Route 53 created for the specified instance.
+   * Grants permission to delete the records and the health check, if any, that Amazon Route 53 created for the specified instance
    *
    * Access Level: Write
    *
@@ -116,7 +116,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Discovers registered instances for a specified namespace and service.
+   * Grants permission to discover registered instances for a specified namespace and service
    *
    * Access Level: Read
    *
@@ -131,7 +131,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Gets information about a specified instance.
+   * Grants permission to get information about a specified instance
    *
    * Access Level: Read
    *
@@ -145,7 +145,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Gets the current health status (Healthy, Unhealthy, or Unknown) of one or more instances.
+   * Grants permission to get the current health status (Healthy, Unhealthy, or Unknown) of one or more instances
    *
    * Access Level: Read
    *
@@ -159,7 +159,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Gets information about a namespace.
+   * Grants permission to get information about a namespace
    *
    * Access Level: Read
    *
@@ -170,7 +170,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Gets information about a specific operation.
+   * Grants permission to get information about a specific operation
    *
    * Access Level: Read
    *
@@ -181,7 +181,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Gets the settings for a specified service.
+   * Grants permission to get the settings for a specified service
    *
    * Access Level: Read
    *
@@ -192,7 +192,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Gets summary information about the instances that were registered with a specified service.
+   * Grants permission to get summary information about the instances that were registered with a specified service
    *
    * Access Level: List
    *
@@ -206,7 +206,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Gets information about the namespaces.
+   * Grants permission to get information about the namespaces
    *
    * Access Level: List
    *
@@ -217,7 +217,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Lists operations that match the criteria that you specify.
+   * Grants permission to list operations that match the criteria that you specify
    *
    * Access Level: List
    *
@@ -228,7 +228,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Gets settings for all the services that match specified filters.
+   * Grants permission to get settings for all the services that match specified filters
    *
    * Access Level: List
    *
@@ -239,7 +239,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Lists tags for the specified resource.
+   * Grants permission to lists tags for the specified resource
    *
    * Access Level: List
    *
@@ -250,7 +250,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Registers an instance based on the settings in a specified service.
+   * Grants permission to register an instance based on the settings in a specified service
    *
    * Access Level: Write
    *
@@ -264,7 +264,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Adds one or more tags to the specified resource.
+   * Grants permission to add one or more tags to the specified resource
    *
    * Access Level: Tagging
    *
@@ -279,7 +279,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Removes one or more tags from the specified resource.
+   * Grants permission to remove one or more tags from the specified resource
    *
    * Access Level: Tagging
    *
@@ -294,7 +294,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Updates the current health status for an instance that has a custom health check.
+   * Grants permission to update the current health status for an instance that has a custom health check
    *
    * Access Level: Write
    *
@@ -308,7 +308,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * Updates the settings in a specified service.
+   * Grants permission to update the settings in a specified service
    *
    * Access Level: Write
    *
@@ -397,7 +397,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * A filter that lets you get objects by specifying the Amazon Resource Name (ARN) for the related namespace.
+   * Filters access by specifying the Amazon Resource Name (ARN) for the related namespace
    *
    * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
    *
@@ -412,7 +412,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * A filter that lets you get objects by specifying the name of the related namespace.
+   * Filters access by specifying the name of the related namespace
    *
    * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
    *
@@ -427,7 +427,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * A filter that lets you get objects by specifying the Amazon Resource Name (ARN) for the related service.
+   * Filters access by specifying the Amazon Resource Name (ARN) for the related service
    *
    * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
    *
@@ -447,7 +447,7 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
-   * A filter that lets you get objects by specifying the name of the related service.
+   * Filters access by specifying the name of the related service
    *
    * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
    *

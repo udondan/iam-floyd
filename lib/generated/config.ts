@@ -19,7 +19,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the current configuration items for resources that are present in your AWS Config aggregator
+   * Grants permission to return the current configuration items for resources that are present in your AWS Config aggregator
    *
    * Access Level: Read
    *
@@ -30,7 +30,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the current configuration for one or more requested resources
+   * Grants permission to return the current configuration for one or more requested resources
    *
    * Access Level: Read
    *
@@ -41,7 +41,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Deletes the authorization granted to the specified configuration aggregator account in a specified region
+   * Grants permission to delete the authorization granted to the specified configuration aggregator account in a specified region
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified AWS Config rule and all of its evaluation results
+   * Grants permission to delete the specified AWS Config rule and all of its evaluation results
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified configuration aggregator and the aggregated data associated with the aggregator
+   * Grants permission to delete the specified configuration aggregator and the aggregated data associated with the aggregator
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Deletes the configuration recorder
+   * Grants permission to delete the configuration recorder
    *
    * Access Level: Write
    *
@@ -85,7 +85,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified conformance pack and all the AWS Config rules and all evaluation results within that conformance pack.
+   * Grants permission to delete the specified conformance pack and all the AWS Config rules and all evaluation results within that conformance pack
    *
    * Access Level: Write
    *
@@ -96,7 +96,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Deletes the delivery channel
+   * Grants permission to delete the delivery channel
    *
    * Access Level: Write
    *
@@ -107,7 +107,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Deletes the evaluation results for the specified Config rule
+   * Grants permission to delete the evaluation results for the specified Config rule
    *
    * Access Level: Write
    *
@@ -118,7 +118,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified organization config rule and all of its evaluation results from all member accounts in that organization.
+   * Grants permission to delete the specified organization config rule and all of its evaluation results from all member accounts in that organization
    *
    * Access Level: Write
    *
@@ -129,7 +129,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified organization conformance pack and all of its evaluation results from all member accounts in that organization.
+   * Grants permission to delete the specified organization conformance pack and all of its evaluation results from all member accounts in that organization
    *
    * Access Level: Write
    *
@@ -140,7 +140,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Deletes pending authorization requests for a specified aggregator account in a specified region
+   * Grants permission to delete pending authorization requests for a specified aggregator account in a specified region
    *
    * Access Level: Write
    *
@@ -151,7 +151,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Deletes the remediation configuration
+   * Grants permission to delete the remediation configuration
    *
    * Access Level: Write
    *
@@ -162,7 +162,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Deletes one or more remediation exceptions for specific resource keys for a specific AWS Config Rule.
+   * Grants permission to delete one or more remediation exceptions for specific resource keys for a specific AWS Config Rule
    *
    * Access Level: Write
    *
@@ -173,7 +173,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Records the configuration state for a custom resource that has been deleted.
+   * Grants permission to record the configuration state for a custom resource that has been deleted
    *
    * Access Level: Write
    *
@@ -184,7 +184,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Deletes the retention configuration
+   * Grants permission to delete the retention configuration
    *
    * Access Level: Write
    *
@@ -195,7 +195,18 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel
+   * Grants permission to delete the stored query for an AWS account in an AWS Region
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteStoredQuery.html
+   */
+  public toDeleteStoredQuery() {
+    return this.to('DeleteStoredQuery');
+  }
+
+  /**
+   * Grants permission to schedule delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel
    *
    * Access Level: Read
    *
@@ -206,7 +217,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns a list of compliant and noncompliant rules with the number of resources for compliant and noncompliant rules
+   * Grants permission to return a list of compliant and noncompliant rules with the number of resources for compliant and noncompliant rules
    *
    * Access Level: List
    *
@@ -217,7 +228,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns a list of authorizations granted to various aggregator accounts and regions
+   * Grants permission to return a list of authorizations granted to various aggregator accounts and regions
    *
    * Access Level: List
    *
@@ -228,7 +239,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Indicates whether the specified AWS Config rules are compliant
+   * Grants permission to indicate whether the specified AWS Config rules are compliant
    *
    * Access Level: List
    *
@@ -239,7 +250,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Indicates whether the specified AWS resources are compliant
+   * Grants permission to indicate whether the specified AWS resources are compliant
    *
    * Access Level: List
    *
@@ -250,7 +261,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns status information for each of your AWS managed Config rules
+   * Grants permission to return status information for each of your AWS managed Config rules
    *
    * Access Level: List
    *
@@ -261,7 +272,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns details about your AWS Config rules
+   * Grants permission to return details about your AWS Config rules
    *
    * Access Level: List
    *
@@ -272,7 +283,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns status information for sources within an aggregator
+   * Grants permission to return status information for sources within an aggregator
    *
    * Access Level: List
    *
@@ -283,7 +294,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the details of one or more configuration aggregators
+   * Grants permission to return the details of one or more configuration aggregators
    *
    * Access Level: List
    *
@@ -294,7 +305,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the current status of the specified configuration recorder
+   * Grants permission to return the current status of the specified configuration recorder
    *
    * Access Level: List
    *
@@ -305,7 +316,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the name of one or more specified configuration recorders
+   * Grants permission to return the names of one or more specified configuration recorders
    *
    * Access Level: List
    *
@@ -316,7 +327,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns compliance information for each rule in that conformance pack.
+   * Grants permission to return compliance information for each rule in that conformance pack
    *
    * Access Level: Read
    *
@@ -327,7 +338,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Provides one or more conformance packs deployment status.
+   * Grants permission to provide one or more conformance packs deployment status
    *
    * Access Level: Read
    *
@@ -338,7 +349,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns a list of one or more conformance packs.
+   * Grants permission to return a list of one or more conformance packs
    *
    * Access Level: Read
    *
@@ -349,7 +360,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the current status of the specified delivery channel
+   * Grants permission to return the current status of the specified delivery channel
    *
    * Access Level: List
    *
@@ -360,7 +371,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns details about the specified delivery channel
+   * Grants permission to return details about the specified delivery channel
    *
    * Access Level: List
    *
@@ -371,7 +382,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Provides organization config rule deployment status for an organization.
+   * Grants permission to provide organization config rule deployment status for an organization
    *
    * Access Level: Read
    *
@@ -382,7 +393,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns a list of organization config rules.
+   * Grants permission to return a list of organization config rules
    *
    * Access Level: Read
    *
@@ -393,7 +404,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Provides organization conformance pack deployment status for an organization.
+   * Grants permission to provide organization conformance pack deployment status for an organization
    *
    * Access Level: Read
    *
@@ -404,7 +415,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns a list of organization conformance packs.
+   * Grants permission to return a list of organization conformance packs
    *
    * Access Level: Read
    *
@@ -415,7 +426,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns a list of all pending aggregation requests
+   * Grants permission to return a list of all pending aggregation requests
    *
    * Access Level: List
    *
@@ -426,7 +437,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the details of one or more remediation configurations
+   * Grants permission to return the details of one or more remediation configurations
    *
    * Access Level: List
    *
@@ -437,7 +448,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the details of one or more remediation exceptions.
+   * Grants permission to return the details of one or more remediation exceptions
    *
    * Access Level: List
    *
@@ -448,7 +459,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps and any error messages for steps that have failed
+   * Grants permission to provide a detailed view of a Remediation Execution for a set of resources including state, timestamps and any error messages for steps that have failed
    *
    * Access Level: List
    *
@@ -459,7 +470,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the details of one or more retention configurations
+   * Grants permission to return the details of one or more retention configurations
    *
    * Access Level: List
    *
@@ -470,7 +481,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the evaluation results for the specified AWS Config rule for a specific resource in a rule
+   * Grants permission to return the evaluation results for the specified AWS Config rule for a specific resource in a rule
    *
    * Access Level: Read
    *
@@ -481,7 +492,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator
+   * Grants permission to return the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator
    *
    * Access Level: Read
    *
@@ -492,7 +503,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the resource counts across accounts and regions that are present in your AWS Config aggregator
+   * Grants permission to return the resource counts across accounts and regions that are present in your AWS Config aggregator
    *
    * Access Level: Read
    *
@@ -503,7 +514,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns configuration item that is aggregated for your specific resource in a specific source account and region
+   * Grants permission to return configuration item that is aggregated for your specific resource in a specific source account and region
    *
    * Access Level: Read
    *
@@ -514,7 +525,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the evaluation results for the specified AWS Config rule
+   * Grants permission to return the evaluation results for the specified AWS Config rule
    *
    * Access Level: Read
    *
@@ -525,7 +536,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the evaluation results for the specified AWS resource
+   * Grants permission to return the evaluation results for the specified AWS resource
    *
    * Access Level: Read
    *
@@ -536,7 +547,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the number of AWS Config rules that are compliant and noncompliant, up to a maximum of 25 for each
+   * Grants permission to return the number of AWS Config rules that are compliant and noncompliant, up to a maximum of 25 for each
    *
    * Access Level: Read
    *
@@ -547,7 +558,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the number of resources that are compliant and the number that are noncompliant
+   * Grants permission to return the number of resources that are compliant and the number that are noncompliant
    *
    * Access Level: Read
    *
@@ -558,7 +569,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns compliance details of a conformance pack for all AWS resources that are monitered by conformance pack.
+   * Grants permission to return compliance details of a conformance pack for all AWS resources that are monitered by conformance pack
    *
    * Access Level: Read
    *
@@ -569,7 +580,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Provides compliance summary for one or more conformance packs.
+   * Grants permission to provide compliance summary for one or more conformance packs
    *
    * Access Level: Read
    *
@@ -580,7 +591,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns the resource types, the number of each resource type, and the total number of resources that AWS Config is recording in this region for your AWS account
+   * Grants permission to return the resource types, the number of each resource type, and the total number of resources that AWS Config is recording in this region for your AWS account
    *
    * Access Level: Read
    *
@@ -591,7 +602,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns detailed status for each member account within an organization for a given organization config rule.
+   * Grants permission to return detailed status for each member account within an organization for a given organization config rule
    *
    * Access Level: Read
    *
@@ -602,7 +613,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns detailed status for each member account within an organization for a given organization conformance pack.
+   * Grants permission to return detailed status for each member account within an organization for a given organization conformance pack
    *
    * Access Level: Read
    *
@@ -613,7 +624,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Returns a list of configuration items for the specified resource
+   * Grants permission to return a list of configuration items for the specified resource
    *
    * Access Level: Read
    *
@@ -624,7 +635,18 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Accepts a resource type and returns a list of resource identifiers that are aggregated for a specific resource type across accounts and regions
+   * Grants permission to return the details of a specific stored query
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_GetStoredQuery.html
+   */
+  public toGetStoredQuery() {
+    return this.to('GetStoredQuery');
+  }
+
+  /**
+   * Grants permission to accept a resource type and returns a list of resource identifiers that are aggregated for a specific resource type across accounts and regions
    *
    * Access Level: List
    *
@@ -635,7 +657,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Accepts a resource type and returns a list of resource identifiers for the resources of that type
+   * Grants permission to accept a resource type and returns a list of resource identifiers for the resources of that type
    *
    * Access Level: List
    *
@@ -646,7 +668,18 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * List the tags for AWS Config resource
+   * Grants permission to list the stored queries for an AWS account in an AWS Region
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_ListStoredQueries.html
+   */
+  public toListStoredQueries() {
+    return this.to('ListStoredQueries');
+  }
+
+  /**
+   * Grants permission to list the tags for AWS Config resource
    *
    * Access Level: List
    *
@@ -657,7 +690,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Authorizes the aggregator account and region to collect data from the source account and region
+   * Grants permission to authorize the aggregator account and region to collect data from the source account and region
    *
    * Access Level: Write
    *
@@ -672,7 +705,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Adds or updates an AWS Config rule for evaluating whether your AWS resources comply with your desired configurations
+   * Grants permission to add or update an AWS Config rule for evaluating whether your AWS resources comply with your desired configurations
    *
    * Access Level: Write
    *
@@ -687,7 +720,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Creates and updates the configuration aggregator with the selected source accounts and regions
+   * Grants permission to create and update the configuration aggregator with the selected source accounts and regions
    *
    * Access Level: Write
    *
@@ -702,7 +735,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Creates a new configuration recorder to record the selected resource configurations
+   * Grants permission to create a new configuration recorder to record the selected resource configurations
    *
    * Access Level: Write
    *
@@ -713,7 +746,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Creates or updates a conformance pack.
+   * Grants permission to create or update a conformance pack
    *
    * Access Level: Write
    *
@@ -724,7 +757,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS topic
+   * Grants permission to create a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS topic
    *
    * Access Level: Write
    *
@@ -735,7 +768,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Used by an AWS Lambda function to deliver evaluation results to AWS Config
+   * Grants permission to be used by an AWS Lambda function to deliver evaluation results to AWS Config
    *
    * Access Level: Write
    *
@@ -746,7 +779,18 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Adds or updates organization config rule for your entire organization evaluating whether your AWS resources comply with your desired configurations.
+   * Grants permission to deliver evaluation result to AWS Config
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_PutExternalEvaluation.html
+   */
+  public toPutExternalEvaluation() {
+    return this.to('PutExternalEvaluation');
+  }
+
+  /**
+   * Grants permission to add or update organization config rule for your entire organization evaluating whether your AWS resources comply with your desired configurations
    *
    * Access Level: Write
    *
@@ -757,7 +801,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Adds or updates organization conformance pack for your entire organization evaluating whether your AWS resources comply with your desired configurations.
+   * Grants permission to add or update organization conformance pack for your entire organization evaluating whether your AWS resources comply with your desired configurations
    *
    * Access Level: Write
    *
@@ -768,7 +812,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Adds or updates the remediation configuration with a specific AWS Config rule with the selected target or action
+   * Grants permission to add or update the remediation configuration with a specific AWS Config rule with the selected target or action
    *
    * Access Level: Write
    *
@@ -779,7 +823,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Adds or updates remediation exceptions for specific resources for a specific AWS Config rule.
+   * Grants permission to add or update remediation exceptions for specific resources for a specific AWS Config rule
    *
    * Access Level: Write
    *
@@ -790,7 +834,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Records the configuration state for the resource provided in the request.
+   * Grants permission to record the configuration state for the resource provided in the request
    *
    * Access Level: Write
    *
@@ -801,7 +845,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Creates and updates the retention configuration with details about retention period (number of days) that AWS Config stores your historical information
+   * Grants permission to create and update the retention configuration with details about retention period (number of days) that AWS Config stores your historical information
    *
    * Access Level: Write
    *
@@ -812,7 +856,18 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Accepts a structured query language (SQL) SELECT command and an aggregator to query configuration state of AWS resources across multiple accounts and regions, performs the corresponding search, and returns resource configurations matching the properties.
+   * Grants permission to save a new query or updates an existing saved query
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_PutStoredQuery.html
+   */
+  public toPutStoredQuery() {
+    return this.to('PutStoredQuery');
+  }
+
+  /**
+   * Grants permission to accept a structured query language (SQL) SELECT command and an aggregator to query configuration state of AWS resources across multiple accounts and regions, performs the corresponding search, and returns resource configurations matching the properties
    *
    * Access Level: Read
    *
@@ -823,7 +878,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Accepts a structured query language (SQL) SELECT command, performs the corresponding search, and returns resource configurations matching the properties
+   * Grants permission to accept a structured query language (SQL) SELECT command, performs the corresponding search, and returns resource configurations matching the properties
    *
    * Access Level: Read
    *
@@ -834,7 +889,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Evaluates your resources against the specified Config rules
+   * Grants permission to evaluate your resources against the specified Config rules
    *
    * Access Level: Write
    *
@@ -845,7 +900,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Starts recording configurations of the AWS resources you have selected to record in your AWS account
+   * Grants permission to start recording configurations of the AWS resources you have selected to record in your AWS account
    *
    * Access Level: Write
    *
@@ -856,7 +911,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Runs an on-demand remediation for the specified AWS Config rules against the last known remediation configuration
+   * Grants permission to run an on-demand remediation for the specified AWS Config rules against the last known remediation configuration
    *
    * Access Level: Write
    *
@@ -867,7 +922,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Stops recording configurations of the AWS resources you have selected to record in your AWS account
+   * Grants permission to stop recording configurations of the AWS resources you have selected to record in your AWS account
    *
    * Access Level: Write
    *
@@ -878,7 +933,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Associates the specified tags to a resource with the specified resourceArn
+   * Grants permission to associate the specified tags to a resource with the specified resourceArn
    *
    * Access Level: Tagging
    *
@@ -893,7 +948,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Deletes specified tags from a resource
+   * Grants permission to delete specified tags from a resource
    *
    * Access Level: Tagging
    *
@@ -932,6 +987,7 @@ export class Config extends PolicyStatement {
       "GetOrganizationConfigRuleDetailedStatus",
       "GetOrganizationConformancePackDetailedStatus",
       "GetResourceConfigHistory",
+      "GetStoredQuery",
       "SelectAggregateResourceConfig",
       "SelectResourceConfig"
     ],
@@ -950,6 +1006,7 @@ export class Config extends PolicyStatement {
       "DeleteRemediationExceptions",
       "DeleteResourceConfig",
       "DeleteRetentionConfiguration",
+      "DeleteStoredQuery",
       "PutAggregationAuthorization",
       "PutConfigRule",
       "PutConfigurationAggregator",
@@ -957,12 +1014,14 @@ export class Config extends PolicyStatement {
       "PutConformancePack",
       "PutDeliveryChannel",
       "PutEvaluations",
+      "PutExternalEvaluation",
       "PutOrganizationConfigRule",
       "PutOrganizationConformancePack",
       "PutRemediationConfigurations",
       "PutRemediationExceptions",
       "PutResourceConfig",
       "PutRetentionConfiguration",
+      "PutStoredQuery",
       "StartConfigRulesEvaluation",
       "StartConfigurationRecorder",
       "StartRemediationExecution",
@@ -988,6 +1047,7 @@ export class Config extends PolicyStatement {
       "DescribeRetentionConfigurations",
       "ListAggregateDiscoveredResources",
       "ListDiscoveredResources",
+      "ListStoredQueries",
       "ListTagsForResource"
     ],
     "Tagging": [
@@ -999,7 +1059,7 @@ export class Config extends PolicyStatement {
   /**
    * Adds a resource of type AggregationAuthorization to the statement
    *
-   * https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_AggregationAuthorization.html
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_AggregationAuthorization.html
    *
    * @param aggregatorAccount - Identifier for the aggregatorAccount.
    * @param aggregatorRegion - Identifier for the aggregatorRegion.
@@ -1023,7 +1083,7 @@ export class Config extends PolicyStatement {
   /**
    * Adds a resource of type ConfigurationAggregator to the statement
    *
-   * https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConfigurationAggregator.html
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_ConfigurationAggregator.html
    *
    * @param aggregatorId - Identifier for the aggregatorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1045,7 +1105,7 @@ export class Config extends PolicyStatement {
   /**
    * Adds a resource of type ConfigRule to the statement
    *
-   * https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConfigRule.html
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_ConfigRule.html
    *
    * @param configRuleId - Identifier for the configRuleId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1067,7 +1127,7 @@ export class Config extends PolicyStatement {
   /**
    * Adds a resource of type ConformancePack to the statement
    *
-   * https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConformancePack.html
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_ConformancePack.html
    *
    * @param conformancePackName - Identifier for the conformancePackName.
    * @param conformancePackId - Identifier for the conformancePackId.
@@ -1091,7 +1151,7 @@ export class Config extends PolicyStatement {
   /**
    * Adds a resource of type OrganizationConfigRule to the statement
    *
-   * https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_OrganizationConfigRule.html
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_OrganizationConfigRule.html
    *
    * @param organizationConfigRuleId - Identifier for the organizationConfigRuleId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1110,7 +1170,7 @@ export class Config extends PolicyStatement {
   /**
    * Adds a resource of type OrganizationConformancePack to the statement
    *
-   * https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_OrganizationConformancePack.html
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_OrganizationConformancePack.html
    *
    * @param organizationConformancePackId - Identifier for the organizationConformancePackId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1129,7 +1189,7 @@ export class Config extends PolicyStatement {
   /**
    * Adds a resource of type RemediationConfiguration to the statement
    *
-   * https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_RemediationConfiguration.html
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_RemediationConfiguration.html
    *
    * @param remediationConfigurationId - Identifier for the remediationConfigurationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1139,6 +1199,27 @@ export class Config extends PolicyStatement {
   public onRemediationConfiguration(remediationConfigurationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:config:${Region}:${Account}:remediation-configuration/${RemediationConfigurationId}';
     arn = arn.replace('${RemediationConfigurationId}', remediationConfigurationId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type StoredQuery to the statement
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_StoredQuery.html
+   *
+   * @param storedQueryName - Identifier for the storedQueryName.
+   * @param storedQueryId - Identifier for the storedQueryId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onStoredQuery(storedQueryName: string, storedQueryId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:config:${Region}:${Account}:stored-query/${StoredQueryName}/${StoredQueryId}';
+    arn = arn.replace('${StoredQueryName}', storedQueryName);
+    arn = arn.replace('${StoredQueryId}', storedQueryId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

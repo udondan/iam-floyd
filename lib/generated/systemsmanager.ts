@@ -1792,6 +1792,21 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type bucket to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html
+   *
+   * @param bucketName - Identifier for the bucketName.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onBucket(bucketName: string, partition?: string) {
+    var arn = 'arn:${Partition}:s3:::${BucketName}';
+    arn = arn.replace('${BucketName}', bucketName);
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type document to the statement
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html
@@ -1817,7 +1832,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Adds a resource of type instance to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param instanceId - Identifier for the instanceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

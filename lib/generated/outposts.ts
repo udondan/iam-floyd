@@ -30,11 +30,11 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an outpost
+   * Grants permission to delete an Outpost
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_DeleteOutpost.html
    */
   public toDeleteOutpost() {
     return this.to('DeleteOutpost');
@@ -45,7 +45,7 @@ export class Outposts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_DeleteSite.html
    */
   public toDeleteSite() {
     return this.to('DeleteSite');
@@ -95,11 +95,46 @@ export class Outposts extends PolicyStatement {
     return this.to('ListSites');
   }
 
+  /**
+   * Grants permission to list tags for a resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to add tags to a resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from a resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CreateOutpost",
       "DeleteOutpost",
-      "DeleteSite"
+      "DeleteSite",
+      "TagResource",
+      "UntagResource"
     ],
     "Read": [
       "GetOutpost",
@@ -107,7 +142,8 @@ export class Outposts extends PolicyStatement {
     ],
     "List": [
       "ListOutposts",
-      "ListSites"
+      "ListSites",
+      "ListTagsForResource"
     ]
   };
 }

@@ -30,6 +30,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to accept a request to associate subnets with a transit gateway multicast domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptTransitGatewayMulticastDomainAssociations.html
+   */
+  public toAcceptTransitGatewayMulticastDomainAssociations() {
+    return this.to('AcceptTransitGatewayMulticastDomainAssociations');
+  }
+
+  /**
    * Grants permission to accept a transit gateway peering attachment request
    *
    * Access Level: Write
@@ -949,6 +960,28 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateTransitGateway() {
     return this.to('CreateTransitGateway');
+  }
+
+  /**
+   * Grants permission to create a Connect attachment from a specified transit gateway attachment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayConnect.html
+   */
+  public toCreateTransitGatewayConnect() {
+    return this.to('CreateTransitGatewayConnect');
+  }
+
+  /**
+   * Grants permission to create a Connect peer between a transit gateway and an appliance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayConnectPeer.html
+   */
+  public toCreateTransitGatewayConnectPeer() {
+    return this.to('CreateTransitGatewayConnectPeer');
   }
 
   /**
@@ -2440,6 +2473,28 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe one or more network insights analyses
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInsightsAnalyses.html
+   */
+  public toDescribeNetworkInsightsAnalyses() {
+    return this.to('DescribeNetworkInsightsAnalyses');
+  }
+
+  /**
+   * Grants permission to describe one or more network insights paths
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInsightsPaths.html
+   */
+  public toDescribeNetworkInsightsPaths() {
+    return this.to('DescribeNetworkInsightsPaths');
+  }
+
+  /**
    * Grants permission to describe a network interface attribute
    *
    * Access Level: List
@@ -2789,6 +2844,28 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeTransitGatewayAttachments() {
     return this.to('DescribeTransitGatewayAttachments');
+  }
+
+  /**
+   * Grants permission to describe one or more transit gateway connect peers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayConnectPeers.html
+   */
+  public toDescribeTransitGatewayConnectPeers() {
+    return this.to('DescribeTransitGatewayConnectPeers');
+  }
+
+  /**
+   * Grants permission to describe one or more transit gateway connect attachments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayConnects.html
+   */
+  public toDescribeTransitGatewayConnects() {
+    return this.to('DescribeTransitGatewayConnects');
   }
 
   /**
@@ -4766,6 +4843,7 @@ export class Ec2 extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AcceptReservedInstancesExchangeQuote",
+      "AcceptTransitGatewayMulticastDomainAssociations",
       "AcceptTransitGatewayPeeringAttachment",
       "AcceptTransitGatewayVpcAttachment",
       "AcceptVpcEndpointConnections",
@@ -4847,6 +4925,8 @@ export class Ec2 extends PolicyStatement {
       "CreateTrafficMirrorSession",
       "CreateTrafficMirrorTarget",
       "CreateTransitGateway",
+      "CreateTransitGatewayConnect",
+      "CreateTransitGatewayConnectPeer",
       "CreateTransitGatewayMulticastDomain",
       "CreateTransitGatewayPeeringAttachment",
       "CreateTransitGatewayPrefixListReference",
@@ -5119,6 +5199,8 @@ export class Ec2 extends PolicyStatement {
       "DescribeMovingAddresses",
       "DescribeNatGateways",
       "DescribeNetworkAcls",
+      "DescribeNetworkInsightsAnalyses",
+      "DescribeNetworkInsightsPaths",
       "DescribeNetworkInterfaceAttribute",
       "DescribeNetworkInterfacePermissions",
       "DescribeNetworkInterfaces",
@@ -5148,6 +5230,8 @@ export class Ec2 extends PolicyStatement {
       "DescribeTrafficMirrorSessions",
       "DescribeTrafficMirrorTargets",
       "DescribeTransitGatewayAttachments",
+      "DescribeTransitGatewayConnectPeers",
+      "DescribeTransitGatewayConnects",
       "DescribeTransitGatewayMulticastDomains",
       "DescribeTransitGatewayPeeringAttachments",
       "DescribeTransitGatewayRouteTables",
@@ -7092,6 +7176,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAcceptReservedInstancesExchangeQuote()
+   * - .toAcceptTransitGatewayMulticastDomainAssociations()
    * - .toAllocateHosts()
    * - .toAssignIpv6Addresses()
    * - .toAssignPrivateIpAddresses()
@@ -8367,6 +8452,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAcceptReservedInstancesExchangeQuote()
+   * - .toAcceptTransitGatewayMulticastDomainAssociations()
    * - .toAcceptTransitGatewayPeeringAttachment()
    * - .toAcceptTransitGatewayVpcAttachment()
    * - .toAcceptVpcEndpointConnections()
@@ -8438,6 +8524,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTrafficMirrorSession()
    * - .toCreateTrafficMirrorTarget()
    * - .toCreateTransitGateway()
+   * - .toCreateTransitGatewayConnect()
+   * - .toCreateTransitGatewayConnectPeer()
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
    * - .toCreateTransitGatewayPrefixListReference()
@@ -8834,6 +8922,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAcceptReservedInstancesExchangeQuote()
+   * - .toAcceptTransitGatewayMulticastDomainAssociations()
    * - .toAcceptTransitGatewayPeeringAttachment()
    * - .toAcceptTransitGatewayVpcAttachment()
    * - .toAcceptVpcEndpointConnections()
@@ -8905,6 +8994,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTrafficMirrorSession()
    * - .toCreateTrafficMirrorTarget()
    * - .toCreateTransitGateway()
+   * - .toCreateTransitGatewayConnect()
+   * - .toCreateTransitGatewayConnectPeer()
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
    * - .toCreateTransitGatewayPrefixListReference()
@@ -9693,6 +9784,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toAcceptTransitGatewayMulticastDomainAssociations()
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()
    * - .toAssignIpv6Addresses()
    * - .toAssignPrivateIpAddresses()

@@ -49,7 +49,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * CreateAdmin enables the user to provision Amazon QuickSight administrators, authors, and readers.
+   * Grants permission to provision Amazon QuickSight administrators, authors, and readers
    *
    * Access Level: Write
    *
@@ -60,7 +60,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Creates an analysis from a template
+   * Grants permission to create an analysis from a template
    *
    * Access Level: Write
    *
@@ -86,7 +86,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Creates a dashboard from a template
+   * Grants permission to create a QuickSight Dashboard
    *
    * Access Level: Write
    *
@@ -108,6 +108,9 @@ export class Quicksight extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - quicksight:PassDataSource
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDataSet.html
    */
@@ -131,7 +134,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Create a QuickSight group.
+   * Grants permission to create a QuickSight group
    *
    * Access Level: Write
    *
@@ -142,7 +145,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Add a QuickSight user to a QuickSight group.
+   * Grants permission to add a QuickSight user to a QuickSight group
    *
    * Access Level: Write
    *
@@ -153,7 +156,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Creates an assignment with one specified IAM Policy ARN that will be assigned to specified groups or users of QuickSight.
+   * Grants permission to create an assignment with one specified IAM Policy ARN that will be assigned to specified groups or users of QuickSight
    *
    * Access Level: Write
    *
@@ -190,7 +193,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * CreateReader enables the user to provision Amazon QuickSight readers.
+   * Grants permission to provision Amazon QuickSight readers
    *
    * Access Level: Write
    *
@@ -201,7 +204,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Creates a template from an existing QuickSight analysis or template
+   * Grants permission to create a template
    *
    * Access Level: Write
    *
@@ -216,7 +219,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Creates a template alias for a template
+   * Grants permission to create a template alias
    *
    * Access Level: Write
    *
@@ -227,7 +230,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Creates a QuickSight theme
+   * Grant permission to create a theme
    *
    * Access Level: Write
    *
@@ -242,7 +245,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Creates a theme alias for a theme
+   * Grants permission to create an alias for a theme version
    *
    * Access Level: Write
    *
@@ -253,7 +256,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * CreateUser enables the user to provision Amazon QuickSight authors and readers.
+   * Grants permission to provision Amazon QuickSight authors and readers
    *
    * Access Level: Write
    *
@@ -261,6 +264,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toCreateUser() {
     return this.to('CreateUser');
+  }
+
+  /**
+   * Grants permission to create a VPC connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/vpc-creating-a-connection-in-quicksight.html
+   */
+  public toCreateVPCConnection() {
+    return this.to('CreateVPCConnection');
   }
 
   /**
@@ -275,7 +289,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Deletes an analysis
+   * Grants permissions to delete an analysis
    *
    * Access Level: Write
    *
@@ -286,7 +300,18 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Deletes a dashboard
+   * Grants permission to delete a custom permissions resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toDeleteCustomPermissions() {
+    return this.to('DeleteCustomPermissions');
+  }
+
+  /**
+   * Grants permission to delete a QuickSight Dashboard
    *
    * Access Level: Write
    *
@@ -327,7 +352,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Remove a user group from QuickSight.
+   * Grants permission to remove a user group from QuickSight
    *
    * Access Level: Write
    *
@@ -338,7 +363,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Remove a user from a group so that he/she is no longer a member of the group.
+   * Grants permission to remove a user from a group so that he/she is no longer a member of the group
    *
    * Access Level: Write
    *
@@ -349,7 +374,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Update an existing assignment.
+   * Grants permission to update an existing assignment
    *
    * Access Level: Write
    *
@@ -371,7 +396,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Deletes a template
+   * Grants permission to delete a template
    *
    * Access Level: Write
    *
@@ -382,7 +407,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Deletes the item that the specified template alias points to
+   * Grants permission to delete a template alias
    *
    * Access Level: Write
    *
@@ -393,7 +418,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Deletes a theme
+   * Grants permission to delete a theme
    *
    * Access Level: Write
    *
@@ -404,7 +429,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Deletes the item that the specified theme alias points to
+   * Grants permission to delete the alias of a theme
    *
    * Access Level: Write
    *
@@ -415,7 +440,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Delete the QuickSight user that is associated with the identity of the IAM user/role making the call. The IAM user is not deleted as a result of this call.
+   * Grants permission to delete a QuickSight user, given the user name
    *
    * Access Level: Write
    *
@@ -426,7 +451,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Deletes a user identified by its principal ID.
+   * Grants permission to deletes a user identified by its principal ID
    *
    * Access Level: Write
    *
@@ -434,6 +459,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDeleteUserByPrincipalId() {
     return this.to('DeleteUserByPrincipalId');
+  }
+
+  /**
+   * Grants permission to delete a VPC connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/vpc-creating-a-connection-in-quicksight.html
+   */
+  public toDeleteVPCConnection() {
+    return this.to('DeleteVPCConnection');
   }
 
   /**
@@ -459,7 +495,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Provides a summary for an analysis
+   * Grants permission to describe an analysis
    *
    * Access Level: Read
    *
@@ -470,7 +506,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Describes read and write permissions for an analysis
+   * Grants permission to describe permissions for an analysis
    *
    * Access Level: Read
    *
@@ -492,7 +528,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Provides a summary for a dashboard
+   * Grants permission to describe a QuickSight Dashboard
    *
    * Access Level: Read
    *
@@ -503,7 +539,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Describes read and write permissions for a dashboard
+   * Grants permission to describe permissions for a QuickSight Dashboard
    *
    * Access Level: Read
    *
@@ -574,7 +610,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Return a QuickSight group’s description and ARN.
+   * Grants permission to describe a QuickSight group
    *
    * Access Level: Read
    *
@@ -585,7 +621,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Describe an existing assignment.
+   * Grants permission to describe an existing assignment
    *
    * Access Level: Read
    *
@@ -622,7 +658,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Describes a template's metadata
+   * Grants permission to describe a template
    *
    * Access Level: Read
    *
@@ -633,7 +669,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Describes the template alias for a template
+   * Grants permission to describe a template alias
    *
    * Access Level: Read
    *
@@ -644,7 +680,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Describes read and write permissions on a template
+   * Grants permission to describe permissions for a template
    *
    * Access Level: Read
    *
@@ -655,7 +691,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Describes a theme's metadata
+   * Grants permission to describe a theme
    *
    * Access Level: Read
    *
@@ -666,7 +702,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Describes the theme alias for a theme
+   * Grants permission to describe a theme alias
    *
    * Access Level: Read
    *
@@ -677,7 +713,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Describes read and write permissions on a theme
+   * Grants permission to describe permissions for a theme
    *
    * Access Level: Read
    *
@@ -688,7 +724,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Return information about a user, given the user name.
+   * Grants permission to describe a QuickSight user given the user name
    *
    * Access Level: Read
    *
@@ -699,7 +735,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Return an auth code representing a QuickSight user.
+   * Grants permission to get an auth code representing a QuickSight user
    *
    * Access Level: Read
    *
@@ -710,7 +746,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Return a QuickSight dashboard embedding URL.
+   * Grants permission to get a URL used to embed a QuickSight Dashboard
    *
    * Access Level: Read
    *
@@ -721,7 +757,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * GetGroupMapping is used only in Amazon QuickSight Enterprise edition accounts. It enables the user to use Amazon QuickSight to identify and display the Microsoft Active Directory (Microsoft Active Directory) directory groups that are mapped to roles in Amazon QuickSight.
+   * Grants permission to use Amazon QuickSight, in Enterprise edition, to identify and display the Microsoft Active Directory (Microsoft Active Directory) directory groups that are mapped to roles in Amazon QuickSight
    *
    * Access Level: Read
    *
@@ -732,7 +768,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a URL to embed QuickSight console experience.
+   * Grants permission to get a URL to embed QuickSight console experience
    *
    * Access Level: Read
    *
@@ -743,7 +779,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Lists analyses in an AWS account
+   * Grants permission to list all analyses in an account
    *
    * Access Level: List
    *
@@ -765,7 +801,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Lists all the versions of the dashboards in the QuickSight subscription
+   * Grants permission to list all versions of a QuickSight Dashboard
    *
    * Access Level: List
    *
@@ -776,7 +812,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Lists dashboards in an AWS account
+   * Grants permission to list all Dashboards in a QuickSight Account
    *
    * Access Level: List
    *
@@ -817,7 +853,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Return a list of member users in a group.
+   * Grants permission to list member users in a group
    *
    * Access Level: List
    *
@@ -828,7 +864,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Get a list of all user groups in QuickSight.
+   * Grants permission to list all user groups in QuickSight
    *
    * Access Level: List
    *
@@ -839,7 +875,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * List all assignments in the current Amazon QuickSight account.
+   * Grants permission to list all assignments in the current Amazon QuickSight account
    *
    * Access Level: List
    *
@@ -850,7 +886,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * List all assignments assigned to a user and the groups it belongs
+   * Grants permission to list all assignments assigned to a user and the groups it belongs
    *
    * Access Level: List
    *
@@ -887,7 +923,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * List tags of a QuickSight resource.
+   * Grants permission to list tags of a QuickSight resource
    *
    * Access Level: List
    *
@@ -898,7 +934,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Lists all the aliases of a template
+   * Grants permission to list all aliases for a template
    *
    * Access Level: List
    *
@@ -909,7 +945,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Lists all the versions of the templates in the current Amazon QuickSight account
+   * Grants permission to list all versions of a template
    *
    * Access Level: List
    *
@@ -920,7 +956,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Lists all the templates in the current Amazon QuickSight account
+   * Grants permission to list all templates in a QuickSight account
    *
    * Access Level: List
    *
@@ -931,7 +967,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Lists all the aliases of a theme
+   * Grants permission to list all aliases of a theme
    *
    * Access Level: List
    *
@@ -942,7 +978,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Lists all the versions of a theme
+   * Grants permission to list all versions of a theme
    *
    * Access Level: List
    *
@@ -953,7 +989,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Lists all the themes in the current Amazon QuickSight account
+   * Grants permission to list all themes in an account
    *
    * Access Level: List
    *
@@ -964,7 +1000,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Return a list of groups that a given user is a member of.
+   * Grants permission to list groups that a given user is a member of
    *
    * Access Level: List
    *
@@ -975,7 +1011,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Return a list of all of the QuickSight users belonging to this account.
+   * Grants permission to list all of the QuickSight users belonging to this account
    *
    * Access Level: List
    *
@@ -1016,7 +1052,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Create a QuickSight user, whose identity is associated with the IAM identity/role specified in the request.
+   * Grants permission to create a QuickSight user, whose identity is associated with the IAM identity/role specified in the request
    *
    * Access Level: Write
    *
@@ -1027,7 +1063,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Restores a deleted analysis
+   * Grants permission to restore a deleted analysis
    *
    * Access Level: Write
    *
@@ -1038,7 +1074,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Searches for analyses that belong to the user specified in the filter
+   * Grants permission to search for a sub-set of analyses
    *
    * Access Level: List
    *
@@ -1049,7 +1085,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Searches for dashboards that belong to a user
+   * Grants permission to search for a sub-set of QuickSight Dashboards
    *
    * Access Level: List
    *
@@ -1060,7 +1096,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * SearchDirectoryGroups is used only in Amazon QuickSight Enterprise edition accounts. It enables the user to use Amazon QuickSight to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight.
+   * Grants permission to use Amazon QuickSight, in Enterprise edition, to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight
    *
    * Access Level: Write
    *
@@ -1071,7 +1107,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * SearchDirectoryGroups is used only in Amazon QuickSight Enterprise edition accounts. It enables the user to use Amazon QuickSight to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight.
+   * Grants permission to use Amazon QuickSight, in Enterprise edition, to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight
    *
    * Access Level: Write
    *
@@ -1082,7 +1118,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Subscribe enables the user to subscribe to Amazon QuickSight. Enabling this action also allows the user to upgrade the subscription to Enterprise edition.
+   * Grants permission to subscribe to Amazon QuickSight, and also to allow the user to upgrade the subscription to Enterprise edition
    *
    * Access Level: Write
    *
@@ -1093,7 +1129,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Add tags to a QuickSight resource
+   * Grants permission to add tags to a QuickSight resource
    *
    * Access Level: Tagging
    *
@@ -1108,7 +1144,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Unsubscribe enables the user to unsubscribe from Amazon QuickSight, which permanently deletes all users and their resources from Amazon QuickSight.
+   * Grants permission to unsubscribe from Amazon QuickSight, which permanently deletes all users and their resources from Amazon QuickSight
    *
    * Access Level: Write
    *
@@ -1119,7 +1155,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Remove tags from a QuickSight resource.
+   * Grants permission to remove tags from a QuickSight resource
    *
    * Access Level: Tagging
    *
@@ -1155,7 +1191,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Updates an analysis in an AWS account
+   * Grants permission to update an analysis
    *
    * Access Level: Write
    *
@@ -1166,7 +1202,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Updates read and write permissions on an analysis
+   * Grants permission to update permissions for an analysis
    *
    * Access Level: Write
    *
@@ -1188,7 +1224,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Updates a dashboard in an AWS account
+   * Grants permission to update a QuickSight Dashboard
    *
    * Access Level: Write
    *
@@ -1199,7 +1235,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Updates read and write permissions on a dashboard
+   * Grants permission to update permissions for a QuickSight Dashboard
    *
    * Access Level: Write
    *
@@ -1210,7 +1246,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Updates the published version of a dashboard
+   * Grants permission to update a QuickSight Dashboard’s Published Version
    *
    * Access Level: Write
    *
@@ -1228,6 +1264,9 @@ export class Quicksight extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - quicksight:PassDataSource
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDataSet.html
    */
@@ -1281,7 +1320,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Change group description.
+   * Grants permission to change group description
    *
    * Access Level: Write
    *
@@ -1292,7 +1331,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Update an existing assignment.
+   * Grants permission to update an existing assignment
    *
    * Access Level: Write
    *
@@ -1303,7 +1342,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Updates a template from an existing Amazon QuickSight analysis or another template
+   * Grants permission to update a template
    *
    * Access Level: Write
    *
@@ -1314,7 +1353,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Updates the template alias of a template
+   * Grants permission to update a template alias
    *
    * Access Level: Write
    *
@@ -1325,7 +1364,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Updates the resource permissions for a template
+   * Grants permission to update permissions for a template
    *
    * Access Level: Write
    *
@@ -1336,7 +1375,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Updates a theme
+   * Grants permission to update a theme
    *
    * Access Level: Write
    *
@@ -1347,7 +1386,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Updates the theme alias of a theme
+   * Grants permission to update the alias of a theme
    *
    * Access Level: Write
    *
@@ -1358,7 +1397,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Updates the resource permissions for a theme
+   * Grants permission to update permissions for a theme
    *
    * Access Level: Write
    *
@@ -1369,7 +1408,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Updates an Amazon QuickSight user.
+   * Grants permission to update an Amazon QuickSight user
    *
    * Access Level: Write
    *
@@ -1400,8 +1439,10 @@ export class Quicksight extends PolicyStatement {
       "CreateTheme",
       "CreateThemeAlias",
       "CreateUser",
+      "CreateVPCConnection",
       "DeleteAccountCustomization",
       "DeleteAnalysis",
+      "DeleteCustomPermissions",
       "DeleteDashboard",
       "DeleteDataSet",
       "DeleteDataSource",
@@ -1415,6 +1456,7 @@ export class Quicksight extends PolicyStatement {
       "DeleteThemeAlias",
       "DeleteUser",
       "DeleteUserByPrincipalId",
+      "DeleteVPCConnection",
       "DescribeCustomPermissions",
       "ListCustomPermissions",
       "ListNamespaces",
@@ -1755,7 +1797,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * IAM user ARN or role ARN.
+   * Filters access by IAM user or role ARN
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    *
@@ -1770,7 +1812,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * The session name.
+   * Filters access by session name
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    *
@@ -1785,7 +1827,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * The user name.
+   * Filters access by user name
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    *

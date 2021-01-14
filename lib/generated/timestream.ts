@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [timestream](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstimestream.html).
+ * Statement provider for service [timestream](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontimestream.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Timestream extends PolicyStatement {
   public servicePrefix = 'timestream';
 
   /**
-   * Statement provider for service [timestream](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstimestream.html).
+   * Statement provider for service [timestream](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontimestream.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,7 +23,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_CancelQuery.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_CancelQuery.html
    */
   public toCancelQuery() {
     return this.to('CancelQuery');
@@ -38,7 +38,7 @@ export class Timestream extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_CreateDatabase.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateDatabase.html
    */
   public toCreateDatabase() {
     return this.to('CreateDatabase');
@@ -53,7 +53,7 @@ export class Timestream extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_CreateTable.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateTable.html
    */
   public toCreateTable() {
     return this.to('CreateTable');
@@ -64,7 +64,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_DeleteDatabase.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DeleteDatabase.html
    */
   public toDeleteDatabase() {
     return this.to('DeleteDatabase');
@@ -75,7 +75,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_DeleteTable.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DeleteTable.html
    */
   public toDeleteTable() {
     return this.to('DeleteTable');
@@ -86,7 +86,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_DescribeDatabase.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeDatabase.html
    */
   public toDescribeDatabase() {
     return this.to('DescribeDatabase');
@@ -97,7 +97,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_DescribeEndpoints.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeEndpoints.html
    */
   public toDescribeEndpoints() {
     return this.to('DescribeEndpoints');
@@ -108,7 +108,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_DescribeTable.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeTable.html
    */
   public toDescribeTable() {
     return this.to('DescribeTable');
@@ -119,7 +119,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_ListDatabases.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListDatabases.html
    */
   public toListDatabases() {
     return this.to('ListDatabases');
@@ -130,7 +130,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_ListMeasures.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html
    */
   public toListMeasures() {
     return this.to('ListMeasures');
@@ -141,7 +141,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_ListTables.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListTables.html
    */
   public toListTables() {
     return this.to('ListTables');
@@ -152,7 +152,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -163,7 +163,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_Query.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html
    */
   public toSelect() {
     return this.to('Select');
@@ -174,7 +174,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_Query.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html
    */
   public toSelectValues() {
     return this.to('SelectValues');
@@ -189,7 +189,7 @@ export class Timestream extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_TagResource.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -203,7 +203,7 @@ export class Timestream extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_UntagResource.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -214,7 +214,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_UpdateDatabase.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateDatabase.html
    */
   public toUpdateDatabase() {
     return this.to('UpdateDatabase');
@@ -225,7 +225,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_UpdateTable.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateTable.html
    */
   public toUpdateTable() {
     return this.to('UpdateTable');
@@ -236,7 +236,7 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Timestream/latest/APIReference/API_WriteRecords.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_WriteRecords.html
    */
   public toWriteRecords() {
     return this.to('WriteRecords');
@@ -275,7 +275,7 @@ export class Timestream extends PolicyStatement {
   /**
    * Adds a resource of type database to the statement
    *
-   * https://docs.aws.amazon.com/Timestream/latest/UserGuide/database-example-policies.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_Database.html
    *
    * @param databaseName - Identifier for the databaseName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -297,7 +297,7 @@ export class Timestream extends PolicyStatement {
   /**
    * Adds a resource of type table to the statement
    *
-   * https://docs.aws.amazon.com/Timestream/latest/UserGuide/table-example-policies.html
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_Table.html
    *
    * @param databaseName - Identifier for the databaseName.
    * @param tableName - Identifier for the tableName.
