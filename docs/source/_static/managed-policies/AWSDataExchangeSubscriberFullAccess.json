@@ -29,7 +29,14 @@
     {
       "Action": "s3:GetObject",
       "Effect": "Allow",
-      "Resource": "arn:aws:s3:::*aws-data-exchange*"
+      "Resource": "arn:aws:s3:::*aws-data-exchange*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia":[
+            "dataexchange.amazonaws.com"
+          ]
+        }
+      }
     },
     {
       "Effect": "Allow",
