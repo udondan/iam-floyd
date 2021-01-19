@@ -44,7 +44,10 @@
 				"iam:ListUsers",
 				"iam:ListRoles",
 				"rds:DescribeDBClusters",
-				"rds:DescribeDBInstances"
+				"rds:DescribeDBInstances",
+				"ecs:DescribeClusters",
+				"eks:DescribeNodegroup"
+
 			],
 			"Resource": "*"
 		}
