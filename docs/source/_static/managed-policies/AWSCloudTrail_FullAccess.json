@@ -90,6 +90,14 @@
 				"lambda:ListFunctions"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"dynamodb:ListGlobalTables",
+                "dynamodb:ListTables"
+			],
+			"Resource": "*"
 		}
 	]
 }
