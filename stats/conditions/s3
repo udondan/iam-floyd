@@ -14,6 +14,7 @@ s3:RequestTag
 s3:ResourceAccount
 s3:ResourceTag
 s3:TagKeys
+s3:TlsVersion
 s3:VersionId
 s3:authType
 s3:delimiter

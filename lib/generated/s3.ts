@@ -31,6 +31,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html
@@ -54,6 +55,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzAcl()
    * - .ifXAmzContentSha256()
    * - .ifXAmzCopySource()
@@ -92,6 +94,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzAcl()
    * - .ifXAmzContentSha256()
    *
@@ -112,6 +115,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzAcl()
    * - .ifXAmzContentSha256()
    * - .ifXAmzGrantFullControl()
@@ -136,6 +140,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    * - .ifRequestJobPriority()
    * - .ifRequestJobOperation()
@@ -164,6 +169,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html
@@ -185,6 +191,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html
@@ -203,6 +210,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html
@@ -221,6 +229,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketOwnershipControls.html
@@ -239,6 +248,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html
@@ -257,6 +267,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketWebsite.html
@@ -275,6 +286,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    * - .ifExistingJobPriority()
    * - .ifExistingJobOperation()
@@ -298,6 +310,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html
@@ -320,6 +333,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html
@@ -341,6 +355,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifVersionid()
    * - .ifXAmzContentSha256()
    *
@@ -364,6 +379,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifVersionid()
    * - .ifXAmzContentSha256()
    *
@@ -383,6 +399,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteStorageLensConfiguration.html
@@ -401,6 +418,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteStorageLensConfigurationTagging.html
@@ -419,6 +437,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html
@@ -437,6 +456,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAccelerateConfiguration.html
@@ -458,6 +478,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html
@@ -479,6 +500,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicy.html
@@ -500,6 +522,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyStatus.html
@@ -518,6 +541,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetPublicAccessBlock.html
@@ -536,6 +560,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAnalyticsConfiguration.html
@@ -554,6 +579,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html
@@ -572,6 +598,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html
@@ -601,6 +628,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html
@@ -619,6 +647,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotification.html
@@ -637,6 +666,8 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifSignatureversion()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html
    */
@@ -654,6 +685,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketOwnershipControls.html
@@ -672,6 +704,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html
@@ -690,6 +723,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicyStatus.html
@@ -708,6 +742,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html
@@ -726,6 +761,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketRequestPayment.html
@@ -744,6 +780,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html
@@ -762,6 +799,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html
@@ -780,6 +818,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketWebsite.html
@@ -798,12 +837,32 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html
    */
   public toGetEncryptionConfiguration() {
     return this.to('GetEncryptionConfiguration');
+  }
+
+  /**
+   * Grants permission to get an or list all Amazon S3 Intelligent Tiering configuration in a S3 Bucket
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html
+   */
+  public toGetIntelligentTieringConfiguration() {
+    return this.to('GetIntelligentTieringConfiguration');
   }
 
   /**
@@ -816,6 +875,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html
@@ -834,6 +894,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html
@@ -852,6 +913,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html
@@ -870,6 +932,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html
@@ -892,6 +955,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html
@@ -914,6 +978,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html
@@ -935,6 +1000,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLegalHold.html
@@ -956,6 +1022,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectRetention.html
@@ -978,6 +1045,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html
@@ -996,6 +1064,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTorrent.html
@@ -1018,6 +1087,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifVersionid()
    * - .ifXAmzContentSha256()
    *
@@ -1041,6 +1111,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifVersionid()
    * - .ifXAmzContentSha256()
    *
@@ -1060,6 +1131,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    */
   public toGetObjectVersionForReplication() {
@@ -1080,6 +1152,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifVersionid()
    * - .ifXAmzContentSha256()
    */
@@ -1097,6 +1170,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifVersionid()
    * - .ifXAmzContentSha256()
    *
@@ -1116,6 +1190,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html
@@ -1134,6 +1209,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetStorageLensConfiguration.html
@@ -1152,6 +1228,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetStorageLensConfigurationTagging.html
@@ -1170,6 +1247,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_dashboard.html
@@ -1188,6 +1266,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html
@@ -1206,6 +1285,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html
@@ -1230,6 +1310,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html
@@ -1251,6 +1332,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html
@@ -1275,6 +1357,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html
@@ -1293,6 +1376,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListJobs.html
@@ -1314,6 +1398,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html
@@ -1332,6 +1417,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListStorageLensConfigurations.html
@@ -1350,6 +1436,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html#repl-ownership-add-role-permission
@@ -1368,6 +1455,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html
@@ -1389,6 +1477,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html
@@ -1407,6 +1496,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html
@@ -1425,6 +1515,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html
@@ -1443,6 +1534,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzAcl()
    * - .ifXAmzContentSha256()
    * - .ifXAmzGrantFullControl()
@@ -1467,6 +1559,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html
@@ -1485,6 +1578,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html
@@ -1503,6 +1597,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html
@@ -1520,6 +1615,7 @@ export class S3 extends PolicyStatement {
    * - .ifAuthType()
    * - .ifResourceAccount()
    * - .ifSignatureAge()
+   * - .ifTlsVersion()
    * - .ifSignatureversion()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLockConfiguration.html
@@ -1538,6 +1634,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketOwnershipControls.html
@@ -1556,6 +1653,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html
@@ -1574,6 +1672,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutPublicAccessBlock.html
@@ -1592,6 +1691,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketRequestPayment.html
@@ -1610,6 +1710,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html
@@ -1628,6 +1729,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html
@@ -1646,6 +1748,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html
@@ -1664,12 +1767,32 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html
    */
   public toPutEncryptionConfiguration() {
     return this.to('PutEncryptionConfiguration');
+  }
+
+  /**
+   * Grants permission to create new or update or delete an existing Amazon S3 Intelligent Tiering configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html
+   */
+  public toPutIntelligentTieringConfiguration() {
+    return this.to('PutIntelligentTieringConfiguration');
   }
 
   /**
@@ -1682,6 +1805,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html
@@ -1700,6 +1824,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    * - .ifExistingJobPriority()
    * - .ifExistingJobOperation()
@@ -1722,6 +1847,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html
@@ -1740,6 +1866,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html
@@ -1763,6 +1890,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzAcl()
    * - .ifXAmzContentSha256()
    * - .ifXAmzCopySource()
@@ -1801,6 +1929,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzAcl()
    * - .ifXAmzContentSha256()
    * - .ifXAmzGrantFullControl()
@@ -1829,6 +1958,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    * - .ifObjectLockLegalHold()
    *
@@ -1851,6 +1981,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    * - .ifObjectLockMode()
    * - .ifObjectLockRetainUntilDate()
@@ -1878,6 +2009,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html
@@ -1900,6 +2032,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifVersionid()
    * - .ifXAmzAcl()
    * - .ifXAmzContentSha256()
@@ -1932,6 +2065,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifVersionid()
    * - .ifXAmzContentSha256()
    *
@@ -1951,6 +2085,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * Dependent actions:
@@ -1972,6 +2107,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
@@ -1992,6 +2128,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
@@ -2012,6 +2149,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
@@ -2030,6 +2168,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    * - .ifXAmzServerSideEncryption()
    * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
@@ -2050,6 +2189,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
@@ -2071,6 +2211,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html
@@ -2089,6 +2230,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    * - .ifRequestJobPriority()
    * - .ifExistingJobPriority()
@@ -2110,6 +2252,7 @@ export class S3 extends PolicyStatement {
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
+   * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
    * - .ifExistingJobPriority()
    * - .ifExistingJobOperation()
@@ -2145,6 +2288,7 @@ export class S3 extends PolicyStatement {
       "PutBucketVersioning",
       "PutBucketWebsite",
       "PutEncryptionConfiguration",
+      "PutIntelligentTieringConfiguration",
       "PutInventoryConfiguration",
       "PutLifecycleConfiguration",
       "PutMetricsConfiguration",
@@ -2207,6 +2351,7 @@ export class S3 extends PolicyStatement {
       "GetBucketVersioning",
       "GetBucketWebsite",
       "GetEncryptionConfiguration",
+      "GetIntelligentTieringConfiguration",
       "GetInventoryConfiguration",
       "GetJobTagging",
       "GetLifecycleConfiguration",
@@ -2673,6 +2818,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketVersioning()
    * - .toGetBucketWebsite()
    * - .toGetEncryptionConfiguration()
+   * - .toGetIntelligentTieringConfiguration()
    * - .toGetInventoryConfiguration()
    * - .toGetJobTagging()
    * - .toGetLifecycleConfiguration()
@@ -2718,6 +2864,7 @@ export class S3 extends PolicyStatement {
    * - .toPutBucketVersioning()
    * - .toPutBucketWebsite()
    * - .toPutEncryptionConfiguration()
+   * - .toPutIntelligentTieringConfiguration()
    * - .toPutInventoryConfiguration()
    * - .toPutJobTagging()
    * - .toPutLifecycleConfiguration()
@@ -2744,6 +2891,126 @@ export class S3 extends PolicyStatement {
    */
   public ifResourceAccount(value: string | string[], operator?: Operator | string) {
     return this.if(`ResourceAccount`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the TLS version used by the client
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html
+   *
+   * Applies to actions:
+   * - .toAbortMultipartUpload()
+   * - .toBypassGovernanceRetention()
+   * - .toCreateAccessPoint()
+   * - .toCreateBucket()
+   * - .toCreateJob()
+   * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointPolicy()
+   * - .toDeleteBucket()
+   * - .toDeleteBucketOwnershipControls()
+   * - .toDeleteBucketPolicy()
+   * - .toDeleteBucketWebsite()
+   * - .toDeleteJobTagging()
+   * - .toDeleteObject()
+   * - .toDeleteObjectTagging()
+   * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionTagging()
+   * - .toDeleteStorageLensConfiguration()
+   * - .toDeleteStorageLensConfigurationTagging()
+   * - .toDescribeJob()
+   * - .toGetAccelerateConfiguration()
+   * - .toGetAccessPoint()
+   * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointPolicyStatus()
+   * - .toGetAccountPublicAccessBlock()
+   * - .toGetAnalyticsConfiguration()
+   * - .toGetBucketAcl()
+   * - .toGetBucketCORS()
+   * - .toGetBucketLogging()
+   * - .toGetBucketNotification()
+   * - .toGetBucketObjectLockConfiguration()
+   * - .toGetBucketOwnershipControls()
+   * - .toGetBucketPolicy()
+   * - .toGetBucketPolicyStatus()
+   * - .toGetBucketPublicAccessBlock()
+   * - .toGetBucketRequestPayment()
+   * - .toGetBucketTagging()
+   * - .toGetBucketVersioning()
+   * - .toGetBucketWebsite()
+   * - .toGetEncryptionConfiguration()
+   * - .toGetIntelligentTieringConfiguration()
+   * - .toGetInventoryConfiguration()
+   * - .toGetJobTagging()
+   * - .toGetLifecycleConfiguration()
+   * - .toGetMetricsConfiguration()
+   * - .toGetObject()
+   * - .toGetObjectAcl()
+   * - .toGetObjectLegalHold()
+   * - .toGetObjectRetention()
+   * - .toGetObjectTagging()
+   * - .toGetObjectTorrent()
+   * - .toGetObjectVersion()
+   * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionForReplication()
+   * - .toGetObjectVersionTagging()
+   * - .toGetObjectVersionTorrent()
+   * - .toGetReplicationConfiguration()
+   * - .toGetStorageLensConfiguration()
+   * - .toGetStorageLensConfigurationTagging()
+   * - .toGetStorageLensDashboard()
+   * - .toListAccessPoints()
+   * - .toListAllMyBuckets()
+   * - .toListBucket()
+   * - .toListBucketMultipartUploads()
+   * - .toListBucketVersions()
+   * - .toListJobs()
+   * - .toListMultipartUploadParts()
+   * - .toListStorageLensConfigurations()
+   * - .toObjectOwnerOverrideToBucketOwner()
+   * - .toPutAccelerateConfiguration()
+   * - .toPutAccessPointPolicy()
+   * - .toPutAccountPublicAccessBlock()
+   * - .toPutAnalyticsConfiguration()
+   * - .toPutBucketAcl()
+   * - .toPutBucketCORS()
+   * - .toPutBucketLogging()
+   * - .toPutBucketNotification()
+   * - .toPutBucketObjectLockConfiguration()
+   * - .toPutBucketOwnershipControls()
+   * - .toPutBucketPolicy()
+   * - .toPutBucketPublicAccessBlock()
+   * - .toPutBucketRequestPayment()
+   * - .toPutBucketTagging()
+   * - .toPutBucketVersioning()
+   * - .toPutBucketWebsite()
+   * - .toPutEncryptionConfiguration()
+   * - .toPutIntelligentTieringConfiguration()
+   * - .toPutInventoryConfiguration()
+   * - .toPutJobTagging()
+   * - .toPutLifecycleConfiguration()
+   * - .toPutMetricsConfiguration()
+   * - .toPutObject()
+   * - .toPutObjectAcl()
+   * - .toPutObjectLegalHold()
+   * - .toPutObjectRetention()
+   * - .toPutObjectTagging()
+   * - .toPutObjectVersionAcl()
+   * - .toPutObjectVersionTagging()
+   * - .toPutReplicationConfiguration()
+   * - .toPutStorageLensConfiguration()
+   * - .toPutStorageLensConfigurationTagging()
+   * - .toReplicateDelete()
+   * - .toReplicateObject()
+   * - .toReplicateTags()
+   * - .toRestoreObject()
+   * - .toUpdateJobPriority()
+   * - .toUpdateJobStatus()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifTlsVersion(value: number | number[], operator?: Operator | string) {
+    return this.if(`TlsVersion`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -2803,6 +3070,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketVersioning()
    * - .toGetBucketWebsite()
    * - .toGetEncryptionConfiguration()
+   * - .toGetIntelligentTieringConfiguration()
    * - .toGetInventoryConfiguration()
    * - .toGetJobTagging()
    * - .toGetLifecycleConfiguration()
@@ -2848,6 +3116,7 @@ export class S3 extends PolicyStatement {
    * - .toPutBucketVersioning()
    * - .toPutBucketWebsite()
    * - .toPutEncryptionConfiguration()
+   * - .toPutIntelligentTieringConfiguration()
    * - .toPutInventoryConfiguration()
    * - .toPutJobTagging()
    * - .toPutLifecycleConfiguration()
@@ -3051,6 +3320,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketVersioning()
    * - .toGetBucketWebsite()
    * - .toGetEncryptionConfiguration()
+   * - .toGetIntelligentTieringConfiguration()
    * - .toGetInventoryConfiguration()
    * - .toGetJobTagging()
    * - .toGetLifecycleConfiguration()
@@ -3096,6 +3366,7 @@ export class S3 extends PolicyStatement {
    * - .toPutBucketVersioning()
    * - .toPutBucketWebsite()
    * - .toPutEncryptionConfiguration()
+   * - .toPutIntelligentTieringConfiguration()
    * - .toPutInventoryConfiguration()
    * - .toPutJobTagging()
    * - .toPutLifecycleConfiguration()
@@ -3169,6 +3440,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketVersioning()
    * - .toGetBucketWebsite()
    * - .toGetEncryptionConfiguration()
+   * - .toGetIntelligentTieringConfiguration()
    * - .toGetInventoryConfiguration()
    * - .toGetJobTagging()
    * - .toGetLifecycleConfiguration()
@@ -3214,6 +3486,7 @@ export class S3 extends PolicyStatement {
    * - .toPutBucketVersioning()
    * - .toPutBucketWebsite()
    * - .toPutEncryptionConfiguration()
+   * - .toPutIntelligentTieringConfiguration()
    * - .toPutInventoryConfiguration()
    * - .toPutJobTagging()
    * - .toPutLifecycleConfiguration()
@@ -3329,6 +3602,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketVersioning()
    * - .toGetBucketWebsite()
    * - .toGetEncryptionConfiguration()
+   * - .toGetIntelligentTieringConfiguration()
    * - .toGetInventoryConfiguration()
    * - .toGetJobTagging()
    * - .toGetLifecycleConfiguration()
@@ -3373,6 +3647,7 @@ export class S3 extends PolicyStatement {
    * - .toPutBucketVersioning()
    * - .toPutBucketWebsite()
    * - .toPutEncryptionConfiguration()
+   * - .toPutIntelligentTieringConfiguration()
    * - .toPutInventoryConfiguration()
    * - .toPutJobTagging()
    * - .toPutLifecycleConfiguration()

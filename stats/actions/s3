@@ -38,6 +38,7 @@ s3:GetBucketTagging;Read
 s3:GetBucketVersioning;Read
 s3:GetBucketWebsite;Read
 s3:GetEncryptionConfiguration;Read
+s3:GetIntelligentTieringConfiguration;Read
 s3:GetInventoryConfiguration;Read
 s3:GetJobTagging;Read
 s3:GetLifecycleConfiguration;Read
@@ -83,6 +84,7 @@ s3:PutBucketTagging;Tagging
 s3:PutBucketVersioning;Write
 s3:PutBucketWebsite;Write
 s3:PutEncryptionConfiguration;Write
+s3:PutIntelligentTieringConfiguration;Write
 s3:PutInventoryConfiguration;Write
 s3:PutJobTagging;Tagging
 s3:PutLifecycleConfiguration;Write
