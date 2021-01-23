@@ -23,6 +23,7 @@ kafka:TagResource;Tagging
 kafka:UntagResource;Tagging
 kafka:UpdateBrokerCount;Write
 kafka:UpdateBrokerStorage;Write
+kafka:UpdateBrokerType;Write
 kafka:UpdateClusterConfiguration;Write
 kafka:UpdateClusterKafkaVersion;Write
 kafka:UpdateConfiguration;Write

@@ -167,6 +167,7 @@ macie
 macieclassic
 manageamazonapigateway
 managedblockchain
+managedserviceforgrafana
 managedserviceforprometheus
 managedstreamingforapachekafka
 managedworkflowsforapacheairflow

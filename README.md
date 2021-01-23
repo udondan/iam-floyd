@@ -17,9 +17,9 @@
 <!-- stats -->
 Support for:
 
-- 265 Services
-- 9179 Actions
-- 929 Resource Types
+- 266 Services
+- 9185 Actions
+- 930 Resource Types
 - 933 Condition keys
 <!-- /stats -->
 
@@ -62,7 +62,7 @@ IAM Floyd is licensed under [Apache License 2.0][license]. Dependencies might be
    [Maven]: https://github.com/udondan/iam-floyd/packages/258358
    [license]: https://github.com/udondan/iam-floyd/blob/main/LICENSE
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
-   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.120.0
+   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.121.0
    [libraries.io]: https://libraries.io/search?q=iam-floyd
    [AWS CDK]: https://aws.amazon.com/cdk/
    [twitter]: https://twitter.com/heyiamfloyd

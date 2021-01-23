@@ -17,10 +17,10 @@ iot1click:ListDeviceEvents;Read
 iot1click:ListDevices;List
 iot1click:ListPlacements;Read
 iot1click:ListProjects;List
-iot1click:ListTagsForResource;List
-iot1click:TagResource;Write
+iot1click:ListTagsForResource;Read
+iot1click:TagResource;Tagging
 iot1click:UnclaimDevice;Read
-iot1click:UntagResource;Write
+iot1click:UntagResource;Tagging
 iot1click:UpdateDeviceState;Write
 iot1click:UpdatePlacement;Write
 iot1click:UpdateProject;Write

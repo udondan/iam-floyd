@@ -441,28 +441,6 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list that describes one or more specified image builders, if the image builder names are provided. Otherwise, all image builders in the account are described
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/appstream2/latest/developerguide/controlling-administrator-access-with-policies-service-linked-roles.html#managed-policies-required-to-access-appstream-resources
-   */
-  public toGetImageBuilders() {
-    return this.to('GetImageBuilders');
-  }
-
-  /**
-   * Grants permission to upload theme assets
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/appstream2/latest/developerguide/controlling-administrator-access-with-policies-service-linked-roles.html#managed-policies-required-to-access-appstream-resources
-   */
-  public toGetParametersForThemeAssetUpload() {
-    return this.to('GetParametersForThemeAssetUpload');
-  }
-
-  /**
    * Grants permission to retrieve the name of the fleet that is associated with the specified stack
    *
    * Access Level: Read
@@ -674,7 +652,6 @@ export class Appstream extends PolicyStatement {
       "DisassociateFleet",
       "EnableUser",
       "ExpireSession",
-      "GetParametersForThemeAssetUpload",
       "StartFleet",
       "StartImageBuilder",
       "StopFleet",
@@ -696,7 +673,6 @@ export class Appstream extends PolicyStatement {
       "DescribeUsageReportSubscriptions",
       "DescribeUserStackAssociations",
       "DescribeUsers",
-      "GetImageBuilders",
       "ListAssociatedFleets",
       "ListAssociatedStacks",
       "ListTagsForResource"

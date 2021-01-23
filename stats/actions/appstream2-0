@@ -32,8 +32,6 @@ appstream:DisableUser;Write
 appstream:DisassociateFleet;Write
 appstream:EnableUser;Write
 appstream:ExpireSession;Write
-appstream:GetImageBuilders;Read
-appstream:GetParametersForThemeAssetUpload;Write
 appstream:ListAssociatedFleets;Read
 appstream:ListAssociatedStacks;Read
 appstream:ListTagsForResource;Read

@@ -19,7 +19,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Associate a device to a placement
+   * Grants permission to associate a device to a placement
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Claim a batch of devices with a claim code.
+   * Grants permission to claim a batch of devices with a claim code
    *
    * Access Level: Read
    *
@@ -41,7 +41,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Create a new placement in a project
+   * Grants permission to create a new placement in a project
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Create a new project
+   * Grants permission to create a new project
    *
    * Access Level: Write
    *
@@ -67,7 +67,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Delete a placement from a project
+   * Grants permission to delete a placement from a project
    *
    * Access Level: Write
    *
@@ -78,7 +78,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Delete a project
+   * Grants permission to delete a project
    *
    * Access Level: Write
    *
@@ -89,7 +89,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Describe a device
+   * Grants permission to describe a device
    *
    * Access Level: Read
    *
@@ -100,7 +100,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Describe a placement
+   * Grants permission to describe a placement
    *
    * Access Level: Read
    *
@@ -111,7 +111,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Describe a project
+   * Grants permission to describe a project
    *
    * Access Level: Read
    *
@@ -122,7 +122,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Disassociate a device from a placement
+   * Grants permission to disassociate a device from a placement
    *
    * Access Level: Write
    *
@@ -133,7 +133,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Finalize a device claim
+   * Grants permission to finalize a device claim
    *
    * Access Level: Read
    *
@@ -148,7 +148,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Get available methods of a device
+   * Grants permission to get available methods of a device
    *
    * Access Level: Read
    *
@@ -159,7 +159,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Get devices associated to a placement
+   * Grants permission to get devices associated to a placement
    *
    * Access Level: Read
    *
@@ -170,7 +170,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Initialize a device claim
+   * Grants permission to initialize a device claim
    *
    * Access Level: Read
    *
@@ -181,7 +181,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Invoke a device method
+   * Grants permission to invoke a device method
    *
    * Access Level: Write
    *
@@ -192,7 +192,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * List past events published by a device
+   * Grants permission to list past events published by a device
    *
    * Access Level: Read
    *
@@ -203,7 +203,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * List all devices
+   * Grants permission to list all devices
    *
    * Access Level: List
    *
@@ -214,7 +214,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * List placements in a project
+   * Grants permission to list placements in a project
    *
    * Access Level: Read
    *
@@ -225,7 +225,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * List all projects
+   * Grants permission to list all projects
    *
    * Access Level: List
    *
@@ -236,9 +236,9 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Lists the tags (metadata) which you have assigned to the resource.
+   * Grants permission to lists the tags for a resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_ListTagsForResource.html
    */
@@ -247,9 +247,9 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource.
+   * Grants permission to add or modify the tags of a resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -262,7 +262,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Unclaim a device
+   * Grants permission to unclaim a device
    *
    * Access Level: Read
    *
@@ -273,9 +273,9 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Removes the given tags (metadata) from the resource.
+   * Grants permission to remove the given tags (metadata) from a resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
@@ -287,7 +287,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Update device state
+   * Grants permission to update device state
    *
    * Access Level: Write
    *
@@ -298,7 +298,7 @@ export class Iot1click extends PolicyStatement {
   }
 
   /**
-   * Update a placement
+   * Grants permission to update a placement
    *
    * Access Level: Write
    *
@@ -328,8 +328,6 @@ export class Iot1click extends PolicyStatement {
       "DeleteProject",
       "DisassociateDeviceFromPlacement",
       "InvokeDeviceMethod",
-      "TagResource",
-      "UntagResource",
       "UpdateDeviceState",
       "UpdatePlacement",
       "UpdateProject"
@@ -345,12 +343,16 @@ export class Iot1click extends PolicyStatement {
       "InitiateDeviceClaim",
       "ListDeviceEvents",
       "ListPlacements",
+      "ListTagsForResource",
       "UnclaimDevice"
     ],
     "List": [
       "ListDevices",
-      "ListProjects",
-      "ListTagsForResource"
+      "ListProjects"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 

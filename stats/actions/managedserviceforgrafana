@@ -1,0 +1,7 @@
+grafana:CreateWorkspace;Write
+grafana:DeleteWorkspace;Write
+grafana:DescribeWorkspace;Read
+grafana:ListPermissions;List
+grafana:ListWorkspaces;List
+grafana:UpdatePermissions;Permissions management
+grafana:UpdateWorkspace;Write

@@ -69,6 +69,7 @@ export { Machinelearning } from "./machinelearning";
 export { Macie2 } from "./macie";
 export { Macie } from "./macieclassic";
 export { Managedblockchain } from "./managedblockchain";
+export { Grafana } from "./managedserviceforgrafana";
 export { Aps } from "./managedserviceforprometheus";
 export { Kafka } from "./managedstreamingforapachekafka";
 export { Airflow } from "./managedworkflowsforapacheairflow";

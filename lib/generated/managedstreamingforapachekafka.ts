@@ -172,7 +172,7 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
-   * Returns a list of all the operations that have been performed on the specified MSK cluster
+   * Grants permission to return a list of all the operations that have been performed on the specified MSK cluster
    *
    * Access Level: List
    *
@@ -300,7 +300,7 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
-   * Updates the number of brokers of the MSK cluster
+   * Grants permission to update the number of brokers of the MSK cluster
    *
    * Access Level: Write
    *
@@ -311,7 +311,7 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
-   * Updates the storage size of the brokers of the MSK cluster
+   * Grants permission to update the storage size of the brokers of the MSK cluster
    *
    * Access Level: Write
    *
@@ -319,6 +319,17 @@ export class Kafka extends PolicyStatement {
    */
   public toUpdateBrokerStorage() {
     return this.to('UpdateBrokerStorage');
+  }
+
+  /**
+   * Grants permission to update the broker type of an Amazon MSK cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-type.html#UpdateBrokerType
+   */
+  public toUpdateBrokerType() {
+    return this.to('UpdateBrokerType');
   }
 
   /**
@@ -376,6 +387,7 @@ export class Kafka extends PolicyStatement {
       "RebootBroker",
       "UpdateBrokerCount",
       "UpdateBrokerStorage",
+      "UpdateBrokerType",
       "UpdateClusterConfiguration",
       "UpdateClusterKafkaVersion",
       "UpdateConfiguration",
