@@ -23,6 +23,7 @@
 				"dynamodb:GetItem",
 				"dynamodb:Query",
 				"dynamodb:Scan",
+				"dynamodb:PartiQLSelect",
 				"dax:Describe*",
 				"dax:List*",
 				"dax:GetItem",
