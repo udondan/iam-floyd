@@ -26,7 +26,8 @@
                 "s3:ListAllMyBuckets",
                 "s3:GetBucketLocation",
                 "xray:GetTraceSummaries",
-                "xray:BatchGetTraces"
+                "xray:BatchGetTraces",
+                "apigateway:GET"
             ],
             "Resource": "*"
         },
