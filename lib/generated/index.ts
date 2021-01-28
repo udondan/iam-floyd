@@ -1,6 +1,7 @@
 export { A4b } from "./alexaforbusiness";
 export { ExecuteApi } from "./apigateway";
 export { Appflow } from "./appflow";
+export { AppIntegrations } from "./appintegrations";
 export { Appstream } from "./appstream2-0";
 export { Athena } from "./athena";
 export { Braket } from "./braket";

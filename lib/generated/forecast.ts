@@ -27,7 +27,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDataset.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html
    */
   public toCreateDataset() {
     return this.to('CreateDataset');
@@ -42,7 +42,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetGroup.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html
    */
   public toCreateDatasetGroup() {
     return this.to('CreateDatasetGroup');
@@ -57,7 +57,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetImportJob.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html
    */
   public toCreateDatasetImportJob() {
     return this.to('CreateDatasetImportJob');
@@ -72,7 +72,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecast.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html
    */
   public toCreateForecast() {
     return this.to('CreateForecast');
@@ -87,7 +87,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecastExportJob.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecastExportJob.html
    */
   public toCreateForecastExportJob() {
     return this.to('CreateForecastExportJob');
@@ -102,7 +102,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreatePredictor.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreatePredictor.html
    */
   public toCreatePredictor() {
     return this.to('CreatePredictor');
@@ -117,7 +117,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreatePredictorBacktestExportJob.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreatePredictorBacktestExportJob.html
    */
   public toCreatePredictorBacktestExportJob() {
     return this.to('CreatePredictorBacktestExportJob');
@@ -128,7 +128,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDataset.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteDataset.html
    */
   public toDeleteDataset() {
     return this.to('DeleteDataset');
@@ -139,7 +139,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDatasetGroup.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteDatasetGroup.html
    */
   public toDeleteDatasetGroup() {
     return this.to('DeleteDatasetGroup');
@@ -150,7 +150,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDatasetImportJob.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteDatasetImportJob.html
    */
   public toDeleteDatasetImportJob() {
     return this.to('DeleteDatasetImportJob');
@@ -161,7 +161,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteForecast.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteForecast.html
    */
   public toDeleteForecast() {
     return this.to('DeleteForecast');
@@ -172,7 +172,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteForecastExportJob.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteForecastExportJob.html
    */
   public toDeleteForecastExportJob() {
     return this.to('DeleteForecastExportJob');
@@ -183,7 +183,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeletePredictor.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DeletePredictor.html
    */
   public toDeletePredictor() {
     return this.to('DeletePredictor');
@@ -194,7 +194,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeletePredictorBacktestExportJob.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DeletePredictorBacktestExportJob.html
    */
   public toDeletePredictorBacktestExportJob() {
     return this.to('DeletePredictorBacktestExportJob');
@@ -205,7 +205,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDataset.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html
    */
   public toDescribeDataset() {
     return this.to('DescribeDataset');
@@ -216,7 +216,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDatasetGroup.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html
    */
   public toDescribeDatasetGroup() {
     return this.to('DescribeDatasetGroup');
@@ -227,7 +227,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDatasetImportJob.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html
    */
   public toDescribeDatasetImportJob() {
     return this.to('DescribeDatasetImportJob');
@@ -238,7 +238,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeForecast.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeForecast.html
    */
   public toDescribeForecast() {
     return this.to('DescribeForecast');
@@ -249,7 +249,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeForecastExportJob.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeForecastExportJob.html
    */
   public toDescribeForecastExportJob() {
     return this.to('DescribeForecastExportJob');
@@ -260,7 +260,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribePredictor.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribePredictor.html
    */
   public toDescribePredictor() {
     return this.to('DescribePredictor');
@@ -271,7 +271,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribePredictorBacktestExportJob.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribePredictorBacktestExportJob.html
    */
   public toDescribePredictorBacktestExportJob() {
     return this.to('DescribePredictorBacktestExportJob');
@@ -282,7 +282,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_GetAccuracyMetrics.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_GetAccuracyMetrics.html
    */
   public toGetAccuracyMetrics() {
     return this.to('GetAccuracyMetrics');
@@ -293,7 +293,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasetGroups.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetGroups.html
    */
   public toListDatasetGroups() {
     return this.to('ListDatasetGroups');
@@ -304,7 +304,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasetImportJobs.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html
    */
   public toListDatasetImportJobs() {
     return this.to('ListDatasetImportJobs');
@@ -315,7 +315,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasets.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html
    */
   public toListDatasets() {
     return this.to('ListDatasets');
@@ -326,7 +326,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListForecastExportJobs.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListForecastExportJobs.html
    */
   public toListForecastExportJobs() {
     return this.to('ListForecastExportJobs');
@@ -337,7 +337,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListForecasts.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListForecasts.html
    */
   public toListForecasts() {
     return this.to('ListForecasts');
@@ -348,7 +348,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListPredictorBacktestExportJobs.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListPredictorBacktestExportJobs.html
    */
   public toListPredictorBacktestExportJobs() {
     return this.to('ListPredictorBacktestExportJobs');
@@ -359,7 +359,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListPredictors.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListPredictors.html
    */
   public toListPredictors() {
     return this.to('ListPredictors');
@@ -368,9 +368,9 @@ export class Forecast extends PolicyStatement {
   /**
    * Grants permission to list the tags for an Amazon Forecast resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListTagsForResource.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -381,7 +381,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_forecastquery_QueryForecast.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_forecastquery_QueryForecast.html
    */
   public toQueryForecast() {
     return this.to('QueryForecast');
@@ -396,7 +396,7 @@ export class Forecast extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_TagResource.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -410,7 +410,7 @@ export class Forecast extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_UntagResource.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -421,7 +421,7 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_UpdateDatasetGroup.html
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html
    */
   public toUpdateDatasetGroup() {
     return this.to('UpdateDatasetGroup');
@@ -454,6 +454,7 @@ export class Forecast extends PolicyStatement {
       "DescribePredictor",
       "DescribePredictorBacktestExportJob",
       "GetAccuracyMetrics",
+      "ListTagsForResource",
       "QueryForecast"
     ],
     "List": [
@@ -463,8 +464,7 @@ export class Forecast extends PolicyStatement {
       "ListForecastExportJobs",
       "ListForecasts",
       "ListPredictorBacktestExportJobs",
-      "ListPredictors",
-      "ListTagsForResource"
+      "ListPredictors"
     ],
     "Tagging": [
       "TagResource",
@@ -474,6 +474,8 @@ export class Forecast extends PolicyStatement {
 
   /**
    * Adds a resource of type dataset to the statement
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -495,6 +497,8 @@ export class Forecast extends PolicyStatement {
   /**
    * Adds a resource of type datasetGroup to the statement
    *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html
+   *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -514,6 +518,8 @@ export class Forecast extends PolicyStatement {
 
   /**
    * Adds a resource of type datasetImportJob to the statement
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -535,6 +541,8 @@ export class Forecast extends PolicyStatement {
   /**
    * Adds a resource of type algorithm to the statement
    *
+   * https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-choosing-recipes.html
+   *
    * @param resourceId - Identifier for the resourceId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
@@ -547,6 +555,8 @@ export class Forecast extends PolicyStatement {
 
   /**
    * Adds a resource of type predictor to the statement
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreatePredictor.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -568,6 +578,8 @@ export class Forecast extends PolicyStatement {
   /**
    * Adds a resource of type predictorBacktestExportJob to the statement
    *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreatePredictorBacktestExportJob.html
+   *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -588,6 +600,8 @@ export class Forecast extends PolicyStatement {
   /**
    * Adds a resource of type forecast to the statement
    *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html
+   *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -607,6 +621,8 @@ export class Forecast extends PolicyStatement {
 
   /**
    * Adds a resource of type forecastExport to the statement
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecastExportJob.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

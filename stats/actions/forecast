@@ -27,7 +27,7 @@ forecast:ListForecastExportJobs;List
 forecast:ListForecasts;List
 forecast:ListPredictorBacktestExportJobs;List
 forecast:ListPredictors;List
-forecast:ListTagsForResource;List
+forecast:ListTagsForResource;Read
 forecast:QueryForecast;Read
 forecast:TagResource;Tagging
 forecast:UntagResource;Tagging
