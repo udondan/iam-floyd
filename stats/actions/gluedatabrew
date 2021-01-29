@@ -16,13 +16,13 @@ databrew:DescribeProject;Read
 databrew:DescribeRecipe;Read
 databrew:DescribeSchedule;Read
 databrew:ListDatasets;List
-databrew:ListJobRuns;List
+databrew:ListJobRuns;Read
 databrew:ListJobs;List
 databrew:ListProjects;List
 databrew:ListRecipeVersions;List
 databrew:ListRecipes;List
 databrew:ListSchedules;List
-databrew:ListTagsForResource;List
+databrew:ListTagsForResource;Read
 databrew:PublishRecipe;Write
 databrew:SendProjectSessionAction;Write
 databrew:StartJobRun;Write

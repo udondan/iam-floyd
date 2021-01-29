@@ -243,7 +243,7 @@ export class Databrew extends PolicyStatement {
   /**
    * Grants permission to list job runs for a given job
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListJobRuns.html
    */
@@ -309,7 +309,7 @@ export class Databrew extends PolicyStatement {
   /**
    * Grants permission to retrieve tags associated with a resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListTagsForResource.html
    */
@@ -498,17 +498,17 @@ export class Databrew extends PolicyStatement {
       "DescribeJob",
       "DescribeProject",
       "DescribeRecipe",
-      "DescribeSchedule"
+      "DescribeSchedule",
+      "ListJobRuns",
+      "ListTagsForResource"
     ],
     "List": [
       "ListDatasets",
-      "ListJobRuns",
       "ListJobs",
       "ListProjects",
       "ListRecipeVersions",
       "ListRecipes",
-      "ListSchedules",
-      "ListTagsForResource"
+      "ListSchedules"
     ],
     "Tagging": [
       "TagResource",
@@ -523,15 +523,17 @@ export class Databrew extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onProject(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:databrew::${Account}:project/${ResourceId}';
+  public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:databrew:${Region}:${Account}:project/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -543,15 +545,17 @@ export class Databrew extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDataset(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:databrew::${Account}:dataset/${ResourceId}';
+  public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:databrew:${Region}:${Account}:dataset/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -563,15 +567,17 @@ export class Databrew extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onRecipe(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:databrew::${Account}:recipe/${ResourceId}';
+  public onRecipe(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:databrew:${Region}:${Account}:recipe/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -583,15 +589,17 @@ export class Databrew extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onJob(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:databrew::${Account}:job/${ResourceId}';
+  public onJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:databrew:${Region}:${Account}:job/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -603,15 +611,17 @@ export class Databrew extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onSchedule(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:databrew::${Account}:schedule/${ResourceId}';
+  public onSchedule(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:databrew:${Region}:${Account}:schedule/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
