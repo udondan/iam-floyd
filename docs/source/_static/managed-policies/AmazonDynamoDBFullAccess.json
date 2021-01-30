@@ -80,6 +80,7 @@
         "StringLike": {
           "iam:PassedToService": [
             "application-autoscaling.amazonaws.com",
+            "application-autoscaling.amazonaws.com.cn",
             "dax.amazonaws.com"
           ]
         }
