@@ -326,6 +326,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve insight results by providing a set of filters instead of an insight ARN
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetAdhocInsightResults.html
+   */
+  public toGetAdhocInsightResults() {
+    return this.to('GetAdhocInsightResults');
+  }
+
+  /**
    * Grants permission to retrieve a list of the standards that are enabled in Security Hub
    *
    * Access Level: List
@@ -345,6 +356,39 @@ export class Securityhub extends PolicyStatement {
    */
   public toGetFindings() {
     return this.to('GetFindings');
+  }
+
+  /**
+   * Grants permission to retrieve the end date for an account's free trial of Security Hub
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFreeTrialEndDate.html
+   */
+  public toGetFreeTrialEndDate() {
+    return this.to('GetFreeTrialEndDate');
+  }
+
+  /**
+   * Grants permission to retrieve information about Security Hub usage during the free trial period
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFreeTrialUsage.html
+   */
+  public toGetFreeTrialUsage() {
+    return this.to('GetFreeTrialUsage');
+  }
+
+  /**
+   * Grants permission to retrieve an insight finding trend from Security Hub in order to generate a graph
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsightFindingTrend.html
+   */
+  public toGetInsightFindingTrend() {
+    return this.to('GetInsightFindingTrend');
   }
 
   /**
@@ -400,6 +444,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toGetMembers() {
     return this.to('GetMembers');
+  }
+
+  /**
+   * Grants permission to retrieve information about Security Hub usage by accounts
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetUsage.html
+   */
+  public toGetUsage() {
+    return this.to('GetUsage');
   }
 
   /**
@@ -466,6 +521,28 @@ export class Securityhub extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to use a custom action to send Security Hub findings to Amazon EventBridge
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_SendFindingEvents.html
+   */
+  public toSendFindingEvents() {
+    return this.to('SendFindingEvents');
+  }
+
+  /**
+   * Grants permission to use a custom action to send Security Hub insights to Amazon EventBridge
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_SendInsightEvents.html
+   */
+  public toSendInsightEvents() {
+    return this.to('SendInsightEvents');
   }
 
   /**
@@ -596,11 +673,18 @@ export class Securityhub extends PolicyStatement {
       "DescribeProducts",
       "DescribeStandards",
       "DescribeStandardsControls",
+      "GetAdhocInsightResults",
       "GetFindings",
+      "GetFreeTrialEndDate",
+      "GetFreeTrialUsage",
+      "GetInsightFindingTrend",
       "GetInsightResults",
       "GetInvitationsCount",
       "GetMasterAccount",
-      "GetMembers"
+      "GetMembers",
+      "GetUsage",
+      "SendFindingEvents",
+      "SendInsightEvents"
     ],
     "List": [
       "GetEnabledStandards",

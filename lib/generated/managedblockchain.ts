@@ -19,9 +19,16 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a member of an Amazon Managed Blockchain network.
+   * Grants permission to create a member of an Amazon Managed Blockchain network
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateMember.html
    */
@@ -30,9 +37,16 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an Amazon Managed Blockchain network.
+   * Grants permission to create an Amazon Managed Blockchain network
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateNetwork.html
    */
@@ -41,9 +55,16 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a node within a member of an Amazon Managed Blockchain network.
+   * Grants permission to create a node within a member of an Amazon Managed Blockchain network
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateNode.html
    */
@@ -52,9 +73,13 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a proposal that other blockchain network members can vote on to add or remove a member in an Amazon Managed Blockchain network.
+   * Grants permission to create a proposal that other blockchain network members can vote on to add or remove a member in an Amazon Managed Blockchain network
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateProposal.html
    */
@@ -63,7 +88,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a member and all associated resources from an Amazon Managed Blockchain network.
+   * Grants permission to delete a member and all associated resources from an Amazon Managed Blockchain network
    *
    * Access Level: Write
    *
@@ -74,7 +99,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a node from a member of an Amazon Managed Blockchain network.
+   * Grants permission to delete a node from a member of an Amazon Managed Blockchain network
    *
    * Access Level: Write
    *
@@ -85,7 +110,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return detailed information about a member of an Amazon Managed Blockchain network.
+   * Grants permission to return detailed information about a member of an Amazon Managed Blockchain network
    *
    * Access Level: Read
    *
@@ -96,7 +121,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return detailed information about an Amazon Managed Blockchain network.
+   * Grants permission to return detailed information about an Amazon Managed Blockchain network
    *
    * Access Level: Read
    *
@@ -107,7 +132,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return detailed information about a node within a member of an Amazon Managed Blockchain network.
+   * Grants permission to return detailed information about a node within a member of an Amazon Managed Blockchain network
    *
    * Access Level: Read
    *
@@ -118,7 +143,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return detailed information about a proposal of an Amazon Managed Blockchain network.
+   * Grants permission to return detailed information about a proposal of an Amazon Managed Blockchain network
    *
    * Access Level: Read
    *
@@ -129,7 +154,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the invitations extended to the active AWS account from any Managed Blockchain network.
+   * Grants permission to list the invitations extended to the active AWS account from any Managed Blockchain network
    *
    * Access Level: List
    *
@@ -140,7 +165,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the members of an Amazon Managed Blockchain network and the properties of their memberships.
+   * Grants permission to list the members of an Amazon Managed Blockchain network and the properties of their memberships
    *
    * Access Level: List
    *
@@ -151,7 +176,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about the Amazon Managed Blockchain networks in which the current AWS account has members.
+   * Grants permission to list the Amazon Managed Blockchain networks in which the current AWS account participates
    *
    * Access Level: List
    *
@@ -162,7 +187,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the nodes within a member of an Amazon Managed Blockchain network.
+   * Grants permission to list the nodes within a member of an Amazon Managed Blockchain network
    *
    * Access Level: List
    *
@@ -173,9 +198,9 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all votes for a proposal, including the value of the vote and the unique identifier of the member that cast the vote for the given Amazon Managed Blockchain network.
+   * Grants permission to list all votes for a proposal, including the value of the vote and the unique identifier of the member that cast the vote for the given Amazon Managed Blockchain network
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListProposalVotes.html
    */
@@ -184,7 +209,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list proposals for the given Amazon Managed Blockchain network.
+   * Grants permission to list proposals for the given Amazon Managed Blockchain network
    *
    * Access Level: List
    *
@@ -195,7 +220,18 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to reject the invitation to join the blockchain network.
+   * Grants permission to view tags associated with an Amazon Managed Blockchain resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to reject the invitation to join the blockchain network
    *
    * Access Level: Write
    *
@@ -206,7 +242,36 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a member of an Amazon Managed Blockchain network.
+   * Grants permission to add tags to an Amazon Managed Blockchain resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from an Amazon Managed Blockchain resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update a member of an Amazon Managed Blockchain network
    *
    * Access Level: Write
    *
@@ -220,7 +285,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a node from a member of an Amazon Managed Blockchain network.
+   * Grants permission to update a node from a member of an Amazon Managed Blockchain network
    *
    * Access Level: Write
    *
@@ -234,7 +299,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to cast a vote for a proposal on behalf of the blockchain network member specified.
+   * Grants permission to cast a vote for a proposal on behalf of the blockchain network member specified
    *
    * Access Level: Write
    *
@@ -261,15 +326,20 @@ export class Managedblockchain extends PolicyStatement {
       "GetMember",
       "GetNetwork",
       "GetNode",
-      "GetProposal"
+      "GetProposal",
+      "ListProposalVotes",
+      "ListTagsForResource"
     ],
     "List": [
       "ListInvitations",
       "ListMembers",
       "ListNetworks",
       "ListNodes",
-      "ListProposalVotes",
       "ListProposals"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
@@ -281,6 +351,9 @@ export class Managedblockchain extends PolicyStatement {
    * @param networkId - Identifier for the networkId.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onNetwork(networkId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:managedblockchain:${Region}::networks/${NetworkId}';
@@ -299,6 +372,9 @@ export class Managedblockchain extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onMember(memberId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:members/${MemberId}';
@@ -318,6 +394,9 @@ export class Managedblockchain extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onNode(nodeId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:nodes/${NodeId}';
@@ -336,6 +415,9 @@ export class Managedblockchain extends PolicyStatement {
    * @param proposalId - Identifier for the proposalId.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onProposal(proposalId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:managedblockchain:${Region}::proposals/${ProposalId}';
@@ -354,6 +436,9 @@ export class Managedblockchain extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onInvitation(invitationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:invitations/${InvitationId}';

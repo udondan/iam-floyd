@@ -12,9 +12,12 @@ managedblockchain:ListInvitations;List
 managedblockchain:ListMembers;List
 managedblockchain:ListNetworks;List
 managedblockchain:ListNodes;List
-managedblockchain:ListProposalVotes;List
+managedblockchain:ListProposalVotes;Read
 managedblockchain:ListProposals;List
+managedblockchain:ListTagsForResource;Read
 managedblockchain:RejectInvitation;Write
+managedblockchain:TagResource;Tagging
+managedblockchain:UntagResource;Tagging
 managedblockchain:UpdateMember;Write
 managedblockchain:UpdateNode;Write
 managedblockchain:VoteOnProposal;Write
