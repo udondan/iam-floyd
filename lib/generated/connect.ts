@@ -87,7 +87,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to associate queues with a routing profile in an Amazon Connect instance.
+   * Grants permissions to associate quick connects with a queue in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateQueueQuickConnects.html
+   */
+  public toAssociateQueueQuickConnects() {
+    return this.to('AssociateQueueQuickConnects');
+  }
+
+  /**
+   * Grants permissions to associate queues with a routing profile in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -112,7 +126,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a contact flow in an Amazon Connect instance.
+   * Grants permissions to create a contact flow in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -151,7 +165,22 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a quick connect in an Amazon Connect instance.
+   * Grants permissions to create a queue in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateQueue.html
+   */
+  public toCreateQueue() {
+    return this.to('CreateQueue');
+  }
+
+  /**
+   * Grants permission to create a quick connect in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -166,7 +195,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a routing profile in an Amazon Connect instance.
+   * Grants permission to create a routing profile in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -181,7 +210,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a user for the specified Amazon Connect instance.
+   * Grants permission to create a user for the specified Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -196,7 +225,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a user hierarchy group in an Amazon Connect instance.
+   * Grants permissions to create a user hierarchy group in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -223,7 +252,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a quick connect in an Amazon Connect instance.
+   * Grants permissions to delete a quick connect in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -237,7 +266,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a user in an Amazon Connect instance.
+   * Grants permissions to delete a user in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -251,7 +280,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a user hierarchy group in an Amazon Connect instance.
+   * Grants permissions to delete a user hierarchy group in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -262,7 +291,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to describe a contact flow in an Amazon Connect instance.
+   * Grants permissions to describe a contact flow in an Amazon Connect instance
    *
    * Access Level: Read
    *
@@ -273,6 +302,17 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeContactFlow() {
     return this.to('DescribeContactFlow');
+  }
+
+  /**
+   * Grants permissions to describe hours of operation in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeHoursOfOperation.html
+   */
+  public toDescribeHoursOfOperation() {
+    return this.to('DescribeHoursOfOperation');
   }
 
   /**
@@ -290,7 +330,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to view the attribute details of an existing Amazon Connect instance.
+   * Grants permissions to view the attribute details of an existing Amazon Connect instance
    *
    * Access Level: Read
    *
@@ -304,7 +344,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to view the instance storage configuration for an existing Amazon Connect instance.
+   * Grants permissions to view the instance storage configuration for an existing Amazon Connect instance
    *
    * Access Level: Read
    *
@@ -318,7 +358,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to describe a quick connect in an Amazon Connect instance.
+   * Grants permissions to describe a queue in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeQueue.html
+   */
+  public toDescribeQueue() {
+    return this.to('DescribeQueue');
+  }
+
+  /**
+   * Grants permissions to describe a quick connect in an Amazon Connect instance
    *
    * Access Level: Read
    *
@@ -332,7 +386,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to describe a routing profile in an Amazon Connect instance.
+   * Grants permissions to describe a routing profile in an Amazon Connect instance
    *
    * Access Level: Read
    *
@@ -346,7 +400,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to describe a user in an Amazon Connect instance.
+   * Grants permissions to describe a user in an Amazon Connect instance
    *
    * Access Level: Read
    *
@@ -360,7 +414,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to describe a hierarchy group for an Amazon Connect instance.
+   * Grants permissions to describe a hierarchy group for an Amazon Connect instance
    *
    * Access Level: Read
    *
@@ -371,7 +425,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to describe the hierarchy structure for an Amazon Connect instance.
+   * Grants permissions to describe the hierarchy structure for an Amazon Connect instance
    *
    * Access Level: Read
    *
@@ -437,7 +491,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to disassociate queues from a routing profile in an Amazon Connect instance.
+   * Grants permissions to disassociate quick connects from a queue in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateQueueQuickConnects.html
+   */
+  public toDisassociateQueueQuickConnects() {
+    return this.to('DisassociateQueueQuickConnects');
+  }
+
+  /**
+   * Grants permissions to disassociate queues from a routing profile in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -462,7 +530,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve the contact attributes for the specified contact.
+   * Grants permissions to retrieve the contact attributes for the specified contact
    *
    * Access Level: Read
    *
@@ -473,7 +541,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve current metric data for the queues in an Amazon Connect instance.
+   * Grants permissions to retrieve current metric data for the queues in an Amazon Connect instance
    *
    * Access Level: Read
    *
@@ -484,7 +552,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Allows federation into an instance when using SAML-based authentication for identity management.
+   * Grants permissions to federate into an Amazon Connect instance when using SAML-based authentication for identity management
    *
    * Access Level: Read
    *
@@ -498,7 +566,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to federate in to an Amazon Connect instance (Log in as administrator functionality in the AWS console).
+   * Grants permissions to federate into an Amazon Connect instance (Log in for emergency access functionality in the Amazon Connect console)
    *
    * Access Level: Write
    *
@@ -507,14 +575,14 @@ export class Connect extends PolicyStatement {
    * - connect:ListInstances
    * - ds:DescribeDirectories
    *
-   * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
+   * https://docs.aws.amazon.com/connect/latest/APIReference/emergency-admin-login.html
    */
   public toGetFederationTokens() {
     return this.to('GetFederationTokens');
   }
 
   /**
-   * Grants permissions to retrieve historical metric data for queues in an Amazon Connect instance.
+   * Grants permissions to retrieve historical metric data for queues in an Amazon Connect instance
    *
    * Access Level: Read
    *
@@ -525,7 +593,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to view approved origins of an existing Amazon Connect instance.
+   * Grants permissions to view approved origins of an existing Amazon Connect instance
    *
    * Access Level: List
    *
@@ -536,7 +604,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list contact flow resources in an Amazon Connect instance.
+   * Grants permissions to list contact flow resources in an Amazon Connect instance
    *
    * Access Level: List
    *
@@ -547,7 +615,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list hours of operation resources in an Amazon Connect instance.
+   * Grants permissions to list hours of operation resources in an Amazon Connect instance
    *
    * Access Level: List
    *
@@ -558,7 +626,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to view the attributes of an existing Amazon Connect instance.
+   * Grants permissions to view the attributes of an existing Amazon Connect instance
    *
    * Access Level: List
    *
@@ -569,7 +637,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to view storage configurations of an existing Amazon Connect instance.
+   * Grants permissions to view storage configurations of an existing Amazon Connect instance
    *
    * Access Level: List
    *
@@ -580,7 +648,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to view the Amazon Connect instances associated with an AWS account.
+   * Grants permissions to view the Amazon Connect instances associated with an AWS account
    *
    * Access Level: List
    *
@@ -594,7 +662,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to view the Lambda functions of an existing Amazon Connect instance.
+   * Grants permissions to view the Lambda functions of an existing Amazon Connect instance
    *
    * Access Level: List
    *
@@ -605,7 +673,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to view the Lex bots of an existing Amazon Connect instance.
+   * Grants permissions to view the Lex bots of an existing Amazon Connect instance
    *
    * Access Level: List
    *
@@ -616,7 +684,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list phone number resources in an Amazon Connect instance.
+   * Grants permissions to list phone number resources in an Amazon Connect instance
    *
    * Access Level: List
    *
@@ -627,7 +695,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list prompt resources in an Amazon Connect instance.
+   * Grants permissions to list prompt resources in an Amazon Connect instance
    *
    * Access Level: List
    *
@@ -638,7 +706,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list queue resources in an Amazon Connect instance.
+   * Grants permissions to list quick connect resources in a queue in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListQueueQuickConnects.html
+   */
+  public toListQueueQuickConnects() {
+    return this.to('ListQueueQuickConnects');
+  }
+
+  /**
+   * Grants permissions to list queue resources in an Amazon Connect instance
    *
    * Access Level: List
    *
@@ -649,7 +731,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list quick connect resources in an Amazon Connect instance.
+   * Grants permissions to list quick connect resources in an Amazon Connect instance
    *
    * Access Level: List
    *
@@ -660,9 +742,9 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list queue resources in a routing profile in an Amazon Connect instance.
+   * Grants permissions to list queue resources in a routing profile in an Amazon Connect instance
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
@@ -674,7 +756,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list routing profile resources in an Amazon Connect instance.
+   * Grants permissions to list routing profile resources in an Amazon Connect instance
    *
    * Access Level: List
    *
@@ -685,7 +767,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to view the security keys of an existing Amazon Connect instance.
+   * Grants permissions to view the security keys of an existing Amazon Connect instance
    *
    * Access Level: List
    *
@@ -696,7 +778,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list security profile resources in an Amazon Connect instance.
+   * Grants permissions to list security profile resources in an Amazon Connect instance
    *
    * Access Level: List
    *
@@ -707,7 +789,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list tags for an Amazon Connect resource.
+   * Grants permissions to list tags for an Amazon Connect resource
    *
    * Access Level: Read
    *
@@ -721,7 +803,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list the hierarchy group resources in an Amazon Connect instance.
+   * Grants permissions to list the hierarchy group resources in an Amazon Connect instance
    *
    * Access Level: List
    *
@@ -732,7 +814,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list user resources in an Amazon Connect instance.
+   * Grants permissions to list user resources in an Amazon Connect instance
    *
    * Access Level: List
    *
@@ -743,7 +825,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to resume recording for the specified contact.
+   * Grants permissions to resume recording for the specified contact
    *
    * Access Level: Write
    *
@@ -754,7 +836,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to initiate a chat using the Amazon Connect API.
+   * Grants permissions to initiate a chat using the Amazon Connect API
    *
    * Access Level: Write
    *
@@ -765,7 +847,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to start recording for the specified contact.
+   * Grants permissions to start recording for the specified contact
    *
    * Access Level: Write
    *
@@ -776,7 +858,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to initiate outbound calls using the Amazon Connect API.
+   * Grants permissions to initiate outbound calls using the Amazon Connect API
    *
    * Access Level: Write
    *
@@ -787,7 +869,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to initiate a task using the Amazon Connect API.
+   * Grants permissions to initiate a task using the Amazon Connect API
    *
    * Access Level: Write
    *
@@ -809,7 +891,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to stop recording for the specified contact.
+   * Grants permissions to stop recording for the specified contact
    *
    * Access Level: Write
    *
@@ -820,7 +902,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to suspend recording for the specified contact.
+   * Grants permissions to suspend recording for the specified contact
    *
    * Access Level: Write
    *
@@ -831,7 +913,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to tag an Amazon Connect resource.
+   * Grants permissions to tag an Amazon Connect resource
    *
    * Access Level: Tagging
    *
@@ -847,7 +929,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to untag an Amazon Connect resource.
+   * Grants permissions to untag an Amazon Connect resource
    *
    * Access Level: Tagging
    *
@@ -862,7 +944,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create or update the contact attributes associated with the specified contact.
+   * Grants permissions to create or update the contact attributes associated with the specified contact
    *
    * Access Level: Write
    *
@@ -873,7 +955,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update contact flow content in an Amazon Connect instance.
+   * Grants permissions to update contact flow content in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -887,7 +969,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update the name and description of a contact flow in an Amazon Connect instance.
+   * Grants permissions to update the name and description of a contact flow in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -948,7 +1030,77 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update the configuration of a quick connect in an Amazon Connect instance.
+   * Grants permissions to update queue hours of operation in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueHoursOfOperation.html
+   */
+  public toUpdateQueueHoursOfOperation() {
+    return this.to('UpdateQueueHoursOfOperation');
+  }
+
+  /**
+   * Grants permissions to update queue capacity in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueMaxContacts.html
+   */
+  public toUpdateQueueMaxContacts() {
+    return this.to('UpdateQueueMaxContacts');
+  }
+
+  /**
+   * Grants permissions to update a queue name and description in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueName.html
+   */
+  public toUpdateQueueName() {
+    return this.to('UpdateQueueName');
+  }
+
+  /**
+   * Grants permissions to update queue outbound caller config in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueOutboundCallerConfig.html
+   */
+  public toUpdateQueueOutboundCallerConfig() {
+    return this.to('UpdateQueueOutboundCallerConfig');
+  }
+
+  /**
+   * Grants permissions to update queue status in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueStatus.html
+   */
+  public toUpdateQueueStatus() {
+    return this.to('UpdateQueueStatus');
+  }
+
+  /**
+   * Grants permissions to update the configuration of a quick connect in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -962,7 +1114,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update a quick connect name and description in an Amazon Connect instance.
+   * Grants permissions to update a quick connect name and description in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -976,7 +1128,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update the concurrency in a routing profile in an Amazon Connect instance.
+   * Grants permissions to update the concurrency in a routing profile in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -990,7 +1142,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update the outbound queue in a routing profile in an Amazon Connect instance.
+   * Grants permissions to update the outbound queue in a routing profile in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -1004,7 +1156,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update a routing profile name and description in an Amazon Connect instance.
+   * Grants permissions to update a routing profile name and description in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -1018,7 +1170,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update the queues in routing profile in an Amazon Connect instance.
+   * Grants permissions to update the queues in routing profile in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -1032,7 +1184,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update a hierarchy group for a user in an Amazon Connect instance.
+   * Grants permissions to update a hierarchy group for a user in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -1046,7 +1198,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update a user hierarchy group name in an Amazon Connect instance.
+   * Grants permissions to update a user hierarchy group name in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -1057,7 +1209,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update user hierarchy structure in an Amazon Connect instance.
+   * Grants permissions to update user hierarchy structure in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -1068,7 +1220,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update identity information for a user in an Amazon Connect instance.
+   * Grants permissions to update identity information for a user in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -1082,7 +1234,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update phone configuration settings for a user in an Amazon Connect instance.
+   * Grants permissions to update phone configuration settings for a user in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -1096,7 +1248,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update a routing profile for a user in an Amazon Connect instance.
+   * Grants permissions to update a routing profile for a user in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -1110,7 +1262,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update security profiles for a user in an Amazon Connect instance.
+   * Grants permissions to update security profiles for a user in an Amazon Connect instance
    *
    * Access Level: Write
    *
@@ -1129,10 +1281,12 @@ export class Connect extends PolicyStatement {
       "AssociateInstanceStorageConfig",
       "AssociateLambdaFunction",
       "AssociateLexBot",
+      "AssociateQueueQuickConnects",
       "AssociateRoutingProfileQueues",
       "AssociateSecurityKey",
       "CreateContactFlow",
       "CreateInstance",
+      "CreateQueue",
       "CreateQuickConnect",
       "CreateRoutingProfile",
       "CreateUser",
@@ -1145,6 +1299,7 @@ export class Connect extends PolicyStatement {
       "DisassociateInstanceStorageConfig",
       "DisassociateLambdaFunction",
       "DisassociateLexBot",
+      "DisassociateQueueQuickConnects",
       "DisassociateRoutingProfileQueues",
       "DisassociateSecurityKey",
       "GetFederationTokens",
@@ -1161,6 +1316,11 @@ export class Connect extends PolicyStatement {
       "UpdateContactFlowName",
       "UpdateInstanceAttribute",
       "UpdateInstanceStorageConfig",
+      "UpdateQueueHoursOfOperation",
+      "UpdateQueueMaxContacts",
+      "UpdateQueueName",
+      "UpdateQueueOutboundCallerConfig",
+      "UpdateQueueStatus",
       "UpdateQuickConnectConfig",
       "UpdateQuickConnectName",
       "UpdateRoutingProfileConcurrency",
@@ -1177,9 +1337,11 @@ export class Connect extends PolicyStatement {
     ],
     "Read": [
       "DescribeContactFlow",
+      "DescribeHoursOfOperation",
       "DescribeInstance",
       "DescribeInstanceAttribute",
       "DescribeInstanceStorageConfig",
+      "DescribeQueue",
       "DescribeQuickConnect",
       "DescribeRoutingProfile",
       "DescribeUser",
@@ -1189,7 +1351,6 @@ export class Connect extends PolicyStatement {
       "GetCurrentMetricData",
       "GetFederationToken",
       "GetMetricData",
-      "ListRoutingProfileQueues",
       "ListTagsForResource"
     ],
     "List": [
@@ -1203,8 +1364,10 @@ export class Connect extends PolicyStatement {
       "ListLexBots",
       "ListPhoneNumbers",
       "ListPrompts",
+      "ListQueueQuickConnects",
       "ListQueues",
       "ListQuickConnects",
+      "ListRoutingProfileQueues",
       "ListRoutingProfiles",
       "ListSecurityKeys",
       "ListSecurityProfiles",
@@ -1350,13 +1513,16 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type queue to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/create-queue.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/API_Queue.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param queueId - Identifier for the queueId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onQueue(instanceId: string, queueId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/queue/${QueueId}';
@@ -1419,7 +1585,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type hours-of-operation to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/API_HoursOfOperation.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param hoursOfOperationId - Identifier for the hoursOfOperationId.
@@ -1459,7 +1625,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Filters access by the attribute type of the Amazon Connect instance.
+   * Filters access by the attribute type of the Amazon Connect instance
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
    *
@@ -1475,7 +1641,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Filters access by restricting federation into specified connect instances .
+   * Filters access by restricting federation into specified Amazon Connect instances
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
    *
@@ -1490,7 +1656,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Filters access by restricting the storage resource type of the Amazon Connect instance storage configuration.
+   * Filters access by restricting the storage resource type of the Amazon Connect instance storage configuration
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
    *

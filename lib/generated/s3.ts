@@ -1133,6 +1133,8 @@ export class S3 extends PolicyStatement {
    * - .ifSignatureversion()
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-config-for-kms-objects.html
    */
   public toGetObjectVersionForReplication() {
     return this.to('GetObjectVersionForReplication');
@@ -1155,6 +1157,8 @@ export class S3 extends PolicyStatement {
    * - .ifTlsVersion()
    * - .ifVersionid()
    * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
    */
   public toGetObjectVersionTagging() {
     return this.to('GetObjectVersionTagging');
@@ -2573,6 +2577,8 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by an access point Amazon Resource Name (ARN)
    *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html#access-points-policies
+   *
    * Applies to actions:
    * - .toAbortMultipartUpload()
    * - .toBypassGovernanceRetention()
@@ -3212,6 +3218,8 @@ export class S3 extends PolicyStatement {
 
   /**
    * Filters access by object retention mode (COMPLIANCE or GOVERNANCE)
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-modes
    *
    * Applies to actions:
    * - .toBypassGovernanceRetention()
