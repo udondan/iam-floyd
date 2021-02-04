@@ -5,6 +5,6 @@ outposts:GetOutpost;Read
 outposts:GetOutpostInstanceTypes;Read
 outposts:ListOutposts;List
 outposts:ListSites;List
-outposts:ListTagsForResource;List
-outposts:TagResource;Write
-outposts:UntagResource;Write
+outposts:ListTagsForResource;Read
+outposts:TagResource;Tagging
+outposts:UntagResource;Tagging

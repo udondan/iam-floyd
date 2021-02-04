@@ -98,7 +98,7 @@ export class Outposts extends PolicyStatement {
   /**
    * Grants permission to list tags for a resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListTagsForResource.html
    */
@@ -109,7 +109,7 @@ export class Outposts extends PolicyStatement {
   /**
    * Grants permission to add tags to a resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_TagResource.html
    */
@@ -120,7 +120,7 @@ export class Outposts extends PolicyStatement {
   /**
    * Grants permission to remove tags from a resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_UntagResource.html
    */
@@ -132,18 +132,20 @@ export class Outposts extends PolicyStatement {
     "Write": [
       "CreateOutpost",
       "DeleteOutpost",
-      "DeleteSite",
-      "TagResource",
-      "UntagResource"
+      "DeleteSite"
     ],
     "Read": [
       "GetOutpost",
-      "GetOutpostInstanceTypes"
+      "GetOutpostInstanceTypes",
+      "ListTagsForResource"
     ],
     "List": [
       "ListOutposts",
-      "ListSites",
-      "ListTagsForResource"
+      "ListSites"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 }

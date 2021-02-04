@@ -19,7 +19,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get information about one or more named queries.
+   * Grants permissions to get information about one or more named queries
    *
    * Access Level: Read
    *
@@ -30,7 +30,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get information about one or more query executions.
+   * Grants permissions to get information about one or more query executions
    *
    * Access Level: Read
    *
@@ -41,9 +41,9 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a datacatalog.
+   * Grants permissions to create a datacatalog
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -56,7 +56,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a named query.
+   * Grants permissions to create a named query
    *
    * Access Level: Write
    *
@@ -67,9 +67,9 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a workgroup.
+   * Grants permissions to create a workgroup
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -82,7 +82,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a datacatalog.
+   * Grants permissions to delete a datacatalog
    *
    * Access Level: Write
    *
@@ -93,7 +93,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a named query specified.
+   * Grants permissions to delete a named query specified
    *
    * Access Level: Write
    *
@@ -104,7 +104,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a workgroup.
+   * Grants permissions to delete a workgroup
    *
    * Access Level: Write
    *
@@ -115,7 +115,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get a datacatalog.
+   * Grants permissions to get a datacatalog
    *
    * Access Level: Read
    *
@@ -126,7 +126,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get a database for a given datacatalog.
+   * Grants permissions to get a database for a given datacatalog
    *
    * Access Level: Read
    *
@@ -137,7 +137,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get information about the specified named query.
+   * Grants permissions to get information about the specified named query
    *
    * Access Level: Read
    *
@@ -148,7 +148,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get information about the specified query execution.
+   * Grants permissions to get information about the specified query execution
    *
    * Access Level: Read
    *
@@ -159,7 +159,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get the query results.
+   * Grants permissions to get the query results
    *
    * Access Level: Read
    *
@@ -170,7 +170,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get the query results stream.
+   * Grants permissions to get the query results stream
    *
    * Access Level: Read
    *
@@ -181,7 +181,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get a metadata about a table for a given datacatalog.
+   * Grants permissions to get a metadata about a table for a given datacatalog
    *
    * Access Level: Read
    *
@@ -192,7 +192,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get a workgroup.
+   * Grants permissions to get a workgroup
    *
    * Access Level: Read
    *
@@ -203,7 +203,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of datacatalogs for the specified AWS account.
+   * Grants permissions to return a list of datacatalogs for the specified AWS account
    *
    * Access Level: List
    *
@@ -214,7 +214,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of databases for a given datacatalog.
+   * Grants permissions to return a list of databases for a given datacatalog
    *
    * Access Level: List
    *
@@ -225,7 +225,18 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of named queries in Amazon Athena for the specified AWS account.
+   * Grants permissions to return a list of athena engine versions for the specified AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListEngineVersions.html
+   */
+  public toListEngineVersions() {
+    return this.to('ListEngineVersions');
+  }
+
+  /**
+   * Grants permissions to return a list of named queries in Amazon Athena for the specified AWS account
    *
    * Access Level: List
    *
@@ -236,9 +247,9 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of query executions for the specified AWS account.
+   * Grants permissions to return a list of query executions for the specified AWS account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListQueryExecutions.html
    */
@@ -247,9 +258,9 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of table metadata in a database for a given datacatalog.
+   * Grants permissions to return a list of table metadata in a database for a given datacatalog
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListTableMetadata.html
    */
@@ -258,7 +269,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of tags for a resource.
+   * Grants permissions to return a list of tags for a resource
    *
    * Access Level: Read
    *
@@ -269,7 +280,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of workgroups for the specified AWS account.
+   * Grants permissions to return a list of workgroups for the specified AWS account
    *
    * Access Level: List
    *
@@ -280,7 +291,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to start a query execution using an SQL query provided as a string.
+   * Grants permissions to start a query execution using an SQL query provided as a string
    *
    * Access Level: Write
    *
@@ -291,7 +302,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to stop the specified query execution.
+   * Grants permissions to stop the specified query execution
    *
    * Access Level: Write
    *
@@ -302,7 +313,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to add a tag to a resource.
+   * Grants permissions to add a tag to a resource
    *
    * Access Level: Tagging
    *
@@ -317,7 +328,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to remove a tag from a resource.
+   * Grants permissions to remove a tag from a resource
    *
    * Access Level: Tagging
    *
@@ -331,7 +342,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update a datacatalog.
+   * Grants permissions to update a datacatalog
    *
    * Access Level: Write
    *
@@ -342,7 +353,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update a workgroup.
+   * Grants permissions to update a workgroup
    *
    * Access Level: Write
    *
@@ -364,16 +375,15 @@ export class Athena extends PolicyStatement {
       "GetQueryResultsStream",
       "GetTableMetadata",
       "GetWorkGroup",
+      "ListEngineVersions",
+      "ListQueryExecutions",
+      "ListTableMetadata",
       "ListTagsForResource"
     ],
-    "Tagging": [
-      "CreateDataCatalog",
-      "CreateWorkGroup",
-      "TagResource",
-      "UntagResource"
-    ],
     "Write": [
+      "CreateDataCatalog",
       "CreateNamedQuery",
+      "CreateWorkGroup",
       "DeleteDataCatalog",
       "DeleteNamedQuery",
       "DeleteWorkGroup",
@@ -386,9 +396,11 @@ export class Athena extends PolicyStatement {
       "ListDataCatalogs",
       "ListDatabases",
       "ListNamedQueries",
-      "ListQueryExecutions",
-      "ListTableMetadata",
       "ListWorkGroups"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
