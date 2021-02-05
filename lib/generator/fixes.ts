@@ -35,6 +35,9 @@ export const fixes: Fixes = {
   kinesisanalyticsv2: {
     name: 'kinesisanalytics-v2',
   },
+  lexv2: {
+    name: 'lex-v2',
+  },
   pinpointemailservice: {
     name: 'ses-pinpoint',
   },
