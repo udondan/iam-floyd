@@ -34,7 +34,7 @@
          "Resource":"*",
          "Condition":{
             "Null":{
-               "cloudwatch:ResourceTag/ServiceQuotaMonitor":"false"
+               "aws:ResourceTag/ServiceQuotaMonitor":"false"
             }
          }
       },
