@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [elemental-activations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalactivations.html).
+ * Statement provider for service [elemental-activations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalappliancesandsoftwareactivationservice.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class ElementalActivations extends PolicyStatement {
   public servicePrefix = 'elemental-activations';
 
   /**
-   * Statement provider for service [elemental-activations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalactivations.html).
+   * Statement provider for service [elemental-activations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalappliancesandsoftwareactivationservice.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,9 +19,20 @@ export class ElementalActivations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to complete the process of registering customer account for AWS Elemental Appliances and Software Purchases
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software/
+   */
+  public toCompleteAccountRegistration() {
+    return this.to('CompleteAccountRegistration');
+  }
+
+  /**
    * Grants permission to complete the process of uploading a Software file for AWS Elemental Appliances and Software Purchases
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
@@ -32,7 +43,7 @@ export class ElementalActivations extends PolicyStatement {
   /**
    * Grants permission to download the Software files for AWS Elemental Appliances and Software Purchases
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
@@ -43,7 +54,7 @@ export class ElementalActivations extends PolicyStatement {
   /**
    * Grants permission to generate Software Licenses for AWS Elemental Appliances and Software Purchases
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
@@ -74,9 +85,20 @@ export class ElementalActivations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start the process of registering customer account for AWS Elemental Appliances and Software Purchases
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software/
+   */
+  public toStartAccountRegistration() {
+    return this.to('StartAccountRegistration');
+  }
+
+  /**
    * Grants permission to start the process of uploading a Software file for AWS Elemental Appliances and Software Purchases
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
@@ -114,15 +136,15 @@ export class ElementalActivations extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "List": [
+    "Read": [
+      "CompleteAccountRegistration",
       "CompleteFileUpload",
       "DownloadSoftware",
       "GenerateLicenses",
-      "StartFileUpload"
-    ],
-    "Read": [
       "GetActivation",
-      "ListTagsForResource"
+      "ListTagsForResource",
+      "StartAccountRegistration",
+      "StartFileUpload"
     ],
     "Tagging": [
       "TagResource",

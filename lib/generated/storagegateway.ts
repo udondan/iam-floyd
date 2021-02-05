@@ -374,6 +374,17 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the information about the most recent high availability monitoring test that was performed on the gateway
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeAvailabilityMonitorTest.html
+   */
+  public toDescribeAvailabilityMonitorTest() {
+    return this.to('DescribeAvailabilityMonitorTest');
+  }
+
+  /**
    * Grants permission to get the bandwidth rate limits of a gateway
    *
    * Access Level: Read
@@ -382,6 +393,17 @@ export class Storagegateway extends PolicyStatement {
    */
   public toDescribeBandwidthRateLimit() {
     return this.to('DescribeBandwidthRateLimit');
+  }
+
+  /**
+   * Grants permission to get the bandwidth rate limit schedule of a gateway
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeBandwidthRateLimitSchedule.html
+   */
+  public toDescribeBandwidthRateLimitSchedule() {
+    return this.to('DescribeBandwidthRateLimitSchedule');
   }
 
   /**
@@ -806,6 +828,17 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a test that verifies that the specified gateway is configured for High Availability monitoring in your host environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_StartAvailabilityMonitorTest.html
+   */
+  public toStartAvailabilityMonitorTest() {
+    return this.to('StartAvailabilityMonitorTest');
+  }
+
+  /**
    * Grants permission to start a gateway that you previously shut down
    *
    * Access Level: Write
@@ -836,6 +869,17 @@ export class Storagegateway extends PolicyStatement {
    */
   public toUpdateBandwidthRateLimit() {
     return this.to('UpdateBandwidthRateLimit');
+  }
+
+  /**
+   * Grants permission to update the bandwidth rate limit schedule of a gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateBandwidthRateLimitSchedule.html
+   */
+  public toUpdateBandwidthRateLimitSchedule() {
+    return this.to('UpdateBandwidthRateLimitSchedule');
   }
 
   /**
@@ -905,6 +949,28 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update whether the shares on a gateway are visible in a net view or browse list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateSMBFileShareVisibility.html
+   */
+  public toUpdateSMBFileShareVisibility() {
+    return this.to('UpdateSMBFileShareVisibility');
+  }
+
+  /**
+   * Grants permission to update the SMB security strategy on a file gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateSMBSecurityStrategy.html
+   */
+  public toUpdateSMBSecurityStrategy() {
+    return this.to('UpdateSMBSecurityStrategy');
+  }
+
+  /**
    * Grants permission to update a snapshot schedule configured for a gateway volume
    *
    * Access Level: Write
@@ -967,15 +1033,19 @@ export class Storagegateway extends PolicyStatement {
       "SetLocalConsolePassword",
       "SetSMBGuestPassword",
       "ShutdownGateway",
+      "StartAvailabilityMonitorTest",
       "StartGateway",
       "UpdateAutomaticTapeCreationPolicy",
       "UpdateBandwidthRateLimit",
+      "UpdateBandwidthRateLimitSchedule",
       "UpdateChapCredentials",
       "UpdateGatewayInformation",
       "UpdateGatewaySoftwareNow",
       "UpdateMaintenanceStartTime",
       "UpdateNFSFileShare",
       "UpdateSMBFileShare",
+      "UpdateSMBFileShareVisibility",
+      "UpdateSMBSecurityStrategy",
       "UpdateSnapshotSchedule",
       "UpdateVTLDeviceType"
     ],
@@ -984,7 +1054,9 @@ export class Storagegateway extends PolicyStatement {
       "RemoveTagsFromResource"
     ],
     "Read": [
+      "DescribeAvailabilityMonitorTest",
       "DescribeBandwidthRateLimit",
+      "DescribeBandwidthRateLimitSchedule",
       "DescribeCache",
       "DescribeCachediSCSIVolumes",
       "DescribeChapCredentials",

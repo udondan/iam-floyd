@@ -197,6 +197,17 @@ export class Databrew extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details about job run for a given job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/databrew/latest/dg/API_DescribeJobRun.html
+   */
+  public toDescribeJobRun() {
+    return this.to('DescribeJobRun');
+  }
+
+  /**
    * Grants permission to view details about a project
    *
    * Access Level: Read
@@ -232,7 +243,7 @@ export class Databrew extends PolicyStatement {
   /**
    * Grants permission to list datasets in your account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListDatasets.html
    */
@@ -254,7 +265,7 @@ export class Databrew extends PolicyStatement {
   /**
    * Grants permission to list jobs in your account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListJobs.html
    */
@@ -265,7 +276,7 @@ export class Databrew extends PolicyStatement {
   /**
    * Grants permission to list projects in your account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListProjects.html
    */
@@ -276,7 +287,7 @@ export class Databrew extends PolicyStatement {
   /**
    * Grants permission to list versions in your recipe
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListRecipeVersions.html
    */
@@ -287,7 +298,7 @@ export class Databrew extends PolicyStatement {
   /**
    * Grants permission to list recipes in your account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListRecipes.html
    */
@@ -298,7 +309,7 @@ export class Databrew extends PolicyStatement {
   /**
    * Grants permission to list schedules in your account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_ListSchedules.html
    */
@@ -496,19 +507,18 @@ export class Databrew extends PolicyStatement {
     "Read": [
       "DescribeDataset",
       "DescribeJob",
+      "DescribeJobRun",
       "DescribeProject",
       "DescribeRecipe",
       "DescribeSchedule",
-      "ListJobRuns",
-      "ListTagsForResource"
-    ],
-    "List": [
       "ListDatasets",
+      "ListJobRuns",
       "ListJobs",
       "ListProjects",
       "ListRecipeVersions",
       "ListRecipes",
-      "ListSchedules"
+      "ListSchedules",
+      "ListTagsForResource"
     ],
     "Tagging": [
       "TagResource",

@@ -98,8 +98,8 @@ elasticloadbalancingv2
 elasticmapreduce
 elasticsearchservice
 elastictranscoder
-elementalactivations
 elementalappliancesandsoftware
+elementalappliancesandsoftwareactivationservice
 elementalmediaconnect
 elementalmediaconvert
 elementalmedialive
@@ -159,9 +159,11 @@ lakeformation
 lambda
 launchwizard
 lex
+lexv2
 licensemanager
 lightsail
 location
+lookoutforequipment
 lookoutforvision
 machinelearning
 macie
