@@ -15,6 +15,8 @@
 				"ec2:ModifyInstanceAttribute",
 				"ec2:RequestSpotInstances",
 				"ec2:RunInstances",
+				"ec2:StartInstances",
+                "ec2:StopInstances",
 				"ec2:TerminateInstances"
 			],
 			"Resource": "*"

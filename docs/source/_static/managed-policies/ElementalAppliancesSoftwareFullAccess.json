@@ -3,7 +3,10 @@
     "Statement": [
         {
             "Effect": "Allow",
-            "Action": ["elemental-appliances-software:*"],
+            "Action": [
+                "elemental-appliances-software:*",
+                "elemental-activations:CompleteAccountRegistration"
+            ],
             "Resource": "*"
         }
     ]
