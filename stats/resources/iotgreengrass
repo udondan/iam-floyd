@@ -1,4 +1,3 @@
-greengrass:artifact
 greengrass:bulkDeployment
 greengrass:certificateAuthority
 greengrass:connectivityInfo
@@ -20,3 +19,4 @@ greengrass:resourceDefinitionVersion
 greengrass:subscriptionDefinition
 greengrass:subscriptionDefinitionVersion
 greengrass:thing
+greengrass:thingRuntimeConfig

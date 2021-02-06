@@ -53,7 +53,8 @@ greengrass:GetResourceDefinitionVersion;Read
 greengrass:GetServiceRoleForAccount;Read
 greengrass:GetSubscriptionDefinition;Read
 greengrass:GetSubscriptionDefinitionVersion;Read
-greengrass:ListBulkDeploymentDetailedReports;List
+greengrass:GetThingRuntimeConfiguration;Read
+greengrass:ListBulkDeploymentDetailedReports;Read
 greengrass:ListBulkDeployments;List
 greengrass:ListConnectorDefinitionVersions;List
 greengrass:ListConnectorDefinitions;List
@@ -73,7 +74,7 @@ greengrass:ListResourceDefinitionVersions;List
 greengrass:ListResourceDefinitions;List
 greengrass:ListSubscriptionDefinitionVersions;List
 greengrass:ListSubscriptionDefinitions;List
-greengrass:ListTagsForResource;List
+greengrass:ListTagsForResource;Read
 greengrass:ResetDeployments;Write
 greengrass:StartBulkDeployment;Write
 greengrass:StopBulkDeployment;Write
@@ -89,3 +90,4 @@ greengrass:UpdateGroupCertificateConfiguration;Write
 greengrass:UpdateLoggerDefinition;Write
 greengrass:UpdateResourceDefinition;Write
 greengrass:UpdateSubscriptionDefinition;Write
+greengrass:UpdateThingRuntimeConfiguration;Write

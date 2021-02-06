@@ -19,7 +19,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate a role with a group. The role's permissions must allow Greengrass core Lambda functions and connectors to perform actions in other AWS services.
+   * Grants permission to associate a role with a group. The role's permissions must allow Greengrass core Lambda functions and connectors to perform actions in other AWS services
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate a role with your account. AWS IoT Greengrass uses this role to access your Lambda functions and AWS IoT resources.
+   * Grants permission to associate a role with your account. AWS IoT Greengrass uses this role to access your Lambda functions and AWS IoT resources
    *
    * Access Level: Permissions management
    *
@@ -41,7 +41,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a connector definition.
+   * Grants permission to create a connector definition
    *
    * Access Level: Write
    *
@@ -56,7 +56,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a version of an existing connector definition.
+   * Grants permission to create a version of an existing connector definition
    *
    * Access Level: Write
    *
@@ -67,7 +67,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a core definition.
+   * Grants permission to create a core definition
    *
    * Access Level: Write
    *
@@ -82,7 +82,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a version of an existing core definition. Greengrass groups must each contain exactly one Greengrass core.
+   * Grants permission to create a version of an existing core definition. Greengrass groups must each contain exactly one Greengrass core
    *
    * Access Level: Write
    *
@@ -93,7 +93,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a deployment.
+   * Grants permission to create a deployment
    *
    * Access Level: Write
    *
@@ -104,7 +104,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a device definition.
+   * Grants permission to create a device definition
    *
    * Access Level: Write
    *
@@ -119,7 +119,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a version of an existing device definition.
+   * Grants permission to create a version of an existing device definition
    *
    * Access Level: Write
    *
@@ -130,7 +130,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Lambda function definition to be used in a group that contains a list of Lambda functions and their configurations.
+   * Grants permission to create a Lambda function definition to be used in a group that contains a list of Lambda functions and their configurations
    *
    * Access Level: Write
    *
@@ -145,7 +145,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a version of an existing Lambda function definition.
+   * Grants permission to create a version of an existing Lambda function definition
    *
    * Access Level: Write
    *
@@ -171,7 +171,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a CA for the group, or rotate the existing CA.
+   * Grants permission to create a CA for the group, or rotate the existing CA
    *
    * Access Level: Write
    *
@@ -182,7 +182,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a version of a group that has already been defined.
+   * Grants permission to create a version of a group that has already been defined
    *
    * Access Level: Write
    *
@@ -193,7 +193,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a logger definition.
+   * Grants permission to create a logger definition
    *
    * Access Level: Write
    *
@@ -208,7 +208,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a version of an existing logger definition.
+   * Grants permission to create a version of an existing logger definition
    *
    * Access Level: Write
    *
@@ -219,7 +219,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a resource definition that contains a list of resources to be used in a group.
+   * Grants permission to create a resource definition that contains a list of resources to be used in a group
    *
    * Access Level: Write
    *
@@ -234,7 +234,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a version of an existing resource definition.
+   * Grants permission to create a version of an existing resource definition
    *
    * Access Level: Write
    *
@@ -245,7 +245,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an AWS IoT job that will trigger your Greengrass cores to update the software they are running.
+   * Grants permission to create an AWS IoT job that will trigger your Greengrass cores to update the software they are running
    *
    * Access Level: Write
    *
@@ -256,7 +256,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a subscription definition.
+   * Grants permission to create a subscription definition
    *
    * Access Level: Write
    *
@@ -271,7 +271,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a version of an existing subscription definition.
+   * Grants permission to create a version of an existing subscription definition
    *
    * Access Level: Write
    *
@@ -282,7 +282,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a connector definition.
+   * Grants permission to delete a connector definition
    *
    * Access Level: Write
    *
@@ -293,7 +293,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a core definition. Deleting a definition that is currently in use in a deployment affects future deployments.
+   * Grants permission to delete a core definition. Deleting a definition that is currently in use in a deployment affects future deployments
    *
    * Access Level: Write
    *
@@ -304,7 +304,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a device definition. Deleting a definition that is currently in use in a deployment affects future deployments.
+   * Grants permission to delete a device definition. Deleting a definition that is currently in use in a deployment affects future deployments
    *
    * Access Level: Write
    *
@@ -315,7 +315,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a Lambda function definition. Deleting a definition that is currently in use in a deployment affects future deployments.
+   * Grants permission to delete a Lambda function definition. Deleting a definition that is currently in use in a deployment affects future deployments
    *
    * Access Level: Write
    *
@@ -326,7 +326,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a group that is not currently in use in a deployment.
+   * Grants permission to delete a group that is not currently in use in a deployment
    *
    * Access Level: Write
    *
@@ -337,7 +337,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a logger definition. Deleting a definition that is currently in use in a deployment affects future deployments.
+   * Grants permission to delete a logger definition. Deleting a definition that is currently in use in a deployment affects future deployments
    *
    * Access Level: Write
    *
@@ -348,7 +348,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a resource definition.
+   * Grants permission to delete a resource definition
    *
    * Access Level: Write
    *
@@ -359,7 +359,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a subscription definition. Deleting a definition that is currently in use in a deployment affects future deployments.
+   * Grants permission to delete a subscription definition. Deleting a definition that is currently in use in a deployment affects future deployments
    *
    * Access Level: Write
    *
@@ -370,7 +370,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate the role from a group.
+   * Grants permission to disassociate the role from a group
    *
    * Access Level: Write
    *
@@ -381,7 +381,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate the service role from an account. Without a service role, deployments will not work.
+   * Grants permission to disassociate the service role from an account. Without a service role, deployments will not work
    *
    * Access Level: Write
    *
@@ -392,7 +392,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information required to connect to a Greengrass core.
+   * Grants permission to retrieve information required to connect to a Greengrass core
    *
    * Access Level: Read
    *
@@ -403,7 +403,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the role associated with a group.
+   * Grants permission to retrieve the role associated with a group
    *
    * Access Level: Read
    *
@@ -414,7 +414,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return the status of a bulk deployment.
+   * Grants permission to return the status of a bulk deployment
    *
    * Access Level: Read
    *
@@ -425,7 +425,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the connectivity information for a core.
+   * Grants permission to retrieve the connectivity information for a core
    *
    * Access Level: Read
    *
@@ -436,7 +436,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a connector definition.
+   * Grants permission to retrieve information about a connector definition
    *
    * Access Level: Read
    *
@@ -447,7 +447,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a connector definition version.
+   * Grants permission to retrieve information about a connector definition version
    *
    * Access Level: Read
    *
@@ -458,7 +458,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a core definition.
+   * Grants permission to retrieve information about a core definition
    *
    * Access Level: Read
    *
@@ -469,7 +469,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a core definition version.
+   * Grants permission to retrieve information about a core definition version
    *
    * Access Level: Read
    *
@@ -480,7 +480,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return the status of a deployment.
+   * Grants permission to return the status of a deployment
    *
    * Access Level: Read
    *
@@ -491,7 +491,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a device definition.
+   * Grants permission to retrieve information about a device definition
    *
    * Access Level: Read
    *
@@ -502,7 +502,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a device definition version.
+   * Grants permission to retrieve information about a device definition version
    *
    * Access Level: Read
    *
@@ -513,7 +513,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a Lambda function definition, such as its creation time and latest version.
+   * Grants permission to retrieve information about a Lambda function definition, such as its creation time and latest version
    *
    * Access Level: Read
    *
@@ -524,7 +524,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a Lambda function definition version, such as which Lambda functions are included in the version and their configurations.
+   * Grants permission to retrieve information about a Lambda function definition version, such as which Lambda functions are included in the version and their configurations
    *
    * Access Level: Read
    *
@@ -535,7 +535,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a group.
+   * Grants permission to retrieve information about a group
    *
    * Access Level: Read
    *
@@ -546,7 +546,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return the public key of the CA associated with a group.
+   * Grants permission to return the public key of the CA associated with a group
    *
    * Access Level: Read
    *
@@ -557,7 +557,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the current configuration for the CA used by a group.
+   * Grants permission to retrieve the current configuration for the CA used by a group
    *
    * Access Level: Read
    *
@@ -568,7 +568,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a group version.
+   * Grants permission to retrieve information about a group version
    *
    * Access Level: Read
    *
@@ -579,7 +579,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a logger definition.
+   * Grants permission to retrieve information about a logger definition
    *
    * Access Level: Read
    *
@@ -590,7 +590,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a logger definition version.
+   * Grants permission to retrieve information about a logger definition version
    *
    * Access Level: Read
    *
@@ -601,7 +601,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a resource definition, such as its creation time and latest version.
+   * Grants permission to retrieve information about a resource definition, such as its creation time and latest version
    *
    * Access Level: Read
    *
@@ -612,7 +612,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a resource definition version, such as which resources are included in the version.
+   * Grants permission to retrieve information about a resource definition version, such as which resources are included in the version
    *
    * Access Level: Read
    *
@@ -623,7 +623,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the service role that is attached to an account.
+   * Grants permission to retrieve the service role that is attached to an account
    *
    * Access Level: Read
    *
@@ -634,7 +634,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a subscription definition.
+   * Grants permission to retrieve information about a subscription definition
    *
    * Access Level: Read
    *
@@ -645,7 +645,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a subscription definition version.
+   * Grants permission to retrieve information about a subscription definition version
    *
    * Access Level: Read
    *
@@ -656,9 +656,20 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a paginated list of the deployments that have been started in a bulk deployment operation and their current deployment status.
+   * Grants permission to retrieve runtime configuration of a thing
    *
-   * Access Level: List
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/getthingruntimeconfiguration-get.html
+   */
+  public toGetThingRuntimeConfiguration() {
+    return this.to('GetThingRuntimeConfiguration');
+  }
+
+  /**
+   * Grants permission to retrieve a paginated list of the deployments that have been started in a bulk deployment operation and their current deployment status
+   *
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listbulkdeploymentdetailedreports-get.html
    */
@@ -667,7 +678,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of bulk deployments.
+   * Grants permission to retrieve a list of bulk deployments
    *
    * Access Level: List
    *
@@ -678,7 +689,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the versions of a connector definition.
+   * Grants permission to list the versions of a connector definition
    *
    * Access Level: List
    *
@@ -689,7 +700,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of connector definitions.
+   * Grants permission to retrieve a list of connector definitions
    *
    * Access Level: List
    *
@@ -700,7 +711,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the versions of a core definition.
+   * Grants permission to list the versions of a core definition
    *
    * Access Level: List
    *
@@ -711,7 +722,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of core definitions.
+   * Grants permission to retrieve a list of core definitions
    *
    * Access Level: List
    *
@@ -722,7 +733,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of all deployments for a group.
+   * Grants permission to retrieve a list of all deployments for a group
    *
    * Access Level: List
    *
@@ -733,7 +744,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the versions of a device definition.
+   * Grants permission to list the versions of a device definition
    *
    * Access Level: List
    *
@@ -744,7 +755,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of device definitions.
+   * Grants permission to retrieve a list of device definitions
    *
    * Access Level: List
    *
@@ -755,7 +766,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the versions of a Lambda function definition.
+   * Grants permission to list the versions of a Lambda function definition
    *
    * Access Level: List
    *
@@ -766,7 +777,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of Lambda function definitions.
+   * Grants permission to retrieve a list of Lambda function definitions
    *
    * Access Level: List
    *
@@ -777,7 +788,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of current CAs for a group.
+   * Grants permission to retrieve a list of current CAs for a group
    *
    * Access Level: List
    *
@@ -788,7 +799,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the versions of a group.
+   * Grants permission to list the versions of a group
    *
    * Access Level: List
    *
@@ -799,7 +810,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of groups.
+   * Grants permission to retrieve a list of groups
    *
    * Access Level: List
    *
@@ -810,7 +821,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the versions of a logger definition.
+   * Grants permission to list the versions of a logger definition
    *
    * Access Level: List
    *
@@ -821,7 +832,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of logger definitions.
+   * Grants permission to retrieve a list of logger definitions
    *
    * Access Level: List
    *
@@ -832,7 +843,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the versions of a resource definition.
+   * Grants permission to list the versions of a resource definition
    *
    * Access Level: List
    *
@@ -843,7 +854,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of resource definitions.
+   * Grants permission to retrieve a list of resource definitions
    *
    * Access Level: List
    *
@@ -854,7 +865,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the versions of a subscription definition.
+   * Grants permission to list the versions of a subscription definition
    *
    * Access Level: List
    *
@@ -865,7 +876,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of subscription definitions.
+   * Grants permission to retrieve a list of subscription definitions
    *
    * Access Level: List
    *
@@ -876,9 +887,9 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags for a resource.
+   * Grants permission to list the tags for a resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -891,7 +902,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to reset a group's deployments.
+   * Grants permission to reset a group's deployments
    *
    * Access Level: Write
    *
@@ -902,13 +913,9 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deploy multiple groups in one operation.
+   * Grants permission to deploy multiple groups in one operation
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/startbulkdeployment-post.html
    */
@@ -917,7 +924,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to stop the execution of a bulk deployment.
+   * Grants permission to stop the execution of a bulk deployment
    *
    * Access Level: Write
    *
@@ -928,7 +935,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to a resource.
+   * Grants permission to add tags to a resource
    *
    * Access Level: Tagging
    *
@@ -943,7 +950,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from a resource.
+   * Grants permission to remove tags from a resource
    *
    * Access Level: Tagging
    *
@@ -957,7 +964,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the connectivity information for a Greengrass core. Any devices that belong to the group that has this core will receive this information in order to find the location of the core and connect to it.
+   * Grants permission to update the connectivity information for a Greengrass core. Any devices that belong to the group that has this core will receive this information in order to find the location of the core and connect to it
    *
    * Access Level: Write
    *
@@ -968,7 +975,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a connector definition.
+   * Grants permission to update a connector definition
    *
    * Access Level: Write
    *
@@ -979,7 +986,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a core definition.
+   * Grants permission to update a core definition
    *
    * Access Level: Write
    *
@@ -990,7 +997,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a device definition.
+   * Grants permission to update a device definition
    *
    * Access Level: Write
    *
@@ -1001,7 +1008,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a Lambda function definition.
+   * Grants permission to update a Lambda function definition
    *
    * Access Level: Write
    *
@@ -1012,7 +1019,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a group.
+   * Grants permission to update a group
    *
    * Access Level: Write
    *
@@ -1023,7 +1030,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the certificate expiry time for a group.
+   * Grants permission to update the certificate expiry time for a group
    *
    * Access Level: Write
    *
@@ -1034,7 +1041,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a logger definition.
+   * Grants permission to update a logger definition
    *
    * Access Level: Write
    *
@@ -1045,7 +1052,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a resource definition.
+   * Grants permission to update a resource definition
    *
    * Access Level: Write
    *
@@ -1056,7 +1063,7 @@ export class Greengrass extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a subscription definition.
+   * Grants permission to update a subscription definition
    *
    * Access Level: Write
    *
@@ -1064,6 +1071,17 @@ export class Greengrass extends PolicyStatement {
    */
   public toUpdateSubscriptionDefinition() {
     return this.to('UpdateSubscriptionDefinition');
+  }
+
+  /**
+   * Grants permission to update runtime configuration of a thing
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/updatethingruntimeconfiguration-put.html
+   */
+  public toUpdateThingRuntimeConfiguration() {
+    return this.to('UpdateThingRuntimeConfiguration');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -1110,7 +1128,8 @@ export class Greengrass extends PolicyStatement {
       "UpdateGroupCertificateConfiguration",
       "UpdateLoggerDefinition",
       "UpdateResourceDefinition",
-      "UpdateSubscriptionDefinition"
+      "UpdateSubscriptionDefinition",
+      "UpdateThingRuntimeConfiguration"
     ],
     "Permissions management": [
       "AssociateServiceRoleToAccount"
@@ -1139,10 +1158,12 @@ export class Greengrass extends PolicyStatement {
       "GetResourceDefinitionVersion",
       "GetServiceRoleForAccount",
       "GetSubscriptionDefinition",
-      "GetSubscriptionDefinitionVersion"
+      "GetSubscriptionDefinitionVersion",
+      "GetThingRuntimeConfiguration",
+      "ListBulkDeploymentDetailedReports",
+      "ListTagsForResource"
     ],
     "List": [
-      "ListBulkDeploymentDetailedReports",
       "ListBulkDeployments",
       "ListConnectorDefinitionVersions",
       "ListConnectorDefinitions",
@@ -1161,8 +1182,7 @@ export class Greengrass extends PolicyStatement {
       "ListResourceDefinitionVersions",
       "ListResourceDefinitions",
       "ListSubscriptionDefinitionVersions",
-      "ListSubscriptionDefinitions",
-      "ListTagsForResource"
+      "ListSubscriptionDefinitions"
     ],
     "Tagging": [
       "TagResource",
@@ -1183,27 +1203,6 @@ export class Greengrass extends PolicyStatement {
   public onConnectivityInfo(thingName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/things/${ThingName}/connectivityInfo';
     arn = arn.replace('${ThingName}', thingName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
-   * Adds a resource of type artifact to the statement
-   *
-   * @param groupId - Identifier for the groupId.
-   * @param deploymentId - Identifier for the deploymentId.
-   * @param artifactId - Identifier for the artifactId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   */
-  public onArtifact(groupId: string, deploymentId: string, artifactId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/deployments/${DeploymentId}/artifacts/lambda/${ArtifactId}';
-    arn = arn.replace('${GroupId}', groupId);
-    arn = arn.replace('${DeploymentId}', deploymentId);
-    arn = arn.replace('${ArtifactId}', artifactId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -1630,6 +1629,25 @@ export class Greengrass extends PolicyStatement {
    */
   public onThing(thingName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:thing/${ThingName}';
+    arn = arn.replace('${ThingName}', thingName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type thingRuntimeConfig to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html
+   *
+   * @param thingName - Identifier for the thingName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onThingRuntimeConfig(thingName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/things/${ThingName}/runtimeconfig';
     arn = arn.replace('${ThingName}', thingName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
