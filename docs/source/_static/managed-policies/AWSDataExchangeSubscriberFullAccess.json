@@ -21,7 +21,8 @@
         "StringEquals": {
           "dataexchange:JobType": [
             "EXPORT_ASSETS_TO_S3",
-            "EXPORT_ASSET_TO_SIGNED_URL"
+            "EXPORT_ASSET_TO_SIGNED_URL",
+            "EXPORT_REVISIONS_TO_S3"
           ]
         }
       }
