@@ -34,6 +34,10 @@ export class Lookoutvision extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_CreateModel.html
    */
   public toCreateModel() {
@@ -142,7 +146,7 @@ export class Lookoutvision extends PolicyStatement {
   /**
    * Grants permission to list the contents of dataset manifest
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_ListDatasetEntries.html
    */
@@ -170,6 +174,17 @@ export class Lookoutvision extends PolicyStatement {
    */
   public toListProjects() {
     return this.to('ListProjects');
+  }
+
+  /**
+   * Grant permission to list tags for a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -217,6 +232,35 @@ export class Lookoutvision extends PolicyStatement {
   }
 
   /**
+   * Grant permission to tag a resource with given key value pairs
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grant permission to remove the tag with the given key from a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to update a training or test dataset manifest
    *
    * Access Level: Write
@@ -245,13 +289,18 @@ export class Lookoutvision extends PolicyStatement {
       "DescribeModel",
       "DescribeProject",
       "DescribeTrialDetection",
-      "DetectAnomalies"
+      "DetectAnomalies",
+      "ListDatasetEntries",
+      "ListTagsForResource"
     ],
     "List": [
-      "ListDatasetEntries",
       "ListModels",
       "ListProjects",
       "ListTrialDetections"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
@@ -265,6 +314,9 @@ export class Lookoutvision extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onModel(projectName: string, modelVersion: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lookoutvision:${Region}:${Account}:model/${ProjectName}/${ModelVersion}';
