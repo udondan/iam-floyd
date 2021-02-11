@@ -23,7 +23,7 @@ export class Arsenal extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/setting-up.html#setting-up-user-policy
+   * https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html
    */
   public toRegisterOnPremisesAgent() {
     return this.to('RegisterOnPremisesAgent');
