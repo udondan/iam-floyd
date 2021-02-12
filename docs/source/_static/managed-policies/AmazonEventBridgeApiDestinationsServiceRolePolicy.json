@@ -1,0 +1,17 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"secretsmanager:CreateSecret",
+				"secretsmanager:UpdateSecret",
+				"secretsmanager:DescribeSecret",
+				"secretsmanager:DeleteSecret",
+				"secretsmanager:GetSecretValue",
+				"secretsmanager:PutSecretValue"
+			],
+			"Resource": "arn:aws:secretsmanager:*:*:secret:events!connection/*"
+		}
+	]
+}
