@@ -19,7 +19,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Adds cloudwatch logging option to the application.
+   * Grants permission to add cloudwatch logging option to the application
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Adds input to the application.
+   * Grants permission to add input to the application
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Adds input processing configuration to the application.
+   * Grants permission to add input processing configuration to the application
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Adds output to the application.
+   * Grants permission to add output to the application
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Adds reference data source to the application.
+   * Grants permission to add reference data source to the application
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Adds VPC configuration to the application.
+   * Grants permission to add VPC configuration to the application
    *
    * Access Level: Write
    *
@@ -85,7 +85,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Creates an application.
+   * Grants permission to create an application
    *
    * Access Level: Write
    *
@@ -100,7 +100,18 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Creates a snapshot for an application.
+   * Grants permission to create and return a URL that you can use to connect to an application's extension
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_CreateApplicationPresignedUrl.html
+   */
+  public toCreateApplicationPresignedUrl() {
+    return this.to('CreateApplicationPresignedUrl');
+  }
+
+  /**
+   * Grants permission to create a snapshot for an application
    *
    * Access Level: Write
    *
@@ -111,7 +122,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes the application.
+   * Grants permission to delete the application
    *
    * Access Level: Write
    *
@@ -122,7 +133,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified cloudwatch logging option of the application.
+   * Grants permission to delete the specified cloudwatch logging option of the application
    *
    * Access Level: Write
    *
@@ -133,7 +144,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified input processing configuration of the application.
+   * Grants permission to delete the specified input processing configuration of the application
    *
    * Access Level: Write
    *
@@ -144,7 +155,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified output of the application.
+   * Grants permission to delete the specified output of the application
    *
    * Access Level: Write
    *
@@ -155,7 +166,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified reference data source of the application.
+   * Grants permission to delete the specified reference data source of the application
    *
    * Access Level: Write
    *
@@ -166,7 +177,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes a snapshot for an application.
+   * Grants permission to delete a snapshot for an application
    *
    * Access Level: Write
    *
@@ -177,7 +188,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified VPC configuration of the application.
+   * Grants permission to delete the specified VPC configuration of the application
    *
    * Access Level: Write
    *
@@ -188,7 +199,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the specified application.
+   * Grants permission to describe the specified application
    *
    * Access Level: Read
    *
@@ -199,7 +210,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Describes an application snapshot.
+   * Grants permission to describe an application snapshot
    *
    * Access Level: Read
    *
@@ -210,7 +221,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Discovers the input schema for the application.
+   * Grants permission to discover the input schema for the application
    *
    * Access Level: Read
    *
@@ -221,7 +232,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Lists the snapshots for an application.
+   * Grants permission to list the snapshots for an application
    *
    * Access Level: Read
    *
@@ -232,7 +243,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * List applications for the account
+   * Grants permission to list applications for the account
    *
    * Access Level: List
    *
@@ -243,7 +254,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Fetch the tags associated with the application.
+   * Grants permission to fetch the tags associated with the application
    *
    * Access Level: Read
    *
@@ -254,7 +265,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Starts the application.
+   * Grants permission to start the application
    *
    * Access Level: Write
    *
@@ -265,7 +276,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Stops the application.
+   * Grants permission to stop the application
    *
    * Access Level: Write
    *
@@ -276,7 +287,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Add tags to the application.
+   * Grants permission to add tags to the application
    *
    * Access Level: Tagging
    *
@@ -291,7 +302,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Remove the specified tags from the application.
+   * Grants permission to remove the specified tags from the application
    *
    * Access Level: Tagging
    *
@@ -305,7 +316,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
-   * Updates the application.
+   * Grants permission to update the application
    *
    * Access Level: Write
    *
@@ -337,6 +348,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
       "UpdateApplication"
     ],
     "Read": [
+      "CreateApplicationPresignedUrl",
       "DescribeApplication",
       "DescribeApplicationSnapshot",
       "DiscoverInputSchema",

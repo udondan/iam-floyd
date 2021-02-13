@@ -19,7 +19,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a broker.
+   * Grants permission to create a broker
    *
    * Access Level: Write
    *
@@ -50,7 +50,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and engine version).
+   * Grants permission to create a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and engine version)
    *
    * Access Level: Write
    *
@@ -65,9 +65,9 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create tags.
+   * Grants permission to create tags
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -80,7 +80,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an ActiveMQ user.
+   * Grants permission to create an ActiveMQ user
    *
    * Access Level: Write
    *
@@ -91,7 +91,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a broker.
+   * Grants permission to delete a broker
    *
    * Access Level: Write
    *
@@ -108,9 +108,9 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete tags.
+   * Grants permission to delete tags
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
@@ -122,7 +122,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an ActiveMQ user.
+   * Grants permission to delete an ActiveMQ user
    *
    * Access Level: Write
    *
@@ -133,7 +133,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about the specified broker.
+   * Grants permission to return information about the specified broker
    *
    * Access Level: Read
    *
@@ -144,7 +144,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about broker engines.
+   * Grants permission to return information about broker engines
    *
    * Access Level: Read
    *
@@ -166,7 +166,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about the specified configuration.
+   * Grants permission to return information about the specified configuration
    *
    * Access Level: Read
    *
@@ -177,7 +177,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return the specified configuration revision for the specified configuration.
+   * Grants permission to return the specified configuration revision for the specified configuration
    *
    * Access Level: Read
    *
@@ -188,7 +188,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about an ActiveMQ user.
+   * Grants permission to return information about an ActiveMQ user
    *
    * Access Level: Read
    *
@@ -199,7 +199,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return a list of all brokers.
+   * Grants permission to return a list of all brokers
    *
    * Access Level: List
    *
@@ -210,7 +210,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return a list of all existing revisions for the specified configuration.
+   * Grants permission to return a list of all existing revisions for the specified configuration
    *
    * Access Level: List
    *
@@ -221,7 +221,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return a list of all configurations.
+   * Grants permission to return a list of all configurations
    *
    * Access Level: List
    *
@@ -232,7 +232,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return a list of tags.
+   * Grants permission to return a list of tags
    *
    * Access Level: List
    *
@@ -243,7 +243,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return a list of all ActiveMQ users.
+   * Grants permission to return a list of all ActiveMQ users
    *
    * Access Level: List
    *
@@ -254,7 +254,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to reboot a broker.
+   * Grants permission to reboot a broker
    *
    * Access Level: Write
    *
@@ -265,7 +265,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a pending configuration change to a broker.
+   * Grants permission to add a pending configuration change to a broker
    *
    * Access Level: Write
    *
@@ -276,7 +276,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the specified configuration.
+   * Grants permission to update the specified configuration
    *
    * Access Level: Write
    *
@@ -287,7 +287,7 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the information for an ActiveMQ user.
+   * Grants permission to update the information for an ActiveMQ user
    *
    * Access Level: Write
    *
@@ -301,15 +301,17 @@ export class Mq extends PolicyStatement {
     "Write": [
       "CreateBroker",
       "CreateConfiguration",
-      "CreateTags",
       "CreateUser",
       "DeleteBroker",
-      "DeleteTags",
       "DeleteUser",
       "RebootBroker",
       "UpdateBroker",
       "UpdateConfiguration",
       "UpdateUser"
+    ],
+    "Tagging": [
+      "CreateTags",
+      "DeleteTags"
     ],
     "Read": [
       "DescribeBroker",
@@ -331,6 +333,8 @@ export class Mq extends PolicyStatement {
   /**
    * Adds a resource of type brokers to the statement
    *
+   * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-how-it-works.html
+   *
    * @param brokerId - Identifier for the brokerId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -350,6 +354,8 @@ export class Mq extends PolicyStatement {
 
   /**
    * Adds a resource of type configurations to the statement
+   *
+   * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-how-it-works.html
    *
    * @param configurationId - Identifier for the configurationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

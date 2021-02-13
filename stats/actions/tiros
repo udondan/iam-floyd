@@ -1,0 +1,3 @@
+tiros:CreateQuery;Write
+tiros:GetQueryAnswer;Read
+tiros:GetQueryExplanation;Read

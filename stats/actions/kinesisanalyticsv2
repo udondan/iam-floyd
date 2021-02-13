@@ -5,6 +5,7 @@ kinesisanalytics:AddApplicationOutput;Write
 kinesisanalytics:AddApplicationReferenceDataSource;Write
 kinesisanalytics:AddApplicationVpcConfiguration;Write
 kinesisanalytics:CreateApplication;Write
+kinesisanalytics:CreateApplicationPresignedUrl;Read
 kinesisanalytics:CreateApplicationSnapshot;Write
 kinesisanalytics:DeleteApplication;Write
 kinesisanalytics:DeleteApplicationCloudWatchLoggingOption;Write

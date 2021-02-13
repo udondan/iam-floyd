@@ -1022,6 +1022,17 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the tags that are attached to the specified instance profile
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfileTags.html
+   */
+  public toListInstanceProfileTags() {
+    return this.to('ListInstanceProfileTags');
+  }
+
+  /**
    * Grants permission to list the instance profiles that have the specified path prefix
    *
    * Access Level: List
@@ -1044,6 +1055,17 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the tags that are attached to the specified virtual mfa device
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListMFADeviceTags.html
+   */
+  public toListMFADeviceTags() {
+    return this.to('ListMFADeviceTags');
+  }
+
+  /**
    * Grants permission to list the MFA devices for an IAM user
    *
    * Access Level: List
@@ -1052,6 +1074,17 @@ export class Iam extends PolicyStatement {
    */
   public toListMFADevices() {
     return this.to('ListMFADevices');
+  }
+
+  /**
+   * Grants permission to list the tags that are attached to the specified OpenID Connect provider
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviderTags.html
+   */
+  public toListOpenIDConnectProviderTags() {
+    return this.to('ListOpenIDConnectProviderTags');
   }
 
   /**
@@ -1088,6 +1121,17 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the tags that are attached to the specified managed policy
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicyTags.html
+   */
+  public toListPolicyTags() {
+    return this.to('ListPolicyTags');
+  }
+
+  /**
    * Grants permission to list information about the versions of the specified managed policy, including the version that is currently set as the policy's default version
    *
    * Access Level: List
@@ -1110,7 +1154,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags that are attached to the specified IAM role.
+   * Grants permission to list the tags that are attached to the specified IAM role
    *
    * Access Level: List
    *
@@ -1129,6 +1173,17 @@ export class Iam extends PolicyStatement {
    */
   public toListRoles() {
     return this.to('ListRoles');
+  }
+
+  /**
+   * Grants permission to list the tags that are attached to the specified SAML provider
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviderTags.html
+   */
+  public toListSAMLProviderTags() {
+    return this.to('ListSAMLProviderTags');
   }
 
   /**
@@ -1151,6 +1206,17 @@ export class Iam extends PolicyStatement {
    */
   public toListSSHPublicKeys() {
     return this.to('ListSSHPublicKeys');
+  }
+
+  /**
+   * Grants permission to list the tags that are attached to the specified server certificate
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServerCertificateTags.html
+   */
+  public toListServerCertificateTags() {
+    return this.to('ListServerCertificateTags');
   }
 
   /**
@@ -1198,7 +1264,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags that are attached to the specified IAM user.
+   * Grants permission to list the tags that are attached to the specified IAM user
    *
    * Access Level: List
    *
@@ -1412,7 +1478,51 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to an IAM role.
+   * Grants permission to add tags to an instance profile
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagInstanceProfile.html
+   */
+  public toTagInstanceProfile() {
+    return this.to('TagInstanceProfile');
+  }
+
+  /**
+   * Grants permission to add tags to a virtual mfa device
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagMFADevice.html
+   */
+  public toTagMFADevice() {
+    return this.to('TagMFADevice');
+  }
+
+  /**
+   * Grants permission to add tags to an OpenID Connect provider
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagOpenIDConnectProvider.html
+   */
+  public toTagOpenIDConnectProvider() {
+    return this.to('TagOpenIDConnectProvider');
+  }
+
+  /**
+   * Grants permission to add tags to a managed policy
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagPolicy.html
+   */
+  public toTagPolicy() {
+    return this.to('TagPolicy');
+  }
+
+  /**
+   * Grants permission to add tags to an IAM role
    *
    * Access Level: Tagging
    *
@@ -1423,7 +1533,29 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to an IAM user.
+   * Grants permission to add tags to a SAML Provider
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagSAMLProvider.html
+   */
+  public toTagSAMLProvider() {
+    return this.to('TagSAMLProvider');
+  }
+
+  /**
+   * Grants permission to add tags to a server certificate
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagServerCertificate.html
+   */
+  public toTagServerCertificate() {
+    return this.to('TagServerCertificate');
+  }
+
+  /**
+   * Grants permission to add tags to an IAM user
    *
    * Access Level: Tagging
    *
@@ -1434,7 +1566,51 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove the specified tags from the role.
+   * Grants permission to remove the specified tags from the instance profile
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagInstanceProfile.html
+   */
+  public toUntagInstanceProfile() {
+    return this.to('UntagInstanceProfile');
+  }
+
+  /**
+   * Grants permission to remove the specified tags from the virtual mfa device
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagMFADevice.html
+   */
+  public toUntagMFADevice() {
+    return this.to('UntagMFADevice');
+  }
+
+  /**
+   * Grants permission to remove the specified tags from the OpenID Connect provider
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagOpenIDConnectProvider.html
+   */
+  public toUntagOpenIDConnectProvider() {
+    return this.to('UntagOpenIDConnectProvider');
+  }
+
+  /**
+   * Grants permission to remove the specified tags from the managed policy
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagPolicy.html
+   */
+  public toUntagPolicy() {
+    return this.to('UntagPolicy');
+  }
+
+  /**
+   * Grants permission to remove the specified tags from the role
    *
    * Access Level: Tagging
    *
@@ -1445,7 +1621,29 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove the specified tags from the user.
+   * Grants permission to remove the specified tags from the SAML Provider
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagSAMLProvider.html
+   */
+  public toUntagSAMLProvider() {
+    return this.to('UntagSAMLProvider');
+  }
+
+  /**
+   * Grants permission to remove the specified tags from the server certificate
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagServerCertificate.html
+   */
+  public toUntagServerCertificate() {
+    return this.to('UntagServerCertificate');
+  }
+
+  /**
+   * Grants permission to remove the specified tags from the user
    *
    * Access Level: Tagging
    *
@@ -1768,18 +1966,24 @@ export class Iam extends PolicyStatement {
       "ListGroupPolicies",
       "ListGroups",
       "ListGroupsForUser",
+      "ListInstanceProfileTags",
       "ListInstanceProfiles",
       "ListInstanceProfilesForRole",
+      "ListMFADeviceTags",
       "ListMFADevices",
+      "ListOpenIDConnectProviderTags",
       "ListOpenIDConnectProviders",
       "ListPolicies",
       "ListPoliciesGrantingServiceAccess",
+      "ListPolicyTags",
       "ListPolicyVersions",
       "ListRolePolicies",
       "ListRoleTags",
       "ListRoles",
+      "ListSAMLProviderTags",
       "ListSAMLProviders",
       "ListSSHPublicKeys",
+      "ListServerCertificateTags",
       "ListServerCertificates",
       "ListServiceSpecificCredentials",
       "ListSigningCertificates",
@@ -1789,9 +1993,21 @@ export class Iam extends PolicyStatement {
       "ListVirtualMFADevices"
     ],
     "Tagging": [
+      "TagInstanceProfile",
+      "TagMFADevice",
+      "TagOpenIDConnectProvider",
+      "TagPolicy",
       "TagRole",
+      "TagSAMLProvider",
+      "TagServerCertificate",
       "TagUser",
+      "UntagInstanceProfile",
+      "UntagMFADevice",
+      "UntagOpenIDConnectProvider",
+      "UntagPolicy",
       "UntagRole",
+      "UntagSAMLProvider",
+      "UntagServerCertificate",
       "UntagUser"
     ]
   };
@@ -2134,7 +2350,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Filters access by the tags attached to an IAM entity (user or role).
+   * Filters access by the tags attached to an IAM entity (user or role)
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceTag
    *

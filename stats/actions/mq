@@ -1,9 +1,9 @@
 mq:CreateBroker;Write
 mq:CreateConfiguration;Write
-mq:CreateTags;Write
+mq:CreateTags;Tagging
 mq:CreateUser;Write
 mq:DeleteBroker;Write
-mq:DeleteTags;Write
+mq:DeleteTags;Tagging
 mq:DeleteUser;Write
 mq:DescribeBroker;Read
 mq:DescribeBrokerEngineTypes;Read

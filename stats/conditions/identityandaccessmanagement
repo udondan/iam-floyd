@@ -4,4 +4,6 @@ iam:OrganizationsPolicyId
 iam:PassedToService
 iam:PermissionsBoundary
 iam:PolicyARN
+iam:RequestTag
 iam:ResourceTag
+iam:TagKeys

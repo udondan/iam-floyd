@@ -244,6 +244,7 @@ export { States } from "./stepfunctions";
 export { Support } from "./support";
 export { Ssm } from "./systemsmanager";
 export { ResourceExplorer } from "./tageditor";
+export { Tiros } from "./tiros";
 export { Transfer } from "./transferforsftp";
 export { Trustedadvisor } from "./trustedadvisor";
 export { Waf } from "./waf";
