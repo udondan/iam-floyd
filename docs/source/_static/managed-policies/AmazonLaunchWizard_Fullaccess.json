@@ -458,6 +458,11 @@
 				"ssm:CreateOpsMetadata"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "ssm:DeleteOpsMetadata",
+			"Resource": "arn:aws:ssm:*:*:opsmetadata/aws/ssm/LaunchWizard*"
 		}
 	]
 }
