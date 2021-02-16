@@ -206,14 +206,36 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a group from the directory that AWS SSO provides by default
+   * Grants permission to query the group data, not including user and group members
    *
-   * Access Level: List
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDescribeGroup() {
+    return this.to('DescribeGroup');
+  }
+
+  /**
+   * Grants permission to retrieve information about groups from the directory that AWS SSO provides by default
+   *
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDescribeGroups() {
     return this.to('DescribeGroups');
+  }
+
+  /**
+   * Grants permission to describes the provisioning tenant
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDescribeProvisioningTenant() {
+    return this.to('DescribeProvisioningTenant');
   }
 
   /**
@@ -228,9 +250,20 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe user with a valid unique attribute represented for the user
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDescribeUserByUniqueAttribute() {
+    return this.to('DescribeUserByUniqueAttribute');
+  }
+
+  /**
    * Grants permission to retrieve information about user from the directory that AWS SSO provides by default
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -294,6 +327,17 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get UserPool Info
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toGetUserPoolInfo() {
+    return this.to('GetUserPoolInfo');
+  }
+
+  /**
    * Grants permission to import the IdP certificate used for verifying external IdP responses
    *
    * Access Level: Write
@@ -318,7 +362,7 @@ export class SsoDirectory extends PolicyStatement {
   /**
    * Grants permission to list bearer tokens for a given provisioning tenant
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -329,7 +373,7 @@ export class SsoDirectory extends PolicyStatement {
   /**
    * Grants permission to list the external IdP certificates of a given directory and IdP
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -340,7 +384,7 @@ export class SsoDirectory extends PolicyStatement {
   /**
    * Grants permission to list all the External Identity Provider configurations created for the directory
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -349,9 +393,20 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list groups of the target member
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toListGroupsForMember() {
+    return this.to('ListGroupsForMember');
+  }
+
+  /**
    * Grants permission to list groups for a user from the directory that AWS SSO provides by default
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -362,7 +417,7 @@ export class SsoDirectory extends PolicyStatement {
   /**
    * Grants permission to retrieve all members that are part of a group in the directory that AWS SSO provides by default
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -373,7 +428,7 @@ export class SsoDirectory extends PolicyStatement {
   /**
    * Grants permission to list all active MFA devices and their MFA device metadata for a user
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -384,7 +439,7 @@ export class SsoDirectory extends PolicyStatement {
   /**
    * Grants permission to list provisioning tenants for a given directory
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -470,6 +525,17 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update group display name update group display name response
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toUpdateGroupDisplayName() {
+    return this.to('UpdateGroupDisplayName');
+  }
+
+  /**
    * Grants permission to update MFA device information
    *
    * Access Level: Write
@@ -500,6 +566,17 @@ export class SsoDirectory extends PolicyStatement {
    */
   public toUpdateUser() {
     return this.to('UpdateUser');
+  }
+
+  /**
+   * Grants permission to update user name update user name response
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toUpdateUserName() {
+    return this.to('UpdateUserName');
   }
 
   /**
@@ -541,29 +618,34 @@ export class SsoDirectory extends PolicyStatement {
       "StartWebAuthnDeviceRegistration",
       "UpdateExternalIdPConfigurationForDirectory",
       "UpdateGroup",
+      "UpdateGroupDisplayName",
       "UpdateMfaDeviceForUser",
       "UpdatePassword",
       "UpdateUser",
+      "UpdateUserName",
       "VerifyEmail"
     ],
     "Read": [
       "DescribeDirectory",
-      "DescribeUser",
-      "GetAWSSPConfigurationForDirectory",
-      "IsMemberInGroup",
-      "SearchGroups",
-      "SearchUsers"
-    ],
-    "List": [
+      "DescribeGroup",
       "DescribeGroups",
+      "DescribeProvisioningTenant",
+      "DescribeUser",
+      "DescribeUserByUniqueAttribute",
       "DescribeUsers",
+      "GetAWSSPConfigurationForDirectory",
+      "GetUserPoolInfo",
+      "IsMemberInGroup",
       "ListBearerTokens",
       "ListExternalIdPCertificates",
       "ListExternalIdPConfigurationsForDirectory",
+      "ListGroupsForMember",
       "ListGroupsForUser",
       "ListMembersInGroup",
       "ListMfaDevicesForUser",
-      "ListProvisioningTenants"
+      "ListProvisioningTenants",
+      "SearchGroups",
+      "SearchUsers"
     ]
   };
 }
