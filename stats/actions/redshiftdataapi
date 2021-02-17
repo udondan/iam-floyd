@@ -3,7 +3,7 @@ redshift-data:DescribeStatement;Read
 redshift-data:DescribeTable;Read
 redshift-data:ExecuteStatement;Write
 redshift-data:GetStatementResult;Read
-redshift-data:ListDatabases;List
-redshift-data:ListSchemas;List
+redshift-data:ListDatabases;Read
+redshift-data:ListSchemas;Read
 redshift-data:ListStatements;List
 redshift-data:ListTables;List

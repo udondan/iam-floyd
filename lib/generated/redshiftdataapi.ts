@@ -1,5 +1,5 @@
 import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [redshift-data](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshiftdataapi.html).
@@ -23,6 +23,9 @@ export class RedshiftData extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifStatementOwnerIamUserid()
+   *
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_CancelStatement.html
    */
   public toCancelStatement() {
@@ -33,6 +36,9 @@ export class RedshiftData extends PolicyStatement {
    * Grants permission to retrieve detailed information about a statement execution
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifStatementOwnerIamUserid()
    *
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeStatement.html
    */
@@ -67,6 +73,9 @@ export class RedshiftData extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifStatementOwnerIamUserid()
+   *
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_GetStatementResult.html
    */
   public toGetStatementResult() {
@@ -76,7 +85,7 @@ export class RedshiftData extends PolicyStatement {
   /**
    * Grants permission to list databases for a given cluster
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListDatabases.html
    */
@@ -87,7 +96,7 @@ export class RedshiftData extends PolicyStatement {
   /**
    * Grants permission to list schemas for a given cluster
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListSchemas.html
    */
@@ -99,6 +108,9 @@ export class RedshiftData extends PolicyStatement {
    * Grants permission to list queries for a given principal
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifStatementOwnerIamUserid()
    *
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListStatements.html
    */
@@ -125,13 +137,31 @@ export class RedshiftData extends PolicyStatement {
     "Read": [
       "DescribeStatement",
       "DescribeTable",
-      "GetStatementResult"
+      "GetStatementResult",
+      "ListDatabases",
+      "ListSchemas"
     ],
     "List": [
-      "ListDatabases",
-      "ListSchemas",
       "ListStatements",
       "ListTables"
     ]
   };
+
+  /**
+   * Filters access by statement owner iam userid
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
+   *
+   * Applies to actions:
+   * - .toCancelStatement()
+   * - .toDescribeStatement()
+   * - .toGetStatementResult()
+   * - .toListStatements()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifStatementOwnerIamUserid(value: string | string[], operator?: Operator | string) {
+    return this.if(`statement-owner-iam-userid`, value, operator || 'StringLike');
+  }
 }
