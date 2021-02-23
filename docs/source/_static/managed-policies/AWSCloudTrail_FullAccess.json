@@ -24,7 +24,8 @@
 			"Effect": "Allow",
 			"Action": [
 				"s3:CreateBucket",
-				"s3:PutBucketPolicy"
+				"s3:PutBucketPolicy",
+				"s3:PutBucketPublicAccessBlock"
 			],
 			"Resource": [
 				"arn:aws:s3:::aws-cloudtrail-logs*"
@@ -95,7 +96,7 @@
 			"Effect": "Allow",
 			"Action": [
 				"dynamodb:ListGlobalTables",
-                "dynamodb:ListTables"
+				"dynamodb:ListTables"
 			],
 			"Resource": "*"
 		}
