@@ -24,6 +24,7 @@ ec2:InstanceMarketType
 ec2:InstanceProfile
 ec2:InstanceType
 ec2:IsLaunchTemplateResource
+ec2:KeyPairName
 ec2:LaunchTemplate
 ec2:MetadataHttpEndpoint
 ec2:MetadataHttpPutResponseHopLimit

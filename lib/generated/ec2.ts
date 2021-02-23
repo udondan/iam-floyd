@@ -462,7 +462,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to copy a source Amazon FPGA image (AFI) to the current Region
+   * Grants permission to copy a source Amazon FPGA image (AFI) to the current Region. Resource-level permissions specified for this action apply to the new AFI only. They do not apply to the source AFI
    *
    * Access Level: Write
    *
@@ -473,7 +473,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to copy an Amazon Machine Image (AMI) from a source Region to the current Region
+   * Grants permission to copy an Amazon Machine Image (AMI) from a source Region to the current Region. Resource-level permissions specified for this action apply to the new AMI only. They do not apply to the source AMI
    *
    * Access Level: Write
    *
@@ -484,7 +484,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to copy a point-in-time snapshot of an EBS volume and store it in Amazon S3
+   * Grants permission to copy a point-in-time snapshot of an EBS volume and store it in Amazon S3. Resource-level permissions specified for this action apply to the new snapshot only. They do not apply to the source snapshot
    *
    * Access Level: Write
    *
@@ -5911,6 +5911,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifKeyPairName()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -7870,6 +7871,35 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by key pair name
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toCreateKeyPair()
+   * - .toCreateLaunchTemplate()
+   * - .toCreateLaunchTemplateVersion()
+   * - .toCreateTags()
+   * - .toDeleteKeyPair()
+   * - .toDeleteTags()
+   * - .toImportKeyPair()
+   * - .toModifyFleet()
+   * - .toRequestSpotInstances()
+   * - .toRunInstances()
+   * - .toRunScheduledInstances()
+   *
+   * Applies to resource types:
+   * - key-pair
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifKeyPairName(value: string | string[], operator?: Operator | string) {
+    return this.if(`KeyPairName`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the ARN of a launch template
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
@@ -7925,7 +7955,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCopyFpgaImage()
    * - .toCopyImage()
-   * - .toCopySnapshot()
    * - .toCreateFleet()
    * - .toCreateFpgaImage()
    * - .toCreateImage()
@@ -8003,7 +8032,6 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
-   * - .toCopySnapshot()
    * - .toCreateFleet()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
@@ -8976,7 +9004,6 @@ export class Ec2 extends PolicyStatement {
    * - .toConfirmProductInstance()
    * - .toCopyFpgaImage()
    * - .toCopyImage()
-   * - .toCopySnapshot()
    * - .toCreateCapacityReservation()
    * - .toCreateCarrierGateway()
    * - .toCreateClientVpnEndpoint()
@@ -9472,7 +9499,6 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
-   * - .toCopySnapshot()
    * - .toCreateFleet()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
@@ -9707,7 +9733,6 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAttachVolume()
-   * - .toCopySnapshot()
    * - .toCreateFleet()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
