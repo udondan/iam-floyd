@@ -23,5 +23,5 @@ test-cdk: install-cdk
 	@for f in examples/**/*.cdk.js; do \
 		echo "Testing $$(basename $$f)" ;\
 		node "$$f" > "$${f%.js}.ts.result" || exit ;\
-		diff "$${f%.js}.ts.result" "$${f%.js}.result" || exit ;\
+		diff -I ".*\${Token\[.*\]}.*" "$${f%.js}.ts.result" "$${f%.js}.result" || exit ;\
 	done
