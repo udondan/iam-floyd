@@ -41,6 +41,28 @@ export class Cloudshell extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a CloudShell environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#DeleteEnvironment
+   */
+  public toDeleteEnvironment() {
+    return this.to('DeleteEnvironment');
+  }
+
+  /**
+   * Grants permission to read a CloudShell environment status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#GetEnvironmentStatus
+   */
+  public toGetEnvironmentStatus() {
+    return this.to('GetEnvironmentStatus');
+  }
+
+  /**
    * Grants permissions to download files from a CloudShell environment
    *
    * Access Level: Write
@@ -73,13 +95,41 @@ export class Cloudshell extends PolicyStatement {
     return this.to('PutCredentials');
   }
 
+  /**
+   * Grants permission to start a stopped CloudShell environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#StartEnvironment
+   */
+  public toStartEnvironment() {
+    return this.to('StartEnvironment');
+  }
+
+  /**
+   * Grants permission to stop a running CloudShell environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#StopEnvironment
+   */
+  public toStopEnvironment() {
+    return this.to('StopEnvironment');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CreateEnvironment",
       "CreateSession",
+      "DeleteEnvironment",
       "GetFileDownloadUrls",
       "GetFileUploadUrls",
-      "PutCredentials"
+      "PutCredentials",
+      "StartEnvironment",
+      "StopEnvironment"
+    ],
+    "Read": [
+      "GetEnvironmentStatus"
     ]
   };
 
