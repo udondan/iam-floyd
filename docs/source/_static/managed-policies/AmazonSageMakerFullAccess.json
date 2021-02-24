@@ -298,6 +298,18 @@
         {
             "Effect": "Allow",
             "Action": [
+                "s3:GetBucketAcl",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": [
+                "arn:aws:s3:::*SageMaker*",
+                "arn:aws:s3:::*Sagemaker*",
+                "arn:aws:s3:::*sagemaker*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
                 "lambda:InvokeFunction"
             ],
             "Resource": [
