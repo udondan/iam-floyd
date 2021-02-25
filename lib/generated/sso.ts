@@ -47,6 +47,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to attach an AWS managed policy to a permission set.
    *
    * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AttachManagedPolicyToPermissionSet.html
    */
   public toAttachManagedPolicyToPermissionSet() {
     return this.to('AttachManagedPolicyToPermissionSet');
@@ -56,6 +58,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to assign access to a Principal for a specified AWS account using a specified permission set.
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateAccountAssignment.html
    */
   public toCreateAccountAssignment() {
     return this.to('CreateAccountAssignment');
@@ -113,6 +117,8 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreatePermissionSet.html
    */
   public toCreatePermissionSet() {
     return this.to('CreatePermissionSet');
@@ -144,6 +150,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to delete a Principal's access from a specified AWS account using a specified permission set.
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteAccountAssignment.html
    */
   public toDeleteAccountAssignment() {
     return this.to('DeleteAccountAssignment');
@@ -175,6 +183,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to delete the inline policy from a specified permission set.
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteInlinePolicyFromPermissionSet.html
    */
   public toDeleteInlinePolicyFromPermissionSet() {
     return this.to('DeleteInlinePolicyFromPermissionSet');
@@ -206,8 +216,6 @@ export class Sso extends PolicyStatement {
    * Grants permission to delete a permission set
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/{DocHomeURL}singlesignon/latest/APIReference/API_DeletePermissionSet.html
    */
   public toDeletePermissionSet() {
     return this.to('DeletePermissionSet');
@@ -239,6 +247,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to describe the status of the assignment creation request.
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeAccountAssignmentCreationStatus.html
    */
   public toDescribeAccountAssignmentCreationStatus() {
     return this.to('DescribeAccountAssignmentCreationStatus');
@@ -248,6 +258,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to describe the status of an assignment deletion request.
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeAccountAssignmentDeletionStatus.html
    */
   public toDescribeAccountAssignmentDeletionStatus() {
     return this.to('DescribeAccountAssignmentDeletionStatus');
@@ -268,6 +280,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to describe a permission set
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribePermissionSet.html
    */
   public toDescribePermissionSet() {
     return this.to('DescribePermissionSet');
@@ -277,6 +291,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to describe the status for the given Permission Set Provisioning request.
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribePermissionSetProvisioningStatus.html
    */
   public toDescribePermissionSetProvisioningStatus() {
     return this.to('DescribePermissionSetProvisioningStatus');
@@ -308,6 +324,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to detach the attached AWS managed policy from the specified permission set.
    *
    * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DetachManagedPolicyFromPermissionSet.html
    */
   public toDetachManagedPolicyFromPermissionSet() {
     return this.to('DetachManagedPolicyFromPermissionSet');
@@ -364,6 +382,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to obtain the inline policy assigned to the permission set.
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetInlinePolicyForPermissionSet.html
    */
   public toGetInlinePolicyForPermissionSet() {
     return this.to('GetInlinePolicyForPermissionSet');
@@ -486,6 +506,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to list the status of the AWS account assignment creation requests for a specified SSO instance.
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountAssignmentCreationStatus.html
    */
   public toListAccountAssignmentCreationStatus() {
     return this.to('ListAccountAssignmentCreationStatus');
@@ -495,6 +517,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to list the status of the AWS account assignment deletion requests for a specified SSO instance.
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountAssignmentDeletionStatus.html
    */
   public toListAccountAssignmentDeletionStatus() {
     return this.to('ListAccountAssignmentDeletionStatus');
@@ -504,6 +528,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to list the assignee of the specified AWS account with the specified permission set.
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountAssignments.html
    */
   public toListAccountAssignments() {
     return this.to('ListAccountAssignments');
@@ -513,6 +539,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to list all the AWS accounts where the specified permission set is provisioned.
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountsForProvisionedPermissionSet.html
    */
   public toListAccountsForProvisionedPermissionSet() {
     return this.to('ListAccountsForProvisionedPermissionSet');
@@ -583,6 +611,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to list the SSO Instances that the caller has access to.
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html
    */
   public toListInstances() {
     return this.to('ListInstances');
@@ -592,6 +622,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to list the AWS managed policies that are attached to a specified permission set.
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListManagedPoliciesInPermissionSet.html
    */
   public toListManagedPoliciesInPermissionSet() {
     return this.to('ListManagedPoliciesInPermissionSet');
@@ -601,6 +633,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to list the status of the Permission Set Provisioning requests for a specified SSO instance.
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListPermissionSetProvisioningStatus.html
    */
   public toListPermissionSetProvisioningStatus() {
     return this.to('ListPermissionSetProvisioningStatus');
@@ -610,8 +644,6 @@ export class Sso extends PolicyStatement {
    * Grants permission to retrieve all permission sets
    *
    * Access Level: List
-   *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/{DocHomeURL}singlesignon/latest/APIReference/API_ListPermissionSets.html
    */
   public toListPermissionSets() {
     return this.to('ListPermissionSets');
@@ -621,6 +653,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to list all the permission sets that are provisioned to a specified AWS account.
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListPermissionSetsProvisionedToAccount.html
    */
   public toListPermissionSetsProvisionedToAccount() {
     return this.to('ListPermissionSetsProvisionedToAccount');
@@ -655,6 +689,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to list the tags that are attached to a specified resource.
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -664,6 +700,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to provision a specified permission set to the specified target.
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ProvisionPermissionSet.html
    */
   public toProvisionPermissionSet() {
     return this.to('ProvisionPermissionSet');
@@ -673,6 +711,8 @@ export class Sso extends PolicyStatement {
    * Grants permission to attach an IAM inline policy to a permission set.
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutInlinePolicyToPermissionSet.html
    */
   public toPutInlinePolicyToPermissionSet() {
     return this.to('PutInlinePolicyToPermissionSet');
@@ -751,6 +791,8 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -764,6 +806,8 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -883,8 +927,6 @@ export class Sso extends PolicyStatement {
    * Grants permission to update the permission set.
    *
    * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/{DocHomeURL}singlesignon/latest/APIReference/API_UpdatePermissionSet.html
    */
   public toUpdatePermissionSet() {
     return this.to('UpdatePermissionSet');
