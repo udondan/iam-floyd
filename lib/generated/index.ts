@@ -68,6 +68,7 @@ export { LexV2 } from "./lexv2";
 export { Lightsail } from "./lightsail";
 export { Geo } from "./location";
 export { Lookoutequipment } from "./lookoutforequipment";
+export { Lookoutmetrics } from "./lookoutformetrics";
 export { Lookoutvision } from "./lookoutforvision";
 export { Machinelearning } from "./machinelearning";
 export { Macie2 } from "./macie";
