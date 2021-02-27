@@ -126,6 +126,9 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterParameterGroup.html
    */
   public toCopyDBClusterParameterGroup() {
@@ -140,6 +143,9 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterSnapshot.html
    */
@@ -156,6 +162,9 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBParameterGroup.html
    */
   public toCopyDBParameterGroup() {
@@ -171,6 +180,9 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBSnapshot.html
    */
   public toCopyDBSnapshot() {
@@ -185,6 +197,9 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyOptionGroup.html
    */
@@ -207,6 +222,7 @@ export class Rds extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html
    */
@@ -224,6 +240,9 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterEndpoint.html
    */
   public toCreateDBClusterEndpoint() {
@@ -240,6 +259,9 @@ export class Rds extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifReqTag()
    *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterParameterGroup.html
    */
   public toCreateDBClusterParameterGroup() {
@@ -255,6 +277,9 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterSnapshot.html
    */
@@ -274,6 +299,7 @@ export class Rds extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html
    */
@@ -293,6 +319,7 @@ export class Rds extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstanceReadReplica.html
    */
@@ -309,6 +336,9 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBParameterGroup.html
    */
@@ -344,6 +374,9 @@ export class Rds extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifReqTag()
    *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSecurityGroup.html
    */
   public toCreateDBSecurityGroup() {
@@ -359,6 +392,9 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSnapshot.html
    */
@@ -376,6 +412,9 @@ export class Rds extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifReqTag()
    *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSubnetGroup.html
    */
   public toCreateDBSubnetGroup() {
@@ -391,6 +430,9 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateEventSubscription.html
    */
@@ -418,6 +460,9 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateOptionGroup.html
    */
@@ -1031,6 +1076,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to failover a global cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_FailoverGlobalCluster.html
+   */
+  public toFailoverGlobalCluster() {
+    return this.to('FailoverGlobalCluster');
+  }
+
+  /**
    * Grants permission to list all tags on an Amazon RDS resource
    *
    * Access Level: Read
@@ -1380,6 +1436,7 @@ export class Rds extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromS3.html
    */
@@ -1399,6 +1456,7 @@ export class Rds extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromSnapshot.html
    */
@@ -1418,6 +1476,7 @@ export class Rds extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterToPointInTime.html
    */
@@ -1437,6 +1496,7 @@ export class Rds extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromDBSnapshot.html
    */
@@ -1456,6 +1516,7 @@ export class Rds extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromS3.html
    */
@@ -1475,6 +1536,7 @@ export class Rds extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceToPointInTime.html
    */
@@ -1617,6 +1679,7 @@ export class Rds extends PolicyStatement {
       "DeleteOptionGroup",
       "DeregisterDBProxyTargets",
       "FailoverDBCluster",
+      "FailoverGlobalCluster",
       "ModifyCurrentDBClusterCapacity",
       "ModifyDBCluster",
       "ModifyDBClusterEndpoint",

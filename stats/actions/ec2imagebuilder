@@ -29,6 +29,7 @@ imagebuilder:ListComponents;List
 imagebuilder:ListContainerRecipes;List
 imagebuilder:ListDistributionConfigurations;List
 imagebuilder:ListImageBuildVersions;List
+imagebuilder:ListImagePackages;List
 imagebuilder:ListImagePipelineImages;List
 imagebuilder:ListImagePipelines;List
 imagebuilder:ListImageRecipes;List

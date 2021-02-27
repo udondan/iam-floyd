@@ -80,6 +80,7 @@ rds:DescribeSourceRegions;List
 rds:DescribeValidDBInstanceModifications;List
 rds:DownloadDBLogFilePortion;Read
 rds:FailoverDBCluster;Write
+rds:FailoverGlobalCluster;Write
 rds:ListTagsForResource;Read
 rds:ModifyCurrentDBClusterCapacity;Write
 rds:ModifyDBCluster;Write

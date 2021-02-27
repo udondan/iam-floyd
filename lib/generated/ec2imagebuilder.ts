@@ -19,7 +19,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Cancel an image creation
+   * Grants permission to cancel an image creation
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Create a new component
+   * Grants permission to create a new component
    *
    * Access Level: Write
    *
@@ -45,7 +45,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Create a new Container Recipe
+   * Grants permission to create a new Container Recipe
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Create a new distribution configuration
+   * Grants permission to create a new distribution configuration
    *
    * Access Level: Write
    *
@@ -78,7 +78,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Create a new image
+   * Grants permission to create a new image
    *
    * Access Level: Write
    *
@@ -97,7 +97,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Create a new image pipeline
+   * Grants permission to create a new image pipeline
    *
    * Access Level: Write
    *
@@ -115,7 +115,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Create a new Image Recipe
+   * Grants permission to create a new Image Recipe
    *
    * Access Level: Write
    *
@@ -133,7 +133,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Create a new infrastructure configuration
+   * Grants permission to create a new infrastructure configuration
    *
    * Access Level: Write
    *
@@ -153,7 +153,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Delete a component
+   * Grants permission to delete a component
    *
    * Access Level: Write
    *
@@ -175,7 +175,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Delete a distribution configuration
+   * Grants permission to delete a distribution configuration
    *
    * Access Level: Write
    *
@@ -186,7 +186,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Delete an image
+   * Grants permission to delete an image
    *
    * Access Level: Write
    *
@@ -197,7 +197,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Delete an image pipeline
+   * Grants permission to delete an image pipeline
    *
    * Access Level: Write
    *
@@ -219,7 +219,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Delete an infrastructure configuration
+   * Grants permission to delete an infrastructure configuration
    *
    * Access Level: Write
    *
@@ -230,7 +230,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * View details about a component
+   * Grants permission to view details about a component
    *
    * Access Level: Read
    *
@@ -241,7 +241,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * View the resource policy associated with a component
+   * Grants permission to view the resource policy associated with a component
    *
    * Access Level: Read
    *
@@ -252,7 +252,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * View details about a container recipe
+   * Grants permission to view details about a container recipe
    *
    * Access Level: Read
    *
@@ -263,7 +263,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * View the resource policy associated with a container recipe
+   * Grants permission to view the resource policy associated with a container recipe
    *
    * Access Level: Read
    *
@@ -274,7 +274,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * View details about a distribution configuration
+   * Grants permission to view details about a distribution configuration
    *
    * Access Level: Read
    *
@@ -285,7 +285,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * View details about an image
+   * Grants permission to view details about an image
    *
    * Access Level: Read
    *
@@ -299,7 +299,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * View details about an image pipeline
+   * Grants permission to view details about an image pipeline
    *
    * Access Level: Read
    *
@@ -310,7 +310,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * View the resource policy associated with an image
+   * Grants permission to view the resource policy associated with an image
    *
    * Access Level: Read
    *
@@ -321,7 +321,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * View details about an image recipe
+   * Grants permission to view details about an image recipe
    *
    * Access Level: Read
    *
@@ -332,7 +332,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * View the resource policy associated with an image recipe
+   * Grants permission to view the resource policy associated with an image recipe
    *
    * Access Level: Read
    *
@@ -343,7 +343,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * View details about an infrastructure configuration
+   * Grants permission to view details about an infrastructure configuration
    *
    * Access Level: Read
    *
@@ -354,7 +354,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * List the component build versions in your account
+   * Grants permission to list the component build versions in your account
    *
    * Access Level: List
    *
@@ -365,7 +365,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * List the component versions owned by or shared with your account
+   * Grants permission to list the component versions owned by or shared with your account
    *
    * Access Level: List
    *
@@ -376,7 +376,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * List the container recipes owned by or shared with your account
+   * Grants permission to list the container recipes owned by or shared with your account
    *
    * Access Level: List
    *
@@ -387,7 +387,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * List the distribution configurations in your account
+   * Grants permission to list the distribution configurations in your account
    *
    * Access Level: List
    *
@@ -398,7 +398,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * List the image build versions in your account
+   * Grants permission to list the image build versions in your account
    *
    * Access Level: List
    *
@@ -409,7 +409,21 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Returns a list of images created by the specified pipeline
+   * Grants permission to returns a list of packages installed on the specified image
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImagePackages.html
+   */
+  public toListImagePackages() {
+    return this.to('ListImagePackages');
+  }
+
+  /**
+   * Grants permission to returns a list of images created by the specified pipeline
    *
    * Access Level: List
    *
@@ -420,7 +434,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * List the image pipelines in your account
+   * Grants permission to list the image pipelines in your account
    *
    * Access Level: List
    *
@@ -431,7 +445,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * List the image recipes owned by or shared with your account
+   * Grants permission to list the image recipes owned by or shared with your account
    *
    * Access Level: List
    *
@@ -442,7 +456,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * List the image versions owned by or shared with your account
+   * Grants permission to list the image versions owned by or shared with your account
    *
    * Access Level: List
    *
@@ -453,7 +467,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * List the infrastructure configurations in your account
+   * Grants permission to list the infrastructure configurations in your account
    *
    * Access Level: List
    *
@@ -464,7 +478,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * List tag for an Image Builder resource
+   * Grants permission to list tag for an Image Builder resource
    *
    * Access Level: Read
    *
@@ -478,7 +492,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Set the resource policy associated with a component
+   * Grants permission to set the resource policy associated with a component
    *
    * Access Level: Permissions management
    *
@@ -489,7 +503,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Set the resource policy associated with a container recipe
+   * Grants permission to set the resource policy associated with a container recipe
    *
    * Access Level: Permissions management
    *
@@ -500,7 +514,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Set the resource policy associated with an image
+   * Grants permission to set the resource policy associated with an image
    *
    * Access Level: Permissions management
    *
@@ -511,7 +525,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Set the resource policy associated with an image recipe
+   * Grants permission to set the resource policy associated with an image recipe
    *
    * Access Level: Permissions management
    *
@@ -522,7 +536,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Create a new image from a pipeline
+   * Grants permission to create a new image from a pipeline
    *
    * Access Level: Write
    *
@@ -536,7 +550,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Tag an Image Builder resource
+   * Grants permission to tag an Image Builder resource
    *
    * Access Level: Tagging
    *
@@ -552,7 +566,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Untag an Image Builder resource
+   * Grants permission to untag an Image Builder resource
    *
    * Access Level: Tagging
    *
@@ -567,7 +581,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Update an existing distribution configuration
+   * Grants permission to update an existing distribution configuration
    *
    * Access Level: Write
    *
@@ -578,7 +592,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Update an existing image pipeline
+   * Grants permission to update an existing image pipeline
    *
    * Access Level: Write
    *
@@ -589,7 +603,7 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Update an existing infrastructure configuration
+   * Grants permission to update an existing infrastructure configuration
    *
    * Access Level: Write
    *
@@ -649,6 +663,7 @@ export class Imagebuilder extends PolicyStatement {
       "ListContainerRecipes",
       "ListDistributionConfigurations",
       "ListImageBuildVersions",
+      "ListImagePackages",
       "ListImagePipelineImages",
       "ListImagePipelines",
       "ListImageRecipes",
