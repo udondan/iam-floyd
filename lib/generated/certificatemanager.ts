@@ -19,7 +19,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Adds one or more tags to a certificate.
+   * Grants permission to add one or more tags to a certificate
    *
    * Access Level: Tagging
    *
@@ -34,7 +34,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Deletes a certificate and its associated private key.
+   * Grants permission to delete a certificate and its associated private key
    *
    * Access Level: Write
    *
@@ -45,7 +45,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Returns a list of the fields contained in the specified certificate.
+   * Grants permission to retreive a certificates and its metadata
    *
    * Access Level: Read
    *
@@ -56,7 +56,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Exports a private certificate issued by a private certificate authority (CA) for use anywhere.
+   * Grants permission to Export a private certificate issued by a private certificate authority (CA) for use anywhere
    *
    * Access Level: Read
    *
@@ -67,7 +67,18 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Retrieves a certificate and certificate chain for the certificate specified by an ARN.
+   * Grants permission to retrieve account level configuration from AWS Certificate Manager
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/acm/latest/APIReference/API_GetAccountConfiguration.html
+   */
+  public toGetAccountConfiguration() {
+    return this.to('GetAccountConfiguration');
+  }
+
+  /**
+   * Grants permission to to etrieves a certificate and certificate chain for a certificate ARN
    *
    * Access Level: Read
    *
@@ -78,7 +89,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Imports a 3rd party SSL/TLS certificate into AWS Certificate Manager (ACM).
+   * Grants permission to imports a 3rd party certificate into AWS Certificate Manager (ACM)
    *
    * Access Level: Write
    *
@@ -93,7 +104,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Retrieves a list of the certificate ARNs and the domain name for each ARN.
+   * Grants permission to retrieve a list of the certificate ARNs and the domain name for each ARN
    *
    * Access Level: List
    *
@@ -104,7 +115,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Lists the tags that have been applied to the certificate.
+   * Grants permission to lists the tags that have been associated with a certificate
    *
    * Access Level: Read
    *
@@ -115,7 +126,18 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Remove one or more tags from a certificate. A tag consists of a key-value pair
+   * Grants permission to update account level configuration in AWS Certificate Manager
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/acm/latest/APIReference/API_PutAccountConfiguration.html
+   */
+  public toPutAccountConfiguration() {
+    return this.to('PutAccountConfiguration');
+  }
+
+  /**
+   * Grants permission to remove one or more tags from a certificate
    *
    * Access Level: Tagging
    *
@@ -130,7 +152,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Renews an eligable private certificate.
+   * Grants permission to renew an eligible private certificate
    *
    * Access Level: Write
    *
@@ -141,7 +163,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Requests a public or private certificate.
+   * Grants permission to requests a public or private certificate
    *
    * Access Level: Write
    *
@@ -156,7 +178,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Resends an email to request domain ownership validation.
+   * Grants permission to resend an email to request domain ownership validation
    *
    * Access Level: Write
    *
@@ -167,7 +189,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Updates a certificate. Use to specify whether to opt in to or out of certificate transparency logging.
+   * Grants permission to update a certificate configuration. Use this specify whether to opt in to or out of certificate transparency logging
    *
    * Access Level: Write
    *
@@ -185,6 +207,7 @@ export class Acm extends PolicyStatement {
     "Write": [
       "DeleteCertificate",
       "ImportCertificate",
+      "PutAccountConfiguration",
       "RenewCertificate",
       "RequestCertificate",
       "ResendValidationEmail",
@@ -193,6 +216,7 @@ export class Acm extends PolicyStatement {
     "Read": [
       "DescribeCertificate",
       "ExportCertificate",
+      "GetAccountConfiguration",
       "GetCertificate",
       "ListTagsForCertificate"
     ],

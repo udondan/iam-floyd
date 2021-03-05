@@ -18,8 +18,11 @@ wellarchitected:ListLenses;List
 wellarchitected:ListMilestones;List
 wellarchitected:ListNotifications;List
 wellarchitected:ListShareInvitations;List
+wellarchitected:ListTagsForResource;Read
 wellarchitected:ListWorkloadShares;List
 wellarchitected:ListWorkloads;List
+wellarchitected:TagResource;Tagging
+wellarchitected:UntagResource;Tagging
 wellarchitected:UpdateAnswer;Write
 wellarchitected:UpdateLensReview;Write
 wellarchitected:UpdateShareInvitation;Write

@@ -23,7 +23,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-add.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_AssociateLenses.html
    */
   public toAssociateLenses() {
     return this.to('AssociateLenses');
@@ -34,7 +34,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/milestones-save.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateMilestone.html
    */
   public toCreateMilestone() {
     return this.to('CreateMilestone');
@@ -45,7 +45,11 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateWorkload.html
    */
   public toCreateWorkload() {
     return this.to('CreateWorkload');
@@ -56,7 +60,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateWorkloadShare.html
    */
   public toCreateWorkloadShare() {
     return this.to('CreateWorkloadShare');
@@ -67,7 +71,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-delete.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteWorkload.html
    */
   public toDeleteWorkload() {
     return this.to('DeleteWorkload');
@@ -78,7 +82,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/sharing-remove.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteWorkloadShare.html
    */
   public toDeleteWorkloadShare() {
     return this.to('DeleteWorkloadShare');
@@ -89,7 +93,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-remove.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DisassociateLenses.html
    */
   public toDisassociateLenses() {
     return this.to('DisassociateLenses');
@@ -100,7 +104,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/start-workflow-review.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAnswer.html
    */
   public toGetAnswer() {
     return this.to('GetAnswer');
@@ -111,7 +115,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/start-workflow-review.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetLensReview.html
    */
   public toGetLensReview() {
     return this.to('GetLensReview');
@@ -122,7 +126,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-report.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetLensReviewReport.html
    */
   public toGetLensReviewReport() {
     return this.to('GetLensReviewReport');
@@ -133,7 +137,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-upgrading.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetLensVersionDifference.html
    */
   public toGetLensVersionDifference() {
     return this.to('GetLensVersionDifference');
@@ -144,7 +148,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/milestones-view.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetMilestone.html
    */
   public toGetMilestone() {
     return this.to('GetMilestone');
@@ -155,7 +159,10 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-page.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetWorkload.html
    */
   public toGetWorkload() {
     return this.to('GetWorkload');
@@ -166,7 +173,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/start-workflow-review.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAnswers.html
    */
   public toListAnswers() {
     return this.to('ListAnswers');
@@ -177,7 +184,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/tutorial-step3.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListLensReviewImprovements.html
    */
   public toListLensReviewImprovements() {
     return this.to('ListLensReviewImprovements');
@@ -188,7 +195,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-details.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListLensReviews.html
    */
   public toListLensReviews() {
     return this.to('ListLensReviews');
@@ -199,7 +206,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListLenses.html
    */
   public toListLenses() {
     return this.to('ListLenses');
@@ -210,7 +217,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/details-milestones.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListMilestones.html
    */
   public toListMilestones() {
     return this.to('ListMilestones');
@@ -221,7 +228,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-notifications.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListNotifications.html
    */
   public toListNotifications() {
     return this.to('ListNotifications');
@@ -232,10 +239,24 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/invitations.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListShareInvitations.html
    */
   public toListShareInvitations() {
     return this.to('ListShareInvitations');
+  }
+
+  /**
+   * Grants permission to list tags for a Well-Architected resource
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -243,7 +264,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListWorkloadShares.html
    */
   public toListWorkloadShares() {
     return this.to('ListWorkloadShares');
@@ -254,10 +275,39 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-page.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListWorkloads.html
    */
   public toListWorkloads() {
     return this.to('ListWorkloads');
+  }
+
+  /**
+   * Grants permission to tag a Well-Architected resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag a Well-Architected resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -265,7 +315,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/start-workflow-review.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateAnswer.html
    */
   public toUpdateAnswer() {
     return this.to('UpdateAnswer');
@@ -276,7 +326,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-details.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateLensReview.html
    */
   public toUpdateLensReview() {
     return this.to('UpdateLensReview');
@@ -287,7 +337,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workload-sharing.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateShareInvitation.html
    */
   public toUpdateShareInvitation() {
     return this.to('UpdateShareInvitation');
@@ -298,7 +348,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workload-edit.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateWorkload.html
    */
   public toUpdateWorkload() {
     return this.to('UpdateWorkload');
@@ -309,7 +359,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/workload-sharing.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateWorkloadShare.html
    */
   public toUpdateWorkloadShare() {
     return this.to('UpdateWorkloadShare');
@@ -320,7 +370,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-upgrading.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpgradeLensReview.html
    */
   public toUpgradeLensReview() {
     return this.to('UpgradeLensReview');
@@ -348,7 +398,8 @@ export class Wellarchitected extends PolicyStatement {
       "GetLensReviewReport",
       "GetLensVersionDifference",
       "GetMilestone",
-      "GetWorkload"
+      "GetWorkload",
+      "ListTagsForResource"
     ],
     "List": [
       "ListAnswers",
@@ -360,18 +411,25 @@ export class Wellarchitected extends PolicyStatement {
       "ListShareInvitations",
       "ListWorkloadShares",
       "ListWorkloads"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
   /**
    * Adds a resource of type workload to the statement
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/iam-auth-access.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_Workload.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onWorkload(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:wellarchitected:${Region}:${Account}:workload/${ResourceId}';
