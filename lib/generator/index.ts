@@ -218,9 +218,6 @@ function writeStatsFile(file: string, data: string[]) {
   if (fs.existsSync(file)) {
     fs.unlinkSync(file);
   }
-  if (!data.length) {
-    return;
-  }
   const uniqueValues = data
     .filter(function (elem, pos) {
       return data.indexOf(elem) == pos;
