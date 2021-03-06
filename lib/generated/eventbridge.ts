@@ -41,6 +41,17 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new api destination
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateApiDestination.html
+   */
+  public toCreateApiDestination() {
+    return this.to('CreateApiDestination');
+  }
+
+  /**
    * Grants permission to create a new archive
    *
    * Access Level: Write
@@ -49,6 +60,17 @@ export class Events extends PolicyStatement {
    */
   public toCreateArchive() {
     return this.to('CreateArchive');
+  }
+
+  /**
+   * Grants permission to create a new connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateConnection.html
+   */
+  public toCreateConnection() {
+    return this.to('CreateConnection');
   }
 
   /**
@@ -89,6 +111,28 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deauthorize a connection, deleting its stored authorization secrets
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeauthorizeConnection.html
+   */
+  public toDeauthorizeConnection() {
+    return this.to('DeauthorizeConnection');
+  }
+
+  /**
+   * Grants permission to delete an api destination
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteApiDestination.html
+   */
+  public toDeleteApiDestination() {
+    return this.to('DeleteApiDestination');
+  }
+
+  /**
    * Grants permission to delete an archive
    *
    * Access Level: Write
@@ -97,6 +141,17 @@ export class Events extends PolicyStatement {
    */
   public toDeleteArchive() {
     return this.to('DeleteArchive');
+  }
+
+  /**
+   * Grants permission to delete a connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteConnection.html
+   */
+  public toDeleteConnection() {
+    return this.to('DeleteConnection');
   }
 
   /**
@@ -136,6 +191,17 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details about an api destination
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeApiDestination.html
+   */
+  public toDescribeApiDestination() {
+    return this.to('DescribeApiDestination');
+  }
+
+  /**
    * Grants permission to retrieve details about an archive
    *
    * Access Level: Read
@@ -144,6 +210,17 @@ export class Events extends PolicyStatement {
    */
   public toDescribeArchive() {
     return this.to('DescribeArchive');
+  }
+
+  /**
+   * Grants permission to retrieve details about a conection
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeConnection.html
+   */
+  public toDescribeConnection() {
+    return this.to('DescribeConnection');
   }
 
   /**
@@ -233,6 +310,28 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke an api destination
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html
+   */
+  public toInvokeApiDestination() {
+    return this.to('InvokeApiDestination');
+  }
+
+  /**
+   * Grants permission to retrieve a list of api destinations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListApiDestinations.html
+   */
+  public toListApiDestinations() {
+    return this.to('ListApiDestinations');
+  }
+
+  /**
    * Grants permission to retrieve a list of archives
    *
    * Access Level: List
@@ -241,6 +340,17 @@ export class Events extends PolicyStatement {
    */
   public toListArchives() {
     return this.to('ListArchives');
+  }
+
+  /**
+   * Grants permission to retrieve a list of connections
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListConnections.html
+   */
+  public toListConnections() {
+    return this.to('ListConnections');
   }
 
   /**
@@ -380,7 +490,7 @@ export class Events extends PolicyStatement {
   /**
    * Grants permission to use the PutPermission action to grants permission to another AWS account to put events to your default event bus
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPermission.html
    */
@@ -427,7 +537,7 @@ export class Events extends PolicyStatement {
   /**
    * Grants permission to revoke the permission of another AWS account to put events to your default event bus
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html
    */
@@ -503,6 +613,17 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an api destination
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateApiDestination.html
+   */
+  public toUpdateApiDestination() {
+    return this.to('UpdateApiDestination');
+  }
+
+  /**
    * Grants permission to update an archive
    *
    * Access Level: Write
@@ -513,31 +634,50 @@ export class Events extends PolicyStatement {
     return this.to('UpdateArchive');
   }
 
+  /**
+   * Grants permission to update a connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateConnection.html
+   */
+  public toUpdateConnection() {
+    return this.to('UpdateConnection');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "ActivateEventSource",
       "CancelReplay",
+      "CreateApiDestination",
       "CreateArchive",
+      "CreateConnection",
       "CreateEventBus",
       "CreatePartnerEventSource",
       "DeactivateEventSource",
+      "DeauthorizeConnection",
+      "DeleteApiDestination",
       "DeleteArchive",
+      "DeleteConnection",
       "DeleteEventBus",
       "DeletePartnerEventSource",
       "DeleteRule",
       "DisableRule",
       "EnableRule",
+      "InvokeApiDestination",
       "PutEvents",
       "PutPartnerEvents",
-      "PutPermission",
       "PutTargets",
-      "RemovePermission",
       "RemoveTargets",
       "StartReplay",
-      "UpdateArchive"
+      "UpdateApiDestination",
+      "UpdateArchive",
+      "UpdateConnection"
     ],
     "Read": [
+      "DescribeApiDestination",
       "DescribeArchive",
+      "DescribeConnection",
       "DescribeEventBus",
       "DescribeEventSource",
       "DescribePartnerEventSource",
@@ -546,7 +686,9 @@ export class Events extends PolicyStatement {
       "TestEventPattern"
     ],
     "List": [
+      "ListApiDestinations",
       "ListArchives",
+      "ListConnections",
       "ListEventBuses",
       "ListEventSources",
       "ListPartnerEventSourceAccounts",
@@ -556,6 +698,10 @@ export class Events extends PolicyStatement {
       "ListRules",
       "ListTagsForResource",
       "ListTargetsByRule"
+    ],
+    "Permissions management": [
+      "PutPermission",
+      "RemovePermission"
     ],
     "Tagging": [
       "PutRule",
@@ -664,7 +810,45 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Used internally by AWS services. If a rule is created by an AWS service on your behalf, the value is the principal name of the service that created the rule.
+   * Adds a resource of type connection to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   *
+   * @param connectionName - Identifier for the connectionName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onConnection(connectionName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:events:${Region}:${Account}:connection/${ConnectionName}';
+    arn = arn.replace('${ConnectionName}', connectionName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type api-destination to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   *
+   * @param apiDestinationName - Identifier for the apiDestinationName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onApiDestination(apiDestinationName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:events:${Region}:${Account}:api-destination/${ApiDestinationName}';
+    arn = arn.replace('${ApiDestinationName}', apiDestinationName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Used internally by AWS services. If a rule is created by an AWS service on your behalf, the value is the principal name of the service that created the rule
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html
    *
@@ -676,7 +860,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * The ARN of a target that can be put to a rule.
+   * Filters access to PutTargets actions based on the ARN of a target that can be put to a rule
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limiting-access-to-targets
    *
@@ -691,7 +875,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the account the rule was created in
+   * Filters access to rule actions based on the account the rule was created in
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-creator-account
    *
@@ -716,7 +900,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Matches the literal string of the detail-type filed of the event.
+   * Filters access to PutEvents and PutRule actions based on the literal string of the detail-type of the event
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-pattern-detail-type
    *
@@ -732,7 +916,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Matches the literal string for the detail.eventTypeCode field of the event.
+   * Filters access to PutRule actions based on the literal string for the detail.eventTypeCode field of the event
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limit-rule-by-type-code
    *
@@ -747,7 +931,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Matches the literal string for the detail.service field of the event.
+   * Filters access to PutRule actions based on the literal string for the detail.service field of the event
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limit-rule-by-service
    *
@@ -762,7 +946,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Matches the literal string for the detail.useridentity.principalid field of the event.
+   * Filters access to PutRule actions based on the literal string for the detail.useridentity.principalid field of the event
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#consume-specific-events
    *
@@ -777,7 +961,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on whether the event was generated via API or cross-account bus invocation
+   * Filters access to PutEvents actions based on whether the event was generated via API or cross-account bus invocation
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-bus-invocation
    *
@@ -792,7 +976,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * The AWS service or AWS partner event source that generated the event. Matches the literal string of the source field of the event.
+   * Filters access to PutEvents and PutRule actions based on the AWS service or AWS partner event source that generated the event. Matches the literal string of the source field of the event
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-limit-access-control
    *

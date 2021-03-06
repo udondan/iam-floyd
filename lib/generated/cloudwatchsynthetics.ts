@@ -19,7 +19,7 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Create a canary.
+   * Grants permission to create a canary
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Deletes a canary. Amazon Synthetics deletes all the resources except for the Lambda function and the CloudWatch Alarms if you created one.
+   * Deletes a canary. Amazon Synthetics deletes all the resources except for the Lambda function and the CloudWatch Alarms if you created one
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Returns information of all canaries.
+   * Grants permission to list information of all canaries
    *
    * Access Level: Read
    *
@@ -52,7 +52,7 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Returns information about the last test run associated with all canaries.
+   * Grants permission to list information about the last test run associated with all canaries
    *
    * Access Level: Read
    *
@@ -63,7 +63,7 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Returns information about all the test runs associated with a canary.
+   * Grants permission to list information about all the test runs associated with a canary
    *
    * Access Level: Read
    *
@@ -74,7 +74,7 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Returns a list of all tags and values associated with a canary.
+   * Grants permission to list all tags and values associated with a canary
    *
    * Access Level: Read
    *
@@ -85,7 +85,7 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Starts a canary, so that Amazon Synthetics starts monitoring a website.
+   * Grants permission to start a canary, so that Amazon CloudWatch Synthetics starts monitoring a website
    *
    * Access Level: Write
    *
@@ -96,7 +96,7 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Stops a canary.
+   * Grants permission to stop a canary
    *
    * Access Level: Write
    *
@@ -107,7 +107,7 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Adds one or more tags to a canary.
+   * Grants permission to add one or more tags to a canary
    *
    * Access Level: Write
    *
@@ -118,7 +118,7 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Removes one or more tags from a canary.
+   * Grants permission to remove one or more tags from a canary
    *
    * Access Level: Write
    *
@@ -129,7 +129,7 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Updates a canary.
+   * Grants permission to update a canary
    *
    * Access Level: Write
    *
@@ -164,12 +164,17 @@ export class Synthetics extends PolicyStatement {
    *
    * @param canaryName - Identifier for the canaryName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onCanary(canaryName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:synthetics::${Account}:canary:${CanaryName}';
+  public onCanary(canaryName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:synthetics:${Region}:${Account}:canary:${CanaryName}';
     arn = arn.replace('${CanaryName}', canaryName);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
