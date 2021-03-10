@@ -19,6 +19,7 @@
 					"iam:PassedToService": [
 						"elasticbeanstalk.amazonaws.com",
 						"ec2.amazonaws.com",
+						"ec2.amazonaws.com.cn",
 						"autoscaling.amazonaws.com",
 						"elasticloadbalancing.amazonaws.com",
 						"ecs.amazonaws.com",
