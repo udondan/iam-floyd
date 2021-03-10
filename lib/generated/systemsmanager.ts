@@ -1377,6 +1377,7 @@ export class Ssm extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifSessionDocumentAccessCheck()
+   * - .ifEcsCluster()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartSession.html
    */
@@ -1396,7 +1397,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to permanently end a Session Manager connection to an instance.
+   * Grants permission to permanently end a Session Manager connection to an instance
    *
    * Access Level: Write
    *
@@ -2097,7 +2098,61 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access by controlling whether the values for specified resources can be overwritten.
+   * Adds a resource of type task to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html
+   *
+   * @param taskId - Identifier for the taskId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifEcsResourceTag()
+   */
+  public onTask(taskId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task/${TaskId}';
+    arn = arn.replace('${TaskId}', taskId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   *
+   * Applies to resource types:
+   * - task
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEcsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`ecs:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of an Amazon ECS cluster
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   *
+   * Applies to actions:
+   * - .toStartSession()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifEcsCluster(value: string | string[], operator?: Operator | string) {
+    return this.if(`ecs:cluster`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by controlling whether the values for specified resources can be overwritten
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
@@ -2109,7 +2164,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access for resources created in a hierarchical structure.
+   * Filters access for resources created in a hierarchical structure
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
@@ -2121,7 +2176,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access by verifying that a user has permission to access either the default Session Manager configuration document or the custom configuration document specified in a request.
+   * Filters access by verifying that a user has permission to access either the default Session Manager configuration document or the custom configuration document specified in a request
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-sessiondocumentaccesscheck.html
    *
@@ -2136,6 +2191,8 @@ export class Ssm extends PolicyStatement {
 
   /**
    * Filters access by verifying that a user also has access to the ResourceDataSync SyncType specified in the request
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
    * Applies to actions:
    * - .toCreateResourceDataSync()

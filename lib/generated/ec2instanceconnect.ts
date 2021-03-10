@@ -24,7 +24,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifOsuser()
+   * - .ifEc2Osuser()
    *
    * https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSSHPublicKey.html
    */
@@ -50,7 +50,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
-   * - .ifResourceTag()
+   * - .ifEc2ResourceTag()
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}';
@@ -73,7 +73,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+  public ifEc2ResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`ec2:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -88,7 +88,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifOsuser(value: string | string[], operator?: Operator | string) {
+  public ifEc2Osuser(value: string | string[], operator?: Operator | string) {
     return this.if(`ec2:osuser`, value, operator || 'StringLike');
   }
 }

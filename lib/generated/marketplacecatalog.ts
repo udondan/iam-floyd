@@ -106,7 +106,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifChangeType()
+   * - .ifCatalogChangeType()
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_StartChangeSet.html
    */
@@ -197,7 +197,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifChangeType(value: string | string[], operator?: Operator | string) {
+  public ifCatalogChangeType(value: string | string[], operator?: Operator | string) {
     return this.if(`catalog:ChangeType`, value, operator || 'StringLike');
   }
 }

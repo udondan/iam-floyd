@@ -14,5 +14,6 @@ ssm:patchbaseline
 ssm:resourcedatasync
 ssm:servicesetting
 ssm:session
+ssm:task
 ssm:windowtarget
 ssm:windowtask

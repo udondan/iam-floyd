@@ -327,7 +327,10 @@ export function createModule(module: Module): Promise<void> {
     if ('conditions' in action) {
       desc += '\n\nPossible conditions:';
       action.conditions.forEach((condition) => {
-        desc += `\n- .${createConditionName(condition)}()`;
+        desc += `\n- .${createConditionName(
+          condition,
+          module.servicePrefix
+        )}()`;
       });
     }
     if ('dependentActions' in action) {
@@ -401,7 +404,7 @@ export function createModule(module: Module): Promise<void> {
     if (resourceType.conditionKeys.length) {
       desc += '\n\nPossible conditions:';
       resourceType.conditionKeys.forEach((key) => {
-        desc += `\n- .${createConditionName(key)}()`;
+        desc += `\n- .${createConditionName(key, module.servicePrefix)}()`;
       });
     }
     method.addJsDoc({
@@ -467,7 +470,7 @@ export function createModule(module: Module): Promise<void> {
 
     const methodBody: string[] = [];
 
-    var methodName = createConditionName(key);
+    var methodName = createConditionName(key, module.servicePrefix);
     if (name.length > 2 && !name[2].length) {
       // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
       methodName += 'Exists';
@@ -892,7 +895,7 @@ function addConditions($: CheerioStatic, module: Module): Module {
         description: description,
         type: type,
         url: url,
-        isGlobal: key.startsWith('aws:'),
+        isGlobal: key.startsWith('aws:'), // HIA
       };
     }
   });
@@ -900,13 +903,9 @@ function addConditions($: CheerioStatic, module: Module): Module {
   return module;
 }
 
-function createConditionName(key: string): string {
+function createConditionName(key: string, servicePrefix: string): string {
   var methodName = 'if';
   const split = key.split(/[:/]/);
-  // for global conditions
-  if (split[0] == 'aws') {
-    methodName += 'Aws';
-  }
   // these are exceptions for the Security Token Service to:
   // - make it clear to which provider the condition is for
   // - avoid duplicate method names
@@ -918,6 +917,9 @@ function createConditionName(key: string): string {
     methodName += 'Amazon';
   } else if (split[0] == 'graph.facebook.com') {
     methodName += 'Facebook';
+  } else if (split[0] != servicePrefix) {
+    // for global conditions and conditions related to other services
+    methodName += upperFirst(split[0]);
   }
   methodName += upperFirst(camelCase(split[1]));
   return methodName;

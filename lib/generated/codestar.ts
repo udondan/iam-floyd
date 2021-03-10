@@ -319,7 +319,7 @@ export class Codestar extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
-   * - .ifResourceTag()
+   * - .ifIamResourceTag()
    */
   public onUser(userNameWithPath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}';
@@ -338,7 +338,7 @@ export class Codestar extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+  public ifIamResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`iam:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }
