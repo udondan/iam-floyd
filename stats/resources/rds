@@ -8,6 +8,7 @@ rds:global-cluster
 rds:og
 rds:pg
 rds:proxy
+rds:proxy-endpoint
 rds:ri
 rds:secgrp
 rds:snapshot

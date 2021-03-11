@@ -365,6 +365,21 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a database proxy endpoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBProxyEndpoint.html
+   */
+  public toCreateDBProxyEndpoint() {
+    return this.to('CreateDBProxyEndpoint');
+  }
+
+  /**
    * Grants permission to create a new DB security group. DB security groups control access to a DB instance
    *
    * Access Level: Write
@@ -567,6 +582,17 @@ export class Rds extends PolicyStatement {
    */
   public toDeleteDBProxy() {
     return this.to('DeleteDBProxy');
+  }
+
+  /**
+   * Grants permission to delete a database proxy endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBProxyEndpoint.html
+   */
+  public toDeleteDBProxyEndpoint() {
+    return this.to('DeleteDBProxyEndpoint');
   }
 
   /**
@@ -820,6 +846,17 @@ export class Rds extends PolicyStatement {
    */
   public toDescribeDBProxies() {
     return this.to('DescribeDBProxies');
+  }
+
+  /**
+   * Grants permission to view proxy endpoints
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBProxyEndpoints.html
+   */
+  public toDescribeDBProxyEndpoints() {
+    return this.to('DescribeDBProxyEndpoints');
   }
 
   /**
@@ -1192,6 +1229,17 @@ export class Rds extends PolicyStatement {
    */
   public toModifyDBProxy() {
     return this.to('ModifyDBProxy');
+  }
+
+  /**
+   * Grants permission to modify database proxy endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBProxyEndpoint.html
+   */
+  public toModifyDBProxyEndpoint() {
+    return this.to('ModifyDBProxyEndpoint');
   }
 
   /**
@@ -1656,6 +1704,7 @@ export class Rds extends PolicyStatement {
       "CreateDBInstanceReadReplica",
       "CreateDBParameterGroup",
       "CreateDBProxy",
+      "CreateDBProxyEndpoint",
       "CreateDBSecurityGroup",
       "CreateDBSnapshot",
       "CreateDBSubnetGroup",
@@ -1671,6 +1720,7 @@ export class Rds extends PolicyStatement {
       "DeleteDBInstanceAutomatedBackup",
       "DeleteDBParameterGroup",
       "DeleteDBProxy",
+      "DeleteDBProxyEndpoint",
       "DeleteDBSecurityGroup",
       "DeleteDBSnapshot",
       "DeleteDBSubnetGroup",
@@ -1688,6 +1738,7 @@ export class Rds extends PolicyStatement {
       "ModifyDBInstance",
       "ModifyDBParameterGroup",
       "ModifyDBProxy",
+      "ModifyDBProxyEndpoint",
       "ModifyDBProxyTargetGroup",
       "ModifyDBSnapshot",
       "ModifyDBSnapshotAttribute",
@@ -1745,6 +1796,7 @@ export class Rds extends PolicyStatement {
       "DescribeDBParameterGroups",
       "DescribeDBParameters",
       "DescribeDBProxies",
+      "DescribeDBProxyEndpoints",
       "DescribeDBProxyTargetGroups",
       "DescribeDBProxyTargets",
       "DescribeDBSecurityGroups",
@@ -1997,6 +2049,28 @@ export class Rds extends PolicyStatement {
   public onProxy(dbProxyId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:db-proxy:${DbProxyId}';
     arn = arn.replace('${DbProxyId}', dbProxyId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type proxy-endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBProxy.html
+   *
+   * @param dbProxyEndpointId - Identifier for the dbProxyEndpointId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProxyEndpoint(dbProxyEndpointId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:db-proxy-endpoint:${DbProxyEndpointId}';
+    arn = arn.replace('${DbProxyEndpointId}', dbProxyEndpointId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

@@ -161,6 +161,7 @@ ec2:DeregisterTransitGatewayMulticastGroupMembers;Write
 ec2:DeregisterTransitGatewayMulticastGroupSources;Write
 ec2:DescribeAccountAttributes;List
 ec2:DescribeAddresses;List
+ec2:DescribeAddressesAttribute;List
 ec2:DescribeAggregateIdFormat;List
 ec2:DescribeAvailabilityZones;List
 ec2:DescribeBundleTasks;List
@@ -336,6 +337,7 @@ ec2:ImportInstance;Write
 ec2:ImportKeyPair;Write
 ec2:ImportSnapshot;Write
 ec2:ImportVolume;Write
+ec2:ModifyAddressAttribute;Write
 ec2:ModifyAvailabilityZoneGroup;Write
 ec2:ModifyCapacityReservation;Write
 ec2:ModifyClientVpnEndpoint;Write
@@ -406,6 +408,7 @@ ec2:ReplaceTransitGatewayRoute;Write
 ec2:ReportInstanceStatus;Write
 ec2:RequestSpotFleet;Write
 ec2:RequestSpotInstances;Write
+ec2:ResetAddressAttribute;Write
 ec2:ResetEbsDefaultKmsKeyId;Write
 ec2:ResetFpgaImageAttribute;Write
 ec2:ResetImageAttribute;Write

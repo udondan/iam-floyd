@@ -388,6 +388,21 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop Amazon Forecast resource jobs
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_StopResource.html
+   */
+  public toStopResource() {
+    return this.to('StopResource');
+  }
+
+  /**
    * Grants permission to associate the specified tags to a resource
    *
    * Access Level: Tagging
@@ -443,6 +458,7 @@ export class Forecast extends PolicyStatement {
       "DeleteForecastExportJob",
       "DeletePredictor",
       "DeletePredictorBacktestExportJob",
+      "StopResource",
       "UpdateDatasetGroup"
     ],
     "Read": [

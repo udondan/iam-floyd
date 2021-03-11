@@ -29,6 +29,7 @@ forecast:ListPredictorBacktestExportJobs;List
 forecast:ListPredictors;List
 forecast:ListTagsForResource;Read
 forecast:QueryForecast;Read
+forecast:StopResource;Write
 forecast:TagResource;Tagging
 forecast:UntagResource;Tagging
 forecast:UpdateDatasetGroup;Write

@@ -29,6 +29,7 @@ ec2:LaunchTemplate
 ec2:MetadataHttpEndpoint
 ec2:MetadataHttpPutResponseHopLimit
 ec2:MetadataHttpTokens
+ec2:OutpostArn
 ec2:Owner
 ec2:ParentSnapshot
 ec2:ParentVolume
@@ -61,6 +62,7 @@ ec2:SamlProviderArn
 ec2:ServerCertificateArn
 ec2:SnapshotTime
 ec2:SourceInstanceARN
+ec2:SourceOutpostArn
 ec2:Subnet
 ec2:TagKeys
 ec2:Tenancy

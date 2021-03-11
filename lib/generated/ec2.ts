@@ -1824,6 +1824,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the attributes of the specified Elastic IP addresses
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddressesAttribute.html
+   */
+  public toDescribeAddressesAttribute() {
+    return this.to('DescribeAddressesAttribute');
+  }
+
+  /**
    * Grants permission to describe the longer ID format settings for all resource types
    *
    * Access Level: List
@@ -3749,6 +3760,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify an attribute of the specified Elastic IP address
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyAddressAttribute.html
+   */
+  public toModifyAddressAttribute() {
+    return this.to('ModifyAddressAttribute');
+  }
+
+  /**
    * Grants permission to modify the opt-in status of the Local Zone and Wavelength Zone group for your account
    *
    * Access Level: Write
@@ -4522,6 +4544,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reset the attribute of the specified IP address
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetAddressAttribute.html
+   */
+  public toResetAddressAttribute() {
+    return this.to('ResetAddressAttribute');
+  }
+
+  /**
    * Grants permission to reset the default customer master key (CMK) for EBS encryption for your account to use the AWS-managed CMK for EBS
    *
    * Access Level: Write
@@ -5034,6 +5067,7 @@ export class Ec2 extends PolicyStatement {
       "ImportKeyPair",
       "ImportSnapshot",
       "ImportVolume",
+      "ModifyAddressAttribute",
       "ModifyAvailabilityZoneGroup",
       "ModifyCapacityReservation",
       "ModifyClientVpnEndpoint",
@@ -5102,6 +5136,7 @@ export class Ec2 extends PolicyStatement {
       "ReportInstanceStatus",
       "RequestSpotFleet",
       "RequestSpotInstances",
+      "ResetAddressAttribute",
       "ResetEbsDefaultKmsKeyId",
       "ResetFpgaImageAttribute",
       "ResetImageAttribute",
@@ -5142,6 +5177,7 @@ export class Ec2 extends PolicyStatement {
     "List": [
       "DescribeAccountAttributes",
       "DescribeAddresses",
+      "DescribeAddressesAttribute",
       "DescribeAggregateIdFormat",
       "DescribeAvailabilityZones",
       "DescribeBundleTasks",
@@ -6410,11 +6446,13 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifOutpostArn()
    * - .ifOwner()
    * - .ifParentVolume()
    * - .ifRegion()
    * - .ifResourceTag()
    * - .ifSnapshotTime()
+   * - .ifSourceOutpostArn()
    * - .ifVolumeSize()
    */
   public onSnapshot(snapshotId: string, region?: string, partition?: string) {
@@ -7661,7 +7699,6 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
-   * - .toCopyImage()
    * - .toCreateFleet()
    * - .toCreateImage()
    * - .toCreateLaunchTemplate()
@@ -7945,6 +7982,28 @@ export class Ec2 extends PolicyStatement {
    */
   public ifMetadataHttpTokens(value: string | string[], operator?: Operator | string) {
     return this.if(`MetadataHttpTokens`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of the Outpost
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toCopySnapshot()
+   * - .toCreateSnapshot()
+   * - .toCreateSnapshots()
+   * - .toDeleteSnapshot()
+   * - .toModifySnapshotAttribute()
+   *
+   * Applies to resource types:
+   * - snapshot
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifOutpostArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`OutpostArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -8426,8 +8485,6 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
-   * - .toCopyFpgaImage()
-   * - .toCopyImage()
    * - .toCreateFleet()
    * - .toCreateFpgaImage()
    * - .toCreateImage()
@@ -8551,6 +8608,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNatGateway()
    * - .toCreateNetworkAcl()
    * - .toCreateNetworkAclEntry()
+   * - .toCreateNetworkInsightsPath()
    * - .toCreateNetworkInterface()
    * - .toCreateNetworkInterfacePermission()
    * - .toCreatePlacementGroup()
@@ -9002,8 +9060,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCancelSpotFleetRequests()
    * - .toCancelSpotInstanceRequests()
    * - .toConfirmProductInstance()
-   * - .toCopyFpgaImage()
-   * - .toCopyImage()
    * - .toCreateCapacityReservation()
    * - .toCreateCarrierGateway()
    * - .toCreateClientVpnEndpoint()
@@ -9026,6 +9082,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNatGateway()
    * - .toCreateNetworkAcl()
    * - .toCreateNetworkAclEntry()
+   * - .toCreateNetworkInsightsPath()
    * - .toCreateNetworkInterface()
    * - .toCreateNetworkInterfacePermission()
    * - .toCreatePlacementGroup()
@@ -9341,7 +9398,6 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachVolume()
    * - .toBundleInstance()
    * - .toConfirmProductInstance()
-   * - .toCopyImage()
    * - .toCreateFleet()
    * - .toCreateImage()
    * - .toCreateInstanceExportTask()
@@ -9548,6 +9604,28 @@ export class Ec2 extends PolicyStatement {
    */
   public ifSourceInstanceARN(value: string | string[], operator?: Operator | string) {
     return this.if(`SourceInstanceARN`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access by the ARN of the Outpost from which the request originated
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toCopySnapshot()
+   * - .toCreateSnapshot()
+   * - .toCreateSnapshots()
+   * - .toDeleteSnapshot()
+   * - .toModifySnapshotAttribute()
+   *
+   * Applies to resource types:
+   * - snapshot
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifSourceOutpostArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`SourceOutpostArn`, value, operator || 'ArnLike');
   }
 
   /**
@@ -9873,8 +9951,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteClientVpnRoute()
    * - .toDeleteNetworkAcl()
    * - .toDeleteNetworkAclEntry()
-   * - .toDeleteNetworkInsightsAnalysis()
-   * - .toDeleteNetworkInsightsPath()
    * - .toDeleteNetworkInterface()
    * - .toDeleteRoute()
    * - .toDeleteRouteTable()
