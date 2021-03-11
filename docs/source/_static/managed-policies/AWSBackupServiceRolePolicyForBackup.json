@@ -36,6 +36,15 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"rds:ModifyDBInstance"
+			],
+			"Resource": [
+				"arn:aws:rds:*:*:db:*"
+			]
+        },
+		{
+			"Effect": "Allow",
+			"Action": [
 				"rds:DeleteDBSnapshot",
 				"rds:ModifyDBSnapshotAttribute"
 			],
@@ -162,6 +171,21 @@
 				"arn:aws:ec2:*:*:volume/*"
 			]
 		},
+		{           
+            "Action": [
+                "kms:Decrypt",
+                "kms:GenerateDataKey"
+                ],
+            "Effect": "Allow",
+            "Resource": "*",
+            "Condition": {
+                "StringLike": {
+                    "kms:ViaService": [
+                        "dynamodb.*.amazonaws.com"
+                    ]
+                }
+            }
+        },
 		{
 			"Action": "kms:DescribeKey",
 			"Effect": "Allow",

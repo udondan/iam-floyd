@@ -77,7 +77,8 @@
                 "rds:AddTagsToResource",
                 "rds:DescribeDBClusters",
                 "rds:RestoreDBClusterFromSnapshot",
-                "rds:DeleteDBCluster"
+                "rds:DeleteDBCluster",
+                "rds:RestoreDBInstanceToPointInTime"
             ],
             "Resource": "*"
         },

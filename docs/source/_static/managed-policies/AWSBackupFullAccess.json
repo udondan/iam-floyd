@@ -23,7 +23,8 @@
 				"rds:describeDBClusterSnapshots",
 				"rds:describeDBClusters",
 				"rds:describeDBParameterGroups",
-				"rds:describeDBClusterParameterGroups"
+                "rds:DescribeDBClusterParameterGroups",
+                "rds:DescribeDBInstanceAutomatedBackups"
 			],
 			"Effect": "Allow",
 			"Resource": "*"
