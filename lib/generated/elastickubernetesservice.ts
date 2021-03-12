@@ -1,8 +1,8 @@
 import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
- * Statement provider for service [eks](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerserviceforkubernetes.html).
+ * Statement provider for service [eks](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Eks extends PolicyStatement {
   public servicePrefix = 'eks';
 
   /**
-   * Statement provider for service [eks](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerserviceforkubernetes.html).
+   * Statement provider for service [eks](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,7 +19,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Permission to view Kubernetes objects via AWS EKS console
+   * Grants permission to view Kubernetes objects via AWS EKS console
    *
    * Access Level: Read
    *
@@ -30,7 +30,35 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Creates an Amazon EKS add-on.
+   * Grants permission to associate encryption configuration to a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_AssociateEncryptionConfig.html
+   */
+  public toAssociateEncryptionConfig() {
+    return this.to('AssociateEncryptionConfig');
+  }
+
+  /**
+   * Grants permission to associate an identity provider configuration to a cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifClientId()
+   * - .ifIssuerUrl()
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_AssociateIdentityProviderConfig.html
+   */
+  public toAssociateIdentityProviderConfig() {
+    return this.to('AssociateIdentityProviderConfig');
+  }
+
+  /**
+   * Grants permission to create an Amazon EKS add-on
    *
    * Access Level: Write
    *
@@ -45,7 +73,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Creates an Amazon EKS cluster.
+   * Grants permission to create an Amazon EKS cluster
    *
    * Access Level: Write
    *
@@ -60,7 +88,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Creates an AWS Fargate profile.
+   * Grants permission to create an AWS Fargate profile
    *
    * Access Level: Write
    *
@@ -75,7 +103,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Creates an Amazon EKS Nodegroup.
+   * Grants permission to create an Amazon EKS Nodegroup
    *
    * Access Level: Write
    *
@@ -90,7 +118,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Deletes an Amazon EKS add-on.
+   * Grants permission to delete an Amazon EKS add-on
    *
    * Access Level: Write
    *
@@ -101,7 +129,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Deletes an Amazon EKS cluster.
+   * Grants permission to delete an Amazon EKS cluster
    *
    * Access Level: Write
    *
@@ -112,7 +140,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Deletes an AWS Fargate profile.
+   * Grants permission to delete an AWS Fargate profile
    *
    * Access Level: Write
    *
@@ -123,7 +151,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Deletes an Amazon EKS Nodegroup.
+   * Grants permission to delete an Amazon EKS Nodegroup
    *
    * Access Level: Write
    *
@@ -134,7 +162,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Returns descriptive information about an Amazon EKS add-on.
+   * Grants permission to retrieve descriptive information about an Amazon EKS add-on
    *
    * Access Level: Read
    *
@@ -145,7 +173,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Returns descriptive version information about the add-ons that Amazon EKS Add-ons supports.
+   * Grants permission to retrieve descriptive version information about the add-ons that Amazon EKS Add-ons supports
    *
    * Access Level: Read
    *
@@ -156,7 +184,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Returns descriptive information about an Amazon EKS cluster.
+   * Grants permission to retrieve descriptive information about an Amazon EKS cluster
    *
    * Access Level: Read
    *
@@ -167,7 +195,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Returns descriptive information about an AWS Fargate profile associated with a cluster.
+   * Grants permission to retrieve descriptive information about an AWS Fargate profile associated with a cluster
    *
    * Access Level: Read
    *
@@ -178,7 +206,18 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Returns descriptive information about an Amazon EKS nodegroup.
+   * Grants permission to retrieve descriptive information about an Idp config associated with a cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeIdentityProviderConfig.html
+   */
+  public toDescribeIdentityProviderConfig() {
+    return this.to('DescribeIdentityProviderConfig');
+  }
+
+  /**
+   * Grants permission to retrieve descriptive information about an Amazon EKS nodegroup
    *
    * Access Level: Read
    *
@@ -189,7 +228,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Describes a given update for a given Amazon EKS cluster/nodegroup/add-on (in the specified or default region).
+   * Grants permission to retrieve a given update for a given Amazon EKS cluster/nodegroup/add-on (in the specified or default region)
    *
    * Access Level: Read
    *
@@ -200,7 +239,18 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Lists the Amazon EKS add-ons in your AWS account (in the specified or default region) for a given cluster.
+   * Grants permission to delete an asssociated Idp config
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DisassociateIdentityProviderConfig.html
+   */
+  public toDisassociateIdentityProviderConfig() {
+    return this.to('DisassociateIdentityProviderConfig');
+  }
+
+  /**
+   * Grants permission to list the Amazon EKS add-ons in your AWS account (in the specified or default region) for a given cluster
    *
    * Access Level: List
    *
@@ -211,7 +261,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Lists the Amazon EKS clusters in your AWS account (in the specified or default region).
+   * Grants permission to list the Amazon EKS clusters in your AWS account (in the specified or default region)
    *
    * Access Level: List
    *
@@ -222,7 +272,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Lists the AWS Fargate profiles in your AWS account (in the specified or default region) associated with a given cluster.
+   * Grants permission to list the AWS Fargate profiles in your AWS account (in the specified or default region) associated with a given cluster
    *
    * Access Level: List
    *
@@ -233,7 +283,18 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Lists the Amazon EKS nodegroups in your AWS account (in the specified or default region) attached to given cluster.
+   * Grants permission to list the Idp configs in your AWS account (in the specified or default region) associated with a given cluster
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListIdentityProviderConfigs.html
+   */
+  public toListIdentityProviderConfigs() {
+    return this.to('ListIdentityProviderConfigs');
+  }
+
+  /**
+   * Grants permission to list the Amazon EKS nodegroups in your AWS account (in the specified or default region) attached to given cluster
    *
    * Access Level: List
    *
@@ -244,9 +305,9 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * List tags for the specified resource.
+   * Grants permission to list tags for the specified resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListTagsForResource.html
    */
@@ -255,7 +316,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Lists the updates for a given Amazon EKS cluster/nodegroup/add-on (in the specified or default region).
+   * Grants permission to list the updates for a given Amazon EKS cluster/nodegroup/add-on (in the specified or default region)
    *
    * Access Level: List
    *
@@ -266,7 +327,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Tags the specified resource.
+   * Grants permission to tag the specified resource
    *
    * Access Level: Tagging
    *
@@ -281,7 +342,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Untags the specified resource.
+   * Grants permission to untag the specified resource
    *
    * Access Level: Tagging
    *
@@ -295,7 +356,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Update Amazon EKS add-on configurations, such as the VPC-CNI version.
+   * Grants permission to update Amazon EKS add-on configurations, such as the VPC-CNI version
    *
    * Access Level: Write
    *
@@ -306,7 +367,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Update Amazon EKS cluster configurations (eg: API server endpoint access).
+   * Grants permission to update Amazon EKS cluster configurations (eg: API server endpoint access)
    *
    * Access Level: Write
    *
@@ -317,7 +378,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Update the Kubernetes version of an Amazon EKS cluster.
+   * Grants permission to update the Kubernetes version of an Amazon EKS cluster
    *
    * Access Level: Write
    *
@@ -328,7 +389,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Update Amazon EKS nodegroup configurations (eg: min/max/desired capacity or labels).
+   * Grants permission to update Amazon EKS nodegroup configurations (eg: min/max/desired capacity or labels)
    *
    * Access Level: Write
    *
@@ -339,7 +400,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Update the Kubernetes version of an Amazon EKS nodegroup.
+   * Grants permission to update the Kubernetes version of an Amazon EKS nodegroup
    *
    * Access Level: Write
    *
@@ -356,10 +417,14 @@ export class Eks extends PolicyStatement {
       "DescribeAddonVersions",
       "DescribeCluster",
       "DescribeFargateProfile",
+      "DescribeIdentityProviderConfig",
       "DescribeNodegroup",
-      "DescribeUpdate"
+      "DescribeUpdate",
+      "ListTagsForResource"
     ],
     "Write": [
+      "AssociateEncryptionConfig",
+      "AssociateIdentityProviderConfig",
       "CreateAddon",
       "CreateCluster",
       "CreateFargateProfile",
@@ -368,6 +433,7 @@ export class Eks extends PolicyStatement {
       "DeleteCluster",
       "DeleteFargateProfile",
       "DeleteNodegroup",
+      "DisassociateIdentityProviderConfig",
       "UpdateAddon",
       "UpdateClusterConfig",
       "UpdateClusterVersion",
@@ -378,8 +444,8 @@ export class Eks extends PolicyStatement {
       "ListAddons",
       "ListClusters",
       "ListFargateProfiles",
+      "ListIdentityProviderConfigs",
       "ListNodegroups",
-      "ListTagsForResource",
       "ListUpdates"
     ],
     "Tagging": [
@@ -486,5 +552,63 @@ export class Eks extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type identityproviderconfig to the statement
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/authenticate-oidc-identity-provider.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param identityProviderType - Identifier for the identityProviderType.
+   * @param identityProviderConfigName - Identifier for the identityProviderConfigName.
+   * @param uUID - Identifier for the uUID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIdentityproviderconfig(clusterName: string, identityProviderType: string, identityProviderConfigName: string, uUID: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:eks:${Region}:${Account}:identityproviderconfig/${ClusterName}/${IdentityProviderType}/${IdentityProviderConfigName}/${UUID}';
+    arn = arn.replace('${ClusterName}', clusterName);
+    arn = arn.replace('${IdentityProviderType}', identityProviderType);
+    arn = arn.replace('${IdentityProviderConfigName}', identityProviderConfigName);
+    arn = arn.replace('${UUID}', uUID);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Filters access by the clientId present in the associateIdentityProviderConfig request the user makes to the EKS service
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toAssociateIdentityProviderConfig()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifClientId(value: string | string[], operator?: Operator | string) {
+    return this.if(`clientId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the issuerUrl present in the associateIdentityProviderConfig request the user makes to the EKS service
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toAssociateIdentityProviderConfig()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifIssuerUrl(value: string | string[], operator?: Operator | string) {
+    return this.if(`issuerUrl`, value, operator || 'StringLike');
   }
 }

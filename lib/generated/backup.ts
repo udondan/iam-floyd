@@ -19,7 +19,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Allows to copy from a backup vault
+   * Grants permission to copy from a backup vault
    *
    * Access Level: Write
    *
@@ -34,7 +34,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Allows to copy into a backup vault
+   * Grants permission to copy into a backup vault
    *
    * Access Level: Write
    *
@@ -48,7 +48,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Creates a new backup plan
+   * Grants permission to create a new backup plan
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Creates a new resource assignment in a backup plan.
+   * Grants permission to create a new resource assignment in a backup plan
    *
    * Access Level: Write
    *
@@ -77,7 +77,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Creates a new backup vault.
+   * Grants permission to create a new backup vault
    *
    * Access Level: Write
    *
@@ -92,7 +92,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Deletes a backup plan.
+   * Grants permission to delete a backup plan
    *
    * Access Level: Write
    *
@@ -103,7 +103,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Deletes a resource assignment from a backup plan.
+   * Grants permission to delete a resource assignment from a backup plan
    *
    * Access Level: Write
    *
@@ -114,7 +114,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Deletes a backup vault.
+   * Grants permission to delete a backup vault
    *
    * Access Level: Write
    *
@@ -125,7 +125,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Deletes backup vault access policy.
+   * Grants permission to delete backup vault access policy
    *
    * Access Level: Write
    *
@@ -136,7 +136,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Removes notifications from backup vault.
+   * Grants permission to remove notifications from backup vault
    *
    * Access Level: Write
    *
@@ -147,7 +147,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Deletes a recovery point from a backup vault.
+   * Grants permission to delete a recovery point from a backup vault
    *
    * Access Level: Write
    *
@@ -158,7 +158,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Describes a backup job
+   * Grants permission to describe a backup job
    *
    * Access Level: Read
    *
@@ -169,7 +169,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Describes a new backup vault with the specified name.
+   * Grants permission to describe a new backup vault with the specified name
    *
    * Access Level: Read
    *
@@ -180,7 +180,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Describes a copy job
+   * Grants permission to describe a copy job
    *
    * Access Level: Read
    *
@@ -195,7 +195,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Describes global settings
+   * Grants permission to describe global settings
    *
    * Access Level: Read
    *
@@ -206,7 +206,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Describes a protected resource.
+   * Grants permission to describe a protected resource
    *
    * Access Level: Read
    *
@@ -217,7 +217,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Describes a recovery point.
+   * Grants permission to describe a recovery point
    *
    * Access Level: Read
    *
@@ -228,7 +228,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Describes region settings
+   * Grants permission to describe region settings
    *
    * Access Level: Read
    *
@@ -239,7 +239,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Describes a restore job.
+   * Grants permission to describe a restore job
    *
    * Access Level: Read
    *
@@ -250,7 +250,18 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Exports a backup plan as a JSON.
+   * Grants permission to disassociate a recovery point from a backup vault
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DisassociateRecoveryPoint.html
+   */
+  public toDisassociateRecoveryPoint() {
+    return this.to('DisassociateRecoveryPoint');
+  }
+
+  /**
+   * Grants permission to export a backup plan as a JSON
    *
    * Access Level: Read
    *
@@ -261,7 +272,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Gets a backup plan.
+   * Grants permission to get a backup plan
    *
    * Access Level: Read
    *
@@ -272,7 +283,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Transforms a JSON to a backup plan.
+   * Grants permission to transform a JSON to a backup plan
    *
    * Access Level: Read
    *
@@ -283,7 +294,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Transforms a template to a backup plan.
+   * Grants permission to transform a template to a backup plan
    *
    * Access Level: Read
    *
@@ -294,7 +305,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Gets a backup plan resource assignment.
+   * Grants permission to get a backup plan resource assignment
    *
    * Access Level: Read
    *
@@ -305,7 +316,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Gets backup vault access policy.
+   * Grants permission to get backup vault access policy
    *
    * Access Level: Read
    *
@@ -316,7 +327,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Gets backup vault notifications.
+   * Grants permission to get backup vault notifications
    *
    * Access Level: Read
    *
@@ -327,7 +338,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Gets recovery point restore metadata.
+   * Grants permission to get recovery point restore metadata
    *
    * Access Level: Read
    *
@@ -338,7 +349,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Gets supported resource types.
+   * Grants permission to get supported resource types
    *
    * Access Level: Read
    *
@@ -349,7 +360,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Lists backup jobs.
+   * Grants permission to list backup jobs
    *
    * Access Level: List
    *
@@ -360,7 +371,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Lists backup plan templates provided by AWS Backup.
+   * Grants permission to list backup plan templates provided by AWS Backup
    *
    * Access Level: List
    *
@@ -371,7 +382,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Lists backup plan versions.
+   * Grants permission to list backup plan versions
    *
    * Access Level: List
    *
@@ -382,7 +393,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Lists backup plans.
+   * Grants permision to list backup plans
    *
    * Access Level: List
    *
@@ -393,7 +404,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Lists resource assignments for a specific backup plan.
+   * Grants permission to list resource assignments for a specific backup plan
    *
    * Access Level: List
    *
@@ -404,7 +415,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Lists backup vaults.
+   * Grants permission to list backup vaults.
    *
    * Access Level: List
    *
@@ -415,7 +426,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Lists copy jobs
+   * Grants permission to list copy jobs
    *
    * Access Level: List
    *
@@ -426,7 +437,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Lists protected resources by AWS Backup.
+   * Grants permission to list protected resources by AWS Backup
    *
    * Access Level: List
    *
@@ -437,7 +448,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Lists recovery points inside a backup vault.
+   * Grants permission to list recovery points inside a backup vault
    *
    * Access Level: List
    *
@@ -448,7 +459,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Lists recovery points for a resource.
+   * Grants permission to list recovery points for a resource
    *
    * Access Level: List
    *
@@ -459,7 +470,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Lists restore jobs.
+   * Grants permission to lists restore jobs
    *
    * Access Level: List
    *
@@ -470,9 +481,9 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Lists tags for a resource.
+   * Grants permission to list tags for a resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListTags.html
    */
@@ -481,7 +492,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Adds an access policy to the backup vault.
+   * Grants permission to add an access policy to the backup vault
    *
    * Access Level: Write
    *
@@ -492,7 +503,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Adds an SNS topic to the backup vault.
+   * Grants permission to add an SNS topic to the backup vault
    *
    * Access Level: Write
    *
@@ -503,7 +514,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Starts a new backup job.
+   * Grants permission to start a new backup job
    *
    * Access Level: Write
    *
@@ -517,7 +528,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Copy a backup from a source backup vault to a destination backup vault.
+   * Grants permission to copy a backup from a source backup vault to a destination backup vault
    *
    * Access Level: Write
    *
@@ -535,7 +546,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Starts a new restore job.
+   * Grants permission to start a new restore job
    *
    * Access Level: Write
    *
@@ -549,7 +560,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Stops a backup job.
+   * Grants permission to stop a backup job
    *
    * Access Level: Write
    *
@@ -560,7 +571,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Tags a resource.
+   * Grants permission to tag a resource
    *
    * Access Level: Tagging
    *
@@ -575,7 +586,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Untags a resource.
+   * Grants permission to untag a resource
    *
    * Access Level: Tagging
    *
@@ -589,7 +600,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Updates a backup plan.
+   * Grants permission to update a backup plan
    *
    * Access Level: Write
    *
@@ -600,7 +611,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Updates global settings
+   * Grants permission to update the current global settings for the AWS Account
    *
    * Access Level: Write
    *
@@ -611,7 +622,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Updates the lifecycle of the recovery point.
+   * Grants permission to update the lifecycle of the recovery point
    *
    * Access Level: Write
    *
@@ -622,7 +633,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Describes region settings
+   * Grants permission to update the current service opt-in settings for the Region
    *
    * Access Level: Write
    *
@@ -645,6 +656,7 @@ export class Backup extends PolicyStatement {
       "DeleteBackupVaultAccessPolicy",
       "DeleteBackupVaultNotifications",
       "DeleteRecoveryPoint",
+      "DisassociateRecoveryPoint",
       "PutBackupVaultAccessPolicy",
       "PutBackupVaultNotifications",
       "StartBackupJob",
@@ -673,7 +685,8 @@ export class Backup extends PolicyStatement {
       "GetBackupVaultAccessPolicy",
       "GetBackupVaultNotifications",
       "GetRecoveryPointRestoreMetadata",
-      "GetSupportedResourceTypes"
+      "GetSupportedResourceTypes",
+      "ListTags"
     ],
     "List": [
       "ListBackupJobs",
@@ -686,8 +699,7 @@ export class Backup extends PolicyStatement {
       "ListProtectedResources",
       "ListRecoveryPointsByBackupVault",
       "ListRecoveryPointsByResource",
-      "ListRestoreJobs",
-      "ListTags"
+      "ListRestoreJobs"
     ],
     "Tagging": [
       "TagResource",
@@ -762,7 +774,9 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the organization unit.
+   * Filters access by the organization unit
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys
    *
    * Applies to actions:
    * - .toCopyFromBackupVault()
@@ -775,7 +789,9 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the ARN of an backup vault.
+   * Filters access by the ARN of an backup vault
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys
    *
    * Applies to actions:
    * - .toCopyFromBackupVault()

@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [access-analyzer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_iamaccessanalyzer.html).
+ * Statement provider for service [access-analyzer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamaccessanalyzer.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class AccessAnalyzer extends PolicyStatement {
   public servicePrefix = 'access-analyzer';
 
   /**
-   * Statement provider for service [access-analyzer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_iamaccessanalyzer.html).
+   * Statement provider for service [access-analyzer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamaccessanalyzer.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,7 +19,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to apply an archive rule.
+   * Grants permission to apply an archive rule
    *
    * Access Level: Write
    *
@@ -30,7 +30,18 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an analyzer.
+   * Grants permission to create an access preview for the specified analyzer
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateAccessPreview.html
+   */
+  public toCreateAccessPreview() {
+    return this.to('CreateAccessPreview');
+  }
+
+  /**
+   * Grants permission to create an analyzer
    *
    * Access Level: Write
    *
@@ -48,7 +59,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an archive rule for the specified analyzer.
+   * Grants permission to create an archive rule for the specified analyzer
    *
    * Access Level: Write
    *
@@ -59,7 +70,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified analyzer.
+   * Grants permission to delete the specified analyzer
    *
    * Access Level: Write
    *
@@ -70,7 +81,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete archive rules for the specified analyzer.
+   * Grants permission to delete archive rules for the specified analyzer
    *
    * Access Level: Write
    *
@@ -81,7 +92,18 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about an analyzed resource.
+   * Grants permission to retrieve information about an access preview
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAccessPreview.html
+   */
+  public toGetAccessPreview() {
+    return this.to('GetAccessPreview');
+  }
+
+  /**
+   * Grants permission to retrieve information about an analyzed resource
    *
    * Access Level: Read
    *
@@ -92,7 +114,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about analyzers.
+   * Grants permission to retrieve information about analyzers
    *
    * Access Level: Read
    *
@@ -107,7 +129,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about archive rules for the specified analyzer.
+   * Grants permission to retrieve information about archive rules for the specified analyzer
    *
    * Access Level: Read
    *
@@ -118,7 +140,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve findings.
+   * Grants permission to retrieve findings
    *
    * Access Level: Read
    *
@@ -129,7 +151,29 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of resources that have been analyzed.
+   * Grants permission to retrieve a list of findings from an access preview
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAccessPreviewFindings.html
+   */
+  public toListAccessPreviewFindings() {
+    return this.to('ListAccessPreviewFindings');
+  }
+
+  /**
+   * Grants permission to retrieve a list of access previews
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAccessPreviews.html
+   */
+  public toListAccessPreviews() {
+    return this.to('ListAccessPreviews');
+  }
+
+  /**
+   * Grants permission to retrieve a list of resources that have been analyzed
    *
    * Access Level: Read
    *
@@ -140,7 +184,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieves a list of analyzers.
+   * Grants permission to retrieves a list of analyzers
    *
    * Access Level: List
    *
@@ -151,7 +195,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of archive rules from an analyzer.
+   * Grants permission to retrieve a list of archive rules from an analyzer
    *
    * Access Level: List
    *
@@ -162,7 +206,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of findings from an analyzer.
+   * Grants permission to retrieve a list of findings from an analyzer
    *
    * Access Level: Read
    *
@@ -173,7 +217,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of tags applied to a resource.
+   * Grants permission to retrieve a list of tags applied to a resource
    *
    * Access Level: Read
    *
@@ -184,7 +228,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a scan of the policies applied to a resource.
+   * Grants permission to start a scan of the policies applied to a resource
    *
    * Access Level: Write
    *
@@ -195,7 +239,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a tag to a resource.
+   * Grants permission to add a tag to a resource
    *
    * Access Level: Tagging
    *
@@ -210,7 +254,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove a tag from a resource.
+   * Grants permission to remove a tag from a resource
    *
    * Access Level: Tagging
    *
@@ -225,7 +269,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to modify an archive rule.
+   * Grants permission to modify an archive rule
    *
    * Access Level: Write
    *
@@ -236,7 +280,7 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to modify findings.
+   * Grants permission to modify findings
    *
    * Access Level: Write
    *
@@ -249,6 +293,7 @@ export class AccessAnalyzer extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "ApplyArchiveRule",
+      "CreateAccessPreview",
       "CreateAnalyzer",
       "CreateArchiveRule",
       "DeleteAnalyzer",
@@ -258,15 +303,18 @@ export class AccessAnalyzer extends PolicyStatement {
       "UpdateFindings"
     ],
     "Read": [
+      "GetAccessPreview",
       "GetAnalyzedResource",
       "GetAnalyzer",
       "GetArchiveRule",
       "GetFinding",
+      "ListAccessPreviewFindings",
       "ListAnalyzedResources",
       "ListFindings",
       "ListTagsForResource"
     ],
     "List": [
+      "ListAccessPreviews",
       "ListAnalyzers",
       "ListArchiveRules"
     ],

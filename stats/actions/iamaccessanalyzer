@@ -1,12 +1,16 @@
 access-analyzer:ApplyArchiveRule;Write
+access-analyzer:CreateAccessPreview;Write
 access-analyzer:CreateAnalyzer;Write
 access-analyzer:CreateArchiveRule;Write
 access-analyzer:DeleteAnalyzer;Write
 access-analyzer:DeleteArchiveRule;Write
+access-analyzer:GetAccessPreview;Read
 access-analyzer:GetAnalyzedResource;Read
 access-analyzer:GetAnalyzer;Read
 access-analyzer:GetArchiveRule;Read
 access-analyzer:GetFinding;Read
+access-analyzer:ListAccessPreviewFindings;Read
+access-analyzer:ListAccessPreviews;List
 access-analyzer:ListAnalyzedResources;Read
 access-analyzer:ListAnalyzers;List
 access-analyzer:ListArchiveRules;List

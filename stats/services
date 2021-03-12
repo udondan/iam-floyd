@@ -90,9 +90,9 @@ elasticblockstore
 elasticcontainerregistry
 elasticcontainerregistrypublic
 elasticcontainerservice
-elasticcontainerserviceforkubernetes
 elasticfilesystem
 elasticinference
+elastickubernetesservice
 elasticloadbalancing
 elasticloadbalancingv2
 elasticmapreduce

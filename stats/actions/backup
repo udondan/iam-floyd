@@ -17,6 +17,7 @@ backup:DescribeProtectedResource;Read
 backup:DescribeRecoveryPoint;Read
 backup:DescribeRegionSettings;Read
 backup:DescribeRestoreJob;Read
+backup:DisassociateRecoveryPoint;Write
 backup:ExportBackupPlanTemplate;Read
 backup:GetBackupPlan;Read
 backup:GetBackupPlanFromJSON;Read
@@ -37,7 +38,7 @@ backup:ListProtectedResources;List
 backup:ListRecoveryPointsByBackupVault;List
 backup:ListRecoveryPointsByResource;List
 backup:ListRestoreJobs;List
-backup:ListTags;List
+backup:ListTags;Read
 backup:PutBackupVaultAccessPolicy;Write
 backup:PutBackupVaultNotifications;Write
 backup:StartBackupJob;Write

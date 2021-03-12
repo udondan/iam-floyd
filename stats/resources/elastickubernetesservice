@@ -1,4 +1,5 @@
 eks:addon
 eks:cluster
 eks:fargateprofile
+eks:identityproviderconfig
 eks:nodegroup
