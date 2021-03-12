@@ -1,0 +1,11 @@
+ram:AllowsExternalPrincipals
+ram:PermissionArn
+ram:Principal
+ram:RequestTag
+ram:RequestedAllowsExternalPrincipals
+ram:RequestedResourceType
+ram:ResourceArn
+ram:ResourceShareName
+ram:ResourceTag
+ram:ShareOwnerAccountId
+ram:TagKeys

@@ -1,0 +1,5 @@
+iot-device-tester:CheckVersion;Read
+iot-device-tester:DownloadTestSuite;Read
+iot-device-tester:LatestIdt;Read
+iot-device-tester:SendMetrics;Write
+iot-device-tester:SupportedVersion;Read

@@ -1,0 +1,26 @@
+mediastore:CreateContainer;Write
+mediastore:DeleteContainer;Write
+mediastore:DeleteContainerPolicy;Permissions management
+mediastore:DeleteCorsPolicy;Write
+mediastore:DeleteLifecyclePolicy;Write
+mediastore:DeleteMetricPolicy;Write
+mediastore:DeleteObject;Write
+mediastore:DescribeContainer;List
+mediastore:DescribeObject;List
+mediastore:GetContainerPolicy;Read
+mediastore:GetCorsPolicy;Read
+mediastore:GetLifecyclePolicy;Read
+mediastore:GetMetricPolicy;Read
+mediastore:GetObject;Read
+mediastore:ListContainers;List
+mediastore:ListItems;List
+mediastore:ListTagsForResource;Read
+mediastore:PutContainerPolicy;Permissions management
+mediastore:PutCorsPolicy;Write
+mediastore:PutLifecyclePolicy;Write
+mediastore:PutMetricPolicy;Write
+mediastore:PutObject;Write
+mediastore:StartAccessLogging;Write
+mediastore:StopAccessLogging;Write
+mediastore:TagResource;Tagging
+mediastore:UntagResource;Tagging

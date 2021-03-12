@@ -1,0 +1,14 @@
+mediaconnect:AddFlowOutputs;Write
+mediaconnect:CreateFlow;Write
+mediaconnect:DeleteFlow;Write
+mediaconnect:DescribeFlow;Read
+mediaconnect:GrantFlowEntitlements;Write
+mediaconnect:ListEntitlements;List
+mediaconnect:ListFlows;List
+mediaconnect:RemoveFlowOutput;Write
+mediaconnect:RevokeFlowEntitlement;Write
+mediaconnect:StartFlow;Write
+mediaconnect:StopFlow;Write
+mediaconnect:UpdateFlowEntitlement;Write
+mediaconnect:UpdateFlowOutput;Write
+mediaconnect:UpdateFlowSource;Write

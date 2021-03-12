@@ -1,0 +1,6 @@
+ebs:Description
+ebs:ParentSnapshot
+ebs:RequestTag
+ebs:ResourceTag
+ebs:TagKeys
+ebs:VolumeSize

@@ -1,0 +1,7 @@
+elemental-appliances-software:CreateQuote;Tagging
+elemental-appliances-software:GetQuote;Read
+elemental-appliances-software:ListQuotes;List
+elemental-appliances-software:ListTagsForResource;Read
+elemental-appliances-software:TagResource;Tagging
+elemental-appliances-software:UntagResource;Tagging
+elemental-appliances-software:UpdateQuote;Write

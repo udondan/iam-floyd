@@ -1,0 +1,7 @@
+iotwireless:Destination
+iotwireless:DeviceProfile
+iotwireless:ServiceProfile
+iotwireless:WirelessDevice
+iotwireless:WirelessGateway
+iotwireless:cert
+iotwireless:thing

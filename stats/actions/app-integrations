@@ -1,0 +1,11 @@
+app-integrations:CreateEventIntegration;Write
+app-integrations:CreateEventIntegrationAssociation;Write
+app-integrations:DeleteEventIntegration;Write
+app-integrations:DeleteEventIntegrationAssociation;Write
+app-integrations:GetEventIntegration;Read
+app-integrations:ListEventIntegrationAssociations;Read
+app-integrations:ListEventIntegrations;List
+app-integrations:ListTagsForResource;Read
+app-integrations:TagResource;Tagging
+app-integrations:UntagResource;Tagging
+app-integrations:UpdateEventIntegration;Write

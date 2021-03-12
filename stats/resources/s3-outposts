@@ -1,0 +1,4 @@
+s3-outposts:accesspoint
+s3-outposts:bucket
+s3-outposts:endpoint
+s3-outposts:object

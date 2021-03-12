@@ -1,0 +1,13 @@
+iam:access-report
+iam:assumed-role
+iam:federated-user
+iam:group
+iam:instance-profile
+iam:mfa
+iam:oidc-provider
+iam:policy
+iam:role
+iam:saml-provider
+iam:server-certificate
+iam:sms-mfa
+iam:user
