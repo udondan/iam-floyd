@@ -1,1 +1,2 @@
-
+autoscaling:autoScalingGroup
+autoscaling:launchConfiguration

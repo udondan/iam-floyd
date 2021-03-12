@@ -1,1 +1,7 @@
-elasticloadbalancing:loadbalancer
+elasticloadbalancing:listener-rule/app
+elasticloadbalancing:listener-rule/net
+elasticloadbalancing:listener/app
+elasticloadbalancing:listener/net
+elasticloadbalancing:loadbalancer/app/
+elasticloadbalancing:loadbalancer/net/
+elasticloadbalancing:targetgroup

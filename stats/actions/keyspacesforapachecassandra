@@ -1,8 +1,0 @@
-cassandra:Alter;Write
-cassandra:Create;Write
-cassandra:Drop;Write
-cassandra:Modify;Write
-cassandra:Restore;Write
-cassandra:Select;Read
-cassandra:TagResource;Tagging
-cassandra:UntagResource;Tagging

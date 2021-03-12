@@ -1,8 +1,0 @@
-sms-voice:CreateConfigurationSet;Write
-sms-voice:CreateConfigurationSetEventDestination;Write
-sms-voice:DeleteConfigurationSet;Write
-sms-voice:DeleteConfigurationSetEventDestination;Write
-sms-voice:GetConfigurationSetEventDestinations;Read
-sms-voice:ListConfigurationSets;Read
-sms-voice:SendVoiceMessage;Write
-sms-voice:UpdateConfigurationSetEventDestination;Write

@@ -1,5 +1,0 @@
-eks:RequestTag
-eks:ResourceTag
-eks:TagKeys
-eks:clientId
-eks:issuerUrl

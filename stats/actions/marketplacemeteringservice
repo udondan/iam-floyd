@@ -1,4 +1,0 @@
-aws-marketplace:BatchMeterUsage;Write
-aws-marketplace:MeterUsage;Write
-aws-marketplace:RegisterUsage;Write
-aws-marketplace:ResolveCustomer;Write
