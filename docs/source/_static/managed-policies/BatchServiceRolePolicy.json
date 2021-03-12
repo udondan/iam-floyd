@@ -42,6 +42,21 @@
 			"Resource": "*"
 		},
 		{
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream"
+            ],
+            "Resource": "arn:aws:logs:*:*:log-group:/aws/batch/job*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:log-group:/aws/batch/job*:log-stream:*"
+        },
+		{
 			"Effect": "Allow",
 			"Action": [
 				"autoscaling:CreateOrUpdateTags"
