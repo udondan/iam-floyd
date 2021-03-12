@@ -240,8 +240,6 @@ function writeServiceStats() {
 }
 
 export function createModule(module: Module): Promise<void> {
-  serviceStats.push(module.filename);
-
   const stats: Stats = {
     actions: [],
     conditions: [],
@@ -249,10 +247,25 @@ export function createModule(module: Module): Promise<void> {
   };
   if (typeof module.name === 'undefined') {
     //it was skipped, restore from cache
-    restoreFileFromCache(`lib/generated/${module.filename}.ts`);
-    restoreFileFromCache(`stats/actions/${module.filename}`);
-    restoreFileFromCache(`stats/conditions/${module.filename}`);
-    restoreFileFromCache(`stats/resources/${module.filename}`);
+    const moduleFilePath = `lib/generated/${module.filename}.ts`;
+    restoreFileFromCache(moduleFilePath);
+    const moduleFile = new Project().addSourceFileAtPath(moduleFilePath);
+
+    module.servicePrefix = moduleFile
+      .getClasses()[0]
+      .getProperty('servicePrefix')
+      .getInitializer()
+      .getText()
+      .split("'")
+      .join('');
+  }
+
+  serviceStats.push(module.servicePrefix);
+
+  if (typeof module.name === 'undefined') {
+    restoreFileFromCache(`stats/actions/${module.servicePrefix}`);
+    restoreFileFromCache(`stats/conditions/${module.servicePrefix}`);
+    restoreFileFromCache(`stats/resources/${module.servicePrefix}`);
     modules.push(module);
     return Promise.resolve();
   }
@@ -582,7 +595,7 @@ export function createModule(module: Module): Promise<void> {
 
   formatCode(sourceFile);
   const done = sourceFile.save();
-  writeStats(module.filename, stats);
+  writeStats(module.servicePrefix, stats);
   console.log('Done'.green);
   return done;
 }
@@ -895,7 +908,7 @@ function addConditions($: CheerioStatic, module: Module): Module {
         description: description,
         type: type,
         url: url,
-        isGlobal: key.startsWith('aws:'), // HIA
+        isGlobal: key.startsWith('aws:'),
       };
     }
   });
