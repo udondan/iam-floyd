@@ -216,7 +216,11 @@ export function createModules(services: string[]): Promise<void> {
 
 function writeStatsFile(file: string, data: string[]) {
   if (fs.existsSync(file)) {
-    fs.unlinkSync(file);
+    const contents = fs
+      .readFileSync(file, 'utf8')
+      .split('\n')
+      .filter((n) => n);
+    data.push(...contents);
   }
   const uniqueValues = data
     .filter(function (elem, pos) {

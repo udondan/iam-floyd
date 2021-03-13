@@ -2,3 +2,6 @@ ses:FeedbackAddress
 ses:FromAddress
 ses:FromDisplayName
 ses:Recipients
+ses:RequestTag
+ses:ResourceTag
+ses:TagKeys

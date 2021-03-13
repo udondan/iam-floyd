@@ -17,6 +17,7 @@ kinesisanalytics:DeleteApplicationVpcConfiguration;Write
 kinesisanalytics:DescribeApplication;Read
 kinesisanalytics:DescribeApplicationSnapshot;Read
 kinesisanalytics:DiscoverInputSchema;Read
+kinesisanalytics:GetApplicationState;Read
 kinesisanalytics:ListApplicationSnapshots;Read
 kinesisanalytics:ListApplications;List
 kinesisanalytics:ListTagsForResource;Read
