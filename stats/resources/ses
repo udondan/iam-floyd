@@ -1,5 +1,7 @@
 ses:configuration-set
 ses:custom-verification-email-template
+ses:dedicated-ip-pool
+ses:deliverability-test-report
 ses:event-destination
 ses:identity
 ses:receipt-filter

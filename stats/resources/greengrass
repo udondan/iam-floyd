@@ -1,10 +1,13 @@
 greengrass:bulkDeployment
 greengrass:certificateAuthority
+greengrass:component
+greengrass:componentVersion
 greengrass:connectivityInfo
 greengrass:connectorDefinition
 greengrass:connectorDefinitionVersion
 greengrass:coreDefinition
 greengrass:coreDefinitionVersion
+greengrass:coreDevice
 greengrass:deployment
 greengrass:deviceDefinition
 greengrass:deviceDefinitionVersion
