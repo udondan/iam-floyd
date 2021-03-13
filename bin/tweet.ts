@@ -44,7 +44,7 @@ async function main() {
     .filter((content) => content.match(/^(?::warning: )?\*\*/));
 
   split.forEach((content) => {
-    content = content.trim().split('**').join('').replace(':warning:', '⚠️');
+    content = content.trim().split('**').join('').split(':warning:').join('⚠️');
     if (content.length > maxLength) {
       const contentSplit = content.split(/\n+/);
       const headline = contentSplit.shift();
