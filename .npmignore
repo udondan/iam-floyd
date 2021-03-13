@@ -2,6 +2,7 @@
 # Exclude typescript source and config
 *.ts
 tsconfig.json
+tsconfig.tsbuildinfo
 
 # Include javascript files and typescript declarations
 !*.js
@@ -17,6 +18,7 @@ bin/*
 lib/generator/*
 .github/*
 test/*
+test/package.json
 VERSION
 CHANGELOG/*
 docs/*
@@ -24,6 +26,8 @@ examples/*
 helper/*
 README.md
 Makefile
+*.Makefile
 cdk
 stats
 twitter
+.editorconfig
