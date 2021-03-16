@@ -19,14 +19,13 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Creates a new identity pool.
+   * Grants permission to create a new identity pool
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CreateIdentityPool.html
    */
@@ -35,7 +34,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Deletes identities from an identity pool. You can specify a list of 1-60 identities that you want to delete.
+   * Grants permission to delete identities from an identity pool. You can specify a list of 1-60 identities that you want to delete
    *
    * Access Level: Write
    *
@@ -46,7 +45,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Deletes a user pool. Once a pool is deleted, users will not be able to authenticate with the pool.
+   * Grants permission to delete a user pool. Once a pool is deleted, users will not be able to authenticate with the pool
    *
    * Access Level: Write
    *
@@ -57,7 +56,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Returns metadata related to the given identity, including when the identity was created and any associated linked logins.
+   * Grants permission to return metadata related to the given identity, including when the identity was created and any associated linked logins
    *
    * Access Level: Read
    *
@@ -68,7 +67,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users.
+   * Grants permission to get details about a particular identity pool, including the pool name, ID description, creation date, and current number of users
    *
    * Access Level: Read
    *
@@ -79,7 +78,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Returns credentials for the provided identity ID.
+   * Grants permission to return credentials for the provided identity ID
    *
    * Access Level: Read
    *
@@ -90,7 +89,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit linked account.
+   * Grants permission to generate (or retrieve) a Cognito ID. Supplying multiple logins will create an implicit linked account
    *
    * Access Level: Write
    *
@@ -101,7 +100,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Gets the roles for an identity pool.
+   * Grants permission to get the roles for an identity pool
    *
    * Access Level: Read
    *
@@ -112,7 +111,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Gets an OpenID token, using a known Cognito ID.
+   * Grants permission to get an OpenID token, using a known Cognito ID
    *
    * Access Level: Read
    *
@@ -123,7 +122,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Registers (or retrieves) a Cognito IdentityId and an OpenID Connect token for a user authenticated by your backend authentication process.
+   * Grants permission to register (or retrieve) a Cognito IdentityId and an OpenID Connect token for a user authenticated by your backend authentication process
    *
    * Access Level: Read
    *
@@ -134,7 +133,18 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Lists the identities in a pool.
+   * Grants permission to get the principal tags for an identity pool and provider
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetPrincipalTagAttributeMap.html
+   */
+  public toGetPrincipalTagAttributeMap() {
+    return this.to('GetPrincipalTagAttributeMap');
+  }
+
+  /**
+   * Grants permission to list the identities in an identity pool
    *
    * Access Level: List
    *
@@ -145,7 +155,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Lists all of the Cognito identity pools registered for your account.
+   * Grants permission to list all of the Cognito identity pools registered for your account
    *
    * Access Level: List
    *
@@ -156,12 +166,9 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Lists the tags that are assigned to an Amazon Cognito identity pool.
+   * Grants permission to list the tags that are assigned to an Amazon Cognito identity pool
    *
-   * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_ListTagsForResource.html
    */
@@ -170,7 +177,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Retrieves the IdentityID associated with a DeveloperUserIdentifier or the list of DeveloperUserIdentifiers associated with an IdentityId for an existing identity.
+   * Grants permission to retrieve the IdentityId associated with a DeveloperUserIdentifier or the list of DeveloperUserIdentifiers associated with an IdentityId for an existing identity
    *
    * Access Level: Read
    *
@@ -181,7 +188,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Merges two users having different IdentityIds, existing in the same identity pool, and identified by the same developer provider.
+   * Grants permission to merge two users having different IdentityIds, existing in the same identity pool, and identified by the same developer provider
    *
    * Access Level: Write
    *
@@ -192,7 +199,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Sets the roles for an identity pool. These roles are used when making calls to GetCredentialsForIdentity action.
+   * Grants permission to set the roles for an identity pool. These roles are used when making calls to GetCredentialsForIdentity action
    *
    * Access Level: Write
    *
@@ -203,14 +210,24 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Assigns a set of tags to an Amazon Cognito identity pool.
+   * Grants permission to set the principal tags for an identity pool and provider. These tags are used when making calls to GetOpenIdToken action
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_SetPrincipalTagAttributeMap.html
+   */
+  public toSetPrincipalTagAttributeMap() {
+    return this.to('SetPrincipalTagAttributeMap');
+  }
+
+  /**
+   * Grants permission to assign a set of tags to an Amazon Cognito identity pool
    *
    * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_TagResource.html
    */
@@ -219,7 +236,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Unlinks a DeveloperUserIdentifier from an existing identity.
+   * Grants permission to unlink a DeveloperUserIdentifier from an existing identity
    *
    * Access Level: Write
    *
@@ -230,7 +247,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Unlinks a federated identity from an existing account.
+   * Grants permission to unlink a federated identity from an existing account
    *
    * Access Level: Write
    *
@@ -241,13 +258,12 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Removes the specified tags from an Amazon Cognito identity pool.
+   * Grants permission to remove the specified tags from an Amazon Cognito identity pool
    *
    * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UntagResource.html
    */
@@ -256,7 +272,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Updates a user pool.
+   * Grants permission to update an identity pool
    *
    * Access Level: Write
    *
@@ -274,6 +290,7 @@ export class CognitoIdentity extends PolicyStatement {
       "GetId",
       "MergeDeveloperIdentities",
       "SetIdentityPoolRoles",
+      "SetPrincipalTagAttributeMap",
       "UnlinkDeveloperIdentity",
       "UnlinkIdentity",
       "UpdateIdentityPool"
@@ -285,12 +302,13 @@ export class CognitoIdentity extends PolicyStatement {
       "GetIdentityPoolRoles",
       "GetOpenIdToken",
       "GetOpenIdTokenForDeveloperIdentity",
+      "GetPrincipalTagAttributeMap",
+      "ListTagsForResource",
       "LookupDeveloperIdentity"
     ],
     "List": [
       "ListIdentities",
-      "ListIdentityPools",
-      "ListTagsForResource"
+      "ListIdentityPools"
     ],
     "Tagging": [
       "TagResource",

@@ -85,6 +85,17 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to classify the personally identifiable information within given documents at realtime
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ContainsPiiEntities.html
+   */
+  public toContainsPiiEntities() {
+    return this.to('ContainsPiiEntities');
+  }
+
+  /**
    * Grants permission to create a new document classifier that you can use to categorize documents
    *
    * Access Level: Write
@@ -754,6 +765,7 @@ export class Comprehend extends PolicyStatement {
       "BatchDetectSentiment",
       "BatchDetectSyntax",
       "ClassifyDocument",
+      "ContainsPiiEntities",
       "DescribeDocumentClassificationJob",
       "DescribeDocumentClassifier",
       "DescribeDominantLanguageDetectionJob",

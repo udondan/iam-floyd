@@ -4,6 +4,7 @@ comprehend:BatchDetectKeyPhrases;Read
 comprehend:BatchDetectSentiment;Read
 comprehend:BatchDetectSyntax;Read
 comprehend:ClassifyDocument;Read
+comprehend:ContainsPiiEntities;Read
 comprehend:CreateDocumentClassifier;Write
 comprehend:CreateEndpoint;Write
 comprehend:CreateEntityRecognizer;Write

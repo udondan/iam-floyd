@@ -19,7 +19,18 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * This action cancels a data repository task
+   * Grants permission to associate DNS aliases with an Amazon FSx for Windows File Server file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html
+   */
+  public toAssociateFileSystemAliases() {
+    return this.to('AssociateFileSystemAliases');
+  }
+
+  /**
+   * Grants permission to cancel a data repository task
    *
    * Access Level: Write
    *
@@ -30,7 +41,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * This action creates a new backup.
+   * Grants permission to create a new backup of an Amazon FSx file system
    *
    * Access Level: Tagging
    *
@@ -45,7 +56,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * This action creates a new task.
+   * Grants permission to create a new data respository task for an Amazon FSx for Lustre file system
    *
    * Access Level: Tagging
    *
@@ -60,7 +71,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * This action creates a new, empty, Amazon FSx file system
+   * Grants permission to create a new, empty, Amazon FSx file system
    *
    * Access Level: Tagging
    *
@@ -75,7 +86,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * This action creates a new Amazon FSx file system from an existing backup.
+   * Grants permission to create a new Amazon FSx file system from an existing backup
    *
    * Access Level: Tagging
    *
@@ -90,7 +101,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * This action deletes a backup, deleting its contents. After deletion, the backup no longer exists, and its data is gone.
+   * Grants permission to delete a backup, deleting its contents. After deletion, the backup no longer exists, and its data is no longer available.
    *
    * Access Level: Write
    *
@@ -101,7 +112,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * This action deletes a file system, deleting its contents.
+   * Grants permission to delete a file system, deleting its contents and any existing automatic backups of the file system
    *
    * Access Level: Write
    *
@@ -112,7 +123,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * This action returns the description of specific Amazon FSx backups, if one or more BackupIds are provided for that backup. Otherwise, it returns all backups owned by your AWS account in the AWS Region of the endpoint that you're calling.
+   * Grants permission to return the descriptions of all backups owned by your AWS account in the AWS Region of the endpoint that you're calling
    *
    * Access Level: Read
    *
@@ -123,7 +134,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * This action returns the description of specific Amazon FSx data repository task, if one or more TaskIds are provided for that data repository task. Otherwise, it returns all data repository task owned by your AWS account in the AWS Region of the endpoint that you're calling.
+   * Grants permission to return the descriptions of all data repository task owned by your AWS account in the AWS Region of the endpoint that you're calling
    *
    * Access Level: Read
    *
@@ -134,7 +145,18 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * This action returns the description of specific Amazon FSx file systems, if a FileSystemIds value is provided for that file system. Otherwise, it returns descriptions of all file systems owned by your AWS account in the AWS Region of the endpoint that you're calling.
+   * Grants permission to return the description of all DNS aliases owned by your Amazon FSx for Windows File Server file system
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystemAliases.html
+   */
+  public toDescribeFileSystemAliases() {
+    return this.to('DescribeFileSystemAliases');
+  }
+
+  /**
+   * Grants permission to return the descriptions of all file systems owned by your AWS account in the AWS Region of the endpoint that you're calling
    *
    * Access Level: Read
    *
@@ -145,7 +167,18 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * This action lists tags for an Amazon FSx resource.
+   * Grants permission to disassociate file system aliases with an Amazon FSx for Windows File Server file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html
+   */
+  public toDisassociateFileSystemAliases() {
+    return this.to('DisassociateFileSystemAliases');
+  }
+
+  /**
+   * Grants permission to list tags for an Amazon FSx resource
    *
    * Access Level: Read
    *
@@ -156,7 +189,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * This action tags an Amazon FSx resource.
+   * Grants permission to tag an Amazon FSx resource
    *
    * Access Level: Tagging
    *
@@ -171,7 +204,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * This action removes a tag from an Amazon FSx resource.
+   * Grants permission to remove a tag from an Amazon FSx resource
    *
    * Access Level: Tagging
    *
@@ -185,7 +218,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * This action updates file system configuration.
+   * Grants permission to update file system configuration
    *
    * Access Level: Write
    *
@@ -197,9 +230,11 @@ export class Fsx extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "AssociateFileSystemAliases",
       "CancelDataRepositoryTask",
       "DeleteBackup",
       "DeleteFileSystem",
+      "DisassociateFileSystemAliases",
       "UpdateFileSystem"
     ],
     "Tagging": [
@@ -213,6 +248,7 @@ export class Fsx extends PolicyStatement {
     "Read": [
       "DescribeBackups",
       "DescribeDataRepositoryTasks",
+      "DescribeFileSystemAliases",
       "DescribeFileSystems",
       "ListTagsForResource"
     ]

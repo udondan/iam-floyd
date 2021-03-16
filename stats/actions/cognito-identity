@@ -8,12 +8,14 @@ cognito-identity:GetId;Write
 cognito-identity:GetIdentityPoolRoles;Read
 cognito-identity:GetOpenIdToken;Read
 cognito-identity:GetOpenIdTokenForDeveloperIdentity;Read
+cognito-identity:GetPrincipalTagAttributeMap;Read
 cognito-identity:ListIdentities;List
 cognito-identity:ListIdentityPools;List
-cognito-identity:ListTagsForResource;List
+cognito-identity:ListTagsForResource;Read
 cognito-identity:LookupDeveloperIdentity;Read
 cognito-identity:MergeDeveloperIdentities;Write
 cognito-identity:SetIdentityPoolRoles;Write
+cognito-identity:SetPrincipalTagAttributeMap;Write
 cognito-identity:TagResource;Tagging
 cognito-identity:UnlinkDeveloperIdentity;Write
 cognito-identity:UnlinkIdentity;Write

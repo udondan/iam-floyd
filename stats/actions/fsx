@@ -1,3 +1,4 @@
+fsx:AssociateFileSystemAliases;Write
 fsx:CancelDataRepositoryTask;Write
 fsx:CreateBackup;Tagging
 fsx:CreateDataRepositoryTask;Tagging
@@ -7,7 +8,9 @@ fsx:DeleteBackup;Write
 fsx:DeleteFileSystem;Write
 fsx:DescribeBackups;Read
 fsx:DescribeDataRepositoryTasks;Read
+fsx:DescribeFileSystemAliases;Read
 fsx:DescribeFileSystems;Read
+fsx:DisassociateFileSystemAliases;Write
 fsx:ListTagsForResource;Read
 fsx:TagResource;Tagging
 fsx:UntagResource;Tagging
