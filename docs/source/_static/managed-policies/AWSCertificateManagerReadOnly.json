@@ -7,7 +7,7 @@
             "acm:ListCertificates",
             "acm:GetCertificate",
             "acm:ListTagsForCertificate",
-            "acm:GetAcccountConfiguration"
+            "acm:GetAccountConfiguration"
         ],
         "Resource": "*"
     }
