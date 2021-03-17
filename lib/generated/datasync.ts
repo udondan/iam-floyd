@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [datasync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html).
+ * Statement provider for service [datasync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatasync.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Datasync extends PolicyStatement {
   public servicePrefix = 'datasync';
 
   /**
-   * Statement provider for service [datasync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html).
+   * Statement provider for service [datasync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatasync.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,7 +19,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Cancels execution of a sync task.
+   * Grants permission to cancel execution of a sync task
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Activates an agent that you have deployed on your host.
+   * Grants permission to activate an agent that you have deployed on your host
    *
    * Access Level: Write
    *
@@ -45,7 +45,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Creates an endpoint for an Amazon EFS file system.
+   * Grants permission to create an endpoint for an Amazon EFS file system
    *
    * Access Level: Write
    *
@@ -60,7 +60,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Creates an endpoint for an Amazon FSx Windows File Server file system.
+   * Grants permission to create an endpoint for an Amazon FSx Windows File Server file system
    *
    * Access Level: Write
    *
@@ -75,7 +75,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Creates an endpoint for a NFS file system.
+   * Grants permission to create an endpoint for a NFS file system
    *
    * Access Level: Write
    *
@@ -90,7 +90,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Creates an endpoint for a self-managed object storage bucket.
+   * Grants permission to create an endpoint for a self-managed object storage bucket
    *
    * Access Level: Write
    *
@@ -105,7 +105,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Creates an endpoint for an Amazon S3 bucket.
+   * Grants permission to create an endpoint for an Amazon S3 bucket
    *
    * Access Level: Write
    *
@@ -120,7 +120,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Creates an endpoint for an SMB file system.
+   * Grants permission to create an endpoint for an SMB file system
    *
    * Access Level: Write
    *
@@ -135,7 +135,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Creates a sync task.
+   * Grants permission to create a sync task.
    *
    * Access Level: Write
    *
@@ -150,7 +150,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Deletes an agent.
+   * Grants permission to delete an agent
    *
    * Access Level: Write
    *
@@ -161,7 +161,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Deletes the configuration of a location used by AWS DataSync.
+   * Grants permission to delete a location used by AWS DataSync
    *
    * Access Level: Write
    *
@@ -172,7 +172,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Deletes a sync task.
+   * Grants permission to delete a sync task
    *
    * Access Level: Write
    *
@@ -183,7 +183,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Returns metadata such as name, network interfaces, and the status (that is, whether the agent is running or not) about a sync agent.
+   * Grants permission to view metadata such as name, network interfaces, and the status (that is, whether the agent is running or not) about a sync agent
    *
    * Access Level: Read
    *
@@ -194,7 +194,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Returns metadata, such as the path information about an Amazon EFS sync location.
+   * Grants permission to view metadata, such as the path information about an Amazon EFS sync location
    *
    * Access Level: Read
    *
@@ -205,7 +205,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Returns metadata, such as the path information about an Amazon FSx Windows sync location.
+   * Grants permission to view metadata, such as the path information about an Amazon FSx Windows sync location
    *
    * Access Level: Read
    *
@@ -216,7 +216,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Returns metadata, such as the path information, about a NFS sync location.
+   * Grants permission to view metadata, such as the path information, about a NFS sync location
    *
    * Access Level: Read
    *
@@ -227,7 +227,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Returns metadata about a self-managed object storage server location.
+   * Grants permission to view metadata about a self-managed object storage server location
    *
    * Access Level: Read
    *
@@ -238,7 +238,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Returns metadata, such as bucket name, about an Amazon S3 bucket sync location.
+   * Grants permission to view metadata, such as bucket name, about an Amazon S3 bucket sync location
    *
    * Access Level: Read
    *
@@ -249,7 +249,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Returns metadata, such as the path information, about an SMB sync location.
+   * Grants permission to view metadata, such as the path information, about an SMB sync location
    *
    * Access Level: Read
    *
@@ -260,7 +260,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Returns metadata about a sync task.
+   * Grants permission to view metadata about a sync task
    *
    * Access Level: Read
    *
@@ -271,7 +271,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Returns detailed metadata about a sync task that is being executed.
+   * Grants permission to view metadata about a sync task that is being executed
    *
    * Access Level: Read
    *
@@ -282,7 +282,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Returns a list of agents owned by an AWS account in a region specified in the request.
+   * Grants permission to list agents owned by an AWS account in a region specified in the request
    *
    * Access Level: List
    *
@@ -293,7 +293,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Returns a lists of source and destination sync locations.
+   * Grants permission to list source and destination sync locations
    *
    * Access Level: List
    *
@@ -304,7 +304,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * This operation lists the tags that have been added to the specified resource.
+   * Grants permission to list tags that have been added to the specified resource
    *
    * Access Level: Read
    *
@@ -315,7 +315,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Returns a list of executed sync tasks.
+   * Grants permission to list executed sync tasks
    *
    * Access Level: List
    *
@@ -326,7 +326,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Returns a list of all the sync tasks.
+   * Grants permission to list of all the sync tasks
    *
    * Access Level: List
    *
@@ -337,7 +337,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Starts a specific invocation of a sync task.
+   * Grants permission to start a specific invocation of a sync task
    *
    * Access Level: Write
    *
@@ -348,7 +348,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Applies a key-value pair to an AWS resource.
+   * Grants permission to apply a key-value pair to an AWS resource
    *
    * Access Level: Write
    *
@@ -363,7 +363,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * This operation removes one or more tags from the specified resource.
+   * Grants permission to remove one or more tags from the specified resource
    *
    * Access Level: Tagging
    *
@@ -377,7 +377,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Updates the name of an agent.
+   * Grants permission to update the name of an agent.
    *
    * Access Level: Write
    *
@@ -388,7 +388,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Updates the metadata associated with a sync task.
+   * Grants permission to update metadata associated with a sync task
    *
    * Access Level: Write
    *
@@ -396,6 +396,17 @@ export class Datasync extends PolicyStatement {
    */
   public toUpdateTask() {
     return this.to('UpdateTask');
+  }
+
+  /**
+   * Grants permission to update execution of a sync task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateTaskExecution.html
+   */
+  public toUpdateTaskExecution() {
+    return this.to('UpdateTaskExecution');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -415,7 +426,8 @@ export class Datasync extends PolicyStatement {
       "StartTaskExecution",
       "TagResource",
       "UpdateAgent",
-      "UpdateTask"
+      "UpdateTask",
+      "UpdateTaskExecution"
     ],
     "Read": [
       "DescribeAgent",

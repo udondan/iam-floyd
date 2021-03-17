@@ -19,7 +19,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Create a configuration set. Configuration sets are groups of rules that you can apply to the emails you send using Amazon Pinpoint
+   * Grants permission to create a configuration set
    *
    * Access Level: Write
    *
@@ -34,9 +34,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Create an event destination
+   * Grants permission to create a configuration set event destination
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateConfigurationSetEventDestination.html
    */
@@ -45,7 +48,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Create a new pool of dedicated IP addresses
+   * Grants permission to create a new pool of dedicated IP addresses
    *
    * Access Level: Write
    *
@@ -60,7 +63,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Create a new predictive inbox placement test.
+   * Grants permission to create a new predictive inbox placement test
    *
    * Access Level: Write
    *
@@ -75,7 +78,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Verifies an email identity for use with Amazon Pinpoint
+   * Grants permission to start the process of verifying an email identity
    *
    * Access Level: Write
    *
@@ -90,9 +93,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Delete an existing configuration set
+   * Grants permission to delete an existing configuration set
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteConfigurationSet.html
    */
@@ -101,9 +107,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Delete an event destination
+   * Grants permission to delete an event destination
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteConfigurationSetEventDestination.html
    */
@@ -112,9 +121,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Delete a dedicated IP pool
+   * Grants permission to delete a dedicated IP pool
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteDedicatedIpPool.html
    */
@@ -123,9 +135,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Deletes an email identity that you previously verified for use with Amazon Pinpoint
+   * Grants permission to delete an email identity that you previously verified
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteEmailIdentity.html
    */
@@ -134,7 +149,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Obtain information about the email-sending status and capabilities
+   * Grants permission to get information about the email-sending status and capabilities
    *
    * Access Level: Read
    *
@@ -145,7 +160,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Retrieve a list of the blacklists that your dedicated IP addresses appear on
+   * Grants permission to retrieve a list of the deny lists on which your dedicated IP addresses appear
    *
    * Access Level: Read
    *
@@ -156,9 +171,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Get information about an existing configuration set
+   * Grants permission to get information about an existing configuration set
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetConfigurationSet.html
    */
@@ -167,9 +185,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Retrieve a list of event destinations that are associated with a configuration set
+   * Grants permission to retrieve a list of event destinations that are associated with a configuration set
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetConfigurationSetEventDestinations.html
    */
@@ -178,7 +199,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Get information about a dedicated IP address
+   * Grants permission to get information about a dedicated IP address
    *
    * Access Level: Read
    *
@@ -189,9 +210,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * List the dedicated IP addresses that are associated with your Amazon Pinpoint account
+   * Grants permission to list the dedicated IP addresses that are associated with your account
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDedicatedIps.html
    */
@@ -200,7 +224,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Show the status of the Deliverability dashboard
+   * Grants permission to get the status of the Deliverability dashboard
    *
    * Access Level: Read
    *
@@ -211,9 +235,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Retrieve the results of a predictive inbox placement test
+   * Grants permission to retrieve the results of a predictive inbox placement test
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDeliverabilityTestReport.html
    */
@@ -222,9 +249,23 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Retrieve inbox placement and engagement rates for the domains that you use to send email
+   * Grants permission to retrieve all the deliverability data for a specific campaign
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDomainDeliverabilityCampaign.html
+   */
+  public toGetDomainDeliverabilityCampaign() {
+    return this.to('GetDomainDeliverabilityCampaign');
+  }
+
+  /**
+   * Grants permission to retrieve inbox placement and engagement rates for the domains that you use to send email
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDomainStatisticsReport.html
    */
@@ -233,9 +274,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Provides information about a specific identity associated with your Amazon Pinpoint account
+   * Grants permission to get information about a specific identity associated with your account
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetEmailIdentity.html
    */
@@ -244,7 +288,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * List all of the configuration sets associated with your Amazon Pinpoint account in the current region
+   * Grants permission to list all of the configuration sets associated with your account
    *
    * Access Level: List
    *
@@ -255,7 +299,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * List all of the dedicated IP pools that exist in your Amazon Pinpoint account in the current AWS Region
+   * Grants permission to list all of the dedicated IP pools that exist in your account
    *
    * Access Level: List
    *
@@ -266,7 +310,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses
+   * Grants permission to retrieve a list of the predictive inbox placement tests that you've performed, regardless of their statuses
    *
    * Access Level: List
    *
@@ -277,7 +321,18 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Returns a list of all of the email identities that are associated with your Amazon Pinpoint account
+   * Grants permission to retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListDomainDeliverabilityCampaigns.html
+   */
+  public toListDomainDeliverabilityCampaigns() {
+    return this.to('ListDomainDeliverabilityCampaigns');
+  }
+
+  /**
+   * Grants permission to list all of the email identities that are associated with your account
    *
    * Access Level: List
    *
@@ -288,7 +343,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Retrieve a list of the tags (keys and values) that are associated with a specific resource.
+   * Grants permission to retrieve a list of the tags (keys and values) that are associated with a specific resource
    *
    * Access Level: Read
    *
@@ -299,7 +354,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Enable or disable the automatic warm-up feature for dedicated IP addresses
+   * Grants permission to enable or disable the automatic warm-up feature for dedicated IP addresses
    *
    * Access Level: Write
    *
@@ -310,7 +365,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Enable or disable the ability of your account to send email
+   * Grants permission to enable or disable the ability of your account to send email
    *
    * Access Level: Write
    *
@@ -321,9 +376,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Associate a configuration set with a dedicated IP pool
+   * Grants permission to associate a configuration set with a dedicated IP pool
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetDeliveryOptions.html
    */
@@ -332,9 +390,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Enable or disable collection of reputation metrics for emails that you send using a particular configuration set in a specific AWS Region
+   * Grants permission to enable or disable collection of reputation metrics for emails that you send using a particular configuration set
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetReputationOptions.html
    */
@@ -343,9 +404,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Enable or disable email sending for messages that use a particular configuration set in a specific AWS Region
+   * Grants permission to enable or disable email sending for messages that use a particular configuration set
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetSendingOptions.html
    */
@@ -354,9 +418,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Specify a custom domain to use for open and click tracking elements in email that you send using Amazon Pinpoint
+   * Grants permission to specify a custom domain to use for open and click tracking elements in email that you send using a particular configuration set
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetTrackingOptions.html
    */
@@ -365,9 +432,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Move a dedicated IP address to an existing dedicated IP pool
+   * Grants permission to move a dedicated IP address to an existing dedicated IP pool
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutDedicatedIpInPool.html
    */
@@ -376,7 +446,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Put Dedicated IP warm up attributes
+   * Grants permission to enable dedicated IP warm up attributes
    *
    * Access Level: Write
    *
@@ -387,7 +457,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Enable or disable the Deliverability dashboard
+   * Grants permission to enable or disable the Deliverability dashboard
    *
    * Access Level: Write
    *
@@ -398,9 +468,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Used to enable or disable DKIM authentication for an email identity
+   * Grants permission to enable or disable DKIM authentication for an email identity
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityDkimAttributes.html
    */
@@ -409,9 +482,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Used to enable or disable feedback forwarding for an identity
+   * Grants permission to enable or disable feedback forwarding for an identity
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityFeedbackAttributes.html
    */
@@ -420,9 +496,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Used to enable or disable the custom Mail-From domain configuration for an email identity
+   * Grants permission to enable or disable the custom MAIL FROM domain configuration for an email identity
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityMailFromAttributes.html
    */
@@ -431,7 +510,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Sends an email message
+   * Grants permission to send an email message
    *
    * Access Level: Write
    *
@@ -448,7 +527,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Add one or more tags (keys and values) to a specified resource.
+   * Grants permission to add one or more tags (keys and values) to a specified resource
    *
    * Access Level: Tagging
    *
@@ -463,7 +542,7 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Remove one or more tags (keys and values) from a specified resource.
+   * Grants permission to remove one or more tags (keys and values) from a specified resource
    *
    * Access Level: Tagging
    *
@@ -477,9 +556,12 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Update the configuration of an event destination for a configuration set
+   * Grants permission to update the configuration of an event destination for a configuration set
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_UpdateConfigurationSetEventDestination.html
    */
@@ -522,8 +604,10 @@ export class SesPinpoint extends PolicyStatement {
       "GetDedicatedIps",
       "GetDeliverabilityDashboardOptions",
       "GetDeliverabilityTestReport",
+      "GetDomainDeliverabilityCampaign",
       "GetDomainStatisticsReport",
       "GetEmailIdentity",
+      "ListDomainDeliverabilityCampaigns",
       "ListTagsForResource"
     ],
     "List": [
@@ -540,6 +624,8 @@ export class SesPinpoint extends PolicyStatement {
 
   /**
    * Adds a resource of type configuration-set to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateConfigurationSet.html
    *
    * @param configurationSetName - Identifier for the configurationSetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -563,7 +649,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DedicatedIp.html
    *
-   * @param customVerificationEmailTemplateName - Identifier for the customVerificationEmailTemplateName.
+   * @param dedicatedIPPool - Identifier for the dedicatedIPPool.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -571,9 +657,9 @@ export class SesPinpoint extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDedicatedIpPool(customVerificationEmailTemplateName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:dedicated-ip-pool/${CustomVerificationEmailTemplateName}';
-    arn = arn.replace('${CustomVerificationEmailTemplateName}', customVerificationEmailTemplateName);
+  public onDedicatedIpPool(dedicatedIPPool: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ses:${Region}:${Account}:dedicated-ip-pool/${DedicatedIPPool}';
+    arn = arn.replace('${DedicatedIPPool}', dedicatedIPPool);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -585,7 +671,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeliverabilityTestReport.html
    *
-   * @param customVerificationEmailTemplateName - Identifier for the customVerificationEmailTemplateName.
+   * @param reportId - Identifier for the reportId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -593,30 +679,9 @@ export class SesPinpoint extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDeliverabilityTestReport(customVerificationEmailTemplateName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:deliverability-test-report/${CustomVerificationEmailTemplateName}';
-    arn = arn.replace('${CustomVerificationEmailTemplateName}', customVerificationEmailTemplateName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
-   * Adds a resource of type event-destination to the statement
-   *
-   * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_EventDestination.html
-   *
-   * @param configurationSetName - Identifier for the configurationSetName.
-   * @param eventDestinationName - Identifier for the eventDestinationName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   */
-  public onEventDestination(configurationSetName: string, eventDestinationName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}:event-destination/${EventDestinationName}';
-    arn = arn.replace('${ConfigurationSetName}', configurationSetName);
-    arn = arn.replace('${EventDestinationName}', eventDestinationName);
+  public onDeliverabilityTestReport(reportId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ses:${Region}:${Account}:deliverability-test-report/${ReportId}';
+    arn = arn.replace('${ReportId}', reportId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -646,7 +711,9 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * The "Return-Path" address, which specifies where bounces and complaints are sent by email feedback forwarding.
+   * Filters actions based on the "Return-Path" address, which specifies where bounces and complaints are sent by email feedback forwarding
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
    * Applies to actions:
    * - .toSendEmail()
@@ -659,7 +726,9 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * The "From" address of a message.
+   * Filters actions based on the "From" address of a message
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
    * Applies to actions:
    * - .toSendEmail()
@@ -672,7 +741,9 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * The "From" address that is used as the display name of a message.
+   * Filters actions based on the "From" address that is used as the display name of a message
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
    * Applies to actions:
    * - .toSendEmail()
@@ -685,7 +756,9 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * The recipient addresses of a message, which include the "To", "CC", and "BCC" addresses.
+   * Filters actions based on the recipient addresses of a message, which include the "To", "CC", and "BCC" addresses
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
    * Applies to actions:
    * - .toSendEmail()

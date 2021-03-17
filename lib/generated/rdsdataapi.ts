@@ -25,6 +25,7 @@ export class RdsData extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BatchExecuteStatement.html
    */
@@ -39,6 +40,7 @@ export class RdsData extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BeginTransaction.html
    */
@@ -53,6 +55,7 @@ export class RdsData extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - rds-data:BeginTransaction
@@ -68,6 +71,10 @@ export class RdsData extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteSql.html
    */
   public toExecuteSql() {
@@ -81,6 +88,7 @@ export class RdsData extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteStatement.html
    */
@@ -95,6 +103,7 @@ export class RdsData extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - rds-data:BeginTransaction
@@ -115,4 +124,27 @@ export class RdsData extends PolicyStatement {
       "RollbackTransaction"
     ]
   };
+
+  /**
+   * Adds a resource of type cluster to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html
+   *
+   * @param dbClusterInstanceName - Identifier for the dbClusterInstanceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   */
+  public onCluster(dbClusterInstanceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster:${DbClusterInstanceName}';
+    arn = arn.replace('${DbClusterInstanceName}', dbClusterInstanceName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
 }

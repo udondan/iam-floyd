@@ -29,3 +29,4 @@ datasync:TagResource;Write
 datasync:UntagResource;Tagging
 datasync:UpdateAgent;Write
 datasync:UpdateTask;Write
+datasync:UpdateTaskExecution;Write

@@ -37,6 +37,7 @@ ses:GetDedicatedIp;Read
 ses:GetDedicatedIps;Read
 ses:GetDeliverabilityDashboardOptions;Read
 ses:GetDeliverabilityTestReport;Read
+ses:GetDomainDeliverabilityCampaign;Read
 ses:GetDomainStatisticsReport;Read
 ses:GetEmailIdentity;Read
 ses:GetIdentityDkimAttributes;Read
@@ -51,6 +52,7 @@ ses:ListConfigurationSets;List
 ses:ListCustomVerificationEmailTemplates;List
 ses:ListDedicatedIpPools;List
 ses:ListDeliverabilityTestReports;List
+ses:ListDomainDeliverabilityCampaigns;Read
 ses:ListEmailIdentities;List
 ses:ListIdentities;List
 ses:ListIdentityPolicies;List
