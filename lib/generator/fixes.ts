@@ -29,15 +29,6 @@ export const fixes: Fixes = {
       },
     },
   },
-  iotgreengrassv2: {
-    name: 'greengrass-v2',
-  },
-  kinesisanalyticsv2: {
-    name: 'kinesisanalytics-v2',
-  },
-  lexv2: {
-    name: 'lex-v2',
-  },
   pinpointemailservice: {
     name: 'ses-pinpoint',
   },
@@ -98,9 +89,6 @@ export const fixes: Fixes = {
           'arn:${Partition}:deepracer:${Region}:${Account}:evaluation_job/${ResourceId}',
       },
     },
-  },
-  elasticloadbalancingv2: {
-    name: 'elasticloadbalancing-v2',
   },
   events: {
     resourceTypes: {

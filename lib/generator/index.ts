@@ -278,6 +278,11 @@ export function createModule(module: Module): Promise<void> {
 
   if (module.fixes && 'name' in module.fixes) {
     module.name = module.fixes.name;
+  } else if (
+    module.filename.endsWith('v2') &&
+    module.name.substr(-2).toLowerCase() != 'v2'
+  ) {
+    module.name += '-v2';
   }
 
   modules.push(module);
