@@ -23,6 +23,10 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * Dependent actions:
    * - iam:PassRole
    *
@@ -37,6 +41,10 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironmentTemplate.html
    */
   public toCreateEnvironmentTemplate() {
@@ -47,6 +55,10 @@ export class Proton extends PolicyStatement {
    * Grants permission to create an environment template major version
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironmentTemplateMajorVersion.html
    */
@@ -59,6 +71,10 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironmentTemplateMinorVersion.html
    */
   public toCreateEnvironmentTemplateMinorVersion() {
@@ -69,6 +85,10 @@ export class Proton extends PolicyStatement {
    * Grants permission to create a service
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * Dependent actions:
    * - codestar-connections:PassConnection
@@ -84,6 +104,10 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateServiceTemplate.html
    */
   public toCreateServiceTemplate() {
@@ -95,6 +119,10 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateServiceTemplateMajorVersion.html
    */
   public toCreateServiceTemplateMajorVersion() {
@@ -105,6 +133,10 @@ export class Proton extends PolicyStatement {
    * Grants permission to create a service template minor version
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateServiceTemplateMinorVersion.html
    */
@@ -421,6 +453,46 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to list tags of a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permissions to add tags to a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permissions to remove tags from a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to update the account role settings
    *
    * Access Level: Write
@@ -588,7 +660,8 @@ export class Proton extends PolicyStatement {
       "GetServiceInstance",
       "GetServiceTemplate",
       "GetServiceTemplateMajorVersion",
-      "GetServiceTemplateMinorVersion"
+      "GetServiceTemplateMinorVersion",
+      "ListTagsForResource"
     ],
     "List": [
       "ListEnvironmentTemplateMajorVersions",
@@ -600,6 +673,10 @@ export class Proton extends PolicyStatement {
       "ListServiceTemplateMinorVersions",
       "ListServiceTemplates",
       "ListServices"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
@@ -612,6 +689,9 @@ export class Proton extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplate(templateName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment-template/${TemplateName}';
@@ -632,6 +712,9 @@ export class Proton extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplateMajorVersion(templateName: string, majorVersionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment-template/${TemplateName}:${MajorVersionId}';
@@ -654,6 +737,9 @@ export class Proton extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplateMinorVersion(templateName: string, majorVersionId: string, minorVersionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment-template/${TemplateName}:${MajorVersionId}.${MinorVersionId}';
@@ -675,6 +761,9 @@ export class Proton extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onServiceTemplate(templateName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:proton:${Region}:${Account}:service-template/${TemplateName}';
@@ -695,6 +784,9 @@ export class Proton extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onServiceTemplateMajorVersion(templateName: string, majorVersionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:proton:${Region}:${Account}:service-template/${TemplateName}:${MajorVersionId}';
@@ -717,6 +809,9 @@ export class Proton extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onServiceTemplateMinorVersion(templateName: string, majorVersionId: string, minorVersionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:proton:${Region}:${Account}:service-template/${TemplateName}:${MajorVersionId}.${MinorVersionId}';
@@ -738,6 +833,9 @@ export class Proton extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onEnvironment(environmentName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment/${EnvironmentName}';
@@ -757,6 +855,9 @@ export class Proton extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onService(serviceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:proton:${Region}:${Account}:service/${ServiceName}';
@@ -777,6 +878,9 @@ export class Proton extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onServiceInstance(serviceName: string, serviceInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:proton:${Region}:${Account}:service/${ServiceName}/service-instance/${ServiceInstanceName}';

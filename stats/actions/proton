@@ -34,6 +34,9 @@ proton:ListServiceTemplateMajorVersions;List
 proton:ListServiceTemplateMinorVersions;List
 proton:ListServiceTemplates;List
 proton:ListServices;List
+proton:ListTagsForResource;Read
+proton:TagResource;Tagging
+proton:UntagResource;Tagging
 proton:UpdateAccountRoles;Write
 proton:UpdateEnvironment;Write
 proton:UpdateEnvironmentTemplate;Write

@@ -107,6 +107,7 @@ export { Sagemaker } from "./sagemaker";
 export { Ses } from "./ses";
 export { Ssmmessages } from "./sessionmanagermessagegatewayservice";
 export { Sdb } from "./simpledb";
+export { SesV2 } from "./simpleemailservicev2";
 export { Swf } from "./simpleworkflowservice";
 export { Sns } from "./sns";
 export { Sqs } from "./sqs";

@@ -290,6 +290,17 @@ export class AccessAnalyzer extends PolicyStatement {
     return this.to('UpdateFindings');
   }
 
+  /**
+   * Grants permission to validate a policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ValidatePolicy.html
+   */
+  public toValidatePolicy() {
+    return this.to('ValidatePolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "ApplyArchiveRule",
@@ -311,7 +322,8 @@ export class AccessAnalyzer extends PolicyStatement {
       "ListAccessPreviewFindings",
       "ListAnalyzedResources",
       "ListFindings",
-      "ListTagsForResource"
+      "ListTagsForResource",
+      "ValidatePolicy"
     ],
     "List": [
       "ListAccessPreviews",

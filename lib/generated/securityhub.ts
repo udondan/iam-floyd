@@ -249,6 +249,9 @@ export class Securityhub extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableOrganizationAdminAccount.html
    */
   public toDisableOrganizationAdminAccount() {
@@ -303,6 +306,11 @@ export class Securityhub extends PolicyStatement {
    * Grants permission to designate a Security Hub administrator account for your organization
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   * - organizations:EnableAWSServiceAccess
+   * - organizations:RegisterDelegatedAdministrator
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableOrganizationAdminAccount.html
    */
@@ -506,6 +514,9 @@ export class Securityhub extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListOrganizationAdminAccounts.html
    */
   public toListOrganizationAdminAccounts() {
@@ -515,7 +526,7 @@ export class Securityhub extends PolicyStatement {
   /**
    * Grants permission to list of tags associated with a resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListTagsForResource.html
    */
@@ -548,7 +559,7 @@ export class Securityhub extends PolicyStatement {
   /**
    * Grants permission to add tags to a Security Hub resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_TagResource.html
    */
@@ -559,7 +570,7 @@ export class Securityhub extends PolicyStatement {
   /**
    * Grants permission to remove tags from a Security Hub resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UntagResource.html
    */
@@ -657,8 +668,6 @@ export class Securityhub extends PolicyStatement {
       "EnableOrganizationAdminAccount",
       "EnableSecurityHub",
       "InviteMembers",
-      "TagResource",
-      "UntagResource",
       "UpdateActionTarget",
       "UpdateFindings",
       "UpdateInsight",
@@ -683,6 +692,7 @@ export class Securityhub extends PolicyStatement {
       "GetMasterAccount",
       "GetMembers",
       "GetUsage",
+      "ListTagsForResource",
       "SendFindingEvents",
       "SendInsightEvents"
     ],
@@ -692,8 +702,11 @@ export class Securityhub extends PolicyStatement {
       "ListEnabledProductsForImport",
       "ListInvitations",
       "ListMembers",
-      "ListOrganizationAdminAccounts",
-      "ListTagsForResource"
+      "ListOrganizationAdminAccounts"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 

@@ -42,11 +42,11 @@ securityhub:ListEnabledProductsForImport;List
 securityhub:ListInvitations;List
 securityhub:ListMembers;List
 securityhub:ListOrganizationAdminAccounts;List
-securityhub:ListTagsForResource;List
+securityhub:ListTagsForResource;Read
 securityhub:SendFindingEvents;Read
 securityhub:SendInsightEvents;Read
-securityhub:TagResource;Write
-securityhub:UntagResource;Write
+securityhub:TagResource;Tagging
+securityhub:UntagResource;Tagging
 securityhub:UpdateActionTarget;Write
 securityhub:UpdateFindings;Write
 securityhub:UpdateInsight;Write

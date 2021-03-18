@@ -1,9 +1,11 @@
 ses:configuration-set
+ses:contact-list
 ses:custom-verification-email-template
 ses:dedicated-ip-pool
 ses:deliverability-test-report
 ses:event-destination
 ses:identity
+ses:import-job
 ses:receipt-filter
 ses:receipt-rule
 ses:receipt-rule-set

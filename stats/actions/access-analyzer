@@ -21,3 +21,4 @@ access-analyzer:TagResource;Tagging
 access-analyzer:UntagResource;Tagging
 access-analyzer:UpdateArchiveRule;Write
 access-analyzer:UpdateFindings;Write
+access-analyzer:ValidatePolicy;Read
