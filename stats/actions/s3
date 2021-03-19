@@ -1,10 +1,13 @@
 s3:AbortMultipartUpload;Write
 s3:BypassGovernanceRetention;Permissions management
 s3:CreateAccessPoint;Write
+s3:CreateAccessPointForObjectLambda;Write
 s3:CreateBucket;Write
 s3:CreateJob;Write
 s3:DeleteAccessPoint;Write
+s3:DeleteAccessPointForObjectLambda;Write
 s3:DeleteAccessPointPolicy;Permissions management
+s3:DeleteAccessPointPolicyForObjectLambda;Permissions management
 s3:DeleteBucket;Write
 s3:DeleteBucketOwnershipControls;Write
 s3:DeleteBucketPolicy;Permissions management
@@ -19,8 +22,12 @@ s3:DeleteStorageLensConfigurationTagging;Tagging
 s3:DescribeJob;Read
 s3:GetAccelerateConfiguration;Read
 s3:GetAccessPoint;Read
+s3:GetAccessPointConfigurationForObjectLambda;Read
+s3:GetAccessPointForObjectLambda;Read
 s3:GetAccessPointPolicy;Read
+s3:GetAccessPointPolicyForObjectLambda;Read
 s3:GetAccessPointPolicyStatus;Read
+s3:GetAccessPointPolicyStatusForObjectLambda;Read
 s3:GetAccountPublicAccessBlock;Read
 s3:GetAnalyticsConfiguration;Read
 s3:GetBucketAcl;Read
@@ -59,6 +66,7 @@ s3:GetStorageLensConfiguration;Read
 s3:GetStorageLensConfigurationTagging;Read
 s3:GetStorageLensDashboard;Read
 s3:ListAccessPoints;Read
+s3:ListAccessPointsForObjectLambda;Read
 s3:ListAllMyBuckets;List
 s3:ListBucket;List
 s3:ListBucketMultipartUploads;List
@@ -68,7 +76,9 @@ s3:ListMultipartUploadParts;List
 s3:ListStorageLensConfigurations;List
 s3:ObjectOwnerOverrideToBucketOwner;Permissions management
 s3:PutAccelerateConfiguration;Write
+s3:PutAccessPointConfigurationForObjectLambda;Write
 s3:PutAccessPointPolicy;Permissions management
+s3:PutAccessPointPolicyForObjectLambda;Permissions management
 s3:PutAccountPublicAccessBlock;Permissions management
 s3:PutAnalyticsConfiguration;Write
 s3:PutBucketAcl;Permissions management

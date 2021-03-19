@@ -105,6 +105,28 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an object lambda enabled accesspoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html
+   */
+  public toCreateAccessPointForObjectLambda() {
+    return this.to('CreateAccessPointForObjectLambda');
+  }
+
+  /**
    * Grants permission to create a new bucket
    *
    * Access Level: Write
@@ -179,6 +201,28 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the object lambda enabled access point named in the URI
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointArn()
+   * - .ifDataAccessPointAccount()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html
+   */
+  public toDeleteAccessPointForObjectLambda() {
+    return this.to('DeleteAccessPointForObjectLambda');
+  }
+
+  /**
    * Grants permission to delete the policy on a specified access point
    *
    * Access Level: Permissions management
@@ -198,6 +242,28 @@ export class S3 extends PolicyStatement {
    */
   public toDeleteAccessPointPolicy() {
     return this.to('DeleteAccessPointPolicy');
+  }
+
+  /**
+   * Grants permission to delete the policy on a specified object lambda enabled access point
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointArn()
+   * - .ifDataAccessPointAccount()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html
+   */
+  public toDeleteAccessPointPolicyForObjectLambda() {
+    return this.to('DeleteAccessPointPolicyForObjectLambda');
   }
 
   /**
@@ -488,6 +554,50 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the configuration of the object lambda enabled access point
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointArn()
+   * - .ifDataAccessPointAccount()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointConfigurationForObjectLambda.html
+   */
+  public toGetAccessPointConfigurationForObjectLambda() {
+    return this.to('GetAccessPointConfigurationForObjectLambda');
+  }
+
+  /**
+   * Grants permission to create an object lambda enabled accesspoint
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html
+   */
+  public toGetAccessPointForObjectLambda() {
+    return this.to('GetAccessPointForObjectLambda');
+  }
+
+  /**
    * Grants permission to returns the access point policy associated with the specified access point
    *
    * Access Level: Read
@@ -510,6 +620,28 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to returns the access point policy associated with the specified object lambda enabled access point
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html
+   */
+  public toGetAccessPointPolicyForObjectLambda() {
+    return this.to('GetAccessPointPolicyForObjectLambda');
+  }
+
+  /**
    * Grants permission to return the policy status for a specific access point policy
    *
    * Access Level: Read
@@ -529,6 +661,28 @@ export class S3 extends PolicyStatement {
    */
   public toGetAccessPointPolicyStatus() {
     return this.to('GetAccessPointPolicyStatus');
+  }
+
+  /**
+   * Grants permission to return the policy status for a specific object lambda access point policy
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyStatusForObjectLambda.html
+   */
+  public toGetAccessPointPolicyStatusForObjectLambda() {
+    return this.to('GetAccessPointPolicyStatusForObjectLambda');
   }
 
   /**
@@ -1280,6 +1434,25 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list object lambda enabled accesspoints
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html
+   */
+  public toListAccessPointsForObjectLambda() {
+    return this.to('ListAccessPointsForObjectLambda');
+  }
+
+  /**
    * Grants permission to list all buckets owned by the authenticated sender of the request
    *
    * Access Level: List
@@ -1469,6 +1642,28 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set the configuration of the object lambda enabled access point
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointArn()
+   * - .ifDataAccessPointAccount()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointConfigurationForObjectLambda.html
+   */
+  public toPutAccessPointConfigurationForObjectLambda() {
+    return this.to('PutAccessPointConfigurationForObjectLambda');
+  }
+
+  /**
    * Grants permission to associate an access policy with a specified access point
    *
    * Access Level: Permissions management
@@ -1488,6 +1683,28 @@ export class S3 extends PolicyStatement {
    */
   public toPutAccessPointPolicy() {
     return this.to('PutAccessPointPolicy');
+  }
+
+  /**
+   * Grants permission to associate an access policy with a specified object lambda enabled access point
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html
+   */
+  public toPutAccessPointPolicyForObjectLambda() {
+    return this.to('PutAccessPointPolicyForObjectLambda');
   }
 
   /**
@@ -2272,9 +2489,11 @@ export class S3 extends PolicyStatement {
     "Write": [
       "AbortMultipartUpload",
       "CreateAccessPoint",
+      "CreateAccessPointForObjectLambda",
       "CreateBucket",
       "CreateJob",
       "DeleteAccessPoint",
+      "DeleteAccessPointForObjectLambda",
       "DeleteBucket",
       "DeleteBucketOwnershipControls",
       "DeleteBucketWebsite",
@@ -2282,6 +2501,7 @@ export class S3 extends PolicyStatement {
       "DeleteObjectVersion",
       "DeleteStorageLensConfiguration",
       "PutAccelerateConfiguration",
+      "PutAccessPointConfigurationForObjectLambda",
       "PutAnalyticsConfiguration",
       "PutBucketCORS",
       "PutBucketLogging",
@@ -2310,9 +2530,11 @@ export class S3 extends PolicyStatement {
     "Permissions management": [
       "BypassGovernanceRetention",
       "DeleteAccessPointPolicy",
+      "DeleteAccessPointPolicyForObjectLambda",
       "DeleteBucketPolicy",
       "ObjectOwnerOverrideToBucketOwner",
       "PutAccessPointPolicy",
+      "PutAccessPointPolicyForObjectLambda",
       "PutAccountPublicAccessBlock",
       "PutBucketAcl",
       "PutBucketPolicy",
@@ -2336,8 +2558,12 @@ export class S3 extends PolicyStatement {
       "DescribeJob",
       "GetAccelerateConfiguration",
       "GetAccessPoint",
+      "GetAccessPointConfigurationForObjectLambda",
+      "GetAccessPointForObjectLambda",
       "GetAccessPointPolicy",
+      "GetAccessPointPolicyForObjectLambda",
       "GetAccessPointPolicyStatus",
+      "GetAccessPointPolicyStatusForObjectLambda",
       "GetAccountPublicAccessBlock",
       "GetAnalyticsConfiguration",
       "GetBucketAcl",
@@ -2375,7 +2601,8 @@ export class S3 extends PolicyStatement {
       "GetStorageLensConfiguration",
       "GetStorageLensConfigurationTagging",
       "GetStorageLensDashboard",
-      "ListAccessPoints"
+      "ListAccessPoints",
+      "ListAccessPointsForObjectLambda"
     ],
     "List": [
       "ListAllMyBuckets",
@@ -2481,6 +2708,21 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type objectlambdaaccesspoint to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/transforming-objects.html
+   *
+   * @param accessPointName - Identifier for the accessPointName.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onObjectlambdaaccesspoint(accessPointName: string, partition?: string) {
+    var arn = 'arn:${Partition}:s3-object-lambda:{Region}:{Account}:accesspoint/${AccessPointName}';
+    arn = arn.replace('${AccessPointName}', accessPointName);
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Filters access by the network origin (Internet or VPC)
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html#access-points-policies
@@ -2489,15 +2731,22 @@ export class S3 extends PolicyStatement {
    * - .toAbortMultipartUpload()
    * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
+   * - .toCreateAccessPointForObjectLambda()
    * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
    * - .toDeleteObjectVersionTagging()
    * - .toGetAccessPoint()
+   * - .toGetAccessPointConfigurationForObjectLambda()
+   * - .toGetAccessPointForObjectLambda()
    * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
+   * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectLegalHold()
@@ -2510,7 +2759,9 @@ export class S3 extends PolicyStatement {
    * - .toListBucketMultipartUploads()
    * - .toListBucketVersions()
    * - .toListMultipartUploadParts()
+   * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectLegalHold()
@@ -2536,15 +2787,22 @@ export class S3 extends PolicyStatement {
    * - .toAbortMultipartUpload()
    * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
+   * - .toCreateAccessPointForObjectLambda()
    * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
    * - .toDeleteObjectVersionTagging()
    * - .toGetAccessPoint()
+   * - .toGetAccessPointConfigurationForObjectLambda()
+   * - .toGetAccessPointForObjectLambda()
    * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
+   * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectLegalHold()
@@ -2557,7 +2815,9 @@ export class S3 extends PolicyStatement {
    * - .toListBucketMultipartUploads()
    * - .toListBucketVersions()
    * - .toListMultipartUploadParts()
+   * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectLegalHold()
@@ -2583,15 +2843,22 @@ export class S3 extends PolicyStatement {
    * - .toAbortMultipartUpload()
    * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
+   * - .toCreateAccessPointForObjectLambda()
    * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
    * - .toDeleteObjectVersionTagging()
    * - .toGetAccessPoint()
+   * - .toGetAccessPointConfigurationForObjectLambda()
+   * - .toGetAccessPointForObjectLambda()
    * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
+   * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectLegalHold()
@@ -2604,7 +2871,9 @@ export class S3 extends PolicyStatement {
    * - .toListBucketMultipartUploads()
    * - .toListBucketVersions()
    * - .toListMultipartUploadParts()
+   * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectLegalHold()
@@ -2788,10 +3057,13 @@ export class S3 extends PolicyStatement {
    * - .toAbortMultipartUpload()
    * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
+   * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
    * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
    * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
@@ -2806,8 +3078,12 @@ export class S3 extends PolicyStatement {
    * - .toDescribeJob()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
+   * - .toGetAccessPointConfigurationForObjectLambda()
+   * - .toGetAccessPointForObjectLambda()
    * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
+   * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetAccountPublicAccessBlock()
    * - .toGetAnalyticsConfiguration()
    * - .toGetBucketAcl()
@@ -2845,6 +3121,7 @@ export class S3 extends PolicyStatement {
    * - .toGetStorageLensConfigurationTagging()
    * - .toGetStorageLensDashboard()
    * - .toListAccessPoints()
+   * - .toListAccessPointsForObjectLambda()
    * - .toListAllMyBuckets()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
@@ -2854,7 +3131,9 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
+   * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutAccountPublicAccessBlock()
    * - .toPutAnalyticsConfiguration()
    * - .toPutBucketAcl()
@@ -2908,10 +3187,13 @@ export class S3 extends PolicyStatement {
    * - .toAbortMultipartUpload()
    * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
+   * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
    * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
    * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
@@ -2926,8 +3208,12 @@ export class S3 extends PolicyStatement {
    * - .toDescribeJob()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
+   * - .toGetAccessPointConfigurationForObjectLambda()
+   * - .toGetAccessPointForObjectLambda()
    * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
+   * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetAccountPublicAccessBlock()
    * - .toGetAnalyticsConfiguration()
    * - .toGetBucketAcl()
@@ -2965,6 +3251,7 @@ export class S3 extends PolicyStatement {
    * - .toGetStorageLensConfigurationTagging()
    * - .toGetStorageLensDashboard()
    * - .toListAccessPoints()
+   * - .toListAccessPointsForObjectLambda()
    * - .toListAllMyBuckets()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
@@ -2974,7 +3261,9 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
+   * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutAccountPublicAccessBlock()
    * - .toPutAnalyticsConfiguration()
    * - .toPutBucketAcl()
@@ -3040,10 +3329,13 @@ export class S3 extends PolicyStatement {
    * - .toAbortMultipartUpload()
    * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
+   * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
    * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
    * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
@@ -3058,8 +3350,12 @@ export class S3 extends PolicyStatement {
    * - .toDescribeJob()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
+   * - .toGetAccessPointConfigurationForObjectLambda()
+   * - .toGetAccessPointForObjectLambda()
    * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
+   * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetAccountPublicAccessBlock()
    * - .toGetAnalyticsConfiguration()
    * - .toGetBucketAcl()
@@ -3097,6 +3393,7 @@ export class S3 extends PolicyStatement {
    * - .toGetStorageLensConfigurationTagging()
    * - .toGetStorageLensDashboard()
    * - .toListAccessPoints()
+   * - .toListAccessPointsForObjectLambda()
    * - .toListAllMyBuckets()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
@@ -3106,7 +3403,9 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
+   * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutAccountPublicAccessBlock()
    * - .toPutAnalyticsConfiguration()
    * - .toPutBucketAcl()
@@ -3292,10 +3591,13 @@ export class S3 extends PolicyStatement {
    * - .toAbortMultipartUpload()
    * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
+   * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
    * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
    * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
@@ -3310,8 +3612,12 @@ export class S3 extends PolicyStatement {
    * - .toDescribeJob()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
+   * - .toGetAccessPointConfigurationForObjectLambda()
+   * - .toGetAccessPointForObjectLambda()
    * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
+   * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetAccountPublicAccessBlock()
    * - .toGetAnalyticsConfiguration()
    * - .toGetBucketAcl()
@@ -3349,6 +3655,7 @@ export class S3 extends PolicyStatement {
    * - .toGetStorageLensConfigurationTagging()
    * - .toGetStorageLensDashboard()
    * - .toListAccessPoints()
+   * - .toListAccessPointsForObjectLambda()
    * - .toListAllMyBuckets()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
@@ -3358,7 +3665,9 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
+   * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutAccountPublicAccessBlock()
    * - .toPutAnalyticsConfiguration()
    * - .toPutBucketAcl()
@@ -3412,10 +3721,13 @@ export class S3 extends PolicyStatement {
    * - .toAbortMultipartUpload()
    * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
+   * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
    * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
    * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
@@ -3430,8 +3742,12 @@ export class S3 extends PolicyStatement {
    * - .toDescribeJob()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
+   * - .toGetAccessPointConfigurationForObjectLambda()
+   * - .toGetAccessPointForObjectLambda()
    * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
+   * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetAccountPublicAccessBlock()
    * - .toGetAnalyticsConfiguration()
    * - .toGetBucketAcl()
@@ -3469,6 +3785,7 @@ export class S3 extends PolicyStatement {
    * - .toGetStorageLensConfigurationTagging()
    * - .toGetStorageLensDashboard()
    * - .toListAccessPoints()
+   * - .toListAccessPointsForObjectLambda()
    * - .toListAllMyBuckets()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
@@ -3478,7 +3795,9 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
+   * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutAccountPublicAccessBlock()
    * - .toPutAnalyticsConfiguration()
    * - .toPutBucketAcl()
@@ -3575,10 +3894,13 @@ export class S3 extends PolicyStatement {
    * - .toAbortMultipartUpload()
    * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
+   * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
    * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
    * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
@@ -3593,8 +3915,12 @@ export class S3 extends PolicyStatement {
    * - .toDescribeJob()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
+   * - .toGetAccessPointConfigurationForObjectLambda()
+   * - .toGetAccessPointForObjectLambda()
    * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
+   * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetAccountPublicAccessBlock()
    * - .toGetAnalyticsConfiguration()
    * - .toGetBucketAcl()
@@ -3631,6 +3957,7 @@ export class S3 extends PolicyStatement {
    * - .toGetStorageLensConfigurationTagging()
    * - .toGetStorageLensDashboard()
    * - .toListAccessPoints()
+   * - .toListAccessPointsForObjectLambda()
    * - .toListAllMyBuckets()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
@@ -3640,7 +3967,9 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
    * - .toPutAccelerateConfiguration()
+   * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutAccountPublicAccessBlock()
    * - .toPutAnalyticsConfiguration()
    * - .toPutBucketAcl()
