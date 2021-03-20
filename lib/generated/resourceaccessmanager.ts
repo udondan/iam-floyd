@@ -19,7 +19,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Accept the specified resource share invitation
+   * Grant permission to accept the specified resource share invitation
    *
    * Access Level: Write
    *
@@ -33,7 +33,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Associates resource(s) and/or principal(s) to a resource share
+   * Grants permission to associate resource(s) and/or principal(s) to a resource share
    *
    * Access Level: Write
    *
@@ -52,15 +52,9 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Associate a Permission with a Resource Share
+   * Grants permission to associate a Permission with a Resource Share
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAllowsExternalPrincipals()
-   * - .ifResourceShareName()
-   * - .ifPermissionArn()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceSharePermission.html
    */
@@ -69,7 +63,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Create resource share with provided resource(s) and/or principal(s)
+   * Grants permission to create a resource share with provided resource(s) and/or principal(s)
    *
    * Access Level: Write
    *
@@ -88,7 +82,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Delete resource share
+   * Grants permission to delete resource share
    *
    * Access Level: Write
    *
@@ -104,7 +98,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Disassociates resource(s) and/or principal(s) from a resource share
+   * Grants permission to disassociate resource(s) and/or principal(s) from a resource share
    *
    * Access Level: Write
    *
@@ -123,15 +117,9 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Disassociate a Permission from a Resource Share
+   * Grants permission to disassociate a Permission from a Resource Share
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAllowsExternalPrincipals()
-   * - .ifResourceShareName()
-   * - .ifPermissionArn()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DisassociateResourceSharePermission.html
    */
@@ -151,7 +139,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Gets the contents of an AWS RAM permission
+   * Grants permission to get the contents of an AWS RAM permission
    *
    * Access Level: Read
    *
@@ -165,7 +153,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Gets the policies for the specified resources that you own and have shared
+   * Grants permission to get the policies for the specified resources that you own and have shared
    *
    * Access Level: Read
    *
@@ -176,7 +164,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Get a set of resource share associations from a provided list or with a specified status of the specified type
+   * Grants permission to get a set of resource share associations from a provided list or with a specified status of the specified type
    *
    * Access Level: Read
    *
@@ -187,7 +175,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Get resource share invitations by the specified invitation arn or those for the resource share
+   * Grants permission to get resource share invitations by the specified invitation arn or those for the resource share
    *
    * Access Level: Read
    *
@@ -198,7 +186,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Get a set of resource shares from a provided list or with a specified status
+   * Grants permission to get a set of resource shares from a provided list or with a specified status
    *
    * Access Level: Read
    *
@@ -209,7 +197,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Lists the resources in a resource share that is shared with you but that the invitation is still pending for
+   * Grants permission to list the resources in a resource share that is shared with you but that the invitation is still pending for
    *
    * Access Level: Read
    *
@@ -220,7 +208,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Lists the AWS RAM permissions
+   * Grants permission to list the AWS RAM permissions
    *
    * Access Level: List
    *
@@ -231,7 +219,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Lists the principals that you have shared resources with or that have shared resources with you
+   * Grants permission to list the principals that you have shared resources with or that have shared resources with you
    *
    * Access Level: List
    *
@@ -242,7 +230,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * List the Permissions associated with a Resource Share
+   * Grants permission to list the Permissions associated with a Resource Share
    *
    * Access Level: List
    *
@@ -258,7 +246,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Lists the shareable resource types supported by AWS RAM
+   * Grants permission to list the shareable resource types supported by AWS RAM
    *
    * Access Level: List
    *
@@ -269,7 +257,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Lists the resources that you added to a resource shares or the resources that are shared with you
+   * Grants permission to list the resources that you added to resource shares or the resources that are shared with you
    *
    * Access Level: List
    *
@@ -280,7 +268,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Use this API action to promote the resource share
+   * Grants permission to promote the specified resource share
    *
    * Access Level: Write
    *
@@ -291,7 +279,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Reject the specified resource share invitation
+   * Grants permission to reject the specified resource share invitation
    *
    * Access Level: Write
    *
@@ -305,9 +293,9 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Tag the specified resources share
+   * Grants permission to tag the specified resource share
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -320,9 +308,9 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Untag the specified resource share
+   * Grants permission to untag the specified resource share
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -335,7 +323,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Update attributes of the resource share
+   * Grants permission to update attributes of the resource share
    *
    * Access Level: Write
    *
@@ -363,8 +351,6 @@ export class Ram extends PolicyStatement {
       "EnableSharingWithAwsOrganization",
       "PromoteResourceShareCreatedFromPolicy",
       "RejectResourceShareInvitation",
-      "TagResource",
-      "UntagResource",
       "UpdateResourceShare"
     ],
     "Read": [
@@ -381,6 +367,10 @@ export class Ram extends PolicyStatement {
       "ListResourceSharePermissions",
       "ListResourceTypes",
       "ListResources"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
@@ -417,6 +407,9 @@ export class Ram extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifShareOwnerAccountId()
    */
   public onResourceShareInvitation(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ram:${Region}:${Account}:resource-share-invitation/${ResourcePath}';
@@ -448,18 +441,15 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Indicates that the action can only be performed on resource shares that allow or deny sharing with external principals. For example, specify true if the action can only be performed on resource shares that allow sharing with external principals. External principals are AWS accounts that are outside of its AWS organization
+   * Filters access based on resource shares that allow or deny sharing with external principals. For example, specify true if the action can only be performed on resource shares that allow sharing with external principals. External principals are AWS accounts that are outside of its AWS organization
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *
    * Applies to actions:
    * - .toAssociateResourceShare()
-   * - .toAssociateResourceSharePermission()
    * - .toDeleteResourceShare()
    * - .toDisassociateResourceShare()
-   * - .toDisassociateResourceSharePermission()
    * - .toListResourceSharePermissions()
-   * - .toPromoteResourceShareCreatedFromPolicy()
    * - .toUpdateResourceShare()
    *
    * Applies to resource types:
@@ -472,13 +462,11 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Indicates that the action can only be performed on a resource using the specified Permission ARN.
+   * Filters access based on the specified Permission ARN
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *
    * Applies to actions:
-   * - .toAssociateResourceSharePermission()
-   * - .toDisassociateResourceSharePermission()
    * - .toGetPermission()
    *
    * Applies to resource types:
@@ -492,7 +480,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Principals with the specified format can be associated to or disassociated from a resource share
+   * Filters access based on the format of the specified principal
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *
@@ -509,7 +497,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * The request must have the specified value for 'allowExternalPrincipals'. External principals are AWS accounts that are outside of its AWS Organization
+   * Filters access based on the specified value for 'allowExternalPrincipals'. External principals are AWS accounts that are outside of its AWS Organization
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *
@@ -524,7 +512,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Indicates that the action can only be performed on the specified resource type
+   * Filters access based on the specified resource type
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *
@@ -541,7 +529,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Indicates that the action can only be performed on a resource with the specified ARN.
+   * Filters access based on a resource with the specified ARN
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *
@@ -558,18 +546,15 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Indicates that the action can only be performed on a resource share with the specified name.
+   * Filters access based on a resource share with the specified name
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *
    * Applies to actions:
    * - .toAssociateResourceShare()
-   * - .toAssociateResourceSharePermission()
    * - .toDeleteResourceShare()
    * - .toDisassociateResourceShare()
-   * - .toDisassociateResourceSharePermission()
    * - .toListResourceSharePermissions()
-   * - .toPromoteResourceShareCreatedFromPolicy()
    * - .toUpdateResourceShare()
    *
    * Applies to resource types:
@@ -583,13 +568,16 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Indicates that the action can only be performed on resource shares owned by a specific account. For example, you can use this condition key to specify which resource share invitations can be accepted or rejected based on the resource share owner’s account ID.
+   * Filters access based on resource shares owned by a specific account. For example, you can use this condition key to specify which resource share invitations can be accepted or rejected based on the resource share owner’s account ID
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *
    * Applies to actions:
    * - .toAcceptResourceShareInvitation()
    * - .toRejectResourceShareInvitation()
+   *
+   * Applies to resource types:
+   * - resource-share-invitation
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -259,7 +259,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html#access-control-resources
    *
-   * @param resourceName - Identifier for the resourceName.
+   * @param fileSystemId - Identifier for the fileSystemId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -267,9 +267,9 @@ export class Fsx extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onFileSystem(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:file-system/${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
+  public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:file-system/${FileSystemId}';
+    arn = arn.replace('${FileSystemId}', fileSystemId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -281,7 +281,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html#access-control-resources
    *
-   * @param resourceName - Identifier for the resourceName.
+   * @param backupId - Identifier for the backupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -289,9 +289,9 @@ export class Fsx extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onBackup(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:backup/${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
+  public onBackup(backupId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:backup/${BackupId}';
+    arn = arn.replace('${BackupId}', backupId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -303,7 +303,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/LustreGuide/access-control-overview.html#access-control-resources
    *
-   * @param resourceName - Identifier for the resourceName.
+   * @param taskId - Identifier for the taskId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -311,9 +311,9 @@ export class Fsx extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onTask(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:task/${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
+  public onTask(taskId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:task/${TaskId}';
+    arn = arn.replace('${TaskId}', taskId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

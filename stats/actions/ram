@@ -19,6 +19,6 @@ ram:ListResourceTypes;List
 ram:ListResources;List
 ram:PromoteResourceShareCreatedFromPolicy;Write
 ram:RejectResourceShareInvitation;Write
-ram:TagResource;Write
-ram:UntagResource;Write
+ram:TagResource;Tagging
+ram:UntagResource;Tagging
 ram:UpdateResourceShare;Write
