@@ -19,7 +19,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Registers player acceptance or rejection of a proposed FlexMatch match.
+   * Grants permission to register player acceptance or rejection of a proposed FlexMatch match
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Locates and reserves a game server to host a new game session.
+   * Grants permission to locate and reserve a game server to host a new game session
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Defines a new alias for a fleet.
+   * Grants permission to define a new alias for a fleet
    *
    * Access Level: Write
    *
@@ -56,7 +56,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Creates a new game build using files stored in an Amazon S3 bucket.
+   * Grants permission to create a new game build using files stored in an Amazon S3 bucket
    *
    * Access Level: Write
    *
@@ -71,7 +71,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Creates a new fleet of computing resources to run your game servers.
+   * Grants permission to create a new fleet of computing resources to run your game servers
    *
    * Access Level: Write
    *
@@ -86,7 +86,18 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Creates a new game server group, sets up a corresponding Auto Scaling group, and launches instances to host game servers.
+   * Grants permission to specify additional locations for a fleet
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleetLocations.html
+   */
+  public toCreateFleetLocations() {
+    return this.to('CreateFleetLocations');
+  }
+
+  /**
+   * Grants permission to create a new game server group, set up a corresponding Auto Scaling group, and launche instances to host game servers
    *
    * Access Level: Write
    *
@@ -101,7 +112,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Starts a new game session on a specified fleet.
+   * Grants permission to start a new game session on a specified fleet
    *
    * Access Level: Write
    *
@@ -112,7 +123,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Sets up a new queue for processing new game session placement requests.
+   * Grants permission to set up a new queue for processing game session placement requests
    *
    * Access Level: Write
    *
@@ -127,7 +138,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Creates a new FlexMatch matchmaker.
+   * Grants permission to create a new FlexMatch matchmaker
    *
    * Access Level: Write
    *
@@ -142,7 +153,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Creates a new matchmaking rule set for FlexMatch.
+   * Grants permission to create a new matchmaking rule set for FlexMatch
    *
    * Access Level: Write
    *
@@ -157,7 +168,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Reserves an available game session slot for a player.
+   * Grants permission to reserve an available game session slot for a player
    *
    * Access Level: Write
    *
@@ -168,7 +179,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Reserves available game session slots for multiple players.
+   * Grants permission to reserve available game session slots for multiple players
    *
    * Access Level: Write
    *
@@ -179,7 +190,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Creates a new Realtime Servers script.
+   * Grants permission to create a new Realtime Servers script
    *
    * Access Level: Write
    *
@@ -194,7 +205,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Allows GameLift to create or delete a peering connection between a GameLift fleet VPC and a VPC on another AWS account.
+   * Grants permission to allow GameLift to create or delete a peering connection between a GameLift fleet VPC and a VPC on another AWS account
    *
    * Access Level: Write
    *
@@ -205,7 +216,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Establishes a peering connection between your GameLift fleet VPC and a VPC on another account.
+   * Grants permission to establish a peering connection between your GameLift fleet VPC and a VPC on another account
    *
    * Access Level: Write
    *
@@ -216,7 +227,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Deletes an alias.
+   * Grants permission to delete an alias
    *
    * Access Level: Write
    *
@@ -227,7 +238,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Deletes a game build.
+   * Grants permission to delete a game build
    *
    * Access Level: Write
    *
@@ -238,7 +249,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Deletes an empty fleet.
+   * Grants permission to delete an empty fleet
    *
    * Access Level: Write
    *
@@ -249,7 +260,18 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes a game server group and terminates FleetIQ activity for the corresponding Auto Scaling group.
+   * Grants permission to delete locations for a fleet
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteFleetLocations.html
+   */
+  public toDeleteFleetLocations() {
+    return this.to('DeleteFleetLocations');
+  }
+
+  /**
+   * Grants permission to permanently delete a game server group and terminate FleetIQ activity for the corresponding Auto Scaling group
    *
    * Access Level: Write
    *
@@ -260,7 +282,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing game session queue.
+   * Grants permission to delete an existing game session queue
    *
    * Access Level: Write
    *
@@ -271,7 +293,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing FlexMatch matchmaker.
+   * Grants permission to delete an existing FlexMatch matchmaker
    *
    * Access Level: Write
    *
@@ -282,7 +304,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing FlexMatch matchmaking rule set.
+   * Grants permission to delete an existing FlexMatch matchmaking rule set
    *
    * Access Level: Write
    *
@@ -293,7 +315,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Deletes a set of auto-scaling rules.
+   * Grants permission to delete a set of auto-scaling rules
    *
    * Access Level: Write
    *
@@ -304,7 +326,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Deletes a Realtime Servers script.
+   * Grants permission to delete a Realtime Servers script
    *
    * Access Level: Write
    *
@@ -315,7 +337,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Cancels a VPC peering authorization.
+   * Grants permission to cancel a VPC peering authorization
    *
    * Access Level: Write
    *
@@ -326,7 +348,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Removes a peering connection between VPCs.
+   * Grants permission to remove a peering connection between VPCs
    *
    * Access Level: Write
    *
@@ -337,7 +359,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Removes a game server from a game server group.
+   * Grants permission to remove a game server from a game server group
    *
    * Access Level: Write
    *
@@ -348,7 +370,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves properties for an alias.
+   * Grants permission to retrieve properties for an alias
    *
    * Access Level: Read
    *
@@ -359,7 +381,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves properties for a game build.
+   * Grants permission to retrieve properties for a game build
    *
    * Access Level: Read
    *
@@ -370,7 +392,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves the maximum allowed and current usage for EC2 instance types.
+   * Grants permission to retrieve the maximum allowed and current usage for EC2 instance types
    *
    * Access Level: Read
    *
@@ -381,7 +403,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves general properties, including status, for fleets.
+   * Grants permission to retrieve general properties, including status, for fleets
    *
    * Access Level: Read
    *
@@ -392,7 +414,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves the current capacity setting for fleets.
+   * Grants permission to retrieve the current capacity setting for fleets
    *
    * Access Level: Read
    *
@@ -403,7 +425,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves entries from a fleet's event log.
+   * Grants permission to retrieve entries from a fleet's event log
    *
    * Access Level: Read
    *
@@ -414,7 +436,40 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves the inbound connection permissions for a fleet.
+   * Grants permission to retrieve general properties, including statuses, for a fleet's locations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationAttributes.html
+   */
+  public toDescribeFleetLocationAttributes() {
+    return this.to('DescribeFleetLocationAttributes');
+  }
+
+  /**
+   * Grants permission to retrieve the current capacity setting for a fleet's location
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html
+   */
+  public toDescribeFleetLocationCapacity() {
+    return this.to('DescribeFleetLocationCapacity');
+  }
+
+  /**
+   * Grants permission to retrieve utilization statistics for fleet's location
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationUtilization.html
+   */
+  public toDescribeFleetLocationUtilization() {
+    return this.to('DescribeFleetLocationUtilization');
+  }
+
+  /**
+   * Grants permission to retrieve the inbound connection permissions for a fleet
    *
    * Access Level: Read
    *
@@ -425,7 +480,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves utilization statistics for fleets.
+   * Grants permission to retrieve utilization statistics for fleets
    *
    * Access Level: Read
    *
@@ -436,7 +491,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves properties for a game server.
+   * Grants permission to retrieve properties for a game server
    *
    * Access Level: Read
    *
@@ -447,7 +502,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves properties for a game server group.
+   * Grants permission to retrieve properties for a game server group
    *
    * Access Level: Read
    *
@@ -458,7 +513,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves the status of EC2 instances in a game server group.
+   * Grants permission to retrieve the status of EC2 instances in a game server group
    *
    * Access Level: Read
    *
@@ -469,7 +524,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves properties for game sessions in a fleet, including the protection policy.
+   * Grants permission to retrieve properties for game sessions in a fleet, including the protection policy
    *
    * Access Level: Read
    *
@@ -480,7 +535,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves details of a game session placement request.
+   * Grants permission to retrieve details of a game session placement request
    *
    * Access Level: Read
    *
@@ -491,7 +546,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves properties for game session queues.
+   * Grants permission to retrieve properties for game session queues
    *
    * Access Level: Read
    *
@@ -502,7 +557,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves properties for game sessions in a fleet.
+   * Grants permission to retrieve properties for game sessions in a fleet
    *
    * Access Level: Read
    *
@@ -513,7 +568,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves information about instances in a fleet.
+   * Grants permission to retrieve information about instances in a fleet
    *
    * Access Level: Read
    *
@@ -524,7 +579,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves details of matchmaking tickets.
+   * Grants permission to retrieve details of matchmaking tickets
    *
    * Access Level: Read
    *
@@ -535,7 +590,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves properties for FlexMatch matchmakers.
+   * Grants permission to retrieve properties for FlexMatch matchmakers
    *
    * Access Level: Read
    *
@@ -546,7 +601,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves properties for FlexMatch matchmaking rule sets.
+   * Grants permission to retrieve properties for FlexMatch matchmaking rule sets
    *
    * Access Level: Read
    *
@@ -557,7 +612,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves properties for player sessions in a game session.
+   * Grants permission to retrieve properties for player sessions in a game session
    *
    * Access Level: Read
    *
@@ -568,7 +623,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves the current runtime configuration for a fleet.
+   * Grants permission to retrieve the current runtime configuration for a fleet
    *
    * Access Level: Read
    *
@@ -579,7 +634,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves all scaling policies that are applied to a fleet.
+   * Grants permission to retrieve all scaling policies that are applied to a fleet
    *
    * Access Level: Read
    *
@@ -590,7 +645,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves properties for a Realtime Servers script.
+   * Grants permission to retrieve properties for a Realtime Servers script
    *
    * Access Level: Read
    *
@@ -601,7 +656,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves valid VPC peering authorizations.
+   * Grants permission to retrieve valid VPC peering authorizations
    *
    * Access Level: Read
    *
@@ -612,7 +667,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves details on active or pending VPC peering connections.
+   * Grants permission to retrieve details on active or pending VPC peering connections
    *
    * Access Level: Read
    *
@@ -623,7 +678,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves the location of stored logs for a game session.
+   * Grants permission to retrieve the location of stored logs for a game session
    *
    * Access Level: Read
    *
@@ -634,7 +689,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Requests remote access to a specified fleet instance.
+   * Grants permission to request remote access to a specified fleet instance
    *
    * Access Level: Read
    *
@@ -645,7 +700,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves all aliases that are defined in the current region.
+   * Grants permission to retrieve all aliases that are defined in the current region
    *
    * Access Level: List
    *
@@ -656,7 +711,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves all game build in the current region.
+   * Grants permission to retrieve all game build in the current region
    *
    * Access Level: List
    *
@@ -667,7 +722,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves a list of fleet IDs for all fleets in the current region.
+   * Grants permission to retrieve a list of fleet IDs for all fleets in the current region
    *
    * Access Level: List
    *
@@ -678,7 +733,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves all game server groups that are defined in the current region.
+   * Grants permission to retrieve all game server groups that are defined in the current region
    *
    * Access Level: List
    *
@@ -689,7 +744,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves all game servers that are currently running in a game server group.
+   * Grants permission to retrieve all game servers that are currently running in a game server group
    *
    * Access Level: List
    *
@@ -700,7 +755,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves properties for all Realtime Servers scripts in the current region.
+   * Grants permission to retrieve properties for all Realtime Servers scripts in the current region
    *
    * Access Level: List
    *
@@ -711,9 +766,9 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Lists tags for GameLift resources
+   * Grants permission to retrieve tags for GameLift resources
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html
    */
@@ -722,7 +777,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Creates or updates a fleet auto-scaling policy.
+   * Grants permission to create or update a fleet auto-scaling policy
    *
    * Access Level: Write
    *
@@ -733,7 +788,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Notifies GameLift FleetIQ when a new game server is ready to host gameplay.
+   * Grants permission to notify GameLift FleetIQ when a new game server is ready to host gameplay
    *
    * Access Level: Write
    *
@@ -744,9 +799,9 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves fresh upload credentials to use when uploading a new game build.
+   * Grants permission to retrieve fresh upload credentials to use when uploading a new game build
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html
    */
@@ -755,7 +810,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves the fleet ID associated with an alias.
+   * Grants permission to retrieve the fleet ID associated with an alias
    *
    * Access Level: Read
    *
@@ -766,7 +821,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Reinstates suspended FleetIQ activity for a game server group.
+   * Grants permission to reinstate suspended FleetIQ activity for a game server group
    *
    * Access Level: Write
    *
@@ -777,7 +832,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Retrieves game sessions that match a set of search criteria.
+   * Grants permission to retrieve game sessions that match a set of search criteria
    *
    * Access Level: Read
    *
@@ -788,7 +843,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Resumes auto-scaling activity on a fleet after it was suspended with StopFleetActions().
+   * Grants permission to resume auto-scaling activity on a fleet after it was suspended with StopFleetActions()
    *
    * Access Level: Write
    *
@@ -799,7 +854,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Sends a game session placement request to a game session queue.
+   * Grants permission to send a game session placement request to a game session queue
    *
    * Access Level: Write
    *
@@ -810,7 +865,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Requests FlexMatch matchmaking to fill available player slots in an existing game session.
+   * Grants permission to request FlexMatch matchmaking to fill available player slots in an existing game session
    *
    * Access Level: Write
    *
@@ -821,7 +876,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Requests FlexMatch matchmaking for one or a group of players and game session placement for a resulting match.
+   * Grants permission to request FlexMatch matchmaking for one or a group of players and initiate game session placement
    *
    * Access Level: Write
    *
@@ -832,7 +887,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Suspends auto-scaling activity on a fleet.
+   * Grants permission to suspend auto-scaling activity on a fleet
    *
    * Access Level: Write
    *
@@ -843,7 +898,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Cancels a game session placement request that is in progress.
+   * Grants permission to cancel a game session placement request that is in progress
    *
    * Access Level: Write
    *
@@ -854,7 +909,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Cancels a matchmaking or match backfill request that is in progress.
+   * Grants permission to cancel a matchmaking or match backfill request that is in progress
    *
    * Access Level: Write
    *
@@ -865,7 +920,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Temporarily stops FleetIQ activity for a game server group.
+   * Grants permission to temporarily stop FleetIQ activity for a game server group
    *
    * Access Level: Write
    *
@@ -876,7 +931,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Tags GameLift resources
+   * Grants permission to tag GameLift resources
    *
    * Access Level: Tagging
    *
@@ -891,7 +946,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Untags GameLift resources
+   * Grants permission to untag GameLift resources
    *
    * Access Level: Tagging
    *
@@ -905,7 +960,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Updates the properties of an existing alias.
+   * Grants permission to update the properties of an existing alias
    *
    * Access Level: Write
    *
@@ -916,7 +971,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Updates an existing build's metadata.
+   * Grants permission to update an existing build's metadata
    *
    * Access Level: Write
    *
@@ -927,7 +982,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Updates the general properties of an existing fleet.
+   * Grants permission to update the general properties of an existing fleet
    *
    * Access Level: Write
    *
@@ -938,7 +993,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Adjusts a fleet's capacity settings.
+   * Grants permission to adjust a fleet's capacity settings
    *
    * Access Level: Write
    *
@@ -949,7 +1004,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Adjusts a fleet's port settings.
+   * Grants permission to adjust a fleet's port settings
    *
    * Access Level: Write
    *
@@ -960,7 +1015,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Changes game server properties, health status, or utilization status.
+   * Grants permission to change game server properties, health status, or utilization status
    *
    * Access Level: Write
    *
@@ -971,7 +1026,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Updates properties for game server group, including allowed instance types.
+   * Grants permission to update properties for game server group, including allowed instance types
    *
    * Access Level: Write
    *
@@ -982,7 +1037,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Updates the properties of an existing game session.
+   * Grants permission to update the properties of an existing game session
    *
    * Access Level: Write
    *
@@ -993,7 +1048,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Updates properties of an existing game session queue.
+   * Grants permission to update properties of an existing game session queue
    *
    * Access Level: Write
    *
@@ -1004,7 +1059,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Updates properties of an existing FlexMatch matchmaking configuration.
+   * Grants permission to update properties of an existing FlexMatch matchmaking configuration
    *
    * Access Level: Write
    *
@@ -1015,7 +1070,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Updates how server processes are configured on instances in an existing fleet.
+   * Grants permission to update how server processes are configured on instances in an existing fleet
    *
    * Access Level: Write
    *
@@ -1026,7 +1081,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Updates the metadata and content of an existing Realtime Servers script.
+   * Grants permission to update the metadata and content of an existing Realtime Servers script
    *
    * Access Level: Write
    *
@@ -1037,7 +1092,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Validates the syntax of a FlexMatch matchmaking rule set.
+   * Grants permission to validate the syntax of a FlexMatch matchmaking rule set
    *
    * Access Level: Read
    *
@@ -1054,6 +1109,7 @@ export class Gamelift extends PolicyStatement {
       "CreateAlias",
       "CreateBuild",
       "CreateFleet",
+      "CreateFleetLocations",
       "CreateGameServerGroup",
       "CreateGameSession",
       "CreateGameSessionQueue",
@@ -1067,6 +1123,7 @@ export class Gamelift extends PolicyStatement {
       "DeleteAlias",
       "DeleteBuild",
       "DeleteFleet",
+      "DeleteFleetLocations",
       "DeleteGameServerGroup",
       "DeleteGameSessionQueue",
       "DeleteMatchmakingConfiguration",
@@ -1078,6 +1135,7 @@ export class Gamelift extends PolicyStatement {
       "DeregisterGameServer",
       "PutScalingPolicy",
       "RegisterGameServer",
+      "RequestUploadCredentials",
       "ResumeGameServerGroup",
       "StartFleetActions",
       "StartGameSessionPlacement",
@@ -1107,6 +1165,9 @@ export class Gamelift extends PolicyStatement {
       "DescribeFleetAttributes",
       "DescribeFleetCapacity",
       "DescribeFleetEvents",
+      "DescribeFleetLocationAttributes",
+      "DescribeFleetLocationCapacity",
+      "DescribeFleetLocationUtilization",
       "DescribeFleetPortSettings",
       "DescribeFleetUtilization",
       "DescribeGameServer",
@@ -1128,7 +1189,7 @@ export class Gamelift extends PolicyStatement {
       "DescribeVpcPeeringConnections",
       "GetGameSessionLogUrl",
       "GetInstanceAccess",
-      "RequestUploadCredentials",
+      "ListTagsForResource",
       "ResolveAlias",
       "SearchGameSessions",
       "ValidateMatchmakingRuleSet"
@@ -1139,8 +1200,7 @@ export class Gamelift extends PolicyStatement {
       "ListFleets",
       "ListGameServerGroups",
       "ListGameServers",
-      "ListScripts",
-      "ListTagsForResource"
+      "ListScripts"
     ],
     "Tagging": [
       "TagResource",

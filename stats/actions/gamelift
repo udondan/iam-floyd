@@ -3,6 +3,7 @@ gamelift:ClaimGameServer;Write
 gamelift:CreateAlias;Write
 gamelift:CreateBuild;Write
 gamelift:CreateFleet;Write
+gamelift:CreateFleetLocations;Write
 gamelift:CreateGameServerGroup;Write
 gamelift:CreateGameSession;Write
 gamelift:CreateGameSessionQueue;Write
@@ -16,6 +17,7 @@ gamelift:CreateVpcPeeringConnection;Write
 gamelift:DeleteAlias;Write
 gamelift:DeleteBuild;Write
 gamelift:DeleteFleet;Write
+gamelift:DeleteFleetLocations;Write
 gamelift:DeleteGameServerGroup;Write
 gamelift:DeleteGameSessionQueue;Write
 gamelift:DeleteMatchmakingConfiguration;Write
@@ -31,6 +33,9 @@ gamelift:DescribeEC2InstanceLimits;Read
 gamelift:DescribeFleetAttributes;Read
 gamelift:DescribeFleetCapacity;Read
 gamelift:DescribeFleetEvents;Read
+gamelift:DescribeFleetLocationAttributes;Read
+gamelift:DescribeFleetLocationCapacity;Read
+gamelift:DescribeFleetLocationUtilization;Read
 gamelift:DescribeFleetPortSettings;Read
 gamelift:DescribeFleetUtilization;Read
 gamelift:DescribeGameServer;Read
@@ -58,10 +63,10 @@ gamelift:ListFleets;List
 gamelift:ListGameServerGroups;List
 gamelift:ListGameServers;List
 gamelift:ListScripts;List
-gamelift:ListTagsForResource;List
+gamelift:ListTagsForResource;Read
 gamelift:PutScalingPolicy;Write
 gamelift:RegisterGameServer;Write
-gamelift:RequestUploadCredentials;Read
+gamelift:RequestUploadCredentials;Write
 gamelift:ResolveAlias;Read
 gamelift:ResumeGameServerGroup;Write
 gamelift:SearchGameSessions;Read
