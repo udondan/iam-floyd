@@ -67,6 +67,17 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to create a prepared statement.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreatePreparedStatement.html
+   */
+  public toCreatePreparedStatement() {
+    return this.to('CreatePreparedStatement');
+  }
+
+  /**
    * Grants permissions to create a workgroup
    *
    * Access Level: Write
@@ -101,6 +112,17 @@ export class Athena extends PolicyStatement {
    */
   public toDeleteNamedQuery() {
     return this.to('DeleteNamedQuery');
+  }
+
+  /**
+   * Grants permissions to delete a prepared statement specified.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_DeletePreparedStatement.html
+   */
+  public toDeletePreparedStatement() {
+    return this.to('DeletePreparedStatement');
   }
 
   /**
@@ -145,6 +167,17 @@ export class Athena extends PolicyStatement {
    */
   public toGetNamedQuery() {
     return this.to('GetNamedQuery');
+  }
+
+  /**
+   * Grants permissions to get information about the specified prepared statement.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetPreparedStatement.html
+   */
+  public toGetPreparedStatement() {
+    return this.to('GetPreparedStatement');
   }
 
   /**
@@ -244,6 +277,17 @@ export class Athena extends PolicyStatement {
    */
   public toListNamedQueries() {
     return this.to('ListNamedQueries');
+  }
+
+  /**
+   * Grants permissions to return a list of prepared statements for the specified workgroup.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListPreparedStatements.html
+   */
+  public toListPreparedStatements() {
+    return this.to('ListPreparedStatements');
   }
 
   /**
@@ -353,6 +397,17 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to update a prepared statement.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdatePreparedStatement.html
+   */
+  public toUpdatePreparedStatement() {
+    return this.to('UpdatePreparedStatement');
+  }
+
+  /**
    * Grants permissions to update a workgroup
    *
    * Access Level: Write
@@ -370,6 +425,7 @@ export class Athena extends PolicyStatement {
       "GetDataCatalog",
       "GetDatabase",
       "GetNamedQuery",
+      "GetPreparedStatement",
       "GetQueryExecution",
       "GetQueryResults",
       "GetQueryResultsStream",
@@ -383,19 +439,23 @@ export class Athena extends PolicyStatement {
     "Write": [
       "CreateDataCatalog",
       "CreateNamedQuery",
+      "CreatePreparedStatement",
       "CreateWorkGroup",
       "DeleteDataCatalog",
       "DeleteNamedQuery",
+      "DeletePreparedStatement",
       "DeleteWorkGroup",
       "StartQueryExecution",
       "StopQueryExecution",
       "UpdateDataCatalog",
+      "UpdatePreparedStatement",
       "UpdateWorkGroup"
     ],
     "List": [
       "ListDataCatalogs",
       "ListDatabases",
       "ListNamedQueries",
+      "ListPreparedStatements",
       "ListWorkGroups"
     ],
     "Tagging": [

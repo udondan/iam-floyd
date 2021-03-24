@@ -2,13 +2,16 @@ athena:BatchGetNamedQuery;Read
 athena:BatchGetQueryExecution;Read
 athena:CreateDataCatalog;Write
 athena:CreateNamedQuery;Write
+athena:CreatePreparedStatement;Write
 athena:CreateWorkGroup;Write
 athena:DeleteDataCatalog;Write
 athena:DeleteNamedQuery;Write
+athena:DeletePreparedStatement;Write
 athena:DeleteWorkGroup;Write
 athena:GetDataCatalog;Read
 athena:GetDatabase;Read
 athena:GetNamedQuery;Read
+athena:GetPreparedStatement;Read
 athena:GetQueryExecution;Read
 athena:GetQueryResults;Read
 athena:GetQueryResultsStream;Read
@@ -18,6 +21,7 @@ athena:ListDataCatalogs;List
 athena:ListDatabases;List
 athena:ListEngineVersions;Read
 athena:ListNamedQueries;List
+athena:ListPreparedStatements;List
 athena:ListQueryExecutions;Read
 athena:ListTableMetadata;Read
 athena:ListTagsForResource;Read
@@ -27,4 +31,5 @@ athena:StopQueryExecution;Write
 athena:TagResource;Tagging
 athena:UntagResource;Tagging
 athena:UpdateDataCatalog;Write
+athena:UpdatePreparedStatement;Write
 athena:UpdateWorkGroup;Write
