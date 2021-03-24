@@ -22,6 +22,17 @@
         {
             "Effect": "Allow",
             "Action": [
+                "ssm:UpdateServiceSetting",
+                "ssm:GetServiceSetting"
+            ],
+            "Resource": [
+                "arn:aws:ssm:*:*:servicesetting/ssm/opsitem/*",
+                "arn:aws:ssm:*:*:servicesetting/ssm/opsdata/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
                 "ec2:DescribeInstanceAttribute",
                 "ec2:DescribeInstanceStatus",
                 "ec2:DescribeInstances"

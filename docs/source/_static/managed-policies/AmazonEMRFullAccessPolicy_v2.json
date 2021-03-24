@@ -105,10 +105,13 @@
 			"Sid": "ElasticMapReduceServiceLinkedRole",
 			"Effect": "Allow",
 			"Action": "iam:CreateServiceLinkedRole",
-			"Resource": "*",
+			"Resource": "arn:aws:iam::*:role/aws-service-role/elasticmapreduce.amazonaws.com*/AWSServiceRoleForEMRCleanup*",
 			"Condition": {
-				"StringLike": {
-					"iam:AWSServiceName": "elasticmapreduce.amazonaws.com*"
+				"StringEquals": {
+					"iam:AWSServiceName": [
+						"elasticmapreduce.amazonaws.com",
+						"elasticmapreduce.amazonaws.com.cn"
+					]
 				}
 			}
 		},
@@ -126,7 +129,7 @@
 				"ec2:DescribeSubnets",
 				"ec2:DescribeVpcs",
 				"ec2:DescribeVpcEndpoints",
-				"s3:ListBuckets",
+				"s3:ListAllMyBuckets",
 				"iam:ListRoles"
 			],
 			"Resource": "*"
