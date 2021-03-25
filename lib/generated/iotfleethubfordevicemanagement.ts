@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [iotfleethub](https://docs.aws.amazon.com/service-authorization/latest/reference/list_fleethubforawsiotdevicemanagement.html).
+ * Statement provider for service [iotfleethub](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Iotfleethub extends PolicyStatement {
   public servicePrefix = 'iotfleethub';
 
   /**
-   * Statement provider for service [iotfleethub](https://docs.aws.amazon.com/service-authorization/latest/reference/list_fleethubforawsiotdevicemanagement.html).
+   * Statement provider for service [iotfleethub](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -30,22 +30,11 @@ export class Iotfleethub extends PolicyStatement {
    * Dependent actions:
    * - sso:CreateManagedApplicationInstance
    * - sso:DescribeRegisteredRegions
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotfleethub_CreateApplication.html
    */
   public toCreateApplication() {
     return this.to('CreateApplication');
-  }
-
-  /**
-   * Grants permission to create an dashboard
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   */
-  public toCreateDashboard() {
-    return this.to('CreateDashboard');
   }
 
   /**
@@ -55,54 +44,33 @@ export class Iotfleethub extends PolicyStatement {
    *
    * Dependent actions:
    * - sso:DeleteManagedApplicationInstance
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotfleethub_DeleteApplication.html
    */
   public toDeleteApplication() {
     return this.to('DeleteApplication');
   }
 
   /**
-   * Grants permission to delete an dashboard
-   *
-   * Access Level: Write
-   */
-  public toDeleteDashboard() {
-    return this.to('DeleteDashboard');
-  }
-
-  /**
    * Grants permission to describe an application
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotfleethub_DescribeApplication.html
    */
   public toDescribeApplication() {
     return this.to('DescribeApplication');
   }
 
   /**
-   * Grants permission to describe an dashboard
-   *
-   * Access Level: Read
-   */
-  public toDescribeDashboard() {
-    return this.to('DescribeDashboard');
-  }
-
-  /**
    * Grants permission to list all applications
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotfleethub_ListApplications.html
    */
   public toListApplications() {
     return this.to('ListApplications');
-  }
-
-  /**
-   * Grants permission to list all dashboards
-   *
-   * Access Level: List
-   */
-  public toListDashboards() {
-    return this.to('ListDashboards');
   }
 
   /**
@@ -110,7 +78,7 @@ export class Iotfleethub extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot/latest/APIReference/API_Operations.htmlAPI_ListTagsForResource.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotfleethub_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -125,7 +93,7 @@ export class Iotfleethub extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/iot/latest/APIReference/API_Operations.htmlAPI_TagResource.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotfleethub_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -139,7 +107,7 @@ export class Iotfleethub extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot/latest/APIReference/API_Operations.htmlAPI_UntagResource.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotfleethub_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -149,37 +117,25 @@ export class Iotfleethub extends PolicyStatement {
    * Grants permission to update an application
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotfleethub_UpdateApplication.html
    */
   public toUpdateApplication() {
     return this.to('UpdateApplication');
   }
 
-  /**
-   * Grants permission to update an dashboard
-   *
-   * Access Level: Write
-   */
-  public toUpdateDashboard() {
-    return this.to('UpdateDashboard');
-  }
-
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CreateApplication",
-      "CreateDashboard",
       "DeleteApplication",
-      "DeleteDashboard",
-      "UpdateApplication",
-      "UpdateDashboard"
+      "UpdateApplication"
     ],
     "Read": [
       "DescribeApplication",
-      "DescribeDashboard",
       "ListTagsForResource"
     ],
     "List": [
-      "ListApplications",
-      "ListDashboards"
+      "ListApplications"
     ],
     "Tagging": [
       "TagResource",
@@ -189,6 +145,8 @@ export class Iotfleethub extends PolicyStatement {
 
   /**
    * Adds a resource of type application to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotfleethub_ApplicationSummary.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -200,24 +158,6 @@ export class Iotfleethub extends PolicyStatement {
   public onApplication(applicationId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotfleethub::${Account}:application/${ApplicationId}';
     arn = arn.replace('${ApplicationId}', applicationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
-   * Adds a resource of type dashboard to the statement
-   *
-   * @param dashboardId - Identifier for the dashboardId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDashboard(dashboardId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotfleethub::${Account}:dashboard/${DashboardId}';
-    arn = arn.replace('${DashboardId}', dashboardId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

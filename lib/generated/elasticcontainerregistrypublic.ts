@@ -1,5 +1,5 @@
 import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [ecr-public](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerregistrypublic.html).
@@ -55,6 +55,10 @@ export class EcrPublic extends PolicyStatement {
    * Grants permission to create an image repository
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_CreateRepository.html
    */
@@ -184,6 +188,17 @@ export class EcrPublic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the tags for an Amazon ECR resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to create or update the image manifest associated with an image
    *
    * Access Level: Write
@@ -228,6 +243,36 @@ export class EcrPublic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to tag an Amazon ECR resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag an Amazon ECR resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonECRPublic/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to upload an image layer part to Amazon ECR Public
    *
    * Access Level: Write
@@ -245,7 +290,8 @@ export class EcrPublic extends PolicyStatement {
       "GetAuthorizationToken",
       "GetRegistryCatalogData",
       "GetRepositoryCatalogData",
-      "GetRepositoryPolicy"
+      "GetRepositoryPolicy",
+      "ListTagsForResource"
     ],
     "Write": [
       "BatchDeleteImage",
@@ -266,6 +312,10 @@ export class EcrPublic extends PolicyStatement {
     ],
     "Permissions management": [
       "SetRepositoryPolicy"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
@@ -277,6 +327,10 @@ export class EcrPublic extends PolicyStatement {
    * @param repositoryName - Identifier for the repositoryName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onRepository(repositoryName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecr-public::${Account}:repository/${RepositoryName}';
@@ -301,5 +355,21 @@ export class EcrPublic extends PolicyStatement {
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on tag-value associated with the resource
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to resource types:
+   * - repository
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

@@ -13,8 +13,11 @@ ecr-public:GetRegistryCatalogData;Read
 ecr-public:GetRepositoryCatalogData;Read
 ecr-public:GetRepositoryPolicy;Read
 ecr-public:InitiateLayerUpload;Write
+ecr-public:ListTagsForResource;Read
 ecr-public:PutImage;Write
 ecr-public:PutRegistryCatalogData;Write
 ecr-public:PutRepositoryCatalogData;Write
 ecr-public:SetRepositoryPolicy;Permissions management
+ecr-public:TagResource;Tagging
+ecr-public:UntagResource;Tagging
 ecr-public:UploadLayerPart;Write
