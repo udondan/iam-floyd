@@ -12,7 +12,6 @@
             "Effect": "Allow",
             "Action": [
                 "s3:CreateBucket",
-                "s3:PutBucketEncryption",
                 "s3:PutEncryptionConfiguration"
             ],
             "Resource": [
@@ -115,7 +114,6 @@
         {
             "Effect": "Allow",
             "Action": [
-                "lambda:GetLayerVersionByArn",
                 "lambda:GetLayerVersion",
                 "lambda:PublishLayerVersion"
             ],
