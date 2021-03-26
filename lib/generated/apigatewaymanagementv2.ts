@@ -1,0 +1,1034 @@
+import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement, Operator } from "../shared";
+
+/**
+ * Statement provider for service [apigateway-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html).
+ *
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ */
+export class ApigatewayV2 extends PolicyStatement {
+  public servicePrefix = 'apigateway';
+
+  /**
+   * Statement provider for service [apigateway-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigatewaymanagementv2.html).
+   *
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   */
+  constructor (sid?: string) {
+    super(sid);
+  }
+
+  /**
+   * Grants permission to delete a particular resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/api-reference/API_DELETE.html
+   */
+  public toDELETE() {
+    return this.to('DELETE');
+  }
+
+  /**
+   * Grants permission to read a particular resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/api-reference/API_GET.html
+   */
+  public toGET() {
+    return this.to('GET');
+  }
+
+  /**
+   * Grants permission to update a particular resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/api-reference/API_PATCH.html
+   */
+  public toPATCH() {
+    return this.to('PATCH');
+  }
+
+  /**
+   * Grants permission to create a particular resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/api-reference/API_POST.html
+   */
+  public toPOST() {
+    return this.to('POST');
+  }
+
+  /**
+   * Grants permission to update a particular resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/api-reference/API_PUT.html
+   */
+  public toPUT() {
+    return this.to('PUT');
+  }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "DELETE",
+      "PATCH",
+      "POST",
+      "PUT"
+    ],
+    "Read": [
+      "GET"
+    ]
+  };
+
+  /**
+   * Adds a resource of type AccessLogSettings to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param stageName - Identifier for the stageName.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onAccessLogSettings(apiId: string, stageName: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}/accesslogsettings/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${StageName}', stageName);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Api to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifRequestApiKeyRequired()
+   * - .ifRequestApiName()
+   * - .ifRequestAuthorizerType()
+   * - .ifRequestAuthorizerUri()
+   * - .ifRequestDisableExecuteApiEndpoint()
+   * - .ifRequestEndpointType()
+   * - .ifRequestRouteAuthorizationType()
+   * - .ifResourceApiKeyRequired()
+   * - .ifResourceApiName()
+   * - .ifResourceAuthorizerType()
+   * - .ifResourceAuthorizerUri()
+   * - .ifResourceDisableExecuteApiEndpoint()
+   * - .ifResourceEndpointType()
+   * - .ifResourceRouteAuthorizationType()
+   */
+  public onApi(apiId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Apis to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifRequestApiKeyRequired()
+   * - .ifRequestApiName()
+   * - .ifRequestAuthorizerType()
+   * - .ifRequestAuthorizerUri()
+   * - .ifRequestDisableExecuteApiEndpoint()
+   * - .ifRequestEndpointType()
+   * - .ifRequestRouteAuthorizationType()
+   */
+  public onApis(region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/';
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ApiMapping to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param apiMappingId - Identifier for the apiMappingId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onApiMapping(domainName: string, apiMappingId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/apimappings/${ApiMappingId}/';
+    arn = arn.replace('${DomainName}', domainName);
+    arn = arn.replace('${ApiMappingId}', apiMappingId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ApiMappings to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onApiMappings(domainName: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/apimappings/';
+    arn = arn.replace('${DomainName}', domainName);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Authorizer to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param authorizerId - Identifier for the authorizerId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifRequestAuthorizerType()
+   * - .ifRequestAuthorizerUri()
+   * - .ifResourceAuthorizerType()
+   * - .ifResourceAuthorizerUri()
+   */
+  public onAuthorizer(apiId: string, authorizerId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/authorizers/${AuthorizerId}/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${AuthorizerId}', authorizerId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Authorizers to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifRequestAuthorizerType()
+   * - .ifRequestAuthorizerUri()
+   */
+  public onAuthorizers(apiId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/authorizers/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type AuthorizersCache to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param stageName - Identifier for the stageName.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onAuthorizersCache(apiId: string, stageName: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}/cache/authorizers/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${StageName}', stageName);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Cors to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCors(apiId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/cors/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Deployment to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param deploymentId - Identifier for the deploymentId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDeployment(apiId: string, deploymentId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/deployments/${DeploymentId}/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${DeploymentId}', deploymentId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Deployments to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifRequestStageName()
+   */
+  public onDeployments(apiId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/deployments/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ExportedAPI to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param specification - Identifier for the specification.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onExportedAPI(apiId: string, specification: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/exports/${Specification}/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${Specification}', specification);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Integration to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param integrationId - Identifier for the integrationId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onIntegration(apiId: string, integrationId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/integrations/${IntegrationId}/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${IntegrationId}', integrationId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Integrations to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onIntegrations(apiId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/integrations/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type IntegrationResponse to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param integrationId - Identifier for the integrationId.
+   * @param integrationResponseId - Identifier for the integrationResponseId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onIntegrationResponse(apiId: string, integrationId: string, integrationResponseId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/integrations/${IntegrationId}/integrationresponses/${IntegrationResponseId}/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${IntegrationId}', integrationId);
+    arn = arn.replace('${IntegrationResponseId}', integrationResponseId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type IntegrationResponses to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param integrationId - Identifier for the integrationId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onIntegrationResponses(apiId: string, integrationId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/integrations/${IntegrationId}/integrationresponses/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${IntegrationId}', integrationId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Model to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param modelId - Identifier for the modelId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onModel(apiId: string, modelId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/models/${ModelId}/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${ModelId}', modelId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Models to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onModels(apiId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/models/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ModelTemplate to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param modelId - Identifier for the modelId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onModelTemplate(apiId: string, modelId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/models/${ModelId}/template/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${ModelId}', modelId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Route to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param routeId - Identifier for the routeId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifRequestApiKeyRequired()
+   * - .ifRequestRouteAuthorizationType()
+   * - .ifResourceApiKeyRequired()
+   * - .ifResourceRouteAuthorizationType()
+   */
+  public onRoute(apiId: string, routeId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes/${RouteId}/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${RouteId}', routeId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Routes to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifRequestApiKeyRequired()
+   * - .ifRequestRouteAuthorizationType()
+   */
+  public onRoutes(apiId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type RouteResponse to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param routeId - Identifier for the routeId.
+   * @param routeResponseId - Identifier for the routeResponseId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onRouteResponse(apiId: string, routeId: string, routeResponseId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes/${RouteId}/routeresponses/${RouteResponseId}/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${RouteId}', routeId);
+    arn = arn.replace('${RouteResponseId}', routeResponseId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type RouteResponses to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param routeId - Identifier for the routeId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onRouteResponses(apiId: string, routeId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes/${RouteId}/routeresponses/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${RouteId}', routeId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type RouteRequestParameter to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param routeId - Identifier for the routeId.
+   * @param requestParameterKey - Identifier for the requestParameterKey.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onRouteRequestParameter(apiId: string, routeId: string, requestParameterKey: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes/${RouteId}/requestparameters/${RequestParameterKey}/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${RouteId}', routeId);
+    arn = arn.replace('${RequestParameterKey}', requestParameterKey);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type RouteSettings to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param stageName - Identifier for the stageName.
+   * @param routeKey - Identifier for the routeKey.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onRouteSettings(apiId: string, stageName: string, routeKey: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}/routesettings/${RouteKey}/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${StageName}', stageName);
+    arn = arn.replace('${RouteKey}', routeKey);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Stage to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param stageName - Identifier for the stageName.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifRequestAccessLoggingDestination()
+   * - .ifRequestAccessLoggingFormat()
+   * - .ifResourceAccessLoggingDestination()
+   * - .ifResourceAccessLoggingFormat()
+   */
+  public onStage(apiId: string, stageName: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${StageName}', stageName);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Stages to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifRequestAccessLoggingDestination()
+   * - .ifRequestAccessLoggingFormat()
+   */
+  public onStages(apiId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Filters access by access log destination. Available during the CreateStage and UpdateStage operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Stage
+   * - Stages
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestAccessLoggingDestination(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/AccessLoggingDestination`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by access log format. Available during the CreateStage and UpdateStage operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Stage
+   * - Stages
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestAccessLoggingFormat(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/AccessLoggingFormat`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on whether an API key is required or not. Available during the CreateRoute and UpdateRoute operations. Also available as a collection during import and reimport
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Api
+   * - Apis
+   * - Route
+   * - Routes
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifRequestApiKeyRequired(value?: boolean) {
+    return this.if(`Request/ApiKeyRequired`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by API name. Available during the CreateApi and UpdateApi operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Api
+   * - Apis
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestApiName(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/ApiName`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by type of authorizer in the request, for example REQUEST or JWT. Available during CreateAuthorizer and UpdateAuthorizer. Also available during import and reimport as an ArrayOfString
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Api
+   * - Apis
+   * - Authorizer
+   * - Authorizers
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestAuthorizerType(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/AuthorizerType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by URI of a Lambda authorizer function. Available during CreateAuthorizer and UpdateAuthorizer. Also available during import and reimport as an ArrayOfString
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Api
+   * - Apis
+   * - Authorizer
+   * - Authorizers
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestAuthorizerUri(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/AuthorizerUri`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by status of the default execute-api endpoint. Available during the CreateApi and UpdateApi operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Api
+   * - Apis
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifRequestDisableExecuteApiEndpoint(value?: boolean) {
+    return this.if(`Request/DisableExecuteApiEndpoint`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by endpoint type. Available during the CreateDomainName, UpdateDomainName, CreateApi, and UpdateApi operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Api
+   * - Apis
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestEndpointType(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/EndpointType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by URI of the truststore used for mutual TLS authentication. Available during the CreateDomainName and UpdateDomainName operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestMtlsTrustStoreUri(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/MtlsTrustStoreUri`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by version of the truststore used for mutual TLS authentication. Available during the CreateDomainName and UpdateDomainName operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestMtlsTrustStoreVersion(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/MtlsTrustStoreVersion`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by authorization type, for example NONE, AWS_IAM, CUSTOM, JWT. Available during the CreateRoute and UpdateRoute operations. Also available as a collection during import
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Api
+   * - Apis
+   * - Route
+   * - Routes
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestRouteAuthorizationType(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/RouteAuthorizationType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by TLS version. Available during the CreateDomain and UpdateDomain operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestSecurityPolicy(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/SecurityPolicy`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by stage name of the deployment that you attempt to create. Available during the CreateDeployment operation
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Deployments
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestStageName(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/StageName`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by access log destination of the current Stage resource. Available during the UpdateStage and DeleteStage operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Stage
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceAccessLoggingDestination(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/AccessLoggingDestination`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by access log format of the current Stage resource. Available during the UpdateStage and DeleteStage operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Stage
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceAccessLoggingFormat(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/AccessLoggingFormat`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on whether an API key is required or not for the existing Route resource. Available during the UpdateRoute and DeleteRoute operations. Also available as a collection during reimport
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Api
+   * - Route
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifResourceApiKeyRequired(value?: boolean) {
+    return this.if(`Resource/ApiKeyRequired`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by API name. Available during the UpdateApi and DeleteApi operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceApiName(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/ApiName`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the current type of authorizer, for example REQUEST or JWT. Available during UpdateAuthorizer and DeleteAuthorizer operations. Also available during import and reimport as an ArrayOfString
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Api
+   * - Authorizer
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceAuthorizerType(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/AuthorizerType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the URI of the current Lambda authorizer associated with the current API. Available during UpdateAuthorizer and DeleteAuthorizer. Also available as a collection during reimport
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Api
+   * - Authorizer
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceAuthorizerUri(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/AuthorizerUri`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by status of the default execute-api endpoint. Available during the UpdateApi and DeleteApi operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Api
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifResourceDisableExecuteApiEndpoint(value?: boolean) {
+    return this.if(`Resource/DisableExecuteApiEndpoint`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by endpoint type. Available during the UpdateDomainName, DeleteDomainName, UpdateApi, and DeleteApi operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceEndpointType(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/EndpointType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by URI of the truststore used for mutual TLS authentication. Available during the UpdateDomainName and DeleteDomainName operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceMtlsTrustStoreUri(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/MtlsTrustStoreUri`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by version of the truststore used for mutual TLS authentication. Available during the UpdateDomainName and DeleteDomainName operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceMtlsTrustStoreVersion(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/MtlsTrustStoreVersion`, value, operator || 'StringLike');
+  }
+
+  /**
+   * ilters access by authorization type of the existing Route resource, for example NONE, AWS_IAM, CUSTOM. Available during the UpdateRoute and DeleteRoute operations. Also available as a collection during reimport
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Api
+   * - Route
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceRouteAuthorizationType(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/RouteAuthorizationType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by TLS version. Available during the UpdateDomainName and DeleteDomainName operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceSecurityPolicy(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/SecurityPolicy`, value, operator || 'StringLike');
+  }
+}
