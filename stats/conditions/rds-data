@@ -1,2 +1,2 @@
-rds-data:ResourceTag
+rds-data:ResourceTag/${TagKey}
 rds-data:TagKeys

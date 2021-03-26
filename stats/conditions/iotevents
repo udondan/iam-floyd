@@ -1,4 +1,4 @@
-iotevents:RequestTag
-iotevents:ResourceTag
+iotevents:RequestTag/${TagKey}
+iotevents:ResourceTag/${TagKey}
 iotevents:TagKeys
 iotevents:keyValue

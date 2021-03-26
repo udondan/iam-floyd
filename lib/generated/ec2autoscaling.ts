@@ -885,7 +885,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifLaunchTemplateVersionSpecified(value?: boolean) {
-    return this.if(`autoscaling:LaunchTemplateVersionSpecified`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`LaunchTemplateVersionSpecified`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

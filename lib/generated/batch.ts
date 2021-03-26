@@ -389,7 +389,7 @@ export class Batch extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifAWSLogsCreateGroup(value?: boolean) {
-    return this.if(`batch:AWSLogsCreateGroup`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`AWSLogsCreateGroup`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -478,7 +478,7 @@ export class Batch extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifPrivileged(value?: boolean) {
-    return this.if(`batch:Privileged`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`Privileged`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

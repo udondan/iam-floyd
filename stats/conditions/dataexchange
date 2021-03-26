@@ -1,4 +1,4 @@
 dataexchange:JobType
-dataexchange:RequestTag
-dataexchange:ResourceTag
+dataexchange:RequestTag/${TagKey}
+dataexchange:ResourceTag/${TagKey}
 dataexchange:TagKeys

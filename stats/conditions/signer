@@ -1,4 +1,4 @@
 signer:ProfileVersion
-signer:RequestTag
-signer:ResourceTag
+signer:RequestTag/${TagKey}
+signer:ResourceTag/${TagKey}
 signer:TagKeys

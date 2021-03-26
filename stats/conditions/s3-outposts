@@ -1,8 +1,8 @@
 s3-outposts:AccessPointNetworkOrigin
 s3-outposts:DataAccessPointAccount
 s3-outposts:DataAccessPointArn
-s3-outposts:ExistingObjectTag
-s3-outposts:RequestObjectTag
+s3-outposts:ExistingObjectTag/<key>
+s3-outposts:RequestObjectTag/<key>
 s3-outposts:RequestObjectTagKeys
 s3-outposts:authType
 s3-outposts:delimiter

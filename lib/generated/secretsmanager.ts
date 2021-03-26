@@ -395,7 +395,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifBlockPublicPolicy(value?: boolean) {
-    return this.if(`secretsmanager:BlockPublicPolicy`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`BlockPublicPolicy`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -425,7 +425,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifForceDeleteWithoutRecovery(value?: boolean) {
-    return this.if(`secretsmanager:ForceDeleteWithoutRecovery`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`ForceDeleteWithoutRecovery`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -501,12 +501,12 @@ export class Secretsmanager extends PolicyStatement {
    * Applies to resource types:
    * - Secret
    *
-   * @param tagkey The tag key to check
+   * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagkey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/${ tagkey }`, value, operator || 'StringLike');
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**

@@ -1,5 +1,5 @@
-groundstation:RequestTag
-groundstation:ResourceTag
+groundstation:RequestTag/${TagKey}
+groundstation:ResourceTag/${TagKey}
 groundstation:TagKeys
 groundstation:configId
 groundstation:configType

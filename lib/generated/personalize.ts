@@ -19,528 +19,528 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
-   * Creates a batch inference job
+   * Grants permission to create a batch inference job
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateBatchInferenceJob.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateBatchInferenceJob.html
    */
   public toCreateBatchInferenceJob() {
     return this.to('CreateBatchInferenceJob');
   }
 
   /**
-   * Creates a campaign
+   * Grants permission to create a campaign
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateCampaign.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html
    */
   public toCreateCampaign() {
     return this.to('CreateCampaign');
   }
 
   /**
-   * Creates a dataset
+   * Grants permission to create a dataset
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateDataset.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html
    */
   public toCreateDataset() {
     return this.to('CreateDataset');
   }
 
   /**
-   * Creates a dataset group
+   * Grants permission to create a dataset group
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateDatasetGroup.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html
    */
   public toCreateDatasetGroup() {
     return this.to('CreateDatasetGroup');
   }
 
   /**
-   * Creates a dataset import job
+   * Grants permission to create a dataset import job
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateDatasetImportJob.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html
    */
   public toCreateDatasetImportJob() {
     return this.to('CreateDatasetImportJob');
   }
 
   /**
-   * Creates an event tracker
+   * Grants permission to create an event tracker
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateEventTracker.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html
    */
   public toCreateEventTracker() {
     return this.to('CreateEventTracker');
   }
 
   /**
-   * Creates a filter
+   * Grants permission to create a filter
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateFilter.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateFilter.html
    */
   public toCreateFilter() {
     return this.to('CreateFilter');
   }
 
   /**
-   * Creates a schema
+   * Grants permission to create a schema
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateSchema.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html
    */
   public toCreateSchema() {
     return this.to('CreateSchema');
   }
 
   /**
-   * Creates a solution
+   * Grants permission to create a solution
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateSolution.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html
    */
   public toCreateSolution() {
     return this.to('CreateSolution');
   }
 
   /**
-   * Creates a solution version
+   * Grants permission to create a solution version
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateSolutionVersion.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html
    */
   public toCreateSolutionVersion() {
     return this.to('CreateSolutionVersion');
   }
 
   /**
-   * Deletes a campaign
+   * Grants permission to delete a campaign
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteCampaign.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteCampaign.html
    */
   public toDeleteCampaign() {
     return this.to('DeleteCampaign');
   }
 
   /**
-   * Deletes a dataset
+   * Grants permission to delete a dataset
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteDataset.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteDataset.html
    */
   public toDeleteDataset() {
     return this.to('DeleteDataset');
   }
 
   /**
-   * Deletes a dataset group
+   * Grants permission to delete a dataset group
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteDatasetGroup.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteDatasetGroup.html
    */
   public toDeleteDatasetGroup() {
     return this.to('DeleteDatasetGroup');
   }
 
   /**
-   * Deletes an event tracker
+   * Grants permission to delete an event tracker
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteEventTracker.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteEventTracker.html
    */
   public toDeleteEventTracker() {
     return this.to('DeleteEventTracker');
   }
 
   /**
-   * Deletes a filter
+   * Grants permission to delete a filter
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteFilter.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteFilter.html
    */
   public toDeleteFilter() {
     return this.to('DeleteFilter');
   }
 
   /**
-   * Deletes a schema
+   * Grants permission to delete a schema
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteSchema.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSchema.html
    */
   public toDeleteSchema() {
     return this.to('DeleteSchema');
   }
 
   /**
-   * Deletes a solution including all versions of the solution
+   * Grants permission to delete a solution including all versions of the solution
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteSolution.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSolution.html
    */
   public toDeleteSolution() {
     return this.to('DeleteSolution');
   }
 
   /**
-   * Describes an algorithm
+   * Grants permission to describe an algorithm
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeAlgorithm.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeAlgorithm.html
    */
   public toDescribeAlgorithm() {
     return this.to('DescribeAlgorithm');
   }
 
   /**
-   * Describes a batch inference job
+   * Grants permission to describe a batch inference job
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeBatchInferenceJob.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeBatchInferenceJob.html
    */
   public toDescribeBatchInferenceJob() {
     return this.to('DescribeBatchInferenceJob');
   }
 
   /**
-   * Describes a campaign
+   * Grants permission to describe a campaign
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeCampaign.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html
    */
   public toDescribeCampaign() {
     return this.to('DescribeCampaign');
   }
 
   /**
-   * Describes a dataset
+   * Grants permission to describe a dataset
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeDataset.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html
    */
   public toDescribeDataset() {
     return this.to('DescribeDataset');
   }
 
   /**
-   * Describes a dataset group
+   * Grants permission to describe a dataset group
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeDatasetGroup.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html
    */
   public toDescribeDatasetGroup() {
     return this.to('DescribeDatasetGroup');
   }
 
   /**
-   * Describes a dataset import job
+   * Grants permission to describe a dataset import job
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeDatasetImportJob.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html
    */
   public toDescribeDatasetImportJob() {
     return this.to('DescribeDatasetImportJob');
   }
 
   /**
-   * Describes an event tracker
+   * Grants permission to describe an event tracker
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeEventTracker.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html
    */
   public toDescribeEventTracker() {
     return this.to('DescribeEventTracker');
   }
 
   /**
-   * Describes a feature transformation
+   * Grants permission to describe a feature transformation
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeFeatureTransformation.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeFeatureTransformation.html
    */
   public toDescribeFeatureTransformation() {
     return this.to('DescribeFeatureTransformation');
   }
 
   /**
-   * Describes a filter
+   * Grants permission to describe a filter
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeFilter.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeFilter.html
    */
   public toDescribeFilter() {
     return this.to('DescribeFilter');
   }
 
   /**
-   * Describes a recipe
+   * Grants permission to describe a recipe
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeRecipe.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecipe.html
    */
   public toDescribeRecipe() {
     return this.to('DescribeRecipe');
   }
 
   /**
-   * Describes a schema
+   * Grants permission to describe a schema
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeSchema.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSchema.html
    */
   public toDescribeSchema() {
     return this.to('DescribeSchema');
   }
 
   /**
-   * Describes a solution
+   * Grants permission to describe a solution
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeSolution.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html
    */
   public toDescribeSolution() {
     return this.to('DescribeSolution');
   }
 
   /**
-   * Describes a version of a solution
+   * Grants permission to describe a version of a solution
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeSolutionVersion.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html
    */
   public toDescribeSolutionVersion() {
     return this.to('DescribeSolutionVersion');
   }
 
   /**
-   * Gets a re-ranked list of recommendations
+   * Grants permission to get a re-ranked list of recommendations
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_RS_GetPersonalizedRanking.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html
    */
   public toGetPersonalizedRanking() {
     return this.to('GetPersonalizedRanking');
   }
 
   /**
-   * Gets a list of recommendations from a campaign
+   * Grants permission to get a list of recommendations from a campaign
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_RS_GetRecommendations.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html
    */
   public toGetRecommendations() {
     return this.to('GetRecommendations');
   }
 
   /**
-   * Gets metrics for a solution version
+   * Grants permission to get metrics for a solution version
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_GetSolutionMetrics.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_GetSolutionMetrics.html
    */
   public toGetSolutionMetrics() {
     return this.to('GetSolutionMetrics');
   }
 
   /**
-   * Lists batch inference jobs
+   * Grants permission to list batch inference jobs
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListBatchInferenceJobs.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchInferenceJobs.html
    */
   public toListBatchInferenceJobs() {
     return this.to('ListBatchInferenceJobs');
   }
 
   /**
-   * Lists campaigns
+   * Grants permission to list campaigns
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListCampaigns.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html
    */
   public toListCampaigns() {
     return this.to('ListCampaigns');
   }
 
   /**
-   * Lists dataset groups
+   * Grants permission to list dataset groups
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListDatasetGroups.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasetGroups.html
    */
   public toListDatasetGroups() {
     return this.to('ListDatasetGroups');
   }
 
   /**
-   * Lists dataset import jobs
+   * Grants permission to list dataset import jobs
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListDatasetImportJobs.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasetImportJobs.html
    */
   public toListDatasetImportJobs() {
     return this.to('ListDatasetImportJobs');
   }
 
   /**
-   * Lists datasets
+   * Grants permission to list datasets
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListDatasets.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasets.html
    */
   public toListDatasets() {
     return this.to('ListDatasets');
   }
 
   /**
-   * Lists event trackers
+   * Grants permission to list event trackers
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListEventTrackers.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListEventTrackers.html
    */
   public toListEventTrackers() {
     return this.to('ListEventTrackers');
   }
 
   /**
-   * Lists filters
+   * Grants permission to list filters
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListFilters.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListFilters.html
    */
   public toListFilters() {
     return this.to('ListFilters');
   }
 
   /**
-   * Lists recipes
+   * Grants permission to list recipes
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListRecipes.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListRecipes.html
    */
   public toListRecipes() {
     return this.to('ListRecipes');
   }
 
   /**
-   * Lists schemas
+   * Grants permission to list schemas
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListSchemas.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListSchemas.html
    */
   public toListSchemas() {
     return this.to('ListSchemas');
   }
 
   /**
-   * Lists versions of a solution
+   * Grants permission to list versions of a solution
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListSolutionVersions.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html
    */
   public toListSolutionVersions() {
     return this.to('ListSolutionVersions');
   }
 
   /**
-   * Lists solutions
+   * Grants permission to list solutions
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListSolutions.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html
    */
   public toListSolutions() {
     return this.to('ListSolutions');
   }
 
   /**
-   * Records real time event data
+   * Grants permission to put real time event data
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UBS_PutEvents.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html
    */
   public toPutEvents() {
     return this.to('PutEvents');
   }
 
   /**
-   * Ingest Items data
+   * Grants permission to ingest Items data
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UBS_PutItems.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutItems.html
    */
   public toPutItems() {
     return this.to('PutItems');
   }
 
   /**
-   * Ingest Users data
+   * Grants permission to ingest Users data
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UBS_PutUsers.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutUsers.html
    */
   public toPutUsers() {
     return this.to('PutUsers');
   }
 
   /**
-   * Updates a campaign
+   * Grants permission to update a campaign
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UpdateCampaign.html
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateCampaign.html
    */
   public toUpdateCampaign() {
     return this.to('UpdateCampaign');

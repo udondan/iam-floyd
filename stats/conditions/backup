@@ -1,5 +1,5 @@
 backup:CopyTargetOrgPaths
 backup:CopyTargets
-backup:RequestTag
-backup:ResourceTag
+backup:RequestTag/${TagKey}
+backup:ResourceTag/${TagKey}
 backup:TagKeys

@@ -15,7 +15,7 @@ kms:MessageType
 kms:ReEncryptOnSameKey
 kms:RequestAlias
 kms:ResourceAliases
-kms:ResourceTag
+kms:ResourceTag/${TagKey}
 kms:RetiringPrincipal
 kms:SigningAlgorithm
 kms:ValidTo

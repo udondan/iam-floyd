@@ -1,3 +1,3 @@
-amplify:RequestTag
-amplify:ResourceTag
+amplify:RequestTag/${TagKey}
+amplify:ResourceTag/${TagKey}
 amplify:TagKeys

@@ -1,5 +1,7 @@
 export { A4b } from "./alexaforbusiness";
 export { ExecuteApi } from "./apigateway";
+export { Apigateway } from "./apigatewaymanagement";
+export { ApigatewayV2 } from "./apigatewaymanagementv2";
 export { Appflow } from "./appflow";
 export { AppIntegrations } from "./appintegrations";
 export { Appstream } from "./appstream2-0";
@@ -270,6 +272,5 @@ export { ElementalSupportCases } from "./elementalsupportcases";
 export { ElementalSupportContent } from "./elementalsupportcontent";
 export { Iam } from "./identityandaccessmanagement";
 export { Launchwizard } from "./launchwizard";
-export { Apigateway } from "./manageamazonapigateway";
 export { Networkmanager } from "./networkmanager";
 export { Servicequotas } from "./servicequotas";

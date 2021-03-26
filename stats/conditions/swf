@@ -1,5 +1,5 @@
-swf:RequestTag
-swf:ResourceTag
+swf:RequestTag/${TagKey}
+swf:ResourceTag/${TagKey}
 swf:TagKeys
 swf:activityType.name
 swf:activityType.version

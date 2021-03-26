@@ -827,7 +827,7 @@ export class Kms extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifBypassPolicyLockoutSafetyCheck(value?: boolean) {
-    return this.if(`kms:BypassPolicyLockoutSafetyCheck`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`BypassPolicyLockoutSafetyCheck`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -1012,7 +1012,7 @@ export class Kms extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifGrantIsForAWSResource(value?: boolean) {
-    return this.if(`kms:GrantIsForAWSResource`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`GrantIsForAWSResource`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -1082,7 +1082,7 @@ export class Kms extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifReEncryptOnSameKey(value?: boolean) {
-    return this.if(`kms:ReEncryptOnSameKey`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`ReEncryptOnSameKey`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

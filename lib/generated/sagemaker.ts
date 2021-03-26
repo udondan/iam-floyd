@@ -4590,7 +4590,7 @@ export class Sagemaker extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifInterContainerTrafficEncryption(value?: boolean) {
-    return this.if(`sagemaker:InterContainerTrafficEncryption`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`InterContainerTrafficEncryption`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -4652,7 +4652,7 @@ export class Sagemaker extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifNetworkIsolation(value?: boolean) {
-    return this.if(`sagemaker:NetworkIsolation`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`NetworkIsolation`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

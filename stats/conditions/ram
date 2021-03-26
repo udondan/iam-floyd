@@ -1,11 +1,11 @@
 ram:AllowsExternalPrincipals
 ram:PermissionArn
 ram:Principal
-ram:RequestTag
+ram:RequestTag/${TagKey}
 ram:RequestedAllowsExternalPrincipals
 ram:RequestedResourceType
 ram:ResourceArn
 ram:ResourceShareName
-ram:ResourceTag
+ram:ResourceTag/${TagKey}
 ram:ShareOwnerAccountId
 ram:TagKeys

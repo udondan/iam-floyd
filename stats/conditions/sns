@@ -1,4 +1,4 @@
 sns:Endpoint
 sns:Protocol
-sns:RequestTag
+sns:RequestTag/${TagKey}
 sns:TagKeys

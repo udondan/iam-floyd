@@ -2186,7 +2186,7 @@ export class Ssm extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifSessionDocumentAccessCheck(value?: boolean) {
-    return this.if(`ssm:SessionDocumentAccessCheck`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`SessionDocumentAccessCheck`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -2223,11 +2223,11 @@ export class Ssm extends PolicyStatement {
    * - parameter
    * - patchbaseline
    *
-   * @param tagkey The tag key to check
+   * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagkey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`resourceTag/${ tagkey }`, value, operator || 'StringLike');
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

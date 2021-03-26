@@ -18,8 +18,9 @@ sagemaker:MaxRuntimeInSeconds
 sagemaker:ModelArn
 sagemaker:NetworkIsolation
 sagemaker:OutputKmsKey
-sagemaker:RequestTag
-sagemaker:ResourceTag
+sagemaker:RequestTag/${TagKey}
+sagemaker:ResourceTag/
+sagemaker:ResourceTag/${TagKey}
 sagemaker:RootAccess
 sagemaker:SourceIp
 sagemaker:SourceVpc

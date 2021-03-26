@@ -1,5 +1,5 @@
 organizations:PolicyType
-organizations:RequestTag
-organizations:ResourceTag
+organizations:RequestTag/${TagKey}
+organizations:ResourceTag/${TagKey}
 organizations:ServicePrincipal
 organizations:TagKeys

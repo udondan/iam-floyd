@@ -1,1 +1,1 @@
-synthetics:ResourceTag
+synthetics:ResourceTag/${TagKey}

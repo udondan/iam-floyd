@@ -1,8 +1,8 @@
 sts:ExternalId
 sts:FederatedProvider
-sts:PrincipalTag
-sts:RequestTag
-sts:ResourceTag
+sts:PrincipalTag/${TagKey}
+sts:RequestTag/${TagKey}
+sts:ResourceTag/${TagKey}
 sts:RoleSessionName
 sts:TagKeys
 sts:TransitiveTagKeys

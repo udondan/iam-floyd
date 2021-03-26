@@ -2289,7 +2289,7 @@ export class Rds extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifMultiAz(value?: boolean) {
-    return this.if(`rds:MultiAz`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`MultiAz`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -2322,7 +2322,7 @@ export class Rds extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifStorageEncrypted(value?: boolean) {
-    return this.if(`rds:StorageEncrypted`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`StorageEncrypted`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -2351,7 +2351,7 @@ export class Rds extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifVpc(value?: boolean) {
-    return this.if(`rds:Vpc`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`Vpc`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

@@ -1,6 +1,6 @@
 quicksight:IamArn
-quicksight:RequestTag
-quicksight:ResourceTag
+quicksight:RequestTag/${TagKey}
+quicksight:ResourceTag/${TagKey}
 quicksight:SessionName
 quicksight:TagKeys
 quicksight:UserName

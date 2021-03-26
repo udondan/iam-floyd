@@ -5,6 +5,6 @@ elasticbeanstalk:FromEnvironment
 elasticbeanstalk:FromPlatform
 elasticbeanstalk:FromSolutionStack
 elasticbeanstalk:InApplication
-elasticbeanstalk:RequestTag
-elasticbeanstalk:ResourceTag
+elasticbeanstalk:RequestTag/${TagKey}
+elasticbeanstalk:ResourceTag/${TagKey}
 elasticbeanstalk:TagKeys

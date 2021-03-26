@@ -1,7 +1,7 @@
 servicediscovery:NamespaceArn
 servicediscovery:NamespaceName
-servicediscovery:RequestTag
-servicediscovery:ResourceTag
+servicediscovery:RequestTag/${TagKey}
+servicediscovery:ResourceTag/${TagKey}
 servicediscovery:ServiceArn
 servicediscovery:ServiceName
 servicediscovery:TagKeys

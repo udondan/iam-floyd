@@ -1,6 +1,6 @@
 ebs:Description
 ebs:ParentSnapshot
-ebs:RequestTag
-ebs:ResourceTag
+ebs:RequestTag/${TagKey}
+ebs:ResourceTag/${TagKey}
 ebs:TagKeys
 ebs:VolumeSize

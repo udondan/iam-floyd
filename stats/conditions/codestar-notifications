@@ -1,4 +1,4 @@
 codestar-notifications:NotificationsForResource
-codestar-notifications:RequestTag
-codestar-notifications:ResourceTag
+codestar-notifications:RequestTag/${TagKey}
+codestar-notifications:ResourceTag/${TagKey}
 codestar-notifications:TagKeys

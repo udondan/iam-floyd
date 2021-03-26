@@ -9,8 +9,8 @@ autoscaling:MetadataHttpEndpoint
 autoscaling:MetadataHttpPutResponseHopLimit
 autoscaling:MetadataHttpTokens
 autoscaling:MinSize
-autoscaling:RequestTag
-autoscaling:ResourceTag
+autoscaling:RequestTag/${TagKey}
+autoscaling:ResourceTag/${TagKey}
 autoscaling:SpotPrice
 autoscaling:TagKeys
 autoscaling:TargetGroupARNs

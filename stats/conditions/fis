@@ -1,7 +1,7 @@
 fis:Operations
 fis:Percentage
-fis:RequestTag
-fis:ResourceTag
+fis:RequestTag/${TagKey}
+fis:ResourceTag/${TagKey}
 fis:Service
 fis:TagKeys
 fis:Targets

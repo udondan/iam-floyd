@@ -458,7 +458,7 @@ export class Ram extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifAllowsExternalPrincipals(value?: boolean) {
-    return this.if(`ram:AllowsExternalPrincipals`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`AllowsExternalPrincipals`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -508,7 +508,7 @@ export class Ram extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifRequestedAllowsExternalPrincipals(value?: boolean) {
-    return this.if(`ram:RequestedAllowsExternalPrincipals`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`RequestedAllowsExternalPrincipals`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

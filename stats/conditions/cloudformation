@@ -1,7 +1,7 @@
 cloudformation:ChangeSetName
 cloudformation:ImportResourceTypes
-cloudformation:RequestTag
-cloudformation:ResourceTag
+cloudformation:RequestTag/${TagKey}
+cloudformation:ResourceTag/${TagKey}
 cloudformation:ResourceTypes
 cloudformation:RoleArn
 cloudformation:StackPolicyUrl

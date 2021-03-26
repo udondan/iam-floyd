@@ -9,6 +9,6 @@ codestar-connections:ProviderPermissionsRequired
 codestar-connections:ProviderType
 codestar-connections:ProviderTypeFilter
 codestar-connections:RepositoryName
-codestar-connections:RequestTag
-codestar-connections:ResourceTag
+codestar-connections:RequestTag/${TagKey}
+codestar-connections:ResourceTag/${TagKey}
 codestar-connections:TagKeys

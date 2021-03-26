@@ -1,6 +1,6 @@
 comprehend:OutputKmsKey
-comprehend:RequestTag
-comprehend:ResourceTag
+comprehend:RequestTag/${TagKey}
+comprehend:ResourceTag/${TagKey}
 comprehend:TagKeys
 comprehend:VolumeKmsKey
 comprehend:VpcSecurityGroupIds

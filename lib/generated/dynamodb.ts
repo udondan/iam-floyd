@@ -981,7 +981,7 @@ export class Dynamodb extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifFullTableScan(value?: boolean) {
-    return this.if(`dynamodb:FullTableScan`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`FullTableScan`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

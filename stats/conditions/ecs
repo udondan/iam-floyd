@@ -1,5 +1,5 @@
-ecs:RequestTag
-ecs:ResourceTag
+ecs:RequestTag/${TagKey}
+ecs:ResourceTag/${TagKey}
 ecs:TagKeys
 ecs:capacity-provider
 ecs:cluster

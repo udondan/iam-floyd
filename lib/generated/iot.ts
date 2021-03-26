@@ -3411,7 +3411,7 @@ export class Iot extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifDelete(value?: boolean) {
-    return this.if(`iot:Delete`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`Delete`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

@@ -1,4 +1,4 @@
-appstream:RequestTag
-appstream:ResourceTag
+appstream:RequestTag/${TagKey}
+appstream:ResourceTag/${TagKey}
 appstream:TagKeys
 appstream:userId

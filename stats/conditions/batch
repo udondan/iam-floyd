@@ -5,7 +5,7 @@ batch:AWSLogsStreamPrefix
 batch:Image
 batch:LogDriver
 batch:Privileged
-batch:RequestTag
-batch:ResourceTag
+batch:RequestTag/${TagKey}
+batch:ResourceTag/${TagKey}
 batch:TagKeys
 batch:User

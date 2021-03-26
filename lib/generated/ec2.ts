@@ -7078,7 +7078,7 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifAssociatePublicIpAddress(value?: boolean) {
-    return this.if(`ec2:AssociatePublicIpAddress`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`AssociatePublicIpAddress`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -7558,7 +7558,7 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifEbsOptimized(value?: boolean) {
-    return this.if(`ec2:EbsOptimized`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`EbsOptimized`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -7607,7 +7607,7 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifEncrypted(value?: boolean) {
-    return this.if(`ec2:Encrypted`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`Encrypted`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -7904,7 +7904,7 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifIsLaunchTemplateResource(value?: boolean) {
-    return this.if(`ec2:IsLaunchTemplateResource`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`IsLaunchTemplateResource`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -8512,7 +8512,7 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifPublic(value?: boolean) {
-    return this.if(`ec2:Public`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`Public`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

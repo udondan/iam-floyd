@@ -1,4 +1,4 @@
 emr-containers:ExecutionRoleArn
-emr-containers:RequestTag
-emr-containers:ResourceTag
+emr-containers:RequestTag/${TagKey}
+emr-containers:ResourceTag/${TagKey}
 emr-containers:TagKeys

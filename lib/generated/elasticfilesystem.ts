@@ -487,7 +487,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifAccessedViaMountTarget(value?: boolean) {
-    return this.if(`elasticfilesystem:AccessedViaMountTarget`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`AccessedViaMountTarget`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -501,6 +501,6 @@ export class Elasticfilesystem extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifEncrypted(value?: boolean) {
-    return this.if(`elasticfilesystem:Encrypted`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(`Encrypted`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 }

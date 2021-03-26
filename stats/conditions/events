@@ -1,6 +1,6 @@
 events:ManagedBy
-events:RequestTag
-events:ResourceTag
+events:RequestTag/${TagKey}
+events:ResourceTag/${TagKey}
 events:SourceAccount
 events:SourceArn
 events:TagKeys

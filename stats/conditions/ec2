@@ -1,6 +1,6 @@
 ec2:AccepterVpc
 ec2:AssociatePublicIpAddress
-ec2:Attribute
+ec2:Attribute/${AttributeName}
 ec2:AuthenticationType
 ec2:AuthorizedService
 ec2:AuthorizedUser
@@ -51,10 +51,11 @@ ec2:Quantity
 ec2:Region
 ec2:RekeyFuzzPercentage
 ec2:RekeyMarginTimeSeconds
-ec2:RequestTag
+ec2:RequestTag/${TagKey}
 ec2:RequesterVpc
 ec2:ReservedInstancesOfferingType
-ec2:ResourceTag
+ec2:ResourceTag/
+ec2:ResourceTag/${TagKey}
 ec2:RoleDelivery
 ec2:RootDeviceType
 ec2:RoutingType
