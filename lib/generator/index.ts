@@ -350,7 +350,7 @@ export function createModule(module: Module): Promise<void> {
       desc += '\n\nPossible conditions:';
       action.conditions.forEach((condition) => {
         desc += `\n- .${createConditionName(
-          condition,
+          module.conditions[condition].key,
           module.servicePrefix
         )}()`;
       });
@@ -426,7 +426,10 @@ export function createModule(module: Module): Promise<void> {
     if (resourceType.conditionKeys.length) {
       desc += '\n\nPossible conditions:';
       resourceType.conditionKeys.forEach((key) => {
-        desc += `\n- .${createConditionName(key, module.servicePrefix)}()`;
+        desc += `\n- .${createConditionName(
+          module.conditions[key].key,
+          module.servicePrefix
+        )}()`;
       });
     }
     method.addJsDoc({
@@ -440,14 +443,15 @@ export function createModule(module: Module): Promise<void> {
   let hasConditions = false;
 
   for (let [key, condition] of Object.entries(module.conditions!)) {
-    condition = conditionFixer(module.filename, condition);
+    key = condition.key;
 
-    const name = key.split(/[:/]/);
+    const parts = key.split(':');
+    const name = parts[1].split(/\/(?=[$<]|$)/);
 
-    stats.conditions.push(`${module.servicePrefix}:${name[1]}`);
+    stats.conditions.push(`${module.servicePrefix}:${parts[1]}`);
 
     // we have to skip global conditions, since we simply cannot override global conditions due to JSII limitations: https://github.com/aws/jsii/issues/1935
-    if (name[0] == 'aws' && name[1] != 'FederatedProvider') {
+    if (parts[0] == 'aws' && name[0] != 'FederatedProvider') {
       continue;
     }
 
@@ -493,7 +497,7 @@ export function createModule(module: Module): Promise<void> {
     const methodBody: string[] = [];
 
     var methodName = createConditionName(key, module.servicePrefix);
-    if (name.length > 2 && !name[2].length) {
+    if (name.length > 1 && !name[1].length) {
       // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
       methodName += 'Exists';
     }
@@ -504,17 +508,17 @@ export function createModule(module: Module): Promise<void> {
 
     let propsKey = '';
 
-    if (name[0] != module.servicePrefix) {
-      propsKey += name[0] + ':';
+    if (parts[0] != module.servicePrefix) {
+      propsKey += parts[0] + ':';
     }
 
-    propsKey += name[1];
+    propsKey += name[0];
 
-    if (name.length > 2) {
-      // it is one of those tag keys
+    if (name.length > 1) {
+      // it is a parameterized condition
       propsKey += '/';
-      if (name[2].length) {
-        const paramName = name[2].replace(/[^a-zA-Z0-9]/g, '');
+      if (name[1].length) {
+        const paramName = name[1].replace(/[^a-zA-Z0-9]/g, '');
         desc += `\n@param ${lowerFirst(paramName)} The tag key to check`;
         method.addParameter({
           name: lowerFirst(paramName),
@@ -570,17 +574,17 @@ export function createModule(module: Module): Promise<void> {
           type
         ].default.toString()}')`
       );
-    } else if (type == 'bool' || type == 'boolean') {
+    } else if (type == 'boolean') {
       desc += '\n@param value `true` or `false`. **Default:** `true`';
 
       method.addParameter({
         name: 'value',
-        type: 'boolean',
+        type: type,
         hasQuestionToken: true,
       });
 
       methodBody.push(
-        `return this.if(\`${key}\`, (typeof value !== 'undefined' ? value : true), 'Bool');`
+        `return this.if(\`${propsKey}\`, (typeof value !== 'undefined' ? value : true), 'Bool');`
       );
     } else {
       throw new Error(`Unexpected condition type: ${type}`);
@@ -892,7 +896,7 @@ function addResourceTypes($: CheerioStatic, module: Module): Module {
       resourceTypes[name] = {
         name: name,
         url: url,
-        arn: arnFixer(service, name, arn),
+        arn: arnFixer(module.servicePrefix, name, arn),
         conditionKeys: conditionKeys,
       };
     }
@@ -912,13 +916,15 @@ function addConditions($: CheerioStatic, module: Module): Module {
     const type = tds.first().next().next().text().trim();
 
     if (key.length) {
-      conditions[key] = {
+      const condition = conditionFixer(module.servicePrefix, {
         key: key,
         description: description,
         type: type,
         url: url,
         isGlobal: key.startsWith('aws:'),
-      };
+      });
+
+      conditions[key] = condition;
     }
   });
   module.conditions = conditions;
@@ -926,8 +932,9 @@ function addConditions($: CheerioStatic, module: Module): Module {
 }
 
 function createConditionName(key: string, servicePrefix: string): string {
-  var methodName = 'if';
-  const split = key.split(/[:/]/);
+  let methodName = 'if';
+  const split = key.split(/:|\/(?=[$<]|$)/);
+
   // these are exceptions for the Security Token Service to:
   // - make it clear to which provider the condition is for
   // - avoid duplicate method names

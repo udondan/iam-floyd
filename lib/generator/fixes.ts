@@ -113,7 +113,25 @@ export const fixes: Fixes = {
       },
     },
   },
+  secretsmanager: {
+    conditions: {
+      'RequestTag/tag-key': {
+        key: 'RequestTag/${TagKey}',
+      },
+      'ResourceTag/tag-key': {
+        key: 'ResourceTag/${TagKey}',
+      },
+      'resource/AllowRotationLambdaArn': {
+        key: 'resource/${AllowRotationLambdaArn}',
+      },
+    },
+  },
   ssm: {
+    conditions: {
+      'resourceTag/tag-key': {
+        key: 'ResourceTag/${TagKey}',
+      },
+    },
     resourceTypes: {
       'automation-definition': {
         arn:
@@ -135,7 +153,7 @@ export function conditionFixer(
   service: string,
   condition: Condition
 ): Condition {
-  var fixed = 0;
+  let fixed = 0;
 
   const type = condition.type.toLowerCase();
   if (type == 'arrayofstring') {
@@ -149,7 +167,16 @@ export function conditionFixer(
     condition.type = 'numeric';
   }
 
-  const key = condition.key.split(':')[1];
+  const split = condition.key.split(':');
+  let key = split[1];
+
+  const keyOverride = get(fixes, `${service}.conditions.${key}.key`);
+  if (typeof keyOverride !== 'undefined') {
+    fixed = 2;
+    key = keyOverride;
+    condition.key = `${split[0]}:${key}`;
+  }
+
   const operatorType = get(fixes, `${service}.conditions.${key}.operator.type`);
   if (typeof operatorType !== 'undefined') {
     fixed = 2;
@@ -227,7 +254,7 @@ export function arnFixer(
   return arn;
 }
 
-export function serviceFixer(service): string {
+export function serviceFixer(service: string): string {
   if (service in fixes && 'service' in fixes[service]) {
     service = fixes[service].service;
   }
