@@ -141,6 +141,9 @@ export function conditionFixer(
   if (type == 'arrayofstring') {
     fixed = 1;
     condition.type = 'string';
+  } else if (type == 'arrayofbool' || type == 'bool') {
+    fixed = 1;
+    condition.type = 'boolean';
   } else if (type == 'long') {
     fixed = 1;
     condition.type = 'numeric';
