@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Effect": "Allow",
       "Action": [
         "comprehend:DetectDominantLanguage",
         "comprehend:BatchDetectDominantLanguage",
@@ -10,6 +11,7 @@
         "comprehend:DetectKeyPhrases",
         "comprehend:BatchDetectKeyPhrases",
         "comprehend:DetectPiiEntities",
+        "comprehend:ContainsPiiEntities",
         "comprehend:DetectSentiment",
         "comprehend:BatchDetectSentiment",
         "comprehend:DetectSyntax",
@@ -37,7 +39,6 @@
         "comprehend:DescribeEndpoint",
         "comprehend:ListEndpoints"
       ],
-      "Effect": "Allow",
       "Resource": "*"
     }
   ]
