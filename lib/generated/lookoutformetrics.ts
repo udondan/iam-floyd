@@ -45,6 +45,10 @@ export class Lookoutmetrics extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_CreateAlert.html
    */
   public toCreateAlert() {
@@ -56,6 +60,10 @@ export class Lookoutmetrics extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_CreateAnomalyDetector.html
    */
   public toCreateAnomalyDetector() {
@@ -66,6 +74,10 @@ export class Lookoutmetrics extends PolicyStatement {
    * Grants permission to create a dataset
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_CreateMetricSet.html
    */
@@ -239,6 +251,17 @@ export class Lookoutmetrics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of tags for a detector, dataset, or alert
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to add feedback for an affected metric in an anomaly group
    *
    * Access Level: Write
@@ -247,6 +270,36 @@ export class Lookoutmetrics extends PolicyStatement {
    */
   public toPutFeedback() {
     return this.to('PutFeedback');
+  }
+
+  /**
+   * Grants permission to add tags to a detector, dataset, or alert
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from a detector, dataset, or alert
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -292,7 +345,8 @@ export class Lookoutmetrics extends PolicyStatement {
       "GetAnomalyGroup",
       "GetDataQualityMetrics",
       "GetFeedback",
-      "GetSampleData"
+      "GetSampleData",
+      "ListTagsForResource"
     ],
     "List": [
       "ListAlerts",
@@ -300,22 +354,31 @@ export class Lookoutmetrics extends PolicyStatement {
       "ListAnomalyGroupSummaries",
       "ListAnomalyGroupTimeSeries",
       "ListMetricSets"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
   /**
    * Adds a resource of type AnomalyDetector to the statement
    *
-   * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_AnomalyDetector.html
+   * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_AnomalyDetectorSummary.html
    *
    * @param anomalyDetectorName - Identifier for the anomalyDetectorName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onAnomalyDetector(anomalyDetectorName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lookoutmetrics::${Account}:AnomalyDetector:${AnomalyDetectorName}';
+  public onAnomalyDetector(anomalyDetectorName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lookoutmetrics:${Region}:${Account}:AnomalyDetector:${AnomalyDetectorName}';
     arn = arn.replace('${AnomalyDetectorName}', anomalyDetectorName);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -323,18 +386,23 @@ export class Lookoutmetrics extends PolicyStatement {
   /**
    * Adds a resource of type MetricSet to the statement
    *
-   * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_MetricSet.html
+   * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_MetricSetSummary.html
    *
    * @param anomalyDetectorName - Identifier for the anomalyDetectorName.
    * @param metricSetName - Identifier for the metricSetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onMetricSet(anomalyDetectorName: string, metricSetName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lookoutmetrics::${Account}:MetricSet/${AnomalyDetectorName}/${MetricSetName}';
+  public onMetricSet(anomalyDetectorName: string, metricSetName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lookoutmetrics:${Region}:${Account}:MetricSet/${AnomalyDetectorName}/${MetricSetName}';
     arn = arn.replace('${AnomalyDetectorName}', anomalyDetectorName);
     arn = arn.replace('${MetricSetName}', metricSetName);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -342,16 +410,21 @@ export class Lookoutmetrics extends PolicyStatement {
   /**
    * Adds a resource of type Alert to the statement
    *
-   * https://docs.aws.amazon.com/lookoutmetrics/latest/dev/API_Alert.html
+   * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_AlertSummary.html
    *
    * @param alertName - Identifier for the alertName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onAlert(alertName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lookoutmetrics::${Account}:Alert:${AlertName}';
+  public onAlert(alertName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lookoutmetrics:${Region}:${Account}:Alert:${AlertName}';
     arn = arn.replace('${AlertName}', alertName);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

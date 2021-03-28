@@ -18,6 +18,9 @@ lookoutmetrics:ListAnomalyDetectors;List
 lookoutmetrics:ListAnomalyGroupSummaries;List
 lookoutmetrics:ListAnomalyGroupTimeSeries;List
 lookoutmetrics:ListMetricSets;List
+lookoutmetrics:ListTagsForResource;Read
 lookoutmetrics:PutFeedback;Write
+lookoutmetrics:TagResource;Tagging
+lookoutmetrics:UntagResource;Tagging
 lookoutmetrics:UpdateAnomalyDetector;Write
 lookoutmetrics:UpdateMetricSet;Write
