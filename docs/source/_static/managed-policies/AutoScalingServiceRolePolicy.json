@@ -63,6 +63,7 @@
 			"Action": [
 				"cloudwatch:DeleteAlarms",
 				"cloudwatch:DescribeAlarms",
+				"cloudwatch:GetMetricData",
 				"cloudwatch:PutMetricAlarm"
 			],
 			"Resource": "*"
