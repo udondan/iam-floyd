@@ -187,6 +187,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Confirms a http url TopicRuleDestinationDestination.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ConfirmTopicRuleDestination.html
+   */
+  public toConfirmTopicRuleDestination() {
+    return this.to('ConfirmTopicRuleDestination');
+  }
+
+  /**
    * Connect as the specified client
    *
    * Access Level: Write
@@ -412,6 +423,9 @@ export class Iot extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html
    */
   public toCreateProvisioningTemplate() {
@@ -437,6 +451,9 @@ export class Iot extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateRoleAlias.html
    */
@@ -543,6 +560,17 @@ export class Iot extends PolicyStatement {
    */
   public toCreateTopicRule() {
     return this.to('CreateTopicRule');
+  }
+
+  /**
+   * Creates a TopicRuleDestination.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateTopicRuleDestination.html
+   */
+  public toCreateTopicRuleDestination() {
+    return this.to('CreateTopicRuleDestination');
   }
 
   /**
@@ -851,6 +879,17 @@ export class Iot extends PolicyStatement {
    */
   public toDeleteTopicRule() {
     return this.to('DeleteTopicRule');
+  }
+
+  /**
+   * Deletes a TopicRuleDestination.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteTopicRuleDestination.html
+   */
+  public toDeleteTopicRuleDestination() {
+    return this.to('DeleteTopicRuleDestination');
   }
 
   /**
@@ -1437,6 +1476,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Gets a TopicRuleDestination.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_GetTopicRuleDestination.html
+   */
+  public toGetTopicRuleDestination() {
+    return this.to('GetTopicRuleDestination');
+  }
+
+  /**
    * Gets v2 logging options.
    *
    * Access Level: Read
@@ -1965,6 +2015,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Lists all TopicRuleDestinations.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListTopicRuleDestinations.html
+   */
+  public toListTopicRuleDestinations() {
+    return this.to('ListTopicRuleDestinations');
+  }
+
+  /**
    * Lists the rules for the specific topic.
    *
    * Access Level: List
@@ -2055,6 +2116,9 @@ export class Iot extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCACertificate.html
    */
@@ -2382,6 +2446,9 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateCACertificate.html
    */
   public toUpdateCACertificate() {
@@ -2503,6 +2570,9 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateProvisioningTemplate.html
    */
   public toUpdateProvisioningTemplate() {
@@ -2513,6 +2583,9 @@ export class Iot extends PolicyStatement {
    * Updates the role alias
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateRoleAlias.html
    */
@@ -2598,6 +2671,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Updates a TopicRuleDestination.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateTopicRuleDestination.html
+   */
+  public toUpdateTopicRuleDestination() {
+    return this.to('UpdateTopicRuleDestination');
+  }
+
+  /**
    * Validates a Device Defender security profile behaviors specification.
    *
    * Access Level: Read
@@ -2623,6 +2707,7 @@ export class Iot extends PolicyStatement {
       "CancelJobExecution",
       "ClearDefaultAuthorizer",
       "CloseTunnel",
+      "ConfirmTopicRuleDestination",
       "Connect",
       "CreateAuditSuppression",
       "CreateAuthorizer",
@@ -2644,6 +2729,7 @@ export class Iot extends PolicyStatement {
       "CreateStream",
       "CreateThing",
       "CreateTopicRule",
+      "CreateTopicRuleDestination",
       "DeleteAccountAuditConfiguration",
       "DeleteAuditSuppression",
       "DeleteAuthorizer",
@@ -2667,6 +2753,7 @@ export class Iot extends PolicyStatement {
       "DeleteThing",
       "DeleteThingShadow",
       "DeleteTopicRule",
+      "DeleteTopicRuleDestination",
       "DeleteV2LoggingLevel",
       "DeprecateThingType",
       "DetachSecurityProfile",
@@ -2717,7 +2804,8 @@ export class Iot extends PolicyStatement {
       "UpdateThing",
       "UpdateThingGroup",
       "UpdateThingGroupsForThing",
-      "UpdateThingShadow"
+      "UpdateThingShadow",
+      "UpdateTopicRuleDestination"
     ],
     "Permissions management": [
       "AttachPolicy",
@@ -2787,6 +2875,7 @@ export class Iot extends PolicyStatement {
       "GetStatistics",
       "GetThingShadow",
       "GetTopicRule",
+      "GetTopicRuleDestination",
       "GetV2LoggingOptions",
       "SearchIndex",
       "TestAuthorization",
@@ -2841,6 +2930,7 @@ export class Iot extends PolicyStatement {
       "ListThings",
       "ListThingsInBillingGroup",
       "ListThingsInThingGroup",
+      "ListTopicRuleDestinations",
       "ListTopicRules",
       "ListTunnels",
       "ListV2LoggingLevels",
@@ -3352,6 +3442,27 @@ export class Iot extends PolicyStatement {
   public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:rule/${RuleName}';
     arn = arn.replace('${RuleName}', ruleName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type destination to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/rule-destination.html
+   *
+   * @param destinationType - Identifier for the destinationType.
+   * @param uuid - Identifier for the uuid.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDestination(destinationType: string, uuid: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iot:${Region}:${Account}:destination/${DestinationType}/${Uuid}';
+    arn = arn.replace('${DestinationType}', destinationType);
+    arn = arn.replace('${Uuid}', uuid);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

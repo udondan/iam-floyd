@@ -12,6 +12,9 @@ detective:GetUsageInformation;Read
 detective:ListGraphs;List
 detective:ListInvitations;List
 detective:ListMembers;List
+detective:ListTagsForResource;Read
 detective:RejectInvitation;Write
 detective:SearchGraph;Read
 detective:StartMonitoringMember;Write
+detective:TagResource;Tagging
+detective:UntagResource;Tagging

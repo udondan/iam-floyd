@@ -1,1 +1,3 @@
-
+detective:RequestTag/${TagKey}
+detective:ResourceTag/${TagKey}
+detective:TagKeys

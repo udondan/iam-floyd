@@ -1,4 +1,5 @@
 storagegateway:device
+storagegateway:fs-association
 storagegateway:gateway
 storagegateway:share
 storagegateway:tape

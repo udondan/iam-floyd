@@ -13,6 +13,7 @@ iot:CancelJob;Write
 iot:CancelJobExecution;Write
 iot:ClearDefaultAuthorizer;Write
 iot:CloseTunnel;Write
+iot:ConfirmTopicRuleDestination;Write
 iot:Connect;Write
 iot:CreateAuditSuppression;Write
 iot:CreateAuthorizer;Write
@@ -39,6 +40,7 @@ iot:CreateThing;Write
 iot:CreateThingGroup;Tagging
 iot:CreateThingType;Tagging
 iot:CreateTopicRule;Write
+iot:CreateTopicRuleDestination;Write
 iot:DeleteAccountAuditConfiguration;Write
 iot:DeleteAuditSuppression;Write
 iot:DeleteAuthorizer;Write
@@ -67,6 +69,7 @@ iot:DeleteThingGroup;Tagging
 iot:DeleteThingShadow;Write
 iot:DeleteThingType;Tagging
 iot:DeleteTopicRule;Write
+iot:DeleteTopicRuleDestination;Write
 iot:DeleteV2LoggingLevel;Write
 iot:DeprecateThingType;Write
 iot:DescribeAccountAuditConfiguration;Read
@@ -120,6 +123,7 @@ iot:GetRegistrationCode;Read
 iot:GetStatistics;Read
 iot:GetThingShadow;Read
 iot:GetTopicRule;Read
+iot:GetTopicRuleDestination;Read
 iot:GetV2LoggingOptions;Read
 iot:ListActiveViolations;List
 iot:ListAttachedPolicies;List
@@ -168,6 +172,7 @@ iot:ListThingTypes;List
 iot:ListThings;List
 iot:ListThingsInBillingGroup;List
 iot:ListThingsInThingGroup;List
+iot:ListTopicRuleDestinations;List
 iot:ListTopicRules;List
 iot:ListTunnels;List
 iot:ListV2LoggingLevels;List
@@ -224,4 +229,5 @@ iot:UpdateThing;Write
 iot:UpdateThingGroup;Write
 iot:UpdateThingGroupsForThing;Write
 iot:UpdateThingShadow;Write
+iot:UpdateTopicRuleDestination;Write
 iot:ValidateSecurityProfileBehaviors;Read

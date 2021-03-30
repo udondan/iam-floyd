@@ -1,4 +1,5 @@
 codeguru-reviewer:AssociateRepository;Write
+codeguru-reviewer:CreateCodeReview;Write
 codeguru-reviewer:CreateConnectionToken;Read
 codeguru-reviewer:DescribeCodeReview;Read
 codeguru-reviewer:DescribeRecommendationFeedback;Read
@@ -9,5 +10,8 @@ codeguru-reviewer:ListCodeReviews;List
 codeguru-reviewer:ListRecommendationFeedback;List
 codeguru-reviewer:ListRecommendations;List
 codeguru-reviewer:ListRepositoryAssociations;List
+codeguru-reviewer:ListTagsForResource;List
 codeguru-reviewer:ListThirdPartyRepositories;Read
 codeguru-reviewer:PutRecommendationFeedback;Write
+codeguru-reviewer:TagResource;Tagging
+codeguru-reviewer:UnTagResource;Tagging

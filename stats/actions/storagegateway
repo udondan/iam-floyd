@@ -4,6 +4,7 @@ storagegateway:AddTagsToResource;Tagging
 storagegateway:AddUploadBuffer;Write
 storagegateway:AddWorkingStorage;Write
 storagegateway:AssignTapePool;Write
+storagegateway:AssociateFileSystem;Write
 storagegateway:AttachVolume;Write
 storagegateway:BypassGovernanceRetention;Write
 storagegateway:CancelArchival;Write
@@ -33,6 +34,7 @@ storagegateway:DescribeBandwidthRateLimitSchedule;Read
 storagegateway:DescribeCache;Read
 storagegateway:DescribeCachediSCSIVolumes;Read
 storagegateway:DescribeChapCredentials;Read
+storagegateway:DescribeFileSystemAssociations;Read
 storagegateway:DescribeGatewayInformation;Read
 storagegateway:DescribeMaintenanceStartTime;Read
 storagegateway:DescribeNFSFileShares;Read
@@ -48,9 +50,11 @@ storagegateway:DescribeVTLDevices;Read
 storagegateway:DescribeWorkingStorage;Read
 storagegateway:DetachVolume;Write
 storagegateway:DisableGateway;Write
+storagegateway:DisassociateFileSystem;Write
 storagegateway:JoinDomain;Write
 storagegateway:ListAutomaticTapeCreationPolicies;List
 storagegateway:ListFileShares;List
+storagegateway:ListFileSystemAssociations;List
 storagegateway:ListGateways;List
 storagegateway:ListLocalDisks;List
 storagegateway:ListTagsForResource;List
@@ -74,6 +78,7 @@ storagegateway:UpdateAutomaticTapeCreationPolicy;Write
 storagegateway:UpdateBandwidthRateLimit;Write
 storagegateway:UpdateBandwidthRateLimitSchedule;Write
 storagegateway:UpdateChapCredentials;Write
+storagegateway:UpdateFileSystemAssociation;Write
 storagegateway:UpdateGatewayInformation;Write
 storagegateway:UpdateGatewaySoftwareNow;Write
 storagegateway:UpdateMaintenanceStartTime;Write

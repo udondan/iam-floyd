@@ -34,6 +34,10 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_CreateGraph.html
    */
   public toCreateGraph() {
@@ -165,6 +169,20 @@ export class Detective extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the tag values that are assigned to a behavior graph
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to reject an invitation to become a member of a behavior graph
    *
    * Access Level: Write
@@ -195,6 +213,36 @@ export class Detective extends PolicyStatement {
     return this.to('StartMonitoringMember');
   }
 
+  /**
+   * Grants permission to assign tag values to a behavior graph
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tag values from a behavior graph
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/detective/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AcceptInvitation",
@@ -212,12 +260,17 @@ export class Detective extends PolicyStatement {
       "GetMembers",
       "GetPricingInformation",
       "GetUsageInformation",
+      "ListTagsForResource",
       "SearchGraph"
     ],
     "List": [
       "ListGraphs",
       "ListInvitations",
       "ListMembers"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
@@ -230,6 +283,9 @@ export class Detective extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onGraph(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:detective:${Region}:${Account}:graph:${ResourceId}';

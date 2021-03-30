@@ -93,6 +93,21 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an Amazon FSx file system with the Amazon FSx file gateway
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AssociateFileSystem.html
+   */
+  public toAssociateFileSystem() {
+    return this.to('AssociateFileSystem');
+  }
+
+  /**
    * Grants permission to connect a volume to an iSCSI connection and then attaches the volume to the specified gateway
    *
    * Access Level: Write
@@ -440,6 +455,17 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a description for one or more file system associations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeFileSystemAssociations.html
+   */
+  public toDescribeFileSystemAssociations() {
+    return this.to('DescribeFileSystemAssociations');
+  }
+
+  /**
    * Grants permission to get metadata about a gateway such as its name, network interfaces, configured time zone, and the state (whether the gateway is running or not)
    *
    * Access Level: Read
@@ -605,6 +631,17 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate an Amazon FSx file system from an Amazon FSx file gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DisassociateFileSystem.html
+   */
+  public toDisassociateFileSystem() {
+    return this.to('DisassociateFileSystem');
+  }
+
+  /**
    * Grants permission to enable you to join an Active Directory Domain
    *
    * Access Level: Write
@@ -635,6 +672,17 @@ export class Storagegateway extends PolicyStatement {
    */
   public toListFileShares() {
     return this.to('ListFileShares');
+  }
+
+  /**
+   * Grants permission to get a list of the file system associations for the specified gateway
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListFileSystemAssociations.html
+   */
+  public toListFileSystemAssociations() {
+    return this.to('ListFileSystemAssociations');
   }
 
   /**
@@ -894,6 +942,17 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a file system association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateFileSystemAssociation.html
+   */
+  public toUpdateFileSystemAssociation() {
+    return this.to('UpdateFileSystemAssociation');
+  }
+
+  /**
    * Grants permission to update a gateway's metadata, which includes the gateway's name and time zone
    *
    * Access Level: Write
@@ -999,6 +1058,7 @@ export class Storagegateway extends PolicyStatement {
       "AddUploadBuffer",
       "AddWorkingStorage",
       "AssignTapePool",
+      "AssociateFileSystem",
       "AttachVolume",
       "BypassGovernanceRetention",
       "CancelArchival",
@@ -1024,6 +1084,7 @@ export class Storagegateway extends PolicyStatement {
       "DeleteVolume",
       "DetachVolume",
       "DisableGateway",
+      "DisassociateFileSystem",
       "JoinDomain",
       "NotifyWhenUploaded",
       "RefreshCache",
@@ -1039,6 +1100,7 @@ export class Storagegateway extends PolicyStatement {
       "UpdateBandwidthRateLimit",
       "UpdateBandwidthRateLimitSchedule",
       "UpdateChapCredentials",
+      "UpdateFileSystemAssociation",
       "UpdateGatewayInformation",
       "UpdateGatewaySoftwareNow",
       "UpdateMaintenanceStartTime",
@@ -1060,6 +1122,7 @@ export class Storagegateway extends PolicyStatement {
       "DescribeCache",
       "DescribeCachediSCSIVolumes",
       "DescribeChapCredentials",
+      "DescribeFileSystemAssociations",
       "DescribeGatewayInformation",
       "DescribeMaintenanceStartTime",
       "DescribeNFSFileShares",
@@ -1077,6 +1140,7 @@ export class Storagegateway extends PolicyStatement {
     "List": [
       "ListAutomaticTapeCreationPolicies",
       "ListFileShares",
+      "ListFileSystemAssociations",
       "ListGateways",
       "ListLocalDisks",
       "ListTagsForResource",
@@ -1103,6 +1167,28 @@ export class Storagegateway extends PolicyStatement {
     var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/device/${Vtldevice}';
     arn = arn.replace('${GatewayId}', gatewayId);
     arn = arn.replace('${Vtldevice}', vtldevice);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type fs-association to the statement
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/userguide/API_AssociateFileSystem.html
+   *
+   * @param fsaId - Identifier for the fsaId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFsAssociation(fsaId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:fs-association/${FsaId}';
+    arn = arn.replace('${FsaId}', fsaId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

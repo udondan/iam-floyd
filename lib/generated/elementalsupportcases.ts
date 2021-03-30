@@ -19,6 +19,17 @@ export class ElementalSupportCases extends PolicyStatement {
   }
 
   /**
+   * Verify whether the caller has the permissions to perform support case operations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software
+   */
+  public toCheckCasePermission() {
+    return this.to('CheckCasePermission');
+  }
+
+  /**
    * Grant the permission to create a support case
    *
    * Access Level: Write
@@ -64,6 +75,7 @@ export class ElementalSupportCases extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "CheckCasePermission",
       "CreateCase",
       "UpdateCase"
     ],
