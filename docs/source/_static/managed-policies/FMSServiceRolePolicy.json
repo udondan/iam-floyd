@@ -472,6 +472,45 @@
 				"logs:ListLogDeliveries"
 			],
 			"Resource": "*"
-		}
+		},
+		{
+            "Effect": "Allow",
+            "Action": [
+                "route53resolver:ListFirewallRuleGroupAssociations",
+                "route53resolver:ListTagsForResource",
+                "route53resolver:ListFirewallRuleGroups",
+                "route53resolver:GetFirewallRuleGroupAssociation",
+                "route53resolver:GetFirewallRuleGroup",
+                "route53resolver:GetFirewallRuleGroupPolicy",
+                "route53resolver:PutFirewallRuleGroupPolicy"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "route53resolver:UpdateFirewallRuleGroupAssociation",
+                "route53resolver:DisassociateFirewallRuleGroup"
+            ],
+            "Resource": "arn:aws:route53resolver:*:*:firewall-rule-group-association/*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:ResourceTag/FMManaged": "true"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "route53resolver:AssociateFirewallRuleGroup",
+                "route53resolver:TagResource"
+            ],
+            "Resource": "arn:aws:route53resolver:*:*:firewall-rule-group-association/*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestTag/FMManaged": "true"
+                }
+            }
+        }
     ]
 }
