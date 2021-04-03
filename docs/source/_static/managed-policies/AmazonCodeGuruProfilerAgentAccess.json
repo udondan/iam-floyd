@@ -5,6 +5,7 @@
 			"Effect": "Allow",
 			"Action": [
 				"codeguru-profiler:ConfigureAgent",
+				"codeguru-profiler:CreateProfilingGroup",
 				"codeguru-profiler:PostAgentProfile"
 			],
 			"Resource": "*"
