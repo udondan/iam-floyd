@@ -1,3 +1,4 @@
+comprehend:ModelKmsKey
 comprehend:OutputKmsKey
 comprehend:RequestTag/${TagKey}
 comprehend:ResourceTag/${TagKey}

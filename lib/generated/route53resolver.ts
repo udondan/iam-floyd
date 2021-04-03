@@ -19,6 +19,20 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an Amazon VPC with a specified firewall rule group
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateFirewallRuleGroup.html
+   */
+  public toAssociateFirewallRuleGroup() {
+    return this.to('AssociateFirewallRuleGroup');
+  }
+
+  /**
    * Grants permission to associate a specified IP address with a Resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound)
    *
    * Access Level: Write
@@ -49,6 +63,39 @@ export class Route53resolver extends PolicyStatement {
    */
   public toAssociateResolverRule() {
     return this.to('AssociateResolverRule');
+  }
+
+  /**
+   * Grants permission to create a Firewall domain list.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateFirewallDomainList.html
+   */
+  public toCreateFirewallDomainList() {
+    return this.to('CreateFirewallDomainList');
+  }
+
+  /**
+   * Grants permission to create a Firewall rule within a Firewall rule group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateFirewallRule.html
+   */
+  public toCreateFirewallRule() {
+    return this.to('CreateFirewallRule');
+  }
+
+  /**
+   * Grants permission to create a Firewall rule group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateFirewallRuleGroup.html
+   */
+  public toCreateFirewallRuleGroup() {
+    return this.to('CreateFirewallRuleGroup');
   }
 
   /**
@@ -85,6 +132,39 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a Firewall domain list.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteFirewallDomainList.html
+   */
+  public toDeleteFirewallDomainList() {
+    return this.to('DeleteFirewallDomainList');
+  }
+
+  /**
+   * Grants permission to delete a Firewall rule within a Firewall rule group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteFirewallRule.html
+   */
+  public toDeleteFirewallRule() {
+    return this.to('DeleteFirewallRule');
+  }
+
+  /**
+   * Grants permission to delete a Firewall rule group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteFirewallRuleGroup.html
+   */
+  public toDeleteFirewallRuleGroup() {
+    return this.to('DeleteFirewallRuleGroup');
+  }
+
+  /**
    * Grants permission to delete a Resolver endpoint. The effect of deleting a Resolver endpoint depends on whether it's an inbound or an outbound endpoint
    *
    * Access Level: Write
@@ -118,6 +198,17 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove the association between a specified Firewall rule group and a specified VPC
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateFirewallRuleGroup.html
+   */
+  public toDisassociateFirewallRuleGroup() {
+    return this.to('DisassociateFirewallRuleGroup');
+  }
+
+  /**
    * Grants permission to remove a specified IP address from a Resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound)
    *
    * Access Level: Write
@@ -148,6 +239,64 @@ export class Route53resolver extends PolicyStatement {
    */
   public toDisassociateResolverRule() {
     return this.to('DisassociateResolverRule');
+  }
+
+  /**
+   * Grants permission to get information about a specified Firewall config.
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetFirewallConfig.html
+   */
+  public toGetFirewallConfig() {
+    return this.to('GetFirewallConfig');
+  }
+
+  /**
+   * Grants permission to get information about a specified Firewall domain list.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetFirewallDomainList.html
+   */
+  public toGetFirewallDomainList() {
+    return this.to('GetFirewallDomainList');
+  }
+
+  /**
+   * Grants permission to get information about a specified Firewall rule group.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetFirewallRuleGroup.html
+   */
+  public toGetFirewallRuleGroup() {
+    return this.to('GetFirewallRuleGroup');
+  }
+
+  /**
+   * Grants permission to get information about an association between a specified Firewall rule group and a VPC
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetFirewallRuleGroupAssociation.html
+   */
+  public toGetFirewallRuleGroupAssociation() {
+    return this.to('GetFirewallRuleGroupAssociation');
+  }
+
+  /**
+   * Grants permission to get information about a specified Firewall rule group policy, which specifies the Firewall rule group operations and resources that you want to allow another AWS account to use.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetFirewallRuleGroupPolicy.html
+   */
+  public toGetFirewallRuleGroupPolicy() {
+    return this.to('GetFirewallRuleGroupPolicy');
   }
 
   /**
@@ -239,6 +388,86 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add, remove or replace Firewall domains in a Firewall domain list.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ImportFirewallDomains.html
+   */
+  public toImportFirewallDomains() {
+    return this.to('ImportFirewallDomains');
+  }
+
+  /**
+   * Grants permission to list all the Firewall config that current AWS account is able to check.
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallConfigs.html
+   */
+  public toListFirewallConfigs() {
+    return this.to('ListFirewallConfigs');
+  }
+
+  /**
+   * Grants permission to list all the Firewall domain list that current AWS account is able to use.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallDomainLists.html
+   */
+  public toListFirewallDomainLists() {
+    return this.to('ListFirewallDomainLists');
+  }
+
+  /**
+   * Grants permission to list all the Firewall domain under a speicfied Firewall domain list.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallDomains.html
+   */
+  public toListFirewallDomains() {
+    return this.to('ListFirewallDomains');
+  }
+
+  /**
+   * Grants permission to list information about associations between Amazon VPCs and Firewall rule group.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallRuleGroupAssociations.html
+   */
+  public toListFirewallRuleGroupAssociations() {
+    return this.to('ListFirewallRuleGroupAssociations');
+  }
+
+  /**
+   * Grants permission to list all the Firewall rule group that current AWS account is able to use.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallRuleGroups.html
+   */
+  public toListFirewallRuleGroups() {
+    return this.to('ListFirewallRuleGroups');
+  }
+
+  /**
+   * Grants permission to list all the Firewall rule under a speicfied Firewall rule group.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallRules.html
+   */
+  public toListFirewallRules() {
+    return this.to('ListFirewallRules');
+  }
+
+  /**
    * Grants permission to list the DNSSEC validation support status for DNS queries
    *
    * Access Level: List
@@ -327,6 +556,17 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to specify an AWS account that you want to share a Firewall rule group with, the Firewall rule group that you want to share, and the operations that you want the account to be able to perform on the configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_PutFirewallRuleGroupPolicy.html
+   */
+  public toPutFirewallRuleGroupPolicy() {
+    return this.to('PutFirewallRuleGroupPolicy');
+  }
+
+  /**
    * Grants permission to specify an AWS account that you want to share a query logging configuration with, the query logging configuration that you want to share, and the operations that you want the account to be able to perform on the configuration
    *
    * Access Level: Write
@@ -371,6 +611,53 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update selected settings for an Firewall config.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateFirewallConfig.html
+   */
+  public toUpdateFirewallConfig() {
+    return this.to('UpdateFirewallConfig');
+  }
+
+  /**
+   * Grants permission to add, remove or replace Firewall domains in a Firewall domain list.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateFirewallDomains.html
+   */
+  public toUpdateFirewallDomains() {
+    return this.to('UpdateFirewallDomains');
+  }
+
+  /**
+   * Grants permission to update selected settings for an Firewall rule in a Firewall rule group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateFirewallRule.html
+   */
+  public toUpdateFirewallRule() {
+    return this.to('UpdateFirewallRule');
+  }
+
+  /**
+   * Grants permission to update selected settings for an Firewall rule group association.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateFirewallRuleGroupAssociation.html
+   */
+  public toUpdateFirewallRuleGroupAssociation() {
+    return this.to('UpdateFirewallRuleGroupAssociation');
+  }
+
+  /**
    * Grants permission to update the DNSSEC validation support status for DNS queries within the specified resource
    *
    * Access Level: Write
@@ -405,25 +692,44 @@ export class Route53resolver extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "AssociateFirewallRuleGroup",
       "AssociateResolverEndpointIpAddress",
       "AssociateResolverQueryLogConfig",
       "AssociateResolverRule",
+      "CreateFirewallDomainList",
+      "CreateFirewallRule",
+      "CreateFirewallRuleGroup",
       "CreateResolverEndpoint",
       "CreateResolverQueryLogConfig",
       "CreateResolverRule",
+      "DeleteFirewallDomainList",
+      "DeleteFirewallRule",
+      "DeleteFirewallRuleGroup",
       "DeleteResolverEndpoint",
       "DeleteResolverQueryLogConfig",
       "DeleteResolverRule",
+      "DisassociateFirewallRuleGroup",
       "DisassociateResolverEndpointIpAddress",
       "DisassociateResolverQueryLogConfig",
       "DisassociateResolverRule",
+      "ImportFirewallDomains",
+      "PutFirewallRuleGroupPolicy",
       "PutResolverQueryLogConfigPolicy",
       "PutResolverRulePolicy",
+      "UpdateFirewallConfig",
+      "UpdateFirewallDomains",
+      "UpdateFirewallRule",
+      "UpdateFirewallRuleGroupAssociation",
       "UpdateResolverDnssecConfig",
       "UpdateResolverEndpoint",
       "UpdateResolverRule"
     ],
     "Read": [
+      "GetFirewallConfig",
+      "GetFirewallDomainList",
+      "GetFirewallRuleGroup",
+      "GetFirewallRuleGroupAssociation",
+      "GetFirewallRuleGroupPolicy",
       "GetResolverDnssecConfig",
       "GetResolverEndpoint",
       "GetResolverQueryLogConfig",
@@ -435,6 +741,12 @@ export class Route53resolver extends PolicyStatement {
       "ListTagsForResource"
     ],
     "List": [
+      "ListFirewallConfigs",
+      "ListFirewallDomainLists",
+      "ListFirewallDomains",
+      "ListFirewallRuleGroupAssociations",
+      "ListFirewallRuleGroups",
+      "ListFirewallRules",
       "ListResolverDnssecConfigs",
       "ListResolverEndpointIpAddresses",
       "ListResolverEndpoints",
@@ -530,6 +842,94 @@ export class Route53resolver extends PolicyStatement {
    */
   public onResolverEndpoint(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:resolver-endpoint/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type firewall-rule-group to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFirewallRuleGroup(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:firewall-rule-group/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type firewall-rule-group-association to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFirewallRuleGroupAssociation(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:firewall-rule-group-association/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type firewall-domain-list to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFirewallDomainList(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:firewall-domain-list/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type firewall-config to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFirewallConfig(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:firewall-config/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

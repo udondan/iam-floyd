@@ -1,3 +1,4 @@
+frauddetector:batch-prediction
 frauddetector:detector
 frauddetector:detector-version
 frauddetector:entity-type

@@ -104,6 +104,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifVolumeKmsKey()
+   * - .ifModelKmsKey()
    * - .ifOutputKmsKey()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
@@ -138,6 +139,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifVolumeKmsKey()
+   * - .ifModelKmsKey()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
@@ -907,6 +909,22 @@ export class Comprehend extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters access by the model KMS key associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateDocumentClassifier()
+   * - .toCreateEntityRecognizer()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifModelKmsKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`ModelKmsKey`, value, operator || 'ArnLike');
   }
 
   /**

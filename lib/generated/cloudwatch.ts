@@ -30,7 +30,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified anomaly detection model from your account.
+   * Grants permission to delete the specified anomaly detection model from your account
    *
    * Access Level: Write
    *
@@ -60,6 +60,17 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toDeleteInsightRules() {
     return this.to('DeleteInsightRules');
+  }
+
+  /**
+   * Grants permission to delete the CloudWatch metric stream that you specify
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteMetricStream.html
+   */
+  public toDeleteMetricStream() {
+    return this.to('DeleteMetricStream');
   }
 
   /**
@@ -96,7 +107,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Grants permission to lists the anomaly detection models that you have created in your account.
+   * Grants permission to list the anomaly detection models that you have created in your account
    *
    * Access Level: Read
    *
@@ -206,6 +217,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the details of a CloudWatch metric stream
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStream.html
+   */
+  public toGetMetricStream() {
+    return this.to('GetMetricStream');
+  }
+
+  /**
    * Grants permission to retrieve snapshots of metric widgets
    *
    * Access Level: Read
@@ -225,6 +247,17 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toListDashboards() {
     return this.to('ListDashboards');
+  }
+
+  /**
+   * Grants permission to return a list of all CloudWatch metric streams in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetricStreams.html
+   */
+  public toListMetricStreams() {
+    return this.to('ListMetricStreams');
   }
 
   /**
@@ -250,7 +283,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create or update an anomaly detection model for a CloudWatch metric.
+   * Grants permission to create or update an anomaly detection model for a CloudWatch metric
    *
    * Access Level: Write
    *
@@ -331,6 +364,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a CloudWatch metric stream, or update an existing metric stream if it already exists
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricStream.html
+   */
+  public toPutMetricStream() {
+    return this.to('PutMetricStream');
+  }
+
+  /**
    * Grants permission to temporarily set the state of an alarm for testing purposes
    *
    * Access Level: Write
@@ -339,6 +383,28 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toSetAlarmState() {
     return this.to('SetAlarmState');
+  }
+
+  /**
+   * Grants permission to start all CloudWatch metric streams that you specify
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_StartMetricStreams.html
+   */
+  public toStartMetricStreams() {
+    return this.to('StartMetricStreams');
+  }
+
+  /**
+   * Grants permission to stop all CloudWatch metric streams that you specify
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_StopMetricStreams.html
+   */
+  public toStopMetricStreams() {
+    return this.to('StopMetricStreams');
   }
 
   /**
@@ -376,6 +442,7 @@ export class Cloudwatch extends PolicyStatement {
       "DeleteAnomalyDetector",
       "DeleteDashboards",
       "DeleteInsightRules",
+      "DeleteMetricStream",
       "DisableAlarmActions",
       "DisableInsightRules",
       "EnableAlarmActions",
@@ -386,7 +453,10 @@ export class Cloudwatch extends PolicyStatement {
       "PutInsightRule",
       "PutMetricAlarm",
       "PutMetricData",
-      "SetAlarmState"
+      "PutMetricStream",
+      "SetAlarmState",
+      "StartMetricStreams",
+      "StopMetricStreams"
     ],
     "Read": [
       "DescribeAlarmHistory",
@@ -398,10 +468,12 @@ export class Cloudwatch extends PolicyStatement {
       "GetInsightRuleReport",
       "GetMetricData",
       "GetMetricStatistics",
+      "GetMetricStream",
       "GetMetricWidgetImage"
     ],
     "List": [
       "ListDashboards",
+      "ListMetricStreams",
       "ListMetrics",
       "ListTagsForResource"
     ],
@@ -466,6 +538,28 @@ export class Cloudwatch extends PolicyStatement {
   public onInsightRule(insightRuleName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudwatch:${Region}:${Account}:insight-rule/${InsightRuleName}';
     arn = arn.replace('${InsightRuleName}', insightRuleName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type metric-stream to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
+   *
+   * @param metricStreamName - Identifier for the metricStreamName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMetricStream(metricStreamName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudwatch:${Region}:${Account}:metric-stream/${MetricStreamName}';
+    arn = arn.replace('${MetricStreamName}', metricStreamName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

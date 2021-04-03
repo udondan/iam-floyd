@@ -1,5 +1,6 @@
 ram:AllowsExternalPrincipals
 ram:PermissionArn
+ram:PermissionResourceType
 ram:Principal
 ram:RequestTag/${TagKey}
 ram:RequestedAllowsExternalPrincipals

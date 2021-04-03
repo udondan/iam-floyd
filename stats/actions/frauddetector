@@ -1,10 +1,13 @@
 frauddetector:BatchCreateVariable;Write
 frauddetector:BatchGetVariable;List
+frauddetector:CancelBatchPredictionJob;Write
+frauddetector:CreateBatchPredictionJob;Write
 frauddetector:CreateDetectorVersion;Write
 frauddetector:CreateModel;Write
 frauddetector:CreateModelVersion;Write
 frauddetector:CreateRule;Write
 frauddetector:CreateVariable;Write
+frauddetector:DeleteBatchPredictionJob;Write
 frauddetector:DeleteDetector;Write
 frauddetector:DeleteDetectorVersion;Write
 frauddetector:DeleteEntityType;Write
@@ -19,6 +22,7 @@ frauddetector:DeleteRule;Write
 frauddetector:DeleteVariable;Write
 frauddetector:DescribeDetector;Read
 frauddetector:DescribeModelVersions;Read
+frauddetector:GetBatchPredictionJobs;List
 frauddetector:GetDetectorVersion;List
 frauddetector:GetDetectors;List
 frauddetector:GetEntityTypes;List

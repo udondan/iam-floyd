@@ -219,12 +219,23 @@ export class Config extends PolicyStatement {
   /**
    * Grants permission to return a list of compliant and noncompliant rules with the number of resources for compliant and noncompliant rules
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeAggregateComplianceByConfigRules.html
    */
   public toDescribeAggregateComplianceByConfigRules() {
     return this.to('DescribeAggregateComplianceByConfigRules');
+  }
+
+  /**
+   * Grants permission to return a list of compliant and noncompliant conformance packs along with count of compliant, non-compliant and total rules within each conformance pack
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeAggregateComplianceByConformancePacks.html
+   */
+  public toDescribeAggregateComplianceByConformancePacks() {
+    return this.to('DescribeAggregateComplianceByConformancePacks');
   }
 
   /**
@@ -241,7 +252,7 @@ export class Config extends PolicyStatement {
   /**
    * Grants permission to indicate whether the specified AWS Config rules are compliant
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeComplianceByConfigRule.html
    */
@@ -252,7 +263,7 @@ export class Config extends PolicyStatement {
   /**
    * Grants permission to indicate whether the specified AWS resources are compliant
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeComplianceByResource.html
    */
@@ -263,7 +274,7 @@ export class Config extends PolicyStatement {
   /**
    * Grants permission to return status information for each of your AWS managed Config rules
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigRuleEvaluationStatus.html
    */
@@ -285,7 +296,7 @@ export class Config extends PolicyStatement {
   /**
    * Grants permission to return status information for sources within an aggregator
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationAggregatorSourcesStatus.html
    */
@@ -307,7 +318,7 @@ export class Config extends PolicyStatement {
   /**
    * Grants permission to return the current status of the specified configuration recorder
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html
    */
@@ -351,7 +362,7 @@ export class Config extends PolicyStatement {
   /**
    * Grants permission to return a list of one or more conformance packs
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConformancePacks.html
    */
@@ -362,7 +373,7 @@ export class Config extends PolicyStatement {
   /**
    * Grants permission to return the current status of the specified delivery channel
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeDeliveryChannelStatus.html
    */
@@ -395,7 +406,7 @@ export class Config extends PolicyStatement {
   /**
    * Grants permission to return a list of organization config rules
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeOrganizationConfigRules.html
    */
@@ -417,7 +428,7 @@ export class Config extends PolicyStatement {
   /**
    * Grants permission to return a list of organization conformance packs
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeOrganizationConformancePacks.html
    */
@@ -461,7 +472,7 @@ export class Config extends PolicyStatement {
   /**
    * Grants permission to provide a detailed view of a Remediation Execution for a set of resources including state, timestamps and any error messages for steps that have failed
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeRemediationExecutionStatus.html
    */
@@ -500,6 +511,17 @@ export class Config extends PolicyStatement {
    */
   public toGetAggregateConfigRuleComplianceSummary() {
     return this.to('GetAggregateConfigRuleComplianceSummary');
+  }
+
+  /**
+   * Grants permission to return the number of compliant and noncompliant conformance packs for one or more accounts and regions in an aggregator
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_GetAggregateConformancePackComplianceSummary.html
+   */
+  public toGetAggregateConformancePackComplianceSummary() {
+    return this.to('GetAggregateConformancePackComplianceSummary');
   }
 
   /**
@@ -681,7 +703,7 @@ export class Config extends PolicyStatement {
   /**
    * Grants permission to list the tags for AWS Config resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_ListTagsForResource.html
    */
@@ -966,15 +988,22 @@ export class Config extends PolicyStatement {
       "BatchGetAggregateResourceConfig",
       "BatchGetResourceConfig",
       "DeliverConfigSnapshot",
+      "DescribeAggregateComplianceByConfigRules",
+      "DescribeAggregateComplianceByConformancePacks",
+      "DescribeComplianceByConfigRule",
+      "DescribeComplianceByResource",
+      "DescribeConfigRuleEvaluationStatus",
+      "DescribeConfigurationAggregatorSourcesStatus",
+      "DescribeConfigurationRecorderStatus",
       "DescribeConformancePackCompliance",
       "DescribeConformancePackStatus",
-      "DescribeConformancePacks",
+      "DescribeDeliveryChannelStatus",
       "DescribeOrganizationConfigRuleStatuses",
-      "DescribeOrganizationConfigRules",
       "DescribeOrganizationConformancePackStatuses",
-      "DescribeOrganizationConformancePacks",
+      "DescribeRemediationExecutionStatus",
       "GetAggregateComplianceDetailsByConfigRule",
       "GetAggregateConfigRuleComplianceSummary",
+      "GetAggregateConformancePackComplianceSummary",
       "GetAggregateDiscoveredResourceCounts",
       "GetAggregateResourceConfig",
       "GetComplianceDetailsByConfigRule",
@@ -988,6 +1017,7 @@ export class Config extends PolicyStatement {
       "GetOrganizationConformancePackDetailedStatus",
       "GetResourceConfigHistory",
       "GetStoredQuery",
+      "ListTagsForResource",
       "SelectAggregateResourceConfig",
       "SelectResourceConfig"
     ],
@@ -1028,27 +1058,21 @@ export class Config extends PolicyStatement {
       "StopConfigurationRecorder"
     ],
     "List": [
-      "DescribeAggregateComplianceByConfigRules",
       "DescribeAggregationAuthorizations",
-      "DescribeComplianceByConfigRule",
-      "DescribeComplianceByResource",
-      "DescribeConfigRuleEvaluationStatus",
       "DescribeConfigRules",
-      "DescribeConfigurationAggregatorSourcesStatus",
       "DescribeConfigurationAggregators",
-      "DescribeConfigurationRecorderStatus",
       "DescribeConfigurationRecorders",
-      "DescribeDeliveryChannelStatus",
+      "DescribeConformancePacks",
       "DescribeDeliveryChannels",
+      "DescribeOrganizationConfigRules",
+      "DescribeOrganizationConformancePacks",
       "DescribePendingAggregationRequests",
       "DescribeRemediationConfigurations",
       "DescribeRemediationExceptions",
-      "DescribeRemediationExecutionStatus",
       "DescribeRetentionConfigurations",
       "ListAggregateDiscoveredResources",
       "ListDiscoveredResources",
-      "ListStoredQueries",
-      "ListTagsForResource"
+      "ListStoredQueries"
     ],
     "Tagging": [
       "TagResource",

@@ -19,7 +19,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Grant permission to accept the specified resource share invitation
+   * Grants permission to accept the specified resource share invitation
    *
    * Access Level: Write
    *
@@ -431,6 +431,7 @@ export class Ram extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifPermissionArn()
+   * - .ifPermissionResourceType()
    */
   public onPermission(resourcePath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:ram::${Account}:permission/${ResourcePath}';
@@ -477,6 +478,21 @@ export class Ram extends PolicyStatement {
    */
   public ifPermissionArn(value: string | string[], operator?: Operator | string) {
     return this.if(`PermissionArn`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access based on permissions of specified resource type
+   *
+   * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
+   *
+   * Applies to resource types:
+   * - permission
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPermissionResourceType(value: string | string[], operator?: Operator | string) {
+    return this.if(`PermissionResourceType`, value, operator || 'StringLike');
   }
 
   /**

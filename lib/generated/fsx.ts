@@ -19,6 +19,17 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a File Gateway instance with an Amazon FSx for Windows File Server file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
+   */
+  public toAssociateFileGateway() {
+    return this.to('AssociateFileGateway');
+  }
+
+  /**
    * Grants permission to associate DNS aliases with an Amazon FSx for Windows File Server file system
    *
    * Access Level: Write
@@ -123,6 +134,17 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the File Gateway instances associated with an Amazon FSx for Windows File Server file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
+   */
+  public toDescribeAssociatedFileGateways() {
+    return this.to('DescribeAssociatedFileGateways');
+  }
+
+  /**
    * Grants permission to return the descriptions of all backups owned by your AWS account in the AWS Region of the endpoint that you're calling
    *
    * Access Level: Read
@@ -164,6 +186,17 @@ export class Fsx extends PolicyStatement {
    */
   public toDescribeFileSystems() {
     return this.to('DescribeFileSystems');
+  }
+
+  /**
+   * Grants permission to disassociate a File Gateway instance from an Amazon FSx for Windows File Server file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
+   */
+  public toDisassociateFileGateway() {
+    return this.to('DisassociateFileGateway');
   }
 
   /**
@@ -230,10 +263,13 @@ export class Fsx extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "AssociateFileGateway",
       "AssociateFileSystemAliases",
       "CancelDataRepositoryTask",
       "DeleteBackup",
       "DeleteFileSystem",
+      "DescribeAssociatedFileGateways",
+      "DisassociateFileGateway",
       "DisassociateFileSystemAliases",
       "UpdateFileSystem"
     ],

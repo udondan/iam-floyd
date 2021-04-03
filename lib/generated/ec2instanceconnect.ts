@@ -19,7 +19,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to push the SSH public key to the instance metadata where it remains for 60 seconds.
+   * Grants access to push an SSH public key to the specified EC2 instance to be used for standard SSH
    *
    * Access Level: Write
    *
@@ -32,9 +32,21 @@ export class Ec2InstanceConnect extends PolicyStatement {
     return this.to('SendSSHPublicKey');
   }
 
+  /**
+   * Grants access to push an SSH public key to the specified EC2 instance to be used for serial console SSH
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSerialConsoleSSHPublicKey.html
+   */
+  public toSendSerialConsoleSSHPublicKey() {
+    return this.to('SendSerialConsoleSSHPublicKey');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
-      "SendSSHPublicKey"
+      "SendSSHPublicKey",
+      "SendSerialConsoleSSHPublicKey"
     ]
   };
 
@@ -62,7 +74,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the tags associated with the resource
+   * Filters access based on the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *

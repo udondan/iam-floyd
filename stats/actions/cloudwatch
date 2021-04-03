@@ -2,6 +2,7 @@ cloudwatch:DeleteAlarms;Write
 cloudwatch:DeleteAnomalyDetector;Write
 cloudwatch:DeleteDashboards;Write
 cloudwatch:DeleteInsightRules;Write
+cloudwatch:DeleteMetricStream;Write
 cloudwatch:DescribeAlarmHistory;Read
 cloudwatch:DescribeAlarms;Read
 cloudwatch:DescribeAlarmsForMetric;Read
@@ -15,8 +16,10 @@ cloudwatch:GetDashboard;Read
 cloudwatch:GetInsightRuleReport;Read
 cloudwatch:GetMetricData;Read
 cloudwatch:GetMetricStatistics;Read
+cloudwatch:GetMetricStream;Read
 cloudwatch:GetMetricWidgetImage;Read
 cloudwatch:ListDashboards;List
+cloudwatch:ListMetricStreams;List
 cloudwatch:ListMetrics;List
 cloudwatch:ListTagsForResource;List
 cloudwatch:PutAnomalyDetector;Write
@@ -25,6 +28,9 @@ cloudwatch:PutDashboard;Write
 cloudwatch:PutInsightRule;Write
 cloudwatch:PutMetricAlarm;Write
 cloudwatch:PutMetricData;Write
+cloudwatch:PutMetricStream;Write
 cloudwatch:SetAlarmState;Write
+cloudwatch:StartMetricStreams;Write
+cloudwatch:StopMetricStreams;Write
 cloudwatch:TagResource;Tagging
 cloudwatch:UntagResource;Tagging
