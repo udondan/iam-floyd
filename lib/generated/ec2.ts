@@ -1,4 +1,4 @@
-import { PolicyStatement } from '../shared';
+import { PolicyStatement } from '../shared/policy-statement';
 
 /**
  * Statement provider for service [ec2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html).
