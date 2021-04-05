@@ -1,3 +1,0 @@
-cognito-idp:RequestTag/${TagKey}
-cognito-idp:ResourceTag/${TagKey}
-cognito-idp:TagKeys

@@ -1,7 +1,0 @@
-mediatailor:DeletePlaybackConfiguration;Write
-mediatailor:GetPlaybackConfiguration;Read
-mediatailor:ListPlaybackConfigurations;List
-mediatailor:ListTagsForResource;Read
-mediatailor:PutPlaybackConfiguration;Write
-mediatailor:TagResource;Tagging
-mediatailor:UntagResource;Tagging

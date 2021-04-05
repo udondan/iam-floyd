@@ -1,5 +1,0 @@
-imagebuilder:CreatedResourceTag/<key>
-imagebuilder:CreatedResourceTagKeys
-imagebuilder:RequestTag/${TagKey}
-imagebuilder:ResourceTag/${TagKey}
-imagebuilder:TagKeys

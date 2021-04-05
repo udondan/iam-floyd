@@ -1,3 +1,0 @@
-codepipeline:RequestTag/${TagKey}
-codepipeline:ResourceTag/${TagKey}
-codepipeline:TagKeys

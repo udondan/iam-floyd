@@ -1,6 +1,0 @@
-connect:AttributeType
-connect:InstanceId
-connect:RequestTag/${TagKey}
-connect:ResourceTag/${TagKey}
-connect:StorageResourceType
-connect:TagKeys

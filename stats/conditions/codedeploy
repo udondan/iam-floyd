@@ -1,3 +1,0 @@
-codedeploy:RequestTag/${TagKey}
-codedeploy:ResourceTag/${TagKey}
-codedeploy:TagKeys

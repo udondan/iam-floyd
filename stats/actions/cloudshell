@@ -1,9 +1,0 @@
-cloudshell:CreateEnvironment;Write
-cloudshell:CreateSession;Write
-cloudshell:DeleteEnvironment;Write
-cloudshell:GetEnvironmentStatus;Read
-cloudshell:GetFileDownloadUrls;Write
-cloudshell:GetFileUploadUrls;Write
-cloudshell:PutCredentials;Write
-cloudshell:StartEnvironment;Write
-cloudshell:StopEnvironment;Write

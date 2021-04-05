@@ -1,3 +1,0 @@
-qldb:RequestTag/${TagKey}
-qldb:ResourceTag/${TagKey}
-qldb:TagKeys

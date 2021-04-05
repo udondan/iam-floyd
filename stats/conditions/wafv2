@@ -1,3 +1,0 @@
-wafv2:RequestTag/${TagKey}
-wafv2:ResourceTag/${TagKey}
-wafv2:TagKeys

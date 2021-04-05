@@ -1,4 +1,0 @@
-elasticloadbalancing:RequestTag/${TagKey}
-elasticloadbalancing:ResourceTag/
-elasticloadbalancing:ResourceTag/${TagKey}
-elasticloadbalancing:TagKeys

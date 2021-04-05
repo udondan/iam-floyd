@@ -1,7 +1,0 @@
-aws-portal:ModifyAccount;Write
-aws-portal:ModifyBilling;Write
-aws-portal:ModifyPaymentMethods;Write
-aws-portal:ViewAccount;Read
-aws-portal:ViewBilling;Read
-aws-portal:ViewPaymentMethods;Read
-aws-portal:ViewUsage;Read

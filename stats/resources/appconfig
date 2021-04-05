@@ -1,6 +1,0 @@
-appconfig:application
-appconfig:configurationprofile
-appconfig:deployment
-appconfig:deploymentstrategy
-appconfig:environment
-appconfig:hostedconfigurationversion

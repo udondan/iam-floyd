@@ -1,4 +1,0 @@
-signer:ProfileVersion
-signer:RequestTag/${TagKey}
-signer:ResourceTag/${TagKey}
-signer:TagKeys

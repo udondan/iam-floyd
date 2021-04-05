@@ -1,3 +1,0 @@
-waf-regional:RequestTag/${TagKey}
-waf-regional:ResourceTag/${TagKey}
-waf-regional:TagKeys

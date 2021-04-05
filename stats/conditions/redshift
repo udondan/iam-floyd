@@ -1,6 +1,0 @@
-redshift:DbName
-redshift:DbUser
-redshift:DurationSeconds
-redshift:RequestTag/${TagKey}
-redshift:ResourceTag/${TagKey}
-redshift:TagKeys

@@ -1,3 +1,0 @@
-lookoutmetrics:RequestTag/${TagKey}
-lookoutmetrics:ResourceTag/${TagKey}
-lookoutmetrics:TagKeys

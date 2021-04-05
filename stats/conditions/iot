@@ -1,7 +1,0 @@
-iot:Delete
-iot:DomainName
-iot:RequestTag/${TagKey}
-iot:ResourceTag/${TagKey}
-iot:TagKeys
-iot:ThingGroupArn
-iot:TunnelDestinationService

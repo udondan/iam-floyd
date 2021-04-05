@@ -1,2 +1,0 @@
-ec2-instance-connect:SendSSHPublicKey;Write
-ec2-instance-connect:SendSerialConsoleSSHPublicKey;Write

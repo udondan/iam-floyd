@@ -1,5 +1,0 @@
-elemental-support-cases:CheckCasePermission;Write
-elemental-support-cases:CreateCase;Write
-elemental-support-cases:GetCase;Read
-elemental-support-cases:GetCases;Read
-elemental-support-cases:UpdateCase;Write

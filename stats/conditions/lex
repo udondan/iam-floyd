@@ -1,6 +1,0 @@
-lex:RequestTag/${TagKey}
-lex:ResourceTag/${TagKey}
-lex:TagKeys
-lex:associatedIntents
-lex:associatedSlotTypes
-lex:channelType

@@ -1,9 +1,0 @@
-apigateway:AddCertificateToDomain;Permissions management
-apigateway:DELETE;Write
-apigateway:GET;Read
-apigateway:PATCH;Write
-apigateway:POST;Write
-apigateway:PUT;Write
-apigateway:RemoveCertificateFromDomain;Permissions management
-apigateway:SetWebACL;Permissions management
-apigateway:UpdateRestApiPolicy;Permissions management

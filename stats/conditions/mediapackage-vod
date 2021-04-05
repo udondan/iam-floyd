@@ -1,3 +1,0 @@
-mediapackage-vod:RequestTag/${TagKey}
-mediapackage-vod:ResourceTag/${TagKey}
-mediapackage-vod:TagKeys

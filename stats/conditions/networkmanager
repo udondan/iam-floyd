@@ -1,6 +1,0 @@
-networkmanager:RequestTag/${TagKey}
-networkmanager:ResourceTag/${TagKey}
-networkmanager:TagKeys
-networkmanager:cgwArn
-networkmanager:tgwArn
-networkmanager:tgwConnectPeerArn

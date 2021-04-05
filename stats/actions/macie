@@ -1,7 +1,0 @@
-macie:AssociateMemberAccount;Write
-macie:AssociateS3Resources;Write
-macie:DisassociateMemberAccount;Write
-macie:DisassociateS3Resources;Write
-macie:ListMemberAccounts;List
-macie:ListS3Resources;List
-macie:UpdateS3Resources;Write

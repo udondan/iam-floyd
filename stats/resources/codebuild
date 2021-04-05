@@ -1,5 +1,0 @@
-codebuild:build
-codebuild:build-batch
-codebuild:project
-codebuild:report
-codebuild:report-group

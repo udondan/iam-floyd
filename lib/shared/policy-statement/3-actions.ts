@@ -1,8 +1,6 @@
 import substrings from '@udondan/common-substrings';
-import RegexParser = require('regex-parser');
 
 import { AccessLevel } from '../access-level';
-import { AccessLevelList } from '../access-level';
 import { PolicyStatementWithCondition } from './2-conditions';
 
 export interface Action {
@@ -18,7 +16,6 @@ export interface Action {
  * Adds "action" functionality to the Policy Statement
  */
 export class PolicyStatementWithActions extends PolicyStatementWithCondition {
-  protected accessLevelList: AccessLevelList = {};
   private useNotActions = false;
   protected actions: string[] = [];
   private cdkActionsApplied = false;
@@ -135,15 +132,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    * ```
    */
   public allMatchingActions(...expressions: string[]) {
-    expressions.forEach((expression) => {
-      for (const [_, actions] of Object.entries(this.accessLevelList)) {
-        actions.forEach((action) => {
-          if (action.match(RegexParser(expression))) {
-            this.to(`${this.servicePrefix}:${action}`);
-          }
-        });
-      }
-    });
+    console.log(expressions);
     return this;
   }
 
@@ -207,11 +196,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   }
 
   private addAccessLevel(accessLevel: AccessLevel) {
-    if (accessLevel in this.accessLevelList) {
-      this.accessLevelList[accessLevel].forEach((action) => {
-        this.to(`${this.servicePrefix}:${action}`);
-      });
-    }
+    console.log(accessLevel);
     return this;
   }
 
@@ -235,13 +220,6 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
 
     // actions that will not be included, the opposite of includeActions
     const excludeActions: string[] = [];
-    for (const [_, actions] of Object.entries(this.accessLevelList)) {
-      actions.forEach((action) => {
-        if (!includeActions.includes(action)) {
-          excludeActions.push(`^${action}$`);
-        }
-      });
-    }
 
     // will contain the index of elements that are covered by substrings
     let covered: number[] = [];

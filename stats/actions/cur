@@ -1,4 +1,0 @@
-cur:DeleteReportDefinition;Write
-cur:DescribeReportDefinitions;Read
-cur:ModifyReportDefinition;Write
-cur:PutReportDefinition;Write

@@ -1,4 +1,0 @@
-iotevents:RequestTag/${TagKey}
-iotevents:ResourceTag/${TagKey}
-iotevents:TagKeys
-iotevents:keyValue
