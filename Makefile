@@ -21,3 +21,10 @@ clean:
 install: clean
 	@echo -e "$(TARGET_COLOR)Running install$(NO_COLOR)"
 	@npm i
+
+py-install:
+	pip3 uninstall --no-cache-dir -y foo
+	pip3 install --no-cache-dir dist/python/foo-*.tar.gz
+
+test: py-install
+	echo -e "import foo" | python3
