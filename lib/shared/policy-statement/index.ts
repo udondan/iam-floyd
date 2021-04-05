@@ -1,1 +1,1 @@
-export { PolicyStatement } from './9-final';
+export class PolicyStatement {}

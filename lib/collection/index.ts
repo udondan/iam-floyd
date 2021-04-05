@@ -1,4 +1,4 @@
-import * as s from '../generated';
+import * as statement from '../generated';
 
 /**
  * Allows stopping EC2 instance only for the user who started them
@@ -9,7 +9,7 @@ import * as s from '../generated';
 export function allowEc2InstanceDeleteByOwner(tag?: string) {
   const tagName = tag || 'Owner';
   console.log(tagName);
-  return [new s.Ec2()];
+  return [new statement.Ec2()];
 }
 
 export class Collection {
