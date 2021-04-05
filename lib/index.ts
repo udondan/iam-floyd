@@ -1,3 +1,3 @@
-export * from './shared';
-export * as statement from './generated';
-export * from './collection';
+export * from './a';
+export * as b from './b';
+export * from './c';
