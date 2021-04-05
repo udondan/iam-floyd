@@ -1,5 +1,0 @@
-{
-    "NotAction": "s3:DeleteBucket",
-    "Resource": "arn:aws:s3:::example-bucket",
-    "Effect": "Allow"
-}

@@ -13,21 +13,5 @@ dist
 
 # Include .jsii
 !.jsii
-
-bin/*
-lib/generator/*
-.github/*
-test/*
-test/package.json
-VERSION
-CHANGELOG/*
-docs/*
-examples/*
-helper/*
 README.md
 Makefile
-*.Makefile
-cdk
-stats
-twitter
-.editorconfig

@@ -1,8 +1,0 @@
-{
-    "Action": [
-        "ec2:CreateTags",
-        "ec2:DeleteTags"
-    ],
-    "Resource": "*",
-    "Effect": "Allow"
-}

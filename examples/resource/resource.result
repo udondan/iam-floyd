@@ -1,8 +1,0 @@
-{
-    "Action": "s3:*",
-    "Resource": [
-        "arn:aws:s3:::example-bucket",
-        "arn:aws:s3:::example-bucket/some/path/*"
-    ],
-    "Effect": "Allow"
-}

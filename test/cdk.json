@@ -1,4 +1,0 @@
-{
-  "app": "npx ts-node cdk.ts",
-  "progress": "events"
-}
