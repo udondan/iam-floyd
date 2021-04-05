@@ -1,3 +1,3 @@
-import { PolicyStatement } from '../shared';
+import { A } from '../shared';
 
-export class Ec2 extends PolicyStatement {}
+export class B extends A {}

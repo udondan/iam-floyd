@@ -1,1 +1,1 @@
-export * from './policy-statement';
+export class A {}

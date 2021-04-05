@@ -1,7 +1,7 @@
-import { Ec2 } from '../generated';
+import { B } from '../generated';
 
 export class Collection {
   public allowEc2InstanceDeleteByOwner() {
-    return [new Ec2()];
+    return new B();
   }
 }
