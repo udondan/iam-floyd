@@ -8,14 +8,6 @@ import * as statement from '../generated';
 
 export function allowEc2InstanceDeleteByOwner(tag?: string) {
   const tagName = tag || 'Owner';
-  return [
-    new statement.Ec2()
-      .allow()
-      .toStartInstances()
-      .ifAwsRequestTag(tagName, '${aws:username}'),
-    new statement.Ec2()
-      .allow()
-      .toStopInstances()
-      .ifResourceTag(tagName, '${aws:username}'),
-  ];
+  console.log(tagName);
+  return [new statement.Ec2()];
 }
