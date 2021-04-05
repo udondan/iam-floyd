@@ -1,7 +1,8 @@
 {
   "scripts": {
     "build": "jsii --silence-warnings reserved-word --verbose",
-    "package": "jsii-pacmak"
+    "package": "jsii-pacmak",
+    "jv": "jsii --version"
   },
   "name": "test",
   "description": "test",
