@@ -1,4 +1,4 @@
-import iam_floyd as statement
+from iam_floyd import statement, Operator
 import importlib
 import os
 import sys
@@ -20,7 +20,7 @@ s = (
         .to_start_instances() \
         .if_aws_request_tag('Environment',
                             ['Production', 'Staging', 'Dev'],
-                            statement.Operator().string_equals().if_exists())
+                            Operator().string_equals().if_exists())
     # doc-end
 )
 

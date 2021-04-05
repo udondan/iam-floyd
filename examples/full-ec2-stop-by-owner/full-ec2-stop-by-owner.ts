@@ -1,4 +1,4 @@
-import * as statement from '../../lib';
+import { statement } from '../../lib';
 
 function getPolicy() {
   function wrap() {

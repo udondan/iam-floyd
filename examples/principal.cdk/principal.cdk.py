@@ -1,5 +1,5 @@
 import json
-import cdk_iam_floyd as statement
+from cdk_iam_floyd import statement
 import aws_cdk.aws_iam as iam
 
 s = (

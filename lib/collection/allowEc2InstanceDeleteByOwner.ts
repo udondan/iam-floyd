@@ -1,4 +1,4 @@
-import * as statement from '..';
+import * as statement from '../generated';
 
 /**
  * Allows stopping EC2 instance only for the user who started them

@@ -1,13 +1,11 @@
-import * as statement from '../../lib';
+import { Collection } from '../../lib';
 
 function getPolicy() {
   function wrap() {
     // doc-start
     const policy = {
       Version: '2012-10-17',
-      Statement: [
-        ...new statement.Collection().allowEc2InstanceDeleteByOwner(),
-      ],
+      Statement: [...new Collection().allowEc2InstanceDeleteByOwner()],
     };
     // doc-end
     return policy;

@@ -1,5 +1,5 @@
 import json
-import iam_floyd as statement
+from iam_floyd import statement
 
 
 def get_policy():

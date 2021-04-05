@@ -1,4 +1,4 @@
-import * as statement from '../lib';
+import { Collection, Operator, statement } from '../lib';
 
 function printPolicyWithStatements(statements: any[]) {
   console.log(
@@ -20,9 +20,7 @@ printPolicyWithStatements([
     .forService('rds.amazonaws.com'),
 ]);
 
-printPolicyWithStatements(
-  new statement.Collection().allowEc2InstanceDeleteByOwner()
-);
+printPolicyWithStatements(new Collection().allowEc2InstanceDeleteByOwner());
 
 printPolicyWithStatements([
   new statement.Secretsmanager()
@@ -43,8 +41,5 @@ printPolicyWithStatements([
   new statement.Ec2()
     .allow()
     .allPermissionManagementActions()
-    .ifAwsSourceIp(
-      '1.2.3.4',
-      new statement.Operator().notIpAddress().ifExists()
-    ),
+    .ifAwsSourceIp('1.2.3.4', new Operator().notIpAddress().ifExists()),
 ]);

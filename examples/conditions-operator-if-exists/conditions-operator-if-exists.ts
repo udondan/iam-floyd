@@ -1,5 +1,5 @@
 import { deploy, out } from '../../helper/typescript/typescript_test';
-import * as statement from '../../lib';
+import { Operator, statement } from '../../lib';
 
 function getStatement() {
   return (
@@ -10,7 +10,7 @@ function getStatement() {
       .ifAwsRequestTag(
         'Environment',
         ['Production', 'Staging', 'Dev'],
-        new statement.Operator().stringEquals().ifExists()
+        new Operator().stringEquals().ifExists()
       )
     // doc-end
   );

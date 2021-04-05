@@ -1,7 +1,7 @@
 import iam = require('@aws-cdk/aws-iam');
 
 import { deploy, out } from '../../helper/typescript/typescript_test';
-import * as statement from '../../lib';
+import { statement } from '../../lib';
 
 function getStatement() {
   return (

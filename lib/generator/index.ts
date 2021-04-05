@@ -627,18 +627,14 @@ export function createIndex() {
     const source = project.addSourceFileAtPath(
       `./lib/generated/${module.filename}.ts`
     );
-    const exports = [];
-
-    source.getClasses().forEach((item) => {
-      if (item.isExported()) {
-        exports.push(item.getName());
-      }
-    });
 
     sourceFile.addExportDeclaration({
-      namedExports: exports,
       moduleSpecifier: `./${module.filename}`,
     });
+  });
+
+  sourceFile.addExportDeclaration({
+    moduleSpecifier: '../shared/all',
   });
 
   formatCode(sourceFile);

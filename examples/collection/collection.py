@@ -1,4 +1,4 @@
-import iam_floyd as statement
+from iam_floyd import Collection
 import importlib
 import os
 import sys
@@ -16,7 +16,7 @@ deploy = getattr(test, 'deploy')
 
 def statements():
     # doc-start
-    statements = statement.Collection().allow_ec2_instance_delete_by_owner()
+    statements = Collection().allow_ec2_instance_delete_by_owner()
     # doc-end
     return statements
 

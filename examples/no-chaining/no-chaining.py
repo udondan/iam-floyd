@@ -1,4 +1,4 @@
-import iam_floyd as statement
+from iam_floyd import statement
 import importlib
 import os
 import sys

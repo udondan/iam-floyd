@@ -1,5 +1,5 @@
 import { deploy, out } from '../../helper/typescript/typescript_test';
-import * as statement from '../../lib';
+import { statement } from '../../lib';
 
 function getStatement() {
   function wrap() {
