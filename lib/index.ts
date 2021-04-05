@@ -1,3 +1,3 @@
-export * from './shared/policy-statement';
+export * from './shared';
 export * as statement from './generated';
 export * from './collection';
