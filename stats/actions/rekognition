@@ -31,6 +31,7 @@ rekognition:IndexFaces;Write
 rekognition:ListCollections;Read
 rekognition:ListFaces;Read
 rekognition:ListStreamProcessors;List
+rekognition:ListTagsForResource;Read
 rekognition:RecognizeCelebrities;Read
 rekognition:SearchFaces;Read
 rekognition:SearchFacesByImage;Read
@@ -46,3 +47,5 @@ rekognition:StartStreamProcessor;Write
 rekognition:StartTextDetection;Write
 rekognition:StopProjectVersion;Write
 rekognition:StopStreamProcessor;Write
+rekognition:TagResource;Tagging
+rekognition:UntagResource;Tagging

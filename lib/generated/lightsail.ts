@@ -19,7 +19,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a static IP address that can be attached to an instance.
+   * Creates a static IP address that can be attached to an instance
    *
    * Access Level: Write
    *
@@ -30,7 +30,18 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Attaches a disk to an instance.
+   * Grants permission to attach an SSL/TLS certificate to your Amazon Lightsail content delivery network (CDN) distribution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachCertificateToDistribution.html
+   */
+  public toAttachCertificateToDistribution() {
+    return this.to('AttachCertificateToDistribution');
+  }
+
+  /**
+   * Attaches a disk to an instance
    *
    * Access Level: Write
    *
@@ -41,7 +52,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Attaches one or more instances to a load balancer.
+   * Attaches one or more instances to a load balancer
    *
    * Access Level: Write
    *
@@ -52,7 +63,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Attaches a TLS certificate to a load balancer.
+   * Attaches a TLS certificate to a load balancer
    *
    * Access Level: Write
    *
@@ -63,7 +74,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Attaches a static IP address to an instance.
+   * Attaches a static IP address to an instance
    *
    * Access Level: Write
    *
@@ -74,7 +85,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Closes a public port of an instance.
+   * Closes a public port of an instance
    *
    * Access Level: Write
    *
@@ -85,7 +96,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Copies a snapshot from one AWS Region to another in Amazon Lightsail.
+   * Copies a snapshot from one AWS Region to another in Amazon Lightsail
    *
    * Access Level: Write
    *
@@ -96,7 +107,18 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a new Amazon EC2 instance from an exported Amazon Lightsail snapshot.
+   * Grants permission to create an SSL/TLS certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCertificate.html
+   */
+  public toCreateCertificate() {
+    return this.to('CreateCertificate');
+  }
+
+  /**
+   * Creates a new Amazon EC2 instance from an exported Amazon Lightsail snapshot
    *
    * Access Level: Write
    *
@@ -107,7 +129,51 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a disk.
+   * Grants permission to create an email or SMS text message contact method
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateContactMethod.html
+   */
+  public toCreateContactMethod() {
+    return this.to('CreateContactMethod');
+  }
+
+  /**
+   * Grants permission to create an Amazon Lightsail container service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateContainerService.html
+   */
+  public toCreateContainerService() {
+    return this.to('CreateContainerService');
+  }
+
+  /**
+   * Grants permission to create a deployment for your Amazon Lightsail container service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateContainerServiceDeployment.html
+   */
+  public toCreateContainerServiceDeployment() {
+    return this.to('CreateContainerServiceDeployment');
+  }
+
+  /**
+   * Grants permission to create a temporary set of log in credentials that you can use to log in to the Docker process on your local machine
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateContainerServiceRegistryLogin.html
+   */
+  public toCreateContainerServiceRegistryLogin() {
+    return this.to('CreateContainerServiceRegistryLogin');
+  }
+
+  /**
+   * Creates a disk
    *
    * Access Level: Write
    *
@@ -122,7 +188,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a disk from snapshot.
+   * Creates a disk from snapshot
    *
    * Access Level: Write
    *
@@ -137,7 +203,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a disk snapshot.
+   * Creates a disk snapshot
    *
    * Access Level: Write
    *
@@ -152,7 +218,18 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a domain resource for the specified domain name.
+   * Grants permission to create an Amazon Lightsail content delivery network (CDN) distribution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDistribution.html
+   */
+  public toCreateDistribution() {
+    return this.to('CreateDistribution');
+  }
+
+  /**
+   * Creates a domain resource for the specified domain name
    *
    * Access Level: Write
    *
@@ -167,7 +244,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates one or more DNS record entries for a domain resource: Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
+   * Creates one or more DNS record entries for a domain resource: Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT)
    *
    * Access Level: Write
    *
@@ -178,7 +255,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates an instance snapshot.
+   * Creates an instance snapshot
    *
    * Access Level: Write
    *
@@ -193,7 +270,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates one or more instances.
+   * Creates one or more instances
    *
    * Access Level: Write
    *
@@ -208,7 +285,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates one or more instances based on an instance snapshot.
+   * Creates one or more instances based on an instance snapshot
    *
    * Access Level: Write
    *
@@ -223,7 +300,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a key pair used to authenticate and connect to an instance.
+   * Creates a key pair used to authenticate and connect to an instance
    *
    * Access Level: Write
    *
@@ -238,7 +315,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a load balancer.
+   * Creates a load balancer
    *
    * Access Level: Write
    *
@@ -253,7 +330,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a load balancer TLS certificate.
+   * Creates a load balancer TLS certificate
    *
    * Access Level: Write
    *
@@ -264,7 +341,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a new relational database.
+   * Creates a new relational database
    *
    * Access Level: Write
    *
@@ -279,7 +356,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a new relational database from a snapshot.
+   * Creates a new relational database from a snapshot
    *
    * Access Level: Write
    *
@@ -294,7 +371,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a relational database snapshot.
+   * Creates a relational database snapshot
    *
    * Access Level: Write
    *
@@ -309,7 +386,73 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a disk.
+   * Grants permission to delete an alarm
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteAlarm.html
+   */
+  public toDeleteAlarm() {
+    return this.to('DeleteAlarm');
+  }
+
+  /**
+   * Grants permission to delete an automatic snapshot of an instance or disk
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteAutoSnapshot.html
+   */
+  public toDeleteAutoSnapshot() {
+    return this.to('DeleteAutoSnapshot');
+  }
+
+  /**
+   * Grants permission to delete an SSL/TLS certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteCertificate.html
+   */
+  public toDeleteCertificate() {
+    return this.to('DeleteCertificate');
+  }
+
+  /**
+   * Grants permission to delete a contact method
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteContactMethod.html
+   */
+  public toDeleteContactMethod() {
+    return this.to('DeleteContactMethod');
+  }
+
+  /**
+   * Grants permission to delete a container image that is registered to your Amazon Lightsail container service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteContainerImage.html
+   */
+  public toDeleteContainerImage() {
+    return this.to('DeleteContainerImage');
+  }
+
+  /**
+   * Grants permission to delete your Amazon Lightsail container service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteContainerService.html
+   */
+  public toDeleteContainerService() {
+    return this.to('DeleteContainerService');
+  }
+
+  /**
+   * Deletes a disk
    *
    * Access Level: Write
    *
@@ -320,7 +463,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a disk snapshot.
+   * Deletes a disk snapshot
    *
    * Access Level: Write
    *
@@ -331,7 +474,18 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a domain resource and all of its DNS records.
+   * Grants permission to delete your Amazon Lightsail content delivery network (CDN) distribution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDistribution.html
+   */
+  public toDeleteDistribution() {
+    return this.to('DeleteDistribution');
+  }
+
+  /**
+   * Deletes a domain resource and all of its DNS records
    *
    * Access Level: Write
    *
@@ -342,7 +496,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a DNS record entry for a domain resource.
+   * Deletes a DNS record entry for a domain resource
    *
    * Access Level: Write
    *
@@ -353,7 +507,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes an instance.
+   * Deletes an instance
    *
    * Access Level: Write
    *
@@ -364,7 +518,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes an instance snapshot.
+   * Deletes an instance snapshot
    *
    * Access Level: Write
    *
@@ -375,7 +529,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a key pair used to authenticate and connect to an instance.
+   * Deletes a key pair used to authenticate and connect to an instance
    *
    * Access Level: Write
    *
@@ -386,7 +540,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to authenticate an instance.
+   * Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to authenticate an instance
    *
    * Access Level: Write
    *
@@ -397,7 +551,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a load balancer.
+   * Deletes a load balancer
    *
    * Access Level: Write
    *
@@ -408,7 +562,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a load balancer TLS certificate.
+   * Deletes a load balancer TLS certificate
    *
    * Access Level: Write
    *
@@ -419,7 +573,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a relational database.
+   * Deletes a relational database
    *
    * Access Level: Write
    *
@@ -430,7 +584,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes relational database snapshot.
+   * Deletes relational database snapshot
    *
    * Access Level: Write
    *
@@ -441,7 +595,18 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Detaches a disk from an instance.
+   * Grants permission to detach an SSL/TLS certificate from your Amazon Lightsail content delivery network (CDN) distribution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachCertificateFromDistribution.html
+   */
+  public toDetachCertificateFromDistribution() {
+    return this.to('DetachCertificateFromDistribution');
+  }
+
+  /**
+   * Detaches a disk from an instance
    *
    * Access Level: Write
    *
@@ -452,7 +617,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Detaches one or more instances from a load balancer.
+   * Detaches one or more instances from a load balancer
    *
    * Access Level: Write
    *
@@ -463,7 +628,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Detaches a static IP from an instance to which it is attached.
+   * Detaches a static IP from an instance to which it is attached
    *
    * Access Level: Write
    *
@@ -474,7 +639,18 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Downloads the default key pair used to authenticate and connect to instances in a specific AWS Region.
+   * Grants permission to disable an add-on for an Amazon Lightsail resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DisableAddOn.html
+   */
+  public toDisableAddOn() {
+    return this.to('DisableAddOn');
+  }
+
+  /**
+   * Downloads the default key pair used to authenticate and connect to instances in a specific AWS Region
    *
    * Access Level: Write
    *
@@ -485,7 +661,18 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Exports an Amazon Lightsail snapshot to Amazon EC2.
+   * Grants permission to enable or modify an add-on for an Amazon Lightsail resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_EnableAddOn.html
+   */
+  public toEnableAddOn() {
+    return this.to('EnableAddOn');
+  }
+
+  /**
+   * Exports an Amazon Lightsail snapshot to Amazon EC2
    *
    * Access Level: Write
    *
@@ -496,7 +683,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the names of all active (not deleted) resources.
+   * Returns the names of all active (not deleted) resources
    *
    * Access Level: Read
    *
@@ -507,9 +694,31 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns a list of instance images, or blueprints. You can use a blueprint to create a new instance already running a specific operating system, as well as a pre-installed application or development stack. The software that runs on your instance depends on the blueprint you define when creating the instance.
+   * Grants permission to view information about the configured alarms
    *
-   * Access Level: List
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetAlarms.html
+   */
+  public toGetAlarms() {
+    return this.to('GetAlarms');
+  }
+
+  /**
+   * Grants permission to view the available automatic snapshots for an instance or disk
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetAutoSnapshots.html
+   */
+  public toGetAutoSnapshots() {
+    return this.to('GetAutoSnapshots');
+  }
+
+  /**
+   * Returns a list of instance images, or blueprints. You can use a blueprint to create a new instance already running a specific operating system, as well as a pre-installed application or development stack. The software that runs on your instance depends on the blueprint you define when creating the instance
+   *
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBlueprints.html
    */
@@ -518,9 +727,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns a list of instance bundles. You can use a bundle to create a new instance with a set of performance specifications, such as CPU count, disk size, RAM size, and network transfer allowance. The cost of your instance depends on the bundle you define when creating the instance.
+   * Returns a list of instance bundles. You can use a bundle to create a new instance with a set of performance specifications, such as CPU count, disk size, RAM size, and network transfer allowance. The cost of your instance depends on the bundle you define when creating the instance
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBundles.html
    */
@@ -529,9 +738,20 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all CloudFormation stacks used to create Amazon EC2 resources from exported Amazon Lightsail snapshots.
+   * Grants permission to view information about one or more Amazon Lightsail SSL/TLS certificates
    *
-   * Access Level: List
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html
+   */
+  public toGetCertificates() {
+    return this.to('GetCertificates');
+  }
+
+  /**
+   * Returns information about all CloudFormation stacks used to create Amazon EC2 resources from exported Amazon Lightsail snapshots
+   *
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCloudFormationStackRecords.html
    */
@@ -540,7 +760,95 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a disk.
+   * Grants permission to view information about the configured contact methods
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContactMethods.html
+   */
+  public toGetContactMethods() {
+    return this.to('GetContactMethods');
+  }
+
+  /**
+   * Grants permission to view information about Amazon Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContainerAPIMetadata.html
+   */
+  public toGetContainerAPIMetadata() {
+    return this.to('GetContainerAPIMetadata');
+  }
+
+  /**
+   * Grants permission to view the container images that are registered to your Amazon Lightsail container service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContainerImages.html
+   */
+  public toGetContainerImages() {
+    return this.to('GetContainerImages');
+  }
+
+  /**
+   * Grants permission to view the log events of a container of your Amazon Lightsail container service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContainerLog.html
+   */
+  public toGetContainerLog() {
+    return this.to('GetContainerLog');
+  }
+
+  /**
+   * Grants permission to view the deployments for your Amazon Lightsail container service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContainerServiceDeployments.html
+   */
+  public toGetContainerServiceDeployments() {
+    return this.to('GetContainerServiceDeployments');
+  }
+
+  /**
+   * Grants permission to view the data points of a specific metric of your Amazon Lightsail container service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContainerServiceMetricData.html
+   */
+  public toGetContainerServiceMetricData() {
+    return this.to('GetContainerServiceMetricData');
+  }
+
+  /**
+   * Grants permission to view the list of powers that can be specified for your Amazon Lightsail container services
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContainerServicePowers.html
+   */
+  public toGetContainerServicePowers() {
+    return this.to('GetContainerServicePowers');
+  }
+
+  /**
+   * Grants permission to view information about one or more of your Amazon Lightsail container services
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetContainerServices.html
+   */
+  public toGetContainerServices() {
+    return this.to('GetContainerServices');
+  }
+
+  /**
+   * Returns information about a disk
    *
    * Access Level: Read
    *
@@ -551,7 +859,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a disk snapshot.
+   * Returns information about a disk snapshot
    *
    * Access Level: Read
    *
@@ -562,9 +870,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all disk snapshots.
+   * Returns information about all disk snapshots
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDiskSnapshots.html
    */
@@ -573,9 +881,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all disks.
+   * Returns information about all disks
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDisks.html
    */
@@ -584,7 +892,51 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns DNS records for a domain resource.
+   * Grants permission to view the list of bundles that can be applied to you Amazon Lightsail content delivery network (CDN) distributions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDistributionBundles.html
+   */
+  public toGetDistributionBundles() {
+    return this.to('GetDistributionBundles');
+  }
+
+  /**
+   * Grants permission to view the timestamp and status of the last cache reset of a specific Amazon Lightsail content delivery network (CDN) distribution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDistributionLatestCacheReset.html
+   */
+  public toGetDistributionLatestCacheReset() {
+    return this.to('GetDistributionLatestCacheReset');
+  }
+
+  /**
+   * Grants permission to view the data points of a specific metric for an Amazon Lightsail content delivery network (CDN) distribution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDistributionMetricData.html
+   */
+  public toGetDistributionMetricData() {
+    return this.to('GetDistributionMetricData');
+  }
+
+  /**
+   * Grants permission to view information about one or more of your Amazon Lightsail content delivery network (CDN) distributions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDistributions.html
+   */
+  public toGetDistributions() {
+    return this.to('GetDistributions');
+  }
+
+  /**
+   * Returns DNS records for a domain resource
    *
    * Access Level: Read
    *
@@ -595,7 +947,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns DNS records for all domain resources.
+   * Returns DNS records for all domain resources
    *
    * Access Level: Read
    *
@@ -606,9 +958,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all records to export Amazon Lightsail snapshots to Amazon EC2.
+   * Returns information about all records to export Amazon Lightsail snapshots to Amazon EC2
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetExportSnapshotRecords.html
    */
@@ -617,7 +969,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about an instance.
+   * Returns information about an instance
    *
    * Access Level: Read
    *
@@ -628,7 +980,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns temporary keys you can use to authenticate and connect to an instance.
+   * Returns temporary keys you can use to authenticate and connect to an instance
    *
    * Access Level: Write
    *
@@ -639,7 +991,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the data points for the specified metric of an instance.
+   * Returns the data points for the specified metric of an instance
    *
    * Access Level: Read
    *
@@ -650,7 +1002,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the port states of an instance.
+   * Returns the port states of an instance
    *
    * Access Level: Read
    *
@@ -661,7 +1013,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about an instance snapshot.
+   * Returns information about an instance snapshot
    *
    * Access Level: Read
    *
@@ -672,9 +1024,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all instance snapshots.
+   * Returns information about all instance snapshots
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceSnapshots.html
    */
@@ -683,7 +1035,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the state of an instance.
+   * Returns the state of an instance
    *
    * Access Level: Read
    *
@@ -694,7 +1046,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all instances.
+   * Returns information about all instances
    *
    * Access Level: Read
    *
@@ -705,9 +1057,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a key pair.
+   * Returns information about a key pair
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetKeyPair.html
    */
@@ -716,7 +1068,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all key pairs.
+   * Returns information about all key pairs
    *
    * Access Level: Read
    *
@@ -727,7 +1079,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a load balancer.
+   * Returns information about a load balancer
    *
    * Access Level: Read
    *
@@ -738,7 +1090,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the data points for the specified metric of a load balancer.
+   * Returns the data points for the specified metric of a load balancer
    *
    * Access Level: Read
    *
@@ -749,7 +1101,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a load balancer TLS certificate.
+   * Returns information about a load balancer TLS certificate
    *
    * Access Level: Read
    *
@@ -760,7 +1112,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about load balancers.
+   * Returns information about load balancers
    *
    * Access Level: Read
    *
@@ -771,7 +1123,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about an operation. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on.
+   * Returns information about an operation. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on
    *
    * Access Level: Read
    *
@@ -782,7 +1134,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all operations. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on.
+   * Returns information about all operations. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on
    *
    * Access Level: Read
    *
@@ -793,7 +1145,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns operations for a resource.
+   * Returns operations for a resource
    *
    * Access Level: Read
    *
@@ -804,9 +1156,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns a list of all valid AWS Regions for Amazon Lightsail.
+   * Returns a list of all valid AWS Regions for Amazon Lightsail
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html
    */
@@ -815,9 +1167,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a relational database.
+   * Returns information about a relational database
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabase.html
    */
@@ -826,9 +1178,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns a list of relational database images, or blueprints. You can use a blueprint to create a new database running a specific database engine. The database engine that runs on your database depends on the blueprint you define when creating the relational database.
+   * Returns a list of relational database images, or blueprints. You can use a blueprint to create a new database running a specific database engine. The database engine that runs on your database depends on the blueprint you define when creating the relational database
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html
    */
@@ -837,9 +1189,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns a list of relational database bundles. You can use a bundle to create a new database with a set of performance specifications, such as CPU count, disk size, RAM size, network transfer allowance, and standard of high availability. The cost of your database depends on the bundle you define when creating the relational database.
+   * Returns a list of relational database bundles. You can use a bundle to create a new database with a set of performance specifications, such as CPU count, disk size, RAM size, network transfer allowance, and standard of high availability. The cost of your database depends on the bundle you define when creating the relational database
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBundles.html
    */
@@ -848,7 +1200,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns events for a relational database.
+   * Returns events for a relational database
    *
    * Access Level: Read
    *
@@ -859,7 +1211,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns events for the specified log stream of a relational database.
+   * Returns events for the specified log stream of a relational database
    *
    * Access Level: Read
    *
@@ -870,7 +1222,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the log streams available for a relational database.
+   * Returns the log streams available for a relational database
    *
    * Access Level: Read
    *
@@ -881,7 +1233,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the master user password of a relational database.
+   * Returns the master user password of a relational database
    *
    * Access Level: Write
    *
@@ -892,7 +1244,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the data points for the specified metric of a relational database.
+   * Returns the data points for the specified metric of a relational database
    *
    * Access Level: Read
    *
@@ -903,9 +1255,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the parameters of a relational database.
+   * Returns the parameters of a relational database
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseParameters.html
    */
@@ -914,9 +1266,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a relational database snapshot.
+   * Returns information about a relational database snapshot
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseSnapshot.html
    */
@@ -925,9 +1277,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all relational database snapshots.
+   * Returns information about all relational database snapshots
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseSnapshots.html
    */
@@ -936,7 +1288,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Return information about all relational databases.
+   * Return information about all relational databases
    *
    * Access Level: Read
    *
@@ -947,7 +1299,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a static IP.
+   * Returns information about a static IP
    *
    * Access Level: Read
    *
@@ -958,7 +1310,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all static IPs.
+   * Returns information about all static IPs
    *
    * Access Level: Read
    *
@@ -969,7 +1321,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Imports a public key from a key pair.
+   * Imports a public key from a key pair
    *
    * Access Level: Write
    *
@@ -980,7 +1332,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns a boolean value indicating whether the Amazon Lightsail virtual private cloud (VPC) is peered.
+   * Returns a boolean value indicating whether the Amazon Lightsail virtual private cloud (VPC) is peered
    *
    * Access Level: Read
    *
@@ -991,7 +1343,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Adds, or opens a public port of an instance.
+   * Adds, or opens a public port of an instance
    *
    * Access Level: Write
    *
@@ -1002,7 +1354,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Tries to peer the Amazon Lightsail virtual private cloud (VPC) with the default VPC.
+   * Tries to peer the Amazon Lightsail virtual private cloud (VPC) with the default VPC
    *
    * Access Level: Write
    *
@@ -1013,7 +1365,18 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Sets the specified open ports for an instance, and closes all ports for every protocol not included in the request.
+   * Grants permission to creates or update an alarm, and associate it with the specified metric
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_PutAlarm.html
+   */
+  public toPutAlarm() {
+    return this.to('PutAlarm');
+  }
+
+  /**
+   * Sets the specified open ports for an instance, and closes all ports for every protocol not included in the request
    *
    * Access Level: Write
    *
@@ -1024,7 +1387,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Reboots an instance that is in a running state.
+   * Reboots an instance that is in a running state
    *
    * Access Level: Write
    *
@@ -1035,7 +1398,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Reboots a relational database that is in a running state.
+   * Reboots a relational database that is in a running state
    *
    * Access Level: Write
    *
@@ -1046,7 +1409,18 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a static IP.
+   * Grants permission to register a container image to your Amazon Lightsail container service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RegisterContainerImage.html
+   */
+  public toRegisterContainerImage() {
+    return this.to('RegisterContainerImage');
+  }
+
+  /**
+   * Deletes a static IP
    *
    * Access Level: Write
    *
@@ -1057,7 +1431,40 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Starts an instance that is in a stopped state.
+   * Grants permission to delete currently cached content from your Amazon Lightsail content delivery network (CDN) distribution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ResetDistributionCache.html
+   */
+  public toResetDistributionCache() {
+    return this.to('ResetDistributionCache');
+  }
+
+  /**
+   * Grants permission to send a verification request to an email contact method to ensure it's owned by the requester
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SendContactMethodVerification.html
+   */
+  public toSendContactMethodVerification() {
+    return this.to('SendContactMethodVerification');
+  }
+
+  /**
+   * Grants permission to set the IP address type for a Amazon Lightsail resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetIpAddressType.html
+   */
+  public toSetIpAddressType() {
+    return this.to('SetIpAddressType');
+  }
+
+  /**
+   * Starts an instance that is in a stopped state
    *
    * Access Level: Write
    *
@@ -1068,7 +1475,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Starts a relational database that is in a stopped state.
+   * Starts a relational database that is in a stopped state
    *
    * Access Level: Write
    *
@@ -1079,7 +1486,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Stops an instance that is in a running state.
+   * Stops an instance that is in a running state
    *
    * Access Level: Write
    *
@@ -1090,7 +1497,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Stops a relational database that is in a running state.
+   * Stops a relational database that is in a running state
    *
    * Access Level: Write
    *
@@ -1101,9 +1508,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Tags a resource.
+   * Tags a resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -1116,7 +1523,18 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Attempts to unpeer the Amazon Lightsail virtual private cloud (VPC) from the default VPC.
+   * Grants permission to test an alarm by displaying a banner on the Amazon Lightsail console or if a notification trigger is configured for the specified alarm, by sending a notification to the notification protocol
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TestAlarm.html
+   */
+  public toTestAlarm() {
+    return this.to('TestAlarm');
+  }
+
+  /**
+   * Attempts to unpeer the Amazon Lightsail virtual private cloud (VPC) from the default VPC
    *
    * Access Level: Write
    *
@@ -1127,9 +1545,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Untags a resource.
+   * Untags a resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -1142,7 +1560,40 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Updates a domain recordset after it is created.
+   * Grants permission to update the configuration of your Amazon Lightsail container service, such as its power, scale, and public domain names
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateContainerService.html
+   */
+  public toUpdateContainerService() {
+    return this.to('UpdateContainerService');
+  }
+
+  /**
+   * Grants permission to update an existing Amazon Lightsail content delivery network (CDN) distribution or its configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateDistribution.html
+   */
+  public toUpdateDistribution() {
+    return this.to('UpdateDistribution');
+  }
+
+  /**
+   * Grants permission to update the bundle of your Amazon Lightsail content delivery network (CDN) distribution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateDistributionBundle.html
+   */
+  public toUpdateDistributionBundle() {
+    return this.to('UpdateDistributionBundle');
+  }
+
+  /**
+   * Updates a domain recordset after it is created
    *
    * Access Level: Write
    *
@@ -1153,7 +1604,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Updates a load balancer attribute, such as the health check path and session stickiness.
+   * Updates a load balancer attribute, such as the health check path and session stickiness
    *
    * Access Level: Write
    *
@@ -1164,7 +1615,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Updates a relational database.
+   * Updates a relational database
    *
    * Access Level: Write
    *
@@ -1175,7 +1626,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Updates the parameters of a relational database.
+   * Updates the parameters of a relational database
    *
    * Access Level: Write
    *
@@ -1188,16 +1639,23 @@ export class Lightsail extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AllocateStaticIp",
+      "AttachCertificateToDistribution",
       "AttachDisk",
       "AttachInstancesToLoadBalancer",
       "AttachLoadBalancerTlsCertificate",
       "AttachStaticIp",
       "CloseInstancePublicPorts",
       "CopySnapshot",
+      "CreateCertificate",
       "CreateCloudFormationStack",
+      "CreateContactMethod",
+      "CreateContainerService",
+      "CreateContainerServiceDeployment",
+      "CreateContainerServiceRegistryLogin",
       "CreateDisk",
       "CreateDiskFromSnapshot",
       "CreateDiskSnapshot",
+      "CreateDistribution",
       "CreateDomain",
       "CreateDomainEntry",
       "CreateInstanceSnapshot",
@@ -1209,8 +1667,15 @@ export class Lightsail extends PolicyStatement {
       "CreateRelationalDatabase",
       "CreateRelationalDatabaseFromSnapshot",
       "CreateRelationalDatabaseSnapshot",
+      "DeleteAlarm",
+      "DeleteAutoSnapshot",
+      "DeleteCertificate",
+      "DeleteContactMethod",
+      "DeleteContainerImage",
+      "DeleteContainerService",
       "DeleteDisk",
       "DeleteDiskSnapshot",
+      "DeleteDistribution",
       "DeleteDomain",
       "DeleteDomainEntry",
       "DeleteInstance",
@@ -1221,27 +1686,37 @@ export class Lightsail extends PolicyStatement {
       "DeleteLoadBalancerTlsCertificate",
       "DeleteRelationalDatabase",
       "DeleteRelationalDatabaseSnapshot",
+      "DetachCertificateFromDistribution",
       "DetachDisk",
       "DetachInstancesFromLoadBalancer",
       "DetachStaticIp",
+      "DisableAddOn",
       "DownloadDefaultKeyPair",
+      "EnableAddOn",
       "ExportSnapshot",
       "GetInstanceAccessDetails",
       "GetRelationalDatabaseMasterUserPassword",
       "ImportKeyPair",
       "OpenInstancePublicPorts",
       "PeerVpc",
+      "PutAlarm",
       "PutInstancePublicPorts",
       "RebootInstance",
       "RebootRelationalDatabase",
+      "RegisterContainerImage",
       "ReleaseStaticIp",
+      "ResetDistributionCache",
+      "SendContactMethodVerification",
+      "SetIpAddressType",
       "StartInstance",
       "StartRelationalDatabase",
       "StopInstance",
       "StopRelationalDatabase",
-      "TagResource",
+      "TestAlarm",
       "UnpeerVpc",
-      "UntagResource",
+      "UpdateContainerService",
+      "UpdateDistribution",
+      "UpdateDistributionBundle",
       "UpdateDomainEntry",
       "UpdateLoadBalancerAttribute",
       "UpdateRelationalDatabase",
@@ -1249,16 +1724,39 @@ export class Lightsail extends PolicyStatement {
     ],
     "Read": [
       "GetActiveNames",
+      "GetAlarms",
+      "GetAutoSnapshots",
+      "GetBlueprints",
+      "GetBundles",
+      "GetCertificates",
+      "GetCloudFormationStackRecords",
+      "GetContactMethods",
+      "GetContainerAPIMetadata",
+      "GetContainerImages",
+      "GetContainerLog",
+      "GetContainerServiceDeployments",
+      "GetContainerServiceMetricData",
+      "GetContainerServicePowers",
+      "GetContainerServices",
       "GetDisk",
       "GetDiskSnapshot",
+      "GetDiskSnapshots",
+      "GetDisks",
+      "GetDistributionBundles",
+      "GetDistributionLatestCacheReset",
+      "GetDistributionMetricData",
+      "GetDistributions",
       "GetDomain",
       "GetDomains",
+      "GetExportSnapshotRecords",
       "GetInstance",
       "GetInstanceMetricData",
       "GetInstancePortStates",
       "GetInstanceSnapshot",
+      "GetInstanceSnapshots",
       "GetInstanceState",
       "GetInstances",
+      "GetKeyPair",
       "GetKeyPairs",
       "GetLoadBalancer",
       "GetLoadBalancerMetricData",
@@ -1267,31 +1765,25 @@ export class Lightsail extends PolicyStatement {
       "GetOperation",
       "GetOperations",
       "GetOperationsForResource",
+      "GetRegions",
+      "GetRelationalDatabase",
+      "GetRelationalDatabaseBlueprints",
+      "GetRelationalDatabaseBundles",
       "GetRelationalDatabaseEvents",
       "GetRelationalDatabaseLogEvents",
       "GetRelationalDatabaseLogStreams",
       "GetRelationalDatabaseMetricData",
+      "GetRelationalDatabaseParameters",
+      "GetRelationalDatabaseSnapshot",
+      "GetRelationalDatabaseSnapshots",
       "GetRelationalDatabases",
       "GetStaticIp",
       "GetStaticIps",
       "IsVpcPeered"
     ],
-    "List": [
-      "GetBlueprints",
-      "GetBundles",
-      "GetCloudFormationStackRecords",
-      "GetDiskSnapshots",
-      "GetDisks",
-      "GetExportSnapshotRecords",
-      "GetInstanceSnapshots",
-      "GetKeyPair",
-      "GetRegions",
-      "GetRelationalDatabase",
-      "GetRelationalDatabaseBlueprints",
-      "GetRelationalDatabaseBundles",
-      "GetRelationalDatabaseParameters",
-      "GetRelationalDatabaseSnapshot",
-      "GetRelationalDatabaseSnapshots"
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
@@ -1472,28 +1964,9 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type PeeredVpc to the statement
-   *
-   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/PeeredVpc.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   */
-  public onPeeredVpc(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:PeeredVpc/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
    * Adds a resource of type LoadBalancerTlsCertificate to the statement
    *
-   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/LoadBalancerTlsCertificate.html
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_LoadBalancerTlsCertificate.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1584,6 +2057,101 @@ export class Lightsail extends PolicyStatement {
    */
   public onRelationalDatabaseSnapshot(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabaseSnapshot/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Alarm to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Alarm.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onAlarm(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Alarm/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Certificate to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Certificate.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCertificate(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Certificate/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ContactMethod to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ContactMethod.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onContactMethod(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:ContactMethod/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ContainerService to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ContainerService.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onContainerService(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:ContainerService/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Distribution to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_LightsailDistribution.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDistribution(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Distribution/${Id}';
     arn = arn.replace('${Id}', id);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

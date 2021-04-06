@@ -34,6 +34,10 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateCollection.html
    */
   public toCreateCollection() {
@@ -56,6 +60,10 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProjectVersion.html
    */
   public toCreateProjectVersion() {
@@ -66,6 +74,10 @@ export class Rekognition extends PolicyStatement {
    * Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces in a streaming video.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateStreamProcessor.html
    */
@@ -382,6 +394,17 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
+   * Returns a list of tags associated with a resource.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Returns an array of celebrities recognized in the input image.
    *
    * Access Level: Read
@@ -546,6 +569,35 @@ export class Rekognition extends PolicyStatement {
     return this.to('StopStreamProcessor');
   }
 
+  /**
+   * Adds one or more tags to a resource.
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Removes one or more tags from a resource.
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Read": [
       "CompareFaces",
@@ -570,6 +622,7 @@ export class Rekognition extends PolicyStatement {
       "GetTextDetection",
       "ListCollections",
       "ListFaces",
+      "ListTagsForResource",
       "RecognizeCelebrities",
       "SearchFaces",
       "SearchFacesByImage"
@@ -600,6 +653,10 @@ export class Rekognition extends PolicyStatement {
     ],
     "List": [
       "ListStreamProcessors"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
