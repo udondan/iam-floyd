@@ -133,6 +133,10 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateOpsMetadata.html
    */
   public toCreateOpsMetadata() {
@@ -239,9 +243,6 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameter.html
    */
   public toDeleteParameter() {
@@ -252,9 +253,6 @@ export class Ssm extends PolicyStatement {
    * Grants permission to delete multiple specified SSM parameters
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameters.html
    */
@@ -906,9 +904,6 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameter.html
    */
   public toGetParameter() {
@@ -920,9 +915,6 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameterHistory.html
    */
   public toGetParameterHistory() {
@@ -933,9 +925,6 @@ export class Ssm extends PolicyStatement {
    * Grants permission to view information about multiple specified parameters
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameters.html
    */
@@ -1795,8 +1784,6 @@ export class Ssm extends PolicyStatement {
   /**
    * Adds a resource of type bucket to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html
-   *
    * @param bucketName - Identifier for the bucketName.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
@@ -1832,8 +1819,6 @@ export class Ssm extends PolicyStatement {
 
   /**
    * Adds a resource of type instance to the statement
-   *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param instanceId - Identifier for the instanceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1881,7 +1866,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html
    *
-   * @param managedInstanceName - Identifier for the managedInstanceName.
+   * @param instanceId - Identifier for the instanceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -1890,9 +1875,9 @@ export class Ssm extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onManagedInstance(managedInstanceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:managed-instance/${ManagedInstanceName}';
-    arn = arn.replace('${ManagedInstanceName}', managedInstanceName);
+  public onManagedInstance(instanceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:managed-instance/${InstanceId}';
+    arn = arn.replace('${InstanceId}', instanceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -1946,6 +1931,10 @@ export class Ssm extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onOpsmetadata(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:opsmetadata/${ResourceId}';
@@ -1961,7 +1950,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html
    *
-   * @param fullyQualifiedParameterName - Identifier for the fullyQualifiedParameterName.
+   * @param parameterNameWithoutLeadingSlash - Identifier for the parameterNameWithoutLeadingSlash.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -1970,9 +1959,9 @@ export class Ssm extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onParameter(fullyQualifiedParameterName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:parameter/${FullyQualifiedParameterName}';
-    arn = arn.replace('${FullyQualifiedParameterName}', fullyQualifiedParameterName);
+  public onParameter(parameterNameWithoutLeadingSlash: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:parameter/${ParameterNameWithoutLeadingSlash}';
+    arn = arn.replace('${ParameterNameWithoutLeadingSlash}', parameterNameWithoutLeadingSlash);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -2220,6 +2209,7 @@ export class Ssm extends PolicyStatement {
    * - instance
    * - maintenancewindow
    * - managed-instance
+   * - opsmetadata
    * - parameter
    * - patchbaseline
    *
