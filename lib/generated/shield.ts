@@ -19,7 +19,7 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Authorizes the DDoS Response team to access the specified Amazon S3 bucket containing your flow logs
+   * Grants permission to authorize the DDoS Response team to access the specified Amazon S3 bucket containing your flow logs
    *
    * Access Level: Write
    *
@@ -34,7 +34,7 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Authorizes the DDoS Response team using the specified role, to access your AWS account to assist with DDoS attack mitigation during potential attacks
+   * Grants permission to authorize the DDoS Response team using the specified role, to access your AWS account to assist with DDoS attack mitigation during potential attacks
    *
    * Access Level: Write
    *
@@ -50,9 +50,41 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Activate DDoS protection service for a given resource ARN
+   * Grants permission to add health-based detection to the Shield Advanced protection for a resource
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - route53:GetHealthCheck
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateHealthCheck.html
+   */
+  public toAssociateHealthCheck() {
+    return this.to('AssociateHealthCheck');
+  }
+
+  /**
+   * Grants permission to initialize proactive engagement and set the list of contacts for the DDoS Response Team (DRT) to use
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateProactiveEngagementDetails.html
+   */
+  public toAssociateProactiveEngagementDetails() {
+    return this.to('AssociateProactiveEngagementDetails');
+  }
+
+  /**
+   * Grants permission to activate DDoS protection service for a given resource ARN
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateProtection.html
    */
@@ -61,7 +93,22 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Activate subscription
+   * Grants permission to create a grouping of protected resources so they can be handled as a collective
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateProtectionGroup.html
+   */
+  public toCreateProtectionGroup() {
+    return this.to('CreateProtectionGroup');
+  }
+
+  /**
+   * Grants permission to activate subscription
    *
    * Access Level: Write
    *
@@ -72,9 +119,12 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Delete an existing protection
+   * Grants permission to delete an existing protection
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteProtection.html
    */
@@ -83,7 +133,21 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Deactivate subscription
+   * Grants permission to remove the specified protection group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteProtectionGroup.html
+   */
+  public toDeleteProtectionGroup() {
+    return this.to('DeleteProtectionGroup');
+  }
+
+  /**
+   * Grants permission to deactivate subscription
    *
    * Access Level: Write
    *
@@ -94,7 +158,7 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Get attack details
+   * Grants permission to get attack details
    *
    * Access Level: Read
    *
@@ -105,7 +169,18 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Returns the current role and list of Amazon S3 log buckets used by the DDoS Response team to access your AWS account while assisting with attack mitigation
+   * Grants permission to describe information about the number and type of attacks AWS Shield has detected in the last year
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeAttackStatistics.html
+   */
+  public toDescribeAttackStatistics() {
+    return this.to('DescribeAttackStatistics');
+  }
+
+  /**
+   * Grants permission to describe the current role and list of Amazon S3 log buckets used by the DDoS Response team to access your AWS account while assisting with attack mitigation
    *
    * Access Level: Read
    *
@@ -116,7 +191,7 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Lists the email addresses that the DRT can use to contact you during a suspected attack
+   * Grants permission to list the email addresses that the DRT can use to contact you during a suspected attack
    *
    * Access Level: Read
    *
@@ -127,9 +202,12 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Get protection details
+   * Grants permission to get protection details
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeProtection.html
    */
@@ -138,7 +216,21 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Get subscription details, such as start time
+   * Grants permission to describe the specification for the specified protection group
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeProtectionGroup.html
+   */
+  public toDescribeProtectionGroup() {
+    return this.to('DescribeProtectionGroup');
+  }
+
+  /**
+   * Grants permission to get subscription details, such as start time
    *
    * Access Level: Read
    *
@@ -149,7 +241,18 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Removes the DDoS Response team's access to the specified Amazon S3 bucket containing your flow logs
+   * Grants permission to remove authorization from the DDoS Response Team (DRT) to notify contacts about escalations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DisableProactiveEngagement.html
+   */
+  public toDisableProactiveEngagement() {
+    return this.to('DisableProactiveEngagement');
+  }
+
+  /**
+   * Grants permission to remove the DDoS Response team's access to the specified Amazon S3 bucket containing your flow logs
    *
    * Access Level: Write
    *
@@ -165,7 +268,7 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Removes the DDoS Response team's access to your AWS account
+   * Grants permission to remove the DDoS Response team's access to your AWS account
    *
    * Access Level: Write
    *
@@ -176,7 +279,32 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Get subscription state
+   * Grants permission to remove health-based detection from the Shield Advanced protection for a resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DisassociateHealthCheck.html
+   */
+  public toDisassociateHealthCheck() {
+    return this.to('DisassociateHealthCheck');
+  }
+
+  /**
+   * Grants permission to authorize the DDoS Response Team (DRT) to use email and phone to notify contacts about escalations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_EnableProactiveEngagement.html
+   */
+  public toEnableProactiveEngagement() {
+    return this.to('EnableProactiveEngagement');
+  }
+
+  /**
+   * Grants permission to get subscription state
    *
    * Access Level: Read
    *
@@ -187,7 +315,7 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * List all existing attacks
+   * Grants permission to list all existing attacks
    *
    * Access Level: List
    *
@@ -198,7 +326,18 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * List all existing protections
+   * Grants permission to retrieve the protection groups for the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListProtectionGroups.html
+   */
+  public toListProtectionGroups() {
+    return this.to('ListProtectionGroups');
+  }
+
+  /**
+   * Grants permission to list all existing protections
    *
    * Access Level: List
    *
@@ -209,7 +348,59 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Updates the details of the list of email addresses that the DRT can use to contact you during a suspected attack
+   * Grants permission to retrieve the resources that are included in the protection group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListResourcesInProtectionGroup.html
+   */
+  public toListResourcesInProtectionGroup() {
+    return this.to('ListResourcesInProtectionGroup');
+  }
+
+  /**
+   * Grants permission to get information about AWS tags for a specified Amazon Resource Name (ARN) in AWS Shield
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to add or updates tags for a resource in AWS Shield
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from a resource in AWS Shield
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update the details of the list of email addresses that the DRT can use to contact you during a suspected attack
    *
    * Access Level: Write
    *
@@ -220,7 +411,21 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Updates the details of an existing subscription
+   * Grants permission to update an existing protection group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UpdateProtectionGroup.html
+   */
+  public toUpdateProtectionGroup() {
+    return this.to('UpdateProtectionGroup');
+  }
+
+  /**
+   * Grants permission to update the details of an existing subscription
    *
    * Access Level: Write
    *
@@ -234,26 +439,43 @@ export class Shield extends PolicyStatement {
     "Write": [
       "AssociateDRTLogBucket",
       "AssociateDRTRole",
+      "AssociateHealthCheck",
+      "AssociateProactiveEngagementDetails",
       "CreateProtection",
+      "CreateProtectionGroup",
       "CreateSubscription",
       "DeleteProtection",
+      "DeleteProtectionGroup",
       "DeleteSubscription",
+      "DisableProactiveEngagement",
       "DisassociateDRTLogBucket",
       "DisassociateDRTRole",
+      "DisassociateHealthCheck",
+      "EnableProactiveEngagement",
       "UpdateEmergencyContactSettings",
+      "UpdateProtectionGroup",
       "UpdateSubscription"
     ],
     "Read": [
       "DescribeAttack",
+      "DescribeAttackStatistics",
       "DescribeDRTAccess",
       "DescribeEmergencyContactSettings",
       "DescribeProtection",
+      "DescribeProtectionGroup",
       "DescribeSubscription",
-      "GetSubscriptionState"
+      "GetSubscriptionState",
+      "ListTagsForResource"
     ],
     "List": [
       "ListAttacks",
-      "ListProtections"
+      "ListProtectionGroups",
+      "ListProtections",
+      "ListResourcesInProtectionGroup"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
@@ -282,9 +504,32 @@ export class Shield extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onProtection(id: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:shield::${Account}:protection/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type protection-group to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ProtectionGroup.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProtectionGroup(id: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:shield::${Account}:protection-group/${Id}';
     arn = arn.replace('${Id}', id);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

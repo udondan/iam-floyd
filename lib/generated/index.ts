@@ -135,6 +135,7 @@ export { Activate } from "./activate";
 export { Amplify } from "./amplify";
 export { Amplifybackend } from "./amplifyadmin";
 export { Appconfig } from "./appconfig";
+export { Mgn } from "./applicationmigrationservice";
 export { Appmesh } from "./appmesh";
 export { AppmeshPreview } from "./appmeshpreview";
 export { Appsync } from "./appsync";
