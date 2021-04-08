@@ -1,0 +1,67 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"mgn:SendClientMetricsForMgn",
+				"mgn:SendClientLogsForMgn",
+				"mgn:GetChannelCommandsForMgn",
+				"mgn:SendChannelCommandResultForMgn",
+				"mgn:GetAgentSnapshotCreditsForMgn",
+				"mgn:DescribeReplicationServerAssociationsForMgn",
+				"mgn:DescribeSnapshotRequestsForMgn",
+				"mgn:BatchDeleteSnapshotRequestForMgn",
+				"mgn:NotifyAgentAuthenticationForMgn",
+				"mgn:BatchCreateVolumeSnapshotGroupForMgn",
+				"mgn:UpdateAgentReplicationProcessStateForMgn",
+				"mgn:NotifyAgentReplicationProgressForMgn",
+				"mgn:NotifyAgentConnectedForMgn",
+				"mgn:NotifyAgentDisconnectedForMgn"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeInstances",
+				"ec2:DescribeSnapshots"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateSnapshot"
+			],
+			"Resource": "arn:aws:ec2:*:*:volume/*",
+			"Condition": {
+				"Null": {
+					"aws:ResourceTag/AWSApplicationMigrationServiceManaged": "false"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateSnapshot"
+			],
+			"Resource": "arn:aws:ec2:*:*:snapshot/*",
+			"Condition": {
+				"Null": {
+					"aws:RequestTag/AWSApplicationMigrationServiceManaged": "false"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": "ec2:CreateTags",
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"ec2:CreateAction": "CreateSnapshot"
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,27 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"mgn:DescribeJobLogItems",
+				"mgn:DescribeJobs",
+				"mgn:DescribeSourceServers",
+				"mgn:DescribeReplicationConfigurationTemplates",
+				"mgn:GetLaunchConfiguration",
+				"mgn:GetReplicationConfiguration"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeInstances",
+				"ec2:DescribeLaunchTemplateVersions",
+				"ec2:DescribeSecurityGroups",
+				"ec2:DescribeSubnets"
+			],
+			"Resource": "*"
+		}
+	]
+}
