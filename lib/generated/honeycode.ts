@@ -74,6 +74,17 @@ export class Honeycode extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new Amazon Honeycode team for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team.html#create-team
+   */
+  public toCreateTeam() {
+    return this.to('CreateTeam');
+  }
+
+  /**
    * Grants permission to create a new tenant within Amazon Honeycode for your AWS Account
    *
    * Access Level: Write
@@ -85,6 +96,17 @@ export class Honeycode extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove groups from an Amazon Honeycode team for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/group.html#deregister-groups
+   */
+  public toDeregisterGroups() {
+    return this.to('DeregisterGroups');
+  }
+
+  /**
    * Grants permission to get details about a table data import job
    *
    * Access Level: Read
@@ -93,6 +115,17 @@ export class Honeycode extends PolicyStatement {
    */
   public toDescribeTableDataImportJob() {
     return this.to('DescribeTableDataImportJob');
+  }
+
+  /**
+   * Grants permission to get details about Amazon Honeycode teams for your AWS Account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team.html#describe-team
+   */
+  public toDescribeTeam() {
+    return this.to('DescribeTeam');
   }
 
   /**
@@ -115,6 +148,28 @@ export class Honeycode extends PolicyStatement {
    */
   public toInvokeScreenAutomation() {
     return this.to('InvokeScreenAutomation');
+  }
+
+  /**
+   * Grants permission to list all Amazon Honeycode domains and their verification status for your AWS Account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#list-domains
+   */
+  public toListDomains() {
+    return this.to('ListDomains');
+  }
+
+  /**
+   * Grants permission to list all groups in an Amazon Honeycode team for your AWS Account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/group.html#list-groups
+   */
+  public toListGroups() {
+    return this.to('ListGroups');
   }
 
   /**
@@ -184,6 +239,28 @@ export class Honeycode extends PolicyStatement {
   }
 
   /**
+   * Grants permission to request verification of the Amazon Honeycode domains for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#register-domain-for-verification
+   */
+  public toRegisterDomainForVerification() {
+    return this.to('RegisterDomainForVerification');
+  }
+
+  /**
+   * Grants permission to add groups to an Amazon Honeycode team for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/group.html#register-groups
+   */
+  public toRegisterGroups() {
+    return this.to('RegisterGroups');
+  }
+
+  /**
    * Grants permission to reject a team association request for your AWS Account
    *
    * Access Level: Write
@@ -192,6 +269,17 @@ export class Honeycode extends PolicyStatement {
    */
   public toRejectTeamAssociation() {
     return this.to('RejectTeamAssociation');
+  }
+
+  /**
+   * Grants permission to restart verification of the Amazon Honeycode domains for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#restart-domain-verification
+   */
+  public toRestartDomainVerification() {
+    return this.to('RestartDomainVerification');
   }
 
   /**
@@ -205,6 +293,17 @@ export class Honeycode extends PolicyStatement {
     return this.to('StartTableDataImportJob');
   }
 
+  /**
+   * Grants permission to update an Amazon Honeycode team for your AWS Account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team.html#update-team
+   */
+  public toUpdateTeam() {
+    return this.to('UpdateTeam');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "ApproveTeamAssociation",
@@ -212,17 +311,26 @@ export class Honeycode extends PolicyStatement {
       "BatchDeleteTableRows",
       "BatchUpdateTableRows",
       "BatchUpsertTableRows",
+      "CreateTeam",
       "CreateTenant",
+      "DeregisterGroups",
       "InvokeScreenAutomation",
+      "RegisterDomainForVerification",
+      "RegisterGroups",
       "RejectTeamAssociation",
-      "StartTableDataImportJob"
+      "RestartDomainVerification",
+      "StartTableDataImportJob",
+      "UpdateTeam"
     ],
     "Read": [
       "DescribeTableDataImportJob",
+      "DescribeTeam",
       "GetScreenData",
       "QueryTableRows"
     ],
     "List": [
+      "ListDomains",
+      "ListGroups",
       "ListTableColumns",
       "ListTableRows",
       "ListTables",

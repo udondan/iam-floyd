@@ -19,7 +19,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Creates a delivery stream.
+   * Grants permissions to create a delivery stream
    *
    * Access Level: Write
    *
@@ -34,7 +34,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Deletes a delivery stream and its data.
+   * Grants permission to delete a delivery stream and its data
    *
    * Access Level: Write
    *
@@ -45,9 +45,9 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Describes the specified delivery stream and gets the status.
+   * Grants permission to describe the specified delivery stream and gets the status
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_DescribeDeliveryStream.html
    */
@@ -56,7 +56,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Lists your delivery streams.
+   * Grants permissions to list your delivery streams
    *
    * Access Level: List
    *
@@ -67,7 +67,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Lists the tags for the specified delivery stream.
+   * Grants permissions to list the tags for the specified delivery stream
    *
    * Access Level: List
    *
@@ -78,7 +78,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Writes a single data record into an Amazon Kinesis Firehose delivery stream.
+   * Grants permissions to write a single data record into an Amazon Kinesis Firehose delivery stream
    *
    * Access Level: Write
    *
@@ -89,7 +89,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Writes multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records.
+   * Grants permissions to write multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records
    *
    * Access Level: Write
    *
@@ -100,7 +100,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Enables server-side encryption (SSE) for the delivery stream.
+   * Grants permissions to enable server-side encryption (SSE) for the delivery stream
    *
    * Access Level: Write
    *
@@ -111,7 +111,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Disables the specified destination of the specified delivery stream.
+   * Grants permissions to disable the specified destination of the specified delivery stream
    *
    * Access Level: Write
    *
@@ -122,9 +122,9 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Adds or updates tags for the specified delivery stream.
+   * Grants permissions to add or update tags for the specified delivery stream
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -137,9 +137,9 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Removes tags from the specified delivery stream.
+   * Grants permissions to remove tags from the specified delivery stream
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
@@ -151,7 +151,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Updates the specified destination of the specified delivery stream.
+   * Grants permissions to update the specified destination of the specified delivery stream
    *
    * Access Level: Write
    *
@@ -169,14 +169,18 @@ export class Firehose extends PolicyStatement {
       "PutRecordBatch",
       "StartDeliveryStreamEncryption",
       "StopDeliveryStreamEncryption",
-      "TagDeliveryStream",
-      "UntagDeliveryStream",
       "UpdateDestination"
     ],
+    "Read": [
+      "DescribeDeliveryStream"
+    ],
     "List": [
-      "DescribeDeliveryStream",
       "ListDeliveryStreams",
       "ListTagsForDeliveryStream"
+    ],
+    "Tagging": [
+      "TagDeliveryStream",
+      "UntagDeliveryStream"
     ]
   };
 

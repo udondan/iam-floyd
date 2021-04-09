@@ -1,5 +1,5 @@
 import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [elasticache](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticache.html).
@@ -19,9 +19,14 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The AddTagsToResource action adds up to 10 cost allocation tags to the named resource.
+   * Grants permission to add tags to an ElastiCache resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AddTagsToResource.html
    */
@@ -30,9 +35,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The AuthorizeCacheSecurityGroupIngress action allows network ingress to a cache security group.
+   * Grants permission to authorize an EC2 security group on a ElastiCache security group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - ec2:AuthorizeSecurityGroupIngress
@@ -44,9 +52,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Apply the service update.
+   * Grants permission to apply ElastiCache service updates to sets of clusters and replication groups
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -63,9 +74,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Stop the service update.
+   * Grants permission to stop ElastiCache service updates from being executed on a set of clusters
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_BatchStopUpdateAction.html
    */
@@ -74,9 +88,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Stop the service update.
+   * Grants permission to complete an online migration of data from hosted Redis on Amazon EC2 to ElastiCache
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CompleteMigration.html
    */
@@ -85,9 +102,15 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The CopySnapshot action makes a copy of an existing snapshot.
+   * Grants permission to make a copy of an existing snapshot
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifKmsKeyId()
    *
    * Dependent actions:
    * - elasticache:AddTagsToResource
@@ -102,9 +125,21 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The CreateCacheCluster action creates a cache cluster.
+   * Grants permission to create a cache cluster
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifCacheNodeType()
+   * - .ifEngineVersion()
+   * - .ifEngineType()
+   * - .ifMultiAZEnabled()
+   * - .ifAuthTokenEnabled()
+   * - .ifSnapshotRetentionLimit()
+   * - .ifCacheParameterGroupName()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -122,9 +157,14 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The CreateCacheParameterGroup action creates a new cache parameter group.
+   * Grants permission to create a parameter group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifCacheParameterGroupName()
    *
    * Dependent actions:
    * - elasticache:AddTagsToResource
@@ -136,9 +176,13 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The CreateCacheSecurityGroup action creates a new cache security group.
+   * Grants permission to create a cache security group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - elasticache:AddTagsToResource
@@ -150,9 +194,13 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The CreateCacheSubnetGroup action creates a new cache subnet group.
+   * Grants permission to create a cache subnet group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - elasticache:AddTagsToResource
@@ -164,9 +212,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The CreateGlobalReplicationGroup action creates a global datastore.
+   * Grants permission to create a global replication group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateGlobalReplicationGroup.html
    */
@@ -175,9 +226,28 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The CreateReplicationGroup action creates a replication group.
+   * Grants permission to create a replication group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifNumNodeGroups()
+   * - .ifCacheNodeType()
+   * - .ifReplicasPerNodeGroup()
+   * - .ifEngineVersion()
+   * - .ifEngineType()
+   * - .ifAtRestEncryptionEnabled()
+   * - .ifTransitEncryptionEnabled()
+   * - .ifAutomaticFailoverEnabled()
+   * - .ifMultiAZEnabled()
+   * - .ifClusterModeEnabled()
+   * - .ifAuthTokenEnabled()
+   * - .ifSnapshotRetentionLimit()
+   * - .ifKmsKeyId()
+   * - .ifCacheParameterGroupName()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -195,9 +265,15 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The CreateSnapshot action creates a copy of an entire cache cluster at a specific moment in time.
+   * Grants permission to create a copy of an entire Redis cluster at a specific moment in time
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifKmsKeyId()
    *
    * Dependent actions:
    * - elasticache:AddTagsToResource
@@ -212,9 +288,16 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The CreateUser action creates a new user.
+   * Grants permission to create a Redis user for Redis engine version 6.x and onwards
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - elasticache:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateUser.html
    */
@@ -223,9 +306,17 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The CreateUserGroup action creates a new user group.
+   * Grants permission to create a Redis user group for Redis engine version 6.x and onwards
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - elasticache:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateUserGroup.html
    */
@@ -234,9 +325,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DecreaseNodeGroupsInGlobalReplicationGroup action dec a global datastore.
+   * Grants permission to decrease the number of node groups in global replication groups
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifNumNodeGroups()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DecreaseNodeGroupsInGlobalReplicationGroup.html
    */
@@ -245,9 +339,13 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DecreaseReplicaCount action decreases the number of replicas in a Redis replication group.
+   * Grants permission to decrease the number of replicas in a Redis (cluster mode disabled) replication group or the number of replica nodes in one or more node groups (shards) of a Redis (cluster mode enabled) replication group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifReplicasPerNodeGroup()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -263,9 +361,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DeleteCacheCluster action deletes a previously provisioned cache cluster.
+   * Grants permission to delete a previously provisioned cluster
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -281,9 +382,13 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DeleteCacheParameterGroup action deletes the specified cache parameter group.
+   * Grants permission to delete the specified cache parameter group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCacheParameterGroupName()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheParameterGroup.html
    */
@@ -292,9 +397,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DeleteCacheSecurityGroup action deletes a cache security group.
+   * Grants permission to delete a cache security group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheSecurityGroup.html
    */
@@ -303,9 +411,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DeleteCacheSubnetGroup action deletes a cache subnet group.
+   * Grants permission to delete a cache subnet group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -321,7 +432,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DeleteGlobalReplicationGroup action deletes a global datastore.
+   * Grants permission to delete an existing global replication group
    *
    * Access Level: Write
    *
@@ -332,9 +443,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DeleteReplicationGroup action deletes an existing replication group.
+   * Grants permission to delete an existing replication group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -350,9 +464,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DeleteSnapshot action deletes an existing snapshot.
+   * Grants permission to delete an existing snapshot
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteSnapshot.html
    */
@@ -361,9 +478,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DeleteUser action deletes an existing user.
+   * Grants permission to delete an existing user and thus remove it from all user groups and replication groups where it was assigned
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteUser.html
    */
@@ -372,9 +492,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DeleteUserGroup action deletes an existing user group.
+   * Grants permission to delete an existing user group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteUserGroup.html
    */
@@ -383,9 +506,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeCacheClusters action returns information about all provisioned cache clusters if no cache cluster identifier is specified, or about a specific cache cluster if a cache cluster identifier is supplied.
+   * Grants permission to list information about provisioned cache clusters
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheClusters.html
    */
@@ -394,7 +520,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeCacheEngineVersions action returns a list of the available cache engines and their versions.
+   * Grants permission list available cache engines and their versions
    *
    * Access Level: List
    *
@@ -405,9 +531,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeCacheParameterGroups action returns information about parameter groups for this account, or a particular parameter group.
+   * Grants permission to list cache parameter group descriptions
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheParameterGroups.html
    */
@@ -416,9 +545,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeCacheParameters action returns the detailed parameter list for a particular cache parameter group.
+   * Grants permission to retrieve the detailed parameter list for a particular cache parameter group
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheParameters.html
    */
@@ -427,9 +559,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeCacheSecurityGroups action returns a list of cache security group descriptions, or the description of the specified security group.
+   * Grants permission to list cache security group descriptions
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheSecurityGroups.html
    */
@@ -438,9 +573,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeCacheSubnetGroups action returns a list of cache subnet group descriptions, or the description of the specified subnet group.
+   * Grants permission to list cache subnet group descriptions
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheSubnetGroups.html
    */
@@ -449,7 +587,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeEngineDefaultParameters action returns the default engine and system parameter information for the specified cache engine.
+   * Grants permission to retrieve the default engine and system parameter information for the specified cache engine
    *
    * Access Level: List
    *
@@ -460,7 +598,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeEvents action returns events related to cache clusters, cache security groups, and cache parameter groups.
+   * Grants permission to list events related to clusters, cache security groups, and cache parameter groups
    *
    * Access Level: List
    *
@@ -471,7 +609,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeGlobalReplicationGroups action returns information about global datastores for this account, or a particular global datastore.
+   * Grants permission to list information about global replication groups
    *
    * Access Level: List
    *
@@ -482,9 +620,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeReplicationGroups action returns information about replication groups for this account, or a particular replication group.
+   * Grants permission to list information about provisioned replication groups
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeReplicationGroups.html
    */
@@ -493,9 +634,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeReservedCacheNodes action returns information about reserved cache nodes for this account, or a particular reserved cache node.
+   * Grants permission to list information about purchased reserved cache nodes
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeReservedCacheNodes.html
    */
@@ -504,7 +648,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeReservedCacheNodesOfferings action lists available reserved cache node offerings.
+   * Grants permission to list available reserved cache node offerings
    *
    * Access Level: List
    *
@@ -515,7 +659,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Returns details of the service updates
+   * Grants permission to list details of the service updates
    *
    * Access Level: List
    *
@@ -526,9 +670,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeSnapshots action returns information about cache cluster snapshots.
+   * Grants permission to list information about cluster or replication group snapshots
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeSnapshots.html
    */
@@ -537,9 +684,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Returns details of the update actions.
+   * Grants permission to list details of the update actions for a set of clusters or replication groups
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeUpdateActions.html
    */
@@ -548,9 +698,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeUserGroups action returns information about all user groups for this account, or a particular user group.
+   * Grants permission to list information about Redis user groups
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeUserGroups.html
    */
@@ -559,9 +712,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DescribeUsers action returns information about all users for this account, or a particular user.
+   * Grants permission to list information about Redis users
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeUsers.html
    */
@@ -570,7 +726,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The DisassociateGlobalReplicationGroup action removes a secondary Replication Group from the Global Datastore.
+   * Grants permission to remove a secondary replication group from the global replication group
    *
    * Access Level: Write
    *
@@ -581,7 +737,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The FailoverGlobalReplicationGroup action removes a secondary Replication Group from the Global Datastore.
+   * Grants permission to failover the primary region to a selected secondary region of a global replication group
    *
    * Access Level: Write
    *
@@ -592,9 +748,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The IncreaseNodeGroupsInGlobalReplicationGroup action increases the number of node groups in the Global Datastore.
+   * Grants permission to increase the number of node groups in a global replication group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifNumNodeGroups()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_IncreaseNodeGroupsInGlobalReplicationGroup.html
    */
@@ -603,9 +762,13 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The IncreaseReplicaCount action increases the number of replicas in a Redis replication group.
+   * Grants permission to increase the number of replicas in a Redis (cluster mode disabled) replication group or the number of replica nodes in one or more node groups (shards) of a Redis (cluster mode enabled) replication group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifReplicasPerNodeGroup()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -621,9 +784,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * List Allowed Node Type Modifications
+   * Grants permission to list available node type that can be used to scale a particular Redis cluster or replication group
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ListAllowedNodeTypeModifications.html
    */
@@ -632,9 +798,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The ListTagsForResource action lists all cost allocation tags currently on the named resource.
+   * Grants permission to list tags for an ElastiCache resource
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ListTagsForResource.html
    */
@@ -643,9 +812,18 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The ModifyCacheCluster action modifies the settings for a cache cluster.
+   * Grants permission to modify settings for a cluster
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCacheNodeType()
+   * - .ifEngineVersion()
+   * - .ifMultiAZEnabled()
+   * - .ifAuthTokenEnabled()
+   * - .ifSnapshotRetentionLimit()
+   * - .ifCacheParameterGroupName()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheCluster.html
    */
@@ -654,9 +832,13 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The ModifyCacheParameterGroup action modifies the parameters of a cache parameter group.
+   * Grants permission to modify parameters of a cache parameter group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCacheParameterGroupName()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html
    */
@@ -665,9 +847,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The ModifyCacheSubnetGroup action modifies an existing cache subnet group.
+   * Grants permission to modify an existing cache subnet group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheSubnetGroup.html
    */
@@ -676,9 +861,14 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The ModifyGlobalReplicationGroup action modifies the settings for a Global Datastore.
+   * Grants permission to modify settings for a global replication group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCacheNodeType()
+   * - .ifEngineVersion()
+   * - .ifAutomaticFailoverEnabled()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyGlobalReplicationGroup.html
    */
@@ -687,9 +877,19 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The ModifyReplicationGroup action modifies the settings for a replication group.
+   * Grants permission to modify the settings for a replication group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCacheNodeType()
+   * - .ifEngineVersion()
+   * - .ifAutomaticFailoverEnabled()
+   * - .ifMultiAZEnabled()
+   * - .ifAuthTokenEnabled()
+   * - .ifSnapshotRetentionLimit()
+   * - .ifCacheParameterGroupName()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -705,9 +905,13 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The ModifyReplicationGroupShardConfiguration action allows you to add shards, remove shards, or rebalance the keyspaces among exisiting shards.
+   * Grants permission to add shards, remove shards, or rebalance the keyspaces among existing shards of a replication group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifNumNodeGroups()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -723,9 +927,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The ModifyUser action modifies an existing user.
+   * Grants permission to change Redis user password(s) and/or access string
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyUser.html
    */
@@ -734,9 +941,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The ModifyUserGroup action modifies an existing user group.
+   * Grants permission to change list of users that belong to the user group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyUserGroup.html
    */
@@ -745,9 +955,13 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The PurchaseReservedCacheNodesOffering action allows you to purchase a reserved cache node offering.
+   * Grants permission to purchase a reserved cache node offering
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * Dependent actions:
    * - elasticache:AddTagsToResource
@@ -759,7 +973,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The RebalanceSlotsInGlobalReplicationGroup action redistributes slots to ensure uniform distribution across existing shards in the cluster.
+   * Grants permission to perform a key space rebalance operation to redistribute slots and ensure uniform key distribution across existing shards in a global replication group
    *
    * Access Level: Write
    *
@@ -770,9 +984,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The RebootCacheCluster action reboots some, or all, of the cache nodes within a provisioned cache cluster.
+   * Grants permission to reboot some, or all, of the cache nodes within a provisioned cache cluster or replication group (cluster mode disabled)
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RebootCacheCluster.html
    */
@@ -781,9 +998,13 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The RemoveTagsFromResource action removes the tags identified by the TagKeys list from the named resource.
+   * Grants permission to remove tags from a ElastiCache resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RemoveTagsFromResource.html
    */
@@ -792,9 +1013,13 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The ResetCacheParameterGroup action modifies the parameters of a cache parameter group to the engine or system default value.
+   * Grants permission to modify parameters of a cache parameter group back to their default values
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCacheParameterGroupName()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ResetCacheParameterGroup.html
    */
@@ -803,9 +1028,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The RevokeCacheSecurityGroupIngress action revokes ingress from a cache security group.
+   * Grants permission to remove an EC2 security group ingress from a ElastiCache security group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RevokeCacheSecurityGroupIngress.html
    */
@@ -814,9 +1042,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Start the migration of data.
+   * Grants permission to start a migration of data from hosted Redis on Amazon EC2 to ElastiCache for Redis
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_StartMigration.html
    */
@@ -825,9 +1056,12 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * The TestFailover action allows you to test automatic failover on a specified node group in a replication group
+   * Grants permission to test automatic failover on a specified node group in a replication group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -921,12 +1155,15 @@ export class Elasticache extends PolicyStatement {
   /**
    * Adds a resource of type parametergroup to the statement
    *
-   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.ParameterGroups
    *
    * @param cacheParameterGroupName - Identifier for the cacheParameterGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onParametergroup(cacheParameterGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:parametergroup:${CacheParameterGroupName}';
@@ -940,12 +1177,15 @@ export class Elasticache extends PolicyStatement {
   /**
    * Adds a resource of type securitygroup to the statement
    *
-   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.SecurityGroups
    *
    * @param cacheSecurityGroupName - Identifier for the cacheSecurityGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onSecuritygroup(cacheSecurityGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:securitygroup:${CacheSecurityGroupName}';
@@ -959,12 +1199,15 @@ export class Elasticache extends PolicyStatement {
   /**
    * Adds a resource of type subnetgroup to the statement
    *
-   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.SubnetGroups
    *
    * @param cacheSubnetGroupName - Identifier for the cacheSubnetGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onSubnetgroup(cacheSubnetGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:subnetgroup:${CacheSubnetGroupName}';
@@ -978,12 +1221,15 @@ export class Elasticache extends PolicyStatement {
   /**
    * Adds a resource of type replicationgroup to the statement
    *
-   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Replication.html
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.ReplicationGroups
    *
    * @param replicationGroupId - Identifier for the replicationGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onReplicationgroup(replicationGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:replicationgroup:${ReplicationGroupId}';
@@ -997,12 +1243,15 @@ export class Elasticache extends PolicyStatement {
   /**
    * Adds a resource of type cluster to the statement
    *
-   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.Clusters
    *
    * @param cacheClusterId - Identifier for the cacheClusterId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCluster(cacheClusterId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:cluster:${CacheClusterId}';
@@ -1022,6 +1271,9 @@ export class Elasticache extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onReservedInstance(reservedCacheNodeId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:reserved-instance:${ReservedCacheNodeId}';
@@ -1035,12 +1287,15 @@ export class Elasticache extends PolicyStatement {
   /**
    * Adds a resource of type snapshot to the statement
    *
-   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups.html
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.Snapshots
    *
    * @param snapshotName - Identifier for the snapshotName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:snapshot:${SnapshotName}';
@@ -1071,12 +1326,15 @@ export class Elasticache extends PolicyStatement {
   /**
    * Adds a resource of type user to the statement
    *
-   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html
    *
    * @param userId - Identifier for the userId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onUser(userId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:user:${UserId}';
@@ -1090,12 +1348,15 @@ export class Elasticache extends PolicyStatement {
   /**
    * Adds a resource of type usergroup to the statement
    *
-   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html
    *
    * @param userGroupId - Identifier for the userGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onUsergroup(userGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:usergroup:${UserGroupId}';
@@ -1104,5 +1365,243 @@ export class Elasticache extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters access by the AtRestEncryptionEnabled parameter present in the request or default false value if parameter is not present
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateReplicationGroup()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifAtRestEncryptionEnabled(value?: boolean) {
+    return this.if(`AtRestEncryptionEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the presence of non empty AuthToken parameter in the request
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateCacheCluster()
+   * - .toCreateReplicationGroup()
+   * - .toModifyCacheCluster()
+   * - .toModifyReplicationGroup()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifAuthTokenEnabled(value?: boolean) {
+    return this.if(`AuthTokenEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the AutomaticFailoverEnabled parameter in the request
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateReplicationGroup()
+   * - .toModifyGlobalReplicationGroup()
+   * - .toModifyReplicationGroup()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifAutomaticFailoverEnabled(value?: boolean) {
+    return this.if(`AutomaticFailoverEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the cacheNodeType parameter present in the request. This key can be used to restrict which cache node types can be used on cluster creation or scaling operations
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateCacheCluster()
+   * - .toCreateReplicationGroup()
+   * - .toModifyCacheCluster()
+   * - .toModifyGlobalReplicationGroup()
+   * - .toModifyReplicationGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCacheNodeType(value: string | string[], operator?: Operator | string) {
+    return this.if(`CacheNodeType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the the CacheParameterGroupName parameter in the request
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateCacheCluster()
+   * - .toCreateCacheParameterGroup()
+   * - .toCreateReplicationGroup()
+   * - .toDeleteCacheParameterGroup()
+   * - .toModifyCacheCluster()
+   * - .toModifyCacheParameterGroup()
+   * - .toModifyReplicationGroup()
+   * - .toResetCacheParameterGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCacheParameterGroupName(value: string | string[], operator?: Operator | string) {
+    return this.if(`CacheParameterGroupName`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the cluster mode parameter present in the request. Default value for single node group (shard) creations is false
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateReplicationGroup()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifClusterModeEnabled(value?: boolean) {
+    return this.if(`ClusterModeEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the engine type present in creation requests. For replication group creations, default engine ‘redis’ is used as key if parameter is not present
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateCacheCluster()
+   * - .toCreateReplicationGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEngineType(value: string | string[], operator?: Operator | string) {
+    return this.if(`EngineType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the engineVersion parameter present in creation or cluster modification requests
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateCacheCluster()
+   * - .toCreateReplicationGroup()
+   * - .toModifyCacheCluster()
+   * - .toModifyGlobalReplicationGroup()
+   * - .toModifyReplicationGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEngineVersion(value: string | string[], operator?: Operator | string) {
+    return this.if(`EngineVersion`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the KmsKeyId parameter in the request
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCopySnapshot()
+   * - .toCreateReplicationGroup()
+   * - .toCreateSnapshot()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifKmsKeyId(value: string | string[], operator?: Operator | string) {
+    return this.if(`KmsKeyId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the AZMode parameter, MultiAZEnabled parameter or the number of availability zones that the cluster or replication group can be placed in
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateCacheCluster()
+   * - .toCreateReplicationGroup()
+   * - .toModifyCacheCluster()
+   * - .toModifyReplicationGroup()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifMultiAZEnabled(value?: boolean) {
+    return this.if(`MultiAZEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the NumNodeGroups or NodeGroupCount parameter specified in the request. This key can be used to restrict the number of node groups (shards) clusters can have after creation or scaling operations
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateReplicationGroup()
+   * - .toDecreaseNodeGroupsInGlobalReplicationGroup()
+   * - .toIncreaseNodeGroupsInGlobalReplicationGroup()
+   * - .toModifyReplicationGroupShardConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifNumNodeGroups(value: number | number[], operator?: Operator | string) {
+    return this.if(`NumNodeGroups`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the number of replicas per node group (shards) specified in creations or scaling requests
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateReplicationGroup()
+   * - .toDecreaseReplicaCount()
+   * - .toIncreaseReplicaCount()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifReplicasPerNodeGroup(value: number | number[], operator?: Operator | string) {
+    return this.if(`ReplicasPerNodeGroup`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the SnapshotRetentionLimit parameter in the request
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateCacheCluster()
+   * - .toCreateReplicationGroup()
+   * - .toModifyCacheCluster()
+   * - .toModifyReplicationGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifSnapshotRetentionLimit(value: number | number[], operator?: Operator | string) {
+    return this.if(`SnapshotRetentionLimit`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the TransitEncryptionEnabled parameter present in the request or default false value if parameter is not present
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateReplicationGroup()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifTransitEncryptionEnabled(value?: boolean) {
+    return this.if(`TransitEncryptionEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 }

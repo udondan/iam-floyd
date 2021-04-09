@@ -19,7 +19,7 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get multiple channels simultaneously by channel ARN.
+   * Grants permission to get multiple channels simultaneously by channel ARN
    *
    * Access Level: Read
    *
@@ -30,7 +30,7 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get multiple stream keys simultaneously by stream key ARN.
+   * Grants permission to get multiple stream keys simultaneously by stream key ARN
    *
    * Access Level: Read
    *
@@ -41,7 +41,7 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new channel and an associated stream key.
+   * Grants permission to create a new channel and an associated stream key
    *
    * Access Level: Write
    *
@@ -56,7 +56,22 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a stream key.
+   * Grants permission to create a a new recording configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateRecordingConfiguration.html
+   */
+  public toCreateRecordingConfiguration() {
+    return this.to('CreateRecordingConfiguration');
+  }
+
+  /**
+   * Grants permission to create a stream key
    *
    * Access Level: Write
    *
@@ -71,7 +86,7 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a channel and channel's stream keys.
+   * Grants permission to delete a channel and channel's stream keys
    *
    * Access Level: Write
    *
@@ -90,6 +105,17 @@ export class Ivs extends PolicyStatement {
    */
   public toDeletePlaybackKeyPair() {
     return this.to('DeletePlaybackKeyPair');
+  }
+
+  /**
+   * Grants permission to delete a recording configuration for the specified ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteRecordingConfiguration.html
+   */
+  public toDeleteRecordingConfiguration() {
+    return this.to('DeleteRecordingConfiguration');
   }
 
   /**
@@ -126,6 +152,17 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the recording configuration for the specified ARN
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetRecordingConfiguration.html
+   */
+  public toGetRecordingConfiguration() {
+    return this.to('GetRecordingConfiguration');
+  }
+
+  /**
    * Grants permission to get information about the active (live) stream on a specified channel
    *
    * Access Level: Read
@@ -148,7 +185,7 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to import the public key.
+   * Grants permission to import the public key
    *
    * Access Level: Write
    *
@@ -182,6 +219,17 @@ export class Ivs extends PolicyStatement {
    */
   public toListPlaybackKeyPairs() {
     return this.to('ListPlaybackKeyPairs');
+  }
+
+  /**
+   * Grants permission to get summary information about recording configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListRecordingConfigurations.html
+   */
+  public toListRecordingConfigurations() {
+    return this.to('ListRecordingConfigurations');
   }
 
   /**
@@ -289,14 +337,17 @@ export class Ivs extends PolicyStatement {
       "BatchGetStreamKey",
       "GetChannel",
       "GetPlaybackKeyPair",
+      "GetRecordingConfiguration",
       "GetStream",
       "GetStreamKey"
     ],
     "Write": [
       "CreateChannel",
+      "CreateRecordingConfiguration",
       "CreateStreamKey",
       "DeleteChannel",
       "DeletePlaybackKeyPair",
+      "DeleteRecordingConfiguration",
       "DeleteStreamKey",
       "ImportPlaybackKeyPair",
       "PutMetadata",
@@ -306,6 +357,7 @@ export class Ivs extends PolicyStatement {
     "List": [
       "ListChannels",
       "ListPlaybackKeyPairs",
+      "ListRecordingConfigurations",
       "ListStreamKeys",
       "ListStreams"
     ],
@@ -370,6 +422,26 @@ export class Ivs extends PolicyStatement {
    */
   public onPlaybackKeyPair(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:ivs::${Account}:playback-key/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Recording-Configuration to the statement
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_RecordingConfiguration.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRecordingConfiguration(resourceId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ivs::${Account}:recording-configuration/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

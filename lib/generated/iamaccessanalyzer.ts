@@ -30,6 +30,17 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a policy generation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CancelPolicyGeneration.html
+   */
+  public toCancelPolicyGeneration() {
+    return this.to('CancelPolicyGeneration');
+  }
+
+  /**
    * Grants permission to create an access preview for the specified analyzer
    *
    * Access Level: Write
@@ -151,6 +162,17 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a policy that was generated using StartPolicyGeneration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetGeneratedPolicy.html
+   */
+  public toGetGeneratedPolicy() {
+    return this.to('GetGeneratedPolicy');
+  }
+
+  /**
    * Grants permission to retrieve a list of findings from an access preview
    *
    * Access Level: Read
@@ -217,6 +239,17 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all the recently started policy generations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListPolicyGenerations.html
+   */
+  public toListPolicyGenerations() {
+    return this.to('ListPolicyGenerations');
+  }
+
+  /**
    * Grants permission to retrieve a list of tags applied to a resource
    *
    * Access Level: Read
@@ -225,6 +258,17 @@ export class AccessAnalyzer extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to start a policy generation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_StartPolicyGeneration.html
+   */
+  public toStartPolicyGeneration() {
+    return this.to('StartPolicyGeneration');
   }
 
   /**
@@ -304,11 +348,13 @@ export class AccessAnalyzer extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "ApplyArchiveRule",
+      "CancelPolicyGeneration",
       "CreateAccessPreview",
       "CreateAnalyzer",
       "CreateArchiveRule",
       "DeleteAnalyzer",
       "DeleteArchiveRule",
+      "StartPolicyGeneration",
       "StartResourceScan",
       "UpdateArchiveRule",
       "UpdateFindings"
@@ -319,9 +365,11 @@ export class AccessAnalyzer extends PolicyStatement {
       "GetAnalyzer",
       "GetArchiveRule",
       "GetFinding",
+      "GetGeneratedPolicy",
       "ListAccessPreviewFindings",
       "ListAnalyzedResources",
       "ListFindings",
+      "ListPolicyGenerations",
       "ListTagsForResource",
       "ValidatePolicy"
     ],
