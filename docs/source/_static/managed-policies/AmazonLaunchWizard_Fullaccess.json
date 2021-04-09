@@ -121,6 +121,9 @@
 				"ec2:DisassociateIamInstanceProfile",
 				"ec2:DisassociateRouteTable",
 				"ec2:DisassociateSubnetCidrBlock",
+				"ec2:ModifyInstancePlacement",
+                "ec2:DeletePlacementGroup",
+                "ec2:CreatePlacementGroup",
 				"elasticfilesystem:DeleteFileSystem",
 				"elasticfilesystem:DeleteMountTarget",
 				"ds:AddIpRoutes",
@@ -463,6 +466,16 @@
 			"Effect": "Allow",
 			"Action": "ssm:DeleteOpsMetadata",
 			"Resource": "arn:aws:ssm:*:*:opsmetadata/aws/ssm/LaunchWizard*"
-		}
+		},
+		{
+            "Effect": "Allow",
+            "Action": [
+                "sns:CreateTopic",
+                "sns:DeleteTopic",
+                "sns:Subscribe",
+                "sns:Unsubscribe"
+            ],
+            "Resource": "arn:aws:sns:*:*:LaunchWizard*"
+        }
 	]
 }
