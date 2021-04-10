@@ -8,7 +8,7 @@ lookoutvision:DescribeDataset;Read
 lookoutvision:DescribeModel;Read
 lookoutvision:DescribeProject;Read
 lookoutvision:DescribeTrialDetection;Read
-lookoutvision:DetectAnomalies;Read
+lookoutvision:DetectAnomalies;Write
 lookoutvision:ListDatasetEntries;Read
 lookoutvision:ListModels;List
 lookoutvision:ListProjects;List

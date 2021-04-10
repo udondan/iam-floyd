@@ -19,9 +19,13 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Link partner accounts with Aws account.
+   * Grants permission to link partner accounts with Aws account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateAwsAccountWithPartnerAccount.html
    */
@@ -30,7 +34,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Associate the wireless device with AWS IoT thing for a given wirelessDeviceId.
+   * Grants permission to associate the wireless device with AWS IoT thing for a given wirelessDeviceId
    *
    * Access Level: Write
    *
@@ -44,7 +48,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Associate a WirelessGateway with the IoT Core Identity certificate.
+   * Grants permission to associate a WirelessGateway with the IoT Core Identity certificate
    *
    * Access Level: Write
    *
@@ -55,7 +59,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Associate the wireless gateway with AWS IoT thing for a given wirelessGatewayId.
+   * Grants permission to associate the wireless gateway with AWS IoT thing for a given wirelessGatewayId
    *
    * Access Level: Write
    *
@@ -69,7 +73,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Create a Destination resource.
+   * Grants permission to create a Destination resource
    *
    * Access Level: Write
    *
@@ -84,7 +88,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Create a DeviceProfile resource.
+   * Grants permission to create a DeviceProfile resource
    *
    * Access Level: Write
    *
@@ -99,7 +103,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Create a ServiceProfile resource.
+   * Grants permission to create a ServiceProfile resource
    *
    * Access Level: Write
    *
@@ -114,9 +118,13 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Create a WirelessDevice resource with given Destination.
+   * Grants permission to create a WirelessDevice resource with given Destination
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessDevice.html
    */
@@ -125,7 +133,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Create a WirelessGateway resource.
+   * Grants permission to create a WirelessGateway resource
    *
    * Access Level: Write
    *
@@ -140,7 +148,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Create a task for a given WirelessGateway.
+   * Grants permission to create a task for a given WirelessGateway
    *
    * Access Level: Write
    *
@@ -151,9 +159,13 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Create a WirelessGateway task definition.
+   * Grants permission to create a WirelessGateway task definition
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGatewayTaskDefinition.html
    */
@@ -162,7 +174,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Delete a Destination.
+   * Grants permission to delete a Destination
    *
    * Access Level: Write
    *
@@ -173,7 +185,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Delete a DeviceProfile.
+   * Grants permission to delete a DeviceProfile
    *
    * Access Level: Write
    *
@@ -184,7 +196,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Delete a ServiceProfile.
+   * Grants permission to delete a ServiceProfile
    *
    * Access Level: Write
    *
@@ -195,7 +207,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Delete a WirelessDevice.
+   * Grants permission to delete a WirelessDevice
    *
    * Access Level: Write
    *
@@ -206,7 +218,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Delete a WirelessGateway.
+   * Grants permission to delete a WirelessGateway
    *
    * Access Level: Write
    *
@@ -217,7 +229,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Delete task for a given WirelessGateway.
+   * Grants permission to delete task for a given WirelessGateway
    *
    * Access Level: Write
    *
@@ -228,7 +240,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Delete a WirelessGateway task definition.
+   * Grants permission to delete a WirelessGateway task definition
    *
    * Access Level: Write
    *
@@ -239,7 +251,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Disassociate an AWS account from a partner account.
+   * Grants permission to disassociate an AWS account from a partner account
    *
    * Access Level: Write
    *
@@ -250,7 +262,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Disassociate a wireless device from a AWS IoT thing.
+   * Grants permission to disassociate a wireless device from a AWS IoT thing
    *
    * Access Level: Write
    *
@@ -264,7 +276,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Disassociate a WirelessGateway from a IoT Core Identity certificate.
+   * Grants permission to disassociate a WirelessGateway from a IoT Core Identity certificate
    *
    * Access Level: Write
    *
@@ -275,7 +287,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Disassociate a WirelessGateway from a IoT Core thing.
+   * Grants permission to disassociate a WirelessGateway from a IoT Core thing
    *
    * Access Level: Write
    *
@@ -289,7 +301,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Get the Destination
+   * Grants permission to get the Destination
    *
    * Access Level: Read
    *
@@ -300,7 +312,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Get the DeviceProfile
+   * Grants permission to get the DeviceProfile
    *
    * Access Level: Read
    *
@@ -311,7 +323,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Get the associated PartnerAccount
+   * Grants permission to get the associated PartnerAccount
    *
    * Access Level: Read
    *
@@ -322,7 +334,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Retrieve the customer account specific endpoint for CUPS protocol connection or LoRaWAN Network Server (LNS) protocol connection, and optionally server trust certificate in PEM format.
+   * Grants permission to retrieve the customer account specific endpoint for CUPS protocol connection or LoRaWAN Network Server (LNS) protocol connection, and optionally server trust certificate in PEM format
    *
    * Access Level: Read
    *
@@ -333,7 +345,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Get the ServiceProfile
+   * Grants permission to get the ServiceProfile
    *
    * Access Level: Read
    *
@@ -344,7 +356,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Get the WirelessDevice
+   * Grants permission to get the WirelessDevice
    *
    * Access Level: Read
    *
@@ -355,7 +367,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Get statistics info for a given WirelessDevice
+   * Grants permission to get statistics info for a given WirelessDevice
    *
    * Access Level: Read
    *
@@ -366,7 +378,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Get the WirelessGateway
+   * Grants permission to get the WirelessGateway
    *
    * Access Level: Read
    *
@@ -377,7 +389,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Get the IoT Core Identity certificate id associated with the WirelessGateway.
+   * Grants permission to get the IoT Core Identity certificate id associated with the WirelessGateway
    *
    * Access Level: Read
    *
@@ -388,7 +400,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Get Current firmware version and other information for the WirelessGateway
+   * Grants permission to get Current firmware version and other information for the WirelessGateway
    *
    * Access Level: Read
    *
@@ -399,7 +411,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Get statistics info for a given WirelessGateway
+   * Grants permission to get statistics info for a given WirelessGateway
    *
    * Access Level: Read
    *
@@ -410,7 +422,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Get the task for a given WirelessGateway
+   * Grants permission to get the task for a given WirelessGateway
    *
    * Access Level: Read
    *
@@ -421,7 +433,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Describe the given WirelessGateway task definition.
+   * Grants permission to get the given WirelessGateway task definition
    *
    * Access Level: Read
    *
@@ -443,7 +455,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * List information of available DeviceProfiles based on the AWS account.
+   * Grants permission to list information of available DeviceProfiles based on the AWS account
    *
    * Access Level: List
    *
@@ -454,7 +466,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Lists the available partner accounts.
+   * Grants permission to list the available partner accounts
    *
    * Access Level: List
    *
@@ -465,7 +477,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * List information of available ServiceProfiles based on the AWS account.
+   * Grants permission to list information of available ServiceProfiles based on the AWS account
    *
    * Access Level: List
    *
@@ -476,7 +488,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Lists all tags for a given resource.
+   * Grants permission to list all tags for a given resource
    *
    * Access Level: List
    *
@@ -487,7 +499,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * List information of available WirelessDevices based on the AWS account.
+   * Grants permission to list information of available WirelessDevices based on the AWS account
    *
    * Access Level: List
    *
@@ -498,7 +510,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * List information of available WirelessGateway task definitions based on the AWS account.
+   * Grants permission to list information of available WirelessGateway task definitions based on the AWS account
    *
    * Access Level: List
    *
@@ -509,7 +521,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * List information of available WirelessGateways based on the AWS account.
+   * Grants permission to list information of available WirelessGateways based on the AWS account
    *
    * Access Level: List
    *
@@ -520,7 +532,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Send the decrypted application data frame to the target device
+   * Grants permission to send the decrypted application data frame to the target device
    *
    * Access Level: Write
    *
@@ -531,7 +543,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Tag a given resource.
+   * Grants permission to tag a given resource
    *
    * Access Level: Tagging
    *
@@ -546,7 +558,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Simulate a provisioned device to send an uplink data with payload of 'Hello'
+   * Grants permission to simulate a provisioned device to send an uplink data with payload of 'Hello'
    *
    * Access Level: Write
    *
@@ -557,7 +569,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Remove the given tags from the resource.
+   * Grants permission to remove the given tags from the resource
    *
    * Access Level: Tagging
    *
@@ -571,7 +583,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Update a Destination resource.
+   * Grants permission to update a Destination resource
    *
    * Access Level: Write
    *
@@ -582,7 +594,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Update a partner account.
+   * Grants permission to update a partner account
    *
    * Access Level: Write
    *
@@ -593,7 +605,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Update a WirelessDevice resource.
+   * Grants permission to update a WirelessDevice resource
    *
    * Access Level: Write
    *
@@ -604,7 +616,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Update a WirelessGateway resource.
+   * Grants permission to update a WirelessGateway resource
    *
    * Access Level: Write
    *
@@ -685,6 +697,9 @@ export class Iotwireless extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onWirelessDevice(wirelessDeviceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotwireless:${Region}:${Account}:WirelessDevice/${WirelessDeviceId}';
@@ -777,6 +792,50 @@ export class Iotwireless extends PolicyStatement {
   public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotwireless:${Region}:${Account}:Destination/${DestinationName}';
     arn = arn.replace('${DestinationName}', destinationName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type SidewalkAccount to the statement
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateAwsAccountWithPartnerAccount.html
+   *
+   * @param sidewalkId - Identifier for the sidewalkId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSidewalkAccount(sidewalkId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotwireless:${Region}:${Account}:SidewalkAccount/${SidewalkId}';
+    arn = arn.replace('${SidewalkId}', sidewalkId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type WirelessGatewayTaskDefinition to the statement
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGatewayTaskDefinition.html
+   *
+   * @param wirelessGatewayTaskDefinitionId - Identifier for the wirelessGatewayTaskDefinitionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWirelessGatewayTaskDefinition(wirelessGatewayTaskDefinitionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotwireless:${Region}:${Account}:WirelessGatewayTaskDefinition/${WirelessGatewayTaskDefinitionId}';
+    arn = arn.replace('${WirelessGatewayTaskDefinitionId}', wirelessGatewayTaskDefinitionId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

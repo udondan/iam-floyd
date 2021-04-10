@@ -19,7 +19,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Creates a receipt rule set by cloning an existing one
+   * Grants permission to create a receipt rule set by cloning an existing one
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Creates a new configuration set
+   * Grants permission to create a new configuration set
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Creates a configuration set event destination
+   * Grants permission to create a configuration set event destination
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Creates an association between a configuration set and a custom domain for open and click event tracking
+   * Grants permission to creates an association between a configuration set and a custom domain for open and click event tracking
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Creates a new custom verification email template
+   * Grants permission to create a new custom verification email template
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Creates a new IP address filter
+   * Grants permission to create a new IP address filter
    *
    * Access Level: Write
    *
@@ -85,7 +85,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Creates a receipt rule
+   * Grants permission to create a receipt rule
    *
    * Access Level: Write
    *
@@ -96,7 +96,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Creates an empty receipt rule set
+   * Grants permission to create an empty receipt rule set
    *
    * Access Level: Write
    *
@@ -107,7 +107,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Creates an email template
+   * Grants permission to creates an email template
    *
    * Access Level: Write
    *
@@ -118,7 +118,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Deletes the configuration set
+   * Grants permission to delete an existing configuration set
    *
    * Access Level: Write
    *
@@ -129,7 +129,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Deletes a configuration set event destination
+   * Grants permission to delete an event destination
    *
    * Access Level: Write
    *
@@ -140,7 +140,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Deletes an association between a configuration set and a custom domain for open and click event tracking
+   * Grants permission to delete an association between a configuration set and a custom domain for open and click event tracking
    *
    * Access Level: Write
    *
@@ -151,7 +151,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing custom verification email template
+   * Grants permission to delete an existing custom verification email template
    *
    * Access Level: Write
    *
@@ -162,7 +162,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified identity (an email address or a domain) from the list of verified identities
+   * Grants permission to delete the specified identity
    *
    * Access Level: Write
    *
@@ -173,9 +173,9 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified identity (an email address or a domain) from the list of verified identities
+   * Grants permission to delete the specified sending authorization policy for the given identity (an email address or a domain)
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentityPolicy.html
    */
@@ -184,7 +184,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified IP address filter
+   * Grants permission to delete the specified IP address filter
    *
    * Access Level: Write
    *
@@ -195,7 +195,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified receipt rule
+   * Grants permission to delete the specified receipt rule
    *
    * Access Level: Write
    *
@@ -206,7 +206,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified receipt rule set and all of the receipt rules it contains
+   * Grants permission to delete the specified receipt rule set and all of the receipt rules it contains
    *
    * Access Level: Write
    *
@@ -217,7 +217,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Deletes an email template
+   * Grants permission to delete an email template
    *
    * Access Level: Write
    *
@@ -228,7 +228,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified email address from the list of verified addresses
+   * Grants permission to delete the specified email address from the list of verified addresses
    *
    * Access Level: Write
    *
@@ -239,7 +239,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns the metadata and receipt rules for the receipt rule set that is currently active
+   * Grants permission to return the metadata and receipt rules for the receipt rule set that is currently active
    *
    * Access Level: Read
    *
@@ -250,7 +250,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns the details of the specified configuration set
+   * Grants permission to return the details of the specified configuration set
    *
    * Access Level: Read
    *
@@ -261,7 +261,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns the details of the specified receipt rule
+   * Grants permission to return the details of the specified receipt rule
    *
    * Access Level: Read
    *
@@ -272,7 +272,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns the details of the specified receipt rule set
+   * Grants permission to return the details of the specified receipt rule set
    *
    * Access Level: Read
    *
@@ -283,7 +283,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns the email sending status of the Amazon SES account for the current region
+   * Grants permission to return the email sending status of your account
    *
    * Access Level: Read
    *
@@ -294,7 +294,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns the custom email verification template for the template name you specify
+   * Grants permission to return the custom email verification template for the template name you specify
    *
    * Access Level: Read
    *
@@ -305,7 +305,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns the current status of Easy DKIM signing for an entity
+   * Grants permission to return the current status of Easy DKIM signing for an entity
    *
    * Access Level: Read
    *
@@ -316,7 +316,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns the custom MAIL FROM attributes for a list of identities (email addresses and/or domains)
+   * Grants permission to return the custom MAIL FROM attributes for a list of identities (email addresses and/or domains)
    *
    * Access Level: Read
    *
@@ -327,7 +327,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification attributes
+   * Grants permission to return a structure describing identity notification attributes for a list of verified identities (email addresses and/or domains),
    *
    * Access Level: Read
    *
@@ -338,7 +338,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns the requested sending authorization policies for the given identity (an email address or a domain)
+   * Grants permission to return the requested sending authorization policies for the given identity (an email address or a domain)
    *
    * Access Level: Read
    *
@@ -349,7 +349,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the verification token for each identity
+   * Grants permission to return the verification status and (for domain identities) the verification token for a list of identities
    *
    * Access Level: Read
    *
@@ -360,7 +360,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns the user's current sending limits
+   * Grants permission to return the user's current sending limits
    *
    * Access Level: Read
    *
@@ -371,7 +371,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity
+   * Grants permission to returns the user's sending statistics
    *
    * Access Level: Read
    *
@@ -382,7 +382,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns the template object (which includes the Subject line, HTML part and text part) for the template you specify
+   * Grants permission to return the template object, which includes the subject line, HTML par, and text part for the template you specify
    *
    * Access Level: Read
    *
@@ -393,7 +393,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns a list of the configuration sets associated with your Amazon SES account in the current AWS Region
+   * Grants permission to list all of the configuration sets for your account
    *
    * Access Level: List
    *
@@ -404,7 +404,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Lists the existing custom verification email templates for your account in the current AWS Region
+   * Grants permission to list all of the existing custom verification email templates for your account
    *
    * Access Level: List
    *
@@ -415,7 +415,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns a list containing all of the identities (email addresses and domains) for your AWS account, regardless of verification status
+   * Grants permission to list the email identities for your account
    *
    * Access Level: List
    *
@@ -426,7 +426,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns a list of sending authorization policies that are attached to the given identity (an email address or a domain)
+   * Grants permission to list all of the email templates for your account
    *
    * Access Level: List
    *
@@ -437,9 +437,9 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Lists the IP address filters associated with your AWS account
+   * Grants permission to list the IP address filters associated with your account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListReceiptFilters.html
    */
@@ -448,9 +448,9 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Lists the receipt rule sets that exist under your AWS account
+   * Grants permission to list the receipt rule sets that exist under your account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListReceiptRuleSets.html
    */
@@ -459,7 +459,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Lists the email templates present in your Amazon SES account in the current AWS Region
+   * Grants permission to list the email templates present in your account
    *
    * Access Level: List
    *
@@ -470,9 +470,9 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns a list containing all of the email addresses that have been verified
+   * Grants permission to list all of the email addresses that have been verified in your account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_ListVerifiedEmailAddresses.html
    */
@@ -481,9 +481,20 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Adds or updates a sending authorization policy for the specified identity (an email address or a domain)
+   * Grants permission to add or update the delivery options for a configuration set
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference/API_PutConfigurationSetDeliveryOptions.html
+   */
+  public toPutConfigurationSetDeliveryOptions() {
+    return this.to('PutConfigurationSetDeliveryOptions');
+  }
+
+  /**
+   * Grants permission to add or update a sending authorization policy for the specified identity (an email address or a domain)
+   *
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_PutIdentityPolicy.html
    */
@@ -492,7 +503,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Reorders the receipt rules within a receipt rule set
+   * Grants permission to reorder the receipt rules within a receipt rule set
    *
    * Access Level: Write
    *
@@ -503,7 +514,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Generates and sends a bounce message to the sender of an email you received through Amazon SES
+   * Grants permission to generate and send a bounce message to the sender of an email you received through Amazon SES
    *
    * Access Level: Write
    *
@@ -517,7 +528,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Composes an email message to multiple destinations
+   * Grants permission to compose an email message to multiple destinations
    *
    * Access Level: Write
    *
@@ -534,7 +545,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Adds an email address to the list of identities for your Amazon SES account in the current AWS Region and attempts to verify it
+   * Grants permission to add an email address to the list of identities and attempts to verify it for your account
    *
    * Access Level: Write
    *
@@ -551,7 +562,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Composes an email message based on input data, and then immediately queues the message for sending
+   * Grants permission to send an email message
    *
    * Access Level: Write
    *
@@ -568,7 +579,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Sends an email message, with header and content specified by the client
+   * Grants permission to send an email message, with header and content specified by the client
    *
    * Access Level: Write
    *
@@ -585,7 +596,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Composes an email message using an email template and immediately queues it for sending
+   * Grants permission to compose an email message using an email template
    *
    * Access Level: Write
    *
@@ -602,7 +613,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Sets the specified receipt rule set as the active receipt rule set
+   * Grants permission to set the specified receipt rule set as the active receipt rule set
    *
    * Access Level: Write
    *
@@ -613,7 +624,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Enables or disables Easy DKIM signing of email sent from an identity
+   * Grants permission to enable or disable Easy DKIM signing of email sent from an identity
    *
    * Access Level: Write
    *
@@ -624,7 +635,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Given an identity (an email address or a domain), enables or disables whether Amazon SES forwards bounce and complaint notifications as email
+   * Grants permission to enable or disable whether Amazon SES forwards bounce and complaint notifications for an identity (an email address or a domain)
    *
    * Access Level: Write
    *
@@ -635,7 +646,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Given an identity (an email address or a domain), sets whether Amazon SES includes the original email headers in the Amazon Simple Notification Service (Amazon SNS) notifications of a specified type
+   * Grants permission to set whether Amazon SES includes the original email headers in the Amazon Simple Notification Service (Amazon SNS) notifications of a specified type for a given identity (an email address or a domain)
    *
    * Access Level: Write
    *
@@ -646,7 +657,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Enables or disables the custom MAIL FROM domain setup for a verified identity (an email address or a domain)
+   * Grants permission to enable or disable the custom MAIL FROM domain setup for a verified identity
    *
    * Access Level: Write
    *
@@ -657,7 +668,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Given an identity (an email address or a domain), sets the Amazon Simple Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or delivery notifications for emails sent with that identity as the Source
+   * Grants permission to set an Amazon Simple Notification Service (Amazon SNS) topic to use when delivering notifications for a verified identity
    *
    * Access Level: Write
    *
@@ -668,7 +679,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Sets the position of the specified receipt rule in the receipt rule set
+   * Grants permission to set the position of the specified receipt rule in the receipt rule set
    *
    * Access Level: Write
    *
@@ -679,7 +690,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Creates a preview of the MIME content of an email when provided with a template and a set of replacement data
+   * Grants permission to create a preview of the MIME content of an email when provided with a template and a set of replacement data
    *
    * Access Level: Write
    *
@@ -690,7 +701,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Enables or disables email sending across your entire Amazon SES account in the current AWS Region
+   * Grants permission to enable or disable email sending for your account
    *
    * Access Level: Write
    *
@@ -701,7 +712,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Updates the event destination of a configuration set
+   * Grants permission to update the event destination of a configuration set
    *
    * Access Level: Write
    *
@@ -712,7 +723,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Enables or disables the publishing of reputation metrics for emails sent using a specific configuration set in a given AWS Region
+   * Grants permission to enable or disable the publishing of reputation metrics for emails sent using a specific configuration set
    *
    * Access Level: Write
    *
@@ -723,7 +734,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Enables or disables email sending for messages sent using a specific configuration set in a given AWS Region
+   * Grants permission to enable or disable email sending for messages sent using a specific configuration set
    *
    * Access Level: Write
    *
@@ -734,7 +745,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Modifies an association between a configuration set and a custom domain for open and click event tracking
+   * Grants permission to modify an association between a configuration set and a custom domain for open and click event tracking
    *
    * Access Level: Write
    *
@@ -745,7 +756,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Updates an existing custom verification email template
+   * Grants permission to update an existing custom verification email template
    *
    * Access Level: Write
    *
@@ -756,7 +767,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Updates a receipt rule
+   * Grants permission to update a receipt rule
    *
    * Access Level: Write
    *
@@ -767,7 +778,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Updates an email template
+   * Grants permission to update an email template
    *
    * Access Level: Write
    *
@@ -778,7 +789,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Returns a set of DKIM tokens for a domain
+   * Grants permission to return a set of DKIM tokens for a domain
    *
    * Access Level: Read
    *
@@ -789,7 +800,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Verifies a domain
+   * Grants permission to verify a domain
    *
    * Access Level: Read
    *
@@ -800,7 +811,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Verifies an email address. This action causes a confirmation email message to be sent to the specified address. This action is throttled at one request per second
+   * Grants permission to verify an email address
    *
    * Access Level: Read
    *
@@ -811,7 +822,7 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * Verifies an email address. This action causes a confirmation email message to be sent to the specified address. This action is throttled at one request per second
+   * Grants permission to verify an email identity
    *
    * Access Level: Read
    *
@@ -837,13 +848,12 @@ export class Ses extends PolicyStatement {
       "DeleteConfigurationSetTrackingOptions",
       "DeleteCustomVerificationEmailTemplate",
       "DeleteIdentity",
-      "DeleteIdentityPolicy",
       "DeleteReceiptFilter",
       "DeleteReceiptRule",
       "DeleteReceiptRuleSet",
       "DeleteTemplate",
       "DeleteVerifiedEmailAddress",
-      "PutIdentityPolicy",
+      "PutConfigurationSetDeliveryOptions",
       "ReorderReceiptRuleSet",
       "SendBounce",
       "SendBulkTemplatedEmail",
@@ -868,6 +878,10 @@ export class Ses extends PolicyStatement {
       "UpdateReceiptRule",
       "UpdateTemplate"
     ],
+    "Permissions management": [
+      "DeleteIdentityPolicy",
+      "PutIdentityPolicy"
+    ],
     "Read": [
       "DescribeActiveReceiptRuleSet",
       "DescribeConfigurationSet",
@@ -883,6 +897,9 @@ export class Ses extends PolicyStatement {
       "GetSendQuota",
       "GetSendStatistics",
       "GetTemplate",
+      "ListReceiptFilters",
+      "ListReceiptRuleSets",
+      "ListVerifiedEmailAddresses",
       "VerifyDomainDkim",
       "VerifyDomainIdentity",
       "VerifyEmailAddress",
@@ -893,10 +910,7 @@ export class Ses extends PolicyStatement {
       "ListCustomVerificationEmailTemplates",
       "ListIdentities",
       "ListIdentityPolicies",
-      "ListReceiptFilters",
-      "ListReceiptRuleSets",
-      "ListTemplates",
-      "ListVerifiedEmailAddresses"
+      "ListTemplates"
     ]
   };
 
@@ -924,35 +938,14 @@ export class Ses extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_CustomVerificationEmailTemplate.html
    *
-   * @param customVerificationEmailTemplateName - Identifier for the customVerificationEmailTemplateName.
+   * @param templateName - Identifier for the templateName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onCustomVerificationEmailTemplate(customVerificationEmailTemplateName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:custom-verification-email-template/${CustomVerificationEmailTemplateName}';
-    arn = arn.replace('${CustomVerificationEmailTemplateName}', customVerificationEmailTemplateName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
-   * Adds a resource of type event-destination to the statement
-   *
-   * https://docs.aws.amazon.com/ses/latest/APIReference/API_EventDestination.html
-   *
-   * @param configurationSetName - Identifier for the configurationSetName.
-   * @param eventDestinationName - Identifier for the eventDestinationName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   */
-  public onEventDestination(configurationSetName: string, eventDestinationName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}:event-destination/${EventDestinationName}';
-    arn = arn.replace('${ConfigurationSetName}', configurationSetName);
-    arn = arn.replace('${EventDestinationName}', eventDestinationName);
+  public onCustomVerificationEmailTemplate(templateName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ses:${Region}:${Account}:custom-verification-email-template/${TemplateName}';
+    arn = arn.replace('${TemplateName}', templateName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -962,6 +955,8 @@ export class Ses extends PolicyStatement {
   /**
    * Adds a resource of type identity to the statement
    *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_IdentityInfo.html
+   *
    * @param identityName - Identifier for the identityName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -970,65 +965,6 @@ export class Ses extends PolicyStatement {
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:identity/${IdentityName}';
     arn = arn.replace('${IdentityName}', identityName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
-   * Adds a resource of type receipt-filter to the statement
-   *
-   * https://docs.aws.amazon.com/ses/latest/APIReference/API_ReceiptFilter.html
-   *
-   * @param receiptFilterName - Identifier for the receiptFilterName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   */
-  public onReceiptFilter(receiptFilterName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:receipt-filter/${ReceiptFilterName}';
-    arn = arn.replace('${ReceiptFilterName}', receiptFilterName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
-   * Adds a resource of type receipt-rule to the statement
-   *
-   * https://docs.aws.amazon.com/ses/latest/APIReference/API_ReceiptRule.html
-   *
-   * @param receiptRuleSetName - Identifier for the receiptRuleSetName.
-   * @param receiptRuleName - Identifier for the receiptRuleName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   */
-  public onReceiptRule(receiptRuleSetName: string, receiptRuleName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:receipt-rule-set/${ReceiptRuleSetName}:receipt-rule/${ReceiptRuleName}';
-    arn = arn.replace('${ReceiptRuleSetName}', receiptRuleSetName);
-    arn = arn.replace('${ReceiptRuleName}', receiptRuleName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
-   * Adds a resource of type receipt-rule-set to the statement
-   *
-   * https://docs.aws.amazon.com/ses/latest/APIReference/API_ReceiptRuleSetMetadata.html
-   *
-   * @param receiptRuleSetName - Identifier for the receiptRuleSetName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   */
-  public onReceiptRuleSet(receiptRuleSetName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:receipt-rule-set/${ReceiptRuleSetName}';
-    arn = arn.replace('${ReceiptRuleSetName}', receiptRuleSetName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -1055,9 +991,9 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * The "Return-Path" address, which specifies where bounces and complaints are sent by email feedback forwarding.
+   * Filters actions based on the "Return-Path" address, which specifies where bounces and complaints are sent by email feedback forwarding
    *
-   * https://docs.aws.amazon.com/ses/latest/DeveloperGuide/email-format.html#email-header
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
    * Applies to actions:
    * - .toSendBulkTemplatedEmail()
@@ -1074,9 +1010,9 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * The "From" address of a message.
+   * Filters actions based on the "From" address of a message
    *
-   * https://docs.aws.amazon.com/ses/latest/DeveloperGuide/email-format.html#email-header
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
    * Applies to actions:
    * - .toSendBounce()
@@ -1094,9 +1030,9 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * The "From" address that is used as the display name of a message.
+   * Filters actions based on the "From" address that is used as the display name of a message
    *
-   * https://docs.aws.amazon.com/ses/latest/DeveloperGuide/email-format.html#email-header
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
    * Applies to actions:
    * - .toSendBulkTemplatedEmail()
@@ -1113,9 +1049,9 @@ export class Ses extends PolicyStatement {
   }
 
   /**
-   * The recipient addresses of a message, which include the "To", "CC", and "BCC" addresses.
+   * Filters actions based on the recipient addresses of a message, which include the "To", "CC", and "BCC" addresses
    *
-   * https://docs.aws.amazon.com/ses/latest/DeveloperGuide/email-format.html#email-header
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
    *
    * Applies to actions:
    * - .toSendBulkTemplatedEmail()

@@ -1,7 +1,9 @@
 iotwireless:Destination
 iotwireless:DeviceProfile
 iotwireless:ServiceProfile
+iotwireless:SidewalkAccount
 iotwireless:WirelessDevice
 iotwireless:WirelessGateway
+iotwireless:WirelessGatewayTaskDefinition
 iotwireless:cert
 iotwireless:thing

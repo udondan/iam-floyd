@@ -19,7 +19,7 @@ export class Dbqms extends PolicyStatement {
   }
 
   /**
-   * Creates a new favorite query
+   * Grants permission to create a new favorite query
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Dbqms extends PolicyStatement {
   }
 
   /**
-   * Add a query to the history
+   * Grants permission to add a query to the history
    *
    * Access Level: Write
    */
@@ -39,7 +39,18 @@ export class Dbqms extends PolicyStatement {
   }
 
   /**
-   * Delete saved queries
+   * Grants permission to create a new query tab
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#CreateTab
+   */
+  public toCreateTab() {
+    return this.to('CreateTab');
+  }
+
+  /**
+   * Grants permission to delete saved queries
    *
    * Access Level: Write
    *
@@ -50,7 +61,7 @@ export class Dbqms extends PolicyStatement {
   }
 
   /**
-   * Delete a historical query
+   * Grants permission to delete a historical query
    *
    * Access Level: Write
    *
@@ -61,7 +72,18 @@ export class Dbqms extends PolicyStatement {
   }
 
   /**
-   * List saved queries and associated metadata
+   * Grants permission to delete query tab
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#DeleteTab
+   */
+  public toDeleteTab() {
+    return this.to('DeleteTab');
+  }
+
+  /**
+   * Grants permission to list saved queries and associated metadata
    *
    * Access Level: List
    *
@@ -72,7 +94,7 @@ export class Dbqms extends PolicyStatement {
   }
 
   /**
-   * List history of queries that were run
+   * Grants permission to list history of queries that were run
    *
    * Access Level: List
    *
@@ -83,7 +105,18 @@ export class Dbqms extends PolicyStatement {
   }
 
   /**
-   * Retrieve favorite or history query string by id
+   * Grants permission to list query tabs and associated metadata
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#DescribeTabs
+   */
+  public toDescribeTabs() {
+    return this.to('DescribeTabs');
+  }
+
+  /**
+   * Grants permission to retrieve favorite or history query string by id
    *
    * Access Level: Read
    *
@@ -94,7 +127,7 @@ export class Dbqms extends PolicyStatement {
   }
 
   /**
-   * Update saved query and description
+   * Grants permission to update saved query and description
    *
    * Access Level: Write
    *
@@ -105,7 +138,7 @@ export class Dbqms extends PolicyStatement {
   }
 
   /**
-   * Update the query history
+   * Grants permission to update the query history
    *
    * Access Level: Write
    *
@@ -115,18 +148,33 @@ export class Dbqms extends PolicyStatement {
     return this.to('UpdateQueryHistory');
   }
 
+  /**
+   * Grants permission to update query tab
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#UpdateTab
+   */
+  public toUpdateTab() {
+    return this.to('UpdateTab');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CreateFavoriteQuery",
       "CreateQueryHistory",
+      "CreateTab",
       "DeleteFavoriteQueries",
       "DeleteQueryHistory",
+      "DeleteTab",
       "UpdateFavoriteQuery",
-      "UpdateQueryHistory"
+      "UpdateQueryHistory",
+      "UpdateTab"
     ],
     "List": [
       "DescribeFavoriteQueries",
-      "DescribeQueryHistory"
+      "DescribeQueryHistory",
+      "DescribeTabs"
     ],
     "Read": [
       "GetQueryString"

@@ -135,7 +135,7 @@ export class Lookoutvision extends PolicyStatement {
   /**
    * Grants permission to invoke detection of anomalies
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_DetectAnomalies.html
    */
@@ -279,6 +279,7 @@ export class Lookoutvision extends PolicyStatement {
       "DeleteDataset",
       "DeleteModel",
       "DeleteProject",
+      "DetectAnomalies",
       "StartModel",
       "StartTrialDetection",
       "StopModel",
@@ -289,7 +290,6 @@ export class Lookoutvision extends PolicyStatement {
       "DescribeModel",
       "DescribeProject",
       "DescribeTrialDetection",
-      "DetectAnomalies",
       "ListDatasetEntries",
       "ListTagsForResource"
     ],

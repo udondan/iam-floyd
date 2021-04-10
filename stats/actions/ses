@@ -26,7 +26,7 @@ ses:DeleteEmailIdentity;Write
 ses:DeleteEmailIdentityPolicy;Permissions management
 ses:DeleteEmailTemplate;Write
 ses:DeleteIdentity;Write
-ses:DeleteIdentityPolicy;Write
+ses:DeleteIdentityPolicy;Permissions management
 ses:DeleteReceiptFilter;Write
 ses:DeleteReceiptRule;Write
 ses:DeleteReceiptRuleSet;Write
@@ -76,12 +76,12 @@ ses:ListEmailTemplates;List
 ses:ListIdentities;List
 ses:ListIdentityPolicies;List
 ses:ListImportJobs;List
-ses:ListReceiptFilters;List
-ses:ListReceiptRuleSets;List
+ses:ListReceiptFilters;Read
+ses:ListReceiptRuleSets;Read
 ses:ListSuppressedDestinations;Read
 ses:ListTagsForResource;Read
 ses:ListTemplates;List
-ses:ListVerifiedEmailAddresses;List
+ses:ListVerifiedEmailAddresses;Read
 ses:PutAccountDedicatedIpWarmupAttributes;Write
 ses:PutAccountDetails;Write
 ses:PutAccountSendingAttributes;Write
@@ -99,7 +99,7 @@ ses:PutEmailIdentityDkimAttributes;Write
 ses:PutEmailIdentityDkimSigningAttributes;Write
 ses:PutEmailIdentityFeedbackAttributes;Write
 ses:PutEmailIdentityMailFromAttributes;Write
-ses:PutIdentityPolicy;Write
+ses:PutIdentityPolicy;Permissions management
 ses:PutSuppressedDestination;Write
 ses:ReorderReceiptRuleSet;Write
 ses:SendBounce;Write
