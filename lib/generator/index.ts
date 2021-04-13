@@ -455,7 +455,10 @@ export function createModule(module: Module): Promise<void> {
       continue;
     }
 
-    hasConditions = true;
+    // boolean conditions don't take operators
+    if (condition.type != 'boolean') {
+      hasConditions = true;
+    }
 
     var desc = '';
 

@@ -1,5 +1,5 @@
 import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { PolicyStatement } from "../shared";
 
 /**
  * Statement provider for service [fsx](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfsx.html).
