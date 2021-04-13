@@ -265,6 +265,16 @@
 			"Action": "fsx:DeleteBackup",
 			"Effect": "Allow",
 			"Resource": "arn:aws:fsx:*:*:backup/*"
-		}
+		},
+		{
+            "Effect": "Allow",
+            "Action": [
+                "fsx:ListTagsForResource",
+                "fsx:ManageBackupPrincipalAssociations",
+                "fsx:CopyBackup",
+                "fsx:TagResource"
+            ],
+            "Resource": "arn:aws:fsx:*:*:backup/*"
+        }
 	]
 }

@@ -119,7 +119,7 @@
             "Effect": "Allow",
             "Action": [
                 "kms:ListGrants",
-                "kms:ReEncryptFrom", 
+                "kms:ReEncryptFrom",
                 "kms:GenerateDataKeyWithoutPlaintext"
             ],
             "Resource": "*",
@@ -127,7 +127,8 @@
                 "StringLike": {
                     "kms:ViaService": [
                         "ec2.*.amazonaws.com",
-                        "rds.*.amazonaws.com"
+                        "rds.*.amazonaws.com",
+                        "fsx.*.amazonaws.com"
                     ]
                 }
             }
@@ -143,10 +144,21 @@
                 "StringLike": {
                     "kms:ViaService": [
                         "ec2.*.amazonaws.com",
-                        "rds.*.amazonaws.com"
+                        "rds.*.amazonaws.com",
+                        "fsx.*.amazonaws.com"
                     ]
                 }
             }
+        },
+        {
+            "Action": [
+                "fsx:CopyBackup",
+                "fsx:TagResource",
+                "fsx:DescribeBackups",
+                "fsx:DeleteBackup"
+            ],
+            "Resource": "arn:aws:fsx:*:*:backup/*",
+            "Effect": "Allow"
         }
     ]
 }

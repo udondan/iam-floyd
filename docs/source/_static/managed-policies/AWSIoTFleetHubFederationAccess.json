@@ -17,8 +17,6 @@
 				"iot:DeleteFleetMetric",
 				"iot:DescribeFleetMetric",
 				"iot:UpdateFleetMetric",
-				"iotfleethub:ListDashboards",
-				"iotfleethub:DescribeDashboard",
 				"iotfleethub:DescribeApplication",
 				"cloudwatch:DescribeAlarms",
 				"cloudwatch:GetMetricData",
