@@ -1,5 +1,5 @@
 import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [fsx](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfsx.html).
@@ -49,6 +49,24 @@ export class Fsx extends PolicyStatement {
    */
   public toCancelDataRepositoryTask() {
     return this.to('CancelDataRepositoryTask');
+  }
+
+  /**
+   * Grants permission to copy a backup
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - fsx:TagResource
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopyBackup.html
+   */
+  public toCopyBackup() {
+    return this.to('CopyBackup');
   }
 
   /**
@@ -136,7 +154,7 @@ export class Fsx extends PolicyStatement {
   /**
    * Grants permission to describe the File Gateway instances associated with an Amazon FSx for Windows File Server file system
    *
-   * Access Level: Write
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
    */
@@ -222,6 +240,17 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to manage backup principal associations through AWS Backup
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopyBackup.html
+   */
+  public toManageBackupPrincipalAssociations() {
+    return this.to('ManageBackupPrincipalAssociations');
+  }
+
+  /**
    * Grants permission to tag an Amazon FSx resource
    *
    * Access Level: Tagging
@@ -266,9 +295,9 @@ export class Fsx extends PolicyStatement {
       "AssociateFileGateway",
       "AssociateFileSystemAliases",
       "CancelDataRepositoryTask",
+      "CopyBackup",
       "DeleteBackup",
       "DeleteFileSystem",
-      "DescribeAssociatedFileGateways",
       "DisassociateFileGateway",
       "DisassociateFileSystemAliases",
       "UpdateFileSystem"
@@ -282,11 +311,15 @@ export class Fsx extends PolicyStatement {
       "UntagResource"
     ],
     "Read": [
+      "DescribeAssociatedFileGateways",
       "DescribeBackups",
       "DescribeDataRepositoryTasks",
       "DescribeFileSystemAliases",
       "DescribeFileSystems",
       "ListTagsForResource"
+    ],
+    "Permissions management": [
+      "ManageBackupPrincipalAssociations"
     ]
   };
 
@@ -354,5 +387,27 @@ export class Fsx extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters access by whether the backup is a destination backup for a CopyBackup operation
+   *
+   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-manage-access-intro.htmlAPI_CopyBackup.html
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifIsBackupCopyDestination(value?: boolean) {
+    return this.if(`IsBackupCopyDestination`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by whether the backup is a source backup for a CopyBackup operation
+   *
+   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-manage-access-intro.htmlAPI_CopyBackup.html
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifIsBackupCopySource(value?: boolean) {
+    return this.if(`IsBackupCopySource`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 }

@@ -1,3 +1,5 @@
+fsx:IsBackupCopyDestination
+fsx:IsBackupCopySource
 fsx:RequestTag/${TagKey}
 fsx:ResourceTag/${TagKey}
 fsx:TagKeys

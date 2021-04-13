@@ -19,7 +19,18 @@ export class Groundtruthlabeling extends PolicyStatement {
   }
 
   /**
-   * Get status of GroundTruthLabeling Jobs.
+   * Grants permission to associate a patch file with the manifest file to update the manifest file
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
+   */
+  public toAssociatePatchToManifestJob() {
+    return this.to('AssociatePatchToManifestJob');
+  }
+
+  /**
+   * Grants permission to get status of GroundTruthLabeling Jobs
    *
    * Access Level: Read
    *
@@ -30,7 +41,7 @@ export class Groundtruthlabeling extends PolicyStatement {
   }
 
   /**
-   * Paginated list API to list dataset objects in a manifest file.
+   * Grants permission to list dataset objects in a manifest file
    *
    * Access Level: Read
    *
@@ -41,7 +52,7 @@ export class Groundtruthlabeling extends PolicyStatement {
   }
 
   /**
-   * Filter records from a manifest file using S3 select. Get sample entries based on random sampling.
+   * Grants permission to filter records from a manifest file using S3 select. Get sample entries based on random sampling
    *
    * Access Level: Write
    *
@@ -52,7 +63,7 @@ export class Groundtruthlabeling extends PolicyStatement {
   }
 
   /**
-   * List a S3 prefix and create manifest files from objects in that location.
+   * Grants permission to list a S3 prefix and create manifest files from objects in that location
    *
    * Access Level: Write
    *
@@ -63,13 +74,14 @@ export class Groundtruthlabeling extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "AssociatePatchToManifestJob",
+      "RunFilterOrSampleDatasetJob",
+      "RunGenerateManifestByCrawlingJob"
+    ],
     "Read": [
       "DescribeConsoleJob",
       "ListDatasetObjects"
-    ],
-    "Write": [
-      "RunFilterOrSampleDatasetJob",
-      "RunGenerateManifestByCrawlingJob"
     ]
   };
 }
