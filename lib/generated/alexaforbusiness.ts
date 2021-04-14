@@ -19,7 +19,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Associates a skill with the organization under the customer's AWS account. If a skill is private, the user implicitly accepts access to this skill during enablement.
+   * Grants permission to associate a skill with the organization under the customer's AWS account
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Associates a contact with a given address book.
+   * Grants permission to associate a contact with a given address book
    *
    * Access Level: Write
    *
@@ -41,7 +41,18 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Associates device with given room.
+   * Grants permission to associate a device with the specified network profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_AssociateDeviceWithNetworkProfile.html
+   */
+  public toAssociateDeviceWithNetworkProfile() {
+    return this.to('AssociateDeviceWithNetworkProfile');
+  }
+
+  /**
+   * Grants permission to associate device with given room
    *
    * Access Level: Write
    *
@@ -52,7 +63,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Associates the skill group with given room. SkillGroup ARN and Room ARN must be specified.
+   * Grants permission to associate the skill group with given room
    *
    * Access Level: Write
    *
@@ -63,7 +74,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Associates a skill with a skill group.
+   * Grants permission to associate a skill with a skill group
    *
    * Access Level: Write
    *
@@ -74,7 +85,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Makes a private skill available for enrolled users to enable on their devices.
+   * Grants permission to make a private skill available for enrolled users to enable on their devices
    *
    * Access Level: Write
    *
@@ -85,7 +96,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Completes the operation of registering an Alexa device.
+   * Grants permission to complete the operation of registering an Alexa device
    *
    * Access Level: Write
    *
@@ -96,7 +107,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Creates an address book with the specified details.
+   * Grants permission to create an address book with the specified details
    *
    * Access Level: Write
    *
@@ -107,7 +118,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or weekly interval.
+   * Grants permission to create a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or weekly interval
    *
    * Access Level: Write
    *
@@ -118,7 +129,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Adds a new conference provider under the user's AWS account.
+   * Grants permission to add a new conference provider under the user's AWS account
    *
    * Access Level: Write
    *
@@ -129,7 +140,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Creates a contact with the specified details.
+   * Grants permission to create a contact with the specified details
    *
    * Access Level: Write
    *
@@ -140,7 +151,29 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Creates a new profile.
+   * Grants permission to create a gateway group with the specified details
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateGatewayGroup.html
+   */
+  public toCreateGatewayGroup() {
+    return this.to('CreateGatewayGroup');
+  }
+
+  /**
+   * Grants permission to create a network profile with the specified details
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateNetworkProfile.html
+   */
+  public toCreateNetworkProfile() {
+    return this.to('CreateNetworkProfile');
+  }
+
+  /**
+   * Grants permission to create a new profile
    *
    * Access Level: Write
    *
@@ -151,7 +184,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Create room with the specified details.
+   * Grants permission to create room with the specified details
    *
    * Access Level: Write
    *
@@ -162,7 +195,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Creates a skill group with given name and description.
+   * Grants permission to create a skill group with given name and description
    *
    * Access Level: Write
    *
@@ -173,7 +206,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Creates a user.
+   * Grants permission to create a user
    *
    * Access Level: Write
    *
@@ -184,7 +217,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Deletes an address book by the address book ARN.
+   * Grants permission to delete an address book by the address book ARN
    *
    * Access Level: Write
    *
@@ -195,7 +228,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Deletes the recurring report delivery schedule with the specified schedule ARN.
+   * Grants permission to delete the recurring report delivery schedule with the specified schedule ARN
    *
    * Access Level: Write
    *
@@ -206,7 +239,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Deletes a conference provider.
+   * Grants permission to delete a conference provider
    *
    * Access Level: Write
    *
@@ -217,7 +250,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Deletes a contact by the contact ARN.
+   * Grants permission to delete a contact by the contact ARN
    *
    * Access Level: Write
    *
@@ -228,7 +261,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Removes a device from Alexa For Business.
+   * Grants permission to remove a device from Alexa For Business
    *
    * Access Level: Write
    *
@@ -239,7 +272,40 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Delete profile by profile ARN.
+   * Grants permission to delete the device's entire previous history of voice input data and associated response data
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteDeviceUsageData.html
+   */
+  public toDeleteDeviceUsageData() {
+    return this.to('DeleteDeviceUsageData');
+  }
+
+  /**
+   * Grants permission to delete a gateway group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteGatewayGroup.html
+   */
+  public toDeleteGatewayGroup() {
+    return this.to('DeleteGatewayGroup');
+  }
+
+  /**
+   * Grants permission to delete a network profile by the network profile ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteNetworkProfile.html
+   */
+  public toDeleteNetworkProfile() {
+    return this.to('DeleteNetworkProfile');
+  }
+
+  /**
+   * Grants permission to delete profile by profile ARN
    *
    * Access Level: Write
    *
@@ -250,7 +316,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Delete room.
+   * Grants permission to delete room
    *
    * Access Level: Write
    *
@@ -261,7 +327,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Delete a parameter from a skill and room.
+   * Grants permission to delete a parameter from a skill and room
    *
    * Access Level: Write
    *
@@ -272,7 +338,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Unlinks a third-party account from a skill.
+   * Grants permission to unlink a third-party account from a skill
    *
    * Access Level: Write
    *
@@ -283,7 +349,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Deletes skill group with skill group ARN. Skillgroup ARN must be specified.
+   * Grants permission to delete skill group with skill group ARN
    *
    * Access Level: Write
    *
@@ -294,7 +360,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Delete a user.
+   * Grants permission to delete a user
    *
    * Access Level: Write
    *
@@ -305,7 +371,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Disassociates a contact from a given address book.
+   * Grants permission to disassociate a contact from a given address book
    *
    * Access Level: Write
    *
@@ -316,7 +382,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Disassociates device from its current room.
+   * Grants permission to disassociate device from its current room
    *
    * Access Level: Write
    *
@@ -327,7 +393,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Disassociates a skill from a skill group.
+   * Grants permission to disassociate a skill from a skill group
    *
    * Access Level: Write
    *
@@ -338,7 +404,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Makes a private skill unavailable for enrolled users and prevents them from enabling it on their devices.
+   * Grants permission to make a private skill unavailable for enrolled users and prevent them from enabling it on their devices
    *
    * Access Level: Write
    *
@@ -349,7 +415,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Disassociates the skill group from given room. SkillGroup ARN and Room ARN must be specified.
+   * Grants permission to disassociate the skill group from given room
    *
    * Access Level: Write
    *
@@ -360,7 +426,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Forgets smart home appliances associated to a room.
+   * Grants permission to forget smart home appliances associated to a room
    *
    * Access Level: Write
    *
@@ -371,7 +437,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Gets the address book details by the address book ARN.
+   * Grants permission to get the address book details by the address book ARN
    *
    * Access Level: Read
    *
@@ -382,7 +448,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Retrieves the existing conference preferences.
+   * Grants permission to retrieve the existing conference preferences
    *
    * Access Level: Read
    *
@@ -393,7 +459,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Gets details about a specific conference provider.
+   * Grants permission to get details about a specific conference provider
    *
    * Access Level: Read
    *
@@ -404,7 +470,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Gets the contact details by the contact ARN.
+   * Grants permission to get the contact details by the contact ARN
    *
    * Access Level: Read
    *
@@ -415,7 +481,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Get device details.
+   * Grants permission to get device details
    *
    * Access Level: Read
    *
@@ -426,7 +492,40 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Gets the network profile details by the network profile ARN.
+   * Grants permission to retrieve the details of a gateway
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetGateway.html
+   */
+  public toGetGateway() {
+    return this.to('GetGateway');
+  }
+
+  /**
+   * Grants permission to retrieve the details of a gateway group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetGatewayGroup.html
+   */
+  public toGetGatewayGroup() {
+    return this.to('GetGatewayGroup');
+  }
+
+  /**
+   * Grants permission to retrieve the configured values for the user enrollment invitation email template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetInvitationConfiguration.html
+   */
+  public toGetInvitationConfiguration() {
+    return this.to('GetInvitationConfiguration');
+  }
+
+  /**
+   * Grants permission to get the network profile details by the network profile ARN
    *
    * Access Level: Read
    *
@@ -437,7 +536,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Gets profile when provided with Profile ARN.
+   * Grants permission to get profile when provided with Profile ARN
    *
    * Access Level: Read
    *
@@ -448,7 +547,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Get room details.
+   * Grants permission to get room details
    *
    * Access Level: Read
    *
@@ -459,7 +558,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Get an existing parameter that has been set for a skill and room.
+   * Grants permission to get an existing parameter that has been set for a skill and room
    *
    * Access Level: Read
    *
@@ -470,7 +569,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Gets skill group details with skill group ARN. Skillgroup ARN must be specified.
+   * Grants permission to get skill group details with skill group ARN
    *
    * Access Level: Read
    *
@@ -481,7 +580,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Lists the details of the schedules that a user configured.
+   * Grants permission to list the details of the schedules that a user configured
    *
    * Access Level: List
    *
@@ -492,7 +591,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Lists conference providers under a specific AWS account.
+   * Grants permission to list conference providers under a specific AWS account
    *
    * Access Level: List
    *
@@ -503,7 +602,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Lists the device event history, including device connection status, for up to 30 days.
+   * Grants permission to list the device event history, including device connection status, for up to 30 days
    *
    * Access Level: List
    *
@@ -514,7 +613,29 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Lists skills.
+   * Grants permission to list gateway group summaries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListGatewayGroups.html
+   */
+  public toListGatewayGroups() {
+    return this.to('ListGatewayGroups');
+  }
+
+  /**
+   * Grants permission to list gateway summaries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListGateways.html
+   */
+  public toListGateways() {
+    return this.to('ListGateways');
+  }
+
+  /**
+   * Grants permission to list skills
    *
    * Access Level: List
    *
@@ -525,7 +646,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Lists all categories in the Alexa skill store.
+   * Grants permission to list all categories in the Alexa skill store
    *
    * Access Level: List
    *
@@ -536,7 +657,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Lists all skills in the Alexa skill store by category.
+   * Grants permission to list all skills in the Alexa skill store by category
    *
    * Access Level: List
    *
@@ -547,7 +668,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Lists all of the smart home appliances associated with a room.
+   * Grants permission to list all of the smart home appliances associated with a room
    *
    * Access Level: List
    *
@@ -558,7 +679,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Lists all tags on a resource.
+   * Grants permission to list all tags on a resource
    *
    * Access Level: Read
    *
@@ -569,7 +690,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Sets the conference preferences on a specific conference provider at the account level.
+   * Grants permission to set the conference preferences on a specific conference provider at the account level
    *
    * Access Level: Write
    *
@@ -580,7 +701,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Publishes Alexa device setup events.
+   * Grants permission to publish Alexa device setup events
    *
    * Access Level: Write
    *
@@ -591,7 +712,18 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Put a room specific parameter for a skill.
+   * Grants permission to configure the email template for the user enrollment invitation with the specified attributes
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_PutInvitationConfiguration.html
+   */
+  public toPutInvitationConfiguration() {
+    return this.to('PutInvitationConfiguration');
+  }
+
+  /**
+   * Grants permission to put a room specific parameter for a skill
    *
    * Access Level: Write
    *
@@ -602,7 +734,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Links a user's account to a third-party skill provider. If this API operation is called by an assumed IAM role, the skill being linked must be a private skill. Also, the skill must be owned by the AWS account that assumed the IAM role.
+   * Grants permission to link a user's account to a third-party skill provider
    *
    * Access Level: Write
    *
@@ -613,7 +745,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service (AVS).
+   * Grants permission to register an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service (AVS)
    *
    * Access Level: Write
    *
@@ -624,7 +756,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Registers an Alexa device.
+   * Grants permission to register an Alexa device
    *
    * Access Level: Write
    *
@@ -635,7 +767,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Disassociates a skill from the organization under a user's AWS account. If the skill is a private skill, it moves to an AcceptStatus of PENDING.
+   * Grants permission to disassociate a skill from the organization under a user's AWS account
    *
    * Access Level: Write
    *
@@ -646,7 +778,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Returns resolved room information.
+   * Grants permission to resolve room information
    *
    * Access Level: Read
    *
@@ -657,7 +789,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Revoke an invitation.
+   * Grants permission to revoke an invitation
    *
    * Access Level: Write
    *
@@ -668,7 +800,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Searches address books and lists the ones that meet a set of filter and sort criteria.
+   * Grants permission to search address books and list the ones that meet a set of filter and sort criteria
    *
    * Access Level: List
    *
@@ -679,7 +811,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Searches contacts and lists the ones that meet a set of filter and sort criteria.
+   * Grants permission to search contacts and list the ones that meet a set of filter and sort criteria
    *
    * Access Level: List
    *
@@ -690,7 +822,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Search for devices.
+   * Grants permission to search for devices
    *
    * Access Level: List
    *
@@ -701,7 +833,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Searches network profiles and lists the ones that meet a set of filter and sort criteria.
+   * Grants permission to search network profiles and list the ones that meet a set of filter and sort criteria
    *
    * Access Level: List
    *
@@ -712,7 +844,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Search for profiles.
+   * Grants permission to search for profiles
    *
    * Access Level: List
    *
@@ -723,7 +855,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Search for rooms.
+   * Grants permission to search for rooms
    *
    * Access Level: List
    *
@@ -734,7 +866,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Search for skill groups.
+   * Grants permission to search for skill groups
    *
    * Access Level: List
    *
@@ -745,7 +877,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Search for users.
+   * Grants permission to search for users
    *
    * Access Level: List
    *
@@ -756,7 +888,18 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Send an invitation to a user.
+   * Grants permission to trigger an asynchronous flow to send text, SSML, or audio announcements to rooms that are identified by a search or filter
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_SendAnnouncement.html
+   */
+  public toSendAnnouncement() {
+    return this.to('SendAnnouncement');
+  }
+
+  /**
+   * Grants permission to send an invitation to a user
    *
    * Access Level: Write
    *
@@ -767,7 +910,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Restore the device and its account to its known, default settings by clearing all information and settings set by its previous users.
+   * Grants permission to restore the device and its account to its known, default settings by clearing all information and settings set by its previous users
    *
    * Access Level: Write
    *
@@ -778,7 +921,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Initiates the discovery of any smart home appliances associated with the room.
+   * Grants permission to initiate the discovery of any smart home appliances associated with the room
    *
    * Access Level: Read
    *
@@ -789,7 +932,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Adds metadata tags to a resource.
+   * Grants permission to add metadata tags to a resource
    *
    * Access Level: Tagging
    *
@@ -800,7 +943,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Removes metadata tags from a resource.
+   * Grants permission to remove metadata tags from a resource
    *
    * Access Level: Tagging
    *
@@ -811,7 +954,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Updates address book details by the address book ARN.
+   * Grants permission to update address book details by the address book ARN
    *
    * Access Level: Write
    *
@@ -822,7 +965,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Updates the configuration of the report delivery schedule with the specified schedule ARN.
+   * Grants permission to update the configuration of the report delivery schedule with the specified schedule ARN
    *
    * Access Level: Write
    *
@@ -833,7 +976,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Updates an existing conference provider's settings.
+   * Grants permission to update an existing conference provider's settings
    *
    * Access Level: Write
    *
@@ -844,7 +987,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Updates the contact details by the contact ARN.
+   * Grants permission to update the contact details by the contact ARN
    *
    * Access Level: Write
    *
@@ -855,7 +998,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Updates device name.
+   * Grants permission to update device name
    *
    * Access Level: Write
    *
@@ -866,7 +1009,40 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Updates an existing profile.
+   * Grants permission to update the details of a gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateGateway.html
+   */
+  public toUpdateGateway() {
+    return this.to('UpdateGateway');
+  }
+
+  /**
+   * Grants permission to update the details of a gateway group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateGatewayGroup.html
+   */
+  public toUpdateGatewayGroup() {
+    return this.to('UpdateGatewayGroup');
+  }
+
+  /**
+   * Grants permission to update a network profile by the network profile ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateNetworkProfile.html
+   */
+  public toUpdateNetworkProfile() {
+    return this.to('UpdateNetworkProfile');
+  }
+
+  /**
+   * Grants permission to update an existing profile
    *
    * Access Level: Write
    *
@@ -877,7 +1053,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Update room details.
+   * Grants permission to update room details
    *
    * Access Level: Write
    *
@@ -888,7 +1064,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Updates skill group details with skill group ARN. Skillgroup ARN must be specified.
+   * Grants permission to update skill group details with skill group ARN
    *
    * Access Level: Write
    *
@@ -902,6 +1078,7 @@ export class A4b extends PolicyStatement {
     "Write": [
       "ApproveSkill",
       "AssociateContactWithAddressBook",
+      "AssociateDeviceWithNetworkProfile",
       "AssociateDeviceWithRoom",
       "AssociateSkillGroupWithRoom",
       "AssociateSkillWithSkillGroup",
@@ -911,6 +1088,8 @@ export class A4b extends PolicyStatement {
       "CreateBusinessReportSchedule",
       "CreateConferenceProvider",
       "CreateContact",
+      "CreateGatewayGroup",
+      "CreateNetworkProfile",
       "CreateProfile",
       "CreateRoom",
       "CreateSkillGroup",
@@ -920,6 +1099,9 @@ export class A4b extends PolicyStatement {
       "DeleteConferenceProvider",
       "DeleteContact",
       "DeleteDevice",
+      "DeleteDeviceUsageData",
+      "DeleteGatewayGroup",
+      "DeleteNetworkProfile",
       "DeleteProfile",
       "DeleteRoom",
       "DeleteRoomSkillParameter",
@@ -934,12 +1116,14 @@ export class A4b extends PolicyStatement {
       "ForgetSmartHomeAppliances",
       "PutConferencePreference",
       "PutDeviceSetupEvents",
+      "PutInvitationConfiguration",
       "PutRoomSkillParameter",
       "PutSkillAuthorization",
       "RegisterAVSDevice",
       "RegisterDevice",
       "RejectSkill",
       "RevokeInvitation",
+      "SendAnnouncement",
       "SendInvitation",
       "StartDeviceSync",
       "UpdateAddressBook",
@@ -947,6 +1131,9 @@ export class A4b extends PolicyStatement {
       "UpdateConferenceProvider",
       "UpdateContact",
       "UpdateDevice",
+      "UpdateGateway",
+      "UpdateGatewayGroup",
+      "UpdateNetworkProfile",
       "UpdateProfile",
       "UpdateRoom",
       "UpdateSkillGroup"
@@ -957,6 +1144,9 @@ export class A4b extends PolicyStatement {
       "GetConferenceProvider",
       "GetContact",
       "GetDevice",
+      "GetGateway",
+      "GetGatewayGroup",
+      "GetInvitationConfiguration",
       "GetNetworkProfile",
       "GetProfile",
       "GetRoom",
@@ -970,6 +1160,8 @@ export class A4b extends PolicyStatement {
       "ListBusinessReportSchedules",
       "ListConferenceProviders",
       "ListDeviceEvents",
+      "ListGatewayGroups",
+      "ListGateways",
       "ListSkills",
       "ListSkillsStoreCategories",
       "ListSkillsStoreSkillsByCategory",
@@ -1181,6 +1373,44 @@ export class A4b extends PolicyStatement {
    */
   public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:a4b:${Region}:${Account}:network-profile/${Resource_id}';
+    arn = arn.replace('${Resource_id}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type gateway to the statement
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_Gateway.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onGateway(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:gateway/${Resource_id}';
+    arn = arn.replace('${Resource_id}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type gatewaygroup to the statement
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_GatewayGroup.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onGatewaygroup(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:gateway-group/${Resource_id}';
     arn = arn.replace('${Resource_id}', resourceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

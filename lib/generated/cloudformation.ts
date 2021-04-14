@@ -825,7 +825,7 @@ export class Cloudformation extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStackset(stackSetName: string, id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:stackset/${StackSetName}:${Id}';
+    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:stackset/${StackSetName}/${Id}';
     arn = arn.replace('${StackSetName}', stackSetName);
     arn = arn.replace('${Id}', id);
     arn = arn.replace('${Account}', account || '*');

@@ -38,6 +38,13 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - imagebuilder:TagResource
+   * - kms:Encrypt
+   * - kms:GenerateDataKey
+   * - kms:GenerateDataKeyWithoutPlaintext
+   *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html
    */
   public toCreateComponent() {
@@ -54,7 +61,15 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - ecr:DescribeImages
+   * - ecr:DescribeRepositories
+   * - iam:CreateServiceLinkedRole
    * - imagebuilder:GetComponent
+   * - imagebuilder:GetImage
+   * - imagebuilder:TagResource
+   * - kms:Encrypt
+   * - kms:GenerateDataKey
+   * - kms:GenerateDataKeyWithoutPlaintext
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateContainerRecipe.html
    */
@@ -70,6 +85,10 @@ export class Imagebuilder extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - imagebuilder:TagResource
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateDistributionConfiguration.html
    */
@@ -87,8 +106,12 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - imagebuilder:GetContainerRecipe
+   * - imagebuilder:GetDistributionConfiguration
    * - imagebuilder:GetImageRecipe
    * - imagebuilder:GetInfrastructureConfiguration
+   * - imagebuilder:TagResource
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImage.html
    */
@@ -106,7 +129,10 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - imagebuilder:GetContainerRecipe
    * - imagebuilder:GetImageRecipe
+   * - imagebuilder:TagResource
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImagePipeline.html
    */
@@ -124,7 +150,11 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - ec2:DescribeImages
+   * - iam:CreateServiceLinkedRole
    * - imagebuilder:GetComponent
+   * - imagebuilder:GetImage
+   * - imagebuilder:TagResource
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImageRecipe.html
    */
@@ -144,7 +174,10 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifCreatedResourceTag()
    *
    * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    * - iam:PassRole
+   * - imagebuilder:TagResource
+   * - sns:Publish
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateInfrastructureConfiguration.html
    */
@@ -233,6 +266,9 @@ export class Imagebuilder extends PolicyStatement {
    * Grants permission to view details about a component
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetComponent.html
    */
@@ -351,6 +387,28 @@ export class Imagebuilder extends PolicyStatement {
    */
   public toGetInfrastructureConfiguration() {
     return this.to('GetInfrastructureConfiguration');
+  }
+
+  /**
+   * Grants permission to import a new component
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - imagebuilder:TagResource
+   * - kms:Encrypt
+   * - kms:GenerateDataKey
+   * - kms:GenerateDataKeyWithoutPlaintext
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ImportComponent.html
+   */
+  public toImportComponent() {
+    return this.to('ImportComponent');
   }
 
   /**
@@ -541,6 +599,7 @@ export class Imagebuilder extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    * - imagebuilder:GetImagePipeline
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartImagePipelineExecution.html
@@ -614,6 +673,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - sns:Publish
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateInfrastructureConfiguration.html
    */
@@ -638,6 +698,7 @@ export class Imagebuilder extends PolicyStatement {
       "DeleteImagePipeline",
       "DeleteImageRecipe",
       "DeleteInfrastructureConfiguration",
+      "ImportComponent",
       "StartImagePipelineExecution",
       "UpdateDistributionConfiguration",
       "UpdateImagePipeline",
