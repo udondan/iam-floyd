@@ -50,6 +50,14 @@
 			"Resource": [
 				"arn:aws:logs:*:*:log-group:/aws/connect/*:*"
 			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"lex:ListBots",
+				"lex:ListBotAliases"
+			],
+			"Resource": "*"
 		}
 	]
 }
