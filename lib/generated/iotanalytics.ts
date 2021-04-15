@@ -244,6 +244,17 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   /**
+   * Lists information about dataset contents that have been created.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListDatasetContents.html
+   */
+  public toListDatasetContents() {
+    return this.to('ListDatasetContents');
+  }
+
+  /**
    * Lists the datasets for the account.
    *
    * Access Level: List
@@ -439,6 +450,7 @@ export class Iotanalytics extends PolicyStatement {
     ],
     "List": [
       "ListChannels",
+      "ListDatasetContents",
       "ListDatasets",
       "ListDatastores",
       "ListPipelines"

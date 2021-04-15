@@ -4,6 +4,7 @@ sts:PrincipalTag/${TagKey}
 sts:RequestTag/${TagKey}
 sts:ResourceTag/${TagKey}
 sts:RoleSessionName
+sts:SourceIdentity
 sts:TagKeys
 sts:TransitiveTagKeys
 sts:amr

@@ -31,6 +31,8 @@ export class Sts extends PolicyStatement {
    * - .ifExternalId()
    * - .ifRoleSessionName()
    * - .ifIamResourceTag()
+   * - .ifSourceIdentity()
+   * - .ifAwsSourceIdentity()
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html
    */
@@ -80,6 +82,7 @@ export class Sts extends PolicyStatement {
    * - .ifAwsPrincipalTag()
    * - .ifAwsRequestTag()
    * - .ifTransitiveTagKeys()
+   * - .ifSourceIdentity()
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html
    */
@@ -107,6 +110,7 @@ export class Sts extends PolicyStatement {
    * - .ifAwsPrincipalTag()
    * - .ifAwsRequestTag()
    * - .ifTransitiveTagKeys()
+   * - .ifSourceIdentity()
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html
    */
@@ -186,6 +190,21 @@ export class Sts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set a source identity on a STS session
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSourceIdentity()
+   * - .ifAwsSourceIdentity()
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html#id_credentials_temp_control-access_monitor-perms
+   */
+  public toSetSourceIdentity() {
+    return this.to('SetSourceIdentity');
+  }
+
+  /**
    * Grants permission to add tags to a STS session
    *
    * Access Level: Tagging
@@ -207,7 +226,8 @@ export class Sts extends PolicyStatement {
       "AssumeRole",
       "AssumeRoleWithSAML",
       "AssumeRoleWithWebIdentity",
-      "DecodeAuthorizationMessage"
+      "DecodeAuthorizationMessage",
+      "SetSourceIdentity"
     ],
     "Read": [
       "GetAccessKeyInfo",
@@ -914,6 +934,24 @@ export class Sts extends PolicyStatement {
    */
   public ifRoleSessionName(value: string | string[], operator?: Operator | string) {
     return this.if(`RoleSessionName`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the source identity that is passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sourceidentity
+   *
+   * Applies to actions:
+   * - .toAssumeRole()
+   * - .toAssumeRoleWithSAML()
+   * - .toAssumeRoleWithWebIdentity()
+   * - .toSetSourceIdentity()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSourceIdentity(value: string | string[], operator?: Operator | string) {
+    return this.if(`SourceIdentity`, value, operator || 'StringLike');
   }
 
   /**

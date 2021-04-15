@@ -19,6 +19,17 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to activate a key-signing key so that it can be used for signing by DNSSEC
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ActivateKeySigningKey.html
+   */
+  public toActivateKeySigningKey() {
+    return this.to('ActivateKeySigningKey');
+  }
+
+  /**
    * Grants permission to associate an additional Amazon VPC with a private hosted zone
    *
    * Access Level: Write
@@ -77,6 +88,17 @@ export class Route53 extends PolicyStatement {
    */
   public toCreateHostedZone() {
     return this.to('CreateHostedZone');
+  }
+
+  /**
+   * Grants permission to create a new key-signing key associated with a hosted zone
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateKeySigningKey.html
+   */
+  public toCreateKeySigningKey() {
+    return this.to('CreateKeySigningKey');
   }
 
   /**
@@ -146,6 +168,17 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deactivate a key-signing key so that it will not be used for signing by DNSSEC
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeactivateKeySigningKey.html
+   */
+  public toDeactivateKeySigningKey() {
+    return this.to('DeactivateKeySigningKey');
+  }
+
+  /**
    * Grants permission to delete a health check
    *
    * Access Level: Write
@@ -165,6 +198,17 @@ export class Route53 extends PolicyStatement {
    */
   public toDeleteHostedZone() {
     return this.to('DeleteHostedZone');
+  }
+
+  /**
+   * Grants permission to delete a key-signing key
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteKeySigningKey.html
+   */
+  public toDeleteKeySigningKey() {
+    return this.to('DeleteKeySigningKey');
   }
 
   /**
@@ -223,6 +267,17 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable DNSSEC signing in a specific hosted zone
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DisableHostedZoneDNSSEC.html
+   */
+  public toDisableHostedZoneDNSSEC() {
+    return this.to('DisableHostedZoneDNSSEC');
+  }
+
+  /**
    * Grants permission to disassociate an Amazon Virtual Private Cloud from a Route 53 private hosted zone
    *
    * Access Level: Write
@@ -234,6 +289,17 @@ export class Route53 extends PolicyStatement {
    */
   public toDisassociateVPCFromHostedZone() {
     return this.to('DisassociateVPCFromHostedZone');
+  }
+
+  /**
+   * Grants permission to enable DNSSEC signing in a specific hosted zone
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_EnableHostedZoneDNSSEC.html
+   */
+  public toEnableHostedZoneDNSSEC() {
+    return this.to('EnableHostedZoneDNSSEC');
   }
 
   /**
@@ -267,6 +333,17 @@ export class Route53 extends PolicyStatement {
    */
   public toGetCheckerIpRanges() {
     return this.to('GetCheckerIpRanges');
+  }
+
+  /**
+   * Grants permission to get information about DNSSEC for a specific hosted zone, including the key-signing keys in the hosted zone
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetDNSSEC.html
+   */
+  public toGetDNSSEC() {
+    return this.to('GetDNSSEC');
   }
 
   /**
@@ -659,24 +736,30 @@ export class Route53 extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "ActivateKeySigningKey",
       "AssociateVPCWithHostedZone",
       "ChangeResourceRecordSets",
       "CreateHealthCheck",
       "CreateHostedZone",
+      "CreateKeySigningKey",
       "CreateQueryLoggingConfig",
       "CreateReusableDelegationSet",
       "CreateTrafficPolicy",
       "CreateTrafficPolicyInstance",
       "CreateTrafficPolicyVersion",
       "CreateVPCAssociationAuthorization",
+      "DeactivateKeySigningKey",
       "DeleteHealthCheck",
       "DeleteHostedZone",
+      "DeleteKeySigningKey",
       "DeleteQueryLoggingConfig",
       "DeleteReusableDelegationSet",
       "DeleteTrafficPolicy",
       "DeleteTrafficPolicyInstance",
       "DeleteVPCAssociationAuthorization",
+      "DisableHostedZoneDNSSEC",
       "DisassociateVPCFromHostedZone",
+      "EnableHostedZoneDNSSEC",
       "UpdateHealthCheck",
       "UpdateHostedZoneComment",
       "UpdateTrafficPolicyComment",
@@ -687,6 +770,7 @@ export class Route53 extends PolicyStatement {
     ],
     "Read": [
       "GetAccountLimit",
+      "GetDNSSEC",
       "GetHealthCheck",
       "GetHostedZoneLimit",
       "GetQueryLoggingConfig",

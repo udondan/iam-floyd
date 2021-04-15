@@ -7,4 +7,5 @@ sts:GetCallerIdentity;Read
 sts:GetFederationToken;Read
 sts:GetServiceBearerToken;Read
 sts:GetSessionToken;Read
+sts:SetSourceIdentity;Write
 sts:TagSession;Tagging

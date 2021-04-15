@@ -9,6 +9,7 @@ iot:AttachThingPrincipal;Write
 iot:CancelAuditMitigationActionsTask;Write
 iot:CancelAuditTask;Write
 iot:CancelCertificateTransfer;Write
+iot:CancelDetectMitigationActionsTask;Write
 iot:CancelJob;Write
 iot:CancelJobExecution;Write
 iot:ClearDefaultAuthorizer;Write
@@ -19,6 +20,7 @@ iot:CreateAuditSuppression;Write
 iot:CreateAuthorizer;Write
 iot:CreateBillingGroup;Tagging
 iot:CreateCertificateFromCsr;Write
+iot:CreateCustomMetric;Write
 iot:CreateDimension;Write
 iot:CreateDomainConfiguration;Write
 iot:CreateDynamicThingGroup;Tagging
@@ -47,6 +49,7 @@ iot:DeleteAuthorizer;Write
 iot:DeleteBillingGroup;Tagging
 iot:DeleteCACertificate;Write
 iot:DeleteCertificate;Write
+iot:DeleteCustomMetric;Write
 iot:DeleteDimension;Write
 iot:DeleteDomainConfiguration;Write
 iot:DeleteDynamicThingGroup;Tagging
@@ -81,7 +84,9 @@ iot:DescribeAuthorizer;Read
 iot:DescribeBillingGroup;Read
 iot:DescribeCACertificate;Read
 iot:DescribeCertificate;Read
+iot:DescribeCustomMetric;Read
 iot:DescribeDefaultAuthorizer;Read
+iot:DescribeDetectMitigationActionsTask;Read
 iot:DescribeDimension;Read
 iot:DescribeDomainConfiguration;Read
 iot:DescribeEndpoint;Read
@@ -108,6 +113,7 @@ iot:DetachSecurityProfile;Write
 iot:DetachThingPrincipal;Write
 iot:DisableTopicRule;Write
 iot:EnableTopicRule;Write
+iot:GetBehaviorModelTrainingSummaries;List
 iot:GetBucketsAggregation;Read
 iot:GetCardinality;Read
 iot:GetEffectivePolicies;Read
@@ -137,6 +143,9 @@ iot:ListBillingGroups;List
 iot:ListCACertificates;List
 iot:ListCertificates;List
 iot:ListCertificatesByCA;List
+iot:ListCustomMetrics;List
+iot:ListDetectMitigationActionsExecutions;List
+iot:ListDetectMitigationActionsTasks;List
 iot:ListDimensions;List
 iot:ListDomainConfigurations;List
 iot:ListFleetMetrics;List
@@ -195,6 +204,7 @@ iot:SetLoggingOptions;Write
 iot:SetV2LoggingLevel;Write
 iot:SetV2LoggingOptions;Write
 iot:StartAuditMitigationActionsTask;Write
+iot:StartDetectMitigationActionsTask;Write
 iot:StartNextPendingJobExecution;Write
 iot:StartOnDemandAuditTask;Write
 iot:StartThingRegistrationTask;Write
@@ -211,6 +221,7 @@ iot:UpdateAuthorizer;Write
 iot:UpdateBillingGroup;Write
 iot:UpdateCACertificate;Write
 iot:UpdateCertificate;Write
+iot:UpdateCustomMetric;Write
 iot:UpdateDimension;Write
 iot:UpdateDomainConfiguration;Write
 iot:UpdateDynamicThingGroup;Write

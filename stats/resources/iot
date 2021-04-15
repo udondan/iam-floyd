@@ -3,6 +3,7 @@ iot:billinggroup
 iot:cacert
 iot:cert
 iot:client
+iot:custommetric
 iot:destination
 iot:dimension
 iot:domainconfiguration

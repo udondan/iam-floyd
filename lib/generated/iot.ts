@@ -140,6 +140,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a Device Defender ML Detect mitigation action.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_CancelDetectMitigationActionsTask.html
+   */
+  public toCancelDetectMitigationActionsTask() {
+    return this.to('CancelDetectMitigationActionsTask');
+  }
+
+  /**
    * Cancels a job.
    *
    * Access Level: Write
@@ -258,6 +269,21 @@ export class Iot extends PolicyStatement {
    */
   public toCreateCertificateFromCsr() {
     return this.to('CreateCertificateFromCsr');
+  }
+
+  /**
+   * Grants permission to create a custom metric for device side metric reporting and monitoring.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCustomMetric.html
+   */
+  public toCreateCustomMetric() {
+    return this.to('CreateCustomMetric');
   }
 
   /**
@@ -640,6 +666,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deletes the specified custom metric from your AWS account.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCustomMetric.html
+   */
+  public toDeleteCustomMetric() {
+    return this.to('DeleteCustomMetric');
+  }
+
+  /**
    * Removes the specified dimension from your AWS account.
    *
    * Access Level: Write
@@ -1014,6 +1051,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a custom metric that is defined in your AWS account.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeCustomMetric.html
+   */
+  public toDescribeCustomMetric() {
+    return this.to('DescribeCustomMetric');
+  }
+
+  /**
    * Describes the default authorizer.
    *
    * Access Level: Read
@@ -1022,6 +1070,17 @@ export class Iot extends PolicyStatement {
    */
   public toDescribeDefaultAuthorizer() {
     return this.to('DescribeDefaultAuthorizer');
+  }
+
+  /**
+   * Grants permission to describe a Device Defender ML Detect mitigation action.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeDetectMitigationActionsTask.html
+   */
+  public toDescribeDetectMitigationActionsTask() {
+    return this.to('DescribeDetectMitigationActionsTask');
   }
 
   /**
@@ -1308,6 +1367,17 @@ export class Iot extends PolicyStatement {
    */
   public toEnableTopicRule() {
     return this.to('EnableTopicRule');
+  }
+
+  /**
+   * Grants permission to fetch a Device Defender's ML Detect Security Profile training model's status.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_GetBehaviorModelTrainingSummaries.html
+   */
+  public toGetBehaviorModelTrainingSummaries() {
+    return this.to('GetBehaviorModelTrainingSummaries');
   }
 
   /**
@@ -1627,6 +1697,39 @@ export class Iot extends PolicyStatement {
    */
   public toListCertificatesByCA() {
     return this.to('ListCertificatesByCA');
+  }
+
+  /**
+   * Grants permission to list the custom metrics in your AWS account.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListCustomMetrics.html
+   */
+  public toListCustomMetrics() {
+    return this.to('ListCustomMetrics');
+  }
+
+  /**
+   * Grants permission to lists mitigation actions executions for a Device Defender ML Detect Security Profile.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListDetectMitigationActionsExecutions.html
+   */
+  public toListDetectMitigationActionsExecutions() {
+    return this.to('ListDetectMitigationActionsExecutions');
+  }
+
+  /**
+   * Grants permission to list Device Defender ML Detect mitigation actions tasks.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListDetectMitigationActionsTasks.html
+   */
+  public toListDetectMitigationActionsTasks() {
+    return this.to('ListDetectMitigationActionsTasks');
   }
 
   /**
@@ -2281,6 +2384,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a Device Defender ML Detect mitigation actions task.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_StartDetectMitigationActionsTask.html
+   */
+  public toStartDetectMitigationActionsTask() {
+    return this.to('StartDetectMitigationActionsTask');
+  }
+
+  /**
    * Gets and starts the next pending job execution for a thing.
    *
    * Access Level: Write
@@ -2464,6 +2578,17 @@ export class Iot extends PolicyStatement {
    */
   public toUpdateCertificate() {
     return this.to('UpdateCertificate');
+  }
+
+  /**
+   * Grants permission to update the specified custom metric.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateCustomMetric.html
+   */
+  public toUpdateCustomMetric() {
+    return this.to('UpdateCustomMetric');
   }
 
   /**
@@ -2703,6 +2828,7 @@ export class Iot extends PolicyStatement {
       "CancelAuditMitigationActionsTask",
       "CancelAuditTask",
       "CancelCertificateTransfer",
+      "CancelDetectMitigationActionsTask",
       "CancelJob",
       "CancelJobExecution",
       "ClearDefaultAuthorizer",
@@ -2712,6 +2838,7 @@ export class Iot extends PolicyStatement {
       "CreateAuditSuppression",
       "CreateAuthorizer",
       "CreateCertificateFromCsr",
+      "CreateCustomMetric",
       "CreateDimension",
       "CreateDomainConfiguration",
       "CreateJob",
@@ -2735,6 +2862,7 @@ export class Iot extends PolicyStatement {
       "DeleteAuthorizer",
       "DeleteCACertificate",
       "DeleteCertificate",
+      "DeleteCustomMetric",
       "DeleteDimension",
       "DeleteDomainConfiguration",
       "DeleteJob",
@@ -2775,6 +2903,7 @@ export class Iot extends PolicyStatement {
       "SetV2LoggingLevel",
       "SetV2LoggingOptions",
       "StartAuditMitigationActionsTask",
+      "StartDetectMitigationActionsTask",
       "StartNextPendingJobExecution",
       "StartOnDemandAuditTask",
       "StartThingRegistrationTask",
@@ -2787,6 +2916,7 @@ export class Iot extends PolicyStatement {
       "UpdateBillingGroup",
       "UpdateCACertificate",
       "UpdateCertificate",
+      "UpdateCustomMetric",
       "UpdateDimension",
       "UpdateDomainConfiguration",
       "UpdateDynamicThingGroup",
@@ -2839,7 +2969,9 @@ export class Iot extends PolicyStatement {
       "DescribeBillingGroup",
       "DescribeCACertificate",
       "DescribeCertificate",
+      "DescribeCustomMetric",
       "DescribeDefaultAuthorizer",
+      "DescribeDetectMitigationActionsTask",
       "DescribeDimension",
       "DescribeDomainConfiguration",
       "DescribeEndpoint",
@@ -2883,6 +3015,7 @@ export class Iot extends PolicyStatement {
       "ValidateSecurityProfileBehaviors"
     ],
     "List": [
+      "GetBehaviorModelTrainingSummaries",
       "ListActiveViolations",
       "ListAttachedPolicies",
       "ListAuditFindings",
@@ -2895,6 +3028,9 @@ export class Iot extends PolicyStatement {
       "ListCACertificates",
       "ListCertificates",
       "ListCertificatesByCA",
+      "ListCustomMetrics",
+      "ListDetectMitigationActionsExecutions",
+      "ListDetectMitigationActionsTasks",
       "ListDimensions",
       "ListDomainConfigurations",
       "ListFleetMetrics",
@@ -3398,6 +3534,28 @@ export class Iot extends PolicyStatement {
   public onSecurityprofile(securityProfileName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:securityprofile/${SecurityProfileName}';
     arn = arn.replace('${SecurityProfileName}', securityProfileName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type custommetric to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html
+   *
+   * @param metricName - Identifier for the metricName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustommetric(metricName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iot:${Region}:${Account}:custommetric/${MetricName}';
+    arn = arn.replace('${MetricName}', metricName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

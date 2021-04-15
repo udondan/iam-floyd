@@ -17,6 +17,7 @@ iotanalytics:DescribeLoggingOptions;Read
 iotanalytics:DescribePipeline;Read
 iotanalytics:GetDatasetContent;Read
 iotanalytics:ListChannels;List
+iotanalytics:ListDatasetContents;List
 iotanalytics:ListDatasets;List
 iotanalytics:ListDatastores;List
 iotanalytics:ListPipelines;List
