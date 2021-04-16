@@ -1529,4 +1529,21 @@ export class Mobiletargeting extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Adds a resource of type phone-number-validate to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/phone-number-validate.html
+   *
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onPhoneNumberValidate(account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:phone/number/validate';
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
 }

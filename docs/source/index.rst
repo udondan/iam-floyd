@@ -30,7 +30,7 @@ Support for:
 
 - 264 Services
 - 9754 Actions
-- 1028 Resource Types
+- 1029 Resource Types
 - 1042 Condition keys
 
 ..
