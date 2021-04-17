@@ -100,6 +100,28 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * This action adds a new key group to CloudFront
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateKeyGroup.html
+   */
+  public toCreateKeyGroup() {
+    return this.to('CreateKeyGroup');
+  }
+
+  /**
+   * This action enables additional CloudWatch metrics for the specified CloudFront distribution. The additional metrics incur an additional cost
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateMonitoringSubscription.html
+   */
+  public toCreateMonitoringSubscription() {
+    return this.to('CreateMonitoringSubscription');
+  }
+
+  /**
    * This action adds a new origin request policy to CloudFront.
    *
    * Access Level: Write
@@ -119,6 +141,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toCreatePublicKey() {
     return this.to('CreatePublicKey');
+  }
+
+  /**
+   * This action creates a real-time log configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateRealtimeLogConfig.html
+   */
+  public toCreateRealtimeLogConfig() {
+    return this.to('CreateRealtimeLogConfig');
   }
 
   /**
@@ -203,6 +236,28 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * This action deletes a key group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteKeyGroup.html
+   */
+  public toDeleteKeyGroup() {
+    return this.to('DeleteKeyGroup');
+  }
+
+  /**
+   * This action disables additional CloudWatch metrics for the specified CloudFront distribution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteMonitoringSubscription.html
+   */
+  public toDeleteMonitoringSubscription() {
+    return this.to('DeleteMonitoringSubscription');
+  }
+
+  /**
    * This action deletes an origin request policy.
    *
    * Access Level: Write
@@ -222,6 +277,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toDeletePublicKey() {
     return this.to('DeletePublicKey');
+  }
+
+  /**
+   * This action deletes a real-time log configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteRealtimeLogConfig.html
+   */
+  public toDeleteRealtimeLogConfig() {
+    return this.to('DeleteRealtimeLogConfig');
   }
 
   /**
@@ -357,6 +423,39 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * This action gets a key group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetKeyGroup.html
+   */
+  public toGetKeyGroup() {
+    return this.to('GetKeyGroup');
+  }
+
+  /**
+   * This action gets a key group configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetKeyGroupConfig.html
+   */
+  public toGetKeyGroupConfig() {
+    return this.to('GetKeyGroupConfig');
+  }
+
+  /**
+   * This action gets information about whether additional CloudWatch metrics are enabled for the specified CloudFront distribution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetMonitoringSubscription.html
+   */
+  public toGetMonitoringSubscription() {
+    return this.to('GetMonitoringSubscription');
+  }
+
+  /**
    * Get the origin request policy
    *
    * Access Level: Read
@@ -398,6 +497,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toGetPublicKeyConfig() {
     return this.to('GetPublicKeyConfig');
+  }
+
+  /**
+   * This action gets a real-time log configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetRealtimeLogConfig.html
+   */
+  public toGetRealtimeLogConfig() {
+    return this.to('GetRealtimeLogConfig');
   }
 
   /**
@@ -467,6 +577,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * This action lists distribution IDs for distributions that have a cache behavior that's associated with the specified key group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByKeyGroup.html
+   */
+  public toListDistributionsByKeyGroup() {
+    return this.to('ListDistributionsByKeyGroup');
+  }
+
+  /**
    * List distribution IDs for distributions that have a cache behavior that's associated with the specified origin request policy.
    *
    * Access Level: List
@@ -475,6 +596,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListDistributionsByOriginRequestPolicyId() {
     return this.to('ListDistributionsByOriginRequestPolicyId');
+  }
+
+  /**
+   * This action gets a list of distributions that have a cache behavior that’s associated with the specified real-time log configuration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByRealtimeLogConfig.html
+   */
+  public toListDistributionsByRealtimeLogConfig() {
+    return this.to('ListDistributionsByRealtimeLogConfig');
   }
 
   /**
@@ -522,6 +654,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * This action lists all key groups that have been created in CloudFront for this account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListKeyGroups.html
+   */
+  public toListKeyGroups() {
+    return this.to('ListKeyGroups');
+  }
+
+  /**
    * List all origin request policies that have been created in CloudFront for this account.
    *
    * Access Level: List
@@ -541,6 +684,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListPublicKeys() {
     return this.to('ListPublicKeys');
+  }
+
+  /**
+   * This action gets a list of real-time log configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListRealtimeLogConfigs.html
+   */
+  public toListRealtimeLogConfigs() {
+    return this.to('ListRealtimeLogConfigs');
   }
 
   /**
@@ -650,6 +804,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * This action updates a key group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateKeyGroup.html
+   */
+  public toUpdateKeyGroup() {
+    return this.to('UpdateKeyGroup');
+  }
+
+  /**
    * This action updates an origin request policy.
    *
    * Access Level: Write
@@ -672,6 +837,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * This action updates a real-time log configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateRealtimeLogConfig.html
+   */
+  public toUpdateRealtimeLogConfig() {
+    return this.to('UpdateRealtimeLogConfig');
+  }
+
+  /**
    * This action updates the configuration for an RTMP distribution.
    *
    * Access Level: Write
@@ -690,24 +866,32 @@ export class Cloudfront extends PolicyStatement {
       "CreateFieldLevelEncryptionConfig",
       "CreateFieldLevelEncryptionProfile",
       "CreateInvalidation",
+      "CreateKeyGroup",
+      "CreateMonitoringSubscription",
       "CreateOriginRequestPolicy",
       "CreatePublicKey",
+      "CreateRealtimeLogConfig",
       "CreateStreamingDistribution",
       "DeleteCachePolicy",
       "DeleteCloudFrontOriginAccessIdentity",
       "DeleteDistribution",
       "DeleteFieldLevelEncryptionConfig",
       "DeleteFieldLevelEncryptionProfile",
+      "DeleteKeyGroup",
+      "DeleteMonitoringSubscription",
       "DeleteOriginRequestPolicy",
       "DeletePublicKey",
+      "DeleteRealtimeLogConfig",
       "DeleteStreamingDistribution",
       "UpdateCachePolicy",
       "UpdateCloudFrontOriginAccessIdentity",
       "UpdateDistribution",
       "UpdateFieldLevelEncryptionConfig",
       "UpdateFieldLevelEncryptionProfile",
+      "UpdateKeyGroup",
       "UpdateOriginRequestPolicy",
       "UpdatePublicKey",
+      "UpdateRealtimeLogConfig",
       "UpdateStreamingDistribution"
     ],
     "Tagging": [
@@ -728,10 +912,14 @@ export class Cloudfront extends PolicyStatement {
       "GetFieldLevelEncryptionProfile",
       "GetFieldLevelEncryptionProfileConfig",
       "GetInvalidation",
+      "GetKeyGroup",
+      "GetKeyGroupConfig",
+      "GetMonitoringSubscription",
       "GetOriginRequestPolicy",
       "GetOriginRequestPolicyConfig",
       "GetPublicKey",
       "GetPublicKeyConfig",
+      "GetRealtimeLogConfig",
       "GetStreamingDistribution",
       "GetStreamingDistributionConfig",
       "ListTagsForResource"
@@ -741,13 +929,17 @@ export class Cloudfront extends PolicyStatement {
       "ListCloudFrontOriginAccessIdentities",
       "ListDistributions",
       "ListDistributionsByCachePolicyId",
+      "ListDistributionsByKeyGroup",
       "ListDistributionsByOriginRequestPolicyId",
+      "ListDistributionsByRealtimeLogConfig",
       "ListDistributionsByWebACLId",
       "ListFieldLevelEncryptionConfigs",
       "ListFieldLevelEncryptionProfiles",
       "ListInvalidations",
+      "ListKeyGroups",
       "ListOriginRequestPolicies",
       "ListPublicKeys",
+      "ListRealtimeLogConfigs",
       "ListStreamingDistributions"
     ]
   };
@@ -872,6 +1064,23 @@ export class Cloudfront extends PolicyStatement {
   public onOriginRequestPolicy(id: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudfront::${Account}:origin-request-policy/${Id}';
     arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type realtime-log-config to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html
+   *
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onRealtimeLogConfig(name: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudfront::${Account}:realtime-log-config/${Name}';
+    arn = arn.replace('${Name}', name);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

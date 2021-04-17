@@ -2,7 +2,7 @@ quicksight:CancelIngestion;Write
 quicksight:CreateAccountCustomization;Write
 quicksight:CreateAdmin;Write
 quicksight:CreateAnalysis;Write
-quicksight:CreateCustomPermissions;Write
+quicksight:CreateCustomPermissions;Permissions management
 quicksight:CreateDashboard;Write
 quicksight:CreateDataSet;Write
 quicksight:CreateDataSource;Write
@@ -20,7 +20,7 @@ quicksight:CreateUser;Write
 quicksight:CreateVPCConnection;Write
 quicksight:DeleteAccountCustomization;Write
 quicksight:DeleteAnalysis;Write
-quicksight:DeleteCustomPermissions;Write
+quicksight:DeleteCustomPermissions;Permissions management
 quicksight:DeleteDashboard;Write
 quicksight:DeleteDataSet;Write
 quicksight:DeleteDataSource;Write
@@ -57,6 +57,7 @@ quicksight:DescribeTheme;Read
 quicksight:DescribeThemeAlias;Read
 quicksight:DescribeThemePermissions;Read
 quicksight:DescribeUser;Read
+quicksight:GetAnonymousUserEmbedUrl;Read
 quicksight:GetAuthCode;Read
 quicksight:GetDashboardEmbedUrl;Read
 quicksight:GetGroupMapping;Read
@@ -71,8 +72,8 @@ quicksight:ListGroupMemberships;List
 quicksight:ListGroups;List
 quicksight:ListIAMPolicyAssignments;List
 quicksight:ListIAMPolicyAssignmentsForUser;List
-quicksight:ListIngestions;Read
-quicksight:ListNamespaces;Write
+quicksight:ListIngestions;List
+quicksight:ListNamespaces;List
 quicksight:ListTagsForResource;List
 quicksight:ListTemplateAliases;List
 quicksight:ListTemplateVersions;List
@@ -88,7 +89,7 @@ quicksight:RegisterUser;Write
 quicksight:RestoreAnalysis;Write
 quicksight:SearchAnalyses;List
 quicksight:SearchDashboards;List
-quicksight:SearchDirectoryGroups;Write
+quicksight:SearchDirectoryGroups;List
 quicksight:SetGroupMapping;Write
 quicksight:Subscribe;Write
 quicksight:TagResource;Tagging
@@ -97,10 +98,10 @@ quicksight:UntagResource;Tagging
 quicksight:UpdateAccountCustomization;Write
 quicksight:UpdateAccountSettings;Write
 quicksight:UpdateAnalysis;Write
-quicksight:UpdateAnalysisPermissions;Write
-quicksight:UpdateCustomPermissions;Write
+quicksight:UpdateAnalysisPermissions;Permissions management
+quicksight:UpdateCustomPermissions;Permissions management
 quicksight:UpdateDashboard;Write
-quicksight:UpdateDashboardPermissions;Write
+quicksight:UpdateDashboardPermissions;Permissions management
 quicksight:UpdateDashboardPublishedVersion;Write
 quicksight:UpdateDataSet;Write
 quicksight:UpdateDataSetPermissions;Permissions management
@@ -110,8 +111,8 @@ quicksight:UpdateGroup;Write
 quicksight:UpdateIAMPolicyAssignment;Write
 quicksight:UpdateTemplate;Write
 quicksight:UpdateTemplateAlias;Write
-quicksight:UpdateTemplatePermissions;Write
+quicksight:UpdateTemplatePermissions;Permissions management
 quicksight:UpdateTheme;Write
 quicksight:UpdateThemeAlias;Write
-quicksight:UpdateThemePermissions;Write
+quicksight:UpdateThemePermissions;Permissions management
 quicksight:UpdateUser;Write

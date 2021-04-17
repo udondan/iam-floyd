@@ -53,6 +53,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toCreateAdmin() {
@@ -77,7 +81,11 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to create a custom permissions resource for restricting user access
    *
-   * Access Level: Write
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
@@ -138,6 +146,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateGroup.html
    */
   public toCreateGroup() {
@@ -148,6 +160,10 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to add a QuickSight user to a QuickSight group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateGroupMembership.html
    */
@@ -186,6 +202,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateNamespace.html
    */
   public toCreateNamespace() {
@@ -196,6 +216,10 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to provision Amazon QuickSight readers
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
@@ -223,6 +247,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplateAlias.html
    */
   public toCreateTemplateAlias() {
@@ -249,6 +277,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateThemeAlias.html
    */
   public toCreateThemeAlias() {
@@ -259,6 +291,10 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to provision Amazon QuickSight authors and readers
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
@@ -302,7 +338,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to delete a custom permissions resource
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
@@ -735,6 +771,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a URL used to embed a QuickSight Dashboard for a user not registered with QuickSight
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html
+   */
+  public toGetAnonymousUserEmbedUrl() {
+    return this.to('GetAnonymousUserEmbedUrl');
+  }
+
+  /**
    * Grants permission to get an auth code representing a QuickSight user
    *
    * Access Level: Read
@@ -899,7 +946,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to list all SPICE ingestions on a dataset
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -914,7 +961,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to lists all namespaces in a QuickSight account
    *
-   * Access Level: Write
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListNamespaces.html
    */
@@ -1098,7 +1145,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to use Amazon QuickSight, in Enterprise edition, to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight
    *
-   * Access Level: Write
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
@@ -1204,7 +1251,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update permissions for an analysis
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAnalysisPermissions.html
    */
@@ -1215,7 +1262,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update a custom permissions resource
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
@@ -1237,7 +1284,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update permissions for a QuickSight Dashboard
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPermissions.html
    */
@@ -1366,7 +1413,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update permissions for a template
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTemplatePermissions.html
    */
@@ -1399,7 +1446,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update permissions for a theme
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html
    */
@@ -1424,7 +1471,6 @@ export class Quicksight extends PolicyStatement {
       "CreateAccountCustomization",
       "CreateAdmin",
       "CreateAnalysis",
-      "CreateCustomPermissions",
       "CreateDashboard",
       "CreateDataSet",
       "CreateDataSource",
@@ -1442,7 +1488,6 @@ export class Quicksight extends PolicyStatement {
       "CreateVPCConnection",
       "DeleteAccountCustomization",
       "DeleteAnalysis",
-      "DeleteCustomPermissions",
       "DeleteDashboard",
       "DeleteDataSet",
       "DeleteDataSource",
@@ -1459,20 +1504,15 @@ export class Quicksight extends PolicyStatement {
       "DeleteVPCConnection",
       "DescribeCustomPermissions",
       "ListCustomPermissions",
-      "ListNamespaces",
       "RegisterUser",
       "RestoreAnalysis",
-      "SearchDirectoryGroups",
       "SetGroupMapping",
       "Subscribe",
       "Unsubscribe",
       "UpdateAccountCustomization",
       "UpdateAccountSettings",
       "UpdateAnalysis",
-      "UpdateAnalysisPermissions",
-      "UpdateCustomPermissions",
       "UpdateDashboard",
-      "UpdateDashboardPermissions",
       "UpdateDashboardPublishedVersion",
       "UpdateDataSet",
       "UpdateDataSource",
@@ -1480,11 +1520,22 @@ export class Quicksight extends PolicyStatement {
       "UpdateIAMPolicyAssignment",
       "UpdateTemplate",
       "UpdateTemplateAlias",
-      "UpdateTemplatePermissions",
       "UpdateTheme",
       "UpdateThemeAlias",
-      "UpdateThemePermissions",
       "UpdateUser"
+    ],
+    "Permissions management": [
+      "CreateCustomPermissions",
+      "DeleteCustomPermissions",
+      "DescribeDataSetPermissions",
+      "DescribeDataSourcePermissions",
+      "UpdateAnalysisPermissions",
+      "UpdateCustomPermissions",
+      "UpdateDashboardPermissions",
+      "UpdateDataSetPermissions",
+      "UpdateDataSourcePermissions",
+      "UpdateTemplatePermissions",
+      "UpdateThemePermissions"
     ],
     "Read": [
       "DescribeAccountCustomization",
@@ -1506,19 +1557,13 @@ export class Quicksight extends PolicyStatement {
       "DescribeThemeAlias",
       "DescribeThemePermissions",
       "DescribeUser",
+      "GetAnonymousUserEmbedUrl",
       "GetAuthCode",
       "GetDashboardEmbedUrl",
       "GetGroupMapping",
       "GetSessionEmbedUrl",
-      "ListIngestions",
       "PassDataSet",
       "PassDataSource"
-    ],
-    "Permissions management": [
-      "DescribeDataSetPermissions",
-      "DescribeDataSourcePermissions",
-      "UpdateDataSetPermissions",
-      "UpdateDataSourcePermissions"
     ],
     "List": [
       "ListAnalyses",
@@ -1530,6 +1575,8 @@ export class Quicksight extends PolicyStatement {
       "ListGroups",
       "ListIAMPolicyAssignments",
       "ListIAMPolicyAssignmentsForUser",
+      "ListIngestions",
+      "ListNamespaces",
       "ListTagsForResource",
       "ListTemplateAliases",
       "ListTemplateVersions",
@@ -1540,7 +1587,8 @@ export class Quicksight extends PolicyStatement {
       "ListUserGroups",
       "ListUsers",
       "SearchAnalyses",
-      "SearchDashboards"
+      "SearchDashboards",
+      "SearchDirectoryGroups"
     ],
     "Tagging": [
       "TagResource",

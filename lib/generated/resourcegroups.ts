@@ -127,6 +127,17 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put the service configuration associated with the specified resource group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ARG/latest/APIReference/API_PutGroupConfiguration.html
+   */
+  public toPutGroupConfiguration() {
+    return this.to('PutGroupConfiguration');
+  }
+
+  /**
    * Grants permission to add a resource-based policy for the specified group
    *
    * Access Level: Write
@@ -220,6 +231,7 @@ export class ResourceGroups extends PolicyStatement {
       "CreateGroup",
       "DeleteGroup",
       "GroupResources",
+      "PutGroupConfiguration",
       "PutGroupPolicy",
       "UngroupResources",
       "UpdateGroup",

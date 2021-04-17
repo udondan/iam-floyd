@@ -4,4 +4,5 @@ cloudfront:field-level-encryption
 cloudfront:field-level-encryption-profile
 cloudfront:origin-access-identity
 cloudfront:origin-request-policy
+cloudfront:realtime-log-config
 cloudfront:streaming-distribution

@@ -30,7 +30,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate an attribute group with an application.
+   * Grants permission to associate an attribute group with an application
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate a resource with an application.
+   * Grants permission to associate a resource with an application
    *
    * Access Level: Write
    *
@@ -140,13 +140,16 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an application.
+   * Grants permission to create an application
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_CreateApplication.html
    */
@@ -155,7 +158,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an attribute group.
+   * Grants permission to create an attribute group
    *
    * Access Level: Write
    *
@@ -266,7 +269,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an application if all associations have been removed from the application.
+   * Grants permission to delete an application if all associations have been removed from the application
    *
    * Access Level: Write
    *
@@ -277,7 +280,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an attribute group if all associations have been removed from the attribute group.
+   * Grants permission to delete an attribute group if all associations have been removed from the attribute group
    *
    * Access Level: Write
    *
@@ -420,6 +423,17 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view a summary of each of the portfolio shares that were created for the specified portfolio
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribePortfolioShares.html
+   */
+  public toDescribePortfolioShares() {
+    return this.to('DescribePortfolioShares');
+  }
+
+  /**
    * Grants permission to describe a product as an end-user
    *
    * Access Level: Read
@@ -557,7 +571,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate an attribute group from an application.
+   * Grants permission to disassociate an attribute group from an application
    *
    * Access Level: Write
    *
@@ -601,7 +615,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate a resource from an application.
+   * Grants permission to disassociate a resource from an application
    *
    * Access Level: Write
    *
@@ -678,7 +692,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get an application.
+   * Grants permission to get an application
    *
    * Access Level: Read
    *
@@ -689,7 +703,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get an attribute group.
+   * Grants permission to get an attribute group
    *
    * Access Level: Read
    *
@@ -700,7 +714,18 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to import a resource into a provisioned product.
+   * Grants permission to get the provisioned product output with either provisioned product id or name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_GetProvisionedProductOutputs.html
+   */
+  public toGetProvisionedProductOutputs() {
+    return this.to('GetProvisionedProductOutputs');
+  }
+
+  /**
+   * Grants permission to import a resource into a provisioned product
    *
    * Access Level: Write
    *
@@ -722,7 +747,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the applications in your account.
+   * Grants permission to list the applications in your account
    *
    * Access Level: List
    *
@@ -733,7 +758,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the attribute groups associated with an application.
+   * Grants permission to list the attribute groups associated with an application
    *
    * Access Level: List
    *
@@ -744,7 +769,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the resources associated with an application.
+   * Grants permission to list the resources associated with an application
    *
    * Access Level: List
    *
@@ -755,7 +780,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the attribute groups in your account.
+   * Grants permission to list the attribute groups in your account
    *
    * Access Level: List
    *
@@ -958,7 +983,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags for a service catalog appregistry resource.
+   * Grants permission to list the tags for a service catalog appregistry resource
    *
    * Access Level: List
    *
@@ -1045,7 +1070,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to sync a resource with its current state in AppRegistry.
+   * Grants permission to sync a resource with its current state in AppRegistry
    *
    * Access Level: Write
    *
@@ -1056,7 +1081,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to tag a service catalog appregistry resource.
+   * Grants permission to tag a service catalog appregistry resource
    *
    * Access Level: Tagging
    *
@@ -1087,7 +1112,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove a tag from a service catalog appregistry resource.
+   * Grants permission to remove a tag from a service catalog appregistry resource
    *
    * Access Level: Tagging
    *
@@ -1102,9 +1127,12 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the attributes of an existing application.
+   * Grants permission to update the attributes of an existing application
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_UpdateApplication.html
    */
@@ -1113,7 +1141,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the attributes of an existing attribute group.
+   * Grants permission to update the attributes of an existing attribute group
    *
    * Access Level: Write
    *
@@ -1147,6 +1175,17 @@ export class Servicecatalog extends PolicyStatement {
    */
   public toUpdatePortfolio() {
     return this.to('UpdatePortfolio');
+  }
+
+  /**
+   * Grants permission to enable or disable resource sharing for an existing portfolio share
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdatePortfolioShare.html
+   */
+  public toUpdatePortfolioShare() {
+    return this.to('UpdatePortfolioShare');
   }
 
   /**
@@ -1284,7 +1323,8 @@ export class Servicecatalog extends PolicyStatement {
     ],
     "Permissions management": [
       "CreatePortfolioShare",
-      "DeletePortfolioShare"
+      "DeletePortfolioShare",
+      "UpdatePortfolioShare"
     ],
     "Read": [
       "DescribeConstraint",
@@ -1304,9 +1344,11 @@ export class Servicecatalog extends PolicyStatement {
       "DescribeTagOption",
       "GetAWSOrganizationsAccessStatus",
       "GetApplication",
-      "GetAttributeGroup"
+      "GetAttributeGroup",
+      "GetProvisionedProductOutputs"
     ],
     "List": [
+      "DescribePortfolioShares",
       "ListAcceptedPortfolioShares",
       "ListApplications",
       "ListAssociatedAttributeGroups",

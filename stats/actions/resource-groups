@@ -7,6 +7,7 @@ resource-groups:GetTags;Read
 resource-groups:GroupResources;Write
 resource-groups:ListGroupResources;List
 resource-groups:ListGroups;List
+resource-groups:PutGroupConfiguration;Write
 resource-groups:PutGroupPolicy;Write
 resource-groups:SearchResources;List
 resource-groups:Tag;Tagging

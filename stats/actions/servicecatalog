@@ -33,6 +33,7 @@ servicecatalog:DescribeConstraint;Read
 servicecatalog:DescribeCopyProductStatus;Read
 servicecatalog:DescribePortfolio;Read
 servicecatalog:DescribePortfolioShareStatus;Read
+servicecatalog:DescribePortfolioShares;List
 servicecatalog:DescribeProduct;Read
 servicecatalog:DescribeProductAsAdmin;Read
 servicecatalog:DescribeProductView;Read
@@ -58,6 +59,7 @@ servicecatalog:ExecuteProvisionedProductServiceAction;Write
 servicecatalog:GetAWSOrganizationsAccessStatus;Read
 servicecatalog:GetApplication;Read
 servicecatalog:GetAttributeGroup;Read
+servicecatalog:GetProvisionedProductOutputs;Read
 servicecatalog:ImportAsProvisionedProduct;Write
 servicecatalog:ListAcceptedPortfolioShares;List
 servicecatalog:ListApplications;List
@@ -96,6 +98,7 @@ servicecatalog:UpdateApplication;Write
 servicecatalog:UpdateAttributeGroup;Write
 servicecatalog:UpdateConstraint;Write
 servicecatalog:UpdatePortfolio;Write
+servicecatalog:UpdatePortfolioShare;Permissions management
 servicecatalog:UpdateProduct;Write
 servicecatalog:UpdateProvisionedProduct;Write
 servicecatalog:UpdateProvisionedProductProperties;Write

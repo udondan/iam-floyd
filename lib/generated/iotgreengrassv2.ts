@@ -128,6 +128,17 @@ export class GreengrassV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the pre-signed URL to download a public component artifact
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponentVersionArtifact.html
+   */
+  public toGetComponentVersionArtifact() {
+    return this.to('GetComponentVersionArtifact');
+  }
+
+  /**
    * Grants permission to retrieves metadata for a AWS IoT Greengrass core device
    *
    * Access Level: Read
@@ -250,6 +261,17 @@ export class GreengrassV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list components that meet the component, version, and platform requirements of a deployment
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/greengrass/v2/APIReference/API_ResolveComponentCandidates.html
+   */
+  public toResolveComponentCandidates() {
+    return this.to('ResolveComponentCandidates');
+  }
+
+  /**
    * Grants permission to add tags to a resource
    *
    * Access Level: Tagging
@@ -290,6 +312,7 @@ export class GreengrassV2 extends PolicyStatement {
     "Read": [
       "DescribeComponent",
       "GetComponent",
+      "GetComponentVersionArtifact",
       "GetCoreDevice",
       "GetDeployment"
     ],
@@ -300,7 +323,8 @@ export class GreengrassV2 extends PolicyStatement {
       "ListDeployments",
       "ListEffectiveDeployments",
       "ListInstalledComponents",
-      "ListTagsForResource"
+      "ListTagsForResource",
+      "ResolveComponentCandidates"
     ],
     "Tagging": [
       "TagResource",

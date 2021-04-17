@@ -38,6 +38,7 @@ greengrass:Discover;Read
 greengrass:GetAssociatedRole;Read
 greengrass:GetBulkDeploymentStatus;Read
 greengrass:GetComponent;Read
+greengrass:GetComponentVersionArtifact;Read
 greengrass:GetConnectivityInfo;Read
 greengrass:GetConnectorDefinition;Read
 greengrass:GetConnectorDefinitionVersion;Read
@@ -90,6 +91,7 @@ greengrass:ListSubscriptionDefinitions;List
 greengrass:ListTagsForResource;List
 greengrass:ListTagsForResource;Read
 greengrass:ResetDeployments;Write
+greengrass:ResolveComponentCandidates;List
 greengrass:StartBulkDeployment;Write
 greengrass:StopBulkDeployment;Write
 greengrass:TagResource;Tagging
