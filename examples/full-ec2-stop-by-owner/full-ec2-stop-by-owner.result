@@ -161,6 +161,7 @@
                 "ec2:GetManagedPrefixListEntries",
                 "ec2:GetPasswordData",
                 "ec2:GetReservedInstancesExchangeQuote",
+                "ec2:GetSerialConsoleAccessStatus",
                 "ec2:GetTransitGatewayAttachmentPropagations",
                 "ec2:GetTransitGatewayMulticastDomainAssociations",
                 "ec2:GetTransitGatewayPrefixListReferences",

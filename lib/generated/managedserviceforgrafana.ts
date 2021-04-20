@@ -19,9 +19,31 @@ export class Grafana extends PolicyStatement {
   }
 
   /**
+   * Grants permission to upgrade a workspace with a license
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - aws-marketplace:ViewSubscriptions
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
+   */
+  public toAssociateLicense() {
+    return this.to('AssociateLicense');
+  }
+
+  /**
    * Grants permission to create a workspace
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   * - sso:CreateManagedApplicationInstance
+   * - sso:DescribeRegisteredRegions
+   * - sso:GetSharedSsoConfiguration
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
    */
   public toCreateWorkspace() {
     return this.to('CreateWorkspace');
@@ -31,6 +53,11 @@ export class Grafana extends PolicyStatement {
    * Grants permission to delete a workspace
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - sso:DeleteManagedApplicationInstance
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
    */
   public toDeleteWorkspace() {
     return this.to('DeleteWorkspace');
@@ -40,15 +67,30 @@ export class Grafana extends PolicyStatement {
    * Grants permission to describe a workspace
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
    */
   public toDescribeWorkspace() {
     return this.to('DescribeWorkspace');
   }
 
   /**
+   * Grants permission to remove a license from a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
+   */
+  public toDisassociateLicense() {
+    return this.to('DisassociateLicense');
+  }
+
+  /**
    * Grants permission to list the permissions on a wokspace
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
    */
   public toListPermissions() {
     return this.to('ListPermissions');
@@ -58,6 +100,8 @@ export class Grafana extends PolicyStatement {
    * Grants permission to list workspaces
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
    */
   public toListWorkspaces() {
     return this.to('ListWorkspaces');
@@ -67,6 +111,8 @@ export class Grafana extends PolicyStatement {
    * Grants permission to modify the permissions on a workspace
    *
    * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
    */
   public toUpdatePermissions() {
     return this.to('UpdatePermissions');
@@ -76,6 +122,8 @@ export class Grafana extends PolicyStatement {
    * Grants permission to modify a workspace
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
    */
   public toUpdateWorkspace() {
     return this.to('UpdateWorkspace');
@@ -83,8 +131,10 @@ export class Grafana extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "AssociateLicense",
       "CreateWorkspace",
       "DeleteWorkspace",
+      "DisassociateLicense",
       "UpdateWorkspace"
     ],
     "Read": [
@@ -101,6 +151,8 @@ export class Grafana extends PolicyStatement {
 
   /**
    * Adds a resource of type workspace to the statement
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/security-iam.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

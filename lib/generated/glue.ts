@@ -470,7 +470,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to delete a resource policy
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-DeleteResourcePolicy
    */
@@ -1229,7 +1229,7 @@ export class Glue extends PolicyStatement {
   /**
    * Grants permission to update a resource policy
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-PutResourcePolicy
    */
@@ -1301,6 +1301,17 @@ export class Glue extends PolicyStatement {
    */
   public toResetJobBookmark() {
     return this.to('ResetJobBookmark');
+  }
+
+  /**
+   * Grants permission to resume a workflow run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-ResumeWorkflowRun
+   */
+  public toResumeWorkflowRun() {
+    return this.to('ResumeWorkflowRun');
   }
 
   /**
@@ -1444,6 +1455,17 @@ export class Glue extends PolicyStatement {
    */
   public toStopTrigger() {
     return this.to('StopTrigger');
+  }
+
+  /**
+   * Grants permission to stop a workflow run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-StopWorkflowRun
+   */
+  public toStopWorkflowRun() {
+    return this.to('StopWorkflowRun');
   }
 
   /**
@@ -1685,7 +1707,6 @@ export class Glue extends PolicyStatement {
       "DeleteMLTransform",
       "DeletePartition",
       "DeleteRegistry",
-      "DeleteResourcePolicy",
       "DeleteSchema",
       "DeleteSchemaVersions",
       "DeleteSecurityConfiguration",
@@ -1696,12 +1717,12 @@ export class Glue extends PolicyStatement {
       "DeleteWorkflow",
       "ImportCatalogToGlue",
       "PutDataCatalogEncryptionSettings",
-      "PutResourcePolicy",
       "PutSchemaVersionMetadata",
       "PutWorkflowRunProperties",
       "RegisterSchemaVersion",
       "RemoveSchemaVersionMetadata",
       "ResetJobBookmark",
+      "ResumeWorkflowRun",
       "StartCrawler",
       "StartCrawlerSchedule",
       "StartExportLabelsTaskRun",
@@ -1714,6 +1735,7 @@ export class Glue extends PolicyStatement {
       "StopCrawler",
       "StopCrawlerSchedule",
       "StopTrigger",
+      "StopWorkflowRun",
       "UpdateClassifier",
       "UpdateConnection",
       "UpdateCrawler",
@@ -1787,6 +1809,10 @@ export class Glue extends PolicyStatement {
       "GetWorkflowRunProperties",
       "GetWorkflowRuns",
       "SearchTables"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutResourcePolicy"
     ],
     "List": [
       "GetMLTaskRuns",
@@ -1942,7 +1968,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevendpoint(devEndpointName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:devendpoint/${DevEndpointName}';
+    var arn = 'arn:${Partition}:glue:${Region}:${Account}:devEndpoint/${DevEndpointName}';
     arn = arn.replace('${DevEndpointName}', devEndpointName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

@@ -317,6 +317,17 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
+   * List tags for an AWS Amplify Console resource.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * List webhooks on an App.
    *
    * Access Level: List
@@ -463,7 +474,8 @@ export class Amplify extends PolicyStatement {
       "GetBranch",
       "GetDomainAssociation",
       "GetJob",
-      "GetWebHook"
+      "GetWebHook",
+      "ListTagsForResource"
     ],
     "List": [
       "ListApps",

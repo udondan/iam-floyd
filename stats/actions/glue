@@ -37,7 +37,7 @@ glue:DeleteJob;Write
 glue:DeleteMLTransform;Write
 glue:DeletePartition;Write
 glue:DeleteRegistry;Write
-glue:DeleteResourcePolicy;Write
+glue:DeleteResourcePolicy;Permissions management
 glue:DeleteSchema;Write
 glue:DeleteSchemaVersions;Write
 glue:DeleteSecurityConfiguration;Write
@@ -106,13 +106,14 @@ glue:ListSchemas;List
 glue:ListTriggers;List
 glue:ListWorkflows;List
 glue:PutDataCatalogEncryptionSettings;Write
-glue:PutResourcePolicy;Write
+glue:PutResourcePolicy;Permissions management
 glue:PutSchemaVersionMetadata;Write
 glue:PutWorkflowRunProperties;Write
 glue:QuerySchemaVersionMetadata;List
 glue:RegisterSchemaVersion;Write
 glue:RemoveSchemaVersionMetadata;Write
 glue:ResetJobBookmark;Write
+glue:ResumeWorkflowRun;Write
 glue:SearchTables;Read
 glue:StartCrawler;Write
 glue:StartCrawlerSchedule;Write
@@ -126,6 +127,7 @@ glue:StartWorkflowRun;Write
 glue:StopCrawler;Write
 glue:StopCrawlerSchedule;Write
 glue:StopTrigger;Write
+glue:StopWorkflowRun;Write
 glue:TagResource;Tagging
 glue:UntagResource;Tagging
 glue:UpdateClassifier;Write

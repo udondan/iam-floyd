@@ -1,6 +1,8 @@
+grafana:AssociateLicense;Write
 grafana:CreateWorkspace;Write
 grafana:DeleteWorkspace;Write
 grafana:DescribeWorkspace;Read
+grafana:DisassociateLicense;Write
 grafana:ListPermissions;List
 grafana:ListWorkspaces;List
 grafana:UpdatePermissions;Permissions management

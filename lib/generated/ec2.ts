@@ -3199,6 +3199,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable access to the EC2 serial console of all instances for your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableSerialConsoleAccess.html
+   */
+  public toDisableSerialConsoleAccess() {
+    return this.to('DisableSerialConsoleAccess');
+  }
+
+  /**
    * Grants permission to disable a resource attachment from propagating routes to the specified propagation route table
    *
    * Access Level: Write
@@ -3361,6 +3372,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toEnableFastSnapshotRestores() {
     return this.to('EnableFastSnapshotRestores');
+  }
+
+  /**
+   * Grants permission to enable access to the EC2 serial console of all instances for your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html
+   */
+  public toEnableSerialConsoleAccess() {
+    return this.to('EnableSerialConsoleAccess');
   }
 
   /**
@@ -3636,6 +3658,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetReservedInstancesExchangeQuote() {
     return this.to('GetReservedInstancesExchangeQuote');
+  }
+
+  /**
+   * Grants permission to retrieve the access status of your account to the EC2 serial console of all instances
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSerialConsoleAccessStatus.html
+   */
+  public toGetSerialConsoleAccessStatus() {
+    return this.to('GetSerialConsoleAccessStatus');
   }
 
   /**
@@ -5039,6 +5072,7 @@ export class Ec2 extends PolicyStatement {
       "DetachVpnGateway",
       "DisableEbsEncryptionByDefault",
       "DisableFastSnapshotRestores",
+      "DisableSerialConsoleAccess",
       "DisableTransitGatewayRouteTablePropagation",
       "DisableVgwRoutePropagation",
       "DisableVpcClassicLink",
@@ -5054,6 +5088,7 @@ export class Ec2 extends PolicyStatement {
       "DisassociateVpcCidrBlock",
       "EnableEbsEncryptionByDefault",
       "EnableFastSnapshotRestores",
+      "EnableSerialConsoleAccess",
       "EnableTransitGatewayRouteTablePropagation",
       "EnableVgwRoutePropagation",
       "EnableVolumeIO",
@@ -5322,7 +5357,8 @@ export class Ec2 extends PolicyStatement {
       "GetManagedPrefixListAssociations",
       "GetManagedPrefixListEntries",
       "GetPasswordData",
-      "GetReservedInstancesExchangeQuote"
+      "GetReservedInstancesExchangeQuote",
+      "GetSerialConsoleAccessStatus"
     ]
   };
 
@@ -7086,6 +7122,46 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .toModifyCapacityReservation()
+   * - .toModifyClientVpnEndpoint()
+   * - .toModifyFleet()
+   * - .toModifyFpgaImageAttribute()
+   * - .toModifyHosts()
+   * - .toModifyImageAttribute()
+   * - .toModifyInstanceAttribute()
+   * - .toModifyInstanceCapacityReservationAttributes()
+   * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceEventStartTime()
+   * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstancePlacement()
+   * - .toModifyLaunchTemplate()
+   * - .toModifyManagedPrefixList()
+   * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyReservedInstances()
+   * - .toModifySnapshotAttribute()
+   * - .toModifySpotFleetRequest()
+   * - .toModifySubnetAttribute()
+   * - .toModifyTrafficMirrorFilterNetworkServices()
+   * - .toModifyTrafficMirrorFilterRule()
+   * - .toModifyTrafficMirrorSession()
+   * - .toModifyTransitGateway()
+   * - .toModifyTransitGatewayPrefixListReference()
+   * - .toModifyTransitGatewayVpcAttachment()
+   * - .toModifyVolume()
+   * - .toModifyVolumeAttribute()
+   * - .toModifyVpcAttribute()
+   * - .toModifyVpcEndpoint()
+   * - .toModifyVpcEndpointConnectionNotification()
+   * - .toModifyVpcEndpointServiceConfiguration()
+   * - .toModifyVpcEndpointServicePermissions()
+   * - .toModifyVpcPeeringConnectionOptions()
+   * - .toModifyVpcTenancy()
+   * - .toModifyVpnConnection()
+   * - .toModifyVpnConnectionOptions()
+   * - .toModifyVpnTunnelCertificate()
+   * - .toModifyVpnTunnelOptions()
+   *
    * @param attributeName The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -7242,7 +7318,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateReservedInstancesListing()
    * - .toCreateRoute()
-   * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toCreateSubnet()
    * - .toCreateTags()
@@ -7985,16 +8060,30 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by the ARN of the instance profile being attached
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toAssociateIamInstanceProfile()
+   * - .toReplaceIamInstanceProfileAssociation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifNewInstanceProfile(value: string | string[], operator?: Operator | string) {
+    return this.if(`NewInstanceProfile`, value, operator || 'ArnLike');
+  }
+
+  /**
    * Filters access by the ARN of the Outpost
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCopySnapshot()
-   * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toDeleteSnapshot()
-   * - .toModifySnapshotAttribute()
    *
    * Applies to resource types:
    * - snapshot
@@ -9032,7 +9121,6 @@ export class Ec2 extends PolicyStatement {
    * - .toAcceptVpcEndpointConnections()
    * - .toAcceptVpcPeeringConnection()
    * - .toAllocateAddress()
-   * - .toAllocateHosts()
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()
    * - .toAssignIpv6Addresses()
    * - .toAssignPrivateIpAddresses()
@@ -9060,32 +9148,23 @@ export class Ec2 extends PolicyStatement {
    * - .toCancelSpotFleetRequests()
    * - .toCancelSpotInstanceRequests()
    * - .toConfirmProductInstance()
-   * - .toCreateCapacityReservation()
    * - .toCreateCarrierGateway()
    * - .toCreateClientVpnEndpoint()
    * - .toCreateClientVpnRoute()
-   * - .toCreateCustomerGateway()
-   * - .toCreateDhcpOptions()
    * - .toCreateEgressOnlyInternetGateway()
    * - .toCreateFleet()
    * - .toCreateFlowLogs()
-   * - .toCreateFpgaImage()
    * - .toCreateImage()
    * - .toCreateInstanceExportTask()
-   * - .toCreateInternetGateway()
-   * - .toCreateKeyPair()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateLocalGatewayRoute()
    * - .toCreateLocalGatewayRouteTableVpcAssociation()
-   * - .toCreateManagedPrefixList()
    * - .toCreateNatGateway()
    * - .toCreateNetworkAcl()
    * - .toCreateNetworkAclEntry()
-   * - .toCreateNetworkInsightsPath()
    * - .toCreateNetworkInterface()
    * - .toCreateNetworkInterfacePermission()
-   * - .toCreatePlacementGroup()
    * - .toCreateReservedInstancesListing()
    * - .toCreateRoute()
    * - .toCreateRouteTable()
@@ -9094,13 +9173,9 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateSnapshots()
    * - .toCreateSubnet()
    * - .toCreateTags()
-   * - .toCreateTrafficMirrorFilter()
    * - .toCreateTrafficMirrorFilterRule()
    * - .toCreateTrafficMirrorSession()
    * - .toCreateTrafficMirrorTarget()
-   * - .toCreateTransitGateway()
-   * - .toCreateTransitGatewayConnect()
-   * - .toCreateTransitGatewayConnectPeer()
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
    * - .toCreateTransitGatewayPrefixListReference()
@@ -9111,11 +9186,9 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVpc()
    * - .toCreateVpcEndpoint()
    * - .toCreateVpcEndpointConnectionNotification()
-   * - .toCreateVpcEndpointServiceConfiguration()
    * - .toCreateVpcPeeringConnection()
    * - .toCreateVpnConnection()
    * - .toCreateVpnConnectionRoute()
-   * - .toCreateVpnGateway()
    * - .toDeleteCarrierGateway()
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
@@ -9215,8 +9288,6 @@ export class Ec2 extends PolicyStatement {
    * - .toImportClientVpnClientCertificateRevocationList()
    * - .toImportImage()
    * - .toImportInstance()
-   * - .toImportKeyPair()
-   * - .toImportSnapshot()
    * - .toModifyCapacityReservation()
    * - .toModifyClientVpnEndpoint()
    * - .toModifyFleet()
@@ -9613,10 +9684,8 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCopySnapshot()
-   * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toDeleteSnapshot()
-   * - .toModifySnapshotAttribute()
    *
    * Applies to resource types:
    * - snapshot
@@ -9988,7 +10057,6 @@ export class Ec2 extends PolicyStatement {
    * - .toRevokeSecurityGroupIngress()
    * - .toRunInstances()
    * - .toRunScheduledInstances()
-   * - .toStartNetworkInsightsAnalysis()
    * - .toUnassignIpv6Addresses()
    * - .toUnassignPrivateIpAddresses()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()

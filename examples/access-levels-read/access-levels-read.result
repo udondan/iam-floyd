@@ -21,7 +21,8 @@
         "ec2:GetManagedPrefixListAssociations",
         "ec2:GetManagedPrefixListEntries",
         "ec2:GetPasswordData",
-        "ec2:GetReservedInstancesExchangeQuote"
+        "ec2:GetReservedInstancesExchangeQuote",
+        "ec2:GetSerialConsoleAccessStatus"
     ],
     "Resource": "*",
     "Effect": "Allow"

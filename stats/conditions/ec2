@@ -29,6 +29,7 @@ ec2:LaunchTemplate
 ec2:MetadataHttpEndpoint
 ec2:MetadataHttpPutResponseHopLimit
 ec2:MetadataHttpTokens
+ec2:NewInstanceProfile
 ec2:OutpostArn
 ec2:Owner
 ec2:ParentSnapshot

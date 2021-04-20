@@ -24,6 +24,7 @@ amplify:ListBackendEnvironments;List
 amplify:ListBranches;List
 amplify:ListDomainAssociations;List
 amplify:ListJobs;List
+amplify:ListTagsForResource;Read
 amplify:ListWebHooks;List
 amplify:StartDeployment;Write
 amplify:StartJob;Write
