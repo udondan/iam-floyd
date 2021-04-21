@@ -35,6 +35,7 @@
         "sqs:GetQueueAttributes",
         "sqs:GetQueueUrl",
         "sqs:ListQueues",
+        "synthetics:DescribeCanariesLastRun",
         "tag:GetResources"
       ],
       "Effect": "Allow",
