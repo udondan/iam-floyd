@@ -78,6 +78,7 @@ redshift:ListDatabases;List
 redshift:ListSavedQueries;List
 redshift:ListSchemas;List
 redshift:ListTables;List
+redshift:ModifyAquaConfiguration;Write
 redshift:ModifyCluster;Write
 redshift:ModifyClusterDbRevision;Write
 redshift:ModifyClusterIamRoles;Permissions management

@@ -22,6 +22,8 @@ cloudhsm:ListHsms;List
 cloudhsm:ListLunaClients;List
 cloudhsm:ListTags;Read
 cloudhsm:ListTagsForResource;Read
+cloudhsm:ModifyBackupAttributes;Write
+cloudhsm:ModifyCluster;Write
 cloudhsm:ModifyHapg;Write
 cloudhsm:ModifyHsm;Write
 cloudhsm:ModifyLunaClient;Write

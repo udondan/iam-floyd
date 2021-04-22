@@ -151,6 +151,17 @@ export class Mgh extends PolicyStatement {
   }
 
   /**
+   * List Application statuses
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListApplicationStates.html
+   */
+  public toListApplicationStates() {
+    return this.to('ListApplicationStates');
+  }
+
+  /**
    * List associated created artifacts for a MigrationTask
    *
    * Access Level: List
@@ -248,6 +259,7 @@ export class Mgh extends PolicyStatement {
     ],
     "List": [
       "DescribeHomeRegionControls",
+      "ListApplicationStates",
       "ListCreatedArtifacts",
       "ListDiscoveredResources",
       "ListMigrationTasks",

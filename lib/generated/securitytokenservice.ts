@@ -83,6 +83,7 @@ export class Sts extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifTransitiveTagKeys()
    * - .ifSourceIdentity()
+   * - .ifRoleSessionName()
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html
    */
@@ -111,6 +112,7 @@ export class Sts extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifTransitiveTagKeys()
    * - .ifSourceIdentity()
+   * - .ifRoleSessionName()
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html
    */
@@ -928,6 +930,8 @@ export class Sts extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssumeRole()
+   * - .toAssumeRoleWithSAML()
+   * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -369,6 +369,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe which data sources are enabled for member accounts detectors
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetMemberDetectors.html
+   */
+  public toGetMemberDetectors() {
+    return this.to('GetMemberDetectors');
+  }
+
+  /**
    * Grants permission to retrieve the member accounts associated with a master account
    *
    * Access Level: Read
@@ -388,6 +399,17 @@ export class Guardduty extends PolicyStatement {
    */
   public toGetThreatIntelSet() {
     return this.to('GetThreatIntelSet');
+  }
+
+  /**
+   * Grants permission to list Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetUsageStatistics.html
+   */
+  public toGetUsageStatistics() {
+    return this.to('GetUsageStatistics');
   }
 
   /**
@@ -618,6 +640,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update which data sources are enabled for member accounts detectors
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateMemberDetectors.html
+   */
+  public toUpdateMemberDetectors() {
+    return this.to('UpdateMemberDetectors');
+  }
+
+  /**
    * Grants permission to update the delegated administrator configuration associated with a GuardDuty detector
    *
    * Access Level: Write
@@ -687,6 +720,7 @@ export class Guardduty extends PolicyStatement {
       "UpdateFilter",
       "UpdateFindingsFeedback",
       "UpdateIPSet",
+      "UpdateMemberDetectors",
       "UpdateOrganizationConfiguration",
       "UpdatePublishingDestination",
       "UpdateThreatIntelSet"
@@ -701,8 +735,10 @@ export class Guardduty extends PolicyStatement {
       "GetIPSet",
       "GetInvitationsCount",
       "GetMasterAccount",
+      "GetMemberDetectors",
       "GetMembers",
-      "GetThreatIntelSet"
+      "GetThreatIntelSet",
+      "GetUsageStatistics"
     ],
     "List": [
       "ListDetectors",

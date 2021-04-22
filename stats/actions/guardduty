@@ -28,8 +28,10 @@ guardduty:GetFindingsStatistics;Read
 guardduty:GetIPSet;Read
 guardduty:GetInvitationsCount;Read
 guardduty:GetMasterAccount;Read
+guardduty:GetMemberDetectors;Read
 guardduty:GetMembers;Read
 guardduty:GetThreatIntelSet;Read
+guardduty:GetUsageStatistics;Read
 guardduty:InviteMembers;Write
 guardduty:ListDetectors;List
 guardduty:ListFilters;List
@@ -50,6 +52,7 @@ guardduty:UpdateDetector;Write
 guardduty:UpdateFilter;Write
 guardduty:UpdateFindingsFeedback;Write
 guardduty:UpdateIPSet;Write
+guardduty:UpdateMemberDetectors;Write
 guardduty:UpdateOrganizationConfiguration;Write
 guardduty:UpdatePublishingDestination;Write
 guardduty:UpdateThreatIntelSet;Write

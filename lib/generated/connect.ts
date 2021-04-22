@@ -742,6 +742,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the analysis segments for a real-time analysis session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/contact-lens/latest/APIReference/API_ListRealtimeContactAnalysisSegments.html
+   */
+  public toListRealtimeContactAnalysisSegments() {
+    return this.to('ListRealtimeContactAnalysisSegments');
+  }
+
+  /**
    * Grants permissions to list queue resources in a routing profile in an Amazon Connect instance
    *
    * Access Level: List
@@ -1351,6 +1362,7 @@ export class Connect extends PolicyStatement {
       "GetCurrentMetricData",
       "GetFederationToken",
       "GetMetricData",
+      "ListRealtimeContactAnalysisSegments",
       "ListTagsForResource"
     ],
     "List": [

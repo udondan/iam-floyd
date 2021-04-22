@@ -52,6 +52,7 @@ connect:ListPrompts;List
 connect:ListQueueQuickConnects;List
 connect:ListQueues;List
 connect:ListQuickConnects;List
+connect:ListRealtimeContactAnalysisSegments;Read
 connect:ListRoutingProfileQueues;List
 connect:ListRoutingProfiles;List
 connect:ListSecurityKeys;List

@@ -950,6 +950,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the AQUA configuration of a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyAquaConfiguration.html
+   */
+  public toModifyAquaConfiguration() {
+    return this.to('ModifyAquaConfiguration');
+  }
+
+  /**
    * Grants permission to modify the settings of a cluster
    *
    * Access Level: Write
@@ -1273,6 +1284,7 @@ export class Redshift extends PolicyStatement {
       "EnableSnapshotCopy",
       "ExecuteQuery",
       "GetClusterCredentials",
+      "ModifyAquaConfiguration",
       "ModifyCluster",
       "ModifyClusterDbRevision",
       "ModifyClusterMaintenance",

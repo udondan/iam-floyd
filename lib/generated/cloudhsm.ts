@@ -291,6 +291,28 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
+   * Modifies attributes for AWS CloudHSM backup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_ModifyBackupAttributes.html
+   */
+  public toModifyBackupAttributes() {
+    return this.to('ModifyBackupAttributes');
+  }
+
+  /**
+   * Modifies AWS CloudHSM cluster.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_ModifyCluster.html
+   */
+  public toModifyCluster() {
+    return this.to('ModifyCluster');
+  }
+
+  /**
    * Modifies an existing high-availability partition group
    *
    * Access Level: Write
@@ -393,6 +415,8 @@ export class Cloudhsm extends PolicyStatement {
       "DeleteHsm",
       "DeleteLunaClient",
       "InitializeCluster",
+      "ModifyBackupAttributes",
+      "ModifyCluster",
       "ModifyHapg",
       "ModifyHsm",
       "ModifyLunaClient",

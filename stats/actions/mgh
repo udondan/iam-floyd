@@ -10,6 +10,7 @@ mgh:DisassociateCreatedArtifact;Write
 mgh:DisassociateDiscoveredResource;Write
 mgh:GetHomeRegion;Read
 mgh:ImportMigrationTask;Write
+mgh:ListApplicationStates;List
 mgh:ListCreatedArtifacts;List
 mgh:ListDiscoveredResources;List
 mgh:ListMigrationTasks;List
