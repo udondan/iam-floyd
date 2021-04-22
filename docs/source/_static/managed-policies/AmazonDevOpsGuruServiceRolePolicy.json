@@ -4,6 +4,7 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+			    "autoscaling:DescribeAutoScalingGroups",
 				"cloudtrail:LookupEvents",
 				"cloudwatch:GetMetricData",
 				"cloudwatch:ListMetrics",
@@ -42,6 +43,14 @@
 				"ssm:CreateOpsItem"
 			],
 			"Resource": "*"
+		},
+		{
+			"Sid": "AllowAddTagsToOpsItem",
+			"Effect": "Allow",
+			"Action": [
+				"ssm:AddTagsToResource"
+			],
+			"Resource": "arn:aws:ssm:*:*:opsitem/*"
 		},
 		{
 			"Sid": "AllowAccessOpsItem",
