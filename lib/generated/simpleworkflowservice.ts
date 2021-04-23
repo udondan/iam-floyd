@@ -602,6 +602,47 @@ export class Swf extends PolicyStatement {
   }
 
   /**
+   * Undeprecates a previously deprecated activity type.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifActivityTypeName()
+   * - .ifActivityTypeVersion()
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_UndeprecateActivityType.html
+   */
+  public toUndeprecateActivityType() {
+    return this.to('UndeprecateActivityType');
+  }
+
+  /**
+   * Undeprecates a previously deprecated domain.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_UndeprecateDomain.html
+   */
+  public toUndeprecateDomain() {
+    return this.to('UndeprecateDomain');
+  }
+
+  /**
+   * Undeprecates a previously deprecated workflow type.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifWorkflowTypeName()
+   * - .ifWorkflowTypeVersion()
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_UndeprecateWorkflowType.html
+   */
+  public toUndeprecateWorkflowType() {
+    return this.to('UndeprecateWorkflowType');
+  }
+
+  /**
    * This action removes a tag from an AWS SWF resource.
    *
    * Access Level: Tagging
@@ -645,7 +686,10 @@ export class Swf extends PolicyStatement {
       "StartChildWorkflowExecution",
       "StartTimer",
       "StartWorkflowExecution",
-      "TerminateWorkflowExecution"
+      "TerminateWorkflowExecution",
+      "UndeprecateActivityType",
+      "UndeprecateDomain",
+      "UndeprecateWorkflowType"
     ],
     "Read": [
       "CountClosedWorkflowExecutions",
@@ -685,7 +729,7 @@ export class Swf extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomain(domainName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:swf::${Account}:domain/${DomainName}';
+    var arn = 'arn:${Partition}:swf::${Account}:/domain/${DomainName}';
     arn = arn.replace('${DomainName}', domainName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -701,6 +745,7 @@ export class Swf extends PolicyStatement {
    * - .toDeprecateActivityType()
    * - .toDescribeActivityType()
    * - .toRespondActivityTaskCompleted()
+   * - .toUndeprecateActivityType()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -718,6 +763,7 @@ export class Swf extends PolicyStatement {
    * - .toDeprecateActivityType()
    * - .toDescribeActivityType()
    * - .toRespondActivityTaskCompleted()
+   * - .toUndeprecateActivityType()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -938,6 +984,7 @@ export class Swf extends PolicyStatement {
    * - .toDescribeWorkflowType()
    * - .toRespondActivityTaskCompleted()
    * - .toStartWorkflowExecution()
+   * - .toUndeprecateWorkflowType()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -956,6 +1003,7 @@ export class Swf extends PolicyStatement {
    * - .toDescribeWorkflowType()
    * - .toRespondActivityTaskCompleted()
    * - .toStartWorkflowExecution()
+   * - .toUndeprecateWorkflowType()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

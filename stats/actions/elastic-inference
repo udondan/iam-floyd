@@ -1,1 +1,7 @@
 elastic-inference:Connect;Write
+elastic-inference:DescribeAcceleratorOfferings;List
+elastic-inference:DescribeAcceleratorTypes;List
+elastic-inference:DescribeAccelerators;List
+elastic-inference:ListTagsForResource;Read
+elastic-inference:TagResource;Tagging
+elastic-inference:UntagResource;Tagging

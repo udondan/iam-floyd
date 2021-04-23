@@ -1,15 +1,19 @@
+appsync:CreateApiCache;Write
 appsync:CreateApiKey;Write
 appsync:CreateDataSource;Write
 appsync:CreateFunction;Write
 appsync:CreateGraphqlApi;Tagging
 appsync:CreateResolver;Write
 appsync:CreateType;Write
+appsync:DeleteApiCache;Write
 appsync:DeleteApiKey;Write
 appsync:DeleteDataSource;Write
 appsync:DeleteFunction;Write
 appsync:DeleteGraphqlApi;Write
 appsync:DeleteResolver;Write
 appsync:DeleteType;Write
+appsync:FlushApiCache;Write
+appsync:GetApiCache;Read
 appsync:GetDataSource;Read
 appsync:GetFunction;Read
 appsync:GetGraphqlApi;Read
@@ -30,6 +34,7 @@ appsync:SetWebACL;Write
 appsync:StartSchemaCreation;Write
 appsync:TagResource;Tagging
 appsync:UntagResource;Tagging
+appsync:UpdateApiCache;Write
 appsync:UpdateApiKey;Write
 appsync:UpdateDataSource;Write
 appsync:UpdateFunction;Write
