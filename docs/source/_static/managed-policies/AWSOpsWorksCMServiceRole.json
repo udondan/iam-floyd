@@ -153,7 +153,7 @@
         },
         {
             "Effect": "Allow",
-            "Resource": "arn:aws:secretsmanager:*:*:aws-opsworks-cm-secrets-*",
+            "Resource": "arn:aws:secretsmanager:*:*:opsworks-cm!aws-opsworks-cm-secrets-*",
             "Action": [
                 "secretsmanager:CreateSecret",
                 "secretsmanager:GetSecretValue",

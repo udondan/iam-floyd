@@ -31,7 +31,7 @@
         },
         {
             "Action": "secretsmanager:GetSecretValue",
-            "Resource": "arn:aws:secretsmanager:*:*:aws-opsworks-cm-secrets-*",
+            "Resource": "arn:aws:secretsmanager:*:*:opsworks-cm!aws-opsworks-cm-secrets-*",
             "Effect": "Allow"
         }
     ]

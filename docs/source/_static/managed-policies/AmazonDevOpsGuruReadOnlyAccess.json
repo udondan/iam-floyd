@@ -11,13 +11,15 @@
 				"devops-guru:DescribeInsight",
 				"devops-guru:DescribeResourceCollectionHealth",
 				"devops-guru:DescribeServiceIntegration",
+				"devops-guru:GetCostEstimation",
 				"devops-guru:GetResourceCollection",
 				"devops-guru:ListAnomaliesForInsight",
 				"devops-guru:ListEvents",
 				"devops-guru:ListInsights",
 				"devops-guru:ListNotificationChannels",
 				"devops-guru:ListRecommendations",
-				"devops-guru:SearchInsights"
+				"devops-guru:SearchInsights",
+				"devops-guru:StartCostEstimation"
 			],
 			"Resource": "*"
 		},
