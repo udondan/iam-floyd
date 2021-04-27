@@ -233,6 +233,7 @@ snowball
 sns
 sqs
 ssm
+ssm-incidents
 ssmmessages
 sso
 sso-directory

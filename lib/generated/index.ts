@@ -255,6 +255,7 @@ export { SsoDirectory } from "./ssodirectory";
 export { States } from "./stepfunctions";
 export { Support } from "./support";
 export { Ssm } from "./systemsmanager";
+export { SsmIncidents } from "./systemsmanagerincidentmanager";
 export { ResourceExplorer } from "./tageditor";
 export { Tiros } from "./tiros";
 export { Transfer } from "./transferforsftp";

@@ -11,5 +11,6 @@ mediapackage-vod:ListAssets;List
 mediapackage-vod:ListPackagingConfigurations;List
 mediapackage-vod:ListPackagingGroups;List
 mediapackage-vod:ListTagsForResource;Read
-mediapackage-vod:TagResource;Write
-mediapackage-vod:UntagResource;Write
+mediapackage-vod:TagResource;Tagging
+mediapackage-vod:UntagResource;Tagging
+mediapackage-vod:UpdatePackagingGroup;Write

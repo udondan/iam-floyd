@@ -1,3 +1,4 @@
+securityhub:AcceptAdministratorInvitation;Write
 securityhub:AcceptInvitation;Write
 securityhub:BatchDisableStandards;Write
 securityhub:BatchEnableStandards;Write
@@ -20,12 +21,14 @@ securityhub:DescribeStandardsControls;Read
 securityhub:DisableImportFindingsForProduct;Write
 securityhub:DisableOrganizationAdminAccount;Write
 securityhub:DisableSecurityHub;Write
+securityhub:DisassociateFromAdministratorAccount;Write
 securityhub:DisassociateFromMasterAccount;Write
 securityhub:DisassociateMembers;Write
 securityhub:EnableImportFindingsForProduct;Write
 securityhub:EnableOrganizationAdminAccount;Write
 securityhub:EnableSecurityHub;Write
 securityhub:GetAdhocInsightResults;Read
+securityhub:GetAdministratorAccount;Read
 securityhub:GetEnabledStandards;List
 securityhub:GetFindings;Read
 securityhub:GetFreeTrialEndDate;Read

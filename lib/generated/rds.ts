@@ -208,6 +208,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new custom availability zone
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateCustomAvailabilityZone.html
+   */
+  public toCreateCustomAvailabilityZone() {
+    return this.to('CreateCustomAvailabilityZone');
+  }
+
+  /**
    * Grants permission to create a new Amazon Aurora DB cluster
    *
    * Access Level: Write
@@ -497,6 +508,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a custom availability zone
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteCustomAvailabilityZone.html
+   */
+  public toDeleteCustomAvailabilityZone() {
+    return this.to('DeleteCustomAvailabilityZone');
+  }
+
+  /**
    * Grants permission to delete a previously provisioned DB cluster
    *
    * Access Level: Write
@@ -651,6 +673,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an installation media
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteInstallationMedia.html
+   */
+  public toDeleteInstallationMedia() {
+    return this.to('DeleteInstallationMedia');
+  }
+
+  /**
    * Grants permission to delete an existing option group
    *
    * Access Level: Write
@@ -692,6 +725,17 @@ export class Rds extends PolicyStatement {
    */
   public toDescribeCertificates() {
     return this.to('DescribeCertificates');
+  }
+
+  /**
+   * Grants permission to return information about provisioned custom availability zones
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeCustomAvailabilityZones.html
+   */
+  public toDescribeCustomAvailabilityZones() {
+    return this.to('DescribeCustomAvailabilityZones');
   }
 
   /**
@@ -1003,6 +1047,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about available installation media
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeInstallationMedia.html
+   */
+  public toDescribeInstallationMedia() {
+    return this.to('DescribeInstallationMedia');
+  }
+
+  /**
    * Grants permission to describe all available options
    *
    * Access Level: List
@@ -1124,6 +1179,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to import an installation media for a DB engine
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ImportInstallationMedia.html
+   */
+  public toImportInstallationMedia() {
+    return this.to('ImportInstallationMedia');
+  }
+
+  /**
    * Grants permission to list all tags on an Amazon RDS resource
    *
    * Access Level: Read
@@ -1132,6 +1198,17 @@ export class Rds extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to modify the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificate for Amazon RDS for new DB instances
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyCertificates.html
+   */
+  public toModifyCertificates() {
+    return this.to('ModifyCertificates');
   }
 
   /**
@@ -1637,6 +1714,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start replication of automated backups to a different AWS Region
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartDBInstanceAutomatedBackupsReplication.html
+   */
+  public toStartDBInstanceAutomatedBackupsReplication() {
+    return this.to('StartDBInstanceAutomatedBackupsReplication');
+  }
+
+  /**
    * Grants permission to start a new Export task for a DB snapshot
    *
    * Access Level: Write
@@ -1683,6 +1771,17 @@ export class Rds extends PolicyStatement {
     return this.to('StopDBInstance');
   }
 
+  /**
+   * Grants permission to stop automated backup replication for a DB instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopDBInstanceAutomatedBackupsReplication.html
+   */
+  public toStopDBInstanceAutomatedBackupsReplication() {
+    return this.to('StopDBInstanceAutomatedBackupsReplication');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AddRoleToDBCluster",
@@ -1696,6 +1795,7 @@ export class Rds extends PolicyStatement {
       "CopyDBParameterGroup",
       "CopyDBSnapshot",
       "CopyOptionGroup",
+      "CreateCustomAvailabilityZone",
       "CreateDBCluster",
       "CreateDBClusterEndpoint",
       "CreateDBClusterParameterGroup",
@@ -1712,6 +1812,7 @@ export class Rds extends PolicyStatement {
       "CreateGlobalCluster",
       "CreateOptionGroup",
       "CrossRegionCommunication",
+      "DeleteCustomAvailabilityZone",
       "DeleteDBCluster",
       "DeleteDBClusterEndpoint",
       "DeleteDBClusterParameterGroup",
@@ -1726,10 +1827,13 @@ export class Rds extends PolicyStatement {
       "DeleteDBSubnetGroup",
       "DeleteEventSubscription",
       "DeleteGlobalCluster",
+      "DeleteInstallationMedia",
       "DeleteOptionGroup",
       "DeregisterDBProxyTargets",
       "FailoverDBCluster",
       "FailoverGlobalCluster",
+      "ImportInstallationMedia",
+      "ModifyCertificates",
       "ModifyCurrentDBClusterCapacity",
       "ModifyDBCluster",
       "ModifyDBClusterEndpoint",
@@ -1767,10 +1871,12 @@ export class Rds extends PolicyStatement {
       "StartActivityStream",
       "StartDBCluster",
       "StartDBInstance",
+      "StartDBInstanceAutomatedBackupsReplication",
       "StartExportTask",
       "StopActivityStream",
       "StopDBCluster",
-      "StopDBInstance"
+      "StopDBInstance",
+      "StopDBInstanceAutomatedBackupsReplication"
     ],
     "Tagging": [
       "AddTagsToResource",
@@ -1782,6 +1888,7 @@ export class Rds extends PolicyStatement {
     "List": [
       "DescribeAccountAttributes",
       "DescribeCertificates",
+      "DescribeCustomAvailabilityZones",
       "DescribeDBClusterBacktracks",
       "DescribeDBClusterEndpoints",
       "DescribeDBClusterParameterGroups",
@@ -1810,6 +1917,7 @@ export class Rds extends PolicyStatement {
       "DescribeEvents",
       "DescribeExportTasks",
       "DescribeGlobalClusters",
+      "DescribeInstallationMedia",
       "DescribeOptionGroupOptions",
       "DescribeOptionGroups",
       "DescribeOrderableDBInstanceOptions",

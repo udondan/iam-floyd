@@ -37,11 +37,13 @@ mobiletargeting:GetApnsSandboxChannel;Read
 mobiletargeting:GetApnsVoipChannel;Read
 mobiletargeting:GetApnsVoipSandboxChannel;Read
 mobiletargeting:GetApp;Read
+mobiletargeting:GetApplicationDateRangeKpi;Read
 mobiletargeting:GetApplicationSettings;List
 mobiletargeting:GetApps;List
 mobiletargeting:GetBaiduChannel;Read
 mobiletargeting:GetCampaign;Read
 mobiletargeting:GetCampaignActivities;List
+mobiletargeting:GetCampaignDateRangeKpi;Read
 mobiletargeting:GetCampaignVersion;Read
 mobiletargeting:GetCampaignVersions;List
 mobiletargeting:GetCampaigns;List
@@ -56,6 +58,9 @@ mobiletargeting:GetGcmChannel;Read
 mobiletargeting:GetImportJob;Read
 mobiletargeting:GetImportJobs;List
 mobiletargeting:GetJourney;Read
+mobiletargeting:GetJourneyDateRangeKpi;Read
+mobiletargeting:GetJourneyExecutionActivityMetrics;Read
+mobiletargeting:GetJourneyExecutionMetrics;Read
 mobiletargeting:GetPushTemplate;Read
 mobiletargeting:GetRecommenderConfiguration;Read
 mobiletargeting:GetRecommenderConfigurations;List

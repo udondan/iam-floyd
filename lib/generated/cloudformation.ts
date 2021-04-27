@@ -551,6 +551,17 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to record the handler progress
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RecordHandlerProgress.html
+   */
+  public toRecordHandlerProgress() {
+    return this.to('RecordHandlerProgress');
+  }
+
+  /**
    * Grants permission to register a new CloudFormation type
    *
    * Access Level: Write
@@ -710,6 +721,7 @@ export class Cloudformation extends PolicyStatement {
       "DeleteStackSet",
       "DeregisterType",
       "ExecuteChangeSet",
+      "RecordHandlerProgress",
       "RegisterType",
       "SetTypeDefaultVersion",
       "SignalResource",

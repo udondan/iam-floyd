@@ -1,4 +1,7 @@
+route53domains:AcceptDomainTransferFromAnotherAwsAccount;Write
+route53domains:CancelDomainTransferToAnotherAwsAccount;Write
 route53domains:CheckDomainAvailability;Read
+route53domains:CheckDomainTransferability;Read
 route53domains:DeleteTagsForDomain;Tagging
 route53domains:DisableDomainAutoRenew;Write
 route53domains:DisableDomainTransferLock;Write
@@ -12,10 +15,12 @@ route53domains:ListDomains;List
 route53domains:ListOperations;List
 route53domains:ListTagsForDomain;List
 route53domains:RegisterDomain;Write
+route53domains:RejectDomainTransferFromAnotherAwsAccount;Write
 route53domains:RenewDomain;Write
 route53domains:ResendContactReachabilityEmail;Write
 route53domains:RetrieveDomainAuthCode;Write
 route53domains:TransferDomain;Write
+route53domains:TransferDomainToAnotherAwsAccount;Write
 route53domains:UpdateDomainContact;Write
 route53domains:UpdateDomainContactPrivacy;Write
 route53domains:UpdateDomainNameservers;Write

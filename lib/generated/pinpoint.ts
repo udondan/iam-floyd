@@ -488,6 +488,17 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
+   * Retrieves (queries) pre-aggregated data for a standard metric that applies to an application.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-kpis-daterange-kpi-name.html#GetApplicationDateRangeKpi
+   */
+  public toGetApplicationDateRangeKpi() {
+    return this.to('GetApplicationDateRangeKpi');
+  }
+
+  /**
    * Retrieve the default settings for an app.
    *
    * Access Level: List
@@ -540,6 +551,17 @@ export class Mobiletargeting extends PolicyStatement {
    */
   public toGetCampaignActivities() {
     return this.to('GetCampaignActivities');
+  }
+
+  /**
+   * Retrieves (queries) pre-aggregated data for a standard metric that applies to a campaign.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id-kpis-daterange-kpi-name.html#GetCampaignDateRangeKpi
+   */
+  public toGetCampaignDateRangeKpi() {
+    return this.to('GetCampaignDateRangeKpi');
   }
 
   /**
@@ -694,6 +716,39 @@ export class Mobiletargeting extends PolicyStatement {
    */
   public toGetJourney() {
     return this.to('GetJourney');
+  }
+
+  /**
+   * Retrieves (queries) pre-aggregated data for a standard engagement metric that applies to a journey.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-kpis-daterange-kpi-name.html#GetJourneyDateRangeKpi
+   */
+  public toGetJourneyDateRangeKpi() {
+    return this.to('GetJourneyDateRangeKpi');
+  }
+
+  /**
+   * Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey activity.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-activities-journey-activity-id-execution-metrics.html#GetJourneyExecutionActivityMetrics
+   */
+  public toGetJourneyExecutionActivityMetrics() {
+    return this.to('GetJourneyExecutionActivityMetrics');
+  }
+
+  /**
+   * Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-execution-metrics.html#GetJourneyExecutionMetrics
+   */
+  public toGetJourneyExecutionMetrics() {
+    return this.to('GetJourneyExecutionMetrics');
   }
 
   /**
@@ -1346,8 +1401,10 @@ export class Mobiletargeting extends PolicyStatement {
       "GetApnsVoipChannel",
       "GetApnsVoipSandboxChannel",
       "GetApp",
+      "GetApplicationDateRangeKpi",
       "GetBaiduChannel",
       "GetCampaign",
+      "GetCampaignDateRangeKpi",
       "GetCampaignVersion",
       "GetEmailChannel",
       "GetEmailTemplate",
@@ -1357,6 +1414,9 @@ export class Mobiletargeting extends PolicyStatement {
       "GetGcmChannel",
       "GetImportJob",
       "GetJourney",
+      "GetJourneyDateRangeKpi",
+      "GetJourneyExecutionActivityMetrics",
+      "GetJourneyExecutionMetrics",
       "GetPushTemplate",
       "GetRecommenderConfiguration",
       "GetSegment",

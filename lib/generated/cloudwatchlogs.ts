@@ -136,6 +136,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Deletes a saved CloudWatch Logs Insights query definition
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteQueryDefinition.html
+   */
+  public toDeleteQueryDefinition() {
+    return this.to('DeleteQueryDefinition');
+  }
+
+  /**
    * Deletes a resource policy from this account
    *
    * Access Level: Write
@@ -232,6 +243,17 @@ export class Logs extends PolicyStatement {
    */
   public toDescribeQueries() {
     return this.to('DescribeQueries');
+  }
+
+  /**
+   * Returns a paginated list of your saved CloudWatch Logs Insights query definitions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html
+   */
+  public toDescribeQueryDefinitions() {
+    return this.to('DescribeQueryDefinitions');
   }
 
   /**
@@ -399,6 +421,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Creates or updates a metric filter and associates it with the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutQueryDefinition.html
+   */
+  public toPutQueryDefinition() {
+    return this.to('PutQueryDefinition');
+  }
+
+  /**
    * Creates or updates a resource policy allowing other AWS services to put log events to this account
    *
    * Access Level: Write
@@ -511,6 +544,7 @@ export class Logs extends PolicyStatement {
       "DeleteLogGroup",
       "DeleteLogStream",
       "DeleteMetricFilter",
+      "DeleteQueryDefinition",
       "DeleteResourcePolicy",
       "DeleteRetentionPolicy",
       "DeleteSubscriptionFilter",
@@ -519,6 +553,7 @@ export class Logs extends PolicyStatement {
       "PutDestinationPolicy",
       "PutLogEvents",
       "PutMetricFilter",
+      "PutQueryDefinition",
       "PutResourcePolicy",
       "PutRetentionPolicy",
       "PutSubscriptionFilter",
@@ -533,6 +568,7 @@ export class Logs extends PolicyStatement {
       "DescribeLogStreams",
       "DescribeMetricFilters",
       "DescribeQueries",
+      "DescribeQueryDefinitions",
       "DescribeResourcePolicies",
       "DescribeSubscriptionFilters",
       "ListLogDeliveries",
@@ -581,6 +617,23 @@ export class Logs extends PolicyStatement {
     var arn = 'arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}';
     arn = arn.replace('${LogGroupName}', logGroupName);
     arn = arn.replace('${LogStreamName}', logStreamName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type destination to the statement
+   *
+   * @param destinationName - Identifier for the destinationName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:logs:${Region}:${Account}:destination:${DestinationName}';
+    arn = arn.replace('${DestinationName}', destinationName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

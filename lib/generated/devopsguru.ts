@@ -67,6 +67,17 @@ export class DevopsGuru extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view the feedback details of a specified insight
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeFeedback.html
+   */
+  public toDescribeFeedback() {
+    return this.to('DescribeFeedback');
+  }
+
+  /**
    * Grants permission to list the details of a specified insight
    *
    * Access Level: Read
@@ -97,6 +108,17 @@ export class DevopsGuru extends PolicyStatement {
    */
   public toDescribeServiceIntegration() {
     return this.to('DescribeServiceIntegration');
+  }
+
+  /**
+   * Grants permission to list service resource cost estimates
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_GetCostEstimation.html
+   */
+  public toGetCostEstimation() {
+    return this.to('GetCostEstimation');
   }
 
   /**
@@ -203,6 +225,17 @@ export class DevopsGuru extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start the creation of an estimate of the monthly cost
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_StartCostEstimation.html
+   */
+  public toStartCostEstimation() {
+    return this.to('StartCostEstimation');
+  }
+
+  /**
    * Grants permission to update the list of AWS CloudFormation stacks that are used to specify which AWS resources in your account are analyzed by DevOps Guru
    *
    * Access Level: Write
@@ -236,10 +269,13 @@ export class DevopsGuru extends PolicyStatement {
       "DescribeAccountHealth",
       "DescribeAccountOverview",
       "DescribeAnomaly",
+      "DescribeFeedback",
       "DescribeInsight",
       "DescribeResourceCollectionHealth",
       "DescribeServiceIntegration",
-      "GetResourceCollection"
+      "GetCostEstimation",
+      "GetResourceCollection",
+      "StartCostEstimation"
     ],
     "List": [
       "ListAnomaliesForInsight",

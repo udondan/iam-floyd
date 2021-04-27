@@ -163,6 +163,17 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
+   * Grants permission to rotate credentials for the first IngestEndpoint of a Channel in AWS Elemental MediaPackage.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id-credentials.html#channels-id-credentialsput
+   */
+  public toRotateChannelCredentials() {
+    return this.to('RotateChannelCredentials');
+  }
+
+  /**
    * Grants permission to rotate IngestEndpoint credentials for a Channel in AWS Elemental MediaPackage.
    *
    * Access Level: Write
@@ -176,7 +187,7 @@ export class Mediapackage extends PolicyStatement {
   /**
    *
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -191,7 +202,7 @@ export class Mediapackage extends PolicyStatement {
   /**
    * Grants permission to delete tags to a Channel or OriginEndpoint.
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
@@ -231,9 +242,8 @@ export class Mediapackage extends PolicyStatement {
       "CreateOriginEndpoint",
       "DeleteChannel",
       "DeleteOriginEndpoint",
+      "RotateChannelCredentials",
       "RotateIngestEndpointCredentials",
-      "TagResource",
-      "UntagResource",
       "UpdateChannel",
       "UpdateOriginEndpoint"
     ],
@@ -245,6 +255,10 @@ export class Mediapackage extends PolicyStatement {
       "ListHarvestJobs",
       "ListOriginEndpoints",
       "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 

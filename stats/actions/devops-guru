@@ -2,9 +2,11 @@ devops-guru:AddNotificationChannel;Write
 devops-guru:DescribeAccountHealth;Read
 devops-guru:DescribeAccountOverview;Read
 devops-guru:DescribeAnomaly;Read
+devops-guru:DescribeFeedback;Read
 devops-guru:DescribeInsight;Read
 devops-guru:DescribeResourceCollectionHealth;Read
 devops-guru:DescribeServiceIntegration;Read
+devops-guru:GetCostEstimation;Read
 devops-guru:GetResourceCollection;Read
 devops-guru:ListAnomaliesForInsight;List
 devops-guru:ListEvents;List
@@ -14,5 +16,6 @@ devops-guru:ListRecommendations;List
 devops-guru:PutFeedback;Write
 devops-guru:RemoveNotificationChannel;Write
 devops-guru:SearchInsights;List
+devops-guru:StartCostEstimation;Read
 devops-guru:UpdateResourceCollection;Write
 devops-guru:UpdateServiceIntegration;Write

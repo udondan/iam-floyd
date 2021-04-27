@@ -43,6 +43,7 @@ cloudformation:ListStacks;List
 cloudformation:ListTypeRegistrations;List
 cloudformation:ListTypeVersions;List
 cloudformation:ListTypes;List
+cloudformation:RecordHandlerProgress;Write
 cloudformation:RegisterType;Write
 cloudformation:SetStackPolicy;Permissions management
 cloudformation:SetTypeDefaultVersion;Write

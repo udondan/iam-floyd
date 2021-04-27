@@ -9,6 +9,7 @@ logs:DeleteLogDelivery;Write
 logs:DeleteLogGroup;Write
 logs:DeleteLogStream;Write
 logs:DeleteMetricFilter;Write
+logs:DeleteQueryDefinition;Write
 logs:DeleteResourcePolicy;Write
 logs:DeleteRetentionPolicy;Write
 logs:DeleteSubscriptionFilter;Write
@@ -18,6 +19,7 @@ logs:DescribeLogGroups;List
 logs:DescribeLogStreams;List
 logs:DescribeMetricFilters;List
 logs:DescribeQueries;List
+logs:DescribeQueryDefinitions;List
 logs:DescribeResourcePolicies;List
 logs:DescribeSubscriptionFilters;List
 logs:DisassociateKmsKey;Write
@@ -33,6 +35,7 @@ logs:PutDestination;Write
 logs:PutDestinationPolicy;Write
 logs:PutLogEvents;Write
 logs:PutMetricFilter;Write
+logs:PutQueryDefinition;Write
 logs:PutResourcePolicy;Write
 logs:PutRetentionPolicy;Write
 logs:PutSubscriptionFilter;Write

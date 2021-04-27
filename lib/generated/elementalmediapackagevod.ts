@@ -176,7 +176,7 @@ export class MediapackageVod extends PolicyStatement {
   /**
    * Grants permission to assign tags to a PackagingGroup, PackagingConfiguration, or Asset.
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -191,7 +191,7 @@ export class MediapackageVod extends PolicyStatement {
   /**
    * Grants permission to delete tags from a PackagingGroup, PackagingConfiguration, or Asset.
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
@@ -202,6 +202,17 @@ export class MediapackageVod extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to update a packaging group in AWS Elemental MediaPackage
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups-id.html#packaging_groups-idput
+   */
+  public toUpdatePackagingGroup() {
+    return this.to('UpdatePackagingGroup');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CreateAsset",
@@ -210,8 +221,7 @@ export class MediapackageVod extends PolicyStatement {
       "DeleteAsset",
       "DeletePackagingConfiguration",
       "DeletePackagingGroup",
-      "TagResource",
-      "UntagResource"
+      "UpdatePackagingGroup"
     ],
     "Read": [
       "DescribeAsset",
@@ -223,6 +233,10 @@ export class MediapackageVod extends PolicyStatement {
       "ListAssets",
       "ListPackagingConfigurations",
       "ListPackagingGroups"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 

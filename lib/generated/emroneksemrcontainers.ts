@@ -212,7 +212,6 @@ export class EmrContainers extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
-   * - .ifExecutionRoleArn()
    */
   public onJobRun(virtualClusterId: string, jobRunId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:emr-containers:${Region}:${Account}:/virtualclusters/${VirtualClusterId}/jobruns/${JobRunId}';
@@ -231,9 +230,6 @@ export class EmrContainers extends PolicyStatement {
    *
    * Applies to actions:
    * - .toStartJobRun()
-   *
-   * Applies to resource types:
-   * - jobRun
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

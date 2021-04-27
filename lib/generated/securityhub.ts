@@ -23,6 +23,17 @@ export class Securityhub extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AcceptAdministratorInvitation.html
+   */
+  public toAcceptAdministratorInvitation() {
+    return this.to('AcceptAdministratorInvitation');
+  }
+
+  /**
+   * Grants permission to accept Security Hub invitations to become a member account
+   *
+   * Access Level: Write
+   *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AcceptInvitation.html
    */
   public toAcceptInvitation() {
@@ -270,6 +281,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to a Security Hub member account to disassociate from the associated administrator account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateFromAdministratorAccount.html
+   */
+  public toDisassociateFromAdministratorAccount() {
+    return this.to('DisassociateFromAdministratorAccount');
+  }
+
+  /**
    * Grants permission to a Security Hub member account to disassociate from the associated master account
    *
    * Access Level: Write
@@ -281,7 +303,7 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate Security Hub member accounts from the associated master account
+   * Grants permission to disassociate Security Hub member accounts from the associated administrator account
    *
    * Access Level: Write
    *
@@ -342,6 +364,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toGetAdhocInsightResults() {
     return this.to('GetAdhocInsightResults');
+  }
+
+  /**
+   * Grants permission to retrieve details about the Security Hub administrator account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetAdministratorAccount.html
+   */
+  public toGetAdministratorAccount() {
+    return this.to('GetAdministratorAccount');
   }
 
   /**
@@ -499,7 +532,7 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve details about Security Hub member accounts associated with the master account
+   * Grants permission to retrieve details about Security Hub member accounts associated with the administrator account
    *
    * Access Level: List
    *
@@ -646,6 +679,7 @@ export class Securityhub extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "AcceptAdministratorInvitation",
       "AcceptInvitation",
       "BatchDisableStandards",
       "BatchEnableStandards",
@@ -662,6 +696,7 @@ export class Securityhub extends PolicyStatement {
       "DisableImportFindingsForProduct",
       "DisableOrganizationAdminAccount",
       "DisableSecurityHub",
+      "DisassociateFromAdministratorAccount",
       "DisassociateFromMasterAccount",
       "DisassociateMembers",
       "EnableImportFindingsForProduct",
@@ -683,6 +718,7 @@ export class Securityhub extends PolicyStatement {
       "DescribeStandards",
       "DescribeStandardsControls",
       "GetAdhocInsightResults",
+      "GetAdministratorAccount",
       "GetFindings",
       "GetFreeTrialEndDate",
       "GetFreeTrialUsage",

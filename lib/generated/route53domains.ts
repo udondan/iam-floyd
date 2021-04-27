@@ -19,6 +19,28 @@ export class Route53domains extends PolicyStatement {
   }
 
   /**
+   * Grants permission to accept the transfer of a domain from another AWS account to the current AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html
+   */
+  public toAcceptDomainTransferFromAnotherAwsAccount() {
+    return this.to('AcceptDomainTransferFromAnotherAwsAccount');
+  }
+
+  /**
+   * Grants permission to cancel the transfer of a domain from the current AWS account to another AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CancelDomainTransferToAnotherAwsAccount.html
+   */
+  public toCancelDomainTransferToAnotherAwsAccount() {
+    return this.to('CancelDomainTransferToAnotherAwsAccount');
+  }
+
+  /**
    * Grants permission to check the availability of one domain name
    *
    * Access Level: Read
@@ -27,6 +49,17 @@ export class Route53domains extends PolicyStatement {
    */
   public toCheckDomainAvailability() {
     return this.to('CheckDomainAvailability');
+  }
+
+  /**
+   * Grants permission to check whether a domain name can be transferred to Amazon Route 53
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CheckDomainTransferability.html
+   */
+  public toCheckDomainTransferability() {
+    return this.to('CheckDomainTransferability');
   }
 
   /**
@@ -173,6 +206,17 @@ export class Route53domains extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reject the transfer of a domain from another AWS account to the current AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RejectDomainTransferFromAnotherAwsAccount.html
+   */
+  public toRejectDomainTransferFromAnotherAwsAccount() {
+    return this.to('RejectDomainTransferFromAnotherAwsAccount');
+  }
+
+  /**
    * Grants permission to renew domains for the specified number of years
    *
    * Access Level: Write
@@ -214,6 +258,17 @@ export class Route53domains extends PolicyStatement {
    */
   public toTransferDomain() {
     return this.to('TransferDomain');
+  }
+
+  /**
+   * Grants permission to transfer a domain from the current AWS account to another AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html
+   */
+  public toTransferDomainToAnotherAwsAccount() {
+    return this.to('TransferDomainToAnotherAwsAccount');
   }
 
   /**
@@ -272,8 +327,27 @@ export class Route53domains extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "AcceptDomainTransferFromAnotherAwsAccount",
+      "CancelDomainTransferToAnotherAwsAccount",
+      "DisableDomainAutoRenew",
+      "DisableDomainTransferLock",
+      "EnableDomainAutoRenew",
+      "EnableDomainTransferLock",
+      "RegisterDomain",
+      "RejectDomainTransferFromAnotherAwsAccount",
+      "RenewDomain",
+      "ResendContactReachabilityEmail",
+      "RetrieveDomainAuthCode",
+      "TransferDomain",
+      "TransferDomainToAnotherAwsAccount",
+      "UpdateDomainContact",
+      "UpdateDomainContactPrivacy",
+      "UpdateDomainNameservers"
+    ],
     "Read": [
       "CheckDomainAvailability",
+      "CheckDomainTransferability",
       "GetContactReachabilityStatus",
       "GetDomainDetail",
       "GetDomainSuggestions",
@@ -283,20 +357,6 @@ export class Route53domains extends PolicyStatement {
     "Tagging": [
       "DeleteTagsForDomain",
       "UpdateTagsForDomain"
-    ],
-    "Write": [
-      "DisableDomainAutoRenew",
-      "DisableDomainTransferLock",
-      "EnableDomainAutoRenew",
-      "EnableDomainTransferLock",
-      "RegisterDomain",
-      "RenewDomain",
-      "ResendContactReachabilityEmail",
-      "RetrieveDomainAuthCode",
-      "TransferDomain",
-      "UpdateDomainContact",
-      "UpdateDomainContactPrivacy",
-      "UpdateDomainNameservers"
     ],
     "List": [
       "ListDomains",

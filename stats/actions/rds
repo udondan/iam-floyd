@@ -11,6 +11,7 @@ rds:CopyDBClusterSnapshot;Write
 rds:CopyDBParameterGroup;Write
 rds:CopyDBSnapshot;Write
 rds:CopyOptionGroup;Write
+rds:CreateCustomAvailabilityZone;Write
 rds:CreateDBCluster;Write
 rds:CreateDBClusterEndpoint;Write
 rds:CreateDBClusterParameterGroup;Write
@@ -27,6 +28,7 @@ rds:CreateEventSubscription;Write
 rds:CreateGlobalCluster;Write
 rds:CreateOptionGroup;Write
 rds:CrossRegionCommunication;Write
+rds:DeleteCustomAvailabilityZone;Write
 rds:DeleteDBCluster;Write
 rds:DeleteDBClusterEndpoint;Write
 rds:DeleteDBClusterParameterGroup;Write
@@ -41,10 +43,12 @@ rds:DeleteDBSnapshot;Write
 rds:DeleteDBSubnetGroup;Write
 rds:DeleteEventSubscription;Write
 rds:DeleteGlobalCluster;Write
+rds:DeleteInstallationMedia;Write
 rds:DeleteOptionGroup;Write
 rds:DeregisterDBProxyTargets;Write
 rds:DescribeAccountAttributes;List
 rds:DescribeCertificates;List
+rds:DescribeCustomAvailabilityZones;List
 rds:DescribeDBClusterBacktracks;List
 rds:DescribeDBClusterEndpoints;List
 rds:DescribeDBClusterParameterGroups;List
@@ -73,6 +77,7 @@ rds:DescribeEventSubscriptions;List
 rds:DescribeEvents;List
 rds:DescribeExportTasks;List
 rds:DescribeGlobalClusters;List
+rds:DescribeInstallationMedia;List
 rds:DescribeOptionGroupOptions;List
 rds:DescribeOptionGroups;List
 rds:DescribeOrderableDBInstanceOptions;List
@@ -84,7 +89,9 @@ rds:DescribeValidDBInstanceModifications;List
 rds:DownloadDBLogFilePortion;Read
 rds:FailoverDBCluster;Write
 rds:FailoverGlobalCluster;Write
+rds:ImportInstallationMedia;Write
 rds:ListTagsForResource;Read
+rds:ModifyCertificates;Write
 rds:ModifyCurrentDBClusterCapacity;Write
 rds:ModifyDBCluster;Write
 rds:ModifyDBClusterEndpoint;Write
@@ -123,7 +130,9 @@ rds:RevokeDBSecurityGroupIngress;Write
 rds:StartActivityStream;Write
 rds:StartDBCluster;Write
 rds:StartDBInstance;Write
+rds:StartDBInstanceAutomatedBackupsReplication;Write
 rds:StartExportTask;Write
 rds:StopActivityStream;Write
 rds:StopDBCluster;Write
 rds:StopDBInstance;Write
+rds:StopDBInstanceAutomatedBackupsReplication;Write

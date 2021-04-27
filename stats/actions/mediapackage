@@ -10,8 +10,9 @@ mediapackage:ListChannels;Read
 mediapackage:ListHarvestJobs;Read
 mediapackage:ListOriginEndpoints;Read
 mediapackage:ListTagsForResource;Read
+mediapackage:RotateChannelCredentials;Write
 mediapackage:RotateIngestEndpointCredentials;Write
-mediapackage:TagResource;Write
-mediapackage:UntagResource;Write
+mediapackage:TagResource;Tagging
+mediapackage:UntagResource;Tagging
 mediapackage:UpdateChannel;Write
 mediapackage:UpdateOriginEndpoint;Write

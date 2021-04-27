@@ -74,6 +74,17 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
+   * Creates a shipping label that will be used to return the Snow device to AWS.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateReturnShippingLabel.html
+   */
+  public toCreateReturnShippingLabel() {
+    return this.to('CreateReturnShippingLabel');
+  }
+
+  /**
    * Takes an AddressId and returns specific details about that address in the form of an Address object.
    *
    * Access Level: Read
@@ -118,6 +129,17 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
+   * Information on the shipping label of a Snow device that is being returned to AWS.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeReturnShippingLabel.html
+   */
+  public toDescribeReturnShippingLabel() {
+    return this.to('DescribeReturnShippingLabel');
+  }
+
+  /**
    * Returns a link to an Amazon S3 presigned URL for the manifest file associated with the specified JobId value.
    *
    * Access Level: Read
@@ -151,6 +173,17 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
+   * Returns an Amazon S3 presigned URL for an update file associated with a specified JobId.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/snowball/latest/api-reference/API_GetSoftwareUpdates.html
+   */
+  public toGetSoftwareUpdates() {
+    return this.to('GetSoftwareUpdates');
+  }
+
+  /**
    * Returns an array of JobListEntry objects of the specified length.
    *
    * Access Level: List
@@ -170,6 +203,17 @@ export class Snowball extends PolicyStatement {
    */
   public toListClusters() {
     return this.to('ListClusters');
+  }
+
+  /**
+   * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your AWS account that would be supported for use on a Snow device.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListCompatibleImages.html
+   */
+  public toListCompatibleImages() {
+    return this.to('ListCompatibleImages');
   }
 
   /**
@@ -205,6 +249,17 @@ export class Snowball extends PolicyStatement {
     return this.to('UpdateJob');
   }
 
+  /**
+   * Updates the state when a the shipment states changes to a different state.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateJobShipmentState.html
+   */
+  public toUpdateJobShipmentState() {
+    return this.to('UpdateJobShipmentState');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CancelCluster",
@@ -212,21 +267,26 @@ export class Snowball extends PolicyStatement {
       "CreateAddress",
       "CreateCluster",
       "CreateJob",
+      "CreateReturnShippingLabel",
       "UpdateCluster",
-      "UpdateJob"
+      "UpdateJob",
+      "UpdateJobShipmentState"
     ],
     "Read": [
       "DescribeAddress",
       "DescribeCluster",
       "DescribeJob",
+      "DescribeReturnShippingLabel",
       "GetJobManifest",
       "GetJobUnlockCode",
-      "GetSnowballUsage"
+      "GetSnowballUsage",
+      "GetSoftwareUpdates"
     ],
     "List": [
       "DescribeAddresses",
       "ListClusterJobs",
       "ListClusters",
+      "ListCompatibleImages",
       "ListJobs"
     ]
   };

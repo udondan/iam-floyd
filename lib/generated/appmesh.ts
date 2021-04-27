@@ -19,7 +19,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Creates a gateway route that is associated with a virtual gateway.
+   * Grants permission to create a gateway route that is associated with a virtual gateway
    *
    * Access Level: Write
    *
@@ -34,7 +34,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Creates a service mesh.
+   * Grants permission to create a service mesh
    *
    * Access Level: Write
    *
@@ -49,7 +49,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Creates a route that is associated with a virtual router.
+   * Grants permission to create a route that is associated with a virtual router
    *
    * Access Level: Write
    *
@@ -64,7 +64,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Creates a virtual gateway within a service mesh.
+   * Grants permission to create a virtual gateway within a service mesh
    *
    * Access Level: Write
    *
@@ -79,7 +79,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Creates a virtual node within a service mesh.
+   * Grants permission to create a virtual node within a service mesh
    *
    * Access Level: Write
    *
@@ -94,7 +94,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Creates a virtual router within a service mesh.
+   * Grants permission to create a virtual router within a service mesh
    *
    * Access Level: Write
    *
@@ -109,7 +109,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Creates a virtual service within a service mesh.
+   * Grants permission to create a virtual service within a service mesh
    *
    * Access Level: Write
    *
@@ -124,7 +124,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing gateway route.
+   * Grants permission to delete an existing gateway route
    *
    * Access Level: Write
    *
@@ -135,7 +135,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing service mesh.
+   * Grants permission to delete an existing service mesh
    *
    * Access Level: Write
    *
@@ -146,7 +146,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing route.
+   * Grants permission to delete an existing route
    *
    * Access Level: Write
    *
@@ -157,7 +157,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing virtual gateway.
+   * Grants permission to delete an existing virtual gateway
    *
    * Access Level: Write
    *
@@ -168,7 +168,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing virtual node.
+   * Grants permission to delete an existing virtual node
    *
    * Access Level: Write
    *
@@ -179,7 +179,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing virtual router.
+   * Grants permission to delete an existing virtual router
    *
    * Access Level: Write
    *
@@ -190,7 +190,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing virtual service.
+   * Grants permission to delete an existing virtual service
    *
    * Access Level: Write
    *
@@ -201,7 +201,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Describes an existing gateway route.
+   * Grants permission to describe an existing gateway route
    *
    * Access Level: Read
    *
@@ -212,7 +212,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Describes an existing service mesh.
+   * Grants permission to describe an existing service mesh
    *
    * Access Level: Read
    *
@@ -223,7 +223,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Describes an existing route.
+   * Grants permission to describe an existing route
    *
    * Access Level: Read
    *
@@ -234,7 +234,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Describes an existing virtual gateway.
+   * Grants permission to describe an existing virtual gateway
    *
    * Access Level: Read
    *
@@ -245,7 +245,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Describes an existing virtual node.
+   * Grants permission to describe an existing virtual node
    *
    * Access Level: Read
    *
@@ -256,7 +256,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Describes an existing virtual router.
+   * Grants permission to describe an existing virtual router
    *
    * Access Level: Read
    *
@@ -267,7 +267,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Describes an existing virtual service.
+   * Grants permission to describe an existing virtual service
    *
    * Access Level: Read
    *
@@ -278,7 +278,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Returns a list of existing gateway routes in a service mesh.
+   * Grants permission to list existing gateway routes in a service mesh
    *
    * Access Level: List
    *
@@ -289,7 +289,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Returns a list of existing service meshes.
+   * Grants permission to list existing service meshes
    *
    * Access Level: List
    *
@@ -300,7 +300,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Returns a list of existing routes in a service mesh.
+   * Grants permission to list existing routes in a service mesh
    *
    * Access Level: List
    *
@@ -311,7 +311,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * List the tags for an App Mesh resource.
+   * Grants permission to list the tags for an App Mesh resource
    *
    * Access Level: List
    *
@@ -322,7 +322,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Returns a list of existing virtual gateways in a service mesh.
+   * Grants permission to list existing virtual gateways in a service mesh
    *
    * Access Level: List
    *
@@ -333,7 +333,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Returns a list of existing virtual nodes.
+   * Grants permission to list existing virtual nodes
    *
    * Access Level: List
    *
@@ -344,7 +344,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Returns a list of existing virtual routers in a service mesh.
+   * Grants permission to list existing virtual routers in a service mesh
    *
    * Access Level: List
    *
@@ -355,7 +355,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Returns a list of existing virtual services in a service mesh.
+   * Grants permission to list existing virtual services in a service mesh
    *
    * Access Level: List
    *
@@ -366,7 +366,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Allows an Envoy Proxy to receive streamed resources for an App Mesh endpoint (VirtualNode or VirtualGateway).
+   * Grants permission to receive streamed resources for an App Mesh endpoint (VirtualNode/VirtualGateway)
    *
    * Access Level: Read
    *
@@ -377,7 +377,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Associates the specified tags to a resource with the specified resourceArn.
+   * Grants permission to tag a resource with a specified resourceArn
    *
    * Access Level: Write
    *
@@ -392,7 +392,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Deletes specified tags from a resource.
+   * Grants permission to delete a tag from a resource
    *
    * Access Level: Write
    *
@@ -406,7 +406,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Updates an existing gateway route for a specified service mesh and virtual gateway.
+   * Grants permission to update an existing gateway route for a specified service mesh and virtual gateway
    *
    * Access Level: Write
    *
@@ -417,7 +417,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Updates an existing service mesh.
+   * Grants permission to update an existing service mesh
    *
    * Access Level: Write
    *
@@ -428,7 +428,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Updates an existing route for a specified service mesh and virtual router.
+   * Grants permission to update an existing route for a specified service mesh and virtual router
    *
    * Access Level: Write
    *
@@ -439,7 +439,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Updates an existing virtual gateway in a specified service mesh.
+   * Grants permission to update an existing virtual gateway in a specified service mesh
    *
    * Access Level: Write
    *
@@ -450,7 +450,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Updates an existing virtual node in a specified service mesh.
+   * Grants permission to update an existing virtual node in a specified service mesh
    *
    * Access Level: Write
    *
@@ -461,7 +461,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Updates an existing virtual router in a specified service mesh.
+   * Grants permission to update an existing virtual router in a specified service mesh
    *
    * Access Level: Write
    *
@@ -472,7 +472,7 @@ export class Appmesh extends PolicyStatement {
   }
 
   /**
-   * Updates an existing virtual service in a specified service mesh.
+   * Grants permission to update an existing virtual service in a specified service mesh
    *
    * Access Level: Write
    *
