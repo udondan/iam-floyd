@@ -66,7 +66,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Firewall domain list.
+   * Grants permission to create a Firewall domain list
    *
    * Access Level: Write
    *
@@ -77,7 +77,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Firewall rule within a Firewall rule group.
+   * Grants permission to create a Firewall rule within a Firewall rule group
    *
    * Access Level: Write
    *
@@ -88,7 +88,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Firewall rule group.
+   * Grants permission to create a Firewall rule group
    *
    * Access Level: Write
    *
@@ -132,7 +132,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a Firewall domain list.
+   * Grants permission to delete a Firewall domain list
    *
    * Access Level: Write
    *
@@ -143,7 +143,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a Firewall rule within a Firewall rule group.
+   * Grants permission to delete a Firewall rule within a Firewall rule group
    *
    * Access Level: Write
    *
@@ -154,7 +154,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a Firewall rule group.
+   * Grants permission to delete a Firewall rule group
    *
    * Access Level: Write
    *
@@ -242,7 +242,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a specified Firewall config.
+   * Grants permission to get information about a specified Firewall config
    *
    * Access Level: Read
    *
@@ -256,7 +256,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a specified Firewall domain list.
+   * Grants permission to get information about a specified Firewall domain list
    *
    * Access Level: Read
    *
@@ -267,7 +267,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a specified Firewall rule group.
+   * Grants permission to get information about a specified Firewall rule group
    *
    * Access Level: Read
    *
@@ -289,7 +289,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a specified Firewall rule group policy, which specifies the Firewall rule group operations and resources that you want to allow another AWS account to use.
+   * Grants permission to get information about a specified Firewall rule group policy, which specifies the Firewall rule group operations and resources that you want to allow another AWS account to use
    *
    * Access Level: Read
    *
@@ -355,7 +355,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a specified Resolver rule, such as the domain name that the rule forwards DNS queries for and the IP address that queries are forwarded to.
+   * Grants permission to get information about a specified Resolver rule, such as the domain name that the rule forwards DNS queries for and the IP address that queries are forwarded to
    *
    * Access Level: Read
    *
@@ -388,7 +388,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add, remove or replace Firewall domains in a Firewall domain list.
+   * Grants permission to add, remove or replace Firewall domains in a Firewall domain list
    *
    * Access Level: Write
    *
@@ -399,7 +399,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the Firewall config that current AWS account is able to check.
+   * Grants permission to list all the Firewall config that current AWS account is able to check
    *
    * Access Level: List
    *
@@ -413,7 +413,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the Firewall domain list that current AWS account is able to use.
+   * Grants permission to list all the Firewall domain list that current AWS account is able to use
    *
    * Access Level: List
    *
@@ -424,7 +424,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the Firewall domain under a speicfied Firewall domain list.
+   * Grants permission to list all the Firewall domain under a speicfied Firewall domain list
    *
    * Access Level: List
    *
@@ -435,7 +435,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list information about associations between Amazon VPCs and Firewall rule group.
+   * Grants permission to list information about associations between Amazon VPCs and Firewall rule group
    *
    * Access Level: List
    *
@@ -446,7 +446,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the Firewall rule group that current AWS account is able to use.
+   * Grants permission to list all the Firewall rule group that current AWS account is able to use
    *
    * Access Level: List
    *
@@ -457,7 +457,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the Firewall rule under a speicfied Firewall rule group.
+   * Grants permission to list all the Firewall rule under a speicfied Firewall rule group
    *
    * Access Level: List
    *
@@ -611,7 +611,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update selected settings for an Firewall config.
+   * Grants permission to update selected settings for an Firewall config
    *
    * Access Level: Write
    *
@@ -625,7 +625,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add, remove or replace Firewall domains in a Firewall domain list.
+   * Grants permission to add, remove or replace Firewall domains in a Firewall domain list
    *
    * Access Level: Write
    *
@@ -636,7 +636,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update selected settings for an Firewall rule in a Firewall rule group.
+   * Grants permission to update selected settings for an Firewall rule in a Firewall rule group
    *
    * Access Level: Write
    *
@@ -647,7 +647,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update selected settings for an Firewall rule group association.
+   * Grants permission to update selected settings for an Firewall rule group association
    *
    * Access Level: Write
    *

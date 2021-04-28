@@ -1,4 +1,5 @@
 connect:AssociateApprovedOrigin;Write
+connect:AssociateCustomerProfilesDomain;Write
 connect:AssociateInstanceStorageConfig;Write
 connect:AssociateLambdaFunction;Write
 connect:AssociateLexBot;Write
@@ -7,13 +8,17 @@ connect:AssociateRoutingProfileQueues;Write
 connect:AssociateSecurityKey;Write
 connect:CreateContactFlow;Write
 connect:CreateInstance;Write
+connect:CreateIntegrationAssociation;Write
 connect:CreateQueue;Write
 connect:CreateQuickConnect;Write
 connect:CreateRoutingProfile;Write
+connect:CreateUseCase;Write
 connect:CreateUser;Write
 connect:CreateUserHierarchyGroup;Write
 connect:DeleteInstance;Write
+connect:DeleteIntegrationAssociation;Write
 connect:DeleteQuickConnect;Write
+connect:DeleteUseCase;Write
 connect:DeleteUser;Write
 connect:DeleteUserHierarchyGroup;Write
 connect:DescribeContactFlow;Read
@@ -28,6 +33,7 @@ connect:DescribeUser;Read
 connect:DescribeUserHierarchyGroup;Read
 connect:DescribeUserHierarchyStructure;Read
 connect:DisassociateApprovedOrigin;Write
+connect:DisassociateCustomerProfilesDomain;Write
 connect:DisassociateInstanceStorageConfig;Write
 connect:DisassociateLambdaFunction;Write
 connect:DisassociateLexBot;Write
@@ -45,6 +51,7 @@ connect:ListHoursOfOperations;List
 connect:ListInstanceAttributes;List
 connect:ListInstanceStorageConfigs;List
 connect:ListInstances;List
+connect:ListIntegrationAssociations;List
 connect:ListLambdaFunctions;List
 connect:ListLexBots;List
 connect:ListPhoneNumbers;List
@@ -58,6 +65,7 @@ connect:ListRoutingProfiles;List
 connect:ListSecurityKeys;List
 connect:ListSecurityProfiles;List
 connect:ListTagsForResource;Read
+connect:ListUseCases;List
 connect:ListUserHierarchyGroups;List
 connect:ListUsers;List
 connect:ResumeContactRecording;Write

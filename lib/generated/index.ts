@@ -167,6 +167,7 @@ export { CodestarNotifications } from "./codestarnotifications";
 export { ComputeOptimizer } from "./computeoptimizer";
 export { Config } from "./config";
 export { Awsconnector } from "./connectorservice";
+export { Controltower } from "./controltower";
 export { Cur } from "./costandusagereport";
 export { Ce } from "./costexplorerservice";
 export { Dms } from "./databasemigrationservice";

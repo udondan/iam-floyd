@@ -30,6 +30,23 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to associate a Customer Profiles domain for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   * - profile:GetDomain
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toAssociateCustomerProfilesDomain() {
+    return this.to('AssociateCustomerProfilesDomain');
+  }
+
+  /**
    * Grants permissions to associate instance storage for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
    *
    * Access Level: Write
@@ -165,6 +182,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to create an AppIntegration association with an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - app-integrations:CreateEventIntegrationAssociation
+   * - connect:DescribeInstance
+   * - ds:DescribeDirectories
+   * - events:PutRule
+   * - events:PutTargets
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateIntegrationAssociation.html
+   */
+  public toCreateIntegrationAssociation() {
+    return this.to('CreateIntegrationAssociation');
+  }
+
+  /**
    * Grants permissions to create a queue in an Amazon Connect instance
    *
    * Access Level: Write
@@ -210,6 +245,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to create a use case for an AppIntegration association
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - connect:DescribeInstance
+   * - ds:DescribeDirectories
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUseCase.html
+   */
+  public toCreateUseCase() {
+    return this.to('CreateUseCase');
+  }
+
+  /**
    * Grants permission to create a user for the specified Amazon Connect instance
    *
    * Access Level: Write
@@ -252,6 +302,25 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to delete an AppIntegration association from an Amazon Connect instance. The association must not have any use cases associated with it.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - app-integrations:DeleteEventIntegrationAssociation
+   * - connect:DescribeInstance
+   * - ds:DescribeDirectories
+   * - events:DeleteRule
+   * - events:ListTargetsByRule
+   * - events:RemoveTargets
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html
+   */
+  public toDeleteIntegrationAssociation() {
+    return this.to('DeleteIntegrationAssociation');
+  }
+
+  /**
    * Grants permissions to delete a quick connect in an Amazon Connect instance
    *
    * Access Level: Write
@@ -263,6 +332,21 @@ export class Connect extends PolicyStatement {
    */
   public toDeleteQuickConnect() {
     return this.to('DeleteQuickConnect');
+  }
+
+  /**
+   * Grants permissions to delete a use case from an AppIntegration association
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - connect:DescribeInstance
+   * - ds:DescribeDirectories
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUseCase.html
+   */
+  public toDeleteUseCase() {
+    return this.to('DeleteUseCase');
   }
 
   /**
@@ -444,6 +528,25 @@ export class Connect extends PolicyStatement {
    */
   public toDisassociateApprovedOrigin() {
     return this.to('DisassociateApprovedOrigin');
+  }
+
+  /**
+   * Grants permissions to disassociate a Customer Profiles domain for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:AttachRolePolicy
+   * - iam:DeleteRolePolicy
+   * - iam:DetachRolePolicy
+   * - iam:GetPolicy
+   * - iam:GetPolicyVersion
+   * - iam:GetRolePolicy
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toDisassociateCustomerProfilesDomain() {
+    return this.to('DisassociateCustomerProfilesDomain');
   }
 
   /**
@@ -662,6 +765,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to list summary information about the AppIntegration associations for the specified Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - connect:DescribeInstance
+   * - ds:DescribeDirectories
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListIntegrationAssociations.html
+   */
+  public toListIntegrationAssociations() {
+    return this.to('ListIntegrationAssociations');
+  }
+
+  /**
    * Grants permissions to view the Lambda functions of an existing Amazon Connect instance
    *
    * Access Level: List
@@ -811,6 +929,21 @@ export class Connect extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permissions to list the use cases of an AppIntegration association
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - connect:DescribeInstance
+   * - ds:DescribeDirectories
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUseCases.html
+   */
+  public toListUseCases() {
+    return this.to('ListUseCases');
   }
 
   /**
@@ -1289,6 +1422,7 @@ export class Connect extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AssociateApprovedOrigin",
+      "AssociateCustomerProfilesDomain",
       "AssociateInstanceStorageConfig",
       "AssociateLambdaFunction",
       "AssociateLexBot",
@@ -1297,16 +1431,21 @@ export class Connect extends PolicyStatement {
       "AssociateSecurityKey",
       "CreateContactFlow",
       "CreateInstance",
+      "CreateIntegrationAssociation",
       "CreateQueue",
       "CreateQuickConnect",
       "CreateRoutingProfile",
+      "CreateUseCase",
       "CreateUser",
       "CreateUserHierarchyGroup",
       "DeleteInstance",
+      "DeleteIntegrationAssociation",
       "DeleteQuickConnect",
+      "DeleteUseCase",
       "DeleteUser",
       "DeleteUserHierarchyGroup",
       "DisassociateApprovedOrigin",
+      "DisassociateCustomerProfilesDomain",
       "DisassociateInstanceStorageConfig",
       "DisassociateLambdaFunction",
       "DisassociateLexBot",
@@ -1372,6 +1511,7 @@ export class Connect extends PolicyStatement {
       "ListInstanceAttributes",
       "ListInstanceStorageConfigs",
       "ListInstances",
+      "ListIntegrationAssociations",
       "ListLambdaFunctions",
       "ListLexBots",
       "ListPhoneNumbers",
@@ -1383,6 +1523,7 @@ export class Connect extends PolicyStatement {
       "ListRoutingProfiles",
       "ListSecurityKeys",
       "ListSecurityProfiles",
+      "ListUseCases",
       "ListUserHierarchyGroups",
       "ListUsers"
     ],
@@ -1630,6 +1771,48 @@ export class Connect extends PolicyStatement {
     var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/phone-numbers/${PhoneNumberId}';
     arn = arn.replace('${InstanceId}', instanceId);
     arn = arn.replace('${PhoneNumberId}', phoneNumberId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type integration-association to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/API_IntegrationAssociationSummary.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param integrationAssociationId - Identifier for the integrationAssociationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onIntegrationAssociation(instanceId: string, integrationAssociationId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/integration-association/${IntegrationAssociationId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${IntegrationAssociationId}', integrationAssociationId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type use-case to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/API_UseCase.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param useCaseId - Identifier for the useCaseId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onUseCase(instanceId: string, useCaseId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/use-case/${UseCaseId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${UseCaseId}', useCaseId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

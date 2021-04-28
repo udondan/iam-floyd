@@ -307,6 +307,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the default encryption configuration for the AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeDefaultEncryptionConfiguration.html
+   */
+  public toDescribeDefaultEncryptionConfiguration() {
+    return this.to('DescribeDefaultEncryptionConfiguration');
+  }
+
+  /**
    * Grants permission to describe a gateway
    *
    * Access Level: Read
@@ -530,6 +541,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set the default encryption configuration for the AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutDefaultEncryptionConfiguration.html
+   */
+  public toPutDefaultEncryptionConfiguration() {
+    return this.to('PutDefaultEncryptionConfiguration');
+  }
+
+  /**
    * Grants permission to set logging options for the AWS account
    *
    * Access Level: Write
@@ -689,6 +711,7 @@ export class Iotsitewise extends PolicyStatement {
       "DeletePortal",
       "DeleteProject",
       "DisassociateAssets",
+      "PutDefaultEncryptionConfiguration",
       "PutLoggingOptions",
       "UpdateAccessPolicy",
       "UpdateAsset",
@@ -706,6 +729,7 @@ export class Iotsitewise extends PolicyStatement {
       "DescribeAssetModel",
       "DescribeAssetProperty",
       "DescribeDashboard",
+      "DescribeDefaultEncryptionConfiguration",
       "DescribeGateway",
       "DescribeGatewayCapabilityConfiguration",
       "DescribeLoggingOptions",

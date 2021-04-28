@@ -20,6 +20,7 @@ codebuild:DeleteSourceCredentials;Write
 codebuild:DeleteWebhook;Write
 codebuild:DescribeCodeCoverages;Read
 codebuild:DescribeTestCases;Read
+codebuild:GetReportGroupTrend;Read
 codebuild:GetResourcePolicy;Read
 codebuild:ImportSourceCredentials;Write
 codebuild:InvalidateProjectCache;Write

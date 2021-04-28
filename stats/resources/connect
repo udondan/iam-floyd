@@ -3,9 +3,11 @@ connect:contact-flow
 connect:hierarchy-group
 connect:hours-of-operation
 connect:instance
+connect:integration-association
 connect:phone-number
 connect:queue
 connect:quick-connect
 connect:routing-profile
 connect:security-profile
+connect:use-case
 connect:user

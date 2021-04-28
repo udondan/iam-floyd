@@ -269,6 +269,17 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Analyzes and accumulates test report values for the test reports in the specified report group.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_GetReportGroupTrend.html
+   */
+  public toGetReportGroupTrend() {
+    return this.to('GetReportGroupTrend');
+  }
+
+  /**
    * Returns a resource policy for the specified project or report group.
    *
    * Access Level: Read
@@ -633,6 +644,7 @@ export class Codebuild extends PolicyStatement {
       "BatchGetReports",
       "DescribeCodeCoverages",
       "DescribeTestCases",
+      "GetReportGroupTrend",
       "GetResourcePolicy"
     ],
     "Permissions management": [

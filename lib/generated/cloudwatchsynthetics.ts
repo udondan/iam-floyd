@@ -30,7 +30,7 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
-   * Deletes a canary. Amazon Synthetics deletes all the resources except for the Lambda function and the CloudWatch Alarms if you created one
+   * Grants permission to delete a canary. Amazon Synthetics deletes all the resources except for the Lambda function and the CloudWatch Alarms if you created one
    *
    * Access Level: Write
    *
@@ -60,6 +60,28 @@ export class Synthetics extends PolicyStatement {
    */
   public toDescribeCanariesLastRun() {
     return this.to('DescribeCanariesLastRun');
+  }
+
+  /**
+   * Grants permission to list information about Synthetics canary runtime versions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeRuntimeVersions.html
+   */
+  public toDescribeRuntimeVersions() {
+    return this.to('DescribeRuntimeVersions');
+  }
+
+  /**
+   * Grants permission to get a canary details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanary.html
+   */
+  public toGetCanary() {
+    return this.to('GetCanary');
   }
 
   /**
@@ -152,6 +174,8 @@ export class Synthetics extends PolicyStatement {
     "Read": [
       "DescribeCanaries",
       "DescribeCanariesLastRun",
+      "DescribeRuntimeVersions",
+      "GetCanary",
       "GetCanaryRuns",
       "ListTagsForResource"
     ]

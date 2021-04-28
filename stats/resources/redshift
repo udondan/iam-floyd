@@ -13,3 +13,4 @@ redshift:snapshot
 redshift:snapshotcopygrant
 redshift:snapshotschedule
 redshift:subnetgroup
+redshift:usagelimit

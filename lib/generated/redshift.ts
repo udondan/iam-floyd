@@ -319,6 +319,21 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a usage limit
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateUsageLimit.html
+   */
+  public toCreateUsageLimit() {
+    return this.to('CreateUsageLimit');
+  }
+
+  /**
    * Grants permission to delete a previously provisioned cluster
    *
    * Access Level: Write
@@ -460,6 +475,17 @@ export class Redshift extends PolicyStatement {
    */
   public toDeleteTags() {
     return this.to('DeleteTags');
+  }
+
+  /**
+   * Grants permission to delete a usage limit
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteUsageLimit.html
+   */
+  public toDeleteUsageLimit() {
+    return this.to('DeleteUsageLimit');
   }
 
   /**
@@ -802,6 +828,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe usage limits
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeUsageLimits.html
+   */
+  public toDescribeUsageLimits() {
+    return this.to('DescribeUsageLimits');
+  }
+
+  /**
    * Grants permission to disable logging information, such as queries and connection attempts, for a cluster
    *
    * Access Level: Write
@@ -1104,6 +1141,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify a usage limit
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyUsageLimit.html
+   */
+  public toModifyUsageLimit() {
+    return this.to('ModifyUsageLimit');
+  }
+
+  /**
    * Grants permission to pause a cluster
    *
    * Access Level: Write
@@ -1266,6 +1314,7 @@ export class Redshift extends PolicyStatement {
       "CreateSavedQuery",
       "CreateScheduledAction",
       "CreateSnapshotSchedule",
+      "CreateUsageLimit",
       "DeleteCluster",
       "DeleteClusterParameterGroup",
       "DeleteClusterSecurityGroup",
@@ -1278,6 +1327,7 @@ export class Redshift extends PolicyStatement {
       "DeleteScheduledAction",
       "DeleteSnapshotCopyGrant",
       "DeleteSnapshotSchedule",
+      "DeleteUsageLimit",
       "DisableLogging",
       "DisableSnapshotCopy",
       "EnableLogging",
@@ -1297,6 +1347,7 @@ export class Redshift extends PolicyStatement {
       "ModifyScheduledAction",
       "ModifySnapshotCopyRetentionPeriod",
       "ModifySnapshotSchedule",
+      "ModifyUsageLimit",
       "PauseCluster",
       "PurchaseReservedNodeOffering",
       "RebootCluster",
@@ -1348,6 +1399,7 @@ export class Redshift extends PolicyStatement {
       "DescribeTable",
       "DescribeTableRestoreStatus",
       "DescribeTags",
+      "DescribeUsageLimits",
       "FetchResults",
       "GetReservedNodeExchangeOfferings"
     ],
@@ -1708,6 +1760,28 @@ export class Redshift extends PolicyStatement {
   public onSubnetgroup(subnetGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:subnetgroup:${SubnetGroupName}';
     arn = arn.replace('${SubnetGroupName}', subnetGroupName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type usagelimit to the statement
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-usage-limits.html
+   *
+   * @param usageLimitId - Identifier for the usageLimitId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onUsagelimit(usageLimitId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:usagelimit:${UsageLimitId}';
+    arn = arn.replace('${UsageLimitId}', usageLimitId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
