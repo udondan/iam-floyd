@@ -4,6 +4,9 @@
         {
             "Effect": "Allow",
             "Action": [
+                "appflow:DescribeFlow",
+                "appflow:DescribeFlowExecutionRecords",
+                "appflow:ListFlows",
                 "databrew:*",
                 "glue:GetConnection",
                 "glue:GetConnections",
