@@ -30,6 +30,28 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add sources to any flow.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source.html
+   */
+  public toAddFlowSources() {
+    return this.to('AddFlowSources');
+  }
+
+  /**
+   * Grants permission to add VPC interfaces to any flow.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-vpcinterfaces.html
+   */
+  public toAddFlowVpcInterfaces() {
+    return this.to('AddFlowVpcInterfaces');
+  }
+
+  /**
    * Grants permission to create flows.
    *
    * Access Level: Write
@@ -60,6 +82,28 @@ export class Mediaconnect extends PolicyStatement {
    */
   public toDescribeFlow() {
     return this.to('DescribeFlow');
+  }
+
+  /**
+   * Grants permission to display the details of an offering.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-offerings-offeringarn.html
+   */
+  public toDescribeOffering() {
+    return this.to('DescribeOffering');
+  }
+
+  /**
+   * Grants permission to display the details of a reservation.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-reservations-reservationarn.html
+   */
+  public toDescribeReservation() {
+    return this.to('DescribeReservation');
   }
 
   /**
@@ -96,6 +140,50 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to display a list of all offerings that are available to the account in the current AWS Region.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-offerings.html
+   */
+  public toListOfferings() {
+    return this.to('ListOfferings');
+  }
+
+  /**
+   * Grants permission to display a list of all reservations that have been purchased by the account in the current AWS Region.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-reservations.html
+   */
+  public toListReservations() {
+    return this.to('ListReservations');
+  }
+
+  /**
+   * Grants permission to display a list of all tags associated with a resource.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/tags-resourcearn.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to purchase an offering.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-offerings-offeringarn.html
+   */
+  public toPurchaseOffering() {
+    return this.to('PurchaseOffering');
+  }
+
+  /**
    * Grants permission to remove outputs from any flow.
    *
    * Access Level: Write
@@ -104,6 +192,28 @@ export class Mediaconnect extends PolicyStatement {
    */
   public toRemoveFlowOutput() {
     return this.to('RemoveFlowOutput');
+  }
+
+  /**
+   * Grants permission to remove sources from any flow.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-sourcearn.html
+   */
+  public toRemoveFlowSource() {
+    return this.to('RemoveFlowSource');
+  }
+
+  /**
+   * Grants permission to remove VPC interfaces from any flow.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-vpcinterfaces-vpcinterfacename.html
+   */
+  public toRemoveFlowVpcInterface() {
+    return this.to('RemoveFlowVpcInterface');
   }
 
   /**
@@ -137,6 +247,39 @@ export class Mediaconnect extends PolicyStatement {
    */
   public toStopFlow() {
     return this.to('StopFlow');
+  }
+
+  /**
+   * Grants permission to associate tags with resources.
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/tags-resourcearn.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from resources.
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/tags-resourcearn.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update flows.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html
+   */
+  public toUpdateFlow() {
+    return this.to('UpdateFlow');
   }
 
   /**
@@ -175,23 +318,38 @@ export class Mediaconnect extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AddFlowOutputs",
+      "AddFlowSources",
+      "AddFlowVpcInterfaces",
       "CreateFlow",
       "DeleteFlow",
       "GrantFlowEntitlements",
+      "PurchaseOffering",
       "RemoveFlowOutput",
+      "RemoveFlowSource",
+      "RemoveFlowVpcInterface",
       "RevokeFlowEntitlement",
       "StartFlow",
       "StopFlow",
+      "UpdateFlow",
       "UpdateFlowEntitlement",
       "UpdateFlowOutput",
       "UpdateFlowSource"
     ],
     "Read": [
-      "DescribeFlow"
+      "DescribeFlow",
+      "DescribeOffering",
+      "DescribeReservation",
+      "ListTagsForResource"
     ],
     "List": [
       "ListEntitlements",
-      "ListFlows"
+      "ListFlows",
+      "ListOfferings",
+      "ListReservations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 

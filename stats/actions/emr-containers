@@ -1,9 +1,13 @@
 emr-containers:CancelJobRun;Write
+emr-containers:CreateManagedEndpoint;Write
 emr-containers:CreateVirtualCluster;Write
+emr-containers:DeleteManagedEndpoint;Write
 emr-containers:DeleteVirtualCluster;Write
 emr-containers:DescribeJobRun;Read
+emr-containers:DescribeManagedEndpoint;Read
 emr-containers:DescribeVirtualCluster;Read
 emr-containers:ListJobRuns;List
+emr-containers:ListManagedEndpoints;List
 emr-containers:ListTagsForResource;List
 emr-containers:ListVirtualClusters;List
 emr-containers:StartJobRun;Write

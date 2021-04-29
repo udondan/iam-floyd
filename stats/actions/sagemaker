@@ -64,6 +64,7 @@ sagemaker:DeleteExperiment;Write
 sagemaker:DeleteFeatureGroup;Write
 sagemaker:DeleteFlowDefinition;Write
 sagemaker:DeleteHumanLoop;Write
+sagemaker:DeleteHumanTaskUi;Write
 sagemaker:DeleteImage;Write
 sagemaker:DeleteImageVersion;Write
 sagemaker:DeleteModel;Write

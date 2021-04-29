@@ -30,6 +30,22 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a managed endpoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifExecutionRoleArn()
+   *
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_CreateManagedEndpoint.html
+   */
+  public toCreateManagedEndpoint() {
+    return this.to('CreateManagedEndpoint');
+  }
+
+  /**
    * Grants permission to create a virtual cluster
    *
    * Access Level: Write
@@ -42,6 +58,17 @@ export class EmrContainers extends PolicyStatement {
    */
   public toCreateVirtualCluster() {
     return this.to('CreateVirtualCluster');
+  }
+
+  /**
+   * Grants permission to delete a managed endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_DeleteManagedEndpoint.html
+   */
+  public toDeleteManagedEndpoint() {
+    return this.to('DeleteManagedEndpoint');
   }
 
   /**
@@ -67,6 +94,17 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a managed endpoint
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_DescribeManagedEndpoint.html
+   */
+  public toDescribeManagedEndpoint() {
+    return this.to('DescribeManagedEndpoint');
+  }
+
+  /**
    * Grants permission to describe a virtual cluster
    *
    * Access Level: Read
@@ -86,6 +124,17 @@ export class EmrContainers extends PolicyStatement {
    */
   public toListJobRuns() {
     return this.to('ListJobRuns');
+  }
+
+  /**
+   * Grants permission to list managed endpoints associated with a virtual cluster
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_ListManagedEndpoints.html
+   */
+  public toListManagedEndpoints() {
+    return this.to('ListManagedEndpoints');
   }
 
   /**
@@ -158,16 +207,20 @@ export class EmrContainers extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CancelJobRun",
+      "CreateManagedEndpoint",
       "CreateVirtualCluster",
+      "DeleteManagedEndpoint",
       "DeleteVirtualCluster",
       "StartJobRun"
     ],
     "Read": [
       "DescribeJobRun",
+      "DescribeManagedEndpoint",
       "DescribeVirtualCluster"
     ],
     "List": [
       "ListJobRuns",
+      "ListManagedEndpoints",
       "ListTagsForResource",
       "ListVirtualClusters"
     ],
@@ -224,11 +277,34 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type managedEndpoint to the statement
+   *
+   * @param virtualClusterId - Identifier for the virtualClusterId.
+   * @param endpointId - Identifier for the endpointId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onManagedEndpoint(virtualClusterId: string, endpointId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:emr-containers:${Region}:${Account}:/virtualclusters/${VirtualClusterId}/endpoints/${EndpointId}';
+    arn = arn.replace('${VirtualClusterId}', virtualClusterId);
+    arn = arn.replace('${EndpointId}', endpointId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Filters actions based on whether the execution role arn is provided with the action
    *
    * https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/iam-execution-role.html
    *
    * Applies to actions:
+   * - .toCreateManagedEndpoint()
    * - .toStartJobRun()
    *
    * @param value The value(s) to check

@@ -19,7 +19,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Allows the destination domain owner to accept an inbound cross-cluster search connection request
+   * Grants permission to the destination domain owner to accept an inbound cross-cluster search connection request
    *
    * Access Level: Write
    *
@@ -38,6 +38,17 @@ export class Es extends PolicyStatement {
    */
   public toAddTags() {
     return this.to('AddTags');
+  }
+
+  /**
+   * Grants permission to associate a package with an Amazon ES domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-associatepackage
+   */
+  public toAssociatePackage() {
+    return this.to('AssociatePackage');
   }
 
   /**
@@ -63,7 +74,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Creates a new cross-cluster search connection from a source domain to a destination domain
+   * Grants permission to create a new cross-cluster search connection from a source domain to a destination domain
    *
    * Access Level: Write
    *
@@ -71,6 +82,17 @@ export class Es extends PolicyStatement {
    */
   public toCreateOutboundCrossClusterSearchConnection() {
     return this.to('CreateOutboundCrossClusterSearchConnection');
+  }
+
+  /**
+   * Grants permission to add a package for use with Amazon ES domains
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createpackage
+   */
+  public toCreatePackage() {
+    return this.to('CreatePackage');
   }
 
   /**
@@ -96,7 +118,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Allows the destination domain owner to delete an existing inbound cross-cluster search connection
+   * Grants permission to the destination domain owner to delete an existing inbound cross-cluster search connection
    *
    * Access Level: Write
    *
@@ -107,7 +129,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Allows the source domain owner to delete an existing outbound cross-cluster search connection
+   * Grants permission to the source domain owner to delete an existing outbound cross-cluster search connection
    *
    * Access Level: Write
    *
@@ -115,6 +137,17 @@ export class Es extends PolicyStatement {
    */
   public toDeleteOutboundCrossClusterSearchConnection() {
     return this.to('DeleteOutboundCrossClusterSearchConnection');
+  }
+
+  /**
+   * Grants permission to delete a package from Amazon ES. The package must not be associated with any Amazon ES domain.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deletepackage
+   */
+  public toDeletePackage() {
+    return this.to('DeletePackage');
   }
 
   /**
@@ -162,7 +195,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Lists all the inbound cross-cluster search connections for a destination domain
+   * Grants permission to list all the inbound cross-cluster search connections for a destination domain
    *
    * Access Level: List
    *
@@ -173,7 +206,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Lists all the outbound cross-cluster search connections for a source domain
+   * Grants permission to list all the outbound cross-cluster search connections for a source domain
    *
    * Access Level: List
    *
@@ -181,6 +214,17 @@ export class Es extends PolicyStatement {
    */
   public toDescribeOutboundCrossClusterSearchConnections() {
     return this.to('DescribeOutboundCrossClusterSearchConnections');
+  }
+
+  /**
+   * Grants permission to describe all packages available to Amazon ES domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describepackages
+   */
+  public toDescribePackages() {
+    return this.to('DescribePackages');
   }
 
   /**
@@ -203,6 +247,17 @@ export class Es extends PolicyStatement {
    */
   public toDescribeReservedElasticsearchInstances() {
     return this.to('DescribeReservedElasticsearchInstances');
+  }
+
+  /**
+   * Grants permission to remove a package from the specified Amazon ES domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-dissociatepackage
+   */
+  public toDissociatePackage() {
+    return this.to('DissociatePackage');
   }
 
   /**
@@ -294,6 +349,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to fetch the version history for a package
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-get-pac-ver-hist
+   */
+  public toGetPackageVersionHistory() {
+    return this.to('GetPackageVersionHistory');
+  }
+
+  /**
    * Grants permission to fetch upgrade history for given ES domain
    *
    * Access Level: Read
@@ -324,6 +390,17 @@ export class Es extends PolicyStatement {
    */
   public toListDomainNames() {
     return this.to('ListDomainNames');
+  }
+
+  /**
+   * Grants permission to list all Amazon ES domains that a package is associated with
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listdomainsforpackage
+   */
+  public toListDomainsForPackage() {
+    return this.to('ListDomainsForPackage');
   }
 
   /**
@@ -360,6 +437,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all packages associated with the Amazon ES domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listpackagesfordomain
+   */
+  public toListPackagesForDomain() {
+    return this.to('ListPackagesForDomain');
+  }
+
+  /**
    * Grants permission to display all of the tags for an Amazon ES domain.
    *
    * Access Level: Read
@@ -382,7 +470,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Allows the destination domain owner to reject an inbound cross-cluster search connection request
+   * Grants permission to the destination domain owner to reject an inbound cross-cluster search connection request
    *
    * Access Level: Write
    *
@@ -415,6 +503,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a package for use with Amazon ES domains
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-updatepackage
+   */
+  public toUpdatePackage() {
+    return this.to('UpdatePackage');
+  }
+
+  /**
    * Grants permission to initiate upgrade of elastic search domain to given version
    *
    * Access Level: Write
@@ -428,13 +527,17 @@ export class Es extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AcceptInboundCrossClusterSearchConnection",
+      "AssociatePackage",
       "CreateElasticsearchDomain",
       "CreateElasticsearchServiceRole",
       "CreateOutboundCrossClusterSearchConnection",
+      "CreatePackage",
       "DeleteElasticsearchDomain",
       "DeleteElasticsearchServiceRole",
       "DeleteInboundCrossClusterSearchConnection",
       "DeleteOutboundCrossClusterSearchConnection",
+      "DeletePackage",
+      "DissociatePackage",
       "ESHttpDelete",
       "ESHttpPatch",
       "ESHttpPost",
@@ -442,6 +545,7 @@ export class Es extends PolicyStatement {
       "PurchaseReservedElasticsearchInstanceOffering",
       "RejectInboundCrossClusterSearchConnection",
       "UpdateElasticsearchDomainConfig",
+      "UpdatePackage",
       "UpgradeElasticsearchDomain"
     ],
     "Tagging": [
@@ -451,9 +555,11 @@ export class Es extends PolicyStatement {
     "Read": [
       "DescribeElasticsearchDomain",
       "DescribeElasticsearchDomainConfig",
+      "DescribePackages",
       "ESCrossClusterGet",
       "ESHttpGet",
       "ESHttpHead",
+      "GetPackageVersionHistory",
       "GetUpgradeHistory",
       "GetUpgradeStatus",
       "ListTags"
@@ -467,9 +573,11 @@ export class Es extends PolicyStatement {
       "DescribeReservedElasticsearchInstances",
       "GetCompatibleElasticsearchVersions",
       "ListDomainNames",
+      "ListDomainsForPackage",
       "ListElasticsearchInstanceTypeDetails",
       "ListElasticsearchInstanceTypes",
-      "ListElasticsearchVersions"
+      "ListElasticsearchVersions",
+      "ListPackagesForDomain"
     ]
   };
 

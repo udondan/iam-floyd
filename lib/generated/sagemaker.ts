@@ -1093,6 +1093,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Deletes the specified human task user interface (worker task template).
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteHumanTaskUi.html
+   */
+  public toDeleteHumanTaskUi() {
+    return this.to('DeleteHumanTaskUi');
+  }
+
+  /**
    * Grants permissions to delete a SageMaker Image.
    *
    * Access Level: Write
@@ -3184,6 +3195,7 @@ export class Sagemaker extends PolicyStatement {
       "DeleteFeatureGroup",
       "DeleteFlowDefinition",
       "DeleteHumanLoop",
+      "DeleteHumanTaskUi",
       "DeleteImage",
       "DeleteImageVersion",
       "DeleteModel",
