@@ -87,6 +87,7 @@ export { Mobileanalytics } from "./mobileanalytics";
 export { Monitron } from "./monitron";
 export { Mq } from "./mq";
 export { NeptuneDb } from "./neptune";
+export { Nimble } from "./nimblestudio";
 export { Personalize } from "./personalize";
 export { Mobiletargeting } from "./pinpoint";
 export { SesPinpoint } from "./pinpointemailservice";
