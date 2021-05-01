@@ -95,6 +95,17 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an EMR Notebook repository
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toCreateRepository() {
+    return this.to('CreateRepository');
+  }
+
+  /**
    * Grants permission to create a security configuration.
    *
    * Access Level: Write
@@ -103,6 +114,33 @@ export class Elasticmapreduce extends PolicyStatement {
    */
   public toCreateSecurityConfiguration() {
     return this.to('CreateSecurityConfiguration');
+  }
+
+  /**
+   * Grants permission to create an EMR studio.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRequestTag()
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html
+   */
+  public toCreateStudio() {
+    return this.to('CreateStudio');
+  }
+
+  /**
+   * Grants permission to create an EMR studio session mapping.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html
+   */
+  public toCreateStudioSessionMapping() {
+    return this.to('CreateStudioSessionMapping');
   }
 
   /**
@@ -117,6 +155,17 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an EMR Notebook repository.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toDeleteRepository() {
+    return this.to('DeleteRepository');
+  }
+
+  /**
    * Grants permission to delete a security configuration.
    *
    * Access Level: Write
@@ -125,6 +174,28 @@ export class Elasticmapreduce extends PolicyStatement {
    */
   public toDeleteSecurityConfiguration() {
     return this.to('DeleteSecurityConfiguration');
+  }
+
+  /**
+   * Grants permission to delete an EMR studio.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html
+   */
+  public toDeleteStudio() {
+    return this.to('DeleteStudio');
+  }
+
+  /**
+   * Grants permission to delete an EMR studio session mapping.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html
+   */
+  public toDeleteStudioSessionMapping() {
+    return this.to('DeleteStudioSessionMapping');
   }
 
   /**
@@ -142,6 +213,8 @@ export class Elasticmapreduce extends PolicyStatement {
    * Grants permission to view information about a notebook, including status, user, role, tags, location, and more.
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
    */
   public toDescribeEditor() {
     return this.to('DescribeEditor');
@@ -156,6 +229,28 @@ export class Elasticmapreduce extends PolicyStatement {
    */
   public toDescribeJobFlows() {
     return this.to('DescribeJobFlows');
+  }
+
+  /**
+   * Grants permission to view information about a notebook execution.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-headless.html
+   */
+  public toDescribeNotebookExecution() {
+    return this.to('DescribeNotebookExecution');
+  }
+
+  /**
+   * Grants permission to describe an EMR Notebook repository.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toDescribeRepository() {
+    return this.to('DescribeRepository');
   }
 
   /**
@@ -181,6 +276,17 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view information about an EMR studio.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html
+   */
+  public toDescribeStudio() {
+    return this.to('DescribeStudio');
+  }
+
+  /**
    * Grants permission to retrieve the EMR block public access configuration for the AWS account in the Region.
    *
    * Access Level: Read
@@ -200,6 +306,28 @@ export class Elasticmapreduce extends PolicyStatement {
    */
   public toGetManagedScalingPolicy() {
     return this.to('GetManagedScalingPolicy');
+  }
+
+  /**
+   * Grants permission to view information about an EMR studio session mapping.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html
+   */
+  public toGetStudioSessionMapping() {
+    return this.to('GetStudioSessionMapping');
+  }
+
+  /**
+   * Grants permission to link an EMR Notebook repository to EMR notebooks.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toLinkRepository() {
+    return this.to('LinkRepository');
   }
 
   /**
@@ -228,6 +356,8 @@ export class Elasticmapreduce extends PolicyStatement {
    * Grants permission to list summary information for accessible EMR notebooks.
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
    */
   public toListEditors() {
     return this.to('ListEditors');
@@ -267,6 +397,28 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list summary information for notebook executions.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-headless.html
+   */
+  public toListNotebookExecutions() {
+    return this.to('ListNotebookExecutions');
+  }
+
+  /**
+   * Grants permission to list existing EMR Notebook repositories.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toListRepositories() {
+    return this.to('ListRepositories');
+  }
+
+  /**
    * Grants permission to list available security configurations in this account by name, along with creation dates and times.
    *
    * Access Level: List
@@ -286,6 +438,28 @@ export class Elasticmapreduce extends PolicyStatement {
    */
   public toListSteps() {
     return this.to('ListSteps');
+  }
+
+  /**
+   * Grants permission to list summary information about EMR studio session mappings.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html
+   */
+  public toListStudioSessionMappings() {
+    return this.to('ListStudioSessionMappings');
+  }
+
+  /**
+   * Grants permission to list summary information about EMR studios.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html
+   */
+  public toListStudios() {
+    return this.to('ListStudios');
   }
 
   /**
@@ -440,6 +614,22 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an EMR notebook execution.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRequestTag()
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-headless.html
+   */
+  public toStartNotebookExecution() {
+    return this.to('StartNotebookExecution');
+  }
+
+  /**
    * Grants permission to shut down an EMR notebook.
    *
    * Access Level: Write
@@ -451,6 +641,17 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop notebook execution.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-headless.html
+   */
+  public toStopNotebookExecution() {
+    return this.to('StopNotebookExecution');
+  }
+
+  /**
    * Grants permission to terminate a cluster (job flow).
    *
    * Access Level: Write
@@ -459,6 +660,50 @@ export class Elasticmapreduce extends PolicyStatement {
    */
   public toTerminateJobFlows() {
     return this.to('TerminateJobFlows');
+  }
+
+  /**
+   * Grants permission to unlink an EMR Notebook repository from EMR notebooks.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toUnlinkRepository() {
+    return this.to('UnlinkRepository');
+  }
+
+  /**
+   * Grants permission to update an EMR Notebook repository.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor
+   */
+  public toUpdateRepository() {
+    return this.to('UpdateRepository');
+  }
+
+  /**
+   * Grants permission to update information about an EMR studio.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html
+   */
+  public toUpdateStudio() {
+    return this.to('UpdateStudio');
+  }
+
+  /**
+   * Grants permission to update an EMR studio session mapping.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html
+   */
+  public toUpdateStudioSessionMapping() {
+    return this.to('UpdateStudioSessionMapping');
   }
 
   /**
@@ -477,9 +722,16 @@ export class Elasticmapreduce extends PolicyStatement {
       "AddJobFlowSteps",
       "CancelSteps",
       "CreateEditor",
+      "CreateRepository",
       "CreateSecurityConfiguration",
+      "CreateStudio",
+      "CreateStudioSessionMapping",
       "DeleteEditor",
+      "DeleteRepository",
       "DeleteSecurityConfiguration",
+      "DeleteStudio",
+      "DeleteStudioSessionMapping",
+      "LinkRepository",
       "ModifyCluster",
       "ModifyInstanceFleet",
       "ModifyInstanceGroups",
@@ -491,8 +743,14 @@ export class Elasticmapreduce extends PolicyStatement {
       "RunJobFlow",
       "SetTerminationProtection",
       "StartEditor",
+      "StartNotebookExecution",
       "StopEditor",
-      "TerminateJobFlows"
+      "StopNotebookExecution",
+      "TerminateJobFlows",
+      "UnlinkRepository",
+      "UpdateRepository",
+      "UpdateStudio",
+      "UpdateStudioSessionMapping"
     ],
     "Tagging": [
       "AddTags",
@@ -502,10 +760,14 @@ export class Elasticmapreduce extends PolicyStatement {
       "DescribeCluster",
       "DescribeEditor",
       "DescribeJobFlows",
+      "DescribeNotebookExecution",
+      "DescribeRepository",
       "DescribeSecurityConfiguration",
       "DescribeStep",
+      "DescribeStudio",
       "GetBlockPublicAccessConfiguration",
       "GetManagedScalingPolicy",
+      "GetStudioSessionMapping",
       "ListBootstrapActions",
       "ListInstanceFleets",
       "ListInstanceGroups",
@@ -515,7 +777,11 @@ export class Elasticmapreduce extends PolicyStatement {
     "List": [
       "ListClusters",
       "ListEditors",
+      "ListNotebookExecutions",
+      "ListRepositories",
       "ListSecurityConfigurations",
+      "ListStudioSessionMappings",
+      "ListStudios",
       "ViewEventsFromAllClustersInConsole"
     ],
     "Permissions management": [
@@ -570,6 +836,52 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type notebook-execution to the statement
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-headless.html
+   *
+   * @param notebookExecutionId - Identifier for the notebookExecutionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onNotebookExecution(notebookExecutionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticmapreduce:${Region}:${Account}:notebook-execution/${NotebookExecutionId}';
+    arn = arn.replace('${NotebookExecutionId}', notebookExecutionId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type studio to the statement
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html
+   *
+   * @param studioId - Identifier for the studioId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onStudio(studioId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticmapreduce:${Region}:${Account}:studio/${StudioId}';
+    arn = arn.replace('${StudioId}', studioId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Filters actions based on whether the tag and value pair is provided with the action
    *
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
@@ -577,7 +889,9 @@ export class Elasticmapreduce extends PolicyStatement {
    * Applies to actions:
    * - .toAddTags()
    * - .toCreateEditor()
+   * - .toCreateStudio()
    * - .toRunJobFlow()
+   * - .toStartNotebookExecution()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -595,6 +909,8 @@ export class Elasticmapreduce extends PolicyStatement {
    * Applies to resource types:
    * - cluster
    * - editor
+   * - notebook-execution
+   * - studio
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
