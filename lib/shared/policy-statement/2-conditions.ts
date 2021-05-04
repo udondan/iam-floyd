@@ -311,6 +311,23 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
   }
 
   /**
+   * Check whether the call to your resource is being made directly by an AWS [service principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services). For example, AWS CloudTrail uses the service principal `cloudtrail.amazonaws.com` to write logs to your Amazon S3 bucket. The request context key is set to true when a service uses a service principal to perform a direct action on your resources. The context key is set to false if the service uses the credentials of an IAM principal to make a request on the principal's behalf. It is also set to false if the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf.
+   *
+   * **Availability:** This key is present in the request context for all signed API requests that use AWS credentials.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principalisawsservice
+   *
+   * @param value Weather the call to your resource is being made directly by an AWS service principal. **Default:** `true`
+   */
+  public ifAwsPrincipalIsAWSService(value?: boolean) {
+    return this.if(
+      `aws:PrincipalIsAWSService`,
+      typeof value !== 'undefined' ? value : true,
+      new Operator().bool()
+    );
+  }
+
+  /**
    * Compare the identifier of the organization in AWS Organizations to which the requesting principal belongs with the identifier you specify.
    *
    * **Availability:** This key is included in the request context only if the principal is a member of an organization.
@@ -350,6 +367,56 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     operator?: Operator | string
   ) {
     return this.if('aws:PrincipalOrgPaths', value, operator);
+  }
+
+  /**
+   * Compare the [service principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services) name in the policy with the service principal that is making requests to your resources. You can use this key to check whether this call is made by a specific service principal. When a service principal makes a direct request to your resource, the `aws:PrincipalServiceName` key contains the name of the service principal. For example, the AWS CloudTrail service principal name is `cloudtrail.amazonaws.com`.
+   *
+   * **Availability:** This key is present in the request when the call is made by an AWS service principal. This key is not present in any other situation, including the following:
+   *
+   * - If the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf.
+   * - If the service uses the credentials of an IAM principal to make a request on the principal's behalf.
+   * - If the call is made directly by an IAM principal.
+   *
+   * You can use this condition key to limit access to your trusted identities and expected network locations, while safely granting access to an AWS service.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principalservicename
+   *
+   * @param value AWS service name, e.g. `cloudtrail.amazonaws.com`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsPrincipalServiceName(
+    value: string,
+    operator?: Operator | string
+  ) {
+    return this.if('aws:PrincipalServiceName', value, operator);
+  }
+
+  /**
+   * This key provides a list of all [service principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services) names that belong to the service. This is an advanced condition key. You can use it to restrict the service from accessing your resource from a specific Region only. Some services may create Regional service principals to indicate a particular instance of the service within a specific Region. You can limit access to a resource to a particular instance of the service. When a service principal makes a direct request to your resource, the `aws:PrincipalServiceNamesList` contains an unordered list of all service principal names associated with the Regional instance of the service.
+   *
+   * **Availability:** This key is present in the request when the call is made by an AWS service principal. This key is not present in any other situation, including the following:
+   *
+   * - If the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf.
+   * - If the service uses the credentials of an IAM principal to make a request on the principal's behalf.
+   * - If the call is made directly by an IAM principal.
+   *
+   * `aws:PrincipalServiceNamesList` is a multivalued condition key. Multivalued keys include one or more values in a list format. The result is a logical `OR`. You must use the `ForAnyValue` or `ForAllValues` set operators with the `StringLike` [condition operator](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String) when you use this key. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array, such as `("Key":["Value1", "Value2"])`. You should also include these brackets when there is a single value. For more information about multivalued condition keys, see [Using multiple keys and values](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_multi-value-conditions.html#reference_policies_multi-key-or-value-conditions).
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principalservicenameslist
+   *
+   * @param value AWS service name list
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ForAnyValue:StringLike`
+   */
+  public ifAwsPrincipalServiceNamesList(
+    value: string[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      'aws:PrincipalServiceNamesList',
+      value,
+      operator || new Operator().stringLike().forAnyValue()
+    );
   }
 
   /**
@@ -528,6 +595,29 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
       value,
       operator || new Operator().arnLike()
     );
+  }
+
+  /**
+   * Compare the source identity that was set by the principal with the source identity that you specify in the policy.
+   *
+   * **Availability:** This key is included in the request context after a source identity has been set when a role is assumed using any AWS STS assume-role CLI command, or AWS STS `AssumeRole` API operation.
+   *
+   * You can use this key in a policy to allow actions in AWS by principals that have set a source identity when assuming a role. Activity for the role's specified source identity appears in [AWS CloudTrail](https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html#cloudtrail-integration_signin-tempcreds). This makes it easier for administrators to determine who or what performed actions with a role in AWS.
+   *
+   * Unlike [sts:RoleSessionName](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_rolesessionname), after the source identity is set, the value cannot be changed. It is present in the request context for all actions taken by the role. The value persists into subsequent role sessions when you use the session credentials to assume another role. Assuming one role from another is called [role chaining](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-role-chaining).
+   *
+   * The [sts:SourceIdentity](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sourceidentity) key is present in the request when the principal initially sets a source identity while assuming a role using any AWS STS assume-role CLI command, or AWS STS `AssumeRole` API operation. The `aws:SourceIdentity` key is present in the request for any actions that are taken with a role session that has a source identity set.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceidentity
+   *
+   * @param value The source identity
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsSourceIdentity(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if('aws:SourceIdentity', value, operator);
   }
 
   /**
