@@ -46,6 +46,17 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Adds two domain controllers in the specified Region for the specified directory.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddRegion.html
+   */
+  public toAddRegion() {
+    return this.to('AddRegion');
+  }
+
+  /**
    * Adds or overwrites one or more tags for the specified Amazon Directory Services directory.
    *
    * Access Level: Tagging
@@ -397,6 +408,17 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Provides information about the Regions that are configured for multi-Region replication.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeRegions.html
+   */
+  public toDescribeRegions() {
+    return this.to('DescribeRegions');
+  }
+
+  /**
    * Returns the shared directories in your account.
    *
    * Access Level: Read
@@ -430,6 +452,17 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Disables alternative client authentication methods for the specified directory.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableClientAuthentication.html
+   */
+  public toDisableClientAuthentication() {
+    return this.to('DisableClientAuthentication');
+  }
+
+  /**
    * Deactivates LDAP secure calls for the specified directory.
    *
    * Access Level: Write
@@ -460,6 +493,17 @@ export class Ds extends PolicyStatement {
    */
   public toDisableSso() {
     return this.to('DisableSso');
+  }
+
+  /**
+   * Enables alternative client authentication methods for the specified directory.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableClientAuthentication.html
+   */
+  public toEnableClientAuthentication() {
+    return this.to('EnableClientAuthentication');
   }
 
   /**
@@ -499,6 +543,8 @@ export class Ds extends PolicyStatement {
    *
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_GetAuthorizedApplicationDetails.html
    */
   public toGetAuthorizedApplicationDetails() {
     return this.to('GetAuthorizedApplicationDetails');
@@ -635,6 +681,17 @@ export class Ds extends PolicyStatement {
    */
   public toRemoveIpRoutes() {
     return this.to('RemoveIpRoutes');
+  }
+
+  /**
+   * Stops all replication and removes the domain controllers from the specified Region. You cannot remove the primary Region with this operation.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveRegion.html
+   */
+  public toRemoveRegion() {
+    return this.to('RemoveRegion');
   }
 
   /**
@@ -778,6 +835,7 @@ export class Ds extends PolicyStatement {
     "Write": [
       "AcceptSharedDirectory",
       "AddIpRoutes",
+      "AddRegion",
       "AuthorizeApplication",
       "CancelSchemaExtension",
       "CreateAlias",
@@ -793,9 +851,11 @@ export class Ds extends PolicyStatement {
       "DeleteTrust",
       "DeregisterCertificate",
       "DeregisterEventTopic",
+      "DisableClientAuthentication",
       "DisableLDAPS",
       "DisableRadius",
       "DisableSso",
+      "EnableClientAuthentication",
       "EnableLDAPS",
       "EnableRadius",
       "EnableSso",
@@ -803,6 +863,7 @@ export class Ds extends PolicyStatement {
       "RegisterEventTopic",
       "RejectSharedDirectory",
       "RemoveIpRoutes",
+      "RemoveRegion",
       "ResetUserPassword",
       "RestoreFromSnapshot",
       "ShareDirectory",
@@ -829,6 +890,7 @@ export class Ds extends PolicyStatement {
       "DescribeDomainControllers",
       "DescribeEventTopics",
       "DescribeLDAPSSettings",
+      "DescribeRegions",
       "DescribeSharedDirectories",
       "DescribeSnapshots",
       "DescribeTrusts",

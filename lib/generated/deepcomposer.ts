@@ -19,27 +19,29 @@ export class Deepcomposer extends PolicyStatement {
   }
 
   /**
-   * Associates a DeepComposer coupon (or DSN) with the account associated with the sender of the request.
+   * Grants permission to associate a DeepComposer coupon (or DSN) with the account associated with the sender of the request
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/what-it-is-keyboard.html
    */
   public toAssociateCoupon() {
     return this.to('AssociateCoupon');
   }
 
   /**
-   * Creates an audio file by converting the midi composition into a wav or mp3 file.
+   * Grants permission to create an audio file by converting the midi composition into a wav or mp3 file
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-learn-from-pre-trained-models.html
    */
   public toCreateAudio() {
     return this.to('CreateAudio');
   }
 
   /**
-   * Creates a multi-track midi composition.
+   * Grants permission to create a multi-track midi composition
    *
    * Access Level: Write
    *
@@ -47,14 +49,14 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-learn-from-pre-trained-models.html
    */
   public toCreateComposition() {
     return this.to('CreateComposition');
   }
 
   /**
-   * Starts creating/training a generative-model that is able to perform inference against the user-provided piano-melody to create a multi-track midi composition.
+   * Grants permission to start creating/training a generative-model that is able to perform inference against the user-provided piano-melody to create a multi-track midi composition
    *
    * Access Level: Write
    *
@@ -62,129 +64,133 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-custom-model.html
    */
   public toCreateModel() {
     return this.to('CreateModel');
   }
 
   /**
-   * Deletes the composition.
+   * Grants permission to delete the composition
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-learn-from-pre-trained-models.html
    */
   public toDeleteComposition() {
     return this.to('DeleteComposition');
   }
 
   /**
-   * Deletes the model.
+   * Grants permission to delete the model
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-custom-model.html
    */
   public toDeleteModel() {
     return this.to('DeleteModel');
   }
 
   /**
-   * Returns information about the composition.
+   * Grants permission to get information about the composition
    *
    * Access Level: Read
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-learn-from-pre-trained-models.html
    */
   public toGetComposition() {
     return this.to('GetComposition');
   }
 
   /**
-   * Returns information about the model.
+   * Grants permission to get information about the model
    *
    * Access Level: Read
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-custom-model.html
    */
   public toGetModel() {
     return this.to('GetModel');
   }
 
   /**
-   * Returns information about the sample/pre-trained DeepComposer model.
+   * Grants permission to get information about the sample/pre-trained DeepComposer model
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-learn-from-pre-trained-models.html
    */
   public toGetSampleModel() {
     return this.to('GetSampleModel');
   }
 
   /**
-   * Returns a list of all the compositions owned by the sender of the request.
+   * Grants permission to list all the compositions owned by the sender of the request
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-learn-from-pre-trained-models.html
    */
   public toListCompositions() {
     return this.to('ListCompositions');
   }
 
   /**
-   * Returns a list of all the models owned by the sender of the request.
+   * Grants permission to list all the models owned by the sender of the request
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-custom-model.html
    */
   public toListModels() {
     return this.to('ListModels');
   }
 
   /**
-   * Returns a list of all the sample/pre-trained models provided by the DeepComposer service.
+   * Grants permission to list all the sample/pre-trained models provided by the DeepComposer service
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-learn-from-pre-trained-models.html
    */
   public toListSampleModels() {
     return this.to('ListSampleModels');
   }
 
   /**
-   * Grants permission to lists tag for a resource.
+   * Grants permission to list tags for a resource
    *
    * Access Level: List
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/deepcomposer-tagging.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
   }
 
   /**
-   * Returns a list of all the training options or topic for creating/training a model.
+   * Grants permission to list all the training options or topic for creating/training a model
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-custom-model.html
    */
   public toListTrainingTopics() {
     return this.to('ListTrainingTopics');
   }
 
   /**
-   * Grants permission to tag a resource.
+   * Grants permission to tag a resource
    *
    * Access Level: Tagging
    *
@@ -192,13 +198,15 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/deepcomposer-tagging.html
    */
   public toTagResource() {
     return this.to('TagResource');
   }
 
   /**
-   * Grants permission to untag a resource.
+   * Grants permission to untag a resource
    *
    * Access Level: Tagging
    *
@@ -206,28 +214,30 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/deepcomposer-tagging.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
   }
 
   /**
-   * Modifies the mutable properties associated with a composition.
+   * Grants permission to modify the mutable properties associated with a composition
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-learn-from-pre-trained-models.html
    */
   public toUpdateComposition() {
     return this.to('UpdateComposition');
   }
 
   /**
-   * Modifies the mutable properties associated with a model.
+   * Grants permission to to modify the mutable properties associated with a model
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-custom-model.html
    */
   public toUpdateModel() {
     return this.to('UpdateModel');
@@ -265,7 +275,7 @@ export class Deepcomposer extends PolicyStatement {
   /**
    * Adds a resource of type model to the statement
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-custom-model.html
    *
    * @param modelId - Identifier for the modelId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -287,7 +297,7 @@ export class Deepcomposer extends PolicyStatement {
   /**
    * Adds a resource of type composition to the statement
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-learn-from-pre-trained-models.html
    *
    * @param compositionId - Identifier for the compositionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -309,7 +319,7 @@ export class Deepcomposer extends PolicyStatement {
   /**
    * Adds a resource of type audio to the statement
    *
-   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
+   * https://docs.aws.amazon.com/deepcomposer/latest/devguide/get-started-learn-from-pre-trained-models.html
    *
    * @param audioId - Identifier for the audioId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

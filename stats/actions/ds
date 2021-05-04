@@ -1,5 +1,6 @@
 ds:AcceptSharedDirectory;Write
 ds:AddIpRoutes;Write
+ds:AddRegion;Write
 ds:AddTagsToResource;Tagging
 ds:AuthorizeApplication;Write
 ds:CancelSchemaExtension;Write
@@ -27,12 +28,15 @@ ds:DescribeDirectories;List
 ds:DescribeDomainControllers;Read
 ds:DescribeEventTopics;Read
 ds:DescribeLDAPSSettings;Read
+ds:DescribeRegions;Read
 ds:DescribeSharedDirectories;Read
 ds:DescribeSnapshots;Read
 ds:DescribeTrusts;Read
+ds:DisableClientAuthentication;Write
 ds:DisableLDAPS;Write
 ds:DisableRadius;Write
 ds:DisableSso;Write
+ds:EnableClientAuthentication;Write
 ds:EnableLDAPS;Write
 ds:EnableRadius;Write
 ds:EnableSso;Write
@@ -49,6 +53,7 @@ ds:RegisterCertificate;Write
 ds:RegisterEventTopic;Write
 ds:RejectSharedDirectory;Write
 ds:RemoveIpRoutes;Write
+ds:RemoveRegion;Write
 ds:RemoveTagsFromResource;Tagging
 ds:ResetUserPassword;Write
 ds:RestoreFromSnapshot;Write
