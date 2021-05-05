@@ -371,6 +371,17 @@ export class Opsworks extends PolicyStatement {
   }
 
   /**
+   * Describes the operating systems that are supported by AWS OpsWorks Stacks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeOperatingSystems.html
+   */
+  public toDescribeOperatingSystems() {
+    return this.to('DescribeOperatingSystems');
+  }
+
+  /**
    * Describes the permissions for a specified stack
    *
    * Access Level: List
@@ -884,6 +895,7 @@ export class Opsworks extends PolicyStatement {
       "DescribeLayers",
       "DescribeLoadBasedAutoScaling",
       "DescribeMyUserProfile",
+      "DescribeOperatingSystems",
       "DescribePermissions",
       "DescribeRaidArrays",
       "DescribeRdsDbInstances",

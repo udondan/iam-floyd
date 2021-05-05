@@ -459,6 +459,17 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
+   * Lists the major version families of each managed schema. If a major version ARN is provided as SchemaArn, the minor version revisions in that family are listed instead.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListManagedSchemaArns.html
+   */
+  public toListManagedSchemaArns() {
+    return this.to('ListManagedSchemaArns');
+  }
+
+  /**
    * Lists all attributes associated with an object.
    *
    * Access Level: Read
@@ -765,6 +776,7 @@ export class Clouddirectory extends PolicyStatement {
       "ListAppliedSchemaArns",
       "ListDevelopmentSchemaArns",
       "ListDirectories",
+      "ListManagedSchemaArns",
       "ListPublishedSchemaArns"
     ],
     "Tagging": [

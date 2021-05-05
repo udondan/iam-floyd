@@ -30,6 +30,7 @@ opsworks:DescribeInstances;List
 opsworks:DescribeLayers;List
 opsworks:DescribeLoadBasedAutoScaling;List
 opsworks:DescribeMyUserProfile;List
+opsworks:DescribeOperatingSystems;List
 opsworks:DescribePermissions;List
 opsworks:DescribeRaidArrays;List
 opsworks:DescribeRdsDbInstances;List

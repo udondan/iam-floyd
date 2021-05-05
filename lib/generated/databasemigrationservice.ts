@@ -148,6 +148,17 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the specified connection between a replication instance and an endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteConnection.html
+   */
+  public toDeleteConnection() {
+    return this.to('DeleteConnection');
+  }
+
+  /**
    * Grants permission to delete the specified endpoint
    *
    * Access Level: Write
@@ -519,6 +530,17 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to move the specified replication task to a different replication instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html
+   */
+  public toMoveReplicationTask() {
+    return this.to('MoveReplicationTask');
+  }
+
+  /**
    * Grants permission to reboot a replication instance. Rebooting results in a momentary outage, until the replication instance becomes available again
    *
    * Access Level: Write
@@ -634,6 +656,7 @@ export class Dms extends PolicyStatement {
       "CreateReplicationSubnetGroup",
       "CreateReplicationTask",
       "DeleteCertificate",
+      "DeleteConnection",
       "DeleteEndpoint",
       "DeleteEventSubscription",
       "DeleteReplicationInstance",
@@ -646,6 +669,7 @@ export class Dms extends PolicyStatement {
       "ModifyReplicationInstance",
       "ModifyReplicationSubnetGroup",
       "ModifyReplicationTask",
+      "MoveReplicationTask",
       "RebootReplicationInstance",
       "RefreshSchemas",
       "ReloadTables",

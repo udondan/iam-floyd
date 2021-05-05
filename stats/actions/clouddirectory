@@ -38,6 +38,7 @@ clouddirectory:ListFacetAttributes;Read
 clouddirectory:ListFacetNames;Read
 clouddirectory:ListIncomingTypedLinks;Read
 clouddirectory:ListIndex;Read
+clouddirectory:ListManagedSchemaArns;List
 clouddirectory:ListObjectAttributes;Read
 clouddirectory:ListObjectChildren;Read
 clouddirectory:ListObjectParentPaths;Read
