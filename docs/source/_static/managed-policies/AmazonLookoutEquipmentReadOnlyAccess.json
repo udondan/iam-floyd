@@ -1,0 +1,21 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"lookoutequipment:DescribeDataset",
+				"lookoutequipment:DescribeDataIngestionJob",
+				"lookoutequipment:DescribeModel",
+				"lookoutequipment:DescribeInferenceScheduler",
+				"lookoutequipment:ListDatasets",
+				"lookoutequipment:ListDataIngestionJobs",
+				"lookoutequipment:ListModels",
+				"lookoutequipment:ListInferenceSchedulers",
+				"lookoutequipment:ListInferenceExecutions",
+				"lookoutequipment:ListTagsForResource"
+			],
+			"Resource": "*"
+		}
+	]
+}

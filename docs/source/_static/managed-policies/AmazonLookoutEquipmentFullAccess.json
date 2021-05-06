@@ -35,6 +35,13 @@
 					"kms:ViaService": "lookoutequipment.*.amazonaws.com"
 				}
 			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"kms:DescribeKey"
+			],
+			"Resource": "*"
 		}
 	]
 }
