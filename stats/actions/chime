@@ -164,6 +164,7 @@ chime:ListRoomMemberships;List
 chime:ListRooms;List
 chime:ListSipMediaApplications;List
 chime:ListSipRules;List
+chime:ListSupportedPhoneNumberCountries;List
 chime:ListTagsForResource;List
 chime:ListUsers;List
 chime:ListVoiceConnectorGroups;List

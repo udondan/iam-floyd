@@ -195,7 +195,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to establish a web socket connection to the messaging session endpoint
+   * Grants permission to establish a web socket connection for app instance user to the messaging session endpoint
    *
    * Access Level: Write
    *
@@ -1884,6 +1884,15 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the phone number countries supported by the AWS account
+   *
+   * Access Level: List
+   */
+  public toListSupportedPhoneNumberCountries() {
+    return this.to('ListSupportedPhoneNumberCountries');
+  }
+
+  /**
    * Grants permission to list the tags applied to an Amazon Chime resource.
    *
    * Access Level: List
@@ -2858,6 +2867,7 @@ export class Chime extends PolicyStatement {
       "ListRooms",
       "ListSipMediaApplications",
       "ListSipRules",
+      "ListSupportedPhoneNumberCountries",
       "ListTagsForResource",
       "ListUsers",
       "ListVoiceConnectorGroups",

@@ -9,7 +9,8 @@ opsworks-cm:DescribeEvents;List
 opsworks-cm:DescribeNodeAssociationStatus;List
 opsworks-cm:DescribeServers;List
 opsworks-cm:DisassociateNode;Write
-opsworks-cm:ListTagsForResource;List
+opsworks-cm:ExportServerEngineAttribute;Read
+opsworks-cm:ListTagsForResource;Read
 opsworks-cm:RestoreServer;Write
 opsworks-cm:StartMaintenance;Write
 opsworks-cm:TagResource;Tagging

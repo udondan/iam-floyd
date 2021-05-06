@@ -49,8 +49,8 @@ lambda:PutFunctionEventInvokeConfig;Write
 lambda:PutProvisionedConcurrencyConfig;Write
 lambda:RemoveLayerVersionPermission;Permissions management
 lambda:RemovePermission;Permissions management
-lambda:TagResource;Write
-lambda:UntagResource;Write
+lambda:TagResource;Tagging
+lambda:UntagResource;Tagging
 lambda:UpdateAlias;Write
 lambda:UpdateCodeSigningConfig;Write
 lambda:UpdateEventSourceMapping;Write

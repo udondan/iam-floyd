@@ -89,6 +89,7 @@ export class Lambda extends PolicyStatement {
    * - .ifVpcIds()
    * - .ifSubnetIds()
    * - .ifSecurityGroupIds()
+   * - .ifCodeSigningConfigArn()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html
    */
@@ -532,6 +533,9 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifCodeSigningConfigArn()
+   *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionCodeSigningConfig.html
    */
   public toPutFunctionCodeSigningConfig() {
@@ -599,7 +603,7 @@ export class Lambda extends PolicyStatement {
   /**
    * Grants permission to add tags to an AWS Lambda function
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_TagResources.html
    */
@@ -610,7 +614,7 @@ export class Lambda extends PolicyStatement {
   /**
    * Grants permission to remove tags from an AWS Lambda function
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UntagResource.html
    */
@@ -735,8 +739,6 @@ export class Lambda extends PolicyStatement {
       "PutFunctionConcurrency",
       "PutFunctionEventInvokeConfig",
       "PutProvisionedConcurrencyConfig",
-      "TagResource",
-      "UntagResource",
       "UpdateAlias",
       "UpdateCodeSigningConfig",
       "UpdateEventSourceMapping",
@@ -772,6 +774,10 @@ export class Lambda extends PolicyStatement {
       "ListLayers",
       "ListProvisionedConcurrencyConfigs",
       "ListVersionsByFunction"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
@@ -786,7 +792,7 @@ export class Lambda extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCodeSigningConfig(codeSigningConfigId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lambda:${Region}:${Account}:codesigningconfig:${CodeSigningConfigId}';
+    var arn = 'arn:${Partition}:lambda:${Region}:${Account}:code-signing-config:${CodeSigningConfigId}';
     arn = arn.replace('${CodeSigningConfigId}', codeSigningConfigId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
@@ -916,6 +922,10 @@ export class Lambda extends PolicyStatement {
 
   /**
    * Filters access by the ARN of an AWS Lambda code signing config
+   *
+   * Applies to actions:
+   * - .toCreateFunction()
+   * - .toPutFunctionCodeSigningConfig()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

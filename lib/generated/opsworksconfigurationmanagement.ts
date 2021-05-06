@@ -19,7 +19,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Associate a node to a configuration management server.
+   * Grants permission to associate a node to a configuration management server
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Create a backup for the specified server.
+   * Grants permission to create a backup for the specified server
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Create a new server.
+   * Grants permission to create a new server
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Delete the specified backup and possibly its S3 bucket.
+   * Grants permission to delete the specified backup and possibly its S3 bucket
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified server with his corresponding CF stack and possibly the S3 bucket.
+   * Grants permission to delete the specified server with its corresponding CloudFormation stack and possibly the S3 bucket
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Describe the service limits for the user's account.
+   * Grants permission to describe the service limits for the user's account
    *
    * Access Level: List
    *
@@ -85,7 +85,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Describe a single backup, all backups of a specified server or all backups of the user's account.
+   * Grants permission to describe a single backup, all backups of a specified server or all backups of the user's account
    *
    * Access Level: List
    *
@@ -96,7 +96,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Describe all events of the specified server.
+   * Grants permission to describe all events of the specified server
    *
    * Access Level: List
    *
@@ -107,7 +107,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Describe the association status for the specified node token and the specified server.
+   * Grants permission to describe the association status for the specified node token and the specified server
    *
    * Access Level: List
    *
@@ -118,7 +118,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Describes the specified server or all servers of the user's account.
+   * Grants permission to describe the specified server or all servers of the user's account
    *
    * Access Level: List
    *
@@ -129,7 +129,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Disassociates a specified node from a server.
+   * Grants permission to disassociate a specified node from a server
    *
    * Access Level: Write
    *
@@ -140,9 +140,20 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * List the tags that are applied to the specified server or backup.
+   * Grants permission to export an engine attribute from a server
    *
-   * Access Level: List
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_ExportServerEngineAttribute.html
+   */
+  public toExportServerEngineAttribute() {
+    return this.to('ExportServerEngineAttribute');
+  }
+
+  /**
+   * Grants permission to list the tags that are applied to the specified server or backup
+   *
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_ListTagsForResource.html
    */
@@ -151,7 +162,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Applies a backup to specified server. Possibly swaps out the ec2-instance if specified.
+   * Grants permission to apply a backup to specified server. Possibly swaps out the ec2-instance if specified
    *
    * Access Level: Write
    *
@@ -162,7 +173,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Start the server maintenance immediately.
+   * Grants permission to start the server maintenance immediately
    *
    * Access Level: Write
    *
@@ -173,7 +184,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Applies tags to the specified server or backup.
+   * Grants permission to apply tags to the specified server or backup
    *
    * Access Level: Tagging
    *
@@ -184,7 +195,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Removes tags from the specified server or backup.
+   * Grants permission to remove tags from the specified server or backup
    *
    * Access Level: Tagging
    *
@@ -195,7 +206,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Update general server settings.
+   * Grants permission to update general server settings
    *
    * Access Level: Write
    *
@@ -206,7 +217,7 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   /**
-   * Update server settings specific to the configuration management type.
+   * Grants permission to update server settings specific to the configuration management type
    *
    * Access Level: Write
    *
@@ -234,7 +245,10 @@ export class OpsworksCm extends PolicyStatement {
       "DescribeBackups",
       "DescribeEvents",
       "DescribeNodeAssociationStatus",
-      "DescribeServers",
+      "DescribeServers"
+    ],
+    "Read": [
+      "ExportServerEngineAttribute",
       "ListTagsForResource"
     ],
     "Tagging": [
@@ -242,4 +256,36 @@ export class OpsworksCm extends PolicyStatement {
       "UntagResource"
     ]
   };
+
+  /**
+   * Adds a resource of type server to the statement
+   *
+   * @param serverName - Identifier for the serverName.
+   * @param uniqueId - Identifier for the uniqueId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onServer(serverName: string, uniqueId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:opsworks-cm::${Account}:server/${ServerName}/${UniqueId}';
+    arn = arn.replace('${ServerName}', serverName);
+    arn = arn.replace('${UniqueId}', uniqueId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type backup to the statement
+   *
+   * @param serverName - Identifier for the serverName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onBackup(serverName: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:opsworks-cm::${Account}:backup/${ServerName}-{Date-and-Time-Stamp-of-Backup}';
+    arn = arn.replace('${ServerName}', serverName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
 }
