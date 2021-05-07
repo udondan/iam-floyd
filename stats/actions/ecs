@@ -18,12 +18,13 @@ ecs:DescribeTaskDefinition;Read
 ecs:DescribeTaskSets;Read
 ecs:DescribeTasks;Read
 ecs:DiscoverPollEndpoint;Write
-ecs:ListAccountSettings;List
+ecs:ExecuteCommand;Write
+ecs:ListAccountSettings;Read
 ecs:ListAttributes;List
 ecs:ListClusters;List
 ecs:ListContainerInstances;List
 ecs:ListServices;List
-ecs:ListTagsForResource;List
+ecs:ListTagsForResource;Read
 ecs:ListTaskDefinitionFamilies;List
 ecs:ListTaskDefinitions;List
 ecs:ListTasks;List
@@ -43,6 +44,8 @@ ecs:SubmitContainerStateChange;Write
 ecs:SubmitTaskStateChange;Write
 ecs:TagResource;Tagging
 ecs:UntagResource;Tagging
+ecs:UpdateCapacityProvider;Write
+ecs:UpdateCluster;Write
 ecs:UpdateClusterSettings;Write
 ecs:UpdateContainerAgent;Write
 ecs:UpdateContainerInstancesState;Write

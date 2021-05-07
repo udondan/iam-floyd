@@ -19,7 +19,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Creates a new capacity provider. Capacity providers are associated with an Amazon ECS cluster and are used in capacity provider strategies to facilitate cluster auto scaling.
+   * Grants permission to create a new capacity provider. Capacity providers are associated with an Amazon ECS cluster and are used in capacity provider strategies to facilitate cluster auto scaling
    *
    * Access Level: Write
    *
@@ -34,7 +34,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Creates a new Amazon ECS cluster.
+   * Grants permission to create a new Amazon ECS cluster
    *
    * Access Level: Write
    *
@@ -50,7 +50,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Runs and maintains a desired number of tasks from a specified task definition.
+   * Grants permission to run and maintain a desired number of tasks from a specified task definition via service creation
    *
    * Access Level: Write
    *
@@ -58,6 +58,7 @@ export class Ecs extends PolicyStatement {
    * - .ifCluster()
    * - .ifCapacityProvider()
    * - .ifTaskDefinition()
+   * - .ifEnableExecuteCommand()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -68,12 +69,13 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Creates a new Amazon ECS task set.
+   * Grants permission to create a new Amazon ECS task set
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifCluster()
+   * - .ifCapacityProvider()
    * - .ifService()
    * - .ifTaskDefinition()
    *
@@ -84,7 +86,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Modifies the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an account. You can specify whether the new ARN and resource ID format are disabled for new resources that are created.
+   * Grants permission to modify the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an account. You can specify whether the new ARN and resource ID format are disabled for new resources that are created
    *
    * Access Level: Write
    *
@@ -95,7 +97,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Deletes one or more custom attributes from an Amazon ECS resource.
+   * Grants permission to delete one or more custom attributes from an Amazon ECS resource
    *
    * Access Level: Write
    *
@@ -109,7 +111,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified capacity provider.
+   * Grants permission to delete the specified capacity provider
    *
    * Access Level: Write
    *
@@ -120,7 +122,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified cluster.
+   * Grants permission to delete the specified cluster
    *
    * Access Level: Write
    *
@@ -131,7 +133,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Deletes a specified service within a cluster.
+   * Grants permission to delete a specified service within a cluster
    *
    * Access Level: Write
    *
@@ -145,7 +147,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified task set.
+   * Grants permission to delete the specified task set
    *
    * Access Level: Write
    *
@@ -160,7 +162,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Deregisters an Amazon ECS container instance from the specified cluster.
+   * Grants permission to deregister an Amazon ECS container instance from the specified cluster
    *
    * Access Level: Write
    *
@@ -171,7 +173,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Deregisters the specified task definition by family and revision.
+   * Grants permission to deregister the specified task definition by family and revision
    *
    * Access Level: Write
    *
@@ -182,7 +184,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Describes one or more Amazon ECS capacity providers.
+   * Grants permission to describe one or more Amazon ECS capacity providers
    *
    * Access Level: Read
    *
@@ -193,7 +195,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Describes one or more of your clusters.
+   * Grants permission to describes one or more of your clusters
    *
    * Access Level: Read
    *
@@ -204,7 +206,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Describes Amazon ECS container instances.
+   * Grants permission to describes Amazon ECS container instances
    *
    * Access Level: Read
    *
@@ -218,7 +220,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Describes the specified services running in your cluster.
+   * Grants permission to describe the specified services running in your cluster
    *
    * Access Level: Read
    *
@@ -232,7 +234,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Describes a task definition. You can specify a family and revision to find information about a specific task definition, or you can simply specify the family to find the latest ACTIVE revision in that family.
+   * Grants permission to describe a task definition. You can specify a family and revision to find information about a specific task definition, or you can simply specify the family to find the latest ACTIVE revision in that family
    *
    * Access Level: Read
    *
@@ -243,7 +245,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Describes Amazon ECS task sets.
+   * Grants permission to describe Amazon ECS task sets
    *
    * Access Level: Read
    *
@@ -258,7 +260,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Describes a specified task or tasks.
+   * Grants permission to describe a specified task or tasks
    *
    * Access Level: Read
    *
@@ -272,7 +274,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Returns an endpoint for the Amazon ECS agent to poll for updates.
+   * Grants permission to get an endpoint for the Amazon ECS agent to poll for updates
    *
    * Access Level: Write
    *
@@ -283,9 +285,25 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Lists the account settings for an Amazon ECS resource for a specified principal.
+   * Grants permission to run a command remotely on an Amazon ECS container
    *
-   * Access Level: List
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCluster()
+   * - .ifContainerName()
+   * - .ifTask()
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ExecuteCommand.html
+   */
+  public toExecuteCommand() {
+    return this.to('ExecuteCommand');
+  }
+
+  /**
+   * Grants permission to list the account settings for an Amazon ECS resource for a specified principal
+   *
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListAccountSettings.html
    */
@@ -294,7 +312,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Lists the attributes for Amazon ECS resources within a specified target type and cluster.
+   * Grants permission to lists the attributes for Amazon ECS resources within a specified target type and cluster
    *
    * Access Level: List
    *
@@ -305,7 +323,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Returns a list of existing clusters.
+   * Grants permission to get a list of existing clusters
    *
    * Access Level: List
    *
@@ -316,7 +334,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Returns a list of container instances in a specified cluster.
+   * Grants permission to get a list of container instances in a specified cluster
    *
    * Access Level: List
    *
@@ -327,7 +345,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Lists the services that are running in a specified cluster.
+   * Grants permission to get a list of services that are running in a specified cluster
    *
    * Access Level: List
    *
@@ -341,9 +359,9 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * List tags for the specified resource.
+   * Grants permission to get a list of tags for the specified resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTagsForResource.html
    */
@@ -352,7 +370,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Returns a list of task definition families that are registered to your account (which may include task definition families that no longer have any ACTIVE task definitions).
+   * Grants permission to get a list of task definition families that are registered to your account (which may include task definition families that no longer have any ACTIVE task definitions)
    *
    * Access Level: List
    *
@@ -363,7 +381,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Returns a list of task definitions that are registered to your account.
+   * Grants permission to get a list of task definitions that are registered to your account
    *
    * Access Level: List
    *
@@ -374,7 +392,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Returns a list of tasks for a specified cluster.
+   * Grants permission to get a list of tasks for a specified cluster
    *
    * Access Level: List
    *
@@ -388,7 +406,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to an agent to connect with the Amazon ECS service to report status and get commands.
+   * Grants permission to an agent to connect with the Amazon ECS service to report status and get commands
    *
    * Access Level: Write
    *
@@ -402,7 +420,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Modifies the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an account. You can specify whether the new ARN and resource ID format are enabled for new resources that are created. Enabling this setting is required to use new Amazon ECS features such as resource tagging.
+   * Grants permission to modify the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an account. You can specify whether the new ARN and resource ID format are enabled for new resources that are created. Enabling this setting is required to use new Amazon ECS features such as resource tagging
    *
    * Access Level: Write
    *
@@ -413,7 +431,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Modifies the ARN and resource ID format of a resource type for all IAM users on an account for which no individual account setting has been set. Enabling this setting is required to use new Amazon ECS features such as resource tagging.
+   * Grants permission to modify the ARN and resource ID format of a resource type for all IAM users on an account for which no individual account setting has been set. Enabling this setting is required to use new Amazon ECS features such as resource tagging
    *
    * Access Level: Write
    *
@@ -424,7 +442,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Create or update an attribute on an Amazon ECS resource.
+   * Grants permission to create or update an attribute on an Amazon ECS resource
    *
    * Access Level: Write
    *
@@ -438,7 +456,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Modifies the available capacity providers and the default capacity provider strategy for a cluster.
+   * Grants permission to modify the available capacity providers and the default capacity provider strategy for a cluster
    *
    * Access Level: Write
    *
@@ -452,7 +470,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Registers an EC2 instance into the specified cluster.
+   * Grants permission to register an EC2 instance into the specified cluster
    *
    * Access Level: Write
    *
@@ -467,7 +485,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Registers a new task definition from the supplied family and containerDefinitions.
+   * Grants permission to register a new task definition from the supplied family and containerDefinitions
    *
    * Access Level: Write
    *
@@ -482,13 +500,14 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Start a task using random placement and the default Amazon ECS scheduler.
+   * Grants permission to start a task using random placement and the default Amazon ECS scheduler
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifCluster()
    * - .ifCapacityProvider()
+   * - .ifEnableExecuteCommand()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -499,13 +518,14 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Starts a new task from the specified task definition on the specified container instance or instances.
+   * Grants permission to start a new task from the specified task definition on the specified container instance or instances
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifCluster()
    * - .ifContainerInstances()
+   * - .ifEnableExecuteCommand()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -516,7 +536,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a telemetry session.
+   * Grants permission to start a telemetry session
    *
    * Access Level: Write
    *
@@ -530,7 +550,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Stops a running task.
+   * Grants permission to stop a running task
    *
    * Access Level: Write
    *
@@ -544,7 +564,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Sent to acknowledge that attachments changed states.
+   * Grants permission to send an acknowledgement that attachments changed states
    *
    * Access Level: Write
    *
@@ -555,7 +575,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Sent to acknowledge that a container changed states.
+   * Grants permission to send an acknowledgement that a container changed states
    *
    * Access Level: Write
    *
@@ -566,7 +586,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Sent to acknowledge that a task changed states.
+   * Grants permission to send an acknowledgement that a task changed states
    *
    * Access Level: Write
    *
@@ -577,7 +597,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Tags the specified resource.
+   * Grants permission to tag the specified resource
    *
    * Access Level: Tagging
    *
@@ -592,7 +612,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Untags the specified resource.
+   * Grants permission to untag the specified resource
    *
    * Access Level: Tagging
    *
@@ -606,7 +626,29 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Modifies the settings to use for a cluster.
+   * Grants permission to update the specified capacity provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateCapacityProvider.html
+   */
+  public toUpdateCapacityProvider() {
+    return this.to('UpdateCapacityProvider');
+  }
+
+  /**
+   * Grants permission to modify the configuration or settings to use for a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateCluster.html
+   */
+  public toUpdateCluster() {
+    return this.to('UpdateCluster');
+  }
+
+  /**
+   * Grants permission to modify the settings to use for a cluster
    *
    * Access Level: Write
    *
@@ -617,7 +659,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Updates the Amazon ECS container agent on a specified container instance.
+   * Grants permission to update the Amazon ECS container agent on a specified container instance
    *
    * Access Level: Write
    *
@@ -631,7 +673,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Enables the user to modify the status of an Amazon ECS container instance.
+   * Grants permission to the user to modify the status of an Amazon ECS container instance
    *
    * Access Level: Write
    *
@@ -645,13 +687,14 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Modifies the parameters of a service.
+   * Grants permission to modify the parameters of a service
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifCluster()
    * - .ifCapacityProvider()
+   * - .ifEnableExecuteCommand()
    * - .ifTaskDefinition()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html
@@ -661,7 +704,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Modifies the primary task set used in a service.
+   * Grants permission to modify the primary task set used in a service
    *
    * Access Level: Write
    *
@@ -675,7 +718,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Updates the specified task set.
+   * Grants permission to update the specified task set
    *
    * Access Level: Write
    *
@@ -704,6 +747,7 @@ export class Ecs extends PolicyStatement {
       "DeregisterContainerInstance",
       "DeregisterTaskDefinition",
       "DiscoverPollEndpoint",
+      "ExecuteCommand",
       "Poll",
       "PutAccountSetting",
       "PutAccountSettingDefault",
@@ -718,6 +762,8 @@ export class Ecs extends PolicyStatement {
       "SubmitAttachmentStateChanges",
       "SubmitContainerStateChange",
       "SubmitTaskStateChange",
+      "UpdateCapacityProvider",
+      "UpdateCluster",
       "UpdateClusterSettings",
       "UpdateContainerAgent",
       "UpdateContainerInstancesState",
@@ -732,15 +778,15 @@ export class Ecs extends PolicyStatement {
       "DescribeServices",
       "DescribeTaskDefinition",
       "DescribeTaskSets",
-      "DescribeTasks"
+      "DescribeTasks",
+      "ListAccountSettings",
+      "ListTagsForResource"
     ],
     "List": [
-      "ListAccountSettings",
       "ListAttributes",
       "ListClusters",
       "ListContainerInstances",
       "ListServices",
-      "ListTagsForResource",
       "ListTaskDefinitionFamilies",
       "ListTaskDefinitions",
       "ListTasks"
@@ -919,7 +965,9 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on tag key-value pairs attached to the resource.
+   * Filters access based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
    * Applies to resource types:
    * - cluster
@@ -939,13 +987,14 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * The ARN of an Amazon ECS capacity provider.
+   * Filters access based on the ARN of an Amazon ECS capacity provider
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
    * Applies to actions:
    * - .toCreateCluster()
    * - .toCreateService()
+   * - .toCreateTaskSet()
    * - .toPutClusterCapacityProviders()
    * - .toRunTask()
    * - .toUpdateService()
@@ -958,7 +1007,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * The ARN of an Amazon ECS cluster.
+   * Filters access based on the ARN of an Amazon ECS cluster
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
@@ -972,6 +1021,7 @@ export class Ecs extends PolicyStatement {
    * - .toDescribeServices()
    * - .toDescribeTaskSets()
    * - .toDescribeTasks()
+   * - .toExecuteCommand()
    * - .toListServices()
    * - .toListTasks()
    * - .toPoll()
@@ -994,7 +1044,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * The ARN of an Amazon ECS container instance.
+   * Filters access based on the ARN of an Amazon ECS container instance
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
@@ -1009,7 +1059,40 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * The ARN of an Amazon ECS service.
+   * Filters access based on the name of an Amazon ECS container which is defined in the ECS task definition
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   *
+   * Applies to actions:
+   * - .toExecuteCommand()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifContainerName(value: string | string[], operator?: Operator | string) {
+    return this.if(`container-name`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on execute-command capability of your Amazon ECS task or Amazon ECS service
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   *
+   * Applies to actions:
+   * - .toCreateService()
+   * - .toRunTask()
+   * - .toStartTask()
+   * - .toUpdateService()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnableExecuteCommand(value: string | string[], operator?: Operator | string) {
+    return this.if(`enable-execute-command`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the ARN of an Amazon ECS service
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
@@ -1027,7 +1110,22 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * The ARN of an Amazon ECS task definition.
+   * Filters access based on the ARN of an Amazon ECS task
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   *
+   * Applies to actions:
+   * - .toExecuteCommand()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifTask(value: string | string[], operator?: Operator | string) {
+    return this.if(`task`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Filters access based on the ARN of an Amazon ECS task definition
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *

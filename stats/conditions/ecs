@@ -4,5 +4,8 @@ ecs:TagKeys
 ecs:capacity-provider
 ecs:cluster
 ecs:container-instances
+ecs:container-name
+ecs:enable-execute-command
 ecs:service
+ecs:task
 ecs:task-definition
