@@ -128,6 +128,7 @@ export { Workmail } from "./workmail";
 export { Workmailmessageflow } from "./workmailmessageflow";
 export { Workspaces } from "./workspaces";
 export { Wam } from "./workspacesapplicationmanager";
+export { KafkaCluster } from "./apachekafkaapisforamazonmskclusters";
 export { ApplicationAutoscaling } from "./applicationautoscaling";
 export { Discovery } from "./applicationdiscovery";
 export { Arsenal } from "./applicationdiscoveryarsenal";

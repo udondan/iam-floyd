@@ -1,4 +1,5 @@
 ssm:AddTagsToResource;Tagging
+ssm:AssociateOpsItemRelatedItem;Write
 ssm:CancelCommand;Write
 ssm:CancelMaintenanceWindowExecution;Write
 ssm:CreateActivation;Write
@@ -58,6 +59,7 @@ ssm:DescribePatchGroupState;Read
 ssm:DescribePatchGroups;List
 ssm:DescribePatchProperties;List
 ssm:DescribeSessions;List
+ssm:DisassociateOpsItemRelatedItem;Write
 ssm:GetAutomationExecution;Read
 ssm:GetCalendarState;Read
 ssm:GetCommandInvocation;Read
@@ -96,6 +98,7 @@ ssm:ListDocuments;List
 ssm:ListInstanceAssociations;List
 ssm:ListInventoryEntries;List
 ssm:ListOpsItemEvents;Read
+ssm:ListOpsItemRelatedItems;Read
 ssm:ListOpsMetadata;List
 ssm:ListResourceComplianceSummaries;List
 ssm:ListResourceDataSync;List

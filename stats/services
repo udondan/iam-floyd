@@ -147,6 +147,7 @@ iq
 iq-permission
 ivs
 kafka
+kafka-cluster
 kendra
 kinesis
 kinesisanalytics

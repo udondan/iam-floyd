@@ -30,6 +30,17 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate RelatedItem to an OpsItem
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_AssociateOpsItemRelatedItem.html
+   */
+  public toAssociateOpsItemRelatedItem() {
+    return this.to('AssociateOpsItemRelatedItem');
+  }
+
+  /**
    * Grants permission to cancel a specified Run Command command
    *
    * Access Level: Write
@@ -704,6 +715,17 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate RelatedItem from an OpsItem
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DisassociateOpsItemRelatedItem.html
+   */
+  public toDisassociateOpsItemRelatedItem() {
+    return this.to('DisassociateOpsItemRelatedItem');
+  }
+
+  /**
    * Grants permission to view details of a specified Automation execution
    *
    * Access Level: Read
@@ -1117,6 +1139,17 @@ export class Ssm extends PolicyStatement {
    */
   public toListOpsItemEvents() {
     return this.to('ListOpsItemEvents');
+  }
+
+  /**
+   * Grants permission to view details about OpsItem RelatedItems
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListOpsItemRelatedItems.html
+   */
+  public toListOpsItemRelatedItems() {
+    return this.to('ListOpsItemRelatedItems');
   }
 
   /**
@@ -1579,6 +1612,7 @@ export class Ssm extends PolicyStatement {
       "RemoveTagsFromResource"
     ],
     "Write": [
+      "AssociateOpsItemRelatedItem",
       "CancelCommand",
       "CancelMaintenanceWindowExecution",
       "CreateActivation",
@@ -1604,6 +1638,7 @@ export class Ssm extends PolicyStatement {
       "DeregisterPatchBaselineForPatchGroup",
       "DeregisterTargetFromMaintenanceWindow",
       "DeregisterTaskFromMaintenanceWindow",
+      "DisassociateOpsItemRelatedItem",
       "LabelParameterVersion",
       "ModifyDocumentPermission",
       "PutComplianceItems",
@@ -1691,6 +1726,7 @@ export class Ssm extends PolicyStatement {
       "ListCommands",
       "ListDocumentMetadataHistory",
       "ListOpsItemEvents",
+      "ListOpsItemRelatedItems",
       "ListTagsForResource",
       "PutConfigurePackageResult"
     ],

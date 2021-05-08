@@ -1,4 +1,6 @@
+workspaces:connectionalias
 workspaces:directoryid
 workspaces:workspacebundle
 workspaces:workspaceid
+workspaces:workspaceimage
 workspaces:workspaceipgroup
