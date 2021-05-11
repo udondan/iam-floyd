@@ -72,7 +72,9 @@
         "aws-marketplace:ListAgreementApprovalRequests",
         "aws-marketplace:AcceptAgreementApprovalRequest",
         "aws-marketplace:RejectAgreementApprovalRequest",
-        "aws-marketplace:UpdateAgreementApprovalRequest"
+        "aws-marketplace:UpdateAgreementApprovalRequest",
+        "aws-marketplace:SearchAgreements",
+		"aws-marketplace:GetAgreementTerms"
       ],
       "Resource": "*"
     },

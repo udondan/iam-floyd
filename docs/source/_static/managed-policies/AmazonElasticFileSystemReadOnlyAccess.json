@@ -12,6 +12,7 @@
         "ec2:DescribeSubnets",
         "ec2:DescribeVpcAttribute",
         "ec2:DescribeVpcs",
+        "elasticfilesystem:DescribeAccountPreferences",
         "elasticfilesystem:DescribeBackupPolicy",
         "elasticfilesystem:DescribeFileSystems",
         "elasticfilesystem:DescribeFileSystemPolicy",
