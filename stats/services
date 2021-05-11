@@ -236,6 +236,7 @@ snowball
 sns
 sqs
 ssm
+ssm-contacts
 ssm-incidents
 ssmmessages
 sso

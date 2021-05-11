@@ -85,7 +85,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an organization. The account with the credentials that calls the CreateOrganization operation automatically becomes the master account of the new organization.
+   * Grants permission to create an organization. The account with the credentials that calls the CreateOrganization operation automatically becomes the management account of the new organization.
    *
    * Access Level: Write
    *

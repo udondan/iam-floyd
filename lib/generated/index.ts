@@ -259,6 +259,7 @@ export { States } from "./stepfunctions";
 export { Support } from "./support";
 export { Ssm } from "./systemsmanager";
 export { SsmIncidents } from "./systemsmanagerincidentmanager";
+export { SsmContacts } from "./systemsmanagerincidentmanagercontacts";
 export { ResourceExplorer } from "./tageditor";
 export { Tiros } from "./tiros";
 export { Transfer } from "./transferforsftp";
