@@ -174,7 +174,7 @@ export class Groundstation extends PolicyStatement {
   }
 
   /**
-   * Grants permisson to return a list of past configurations
+   * Grants permission to return a list of past configurations
    *
    * Access Level: List
    *
@@ -494,6 +494,8 @@ export class Groundstation extends PolicyStatement {
   /**
    * Filters access by the ID of a config
    *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateConfig.html#groundstation-CreateConfig-response-configId
+   *
    * Applies to resource types:
    * - Config
    *
@@ -506,6 +508,8 @@ export class Groundstation extends PolicyStatement {
 
   /**
    * Filters access by the type of a config
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateConfig.html#groundstation-CreateConfig-response-configType
    *
    * Applies to resource types:
    * - Config
@@ -520,6 +524,8 @@ export class Groundstation extends PolicyStatement {
   /**
    * Filters access by the ID of a contact
    *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ReserveContact.html#groundstation-ReserveContact-response-contactId
+   *
    * Applies to resource types:
    * - Contact
    *
@@ -532,6 +538,8 @@ export class Groundstation extends PolicyStatement {
 
   /**
    * Filters access by the ID of a dataflow endpoint group
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateDataflowEndpointGroup.html#groundstation-CreateDataflowEndpointGroup-response-dataflowEndpointGroupId
    *
    * Applies to resource types:
    * - DataflowEndpointGroup
@@ -546,6 +554,8 @@ export class Groundstation extends PolicyStatement {
   /**
    * Filters access by the ID of a ground station
    *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GroundStationData.html#groundstation-Type-GroundStationData-groundStationId
+   *
    * Applies to resource types:
    * - GroundStationResource
    *
@@ -559,6 +569,8 @@ export class Groundstation extends PolicyStatement {
   /**
    * Filters access by the ID of a mission profile
    *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateMissionProfile.html#groundstation-CreateMissionProfile-response-missionProfileId
+   *
    * Applies to resource types:
    * - MissionProfile
    *
@@ -571,6 +583,8 @@ export class Groundstation extends PolicyStatement {
 
   /**
    * Filters access by the ID of a satellite
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_SatelliteListItem.html#groundstation-Type-SatelliteListItem-satelliteId
    *
    * Applies to resource types:
    * - Satellite

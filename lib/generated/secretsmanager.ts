@@ -209,6 +209,38 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
+   * Remove regions from replication.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSecretId()
+   * - .ifResource()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   */
+  public toRemoveRegionsFromReplication() {
+    return this.to('RemoveRegionsFromReplication');
+  }
+
+  /**
+   * Converts an existing secret to a multi-Region secret and begins replicating the secret to a list of new regions.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSecretId()
+   * - .ifResource()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   */
+  public toReplicateSecretToRegions() {
+    return this.to('ReplicateSecretToRegions');
+  }
+
+  /**
    * Enables the user to cancel deletion of a secret.
    *
    * Access Level: Write
@@ -239,6 +271,22 @@ export class Secretsmanager extends PolicyStatement {
    */
   public toRotateSecret() {
     return this.to('RotateSecret');
+  }
+
+  /**
+   * Removes the secret from replication and promotes the secret to a regional secret in the replica Region.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSecretId()
+   * - .ifResource()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   */
+  public toStopReplicationToReplica() {
+    return this.to('StopReplicationToReplica');
   }
 
   /**
@@ -333,8 +381,11 @@ export class Secretsmanager extends PolicyStatement {
       "CreateSecret",
       "DeleteSecret",
       "PutSecretValue",
+      "RemoveRegionsFromReplication",
+      "ReplicateSecretToRegions",
       "RestoreSecret",
       "RotateSecret",
+      "StopReplicationToReplica",
       "UpdateSecret",
       "UpdateSecretVersionStage"
     ],
@@ -490,8 +541,11 @@ export class Secretsmanager extends PolicyStatement {
    * - .toListSecretVersionIds()
    * - .toPutResourcePolicy()
    * - .toPutSecretValue()
+   * - .toRemoveRegionsFromReplication()
+   * - .toReplicateSecretToRegions()
    * - .toRestoreSecret()
    * - .toRotateSecret()
+   * - .toStopReplicationToReplica()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateSecret()
@@ -539,8 +593,11 @@ export class Secretsmanager extends PolicyStatement {
    * - .toListSecretVersionIds()
    * - .toPutResourcePolicy()
    * - .toPutSecretValue()
+   * - .toRemoveRegionsFromReplication()
+   * - .toReplicateSecretToRegions()
    * - .toRestoreSecret()
    * - .toRotateSecret()
+   * - .toStopReplicationToReplica()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateSecret()
@@ -552,6 +609,18 @@ export class Secretsmanager extends PolicyStatement {
    */
   public ifSecretId(value: string | string[], operator?: Operator | string) {
     return this.if(`SecretId`, value, operator || 'ArnLike');
+  }
+
+  /**
+   * Primary region in which the secret is created.
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecretPrimaryRegion(value: string | string[], operator?: Operator | string) {
+    return this.if(`SecretPrimaryRegion`, value, operator || 'StringLike');
   }
 
   /**
@@ -600,8 +669,11 @@ export class Secretsmanager extends PolicyStatement {
    * - .toListSecretVersionIds()
    * - .toPutResourcePolicy()
    * - .toPutSecretValue()
+   * - .toRemoveRegionsFromReplication()
+   * - .toReplicateSecretToRegions()
    * - .toRestoreSecret()
    * - .toRotateSecret()
+   * - .toStopReplicationToReplica()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateSecret()

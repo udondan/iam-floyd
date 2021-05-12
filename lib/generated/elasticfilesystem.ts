@@ -197,6 +197,17 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view the account preferences in effect for an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeAccountPreferences.html
+   */
+  public toDescribeAccountPreferences() {
+    return this.to('DescribeAccountPreferences');
+  }
+
+  /**
    * Grants permission to view the BackupPolicy object for an Amazon EFS file system
    *
    * Access Level: Read
@@ -296,6 +307,17 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set the account preferences of an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/API_PutAccountPreferences.html
+   */
+  public toPutAccountPreferences() {
+    return this.to('PutAccountPreferences');
+  }
+
+  /**
    * Grants permission to enable or disable automatic backups with AWS Backup by creating a new BackupPolicy object
    *
    * Access Level: Write
@@ -385,6 +407,7 @@ export class Elasticfilesystem extends PolicyStatement {
       "DeleteFileSystemPolicy",
       "DeleteMountTarget",
       "ModifyMountTargetSecurityGroups",
+      "PutAccountPreferences",
       "PutBackupPolicy",
       "PutFileSystemPolicy",
       "PutLifecycleConfiguration",
@@ -409,6 +432,7 @@ export class Elasticfilesystem extends PolicyStatement {
     ],
     "List": [
       "DescribeAccessPoints",
+      "DescribeAccountPreferences",
       "DescribeFileSystems"
     ]
   };

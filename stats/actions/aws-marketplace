@@ -5,16 +5,12 @@ aws-marketplace:CancelAgreementRequest;Write
 aws-marketplace:CancelChangeSet;Write
 aws-marketplace:CompleteTask;Write
 aws-marketplace:CreatePrivateMarketplace;Write
-aws-marketplace:CreatePrivateMarketplaceProfile;Write
 aws-marketplace:CreatePrivateMarketplaceRequests;Write
 aws-marketplace:DescribeAgreement;Read
 aws-marketplace:DescribeBuilds;Read
 aws-marketplace:DescribeChangeSet;Read
 aws-marketplace:DescribeEntity;Read
-aws-marketplace:DescribePrivateMarketplaceProducts;List
-aws-marketplace:DescribePrivateMarketplaceProfile;Read
 aws-marketplace:DescribePrivateMarketplaceRequests;List
-aws-marketplace:DescribePrivateMarketplaceSettings;Read
 aws-marketplace:DescribePrivateMarketplaceStatus;Read
 aws-marketplace:DescribeProcurementSystemConfiguration;Read
 aws-marketplace:DescribeTask;Read
@@ -28,7 +24,6 @@ aws-marketplace:ListAgreementRequests;List
 aws-marketplace:ListBuilds;Read
 aws-marketplace:ListChangeSets;Read
 aws-marketplace:ListEntities;Read
-aws-marketplace:ListPrivateMarketplaceProducts;List
 aws-marketplace:ListPrivateMarketplaceRequests;List
 aws-marketplace:ListTasks;List
 aws-marketplace:MeterUsage;Write
@@ -39,12 +34,8 @@ aws-marketplace:ResolveCustomer;Write
 aws-marketplace:SearchAgreements;List
 aws-marketplace:StartBuild;Write
 aws-marketplace:StartChangeSet;Write
-aws-marketplace:StartPrivateMarketplace;Write
-aws-marketplace:StopPrivateMarketplace;Write
 aws-marketplace:Subscribe;Write
 aws-marketplace:Unsubscribe;Write
 aws-marketplace:UpdateAgreementApprovalRequest;Write
-aws-marketplace:UpdatePrivateMarketplaceProfile;Write
-aws-marketplace:UpdatePrivateMarketplaceSettings;Write
 aws-marketplace:UpdateTask;Write
 aws-marketplace:ViewSubscriptions;List

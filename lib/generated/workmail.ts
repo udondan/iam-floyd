@@ -19,7 +19,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Adds a list of members (users or groups) to a group.
+   * Grants permission to add a list of members (users or groups) to a group
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Adds a member (user or group) to the resource's set of delegates.
+   * Grants permission to add a member (user or group) to the resource's set of delegates
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Adds a member (user or group) to the group's set.
+   * Grants permission to add a member (user or group) to the group's set
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Cancels a currently running mailbox export job.
+   * Grants permission to cancel a currently running mailbox export job
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Adds an alias to the set of a given member (user or group) of WorkMail.
+   * Grants permission to add an alias to the set of a given member (user or group) of WorkMail
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Creates a group that can be used in WorkMail by calling the RegisterToWorkMail operation.
+   * Grants permission to create a group that can be used in WorkMail by calling the RegisterToWorkMail operation
    *
    * Access Level: Write
    *
@@ -85,7 +85,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Create an inbound email flow rule which will apply to all email sent to an organization
+   * Grants permission to create an inbound email flow rule which will apply to all email sent to an organization
    *
    * Access Level: Write
    *
@@ -96,7 +96,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Creates a mail domain.
+   * Grants permission to create a mail domain
    *
    * Access Level: Write
    *
@@ -107,7 +107,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Creates a user in the directory and the WorkMail storage but does not enable the user for mail.
+   * Grants permission to create a user in the directory
    *
    * Access Level: Write
    *
@@ -118,7 +118,18 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Creates a new Amazon WorkMail organization.
+   * Grants permission to create a new mobile device access rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateMobileDeviceAccessRule.html
+   */
+  public toCreateMobileDeviceAccessRule() {
+    return this.to('CreateMobileDeviceAccessRule');
+  }
+
+  /**
+   * Grants permission to create a new Amazon WorkMail organization
    *
    * Access Level: Write
    *
@@ -129,7 +140,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Create an outbound email flow rule which will apply to all email sent from an organization
+   * Grants permission to create an outbound email flow rule which will apply to all email sent from an organization
    *
    * Access Level: Write
    *
@@ -140,7 +151,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Creates a new WorkMail resource.
+   * Grants permission to create a new WorkMail resource
    *
    * Access Level: Write
    *
@@ -151,7 +162,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Register an SMTP device against a WorkMail organization
+   * Grants permission to register an SMTP gateway to a WorkMail organization
    *
    * Access Level: Write
    *
@@ -162,7 +173,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Creates a user who can be used in WorkMail by calling the RegisterToWorkMail operation.
+   * Grants permission to create a user, which can be enabled afterwards by calling the RegisterToWorkMail operation
    *
    * Access Level: Write
    *
@@ -173,7 +184,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Deletes an access control rule for the specified WorkMail organization.
+   * Grants permission to delete an access control rule
    *
    * Access Level: Write
    *
@@ -184,7 +195,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Remove one or more specified aliases from a set of aliases for a given user.
+   * Grants permission to remove one or more specified aliases from a set of aliases for a given user
    *
    * Access Level: Write
    *
@@ -195,7 +206,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Deletes a group from WorkMail.
+   * Grants permission to delete a group from WorkMail
    *
    * Access Level: Write
    *
@@ -206,7 +217,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Remove an inbound email flow rule to no longer apply to emails sent to an organization
+   * Grants permission to remove an inbound email flow rule to no longer apply to emails sent to an organization
    *
    * Access Level: Write
    *
@@ -217,7 +228,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Removes an unused mail domain from an organization
+   * Grants permission to remove an unused mail domain from an organization
    *
    * Access Level: Write
    *
@@ -228,7 +239,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Deletes permissions granted to a member (user or group).
+   * Grants permission to delete permissions granted to a member (user or group)
    *
    * Access Level: Write
    *
@@ -239,7 +250,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Removes a mobile device from a user
+   * Grants permission to remove a mobile device from a user
    *
    * Access Level: Write
    *
@@ -250,7 +261,18 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of the organization.
+   * Grants permission to deletes a mobile device access rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteMobileDeviceAccessRule.html
+   */
+  public toDeleteMobileDeviceAccessRule() {
+    return this.to('DeleteMobileDeviceAccessRule');
+  }
+
+  /**
+   * Grants permission to delete an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of the organization
    *
    * Access Level: Write
    *
@@ -261,7 +283,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Remove an outbound email flow rule to no longer apply to emails sent from an organization
+   * Grants permission to remove an outbound email flow rule so that it no longer applies to emails sent from an organization
    *
    * Access Level: Write
    *
@@ -272,7 +294,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified resource.
+   * Grants permission to delete the specified resource
    *
    * Access Level: Write
    *
@@ -283,7 +305,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Deletes the retention policy based on the supplied organization and policy identifiers.
+   * Grants permission to delete the retention policy based on the supplied organization and policy identifiers
    *
    * Access Level: Write
    *
@@ -294,7 +316,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Remove an SMTP device from an organization
+   * Grants permission to remove an SMTP gateway from an organization
    *
    * Access Level: Write
    *
@@ -305,7 +327,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Deletes a user from WorkMail and all subsequent systems. The action cannot be undone.
+   * Grants permission to delete a user from WorkMail and all subsequent systems
    *
    * Access Level: Write
    *
@@ -316,7 +338,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Mark a user, group, or resource as no longer used in WorkMail.
+   * Grants permission to mark a user, group, or resource as no longer used in WorkMail
    *
    * Access Level: Write
    *
@@ -327,7 +349,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Shows a list of directories available for use in creating an organization
+   * Grants permission to show a list of directories available for use in creating an organization
    *
    * Access Level: List
    *
@@ -338,7 +360,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns the data available for the group.
+   * Grants permission to read the details for a group
    *
    * Access Level: List
    *
@@ -349,7 +371,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns the details of an inbound mail flow rule configured for an organization
+   * Grants permission to read the details of an inbound mail flow rule configured for an organization
    *
    * Access Level: Read
    *
@@ -360,7 +382,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Shows a list of KMS Keys available for use in creating an organization
+   * Grants permission to show a list of KMS Keys available for use in creating an organization
    *
    * Access Level: List
    *
@@ -371,7 +393,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Shows the details of all mail domains associated with the organization
+   * Grants permission to show the details of all mail domains associated with the organization
    *
    * Access Level: List
    *
@@ -382,7 +404,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Shows the details of all groups associated with the organization
+   * Grants permission to show the details of all groups associated with the organization
    *
    * Access Level: List
    *
@@ -393,7 +415,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Shows the details of all users associated with the orgaization
+   * Grants permission to show the details of all users associated with the orgaization
    *
    * Access Level: List
    *
@@ -404,7 +426,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Retrieve details of a mailbox export job.
+   * Grants permission to retrieve details of a mailbox export job
    *
    * Access Level: Read
    *
@@ -415,7 +437,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Provides more information regarding a given organization based on its identifier.
+   * Grants permission to read details of an organization
    *
    * Access Level: List
    *
@@ -426,7 +448,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Shows a summary of all organizations associated with the account
+   * Grants permission to show a summary of all organizations associated with the account
    *
    * Access Level: List
    *
@@ -437,7 +459,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns the details of an outbound mail flow rule configured for an organization
+   * Grants permission to read the details of an outbound mail flow rule configured for an organization
    *
    * Access Level: Read
    *
@@ -448,7 +470,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns the data available for the resource.
+   * Grants permission to read the details for a resource
    *
    * Access Level: List
    *
@@ -459,7 +481,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns the details of an SMTP device registered against an organization
+   * Grants permission to read the details of an SMTP gateway registered to an organization
    *
    * Access Level: Read
    *
@@ -470,7 +492,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Provides information regarding the user.
+   * Grants permission to read details for a user
    *
    * Access Level: List
    *
@@ -481,7 +503,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Disable a mail group when it is not being used and, to allow it to be deleted
+   * Grants permission to disable a mail group when it is not being used, in order to allow it to be deleted
    *
    * Access Level: Write
    *
@@ -492,7 +514,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Disable a user mailbox when it is no longer being used, and to allow it to be deleted
+   * Grants permission to disable a user mailbox when it is no longer being used, in order to allow it to be deleted
    *
    * Access Level: Write
    *
@@ -503,7 +525,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Removes a member from the resource's set of delegates.
+   * Grants permission to remove a member from the resource's set of delegates
    *
    * Access Level: Write
    *
@@ -514,7 +536,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Removes a member from a group.
+   * Grants permission to remove a member from a group
    *
    * Access Level: Write
    *
@@ -525,7 +547,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Enable a mail domain in the organization
+   * Grants permission to enable a mail domain in the organization
    *
    * Access Level: Write
    *
@@ -536,7 +558,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Enable a mail group after it has been created to allow it to receive mail
+   * Grants permission to enable a mail group after it has been created to allow it to receive mail
    *
    * Access Level: Write
    *
@@ -547,7 +569,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Enable a user's mailbox after it has been created to allow it to receive mail
+   * Grants permission to enable a user's mailbox after it has been created to allow it to receive mail
    *
    * Access Level: Write
    *
@@ -558,7 +580,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access protocol action, or user ID.
+   * Grants permission to get the effects of access control rules as they apply to a specified IPv4 address, access protocol action, or user ID.
    *
    * Access Level: Read
    *
@@ -569,7 +591,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Retrieves the retention policy associated at an organizational level.
+   * Grants permission to retrieve the retention policy associated at an organizational level
    *
    * Access Level: Read
    *
@@ -580,7 +602,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns journaling and fallback email addresses configured for email journaling
+   * Grants permission to read the configured journaling and fallback email addresses for email journaling
    *
    * Access Level: Read
    *
@@ -591,7 +613,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Get the details of the mail domain
+   * Grants permission to get the details of the mail domain
    *
    * Access Level: Read
    *
@@ -602,7 +624,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Get the details of the mail group
+   * Grants permission to get the details of the mail group
    *
    * Access Level: Read
    *
@@ -613,7 +635,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Get the details of the user's mailbox and account
+   * Grants permission to get the details of the user's mailbox and account
    *
    * Access Level: Read
    *
@@ -624,7 +646,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns the details of the user's mailbox.
+   * Grants permission to read the details of the user's mailbox
    *
    * Access Level: Read
    *
@@ -635,7 +657,18 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Get the details of the mobile device
+   * Grants permission to simulate the effect of the mobile device access rules for the given attributes of a sample access event
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetMobileDeviceAccessEffect.html
+   */
+  public toGetMobileDeviceAccessEffect() {
+    return this.to('GetMobileDeviceAccessEffect');
+  }
+
+  /**
+   * Grants permission to get the details of the mobile device
    *
    * Access Level: Read
    *
@@ -646,7 +679,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Get a list of the mobile devices associated with the user
+   * Grants permission to get a list of the mobile devices associated with the user
    *
    * Access Level: Read
    *
@@ -657,7 +690,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Get the details of the mobile device policy associated with the organization
+   * Grants permission to get the details of the mobile device policy associated with the organization
    *
    * Access Level: Read
    *
@@ -668,7 +701,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Lists the access control rules for the specified organization.
+   * Grants permission to list the access control rules
    *
    * Access Level: List
    *
@@ -679,7 +712,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Creates a paginated call to list the aliases associated with a given entity.
+   * Grants permission to list the aliases associated with a given entity
    *
    * Access Level: List
    *
@@ -690,7 +723,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns an overview of the members of a group. Users and groups can be members of a group.
+   * Grants permission to read an overview of the members of a group. Users and groups can be members of a group
    *
    * Access Level: List
    *
@@ -701,7 +734,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns summaries of the organization's groups.
+   * Grants permission to list summaries of the organization's groups
    *
    * Access Level: List
    *
@@ -712,7 +745,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns a list of inbound mail flow rules configured for an organization
+   * Grants permission to list inbound mail flow rules configured for an organization
    *
    * Access Level: List
    *
@@ -723,7 +756,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * List mailbox export jobs.
+   * Grants permission to list mailbox export jobs
    *
    * Access Level: List
    *
@@ -734,7 +767,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Lists the mailbox permissions associated with a user, group, or resource mailbox.
+   * Grants permission to list the mailbox permissions associated with a user, group, or resource mailbox
    *
    * Access Level: List
    *
@@ -745,7 +778,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Get a list of all the members in a mail group
+   * Grants permission to get a list of all the members in a mail group
    *
    * Access Level: Read
    *
@@ -756,7 +789,18 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns summaries of the customer's non-deleted organizations.
+   * Grants permission to list the mobile device access rules
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListMobileDeviceAccessRules.html
+   */
+  public toListMobileDeviceAccessRules() {
+    return this.to('ListMobileDeviceAccessRules');
+  }
+
+  /**
+   * Grants permission to list the non-deleted organizations
    *
    * Access Level: List
    *
@@ -767,7 +811,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns a list of outbound mail flow rules configured for an organization
+   * Grants permission to list outbound mail flow rules configured for an organization
    *
    * Access Level: List
    *
@@ -778,7 +822,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Lists the delegates associated with a resource.
+   * Grants permission to list the delegates associated with a resource
    *
    * Access Level: List
    *
@@ -789,7 +833,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns summaries of the organization's resources.
+   * Grants permission to list the organization's resources.
    *
    * Access Level: List
    *
@@ -800,7 +844,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns a list of SMTP devices registered against the organization
+   * Grants permission to list SMTP gateways registered to the organization
    *
    * Access Level: List
    *
@@ -811,7 +855,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags applied to an Amazon WorkMail organization resource.
+   * Grants permission to list the tags applied to an Amazon WorkMail organization resource
    *
    * Access Level: List
    *
@@ -822,7 +866,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Returns summaries of the organization's users.
+   * Grants permission to list the organization's users.
    *
    * Access Level: List
    *
@@ -833,7 +877,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Adds a new access control rule for the specified organization. The rule allows or denies access to the organization for the specified IPv4 addresses, access protocol actions, and user IDs. Adding a new rule with the same name as an existing rule replaces the older rule.
+   * Grants permission to add a new access control rule
    *
    * Access Level: Write
    *
@@ -844,7 +888,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Sets permissions for a user, group, or resource. This replaces any pre-existing permissions.
+   * Grants permission to set permissions for a user, group, or resource, replacing any existing permissions
    *
    * Access Level: Write
    *
@@ -855,7 +899,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Adds or updates the retention policy for the specified organization.
+   * Grants permission to add or update the retention policy
    *
    * Access Level: Write
    *
@@ -866,7 +910,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Registers an existing and disabled user, group, or resource for use by associating a mailbox and calendaring capabilities.
+   * Grants permission to register an existing and disabled user, group, or resource for use by associating a mailbox and calendaring capabilities
    *
    * Access Level: Write
    *
@@ -877,7 +921,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Remove members from a mail group
+   * Grants permission to remove members from a mail group
    *
    * Access Level: Write
    *
@@ -888,7 +932,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Allows the administrator to reset the password for a user.
+   * Grants permission to allow the administrator to reset the password for a user
    *
    * Access Level: Write
    *
@@ -899,7 +943,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Reset the password for a user's account
+   * Grants permission to reset the password for a user's account
    *
    * Access Level: Write
    *
@@ -910,7 +954,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Prefix search to find a specific user in a mail group
+   * Grants permission to perform a prefix search to find a specific user in a mail group
    *
    * Access Level: Read
    *
@@ -921,7 +965,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Mark a user as being an administrator
+   * Grants permission to mark a user as being an administrator
    *
    * Access Level: Write
    *
@@ -932,7 +976,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Set the default mail domain for the organization
+   * Grants permission to set the default mail domain for the organization
    *
    * Access Level: Write
    *
@@ -943,7 +987,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Set journaling and fallback email addresses for email journaling
+   * Grants permission to set journaling and fallback email addresses for email journaling
    *
    * Access Level: Write
    *
@@ -954,7 +998,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Set the details of the mail group which has just been created
+   * Grants permission to set the details of the mail group which has just been created
    *
    * Access Level: Write
    *
@@ -965,7 +1009,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Set the details for the user account which has just been created
+   * Grants permission to set the details for the user account which has just been created
    *
    * Access Level: Write
    *
@@ -976,7 +1020,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Set the details of a mobile policy associated with the organization
+   * Grants permission to set the details of a mobile policy associated with the organization
    *
    * Access Level: Write
    *
@@ -987,7 +1031,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Start a new mailbox export job.
+   * Grants permission to start a new mailbox export job
    *
    * Access Level: Write
    *
@@ -998,7 +1042,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to tag the specified Amazon WorkMail organization resource.
+   * Grants permission to tag the specified Amazon WorkMail organization resource
    *
    * Access Level: Tagging
    *
@@ -1009,7 +1053,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Test what inbound rules will apply to an email with a given sender and recipient
+   * Grants permission to test what inbound rules will apply to an email with a given sender and recipient
    *
    * Access Level: Write
    *
@@ -1020,7 +1064,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Test what outbound rules will apply to an email with a given sender and recipient
+   * Grants permission to test what outbound rules will apply to an email with a given sender and recipient
    *
    * Access Level: Write
    *
@@ -1031,7 +1075,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag the specified Amazon WorkMail organization resource.
+   * Grants permission to untag the specified Amazon WorkMail organization resource
    *
    * Access Level: Tagging
    *
@@ -1042,7 +1086,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Update the details of an inbound email flow rule which will apply to all email sent to an organization
+   * Grants permission to update the details of an inbound email flow rule which will apply to all email sent to an organization
    *
    * Access Level: Write
    *
@@ -1053,7 +1097,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Updates the maximum size (in MB) of the user's mailbox.
+   * Grants permission to update the maximum size (in MB) of the user's mailbox
    *
    * Access Level: Write
    *
@@ -1064,7 +1108,18 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Update the details of an outbound email flow rule which will apply to all email sent from an organization
+   * Grants permission to update an mobile device access rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateMobileDeviceAccessRule.html
+   */
+  public toUpdateMobileDeviceAccessRule() {
+    return this.to('UpdateMobileDeviceAccessRule');
+  }
+
+  /**
+   * Grants permission to update the details of an outbound email flow rule which will apply to all email sent from an organization
    *
    * Access Level: Write
    *
@@ -1075,7 +1130,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Updates the primary email for a user, group, or resource.
+   * Grants permission to update the primary email for a user, group, or resource
    *
    * Access Level: Write
    *
@@ -1086,7 +1141,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Updates data for the resource. To retrieve the latest information, it must be preceded by a DescribeResource call.
+   * Grants permission to update details for the resource
    *
    * Access Level: Write
    *
@@ -1097,7 +1152,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Update the details of an existing SMTP device registered against an organization
+   * Grants permission to update the details of an existing SMTP gateway registered to an organization
    *
    * Access Level: Write
    *
@@ -1108,7 +1163,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Remotely wipe the mobile device associated with a user's account
+   * Grants permission to remotely wipe the mobile device associated with a user's account
    *
    * Access Level: Write
    *
@@ -1129,6 +1184,7 @@ export class Workmail extends PolicyStatement {
       "CreateInboundMailFlowRule",
       "CreateMailDomain",
       "CreateMailUser",
+      "CreateMobileDeviceAccessRule",
       "CreateOrganization",
       "CreateOutboundMailFlowRule",
       "CreateResource",
@@ -1141,6 +1197,7 @@ export class Workmail extends PolicyStatement {
       "DeleteMailDomain",
       "DeleteMailboxPermissions",
       "DeleteMobileDevice",
+      "DeleteMobileDeviceAccessRule",
       "DeleteOrganization",
       "DeleteOutboundMailFlowRule",
       "DeleteResource",
@@ -1173,6 +1230,7 @@ export class Workmail extends PolicyStatement {
       "TestOutboundMailFlowRules",
       "UpdateInboundMailFlowRule",
       "UpdateMailboxQuota",
+      "UpdateMobileDeviceAccessRule",
       "UpdateOutboundMailFlowRule",
       "UpdatePrimaryEmailAddress",
       "UpdateResource",
@@ -1197,6 +1255,7 @@ export class Workmail extends PolicyStatement {
       "ListInboundMailFlowRules",
       "ListMailboxExportJobs",
       "ListMailboxPermissions",
+      "ListMobileDeviceAccessRules",
       "ListOrganizations",
       "ListOutboundMailFlowRules",
       "ListResourceDelegates",
@@ -1217,6 +1276,7 @@ export class Workmail extends PolicyStatement {
       "GetMailGroupDetails",
       "GetMailUserDetails",
       "GetMailboxDetails",
+      "GetMobileDeviceAccessEffect",
       "GetMobileDeviceDetails",
       "GetMobileDevicesForUser",
       "GetMobilePolicyDetails",

@@ -12,6 +12,7 @@ elasticfilesystem:DeleteFileSystemPolicy;Write
 elasticfilesystem:DeleteMountTarget;Write
 elasticfilesystem:DeleteTags;Tagging
 elasticfilesystem:DescribeAccessPoints;List
+elasticfilesystem:DescribeAccountPreferences;List
 elasticfilesystem:DescribeBackupPolicy;Read
 elasticfilesystem:DescribeFileSystemPolicy;Read
 elasticfilesystem:DescribeFileSystems;List
@@ -21,6 +22,7 @@ elasticfilesystem:DescribeMountTargets;Read
 elasticfilesystem:DescribeTags;Read
 elasticfilesystem:ListTagsForResource;Read
 elasticfilesystem:ModifyMountTargetSecurityGroups;Write
+elasticfilesystem:PutAccountPreferences;Write
 elasticfilesystem:PutBackupPolicy;Write
 elasticfilesystem:PutFileSystemPolicy;Write
 elasticfilesystem:PutLifecycleConfiguration;Write

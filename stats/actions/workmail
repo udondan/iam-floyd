@@ -7,6 +7,7 @@ workmail:CreateGroup;Write
 workmail:CreateInboundMailFlowRule;Write
 workmail:CreateMailDomain;Write
 workmail:CreateMailUser;Write
+workmail:CreateMobileDeviceAccessRule;Write
 workmail:CreateOrganization;Write
 workmail:CreateOutboundMailFlowRule;Write
 workmail:CreateResource;Write
@@ -19,6 +20,7 @@ workmail:DeleteInboundMailFlowRule;Write
 workmail:DeleteMailDomain;Write
 workmail:DeleteMailboxPermissions;Write
 workmail:DeleteMobileDevice;Write
+workmail:DeleteMobileDeviceAccessRule;Write
 workmail:DeleteOrganization;Write
 workmail:DeleteOutboundMailFlowRule;Write
 workmail:DeleteResource;Write
@@ -54,6 +56,7 @@ workmail:GetMailDomainDetails;Read
 workmail:GetMailGroupDetails;Read
 workmail:GetMailUserDetails;Read
 workmail:GetMailboxDetails;Read
+workmail:GetMobileDeviceAccessEffect;Read
 workmail:GetMobileDeviceDetails;Read
 workmail:GetMobileDevicesForUser;Read
 workmail:GetMobilePolicyDetails;Read
@@ -65,6 +68,7 @@ workmail:ListInboundMailFlowRules;List
 workmail:ListMailboxExportJobs;List
 workmail:ListMailboxPermissions;List
 workmail:ListMembersInMailGroup;Read
+workmail:ListMobileDeviceAccessRules;List
 workmail:ListOrganizations;List
 workmail:ListOutboundMailFlowRules;List
 workmail:ListResourceDelegates;List
@@ -93,6 +97,7 @@ workmail:TestOutboundMailFlowRules;Write
 workmail:UntagResource;Tagging
 workmail:UpdateInboundMailFlowRule;Write
 workmail:UpdateMailboxQuota;Write
+workmail:UpdateMobileDeviceAccessRule;Write
 workmail:UpdateOutboundMailFlowRule;Write
 workmail:UpdatePrimaryEmailAddress;Write
 workmail:UpdateResource;Write
