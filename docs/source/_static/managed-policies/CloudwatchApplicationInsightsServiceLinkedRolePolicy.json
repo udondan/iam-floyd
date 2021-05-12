@@ -272,6 +272,38 @@
 			"Resource": [
 				"*"
 			]
-		}
+		},
+		{
+            "Effect": "Allow",
+            "Action": [
+                "ecs:DescribeClusters",
+                "ecs:DescribeContainerInstances",
+                "ecs:DescribeServices",
+                "ecs:DescribeTaskDefinition",
+                "ecs:DescribeTasks",
+                "ecs:DescribeTaskSets",
+                "ecs:ListClusters",
+                "ecs:ListContainerInstances",
+                "ecs:ListServices",
+                "ecs:ListTasks"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "eks:DescribeCluster",
+                "eks:DescribeFargateProfile",
+                "eks:DescribeNodegroup",
+                "eks:ListClusters",
+                "eks:ListFargateProfiles",
+                "eks:ListNodegroups"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
 	]
 }
