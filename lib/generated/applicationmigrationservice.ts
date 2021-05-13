@@ -23,7 +23,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toBatchCreateVolumeSnapshotGroupForMgn() {
     return this.to('BatchCreateVolumeSnapshotGroupForMgn');
@@ -34,7 +34,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toBatchDeleteSnapshotRequestForMgn() {
     return this.to('BatchDeleteSnapshotRequestForMgn');
@@ -137,7 +137,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toDescribeReplicationServerAssociationsForMgn() {
     return this.to('DescribeReplicationServerAssociationsForMgn');
@@ -148,7 +148,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toDescribeSnapshotRequestsForMgn() {
     return this.to('DescribeSnapshotRequestsForMgn');
@@ -192,7 +192,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toGetAgentCommandForMgn() {
     return this.to('GetAgentCommandForMgn');
@@ -203,7 +203,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toGetAgentConfirmedResumeInfoForMgn() {
     return this.to('GetAgentConfirmedResumeInfoForMgn');
@@ -214,7 +214,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toGetAgentInstallationAssetsForMgn() {
     return this.to('GetAgentInstallationAssetsForMgn');
@@ -225,7 +225,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toGetAgentReplicationInfoForMgn() {
     return this.to('GetAgentReplicationInfoForMgn');
@@ -236,7 +236,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toGetAgentRuntimeConfigurationForMgn() {
     return this.to('GetAgentRuntimeConfigurationForMgn');
@@ -247,7 +247,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toGetAgentSnapshotCreditsForMgn() {
     return this.to('GetAgentSnapshotCreditsForMgn');
@@ -258,7 +258,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toGetChannelCommandsForMgn() {
     return this.to('GetChannelCommandsForMgn');
@@ -330,7 +330,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toNotifyAgentAuthenticationForMgn() {
     return this.to('NotifyAgentAuthenticationForMgn');
@@ -341,7 +341,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toNotifyAgentConnectedForMgn() {
     return this.to('NotifyAgentConnectedForMgn');
@@ -352,7 +352,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toNotifyAgentDisconnectedForMgn() {
     return this.to('NotifyAgentDisconnectedForMgn');
@@ -363,7 +363,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toNotifyAgentReplicationProgressForMgn() {
     return this.to('NotifyAgentReplicationProgressForMgn');
@@ -378,7 +378,7 @@ export class Mgn extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toRegisterAgentForMgn() {
     return this.to('RegisterAgentForMgn');
@@ -400,7 +400,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toSendAgentLogsForMgn() {
     return this.to('SendAgentLogsForMgn');
@@ -411,7 +411,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toSendAgentMetricsForMgn() {
     return this.to('SendAgentMetricsForMgn');
@@ -422,7 +422,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toSendChannelCommandResultForMgn() {
     return this.to('SendChannelCommandResultForMgn');
@@ -433,7 +433,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toSendClientLogsForMgn() {
     return this.to('SendClientLogsForMgn');
@@ -444,7 +444,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toSendClientMetricsForMgn() {
     return this.to('SendClientMetricsForMgn');
@@ -611,7 +611,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toUpdateAgentBacklogForMgn() {
     return this.to('UpdateAgentBacklogForMgn');
@@ -622,7 +622,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toUpdateAgentConversionInfoForMgn() {
     return this.to('UpdateAgentConversionInfoForMgn');
@@ -633,7 +633,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toUpdateAgentReplicationInfoForMgn() {
     return this.to('UpdateAgentReplicationInfoForMgn');
@@ -644,7 +644,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toUpdateAgentReplicationProcessStateForMgn() {
     return this.to('UpdateAgentReplicationProcessStateForMgn');
@@ -655,7 +655,7 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
    */
   public toUpdateAgentSourcePropertiesForMgn() {
     return this.to('UpdateAgentSourcePropertiesForMgn');
@@ -759,7 +759,7 @@ export class Mgn extends PolicyStatement {
   /**
    * Adds a resource of type JobResource to the statement
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/launching-target-servers.html
+   * https://docs.aws.amazon.com/mgn/latest/ug/launching-target-servers.html
    *
    * @param jobID - Identifier for the jobID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -781,7 +781,7 @@ export class Mgn extends PolicyStatement {
   /**
    * Adds a resource of type ReplicationConfigurationTemplateResource to the statement
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/replication-settings-template.html
+   * https://docs.aws.amazon.com/mgn/latest/ug/replication-settings-template.html
    *
    * @param replicationConfigurationTemplateID - Identifier for the replicationConfigurationTemplateID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -803,7 +803,7 @@ export class Mgn extends PolicyStatement {
   /**
    * Adds a resource of type SourceServerResource to the statement
    *
-   * https://docs.aws.amazon.com/ApplicationMigrationService/latest/ug/source-servers.html
+   * https://docs.aws.amazon.com/mgn/latest/ug/source-servers.html
    *
    * @param sourceServerID - Identifier for the sourceServerID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
