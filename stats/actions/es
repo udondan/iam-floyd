@@ -1,6 +1,7 @@
 es:AcceptInboundCrossClusterSearchConnection;Write
 es:AddTags;Tagging
 es:AssociatePackage;Write
+es:CancelElasticsearchServiceSoftwareUpdate;Write
 es:CreateElasticsearchDomain;Write
 es:CreateElasticsearchServiceRole;Write
 es:CreateOutboundCrossClusterSearchConnection;Write
@@ -41,6 +42,7 @@ es:ListTags;Read
 es:PurchaseReservedElasticsearchInstanceOffering;Write
 es:RejectInboundCrossClusterSearchConnection;Write
 es:RemoveTags;Tagging
+es:StartElasticsearchServiceSoftwareUpdate;Write
 es:UpdateElasticsearchDomainConfig;Write
 es:UpdatePackage;Write
 es:UpgradeElasticsearchDomain;Write

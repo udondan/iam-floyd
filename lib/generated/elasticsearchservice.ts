@@ -52,6 +52,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel elastic search software update of a domain to given version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-stopupdate
+   */
+  public toCancelElasticsearchServiceSoftwareUpdate() {
+    return this.to('CancelElasticsearchServiceSoftwareUpdate');
+  }
+
+  /**
    * Grants permission to create an Amazon ES domain.
    *
    * Access Level: Write
@@ -492,6 +503,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start elastic search software update of a domain to given version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-startupdate
+   */
+  public toStartElasticsearchServiceSoftwareUpdate() {
+    return this.to('StartElasticsearchServiceSoftwareUpdate');
+  }
+
+  /**
    * Grants permission to modify the configuration of an Amazon ES domain, such as the instance type or number of instances.
    *
    * Access Level: Write
@@ -528,6 +550,7 @@ export class Es extends PolicyStatement {
     "Write": [
       "AcceptInboundCrossClusterSearchConnection",
       "AssociatePackage",
+      "CancelElasticsearchServiceSoftwareUpdate",
       "CreateElasticsearchDomain",
       "CreateElasticsearchServiceRole",
       "CreateOutboundCrossClusterSearchConnection",
@@ -544,6 +567,7 @@ export class Es extends PolicyStatement {
       "ESHttpPut",
       "PurchaseReservedElasticsearchInstanceOffering",
       "RejectInboundCrossClusterSearchConnection",
+      "StartElasticsearchServiceSoftwareUpdate",
       "UpdateElasticsearchDomainConfig",
       "UpdatePackage",
       "UpgradeElasticsearchDomain"
