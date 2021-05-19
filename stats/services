@@ -12,6 +12,7 @@ app-integrations
 appconfig
 appflow
 application-autoscaling
+application-cost-profiler
 applicationinsights
 appmesh
 appmesh-preview
