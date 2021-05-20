@@ -27,7 +27,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-CreateSuiteDefinition
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotdeviceadvisor_CreateSuiteDefinition.html
    */
   public toCreateSuiteDefinition() {
     return this.to('CreateSuiteDefinition');
@@ -38,7 +38,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-DeleteSuiteDefinition
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotdeviceadvisor_DeleteSuiteDefinition.html
    */
   public toDeleteSuiteDefinition() {
     return this.to('DeleteSuiteDefinition');
@@ -49,7 +49,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-GetSuiteDefinition
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotdeviceadvisor_GetSuiteDefinition.html
    */
   public toGetSuiteDefinition() {
     return this.to('GetSuiteDefinition');
@@ -60,7 +60,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-GetSuiteRun
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotdeviceadvisor_GetSuiteRun.html
    */
   public toGetSuiteRun() {
     return this.to('GetSuiteRun');
@@ -71,7 +71,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-GetSuiteRunReport
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotdeviceadvisor_GetSuiteRunReport.html
    */
   public toGetSuiteRunReport() {
     return this.to('GetSuiteRunReport');
@@ -82,7 +82,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-ListSuiteDefinitions
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotdeviceadvisor_ListSuiteDefinitions.html
    */
   public toListSuiteDefinitions() {
     return this.to('ListSuiteDefinitions');
@@ -93,7 +93,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-ListSuiteRuns
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotdeviceadvisor_ListSuiteRuns.html
    */
   public toListSuiteRuns() {
     return this.to('ListSuiteRuns');
@@ -104,21 +104,10 @@ export class Iotdeviceadvisor extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-ListTagsForResource
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotdeviceadvisor_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
-  }
-
-  /**
-   * Grants permission to list the test cases provided by IoT Device Advisor
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-ListTestCases
-   */
-  public toListTestCases() {
-    return this.to('ListTestCases');
   }
 
   /**
@@ -130,10 +119,21 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-StartSuiteRun
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotdeviceadvisor_StartSuiteRun.html
    */
   public toStartSuiteRun() {
     return this.to('StartSuiteRun');
+  }
+
+  /**
+   * Grants permission to stop a suite run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotdeviceadvisor_StopSuiteRun.html
+   */
+  public toStopSuiteRun() {
+    return this.to('StopSuiteRun');
   }
 
   /**
@@ -145,7 +145,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-TagResource
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotdeviceadvisor_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -159,7 +159,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-UntagResource
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotdeviceadvisor_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -170,7 +170,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-iot-commands.html#api-iot-UpdateSuiteDefinition
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotdeviceadvisor_UpdateSuiteDefinition.html
    */
   public toUpdateSuiteDefinition() {
     return this.to('UpdateSuiteDefinition');
@@ -181,6 +181,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
       "CreateSuiteDefinition",
       "DeleteSuiteDefinition",
       "StartSuiteRun",
+      "StopSuiteRun",
       "UpdateSuiteDefinition"
     ],
     "Read": [
@@ -191,8 +192,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
     ],
     "List": [
       "ListSuiteDefinitions",
-      "ListSuiteRuns",
-      "ListTestCases"
+      "ListSuiteRuns"
     ],
     "Tagging": [
       "TagResource",

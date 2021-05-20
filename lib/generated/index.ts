@@ -141,6 +141,7 @@ export { ApplicationCostProfiler } from "./applicationcostprofilerservice";
 export { Mgn } from "./applicationmigrationservice";
 export { Appmesh } from "./appmesh";
 export { AppmeshPreview } from "./appmeshpreview";
+export { Apprunner } from "./apprunner";
 export { Appsync } from "./appsync";
 export { Artifact } from "./artifact";
 export { Auditmanager } from "./auditmanager";

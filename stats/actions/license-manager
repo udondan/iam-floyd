@@ -6,23 +6,27 @@ license-manager:CreateGrant;Write
 license-manager:CreateGrantVersion;Write
 license-manager:CreateLicense;Write
 license-manager:CreateLicenseConfiguration;Tagging
+license-manager:CreateLicenseManagerReportGenerator;Write
 license-manager:CreateLicenseVersion;Write
 license-manager:CreateToken;Write
 license-manager:DeleteGrant;Write
 license-manager:DeleteLicense;Write
 license-manager:DeleteLicenseConfiguration;Write
+license-manager:DeleteLicenseManagerReportGenerator;Write
 license-manager:DeleteToken;Write
 license-manager:ExtendLicenseConsumption;Write
 license-manager:GetAccessToken;Read
 license-manager:GetGrant;Read
 license-manager:GetLicense;Read
-license-manager:GetLicenseConfiguration;List
+license-manager:GetLicenseConfiguration;Read
+license-manager:GetLicenseManagerReportGenerator;Read
 license-manager:GetLicenseUsage;Read
 license-manager:GetServiceSettings;List
 license-manager:ListAssociationsForLicenseConfiguration;List
 license-manager:ListDistributedGrants;List
 license-manager:ListFailuresForLicenseConfigurationOperations;List
 license-manager:ListLicenseConfigurations;List
+license-manager:ListLicenseManagerReportGenerators;List
 license-manager:ListLicenseSpecificationsForResource;List
 license-manager:ListLicenseVersions;List
 license-manager:ListLicenses;List
@@ -36,5 +40,6 @@ license-manager:RejectGrant;Write
 license-manager:TagResource;Tagging
 license-manager:UntagResource;Tagging
 license-manager:UpdateLicenseConfiguration;Write
+license-manager:UpdateLicenseManagerReportGenerator;Write
 license-manager:UpdateLicenseSpecificationsForResource;Write
 license-manager:UpdateServiceSettings;Permissions management

@@ -240,6 +240,17 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the warm pool associated with the Auto Scaling group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteWarmPool.html
+   */
+  public toDeleteWarmPool() {
+    return this.to('DeleteWarmPool');
+  }
+
+  /**
    * Describes the current Auto Scaling resource limits for your AWS account.
    *
    * Access Level: List
@@ -449,6 +460,17 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the warm pool associated with the Auto Scaling group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeWarmPool.html
+   */
+  public toDescribeWarmPool() {
+    return this.to('DescribeWarmPool');
+  }
+
+  /**
    * Removes one or more instances from the specified Auto Scaling group.
    *
    * Access Level: Write
@@ -591,6 +613,17 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create or update the warm pool associated with the specified Auto Scaling group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutWarmPool.html
+   */
+  public toPutWarmPool() {
+    return this.to('PutWarmPool');
+  }
+
+  /**
    * Records a heartbeat for the lifecycle action associated with the specified token or instance.
    *
    * Access Level: Write
@@ -713,6 +746,7 @@ export class Autoscaling extends PolicyStatement {
       "DeleteNotificationConfiguration",
       "DeletePolicy",
       "DeleteScheduledAction",
+      "DeleteWarmPool",
       "DetachInstances",
       "DetachLoadBalancerTargetGroups",
       "DetachLoadBalancers",
@@ -725,6 +759,7 @@ export class Autoscaling extends PolicyStatement {
       "PutNotificationConfiguration",
       "PutScalingPolicy",
       "PutScheduledUpdateGroupAction",
+      "PutWarmPool",
       "RecordLifecycleActionHeartbeat",
       "ResumeProcesses",
       "SetDesiredCapacity",
@@ -758,7 +793,8 @@ export class Autoscaling extends PolicyStatement {
       "DescribeScalingActivities",
       "DescribeScalingProcessTypes",
       "DescribeScheduledActions",
-      "DescribeTerminationPolicyTypes"
+      "DescribeTerminationPolicyTypes",
+      "DescribeWarmPool"
     ],
     "Read": [
       "DescribeTags"
@@ -1005,6 +1041,7 @@ export class Autoscaling extends PolicyStatement {
    * - .toDeletePolicy()
    * - .toDeleteScheduledAction()
    * - .toDeleteTags()
+   * - .toDeleteWarmPool()
    * - .toDetachInstances()
    * - .toDetachLoadBalancerTargetGroups()
    * - .toDetachLoadBalancers()
@@ -1017,6 +1054,7 @@ export class Autoscaling extends PolicyStatement {
    * - .toPutNotificationConfiguration()
    * - .toPutScalingPolicy()
    * - .toPutScheduledUpdateGroupAction()
+   * - .toPutWarmPool()
    * - .toRecordLifecycleActionHeartbeat()
    * - .toResumeProcesses()
    * - .toSetDesiredCapacity()

@@ -111,6 +111,17 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a report generator for a license configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseManagerReportGenerator.html
+   */
+  public toCreateLicenseManagerReportGenerator() {
+    return this.to('CreateLicenseManagerReportGenerator');
+  }
+
+  /**
    * Grants permission to create new version of license.
    *
    * Access Level: Write
@@ -163,6 +174,17 @@ export class LicenseManager extends PolicyStatement {
    */
   public toDeleteLicenseConfiguration() {
     return this.to('DeleteLicenseConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a report generator
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicenseManagerReportGenerator.html
+   */
+  public toDeleteLicenseManagerReportGenerator() {
+    return this.to('DeleteLicenseManagerReportGenerator');
   }
 
   /**
@@ -223,12 +245,23 @@ export class LicenseManager extends PolicyStatement {
   /**
    * Grants permission to get a license configuration
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseConfiguration.html
    */
   public toGetLicenseConfiguration() {
     return this.to('GetLicenseConfiguration');
+  }
+
+  /**
+   * Grants permission to get a report generator
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseManagerReportGenerator.html
+   */
+  public toGetLicenseManagerReportGenerator() {
+    return this.to('GetLicenseManagerReportGenerator');
   }
 
   /**
@@ -295,6 +328,17 @@ export class LicenseManager extends PolicyStatement {
    */
   public toListLicenseConfigurations() {
     return this.to('ListLicenseConfigurations');
+  }
+
+  /**
+   * Grants permission to list report generators
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseManagerReportGenerators.html
+   */
+  public toListLicenseManagerReportGenerators() {
+    return this.to('ListLicenseManagerReportGenerators');
   }
 
   /**
@@ -445,6 +489,17 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a report generator for a license configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseManagerReportGenerator.html
+   */
+  public toUpdateLicenseManagerReportGenerator() {
+    return this.to('UpdateLicenseManagerReportGenerator');
+  }
+
+  /**
    * Grants permission to updates license specifications for a selected resource
    *
    * Access Level: Write
@@ -475,15 +530,18 @@ export class LicenseManager extends PolicyStatement {
       "CreateGrant",
       "CreateGrantVersion",
       "CreateLicense",
+      "CreateLicenseManagerReportGenerator",
       "CreateLicenseVersion",
       "CreateToken",
       "DeleteGrant",
       "DeleteLicense",
       "DeleteLicenseConfiguration",
+      "DeleteLicenseManagerReportGenerator",
       "DeleteToken",
       "ExtendLicenseConsumption",
       "RejectGrant",
       "UpdateLicenseConfiguration",
+      "UpdateLicenseManagerReportGenerator",
       "UpdateLicenseSpecificationsForResource"
     ],
     "Tagging": [
@@ -495,15 +553,17 @@ export class LicenseManager extends PolicyStatement {
       "GetAccessToken",
       "GetGrant",
       "GetLicense",
+      "GetLicenseConfiguration",
+      "GetLicenseManagerReportGenerator",
       "GetLicenseUsage"
     ],
     "List": [
-      "GetLicenseConfiguration",
       "GetServiceSettings",
       "ListAssociationsForLicenseConfiguration",
       "ListDistributedGrants",
       "ListFailuresForLicenseConfigurationOperations",
       "ListLicenseConfigurations",
+      "ListLicenseManagerReportGenerators",
       "ListLicenseSpecificationsForResource",
       "ListLicenseVersions",
       "ListLicenses",
@@ -533,7 +593,7 @@ export class LicenseManager extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLicenseConfiguration(licenseConfigurationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:license-manager:${Region}:${Account}:license-configuration/${LicenseConfigurationId}';
+    var arn = 'arn:${Partition}:license-manager:${Region}:${Account}:license-configuration:${LicenseConfigurationId}';
     arn = arn.replace('${LicenseConfigurationId}', licenseConfigurationId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
@@ -576,12 +636,35 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on tag-value associated with the resource.
+   * Adds a resource of type report-generator to the statement
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/userguide/report-generators.html
+   *
+   * @param reportGeneratorId - Identifier for the reportGeneratorId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifResourceTag()
+   */
+  public onReportGenerator(reportGeneratorId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:license-manager:${Region}:${Account}:report-generator:${ReportGeneratorId}';
+    arn = arn.replace('${ReportGeneratorId}', reportGeneratorId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Filters access based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/license-manager/latest/userguide/identity-access-management.html
    *
    * Applies to resource types:
    * - license-configuration
+   * - report-generator
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

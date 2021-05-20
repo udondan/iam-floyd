@@ -6,8 +6,8 @@ iotdeviceadvisor:GetSuiteRunReport;Read
 iotdeviceadvisor:ListSuiteDefinitions;List
 iotdeviceadvisor:ListSuiteRuns;List
 iotdeviceadvisor:ListTagsForResource;Read
-iotdeviceadvisor:ListTestCases;List
 iotdeviceadvisor:StartSuiteRun;Write
+iotdeviceadvisor:StopSuiteRun;Write
 iotdeviceadvisor:TagResource;Tagging
 iotdeviceadvisor:UntagResource;Tagging
 iotdeviceadvisor:UpdateSuiteDefinition;Write
