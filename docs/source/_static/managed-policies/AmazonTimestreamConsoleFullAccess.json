@@ -46,8 +46,7 @@
 				"dbqms:CreateQueryHistory",
 				"dbqms:DescribeQueryHistory",
 				"dbqms:UpdateQueryHistory",
-				"dbqms:DeleteQueryHistory",
-				"dbqms:DescribeQueryHistory"
+				"dbqms:DeleteQueryHistory"
 			],
 			"Resource": "*"
 		}
