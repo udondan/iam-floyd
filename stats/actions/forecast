@@ -12,6 +12,7 @@ forecast:DeleteForecast;Write
 forecast:DeleteForecastExportJob;Write
 forecast:DeletePredictor;Write
 forecast:DeletePredictorBacktestExportJob;Write
+forecast:DeleteResourceTree;Write
 forecast:DescribeDataset;Read
 forecast:DescribeDatasetGroup;Read
 forecast:DescribeDatasetImportJob;Read

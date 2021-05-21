@@ -201,6 +201,17 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a resource and its child resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteResourceTree.html
+   */
+  public toDeleteResourceTree() {
+    return this.to('DeleteResourceTree');
+  }
+
+  /**
    * Grants permission to describe a dataset
    *
    * Access Level: Read
@@ -458,6 +469,7 @@ export class Forecast extends PolicyStatement {
       "DeleteForecastExportJob",
       "DeletePredictor",
       "DeletePredictorBacktestExportJob",
+      "DeleteResourceTree",
       "StopResource",
       "UpdateDatasetGroup"
     ],
