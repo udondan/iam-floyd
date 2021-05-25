@@ -11,6 +11,7 @@ iot:dynamicthinggroup
 iot:fleetmetric
 iot:index
 iot:job
+iot:jobtemplate
 iot:mitigationaction
 iot:otaupdate
 iot:policy

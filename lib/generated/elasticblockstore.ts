@@ -23,6 +23,9 @@ export class Ebs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_CompleteSnapshot.html
    */
   public toCompleteSnapshot() {
@@ -33,6 +36,9 @@ export class Ebs extends PolicyStatement {
    * Grants permission to return the data of a block in an Amazon Elastic Block Store (EBS) snapshot
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_GetSnapshotBlock.html
    */
@@ -45,6 +51,9 @@ export class Ebs extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_ListChangedBlocks.html
    */
   public toListChangedBlocks() {
@@ -56,6 +65,9 @@ export class Ebs extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_ListSnapshotBlocks.html
    */
   public toListSnapshotBlocks() {
@@ -66,6 +78,9 @@ export class Ebs extends PolicyStatement {
    * Grants permission to write a block of data to a snapshot created by the StartSnapshot operation.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html
    */
@@ -80,7 +95,11 @@ export class Ebs extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifDescription()
+   * - .ifParentSnapshot()
+   * - .ifVolumeSize()
    *
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_StartSnapshot.html
    */
@@ -129,6 +148,9 @@ export class Ebs extends PolicyStatement {
   /**
    * Filters access by the description of the snapshot being created.
    *
+   * Applies to actions:
+   * - .toStartSnapshot()
+   *
    * Applies to resource types:
    * - snapshot
    *
@@ -142,6 +164,9 @@ export class Ebs extends PolicyStatement {
   /**
    * Filters access by the ID of the parent snapshot.
    *
+   * Applies to actions:
+   * - .toStartSnapshot()
+   *
    * Applies to resource types:
    * - snapshot
    *
@@ -154,6 +179,9 @@ export class Ebs extends PolicyStatement {
 
   /**
    * Filters access by the size of the volume for the snapshot being created, in GiB.
+   *
+   * Applies to actions:
+   * - .toStartSnapshot()
    *
    * Applies to resource types:
    * - snapshot
