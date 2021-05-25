@@ -122,8 +122,8 @@
 				"ec2:DisassociateRouteTable",
 				"ec2:DisassociateSubnetCidrBlock",
 				"ec2:ModifyInstancePlacement",
-                "ec2:DeletePlacementGroup",
-                "ec2:CreatePlacementGroup",
+				"ec2:DeletePlacementGroup",
+				"ec2:CreatePlacementGroup",
 				"elasticfilesystem:DeleteFileSystem",
 				"elasticfilesystem:DeleteMountTarget",
 				"ds:AddIpRoutes",
@@ -443,7 +443,8 @@
 				"secretsmanager:UntagResource",
 				"secretsmanager:PutResourcePolicy",
 				"secretsmanager:DeleteResourcePolicy",
-				"secretsmanager:ListSecretVersionIds"
+				"secretsmanager:ListSecretVersionIds",
+				"secretsmanager:GetSecretValue"
 			],
 			"Resource": "arn:aws:secretsmanager:*:*:secret:LaunchWizard*"
 		},
@@ -468,14 +469,50 @@
 			"Resource": "arn:aws:ssm:*:*:opsmetadata/aws/ssm/LaunchWizard*"
 		},
 		{
-            "Effect": "Allow",
-            "Action": [
-                "sns:CreateTopic",
-                "sns:DeleteTopic",
-                "sns:Subscribe",
-                "sns:Unsubscribe"
-            ],
-            "Resource": "arn:aws:sns:*:*:LaunchWizard*"
-        }
+			"Effect": "Allow",
+			"Action": [
+				"sns:CreateTopic",
+				"sns:DeleteTopic",
+				"sns:Subscribe",
+				"sns:Unsubscribe"
+			],
+			"Resource": "arn:aws:sns:*:*:LaunchWizard*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"fsx:UntagResource",
+				"fsx:TagResource",
+				"fsx:DeleteFileSystem",
+				"fsx:ListTagsForResource"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringLike": {
+					"aws:ResourceTag/Name": "LaunchWizard*"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"fsx:CreateFileSystem"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringLike": {
+					"aws:RequestTag/Name": [
+						"LaunchWizard*"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"fsx:DescribeFileSystems"
+			],
+			"Resource": "*"
+		}
 	]
 }

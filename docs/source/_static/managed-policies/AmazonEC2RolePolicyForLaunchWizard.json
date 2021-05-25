@@ -146,6 +146,19 @@
 			"Resource": [
 				"arn:aws:ssm:*:*:document/AWSSAP-InstallBackint"
 			]
-		}
+		},
+		{
+            "Effect": "Allow",
+            "Action": [
+                "fsx:DescribeFileSystems",
+                "fsx:ListTagsForResource"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "ForAllValues:StringLike": {
+                    "aws:TagKeys": "LaunchWizard*"
+                }
+            }
+        }
 	]
 }

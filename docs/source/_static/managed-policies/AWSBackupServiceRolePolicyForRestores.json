@@ -2,6 +2,7 @@
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Effect": "Allow",
             "Action": [
                 "dynamodb:Scan",
                 "dynamodb:Query",
@@ -12,15 +13,15 @@
                 "dynamodb:BatchWriteItem",
                 "dynamodb:DescribeTable"
             ],
-            "Resource": "arn:aws:dynamodb:*:*:table/*",
-            "Effect": "Allow"
+            "Resource": "arn:aws:dynamodb:*:*:table/*"
+
         },
         {
+            "Effect": "Allow",
             "Action": [
                 "dynamodb:RestoreTableFromBackup"
             ],
-            "Resource": "arn:aws:dynamodb:*:*:table/*/backup/*",
-            "Effect": "Allow"
+            "Resource": "arn:aws:dynamodb:*:*:table/*/backup/*"
         },
         {
             "Effect": "Allow",
@@ -36,6 +37,8 @@
         {
             "Effect": "Allow",
             "Action": [
+                "ec2:DescribeImages",
+                "ec2:DescribeInstances",
                 "ec2:DescribeSnapshots",
                 "ec2:DescribeVolumes"
             ],
@@ -93,11 +96,12 @@
             "Resource": "arn:aws:elasticfilesystem:*:*:file-system/*"
         },
         {
+            "Effect": "Allow",            
             "Action": "kms:DescribeKey",
-            "Effect": "Allow",
             "Resource": "*"
         },
         {
+            "Effect": "Allow",            
             "Action": [
                 "kms:Decrypt",
                 "kms:Encrypt",
@@ -105,7 +109,6 @@
                 "kms:ReEncryptTo",
                 "kms:ReEncryptFrom"
             ],
-            "Effect": "Allow",
             "Resource": "*",
             "Condition": {
                 "StringLike": {
@@ -119,8 +122,8 @@
             }
         },
         {
-            "Action": "kms:CreateGrant",
             "Effect": "Allow",
+            "Action": "kms:CreateGrant",
             "Resource": "*",
             "Condition": {
                 "Bool": {
@@ -129,53 +132,53 @@
             }
         },
         {
+            "Effect": "Allow",
             "Action": [
                 "ec2:RunInstances"
             ],
-            "Effect": "Allow",
             "Resource": "*"
         },
         {
+            "Effect": "Allow",
             "Action": [
                 "ec2:TerminateInstances"
             ],
-            "Effect": "Allow",
             "Resource": "arn:aws:ec2:*:*:instance/*"
         },
         {
+            "Effect": "Allow",
             "Action": [
                 "fsx:CreateFileSystemFromBackup"
             ],
-            "Effect": "Allow",
             "Resource": [
                 "arn:aws:fsx:*:*:file-system/*",
                 "arn:aws:fsx:*:*:backup/*"
             ]
         },
         {
-            "Action": "fsx:DescribeFileSystems",
             "Effect": "Allow",
+            "Action": ["fsx:DescribeFileSystems", "fsx:TagResource"],
             "Resource": "arn:aws:fsx:*:*:file-system/*"
         },
         {
-            "Action": "fsx:DescribeBackups",
             "Effect": "Allow",
+            "Action": "fsx:DescribeBackups",
             "Resource": "arn:aws:fsx:*:*:backup/*"
         },
         {
+            "Effect" : "Allow",            
             "Action" : [ 
                 "fsx:DeleteFileSystem",
                 "fsx:UntagResource"
             ],
-            "Effect" : "Allow",
             "Resource" : "arn:aws:fsx:*:*:file-system/*",
             "Condition" : {
                 "Null": {"aws:ResourceTag/aws:backup:source-resource": "false"}
             }
         },
         {
-            "Action": "ds:DescribeDirectories",
             "Effect": "Allow",
+            "Action": "ds:DescribeDirectories",
             "Resource": "*"
         }
     ]
