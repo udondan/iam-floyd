@@ -356,7 +356,6 @@
 				"gamelift:Describe*",
 				"gamelift:Get*",
 				"gamelift:List*",
-				"gamelift:RequestUploadCredentials",
 				"gamelift:ResolveAlias",
 				"gamelift:Search*",
 				"glacier:Describe*",
