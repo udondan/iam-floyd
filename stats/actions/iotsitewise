@@ -49,6 +49,7 @@ iotsitewise:UntagResource;Tagging
 iotsitewise:UpdateAccessPolicy;Write
 iotsitewise:UpdateAsset;Write
 iotsitewise:UpdateAssetModel;Write
+iotsitewise:UpdateAssetModelPropertyRouting;Write
 iotsitewise:UpdateAssetProperty;Write
 iotsitewise:UpdateDashboard;Write
 iotsitewise:UpdateGateway;Write

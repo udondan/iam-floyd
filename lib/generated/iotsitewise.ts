@@ -625,6 +625,15 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an AssetModel property routing
+   *
+   * Access Level: Write
+   */
+  public toUpdateAssetModelPropertyRouting() {
+    return this.to('UpdateAssetModelPropertyRouting');
+  }
+
+  /**
    * Grants permission to update an asset property
    *
    * Access Level: Write
@@ -716,6 +725,7 @@ export class Iotsitewise extends PolicyStatement {
       "UpdateAccessPolicy",
       "UpdateAsset",
       "UpdateAssetModel",
+      "UpdateAssetModelPropertyRouting",
       "UpdateAssetProperty",
       "UpdateDashboard",
       "UpdateGateway",
