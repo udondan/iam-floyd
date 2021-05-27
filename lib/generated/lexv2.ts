@@ -93,6 +93,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an export for an existing resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateExport.html
+   */
+  public toCreateExport() {
+    return this.to('CreateExport');
+  }
+
+  /**
    * Grants permission to create a new intent in an existing bot locale
    *
    * Access Level: Write
@@ -101,6 +112,17 @@ export class LexV2 extends PolicyStatement {
    */
   public toCreateIntent() {
     return this.to('CreateIntent');
+  }
+
+  /**
+   * Grants permission to create a new resource policy for a Lex resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateResourcePolicy.html
+   */
+  public toCreateResourcePolicy() {
+    return this.to('CreateResourcePolicy');
   }
 
   /**
@@ -126,9 +148,29 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an upload url for import file
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html
+   */
+  public toCreateUploadUrl() {
+    return this.to('CreateUploadUrl');
+  }
+
+  /**
    * Grants permission to delete an existing bot
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - lex:DeleteBotAlias
+   * - lex:DeleteBotChannel
+   * - lex:DeleteBotLocale
+   * - lex:DeleteBotVersion
+   * - lex:DeleteIntent
+   * - lex:DeleteSlot
+   * - lex:DeleteSlotType
    *
    * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html
    */
@@ -163,6 +205,11 @@ export class LexV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - lex:DeleteIntent
+   * - lex:DeleteSlot
+   * - lex:DeleteSlotType
+   *
    * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBotLocale.html
    */
   public toDeleteBotLocale() {
@@ -181,6 +228,28 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an existing export
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteExport.html
+   */
+  public toDeleteExport() {
+    return this.to('DeleteExport');
+  }
+
+  /**
+   * Grants permission to delete an existing import
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteImport.html
+   */
+  public toDeleteImport() {
+    return this.to('DeleteImport');
+  }
+
+  /**
    * Grants permission to delete an existing intent in a bot locale
    *
    * Access Level: Write
@@ -189,6 +258,17 @@ export class LexV2 extends PolicyStatement {
    */
   public toDeleteIntent() {
     return this.to('DeleteIntent');
+  }
+
+  /**
+   * Grants permission to delete an existing resource policy for a Lex resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
   }
 
   /**
@@ -280,6 +360,39 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an existing export
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - lex:DescribeBot
+   * - lex:DescribeBotLocale
+   * - lex:DescribeIntent
+   * - lex:DescribeSlot
+   * - lex:DescribeSlotType
+   * - lex:ListBotLocales
+   * - lex:ListIntents
+   * - lex:ListSlotTypes
+   * - lex:ListSlots
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html
+   */
+  public toDescribeExport() {
+    return this.to('DescribeExport');
+  }
+
+  /**
+   * Grants permission to retrieve an existing import
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeImport.html
+   */
+  public toDescribeImport() {
+    return this.to('DescribeImport');
+  }
+
+  /**
    * Grants permission to retrieve an existing intent
    *
    * Access Level: Read
@@ -288,6 +401,17 @@ export class LexV2 extends PolicyStatement {
    */
   public toDescribeIntent() {
     return this.to('DescribeIntent');
+  }
+
+  /**
+   * Grants permission to retrieve an existing resource policy for a Lex resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeResourcePolicy.html
+   */
+  public toDescribeResourcePolicy() {
+    return this.to('DescribeResourcePolicy');
   }
 
   /**
@@ -310,28 +434,6 @@ export class LexV2 extends PolicyStatement {
    */
   public toDescribeSlotType() {
     return this.to('DescribeSlotType');
-  }
-
-  /**
-   * Grants permission to list built-in intents
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_GetBuiltinIntents.html
-   */
-  public toGetBuiltinIntents() {
-    return this.to('GetBuiltinIntents');
-  }
-
-  /**
-   * Grants permission to list built-in slot types
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_GetBuiltinSlotTypes.html
-   */
-  public toGetBuiltinSlotTypes() {
-    return this.to('GetBuiltinSlotTypes');
   }
 
   /**
@@ -398,6 +500,50 @@ export class LexV2 extends PolicyStatement {
    */
   public toListBots() {
     return this.to('ListBots');
+  }
+
+  /**
+   * Grants permission to list built-in intents
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBuiltInIntents.html
+   */
+  public toListBuiltInIntents() {
+    return this.to('ListBuiltInIntents');
+  }
+
+  /**
+   * Grants permission to list built-in slot types
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBuiltInSlotTypes.html
+   */
+  public toListBuiltInSlotTypes() {
+    return this.to('ListBuiltInSlotTypes');
+  }
+
+  /**
+   * Grants permission to list existing exports
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html
+   */
+  public toListExports() {
+    return this.to('ListExports');
+  }
+
+  /**
+   * Grants permission to list existing imports
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html
+   */
+  public toListImports() {
+    return this.to('ListImports');
   }
 
   /**
@@ -489,6 +635,37 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a new import with the uploaded import file
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - lex:CreateBot
+   * - lex:CreateBotLocale
+   * - lex:CreateIntent
+   * - lex:CreateSlot
+   * - lex:CreateSlotType
+   * - lex:DeleteBotLocale
+   * - lex:DeleteIntent
+   * - lex:DeleteSlot
+   * - lex:DeleteSlotType
+   * - lex:UpdateBot
+   * - lex:UpdateBotLocale
+   * - lex:UpdateIntent
+   * - lex:UpdateSlot
+   * - lex:UpdateSlotType
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html
+   */
+  public toStartImport() {
+    return this.to('StartImport');
+  }
+
+  /**
    * Grants permission to add or overwrite tags of a Lex resource
    *
    * Access Level: Tagging
@@ -552,6 +729,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an existing export
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateExport.html
+   */
+  public toUpdateExport() {
+    return this.to('UpdateExport');
+  }
+
+  /**
    * Grants permission to update an existing intent
    *
    * Access Level: Write
@@ -560,6 +748,17 @@ export class LexV2 extends PolicyStatement {
    */
   public toUpdateIntent() {
     return this.to('UpdateIntent');
+  }
+
+  /**
+   * Grants permission to update an existing resource policy for a Lex resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateResourcePolicy.html
+   */
+  public toUpdateResourcePolicy() {
+    return this.to('UpdateResourcePolicy');
   }
 
   /**
@@ -592,15 +791,21 @@ export class LexV2 extends PolicyStatement {
       "CreateBotChannel",
       "CreateBotLocale",
       "CreateBotVersion",
+      "CreateExport",
       "CreateIntent",
+      "CreateResourcePolicy",
       "CreateSlot",
       "CreateSlotType",
+      "CreateUploadUrl",
       "DeleteBot",
       "DeleteBotAlias",
       "DeleteBotChannel",
       "DeleteBotLocale",
       "DeleteBotVersion",
+      "DeleteExport",
+      "DeleteImport",
       "DeleteIntent",
+      "DeleteResourcePolicy",
       "DeleteSession",
       "DeleteSlot",
       "DeleteSlotType",
@@ -608,10 +813,13 @@ export class LexV2 extends PolicyStatement {
       "RecognizeSpeech",
       "RecognizeText",
       "StartConversation",
+      "StartImport",
       "UpdateBot",
       "UpdateBotAlias",
       "UpdateBotLocale",
+      "UpdateExport",
       "UpdateIntent",
+      "UpdateResourcePolicy",
       "UpdateSlot",
       "UpdateSlotType"
     ],
@@ -621,20 +829,25 @@ export class LexV2 extends PolicyStatement {
       "DescribeBotChannel",
       "DescribeBotLocale",
       "DescribeBotVersion",
+      "DescribeExport",
+      "DescribeImport",
       "DescribeIntent",
+      "DescribeResourcePolicy",
       "DescribeSlot",
       "DescribeSlotType",
       "GetSession",
       "ListTagsForResource"
     ],
     "List": [
-      "GetBuiltinIntents",
-      "GetBuiltinSlotTypes",
       "ListBotAliases",
       "ListBotChannels",
       "ListBotLocales",
       "ListBotVersions",
       "ListBots",
+      "ListBuiltInIntents",
+      "ListBuiltInSlotTypes",
+      "ListExports",
+      "ListImports",
       "ListIntents",
       "ListSlotTypes",
       "ListSlots"

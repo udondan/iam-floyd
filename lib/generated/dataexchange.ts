@@ -221,6 +221,17 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
+   * Grants permission to publish a data set.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   */
+  public toPublishDataSet() {
+    return this.to('PublishDataSet');
+  }
+
+  /**
    * Grants permissions to start a job.
    *
    * Access Level: Write
@@ -303,6 +314,7 @@ export class Dataexchange extends PolicyStatement {
       "DeleteAsset",
       "DeleteDataSet",
       "DeleteRevision",
+      "PublishDataSet",
       "StartJob",
       "UpdateAsset",
       "UpdateDataSet",

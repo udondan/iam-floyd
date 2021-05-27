@@ -15,6 +15,7 @@ dataexchange:ListDataSets;List
 dataexchange:ListJobs;List
 dataexchange:ListRevisionAssets;List
 dataexchange:ListTagsForResource;Read
+dataexchange:PublishDataSet;Write
 dataexchange:StartJob;Write
 dataexchange:TagResource;Tagging
 dataexchange:UntagResource;Tagging
