@@ -2,12 +2,13 @@
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Effect": "Allow",
             "Action": [
                 "kendra:Describe*",
                 "kendra:List*",
-                "kendra:Query"
+                "kendra:Query",
+                "kendra:GetQuerySuggestions"
             ],
-            "Effect": "Allow",
             "Resource": "*"
         }
     ]
