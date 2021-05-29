@@ -1,5 +1,5 @@
 import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [qldb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqldb.html).
@@ -210,11 +210,129 @@ export class Qldb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send commands to a ledger
+   * Grants permission to create an index on a table
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/qldb/latest/developerguide/Using.API.html
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.create-index.html
+   */
+  public toPartiQLCreateIndex() {
+    return this.to('PartiQLCreateIndex');
+  }
+
+  /**
+   * Grants permission to create a table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.create-table.html
+   */
+  public toPartiQLCreateTable() {
+    return this.to('PartiQLCreateTable');
+  }
+
+  /**
+   * Grants permission to delete documents from a table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.delete.html
+   */
+  public toPartiQLDelete() {
+    return this.to('PartiQLDelete');
+  }
+
+  /**
+   * Grants permission to drop an index from a table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPurge()
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.drop-index.html
+   */
+  public toPartiQLDropIndex() {
+    return this.to('PartiQLDropIndex');
+  }
+
+  /**
+   * Grants permission to drop a table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPurge()
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.drop-table.html
+   */
+  public toPartiQLDropTable() {
+    return this.to('PartiQLDropTable');
+  }
+
+  /**
+   * Grants permission to use the history function on a table
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/working.history.html
+   */
+  public toPartiQLHistoryFunction() {
+    return this.to('PartiQLHistoryFunction');
+  }
+
+  /**
+   * Grants permission to insert documents into a table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.insert.html
+   */
+  public toPartiQLInsert() {
+    return this.to('PartiQLInsert');
+  }
+
+  /**
+   * Grants permission to select documents from a table
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.select.html
+   */
+  public toPartiQLSelect() {
+    return this.to('PartiQLSelect');
+  }
+
+  /**
+   * Grants permission to undrop a table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.undrop-table.html
+   */
+  public toPartiQLUndropTable() {
+    return this.to('PartiQLUndropTable');
+  }
+
+  /**
+   * Grants permission to update existing documents in a table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/ql-reference.update.html
+   */
+  public toPartiQLUpdate() {
+    return this.to('PartiQLUpdate');
+  }
+
+  /**
+   * Grants permission to send commands to a ledger
+   *
+   * Access Level: Write
    */
   public toSendCommand() {
     return this.to('SendCommand');
@@ -258,11 +376,12 @@ export class Qldb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove one or more tags to a resource
+   * Grants permission to remove one or more tags from a resource
    *
    * Access Level: Tagging
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_UntagResource.html
@@ -282,6 +401,17 @@ export class Qldb extends PolicyStatement {
     return this.to('UpdateLedger');
   }
 
+  /**
+   * Grants permission to update the permissions mode on a ledger
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/API_UpdateLedgerPermissionsMode.html
+   */
+  public toUpdateLedgerPermissionsMode() {
+    return this.to('UpdateLedgerPermissionsMode');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CancelJournalKinesisStream",
@@ -290,10 +420,19 @@ export class Qldb extends PolicyStatement {
       "ExecuteStatement",
       "ExportJournalToS3",
       "InsertSampleData",
+      "PartiQLCreateIndex",
+      "PartiQLCreateTable",
+      "PartiQLDelete",
+      "PartiQLDropIndex",
+      "PartiQLDropTable",
+      "PartiQLInsert",
+      "PartiQLUndropTable",
+      "PartiQLUpdate",
       "SendCommand",
       "ShowCatalog",
       "StreamJournalToKinesis",
-      "UpdateLedger"
+      "UpdateLedger",
+      "UpdateLedgerPermissionsMode"
     ],
     "Read": [
       "DescribeJournalKinesisStream",
@@ -302,7 +441,9 @@ export class Qldb extends PolicyStatement {
       "GetBlock",
       "GetDigest",
       "GetRevision",
-      "ListTagsForResource"
+      "ListTagsForResource",
+      "PartiQLHistoryFunction",
+      "PartiQLSelect"
     ],
     "List": [
       "ListJournalKinesisStreamsForLedger",
@@ -319,7 +460,7 @@ export class Qldb extends PolicyStatement {
   /**
    * Adds a resource of type ledger to the statement
    *
-   * https://docs.aws.amazon.com/qldb/latest/developerguide/what-is.html
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-structure.html
    *
    * @param ledgerName - Identifier for the ledgerName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -341,7 +482,7 @@ export class Qldb extends PolicyStatement {
   /**
    * Adds a resource of type stream to the statement
    *
-   * https://docs.aws.amazon.com/qldb/latest/developerguide/what-is.html
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/streams.html
    *
    * @param ledgerName - Identifier for the ledgerName.
    * @param streamId - Identifier for the streamId.
@@ -360,5 +501,67 @@ export class Qldb extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type table to the statement
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/working.manage-tables.html
+   *
+   * @param ledgerName - Identifier for the ledgerName.
+   * @param tableId - Identifier for the tableId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTable(ledgerName: string, tableId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:qldb:${Region}:${Account}:ledger/${LedgerName}/table/${TableId}';
+    arn = arn.replace('${LedgerName}', ledgerName);
+    arn = arn.replace('${TableId}', tableId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type catalog to the statement
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/working.catalog.html
+   *
+   * @param ledgerName - Identifier for the ledgerName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCatalog(ledgerName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:qldb:${Region}:${Account}:ledger/${LedgerName}/information_schema/user_tables';
+    arn = arn.replace('${LedgerName}', ledgerName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Filters access by the value of purge that is specified in a PartiQL DROP statement
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-purge
+   *
+   * Applies to actions:
+   * - .toPartiQLDropIndex()
+   * - .toPartiQLDropTable()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPurge(value: string | string[], operator?: Operator | string) {
+    return this.if(`Purge`, value, operator || 'StringLike');
   }
 }

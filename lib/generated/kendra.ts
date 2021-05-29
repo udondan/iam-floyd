@@ -41,6 +41,17 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
+   * Grant permission to clear out the suggestions for a given index, generated so far
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_ClearQuerySuggestions.html
+   */
+  public toClearQuerySuggestions() {
+    return this.to('ClearQuerySuggestions');
+  }
+
+  /**
    * Grant permission to create a data source
    *
    * Access Level: Write
@@ -83,6 +94,21 @@ export class Kendra extends PolicyStatement {
    */
   public toCreateIndex() {
     return this.to('CreateIndex');
+  }
+
+  /**
+   * Grant permission to create a QuerySuggestions BlockList
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateQuerySuggestionsBlockList.html
+   */
+  public toCreateQuerySuggestionsBlockList() {
+    return this.to('CreateQuerySuggestionsBlockList');
   }
 
   /**
@@ -134,6 +160,17 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
+   * Grant permission to delete a QuerySuggestions BlockList
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteQuerySuggestionsBlockList.html
+   */
+  public toDeleteQuerySuggestionsBlockList() {
+    return this.to('DeleteQuerySuggestionsBlockList');
+  }
+
+  /**
    * Grant permission to delete a Thesaurus
    *
    * Access Level: Write
@@ -178,6 +215,28 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
+   * Grant permission to describe a QuerySuggestions BlockList
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeQuerySuggestionsBlockList.html
+   */
+  public toDescribeQuerySuggestionsBlockList() {
+    return this.to('DescribeQuerySuggestionsBlockList');
+  }
+
+  /**
+   * Grant permission to describe the query suggestions configuration for an index
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeQuerySuggestionsConfig.html
+   */
+  public toDescribeQuerySuggestionsConfig() {
+    return this.to('DescribeQuerySuggestionsConfig');
+  }
+
+  /**
    * Grant permission to describe a Thesaurus
    *
    * Access Level: Read
@@ -186,6 +245,17 @@ export class Kendra extends PolicyStatement {
    */
   public toDescribeThesaurus() {
     return this.to('DescribeThesaurus');
+  }
+
+  /**
+   * Grant permission to get suggestions for a query prefix
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html
+   */
+  public toGetQuerySuggestions() {
+    return this.to('GetQuerySuggestions');
   }
 
   /**
@@ -233,9 +303,20 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to list tags for a resource
+   * Grant permission to list the QuerySuggestions BlockLists
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_ListQuerySuggestionsBlockLists.html
+   */
+  public toListQuerySuggestionsBlockLists() {
+    return this.to('ListQuerySuggestionsBlockLists');
+  }
+
+  /**
+   * Grant permission to list tags for a resource
+   *
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListTagsForResource.html
    */
@@ -350,6 +431,28 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
+   * Grant permission to update a QuerySuggestions BlockList
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsBlockList.html
+   */
+  public toUpdateQuerySuggestionsBlockList() {
+    return this.to('UpdateQuerySuggestionsBlockList');
+  }
+
+  /**
+   * Grant permission to update the query suggestions configuration for an index
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html
+   */
+  public toUpdateQuerySuggestionsConfig() {
+    return this.to('UpdateQuerySuggestionsConfig');
+  }
+
+  /**
    * Grant permission to update a thesaurus
    *
    * Access Level: Write
@@ -364,26 +467,35 @@ export class Kendra extends PolicyStatement {
     "Write": [
       "BatchDeleteDocument",
       "BatchPutDocument",
+      "ClearQuerySuggestions",
       "CreateDataSource",
       "CreateFaq",
       "CreateIndex",
+      "CreateQuerySuggestionsBlockList",
       "CreateThesaurus",
       "DeleteDataSource",
       "DeleteFaq",
       "DeleteIndex",
+      "DeleteQuerySuggestionsBlockList",
       "DeleteThesaurus",
       "StartDataSourceSyncJob",
       "StopDataSourceSyncJob",
       "SubmitFeedback",
       "UpdateDataSource",
       "UpdateIndex",
+      "UpdateQuerySuggestionsBlockList",
+      "UpdateQuerySuggestionsConfig",
       "UpdateThesaurus"
     ],
     "Read": [
       "DescribeDataSource",
       "DescribeFaq",
       "DescribeIndex",
+      "DescribeQuerySuggestionsBlockList",
+      "DescribeQuerySuggestionsConfig",
       "DescribeThesaurus",
+      "GetQuerySuggestions",
+      "ListTagsForResource",
       "Query"
     ],
     "List": [
@@ -391,7 +503,7 @@ export class Kendra extends PolicyStatement {
       "ListDataSources",
       "ListFaqs",
       "ListIndices",
-      "ListTagsForResource",
+      "ListQuerySuggestionsBlockLists",
       "ListThesauri"
     ],
     "Tagging": [
@@ -488,6 +600,30 @@ export class Kendra extends PolicyStatement {
     var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/thesaurus/${ThesaurusId}';
     arn = arn.replace('${IndexId}', indexId);
     arn = arn.replace('${ThesaurusId}', thesaurusId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type query-suggestions-block-list to the statement
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions-block-list.html
+   *
+   * @param indexId - Identifier for the indexId.
+   * @param querySuggestionsBlockListId - Identifier for the querySuggestionsBlockListId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onQuerySuggestionsBlockList(indexId: string, querySuggestionsBlockListId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/query-suggestions-block-list/${QuerySuggestionsBlockListId}';
+    arn = arn.replace('${IndexId}', indexId);
+    arn = arn.replace('${QuerySuggestionsBlockListId}', querySuggestionsBlockListId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

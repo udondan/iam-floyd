@@ -801,7 +801,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Grants permission to retrieve fresh upload credentials to use when uploading a new game build
    *
-   * Access Level: Write
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html
    */
@@ -1135,7 +1135,6 @@ export class Gamelift extends PolicyStatement {
       "DeregisterGameServer",
       "PutScalingPolicy",
       "RegisterGameServer",
-      "RequestUploadCredentials",
       "ResumeGameServerGroup",
       "StartFleetActions",
       "StartGameSessionPlacement",
@@ -1190,6 +1189,7 @@ export class Gamelift extends PolicyStatement {
       "GetGameSessionLogUrl",
       "GetInstanceAccess",
       "ListTagsForResource",
+      "RequestUploadCredentials",
       "ResolveAlias",
       "SearchGameSessions",
       "ValidateMatchmakingRuleSet"

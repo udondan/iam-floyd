@@ -82,6 +82,13 @@ export class Devicefarm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateTestGridProject.html
    */
   public toCreateTestGridProject() {
@@ -847,6 +854,13 @@ export class Devicefarm extends PolicyStatement {
    * Grants permission to modify an existing desktop testing project
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateTestGridProject.html
    */

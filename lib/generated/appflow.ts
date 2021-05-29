@@ -194,7 +194,7 @@ export class Appflow extends PolicyStatement {
   /**
    * Grants permission to list tags for a flow
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ListTagsForResource.html
    */
@@ -286,6 +286,17 @@ export class Appflow extends PolicyStatement {
     return this.to('UpdateFlow');
   }
 
+  /**
+   * Grants permission to use a connector profile while creating a flow in Amazon AppFlow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UseConnectorProfile.html
+   */
+  public toUseConnectorProfile() {
+    return this.to('UseConnectorProfile');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CreateConnectorProfile",
@@ -296,7 +307,8 @@ export class Appflow extends PolicyStatement {
       "StartFlow",
       "StopFlow",
       "UpdateConnectorProfile",
-      "UpdateFlow"
+      "UpdateFlow",
+      "UseConnectorProfile"
     ],
     "Read": [
       "DescribeConnectorEntity",
@@ -307,12 +319,12 @@ export class Appflow extends PolicyStatement {
       "DescribeFlowExecution",
       "DescribeFlowExecutionRecords",
       "DescribeFlows",
-      "ListConnectorFields"
+      "ListConnectorFields",
+      "ListTagsForResource"
     ],
     "List": [
       "ListConnectorEntities",
-      "ListFlows",
-      "ListTagsForResource"
+      "ListFlows"
     ],
     "Tagging": [
       "TagResource",

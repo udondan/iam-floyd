@@ -1,4 +1,5 @@
 geo:geofence-collection
 geo:map
 geo:place-index
+geo:route-calculator
 geo:tracker

@@ -306,6 +306,17 @@ export class Iotevents extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list one or more input routings
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iotevents/latest/apireference/API_ListInputRoutings.html
+   */
+  public toListInputRoutings() {
+    return this.to('ListInputRoutings');
+  }
+
+  /**
    * Grants permission to lists the inputs you have created
    *
    * Access Level: List
@@ -448,6 +459,7 @@ export class Iotevents extends PolicyStatement {
       "ListDetectorModelVersions",
       "ListDetectorModels",
       "ListDetectors",
+      "ListInputRoutings",
       "ListInputs"
     ],
     "Tagging": [

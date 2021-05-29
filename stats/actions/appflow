@@ -13,7 +13,7 @@ appflow:DescribeFlows;Read
 appflow:ListConnectorEntities;List
 appflow:ListConnectorFields;Read
 appflow:ListFlows;List
-appflow:ListTagsForResource;List
+appflow:ListTagsForResource;Read
 appflow:RunFlow;Write
 appflow:StartFlow;Write
 appflow:StopFlow;Write
@@ -21,3 +21,4 @@ appflow:TagResource;Tagging
 appflow:UntagResource;Tagging
 appflow:UpdateConnectorProfile;Write
 appflow:UpdateFlow;Write
+appflow:UseConnectorProfile;Write

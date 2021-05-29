@@ -30,6 +30,17 @@ export class Geo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a batch of device position histories from a tracker resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_BatchDeleteDevicePositionHistory.html
+   */
+  public toBatchDeleteDevicePositionHistory() {
+    return this.to('BatchDeleteDevicePositionHistory');
+  }
+
+  /**
    * Grants permission to delete a batch of geofences from a geofence collection
    *
    * Access Level: Write
@@ -85,9 +96,24 @@ export class Geo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to calculate routes using a given route calculator resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_CalculateRoute.html
+   */
+  public toCalculateRoute() {
+    return this.to('CalculateRoute');
+  }
+
+  /**
    * Grants permission to create a geofence-collection
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/location/latest/developerguide/API_CreateGeofenceCollection.html
    */
@@ -100,6 +126,10 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/location/latest/developerguide/API_CreateMap.html
    */
   public toCreateMap() {
@@ -111,6 +141,10 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/location/latest/developerguide/API_CreatePlaceIndex.html
    */
   public toCreatePlaceIndex() {
@@ -118,9 +152,28 @@ export class Geo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a route calculator resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_CreateRouteCalculator.html
+   */
+  public toCreateRouteCalculator() {
+    return this.to('CreateRouteCalculator');
+  }
+
+  /**
    * Grants permission to create a tracker resource
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/location/latest/developerguide/API_CreateTracker.html
    */
@@ -129,7 +182,7 @@ export class Geo extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deletes a geofence-collection
+   * Grants permission to delete a geofence-collection
    *
    * Access Level: Write
    *
@@ -162,6 +215,17 @@ export class Geo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a route calculator resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_DeleteRouteCalculator.html
+   */
+  public toDeleteRouteCalculator() {
+    return this.to('DeleteRouteCalculator');
+  }
+
+  /**
    * Grants permission to delete a tracker resource
    *
    * Access Level: Write
@@ -173,7 +237,7 @@ export class Geo extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a geofence collection details
+   * Grants permission to retrieve geofence collection details
    *
    * Access Level: Read
    *
@@ -184,7 +248,7 @@ export class Geo extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a map resource details
+   * Grants permission to retrieve map resource details
    *
    * Access Level: Read
    *
@@ -195,7 +259,7 @@ export class Geo extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a a place-index resource details
+   * Grants permission to retrieve place-index resource details
    *
    * Access Level: Read
    *
@@ -203,6 +267,17 @@ export class Geo extends PolicyStatement {
    */
   public toDescribePlaceIndex() {
     return this.to('DescribePlaceIndex');
+  }
+
+  /**
+   * Grants permission to retrieve route calculator resource details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_DescribeRouteCalculator.html
+   */
+  public toDescribeRouteCalculator() {
+    return this.to('DescribeRouteCalculator');
   }
 
   /**
@@ -305,14 +380,14 @@ export class Geo extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieves the map TileJSON details from a given map resource
+   * Grants permission to retrieve a list of devices and their latest positions from the given tracker resource
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/location/latest/developerguide/API_GetMapTileJson.html
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_ListDevicePositions.html
    */
-  public toGetMapTileJson() {
-    return this.to('GetMapTileJson');
+  public toListDevicePositions() {
+    return this.to('ListDevicePositions');
   }
 
   /**
@@ -357,6 +432,28 @@ export class Geo extends PolicyStatement {
    */
   public toListPlaceIndexes() {
     return this.to('ListPlaceIndexes');
+  }
+
+  /**
+   * Grants permission to return a list of route calculator resources
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_ListRouteCalculators.html
+   */
+  public toListRouteCalculators() {
+    return this.to('ListRouteCalculators');
+  }
+
+  /**
+   * Grants permission to list the tags (metadata) which you have assigned to the resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -415,6 +512,36 @@ export class Geo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove the given tags (metadata) from the resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to update the description of a geofence collection
    *
    * Access Level: Write
@@ -439,6 +566,7 @@ export class Geo extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AssociateTrackerConsumer",
+      "BatchDeleteDevicePositionHistory",
       "BatchDeleteGeofence",
       "BatchEvaluateGeofences",
       "BatchPutGeofence",
@@ -446,10 +574,12 @@ export class Geo extends PolicyStatement {
       "CreateGeofenceCollection",
       "CreateMap",
       "CreatePlaceIndex",
+      "CreateRouteCalculator",
       "CreateTracker",
       "DeleteGeofenceCollection",
       "DeleteMap",
       "DeletePlaceIndex",
+      "DeleteRouteCalculator",
       "DeleteTracker",
       "DisassociateTrackerConsumer",
       "PutGeofence",
@@ -458,9 +588,11 @@ export class Geo extends PolicyStatement {
     ],
     "Read": [
       "BatchGetDevicePosition",
+      "CalculateRoute",
       "DescribeGeofenceCollection",
       "DescribeMap",
       "DescribePlaceIndex",
+      "DescribeRouteCalculator",
       "DescribeTracker",
       "GetDevicePosition",
       "GetDevicePositionHistory",
@@ -469,17 +601,23 @@ export class Geo extends PolicyStatement {
       "GetMapSprites",
       "GetMapStyleDescriptor",
       "GetMapTile",
-      "GetMapTileJson",
       "ListGeofences",
+      "ListTagsForResource",
       "ListTrackerConsumers",
       "SearchPlaceIndexForPosition",
       "SearchPlaceIndexForText"
     ],
     "List": [
+      "ListDevicePositions",
       "ListGeofenceCollections",
       "ListMaps",
       "ListPlaceIndexes",
+      "ListRouteCalculators",
       "ListTrackers"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
@@ -492,6 +630,9 @@ export class Geo extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onGeofenceCollection(geofenceCollectionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:geo:${Region}:${Account}:geofence-collection/${GeofenceCollectionName}';
@@ -511,6 +652,9 @@ export class Geo extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onMap(mapName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:geo:${Region}:${Account}:map/${MapName}';
@@ -530,10 +674,35 @@ export class Geo extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onPlaceIndex(indexName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:geo:${Region}:${Account}:place-index/${IndexName}';
     arn = arn.replace('${IndexName}', indexName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type route-calculator to the statement
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/overview.html#routes-overview
+   *
+   * @param calculatorName - Identifier for the calculatorName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRouteCalculator(calculatorName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:geo:${Region}:${Account}:route-calculator/${CalculatorName}';
+    arn = arn.replace('${CalculatorName}', calculatorName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -549,6 +718,9 @@ export class Geo extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTracker(trackerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:geo:${Region}:${Account}:tracker/${TrackerName}';

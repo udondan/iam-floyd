@@ -838,6 +838,9 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutRemediationConfigurations.html
    */
   public toPutRemediationConfigurations() {
@@ -936,6 +939,9 @@ export class Config extends PolicyStatement {
    * Grants permission to run an on-demand remediation for the specified AWS Config rules against the last known remediation configuration
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_StartRemediationExecution.html
    */

@@ -23,6 +23,7 @@ iotevents:ListAlarms;List
 iotevents:ListDetectorModelVersions;List
 iotevents:ListDetectorModels;List
 iotevents:ListDetectors;List
+iotevents:ListInputRoutings;List
 iotevents:ListInputs;List
 iotevents:ListTagsForResource;Read
 iotevents:PutLoggingOptions;Write
