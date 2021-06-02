@@ -15,7 +15,9 @@
                 "application-autoscaling:DescribeScalingActivities",
                 "application-autoscaling:DescribeScalingPolicies",
                 "application-autoscaling:DescribeScheduledActions",
-                "cloudwatch:DescribeAlarms"
+                "cloudwatch:DescribeAlarms",
+                "kms:DescribeKey",
+                "kms:ListAliases"
             ],
             "Resource": "*"
         }
