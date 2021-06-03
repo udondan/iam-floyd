@@ -301,6 +301,7 @@ export class Cloudwatch extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAlarmActions()
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutCompositeAlarm.html
    */
@@ -342,6 +343,7 @@ export class Cloudwatch extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAlarmActions()
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html
    */
@@ -564,6 +566,22 @@ export class Cloudwatch extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on defined alarm actions
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-alarm-actions.html
+   *
+   * Applies to actions:
+   * - .toPutCompositeAlarm()
+   * - .toPutMetricAlarm()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAlarmActions(value: string | string[], operator?: Operator | string) {
+    return this.if(`AlarmActions`, value, operator || 'StringLike');
   }
 
   /**

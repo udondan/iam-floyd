@@ -129,6 +129,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add multiple users to a channel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchCreateChannelMembership.html
+   */
+  public toBatchCreateChannelMembership() {
+    return this.to('BatchCreateChannelMembership');
+  }
+
+  /**
    * Grants permission to batch add room members
    *
    * Access Level: Write
@@ -2653,6 +2664,7 @@ export class Chime extends PolicyStatement {
       "AssociateSigninDelegateGroupsWithAccount",
       "AuthorizeDirectory",
       "BatchCreateAttendee",
+      "BatchCreateChannelMembership",
       "BatchCreateRoomMembership",
       "BatchDeletePhoneNumber",
       "BatchSuspendUser",
@@ -2912,15 +2924,17 @@ export class Chime extends PolicyStatement {
    *
    * @param appInstanceId - Identifier for the appInstanceId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onAppInstance(appInstanceId: string, accountId?: string, partition?: string) {
-    var arn = 'arn:${Partition}:chime::${AccountId}:app-instance/${AppInstanceId}';
+  public onAppInstance(appInstanceId: string, accountId?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:chime:${Region}:${AccountId}:app-instance/${AppInstanceId}';
     arn = arn.replace('${AppInstanceId}', appInstanceId);
     arn = arn.replace('${AccountId}', accountId || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2933,16 +2947,18 @@ export class Chime extends PolicyStatement {
    * @param appInstanceId - Identifier for the appInstanceId.
    * @param appInstanceUserId - Identifier for the appInstanceUserId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onAppInstanceUser(appInstanceId: string, appInstanceUserId: string, accountId?: string, partition?: string) {
-    var arn = 'arn:${Partition}:chime::${AccountId}:app-instance/${AppInstanceId}/user/${AppInstanceUserId}';
+  public onAppInstanceUser(appInstanceId: string, appInstanceUserId: string, accountId?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:chime:${Region}:${AccountId}:app-instance/${AppInstanceId}/user/${AppInstanceUserId}';
     arn = arn.replace('${AppInstanceId}', appInstanceId);
     arn = arn.replace('${AppInstanceUserId}', appInstanceUserId);
     arn = arn.replace('${AccountId}', accountId || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2955,16 +2971,18 @@ export class Chime extends PolicyStatement {
    * @param appInstanceId - Identifier for the appInstanceId.
    * @param channelId - Identifier for the channelId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onChannel(appInstanceId: string, channelId: string, accountId?: string, partition?: string) {
-    var arn = 'arn:${Partition}:chime::${AccountId}:app-instance/${AppInstanceId}/channel/${ChannelId}';
+  public onChannel(appInstanceId: string, channelId: string, accountId?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:chime:${Region}:${AccountId}:app-instance/${AppInstanceId}/channel/${ChannelId}';
     arn = arn.replace('${AppInstanceId}', appInstanceId);
     arn = arn.replace('${ChannelId}', channelId);
     arn = arn.replace('${AccountId}', accountId || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -323,6 +323,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get log levels by resource types
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetLogLevelsByResourceTypes.html
+   */
+  public toGetLogLevelsByResourceTypes() {
+    return this.to('GetLogLevelsByResourceTypes');
+  }
+
+  /**
    * Grants permission to get the associated PartnerAccount
    *
    * Access Level: Read
@@ -594,6 +605,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update log levels by resource types
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateLogLevelsByResourceTypes.html
+   */
+  public toUpdateLogLevelsByResourceTypes() {
+    return this.to('UpdateLogLevelsByResourceTypes');
+  }
+
+  /**
    * Grants permission to update a partner account
    *
    * Access Level: Write
@@ -653,6 +675,7 @@ export class Iotwireless extends PolicyStatement {
       "SendDataToWirelessDevice",
       "TestWirelessDevice",
       "UpdateDestination",
+      "UpdateLogLevelsByResourceTypes",
       "UpdatePartnerAccount",
       "UpdateWirelessDevice",
       "UpdateWirelessGateway"
@@ -660,6 +683,7 @@ export class Iotwireless extends PolicyStatement {
     "Read": [
       "GetDestination",
       "GetDeviceProfile",
+      "GetLogLevelsByResourceTypes",
       "GetPartnerAccount",
       "GetServiceEndpoint",
       "GetServiceProfile",

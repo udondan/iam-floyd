@@ -8,6 +8,7 @@ chime:AssociatePhoneNumbersWithVoiceConnectorGroup;Write
 chime:AssociateSigninDelegateGroupsWithAccount;Write
 chime:AuthorizeDirectory;Write
 chime:BatchCreateAttendee;Write
+chime:BatchCreateChannelMembership;Write
 chime:BatchCreateRoomMembership;Write
 chime:BatchDeletePhoneNumber;Write
 chime:BatchSuspendUser;Write

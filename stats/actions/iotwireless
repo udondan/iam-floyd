@@ -22,6 +22,7 @@ iotwireless:DisassociateWirelessGatewayFromCertificate;Write
 iotwireless:DisassociateWirelessGatewayFromThing;Write
 iotwireless:GetDestination;Read
 iotwireless:GetDeviceProfile;Read
+iotwireless:GetLogLevelsByResourceTypes;Read
 iotwireless:GetPartnerAccount;Read
 iotwireless:GetServiceEndpoint;Read
 iotwireless:GetServiceProfile;Read
@@ -46,6 +47,7 @@ iotwireless:TagResource;Tagging
 iotwireless:TestWirelessDevice;Write
 iotwireless:UntagResource;Tagging
 iotwireless:UpdateDestination;Write
+iotwireless:UpdateLogLevelsByResourceTypes;Write
 iotwireless:UpdatePartnerAccount;Write
 iotwireless:UpdateWirelessDevice;Write
 iotwireless:UpdateWirelessGateway;Write

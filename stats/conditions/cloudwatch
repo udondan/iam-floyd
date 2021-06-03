@@ -1,3 +1,4 @@
+cloudwatch:AlarmActions
 cloudwatch:RequestTag/${TagKey}
 cloudwatch:ResourceTag/${TagKey}
 cloudwatch:TagKeys
