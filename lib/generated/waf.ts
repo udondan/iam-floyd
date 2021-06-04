@@ -19,7 +19,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Creates a ByteMatchSet.
+   * Grants permission to create a ByteMatchSet
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Creates a GeoMatchSet, which you use to specify which web requests you want to allow or block based on the country that the requests originate from.
+   * Grants permission to create a GeoMatchSet
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Creates an IPSet, which you use to specify which web requests you want to allow or block based on the IP addresses that the requests originate from.
+   * Grants permission to create an IPSet
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Creates a RateBasedRule, which contains a RateLimit specifying the maximum number of requests that AWS WAF allows from a specified IP address in a five-minute period.
+   * Grants permission to create a RateBasedRule for limiting the volume of requests from a single IP address
    *
    * Access Level: Write
    *
@@ -67,7 +67,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Creates a RegexMatchSet, which you use to specify which web requests you want to allow or block based on the regex patterns you specified in a RegexPatternSet.
+   * Grants permission to create a RegexMatchSet
    *
    * Access Level: Write
    *
@@ -78,7 +78,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Creates a RegexPatternSet, which you use to specify the regular expression (regex) pattern that you want AWS WAF to search for.
+   * Grants permission to create a RegexPatternSet
    *
    * Access Level: Write
    *
@@ -89,7 +89,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Creates a Rule, which contains the IPSet objects, ByteMatchSet objects, and other predicates that identify the requests that you want to block.
+   * Grants permission to create a Rule for filtering web requests
    *
    * Access Level: Write
    *
@@ -104,7 +104,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Creates a RuleGroup. A rule group is a collection of predefined rules that you add to a WebACL.
+   * Grants permission to create a RuleGroup, which is a collection of predefined rules that you can use in a WebACL
    *
    * Access Level: Write
    *
@@ -119,7 +119,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Creates a SizeConstraintSet, which you use to identify the part of a web request that you want to check for length.
+   * Grants permission to create a SizeConstraintSet
    *
    * Access Level: Write
    *
@@ -130,7 +130,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Creates a SqlInjectionMatchSet, which you use to allow, block, or count requests that contain snippets of SQL code in a specified part of web requests.
+   * Grants permission to create an SqlInjectionMatchSet
    *
    * Access Level: Write
    *
@@ -141,7 +141,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Creates a WebACL, which contains the Rules that identify the CloudFront web requests that you want to allow, block, or count.
+   * Grants permission to create a WebACL, which contains rules for filtering web requests
    *
    * Access Level: Permissions management
    *
@@ -156,7 +156,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Create and store a CloudFormation tempalte that creates an equivalent WAF v2 WebACL from the given WAF Classic WebACL in the given S3 bucket.
+   * Grants permission to create a CloudFormation web ACL template in an S3 bucket for the purposes of migrating the web ACL from AWS WAF Classic to AWS WAF v2
    *
    * Access Level: Write
    *
@@ -170,7 +170,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Creates an XssMatchSet, which you use to allow, block, or count requests that contain cross-site scripting attacks in the specified part of web requests.
+   * Grants permission to create an XssMatchSet, which you use to detect requests that contain cross-site scripting attacks
    *
    * Access Level: Write
    *
@@ -181,7 +181,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes a ByteMatchSet.
+   * Grants permission to delete a ByteMatchSet
    *
    * Access Level: Write
    *
@@ -192,7 +192,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes an GeoMatchSet.
+   * Grants permission to delete a GeoMatchSet
    *
    * Access Level: Write
    *
@@ -203,7 +203,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes an IPSet.
+   * Grants permission to delete an IPSet
    *
    * Access Level: Write
    *
@@ -214,7 +214,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes the LoggingConfiguration from the specified web ACL.
+   * Grants permission to delete the LoggingConfiguration from a web ACL
    *
    * Access Level: Write
    *
@@ -225,7 +225,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes an IAM policy from the specified RuleGroup.
+   * Grants permission to delete an IAM policy from a rule group
    *
    * Access Level: Permissions management
    *
@@ -236,7 +236,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes a RateBasedRule.
+   * Grants permission to delete a RateBasedRule
    *
    * Access Level: Write
    *
@@ -247,7 +247,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes an RegexMatchSet.
+   * Grants permission to delete a RegexMatchSet
    *
    * Access Level: Write
    *
@@ -258,7 +258,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes an RegexPatternSet.
+   * Grants permission to delete a RegexPatternSet
    *
    * Access Level: Write
    *
@@ -269,7 +269,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes a Rule.
+   * Grants permission to delete a Rule
    *
    * Access Level: Write
    *
@@ -280,7 +280,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes a RuleGroup.
+   * Grants permission to delete a RuleGroup
    *
    * Access Level: Write
    *
@@ -291,7 +291,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes a SizeConstraintSet.
+   * Grants permission to delete a SizeConstraintSet
    *
    * Access Level: Write
    *
@@ -302,7 +302,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes a SqlInjectionMatchSet.
+   * Grants permission to delete an SqlInjectionMatchSet
    *
    * Access Level: Write
    *
@@ -313,7 +313,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes a WebACL.
+   * Grants permission to delete a WebACL
    *
    * Access Level: Permissions management
    *
@@ -324,7 +324,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Permanently deletes an XssMatchSet.
+   * Grants permission to delete an XssMatchSet
    *
    * Access Level: Write
    *
@@ -335,7 +335,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the ByteMatchSet specified by ByteMatchSetId.
+   * Grants permission to retrieve a ByteMatchSet
    *
    * Access Level: Read
    *
@@ -346,7 +346,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * When you want to create, update, or delete AWS WAF objects, get a change token and include the change token in the create, update, or delete request.
+   * Grants permission to retrieve a change token to use in create, update, and delete requests
    *
    * Access Level: Read
    *
@@ -357,7 +357,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the status of a ChangeToken that you got by calling GetChangeToken.
+   * Grants permission to retrieve the status of a change token
    *
    * Access Level: Read
    *
@@ -368,7 +368,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the GeoMatchSet specified by GeoMatchSetId.
+   * Grants permission to retrieve a GeoMatchSet
    *
    * Access Level: Read
    *
@@ -379,7 +379,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the IPSet that is specified by IPSetId.
+   * Grants permission to retrieve an IPSet
    *
    * Access Level: Read
    *
@@ -390,7 +390,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the LoggingConfiguration for the specified web ACL.
+   * Grants permission to retrieve a LoggingConfiguration for a web ACL
    *
    * Access Level: Read
    *
@@ -401,7 +401,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the IAM policy attached to the RuleGroup.
+   * Grants permission to retrieve an IAM policy for a rule group
    *
    * Access Level: Read
    *
@@ -412,7 +412,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the RateBasedRule that is specified by the RuleId that you included in the GetRateBasedRule request.
+   * Grants permission to retrieve a RateBasedRule
    *
    * Access Level: Read
    *
@@ -423,7 +423,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of IP addresses currently being blocked by the RateBasedRule that is specified by the RuleId.
+   * Grants permission to retrieve the array of IP addresses that are currently being blocked by a RateBasedRule
    *
    * Access Level: Read
    *
@@ -434,7 +434,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the RegexMatchSet specified by RegexMatchSetId.
+   * Grants permission to retrieve a RegexMatchSet
    *
    * Access Level: Read
    *
@@ -445,7 +445,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the RegexPatternSet specified by RegexPatternSetId.
+   * Grants permission to retrieve a RegexPatternSet
    *
    * Access Level: Read
    *
@@ -456,7 +456,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the Rule that is specified by the RuleId that you included in the GetRule request.
+   * Grants permission to retrieve a Rule
    *
    * Access Level: Read
    *
@@ -467,7 +467,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the RuleGroup that is specified by the RuleGroupId that you included in the GetRuleGroup request.
+   * Grants permission to retrieve a RuleGroup
    *
    * Access Level: Read
    *
@@ -478,7 +478,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Gets detailed information about a specified number of requests--a sample--that AWS WAF randomly selects from among the first 5,000 requests that your AWS resource received during a time range that you choose.
+   * Grants permission to retrieve detailed information about a sample set of web requests
    *
    * Access Level: Read
    *
@@ -489,7 +489,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the SizeConstraintSet specified by SizeConstraintSetId.
+   * Grants permission to retrieve a SizeConstraintSet
    *
    * Access Level: Read
    *
@@ -500,7 +500,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the SqlInjectionMatchSet that is specified by SqlInjectionMatchSetId.
+   * Grants permission to retrieve an SqlInjectionMatchSet
    *
    * Access Level: Read
    *
@@ -511,7 +511,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the WebACL that is specified by WebACLId.
+   * Grants permission to retrieve a WebACL
    *
    * Access Level: Read
    *
@@ -522,7 +522,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns the XssMatchSet that is specified by XssMatchSetId.
+   * Grants permission to retrieve an XssMatchSet
    *
    * Access Level: Read
    *
@@ -533,7 +533,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of ActivatedRule objects.
+   * Grants permission to retrieve an array of ActivatedRule objects
    *
    * Access Level: List
    *
@@ -544,7 +544,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of ByteMatchSetSummary objects.
+   * Grants permission to retrieve an array of ByteMatchSetSummary objects
    *
    * Access Level: List
    *
@@ -555,7 +555,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of GeoMatchSetSummary objects.
+   * Grants permission to retrieve an array of GeoMatchSetSummary objects
    *
    * Access Level: List
    *
@@ -566,7 +566,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of IPSetSummary objects in the response.
+   * Grants permission to retrieve an array of IPSetSummary objects
    *
    * Access Level: List
    *
@@ -577,7 +577,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of LoggingConfiguration objects.
+   * Grants permission to retrieve an array of LoggingConfiguration objects
    *
    * Access Level: List
    *
@@ -588,7 +588,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of RuleSummary objects.
+   * Grants permission to retrieve an array of RuleSummary objects
    *
    * Access Level: List
    *
@@ -599,7 +599,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of RegexMatchSetSummary objects.
+   * Grants permission to retrieve an array of RegexMatchSetSummary objects
    *
    * Access Level: List
    *
@@ -610,7 +610,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of RegexPatternSetSummary objects.
+   * Grants permission to retrieve an array of RegexPatternSetSummary objects
    *
    * Access Level: List
    *
@@ -621,7 +621,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of RuleGroup objects.
+   * Grants permission to retrieve an array of RuleGroup objects
    *
    * Access Level: List
    *
@@ -632,7 +632,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of RuleSummary objects.
+   * Grants permission to retrieve an array of RuleSummary objects
    *
    * Access Level: List
    *
@@ -643,7 +643,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of SizeConstraintSetSummary objects.
+   * Grants permission to retrieve an array of SizeConstraintSetSummary objects
    *
    * Access Level: List
    *
@@ -654,7 +654,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of SqlInjectionMatchSet objects.
+   * Grants permission to retrieve an array of SqlInjectionMatchSet objects
    *
    * Access Level: List
    *
@@ -665,7 +665,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of RuleGroup objects that you are subscribed to.
+   * Grants permission to retrieve an array of RuleGroup objects that you are subscribed to
    *
    * Access Level: List
    *
@@ -676,7 +676,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Lists the Tags for a given resource.
+   * Grants permission to retrieve the tags for a resource
    *
    * Access Level: Read
    *
@@ -687,7 +687,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of WebACLSummary objects in the response.
+   * Grants permission to retrieve an array of WebACLSummary objects
    *
    * Access Level: List
    *
@@ -698,7 +698,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Returns an array of XssMatchSet objects.
+   * Grants permission to retrieve an array of XssMatchSet objects
    *
    * Access Level: List
    *
@@ -709,7 +709,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Associates a LoggingConfiguration with a specified web ACL.
+   * Grants permission to associate a LoggingConfiguration with a specified web ACL
    *
    * Access Level: Write
    *
@@ -723,7 +723,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Attaches a IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup across accounts.
+   * Grants permission to attach an IAM policy to a rule group, to share the rule group between accounts
    *
    * Access Level: Permissions management
    *
@@ -734,7 +734,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Adds a Tag to a given resource.
+   * Grants permission to add a Tag to a resource
    *
    * Access Level: Tagging
    *
@@ -749,7 +749,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Removes a Tag from a given resource.
+   * Grants permission to remove a Tag from a resource
    *
    * Access Level: Tagging
    *
@@ -763,7 +763,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Inserts or deletes ByteMatchTuple objects (filters) in a ByteMatchSet.
+   * Grants permission to insert or delete ByteMatchTuple objects in a ByteMatchSet
    *
    * Access Level: Write
    *
@@ -774,7 +774,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Inserts or deletes GeoMatchConstraint objects in a GeoMatchSet.
+   * Grants permission to insert or delete GeoMatchConstraint objects in a GeoMatchSet
    *
    * Access Level: Write
    *
@@ -785,7 +785,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Inserts or deletes IPSetDescriptor objects in an IPSet.
+   * Grants permission to insert or delete IPSetDescriptor objects in an IPSet
    *
    * Access Level: Write
    *
@@ -796,7 +796,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Inserts or deletes Predicate objects in a rule and updates the RateLimit in the rule.
+   * Grants permission to modify a rate based rule
    *
    * Access Level: Write
    *
@@ -807,7 +807,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Inserts or deletes RegexMatchTuple objects (filters) in a RegexMatchSet.
+   * Grants permission to insert or delete RegexMatchTuple objects in a RegexMatchSet
    *
    * Access Level: Write
    *
@@ -818,7 +818,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Inserts or deletes RegexPatternStrings in a RegexPatternSet.
+   * Grants permission to insert or delete RegexPatternStrings in a RegexPatternSet
    *
    * Access Level: Write
    *
@@ -829,7 +829,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Inserts or deletes Predicate objects in a Rule.
+   * Grants permission to modify a Rule
    *
    * Access Level: Write
    *
@@ -840,7 +840,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Inserts or deletes ActivatedRule objects in a RuleGroup.
+   * Grants permission to insert or delete ActivatedRule objects in a RuleGroup
    *
    * Access Level: Write
    *
@@ -851,7 +851,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Inserts or deletes SizeConstraint objects (filters) in a SizeConstraintSet.
+   * Grants permission to insert or delete SizeConstraint objects in a SizeConstraintSet
    *
    * Access Level: Write
    *
@@ -862,7 +862,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Inserts or deletes SqlInjectionMatchTuple objects (filters) in a SqlInjectionMatchSet.
+   * Grants permission to insert or delete SqlInjectionMatchTuple objects in an SqlInjectionMatchSet
    *
    * Access Level: Write
    *
@@ -873,7 +873,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Inserts or deletes ActivatedRule objects in a WebACL.
+   * Grants permission to insert or delete ActivatedRule objects in a WebACL
    *
    * Access Level: Permissions management
    *
@@ -884,7 +884,7 @@ export class Waf extends PolicyStatement {
   }
 
   /**
-   * Inserts or deletes XssMatchTuple objects (filters) in an XssMatchSet.
+   * Grants permission to insert or delete XssMatchTuple objects in an XssMatchSet
    *
    * Access Level: Write
    *

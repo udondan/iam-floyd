@@ -19,7 +19,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
   }
 
   /**
-   * Called from a SaaS application listed on the AWS Marketplace to post metering records for a set of customers.
+   * Grants permission to post metering records for a set of customers for SaaS applications
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
   }
 
   /**
-   * Emits metering records.
+   * Grants permission to emit metering records
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
   }
 
   /**
-   * Allows you to verify that the customer running your paid software is subscribed to your product on AWS Marketplace, enabling you to guard against unauthorized use. Meters software use per ECS task, per hour, with usage prorated to the second.
+   * Grants permission to to verify that the customer running your paid software is subscribed to your product on AWS Marketplace, enabling you to guard against unauthorized use. Meters software use per ECS task, per hour, with usage prorated to the second
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
   }
 
   /**
-   * Resolves a registration token to obtain a CustomerIdentifier and product code.
+   * Grants permission to resolve a registration token to obtain a CustomerIdentifier and product code
    *
    * Access Level: Write
    *
