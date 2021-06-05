@@ -233,6 +233,17 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
+   * Grants an Amazon Macie member account with permission to disassociate from its administrator account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/administrator-disassociate.html
+   */
+  public toDisassociateFromAdministratorAccount() {
+    return this.to('DisassociateFromAdministratorAccount');
+  }
+
+  /**
    * Grants an Amazon Macie member account with permission to disassociate from its master account
    *
    * Access Level: Write
@@ -274,6 +285,17 @@ export class Macie2 extends PolicyStatement {
    */
   public toEnableOrganizationAdminAccount() {
     return this.to('EnableOrganizationAdminAccount');
+  }
+
+  /**
+   * Grants permission to retrieve information about the Amazon Macie administrator account for an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/administrator.html
+   */
+  public toGetAdministratorAccount() {
+    return this.to('GetAdministratorAccount');
   }
 
   /**
@@ -340,6 +362,17 @@ export class Macie2 extends PolicyStatement {
    */
   public toGetFindingsFilter() {
     return this.to('GetFindingsFilter');
+  }
+
+  /**
+   * Grants permission to retrieve the configuration settings for publishing findings to AWS Security Hub
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/findings-publication-configuration.html
+   */
+  public toGetFindingsPublicationConfiguration() {
+    return this.to('GetFindingsPublicationConfiguration');
   }
 
   /**
@@ -508,6 +541,28 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the configuration settings for publishing findings to AWS Security Hub
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/findings-publication-configuration.html
+   */
+  public toPutFindingsPublicationConfiguration() {
+    return this.to('PutFindingsPublicationConfiguration');
+  }
+
+  /**
+   * Grants permission to retrieve statistical and other information about AWS resources that Amazon Macie monitors and analyzes
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/datasources-search-resources.html
+   */
+  public toSearchResources() {
+    return this.to('SearchResources');
+  }
+
+  /**
    * Grants permission to add or update the tags for an Amazon Macie resource or member account
    *
    * Access Level: Tagging
@@ -626,11 +681,13 @@ export class Macie2 extends PolicyStatement {
       "DeleteMember",
       "DisableMacie",
       "DisableOrganizationAdminAccount",
+      "DisassociateFromAdministratorAccount",
       "DisassociateFromMasterAccount",
       "DisassociateMember",
       "EnableMacie",
       "EnableOrganizationAdminAccount",
       "PutClassificationExportConfiguration",
+      "PutFindingsPublicationConfiguration",
       "TestCustomDataIdentifier",
       "UpdateClassificationJob",
       "UpdateFindingsFilter",
@@ -643,18 +700,21 @@ export class Macie2 extends PolicyStatement {
       "DescribeBuckets",
       "DescribeClassificationJob",
       "DescribeOrganizationConfiguration",
+      "GetAdministratorAccount",
       "GetBucketStatistics",
       "GetClassificationExportConfiguration",
       "GetCustomDataIdentifier",
       "GetFindingStatistics",
       "GetFindings",
       "GetFindingsFilter",
+      "GetFindingsPublicationConfiguration",
       "GetInvitationsCount",
       "GetMacieSession",
       "GetMasterAccount",
       "GetMember",
       "GetUsageStatistics",
-      "GetUsageTotals"
+      "GetUsageTotals",
+      "SearchResources"
     ],
     "List": [
       "ListClassificationJobs",

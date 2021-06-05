@@ -19,7 +19,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate a WebACL with a resource.
+   * Grants permission to associate a WebACL with a resource
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to calculate web ACL capacity unit (WCU) requirements for a specified scope and set of rules.
+   * Grants permission to calculate web ACL capacity unit (WCU) requirements for a specified scope and set of rules
    *
    * Access Level: Read
    *
@@ -41,7 +41,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an IPSet.
+   * Grants permission to create an IPSet
    *
    * Access Level: Write
    *
@@ -56,7 +56,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a RegexPatternSet.
+   * Grants permission to create a RegexPatternSet
    *
    * Access Level: Write
    *
@@ -71,7 +71,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a RuleGroup.
+   * Grants permission to create a RuleGroup
    *
    * Access Level: Write
    *
@@ -86,7 +86,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a WebACL.
+   * Grants permission to create a WebACL
    *
    * Access Level: Permissions management
    *
@@ -101,7 +101,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete specified FirewallManagedRulesGroups from the specified WebACL if not managed by Firewall Manager anymore.
+   * Grants permission to delete FirewallManagedRulesGroups from a WebACL if not managed by Firewall Manager anymore
    *
    * Access Level: Write
    *
@@ -112,7 +112,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified IPSet.
+   * Grants permission to delete an IPSet
    *
    * Access Level: Write
    *
@@ -123,7 +123,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the LoggingConfiguration from the specified WebACL.
+   * Grants permission to delete the LoggingConfiguration from a WebACL
    *
    * Access Level: Write
    *
@@ -134,7 +134,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the PermissionPolicy on the specified RuleGroup.
+   * Grants permission to delete the PermissionPolicy on a RuleGroup
    *
    * Access Level: Permissions management
    *
@@ -145,7 +145,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified RegexPatternSet.
+   * Grants permission to delete a RegexPatternSet
    *
    * Access Level: Write
    *
@@ -156,7 +156,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified RuleGroup.
+   * Grants permission to delete a RuleGroup
    *
    * Access Level: Write
    *
@@ -167,7 +167,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified WebACL.
+   * Grants permission to delete a WebACL
    *
    * Access Level: Permissions management
    *
@@ -178,7 +178,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view high-level information for a managed rule group.
+   * Grants permission to retrieve high-level information for a managed rule group
    *
    * Access Level: List
    *
@@ -189,7 +189,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate Firewall Manager from the specified WebACL.
+   * Grants permission to disassociate Firewall Manager from a WebACL
    *
    * Access Level: Write
    *
@@ -200,7 +200,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission disassociate a WebACL from an application resource.
+   * Grants permission disassociate a WebACL from an application resource
    *
    * Access Level: Write
    *
@@ -211,7 +211,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view details about the specified IPSet.
+   * Grants permission to retrieve details about an IPSet
    *
    * Access Level: Read
    *
@@ -225,7 +225,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view LoggingConfiguration about the specified WebACL.
+   * Grants permission to retrieve LoggingConfiguration for a WebACL
    *
    * Access Level: Read
    *
@@ -239,7 +239,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view PermissionPolicy on the specified RuleGroup.
+   * Grants permission to retrieve a PermissionPolicy for a RuleGroup
    *
    * Access Level: Read
    *
@@ -250,7 +250,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view the keys that are currently blocked by a rate-based rule.
+   * Grants permission to retrieve the keys that are currently blocked by a rate-based rule
    *
    * Access Level: Read
    *
@@ -264,7 +264,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view details about the specified RegexPatternSet.
+   * Grants permission to retrieve details about a RegexPatternSet
    *
    * Access Level: Read
    *
@@ -278,7 +278,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view details about the specified RuleGroup.
+   * Grants permission to retrieve details about a RuleGroup
    *
    * Access Level: Read
    *
@@ -292,7 +292,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view detailed information about a specified number of requests--a sample--that AWS WAF randomly selects from among the first 5,000 requests that your AWS resource received during a time range that you choose.
+   * Grants permission to retrieve detailed information about a sampling of web requests
    *
    * Access Level: Read
    *
@@ -303,7 +303,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view details about the specified GetWebACL.
+   * Grants permission to retrieve details about a WebACL
    *
    * Access Level: Read
    *
@@ -317,7 +317,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view the WebACL for the specified resource.
+   * Grants permission to retrieve the WebACL that's associated with a resource
    *
    * Access Level: Read
    *
@@ -328,7 +328,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view an array of managed rule groups that are available for you to use.
+   * Grants permission to retrieve an array of managed rule groups that are available for you to use
    *
    * Access Level: List
    *
@@ -339,7 +339,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view an array of IPSetSummary objects for the IP sets that you manage.
+   * Grants permission to retrieve an array of IPSetSummary objects for the IP sets that you manage
    *
    * Access Level: List
    *
@@ -350,7 +350,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view an array of your LoggingConfiguration objects.
+   * Grants permission to retrieve an array of your LoggingConfiguration objects
    *
    * Access Level: List
    *
@@ -361,7 +361,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view an array of RegexPatternSetSummary objects for the regex pattern sets that you manage.
+   * Grants permission to retrieve an array of RegexPatternSetSummary objects for the regex pattern sets that you manage
    *
    * Access Level: List
    *
@@ -372,7 +372,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view an array of the Amazon Resource Names (ARNs) for the resources that are associated with the specified web ACL.
+   * Grants permission to retrieve an array of the Amazon Resource Names (ARNs) for the resources that are associated with a web ACL
    *
    * Access Level: List
    *
@@ -383,7 +383,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view an array of RuleGroupSummary objects for the rule groups that you manage.
+   * Grants permission to retrieve an array of RuleGroupSummary objects for the rule groups that you manage
    *
    * Access Level: List
    *
@@ -394,7 +394,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to lists tag for the specified resource.
+   * Grants permission to list tags for a resource
    *
    * Access Level: Read
    *
@@ -408,7 +408,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view an array of WebACLSummary objects for the web ACLs that you manage.
+   * Grants permission to retrieve an array of WebACLSummary objects for the web ACLs that you manage
    *
    * Access Level: List
    *
@@ -419,7 +419,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create FirewallManagedRulesGroups in the specified WebACL.
+   * Grants permission to create FirewallManagedRulesGroups in a WebACL
    *
    * Access Level: Write
    *
@@ -430,7 +430,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enables the specified LoggingConfiguration, to start logging from a web ACL.
+   * Grants permission to enable a LoggingConfiguration, to start logging for a web ACL
    *
    * Access Level: Write
    *
@@ -444,7 +444,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to attach the specified IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup across accounts.
+   * Grants permission to attach an IAM policy to a resource, used to share rule groups between accounts
    *
    * Access Level: Permissions management
    *
@@ -455,7 +455,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associates tags with the specified AWS resource.
+   * Grants permission to associate tags with a AWS resource
    *
    * Access Level: Tagging
    *
@@ -471,7 +471,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociates tags from an AWS resource.
+   * Grants permission to disassociate tags from an AWS resource
    *
    * Access Level: Tagging
    *
@@ -485,7 +485,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the specified IPSet.
+   * Grants permission to update an IPSet
    *
    * Access Level: Write
    *
@@ -499,7 +499,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the specified RegexPatternSet.
+   * Grants permission to update a RegexPatternSet
    *
    * Access Level: Write
    *
@@ -513,7 +513,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the specified RuleGroup.
+   * Grants permission to update a RuleGroup
    *
    * Access Level: Write
    *
@@ -527,7 +527,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the specified WebACL.
+   * Grants permission to update a WebACL
    *
    * Access Level: Permissions management
    *
