@@ -20,6 +20,24 @@
                 "route53:AssociateVPCWithHostedZone"
             ],
             "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:DescribeLogGroups",
+                "logs:DescribeLogStreams",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:log-group:/aws/fsx/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "firehose:DescribeDeliveryStream",
+                "firehose:PutRecord",
+                "firehose:PutRecordBatch"
+            ],
+            "Resource": "arn:aws:firehose:*:*:deliverystream/aws-fsx-*"
         }
     ]
 }
