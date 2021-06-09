@@ -18,7 +18,7 @@ applicationinsights:ListConfigurationHistory;List
 applicationinsights:ListLogPatternSets;List
 applicationinsights:ListLogPatterns;List
 applicationinsights:ListProblems;List
-applicationinsights:ListTagsForResource;List
+applicationinsights:ListTagsForResource;Read
 applicationinsights:TagResource;Tagging
 applicationinsights:UntagResource;Tagging
 applicationinsights:UpdateApplication;Write

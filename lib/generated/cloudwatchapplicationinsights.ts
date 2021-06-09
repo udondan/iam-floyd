@@ -241,7 +241,7 @@ export class Applicationinsights extends PolicyStatement {
   /**
    * Grants permission to list tags for the resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListTagsForResource.html
    */
@@ -336,7 +336,8 @@ export class Applicationinsights extends PolicyStatement {
       "DescribeLogPattern",
       "DescribeObservation",
       "DescribeProblem",
-      "DescribeProblemObservations"
+      "DescribeProblemObservations",
+      "ListTagsForResource"
     ],
     "List": [
       "ListApplications",
@@ -344,8 +345,7 @@ export class Applicationinsights extends PolicyStatement {
       "ListConfigurationHistory",
       "ListLogPatternSets",
       "ListLogPatterns",
-      "ListProblems",
-      "ListTagsForResource"
+      "ListProblems"
     ],
     "Tagging": [
       "TagResource",
