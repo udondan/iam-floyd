@@ -1,37 +1,57 @@
 {
-   "Version": "2012-10-17",
-   "Statement": [
-        {
-           "Effect": "Allow",
-           "Action": [
-               "ds:DescribeDirectories",
-               "fsx:*"
-            ],
-           "Resource": "*"
-        },
-        {
-           "Action": "iam:CreateServiceLinkedRole",
-           "Effect": "Allow",
-           "Resource": "*",
-           "Condition": {
-               "StringLike": {
-                   "iam:AWSServiceName": [
-                       "fsx.amazonaws.com"
-                    ]
-                }
-            }
-        },
-        {
-            "Action": "iam:CreateServiceLinkedRole",
-            "Effect": "Allow",
-            "Resource": "*",
-            "Condition": {
-                "StringLike": {
-                    "iam:AWSServiceName": [
-                        "s3.data-source.lustre.fsx.amazonaws.com"
-                    ]
-                }
-            }
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ds:DescribeDirectories",
+				"fsx:*"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "iam:CreateServiceLinkedRole",
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"iam:AWSServiceName": [
+						"fsx.amazonaws.com"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": "iam:CreateServiceLinkedRole",
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"iam:AWSServiceName": [
+						"s3.data-source.lustre.fsx.amazonaws.com"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"logs:CreateLogGroup",
+				"logs:CreateLogStream",
+				"logs:PutLogEvents"
+			],
+			"Resource": [
+				"arn:aws:logs:*:*:log-group:/aws/fsx/*:log-group:*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"firehose:PutRecord"
+			],
+			"Resource": [
+				"arn:aws:firehose:*:*:deliverystream/aws-fsx-*"
+			]
+		}
+	]
 }

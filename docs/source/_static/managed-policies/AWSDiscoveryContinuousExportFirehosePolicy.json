@@ -19,8 +19,7 @@
                 "s3:PutObject"
             ],
             "Resource": [
-                "arn:aws:s3:::aws-application-discovery-service-*",
-                "arn:aws:s3:::aws-application-discovery-service-*/*"
+                "arn:aws:s3:::aws-application-discovery-service-*"
             ]
         },
         {
