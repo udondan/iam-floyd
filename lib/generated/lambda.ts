@@ -923,6 +923,8 @@ export class Lambda extends PolicyStatement {
   /**
    * Filters access by the ARN of an AWS Lambda code signing config
    *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
    * Applies to actions:
    * - .toCreateFunction()
    * - .toPutFunctionCodeSigningConfig()
@@ -936,6 +938,8 @@ export class Lambda extends PolicyStatement {
 
   /**
    * Filters access by the ARN of an AWS Lambda function
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
    *
    * Applies to actions:
    * - .toCreateEventSourceMapping()
@@ -951,7 +955,9 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Filters access by the ARN of an AWS Lambda layer
+   * Filters access by the ARN of a version of an AWS Lambda layer
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
    *
    * Applies to actions:
    * - .toCreateFunction()
@@ -967,6 +973,8 @@ export class Lambda extends PolicyStatement {
   /**
    * Filters access by restricting the AWS service or account that can invoke a function
    *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
    * Applies to actions:
    * - .toAddPermission()
    * - .toRemovePermission()
@@ -980,6 +988,8 @@ export class Lambda extends PolicyStatement {
 
   /**
    * Filters access by the ID of security groups configured for the AWS Lambda function
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
    *
    * Applies to actions:
    * - .toCreateFunction()
@@ -995,6 +1005,8 @@ export class Lambda extends PolicyStatement {
   /**
    * Filters access by the ID of subnets configured for the AWS Lambda function
    *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
    * Applies to actions:
    * - .toCreateFunction()
    * - .toUpdateFunctionConfiguration()
@@ -1008,6 +1020,8 @@ export class Lambda extends PolicyStatement {
 
   /**
    * Filters access by the ID of the VPC configured for the AWS Lambda function
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
    *
    * Applies to actions:
    * - .toCreateFunction()

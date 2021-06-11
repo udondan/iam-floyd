@@ -2,6 +2,7 @@ sagemaker:AddAssociation;Write
 sagemaker:AddTags;Tagging
 sagemaker:AssociateTrialComponent;Write
 sagemaker:BatchGetMetrics;Read
+sagemaker:BatchGetRecord;Read
 sagemaker:BatchPutMetrics;Write
 sagemaker:CreateAction;Write
 sagemaker:CreateAlgorithm;Write

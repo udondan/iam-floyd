@@ -65,6 +65,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a batch of records from one or more feature groups.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_BatchGetRecord.html
+   */
+  public toBatchGetRecord() {
+    return this.to('BatchGetRecord');
+  }
+
+  /**
    * Publish metrics associated with a SageMaker Resource such as a Training Job. This API is not publicly exposed at this point, however admins can control this action
    *
    * Access Level: Write
@@ -1258,7 +1269,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Delete a record from a feature group.
+   * Grants permission to delete a record from a feature group.
    *
    * Access Level: Write
    *
@@ -1932,7 +1943,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Get a record from a feature group.
+   * Grants permission to get a record from a feature group.
    *
    * Access Level: Read
    *
@@ -2584,7 +2595,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Put a record to a feature group.
+   * Grants permission to put a record to a feature group.
    *
    * Access Level: Write
    *
@@ -3271,6 +3282,7 @@ export class Sagemaker extends PolicyStatement {
     ],
     "Read": [
       "BatchGetMetrics",
+      "BatchGetRecord",
       "DescribeAction",
       "DescribeAlgorithm",
       "DescribeApp",
