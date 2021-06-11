@@ -11,7 +11,8 @@
                 "sagemaker:GetDeviceFleetReport",
                 "sagemaker:GetSearchSuggestions",
                 "sagemaker:GetRecord",
-                "sagemaker:Search"
+                "sagemaker:Search",
+                "sagemaker:BatchGetRecord"
             ],
             "Resource": "*"
         },
