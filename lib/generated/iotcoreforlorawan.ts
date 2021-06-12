@@ -345,6 +345,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get resource log level
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourceLogLevel.html
+   */
+  public toGetResourceLogLevel() {
+    return this.to('GetResourceLogLevel');
+  }
+
+  /**
    * Grants permission to retrieve the customer account specific endpoint for CUPS protocol connection or LoRaWAN Network Server (LNS) protocol connection, and optionally server trust certificate in PEM format
    *
    * Access Level: Read
@@ -543,6 +554,39 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put resource log level
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_PutResourceLogLevel.html
+   */
+  public toPutResourceLogLevel() {
+    return this.to('PutResourceLogLevel');
+  }
+
+  /**
+   * Grants permission to reset all resource log levels
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ResetAllResourceLogLevels.html
+   */
+  public toResetAllResourceLogLevels() {
+    return this.to('ResetAllResourceLogLevels');
+  }
+
+  /**
+   * Grants permission to reset resource log level
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ResetResourceLogLevel.html
+   */
+  public toResetResourceLogLevel() {
+    return this.to('ResetResourceLogLevel');
+  }
+
+  /**
    * Grants permission to send the decrypted application data frame to the target device
    *
    * Access Level: Write
@@ -672,6 +716,9 @@ export class Iotwireless extends PolicyStatement {
       "DisassociateWirelessDeviceFromThing",
       "DisassociateWirelessGatewayFromCertificate",
       "DisassociateWirelessGatewayFromThing",
+      "PutResourceLogLevel",
+      "ResetAllResourceLogLevels",
+      "ResetResourceLogLevel",
       "SendDataToWirelessDevice",
       "TestWirelessDevice",
       "UpdateDestination",
@@ -685,6 +732,7 @@ export class Iotwireless extends PolicyStatement {
       "GetDeviceProfile",
       "GetLogLevelsByResourceTypes",
       "GetPartnerAccount",
+      "GetResourceLogLevel",
       "GetServiceEndpoint",
       "GetServiceProfile",
       "GetWirelessDevice",

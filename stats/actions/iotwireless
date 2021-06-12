@@ -24,6 +24,7 @@ iotwireless:GetDestination;Read
 iotwireless:GetDeviceProfile;Read
 iotwireless:GetLogLevelsByResourceTypes;Read
 iotwireless:GetPartnerAccount;Read
+iotwireless:GetResourceLogLevel;Read
 iotwireless:GetServiceEndpoint;Read
 iotwireless:GetServiceProfile;Read
 iotwireless:GetWirelessDevice;Read
@@ -42,6 +43,9 @@ iotwireless:ListTagsForResource;List
 iotwireless:ListWirelessDevices;List
 iotwireless:ListWirelessGatewayTaskDefinitions;List
 iotwireless:ListWirelessGateways;List
+iotwireless:PutResourceLogLevel;Write
+iotwireless:ResetAllResourceLogLevels;Write
+iotwireless:ResetResourceLogLevel;Write
 iotwireless:SendDataToWirelessDevice;Write
 iotwireless:TagResource;Tagging
 iotwireless:TestWirelessDevice;Write
