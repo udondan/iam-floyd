@@ -8,6 +8,7 @@
 				"devops-guru:DescribeAccountHealth",
 				"devops-guru:DescribeAccountOverview",
 				"devops-guru:DescribeAnomaly",
+				"devops-guru:DescribeFeedback",
 				"devops-guru:DescribeInsight",
 				"devops-guru:DescribeResourceCollectionHealth",
 				"devops-guru:DescribeServiceIntegration",
@@ -31,6 +32,13 @@
 				"cloudformation:ListStacks"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"iam:GetRole"
+			],
+			"Resource": "arn:aws:iam::*:role/aws-service-role/devops-guru.amazonaws.com/AWSServiceRoleForDevOpsGuru"
 		},
 		{
 			"Sid": "CloudWatchGetMetricDataAccess",
