@@ -109,8 +109,7 @@
                 "license-manager:GetServiceSettings",
                 "license-manager:GetLicense*",
                 "license-manager:UpdateLicenseSpecificationsForResource",
-                "license-manager:ListUsageForLicenseConfiguration",
-                "license-manager:ListDistributedGrants"
+                "license-manager:List*"
             ],
             "Resource": [
                 "*"
