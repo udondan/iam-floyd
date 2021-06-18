@@ -17,6 +17,21 @@
             }
         },
         {
+            "Sid": "IAMPermissionsForCreatingMemberSLR",
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateServiceLinkedRole"
+            ],
+            "Resource": [
+                "arn:*:iam::*:role/aws-service-role/license-manager.member-account.amazonaws.com/AWSServiceRoleForAWSLicenseManagerMemberAccountRole"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "iam:AWSServiceName": "license-manager.amazonaws.com"
+                }
+            }
+        },
+        {
             "Sid": "S3BucketPermissions1",
             "Effect": "Allow",
             "Action": [
@@ -96,7 +111,8 @@
             "Effect": "Allow",
             "Action": [
                 "organizations:ListAWSServiceAccessForOrganization",
-                "organizations:DescribeOrganization"
+                "organizations:DescribeOrganization",
+                "organizations:ListDelegatedAdministrators"
             ],
             "Resource": [
                 "*"
