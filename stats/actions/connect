@@ -1,4 +1,5 @@
 connect:AssociateApprovedOrigin;Write
+connect:AssociateBot;Write
 connect:AssociateCustomerProfilesDomain;Write
 connect:AssociateInstanceStorageConfig;Write
 connect:AssociateLambdaFunction;Write
@@ -33,6 +34,7 @@ connect:DescribeUser;Read
 connect:DescribeUserHierarchyGroup;Read
 connect:DescribeUserHierarchyStructure;Read
 connect:DisassociateApprovedOrigin;Write
+connect:DisassociateBot;Write
 connect:DisassociateCustomerProfilesDomain;Write
 connect:DisassociateInstanceStorageConfig;Write
 connect:DisassociateLambdaFunction;Write
@@ -46,6 +48,7 @@ connect:GetFederationToken;Read
 connect:GetFederationTokens;Write
 connect:GetMetricData;Read
 connect:ListApprovedOrigins;List
+connect:ListBots;List
 connect:ListContactFlows;List
 connect:ListHoursOfOperations;List
 connect:ListInstanceAttributes;List

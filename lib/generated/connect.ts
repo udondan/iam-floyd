@@ -23,10 +23,33 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toAssociateApprovedOrigin() {
     return this.to('AssociateApprovedOrigin');
+  }
+
+  /**
+   * Grants permissions to associate a Lex bot for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   * - lex:DeleteResourcePolicy
+   * - lex:DescribeBotAlias
+   * - lex:GetBot
+   * - lex:UpdateResourcePolicy
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toAssociateBot() {
+    return this.to('AssociateBot');
   }
 
   /**
@@ -53,6 +76,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifStorageResourceType()
+   * - .ifInstanceId()
    *
    * Dependent actions:
    * - ds:DescribeDirectories
@@ -77,6 +101,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * Dependent actions:
    * - lambda:AddPermission
    *
@@ -90,6 +117,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to associate a Lex bot for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * Dependent actions:
    * - iam:AttachRolePolicy
@@ -110,6 +140,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateQueueQuickConnects.html
    */
@@ -124,6 +155,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateRoutingProfileQueues.html
    */
@@ -135,6 +167,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to associate a security key for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -150,6 +185,7 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlow.html
    */
@@ -186,6 +222,11 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
    * - app-integrations:CreateEventIntegrationAssociation
    * - connect:DescribeInstance
@@ -207,6 +248,7 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateQueue.html
    */
@@ -222,6 +264,7 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateQuickConnect.html
    */
@@ -237,6 +280,7 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateRoutingProfile.html
    */
@@ -248,6 +292,11 @@ export class Connect extends PolicyStatement {
    * Grants permissions to create a use case for an AppIntegration association
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - connect:DescribeInstance
@@ -267,6 +316,7 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUser.html
    */
@@ -279,6 +329,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUserHierarchyGroup.html
    */
   public toCreateUserHierarchyGroup() {
@@ -289,6 +342,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to delete an Amazon Connect instance. When you remove an instance, the link to an existing AWS directory is also removed.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * Dependent actions:
    * - ds:DeleteDirectory
@@ -305,6 +361,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to delete an AppIntegration association from an Amazon Connect instance. The association must not have any use cases associated with it.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * Dependent actions:
    * - app-integrations:DeleteEventIntegrationAssociation
@@ -327,6 +386,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteQuickConnect.html
    */
@@ -338,6 +398,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to delete a use case from an AppIntegration association
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * Dependent actions:
    * - connect:DescribeInstance
@@ -356,6 +419,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUser.html
    */
@@ -367,6 +431,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to delete a user hierarchy group in an Amazon Connect instance
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUserHierarchyGroup.html
    */
@@ -381,6 +448,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContactFlow.html
    */
@@ -393,6 +461,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeHoursOfOperation.html
    */
   public toDescribeHoursOfOperation() {
@@ -403,6 +474,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to view details of an Amazon Connect instance. This is required to create an instance.
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * Dependent actions:
    * - ds:DescribeDirectories
@@ -420,6 +494,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAttributeType()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -434,6 +509,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifStorageResourceType()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -448,6 +524,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeQueue.html
    */
@@ -462,6 +539,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeQuickConnect.html
    */
@@ -476,6 +554,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html
    */
@@ -490,6 +569,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html
    */
@@ -502,6 +582,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUserHierarchyGroup.html
    */
   public toDescribeUserHierarchyGroup() {
@@ -512,6 +595,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to describe the hierarchy structure for an Amazon Connect instance
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUserHierarchyStructure.html
    */
@@ -524,10 +610,31 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDisassociateApprovedOrigin() {
     return this.to('DisassociateApprovedOrigin');
+  }
+
+  /**
+   * Grants permissions to disassociate a Lex bot for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   * - lex:DeleteResourcePolicy
+   * - lex:UpdateResourcePolicy
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toDisassociateBot() {
+    return this.to('DisassociateBot');
   }
 
   /**
@@ -556,6 +663,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifStorageResourceType()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -567,6 +675,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to disassociate a Lambda function for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * Dependent actions:
    * - lambda:RemovePermission
@@ -581,6 +692,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to disassociate a Lex bot for an existing Amazon Connect instance. The associated required actions grant permission to modify the settings for the instance.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * Dependent actions:
    * - iam:AttachRolePolicy
@@ -600,6 +714,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateQueueQuickConnects.html
    */
@@ -614,6 +729,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateRoutingProfileQueues.html
    */
@@ -626,6 +742,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDisassociateSecurityKey() {
@@ -637,6 +756,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetContactAttributes.html
    */
   public toGetContactAttributes() {
@@ -647,6 +769,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to retrieve current metric data for the queues in an Amazon Connect instance
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetCurrentMetricData.html
    */
@@ -689,6 +814,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html
    */
   public toGetMetricData() {
@@ -700,10 +828,24 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListApprovedOrigins() {
     return this.to('ListApprovedOrigins');
+  }
+
+  /**
+   * Grants permissions to view the Lex bots of an existing Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
+   */
+  public toListBots() {
+    return this.to('ListBots');
   }
 
   /**
@@ -722,6 +864,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListHoursOfOperations.html
    */
   public toListHoursOfOperations() {
@@ -733,6 +878,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListInstanceAttributes() {
@@ -743,6 +891,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to view storage configurations of an existing Amazon Connect instance
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -769,6 +920,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * Dependent actions:
    * - connect:DescribeInstance
    * - ds:DescribeDirectories
@@ -784,6 +938,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListLambdaFunctions() {
@@ -794,6 +951,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to view the Lex bots of an existing Amazon Connect instance
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -817,6 +977,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPrompts.html
    */
   public toListPrompts() {
@@ -830,6 +993,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListQueueQuickConnects.html
    */
@@ -877,6 +1041,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRoutingProfileQueues.html
    */
@@ -889,6 +1054,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRoutingProfiles.html
    */
   public toListRoutingProfiles() {
@@ -900,6 +1068,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListSecurityKeys() {
@@ -910,6 +1081,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to list security profile resources in an Amazon Connect instance
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListSecurityProfiles.html
    */
@@ -936,6 +1110,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * Dependent actions:
    * - connect:DescribeInstance
    * - ds:DescribeDirectories
@@ -951,6 +1128,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUserHierarchyGroups.html
    */
   public toListUserHierarchyGroups() {
@@ -961,6 +1141,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to list user resources in an Amazon Connect instance
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUsers.html
    */
@@ -1017,6 +1200,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartTaskContact.html
    */
   public toStartTaskContact() {
@@ -1027,6 +1213,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to stop contacts that were initiated using the Amazon Connect API. If you use this operation on an active contact the contact ends, even if the agent is active on a call with a customer.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContact.html
    */
@@ -1092,6 +1281,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactAttributes.html
    */
   public toUpdateContactAttributes() {
@@ -1105,6 +1297,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowContent.html
    */
@@ -1119,6 +1312,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowName.html
    */
@@ -1133,6 +1327,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAttributeType()
+   * - .ifInstanceId()
    *
    * Dependent actions:
    * - ds:DescribeDirectories
@@ -1154,6 +1349,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifStorageResourceType()
+   * - .ifInstanceId()
    *
    * Dependent actions:
    * - ds:DescribeDirectories
@@ -1180,6 +1376,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueHoursOfOperation.html
    */
@@ -1194,6 +1391,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueMaxContacts.html
    */
@@ -1208,6 +1406,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueName.html
    */
@@ -1222,6 +1421,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueOutboundCallerConfig.html
    */
@@ -1236,6 +1436,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueStatus.html
    */
@@ -1250,6 +1451,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQuickConnectConfig.html
    */
@@ -1264,6 +1466,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQuickConnectName.html
    */
@@ -1278,6 +1481,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileConcurrency.html
    */
@@ -1292,6 +1496,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileDefaultOutboundQueue.html
    */
@@ -1306,6 +1511,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileName.html
    */
@@ -1320,6 +1526,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileQueues.html
    */
@@ -1334,6 +1541,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchy.html
    */
@@ -1346,6 +1554,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchyGroupName.html
    */
   public toUpdateUserHierarchyGroupName() {
@@ -1356,6 +1567,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to update user hierarchy structure in an Amazon Connect instance
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchyStructure.html
    */
@@ -1370,6 +1584,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserIdentityInfo.html
    */
@@ -1384,6 +1599,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserPhoneConfig.html
    */
@@ -1398,6 +1614,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserRoutingProfile.html
    */
@@ -1412,6 +1629,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserSecurityProfiles.html
    */
@@ -1422,6 +1640,7 @@ export class Connect extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AssociateApprovedOrigin",
+      "AssociateBot",
       "AssociateCustomerProfilesDomain",
       "AssociateInstanceStorageConfig",
       "AssociateLambdaFunction",
@@ -1445,6 +1664,7 @@ export class Connect extends PolicyStatement {
       "DeleteUser",
       "DeleteUserHierarchyGroup",
       "DisassociateApprovedOrigin",
+      "DisassociateBot",
       "DisassociateCustomerProfilesDomain",
       "DisassociateInstanceStorageConfig",
       "DisassociateLambdaFunction",
@@ -1506,6 +1726,7 @@ export class Connect extends PolicyStatement {
     ],
     "List": [
       "ListApprovedOrigins",
+      "ListBots",
       "ListContactFlows",
       "ListHoursOfOperations",
       "ListInstanceAttributes",
@@ -1787,6 +2008,9 @@ export class Connect extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onIntegrationAssociation(instanceId: string, integrationAssociationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/integration-association/${IntegrationAssociationId}';
@@ -1808,6 +2032,9 @@ export class Connect extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onUseCase(instanceId: string, useCaseId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/use-case/${UseCaseId}';
@@ -1841,7 +2068,90 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
    *
    * Applies to actions:
+   * - .toAssociateApprovedOrigin()
+   * - .toAssociateInstanceStorageConfig()
+   * - .toAssociateLambdaFunction()
+   * - .toAssociateLexBot()
+   * - .toAssociateQueueQuickConnects()
+   * - .toAssociateRoutingProfileQueues()
+   * - .toAssociateSecurityKey()
+   * - .toCreateContactFlow()
+   * - .toCreateIntegrationAssociation()
+   * - .toCreateQueue()
+   * - .toCreateQuickConnect()
+   * - .toCreateRoutingProfile()
+   * - .toCreateUseCase()
+   * - .toCreateUser()
+   * - .toCreateUserHierarchyGroup()
+   * - .toDeleteInstance()
+   * - .toDeleteIntegrationAssociation()
+   * - .toDeleteQuickConnect()
+   * - .toDeleteUseCase()
+   * - .toDeleteUser()
+   * - .toDeleteUserHierarchyGroup()
+   * - .toDescribeContactFlow()
+   * - .toDescribeHoursOfOperation()
+   * - .toDescribeInstance()
+   * - .toDescribeInstanceAttribute()
+   * - .toDescribeInstanceStorageConfig()
+   * - .toDescribeQueue()
+   * - .toDescribeQuickConnect()
+   * - .toDescribeRoutingProfile()
+   * - .toDescribeUser()
+   * - .toDescribeUserHierarchyGroup()
+   * - .toDescribeUserHierarchyStructure()
+   * - .toDisassociateApprovedOrigin()
+   * - .toDisassociateInstanceStorageConfig()
+   * - .toDisassociateLambdaFunction()
+   * - .toDisassociateLexBot()
+   * - .toDisassociateQueueQuickConnects()
+   * - .toDisassociateRoutingProfileQueues()
+   * - .toDisassociateSecurityKey()
+   * - .toGetContactAttributes()
+   * - .toGetCurrentMetricData()
    * - .toGetFederationToken()
+   * - .toGetMetricData()
+   * - .toListApprovedOrigins()
+   * - .toListHoursOfOperations()
+   * - .toListInstanceAttributes()
+   * - .toListInstanceStorageConfigs()
+   * - .toListIntegrationAssociations()
+   * - .toListLambdaFunctions()
+   * - .toListLexBots()
+   * - .toListPrompts()
+   * - .toListQueueQuickConnects()
+   * - .toListRoutingProfileQueues()
+   * - .toListRoutingProfiles()
+   * - .toListSecurityKeys()
+   * - .toListSecurityProfiles()
+   * - .toListUseCases()
+   * - .toListUserHierarchyGroups()
+   * - .toListUsers()
+   * - .toStartTaskContact()
+   * - .toStopContact()
+   * - .toUpdateContactAttributes()
+   * - .toUpdateContactFlowContent()
+   * - .toUpdateContactFlowName()
+   * - .toUpdateInstanceAttribute()
+   * - .toUpdateInstanceStorageConfig()
+   * - .toUpdateQueueHoursOfOperation()
+   * - .toUpdateQueueMaxContacts()
+   * - .toUpdateQueueName()
+   * - .toUpdateQueueOutboundCallerConfig()
+   * - .toUpdateQueueStatus()
+   * - .toUpdateQuickConnectConfig()
+   * - .toUpdateQuickConnectName()
+   * - .toUpdateRoutingProfileConcurrency()
+   * - .toUpdateRoutingProfileDefaultOutboundQueue()
+   * - .toUpdateRoutingProfileName()
+   * - .toUpdateRoutingProfileQueues()
+   * - .toUpdateUserHierarchy()
+   * - .toUpdateUserHierarchyGroupName()
+   * - .toUpdateUserHierarchyStructure()
+   * - .toUpdateUserIdentityInfo()
+   * - .toUpdateUserPhoneConfig()
+   * - .toUpdateUserRoutingProfile()
+   * - .toUpdateUserSecurityProfiles()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

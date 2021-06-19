@@ -100,6 +100,8 @@ export class Kms extends PolicyStatement {
    * - .ifCustomerMasterKeySpec()
    * - .ifCustomerMasterKeyUsage()
    * - .ifKeyOrigin()
+   * - .ifMultiRegion()
+   * - .ifMultiRegionKeyType()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html
    */
@@ -571,6 +573,25 @@ export class Kms extends PolicyStatement {
   }
 
   /**
+   * Controls permission to replicate a multi-Region primary key
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifReplicaRegion()
+   * - .ifViaService()
+   *
+   * Dependent actions:
+   * - kms:CreateKey
+   *
+   * https://docs.aws.amazon.com/kms/latest/APIReference/API_ReplicateKey.html
+   */
+  public toReplicateKey() {
+    return this.to('ReplicateKey');
+  }
+
+  /**
    * Controls permission to retire a grant. The RetireGrant operation is typically called by the grant user after they complete the tasks that the grant allowed them to perform
    *
    * Access Level: Permissions management
@@ -627,6 +648,17 @@ export class Kms extends PolicyStatement {
    */
   public toSign() {
     return this.to('Sign');
+  }
+
+  /**
+   * Controls access to internal APIs that synchronize multi-Region keys
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-auth.html#multi-region-auth-slr
+   */
+  public toSynchronizeMultiRegionKey() {
+    return this.to('SynchronizeMultiRegionKey');
   }
 
   /**
@@ -701,6 +733,22 @@ export class Kms extends PolicyStatement {
   }
 
   /**
+   * Controls permission to update the primary Region of a multi-Region primary key
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifPrimaryRegion()
+   * - .ifViaService()
+   *
+   * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdatePrimaryRegion.html
+   */
+  public toUpdatePrimaryRegion() {
+    return this.to('UpdatePrimaryRegion');
+  }
+
+  /**
    * Controls permission to use the specified customer master key to verify digital signatures
    *
    * Access Level: Write
@@ -742,11 +790,14 @@ export class Kms extends PolicyStatement {
       "ImportKeyMaterial",
       "ReEncryptFrom",
       "ReEncryptTo",
+      "ReplicateKey",
       "ScheduleKeyDeletion",
       "Sign",
+      "SynchronizeMultiRegionKey",
       "UpdateAlias",
       "UpdateCustomKeyStore",
       "UpdateKeyDescription",
+      "UpdatePrimaryRegion",
       "Verify"
     ],
     "Permissions management": [
@@ -863,6 +914,7 @@ export class Kms extends PolicyStatement {
    * - .toPutKeyPolicy()
    * - .toReEncryptFrom()
    * - .toReEncryptTo()
+   * - .toReplicateKey()
    * - .toRevokeGrant()
    * - .toScheduleKeyDeletion()
    * - .toSign()
@@ -870,6 +922,7 @@ export class Kms extends PolicyStatement {
    * - .toUntagResource()
    * - .toUpdateAlias()
    * - .toUpdateKeyDescription()
+   * - .toUpdatePrimaryRegion()
    * - .toVerify()
    *
    * @param value The value(s) to check
@@ -1071,6 +1124,50 @@ export class Kms extends PolicyStatement {
   }
 
   /**
+   * Filters access to an API operation based on the MultiRegion property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-multi-region
+   *
+   * Applies to actions:
+   * - .toCreateKey()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifMultiRegion(value?: boolean) {
+    return this.if(`MultiRegion`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access to an API operation based on the MultiRegionKeyType property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-multi-region-key-type
+   *
+   * Applies to actions:
+   * - .toCreateKey()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifMultiRegionKeyType(value: string | string[], operator?: Operator | string) {
+    return this.if(`MultiRegionKeyType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access to the UpdatePrimaryRegion operation based on the value of the PrimaryRegion parameter in the request
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-primary-region
+   *
+   * Applies to actions:
+   * - .toUpdatePrimaryRegion()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPrimaryRegion(value: string | string[], operator?: Operator | string) {
+    return this.if(`PrimaryRegion`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access to the ReEncrypt operation when it uses the same customer master key that was used for the Encrypt operation
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-reencrypt-on-same-key
@@ -1083,6 +1180,21 @@ export class Kms extends PolicyStatement {
    */
   public ifReEncryptOnSameKey(value?: boolean) {
     return this.if(`ReEncryptOnSameKey`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access to the ReplicateKey operation based on the value of the ReplicaRegion parameter in the request
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-replica-region
+   *
+   * Applies to actions:
+   * - .toReplicateKey()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifReplicaRegion(value: string | string[], operator?: Operator | string) {
+    return this.if(`ReplicaRegion`, value, operator || 'StringLike');
   }
 
   /**
@@ -1185,6 +1297,7 @@ export class Kms extends PolicyStatement {
    * - .toPutKeyPolicy()
    * - .toReEncryptFrom()
    * - .toReEncryptTo()
+   * - .toReplicateKey()
    * - .toRevokeGrant()
    * - .toScheduleKeyDeletion()
    * - .toSign()
@@ -1192,6 +1305,7 @@ export class Kms extends PolicyStatement {
    * - .toUntagResource()
    * - .toUpdateAlias()
    * - .toUpdateKeyDescription()
+   * - .toUpdatePrimaryRegion()
    * - .toVerify()
    *
    * @param value The value(s) to check

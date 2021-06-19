@@ -35,13 +35,16 @@ kms:ListRetirableGrants;List
 kms:PutKeyPolicy;Permissions management
 kms:ReEncryptFrom;Write
 kms:ReEncryptTo;Write
+kms:ReplicateKey;Write
 kms:RetireGrant;Permissions management
 kms:RevokeGrant;Permissions management
 kms:ScheduleKeyDeletion;Write
 kms:Sign;Write
+kms:SynchronizeMultiRegionKey;Write
 kms:TagResource;Tagging
 kms:UntagResource;Tagging
 kms:UpdateAlias;Write
 kms:UpdateCustomKeyStore;Write
 kms:UpdateKeyDescription;Write
+kms:UpdatePrimaryRegion;Write
 kms:Verify;Write

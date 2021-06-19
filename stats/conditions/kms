@@ -12,7 +12,11 @@ kms:GrantOperations
 kms:GranteePrincipal
 kms:KeyOrigin
 kms:MessageType
+kms:MultiRegion
+kms:MultiRegionKeyType
+kms:PrimaryRegion
 kms:ReEncryptOnSameKey
+kms:ReplicaRegion
 kms:RequestAlias
 kms:ResourceAliases
 kms:ResourceTag/${TagKey}
