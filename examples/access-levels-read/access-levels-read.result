@@ -16,6 +16,7 @@
         "ec2:GetDefaultCreditSpecification",
         "ec2:GetEbsDefaultKmsKeyId",
         "ec2:GetEbsEncryptionByDefault",
+        "ec2:GetFlowLogsIntegrationTemplate",
         "ec2:GetHostReservationPurchasePreview",
         "ec2:GetLaunchTemplateData",
         "ec2:GetManagedPrefixListAssociations",

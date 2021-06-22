@@ -36,6 +36,7 @@ ec2:network-insights-path
 ec2:network-interface
 ec2:placement-group
 ec2:prefix-list
+ec2:replace-root-volume-task
 ec2:reserved-instances
 ec2:role
 ec2:route-table

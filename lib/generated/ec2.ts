@@ -506,7 +506,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a carrier gateway and provides CSP connectivity to VPC customers.
+   * Grants permission to create a carrier gateway and provides CSP connectivity to VPC customers
    *
    * Access Level: Write
    *
@@ -806,6 +806,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a root volume replacement task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateReplaceRootVolumeTask.html
+   */
+  public toCreateReplaceRootVolumeTask() {
+    return this.to('CreateReplaceRootVolumeTask');
+  }
+
+  /**
    * Grants permission to create a listing for Standard Reserved Instances to be sold in the Reserved Instance Marketplace
    *
    * Access Level: Write
@@ -814,6 +825,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateReservedInstancesListing() {
     return this.to('CreateReservedInstancesListing');
+  }
+
+  /**
+   * Grants permission to start a task that restores an AMI from an S3 object previously created by using CreateStoreImageTask
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRestoreImageTask.html
+   */
+  public toCreateRestoreImageTask() {
+    return this.to('CreateRestoreImageTask');
   }
 
   /**
@@ -880,6 +902,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateSpotDatafeedSubscription() {
     return this.to('CreateSpotDatafeedSubscription');
+  }
+
+  /**
+   * Grants permission to store an AMI as a single object in an S3 bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html
+   */
+  public toCreateStoreImageTask() {
+    return this.to('CreateStoreImageTask');
   }
 
   /**
@@ -2594,6 +2627,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a root volume replacement task
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReplaceRootVolumeTasks.html
+   */
+  public toDescribeReplaceRootVolumeTasks() {
+    return this.to('DescribeReplaceRootVolumeTasks');
+  }
+
+  /**
    * Grants permission to describe one or more purchased Reserved Instances in your account
    *
    * Access Level: List
@@ -2789,6 +2833,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeStaleSecurityGroups() {
     return this.to('DescribeStaleSecurityGroups');
+  }
+
+  /**
+   * Grants permission to describe the progress of the AMI store tasks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeStoreImageTasks.html
+   */
+  public toDescribeStoreImageTasks() {
+    return this.to('DescribeStoreImageTasks');
   }
 
   /**
@@ -3581,6 +3636,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetEbsEncryptionByDefault() {
     return this.to('GetEbsEncryptionByDefault');
+  }
+
+  /**
+   * Grants permission to generate a CloudFormation template to streamline the integration of VPC flow logs with Amazon Athena
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetFlowLogsIntegrationTemplate.html
+   */
+  public toGetFlowLogsIntegrationTemplate() {
+    return this.to('GetFlowLogsIntegrationTemplate');
   }
 
   /**
@@ -4978,13 +5044,16 @@ export class Ec2 extends PolicyStatement {
       "CreateNetworkInsightsPath",
       "CreateNetworkInterface",
       "CreatePlacementGroup",
+      "CreateReplaceRootVolumeTask",
       "CreateReservedInstancesListing",
+      "CreateRestoreImageTask",
       "CreateRoute",
       "CreateRouteTable",
       "CreateSecurityGroup",
       "CreateSnapshot",
       "CreateSnapshots",
       "CreateSpotDatafeedSubscription",
+      "CreateStoreImageTask",
       "CreateSubnet",
       "CreateTrafficMirrorFilter",
       "CreateTrafficMirrorFilterRule",
@@ -5280,6 +5349,7 @@ export class Ec2 extends PolicyStatement {
       "DescribePrincipalIdFormat",
       "DescribePublicIpv4Pools",
       "DescribeRegions",
+      "DescribeReplaceRootVolumeTasks",
       "DescribeReservedInstances",
       "DescribeReservedInstancesListings",
       "DescribeReservedInstancesModifications",
@@ -5296,6 +5366,7 @@ export class Ec2 extends PolicyStatement {
       "DescribeSpotInstanceRequests",
       "DescribeSpotPriceHistory",
       "DescribeStaleSecurityGroups",
+      "DescribeStoreImageTasks",
       "DescribeSubnets",
       "DescribeTrafficMirrorFilters",
       "DescribeTrafficMirrorSessions",
@@ -5352,6 +5423,7 @@ export class Ec2 extends PolicyStatement {
       "GetDefaultCreditSpecification",
       "GetEbsDefaultKmsKeyId",
       "GetEbsEncryptionByDefault",
+      "GetFlowLogsIntegrationTemplate",
       "GetHostReservationPurchasePreview",
       "GetLaunchTemplateData",
       "GetManagedPrefixListAssociations",
@@ -6369,6 +6441,32 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type replace-root-volume-task to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-replace-root-volume-task.html
+   *
+   * @param replaceRootVolumeTaskId - Identifier for the replaceRootVolumeTaskId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onReplaceRootVolumeTask(replaceRootVolumeTaskId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:replace-root-volume-task/${ReplaceRootVolumeTaskId}';
+    arn = arn.replace('${ReplaceRootVolumeTaskId}', replaceRootVolumeTaskId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type reserved-instances to the statement
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html
@@ -7316,6 +7414,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNatGateway()
    * - .toCreateNetworkInterface()
    * - .toCreateNetworkInterfacePermission()
+   * - .toCreateReplaceRootVolumeTask()
    * - .toCreateReservedInstancesListing()
    * - .toCreateRoute()
    * - .toCreateSnapshots()
@@ -7594,6 +7693,7 @@ export class Ec2 extends PolicyStatement {
    * - .toConfirmProductInstance()
    * - .toCreateImage()
    * - .toCreateInstanceExportTask()
+   * - .toCreateReplaceRootVolumeTask()
    * - .toCreateRoute()
    * - .toCreateSnapshots()
    * - .toCreateTags()
@@ -7778,6 +7878,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateImage()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
+   * - .toCreateRestoreImageTask()
    * - .toCreateTags()
    * - .toDeleteTags()
    * - .toDeregisterImage()
@@ -7855,6 +7956,7 @@ export class Ec2 extends PolicyStatement {
    * - .toConfirmProductInstance()
    * - .toCreateImage()
    * - .toCreateInstanceExportTask()
+   * - .toCreateReplaceRootVolumeTask()
    * - .toCreateRoute()
    * - .toCreateSnapshots()
    * - .toCreateTags()
@@ -7917,6 +8019,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInstanceExportTask()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
+   * - .toCreateReplaceRootVolumeTask()
    * - .toCreateReservedInstancesListing()
    * - .toCreateRoute()
    * - .toCreateSnapshots()
@@ -8082,6 +8185,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCopySnapshot()
+   * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toDeleteSnapshot()
    *
@@ -8108,8 +8212,11 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateImage()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
+   * - .toCreateReplaceRootVolumeTask()
+   * - .toCreateRestoreImageTask()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
+   * - .toCreateStoreImageTask()
    * - .toCreateTags()
    * - .toCreateVolume()
    * - .toDeleteFpgaImage()
@@ -8183,6 +8290,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateFleet()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
+   * - .toCreateReplaceRootVolumeTask()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toCreateTags()
@@ -8460,6 +8568,7 @@ export class Ec2 extends PolicyStatement {
    * - .toConfirmProductInstance()
    * - .toCreateImage()
    * - .toCreateInstanceExportTask()
+   * - .toCreateReplaceRootVolumeTask()
    * - .toCreateRoute()
    * - .toCreateSnapshots()
    * - .toCreateTags()
@@ -8579,6 +8688,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateImage()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
+   * - .toCreateRestoreImageTask()
    * - .toCreateTags()
    * - .toDeleteFpgaImage()
    * - .toDeleteTags()
@@ -8701,12 +8811,15 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInterface()
    * - .toCreateNetworkInterfacePermission()
    * - .toCreatePlacementGroup()
+   * - .toCreateReplaceRootVolumeTask()
    * - .toCreateReservedInstancesListing()
+   * - .toCreateRestoreImageTask()
    * - .toCreateRoute()
    * - .toCreateRouteTable()
    * - .toCreateSecurityGroup()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
+   * - .toCreateStoreImageTask()
    * - .toCreateSubnet()
    * - .toCreateTags()
    * - .toCreateTrafficMirrorFilter()
@@ -8816,6 +8929,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetCapacityReservationUsage()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetFlowLogsIntegrationTemplate()
    * - .toGetGroupsForCapacityReservation()
    * - .toGetHostReservationPurchasePreview()
    * - .toGetLaunchTemplateData()
@@ -8957,6 +9071,7 @@ export class Ec2 extends PolicyStatement {
    * - network-interface
    * - placement-group
    * - prefix-list
+   * - replace-root-volume-task
    * - reserved-instances
    * - route-table
    * - security-group
@@ -9165,6 +9280,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkAclEntry()
    * - .toCreateNetworkInterface()
    * - .toCreateNetworkInterfacePermission()
+   * - .toCreateReplaceRootVolumeTask()
    * - .toCreateReservedInstancesListing()
    * - .toCreateRoute()
    * - .toCreateRouteTable()
@@ -9273,6 +9389,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetCapacityReservationUsage()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetFlowLogsIntegrationTemplate()
    * - .toGetGroupsForCapacityReservation()
    * - .toGetHostReservationPurchasePreview()
    * - .toGetLaunchTemplateData()
@@ -9412,6 +9529,7 @@ export class Ec2 extends PolicyStatement {
    * - network-interface
    * - placement-group
    * - prefix-list
+   * - replace-root-volume-task
    * - reserved-instances
    * - route-table
    * - security-group
@@ -9474,6 +9592,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInstanceExportTask()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
+   * - .toCreateReplaceRootVolumeTask()
+   * - .toCreateRestoreImageTask()
    * - .toCreateRoute()
    * - .toCreateSnapshots()
    * - .toCreateTags()
@@ -9629,6 +9749,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateFleet()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
+   * - .toCreateReplaceRootVolumeTask()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toCreateTags()
@@ -9684,6 +9805,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCopySnapshot()
+   * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toDeleteSnapshot()
    *
@@ -9772,6 +9894,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInstanceExportTask()
    * - .toCreateLocalGatewayRouteTableVpcAssociation()
    * - .toCreateNetworkAcl()
+   * - .toCreateReplaceRootVolumeTask()
    * - .toCreateReservedInstancesListing()
    * - .toCreateRoute()
    * - .toCreateRouteTable()
@@ -9883,6 +10006,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateFleet()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
+   * - .toCreateReplaceRootVolumeTask()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toCreateTags()

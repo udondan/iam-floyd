@@ -69,13 +69,16 @@ ec2:CreateNetworkInsightsPath;Write
 ec2:CreateNetworkInterface;Write
 ec2:CreateNetworkInterfacePermission;Permissions management
 ec2:CreatePlacementGroup;Write
+ec2:CreateReplaceRootVolumeTask;Write
 ec2:CreateReservedInstancesListing;Write
+ec2:CreateRestoreImageTask;Write
 ec2:CreateRoute;Write
 ec2:CreateRouteTable;Write
 ec2:CreateSecurityGroup;Write
 ec2:CreateSnapshot;Write
 ec2:CreateSnapshots;Write
 ec2:CreateSpotDatafeedSubscription;Write
+ec2:CreateStoreImageTask;Write
 ec2:CreateSubnet;Write
 ec2:CreateTags;Tagging
 ec2:CreateTrafficMirrorFilter;Write
@@ -231,6 +234,7 @@ ec2:DescribePrefixLists;List
 ec2:DescribePrincipalIdFormat;List
 ec2:DescribePublicIpv4Pools;List
 ec2:DescribeRegions;List
+ec2:DescribeReplaceRootVolumeTasks;List
 ec2:DescribeReservedInstances;List
 ec2:DescribeReservedInstancesListings;List
 ec2:DescribeReservedInstancesModifications;List
@@ -249,6 +253,7 @@ ec2:DescribeSpotFleetRequests;List
 ec2:DescribeSpotInstanceRequests;List
 ec2:DescribeSpotPriceHistory;List
 ec2:DescribeStaleSecurityGroups;List
+ec2:DescribeStoreImageTasks;List
 ec2:DescribeSubnets;List
 ec2:DescribeTags;Read
 ec2:DescribeTrafficMirrorFilters;List
@@ -321,6 +326,7 @@ ec2:GetConsoleScreenshot;Read
 ec2:GetDefaultCreditSpecification;Read
 ec2:GetEbsDefaultKmsKeyId;Read
 ec2:GetEbsEncryptionByDefault;Read
+ec2:GetFlowLogsIntegrationTemplate;Read
 ec2:GetGroupsForCapacityReservation;List
 ec2:GetHostReservationPurchasePreview;Read
 ec2:GetLaunchTemplateData;Read

@@ -224,6 +224,7 @@ chime:UpdateProxySession;Write
 chime:UpdateRoom;Write
 chime:UpdateRoomMembership;Write
 chime:UpdateSipMediaApplication;Write
+chime:UpdateSipMediaApplicationCall;Write
 chime:UpdateSipRule;Write
 chime:UpdateSupportedLicenses;Write
 chime:UpdateUser;Write

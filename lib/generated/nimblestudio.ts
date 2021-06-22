@@ -35,7 +35,7 @@ export class Nimble extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
-   * - ec2:CreateNetworkInterfacePermission
+   * - ec2:CreateNetworkInterface
    * - ec2:RunInstances
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-launch-profiles.html

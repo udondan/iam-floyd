@@ -2565,6 +2565,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an Amazon Chime SIP media application call under the administrator's AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateSipMediaApplicationCall.html
+   */
+  public toUpdateSipMediaApplicationCall() {
+    return this.to('UpdateSipMediaApplicationCall');
+  }
+
+  /**
    * Grants permission to update properties of Amazon Chime SIP rule under the administrator's AWS account
    *
    * Access Level: Write
@@ -2785,6 +2796,7 @@ export class Chime extends PolicyStatement {
       "UpdateRoom",
       "UpdateRoomMembership",
       "UpdateSipMediaApplication",
+      "UpdateSipMediaApplicationCall",
       "UpdateSipRule",
       "UpdateSupportedLicenses",
       "UpdateUser",
