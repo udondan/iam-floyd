@@ -10,7 +10,8 @@
                 "iot:Receive",
                 "iot:GetThingShadow",
                 "iot:UpdateThingShadow",
-                "iot:DeleteThingShadow"
+                "iot:DeleteThingShadow",
+                "iot:ListNamedShadowsForThing"
             ],
             "Resource": "*"
        }
