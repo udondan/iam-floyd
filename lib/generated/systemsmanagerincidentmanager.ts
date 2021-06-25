@@ -23,6 +23,9 @@ export class SsmIncidents extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_CreateReplicationSet.html
    */
   public toCreateReplicationSet() {

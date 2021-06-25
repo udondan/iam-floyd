@@ -378,6 +378,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a security score and counts of finding and control statuses for a security standard
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetControlFindingSummary.html
+   */
+  public toGetControlFindingSummary() {
+    return this.to('GetControlFindingSummary');
+  }
+
+  /**
    * Grants permission to retrieve a list of the standards that are enabled in Security Hub
    *
    * Access Level: List
@@ -507,6 +518,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toInviteMembers() {
     return this.to('InviteMembers');
+  }
+
+  /**
+   * Grants permission to retrieve a list of controls for a standard, including the control IDs, statuses and finding counts
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListControlEvaluationSummaries.html
+   */
+  public toListControlEvaluationSummaries() {
+    return this.to('ListControlEvaluationSummaries');
   }
 
   /**
@@ -719,6 +741,7 @@ export class Securityhub extends PolicyStatement {
       "DescribeStandardsControls",
       "GetAdhocInsightResults",
       "GetAdministratorAccount",
+      "GetControlFindingSummary",
       "GetFindings",
       "GetFreeTrialEndDate",
       "GetFreeTrialUsage",
@@ -728,6 +751,7 @@ export class Securityhub extends PolicyStatement {
       "GetMasterAccount",
       "GetMembers",
       "GetUsage",
+      "ListControlEvaluationSummaries",
       "ListTagsForResource",
       "SendFindingEvents",
       "SendInsightEvents"

@@ -30,7 +30,7 @@ export class Cloudshell extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to connect to a CloudShell environment from the AWS Console
+   * Grants permissions to connect to a CloudShell environment from the AWS Management Console
    *
    * Access Level: Write
    *

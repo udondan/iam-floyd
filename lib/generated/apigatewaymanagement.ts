@@ -160,7 +160,7 @@ export class Apigateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAccount(region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/account/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/account';
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -174,9 +174,12 @@ export class Apigateway extends PolicyStatement {
    * @param apiKeyId - Identifier for the apiKeyId.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onApiKey(apiKeyId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/apikeys/${ApiKeyId}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apikeys/${ApiKeyId}';
     arn = arn.replace('${ApiKeyId}', apiKeyId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -190,9 +193,12 @@ export class Apigateway extends PolicyStatement {
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onApiKeys(region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/apikeys/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/apikeys';
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -213,9 +219,10 @@ export class Apigateway extends PolicyStatement {
    * - .ifRequestAuthorizerUri()
    * - .ifResourceAuthorizerType()
    * - .ifResourceAuthorizerUri()
+   * - .ifAwsResourceTag()
    */
   public onAuthorizer(restApiId: string, authorizerId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/authorizers/${AuthorizerId}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/authorizers/${AuthorizerId}';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${AuthorizerId}', authorizerId);
     arn = arn.replace('${Region}', region || '*');
@@ -235,9 +242,10 @@ export class Apigateway extends PolicyStatement {
    * Possible conditions:
    * - .ifRequestAuthorizerType()
    * - .ifRequestAuthorizerUri()
+   * - .ifAwsResourceTag()
    */
   public onAuthorizers(restApiId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/authorizers/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/authorizers';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -253,9 +261,12 @@ export class Apigateway extends PolicyStatement {
    * @param basePath - Identifier for the basePath.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onBasePathMapping(domainName: string, basePath: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/basepathmappings/${BasePath}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/basepathmappings/${BasePath}';
     arn = arn.replace('${DomainName}', domainName);
     arn = arn.replace('${BasePath}', basePath);
     arn = arn.replace('${Region}', region || '*');
@@ -271,9 +282,12 @@ export class Apigateway extends PolicyStatement {
    * @param domainName - Identifier for the domainName.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onBasePathMappings(domainName: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/basepathmappings/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/basepathmappings';
     arn = arn.replace('${DomainName}', domainName);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -288,9 +302,12 @@ export class Apigateway extends PolicyStatement {
    * @param clientCertificateId - Identifier for the clientCertificateId.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onClientCertificate(clientCertificateId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/clientcertificates/${ClientCertificateId}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/clientcertificates/${ClientCertificateId}';
     arn = arn.replace('${ClientCertificateId}', clientCertificateId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -304,9 +321,12 @@ export class Apigateway extends PolicyStatement {
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onClientCertificates(region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/clientcertificates/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/clientcertificates';
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -321,9 +341,12 @@ export class Apigateway extends PolicyStatement {
    * @param deploymentId - Identifier for the deploymentId.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDeployment(restApiId: string, deploymentId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/deployments/${DeploymentId}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/deployments/${DeploymentId}';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${DeploymentId}', deploymentId);
     arn = arn.replace('${Region}', region || '*');
@@ -344,7 +367,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifRequestStageName()
    */
   public onDeployments(restApiId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/deployments/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/deployments';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -360,9 +383,12 @@ export class Apigateway extends PolicyStatement {
    * @param documentationPartId - Identifier for the documentationPartId.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDocumentationPart(restApiId: string, documentationPartId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/parts/${DocumentationPartId}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/parts/${DocumentationPartId}';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${DocumentationPartId}', documentationPartId);
     arn = arn.replace('${Region}', region || '*');
@@ -378,9 +404,12 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDocumentationParts(restApiId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/parts/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/parts';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -398,7 +427,7 @@ export class Apigateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDocumentationVersion(restApiId: string, documentationVersionId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/versions/${DocumentationVersionId}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/versions/${DocumentationVersionId}';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${DocumentationVersionId}', documentationVersionId);
     arn = arn.replace('${Region}', region || '*');
@@ -416,7 +445,7 @@ export class Apigateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDocumentationVersions(restApiId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/versions/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/versions';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -441,9 +470,10 @@ export class Apigateway extends PolicyStatement {
    * - .ifResourceMtlsTrustStoreUri()
    * - .ifResourceMtlsTrustStoreVersion()
    * - .ifResourceSecurityPolicy()
+   * - .ifAwsResourceTag()
    */
   public onDomainName(domainName: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}';
     arn = arn.replace('${DomainName}', domainName);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -463,9 +493,10 @@ export class Apigateway extends PolicyStatement {
    * - .ifRequestMtlsTrustStoreUri()
    * - .ifRequestMtlsTrustStoreVersion()
    * - .ifRequestSecurityPolicy()
+   * - .ifAwsResourceTag()
    */
   public onDomainNames(region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/domainnames/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/domainnames';
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -480,9 +511,12 @@ export class Apigateway extends PolicyStatement {
    * @param responseType - Identifier for the responseType.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onGatewayResponse(restApiId: string, responseType: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/gatewayresponses/${ResponseType}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/gatewayresponses/${ResponseType}';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${ResponseType}', responseType);
     arn = arn.replace('${Region}', region || '*');
@@ -498,9 +532,12 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onGatewayResponses(restApiId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/gatewayresponses/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/gatewayresponses';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -517,9 +554,12 @@ export class Apigateway extends PolicyStatement {
    * @param httpMethodType - Identifier for the httpMethodType.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onIntegration(restApiId: string, resourceId: string, httpMethodType: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/integration/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/integration';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${HttpMethodType}', httpMethodType);
@@ -541,7 +581,7 @@ export class Apigateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onIntegrationResponse(restApiId: string, resourceId: string, httpMethodType: string, statusCode: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/integration/responses/${StatusCode}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/integration/responses/${StatusCode}';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${HttpMethodType}', httpMethodType);
@@ -567,9 +607,10 @@ export class Apigateway extends PolicyStatement {
    * - .ifRequestRouteAuthorizationType()
    * - .ifResourceApiKeyRequired()
    * - .ifResourceRouteAuthorizationType()
+   * - .ifAwsResourceTag()
    */
   public onMethod(restApiId: string, resourceId: string, httpMethodType: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${HttpMethodType}', httpMethodType);
@@ -591,7 +632,7 @@ export class Apigateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onMethodResponse(restApiId: string, resourceId: string, httpMethodType: string, statusCode: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/responses/${StatusCode}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/responses/${StatusCode}';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${HttpMethodType}', httpMethodType);
@@ -610,9 +651,12 @@ export class Apigateway extends PolicyStatement {
    * @param modelName - Identifier for the modelName.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onModel(restApiId: string, modelName: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/models/${ModelName}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/models/${ModelName}';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${ModelName}', modelName);
     arn = arn.replace('${Region}', region || '*');
@@ -628,9 +672,12 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onModels(restApiId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/models/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/models';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -648,7 +695,7 @@ export class Apigateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onRequestValidator(restApiId: string, requestValidatorId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/requestvalidators/${RequestValidatorId}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/requestvalidators/${RequestValidatorId}';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${RequestValidatorId}', requestValidatorId);
     arn = arn.replace('${Region}', region || '*');
@@ -666,7 +713,7 @@ export class Apigateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onRequestValidators(restApiId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/requestvalidators/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/requestvalidators';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -682,9 +729,12 @@ export class Apigateway extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onResource(restApiId: string, resourceId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Region}', region || '*');
@@ -700,9 +750,12 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onResources(restApiId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -733,9 +786,10 @@ export class Apigateway extends PolicyStatement {
    * - .ifResourceDisableExecuteApiEndpoint()
    * - .ifResourceEndpointType()
    * - .ifResourceRouteAuthorizationType()
+   * - .ifAwsResourceTag()
    */
   public onRestApi(restApiId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -758,9 +812,10 @@ export class Apigateway extends PolicyStatement {
    * - .ifRequestDisableExecuteApiEndpoint()
    * - .ifRequestEndpointType()
    * - .ifRequestRouteAuthorizationType()
+   * - .ifAwsResourceTag()
    */
   public onRestApis(region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis';
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -778,7 +833,7 @@ export class Apigateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSdk(restApiId: string, stageName: string, sdkType: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/stages/${StageName}/sdks/${SdkType}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/stages/${StageName}/sdks/${SdkType}';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${StageName}', stageName);
     arn = arn.replace('${SdkType}', sdkType);
@@ -802,9 +857,10 @@ export class Apigateway extends PolicyStatement {
    * - .ifRequestAccessLoggingFormat()
    * - .ifResourceAccessLoggingDestination()
    * - .ifResourceAccessLoggingFormat()
+   * - .ifAwsResourceTag()
    */
   public onStage(restApiId: string, stageName: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/stages/${StageName}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/stages/${StageName}';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${StageName}', stageName);
     arn = arn.replace('${Region}', region || '*');
@@ -824,9 +880,10 @@ export class Apigateway extends PolicyStatement {
    * Possible conditions:
    * - .ifRequestAccessLoggingDestination()
    * - .ifRequestAccessLoggingFormat()
+   * - .ifAwsResourceTag()
    */
   public onStages(restApiId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/stages/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/stages';
     arn = arn.replace('${RestApiId}', restApiId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -843,7 +900,7 @@ export class Apigateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTemplate(modelName: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/models/${ModelName}/template/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/restapis/models/${ModelName}/template';
     arn = arn.replace('${ModelName}', modelName);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -858,9 +915,12 @@ export class Apigateway extends PolicyStatement {
    * @param usagePlanId - Identifier for the usagePlanId.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onUsagePlan(usagePlanId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/usageplans/${UsagePlanId}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/usageplans/${UsagePlanId}';
     arn = arn.replace('${UsagePlanId}', usagePlanId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -874,9 +934,12 @@ export class Apigateway extends PolicyStatement {
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onUsagePlans(region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/usageplans/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/usageplans';
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -893,7 +956,7 @@ export class Apigateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onUsagePlanKey(usagePlanId: string, id: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/usageplans/${UsagePlanId}/keys/${Id}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/usageplans/${UsagePlanId}/keys/${Id}';
     arn = arn.replace('${UsagePlanId}', usagePlanId);
     arn = arn.replace('${Id}', id);
     arn = arn.replace('${Region}', region || '*');
@@ -911,7 +974,7 @@ export class Apigateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onUsagePlanKeys(usagePlanId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/usageplans/${UsagePlanId}/keys/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/usageplans/${UsagePlanId}/keys';
     arn = arn.replace('${UsagePlanId}', usagePlanId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -926,9 +989,12 @@ export class Apigateway extends PolicyStatement {
    * @param vpcLinkId - Identifier for the vpcLinkId.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onVpcLink(vpcLinkId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/vpclinks/${VpcLinkId}/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/vpclinks/${VpcLinkId}';
     arn = arn.replace('${VpcLinkId}', vpcLinkId);
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -942,9 +1008,12 @@ export class Apigateway extends PolicyStatement {
    *
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onVpcLinks(region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}::/vpclinks/';
+    var arn = 'arn:${Partition}:apigateway:${Region}::/vpclinks';
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

@@ -29,6 +29,7 @@ securityhub:EnableOrganizationAdminAccount;Write
 securityhub:EnableSecurityHub;Write
 securityhub:GetAdhocInsightResults;Read
 securityhub:GetAdministratorAccount;Read
+securityhub:GetControlFindingSummary;Read
 securityhub:GetEnabledStandards;List
 securityhub:GetFindings;Read
 securityhub:GetFreeTrialEndDate;Read
@@ -41,6 +42,7 @@ securityhub:GetMasterAccount;Read
 securityhub:GetMembers;Read
 securityhub:GetUsage;Read
 securityhub:InviteMembers;Write
+securityhub:ListControlEvaluationSummaries;Read
 securityhub:ListEnabledProductsForImport;List
 securityhub:ListInvitations;List
 securityhub:ListMembers;List

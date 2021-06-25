@@ -151,6 +151,7 @@ export { BackupStorage } from "./backupstorage";
 export { Batch } from "./batch";
 export { AwsPortal } from "./billing";
 export { Budgets } from "./budgetservice";
+export { Bugbust } from "./bugbust";
 export { Acm } from "./certificatemanager";
 export { AcmPca } from "./certificatemanagerprivatecertificateauthority";
 export { Chatbot } from "./chatbot";

@@ -133,6 +133,10 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateOpsItem.html
    */
   public toCreateOpsItem() {
@@ -1948,6 +1952,9 @@ export class Ssm extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onOpsitem(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:opsitem/${ResourceId}';
