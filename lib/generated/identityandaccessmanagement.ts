@@ -147,6 +147,10 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateInstanceProfile.html
    */
   public toCreateInstanceProfile() {
@@ -169,6 +173,10 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html
    */
   public toCreateOpenIDConnectProvider() {
@@ -179,6 +187,10 @@ export class Iam extends PolicyStatement {
    * Grants permission to create a new managed policy
    *
    * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html
    */
@@ -204,6 +216,8 @@ export class Iam extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifPermissionsBoundary()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html
    */
@@ -215,6 +229,10 @@ export class Iam extends PolicyStatement {
    * Grants permission to create an IAM resource that describes an identity provider (IdP) that supports SAML 2.0
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateSAMLProvider.html
    */
@@ -254,6 +272,8 @@ export class Iam extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifPermissionsBoundary()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html
    */
@@ -265,6 +285,10 @@ export class Iam extends PolicyStatement {
    * Grants permission to create a new virtual MFA device
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateVirtualMFADevice.html
    */
@@ -1482,6 +1506,10 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagInstanceProfile.html
    */
   public toTagInstanceProfile() {
@@ -1492,6 +1520,10 @@ export class Iam extends PolicyStatement {
    * Grants permission to add tags to a virtual mfa device
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagMFADevice.html
    */
@@ -1504,6 +1536,10 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagOpenIDConnectProvider.html
    */
   public toTagOpenIDConnectProvider() {
@@ -1514,6 +1550,10 @@ export class Iam extends PolicyStatement {
    * Grants permission to add tags to a managed policy
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagPolicy.html
    */
@@ -1526,6 +1566,10 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagRole.html
    */
   public toTagRole() {
@@ -1536,6 +1580,10 @@ export class Iam extends PolicyStatement {
    * Grants permission to add tags to a SAML Provider
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagSAMLProvider.html
    */
@@ -1548,6 +1596,10 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagServerCertificate.html
    */
   public toTagServerCertificate() {
@@ -1558,6 +1610,10 @@ export class Iam extends PolicyStatement {
    * Grants permission to add tags to an IAM user
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagUser.html
    */
@@ -1570,6 +1626,9 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagInstanceProfile.html
    */
   public toUntagInstanceProfile() {
@@ -1580,6 +1639,9 @@ export class Iam extends PolicyStatement {
    * Grants permission to remove the specified tags from the virtual mfa device
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagMFADevice.html
    */
@@ -1592,6 +1654,9 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagOpenIDConnectProvider.html
    */
   public toUntagOpenIDConnectProvider() {
@@ -1602,6 +1667,9 @@ export class Iam extends PolicyStatement {
    * Grants permission to remove the specified tags from the managed policy
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagPolicy.html
    */
@@ -1614,6 +1682,9 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagRole.html
    */
   public toUntagRole() {
@@ -1624,6 +1695,9 @@ export class Iam extends PolicyStatement {
    * Grants permission to remove the specified tags from the SAML Provider
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagSAMLProvider.html
    */
@@ -1636,6 +1710,9 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagServerCertificate.html
    */
   public toUntagServerCertificate() {
@@ -1646,6 +1723,9 @@ export class Iam extends PolicyStatement {
    * Grants permission to remove the specified tags from the user
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagUser.html
    */
@@ -1822,6 +1902,10 @@ export class Iam extends PolicyStatement {
    * Grants permission to upload a server certificate entity for the AWS account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadServerCertificate.html
    */
@@ -2090,6 +2174,9 @@ export class Iam extends PolicyStatement {
    * @param instanceProfileNameWithPath - Identifier for the instanceProfileNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onInstanceProfile(instanceProfileNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:instance-profile/${InstanceProfileNameWithPath}';
@@ -2107,6 +2194,9 @@ export class Iam extends PolicyStatement {
    * @param mfaTokenIdWithPath - Identifier for the mfaTokenIdWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onMfa(mfaTokenIdWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:mfa/${MfaTokenIdWithPath}';
@@ -2124,6 +2214,9 @@ export class Iam extends PolicyStatement {
    * @param oidcProviderName - Identifier for the oidcProviderName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onOidcProvider(oidcProviderName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:oidc-provider/${OidcProviderName}';
@@ -2141,6 +2234,9 @@ export class Iam extends PolicyStatement {
    * @param policyNameWithPath - Identifier for the policyNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onPolicy(policyNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:policy/${PolicyNameWithPath}';
@@ -2160,6 +2256,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
@@ -2178,6 +2275,9 @@ export class Iam extends PolicyStatement {
    * @param samlProviderName - Identifier for the samlProviderName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onSamlProvider(samlProviderName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:saml-provider/${SamlProviderName}';
@@ -2195,6 +2295,9 @@ export class Iam extends PolicyStatement {
    * @param certificateNameWithPath - Identifier for the certificateNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onServerCertificate(certificateNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:server-certificate/${CertificateNameWithPath}';
@@ -2231,6 +2334,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
   public onUser(userNameWithPath: string, account?: string, partition?: string) {
