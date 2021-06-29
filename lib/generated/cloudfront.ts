@@ -89,6 +89,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * This action creates a CloudFront function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFunction.html
+   */
+  public toCreateFunction() {
+    return this.to('CreateFunction');
+  }
+
+  /**
    * This action creates a new invalidation batch request.
    *
    * Access Level: Write
@@ -236,6 +247,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * This action deletes a CloudFront function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteFunction.html
+   */
+  public toDeleteFunction() {
+    return this.to('DeleteFunction');
+  }
+
+  /**
    * This action deletes a key group
    *
    * Access Level: Write
@@ -299,6 +321,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toDeleteStreamingDistribution() {
     return this.to('DeleteStreamingDistribution');
+  }
+
+  /**
+   * This action gets a CloudFront function summary
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DescribeFunction.html
+   */
+  public toDescribeFunction() {
+    return this.to('DescribeFunction');
   }
 
   /**
@@ -409,6 +442,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toGetFieldLevelEncryptionProfileConfig() {
     return this.to('GetFieldLevelEncryptionProfileConfig');
+  }
+
+  /**
+   * This action gets a CloudFront function's code
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFunction.html
+   */
+  public toGetFunction() {
+    return this.to('GetFunction');
   }
 
   /**
@@ -643,6 +687,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * This action gets a list of CloudFront functions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListFunctions.html
+   */
+  public toListFunctions() {
+    return this.to('ListFunctions');
+  }
+
+  /**
    * List your invalidation batches.
    *
    * Access Level: List
@@ -720,6 +775,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * This action publishes a CloudFront function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_PublishFunction.html
+   */
+  public toPublishFunction() {
+    return this.to('PublishFunction');
+  }
+
+  /**
    * Add tags to a CloudFront resource.
    *
    * Access Level: Tagging
@@ -732,6 +798,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toTagResource() {
     return this.to('TagResource');
+  }
+
+  /**
+   * This action tests a CloudFront function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TestFunction.html
+   */
+  public toTestFunction() {
+    return this.to('TestFunction');
   }
 
   /**
@@ -804,6 +881,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * This action updates a CloudFront function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateFunction.html
+   */
+  public toUpdateFunction() {
+    return this.to('UpdateFunction');
+  }
+
+  /**
    * This action updates a key group
    *
    * Access Level: Write
@@ -865,6 +953,7 @@ export class Cloudfront extends PolicyStatement {
       "CreateDistribution",
       "CreateFieldLevelEncryptionConfig",
       "CreateFieldLevelEncryptionProfile",
+      "CreateFunction",
       "CreateInvalidation",
       "CreateKeyGroup",
       "CreateMonitoringSubscription",
@@ -877,17 +966,21 @@ export class Cloudfront extends PolicyStatement {
       "DeleteDistribution",
       "DeleteFieldLevelEncryptionConfig",
       "DeleteFieldLevelEncryptionProfile",
+      "DeleteFunction",
       "DeleteKeyGroup",
       "DeleteMonitoringSubscription",
       "DeleteOriginRequestPolicy",
       "DeletePublicKey",
       "DeleteRealtimeLogConfig",
       "DeleteStreamingDistribution",
+      "PublishFunction",
+      "TestFunction",
       "UpdateCachePolicy",
       "UpdateCloudFrontOriginAccessIdentity",
       "UpdateDistribution",
       "UpdateFieldLevelEncryptionConfig",
       "UpdateFieldLevelEncryptionProfile",
+      "UpdateFunction",
       "UpdateKeyGroup",
       "UpdateOriginRequestPolicy",
       "UpdatePublicKey",
@@ -901,6 +994,7 @@ export class Cloudfront extends PolicyStatement {
       "UntagResource"
     ],
     "Read": [
+      "DescribeFunction",
       "GetCachePolicy",
       "GetCachePolicyConfig",
       "GetCloudFrontOriginAccessIdentity",
@@ -911,6 +1005,7 @@ export class Cloudfront extends PolicyStatement {
       "GetFieldLevelEncryptionConfig",
       "GetFieldLevelEncryptionProfile",
       "GetFieldLevelEncryptionProfileConfig",
+      "GetFunction",
       "GetInvalidation",
       "GetKeyGroup",
       "GetKeyGroupConfig",
@@ -935,6 +1030,7 @@ export class Cloudfront extends PolicyStatement {
       "ListDistributionsByWebACLId",
       "ListFieldLevelEncryptionConfigs",
       "ListFieldLevelEncryptionProfiles",
+      "ListFunctions",
       "ListInvalidations",
       "ListKeyGroups",
       "ListOriginRequestPolicies",
@@ -1080,6 +1176,23 @@ export class Cloudfront extends PolicyStatement {
    */
   public onRealtimeLogConfig(name: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudfront::${Account}:realtime-log-config/${Name}';
+    arn = arn.replace('${Name}', name);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type function to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-functions.html
+   *
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onFunction(name: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudfront::${Account}:function/${Name}';
     arn = arn.replace('${Name}', name);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

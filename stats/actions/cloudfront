@@ -4,6 +4,7 @@ cloudfront:CreateDistribution;Write
 cloudfront:CreateDistributionWithTags;Tagging
 cloudfront:CreateFieldLevelEncryptionConfig;Write
 cloudfront:CreateFieldLevelEncryptionProfile;Write
+cloudfront:CreateFunction;Write
 cloudfront:CreateInvalidation;Write
 cloudfront:CreateKeyGroup;Write
 cloudfront:CreateMonitoringSubscription;Write
@@ -17,12 +18,14 @@ cloudfront:DeleteCloudFrontOriginAccessIdentity;Write
 cloudfront:DeleteDistribution;Write
 cloudfront:DeleteFieldLevelEncryptionConfig;Write
 cloudfront:DeleteFieldLevelEncryptionProfile;Write
+cloudfront:DeleteFunction;Write
 cloudfront:DeleteKeyGroup;Write
 cloudfront:DeleteMonitoringSubscription;Write
 cloudfront:DeleteOriginRequestPolicy;Write
 cloudfront:DeletePublicKey;Write
 cloudfront:DeleteRealtimeLogConfig;Write
 cloudfront:DeleteStreamingDistribution;Write
+cloudfront:DescribeFunction;Read
 cloudfront:GetCachePolicy;Read
 cloudfront:GetCachePolicyConfig;Read
 cloudfront:GetCloudFrontOriginAccessIdentity;Read
@@ -33,6 +36,7 @@ cloudfront:GetFieldLevelEncryption;Read
 cloudfront:GetFieldLevelEncryptionConfig;Read
 cloudfront:GetFieldLevelEncryptionProfile;Read
 cloudfront:GetFieldLevelEncryptionProfileConfig;Read
+cloudfront:GetFunction;Read
 cloudfront:GetInvalidation;Read
 cloudfront:GetKeyGroup;Read
 cloudfront:GetKeyGroupConfig;Read
@@ -54,6 +58,7 @@ cloudfront:ListDistributionsByRealtimeLogConfig;List
 cloudfront:ListDistributionsByWebACLId;List
 cloudfront:ListFieldLevelEncryptionConfigs;List
 cloudfront:ListFieldLevelEncryptionProfiles;List
+cloudfront:ListFunctions;List
 cloudfront:ListInvalidations;List
 cloudfront:ListKeyGroups;List
 cloudfront:ListOriginRequestPolicies;List
@@ -61,13 +66,16 @@ cloudfront:ListPublicKeys;List
 cloudfront:ListRealtimeLogConfigs;List
 cloudfront:ListStreamingDistributions;List
 cloudfront:ListTagsForResource;Read
+cloudfront:PublishFunction;Write
 cloudfront:TagResource;Tagging
+cloudfront:TestFunction;Write
 cloudfront:UntagResource;Tagging
 cloudfront:UpdateCachePolicy;Write
 cloudfront:UpdateCloudFrontOriginAccessIdentity;Write
 cloudfront:UpdateDistribution;Write
 cloudfront:UpdateFieldLevelEncryptionConfig;Write
 cloudfront:UpdateFieldLevelEncryptionProfile;Write
+cloudfront:UpdateFunction;Write
 cloudfront:UpdateKeyGroup;Write
 cloudfront:UpdateOriginRequestPolicy;Write
 cloudfront:UpdatePublicKey;Write

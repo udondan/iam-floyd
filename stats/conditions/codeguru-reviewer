@@ -1,1 +1,3 @@
+codeguru-reviewer:RequestTag/${TagKey}
 codeguru-reviewer:ResourceTag/${TagKey}
+codeguru-reviewer:TagKeys

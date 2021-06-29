@@ -23,6 +23,10 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
    * - codecommit:ListRepositories
    * - codecommit:TagResource
@@ -44,6 +48,9 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to create a code review
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - s3:GetObject
@@ -68,6 +75,9 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeCodeReview.html
    */
   public toDescribeCodeReview() {
@@ -78,6 +88,9 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to describe a recommendation feedback on a code review
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRecommendationFeedback.html
    */
@@ -90,6 +103,9 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html
    */
   public toDescribeRepositoryAssociation() {
@@ -100,6 +116,9 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to disassociate a repository with Amazon CodeGuru Reviewer
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - codecommit:UntagResource
@@ -137,6 +156,9 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRecommendationFeedback.html
    */
   public toListRecommendationFeedback() {
@@ -147,6 +169,9 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to list summary of recommendations on a code review
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRecommendations.html
    */
@@ -170,6 +195,9 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -190,6 +218,9 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_PutRecommendationFeedback.html
    */
   public toPutRecommendationFeedback() {
@@ -201,6 +232,9 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_TagResource.html
    */
   public toTagResource() {
@@ -211,6 +245,9 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to disassociate resource tags from an associated repository ARN
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_UnTagResource.html
    */
