@@ -30,7 +30,8 @@
                 "config:PutConfigRule",
                 "config:DeleteConfigRule",
                 "config:GetComplianceDetailsByConfigRule",
-                "config:DescribeConfigRuleEvaluationStatus"
+                "config:DescribeConfigRuleEvaluationStatus",
+                "config:PutEvaluations"
             ],
             "Resource": "arn:aws:config:*:*:config-rule/aws-service-rule/*securityhub*"
         }
