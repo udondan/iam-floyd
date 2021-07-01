@@ -60,6 +60,27 @@
         {
             "Effect": "Allow",
             "Action": [
+                "glue:GetDatabases"
+            ],
+            "Resource": [
+                "arn:aws:glue:*:*:catalog",
+                "arn:aws:glue:*:*:database/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "glue:CreateTable"
+            ],
+            "Resource": [
+                "arn:aws:glue:*:*:catalog",
+                "arn:aws:glue:*:*:database/*",
+                "arn:aws:glue:*:*:table/*/awsgluedatabrew*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
                 "s3:ListBucket",
                 "s3:GetObject"
             ],

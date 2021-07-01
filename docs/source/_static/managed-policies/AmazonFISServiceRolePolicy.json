@@ -30,7 +30,8 @@
 			"Sid": "CloudWatch",
 			"Effect": "Allow",
 			"Action": [
-				"cloudwatch:DescribeAlarms"
+				"cloudwatch:DescribeAlarms",
+				"cloudwatch:DescribeAlarmHistory"
 			],
 			"Resource": "*"
 		},
