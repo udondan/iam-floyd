@@ -1,3 +1,4 @@
+mediaconnect:AddFlowMediaStreams;Write
 mediaconnect:AddFlowOutputs;Write
 mediaconnect:AddFlowSources;Write
 mediaconnect:AddFlowVpcInterfaces;Write
@@ -13,6 +14,7 @@ mediaconnect:ListOfferings;List
 mediaconnect:ListReservations;List
 mediaconnect:ListTagsForResource;Read
 mediaconnect:PurchaseOffering;Write
+mediaconnect:RemoveFlowMediaStream;Write
 mediaconnect:RemoveFlowOutput;Write
 mediaconnect:RemoveFlowSource;Write
 mediaconnect:RemoveFlowVpcInterface;Write
@@ -23,5 +25,6 @@ mediaconnect:TagResource;Tagging
 mediaconnect:UntagResource;Tagging
 mediaconnect:UpdateFlow;Write
 mediaconnect:UpdateFlowEntitlement;Write
+mediaconnect:UpdateFlowMediaStream;Write
 mediaconnect:UpdateFlowOutput;Write
 mediaconnect:UpdateFlowSource;Write

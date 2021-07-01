@@ -19,7 +19,18 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add outputs to any flow.
+   * Grants permission to add media streams to any flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-mediastreams.html
+   */
+  public toAddFlowMediaStreams() {
+    return this.to('AddFlowMediaStreams');
+  }
+
+  /**
+   * Grants permission to add outputs to any flow
    *
    * Access Level: Write
    *
@@ -30,7 +41,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add sources to any flow.
+   * Grants permission to add sources to any flow
    *
    * Access Level: Write
    *
@@ -41,7 +52,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add VPC interfaces to any flow.
+   * Grants permission to add VPC interfaces to any flow
    *
    * Access Level: Write
    *
@@ -52,7 +63,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create flows.
+   * Grants permission to create flows
    *
    * Access Level: Write
    *
@@ -63,7 +74,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete flows.
+   * Grants permission to delete flows
    *
    * Access Level: Write
    *
@@ -74,7 +85,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to display the details of a flow including the flow ARN, name, and Availability Zone, as well as details about the source, outputs, and entitlements.
+   * Grants permission to display the details of a flow including the flow ARN, name, and Availability Zone, as well as details about the source, outputs, and entitlements
    *
    * Access Level: Read
    *
@@ -85,7 +96,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to display the details of an offering.
+   * Grants permission to display the details of an offering
    *
    * Access Level: Read
    *
@@ -96,7 +107,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to display the details of a reservation.
+   * Grants permission to display the details of a reservation
    *
    * Access Level: Read
    *
@@ -107,7 +118,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to grant entitlements on any flow.
+   * Grants permission to grant entitlements on any flow
    *
    * Access Level: Write
    *
@@ -118,7 +129,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to display a list of all entitlements that have been granted to the account.
+   * Grants permission to display a list of all entitlements that have been granted to the account
    *
    * Access Level: List
    *
@@ -129,7 +140,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to display a list of flows that are associated with this account.
+   * Grants permission to display a list of flows that are associated with this account
    *
    * Access Level: List
    *
@@ -140,7 +151,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to display a list of all offerings that are available to the account in the current AWS Region.
+   * Grants permission to display a list of all offerings that are available to the account in the current AWS Region
    *
    * Access Level: List
    *
@@ -151,7 +162,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to display a list of all reservations that have been purchased by the account in the current AWS Region.
+   * Grants permission to display a list of all reservations that have been purchased by the account in the current AWS Region
    *
    * Access Level: List
    *
@@ -162,7 +173,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to display a list of all tags associated with a resource.
+   * Grants permission to display a list of all tags associated with a resource
    *
    * Access Level: Read
    *
@@ -173,7 +184,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to purchase an offering.
+   * Grants permission to purchase an offering
    *
    * Access Level: Write
    *
@@ -184,7 +195,18 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove outputs from any flow.
+   * Grants permission to remove media streams from any flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-mediastreams-mediastreamname.html
+   */
+  public toRemoveFlowMediaStream() {
+    return this.to('RemoveFlowMediaStream');
+  }
+
+  /**
+   * Grants permission to remove outputs from any flow
    *
    * Access Level: Write
    *
@@ -195,7 +217,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove sources from any flow.
+   * Grants permission to remove sources from any flow
    *
    * Access Level: Write
    *
@@ -206,7 +228,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove VPC interfaces from any flow.
+   * Grants permission to remove VPC interfaces from any flow
    *
    * Access Level: Write
    *
@@ -217,7 +239,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to revoke entitlements on any flow.
+   * Grants permission to revoke entitlements on any flow
    *
    * Access Level: Write
    *
@@ -228,7 +250,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start flows.
+   * Grants permission to start flows
    *
    * Access Level: Write
    *
@@ -239,7 +261,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to stop flows.
+   * Grants permission to stop flows
    *
    * Access Level: Write
    *
@@ -250,7 +272,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate tags with resources.
+   * Grants permission to associate tags with resources
    *
    * Access Level: Tagging
    *
@@ -261,7 +283,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from resources.
+   * Grants permission to remove tags from resources
    *
    * Access Level: Tagging
    *
@@ -272,7 +294,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update flows.
+   * Grants permission to update flows
    *
    * Access Level: Write
    *
@@ -283,7 +305,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update entitlements on any flow.
+   * Grants permission to update entitlements on any flow
    *
    * Access Level: Write
    *
@@ -294,7 +316,18 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update outputs on any flow.
+   * Grants permission to update media streams on any flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-mediastreams-mediastreamname.html
+   */
+  public toUpdateFlowMediaStream() {
+    return this.to('UpdateFlowMediaStream');
+  }
+
+  /**
+   * Grants permission to update outputs on any flow
    *
    * Access Level: Write
    *
@@ -305,7 +338,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the source of any flow.
+   * Grants permission to update the source of any flow
    *
    * Access Level: Write
    *
@@ -317,6 +350,7 @@ export class Mediaconnect extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "AddFlowMediaStreams",
       "AddFlowOutputs",
       "AddFlowSources",
       "AddFlowVpcInterfaces",
@@ -324,6 +358,7 @@ export class Mediaconnect extends PolicyStatement {
       "DeleteFlow",
       "GrantFlowEntitlements",
       "PurchaseOffering",
+      "RemoveFlowMediaStream",
       "RemoveFlowOutput",
       "RemoveFlowSource",
       "RemoveFlowVpcInterface",
@@ -332,6 +367,7 @@ export class Mediaconnect extends PolicyStatement {
       "StopFlow",
       "UpdateFlow",
       "UpdateFlowEntitlement",
+      "UpdateFlowMediaStream",
       "UpdateFlowOutput",
       "UpdateFlowSource"
     ],
