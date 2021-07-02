@@ -18,6 +18,8 @@
 				"kms:DescribeKey",
 				"kms:ListAliases",
 				"lex:GetBots",
+				"lex:ListBots",
+                "lex:ListBotAliases",
 				"logs:CreateLogGroup",
 				"s3:GetBucketLocation",
 				"s3:ListAllMyBuckets",
