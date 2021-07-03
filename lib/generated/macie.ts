@@ -41,7 +41,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create and define the settings for a classification job
+   * Grants permission to create and define the settings for a sensitive data discovery job
    *
    * Access Level: Write
    *
@@ -97,7 +97,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate an account with an Amazon Macie master account
+   * Grants permission to associate an account with an Amazon Macie administrator account
    *
    * Access Level: Write
    *
@@ -167,7 +167,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the association between an Amazon Macie master account and an account
+   * Grants permission to delete the association between an Amazon Macie administrator account and an account
    *
    * Access Level: Write
    *
@@ -178,7 +178,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve statistical and other data about S3 buckets that Amazon Macie monitors and analyzes
+   * Grants permission to retrieve statistical data and other information about S3 buckets that Amazon Macie monitors and analyzes
    *
    * Access Level: Read
    *
@@ -189,7 +189,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about the status and settings for a classification job
+   * Grants permission to retrieve information about the status and settings for a sensitive data discovery job
    *
    * Access Level: Read
    *
@@ -222,7 +222,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disable an account as a delegated administrator of Amazon Macie for an AWS organization
+   * Grants permission to disable an account as the delegated Amazon Macie administrator account for an AWS organization
    *
    * Access Level: Write
    *
@@ -233,7 +233,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants an Amazon Macie member account with permission to disassociate from its administrator account
+   * Grants an Amazon Macie member account with permission to disassociate from its Macie administrator account
    *
    * Access Level: Write
    *
@@ -244,7 +244,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants an Amazon Macie member account with permission to disassociate from its master account
+   * (Deprecated) Grants an Amazon Macie member account with permission to disassociate from its Macie administrator account
    *
    * Access Level: Write
    *
@@ -255,7 +255,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants an Amazon Macie master account with permission to disassociate from a member account
+   * Grants an Amazon Macie administrator account with permission to disassociate from a Macie member account
    *
    * Access Level: Write
    *
@@ -277,7 +277,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable an account as a delegated administrator of Amazon Macie for an AWS organization
+   * Grants permission to enable an account as the delegated Amazon Macie administrator account for an AWS organization
    *
    * Access Level: Write
    *
@@ -310,7 +310,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the settings for exporting data classification results
+   * Grants permission to retrieve the settings for exporting sensitive data discovery results
    *
    * Access Level: Read
    *
@@ -343,7 +343,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about one or more findings
+   * Grants permission to retrieve the details of one or more findings
    *
    * Access Level: Read
    *
@@ -398,7 +398,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about the Amazon Macie master account for an account
+   * (Deprecated) Grants permission to retrieve information about the Amazon Macie administrator account for an account
    *
    * Access Level: Read
    *
@@ -409,7 +409,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about an account that's associated with an Amazon Macie master account
+   * Grants permission to retrieve information about an account that's associated with an Amazon Macie administrator account
    *
    * Access Level: Read
    *
@@ -442,7 +442,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about the status and settings for one or more classification jobs
+   * Grants permission to retrieve a subset of information about the status and settings for one or more sensitive data discovery jobs
    *
    * Access Level: List
    *
@@ -497,7 +497,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about all the accounts that are associated with an Amazon Macie master account
+   * Grants permission to retrieve information about the Amazon Macie member accounts that are associated with a Macie administrator account
    *
    * Access Level: List
    *
@@ -519,9 +519,9 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the tags for an Amazon Macie resource or member account
+   * Grants permission to retrieve the tags for an Amazon Macie resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/tags-resourcearn.html
    */
@@ -530,7 +530,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create or update the settings for exporting data classification results
+   * Grants permission to create or update the settings for storing sensitive data discovery results
    *
    * Access Level: Write
    *
@@ -552,7 +552,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve statistical and other information about AWS resources that Amazon Macie monitors and analyzes
+   * Grants permission to retrieve statistical data and other information about AWS resources that Amazon Macie monitors and analyzes
    *
    * Access Level: Read
    *
@@ -563,7 +563,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add or update the tags for an Amazon Macie resource or member account
+   * Grants permission to add or update the tags for an Amazon Macie resource
    *
    * Access Level: Tagging
    *
@@ -589,7 +589,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from an Amazon Macie resource or member account
+   * Grants permission to remove tags from an Amazon Macie resource
    *
    * Access Level: Tagging
    *
@@ -603,7 +603,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to cancel a classification job
+   * Grants permission to change the status of a sensitive data discovery job
    *
    * Access Level: Write
    *
@@ -644,7 +644,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants an Amazon Macie master account with permission to suspend or re-enable a member account
+   * Grants an Amazon Macie administrator account with permission to suspend or re-enable a Macie member account
    *
    * Access Level: Write
    *
@@ -714,6 +714,7 @@ export class Macie2 extends PolicyStatement {
       "GetMember",
       "GetUsageStatistics",
       "GetUsageTotals",
+      "ListTagsForResource",
       "SearchResources"
     ],
     "List": [
@@ -723,8 +724,7 @@ export class Macie2 extends PolicyStatement {
       "ListFindingsFilters",
       "ListInvitations",
       "ListMembers",
-      "ListOrganizationAdminAccounts",
-      "ListTagsForResource"
+      "ListOrganizationAdminAccounts"
     ],
     "Tagging": [
       "TagResource",

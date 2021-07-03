@@ -19,7 +19,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Attaches one or more EC2 instances to the specified Auto Scaling group.
+   * Grants permission to attach one or more EC2 instances to the specified Auto Scaling group
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Attaches one or more target groups to the specified Auto Scaling group.
+   * Grants permission to attach one or more target groups to the specified Auto Scaling group
    *
    * Access Level: Write
    *
@@ -44,7 +44,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Attaches one or more load balancers to the specified Auto Scaling group.
+   * Grants permission to attach one or more load balancers to the specified Auto Scaling group
    *
    * Access Level: Write
    *
@@ -58,7 +58,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified scheduled actions.
+   * Grants permission to delete the specified scheduled actions
    *
    * Access Level: Write
    *
@@ -69,7 +69,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Creates or updates multiple scheduled scaling actions for an Auto Scaling group.
+   * Grants permission to create or update multiple scheduled scaling actions for an Auto Scaling group
    *
    * Access Level: Write
    *
@@ -91,7 +91,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Completes the lifecycle action for the specified token or instance with the specified result.
+   * Grants permission to complete the lifecycle action for the specified token or instance with the specified result
    *
    * Access Level: Write
    *
@@ -102,9 +102,9 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Creates an Auto Scaling group with the specified name and attributes.
+   * Grants permission to create an Auto Scaling group with the specified name and attributes
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifInstanceTypes()
@@ -125,7 +125,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Creates a launch configuration.
+   * Grants permission to create a launch configuration
    *
    * Access Level: Write
    *
@@ -144,7 +144,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Creates or updates tags for the specified Auto Scaling group.
+   * Grants permission to create or update tags for the specified Auto Scaling group
    *
    * Access Level: Tagging
    *
@@ -159,7 +159,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified Auto Scaling group.
+   * Grants permission to delete the specified Auto Scaling group
    *
    * Access Level: Write
    *
@@ -170,7 +170,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified launch configuration.
+   * Grants permission to delete the specified launch configuration
    *
    * Access Level: Write
    *
@@ -181,7 +181,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified lifecycle hook.
+   * Grants permission to deletes the specified lifecycle hook
    *
    * Access Level: Write
    *
@@ -192,7 +192,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified notification.
+   * Grants permission to delete the specified notification
    *
    * Access Level: Write
    *
@@ -203,7 +203,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified Auto Scaling policy.
+   * Grants permission to delete the specified Auto Scaling policy
    *
    * Access Level: Write
    *
@@ -214,7 +214,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified scheduled action.
+   * Grants permission to delete the specified scheduled action
    *
    * Access Level: Write
    *
@@ -225,7 +225,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified tags.
+   * Grants permission to delete the specified tags
    *
    * Access Level: Tagging
    *
@@ -251,7 +251,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes the current Auto Scaling resource limits for your AWS account.
+   * Grants permission to describe the current Auto Scaling resource limits for your AWS account
    *
    * Access Level: List
    *
@@ -262,7 +262,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes the policy adjustment types for use with PutScalingPolicy.
+   * Grants permission to describe the policy adjustment types for use with PutScalingPolicy
    *
    * Access Level: List
    *
@@ -273,7 +273,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes one or more Auto Scaling groups. If a list of names is not provided, the call describes all Auto Scaling groups.
+   * Grants permission to describe one or more Auto Scaling groups. If a list of names is not provided, the call describes all Auto Scaling groups
    *
    * Access Level: List
    *
@@ -284,7 +284,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes one or more Auto Scaling instances. If a list is not provided, the call describes all instances.
+   * Grants permission to describe one or more Auto Scaling instances. If a list is not provided, the call describes all instances
    *
    * Access Level: List
    *
@@ -295,7 +295,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes the notification types that are supported by Auto Scaling.
+   * Grants permission to describe the notification types that are supported by Auto Scaling
    *
    * Access Level: List
    *
@@ -317,7 +317,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes one or more launch configurations. If you omit the list of names, then the call describes all launch configurations.
+   * Grants permission to describe one or more launch configurations. If you omit the list of names, then the call describes all launch configurations
    *
    * Access Level: List
    *
@@ -328,7 +328,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes the available types of lifecycle hooks.
+   * Grants permission to describe the available types of lifecycle hooks
    *
    * Access Level: List
    *
@@ -339,7 +339,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes the lifecycle hooks for the specified Auto Scaling group.
+   * Grants permission to describe the lifecycle hooks for the specified Auto Scaling group
    *
    * Access Level: List
    *
@@ -350,7 +350,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes the target groups for the specified Auto Scaling group.
+   * Grants permission to describe the target groups for the specified Auto Scaling group
    *
    * Access Level: List
    *
@@ -361,7 +361,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes the load balancers for the specified Auto Scaling group.
+   * Grants permission to describe the load balancers for the specified Auto Scaling group
    *
    * Access Level: List
    *
@@ -372,7 +372,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes the available CloudWatch metrics for Auto Scaling.
+   * Grants permission to describe the available CloudWatch metrics for Auto Scaling
    *
    * Access Level: List
    *
@@ -383,7 +383,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes the notification actions associated with the specified Auto Scaling group.
+   * Grants permission to describe the notification actions associated with the specified Auto Scaling group
    *
    * Access Level: List
    *
@@ -394,7 +394,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes the policies for the specified Auto Scaling group.
+   * Grants permission to describe the policies for the specified Auto Scaling group
    *
    * Access Level: List
    *
@@ -405,7 +405,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes one or more scaling activities for the specified Auto Scaling group.
+   * Grants permission to describe one or more scaling activities for the specified Auto Scaling group
    *
    * Access Level: List
    *
@@ -416,7 +416,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes the scaling process types for use with ResumeProcesses and SuspendProcesses.
+   * Grants permission to describe the scaling process types for use with ResumeProcesses and SuspendProcesses
    *
    * Access Level: List
    *
@@ -427,7 +427,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes the actions scheduled for your Auto Scaling group that haven't run.
+   * Grants permission to describe the actions scheduled for your Auto Scaling group that haven't run
    *
    * Access Level: List
    *
@@ -438,7 +438,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes the specified tags.
+   * Grants permission to describe the specified tags
    *
    * Access Level: Read
    *
@@ -449,7 +449,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Describes the termination policies supported by Auto Scaling.
+   * Grants permission to describe the termination policies supported by Auto Scaling
    *
    * Access Level: List
    *
@@ -471,7 +471,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Removes one or more instances from the specified Auto Scaling group.
+   * Grants permission to remove one or more instances from the specified Auto Scaling group
    *
    * Access Level: Write
    *
@@ -482,7 +482,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Detaches one or more target groups from the specified Auto Scaling group.
+   * Grants permission to detach one or more target groups from the specified Auto Scaling group
    *
    * Access Level: Write
    *
@@ -496,7 +496,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Removes one or more load balancers from the specified Auto Scaling group.
+   * Grants permission to remove one or more load balancers from the specified Auto Scaling group
    *
    * Access Level: Write
    *
@@ -510,7 +510,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Disables monitoring of the specified metrics for the specified Auto Scaling group.
+   * Grants permission to disable monitoring of the specified metrics for the specified Auto Scaling group
    *
    * Access Level: Write
    *
@@ -521,7 +521,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Enables monitoring of the specified metrics for the specified Auto Scaling group.
+   * Grants permission to enable monitoring of the specified metrics for the specified Auto Scaling group
    *
    * Access Level: Write
    *
@@ -532,7 +532,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Moves the specified instances into Standby mode.
+   * Grants permission to move the specified instances into Standby mode
    *
    * Access Level: Write
    *
@@ -543,7 +543,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Executes the specified policy.
+   * Grants permission to execute the specified policy
    *
    * Access Level: Write
    *
@@ -554,7 +554,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Moves the specified instances out of Standby mode.
+   * Grants permission to move the specified instances out of Standby mode
    *
    * Access Level: Write
    *
@@ -565,7 +565,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Creates or updates a lifecycle hook for the specified Auto Scaling Group.
+   * Grants permission to create or update a lifecycle hook for the specified Auto Scaling Group
    *
    * Access Level: Write
    *
@@ -576,7 +576,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Configures an Auto Scaling group to send notifications when specified events take place.
+   * Grants permission to configure an Auto Scaling group to send notifications when specified events take place
    *
    * Access Level: Write
    *
@@ -587,7 +587,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Creates or updates a policy for an Auto Scaling group.
+   * Grants permission to create or update a policy for an Auto Scaling group
    *
    * Access Level: Write
    *
@@ -598,7 +598,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Creates or updates a scheduled scaling action for an Auto Scaling group.
+   * Grants permission to create or update a scheduled scaling action for an Auto Scaling group
    *
    * Access Level: Write
    *
@@ -624,7 +624,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Records a heartbeat for the lifecycle action associated with the specified token or instance.
+   * Grants permission to record a heartbeat for the lifecycle action associated with the specified token or instance
    *
    * Access Level: Write
    *
@@ -635,7 +635,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Resumes the specified suspended Auto Scaling processes, or all suspended process, for the specified Auto Scaling group.
+   * Grants permission to resume the specified suspended Auto Scaling processes, or all suspended process, for the specified Auto Scaling group
    *
    * Access Level: Write
    *
@@ -646,7 +646,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Sets the size of the specified Auto Scaling group.
+   * Grants permission to set the size of the specified Auto Scaling group
    *
    * Access Level: Write
    *
@@ -657,7 +657,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Sets the health status of the specified instance.
+   * Grants permission to set the health status of the specified instance
    *
    * Access Level: Write
    *
@@ -668,7 +668,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Updates the instance protection settings of the specified instances.
+   * Grants permission to update the instance protection settings of the specified instances
    *
    * Access Level: Write
    *
@@ -690,7 +690,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Suspends the specified Auto Scaling processes, or all processes, for the specified Auto Scaling group.
+   * Grants permission to suspend the specified Auto Scaling processes, or all processes, for the specified Auto Scaling group
    *
    * Access Level: Write
    *
@@ -701,7 +701,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Terminates the specified instance and optionally adjusts the desired group size.
+   * Grants permission to terminate the specified instance and optionally adjust the desired group size
    *
    * Access Level: Write
    *
@@ -712,7 +712,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Updates the configuration for the specified Auto Scaling group.
+   * Grants permission to update the configuration for the specified Auto Scaling group
    *
    * Access Level: Write
    *
@@ -739,6 +739,7 @@ export class Autoscaling extends PolicyStatement {
       "BatchPutScheduledUpdateGroupAction",
       "CancelInstanceRefresh",
       "CompleteLifecycleAction",
+      "CreateAutoScalingGroup",
       "CreateLaunchConfiguration",
       "DeleteAutoScalingGroup",
       "DeleteLaunchConfiguration",
@@ -771,7 +772,6 @@ export class Autoscaling extends PolicyStatement {
       "UpdateAutoScalingGroup"
     ],
     "Tagging": [
-      "CreateAutoScalingGroup",
       "CreateOrUpdateTags",
       "DeleteTags"
     ],
@@ -848,7 +848,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * The AMI used to create the instance.
+   * Filters access based on the AMI used to create the instance
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -863,7 +863,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * The type of instance, in terms of the hardware resources available.
+   * Filters access based on the type of instance, in terms of the hardware resources available
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -878,7 +878,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * The types of instances, in terms of the hardware resources available.
+   * Filters access based on the types of instances, in terms of the hardware resources available
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -894,7 +894,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * The name of a launch configuration.
+   * Filters access based on the name of a launch configuration
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -910,7 +910,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Filters access by whether users can specify any version of a launch template or only the Latest or Default version
+   * Filters access based on whether users can specify any version of a launch template or only the Latest or Default version
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -925,7 +925,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * The name of the load balancer.
+   * Filters access based on the name of the load balancer
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -942,7 +942,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * The maximum scaling size.
+   * Filters access based on the maximum scaling size
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -959,7 +959,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Filters access by whether the HTTP endpoint is enabled for the instance metadata service.
+   * Filters access based on whether the HTTP endpoint is enabled for the instance metadata service
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -974,7 +974,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Filters access by the allowed number of hops when calling the instance metadata service.
+   * Filters access based on the allowed number of hops when calling the instance metadata service
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -989,7 +989,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Filters access by whether tokens are required when calling the instance metadata service (optional or required)
+   * Filters access based on whether tokens are required when calling the instance metadata service (optional or required)
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -1004,7 +1004,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * The minimum scaling size.
+   * Filters access based on the minimum scaling size
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -1021,7 +1021,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * The value of a tag attached to a resource.
+   * Filters access based on the value of a tag attached to a resource
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -1077,7 +1077,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * The spot price associated with an instance.
+   * Filters access based on the spot price associated with an instance
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -1092,7 +1092,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * The ARN of a target group.
+   * Filters access based on the ARN of a target group
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
@@ -1109,7 +1109,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * The identifier of a VPC zone.
+   * Filters access based on the identifier of a VPC zone
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *

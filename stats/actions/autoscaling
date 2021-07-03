@@ -5,7 +5,7 @@ autoscaling:BatchDeleteScheduledAction;Write
 autoscaling:BatchPutScheduledUpdateGroupAction;Write
 autoscaling:CancelInstanceRefresh;Write
 autoscaling:CompleteLifecycleAction;Write
-autoscaling:CreateAutoScalingGroup;Tagging
+autoscaling:CreateAutoScalingGroup;Write
 autoscaling:CreateLaunchConfiguration;Write
 autoscaling:CreateOrUpdateTags;Tagging
 autoscaling:DeleteAutoScalingGroup;Write

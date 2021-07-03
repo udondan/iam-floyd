@@ -42,7 +42,7 @@ macie2:ListFindingsFilters;List
 macie2:ListInvitations;List
 macie2:ListMembers;List
 macie2:ListOrganizationAdminAccounts;List
-macie2:ListTagsForResource;List
+macie2:ListTagsForResource;Read
 macie2:PutClassificationExportConfiguration;Write
 macie2:PutFindingsPublicationConfiguration;Write
 macie2:SearchResources;Read
