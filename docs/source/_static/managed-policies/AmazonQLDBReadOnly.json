@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Effect": "Allow",
       "Action": [
         "qldb:ListLedgers",
         "qldb:DescribeLedger",
@@ -13,10 +14,8 @@
         "qldb:GetBlock",
         "qldb:GetDigest",
         "qldb:GetRevision",
-        "qldb:GetBlock",
         "qldb:ListTagsForResource"
       ],
-      "Effect": "Allow",
       "Resource": "*"
     }
   ]
