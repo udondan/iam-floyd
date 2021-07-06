@@ -234,6 +234,16 @@
 			"Action": "ds:DescribeDirectories",
 			"Effect": "Allow",
 			"Resource": "*"
-		}
+		},
+		{
+            "Effect": "Allow",
+            "Action": "iam:CreateServiceLinkedRole",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "iam:AWSServiceName": "backup.amazonaws.com"
+                }
+            }
+        }
 	]
 }

@@ -159,6 +159,11 @@
             ],
             "Resource": "arn:aws:fsx:*:*:backup/*",
             "Effect": "Allow"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "dynamodb:DeleteBackup",
+            "Resource": "arn:aws:dynamodb:*:*:table/*/backup/*"
         }
     ]
 }
