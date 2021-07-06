@@ -134,9 +134,9 @@ function preparePackageJson() {
   jsonData.description += ' for AWS CDK';
   (jsonData.keywords as string[]).push('cdk', 'aws-cdk');
 
-  (jsonData.devDependencies as Packages)['@aws-cdk/aws-iam'] = '^1.30.0';
+  (jsonData.devDependencies as Packages)['aws-cdk-lib'] = '^2.0.0-rc.1';
   jsonData.peerDependencies = {
-    '@aws-cdk/aws-iam': '^1.30.0',
+    'aws-cdk-lib': '^2.0.0-rc.1',
   };
 
   var excludes = jsonData.jsii.excludeTypescript as string[];
