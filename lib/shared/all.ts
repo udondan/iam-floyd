@@ -1,5 +1,3 @@
-import { aws_iam as iam } from 'aws-cdk-lib';
-
 import { PolicyStatement } from './policy-statement';
 
 /**
