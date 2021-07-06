@@ -101,10 +101,9 @@ function fixModule(project: Project, file: string) {
   try {
     const sourceFile = project.addSourceFileAtPath(file);
     const classDeclaration = sourceFile!.getClasses()[0];
-
     sourceFile.addImportDeclaration({
-      namedImports: ['PolicyStatementProps'],
-      moduleSpecifier: '@aws-cdk/aws-iam',
+      namedImports: ['aws_iam as iam'],
+      moduleSpecifier: 'aws-cdk-lib',
     });
     const oldConstructor = classDeclaration.getConstructors()[0];
     const desc = oldConstructor.getJsDocs()[0].getDescription();
@@ -113,7 +112,7 @@ function fixModule(project: Project, file: string) {
     const constructor = classDeclaration.addConstructor({});
     constructor.addParameter({
       name: 'props',
-      type: 'PolicyStatementProps',
+      type: 'iam.PolicyStatementProps',
       hasQuestionToken: true,
     });
     constructor.setBodyText('super(props);');
