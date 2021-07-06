@@ -1,10 +1,12 @@
-import iam = require('@aws-cdk/aws-iam');
-import * as cdk from '@aws-cdk/core';
+import { Stack, StackProps } from 'aws-cdk-lib';
+import { aws_iam as iam } from 'aws-cdk-lib';
+import { Construct } from 'constructs';
 
 import * as statement from '../lib';
 
-export class TestStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+('aws-cdk-lib');
+export class TestStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     const policy = new iam.ManagedPolicy(this, 'Policy', {
