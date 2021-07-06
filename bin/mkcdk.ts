@@ -135,8 +135,10 @@ function preparePackageJson() {
   (jsonData.keywords as string[]).push('cdk', 'aws-cdk');
 
   (jsonData.devDependencies as Packages)['aws-cdk-lib'] = '^2.0.0-rc.1';
+  (jsonData.devDependencies as Packages)['constructs'] = '^10.0.0';
   jsonData.peerDependencies = {
     'aws-cdk-lib': '^2.0.0-rc.1',
+    constructs: '^10.0.0',
   };
 
   var excludes = jsonData.jsii.excludeTypescript as string[];
