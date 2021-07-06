@@ -1,10 +1,9 @@
-import { Stack, StackProps } from 'aws-cdk-lib';
+import { App, Stack, StackProps } from 'aws-cdk-lib';
 import { aws_iam as iam } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
 import * as statement from '../lib';
 
-('aws-cdk-lib');
 export class TestStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
@@ -47,7 +46,7 @@ export class TestStack extends Stack {
   }
 }
 
-const app = new cdk.App();
+const app = new App();
 new TestStack(app, 'IAM-Floyd-Test', {
   env: {
     account: process.env.CDK_DEFAULT_ACCOUNT,
