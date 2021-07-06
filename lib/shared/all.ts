@@ -9,8 +9,9 @@ export class All extends PolicyStatement {
    *
    * Use this provider to globally allow/deny actions, based on global conditions.
    *
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor(props?: iam.PolicyStatementProps) {
-    super(props);
+  constructor(sid?: string) {
+    super(sid);
   }
 }

@@ -8,8 +8,8 @@
     "package": "jsii-pacmak",
     "test": "npx ts-node test/main.ts"
   },
-  "name": "iam-floyd",
-  "description": "AWS IAM policy statement generator with fluent interface",
+  "name": "cdk-iam-floyd",
+  "description": "AWS IAM policy statement generator with fluent interface for AWS CDK",
   "version": "0.0.0",
   "license": "Apache-2.0",
   "author": {
@@ -32,7 +32,9 @@
     "aws",
     "iam",
     "policy",
-    "iam-floyd"
+    "iam-floyd",
+    "cdk",
+    "aws-cdk"
   ],
   "stability": "experimental",
   "main": "lib/index.js",
@@ -43,24 +45,23 @@
       "bin/*",
       "lib/generator/*",
       "test/*",
-      "**/*CDK*",
       "examples/*",
       "twitter/*"
     ],
     "targets": {
       "python": {
-        "distName": "iam-floyd",
-        "module": "iam_floyd"
+        "distName": "cdk-iam-floyd",
+        "module": "cdk_iam_floyd"
       },
       "dotnet": {
-        "namespace": "IAM.Floyd",
-        "packageId": "IAM.Floyd"
+        "namespace": "CDK.IAM.Floyd",
+        "packageId": "CDK.IAM.Floyd"
       },
       "java": {
-        "package": "com.udondan.iamFloyd",
+        "package": "com.udondan.iamFloyd.cdk",
         "maven": {
           "groupId": "com.udondan",
-          "artifactId": "iam-floyd"
+          "artifactId": "cdk-iam-floyd"
         }
       }
     }
@@ -84,7 +85,9 @@
     "ts-morph": "^11.0.0",
     "ts-node": "^10.0.0",
     "twit": "^2.2.11",
-    "typescript": "~4.3.2"
+    "typescript": "~4.3.2",
+    "aws-cdk-lib": "^2.0.0-rc.1",
+    "constructs": "^10.0.0"
   },
   "dependencies": {
     "@udondan/common-substrings": "^3.0.2",
@@ -93,5 +96,9 @@
   "bundleDependencies": [
     "@udondan/common-substrings",
     "regex-parser"
-  ]
+  ],
+  "peerDependencies": {
+    "aws-cdk-lib": "^2.0.0-rc.1",
+    "constructs": "^10.0.0"
+  }
 }
