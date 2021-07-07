@@ -3254,6 +3254,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel the deprecation of the specified AMI
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableImageDeprecation.html
+   */
+  public toDisableImageDeprecation() {
+    return this.to('DisableImageDeprecation');
+  }
+
+  /**
    * Grants permission to disable access to the EC2 serial console of all instances for your account
    *
    * Access Level: Write
@@ -3427,6 +3438,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toEnableFastSnapshotRestores() {
     return this.to('EnableFastSnapshotRestores');
+  }
+
+  /**
+   * Grants permission to enable deprecation of the specified AMI at the specified date and time.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableImageDeprecation.html
+   */
+  public toEnableImageDeprecation() {
+    return this.to('EnableImageDeprecation');
   }
 
   /**
@@ -5141,6 +5163,7 @@ export class Ec2 extends PolicyStatement {
       "DetachVpnGateway",
       "DisableEbsEncryptionByDefault",
       "DisableFastSnapshotRestores",
+      "DisableImageDeprecation",
       "DisableSerialConsoleAccess",
       "DisableTransitGatewayRouteTablePropagation",
       "DisableVgwRoutePropagation",
@@ -5157,6 +5180,7 @@ export class Ec2 extends PolicyStatement {
       "DisassociateVpcCidrBlock",
       "EnableEbsEncryptionByDefault",
       "EnableFastSnapshotRestores",
+      "EnableImageDeprecation",
       "EnableSerialConsoleAccess",
       "EnableTransitGatewayRouteTablePropagation",
       "EnableVgwRoutePropagation",
@@ -7882,6 +7906,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteTags()
    * - .toDeregisterImage()
+   * - .toDisableImageDeprecation()
+   * - .toEnableImageDeprecation()
    * - .toExportImage()
    * - .toImportImage()
    * - .toModifyFleet()
@@ -8218,13 +8244,14 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateSnapshots()
    * - .toCreateStoreImageTask()
    * - .toCreateTags()
-   * - .toCreateVolume()
    * - .toDeleteFpgaImage()
    * - .toDeleteSnapshot()
    * - .toDeleteTags()
    * - .toDeregisterImage()
    * - .toDisableFastSnapshotRestores()
+   * - .toDisableImageDeprecation()
    * - .toEnableFastSnapshotRestores()
+   * - .toEnableImageDeprecation()
    * - .toExportImage()
    * - .toImportImage()
    * - .toImportSnapshot()
@@ -8294,7 +8321,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toCreateTags()
-   * - .toCreateVolume()
    * - .toDeleteSnapshot()
    * - .toDeleteTags()
    * - .toDisableFastSnapshotRestores()
@@ -8693,6 +8719,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteFpgaImage()
    * - .toDeleteTags()
    * - .toDeregisterImage()
+   * - .toDisableImageDeprecation()
+   * - .toEnableImageDeprecation()
    * - .toExportImage()
    * - .toImportImage()
    * - .toModifyFleet()
@@ -8904,6 +8932,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
    * - .toDisableFastSnapshotRestores()
+   * - .toDisableImageDeprecation()
    * - .toDisableTransitGatewayRouteTablePropagation()
    * - .toDisableVgwRoutePropagation()
    * - .toDisableVpcClassicLink()
@@ -8916,6 +8945,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateTransitGatewayMulticastDomain()
    * - .toDisassociateTransitGatewayRouteTable()
    * - .toEnableFastSnapshotRestores()
+   * - .toEnableImageDeprecation()
    * - .toEnableTransitGatewayRouteTablePropagation()
    * - .toEnableVgwRoutePropagation()
    * - .toEnableVolumeIO()
@@ -9298,7 +9328,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGatewayRoute()
    * - .toCreateTransitGatewayRouteTable()
    * - .toCreateTransitGatewayVpcAttachment()
-   * - .toCreateVolume()
    * - .toCreateVpc()
    * - .toCreateVpcEndpoint()
    * - .toCreateVpcEndpointConnectionNotification()
@@ -9364,6 +9393,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
    * - .toDisableFastSnapshotRestores()
+   * - .toDisableImageDeprecation()
    * - .toDisableTransitGatewayRouteTablePropagation()
    * - .toDisableVgwRoutePropagation()
    * - .toDisableVpcClassicLink()
@@ -9376,6 +9406,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateTransitGatewayMulticastDomain()
    * - .toDisassociateTransitGatewayRouteTable()
    * - .toEnableFastSnapshotRestores()
+   * - .toEnableImageDeprecation()
    * - .toEnableTransitGatewayRouteTablePropagation()
    * - .toEnableVgwRoutePropagation()
    * - .toEnableVolumeIO()
@@ -9602,8 +9633,10 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableImageDeprecation()
    * - .toDisassociateAddress()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableImageDeprecation()
    * - .toExportImage()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
@@ -9753,7 +9786,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toCreateTags()
-   * - .toCreateVolume()
    * - .toDeleteSnapshot()
    * - .toDeleteTags()
    * - .toDisableFastSnapshotRestores()
@@ -9903,7 +9935,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateSubnet()
    * - .toCreateTags()
    * - .toCreateTransitGatewayVpcAttachment()
-   * - .toCreateVpc()
    * - .toCreateVpcEndpoint()
    * - .toCreateVpcPeeringConnection()
    * - .toDeleteCarrierGateway()
@@ -10133,7 +10164,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateRoute()
    * - .toCreateRouteTable()
-   * - .toCreateSecurityGroup()
    * - .toCreateSubnet()
    * - .toCreateTags()
    * - .toCreateTrafficMirrorSession()

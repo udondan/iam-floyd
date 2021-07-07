@@ -291,6 +291,7 @@ ec2:DetachVolume;Write
 ec2:DetachVpnGateway;Write
 ec2:DisableEbsEncryptionByDefault;Write
 ec2:DisableFastSnapshotRestores;Write
+ec2:DisableImageDeprecation;Write
 ec2:DisableSerialConsoleAccess;Write
 ec2:DisableTransitGatewayRouteTablePropagation;Write
 ec2:DisableVgwRoutePropagation;Write
@@ -307,6 +308,7 @@ ec2:DisassociateTransitGatewayRouteTable;Write
 ec2:DisassociateVpcCidrBlock;Write
 ec2:EnableEbsEncryptionByDefault;Write
 ec2:EnableFastSnapshotRestores;Write
+ec2:EnableImageDeprecation;Write
 ec2:EnableSerialConsoleAccess;Write
 ec2:EnableTransitGatewayRouteTablePropagation;Write
 ec2:EnableVgwRoutePropagation;Write
