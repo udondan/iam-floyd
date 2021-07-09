@@ -390,6 +390,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a media capture pipeline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateMediaCapturePipeline.html
+   */
+  public toCreateMediaCapturePipeline() {
+    return this.to('CreateMediaCapturePipeline');
+  }
+
+  /**
    * Grants permission to create a new Amazon Chime SDK meeting in the specified media Region, with no initial attendees
    *
    * Access Level: Write
@@ -739,6 +750,17 @@ export class Chime extends PolicyStatement {
    */
   public toDeleteGroups() {
     return this.to('DeleteGroups');
+  }
+
+  /**
+   * Grants permission to delete a media capture pipeline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteMediaCapturePipeline.html
+   */
+  public toDeleteMediaCapturePipeline() {
+    return this.to('DeleteMediaCapturePipeline');
   }
 
   /**
@@ -1208,6 +1230,17 @@ export class Chime extends PolicyStatement {
    */
   public toGetGlobalSettings() {
     return this.to('GetGlobalSettings');
+  }
+
+  /**
+   * Grants permission to get an existing media capture pipeline
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetMediaCapturePipeline.html
+   */
+  public toGetMediaCapturePipeline() {
+    return this.to('GetMediaCapturePipeline');
   }
 
   /**
@@ -1771,6 +1804,17 @@ export class Chime extends PolicyStatement {
    */
   public toListGroups() {
     return this.to('ListGroups');
+  }
+
+  /**
+   * Grants permission to list media capture pipelines
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListMediaCapturePipelines.html
+   */
+  public toListMediaCapturePipelines() {
+    return this.to('ListMediaCapturePipelines');
   }
 
   /**
@@ -2697,6 +2741,7 @@ export class Chime extends PolicyStatement {
       "CreateChannelBan",
       "CreateChannelMembership",
       "CreateChannelModerator",
+      "CreateMediaCapturePipeline",
       "CreateMeeting",
       "CreateMeetingDialOut",
       "CreateMeetingWithAttendees",
@@ -2728,6 +2773,7 @@ export class Chime extends PolicyStatement {
       "DeleteDomain",
       "DeleteEventsConfiguration",
       "DeleteGroups",
+      "DeleteMediaCapturePipeline",
       "DeleteMeeting",
       "DeletePhoneNumber",
       "DeleteProxySession",
@@ -2828,6 +2874,7 @@ export class Chime extends PolicyStatement {
       "GetDomain",
       "GetEventsConfiguration",
       "GetGlobalSettings",
+      "GetMediaCapturePipeline",
       "GetMeeting",
       "GetMeetingDetail",
       "GetMessagingSessionEndpoint",
@@ -2880,6 +2927,7 @@ export class Chime extends PolicyStatement {
       "ListDirectories",
       "ListDomains",
       "ListGroups",
+      "ListMediaCapturePipelines",
       "ListMeetingEvents",
       "ListMeetingTags",
       "ListMeetings",

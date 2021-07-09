@@ -30,6 +30,7 @@ chime:CreateChannel;Write
 chime:CreateChannelBan;Write
 chime:CreateChannelMembership;Write
 chime:CreateChannelModerator;Write
+chime:CreateMediaCapturePipeline;Write
 chime:CreateMeeting;Write
 chime:CreateMeetingDialOut;Write
 chime:CreateMeetingWithAttendees;Write
@@ -61,6 +62,7 @@ chime:DeleteDelegate;Write
 chime:DeleteDomain;Write
 chime:DeleteEventsConfiguration;Write
 chime:DeleteGroups;Write
+chime:DeleteMediaCapturePipeline;Write
 chime:DeleteMeeting;Write
 chime:DeletePhoneNumber;Write
 chime:DeleteProxySession;Write
@@ -103,6 +105,7 @@ chime:GetChannelMessage;Read
 chime:GetDomain;Read
 chime:GetEventsConfiguration;Read
 chime:GetGlobalSettings;Read
+chime:GetMediaCapturePipeline;Read
 chime:GetMeeting;Read
 chime:GetMeetingDetail;Read
 chime:GetMessagingSessionEndpoint;Read
@@ -154,6 +157,7 @@ chime:ListDelegates;List
 chime:ListDirectories;List
 chime:ListDomains;List
 chime:ListGroups;List
+chime:ListMediaCapturePipelines;List
 chime:ListMeetingEvents;List
 chime:ListMeetingTags;List
 chime:ListMeetings;List
