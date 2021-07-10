@@ -1,6 +1,8 @@
 compute-optimizer:DescribeRecommendationExportJobs;List
 compute-optimizer:ExportAutoScalingGroupRecommendations;Write
+compute-optimizer:ExportEBSVolumeRecommendations;Write
 compute-optimizer:ExportEC2InstanceRecommendations;Write
+compute-optimizer:ExportLambdaFunctionRecommendations;Write
 compute-optimizer:GetAutoScalingGroupRecommendations;List
 compute-optimizer:GetEBSVolumeRecommendations;List
 compute-optimizer:GetEC2InstanceRecommendations;List

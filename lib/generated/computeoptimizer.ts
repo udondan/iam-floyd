@@ -45,6 +45,21 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to export EBS volume recommendations to S3 for the provided accounts
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - compute-optimizer:GetEBSVolumeRecommendations
+   * - ec2:DescribeVolumes
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportEBSVolumeRecommendations.html
+   */
+  public toExportEBSVolumeRecommendations() {
+    return this.to('ExportEBSVolumeRecommendations');
+  }
+
+  /**
    * Grants permission to export EC2 instance recommendations to S3 for the provided accounts
    *
    * Access Level: Write
@@ -57,6 +72,22 @@ export class ComputeOptimizer extends PolicyStatement {
    */
   public toExportEC2InstanceRecommendations() {
     return this.to('ExportEC2InstanceRecommendations');
+  }
+
+  /**
+   * Grants permission to export Lambda function recommendations to S3 for the provided accounts
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - compute-optimizer:GetLambdaFunctionRecommendations
+   * - lambda:ListFunctions
+   * - lambda:ListProvisionedConcurrencyConfigs
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportLambdaFunctionRecommendations.html
+   */
+  public toExportLambdaFunctionRecommendations() {
+    return this.to('ExportLambdaFunctionRecommendations');
   }
 
   /**
@@ -176,7 +207,9 @@ export class ComputeOptimizer extends PolicyStatement {
     ],
     "Write": [
       "ExportAutoScalingGroupRecommendations",
+      "ExportEBSVolumeRecommendations",
       "ExportEC2InstanceRecommendations",
+      "ExportLambdaFunctionRecommendations",
       "UpdateEnrollmentStatus"
     ]
   };

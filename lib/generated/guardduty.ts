@@ -514,7 +514,7 @@ export class Guardduty extends PolicyStatement {
   /**
    * Grants permission to retrieve a list of tags associated with a GuardDuty resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListTagsForResource.html
    */
@@ -558,7 +558,7 @@ export class Guardduty extends PolicyStatement {
   /**
    * Grants permission to add tags to a GuardDuty resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -584,7 +584,7 @@ export class Guardduty extends PolicyStatement {
   /**
    * Grants permission to remove tags from a GuardDuty resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
@@ -713,9 +713,7 @@ export class Guardduty extends PolicyStatement {
       "InviteMembers",
       "StartMonitoringMembers",
       "StopMonitoringMembers",
-      "TagResource",
       "UnarchiveFindings",
-      "UntagResource",
       "UpdateDetector",
       "UpdateFilter",
       "UpdateFindingsFeedback",
@@ -738,7 +736,8 @@ export class Guardduty extends PolicyStatement {
       "GetMemberDetectors",
       "GetMembers",
       "GetThreatIntelSet",
-      "GetUsageStatistics"
+      "GetUsageStatistics",
+      "ListTagsForResource"
     ],
     "List": [
       "ListDetectors",
@@ -749,8 +748,11 @@ export class Guardduty extends PolicyStatement {
       "ListMembers",
       "ListOrganizationAdminAccounts",
       "ListPublishingDestinations",
-      "ListTagsForResource",
       "ListThreatIntelSets"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 

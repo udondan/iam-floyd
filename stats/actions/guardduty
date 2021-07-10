@@ -41,13 +41,13 @@ guardduty:ListInvitations;List
 guardduty:ListMembers;List
 guardduty:ListOrganizationAdminAccounts;List
 guardduty:ListPublishingDestinations;List
-guardduty:ListTagsForResource;List
+guardduty:ListTagsForResource;Read
 guardduty:ListThreatIntelSets;List
 guardduty:StartMonitoringMembers;Write
 guardduty:StopMonitoringMembers;Write
-guardduty:TagResource;Write
+guardduty:TagResource;Tagging
 guardduty:UnarchiveFindings;Write
-guardduty:UntagResource;Write
+guardduty:UntagResource;Tagging
 guardduty:UpdateDetector;Write
 guardduty:UpdateFilter;Write
 guardduty:UpdateFindingsFeedback;Write
