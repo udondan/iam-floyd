@@ -42,6 +42,10 @@ There are two different package variants available:
 [![PyPI](https://img.shields.io/pypi/dm/cdk-iam-floyd?label=pypi&color=orange)](https://pypi.org/project/cdk-iam-floyd/)
 [![NuGet](https://img.shields.io/nuget/dt/CDK.IAM.Floyd?label=nuget&color=orange)](https://www.nuget.org/packages/CDK.IAM.Floyd/)
 
+  If you need compatibility with CDK v2, you can use:<br>
+  [![npm CDK v2](https://img.shields.io/badge/npm-0.207.1--pre.0-yellow)](https://www.npmjs.com/package/cdk-iam-floyd/v/0.207.1-pre.0)
+  [![PyPI CDK v2](https://img.shields.io/badge/pypi-0.207.1.dev0-yellow)](https://pypi.org/project/cdk-iam-floyd/0.207.1.dev0/)
+
 Find them all on [libraries.io].
 
 ---
