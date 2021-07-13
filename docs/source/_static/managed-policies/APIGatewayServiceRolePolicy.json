@@ -36,7 +36,8 @@
     {
       "Effect": "Allow",
       "Action": [
-        "acm:DescribeCertificate"
+        "acm:DescribeCertificate",
+        "acm:GetCertificate"
       ],
       "Resource": "arn:aws:acm:*:*:certificate/*"
     },
