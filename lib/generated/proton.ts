@@ -1,5 +1,5 @@
 import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [proton](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsproton.html).
@@ -19,6 +19,59 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reject an environment account connection request from another environment account.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_AcceptEnvironmentAccountConnection.html
+   */
+  public toAcceptEnvironmentAccountConnection() {
+    return this.to('AcceptEnvironmentAccountConnection');
+  }
+
+  /**
+   * Grants permission to cancel an environment deployment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifEnvironmentTemplate()
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_CancelEnvironmentDeployment.html
+   */
+  public toCancelEnvironmentDeployment() {
+    return this.to('CancelEnvironmentDeployment');
+  }
+
+  /**
+   * Grants permission to cancel a service instance deployment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceTemplate()
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_CancelServiceInstanceDeployment.html
+   */
+  public toCancelServiceInstanceDeployment() {
+    return this.to('CancelServiceInstanceDeployment');
+  }
+
+  /**
+   * Grants permission to cancel a service pipeline deployment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceTemplate()
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_CancelServicePipelineDeployment.html
+   */
+  public toCancelServicePipelineDeployment() {
+    return this.to('CancelServicePipelineDeployment');
+  }
+
+  /**
    * Grants permission to create an environment
    *
    * Access Level: Write
@@ -26,6 +79,7 @@ export class Proton extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifEnvironmentTemplate()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -34,6 +88,17 @@ export class Proton extends PolicyStatement {
    */
   public toCreateEnvironment() {
     return this.to('CreateEnvironment');
+  }
+
+  /**
+   * Grants permission to create an environment account connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironmentAccountConnection.html
+   */
+  public toCreateEnvironmentAccountConnection() {
+    return this.to('CreateEnvironmentAccountConnection');
   }
 
   /**
@@ -52,7 +117,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an environment template major version
+   * DEPRECATED - use CreateEnvironmentTemplateVersion instead
    *
    * Access Level: Write
    *
@@ -67,7 +132,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an environment template minor version
+   * DEPRECATED - use CreateEnvironmentTemplateVersion instead
    *
    * Access Level: Write
    *
@@ -82,6 +147,21 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an environment template version
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateEnvironmentTemplateVersion.html
+   */
+  public toCreateEnvironmentTemplateVersion() {
+    return this.to('CreateEnvironmentTemplateVersion');
+  }
+
+  /**
    * Grants permission to create a service
    *
    * Access Level: Write
@@ -89,6 +169,7 @@ export class Proton extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifServiceTemplate()
    *
    * Dependent actions:
    * - codestar-connections:PassConnection
@@ -115,7 +196,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a service template major version
+   * DEPRECATED - use CreateServiceTemplateVersion instead
    *
    * Access Level: Write
    *
@@ -130,7 +211,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a service template minor version
+   * DEPRECATED - use CreateServiceTemplateVersion instead
    *
    * Access Level: Write
    *
@@ -145,7 +226,22 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the account role settings
+   * Grants permission to create a service template version
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateServiceTemplateVersion.html
+   */
+  public toCreateServiceTemplateVersion() {
+    return this.to('CreateServiceTemplateVersion');
+  }
+
+  /**
+   * DEPRECATED - use UpdateAccountSettings instead
    *
    * Access Level: Write
    *
@@ -160,10 +256,24 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifEnvironmentTemplate()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteEnvironment.html
    */
   public toDeleteEnvironment() {
     return this.to('DeleteEnvironment');
+  }
+
+  /**
+   * Grants permission to delete an environment account connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteEnvironmentAccountConnection.html
+   */
+  public toDeleteEnvironmentAccountConnection() {
+    return this.to('DeleteEnvironmentAccountConnection');
   }
 
   /**
@@ -178,7 +288,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an environment template major version
+   * DEPRECATED - use DeleteEnvironmentTemplateVersion instead
    *
    * Access Level: Write
    *
@@ -189,7 +299,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an environment template minor version
+   * DEPRECATED - use DeleteEnvironmentTemplateVersion instead
    *
    * Access Level: Write
    *
@@ -200,9 +310,23 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an environment template version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteEnvironmentTemplateVersion.html
+   */
+  public toDeleteEnvironmentTemplateVersion() {
+    return this.to('DeleteEnvironmentTemplateVersion');
+  }
+
+  /**
    * Grants permission to delete a service
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceTemplate()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteService.html
    */
@@ -222,7 +346,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a service template major version
+   * DEPRECATED - use DeleteServiceTemplateVersion instead
    *
    * Access Level: Write
    *
@@ -233,7 +357,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a service template minor version
+   * DEPRECATED - use DeleteServiceTemplateVersion instead
    *
    * Access Level: Write
    *
@@ -244,7 +368,18 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the account role settings
+   * Grants permission to delete a service template version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_DeleteServiceTemplateVersion.html
+   */
+  public toDeleteServiceTemplateVersion() {
+    return this.to('DeleteServiceTemplateVersion');
+  }
+
+  /**
+   * DEPRECATED - use GetAccountSettings instead
    *
    * Access Level: Read
    *
@@ -252,6 +387,17 @@ export class Proton extends PolicyStatement {
    */
   public toGetAccountRoles() {
     return this.to('GetAccountRoles');
+  }
+
+  /**
+   * Grants permission to describe the account settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetAccountRoles.html
+   */
+  public toGetAccountSettings() {
+    return this.to('GetAccountSettings');
   }
 
   /**
@@ -266,6 +412,17 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an environment account connection
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetEnvironmentAccountConnection.html
+   */
+  public toGetEnvironmentAccountConnection() {
+    return this.to('GetEnvironmentAccountConnection');
+  }
+
+  /**
    * Grants permission to describe an environment template
    *
    * Access Level: Read
@@ -277,7 +434,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe an environment template major version
+   * DEPRECATED - use GetEnvironmentTemplateVersion instead
    *
    * Access Level: Read
    *
@@ -288,7 +445,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe an environment template minor version
+   * DEPRECATED - use GetEnvironmentTemplateVersion instead
    *
    * Access Level: Read
    *
@@ -296,6 +453,17 @@ export class Proton extends PolicyStatement {
    */
   public toGetEnvironmentTemplateMinorVersion() {
     return this.to('GetEnvironmentTemplateMinorVersion');
+  }
+
+  /**
+   * Grants permission to describe an environment template version
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetEnvironmentTemplateVersion.html
+   */
+  public toGetEnvironmentTemplateVersion() {
+    return this.to('GetEnvironmentTemplateVersion');
   }
 
   /**
@@ -332,7 +500,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a service template major version
+   * DEPRECATED - use GetServiceTemplateVersion instead
    *
    * Access Level: Read
    *
@@ -343,7 +511,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a service template minor version
+   * DEPRECATED - use GetServiceTemplateVersion instead
    *
    * Access Level: Read
    *
@@ -354,7 +522,29 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list environment template major versions
+   * Grants permission to describe a service template version
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_GetServiceTemplateVersion.html
+   */
+  public toGetServiceTemplateVersion() {
+    return this.to('GetServiceTemplateVersion');
+  }
+
+  /**
+   * Grants permission to list environment account connections
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListEnvironmentAccountConnections.html
+   */
+  public toListEnvironmentAccountConnections() {
+    return this.to('ListEnvironmentAccountConnections');
+  }
+
+  /**
+   * DEPRECATED - use ListEnvironmentTemplateVersions instead
    *
    * Access Level: List
    *
@@ -365,7 +555,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list environment template minor versions
+   * DEPRECATED - use ListEnvironmentTemplateVersions instead
    *
    * Access Level: List
    *
@@ -373,6 +563,17 @@ export class Proton extends PolicyStatement {
    */
   public toListEnvironmentTemplateMinorVersions() {
     return this.to('ListEnvironmentTemplateMinorVersions');
+  }
+
+  /**
+   * Grants permission to list environment template versions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListEnvironmentTemplateVersions.html
+   */
+  public toListEnvironmentTemplateVersions() {
+    return this.to('ListEnvironmentTemplateVersions');
   }
 
   /**
@@ -409,7 +610,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list service template major versions
+   * DEPRECATED - use ListServiceTemplateVersions instead
    *
    * Access Level: List
    *
@@ -420,7 +621,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list service template minor versions
+   * DEPRECATED - use ListServiceTemplateVersions instead
    *
    * Access Level: List
    *
@@ -428,6 +629,17 @@ export class Proton extends PolicyStatement {
    */
   public toListServiceTemplateMinorVersions() {
     return this.to('ListServiceTemplateMinorVersions');
+  }
+
+  /**
+   * Grants permission to list service template versions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListServiceTemplateVersions.html
+   */
+  public toListServiceTemplateVersions() {
+    return this.to('ListServiceTemplateVersions');
   }
 
   /**
@@ -464,6 +676,17 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reject an environment account connection request from another environment account.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_RejectEnvironmentAccountConnection.html
+   */
+  public toRejectEnvironmentAccountConnection() {
+    return this.to('RejectEnvironmentAccountConnection');
+  }
+
+  /**
    * Grants permissions to add tags to a resource
    *
    * Access Level: Tagging
@@ -493,7 +716,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the account role settings
+   * DEPRECATED - use UpdateAccountSettings instead
    *
    * Access Level: Write
    *
@@ -507,9 +730,26 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the account settings
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateAccountRoles.html
+   */
+  public toUpdateAccountSettings() {
+    return this.to('UpdateAccountSettings');
+  }
+
+  /**
    * Grants permission to update an environment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifEnvironmentTemplate()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -518,6 +758,17 @@ export class Proton extends PolicyStatement {
    */
   public toUpdateEnvironment() {
     return this.to('UpdateEnvironment');
+  }
+
+  /**
+   * Grants permission to update an environment account connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateEnvironmentAccountConnection.html
+   */
+  public toUpdateEnvironmentAccountConnection() {
+    return this.to('UpdateEnvironmentAccountConnection');
   }
 
   /**
@@ -532,7 +783,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an environment template major version
+   * DEPRECATED - use UpdateEnvironmentTemplateVersion instead
    *
    * Access Level: Write
    *
@@ -543,7 +794,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an environment template minor version
+   * DEPRECATED - use UpdateEnvironmentTemplateVersion instead
    *
    * Access Level: Write
    *
@@ -554,9 +805,23 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an environment template version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateEnvironmentTemplateVersion.html
+   */
+  public toUpdateEnvironmentTemplateVersion() {
+    return this.to('UpdateEnvironmentTemplateVersion');
+  }
+
+  /**
    * Grants permission to update a service
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceTemplate()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateService.html
    */
@@ -569,6 +834,9 @@ export class Proton extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifServiceTemplate()
+   *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateServiceInstance.html
    */
   public toUpdateServiceInstance() {
@@ -579,6 +847,9 @@ export class Proton extends PolicyStatement {
    * Grants permission to update a service pipeline
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceTemplate()
    *
    * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateServicePipeline.html
    */
@@ -598,7 +869,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a service template major version
+   * DEPRECATED - use UpdateServiceTemplateVersion instead
    *
    * Access Level: Write
    *
@@ -609,7 +880,7 @@ export class Proton extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a service template minor version
+   * DEPRECATED - use UpdateServiceTemplateVersion instead
    *
    * Access Level: Write
    *
@@ -619,58 +890,91 @@ export class Proton extends PolicyStatement {
     return this.to('UpdateServiceTemplateMinorVersion');
   }
 
+  /**
+   * Grants permission to update a service template version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_UpdateServiceTemplateVersion.html
+   */
+  public toUpdateServiceTemplateVersion() {
+    return this.to('UpdateServiceTemplateVersion');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "AcceptEnvironmentAccountConnection",
+      "CancelEnvironmentDeployment",
+      "CancelServiceInstanceDeployment",
+      "CancelServicePipelineDeployment",
       "CreateEnvironment",
+      "CreateEnvironmentAccountConnection",
       "CreateEnvironmentTemplate",
       "CreateEnvironmentTemplateMajorVersion",
       "CreateEnvironmentTemplateMinorVersion",
+      "CreateEnvironmentTemplateVersion",
       "CreateService",
       "CreateServiceTemplate",
       "CreateServiceTemplateMajorVersion",
       "CreateServiceTemplateMinorVersion",
+      "CreateServiceTemplateVersion",
       "DeleteAccountRoles",
       "DeleteEnvironment",
+      "DeleteEnvironmentAccountConnection",
       "DeleteEnvironmentTemplate",
       "DeleteEnvironmentTemplateMajorVersion",
       "DeleteEnvironmentTemplateMinorVersion",
+      "DeleteEnvironmentTemplateVersion",
       "DeleteService",
       "DeleteServiceTemplate",
       "DeleteServiceTemplateMajorVersion",
       "DeleteServiceTemplateMinorVersion",
+      "DeleteServiceTemplateVersion",
+      "RejectEnvironmentAccountConnection",
       "UpdateAccountRoles",
+      "UpdateAccountSettings",
       "UpdateEnvironment",
+      "UpdateEnvironmentAccountConnection",
       "UpdateEnvironmentTemplate",
       "UpdateEnvironmentTemplateMajorVersion",
       "UpdateEnvironmentTemplateMinorVersion",
+      "UpdateEnvironmentTemplateVersion",
       "UpdateService",
       "UpdateServiceInstance",
       "UpdateServicePipeline",
       "UpdateServiceTemplate",
       "UpdateServiceTemplateMajorVersion",
-      "UpdateServiceTemplateMinorVersion"
+      "UpdateServiceTemplateMinorVersion",
+      "UpdateServiceTemplateVersion"
     ],
     "Read": [
       "GetAccountRoles",
+      "GetAccountSettings",
       "GetEnvironment",
+      "GetEnvironmentAccountConnection",
       "GetEnvironmentTemplate",
       "GetEnvironmentTemplateMajorVersion",
       "GetEnvironmentTemplateMinorVersion",
+      "GetEnvironmentTemplateVersion",
       "GetService",
       "GetServiceInstance",
       "GetServiceTemplate",
       "GetServiceTemplateMajorVersion",
       "GetServiceTemplateMinorVersion",
+      "GetServiceTemplateVersion",
       "ListTagsForResource"
     ],
     "List": [
+      "ListEnvironmentAccountConnections",
       "ListEnvironmentTemplateMajorVersions",
       "ListEnvironmentTemplateMinorVersions",
+      "ListEnvironmentTemplateVersions",
       "ListEnvironmentTemplates",
       "ListEnvironments",
       "ListServiceInstances",
       "ListServiceTemplateMajorVersions",
       "ListServiceTemplateMinorVersions",
+      "ListServiceTemplateVersions",
       "ListServiceTemplates",
       "ListServices"
     ],
@@ -685,7 +989,7 @@ export class Proton extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html
    *
-   * @param templateName - Identifier for the templateName.
+   * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -693,9 +997,35 @@ export class Proton extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onEnvironmentTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment-template/${TemplateName}';
+  public onEnvironmentTemplate(name: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment-template/${Name}';
+    arn = arn.replace('${Name}', name);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type environment-template-version to the statement
+   *
+   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html
+   *
+   * @param templateName - Identifier for the templateName.
+   * @param majorVersion - Identifier for the majorVersion.
+   * @param minorVersion - Identifier for the minorVersion.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEnvironmentTemplateVersion(templateName: string, majorVersion: string, minorVersion: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment-template/${TemplateName}:${MajorVersion}.${MinorVersion}';
     arn = arn.replace('${TemplateName}', templateName);
+    arn = arn.replace('${MajorVersion}', majorVersion);
+    arn = arn.replace('${MinorVersion}', minorVersion);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -757,7 +1087,7 @@ export class Proton extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html
    *
-   * @param templateName - Identifier for the templateName.
+   * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -765,9 +1095,35 @@ export class Proton extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onServiceTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:service-template/${TemplateName}';
+  public onServiceTemplate(name: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:proton:${Region}:${Account}:service-template/${Name}';
+    arn = arn.replace('${Name}', name);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type service-template-version to the statement
+   *
+   * https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html
+   *
+   * @param templateName - Identifier for the templateName.
+   * @param majorVersion - Identifier for the majorVersion.
+   * @param minorVersion - Identifier for the minorVersion.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onServiceTemplateVersion(templateName: string, majorVersion: string, minorVersion: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:proton:${Region}:${Account}:service-template/${TemplateName}:${MajorVersion}.${MinorVersion}';
     arn = arn.replace('${TemplateName}', templateName);
+    arn = arn.replace('${MajorVersion}', majorVersion);
+    arn = arn.replace('${MinorVersion}', minorVersion);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -829,7 +1185,7 @@ export class Proton extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html
    *
-   * @param environmentName - Identifier for the environmentName.
+   * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -837,9 +1193,9 @@ export class Proton extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onEnvironment(environmentName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment/${EnvironmentName}';
-    arn = arn.replace('${EnvironmentName}', environmentName);
+  public onEnvironment(name: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment/${Name}';
+    arn = arn.replace('${Name}', name);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -851,7 +1207,7 @@ export class Proton extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html
    *
-   * @param serviceName - Identifier for the serviceName.
+   * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -859,9 +1215,9 @@ export class Proton extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onService(serviceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:service/${ServiceName}';
-    arn = arn.replace('${ServiceName}', serviceName);
+  public onService(name: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:proton:${Region}:${Account}:service/${Name}';
+    arn = arn.replace('${Name}', name);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -874,7 +1230,7 @@ export class Proton extends PolicyStatement {
    * https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html
    *
    * @param serviceName - Identifier for the serviceName.
-   * @param serviceInstanceName - Identifier for the serviceInstanceName.
+   * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -882,13 +1238,71 @@ export class Proton extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onServiceInstance(serviceName: string, serviceInstanceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:service/${ServiceName}/service-instance/${ServiceInstanceName}';
+  public onServiceInstance(serviceName: string, name: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:proton:${Region}:${Account}:service/${ServiceName}/service-instance/${Name}';
     arn = arn.replace('${ServiceName}', serviceName);
-    arn = arn.replace('${ServiceInstanceName}', serviceInstanceName);
+    arn = arn.replace('${Name}', name);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type environment-account-connection to the statement
+   *
+   * https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onEnvironmentAccountConnection(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment-account-connection/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on specified environment template related to resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
+   *
+   * Applies to actions:
+   * - .toCancelEnvironmentDeployment()
+   * - .toCreateEnvironment()
+   * - .toDeleteEnvironment()
+   * - .toUpdateEnvironment()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnvironmentTemplate(value: string | string[], operator?: Operator | string) {
+    return this.if(`EnvironmentTemplate`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on specified service template related to resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
+   *
+   * Applies to actions:
+   * - .toCancelServiceInstanceDeployment()
+   * - .toCancelServicePipelineDeployment()
+   * - .toCreateService()
+   * - .toDeleteService()
+   * - .toUpdateService()
+   * - .toUpdateServiceInstance()
+   * - .toUpdateServicePipeline()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifServiceTemplate(value: string | string[], operator?: Operator | string) {
+    return this.if(`ServiceTemplate`, value, operator || 'StringLike');
   }
 }

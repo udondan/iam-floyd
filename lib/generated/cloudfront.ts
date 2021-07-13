@@ -19,7 +19,18 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action adds a new cache policy to CloudFront.
+   * Grants permission to associate an alias to a CloudFront distribution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AssociateAlias.html
+   */
+  public toAssociateAlias() {
+    return this.to('AssociateAlias');
+  }
+
+  /**
+   * Grants permission to add a new cache policy to CloudFront
    *
    * Access Level: Write
    *
@@ -30,7 +41,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a new CloudFront origin access identity.
+   * Grants permission to create a new CloudFront origin access identity
    *
    * Access Level: Write
    *
@@ -41,7 +52,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a new web distribution.
+   * Grants permission to create a new web distribution
    *
    * Access Level: Write
    *
@@ -52,7 +63,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a new web distribution with tags.
+   * Grants permission to create a new web distribution with tags
    *
    * Access Level: Tagging
    *
@@ -67,7 +78,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a new field-level encryption configuration.
+   * Grants permission to create a new field-level encryption configuration
    *
    * Access Level: Write
    *
@@ -78,7 +89,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a field-level encryption profile.
+   * Grants permission to create a field-level encryption profile
    *
    * Access Level: Write
    *
@@ -89,7 +100,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a CloudFront function
+   * Grants permission to create a CloudFront function
    *
    * Access Level: Write
    *
@@ -100,7 +111,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a new invalidation batch request.
+   * Grants permission to create a new invalidation batch request
    *
    * Access Level: Write
    *
@@ -111,7 +122,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action adds a new key group to CloudFront
+   * Grants permission to add a new key group to CloudFront
    *
    * Access Level: Write
    *
@@ -122,7 +133,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action enables additional CloudWatch metrics for the specified CloudFront distribution. The additional metrics incur an additional cost
+   * Grants permission to enable additional CloudWatch metrics for the specified CloudFront distribution. The additional metrics incur an additional cost
    *
    * Access Level: Write
    *
@@ -133,7 +144,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action adds a new origin request policy to CloudFront.
+   * Grants permission to add a new origin request policy to CloudFront
    *
    * Access Level: Write
    *
@@ -144,7 +155,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action adds a new public key to CloudFront.
+   * Grants permission to add a new public key to CloudFront
    *
    * Access Level: Write
    *
@@ -155,7 +166,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a real-time log configuration
+   * Grants permission to create a real-time log configuration
    *
    * Access Level: Write
    *
@@ -166,7 +177,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a new RTMP distribution.
+   * Grants permission to create a new RTMP distribution
    *
    * Access Level: Write
    *
@@ -177,7 +188,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a new RTMP distribution with tags.
+   * Grants permission to create a new RTMP distribution with tags
    *
    * Access Level: Tagging
    *
@@ -192,7 +203,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes a cache policy.
+   * Grants permission to delete a cache policy
    *
    * Access Level: Write
    *
@@ -203,7 +214,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes a CloudFront origin access identity.
+   * Grants permission to delete a CloudFront origin access identity
    *
    * Access Level: Write
    *
@@ -214,7 +225,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes a web distribution.
+   * Grants permission to delete a web distribution
    *
    * Access Level: Write
    *
@@ -225,7 +236,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes a field-level encryption configuration.
+   * Grants permission to delete a field-level encryption configuration
    *
    * Access Level: Write
    *
@@ -236,7 +247,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes a field-level encryption profile.
+   * Grants permission to delete a field-level encryption profile
    *
    * Access Level: Write
    *
@@ -247,7 +258,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes a CloudFront function
+   * Grants permission to delete a CloudFront function
    *
    * Access Level: Write
    *
@@ -258,7 +269,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes a key group
+   * Grants permission to delete a key group
    *
    * Access Level: Write
    *
@@ -269,7 +280,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action disables additional CloudWatch metrics for the specified CloudFront distribution
+   * Grants permission to disable additional CloudWatch metrics for the specified CloudFront distribution
    *
    * Access Level: Write
    *
@@ -280,7 +291,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes an origin request policy.
+   * Grants permission to delete an origin request policy
    *
    * Access Level: Write
    *
@@ -291,7 +302,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes a public key from CloudFront.
+   * Grants permission to delete a public key from CloudFront
    *
    * Access Level: Write
    *
@@ -302,7 +313,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes a real-time log configuration
+   * Grants permission to delete a real-time log configuration
    *
    * Access Level: Write
    *
@@ -313,7 +324,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes an RTMP distribution.
+   * Grants permission to delete an RTMP distribution
    *
    * Access Level: Write
    *
@@ -324,7 +335,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action gets a CloudFront function summary
+   * Grants permission to get a CloudFront function summary
    *
    * Access Level: Read
    *
@@ -335,7 +346,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the cache policy
+   * Grants permission to get the cache policy
    *
    * Access Level: Read
    *
@@ -346,7 +357,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the cache policy configuration
+   * Grants permission to get the cache policy configuration
    *
    * Access Level: Read
    *
@@ -357,7 +368,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the information about a CloudFront origin access identity.
+   * Grants permission to get the information about a CloudFront origin access identity
    *
    * Access Level: Read
    *
@@ -368,7 +379,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the configuration information about a Cloudfront origin access identity.
+   * Grants permission to get the configuration information about a Cloudfront origin access identity
    *
    * Access Level: Read
    *
@@ -379,7 +390,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the information about a web distribution.
+   * Grants permission to get the information about a web distribution
    *
    * Access Level: Read
    *
@@ -390,7 +401,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the configuration information about a distribution.
+   * Grants permission to get the configuration information about a distribution
    *
    * Access Level: Read
    *
@@ -401,7 +412,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the field-level encryption configuration information.
+   * Grants permission to get the field-level encryption configuration information
    *
    * Access Level: Read
    *
@@ -412,7 +423,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the field-level encryption configuration information.
+   * Grants permission to get the field-level encryption configuration information
    *
    * Access Level: Read
    *
@@ -423,7 +434,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the field-level encryption configuration information.
+   * Grants permission to get the field-level encryption configuration information
    *
    * Access Level: Read
    *
@@ -434,7 +445,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the field-level encryption profile configuration information.
+   * Grants permission to get the field-level encryption profile configuration information
    *
    * Access Level: Read
    *
@@ -445,7 +456,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action gets a CloudFront function's code
+   * Grants permission to get a CloudFront function's code
    *
    * Access Level: Read
    *
@@ -456,7 +467,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the information about an invalidation.
+   * Grants permission to get the information about an invalidation
    *
    * Access Level: Read
    *
@@ -467,7 +478,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action gets a key group
+   * Grants permission to get a key group
    *
    * Access Level: Read
    *
@@ -478,7 +489,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action gets a key group configuration
+   * Grants permission to get a key group configuration
    *
    * Access Level: Read
    *
@@ -489,7 +500,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action gets information about whether additional CloudWatch metrics are enabled for the specified CloudFront distribution
+   * Grants permission to get information about whether additional CloudWatch metrics are enabled for the specified CloudFront distribution
    *
    * Access Level: Read
    *
@@ -500,7 +511,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the origin request policy
+   * Grants permission to get the origin request policy
    *
    * Access Level: Read
    *
@@ -511,7 +522,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the origin request policy configuration
+   * Grants permission to get the origin request policy configuration
    *
    * Access Level: Read
    *
@@ -522,7 +533,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the public key information.
+   * Grants permission to get the public key information
    *
    * Access Level: Read
    *
@@ -533,7 +544,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the public key configuration information.
+   * Grants permission to get the public key configuration information
    *
    * Access Level: Read
    *
@@ -544,7 +555,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action gets a real-time log configuration
+   * Grants permission to get a real-time log configuration
    *
    * Access Level: Read
    *
@@ -555,7 +566,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the information about an RTMP distribution.
+   * Grants permission to get the information about an RTMP distribution
    *
    * Access Level: Read
    *
@@ -566,7 +577,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the configuration information about a streaming distribution.
+   * Grants permission to get the configuration information about a streaming distribution
    *
    * Access Level: Read
    *
@@ -577,7 +588,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List all cache policies that have been created in CloudFront for this account.
+   * Grants permission to list all cache policies that have been created in CloudFront for this account
    *
    * Access Level: List
    *
@@ -588,7 +599,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List your CloudFront origin access identities.
+   * Grants permission to list your CloudFront origin access identities
    *
    * Access Level: List
    *
@@ -599,7 +610,18 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List the distributions associated with your AWS account.
+   * Grants permission to list all aliases that conflict with the given alias in CloudFront
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListConflictingAliases.html
+   */
+  public toListConflictingAliases() {
+    return this.to('ListConflictingAliases');
+  }
+
+  /**
+   * Grants permission to list the distributions associated with your AWS account
    *
    * Access Level: List
    *
@@ -610,7 +632,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List distribution IDs for distributions that have a cache behavior that's associated with the specified cache policy.
+   * Grants permission to list distribution IDs for distributions that have a cache behavior that's associated with the specified cache policy
    *
    * Access Level: List
    *
@@ -621,7 +643,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action lists distribution IDs for distributions that have a cache behavior that's associated with the specified key group
+   * Grants permission to list distribution IDs for distributions that have a cache behavior that's associated with the specified key group
    *
    * Access Level: List
    *
@@ -632,7 +654,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List distribution IDs for distributions that have a cache behavior that's associated with the specified origin request policy.
+   * Grants permission to list distribution IDs for distributions that have a cache behavior that's associated with the specified origin request policy
    *
    * Access Level: List
    *
@@ -643,7 +665,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action gets a list of distributions that have a cache behavior that’s associated with the specified real-time log configuration
+   * Grants permission to get a list of distributions that have a cache behavior that’s associated with the specified real-time log configuration
    *
    * Access Level: List
    *
@@ -654,7 +676,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List the distributions associated with your AWS account with given AWS WAF web ACL.
+   * Grants permission to list the distributions associated with your AWS account with given AWS WAF web ACL
    *
    * Access Level: List
    *
@@ -665,7 +687,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List all field-level encryption configurations that have been created in CloudFront for this account.
+   * Grants permission to list all field-level encryption configurations that have been created in CloudFront for this account
    *
    * Access Level: List
    *
@@ -676,7 +698,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List all field-level encryption profiles that have been created in CloudFront for this account.
+   * Grants permission to list all field-level encryption profiles that have been created in CloudFront for this account
    *
    * Access Level: List
    *
@@ -687,7 +709,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action gets a list of CloudFront functions
+   * Grants permission to get a list of CloudFront functions
    *
    * Access Level: List
    *
@@ -698,7 +720,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List your invalidation batches.
+   * Grants permission to list your invalidation batches
    *
    * Access Level: List
    *
@@ -709,7 +731,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action lists all key groups that have been created in CloudFront for this account
+   * Grants permission to list all key groups that have been created in CloudFront for this account
    *
    * Access Level: List
    *
@@ -720,7 +742,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List all origin request policies that have been created in CloudFront for this account.
+   * Grants permission to list all origin request policies that have been created in CloudFront for this account
    *
    * Access Level: List
    *
@@ -731,7 +753,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List all public keys that have been added to CloudFront for this account.
+   * Grants permission to list all public keys that have been added to CloudFront for this account
    *
    * Access Level: List
    *
@@ -742,7 +764,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action gets a list of real-time log configurations
+   * Grants permission to get a list of real-time log configurations
    *
    * Access Level: List
    *
@@ -753,7 +775,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List your RTMP distributions.
+   * Grants permission to list your RTMP distributions
    *
    * Access Level: List
    *
@@ -764,7 +786,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List tags for a CloudFront resource.
+   * Grants permission to list tags for a CloudFront resource
    *
    * Access Level: Read
    *
@@ -775,7 +797,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action publishes a CloudFront function
+   * Grants permission to publish a CloudFront function
    *
    * Access Level: Write
    *
@@ -786,7 +808,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Add tags to a CloudFront resource.
+   * Grants permission to add tags to a CloudFront resource
    *
    * Access Level: Tagging
    *
@@ -801,7 +823,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action tests a CloudFront function
+   * Grants permission to test a CloudFront function
    *
    * Access Level: Write
    *
@@ -812,7 +834,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Remove tags from a CloudFront resource.
+   * Grants permission to remove tags from a CloudFront resource
    *
    * Access Level: Tagging
    *
@@ -826,7 +848,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates a cache policy.
+   * Grants permission to update a cache policy
    *
    * Access Level: Write
    *
@@ -837,7 +859,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action sets the configuration for a CloudFront origin access identity.
+   * Grants permission to set the configuration for a CloudFront origin access identity
    *
    * Access Level: Write
    *
@@ -848,7 +870,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates the configuration for a web distribution.
+   * Grants permission to update the configuration for a web distribution
    *
    * Access Level: Write
    *
@@ -859,7 +881,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates a field-level encryption configuration.
+   * Grants permission to update a field-level encryption configuration
    *
    * Access Level: Write
    *
@@ -870,7 +892,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates a field-level encryption profile.
+   * Grants permission to update a field-level encryption profile
    *
    * Access Level: Write
    *
@@ -881,7 +903,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates a CloudFront function
+   * Grants permission to update a CloudFront function
    *
    * Access Level: Write
    *
@@ -892,7 +914,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates a key group
+   * Grants permission to update a key group
    *
    * Access Level: Write
    *
@@ -903,7 +925,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates an origin request policy.
+   * Grants permission to update an origin request policy
    *
    * Access Level: Write
    *
@@ -914,7 +936,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates public key information.
+   * Grants permission to update public key information
    *
    * Access Level: Write
    *
@@ -925,7 +947,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates a real-time log configuration
+   * Grants permission to update a real-time log configuration
    *
    * Access Level: Write
    *
@@ -936,7 +958,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates the configuration for an RTMP distribution.
+   * Grants permission to update the configuration for an RTMP distribution
    *
    * Access Level: Write
    *
@@ -948,6 +970,7 @@ export class Cloudfront extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "AssociateAlias",
       "CreateCachePolicy",
       "CreateCloudFrontOriginAccessIdentity",
       "CreateDistribution",
@@ -1022,6 +1045,7 @@ export class Cloudfront extends PolicyStatement {
     "List": [
       "ListCachePolicies",
       "ListCloudFrontOriginAccessIdentities",
+      "ListConflictingAliases",
       "ListDistributions",
       "ListDistributionsByCachePolicyId",
       "ListDistributionsByKeyGroup",

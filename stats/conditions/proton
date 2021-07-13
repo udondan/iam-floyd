@@ -1,3 +1,5 @@
+proton:EnvironmentTemplate
 proton:RequestTag/${TagKey}
 proton:ResourceTag/${TagKey}
+proton:ServiceTemplate
 proton:TagKeys
