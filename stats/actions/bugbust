@@ -1,14 +1,14 @@
 bugbust:CreateEvent;Write
 bugbust:EvaluateProfilingGroups;Write
 bugbust:GetEvent;Read
-bugbust:GetJoinEventStatus;Write
+bugbust:GetJoinEventStatus;Read
 bugbust:JoinEvent;Write
 bugbust:ListBugs;Read
 bugbust:ListEventParticipants;Read
 bugbust:ListEventScores;Read
 bugbust:ListEvents;List
 bugbust:ListProfilingGroups;Read
-bugbust:ListPullRequests;Write
+bugbust:ListPullRequests;Read
 bugbust:UpdateEvent;Write
 bugbust:UpdateWorkItem;Write
 bugbust:UpdateWorkItemAdmin;Write

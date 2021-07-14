@@ -23,7 +23,7 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toCreateEvent() {
     return this.to('CreateEvent');
@@ -34,7 +34,7 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toEvaluateProfilingGroups() {
     return this.to('EvaluateProfilingGroups');
@@ -45,7 +45,7 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toGetEvent() {
     return this.to('GetEvent');
@@ -54,9 +54,9 @@ export class Bugbust extends PolicyStatement {
   /**
    * Grants permission to view the status of a BugBust player's attempt to join a BugBust event
    *
-   * Access Level: Write
+   * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toGetJoinEventStatus() {
     return this.to('GetJoinEventStatus');
@@ -67,7 +67,7 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toJoinEvent() {
     return this.to('JoinEvent');
@@ -82,7 +82,7 @@ export class Bugbust extends PolicyStatement {
    * - codeguru-reviewer:DescribeCodeReview
    * - codeguru-reviewer:ListRecommendations
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toListBugs() {
     return this.to('ListBugs');
@@ -93,7 +93,7 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toListEventParticipants() {
     return this.to('ListEventParticipants');
@@ -104,7 +104,7 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toListEventScores() {
     return this.to('ListEventScores');
@@ -115,7 +115,7 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toListEvents() {
     return this.to('ListEvents');
@@ -126,7 +126,7 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toListProfilingGroups() {
     return this.to('ListProfilingGroups');
@@ -135,9 +135,9 @@ export class Bugbust extends PolicyStatement {
   /**
    * Grants permission to view the pull requests used by players to submit fixes to their claimed bugs in an event
    *
-   * Access Level: Write
+   * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toListPullRequests() {
     return this.to('ListPullRequests');
@@ -157,7 +157,7 @@ export class Bugbust extends PolicyStatement {
    * - codeguru-reviewer:TagResource
    * - codeguru-reviewer:UnTagResource
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toUpdateEvent() {
     return this.to('UpdateEvent');
@@ -168,7 +168,7 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toUpdateWorkItem() {
     return this.to('UpdateWorkItem');
@@ -179,7 +179,7 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toUpdateWorkItemAdmin() {
     return this.to('UpdateWorkItemAdmin');
@@ -189,19 +189,19 @@ export class Bugbust extends PolicyStatement {
     "Write": [
       "CreateEvent",
       "EvaluateProfilingGroups",
-      "GetJoinEventStatus",
       "JoinEvent",
-      "ListPullRequests",
       "UpdateEvent",
       "UpdateWorkItem",
       "UpdateWorkItemAdmin"
     ],
     "Read": [
       "GetEvent",
+      "GetJoinEventStatus",
       "ListBugs",
       "ListEventParticipants",
       "ListEventScores",
-      "ListProfilingGroups"
+      "ListProfilingGroups",
+      "ListPullRequests"
     ],
     "List": [
       "ListEvents"
@@ -213,15 +213,21 @@ export class Bugbust extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-ug/API_CodeReview.html
    *
+   * @param resourceId - Identifier for the resourceId.
+   * @param codeReviewId - Identifier for the codeReviewId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onCodereview(account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codeguru-reviewer::${Account}:.+:.+';
+  public onCodereview(resourceId: string, codeReviewId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codeguru-reviewer:${Region}:${Account}:association:${ResourceId}:codereview:${CodeReviewId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${CodeReviewId}', codeReviewId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
