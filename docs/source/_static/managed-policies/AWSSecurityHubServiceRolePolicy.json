@@ -20,7 +20,8 @@
                 "iam:GetCredentialReport",
                 "organizations:ListAccounts",
                 "organizations:DescribeAccount",
-                "organizations:DescribeOrganization"
+                "organizations:DescribeOrganization",
+                "config:PutEvaluations"
             ],
             "Resource": "*"
         },
@@ -30,8 +31,7 @@
                 "config:PutConfigRule",
                 "config:DeleteConfigRule",
                 "config:GetComplianceDetailsByConfigRule",
-                "config:DescribeConfigRuleEvaluationStatus",
-                "config:PutEvaluations"
+                "config:DescribeConfigRuleEvaluationStatus"
             ],
             "Resource": "arn:aws:config:*:*:config-rule/aws-service-rule/*securityhub*"
         }
