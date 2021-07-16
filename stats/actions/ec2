@@ -243,6 +243,7 @@ ec2:DescribeRouteTables;List
 ec2:DescribeScheduledInstanceAvailability;Read
 ec2:DescribeScheduledInstances;Read
 ec2:DescribeSecurityGroupReferences;List
+ec2:DescribeSecurityGroupRules;List
 ec2:DescribeSecurityGroups;List
 ec2:DescribeSnapshotAttribute;List
 ec2:DescribeSnapshots;List
@@ -370,6 +371,7 @@ ec2:ModifyLaunchTemplate;Write
 ec2:ModifyManagedPrefixList;Write
 ec2:ModifyNetworkInterfaceAttribute;Write
 ec2:ModifyReservedInstances;Write
+ec2:ModifySecurityGroupRules;Write
 ec2:ModifySnapshotAttribute;Permissions management
 ec2:ModifySpotFleetRequest;Write
 ec2:ModifySubnetAttribute;Write

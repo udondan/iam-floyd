@@ -77,6 +77,7 @@
         "ec2:DescribeReservedInstancesOfferings",
         "ec2:DescribeRouteTables",
         "ec2:DescribeSecurityGroupReferences",
+        "ec2:DescribeSecurityGroupRules",
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeSnapshotAttribute",
         "ec2:DescribeSnapshots",

@@ -92,6 +92,7 @@
         "ec2:DescribeScheduledInstanceAvailability",
         "ec2:DescribeScheduledInstances",
         "ec2:DescribeSecurityGroupReferences",
+        "ec2:DescribeSecurityGroupRules",
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeSnapshotAttribute",
         "ec2:DescribeSnapshots",

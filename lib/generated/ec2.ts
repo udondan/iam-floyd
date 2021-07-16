@@ -2726,6 +2726,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe one or more of your security group rules
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroupRules.html
+   */
+  public toDescribeSecurityGroupRules() {
+    return this.to('DescribeSecurityGroupRules');
+  }
+
+  /**
    * Grants permission to describe one or more security groups
    *
    * Access Level: List
@@ -3441,7 +3452,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable deprecation of the specified AMI at the specified date and time.
+   * Grants permission to enable deprecation of the specified AMI at the specified date and time
    *
    * Access Level: Write
    *
@@ -4120,6 +4131,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyReservedInstances() {
     return this.to('ModifyReservedInstances');
+  }
+
+  /**
+   * Grants permission to modify the rules of a security group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySecurityGroupRules.html
+   */
+  public toModifySecurityGroupRules() {
+    return this.to('ModifySecurityGroupRules');
   }
 
   /**
@@ -5217,6 +5239,7 @@ export class Ec2 extends PolicyStatement {
       "ModifyManagedPrefixList",
       "ModifyNetworkInterfaceAttribute",
       "ModifyReservedInstances",
+      "ModifySecurityGroupRules",
       "ModifySpotFleetRequest",
       "ModifySubnetAttribute",
       "ModifyTrafficMirrorFilterNetworkServices",
@@ -5380,6 +5403,7 @@ export class Ec2 extends PolicyStatement {
       "DescribeReservedInstancesOfferings",
       "DescribeRouteTables",
       "DescribeSecurityGroupReferences",
+      "DescribeSecurityGroupRules",
       "DescribeSecurityGroups",
       "DescribeSnapshotAttribute",
       "DescribeSnapshots",
@@ -6585,6 +6609,32 @@ export class Ec2 extends PolicyStatement {
   public onSecurityGroup(securityGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:security-group/${SecurityGroupId}';
     arn = arn.replace('${SecurityGroupId}', securityGroupId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type security-group-rule to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param securityGroupRuleId - Identifier for the securityGroupRuleId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onSecurityGroupRule(securityGroupRuleId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:security-group-rule/${SecurityGroupRuleId}';
+    arn = arn.replace('${SecurityGroupRuleId}', securityGroupRuleId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -7903,6 +7953,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateRestoreImageTask()
+   * - .toCreateStoreImageTask()
    * - .toCreateTags()
    * - .toDeleteTags()
    * - .toDeregisterImage()
@@ -8715,6 +8766,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateRestoreImageTask()
+   * - .toCreateStoreImageTask()
    * - .toCreateTags()
    * - .toDeleteFpgaImage()
    * - .toDeleteTags()
@@ -8993,6 +9045,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyReservedInstances()
+   * - .toModifySecurityGroupRules()
    * - .toModifySnapshotAttribute()
    * - .toModifySpotFleetRequest()
    * - .toModifySubnetAttribute()
@@ -9105,6 +9158,7 @@ export class Ec2 extends PolicyStatement {
    * - reserved-instances
    * - route-table
    * - security-group
+   * - security-group-rule
    * - snapshot
    * - spot-fleet-request
    * - spot-instances-request
@@ -9317,6 +9371,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateSecurityGroup()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
+   * - .toCreateStoreImageTask()
    * - .toCreateSubnet()
    * - .toCreateTags()
    * - .toCreateTrafficMirrorFilterRule()
@@ -9452,6 +9507,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyReservedInstances()
+   * - .toModifySecurityGroupRules()
    * - .toModifySnapshotAttribute()
    * - .toModifySpotFleetRequest()
    * - .toModifySubnetAttribute()
@@ -9564,6 +9620,7 @@ export class Ec2 extends PolicyStatement {
    * - reserved-instances
    * - route-table
    * - security-group
+   * - security-group-rule
    * - snapshot
    * - spot-fleet-request
    * - spot-instances-request
@@ -9627,6 +9684,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateRestoreImageTask()
    * - .toCreateRoute()
    * - .toCreateSnapshots()
+   * - .toCreateStoreImageTask()
    * - .toCreateTags()
    * - .toDeleteTags()
    * - .toDeregisterImage()
@@ -10194,6 +10252,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyFleet()
    * - .toModifyInstanceAttribute()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifySecurityGroupRules()
    * - .toModifySubnetAttribute()
    * - .toModifyTransitGatewayVpcAttachment()
    * - .toModifyVpcEndpoint()

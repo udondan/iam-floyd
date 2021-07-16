@@ -221,6 +221,7 @@
         "ec2:ModifyManagedPrefixList",
         "ec2:ModifyNetworkInterfaceAttribute",
         "ec2:ModifyReservedInstances",
+        "ec2:ModifySecurityGroupRules",
         "ec2:ModifySpotFleetRequest",
         "ec2:ModifySubnetAttribute",
         "ec2:ModifyTrafficMirrorFilterNetworkServices",

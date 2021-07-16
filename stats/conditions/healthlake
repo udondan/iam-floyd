@@ -1,1 +1,3 @@
-
+healthlake:RequestTag/${TagKey}
+healthlake:ResourceTag/${TagKey}
+healthlake:TagKeys

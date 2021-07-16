@@ -1169,6 +1169,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifEdition()
+   * - .ifDirectoryType()
+   *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    */
   public toSubscribe() {
@@ -1814,15 +1818,17 @@ export class Quicksight extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onCustomization(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight::${Account}:customization/${ResourceId}';
+  public onCustomization(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:customization/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1834,14 +1840,46 @@ export class Quicksight extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onNamespace(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight::${Account}:namespace/${ResourceId}';
+  public onNamespace(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:namespace/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters access based on the user management options
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/security-scp.html
+   *
+   * Applies to actions:
+   * - .toSubscribe()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDirectoryType(value: string | string[], operator?: Operator | string) {
+    return this.if(`DirectoryType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the edition of QuickSight
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/security-scp.html
+   *
+   * Applies to actions:
+   * - .toSubscribe()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEdition(value: string | string[], operator?: Operator | string) {
+    return this.if(`Edition`, value, operator || 'StringLike');
   }
 
   /**

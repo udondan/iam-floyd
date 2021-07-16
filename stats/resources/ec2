@@ -41,6 +41,7 @@ ec2:reserved-instances
 ec2:role
 ec2:route-table
 ec2:security-group
+ec2:security-group-rule
 ec2:snapshot
 ec2:spot-fleet-request
 ec2:spot-instances-request

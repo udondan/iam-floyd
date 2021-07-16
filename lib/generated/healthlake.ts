@@ -23,6 +23,10 @@ export class Healthlake extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_CreateFHIRDatastore.html
    */
   public toCreateFHIRDatastore() {
@@ -96,7 +100,7 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
-   * Grants permission to lists all FHIR datastores that are in the user’s account, regardless of datastore status
+   * Grants permission to get the capabilities of a FHIR datastore
    *
    * Access Level: Read
    *
@@ -115,6 +119,39 @@ export class Healthlake extends PolicyStatement {
    */
   public toListFHIRDatastores() {
     return this.to('ListFHIRDatastores');
+  }
+
+  /**
+   * Grants permission to get a list of export jobs for the specified datastore
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListFHIRExportJobs.html
+   */
+  public toListFHIRExportJobs() {
+    return this.to('ListFHIRExportJobs');
+  }
+
+  /**
+   * Grants permission to get a list of import jobs for the specified datastore
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListFHIRImportJobs.html
+   */
+  public toListFHIRImportJobs() {
+    return this.to('ListFHIRImportJobs');
+  }
+
+  /**
+   * Grants permission to get a list of tags for the specified datastore
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -173,6 +210,36 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add tags to a datastore
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags associated with a datastore
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to update resource
    *
    * Access Level: Write
@@ -198,12 +265,19 @@ export class Healthlake extends PolicyStatement {
       "DescribeFHIRExportJob",
       "DescribeFHIRImportJob",
       "GetCapabilities",
+      "ListTagsForResource",
       "ReadResource",
       "SearchWithGet",
       "SearchWithPost"
     ],
     "List": [
-      "ListFHIRDatastores"
+      "ListFHIRDatastores",
+      "ListFHIRExportJobs",
+      "ListFHIRImportJobs"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
@@ -216,6 +290,9 @@ export class Healthlake extends PolicyStatement {
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDatastore(datastoreId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:healthlake:${Region}:${AccountId}:datastore/fhir/${DatastoreId}';
