@@ -2,6 +2,7 @@
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Effect": "Allow",
             "Action": [
                 "firehose:PutRecord",
                 "firehose:PutRecordBatch",
@@ -10,10 +11,9 @@
             "Resource": "*",
             "Condition": {
                 "StringEquals": {
-                    "firehose:ResourceTag/LogDeliveryEnabled": "true"
+                    "aws:ResourceTag/LogDeliveryEnabled": "true"
                 }
-            },
-            "Effect": "Allow"
+            }
         }
     ]
 }
