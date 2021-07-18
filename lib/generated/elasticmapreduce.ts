@@ -287,7 +287,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the EMR block public access configuration for the AWS account in the Region.
+   * Grants permission to retrieve the EMR block public access configuration for the AWSaccount in the Region.
    *
    * Access Level: Read
    *
@@ -518,7 +518,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create or update the EMR block public access configuration for the AWS account in the Region.
+   * Grants permission to create or update the EMR block public access configuration for the AWSaccount in the Region.
    *
    * Access Level: Permissions management
    *

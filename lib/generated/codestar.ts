@@ -129,7 +129,7 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
-   * Lists all projects in CodeStar associated with your AWS account.
+   * Lists all projects in CodeStar associated with your AWSaccount.
    *
    * Access Level: List
    *

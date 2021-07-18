@@ -229,7 +229,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return the stack instance that's associated with the specified stack set, AWS account, and region
+   * Grants permission to return the stack instance that's associated with the specified stack set, AWSaccount, and region
    *
    * Access Level: Read
    *

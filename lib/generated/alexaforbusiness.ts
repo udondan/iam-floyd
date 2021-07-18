@@ -19,7 +19,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate a skill with the organization under the customer's AWS account
+   * Grants permission to associate a skill with the organization under the customer's AWSaccount
    *
    * Access Level: Write
    *
@@ -129,7 +129,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a new conference provider under the user's AWS account
+   * Grants permission to add a new conference provider under the user's AWSaccount
    *
    * Access Level: Write
    *
@@ -591,7 +591,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list conference providers under a specific AWS account
+   * Grants permission to list conference providers under a specific AWSaccount
    *
    * Access Level: List
    *
@@ -767,7 +767,7 @@ export class A4b extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate a skill from the organization under a user's AWS account
+   * Grants permission to disassociate a skill from the organization under a user's AWSaccount
    *
    * Access Level: Write
    *

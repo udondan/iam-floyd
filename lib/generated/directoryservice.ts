@@ -200,7 +200,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Creates a subscription to forward real time Directory Service domain controller security logs to the specified CloudWatch log group in your AWS account.
+   * Creates a subscription to forward real time Directory Service domain controller security logs to the specified CloudWatch log group in your AWSaccount.
    *
    * Access Level: Write
    *
@@ -604,7 +604,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Lists the active log subscriptions for the AWS account.
+   * Lists the active log subscriptions for the AWSaccount.
    *
    * Access Level: Read
    *
@@ -735,7 +735,7 @@ export class Ds extends PolicyStatement {
   }
 
   /**
-   * Shares a specified directory in your AWS account (directory owner) with another AWS account (directory consumer). With this operation you can use your directory from any AWS account and from any Amazon VPC within an AWS Region.
+   * Shares a specified directory in your AWSaccount (directory owner) with another AWSaccount (directory consumer). With this operation you can use your directory from any AWSaccount and from any Amazon VPC within an AWSRegion.
    *
    * Access Level: Write
    *

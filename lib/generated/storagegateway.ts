@@ -686,7 +686,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list gateways owned by an AWS account in a region specified in the request. The returned list is ordered by gateway Amazon Resource Name (ARN)
+   * Grants permission to list gateways owned by an AWSaccount in a region specified in the request. The returned list is ordered by gateway Amazon Resource Name (ARN)
    *
    * Access Level: List
    *
@@ -719,7 +719,7 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tape pools owned by your AWS account
+   * Grants permission to list tape pools owned by your AWSaccount
    *
    * Access Level: List
    *

@@ -34,7 +34,7 @@ export class DevopsGuru extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view the health of operations in your AWS account
+   * Grants permission to view the health of operations in your AWSaccount
    *
    * Access Level: Read
    *
@@ -45,7 +45,7 @@ export class DevopsGuru extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view the health of operations within a time range in your AWS account
+   * Grants permission to view the health of operations within a time range in your AWSaccount
    *
    * Access Level: Read
    *

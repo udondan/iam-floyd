@@ -160,7 +160,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the Elastic Load Balancing resource limits for the AWS account
+   * Describes the Elastic Load Balancing resource limits for the AWSaccount
    *
    * Access Level: Read
    *

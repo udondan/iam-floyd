@@ -95,7 +95,7 @@ export class CodestarNotifications extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list notification rules in an AWS account
+   * Grants permission to list notification rules in an AWSaccount
    *
    * Access Level: List
    *
@@ -121,7 +121,7 @@ export class CodestarNotifications extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the notification rule targets for an AWS account
+   * Grants permission to list the notification rule targets for an AWSaccount
    *
    * Access Level: List
    *

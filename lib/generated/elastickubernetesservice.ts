@@ -250,7 +250,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Amazon EKS add-ons in your AWS account (in the specified or default region) for a given cluster
+   * Grants permission to list the Amazon EKS add-ons in your AWSaccount (in the specified or default region) for a given cluster
    *
    * Access Level: List
    *
@@ -261,7 +261,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Amazon EKS clusters in your AWS account (in the specified or default region)
+   * Grants permission to list the Amazon EKS clusters in your AWSaccount (in the specified or default region)
    *
    * Access Level: List
    *
@@ -272,7 +272,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the AWS Fargate profiles in your AWS account (in the specified or default region) associated with a given cluster
+   * Grants permission to list the AWS Fargate profiles in your AWSaccount (in the specified or default region) associated with a given cluster
    *
    * Access Level: List
    *
@@ -283,7 +283,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Idp configs in your AWS account (in the specified or default region) associated with a given cluster
+   * Grants permission to list the Idp configs in your AWSaccount (in the specified or default region) associated with a given cluster
    *
    * Access Level: List
    *
@@ -294,7 +294,7 @@ export class Eks extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Amazon EKS nodegroups in your AWS account (in the specified or default region) attached to given cluster
+   * Grants permission to list the Amazon EKS nodegroups in your AWSaccount (in the specified or default region) attached to given cluster
    *
    * Access Level: List
    *

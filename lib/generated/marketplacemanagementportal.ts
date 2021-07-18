@@ -19,7 +19,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows access to the File Upload page inside the AWS Marketplace Management Portal.
+   * Allows access to the File Upload page inside the AWSMarketplace Management Portal.
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows access to the Marketing page inside the AWS Marketplace Management Portal.
+   * Allows access to the Marketing page inside the AWSMarketplace Management Portal.
    *
    * Access Level: List
    *
@@ -41,7 +41,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows access to the Reports page inside the AWS Marketplace Management Portal.
+   * Allows access to the Reports page inside the AWSMarketplace Management Portal.
    *
    * Access Level: List
    *
@@ -52,7 +52,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows access to the Settings page inside the AWS Marketplace Management Portal.
+   * Allows access to the Settings page inside the AWSMarketplace Management Portal.
    *
    * Access Level: List
    *
@@ -63,7 +63,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows access to the Customer Support Eligibility page inside the AWS Marketplace Management Portal.
+   * Allows access to the Customer Support Eligibility page inside the AWSMarketplace Management Portal.
    *
    * Access Level: List
    *

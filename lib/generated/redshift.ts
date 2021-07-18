@@ -41,7 +41,7 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to the specified AWS account to restore a snapshot
+   * Grants permission to the specified AWSaccount to restore a snapshot
    *
    * Access Level: Permissions management
    *
@@ -274,7 +274,7 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a snapshot copy grant and encrypt copied snapshots in a destination AWS Region
+   * Grants permission to create a snapshot copy grant and encrypt copied snapshots in a destination AWSRegion
    *
    * Access Level: Permissions management
    *
@@ -489,7 +489,7 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe attributes attached to the specified AWS account
+   * Grants permission to describe attributes attached to the specified AWSaccount
    *
    * Access Level: Read
    *
@@ -621,7 +621,7 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe Amazon Redshift event notification subscriptions for the specified AWS account
+   * Grants permission to describe Amazon Redshift event notification subscriptions for the specified AWSaccount
    *
    * Access Level: Read
    *
@@ -762,7 +762,7 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe snapshot copy grants owned by the specified AWS account in the destination AWS Region
+   * Grants permission to describe snapshot copy grants owned by the specified AWSaccount in the destination AWSRegion
    *
    * Access Level: Read
    *
@@ -905,7 +905,7 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get temporary credentials to access an Amazon Redshift database by the specified AWS account
+   * Grants permission to get temporary credentials to access an Amazon Redshift database by the specified AWSaccount
    *
    * Access Level: Write
    *
@@ -1119,7 +1119,7 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to modify the number of days to retain snapshots in the destination AWS Region after they are copied from the source AWS Region
+   * Grants permission to modify the number of days to retain snapshots in the destination AWSRegion after they are copied from the source AWSRegion
    *
    * Access Level: Write
    *
@@ -1251,7 +1251,7 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to revoke access from the specified AWS account to restore a snapshot
+   * Grants permission to revoke access from the specified AWSaccount to restore a snapshot
    *
    * Access Level: Permissions management
    *

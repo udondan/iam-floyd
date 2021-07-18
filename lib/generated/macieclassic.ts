@@ -19,7 +19,7 @@ export class Macie extends PolicyStatement {
   }
 
   /**
-   * Enables the user to associate a specified AWS account with Amazon Macie as a member account.
+   * Enables the user to associate a specified AWSaccount with Amazon Macie as a member account.
    *
    * Access Level: Write
    *

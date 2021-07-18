@@ -140,7 +140,7 @@ export class Inspector extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the IAM role that enables Amazon Inspector to access your AWS account
+   * Grants permission to describe the IAM role that enables Amazon Inspector to access your AWSaccount
    *
    * Access Level: Read
    *
@@ -250,7 +250,7 @@ export class Inspector extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the ARNs of the assessment targets within this AWS account
+   * Grants permission to list the ARNs of the assessment targets within this AWSaccount
    *
    * Access Level: List
    *

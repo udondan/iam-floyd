@@ -41,7 +41,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
   }
 
   /**
-   * Grants permission to to verify that the customer running your paid software is subscribed to your product on AWS Marketplace, enabling you to guard against unauthorized use. Meters software use per ECS task, per hour, with usage prorated to the second
+   * Grants permission to to verify that the customer running your paid software is subscribed to your product on AWSMarketplace, enabling you to guard against unauthorized use. Meters software use per ECS task, per hour, with usage prorated to the second
    *
    * Access Level: Write
    *

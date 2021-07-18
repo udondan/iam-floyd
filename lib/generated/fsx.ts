@@ -163,7 +163,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return the descriptions of all backups owned by your AWS account in the AWS Region of the endpoint that you're calling
+   * Grants permission to return the descriptions of all backups owned by your AWSaccount in the AWSRegion of the endpoint that you're calling
    *
    * Access Level: Read
    *
@@ -174,7 +174,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return the descriptions of all data repository task owned by your AWS account in the AWS Region of the endpoint that you're calling
+   * Grants permission to return the descriptions of all data repository task owned by your AWSaccount in the AWSRegion of the endpoint that you're calling
    *
    * Access Level: Read
    *
@@ -196,7 +196,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return the descriptions of all file systems owned by your AWS account in the AWS Region of the endpoint that you're calling
+   * Grants permission to return the descriptions of all file systems owned by your AWSaccount in the AWSRegion of the endpoint that you're calling
    *
    * Access Level: Read
    *

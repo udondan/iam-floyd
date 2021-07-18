@@ -181,7 +181,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for an AWS account or IAM user
+   * Returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for an AWSaccount or IAM user
    *
    * Access Level: Read
    *

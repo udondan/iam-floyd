@@ -180,7 +180,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Returns all the destinations that are associated with the AWS account making the request
+   * Returns all the destinations that are associated with the AWSaccount making the request
    *
    * Access Level: List
    *
@@ -191,7 +191,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Returns all the export tasks that are associated with the AWS account making the request
+   * Returns all the export tasks that are associated with the AWSaccount making the request
    *
    * Access Level: List
    *
@@ -202,7 +202,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Returns all the log groups that are associated with the AWS account making the request
+   * Returns all the log groups that are associated with the AWSaccount making the request
    *
    * Access Level: List
    *

@@ -289,7 +289,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a specified Firewall rule group policy, which specifies the Firewall rule group operations and resources that you want to allow another AWS account to use
+   * Grants permission to get information about a specified Firewall rule group policy, which specifies the Firewall rule group operations and resources that you want to allow another AWSaccount to use
    *
    * Access Level: Read
    *
@@ -344,7 +344,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a specified Resolver query logging policy, which specifies the Resolver query logging operations and resources that you want to allow another AWS account to use
+   * Grants permission to get information about a specified Resolver query logging policy, which specifies the Resolver query logging operations and resources that you want to allow another AWSaccount to use
    *
    * Access Level: Read
    *
@@ -377,7 +377,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a Resolver rule policy, which specifies the Resolver operations and resources that you want to allow another AWS account to use
+   * Grants permission to get information about a Resolver rule policy, which specifies the Resolver operations and resources that you want to allow another AWSaccount to use
    *
    * Access Level: Read
    *
@@ -399,7 +399,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the Firewall config that current AWS account is able to check
+   * Grants permission to list all the Firewall config that current AWSaccount is able to check
    *
    * Access Level: List
    *
@@ -413,7 +413,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the Firewall domain list that current AWS account is able to use
+   * Grants permission to list all the Firewall domain list that current AWSaccount is able to use
    *
    * Access Level: List
    *
@@ -446,7 +446,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the Firewall rule group that current AWS account is able to use
+   * Grants permission to list all the Firewall rule group that current AWSaccount is able to use
    *
    * Access Level: List
    *
@@ -490,7 +490,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the Resolver endpoints that were created using the current AWS account
+   * Grants permission to list all the Resolver endpoints that were created using the current AWSaccount
    *
    * Access Level: List
    *
@@ -523,7 +523,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the associations that were created between Resolver rules and VPCs using the current AWS account
+   * Grants permission to list the associations that were created between Resolver rules and VPCs using the current AWSaccount
    *
    * Access Level: List
    *
@@ -534,7 +534,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Resolver rules that were created using the current AWS account
+   * Grants permission to list the Resolver rules that were created using the current AWSaccount
    *
    * Access Level: List
    *
@@ -556,7 +556,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to specify an AWS account that you want to share a Firewall rule group with, the Firewall rule group that you want to share, and the operations that you want the account to be able to perform on the configuration
+   * Grants permission to specify an AWSaccount that you want to share a Firewall rule group with, the Firewall rule group that you want to share, and the operations that you want the account to be able to perform on the configuration
    *
    * Access Level: Write
    *
@@ -567,7 +567,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to specify an AWS account that you want to share a query logging configuration with, the query logging configuration that you want to share, and the operations that you want the account to be able to perform on the configuration
+   * Grants permission to specify an AWSaccount that you want to share a query logging configuration with, the query logging configuration that you want to share, and the operations that you want the account to be able to perform on the configuration
    *
    * Access Level: Write
    *
@@ -578,7 +578,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to specify an AWS account that you want to share rules with, the Resolver rules that you want to share, and the operations that you want the account to be able to perform on those rules
+   * Grants permission to specify an AWSaccount that you want to share rules with, the Resolver rules that you want to share, and the operations that you want the account to be able to perform on those rules
    *
    * Access Level: Write
    *

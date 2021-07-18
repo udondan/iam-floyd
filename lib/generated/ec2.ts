@@ -1835,7 +1835,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the attributes of the AWS account
+   * Grants permission to describe the attributes of the AWSaccount
    *
    * Access Level: List
    *
@@ -2176,7 +2176,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the Dedicated Host Reservations that are associated with Dedicated Hosts in the AWS account
+   * Grants permission to describe the Dedicated Host Reservations that are associated with Dedicated Hosts in the AWSaccount
    *
    * Access Level: List
    *
@@ -2616,7 +2616,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe one or more AWS Regions that are currently available in your account
+   * Grants permission to describe one or more AWSRegions that are currently available in your account
    *
    * Access Level: List
    *
@@ -7457,7 +7457,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access by the name of an Availability Zone in an AWS Region
+   * Filters access by the name of an Availability Zone in an AWSRegion
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
@@ -8277,7 +8277,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access by the owner of the resource (amazon, aws-marketplace, or an AWS account ID)
+   * Filters access by the owner of the resource (amazon, aws-marketplace, or an AWSaccount ID)
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
@@ -8822,7 +8822,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access by the name of the AWS Region
+   * Filters access by the name of the AWSRegion
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
@@ -10303,7 +10303,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access by the service owner of the VPC endpoint service (amazon, aws-marketplace, or an AWS account ID)
+   * Filters access by the service owner of the VPC endpoint service (amazon, aws-marketplace, or an AWSaccount ID)
    *
    * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-iam.html
    *

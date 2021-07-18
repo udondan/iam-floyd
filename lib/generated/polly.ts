@@ -19,7 +19,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete the specified pronunciation lexicon stored in an AWS Region
+   * Grants permissions to delete the specified pronunciation lexicon stored in an AWSRegion
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve the content of the specified pronunciation lexicon stored in an AWS Region
+   * Grants permissions to retrieve the content of the specified pronunciation lexicon stored in an AWSRegion
    *
    * Access Level: Read
    *
@@ -63,7 +63,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Grants permisions to list the pronunciation lexicons stored in an AWS Region
+   * Grants permisions to list the pronunciation lexicons stored in an AWSRegion
    *
    * Access Level: List
    *
@@ -85,7 +85,7 @@ export class Polly extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to store a pronunciation lexicon in an AWS Region
+   * Grants permissions to store a pronunciation lexicon in an AWSRegion
    *
    * Access Level: Write
    *

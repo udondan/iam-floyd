@@ -882,7 +882,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Filters access to specified AWS KMS operations based on the AWS account ID of the caller. You can use this condition key to allow or deny access to all IAM users and roles in an AWS account in a single policy statement
+   * Filters access to specified AWS KMS operations based on the AWSaccount ID of the caller. You can use this condition key to allow or deny access to all IAM users and roles in an AWSaccount in a single policy statement
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-caller-account
    *

@@ -2397,7 +2397,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns a list of the Amazon SageMaker notebook instances in the requester's account in an AWS Region.
+   * Returns a list of the Amazon SageMaker notebook instances in the requester's account in an AWSRegion.
    *
    * Access Level: List
    *

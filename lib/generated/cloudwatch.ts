@@ -261,7 +261,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of valid metrics stored for the AWS account owner
+   * Grants permission to retrieve a list of valid metrics stored for the AWSaccount owner
    *
    * Access Level: List
    *

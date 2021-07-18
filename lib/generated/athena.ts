@@ -236,7 +236,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of datacatalogs for the specified AWS account
+   * Grants permissions to return a list of datacatalogs for the specified AWSaccount
    *
    * Access Level: List
    *
@@ -258,7 +258,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of athena engine versions for the specified AWS account
+   * Grants permissions to return a list of athena engine versions for the specified AWSaccount
    *
    * Access Level: Read
    *
@@ -269,7 +269,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of named queries in Amazon Athena for the specified AWS account
+   * Grants permissions to return a list of named queries in Amazon Athena for the specified AWSaccount
    *
    * Access Level: List
    *
@@ -291,7 +291,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of query executions for the specified AWS account
+   * Grants permissions to return a list of query executions for the specified AWSaccount
    *
    * Access Level: Read
    *
@@ -324,7 +324,7 @@ export class Athena extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of workgroups for the specified AWS account
+   * Grants permissions to return a list of workgroups for the specified AWSaccount
    *
    * Access Level: List
    *

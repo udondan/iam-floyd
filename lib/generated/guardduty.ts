@@ -468,7 +468,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a lists of all of the GuardDuty membership invitations that were sent to an AWS account
+   * Grants permission to retrieve a lists of all of the GuardDuty membership invitations that were sent to an AWSaccount
    *
    * Access Level: List
    *

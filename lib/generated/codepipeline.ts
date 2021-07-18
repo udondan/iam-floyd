@@ -41,7 +41,7 @@ export class Codepipeline extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a custom action that you can use in the pipelines associated with your AWS account
+   * Grants permission to create a custom action that you can use in the pipelines associated with your AWSaccount
    *
    * Access Level: Tagging
    *
@@ -225,7 +225,7 @@ export class Codepipeline extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list a summary of all the pipelines associated with your AWS account
+   * Grants permission to list a summary of all the pipelines associated with your AWSaccount
    *
    * Access Level: List
    *
@@ -247,7 +247,7 @@ export class Codepipeline extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all of the webhooks associated with your AWS account
+   * Grants permission to list all of the webhooks associated with your AWSaccount
    *
    * Access Level: List
    *

@@ -61,7 +61,7 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
-   * Grants permission to copy the specified image within the same Region or to a new Region within the same AWS account
+   * Grants permission to copy the specified image within the same Region or to a new Region within the same AWSaccount
    *
    * Access Level: Write
    *
@@ -317,7 +317,7 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list that describes the permissions for shared AWS account IDs on a private image that you own
+   * Grants permission to retrieve a list that describes the permissions for shared AWSaccount IDs on a private image that you own
    *
    * Access Level: Read
    *

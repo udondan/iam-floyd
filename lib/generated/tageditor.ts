@@ -30,7 +30,7 @@ export class ResourceExplorer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the identifiers of the resources in the AWS account
+   * Grants permission to retrieve the identifiers of the resources in the AWSaccount
    *
    * Access Level: List
    *

@@ -154,7 +154,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the invitations extended to the active AWS account from any Managed Blockchain network
+   * Grants permission to list the invitations extended to the active AWSaccount from any Managed Blockchain network
    *
    * Access Level: List
    *
@@ -176,7 +176,7 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Amazon Managed Blockchain networks in which the current AWS account participates
+   * Grants permission to list the Amazon Managed Blockchain networks in which the current AWSaccount participates
    *
    * Access Level: List
    *

@@ -165,7 +165,7 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of AWS App Runner automatic scaling configurations in your AWS account
+   * Grants permission to retrieve a list of AWS App Runner automatic scaling configurations in your AWSaccount
    *
    * Access Level: List
    *
@@ -176,7 +176,7 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of AWS App Runner connections associated with your AWS account
+   * Grants permission to retrieve a list of AWS App Runner connections associated with your AWSaccount
    *
    * Access Level: List
    *
@@ -198,7 +198,7 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of running AWS App Runner services in your AWS account
+   * Grants permission to retrieve a list of running AWS App Runner services in your AWSaccount
    *
    * Access Level: List
    *

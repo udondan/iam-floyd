@@ -77,7 +77,7 @@ export class Sns extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a destination phone number and send a one-time password (OTP) to that phone number for an AWS account
+   * Grants permission to add a destination phone number and send a one-time password (OTP) to that phone number for an AWSaccount
    *
    * Access Level: Write
    *
@@ -124,7 +124,7 @@ export class Sns extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an AWS account's verified or pending phone number
+   * Grants permission to delete an AWSaccount's verified or pending phone number
    *
    * Access Level: Write
    *
@@ -461,7 +461,7 @@ export class Sns extends PolicyStatement {
   }
 
   /**
-   * Grants permission to verify a destination phone number with a one-time password (OTP) for an AWS account
+   * Grants permission to verify a destination phone number with a one-time password (OTP) for an AWSaccount
    *
    * Access Level: Write
    *

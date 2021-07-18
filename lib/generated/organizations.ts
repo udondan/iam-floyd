@@ -55,7 +55,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an AWS account that is automatically a member of the organization with the credentials that made the request.
+   * Grants permission to create an AWSaccount that is automatically a member of the organization with the credentials that made the request.
    *
    * Access Level: Write
    *
@@ -111,7 +111,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a policy that you can attach to a root, an organizational unit (OU), or an individual AWS account.
+   * Grants permission to create a policy that you can attach to a root, an organizational unit (OU), or an individual AWSaccount.
    *
    * Access Level: Write
    *
@@ -174,7 +174,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deregister the specified member AWS account as a delegated administrator for the AWS service that is specified by ServicePrincipal.
+   * Grants permission to deregister the specified member AWSaccount as a delegated administrator for the AWS service that is specified by ServicePrincipal.
    *
    * Access Level: Write
    *
@@ -352,7 +352,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send an invitation to another AWS account, asking it to join your organization as a member account.
+   * Grants permission to send an invitation to another AWSaccount, asking it to join your organization as a member account.
    *
    * Access Level: Write
    *

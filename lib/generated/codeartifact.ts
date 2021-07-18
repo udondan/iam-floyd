@@ -258,7 +258,7 @@ export class Codeartifact extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the domains in the current user's AWS account
+   * Grants permission to list the domains in the current user's AWSaccount
    *
    * Access Level: List
    *

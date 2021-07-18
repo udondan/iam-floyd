@@ -324,7 +324,7 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the custom routing accelerators for an AWS account.
+   * Grants permission to list the custom routing accelerators for an AWSaccount.
    *
    * Access Level: List
    *

@@ -151,7 +151,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to display a list of all offerings that are available to the account in the current AWS Region
+   * Grants permission to display a list of all offerings that are available to the account in the current AWSRegion
    *
    * Access Level: List
    *
@@ -162,7 +162,7 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to display a list of all reservations that have been purchased by the account in the current AWS Region
+   * Grants permission to display a list of all reservations that have been purchased by the account in the current AWSRegion
    *
    * Access Level: List
    *

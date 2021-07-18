@@ -278,7 +278,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * This operation lists the provisioned capacity for the specified AWS account.
+   * This operation lists the provisioned capacity for the specified AWSaccount.
    *
    * Access Level: List
    *
@@ -311,7 +311,7 @@ export class Glacier extends PolicyStatement {
   }
 
   /**
-   * This operation purchases a provisioned capacity unit for an AWS account.
+   * This operation purchases a provisioned capacity unit for an AWSaccount.
    *
    * Access Level: Write
    *

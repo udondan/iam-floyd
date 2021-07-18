@@ -129,7 +129,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Allows users to subscribe to AWS Marketplace products. Includes the ability to send a subscription request for products that require subscription verification. Includes the ability to enable auto-renewal for an existing subscription.
+   * Allows users to subscribe to AWSMarketplace products. Includes the ability to send a subscription request for products that require subscription verification. Includes the ability to enable auto-renewal for an existing subscription.
    *
    * Access Level: Write
    *
@@ -140,7 +140,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Allows users to remove subscriptions to AWS Marketplace products. Includes the ability to disable auto-renewal for an existing subscription.
+   * Allows users to remove subscriptions to AWSMarketplace products. Includes the ability to disable auto-renewal for an existing subscription.
    *
    * Access Level: Write
    *

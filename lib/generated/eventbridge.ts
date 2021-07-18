@@ -376,7 +376,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of AWS account IDs associated with an event source
+   * Grants permission to retrieve a list of AWSaccount IDs associated with an event source
    *
    * Access Level: List
    *
@@ -488,7 +488,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Grants permission to use the PutPermission action to grants permission to another AWS account to put events to your default event bus
+   * Grants permission to use the PutPermission action to grants permission to another AWSaccount to put events to your default event bus
    *
    * Access Level: Permissions management
    *
@@ -535,7 +535,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Grants permission to revoke the permission of another AWS account to put events to your default event bus
+   * Grants permission to revoke the permission of another AWSaccount to put events to your default event bus
    *
    * Access Level: Permissions management
    *

@@ -251,7 +251,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate an AWS account from a partner account
+   * Grants permission to disassociate an AWSaccount from a partner account
    *
    * Access Level: Write
    *
@@ -466,7 +466,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * List information of available Destinations based on the AWS account.
+   * List information of available Destinations based on the AWSaccount.
    *
    * Access Level: List
    *
@@ -477,7 +477,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list information of available DeviceProfiles based on the AWS account
+   * Grants permission to list information of available DeviceProfiles based on the AWSaccount
    *
    * Access Level: List
    *
@@ -499,7 +499,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list information of available ServiceProfiles based on the AWS account
+   * Grants permission to list information of available ServiceProfiles based on the AWSaccount
    *
    * Access Level: List
    *
@@ -521,7 +521,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list information of available WirelessDevices based on the AWS account
+   * Grants permission to list information of available WirelessDevices based on the AWSaccount
    *
    * Access Level: List
    *
@@ -532,7 +532,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list information of available WirelessGateway task definitions based on the AWS account
+   * Grants permission to list information of available WirelessGateway task definitions based on the AWSaccount
    *
    * Access Level: List
    *
@@ -543,7 +543,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list information of available WirelessGateways based on the AWS account
+   * Grants permission to list information of available WirelessGateways based on the AWSaccount
    *
    * Access Level: List
    *
