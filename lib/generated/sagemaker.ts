@@ -19,7 +19,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate a lineage entity (artifact, context, action, experiment, experiment-trial-component) to another.
+   * Grants permission to associate a lineage entity (artifact, context, action, experiment, experiment-trial-component) to each other
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Adds or overwrites one or more tags for the specified Amazon SageMaker resource.
+   * Grants permission to add or overwrite one or more tags for the specified Amazon SageMaker resource
    *
    * Access Level: Tagging
    *
@@ -45,7 +45,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Associate a trial component with a trial.
+   * Grants permission to associate a trial component with a trial
    *
    * Access Level: Write
    *
@@ -56,7 +56,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Retrieve metrics associated with SageMaker Resources such as Training Jobs. This API is not publicly exposed at this point, however admins can control this action
+   * Grants permission to retrieve metrics associated with SageMaker Resources such as Training Jobs. This API is not publicly exposed at this point, however admins can control this action
    *
    * Access Level: Read
    */
@@ -65,7 +65,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a batch of records from one or more feature groups.
+   * Get a batch of records from one or more feature groups.
    *
    * Access Level: Read
    *
@@ -76,7 +76,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Publish metrics associated with a SageMaker Resource such as a Training Job. This API is not publicly exposed at this point, however admins can control this action
+   * Grants permission to publish metrics associated with a SageMaker Resource such as a Training Job. This API is not publicly exposed at this point, however admins can control this action
    *
    * Access Level: Write
    */
@@ -85,7 +85,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an action.
+   * Grants permission to create an action
    *
    * Access Level: Write
    *
@@ -100,7 +100,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an algorithm.
+   * Grants permission to create an algorithm
    *
    * Access Level: Write
    *
@@ -148,7 +148,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an artifact.
+   * Grants permission to create an artifact
    *
    * Access Level: Write
    *
@@ -163,7 +163,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Creates automl job.
+   * Grants permission to create an AutoML job
    *
    * Access Level: Write
    *
@@ -186,7 +186,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a CodeRepository.
+   * Grants permission to create a CodeRepository
    *
    * Access Level: Write
    *
@@ -201,7 +201,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Create a compilation job.
+   * Grants permission to create a compilation job
    *
    * Access Level: Write
    *
@@ -215,7 +215,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a context.
+   * Grants permission to create a context
    *
    * Access Level: Write
    *
@@ -230,7 +230,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a data quality job definition.
+   * Grants permission to create a data quality job definition
    *
    * Access Level: Write
    *
@@ -319,7 +319,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Creates an endpoint using the endpoint configuration specified in the request.
+   * Grants permission to create an endpoint using the endpoint configuration specified in the request
    *
    * Access Level: Write
    *
@@ -334,7 +334,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Creates an endpoint configuration that can be deployed using Amazon SageMaker hosting services.
+   * Grants permission to create an endpoint configuration that can be deployed using Amazon SageMaker hosting services
    *
    * Access Level: Write
    *
@@ -353,7 +353,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Create an experiment.
+   * Grants permission to create an experiment
    *
    * Access Level: Write
    *
@@ -368,7 +368,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Creates feature group.
+   * Grants permission to create a feature group
    *
    * Access Level: Write
    *
@@ -389,7 +389,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Creates a flow definition, which defines settings for a human workflow.
+   * Grants permission to create a flow definition, which defines settings for a human workflow
    *
    * Access Level: Write
    *
@@ -409,7 +409,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Defines the settings you will use for the human review workflow user interface.
+   * Grants permission to define the settings you will use for the human review workflow user interface
    *
    * Access Level: Write
    *
@@ -424,7 +424,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Creates hyper parameter tuning job that can be deployed using Amazon SageMaker.
+   * Grants permission to create a hyper parameter tuning job that can be deployed using Amazon SageMaker
    *
    * Access Level: Write
    *
@@ -454,7 +454,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a SageMaker Image.
+   * Grants permissions to create a SageMaker Image
    *
    * Access Level: Write
    *
@@ -472,7 +472,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a SageMaker ImageVersion.
+   * Grants permissions to create a SageMaker ImageVersion
    *
    * Access Level: Write
    *
@@ -483,7 +483,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Starts a labeling job. A labeling job takes unlabeled data in and produces labeled data as output, which can be used for training SageMaker models.
+   * Grants permission to start a labeling job. A labeling job takes unlabeled data in and produces labeled data as output, which can be used for training SageMaker models
    *
    * Access Level: Write
    *
@@ -505,7 +505,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Creates a model in Amazon SageMaker. In the request, you specify a name for the model and describe one or more containers.
+   * Grants permission to create a model in Amazon SageMaker. In the request, you specify a name for the model and describe one or more containers
    *
    * Access Level: Write
    *
@@ -526,7 +526,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a model bias job definition.
+   * Grants permission to create a model bias job definition
    *
    * Access Level: Write
    *
@@ -552,7 +552,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a model explainability job definition.
+   * Grants permission to create a model explainability job definition
    *
    * Access Level: Write
    *
@@ -578,7 +578,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a ModelPackage.
+   * Grants permission to create a ModelPackage
    *
    * Access Level: Write
    *
@@ -593,7 +593,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a ModelPackageGroup.
+   * Grants permission to create a ModelPackageGroup
    *
    * Access Level: Write
    *
@@ -608,7 +608,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a model quality job definition.
+   * Grants permission to create a model quality job definition
    *
    * Access Level: Write
    *
@@ -634,7 +634,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a monitoring schedule.
+   * Grants permission to create a monitoring schedule
    *
    * Access Level: Write
    *
@@ -660,7 +660,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Creates an Amazon SageMaker notebook instance. A notebook instance is an Amazon EC2 instance running on a Jupyter Notebook.
+   * Grants permission to create an Amazon SageMaker notebook instance. A notebook instance is an Amazon EC2 instance running on a Jupyter Notebook
    *
    * Access Level: Write
    *
@@ -685,7 +685,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Creates an notebook instance lifecycle configuration that can be deployed using Amazon SageMaker.
+   * Grants permission to create a notebook instance lifecycle configuration that can be deployed using Amazon SageMaker
    *
    * Access Level: Write
    *
@@ -696,7 +696,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a pipeline.
+   * Grants permission to create a pipeline
    *
    * Access Level: Write
    *
@@ -730,7 +730,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns a URL that you can use from your browser to connect to the Notebook Instance.
+   * Grants permission to create a URL that you can use from your browser to connect to the Notebook Instance
    *
    * Access Level: Write
    *
@@ -741,7 +741,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Starts a processing job. After processing completes, Amazon SageMaker saves the resulting artifacts and other optional output to an Amazon S3 location that you specify.
+   * Grants permission to start a processing job. After processing completes, Amazon SageMaker saves the resulting artifacts and other optional output to an Amazon S3 location that you specify
    *
    * Access Level: Write
    *
@@ -767,7 +767,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Project.
+   * Grants permission to create a Project
    *
    * Access Level: Write
    *
@@ -782,7 +782,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Starts a model training job. After training completes, Amazon SageMaker saves the resulting model artifacts and other optional output to an Amazon S3 location that you specify.
+   * Grants permission to start a model training job. After training completes, Amazon SageMaker saves the resulting model artifacts and other optional output to an Amazon S3 location that you specify
    *
    * Access Level: Write
    *
@@ -812,7 +812,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Starts a transform job. After the results are obtained, Amazon SageMaker saves them to an Amazon S3 location that you specify.
+   * Grants permission to start a transform job. After the results are obtained, Amazon SageMaker saves them to an Amazon S3 location that you specify
    *
    * Access Level: Write
    *
@@ -831,7 +831,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Create a trial.
+   * Grants permission to create a trial
    *
    * Access Level: Write
    *
@@ -846,7 +846,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Create a trial component.
+   * Grants permission to create a trial component
    *
    * Access Level: Write
    *
@@ -884,7 +884,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Create a workforce.
+   * Grants permission to create a workforce
    *
    * Access Level: Write
    *
@@ -899,7 +899,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Create a workteam.
+   * Grants permission to create a workteam
    *
    * Access Level: Write
    *
@@ -914,7 +914,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an action.
+   * Grants permission to delete an action
    *
    * Access Level: Write
    *
@@ -925,7 +925,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an algorithm.
+   * Grants permission to delete an algorithm
    *
    * Access Level: Write
    *
@@ -958,7 +958,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an artifact.
+   * Grants permission to delete an artifact
    *
    * Access Level: Write
    *
@@ -969,7 +969,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the association from a lineage entity (artifact, context, action, experiment, experiment-trial-component) to another.
+   * Grants permission to delete the association from a lineage entity (artifact, context, action, experiment, experiment-trial-component) to another
    *
    * Access Level: Write
    *
@@ -980,7 +980,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a CodeRepository.
+   * Grants permission to delete a CodeRepository
    *
    * Access Level: Write
    *
@@ -991,7 +991,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a context.
+   * Grants permission to delete a context
    *
    * Access Level: Write
    *
@@ -1002,7 +1002,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the data quality job definition created using the CreateDataQualityJobDefinition API.
+   * Grants permission to delete the data quality job definition created using the CreateDataQualityJobDefinition API
    *
    * Access Level: Write
    *
@@ -1035,7 +1035,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes an endpoint. Amazon SageMaker frees up all the resources that were deployed when the endpoint was created.
+   * Grants permission to delete an endpoint. Amazon SageMaker frees up all the resources that were deployed when the endpoint was created
    *
    * Access Level: Write
    *
@@ -1046,7 +1046,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes the endpoint configuration created using the CreateEndpointConfig API. The DeleteEndpointConfig API deletes only the specified configuration. It does not delete any endpoints created using the configuration.
+   * Grants permission to delete the endpoint configuration created using the CreateEndpointConfig API. The DeleteEndpointConfig API deletes only the specified configuration. It does not delete any endpoints created using the configuration
    *
    * Access Level: Write
    *
@@ -1057,7 +1057,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes an experiment.
+   * Grants permission to delete an experiment
    *
    * Access Level: Write
    *
@@ -1068,7 +1068,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes a feature group.
+   * Grants permission to delete a feature group
    *
    * Access Level: Write
    *
@@ -1082,7 +1082,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deltes the specified flow definition.
+   * Grants permission to delete the specified flow definition
    *
    * Access Level: Write
    *
@@ -1093,7 +1093,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified human loop.
+   * Grants permission to delete a specified human loop
    *
    * Access Level: Write
    *
@@ -1104,7 +1104,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified human task user interface (worker task template).
+   * Grants permission to delete the specified human task user interface (worker task template)
    *
    * Access Level: Write
    *
@@ -1115,7 +1115,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a SageMaker Image.
+   * Grants permissions to delete a SageMaker Image
    *
    * Access Level: Write
    *
@@ -1126,7 +1126,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a SageMaker ImageVersion.
+   * Grants permissions to delete a SageMaker ImageVersion
    *
    * Access Level: Write
    *
@@ -1137,7 +1137,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes a model created using the CreateModel API. The DeleteModel API deletes only the model entry in Amazon SageMaker that you created by calling the CreateModel API. It does not delete model artifacts, inference code, or the IAM role that you specified when creating the model.
+   * Grants permission to delete a model created using the CreateModel API. The DeleteModel API deletes only the model entry in Amazon SageMaker that you created by calling the CreateModel API. It does not delete model artifacts, inference code, or the IAM role that you specified when creating the model
    *
    * Access Level: Write
    *
@@ -1148,7 +1148,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the model bias job definition created using the CreateModelBiasJobDefinition API.
+   * Grants permission to delete the model bias job definition created using the CreateModelBiasJobDefinition API
    *
    * Access Level: Write
    *
@@ -1159,7 +1159,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the model explainability job definition created using the CreateModelExplainabilityJobDefinition API.
+   * Grants permission to delete the model explainability job definition created using the CreateModelExplainabilityJobDefinition API
    *
    * Access Level: Write
    *
@@ -1170,7 +1170,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a ModelPackage.
+   * Grants permission to delete a ModelPackage
    *
    * Access Level: Write
    *
@@ -1181,7 +1181,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a ModelPackageGroup.
+   * Grants permission to delete a ModelPackageGroup
    *
    * Access Level: Write
    *
@@ -1192,7 +1192,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a ModelPackageGroup policy.
+   * Grants permission to delete a ModelPackageGroup policy
    *
    * Access Level: Write
    *
@@ -1203,7 +1203,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the model quality job definition created using the CreateModelQualityJobDefinition API.
+   * Grants permission to delete the model quality job definition created using the CreateModelQualityJobDefinition API
    *
    * Access Level: Write
    *
@@ -1214,7 +1214,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a monitoring schedule.
+   * Grants permission to delete a monitoring schedule
    *
    * Access Level: Write
    *
@@ -1225,7 +1225,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes an Amazon SageMaker notebook instance. Before you can delete a notebook instance, you must call the StopNotebookInstance API.
+   * Grants permission to delete a Amazon SageMaker notebook instance. Before you can delete a notebook instance, you must call the StopNotebookInstance API
    *
    * Access Level: Write
    *
@@ -1236,7 +1236,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes an notebook instance lifecycle configuration that can be deployed using Amazon SageMaker.
+   * Grants permission to delete a notebook instance lifecycle configuration
    *
    * Access Level: Write
    *
@@ -1247,7 +1247,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a pipeline.
+   * Grants permission to delete a pipeline
    *
    * Access Level: Write
    *
@@ -1258,7 +1258,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a project.
+   * Grants permission to delete a project
    *
    * Access Level: Write
    *
@@ -1269,7 +1269,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a record from a feature group.
+   * Grants permission to delete a record from a feature group
    *
    * Access Level: Write
    *
@@ -1280,7 +1280,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified set of tags from an Amazon SageMaker resource.
+   * Grants permission to delete the specified set of tags from an Amazon SageMaker resource
    *
    * Access Level: Tagging
    *
@@ -1294,7 +1294,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes a trial.
+   * Grants permission to delete a trial
    *
    * Access Level: Write
    *
@@ -1305,7 +1305,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes a trial component.
+   * Grants permission to delete a trial component
    *
    * Access Level: Write
    *
@@ -1327,7 +1327,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes a workforce.
+   * Grants permission to delete a workforce
    *
    * Access Level: Write
    *
@@ -1338,7 +1338,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Deletes a workteam.
+   * Grants permission to delete a workteam
    *
    * Access Level: Write
    *
@@ -1360,7 +1360,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about an action.
+   * Grants permission to get information about an action
    *
    * Access Level: Read
    *
@@ -1371,7 +1371,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe an algorithm.
+   * Grants permission to describe an algorithm
    *
    * Access Level: Read
    *
@@ -1404,7 +1404,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about an artifact.
+   * Grants permission to get information about an artifact
    *
    * Access Level: Read
    *
@@ -1415,7 +1415,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Describes an automl job that was created via CreateAutoMLJob API.
+   * Grants permission to describe an AutoML job that was created via the CreateAutoMLJob API
    *
    * Access Level: Read
    *
@@ -1426,7 +1426,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a CodeRepository.
+   * Grants permission to describe a CodeRepository
    *
    * Access Level: Read
    *
@@ -1437,7 +1437,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a compilation job.
+   * Grants permission to return information about a compilation job
    *
    * Access Level: Read
    *
@@ -1448,7 +1448,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a context.
+   * Grants permission to get information about a context
    *
    * Access Level: Read
    *
@@ -1459,7 +1459,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about a data quality job definition.
+   * Grants permission to return information about a data quality job definition
    *
    * Access Level: Read
    *
@@ -1514,7 +1514,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns the description of an endpoint.
+   * Grants permission to return the description of an endpoint
    *
    * Access Level: Read
    *
@@ -1525,7 +1525,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns the description of an endpoint configuration, which was created using the CreateEndpointConfig API.
+   * Grants permission to return the description of an endpoint configuration, which was created using the CreateEndpointConfig API
    *
    * Access Level: Read
    *
@@ -1536,7 +1536,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about an experiment.
+   * Grants permission to return information about an experiment
    *
    * Access Level: Read
    *
@@ -1547,7 +1547,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a feature group.
+   * Grants permission to return information about a feature group
    *
    * Access Level: Read
    *
@@ -1558,7 +1558,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns detailed information about the specified flow definition.
+   * Grants permission to return information about the specified flow definition
    *
    * Access Level: Read
    *
@@ -1569,7 +1569,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns detailed information about the specified human loop.
+   * Grants permission to return information about the specified human loop
    *
    * Access Level: Read
    *
@@ -1580,7 +1580,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns detailed information about the specified human review workflow user interface.
+   * Returns detailed information about the specified human review workflow user interface
    *
    * Access Level: Read
    *
@@ -1591,7 +1591,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Describes a hyper parameter tuning job that was created via CreateHyperParameterTuningJob API.
+   * Grants permission to describe a hyper parameter tuning job that was created via the CreateHyperParameterTuningJob API
    *
    * Access Level: Read
    *
@@ -1602,7 +1602,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return information about a SageMaker Image.
+   * Grants permissions to return information about a SageMaker Image
    *
    * Access Level: Read
    *
@@ -1613,7 +1613,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return information about a SageMaker ImageVersion.
+   * Grants permissions to return information about a SageMaker ImageVersion
    *
    * Access Level: Read
    *
@@ -1624,7 +1624,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a labeling job.
+   * Grants permission to return information about a labeling job
    *
    * Access Level: Read
    *
@@ -1635,7 +1635,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Describes a model that you created using the CreateModel API.
+   * Grants permission to describe a model that you created using the CreateModel API
    *
    * Access Level: Read
    *
@@ -1646,7 +1646,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about a model bias job definition.
+   * Grants permission to return information about a model bias job definition
    *
    * Access Level: Read
    *
@@ -1657,7 +1657,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about a model explainability job definition.
+   * Grants permission to return information about a model explainability job definition
    *
    * Access Level: Read
    *
@@ -1668,7 +1668,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a ModelPackage.
+   * Grants permission to describe a ModelPackage
    *
    * Access Level: Read
    *
@@ -1679,7 +1679,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a ModelPackageGroup.
+   * Grants permission to describe a ModelPackageGroup
    *
    * Access Level: Read
    *
@@ -1690,7 +1690,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about a model quality job definition.
+   * Grants permission to return information about a model quality job definition
    *
    * Access Level: Read
    *
@@ -1701,7 +1701,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about a monitoring schedule.
+   * Grants permission to return information about a monitoring schedule
    *
    * Access Level: Read
    *
@@ -1712,7 +1712,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a notebook instance.
+   * Grants permission to return information about a notebook instance
    *
    * Access Level: Read
    *
@@ -1723,7 +1723,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Describes an notebook instance lifecycle configuration that was created via CreateNotebookInstanceLifecycleConfig API.
+   * Grants permission to describe a notebook instance lifecycle configuration that was created via the CreateNotebookInstanceLifecycleConfig API
    *
    * Access Level: Read
    *
@@ -1734,7 +1734,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a pipeline.
+   * Grants permission to get information about a pipeline
    *
    * Access Level: Read
    *
@@ -1745,7 +1745,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the pipeline definition for a pipeline execution.
+   * Grants permission to get the pipeline definition for a pipeline execution
    *
    * Access Level: Read
    *
@@ -1756,7 +1756,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a pipeline execution.
+   * Grants permission to get information about a pipeline execution
    *
    * Access Level: Read
    *
@@ -1767,7 +1767,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a processing job.
+   * Grants permission to return information about a processing job
    *
    * Access Level: Read
    *
@@ -1778,7 +1778,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a project.
+   * Grants permission to describe a project
    *
    * Access Level: Read
    *
@@ -1789,7 +1789,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a subscribed workteam.
+   * Grants permission to return information about a subscribed workteam
    *
    * Access Level: Read
    *
@@ -1800,7 +1800,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a training job.
+   * Grants permission to return information about a training job
    *
    * Access Level: Read
    *
@@ -1811,7 +1811,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a transform job.
+   * Grants permission to return information about a transform job
    *
    * Access Level: Read
    *
@@ -1822,7 +1822,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a trial.
+   * Grants permission to return information about a trial
    *
    * Access Level: Read
    *
@@ -1833,7 +1833,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a trial component.
+   * Grants permission to return information about a trial component
    *
    * Access Level: Read
    *
@@ -1855,7 +1855,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a workforce.
+   * Grants permission to return information about a workforce
    *
    * Access Level: Read
    *
@@ -1866,7 +1866,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns information about a workteam.
+   * Grants permission to return information about a workteam
    *
    * Access Level: Read
    *
@@ -1877,7 +1877,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disable a SageMaker Service Catalog Portfolio.
+   * Grants permission to disable a SageMaker Service Catalog Portfolio
    *
    * Access Level: Write
    *
@@ -1888,7 +1888,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Disassociate a trial component with a trial.
+   * Grants permission to disassociate a trial component from a trial
    *
    * Access Level: Write
    *
@@ -1899,7 +1899,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable a SageMaker Service Catalog Portfolio.
+   * Grants permission to enable a SageMaker Service Catalog Portfolio
    *
    * Access Level: Write
    *
@@ -1932,7 +1932,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a ModelPackageGroup policy.
+   * Grants permission to get a ModelPackageGroup policy
    *
    * Access Level: Read
    *
@@ -1943,7 +1943,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a record from a feature group.
+   * Grants permission to get a record from a feature group
    *
    * Access Level: Read
    *
@@ -1954,7 +1954,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a SageMaker Service Catalog Portfolio.
+   * Grants permission to get a SageMaker Service Catalog Portfolio
    *
    * Access Level: Read
    *
@@ -1965,7 +1965,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Get search suggestions when provided with keyword.
+   * Grants permission to get search suggestions when provided with a keyword
    *
    * Access Level: Read
    *
@@ -1976,7 +1976,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * After you deploy a model into production using Amazon SageMaker hosting services, your client applications use this API to get inferences from the model hosted at the specified endpoint.
+   * Grants permission to invoke an endpoint. After you deploy a model into production using Amazon SageMaker hosting services, your client applications use this API to get inferences from the model hosted at the specified endpoint
    *
    * Access Level: Read
    *
@@ -1990,7 +1990,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list actions.
+   * Grants permission to list actions
    *
    * Access Level: List
    *
@@ -2001,7 +2001,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list Algorithms.
+   * Grants permission to list Algorithms
    *
    * Access Level: List
    *
@@ -2034,7 +2034,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list artifacts.
+   * Grants permission to list artifacts
    *
    * Access Level: List
    *
@@ -2045,7 +2045,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list associations.
+   * Grants permission to list associations
    *
    * Access Level: List
    *
@@ -2056,7 +2056,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists automl jobs created via the CreateAutoMLJob.
+   * Grants permission to list AutoML jobs
    *
    * Access Level: List
    *
@@ -2067,7 +2067,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists candidates for automl job created via the CreateAutoMLJob.
+   * Grants permission to lists candidates for an AutoML job
    *
    * Access Level: List
    *
@@ -2078,7 +2078,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list code repositories.
+   * Grants permission to list code repositories
    *
    * Access Level: List
    *
@@ -2089,7 +2089,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists compilation jobs.
+   * Grants permission to list compilation jobs
    *
    * Access Level: List
    *
@@ -2111,7 +2111,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list data quality job definitions.
+   * Grants permission to list data quality job definitions
    *
    * Access Level: List
    *
@@ -2133,7 +2133,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list devices.
+   * Grants permission to list devices
    *
    * Access Level: List
    *
@@ -2166,7 +2166,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists endpoint configurations.
+   * Grants permission to list endpoint configurations
    *
    * Access Level: List
    *
@@ -2177,7 +2177,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists endpoints.
+   * Grants permission to list endpoints
    *
    * Access Level: List
    *
@@ -2188,7 +2188,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists experiments.
+   * Grants permission to list experiments
    *
    * Access Level: List
    *
@@ -2199,7 +2199,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists feature groups.
+   * Grants permission to list feature groups
    *
    * Access Level: List
    *
@@ -2210,7 +2210,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns summary information about flow definitions, given the specified parameters.
+   * Grants permission to return summary information about flow definitions, given the specified parameters
    *
    * Access Level: List
    *
@@ -2221,7 +2221,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns summary information about human loops, given the specified parameters.
+   * Grants permission to return summary information about human loops, given the specified parameters
    *
    * Access Level: List
    *
@@ -2232,7 +2232,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns summary information about human review workflow user interfaces, given the specified parameters.
+   * Grants permission to return summary information about human review workflow user interfaces, given the specified parameters
    *
    * Access Level: List
    *
@@ -2243,7 +2243,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists hyper parameter tuning jobs that was created using Amazon SageMaker.
+   * Grants permission to list hyper parameter tuning jobs
    *
    * Access Level: List
    *
@@ -2254,7 +2254,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list ImageVersions that belong to a SageMaker Image.
+   * Grants permissions to list ImageVersions that belong to a SageMaker Image
    *
    * Access Level: List
    *
@@ -2265,7 +2265,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list SageMaker Images in your account.
+   * Grants permissions to list SageMaker Images in your account
    *
    * Access Level: List
    *
@@ -2276,7 +2276,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists labeling jobs.
+   * Grants permission to list labeling jobs
    *
    * Access Level: List
    *
@@ -2287,7 +2287,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists labeling jobs for workteam.
+   * Grants permission to list labeling jobs for workteam
    *
    * Access Level: List
    *
@@ -2298,7 +2298,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list model bias job definitions.
+   * Grants permission to list model bias job definitions
    *
    * Access Level: List
    *
@@ -2309,7 +2309,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list model explainability job definitions.
+   * Grants permission to list model explainability job definitions
    *
    * Access Level: List
    *
@@ -2320,7 +2320,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list ModelPackageGroups.
+   * Grants permission to list ModelPackageGroups
    *
    * Access Level: List
    *
@@ -2331,7 +2331,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list ModelPackages.
+   * Grants permission to list ModelPackages
    *
    * Access Level: List
    *
@@ -2342,7 +2342,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list model quality job definitions.
+   * Grants permission to list model quality job definitions
    *
    * Access Level: List
    *
@@ -2353,7 +2353,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists the models created with the CreateModel API.
+   * Grants permission to list the models created with the CreateModel API
    *
    * Access Level: List
    *
@@ -2364,7 +2364,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list monitoring executions.
+   * Grants permission to list monitoring executions
    *
    * Access Level: List
    *
@@ -2375,7 +2375,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list monitoring schedules.
+   * Grants permission to list monitoring schedules
    *
    * Access Level: List
    *
@@ -2386,7 +2386,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists notebook instance lifecycle configurations that can be deployed using Amazon SageMaker.
+   * Grants permission to list the notebook instance lifecycle configurations that can be deployed using Amazon SageMaker
    *
    * Access Level: List
    *
@@ -2397,7 +2397,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns a list of the Amazon SageMaker notebook instances in the requester's account in an AWSRegion.
+   * Grants permission to list the Amazon SageMaker notebook instances in the requester's account in an AWSRegion
    *
    * Access Level: List
    *
@@ -2441,7 +2441,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list pipelines.
+   * Grants permission to list pipelines
    *
    * Access Level: List
    *
@@ -2452,7 +2452,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists processing jobs.
+   * Grants permission to list processing jobs
    *
    * Access Level: List
    *
@@ -2463,7 +2463,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list Projects.
+   * Grants permission to list Projects
    *
    * Access Level: List
    *
@@ -2474,7 +2474,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists subscribed workteams.
+   * Grants permission to list subscribed workteams
    *
    * Access Level: List
    *
@@ -2485,7 +2485,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns the tag set associated with the specified resource.
+   * Grants permission to list the tag set associated with the specified resource
    *
    * Access Level: List
    *
@@ -2496,7 +2496,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists training jobs.
+   * Grants permission to list training jobs
    *
    * Access Level: List
    *
@@ -2507,7 +2507,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists training jobs for a hyper parameter tuning job that was created using Amazon SageMaker.
+   * Grants permission to list training jobs for a hyper parameter tuning job
    *
    * Access Level: List
    *
@@ -2518,7 +2518,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists transform jobs.
+   * Grants permission to list transform jobs
    *
    * Access Level: List
    *
@@ -2529,7 +2529,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists trial components.
+   * Grants permission to list trial components
    *
    * Access Level: List
    *
@@ -2540,7 +2540,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists trials.
+   * Grants permission to list trials
    *
    * Access Level: List
    *
@@ -2562,7 +2562,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists workforces.
+   * Grants permission to list workforces
    *
    * Access Level: List
    *
@@ -2573,7 +2573,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Lists workteams.
+   * Grants permission to list workteams
    *
    * Access Level: List
    *
@@ -2584,7 +2584,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to put a ModelPackageGroup policy.
+   * Grants permission to put a ModelPackageGroup policy
    *
    * Access Level: Write
    *
@@ -2595,7 +2595,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to put a record to a feature group.
+   * Grants permission to put a record to a feature group
    *
    * Access Level: Write
    *
@@ -2621,7 +2621,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Render a UI template used for a human annotation task.
+   * Grants permission to render a UI template used for a human annotation task
    *
    * Access Level: Read
    *
@@ -2635,7 +2635,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Search for SageMaker objects.
+   * Search for SageMaker objects
    *
    * Access Level: Read
    *
@@ -2657,7 +2657,29 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Starts a human loop.
+   * Grants permission to fail a pending callback step
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_SendPipelineExecutionStepFailure.html
+   */
+  public toSendPipelineExecutionStepFailure() {
+    return this.to('SendPipelineExecutionStepFailure');
+  }
+
+  /**
+   * Grants permission to succeed a pending callback step
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_SendPipelineExecutionStepSuccess.html
+   */
+  public toSendPipelineExecutionStepSuccess() {
+    return this.to('SendPipelineExecutionStepSuccess');
+  }
+
+  /**
+   * Grants permission to start a human loop
    *
    * Access Level: Write
    *
@@ -2668,7 +2690,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Starts a monitoring schedule.
+   * Grants permission to start a monitoring schedule
    *
    * Access Level: Write
    *
@@ -2679,7 +2701,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Launches an EC2 instance with the latest version of the libraries and attaches your EBS volume.
+   * Grants permission to start a notebook instance. This launches an EC2 instance with the latest version of the libraries and attaches your EBS volume
    *
    * Access Level: Write
    *
@@ -2690,7 +2712,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a pipeline execution.
+   * Grants permission to start a pipeline execution
    *
    * Access Level: Write
    *
@@ -2701,7 +2723,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Stops a running automl job created via the CreateAutoMLJob.
+   * Grants permission to stop a running AutoML job
    *
    * Access Level: Write
    *
@@ -2712,7 +2734,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Stops a compilation job.
+   * Grants permission to stop a compilation job
    *
    * Access Level: Write
    *
@@ -2734,7 +2756,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Stops the specified human loop.
+   * Grants permission to stop a specified human loop
    *
    * Access Level: Write
    *
@@ -2745,7 +2767,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Stops a running hyper parameter tuning job create via the CreateHyperParameterTuningJob.
+   * Grants permission to stop a running hyper parameter tuning job create via the CreateHyperParameterTuningJob
    *
    * Access Level: Write
    *
@@ -2756,7 +2778,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Stops a labeling job. Any labels already generated will be exported before stopping.
+   * Grants permission to stop a labeling job. Any labels already generated will be exported before stopping
    *
    * Access Level: Write
    *
@@ -2767,7 +2789,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Stops a monitoring schedule.
+   * Grants permission to stop a monitoring schedule
    *
    * Access Level: Write
    *
@@ -2778,7 +2800,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Terminates the EC2 instance. Before terminating the instance, Amazon SageMaker disconnects the EBS volume from it. Amazon SageMaker preserves the EBS volume.
+   * Grants permission to stop a notebook instance. This terminates the EC2 instance. Before terminating the instance, Amazon SageMaker disconnects the EBS volume from it. Amazon SageMaker preserves the EBS volume
    *
    * Access Level: Write
    *
@@ -2789,7 +2811,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to stop a pipeline execution.
+   * Grants permission to stop a pipeline execution
    *
    * Access Level: Write
    *
@@ -2800,7 +2822,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Stops a processing job. To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds.
+   * Grants permission to stop a processing job. To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds
    *
    * Access Level: Write
    *
@@ -2811,7 +2833,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Stops a training job. To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds.
+   * Grants permission to stop a training job. To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds
    *
    * Access Level: Write
    *
@@ -2822,7 +2844,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Stops a transform job. When Amazon SageMaker receives a StopTransformJob request, the status of the job changes to Stopping. After Amazon SageMaker stops the job, the status is set to Stopped
+   * Grants permission to stop a transform job. When Amazon SageMaker receives a StopTransformJob request, the status of the job changes to Stopping. After Amazon SageMaker stops the job, the status is set to Stopped
    *
    * Access Level: Write
    *
@@ -2833,7 +2855,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an action.
+   * Grants permission to update an action
    *
    * Access Level: Write
    *
@@ -2855,7 +2877,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an artifact.
+   * Grants permission to update an artifact
    *
    * Access Level: Write
    *
@@ -2866,7 +2888,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a CodeRepository.
+   * Grants permission to update a CodeRepository
    *
    * Access Level: Write
    *
@@ -2877,7 +2899,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a context.
+   * Grants permission to update a context
    *
    * Access Level: Write
    *
@@ -2928,7 +2950,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Updates an endpoint to use the endpoint configuration specified in the request.
+   * Grants permission to update an endpoint to use the endpoint configuration specified in the request
    *
    * Access Level: Write
    *
@@ -2939,7 +2961,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Updates variant weight, capacity, or both of one or more variants associated with an endpoint.
+   * Grants permission to update variant weight, capacity, or both of one or more variants associated with an endpoint
    *
    * Access Level: Write
    *
@@ -2950,7 +2972,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Updates an experiment.
+   * Grants permission to update an experiment
    *
    * Access Level: Write
    *
@@ -2961,7 +2983,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update the properties of a SageMaker Image.
+   * Grants permissions to update the properties of a SageMaker Image
    *
    * Access Level: Write
    *
@@ -2975,7 +2997,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a ModelPackage.
+   * Grants permission to update a ModelPackage
    *
    * Access Level: Write
    *
@@ -2986,7 +3008,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Updates a monitoring schedule.
+   * Grants permission to update a monitoring schedule
    *
    * Access Level: Write
    *
@@ -3012,7 +3034,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Updates a notebook instance. Notebook instance updates include upgrading or downgrading the EC2 instance used for your notebook instance to accommodate changes in your workload requirements. You can also update the VPC security groups.
+   * Grants permission to update a notebook instance. Notebook instance updates include upgrading or downgrading the EC2 instance used for your notebook instance to accommodate changes in your workload requirements. You can also update the VPC security groups
    *
    * Access Level: Write
    *
@@ -3028,7 +3050,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Updates a notebook instance lifecycle configuration created with the CreateNotebookInstanceLifecycleConfig API.
+   * Grants permission to updates a notebook instance lifecycle configuration created with the CreateNotebookInstanceLifecycleConfig API
    *
    * Access Level: Write
    *
@@ -3039,7 +3061,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a pipeline.
+   * Grants permission to update a pipeline
    *
    * Access Level: Write
    *
@@ -3053,7 +3075,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a pipeline execution.
+   * Grants permission to update a pipeline execution
    *
    * Access Level: Write
    *
@@ -3064,7 +3086,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Updates a training job.
+   * Grants permission to update a training job
    *
    * Access Level: Write
    *
@@ -3078,7 +3100,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Updates a trial.
+   * Grants permission to update a trial
    *
    * Access Level: Write
    *
@@ -3089,7 +3111,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Updates a trial component.
+   * Grants permission to update a trial component
    *
    * Access Level: Write
    *
@@ -3119,7 +3141,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Updates a workforce.
+   * Grants permission to update a workforce
    *
    * Access Level: Write
    *
@@ -3130,7 +3152,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Updates a workteam.
+   * Grants permission to update a workteam
    *
    * Access Level: Write
    *
@@ -3235,6 +3257,8 @@ export class Sagemaker extends PolicyStatement {
       "PutRecord",
       "RegisterDevices",
       "SendHeartbeat",
+      "SendPipelineExecutionStepFailure",
+      "SendPipelineExecutionStepSuccess",
       "StartHumanLoop",
       "StartMonitoringSchedule",
       "StartNotebookInstance",
@@ -4338,7 +4362,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The list of all accelerator types associated with the resource in the request.
+   * Filters access by the list of all accelerator types associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4355,7 +4379,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * App network access type associated with the resource in the request.
+   * Filters access by the app network access type associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4370,7 +4394,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The direct internet access associated with the resource in the request.
+   * Filters access by the direct internet access associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4385,7 +4409,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The Domain sharing output KMS key associated with the resource in the request.
+   * Filters access by the Domain sharing output KMS key associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4403,7 +4427,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The offline store kms key associated with the feature group resource in the request.
+   * Filters access by the offline store kms key associated with the feature group resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4418,7 +4442,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The offline store s3 uri associated with the feature group resource in the request.
+   * Filters access by the offline store s3 uri associated with the feature group resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4433,7 +4457,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The online store kms key associated with the feature group resource in the request.
+   * Filters access by the online store kms key associated with the feature group resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4448,7 +4472,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * File system access mode associated with the resource in the request.
+   * Filters access by a file system access mode associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4464,7 +4488,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * File system directory path associated with the resource in the request.
+   * Filters access by a file system directory path associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4480,7 +4504,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * A file system ID associated with the resource in the request.
+   * Filters access by a file system ID associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4496,7 +4520,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * File system type associated with the resource in the request.
+   * Filters access by a file system type associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4512,7 +4536,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * This key is deprecated. It has been replaced by sagemaker:VolumeKmsKey.
+   * This key is deprecated. It has been replaced by sagemaker:VolumeKmsKey
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4524,7 +4548,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Filters access by the list of all image arns associated with the resource in the request.
+   * Filters access by the list of all image arns associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4543,7 +4567,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Filters access by the list of all image version arns associated with the resource in the request.
+   * Filters access by the list of all image version arns associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4562,7 +4586,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The list of all instance types associated with the resource in the request.
+   * Filters access by the list of all instance types associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4595,7 +4619,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The inter container traffic encryption associated with the resource in the request.
+   * Filters access by the inter container traffic encryption associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4618,7 +4642,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The max runtime in seconds associated with the resource in the request.
+   * Filters access by the max runtime in seconds associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4641,7 +4665,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The model arn associated with the resource in the request.
+   * Filters access by the model arn associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4657,7 +4681,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The network isolation associated with the resource in the request.
+   * Filters access by the network isolation associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4680,7 +4704,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The output kms key associated with the resource in the request.
+   * Filters access by the output kms key associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4706,7 +4730,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The preface string for a tag key and value pair attached to a resource.
+   * Filters access by the preface string for a tag key and value pair attached to a resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4718,7 +4742,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * A tag key and value pair.
+   * Filters access by a tag key and value pair
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4773,7 +4797,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The root access associated with the resource in the request.
+   * Filters access by the root access associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4789,7 +4813,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The target model associated with the Multi-Model Endpoint in the request.
+   * Filters access by the target model associated with the Multi-Model Endpoint in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4804,7 +4828,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The volume kms key associated with the resource in the request.
+   * Filters access by the volume kms key associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4833,7 +4857,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The list of all vpc security group ids associated with the resource in the request.
+   * Filters access by the list of all VPC security group ids associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4863,7 +4887,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The list of all vpc subnets associated with the resource in the request.
+   * Filters access by the list of all VPC subnets associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4890,7 +4914,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The workteam arn associated to the request.
+   * Filters access by the workteam arn associated to the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4906,7 +4930,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * The workteam type associated to the request. This can be public-crowd, private-crowd or vendor-crowd.
+   * Filters access by the workteam type associated to the request. This can be public-crowd, private-crowd or vendor-crowd
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *

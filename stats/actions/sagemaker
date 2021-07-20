@@ -205,6 +205,8 @@ sagemaker:RegisterDevices;Write
 sagemaker:RenderUiTemplate;Read
 sagemaker:Search;Read
 sagemaker:SendHeartbeat;Write
+sagemaker:SendPipelineExecutionStepFailure;Write
+sagemaker:SendPipelineExecutionStepSuccess;Write
 sagemaker:StartHumanLoop;Write
 sagemaker:StartMonitoringSchedule;Write
 sagemaker:StartNotebookInstance;Write
