@@ -104,6 +104,7 @@
                 "lambda:CreateFunction",
                 "lambda:AddPermission",
                 "lambda:PublishVersion",
+                "lambda:UpdateFunctionCode",
                 "lambda:UpdateFunctionConfiguration",
                 "lambda:GetFunctionConfiguration"
             ],
