@@ -39,6 +39,7 @@ workdocs:GetDocumentPath;Read
 workdocs:GetDocumentVersion;Read
 workdocs:GetFolder;Read
 workdocs:GetFolderPath;Read
+workdocs:GetGroup;Read
 workdocs:GetResources;Read
 workdocs:InitiateDocumentVersionUpload;Write
 workdocs:RegisterDirectory;Write

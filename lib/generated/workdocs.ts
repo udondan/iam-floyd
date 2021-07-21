@@ -470,6 +470,17 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details for the specified group.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/APIReference/API_Operations.html
+   */
+  public toGetGroup() {
+    return this.to('GetGroup');
+  }
+
+  /**
    * Grants permission to get a collection of resources.
    *
    * Access Level: Read
@@ -622,6 +633,7 @@ export class Workdocs extends PolicyStatement {
       "GetDocumentVersion",
       "GetFolder",
       "GetFolderPath",
+      "GetGroup",
       "GetResources"
     ],
     "List": [
