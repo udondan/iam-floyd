@@ -74,7 +74,7 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Outposts for your AWSaccount
+   * Grants permission to list the Outposts for your AWS account
    *
    * Access Level: List
    *
@@ -85,7 +85,7 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the sites for your AWSaccount
+   * Grants permission to list the sites for your AWS account
    *
    * Access Level: List
    *

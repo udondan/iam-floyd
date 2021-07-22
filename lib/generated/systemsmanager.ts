@@ -1316,7 +1316,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to reset the service setting for an AWSaccount to the default value
+   * Grants permission to reset the service setting for an AWS account to the default value
    *
    * Access Level: Write
    *
@@ -1600,7 +1600,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the service setting for an AWSaccount
+   * Grants permission to update the service setting for an AWS account
    *
    * Access Level: Write
    *

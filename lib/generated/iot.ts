@@ -681,7 +681,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deletes the specified custom metric from your AWSaccount.
+   * Grants permission to deletes the specified custom metric from your AWS account.
    *
    * Access Level: Write
    *
@@ -692,7 +692,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove the specified dimension from your AWSaccount.
+   * Grants permission to remove the specified dimension from your AWS account.
    *
    * Access Level: Write
    *
@@ -769,7 +769,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a defined mitigation action from your AWSaccount.
+   * Grants permission to delete a defined mitigation action from your AWS account.
    *
    * Access Level: Write
    *
@@ -1077,7 +1077,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a custom metric that is defined in your AWSaccount.
+   * Grants permission to describe a custom metric that is defined in your AWS account.
    *
    * Access Level: Read
    *
@@ -1110,7 +1110,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get details about a dimension that is defined in your AWSaccount.
+   * Grants permission to get details about a dimension that is defined in your AWS account.
    *
    * Access Level: Read
    *
@@ -1132,7 +1132,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a unique endpoint specific to the AWSaccount making the call.
+   * Grants permission to get a unique endpoint specific to the AWS account making the call.
    *
    * Access Level: Read
    *
@@ -1704,7 +1704,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the CA certificates registered for your AWSaccount.
+   * Grants permission to list the CA certificates registered for your AWS account.
    *
    * Access Level: List
    *
@@ -1737,7 +1737,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the custom metrics in your AWSaccount.
+   * Grants permission to list the custom metrics in your AWS account.
    *
    * Access Level: List
    *
@@ -1770,7 +1770,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the dimensions that are defined for your AWSaccount.
+   * Grants permission to list the dimensions that are defined for your AWS account.
    *
    * Access Level: List
    *
@@ -1781,7 +1781,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the domain configuration created by your AWSaccount.
+   * Grants permission to list the domain configuration created by your AWS account.
    *
    * Access Level: List
    *
@@ -1968,7 +1968,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the fleet provisioning templates in your AWSaccount.
+   * Grants permission to list the fleet provisioning templates in your AWS account.
    *
    * Access Level: List
    *
@@ -2535,7 +2535,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to transfer the specified certificate to the specified AWSaccount.
+   * Grants permission to transfer the specified certificate to the specified AWS account.
    *
    * Access Level: Write
    *

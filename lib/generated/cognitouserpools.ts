@@ -838,7 +838,7 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
-   * Lists the user pools associated with an AWSaccount.
+   * Lists the user pools associated with an AWS account.
    *
    * Access Level: List
    *

@@ -77,7 +77,7 @@ export class SmsVoice extends PolicyStatement {
   }
 
   /**
-   * Return a list of configuration sets. This operation only returns the configuration sets that are associated with your account in the current AWSRegion.
+   * Return a list of configuration sets. This operation only returns the configuration sets that are associated with your account in the current AWS Region.
    *
    * Access Level: Read
    *

@@ -902,7 +902,7 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to view the Amazon Connect instances associated with an AWSaccount
+   * Grants permissions to view the Amazon Connect instances associated with an AWS account
    *
    * Access Level: List
    *

@@ -64,7 +64,7 @@ export class Chatbot extends PolicyStatement {
   }
 
   /**
-   * Lists all AWS Chatbot Slack Channel Configurations in an AWSaccount.
+   * Lists all AWS Chatbot Slack Channel Configurations in an AWS account.
    *
    * Access Level: Read
    */

@@ -55,7 +55,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to assign access to a Principal for a specified AWSaccount using a specified permission set.
+   * Grants permission to assign access to a Principal for a specified AWS account using a specified permission set.
    *
    * Access Level: Write
    *
@@ -147,7 +147,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a Principal's access from a specified AWSaccount using a specified permission set.
+   * Grants permission to delete a Principal's access from a specified AWS account using a specified permission set.
    *
    * Access Level: Write
    *
@@ -503,7 +503,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the status of the AWSaccount assignment creation requests for a specified SSO instance.
+   * Grants permission to list the status of the AWS account assignment creation requests for a specified SSO instance.
    *
    * Access Level: List
    *
@@ -514,7 +514,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the status of the AWSaccount assignment deletion requests for a specified SSO instance.
+   * Grants permission to list the status of the AWS account assignment deletion requests for a specified SSO instance.
    *
    * Access Level: List
    *
@@ -525,7 +525,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the assignee of the specified AWSaccount with the specified permission set.
+   * Grants permission to list the assignee of the specified AWS account with the specified permission set.
    *
    * Access Level: List
    *
@@ -650,7 +650,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the permission sets that are provisioned to a specified AWSaccount.
+   * Grants permission to list all the permission sets that are provisioned to a specified AWS account.
    *
    * Access Level: List
    *

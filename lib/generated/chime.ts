@@ -231,7 +231,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an Amazon Chime account under the administrator's AWSaccount
+   * Grants permission to create an Amazon Chime account under the administrator's AWS account
    *
    * Access Level: Write
    *
@@ -253,7 +253,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an app instance under the AWSaccount
+   * Grants permission to create an app instance under the AWS account
    *
    * Access Level: Write
    *
@@ -342,7 +342,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a channel for an app instance under the AWSaccount
+   * Grants permission to create a channel for an app instance under the AWS account
    *
    * Access Level: Write
    *
@@ -486,7 +486,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an Amazon Chime SIP media application under the administrator's AWSaccount
+   * Grants permission to create an Amazon Chime SIP media application under the administrator's AWS account
    *
    * Access Level: Write
    *
@@ -497,7 +497,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create outbound call for Amazon Chime SIP media application under the administrator's AWSaccount
+   * Grants permission to create outbound call for Amazon Chime SIP media application under the administrator's AWS account
    *
    * Access Level: Write
    *
@@ -508,7 +508,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an Amazon Chime SIP rule under the administrator's AWSaccount
+   * Grants permission to create an Amazon Chime SIP rule under the administrator's AWS account
    *
    * Access Level: Write
    *
@@ -530,7 +530,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Amazon Chime Voice Connector under the administrator's AWSaccount
+   * Grants permission to create a Amazon Chime Voice Connector under the administrator's AWS account
    *
    * Access Level: Write
    *
@@ -541,7 +541,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Amazon Chime Voice Connector Group under the administrator's AWSaccount
+   * Grants permission to create a Amazon Chime Voice Connector Group under the administrator's AWS account
    *
    * Access Level: Write
    *
@@ -709,7 +709,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete delegated AWSaccount management from your Amazon Chime account
+   * Grants permission to delete delegated AWS account management from your Amazon Chime account
    *
    * Access Level: Write
    *
@@ -819,7 +819,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete Amazon Chime SIP media application under the administrator's AWSaccount
+   * Grants permission to delete Amazon Chime SIP media application under the administrator's AWS account
    *
    * Access Level: Write
    *
@@ -830,7 +830,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete Amazon Chime SIP rule under the administrator's AWSaccount
+   * Grants permission to delete Amazon Chime SIP rule under the administrator's AWS account
    *
    * Access Level: Write
    *
@@ -1222,7 +1222,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get global settings related to Amazon Chime for the AWSaccount
+   * Grants permission to get global settings related to Amazon Chime for the AWS account
    *
    * Access Level: Read
    *
@@ -1299,7 +1299,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get phone number settings related to Amazon Chime for the AWSaccount
+   * Grants permission to get phone number settings related to Amazon Chime for the AWS account
    *
    * Access Level: Read
    *
@@ -1343,7 +1343,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get details of Amazon Chime SIP media application under the administrator's AWSaccount
+   * Grants permission to get details of Amazon Chime SIP media application under the administrator's AWS account
    *
    * Access Level: Read
    *
@@ -1354,7 +1354,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get logging configuration settings for Amazon Chime SIP media application under the administrator's AWSaccount
+   * Grants permission to get logging configuration settings for Amazon Chime SIP media application under the administrator's AWS account
    *
    * Access Level: Read
    *
@@ -1365,7 +1365,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get details of Amazon Chime SIP rule under the administrator's AWSaccount
+   * Grants permission to get details of Amazon Chime SIP rule under the administrator's AWS account
    *
    * Access Level: Read
    *
@@ -1376,7 +1376,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get telephony limits for the AWSaccount
+   * Grants permission to get telephony limits for the AWS account
    *
    * Access Level: Read
    *
@@ -1530,7 +1530,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send an invitation to accept a request for AWSaccount delegation for an Amazon Chime account
+   * Grants permission to send an invitation to accept a request for AWS account delegation for an Amazon Chime account
    *
    * Access Level: Write
    *
@@ -1572,7 +1572,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Amazon Chime accounts under the administrator's AWSaccount
+   * Grants permission to list the Amazon Chime accounts under the administrator's AWS account
    *
    * Access Level: List
    *
@@ -1616,7 +1616,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all Amazon Chime app instances created under a single AWSaccount
+   * Grants permission to list all Amazon Chime app instances created under a single AWS account
    *
    * Access Level: List
    *
@@ -1675,7 +1675,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the calling regions available for the administrator's AWSaccount
+   * Grants permission to list the calling regions available for the administrator's AWS account
    *
    * Access Level: List
    *
@@ -1774,7 +1774,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list active Active Directories hosted in the Directory Service of your AWSaccount
+   * Grants permission to list active Active Directories hosted in the Directory Service of your AWS account
    *
    * Access Level: List
    *
@@ -1862,7 +1862,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the phone number orders under the administrator's AWSaccount
+   * Grants permission to list the phone number orders under the administrator's AWS account
    *
    * Access Level: List
    *
@@ -1873,7 +1873,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the phone numbers under the administrator's AWSaccount
+   * Grants permission to list the phone numbers under the administrator's AWS account
    *
    * Access Level: List
    *
@@ -1917,7 +1917,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all Amazon Chime SIP media applications under the administrator's AWSaccount
+   * Grants permission to list all Amazon Chime SIP media applications under the administrator's AWS account
    *
    * Access Level: List
    *
@@ -1928,7 +1928,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all Amazon Chime SIP rules under the administrator's AWSaccount
+   * Grants permission to list all Amazon Chime SIP rules under the administrator's AWS account
    *
    * Access Level: List
    *
@@ -1939,7 +1939,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the phone number countries supported by the AWSaccount
+   * Grants permission to list the phone number countries supported by the AWS account
    *
    * Access Level: List
    */
@@ -1970,7 +1970,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Amazon Chime Voice Connector Groups under the administrator's AWSaccount
+   * Grants permission to list the Amazon Chime Voice Connector Groups under the administrator's AWS account
    *
    * Access Level: List
    *
@@ -1992,7 +1992,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Amazon Chime Voice Connectors under the administrator's AWSaccount
+   * Grants permission to list the Amazon Chime Voice Connectors under the administrator's AWS account
    *
    * Access Level: List
    *
@@ -2058,7 +2058,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update logging configuration settings for Amazon Chime SIP media application under the administrator's AWSaccount
+   * Grants permission to update logging configuration settings for Amazon Chime SIP media application under the administrator's AWS account
    *
    * Access Level: Write
    *
@@ -2532,7 +2532,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the global settings related to Amazon Chime for the AWSaccount
+   * Grants permission to update the global settings related to Amazon Chime for the AWS account
    *
    * Access Level: Write
    *
@@ -2554,7 +2554,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update phone number settings related to Amazon Chime for the AWSaccount
+   * Grants permission to update phone number settings related to Amazon Chime for the AWS account
    *
    * Access Level: Write
    *
@@ -2598,7 +2598,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update properties of Amazon Chime SIP media application under the administrator's AWSaccount
+   * Grants permission to update properties of Amazon Chime SIP media application under the administrator's AWS account
    *
    * Access Level: Write
    *
@@ -2609,7 +2609,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an Amazon Chime SIP media application call under the administrator's AWSaccount
+   * Grants permission to update an Amazon Chime SIP media application call under the administrator's AWS account
    *
    * Access Level: Write
    *
@@ -2620,7 +2620,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update properties of Amazon Chime SIP rule under the administrator's AWSaccount
+   * Grants permission to update properties of Amazon Chime SIP rule under the administrator's AWS account
    *
    * Access Level: Write
    *

@@ -165,7 +165,7 @@ export class Fms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve violations for a resource based on the specified AWS Firewall Manager policy and AWSaccount
+   * Grants permission to retrieve violations for a resource based on the specified AWS Firewall Manager policy and AWS account
    *
    * Access Level: Read
    *

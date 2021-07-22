@@ -307,7 +307,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the default encryption configuration for the AWSaccount
+   * Grants permission to describe the default encryption configuration for the AWS account
    *
    * Access Level: Read
    *
@@ -340,7 +340,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe logging options for the AWSaccount
+   * Grants permission to describe logging options for the AWS account
    *
    * Access Level: Read
    *
@@ -541,7 +541,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set the default encryption configuration for the AWSaccount
+   * Grants permission to set the default encryption configuration for the AWS account
    *
    * Access Level: Write
    *
@@ -552,7 +552,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set logging options for the AWSaccount
+   * Grants permission to set logging options for the AWS account
    *
    * Access Level: Write
    *

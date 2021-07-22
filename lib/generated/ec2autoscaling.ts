@@ -251,7 +251,7 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the current Auto Scaling resource limits for your AWSaccount
+   * Grants permission to describe the current Auto Scaling resource limits for your AWS account
    *
    * Access Level: List
    *

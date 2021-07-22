@@ -41,7 +41,7 @@ logs:PutRetentionPolicy;Write
 logs:PutSubscriptionFilter;Write
 logs:StartQuery;Read
 logs:StopQuery;Read
-logs:TagLogGroup;Write
+logs:TagLogGroup;Tagging
 logs:TestMetricFilter;Read
-logs:UntagLogGroup;Write
+logs:UntagLogGroup;Tagging
 logs:UpdateLogDelivery;Write

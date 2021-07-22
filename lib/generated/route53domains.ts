@@ -19,7 +19,7 @@ export class Route53domains extends PolicyStatement {
   }
 
   /**
-   * Grants permission to accept the transfer of a domain from another AWSaccount to the current AWSaccount
+   * Grants permission to accept the transfer of a domain from another AWS account to the current AWS account
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Route53domains extends PolicyStatement {
   }
 
   /**
-   * Grants permission to cancel the transfer of a domain from the current AWSaccount to another AWSaccount
+   * Grants permission to cancel the transfer of a domain from the current AWS account to another AWS account
    *
    * Access Level: Write
    *
@@ -162,7 +162,7 @@ export class Route53domains extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the domain names registered with Amazon Route 53 for the current AWSaccount
+   * Grants permission to list all the domain names registered with Amazon Route 53 for the current AWS account
    *
    * Access Level: List
    *
@@ -206,7 +206,7 @@ export class Route53domains extends PolicyStatement {
   }
 
   /**
-   * Grants permission to reject the transfer of a domain from another AWSaccount to the current AWSaccount
+   * Grants permission to reject the transfer of a domain from another AWS account to the current AWS account
    *
    * Access Level: Write
    *
@@ -261,7 +261,7 @@ export class Route53domains extends PolicyStatement {
   }
 
   /**
-   * Grants permission to transfer a domain from the current AWSaccount to another AWSaccount
+   * Grants permission to transfer a domain from the current AWS account to another AWS account
    *
    * Access Level: Write
    *
@@ -316,7 +316,7 @@ export class Route53domains extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get all the domain-related billing records for the current AWSaccount for a specified period
+   * Grants permission to get all the domain-related billing records for the current AWS account for a specified period
    *
    * Access Level: Read
    *

@@ -30,7 +30,7 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view if the AWSaccount has enabled or disabled AWS Trusted Advisor
+   * Grants permission to view if the AWS account has enabled or disabled AWS Trusted Advisor
    *
    * Access Level: Read
    *
@@ -85,7 +85,7 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view the notification preferences for the AWSaccount
+   * Grants permission to view the notification preferences for the AWS account
    *
    * Access Level: Read
    *
@@ -96,7 +96,7 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view if the AWSaccount meets the requirements to enable the organizational view feature
+   * Grants permission to view if the AWS account meets the requirements to enable the organizational view feature
    *
    * Access Level: Read
    *
@@ -129,7 +129,7 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view information about organizational view reports, such as the AWSRegions, check categories, check names, and resource statuses
+   * Grants permission to view information about organizational view reports, such as the AWS Regions, check categories, check names, and resource statuses
    *
    * Access Level: Read
    *

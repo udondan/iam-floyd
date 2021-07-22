@@ -230,7 +230,7 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view the description of an Amazon EFS file system specified by file system CreationToken or FileSystemId; or to view the description of all file systems owned by the caller's AWSaccount in the AWS region of the endpoint that is being called
+   * Grants permission to view the description of an Amazon EFS file system specified by file system CreationToken or FileSystemId; or to view the description of all file systems owned by the caller's AWS account in the AWS region of the endpoint that is being called
    *
    * Access Level: List
    *

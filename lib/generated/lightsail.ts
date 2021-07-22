@@ -96,7 +96,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Copies a snapshot from one AWSRegion to another in Amazon Lightsail
+   * Copies a snapshot from one AWS Region to another in Amazon Lightsail
    *
    * Access Level: Write
    *
@@ -650,7 +650,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Downloads the default key pair used to authenticate and connect to instances in a specific AWSRegion
+   * Downloads the default key pair used to authenticate and connect to instances in a specific AWS Region
    *
    * Access Level: Write
    *
@@ -1156,7 +1156,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns a list of all valid AWSRegions for Amazon Lightsail
+   * Returns a list of all valid AWS Regions for Amazon Lightsail
    *
    * Access Level: Read
    *

@@ -34,7 +34,7 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Grants permission to authorize the DDoS Response team using the specified role, to access your AWSaccount to assist with DDoS attack mitigation during potential attacks
+   * Grants permission to authorize the DDoS Response team using the specified role, to access your AWS account to assist with DDoS attack mitigation during potential attacks
    *
    * Access Level: Write
    *
@@ -180,7 +180,7 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the current role and list of Amazon S3 log buckets used by the DDoS Response team to access your AWSaccount while assisting with attack mitigation
+   * Grants permission to describe the current role and list of Amazon S3 log buckets used by the DDoS Response team to access your AWS account while assisting with attack mitigation
    *
    * Access Level: Read
    *
@@ -268,7 +268,7 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove the DDoS Response team's access to your AWSaccount
+   * Grants permission to remove the DDoS Response team's access to your AWS account
    *
    * Access Level: Write
    *

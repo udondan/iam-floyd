@@ -157,7 +157,7 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to authorize the AWSaccount that created a specified VPC to submit an AssociateVPCWithHostedZone request, which associates the VPC with a specified hosted zone that was created by a different account
+   * Grants permission to authorize the AWS account that created a specified VPC to submit an AssociateVPCWithHostedZone request, which associates the VPC with a specified hosted zone that was created by a different account
    *
    * Access Level: Write
    *
@@ -369,7 +369,7 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the number of health checks that are associated with the current AWSaccount
+   * Grants permission to get the number of health checks that are associated with the current AWS account
    *
    * Access Level: List
    *
@@ -413,7 +413,7 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the number of hosted zones that are associated with the current AWSaccount
+   * Grants permission to get the number of hosted zones that are associated with the current AWS account
    *
    * Access Level: List
    *
@@ -490,7 +490,7 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the number of traffic policy instances that are associated with the current AWSaccount
+   * Grants permission to get the number of traffic policy instances that are associated with the current AWS account
    *
    * Access Level: Read
    *
@@ -512,7 +512,7 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a list of the health checks that are associated with the current AWSaccount
+   * Grants permission to get a list of the health checks that are associated with the current AWS account
    *
    * Access Level: List
    *
@@ -523,7 +523,7 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a list of the public and private hosted zones that are associated with the current AWSaccount
+   * Grants permission to get a list of the public and private hosted zones that are associated with the current AWS account
    *
    * Access Level: List
    *
@@ -559,7 +559,7 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the configurations for DNS query logging that are associated with the current AWSaccount or the configuration that is associated with a specified hosted zone.
+   * Grants permission to list the configurations for DNS query logging that are associated with the current AWS account or the configuration that is associated with a specified hosted zone.
    *
    * Access Level: List
    *
@@ -581,7 +581,7 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the reusable delegation sets that are associated with the current AWSaccount.
+   * Grants permission to list the reusable delegation sets that are associated with the current AWS account.
    *
    * Access Level: List
    *
@@ -614,7 +614,7 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the latest version for every traffic policy that is associated with the current AWSaccount. Policies are listed in the order in which they were created.
+   * Grants permission to get information about the latest version for every traffic policy that is associated with the current AWS account. Policies are listed in the order in which they were created.
    *
    * Access Level: List
    *
@@ -625,7 +625,7 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the traffic policy instances that you created by using the current AWSaccount
+   * Grants permission to get information about the traffic policy instances that you created by using the current AWS account
    *
    * Access Level: List
    *

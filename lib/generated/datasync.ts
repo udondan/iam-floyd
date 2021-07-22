@@ -282,7 +282,7 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list agents owned by an AWSaccount in a region specified in the request
+   * Grants permission to list agents owned by an AWS account in a region specified in the request
    *
    * Access Level: List
    *

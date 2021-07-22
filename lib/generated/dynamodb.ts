@@ -241,7 +241,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Returns the current provisioned-capacity limits for your AWSaccount in a region, both for the region as a whole and for any one DynamoDB table that you create there
+   * Returns the current provisioned-capacity limits for your AWS account in a region, both for the region as a whole and for any one DynamoDB table that you create there
    *
    * Access Level: Read
    *

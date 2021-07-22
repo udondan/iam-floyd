@@ -621,7 +621,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the distributions associated with your AWSaccount
+   * Grants permission to list the distributions associated with your AWS account
    *
    * Access Level: List
    *
@@ -676,7 +676,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the distributions associated with your AWSaccount with given AWS WAF web ACL
+   * Grants permission to list the distributions associated with your AWS account with given AWS WAF web ACL
    *
    * Access Level: List
    *

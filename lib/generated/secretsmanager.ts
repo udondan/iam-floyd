@@ -436,7 +436,7 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by whether the resource policy blocks broad AWSaccount access.
+   * Filters access by whether the resource policy blocks broad AWS account access.
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *

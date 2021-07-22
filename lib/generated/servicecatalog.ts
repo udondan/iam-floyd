@@ -199,7 +199,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to share a portfolio you own with another AWSaccount
+   * Grants permission to share a portfolio you own with another AWS account
    *
    * Access Level: Permissions management
    *
@@ -313,7 +313,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to unshare a portfolio you own from an AWSaccount you previously shared the portfolio with
+   * Grants permission to unshare a portfolio you own from an AWS account you previously shared the portfolio with
    *
    * Access Level: Permissions management
    *

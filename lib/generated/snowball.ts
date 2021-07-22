@@ -206,7 +206,7 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
-   * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your AWSaccount that would be supported for use on a Snow device.
+   * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your AWS account that would be supported for use on a Snow device.
    *
    * Access Level: List
    *

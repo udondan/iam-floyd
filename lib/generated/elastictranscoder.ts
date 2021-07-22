@@ -96,7 +96,7 @@ export class Elastictranscoder extends PolicyStatement {
   }
 
   /**
-   * Get information about all of the jobs associated with the current AWSaccount that have a specified status
+   * Get information about all of the jobs associated with the current AWS account that have a specified status
    *
    * Access Level: List
    *
@@ -107,7 +107,7 @@ export class Elastictranscoder extends PolicyStatement {
   }
 
   /**
-   * Get a list of the pipelines associated with the current AWSaccount
+   * Get a list of the pipelines associated with the current AWS account
    *
    * Access Level: List
    *
@@ -118,7 +118,7 @@ export class Elastictranscoder extends PolicyStatement {
   }
 
   /**
-   * Get a list of all presets associated with the current AWSaccount.
+   * Get a list of all presets associated with the current AWS account.
    *
    * Access Level: List
    *

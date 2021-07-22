@@ -686,7 +686,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the PublicAccessBlock configuration for an AWSaccount
+   * Grants permission to retrieve the PublicAccessBlock configuration for an AWS account
    *
    * Access Level: Read
    *
@@ -1708,7 +1708,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create or modify the PublicAccessBlock configuration for an AWSaccount
+   * Grants permission to create or modify the PublicAccessBlock configuration for an AWS account
    *
    * Access Level: Permissions management
    *
@@ -3053,7 +3053,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters access by the resource owner AWSaccount ID
+   * Filters access by the resource owner AWS account ID
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#condition-key-bucket-ops-2
    *

@@ -616,7 +616,7 @@ export class Codecommit extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all approval rule templates in an AWSRegion for the AWSaccount
+   * Grants permission to list all approval rule templates in an AWS Region for the AWS account
    *
    * Access Level: List
    *
@@ -660,7 +660,7 @@ export class Codecommit extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list information about AWS CodeCommit repositories in the current Region for your AWSaccount
+   * Grants permission to list information about AWS CodeCommit repositories in the current Region for your AWS account
    *
    * Access Level: List
    *

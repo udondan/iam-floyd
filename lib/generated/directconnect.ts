@@ -499,7 +499,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Returns a list of interconnects owned by the AWSaccount.
+   * Returns a list of interconnects owned by the AWS account.
    *
    * Access Level: Read
    *
@@ -554,7 +554,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Returns a list of virtual private gateways owned by the AWSaccount.
+   * Returns a list of virtual private gateways owned by the AWS account.
    *
    * Access Level: Read
    *
@@ -565,7 +565,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Displays all virtual interfaces for an AWSaccount.
+   * Displays all virtual interfaces for an AWS account.
    *
    * Access Level: Read
    *

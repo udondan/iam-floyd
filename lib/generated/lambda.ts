@@ -218,7 +218,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view details about an account's limits and usage in an AWSRegion
+   * Grants permission to view details about an account's limits and usage in an AWS Region
    *
    * Access Level: Read
    *

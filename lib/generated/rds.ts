@@ -717,7 +717,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Lists the set of CA certificates provided by Amazon RDS for this AWSaccount
+   * Lists the set of CA certificates provided by Amazon RDS for this AWS account
    *
    * Access Level: List
    *
@@ -1124,7 +1124,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return a list of the source AWSRegions where the current AWSRegion can create a Read Replica or copy a DB snapshot from
+   * Grants permission to return a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB snapshot from
    *
    * Access Level: List
    *
@@ -1714,7 +1714,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start replication of automated backups to a different AWSRegion
+   * Grants permission to start replication of automated backups to a different AWS Region
    *
    * Access Level: Write
    *

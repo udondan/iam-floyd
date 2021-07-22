@@ -195,7 +195,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the stored query for an AWSaccount in an AWSRegion
+   * Grants permission to delete the stored query for an AWS account in an AWS Region
    *
    * Access Level: Write
    *
@@ -613,7 +613,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return the resource types, the number of each resource type, and the total number of resources that AWS Config is recording in this region for your AWSaccount
+   * Grants permission to return the resource types, the number of each resource type, and the total number of resources that AWS Config is recording in this region for your AWS account
    *
    * Access Level: Read
    *
@@ -690,7 +690,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the stored queries for an AWSaccount in an AWSRegion
+   * Grants permission to list the stored queries for an AWS account in an AWS Region
    *
    * Access Level: List
    *
@@ -925,7 +925,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start recording configurations of the AWS resources you have selected to record in your AWSaccount
+   * Grants permission to start recording configurations of the AWS resources you have selected to record in your AWS account
    *
    * Access Level: Write
    *
@@ -950,7 +950,7 @@ export class Config extends PolicyStatement {
   }
 
   /**
-   * Grants permission to stop recording configurations of the AWS resources you have selected to record in your AWSaccount
+   * Grants permission to stop recording configurations of the AWS resources you have selected to record in your AWS account
    *
    * Access Level: Write
    *

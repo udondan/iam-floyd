@@ -316,7 +316,7 @@ export class Devicefarm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the current status and future status of all offerings purchased by an AWSaccount
+   * Grants permission to retrieve the current status and future status of all offerings purchased by an AWS account
    *
    * Access Level: Read
    *
@@ -525,7 +525,7 @@ export class Devicefarm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all of the historical purchases, renewals, and system renewal transactions for an AWSaccount
+   * Grants permission to list all of the historical purchases, renewals, and system renewal transactions for an AWS account
    *
    * Access Level: List
    *
@@ -547,7 +547,7 @@ export class Devicefarm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the information of mobile testing projects for an AWSaccount
+   * Grants permission to list the information of mobile testing projects for an AWS account
    *
    * Access Level: List
    *
@@ -613,7 +613,7 @@ export class Devicefarm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the information of desktop testing projects for an AWSaccount
+   * Grants permission to list the information of desktop testing projects for an AWS account
    *
    * Access Level: List
    *
@@ -701,7 +701,7 @@ export class Devicefarm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to purchase offerings for an AWSaccount
+   * Grants permission to purchase offerings for an AWS account
    *
    * Access Level: Write
    *

@@ -205,7 +205,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to allow GameLift to create or delete a peering connection between a GameLift fleet VPC and a VPC on another AWSaccount
+   * Grants permission to allow GameLift to create or delete a peering connection between a GameLift fleet VPC and a VPC on another AWS account
    *
    * Access Level: Write
    *

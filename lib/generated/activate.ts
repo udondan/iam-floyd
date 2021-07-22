@@ -28,7 +28,7 @@ export class Activate extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the AWSaccount contact information
+   * Grants permission to get the AWS account contact information
    *
    * Access Level: Read
    */

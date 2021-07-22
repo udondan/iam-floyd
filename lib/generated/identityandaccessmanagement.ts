@@ -121,7 +121,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an alias for your AWSaccount
+   * Grants permission to create an alias for your AWS account
    *
    * Access Level: Write
    *
@@ -319,7 +319,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified AWSaccount alias
+   * Grants permission to delete the specified AWS account alias
    *
    * Access Level: Write
    *
@@ -330,7 +330,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the password policy for the AWSaccount
+   * Grants permission to delete the password policy for the AWS account
    *
    * Access Level: Permissions management
    *
@@ -628,7 +628,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to generate a credential report for the AWSaccount
+   * Grants permission to generate a credential report for the AWS account
    *
    * Access Level: Read
    *
@@ -683,7 +683,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about all IAM users, groups, roles, and policies in your AWSaccount, including their relationships to one another
+   * Grants permission to retrieve information about all IAM users, groups, roles, and policies in your AWS account, including their relationships to one another
    *
    * Access Level: Read
    *
@@ -694,7 +694,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the password policy for the AWSaccount
+   * Grants permission to retrieve the password policy for the AWS account
    *
    * Access Level: Read
    *
@@ -705,7 +705,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about IAM entity usage and IAM quotas in the AWSaccount
+   * Grants permission to retrieve information about IAM entity usage and IAM quotas in the AWS account
    *
    * Access Level: List
    *
@@ -738,7 +738,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a credential report for the AWSaccount
+   * Grants permission to retrieve a credential report for the AWS account
    *
    * Access Level: Read
    *
@@ -958,7 +958,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the account alias that is associated with the AWSaccount
+   * Grants permission to list the account alias that is associated with the AWS account
    *
    * Access Level: List
    *
@@ -1112,7 +1112,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list information about the IAM OpenID Connect (OIDC) provider resource objects that are defined in the AWSaccount
+   * Grants permission to list information about the IAM OpenID Connect (OIDC) provider resource objects that are defined in the AWS account
    *
    * Access Level: List
    *
@@ -1745,7 +1745,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the password policy settings for the AWSaccount
+   * Grants permission to update the password policy settings for the AWS account
    *
    * Access Level: Write
    *
@@ -1899,7 +1899,7 @@ export class Iam extends PolicyStatement {
   }
 
   /**
-   * Grants permission to upload a server certificate entity for the AWSaccount
+   * Grants permission to upload a server certificate entity for the AWS account
    *
    * Access Level: Write
    *
