@@ -18,7 +18,7 @@ ivs:ListPlaybackKeyPairs;List
 ivs:ListRecordingConfigurations;List
 ivs:ListStreamKeys;List
 ivs:ListStreams;List
-ivs:ListTagsForResource;Tagging
+ivs:ListTagsForResource;Read
 ivs:PutMetadata;Write
 ivs:StopStream;Write
 ivs:TagResource;Tagging

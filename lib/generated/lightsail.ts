@@ -19,7 +19,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a static IP address that can be attached to an instance
+   * Grants permission to create a static IP address that can be attached to an instance
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Attaches a disk to an instance
+   * Grants permission to attach a disk to an instance
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Attaches one or more instances to a load balancer
+   * Grants permission to attach one or more instances to a load balancer
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Attaches a TLS certificate to a load balancer
+   * Grants permission to attach a TLS certificate to a load balancer
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Attaches a static IP address to an instance
+   * Grants permission to attach a static IP address to an instance
    *
    * Access Level: Write
    *
@@ -85,7 +85,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Closes a public port of an instance
+   * Grants permission to close a public port of an instance
    *
    * Access Level: Write
    *
@@ -96,7 +96,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Copies a snapshot from one AWS Region to another in Amazon Lightsail
+   * Grants permission to copy a snapshot from one AWS Region to another in Amazon Lightsail
    *
    * Access Level: Write
    *
@@ -104,6 +104,32 @@ export class Lightsail extends PolicyStatement {
    */
   public toCopySnapshot() {
     return this.to('CopySnapshot');
+  }
+
+  /**
+   * Grants permission to create an Amazon Lightsail bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucket.html
+   */
+  public toCreateBucket() {
+    return this.to('CreateBucket');
+  }
+
+  /**
+   * Grants permission to create a new access key for the specified bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html
+   */
+  public toCreateBucketAccessKey() {
+    return this.to('CreateBucketAccessKey');
   }
 
   /**
@@ -118,7 +144,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a new Amazon EC2 instance from an exported Amazon Lightsail snapshot
+   * Grants permission to create a new Amazon EC2 instance from an exported Amazon Lightsail snapshot
    *
    * Access Level: Write
    *
@@ -173,7 +199,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a disk
+   * Grants permission to create a disk
    *
    * Access Level: Write
    *
@@ -188,7 +214,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a disk from snapshot
+   * Grants permission to create a disk from snapshot
    *
    * Access Level: Write
    *
@@ -203,7 +229,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a disk snapshot
+   * Grants permission to create a disk snapshot
    *
    * Access Level: Write
    *
@@ -229,7 +255,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a domain resource for the specified domain name
+   * Grants permission to create a domain resource for the specified domain name
    *
    * Access Level: Write
    *
@@ -244,7 +270,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates one or more DNS record entries for a domain resource: Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT)
+   * Grants permission to create one or more DNS record entries for a domain resource: Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT)
    *
    * Access Level: Write
    *
@@ -255,7 +281,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates an instance snapshot
+   * Grants permission to create an instance snapshot
    *
    * Access Level: Write
    *
@@ -270,7 +296,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates one or more instances
+   * Grants permission to create one or more instances
    *
    * Access Level: Write
    *
@@ -285,7 +311,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates one or more instances based on an instance snapshot
+   * Grants permission to create one or more instances based on an instance snapshot
    *
    * Access Level: Write
    *
@@ -300,7 +326,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a key pair used to authenticate and connect to an instance
+   * Grants permission to create a key pair used to authenticate and connect to an instance
    *
    * Access Level: Write
    *
@@ -315,7 +341,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a load balancer
+   * Grants permission to create a load balancer
    *
    * Access Level: Write
    *
@@ -330,7 +356,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a load balancer TLS certificate
+   * Grants permission to create a load balancer TLS certificate
    *
    * Access Level: Write
    *
@@ -341,7 +367,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a new relational database
+   * Grants permission to create a new relational database
    *
    * Access Level: Write
    *
@@ -356,7 +382,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a new relational database from a snapshot
+   * Grants permission to create a new relational database from a snapshot
    *
    * Access Level: Write
    *
@@ -371,7 +397,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Creates a relational database snapshot
+   * Grants permission to create a relational database snapshot
    *
    * Access Level: Write
    *
@@ -405,6 +431,28 @@ export class Lightsail extends PolicyStatement {
    */
   public toDeleteAutoSnapshot() {
     return this.to('DeleteAutoSnapshot');
+  }
+
+  /**
+   * Grants permission to delete an Amazon Lightsail bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteBucket.html
+   */
+  public toDeleteBucket() {
+    return this.to('DeleteBucket');
+  }
+
+  /**
+   * Grants permission to delete an access key for the specified Amazon Lightsail bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteBucketAccessKey.html
+   */
+  public toDeleteBucketAccessKey() {
+    return this.to('DeleteBucketAccessKey');
   }
 
   /**
@@ -452,7 +500,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a disk
+   * Grants permission to delete a disk
    *
    * Access Level: Write
    *
@@ -463,7 +511,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a disk snapshot
+   * Grants permission to delete a disk snapshot
    *
    * Access Level: Write
    *
@@ -485,7 +533,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a domain resource and all of its DNS records
+   * Grants permission to delete a domain resource and all of its DNS records
    *
    * Access Level: Write
    *
@@ -496,7 +544,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a DNS record entry for a domain resource
+   * Grants permission to delete a DNS record entry for a domain resource
    *
    * Access Level: Write
    *
@@ -507,7 +555,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes an instance
+   * Grants permission to delete an instance
    *
    * Access Level: Write
    *
@@ -518,7 +566,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes an instance snapshot
+   * Grants permission to delete an instance snapshot
    *
    * Access Level: Write
    *
@@ -529,7 +577,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a key pair used to authenticate and connect to an instance
+   * Grants permission to delete a key pair used to authenticate and connect to an instance
    *
    * Access Level: Write
    *
@@ -540,7 +588,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to authenticate an instance
+   * Grants permission to delete the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to authenticate an instance
    *
    * Access Level: Write
    *
@@ -551,7 +599,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a load balancer
+   * Grants permission to delete a load balancer
    *
    * Access Level: Write
    *
@@ -562,7 +610,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a load balancer TLS certificate
+   * Grants permission to delete a load balancer TLS certificate
    *
    * Access Level: Write
    *
@@ -573,7 +621,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a relational database
+   * Grants permission to delete a relational database
    *
    * Access Level: Write
    *
@@ -584,7 +632,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes relational database snapshot
+   * Grants permission to delete a relational database snapshot
    *
    * Access Level: Write
    *
@@ -606,7 +654,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Detaches a disk from an instance
+   * Grants permission to detach a disk from an instance
    *
    * Access Level: Write
    *
@@ -617,7 +665,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Detaches one or more instances from a load balancer
+   * Grants permission to detach one or more instances from a load balancer
    *
    * Access Level: Write
    *
@@ -628,7 +676,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Detaches a static IP from an instance to which it is attached
+   * Grants permission to detach a static IP from an instance to which it is attached
    *
    * Access Level: Write
    *
@@ -650,7 +698,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Downloads the default key pair used to authenticate and connect to instances in a specific AWS Region
+   * Grants permission to download the default key pair used to authenticate and connect to instances in a specific AWS Region
    *
    * Access Level: Write
    *
@@ -672,7 +720,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Exports an Amazon Lightsail snapshot to Amazon EC2
+   * Grants permission to export an Amazon Lightsail snapshot to Amazon EC2
    *
    * Access Level: Write
    *
@@ -683,7 +731,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the names of all active (not deleted) resources
+   * Grants permission to get the names of all active (not deleted) resources
    *
    * Access Level: Read
    *
@@ -716,7 +764,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns a list of instance images, or blueprints. You can use a blueprint to create a new instance already running a specific operating system, as well as a pre-installed application or development stack. The software that runs on your instance depends on the blueprint you define when creating the instance
+   * Grants permission to get a list of instance images, or blueprints. You can use a blueprint to create a new instance already running a specific operating system, as well as a pre-installed application or development stack. The software that runs on your instance depends on the blueprint you define when creating the instance
    *
    * Access Level: Read
    *
@@ -727,7 +775,51 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns a list of instance bundles. You can use a bundle to create a new instance with a set of performance specifications, such as CPU count, disk size, RAM size, and network transfer allowance. The cost of your instance depends on the bundle you define when creating the instance
+   * Grants permission to get the existing access key IDs for the specified Amazon Lightsail bucket
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html
+   */
+  public toGetBucketAccessKeys() {
+    return this.to('GetBucketAccessKeys');
+  }
+
+  /**
+   * Grants permission to get the bundles that can be applied to an Amazon Lightsail bucket
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html
+   */
+  public toGetBucketBundles() {
+    return this.to('GetBucketBundles');
+  }
+
+  /**
+   * Grants permission to get the data points of a specific metric for an Amazon Lightsail bucket
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketMetricData.html
+   */
+  public toGetBucketMetricData() {
+    return this.to('GetBucketMetricData');
+  }
+
+  /**
+   * Grants permission to get information about one or more Amazon Lightsail buckets
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html
+   */
+  public toGetBuckets() {
+    return this.to('GetBuckets');
+  }
+
+  /**
+   * Grants permission to get a list of instance bundles. You can use a bundle to create a new instance with a set of performance specifications, such as CPU count, disk size, RAM size, and network transfer allowance. The cost of your instance depends on the bundle you define when creating the instance
    *
    * Access Level: Read
    *
@@ -749,7 +841,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all CloudFormation stacks used to create Amazon EC2 resources from exported Amazon Lightsail snapshots
+   * Grants permission to get information about all CloudFormation stacks used to create Amazon EC2 resources from exported Amazon Lightsail snapshots
    *
    * Access Level: Read
    *
@@ -848,7 +940,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a disk
+   * Grants permission to get information about a disk
    *
    * Access Level: Read
    *
@@ -859,7 +951,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a disk snapshot
+   * Grants permission to get information about a disk snapshot
    *
    * Access Level: Read
    *
@@ -870,7 +962,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all disk snapshots
+   * Grants permission to get information about all disk snapshots
    *
    * Access Level: Read
    *
@@ -881,7 +973,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all disks
+   * Grants permission to get information about all disks
    *
    * Access Level: Read
    *
@@ -936,7 +1028,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns DNS records for a domain resource
+   * Grants permission to get DNS records for a domain resource
    *
    * Access Level: Read
    *
@@ -947,7 +1039,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns DNS records for all domain resources
+   * Grants permission to get DNS records for all domain resources
    *
    * Access Level: Read
    *
@@ -958,7 +1050,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all records to export Amazon Lightsail snapshots to Amazon EC2
+   * Grants permission to get information about all records of exported Amazon Lightsail snapshots to Amazon EC2
    *
    * Access Level: Read
    *
@@ -969,7 +1061,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about an instance
+   * Grants permission to get information about an instance
    *
    * Access Level: Read
    *
@@ -980,7 +1072,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns temporary keys you can use to authenticate and connect to an instance
+   * Grants permission to get temporary keys you can use to authenticate and connect to an instance
    *
    * Access Level: Write
    *
@@ -991,7 +1083,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the data points for the specified metric of an instance
+   * Grants permission to get the data points for the specified metric of an instance
    *
    * Access Level: Read
    *
@@ -1002,7 +1094,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the port states of an instance
+   * Grants permission to get the port states of an instance
    *
    * Access Level: Read
    *
@@ -1013,7 +1105,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about an instance snapshot
+   * Grants permission to get information about an instance snapshot
    *
    * Access Level: Read
    *
@@ -1024,7 +1116,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all instance snapshots
+   * Grants permission to get information about all instance snapshots
    *
    * Access Level: Read
    *
@@ -1035,7 +1127,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the state of an instance
+   * Grants permission to get the state of an instance
    *
    * Access Level: Read
    *
@@ -1046,7 +1138,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all instances
+   * Grants permission to get information about all instances
    *
    * Access Level: Read
    *
@@ -1057,7 +1149,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a key pair
+   * Grants permission to get information about a key pair
    *
    * Access Level: Read
    *
@@ -1068,7 +1160,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all key pairs
+   * Grants permission to get information about all key pairs
    *
    * Access Level: Read
    *
@@ -1079,7 +1171,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a load balancer
+   * Grants permision to get information about a load balancer
    *
    * Access Level: Read
    *
@@ -1090,7 +1182,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the data points for the specified metric of a load balancer
+   * Grants permission to get the data points for the specified metric of a load balancer
    *
    * Access Level: Read
    *
@@ -1101,18 +1193,18 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a load balancer TLS certificate
+   * Grants permission to get information about a load balancer's TLS certificates
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancerTlsCertificate.html
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsCertificates.html
    */
   public toGetLoadBalancerTlsCertificates() {
     return this.to('GetLoadBalancerTlsCertificates');
   }
 
   /**
-   * Returns information about load balancers
+   * Grants permission to get information about load balancers
    *
    * Access Level: Read
    *
@@ -1123,7 +1215,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about an operation. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on
+   * Grants permission to get information about an operation. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on
    *
    * Access Level: Read
    *
@@ -1134,7 +1226,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all operations. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on
+   * Grants permission to get information about all operations. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on
    *
    * Access Level: Read
    *
@@ -1145,7 +1237,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns operations for a resource
+   * Grants permission to get operations for a resource
    *
    * Access Level: Read
    *
@@ -1156,7 +1248,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns a list of all valid AWS Regions for Amazon Lightsail
+   * Grants permission to get a list of all valid AWS Regions for Amazon Lightsail
    *
    * Access Level: Read
    *
@@ -1167,7 +1259,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a relational database
+   * Grants permission to get information about a relational database
    *
    * Access Level: Read
    *
@@ -1178,7 +1270,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns a list of relational database images, or blueprints. You can use a blueprint to create a new database running a specific database engine. The database engine that runs on your database depends on the blueprint you define when creating the relational database
+   * Grants permission to get a list of relational database images, or blueprints. You can use a blueprint to create a new database running a specific database engine. The database engine that runs on your database depends on the blueprint you define when creating the relational database
    *
    * Access Level: Read
    *
@@ -1189,7 +1281,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns a list of relational database bundles. You can use a bundle to create a new database with a set of performance specifications, such as CPU count, disk size, RAM size, network transfer allowance, and standard of high availability. The cost of your database depends on the bundle you define when creating the relational database
+   * Grants permission to get a list of relational database bundles. You can use a bundle to create a new database with a set of performance specifications, such as CPU count, disk size, RAM size, network transfer allowance, and standard of high availability. The cost of your database depends on the bundle you define when creating the relational database
    *
    * Access Level: Read
    *
@@ -1200,7 +1292,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns events for a relational database
+   * Grants permission to get events for a relational database
    *
    * Access Level: Read
    *
@@ -1211,7 +1303,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns events for the specified log stream of a relational database
+   * Grants permission to get events for the specified log stream of a relational database
    *
    * Access Level: Read
    *
@@ -1222,7 +1314,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the log streams available for a relational database
+   * Grants permission to get the log streams available for a relational database
    *
    * Access Level: Read
    *
@@ -1233,7 +1325,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the master user password of a relational database
+   * Grants permission to get the master user password of a relational database
    *
    * Access Level: Write
    *
@@ -1244,7 +1336,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the data points for the specified metric of a relational database
+   * Grants permission to get the data points for the specified metric of a relational database
    *
    * Access Level: Read
    *
@@ -1255,7 +1347,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns the parameters of a relational database
+   * Grants permission to get the parameters of a relational database
    *
    * Access Level: Read
    *
@@ -1266,7 +1358,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a relational database snapshot
+   * Grants permission to get information about a relational database snapshot
    *
    * Access Level: Read
    *
@@ -1277,7 +1369,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all relational database snapshots
+   * Grants permission to get information about all relational database snapshots
    *
    * Access Level: Read
    *
@@ -1288,7 +1380,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Return information about all relational databases
+   * Grants permission to get information about all relational databases
    *
    * Access Level: Read
    *
@@ -1299,7 +1391,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about a static IP
+   * Grants permission to get information about a static IP
    *
    * Access Level: Read
    *
@@ -1310,7 +1402,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns information about all static IPs
+   * Grants permission to get information about all static IPs
    *
    * Access Level: Read
    *
@@ -1321,7 +1413,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Imports a public key from a key pair
+   * Grants permission to import a public key from a key pair
    *
    * Access Level: Write
    *
@@ -1332,7 +1424,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Returns a boolean value indicating whether the Amazon Lightsail virtual private cloud (VPC) is peered
+   * Grants permission to get a boolean value indicating whether the Amazon Lightsail virtual private cloud (VPC) is peered
    *
    * Access Level: Read
    *
@@ -1343,7 +1435,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Adds, or opens a public port of an instance
+   * Grants permission to add, or open a public port of an instance
    *
    * Access Level: Write
    *
@@ -1354,7 +1446,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Tries to peer the Amazon Lightsail virtual private cloud (VPC) with the default VPC
+   * Grants permission to try to peer the Amazon Lightsail virtual private cloud (VPC) with the default VPC
    *
    * Access Level: Write
    *
@@ -1376,7 +1468,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Sets the specified open ports for an instance, and closes all ports for every protocol not included in the request
+   * Grants permission to set the specified open ports for an instance, and closes all ports for every protocol not included in the request
    *
    * Access Level: Write
    *
@@ -1387,7 +1479,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Reboots an instance that is in a running state
+   * Grants permission to reboot an instance that is in a running state
    *
    * Access Level: Write
    *
@@ -1398,7 +1490,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Reboots a relational database that is in a running state
+   * Grants permission to reboot a relational database that is in a running state
    *
    * Access Level: Write
    *
@@ -1420,7 +1512,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Deletes a static IP
+   * Grants permission to delete a static IP
    *
    * Access Level: Write
    *
@@ -1464,7 +1556,18 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Starts an instance that is in a stopped state
+   * Grants permission to set the Amazon Lightsail resources that can access the specified Amazon Lightsail bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html
+   */
+  public toSetResourceAccessForBucket() {
+    return this.to('SetResourceAccessForBucket');
+  }
+
+  /**
+   * Grants permission to start an instance that is in a stopped state
    *
    * Access Level: Write
    *
@@ -1475,7 +1578,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Starts a relational database that is in a stopped state
+   * Grants permission to start a relational database that is in a stopped state
    *
    * Access Level: Write
    *
@@ -1486,7 +1589,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Stops an instance that is in a running state
+   * Grants permission to stop an instance that is in a running state
    *
    * Access Level: Write
    *
@@ -1497,7 +1600,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Stops a relational database that is in a running state
+   * Grants permission to stop a relational database that is in a running state
    *
    * Access Level: Write
    *
@@ -1508,7 +1611,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Tags a resource
+   * Grants permission to tag a resource
    *
    * Access Level: Tagging
    *
@@ -1534,7 +1637,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Attempts to unpeer the Amazon Lightsail virtual private cloud (VPC) from the default VPC
+   * Grants permission to try to unpeer the Amazon Lightsail virtual private cloud (VPC) from the default VPC
    *
    * Access Level: Write
    *
@@ -1545,7 +1648,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Untags a resource
+   * Grants permission to untag a resource
    *
    * Access Level: Tagging
    *
@@ -1557,6 +1660,28 @@ export class Lightsail extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update an existing Amazon Lightsail bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucket.html
+   */
+  public toUpdateBucket() {
+    return this.to('UpdateBucket');
+  }
+
+  /**
+   * Grants permission to update the bundle, or storage plan, of an existing Amazon Lightsail bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html
+   */
+  public toUpdateBucketBundle() {
+    return this.to('UpdateBucketBundle');
   }
 
   /**
@@ -1593,7 +1718,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Updates a domain recordset after it is created
+   * Grants permission to update a domain recordset after it is created
    *
    * Access Level: Write
    *
@@ -1604,7 +1729,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Updates a load balancer attribute, such as the health check path and session stickiness
+   * Grants permission to update a load balancer attribute, such as the health check path and session stickiness
    *
    * Access Level: Write
    *
@@ -1615,7 +1740,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Updates a relational database
+   * Grants permission to update a relational database
    *
    * Access Level: Write
    *
@@ -1626,7 +1751,7 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
-   * Updates the parameters of a relational database
+   * Grants permission to update the parameters of a relational database
    *
    * Access Level: Write
    *
@@ -1646,6 +1771,8 @@ export class Lightsail extends PolicyStatement {
       "AttachStaticIp",
       "CloseInstancePublicPorts",
       "CopySnapshot",
+      "CreateBucket",
+      "CreateBucketAccessKey",
       "CreateCertificate",
       "CreateCloudFormationStack",
       "CreateContactMethod",
@@ -1669,6 +1796,8 @@ export class Lightsail extends PolicyStatement {
       "CreateRelationalDatabaseSnapshot",
       "DeleteAlarm",
       "DeleteAutoSnapshot",
+      "DeleteBucket",
+      "DeleteBucketAccessKey",
       "DeleteCertificate",
       "DeleteContactMethod",
       "DeleteContainerImage",
@@ -1708,12 +1837,15 @@ export class Lightsail extends PolicyStatement {
       "ResetDistributionCache",
       "SendContactMethodVerification",
       "SetIpAddressType",
+      "SetResourceAccessForBucket",
       "StartInstance",
       "StartRelationalDatabase",
       "StopInstance",
       "StopRelationalDatabase",
       "TestAlarm",
       "UnpeerVpc",
+      "UpdateBucket",
+      "UpdateBucketBundle",
       "UpdateContainerService",
       "UpdateDistribution",
       "UpdateDistributionBundle",
@@ -1727,6 +1859,10 @@ export class Lightsail extends PolicyStatement {
       "GetAlarms",
       "GetAutoSnapshots",
       "GetBlueprints",
+      "GetBucketAccessKeys",
+      "GetBucketBundles",
+      "GetBucketMetricData",
+      "GetBuckets",
       "GetBundles",
       "GetCertificates",
       "GetCloudFormationStackRecords",
@@ -2152,6 +2288,28 @@ export class Lightsail extends PolicyStatement {
    */
   public onDistribution(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Distribution/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Bucket to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Bucket.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBucket(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Bucket/${Id}';
     arn = arn.replace('${Id}', id);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

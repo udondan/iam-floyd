@@ -261,7 +261,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deletes a mobile device access rule
+   * Grants permission to delete a mobile device access rule
    *
    * Access Level: Write
    *
@@ -415,7 +415,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to show the details of all users associated with the orgaization
+   * Grants permission to show the details of all users associated with the organization
    *
    * Access Level: List
    *
@@ -580,7 +580,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the effects of access control rules as they apply to a specified IPv4 address, access protocol action, or user ID.
+   * Grants permission to get the effects of access control rules as they apply to a specified IPv4 address, access protocol action, or user ID
    *
    * Access Level: Read
    *
@@ -833,7 +833,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the organization's resources.
+   * Grants permission to list the organization's resources
    *
    * Access Level: List
    *
@@ -866,7 +866,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the organization's users.
+   * Grants permission to list the organization's users
    *
    * Access Level: List
    *

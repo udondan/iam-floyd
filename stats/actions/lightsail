@@ -6,6 +6,8 @@ lightsail:AttachLoadBalancerTlsCertificate;Write
 lightsail:AttachStaticIp;Write
 lightsail:CloseInstancePublicPorts;Write
 lightsail:CopySnapshot;Write
+lightsail:CreateBucket;Write
+lightsail:CreateBucketAccessKey;Write
 lightsail:CreateCertificate;Write
 lightsail:CreateCloudFormationStack;Write
 lightsail:CreateContactMethod;Write
@@ -29,6 +31,8 @@ lightsail:CreateRelationalDatabaseFromSnapshot;Write
 lightsail:CreateRelationalDatabaseSnapshot;Write
 lightsail:DeleteAlarm;Write
 lightsail:DeleteAutoSnapshot;Write
+lightsail:DeleteBucket;Write
+lightsail:DeleteBucketAccessKey;Write
 lightsail:DeleteCertificate;Write
 lightsail:DeleteContactMethod;Write
 lightsail:DeleteContainerImage;Write
@@ -58,6 +62,10 @@ lightsail:GetActiveNames;Read
 lightsail:GetAlarms;Read
 lightsail:GetAutoSnapshots;Read
 lightsail:GetBlueprints;Read
+lightsail:GetBucketAccessKeys;Read
+lightsail:GetBucketBundles;Read
+lightsail:GetBucketMetricData;Read
+lightsail:GetBuckets;Read
 lightsail:GetBundles;Read
 lightsail:GetCertificates;Read
 lightsail:GetCloudFormationStackRecords;Read
@@ -125,6 +133,7 @@ lightsail:ReleaseStaticIp;Write
 lightsail:ResetDistributionCache;Write
 lightsail:SendContactMethodVerification;Write
 lightsail:SetIpAddressType;Write
+lightsail:SetResourceAccessForBucket;Write
 lightsail:StartInstance;Write
 lightsail:StartRelationalDatabase;Write
 lightsail:StopInstance;Write
@@ -133,6 +142,8 @@ lightsail:TagResource;Tagging
 lightsail:TestAlarm;Write
 lightsail:UnpeerVpc;Write
 lightsail:UntagResource;Tagging
+lightsail:UpdateBucket;Write
+lightsail:UpdateBucketBundle;Write
 lightsail:UpdateContainerService;Write
 lightsail:UpdateDistribution;Write
 lightsail:UpdateDistributionBundle;Write

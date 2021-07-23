@@ -257,7 +257,7 @@ export class Ivs extends PolicyStatement {
   /**
    * Grants permission to get information about the tags for a specified ARN
    *
-   * Access Level: Tagging
+   * Access Level: Read
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
@@ -339,7 +339,8 @@ export class Ivs extends PolicyStatement {
       "GetPlaybackKeyPair",
       "GetRecordingConfiguration",
       "GetStream",
-      "GetStreamKey"
+      "GetStreamKey",
+      "ListTagsForResource"
     ],
     "Write": [
       "CreateChannel",
@@ -362,7 +363,6 @@ export class Ivs extends PolicyStatement {
       "ListStreams"
     ],
     "Tagging": [
-      "ListTagsForResource",
       "TagResource",
       "UntagResource"
     ]

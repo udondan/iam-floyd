@@ -1,4 +1,5 @@
 lightsail:Alarm
+lightsail:Bucket
 lightsail:Certificate
 lightsail:CloudFormationStackRecord
 lightsail:ContactMethod
