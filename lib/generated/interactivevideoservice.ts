@@ -375,15 +375,17 @@ export class Ivs extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onChannel(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ivs::${Account}:channel/${ResourceId}';
+  public onChannel(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ivs:${Region}:${Account}:channel/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -395,15 +397,17 @@ export class Ivs extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onStreamKey(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ivs::${Account}:stream-key/${ResourceId}';
+  public onStreamKey(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ivs:${Region}:${Account}:stream-key/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -415,15 +419,17 @@ export class Ivs extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onPlaybackKeyPair(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ivs::${Account}:playback-key/${ResourceId}';
+  public onPlaybackKeyPair(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ivs:${Region}:${Account}:playback-key/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -435,15 +441,17 @@ export class Ivs extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onRecordingConfiguration(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ivs::${Account}:recording-configuration/${ResourceId}';
+  public onRecordingConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ivs:${Region}:${Account}:recording-configuration/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
