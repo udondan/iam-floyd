@@ -3,7 +3,9 @@
 	"Statement": [
 		{
 			"Sid": "DataAPIPermissions",
+			"Effect": "Allow",
 			"Action": [
+			    "redshift-data:BatchExecuteStatement",
 				"redshift-data:ExecuteStatement",
 				"redshift-data:CancelStatement",
 				"redshift-data:ListStatements",
@@ -14,15 +16,14 @@
 				"redshift-data:ListTables",
 				"redshift-data:DescribeTable"
 			],
-			"Effect": "Allow",
 			"Resource": "*"
 		},
 		{
 			"Sid": "SecretsManagerPermissions",
+			"Effect": "Allow",
 			"Action": [
 				"secretsmanager:GetSecretValue"
 			],
-			"Effect": "Allow",
 			"Resource": "*",
 			"Condition": {
 				"StringLike": {
