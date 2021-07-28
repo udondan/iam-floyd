@@ -19,7 +19,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Cancels a job in an AWS Batch job queue.
+   * Grants permission to cancel a job in an AWS Batch job queue in your account
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Creates an AWS Batch compute environment.
+   * Grants permission to create an AWS Batch compute environment in your account
    *
    * Access Level: Write
    *
@@ -45,7 +45,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Creates an AWS Batch job queue.
+   * Grants permission to create an AWS Batch job queue in your account
    *
    * Access Level: Write
    *
@@ -60,7 +60,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Deletes an AWS Batch compute environment.
+   * Grants permission to delete an AWS Batch compute environment in your account
    *
    * Access Level: Write
    *
@@ -71,7 +71,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified job queue.
+   * Grants permission to delete an AWS Batch job queue in your account
    *
    * Access Level: Write
    *
@@ -82,7 +82,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Deregisters an AWS Batch job definition.
+   * Grants permission to deregister an AWS Batch job definition in your account
    *
    * Access Level: Write
    *
@@ -93,7 +93,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Describes one or more of your compute environments.
+   * Grants permission to describe one or more AWS Batch compute environments in your account
    *
    * Access Level: Read
    *
@@ -104,7 +104,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Describes a list of job definitions.
+   * Grants permission to describe one or more AWS Batch job definitions in your account
    *
    * Access Level: Read
    *
@@ -115,7 +115,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Describes one or more of your job queues.
+   * Grants permission to describe one or more AWS Batch job queues in your account
    *
    * Access Level: Read
    *
@@ -126,7 +126,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Describes a list of AWS Batch jobs.
+   * Grants permission to describe a list of AWS Batch jobs in your account
    *
    * Access Level: Read
    *
@@ -137,7 +137,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Returns a list of task jobs for a specified job queue.
+   * Grants permission to list jobs for a specified AWS Batch job queue in your account
    *
    * Access Level: List
    *
@@ -148,9 +148,9 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * List tags for the specified resource.
+   * Grants permission to list tags for an AWS Batch resource in your account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_ListTagsForResource.html
    */
@@ -159,7 +159,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Registers an AWS Batch job definition.
+   * Grants permission to register an AWS Batch job definition in your account
    *
    * Access Level: Write
    *
@@ -182,7 +182,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Submits an AWS Batch job from a job definition.
+   * Grants permission to submit an AWS Batch job from a job definition in your account
    *
    * Access Level: Write
    *
@@ -197,7 +197,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Tags the specified resource.
+   * Grants permission to tag an AWS Batch resource in your account
    *
    * Access Level: Tagging
    *
@@ -212,7 +212,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Terminates a job in an AWS Batch job queue.
+   * Grants permission to terminate a job in an AWS Batch job queue in your account
    *
    * Access Level: Write
    *
@@ -223,7 +223,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Untags the specified resource.
+   * Grants permission to untag an AWS Batch resource in your account
    *
    * Access Level: Tagging
    *
@@ -237,7 +237,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Updates an AWS Batch compute environment.
+   * Grants permission to update an AWS Batch compute environment in your account
    *
    * Access Level: Write
    *
@@ -248,7 +248,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Updates a job queue.
+   * Grants permission to update an AWS Batch job queue in your account
    *
    * Access Level: Write
    *
@@ -276,11 +276,11 @@ export class Batch extends PolicyStatement {
       "DescribeComputeEnvironments",
       "DescribeJobDefinitions",
       "DescribeJobQueues",
-      "DescribeJobs"
+      "DescribeJobs",
+      "ListTagsForResource"
     ],
     "List": [
-      "ListJobs",
-      "ListTagsForResource"
+      "ListJobs"
     ],
     "Tagging": [
       "TagResource",
@@ -379,7 +379,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * When this parameter is true, the awslogs-group will be created for the logs.
+   * Filters access based on the specified logging driver to determine whether awslogs group will be created for the logs
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
    *
@@ -393,7 +393,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * The awslogs group where the logs are located.
+   * Filters access based on the awslogs group where the logs are located
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
    *
@@ -408,7 +408,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * The region where the logs are sent to.
+   * Filters access based on the region where the logs are sent to
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
    *
@@ -423,7 +423,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * The awslogs log stream prefix.
+   * Filters access based on the awslogs log stream prefix
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
    *
@@ -438,7 +438,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * The image used to start a container.
+   * Filters access based on the image used to start a container
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
    *
@@ -453,7 +453,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * The log driver used for the container.
+   * Filters access based on the log driver used for the container
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
    *
@@ -468,7 +468,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user).
+   * Filter access based on the specified privileged parameter value that determines whether the container is given elevated privileges on the host container instance (similar to the root user)
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
    *
@@ -482,7 +482,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * The user name or numeric uid to use inside the container.
+   * Filters access based on the user name or numeric uid used inside the container
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
    *

@@ -771,6 +771,28 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate a URL used to embed a QuickSight Dashboard for a user not registered with QuickSight
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html
+   */
+  public toGenerateEmbedUrlForAnonymousUser() {
+    return this.to('GenerateEmbedUrlForAnonymousUser');
+  }
+
+  /**
+   * Grants permission to generate a URL used to embed a QuickSight Dashboard for a user registered with QuickSight
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html
+   */
+  public toGenerateEmbedUrlForRegisteredUser() {
+    return this.to('GenerateEmbedUrlForRegisteredUser');
+  }
+
+  /**
    * Grants permission to get a URL used to embed a QuickSight Dashboard for a user not registered with QuickSight
    *
    * Access Level: Read
@@ -972,7 +994,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to list tags of a QuickSight resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListTagsForResource.html
    */
@@ -1507,6 +1529,8 @@ export class Quicksight extends PolicyStatement {
       "DeleteUserByPrincipalId",
       "DeleteVPCConnection",
       "DescribeCustomPermissions",
+      "GenerateEmbedUrlForAnonymousUser",
+      "GenerateEmbedUrlForRegisteredUser",
       "ListCustomPermissions",
       "RegisterUser",
       "RestoreAnalysis",
@@ -1566,6 +1590,7 @@ export class Quicksight extends PolicyStatement {
       "GetDashboardEmbedUrl",
       "GetGroupMapping",
       "GetSessionEmbedUrl",
+      "ListTagsForResource",
       "PassDataSet",
       "PassDataSource"
     ],
@@ -1581,7 +1606,6 @@ export class Quicksight extends PolicyStatement {
       "ListIAMPolicyAssignmentsForUser",
       "ListIngestions",
       "ListNamespaces",
-      "ListTagsForResource",
       "ListTemplateAliases",
       "ListTemplateVersions",
       "ListTemplates",

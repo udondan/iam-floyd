@@ -23,6 +23,17 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-acceptinboundconnection
+   */
+  public toAcceptInboundConnection() {
+    return this.to('AcceptInboundConnection');
+  }
+
+  /**
+   * Grants permission to the destination domain owner to accept an inbound cross-cluster search connection request
+   *
+   * Access Level: Write
+   *
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-acceptinboundcrossclustersearchconnection
    */
   public toAcceptInboundCrossClusterSearchConnection() {
@@ -30,9 +41,13 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to attach resource tags to an Amazon ES domain.
+   * Grants permission to attach resource tags to an Amazon OpenSearch domain
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-addtags
    */
@@ -63,9 +78,39 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an Amazon ES domain.
+   * Grants permission to create a DataPrepper pipeline
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/trace-analytics.html
+   */
+  public toCreateDataPrepperPipeline() {
+    return this.to('CreateDataPrepperPipeline');
+  }
+
+  /**
+   * Grants permission to create an Amazon OpenSearch Service domain
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createdomain
+   */
+  public toCreateDomain() {
+    return this.to('CreateDomain');
+  }
+
+  /**
+   * Grants permission to create an Amazon OpenSearch domain
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createelasticsearchdomain
    */
@@ -74,7 +119,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create the service-linked role required for Amazon ES domains that use VPC access.
+   * Grants permission to create the service-linked role required for Amazon OpenSearch domains that use VPC access
    *
    * Access Level: Write
    *
@@ -82,6 +127,17 @@ export class Es extends PolicyStatement {
    */
   public toCreateElasticsearchServiceRole() {
     return this.to('CreateElasticsearchServiceRole');
+  }
+
+  /**
+   * Grants permission to create a new cross-cluster search connection from a source domain to a destination domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createoutboundconnection
+   */
+  public toCreateOutboundConnection() {
+    return this.to('CreateOutboundConnection');
   }
 
   /**
@@ -107,7 +163,40 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an Amazon ES domain and all of its data.
+   * Grants permission to create the service-linked role required for Amazon OpenSearch domains that use VPC access
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createservicerole
+   */
+  public toCreateServiceRole() {
+    return this.to('CreateServiceRole');
+  }
+
+  /**
+   * Grants permission to delete a DataPrepperpipeline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/trace-analytics.html
+   */
+  public toDeleteDataPrepperPipeline() {
+    return this.to('DeleteDataPrepperPipeline');
+  }
+
+  /**
+   * Grants permission to delete an Amazon OpenSearch domain and all of its data
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deletedomain
+   */
+  public toDeleteDomain() {
+    return this.to('DeleteDomain');
+  }
+
+  /**
+   * Grants permission to delete an Amazon OpenSearch domain and all of its data
    *
    * Access Level: Write
    *
@@ -118,7 +207,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the service-linked role required for Amazon ES domains that use VPC access.
+   * Grants permission to delete the service-linked role required for Amazon OpenSearch domains that use VPC access
    *
    * Access Level: Write
    *
@@ -126,6 +215,17 @@ export class Es extends PolicyStatement {
    */
   public toDeleteElasticsearchServiceRole() {
     return this.to('DeleteElasticsearchServiceRole');
+  }
+
+  /**
+   * Grants permission to the destination domain owner to delete an existing inbound cross-cluster search connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteinboundconnection
+   */
+  public toDeleteInboundConnection() {
+    return this.to('DeleteInboundConnection');
   }
 
   /**
@@ -144,6 +244,17 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteoutboundconnection
+   */
+  public toDeleteOutboundConnection() {
+    return this.to('DeleteOutboundConnection');
+  }
+
+  /**
+   * Grants permission to the source domain owner to delete an existing outbound cross-cluster search connection
+   *
+   * Access Level: Write
+   *
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteoutboundcrossclustersearchconnection
    */
   public toDeleteOutboundCrossClusterSearchConnection() {
@@ -151,7 +262,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a package from Amazon ES. The package must not be associated with any Amazon ES domain.
+   * Grants permission to delete a package from Amazon ES. The package must not be associated with any Amazon ES domain
    *
    * Access Level: Write
    *
@@ -162,7 +273,51 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view a description of the domain configuration for the specified Amazon ES domain, including the domain ID, domain service endpoint, and domain ARN.
+   * Grants permission to view a description of the pipeline configuration for the specified DataPrepper pipeline
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/trace-analytics.html
+   */
+  public toDescribeDataPrepperPipeline() {
+    return this.to('DescribeDataPrepperPipeline');
+  }
+
+  /**
+   * Grants permission to view a description of the domain configuration for the specified Amazon OpenSearch domain, including the domain ID, domain service endpoint, and domain ARN
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describedomain
+   */
+  public toDescribeDomain() {
+    return this.to('DescribeDomain');
+  }
+
+  /**
+   * Grants permission to view a description of the configuration options and status of an Amazon OpenSearch domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describedomainconfig
+   */
+  public toDescribeDomainConfig() {
+    return this.to('DescribeDomainConfig');
+  }
+
+  /**
+   * Grants permission to view a description of the domain configuration for up to five specified Amazon OpenSearch domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describedomain
+   */
+  public toDescribeDomains() {
+    return this.to('DescribeDomains');
+  }
+
+  /**
+   * Grants permission to view a description of the domain configuration for the specified Amazon OpenSearch domain, including the domain ID, domain service endpoint, and domain ARN
    *
    * Access Level: Read
    *
@@ -173,7 +328,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view a description of the configuration options and status of an Amazon ES domain.
+   * Grants permission to view a description of the configuration options and status of an Amazon OpenSearch domain
    *
    * Access Level: Read
    *
@@ -184,7 +339,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view a description of the domain configuration for up to five specified Amazon ES domains.
+   * Grants permission to view a description of the domain configuration for up to five specified Amazon OpenSearch domains
    *
    * Access Level: List
    *
@@ -195,7 +350,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view the instance count, storage, and master node limits for a given Elasticsearch version and instance type.
+   * Grants permission to view the instance count, storage, and master node limits for a given OpenSearch version and instance type
    *
    * Access Level: List
    *
@@ -210,10 +365,43 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeinboundconnections
+   */
+  public toDescribeInboundConnections() {
+    return this.to('DescribeInboundConnections');
+  }
+
+  /**
+   * Grants permission to list all the inbound cross-cluster search connections for a destination domain
+   *
+   * Access Level: List
+   *
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeinboundcrossclustersearchconnections
    */
   public toDescribeInboundCrossClusterSearchConnections() {
     return this.to('DescribeInboundCrossClusterSearchConnections');
+  }
+
+  /**
+   * Grants permission to view the instance count, storage, and master node limits for a given OpenSearch version and instance type
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeinstancetypelimits
+   */
+  public toDescribeInstanceTypeLimits() {
+    return this.to('DescribeInstanceTypeLimits');
+  }
+
+  /**
+   * Grants permission to list all the outbound cross-cluster search connections for a source domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeoutboundconnections
+   */
+  public toDescribeOutboundConnections() {
+    return this.to('DescribeOutboundConnections');
   }
 
   /**
@@ -239,7 +427,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to fetch reserved instance offerings for ES
+   * Grants permission to fetch reserved instance offerings for OpenSearch
    *
    * Access Level: List
    *
@@ -250,7 +438,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to fetch ES reserved instances already purchased by customer
+   * Grants permission to fetch OpenSearch reserved instances already purchased by customer
    *
    * Access Level: List
    *
@@ -258,6 +446,28 @@ export class Es extends PolicyStatement {
    */
   public toDescribeReservedElasticsearchInstances() {
     return this.to('DescribeReservedElasticsearchInstances');
+  }
+
+  /**
+   * Grants permission to fetch reserved instance offerings for OpenSearch
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describereservedelasticsearchinstanceofferings
+   */
+  public toDescribeReservedInstanceOfferings() {
+    return this.to('DescribeReservedInstanceOfferings');
+  }
+
+  /**
+   * Grants permission to fetch OpenSearch reserved instances already purchased by customer
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describereservedelasticsearchinstances
+   */
+  public toDescribeReservedInstances() {
+    return this.to('DescribeReservedInstances');
   }
 
   /**
@@ -272,7 +482,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send cross-cluster requests to a destination domain.
+   * Grants permission to send cross-cluster requests to a destination domain
    *
    * Access Level: Read
    *
@@ -283,7 +493,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send HTTP DELETE requests to the Elasticsearch APIs.
+   * Grants permission to send HTTP DELETE requests to the OpenSearch APIs
    *
    * Access Level: Write
    *
@@ -294,7 +504,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send HTTP GET requests to the Elasticsearch APIs.
+   * Grants permission to send HTTP GET requests to the OpenSearch APIs
    *
    * Access Level: Read
    *
@@ -305,7 +515,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send HTTP HEAD requests to the Elasticsearch APIs.
+   * Grants permission to send HTTP HEAD requests to the OpenSearch APIs
    *
    * Access Level: Read
    *
@@ -316,7 +526,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send HTTP PATCH requests to the Elasticsearch APIs.
+   * Grants permission to send HTTP PATCH requests to the OpenSearch APIs
    *
    * Access Level: Write
    *
@@ -327,7 +537,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send HTTP POST requests to the Elasticsearch APIs.
+   * Grants permission to send HTTP POST requests to the OpenSearch APIs
    *
    * Access Level: Write
    *
@@ -338,7 +548,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send HTTP PUT requests to the Elasticsearch APIs.
+   * Grants permission to send HTTP PUT requests to the OpenSearch APIs
    *
    * Access Level: Write
    *
@@ -349,7 +559,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to fetch list of compatible elastic search versions to which Amazon ES domain can be upgraded
+   * Grants permission to fetch list of compatible elastic search versions to which Amazon OpenSearch domain can be upgraded
    *
    * Access Level: List
    *
@@ -357,6 +567,17 @@ export class Es extends PolicyStatement {
    */
   public toGetCompatibleElasticsearchVersions() {
     return this.to('GetCompatibleElasticsearchVersions');
+  }
+
+  /**
+   * Grants permission to fetch list of compatible OpenSearch versions to which Amazon OpenSearch domain can be upgraded
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-getcompatibleversions
+   */
+  public toGetCompatibleVersions() {
+    return this.to('GetCompatibleVersions');
   }
 
   /**
@@ -371,7 +592,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to fetch upgrade history for given ES domain
+   * Grants permission to fetch upgrade history for given OpenSearch domain
    *
    * Access Level: Read
    *
@@ -382,7 +603,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to fetch upgrade status for given ES domain
+   * Grants permission to fetch upgrade status for given OpenSearch domain
    *
    * Access Level: Read
    *
@@ -393,7 +614,29 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to display the names of all Amazon ES domains that the current user owns.
+   * Grants permission to ingest data into a DataPrepper pipeline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/trace-analytics.html
+   */
+  public toIngestDataPrepperPipeline() {
+    return this.to('IngestDataPrepperPipeline');
+  }
+
+  /**
+   * Grants permission to display the names of all DataPrepper pipelines that the current user owns
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/trace-analytics.html
+   */
+  public toListDataPrepperPipelines() {
+    return this.to('ListDataPrepperPipelines');
+  }
+
+  /**
+   * Grants permission to display the names of all Amazon OpenSearch domains that the current user owns
    *
    * Access Level: List
    *
@@ -415,7 +658,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all instance types and available features for a given Elasticsearch version.
+   * Grants permission to list all instance types and available features for a given OpenSearch version
    *
    * Access Level: List
    *
@@ -426,7 +669,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all Elasticsearch instance types that are supported for a given Elasticsearch version.
+   * Grants permission to list all OpenSearch instance types that are supported for a given OpenSearch version
    *
    * Access Level: List
    *
@@ -437,7 +680,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all supported Elasticsearch versions on Amazon ES.
+   * Grants permission to list all supported OpenSearch versions on Amazon OpenSearch
    *
    * Access Level: List
    *
@@ -445,6 +688,28 @@ export class Es extends PolicyStatement {
    */
   public toListElasticsearchVersions() {
     return this.to('ListElasticsearchVersions');
+  }
+
+  /**
+   * Grants permission to list all instance types and available features for a given OpenSearch version
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listinstancetypedetails
+   */
+  public toListInstanceTypeDetails() {
+    return this.to('ListInstanceTypeDetails');
+  }
+
+  /**
+   * Grants permission to list all OpenSearch instance types that are supported for a given OpenSearch version
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listinstancetypes
+   */
+  public toListInstanceTypes() {
+    return this.to('ListInstanceTypes');
   }
 
   /**
@@ -459,7 +724,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to display all of the tags for an Amazon ES domain.
+   * Grants permission to display all of the tags for an Amazon OpenSearch domain
    *
    * Access Level: Read
    *
@@ -470,7 +735,18 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to purchase ES reserved instances
+   * Grants permission to list all supported OpenSearch versions on Amazon OpenSearch
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listversions
+   */
+  public toListVersions() {
+    return this.to('ListVersions');
+  }
+
+  /**
+   * Grants permission to purchase OpenSearch reserved instances
    *
    * Access Level: Write
    *
@@ -478,6 +754,28 @@ export class Es extends PolicyStatement {
    */
   public toPurchaseReservedElasticsearchInstanceOffering() {
     return this.to('PurchaseReservedElasticsearchInstanceOffering');
+  }
+
+  /**
+   * Grants permission to purchase OpenSearch reserved instances
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-purchasereservedelasticsearchinstance
+   */
+  public toPurchaseReservedInstanceOffering() {
+    return this.to('PurchaseReservedInstanceOffering');
+  }
+
+  /**
+   * Grants permission to the destination domain owner to reject an inbound cross-cluster search connection request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-rejectinboundconnection
+   */
+  public toRejectInboundConnection() {
+    return this.to('RejectInboundConnection');
   }
 
   /**
@@ -492,9 +790,12 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from Amazon ES domains.
+   * Grants permission to remove tags from Amazon OpenSearch domains
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listtags
    */
@@ -514,7 +815,29 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to modify the configuration of an Amazon ES domain, such as the instance type or number of instances.
+   * Grants permission to modify the configuration of a DataPrepper pipeline (currently limited to updating desired capacity)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/trace-analytics.html
+   */
+  public toUpdateDataPrepperPipeline() {
+    return this.to('UpdateDataPrepperPipeline');
+  }
+
+  /**
+   * Grants permission to modify the configuration of an Amazon OpenSearch domain, such as the instance type or number of instances
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-updatedomainconfig
+   */
+  public toUpdateDomainConfig() {
+    return this.to('UpdateDomainConfig');
+  }
+
+  /**
+   * Grants permission to modify the configuration of an Amazon OpenSearch domain, such as the instance type or number of instances
    *
    * Access Level: Write
    *
@@ -548,16 +871,25 @@ export class Es extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "AcceptInboundConnection",
       "AcceptInboundCrossClusterSearchConnection",
       "AssociatePackage",
       "CancelElasticsearchServiceSoftwareUpdate",
+      "CreateDataPrepperPipeline",
+      "CreateDomain",
       "CreateElasticsearchDomain",
       "CreateElasticsearchServiceRole",
+      "CreateOutboundConnection",
       "CreateOutboundCrossClusterSearchConnection",
       "CreatePackage",
+      "CreateServiceRole",
+      "DeleteDataPrepperPipeline",
+      "DeleteDomain",
       "DeleteElasticsearchDomain",
       "DeleteElasticsearchServiceRole",
+      "DeleteInboundConnection",
       "DeleteInboundCrossClusterSearchConnection",
+      "DeleteOutboundConnection",
       "DeleteOutboundCrossClusterSearchConnection",
       "DeletePackage",
       "DissociatePackage",
@@ -565,9 +897,14 @@ export class Es extends PolicyStatement {
       "ESHttpPatch",
       "ESHttpPost",
       "ESHttpPut",
+      "IngestDataPrepperPipeline",
       "PurchaseReservedElasticsearchInstanceOffering",
+      "PurchaseReservedInstanceOffering",
+      "RejectInboundConnection",
       "RejectInboundCrossClusterSearchConnection",
       "StartElasticsearchServiceSoftwareUpdate",
+      "UpdateDataPrepperPipeline",
+      "UpdateDomainConfig",
       "UpdateElasticsearchDomainConfig",
       "UpdatePackage",
       "UpgradeElasticsearchDomain"
@@ -577,6 +914,9 @@ export class Es extends PolicyStatement {
       "RemoveTags"
     ],
     "Read": [
+      "DescribeDataPrepperPipeline",
+      "DescribeDomain",
+      "DescribeDomainConfig",
       "DescribeElasticsearchDomain",
       "DescribeElasticsearchDomainConfig",
       "DescribePackages",
@@ -589,19 +929,30 @@ export class Es extends PolicyStatement {
       "ListTags"
     ],
     "List": [
+      "DescribeDomains",
       "DescribeElasticsearchDomains",
       "DescribeElasticsearchInstanceTypeLimits",
+      "DescribeInboundConnections",
       "DescribeInboundCrossClusterSearchConnections",
+      "DescribeInstanceTypeLimits",
+      "DescribeOutboundConnections",
       "DescribeOutboundCrossClusterSearchConnections",
       "DescribeReservedElasticsearchInstanceOfferings",
       "DescribeReservedElasticsearchInstances",
+      "DescribeReservedInstanceOfferings",
+      "DescribeReservedInstances",
       "GetCompatibleElasticsearchVersions",
+      "GetCompatibleVersions",
+      "ListDataPrepperPipelines",
       "ListDomainNames",
       "ListDomainsForPackage",
       "ListElasticsearchInstanceTypeDetails",
       "ListElasticsearchInstanceTypes",
       "ListElasticsearchVersions",
-      "ListPackagesForDomain"
+      "ListInstanceTypeDetails",
+      "ListInstanceTypes",
+      "ListPackagesForDomain",
+      "ListVersions"
     ]
   };
 
@@ -614,12 +965,73 @@ export class Es extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:es:${Region}:${Account}:domain/${DomainName}';
     arn = arn.replace('${DomainName}', domainName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type pipeline to the statement
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/trace-analytics.html
+   *
+   * @param pipelineName - Identifier for the pipelineName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:es:${Region}:${Account}:pipeline/${PipelineName}';
+    arn = arn.replace('${PipelineName}', pipelineName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type es_role to the statement
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/slr-es.html
+   *
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEsRole(account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:role/aws-service-role/es.amazonaws.com/AWSServiceRoleForAmazonElasticsearchService';
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type opensearchservice_role to the statement
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/slr-es.html
+   *
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onOpensearchserviceRole(account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchInternalService';
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

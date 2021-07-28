@@ -206,6 +206,17 @@ export class Amplifybackend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to import an existing auth resource of an Amplify Admin backend environment by appId and backendEnvironmentName
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-auth-backendenvironmentname.html#ImportBackendAuth
+   */
+  public toImportBackendAuth() {
+    return this.to('ImportBackendAuth');
+  }
+
+  /**
    * Grants permission to retrieve the jobs of an existing Amplify Admin backend environment by appId and backendEnvironmentName
    *
    * Access Level: List
@@ -295,6 +306,7 @@ export class Amplifybackend extends PolicyStatement {
       "DeleteBackendAuth",
       "DeleteToken",
       "GenerateBackendAPIModels",
+      "ImportBackendAuth",
       "RemoveAllBackends",
       "RemoveBackendConfig",
       "UpdateBackendAPI",
@@ -318,7 +330,7 @@ export class Amplifybackend extends PolicyStatement {
   /**
    * Adds a resource of type backend to the statement
    *
-   * https://docs.aws.amazon.com/amplify-admin-ui/latest/UserGuide/backend.html
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend.html
    *
    * @param appId - Identifier for the appId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -337,7 +349,7 @@ export class Amplifybackend extends PolicyStatement {
   /**
    * Adds a resource of type environment to the statement
    *
-   * https://docs.aws.amazon.com/amplify-admin-ui/latest/UserGuide/backend-appid-api-backendenvironmentname-details.html
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-api-backendenvironmentname-details.html
    *
    * @param appId - Identifier for the appId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -356,7 +368,7 @@ export class Amplifybackend extends PolicyStatement {
   /**
    * Adds a resource of type api to the statement
    *
-   * https://docs.aws.amazon.com/amplify-admin-ui/latest/UserGuide/backend-appid-api.html
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-api.html
    *
    * @param appId - Identifier for the appId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -375,7 +387,7 @@ export class Amplifybackend extends PolicyStatement {
   /**
    * Adds a resource of type auth to the statement
    *
-   * https://docs.aws.amazon.com/amplify-admin-ui/latest/UserGuide/backend-appid-auth.html
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-auth.html
    *
    * @param appId - Identifier for the appId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -394,7 +406,7 @@ export class Amplifybackend extends PolicyStatement {
   /**
    * Adds a resource of type job to the statement
    *
-   * https://docs.aws.amazon.com/amplify-admin-ui/latest/UserGuide/backend-appid-job-backendenvironmentname.html
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-job-backendenvironmentname.html
    *
    * @param appId - Identifier for the appId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -413,7 +425,7 @@ export class Amplifybackend extends PolicyStatement {
   /**
    * Adds a resource of type config to the statement
    *
-   * https://docs.aws.amazon.com/amplify-admin-ui/latest/UserGuide/backend-appid-config.html
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-config.html
    *
    * @param appId - Identifier for the appId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -432,7 +444,7 @@ export class Amplifybackend extends PolicyStatement {
   /**
    * Adds a resource of type token to the statement
    *
-   * https://docs.aws.amazon.com/amplify-admin-ui/latest/UserGuide/backend-appid-token.html
+   * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-token.html
    *
    * @param appId - Identifier for the appId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

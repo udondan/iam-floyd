@@ -15,6 +15,7 @@ amplifybackend:GetBackendAPIModels;Read
 amplifybackend:GetBackendAuth;Read
 amplifybackend:GetBackendJob;Read
 amplifybackend:GetToken;Read
+amplifybackend:ImportBackendAuth;Write
 amplifybackend:ListBackendJobs;List
 amplifybackend:RemoveAllBackends;Write
 amplifybackend:RemoveBackendConfig;Write

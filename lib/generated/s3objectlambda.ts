@@ -67,6 +67,40 @@ export class S3ObjectLambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove a specific version of an object
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html
+   */
+  public toDeleteObjectVersion() {
+    return this.to('DeleteObjectVersion');
+  }
+
+  /**
+   * Grants permission to remove the entire tag set for a specific version of the object
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html
+   */
+  public toDeleteObjectVersionTagging() {
+    return this.to('DeleteObjectVersionTagging');
+  }
+
+  /**
    * Grants permission to retrieve objects from Amazon S3
    *
    * Access Level: Read
@@ -164,6 +198,40 @@ export class S3ObjectLambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the access control list (ACL) of a specific object version
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html
+   */
+  public toGetObjectVersionAcl() {
+    return this.to('GetObjectVersionAcl');
+  }
+
+  /**
+   * Grants permission to return the tag set for a specific version of the object
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
+   */
+  public toGetObjectVersionTagging() {
+    return this.to('GetObjectVersionTagging');
+  }
+
+  /**
    * Grants permission to list some or all of the objects in an Amazon S3 bucket (up to 1000)
    *
    * Access Level: List
@@ -177,6 +245,38 @@ export class S3ObjectLambda extends PolicyStatement {
    */
   public toListBucket() {
     return this.to('ListBucket');
+  }
+
+  /**
+   * Grants permission to list in-progress multipart uploads
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html
+   */
+  public toListBucketMultipartUploads() {
+    return this.to('ListBucketMultipartUploads');
+  }
+
+  /**
+   * Grants permission to list metadata about all the versions of objects in an Amazon S3 bucket
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html
+   */
+  public toListBucketVersions() {
+    return this.to('ListBucketVersions');
   }
 
   /**
@@ -276,6 +376,40 @@ export class S3ObjectLambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to use the acl subresource to set the access control list (ACL) permissions for an object that already exists in a bucket
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html
+   */
+  public toPutObjectVersionAcl() {
+    return this.to('PutObjectVersionAcl');
+  }
+
+  /**
+   * Grants permission to set the supplied tag-set for a specific version of an object
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html
+   */
+  public toPutObjectVersionTagging() {
+    return this.to('PutObjectVersionTagging');
+  }
+
+  /**
    * Grants permission to restore an archived copy of an object back into Amazon S3
    *
    * Access Level: Write
@@ -311,6 +445,7 @@ export class S3ObjectLambda extends PolicyStatement {
     "Write": [
       "AbortMultipartUpload",
       "DeleteObject",
+      "DeleteObjectVersion",
       "PutObject",
       "PutObjectLegalHold",
       "PutObjectRetention",
@@ -319,7 +454,9 @@ export class S3ObjectLambda extends PolicyStatement {
     ],
     "Tagging": [
       "DeleteObjectTagging",
-      "PutObjectTagging"
+      "DeleteObjectVersionTagging",
+      "PutObjectTagging",
+      "PutObjectVersionTagging"
     ],
     "Read": [
       "GetObject",
@@ -327,14 +464,19 @@ export class S3ObjectLambda extends PolicyStatement {
       "GetObjectLegalHold",
       "GetObjectRetention",
       "GetObjectTagging",
-      "GetObjectVersion"
+      "GetObjectVersion",
+      "GetObjectVersionAcl",
+      "GetObjectVersionTagging"
     ],
     "List": [
       "ListBucket",
+      "ListBucketMultipartUploads",
+      "ListBucketVersions",
       "ListMultipartUploadParts"
     ],
     "Permissions management": [
-      "PutObjectAcl"
+      "PutObjectAcl",
+      "PutObjectVersionAcl"
     ]
   };
 
@@ -366,19 +508,27 @@ export class S3ObjectLambda extends PolicyStatement {
    * - .toAbortMultipartUpload()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
+   * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionTagging()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
    * - .toGetObjectTagging()
    * - .toGetObjectVersion()
+   * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionTagging()
    * - .toListBucket()
+   * - .toListBucketMultipartUploads()
+   * - .toListBucketVersions()
    * - .toListMultipartUploadParts()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectLegalHold()
    * - .toPutObjectRetention()
    * - .toPutObjectTagging()
+   * - .toPutObjectVersionAcl()
+   * - .toPutObjectVersionTagging()
    * - .toRestoreObject()
    * - .toWriteGetObjectResponse()
    *
@@ -398,19 +548,27 @@ export class S3ObjectLambda extends PolicyStatement {
    * - .toAbortMultipartUpload()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
+   * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionTagging()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
    * - .toGetObjectTagging()
    * - .toGetObjectVersion()
+   * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionTagging()
    * - .toListBucket()
+   * - .toListBucketMultipartUploads()
+   * - .toListBucketVersions()
    * - .toListMultipartUploadParts()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectLegalHold()
    * - .toPutObjectRetention()
    * - .toPutObjectTagging()
+   * - .toPutObjectVersionAcl()
+   * - .toPutObjectVersionTagging()
    * - .toRestoreObject()
    * - .toWriteGetObjectResponse()
    *
@@ -430,19 +588,27 @@ export class S3ObjectLambda extends PolicyStatement {
    * - .toAbortMultipartUpload()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
+   * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionTagging()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
    * - .toGetObjectTagging()
    * - .toGetObjectVersion()
+   * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionTagging()
    * - .toListBucket()
+   * - .toListBucketMultipartUploads()
+   * - .toListBucketVersions()
    * - .toListMultipartUploadParts()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectLegalHold()
    * - .toPutObjectRetention()
    * - .toPutObjectTagging()
+   * - .toPutObjectVersionAcl()
+   * - .toPutObjectVersionTagging()
    * - .toRestoreObject()
    * - .toWriteGetObjectResponse()
    *
@@ -459,7 +625,13 @@ export class S3ObjectLambda extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html/#getobjectversion-limit-access-to-specific-version-3
    *
    * Applies to actions:
+   * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionTagging()
    * - .toGetObjectVersion()
+   * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionTagging()
+   * - .toPutObjectVersionAcl()
+   * - .toPutObjectVersionTagging()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

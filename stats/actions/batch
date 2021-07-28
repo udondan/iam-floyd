@@ -9,7 +9,7 @@ batch:DescribeJobDefinitions;Read
 batch:DescribeJobQueues;Read
 batch:DescribeJobs;Read
 batch:ListJobs;List
-batch:ListTagsForResource;List
+batch:ListTagsForResource;Read
 batch:RegisterJobDefinition;Write
 batch:SubmitJob;Write
 batch:TagResource;Tagging
