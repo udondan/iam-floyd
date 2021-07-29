@@ -1,1 +1,2 @@
+redshift-data:ResourceTag/${TagKey}
 redshift-data:statement-owner-iam-userid

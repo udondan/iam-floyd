@@ -19,6 +19,17 @@ export class RedshiftData extends PolicyStatement {
   }
 
   /**
+   * Grants permission to execute multiple queries under a single connection.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_BatchExecuteStatement.html
+   */
+  public toBatchExecuteStatement() {
+    return this.to('BatchExecuteStatement');
+  }
+
+  /**
    * Grants permission to cancel a running query
    *
    * Access Level: Write
@@ -131,6 +142,7 @@ export class RedshiftData extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "BatchExecuteStatement",
       "CancelStatement",
       "ExecuteStatement"
     ],
@@ -146,6 +158,28 @@ export class RedshiftData extends PolicyStatement {
       "ListTables"
     ]
   };
+
+  /**
+   * Adds a resource of type cluster to the statement
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:cluster:${ClusterName}';
+    arn = arn.replace('${ClusterName}', clusterName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
 
   /**
    * Filters access by statement owner iam userid

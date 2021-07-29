@@ -1,3 +1,4 @@
+redshift-data:BatchExecuteStatement;Write
 redshift-data:CancelStatement;Write
 redshift-data:DescribeStatement;Read
 redshift-data:DescribeTable;Read
