@@ -703,6 +703,17 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about a resource associated to an application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_GetAssociatedResource.html
+   */
+  public toGetAssociatedResource() {
+    return this.to('GetAssociatedResource');
+  }
+
+  /**
    * Grants permission to get an attribute group
    *
    * Access Level: Read
@@ -985,7 +996,7 @@ export class Servicecatalog extends PolicyStatement {
   /**
    * Grants permission to list the tags for a service catalog appregistry resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_ListTagsForResource.html
    */
@@ -1344,8 +1355,10 @@ export class Servicecatalog extends PolicyStatement {
       "DescribeTagOption",
       "GetAWSOrganizationsAccessStatus",
       "GetApplication",
+      "GetAssociatedResource",
       "GetAttributeGroup",
-      "GetProvisionedProductOutputs"
+      "GetProvisionedProductOutputs",
+      "ListTagsForResource"
     ],
     "List": [
       "DescribePortfolioShares",
@@ -1371,7 +1384,6 @@ export class Servicecatalog extends PolicyStatement {
       "ListServiceActionsForProvisioningArtifact",
       "ListStackInstancesForProvisionedProduct",
       "ListTagOptions",
-      "ListTagsForResource",
       "ScanProvisionedProducts",
       "SearchProducts",
       "SearchProductsAsAdmin",
