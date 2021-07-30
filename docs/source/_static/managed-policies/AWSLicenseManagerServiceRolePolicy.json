@@ -27,7 +27,7 @@
             ],
             "Condition": {
                 "StringEquals": {
-                    "iam:AWSServiceName": "license-manager.amazonaws.com"
+                    "iam:AWSServiceName": "license-manager.member-account.amazonaws.com"
                 }
             }
         },
