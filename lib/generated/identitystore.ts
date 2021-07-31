@@ -19,7 +19,7 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
-   * Retrieves information about group from the directory that AWS Identity Store provides by default
+   * Grants permission to retrieves information about group from the directory that AWS Identity Store provides by default
    *
    * Access Level: Read
    *
@@ -30,7 +30,7 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
-   * Retrieves information about user from the directory that AWS Identity Store provides by default
+   * Grants permission to retrieves information about user from the directory that AWS Identity Store provides by default
    *
    * Access Level: Read
    *
@@ -41,7 +41,7 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
-   * Search for groups within the associated directory
+   * Grants permission to search for groups within the associated directory
    *
    * Access Level: List
    *
@@ -52,7 +52,7 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
-   * Search for users within the associated directory
+   * Grants permission to search for users within the associated directory
    *
    * Access Level: List
    *
