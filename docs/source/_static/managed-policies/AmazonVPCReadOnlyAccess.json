@@ -24,6 +24,7 @@
         "ec2:DescribePrefixLists",
         "ec2:DescribeRouteTables",
         "ec2:DescribeSecurityGroupReferences",
+        "ec2:DescribeSecurityGroupRules",
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeStaleSecurityGroups",
         "ec2:DescribeSubnets",
