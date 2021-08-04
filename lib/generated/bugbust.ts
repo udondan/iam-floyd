@@ -23,7 +23,12 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    */
   public toCreateEvent() {
     return this.to('CreateEvent');
@@ -34,7 +39,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public toEvaluateProfilingGroups() {
     return this.to('EvaluateProfilingGroups');
@@ -45,7 +51,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public toGetEvent() {
     return this.to('GetEvent');
@@ -56,7 +63,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public toGetJoinEventStatus() {
     return this.to('GetJoinEventStatus');
@@ -67,7 +75,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public toJoinEvent() {
     return this.to('JoinEvent');
@@ -78,11 +87,12 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * Dependent actions:
    * - codeguru-reviewer:DescribeCodeReview
    * - codeguru-reviewer:ListRecommendations
-   *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toListBugs() {
     return this.to('ListBugs');
@@ -93,7 +103,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public toListEventParticipants() {
     return this.to('ListEventParticipants');
@@ -104,7 +115,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public toListEventScores() {
     return this.to('ListEventScores');
@@ -115,7 +127,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public toListEvents() {
     return this.to('ListEvents');
@@ -126,7 +139,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public toListProfilingGroups() {
     return this.to('ListProfilingGroups');
@@ -137,16 +151,58 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public toListPullRequests() {
     return this.to('ListPullRequests');
   }
 
   /**
+   * Grants permission to lists tag for an Bugbust resource
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to tag an Bugbust resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag an Bugbust resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to update a BugBust event
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - codeguru-profiler:DescribeProfilingGroup
@@ -156,8 +212,6 @@ export class Bugbust extends PolicyStatement {
    * - codeguru-reviewer:ListRecommendations
    * - codeguru-reviewer:TagResource
    * - codeguru-reviewer:UnTagResource
-   *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toUpdateEvent() {
     return this.to('UpdateEvent');
@@ -168,7 +222,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public toUpdateWorkItem() {
     return this.to('UpdateWorkItem');
@@ -179,7 +234,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public toUpdateWorkItemAdmin() {
     return this.to('UpdateWorkItemAdmin');
@@ -201,10 +257,15 @@ export class Bugbust extends PolicyStatement {
       "ListEventParticipants",
       "ListEventScores",
       "ListProfilingGroups",
-      "ListPullRequests"
+      "ListPullRequests",
+      "ListTagsForResource"
     ],
     "List": [
       "ListEvents"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
@@ -263,6 +324,9 @@ export class Bugbust extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onEvent(eventId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:bugbust:${Region}:${Account}:events/${EventId}';

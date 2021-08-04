@@ -9,6 +9,9 @@ bugbust:ListEventScores;Read
 bugbust:ListEvents;List
 bugbust:ListProfilingGroups;Read
 bugbust:ListPullRequests;Read
+bugbust:ListTagsForResource;Read
+bugbust:TagResource;Tagging
+bugbust:UntagResource;Tagging
 bugbust:UpdateEvent;Write
 bugbust:UpdateWorkItem;Write
 bugbust:UpdateWorkItemAdmin;Write
