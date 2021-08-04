@@ -5,6 +5,10 @@
       "Action": [
         "ec2:DescribeInstances", 
         "ec2:DescribeImages",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcPeeringConnections",
+        "ec2:DescribeTransitGatewayAttachments",
         "organizations:ListAccounts",
         "organizations:DescribeAccount",
         "s3:GetBucketPublicAccessBlock",
