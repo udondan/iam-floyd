@@ -1064,6 +1064,8 @@ export class Sso extends PolicyStatement {
   /**
    * Adds a resource of type PermissionSet to the statement
    *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html
+   *
    * @param instanceId - Identifier for the instanceId.
    * @param permissionSetId - Identifier for the permissionSetId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -1082,6 +1084,8 @@ export class Sso extends PolicyStatement {
   /**
    * Adds a resource of type Account to the statement
    *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html
+   *
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
@@ -1094,6 +1098,8 @@ export class Sso extends PolicyStatement {
 
   /**
    * Adds a resource of type Instance to the statement
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/step1.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.

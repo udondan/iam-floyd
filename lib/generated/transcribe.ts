@@ -19,7 +19,18 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new custom language model.
+   * Grants permission to create an analytics category. Amazon Transcribe applies the conditions specified by your analytics categories to your call analytics jobs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateCallAnalyticsCategory.html
+   */
+  public toCreateCallAnalyticsCategory() {
+    return this.to('CreateCallAnalyticsCategory');
+  }
+
+  /**
+   * Grants permission to create a new custom language model
    *
    * Access Level: Write
    *
@@ -34,7 +45,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new custom vocabulary that you can use to change the way Amazon Transcribe Medical handles transcription of an audio file.
+   * Grants permission to create a new custom vocabulary that you can use to change the way Amazon Transcribe Medical handles transcription of an audio file
    *
    * Access Level: Write
    *
@@ -48,7 +59,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new custom vocabulary that you can use to change the way Amazon Transcribe handles transcription of an audio file.
+   * Grants permission to create a new custom vocabulary that you can use to change the way Amazon Transcribe handles transcription of an audio file
    *
    * Access Level: Write
    *
@@ -76,7 +87,29 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a previously created custom language model.
+   * Grants permission to delete a call analytics category using its name from Amazon Transcribe
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_DeleteCallAnalyticsCategory.html
+   */
+  public toDeleteCallAnalyticsCategory() {
+    return this.to('DeleteCallAnalyticsCategory');
+  }
+
+  /**
+   * Grants permission to delete a previously submitted call analytics job along with any other generated results such as the transcription, models, and so on
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_DeleteCallAnalyticsJob.html
+   */
+  public toDeleteCallAnalyticsJob() {
+    return this.to('DeleteCallAnalyticsJob');
+  }
+
+  /**
+   * Grants permission to delete a previously created custom language model
    *
    * Access Level: Write
    *
@@ -87,7 +120,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a previously submitted medical transcription job.
+   * Grants permission to delete a previously submitted medical transcription job
    *
    * Access Level: Write
    *
@@ -98,7 +131,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a medical vocabulary from Amazon Transcribe.
+   * Grants permission to delete a medical vocabulary from Amazon Transcribe
    *
    * Access Level: Write
    *
@@ -109,7 +142,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a previously submitted transcription job along with any other generated results such as the transcription, models, and so on.
+   * Grants permission to delete a previously submitted transcription job along with any other generated results such as the transcription, models, and so on
    *
    * Access Level: Write
    *
@@ -120,7 +153,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a vocabulary from Amazon Transcribe.
+   * Grants permission to delete a vocabulary from Amazon Transcribe
    *
    * Access Level: Write
    *
@@ -131,7 +164,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a vocabulary filter from Amazon Transcribe.
+   * Grants permission to delete a vocabulary filter from Amazon Transcribe
    *
    * Access Level: Write
    *
@@ -142,7 +175,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about a custom language model.
+   * Grants permission to return information about a custom language model
    *
    * Access Level: Read
    *
@@ -153,7 +186,29 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about a medical transcription job.
+   * Grants permission to retrieve information about a call analytics category
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_GetCallAnalyticsCategory.html
+   */
+  public toGetCallAnalyticsCategory() {
+    return this.to('GetCallAnalyticsCategory');
+  }
+
+  /**
+   * Grants permission to return information about a call analytics job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_GetCallAnalyticsJob.html
+   */
+  public toGetCallAnalyticsJob() {
+    return this.to('GetCallAnalyticsJob');
+  }
+
+  /**
+   * Grants permission to return information about a medical transcription job
    *
    * Access Level: Read
    *
@@ -164,7 +219,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a medical vocabulary.
+   * Grants permission to get information about a medical vocabulary
    *
    * Access Level: Read
    *
@@ -175,7 +230,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about a transcription job.
+   * Grants permission to return information about a transcription job
    *
    * Access Level: Read
    *
@@ -186,7 +241,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to to get information about a vocabulary.
+   * Grants permission to to get information about a vocabulary
    *
    * Access Level: Read
    *
@@ -197,7 +252,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a vocabulary filter.
+   * Grants permission to get information about a vocabulary filter
    *
    * Access Level: Read
    *
@@ -208,7 +263,29 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list custom language models.
+   * Grants permission to list call analytics categories that has been created
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_ListCallAnalyticsCategories.html
+   */
+  public toListCallAnalyticsCategories() {
+    return this.to('ListCallAnalyticsCategories');
+  }
+
+  /**
+   * Grants permission to list call analytics jobs with the specified status
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_ListCallAnalyticsJobs.html
+   */
+  public toListCallAnalyticsJobs() {
+    return this.to('ListCallAnalyticsJobs');
+  }
+
+  /**
+   * Grants permission to list custom language models
    *
    * Access Level: List
    *
@@ -219,7 +296,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list medical transcription jobs with the specified status.
+   * Grants permission to list medical transcription jobs with the specified status
    *
    * Access Level: List
    *
@@ -230,7 +307,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return a list of medical vocabularies that match the specified criteria. If no criteria are specified, returns the entire list of vocabularies.
+   * Grants permission to return a list of medical vocabularies that match the specified criteria. If no criteria are specified, returns the entire list of vocabularies
    *
    * Access Level: List
    *
@@ -241,7 +318,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list transcription jobs with the specified status.
+   * Grants permission to list transcription jobs with the specified status
    *
    * Access Level: List
    *
@@ -252,7 +329,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return a list of vocabularies that match the specified criteria. If no criteria are specified, returns the entire list of vocabularies.
+   * Grants permission to return a list of vocabularies that match the specified criteria. If no criteria are specified, returns the entire list of vocabularies
    *
    * Access Level: List
    *
@@ -263,7 +340,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return a list of vocabulary filters that match the specified criteria. If no criteria are specified, returns the at most 5 vocabulary filters.
+   * Grants permission to return a list of vocabulary filters that match the specified criteria. If no criteria are specified, returns the at most 5 vocabulary filters
    *
    * Access Level: List
    *
@@ -274,7 +351,21 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a protocol where audio is streamed to Transcribe Medical and the transcription results are streamed to your application.
+   * Grants permission to start an asynchronous analytics job that not only transcribes the audio recording of a caller and agent, but also returns additional insights
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:GetObject
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_StartCallAnalyticsJob.html
+   */
+  public toStartCallAnalyticsJob() {
+    return this.to('StartCallAnalyticsJob');
+  }
+
+  /**
+   * Grants permission to start a protocol where audio is streamed to Transcribe Medical and the transcription results are streamed to your application
    *
    * Access Level: Write
    *
@@ -285,7 +376,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a WebSocket where audio is streamed to Transcribe Medical and the transcription results are streamed to your application.
+   * Grants permission to start a WebSocket where audio is streamed to Transcribe Medical and the transcription results are streamed to your application
    *
    * Access Level: Write
    *
@@ -296,7 +387,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start an asynchronous job to transcribe medical speech to text.
+   * Grants permission to start an asynchronous job to transcribe medical speech to text
    *
    * Access Level: Write
    *
@@ -310,7 +401,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a bidirectional HTTP2 stream to transcribe speech to text in real time.
+   * Grants permission to start a bidirectional HTTP2 stream to transcribe speech to text in real time
    *
    * Access Level: Write
    *
@@ -321,7 +412,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a websocket stream to transcribe speech to text in real time.
+   * Grants permission to start a websocket stream to transcribe speech to text in real time
    *
    * Access Level: Write
    *
@@ -332,7 +423,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start an asynchronous job to transcribe speech to text.
+   * Grants permission to start an asynchronous job to transcribe speech to text
    *
    * Access Level: Write
    *
@@ -351,7 +442,18 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an existing medical vocabulary with new values. The UpdateMedicalVocabulary operation overwrites all of the existing information with the values that you provide in the request.
+   * Grants permission to update the call analytics category with new values. The UpdateCallAnalyticsCategory operation overwrites all of the existing information with the values that you provide in the request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateCallAnalyticsCategory.html
+   */
+  public toUpdateCallAnalyticsCategory() {
+    return this.to('UpdateCallAnalyticsCategory');
+  }
+
+  /**
+   * Grants permission to update an existing medical vocabulary with new values. The UpdateMedicalVocabulary operation overwrites all of the existing information with the values that you provide in the request
    *
    * Access Level: Write
    *
@@ -365,7 +467,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an existing vocabulary with new values. The UpdateVocabulary operation overwrites all of the existing information with the values that you provide in the request.
+   * Grants permission to update an existing vocabulary with new values. The UpdateVocabulary operation overwrites all of the existing information with the values that you provide in the request
    *
    * Access Level: Write
    *
@@ -379,7 +481,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an existing vocabulary filter with new values. The UpdateVocabularyFilter operation overwrites all of the existing information with the values that you provide in the request.
+   * Grants permission to update an existing vocabulary filter with new values. The UpdateVocabularyFilter operation overwrites all of the existing information with the values that you provide in the request
    *
    * Access Level: Write
    *
@@ -394,28 +496,35 @@ export class Transcribe extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "CreateCallAnalyticsCategory",
       "CreateLanguageModel",
       "CreateMedicalVocabulary",
       "CreateVocabulary",
       "CreateVocabularyFilter",
+      "DeleteCallAnalyticsCategory",
+      "DeleteCallAnalyticsJob",
       "DeleteLanguageModel",
       "DeleteMedicalTranscriptionJob",
       "DeleteMedicalVocabulary",
       "DeleteTranscriptionJob",
       "DeleteVocabulary",
       "DeleteVocabularyFilter",
+      "StartCallAnalyticsJob",
       "StartMedicalStreamTranscription",
       "StartMedicalStreamTranscriptionWebSocket",
       "StartMedicalTranscriptionJob",
       "StartStreamTranscription",
       "StartStreamTranscriptionWebSocket",
       "StartTranscriptionJob",
+      "UpdateCallAnalyticsCategory",
       "UpdateMedicalVocabulary",
       "UpdateVocabulary",
       "UpdateVocabularyFilter"
     ],
     "Read": [
       "DescribeLanguageModel",
+      "GetCallAnalyticsCategory",
+      "GetCallAnalyticsJob",
       "GetMedicalTranscriptionJob",
       "GetMedicalVocabulary",
       "GetTranscriptionJob",
@@ -423,6 +532,8 @@ export class Transcribe extends PolicyStatement {
       "GetVocabularyFilter"
     ],
     "List": [
+      "ListCallAnalyticsCategories",
+      "ListCallAnalyticsJobs",
       "ListLanguageModels",
       "ListMedicalTranscriptionJobs",
       "ListMedicalVocabularies",
@@ -433,7 +544,7 @@ export class Transcribe extends PolicyStatement {
   };
 
   /**
-   * Enables you to control access based on the output bucket name included in the request
+   * Filters access based on the output bucket name included in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html#amazontranscribe-policy-keys
    *
@@ -448,7 +559,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Enables you to control access based on the KMS key id included in the request
+   * Filters access based on the KMS key id included in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html#amazontranscribe-policy-keys
    *
@@ -463,7 +574,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Enables you to control access based on the output key included in the request
+   * Filters access based on the output key included in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html#amazontranscribe-policy-keys
    *

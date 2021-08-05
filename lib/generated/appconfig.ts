@@ -485,7 +485,7 @@ export class Appconfig extends PolicyStatement {
   /**
    * Adds a resource of type application to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-application.html
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-application.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -507,7 +507,7 @@ export class Appconfig extends PolicyStatement {
   /**
    * Adds a resource of type environment to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-environment.html
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-environment.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param environmentId - Identifier for the environmentId.
@@ -531,7 +531,7 @@ export class Appconfig extends PolicyStatement {
   /**
    * Adds a resource of type configurationprofile to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param configurationProfileId - Identifier for the configurationProfileId.
@@ -555,7 +555,7 @@ export class Appconfig extends PolicyStatement {
   /**
    * Adds a resource of type deploymentstrategy to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-deployment-strategy.html
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-deployment-strategy.html
    *
    * @param deploymentStrategyId - Identifier for the deploymentStrategyId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -577,7 +577,7 @@ export class Appconfig extends PolicyStatement {
   /**
    * Adds a resource of type deployment to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-deploying.html
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-deploying.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param environmentId - Identifier for the environmentId.
@@ -603,7 +603,7 @@ export class Appconfig extends PolicyStatement {
   /**
    * Adds a resource of type hostedconfigurationversion to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param configurationProfileId - Identifier for the configurationProfileId.
