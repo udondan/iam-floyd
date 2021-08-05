@@ -20,7 +20,7 @@
         "organizations:ListChildren",
         "organizations:ListOrganizationalUnitsForParent",
         "sso:*",
-        "sso-directory:DescribeDirectory",
+        "sso-directory:*",
         "ds:CreateAlias"
       ],
       "Resource": "*"

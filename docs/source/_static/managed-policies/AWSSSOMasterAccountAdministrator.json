@@ -2,6 +2,17 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AWSSSOCreateSLR",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "sso.amazonaws.com"
+        }
+      }
+    },
+    {
       "Sid": "AWSSSOMasterAccountAdministrator",
       "Effect": "Allow",
       "Action": "iam:PassRole",
@@ -31,7 +42,7 @@
         "organizations:DescribeAccount",
         "organizations:ListParents",
         "sso:*",
-        "sso-directory:DescribeDirectory",
+        "sso-directory:*",
         "ds:CreateAlias"
       ],
       "Resource": "*"
