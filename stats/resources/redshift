@@ -1,4 +1,5 @@
 redshift:cluster
+redshift:datashare
 redshift:dbgroup
 redshift:dbname
 redshift:dbuser

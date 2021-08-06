@@ -1,5 +1,7 @@
 redshift:AcceptReservedNodeExchange;Write
+redshift:AssociateDataShareConsumer;Write
 redshift:AuthorizeClusterSecurityGroupIngress;Permissions management
+redshift:AuthorizeDataShare;Permissions management
 redshift:AuthorizeSnapshotAccess;Permissions management
 redshift:BatchDeleteClusterSnapshots;Write
 redshift:BatchModifyClusterSnapshots;Write
@@ -22,6 +24,7 @@ redshift:CreateSnapshotCopyGrant;Permissions management
 redshift:CreateSnapshotSchedule;Write
 redshift:CreateTags;Tagging
 redshift:CreateUsageLimit;Write
+redshift:DeauthorizeDataShare;Permissions management
 redshift:DeleteCluster;Write
 redshift:DeleteClusterParameterGroup;Write
 redshift:DeleteClusterSecurityGroup;Write
@@ -46,6 +49,9 @@ redshift:DescribeClusterSubnetGroups;Read
 redshift:DescribeClusterTracks;List
 redshift:DescribeClusterVersions;Read
 redshift:DescribeClusters;List
+redshift:DescribeDataShares;Read
+redshift:DescribeDataSharesForConsumer;Read
+redshift:DescribeDataSharesForProducer;Read
 redshift:DescribeDefaultClusterParameters;Read
 redshift:DescribeEventCategories;Read
 redshift:DescribeEventSubscriptions;Read
@@ -70,6 +76,7 @@ redshift:DescribeTags;Read
 redshift:DescribeUsageLimits;Read
 redshift:DisableLogging;Write
 redshift:DisableSnapshotCopy;Write
+redshift:DisassociateDataShareConsumer;Write
 redshift:EnableLogging;Write
 redshift:EnableSnapshotCopy;Write
 redshift:ExecuteQuery;Write
@@ -99,6 +106,7 @@ redshift:ModifyUsageLimit;Write
 redshift:PauseCluster;Write
 redshift:PurchaseReservedNodeOffering;Write
 redshift:RebootCluster;Write
+redshift:RejectDataShare;Permissions management
 redshift:ResetClusterParameterGroup;Write
 redshift:ResizeCluster;Write
 redshift:RestoreFromClusterSnapshot;Write

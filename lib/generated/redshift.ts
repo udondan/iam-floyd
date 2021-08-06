@@ -30,6 +30,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a consumer to a datashare
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_AssociateDataShareConsumer.html
+   */
+  public toAssociateDataShareConsumer() {
+    return this.to('AssociateDataShareConsumer');
+  }
+
+  /**
    * Grants permission to add an inbound (ingress) rule to an Amazon Redshift security group
    *
    * Access Level: Permissions management
@@ -38,6 +49,20 @@ export class Redshift extends PolicyStatement {
    */
   public toAuthorizeClusterSecurityGroupIngress() {
     return this.to('AuthorizeClusterSecurityGroupIngress');
+  }
+
+  /**
+   * Grants permission to authorize the specified datashare consumer to consume a datashare
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifConsumerIdentifier()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_AuthorizeDataShare.html
+   */
+  public toAuthorizeDataShare() {
+    return this.to('AuthorizeDataShare');
   }
 
   /**
@@ -334,6 +359,20 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Remove permission from the specified datashare consumer to consume a datashare
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifConsumerIdentifier()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeauthorizeDataShare.html
+   */
+  public toDeauthorizeDataShare() {
+    return this.to('DeauthorizeDataShare');
+  }
+
+  /**
    * Grants permission to delete a previously provisioned cluster
    *
    * Access Level: Write
@@ -599,6 +638,39 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe datashares created and consumed by your clusters
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeDataShares.html
+   */
+  public toDescribeDataShares() {
+    return this.to('DescribeDataShares');
+  }
+
+  /**
+   * Grants permission to describe only datashares consumed by your clusters
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeDataSharesForConsumer.html
+   */
+  public toDescribeDataSharesForConsumer() {
+    return this.to('DescribeDataSharesForConsumer');
+  }
+
+  /**
+   * Grants permission to describe only datashares created by your clusters
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeDataSharesForProducer.html
+   */
+  public toDescribeDataSharesForProducer() {
+    return this.to('DescribeDataSharesForProducer');
+  }
+
+  /**
    * Grants permission to describe parameter settings for a parameter group family
    *
    * Access Level: Read
@@ -858,6 +930,17 @@ export class Redshift extends PolicyStatement {
    */
   public toDisableSnapshotCopy() {
     return this.to('DisableSnapshotCopy');
+  }
+
+  /**
+   * Grants permission to disassociate a consumer from a datashare
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DisassociateDataShareConsumer.html
+   */
+  public toDisassociateDataShareConsumer() {
+    return this.to('DisassociateDataShareConsumer');
   }
 
   /**
@@ -1185,6 +1268,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to decline a datashare shared from another account
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RejectDataShare.html
+   */
+  public toRejectDataShare() {
+    return this.to('RejectDataShare');
+  }
+
+  /**
    * Grants permission to set one or more parameters of a parameter group to their default values and set the source values of the parameters to "engine-default"
    *
    * Access Level: Write
@@ -1297,6 +1391,7 @@ export class Redshift extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AcceptReservedNodeExchange",
+      "AssociateDataShareConsumer",
       "BatchDeleteClusterSnapshots",
       "BatchModifyClusterSnapshots",
       "CancelQuery",
@@ -1330,6 +1425,7 @@ export class Redshift extends PolicyStatement {
       "DeleteUsageLimit",
       "DisableLogging",
       "DisableSnapshotCopy",
+      "DisassociateDataShareConsumer",
       "EnableLogging",
       "EnableSnapshotCopy",
       "ExecuteQuery",
@@ -1359,11 +1455,14 @@ export class Redshift extends PolicyStatement {
     ],
     "Permissions management": [
       "AuthorizeClusterSecurityGroupIngress",
+      "AuthorizeDataShare",
       "AuthorizeSnapshotAccess",
       "CreateClusterUser",
       "CreateSnapshotCopyGrant",
+      "DeauthorizeDataShare",
       "JoinGroup",
       "ModifyClusterIamRoles",
+      "RejectDataShare",
       "RevokeClusterSecurityGroupIngress",
       "RevokeSnapshotAccess",
       "RotateEncryptionKey"
@@ -1380,6 +1479,9 @@ export class Redshift extends PolicyStatement {
       "DescribeClusterSnapshots",
       "DescribeClusterSubnetGroups",
       "DescribeClusterVersions",
+      "DescribeDataShares",
+      "DescribeDataSharesForConsumer",
+      "DescribeDataSharesForProducer",
       "DescribeDefaultClusterParameters",
       "DescribeEventCategories",
       "DescribeEventSubscriptions",
@@ -1434,6 +1536,28 @@ export class Redshift extends PolicyStatement {
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:cluster:${ClusterName}';
     arn = arn.replace('${ClusterName}', clusterName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type datashare to the statement
+   *
+   * https://docs.aws.amazon.com/redshift/latest/dg/datashare-overview.html
+   *
+   * @param producerClusterNamespace - Identifier for the producerClusterNamespace.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDatashare(producerClusterNamespace: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:datashare:${ProducerClusterNamespace}/{DataShareName}';
+    arn = arn.replace('${ProducerClusterNamespace}', producerClusterNamespace);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -1786,6 +1910,22 @@ export class Redshift extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters access by the datashare consumer
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
+   *
+   * Applies to actions:
+   * - .toAuthorizeDataShare()
+   * - .toDeauthorizeDataShare()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifConsumerIdentifier(value: string | string[], operator?: Operator | string) {
+    return this.if(`ConsumerIdentifier`, value, operator || 'StringLike');
   }
 
   /**

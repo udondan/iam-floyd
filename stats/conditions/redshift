@@ -1,3 +1,4 @@
+redshift:ConsumerIdentifier
 redshift:DbName
 redshift:DbUser
 redshift:DurationSeconds
