@@ -29,6 +29,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toCreateEvent() {
     return this.to('CreateEvent');
@@ -41,6 +43,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toEvaluateProfilingGroups() {
     return this.to('EvaluateProfilingGroups');
@@ -53,6 +57,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toGetEvent() {
     return this.to('GetEvent');
@@ -65,6 +71,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toGetJoinEventStatus() {
     return this.to('GetJoinEventStatus');
@@ -77,6 +85,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toJoinEvent() {
     return this.to('JoinEvent');
@@ -93,6 +103,8 @@ export class Bugbust extends PolicyStatement {
    * Dependent actions:
    * - codeguru-reviewer:DescribeCodeReview
    * - codeguru-reviewer:ListRecommendations
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toListBugs() {
     return this.to('ListBugs');
@@ -105,6 +117,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toListEventParticipants() {
     return this.to('ListEventParticipants');
@@ -117,6 +131,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toListEventScores() {
     return this.to('ListEventScores');
@@ -129,6 +145,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toListEvents() {
     return this.to('ListEvents');
@@ -141,6 +159,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toListProfilingGroups() {
     return this.to('ListProfilingGroups');
@@ -153,44 +173,52 @@ export class Bugbust extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toListPullRequests() {
     return this.to('ListPullRequests');
   }
 
   /**
-   * Grants permission to lists tag for an Bugbust resource
+   * Grants permission to lists tag for a Bugbust resource
    *
    * Access Level: Read
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
   }
 
   /**
-   * Grants permission to tag an Bugbust resource
+   * Grants permission to tag a Bugbust resource
    *
    * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toTagResource() {
     return this.to('TagResource');
   }
 
   /**
-   * Grants permission to untag an Bugbust resource
+   * Grants permission to untag a Bugbust resource
    *
    * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -212,6 +240,8 @@ export class Bugbust extends PolicyStatement {
    * - codeguru-reviewer:ListRecommendations
    * - codeguru-reviewer:TagResource
    * - codeguru-reviewer:UnTagResource
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toUpdateEvent() {
     return this.to('UpdateEvent');
@@ -224,6 +254,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toUpdateWorkItem() {
     return this.to('UpdateWorkItem');
@@ -236,6 +268,8 @@ export class Bugbust extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/bugbust-ug/auth-and-access-control-permissions-reference.html
    */
   public toUpdateWorkItemAdmin() {
     return this.to('UpdateWorkItemAdmin');

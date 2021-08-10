@@ -7,7 +7,9 @@ connect:AssociateLexBot;Write
 connect:AssociateQueueQuickConnects;Write
 connect:AssociateRoutingProfileQueues;Write
 connect:AssociateSecurityKey;Write
+connect:CreateAgentStatus;Write
 connect:CreateContactFlow;Write
+connect:CreateHoursOfOperation;Write
 connect:CreateInstance;Write
 connect:CreateIntegrationAssociation;Write
 connect:CreateQueue;Write
@@ -16,12 +18,14 @@ connect:CreateRoutingProfile;Write
 connect:CreateUseCase;Write
 connect:CreateUser;Write
 connect:CreateUserHierarchyGroup;Write
+connect:DeleteHoursOfOperation;Write
 connect:DeleteInstance;Write
 connect:DeleteIntegrationAssociation;Write
 connect:DeleteQuickConnect;Write
 connect:DeleteUseCase;Write
 connect:DeleteUser;Write
 connect:DeleteUserHierarchyGroup;Write
+connect:DescribeAgentStatus;Read
 connect:DescribeContactFlow;Read
 connect:DescribeHoursOfOperation;Read
 connect:DescribeInstance;Read
@@ -47,6 +51,7 @@ connect:GetCurrentMetricData;Read
 connect:GetFederationToken;Read
 connect:GetFederationTokens;Write
 connect:GetMetricData;Read
+connect:ListAgentStatuses;List
 connect:ListApprovedOrigins;List
 connect:ListBots;List
 connect:ListContactFlows;List
@@ -81,9 +86,11 @@ connect:StopContactRecording;Write
 connect:SuspendContactRecording;Write
 connect:TagResource;Tagging
 connect:UntagResource;Tagging
+connect:UpdateAgentStatus;Write
 connect:UpdateContactAttributes;Write
 connect:UpdateContactFlowContent;Write
 connect:UpdateContactFlowName;Write
+connect:UpdateHoursOfOperation;Write
 connect:UpdateInstanceAttribute;Write
 connect:UpdateInstanceStorageConfig;Write
 connect:UpdateQueueHoursOfOperation;Write
