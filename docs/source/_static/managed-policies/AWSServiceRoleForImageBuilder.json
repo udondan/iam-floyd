@@ -131,7 +131,8 @@
 				"ssm:StopAutomationExecution",
 				"ssm:ListInventoryEntries",
 				"ssm:SendAutomationSignal",
-				"ssm:DescribeInstanceAssociationsStatus"
+				"ssm:DescribeInstanceAssociationsStatus",
+				"ssm:DescribeAssociationExecutions"
 			],
 			"Resource": "*"
 		},
