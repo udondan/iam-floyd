@@ -72,11 +72,14 @@ export class Fsx extends PolicyStatement {
   /**
    * Grants permission to create a new backup of an Amazon FSx file system
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - fsx:TagResource
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateBackup.html
    */
@@ -87,11 +90,14 @@ export class Fsx extends PolicyStatement {
   /**
    * Grants permission to create a new data respository task for an Amazon FSx for Lustre file system
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - fsx:TagResource
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateDataRepositoryTask.html
    */
@@ -102,11 +108,14 @@ export class Fsx extends PolicyStatement {
   /**
    * Grants permission to create a new, empty, Amazon FSx file system
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - fsx:TagResource
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystem.html
    */
@@ -117,11 +126,14 @@ export class Fsx extends PolicyStatement {
   /**
    * Grants permission to create a new Amazon FSx file system from an existing backup
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - fsx:TagResource
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystemFromBackup.html
    */
@@ -144,6 +156,14 @@ export class Fsx extends PolicyStatement {
    * Grants permission to delete a file system, deleting its contents and any existing automatic backups of the file system
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - fsx:CreateBackup
+   * - fsx:TagResource
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteFileSystem.html
    */
@@ -296,19 +316,15 @@ export class Fsx extends PolicyStatement {
       "AssociateFileSystemAliases",
       "CancelDataRepositoryTask",
       "CopyBackup",
+      "CreateBackup",
+      "CreateDataRepositoryTask",
+      "CreateFileSystem",
+      "CreateFileSystemFromBackup",
       "DeleteBackup",
       "DeleteFileSystem",
       "DisassociateFileGateway",
       "DisassociateFileSystemAliases",
       "UpdateFileSystem"
-    ],
-    "Tagging": [
-      "CreateBackup",
-      "CreateDataRepositoryTask",
-      "CreateFileSystem",
-      "CreateFileSystemFromBackup",
-      "TagResource",
-      "UntagResource"
     ],
     "Read": [
       "DescribeAssociatedFileGateways",
@@ -320,6 +336,10 @@ export class Fsx extends PolicyStatement {
     ],
     "Permissions management": [
       "ManageBackupPrincipalAssociations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 

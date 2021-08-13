@@ -56,7 +56,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Export a private certificate issued by a private certificate authority (CA) for use anywhere
+   * Grants permission to export a private certificate issued by a private certificate authority (CA) for use anywhere
    *
    * Access Level: Read
    *
@@ -78,7 +78,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to to etrieves a certificate and certificate chain for a certificate ARN
+   * Grants permission to retrieve a certificate and certificate chain for a certificate ARN
    *
    * Access Level: Read
    *
@@ -89,7 +89,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to imports a 3rd party certificate into AWS Certificate Manager (ACM)
+   * Grants permission to import a 3rd party certificate into AWS Certificate Manager (ACM)
    *
    * Access Level: Write
    *
@@ -189,7 +189,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a certificate configuration. Use this specify whether to opt in to or out of certificate transparency logging
+   * Grants permission to update a certificate configuration. Use this to specify whether to opt in to or out of certificate transparency logging
    *
    * Access Level: Write
    *

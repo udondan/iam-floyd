@@ -47,6 +47,7 @@ codebuild:StartBuildBatch;Write
 codebuild:StopBuild;Write
 codebuild:StopBuildBatch;Write
 codebuild:UpdateProject;Write
+codebuild:UpdateProjectVisibility;Write
 codebuild:UpdateReport;Write
 codebuild:UpdateReportGroup;Write
 codebuild:UpdateWebhook;Write

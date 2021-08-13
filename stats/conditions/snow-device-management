@@ -1,0 +1,3 @@
+snow-device-management:RequestTag/${TagKey}
+snow-device-management:ResourceTag/${TagKey}
+snow-device-management:TagKeys

@@ -417,6 +417,7 @@ export class Nimble extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifCreatedBy()
+   * - .ifOwnedBy()
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-streaming-sessions.html
    */
@@ -787,6 +788,7 @@ export class Nimble extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifCreatedBy()
+   * - .ifOwnedBy()
    */
   public onStreamingSession(streamingSessionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:nimble:${Region}:${Account}:streaming-session/${StreamingSessionId}';
@@ -863,6 +865,24 @@ export class Nimble extends PolicyStatement {
    */
   public ifCreatedBy(value: string | string[], operator?: Operator | string) {
     return this.if(`createdBy`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the ownedBy request parameter or the ID of the owner of the resource
+   *
+   * https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toListStreamingSessions()
+   *
+   * Applies to resource types:
+   * - streaming-session
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifOwnedBy(value: string | string[], operator?: Operator | string) {
+    return this.if(`ownedBy`, value, operator || 'StringLike');
   }
 
   /**

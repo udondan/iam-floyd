@@ -29,9 +29,23 @@ export class Workmailmessageflow extends PolicyStatement {
     return this.to('GetRawMessageContent');
   }
 
+  /**
+   * Grants permission to update the content of email messages with the specified message ID
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_PutRawMessageContent.html
+   */
+  public toPutRawMessageContent() {
+    return this.to('PutRawMessageContent');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Read": [
       "GetRawMessageContent"
+    ],
+    "Write": [
+      "PutRawMessageContent"
     ]
   };
 

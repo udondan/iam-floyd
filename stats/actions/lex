@@ -79,8 +79,8 @@ lex:PutBotAlias;Write
 lex:PutIntent;Write
 lex:PutSession;Write
 lex:PutSlotType;Write
-lex:RecognizeSpeech;Write
 lex:RecognizeText;Write
+lex:RecognizeUtterance;Write
 lex:StartConversation;Write
 lex:StartImport;Write
 lex:TagResource;Tagging

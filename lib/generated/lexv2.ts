@@ -602,17 +602,6 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send user input (text or speech) to an bot alias
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeSpeech.html
-   */
-  public toRecognizeSpeech() {
-    return this.to('RecognizeSpeech');
-  }
-
-  /**
    * Grants permission to send user input (text-only) to an bot alias
    *
    * Access Level: Write
@@ -621,6 +610,17 @@ export class LexV2 extends PolicyStatement {
    */
   public toRecognizeText() {
     return this.to('RecognizeText');
+  }
+
+  /**
+   * Grants permission to send user input (text or speech) to an bot alias
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html
+   */
+  public toRecognizeUtterance() {
+    return this.to('RecognizeUtterance');
   }
 
   /**
@@ -810,8 +810,8 @@ export class LexV2 extends PolicyStatement {
       "DeleteSlot",
       "DeleteSlotType",
       "PutSession",
-      "RecognizeSpeech",
       "RecognizeText",
+      "RecognizeUtterance",
       "StartConversation",
       "StartImport",
       "UpdateBot",

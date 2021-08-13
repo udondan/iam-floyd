@@ -2,10 +2,10 @@ fsx:AssociateFileGateway;Write
 fsx:AssociateFileSystemAliases;Write
 fsx:CancelDataRepositoryTask;Write
 fsx:CopyBackup;Write
-fsx:CreateBackup;Tagging
-fsx:CreateDataRepositoryTask;Tagging
-fsx:CreateFileSystem;Tagging
-fsx:CreateFileSystemFromBackup;Tagging
+fsx:CreateBackup;Write
+fsx:CreateDataRepositoryTask;Write
+fsx:CreateFileSystem;Write
+fsx:CreateFileSystemFromBackup;Write
 fsx:DeleteBackup;Write
 fsx:DeleteFileSystem;Write
 fsx:DescribeAssociatedFileGateways;Read

@@ -570,6 +570,21 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Changes the public visibility of a project and its builds.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateProjectVisibility.html
+   */
+  public toUpdateProjectVisibility() {
+    return this.to('UpdateProjectVisibility');
+  }
+
+  /**
    * Updates information about a report.
    *
    * Access Level: Write
@@ -632,6 +647,7 @@ export class Codebuild extends PolicyStatement {
       "StopBuild",
       "StopBuildBatch",
       "UpdateProject",
+      "UpdateProjectVisibility",
       "UpdateReport",
       "UpdateReportGroup",
       "UpdateWebhook"

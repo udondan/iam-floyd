@@ -19,7 +19,7 @@ export class Tag extends PolicyStatement {
   }
 
   /**
-   * Describe the status of the StartReportCreation operation.
+   * Grants permission to describe the status of the StartReportCreation operation
    *
    * Access Level: Read
    *
@@ -30,7 +30,7 @@ export class Tag extends PolicyStatement {
   }
 
   /**
-   * Get a table that shows counts of resources that are noncompliant with their effective tag policies.
+   * Grants permission to retrieve a summary of how many resources are noncompliant with their effective tag policies
    *
    * Access Level: Read
    *
@@ -41,7 +41,7 @@ export class Tag extends PolicyStatement {
   }
 
   /**
-   * Get tagged AWS resources that match the given tag filters
+   * Grants permission to return tagged or previously tagged resources in the specified AWS Region for the calling account
    *
    * Access Level: Read
    *
@@ -52,7 +52,7 @@ export class Tag extends PolicyStatement {
   }
 
   /**
-   * Get all tagKeys for the account in the specific region
+   * Grants permission to returns tag keys currently in use in the specified AWS Region for the calling account
    *
    * Access Level: Read
    *
@@ -63,7 +63,7 @@ export class Tag extends PolicyStatement {
   }
 
   /**
-   * Get all tagValues for the account in the specific region
+   * Grants permission to return tag values for the specified key that are used in the specified AWS Region for the calling account
    *
    * Access Level: Read
    *
@@ -74,7 +74,7 @@ export class Tag extends PolicyStatement {
   }
 
   /**
-   * Generate a report that lists all tagged resources in accounts across your organization, and whether each resource is compliant with the effective tag policy.
+   * Grants permission to start generating a report listing all tagged resources in accounts across your organization, and whether each resource is compliant with the effective tag policy
    *
    * Access Level: Write
    *
@@ -85,7 +85,7 @@ export class Tag extends PolicyStatement {
   }
 
   /**
-   * Add tags to AWS resources
+   * Grants permission to apply one or more tags to the specified resources
    *
    * Access Level: Tagging
    *
@@ -96,7 +96,7 @@ export class Tag extends PolicyStatement {
   }
 
   /**
-   * Remove tags from AWS resources
+   * Grants permission to remove the specified tags from the specified resources
    *
    * Access Level: Tagging
    *

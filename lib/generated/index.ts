@@ -259,6 +259,7 @@ export { Servicecatalog } from "./servicecatalog";
 export { Shield } from "./shield";
 export { Signer } from "./signer";
 export { Snowball } from "./snowball";
+export { SnowDeviceManagement } from "./snowdevicemanagement";
 export { Sso } from "./sso";
 export { SsoDirectory } from "./ssodirectory";
 export { States } from "./stepfunctions";

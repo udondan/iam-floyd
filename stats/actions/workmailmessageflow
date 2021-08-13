@@ -1,1 +1,2 @@
 workmailmessageflow:GetRawMessageContent;Read
+workmailmessageflow:PutRawMessageContent;Write
