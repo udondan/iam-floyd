@@ -52,8 +52,8 @@
                 "waf-regional:GetChangeToken"
             ],
             "Resource": [
-                "arn:aws:waf:*",
-                "arn:aws:waf-regional:*"
+                "arn:aws:waf:*:*:*",
+                "arn:aws:waf-regional:*:*:*"
             ]
         },
         {
@@ -136,9 +136,9 @@
                 "organizations:DescribeAccount",
                 "organizations:DescribeOrganization",
                 "organizations:ListAccounts",
-                "organizations:DescribeOrganizationalUnit", 
+                "organizations:DescribeOrganizationalUnit",
                 "organizations:ListChildren",
-                "organizations:ListRoots", 
+                "organizations:ListRoots",
                 "organizations:ListParents",
                 "organizations:ListOrganizationalUnitsForParent",
                 "organizations:ListAWSServiceAccessForOrganization"
@@ -164,11 +164,11 @@
                 "elasticloadbalancing:DescribeLoadBalancers",
                 "ec2:DescribeAddresses"
             ],
-           "Resource": "*"
-       },
-       {
-           "Effect": "Allow",
-           "Action": [
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
                 "ec2:AuthorizeSecurityGroupEgress",
                 "ec2:AuthorizeSecurityGroupIngress",
                 "ec2:DeleteSecurityGroup",
@@ -177,24 +177,24 @@
                 "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
                 "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
                 "ec2:DescribeNetworkInterfaceAttribute"
-           ],
-           "Resource": [
+            ],
+            "Resource": [
                 "arn:aws:ec2:*:*:network-interface/*",
                 "arn:aws:ec2:*:*:security-group/*"
-           ]
-       },
-       {
-           "Effect": "Allow",
-           "Action": [
-                "ec2:CreateTags"                
-           ],
-           "Resource": [
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateTags"
+            ],
+            "Resource": [
                 "arn:aws:ec2:*:*:security-group/*"
-           ]
-       },
-       {
-           "Effect": "Allow",
-           "Action": [
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
                 "ec2:CreateSecurityGroup",
                 "ec2:DescribeSecurityGroupReferences",
                 "ec2:DescribeSecurityGroups",
@@ -203,12 +203,12 @@
                 "ec2:ModifyNetworkInterfaceAttribute",
                 "ec2:DescribeVpcs",
                 "ec2:DescribeVpcPeeringConnections"
-           ],
-           "Resource": [
+            ],
+            "Resource": [
                 "*"
-           ]
-       },
-       {
+            ]
+        },
+        {
             "Effect": "Allow",
             "Action": [
                 "wafv2:TagResource",
@@ -221,9 +221,9 @@
                 "wafv2:DeleteWebACL",
                 "wafv2:DisassociateWebACL"
             ],
-           "Resource": [
+            "Resource": [
                 "arn:aws:wafv2:*:*:global/webacl/*",
-               "arn:aws:wafv2:*:*:regional/webacl/*"
+                "arn:aws:wafv2:*:*:regional/webacl/*"
             ]
         },
         {
@@ -268,212 +268,212 @@
         },
         {
             "Effect": "Allow",
-           "Action": [
+            "Action": [
                 "wafv2:GetWebACLForResource"
             ],
             "Resource": [
                 "arn:aws:wafv2:*:*:regional/webacl/*"
             ]
-       },
-       		{
-			"Effect": "Allow",
-			"Action": "ec2:CreateTags",
-			"Resource": "arn:aws:ec2:*:*:route-table/*",
-			"Condition": {
-				"StringEquals": {
-					"ec2:CreateAction": "CreateRouteTable"
-				},
-				"ForAllValues:StringEquals": {
-					"aws:TagKeys": [
-						"Name",
-						"FMManaged"
-					]
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "ec2:CreateTags",
-			"Resource": [
-				"arn:aws:ec2:*:*:subnet/*"
-			],
-			"Condition": {
-				"ForAllValues:StringEquals": {
-					"aws:TagKeys": [
-						"Name",
-						"FMManaged"
-					]
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "ec2:DeleteRouteTable",
-			"Resource": "arn:aws:ec2:*:*:route-table/*",
-			"Condition": {
-				"StringEquals": {
-					"ec2:ResourceTag/FMManaged": "true"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:AssociateRouteTable",
-				"ec2:CreateSubnet",
-				"ec2:CreateRouteTable",
-				"ec2:DeleteSubnet",
-				"ec2:DisassociateRouteTable",
-				"ec2:ReplaceRouteTableAssociation"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:DescribeInternetGateways",
-				"ec2:DescribeRouteTables",
-				"ec2:DescribeSubnets",
-				"ec2:DescribeTags",
-				"ec2:DescribeVpcEndpoints"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ram:TagResource"
-			],
-			"Resource": [
-				"arn:aws:ram:*:*:resource-share/*"
-			],
-			"Condition": {
-				"ForAllValues:StringEquals": {
-					"aws:TagKeys": [
-						"Name",
-						"FMManaged"
-					]
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"ram:AssociateResourceShare",
-				"ram:UpdateResourceShare",
-				"ram:DeleteResourceShare"
-			],
-			"Resource": "arn:aws:ram:*:*:resource-share/*",
-			"Condition": {
-				"StringEquals": {
-					"aws:ResourceTag/FMManaged": "true"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "ram:CreateResourceShare",
-			"Resource": "*",
-			"Condition": {
-				"ForAllValues:StringEquals": {
-					"aws:TagKeys": [
-						"Name",
-						"FMManaged"
-					]
-				},
-				"StringEquals": {
-					"aws:RequestTag/FMManaged": [
-						"true"
-					]
-				}
-			}
-		},
-		{
-			"Sid": "ram",
-			"Effect": "Allow",
-			"Action": [
-				"ram:GetResourceShareAssociations",
-				"ram:GetResourceShares"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": "iam:CreateServiceLinkedRole",
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"iam:AWSServiceName": [
-						"network-firewall.amazonaws.com"
-					]
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": "iam:GetRole",
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"network-firewall:TagResource"
-			],
-			"Resource": "*",
-			"Condition": {
-				"ForAllValues:StringEquals": {
-					"aws:TagKeys": [
-						"Name",
-						"FMManaged"
-					]
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"network-firewall:AssociateSubnets",
-				"network-firewall:CreateFirewall",
-				"network-firewall:CreateFirewallPolicy",
-				"network-firewall:DisassociateSubnets",
-				"network-firewall:UpdateFirewallDeleteProtection",
-				"network-firewall:UpdateFirewallPolicy",
-				"network-firewall:UpdateFirewallPolicyChangeProtection",
-				"network-firewall:UpdateSubnetChangeProtection",
-				"network-firewall:AssociateFirewallPolicy",
-				"network-firewall:DescribeFirewall",
-				"network-firewall:DescribeFirewallPolicy",
-				"network-firewall:DescribeRuleGroup",
-				"network-firewall:ListFirewallPolicies",
-				"network-firewall:ListFirewalls",
-				"network-firewall:ListRuleGroups",
-				"network-firewall:PutResourcePolicy",
-				"network-firewall:DescribeResourcePolicy",
-				"network-firewall:DeleteResourcePolicy"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"network-firewall:DeleteFirewallPolicy",
-				"network-firewall:DeleteFirewall"
-			],
-			"Resource": "*",
-			"Condition": {
-				"StringEquals": {
-					"aws:ResourceTag/FMManaged": "true"
-				}
-			}
-		},
-		{
-			"Effect": "Allow",
-			"Action": [
-				"logs:ListLogDeliveries"
-			],
-			"Resource": "*"
-		},
-		{
+        },
+        {
+            "Effect": "Allow",
+            "Action": "ec2:CreateTags",
+            "Resource": "arn:aws:ec2:*:*:route-table/*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:CreateAction": "CreateRouteTable"
+                },
+                "ForAllValues:StringEquals": {
+                    "aws:TagKeys": [
+                        "Name",
+                        "FMManaged"
+                    ]
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": "ec2:CreateTags",
+            "Resource": [
+                "arn:aws:ec2:*:*:subnet/*"
+            ],
+            "Condition": {
+                "ForAllValues:StringEquals": {
+                    "aws:TagKeys": [
+                        "Name",
+                        "FMManaged"
+                    ]
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": "ec2:DeleteRouteTable",
+            "Resource": "arn:aws:ec2:*:*:route-table/*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/FMManaged": "true"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AssociateRouteTable",
+                "ec2:CreateSubnet",
+                "ec2:CreateRouteTable",
+                "ec2:DeleteSubnet",
+                "ec2:DisassociateRouteTable",
+                "ec2:ReplaceRouteTableAssociation"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInternetGateways",
+                "ec2:DescribeRouteTables",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeTags",
+                "ec2:DescribeVpcEndpoints"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ram:TagResource"
+            ],
+            "Resource": [
+                "arn:aws:ram:*:*:resource-share/*"
+            ],
+            "Condition": {
+                "ForAllValues:StringEquals": {
+                    "aws:TagKeys": [
+                        "Name",
+                        "FMManaged"
+                    ]
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ram:AssociateResourceShare",
+                "ram:UpdateResourceShare",
+                "ram:DeleteResourceShare"
+            ],
+            "Resource": "arn:aws:ram:*:*:resource-share/*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:ResourceTag/FMManaged": "true"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": "ram:CreateResourceShare",
+            "Resource": "*",
+            "Condition": {
+                "ForAllValues:StringEquals": {
+                    "aws:TagKeys": [
+                        "Name",
+                        "FMManaged"
+                    ]
+                },
+                "StringEquals": {
+                    "aws:RequestTag/FMManaged": [
+                        "true"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "ram",
+            "Effect": "Allow",
+            "Action": [
+                "ram:GetResourceShareAssociations",
+                "ram:GetResourceShares"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:CreateServiceLinkedRole",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "iam:AWSServiceName": [
+                        "network-firewall.amazonaws.com"
+                    ]
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:GetRole",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "network-firewall:TagResource"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "ForAllValues:StringEquals": {
+                    "aws:TagKeys": [
+                        "Name",
+                        "FMManaged"
+                    ]
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "network-firewall:AssociateSubnets",
+                "network-firewall:CreateFirewall",
+                "network-firewall:CreateFirewallPolicy",
+                "network-firewall:DisassociateSubnets",
+                "network-firewall:UpdateFirewallDeleteProtection",
+                "network-firewall:UpdateFirewallPolicy",
+                "network-firewall:UpdateFirewallPolicyChangeProtection",
+                "network-firewall:UpdateSubnetChangeProtection",
+                "network-firewall:AssociateFirewallPolicy",
+                "network-firewall:DescribeFirewall",
+                "network-firewall:DescribeFirewallPolicy",
+                "network-firewall:DescribeRuleGroup",
+                "network-firewall:ListFirewallPolicies",
+                "network-firewall:ListFirewalls",
+                "network-firewall:ListRuleGroups",
+                "network-firewall:PutResourcePolicy",
+                "network-firewall:DescribeResourcePolicy",
+                "network-firewall:DeleteResourcePolicy"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "network-firewall:DeleteFirewallPolicy",
+                "network-firewall:DeleteFirewall"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:ResourceTag/FMManaged": "true"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:ListLogDeliveries"
+            ],
+            "Resource": "*"
+        },
+        {
             "Effect": "Allow",
             "Action": [
                 "route53resolver:ListFirewallRuleGroupAssociations",

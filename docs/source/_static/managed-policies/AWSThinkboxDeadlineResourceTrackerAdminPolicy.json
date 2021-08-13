@@ -191,10 +191,11 @@
 				"lambda:DeleteFunction",
 				"lambda:GetFunction",
 				"lambda:GetFunctionConfiguration",
-				"lambda:UpdateFunctionCode",
-				"lambda:TagResource",
 				"lambda:ListTags",
-				"lambda:UntagResource"
+				"lambda:PutFunctionConcurrency",
+				"lambda:TagResource",
+				"lambda:UntagResource",
+				"lambda:UpdateFunctionCode"
 			],
 			"Resource": [
 				"arn:aws:lambda:*:*:function:DeadlineResourceTracker*"
