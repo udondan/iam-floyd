@@ -23,7 +23,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/snow-device-management/latest/APIReference/CancelTask.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-cancel-task.html
    */
   public toCancelTask() {
     return this.to('CancelTask');
@@ -38,7 +38,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/snow-device-management/latest/APIReference/CreateTask.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-create-task.html
    */
   public toCreateTask() {
     return this.to('CreateTask');
@@ -49,7 +49,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/snow-device-management/latest/APIReference/DescribeDevice.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-describe-device.html
    */
   public toDescribeDevice() {
     return this.to('DescribeDevice');
@@ -60,7 +60,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/snow-device-management/latest/APIReference/DescribeDeviceEc2Instances.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-describe-ec2-instances.html
    */
   public toDescribeDeviceEc2Instances() {
     return this.to('DescribeDeviceEc2Instances');
@@ -71,7 +71,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/snow-device-management/latest/APIReference/DescribeExecution.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-describe-execution.html
    */
   public toDescribeExecution() {
     return this.to('DescribeExecution');
@@ -82,7 +82,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/snow-device-management/latest/APIReference/DescribeTask.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-describe-task.html
    */
   public toDescribeTask() {
     return this.to('DescribeTask');
@@ -93,7 +93,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/snow-device-management/latest/APIReference/ListDeviceResources.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-list-device-resources.html
    */
   public toListDeviceResources() {
     return this.to('ListDeviceResources');
@@ -104,7 +104,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/snow-device-management/latest/APIReference/ListDevices.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-list-devices.html
    */
   public toListDevices() {
     return this.to('ListDevices');
@@ -115,7 +115,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/snow-device-management/latest/APIReference/ListExecutions.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-list-executions.html
    */
   public toListExecutions() {
     return this.to('ListExecutions');
@@ -130,7 +130,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/snow-device-management/latest/APIReference/ListTagsForResource.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-list-tags-for-resource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -141,7 +141,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/snow-device-management/latest/APIReference/ListTasks.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-list-tasks.html
    */
   public toListTasks() {
     return this.to('ListTasks');
@@ -156,7 +156,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/snow-device-management/latest/APIReference/TagResource.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-tag-resource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -171,7 +171,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/snow-device-management/latest/APIReference/UntagResource.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-untag-resources.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -204,7 +204,7 @@ export class SnowDeviceManagement extends PolicyStatement {
   /**
    * Adds a resource of type managed-device to the statement
    *
-   * https://docs.aws.amazon.com/IAM/snow-device-management/UserGuide/managed-device.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/aws-sdms.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -226,7 +226,7 @@ export class SnowDeviceManagement extends PolicyStatement {
   /**
    * Adds a resource of type task to the statement
    *
-   * https://docs.aws.amazon.com/IAM/snow-device-management/UserGuide/task.html
+   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/aws-sdms.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

@@ -222,14 +222,14 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Get the Readiness Status of a Recovery Group
+   * Grants permission to Get the Readiness Summary of a Recovery Group
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/recovery-readiness/latest/api/recoverygroupreadiness-recoverygroupname.html
    */
-  public toGetRecoveryGroupReadinessStatus() {
-    return this.to('GetRecoveryGroupReadinessStatus');
+  public toGetRecoveryGroupReadinessSummary() {
+    return this.to('GetRecoveryGroupReadinessSummary');
   }
 
   /**
@@ -327,6 +327,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/recovery-readiness/latest/api/tags-resource-arn.html
    */
@@ -341,6 +342,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/recovery-readiness/latest/api/tags-resource-arn.html
    */
@@ -429,7 +431,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
       "GetReadinessCheckResourceStatus",
       "GetReadinessCheckStatus",
       "GetRecoveryGroup",
-      "GetRecoveryGroupReadinessStatus",
+      "GetRecoveryGroupReadinessSummary",
       "GetResourceSet",
       "ListCells",
       "ListCrossAccountAuthorizations",

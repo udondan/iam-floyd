@@ -164,7 +164,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   /**
    * Grants permission to List Associated Route53 Health Checks
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/recovery-cluster/latest/api/routingcontrol-routingcontrolarn-associatedroute53healthchecks.html
    */
@@ -203,6 +203,17 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    */
   public toListRoutingControls() {
     return this.to('ListRoutingControls');
+  }
+
+  /**
+   * Grants permission to List Safety Rules
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/recovery-cluster/latest/api/controlpanel-controlpanelarn-safetyrules.html
+   */
+  public toListSafetyRules() {
+    return this.to('ListSafetyRules');
   }
 
   /**
@@ -258,10 +269,13 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
       "DescribeRoutingControl",
       "DescribeRoutingControlByName",
       "DescribeSafetyRule",
-      "ListAssociatedRoute53HealthChecks",
       "ListClusters",
       "ListControlPanels",
-      "ListRoutingControls"
+      "ListRoutingControls",
+      "ListSafetyRules"
+    ],
+    "List": [
+      "ListAssociatedRoute53HealthChecks"
     ]
   };
 

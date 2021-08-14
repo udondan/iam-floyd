@@ -19,7 +19,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create an API cache in AppSync
+   * Grants permission to create an API cache in AppSync
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a unique key that you can distribute to clients who are executing your API
+   * Grants permission to create a unique key that you can distribute to clients who are executing your API
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a DataSource object
+   * Grants permission to create a data source
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a new Function object
+   * Grants permission to create a new function
    *
    * Access Level: Write
    *
@@ -63,9 +63,9 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to creates a GraphqlApi object, which is the top level AppSync resource
+   * Grants permission to create a GraphQL API, which is the top level AppSync resource
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -81,7 +81,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a Resolver object. A resolver converts incoming requests into a format that a data source can understand, and converts the data source's responses into GraphQL
+   * Grants permission to create a resolver. A resolver converts incoming requests into a format that a data source can understand, and converts the data source's responses into GraphQL
    *
    * Access Level: Write
    *
@@ -92,7 +92,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a Type object
+   * Grants permission to create a type
    *
    * Access Level: Write
    *
@@ -103,7 +103,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete an API cache in AppSync
+   * Grants permission to delete an API cache in AppSync
    *
    * Access Level: Write
    *
@@ -114,7 +114,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete an API key
+   * Grants permission to delete an API key
    *
    * Access Level: Write
    *
@@ -125,7 +125,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a DataSource object
+   * Grants permission to delete a data source
    *
    * Access Level: Write
    *
@@ -136,7 +136,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a Function object
+   * Grants permission to delete a function
    *
    * Access Level: Write
    *
@@ -147,7 +147,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a GraphqlApi object. This will also clean up every AppSync resource below that API
+   * Grants permission to delete a GraphQL Api. This will also clean up every AppSync resource below that API
    *
    * Access Level: Write
    *
@@ -161,7 +161,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a Resolver object
+   * Grants permission to delete a resolver
    *
    * Access Level: Write
    *
@@ -172,7 +172,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a Type object
+   * Grants permission to delete a type
    *
    * Access Level: Write
    *
@@ -183,7 +183,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to flush an API cache in AppSync
+   * Grants permission to flush an API cache in AppSync
    *
    * Access Level: Write
    *
@@ -194,7 +194,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to read information about an API cache in AppSync
+   * Grants permission to read information about an API cache in AppSync
    *
    * Access Level: Read
    *
@@ -205,7 +205,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve a DataSource object
+   * Grants permission to retrieve a data source
    *
    * Access Level: Read
    *
@@ -216,7 +216,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve a Function object
+   * Grants permission to retrieve a function
    *
    * Access Level: Read
    *
@@ -227,7 +227,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve a GraphqlApi object
+   * Grants permission to retrieve a GraphQL API
    *
    * Access Level: Read
    *
@@ -241,7 +241,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve the introspection schema for a GraphQL API
+   * Grants permission to retrieve the introspection schema for a GraphQL API
    *
    * Access Level: Read
    *
@@ -252,7 +252,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve a Resolver object
+   * Grants permission to retrieve a resolver
    *
    * Access Level: Read
    *
@@ -263,7 +263,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve the current status of a schema creation operation
+   * Grants permission to retrieve the current status of a schema creation operation
    *
    * Access Level: Read
    *
@@ -274,7 +274,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to retrieve a Type object
+   * Grants permission to retrieve a type
    *
    * Access Level: Read
    *
@@ -285,7 +285,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to send a GraphQL query to a GraphQL API
+   * Grants permission to send a GraphQL query to a GraphQL API
    *
    * Access Level: Write
    *
@@ -296,7 +296,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list the API keys for a given API
+   * Grants permission to list the API keys for a given API
    *
    * Access Level: List
    *
@@ -307,7 +307,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list the data sources for a given API
+   * Grants permission to list the data sources for a given API
    *
    * Access Level: List
    *
@@ -318,7 +318,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list the functions for a given API
+   * Grants permission to list the functions for a given API
    *
    * Access Level: List
    *
@@ -329,7 +329,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list your GraphQL APIs
+   * Grants permission to list GraphQL APIs
    *
    * Access Level: List
    *
@@ -340,7 +340,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list the resolvers for a given API and type
+   * Grants permission to list the resolvers for a given API and type
    *
    * Access Level: List
    *
@@ -351,7 +351,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list the resolvers that are associated with a specific function
+   * Grants permission to list the resolvers that are associated with a specific function
    *
    * Access Level: List
    *
@@ -362,7 +362,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list the tags for a resource
+   * Grants permission to list the tags for a resource
    *
    * Access Level: Read
    *
@@ -376,7 +376,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list the types for a given API
+   * Grants permission to list the types for a given API
    *
    * Access Level: List
    *
@@ -387,7 +387,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to set web ACL
+   * Grants permission to set a web ACL
    *
    * Access Level: Write
    *
@@ -398,7 +398,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to add a new schema to your GraphQL API. This operation is asynchronous - GetSchemaCreationStatus can show when it has completed
+   * Grants permission to add a new schema to your GraphQL API. This operation is asynchronous - GetSchemaCreationStatus can show when it has completed
    *
    * Access Level: Write
    *
@@ -409,7 +409,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to tag a resource
+   * Grants permission to tag a resource
    *
    * Access Level: Tagging
    *
@@ -425,7 +425,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to untag a resource
+   * Grants permission to untag a resource
    *
    * Access Level: Tagging
    *
@@ -439,7 +439,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update an API cache in AppSync
+   * Grants permission to update an API cache in AppSync
    *
    * Access Level: Write
    *
@@ -450,7 +450,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update an API key for a given API
+   * Grants permission to update an API key for a given API
    *
    * Access Level: Write
    *
@@ -461,7 +461,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update a DataSource object
+   * Grants permission to update a data source
    *
    * Access Level: Write
    *
@@ -472,7 +472,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update an existing Function object
+   * Grants permission to update an existing function
    *
    * Access Level: Write
    *
@@ -483,7 +483,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to updates a GraphqlApi object
+   * Grants permission to update a GraphQL API
    *
    * Access Level: Write
    *
@@ -500,7 +500,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update a Resolver object
+   * Grants permission to update a resolver
    *
    * Access Level: Write
    *
@@ -511,7 +511,7 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update a Type object
+   * Grants permission to update a type
    *
    * Access Level: Write
    *
@@ -527,6 +527,7 @@ export class Appsync extends PolicyStatement {
       "CreateApiKey",
       "CreateDataSource",
       "CreateFunction",
+      "CreateGraphqlApi",
       "CreateResolver",
       "CreateType",
       "DeleteApiCache",
@@ -548,11 +549,6 @@ export class Appsync extends PolicyStatement {
       "UpdateResolver",
       "UpdateType"
     ],
-    "Tagging": [
-      "CreateGraphqlApi",
-      "TagResource",
-      "UntagResource"
-    ],
     "Read": [
       "GetApiCache",
       "GetDataSource",
@@ -572,6 +568,10 @@ export class Appsync extends PolicyStatement {
       "ListResolvers",
       "ListResolversByFunction",
       "ListTypes"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 

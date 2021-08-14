@@ -2,7 +2,7 @@ appsync:CreateApiCache;Write
 appsync:CreateApiKey;Write
 appsync:CreateDataSource;Write
 appsync:CreateFunction;Write
-appsync:CreateGraphqlApi;Tagging
+appsync:CreateGraphqlApi;Write
 appsync:CreateResolver;Write
 appsync:CreateType;Write
 appsync:DeleteApiCache;Write
