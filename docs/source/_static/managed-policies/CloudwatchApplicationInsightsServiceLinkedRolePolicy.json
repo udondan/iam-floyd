@@ -299,7 +299,8 @@
                 "eks:DescribeNodegroup",
                 "eks:ListClusters",
                 "eks:ListFargateProfiles",
-                "eks:ListNodegroups"
+                "eks:ListNodegroups",
+                "fsx:DescribeFileSystems"
             ],
             "Resource": [
                 "*"
