@@ -69,7 +69,7 @@
 			"Resource": "*",
 			"Condition": {
 				"StringEquals": {
-					"nimble:createdBy": "${nimble:requesterPrincipalId}"
+					"nimble:ownedBy": "${nimble:requesterPrincipalId}"
 				}
 			}
 		}
