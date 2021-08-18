@@ -18,6 +18,7 @@ dms:DescribeAccountAttributes;Read
 dms:DescribeApplicableIndividualAssessments;Read
 dms:DescribeCertificates;Read
 dms:DescribeConnections;Read
+dms:DescribeEndpointSettings;Read
 dms:DescribeEndpointTypes;Read
 dms:DescribeEndpoints;Read
 dms:DescribeEventCategories;Read
@@ -35,7 +36,7 @@ dms:DescribeReplicationTasks;Read
 dms:DescribeSchemas;Read
 dms:DescribeTableStatistics;Read
 dms:ImportCertificate;Write
-dms:ListTagsForResource;List
+dms:ListTagsForResource;Read
 dms:ModifyEndpoint;Write
 dms:ModifyEventSubscription;Write
 dms:ModifyReplicationInstance;Write

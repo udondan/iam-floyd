@@ -2,6 +2,7 @@ chatbot:CreateChimeWebhookConfiguration;Write
 chatbot:CreateSlackChannelConfiguration;Write
 chatbot:DeleteChimeWebhookConfiguration;Write
 chatbot:DeleteSlackChannelConfiguration;Write
+chatbot:DeleteSlackWorkspaceAuthorization;Write
 chatbot:DescribeChimeWebhookConfigurations;Read
 chatbot:DescribeSlackChannelConfigurations;Read
 chatbot:DescribeSlackChannels;Read

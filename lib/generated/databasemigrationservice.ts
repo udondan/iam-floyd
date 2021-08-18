@@ -269,6 +269,17 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the possible endpoint settings available when you create an endpoint for a specific database engine
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEndpointSettings.html
+   */
+  public toDescribeEndpointSettings() {
+    return this.to('DescribeEndpointSettings');
+  }
+
+  /**
    * Grants permission to return information about the type of endpoints available
    *
    * Access Level: Read
@@ -466,7 +477,7 @@ export class Dms extends PolicyStatement {
   /**
    * Grants permission to list all tags for an AWS DMS resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ListTagsForResource.html
    */
@@ -683,6 +694,7 @@ export class Dms extends PolicyStatement {
       "DescribeApplicableIndividualAssessments",
       "DescribeCertificates",
       "DescribeConnections",
+      "DescribeEndpointSettings",
       "DescribeEndpointTypes",
       "DescribeEndpoints",
       "DescribeEventCategories",
@@ -699,10 +711,8 @@ export class Dms extends PolicyStatement {
       "DescribeReplicationTasks",
       "DescribeSchemas",
       "DescribeTableStatistics",
+      "ListTagsForResource",
       "TestConnection"
-    ],
-    "List": [
-      "ListTagsForResource"
     ]
   };
 
@@ -885,6 +895,8 @@ export class Dms extends PolicyStatement {
   /**
    * Filters access based on the presence of tag keys in the request for Certificate
    *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_cert-tag___TagKey_
+   *
    * Applies to resource types:
    * - Certificate
    *
@@ -898,6 +910,8 @@ export class Dms extends PolicyStatement {
 
   /**
    * Filters access based on the presence of tag keys in the request for Endpoint
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_endpoint-tag___TagKey_
    *
    * Applies to resource types:
    * - Endpoint
@@ -913,6 +927,8 @@ export class Dms extends PolicyStatement {
   /**
    * Filters access based on the presence of tag keys in the request for EventSubscription
    *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_es-tag___TagKey_
+   *
    * Applies to resource types:
    * - EventSubscription
    *
@@ -927,6 +943,8 @@ export class Dms extends PolicyStatement {
   /**
    * Filters access based on the presence of tag keys in the request for ReplicationInstance
    *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_rep-tag___TagKey_
+   *
    * Applies to resource types:
    * - ReplicationInstance
    *
@@ -940,6 +958,8 @@ export class Dms extends PolicyStatement {
 
   /**
    * Filters access based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_req-tag___TagKey_
    *
    * Applies to actions:
    * - .toAddTagsToResource()
@@ -960,6 +980,8 @@ export class Dms extends PolicyStatement {
   /**
    * Filters access based on the presence of tag keys in the request for ReplicationSubnetGroup
    *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_subgrp-tag___TagKey_
+   *
    * Applies to resource types:
    * - ReplicationSubnetGroup
    *
@@ -973,6 +995,8 @@ export class Dms extends PolicyStatement {
 
   /**
    * Filters access based on the presence of tag keys in the request for ReplicationTask
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_task-tag___TagKey_
    *
    * Applies to resource types:
    * - ReplicationTask

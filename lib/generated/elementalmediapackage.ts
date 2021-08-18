@@ -19,7 +19,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a channel in AWS Elemental MediaPackage.
+   * Grants permission to create a channel in AWS Elemental MediaPackage
    *
    * Access Level: Write
    *
@@ -34,7 +34,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a harvest job in AWS Elemental MediaPackage.
+   * Grants permission to create a harvest job in AWS Elemental MediaPackage
    *
    * Access Level: Write
    *
@@ -49,7 +49,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an endpoint in AWS Elemental MediaPackage.
+   * Grants permission to create an endpoint in AWS Elemental MediaPackage
    *
    * Access Level: Write
    *
@@ -64,7 +64,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a channel in AWS Elemental MediaPackage.
+   * Grants permission to delete a channel in AWS Elemental MediaPackage
    *
    * Access Level: Write
    *
@@ -75,7 +75,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an endpoint in AWS Elemental MediaPackage.
+   * Grants permission to delete an endpoint in AWS Elemental MediaPackage
    *
    * Access Level: Write
    *
@@ -86,7 +86,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view the details of a channel in AWS Elemental MediaPackage.
+   * Grants permission to view the details of a channel in AWS Elemental MediaPackage
    *
    * Access Level: Read
    *
@@ -97,7 +97,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view the details of a harvest job in AWS Elemental MediaPackage.
+   * Grants permission to view the details of a harvest job in AWS Elemental MediaPackage
    *
    * Access Level: Read
    *
@@ -108,7 +108,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view the details of an endpoint in AWS Elemental MediaPackage.
+   * Grants permission to view the details of an endpoint in AWS Elemental MediaPackage
    *
    * Access Level: Read
    *
@@ -119,7 +119,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view a list of channels in AWS Elemental MediaPackage.
+   * Grants permission to view a list of channels in AWS Elemental MediaPackage
    *
    * Access Level: Read
    *
@@ -130,7 +130,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view a list of harvest jobs in AWS Elemental MediaPackage.
+   * Grants permission to view a list of harvest jobs in AWS Elemental MediaPackage
    *
    * Access Level: Read
    *
@@ -141,7 +141,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view a list of endpoints in AWS Elemental MediaPackage.
+   * Grants permission to view a list of endpoints in AWS Elemental MediaPackage
    *
    * Access Level: Read
    *
@@ -152,7 +152,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags assigned to a Channel or OriginEndpoint.
+   * Grants permission to list the tags assigned to a Channel or OriginEndpoint
    *
    * Access Level: Read
    *
@@ -163,7 +163,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to rotate credentials for the first IngestEndpoint of a Channel in AWS Elemental MediaPackage.
+   * Grants permission to rotate credentials for the first IngestEndpoint of a Channel in AWS Elemental MediaPackage
    *
    * Access Level: Write
    *
@@ -174,7 +174,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to rotate IngestEndpoint credentials for a Channel in AWS Elemental MediaPackage.
+   * Grants permission to rotate IngestEndpoint credentials for a Channel in AWS Elemental MediaPackage
    *
    * Access Level: Write
    *
@@ -200,7 +200,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete tags to a Channel or OriginEndpoint.
+   * Grants permission to delete tags to a Channel or OriginEndpoint
    *
    * Access Level: Tagging
    *
@@ -214,7 +214,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to make changes to a channel in AWS Elemental MediaPackage.
+   * Grants permission to make changes to a channel in AWS Elemental MediaPackage
    *
    * Access Level: Write
    *
@@ -225,7 +225,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   * Grants permission to make changes to an endpoint in AWS Elemental MediaPackage.
+   * Grants permission to make changes to an endpoint in AWS Elemental MediaPackage
    *
    * Access Level: Write
    *
