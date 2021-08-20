@@ -35,6 +35,14 @@
 				"ec2:ModifyImageAttribute"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:EnableImageDeprecation",
+				"ec2:DisableImageDeprecation"
+			],
+			"Resource": "arn:aws:ec2:*::image/*"
 		}
 	]
 }
