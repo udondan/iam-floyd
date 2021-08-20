@@ -129,6 +129,7 @@ iot:GetPercentiles;Read
 iot:GetPolicy;Read
 iot:GetPolicyVersion;Read
 iot:GetRegistrationCode;Read
+iot:GetRetainedMessage;Read
 iot:GetStatistics;Read
 iot:GetThingShadow;Read
 iot:GetTopicRule;Read
@@ -168,12 +169,13 @@ iot:ListPrincipalPolicies;List
 iot:ListPrincipalThings;List
 iot:ListProvisioningTemplateVersions;List
 iot:ListProvisioningTemplates;List
+iot:ListRetainedMessages;List
 iot:ListRoleAliases;List
 iot:ListScheduledAudits;List
 iot:ListSecurityProfiles;List
 iot:ListSecurityProfilesForTarget;List
 iot:ListStreams;List
-iot:ListTagsForResource;List
+iot:ListTagsForResource;Read
 iot:ListTargetsForPolicy;List
 iot:ListTargetsForSecurityProfile;List
 iot:ListThingGroups;List
@@ -201,6 +203,7 @@ iot:RejectCertificateTransfer;Write
 iot:RemoveThingFromBillingGroup;Write
 iot:RemoveThingFromThingGroup;Write
 iot:ReplaceTopicRule;Write
+iot:RetainPublish;Write
 iot:SearchIndex;Read
 iot:SetDefaultAuthorizer;Permissions management
 iot:SetDefaultPolicyVersion;Permissions management

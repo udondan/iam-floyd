@@ -1,5 +1,5 @@
 import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [deepracer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html).
@@ -23,10 +23,69 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-manage-community-races.html
    */
   public toAddLeaderboardAccessPermission() {
     return this.to('AddLeaderboardAccessPermission');
+  }
+
+  /**
+   * Grants permission to get current admin multiuser configuration for this account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-set-account-config.html
+   */
+  public toAdminGetAccountConfig() {
+    return this.to('AdminGetAccountConfig');
+  }
+
+  /**
+   * Grants permission to list all deepracer users with their associated resources created under this account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-list-associated-resources.html
+   */
+  public toAdminListAssociatedResources() {
+    return this.to('AdminListAssociatedResources');
+  }
+
+  /**
+   * Grants permission to list user data for all users associated with this account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-list-associated-users.html
+   */
+  public toAdminListAssociatedUsers() {
+    return this.to('AdminListAssociatedUsers');
+  }
+
+  /**
+   * Grants permission to manage a user associated with this account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-manage-user.html
+   */
+  public toAdminManageUser() {
+    return this.to('AdminManageUser');
+  }
+
+  /**
+   * Grants permission to set configuration options for this account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-set-account-config.html
+   */
+  public toAdminSetAccountConfig() {
+    return this.to('AdminSetAccountConfig');
   }
 
   /**
@@ -37,22 +96,13 @@ export class Deepracer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html#deepracer-clone-trained-model
    */
   public toCloneReinforcementLearningModel() {
     return this.to('CloneReinforcementLearningModel');
-  }
-
-  /**
-   * Grants permission to create resources needed by DeepRacer on behalf of the user
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
-   */
-  public toCreateAccountResources() {
-    return this.to('CreateAccountResources');
   }
 
   /**
@@ -63,6 +113,8 @@ export class Deepracer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-choose-race-type.html
    */
@@ -78,6 +130,8 @@ export class Deepracer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-create-community-race.html
    */
@@ -89,6 +143,10 @@ export class Deepracer extends PolicyStatement {
    * Grants permission to create an access token for a private leaderboard
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-manage-community-races.html
    */
@@ -104,6 +162,8 @@ export class Deepracer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
@@ -119,6 +179,8 @@ export class Deepracer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
@@ -127,20 +189,13 @@ export class Deepracer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete resources created by DeepRacer on behalf of the user
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
-   */
-  public toDeleteAccountResources() {
-    return this.to('DeleteAccountResources');
-  }
-
-  /**
    * Grants permission to delete a leaderboard
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-manage-community-races.html
    */
@@ -153,6 +208,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toDeleteModel() {
@@ -164,6 +223,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-manage-community-races.html
    */
   public toEditLeaderboard() {
@@ -171,20 +234,28 @@ export class Deepracer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the resources created by DeepRacer on behalf of the user
+   * Grants permission to get current multiuser configuration for this account
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-set-account-config.html
    */
-  public toGetAccountResources() {
-    return this.to('GetAccountResources');
+  public toGetAccountConfig() {
+    return this.to('GetAccountConfig');
   }
 
   /**
    * Grants permission to retrieve the user's alias for submitting a DeepRacer model to leaderboards
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
@@ -197,6 +268,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html
    */
   public toGetAssetUrl() {
@@ -207,6 +282,10 @@ export class Deepracer extends PolicyStatement {
    * Grants permission to retrieve a specific DeepRacer car from your garage
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-choose-race-type.html
    */
@@ -219,6 +298,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-choose-race-type.html
    */
   public toGetCars() {
@@ -229,6 +312,10 @@ export class Deepracer extends PolicyStatement {
    * Grants permission to retrieve information about an existing DeepRacer model's evaluation jobs
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html
    */
@@ -241,6 +328,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
   public toGetLatestUserSubmission() {
@@ -251,6 +342,10 @@ export class Deepracer extends PolicyStatement {
    * Grants permission to retrieve information about leaderboards
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
@@ -263,6 +358,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toGetModel() {
@@ -274,6 +373,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-join-community-race.html
    */
   public toGetPrivateLeaderboard() {
@@ -284,6 +387,10 @@ export class Deepracer extends PolicyStatement {
    * Grants permission to retrieve information about the performance of a user's DeepRacer model that got placed on a leaderboard
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
@@ -307,6 +414,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toGetTrainingJob() {
@@ -317,6 +428,10 @@ export class Deepracer extends PolicyStatement {
    * Grants permission to import a reinforcement learning model for DeepRacer
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-troubleshooting-service-migration-errors.html
    */
@@ -329,6 +444,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html
    */
   public toListEvaluations() {
@@ -339,6 +458,10 @@ export class Deepracer extends PolicyStatement {
    * Grants permission to list all the DeepRacer model submissions of a user on a leaderboard
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
@@ -351,6 +474,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
   public toListLeaderboards() {
@@ -361,6 +488,10 @@ export class Deepracer extends PolicyStatement {
    * Grants permission to list all existing DeepRacer models
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
@@ -373,6 +504,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-join-community-race.html
    */
   public toListPrivateLeaderboardParticipants() {
@@ -383,6 +518,10 @@ export class Deepracer extends PolicyStatement {
    * Grants permission to list all the available private leaderboards
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-join-community-race.html
    */
@@ -395,6 +534,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-join-community-race.html
    */
   public toListSubscribedPrivateLeaderboards() {
@@ -402,12 +545,14 @@ export class Deepracer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to lists tag for a resource.
+   * Grants permission to lists tag for a resource
    *
    * Access Level: Read
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-tagging.html
    */
@@ -431,6 +576,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toListTrainingJobs() {
@@ -449,9 +598,28 @@ export class Deepracer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to performs the leaderboard operation mentioned in the operation attribute
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-perform-leaderboard-operation.html
+   */
+  public toPerformLeaderboardOperation() {
+    return this.to('PerformLeaderboardOperation');
+  }
+
+  /**
    * Grants permission to remove access for a private leaderboard
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-manage-community-races.html
    */
@@ -463,6 +631,10 @@ export class Deepracer extends PolicyStatement {
    * Grants permission to set the user's alias for submitting a DeepRacer model to leaderboards
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
@@ -478,6 +650,8 @@ export class Deepracer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html
    */
@@ -490,6 +664,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html
    */
   public toStopEvaluation() {
@@ -501,6 +679,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
   public toStopTrainingReinforcementLearningModel() {
@@ -508,7 +690,7 @@ export class Deepracer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to tag a resource.
+   * Grants permission to tag a resource
    *
    * Access Level: Tagging
    *
@@ -516,6 +698,8 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-tagging.html
    */
@@ -535,7 +719,7 @@ export class Deepracer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag a resource.
+   * Grants permission to untag a resource
    *
    * Access Level: Tagging
    *
@@ -543,6 +727,8 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifUserToken()
+   * - .ifMultiUser()
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-tagging.html
    */
@@ -555,6 +741,10 @@ export class Deepracer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-choose-race-type.html
    */
   public toUpdateCar() {
@@ -564,19 +754,20 @@ export class Deepracer extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AddLeaderboardAccessPermission",
+      "AdminManageUser",
+      "AdminSetAccountConfig",
       "CloneReinforcementLearningModel",
-      "CreateAccountResources",
       "CreateCar",
       "CreateLeaderboard",
       "CreateLeaderboardAccessToken",
       "CreateLeaderboardSubmission",
       "CreateReinforcementLearningModel",
-      "DeleteAccountResources",
       "DeleteLeaderboard",
       "DeleteModel",
       "EditLeaderboard",
       "ImportModel",
       "MigrateModels",
+      "PerformLeaderboardOperation",
       "RemoveLeaderboardAccessPermission",
       "SetAlias",
       "StartEvaluation",
@@ -586,7 +777,10 @@ export class Deepracer extends PolicyStatement {
       "UpdateCar"
     ],
     "Read": [
-      "GetAccountResources",
+      "AdminGetAccountConfig",
+      "AdminListAssociatedResources",
+      "AdminListAssociatedUsers",
+      "GetAccountConfig",
       "GetAlias",
       "GetAssetUrl",
       "GetCar",
@@ -761,5 +955,114 @@ export class Deepracer extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters access by multiuser flag
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/reference_policies_iam-condition-keys.html#condition-keys-multiuser
+   *
+   * Applies to actions:
+   * - .toAddLeaderboardAccessPermission()
+   * - .toCloneReinforcementLearningModel()
+   * - .toCreateCar()
+   * - .toCreateLeaderboard()
+   * - .toCreateLeaderboardAccessToken()
+   * - .toCreateLeaderboardSubmission()
+   * - .toCreateReinforcementLearningModel()
+   * - .toDeleteLeaderboard()
+   * - .toDeleteModel()
+   * - .toEditLeaderboard()
+   * - .toGetAccountConfig()
+   * - .toGetAlias()
+   * - .toGetAssetUrl()
+   * - .toGetCar()
+   * - .toGetCars()
+   * - .toGetEvaluation()
+   * - .toGetLatestUserSubmission()
+   * - .toGetLeaderboard()
+   * - .toGetModel()
+   * - .toGetPrivateLeaderboard()
+   * - .toGetRankedUserSubmission()
+   * - .toGetTrainingJob()
+   * - .toImportModel()
+   * - .toListEvaluations()
+   * - .toListLeaderboardSubmissions()
+   * - .toListLeaderboards()
+   * - .toListModels()
+   * - .toListPrivateLeaderboardParticipants()
+   * - .toListPrivateLeaderboards()
+   * - .toListSubscribedPrivateLeaderboards()
+   * - .toListTagsForResource()
+   * - .toListTrainingJobs()
+   * - .toPerformLeaderboardOperation()
+   * - .toRemoveLeaderboardAccessPermission()
+   * - .toSetAlias()
+   * - .toStartEvaluation()
+   * - .toStopEvaluation()
+   * - .toStopTrainingReinforcementLearningModel()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateCar()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifMultiUser(value?: boolean) {
+    return this.if(`MultiUser`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by user token in the request
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/reference_policies_iam-condition-keys.html#condition-keys-usertoken
+   *
+   * Applies to actions:
+   * - .toAddLeaderboardAccessPermission()
+   * - .toCloneReinforcementLearningModel()
+   * - .toCreateCar()
+   * - .toCreateLeaderboard()
+   * - .toCreateLeaderboardAccessToken()
+   * - .toCreateLeaderboardSubmission()
+   * - .toCreateReinforcementLearningModel()
+   * - .toDeleteLeaderboard()
+   * - .toDeleteModel()
+   * - .toEditLeaderboard()
+   * - .toGetAccountConfig()
+   * - .toGetAlias()
+   * - .toGetAssetUrl()
+   * - .toGetCar()
+   * - .toGetCars()
+   * - .toGetEvaluation()
+   * - .toGetLatestUserSubmission()
+   * - .toGetLeaderboard()
+   * - .toGetModel()
+   * - .toGetPrivateLeaderboard()
+   * - .toGetRankedUserSubmission()
+   * - .toGetTrainingJob()
+   * - .toImportModel()
+   * - .toListEvaluations()
+   * - .toListLeaderboardSubmissions()
+   * - .toListLeaderboards()
+   * - .toListModels()
+   * - .toListPrivateLeaderboardParticipants()
+   * - .toListPrivateLeaderboards()
+   * - .toListSubscribedPrivateLeaderboards()
+   * - .toListTagsForResource()
+   * - .toListTrainingJobs()
+   * - .toPerformLeaderboardOperation()
+   * - .toRemoveLeaderboardAccessPermission()
+   * - .toSetAlias()
+   * - .toStartEvaluation()
+   * - .toStopEvaluation()
+   * - .toStopTrainingReinforcementLearningModel()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateCar()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifUserToken(value: string | string[], operator?: Operator | string) {
+    return this.if(`UserToken`, value, operator || 'StringLike');
   }
 }

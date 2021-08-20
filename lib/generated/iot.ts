@@ -19,7 +19,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to accept a pending certificate transfer.
+   * Grants permission to accept a pending certificate transfer
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a thing to the specified billing group.
+   * Grants permission to add a thing to the specified billing group
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a thing to the specified thing group.
+   * Grants permission to add a thing to the specified thing group
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate a group with a continuous job.
+   * Grants permission to associate a group with a continuous job
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to attach a policy to the specified target.
+   * Grants permission to attach a policy to the specified target
    *
    * Access Level: Permissions management
    *
@@ -74,7 +74,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to attach the specified policy to the specified principal (certificate or other credential).
+   * Grants permission to attach the specified policy to the specified principal (certificate or other credential)
    *
    * Access Level: Permissions management
    *
@@ -85,7 +85,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate a Device Defender security profile with a thing group or with this account.
+   * Grants permission to associate a Device Defender security profile with a thing group or with this account
    *
    * Access Level: Write
    *
@@ -96,7 +96,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to attach the specified principal to the specified thing.
+   * Grants permission to attach the specified principal to the specified thing
    *
    * Access Level: Write
    *
@@ -107,7 +107,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to cancel a mitigation action task that is in progress.
+   * Grants permission to cancel a mitigation action task that is in progress
    *
    * Access Level: Write
    *
@@ -118,7 +118,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to cancel an audit that is in progress. The audit can be either scheduled or on-demand.
+   * Grants permission to cancel an audit that is in progress. The audit can be either scheduled or on-demand
    *
    * Access Level: Write
    *
@@ -129,7 +129,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to cancel a pending transfer for the specified certificate.
+   * Grants permission to cancel a pending transfer for the specified certificate
    *
    * Access Level: Write
    *
@@ -140,7 +140,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to cancel a Device Defender ML Detect mitigation action.
+   * Grants permission to cancel a Device Defender ML Detect mitigation action
    *
    * Access Level: Write
    *
@@ -151,7 +151,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to cancel a job.
+   * Grants permission to cancel a job
    *
    * Access Level: Write
    *
@@ -162,7 +162,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to cancel a job execution on a particular device.
+   * Grants permission to cancel a job execution on a particular device
    *
    * Access Level: Write
    *
@@ -173,7 +173,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to clear the default authorizer.
+   * Grants permission to clear the default authorizer
    *
    * Access Level: Write
    *
@@ -184,7 +184,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to close a tunnel.
+   * Grants permission to close a tunnel
    *
    * Access Level: Write
    *
@@ -198,7 +198,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to confirm a http url TopicRuleDestinationDestination.
+   * Grants permission to confirm a http url TopicRuleDestinationDestination
    *
    * Access Level: Write
    *
@@ -220,7 +220,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Device Defender audit suppression.
+   * Grants permission to create a Device Defender audit suppression
    *
    * Access Level: Write
    *
@@ -231,7 +231,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an authorizer.
+   * Grants permission to create an authorizer
    *
    * Access Level: Write
    *
@@ -246,7 +246,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a billing group.
+   * Grants permission to create a billing group
    *
    * Access Level: Write
    *
@@ -261,7 +261,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an X.509 certificate using the specified certificate signing request.
+   * Grants permission to create an X.509 certificate using the specified certificate signing request
    *
    * Access Level: Write
    *
@@ -272,7 +272,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a custom metric for device side metric reporting and monitoring.
+   * Grants permission to create a custom metric for device side metric reporting and monitoring
    *
    * Access Level: Write
    *
@@ -287,7 +287,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to define a dimension that can be used to to limit the scope of a metric used in a security profile.
+   * Grants permission to define a dimension that can be used to to limit the scope of a metric used in a security profile
    *
    * Access Level: Write
    *
@@ -302,7 +302,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a domain configuration.
+   * Grants permission to create a domain configuration
    *
    * Access Level: Write
    *
@@ -348,7 +348,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a job.
+   * Grants permission to create a job
    *
    * Access Level: Write
    *
@@ -363,7 +363,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a job template.
+   * Grants permission to create a job template
    *
    * Access Level: Write
    *
@@ -378,7 +378,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a 2048 bit RSA key pair and issues an X.509 certificate using the issued public key.
+   * Grants permission to create a 2048 bit RSA key pair and issues an X.509 certificate using the issued public key
    *
    * Access Level: Write
    *
@@ -389,7 +389,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to define an action that can be applied to audit findings by using StartAuditMitigationActionsTask.
+   * Grants permission to define an action that can be applied to audit findings by using StartAuditMitigationActionsTask
    *
    * Access Level: Write
    *
@@ -404,7 +404,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an OTA update job.
+   * Grants permission to create an OTA update job
    *
    * Access Level: Write
    *
@@ -419,7 +419,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an AWS IoT policy.
+   * Grants permission to create an AWS IoT policy
    *
    * Access Level: Write
    *
@@ -434,7 +434,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new version of the specified AWS IoT policy.
+   * Grants permission to create a new version of the specified AWS IoT policy
    *
    * Access Level: Write
    *
@@ -445,7 +445,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a provisioning claim.
+   * Grants permission to create a provisioning claim
    *
    * Access Level: Write
    *
@@ -456,7 +456,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a fleet provisioning template.
+   * Grants permission to create a fleet provisioning template
    *
    * Access Level: Write
    *
@@ -474,7 +474,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new version of a fleet provisioning template.
+   * Grants permission to create a new version of a fleet provisioning template
    *
    * Access Level: Write
    *
@@ -485,7 +485,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a role alias.
+   * Grants permission to create a role alias
    *
    * Access Level: Write
    *
@@ -503,7 +503,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a scheduled audit that is run at a specified time interval.
+   * Grants permission to create a scheduled audit that is run at a specified time interval
    *
    * Access Level: Write
    *
@@ -518,7 +518,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Device Defender security profile.
+   * Grants permission to create a Device Defender security profile
    *
    * Access Level: Write
    *
@@ -548,7 +548,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a thing in the thing registry.
+   * Grants permission to create a thing in the thing registry
    *
    * Access Level: Write
    *
@@ -559,7 +559,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a thing group.
+   * Grants permission to create a thing group
    *
    * Access Level: Write
    *
@@ -574,7 +574,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new thing type.
+   * Grants permission to create a new thing type
    *
    * Access Level: Write
    *
@@ -589,7 +589,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a rule.
+   * Grants permission to create a rule
    *
    * Access Level: Write
    *
@@ -604,7 +604,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a TopicRuleDestination.
+   * Grants permission to create a TopicRuleDestination
    *
    * Access Level: Write
    *
@@ -615,7 +615,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the audit configuration associated with the account.
+   * Grants permission to delete the audit configuration associated with the account
    *
    * Access Level: Write
    *
@@ -626,7 +626,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a Device Defender audit suppression.
+   * Grants permission to delete a Device Defender audit suppression
    *
    * Access Level: Write
    *
@@ -637,7 +637,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified authorizer.
+   * Grants permission to delete the specified authorizer
    *
    * Access Level: Write
    *
@@ -648,7 +648,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified billing group.
+   * Grants permission to delete the specified billing group
    *
    * Access Level: Write
    *
@@ -659,7 +659,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a registered CA certificate.
+   * Grants permission to delete a registered CA certificate
    *
    * Access Level: Write
    *
@@ -670,7 +670,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified certificate.
+   * Grants permission to delete the specified certificate
    *
    * Access Level: Write
    *
@@ -681,7 +681,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deletes the specified custom metric from your AWS account.
+   * Grants permission to deletes the specified custom metric from your AWS account
    *
    * Access Level: Write
    *
@@ -692,7 +692,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove the specified dimension from your AWS account.
+   * Grants permission to remove the specified dimension from your AWS account
    *
    * Access Level: Write
    *
@@ -703,7 +703,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a domain configuration.
+   * Grants permission to delete a domain configuration
    *
    * Access Level: Write
    *
@@ -736,7 +736,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a job and its related job executions.
+   * Grants permission to delete a job and its related job executions
    *
    * Access Level: Write
    *
@@ -747,7 +747,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a job execution.
+   * Grants permission to delete a job execution
    *
    * Access Level: Write
    *
@@ -758,7 +758,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a job template.
+   * Grants permission to delete a job template
    *
    * Access Level: Write
    *
@@ -769,7 +769,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a defined mitigation action from your AWS account.
+   * Grants permission to delete a defined mitigation action from your AWS account
    *
    * Access Level: Write
    *
@@ -780,7 +780,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an OTA update job.
+   * Grants permission to delete an OTA update job
    *
    * Access Level: Write
    *
@@ -791,7 +791,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified policy.
+   * Grants permission to delete the specified policy
    *
    * Access Level: Write
    *
@@ -802,7 +802,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Delete the specified version of the specified policy.
+   * Grants permission to Delete the specified version of the specified policy
    *
    * Access Level: Write
    *
@@ -813,7 +813,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a fleet provisioning template.
+   * Grants permission to delete a fleet provisioning template
    *
    * Access Level: Write
    *
@@ -824,7 +824,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a fleet provisioning template version.
+   * Grants permission to delete a fleet provisioning template version
    *
    * Access Level: Write
    *
@@ -835,7 +835,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a CA certificate registration code.
+   * Grants permission to delete a CA certificate registration code
    *
    * Access Level: Write
    *
@@ -846,7 +846,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified role alias.
+   * Grants permission to delete the specified role alias
    *
    * Access Level: Write
    *
@@ -857,7 +857,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a scheduled audit.
+   * Grants permission to delete a scheduled audit
    *
    * Access Level: Write
    *
@@ -868,7 +868,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a Device Defender security profile.
+   * Grants permission to delete a Device Defender security profile
    *
    * Access Level: Write
    *
@@ -879,7 +879,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a specified stream.
+   * Grants permission to delete a specified stream
    *
    * Access Level: Write
    *
@@ -890,7 +890,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified thing.
+   * Grants permission to delete the specified thing
    *
    * Access Level: Write
    *
@@ -901,7 +901,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified thing group.
+   * Grants permission to delete the specified thing group
    *
    * Access Level: Write
    *
@@ -912,7 +912,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified thing shadow.
+   * Grants permission to delete the specified thing shadow
    *
    * Access Level: Write
    *
@@ -923,7 +923,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified thing type.
+   * Grants permission to delete the specified thing type
    *
    * Access Level: Write
    *
@@ -934,7 +934,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified rule.
+   * Grants permission to delete the specified rule
    *
    * Access Level: Write
    *
@@ -945,7 +945,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a TopicRuleDestination.
+   * Grants permission to delete a TopicRuleDestination
    *
    * Access Level: Write
    *
@@ -956,7 +956,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified v2 logging level.
+   * Grants permission to delete the specified v2 logging level
    *
    * Access Level: Write
    *
@@ -967,7 +967,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deprecate the specified thing type.
+   * Grants permission to deprecate the specified thing type
    *
    * Access Level: Write
    *
@@ -978,7 +978,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about audit configurations for the account.
+   * Grants permission to get information about audit configurations for the account
    *
    * Access Level: Read
    *
@@ -989,7 +989,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a single audit finding. Properties include the reason for noncompliance, the severity of the issue, and when the audit that returned the finding was started.
+   * Grants permission to get information about a single audit finding. Properties include the reason for noncompliance, the severity of the issue, and when the audit that returned the finding was started
    *
    * Access Level: Read
    *
@@ -1000,7 +1000,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about an audit mitigation task that is used to apply mitigation actions to a set of audit findings.
+   * Grants permission to get information about an audit mitigation task that is used to apply mitigation actions to a set of audit findings
    *
    * Access Level: Read
    *
@@ -1011,7 +1011,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a Device Defender audit suppression.
+   * Grants permission to get information about a Device Defender audit suppression
    *
    * Access Level: Read
    *
@@ -1022,7 +1022,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a Device Defender audit.
+   * Grants permission to get information about a Device Defender audit
    *
    * Access Level: Read
    *
@@ -1033,7 +1033,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe an authorizer.
+   * Grants permission to describe an authorizer
    *
    * Access Level: Read
    *
@@ -1044,7 +1044,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the specified billing group.
+   * Grants permission to get information about the specified billing group
    *
    * Access Level: Read
    *
@@ -1055,7 +1055,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a registered CA certificate.
+   * Grants permission to describe a registered CA certificate
    *
    * Access Level: Read
    *
@@ -1066,7 +1066,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the specified certificate.
+   * Grants permission to get information about the specified certificate
    *
    * Access Level: Read
    *
@@ -1077,7 +1077,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a custom metric that is defined in your AWS account.
+   * Grants permission to describe a custom metric that is defined in your AWS account
    *
    * Access Level: Read
    *
@@ -1088,7 +1088,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the default authorizer.
+   * Grants permission to describe the default authorizer
    *
    * Access Level: Read
    *
@@ -1099,7 +1099,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a Device Defender ML Detect mitigation action.
+   * Grants permission to describe a Device Defender ML Detect mitigation action
    *
    * Access Level: Read
    *
@@ -1110,7 +1110,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get details about a dimension that is defined in your AWS account.
+   * Grants permission to get details about a dimension that is defined in your AWS account
    *
    * Access Level: Read
    *
@@ -1121,7 +1121,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the domain configuration.
+   * Grants permission to get information about the domain configuration
    *
    * Access Level: Read
    *
@@ -1132,7 +1132,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a unique endpoint specific to the AWS account making the call.
+   * Grants permission to get a unique endpoint specific to the AWS account making the call
    *
    * Access Level: Read
    *
@@ -1143,7 +1143,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get account event configurations.
+   * Grants permission to get account event configurations
    *
    * Access Level: Read
    *
@@ -1154,7 +1154,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the specified fleet metric.
+   * Grants permission to get information about the specified fleet metric
    *
    * Access Level: Read
    *
@@ -1165,7 +1165,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the specified index.
+   * Grants permission to get information about the specified index
    *
    * Access Level: Read
    *
@@ -1176,7 +1176,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a job.
+   * Grants permission to describe a job
    *
    * Access Level: Read
    *
@@ -1187,7 +1187,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a job execution.
+   * Grants permission to describe a job execution
    *
    * Access Level: Read
    *
@@ -1198,7 +1198,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a job template.
+   * Grants permission to describe a job template
    *
    * Access Level: Read
    *
@@ -1209,7 +1209,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a mitigation action.
+   * Grants permission to get information about a mitigation action
    *
    * Access Level: Read
    *
@@ -1220,7 +1220,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a fleet provisioning template.
+   * Grants permission to get information about a fleet provisioning template
    *
    * Access Level: Read
    *
@@ -1231,7 +1231,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a fleet provisioning template version.
+   * Grants permission to get information about a fleet provisioning template version
    *
    * Access Level: Read
    *
@@ -1242,7 +1242,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a role alias.
+   * Grants permission to describe a role alias
    *
    * Access Level: Read
    *
@@ -1253,7 +1253,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a scheduled audit.
+   * Grants permission to get information about a scheduled audit
    *
    * Access Level: Read
    *
@@ -1264,7 +1264,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a Device Defender security profile.
+   * Grants permission to get information about a Device Defender security profile
    *
    * Access Level: Read
    *
@@ -1275,7 +1275,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the specified stream.
+   * Grants permission to get information about the specified stream
    *
    * Access Level: Read
    *
@@ -1286,7 +1286,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the specified thing.
+   * Grants permission to get information about the specified thing
    *
    * Access Level: Read
    *
@@ -1297,7 +1297,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the specified thing group.
+   * Grants permission to get information about the specified thing group
    *
    * Access Level: Read
    *
@@ -1308,7 +1308,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the bulk thing registration task.
+   * Grants permission to get information about the bulk thing registration task
    *
    * Access Level: Read
    *
@@ -1319,7 +1319,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the specified thing type.
+   * Grants permission to get information about the specified thing type
    *
    * Access Level: Read
    *
@@ -1330,7 +1330,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a tunnel.
+   * Grants permission to describe a tunnel
    *
    * Access Level: Read
    *
@@ -1341,7 +1341,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to detach a policy from the specified target.
+   * Grants permission to detach a policy from the specified target
    *
    * Access Level: Permissions management
    *
@@ -1352,7 +1352,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove the specified policy from the specified certificate.
+   * Grants permission to remove the specified policy from the specified certificate
    *
    * Access Level: Permissions management
    *
@@ -1363,7 +1363,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate a Device Defender security profile from a thing group or from this account.
+   * Grants permission to disassociate a Device Defender security profile from a thing group or from this account
    *
    * Access Level: Write
    *
@@ -1374,7 +1374,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to detach the specified principal from the specified thing.
+   * Grants permission to detach the specified principal from the specified thing
    *
    * Access Level: Write
    *
@@ -1385,7 +1385,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disable the specified rule.
+   * Grants permission to disable the specified rule
    *
    * Access Level: Write
    *
@@ -1396,7 +1396,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable the specified rule.
+   * Grants permission to enable the specified rule
    *
    * Access Level: Write
    *
@@ -1407,7 +1407,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to fetch a Device Defender's ML Detect Security Profile training model's status.
+   * Grants permission to fetch a Device Defender's ML Detect Security Profile training model's status
    *
    * Access Level: List
    *
@@ -1422,7 +1422,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot/latest/apireference/iot-indexing.html.html
+   * https://docs.aws.amazon.com/iot/latest/apireference/iot-indexing.html
    */
   public toGetBucketsAggregation() {
     return this.to('GetBucketsAggregation');
@@ -1440,7 +1440,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get effective policies.
+   * Grants permission to get effective policies
    *
    * Access Level: Read
    *
@@ -1462,7 +1462,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a job document.
+   * Grants permission to get a job document
    *
    * Access Level: Read
    *
@@ -1473,7 +1473,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the logging options.
+   * Grants permission to get the logging options
    *
    * Access Level: Read
    *
@@ -1484,7 +1484,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the information about the OTA update job.
+   * Grants permission to get the information about the OTA update job
    *
    * Access Level: Read
    *
@@ -1495,7 +1495,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the list of all jobs for a thing that are not in a terminal state.
+   * Grants permission to get the list of all jobs for a thing that are not in a terminal state
    *
    * Access Level: Read
    *
@@ -1517,7 +1517,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the specified policy with the policy document of the default version.
+   * Grants permission to get information about the specified policy with the policy document of the default version
    *
    * Access Level: Read
    *
@@ -1528,7 +1528,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the specified policy version.
+   * Grants permission to get information about the specified policy version
    *
    * Access Level: Read
    *
@@ -1539,7 +1539,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a registration code used to register a CA certificate with AWS IoT.
+   * Grants permission to get a registration code used to register a CA certificate with AWS IoT
    *
    * Access Level: Read
    *
@@ -1547,6 +1547,17 @@ export class Iot extends PolicyStatement {
    */
   public toGetRegistrationCode() {
     return this.to('GetRegistrationCode');
+  }
+
+  /**
+   * Grants permission to get the retained message on the specified topic
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
+   */
+  public toGetRetainedMessage() {
+    return this.to('GetRetainedMessage');
   }
 
   /**
@@ -1561,7 +1572,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the thing shadow.
+   * Grants permission to get the thing shadow
    *
    * Access Level: Read
    *
@@ -1572,7 +1583,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the specified rule.
+   * Grants permission to get information about the specified rule
    *
    * Access Level: Read
    *
@@ -1583,7 +1594,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a TopicRuleDestination.
+   * Grants permission to get a TopicRuleDestination
    *
    * Access Level: Read
    *
@@ -1594,7 +1605,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get v2 logging options.
+   * Grants permission to get v2 logging options
    *
    * Access Level: Read
    *
@@ -1605,7 +1616,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the active violations for a given Device Defender security profile or Thing.
+   * Grants permission to list the active violations for a given Device Defender security profile or Thing
    *
    * Access Level: List
    *
@@ -1616,7 +1627,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the policies attached to the specified thing group.
+   * Grants permission to list the policies attached to the specified thing group
    *
    * Access Level: List
    *
@@ -1627,7 +1638,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the findings (results) of a Device Defender audit or of the audits performed during a specified time period.
+   * Grants permission to list the findings (results) of a Device Defender audit or of the audits performed during a specified time period
    *
    * Access Level: List
    *
@@ -1638,7 +1649,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the status of audit mitigation action tasks that were executed.
+   * Grants permission to get the status of audit mitigation action tasks that were executed
    *
    * Access Level: List
    *
@@ -1649,7 +1660,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a list of audit mitigation action tasks that match the specified filters.
+   * Grants permission to get a list of audit mitigation action tasks that match the specified filters
    *
    * Access Level: List
    *
@@ -1660,7 +1671,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list your Device Defender audit suppressions.
+   * Grants permission to list your Device Defender audit suppressions
    *
    * Access Level: List
    *
@@ -1671,7 +1682,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Device Defender audits that have been performed during a given time period.
+   * Grants permission to list the Device Defender audits that have been performed during a given time period
    *
    * Access Level: List
    *
@@ -1682,7 +1693,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the authorizers registered in your account.
+   * Grants permission to list the authorizers registered in your account
    *
    * Access Level: List
    *
@@ -1693,7 +1704,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all billing groups.
+   * Grants permission to list all billing groups
    *
    * Access Level: List
    *
@@ -1704,7 +1715,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the CA certificates registered for your AWS account.
+   * Grants permission to list the CA certificates registered for your AWS account
    *
    * Access Level: List
    *
@@ -1715,7 +1726,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list your certificates.
+   * Grants permission to list your certificates
    *
    * Access Level: List
    *
@@ -1726,7 +1737,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the device certificates signed by the specified CA certificate.
+   * Grants permission to list the device certificates signed by the specified CA certificate
    *
    * Access Level: List
    *
@@ -1737,7 +1748,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the custom metrics in your AWS account.
+   * Grants permission to list the custom metrics in your AWS account
    *
    * Access Level: List
    *
@@ -1748,7 +1759,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to lists mitigation actions executions for a Device Defender ML Detect Security Profile.
+   * Grants permission to lists mitigation actions executions for a Device Defender ML Detect Security Profile
    *
    * Access Level: List
    *
@@ -1759,7 +1770,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list Device Defender ML Detect mitigation actions tasks.
+   * Grants permission to list Device Defender ML Detect mitigation actions tasks
    *
    * Access Level: List
    *
@@ -1770,7 +1781,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the dimensions that are defined for your AWS account.
+   * Grants permission to list the dimensions that are defined for your AWS account
    *
    * Access Level: List
    *
@@ -1781,7 +1792,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the domain configuration created by your AWS account.
+   * Grants permission to list the domain configuration created by your AWS account
    *
    * Access Level: List
    *
@@ -1792,7 +1803,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the fleet metrics in your account.
+   * Grants permission to list the fleet metrics in your account
    *
    * Access Level: List
    *
@@ -1814,7 +1825,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the job executions for a job.
+   * Grants permission to list the job executions for a job
    *
    * Access Level: List
    *
@@ -1825,7 +1836,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the job executions for the specified thing.
+   * Grants permission to list the job executions for the specified thing
    *
    * Access Level: List
    *
@@ -1836,7 +1847,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list job templates.
+   * Grants permission to list job templates
    *
    * Access Level: List
    *
@@ -1847,7 +1858,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list jobs.
+   * Grants permission to list jobs
    *
    * Access Level: List
    *
@@ -1858,7 +1869,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a list of all mitigation actions that match the specified filter criteria.
+   * Grants permission to get a list of all mitigation actions that match the specified filter criteria
    *
    * Access Level: List
    *
@@ -1869,7 +1880,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all named shadows for a given thing.
+   * Grants permission to list all named shadows for a given thing
    *
    * Access Level: List
    *
@@ -1880,7 +1891,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list OTA update jobs in the account.
+   * Grants permission to list OTA update jobs in the account
    *
    * Access Level: List
    *
@@ -1891,7 +1902,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list certificates that are being transfered but not yet accepted.
+   * Grants permission to list certificates that are being transfered but not yet accepted
    *
    * Access Level: List
    *
@@ -1902,7 +1913,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list your policies.
+   * Grants permission to list your policies
    *
    * Access Level: List
    *
@@ -1913,7 +1924,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the principals associated with the specified policy.
+   * Grants permission to list the principals associated with the specified policy
    *
    * Access Level: List
    *
@@ -1924,7 +1935,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the versions of the specified policy, and identifies the default version.
+   * Grants permission to list the versions of the specified policy, and identifies the default version
    *
    * Access Level: List
    *
@@ -1935,7 +1946,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the policies attached to the specified principal. If you use an Amazon Cognito identity, the ID needs to be in Amazon Cognito Identity format.
+   * Grants permission to list the policies attached to the specified principal. If you use an Amazon Cognito identity, the ID needs to be in Amazon Cognito Identity format
    *
    * Access Level: List
    *
@@ -1946,7 +1957,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the things associated with the specified principal.
+   * Grants permission to list the things associated with the specified principal
    *
    * Access Level: List
    *
@@ -1957,7 +1968,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a list of fleet provisioning template versions.
+   * Grants permission to get a list of fleet provisioning template versions
    *
    * Access Level: List
    *
@@ -1968,7 +1979,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the fleet provisioning templates in your AWS account.
+   * Grants permission to list the fleet provisioning templates in your AWS account
    *
    * Access Level: List
    *
@@ -1979,7 +1990,18 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list role aliases.
+   * Grants permission to list the retained messages for your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
+   */
+  public toListRetainedMessages() {
+    return this.to('ListRetainedMessages');
+  }
+
+  /**
+   * Grants permission to list role aliases
    *
    * Access Level: List
    *
@@ -1990,7 +2012,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all of your scheduled audits.
+   * Grants permission to list all of your scheduled audits
    *
    * Access Level: List
    *
@@ -2001,7 +2023,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Device Defender security profiles you have created.
+   * Grants permission to list the Device Defender security profiles you have created
    *
    * Access Level: List
    *
@@ -2012,7 +2034,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Device Defender security profiles attached to a target.
+   * Grants permission to list the Device Defender security profiles attached to a target
    *
    * Access Level: List
    *
@@ -2023,7 +2045,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the streams in your account.
+   * Grants permission to list the streams in your account
    *
    * Access Level: List
    *
@@ -2034,9 +2056,9 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all tags for a given resource.
+   * Grants permission to list all tags for a given resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListTagsForResource.html
    */
@@ -2045,7 +2067,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list targets for the specified policy.
+   * Grants permission to list targets for the specified policy
    *
    * Access Level: List
    *
@@ -2056,7 +2078,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the targets associated with a given Device Defender security profile.
+   * Grants permission to list the targets associated with a given Device Defender security profile
    *
    * Access Level: List
    *
@@ -2067,7 +2089,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all thing groups.
+   * Grants permission to list all thing groups
    *
    * Access Level: List
    *
@@ -2078,7 +2100,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list thing groups to which the specified thing belongs.
+   * Grants permission to list thing groups to which the specified thing belongs
    *
    * Access Level: List
    *
@@ -2089,7 +2111,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the principals associated with the specified thing.
+   * Grants permission to list the principals associated with the specified thing
    *
    * Access Level: List
    *
@@ -2100,7 +2122,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list information about bulk thing registration tasks.
+   * Grants permission to list information about bulk thing registration tasks
    *
    * Access Level: List
    *
@@ -2111,7 +2133,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list bulk thing registration tasks.
+   * Grants permission to list bulk thing registration tasks
    *
    * Access Level: List
    *
@@ -2122,7 +2144,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all thing types.
+   * Grants permission to list all thing types
    *
    * Access Level: List
    *
@@ -2133,7 +2155,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all things.
+   * Grants permission to list all things
    *
    * Access Level: List
    *
@@ -2144,7 +2166,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all things in the specified billing group.
+   * Grants permission to list all things in the specified billing group
    *
    * Access Level: List
    *
@@ -2155,7 +2177,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all things in the specified thing group.
+   * Grants permission to list all things in the specified thing group
    *
    * Access Level: List
    *
@@ -2166,7 +2188,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all TopicRuleDestinations.
+   * Grants permission to list all TopicRuleDestinations
    *
    * Access Level: List
    *
@@ -2177,7 +2199,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the rules for the specific topic.
+   * Grants permission to list the rules for the specific topic
    *
    * Access Level: List
    *
@@ -2188,7 +2210,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tunnels.
+   * Grants permission to list tunnels
    *
    * Access Level: List
    *
@@ -2199,7 +2221,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the v2 logging levels.
+   * Grants permission to list the v2 logging levels
    *
    * Access Level: List
    *
@@ -2210,7 +2232,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Device Defender security profile violations discovered during the given time period.
+   * Grants permission to list the Device Defender security profile violations discovered during the given time period
    *
    * Access Level: List
    *
@@ -2221,7 +2243,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to open a tunnel.
+   * Grants permission to open a tunnel
    *
    * Access Level: Write
    *
@@ -2238,7 +2260,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to publish to the specified topic.
+   * Grants permission to publish to the specified topic
    *
    * Access Level: Write
    *
@@ -2249,7 +2271,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to receive from the specified topic.
+   * Grants permission to receive from the specified topic
    *
    * Access Level: Write
    *
@@ -2260,7 +2282,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to register a CA certificate with AWS IoT.
+   * Grants permission to register a CA certificate with AWS IoT
    *
    * Access Level: Write
    *
@@ -2278,7 +2300,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to register a device certificate with AWS IoT.
+   * Grants permission to register a device certificate with AWS IoT
    *
    * Access Level: Write
    *
@@ -2289,7 +2311,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to register a device certificate with AWS IoT without a registered CA (certificate authority).
+   * Grants permission to register a device certificate with AWS IoT without a registered CA (certificate authority)
    *
    * Access Level: Write
    *
@@ -2300,7 +2322,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to register your thing.
+   * Grants permission to register your thing
    *
    * Access Level: Write
    *
@@ -2311,7 +2333,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to reject a pending certificate transfer.
+   * Grants permission to reject a pending certificate transfer
    *
    * Access Level: Write
    *
@@ -2322,7 +2344,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove thing from the specified billing group.
+   * Grants permission to remove thing from the specified billing group
    *
    * Access Level: Write
    *
@@ -2333,7 +2355,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove thing from the specified thing group.
+   * Grants permission to remove thing from the specified thing group
    *
    * Access Level: Write
    *
@@ -2344,7 +2366,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to replace the specified rule.
+   * Grants permission to replace the specified rule
    *
    * Access Level: Write
    *
@@ -2352,6 +2374,17 @@ export class Iot extends PolicyStatement {
    */
   public toReplaceTopicRule() {
     return this.to('ReplaceTopicRule');
+  }
+
+  /**
+   * Grants permission to publish a retained message to the specified topic
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
+   */
+  public toRetainPublish() {
+    return this.to('RetainPublish');
   }
 
   /**
@@ -2366,7 +2399,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set the default authorizer. This will be used if a websocket connection is made without specifying an authorizer.
+   * Grants permission to set the default authorizer. This will be used if a websocket connection is made without specifying an authorizer
    *
    * Access Level: Permissions management
    *
@@ -2377,7 +2410,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set the specified version of the specified policy as the policy's default (operative) version.
+   * Grants permission to set the specified version of the specified policy as the policy's default (operative) version
    *
    * Access Level: Permissions management
    *
@@ -2388,7 +2421,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set the logging options.
+   * Grants permission to set the logging options
    *
    * Access Level: Write
    *
@@ -2399,7 +2432,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set the v2 logging level.
+   * Grants permission to set the v2 logging level
    *
    * Access Level: Write
    *
@@ -2410,7 +2443,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set the v2 logging options.
+   * Grants permission to set the v2 logging options
    *
    * Access Level: Write
    *
@@ -2421,7 +2454,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a task that applies a set of mitigation actions to the specified target.
+   * Grants permission to start a task that applies a set of mitigation actions to the specified target
    *
    * Access Level: Write
    *
@@ -2432,7 +2465,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a Device Defender ML Detect mitigation actions task.
+   * Grants permission to start a Device Defender ML Detect mitigation actions task
    *
    * Access Level: Write
    *
@@ -2443,7 +2476,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get and start the next pending job execution for a thing.
+   * Grants permission to get and start the next pending job execution for a thing
    *
    * Access Level: Write
    *
@@ -2454,7 +2487,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start an on-demand Device Defender audit.
+   * Grants permission to start an on-demand Device Defender audit
    *
    * Access Level: Write
    *
@@ -2465,7 +2498,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a bulk thing registration task.
+   * Grants permission to start a bulk thing registration task
    *
    * Access Level: Write
    *
@@ -2476,7 +2509,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to stop a bulk thing registration task.
+   * Grants permission to stop a bulk thing registration task
    *
    * Access Level: Write
    *
@@ -2487,7 +2520,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to subscribe to the specified TopicFilter.
+   * Grants permission to subscribe to the specified TopicFilter
    *
    * Access Level: Write
    *
@@ -2524,7 +2557,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to test invoke the specified custom authorizer for testing purposes.
+   * Grants permission to test invoke the specified custom authorizer for testing purposes
    *
    * Access Level: Read
    *
@@ -2535,7 +2568,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to transfer the specified certificate to the specified AWS account.
+   * Grants permission to transfer the specified certificate to the specified AWS account
    *
    * Access Level: Write
    *
@@ -2560,7 +2593,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to configure or reconfigure the Device Defender audit settings for this account.
+   * Grants permission to configure or reconfigure the Device Defender audit settings for this account
    *
    * Access Level: Write
    *
@@ -2571,7 +2604,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a Device Defender audit suppression.
+   * Grants permission to update a Device Defender audit suppression
    *
    * Access Level: Write
    *
@@ -2593,7 +2626,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update information associated with the specified billing group.
+   * Grants permission to update information associated with the specified billing group
    *
    * Access Level: Write
    *
@@ -2604,7 +2637,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a registered CA certificate.
+   * Grants permission to update a registered CA certificate
    *
    * Access Level: Write
    *
@@ -2618,7 +2651,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the status of the specified certificate. This operation is idempotent.
+   * Grants permission to update the status of the specified certificate. This operation is idempotent
    *
    * Access Level: Write
    *
@@ -2629,7 +2662,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the specified custom metric.
+   * Grants permission to update the specified custom metric
    *
    * Access Level: Write
    *
@@ -2640,7 +2673,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the definition for a dimension.
+   * Grants permission to update the definition for a dimension
    *
    * Access Level: Write
    *
@@ -2651,7 +2684,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a domain configuration.
+   * Grants permission to update a domain configuration
    *
    * Access Level: Write
    *
@@ -2673,7 +2706,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update event configurations.
+   * Grants permission to update event configurations
    *
    * Access Level: Write
    *
@@ -2706,7 +2739,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a job.
+   * Grants permission to update a job
    *
    * Access Level: Write
    *
@@ -2717,7 +2750,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a job execution.
+   * Grants permission to update a job execution
    *
    * Access Level: Write
    *
@@ -2728,7 +2761,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the definition for the specified mitigation action.
+   * Grants permission to update the definition for the specified mitigation action
    *
    * Access Level: Write
    *
@@ -2739,7 +2772,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a fleet provisioning template.
+   * Grants permission to update a fleet provisioning template
    *
    * Access Level: Write
    *
@@ -2767,7 +2800,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a scheduled audit, including what checks are performed and how often the audit takes place.
+   * Grants permission to update a scheduled audit, including what checks are performed and how often the audit takes place
    *
    * Access Level: Write
    *
@@ -2778,7 +2811,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a Device Defender security profile.
+   * Grants permission to update a Device Defender security profile
    *
    * Access Level: Write
    *
@@ -2789,7 +2822,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the data for a stream.
+   * Grants permission to update the data for a stream
    *
    * Access Level: Write
    *
@@ -2800,7 +2833,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update information associated with the specified thing.
+   * Grants permission to update information associated with the specified thing
    *
    * Access Level: Write
    *
@@ -2811,7 +2844,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update information associated with the specified thing group.
+   * Grants permission to update information associated with the specified thing group
    *
    * Access Level: Write
    *
@@ -2822,7 +2855,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the thing groups to which the thing belongs.
+   * Grants permission to update the thing groups to which the thing belongs
    *
    * Access Level: Write
    *
@@ -2833,7 +2866,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the thing shadow.
+   * Grants permission to update the thing shadow
    *
    * Access Level: Write
    *
@@ -2844,7 +2877,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a TopicRuleDestination.
+   * Grants permission to update a TopicRuleDestination
    *
    * Access Level: Write
    *
@@ -2855,7 +2888,7 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Grants permission to validate a Device Defender security profile behaviors specification.
+   * Grants permission to validate a Device Defender security profile behaviors specification
    *
    * Access Level: Read
    *
@@ -2959,6 +2992,7 @@ export class Iot extends PolicyStatement {
       "RemoveThingFromBillingGroup",
       "RemoveThingFromThingGroup",
       "ReplaceTopicRule",
+      "RetainPublish",
       "SetLoggingOptions",
       "SetV2LoggingLevel",
       "SetV2LoggingOptions",
@@ -3051,11 +3085,13 @@ export class Iot extends PolicyStatement {
       "GetPolicy",
       "GetPolicyVersion",
       "GetRegistrationCode",
+      "GetRetainedMessage",
       "GetStatistics",
       "GetThingShadow",
       "GetTopicRule",
       "GetTopicRuleDestination",
       "GetV2LoggingOptions",
+      "ListTagsForResource",
       "SearchIndex",
       "TestAuthorization",
       "TestInvokeAuthorizer",
@@ -3097,12 +3133,12 @@ export class Iot extends PolicyStatement {
       "ListPrincipalThings",
       "ListProvisioningTemplateVersions",
       "ListProvisioningTemplates",
+      "ListRetainedMessages",
       "ListRoleAliases",
       "ListScheduledAudits",
       "ListSecurityProfiles",
       "ListSecurityProfilesForTarget",
       "ListStreams",
-      "ListTagsForResource",
       "ListTargetsForPolicy",
       "ListTargetsForSecurityProfile",
       "ListThingGroups",
@@ -3729,6 +3765,7 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/iot/latest/developerguide/domain-configuration.html
    *
    * @param domainConfigurationName - Identifier for the domainConfigurationName.
+   * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -3736,9 +3773,10 @@ export class Iot extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDomainconfiguration(domainConfigurationName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:domainconfiguration/${DomainConfigurationName}';
+  public onDomainconfiguration(domainConfigurationName: string, id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iot:${Region}:${Account}:domainconfiguration/${DomainConfigurationName}/${Id}';
     arn = arn.replace('${DomainConfigurationName}', domainConfigurationName);
+    arn = arn.replace('${Id}', id);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
