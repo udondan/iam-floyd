@@ -1,4 +1,12 @@
+comprehend:document-classification-job
 comprehend:document-classifier
 comprehend:document-classifier-endpoint
+comprehend:dominant-language-detection-job
+comprehend:entities-detection-job
 comprehend:entity-recognizer
 comprehend:entity-recognizer-endpoint
+comprehend:events-detection-job
+comprehend:key-phrases-detection-job
+comprehend:pii-entities-detection-job
+comprehend:sentiment-detection-job
+comprehend:topics-detection-job

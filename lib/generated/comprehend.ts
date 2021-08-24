@@ -372,7 +372,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Grants permission to get a list of the document classification jobs that you have submitted
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListDocumentClassificationJobs.html
    */
@@ -383,7 +383,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Grants permission to get a list of the document classifiers that you have created
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListDocumentClassifiers.html
    */
@@ -394,7 +394,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Grants permission to get a list of the dominant language detection jobs that you have submitted
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListDominantLanguageDetectionJobs.html
    */
@@ -405,7 +405,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Grants permission to get a list of all existing endpoints that you've created
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEndpoints.html
    */
@@ -416,7 +416,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Grants permission to get a list of the entity detection jobs that you have submitted
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEntitiesDetectionJobs.html
    */
@@ -427,7 +427,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Grants permission to get a list of the properties of all entity recognizers that you created, including recognizers currently in training
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEntityRecognizers.html
    */
@@ -438,7 +438,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Grants permission to get a list of Events detection jobs that you have submitted
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEventsDetectionJobs.html
    */
@@ -449,7 +449,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Grants permission to get a list of key phrase detection jobs that you have submitted
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListKeyPhrasesDetectionJobs.html
    */
@@ -460,7 +460,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Grants permission to get a list of PII entities detection jobs that you have submitted
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListPiiEntitiesDetectionJobs.html
    */
@@ -471,7 +471,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Grants permission to get a list of sentiment detection jobs that you have submitted
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListSentimentDetectionJobs.html
    */
@@ -482,7 +482,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Grants permission to list tags for a resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListTagsForResource.html
    */
@@ -493,7 +493,7 @@ export class Comprehend extends PolicyStatement {
   /**
    * Grants permission to get a list of the topic detection jobs that you have submitted
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListTopicsDetectionJobs.html
    */
@@ -507,6 +507,8 @@ export class Comprehend extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifVolumeKmsKey()
    * - .ifOutputKmsKey()
    * - .ifVpcSecurityGroupIds()
@@ -524,6 +526,8 @@ export class Comprehend extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifVolumeKmsKey()
    * - .ifOutputKmsKey()
    * - .ifVpcSecurityGroupIds()
@@ -541,6 +545,8 @@ export class Comprehend extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifVolumeKmsKey()
    * - .ifOutputKmsKey()
    * - .ifVpcSecurityGroupIds()
@@ -558,6 +564,8 @@ export class Comprehend extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifOutputKmsKey()
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartEventsDetectionJob.html
@@ -572,6 +580,8 @@ export class Comprehend extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifVolumeKmsKey()
    * - .ifOutputKmsKey()
    * - .ifVpcSecurityGroupIds()
@@ -589,6 +599,8 @@ export class Comprehend extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifOutputKmsKey()
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartPiiEntitiesDetectionJob.html
@@ -603,6 +615,8 @@ export class Comprehend extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifVolumeKmsKey()
    * - .ifOutputKmsKey()
    * - .ifVpcSecurityGroupIds()
@@ -620,6 +634,8 @@ export class Comprehend extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifVolumeKmsKey()
    * - .ifOutputKmsKey()
    * - .ifVpcSecurityGroupIds()
@@ -784,7 +800,19 @@ export class Comprehend extends PolicyStatement {
       "DetectKeyPhrases",
       "DetectPiiEntities",
       "DetectSentiment",
-      "DetectSyntax"
+      "DetectSyntax",
+      "ListDocumentClassificationJobs",
+      "ListDocumentClassifiers",
+      "ListDominantLanguageDetectionJobs",
+      "ListEndpoints",
+      "ListEntitiesDetectionJobs",
+      "ListEntityRecognizers",
+      "ListEventsDetectionJobs",
+      "ListKeyPhrasesDetectionJobs",
+      "ListPiiEntitiesDetectionJobs",
+      "ListSentimentDetectionJobs",
+      "ListTagsForResource",
+      "ListTopicsDetectionJobs"
     ],
     "Write": [
       "CreateDocumentClassifier",
@@ -810,20 +838,6 @@ export class Comprehend extends PolicyStatement {
       "StopTrainingDocumentClassifier",
       "StopTrainingEntityRecognizer",
       "UpdateEndpoint"
-    ],
-    "List": [
-      "ListDocumentClassificationJobs",
-      "ListDocumentClassifiers",
-      "ListDominantLanguageDetectionJobs",
-      "ListEndpoints",
-      "ListEntitiesDetectionJobs",
-      "ListEntityRecognizers",
-      "ListEventsDetectionJobs",
-      "ListKeyPhrasesDetectionJobs",
-      "ListPiiEntitiesDetectionJobs",
-      "ListSentimentDetectionJobs",
-      "ListTagsForResource",
-      "ListTopicsDetectionJobs"
     ],
     "Tagging": [
       "TagResource",
@@ -912,7 +926,167 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
-   * Filters access by the model KMS key associated with the resource in the request.
+   * Adds a resource of type dominant-language-detection-job to the statement
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDominantLanguageDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:dominant-language-detection-job/${JobId}';
+    arn = arn.replace('${JobId}', jobId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type entities-detection-job to the statement
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEntitiesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:entities-detection-job/${JobId}';
+    arn = arn.replace('${JobId}', jobId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type pii-entities-detection-job to the statement
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPiiEntitiesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:pii-entities-detection-job/${JobId}';
+    arn = arn.replace('${JobId}', jobId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type events-detection-job to the statement
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEventsDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:events-detection-job/${JobId}';
+    arn = arn.replace('${JobId}', jobId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type key-phrases-detection-job to the statement
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onKeyPhrasesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:key-phrases-detection-job/${JobId}';
+    arn = arn.replace('${JobId}', jobId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type sentiment-detection-job to the statement
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSentimentDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:sentiment-detection-job/${JobId}';
+    arn = arn.replace('${JobId}', jobId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type topics-detection-job to the statement
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTopicsDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:topics-detection-job/${JobId}';
+    arn = arn.replace('${JobId}', jobId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type document-classification-job to the statement
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDocumentClassificationJob(jobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:document-classification-job/${JobId}';
+    arn = arn.replace('${JobId}', jobId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Filters access by the model KMS key associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
    *
@@ -928,7 +1102,7 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
-   * Filters access by the output KMS key associated with the resource in the request.
+   * Filters access by the output KMS key associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
    *
@@ -951,7 +1125,7 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
-   * Filters access by the volume KMS key associated with the resource in the request.
+   * Filters access by the volume KMS key associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
    *
@@ -973,7 +1147,7 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
-   * Filters access by the list of all VPC security group ids associated with the resource in the request.
+   * Filters access by the list of all VPC security group ids associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
    *
@@ -995,7 +1169,7 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
-   * Filters access by the list of all VPC subnets associated with the resource in the request.
+   * Filters access by the list of all VPC subnets associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html#amazoncomprehend-policy-keys
    *
