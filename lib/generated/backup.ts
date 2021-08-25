@@ -92,6 +92,36 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new framework
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateFramework.html
+   */
+  public toCreateFramework() {
+    return this.to('CreateFramework');
+  }
+
+  /**
+   * Grants permission to create a new report plan
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateReportPlan.html
+   */
+  public toCreateReportPlan() {
+    return this.to('CreateReportPlan');
+  }
+
+  /**
    * Grants permission to delete a backup plan
    *
    * Access Level: Write
@@ -147,6 +177,17 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a framework
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteFramework.html
+   */
+  public toDeleteFramework() {
+    return this.to('DeleteFramework');
+  }
+
+  /**
    * Grants permission to delete a recovery point from a backup vault
    *
    * Access Level: Write
@@ -155,6 +196,17 @@ export class Backup extends PolicyStatement {
    */
   public toDeleteRecoveryPoint() {
     return this.to('DeleteRecoveryPoint');
+  }
+
+  /**
+   * Grants permission to delete a report plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteReportPlan.html
+   */
+  public toDeleteReportPlan() {
+    return this.to('DeleteReportPlan');
   }
 
   /**
@@ -184,14 +236,21 @@ export class Backup extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeCopyJob.html
    */
   public toDescribeCopyJob() {
     return this.to('DescribeCopyJob');
+  }
+
+  /**
+   * Grants permission to describe a framework with the specified name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeFramework.html
+   */
+  public toDescribeFramework() {
+    return this.to('DescribeFramework');
   }
 
   /**
@@ -236,6 +295,28 @@ export class Backup extends PolicyStatement {
    */
   public toDescribeRegionSettings() {
     return this.to('DescribeRegionSettings');
+  }
+
+  /**
+   * Grants permission to describe a report job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeReportJob.html
+   */
+  public toDescribeReportJob() {
+    return this.to('DescribeReportJob');
+  }
+
+  /**
+   * Grants permission to describe a report plan with the specified name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeReportPlan.html
+   */
+  public toDescribeReportPlan() {
+    return this.to('DescribeReportPlan');
   }
 
   /**
@@ -393,7 +474,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Grants permision to list backup plans
+   * Grants permission to list backup plans
    *
    * Access Level: List
    *
@@ -415,7 +496,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list backup vaults.
+   * Grants permission to list backup vaults
    *
    * Access Level: List
    *
@@ -434,6 +515,17 @@ export class Backup extends PolicyStatement {
    */
   public toListCopyJobs() {
     return this.to('ListCopyJobs');
+  }
+
+  /**
+   * Grants permission to list frameworks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListFrameworks.html
+   */
+  public toListFrameworks() {
+    return this.to('ListFrameworks');
   }
 
   /**
@@ -467,6 +559,28 @@ export class Backup extends PolicyStatement {
    */
   public toListRecoveryPointsByResource() {
     return this.to('ListRecoveryPointsByResource');
+  }
+
+  /**
+   * Grants permission to list report jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListReportJobs.html
+   */
+  public toListReportJobs() {
+    return this.to('ListReportJobs');
+  }
+
+  /**
+   * Grants permission to list report plans
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListReportPlans.html
+   */
+  public toListReportPlans() {
+    return this.to('ListReportPlans');
   }
 
   /**
@@ -532,10 +646,6 @@ export class Backup extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * Dependent actions:
    * - iam:PassRole
    *
@@ -543,6 +653,17 @@ export class Backup extends PolicyStatement {
    */
   public toStartCopyJob() {
     return this.to('StartCopyJob');
+  }
+
+  /**
+   * Grants permission to start a new report job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartReportJob.html
+   */
+  public toStartReportJob() {
+    return this.to('StartReportJob');
   }
 
   /**
@@ -611,6 +732,17 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a framework
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateFramework.html
+   */
+  public toUpdateFramework() {
+    return this.to('UpdateFramework');
+  }
+
+  /**
    * Grants permission to update the current global settings for the AWS Account
    *
    * Access Level: Write
@@ -643,6 +775,17 @@ export class Backup extends PolicyStatement {
     return this.to('UpdateRegionSettings');
   }
 
+  /**
+   * Grants permission to update a report plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateReportPlan.html
+   */
+  public toUpdateReportPlan() {
+    return this.to('UpdateReportPlan');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CopyFromBackupVault",
@@ -650,32 +793,42 @@ export class Backup extends PolicyStatement {
       "CreateBackupPlan",
       "CreateBackupSelection",
       "CreateBackupVault",
+      "CreateFramework",
+      "CreateReportPlan",
       "DeleteBackupPlan",
       "DeleteBackupSelection",
       "DeleteBackupVault",
       "DeleteBackupVaultAccessPolicy",
       "DeleteBackupVaultNotifications",
+      "DeleteFramework",
       "DeleteRecoveryPoint",
+      "DeleteReportPlan",
       "DisassociateRecoveryPoint",
       "PutBackupVaultAccessPolicy",
       "PutBackupVaultNotifications",
       "StartBackupJob",
       "StartCopyJob",
+      "StartReportJob",
       "StartRestoreJob",
       "StopBackupJob",
       "UpdateBackupPlan",
+      "UpdateFramework",
       "UpdateGlobalSettings",
       "UpdateRecoveryPointLifecycle",
-      "UpdateRegionSettings"
+      "UpdateRegionSettings",
+      "UpdateReportPlan"
     ],
     "Read": [
       "DescribeBackupJob",
       "DescribeBackupVault",
       "DescribeCopyJob",
+      "DescribeFramework",
       "DescribeGlobalSettings",
       "DescribeProtectedResource",
       "DescribeRecoveryPoint",
       "DescribeRegionSettings",
+      "DescribeReportJob",
+      "DescribeReportPlan",
       "DescribeRestoreJob",
       "ExportBackupPlanTemplate",
       "GetBackupPlan",
@@ -696,9 +849,12 @@ export class Backup extends PolicyStatement {
       "ListBackupSelections",
       "ListBackupVaults",
       "ListCopyJobs",
+      "ListFrameworks",
       "ListProtectedResources",
       "ListRecoveryPointsByBackupVault",
       "ListRecoveryPointsByResource",
+      "ListReportJobs",
+      "ListReportPlans",
       "ListRestoreJobs"
     ],
     "Tagging": [
@@ -767,6 +923,54 @@ export class Backup extends PolicyStatement {
   public onRecoveryPoint(recoveryPointId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:backup:${Region}:${Account}:recovery-point:${RecoveryPointId}';
     arn = arn.replace('${RecoveryPointId}', recoveryPointId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type framework to the statement
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/frameworks.html
+   *
+   * @param frameworkName - Identifier for the frameworkName.
+   * @param frameworkId - Identifier for the frameworkId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFramework(frameworkName: string, frameworkId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:backup:${Region}:${Account}:framework:${FrameworkName}-${FrameworkId}';
+    arn = arn.replace('${FrameworkName}', frameworkName);
+    arn = arn.replace('${FrameworkId}', frameworkId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type reportPlan to the statement
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/report-plans.html
+   *
+   * @param reportPlanName - Identifier for the reportPlanName.
+   * @param reportPlanId - Identifier for the reportPlanId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onReportPlan(reportPlanName: string, reportPlanId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:backup:${Region}:${Account}:report-plan:${ReportPlanName}-${ReportPlanId}';
+    arn = arn.replace('${ReportPlanName}', reportPlanName);
+    arn = arn.replace('${ReportPlanId}', reportPlanId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

@@ -86,6 +86,7 @@ rds:DescribeReservedDBInstances;List
 rds:DescribeReservedDBInstancesOfferings;List
 rds:DescribeSourceRegions;List
 rds:DescribeValidDBInstanceModifications;List
+rds:DownloadCompleteDBLogFile;Read
 rds:DownloadDBLogFilePortion;Read
 rds:FailoverDBCluster;Write
 rds:FailoverGlobalCluster;Write

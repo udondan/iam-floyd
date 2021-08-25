@@ -1146,6 +1146,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to download specified log file
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html
+   */
+  public toDownloadCompleteDBLogFile() {
+    return this.to('DownloadCompleteDBLogFile');
+  }
+
+  /**
    * Grants permission to download all or a portion of the specified log file, up to 1 MB in size
    *
    * Access Level: Read
@@ -1928,6 +1939,7 @@ export class Rds extends PolicyStatement {
       "DescribeValidDBInstanceModifications"
     ],
     "Read": [
+      "DownloadCompleteDBLogFile",
       "DownloadDBLogFilePortion",
       "ListTagsForResource"
     ]
