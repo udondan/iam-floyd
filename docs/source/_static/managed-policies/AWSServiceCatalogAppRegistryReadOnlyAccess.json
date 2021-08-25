@@ -6,10 +6,12 @@
 			"Action": [
 				"servicecatalog:GetApplication",
 				"servicecatalog:ListApplications",
+				"servicecatalog:GetAssociatedResource",
 				"servicecatalog:ListAssociatedResources",
 				"servicecatalog:ListAssociatedAttributeGroups",
 				"servicecatalog:GetAttributeGroup",
-				"servicecatalog:ListAttributeGroups"
+				"servicecatalog:ListAttributeGroups",
+				"servicecatalog:ListTagsForResource"
 			],
 			"Resource": "*"
 		}
