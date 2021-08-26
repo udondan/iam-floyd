@@ -129,7 +129,10 @@
 				"ds:AddIpRoutes",
 				"ds:CreateComputer",
 				"ds:CreateMicrosoftAD",
-				"ds:DeleteDirectory"
+				"ds:DeleteDirectory",
+				"servicecatalog:AssociateProductWithPortfolio",
+				"cloudformation:GetTemplateSummary",
+				"sts:GetCallerIdentity"
 			],
 			"Resource": "*",
 			"Condition": {
@@ -268,6 +271,7 @@
 				"cloudformation:DescribeAccountLimits",
 				"cloudformation:DescribeStackDriftDetectionStatus",
 				"cloudformation:List*",
+				"cloudformation:ValidateTemplate",
 				"ds:Describe*",
 				"ds:ListAuthorizedApplications",
 				"ec2:Describe*",
@@ -513,6 +517,26 @@
 				"fsx:DescribeFileSystems"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"servicecatalog:CreatePortfolio",
+				"servicecatalog:DescribePortfolio",
+				"servicecatalog:CreateConstraint",
+				"servicecatalog:CreateProduct",
+				"servicecatalog:AssociatePrincipalWithPortfolio",
+				"servicecatalog:CreateProvisioningArtifact"
+			],
+			"Resource": [
+				"arn:aws:servicecatalog:*:*:*/*",
+				"arn:aws:catalog:*:*:*/*"
+			],
+			"Condition": {
+				"ForAnyValue:StringEquals": {
+					"aws:CalledVia": "launchwizard.amazonaws.com"
+				}
+			}
 		}
 	]
 }
