@@ -82,6 +82,7 @@ export { Aps } from "./managedserviceforprometheus";
 export { Kafka } from "./managedstreamingforapachekafka";
 export { Airflow } from "./managedworkflowsforapacheairflow";
 export { Mechanicalturk } from "./mechanicalturk";
+export { Memorydb } from "./memorydb";
 export { Ec2messages } from "./messagedeliveryservice";
 export { Mobileanalytics } from "./mobileanalytics";
 export { Monitron } from "./monitron";

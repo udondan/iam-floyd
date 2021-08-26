@@ -19,7 +19,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to batch delete document
+   * Grants permission to batch delete document
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to batch put document
+   * Grants permission to batch put document
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to clear out the suggestions for a given index, generated so far
+   * Grants permission to clear out the suggestions for a given index, generated so far
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to create a data source
+   * Grants permission to create a data source
    *
    * Access Level: Write
    *
@@ -67,7 +67,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to create an Faq
+   * Grants permission to create an Faq
    *
    * Access Level: Write
    *
@@ -82,7 +82,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to create an Index
+   * Grants permission to create an Index
    *
    * Access Level: Write
    *
@@ -97,7 +97,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to create a QuerySuggestions BlockList
+   * Grants permission to create a QuerySuggestions BlockList
    *
    * Access Level: Write
    *
@@ -112,7 +112,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to create a Thesaurus
+   * Grants permission to create a Thesaurus
    *
    * Access Level: Write
    *
@@ -127,7 +127,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to delete a data source
+   * Grants permission to delete a data source
    *
    * Access Level: Write
    *
@@ -138,7 +138,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to delete an Faq
+   * Grants permission to delete an Faq
    *
    * Access Level: Write
    *
@@ -149,7 +149,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to delete an Index
+   * Grants permission to delete an Index
    *
    * Access Level: Write
    *
@@ -160,7 +160,18 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to delete a QuerySuggestions BlockList
+   * Grants permission to delete principal mapping from index
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DeletePrincipalMapping.html
+   */
+  public toDeletePrincipalMapping() {
+    return this.to('DeletePrincipalMapping');
+  }
+
+  /**
+   * Grants permission to delete a QuerySuggestions BlockList
    *
    * Access Level: Write
    *
@@ -171,7 +182,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to delete a Thesaurus
+   * Grants permission to delete a Thesaurus
    *
    * Access Level: Write
    *
@@ -182,7 +193,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to describe a data source
+   * Grants permission to describe a data source
    *
    * Access Level: Read
    *
@@ -193,7 +204,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to describe an Faq
+   * Grants permission to describe an Faq
    *
    * Access Level: Read
    *
@@ -204,7 +215,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to describe an Index
+   * Grants permission to describe an Index
    *
    * Access Level: Read
    *
@@ -215,7 +226,18 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to describe a QuerySuggestions BlockList
+   * Grants permission to describe principal mapping from index
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribePrincipalMapping.html
+   */
+  public toDescribePrincipalMapping() {
+    return this.to('DescribePrincipalMapping');
+  }
+
+  /**
+   * Grants permission to describe a QuerySuggestions BlockList
    *
    * Access Level: Read
    *
@@ -226,7 +248,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to describe the query suggestions configuration for an index
+   * Grants permission to describe the query suggestions configuration for an index
    *
    * Access Level: Read
    *
@@ -237,7 +259,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to describe a Thesaurus
+   * Grants permission to describe a Thesaurus
    *
    * Access Level: Read
    *
@@ -248,7 +270,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to get suggestions for a query prefix
+   * Grants permission to get suggestions for a query prefix
    *
    * Access Level: Read
    *
@@ -259,7 +281,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to get Data Source sync job history
+   * Grants permission to get Data Source sync job history
    *
    * Access Level: List
    *
@@ -270,7 +292,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to list the data sources
+   * Grants permission to list the data sources
    *
    * Access Level: List
    *
@@ -281,7 +303,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to list the Faqs
+   * Grants permission to list the Faqs
    *
    * Access Level: List
    *
@@ -292,7 +314,18 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to list the indexes
+   * Grants permission to list groups that are older than an ordering id
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_ListGroupsOlderThanOrderingId.html
+   */
+  public toListGroupsOlderThanOrderingId() {
+    return this.to('ListGroupsOlderThanOrderingId');
+  }
+
+  /**
+   * Grants permission to list the indexes
    *
    * Access Level: List
    *
@@ -303,7 +336,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to list the QuerySuggestions BlockLists
+   * Grants permission to list the QuerySuggestions BlockLists
    *
    * Access Level: List
    *
@@ -314,7 +347,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to list tags for a resource
+   * Grants permission to list tags for a resource
    *
    * Access Level: Read
    *
@@ -325,7 +358,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to list the Thesauri
+   * Grants permission to list the Thesauri
    *
    * Access Level: List
    *
@@ -336,7 +369,18 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to query documents and faqs
+   * Grants permission to put principal mapping in index
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html
+   */
+  public toPutPrincipalMapping() {
+    return this.to('PutPrincipalMapping');
+  }
+
+  /**
+   * Grants permission to query documents and faqs
    *
    * Access Level: Read
    *
@@ -347,7 +391,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to start Data Source sync job
+   * Grants permission to start Data Source sync job
    *
    * Access Level: Write
    *
@@ -358,7 +402,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to stop Data Source sync job
+   * Grants permission to stop Data Source sync job
    *
    * Access Level: Write
    *
@@ -369,7 +413,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to send feedback about a query results
+   * Grants permission to send feedback about a query results
    *
    * Access Level: Write
    *
@@ -380,7 +424,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to tag a resource with given key value pairs
+   * Grants permission to tag a resource with given key value pairs
    *
    * Access Level: Tagging
    *
@@ -395,7 +439,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to remove the tag with the given key from a resource
+   * Grants permission to remove the tag with the given key from a resource
    *
    * Access Level: Tagging
    *
@@ -409,7 +453,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to update a data source
+   * Grants permission to update a data source
    *
    * Access Level: Write
    *
@@ -420,7 +464,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to update an Index
+   * Grants permission to update an Index
    *
    * Access Level: Write
    *
@@ -431,7 +475,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to update a QuerySuggestions BlockList
+   * Grants permission to update a QuerySuggestions BlockList
    *
    * Access Level: Write
    *
@@ -442,7 +486,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to update the query suggestions configuration for an index
+   * Grants permission to update the query suggestions configuration for an index
    *
    * Access Level: Write
    *
@@ -453,7 +497,7 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
-   * Grant permission to update a thesaurus
+   * Grants permission to update a thesaurus
    *
    * Access Level: Write
    *
@@ -476,8 +520,10 @@ export class Kendra extends PolicyStatement {
       "DeleteDataSource",
       "DeleteFaq",
       "DeleteIndex",
+      "DeletePrincipalMapping",
       "DeleteQuerySuggestionsBlockList",
       "DeleteThesaurus",
+      "PutPrincipalMapping",
       "StartDataSourceSyncJob",
       "StopDataSourceSyncJob",
       "SubmitFeedback",
@@ -491,6 +537,7 @@ export class Kendra extends PolicyStatement {
       "DescribeDataSource",
       "DescribeFaq",
       "DescribeIndex",
+      "DescribePrincipalMapping",
       "DescribeQuerySuggestionsBlockList",
       "DescribeQuerySuggestionsConfig",
       "DescribeThesaurus",
@@ -502,6 +549,7 @@ export class Kendra extends PolicyStatement {
       "ListDataSourceSyncJobs",
       "ListDataSources",
       "ListFaqs",
+      "ListGroupsOlderThanOrderingId",
       "ListIndices",
       "ListQuerySuggestionsBlockLists",
       "ListThesauri"

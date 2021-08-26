@@ -9,11 +9,13 @@ kendra:CreateThesaurus;Write
 kendra:DeleteDataSource;Write
 kendra:DeleteFaq;Write
 kendra:DeleteIndex;Write
+kendra:DeletePrincipalMapping;Write
 kendra:DeleteQuerySuggestionsBlockList;Write
 kendra:DeleteThesaurus;Write
 kendra:DescribeDataSource;Read
 kendra:DescribeFaq;Read
 kendra:DescribeIndex;Read
+kendra:DescribePrincipalMapping;Read
 kendra:DescribeQuerySuggestionsBlockList;Read
 kendra:DescribeQuerySuggestionsConfig;Read
 kendra:DescribeThesaurus;Read
@@ -21,10 +23,12 @@ kendra:GetQuerySuggestions;Read
 kendra:ListDataSourceSyncJobs;List
 kendra:ListDataSources;List
 kendra:ListFaqs;List
+kendra:ListGroupsOlderThanOrderingId;List
 kendra:ListIndices;List
 kendra:ListQuerySuggestionsBlockLists;List
 kendra:ListTagsForResource;Read
 kendra:ListThesauri;List
+kendra:PutPrincipalMapping;Write
 kendra:Query;Read
 kendra:StartDataSourceSyncJob;Write
 kendra:StopDataSourceSyncJob;Write

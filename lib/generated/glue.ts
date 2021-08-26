@@ -1,5 +1,5 @@
 import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [glue](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html).
@@ -243,6 +243,9 @@ export class Glue extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifVpcIds()
+   * - .ifSubnetIds()
+   * - .ifSecurityGroupIds()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-CreateJob
    */
@@ -1216,6 +1219,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to notify an event to the event-driven workflow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/starting-workflow-eventbridge.html
+   */
+  public toNotifyEvent() {
+    return this.to('NotifyEvent');
+  }
+
+  /**
    * Grants permission to update catalog encryption settings
    *
    * Access Level: Write
@@ -1568,6 +1582,11 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifVpcIds()
+   * - .ifSubnetIds()
+   * - .ifSecurityGroupIds()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-UpdateJob
    */
   public toUpdateJob() {
@@ -1716,6 +1735,7 @@ export class Glue extends PolicyStatement {
       "DeleteUserDefinedFunction",
       "DeleteWorkflow",
       "ImportCatalogToGlue",
+      "NotifyEvent",
       "PutDataCatalogEncryptionSettings",
       "PutSchemaVersionMetadata",
       "PutWorkflowRunProperties",
@@ -2128,5 +2148,77 @@ export class Glue extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters access by the service from which the credentials of the request is issued
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/using-identity-based-policies.html#glue-identity-based-policy-condition-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCredentialIssuingService(value: string | string[], operator?: Operator | string) {
+    return this.if(`CredentialIssuingService`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the service from which the credentials of the request is obtained by assuming the customer role
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/using-identity-based-policies.html#glue-identity-based-policy-condition-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRoleAssumedBy(value: string | string[], operator?: Operator | string) {
+    return this.if(`RoleAssumedBy`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of security groups configured for the Glue job
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/using-identity-based-policies.html#glue-identity-based-policy-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateJob()
+   * - .toUpdateJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecurityGroupIds(value: string | string[], operator?: Operator | string) {
+    return this.if(`SecurityGroupIds`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of subnets configured for the Glue job
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/using-identity-based-policies.html#glue-identity-based-policy-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateJob()
+   * - .toUpdateJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSubnetIds(value: string | string[], operator?: Operator | string) {
+    return this.if(`SubnetIds`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of the VPC configured for the Glue job
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/using-identity-based-policies.html#glue-identity-based-policy-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateJob()
+   * - .toUpdateJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcIds(value: string | string[], operator?: Operator | string) {
+    return this.if(`VpcIds`, value, operator || 'StringLike');
   }
 }

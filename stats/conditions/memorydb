@@ -1,0 +1,3 @@
+memorydb:RequestTag/${TagKey}
+memorydb:ResourceTag/${TagKey}
+memorydb:TagKeys

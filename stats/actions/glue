@@ -105,6 +105,7 @@ glue:ListSchemaVersions;List
 glue:ListSchemas;List
 glue:ListTriggers;List
 glue:ListWorkflows;List
+glue:NotifyEvent;Write
 glue:PutDataCatalogEncryptionSettings;Write
 glue:PutResourcePolicy;Permissions management
 glue:PutSchemaVersionMetadata;Write
