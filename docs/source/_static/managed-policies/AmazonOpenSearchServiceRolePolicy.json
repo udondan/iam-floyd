@@ -1,0 +1,88 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Stmt1480452973134",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateNetworkInterface"
+			],
+			"Resource": [
+				"arn:aws:ec2:*:*:network-interface/*",
+				"arn:aws:ec2:*:*:subnet/*"
+			]
+		},
+		{
+			"Sid": "Stmt1480452973145",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeNetworkInterfaces"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "Stmt1480452973144",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DeleteNetworkInterface",
+				"ec2:ModifyNetworkInterfaceAttribute"
+			],
+			"Resource": [
+				"arn:aws:ec2:*:*:network-interface/*"
+			]
+		},
+		{
+			"Sid": "Stmt1480452973154",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeSecurityGroups"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "Stmt1480452973164",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeSubnets"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "Stmt1480452973174",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeVpcs"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "Stmt1480452973184",
+			"Effect": "Allow",
+			"Action": [
+				"elasticloadbalancing:AddListenerCertificates",
+				"elasticloadbalancing:RemoveListenerCertificates"
+			],
+			"Resource": [
+				"arn:aws:elasticloadbalancing:*:*:listener/*"
+			]
+		},
+		{
+			"Sid": "Stmt1480452973194",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateTags"
+			],
+			"Resource": [
+				"arn:aws:ec2:*:*:network-interface/*"
+			]
+		},
+		{
+			"Sid": "Stmt1480452973195",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeTags"
+			],
+			"Resource": "*"
+		}
+	]
+}

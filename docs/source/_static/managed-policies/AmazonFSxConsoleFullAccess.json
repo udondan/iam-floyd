@@ -7,6 +7,7 @@
 				"cloudwatch:DescribeAlarms",
 				"ds:DescribeDirectories",
 				"ec2:DescribeNetworkInterfaceAttribute",
+				"ec2:DescribeRouteTables",
 				"ec2:DescribeSecurityGroups",
 				"ec2:DescribeSubnets",
 				"ec2:DescribeVpcs",
@@ -41,6 +42,23 @@
 					]
 				}
 			}
-		}
+		},
+		{
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateTags"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:route-table/*"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestTag/AmazonFSx": "ManagedByAmazonFSx"
+                },
+                "ForAnyValue:StringEquals": {
+                    "aws:CalledVia": ["fsx.amazonaws.com"]
+                }
+            }
+        }
 	]
 }

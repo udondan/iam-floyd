@@ -30,6 +30,7 @@
                 "ec2:AssignIpv6Addresses",
                 "ec2:ReleaseAddress",
                 "ec2:UnassignIpv6Addresses",
+                "ec2:DescribeVpcPeeringConnections",
                 "logs:CreateLogDelivery",
                 "logs:GetLogDelivery",
                 "logs:UpdateLogDelivery",
