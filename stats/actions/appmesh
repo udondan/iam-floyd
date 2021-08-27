@@ -28,8 +28,8 @@ appmesh:ListVirtualNodes;List
 appmesh:ListVirtualRouters;List
 appmesh:ListVirtualServices;List
 appmesh:StreamAggregatedResources;Read
-appmesh:TagResource;Write
-appmesh:UntagResource;Write
+appmesh:TagResource;Tagging
+appmesh:UntagResource;Tagging
 appmesh:UpdateGatewayRoute;Write
 appmesh:UpdateMesh;Write
 appmesh:UpdateRoute;Write
