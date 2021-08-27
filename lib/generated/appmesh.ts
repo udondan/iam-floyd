@@ -379,7 +379,7 @@ export class Appmesh extends PolicyStatement {
   /**
    * Grants permission to tag a resource with a specified resourceArn
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
@@ -394,7 +394,7 @@ export class Appmesh extends PolicyStatement {
   /**
    * Grants permission to delete a tag from a resource
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
@@ -498,6 +498,8 @@ export class Appmesh extends PolicyStatement {
       "DeleteVirtualNode",
       "DeleteVirtualRouter",
       "DeleteVirtualService",
+      "TagResource",
+      "UntagResource",
       "UpdateGatewayRoute",
       "UpdateMesh",
       "UpdateRoute",
@@ -525,10 +527,6 @@ export class Appmesh extends PolicyStatement {
       "ListVirtualNodes",
       "ListVirtualRouters",
       "ListVirtualServices"
-    ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
     ]
   };
 
