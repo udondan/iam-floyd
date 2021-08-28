@@ -65,7 +65,7 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Grants permission to create a new web distribution with tags
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -190,7 +190,7 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Grants permission to create a new RTMP distribution with tags
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -974,6 +974,7 @@ export class Cloudfront extends PolicyStatement {
       "CreateCachePolicy",
       "CreateCloudFrontOriginAccessIdentity",
       "CreateDistribution",
+      "CreateDistributionWithTags",
       "CreateFieldLevelEncryptionConfig",
       "CreateFieldLevelEncryptionProfile",
       "CreateFunction",
@@ -984,6 +985,7 @@ export class Cloudfront extends PolicyStatement {
       "CreatePublicKey",
       "CreateRealtimeLogConfig",
       "CreateStreamingDistribution",
+      "CreateStreamingDistributionWithTags",
       "DeleteCachePolicy",
       "DeleteCloudFrontOriginAccessIdentity",
       "DeleteDistribution",
@@ -1009,12 +1011,6 @@ export class Cloudfront extends PolicyStatement {
       "UpdatePublicKey",
       "UpdateRealtimeLogConfig",
       "UpdateStreamingDistribution"
-    ],
-    "Tagging": [
-      "CreateDistributionWithTags",
-      "CreateStreamingDistributionWithTags",
-      "TagResource",
-      "UntagResource"
     ],
     "Read": [
       "DescribeFunction",
@@ -1061,6 +1057,10 @@ export class Cloudfront extends PolicyStatement {
       "ListPublicKeys",
       "ListRealtimeLogConfigs",
       "ListStreamingDistributions"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 

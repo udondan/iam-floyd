@@ -158,6 +158,17 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the enrollment statuses for member accounts of the organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEnrollmentStatusesForOrganization.html
+   */
+  public toGetEnrollmentStatusesForOrganization() {
+    return this.to('GetEnrollmentStatusesForOrganization');
+  }
+
+  /**
    * Grants permission to get recommendations for the provided lambda functions
    *
    * Access Level: List
@@ -202,6 +213,7 @@ export class ComputeOptimizer extends PolicyStatement {
       "GetEC2InstanceRecommendations",
       "GetEC2RecommendationProjectedMetrics",
       "GetEnrollmentStatus",
+      "GetEnrollmentStatusesForOrganization",
       "GetLambdaFunctionRecommendations",
       "GetRecommendationSummaries"
     ],

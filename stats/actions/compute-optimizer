@@ -8,6 +8,7 @@ compute-optimizer:GetEBSVolumeRecommendations;List
 compute-optimizer:GetEC2InstanceRecommendations;List
 compute-optimizer:GetEC2RecommendationProjectedMetrics;List
 compute-optimizer:GetEnrollmentStatus;List
+compute-optimizer:GetEnrollmentStatusesForOrganization;List
 compute-optimizer:GetLambdaFunctionRecommendations;List
 compute-optimizer:GetRecommendationSummaries;List
 compute-optimizer:UpdateEnrollmentStatus;Write

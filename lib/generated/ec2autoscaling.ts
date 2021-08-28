@@ -565,6 +565,17 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the forecast data for a predictive scaling policy
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_GetPredictiveScalingForecast.html
+   */
+  public toGetPredictiveScalingForecast() {
+    return this.to('GetPredictiveScalingForecast');
+  }
+
+  /**
    * Grants permission to create or update a lifecycle hook for the specified Auto Scaling Group
    *
    * Access Level: Write
@@ -794,7 +805,8 @@ export class Autoscaling extends PolicyStatement {
       "DescribeScalingProcessTypes",
       "DescribeScheduledActions",
       "DescribeTerminationPolicyTypes",
-      "DescribeWarmPool"
+      "DescribeWarmPool",
+      "GetPredictiveScalingForecast"
     ],
     "Read": [
       "DescribeTags"

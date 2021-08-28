@@ -2,7 +2,7 @@ cloudfront:AssociateAlias;Write
 cloudfront:CreateCachePolicy;Write
 cloudfront:CreateCloudFrontOriginAccessIdentity;Write
 cloudfront:CreateDistribution;Write
-cloudfront:CreateDistributionWithTags;Tagging
+cloudfront:CreateDistributionWithTags;Write
 cloudfront:CreateFieldLevelEncryptionConfig;Write
 cloudfront:CreateFieldLevelEncryptionProfile;Write
 cloudfront:CreateFunction;Write
@@ -13,7 +13,7 @@ cloudfront:CreateOriginRequestPolicy;Write
 cloudfront:CreatePublicKey;Write
 cloudfront:CreateRealtimeLogConfig;Write
 cloudfront:CreateStreamingDistribution;Write
-cloudfront:CreateStreamingDistributionWithTags;Tagging
+cloudfront:CreateStreamingDistributionWithTags;Write
 cloudfront:DeleteCachePolicy;Write
 cloudfront:DeleteCloudFrontOriginAccessIdentity;Write
 cloudfront:DeleteDistribution;Write

@@ -512,7 +512,7 @@ export class Mobiletargeting extends PolicyStatement {
   /**
    * Retrieve a list of apps in your Amazon Pinpoint account.
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-apps.html#rest-api-apps-methods
    */
@@ -785,6 +785,15 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
+   * Grants permission to mobiletargeting:GetReports
+   *
+   * Access Level: Read
+   */
+  public toGetReports() {
+    return this.to('GetReports');
+  }
+
+  /**
    * Retrieve information about a specific segment.
    *
    * Access Level: Read
@@ -919,7 +928,7 @@ export class Mobiletargeting extends PolicyStatement {
   /**
    * List tags for a resource.
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-tags.html#rest-api-tags-methods-get
    */
@@ -1402,6 +1411,7 @@ export class Mobiletargeting extends PolicyStatement {
       "GetApnsVoipSandboxChannel",
       "GetApp",
       "GetApplicationDateRangeKpi",
+      "GetApps",
       "GetBaiduChannel",
       "GetCampaign",
       "GetCampaignDateRangeKpi",
@@ -1419,6 +1429,7 @@ export class Mobiletargeting extends PolicyStatement {
       "GetJourneyExecutionMetrics",
       "GetPushTemplate",
       "GetRecommenderConfiguration",
+      "GetReports",
       "GetSegment",
       "GetSegmentVersion",
       "GetSmsChannel",
@@ -1426,11 +1437,11 @@ export class Mobiletargeting extends PolicyStatement {
       "GetUserEndpoints",
       "GetVoiceChannel",
       "GetVoiceTemplate",
+      "ListTagsForResource",
       "PhoneNumberValidate"
     ],
     "List": [
       "GetApplicationSettings",
-      "GetApps",
       "GetCampaignActivities",
       "GetCampaignVersions",
       "GetCampaigns",
@@ -1443,7 +1454,6 @@ export class Mobiletargeting extends PolicyStatement {
       "GetSegmentVersions",
       "GetSegments",
       "ListJourneys",
-      "ListTagsForResource",
       "ListTemplateVersions",
       "ListTemplates"
     ],
