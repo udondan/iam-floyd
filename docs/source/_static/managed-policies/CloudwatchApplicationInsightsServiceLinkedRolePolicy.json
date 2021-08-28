@@ -82,6 +82,16 @@
 			]
 		},
 		{
+            "Effect": "Allow",
+            "Action": [
+                "resource-groups:CreateGroup",
+                "resource-groups:DeleteGroup"
+            ],
+            "Resource": [
+                "arn:aws:resource-groups:*:*:group/ApplicationInsights-*"
+            ]
+        },
+		{
 			"Effect": "Allow",
 			"Action": [
 				"elasticloadbalancing:DescribeLoadBalancers",
@@ -192,6 +202,7 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+			    "lambda:ListFunctions",
 				"lambda:GetFunctionConfiguration",
 				"lambda:ListEventSourceMappings"
 			],
@@ -226,6 +237,7 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+			    "dynamodb:ListTables",
 				"dynamodb:DescribeTable",
 				"dynamodb:DescribeContributorInsights",
 				"dynamodb:DescribeTimeToLive"
@@ -246,6 +258,7 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+			    "s3:ListAllMyBuckets",
 				"s3:GetMetricsConfiguration",
 				"s3:GetReplicationConfiguration"
 			],
@@ -256,6 +269,7 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+			    "states:ListStateMachines",
 				"states:DescribeExecution",
 				"states:DescribeStateMachine",
 				"states:GetExecutionHistory"
@@ -305,6 +319,26 @@
             "Resource": [
                 "*"
             ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sns:GetSubscriptionAttributes",
+                "sns:GetTopicAttributes",
+                "sns:GetSMSAttributes",
+                "sns:ListSubscriptionsByTopic",
+                "sns:ListTopics"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+           "Effect": "Allow",
+           "Action": [
+               "sqs:ListQueues"
+           ],
+           "Resource": "*"
         }
 	]
 }

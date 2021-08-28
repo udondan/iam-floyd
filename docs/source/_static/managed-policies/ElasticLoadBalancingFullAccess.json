@@ -21,6 +21,7 @@
                  "ec2:DescribeRouteTables",
                  "ec2:DescribeCoipPools",
                  "ec2:GetCoipPoolUsage",
+                 "ec2:DescribeVpcPeeringConnections",
                  "cognito-idp:DescribeUserPoolClient"
                 ],
       "Resource": "*"
