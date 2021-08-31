@@ -157,7 +157,7 @@ export class Backup extends PolicyStatement {
   /**
    * Grants permission to delete backup vault access policy
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupVaultAccessPolicy.html
    */
@@ -608,7 +608,7 @@ export class Backup extends PolicyStatement {
   /**
    * Grants permission to add an access policy to the backup vault
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_PutBackupVaultAccessPolicy.html
    */
@@ -798,13 +798,11 @@ export class Backup extends PolicyStatement {
       "DeleteBackupPlan",
       "DeleteBackupSelection",
       "DeleteBackupVault",
-      "DeleteBackupVaultAccessPolicy",
       "DeleteBackupVaultNotifications",
       "DeleteFramework",
       "DeleteRecoveryPoint",
       "DeleteReportPlan",
       "DisassociateRecoveryPoint",
-      "PutBackupVaultAccessPolicy",
       "PutBackupVaultNotifications",
       "StartBackupJob",
       "StartCopyJob",
@@ -817,6 +815,10 @@ export class Backup extends PolicyStatement {
       "UpdateRecoveryPointLifecycle",
       "UpdateRegionSettings",
       "UpdateReportPlan"
+    ],
+    "Permissions management": [
+      "DeleteBackupVaultAccessPolicy",
+      "PutBackupVaultAccessPolicy"
     ],
     "Read": [
       "DescribeBackupJob",

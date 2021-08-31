@@ -8,7 +8,7 @@ backup:CreateReportPlan;Write
 backup:DeleteBackupPlan;Write
 backup:DeleteBackupSelection;Write
 backup:DeleteBackupVault;Write
-backup:DeleteBackupVaultAccessPolicy;Write
+backup:DeleteBackupVaultAccessPolicy;Permissions management
 backup:DeleteBackupVaultNotifications;Write
 backup:DeleteFramework;Write
 backup:DeleteRecoveryPoint;Write
@@ -49,7 +49,7 @@ backup:ListReportJobs;List
 backup:ListReportPlans;List
 backup:ListRestoreJobs;List
 backup:ListTags;Read
-backup:PutBackupVaultAccessPolicy;Write
+backup:PutBackupVaultAccessPolicy;Permissions management
 backup:PutBackupVaultNotifications;Write
 backup:StartBackupJob;Write
 backup:StartCopyJob;Write
