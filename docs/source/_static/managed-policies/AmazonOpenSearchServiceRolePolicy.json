@@ -9,7 +9,8 @@
 			],
 			"Resource": [
 				"arn:aws:ec2:*:*:network-interface/*",
-				"arn:aws:ec2:*:*:subnet/*"
+				"arn:aws:ec2:*:*:subnet/*",
+				"arn:aws:ec2:*:*:security-group/*"
 			]
 		},
 		{
