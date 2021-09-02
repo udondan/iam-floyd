@@ -153,7 +153,7 @@ export class Logs extends PolicyStatement {
   /**
    * Grants permissions to delete a resource policy from this account
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteResourcePolicy.html
    */
@@ -442,7 +442,7 @@ export class Logs extends PolicyStatement {
   /**
    * Grants permissions to create or update a resource policy allowing other AWS services to put log events to this account
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutResourcePolicy.html
    */
@@ -555,7 +555,6 @@ export class Logs extends PolicyStatement {
       "DeleteLogStream",
       "DeleteMetricFilter",
       "DeleteQueryDefinition",
-      "DeleteResourcePolicy",
       "DeleteRetentionPolicy",
       "DeleteSubscriptionFilter",
       "DisassociateKmsKey",
@@ -564,10 +563,13 @@ export class Logs extends PolicyStatement {
       "PutLogEvents",
       "PutMetricFilter",
       "PutQueryDefinition",
-      "PutResourcePolicy",
       "PutRetentionPolicy",
       "PutSubscriptionFilter",
       "UpdateLogDelivery"
+    ],
+    "Permissions management": [
+      "DeleteResourcePolicy",
+      "PutResourcePolicy"
     ],
     "List": [
       "DescribeDestinations",

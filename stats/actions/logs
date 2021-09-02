@@ -10,7 +10,7 @@ logs:DeleteLogGroup;Write
 logs:DeleteLogStream;Write
 logs:DeleteMetricFilter;Write
 logs:DeleteQueryDefinition;Write
-logs:DeleteResourcePolicy;Write
+logs:DeleteResourcePolicy;Permissions management
 logs:DeleteRetentionPolicy;Write
 logs:DeleteSubscriptionFilter;Write
 logs:DescribeDestinations;List
@@ -36,7 +36,7 @@ logs:PutDestinationPolicy;Write
 logs:PutLogEvents;Write
 logs:PutMetricFilter;Write
 logs:PutQueryDefinition;Write
-logs:PutResourcePolicy;Write
+logs:PutResourcePolicy;Permissions management
 logs:PutRetentionPolicy;Write
 logs:PutSubscriptionFilter;Write
 logs:StartQuery;Read

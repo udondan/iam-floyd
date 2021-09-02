@@ -11,6 +11,8 @@ kms:GrantIsForAWSResource
 kms:GrantOperations
 kms:GranteePrincipal
 kms:KeyOrigin
+kms:KeySpec
+kms:KeyUsage
 kms:MessageType
 kms:MultiRegion
 kms:MultiRegionKeyType

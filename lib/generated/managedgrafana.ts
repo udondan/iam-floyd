@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement } from "../shared";
 
 /**
- * Statement provider for service [grafana](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedserviceforgrafana.html).
+ * Statement provider for service [grafana](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedgrafana.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Grafana extends PolicyStatement {
   public servicePrefix = 'grafana';
 
   /**
-   * Statement provider for service [grafana](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedserviceforgrafana.html).
+   * Statement provider for service [grafana](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedgrafana.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -75,6 +75,17 @@ export class Grafana extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe authetication providers on a workspace
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
+   */
+  public toDescribeWorkspaceAuthentication() {
+    return this.to('DescribeWorkspaceAuthentication');
+  }
+
+  /**
    * Grants permission to remove a license from a workspace
    *
    * Access Level: Write
@@ -129,16 +140,29 @@ export class Grafana extends PolicyStatement {
     return this.to('UpdateWorkspace');
   }
 
+  /**
+   * Grants permission to modify authetication providers on a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
+   */
+  public toUpdateWorkspaceAuthentication() {
+    return this.to('UpdateWorkspaceAuthentication');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AssociateLicense",
       "CreateWorkspace",
       "DeleteWorkspace",
       "DisassociateLicense",
-      "UpdateWorkspace"
+      "UpdateWorkspace",
+      "UpdateWorkspaceAuthentication"
     ],
     "Read": [
-      "DescribeWorkspace"
+      "DescribeWorkspace",
+      "DescribeWorkspaceAuthentication"
     ],
     "List": [
       "ListPermissions",

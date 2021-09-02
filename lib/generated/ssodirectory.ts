@@ -327,7 +327,7 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get UserPool Info
+   * (Deprecated) Grants permission to get UserPool Info
    *
    * Access Level: Read
    *

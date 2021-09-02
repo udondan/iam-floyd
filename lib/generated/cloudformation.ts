@@ -419,6 +419,17 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable users to import existing stacks to a new or existing stackset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ImportStacksToStackSet.html
+   */
+  public toImportStacksToStackSet() {
+    return this.to('ImportStacksToStackSet');
+  }
+
+  /**
    * Grants permission to return the ID and status of each active change set for a stack. For example, AWS CloudFormation lists change sets that are in the CREATE_IN_PROGRESS or CREATE_PENDING state
    *
    * Access Level: List
@@ -721,6 +732,7 @@ export class Cloudformation extends PolicyStatement {
       "DeleteStackSet",
       "DeregisterType",
       "ExecuteChangeSet",
+      "ImportStacksToStackSet",
       "RecordHandlerProgress",
       "RegisterType",
       "SetTypeDefaultVersion",
@@ -837,7 +849,7 @@ export class Cloudformation extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStackset(stackSetName: string, id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:stackset/${StackSetName}/${Id}';
+    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:stackset/${StackSetName}:${Id}';
     arn = arn.replace('${StackSetName}', stackSetName);
     arn = arn.replace('${Id}', id);
     arn = arn.replace('${Account}', account || '*');

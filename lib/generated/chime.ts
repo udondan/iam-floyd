@@ -96,7 +96,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate the specified sign-in delegate groups with the specified Amazon Chime account.
+   * Grants permission to associate the specified sign-in delegate groups with the specified Amazon Chime account
    *
    * Access Level: Write
    *
@@ -519,7 +519,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a user under the specified Amazon Chime account.
+   * Grants permission to create a user under the specified Amazon Chime account
    *
    * Access Level: Write
    *
@@ -1061,7 +1061,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate the specified sign-in delegate groups from the specified Amazon Chime account.
+   * Grants permission to disassociate the specified sign-in delegate groups from the specified Amazon Chime account
    *
    * Access Level: Write
    *
@@ -1321,7 +1321,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Gets the retention settings for the specified Amazon Chime account.
+   * Grants permission to retrieve the retention settings for the specified Amazon Chime account
    *
    * Access Level: Read
    *
@@ -1721,7 +1721,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to list all the messages in a channel
    *
-   * Access Level: List
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListChannelMessages.html
    */
@@ -1829,7 +1829,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags applied to an Amazon Chime SDK meeting resource.
+   * Grants permission to list the tags applied to an Amazon Chime SDK meeting resource
    *
    * Access Level: List
    *
@@ -1948,7 +1948,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags applied to an Amazon Chime resource.
+   * Grants permission to list the tags applied to an Amazon Chime resource
    *
    * Access Level: List
    *
@@ -2047,7 +2047,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Puts retention settings for the specified Amazon Chime account
+   * Grants permission to create or update retention settings for the specified Amazon Chime account
    *
    * Access Level: Write
    *
@@ -2165,7 +2165,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Redacts the specified Chime conversation Message
+   * Grants permission to redact the specified Chime conversation Message
    *
    * Access Level: Write
    *
@@ -2176,7 +2176,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Redacts the specified Chime room Message
+   * Grants permission to redacts the specified Chime room Message
    *
    * Access Level: Write
    *
@@ -2255,7 +2255,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to download the file containing links to all user attachments returned as part of the "Request attachments" action
    *
-   * Access Level: List
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/chime/latest/ag/request-attachments.html
    */
@@ -2330,7 +2330,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to apply the specified tags to the specified Amazon Chime SDK meeting.
+   * Grants permission to apply the specified tags to the specified Amazon Chime SDK meeting
    *
    * Access Level: Tagging
    *
@@ -2346,7 +2346,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to apply the specified tags to the specified Amazon Chime resource.
+   * Grants permission to apply the specified tags to the specified Amazon Chime resource
    *
    * Access Level: Tagging
    *
@@ -2373,7 +2373,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag the specified tags from the specified Amazon Chime SDK attendee.
+   * Grants permission to untag the specified tags from the specified Amazon Chime SDK attendee
    *
    * Access Level: Tagging
    *
@@ -2384,7 +2384,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag the specified tags from the specified Amazon Chime SDK meeting.
+   * Grants permission to untag the specified tags from the specified Amazon Chime SDK meeting
    *
    * Access Level: Tagging
    *
@@ -2395,7 +2395,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag the specified tags from the specified Amazon Chime resource.
+   * Grants permission to untag the specified tags from the specified Amazon Chime resource
    *
    * Access Level: Tagging
    *
@@ -2797,6 +2797,7 @@ export class Chime extends PolicyStatement {
       "InviteDelegate",
       "InviteUsers",
       "InviteUsersFromProvider",
+      "ListChannelMessages",
       "LogoutUser",
       "PutAppInstanceRetentionSettings",
       "PutAppInstanceStreamingConfigurations",
@@ -2819,6 +2820,7 @@ export class Chime extends PolicyStatement {
       "ResetAccountResource",
       "ResetPersonalPIN",
       "RestorePhoneNumber",
+      "RetrieveDataExports",
       "SendChannelMessage",
       "StartDataExport",
       "SubmitSupportRequest",
@@ -2919,7 +2921,6 @@ export class Chime extends PolicyStatement {
       "ListChannelBans",
       "ListChannelMemberships",
       "ListChannelMembershipsForAppInstanceUser",
-      "ListChannelMessages",
       "ListChannelModerators",
       "ListChannels",
       "ListChannelsModeratedByAppInstanceUser",
@@ -2944,8 +2945,7 @@ export class Chime extends PolicyStatement {
       "ListUsers",
       "ListVoiceConnectorGroups",
       "ListVoiceConnectorTerminationCredentials",
-      "ListVoiceConnectors",
-      "RetrieveDataExports"
+      "ListVoiceConnectors"
     ],
     "Tagging": [
       "TagAttendee",

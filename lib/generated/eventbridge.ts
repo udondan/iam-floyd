@@ -501,7 +501,7 @@ export class Events extends PolicyStatement {
   /**
    * Grants permission to create or updates rules
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifDetailUserIdentityPrincipalId()
@@ -667,6 +667,7 @@ export class Events extends PolicyStatement {
       "InvokeApiDestination",
       "PutEvents",
       "PutPartnerEvents",
+      "PutRule",
       "PutTargets",
       "RemoveTargets",
       "StartReplay",
@@ -704,7 +705,6 @@ export class Events extends PolicyStatement {
       "RemovePermission"
     ],
     "Tagging": [
-      "PutRule",
       "TagResource",
       "UntagResource"
     ]

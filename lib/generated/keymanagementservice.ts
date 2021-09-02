@@ -19,7 +19,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to cancel the scheduled deletion of a customer master key
+   * Controls permission to cancel the scheduled deletion of an AWS KMS key
    *
    * Access Level: Write
    *
@@ -48,7 +48,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to create an alias for a customer master key (CMK). Aliases are optional friendly names that you can associate with customer master keys
+   * Controls permission to create an alias for an AWS KMS key. Aliases are optional friendly names that you can associate with KMS keys
    *
    * Access Level: Write
    *
@@ -81,7 +81,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to add a grant to a customer master key. You can use grants to add permissions without changing the key policy or IAM policy
+   * Controls permission to add a grant to an AWS KMS key. You can use grants to add permissions without changing the key policy or IAM policy
    *
    * Access Level: Permissions management
    *
@@ -98,7 +98,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to create a customer master key that can be used to protect data keys and other sensitive information
+   * Controls permission to create an AWS KMS key that can be used to protect data keys and other sensitive information
    *
    * Access Level: Write
    *
@@ -119,7 +119,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to decrypt ciphertext that was encrypted under a customer master key
+   * Controls permission to decrypt ciphertext that was encrypted under an AWS KMS key
    *
    * Access Level: Write
    *
@@ -137,7 +137,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to delete an alias. Aliases are optional friendly names that you can associate with customer master keys
+   * Controls permission to delete an alias. Aliases are optional friendly names that you can associate with AWS KMS keys
    *
    * Access Level: Write
    *
@@ -166,7 +166,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to delete cryptographic material that you imported into a customer master key. This action makes the key unusable
+   * Controls permission to delete cryptographic material that you imported into an AWS KMS key. This action makes the key unusable
    *
    * Access Level: Write
    *
@@ -195,7 +195,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view detailed information about a customer master key
+   * Controls permission to view detailed information about an AWS KMS key
    *
    * Access Level: Read
    *
@@ -211,7 +211,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to disable a customer master key, which prevents it from being used in cryptographic operations
+   * Controls permission to disable an AWS KMS key, which prevents it from being used in cryptographic operations
    *
    * Access Level: Write
    *
@@ -226,7 +226,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to disable automatic rotation of a customer managed customer master key
+   * Controls permission to disable automatic rotation of a customer managed AWS KMS key
    *
    * Access Level: Write
    *
@@ -255,7 +255,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to change the state of a customer master key (CMK) to enabled. This allows the CMK to be used in cryptographic operations
+   * Controls permission to change the state of an AWS KMS key to enabled. This allows the KMS key to be used in cryptographic operations
    *
    * Access Level: Write
    *
@@ -270,7 +270,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to enable automatic rotation of the cryptographic material in a customer master key
+   * Controls permission to enable automatic rotation of the cryptographic material in an AWS KMS key
    *
    * Access Level: Write
    *
@@ -285,7 +285,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to use the specified customer master key to encrypt data and data keys
+   * Controls permission to use the specified AWS KMS key to encrypt data and data keys
    *
    * Access Level: Write
    *
@@ -303,7 +303,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to use the customer master key to generate data keys. You can use the data keys to encrypt data outside of AWS KMS
+   * Controls permission to use the AWS KMS key to generate data keys. You can use the data keys to encrypt data outside of AWS KMS
    *
    * Access Level: Write
    *
@@ -321,7 +321,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to use the customer master key to generate data key pairs
+   * Controls permission to use the AWS KMS key to generate data key pairs
    *
    * Access Level: Write
    *
@@ -340,7 +340,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to use the customer master key to generate data key pairs. Unlike the GenerateDataKeyPair operation, this operation returns an encrypted private key without a plaintext copy
+   * Controls permission to use the AWS KMS key to generate data key pairs. Unlike the GenerateDataKeyPair operation, this operation returns an encrypted private key without a plaintext copy
    *
    * Access Level: Write
    *
@@ -359,7 +359,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to use the customer master key to generate a data key. Unlike the GenerateDataKey operation, this operation returns an encrypted data key without a plaintext version of the data key
+   * Controls permission to use the AWS KMS key to generate a data key. Unlike the GenerateDataKey operation, this operation returns an encrypted data key without a plaintext version of the data key
    *
    * Access Level: Write
    *
@@ -388,7 +388,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view the key policy for the specified customer master key
+   * Controls permission to view the key policy for the specified AWS KMS key
    *
    * Access Level: Read
    *
@@ -403,7 +403,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to determine whether automatic key rotation is enabled on the customer master key
+   * Controls permission to determine whether automatic key rotation is enabled on the AWS KMS key
    *
    * Access Level: Read
    *
@@ -435,7 +435,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to download the public key of an asymmetric customer master key
+   * Controls permission to download the public key of an asymmetric AWS KMS key
    *
    * Access Level: Read
    *
@@ -451,7 +451,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to import cryptographic material into a customer master key
+   * Controls permission to import cryptographic material into an AWS KMS key
    *
    * Access Level: Write
    *
@@ -468,7 +468,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view the aliases that are defined in the account. Aliases are optional friendly names that you can associate with customer master keys
+   * Controls permission to view the aliases that are defined in the account. Aliases are optional friendly names that you can associate with AWS KMS keys
    *
    * Access Level: List
    *
@@ -479,7 +479,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view all grants for a customer master key
+   * Controls permission to view all grants for an AWS KMS key
    *
    * Access Level: List
    *
@@ -495,7 +495,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view the names of key policies for a customer master key
+   * Controls permission to view the names of key policies for an AWS KMS key
    *
    * Access Level: List
    *
@@ -510,7 +510,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view the key ID and Amazon Resource Name (ARN) of all customer master keys in the account
+   * Controls permission to view the key ID and Amazon Resource Name (ARN) of all AWS KMS keys in the account
    *
    * Access Level: List
    *
@@ -521,7 +521,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view all tags that are attached to a customer master key
+   * Controls permission to view all tags that are attached to an AWS KMS key
    *
    * Access Level: List
    *
@@ -547,7 +547,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to replace the key policy for the specified customer master key
+   * Controls permission to replace the key policy for the specified AWS KMS key
    *
    * Access Level: Permissions management
    *
@@ -650,7 +650,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to schedule deletion of a customer master key
+   * Controls permission to schedule deletion of an AWS KMS key
    *
    * Access Level: Write
    *
@@ -694,7 +694,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to create or update tags that are attached to a customer master key
+   * Controls permission to create or update tags that are attached to an AWS KMS key
    *
    * Access Level: Tagging
    *
@@ -709,7 +709,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to delete tags that are attached to a customer master key
+   * Controls permission to delete tags that are attached to an AWS KMS key
    *
    * Access Level: Tagging
    *
@@ -724,7 +724,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to associate an alias with a different customer master key. An alias is an optional friendly name that you can associate with a customer master key
+   * Controls permission to associate an alias with a different AWS KMS key. An alias is an optional friendly name that you can associate with a KMS key
    *
    * Access Level: Write
    *
@@ -753,7 +753,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to delete or change the description of a customer master key
+   * Controls permission to delete or change the description of an AWS KMS key
    *
    * Access Level: Write
    *
@@ -784,7 +784,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to use the specified customer master key to verify digital signatures
+   * Controls permission to use the specified AWS KMS key to verify digital signatures
    *
    * Access Level: Write
    *
@@ -886,7 +886,7 @@ export class Kms extends PolicyStatement {
   /**
    * Adds a resource of type key to the statement
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys
+   * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys
    *
    * @param keyId - Identifier for the keyId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -976,9 +976,9 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Filters access to an API operation based on the CustomerMasterKeySpec property of the CMK that is created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource
+   * The kms:CustomerMasterKeySpec condition key is deprecated. Instead, use the kms:KeySpec condition key.
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-customer-master-key-spec
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-spec-replaced
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -988,9 +988,9 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Filters access to an API operation based on the KeyUsage property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource
+   * The kms:CustomerMasterKeyUsage condition key is deprecated. Instead, use the kms:KeyUsage condition key.
    *
-   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-customer-master-key-usage
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-usage-replaced
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1130,7 +1130,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Filters access to an API operation based on the Origin property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource
+   * Filters access to an API operation based on the Origin property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-origin
    *
@@ -1139,6 +1139,30 @@ export class Kms extends PolicyStatement {
    */
   public ifKeyOrigin(value: string | string[], operator?: Operator | string) {
     return this.if(`KeyOrigin`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access to an API operation based on the KeySpec property of the AWS KMS key that is created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key resource
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-spec
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifKeySpec(value: string | string[], operator?: Operator | string) {
+    return this.if(`KeySpec`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access to an API operation based on the KeyUsage property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key resource
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-usage
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifKeyUsage(value: string | string[], operator?: Operator | string) {
+    return this.if(`KeyUsage`, value, operator || 'StringLike');
   }
 
   /**
@@ -1158,7 +1182,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Filters access to an API operation based on the MultiRegion property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource
+   * Filters access to an API operation based on the MultiRegion property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key resource
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-multi-region
    *
@@ -1169,7 +1193,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Filters access to an API operation based on the MultiRegionKeyType property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource
+   * Filters access to an API operation based on the MultiRegionKeyType property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key resource
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-multi-region-key-type
    *
@@ -1196,7 +1220,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Filters access to the ReEncrypt operation when it uses the same customer master key that was used for the Encrypt operation
+   * Filters access to the ReEncrypt operation when it uses the same AWS KMS key that was used for the Encrypt operation
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-reencrypt-on-same-key
    *
@@ -1252,7 +1276,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Filters access to specified AWS KMS operations based on aliases associated with the customer master key
+   * Filters access to specified AWS KMS operations based on aliases associated with the AWS KMS key
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-resource-aliases
    *

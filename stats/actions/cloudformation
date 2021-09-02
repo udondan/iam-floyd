@@ -31,6 +31,7 @@ cloudformation:ExecuteChangeSet;Write
 cloudformation:GetStackPolicy;Read
 cloudformation:GetTemplate;Read
 cloudformation:GetTemplateSummary;Read
+cloudformation:ImportStacksToStackSet;Write
 cloudformation:ListChangeSets;List
 cloudformation:ListExports;List
 cloudformation:ListImports;List

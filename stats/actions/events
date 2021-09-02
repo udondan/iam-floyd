@@ -39,7 +39,7 @@ events:ListTargetsByRule;List
 events:PutEvents;Write
 events:PutPartnerEvents;Write
 events:PutPermission;Permissions management
-events:PutRule;Tagging
+events:PutRule;Write
 events:PutTargets;Write
 events:RemovePermission;Permissions management
 events:RemoveTargets;Write

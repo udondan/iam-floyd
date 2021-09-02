@@ -149,7 +149,7 @@ chime:ListCallingRegions;List
 chime:ListChannelBans;List
 chime:ListChannelMemberships;List
 chime:ListChannelMembershipsForAppInstanceUser;List
-chime:ListChannelMessages;List
+chime:ListChannelMessages;Write
 chime:ListChannelModerators;List
 chime:ListChannels;List
 chime:ListChannelsModeratedByAppInstanceUser;List
@@ -197,7 +197,7 @@ chime:RenewDelegate;Write
 chime:ResetAccountResource;Write
 chime:ResetPersonalPIN;Write
 chime:RestorePhoneNumber;Write
-chime:RetrieveDataExports;List
+chime:RetrieveDataExports;Write
 chime:SearchAvailablePhoneNumbers;Read
 chime:SendChannelMessage;Write
 chime:StartDataExport;Write

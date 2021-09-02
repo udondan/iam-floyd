@@ -43,7 +43,7 @@ export class Codepipeline extends PolicyStatement {
   /**
    * Grants permission to create a custom action that you can use in the pipelines associated with your AWS account
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -58,7 +58,7 @@ export class Codepipeline extends PolicyStatement {
   /**
    * Grants permission to create a uniquely named pipeline
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -134,6 +134,17 @@ export class Codepipeline extends PolicyStatement {
    */
   public toEnableStageTransition() {
     return this.to('EnableStageTransition');
+  }
+
+  /**
+   * Grants permission to view information about an action type
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetActionType.html
+   */
+  public toGetActionType() {
+    return this.to('GetActionType');
   }
 
   /**
@@ -348,7 +359,7 @@ export class Codepipeline extends PolicyStatement {
   /**
    * Grants permission to create or update a webhook
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -434,6 +445,17 @@ export class Codepipeline extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an action type
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_UpdateActionType.html
+   */
+  public toUpdateActionType() {
+    return this.to('UpdateActionType');
+  }
+
+  /**
    * Grants permission to update a pipeline with changes to the structure of the pipeline
    *
    * Access Level: Write
@@ -448,6 +470,8 @@ export class Codepipeline extends PolicyStatement {
     "Write": [
       "AcknowledgeJob",
       "AcknowledgeThirdPartyJob",
+      "CreateCustomActionType",
+      "CreatePipeline",
       "DeleteCustomActionType",
       "DeletePipeline",
       "DeleteWebhook",
@@ -462,20 +486,16 @@ export class Codepipeline extends PolicyStatement {
       "PutJobSuccessResult",
       "PutThirdPartyJobFailureResult",
       "PutThirdPartyJobSuccessResult",
+      "PutWebhook",
       "RegisterWebhookWithThirdParty",
       "RetryStageExecution",
       "StartPipelineExecution",
       "StopPipelineExecution",
+      "UpdateActionType",
       "UpdatePipeline"
     ],
-    "Tagging": [
-      "CreateCustomActionType",
-      "CreatePipeline",
-      "PutWebhook",
-      "TagResource",
-      "UntagResource"
-    ],
     "Read": [
+      "GetActionType",
       "GetJobDetails",
       "GetPipeline",
       "GetPipelineExecution",
@@ -489,6 +509,10 @@ export class Codepipeline extends PolicyStatement {
       "ListPipelineExecutions",
       "ListPipelines",
       "ListWebhooks"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
