@@ -47,46 +47,41 @@ export const fixes: Fixes = {
   marketplaceprocurementsystemsintegration: {
     name: 'aws-marketplace-procurement-systems-integration',
   },
-  privatemarketplace: {
+  awsmarketplaceprivatemarketplace: {
     name: 'aws-marketplace-private',
   },
   backup: {
     resourceTypes: {
       recoveryPoint: {
-        arn:
-          'arn:${Partition}:backup:${Region}:${Account}:recovery-point:${RecoveryPointId}',
+        arn: 'arn:${Partition}:backup:${Region}:${Account}:recovery-point:${RecoveryPointId}',
       },
     },
   },
   cassandra: {
     resourceTypes: {
       keyspace: {
-        arn:
-          'arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}',
+        arn: 'arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}',
       },
     },
   },
   'codeguru-reviewer': {
     resourceTypes: {
       codereview: {
-        arn:
-          'arn:${Partition}:codeguru-reviewer:${Region}:${Account}:code-review:${CodeReviewUuid}',
+        arn: 'arn:${Partition}:codeguru-reviewer:${Region}:${Account}:code-review:${CodeReviewUuid}',
       },
     },
   },
   codestar: {
     resourceTypes: {
       user: {
-        arn:
-          'arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}',
+        arn: 'arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}',
       },
     },
   },
   deepracer: {
     resourceTypes: {
       evaluation_job: {
-        arn:
-          'arn:${Partition}:deepracer:${Region}:${Account}:evaluation_job/${ResourceId}',
+        arn: 'arn:${Partition}:deepracer:${Region}:${Account}:evaluation_job/${ResourceId}',
       },
     },
   },
@@ -100,16 +95,14 @@ export const fixes: Fixes = {
   health: {
     resourceTypes: {
       event: {
-        arn:
-          'arn:${Partition}:health:${Region}:${Account}:event/${Service}/${EventTypeCode}/${EventTypePlusId}',
+        arn: 'arn:${Partition}:health:${Region}:${Account}:event/${Service}/${EventTypeCode}/${EventTypePlusId}',
       },
     },
   },
   'neptune-db': {
     resourceTypes: {
       database: {
-        arn:
-          'arn:${Partition}:neptune-db:${Region}:${Account}:${Cluster}/${Database}',
+        arn: 'arn:${Partition}:neptune-db:${Region}:${Account}:${Cluster}/${Database}',
       },
     },
   },
@@ -134,16 +127,14 @@ export const fixes: Fixes = {
     },
     resourceTypes: {
       'automation-definition': {
-        arn:
-          'arn:${Partition}:ssm:${Region}:${Account}:automation-definition/${AutomationDefinitionName}:${VersionId}',
+        arn: 'arn:${Partition}:ssm:${Region}:${Account}:automation-definition/${AutomationDefinitionName}:${VersionId}',
       },
     },
   },
   wafv2: {
     resourceTypes: {
       apigateway: {
-        arn:
-          'arn:${Partition}:apigateway:${Region}:${Account}:/restapis/${ApiId}/stages/${StageName}',
+        arn: 'arn:${Partition}:apigateway:${Region}:${Account}:/restapis/${ApiId}/stages/${StageName}',
       },
     },
   },
