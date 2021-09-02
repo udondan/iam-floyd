@@ -47,7 +47,7 @@ export const fixes: Fixes = {
   marketplaceprocurementsystemsintegration: {
     name: 'aws-marketplace-procurement-systems-integration',
   },
-  awsmarketplaceprivatemarketplace: {
+  marketplaceprivatemarketplace: {
     name: 'aws-marketplace-private',
   },
   backup: {
