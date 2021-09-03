@@ -218,6 +218,17 @@ export class Iotevents extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the detector model analysis information
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DescribeDetectorModelAnalysis.html
+   */
+  public toDescribeDetectorModelAnalysis() {
+    return this.to('DescribeDetectorModelAnalysis');
+  }
+
+  /**
    * Grants permission to retrieve an information about Input
    *
    * Access Level: Read
@@ -237,6 +248,17 @@ export class Iotevents extends PolicyStatement {
    */
   public toDescribeLoggingOptions() {
     return this.to('DescribeLoggingOptions');
+  }
+
+  /**
+   * Grants permission to retrieve the detector model analysis results
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iotevents/latest/apireference/API_GetDetectorModelAnalysisResults.html
+   */
+  public toGetDetectorModelAnalysisResults() {
+    return this.to('GetDetectorModelAnalysisResults');
   }
 
   /**
@@ -350,6 +372,17 @@ export class Iotevents extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start the detector model analysis
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iotevents/latest/apireference/API_StartDetectorModelAnalysis.html
+   */
+  public toStartDetectorModelAnalysis() {
+    return this.to('StartDetectorModelAnalysis');
+  }
+
+  /**
    * Grants permission to adds to or modifies the tags of the given resource.Tags are metadata which can be used to manage a resource
    *
    * Access Level: Tagging
@@ -438,6 +471,7 @@ export class Iotevents extends PolicyStatement {
       "DeleteDetectorModel",
       "DeleteInput",
       "PutLoggingOptions",
+      "StartDetectorModelAnalysis",
       "UpdateAlarmModel",
       "UpdateDetectorModel",
       "UpdateInput",
@@ -448,8 +482,10 @@ export class Iotevents extends PolicyStatement {
       "DescribeAlarmModel",
       "DescribeDetector",
       "DescribeDetectorModel",
+      "DescribeDetectorModelAnalysis",
       "DescribeInput",
       "DescribeLoggingOptions",
+      "GetDetectorModelAnalysisResults",
       "ListTagsForResource"
     ],
     "List": [

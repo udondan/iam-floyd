@@ -130,7 +130,7 @@ export class Ram extends PolicyStatement {
   /**
    * Grants permission to access customer's organization and create a SLR in the customer's account
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_EnableSharingWithAwsOrganization.html
    */
@@ -348,10 +348,12 @@ export class Ram extends PolicyStatement {
       "DeleteResourceShare",
       "DisassociateResourceShare",
       "DisassociateResourceSharePermission",
-      "EnableSharingWithAwsOrganization",
       "PromoteResourceShareCreatedFromPolicy",
       "RejectResourceShareInvitation",
       "UpdateResourceShare"
+    ],
+    "Permissions management": [
+      "EnableSharingWithAwsOrganization"
     ],
     "Read": [
       "GetPermission",

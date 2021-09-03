@@ -209,6 +209,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate one or more targets with an event window
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateInstanceEventWindow.html
+   */
+  public toAssociateInstanceEventWindow() {
+    return this.to('AssociateInstanceEventWindow');
+  }
+
+  /**
    * Grants permission to associate a subnet or gateway with a route table
    *
    * Access Level: Write
@@ -250,6 +261,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toAssociateTransitGatewayRouteTable() {
     return this.to('AssociateTransitGatewayRouteTable');
+  }
+
+  /**
+   * Grants permission to associate a branch network interface with a trunk network interface
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateTrunkInterface.html
+   */
+  public toAssociateTrunkInterface() {
+    return this.to('AssociateTrunkInterface');
   }
 
   /**
@@ -641,6 +663,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an event window in which scheduled events for the associated Amazon EC2 instances can run
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInstanceEventWindow.html
+   */
+  public toCreateInstanceEventWindow() {
+    return this.to('CreateInstanceEventWindow');
+  }
+
+  /**
    * Grants permission to export a running or stopped instance to an Amazon S3 bucket
    *
    * Access Level: Write
@@ -924,6 +957,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateSubnet() {
     return this.to('CreateSubnet');
+  }
+
+  /**
+   * Grants permission to create a subnet CIDR reservation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSubnetCidrReservation.html
+   */
+  public toCreateSubnetCidrReservation() {
+    return this.to('CreateSubnetCidrReservation');
   }
 
   /**
@@ -1285,6 +1329,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the specified event window.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteInstanceEventWindow.html
+   */
+  public toDeleteInstanceEventWindow() {
+    return this.to('DeleteInstanceEventWindow');
+  }
+
+  /**
    * Grants permission to delete an internet gateway
    *
    * Access Level: Write
@@ -1524,6 +1579,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toDeleteSubnet() {
     return this.to('DeleteSubnet');
+  }
+
+  /**
+   * Grants permission to delete a subnet CIDR reservation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSubnetCidrReservation.html
+   */
+  public toDeleteSubnetCidrReservation() {
+    return this.to('DeleteSubnetCidrReservation');
   }
 
   /**
@@ -2308,6 +2374,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the specified event windows or all event windows
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceEventWindows.html
+   */
+  public toDescribeInstanceEventWindows() {
+    return this.to('DescribeInstanceEventWindows');
+  }
+
+  /**
    * Grants permission to describe the status of one or more instances
    *
    * Access Level: List
@@ -3001,6 +3078,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe one or more network interface trunk associations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTrunkInterfaceAssociations.html
+   */
+  public toDescribeTrunkInterfaceAssociations() {
+    return this.to('DescribeTrunkInterfaceAssociations');
+  }
+
+  /**
    * Grants permission to describe an attribute of an EBS volume
    *
    * Access Level: List
@@ -3375,6 +3463,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate one or more targets from an event window
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateInstanceEventWindow.html
+   */
+  public toDisassociateInstanceEventWindow() {
+    return this.to('DisassociateInstanceEventWindow');
+  }
+
+  /**
    * Grants permission to disassociate a subnet from a route table
    *
    * Access Level: Write
@@ -3416,6 +3515,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toDisassociateTransitGatewayRouteTable() {
     return this.to('DisassociateTransitGatewayRouteTable');
+  }
+
+  /**
+   * Grants permission to disassociate a branch network interface to a trunk network interface
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateTrunkInterface.html
+   */
+  public toDisassociateTrunkInterface() {
+    return this.to('DisassociateTrunkInterface');
   }
 
   /**
@@ -3531,7 +3641,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to download the client certificate revocation list for a Client VPN endpoint
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ExportClientVpnClientCertificateRevocationList.html
    */
@@ -3542,7 +3652,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Grants permission to download the contents of the Client VPN endpoint configuration file for a Client VPN endpoint
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ExportClientVpnClientConfiguration.html
    */
@@ -3768,6 +3878,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetSerialConsoleAccessStatus() {
     return this.to('GetSerialConsoleAccessStatus');
+  }
+
+  /**
+   * Grants permission to retrieve information about the subnet CIDR reservations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSubnetCidrReservations.html
+   */
+  public toGetSubnetCidrReservations() {
+    return this.to('GetSubnetCidrReservations');
   }
 
   /**
@@ -4065,6 +4186,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyInstanceEventStartTime() {
     return this.to('ModifyInstanceEventStartTime');
+  }
+
+  /**
+   * Grants permission to modify the specified event window
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceEventWindow.html
+   */
+  public toModifyInstanceEventWindow() {
+    return this.to('ModifyInstanceEventWindow');
   }
 
   /**
@@ -5035,10 +5167,12 @@ export class Ec2 extends PolicyStatement {
       "AssociateDhcpOptions",
       "AssociateEnclaveCertificateIamRole",
       "AssociateIamInstanceProfile",
+      "AssociateInstanceEventWindow",
       "AssociateRouteTable",
       "AssociateSubnetCidrBlock",
       "AssociateTransitGatewayMulticastDomain",
       "AssociateTransitGatewayRouteTable",
+      "AssociateTrunkInterface",
       "AssociateVpcCidrBlock",
       "AttachClassicLinkVpc",
       "AttachInternetGateway",
@@ -5074,6 +5208,7 @@ export class Ec2 extends PolicyStatement {
       "CreateFlowLogs",
       "CreateFpgaImage",
       "CreateImage",
+      "CreateInstanceEventWindow",
       "CreateInstanceExportTask",
       "CreateInternetGateway",
       "CreateKeyPair",
@@ -5099,6 +5234,7 @@ export class Ec2 extends PolicyStatement {
       "CreateSpotDatafeedSubscription",
       "CreateStoreImageTask",
       "CreateSubnet",
+      "CreateSubnetCidrReservation",
       "CreateTrafficMirrorFilter",
       "CreateTrafficMirrorFilterRule",
       "CreateTrafficMirrorSession",
@@ -5130,6 +5266,7 @@ export class Ec2 extends PolicyStatement {
       "DeleteFleets",
       "DeleteFlowLogs",
       "DeleteFpgaImage",
+      "DeleteInstanceEventWindow",
       "DeleteInternetGateway",
       "DeleteKeyPair",
       "DeleteLaunchTemplate",
@@ -5151,6 +5288,7 @@ export class Ec2 extends PolicyStatement {
       "DeleteSnapshot",
       "DeleteSpotDatafeedSubscription",
       "DeleteSubnet",
+      "DeleteSubnetCidrReservation",
       "DeleteTrafficMirrorFilter",
       "DeleteTrafficMirrorFilterRule",
       "DeleteTrafficMirrorSession",
@@ -5195,10 +5333,12 @@ export class Ec2 extends PolicyStatement {
       "DisassociateClientVpnTargetNetwork",
       "DisassociateEnclaveCertificateIamRole",
       "DisassociateIamInstanceProfile",
+      "DisassociateInstanceEventWindow",
       "DisassociateRouteTable",
       "DisassociateSubnetCidrBlock",
       "DisassociateTransitGatewayMulticastDomain",
       "DisassociateTransitGatewayRouteTable",
+      "DisassociateTrunkInterface",
       "DisassociateVpcCidrBlock",
       "EnableEbsEncryptionByDefault",
       "EnableFastSnapshotRestores",
@@ -5233,6 +5373,7 @@ export class Ec2 extends PolicyStatement {
       "ModifyInstanceCapacityReservationAttributes",
       "ModifyInstanceCreditSpecification",
       "ModifyInstanceEventStartTime",
+      "ModifyInstanceEventWindow",
       "ModifyInstanceMetadataOptions",
       "ModifyInstancePlacement",
       "ModifyLaunchTemplate",
@@ -5367,6 +5508,7 @@ export class Ec2 extends PolicyStatement {
       "DescribeInstanceAttribute",
       "DescribeInstanceCreditSpecifications",
       "DescribeInstanceEventNotificationAttributes",
+      "DescribeInstanceEventWindows",
       "DescribeInstanceStatus",
       "DescribeInstanceTypeOfferings",
       "DescribeInstanceTypes",
@@ -5427,6 +5569,7 @@ export class Ec2 extends PolicyStatement {
       "DescribeTransitGatewayRouteTables",
       "DescribeTransitGatewayVpcAttachments",
       "DescribeTransitGateways",
+      "DescribeTrunkInterfaceAssociations",
       "DescribeVolumeAttribute",
       "DescribeVolumeStatus",
       "DescribeVolumes",
@@ -5442,8 +5585,6 @@ export class Ec2 extends PolicyStatement {
       "DescribeVpcPeeringConnections",
       "DescribeVpcs",
       "DescribeVpnGateways",
-      "ExportClientVpnClientCertificateRevocationList",
-      "ExportClientVpnClientConfiguration",
       "GetGroupsForCapacityReservation",
       "GetTransitGatewayAttachmentPropagations",
       "GetTransitGatewayMulticastDomainAssociations",
@@ -5462,6 +5603,8 @@ export class Ec2 extends PolicyStatement {
       "DescribeTags",
       "DescribeVolumesModifications",
       "DescribeVpnConnections",
+      "ExportClientVpnClientCertificateRevocationList",
+      "ExportClientVpnClientConfiguration",
       "GetAssociatedEnclaveCertificateIamRoles",
       "GetAssociatedIpv6PoolCidrs",
       "GetCapacityReservationUsage",
@@ -5478,7 +5621,8 @@ export class Ec2 extends PolicyStatement {
       "GetManagedPrefixListEntries",
       "GetPasswordData",
       "GetReservedInstancesExchangeQuote",
-      "GetSerialConsoleAccessStatus"
+      "GetSerialConsoleAccessStatus",
+      "GetSubnetCidrReservations"
     ]
   };
 
@@ -5972,6 +6116,32 @@ export class Ec2 extends PolicyStatement {
   public onImportSnapshotTask(importSnapshotTaskId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:import-snapshot-task/${ImportSnapshotTaskId}';
     arn = arn.replace('${ImportSnapshotTaskId}', importSnapshotTaskId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type instance-event-window to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param instanceEventWindowId - Identifier for the instanceEventWindowId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onInstanceEventWindow(instanceEventWindowId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:instance-event-window/${InstanceEventWindowId}';
+    arn = arn.replace('${InstanceEventWindowId}', instanceEventWindowId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -7433,10 +7603,12 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAllocateHosts()
+   * - .toAssociateInstanceEventWindow()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateTags()
    * - .toDeleteTags()
+   * - .toDisassociateInstanceEventWindow()
    * - .toGetHostReservationPurchasePreview()
    * - .toModifyHosts()
    * - .toModifyInstancePlacement()
@@ -7467,6 +7639,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateAddress()
    * - .toAssociateClientVpnTargetNetwork()
    * - .toAssociateIamInstanceProfile()
+   * - .toAssociateInstanceEventWindow()
    * - .toAssociateRouteTable()
    * - .toAssociateSubnetCidrBlock()
    * - .toAssociateTransitGatewayMulticastDomain()
@@ -7508,6 +7681,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDisassociateAddress()
    * - .toDisassociateIamInstanceProfile()
+   * - .toDisassociateInstanceEventWindow()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
@@ -7757,6 +7931,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAssociateAddress()
    * - .toAssociateIamInstanceProfile()
+   * - .toAssociateInstanceEventWindow()
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
@@ -7773,6 +7948,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDisassociateAddress()
    * - .toDisassociateIamInstanceProfile()
+   * - .toDisassociateInstanceEventWindow()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetLaunchTemplateData()
@@ -7890,10 +8066,12 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAllocateHosts()
+   * - .toAssociateInstanceEventWindow()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateTags()
    * - .toDeleteTags()
+   * - .toDisassociateInstanceEventWindow()
    * - .toGetHostReservationPurchasePreview()
    * - .toModifyHosts()
    * - .toModifyInstancePlacement()
@@ -8022,6 +8200,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAssociateAddress()
    * - .toAssociateIamInstanceProfile()
+   * - .toAssociateInstanceEventWindow()
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
@@ -8038,6 +8217,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDisassociateAddress()
    * - .toDisassociateIamInstanceProfile()
+   * - .toDisassociateInstanceEventWindow()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetLaunchTemplateData()
@@ -8082,6 +8262,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAllocateHosts()
    * - .toAssociateAddress()
    * - .toAssociateIamInstanceProfile()
+   * - .toAssociateInstanceEventWindow()
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
@@ -8102,6 +8283,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDisassociateAddress()
    * - .toDisassociateIamInstanceProfile()
+   * - .toDisassociateInstanceEventWindow()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetHostReservationPurchasePreview()
@@ -8632,6 +8814,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAssociateAddress()
    * - .toAssociateIamInstanceProfile()
+   * - .toAssociateInstanceEventWindow()
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
@@ -8648,6 +8831,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDisassociateAddress()
    * - .toDisassociateIamInstanceProfile()
+   * - .toDisassociateInstanceEventWindow()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetLaunchTemplateData()
@@ -8794,10 +8978,12 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAllocateHosts()
+   * - .toAssociateInstanceEventWindow()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateTags()
    * - .toDeleteTags()
+   * - .toDisassociateInstanceEventWindow()
    * - .toGetHostReservationPurchasePreview()
    * - .toModifyHosts()
    * - .toModifyInstancePlacement()
@@ -8835,6 +9021,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateClientVpnTargetNetwork()
    * - .toAssociateDhcpOptions()
    * - .toAssociateIamInstanceProfile()
+   * - .toAssociateInstanceEventWindow()
    * - .toAssociateRouteTable()
    * - .toAssociateSubnetCidrBlock()
    * - .toAssociateTransitGatewayMulticastDomain()
@@ -8869,6 +9056,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateFlowLogs()
    * - .toCreateFpgaImage()
    * - .toCreateImage()
+   * - .toCreateInstanceEventWindow()
    * - .toCreateInstanceExportTask()
    * - .toCreateInternetGateway()
    * - .toCreateKeyPair()
@@ -8926,6 +9114,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteFleets()
    * - .toDeleteFlowLogs()
    * - .toDeleteFpgaImage()
+   * - .toDeleteInstanceEventWindow()
    * - .toDeleteInternetGateway()
    * - .toDeleteKeyPair()
    * - .toDeleteLaunchTemplate()
@@ -8985,6 +9174,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateAddress()
    * - .toDisassociateClientVpnTargetNetwork()
    * - .toDisassociateIamInstanceProfile()
+   * - .toDisassociateInstanceEventWindow()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
@@ -9032,6 +9222,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
    * - .toModifyInstanceEventStartTime()
+   * - .toModifyInstanceEventWindow()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyLaunchTemplate()
@@ -9128,6 +9319,7 @@ export class Ec2 extends PolicyStatement {
    * - image
    * - import-image-task
    * - import-snapshot-task
+   * - instance-event-window
    * - instance
    * - internet-gateway
    * - ipv4pool-ec2
@@ -9319,6 +9511,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateClientVpnTargetNetwork()
    * - .toAssociateDhcpOptions()
    * - .toAssociateIamInstanceProfile()
+   * - .toAssociateInstanceEventWindow()
    * - .toAssociateRouteTable()
    * - .toAssociateSubnetCidrBlock()
    * - .toAssociateTransitGatewayMulticastDomain()
@@ -9390,6 +9583,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteFleets()
    * - .toDeleteFlowLogs()
    * - .toDeleteFpgaImage()
+   * - .toDeleteInstanceEventWindow()
    * - .toDeleteInternetGateway()
    * - .toDeleteKeyPair()
    * - .toDeleteLaunchTemplate()
@@ -9449,6 +9643,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateAddress()
    * - .toDisassociateClientVpnTargetNetwork()
    * - .toDisassociateIamInstanceProfile()
+   * - .toDisassociateInstanceEventWindow()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
@@ -9494,6 +9689,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
    * - .toModifyInstanceEventStartTime()
+   * - .toModifyInstanceEventWindow()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyLaunchTemplate()
@@ -9590,6 +9786,7 @@ export class Ec2 extends PolicyStatement {
    * - image
    * - import-image-task
    * - import-snapshot-task
+   * - instance-event-window
    * - instance
    * - internet-gateway
    * - ipv4pool-ec2
@@ -9663,6 +9860,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAssociateAddress()
    * - .toAssociateIamInstanceProfile()
+   * - .toAssociateInstanceEventWindow()
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
@@ -9686,6 +9884,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableImageDeprecation()
    * - .toDisassociateAddress()
    * - .toDisassociateIamInstanceProfile()
+   * - .toDisassociateInstanceEventWindow()
    * - .toEnableImageDeprecation()
    * - .toExportImage()
    * - .toGetConsoleOutput()
@@ -9959,6 +10158,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateAddress()
    * - .toAssociateDhcpOptions()
    * - .toAssociateIamInstanceProfile()
+   * - .toAssociateInstanceEventWindow()
    * - .toAssociateVpcCidrBlock()
    * - .toAttachClassicLinkVpc()
    * - .toAttachInternetGateway()
@@ -9999,6 +10199,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableVpcClassicLinkDnsSupport()
    * - .toDisassociateAddress()
    * - .toDisassociateIamInstanceProfile()
+   * - .toDisassociateInstanceEventWindow()
    * - .toEnableVpcClassicLink()
    * - .toEnableVpcClassicLinkDnsSupport()
    * - .toGetConsoleOutput()
@@ -10285,6 +10486,10 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-iam.html
    *
+   * Applies to actions:
+   * - .toCreateVpcEndpoint()
+   * - .toDeleteVpcEndpoints()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -10296,6 +10501,9 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the service owner of the VPC endpoint service (amazon, aws-marketplace, or an AWS account ID)
    *
    * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateVpcEndpoint()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

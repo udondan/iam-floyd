@@ -15,10 +15,12 @@ ec2:AssociateClientVpnTargetNetwork;Write
 ec2:AssociateDhcpOptions;Write
 ec2:AssociateEnclaveCertificateIamRole;Write
 ec2:AssociateIamInstanceProfile;Write
+ec2:AssociateInstanceEventWindow;Write
 ec2:AssociateRouteTable;Write
 ec2:AssociateSubnetCidrBlock;Write
 ec2:AssociateTransitGatewayMulticastDomain;Write
 ec2:AssociateTransitGatewayRouteTable;Write
+ec2:AssociateTrunkInterface;Write
 ec2:AssociateVpcCidrBlock;Write
 ec2:AttachClassicLinkVpc;Write
 ec2:AttachInternetGateway;Write
@@ -54,6 +56,7 @@ ec2:CreateFleet;Write
 ec2:CreateFlowLogs;Write
 ec2:CreateFpgaImage;Write
 ec2:CreateImage;Write
+ec2:CreateInstanceEventWindow;Write
 ec2:CreateInstanceExportTask;Write
 ec2:CreateInternetGateway;Write
 ec2:CreateKeyPair;Write
@@ -80,6 +83,7 @@ ec2:CreateSnapshots;Write
 ec2:CreateSpotDatafeedSubscription;Write
 ec2:CreateStoreImageTask;Write
 ec2:CreateSubnet;Write
+ec2:CreateSubnetCidrReservation;Write
 ec2:CreateTags;Tagging
 ec2:CreateTrafficMirrorFilter;Write
 ec2:CreateTrafficMirrorFilterRule;Write
@@ -112,6 +116,7 @@ ec2:DeleteEgressOnlyInternetGateway;Write
 ec2:DeleteFleets;Write
 ec2:DeleteFlowLogs;Write
 ec2:DeleteFpgaImage;Write
+ec2:DeleteInstanceEventWindow;Write
 ec2:DeleteInternetGateway;Write
 ec2:DeleteKeyPair;Write
 ec2:DeleteLaunchTemplate;Write
@@ -134,6 +139,7 @@ ec2:DeleteSecurityGroup;Write
 ec2:DeleteSnapshot;Write
 ec2:DeleteSpotDatafeedSubscription;Write
 ec2:DeleteSubnet;Write
+ec2:DeleteSubnetCidrReservation;Write
 ec2:DeleteTags;Tagging
 ec2:DeleteTrafficMirrorFilter;Write
 ec2:DeleteTrafficMirrorFilterRule;Write
@@ -205,6 +211,7 @@ ec2:DescribeImportSnapshotTasks;List
 ec2:DescribeInstanceAttribute;List
 ec2:DescribeInstanceCreditSpecifications;List
 ec2:DescribeInstanceEventNotificationAttributes;List
+ec2:DescribeInstanceEventWindows;List
 ec2:DescribeInstanceStatus;List
 ec2:DescribeInstanceTypeOfferings;List
 ec2:DescribeInstanceTypes;List
@@ -268,6 +275,7 @@ ec2:DescribeTransitGatewayPeeringAttachments;List
 ec2:DescribeTransitGatewayRouteTables;List
 ec2:DescribeTransitGatewayVpcAttachments;List
 ec2:DescribeTransitGateways;List
+ec2:DescribeTrunkInterfaceAssociations;List
 ec2:DescribeVolumeAttribute;List
 ec2:DescribeVolumeStatus;List
 ec2:DescribeVolumes;List
@@ -302,10 +310,12 @@ ec2:DisassociateAddress;Write
 ec2:DisassociateClientVpnTargetNetwork;Write
 ec2:DisassociateEnclaveCertificateIamRole;Write
 ec2:DisassociateIamInstanceProfile;Write
+ec2:DisassociateInstanceEventWindow;Write
 ec2:DisassociateRouteTable;Write
 ec2:DisassociateSubnetCidrBlock;Write
 ec2:DisassociateTransitGatewayMulticastDomain;Write
 ec2:DisassociateTransitGatewayRouteTable;Write
+ec2:DisassociateTrunkInterface;Write
 ec2:DisassociateVpcCidrBlock;Write
 ec2:EnableEbsEncryptionByDefault;Write
 ec2:EnableFastSnapshotRestores;Write
@@ -316,8 +326,8 @@ ec2:EnableVgwRoutePropagation;Write
 ec2:EnableVolumeIO;Write
 ec2:EnableVpcClassicLink;Write
 ec2:EnableVpcClassicLinkDnsSupport;Write
-ec2:ExportClientVpnClientCertificateRevocationList;List
-ec2:ExportClientVpnClientConfiguration;List
+ec2:ExportClientVpnClientCertificateRevocationList;Read
+ec2:ExportClientVpnClientConfiguration;Read
 ec2:ExportImage;Write
 ec2:ExportTransitGatewayRoutes;Write
 ec2:GetAssociatedEnclaveCertificateIamRoles;Read
@@ -338,6 +348,7 @@ ec2:GetManagedPrefixListEntries;Read
 ec2:GetPasswordData;Read
 ec2:GetReservedInstancesExchangeQuote;Read
 ec2:GetSerialConsoleAccessStatus;Read
+ec2:GetSubnetCidrReservations;Read
 ec2:GetTransitGatewayAttachmentPropagations;List
 ec2:GetTransitGatewayMulticastDomainAssociations;List
 ec2:GetTransitGatewayPrefixListReferences;List
@@ -365,6 +376,7 @@ ec2:ModifyInstanceAttribute;Write
 ec2:ModifyInstanceCapacityReservationAttributes;Write
 ec2:ModifyInstanceCreditSpecification;Write
 ec2:ModifyInstanceEventStartTime;Write
+ec2:ModifyInstanceEventWindow;Write
 ec2:ModifyInstanceMetadataOptions;Write
 ec2:ModifyInstancePlacement;Write
 ec2:ModifyLaunchTemplate;Write

@@ -7,6 +7,8 @@
         "ec2:DescribeTags",
         "ec2:DescribeVolumesModifications",
         "ec2:DescribeVpnConnections",
+        "ec2:ExportClientVpnClientCertificateRevocationList",
+        "ec2:ExportClientVpnClientConfiguration",
         "ec2:GetAssociatedEnclaveCertificateIamRoles",
         "ec2:GetAssociatedIpv6PoolCidrs",
         "ec2:GetCapacityReservationUsage",
@@ -23,7 +25,8 @@
         "ec2:GetManagedPrefixListEntries",
         "ec2:GetPasswordData",
         "ec2:GetReservedInstancesExchangeQuote",
-        "ec2:GetSerialConsoleAccessStatus"
+        "ec2:GetSerialConsoleAccessStatus",
+        "ec2:GetSubnetCidrReservations"
     ],
     "Resource": "*",
     "Effect": "Allow"

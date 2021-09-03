@@ -5,7 +5,7 @@ ram:CreateResourceShare;Write
 ram:DeleteResourceShare;Write
 ram:DisassociateResourceShare;Write
 ram:DisassociateResourceSharePermission;Write
-ram:EnableSharingWithAwsOrganization;Write
+ram:EnableSharingWithAwsOrganization;Permissions management
 ram:GetPermission;Read
 ram:GetResourcePolicies;Read
 ram:GetResourceShareAssociations;Read

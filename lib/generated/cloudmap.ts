@@ -294,6 +294,17 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the settings for a HTTP namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateHttpNamespace.html
+   */
+  public toUpdateHttpNamespace() {
+    return this.to('UpdateHttpNamespace');
+  }
+
+  /**
    * Grants permission to update the current health status for an instance that has a custom health check
    *
    * Access Level: Write
@@ -305,6 +316,28 @@ export class Servicediscovery extends PolicyStatement {
    */
   public toUpdateInstanceCustomHealthStatus() {
     return this.to('UpdateInstanceCustomHealthStatus');
+  }
+
+  /**
+   * Grants permission to update the settings for a private DNS namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdatePrivateDnsNamespace.html
+   */
+  public toUpdatePrivateDnsNamespace() {
+    return this.to('UpdatePrivateDnsNamespace');
+  }
+
+  /**
+   * Grants permission to update the settings for a public DNS namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdatePublicDnsNamespace.html
+   */
+  public toUpdatePublicDnsNamespace() {
+    return this.to('UpdatePublicDnsNamespace');
   }
 
   /**
@@ -328,7 +361,10 @@ export class Servicediscovery extends PolicyStatement {
       "DeleteService",
       "DeregisterInstance",
       "RegisterInstance",
+      "UpdateHttpNamespace",
       "UpdateInstanceCustomHealthStatus",
+      "UpdatePrivateDnsNamespace",
+      "UpdatePublicDnsNamespace",
       "UpdateService"
     ],
     "Read": [

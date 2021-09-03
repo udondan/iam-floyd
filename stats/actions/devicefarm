@@ -1,7 +1,7 @@
 devicefarm:CreateDevicePool;Write
 devicefarm:CreateInstanceProfile;Write
 devicefarm:CreateNetworkProfile;Write
-devicefarm:CreateProject;Tagging
+devicefarm:CreateProject;Write
 devicefarm:CreateRemoteAccessSession;Write
 devicefarm:CreateTestGridProject;Write
 devicefarm:CreateTestGridUrl;Write

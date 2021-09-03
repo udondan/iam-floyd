@@ -1,5 +1,5 @@
 import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { PolicyStatement, Operator } from "../shared";
 
 /**
  * Statement provider for service [fsx](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfsx.html).
@@ -70,7 +70,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new backup of an Amazon FSx file system
+   * Grants permission to create a new backup of an Amazon FSx file system or an Amazon FSx volume
    *
    * Access Level: Write
    *
@@ -142,6 +142,62 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new storage virtual machine in an Amazon FSx for Ontap file system
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - fsx:TagResource
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateStorageVirtualMachine.html
+   */
+  public toCreateStorageVirtualMachine() {
+    return this.to('CreateStorageVirtualMachine');
+  }
+
+  /**
+   * Grants permission to create a new volume
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifStorageVirtualMachineId()
+   *
+   * Dependent actions:
+   * - fsx:TagResource
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateVolume.html
+   */
+  public toCreateVolume() {
+    return this.to('CreateVolume');
+  }
+
+  /**
+   * Grants permission to create a new volume from backup
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifStorageVirtualMachineId()
+   *
+   * Dependent actions:
+   * - fsx:TagResource
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateVolumeFromBackup.html
+   */
+  public toCreateVolumeFromBackup() {
+    return this.to('CreateVolumeFromBackup');
+  }
+
+  /**
    * Grants permission to delete a backup, deleting its contents. After deletion, the backup no longer exists, and its data is no longer available.
    *
    * Access Level: Write
@@ -169,6 +225,35 @@ export class Fsx extends PolicyStatement {
    */
   public toDeleteFileSystem() {
     return this.to('DeleteFileSystem');
+  }
+
+  /**
+   * Grants permission to delete a storage virtual machine, deleting its contents.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteStorageVirtualMachine.html
+   */
+  public toDeleteStorageVirtualMachine() {
+    return this.to('DeleteStorageVirtualMachine');
+  }
+
+  /**
+   * Grants permission to delete a volume, deleting its contents and any existing automatic backups of the volume.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifStorageVirtualMachineId()
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteVolume.html
+   */
+  public toDeleteVolume() {
+    return this.to('DeleteVolume');
   }
 
   /**
@@ -224,6 +309,28 @@ export class Fsx extends PolicyStatement {
    */
   public toDescribeFileSystems() {
     return this.to('DescribeFileSystems');
+  }
+
+  /**
+   * Grants permission to return the descriptions of all storage virtual machines owned by your AWS account in the AWS Region of the endpoint that you're calling
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeStorageVirtualMachines.html
+   */
+  public toDescribeStorageVirtualMachines() {
+    return this.to('DescribeStorageVirtualMachines');
+  }
+
+  /**
+   * Grants permission to return the descriptions of all volumes owned by your AWS account in the AWS Region of the endpoint that you're calling
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeVolumes.html
+   */
+  public toDescribeVolumes() {
+    return this.to('DescribeVolumes');
   }
 
   /**
@@ -310,6 +417,35 @@ export class Fsx extends PolicyStatement {
     return this.to('UpdateFileSystem');
   }
 
+  /**
+   * Grants permission to update storage virtual machine configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateStorageVirtualMachine.html
+   */
+  public toUpdateStorageVirtualMachine() {
+    return this.to('UpdateStorageVirtualMachine');
+  }
+
+  /**
+   * Grants permission to update volume configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifStorageVirtualMachineId()
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateVolume.html
+   */
+  public toUpdateVolume() {
+    return this.to('UpdateVolume');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AssociateFileGateway",
@@ -320,11 +456,18 @@ export class Fsx extends PolicyStatement {
       "CreateDataRepositoryTask",
       "CreateFileSystem",
       "CreateFileSystemFromBackup",
+      "CreateStorageVirtualMachine",
+      "CreateVolume",
+      "CreateVolumeFromBackup",
       "DeleteBackup",
       "DeleteFileSystem",
+      "DeleteStorageVirtualMachine",
+      "DeleteVolume",
       "DisassociateFileGateway",
       "DisassociateFileSystemAliases",
-      "UpdateFileSystem"
+      "UpdateFileSystem",
+      "UpdateStorageVirtualMachine",
+      "UpdateVolume"
     ],
     "Read": [
       "DescribeAssociatedFileGateways",
@@ -332,6 +475,8 @@ export class Fsx extends PolicyStatement {
       "DescribeDataRepositoryTasks",
       "DescribeFileSystemAliases",
       "DescribeFileSystems",
+      "DescribeStorageVirtualMachines",
+      "DescribeVolumes",
       "ListTagsForResource"
     ],
     "Permissions management": [
@@ -388,6 +533,30 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type storage-virtual-machine to the statement
+   *
+   * https://docs.aws.amazon.com/fsx/latest/OntapGuide/access-control-overview.html#access-control-resources
+   *
+   * @param fileSystemId - Identifier for the fileSystemId.
+   * @param storageVirtualMachineId - Identifier for the storageVirtualMachineId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onStorageVirtualMachine(fileSystemId: string, storageVirtualMachineId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:storage-virtual-machine/${FileSystemId}/${StorageVirtualMachineId}';
+    arn = arn.replace('${FileSystemId}', fileSystemId);
+    arn = arn.replace('${StorageVirtualMachineId}', storageVirtualMachineId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type task to the statement
    *
    * https://docs.aws.amazon.com/fsx/latest/LustreGuide/access-control-overview.html#access-control-resources
@@ -403,6 +572,30 @@ export class Fsx extends PolicyStatement {
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:fsx:${Region}:${Account}:task/${TaskId}';
     arn = arn.replace('${TaskId}', taskId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type volume to the statement
+   *
+   * https://docs.aws.amazon.com/fsx/latest/OntapGuide/access-control-overview.html#access-control-resources
+   *
+   * @param fileSystemId - Identifier for the fileSystemId.
+   * @param volumeId - Identifier for the volumeId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVolume(fileSystemId: string, volumeId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:volume/${FileSystemId}/${VolumeId}';
+    arn = arn.replace('${FileSystemId}', fileSystemId);
+    arn = arn.replace('${VolumeId}', volumeId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -429,5 +622,23 @@ export class Fsx extends PolicyStatement {
    */
   public ifIsBackupCopySource(value?: boolean) {
     return this.if(`IsBackupCopySource`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the containing storage virtual machine for a volume for mutating volume operations
+   *
+   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-manage-access-intro.htmlAPI_CreateVolume.html
+   *
+   * Applies to actions:
+   * - .toCreateVolume()
+   * - .toCreateVolumeFromBackup()
+   * - .toDeleteVolume()
+   * - .toUpdateVolume()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifStorageVirtualMachineId(value: string | string[], operator?: Operator | string) {
+    return this.if(`StorageVirtualMachineId`, value, operator || 'StringLike');
   }
 }

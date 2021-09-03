@@ -54,7 +54,7 @@ export class Devicefarm extends PolicyStatement {
   /**
    * Grants permission to create a project for mobile testing
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -895,6 +895,7 @@ export class Devicefarm extends PolicyStatement {
       "CreateDevicePool",
       "CreateInstanceProfile",
       "CreateNetworkProfile",
+      "CreateProject",
       "CreateRemoteAccessSession",
       "CreateTestGridProject",
       "CreateTestGridUrl",
@@ -924,11 +925,6 @@ export class Devicefarm extends PolicyStatement {
       "UpdateTestGridProject",
       "UpdateUpload",
       "UpdateVPCEConfiguration"
-    ],
-    "Tagging": [
-      "CreateProject",
-      "TagResource",
-      "UntagResource"
     ],
     "Read": [
       "GetAccountSettings",
@@ -975,6 +971,10 @@ export class Devicefarm extends PolicyStatement {
       "ListUniqueProblems",
       "ListUploads",
       "ListVPCEConfigurations"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 

@@ -123,6 +123,17 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity Association Key (CAK) pair with an AWS Direct Connect dedicated connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AssociateMacSecKey.html
+   */
+  public toAssociateMacSecKey() {
+    return this.to('AssociateMacSecKey');
+  }
+
+  /**
    * Associates a virtual interface with a specified link aggregation group (LAG) or connection.
    *
    * Access Level: Write
@@ -587,6 +598,17 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove the association between a MAC Security (MACsec) security key and an AWS Direct Connect dedicated connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DisassociateMacSecKey.html
+   */
+  public toDisassociateMacSecKey() {
+    return this.to('DisassociateMacSecKey');
+  }
+
+  /**
    * Lists the virtual interface failover test history.
    *
    * Access Level: List
@@ -649,6 +671,17 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the AWS Direct Connect dedicated connection configuration. You can update the following parameters for a connection: The connection name or The connection's MAC Security (MACsec) encryption mode
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateConnection.html
+   */
+  public toUpdateConnection() {
+    return this.to('UpdateConnection');
+  }
+
+  /**
    * Updates the specified attributes of the Direct Connect gateway association.
    *
    * Access Level: Write
@@ -691,6 +724,7 @@ export class Directconnect extends PolicyStatement {
       "AllocateTransitVirtualInterface",
       "AssociateConnectionWithLag",
       "AssociateHostedConnection",
+      "AssociateMacSecKey",
       "AssociateVirtualInterface",
       "ConfirmConnection",
       "ConfirmPrivateVirtualInterface",
@@ -715,8 +749,10 @@ export class Directconnect extends PolicyStatement {
       "DeleteLag",
       "DeleteVirtualInterface",
       "DisassociateConnectionFromLag",
+      "DisassociateMacSecKey",
       "StartBgpFailoverTest",
       "StopBgpFailoverTest",
+      "UpdateConnection",
       "UpdateDirectConnectGatewayAssociation",
       "UpdateLag",
       "UpdateVirtualInterfaceAttributes"

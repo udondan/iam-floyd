@@ -15,8 +15,10 @@ iotevents:DescribeAlarm;Read
 iotevents:DescribeAlarmModel;Read
 iotevents:DescribeDetector;Read
 iotevents:DescribeDetectorModel;Read
+iotevents:DescribeDetectorModelAnalysis;Read
 iotevents:DescribeInput;Read
 iotevents:DescribeLoggingOptions;Read
+iotevents:GetDetectorModelAnalysisResults;Read
 iotevents:ListAlarmModelVersions;List
 iotevents:ListAlarmModels;List
 iotevents:ListAlarms;List
@@ -27,6 +29,7 @@ iotevents:ListInputRoutings;List
 iotevents:ListInputs;List
 iotevents:ListTagsForResource;Read
 iotevents:PutLoggingOptions;Write
+iotevents:StartDetectorModelAnalysis;Write
 iotevents:TagResource;Tagging
 iotevents:UntagResource;Tagging
 iotevents:UpdateAlarmModel;Write

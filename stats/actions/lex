@@ -54,6 +54,8 @@ lex:GetImport;Read
 lex:GetIntent;Read
 lex:GetIntentVersions;List
 lex:GetIntents;List
+lex:GetMigration;Read
+lex:GetMigrations;List
 lex:GetSession;Read
 lex:GetSlotType;Read
 lex:GetSlotTypeVersions;List
@@ -83,6 +85,7 @@ lex:RecognizeText;Write
 lex:RecognizeUtterance;Write
 lex:StartConversation;Write
 lex:StartImport;Write
+lex:StartMigration;Write
 lex:TagResource;Tagging
 lex:UntagResource;Tagging
 lex:UpdateBot;Write

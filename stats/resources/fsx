@@ -1,3 +1,5 @@
 fsx:backup
 fsx:file-system
+fsx:storage-virtual-machine
 fsx:task
+fsx:volume

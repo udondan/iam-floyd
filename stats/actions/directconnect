@@ -6,6 +6,7 @@ directconnect:AllocatePublicVirtualInterface;Write
 directconnect:AllocateTransitVirtualInterface;Write
 directconnect:AssociateConnectionWithLag;Write
 directconnect:AssociateHostedConnection;Write
+directconnect:AssociateMacSecKey;Write
 directconnect:AssociateVirtualInterface;Write
 directconnect:ConfirmConnection;Write
 directconnect:ConfirmPrivateVirtualInterface;Write
@@ -46,11 +47,13 @@ directconnect:DescribeTags;Read
 directconnect:DescribeVirtualGateways;Read
 directconnect:DescribeVirtualInterfaces;Read
 directconnect:DisassociateConnectionFromLag;Write
+directconnect:DisassociateMacSecKey;Write
 directconnect:ListVirtualInterfaceTestHistory;List
 directconnect:StartBgpFailoverTest;Write
 directconnect:StopBgpFailoverTest;Write
 directconnect:TagResource;Tagging
 directconnect:UntagResource;Tagging
+directconnect:UpdateConnection;Write
 directconnect:UpdateDirectConnectGatewayAssociation;Write
 directconnect:UpdateLag;Write
 directconnect:UpdateVirtualInterfaceAttributes;Write

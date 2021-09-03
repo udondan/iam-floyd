@@ -19,5 +19,8 @@ servicediscovery:ListTagsForResource;List
 servicediscovery:RegisterInstance;Write
 servicediscovery:TagResource;Tagging
 servicediscovery:UntagResource;Tagging
+servicediscovery:UpdateHttpNamespace;Write
 servicediscovery:UpdateInstanceCustomHealthStatus;Write
+servicediscovery:UpdatePrivateDnsNamespace;Write
+servicediscovery:UpdatePublicDnsNamespace;Write
 servicediscovery:UpdateService;Write

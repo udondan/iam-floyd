@@ -327,6 +327,28 @@ export class Lex extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view an ongoing or completed migration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lex/latest/dg/API_GetMigration.html
+   */
+  public toGetMigration() {
+    return this.to('GetMigration');
+  }
+
+  /**
+   * Grants permission to view list of migrations from Amazon Lex v1 to Amazon Lex v2
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lex/latest/dg/API_GetMigrations.html
+   */
+  public toGetMigrations() {
+    return this.to('GetMigrations');
+  }
+
+  /**
    * Returns session information for a specified bot, alias, and user ID.
    *
    * Access Level: Read
@@ -489,6 +511,17 @@ export class Lex extends PolicyStatement {
   }
 
   /**
+   * Grants permission to migrate a bot from Amazon Lex v1 to Amazon Lex v2
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lex/latest/dg/API_StartMigration.html
+   */
+  public toStartMigration() {
+    return this.to('StartMigration');
+  }
+
+  /**
    * Adds or overwrites tags to a Lex resource
    *
    * Access Level: Tagging
@@ -540,7 +573,8 @@ export class Lex extends PolicyStatement {
       "PutIntent",
       "PutSession",
       "PutSlotType",
-      "StartImport"
+      "StartImport",
+      "StartMigration"
     ],
     "Read": [
       "GetBot",
@@ -552,6 +586,7 @@ export class Lex extends PolicyStatement {
       "GetExport",
       "GetImport",
       "GetIntent",
+      "GetMigration",
       "GetSession",
       "GetSlotType",
       "ListTagsForResource"
@@ -563,6 +598,7 @@ export class Lex extends PolicyStatement {
       "GetBots",
       "GetIntentVersions",
       "GetIntents",
+      "GetMigrations",
       "GetSlotTypeVersions",
       "GetSlotTypes",
       "GetUtterancesView"
@@ -714,6 +750,8 @@ export class Lex extends PolicyStatement {
   /**
    * Enables you to control access based on the intents included in the request.
    *
+   * https://docs.aws.amazon.com/lex/latest/dg/security_iam_service-with-iam.html
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -724,6 +762,8 @@ export class Lex extends PolicyStatement {
   /**
    * Enables you to control access based on the slot types included in the request.
    *
+   * https://docs.aws.amazon.com/lex/latest/dg/security_iam_service-with-iam.html
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -733,6 +773,8 @@ export class Lex extends PolicyStatement {
 
   /**
    * Enables you to control access based on the channel type included in the request.
+   *
+   * https://docs.aws.amazon.com/lex/latest/dg/security_iam_service-with-iam.html
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

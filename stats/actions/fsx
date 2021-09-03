@@ -6,13 +6,20 @@ fsx:CreateBackup;Write
 fsx:CreateDataRepositoryTask;Write
 fsx:CreateFileSystem;Write
 fsx:CreateFileSystemFromBackup;Write
+fsx:CreateStorageVirtualMachine;Write
+fsx:CreateVolume;Write
+fsx:CreateVolumeFromBackup;Write
 fsx:DeleteBackup;Write
 fsx:DeleteFileSystem;Write
+fsx:DeleteStorageVirtualMachine;Write
+fsx:DeleteVolume;Write
 fsx:DescribeAssociatedFileGateways;Read
 fsx:DescribeBackups;Read
 fsx:DescribeDataRepositoryTasks;Read
 fsx:DescribeFileSystemAliases;Read
 fsx:DescribeFileSystems;Read
+fsx:DescribeStorageVirtualMachines;Read
+fsx:DescribeVolumes;Read
 fsx:DisassociateFileGateway;Write
 fsx:DisassociateFileSystemAliases;Write
 fsx:ListTagsForResource;Read
@@ -20,3 +27,5 @@ fsx:ManageBackupPrincipalAssociations;Permissions management
 fsx:TagResource;Tagging
 fsx:UntagResource;Tagging
 fsx:UpdateFileSystem;Write
+fsx:UpdateStorageVirtualMachine;Write
+fsx:UpdateVolume;Write
