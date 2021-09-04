@@ -1990,6 +1990,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get inferences from the hosted model at the specified endpoint in an asynchronous manner
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_InvokeEndpointAsync.html
+   */
+  public toInvokeEndpointAsync() {
+    return this.to('InvokeEndpointAsync');
+  }
+
+  /**
    * Grants permission to list actions
    *
    * Access Level: List
@@ -3361,6 +3372,7 @@ export class Sagemaker extends PolicyStatement {
       "GetSagemakerServicecatalogPortfolioStatus",
       "GetSearchSuggestions",
       "InvokeEndpoint",
+      "InvokeEndpointAsync",
       "RenderUiTemplate",
       "Search"
     ],

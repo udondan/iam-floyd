@@ -145,6 +145,7 @@ sagemaker:GetRecord;Read
 sagemaker:GetSagemakerServicecatalogPortfolioStatus;Read
 sagemaker:GetSearchSuggestions;Read
 sagemaker:InvokeEndpoint;Read
+sagemaker:InvokeEndpointAsync;Read
 sagemaker:ListActions;List
 sagemaker:ListAlgorithms;List
 sagemaker:ListAppImageConfigs;List

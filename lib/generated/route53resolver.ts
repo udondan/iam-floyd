@@ -558,7 +558,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Grants permission to specify an AWS account that you want to share a Firewall rule group with, the Firewall rule group that you want to share, and the operations that you want the account to be able to perform on the configuration
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_PutFirewallRuleGroupPolicy.html
    */
@@ -569,7 +569,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Grants permission to specify an AWS account that you want to share a query logging configuration with, the query logging configuration that you want to share, and the operations that you want the account to be able to perform on the configuration
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_PutResolverQueryLogConfigPolicy.html
    */
@@ -580,7 +580,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Grants permission to specify an AWS account that you want to share rules with, the Resolver rules that you want to share, and the operations that you want the account to be able to perform on those rules
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_PutResolverRulePolicy.html
    */
@@ -713,9 +713,6 @@ export class Route53resolver extends PolicyStatement {
       "DisassociateResolverQueryLogConfig",
       "DisassociateResolverRule",
       "ImportFirewallDomains",
-      "PutFirewallRuleGroupPolicy",
-      "PutResolverQueryLogConfigPolicy",
-      "PutResolverRulePolicy",
       "UpdateFirewallConfig",
       "UpdateFirewallDomains",
       "UpdateFirewallRule",
@@ -755,6 +752,11 @@ export class Route53resolver extends PolicyStatement {
       "ListResolverRuleAssociations",
       "ListResolverRules"
     ],
+    "Permissions management": [
+      "PutFirewallRuleGroupPolicy",
+      "PutResolverQueryLogConfigPolicy",
+      "PutResolverRulePolicy"
+    ],
     "Tagging": [
       "TagResource",
       "UntagResource"
@@ -764,7 +766,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type resolver-dnssec-config to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -786,7 +788,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type resolver-query-log-config to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -808,7 +810,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type resolver-rule to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -830,7 +832,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type resolver-endpoint to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -852,7 +854,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type firewall-rule-group to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -874,7 +876,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type firewall-rule-group-association to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -896,7 +898,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type firewall-domain-list to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -918,7 +920,7 @@ export class Route53resolver extends PolicyStatement {
   /**
    * Adds a resource of type firewall-config to the statement
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.

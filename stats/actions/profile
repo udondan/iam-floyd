@@ -9,6 +9,7 @@ profile:DeleteProfileObject;Write
 profile:DeleteProfileObjectType;Write
 profile:GetDomain;Read
 profile:GetIntegration;Read
+profile:GetMatches;List
 profile:GetProfileObjectType;Read
 profile:GetProfileObjectTypeTemplate;Read
 profile:ListAccountIntegrations;List
@@ -17,7 +18,8 @@ profile:ListIntegrations;List
 profile:ListProfileObjectTypeTemplates;List
 profile:ListProfileObjectTypes;List
 profile:ListProfileObjects;List
-profile:ListTagsForResource;List
+profile:ListTagsForResource;Read
+profile:MergeProfiles;Write
 profile:PutIntegration;Write
 profile:PutProfileObject;Write
 profile:PutProfileObjectType;Write

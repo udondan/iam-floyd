@@ -221,6 +221,17 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the application version of an application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DescribeApplicationVersion.html
+   */
+  public toDescribeApplicationVersion() {
+    return this.to('DescribeApplicationVersion');
+  }
+
+  /**
    * Grants permission to discover the input schema for the application
    *
    * Access Level: Read
@@ -243,6 +254,17 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list application versions of an application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_ListApplicationVersions.html
+   */
+  public toListApplicationVersions() {
+    return this.to('ListApplicationVersions');
+  }
+
+  /**
    * Grants permission to list applications for the account
    *
    * Access Level: List
@@ -262,6 +284,17 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to perform rollback operation on an application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_RollbackApplication.html
+   */
+  public toRollbackApplication() {
+    return this.to('RollbackApplication');
   }
 
   /**
@@ -326,6 +359,17 @@ export class KinesisanalyticsV2 extends PolicyStatement {
     return this.to('UpdateApplication');
   }
 
+  /**
+   * Grants permission to update the maintenance configuration of an application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_UpdateApplicationMaintenanceConfiguration.html
+   */
+  public toUpdateApplicationMaintenanceConfiguration() {
+    return this.to('UpdateApplicationMaintenanceConfiguration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "AddApplicationCloudWatchLoggingOption",
@@ -343,16 +387,20 @@ export class KinesisanalyticsV2 extends PolicyStatement {
       "DeleteApplicationReferenceDataSource",
       "DeleteApplicationSnapshot",
       "DeleteApplicationVpcConfiguration",
+      "RollbackApplication",
       "StartApplication",
       "StopApplication",
-      "UpdateApplication"
+      "UpdateApplication",
+      "UpdateApplicationMaintenanceConfiguration"
     ],
     "Read": [
       "CreateApplicationPresignedUrl",
       "DescribeApplication",
       "DescribeApplicationSnapshot",
+      "DescribeApplicationVersion",
       "DiscoverInputSchema",
       "ListApplicationSnapshots",
+      "ListApplicationVersions",
       "ListTagsForResource"
     ],
     "List": [

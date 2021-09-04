@@ -144,6 +144,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get profile matches
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html
+   */
+  public toGetMatches() {
+    return this.to('GetMatches');
+  }
+
+  /**
    * Grants permission to get a specific profile object type in the domain
    *
    * Access Level: Read
@@ -234,12 +245,23 @@ export class Profile extends PolicyStatement {
   /**
    * Grants permission to list tags for a resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to merge profiles
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MergeProfiles.html
+   */
+  public toMergeProfiles() {
+    return this.to('MergeProfiles');
   }
 
   /**
@@ -357,6 +379,7 @@ export class Profile extends PolicyStatement {
       "DeleteProfileKey",
       "DeleteProfileObject",
       "DeleteProfileObjectType",
+      "MergeProfiles",
       "PutIntegration",
       "PutProfileObject",
       "PutProfileObjectType",
@@ -368,16 +391,17 @@ export class Profile extends PolicyStatement {
       "GetIntegration",
       "GetProfileObjectType",
       "GetProfileObjectTypeTemplate",
+      "ListTagsForResource",
       "SearchProfiles"
     ],
     "List": [
+      "GetMatches",
       "ListAccountIntegrations",
       "ListDomains",
       "ListIntegrations",
       "ListProfileObjectTypeTemplates",
       "ListProfileObjectTypes",
-      "ListProfileObjects",
-      "ListTagsForResource"
+      "ListProfileObjects"
     ],
     "Tagging": [
       "TagResource",
