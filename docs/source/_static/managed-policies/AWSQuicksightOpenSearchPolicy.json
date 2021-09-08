@@ -20,7 +20,6 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"es:DescribeElasticsearchDomain",
 				"es:DescribeDomain"
 			],
 			"Resource": [
