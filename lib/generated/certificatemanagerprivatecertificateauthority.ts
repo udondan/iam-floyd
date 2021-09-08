@@ -21,7 +21,7 @@ export class AcmPca extends PolicyStatement {
   /**
    * Creates an ACM Private CA and its associated private key and configuration.
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -286,12 +286,8 @@ export class AcmPca extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Tagging": [
-      "CreateCertificateAuthority",
-      "TagCertificateAuthority",
-      "UntagCertificateAuthority"
-    ],
     "Write": [
+      "CreateCertificateAuthority",
       "CreateCertificateAuthorityAuditReport",
       "DeleteCertificateAuthority",
       "ImportCertificateAuthorityCertificate",
@@ -318,6 +314,10 @@ export class AcmPca extends PolicyStatement {
     ],
     "List": [
       "ListCertificateAuthorities"
+    ],
+    "Tagging": [
+      "TagCertificateAuthority",
+      "UntagCertificateAuthority"
     ]
   };
 

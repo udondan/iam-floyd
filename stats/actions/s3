@@ -4,6 +4,7 @@ s3:CreateAccessPoint;Write
 s3:CreateAccessPointForObjectLambda;Write
 s3:CreateBucket;Write
 s3:CreateJob;Write
+s3:CreateMultiRegionAccessPoint;Write
 s3:DeleteAccessPoint;Write
 s3:DeleteAccessPointForObjectLambda;Write
 s3:DeleteAccessPointPolicy;Permissions management
@@ -13,6 +14,7 @@ s3:DeleteBucketOwnershipControls;Write
 s3:DeleteBucketPolicy;Permissions management
 s3:DeleteBucketWebsite;Write
 s3:DeleteJobTagging;Tagging
+s3:DeleteMultiRegionAccessPoint;Write
 s3:DeleteObject;Write
 s3:DeleteObjectTagging;Tagging
 s3:DeleteObjectVersion;Write
@@ -20,6 +22,7 @@ s3:DeleteObjectVersionTagging;Tagging
 s3:DeleteStorageLensConfiguration;Write
 s3:DeleteStorageLensConfigurationTagging;Tagging
 s3:DescribeJob;Read
+s3:DescribeMultiRegionAccessPointOperation;Read
 s3:GetAccelerateConfiguration;Read
 s3:GetAccessPoint;Read
 s3:GetAccessPointConfigurationForObjectLambda;Read
@@ -50,6 +53,9 @@ s3:GetInventoryConfiguration;Read
 s3:GetJobTagging;Read
 s3:GetLifecycleConfiguration;Read
 s3:GetMetricsConfiguration;Read
+s3:GetMultiRegionAccessPoint;Read
+s3:GetMultiRegionAccessPointPolicy;Read
+s3:GetMultiRegionAccessPointPolicyStatus;Read
 s3:GetObject;Read
 s3:GetObjectAcl;Read
 s3:GetObjectLegalHold;Read
@@ -65,13 +71,14 @@ s3:GetReplicationConfiguration;Read
 s3:GetStorageLensConfiguration;Read
 s3:GetStorageLensConfigurationTagging;Read
 s3:GetStorageLensDashboard;Read
-s3:ListAccessPoints;Read
-s3:ListAccessPointsForObjectLambda;Read
+s3:ListAccessPoints;List
+s3:ListAccessPointsForObjectLambda;List
 s3:ListAllMyBuckets;List
 s3:ListBucket;List
 s3:ListBucketMultipartUploads;List
 s3:ListBucketVersions;List
 s3:ListJobs;List
+s3:ListMultiRegionAccessPoints;List
 s3:ListMultipartUploadParts;List
 s3:ListStorageLensConfigurations;List
 s3:ObjectOwnerOverrideToBucketOwner;Permissions management
@@ -99,6 +106,7 @@ s3:PutInventoryConfiguration;Write
 s3:PutJobTagging;Tagging
 s3:PutLifecycleConfiguration;Write
 s3:PutMetricsConfiguration;Write
+s3:PutMultiRegionAccessPointPolicy;Permissions management
 s3:PutObject;Write
 s3:PutObjectAcl;Permissions management
 s3:PutObjectLegalHold;Write

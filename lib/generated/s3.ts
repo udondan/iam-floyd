@@ -179,6 +179,28 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new multi region access point
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAwsRequestedRegion()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html
+   */
+  public toCreateMultiRegionAccessPoint() {
+    return this.to('CreateMultiRegionAccessPoint');
+  }
+
+  /**
    * Grants permission to delete the access point named in the URI
    *
    * Access Level: Write
@@ -364,6 +386,28 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the multi region access point named in the URI
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAwsRequestedRegion()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html
+   */
+  public toDeleteMultiRegionAccessPoint() {
+    return this.to('DeleteMultiRegionAccessPoint');
+  }
+
+  /**
    * Grants permission to remove the null version of an object and insert a delete marker, which becomes the current version of the object
    *
    * Access Level: Write
@@ -510,6 +554,25 @@ export class S3 extends PolicyStatement {
    */
   public toDescribeJob() {
     return this.to('DescribeJob');
+  }
+
+  /**
+   * Grants permission to retrieve the configurations for a multi region access point
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestedRegion()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html
+   */
+  public toDescribeMultiRegionAccessPointOperation() {
+    return this.to('DescribeMultiRegionAccessPointOperation');
   }
 
   /**
@@ -1096,6 +1159,72 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return configuration information about the specified multi region access point
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAwsRequestedRegion()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html
+   */
+  public toGetMultiRegionAccessPoint() {
+    return this.to('GetMultiRegionAccessPoint');
+  }
+
+  /**
+   * Grants permission to returns the access point policy associated with the specified multi region access point
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAwsRequestedRegion()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html
+   */
+  public toGetMultiRegionAccessPointPolicy() {
+    return this.to('GetMultiRegionAccessPointPolicy');
+  }
+
+  /**
+   * Grants permission to return the policy status for a specific multi region access point policy
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAwsRequestedRegion()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html
+   */
+  public toGetMultiRegionAccessPointPolicyStatus() {
+    return this.to('GetMultiRegionAccessPointPolicyStatus');
+  }
+
+  /**
    * Grants permission to retrieve objects from Amazon S3
    *
    * Access Level: Read
@@ -1417,7 +1546,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to list access points
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -1436,7 +1565,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to list object lambda enabled accesspoints
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -1560,6 +1689,25 @@ export class S3 extends PolicyStatement {
    */
   public toListJobs() {
     return this.to('ListJobs');
+  }
+
+  /**
+   * Grants permission to list multi region access points
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestedRegion()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html
+   */
+  public toListMultiRegionAccessPoints() {
+    return this.to('ListMultiRegionAccessPoints');
   }
 
   /**
@@ -2097,6 +2245,28 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an access policy with a specified multi region access point
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAwsRequestedRegion()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifSignatureAge()
+   * - .ifTlsVersion()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html
+   */
+  public toPutMultiRegionAccessPointPolicy() {
+    return this.to('PutMultiRegionAccessPointPolicy');
+  }
+
+  /**
    * Grants permission to add an object to a bucket
    *
    * Access Level: Write
@@ -2492,11 +2662,13 @@ export class S3 extends PolicyStatement {
       "CreateAccessPointForObjectLambda",
       "CreateBucket",
       "CreateJob",
+      "CreateMultiRegionAccessPoint",
       "DeleteAccessPoint",
       "DeleteAccessPointForObjectLambda",
       "DeleteBucket",
       "DeleteBucketOwnershipControls",
       "DeleteBucketWebsite",
+      "DeleteMultiRegionAccessPoint",
       "DeleteObject",
       "DeleteObjectVersion",
       "DeleteStorageLensConfiguration",
@@ -2539,6 +2711,7 @@ export class S3 extends PolicyStatement {
       "PutBucketAcl",
       "PutBucketPolicy",
       "PutBucketPublicAccessBlock",
+      "PutMultiRegionAccessPointPolicy",
       "PutObjectAcl",
       "PutObjectVersionAcl"
     ],
@@ -2556,6 +2729,7 @@ export class S3 extends PolicyStatement {
     ],
     "Read": [
       "DescribeJob",
+      "DescribeMultiRegionAccessPointOperation",
       "GetAccelerateConfiguration",
       "GetAccessPoint",
       "GetAccessPointConfigurationForObjectLambda",
@@ -2586,6 +2760,9 @@ export class S3 extends PolicyStatement {
       "GetJobTagging",
       "GetLifecycleConfiguration",
       "GetMetricsConfiguration",
+      "GetMultiRegionAccessPoint",
+      "GetMultiRegionAccessPointPolicy",
+      "GetMultiRegionAccessPointPolicyStatus",
       "GetObject",
       "GetObjectAcl",
       "GetObjectLegalHold",
@@ -2600,16 +2777,17 @@ export class S3 extends PolicyStatement {
       "GetReplicationConfiguration",
       "GetStorageLensConfiguration",
       "GetStorageLensConfigurationTagging",
-      "GetStorageLensDashboard",
-      "ListAccessPoints",
-      "ListAccessPointsForObjectLambda"
+      "GetStorageLensDashboard"
     ],
     "List": [
+      "ListAccessPoints",
+      "ListAccessPointsForObjectLambda",
       "ListAllMyBuckets",
       "ListBucket",
       "ListBucketMultipartUploads",
       "ListBucketVersions",
       "ListJobs",
+      "ListMultiRegionAccessPoints",
       "ListMultipartUploadParts",
       "ListStorageLensConfigurations"
     ]
@@ -2727,6 +2905,42 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type multiregionaccesspoint to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/MultiRegionAccessPointRequests.html
+   *
+   * @param accessPointName - Identifier for the accessPointName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onMultiregionaccesspoint(accessPointName: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:s3::${Account}:accesspoint/${AccessPointName}';
+    arn = arn.replace('${AccessPointName}', accessPointName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type multiregionaccesspointrequestarn to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/MultiRegionAccessPointRequests.html
+   *
+   * @param operation - Identifier for the operation.
+   * @param token - Identifier for the token.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onMultiregionaccesspointrequestarn(operation: string, token: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:s3:us-west-2:${Account}:async-request/mrap/${Operation}/${Token}';
+    arn = arn.replace('${Operation}', operation);
+    arn = arn.replace('${Token}', token);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Filters access by the network origin (Internet or VPC)
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html#access-points-policies
@@ -2736,10 +2950,12 @@ export class S3 extends PolicyStatement {
    * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
+   * - .toCreateMultiRegionAccessPoint()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
+   * - .toDeleteMultiRegionAccessPoint()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
@@ -2751,6 +2967,9 @@ export class S3 extends PolicyStatement {
    * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
    * - .toGetAccessPointPolicyStatusForObjectLambda()
+   * - .toGetMultiRegionAccessPoint()
+   * - .toGetMultiRegionAccessPointPolicy()
+   * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectLegalHold()
@@ -2766,6 +2985,7 @@ export class S3 extends PolicyStatement {
    * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
    * - .toPutAccessPointPolicyForObjectLambda()
+   * - .toPutMultiRegionAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectLegalHold()
@@ -2792,10 +3012,12 @@ export class S3 extends PolicyStatement {
    * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
+   * - .toCreateMultiRegionAccessPoint()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
+   * - .toDeleteMultiRegionAccessPoint()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
@@ -2807,6 +3029,9 @@ export class S3 extends PolicyStatement {
    * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
    * - .toGetAccessPointPolicyStatusForObjectLambda()
+   * - .toGetMultiRegionAccessPoint()
+   * - .toGetMultiRegionAccessPointPolicy()
+   * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectLegalHold()
@@ -2822,6 +3047,7 @@ export class S3 extends PolicyStatement {
    * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
    * - .toPutAccessPointPolicyForObjectLambda()
+   * - .toPutMultiRegionAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectLegalHold()
@@ -2848,10 +3074,12 @@ export class S3 extends PolicyStatement {
    * - .toBypassGovernanceRetention()
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
+   * - .toCreateMultiRegionAccessPoint()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
+   * - .toDeleteMultiRegionAccessPoint()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
@@ -2863,6 +3091,9 @@ export class S3 extends PolicyStatement {
    * - .toGetAccessPointPolicyForObjectLambda()
    * - .toGetAccessPointPolicyStatus()
    * - .toGetAccessPointPolicyStatusForObjectLambda()
+   * - .toGetMultiRegionAccessPoint()
+   * - .toGetMultiRegionAccessPointPolicy()
+   * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectLegalHold()
@@ -2878,6 +3109,7 @@ export class S3 extends PolicyStatement {
    * - .toPutAccessPointConfigurationForObjectLambda()
    * - .toPutAccessPointPolicy()
    * - .toPutAccessPointPolicyForObjectLambda()
+   * - .toPutMultiRegionAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectLegalHold()
@@ -3064,6 +3296,7 @@ export class S3 extends PolicyStatement {
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
+   * - .toCreateMultiRegionAccessPoint()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
@@ -3073,6 +3306,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
+   * - .toDeleteMultiRegionAccessPoint()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
@@ -3080,6 +3314,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
    * - .toDescribeJob()
+   * - .toDescribeMultiRegionAccessPointOperation()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
    * - .toGetAccessPointConfigurationForObjectLambda()
@@ -3109,6 +3344,9 @@ export class S3 extends PolicyStatement {
    * - .toGetJobTagging()
    * - .toGetLifecycleConfiguration()
    * - .toGetMetricsConfiguration()
+   * - .toGetMultiRegionAccessPoint()
+   * - .toGetMultiRegionAccessPointPolicy()
+   * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectLegalHold()
@@ -3131,6 +3369,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucketMultipartUploads()
    * - .toListBucketVersions()
    * - .toListJobs()
+   * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
    * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
@@ -3158,6 +3397,7 @@ export class S3 extends PolicyStatement {
    * - .toPutJobTagging()
    * - .toPutLifecycleConfiguration()
    * - .toPutMetricsConfiguration()
+   * - .toPutMultiRegionAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectLegalHold()
@@ -3194,6 +3434,7 @@ export class S3 extends PolicyStatement {
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
+   * - .toCreateMultiRegionAccessPoint()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
@@ -3203,6 +3444,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
+   * - .toDeleteMultiRegionAccessPoint()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
@@ -3210,6 +3452,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
    * - .toDescribeJob()
+   * - .toDescribeMultiRegionAccessPointOperation()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
    * - .toGetAccessPointConfigurationForObjectLambda()
@@ -3239,6 +3482,9 @@ export class S3 extends PolicyStatement {
    * - .toGetJobTagging()
    * - .toGetLifecycleConfiguration()
    * - .toGetMetricsConfiguration()
+   * - .toGetMultiRegionAccessPoint()
+   * - .toGetMultiRegionAccessPointPolicy()
+   * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectLegalHold()
@@ -3261,6 +3507,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucketMultipartUploads()
    * - .toListBucketVersions()
    * - .toListJobs()
+   * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
    * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
@@ -3288,6 +3535,7 @@ export class S3 extends PolicyStatement {
    * - .toPutJobTagging()
    * - .toPutLifecycleConfiguration()
    * - .toPutMetricsConfiguration()
+   * - .toPutMultiRegionAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectLegalHold()
@@ -3336,6 +3584,7 @@ export class S3 extends PolicyStatement {
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
+   * - .toCreateMultiRegionAccessPoint()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
@@ -3345,6 +3594,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
+   * - .toDeleteMultiRegionAccessPoint()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
@@ -3352,6 +3602,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
    * - .toDescribeJob()
+   * - .toDescribeMultiRegionAccessPointOperation()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
    * - .toGetAccessPointConfigurationForObjectLambda()
@@ -3381,6 +3632,9 @@ export class S3 extends PolicyStatement {
    * - .toGetJobTagging()
    * - .toGetLifecycleConfiguration()
    * - .toGetMetricsConfiguration()
+   * - .toGetMultiRegionAccessPoint()
+   * - .toGetMultiRegionAccessPointPolicy()
+   * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectLegalHold()
@@ -3403,6 +3657,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucketMultipartUploads()
    * - .toListBucketVersions()
    * - .toListJobs()
+   * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
    * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
@@ -3430,6 +3685,7 @@ export class S3 extends PolicyStatement {
    * - .toPutJobTagging()
    * - .toPutLifecycleConfiguration()
    * - .toPutMetricsConfiguration()
+   * - .toPutMultiRegionAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectLegalHold()
@@ -3598,6 +3854,7 @@ export class S3 extends PolicyStatement {
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
+   * - .toCreateMultiRegionAccessPoint()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
@@ -3607,6 +3864,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
+   * - .toDeleteMultiRegionAccessPoint()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
@@ -3614,6 +3872,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
    * - .toDescribeJob()
+   * - .toDescribeMultiRegionAccessPointOperation()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
    * - .toGetAccessPointConfigurationForObjectLambda()
@@ -3643,6 +3902,9 @@ export class S3 extends PolicyStatement {
    * - .toGetJobTagging()
    * - .toGetLifecycleConfiguration()
    * - .toGetMetricsConfiguration()
+   * - .toGetMultiRegionAccessPoint()
+   * - .toGetMultiRegionAccessPointPolicy()
+   * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectLegalHold()
@@ -3665,6 +3927,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucketMultipartUploads()
    * - .toListBucketVersions()
    * - .toListJobs()
+   * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
    * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
@@ -3692,6 +3955,7 @@ export class S3 extends PolicyStatement {
    * - .toPutJobTagging()
    * - .toPutLifecycleConfiguration()
    * - .toPutMetricsConfiguration()
+   * - .toPutMultiRegionAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectLegalHold()
@@ -3728,6 +3992,7 @@ export class S3 extends PolicyStatement {
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
    * - .toCreateJob()
+   * - .toCreateMultiRegionAccessPoint()
    * - .toDeleteAccessPoint()
    * - .toDeleteAccessPointForObjectLambda()
    * - .toDeleteAccessPointPolicy()
@@ -3737,6 +4002,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
+   * - .toDeleteMultiRegionAccessPoint()
    * - .toDeleteObject()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
@@ -3744,6 +4010,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
    * - .toDescribeJob()
+   * - .toDescribeMultiRegionAccessPointOperation()
    * - .toGetAccelerateConfiguration()
    * - .toGetAccessPoint()
    * - .toGetAccessPointConfigurationForObjectLambda()
@@ -3773,6 +4040,9 @@ export class S3 extends PolicyStatement {
    * - .toGetJobTagging()
    * - .toGetLifecycleConfiguration()
    * - .toGetMetricsConfiguration()
+   * - .toGetMultiRegionAccessPoint()
+   * - .toGetMultiRegionAccessPointPolicy()
+   * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
    * - .toGetObjectLegalHold()
@@ -3795,6 +4065,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucketMultipartUploads()
    * - .toListBucketVersions()
    * - .toListJobs()
+   * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
    * - .toListStorageLensConfigurations()
    * - .toObjectOwnerOverrideToBucketOwner()
@@ -3822,6 +4093,7 @@ export class S3 extends PolicyStatement {
    * - .toPutJobTagging()
    * - .toPutLifecycleConfiguration()
    * - .toPutMetricsConfiguration()
+   * - .toPutMultiRegionAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
    * - .toPutObjectLegalHold()

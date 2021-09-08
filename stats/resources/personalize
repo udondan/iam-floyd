@@ -2,6 +2,7 @@ personalize:algorithm
 personalize:batchInferenceJob
 personalize:campaign
 personalize:dataset
+personalize:datasetExportJob
 personalize:datasetGroup
 personalize:datasetImportJob
 personalize:eventTracker

@@ -52,6 +52,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a dataset export job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html
+   */
+  public toCreateDatasetExportJob() {
+    return this.to('CreateDatasetExportJob');
+  }
+
+  /**
    * Grants permission to create a dataset group
    *
    * Access Level: Write
@@ -250,6 +261,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a dataset export job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html
+   */
+  public toDescribeDatasetExportJob() {
+    return this.to('DescribeDatasetExportJob');
+  }
+
+  /**
    * Grants permission to describe a dataset group
    *
    * Access Level: Read
@@ -404,6 +426,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list dataset export jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasetExportJobs.html
+   */
+  public toListDatasetExportJobs() {
+    return this.to('ListDatasetExportJobs');
+  }
+
+  /**
    * Grants permission to list dataset groups
    *
    * Access Level: List
@@ -551,6 +584,7 @@ export class Personalize extends PolicyStatement {
       "CreateBatchInferenceJob",
       "CreateCampaign",
       "CreateDataset",
+      "CreateDatasetExportJob",
       "CreateDatasetGroup",
       "CreateDatasetImportJob",
       "CreateEventTracker",
@@ -575,6 +609,7 @@ export class Personalize extends PolicyStatement {
       "DescribeBatchInferenceJob",
       "DescribeCampaign",
       "DescribeDataset",
+      "DescribeDatasetExportJob",
       "DescribeDatasetGroup",
       "DescribeDatasetImportJob",
       "DescribeEventTracker",
@@ -591,6 +626,7 @@ export class Personalize extends PolicyStatement {
     "List": [
       "ListBatchInferenceJobs",
       "ListCampaigns",
+      "ListDatasetExportJobs",
       "ListDatasetGroups",
       "ListDatasetImportJobs",
       "ListDatasets",
@@ -681,6 +717,25 @@ export class Personalize extends PolicyStatement {
    */
   public onDatasetImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:personalize:${Region}:${Account}:dataset-import-job/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type datasetExportJob to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/export-data.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDatasetExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:dataset-export-job/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

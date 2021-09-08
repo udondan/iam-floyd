@@ -1,4 +1,4 @@
-acm-pca:CreateCertificateAuthority;Tagging
+acm-pca:CreateCertificateAuthority;Write
 acm-pca:CreateCertificateAuthorityAuditReport;Write
 acm-pca:CreatePermission;Permissions management
 acm-pca:DeleteCertificateAuthority;Write

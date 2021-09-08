@@ -1,6 +1,7 @@
 personalize:CreateBatchInferenceJob;Write
 personalize:CreateCampaign;Write
 personalize:CreateDataset;Write
+personalize:CreateDatasetExportJob;Write
 personalize:CreateDatasetGroup;Write
 personalize:CreateDatasetImportJob;Write
 personalize:CreateEventTracker;Write
@@ -19,6 +20,7 @@ personalize:DescribeAlgorithm;Read
 personalize:DescribeBatchInferenceJob;Read
 personalize:DescribeCampaign;Read
 personalize:DescribeDataset;Read
+personalize:DescribeDatasetExportJob;Read
 personalize:DescribeDatasetGroup;Read
 personalize:DescribeDatasetImportJob;Read
 personalize:DescribeEventTracker;Read
@@ -33,6 +35,7 @@ personalize:GetRecommendations;Read
 personalize:GetSolutionMetrics;Read
 personalize:ListBatchInferenceJobs;List
 personalize:ListCampaigns;List
+personalize:ListDatasetExportJobs;List
 personalize:ListDatasetGroups;List
 personalize:ListDatasetImportJobs;List
 personalize:ListDatasets;List
