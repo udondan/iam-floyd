@@ -373,6 +373,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the storage configuration for the AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeStorageConfiguration.html
+   */
+  public toDescribeStorageConfiguration() {
+    return this.to('DescribeStorageConfiguration');
+  }
+
+  /**
    * Grants permission to disassociate a child asset from a parent asset by a hierarchy
    *
    * Access Level: Write
@@ -563,6 +574,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set storage configuration for the AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html
+   */
+  public toPutStorageConfiguration() {
+    return this.to('PutStorageConfiguration');
+  }
+
+  /**
    * Grants permission to tag a resource
    *
    * Access Level: Tagging
@@ -722,6 +744,7 @@ export class Iotsitewise extends PolicyStatement {
       "DisassociateAssets",
       "PutDefaultEncryptionConfiguration",
       "PutLoggingOptions",
+      "PutStorageConfiguration",
       "UpdateAccessPolicy",
       "UpdateAsset",
       "UpdateAssetModel",
@@ -745,6 +768,7 @@ export class Iotsitewise extends PolicyStatement {
       "DescribeLoggingOptions",
       "DescribePortal",
       "DescribeProject",
+      "DescribeStorageConfiguration",
       "GetAssetPropertyAggregates",
       "GetAssetPropertyValue",
       "GetAssetPropertyValueHistory",

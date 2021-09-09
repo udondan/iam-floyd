@@ -156,6 +156,21 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a partner input
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/create-partner-input.html
+   */
+  public toCreatePartnerInput() {
+    return this.to('CreatePartnerInput');
+  }
+
+  /**
    * Grants permission to create tags for channels, inputs, input security groups, multiplexes, and reservations
    *
    * Access Level: Tagging
@@ -663,6 +678,7 @@ export class Medialive extends PolicyStatement {
       "CreateInputSecurityGroup",
       "CreateMultiplex",
       "CreateMultiplexProgram",
+      "CreatePartnerInput",
       "DeleteChannel",
       "DeleteInput",
       "DeleteInputSecurityGroup",

@@ -201,6 +201,8 @@ chime:RetrieveDataExports;Write
 chime:SearchAvailablePhoneNumbers;Read
 chime:SendChannelMessage;Write
 chime:StartDataExport;Write
+chime:StartMeetingTranscription;Write
+chime:StopMeetingTranscription;Write
 chime:SubmitSupportRequest;Write
 chime:SuspendUsers;Write
 chime:TagAttendee;Tagging

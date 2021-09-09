@@ -142,6 +142,32 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a QuickSight folder
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateFolder.html
+   */
+  public toCreateFolder() {
+    return this.to('CreateFolder');
+  }
+
+  /**
+   * Grants permission to add a QuickSight Dashboard, Analysis or Dataset to a QuickSight Folder
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateFolderMembership.html
+   */
+  public toCreateFolderMembership() {
+    return this.to('CreateFolderMembership');
+  }
+
+  /**
    * Grants permission to create a QuickSight group
    *
    * Access Level: Write
@@ -385,6 +411,28 @@ export class Quicksight extends PolicyStatement {
    */
   public toDeleteDataSource() {
     return this.to('DeleteDataSource');
+  }
+
+  /**
+   * Grants permission to delete a QuickSight Folder
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteFolder.html
+   */
+  public toDeleteFolder() {
+    return this.to('DeleteFolder');
+  }
+
+  /**
+   * Grants permission to remove a QuickSight Dashboard, Analysis or Dataset from a QuickSight Folder
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteFolderMembership.html
+   */
+  public toDeleteFolderMembership() {
+    return this.to('DeleteFolderMembership');
   }
 
   /**
@@ -643,6 +691,39 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeDataSourcePermissions() {
     return this.to('DescribeDataSourcePermissions');
+  }
+
+  /**
+   * Grants permission to describe a QuickSight Folder
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeFolder.html
+   */
+  public toDescribeFolder() {
+    return this.to('DescribeFolder');
+  }
+
+  /**
+   * Grants permission to describe permissions for a QuickSight Folder
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeFolderPermissions.html
+   */
+  public toDescribeFolderPermissions() {
+    return this.to('DescribeFolderPermissions');
+  }
+
+  /**
+   * Grants permission to describe resolved permissions for a QuickSight Folder
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeFolderResolvedPermissions.html
+   */
+  public toDescribeFolderResolvedPermissions() {
+    return this.to('DescribeFolderResolvedPermissions');
   }
 
   /**
@@ -922,6 +1003,28 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all members in a folder
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListFolderMembers.html
+   */
+  public toListFolderMembers() {
+    return this.to('ListFolderMembers');
+  }
+
+  /**
+   * Grants permission to list all Folders in a QuickSight Account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListFolders.html
+   */
+  public toListFolders() {
+    return this.to('ListFolders');
+  }
+
+  /**
    * Grants permission to list member users in a group
    *
    * Access Level: List
@@ -1176,6 +1279,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search for a sub-set of QuickSight Folders
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchFolders.html
+   */
+  public toSearchFolders() {
+    return this.to('SearchFolders');
+  }
+
+  /**
    * Grants permission to use Amazon QuickSight, in Enterprise edition, to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight
    *
    * Access Level: Write
@@ -1393,6 +1507,28 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a QuickSight Folder
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateFolder.html
+   */
+  public toUpdateFolder() {
+    return this.to('UpdateFolder');
+  }
+
+  /**
+   * Grants permission to update permissions for a QuickSight Folder
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateFolderPermissions.html
+   */
+  public toUpdateFolderPermissions() {
+    return this.to('UpdateFolderPermissions');
+  }
+
+  /**
    * Grants permission to change group description
    *
    * Access Level: Write
@@ -1500,6 +1636,8 @@ export class Quicksight extends PolicyStatement {
       "CreateDashboard",
       "CreateDataSet",
       "CreateDataSource",
+      "CreateFolder",
+      "CreateFolderMembership",
       "CreateGroup",
       "CreateGroupMembership",
       "CreateIAMPolicyAssignment",
@@ -1517,6 +1655,8 @@ export class Quicksight extends PolicyStatement {
       "DeleteDashboard",
       "DeleteDataSet",
       "DeleteDataSource",
+      "DeleteFolder",
+      "DeleteFolderMembership",
       "DeleteGroup",
       "DeleteGroupMembership",
       "DeleteIAMPolicyAssignment",
@@ -1544,6 +1684,7 @@ export class Quicksight extends PolicyStatement {
       "UpdateDashboardPublishedVersion",
       "UpdateDataSet",
       "UpdateDataSource",
+      "UpdateFolder",
       "UpdateGroup",
       "UpdateIAMPolicyAssignment",
       "UpdateTemplate",
@@ -1562,6 +1703,7 @@ export class Quicksight extends PolicyStatement {
       "UpdateDashboardPermissions",
       "UpdateDataSetPermissions",
       "UpdateDataSourcePermissions",
+      "UpdateFolderPermissions",
       "UpdateTemplatePermissions",
       "UpdateThemePermissions"
     ],
@@ -1574,6 +1716,9 @@ export class Quicksight extends PolicyStatement {
       "DescribeDashboardPermissions",
       "DescribeDataSet",
       "DescribeDataSource",
+      "DescribeFolder",
+      "DescribeFolderPermissions",
+      "DescribeFolderResolvedPermissions",
       "DescribeGroup",
       "DescribeIAMPolicyAssignment",
       "DescribeIngestion",
@@ -1590,9 +1735,11 @@ export class Quicksight extends PolicyStatement {
       "GetDashboardEmbedUrl",
       "GetGroupMapping",
       "GetSessionEmbedUrl",
+      "ListFolderMembers",
       "ListTagsForResource",
       "PassDataSet",
-      "PassDataSource"
+      "PassDataSource",
+      "SearchFolders"
     ],
     "List": [
       "ListAnalyses",
@@ -1600,6 +1747,7 @@ export class Quicksight extends PolicyStatement {
       "ListDashboards",
       "ListDataSets",
       "ListDataSources",
+      "ListFolders",
       "ListGroupMemberships",
       "ListGroups",
       "ListIAMPolicyAssignments",
@@ -1869,6 +2017,28 @@ export class Quicksight extends PolicyStatement {
    */
   public onNamespace(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:namespace/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type folder to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Folder.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFolder(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:folder/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

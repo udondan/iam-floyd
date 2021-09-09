@@ -19,6 +19,84 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new channel
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname.html
+   */
+  public toCreateChannel() {
+    return this.to('CreateChannel');
+  }
+
+  /**
+   * Grants permission to create a new program on the channel with the specified channel name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-program-programname.html
+   */
+  public toCreateProgram() {
+    return this.to('CreateProgram');
+  }
+
+  /**
+   * Grants permission to create a new source location
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname.html
+   */
+  public toCreateSourceLocation() {
+    return this.to('CreateSourceLocation');
+  }
+
+  /**
+   * Grants permission to create a new VOD source on the source location with the specified source location name
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-vodsource-vodsourcename.html
+   */
+  public toCreateVodSource() {
+    return this.to('CreateVodSource');
+  }
+
+  /**
+   * Grants permission to delete the channel with the specified channel name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname.html
+   */
+  public toDeleteChannel() {
+    return this.to('DeleteChannel');
+  }
+
+  /**
+   * Grants permission to delete the IAM policy on the channel with the specified channel name
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-policy.html
+   */
+  public toDeleteChannelPolicy() {
+    return this.to('DeleteChannelPolicy');
+  }
+
+  /**
    * Deletes the playback configuration for the specified name
    *
    * Access Level: Write
@@ -27,6 +105,105 @@ export class Mediatailor extends PolicyStatement {
    */
   public toDeletePlaybackConfiguration() {
     return this.to('DeletePlaybackConfiguration');
+  }
+
+  /**
+   * Grants permission to delete the program with the specified program name on the channel with the specified channel name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-program-programname.html
+   */
+  public toDeleteProgram() {
+    return this.to('DeleteProgram');
+  }
+
+  /**
+   * Grants permission to delete the source location with the specified source location name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname.html
+   */
+  public toDeleteSourceLocation() {
+    return this.to('DeleteSourceLocation');
+  }
+
+  /**
+   * Grants permission to delete the VOD source with the specified VOD source name on the source location with the specified source location name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-vodsource-vodsourcename.html
+   */
+  public toDeleteVodSource() {
+    return this.to('DeleteVodSource');
+  }
+
+  /**
+   * Grants permission to retrieve the channel with the specified channel name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname.html
+   */
+  public toDescribeChannel() {
+    return this.to('DescribeChannel');
+  }
+
+  /**
+   * Grants permission to retrieve the program with the specified program name on the channel with the specified channel name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-program-programname.html
+   */
+  public toDescribeProgram() {
+    return this.to('DescribeProgram');
+  }
+
+  /**
+   * Grants permission to retrieve the source location with the specified source location name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname.html
+   */
+  public toDescribeSourceLocation() {
+    return this.to('DescribeSourceLocation');
+  }
+
+  /**
+   * Grants permission to retrieve the VOD source with the specified VOD source name on the source location with the specified source location name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-vodsource-vodsourcename.html
+   */
+  public toDescribeVodSource() {
+    return this.to('DescribeVodSource');
+  }
+
+  /**
+   * Grants permission to read the IAM policy on the channel with the specified channel name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-policy.html
+   */
+  public toGetChannelPolicy() {
+    return this.to('GetChannelPolicy');
+  }
+
+  /**
+   * Grants permission to retrieve the schedule of programs on the channel with the specified channel name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-schedule.html
+   */
+  public toGetChannelSchedule() {
+    return this.to('GetChannelSchedule');
   }
 
   /**
@@ -41,6 +218,28 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the list of alerts on a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/alerts.html
+   */
+  public toListAlerts() {
+    return this.to('ListAlerts');
+  }
+
+  /**
+   * Grants permission to retrieve the list of existing channels
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channels.html
+   */
+  public toListChannels() {
+    return this.to('ListChannels');
+  }
+
+  /**
    * Grants permission to retrieve the list of available configurations
    *
    * Access Level: List
@@ -52,7 +251,18 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
-   * Returns a list of the tags assigned to the specified playback configuration resource.
+   * Grants permission to retrieve the list of existing source locations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocations.html
+   */
+  public toListSourceLocations() {
+    return this.to('ListSourceLocations');
+  }
+
+  /**
+   * Returns a list of the tags assigned to the specified playback configuration resource
    *
    * Access Level: Read
    *
@@ -60,6 +270,28 @@ export class Mediatailor extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to retrieve the list of existing VOD sources on the source location with the specified source location name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-vodsources.html
+   */
+  public toListVodSources() {
+    return this.to('ListVodSources');
+  }
+
+  /**
+   * Grants permission to set the IAM policy on the channel with the specified channel name
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-policy.html
+   */
+  public toPutChannelPolicy() {
+    return this.to('PutChannelPolicy');
   }
 
   /**
@@ -78,7 +310,29 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
-   * Adds tags to the specified playback configuration resource.
+   * Grants permission to start the channel with the specified channel name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-start.html
+   */
+  public toStartChannel() {
+    return this.to('StartChannel');
+  }
+
+  /**
+   * Grants permission to stop the channel with the specified channel name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-stop.html
+   */
+  public toStopChannel() {
+    return this.to('StopChannel');
+  }
+
+  /**
+   * Adds tags to the specified playback configuration resource
    *
    * Access Level: Tagging
    *
@@ -93,7 +347,7 @@ export class Mediatailor extends PolicyStatement {
   }
 
   /**
-   * Removes tags from the specified playback configuration resource.
+   * Removes tags from the specified playback configuration resource
    *
    * Access Level: Tagging
    *
@@ -107,14 +361,74 @@ export class Mediatailor extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to update the channel with the specified channel name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname.html
+   */
+  public toUpdateChannel() {
+    return this.to('UpdateChannel');
+  }
+
+  /**
+   * Grants permission to update the source location with the specified source location name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname.html
+   */
+  public toUpdateSourceLocation() {
+    return this.to('UpdateSourceLocation');
+  }
+
+  /**
+   * Grants permission to update the VOD source with the specified VOD source name on the source location with the specified source location name
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-vodsource-vodsourcename.html
+   */
+  public toUpdateVodSource() {
+    return this.to('UpdateVodSource');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "CreateChannel",
+      "CreateProgram",
+      "CreateSourceLocation",
+      "CreateVodSource",
+      "DeleteChannel",
       "DeletePlaybackConfiguration",
-      "PutPlaybackConfiguration"
+      "DeleteProgram",
+      "DeleteSourceLocation",
+      "DeleteVodSource",
+      "PutPlaybackConfiguration",
+      "StartChannel",
+      "StopChannel",
+      "UpdateChannel",
+      "UpdateSourceLocation",
+      "UpdateVodSource"
+    ],
+    "Permissions management": [
+      "DeleteChannelPolicy",
+      "PutChannelPolicy"
     ],
     "Read": [
+      "DescribeChannel",
+      "DescribeProgram",
+      "DescribeSourceLocation",
+      "DescribeVodSource",
+      "GetChannelPolicy",
+      "GetChannelSchedule",
       "GetPlaybackConfiguration",
-      "ListTagsForResource"
+      "ListAlerts",
+      "ListChannels",
+      "ListSourceLocations",
+      "ListTagsForResource",
+      "ListVodSources"
     ],
     "List": [
       "ListPlaybackConfigurations"
@@ -140,6 +454,94 @@ export class Mediatailor extends PolicyStatement {
    */
   public onPlaybackConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediatailor:${Region}:${Account}:playbackConfiguration/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type channel to the statement
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onChannel(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediatailor:${Region}:${Account}:channel/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type program to the statement
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/channel-channelname-program-programname.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProgram(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediatailor:${Region}:${Account}:program/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type sourceLocation to the statement
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSourceLocation(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediatailor:${Region}:${Account}:sourceLocation/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type vodSource to the statement
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/sourcelocation-sourcelocationname-vodsource-vodsourcename.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVodSource(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediatailor:${Region}:${Account}:vodSource/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

@@ -4,6 +4,7 @@ quicksight:customization
 quicksight:dashboard
 quicksight:dataset
 quicksight:datasource
+quicksight:folder
 quicksight:group
 quicksight:ingestion
 quicksight:namespace

@@ -1,7 +1,32 @@
+mediatailor:CreateChannel;Write
+mediatailor:CreateProgram;Write
+mediatailor:CreateSourceLocation;Write
+mediatailor:CreateVodSource;Write
+mediatailor:DeleteChannel;Write
+mediatailor:DeleteChannelPolicy;Permissions management
 mediatailor:DeletePlaybackConfiguration;Write
+mediatailor:DeleteProgram;Write
+mediatailor:DeleteSourceLocation;Write
+mediatailor:DeleteVodSource;Write
+mediatailor:DescribeChannel;Read
+mediatailor:DescribeProgram;Read
+mediatailor:DescribeSourceLocation;Read
+mediatailor:DescribeVodSource;Read
+mediatailor:GetChannelPolicy;Read
+mediatailor:GetChannelSchedule;Read
 mediatailor:GetPlaybackConfiguration;Read
+mediatailor:ListAlerts;Read
+mediatailor:ListChannels;Read
 mediatailor:ListPlaybackConfigurations;List
+mediatailor:ListSourceLocations;Read
 mediatailor:ListTagsForResource;Read
+mediatailor:ListVodSources;Read
+mediatailor:PutChannelPolicy;Permissions management
 mediatailor:PutPlaybackConfiguration;Write
+mediatailor:StartChannel;Write
+mediatailor:StopChannel;Write
 mediatailor:TagResource;Tagging
 mediatailor:UntagResource;Tagging
+mediatailor:UpdateChannel;Write
+mediatailor:UpdateSourceLocation;Write
+mediatailor:UpdateVodSource;Write

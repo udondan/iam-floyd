@@ -48,4 +48,5 @@ personalize:ListSolutions;List
 personalize:PutEvents;Write
 personalize:PutItems;Write
 personalize:PutUsers;Write
+personalize:StopSolutionVersionCreation;Write
 personalize:UpdateCampaign;Write

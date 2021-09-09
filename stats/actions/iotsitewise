@@ -27,6 +27,7 @@ iotsitewise:DescribeGatewayCapabilityConfiguration;Read
 iotsitewise:DescribeLoggingOptions;Read
 iotsitewise:DescribePortal;Read
 iotsitewise:DescribeProject;Read
+iotsitewise:DescribeStorageConfiguration;Read
 iotsitewise:DisassociateAssets;Write
 iotsitewise:GetAssetPropertyAggregates;Read
 iotsitewise:GetAssetPropertyValue;Read
@@ -44,6 +45,7 @@ iotsitewise:ListProjects;List
 iotsitewise:ListTagsForResource;Read
 iotsitewise:PutDefaultEncryptionConfiguration;Write
 iotsitewise:PutLoggingOptions;Write
+iotsitewise:PutStorageConfiguration;Write
 iotsitewise:TagResource;Tagging
 iotsitewise:UntagResource;Tagging
 iotsitewise:UpdateAccessPolicy;Write

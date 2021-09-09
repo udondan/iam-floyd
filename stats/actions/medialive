@@ -9,6 +9,7 @@ medialive:CreateInput;Write
 medialive:CreateInputSecurityGroup;Write
 medialive:CreateMultiplex;Write
 medialive:CreateMultiplexProgram;Write
+medialive:CreatePartnerInput;Write
 medialive:CreateTags;Tagging
 medialive:DeleteChannel;Write
 medialive:DeleteInput;Write

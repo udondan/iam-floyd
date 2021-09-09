@@ -2297,6 +2297,28 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start transcription for a meeting
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_StartMeetingTranscription.html
+   */
+  public toStartMeetingTranscription() {
+    return this.to('StartMeetingTranscription');
+  }
+
+  /**
+   * Grants permission to stop transcription for a meeting
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_StopMeetingTranscription.html
+   */
+  public toStopMeetingTranscription() {
+    return this.to('StopMeetingTranscription');
+  }
+
+  /**
    * Grants permission to submit a customer service support request
    *
    * Access Level: Write
@@ -2823,6 +2845,8 @@ export class Chime extends PolicyStatement {
       "RetrieveDataExports",
       "SendChannelMessage",
       "StartDataExport",
+      "StartMeetingTranscription",
+      "StopMeetingTranscription",
       "SubmitSupportRequest",
       "SuspendUsers",
       "UnauthorizeDirectory",

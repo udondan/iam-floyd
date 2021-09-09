@@ -569,6 +569,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop a solution version creation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_StopSolutionVersionCreation.html
+   */
+  public toStopSolutionVersionCreation() {
+    return this.to('StopSolutionVersionCreation');
+  }
+
+  /**
    * Grants permission to update a campaign
    *
    * Access Level: Write
@@ -602,6 +613,7 @@ export class Personalize extends PolicyStatement {
       "PutEvents",
       "PutItems",
       "PutUsers",
+      "StopSolutionVersionCreation",
       "UpdateCampaign"
     ],
     "Read": [

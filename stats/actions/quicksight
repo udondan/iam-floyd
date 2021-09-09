@@ -6,6 +6,8 @@ quicksight:CreateCustomPermissions;Permissions management
 quicksight:CreateDashboard;Write
 quicksight:CreateDataSet;Write
 quicksight:CreateDataSource;Write
+quicksight:CreateFolder;Write
+quicksight:CreateFolderMembership;Write
 quicksight:CreateGroup;Write
 quicksight:CreateGroupMembership;Write
 quicksight:CreateIAMPolicyAssignment;Write
@@ -24,6 +26,8 @@ quicksight:DeleteCustomPermissions;Permissions management
 quicksight:DeleteDashboard;Write
 quicksight:DeleteDataSet;Write
 quicksight:DeleteDataSource;Write
+quicksight:DeleteFolder;Write
+quicksight:DeleteFolderMembership;Write
 quicksight:DeleteGroup;Write
 quicksight:DeleteGroupMembership;Write
 quicksight:DeleteIAMPolicyAssignment;Write
@@ -46,6 +50,9 @@ quicksight:DescribeDataSet;Read
 quicksight:DescribeDataSetPermissions;Permissions management
 quicksight:DescribeDataSource;Read
 quicksight:DescribeDataSourcePermissions;Permissions management
+quicksight:DescribeFolder;Read
+quicksight:DescribeFolderPermissions;Read
+quicksight:DescribeFolderResolvedPermissions;Read
 quicksight:DescribeGroup;Read
 quicksight:DescribeIAMPolicyAssignment;Read
 quicksight:DescribeIngestion;Read
@@ -70,6 +77,8 @@ quicksight:ListDashboardVersions;List
 quicksight:ListDashboards;List
 quicksight:ListDataSets;List
 quicksight:ListDataSources;List
+quicksight:ListFolderMembers;Read
+quicksight:ListFolders;List
 quicksight:ListGroupMemberships;List
 quicksight:ListGroups;List
 quicksight:ListIAMPolicyAssignments;List
@@ -92,6 +101,7 @@ quicksight:RestoreAnalysis;Write
 quicksight:SearchAnalyses;List
 quicksight:SearchDashboards;List
 quicksight:SearchDirectoryGroups;List
+quicksight:SearchFolders;Read
 quicksight:SetGroupMapping;Write
 quicksight:Subscribe;Write
 quicksight:TagResource;Tagging
@@ -109,6 +119,8 @@ quicksight:UpdateDataSet;Write
 quicksight:UpdateDataSetPermissions;Permissions management
 quicksight:UpdateDataSource;Write
 quicksight:UpdateDataSourcePermissions;Permissions management
+quicksight:UpdateFolder;Write
+quicksight:UpdateFolderPermissions;Permissions management
 quicksight:UpdateGroup;Write
 quicksight:UpdateIAMPolicyAssignment;Write
 quicksight:UpdateTemplate;Write
