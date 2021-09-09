@@ -2,8 +2,10 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Effect": "Allow",
       "Action": [
         "acm:ListCertificates",
+        "cloudfront:DescribeFunction",
         "cloudfront:Get*",
         "cloudfront:List*",
         "iam:ListServerCertificates",
@@ -13,7 +15,6 @@
         "wafv2:ListWebACLs",
         "wafv2:GetWebACL"
       ],
-      "Effect": "Allow",
       "Resource": "*"
     }
   ]

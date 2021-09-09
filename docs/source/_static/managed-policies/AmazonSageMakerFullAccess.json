@@ -343,7 +343,8 @@
 			"Effect": "Allow",
 			"Action": [
 				"sns:Subscribe",
-				"sns:CreateTopic"
+				"sns:CreateTopic",
+				"sns:Publish"
 			],
 			"Resource": [
 				"arn:aws:sns:*:*:*SageMaker*",
