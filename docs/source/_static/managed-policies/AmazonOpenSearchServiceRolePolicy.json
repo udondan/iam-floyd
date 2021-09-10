@@ -25,11 +25,22 @@
 			"Sid": "Stmt1480452973144",
 			"Effect": "Allow",
 			"Action": [
-				"ec2:DeleteNetworkInterface",
-				"ec2:ModifyNetworkInterfaceAttribute"
+				"ec2:DeleteNetworkInterface"
 			],
 			"Resource": [
 				"arn:aws:ec2:*:*:network-interface/*"
+			]
+		},
+		{
+			"Sid": "Stmt1480452973165",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:ModifyNetworkInterfaceAttribute"
+			],
+			"Resource": [
+				"arn:aws:ec2:*:*:network-interface/*",
+				"arn:aws:ec2:*:*:security-group/*"
+				
 			]
 		},
 		{
