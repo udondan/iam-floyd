@@ -350,7 +350,7 @@ export class Datasync extends PolicyStatement {
   /**
    * Grants permission to apply a key-value pair to an AWS resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -385,6 +385,39 @@ export class Datasync extends PolicyStatement {
    */
   public toUpdateAgent() {
     return this.to('UpdateAgent');
+  }
+
+  /**
+   * Grants permission to update an NFS sync Location
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateLocationNfs.html
+   */
+  public toUpdateLocationNfs() {
+    return this.to('UpdateLocationNfs');
+  }
+
+  /**
+   * Grants permission to update a self-managed object storage server location
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateLocationObjectStorage.html
+   */
+  public toUpdateLocationObjectStorage() {
+    return this.to('UpdateLocationObjectStorage');
+  }
+
+  /**
+   * Grants permission to update a SMB sync location
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateLocationSmb.html
+   */
+  public toUpdateLocationSmb() {
+    return this.to('UpdateLocationSmb');
   }
 
   /**
@@ -424,8 +457,10 @@ export class Datasync extends PolicyStatement {
       "DeleteLocation",
       "DeleteTask",
       "StartTaskExecution",
-      "TagResource",
       "UpdateAgent",
+      "UpdateLocationNfs",
+      "UpdateLocationObjectStorage",
+      "UpdateLocationSmb",
       "UpdateTask",
       "UpdateTaskExecution"
     ],
@@ -448,6 +483,7 @@ export class Datasync extends PolicyStatement {
       "ListTasks"
     ],
     "Tagging": [
+      "TagResource",
       "UntagResource"
     ]
   };

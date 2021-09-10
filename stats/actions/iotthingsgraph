@@ -1,6 +1,6 @@
 iotthingsgraph:AssociateEntityToThing;Write
 iotthingsgraph:CreateFlowTemplate;Write
-iotthingsgraph:CreateSystemInstance;Tagging
+iotthingsgraph:CreateSystemInstance;Write
 iotthingsgraph:CreateSystemTemplate;Write
 iotthingsgraph:DeleteFlowTemplate;Write
 iotthingsgraph:DeleteNamespace;Write

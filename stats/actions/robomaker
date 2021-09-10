@@ -51,8 +51,8 @@ robomaker:RegisterRobot;Write
 robomaker:RestartSimulationJob;Write
 robomaker:StartSimulationJobBatch;Write
 robomaker:SyncDeploymentJob;Write
-robomaker:TagResource;Write
-robomaker:UntagResource;Write
+robomaker:TagResource;Tagging
+robomaker:UntagResource;Tagging
 robomaker:UpdateRobotApplication;Write
 robomaker:UpdateRobotDeployment;Write
 robomaker:UpdateSimulationApplication;Write

@@ -651,7 +651,7 @@ export class Robomaker extends PolicyStatement {
   /**
    * Add tags to a RoboMaker resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
@@ -666,7 +666,7 @@ export class Robomaker extends PolicyStatement {
   /**
    * Remove tags from a RoboMaker resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
@@ -748,8 +748,6 @@ export class Robomaker extends PolicyStatement {
       "RestartSimulationJob",
       "StartSimulationJobBatch",
       "SyncDeploymentJob",
-      "TagResource",
-      "UntagResource",
       "UpdateRobotApplication",
       "UpdateRobotDeployment",
       "UpdateSimulationApplication",
@@ -784,6 +782,10 @@ export class Robomaker extends PolicyStatement {
       "ListWorldGenerationJobs",
       "ListWorldTemplates",
       "ListWorlds"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 

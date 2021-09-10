@@ -47,7 +47,7 @@ export class Iotthingsgraph extends PolicyStatement {
   /**
    * Creates an instance of a system with specified configurations and Things.
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -426,6 +426,7 @@ export class Iotthingsgraph extends PolicyStatement {
     "Write": [
       "AssociateEntityToThing",
       "CreateFlowTemplate",
+      "CreateSystemInstance",
       "CreateSystemTemplate",
       "DeleteFlowTemplate",
       "DeleteNamespace",
@@ -439,11 +440,6 @@ export class Iotthingsgraph extends PolicyStatement {
       "UpdateFlowTemplate",
       "UpdateSystemTemplate",
       "UploadEntityDefinitions"
-    ],
-    "Tagging": [
-      "CreateSystemInstance",
-      "TagResource",
-      "UntagResource"
     ],
     "Read": [
       "DescribeNamespace",
@@ -465,6 +461,10 @@ export class Iotthingsgraph extends PolicyStatement {
     "List": [
       "ListFlowExecutionMessages",
       "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 

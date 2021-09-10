@@ -19,3 +19,4 @@ codestar:UntagProject;Tagging
 codestar:UpdateProject;Write
 codestar:UpdateTeamMember;Permissions management
 codestar:UpdateUserProfile;Write
+codestar:VerifyServiceRole;List

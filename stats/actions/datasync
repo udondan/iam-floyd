@@ -25,8 +25,11 @@ datasync:ListTagsForResource;Read
 datasync:ListTaskExecutions;List
 datasync:ListTasks;List
 datasync:StartTaskExecution;Write
-datasync:TagResource;Write
+datasync:TagResource;Tagging
 datasync:UntagResource;Tagging
 datasync:UpdateAgent;Write
+datasync:UpdateLocationNfs;Write
+datasync:UpdateLocationObjectStorage;Write
+datasync:UpdateLocationSmb;Write
 datasync:UpdateTask;Write
 datasync:UpdateTaskExecution;Write

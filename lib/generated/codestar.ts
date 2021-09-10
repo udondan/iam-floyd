@@ -254,6 +254,15 @@ export class Codestar extends PolicyStatement {
     return this.to('UpdateUserProfile');
   }
 
+  /**
+   * Verifies whether the AWS CodeStar service role exists in the customer's account.
+   *
+   * Access Level: List
+   */
+  public toVerifyServiceRole() {
+    return this.to('VerifyServiceRole');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Permissions management": [
       "AssociateTeamMember",
@@ -280,7 +289,8 @@ export class Codestar extends PolicyStatement {
       "ListResources",
       "ListTagsForProject",
       "ListTeamMembers",
-      "ListUserProfiles"
+      "ListUserProfiles",
+      "VerifyServiceRole"
     ],
     "Tagging": [
       "TagProject",
