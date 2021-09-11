@@ -40,7 +40,7 @@ async function main() {
 
   const tweets: string[] = [];
   const split = changelog
-    .split(/^(?=(?::warning:)?\*\*)/gm)
+    .split(/^(?=(?::warning: )?\*\*)/gm)
     .filter((content) => content.match(/^(?::warning: )?\*\*/));
 
   split.forEach((content) => {
