@@ -1,3 +1,4 @@
+mediapackage:ConfigureLogs;Write
 mediapackage:CreateChannel;Write
 mediapackage:CreateHarvestJob;Write
 mediapackage:CreateOriginEndpoint;Write

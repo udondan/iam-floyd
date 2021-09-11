@@ -19,6 +19,20 @@ export class MediapackageVod extends PolicyStatement {
   }
 
   /**
+   * Grants permission to configure egress access logs for a PackagingGroup
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups-id-configure_logs.html#packaging_groups-id-configure_logsput
+   */
+  public toConfigureLogs() {
+    return this.to('ConfigureLogs');
+  }
+
+  /**
    * Grants permission to create an asset in AWS Elemental MediaPackage
    *
    * Access Level: Write
@@ -215,6 +229,7 @@ export class MediapackageVod extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "ConfigureLogs",
       "CreateAsset",
       "CreatePackagingConfiguration",
       "CreatePackagingGroup",

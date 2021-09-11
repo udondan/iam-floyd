@@ -1403,7 +1403,6 @@ export class Ssm extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifSessionDocumentAccessCheck()
-   * - .ifEcsCluster()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartSession.html
    */
@@ -2149,21 +2148,6 @@ export class Ssm extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
-  }
-
-  /**
-   * Filters access by the ARN of an Amazon ECS cluster
-   *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
-   *
-   * Applies to actions:
-   * - .toStartSession()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
-   */
-  public ifEcsCluster(value: string | string[], operator?: Operator | string) {
-    return this.if(`ecs:cluster`, value, operator || 'ArnLike');
   }
 
   /**

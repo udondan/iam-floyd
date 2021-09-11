@@ -1,3 +1,4 @@
+mediapackage-vod:ConfigureLogs;Write
 mediapackage-vod:CreateAsset;Write
 mediapackage-vod:CreatePackagingConfiguration;Write
 mediapackage-vod:CreatePackagingGroup;Write

@@ -19,6 +19,20 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
+   * Grants permission to configure access logs for a Channel
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id-configure_logs.html#channels-id-configure_logsput
+   */
+  public toConfigureLogs() {
+    return this.to('ConfigureLogs');
+  }
+
+  /**
    * Grants permission to create a channel in AWS Elemental MediaPackage
    *
    * Access Level: Write
@@ -185,7 +199,7 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
-   *
+   * Grants permission to tag a MediaPackage resource
    *
    * Access Level: Tagging
    *
@@ -237,6 +251,7 @@ export class Mediapackage extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "ConfigureLogs",
       "CreateChannel",
       "CreateHarvestJob",
       "CreateOriginEndpoint",

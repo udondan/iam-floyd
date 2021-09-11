@@ -5,4 +5,3 @@ ssm:ResourceTag/${TagKey}
 ssm:SessionDocumentAccessCheck
 ssm:SyncType
 ssm:TagKeys
-ssm:cluster

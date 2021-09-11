@@ -3,7 +3,7 @@ es:AcceptInboundCrossClusterSearchConnection;Write
 es:AddTags;Tagging
 es:AssociatePackage;Write
 es:CancelElasticsearchServiceSoftwareUpdate;Write
-es:CreateDataPrepperPipeline;Write
+es:CancelServiceSoftwareUpdate;Write
 es:CreateDomain;Write
 es:CreateElasticsearchDomain;Write
 es:CreateElasticsearchServiceRole;Write
@@ -11,7 +11,6 @@ es:CreateOutboundConnection;Write
 es:CreateOutboundCrossClusterSearchConnection;Write
 es:CreatePackage;Write
 es:CreateServiceRole;Write
-es:DeleteDataPrepperPipeline;Write
 es:DeleteDomain;Write
 es:DeleteElasticsearchDomain;Write
 es:DeleteElasticsearchServiceRole;Write
@@ -20,8 +19,8 @@ es:DeleteInboundCrossClusterSearchConnection;Write
 es:DeleteOutboundConnection;Write
 es:DeleteOutboundCrossClusterSearchConnection;Write
 es:DeletePackage;Write
-es:DescribeDataPrepperPipeline;Read
 es:DescribeDomain;Read
+es:DescribeDomainAutoTunes;Read
 es:DescribeDomainConfig;Read
 es:DescribeDomains;List
 es:DescribeElasticsearchDomain;Read
@@ -51,8 +50,6 @@ es:GetCompatibleVersions;List
 es:GetPackageVersionHistory;Read
 es:GetUpgradeHistory;Read
 es:GetUpgradeStatus;Read
-es:IngestDataPrepperPipeline;Write
-es:ListDataPrepperPipelines;List
 es:ListDomainNames;List
 es:ListDomainsForPackage;List
 es:ListElasticsearchInstanceTypeDetails;List
@@ -69,8 +66,9 @@ es:RejectInboundConnection;Write
 es:RejectInboundCrossClusterSearchConnection;Write
 es:RemoveTags;Tagging
 es:StartElasticsearchServiceSoftwareUpdate;Write
-es:UpdateDataPrepperPipeline;Write
+es:StartServiceSoftwareUpdate;Write
 es:UpdateDomainConfig;Write
 es:UpdateElasticsearchDomainConfig;Write
 es:UpdatePackage;Write
+es:UpgradeDomain;Write
 es:UpgradeElasticsearchDomain;Write

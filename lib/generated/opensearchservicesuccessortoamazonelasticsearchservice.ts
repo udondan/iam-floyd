@@ -78,14 +78,14 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a DataPrepper pipeline
+   * Grants permission to cancel OpenSearch software update of a domain to given version
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/trace-analytics.html
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-stopupdate
    */
-  public toCreateDataPrepperPipeline() {
-    return this.to('CreateDataPrepperPipeline');
+  public toCancelServiceSoftwareUpdate() {
+    return this.to('CancelServiceSoftwareUpdate');
   }
 
   /**
@@ -171,17 +171,6 @@ export class Es extends PolicyStatement {
    */
   public toCreateServiceRole() {
     return this.to('CreateServiceRole');
-  }
-
-  /**
-   * Grants permission to delete a DataPrepperpipeline
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/trace-analytics.html
-   */
-  public toDeleteDataPrepperPipeline() {
-    return this.to('DeleteDataPrepperPipeline');
   }
 
   /**
@@ -273,17 +262,6 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view a description of the pipeline configuration for the specified DataPrepper pipeline
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/trace-analytics.html
-   */
-  public toDescribeDataPrepperPipeline() {
-    return this.to('DescribeDataPrepperPipeline');
-  }
-
-  /**
    * Grants permission to view a description of the domain configuration for the specified Amazon OpenSearch domain, including the domain ID, domain service endpoint, and domain ARN
    *
    * Access Level: Read
@@ -292,6 +270,17 @@ export class Es extends PolicyStatement {
    */
   public toDescribeDomain() {
     return this.to('DescribeDomain');
+  }
+
+  /**
+   * Grants permission to view the AutoTune configuration of the domain for the specified Amazon OpenSearch domain, including the AutoTune state and maintenance schedules
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describedomainautotunes
+   */
+  public toDescribeDomainAutoTunes() {
+    return this.to('DescribeDomainAutoTunes');
   }
 
   /**
@@ -614,28 +603,6 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to ingest data into a DataPrepper pipeline
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/trace-analytics.html
-   */
-  public toIngestDataPrepperPipeline() {
-    return this.to('IngestDataPrepperPipeline');
-  }
-
-  /**
-   * Grants permission to display the names of all DataPrepper pipelines that the current user owns
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/trace-analytics.html
-   */
-  public toListDataPrepperPipelines() {
-    return this.to('ListDataPrepperPipelines');
-  }
-
-  /**
    * Grants permission to display the names of all Amazon OpenSearch domains that the current user owns
    *
    * Access Level: List
@@ -815,14 +782,14 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to modify the configuration of a DataPrepper pipeline (currently limited to updating desired capacity)
+   * Grants permission to start OpenSearch software update of a domain to given version
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/trace-analytics.html
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-startupdate
    */
-  public toUpdateDataPrepperPipeline() {
-    return this.to('UpdateDataPrepperPipeline');
+  public toStartServiceSoftwareUpdate() {
+    return this.to('StartServiceSoftwareUpdate');
   }
 
   /**
@@ -859,6 +826,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate upgrade of open search domain to given version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-upgradedomain
+   */
+  public toUpgradeDomain() {
+    return this.to('UpgradeDomain');
+  }
+
+  /**
    * Grants permission to initiate upgrade of elastic search domain to given version
    *
    * Access Level: Write
@@ -875,7 +853,7 @@ export class Es extends PolicyStatement {
       "AcceptInboundCrossClusterSearchConnection",
       "AssociatePackage",
       "CancelElasticsearchServiceSoftwareUpdate",
-      "CreateDataPrepperPipeline",
+      "CancelServiceSoftwareUpdate",
       "CreateDomain",
       "CreateElasticsearchDomain",
       "CreateElasticsearchServiceRole",
@@ -883,7 +861,6 @@ export class Es extends PolicyStatement {
       "CreateOutboundCrossClusterSearchConnection",
       "CreatePackage",
       "CreateServiceRole",
-      "DeleteDataPrepperPipeline",
       "DeleteDomain",
       "DeleteElasticsearchDomain",
       "DeleteElasticsearchServiceRole",
@@ -897,16 +874,16 @@ export class Es extends PolicyStatement {
       "ESHttpPatch",
       "ESHttpPost",
       "ESHttpPut",
-      "IngestDataPrepperPipeline",
       "PurchaseReservedElasticsearchInstanceOffering",
       "PurchaseReservedInstanceOffering",
       "RejectInboundConnection",
       "RejectInboundCrossClusterSearchConnection",
       "StartElasticsearchServiceSoftwareUpdate",
-      "UpdateDataPrepperPipeline",
+      "StartServiceSoftwareUpdate",
       "UpdateDomainConfig",
       "UpdateElasticsearchDomainConfig",
       "UpdatePackage",
+      "UpgradeDomain",
       "UpgradeElasticsearchDomain"
     ],
     "Tagging": [
@@ -914,8 +891,8 @@ export class Es extends PolicyStatement {
       "RemoveTags"
     ],
     "Read": [
-      "DescribeDataPrepperPipeline",
       "DescribeDomain",
+      "DescribeDomainAutoTunes",
       "DescribeDomainConfig",
       "DescribeElasticsearchDomain",
       "DescribeElasticsearchDomainConfig",
@@ -943,7 +920,6 @@ export class Es extends PolicyStatement {
       "DescribeReservedInstances",
       "GetCompatibleElasticsearchVersions",
       "GetCompatibleVersions",
-      "ListDataPrepperPipelines",
       "ListDomainNames",
       "ListDomainsForPackage",
       "ListElasticsearchInstanceTypeDetails",
@@ -972,28 +948,6 @@ export class Es extends PolicyStatement {
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:es:${Region}:${Account}:domain/${DomainName}';
     arn = arn.replace('${DomainName}', domainName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
-
-  /**
-   * Adds a resource of type pipeline to the statement
-   *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/trace-analytics.html
-   *
-   * @param pipelineName - Identifier for the pipelineName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:es:${Region}:${Account}:pipeline/${PipelineName}';
-    arn = arn.replace('${PipelineName}', pipelineName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -1030,7 +984,7 @@ export class Es extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOpensearchserviceRole(account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchInternalService';
+    var arn = 'arn:${Partition}:iam::${Account}:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService';
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
