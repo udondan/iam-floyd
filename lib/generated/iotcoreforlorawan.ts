@@ -468,7 +468,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * List information of available Destinations based on the AWS account.
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListDestinations.html
    */
@@ -479,7 +479,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Grants permission to list information of available DeviceProfiles based on the AWS account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListDeviceProfiles.html
    */
@@ -490,7 +490,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Grants permission to list the available partner accounts
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListPartnerAccounts.html
    */
@@ -501,7 +501,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Grants permission to list information of available ServiceProfiles based on the AWS account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListServiceProfiles.html
    */
@@ -512,7 +512,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Grants permission to list all tags for a given resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListTagsForResource.html
    */
@@ -523,7 +523,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Grants permission to list information of available WirelessDevices based on the AWS account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessDevices.html
    */
@@ -534,7 +534,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Grants permission to list information of available WirelessGateway task definitions based on the AWS account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessGatewayTaskDefinitions.html
    */
@@ -545,7 +545,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Grants permission to list information of available WirelessGateways based on the AWS account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessGateways.html
    */
@@ -742,9 +742,7 @@ export class Iotwireless extends PolicyStatement {
       "GetWirelessGatewayFirmwareInformation",
       "GetWirelessGatewayStatistics",
       "GetWirelessGatewayTask",
-      "GetWirelessGatewayTaskDefinition"
-    ],
-    "List": [
+      "GetWirelessGatewayTaskDefinition",
       "ListDestinations",
       "ListDeviceProfiles",
       "ListPartnerAccounts",
@@ -875,7 +873,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateAwsAccountWithPartnerAccount.html
    *
-   * @param sidewalkId - Identifier for the sidewalkId.
+   * @param sidewalkAccountId - Identifier for the sidewalkAccountId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -883,9 +881,9 @@ export class Iotwireless extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onSidewalkAccount(sidewalkId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotwireless:${Region}:${Account}:SidewalkAccount/${SidewalkId}';
-    arn = arn.replace('${SidewalkId}', sidewalkId);
+  public onSidewalkAccount(sidewalkAccountId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotwireless:${Region}:${Account}:SidewalkAccount/${SidewalkAccountId}';
+    arn = arn.replace('${SidewalkAccountId}', sidewalkAccountId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

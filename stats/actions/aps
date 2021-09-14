@@ -4,7 +4,10 @@ aps:DescribeWorkspace;Read
 aps:GetLabels;Read
 aps:GetMetricMetadata;Read
 aps:GetSeries;Read
+aps:ListTagsForResource;Read
 aps:ListWorkspaces;List
 aps:QueryMetrics;Read
 aps:RemoteWrite;Write
+aps:TagResource;Tagging
+aps:UntagResource;Tagging
 aps:UpdateWorkspaceAlias;Write
