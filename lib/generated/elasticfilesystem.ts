@@ -152,7 +152,7 @@ export class Elasticfilesystem extends PolicyStatement {
   /**
    * Grants permission to delete the resource-level policy for a file system
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteFileSystemPolicy.html
    */
@@ -331,7 +331,7 @@ export class Elasticfilesystem extends PolicyStatement {
   /**
    * Grants permission to apply a resource-level policy that defines the actions allowed or denied from given actors for the specified file system
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_PutFileSystemPolicy.html
    */
@@ -404,12 +404,10 @@ export class Elasticfilesystem extends PolicyStatement {
       "CreateMountTarget",
       "DeleteAccessPoint",
       "DeleteFileSystem",
-      "DeleteFileSystemPolicy",
       "DeleteMountTarget",
       "ModifyMountTargetSecurityGroups",
       "PutAccountPreferences",
       "PutBackupPolicy",
-      "PutFileSystemPolicy",
       "PutLifecycleConfiguration",
       "Restore",
       "UpdateFileSystem"
@@ -429,6 +427,10 @@ export class Elasticfilesystem extends PolicyStatement {
       "DeleteTags",
       "TagResource",
       "UntagResource"
+    ],
+    "Permissions management": [
+      "DeleteFileSystemPolicy",
+      "PutFileSystemPolicy"
     ],
     "List": [
       "DescribeAccessPoints",
