@@ -357,6 +357,19 @@
 			]
 		},
 		{
+			"Action": [
+				"sagemaker:CreateImage",
+				"sagemaker:DeleteImage",
+				"sagemaker:DescribeImage",
+				"sagemaker:UpdateImage",
+				"sagemaker:ListTags"
+			],
+			"Resource": [
+				"arn:aws:sagemaker:*:*:image/*"
+			],
+			"Effect": "Allow"
+		},
+		{
 			"Effect": "Allow",
 			"Action": [
 				"states:CreateStateMachine",
