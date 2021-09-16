@@ -46,4 +46,5 @@ elasticbeanstalk:UpdateApplicationResourceLifecycle;Write
 elasticbeanstalk:UpdateApplicationVersion;Write
 elasticbeanstalk:UpdateConfigurationTemplate;Write
 elasticbeanstalk:UpdateEnvironment;Write
+elasticbeanstalk:UpdateTagsForResource;Tagging
 elasticbeanstalk:ValidateConfigurationSettings;Read

@@ -28,3 +28,4 @@ kafka:UpdateClusterConfiguration;Write
 kafka:UpdateClusterKafkaVersion;Write
 kafka:UpdateConfiguration;Write
 kafka:UpdateMonitoring;Write
+kafka:UpdateSecurity;Write

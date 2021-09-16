@@ -859,7 +859,7 @@ export class Codecommit extends PolicyStatement {
   /**
    * Grants permission to attach resource tags to a CodeCommit resource ARN
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
@@ -886,7 +886,7 @@ export class Codecommit extends PolicyStatement {
   /**
    * Grants permission to disassociate resource tags from a CodeCommit resource ARN
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
@@ -1073,9 +1073,7 @@ export class Codecommit extends PolicyStatement {
       "PutCommentReaction",
       "PutFile",
       "PutRepositoryTriggers",
-      "TagResource",
       "TestRepositoryTriggers",
-      "UntagResource",
       "UpdateApprovalRuleTemplateContent",
       "UpdateApprovalRuleTemplateDescription",
       "UpdateApprovalRuleTemplateName",
@@ -1134,6 +1132,10 @@ export class Codecommit extends PolicyStatement {
       "ListRepositories",
       "ListRepositoriesForApprovalRuleTemplate",
       "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 

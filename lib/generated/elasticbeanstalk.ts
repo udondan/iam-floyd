@@ -19,7 +19,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to cancel in-progress environment configuration update or application version deployment.
+   * Grants permission to cancel in-progress environment configuration update or application version deployment
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to an Elastic Beanstalk resource and to update tag values.
+   * Grants permission to add tags to an Elastic Beanstalk resource and to update tag values
    *
    * Access Level: Tagging
    *
@@ -45,7 +45,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to apply a scheduled managed action immediately.
+   * Grants permission to apply a scheduled managed action immediately
    *
    * Access Level: Write
    *
@@ -56,7 +56,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate an operations role with an environment.
+   * Grants permission to associate an operations role with an environment
    *
    * Access Level: Write
    *
@@ -67,7 +67,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to check CNAME availability.
+   * Grants permission to check CNAME availability
    *
    * Access Level: Read
    *
@@ -78,7 +78,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create or update a group of environments, each running a separate component of a single application.
+   * Grants permission to create or update a group of environments, each running a separate component of a single application
    *
    * Access Level: Write
    *
@@ -89,7 +89,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new application.
+   * Grants permission to create a new application
    *
    * Access Level: Write
    *
@@ -104,7 +104,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an application version for an application.
+   * Grants permission to create an application version for an application
    *
    * Access Level: Write
    *
@@ -119,7 +119,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a configuration template.
+   * Grants permission to create a configuration template
    *
    * Access Level: Write
    *
@@ -140,7 +140,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to launch an environment for an application.
+   * Grants permission to launch an environment for an application
    *
    * Access Level: Write
    *
@@ -159,7 +159,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new version of a custom platform.
+   * Grants permission to create a new version of a custom platform
    *
    * Access Level: Write
    *
@@ -174,7 +174,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create the Amazon S3 storage location for the account.
+   * Grants permission to create the Amazon S3 storage location for the account
    *
    * Access Level: Write
    *
@@ -185,7 +185,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an application along with all associated versions and configurations.
+   * Grants permission to delete an application along with all associated versions and configurations
    *
    * Access Level: Write
    *
@@ -196,7 +196,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an application version from an application.
+   * Grants permission to delete an application version from an application
    *
    * Access Level: Write
    *
@@ -207,7 +207,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a configuration template.
+   * Grants permission to delete a configuration template
    *
    * Access Level: Write
    *
@@ -218,7 +218,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the draft configuration associated with the running environment.
+   * Grants permission to delete the draft configuration associated with the running environment
    *
    * Access Level: Write
    *
@@ -229,7 +229,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a version of a custom platform.
+   * Grants permission to delete a version of a custom platform
    *
    * Access Level: Write
    *
@@ -240,7 +240,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of account attributes, including resource quotas.
+   * Grants permission to retrieve a list of account attributes, including resource quotas
    *
    * Access Level: Read
    *
@@ -251,7 +251,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of application versions stored in an AWS Elastic Beanstalk storage bucket.
+   * Grants permission to retrieve a list of application versions stored in an AWS Elastic Beanstalk storage bucket
    *
    * Access Level: List
    *
@@ -262,7 +262,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the descriptions of existing applications.
+   * Grants permission to retrieve the descriptions of existing applications
    *
    * Access Level: List
    *
@@ -273,7 +273,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve descriptions of environment configuration options.
+   * Grants permission to retrieve descriptions of environment configuration options
    *
    * Access Level: Read
    *
@@ -284,7 +284,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a description of the settings for a configuration set.
+   * Grants permission to retrieve a description of the settings for a configuration set
    *
    * Access Level: Read
    *
@@ -295,7 +295,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about the overall health of an environment.
+   * Grants permission to retrieve information about the overall health of an environment
    *
    * Access Level: Read
    *
@@ -306,7 +306,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of an environment's completed and failed managed actions.
+   * Grants permission to retrieve a list of an environment's completed and failed managed actions
    *
    * Access Level: Read
    *
@@ -317,7 +317,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of an environment's upcoming and in-progress managed actions.
+   * Grants permission to retrieve a list of an environment's upcoming and in-progress managed actions
    *
    * Access Level: Read
    *
@@ -328,7 +328,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of AWS resources for an environment.
+   * Grants permission to retrieve a list of AWS resources for an environment
    *
    * Access Level: Read
    *
@@ -339,7 +339,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve descriptions for existing environments.
+   * Grants permission to retrieve descriptions for existing environments
    *
    * Access Level: List
    *
@@ -350,7 +350,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of event descriptions matching a set of criteria.
+   * Grants permission to retrieve a list of event descriptions matching a set of criteria
    *
    * Access Level: Read
    *
@@ -361,7 +361,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve more detailed information about the health of environment instances.
+   * Grants permission to retrieve more detailed information about the health of environment instances
    *
    * Access Level: Read
    *
@@ -372,7 +372,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a description of a platform version.
+   * Grants permission to retrieve a description of a platform version
    *
    * Access Level: Read
    *
@@ -383,7 +383,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate an operations role with an environment.
+   * Grants permission to disassociate an operations role with an environment
    *
    * Access Level: Write
    *
@@ -394,7 +394,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of the available solution stack names.
+   * Grants permission to retrieve a list of the available solution stack names
    *
    * Access Level: List
    *
@@ -405,7 +405,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of the available platform branches.
+   * Grants permission to retrieve a list of the available platform branches
    *
    * Access Level: List
    *
@@ -416,7 +416,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of the available platforms.
+   * Grants permission to retrieve a list of the available platforms
    *
    * Access Level: List
    *
@@ -427,7 +427,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of tags of an Elastic Beanstalk resource.
+   * Grants permission to retrieve a list of tags of an Elastic Beanstalk resource
    *
    * Access Level: Read
    *
@@ -438,7 +438,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to submit instance statistics for enhanced health.
+   * Grants permission to submit instance statistics for enhanced health
    *
    * Access Level: Write
    *
@@ -449,7 +449,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete and recreate all of the AWS resources for an environment and to force a restart.
+   * Grants permission to delete and recreate all of the AWS resources for an environment and to force a restart
    *
    * Access Level: Write
    *
@@ -460,7 +460,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from an Elastic Beanstalk resource.
+   * Grants permission to remove tags from an Elastic Beanstalk resource
    *
    * Access Level: Tagging
    *
@@ -474,7 +474,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to initiate a request to compile information of the deployed environment.
+   * Grants permission to initiate a request to compile information of the deployed environment
    *
    * Access Level: Read
    *
@@ -485,7 +485,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to request an environment to restart the application container server running on each Amazon EC2 instance.
+   * Grants permission to request an environment to restart the application container server running on each Amazon EC2 instance
    *
    * Access Level: Write
    *
@@ -496,7 +496,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the compiled information from a RequestEnvironmentInfo request.
+   * Grants permission to retrieve the compiled information from a RequestEnvironmentInfo request
    *
    * Access Level: Read
    *
@@ -507,7 +507,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to swap the CNAMEs of two environments.
+   * Grants permission to swap the CNAMEs of two environments
    *
    * Access Level: Write
    *
@@ -521,7 +521,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to terminate an environment.
+   * Grants permission to terminate an environment
    *
    * Access Level: Write
    *
@@ -532,7 +532,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an application with specified properties.
+   * Grants permission to update an application with specified properties
    *
    * Access Level: Write
    *
@@ -543,7 +543,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the application version lifecycle policy associated with the application.
+   * Grants permission to update the application version lifecycle policy associated with the application
    *
    * Access Level: Write
    *
@@ -554,7 +554,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an application version with specified properties.
+   * Grants permission to update an application version with specified properties
    *
    * Access Level: Write
    *
@@ -565,7 +565,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a configuration template with specified properties or configuration option values.
+   * Grants permission to update a configuration template with specified properties or configuration option values
    *
    * Access Level: Write
    *
@@ -584,7 +584,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an environment.
+   * Grants permission to update an environment
    *
    * Access Level: Write
    *
@@ -601,7 +601,22 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to check the validity of a set of configuration settings for a configuration template or an environment.
+   * Grants permission to add tags to an Elastic Beanstalk resource, remove tags, and to update tag values
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html
+   */
+  public toUpdateTagsForResource() {
+    return this.to('UpdateTagsForResource');
+  }
+
+  /**
+   * Grants permission to check the validity of a set of configuration settings for a configuration template or an environment
    *
    * Access Level: Read
    *
@@ -642,7 +657,8 @@ export class Elasticbeanstalk extends PolicyStatement {
     ],
     "Tagging": [
       "AddTags",
-      "RemoveTags"
+      "RemoveTags",
+      "UpdateTagsForResource"
     ],
     "Read": [
       "CheckDNSAvailability",
@@ -803,7 +819,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Filters access by an application as a dependency or a constraint on an input parameter.
+   * Filters access by an application as a dependency or a constraint on an input parameter
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
    *
@@ -819,7 +835,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Filters access by an application version as a dependency or a constraint on an input parameter.
+   * Filters access by an application version as a dependency or a constraint on an input parameter
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
    *
@@ -837,7 +853,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Filters access by a configuration template as a dependency or a constraint on an input parameter.
+   * Filters access by a configuration template as a dependency or a constraint on an input parameter
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
    *
@@ -855,7 +871,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Filters access by an environment as a dependency or a constraint on an input parameter.
+   * Filters access by an environment as a dependency or a constraint on an input parameter
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
    *
@@ -872,7 +888,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Filters access by a platform as a dependency or a constraint on an input parameter.
+   * Filters access by a platform as a dependency or a constraint on an input parameter
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
    *
@@ -890,7 +906,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Filters access by a solution stack as a dependency or a constraint on an input parameter.
+   * Filters access by a solution stack as a dependency or a constraint on an input parameter
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
    *
@@ -908,7 +924,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Filters access by the application that contains the resource that the action operates on.
+   * Filters access by the application that contains the resource that the action operates on
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
    *

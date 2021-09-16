@@ -19,7 +19,7 @@ export class Textract extends PolicyStatement {
   }
 
   /**
-   * Detects instances of real-world document entities within an image provided as input.
+   * Grants permission to detect instances of real-world document entities within an image provided as input
    *
    * Access Level: Read
    *
@@ -33,7 +33,21 @@ export class Textract extends PolicyStatement {
   }
 
   /**
-   * Detects text in document images.
+   * Grants permission to detect instances of real-world document entities within an image provided as input
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - s3:GetObject
+   *
+   * https://docs.aws.amazon.com/textract/latest/dg/API_AnalyzeExpense.html
+   */
+  public toAnalyzeExpense() {
+    return this.to('AnalyzeExpense');
+  }
+
+  /**
+   * Grants permission to detect text in document images
    *
    * Access Level: Read
    *
@@ -47,7 +61,7 @@ export class Textract extends PolicyStatement {
   }
 
   /**
-   * Returns information about a document analysis job.
+   * Grants permission to return information about a document analysis job
    *
    * Access Level: Read
    *
@@ -58,7 +72,7 @@ export class Textract extends PolicyStatement {
   }
 
   /**
-   * Returns information about a document text detection job.
+   * Grants permission to return information about a document text detection job
    *
    * Access Level: Read
    *
@@ -69,7 +83,7 @@ export class Textract extends PolicyStatement {
   }
 
   /**
-   * Starts an asynchronous job to detect instances of real-world document entities within an image or pdf provided as input.
+   * Grants permission to start an asynchronous job to detect instances of real-world document entities within an image or pdf provided as input
    *
    * Access Level: Write
    *
@@ -83,7 +97,7 @@ export class Textract extends PolicyStatement {
   }
 
   /**
-   * Starts an asynchronous job to detect text in document images or pdfs.
+   * Grants permission to start an asynchronous job to detect text in document images or pdfs
    *
    * Access Level: Write
    *
@@ -99,6 +113,7 @@ export class Textract extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Read": [
       "AnalyzeDocument",
+      "AnalyzeExpense",
       "DetectDocumentText",
       "GetDocumentAnalysis",
       "GetDocumentTextDetection"

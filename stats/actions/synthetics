@@ -8,6 +8,6 @@ synthetics:GetCanaryRuns;Read
 synthetics:ListTagsForResource;Read
 synthetics:StartCanary;Write
 synthetics:StopCanary;Write
-synthetics:TagResource;Write
-synthetics:UntagResource;Write
+synthetics:TagResource;Tagging
+synthetics:UntagResource;Tagging
 synthetics:UpdateCanary;Write

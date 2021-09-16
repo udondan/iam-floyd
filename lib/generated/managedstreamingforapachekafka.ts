@@ -376,6 +376,20 @@ export class Kafka extends PolicyStatement {
     return this.to('UpdateMonitoring');
   }
 
+  /**
+   * Grants permission to update the security settings for the MSK cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:RetireGrant
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-security.html#UpdateSecurity
+   */
+  public toUpdateSecurity() {
+    return this.to('UpdateSecurity');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "BatchAssociateScramSecret",
@@ -391,7 +405,8 @@ export class Kafka extends PolicyStatement {
       "UpdateClusterConfiguration",
       "UpdateClusterKafkaVersion",
       "UpdateConfiguration",
-      "UpdateMonitoring"
+      "UpdateMonitoring",
+      "UpdateSecurity"
     ],
     "Read": [
       "DescribeCluster",

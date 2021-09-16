@@ -1,4 +1,5 @@
 textract:AnalyzeDocument;Read
+textract:AnalyzeExpense;Read
 textract:DetectDocumentText;Read
 textract:GetDocumentAnalysis;Read
 textract:GetDocumentTextDetection;Read

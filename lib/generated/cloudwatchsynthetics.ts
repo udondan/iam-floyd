@@ -131,7 +131,7 @@ export class Synthetics extends PolicyStatement {
   /**
    * Grants permission to add one or more tags to a canary
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html
    */
@@ -142,7 +142,7 @@ export class Synthetics extends PolicyStatement {
   /**
    * Grants permission to remove one or more tags from a canary
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UntagResource.html
    */
@@ -167,8 +167,6 @@ export class Synthetics extends PolicyStatement {
       "DeleteCanary",
       "StartCanary",
       "StopCanary",
-      "TagResource",
-      "UntagResource",
       "UpdateCanary"
     ],
     "Read": [
@@ -178,6 +176,10 @@ export class Synthetics extends PolicyStatement {
       "GetCanary",
       "GetCanaryRuns",
       "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
