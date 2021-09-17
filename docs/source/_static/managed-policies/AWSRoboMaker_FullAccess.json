@@ -18,6 +18,26 @@
         },
         {
             "Effect": "Allow",
+            "Action": "ecr:BatchGetImage",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:CalledViaFirst": "robomaker.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": "ecr-public:DescribeImages",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:CalledViaFirst": "robomaker.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
             "Action": "iam:CreateServiceLinkedRole",
             "Resource": "*",
             "Condition": {

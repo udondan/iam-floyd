@@ -105,6 +105,8 @@
 				"ec2:DescribeVpcs",
 				"ec2:DescribeVpnConnections",
 				"ec2:DescribeVpnGateways",
+                "ec2:DescribePublicIpv4Pools",
+                "ec2:DescribeIpv6Pools",
 				"ec2:DetachInternetGateway",
 				"ec2:DetachNetworkInterface",
 				"ec2:DetachVpnGateway",
