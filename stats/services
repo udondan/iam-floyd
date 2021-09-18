@@ -111,6 +111,7 @@ emr-containers
 es
 events
 execute-api
+finspace
 firehose
 fis
 fms
@@ -151,6 +152,7 @@ iq-permission
 ivs
 kafka
 kafka-cluster
+kafkaconnect
 kendra
 kinesis
 kinesisanalytics

@@ -3,6 +3,7 @@ snowball:CancelJob;Write
 snowball:CreateAddress;Write
 snowball:CreateCluster;Write
 snowball:CreateJob;Write
+snowball:CreateLongTermPricing;Write
 snowball:CreateReturnShippingLabel;Write
 snowball:DescribeAddress;Read
 snowball:DescribeAddresses;List
@@ -17,6 +18,8 @@ snowball:ListClusterJobs;List
 snowball:ListClusters;List
 snowball:ListCompatibleImages;List
 snowball:ListJobs;List
+snowball:ListLongTermPricing;Read
 snowball:UpdateCluster;Write
 snowball:UpdateJob;Write
 snowball:UpdateJobShipmentState;Write
+snowball:UpdateLongTermPricing;Write

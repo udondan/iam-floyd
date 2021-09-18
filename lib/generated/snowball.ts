@@ -74,6 +74,17 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
+   * Grants permission to creates a LongTermPricingListEntry for allowing customers to add an upfront billing contract for a job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateLongTermPricing.html
+   */
+  public toCreateLongTermPricing() {
+    return this.to('CreateLongTermPricing');
+  }
+
+  /**
    * Creates a shipping label that will be used to return the Snow device to AWS.
    *
    * Access Level: Write
@@ -228,6 +239,17 @@ export class Snowball extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list LongTermPricingListEntry objects for the account making the request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListLongTermPricing.html
+   */
+  public toListLongTermPricing() {
+    return this.to('ListLongTermPricing');
+  }
+
+  /**
    * While a cluster's ClusterState value is in the AwaitingQuorum state, you can update some of the information associated with a cluster.
    *
    * Access Level: Write
@@ -260,6 +282,17 @@ export class Snowball extends PolicyStatement {
     return this.to('UpdateJobShipmentState');
   }
 
+  /**
+   * Grants permission to update a specific upfront billing contract for a job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateLongTermPricing.html
+   */
+  public toUpdateLongTermPricing() {
+    return this.to('UpdateLongTermPricing');
+  }
+
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "CancelCluster",
@@ -267,10 +300,12 @@ export class Snowball extends PolicyStatement {
       "CreateAddress",
       "CreateCluster",
       "CreateJob",
+      "CreateLongTermPricing",
       "CreateReturnShippingLabel",
       "UpdateCluster",
       "UpdateJob",
-      "UpdateJobShipmentState"
+      "UpdateJobShipmentState",
+      "UpdateLongTermPricing"
     ],
     "Read": [
       "DescribeAddress",
@@ -280,7 +315,8 @@ export class Snowball extends PolicyStatement {
       "GetJobManifest",
       "GetJobUnlockCode",
       "GetSnowballUsage",
-      "GetSoftwareUpdates"
+      "GetSoftwareUpdates",
+      "ListLongTermPricing"
     ],
     "List": [
       "DescribeAddresses",

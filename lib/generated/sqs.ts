@@ -19,7 +19,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Adds a permission to a queue for a specific principal.
+   * Grants permission to a queue for a specific principal
    *
    * Access Level: Permissions management
    *
@@ -30,7 +30,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Changes the visibility timeout of a specified message in a queue to a new value.
+   * Grants permission to change the visibility timeout of a specified message in a queue to a new value
    *
    * Access Level: Write
    *
@@ -41,18 +41,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Changes the visibility timeout of multiple messages.
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibilityBatch.html
-   */
-  public toChangeMessageVisibilityBatch() {
-    return this.to('ChangeMessageVisibilityBatch');
-  }
-
-  /**
-   * Creates a new queue, or returns the URL of an existing one.
+   * Grants permission to create a new queue, or returns the URL of an existing one
    *
    * Access Level: Write
    *
@@ -63,7 +52,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified message from the specified queue.
+   * Grants permission to delete the specified message from the specified queue
    *
    * Access Level: Write
    *
@@ -74,18 +63,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Deletes up to ten messages from the specified queue.
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessageBatch.html
-   */
-  public toDeleteMessageBatch() {
-    return this.to('DeleteMessageBatch');
-  }
-
-  /**
-   * Deletes the queue specified by the queue URL, regardless of whether the queue is empty.
+   * Grants permission to delete the queue specified by the queue URL, regardless of whether the queue is empty
    *
    * Access Level: Write
    *
@@ -96,7 +74,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Gets attributes for the specified queue.
+   * Grants permission to get attributes for the specified queue
    *
    * Access Level: Read
    *
@@ -107,7 +85,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Returns the URL of an existing queue.
+   * Grants permission to return the URL of an existing queue
    *
    * Access Level: Read
    *
@@ -118,7 +96,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Returns a list of your queues that have the RedrivePolicy queue attribute configured with a dead letter queue.
+   * Grants permission to return a list of your queues that have the RedrivePolicy queue attribute configured with a dead letter queue
    *
    * Access Level: Read
    *
@@ -129,7 +107,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Lists tags added to an SQS queue.
+   * Grants permission to list tags added to an SQS queue
    *
    * Access Level: Read
    *
@@ -140,9 +118,9 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Returns a list of your queues.
+   * Grants permission to return a list of your queues
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueues.html
    */
@@ -151,7 +129,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Deletes the messages in a queue specified by the queue URL.
+   * Grants permission to delete the messages in a queue specified by the queue URL
    *
    * Access Level: Write
    *
@@ -162,7 +140,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Retrieves one or more messages, with a maximum limit of 10 messages, from the specified queue.
+   * Grants permission to retrieve one or more messages, with a maximum limit of 10 messages, from the specified queue
    *
    * Access Level: Read
    *
@@ -173,7 +151,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Revokes any permissions in the queue policy that matches the specified Label parameter.
+   * Grants permission to revoke any permissions in the queue policy that matches the specified Label parameter
    *
    * Access Level: Permissions management
    *
@@ -184,7 +162,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Delivers a message to the specified queue.
+   * Grants permission to deliver a message to the specified queue
    *
    * Access Level: Write
    *
@@ -195,18 +173,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Delivers up to ten messages to the specified queue.
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html
-   */
-  public toSendMessageBatch() {
-    return this.to('SendMessageBatch');
-  }
-
-  /**
-   * Sets the value of one or more queue attributes.
+   * Grants permission to set the value of one or more queue attributes
    *
    * Access Level: Write
    *
@@ -217,7 +184,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Add tags to the specified SQS queue.
+   * Grants permission to add tags to the specified SQS queue
    *
    * Access Level: Tagging
    *
@@ -228,7 +195,7 @@ export class Sqs extends PolicyStatement {
   }
 
   /**
-   * Remove tags from the specified SQS queue.
+   * Grants permission to remove tags from the specified SQS queue
    *
    * Access Level: Tagging
    *
@@ -245,14 +212,11 @@ export class Sqs extends PolicyStatement {
     ],
     "Write": [
       "ChangeMessageVisibility",
-      "ChangeMessageVisibilityBatch",
       "CreateQueue",
       "DeleteMessage",
-      "DeleteMessageBatch",
       "DeleteQueue",
       "PurgeQueue",
       "SendMessage",
-      "SendMessageBatch",
       "SetQueueAttributes"
     ],
     "Read": [
@@ -260,10 +224,8 @@ export class Sqs extends PolicyStatement {
       "GetQueueUrl",
       "ListDeadLetterSourceQueues",
       "ListQueueTags",
+      "ListQueues",
       "ReceiveMessage"
-    ],
-    "List": [
-      "ListQueues"
     ],
     "Tagging": [
       "TagQueue",

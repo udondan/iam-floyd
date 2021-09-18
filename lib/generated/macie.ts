@@ -497,6 +497,17 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about managed data identifiers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/managed-data-identifiers-list.html
+   */
+  public toListManagedDataIdentifiers() {
+    return this.to('ListManagedDataIdentifiers');
+  }
+
+  /**
    * Grants permission to retrieve information about the Amazon Macie member accounts that are associated with a Macie administrator account
    *
    * Access Level: List
@@ -723,6 +734,7 @@ export class Macie2 extends PolicyStatement {
       "ListFindings",
       "ListFindingsFilters",
       "ListInvitations",
+      "ListManagedDataIdentifiers",
       "ListMembers",
       "ListOrganizationAdminAccounts"
     ],

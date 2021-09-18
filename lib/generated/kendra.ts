@@ -30,6 +30,17 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
+   * Grants permission to do batch get document status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_BatchGetDocumentStatus.html
+   */
+  public toBatchGetDocumentStatus() {
+    return this.to('BatchGetDocumentStatus');
+  }
+
+  /**
    * Grants permission to batch put document
    *
    * Access Level: Write
@@ -534,6 +545,7 @@ export class Kendra extends PolicyStatement {
       "UpdateThesaurus"
     ],
     "Read": [
+      "BatchGetDocumentStatus",
       "DescribeDataSource",
       "DescribeFaq",
       "DescribeIndex",

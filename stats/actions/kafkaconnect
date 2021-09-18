@@ -1,0 +1,11 @@
+kafkaconnect:CreateConnector;Write
+kafkaconnect:CreateCustomPlugin;Write
+kafkaconnect:CreateWorkerConfiguration;Write
+kafkaconnect:DeleteConnector;Write
+kafkaconnect:DescribeConnector;Read
+kafkaconnect:DescribeCustomPlugin;Read
+kafkaconnect:DescribeWorkerConfiguration;Read
+kafkaconnect:ListConnectors;Read
+kafkaconnect:ListCustomPlugins;Read
+kafkaconnect:ListWorkerConfigurations;Read
+kafkaconnect:UpdateConnector;Write

@@ -40,6 +40,7 @@ macie2:ListCustomDataIdentifiers;List
 macie2:ListFindings;List
 macie2:ListFindingsFilters;List
 macie2:ListInvitations;List
+macie2:ListManagedDataIdentifiers;List
 macie2:ListMembers;List
 macie2:ListOrganizationAdminAccounts;List
 macie2:ListTagsForResource;Read
