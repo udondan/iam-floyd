@@ -200,7 +200,7 @@ export class Finspace extends PolicyStatement {
   /**
    * Adds a resource of type environment to the statement
    *
-   * https://docs.aws.amazon.com/finspace/latest/ug/finspace-example-policies.html
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
    *
    * @param environmentId - Identifier for the environmentId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -222,7 +222,7 @@ export class Finspace extends PolicyStatement {
   /**
    * Adds a resource of type user to the statement
    *
-   * https://docs.aws.amazon.com/finspace/latest/ug/finspace-example-policies.html
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-example-policies.html
    *
    * @param userId - Identifier for the userId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
