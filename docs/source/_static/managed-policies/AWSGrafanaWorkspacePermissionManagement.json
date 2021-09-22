@@ -6,6 +6,7 @@
 			"Effect": "Allow",
 			"Action": [
 				"grafana:DescribeWorkspace",
+				"grafana:DescribeWorkspaceAuthentication",
 				"grafana:UpdatePermissions",
 				"grafana:ListPermissions",
 				"grafana:ListWorkspaces"

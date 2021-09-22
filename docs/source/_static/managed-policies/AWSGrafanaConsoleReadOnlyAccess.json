@@ -5,9 +5,8 @@
 			"Sid": "AWSGrafanaConsoleReadOnlyAccess",
 			"Effect": "Allow",
 			"Action": [
-				"grafana:DescribeWorkspace",
-				"grafana:ListPermissions",
-				"grafana:ListWorkspaces"
+				"grafana:Describe*",
+				"grafana:List*"
 			],
 			"Resource": "arn:aws:grafana:*:*:/workspaces*"
 		}
