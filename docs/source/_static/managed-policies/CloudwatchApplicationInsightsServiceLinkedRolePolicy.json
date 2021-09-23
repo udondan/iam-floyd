@@ -175,7 +175,8 @@
 				"arn:aws:ec2:*:*:instance/*",
 				"arn:aws:ssm:*:*:document/AWSEC2-CheckPerformanceCounterSets",
 				"arn:aws:ssm:*:*:document/AWS-ConfigureAWSPackage",
-				"arn:aws:ssm:*:*:document/AWSEC2-DetectWorkload"
+				"arn:aws:ssm:*:*:document/AWSEC2-DetectWorkload",
+				"arn:aws:ssm:*:*:document/AmazonCloudWatch-ManageAgent"
 			]
 		},
 		{
