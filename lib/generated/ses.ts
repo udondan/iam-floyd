@@ -791,7 +791,7 @@ export class Ses extends PolicyStatement {
   /**
    * Grants permission to return a set of DKIM tokens for a domain
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyDomainDkim.html
    */
@@ -802,7 +802,7 @@ export class Ses extends PolicyStatement {
   /**
    * Grants permission to verify a domain
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyDomainIdentity.html
    */
@@ -813,7 +813,7 @@ export class Ses extends PolicyStatement {
   /**
    * Grants permission to verify an email address
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailAddress.html
    */
@@ -824,7 +824,7 @@ export class Ses extends PolicyStatement {
   /**
    * Grants permission to verify an email identity
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html
    */
@@ -876,7 +876,11 @@ export class Ses extends PolicyStatement {
       "UpdateConfigurationSetTrackingOptions",
       "UpdateCustomVerificationEmailTemplate",
       "UpdateReceiptRule",
-      "UpdateTemplate"
+      "UpdateTemplate",
+      "VerifyDomainDkim",
+      "VerifyDomainIdentity",
+      "VerifyEmailAddress",
+      "VerifyEmailIdentity"
     ],
     "Permissions management": [
       "DeleteIdentityPolicy",
@@ -899,11 +903,7 @@ export class Ses extends PolicyStatement {
       "GetTemplate",
       "ListReceiptFilters",
       "ListReceiptRuleSets",
-      "ListVerifiedEmailAddresses",
-      "VerifyDomainDkim",
-      "VerifyDomainIdentity",
-      "VerifyEmailAddress",
-      "VerifyEmailIdentity"
+      "ListVerifiedEmailAddresses"
     ],
     "List": [
       "ListConfigurationSets",

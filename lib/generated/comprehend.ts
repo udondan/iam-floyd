@@ -381,6 +381,17 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of summaries of the document classifiers that you have created
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListDocumentClassifierSummaries.html
+   */
+  public toListDocumentClassifierSummaries() {
+    return this.to('ListDocumentClassifierSummaries');
+  }
+
+  /**
    * Grants permission to get a list of the document classifiers that you have created
    *
    * Access Level: Read
@@ -422,6 +433,17 @@ export class Comprehend extends PolicyStatement {
    */
   public toListEntitiesDetectionJobs() {
     return this.to('ListEntitiesDetectionJobs');
+  }
+
+  /**
+   * Grants permission to get a list of summaries for the entity recognizers that you have created
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEntityRecognizerSummaries.html
+   */
+  public toListEntityRecognizerSummaries() {
+    return this.to('ListEntityRecognizerSummaries');
   }
 
   /**
@@ -802,10 +824,12 @@ export class Comprehend extends PolicyStatement {
       "DetectSentiment",
       "DetectSyntax",
       "ListDocumentClassificationJobs",
+      "ListDocumentClassifierSummaries",
       "ListDocumentClassifiers",
       "ListDominantLanguageDetectionJobs",
       "ListEndpoints",
       "ListEntitiesDetectionJobs",
+      "ListEntityRecognizerSummaries",
       "ListEntityRecognizers",
       "ListEventsDetectionJobs",
       "ListKeyPhrasesDetectionJobs",

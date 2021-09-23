@@ -29,10 +29,12 @@ comprehend:DetectPiiEntities;Read
 comprehend:DetectSentiment;Read
 comprehend:DetectSyntax;Read
 comprehend:ListDocumentClassificationJobs;Read
+comprehend:ListDocumentClassifierSummaries;Read
 comprehend:ListDocumentClassifiers;Read
 comprehend:ListDominantLanguageDetectionJobs;Read
 comprehend:ListEndpoints;Read
 comprehend:ListEntitiesDetectionJobs;Read
+comprehend:ListEntityRecognizerSummaries;Read
 comprehend:ListEntityRecognizers;Read
 comprehend:ListEventsDetectionJobs;Read
 comprehend:ListKeyPhrasesDetectionJobs;Read

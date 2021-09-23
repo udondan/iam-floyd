@@ -132,7 +132,7 @@ ses:UpdateEmailIdentityPolicy;Permissions management
 ses:UpdateEmailTemplate;Write
 ses:UpdateReceiptRule;Write
 ses:UpdateTemplate;Write
-ses:VerifyDomainDkim;Read
-ses:VerifyDomainIdentity;Read
-ses:VerifyEmailAddress;Read
-ses:VerifyEmailIdentity;Read
+ses:VerifyDomainDkim;Write
+ses:VerifyDomainIdentity;Write
+ses:VerifyEmailAddress;Write
+ses:VerifyEmailIdentity;Write
