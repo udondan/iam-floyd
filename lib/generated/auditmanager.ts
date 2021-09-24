@@ -698,7 +698,7 @@ export class Auditmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAssessmentFramework(assessmentFrameworkId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:auditmanager:${Region}:${Account}:assessment/${AssessmentFrameworkId}';
+    var arn = 'arn:${Partition}:auditmanager:${Region}:${Account}:assessmentFramework/${AssessmentFrameworkId}';
     arn = arn.replace('${AssessmentFrameworkId}', assessmentFrameworkId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
