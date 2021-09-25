@@ -98,7 +98,7 @@ export class LicenseManager extends PolicyStatement {
   /**
    * Grants permission to create a new license configuration
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -108,6 +108,17 @@ export class LicenseManager extends PolicyStatement {
    */
   public toCreateLicenseConfiguration() {
     return this.to('CreateLicenseConfiguration');
+  }
+
+  /**
+   * Grants permission to create a license conversion task for a resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseConversionTaskForResource.html
+   */
+  public toCreateLicenseConversionTaskForResource() {
+    return this.to('CreateLicenseConversionTaskForResource');
   }
 
   /**
@@ -254,6 +265,17 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a license conversion task
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseConversionTask.html
+   */
+  public toGetLicenseConversionTask() {
+    return this.to('GetLicenseConversionTask');
+  }
+
+  /**
    * Grants permission to get a report generator
    *
    * Access Level: Read
@@ -322,12 +344,23 @@ export class LicenseManager extends PolicyStatement {
   /**
    * Grants permission to list license configurations
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseConfigurations.html
    */
   public toListLicenseConfigurations() {
     return this.to('ListLicenseConfigurations');
+  }
+
+  /**
+   * Grants permission to list license conversion tasks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseConversionTasks.html
+   */
+  public toListLicenseConversionTasks() {
+    return this.to('ListLicenseConversionTasks');
   }
 
   /**
@@ -366,7 +399,7 @@ export class LicenseManager extends PolicyStatement {
   /**
    * Grants permission to list licenses
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenses.html
    */
@@ -410,7 +443,7 @@ export class LicenseManager extends PolicyStatement {
   /**
    * Grants permission to list tags for a selected resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListTagsForResource.html
    */
@@ -530,6 +563,8 @@ export class LicenseManager extends PolicyStatement {
       "CreateGrant",
       "CreateGrantVersion",
       "CreateLicense",
+      "CreateLicenseConfiguration",
+      "CreateLicenseConversionTaskForResource",
       "CreateLicenseManagerReportGenerator",
       "CreateLicenseVersion",
       "CreateToken",
@@ -544,35 +579,36 @@ export class LicenseManager extends PolicyStatement {
       "UpdateLicenseManagerReportGenerator",
       "UpdateLicenseSpecificationsForResource"
     ],
-    "Tagging": [
-      "CreateLicenseConfiguration",
-      "TagResource",
-      "UntagResource"
-    ],
     "Read": [
       "GetAccessToken",
       "GetGrant",
       "GetLicense",
       "GetLicenseConfiguration",
+      "GetLicenseConversionTask",
       "GetLicenseManagerReportGenerator",
-      "GetLicenseUsage"
+      "GetLicenseUsage",
+      "ListLicenseConfigurations",
+      "ListLicenses",
+      "ListTagsForResource"
     ],
     "List": [
       "GetServiceSettings",
       "ListAssociationsForLicenseConfiguration",
       "ListDistributedGrants",
       "ListFailuresForLicenseConfigurationOperations",
-      "ListLicenseConfigurations",
+      "ListLicenseConversionTasks",
       "ListLicenseManagerReportGenerators",
       "ListLicenseSpecificationsForResource",
       "ListLicenseVersions",
-      "ListLicenses",
       "ListReceivedGrants",
       "ListReceivedLicenses",
       "ListResourceInventory",
-      "ListTagsForResource",
       "ListTokens",
       "ListUsageForLicenseConfiguration"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ],
     "Permissions management": [
       "UpdateServiceSettings"

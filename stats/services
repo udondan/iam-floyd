@@ -68,6 +68,7 @@ comprehendmedical
 compute-optimizer
 config
 connect
+connect-campaigns
 controltower
 cur
 databrew

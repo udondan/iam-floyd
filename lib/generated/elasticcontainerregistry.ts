@@ -122,6 +122,17 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve replication status about an image in a registry, including failure reason if replication fails
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImageReplicationStatus.html
+   */
+  public toDescribeImageReplicationStatus() {
+    return this.to('DescribeImageReplicationStatus');
+  }
+
+  /**
    * Grants permission to describe the image scan findings for the specified image
    *
    * Access Level: Read
@@ -135,7 +146,7 @@ export class Ecr extends PolicyStatement {
   /**
    * Grants permission to get metadata about the images in a repository, including image size, image tags, and creation date
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImages.html
    */
@@ -157,7 +168,7 @@ export class Ecr extends PolicyStatement {
   /**
    * Grants permission to describe image repositories in a registry
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRepositories.html
    */
@@ -256,7 +267,7 @@ export class Ecr extends PolicyStatement {
   /**
    * Grants permission to list the tags for an Amazon ECR resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListTagsForResource.html
    */
@@ -415,15 +426,17 @@ export class Ecr extends PolicyStatement {
     "Read": [
       "BatchCheckLayerAvailability",
       "BatchGetImage",
+      "DescribeImageReplicationStatus",
       "DescribeImageScanFindings",
-      "DescribeImages",
       "DescribeRegistry",
+      "DescribeRepositories",
       "GetAuthorizationToken",
       "GetDownloadUrlForLayer",
       "GetLifecyclePolicy",
       "GetLifecyclePolicyPreview",
       "GetRegistryPolicy",
-      "GetRepositoryPolicy"
+      "GetRepositoryPolicy",
+      "ListTagsForResource"
     ],
     "Write": [
       "BatchDeleteImage",
@@ -446,9 +459,8 @@ export class Ecr extends PolicyStatement {
       "UploadLayerPart"
     ],
     "List": [
-      "DescribeRepositories",
-      "ListImages",
-      "ListTagsForResource"
+      "DescribeImages",
+      "ListImages"
     ],
     "Permissions management": [
       "SetRepositoryPolicy"

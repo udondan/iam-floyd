@@ -8,6 +8,7 @@ appstream:CreateImageBuilder;Write
 appstream:CreateImageBuilderStreamingURL;Write
 appstream:CreateStack;Write
 appstream:CreateStreamingURL;Write
+appstream:CreateUpdatedImage;Write
 appstream:CreateUsageReportSubscription;Write
 appstream:CreateUser;Write
 appstream:DeleteDirectoryConfig;Write

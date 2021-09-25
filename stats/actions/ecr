@@ -7,10 +7,11 @@ ecr:DeleteLifecyclePolicy;Write
 ecr:DeleteRegistryPolicy;Write
 ecr:DeleteRepository;Write
 ecr:DeleteRepositoryPolicy;Write
+ecr:DescribeImageReplicationStatus;Read
 ecr:DescribeImageScanFindings;Read
-ecr:DescribeImages;Read
+ecr:DescribeImages;List
 ecr:DescribeRegistry;Read
-ecr:DescribeRepositories;List
+ecr:DescribeRepositories;Read
 ecr:GetAuthorizationToken;Read
 ecr:GetDownloadUrlForLayer;Read
 ecr:GetLifecyclePolicy;Read
@@ -19,7 +20,7 @@ ecr:GetRegistryPolicy;Read
 ecr:GetRepositoryPolicy;Read
 ecr:InitiateLayerUpload;Write
 ecr:ListImages;List
-ecr:ListTagsForResource;List
+ecr:ListTagsForResource;Read
 ecr:PutImage;Write
 ecr:PutImageScanningConfiguration;Write
 ecr:PutImageTagMutability;Write

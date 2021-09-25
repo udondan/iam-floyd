@@ -287,6 +287,7 @@ export { Elasticloadbalancing } from "./elasticloadbalancing";
 export { ElasticloadbalancingV2 } from "./elasticloadbalancingv2";
 export { ElementalSupportCases } from "./elementalsupportcases";
 export { ElementalSupportContent } from "./elementalsupportcontent";
+export { ConnectCampaigns } from "./high-volumeoutboundcommunications";
 export { Iam } from "./identityandaccessmanagement";
 export { Launchwizard } from "./launchwizard";
 export { Networkmanager } from "./networkmanager";

@@ -159,6 +159,21 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an existing image within customer account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateUpdatedImage.html
+   */
+  public toCreateUpdatedImage() {
+    return this.to('CreateUpdatedImage');
+  }
+
+  /**
    * Grants permission to create a usage report subscription. Usage reports are generated daily
    *
    * Access Level: Write
@@ -638,6 +653,7 @@ export class Appstream extends PolicyStatement {
       "CreateImageBuilderStreamingURL",
       "CreateStack",
       "CreateStreamingURL",
+      "CreateUpdatedImage",
       "CreateUsageReportSubscription",
       "CreateUser",
       "DeleteDirectoryConfig",

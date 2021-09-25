@@ -1,0 +1,296 @@
+import { AccessLevelList } from "../shared/access-level";
+import { PolicyStatement } from "../shared";
+
+/**
+ * Statement provider for service [connect-campaigns](https://docs.aws.amazon.com/service-authorization/latest/reference/list_high-volumeoutboundcommunications.html).
+ *
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ */
+export class ConnectCampaigns extends PolicyStatement {
+  public servicePrefix = 'connect-campaigns';
+
+  /**
+   * Statement provider for service [connect-campaigns](https://docs.aws.amazon.com/service-authorization/latest/reference/list_high-volumeoutboundcommunications.html).
+   *
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   */
+  constructor (sid?: string) {
+    super(sid);
+  }
+
+  /**
+   * Grants permission to create a campaign
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toCreateCampaign() {
+    return this.to('CreateCampaign');
+  }
+
+  /**
+   * Grants permission to delete a campaign
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toDeleteCampaign() {
+    return this.to('DeleteCampaign');
+  }
+
+  /**
+   * Grants permission to describe a specific campaign
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toDescribeCampaign() {
+    return this.to('DescribeCampaign');
+  }
+
+  /**
+   * Grants permission to get state of a campaign
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toGetCampaignState() {
+    return this.to('GetCampaignState');
+  }
+
+  /**
+   * Grants permission to get state of campaigns
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toGetCampaignStateBatch() {
+    return this.to('GetCampaignStateBatch');
+  }
+
+  /**
+   * Grants permission to provide summary of all campaigns
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toListCampaigns() {
+    return this.to('ListCampaigns');
+  }
+
+  /**
+   * Grants permission to list tags for a resource
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to pause a campaign
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toPauseCampaign() {
+    return this.to('PauseCampaign');
+  }
+
+  /**
+   * Grants permission to add configuration information for an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toPutConnectInstanceConfig() {
+    return this.to('PutConnectInstanceConfig');
+  }
+
+  /**
+   * Grants permission to create dial requests for the specified campaign
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toPutDialRequestBatch() {
+    return this.to('PutDialRequestBatch');
+  }
+
+  /**
+   * Grants permission to resume a campaign
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toResumeCampaign() {
+    return this.to('ResumeCampaign');
+  }
+
+  /**
+   * Grants permission to start a campaign
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toStartCampaign() {
+    return this.to('StartCampaign');
+  }
+
+  /**
+   * Grants permission to stop a campaign
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toStopCampaign() {
+    return this.to('StopCampaign');
+  }
+
+  /**
+   * Grants permission to tag a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update the dialer configuration of a campaign
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toUpdateCampaignDialerConfig() {
+    return this.to('UpdateCampaignDialerConfig');
+  }
+
+  /**
+   * Grants permission to update the name of a campaign
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toUpdateCampaignName() {
+    return this.to('UpdateCampaignName');
+  }
+
+  /**
+   * Grants permission to update the outbound call configuration of a campaign
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   */
+  public toUpdateCampaignOutboundCallConfig() {
+    return this.to('UpdateCampaignOutboundCallConfig');
+  }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateCampaign",
+      "DeleteCampaign",
+      "PauseCampaign",
+      "PutConnectInstanceConfig",
+      "PutDialRequestBatch",
+      "ResumeCampaign",
+      "StartCampaign",
+      "StopCampaign",
+      "UpdateCampaignDialerConfig",
+      "UpdateCampaignName",
+      "UpdateCampaignOutboundCallConfig"
+    ],
+    "Read": [
+      "DescribeCampaign",
+      "GetCampaignState",
+      "GetCampaignStateBatch",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListCampaigns"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
+
+  /**
+   * Adds a resource of type campaign to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-high-volume-outbound-communications.html
+   *
+   * @param campaignId - Identifier for the campaignId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCampaign(campaignId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect-campaigns:${Region}:${Account}:campaign/${CampaignId}';
+    arn = arn.replace('${CampaignId}', campaignId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+}
