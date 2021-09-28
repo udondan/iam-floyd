@@ -19,7 +19,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Create a new Cell
+   * Grants permission to create a new cell
    *
    * Access Level: Write
    *
@@ -34,7 +34,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Create a new Cross Account Authorization
+   * Grants permission to create a cross account authorization
    *
    * Access Level: Write
    *
@@ -45,7 +45,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Create a new Readiness Check
+   * Grants permission to create a readiness check
    *
    * Access Level: Write
    *
@@ -60,7 +60,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Create a Recovery Group
+   * Grants permission to create a recovery group
    *
    * Access Level: Write
    *
@@ -75,7 +75,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Create a new Resource Set
+   * Grants permission to create a resource set
    *
    * Access Level: Write
    *
@@ -90,7 +90,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Delete an existing Cell
+   * Grants permission to delete a cell
    *
    * Access Level: Write
    *
@@ -101,7 +101,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Delete a Cross Account Authorization
+   * Grants permission to delete a cross account authorization
    *
    * Access Level: Write
    *
@@ -112,7 +112,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Delete an existing Readiness Check
+   * Grants permission to delete a readiness check
    *
    * Access Level: Write
    *
@@ -123,7 +123,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Delete an existing Recovery Group
+   * Grants permission to delete a recovery group
    *
    * Access Level: Write
    *
@@ -134,7 +134,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Delete an existing Readiness Check
+   * Grants permission to delete a resource set
    *
    * Access Level: Write
    *
@@ -145,7 +145,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Get Architecture Recommendations for a Recovery Group
+   * Grants permission to get architecture recommendations for a recovery group
    *
    * Access Level: Read
    *
@@ -156,7 +156,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Get an existing Cell
+   * Grants permission to get information about a cell
    *
    * Access Level: Read
    *
@@ -167,7 +167,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Get Readiness Summary for Cell
+   * Grants permission to get a readiness summary for a cell
    *
    * Access Level: Read
    *
@@ -178,7 +178,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Get a Readiness Check
+   * Grants permission to get information about a readiness check
    *
    * Access Level: Read
    *
@@ -189,7 +189,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Get the Readiness Summary for a Resource
+   * Grants permission to get the readiness status for an individual resource
    *
    * Access Level: Read
    *
@@ -200,7 +200,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Get the status of a Readiness Check
+   * Grants permission to get the status of a readiness check (for a resource set)
    *
    * Access Level: Read
    *
@@ -211,7 +211,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Get a Recovery Group
+   * Grants permission to get information about a recovery group
    *
    * Access Level: Read
    *
@@ -222,7 +222,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Get the Readiness Summary of a Recovery Group
+   * Grants permission to get a readiness summary for a recovery group
    *
    * Access Level: Read
    *
@@ -233,7 +233,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Get a Resource Set
+   * Grants permission to get information about a resource set
    *
    * Access Level: Read
    *
@@ -244,7 +244,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to List existing Cells
+   * Grants permission to list cells
    *
    * Access Level: Read
    *
@@ -255,7 +255,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to List existing Cross Account Authorizations
+   * Grants permission to list cross account authorizations
    *
    * Access Level: Read
    *
@@ -266,7 +266,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to List existing Readiness Checks
+   * Grants permission to list readiness checks
    *
    * Access Level: Read
    *
@@ -277,7 +277,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to List existing Recovery Groups
+   * Grants permission to list recovery groups
    *
    * Access Level: Read
    *
@@ -288,7 +288,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to List existing Resource Sets
+   * Grants permission to list resource sets
    *
    * Access Level: Read
    *
@@ -299,7 +299,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to List Readiness Rules
+   * Grants permission to list readiness rules
    *
    * Access Level: Read
    *
@@ -310,7 +310,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to List Tags for a Resource
+   * Grants permission to list tags for a resource
    *
    * Access Level: Read
    *
@@ -321,7 +321,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Add a Tag to a Resource
+   * Grants permission to add a tag to a resource
    *
    * Access Level: Tagging
    *
@@ -336,7 +336,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Remove a Tag from a resource
+   * Grants permission to remove a tag from a resource
    *
    * Access Level: Tagging
    *
@@ -351,7 +351,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Update an existing Cell
+   * Grants permission to update a cell
    *
    * Access Level: Write
    *
@@ -365,7 +365,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Update an existing Readiness Check
+   * Grants permission to update a readiness check
    *
    * Access Level: Write
    *
@@ -379,7 +379,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Update an existing Recovery Group
+   * Grants permission to update a recovery group
    *
    * Access Level: Write
    *
@@ -393,7 +393,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Update an existing Resource Set
+   * Grants permission to update a resource set
    *
    * Access Level: Write
    *

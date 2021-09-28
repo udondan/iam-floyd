@@ -19,7 +19,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Create a new Cluster
+   * Grants permission to create a cluster
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Create a new Control Panel
+   * Grants permission to create a control panel
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Create a new Routing Control
+   * Grants permission to create a routing control
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Create a Safety Rule
+   * Grants permission to create a safety rule
    *
    * Access Level: Write
    *
@@ -63,7 +63,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Delete an existing Cluster
+   * Grants permission to delete a cluster
    *
    * Access Level: Write
    *
@@ -74,7 +74,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Create a Control Panel
+   * Grants permission to delete a control panel
    *
    * Access Level: Write
    *
@@ -85,7 +85,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Delete a Routing Control
+   * Grants permission to delete a routing control
    *
    * Access Level: Write
    *
@@ -96,7 +96,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Delete a Safety Rule
+   * Grants permission to delete a safety rule
    *
    * Access Level: Write
    *
@@ -107,7 +107,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Describe a Cluster
+   * Grants permission to describe a cluster
    *
    * Access Level: Read
    *
@@ -118,7 +118,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Describe a Control Panel
+   * Grants permission to describe a control panel
    *
    * Access Level: Read
    *
@@ -129,7 +129,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Describe a Routing Control
+   * Grants permission to describe a routing control
    *
    * Access Level: Read
    *
@@ -140,7 +140,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Describe a Routing Control
+   * Grants permission to describe a routing control
    *
    * Access Level: Read
    *
@@ -151,7 +151,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Describe a Safety Rule
+   * Grants permission to describe a safety rule
    *
    * Access Level: Read
    *
@@ -162,7 +162,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to List Associated Route53 Health Checks
+   * Grants permission to list associated Route 53 health checks
    *
    * Access Level: List
    *
@@ -173,7 +173,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to List existing Clusters
+   * Grants permission to list clusters
    *
    * Access Level: Read
    *
@@ -184,7 +184,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to List Control Panels
+   * Grants permission to list control panels
    *
    * Access Level: Read
    *
@@ -195,7 +195,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to List Routing Controls
+   * Grants permission to list routing controls
    *
    * Access Level: Read
    *
@@ -206,7 +206,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to List Safety Rules
+   * Grants permission to list safety rules
    *
    * Access Level: Read
    *
@@ -217,7 +217,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Update an existing Cluster
+   * Grants permission to update a cluster
    *
    * Access Level: Write
    *
@@ -228,7 +228,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Update a Routing Control
+   * Grants permission to update a routing control
    *
    * Access Level: Write
    *
@@ -239,7 +239,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Update an existing Safety Rule
+   * Grants permission to update a safety rule
    *
    * Access Level: Write
    *

@@ -82,6 +82,8 @@ rds:DescribeOptionGroupOptions;List
 rds:DescribeOptionGroups;List
 rds:DescribeOrderableDBInstanceOptions;List
 rds:DescribePendingMaintenanceActions;List
+rds:DescribeRecommendationGroups;Read
+rds:DescribeRecommendations;Read
 rds:DescribeReservedDBInstances;List
 rds:DescribeReservedDBInstancesOfferings;List
 rds:DescribeSourceRegions;List
@@ -109,6 +111,7 @@ rds:ModifyDBSubnetGroup;Write
 rds:ModifyEventSubscription;Write
 rds:ModifyGlobalCluster;Write
 rds:ModifyOptionGroup;Write
+rds:ModifyRecommendation;Write
 rds:PromoteReadReplica;Write
 rds:PromoteReadReplicaDBCluster;Write
 rds:PurchaseReservedDBInstancesOffering;Write

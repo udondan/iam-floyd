@@ -19,7 +19,7 @@ export class Route53RecoveryCluster extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Get a Routing Control State
+   * Grants permission to get a routing control state
    *
    * Access Level: Read
    *
@@ -30,7 +30,7 @@ export class Route53RecoveryCluster extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Update a Routing Control State
+   * Grants permission to update a routing control state
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Route53RecoveryCluster extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Update Routing Control States
+   * Grants permission to update a batch of routing control states
    *
    * Access Level: Write
    *

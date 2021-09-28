@@ -42,7 +42,7 @@ export class Kafkaconnect extends PolicyStatement {
    * - s3:GetBucketPolicy
    * - s3:PutBucketPolicy
    *
-   * https://docs.aws.amazon.com/MSKC/1.0/APIReference/connectors.html#CreateConnector
+   * https://docs.aws.amazon.com/MCK/latest/mck/API_CreateConnector.html
    */
   public toCreateConnector() {
     return this.to('CreateConnector');
@@ -56,7 +56,7 @@ export class Kafkaconnect extends PolicyStatement {
    * Dependent actions:
    * - s3:GetObject
    *
-   * https://docs.aws.amazon.com/MSKC/1.0/APIReference/custom-plugins.html#CreateCustomPlugin
+   * https://docs.aws.amazon.com/MCK/latest/mck/API_CreateCustomPlugin.html
    */
   public toCreateCustomPlugin() {
     return this.to('CreateCustomPlugin');
@@ -67,7 +67,7 @@ export class Kafkaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/MSKC/1.0/APIReference/worker-configurations.html#CreateWorkerConfiguration
+   * https://docs.aws.amazon.com/MCK/latest/mck/API_CreateWorkerConfiguration.html
    */
   public toCreateWorkerConfiguration() {
     return this.to('CreateWorkerConfiguration');
@@ -82,7 +82,7 @@ export class Kafkaconnect extends PolicyStatement {
    * - logs:DeleteLogDelivery
    * - logs:ListLogDeliveries
    *
-   * https://docs.aws.amazon.com/MSKC/1.0/APIReference/connectors-connectorarn.html#DeleteConnector
+   * https://docs.aws.amazon.com/MCK/latest/mck/API_DeleteConnector.html
    */
   public toDeleteConnector() {
     return this.to('DeleteConnector');
@@ -93,7 +93,7 @@ export class Kafkaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/MSKC/1.0/APIReference/connectors-connectorarn.html#DescribeConnector
+   * https://docs.aws.amazon.com/MCK/latest/mck/API_DescribeConnector.html
    */
   public toDescribeConnector() {
     return this.to('DescribeConnector');
@@ -104,7 +104,7 @@ export class Kafkaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/MSKC/1.0/APIReference/custom-plugins-custompluginarn.html#DescribeCustomPlugin
+   * https://docs.aws.amazon.com/MCK/latest/mck/API_DescribeCustomPlugin.html
    */
   public toDescribeCustomPlugin() {
     return this.to('DescribeCustomPlugin');
@@ -115,7 +115,7 @@ export class Kafkaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/MSKC/1.0/APIReference/worker-configurations-workerconfigurationarn.html#DescribeWorkerConfiguration
+   * https://docs.aws.amazon.com/MCK/latest/mck/API_DescribeWorkerConfiguration.html
    */
   public toDescribeWorkerConfiguration() {
     return this.to('DescribeWorkerConfiguration');
@@ -126,7 +126,7 @@ export class Kafkaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/MSKC/1.0/APIReference/connectors.html#ListConnectors
+   * https://docs.aws.amazon.com/MCK/latest/mck/API_ListConnectors.html
    */
   public toListConnectors() {
     return this.to('ListConnectors');
@@ -137,7 +137,7 @@ export class Kafkaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/MSKC/1.0/APIReference/custom-plugins.html#ListCustomPlugins
+   * https://docs.aws.amazon.com/MCK/latest/mck/API_ListCustomPlugins.html
    */
   public toListCustomPlugins() {
     return this.to('ListCustomPlugins');
@@ -148,7 +148,7 @@ export class Kafkaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/MSKC/1.0/APIReference/worker-configurations.html#ListWorkerConfigurations
+   * https://docs.aws.amazon.com/MCK/latest/mck/API_ListWorkerConfigurations.html
    */
   public toListWorkerConfigurations() {
     return this.to('ListWorkerConfigurations');
@@ -159,7 +159,7 @@ export class Kafkaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/MSKC/1.0/APIReference/connectors-connectorarn.html#UpdateConnector
+   * https://docs.aws.amazon.com/MCK/latest/mck/API_UpdateConnector.html
    */
   public toUpdateConnector() {
     return this.to('UpdateConnector');
@@ -186,7 +186,7 @@ export class Kafkaconnect extends PolicyStatement {
   /**
    * Adds a resource of type connector to the statement
    *
-   * https://docs.aws.amazon.com/MSKC/1.0/APIReference/connectors-connectorarn.html
+   * https://docs.aws.amazon.com/MCK/latest/mck/API_ConnectorSummary.html
    *
    * @param connectorName - Identifier for the connectorName.
    * @param uUID - Identifier for the uUID.
@@ -207,7 +207,7 @@ export class Kafkaconnect extends PolicyStatement {
   /**
    * Adds a resource of type custom plugin to the statement
    *
-   * https://docs.aws.amazon.com/MSKC/1.0/APIReference/custom-plugins-custompluginarn.html
+   * https://docs.aws.amazon.com/MCK/latest/mck/API_CustomPlugin.html
    *
    * @param customPluginName - Identifier for the customPluginName.
    * @param uUID - Identifier for the uUID.
@@ -228,7 +228,7 @@ export class Kafkaconnect extends PolicyStatement {
   /**
    * Adds a resource of type worker configuration to the statement
    *
-   * https://docs.aws.amazon.com/MSKC/1.0/APIReference/worker-configurations-workerconfigurationarn.html
+   * https://docs.aws.amazon.com/MCK/latest/mck/API_WorkerConfiguration.html
    *
    * @param workerConfigurationName - Identifier for the workerConfigurationName.
    * @param uUID - Identifier for the uUID.

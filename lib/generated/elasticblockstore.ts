@@ -19,7 +19,7 @@ export class Ebs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to seal and complete the snapshot after all of the required blocks of data have been written to it.
+   * Grants permission to seal and complete the snapshot after all of the required blocks of data have been written to it
    *
    * Access Level: Write
    *
@@ -61,7 +61,7 @@ export class Ebs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the blocks in an Amazon Elastic Block Store (EBS) snapshot.
+   * Grants permission to list the blocks in an Amazon Elastic Block Store (EBS) snapshot
    *
    * Access Level: Read
    *
@@ -75,7 +75,7 @@ export class Ebs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to write a block of data to a snapshot created by the StartSnapshot operation.
+   * Grants permission to write a block of data to a snapshot created by the StartSnapshot operation
    *
    * Access Level: Write
    *
@@ -89,7 +89,7 @@ export class Ebs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new EBS snapshot.
+   * Grants permission to create a new EBS snapshot
    *
    * Access Level: Write
    *
@@ -146,7 +146,7 @@ export class Ebs extends PolicyStatement {
   }
 
   /**
-   * Filters access by the description of the snapshot being created.
+   * Filters access by the description of the snapshot being created
    *
    * Applies to actions:
    * - .toStartSnapshot()
@@ -162,7 +162,7 @@ export class Ebs extends PolicyStatement {
   }
 
   /**
-   * Filters access by the ID of the parent snapshot.
+   * Filters access by the ID of the parent snapshot
    *
    * Applies to actions:
    * - .toStartSnapshot()
@@ -178,7 +178,7 @@ export class Ebs extends PolicyStatement {
   }
 
   /**
-   * Filters access by the size of the volume for the snapshot being created, in GiB.
+   * Filters access by the size of the volume for the snapshot being created, in GiB
    *
    * Applies to actions:
    * - .toStartSnapshot()

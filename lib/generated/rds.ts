@@ -1102,6 +1102,28 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about recommendation groups
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Recommendations.html
+   */
+  public toDescribeRecommendationGroups() {
+    return this.to('DescribeRecommendationGroups');
+  }
+
+  /**
+   * Grants permission to return information about recommendations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Recommendations.html
+   */
+  public toDescribeRecommendations() {
+    return this.to('DescribeRecommendations');
+  }
+
+  /**
    * Grants permission to return information about reserved DB instances for this account, or about a specified reserved DB instance
    *
    * Access Level: List
@@ -1408,6 +1430,17 @@ export class Rds extends PolicyStatement {
    */
   public toModifyOptionGroup() {
     return this.to('ModifyOptionGroup');
+  }
+
+  /**
+   * Grants permission to modify recommendation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Recommendations.html
+   */
+  public toModifyRecommendation() {
+    return this.to('ModifyRecommendation');
   }
 
   /**
@@ -1861,6 +1894,7 @@ export class Rds extends PolicyStatement {
       "ModifyEventSubscription",
       "ModifyGlobalCluster",
       "ModifyOptionGroup",
+      "ModifyRecommendation",
       "PromoteReadReplica",
       "PromoteReadReplicaDBCluster",
       "PurchaseReservedDBInstancesOffering",
@@ -1939,6 +1973,8 @@ export class Rds extends PolicyStatement {
       "DescribeValidDBInstanceModifications"
     ],
     "Read": [
+      "DescribeRecommendationGroups",
+      "DescribeRecommendations",
       "DownloadCompleteDBLogFile",
       "DownloadDBLogFilePortion",
       "ListTagsForResource"
