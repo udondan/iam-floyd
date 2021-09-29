@@ -165,6 +165,17 @@ export class SsmContacts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a contact's resource policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_GetContactPolicy.html
+   */
+  public toGetContactPolicy() {
+    return this.to('GetContactPolicy');
+  }
+
+  /**
    * Grants permission to list all of a contact's contact channels
    *
    * Access Level: List
@@ -231,6 +242,17 @@ export class SsmContacts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view a list of resource tags for a specified resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to add a resource policy to a contact
    *
    * Access Level: Write
@@ -272,6 +294,28 @@ export class SsmContacts extends PolicyStatement {
    */
   public toStopEngagement() {
     return this.to('StopEngagement');
+  }
+
+  /**
+   * Grants permission to add tags to a response plan
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from a response plan
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -335,7 +379,9 @@ export class SsmContacts extends PolicyStatement {
       "DescribeEngagement",
       "DescribePage",
       "GetContact",
-      "GetContactChannel"
+      "GetContactChannel",
+      "GetContactPolicy",
+      "ListTagsForResource"
     ],
     "List": [
       "ListContactChannels",
@@ -344,6 +390,10 @@ export class SsmContacts extends PolicyStatement {
       "ListPageReceipts",
       "ListPagesByContact",
       "ListPagesByEngagement"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 

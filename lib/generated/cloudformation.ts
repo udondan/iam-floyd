@@ -19,6 +19,28 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to activate a public third-party extension, making it available for use in stack templates
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html
+   */
+  public toActivateType() {
+    return this.to('ActivateType');
+  }
+
+  /**
+   * Grants permission to return configuration data for the specified CloudFormation extensions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_BatchDescribeTypeConfigurations.html
+   */
+  public toBatchDescribeTypeConfigurations() {
+    return this.to('BatchDescribeTypeConfigurations');
+  }
+
+  /**
    * Grants permission to cancel an update on the specified stack
    *
    * Access Level: Write
@@ -121,6 +143,17 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deactivate a public extension that was previously activated in this account and region
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeactivateType.html
+   */
+  public toDeactivateType() {
+    return this.to('DeactivateType');
+  }
+
+  /**
    * Grants permission to delete the specified change set. Deleting change sets ensures that no one executes the wrong change set
    *
    * Access Level: Write
@@ -204,6 +237,17 @@ export class Cloudformation extends PolicyStatement {
    */
   public toDescribeChangeSet() {
     return this.to('DescribeChangeSet');
+  }
+
+  /**
+   * Grants permission to return information about a CloudFormation extension publisher
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribePublisher.html
+   */
+  public toDescribePublisher() {
+    return this.to('DescribePublisher');
   }
 
   /**
@@ -562,6 +606,17 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to publish the specified extension to the CloudFormation registry as a public extension in this region
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_PublishType.html
+   */
+  public toPublishType() {
+    return this.to('PublishType');
+  }
+
+  /**
    * Grants permission to record the handler progress
    *
    * Access Level: Write
@@ -570,6 +625,17 @@ export class Cloudformation extends PolicyStatement {
    */
   public toRecordHandlerProgress() {
     return this.to('RecordHandlerProgress');
+  }
+
+  /**
+   * Grants permission to register account as a publisher of public extensions in the CloudFormation registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html
+   */
+  public toRegisterPublisher() {
+    return this.to('RegisterPublisher');
   }
 
   /**
@@ -595,6 +661,17 @@ export class Cloudformation extends PolicyStatement {
    */
   public toSetStackPolicy() {
     return this.to('SetStackPolicy');
+  }
+
+  /**
+   * Grants permission to set the configuration data for a registered CloudFormation extension, in the given account and region
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html
+   */
+  public toSetTypeConfiguration() {
+    return this.to('SetTypeConfiguration');
   }
 
   /**
@@ -637,6 +714,17 @@ export class Cloudformation extends PolicyStatement {
    */
   public toTagResource() {
     return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to test a registered extension to make sure it meets all necessary requirements for being published in the CloudFormation registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_TestType.html
+   */
+  public toTestType() {
+    return this.to('TestType');
   }
 
   /**
@@ -719,6 +807,7 @@ export class Cloudformation extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "ActivateType",
       "CancelUpdateStack",
       "ContinueUpdateRollback",
       "CreateChangeSet",
@@ -726,6 +815,7 @@ export class Cloudformation extends PolicyStatement {
       "CreateStackInstances",
       "CreateStackSet",
       "CreateUploadBucket",
+      "DeactivateType",
       "DeleteChangeSet",
       "DeleteStack",
       "DeleteStackInstances",
@@ -733,19 +823,25 @@ export class Cloudformation extends PolicyStatement {
       "DeregisterType",
       "ExecuteChangeSet",
       "ImportStacksToStackSet",
+      "PublishType",
       "RecordHandlerProgress",
+      "RegisterPublisher",
       "RegisterType",
+      "SetTypeConfiguration",
       "SetTypeDefaultVersion",
       "SignalResource",
       "StopStackSetOperation",
+      "TestType",
       "UpdateStack",
       "UpdateStackInstances",
       "UpdateStackSet",
       "UpdateTerminationProtection"
     ],
     "Read": [
+      "BatchDescribeTypeConfigurations",
       "DescribeAccountLimits",
       "DescribeChangeSet",
+      "DescribePublisher",
       "DescribeStackDriftDetectionStatus",
       "DescribeStackEvents",
       "DescribeStackInstance",

@@ -19,6 +19,32 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to create a new DataIntegration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html
+   */
+  public toCreateDataIntegration() {
+    return this.to('CreateDataIntegration');
+  }
+
+  /**
+   * Grants permissions to create a DataIntegrationAssociation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegrationAssociation.html
+   */
+  public toCreateDataIntegrationAssociation() {
+    return this.to('CreateDataIntegrationAssociation');
+  }
+
+  /**
    * Grants permissions to create a new EventIntegration
    *
    * Access Level: Write
@@ -46,6 +72,31 @@ export class AppIntegrations extends PolicyStatement {
    */
   public toCreateEventIntegrationAssociation() {
     return this.to('CreateEventIntegrationAssociation');
+  }
+
+  /**
+   * Grants permissions to delete a DataIntegration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html
+   */
+  public toDeleteDataIntegration() {
+    return this.to('DeleteDataIntegration');
+  }
+
+  /**
+   * Grants permissions to delete a DataIntegrationAssociation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegrationAssociation.html
+   */
+  public toDeleteDataIntegrationAssociation() {
+    return this.to('DeleteDataIntegrationAssociation');
   }
 
   /**
@@ -79,6 +130,20 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to view details about DataIntegrations
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetDataIntegration.html
+   */
+  public toGetDataIntegration() {
+    return this.to('GetDataIntegration');
+  }
+
+  /**
    * Grants permissions to view details about EventIntegrations
    *
    * Access Level: Read
@@ -90,6 +155,28 @@ export class AppIntegrations extends PolicyStatement {
    */
   public toGetEventIntegration() {
     return this.to('GetEventIntegration');
+  }
+
+  /**
+   * Grants permissions to list DataIntegrationAssociations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrationAssociations
+   */
+  public toListDataIntegrationAssociations() {
+    return this.to('ListDataIntegrationAssociations');
+  }
+
+  /**
+   * Grants permissions to list DataIntegrations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrations.html
+   */
+  public toListDataIntegrations() {
+    return this.to('ListDataIntegrations');
   }
 
   /**
@@ -160,6 +247,20 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to modify a DataIntegration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateDataIntegration.html
+   */
+  public toUpdateDataIntegration() {
+    return this.to('UpdateDataIntegration');
+  }
+
+  /**
    * Grants permissions to modify an EventIntegration
    *
    * Access Level: Write
@@ -175,18 +276,26 @@ export class AppIntegrations extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "CreateDataIntegration",
+      "CreateDataIntegrationAssociation",
       "CreateEventIntegration",
       "CreateEventIntegrationAssociation",
+      "DeleteDataIntegration",
+      "DeleteDataIntegrationAssociation",
       "DeleteEventIntegration",
       "DeleteEventIntegrationAssociation",
+      "UpdateDataIntegration",
       "UpdateEventIntegration"
     ],
     "Read": [
+      "GetDataIntegration",
       "GetEventIntegration",
       "ListEventIntegrationAssociations",
       "ListTagsForResource"
     ],
     "List": [
+      "ListDataIntegrationAssociations",
+      "ListDataIntegrations",
       "ListEventIntegrations"
     ],
     "Tagging": [
@@ -234,6 +343,52 @@ export class AppIntegrations extends PolicyStatement {
   public onEventIntegrationAssociation(eventIntegrationName: string, resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:app-integrations:${Region}:${Account}:event-integration-association/${EventIntegrationName}/${ResourceId}';
     arn = arn.replace('${EventIntegrationName}', eventIntegrationName);
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type data-integration to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/API_DataIntegration.html
+   *
+   * @param dataIntegrationId - Identifier for the dataIntegrationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataIntegration(dataIntegrationId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:app-integrations:${Region}:${Account}:data-integration/${DataIntegrationId}';
+    arn = arn.replace('${DataIntegrationId}', dataIntegrationId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type data-integration-association to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/API_DataIntegrationAssociation.html
+   *
+   * @param dataIntegrationId - Identifier for the dataIntegrationId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataIntegrationAssociation(dataIntegrationId: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:app-integrations:${Region}:${Account}:data-integration-association/${DataIntegrationId}/${ResourceId}';
+    arn = arn.replace('${DataIntegrationId}', dataIntegrationId);
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

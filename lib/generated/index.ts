@@ -25,6 +25,7 @@ export { Comprehendmedical } from "./comprehendmedical";
 export { Connect } from "./connect";
 export { Profile } from "./connectcustomerprofiles";
 export { Voiceid } from "./connectvoiceid";
+export { Wisdom } from "./connectwisdom";
 export { Dlm } from "./datalifecyclemanager";
 export { Detective } from "./detective";
 export { DevopsGuru } from "./devopsguru";

@@ -6,6 +6,7 @@ ec2:AuthorizedService
 ec2:AuthorizedUser
 ec2:AutoPlacement
 ec2:AvailabilityZone
+ec2:CapacityReservationFleet
 ec2:ClientRootCertificateChainArn
 ec2:CloudwatchLogGroupArn
 ec2:CloudwatchLogStreamArn

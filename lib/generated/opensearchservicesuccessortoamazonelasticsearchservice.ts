@@ -23,25 +23,25 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-acceptinboundconnection
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-accept-inbound-cross-cluster-search-connection
    */
   public toAcceptInboundConnection() {
     return this.to('AcceptInboundConnection');
   }
 
   /**
-   * Grants permission to the destination domain owner to accept an inbound cross-cluster search connection request
+   * Grants permission to the destination domain owner to accept an inbound cross-cluster search connection request. This permission is deprecated. Use AcceptInboundConnection instead
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-acceptinboundcrossclustersearchconnection
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-accept-inbound-cross-cluster-search-connection
    */
   public toAcceptInboundCrossClusterSearchConnection() {
     return this.to('AcceptInboundCrossClusterSearchConnection');
   }
 
   /**
-   * Grants permission to attach resource tags to an Amazon OpenSearch domain
+   * Grants permission to attach resource tags to an OpenSearch Service domain
    *
    * Access Level: Tagging
    *
@@ -49,40 +49,40 @@ export class Es extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-addtags
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-addtags
    */
   public toAddTags() {
     return this.to('AddTags');
   }
 
   /**
-   * Grants permission to associate a package with an Amazon ES domain
+   * Grants permission to associate a package with an OpenSearch Service domain
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-associatepackage
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-associatepackage
    */
   public toAssociatePackage() {
     return this.to('AssociatePackage');
   }
 
   /**
-   * Grants permission to cancel elastic search software update of a domain to given version
+   * Grants permission to cancel a service software update of a domain. This permission is deprecated. Use CancelServiceSoftwareUpdate instead
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-stopupdate
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-stopupdate
    */
   public toCancelElasticsearchServiceSoftwareUpdate() {
     return this.to('CancelElasticsearchServiceSoftwareUpdate');
   }
 
   /**
-   * Grants permission to cancel OpenSearch software update of a domain to given version
+   * Grants permission to cancel a service software update of a domain
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-stopupdate
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-stopupdate
    */
   public toCancelServiceSoftwareUpdate() {
     return this.to('CancelServiceSoftwareUpdate');
@@ -97,14 +97,14 @@ export class Es extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createdomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-createdomain
    */
   public toCreateDomain() {
     return this.to('CreateDomain');
   }
 
   /**
-   * Grants permission to create an Amazon OpenSearch domain
+   * Grants permission to create an OpenSearch Service domain. This permission is deprecated. Use CreateDomain instead
    *
    * Access Level: Write
    *
@@ -112,18 +112,18 @@ export class Es extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createelasticsearchdomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-createdomain
    */
   public toCreateElasticsearchDomain() {
     return this.to('CreateElasticsearchDomain');
   }
 
   /**
-   * Grants permission to create the service-linked role required for Amazon OpenSearch domains that use VPC access
+   * Grants permission to create the service-linked role required for OpenSearch Service domains that use VPC access. This permission is deprecated. OpenSearch Service creates the service-linked role for you
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createelasticsearchservicerole
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-createservicerole
    */
   public toCreateElasticsearchServiceRole() {
     return this.to('CreateElasticsearchServiceRole');
@@ -134,73 +134,73 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createoutboundconnection
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-create-outbound-cross-cluster-search-connection
    */
   public toCreateOutboundConnection() {
     return this.to('CreateOutboundConnection');
   }
 
   /**
-   * Grants permission to create a new cross-cluster search connection from a source domain to a destination domain
+   * Grants permission to create a new cross-cluster search connection from a source domain to a destination domain. This permission is deprecated. Use CreateOutboundConnection instead
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createoutboundcrossclustersearchconnection
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-create-outbound-cross-cluster-search-connection
    */
   public toCreateOutboundCrossClusterSearchConnection() {
     return this.to('CreateOutboundCrossClusterSearchConnection');
   }
 
   /**
-   * Grants permission to add a package for use with Amazon ES domains
+   * Grants permission to add a package for use with OpenSearch Service domains
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createpackage
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-createpackage
    */
   public toCreatePackage() {
     return this.to('CreatePackage');
   }
 
   /**
-   * Grants permission to create the service-linked role required for Amazon OpenSearch domains that use VPC access
+   * Grants permission to create the service-linked role required for Amazon OpenSearch Service domains that use VPC access
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createservicerole
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-createservicerole
    */
   public toCreateServiceRole() {
     return this.to('CreateServiceRole');
   }
 
   /**
-   * Grants permission to delete an Amazon OpenSearch domain and all of its data
+   * Grants permission to delete an Amazon OpenSearch Service domain and all of its data
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deletedomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-deletedomain
    */
   public toDeleteDomain() {
     return this.to('DeleteDomain');
   }
 
   /**
-   * Grants permission to delete an Amazon OpenSearch domain and all of its data
+   * Grants permission to delete an OpenSearch Service domain and all of its data. This permission is deprecated. Use DeleteDomain instead
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteelasticsearchdomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-deleteelasticsearchdomain
    */
   public toDeleteElasticsearchDomain() {
     return this.to('DeleteElasticsearchDomain');
   }
 
   /**
-   * Grants permission to delete the service-linked role required for Amazon OpenSearch domains that use VPC access
+   * Grants permission to delete the service-linked role required for OpenSearch Service domains that use VPC access. This permission is deprecated. Use the IAM API to delete service-linked roles
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteelasticsearchservicerole
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-deleteservicerole
    */
   public toDeleteElasticsearchServiceRole() {
     return this.to('DeleteElasticsearchServiceRole');
@@ -211,18 +211,18 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteinboundconnection
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-delete-inbound-cross-cluster-search-connection
    */
   public toDeleteInboundConnection() {
     return this.to('DeleteInboundConnection');
   }
 
   /**
-   * Grants permission to the destination domain owner to delete an existing inbound cross-cluster search connection
+   * Grants permission to the destination domain owner to delete an existing inbound cross-cluster search connection. This permission is deprecated. Use DeleteInboundConnection instead
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteinboundcrossclustersearchconnection
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-delete-inbound-cross-cluster-search-connection
    */
   public toDeleteInboundCrossClusterSearchConnection() {
     return this.to('DeleteInboundCrossClusterSearchConnection');
@@ -233,117 +233,117 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteoutboundconnection
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-delete-outbound-cross-cluster-search-connection
    */
   public toDeleteOutboundConnection() {
     return this.to('DeleteOutboundConnection');
   }
 
   /**
-   * Grants permission to the source domain owner to delete an existing outbound cross-cluster search connection
+   * Grants permission to the source domain owner to delete an existing outbound cross-cluster search connection. This permission is deprecated. Use DeleteOutboundConnection instead
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteoutboundcrossclustersearchconnection
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-delete-outbound-cross-cluster-search-connection
    */
   public toDeleteOutboundCrossClusterSearchConnection() {
     return this.to('DeleteOutboundCrossClusterSearchConnection');
   }
 
   /**
-   * Grants permission to delete a package from Amazon ES. The package must not be associated with any Amazon ES domain
+   * Grants permission to delete a package from OpenSearch Service. The package cannot be associated with any domains
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deletepackage
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-deletepackage
    */
   public toDeletePackage() {
     return this.to('DeletePackage');
   }
 
   /**
-   * Grants permission to view a description of the domain configuration for the specified Amazon OpenSearch domain, including the domain ID, domain service endpoint, and domain ARN
+   * Grants permission to view a description of the domain configuration for the specified OpenSearch Service domain, including the domain ID, service endpoint, and ARN
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describedomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describedomain
    */
   public toDescribeDomain() {
     return this.to('DescribeDomain');
   }
 
   /**
-   * Grants permission to view the AutoTune configuration of the domain for the specified Amazon OpenSearch domain, including the AutoTune state and maintenance schedules
+   * Grants permission to view the Auto-Tune configuration of the domain for the specified OpenSearch Service domain, including the Auto-Tune state and maintenance schedules
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describedomainautotunes
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describeautotune
    */
   public toDescribeDomainAutoTunes() {
     return this.to('DescribeDomainAutoTunes');
   }
 
   /**
-   * Grants permission to view a description of the configuration options and status of an Amazon OpenSearch domain
+   * Grants permission to view a description of the configuration options and status of an OpenSearch Service domain
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describedomainconfig
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describedomainconfig
    */
   public toDescribeDomainConfig() {
     return this.to('DescribeDomainConfig');
   }
 
   /**
-   * Grants permission to view a description of the domain configuration for up to five specified Amazon OpenSearch domain
+   * Grants permission to view a description of the domain configuration for up to five specified OpenSearch Service domains
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describedomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describedomains
    */
   public toDescribeDomains() {
     return this.to('DescribeDomains');
   }
 
   /**
-   * Grants permission to view a description of the domain configuration for the specified Amazon OpenSearch domain, including the domain ID, domain service endpoint, and domain ARN
+   * Grants permission to view a description of the domain configuration for the specified OpenSearch Service domain, including the domain ID, service endpoint, and ARN. This permission is deprecated. Use DescribeDomain instead
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeelasticsearchdomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describedomain
    */
   public toDescribeElasticsearchDomain() {
     return this.to('DescribeElasticsearchDomain');
   }
 
   /**
-   * Grants permission to view a description of the configuration options and status of an Amazon OpenSearch domain
+   * Grants permission to view a description of the configuration and status of an OpenSearch Service domain. This permission is deprecated. Use DescribeDomainConfig instead.s
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeelasticsearchdomainconfig
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describedomainconfig
    */
   public toDescribeElasticsearchDomainConfig() {
     return this.to('DescribeElasticsearchDomainConfig');
   }
 
   /**
-   * Grants permission to view a description of the domain configuration for up to five specified Amazon OpenSearch domains
+   * Grants permission to view a description of the domain configuration for up to five specified Amazon OpenSearch domains. This permission is deprecated. Use DescribeDomains instead
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeelasticsearchdomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describedomains
    */
   public toDescribeElasticsearchDomains() {
     return this.to('DescribeElasticsearchDomains');
   }
 
   /**
-   * Grants permission to view the instance count, storage, and master node limits for a given OpenSearch version and instance type
+   * Grants permission to view the instance count, storage, and master node limits for a given OpenSearch version and instance type. This permission is deprecated. Use DescribeInstanceTypeLimits instead
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeinstancetypelimits
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describeinstancetypelimits
    */
   public toDescribeElasticsearchInstanceTypeLimits() {
     return this.to('DescribeElasticsearchInstanceTypeLimits');
@@ -354,29 +354,29 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeinboundconnections
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describe-inbound-cross-cluster-search-connections
    */
   public toDescribeInboundConnections() {
     return this.to('DescribeInboundConnections');
   }
 
   /**
-   * Grants permission to list all the inbound cross-cluster search connections for a destination domain
+   * Grants permission to list all the inbound cross-cluster search connections for a destination domain. This permission is deprecated. Use DescribeInboundConnections instead
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeinboundcrossclustersearchconnections
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describe-inbound-cross-cluster-search-connections
    */
   public toDescribeInboundCrossClusterSearchConnections() {
     return this.to('DescribeInboundCrossClusterSearchConnections');
   }
 
   /**
-   * Grants permission to view the instance count, storage, and master node limits for a given OpenSearch version and instance type
+   * Grants permission to view the instance count, storage, and master node limits for a given engine version and instance type
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeinstancetypelimits
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describeinstancetypelimits
    */
   public toDescribeInstanceTypeLimits() {
     return this.to('DescribeInstanceTypeLimits');
@@ -387,84 +387,84 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeoutboundconnections
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describe-outbound-cross-cluster-search-connections
    */
   public toDescribeOutboundConnections() {
     return this.to('DescribeOutboundConnections');
   }
 
   /**
-   * Grants permission to list all the outbound cross-cluster search connections for a source domain
+   * Grants permission to list all the outbound cross-cluster search connections for a source domain. This permission is deprecated. Use DescribeOutboundConnections instead
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeoutboundcrossclustersearchconnections
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describe-outbound-cross-cluster-search-connections
    */
   public toDescribeOutboundCrossClusterSearchConnections() {
     return this.to('DescribeOutboundCrossClusterSearchConnections');
   }
 
   /**
-   * Grants permission to describe all packages available to Amazon ES domain
+   * Grants permission to describe all packages available to OpenSearch Service domains
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describepackages
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describepackages
    */
   public toDescribePackages() {
     return this.to('DescribePackages');
   }
 
   /**
-   * Grants permission to fetch reserved instance offerings for OpenSearch
+   * Grants permission to fetch Reserved Instance offerings for Amazon OpenSearch Service. This permission is deprecated. Use DescribeReservedInstanceOfferings instead
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describereservedelasticsearchinstanceofferings
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describereservedinstanceofferings.
    */
   public toDescribeReservedElasticsearchInstanceOfferings() {
     return this.to('DescribeReservedElasticsearchInstanceOfferings');
   }
 
   /**
-   * Grants permission to fetch OpenSearch reserved instances already purchased by customer
+   * Grants permission to fetch OpenSearch Service Reserved Instances that have already been purchased. This permission is deprecated. Use DescribeReservedInstances instead
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describereservedelasticsearchinstances
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describereservedinstances
    */
   public toDescribeReservedElasticsearchInstances() {
     return this.to('DescribeReservedElasticsearchInstances');
   }
 
   /**
-   * Grants permission to fetch reserved instance offerings for OpenSearch
+   * Grants permission to fetch Reserved Instance offerings for OpenSearch Service
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describereservedelasticsearchinstanceofferings
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describereservedinstanceofferings
    */
   public toDescribeReservedInstanceOfferings() {
     return this.to('DescribeReservedInstanceOfferings');
   }
 
   /**
-   * Grants permission to fetch OpenSearch reserved instances already purchased by customer
+   * Grants permission to fetch OpenSearch Service Reserved Instances that have already been purchased
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describereservedelasticsearchinstances
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describereservedinstances
    */
   public toDescribeReservedInstances() {
     return this.to('DescribeReservedInstances');
   }
 
   /**
-   * Grants permission to remove a package from the specified Amazon ES domain
+   * Grants permission to disassociate a package from the specified OpenSearch Service domain
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-dissociatepackage
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-dissociatepackage
    */
   public toDissociatePackage() {
     return this.to('DissociatePackage');
@@ -475,7 +475,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html#ac-reference
    */
   public toESCrossClusterGet() {
     return this.to('ESCrossClusterGet');
@@ -486,7 +486,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html#ac-reference
    */
   public toESHttpDelete() {
     return this.to('ESHttpDelete');
@@ -497,7 +497,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/es-ac.html#es-ac-reference
    */
   public toESHttpGet() {
     return this.to('ESHttpGet');
@@ -508,7 +508,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html#ac-reference
    */
   public toESHttpHead() {
     return this.to('ESHttpHead');
@@ -519,7 +519,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html#ac-reference
    */
   public toESHttpPatch() {
     return this.to('ESHttpPatch');
@@ -530,7 +530,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html#ac-reference
    */
   public toESHttpPost() {
     return this.to('ESHttpPost');
@@ -541,29 +541,29 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html#ac-reference
    */
   public toESHttpPut() {
     return this.to('ESHttpPut');
   }
 
   /**
-   * Grants permission to fetch list of compatible elastic search versions to which Amazon OpenSearch domain can be upgraded
+   * Grants permission to fetch a list of compatible OpenSearch and Elasticsearch versions to which an OpenSearch Service domain can be upgraded. This permission is deprecated. Use GetCompatibleVersions instead
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-getcompatibleelasticsearchversions
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-get-compat-vers
    */
   public toGetCompatibleElasticsearchVersions() {
     return this.to('GetCompatibleElasticsearchVersions');
   }
 
   /**
-   * Grants permission to fetch list of compatible OpenSearch versions to which Amazon OpenSearch domain can be upgraded
+   * Grants permission to fetch list of compatible engine versions to which an OpenSearch Service domain can be upgraded
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-getcompatibleversions
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-get-compat-vers
    */
   public toGetCompatibleVersions() {
     return this.to('GetCompatibleVersions');
@@ -574,150 +574,139 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-get-pac-ver-hist
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-get-pac-ver-hist
    */
   public toGetPackageVersionHistory() {
     return this.to('GetPackageVersionHistory');
   }
 
   /**
-   * Grants permission to fetch upgrade history for given OpenSearch domain
+   * Grants permission to fetch the upgrade history of a given OpenSearch Service domain
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-getupgradehistory
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-get-upgrade-hist
    */
   public toGetUpgradeHistory() {
     return this.to('GetUpgradeHistory');
   }
 
   /**
-   * Grants permission to fetch upgrade status for given OpenSearch domain
+   * Grants permission to fetch the upgrade status of a given OpenSearch Service domain
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-getupgradestatus
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-get-upgrade-stat
    */
   public toGetUpgradeStatus() {
     return this.to('GetUpgradeStatus');
   }
 
   /**
-   * Grants permission to display the names of all Amazon OpenSearch domains that the current user owns
+   * Grants permission to display the names of all OpenSearch Service domains that the current user owns
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listdomainnames
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listdomainnames
    */
   public toListDomainNames() {
     return this.to('ListDomainNames');
   }
 
   /**
-   * Grants permission to list all Amazon ES domains that a package is associated with
+   * Grants permission to list all OpenSearch Service domains that a package is associated with
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listdomainsforpackage
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listdomainsforpackage
    */
   public toListDomainsForPackage() {
     return this.to('ListDomainsForPackage');
   }
 
   /**
-   * Grants permission to list all instance types and available features for a given OpenSearch version
+   * Grants permission to list all instance types and available features for a given OpenSearch version. This permission is deprecated. Use ListInstanceTypeDetails instead
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listelasticsearchinstancetypedetails
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listinstancetypedetails
    */
   public toListElasticsearchInstanceTypeDetails() {
     return this.to('ListElasticsearchInstanceTypeDetails');
   }
 
   /**
-   * Grants permission to list all OpenSearch instance types that are supported for a given OpenSearch version
+   * Grants permission to list all EC2 instance types that are supported for a given OpenSearch version
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listelasticsearchinstancetypes
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html
    */
   public toListElasticsearchInstanceTypes() {
     return this.to('ListElasticsearchInstanceTypes');
   }
 
   /**
-   * Grants permission to list all supported OpenSearch versions on Amazon OpenSearch
+   * Grants permission to list all supported OpenSearch versions on Amazon OpenSearch Service. This permission is deprecated. Use ListVersions instead
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listelasticsearchversions
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listversions
    */
   public toListElasticsearchVersions() {
     return this.to('ListElasticsearchVersions');
   }
 
   /**
-   * Grants permission to list all instance types and available features for a given OpenSearch version
+   * Grants permission to list all instance types and available features for a given OpenSearch or Elasticsearch version
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listinstancetypedetails
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listinstancetypedetails
    */
   public toListInstanceTypeDetails() {
     return this.to('ListInstanceTypeDetails');
   }
 
   /**
-   * Grants permission to list all OpenSearch instance types that are supported for a given OpenSearch version
+   * Grants permission to list all packages associated with the OpenSearch Service domain
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listinstancetypes
-   */
-  public toListInstanceTypes() {
-    return this.to('ListInstanceTypes');
-  }
-
-  /**
-   * Grants permission to list all packages associated with the Amazon ES domain
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listpackagesfordomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listpackagesfordomain
    */
   public toListPackagesForDomain() {
     return this.to('ListPackagesForDomain');
   }
 
   /**
-   * Grants permission to display all of the tags for an Amazon OpenSearch domain
+   * Grants permission to display all resource tags for an OpenSearch Service domain
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listtags
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listtags
    */
   public toListTags() {
     return this.to('ListTags');
   }
 
   /**
-   * Grants permission to list all supported OpenSearch versions on Amazon OpenSearch
+   * Grants permission to list all supported OpenSearch and Elasticsearch versions in Amazon OpenSearch Service
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listversions
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-listversions
    */
   public toListVersions() {
     return this.to('ListVersions');
   }
 
   /**
-   * Grants permission to purchase OpenSearch reserved instances
+   * Grants permission to purchase OpenSearch Service Reserved Instances. This permission is deprecated. Use PurchaseReservedInstanceOffering instead
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-purchasereservedelasticsearchinstance
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-purchasereservedinstance
    */
   public toPurchaseReservedElasticsearchInstanceOffering() {
     return this.to('PurchaseReservedElasticsearchInstanceOffering');
@@ -728,7 +717,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-purchasereservedelasticsearchinstance
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-purchasereservedinstance
    */
   public toPurchaseReservedInstanceOffering() {
     return this.to('PurchaseReservedInstanceOffering');
@@ -739,109 +728,109 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-rejectinboundconnection
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-reject-inbound-cross-cluster-search-connection
    */
   public toRejectInboundConnection() {
     return this.to('RejectInboundConnection');
   }
 
   /**
-   * Grants permission to the destination domain owner to reject an inbound cross-cluster search connection request
+   * Grants permission to the destination domain owner to reject an inbound cross-cluster search connection request. This permission is deprecated. Use RejectInboundConnection instead
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-rejectinboundcrossclustersearchconnection
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-reject-inbound-cross-cluster-search-connection
    */
   public toRejectInboundCrossClusterSearchConnection() {
     return this.to('RejectInboundCrossClusterSearchConnection');
   }
 
   /**
-   * Grants permission to remove tags from Amazon OpenSearch domains
+   * Grants permission to remove resource tags from an OpenSearch Service domain
    *
    * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listtags
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-removetags
    */
   public toRemoveTags() {
     return this.to('RemoveTags');
   }
 
   /**
-   * Grants permission to start elastic search software update of a domain to given version
+   * Grants permission to start a service software update of a domain. This permission is deprecated. Use StartServiceSoftwareUpdate instead
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-startupdate
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-startupdate
    */
   public toStartElasticsearchServiceSoftwareUpdate() {
     return this.to('StartElasticsearchServiceSoftwareUpdate');
   }
 
   /**
-   * Grants permission to start OpenSearch software update of a domain to given version
+   * Grants permission to start a service software update of a domain
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-startupdate
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-startupdate
    */
   public toStartServiceSoftwareUpdate() {
     return this.to('StartServiceSoftwareUpdate');
   }
 
   /**
-   * Grants permission to modify the configuration of an Amazon OpenSearch domain, such as the instance type or number of instances
+   * Grants permission to modify the configuration of an OpenSearch Service domain, such as the instance type or number of instances
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-updatedomainconfig
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-updatedomainconfig
    */
   public toUpdateDomainConfig() {
     return this.to('UpdateDomainConfig');
   }
 
   /**
-   * Grants permission to modify the configuration of an Amazon OpenSearch domain, such as the instance type or number of instances
+   * Grants permission to modify the configuration of an OpenSearch Service domain, such as the instance type or number of instances. This permission is deprecated. Use UpdateDomainConfig instead
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-updateelasticsearchdomainconfig
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-updatedomainconfig
    */
   public toUpdateElasticsearchDomainConfig() {
     return this.to('UpdateElasticsearchDomainConfig');
   }
 
   /**
-   * Grants permission to update a package for use with Amazon ES domains
+   * Grants permission to update a package for use with OpenSearch Service domains
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-updatepackage
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-updatepackage
    */
   public toUpdatePackage() {
     return this.to('UpdatePackage');
   }
 
   /**
-   * Grants permission to initiate upgrade of open search domain to given version
+   * Grants permission to initiate upgrade of an OpenSearch Service domain to a given version
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-upgradedomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-upgrade-domain
    */
   public toUpgradeDomain() {
     return this.to('UpgradeDomain');
   }
 
   /**
-   * Grants permission to initiate upgrade of elastic search domain to given version
+   * Grants permission to initiate upgrade of an OpenSearch Service domain to a specified version. This permission is deprecated. Use UpgradeDomain instead
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-upgradeelasticsearchdomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-upgrade-domain
    */
   public toUpgradeElasticsearchDomain() {
     return this.to('UpgradeElasticsearchDomain');
@@ -926,7 +915,6 @@ export class Es extends PolicyStatement {
       "ListElasticsearchInstanceTypes",
       "ListElasticsearchVersions",
       "ListInstanceTypeDetails",
-      "ListInstanceTypes",
       "ListPackagesForDomain",
       "ListVersions"
     ]
@@ -935,7 +923,7 @@ export class Es extends PolicyStatement {
   /**
    * Adds a resource of type domain to the statement
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html
    *
    * @param domainName - Identifier for the domainName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -957,7 +945,7 @@ export class Es extends PolicyStatement {
   /**
    * Adds a resource of type es_role to the statement
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/slr-es.html
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/slr.html
    *
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -966,7 +954,7 @@ export class Es extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEsRole(account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:role/aws-service-role/es.amazonaws.com/AWSServiceRoleForAmazonElasticsearchService';
+    var arn = 'arn:${Partition}:iam::${Account}:role/aws-service-role/es.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService';
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -975,7 +963,7 @@ export class Es extends PolicyStatement {
   /**
    * Adds a resource of type opensearchservice_role to the statement
    *
-   * https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/slr-es.html
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/slr.html
    *
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.

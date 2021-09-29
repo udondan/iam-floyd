@@ -1,3 +1,5 @@
+cloudformation:ActivateType;Write
+cloudformation:BatchDescribeTypeConfigurations;Read
 cloudformation:CancelUpdateStack;Write
 cloudformation:ContinueUpdateRollback;Write
 cloudformation:CreateChangeSet;Write
@@ -5,6 +7,7 @@ cloudformation:CreateStack;Write
 cloudformation:CreateStackInstances;Write
 cloudformation:CreateStackSet;Write
 cloudformation:CreateUploadBucket;Write
+cloudformation:DeactivateType;Write
 cloudformation:DeleteChangeSet;Write
 cloudformation:DeleteStack;Write
 cloudformation:DeleteStackInstances;Write
@@ -12,6 +15,7 @@ cloudformation:DeleteStackSet;Write
 cloudformation:DeregisterType;Write
 cloudformation:DescribeAccountLimits;Read
 cloudformation:DescribeChangeSet;Read
+cloudformation:DescribePublisher;Read
 cloudformation:DescribeStackDriftDetectionStatus;Read
 cloudformation:DescribeStackEvents;Read
 cloudformation:DescribeStackInstance;Read
@@ -44,13 +48,17 @@ cloudformation:ListStacks;List
 cloudformation:ListTypeRegistrations;List
 cloudformation:ListTypeVersions;List
 cloudformation:ListTypes;List
+cloudformation:PublishType;Write
 cloudformation:RecordHandlerProgress;Write
+cloudformation:RegisterPublisher;Write
 cloudformation:RegisterType;Write
 cloudformation:SetStackPolicy;Permissions management
+cloudformation:SetTypeConfiguration;Write
 cloudformation:SetTypeDefaultVersion;Write
 cloudformation:SignalResource;Write
 cloudformation:StopStackSetOperation;Write
 cloudformation:TagResource;Tagging
+cloudformation:TestType;Write
 cloudformation:UntagResource;Tagging
 cloudformation:UpdateStack;Write
 cloudformation:UpdateStackInstances;Write

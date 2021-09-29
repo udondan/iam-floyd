@@ -7749,6 +7749,23 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by the ARN of the Capacity Reservation Fleet
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toCancelCapacityReservation()
+   * - .toCreateCapacityReservation()
+   * - .toModifyCapacityReservation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifCapacityReservationFleet(value: string | string[], operator?: Operator | string) {
+    return this.if(`CapacityReservationFleet`, value, operator || 'ArnLike');
+  }
+
+  /**
    * Filters access by the ARN of the client root certificate chain
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys

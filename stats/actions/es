@@ -56,7 +56,6 @@ es:ListElasticsearchInstanceTypeDetails;List
 es:ListElasticsearchInstanceTypes;List
 es:ListElasticsearchVersions;List
 es:ListInstanceTypeDetails;List
-es:ListInstanceTypes;List
 es:ListPackagesForDomain;List
 es:ListTags;Read
 es:ListVersions;List
