@@ -37,7 +37,9 @@
         "comprehend:ListEntityRecognizers",
         "comprehend:ListTagsForResource",
         "comprehend:DescribeEndpoint",
-        "comprehend:ListEndpoints"
+        "comprehend:ListEndpoints",
+        "comprehend:ListDocumentClassifierSummaries",
+        "comprehend:ListEntityRecognizerSummaries"
       ],
       "Resource": "*"
     }
