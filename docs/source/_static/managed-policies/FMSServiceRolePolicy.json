@@ -1,516 +1,524 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "waf:UpdateWebACL",
-                "waf:DeleteWebACL",
-                "waf:GetWebACL",
-                "waf:GetRuleGroup",
-                "waf:ListSubscribedRuleGroups",
-                "waf-regional:UpdateWebACL",
-                "waf-regional:DeleteWebACL",
-                "waf-regional:GetWebACL",
-                "waf-regional:GetRuleGroup",
-                "waf-regional:ListSubscribedRuleGroups",
-                "waf-regional:ListResourcesForWebACL",
-                "waf-regional:AssociateWebACL",
-                "waf-regional:DisassociateWebACL",
-                "elasticloadbalancing:SetWebACL",
-                "apigateway:SetWebACL",
-                "elasticloadbalancing:SetSecurityGroups"
-            ],
-            "Resource": [
-                "arn:aws:waf:*:*:webacl/*",
-                "arn:aws:waf-regional:*:*:webacl/*",
-                "arn:aws:waf:*:*:rulegroup/*",
-                "arn:aws:waf-regional:*:*:rulegroup/*",
-                "arn:aws:elasticloadbalancing:*:*:loadbalancer/app/*",
-                "arn:aws:apigateway:*::/restapis/*/stages/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "wafv2:PutLoggingConfiguration",
-                "wafv2:GetLoggingConfiguration",
-                "wafv2:ListLoggingConfigurations",
-                "wafv2:DeleteLoggingConfiguration"
-            ],
-            "Resource": [
-                "arn:aws:wafv2:*:*:regional/webacl/*",
-                "arn:aws:wafv2:*:*:global/webacl/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "waf:CreateWebACL",
-                "waf-regional:CreateWebACL",
-                "waf:GetChangeToken",
-                "waf-regional:GetChangeToken"
-            ],
-            "Resource": [
-                "arn:aws:waf:*:*:*",
-                "arn:aws:waf-regional:*:*:*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "elasticloadbalancing:ApplySecurityGroupsToLoadBalancer"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "waf:PutPermissionPolicy",
-                "waf:GetPermissionPolicy",
-                "waf:DeletePermissionPolicy",
-                "waf-regional:PutPermissionPolicy",
-                "waf-regional:GetPermissionPolicy",
-                "waf-regional:DeletePermissionPolicy"
-            ],
-            "Resource": [
-                "arn:aws:waf:*:*:webacl/*",
-                "arn:aws:waf:*:*:rulegroup/*",
-                "arn:aws:waf-regional:*:*:webacl/*",
-                "arn:aws:waf-regional:*:*:rulegroup/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "cloudfront:GetDistribution",
-                "cloudfront:UpdateDistribution",
-                "cloudfront:ListDistributionsByWebACLId",
-                "cloudfront:ListDistributions"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "config:DeleteConfigRule",
-                "config:DescribeComplianceByConfigRule",
-                "config:DescribeConfigRuleEvaluationStatus",
-                "config:DescribeConfigRules",
-                "config:GetComplianceDetailsByConfigRule",
-                "config:PutConfigRule",
-                "config:StartConfigRulesEvaluation"
-            ],
-            "Resource": "arn:aws:config:*:*:config-rule/aws-service-rule/fms.amazonaws.com/*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "config:DescribeConfigurationRecorders",
-                "config:DescribeConfigurationRecorderStatus",
-                "config:PutConfigurationRecorder",
-                "config:StartConfigurationRecorder",
-                "config:PutDeliveryChannel",
-                "config:DescribeDeliveryChannels",
-                "config:DescribeDeliveryChannelStatus",
-                "config:GetComplianceSummaryByConfigRule",
-                "config:GetDiscoveredResourceCounts",
-                "config:PutEvaluations",
-                "config:SelectResourceConfig"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "iam:DeleteServiceLinkedRole",
-                "iam:GetServiceLinkedRoleDeletionStatus"
-            ],
-            "Resource": [
-                "arn:aws:iam::*:role/aws-service-role/fms.amazonaws.com/AWSServiceRoleForFMS"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "organizations:DescribeAccount",
-                "organizations:DescribeOrganization",
-                "organizations:ListAccounts",
-                "organizations:DescribeOrganizationalUnit",
-                "organizations:ListChildren",
-                "organizations:ListRoots",
-                "organizations:ListParents",
-                "organizations:ListOrganizationalUnitsForParent",
-                "organizations:ListAWSServiceAccessForOrganization"
-            ],
-            "Resource": [
-                "*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "shield:CreateProtection",
-                "shield:DeleteProtection",
-                "shield:DescribeProtection",
-                "shield:ListProtections",
-                "shield:ListAttacks",
-                "shield:CreateSubscription",
-                "shield:DescribeSubscription",
-                "shield:GetSubscriptionState",
-                "shield:DescribeDRTAccess",
-                "shield:DescribeEmergencyContactSettings",
-                "shield:UpdateEmergencyContactSettings",
-                "elasticloadbalancing:DescribeLoadBalancers",
-                "ec2:DescribeAddresses"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:DeleteSecurityGroup",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
-                "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
-                "ec2:DescribeNetworkInterfaceAttribute"
-            ],
-            "Resource": [
-                "arn:aws:ec2:*:*:network-interface/*",
-                "arn:aws:ec2:*:*:security-group/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:CreateTags"
-            ],
-            "Resource": [
-                "arn:aws:ec2:*:*:security-group/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:CreateSecurityGroup",
-                "ec2:DescribeSecurityGroupReferences",
-                "ec2:DescribeSecurityGroups",
-                "ec2:DescribeStaleSecurityGroups",
-                "ec2:DescribeNetworkInterfaces",
-                "ec2:ModifyNetworkInterfaceAttribute",
-                "ec2:DescribeVpcs",
-                "ec2:DescribeVpcPeeringConnections"
-            ],
-            "Resource": [
-                "*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "wafv2:TagResource",
-                "wafv2:ListResourcesForWebACL",
-                "wafv2:AssociateWebACL",
-                "wafv2:ListTagsForResource",
-                "wafv2:UntagResource",
-                "wafv2:GetWebACL",
-                "wafv2:DisassociateFirewallManager",
-                "wafv2:DeleteWebACL",
-                "wafv2:DisassociateWebACL"
-            ],
-            "Resource": [
-                "arn:aws:wafv2:*:*:global/webacl/*",
-                "arn:aws:wafv2:*:*:regional/webacl/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "wafv2:UpdateWebACL",
-                "wafv2:CreateWebACL",
-                "wafv2:DeleteFirewallManagerRuleGroups",
-                "wafv2:PutFirewallManagerRuleGroups"
-            ],
-            "Resource": [
-                "arn:aws:wafv2:*:*:global/webacl/*",
-                "arn:aws:wafv2:*:*:regional/webacl/*",
-                "arn:aws:wafv2:*:*:global/rulegroup/*",
-                "arn:aws:wafv2:*:*:regional/rulegroup/*",
-                "arn:aws:wafv2:*:*:global/managedruleset/*",
-                "arn:aws:wafv2:*:*:regional/managedruleset/*",
-                "arn:aws:wafv2:*:*:global/ipset/*",
-                "arn:aws:wafv2:*:*:regional/ipset/*",
-                "arn:aws:wafv2:*:*:global/regexpatternset/*",
-                "arn:aws:wafv2:*:*:regional/regexpatternset/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "wafv2:PutPermissionPolicy",
-                "wafv2:GetPermissionPolicy",
-                "wafv2:DeletePermissionPolicy"
-            ],
-            "Resource": [
-                "arn:aws:wafv2:*:*:global/rulegroup/*",
-                "arn:aws:wafv2:*:*:regional/rulegroup/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "cloudfront:ListTagsForResource"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "wafv2:GetWebACLForResource"
-            ],
-            "Resource": [
-                "arn:aws:wafv2:*:*:regional/webacl/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": "ec2:CreateTags",
-            "Resource": "arn:aws:ec2:*:*:route-table/*",
-            "Condition": {
-                "StringEquals": {
-                    "ec2:CreateAction": "CreateRouteTable"
-                },
-                "ForAllValues:StringEquals": {
-                    "aws:TagKeys": [
-                        "Name",
-                        "FMManaged"
-                    ]
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": "ec2:CreateTags",
-            "Resource": [
-                "arn:aws:ec2:*:*:subnet/*"
-            ],
-            "Condition": {
-                "ForAllValues:StringEquals": {
-                    "aws:TagKeys": [
-                        "Name",
-                        "FMManaged"
-                    ]
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": "ec2:DeleteRouteTable",
-            "Resource": "arn:aws:ec2:*:*:route-table/*",
-            "Condition": {
-                "StringEquals": {
-                    "ec2:ResourceTag/FMManaged": "true"
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:AssociateRouteTable",
-                "ec2:CreateSubnet",
-                "ec2:CreateRouteTable",
-                "ec2:DeleteSubnet",
-                "ec2:DisassociateRouteTable",
-                "ec2:ReplaceRouteTableAssociation"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:DescribeInternetGateways",
-                "ec2:DescribeRouteTables",
-                "ec2:DescribeSubnets",
-                "ec2:DescribeTags",
-                "ec2:DescribeVpcEndpoints"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ram:TagResource"
-            ],
-            "Resource": [
-                "arn:aws:ram:*:*:resource-share/*"
-            ],
-            "Condition": {
-                "ForAllValues:StringEquals": {
-                    "aws:TagKeys": [
-                        "Name",
-                        "FMManaged"
-                    ]
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ram:AssociateResourceShare",
-                "ram:UpdateResourceShare",
-                "ram:DeleteResourceShare"
-            ],
-            "Resource": "arn:aws:ram:*:*:resource-share/*",
-            "Condition": {
-                "StringEquals": {
-                    "aws:ResourceTag/FMManaged": "true"
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": "ram:CreateResourceShare",
-            "Resource": "*",
-            "Condition": {
-                "ForAllValues:StringEquals": {
-                    "aws:TagKeys": [
-                        "Name",
-                        "FMManaged"
-                    ]
-                },
-                "StringEquals": {
-                    "aws:RequestTag/FMManaged": [
-                        "true"
-                    ]
-                }
-            }
-        },
-        {
-            "Sid": "ram",
-            "Effect": "Allow",
-            "Action": [
-                "ram:GetResourceShareAssociations",
-                "ram:GetResourceShares"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": "iam:CreateServiceLinkedRole",
-            "Resource": "*",
-            "Condition": {
-                "StringEquals": {
-                    "iam:AWSServiceName": [
-                        "network-firewall.amazonaws.com"
-                    ]
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": "iam:GetRole",
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "network-firewall:TagResource"
-            ],
-            "Resource": "*",
-            "Condition": {
-                "ForAllValues:StringEquals": {
-                    "aws:TagKeys": [
-                        "Name",
-                        "FMManaged"
-                    ]
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "network-firewall:AssociateSubnets",
-                "network-firewall:CreateFirewall",
-                "network-firewall:CreateFirewallPolicy",
-                "network-firewall:DisassociateSubnets",
-                "network-firewall:UpdateFirewallDeleteProtection",
-                "network-firewall:UpdateFirewallPolicy",
-                "network-firewall:UpdateFirewallPolicyChangeProtection",
-                "network-firewall:UpdateSubnetChangeProtection",
-                "network-firewall:AssociateFirewallPolicy",
-                "network-firewall:DescribeFirewall",
-                "network-firewall:DescribeFirewallPolicy",
-                "network-firewall:DescribeRuleGroup",
-                "network-firewall:ListFirewallPolicies",
-                "network-firewall:ListFirewalls",
-                "network-firewall:ListRuleGroups",
-                "network-firewall:PutResourcePolicy",
-                "network-firewall:DescribeResourcePolicy",
-                "network-firewall:DeleteResourcePolicy"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "network-firewall:DeleteFirewallPolicy",
-                "network-firewall:DeleteFirewall"
-            ],
-            "Resource": "*",
-            "Condition": {
-                "StringEquals": {
-                    "aws:ResourceTag/FMManaged": "true"
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "logs:ListLogDeliveries"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "route53resolver:ListFirewallRuleGroupAssociations",
-                "route53resolver:ListTagsForResource",
-                "route53resolver:ListFirewallRuleGroups",
-                "route53resolver:GetFirewallRuleGroupAssociation",
-                "route53resolver:GetFirewallRuleGroup",
-                "route53resolver:GetFirewallRuleGroupPolicy",
-                "route53resolver:PutFirewallRuleGroupPolicy"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "route53resolver:UpdateFirewallRuleGroupAssociation",
-                "route53resolver:DisassociateFirewallRuleGroup"
-            ],
-            "Resource": "arn:aws:route53resolver:*:*:firewall-rule-group-association/*",
-            "Condition": {
-                "StringEquals": {
-                    "aws:ResourceTag/FMManaged": "true"
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "route53resolver:AssociateFirewallRuleGroup",
-                "route53resolver:TagResource"
-            ],
-            "Resource": "arn:aws:route53resolver:*:*:firewall-rule-group-association/*",
-            "Condition": {
-                "StringEquals": {
-                    "aws:RequestTag/FMManaged": "true"
-                }
-            }
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"waf:UpdateWebACL",
+				"waf:DeleteWebACL",
+				"waf:GetWebACL",
+				"waf:GetRuleGroup",
+				"waf:ListSubscribedRuleGroups",
+				"waf-regional:UpdateWebACL",
+				"waf-regional:DeleteWebACL",
+				"waf-regional:GetWebACL",
+				"waf-regional:GetRuleGroup",
+				"waf-regional:ListSubscribedRuleGroups",
+				"waf-regional:ListResourcesForWebACL",
+				"waf-regional:AssociateWebACL",
+				"waf-regional:DisassociateWebACL",
+				"elasticloadbalancing:SetWebACL",
+				"apigateway:SetWebACL",
+				"elasticloadbalancing:SetSecurityGroups"
+			],
+			"Resource": [
+				"arn:aws:waf:*:*:webacl/*",
+				"arn:aws:waf-regional:*:*:webacl/*",
+				"arn:aws:waf:*:*:rulegroup/*",
+				"arn:aws:waf-regional:*:*:rulegroup/*",
+				"arn:aws:elasticloadbalancing:*:*:loadbalancer/app/*",
+				"arn:aws:apigateway:*::/restapis/*/stages/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"wafv2:PutLoggingConfiguration",
+				"wafv2:GetLoggingConfiguration",
+				"wafv2:ListLoggingConfigurations",
+				"wafv2:DeleteLoggingConfiguration"
+			],
+			"Resource": [
+				"arn:aws:wafv2:*:*:regional/webacl/*",
+				"arn:aws:wafv2:*:*:global/webacl/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"waf:CreateWebACL",
+				"waf-regional:CreateWebACL",
+				"waf:GetChangeToken",
+				"waf-regional:GetChangeToken"
+			],
+			"Resource": [
+				"arn:aws:waf:*:*:*",
+				"arn:aws:waf-regional:*:*:*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"elasticloadbalancing:ApplySecurityGroupsToLoadBalancer"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"waf:PutPermissionPolicy",
+				"waf:GetPermissionPolicy",
+				"waf:DeletePermissionPolicy",
+				"waf-regional:PutPermissionPolicy",
+				"waf-regional:GetPermissionPolicy",
+				"waf-regional:DeletePermissionPolicy"
+			],
+			"Resource": [
+				"arn:aws:waf:*:*:webacl/*",
+				"arn:aws:waf:*:*:rulegroup/*",
+				"arn:aws:waf-regional:*:*:webacl/*",
+				"arn:aws:waf-regional:*:*:rulegroup/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"cloudfront:GetDistribution",
+				"cloudfront:UpdateDistribution",
+				"cloudfront:ListDistributionsByWebACLId",
+				"cloudfront:ListDistributions"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"config:DeleteConfigRule",
+				"config:DescribeComplianceByConfigRule",
+				"config:DescribeConfigRuleEvaluationStatus",
+				"config:DescribeConfigRules",
+				"config:GetComplianceDetailsByConfigRule",
+				"config:PutConfigRule",
+				"config:StartConfigRulesEvaluation"
+			],
+			"Resource": "arn:aws:config:*:*:config-rule/aws-service-rule/fms.amazonaws.com/*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"config:DescribeConfigurationRecorders",
+				"config:DescribeConfigurationRecorderStatus",
+				"config:PutConfigurationRecorder",
+				"config:StartConfigurationRecorder",
+				"config:PutDeliveryChannel",
+				"config:DescribeDeliveryChannels",
+				"config:DescribeDeliveryChannelStatus",
+				"config:GetComplianceSummaryByConfigRule",
+				"config:GetDiscoveredResourceCounts",
+				"config:PutEvaluations",
+				"config:SelectResourceConfig"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"iam:DeleteServiceLinkedRole",
+				"iam:GetServiceLinkedRoleDeletionStatus"
+			],
+			"Resource": [
+				"arn:aws:iam::*:role/aws-service-role/fms.amazonaws.com/AWSServiceRoleForFMS"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"organizations:DescribeAccount",
+				"organizations:DescribeOrganization",
+				"organizations:ListAccounts",
+				"organizations:DescribeOrganizationalUnit",
+				"organizations:ListChildren",
+				"organizations:ListRoots",
+				"organizations:ListParents",
+				"organizations:ListOrganizationalUnitsForParent",
+				"organizations:ListAWSServiceAccessForOrganization"
+			],
+			"Resource": [
+				"*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"shield:CreateProtection",
+				"shield:DeleteProtection",
+				"shield:DescribeProtection",
+				"shield:ListProtections",
+				"shield:ListAttacks",
+				"shield:CreateSubscription",
+				"shield:DescribeSubscription",
+				"shield:GetSubscriptionState",
+				"shield:DescribeDRTAccess",
+				"shield:DescribeEmergencyContactSettings",
+				"shield:UpdateEmergencyContactSettings",
+				"elasticloadbalancing:DescribeLoadBalancers",
+				"ec2:DescribeAddresses"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:AuthorizeSecurityGroupEgress",
+				"ec2:AuthorizeSecurityGroupIngress",
+				"ec2:DeleteSecurityGroup",
+				"ec2:RevokeSecurityGroupEgress",
+				"ec2:RevokeSecurityGroupIngress",
+				"ec2:UpdateSecurityGroupRuleDescriptionsEgress",
+				"ec2:UpdateSecurityGroupRuleDescriptionsIngress",
+				"ec2:DescribeNetworkInterfaceAttribute",
+				"ec2:DescribeInstances"
+			],
+			"Resource": [
+				"arn:aws:ec2:*:*:network-interface/*",
+				"arn:aws:ec2:*:*:security-group/*",
+				"arn:aws:ec2:*:*:instance/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateTags"
+			],
+			"Resource": [
+				"arn:aws:ec2:*:*:security-group/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateSecurityGroup",
+				"ec2:DescribeSecurityGroupReferences",
+				"ec2:DescribeSecurityGroups",
+				"ec2:DescribeStaleSecurityGroups",
+				"ec2:DescribeNetworkInterfaces",
+				"ec2:ModifyNetworkInterfaceAttribute",
+				"ec2:DescribeVpcs",
+				"ec2:DescribeVpcPeeringConnections"
+			],
+			"Resource": [
+				"*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"wafv2:TagResource",
+				"wafv2:ListResourcesForWebACL",
+				"wafv2:AssociateWebACL",
+				"wafv2:ListTagsForResource",
+				"wafv2:UntagResource",
+				"wafv2:GetWebACL",
+				"wafv2:DisassociateFirewallManager",
+				"wafv2:DeleteWebACL",
+				"wafv2:DisassociateWebACL"
+			],
+			"Resource": [
+				"arn:aws:wafv2:*:*:global/webacl/*",
+				"arn:aws:wafv2:*:*:regional/webacl/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"wafv2:UpdateWebACL",
+				"wafv2:CreateWebACL",
+				"wafv2:DeleteFirewallManagerRuleGroups",
+				"wafv2:PutFirewallManagerRuleGroups"
+			],
+			"Resource": [
+				"arn:aws:wafv2:*:*:global/webacl/*",
+				"arn:aws:wafv2:*:*:regional/webacl/*",
+				"arn:aws:wafv2:*:*:global/rulegroup/*",
+				"arn:aws:wafv2:*:*:regional/rulegroup/*",
+				"arn:aws:wafv2:*:*:global/managedruleset/*",
+				"arn:aws:wafv2:*:*:regional/managedruleset/*",
+				"arn:aws:wafv2:*:*:global/ipset/*",
+				"arn:aws:wafv2:*:*:regional/ipset/*",
+				"arn:aws:wafv2:*:*:global/regexpatternset/*",
+				"arn:aws:wafv2:*:*:regional/regexpatternset/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"wafv2:PutPermissionPolicy",
+				"wafv2:GetPermissionPolicy",
+				"wafv2:DeletePermissionPolicy"
+			],
+			"Resource": [
+				"arn:aws:wafv2:*:*:global/rulegroup/*",
+				"arn:aws:wafv2:*:*:regional/rulegroup/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"cloudfront:ListTagsForResource"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"wafv2:GetWebACLForResource"
+			],
+			"Resource": [
+				"arn:aws:wafv2:*:*:regional/webacl/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": "ec2:CreateTags",
+			"Resource": "arn:aws:ec2:*:*:route-table/*",
+			"Condition": {
+				"StringEquals": {
+					"ec2:CreateAction": "CreateRouteTable"
+				},
+				"ForAllValues:StringEquals": {
+					"aws:TagKeys": [
+						"Name",
+						"FMManaged"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": "ec2:CreateTags",
+			"Resource": [
+				"arn:aws:ec2:*:*:subnet/*"
+			],
+			"Condition": {
+				"ForAllValues:StringEquals": {
+					"aws:TagKeys": [
+						"Name",
+						"FMManaged"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": "ec2:DeleteRouteTable",
+			"Resource": "arn:aws:ec2:*:*:route-table/*",
+			"Condition": {
+				"StringEquals": {
+					"ec2:ResourceTag/FMManaged": "true"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:AssociateRouteTable",
+				"ec2:CreateSubnet",
+				"ec2:CreateRouteTable",
+				"ec2:DeleteSubnet",
+				"ec2:DisassociateRouteTable",
+				"ec2:ReplaceRouteTableAssociation"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeInternetGateways",
+				"ec2:DescribeRouteTables",
+				"ec2:DescribeSubnets",
+				"ec2:DescribeTags",
+				"ec2:DescribeVpcEndpoints"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ram:TagResource"
+			],
+			"Resource": [
+				"arn:aws:ram:*:*:resource-share/*"
+			],
+			"Condition": {
+				"ForAllValues:StringEquals": {
+					"aws:TagKeys": [
+						"Name",
+						"FMManaged"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ram:AssociateResourceShare",
+				"ram:UpdateResourceShare",
+				"ram:DeleteResourceShare"
+			],
+			"Resource": "arn:aws:ram:*:*:resource-share/*",
+			"Condition": {
+				"StringEquals": {
+					"aws:ResourceTag/FMManaged": "true"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": "ram:CreateResourceShare",
+			"Resource": "*",
+			"Condition": {
+				"ForAllValues:StringEquals": {
+					"aws:TagKeys": [
+						"Name",
+						"FMManaged"
+					]
+				},
+				"StringEquals": {
+					"aws:RequestTag/FMManaged": [
+						"true"
+					]
+				}
+			}
+		},
+		{
+			"Sid": "ram",
+			"Effect": "Allow",
+			"Action": [
+				"ram:GetResourceShareAssociations",
+				"ram:GetResourceShares"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "iam:CreateServiceLinkedRole",
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"iam:AWSServiceName": [
+						"network-firewall.amazonaws.com"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": "iam:GetRole",
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"network-firewall:TagResource"
+			],
+			"Resource": "*",
+			"Condition": {
+				"ForAllValues:StringEquals": {
+					"aws:TagKeys": [
+						"Name",
+						"FMManaged"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"network-firewall:AssociateSubnets",
+				"network-firewall:CreateFirewall",
+				"network-firewall:CreateFirewallPolicy",
+				"network-firewall:DisassociateSubnets",
+				"network-firewall:UpdateFirewallDeleteProtection",
+				"network-firewall:UpdateFirewallPolicy",
+				"network-firewall:UpdateFirewallPolicyChangeProtection",
+				"network-firewall:UpdateSubnetChangeProtection",
+				"network-firewall:AssociateFirewallPolicy",
+				"network-firewall:DescribeFirewall",
+				"network-firewall:DescribeFirewallPolicy",
+				"network-firewall:DescribeRuleGroup",
+				"network-firewall:ListFirewallPolicies",
+				"network-firewall:ListFirewalls",
+				"network-firewall:ListRuleGroups",
+				"network-firewall:PutResourcePolicy",
+				"network-firewall:DescribeResourcePolicy",
+				"network-firewall:DeleteResourcePolicy",
+				"network-firewall:DescribeLoggingConfiguration",
+				"network-firewall:UpdateLoggingConfiguration"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"network-firewall:DeleteFirewallPolicy",
+				"network-firewall:DeleteFirewall"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"aws:ResourceTag/FMManaged": "true"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"logs:ListLogDeliveries",
+				"logs:CreateLogDelivery",
+				"logs:GetLogDelivery",
+				"logs:UpdateLogDelivery",
+				"logs:DeleteLogDelivery"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"route53resolver:ListFirewallRuleGroupAssociations",
+				"route53resolver:ListTagsForResource",
+				"route53resolver:ListFirewallRuleGroups",
+				"route53resolver:GetFirewallRuleGroupAssociation",
+				"route53resolver:GetFirewallRuleGroup",
+				"route53resolver:GetFirewallRuleGroupPolicy",
+				"route53resolver:PutFirewallRuleGroupPolicy"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"route53resolver:UpdateFirewallRuleGroupAssociation",
+				"route53resolver:DisassociateFirewallRuleGroup"
+			],
+			"Resource": "arn:aws:route53resolver:*:*:firewall-rule-group-association/*",
+			"Condition": {
+				"StringEquals": {
+					"aws:ResourceTag/FMManaged": "true"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"route53resolver:AssociateFirewallRuleGroup",
+				"route53resolver:TagResource"
+			],
+			"Resource": "arn:aws:route53resolver:*:*:firewall-rule-group-association/*",
+			"Condition": {
+				"StringEquals": {
+					"aws:RequestTag/FMManaged": "true"
+				}
+			}
+		}
+	]
 }
