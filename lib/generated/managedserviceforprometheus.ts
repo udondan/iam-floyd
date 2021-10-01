@@ -19,6 +19,49 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create alerts
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateAlertManagerAlerts
+   */
+  public toCreateAlertManagerAlerts() {
+    return this.to('CreateAlertManagerAlerts');
+  }
+
+  /**
+   * Grants permission to create an alert manager definition
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateAlertManagerDefinition
+   */
+  public toCreateAlertManagerDefinition() {
+    return this.to('CreateAlertManagerDefinition');
+  }
+
+  /**
+   * Grants permission to create a rule groups namespace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateRuleGroupsNamespace
+   */
+  public toCreateRuleGroupsNamespace() {
+    return this.to('CreateRuleGroupsNamespace');
+  }
+
+  /**
    * Grants permission to create a workspace
    *
    * Access Level: Write
@@ -31,6 +74,48 @@ export class Aps extends PolicyStatement {
    */
   public toCreateWorkspace() {
     return this.to('CreateWorkspace');
+  }
+
+  /**
+   * Grants permission to delete an alert manager definition
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteAlertManagerDefinition
+   */
+  public toDeleteAlertManagerDefinition() {
+    return this.to('DeleteAlertManagerDefinition');
+  }
+
+  /**
+   * Grants permission to delete a silence
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteAlertManagerSilence
+   */
+  public toDeleteAlertManagerSilence() {
+    return this.to('DeleteAlertManagerSilence');
+  }
+
+  /**
+   * Grants permission to delete a rule groups namespace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteRuleGroupsNamespace
+   */
+  public toDeleteRuleGroupsNamespace() {
+    return this.to('DeleteRuleGroupsNamespace');
   }
 
   /**
@@ -48,6 +133,34 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an alert manager definition
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeAlertManagerDefinition
+   */
+  public toDescribeAlertManagerDefinition() {
+    return this.to('DescribeAlertManagerDefinition');
+  }
+
+  /**
+   * Grants permission to describe a rule groups namespace
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeRuleGroupsNamespace
+   */
+  public toDescribeRuleGroupsNamespace() {
+    return this.to('DescribeRuleGroupsNamespace');
+  }
+
+  /**
    * Grants permission to describe a workspace
    *
    * Access Level: Read
@@ -59,6 +172,34 @@ export class Aps extends PolicyStatement {
    */
   public toDescribeWorkspace() {
     return this.to('DescribeWorkspace');
+  }
+
+  /**
+   * Grants permission to get a silence
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetAlertManagerSilence
+   */
+  public toGetAlertManagerSilence() {
+    return this.to('GetAlertManagerSilence');
+  }
+
+  /**
+   * Grants permission to get current status of an alertmanager
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetAlertManagerStatus
+   */
+  public toGetAlertManagerStatus() {
+    return this.to('GetAlertManagerStatus');
   }
 
   /**
@@ -104,6 +245,104 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list groups
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlertManagerAlertGroups
+   */
+  public toListAlertManagerAlertGroups() {
+    return this.to('ListAlertManagerAlertGroups');
+  }
+
+  /**
+   * Grants permission to list alerts
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlertManagerAlerts
+   */
+  public toListAlertManagerAlerts() {
+    return this.to('ListAlertManagerAlerts');
+  }
+
+  /**
+   * Grants permission to list receivers
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlertManagerReceivers
+   */
+  public toListAlertManagerReceivers() {
+    return this.to('ListAlertManagerReceivers');
+  }
+
+  /**
+   * Grants permission to list silences
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlertManagerSilences
+   */
+  public toListAlertManagerSilences() {
+    return this.to('ListAlertManagerSilences');
+  }
+
+  /**
+   * Grants permission to list active alerts
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlerts
+   */
+  public toListAlerts() {
+    return this.to('ListAlerts');
+  }
+
+  /**
+   * Grants permission to list rule groups namespaces
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListRuleGroupsNamespaces
+   */
+  public toListRuleGroupsNamespaces() {
+    return this.to('ListRuleGroupsNamespaces');
+  }
+
+  /**
+   * Grants permission to list alerting and recording rules
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListRules
+   */
+  public toListRules() {
+    return this.to('ListRules');
+  }
+
+  /**
    * Grants permission to list tags on an AMP resource
    *
    * Access Level: Read
@@ -127,6 +366,48 @@ export class Aps extends PolicyStatement {
    */
   public toListWorkspaces() {
     return this.to('ListWorkspaces');
+  }
+
+  /**
+   * Grants permission to update an alert manager definition
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-PutAlertManagerDefinition
+   */
+  public toPutAlertManagerDefinition() {
+    return this.to('PutAlertManagerDefinition');
+  }
+
+  /**
+   * Grants permission to create or update a silence
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-PutAlertManagerSilences
+   */
+  public toPutAlertManagerSilences() {
+    return this.to('PutAlertManagerSilences');
+  }
+
+  /**
+   * Grants permission to update a rule groups namespace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-PutRuleGroupsNamespace
+   */
+  public toPutRuleGroupsNamespace() {
+    return this.to('PutRuleGroupsNamespace');
   }
 
   /**
@@ -203,20 +484,40 @@ export class Aps extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     "Write": [
+      "CreateAlertManagerAlerts",
+      "CreateAlertManagerDefinition",
+      "CreateRuleGroupsNamespace",
       "CreateWorkspace",
+      "DeleteAlertManagerDefinition",
+      "DeleteAlertManagerSilence",
+      "DeleteRuleGroupsNamespace",
       "DeleteWorkspace",
+      "PutAlertManagerDefinition",
+      "PutAlertManagerSilences",
+      "PutRuleGroupsNamespace",
       "RemoteWrite",
       "UpdateWorkspaceAlias"
     ],
     "Read": [
+      "DescribeAlertManagerDefinition",
+      "DescribeRuleGroupsNamespace",
       "DescribeWorkspace",
+      "GetAlertManagerSilence",
+      "GetAlertManagerStatus",
       "GetLabels",
       "GetMetricMetadata",
       "GetSeries",
+      "ListAlertManagerAlertGroups",
+      "ListAlertManagerAlerts",
+      "ListAlertManagerReceivers",
+      "ListAlertManagerSilences",
+      "ListAlerts",
+      "ListRules",
       "ListTagsForResource",
       "QueryMetrics"
     ],
     "List": [
+      "ListRuleGroupsNamespaces",
       "ListWorkspaces"
     ],
     "Tagging": [
@@ -230,7 +531,7 @@ export class Aps extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/prometheus/latest/userguide/security-iam.html
    *
-   * @param resourceId - Identifier for the resourceId.
+   * @param workspaceId - Identifier for the workspaceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -240,9 +541,35 @@ export class Aps extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    */
-  public onWorkspace(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:aps:${Region}:${Account}:workspace/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
+  public onWorkspace(workspaceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:aps:${Region}:${Account}:workspace/${WorkspaceId}';
+    arn = arn.replace('${WorkspaceId}', workspaceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type rulegroupsnamespace to the statement
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/security-iam.html
+   *
+   * @param workspaceId - Identifier for the workspaceId.
+   * @param namespace - Identifier for the namespace.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   */
+  public onRulegroupsnamespace(workspaceId: string, namespace: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:aps:${Region}:${Account}:rulegroupsnamespace/${WorkspaceId}/${Namespace}';
+    arn = arn.replace('${WorkspaceId}', workspaceId);
+    arn = arn.replace('${Namespace}', namespace);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

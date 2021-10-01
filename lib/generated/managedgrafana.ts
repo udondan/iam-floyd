@@ -110,7 +110,7 @@ export class Grafana extends PolicyStatement {
   /**
    * Grants permission to list workspaces
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
    */
@@ -162,11 +162,11 @@ export class Grafana extends PolicyStatement {
     ],
     "Read": [
       "DescribeWorkspace",
-      "DescribeWorkspaceAuthentication"
+      "DescribeWorkspaceAuthentication",
+      "ListWorkspaces"
     ],
     "List": [
-      "ListPermissions",
-      "ListWorkspaces"
+      "ListPermissions"
     ],
     "Permissions management": [
       "UpdatePermissions"
@@ -184,7 +184,7 @@ export class Grafana extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onWorkspace(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:grafana::${Region}:${Account}:/workspaces/${ResourceId}';
+    var arn = 'arn:${Partition}:grafana:${Region}:${Account}:/workspaces/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

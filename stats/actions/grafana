@@ -5,7 +5,7 @@ grafana:DescribeWorkspace;Read
 grafana:DescribeWorkspaceAuthentication;Read
 grafana:DisassociateLicense;Write
 grafana:ListPermissions;List
-grafana:ListWorkspaces;List
+grafana:ListWorkspaces;Read
 grafana:UpdatePermissions;Permissions management
 grafana:UpdateWorkspace;Write
 grafana:UpdateWorkspaceAuthentication;Write
