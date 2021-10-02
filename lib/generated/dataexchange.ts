@@ -19,7 +19,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to cancel a job.
+   * Grants permissions to cancel a job
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an asset (for example, in a Job).
+   * Grants permission to create an asset (for example, in a Job)
    *
    * Access Level: Write
    *
@@ -46,7 +46,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a data set.
+   * Grants permission to create a data set
    *
    * Access Level: Write
    *
@@ -62,7 +62,18 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a job to import or export assets.
+   * Grants permission to create an event action
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   */
+  public toCreateEventAction() {
+    return this.to('CreateEventAction');
+  }
+
+  /**
+   * Grants permissions to create a job to import or export assets
    *
    * Access Level: Write
    *
@@ -73,7 +84,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a revision.
+   * Grants permission to create a revision
    *
    * Access Level: Write
    *
@@ -89,7 +100,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete an asset.
+   * Grants permissions to delete an asset
    *
    * Access Level: Write
    *
@@ -100,7 +111,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a data set.
+   * Grants permissions to delete a data set
    *
    * Access Level: Write
    *
@@ -111,7 +122,18 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a revision.
+   * Grants permission to delete an event action
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   */
+  public toDeleteEventAction() {
+    return this.to('DeleteEventAction');
+  }
+
+  /**
+   * Grants permissions to delete a revision
    *
    * Access Level: Write
    *
@@ -122,7 +144,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get information about an asset and to export it (for example, in a Job).
+   * Grants permissions to get information about an asset and to export it (for example, in a Job)
    *
    * Access Level: Read
    *
@@ -133,7 +155,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a data set.
+   * Grants permission to get information about a data set
    *
    * Access Level: Read
    *
@@ -144,7 +166,18 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get information about a job.
+   * Grants permission to get an event action
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   */
+  public toGetEventAction() {
+    return this.to('GetEventAction');
+  }
+
+  /**
+   * Grants permissions to get information about a job
    *
    * Access Level: Read
    *
@@ -155,7 +188,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a revision.
+   * Grants permission to get information about a revision
    *
    * Access Level: Read
    *
@@ -166,9 +199,9 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list the revisions of a data set.
+   * Grants permissions to list the revisions of a data set
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions.html#ListDataSetRevisions
    */
@@ -177,9 +210,9 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list data sets for the account.
+   * Grants permission to list data sets for the account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets.html#ListDataSets
    */
@@ -188,9 +221,20 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list jobs for the account.
+   * Grants permission to list event actions for the account
    *
-   * Access Level: List
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   */
+  public toListEventActions() {
+    return this.to('ListEventActions');
+  }
+
+  /**
+   * Grants permissions to list jobs for the account
+   *
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-jobs.html#ListJobs
    */
@@ -199,9 +243,9 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get list the assets of a revision.
+   * Grants permissions to get list the assets of a revision
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid-assets.html#ListRevisionAssets
    */
@@ -221,7 +265,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permission to publish a data set.
+   * Grants permission to publish a data set
    *
    * Access Level: Write
    *
@@ -232,7 +276,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to start a job.
+   * Grants permissions to start a job
    *
    * Access Level: Write
    *
@@ -243,7 +287,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add one or more tags to a specified resource.
+   * Grants permission to add one or more tags to a specified resource
    *
    * Access Level: Tagging
    *
@@ -258,7 +302,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove one or more tags from a specified resource.
+   * Grants permission to remove one or more tags from a specified resource
    *
    * Access Level: Tagging
    *
@@ -272,7 +316,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to get update information about an asset.
+   * Grants permissions to get update information about an asset
    *
    * Access Level: Write
    *
@@ -283,7 +327,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update information about a data set.
+   * Grants permissions to update information about a data set
    *
    * Access Level: Write
    *
@@ -294,7 +338,18 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update information about a revision.
+   * Grants permission to update information for an event action
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   */
+  public toUpdateEventAction() {
+    return this.to('UpdateEventAction');
+  }
+
+  /**
+   * Grants permissions to update information about a revision
    *
    * Access Level: Write
    *
@@ -309,29 +364,32 @@ export class Dataexchange extends PolicyStatement {
       "CancelJob",
       "CreateAsset",
       "CreateDataSet",
+      "CreateEventAction",
       "CreateJob",
       "CreateRevision",
       "DeleteAsset",
       "DeleteDataSet",
+      "DeleteEventAction",
       "DeleteRevision",
       "PublishDataSet",
       "StartJob",
       "UpdateAsset",
       "UpdateDataSet",
+      "UpdateEventAction",
       "UpdateRevision"
     ],
     "Read": [
       "GetAsset",
       "GetDataSet",
+      "GetEventAction",
       "GetJob",
       "GetRevision",
-      "ListTagsForResource"
-    ],
-    "List": [
       "ListDataSetRevisions",
       "ListDataSets",
+      "ListEventActions",
       "ListJobs",
-      "ListRevisionAssets"
+      "ListRevisionAssets",
+      "ListTagsForResource"
     ],
     "Tagging": [
       "TagResource",
@@ -425,7 +483,26 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Indicates that the action can only be performed on the specified job type.
+   * Adds a resource of type event-actions to the statement
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html
+   *
+   * @param eventActionId - Identifier for the eventActionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onEventActions(eventActionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dataexchange:${Region}:${Account}:event-actions/${EventActionId}';
+    arn = arn.replace('${EventActionId}', eventActionId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Filters access by the specified job type
    *
    * https://docs.aws.amazon.com/data-exchange/latest/userguide/access-control.html
    *
