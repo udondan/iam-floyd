@@ -55,6 +55,7 @@ cloudfront:ListConflictingAliases;List
 cloudfront:ListDistributions;List
 cloudfront:ListDistributionsByCachePolicyId;List
 cloudfront:ListDistributionsByKeyGroup;List
+cloudfront:ListDistributionsByLambdaFunction;List
 cloudfront:ListDistributionsByOriginRequestPolicyId;List
 cloudfront:ListDistributionsByRealtimeLogConfig;List
 cloudfront:ListDistributionsByWebACLId;List

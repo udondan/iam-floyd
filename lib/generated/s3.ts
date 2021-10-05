@@ -67,6 +67,7 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzMetadataDirective()
    * - .ifXAmzServerSideEncryption()
    * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
+   * - .ifXAmzServerSideEncryptionCustomerAlgorithm()
    * - .ifXAmzStorageClass()
    * - .ifXAmzWebsiteRedirectLocation()
    * - .ifObjectLockMode()
@@ -2293,6 +2294,7 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzMetadataDirective()
    * - .ifXAmzServerSideEncryption()
    * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
+   * - .ifXAmzServerSideEncryptionCustomerAlgorithm()
    * - .ifXAmzStorageClass()
    * - .ifXAmzWebsiteRedirectLocation()
    * - .ifObjectLockMode()
@@ -2563,6 +2565,7 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzContentSha256()
    * - .ifXAmzServerSideEncryption()
    * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
+   * - .ifXAmzServerSideEncryptionCustomerAlgorithm()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
    */
@@ -2909,13 +2912,13 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/MultiRegionAccessPointRequests.html
    *
-   * @param accessPointName - Identifier for the accessPointName.
+   * @param accessPointAlias - Identifier for the accessPointAlias.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onMultiregionaccesspoint(accessPointName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3::${Account}:accesspoint/${AccessPointName}';
-    arn = arn.replace('${AccessPointName}', accessPointName);
+  public onMultiregionaccesspoint(accessPointAlias: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:s3::${Account}:accesspoint/${AccessPointAlias}';
+    arn = arn.replace('${AccessPointAlias}', accessPointAlias);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -4453,6 +4456,23 @@ export class S3 extends PolicyStatement {
    */
   public ifXAmzServerSideEncryptionAwsKmsKeyId(value: string | string[], operator?: Operator | string) {
     return this.if(`x-amz-server-side-encryption-aws-kms-key-id`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by customer-provided algorithm (SSE-C) for server-side encryption
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html
+   *
+   * Applies to actions:
+   * - .toBypassGovernanceRetention()
+   * - .toPutObject()
+   * - .toReplicateObject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifXAmzServerSideEncryptionCustomerAlgorithm(value: string | string[], operator?: Operator | string) {
+    return this.if(`x-amz-server-side-encryption-customer-algorithm`, value, operator || 'StringLike');
   }
 
   /**

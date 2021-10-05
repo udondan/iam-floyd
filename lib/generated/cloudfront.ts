@@ -654,6 +654,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the distributions associated a Lambda function
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByLambdaFunction.html
+   */
+  public toListDistributionsByLambdaFunction() {
+    return this.to('ListDistributionsByLambdaFunction');
+  }
+
+  /**
    * Grants permission to list distribution IDs for distributions that have a cache behavior that's associated with the specified origin request policy
    *
    * Access Level: List
@@ -1045,6 +1056,7 @@ export class Cloudfront extends PolicyStatement {
       "ListDistributions",
       "ListDistributionsByCachePolicyId",
       "ListDistributionsByKeyGroup",
+      "ListDistributionsByLambdaFunction",
       "ListDistributionsByOriginRequestPolicyId",
       "ListDistributionsByRealtimeLogConfig",
       "ListDistributionsByWebACLId",
