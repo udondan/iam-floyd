@@ -20,6 +20,9 @@ interface Fixes {
  * resourceTypes.$name.arn: Fixes ARN of the given resource type
  */
 export const fixes: Fixes = {
+  cloudcontrolapi: {
+    name: 'aws-cloud-control-api',
+  },
   ec2: {
     conditions: {
       SnapshotTime: {
