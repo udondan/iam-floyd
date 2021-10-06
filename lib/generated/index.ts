@@ -164,6 +164,7 @@ export { Acm } from "./certificatemanager";
 export { AcmPca } from "./certificatemanagerprivatecertificateauthority";
 export { Chatbot } from "./chatbot";
 export { Cloud9 } from "./cloud9";
+export { AwsCloudControlApi } from "./cloudcontrolapi";
 export { Cloudformation } from "./cloudformation";
 export { Cloudhsm } from "./cloudhsm";
 export { Servicediscovery } from "./cloudmap";

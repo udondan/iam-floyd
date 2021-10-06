@@ -1,14 +1,17 @@
 cloudformation:ActivateType;Write
 cloudformation:BatchDescribeTypeConfigurations;Read
+cloudformation:CancelResourceRequest;Write
 cloudformation:CancelUpdateStack;Write
 cloudformation:ContinueUpdateRollback;Write
 cloudformation:CreateChangeSet;Write
+cloudformation:CreateResource;Write
 cloudformation:CreateStack;Write
 cloudformation:CreateStackInstances;Write
 cloudformation:CreateStackSet;Write
 cloudformation:CreateUploadBucket;Write
 cloudformation:DeactivateType;Write
 cloudformation:DeleteChangeSet;Write
+cloudformation:DeleteResource;Write
 cloudformation:DeleteStack;Write
 cloudformation:DeleteStackInstances;Write
 cloudformation:DeleteStackSet;Write
@@ -32,6 +35,8 @@ cloudformation:DetectStackResourceDrift;Read
 cloudformation:DetectStackSetDrift;Read
 cloudformation:EstimateTemplateCost;Read
 cloudformation:ExecuteChangeSet;Write
+cloudformation:GetResource;Read
+cloudformation:GetResourceRequestStatus;Read
 cloudformation:GetStackPolicy;Read
 cloudformation:GetTemplate;Read
 cloudformation:GetTemplateSummary;Read
@@ -39,6 +44,8 @@ cloudformation:ImportStacksToStackSet;Write
 cloudformation:ListChangeSets;List
 cloudformation:ListExports;List
 cloudformation:ListImports;List
+cloudformation:ListResourceRequests;Read
+cloudformation:ListResources;Read
 cloudformation:ListStackInstances;List
 cloudformation:ListStackResources;List
 cloudformation:ListStackSetOperationResults;List
@@ -60,6 +67,7 @@ cloudformation:StopStackSetOperation;Write
 cloudformation:TagResource;Tagging
 cloudformation:TestType;Write
 cloudformation:UntagResource;Tagging
+cloudformation:UpdateResource;Write
 cloudformation:UpdateStack;Write
 cloudformation:UpdateStackInstances;Write
 cloudformation:UpdateStackSet;Write
