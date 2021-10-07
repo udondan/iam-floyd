@@ -114,6 +114,7 @@ export class Backup extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifFrameworkArns()
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateReportPlan.html
    */
@@ -166,7 +167,18 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove notifications from backup vault
+   * Grants permission to remove the lock configuration from a backup vault
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupVaultLockConfiguration.html
+   */
+  public toDeleteBackupVaultLockConfiguration() {
+    return this.to('DeleteBackupVaultLockConfiguration');
+  }
+
+  /**
+   * Grants permission to remove the notifications from a backup vault
    *
    * Access Level: Write
    *
@@ -617,6 +629,17 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a lock configuration to the backup vault
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_PutBackupVaultLockConfiguration.html
+   */
+  public toPutBackupVaultLockConfiguration() {
+    return this.to('PutBackupVaultLockConfiguration');
+  }
+
+  /**
    * Grants permission to add an SNS topic to the backup vault
    *
    * Access Level: Write
@@ -780,6 +803,9 @@ export class Backup extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifFrameworkArns()
+   *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateReportPlan.html
    */
   public toUpdateReportPlan() {
@@ -798,11 +824,13 @@ export class Backup extends PolicyStatement {
       "DeleteBackupPlan",
       "DeleteBackupSelection",
       "DeleteBackupVault",
+      "DeleteBackupVaultLockConfiguration",
       "DeleteBackupVaultNotifications",
       "DeleteFramework",
       "DeleteRecoveryPoint",
       "DeleteReportPlan",
       "DisassociateRecoveryPoint",
+      "PutBackupVaultLockConfiguration",
       "PutBackupVaultNotifications",
       "StartBackupJob",
       "StartCopyJob",
@@ -1007,5 +1035,21 @@ export class Backup extends PolicyStatement {
    */
   public ifCopyTargets(value: string | string[], operator?: Operator | string) {
     return this.if(`CopyTargets`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the Framework ARNs
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys
+   *
+   * Applies to actions:
+   * - .toCreateReportPlan()
+   * - .toUpdateReportPlan()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFrameworkArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`FrameworkArns`, value, operator || 'StringLike');
   }
 }

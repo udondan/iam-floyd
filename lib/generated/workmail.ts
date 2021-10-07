@@ -371,6 +371,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read the settings in a DMARC policy for a specified organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeInboundDmarcSettings.html
+   */
+  public toDescribeInboundDmarcSettings() {
+    return this.to('DescribeInboundDmarcSettings');
+  }
+
+  /**
    * Grants permission to read the details of an inbound mail flow rule configured for an organization
    *
    * Access Level: Read
@@ -888,6 +899,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable or disable a DMARC policy for a given organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutInboundDmarcSettings.html
+   */
+  public toPutInboundDmarcSettings() {
+    return this.to('PutInboundDmarcSettings');
+  }
+
+  /**
    * Grants permission to set permissions for a user, group, or resource, replacing any existing permissions
    *
    * Access Level: Write
@@ -1213,6 +1235,7 @@ export class Workmail extends PolicyStatement {
       "EnableMailGroups",
       "EnableMailUsers",
       "PutAccessControlRule",
+      "PutInboundDmarcSettings",
       "PutMailboxPermissions",
       "PutRetentionPolicy",
       "RegisterToWorkMail",
@@ -1265,6 +1288,7 @@ export class Workmail extends PolicyStatement {
       "ListUsers"
     ],
     "Read": [
+      "DescribeInboundDmarcSettings",
       "DescribeInboundMailFlowRule",
       "DescribeMailboxExportJob",
       "DescribeOutboundMailFlowRule",

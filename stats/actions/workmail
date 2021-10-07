@@ -30,6 +30,7 @@ workmail:DeleteUser;Write
 workmail:DeregisterFromWorkMail;Write
 workmail:DescribeDirectories;List
 workmail:DescribeGroup;List
+workmail:DescribeInboundDmarcSettings;Read
 workmail:DescribeInboundMailFlowRule;Read
 workmail:DescribeKmsKeys;List
 workmail:DescribeMailDomains;List
@@ -77,6 +78,7 @@ workmail:ListSmtpGateways;List
 workmail:ListTagsForResource;List
 workmail:ListUsers;List
 workmail:PutAccessControlRule;Write
+workmail:PutInboundDmarcSettings;Write
 workmail:PutMailboxPermissions;Write
 workmail:PutRetentionPolicy;Write
 workmail:RegisterToWorkMail;Write
