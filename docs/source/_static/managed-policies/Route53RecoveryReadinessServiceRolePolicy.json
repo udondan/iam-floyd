@@ -29,6 +29,17 @@
 				}
 			}
 		},
+		{            
+		    "Effect": "Allow",
+		    "Action": [
+                "lambda:GetFunctionConcurrency",
+                "lambda:GetFunctionConfiguration",
+                "lambda:GetProvisionedConcurrencyConfig",
+                "lambda:ListAliases",
+                "lambda:ListVersionsByFunction"
+            ],
+            "Resource": "arn:aws:lambda:*:*:function:*"
+        },
 		{
 			"Effect": "Allow",
 			"Action": [
@@ -114,6 +125,7 @@
 				"elasticloadbalancing:DescribeTargetHealth",
 				"kafka:DescribeCluster",
 				"kafka:DescribeConfigurationRevision",
+				"lambda:ListEventSourceMappings",
 				"lambda:ListFunctions",
 				"rds:DescribeAccountAttributes",
 				"route53:GetHostedZone",
