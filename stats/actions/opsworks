@@ -59,10 +59,10 @@ opsworks:StartInstance;Write
 opsworks:StartStack;Write
 opsworks:StopInstance;Write
 opsworks:StopStack;Write
-opsworks:TagResource;Write
+opsworks:TagResource;Tagging
 opsworks:UnassignInstance;Write
 opsworks:UnassignVolume;Write
-opsworks:UntagResource;Write
+opsworks:UntagResource;Tagging
 opsworks:UpdateApp;Write
 opsworks:UpdateElasticIp;Write
 opsworks:UpdateInstance;Write

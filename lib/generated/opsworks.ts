@@ -692,7 +692,7 @@ export class Opsworks extends PolicyStatement {
   /**
    * Apply tags to a specified stack or layer
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/opsworks/latest/APIReference/API_TagResource.html
    */
@@ -725,7 +725,7 @@ export class Opsworks extends PolicyStatement {
   /**
    * Removes tags from a specified stack or layer
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
    * https://docs.aws.amazon.com/opsworks/latest/APIReference/API_UntagResource.html
    */
@@ -870,10 +870,8 @@ export class Opsworks extends PolicyStatement {
       "StartStack",
       "StopInstance",
       "StopStack",
-      "TagResource",
       "UnassignInstance",
       "UnassignVolume",
-      "UntagResource",
       "UpdateApp",
       "UpdateElasticIp",
       "UpdateInstance",
@@ -914,6 +912,10 @@ export class Opsworks extends PolicyStatement {
     "Permissions management": [
       "SetPermission",
       "UpdateUserProfile"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
     ]
   };
 
