@@ -27,7 +27,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_BatchCreateVariable
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_BatchCreateVariable.html
    */
   public toBatchCreateVariable() {
     return this.to('BatchCreateVariable');
@@ -38,10 +38,21 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_BatchGetVariable
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_BatchGetVariable.html
    */
   public toBatchGetVariable() {
     return this.to('BatchGetVariable');
+  }
+
+  /**
+   * Grants permission to cancel the specified batch import job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_CancelBatchImportJob.html
+   */
+  public toCancelBatchImportJob() {
+    return this.to('CancelBatchImportJob');
   }
 
   /**
@@ -49,10 +60,25 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_CancelBatchPredictionJob
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_CancelBatchPredictionJob.html
    */
   public toCancelBatchPredictionJob() {
     return this.to('CancelBatchPredictionJob');
+  }
+
+  /**
+   * Grants permission to create a batch import job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateBatchImportJob.html
+   */
+  public toCreateBatchImportJob() {
+    return this.to('CreateBatchImportJob');
   }
 
   /**
@@ -64,7 +90,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateBatchPredictionJob
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateBatchPredictionJob.html
    */
   public toCreateBatchPredictionJob() {
     return this.to('CreateBatchPredictionJob');
@@ -79,7 +105,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateDetectorVersion
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateDetectorVersion.html
    */
   public toCreateDetectorVersion() {
     return this.to('CreateDetectorVersion');
@@ -94,7 +120,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateModel
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateModel.html
    */
   public toCreateModel() {
     return this.to('CreateModel');
@@ -109,7 +135,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateModelVersion
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateModelVersion.html
    */
   public toCreateModelVersion() {
     return this.to('CreateModelVersion');
@@ -146,11 +172,22 @@ export class Frauddetector extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a batch import job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteBatchImportJob.html
+   */
+  public toDeleteBatchImportJob() {
+    return this.to('DeleteBatchImportJob');
+  }
+
+  /**
    * Grants permission to delete a batch prediction job
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteBatchPredictionJob
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteBatchPredictionJob.html
    */
   public toDeleteBatchPredictionJob() {
     return this.to('DeleteBatchPredictionJob');
@@ -161,7 +198,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteDetector
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteDetector.html
    */
   public toDeleteDetector() {
     return this.to('DeleteDetector');
@@ -172,7 +209,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteDetectorVersion
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteDetectorVersion.html
    */
   public toDeleteDetectorVersion() {
     return this.to('DeleteDetectorVersion');
@@ -183,7 +220,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEntityType
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEntityType.html
    */
   public toDeleteEntityType() {
     return this.to('DeleteEntityType');
@@ -194,7 +231,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEvent
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEvent.html
    */
   public toDeleteEvent() {
     return this.to('DeleteEvent');
@@ -205,10 +242,21 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEventType
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEventType.html
    */
   public toDeleteEventType() {
     return this.to('DeleteEventType');
+  }
+
+  /**
+   * Grants permission to delete events for the specified event type
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEventsByEventType.html
+   */
+  public toDeleteEventsByEventType() {
+    return this.to('DeleteEventsByEventType');
   }
 
   /**
@@ -216,7 +264,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteExternalModel
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteExternalModel.html
    */
   public toDeleteExternalModel() {
     return this.to('DeleteExternalModel');
@@ -227,7 +275,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteLabel
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteLabel.html
    */
   public toDeleteLabel() {
     return this.to('DeleteLabel');
@@ -238,7 +286,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteModel
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteModel.html
    */
   public toDeleteModel() {
     return this.to('DeleteModel');
@@ -249,7 +297,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteModelVersion
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteModelVersion.html
    */
   public toDeleteModelVersion() {
     return this.to('DeleteModelVersion');
@@ -260,7 +308,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteOutcome
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteOutcome.html
    */
   public toDeleteOutcome() {
     return this.to('DeleteOutcome');
@@ -271,7 +319,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteRule
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteRule.html
    */
   public toDeleteRule() {
     return this.to('DeleteRule');
@@ -282,7 +330,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteVariable
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteVariable.html
    */
   public toDeleteVariable() {
     return this.to('DeleteVariable');
@@ -293,7 +341,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DescribeDetector
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DescribeDetector.html
    */
   public toDescribeDetector() {
     return this.to('DescribeDetector');
@@ -304,10 +352,21 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DescribeModelVersions
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_DescribeModelVersions.html
    */
   public toDescribeModelVersions() {
     return this.to('DescribeModelVersions');
+  }
+
+  /**
+   * Grants permission to get all batch import jobs or a specific job if you specify a job ID
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetBatchImportJobs.html
+   */
+  public toGetBatchImportJobs() {
+    return this.to('GetBatchImportJobs');
   }
 
   /**
@@ -315,18 +374,29 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetBatchPredictionJobs
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetBatchPredictionJobs.html
    */
   public toGetBatchPredictionJobs() {
     return this.to('GetBatchPredictionJobs');
   }
 
   /**
+   * Grants permission to get a specific event type DeleteEventsByEventType API execution status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetDeleteEventsByEventTypeStatus.html
+   */
+  public toGetDeleteEventsByEventTypeStatus() {
+    return this.to('GetDeleteEventsByEventTypeStatus');
+  }
+
+  /**
    * Grants permission to get a particular detector version
    *
-   * Access Level: List
+   * Access Level: Read
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetDetectorVersion
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetDetectorVersion.html
    */
   public toGetDetectorVersion() {
     return this.to('GetDetectorVersion');
@@ -337,7 +407,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetDetectors
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetDetectors.html
    */
   public toGetDetectors() {
     return this.to('GetDetectors');
@@ -348,10 +418,21 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetEntityTypes
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetEntityTypes.html
    */
   public toGetEntityTypes() {
     return this.to('GetEntityTypes');
+  }
+
+  /**
+   * Grants permission to get the details of the specified event
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetEvent.html
+   */
+  public toGetEvent() {
+    return this.to('GetEvent');
   }
 
   /**
@@ -359,7 +440,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetEventPrediction
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetEventPrediction.html
    */
   public toGetEventPrediction() {
     return this.to('GetEventPrediction');
@@ -370,7 +451,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetEventTypes
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetEventTypes.html
    */
   public toGetEventTypes() {
     return this.to('GetEventTypes');
@@ -381,7 +462,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetExternalModels
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetExternalModels.html
    */
   public toGetExternalModels() {
     return this.to('GetExternalModels');
@@ -392,7 +473,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetKMSEncryptionKey
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetKMSEncryptionKey.html
    */
   public toGetKMSEncryptionKey() {
     return this.to('GetKMSEncryptionKey');
@@ -403,7 +484,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetLabels
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetLabels.html
    */
   public toGetLabels() {
     return this.to('GetLabels');
@@ -412,9 +493,9 @@ export class Frauddetector extends PolicyStatement {
   /**
    * Grants permission to get the details of the specified model version
    *
-   * Access Level: List
+   * Access Level: Read
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetModelVersion
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetModelVersion.html
    */
   public toGetModelVersion() {
     return this.to('GetModelVersion');
@@ -425,7 +506,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetModels
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetModels.html
    */
   public toGetModels() {
     return this.to('GetModels');
@@ -436,7 +517,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetOutcomes
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetOutcomes.html
    */
   public toGetOutcomes() {
     return this.to('GetOutcomes');
@@ -458,7 +539,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetVariables
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetVariables.html
    */
   public toGetVariables() {
     return this.to('GetVariables');
@@ -467,7 +548,7 @@ export class Frauddetector extends PolicyStatement {
   /**
    * Grants permission to list all tags associated with the resource. This is a paginated API. To get the next page results, provide the pagination token from the response as part of your request. A null pagination token fetches the records from the beginning
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_ListTagsForResource.html
    */
@@ -577,6 +658,21 @@ export class Frauddetector extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send event
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_SendEvent.html
+   */
+  public toSendEvent() {
+    return this.to('SendEvent');
+  }
+
+  /**
    * Grants permission to assign tags to a resource
    *
    * Access Level: Tagging
@@ -611,7 +707,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateDetectorVersion
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateDetectorVersion.html
    */
   public toUpdateDetectorVersion() {
     return this.to('UpdateDetectorVersion');
@@ -622,7 +718,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateDetectorVersionMetadata
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateDetectorVersionMetadata.html
    */
   public toUpdateDetectorVersionMetadata() {
     return this.to('UpdateDetectorVersionMetadata');
@@ -633,10 +729,25 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateDetectorVersionStatus
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateDetectorVersionStatus.html
    */
   public toUpdateDetectorVersionStatus() {
     return this.to('UpdateDetectorVersionStatus');
+  }
+
+  /**
+   * Grants permission to update an existing event record's label value
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateEventLabel.html
+   */
+  public toUpdateEventLabel() {
+    return this.to('UpdateEventLabel');
   }
 
   /**
@@ -644,7 +755,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateModel
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateModel.html
    */
   public toUpdateModel() {
     return this.to('UpdateModel');
@@ -659,7 +770,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateModelVersion
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateModelVersion.html
    */
   public toUpdateModelVersion() {
     return this.to('UpdateModelVersion');
@@ -670,7 +781,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateModelVersionStatus
+   * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateModelVersionStatus.html
    */
   public toUpdateModelVersionStatus() {
     return this.to('UpdateModelVersionStatus');
@@ -716,19 +827,23 @@ export class Frauddetector extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     "Write": [
       "BatchCreateVariable",
+      "CancelBatchImportJob",
       "CancelBatchPredictionJob",
+      "CreateBatchImportJob",
       "CreateBatchPredictionJob",
       "CreateDetectorVersion",
       "CreateModel",
       "CreateModelVersion",
       "CreateRule",
       "CreateVariable",
+      "DeleteBatchImportJob",
       "DeleteBatchPredictionJob",
       "DeleteDetector",
       "DeleteDetectorVersion",
       "DeleteEntityType",
       "DeleteEvent",
       "DeleteEventType",
+      "DeleteEventsByEventType",
       "DeleteExternalModel",
       "DeleteLabel",
       "DeleteModel",
@@ -743,9 +858,11 @@ export class Frauddetector extends PolicyStatement {
       "PutKMSEncryptionKey",
       "PutLabel",
       "PutOutcome",
+      "SendEvent",
       "UpdateDetectorVersion",
       "UpdateDetectorVersionMetadata",
       "UpdateDetectorVersionStatus",
+      "UpdateEventLabel",
       "UpdateModel",
       "UpdateModelVersion",
       "UpdateModelVersionStatus",
@@ -755,25 +872,28 @@ export class Frauddetector extends PolicyStatement {
     ],
     "List": [
       "BatchGetVariable",
+      "GetBatchImportJobs",
       "GetBatchPredictionJobs",
-      "GetDetectorVersion",
       "GetDetectors",
       "GetEntityTypes",
       "GetEventTypes",
       "GetExternalModels",
       "GetLabels",
-      "GetModelVersion",
       "GetModels",
       "GetOutcomes",
       "GetRules",
-      "GetVariables",
-      "ListTagsForResource"
+      "GetVariables"
     ],
     "Read": [
       "DescribeDetector",
       "DescribeModelVersions",
+      "GetDeleteEventsByEventTypeStatus",
+      "GetDetectorVersion",
+      "GetEvent",
       "GetEventPrediction",
-      "GetKMSEncryptionKey"
+      "GetKMSEncryptionKey",
+      "GetModelVersion",
+      "ListTagsForResource"
     ],
     "Tagging": [
       "TagResource",
@@ -1038,6 +1158,28 @@ export class Frauddetector extends PolicyStatement {
    */
   public onVariable(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:variable/${ResourcePath}';
+    arn = arn.replace('${ResourcePath}', resourcePath);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type batch-import to the statement
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfrauddetector.html#amazonfrauddetector-resources-for-iam-policies
+   *
+   * @param resourcePath - Identifier for the resourcePath.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBatchImport(resourcePath: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:batch-import/${ResourcePath}';
     arn = arn.replace('${ResourcePath}', resourcePath);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

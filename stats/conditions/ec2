@@ -1,4 +1,5 @@
 ec2:AccepterVpc
+ec2:AllocationId
 ec2:AssociatePublicIpAddress
 ec2:Attribute/${AttributeName}
 ec2:AuthenticationType
@@ -13,6 +14,7 @@ ec2:CloudwatchLogStreamArn
 ec2:CreateAction
 ec2:DPDTimeoutSeconds
 ec2:DirectoryArn
+ec2:Domain
 ec2:EbsOptimized
 ec2:ElasticGpuType
 ec2:Encrypted
@@ -26,6 +28,8 @@ ec2:InstanceProfile
 ec2:InstanceType
 ec2:IsLaunchTemplateResource
 ec2:KeyPairName
+ec2:KeyPairType
+ec2:KmsKeyId
 ec2:LaunchTemplate
 ec2:MetadataHttpEndpoint
 ec2:MetadataHttpPutResponseHopLimit
@@ -36,19 +40,20 @@ ec2:Owner
 ec2:ParentSnapshot
 ec2:ParentVolume
 ec2:Permission
-ec2:Phase1DHGroupNumbers
+ec2:Phase1DHGroup
 ec2:Phase1EncryptionAlgorithms
 ec2:Phase1IntegrityAlgorithms
 ec2:Phase1LifetimeSeconds
-ec2:Phase2DHGroupNumbers
+ec2:Phase2DHGroup
 ec2:Phase2EncryptionAlgorithms
 ec2:Phase2IntegrityAlgorithms
 ec2:Phase2LifetimeSeconds
 ec2:PlacementGroup
 ec2:PlacementGroupStrategy
-ec2:PresharedKeys
+ec2:PreSharedKeys
 ec2:ProductCode
 ec2:Public
+ec2:PublicIpAddress
 ec2:Quantity
 ec2:Region
 ec2:RekeyFuzzPercentage

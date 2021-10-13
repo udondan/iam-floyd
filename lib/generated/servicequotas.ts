@@ -2,7 +2,7 @@ import { AccessLevelList } from "../shared/access-level";
 import { PolicyStatement, Operator } from "../shared";
 
 /**
- * Statement provider for service [servicequotas](https://docs.aws.amazon.com/service-authorization/latest/reference/list_servicequotas.html).
+ * Statement provider for service [servicequotas](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicequotas.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Servicequotas extends PolicyStatement {
   public servicePrefix = 'servicequotas';
 
   /**
-   * Statement provider for service [servicequotas](https://docs.aws.amazon.com/service-authorization/latest/reference/list_servicequotas.html).
+   * Statement provider for service [servicequotas](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicequotas.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -175,7 +175,7 @@ export class Servicequotas extends PolicyStatement {
   /**
    * Grants permission to view the existing tags on a SQ resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListTagsForResource
    */
@@ -252,9 +252,7 @@ export class Servicequotas extends PolicyStatement {
       "ListRequestedServiceQuotaChangeHistoryByQuota",
       "ListServiceQuotaIncreaseRequestsInTemplate",
       "ListServiceQuotas",
-      "ListServices"
-    ],
-    "List": [
+      "ListServices",
       "ListTagsForResource"
     ],
     "Tagging": [

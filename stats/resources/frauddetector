@@ -1,3 +1,4 @@
+frauddetector:batch-import
 frauddetector:batch-prediction
 frauddetector:detector
 frauddetector:detector-version

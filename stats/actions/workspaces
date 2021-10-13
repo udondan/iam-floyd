@@ -5,6 +5,7 @@ workspaces:CopyWorkspaceImage;Write
 workspaces:CreateConnectionAlias;Write
 workspaces:CreateIpGroup;Write
 workspaces:CreateTags;Tagging
+workspaces:CreateUpdatedWorkspaceImage;Write
 workspaces:CreateWorkspaceBundle;Write
 workspaces:CreateWorkspaces;Write
 workspaces:DeleteConnectionAlias;Write

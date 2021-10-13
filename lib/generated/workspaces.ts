@@ -111,6 +111,21 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an updated WorkSpace image
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateUpdatedWorkspaceImage.html
+   */
+  public toCreateUpdatedWorkspaceImage() {
+    return this.to('CreateUpdatedWorkspaceImage');
+  }
+
+  /**
    * Grants permission to create a WorkSpace bundle
    *
    * Access Level: Write
@@ -643,6 +658,7 @@ export class Workspaces extends PolicyStatement {
       "CopyWorkspaceImage",
       "CreateConnectionAlias",
       "CreateIpGroup",
+      "CreateUpdatedWorkspaceImage",
       "CreateWorkspaceBundle",
       "CreateWorkspaces",
       "DeleteConnectionAlias",
