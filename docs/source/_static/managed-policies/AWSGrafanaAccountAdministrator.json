@@ -33,19 +33,6 @@
 					"iam:PassedToService": "grafana.amazonaws.com"
 				}
 			}
-		},
-		{
-			"Sid": "SSOSLRPermission",
-			"Effect": "Allow",
-			"Action": [
-				"iam:CreateServiceLinkedRole"
-			],
-			"Condition": {
-				"StringEquals": {
-					"iam:AWSServiceName": "sso.amazonaws.com"
-				}
-			},
-			"Resource": "arn:aws:iam::*:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO"
 		}
 	]
 }

@@ -136,7 +136,6 @@
                 "lambda:ListLayerVersions",
                 "lambda:PublishLayerVersion",
                 "lambda:RemoveLayerVersionPermission",
-                "lambda:GetLayerVersionByArn",
                 "dynamodb:CreateTable",
                 "dynamodb:DeleteItem",
                 "dynamodb:DeleteTable",
