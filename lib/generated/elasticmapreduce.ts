@@ -19,7 +19,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add an instance fleet to a running cluster.
+   * Grants permission to add an instance fleet to a running cluster
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add instance groups to a running cluster.
+   * Grants permission to add instance groups to a running cluster
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add new steps to a running cluster.
+   * Grants permission to add new steps to a running cluster
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to an Amazon EMR resource.
+   * Grants permission to add tags to an Amazon EMR resource
    *
    * Access Level: Tagging
    *
@@ -68,7 +68,18 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to cancel a pending step or steps in a running cluster.
+   * Grants permission to attach an EMR notebook to a compute engine
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toAttachEditor() {
+    return this.to('AttachEditor');
+  }
+
+  /**
+   * Grants permission to cancel a pending step or steps in a running cluster
    *
    * Access Level: Write
    *
@@ -79,7 +90,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an EMR notebook.
+   * Grants permission to create an EMR notebook
    *
    * Access Level: Write
    *
@@ -95,7 +106,18 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an EMR Notebook repository
+   * Grants permission to create a persistent application history server
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-debug.html
+   */
+  public toCreatePersistentAppUI() {
+    return this.to('CreatePersistentAppUI');
+  }
+
+  /**
+   * Grants permission to create an EMR notebook repository
    *
    * Access Level: Write
    *
@@ -106,7 +128,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a security configuration.
+   * Grants permission to create a security configuration
    *
    * Access Level: Write
    *
@@ -117,7 +139,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an EMR studio.
+   * Grants permission to create an EMR Studio
    *
    * Access Level: Write
    *
@@ -133,7 +155,18 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an EMR studio session mapping.
+   * Grants permission to launch an EMR Studio using IAM authentication mode
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio.html
+   */
+  public toCreateStudioPresignedUrl() {
+    return this.to('CreateStudioPresignedUrl');
+  }
+
+  /**
+   * Grants permission to create an EMR Studio session mapping
    *
    * Access Level: Write
    *
@@ -144,7 +177,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an EMR notebook.
+   * Grants permission to delete an EMR notebook
    *
    * Access Level: Write
    *
@@ -155,7 +188,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an EMR Notebook repository.
+   * Grants permission to delete an EMR notebook repository
    *
    * Access Level: Write
    *
@@ -166,7 +199,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a security configuration.
+   * Grants permission to delete a security configuration
    *
    * Access Level: Write
    *
@@ -177,7 +210,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an EMR studio.
+   * Grants permission to delete an EMR Studio
    *
    * Access Level: Write
    *
@@ -188,7 +221,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an EMR studio session mapping.
+   * Grants permission to delete an EMR Studio session mapping
    *
    * Access Level: Write
    *
@@ -199,7 +232,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get details about a cluster, including status, hardware and software configuration, VPC settings, and so on.
+   * Grants permission to get details about a cluster, including status, hardware and software configuration, VPC settings, and so on
    *
    * Access Level: Read
    *
@@ -210,7 +243,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view information about a notebook, including status, user, role, tags, location, and more.
+   * Grants permission to view information about a notebook, including status, user, role, tags, location, and more
    *
    * Access Level: Read
    *
@@ -221,7 +254,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.
+   * This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead
    *
    * Access Level: Read
    *
@@ -232,7 +265,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view information about a notebook execution.
+   * Grants permission to view information about a notebook execution
    *
    * Access Level: Read
    *
@@ -243,7 +276,29 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe an EMR Notebook repository.
+   * Grants permission to describe a persistent application history server
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-debug.html
+   */
+  public toDescribePersistentAppUI() {
+    return this.to('DescribePersistentAppUI');
+  }
+
+  /**
+   * Grants permission to view information about an EMR release, such as which applications are supported
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeReleaseLabel.html
+   */
+  public toDescribeReleaseLabel() {
+    return this.to('DescribeReleaseLabel');
+  }
+
+  /**
+   * Grants permission to describe an EMR notebook repository
    *
    * Access Level: Read
    *
@@ -254,7 +309,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get details of a security configuration.
+   * Grants permission to get details of a security configuration
    *
    * Access Level: Read
    *
@@ -265,7 +320,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get details about a cluster step.
+   * Grants permission to get details about a cluster step
    *
    * Access Level: Read
    *
@@ -276,7 +331,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view information about an EMR studio.
+   * Grants permission to view information about an EMR Studio
    *
    * Access Level: Read
    *
@@ -287,7 +342,18 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the EMR block public access configuration for the AWS account in the Region.
+   * Grants permission to detach an EMR notebook from a compute engine
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html
+   */
+  public toDetachEditor() {
+    return this.to('DetachEditor');
+  }
+
+  /**
+   * Grants permission to retrieve the EMR block public access configuration for the AWS account in the Region
    *
    * Access Level: Read
    *
@@ -298,7 +364,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the managed scaling policy associated with a cluster.
+   * Grants permission to retrieve the managed scaling policy associated with a cluster
    *
    * Access Level: Read
    *
@@ -309,7 +375,29 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view information about an EMR studio session mapping.
+   * Grants permission to get a presigned URL for an application history server running on the cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-debug.html
+   */
+  public toGetOnClusterAppUIPresignedURL() {
+    return this.to('GetOnClusterAppUIPresignedURL');
+  }
+
+  /**
+   * Grants permission to get a presigned URL for a persistent application history server
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-debug.html
+   */
+  public toGetPersistentAppUIPresignedURL() {
+    return this.to('GetPersistentAppUIPresignedURL');
+  }
+
+  /**
+   * Grants permission to view information about an EMR Studio session mapping
    *
    * Access Level: Read
    *
@@ -320,7 +408,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to link an EMR Notebook repository to EMR notebooks.
+   * Grants permission to link an EMR notebook repository to EMR notebooks
    *
    * Access Level: Write
    *
@@ -331,7 +419,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get details about the bootstrap actions associated with a cluster.
+   * Grants permission to get details about the bootstrap actions associated with a cluster
    *
    * Access Level: Read
    *
@@ -342,7 +430,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the status of accessible clusters.
+   * Grants permission to get the status of accessible clusters
    *
    * Access Level: List
    *
@@ -353,7 +441,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list summary information for accessible EMR notebooks.
+   * Grants permission to list summary information for accessible EMR notebooks
    *
    * Access Level: List
    *
@@ -364,7 +452,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get details of instance fleets in a cluster.
+   * Grants permission to get details of instance fleets in a cluster
    *
    * Access Level: Read
    *
@@ -375,7 +463,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get details of instance groups in a cluster.
+   * Grants permission to get details of instance groups in a cluster
    *
    * Access Level: Read
    *
@@ -386,7 +474,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get details about the Amazon EC2 instances in a cluster.
+   * Grants permission to get details about the Amazon EC2 instances in a cluster
    *
    * Access Level: Read
    *
@@ -397,7 +485,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list summary information for notebook executions.
+   * Grants permission to list summary information for notebook executions
    *
    * Access Level: List
    *
@@ -408,7 +496,18 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list existing EMR Notebook repositories.
+   * Grants permission to list and filter the available EMR releases in the current region
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_ListReleaseLabels.html
+   */
+  public toListReleaseLabels() {
+    return this.to('ListReleaseLabels');
+  }
+
+  /**
+   * Grants permission to list existing EMR notebook repositories
    *
    * Access Level: List
    *
@@ -419,7 +518,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list available security configurations in this account by name, along with creation dates and times.
+   * Grants permission to list available security configurations in this account by name, along with creation dates and times
    *
    * Access Level: List
    *
@@ -430,7 +529,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list steps associated with a cluster.
+   * Grants permission to list steps associated with a cluster
    *
    * Access Level: Read
    *
@@ -441,7 +540,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list summary information about EMR studio session mappings.
+   * Grants permission to list summary information about EMR Studio session mappings
    *
    * Access Level: List
    *
@@ -452,7 +551,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list summary information about EMR studios.
+   * Grants permission to list summary information about EMR Studios
    *
    * Access Level: List
    *
@@ -463,7 +562,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to change cluster settings such as number of steps that can be executed concurrently for a cluster.
+   * Grants permission to change cluster settings such as number of steps that can be executed concurrently for a cluster
    *
    * Access Level: Write
    *
@@ -474,7 +573,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to change the target On-Demand and target Spot capacities for a instance fleet.
+   * Grants permission to change the target On-Demand and target Spot capacities for a instance fleet
    *
    * Access Level: Write
    *
@@ -485,7 +584,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to change the number and configuration of EC2 instances for an instance group.
+   * Grants permission to change the number and configuration of EC2 instances for an instance group
    *
    * Access Level: Write
    *
@@ -496,7 +595,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to launch the Jupyter notebook editor for an EMR notebook from within the console.
+   * Grants permission to launch the Jupyter notebook editor for an EMR notebook from within the console
    *
    * Access Level: Write
    *
@@ -507,7 +606,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create or update an automatic scaling policy for a core instance group or task instance group.
+   * Grants permission to create or update an automatic scaling policy for a core instance group or task instance group
    *
    * Access Level: Write
    *
@@ -518,7 +617,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create or update the EMR block public access configuration for the AWS account in the Region.
+   * Grants permission to create or update the EMR block public access configuration for the AWS account in the Region
    *
    * Access Level: Permissions management
    *
@@ -529,7 +628,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create or update the managed scaling policy associated with a cluster.
+   * Grants permission to create or update the managed scaling policy associated with a cluster
    *
    * Access Level: Write
    *
@@ -540,7 +639,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove an automatic scaling policy from an instance group.
+   * Grants permission to remove an automatic scaling policy from an instance group
    *
    * Access Level: Write
    *
@@ -551,7 +650,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove the managed scaling policy associated with a cluster.
+   * Grants permission to remove the managed scaling policy associated with a cluster
    *
    * Access Level: Write
    *
@@ -562,7 +661,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from an Amazon EMR resource.
+   * Grants permission to remove tags from an Amazon EMR resource
    *
    * Access Level: Tagging
    *
@@ -576,7 +675,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create and launch a cluster (job flow).
+   * Grants permission to create and launch a cluster (job flow)
    *
    * Access Level: Write
    *
@@ -592,7 +691,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add and remove termination protection for a cluster.
+   * Grants permission to add and remove termination protection for a cluster
    *
    * Access Level: Write
    *
@@ -603,7 +702,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start an EMR notebook.
+   * Grants permission to start an EMR notebook
    *
    * Access Level: Write
    *
@@ -614,7 +713,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start an EMR notebook execution.
+   * Grants permission to start an EMR notebook execution
    *
    * Access Level: Write
    *
@@ -630,7 +729,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to shut down an EMR notebook.
+   * Grants permission to shut down an EMR notebook
    *
    * Access Level: Write
    *
@@ -641,7 +740,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to stop notebook execution.
+   * Grants permission to stop notebook execution
    *
    * Access Level: Write
    *
@@ -652,7 +751,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to terminate a cluster (job flow).
+   * Grants permission to terminate a cluster (job flow)
    *
    * Access Level: Write
    *
@@ -663,7 +762,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to unlink an EMR Notebook repository from EMR notebooks.
+   * Grants permission to unlink an EMR notebook repository from EMR notebooks
    *
    * Access Level: Write
    *
@@ -674,7 +773,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an EMR Notebook repository.
+   * Grants permission to update an EMR notebook repository
    *
    * Access Level: Write
    *
@@ -685,7 +784,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update information about an EMR studio.
+   * Grants permission to update information about an EMR Studio
    *
    * Access Level: Write
    *
@@ -696,7 +795,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an EMR studio session mapping.
+   * Grants permission to update an EMR Studio session mapping
    *
    * Access Level: Write
    *
@@ -707,7 +806,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Grants permission to use the EMR management console to view events from all clusters.
+   * Grants permission to use the EMR console to view events from all clusters
    *
    * Access Level: List
    */
@@ -720,17 +819,23 @@ export class Elasticmapreduce extends PolicyStatement {
       "AddInstanceFleet",
       "AddInstanceGroups",
       "AddJobFlowSteps",
+      "AttachEditor",
       "CancelSteps",
       "CreateEditor",
+      "CreatePersistentAppUI",
       "CreateRepository",
       "CreateSecurityConfiguration",
       "CreateStudio",
+      "CreateStudioPresignedUrl",
       "CreateStudioSessionMapping",
       "DeleteEditor",
       "DeleteRepository",
       "DeleteSecurityConfiguration",
       "DeleteStudio",
       "DeleteStudioSessionMapping",
+      "DetachEditor",
+      "GetOnClusterAppUIPresignedURL",
+      "GetPersistentAppUIPresignedURL",
       "LinkRepository",
       "ModifyCluster",
       "ModifyInstanceFleet",
@@ -761,6 +866,8 @@ export class Elasticmapreduce extends PolicyStatement {
       "DescribeEditor",
       "DescribeJobFlows",
       "DescribeNotebookExecution",
+      "DescribePersistentAppUI",
+      "DescribeReleaseLabel",
       "DescribeRepository",
       "DescribeSecurityConfiguration",
       "DescribeStep",
@@ -778,6 +885,7 @@ export class Elasticmapreduce extends PolicyStatement {
       "ListClusters",
       "ListEditors",
       "ListNotebookExecutions",
+      "ListReleaseLabels",
       "ListRepositories",
       "ListSecurityConfigurations",
       "ListStudioSessionMappings",
