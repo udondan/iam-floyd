@@ -6,4 +6,5 @@ cloudformation:ResourceTypes
 cloudformation:RoleArn
 cloudformation:StackPolicyUrl
 cloudformation:TagKeys
+cloudformation:TargetRegion
 cloudformation:TemplateUrl

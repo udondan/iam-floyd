@@ -110,6 +110,9 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifTargetRegion()
+   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html
    */
   public toCreateStackInstances() {
@@ -185,6 +188,9 @@ export class Cloudformation extends PolicyStatement {
    * Grants permission to delete stack instances for the specified accounts, in the specified regions
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTargetRegion()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStackInstances.html
    */
@@ -711,6 +717,8 @@ export class Cloudformation extends PolicyStatement {
    * Grants permission to tag cloudformation resources
    *
    * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -731,6 +739,8 @@ export class Cloudformation extends PolicyStatement {
    * Grants permission to untag cloudformation resources
    *
    * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -760,6 +770,9 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifTargetRegion()
+   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackInstances.html
    */
   public toUpdateStackInstances() {
@@ -774,6 +787,7 @@ export class Cloudformation extends PolicyStatement {
    * Possible conditions:
    * - .ifRoleArn()
    * - .ifTemplateUrl()
+   * - .ifTargetRegion()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -993,7 +1007,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on an AWS CloudFormation change set name. Use to control which change sets IAM users can execute or delete
+   * Filters access by an AWS CloudFormation change set name. Use to control which change sets IAM users can execute or delete
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
    *
@@ -1011,7 +1025,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the template resource types, such as AWS::EC2::Instance. Use to control which resource types IAM users can work with when they want to import a resource into a stack
+   * Filters access by the template resource types, such as AWS::EC2::Instance. Use to control which resource types IAM users can work with when they want to import a resource into a stack
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
    *
@@ -1026,7 +1040,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the template resource types, such as AWS::EC2::Instance. Use to control which resource types IAM users can work with when they create or update a stack
+   * Filters access by the template resource types, such as AWS::EC2::Instance. Use to control which resource types IAM users can work with when they create or update a stack
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
    *
@@ -1043,7 +1057,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the ARN of an IAM service role. Use to control which service role IAM users can use to work with stacks or change sets
+   * Filters access by the ARN of an IAM service role. Use to control which service role IAM users can use to work with stacks or change sets
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
    *
@@ -1064,7 +1078,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on an Amazon S3 stack policy URL. Use to control which stack policies IAM users can associate with a stack during a create or update stack action
+   * Filters access by an Amazon S3 stack policy URL. Use to control which stack policies IAM users can associate with a stack during a create or update stack action
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
    *
@@ -1082,7 +1096,25 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on an Amazon S3 template URL. Use to control which templates IAM users can use when they create or update stacks
+   * Filters access by stack set target region. Use to control which regions IAM users can use when they create or update stack sets
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
+   *
+   * Applies to actions:
+   * - .toCreateStackInstances()
+   * - .toDeleteStackInstances()
+   * - .toUpdateStackInstances()
+   * - .toUpdateStackSet()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTargetRegion(value: string | string[], operator?: Operator | string) {
+    return this.if(`TargetRegion`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by an Amazon S3 template URL. Use to control which templates IAM users can use when they create or update stacks
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
    *
