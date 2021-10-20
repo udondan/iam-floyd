@@ -241,6 +241,7 @@ export { AwsMarketplaceMeteringService } from "./marketplacemeteringservice";
 export { AwsMarketplacePrivate } from "./marketplaceprivatemarketplace";
 export { AwsMarketplaceProcurementSystemsIntegration } from "./marketplaceprocurementsystemsintegration";
 export { Mgh } from "./migrationhub";
+export { MigrationhubStrategy } from "./migrationhubstrategyrecommendations-";
 export { Mobilehub } from "./mobilehub";
 export { NetworkFirewall } from "./networkfirewall";
 export { Opsworks } from "./opsworks";

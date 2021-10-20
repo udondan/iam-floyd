@@ -764,6 +764,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the IP restrictions for QuickSight account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeIpRestriction.html
+   */
+  public toDescribeIpRestriction() {
+    return this.to('DescribeIpRestriction');
+  }
+
+  /**
    * Grants permission to describe a QuickSight namespace
    *
    * Access Level: Read
@@ -1551,6 +1562,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the IP restrictions for QuickSight account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateIpRestriction.html
+   */
+  public toUpdateIpRestriction() {
+    return this.to('UpdateIpRestriction');
+  }
+
+  /**
    * Grants permission to update a template
    *
    * Access Level: Write
@@ -1687,6 +1709,7 @@ export class Quicksight extends PolicyStatement {
       "UpdateFolder",
       "UpdateGroup",
       "UpdateIAMPolicyAssignment",
+      "UpdateIpRestriction",
       "UpdateTemplate",
       "UpdateTemplateAlias",
       "UpdateTheme",
@@ -1722,6 +1745,7 @@ export class Quicksight extends PolicyStatement {
       "DescribeGroup",
       "DescribeIAMPolicyAssignment",
       "DescribeIngestion",
+      "DescribeIpRestriction",
       "DescribeNamespace",
       "DescribeTemplate",
       "DescribeTemplateAlias",

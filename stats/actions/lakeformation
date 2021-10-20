@@ -1,14 +1,24 @@
+lakeformation:AddLFTagsToResource;Tagging
 lakeformation:BatchGrantPermissions;Permissions management
 lakeformation:BatchRevokePermissions;Permissions management
+lakeformation:CreateLFTag;Write
+lakeformation:DeleteLFTag;Write
 lakeformation:DeregisterResource;Write
 lakeformation:DescribeResource;Read
 lakeformation:GetDataAccess;Write
 lakeformation:GetDataLakeSettings;Read
 lakeformation:GetEffectivePermissionsForPath;Read
+lakeformation:GetLFTag;Read
+lakeformation:GetResourceLFTags;Read
 lakeformation:GrantPermissions;Permissions management
+lakeformation:ListLFTags;Read
 lakeformation:ListPermissions;List
 lakeformation:ListResources;List
 lakeformation:PutDataLakeSettings;Permissions management
 lakeformation:RegisterResource;Write
+lakeformation:RemoveLFTagsFromResource;Tagging
 lakeformation:RevokePermissions;Permissions management
+lakeformation:SearchDatabasesByLFTags;Read
+lakeformation:SearchTablesByLFTags;Read
+lakeformation:UpdateLFTag;Write
 lakeformation:UpdateResource;Write
