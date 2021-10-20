@@ -1,0 +1,50 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:PutObject",
+				"s3:GetBucketAcl"
+			],
+			"Resource": "arn:aws:s3:::migrationhub-strategy-*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:ListAllMyBuckets"
+			],
+			"Resource": "arn:aws:s3:::*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"execute-api:Invoke",
+				"execute-api:ManageConnections"
+			],
+			"Resource": [
+				"arn:aws:execute-api:*:*:*/prod/*/put-log-data",
+				"arn:aws:execute-api:*:*:*/prod/*/put-metric-data"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"migrationhub-strategy:RegisterCollector",
+				"migrationhub-strategy:GetAntiPattern",
+				"migrationhub-strategy:GetMessage",
+				"migrationhub-strategy:SendMessage",
+				"migrationhub-strategy:ListAntiPatterns",
+				"migrationhub-strategy:ListJarArtifacts"
+			],
+			"Resource": "arn:aws:migrationhub-strategy:*:*:*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"secretsmanager:GetSecretValue"
+			],
+			"Resource": "arn:aws:secretsmanager:*:*:secret:migrationhub-strategy-*"
+		}
+	]
+}
