@@ -56,6 +56,21 @@ export class Panorama extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an AWS Panorama Application Instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateApplicationInstance.html
+   */
+  public toCreateApplicationInstance() {
+    return this.to('CreateApplicationInstance');
+  }
+
+  /**
    * Grants permission to create an AWS Panorama datasource
    *
    * Access Level: Write
@@ -82,32 +97,6 @@ export class Panorama extends PolicyStatement {
   }
 
   /**
-   * Grants permission to register an AWS Panorama Appliance
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
-   * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateDevice.html
-   */
-  public toCreateDevice() {
-    return this.to('CreateDevice');
-  }
-
-  /**
-   * Grants permission to apply a software update to an AWS Panorama Appliance
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateDeviceUpdate.html
-   */
-  public toCreateDeviceUpdate() {
-    return this.to('CreateDeviceUpdate');
-  }
-
-  /**
    * Grants permission to generate a list of cameras on the same network as an AWS Panorama Appliance
    *
    * Access Level: Write
@@ -116,6 +105,17 @@ export class Panorama extends PolicyStatement {
    */
   public toCreateInputs() {
     return this.to('CreateInputs');
+  }
+
+  /**
+   * Grants permission to create a job for an AWS Panorama Appliance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateJobForDevices.html
+   */
+  public toCreateJobForDevices() {
+    return this.to('CreateJobForDevices');
   }
 
   /**
@@ -131,6 +131,43 @@ export class Panorama extends PolicyStatement {
    */
   public toCreateModel() {
     return this.to('CreateModel');
+  }
+
+  /**
+   * Grants permission to create an AWS Panorama Node
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_CreateNodeFromTemplateJob.html
+   */
+  public toCreateNodeFromTemplateJob() {
+    return this.to('CreateNodeFromTemplateJob');
+  }
+
+  /**
+   * Grants permission to create an AWS Panorama Package
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_CreatePackage.html
+   */
+  public toCreatePackage() {
+    return this.to('CreatePackage');
+  }
+
+  /**
+   * Grants permission to create an AWS Panorama Package
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_CreatePackageImportJob.html
+   */
+  public toCreatePackageImportJob() {
+    return this.to('CreatePackageImportJob');
   }
 
   /**
@@ -200,6 +237,28 @@ export class Panorama extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an AWS Panorama Package
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_DeletePackage.html
+   */
+  public toDeletePackage() {
+    return this.to('DeletePackage');
+  }
+
+  /**
+   * Grants permission to deregister an AWS Panorama Package Version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_DeregisterPackageVersion.html
+   */
+  public toDeregisterPackageVersion() {
+    return this.to('DeregisterPackageVersion');
+  }
+
+  /**
    * Grants permission to view details about an AWS Panorama application
    *
    * Access Level: Read
@@ -233,6 +292,28 @@ export class Panorama extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details about an AWS Panorama Application Instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribeApplicationInstance.html
+   */
+  public toDescribeApplicationInstance() {
+    return this.to('DescribeApplicationInstance');
+  }
+
+  /**
+   * Grants permission to view details about an AWS Panorama Application Instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribeApplicationInstanceDetails.html
+   */
+  public toDescribeApplicationInstanceDetails() {
+    return this.to('DescribeApplicationInstanceDetails');
+  }
+
+  /**
    * Grants permission to view details about a datasource in AWS Panorama
    *
    * Access Level: Read
@@ -255,14 +336,14 @@ export class Panorama extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view details about a software update for an AWS Panorama Appliance
+   * Grants permission to view job details for an AWS Panorama Appliance
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribeDeviceUpdate.html
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribeDeviceJob.html
    */
-  public toDescribeDeviceUpdate() {
-    return this.to('DescribeDeviceUpdate');
+  public toDescribeDeviceJob() {
+    return this.to('DescribeDeviceJob');
   }
 
   /**
@@ -274,6 +355,61 @@ export class Panorama extends PolicyStatement {
    */
   public toDescribeModel() {
     return this.to('DescribeModel');
+  }
+
+  /**
+   * Grants permission to view details about an AWS Panorama Node
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribeNode.html
+   */
+  public toDescribeNode() {
+    return this.to('DescribeNode');
+  }
+
+  /**
+   * Grants permission to view details about AWS Panorama Node
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribeNodeFromTemplateJob.html
+   */
+  public toDescribeNodeFromTemplateJob() {
+    return this.to('DescribeNodeFromTemplateJob');
+  }
+
+  /**
+   * Grants permission to view details about an AWS Panorama Package
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribePackage.html
+   */
+  public toDescribePackage() {
+    return this.to('DescribePackage');
+  }
+
+  /**
+   * Grants permission to view details about an AWS Panorama Package
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribePackageImportJob.html
+   */
+  public toDescribePackageImportJob() {
+    return this.to('DescribePackageImportJob');
+  }
+
+  /**
+   * Grants permission to view details about an AWS Panorama Package Version
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_DescribePackageVersion.html
+   */
+  public toDescribePackageVersion() {
+    return this.to('DescribePackageVersion');
   }
 
   /**
@@ -354,6 +490,39 @@ export class Panorama extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of application instance dependencies in AWS Panorama
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_ListApplicationInstanceDependencies.html
+   */
+  public toListApplicationInstanceDependencies() {
+    return this.to('ListApplicationInstanceDependencies');
+  }
+
+  /**
+   * Grants permission to retrieve a list of node instances of application instances in AWS Panorama
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_ListApplicationInstanceNodeInstances.html
+   */
+  public toListApplicationInstanceNodeInstances() {
+    return this.to('ListApplicationInstanceNodeInstances');
+  }
+
+  /**
+   * Grants permission to retrieve a list of application instances in AWS Panorama
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_ListApplicationInstances.html
+   */
+  public toListApplicationInstances() {
+    return this.to('ListApplicationInstances');
+  }
+
+  /**
    * Grants permission to retrieve a list of applications in AWS Panorama
    *
    * Access Level: List
@@ -387,17 +556,6 @@ export class Panorama extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of software updates for an AWS Panorama Appliance
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/panorama/latest/dev/API_ListDeviceUpdates.html
-   */
-  public toListDeviceUpdates() {
-    return this.to('ListDeviceUpdates');
-  }
-
-  /**
    * Grants permission to retrieve a list of appliances in AWS Panorama
    *
    * Access Level: List
@@ -406,6 +564,17 @@ export class Panorama extends PolicyStatement {
    */
   public toListDevices() {
     return this.to('ListDevices');
+  }
+
+  /**
+   * Grants permission to retrieve a list of jobs for an AWS Panorama Appliance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_ListDevicesJobs.html
+   */
+  public toListDevicesJobs() {
+    return this.to('ListDevicesJobs');
   }
 
   /**
@@ -420,6 +589,50 @@ export class Panorama extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of Nodes for an AWS Panorama Appliance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_ListNodeFromTemplateJobs.html
+   */
+  public toListNodeFromTemplateJobs() {
+    return this.to('ListNodeFromTemplateJobs');
+  }
+
+  /**
+   * Grants permission to retrieve a list of nodes in AWS Panorama
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_ListNodes.html
+   */
+  public toListNodes() {
+    return this.to('ListNodes');
+  }
+
+  /**
+   * Grants permission to retrieve a list of packages in AWS Panorama
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_ListPackageImportJobs.html
+   */
+  public toListPackageImportJobs() {
+    return this.to('ListPackageImportJobs');
+  }
+
+  /**
+   * Grants permission to retrieve a list of packages in AWS Panorama
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_ListPackages.html
+   */
+  public toListPackages() {
+    return this.to('ListPackages');
+  }
+
+  /**
    * Grants permission to retrieve a list of tags for a resource in AWS Panorama
    *
    * Access Level: List
@@ -428,6 +641,43 @@ export class Panorama extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to register an AWS Panorama Appliance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_ProvisionDevice.html
+   */
+  public toProvisionDevice() {
+    return this.to('ProvisionDevice');
+  }
+
+  /**
+   * Grants permission to register an AWS Panorama Package Version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_RegisterPackageVersion.html
+   */
+  public toRegisterPackageVersion() {
+    return this.to('RegisterPackageVersion');
+  }
+
+  /**
+   * Grants permission to remove an AWS Panorama Application Instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_RemoveApplicationInstance.html
+   */
+  public toRemoveApplicationInstance() {
+    return this.to('RemoveApplicationInstance');
   }
 
   /**
@@ -497,10 +747,10 @@ export class Panorama extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/panorama/latest/dev/API_UpdateDevice.html
+   * https://docs.aws.amazon.com/panorama/latest/dev/API_UpdateDeviceMetadata.html
    */
-  public toUpdateDevice() {
-    return this.to('UpdateDevice');
+  public toUpdateDeviceMetadata() {
+    return this.to('UpdateDeviceMetadata');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -508,31 +758,46 @@ export class Panorama extends PolicyStatement {
       "CreateApp",
       "CreateAppDeployment",
       "CreateAppVersion",
+      "CreateApplicationInstance",
       "CreateDataSource",
       "CreateDeploymentConfiguration",
-      "CreateDevice",
-      "CreateDeviceUpdate",
       "CreateInputs",
+      "CreateJobForDevices",
       "CreateModel",
+      "CreateNodeFromTemplateJob",
+      "CreatePackage",
+      "CreatePackageImportJob",
       "CreateStreams",
       "DeleteApp",
       "DeleteAppVersion",
       "DeleteDataSource",
       "DeleteDevice",
       "DeleteModel",
+      "DeletePackage",
+      "DeregisterPackageVersion",
+      "ProvisionDevice",
+      "RegisterPackageVersion",
+      "RemoveApplicationInstance",
       "UpdateApp",
       "UpdateAppConfiguration",
       "UpdateDataSource",
-      "UpdateDevice"
+      "UpdateDeviceMetadata"
     ],
     "Read": [
       "DescribeApp",
       "DescribeAppDeployment",
       "DescribeAppVersion",
+      "DescribeApplicationInstance",
+      "DescribeApplicationInstanceDetails",
       "DescribeDataSource",
       "DescribeDevice",
-      "DescribeDeviceUpdate",
+      "DescribeDeviceJob",
       "DescribeModel",
+      "DescribeNode",
+      "DescribeNodeFromTemplateJob",
+      "DescribePackage",
+      "DescribePackageImportJob",
+      "DescribePackageVersion",
       "DescribeSoftware",
       "GetDeploymentConfiguration",
       "GetInputs",
@@ -542,12 +807,19 @@ export class Panorama extends PolicyStatement {
     "List": [
       "ListAppDeploymentOperations",
       "ListAppVersions",
+      "ListApplicationInstanceDependencies",
+      "ListApplicationInstanceNodeInstances",
+      "ListApplicationInstances",
       "ListApps",
       "ListDataSources",
       "ListDeploymentConfigurations",
-      "ListDeviceUpdates",
       "ListDevices",
+      "ListDevicesJobs",
       "ListModels",
+      "ListNodeFromTemplateJobs",
+      "ListNodes",
+      "ListPackageImportJobs",
+      "ListPackages",
       "ListTagsForResource"
     ],
     "Tagging": [
@@ -561,18 +833,62 @@ export class Panorama extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/panorama/latest/dev/
    *
-   * @param deviceName - Identifier for the deviceName.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param deviceId - Identifier for the deviceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDevice(deviceName: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:panorama:${Region}:${AccountId}:device/${DeviceName}';
-    arn = arn.replace('${DeviceName}', deviceName);
-    arn = arn.replace('${AccountId}', accountId || '*');
+  public onDevice(deviceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:panorama:${Region}:${Account}:device/${DeviceId}';
+    arn = arn.replace('${DeviceId}', deviceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type package to the statement
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/
+   *
+   * @param packageId - Identifier for the packageId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPackage(packageId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:panorama:${Region}:${Account}:package/${PackageId}';
+    arn = arn.replace('${PackageId}', packageId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type applicationInstance to the statement
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/
+   *
+   * @param applicationInstanceId - Identifier for the applicationInstanceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onApplicationInstance(applicationInstanceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:panorama:${Region}:${Account}:applicationInstance/${ApplicationInstanceId}';
+    arn = arn.replace('${ApplicationInstanceId}', applicationInstanceId);
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -583,20 +899,20 @@ export class Panorama extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/panorama/latest/dev/
    *
-   * @param deviceName - Identifier for the deviceName.
+   * @param deviceId - Identifier for the deviceId.
    * @param dataSourceName - Identifier for the dataSourceName.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDataSource(deviceName: string, dataSourceName: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:panorama:${Region}:${AccountId}:dataSource/${DeviceName}/${DataSourceName}';
-    arn = arn.replace('${DeviceName}', deviceName);
+  public onDataSource(deviceId: string, dataSourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:panorama:${Region}:${Account}:dataSource/${DeviceId}/${DataSourceName}';
+    arn = arn.replace('${DeviceId}', deviceId);
     arn = arn.replace('${DataSourceName}', dataSourceName);
-    arn = arn.replace('${AccountId}', accountId || '*');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -608,17 +924,17 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/
    *
    * @param modelName - Identifier for the modelName.
-   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onModel(modelName: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:panorama:${Region}:${AccountId}:model/${ModelName}';
+  public onModel(modelName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:panorama:${Region}:${Account}:model/${ModelName}';
     arn = arn.replace('${ModelName}', modelName);
-    arn = arn.replace('${AccountId}', accountId || '*');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -652,13 +968,15 @@ export class Panorama extends PolicyStatement {
    * https://docs.aws.amazon.com/panorama/latest/dev/
    *
    * @param appName - Identifier for the appName.
+   * @param appVersion - Identifier for the appVersion.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onAppVersion(appName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:panorama:${Region}:${Account}:app/${AppName}:{AppVersion}';
+  public onAppVersion(appName: string, appVersion: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:panorama:${Region}:${Account}:app/${AppName}:${AppVersion}';
     arn = arn.replace('${AppName}', appName);
+    arn = arn.replace('${AppVersion}', appVersion);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
