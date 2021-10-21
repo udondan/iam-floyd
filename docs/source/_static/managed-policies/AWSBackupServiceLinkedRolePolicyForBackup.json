@@ -16,7 +16,15 @@
         },
         {
             "Action": [
-                "tag:GetResources"
+                "tag:GetResources",
+                "elasticfilesystem:DescribeFileSystems",
+                "dynamodb:ListTables", 
+                "storagegateway:ListVolumes", 
+                "ec2:DescribeVolumes", 
+                "ec2:DescribeInstances", 
+                "rds:DescribeDBInstances", 
+                "rds:DescribeDBClusters",
+                "fsx:DescribeFileSystems"
             ],
             "Resource": "*",
             "Effect": "Allow"
