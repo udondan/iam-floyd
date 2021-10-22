@@ -16,5 +16,3 @@ There are two different package variants available:
 
 
 Find them all on `libraries.io`_.
-
-Java packages currently are only available on `GitHub <https://github.com/udondan/iam-floyd/packages/>`_.

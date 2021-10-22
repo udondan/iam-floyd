@@ -60,7 +60,6 @@ IAM Floyd is licensed under [Apache License 2.0][license]. Dependencies might be
    [source]: https://github.com/udondan/iam-floyd
    [documentation]: https://iam-floyd.readthedocs.io/en/latest/
    [npm]: https://www.npmjs.com/package/iam-floyd
-   [Maven]: https://github.com/udondan/iam-floyd/packages/258358
    [license]: https://github.com/udondan/iam-floyd/blob/main/LICENSE
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
    [libraries.io]: https://libraries.io/search?q=iam-floyd
