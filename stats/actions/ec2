@@ -33,6 +33,7 @@ ec2:AuthorizeSecurityGroupIngress;Write
 ec2:BundleInstance;Write
 ec2:CancelBundleTask;Write
 ec2:CancelCapacityReservation;Write
+ec2:CancelCapacityReservationFleets;Write
 ec2:CancelConversionTask;Write
 ec2:CancelExportTask;Write
 ec2:CancelImportTask;Write
@@ -44,6 +45,7 @@ ec2:CopyFpgaImage;Write
 ec2:CopyImage;Write
 ec2:CopySnapshot;Write
 ec2:CreateCapacityReservation;Write
+ec2:CreateCapacityReservationFleet;Write
 ec2:CreateCarrierGateway;Write
 ec2:CreateClientVpnEndpoint;Write
 ec2:CreateClientVpnRoute;Write
@@ -354,6 +356,8 @@ ec2:GetTransitGatewayMulticastDomainAssociations;List
 ec2:GetTransitGatewayPrefixListReferences;List
 ec2:GetTransitGatewayRouteTableAssociations;List
 ec2:GetTransitGatewayRouteTablePropagations;List
+ec2:GetVpnConnectionDeviceSampleConfiguration;List
+ec2:GetVpnConnectionDeviceTypes;List
 ec2:ImportClientVpnClientCertificateRevocationList;Write
 ec2:ImportImage;Write
 ec2:ImportInstance;Write
@@ -363,6 +367,7 @@ ec2:ImportVolume;Write
 ec2:ModifyAddressAttribute;Write
 ec2:ModifyAvailabilityZoneGroup;Write
 ec2:ModifyCapacityReservation;Write
+ec2:ModifyCapacityReservationFleet;Write
 ec2:ModifyClientVpnEndpoint;Write
 ec2:ModifyDefaultCreditSpecification;Write
 ec2:ModifyEbsDefaultKmsKeyId;Write
@@ -451,6 +456,7 @@ ec2:SearchLocalGatewayRoutes;List
 ec2:SearchTransitGatewayMulticastGroups;List
 ec2:SearchTransitGatewayRoutes;List
 ec2:SendDiagnosticInterrupt;Write
+ec2:SendSpotInstanceInterruptions;Write
 ec2:StartInstances;Write
 ec2:StartNetworkInsightsAnalysis;Write
 ec2:StartVpcEndpointServicePrivateDnsVerification;Write

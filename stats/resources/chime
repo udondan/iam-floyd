@@ -1,4 +1,5 @@
 chime:app-instance
 chime:app-instance-user
 chime:channel
+chime:channel-flow
 chime:meeting

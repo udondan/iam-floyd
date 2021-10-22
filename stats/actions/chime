@@ -2,6 +2,7 @@ chime:AcceptDelegate;Write
 chime:ActivateUsers;Write
 chime:AddDomain;Write
 chime:AddOrUpdateGroups;Write
+chime:AssociateChannelFlow;Write
 chime:AssociatePhoneNumberWithUser;Write
 chime:AssociatePhoneNumbersWithVoiceConnector;Write
 chime:AssociatePhoneNumbersWithVoiceConnectorGroup;Write
@@ -15,6 +16,7 @@ chime:BatchSuspendUser;Write
 chime:BatchUnsuspendUser;Write
 chime:BatchUpdatePhoneNumber;Write
 chime:BatchUpdateUser;Write
+chime:ChannelFlowCallback;Write
 chime:Connect;Write
 chime:ConnectDirectory;Write
 chime:CreateAccount;Write
@@ -28,6 +30,7 @@ chime:CreateBotMembership;Write
 chime:CreateCDRBucket;Write
 chime:CreateChannel;Write
 chime:CreateChannelBan;Write
+chime:CreateChannelFlow;Write
 chime:CreateChannelMembership;Write
 chime:CreateChannelModerator;Write
 chime:CreateMediaCapturePipeline;Write
@@ -55,6 +58,7 @@ chime:DeleteAttendee;Write
 chime:DeleteCDRBucket;Write
 chime:DeleteChannel;Write
 chime:DeleteChannelBan;Write
+chime:DeleteChannelFlow;Write
 chime:DeleteChannelMembership;Write
 chime:DeleteChannelMessage;Write
 chime:DeleteChannelModerator;Write
@@ -83,10 +87,12 @@ chime:DescribeAppInstanceAdmin;Read
 chime:DescribeAppInstanceUser;Read
 chime:DescribeChannel;Read
 chime:DescribeChannelBan;Read
+chime:DescribeChannelFlow;Read
 chime:DescribeChannelMembership;Read
 chime:DescribeChannelMembershipForAppInstanceUser;Read
 chime:DescribeChannelModeratedByAppInstanceUser;Read
 chime:DescribeChannelModerator;Read
+chime:DisassociateChannelFlow;Write
 chime:DisassociatePhoneNumberFromUser;Write
 chime:DisassociatePhoneNumbersFromVoiceConnector;Write
 chime:DisassociatePhoneNumbersFromVoiceConnectorGroup;Write
@@ -102,6 +108,7 @@ chime:GetAttendee;Read
 chime:GetBot;Read
 chime:GetCDRBucket;Read
 chime:GetChannelMessage;Read
+chime:GetChannelMessageStatus;Read
 chime:GetDomain;Read
 chime:GetEventsConfiguration;Read
 chime:GetGlobalSettings;Read
@@ -147,11 +154,13 @@ chime:ListBots;List
 chime:ListCDRBucket;List
 chime:ListCallingRegions;List
 chime:ListChannelBans;List
+chime:ListChannelFlows;List
 chime:ListChannelMemberships;List
 chime:ListChannelMembershipsForAppInstanceUser;List
-chime:ListChannelMessages;Write
+chime:ListChannelMessages;Read
 chime:ListChannelModerators;List
 chime:ListChannels;List
+chime:ListChannelsAssociatedWithChannelFlow;List
 chime:ListChannelsModeratedByAppInstanceUser;List
 chime:ListDelegates;List
 chime:ListDirectories;List
@@ -170,7 +179,7 @@ chime:ListRooms;List
 chime:ListSipMediaApplications;List
 chime:ListSipRules;List
 chime:ListSupportedPhoneNumberCountries;List
-chime:ListTagsForResource;List
+chime:ListTagsForResource;Read
 chime:ListUsers;List
 chime:ListVoiceConnectorGroups;List
 chime:ListVoiceConnectorTerminationCredentials;List
@@ -197,7 +206,7 @@ chime:RenewDelegate;Write
 chime:ResetAccountResource;Write
 chime:ResetPersonalPIN;Write
 chime:RestorePhoneNumber;Write
-chime:RetrieveDataExports;Write
+chime:RetrieveDataExports;Read
 chime:SearchAvailablePhoneNumbers;Read
 chime:SendChannelMessage;Write
 chime:StartDataExport;Write
@@ -221,6 +230,7 @@ chime:UpdateAppInstanceUser;Write
 chime:UpdateBot;Write
 chime:UpdateCDRSettings;Write
 chime:UpdateChannel;Write
+chime:UpdateChannelFlow;Write
 chime:UpdateChannelMessage;Write
 chime:UpdateChannelReadMarker;Write
 chime:UpdateGlobalSettings;Write

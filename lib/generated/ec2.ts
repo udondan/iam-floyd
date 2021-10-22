@@ -419,6 +419,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel one or more Capacity Reservation Fleets
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelCapacityReservationFleets.html
+   */
+  public toCancelCapacityReservationFleets() {
+    return this.to('CancelCapacityReservationFleets');
+  }
+
+  /**
    * Grants permission to cancel an active conversion task
    *
    * Access Level: Write
@@ -543,6 +554,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateCapacityReservation() {
     return this.to('CreateCapacityReservation');
+  }
+
+  /**
+   * Grants permission to create a Capacity Reservation Fleet
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCapacityReservationFleet.html
+   */
+  public toCreateCapacityReservationFleet() {
+    return this.to('CreateCapacityReservationFleet');
   }
 
   /**
@@ -1478,7 +1503,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the specified event window.
+   * Grants permission to delete the specified event window
    *
    * Access Level: Write
    *
@@ -1830,7 +1855,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a transit gateway multicast domain
+   * Grants permission to delete a transit gateway multicast domain
    *
    * Access Level: Write
    *
@@ -4099,6 +4124,28 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to download an AWS-provided sample configuration file to be used with the customer gateway device
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetVpnConnectionDeviceSampleConfiguration.html
+   */
+  public toGetVpnConnectionDeviceSampleConfiguration() {
+    return this.to('GetVpnConnectionDeviceSampleConfiguration');
+  }
+
+  /**
+   * Grants permission to obtain a list of customer gateway devices for which sample configuration files can be provided
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetVpnConnectionDeviceTypes.html
+   */
+  public toGetVpnConnectionDeviceTypes() {
+    return this.to('GetVpnConnectionDeviceTypes');
+  }
+
+  /**
    * Grants permission to upload a client certificate revocation list to a Client VPN endpoint
    *
    * Access Level: Write
@@ -4204,6 +4251,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyCapacityReservation() {
     return this.to('ModifyCapacityReservation');
+  }
+
+  /**
+   * Grants permission to modify a Capacity Reservation Fleet
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyCapacityReservationFleet.html
+   */
+  public toModifyCapacityReservationFleet() {
+    return this.to('ModifyCapacityReservationFleet');
   }
 
   /**
@@ -5187,6 +5245,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to interrupt a Spot Instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#send-spot-instance-interruptions
+   */
+  public toSendSpotInstanceInterruptions() {
+    return this.to('SendSpotInstanceInterruptions');
+  }
+
+  /**
    * Grants permission to start a stopped instance
    *
    * Access Level: Write
@@ -5358,6 +5427,7 @@ export class Ec2 extends PolicyStatement {
       "BundleInstance",
       "CancelBundleTask",
       "CancelCapacityReservation",
+      "CancelCapacityReservationFleets",
       "CancelConversionTask",
       "CancelExportTask",
       "CancelImportTask",
@@ -5369,6 +5439,7 @@ export class Ec2 extends PolicyStatement {
       "CopyImage",
       "CopySnapshot",
       "CreateCapacityReservation",
+      "CreateCapacityReservationFleet",
       "CreateCarrierGateway",
       "CreateClientVpnEndpoint",
       "CreateClientVpnRoute",
@@ -5533,6 +5604,7 @@ export class Ec2 extends PolicyStatement {
       "ModifyAddressAttribute",
       "ModifyAvailabilityZoneGroup",
       "ModifyCapacityReservation",
+      "ModifyCapacityReservationFleet",
       "ModifyClientVpnEndpoint",
       "ModifyDefaultCreditSpecification",
       "ModifyEbsDefaultKmsKeyId",
@@ -5615,6 +5687,7 @@ export class Ec2 extends PolicyStatement {
       "RunInstances",
       "RunScheduledInstances",
       "SendDiagnosticInterrupt",
+      "SendSpotInstanceInterruptions",
       "StartInstances",
       "StartNetworkInsightsAnalysis",
       "StartVpcEndpointServicePrivateDnsVerification",
@@ -5764,6 +5837,8 @@ export class Ec2 extends PolicyStatement {
       "GetTransitGatewayPrefixListReferences",
       "GetTransitGatewayRouteTableAssociations",
       "GetTransitGatewayRouteTablePropagations",
+      "GetVpnConnectionDeviceSampleConfiguration",
+      "GetVpnConnectionDeviceTypes",
       "SearchLocalGatewayRoutes",
       "SearchTransitGatewayMulticastGroups",
       "SearchTransitGatewayRoutes"
@@ -5823,6 +5898,33 @@ export class Ec2 extends PolicyStatement {
   public onElasticIp(allocationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:elastic-ip/${AllocationId}';
     arn = arn.replace('${AllocationId}', allocationId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type capacity-reservation-fleet to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param capacityReservationFleetId - Identifier for the capacityReservationFleetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAttribute()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onCapacityReservationFleet(capacityReservationFleetId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:capacity-reservation-fleet/${CapacityReservationFleetId}';
+    arn = arn.replace('${CapacityReservationFleetId}', capacityReservationFleetId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -7534,6 +7636,31 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type vpn-connection-device-type to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VPC_VPN.html
+   *
+   * @param vpnConnectionDeviceTypeId - Identifier for the vpnConnectionDeviceTypeId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onVpnConnectionDeviceType(vpnConnectionDeviceTypeId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpn-connection-device-type/${VpnConnectionDeviceTypeId}';
+    arn = arn.replace('${VpnConnectionDeviceTypeId}', vpnConnectionDeviceTypeId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type vpn-connection to the statement
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html
@@ -7686,6 +7813,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toDescribeFpgaImageAttribute()
    * - .toModifyCapacityReservation()
+   * - .toModifyCapacityReservationFleet()
    * - .toModifyClientVpnEndpoint()
    * - .toModifyFleet()
    * - .toModifyFpgaImageAttribute()
@@ -7730,6 +7858,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to resource types:
    * - elastic-ip
+   * - capacity-reservation-fleet
    * - capacity-reservation
    * - client-vpn-endpoint
    * - dedicated-host
@@ -7773,6 +7902,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -7933,6 +8063,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRunInstances()
    * - .toRunScheduledInstances()
    * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
    * - .toStartInstances()
    * - .toStopInstances()
    * - .toTerminateInstances()
@@ -8110,6 +8241,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -8161,7 +8293,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access domain of the Elastic Ip Address
+   * Filters access by the domain of the Elastic Ip Address
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
@@ -8225,6 +8357,7 @@ export class Ec2 extends PolicyStatement {
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
    * - .toStartInstances()
    * - .toStopInstances()
    * - .toTerminateInstances()
@@ -8299,6 +8432,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -8339,6 +8473,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -8394,6 +8529,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -8443,6 +8579,7 @@ export class Ec2 extends PolicyStatement {
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
    * - .toStartInstances()
    * - .toStopInstances()
    * - .toTerminateInstances()
@@ -8498,6 +8635,7 @@ export class Ec2 extends PolicyStatement {
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
    * - .toStartInstances()
    * - .toStopInstances()
    * - .toTerminateInstances()
@@ -8555,6 +8693,7 @@ export class Ec2 extends PolicyStatement {
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
    * - .toStartInstances()
    * - .toStopInstances()
    * - .toTerminateInstances()
@@ -8699,6 +8838,7 @@ export class Ec2 extends PolicyStatement {
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
    *
@@ -8748,6 +8888,7 @@ export class Ec2 extends PolicyStatement {
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
    *
@@ -8797,6 +8938,7 @@ export class Ec2 extends PolicyStatement {
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
    *
@@ -9000,6 +9142,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9021,6 +9164,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9042,6 +9186,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9063,6 +9208,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9084,6 +9230,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9105,6 +9252,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9126,6 +9274,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9147,6 +9296,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9246,6 +9396,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9391,6 +9542,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAuthorizeSecurityGroupEgress()
    * - .toAuthorizeSecurityGroupIngress()
    * - .toCancelCapacityReservation()
+   * - .toCancelCapacityReservationFleets()
    * - .toCancelExportTask()
    * - .toCancelImportTask()
    * - .toCancelSpotFleetRequests()
@@ -9399,6 +9551,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCopyImage()
    * - .toCopySnapshot()
    * - .toCreateCapacityReservation()
+   * - .toCreateCapacityReservationFleet()
    * - .toCreateCarrierGateway()
    * - .toCreateClientVpnEndpoint()
    * - .toCreateClientVpnRoute()
@@ -9564,6 +9717,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetManagedPrefixListAssociations()
    * - .toGetManagedPrefixListEntries()
    * - .toGetPasswordData()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toImportClientVpnClientCertificateRevocationList()
    * - .toImportImage()
    * - .toImportInstance()
@@ -9572,6 +9726,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportVolume()
    * - .toModifyAddressAttribute()
    * - .toModifyCapacityReservation()
+   * - .toModifyCapacityReservationFleet()
    * - .toModifyClientVpnEndpoint()
    * - .toModifyFleet()
    * - .toModifyFpgaImageAttribute()
@@ -9646,6 +9801,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRunScheduledInstances()
    * - .toSearchTransitGatewayRoutes()
    * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
    * - .toStartInstances()
    * - .toStartNetworkInsightsAnalysis()
    * - .toStartVpcEndpointServicePrivateDnsVerification()
@@ -9660,6 +9816,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to resource types:
    * - elastic-ip
+   * - capacity-reservation-fleet
    * - capacity-reservation
    * - carrier-gateway
    * - client-vpn-endpoint
@@ -9720,6 +9877,7 @@ export class Ec2 extends PolicyStatement {
    * - vpc-flow-log
    * - vpc
    * - vpc-peering-connection
+   * - vpn-connection-device-type
    * - vpn-connection
    * - vpn-gateway
    *
@@ -9738,6 +9896,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9759,6 +9918,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9862,6 +10022,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAuthorizeSecurityGroupEgress()
    * - .toAuthorizeSecurityGroupIngress()
    * - .toCancelCapacityReservation()
+   * - .toCancelCapacityReservationFleets()
    * - .toCancelExportTask()
    * - .toCancelImportTask()
    * - .toCancelSpotFleetRequests()
@@ -10015,12 +10176,14 @@ export class Ec2 extends PolicyStatement {
    * - .toGetManagedPrefixListAssociations()
    * - .toGetManagedPrefixListEntries()
    * - .toGetPasswordData()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toImportClientVpnClientCertificateRevocationList()
    * - .toImportImage()
    * - .toImportInstance()
    * - .toImportVolume()
    * - .toModifyAddressAttribute()
    * - .toModifyCapacityReservation()
+   * - .toModifyCapacityReservationFleet()
    * - .toModifyClientVpnEndpoint()
    * - .toModifyFleet()
    * - .toModifyFpgaImageAttribute()
@@ -10095,6 +10258,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRunScheduledInstances()
    * - .toSearchTransitGatewayRoutes()
    * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
    * - .toStartInstances()
    * - .toStartNetworkInsightsAnalysis()
    * - .toStartVpcEndpointServicePrivateDnsVerification()
@@ -10109,6 +10273,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to resource types:
    * - elastic-ip
+   * - capacity-reservation-fleet
    * - capacity-reservation
    * - carrier-gateway
    * - client-vpn-endpoint
@@ -10168,6 +10333,7 @@ export class Ec2 extends PolicyStatement {
    * - vpc-flow-log
    * - vpc
    * - vpc-peering-connection
+   * - vpn-connection-device-type
    * - vpn-connection
    * - vpn-gateway
    *
@@ -10245,6 +10411,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRunInstances()
    * - .toRunScheduledInstances()
    * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
    * - .toStartInstances()
    * - .toStopInstances()
    * - .toTerminateInstances()
@@ -10269,6 +10436,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
+   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -10546,6 +10714,7 @@ export class Ec2 extends PolicyStatement {
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
    * - .toStartInstances()
    * - .toStopInstances()
    * - .toTerminateInstances()

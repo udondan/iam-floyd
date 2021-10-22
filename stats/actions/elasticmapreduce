@@ -27,6 +27,7 @@ elasticmapreduce:DescribeSecurityConfiguration;Read
 elasticmapreduce:DescribeStep;Read
 elasticmapreduce:DescribeStudio;Read
 elasticmapreduce:DetachEditor;Write
+elasticmapreduce:GetAutoTerminationPolicy;Read
 elasticmapreduce:GetBlockPublicAccessConfiguration;Read
 elasticmapreduce:GetManagedScalingPolicy;Read
 elasticmapreduce:GetOnClusterAppUIPresignedURL;Write
@@ -51,9 +52,11 @@ elasticmapreduce:ModifyInstanceFleet;Write
 elasticmapreduce:ModifyInstanceGroups;Write
 elasticmapreduce:OpenEditorInConsole;Write
 elasticmapreduce:PutAutoScalingPolicy;Write
+elasticmapreduce:PutAutoTerminationPolicy;Write
 elasticmapreduce:PutBlockPublicAccessConfiguration;Permissions management
 elasticmapreduce:PutManagedScalingPolicy;Write
 elasticmapreduce:RemoveAutoScalingPolicy;Write
+elasticmapreduce:RemoveAutoTerminationPolicy;Write
 elasticmapreduce:RemoveManagedScalingPolicy;Write
 elasticmapreduce:RemoveTags;Tagging
 elasticmapreduce:RunJobFlow;Write

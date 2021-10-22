@@ -254,7 +254,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead
+   * Grants permission to describe details of clusters (job flows). This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead
    *
    * Access Level: Read
    *
@@ -350,6 +350,17 @@ export class Elasticmapreduce extends PolicyStatement {
    */
   public toDetachEditor() {
     return this.to('DetachEditor');
+  }
+
+  /**
+   * Grants permission to retrieve the auto-termination policy associated with a cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_GetAutoTerminationPolicy.html
+   */
+  public toGetAutoTerminationPolicy() {
+    return this.to('GetAutoTerminationPolicy');
   }
 
   /**
@@ -617,6 +628,17 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create or update the auto-termination policy associated with a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_PutAutoTerminationPolicy.html
+   */
+  public toPutAutoTerminationPolicy() {
+    return this.to('PutAutoTerminationPolicy');
+  }
+
+  /**
    * Grants permission to create or update the EMR block public access configuration for the AWS account in the Region
    *
    * Access Level: Permissions management
@@ -647,6 +669,17 @@ export class Elasticmapreduce extends PolicyStatement {
    */
   public toRemoveAutoScalingPolicy() {
     return this.to('RemoveAutoScalingPolicy');
+  }
+
+  /**
+   * Grants permission to remove the auto-termination policy associated with a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveAutoTerminationPolicy.html
+   */
+  public toRemoveAutoTerminationPolicy() {
+    return this.to('RemoveAutoTerminationPolicy');
   }
 
   /**
@@ -842,8 +875,10 @@ export class Elasticmapreduce extends PolicyStatement {
       "ModifyInstanceGroups",
       "OpenEditorInConsole",
       "PutAutoScalingPolicy",
+      "PutAutoTerminationPolicy",
       "PutManagedScalingPolicy",
       "RemoveAutoScalingPolicy",
+      "RemoveAutoTerminationPolicy",
       "RemoveManagedScalingPolicy",
       "RunJobFlow",
       "SetTerminationProtection",
@@ -872,6 +907,7 @@ export class Elasticmapreduce extends PolicyStatement {
       "DescribeSecurityConfiguration",
       "DescribeStep",
       "DescribeStudio",
+      "GetAutoTerminationPolicy",
       "GetBlockPublicAccessConfiguration",
       "GetManagedScalingPolicy",
       "GetStudioSessionMapping",
@@ -990,7 +1026,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on whether the tag and value pair is provided with the action
+   * Filters access by whether the tag and value pair is provided with the action
    *
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
    *
@@ -1010,7 +1046,7 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the tag and value pair associated with an Amazon EMR resource
+   * Filters access by the tag and value pair associated with an Amazon EMR resource
    *
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
    *

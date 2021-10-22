@@ -63,6 +63,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a flow with a channel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_AssociateChannelFlow.html
+   */
+  public toAssociateChannelFlow() {
+    return this.to('AssociateChannelFlow');
+  }
+
+  /**
    * Grants permission to associate a phone number with an Amazon Chime user
    *
    * Access Level: Write
@@ -203,6 +214,17 @@ export class Chime extends PolicyStatement {
    */
   public toBatchUpdateUser() {
     return this.to('BatchUpdateUser');
+  }
+
+  /**
+   * Grants permission to callback for a message on a channel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_ChannelFlowCallback.html
+   */
+  public toChannelFlowCallback() {
+    return this.to('ChannelFlowCallback');
   }
 
   /**
@@ -365,6 +387,21 @@ export class Chime extends PolicyStatement {
    */
   public toCreateChannelBan() {
     return this.to('CreateChannelBan');
+  }
+
+  /**
+   * Grants permission to create a channel flow for an app instance under the AWS account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateChannelFlow.html
+   */
+  public toCreateChannelFlow() {
+    return this.to('CreateChannelFlow');
   }
 
   /**
@@ -676,6 +713,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a channel flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteChannelFlow.html
+   */
+  public toDeleteChannelFlow() {
+    return this.to('DeleteChannelFlow');
+  }
+
+  /**
    * Grants permission to remove a member from a channel
    *
    * Access Level: Write
@@ -984,6 +1032,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the full details of a channel flow
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_DescribeChannelFlow.html
+   */
+  public toDescribeChannelFlow() {
+    return this.to('DescribeChannelFlow');
+  }
+
+  /**
    * Grants permission to get the full details of a channel membership
    *
    * Access Level: Read
@@ -1025,6 +1084,17 @@ export class Chime extends PolicyStatement {
    */
   public toDescribeChannelModerator() {
     return this.to('DescribeChannelModerator');
+  }
+
+  /**
+   * Grants permission to disassociate a flow from a channel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_DisassociateChannelFlow.html
+   */
+  public toDisassociateChannelFlow() {
+    return this.to('DisassociateChannelFlow');
   }
 
   /**
@@ -1197,6 +1267,17 @@ export class Chime extends PolicyStatement {
    */
   public toGetChannelMessage() {
     return this.to('GetChannelMessage');
+  }
+
+  /**
+   * Grants permission to get the status of a channel message
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetChannelMessageStatus.html
+   */
+  public toGetChannelMessageStatus() {
+    return this.to('GetChannelMessageStatus');
   }
 
   /**
@@ -1697,6 +1778,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all the Channel Flows created under a single Chime AppInstance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListChannelFlows.html
+   */
+  public toListChannelFlows() {
+    return this.to('ListChannelFlows');
+  }
+
+  /**
    * Grants permission to list all channel memberships in a channel
    *
    * Access Level: List
@@ -1721,7 +1813,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to list all the messages in a channel
    *
-   * Access Level: Write
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListChannelMessages.html
    */
@@ -1749,6 +1841,17 @@ export class Chime extends PolicyStatement {
    */
   public toListChannels() {
     return this.to('ListChannels');
+  }
+
+  /**
+   * Grants permission to list all the Channel Flows created under a single Chime AppInstance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListChannelFlows.html
+   */
+  public toListChannelsAssociatedWithChannelFlow() {
+    return this.to('ListChannelsAssociatedWithChannelFlow');
   }
 
   /**
@@ -1950,7 +2053,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to list the tags applied to an Amazon Chime resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_ListTagsForResource.html
    */
@@ -2255,7 +2358,7 @@ export class Chime extends PolicyStatement {
   /**
    * Grants permission to download the file containing links to all user attachments returned as part of the "Request attachments" action
    *
-   * Access Level: Write
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/chime/latest/ag/request-attachments.html
    */
@@ -2532,6 +2635,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a channel flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateChannelFlow.html
+   */
+  public toUpdateChannelFlow() {
+    return this.to('UpdateChannelFlow');
+  }
+
+  /**
    * Grants permission to update the content of a message
    *
    * Access Level: Write
@@ -2735,6 +2849,7 @@ export class Chime extends PolicyStatement {
       "ActivateUsers",
       "AddDomain",
       "AddOrUpdateGroups",
+      "AssociateChannelFlow",
       "AssociatePhoneNumberWithUser",
       "AssociatePhoneNumbersWithVoiceConnector",
       "AssociatePhoneNumbersWithVoiceConnectorGroup",
@@ -2748,6 +2863,7 @@ export class Chime extends PolicyStatement {
       "BatchUnsuspendUser",
       "BatchUpdatePhoneNumber",
       "BatchUpdateUser",
+      "ChannelFlowCallback",
       "Connect",
       "ConnectDirectory",
       "CreateAccount",
@@ -2761,6 +2877,7 @@ export class Chime extends PolicyStatement {
       "CreateCDRBucket",
       "CreateChannel",
       "CreateChannelBan",
+      "CreateChannelFlow",
       "CreateChannelMembership",
       "CreateChannelModerator",
       "CreateMediaCapturePipeline",
@@ -2788,6 +2905,7 @@ export class Chime extends PolicyStatement {
       "DeleteCDRBucket",
       "DeleteChannel",
       "DeleteChannelBan",
+      "DeleteChannelFlow",
       "DeleteChannelMembership",
       "DeleteChannelMessage",
       "DeleteChannelModerator",
@@ -2811,6 +2929,7 @@ export class Chime extends PolicyStatement {
       "DeleteVoiceConnectorStreamingConfiguration",
       "DeleteVoiceConnectorTermination",
       "DeleteVoiceConnectorTerminationCredentials",
+      "DisassociateChannelFlow",
       "DisassociatePhoneNumberFromUser",
       "DisassociatePhoneNumbersFromVoiceConnector",
       "DisassociatePhoneNumbersFromVoiceConnectorGroup",
@@ -2819,7 +2938,6 @@ export class Chime extends PolicyStatement {
       "InviteDelegate",
       "InviteUsers",
       "InviteUsersFromProvider",
-      "ListChannelMessages",
       "LogoutUser",
       "PutAppInstanceRetentionSettings",
       "PutAppInstanceStreamingConfigurations",
@@ -2842,7 +2960,6 @@ export class Chime extends PolicyStatement {
       "ResetAccountResource",
       "ResetPersonalPIN",
       "RestorePhoneNumber",
-      "RetrieveDataExports",
       "SendChannelMessage",
       "StartDataExport",
       "StartMeetingTranscription",
@@ -2859,6 +2976,7 @@ export class Chime extends PolicyStatement {
       "UpdateBot",
       "UpdateCDRSettings",
       "UpdateChannel",
+      "UpdateChannelFlow",
       "UpdateChannelMessage",
       "UpdateChannelReadMarker",
       "UpdateGlobalSettings",
@@ -2883,6 +3001,7 @@ export class Chime extends PolicyStatement {
       "DescribeAppInstanceUser",
       "DescribeChannel",
       "DescribeChannelBan",
+      "DescribeChannelFlow",
       "DescribeChannelMembership",
       "DescribeChannelMembershipForAppInstanceUser",
       "DescribeChannelModeratedByAppInstanceUser",
@@ -2897,6 +3016,7 @@ export class Chime extends PolicyStatement {
       "GetBot",
       "GetCDRBucket",
       "GetChannelMessage",
+      "GetChannelMessageStatus",
       "GetDomain",
       "GetEventsConfiguration",
       "GetGlobalSettings",
@@ -2927,6 +3047,9 @@ export class Chime extends PolicyStatement {
       "GetVoiceConnectorStreamingConfiguration",
       "GetVoiceConnectorTermination",
       "GetVoiceConnectorTerminationHealth",
+      "ListChannelMessages",
+      "ListTagsForResource",
+      "RetrieveDataExports",
       "SearchAvailablePhoneNumbers",
       "ValidateAccountResource"
     ],
@@ -2943,10 +3066,12 @@ export class Chime extends PolicyStatement {
       "ListCDRBucket",
       "ListCallingRegions",
       "ListChannelBans",
+      "ListChannelFlows",
       "ListChannelMemberships",
       "ListChannelMembershipsForAppInstanceUser",
       "ListChannelModerators",
       "ListChannels",
+      "ListChannelsAssociatedWithChannelFlow",
       "ListChannelsModeratedByAppInstanceUser",
       "ListDelegates",
       "ListDirectories",
@@ -2965,7 +3090,6 @@ export class Chime extends PolicyStatement {
       "ListSipMediaApplications",
       "ListSipRules",
       "ListSupportedPhoneNumberCountries",
-      "ListTagsForResource",
       "ListUsers",
       "ListVoiceConnectorGroups",
       "ListVoiceConnectorTerminationCredentials",
@@ -3065,6 +3189,30 @@ export class Chime extends PolicyStatement {
     var arn = 'arn:${Partition}:chime:${Region}:${AccountId}:app-instance/${AppInstanceId}/channel/${ChannelId}';
     arn = arn.replace('${AppInstanceId}', appInstanceId);
     arn = arn.replace('${ChannelId}', channelId);
+    arn = arn.replace('${AccountId}', accountId || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type channel-flow to the statement
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_ChannelFlow.html
+   *
+   * @param appInstanceId - Identifier for the appInstanceId.
+   * @param channelFlowId - Identifier for the channelFlowId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onChannelFlow(appInstanceId: string, channelFlowId: string, accountId?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:chime:${Region}:${AccountId}:app-instance/${AppInstanceId}/channel-flow/${ChannelFlowId}';
+    arn = arn.replace('${AppInstanceId}', appInstanceId);
+    arn = arn.replace('${ChannelFlowId}', channelFlowId);
     arn = arn.replace('${AccountId}', accountId || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

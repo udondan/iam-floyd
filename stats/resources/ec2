@@ -1,4 +1,5 @@
 ec2:capacity-reservation
+ec2:capacity-reservation-fleet
 ec2:carrier-gateway
 ec2:certificate
 ec2:client-vpn-endpoint
@@ -63,4 +64,5 @@ ec2:vpc-endpoint-service
 ec2:vpc-flow-log
 ec2:vpc-peering-connection
 ec2:vpn-connection
+ec2:vpn-connection-device-type
 ec2:vpn-gateway
