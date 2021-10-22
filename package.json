@@ -51,17 +51,6 @@
       "python": {
         "distName": "iam-floyd",
         "module": "iam_floyd"
-      },
-      "dotnet": {
-        "namespace": "IAM.Floyd",
-        "packageId": "IAM.Floyd"
-      },
-      "java": {
-        "package": "com.udondan.iamFloyd",
-        "maven": {
-          "groupId": "com.udondan",
-          "artifactId": "iam-floyd"
-        }
       }
     }
   },

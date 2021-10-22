@@ -9,17 +9,11 @@
 .. _iam-floyd-pypi: https://pypi.org/project/iam-floyd/
 .. |iam-floyd-pypi| image:: https://img.shields.io/pypi/dm/iam-floyd?label=pypi&color=blueviolet
 
-.. _iam-floyd-nuget: https://www.nuget.org/packages/IAM.Floyd/
-.. |iam-floyd-nuget| image:: https://img.shields.io/nuget/dt/IAM.Floyd?label=nuget&color=blueviolet
-
 .. _cdk-iam-floyd-npm: https://www.npmjs.com/package/cdk-iam-floyd
 .. |cdk-iam-floyd-npm| image:: https://img.shields.io/npm/dt/cdk-iam-floyd?label=npm&color=orange
 
 .. _cdk-iam-floyd-pypi: https://pypi.org/project/cdk-iam-floyd/
 .. |cdk-iam-floyd-pypi| image:: https://img.shields.io/pypi/dm/cdk-iam-floyd?label=pypi&color=orange
-
-.. _cdk-iam-floyd-nuget: https://www.nuget.org/packages/CDK.IAM.Floyd/
-.. |cdk-iam-floyd-nuget| image:: https://img.shields.io/nuget/dt/CDK.IAM.Floyd?label=nuget&color=orange
 
 ..
    External documentation links
