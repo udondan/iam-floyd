@@ -15,8 +15,6 @@ assignees: udondan
 **I'm using the package in language**
 - [ ] TypeScript/JavaScript (npm)
 - [ ] Python (pip)
-- [ ] .Net (NuGet)
-- [ ] Java (GitHub packages)
 
 **Describe the problem**
 A clear and concise description of what the bug is.

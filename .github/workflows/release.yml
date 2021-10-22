@@ -387,39 +387,6 @@ jobs:
         with:
           PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
 
-  publish-standalone-nuget:
-    name: "STANDALONE: Publish to NuGet"
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download package
-        uses: actions/download-artifact@v2
-        with:
-          name: packages
-          path: dist
-
-      - name: Publish to NuGet
-        uses: udondan/jsii-publish@v0.12.0
-        with:
-          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
-
-  publish-standalone-maven-github:
-    name: "STANDALONE: Publish to Maven GitHub"
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download package
-        uses: actions/download-artifact@v2
-        with:
-          name: packages
-          path: dist
-
-      - name: Publish to Maven GitHub
-        uses: udondan/jsii-publish@v0.12.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-
   publish-cdk-npm:
     name: "CDK: Publish to npm"
     needs: release
@@ -451,36 +418,3 @@ jobs:
         uses: udondan/jsii-publish@v0.12.0
         with:
           PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
-
-  publish-cdk-nuget:
-    name: "CDK: Publish to NuGet"
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download package
-        uses: actions/download-artifact@v2
-        with:
-          name: cdk-packages
-          path: dist
-
-      - name: Publish to NuGet
-        uses: udondan/jsii-publish@v0.12.0
-        with:
-          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
-
-  publish-cdk-maven-github:
-    name: "CDK: Publish to Maven GitHub"
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download package
-        uses: actions/download-artifact@v2
-        with:
-          name: cdk-packages
-          path: dist
-
-      - name: Publish to Maven GitHub
-        uses: udondan/jsii-publish@v0.12.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
