@@ -520,7 +520,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Grants permission list available cache engines and their versions
+   * Grants permission to list available cache engines and their versions
    *
    * Access Level: List
    *
