@@ -91,7 +91,7 @@ export class Ecr extends PolicyStatement {
   /**
    * Grants permission to delete the registry policy
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRegistryPolicy.html
    */
@@ -113,7 +113,7 @@ export class Ecr extends PolicyStatement {
   /**
    * Grants permission to delete the repository policy from a specified repository
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepositoryPolicy.html
    */
@@ -322,7 +322,7 @@ export class Ecr extends PolicyStatement {
   /**
    * Grants permission to update the registry policy
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutRegistryPolicy.html
    */
@@ -443,27 +443,27 @@ export class Ecr extends PolicyStatement {
       "CompleteLayerUpload",
       "CreateRepository",
       "DeleteLifecyclePolicy",
-      "DeleteRegistryPolicy",
       "DeleteRepository",
-      "DeleteRepositoryPolicy",
       "InitiateLayerUpload",
       "PutImage",
       "PutImageScanningConfiguration",
       "PutImageTagMutability",
       "PutLifecyclePolicy",
-      "PutRegistryPolicy",
       "PutReplicationConfiguration",
       "ReplicateImage",
       "StartImageScan",
       "StartLifecyclePolicyPreview",
       "UploadLayerPart"
     ],
+    "Permissions management": [
+      "DeleteRegistryPolicy",
+      "DeleteRepositoryPolicy",
+      "PutRegistryPolicy",
+      "SetRepositoryPolicy"
+    ],
     "List": [
       "DescribeImages",
       "ListImages"
-    ],
-    "Permissions management": [
-      "SetRepositoryPolicy"
     ],
     "Tagging": [
       "TagResource",

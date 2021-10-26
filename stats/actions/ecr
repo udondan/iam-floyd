@@ -4,9 +4,9 @@ ecr:BatchGetImage;Read
 ecr:CompleteLayerUpload;Write
 ecr:CreateRepository;Write
 ecr:DeleteLifecyclePolicy;Write
-ecr:DeleteRegistryPolicy;Write
+ecr:DeleteRegistryPolicy;Permissions management
 ecr:DeleteRepository;Write
-ecr:DeleteRepositoryPolicy;Write
+ecr:DeleteRepositoryPolicy;Permissions management
 ecr:DescribeImageReplicationStatus;Read
 ecr:DescribeImageScanFindings;Read
 ecr:DescribeImages;List
@@ -25,7 +25,7 @@ ecr:PutImage;Write
 ecr:PutImageScanningConfiguration;Write
 ecr:PutImageTagMutability;Write
 ecr:PutLifecyclePolicy;Write
-ecr:PutRegistryPolicy;Write
+ecr:PutRegistryPolicy;Permissions management
 ecr:PutReplicationConfiguration;Write
 ecr:ReplicateImage;Write
 ecr:SetRepositoryPolicy;Permissions management

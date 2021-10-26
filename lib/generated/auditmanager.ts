@@ -167,6 +167,17 @@ export class Auditmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a share request for a custom framework in AWS Audit Manager
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFrameworkShare.html
+   */
+  public toDeleteAssessmentFrameworkShare() {
+    return this.to('DeleteAssessmentFrameworkShare');
+  }
+
+  /**
    * Grants permission to delete an assessment report in AWS Audit Manager
    *
    * Access Level: Write
@@ -391,6 +402,17 @@ export class Auditmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all sent or received share requests for custom frameworks in AWS Audit Manager
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListAssessmentFrameworkShareRequests.html
+   */
+  public toListAssessmentFrameworkShareRequests() {
+    return this.to('ListAssessmentFrameworkShareRequests');
+  }
+
+  /**
    * Grants permission to list all assessment frameworks in AWS Audit Manager
    *
    * Access Level: List
@@ -459,7 +481,7 @@ export class Auditmanager extends PolicyStatement {
   /**
    * Grants permission to list tags for an AWS Audit Manager resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListTagsForResource.html
    */
@@ -487,6 +509,17 @@ export class Auditmanager extends PolicyStatement {
    */
   public toRegisterOrganizationAdminAccount() {
     return this.to('RegisterOrganizationAdminAccount');
+  }
+
+  /**
+   * Grants permission to create a share request for a custom framework in AWS Audit Manager
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_StartAssessmentFrameworkShare.html
+   */
+  public toStartAssessmentFrameworkShare() {
+    return this.to('StartAssessmentFrameworkShare');
   }
 
   /**
@@ -563,6 +596,17 @@ export class Auditmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a share request for a custom framework in AWS Audit Manager
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateAssessmentFrameworkShare.html
+   */
+  public toUpdateAssessmentFrameworkShare() {
+    return this.to('UpdateAssessmentFrameworkShare');
+  }
+
+  /**
    * Grants permission to update the status of an assessment in AWS Audit Manager
    *
    * Access Level: Write
@@ -620,6 +664,7 @@ export class Auditmanager extends PolicyStatement {
       "CreateControl",
       "DeleteAssessment",
       "DeleteAssessmentFramework",
+      "DeleteAssessmentFrameworkShare",
       "DeleteAssessmentReport",
       "DeleteControl",
       "DeregisterAccount",
@@ -627,10 +672,12 @@ export class Auditmanager extends PolicyStatement {
       "DisassociateAssessmentReportEvidenceFolder",
       "RegisterAccount",
       "RegisterOrganizationAdminAccount",
+      "StartAssessmentFrameworkShare",
       "UpdateAssessment",
       "UpdateAssessmentControl",
       "UpdateAssessmentControlSetStatus",
       "UpdateAssessmentFramework",
+      "UpdateAssessmentFrameworkShare",
       "UpdateAssessmentStatus",
       "UpdateControl",
       "UpdateSettings"
@@ -650,17 +697,18 @@ export class Auditmanager extends PolicyStatement {
       "GetOrganizationAdminAccount",
       "GetServicesInScope",
       "GetSettings",
+      "ListTagsForResource",
       "ValidateAssessmentReportIntegrity"
     ],
     "List": [
       "GetDelegations",
+      "ListAssessmentFrameworkShareRequests",
       "ListAssessmentFrameworks",
       "ListAssessmentReports",
       "ListAssessments",
       "ListControls",
       "ListKeywordsForDataSource",
-      "ListNotifications",
-      "ListTagsForResource"
+      "ListNotifications"
     ],
     "Tagging": [
       "TagResource",
@@ -671,7 +719,7 @@ export class Auditmanager extends PolicyStatement {
   /**
    * Adds a resource of type assessment to the statement
    *
-   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Assessment.html
+   * https://docs.aws.amazon.com/audit-manager/latest/userguide/API_Assessment.html
    *
    * @param assessmentId - Identifier for the assessmentId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -690,7 +738,7 @@ export class Auditmanager extends PolicyStatement {
   /**
    * Adds a resource of type assessmentFramework to the statement
    *
-   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_AssessmentFramework.html
+   * https://docs.aws.amazon.com/audit-manager/latest/userguide/API_AssessmentFramework.html
    *
    * @param assessmentFrameworkId - Identifier for the assessmentFrameworkId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -709,16 +757,18 @@ export class Auditmanager extends PolicyStatement {
   /**
    * Adds a resource of type assessmentControlSet to the statement
    *
-   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_AssessmentControlSet.html
+   * https://docs.aws.amazon.com/audit-manager/latest/userguide/API_AssessmentControlSet.html
    *
    * @param assessmentId - Identifier for the assessmentId.
+   * @param controlSetId - Identifier for the controlSetId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onAssessmentControlSet(assessmentId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:auditmanager:${Region}:${Account}:assessment/${AssessmentId}/controlSet/{controlSetId}';
+  public onAssessmentControlSet(assessmentId: string, controlSetId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:auditmanager:${Region}:${Account}:assessment/${AssessmentId}/ControlSet/${ControlSetId}';
     arn = arn.replace('${AssessmentId}', assessmentId);
+    arn = arn.replace('${ControlSetId}', controlSetId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -728,7 +778,7 @@ export class Auditmanager extends PolicyStatement {
   /**
    * Adds a resource of type control to the statement
    *
-   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Control.html
+   * https://docs.aws.amazon.com/audit-manager/latest/userguide/API_Control.html
    *
    * @param controlId - Identifier for the controlId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
