@@ -629,12 +629,7 @@ export class LicenseManager extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLicenseConfiguration(licenseConfigurationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:license-manager:${Region}:${Account}:license-configuration:${LicenseConfigurationId}';
-    arn = arn.replace('${LicenseConfigurationId}', licenseConfigurationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:license-manager:${ region || '*' }:${ account || '*' }:license-configuration:${ licenseConfigurationId }`);
   }
 
   /**
@@ -647,11 +642,7 @@ export class LicenseManager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onLicense(licenseId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:license-manager::${Account}:license:${LicenseId}';
-    arn = arn.replace('${LicenseId}', licenseId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:license-manager::${ account || '*' }:license:${ licenseId }`);
   }
 
   /**
@@ -664,11 +655,7 @@ export class LicenseManager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onGrant(grantId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:license-manager::${Account}:grant:${GrantId}';
-    arn = arn.replace('${GrantId}', grantId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:license-manager::${ account || '*' }:grant:${ grantId }`);
   }
 
   /**
@@ -685,12 +672,7 @@ export class LicenseManager extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onReportGenerator(reportGeneratorId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:license-manager:${Region}:${Account}:report-generator:${ReportGeneratorId}';
-    arn = arn.replace('${ReportGeneratorId}', reportGeneratorId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:license-manager:${ region || '*' }:${ account || '*' }:report-generator:${ reportGeneratorId }`);
   }
 
   /**

@@ -1149,12 +1149,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}';
-    arn = arn.replace('${ConfigurationSetName}', configurationSetName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:configuration-set/${ configurationSetName }`);
   }
 
   /**
@@ -1171,12 +1166,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContactList(contactListName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:contact-list/${ContactListName}';
-    arn = arn.replace('${ContactListName}', contactListName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:contact-list/${ contactListName }`);
   }
 
   /**
@@ -1190,12 +1180,7 @@ export class SesV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCustomVerificationEmailTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:custom-verification-email-template/${TemplateName}';
-    arn = arn.replace('${TemplateName}', templateName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:custom-verification-email-template/${ templateName }`);
   }
 
   /**
@@ -1212,12 +1197,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDedicatedIpPool(dedicatedIPPool: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:dedicated-ip-pool/${DedicatedIPPool}';
-    arn = arn.replace('${DedicatedIPPool}', dedicatedIPPool);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:dedicated-ip-pool/${ dedicatedIPPool }`);
   }
 
   /**
@@ -1234,12 +1214,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeliverabilityTestReport(reportId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:deliverability-test-report/${ReportId}';
-    arn = arn.replace('${ReportId}', reportId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:deliverability-test-report/${ reportId }`);
   }
 
   /**
@@ -1256,12 +1231,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:identity/${IdentityName}';
-    arn = arn.replace('${IdentityName}', identityName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:identity/${ identityName }`);
   }
 
   /**
@@ -1275,12 +1245,7 @@ export class SesV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onImportJob(importJobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:import-job/${ImportJobId}';
-    arn = arn.replace('${ImportJobId}', importJobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:import-job/${ importJobId }`);
   }
 
   /**
@@ -1294,12 +1259,7 @@ export class SesV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:template/${TemplateName}';
-    arn = arn.replace('${TemplateName}', templateName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:template/${ templateName }`);
   }
 
   /**

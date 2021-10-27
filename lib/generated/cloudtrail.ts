@@ -259,11 +259,6 @@ export class Cloudtrail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTrail(trailName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudtrail:${Region}:${Account}:trail/${TrailName}';
-    arn = arn.replace('${TrailName}', trailName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudtrail:${ region || '*' }:${ account || '*' }:trail/${ trailName }`);
   }
 }

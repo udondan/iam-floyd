@@ -344,12 +344,7 @@ export class Mq extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBrokers(brokerId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mq:${Region}:${Account}:broker:${Broker-id}';
-    arn = arn.replace('${Broker-id}', brokerId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mq:${ region || '*' }:${ account || '*' }:broker:${ brokerId }`);
   }
 
   /**
@@ -366,11 +361,6 @@ export class Mq extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigurations(configurationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mq:${Region}:${Account}:configuration:${Configuration-id}';
-    arn = arn.replace('${Configuration-id}', configurationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mq:${ region || '*' }:${ account || '*' }:configuration:${ configurationId }`);
   }
 }

@@ -140,11 +140,6 @@ export class RdsData extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onCluster(dbClusterInstanceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster:${DbClusterInstanceName}';
-    arn = arn.replace('${DbClusterInstanceName}', dbClusterInstanceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:cluster:${ dbClusterInstanceName }`);
   }
 }

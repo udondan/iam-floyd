@@ -255,12 +255,7 @@ export class CodestarNotifications extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNotificationrule(notificationRuleId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codestar-notifications:${Region}:${Account}:notificationrule/${NotificationRuleId}';
-    arn = arn.replace('${NotificationRuleId}', notificationRuleId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codestar-notifications:${ region || '*' }:${ account || '*' }:notificationrule/${ notificationRuleId }`);
   }
 
   /**

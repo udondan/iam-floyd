@@ -382,12 +382,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ivs:${Region}:${Account}:channel/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ivs:${ region || '*' }:${ account || '*' }:channel/${ resourceId }`);
   }
 
   /**
@@ -404,12 +399,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStreamKey(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ivs:${Region}:${Account}:stream-key/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ivs:${ region || '*' }:${ account || '*' }:stream-key/${ resourceId }`);
   }
 
   /**
@@ -426,12 +416,7 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPlaybackKeyPair(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ivs:${Region}:${Account}:playback-key/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ivs:${ region || '*' }:${ account || '*' }:playback-key/${ resourceId }`);
   }
 
   /**
@@ -448,11 +433,6 @@ export class Ivs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecordingConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ivs:${Region}:${Account}:recording-configuration/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ivs:${ region || '*' }:${ account || '*' }:recording-configuration/${ resourceId }`);
   }
 }

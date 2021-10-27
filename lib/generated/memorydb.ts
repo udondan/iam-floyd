@@ -640,12 +640,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onParametergroup(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:memorydb:${Region}:${Account}:parametergroup/${ParameterGroupName}';
-    arn = arn.replace('${ParameterGroupName}', parameterGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:memorydb:${ region || '*' }:${ account || '*' }:parametergroup/${ parameterGroupName }`);
   }
 
   /**
@@ -662,12 +657,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSubnetgroup(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:memorydb:${Region}:${Account}:subnetgroup/${SubnetGroupName}';
-    arn = arn.replace('${SubnetGroupName}', subnetGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:memorydb:${ region || '*' }:${ account || '*' }:subnetgroup/${ subnetGroupName }`);
   }
 
   /**
@@ -684,12 +674,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:memorydb:${Region}:${Account}:cluster/${ClusterName}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:memorydb:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
   }
 
   /**
@@ -706,12 +691,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:memorydb:${Region}:${Account}:snapshot/${SnapshotName}';
-    arn = arn.replace('${SnapshotName}', snapshotName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:memorydb:${ region || '*' }:${ account || '*' }:snapshot/${ snapshotName }`);
   }
 
   /**
@@ -728,12 +708,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUser(userName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:memorydb:${Region}:${Account}:user/${UserName}';
-    arn = arn.replace('${UserName}', userName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:memorydb:${ region || '*' }:${ account || '*' }:user/${ userName }`);
   }
 
   /**
@@ -750,11 +725,6 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAcl(aclName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:memorydb:${Region}:${Account}:acl/${AclName}';
-    arn = arn.replace('${AclName}', aclName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:memorydb:${ region || '*' }:${ account || '*' }:acl/${ aclName }`);
   }
 }

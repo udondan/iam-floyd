@@ -318,13 +318,7 @@ export class Bugbust extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCodereview(resourceId: string, codeReviewId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codeguru-reviewer:${Region}:${Account}:association:${ResourceId}:codereview:${CodeReviewId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${CodeReviewId}', codeReviewId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codeguru-reviewer:${ region || '*' }:${ account || '*' }:association:${ resourceId }:codereview:${ codeReviewId }`);
   }
 
   /**
@@ -341,12 +335,7 @@ export class Bugbust extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProfilingGroup(profilingGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codeguru-profiler:${Region}:${Account}:profilingGroup/${ProfilingGroupName}';
-    arn = arn.replace('${ProfilingGroupName}', profilingGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codeguru-profiler:${ region || '*' }:${ account || '*' }:profilingGroup/${ profilingGroupName }`);
   }
 
   /**
@@ -363,11 +352,6 @@ export class Bugbust extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEvent(eventId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:bugbust:${Region}:${Account}:events/${EventId}';
-    arn = arn.replace('${EventId}', eventId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:bugbust:${ region || '*' }:${ account || '*' }:events/${ eventId }`);
   }
 }

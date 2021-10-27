@@ -197,11 +197,6 @@ export class Synthetics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCanary(canaryName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:synthetics:${Region}:${Account}:canary:${CanaryName}';
-    arn = arn.replace('${CanaryName}', canaryName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:synthetics:${ region || '*' }:${ account || '*' }:canary:${ canaryName }`);
   }
 }

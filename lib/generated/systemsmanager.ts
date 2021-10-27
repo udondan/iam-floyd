@@ -1772,12 +1772,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAssociation(associationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:association/${AssociationId}';
-    arn = arn.replace('${AssociationId}', associationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:association/${ associationId }`);
   }
 
   /**
@@ -1791,12 +1786,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAutomationExecution(automationExecutionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:automation-execution/${AutomationExecutionId}';
-    arn = arn.replace('${AutomationExecutionId}', automationExecutionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:automation-execution/${ automationExecutionId }`);
   }
 
   /**
@@ -1811,13 +1801,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAutomationDefinition(automationDefinitionName: string, versionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:automation-definition/${AutomationDefinitionName}:${VersionId}';
-    arn = arn.replace('${AutomationDefinitionName}', automationDefinitionName);
-    arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:automation-definition/${ automationDefinitionName }:${ versionId }`);
   }
 
   /**
@@ -1827,10 +1811,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onBucket(bucketName: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3:::${BucketName}';
-    arn = arn.replace('${BucketName}', bucketName);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:s3:::${ bucketName }`);
   }
 
   /**
@@ -1848,12 +1829,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDocument(documentName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:document/${DocumentName}';
-    arn = arn.replace('${DocumentName}', documentName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:document/${ documentName }`);
   }
 
   /**
@@ -1869,12 +1845,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
   }
 
   /**
@@ -1892,12 +1863,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onMaintenancewindow(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:maintenancewindow/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:maintenancewindow/${ resourceId }`);
   }
 
   /**
@@ -1915,12 +1881,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onManagedInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:managed-instance/${InstanceId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:managed-instance/${ instanceId }`);
   }
 
   /**
@@ -1934,12 +1895,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onManagedInstanceInventory(instanceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:managed-instance-inventory/${InstanceId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:managed-instance-inventory/${ instanceId }`);
   }
 
   /**
@@ -1956,12 +1912,7 @@ export class Ssm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOpsitem(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:opsitem/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:opsitem/${ resourceId }`);
   }
 
   /**
@@ -1979,12 +1930,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onOpsmetadata(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:opsmetadata/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:opsmetadata/${ resourceId }`);
   }
 
   /**
@@ -2002,12 +1948,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onParameter(parameterNameWithoutLeadingSlash: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:parameter/${ParameterNameWithoutLeadingSlash}';
-    arn = arn.replace('${ParameterNameWithoutLeadingSlash}', parameterNameWithoutLeadingSlash);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:parameter/${ parameterNameWithoutLeadingSlash }`);
   }
 
   /**
@@ -2025,12 +1966,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPatchbaseline(patchBaselineIdResourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:patchbaseline/${PatchBaselineIdResourceId}';
-    arn = arn.replace('${PatchBaselineIdResourceId}', patchBaselineIdResourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:patchbaseline/${ patchBaselineIdResourceId }`);
   }
 
   /**
@@ -2044,12 +1980,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:session/${SessionId}';
-    arn = arn.replace('${SessionId}', sessionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:session/${ sessionId }`);
   }
 
   /**
@@ -2063,12 +1994,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onResourcedatasync(syncName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:resource-data-sync/${SyncName}';
-    arn = arn.replace('${SyncName}', syncName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:resource-data-sync/${ syncName }`);
   }
 
   /**
@@ -2082,12 +2008,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onServicesetting(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:servicesetting/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:servicesetting/${ resourceId }`);
   }
 
   /**
@@ -2101,12 +2022,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onWindowtarget(windowTargetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:windowtarget/${WindowTargetId}';
-    arn = arn.replace('${WindowTargetId}', windowTargetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:windowtarget/${ windowTargetId }`);
   }
 
   /**
@@ -2120,12 +2036,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onWindowtask(windowTaskId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm:${Region}:${Account}:windowtask/${WindowTaskId}';
-    arn = arn.replace('${WindowTaskId}', windowTaskId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm:${ region || '*' }:${ account || '*' }:windowtask/${ windowTaskId }`);
   }
 
   /**
@@ -2142,12 +2053,7 @@ export class Ssm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task/${TaskId}';
-    arn = arn.replace('${TaskId}', taskId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:task/${ taskId }`);
   }
 
   /**

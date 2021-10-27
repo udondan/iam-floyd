@@ -408,12 +408,7 @@ export class SsmContacts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onContact(contactAlias: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm-contacts:${Region}:${Account}:contact/${ContactAlias}';
-    arn = arn.replace('${ContactAlias}', contactAlias);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm-contacts:${ region || '*' }:${ account || '*' }:contact/${ contactAlias }`);
   }
 
   /**
@@ -428,13 +423,7 @@ export class SsmContacts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onContactchannel(contactAlias: string, contactChannelId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm-contacts:${Region}:${Account}:contactchannel/${ContactAlias}/${ContactChannelId}';
-    arn = arn.replace('${ContactAlias}', contactAlias);
-    arn = arn.replace('${ContactChannelId}', contactChannelId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm-contacts:${ region || '*' }:${ account || '*' }:contactchannel/${ contactAlias }/${ contactChannelId }`);
   }
 
   /**
@@ -448,12 +437,7 @@ export class SsmContacts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onEngagement(engagementId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm-contacts:${Region}:${Account}:engagement/${EngagementId}';
-    arn = arn.replace('${EngagementId}', engagementId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm-contacts:${ region || '*' }:${ account || '*' }:engagement/${ engagementId }`);
   }
 
   /**
@@ -468,12 +452,6 @@ export class SsmContacts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onPage(contactAlias: string, pageId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm-contacts:${Region}:${Account}:page/${ContactAlias}/${PageId}';
-    arn = arn.replace('${ContactAlias}', contactAlias);
-    arn = arn.replace('${PageId}', pageId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm-contacts:${ region || '*' }:${ account || '*' }:page/${ contactAlias }/${ pageId }`);
   }
 }

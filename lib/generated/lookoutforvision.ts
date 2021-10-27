@@ -319,13 +319,7 @@ export class Lookoutvision extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModel(projectName: string, modelVersion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lookoutvision:${Region}:${Account}:model/${ProjectName}/${ModelVersion}';
-    arn = arn.replace('${ProjectName}', projectName);
-    arn = arn.replace('${ModelVersion}', modelVersion);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lookoutvision:${ region || '*' }:${ account || '*' }:model/${ projectName }/${ modelVersion }`);
   }
 
   /**
@@ -339,11 +333,6 @@ export class Lookoutvision extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lookoutvision:${Region}:${Account}:project/${ProjectName}';
-    arn = arn.replace('${ProjectName}', projectName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lookoutvision:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
   }
 }

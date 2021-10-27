@@ -469,10 +469,6 @@ export class Worklink extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFleet(fleetName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:worklink::${Account}:fleet/${FleetName}';
-    arn = arn.replace('${FleetName}', fleetName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:worklink::${ account || '*' }:fleet/${ fleetName }`);
   }
 }

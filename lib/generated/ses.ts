@@ -925,12 +925,7 @@ export class Ses extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}';
-    arn = arn.replace('${ConfigurationSetName}', configurationSetName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:configuration-set/${ configurationSetName }`);
   }
 
   /**
@@ -944,12 +939,7 @@ export class Ses extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCustomVerificationEmailTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:custom-verification-email-template/${TemplateName}';
-    arn = arn.replace('${TemplateName}', templateName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:custom-verification-email-template/${ templateName }`);
   }
 
   /**
@@ -963,12 +953,7 @@ export class Ses extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:identity/${IdentityName}';
-    arn = arn.replace('${IdentityName}', identityName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:identity/${ identityName }`);
   }
 
   /**
@@ -982,12 +967,7 @@ export class Ses extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:template/${TemplateName}';
-    arn = arn.replace('${TemplateName}', templateName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:template/${ templateName }`);
   }
 
   /**

@@ -289,11 +289,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCluster(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53-recovery-control::${Account}:cluster/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53-recovery-control::${ account || '*' }:cluster/${ resourceId }`);
   }
 
   /**
@@ -306,11 +302,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onControlpanel(controlPanelId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53-recovery-control::${Account}:controlpanel/${ControlPanelId}';
-    arn = arn.replace('${ControlPanelId}', controlPanelId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }`);
   }
 
   /**
@@ -324,12 +316,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onRoutingcontrol(controlPanelId: string, routingControlId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53-recovery-control::${Account}:controlpanel/${ControlPanelId}/routingcontrol/${RoutingControlId}';
-    arn = arn.replace('${ControlPanelId}', controlPanelId);
-    arn = arn.replace('${RoutingControlId}', routingControlId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/routingcontrol/${ routingControlId }`);
   }
 
   /**
@@ -343,11 +330,6 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSafetyrule(controlPanelId: string, safetyRuleId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53-recovery-control::${Account}:controlpanel/${ControlPanelId}/safetyrule/${SafetyRuleId}';
-    arn = arn.replace('${ControlPanelId}', controlPanelId);
-    arn = arn.replace('${SafetyRuleId}', safetyRuleId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/safetyrule/${ safetyRuleId }`);
   }
 }

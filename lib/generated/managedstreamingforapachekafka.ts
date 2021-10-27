@@ -447,12 +447,6 @@ export class Kafka extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kafka:${Region}:${Account}:cluster/${ClusterName}/${UUID}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${UUID}', uUID);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }/${ uUID }`);
   }
 }

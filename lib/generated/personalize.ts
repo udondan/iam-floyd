@@ -660,12 +660,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSchema(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:schema/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:schema/${ resourceId }`);
   }
 
   /**
@@ -677,12 +672,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onFeatureTransformation(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:feature-transformation/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:feature-transformation/${ resourceId }`);
   }
 
   /**
@@ -694,12 +684,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:dataset/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
   }
 
   /**
@@ -711,12 +696,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDatasetGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:dataset-group/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:dataset-group/${ resourceId }`);
   }
 
   /**
@@ -728,12 +708,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDatasetImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:dataset-import-job/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:dataset-import-job/${ resourceId }`);
   }
 
   /**
@@ -747,12 +722,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDatasetExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:dataset-export-job/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:dataset-export-job/${ resourceId }`);
   }
 
   /**
@@ -764,12 +734,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSolution(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:solution/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:solution/${ resourceId }`);
   }
 
   /**
@@ -781,12 +746,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCampaign(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:campaign/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:campaign/${ resourceId }`);
   }
 
   /**
@@ -798,12 +758,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onEventTracker(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:event-tracker/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:event-tracker/${ resourceId }`);
   }
 
   /**
@@ -815,12 +770,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onRecipe(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:recipe/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:recipe/${ resourceId }`);
   }
 
   /**
@@ -832,12 +782,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAlgorithm(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:algorithm/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:algorithm/${ resourceId }`);
   }
 
   /**
@@ -849,12 +794,7 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onBatchInferenceJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:batch-inference-job/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:batch-inference-job/${ resourceId }`);
   }
 
   /**
@@ -866,11 +806,6 @@ export class Personalize extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onFilter(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:filter/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:personalize:${ region || '*' }:${ account || '*' }:filter/${ resourceId }`);
   }
 }

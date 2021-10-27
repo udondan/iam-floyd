@@ -244,12 +244,7 @@ export class EmrContainers extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVirtualCluster(virtualClusterId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:emr-containers:${Region}:${Account}:/virtualclusters/${VirtualClusterId}';
-    arn = arn.replace('${VirtualClusterId}', virtualClusterId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:emr-containers:${ region || '*' }:${ account || '*' }:/virtualclusters/${ virtualClusterId }`);
   }
 
   /**
@@ -267,13 +262,7 @@ export class EmrContainers extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobRun(virtualClusterId: string, jobRunId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:emr-containers:${Region}:${Account}:/virtualclusters/${VirtualClusterId}/jobruns/${JobRunId}';
-    arn = arn.replace('${VirtualClusterId}', virtualClusterId);
-    arn = arn.replace('${JobRunId}', jobRunId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:emr-containers:${ region || '*' }:${ account || '*' }:/virtualclusters/${ virtualClusterId }/jobruns/${ jobRunId }`);
   }
 
   /**
@@ -289,13 +278,7 @@ export class EmrContainers extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onManagedEndpoint(virtualClusterId: string, endpointId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:emr-containers:${Region}:${Account}:/virtualclusters/${VirtualClusterId}/endpoints/${EndpointId}';
-    arn = arn.replace('${VirtualClusterId}', virtualClusterId);
-    arn = arn.replace('${EndpointId}', endpointId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:emr-containers:${ region || '*' }:${ account || '*' }:/virtualclusters/${ virtualClusterId }/endpoints/${ endpointId }`);
   }
 
   /**

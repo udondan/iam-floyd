@@ -818,10 +818,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onChange(id: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53:::change/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53:::change/${ id }`);
   }
 
   /**
@@ -833,10 +830,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDelegationset(id: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53:::delegationset/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53:::delegationset/${ id }`);
   }
 
   /**
@@ -848,10 +842,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onHealthcheck(id: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53:::healthcheck/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53:::healthcheck/${ id }`);
   }
 
   /**
@@ -863,10 +854,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onHostedzone(id: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53:::hostedzone/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53:::hostedzone/${ id }`);
   }
 
   /**
@@ -878,10 +866,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTrafficpolicy(id: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53:::trafficpolicy/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53:::trafficpolicy/${ id }`);
   }
 
   /**
@@ -893,10 +878,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTrafficpolicyinstance(id: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53:::trafficpolicyinstance/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53:::trafficpolicyinstance/${ id }`);
   }
 
   /**
@@ -908,10 +890,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onQueryloggingconfig(id: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53:::queryloggingconfig/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53:::queryloggingconfig/${ id }`);
   }
 
   /**
@@ -925,11 +904,6 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onVpc(vpcId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpc/${VpcId}';
-    arn = arn.replace('${VpcId}', vpcId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpc/${ vpcId }`);
   }
 }

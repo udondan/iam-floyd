@@ -615,12 +615,7 @@ export class Logs extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLogGroup(logGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}';
-    arn = arn.replace('${LogGroupName}', logGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:logs:${ region || '*' }:${ account || '*' }:log-group:${ logGroupName }`);
   }
 
   /**
@@ -635,13 +630,7 @@ export class Logs extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onLogStream(logGroupName: string, logStreamName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}';
-    arn = arn.replace('${LogGroupName}', logGroupName);
-    arn = arn.replace('${LogStreamName}', logStreamName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:logs:${ region || '*' }:${ account || '*' }:log-group:${ logGroupName }:log-stream:${ logStreamName }`);
   }
 
   /**
@@ -655,11 +644,6 @@ export class Logs extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:logs:${Region}:${Account}:destination:${DestinationName}';
-    arn = arn.replace('${DestinationName}', destinationName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:logs:${ region || '*' }:${ account || '*' }:destination:${ destinationName }`);
   }
 }

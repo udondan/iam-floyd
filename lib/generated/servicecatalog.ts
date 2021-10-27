@@ -1409,12 +1409,7 @@ export class Servicecatalog extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:servicecatalog:${Region}:${Account}:/applications/${ApplicationId}';
-    arn = arn.replace('${ApplicationId}', applicationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:servicecatalog:${ region || '*' }:${ account || '*' }:/applications/${ applicationId }`);
   }
 
   /**
@@ -1431,12 +1426,7 @@ export class Servicecatalog extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAttributeGroup(attributeGroupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:servicecatalog:${Region}:${Account}:/attribute-groups/${AttributeGroupId}';
-    arn = arn.replace('${AttributeGroupId}', attributeGroupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:servicecatalog:${ region || '*' }:${ account || '*' }:/attribute-groups/${ attributeGroupId }`);
   }
 
   /**
@@ -1453,12 +1443,7 @@ export class Servicecatalog extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPortfolio(portfolioId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:catalog:${Region}:${Account}:portfolio/${PortfolioId}';
-    arn = arn.replace('${PortfolioId}', portfolioId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:catalog:${ region || '*' }:${ account || '*' }:portfolio/${ portfolioId }`);
   }
 
   /**
@@ -1475,12 +1460,7 @@ export class Servicecatalog extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProduct(productId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:catalog:${Region}:${Account}:product/${ProductId}';
-    arn = arn.replace('${ProductId}', productId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:catalog:${ region || '*' }:${ account || '*' }:product/${ productId }`);
   }
 
   /**

@@ -5896,12 +5896,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onElasticIp(allocationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:elastic-ip/${AllocationId}';
-    arn = arn.replace('${AllocationId}', allocationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:elastic-ip/${ allocationId }`);
   }
 
   /**
@@ -5923,12 +5918,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCapacityReservationFleet(capacityReservationFleetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:capacity-reservation-fleet/${CapacityReservationFleetId}';
-    arn = arn.replace('${CapacityReservationFleetId}', capacityReservationFleetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:capacity-reservation-fleet/${ capacityReservationFleetId }`);
   }
 
   /**
@@ -5951,12 +5941,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCapacityReservation(capacityReservationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:capacity-reservation/${CapacityReservationId}';
-    arn = arn.replace('${CapacityReservationId}', capacityReservationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:capacity-reservation/${ capacityReservationId }`);
   }
 
   /**
@@ -5979,12 +5964,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpc()
    */
   public onCarrierGateway(carrierGatewayId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:carrier-gateway/${CarrierGatewayId}';
-    arn = arn.replace('${CarrierGatewayId}', carrierGatewayId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:carrier-gateway/${ carrierGatewayId }`);
   }
 
   /**
@@ -5998,12 +5978,7 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:acm:${Region}:${Account}:certificate/${CertificateId}';
-    arn = arn.replace('${CertificateId}', certificateId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:acm:${ region || '*' }:${ account || '*' }:certificate/${ certificateId }`);
   }
 
   /**
@@ -6031,12 +6006,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifServerCertificateArn()
    */
   public onClientVpnEndpoint(clientVpnEndpointId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:client-vpn-endpoint/${ClientVpnEndpointId}';
-    arn = arn.replace('${ClientVpnEndpointId}', clientVpnEndpointId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:client-vpn-endpoint/${ clientVpnEndpointId }`);
   }
 
   /**
@@ -6057,12 +6027,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCustomerGateway(customerGatewayId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:customer-gateway/${CustomerGatewayId}';
-    arn = arn.replace('${CustomerGatewayId}', customerGatewayId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:customer-gateway/${ customerGatewayId }`);
   }
 
   /**
@@ -6089,12 +6054,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDedicatedHost(dedicatedHostId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:dedicated-host/${DedicatedHostId}';
-    arn = arn.replace('${DedicatedHostId}', dedicatedHostId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:dedicated-host/${ dedicatedHostId }`);
   }
 
   /**
@@ -6115,12 +6075,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDhcpOptions(dhcpOptionsId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:dhcp-options/${DhcpOptionsId}';
-    arn = arn.replace('${DhcpOptionsId}', dhcpOptionsId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:dhcp-options/${ dhcpOptionsId }`);
   }
 
   /**
@@ -6141,12 +6096,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEgressOnlyInternetGateway(egressOnlyInternetGatewayId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:egress-only-internet-gateway/${EgressOnlyInternetGatewayId}';
-    arn = arn.replace('${EgressOnlyInternetGatewayId}', egressOnlyInternetGatewayId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:egress-only-internet-gateway/${ egressOnlyInternetGatewayId }`);
   }
 
   /**
@@ -6168,12 +6118,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onElasticGpu(elasticGpuId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:elastic-gpu/${ElasticGpuId}';
-    arn = arn.replace('${ElasticGpuId}', elasticGpuId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:elastic-gpu/${ elasticGpuId }`);
   }
 
   /**
@@ -6187,12 +6132,7 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onElasticInference(elasticInferenceAcceleratorId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elastic-inference:${Region}:${Account}:elastic-inference-accelerator/${ElasticInferenceAcceleratorId}';
-    arn = arn.replace('${ElasticInferenceAcceleratorId}', elasticInferenceAcceleratorId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elastic-inference:${ region || '*' }:${ account || '*' }:elastic-inference-accelerator/${ elasticInferenceAcceleratorId }`);
   }
 
   /**
@@ -6213,12 +6153,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExportImageTask(exportImageTaskId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:export-image-task/${ExportImageTaskId}';
-    arn = arn.replace('${ExportImageTaskId}', exportImageTaskId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:export-image-task/${ exportImageTaskId }`);
   }
 
   /**
@@ -6239,12 +6174,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExportInstanceTask(exportTaskId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:export-instance-task/${ExportTaskId}';
-    arn = arn.replace('${ExportTaskId}', exportTaskId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:export-instance-task/${ exportTaskId }`);
   }
 
   /**
@@ -6266,12 +6196,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onFleet(fleetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:fleet/${FleetId}';
-    arn = arn.replace('${FleetId}', fleetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:fleet/${ fleetId }`);
   }
 
   /**
@@ -6294,11 +6219,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onFpgaImage(fpgaImageId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}::fpga-image/${FpgaImageId}';
-    arn = arn.replace('${FpgaImageId}', fpgaImageId);
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }::fpga-image/${ fpgaImageId }`);
   }
 
   /**
@@ -6319,12 +6240,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onHostReservation(hostReservationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:host-reservation/${HostReservationId}';
-    arn = arn.replace('${HostReservationId}', hostReservationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:host-reservation/${ hostReservationId }`);
   }
 
   /**
@@ -6349,11 +6265,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifRootDeviceType()
    */
   public onImage(imageId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}::image/${ImageId}';
-    arn = arn.replace('${ImageId}', imageId);
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }::image/${ imageId }`);
   }
 
   /**
@@ -6374,12 +6286,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onImportImageTask(importImageTaskId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:import-image-task/${ImportImageTaskId}';
-    arn = arn.replace('${ImportImageTaskId}', importImageTaskId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:import-image-task/${ importImageTaskId }`);
   }
 
   /**
@@ -6400,12 +6307,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onImportSnapshotTask(importSnapshotTaskId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:import-snapshot-task/${ImportSnapshotTaskId}';
-    arn = arn.replace('${ImportSnapshotTaskId}', importSnapshotTaskId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:import-snapshot-task/${ importSnapshotTaskId }`);
   }
 
   /**
@@ -6426,12 +6328,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInstanceEventWindow(instanceEventWindowId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:instance-event-window/${InstanceEventWindowId}';
-    arn = arn.replace('${InstanceEventWindowId}', instanceEventWindowId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:instance-event-window/${ instanceEventWindowId }`);
   }
 
   /**
@@ -6465,12 +6362,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifTenancy()
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
   }
 
   /**
@@ -6491,12 +6383,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInternetGateway(internetGatewayId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:internet-gateway/${InternetGatewayId}';
-    arn = arn.replace('${InternetGatewayId}', internetGatewayId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:internet-gateway/${ internetGatewayId }`);
   }
 
   /**
@@ -6517,12 +6404,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onIpv4poolEc2(ipv4PoolEc2Id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:ipv4pool-ec2/${Ipv4PoolEc2Id}';
-    arn = arn.replace('${Ipv4PoolEc2Id}', ipv4PoolEc2Id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:ipv4pool-ec2/${ ipv4PoolEc2Id }`);
   }
 
   /**
@@ -6543,12 +6425,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onIpv6poolEc2(ipv6PoolEc2Id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:ipv6pool-ec2/${Ipv6PoolEc2Id}';
-    arn = arn.replace('${Ipv6PoolEc2Id}', ipv6PoolEc2Id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:ipv6pool-ec2/${ ipv6PoolEc2Id }`);
   }
 
   /**
@@ -6571,12 +6448,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onKeyPair(keyPairName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:key-pair/${KeyPairName}';
-    arn = arn.replace('${KeyPairName}', keyPairName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:key-pair/${ keyPairName }`);
   }
 
   /**
@@ -6598,12 +6470,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLaunchTemplate(launchTemplateId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:launch-template/${LaunchTemplateId}';
-    arn = arn.replace('${LaunchTemplateId}', launchTemplateId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:launch-template/${ launchTemplateId }`);
   }
 
   /**
@@ -6624,12 +6491,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLocalGateway(localGatewayId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:local-gateway/${LocalGatewayId}';
-    arn = arn.replace('${LocalGatewayId}', localGatewayId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:local-gateway/${ localGatewayId }`);
   }
 
   /**
@@ -6650,12 +6512,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLocalGatewayRouteTableVirtualInterfaceGroupAssociation(localGatewayRouteTableVirtualInterfaceGroupAssociationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:local-gateway-route-table-virtual-interface-group-association/${LocalGatewayRouteTableVirtualInterfaceGroupAssociationId}';
-    arn = arn.replace('${LocalGatewayRouteTableVirtualInterfaceGroupAssociationId}', localGatewayRouteTableVirtualInterfaceGroupAssociationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-route-table-virtual-interface-group-association/${ localGatewayRouteTableVirtualInterfaceGroupAssociationId }`);
   }
 
   /**
@@ -6676,12 +6533,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLocalGatewayRouteTableVpcAssociation(localGatewayRouteTableVpcAssociationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:local-gateway-route-table-vpc-association/${LocalGatewayRouteTableVpcAssociationId}';
-    arn = arn.replace('${LocalGatewayRouteTableVpcAssociationId}', localGatewayRouteTableVpcAssociationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-route-table-vpc-association/${ localGatewayRouteTableVpcAssociationId }`);
   }
 
   /**
@@ -6702,12 +6554,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLocalGatewayRouteTable(localGatewayRoutetableId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:local-gateway-route-table/${LocalGatewayRoutetableId}';
-    arn = arn.replace('${LocalGatewayRoutetableId}', localGatewayRoutetableId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-route-table/${ localGatewayRoutetableId }`);
   }
 
   /**
@@ -6728,12 +6575,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLocalGatewayVirtualInterfaceGroup(localGatewayVirtualInterfaceGroupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:local-gateway-virtual-interface-group/${LocalGatewayVirtualInterfaceGroupId}';
-    arn = arn.replace('${LocalGatewayVirtualInterfaceGroupId}', localGatewayVirtualInterfaceGroupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-virtual-interface-group/${ localGatewayVirtualInterfaceGroupId }`);
   }
 
   /**
@@ -6754,12 +6596,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLocalGatewayVirtualInterface(localGatewayVirtualInterfaceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:local-gateway-virtual-interface/${LocalGatewayVirtualInterfaceId}';
-    arn = arn.replace('${LocalGatewayVirtualInterfaceId}', localGatewayVirtualInterfaceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-virtual-interface/${ localGatewayVirtualInterfaceId }`);
   }
 
   /**
@@ -6780,12 +6617,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNatgateway(natGatewayId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:natgateway/${NatGatewayId}';
-    arn = arn.replace('${NatGatewayId}', natGatewayId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:natgateway/${ natGatewayId }`);
   }
 
   /**
@@ -6807,12 +6639,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpc()
    */
   public onNetworkAcl(naclId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:network-acl/${NaclId}';
-    arn = arn.replace('${NaclId}', naclId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:network-acl/${ naclId }`);
   }
 
   /**
@@ -6833,12 +6660,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNetworkInsightsAnalysis(networkInsightsAnalysisId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:network-insights-analysis/${NetworkInsightsAnalysisId}';
-    arn = arn.replace('${NetworkInsightsAnalysisId}', networkInsightsAnalysisId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:network-insights-analysis/${ networkInsightsAnalysisId }`);
   }
 
   /**
@@ -6859,12 +6681,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNetworkInsightsPath(networkInsightsPathId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:network-insights-path/${NetworkInsightsPathId}';
-    arn = arn.replace('${NetworkInsightsPathId}', networkInsightsPathId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:network-insights-path/${ networkInsightsPathId }`);
   }
 
   /**
@@ -6893,12 +6710,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpc()
    */
   public onNetworkInterface(networkInterfaceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:network-interface/${NetworkInterfaceId}';
-    arn = arn.replace('${NetworkInterfaceId}', networkInterfaceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:network-interface/${ networkInterfaceId }`);
   }
 
   /**
@@ -6920,12 +6732,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPlacementGroup(placementGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:placement-group/${PlacementGroupName}';
-    arn = arn.replace('${PlacementGroupName}', placementGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:placement-group/${ placementGroupName }`);
   }
 
   /**
@@ -6947,12 +6754,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPrefixList(prefixListId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:prefix-list/${PrefixListId}';
-    arn = arn.replace('${PrefixListId}', prefixListId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:prefix-list/${ prefixListId }`);
   }
 
   /**
@@ -6973,12 +6775,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onReplaceRootVolumeTask(replaceRootVolumeTaskId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:replace-root-volume-task/${ReplaceRootVolumeTaskId}';
-    arn = arn.replace('${ReplaceRootVolumeTaskId}', replaceRootVolumeTaskId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:replace-root-volume-task/${ replaceRootVolumeTaskId }`);
   }
 
   /**
@@ -7004,12 +6801,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifTenancy()
    */
   public onReservedInstances(reservationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:reserved-instances/${ReservationId}';
-    arn = arn.replace('${ReservationId}', reservationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:reserved-instances/${ reservationId }`);
   }
 
   /**
@@ -7022,11 +6814,7 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}';
-    arn = arn.replace('${RoleNameWithPath}', roleNameWithPath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:role/${ roleNameWithPath }`);
   }
 
   /**
@@ -7048,12 +6836,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpc()
    */
   public onRouteTable(routeTableId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:route-table/${RouteTableId}';
-    arn = arn.replace('${RouteTableId}', routeTableId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:route-table/${ routeTableId }`);
   }
 
   /**
@@ -7075,12 +6858,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpc()
    */
   public onSecurityGroup(securityGroupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:security-group/${SecurityGroupId}';
-    arn = arn.replace('${SecurityGroupId}', securityGroupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:security-group/${ securityGroupId }`);
   }
 
   /**
@@ -7101,12 +6879,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onSecurityGroupRule(securityGroupRuleId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:security-group-rule/${SecurityGroupRuleId}';
-    arn = arn.replace('${SecurityGroupRuleId}', securityGroupRuleId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:security-group-rule/${ securityGroupRuleId }`);
   }
 
   /**
@@ -7135,11 +6908,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVolumeSize()
    */
   public onSnapshot(snapshotId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}::snapshot/${SnapshotId}';
-    arn = arn.replace('${SnapshotId}', snapshotId);
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }::snapshot/${ snapshotId }`);
   }
 
   /**
@@ -7161,12 +6930,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onSpotFleetRequest(spotFleetRequestId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:spot-fleet-request/${SpotFleetRequestId}';
-    arn = arn.replace('${SpotFleetRequestId}', spotFleetRequestId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:spot-fleet-request/${ spotFleetRequestId }`);
   }
 
   /**
@@ -7187,12 +6951,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onSpotInstancesRequest(spotInstanceRequestId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:spot-instances-request/${SpotInstanceRequestId}';
-    arn = arn.replace('${SpotInstanceRequestId}', spotInstanceRequestId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:spot-instances-request/${ spotInstanceRequestId }`);
   }
 
   /**
@@ -7216,12 +6975,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpc()
    */
   public onSubnet(subnetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:subnet/${SubnetId}';
-    arn = arn.replace('${SubnetId}', subnetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:subnet/${ subnetId }`);
   }
 
   /**
@@ -7243,12 +6997,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTrafficMirrorFilter(trafficMirrorFilterId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-filter/${TrafficMirrorFilterId}';
-    arn = arn.replace('${TrafficMirrorFilterId}', trafficMirrorFilterId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:traffic-mirror-filter/${ trafficMirrorFilterId }`);
   }
 
   /**
@@ -7266,12 +7015,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    */
   public onTrafficMirrorFilterRule(trafficMirrorFilterRuleId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-filter-rule/${TrafficMirrorFilterRuleId}';
-    arn = arn.replace('${TrafficMirrorFilterRuleId}', trafficMirrorFilterRuleId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:traffic-mirror-filter-rule/${ trafficMirrorFilterRuleId }`);
   }
 
   /**
@@ -7293,12 +7037,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTrafficMirrorSession(trafficMirrorSessionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-session/${TrafficMirrorSessionId}';
-    arn = arn.replace('${TrafficMirrorSessionId}', trafficMirrorSessionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:traffic-mirror-session/${ trafficMirrorSessionId }`);
   }
 
   /**
@@ -7319,12 +7058,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTrafficMirrorTarget(trafficMirrorTargetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-target/${TrafficMirrorTargetId}';
-    arn = arn.replace('${TrafficMirrorTargetId}', trafficMirrorTargetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:traffic-mirror-target/${ trafficMirrorTargetId }`);
   }
 
   /**
@@ -7346,12 +7080,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransitGatewayAttachment(transitGatewayAttachmentId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-attachment/${TransitGatewayAttachmentId}';
-    arn = arn.replace('${TransitGatewayAttachmentId}', transitGatewayAttachmentId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-attachment/${ transitGatewayAttachmentId }`);
   }
 
   /**
@@ -7372,12 +7101,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransitGatewayConnectPeer(transitGatewayConnectPeerId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-connect-peer/${TransitGatewayConnectPeerId}';
-    arn = arn.replace('${TransitGatewayConnectPeerId}', transitGatewayConnectPeerId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-connect-peer/${ transitGatewayConnectPeerId }`);
   }
 
   /**
@@ -7399,12 +7123,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransitGateway(transitGatewayId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:transit-gateway/${TransitGatewayId}';
-    arn = arn.replace('${TransitGatewayId}', transitGatewayId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway/${ transitGatewayId }`);
   }
 
   /**
@@ -7425,12 +7144,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransitGatewayMulticastDomain(transitGatewayMulticastDomainId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-multicast-domain/${TransitGatewayMulticastDomainId}';
-    arn = arn.replace('${TransitGatewayMulticastDomainId}', transitGatewayMulticastDomainId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-multicast-domain/${ transitGatewayMulticastDomainId }`);
   }
 
   /**
@@ -7452,12 +7166,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransitGatewayRouteTable(transitGatewayRouteTableId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-route-table/${TransitGatewayRouteTableId}';
-    arn = arn.replace('${TransitGatewayRouteTableId}', transitGatewayRouteTableId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-route-table/${ transitGatewayRouteTableId }`);
   }
 
   /**
@@ -7487,12 +7196,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVolumeType()
    */
   public onVolume(volumeId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:volume/${VolumeId}';
-    arn = arn.replace('${VolumeId}', volumeId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:volume/${ volumeId }`);
   }
 
   /**
@@ -7516,12 +7220,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpceServiceOwner()
    */
   public onVpcEndpoint(vpcEndpointId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint/${VpcEndpointId}';
-    arn = arn.replace('${VpcEndpointId}', vpcEndpointId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpc-endpoint/${ vpcEndpointId }`);
   }
 
   /**
@@ -7544,12 +7243,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpceServicePrivateDnsName()
    */
   public onVpcEndpointService(vpcEndpointServiceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint-service/${VpcEndpointServiceId}';
-    arn = arn.replace('${VpcEndpointServiceId}', vpcEndpointServiceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpc-endpoint-service/${ vpcEndpointServiceId }`);
   }
 
   /**
@@ -7570,12 +7264,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onVpcFlowLog(vpcFlowLogId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpc-flow-log/${VpcFlowLogId}';
-    arn = arn.replace('${VpcFlowLogId}', vpcFlowLogId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpc-flow-log/${ vpcFlowLogId }`);
   }
 
   /**
@@ -7598,12 +7287,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifTenancy()
    */
   public onVpc(vpcId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpc/${VpcId}';
-    arn = arn.replace('${VpcId}', vpcId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpc/${ vpcId }`);
   }
 
   /**
@@ -7627,12 +7311,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onVpcPeeringConnection(vpcPeeringConnectionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpc-peering-connection/${VpcPeeringConnectionId}';
-    arn = arn.replace('${VpcPeeringConnectionId}', vpcPeeringConnectionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpc-peering-connection/${ vpcPeeringConnectionId }`);
   }
 
   /**
@@ -7652,12 +7331,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onVpnConnectionDeviceType(vpnConnectionDeviceTypeId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpn-connection-device-type/${VpnConnectionDeviceTypeId}';
-    arn = arn.replace('${VpnConnectionDeviceTypeId}', vpnConnectionDeviceTypeId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpn-connection-device-type/${ vpnConnectionDeviceTypeId }`);
   }
 
   /**
@@ -7696,12 +7370,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifRoutingType()
    */
   public onVpnConnection(vpnConnectionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpn-connection/${VpnConnectionId}';
-    arn = arn.replace('${VpnConnectionId}', vpnConnectionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpn-connection/${ vpnConnectionId }`);
   }
 
   /**
@@ -7722,12 +7391,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onVpnGateway(vpnGatewayId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpn-gateway/${VpnGatewayId}';
-    arn = arn.replace('${VpnGatewayId}', vpnGatewayId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpn-gateway/${ vpnGatewayId }`);
   }
 
   /**

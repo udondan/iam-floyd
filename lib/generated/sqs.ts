@@ -244,11 +244,6 @@ export class Sqs extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onQueue(queueName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sqs:${Region}:${Account}:${QueueName}';
-    arn = arn.replace('${QueueName}', queueName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sqs:${ region || '*' }:${ account || '*' }:${ queueName }`);
   }
 }

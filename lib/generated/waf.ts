@@ -994,11 +994,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onBytematchset(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:waf::${Account}:bytematchset/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:waf::${ account || '*' }:bytematchset/${ id }`);
   }
 
   /**
@@ -1011,11 +1007,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onIpset(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:waf::${Account}:ipset/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:waf::${ account || '*' }:ipset/${ id }`);
   }
 
   /**
@@ -1031,11 +1023,7 @@ export class Waf extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRatebasedrule(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:waf::${Account}:ratebasedrule/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:waf::${ account || '*' }:ratebasedrule/${ id }`);
   }
 
   /**
@@ -1051,11 +1039,7 @@ export class Waf extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRule(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:waf::${Account}:rule/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:waf::${ account || '*' }:rule/${ id }`);
   }
 
   /**
@@ -1068,11 +1052,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSizeconstraintset(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:waf::${Account}:sizeconstraintset/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:waf::${ account || '*' }:sizeconstraintset/${ id }`);
   }
 
   /**
@@ -1085,11 +1065,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSqlinjectionmatchset(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:waf::${Account}:sqlinjectionset/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:waf::${ account || '*' }:sqlinjectionset/${ id }`);
   }
 
   /**
@@ -1105,11 +1081,7 @@ export class Waf extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWebacl(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:waf::${Account}:webacl/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:waf::${ account || '*' }:webacl/${ id }`);
   }
 
   /**
@@ -1122,11 +1094,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onXssmatchset(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:waf::${Account}:xssmatchset/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:waf::${ account || '*' }:xssmatchset/${ id }`);
   }
 
   /**
@@ -1139,11 +1107,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onRegexmatchset(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:waf::${Account}:regexmatch/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:waf::${ account || '*' }:regexmatch/${ id }`);
   }
 
   /**
@@ -1156,11 +1120,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onRegexpatternset(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:waf::${Account}:regexpatternset/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:waf::${ account || '*' }:regexpatternset/${ id }`);
   }
 
   /**
@@ -1173,11 +1133,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onGeomatchset(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:waf::${Account}:geomatchset/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:waf::${ account || '*' }:geomatchset/${ id }`);
   }
 
   /**
@@ -1193,10 +1149,6 @@ export class Waf extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRulegroup(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:waf::${Account}:rulegroup/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:waf::${ account || '*' }:rulegroup/${ id }`);
   }
 }

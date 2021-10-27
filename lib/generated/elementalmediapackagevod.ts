@@ -269,12 +269,7 @@ export class MediapackageVod extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssets(assetIdentifier: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:assets/${AssetIdentifier}';
-    arn = arn.replace('${AssetIdentifier}', assetIdentifier);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediapackage-vod:${ region || '*' }:${ account || '*' }:assets/${ assetIdentifier }`);
   }
 
   /**
@@ -291,12 +286,7 @@ export class MediapackageVod extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPackagingConfigurations(packagingConfigurationIdentifier: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-configurations/${PackagingConfigurationIdentifier}';
-    arn = arn.replace('${PackagingConfigurationIdentifier}', packagingConfigurationIdentifier);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediapackage-vod:${ region || '*' }:${ account || '*' }:packaging-configurations/${ packagingConfigurationIdentifier }`);
   }
 
   /**
@@ -313,11 +303,6 @@ export class MediapackageVod extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPackagingGroups(packagingGroupIdentifier: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-groups/${PackagingGroupIdentifier}';
-    arn = arn.replace('${PackagingGroupIdentifier}', packagingGroupIdentifier);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediapackage-vod:${ region || '*' }:${ account || '*' }:packaging-groups/${ packagingGroupIdentifier }`);
   }
 }

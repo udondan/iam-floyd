@@ -998,12 +998,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplate(name: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment-template/${Name}';
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:proton:${ region || '*' }:${ account || '*' }:environment-template/${ name }`);
   }
 
   /**
@@ -1022,14 +1017,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplateVersion(templateName: string, majorVersion: string, minorVersion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment-template/${TemplateName}:${MajorVersion}.${MinorVersion}';
-    arn = arn.replace('${TemplateName}', templateName);
-    arn = arn.replace('${MajorVersion}', majorVersion);
-    arn = arn.replace('${MinorVersion}', minorVersion);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:proton:${ region || '*' }:${ account || '*' }:environment-template/${ templateName }:${ majorVersion }.${ minorVersion }`);
   }
 
   /**
@@ -1047,13 +1035,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplateMajorVersion(templateName: string, majorVersionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment-template/${TemplateName}:${MajorVersionId}';
-    arn = arn.replace('${TemplateName}', templateName);
-    arn = arn.replace('${MajorVersionId}', majorVersionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:proton:${ region || '*' }:${ account || '*' }:environment-template/${ templateName }:${ majorVersionId }`);
   }
 
   /**
@@ -1072,14 +1054,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplateMinorVersion(templateName: string, majorVersionId: string, minorVersionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment-template/${TemplateName}:${MajorVersionId}.${MinorVersionId}';
-    arn = arn.replace('${TemplateName}', templateName);
-    arn = arn.replace('${MajorVersionId}', majorVersionId);
-    arn = arn.replace('${MinorVersionId}', minorVersionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:proton:${ region || '*' }:${ account || '*' }:environment-template/${ templateName }:${ majorVersionId }.${ minorVersionId }`);
   }
 
   /**
@@ -1096,12 +1071,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServiceTemplate(name: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:service-template/${Name}';
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:proton:${ region || '*' }:${ account || '*' }:service-template/${ name }`);
   }
 
   /**
@@ -1120,14 +1090,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServiceTemplateVersion(templateName: string, majorVersion: string, minorVersion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:service-template/${TemplateName}:${MajorVersion}.${MinorVersion}';
-    arn = arn.replace('${TemplateName}', templateName);
-    arn = arn.replace('${MajorVersion}', majorVersion);
-    arn = arn.replace('${MinorVersion}', minorVersion);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:proton:${ region || '*' }:${ account || '*' }:service-template/${ templateName }:${ majorVersion }.${ minorVersion }`);
   }
 
   /**
@@ -1145,13 +1108,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServiceTemplateMajorVersion(templateName: string, majorVersionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:service-template/${TemplateName}:${MajorVersionId}';
-    arn = arn.replace('${TemplateName}', templateName);
-    arn = arn.replace('${MajorVersionId}', majorVersionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:proton:${ region || '*' }:${ account || '*' }:service-template/${ templateName }:${ majorVersionId }`);
   }
 
   /**
@@ -1170,14 +1127,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServiceTemplateMinorVersion(templateName: string, majorVersionId: string, minorVersionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:service-template/${TemplateName}:${MajorVersionId}.${MinorVersionId}';
-    arn = arn.replace('${TemplateName}', templateName);
-    arn = arn.replace('${MajorVersionId}', majorVersionId);
-    arn = arn.replace('${MinorVersionId}', minorVersionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:proton:${ region || '*' }:${ account || '*' }:service-template/${ templateName }:${ majorVersionId }.${ minorVersionId }`);
   }
 
   /**
@@ -1194,12 +1144,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironment(name: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment/${Name}';
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:proton:${ region || '*' }:${ account || '*' }:environment/${ name }`);
   }
 
   /**
@@ -1216,12 +1161,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onService(name: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:service/${Name}';
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:proton:${ region || '*' }:${ account || '*' }:service/${ name }`);
   }
 
   /**
@@ -1239,13 +1179,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServiceInstance(serviceName: string, name: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:service/${ServiceName}/service-instance/${Name}';
-    arn = arn.replace('${ServiceName}', serviceName);
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:proton:${ region || '*' }:${ account || '*' }:service/${ serviceName }/service-instance/${ name }`);
   }
 
   /**
@@ -1259,12 +1193,7 @@ export class Proton extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onEnvironmentAccountConnection(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:proton:${Region}:${Account}:environment-account-connection/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:proton:${ region || '*' }:${ account || '*' }:environment-account-connection/${ id }`);
   }
 
   /**

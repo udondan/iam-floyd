@@ -286,12 +286,7 @@ export class Timestream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatabase(databaseName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:timestream:${Region}:${Account}:database/${DatabaseName}';
-    arn = arn.replace('${DatabaseName}', databaseName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:timestream:${ region || '*' }:${ account || '*' }:database/${ databaseName }`);
   }
 
   /**
@@ -309,12 +304,6 @@ export class Timestream extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTable(databaseName: string, tableName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:timestream:${Region}:${Account}:database/${DatabaseName}/table/${TableName}';
-    arn = arn.replace('${DatabaseName}', databaseName);
-    arn = arn.replace('${TableName}', tableName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:timestream:${ region || '*' }:${ account || '*' }:database/${ databaseName }/table/${ tableName }`);
   }
 }

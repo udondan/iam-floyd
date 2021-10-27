@@ -934,12 +934,7 @@ export class Es extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:es:${Region}:${Account}:domain/${DomainName}';
-    arn = arn.replace('${DomainName}', domainName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:es:${ region || '*' }:${ account || '*' }:domain/${ domainName }`);
   }
 
   /**
@@ -954,10 +949,7 @@ export class Es extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEsRole(account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:role/aws-service-role/es.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService';
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:role/aws-service-role/es.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService`);
   }
 
   /**
@@ -972,9 +964,6 @@ export class Es extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOpensearchserviceRole(account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService';
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService`);
   }
 }

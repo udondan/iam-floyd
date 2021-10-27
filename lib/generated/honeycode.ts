@@ -350,12 +350,7 @@ export class Honeycode extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onWorkbook(workbookId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:honeycode:${Region}:${Account}:workbook:workbook/${WorkbookId}';
-    arn = arn.replace('${WorkbookId}', workbookId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:honeycode:${ region || '*' }:${ account || '*' }:workbook:workbook/${ workbookId }`);
   }
 
   /**
@@ -370,13 +365,7 @@ export class Honeycode extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTable(workbookId: string, tableId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:honeycode:${Region}:${Account}:table:workbook/${WorkbookId}/table/${TableId}';
-    arn = arn.replace('${WorkbookId}', workbookId);
-    arn = arn.replace('${TableId}', tableId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:honeycode:${ region || '*' }:${ account || '*' }:table:workbook/${ workbookId }/table/${ tableId }`);
   }
 
   /**
@@ -392,14 +381,7 @@ export class Honeycode extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onScreen(workbookId: string, appId: string, screenId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:honeycode:${Region}:${Account}:screen:workbook/${WorkbookId}/app/${AppId}/screen/${ScreenId}';
-    arn = arn.replace('${WorkbookId}', workbookId);
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${ScreenId}', screenId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:honeycode:${ region || '*' }:${ account || '*' }:screen:workbook/${ workbookId }/app/${ appId }/screen/${ screenId }`);
   }
 
   /**
@@ -416,14 +398,6 @@ export class Honeycode extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onScreenAutomation(workbookId: string, appId: string, screenId: string, automationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:honeycode:${Region}:${Account}:screen-automation:workbook/${WorkbookId}/app/${AppId}/screen/${ScreenId}/automation/${AutomationId}';
-    arn = arn.replace('${WorkbookId}', workbookId);
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${ScreenId}', screenId);
-    arn = arn.replace('${AutomationId}', automationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:honeycode:${ region || '*' }:${ account || '*' }:screen-automation:workbook/${ workbookId }/app/${ appId }/screen/${ screenId }/automation/${ automationId }`);
   }
 }

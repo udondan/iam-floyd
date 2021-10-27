@@ -297,12 +297,7 @@ export class Fis extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAction(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:fis:${Region}:${Account}:action/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:fis:${ region || '*' }:${ account || '*' }:action/${ id }`);
   }
 
   /**
@@ -319,12 +314,7 @@ export class Fis extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExperiment(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:fis:${Region}:${Account}:experiment/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:fis:${ region || '*' }:${ account || '*' }:experiment/${ id }`);
   }
 
   /**
@@ -341,12 +331,7 @@ export class Fis extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExperimentTemplate(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:fis:${Region}:${Account}:experiment-template/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:fis:${ region || '*' }:${ account || '*' }:experiment-template/${ id }`);
   }
 
   /**

@@ -516,12 +516,7 @@ export class Codeartifact extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codeartifact:${Region}:${Account}:domain/${DomainName}';
-    arn = arn.replace('${DomainName}', domainName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codeartifact:${ region || '*' }:${ account || '*' }:domain/${ domainName }`);
   }
 
   /**
@@ -539,13 +534,7 @@ export class Codeartifact extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRepository(domainName: string, repositoryName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codeartifact:${Region}:${Account}:repository/${DomainName}/${RepositoryName}';
-    arn = arn.replace('${DomainName}', domainName);
-    arn = arn.replace('${RepositoryName}', repositoryName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codeartifact:${ region || '*' }:${ account || '*' }:repository/${ domainName }/${ repositoryName }`);
   }
 
   /**
@@ -563,15 +552,6 @@ export class Codeartifact extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onPackage(domainName: string, repositoryName: string, packageFormat: string, packageNamespace: string, packageName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codeartifact:${Region}:${Account}:package/${DomainName}/${RepositoryName}/${PackageFormat}/${PackageNamespace}/${PackageName}';
-    arn = arn.replace('${DomainName}', domainName);
-    arn = arn.replace('${RepositoryName}', repositoryName);
-    arn = arn.replace('${PackageFormat}', packageFormat);
-    arn = arn.replace('${PackageNamespace}', packageNamespace);
-    arn = arn.replace('${PackageName}', packageName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codeartifact:${ region || '*' }:${ account || '*' }:package/${ domainName }/${ repositoryName }/${ packageFormat }/${ packageNamespace }/${ packageName }`);
   }
 }

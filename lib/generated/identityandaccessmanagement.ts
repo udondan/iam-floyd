@@ -2106,11 +2106,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAccessReport(entityPath: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:access-report/${EntityPath}';
-    arn = arn.replace('${EntityPath}', entityPath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:access-report/${ entityPath }`);
   }
 
   /**
@@ -2124,12 +2120,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAssumedRole(roleName: string, roleSessionName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:assumed-role/${RoleName}/${RoleSessionName}';
-    arn = arn.replace('${RoleName}', roleName);
-    arn = arn.replace('${RoleSessionName}', roleSessionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:assumed-role/${ roleName }/${ roleSessionName }`);
   }
 
   /**
@@ -2142,11 +2133,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onFederatedUser(userName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:federated-user/${UserName}';
-    arn = arn.replace('${UserName}', userName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:federated-user/${ userName }`);
   }
 
   /**
@@ -2159,11 +2146,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onGroup(groupNameWithPath: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:group/${GroupNameWithPath}';
-    arn = arn.replace('${GroupNameWithPath}', groupNameWithPath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:group/${ groupNameWithPath }`);
   }
 
   /**
@@ -2179,11 +2162,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInstanceProfile(instanceProfileNameWithPath: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:instance-profile/${InstanceProfileNameWithPath}';
-    arn = arn.replace('${InstanceProfileNameWithPath}', instanceProfileNameWithPath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:instance-profile/${ instanceProfileNameWithPath }`);
   }
 
   /**
@@ -2199,11 +2178,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMfa(mfaTokenIdWithPath: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:mfa/${MfaTokenIdWithPath}';
-    arn = arn.replace('${MfaTokenIdWithPath}', mfaTokenIdWithPath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:mfa/${ mfaTokenIdWithPath }`);
   }
 
   /**
@@ -2219,11 +2194,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOidcProvider(oidcProviderName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:oidc-provider/${OidcProviderName}';
-    arn = arn.replace('${OidcProviderName}', oidcProviderName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:oidc-provider/${ oidcProviderName }`);
   }
 
   /**
@@ -2239,11 +2210,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPolicy(policyNameWithPath: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:policy/${PolicyNameWithPath}';
-    arn = arn.replace('${PolicyNameWithPath}', policyNameWithPath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:policy/${ policyNameWithPath }`);
   }
 
   /**
@@ -2260,11 +2227,7 @@ export class Iam extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}';
-    arn = arn.replace('${RoleNameWithPath}', roleNameWithPath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:role/${ roleNameWithPath }`);
   }
 
   /**
@@ -2280,11 +2243,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSamlProvider(samlProviderName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:saml-provider/${SamlProviderName}';
-    arn = arn.replace('${SamlProviderName}', samlProviderName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:saml-provider/${ samlProviderName }`);
   }
 
   /**
@@ -2300,11 +2259,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServerCertificate(certificateNameWithPath: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:server-certificate/${CertificateNameWithPath}';
-    arn = arn.replace('${CertificateNameWithPath}', certificateNameWithPath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:server-certificate/${ certificateNameWithPath }`);
   }
 
   /**
@@ -2317,11 +2272,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSmsMfa(mfaTokenIdWithPath: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:sms-mfa/${MfaTokenIdWithPath}';
-    arn = arn.replace('${MfaTokenIdWithPath}', mfaTokenIdWithPath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:sms-mfa/${ mfaTokenIdWithPath }`);
   }
 
   /**
@@ -2338,11 +2289,7 @@ export class Iam extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onUser(userNameWithPath: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:user/${UserNameWithPath}';
-    arn = arn.replace('${UserNameWithPath}', userNameWithPath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:user/${ userNameWithPath }`);
   }
 
   /**

@@ -47,12 +47,6 @@ export class NeptuneDb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDatabase(cluster: string, database: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:neptune-db:${Region}:${Account}:${Cluster}/${Database}';
-    arn = arn.replace('${Cluster}', cluster);
-    arn = arn.replace('${Database}', database);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:neptune-db:${ region || '*' }:${ account || '*' }:${ cluster }/${ database }`);
   }
 }

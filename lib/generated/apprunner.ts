@@ -343,13 +343,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onService(serviceName: string, serviceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apprunner:${Region}:${Account}:service/${ServiceName}/${ServiceId}';
-    arn = arn.replace('${ServiceName}', serviceName);
-    arn = arn.replace('${ServiceId}', serviceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:apprunner:${ region || '*' }:${ account || '*' }:service/${ serviceName }/${ serviceId }`);
   }
 
   /**
@@ -365,13 +359,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnection(connectionName: string, connectionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apprunner:${Region}:${Account}:connection/${ConnectionName}/${ConnectionId}';
-    arn = arn.replace('${ConnectionName}', connectionName);
-    arn = arn.replace('${ConnectionId}', connectionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:apprunner:${ region || '*' }:${ account || '*' }:connection/${ connectionName }/${ connectionId }`);
   }
 
   /**
@@ -388,14 +376,7 @@ export class Apprunner extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAutoscalingconfiguration(autoscalingConfigurationName: string, autoscalingConfigurationVersion: string, autoscalingConfigurationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apprunner:${Region}:${Account}:autoscalingconfiguration/${AutoscalingConfigurationName}/${AutoscalingConfigurationVersion}/${AutoscalingConfigurationId}';
-    arn = arn.replace('${AutoscalingConfigurationName}', autoscalingConfigurationName);
-    arn = arn.replace('${AutoscalingConfigurationVersion}', autoscalingConfigurationVersion);
-    arn = arn.replace('${AutoscalingConfigurationId}', autoscalingConfigurationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:apprunner:${ region || '*' }:${ account || '*' }:autoscalingconfiguration/${ autoscalingConfigurationName }/${ autoscalingConfigurationVersion }/${ autoscalingConfigurationId }`);
   }
 
   /**

@@ -992,12 +992,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:project:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:project:${ resourceId }`);
   }
 
   /**
@@ -1014,12 +1009,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRun(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:run:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:run:${ resourceId }`);
   }
 
   /**
@@ -1033,12 +1023,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:job:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:job:${ resourceId }`);
   }
 
   /**
@@ -1052,12 +1037,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSuite(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:suite:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:suite:${ resourceId }`);
   }
 
   /**
@@ -1071,12 +1051,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTest(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:test:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:test:${ resourceId }`);
   }
 
   /**
@@ -1090,12 +1065,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onUpload(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:upload:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:upload:${ resourceId }`);
   }
 
   /**
@@ -1109,12 +1079,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onArtifact(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:artifact:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:artifact:${ resourceId }`);
   }
 
   /**
@@ -1128,12 +1093,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSample(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:sample:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:sample:${ resourceId }`);
   }
 
   /**
@@ -1150,12 +1110,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:networkprofile:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:networkprofile:${ resourceId }`);
   }
 
   /**
@@ -1171,11 +1126,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeviceinstance(resourceId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}::deviceinstance:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }::deviceinstance:${ resourceId }`);
   }
 
   /**
@@ -1192,12 +1143,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSession(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:session:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:session:${ resourceId }`);
   }
 
   /**
@@ -1214,12 +1160,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevicepool(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:devicepool:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:devicepool:${ resourceId }`);
   }
 
   /**
@@ -1235,11 +1176,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevice(resourceId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}::device:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }::device:${ resourceId }`);
   }
 
   /**
@@ -1256,12 +1193,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInstanceprofile(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:instanceprofile:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:instanceprofile:${ resourceId }`);
   }
 
   /**
@@ -1278,12 +1210,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVpceconfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:vpceconfiguration:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:vpceconfiguration:${ resourceId }`);
   }
 
   /**
@@ -1300,12 +1227,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTestgridProject(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-project:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:testgrid-project:${ resourceId }`);
   }
 
   /**
@@ -1322,11 +1244,6 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTestgridSession(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-session:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:devicefarm:${ region || '*' }:${ account || '*' }:testgrid-session:${ resourceId }`);
   }
 }

@@ -375,12 +375,7 @@ export class Lookoutmetrics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAnomalyDetector(anomalyDetectorName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lookoutmetrics:${Region}:${Account}:AnomalyDetector:${AnomalyDetectorName}';
-    arn = arn.replace('${AnomalyDetectorName}', anomalyDetectorName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lookoutmetrics:${ region || '*' }:${ account || '*' }:AnomalyDetector:${ anomalyDetectorName }`);
   }
 
   /**
@@ -398,13 +393,7 @@ export class Lookoutmetrics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMetricSet(anomalyDetectorName: string, metricSetName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lookoutmetrics:${Region}:${Account}:MetricSet/${AnomalyDetectorName}/${MetricSetName}';
-    arn = arn.replace('${AnomalyDetectorName}', anomalyDetectorName);
-    arn = arn.replace('${MetricSetName}', metricSetName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lookoutmetrics:${ region || '*' }:${ account || '*' }:MetricSet/${ anomalyDetectorName }/${ metricSetName }`);
   }
 
   /**
@@ -421,11 +410,6 @@ export class Lookoutmetrics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAlert(alertName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lookoutmetrics:${Region}:${Account}:Alert:${AlertName}';
-    arn = arn.replace('${AlertName}', alertName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lookoutmetrics:${ region || '*' }:${ account || '*' }:Alert:${ alertName }`);
   }
 }

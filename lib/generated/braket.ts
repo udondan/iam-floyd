@@ -160,11 +160,6 @@ export class Braket extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQuantumTask(randomId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:braket:${Region}:${Account}:quantum-task/${RandomId}';
-    arn = arn.replace('${RandomId}', randomId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:braket:${ region || '*' }:${ account || '*' }:quantum-task/${ randomId }`);
   }
 }

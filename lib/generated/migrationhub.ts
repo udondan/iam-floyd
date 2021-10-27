@@ -278,12 +278,7 @@ export class Mgh extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onProgressUpdateStream(stream: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mgh:${Region}:${Account}:progressUpdateStream/${Stream}';
-    arn = arn.replace('${Stream}', stream);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mgh:${ region || '*' }:${ account || '*' }:progressUpdateStream/${ stream }`);
   }
 
   /**
@@ -298,12 +293,6 @@ export class Mgh extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onMigrationTask(stream: string, task: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mgh:${Region}:${Account}:progressUpdateStream/${Stream}/migrationTask/${Task}';
-    arn = arn.replace('${Stream}', stream);
-    arn = arn.replace('${Task}', task);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mgh:${ region || '*' }:${ account || '*' }:progressUpdateStream/${ stream }/migrationTask/${ task }`);
   }
 }

@@ -727,12 +727,7 @@ export class Auditmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAssessment(assessmentId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:auditmanager:${Region}:${Account}:assessment/${AssessmentId}';
-    arn = arn.replace('${AssessmentId}', assessmentId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:auditmanager:${ region || '*' }:${ account || '*' }:assessment/${ assessmentId }`);
   }
 
   /**
@@ -746,12 +741,7 @@ export class Auditmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAssessmentFramework(assessmentFrameworkId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:auditmanager:${Region}:${Account}:assessmentFramework/${AssessmentFrameworkId}';
-    arn = arn.replace('${AssessmentFrameworkId}', assessmentFrameworkId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:auditmanager:${ region || '*' }:${ account || '*' }:assessmentFramework/${ assessmentFrameworkId }`);
   }
 
   /**
@@ -766,13 +756,7 @@ export class Auditmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAssessmentControlSet(assessmentId: string, controlSetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:auditmanager:${Region}:${Account}:assessment/${AssessmentId}/ControlSet/${ControlSetId}';
-    arn = arn.replace('${AssessmentId}', assessmentId);
-    arn = arn.replace('${ControlSetId}', controlSetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:auditmanager:${ region || '*' }:${ account || '*' }:assessment/${ assessmentId }/ControlSet/${ controlSetId }`);
   }
 
   /**
@@ -789,11 +773,6 @@ export class Auditmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onControl(controlId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:auditmanager:${Region}:${Account}:control/${ControlId}';
-    arn = arn.replace('${ControlId}', controlId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:auditmanager:${ region || '*' }:${ account || '*' }:control/${ controlId }`);
   }
 }

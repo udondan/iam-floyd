@@ -911,13 +911,7 @@ export class Cloudformation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onChangeset(changeSetName: string, id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:changeSet/${ChangeSetName}/${Id}';
-    arn = arn.replace('${ChangeSetName}', changeSetName);
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudformation:${ region || '*' }:${ account || '*' }:changeSet/${ changeSetName }/${ id }`);
   }
 
   /**
@@ -935,13 +929,7 @@ export class Cloudformation extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStack(stackName: string, id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:stack/${StackName}/${Id}';
-    arn = arn.replace('${StackName}', stackName);
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudformation:${ region || '*' }:${ account || '*' }:stack/${ stackName }/${ id }`);
   }
 
   /**
@@ -959,13 +947,7 @@ export class Cloudformation extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStackset(stackSetName: string, id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:stackset/${StackSetName}:${Id}';
-    arn = arn.replace('${StackSetName}', stackSetName);
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudformation:${ region || '*' }:${ account || '*' }:stackset/${ stackSetName }:${ id }`);
   }
 
   /**
@@ -979,12 +961,7 @@ export class Cloudformation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onStacksetTarget(stackSetTarget: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:stackset-target/${StackSetTarget}';
-    arn = arn.replace('${StackSetTarget}', stackSetTarget);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudformation:${ region || '*' }:${ account || '*' }:stackset-target/${ stackSetTarget }`);
   }
 
   /**
@@ -998,12 +975,7 @@ export class Cloudformation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onType(type: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:type/resource/${Type}';
-    arn = arn.replace('${Type}', type);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudformation:${ region || '*' }:${ account || '*' }:type/resource/${ type }`);
   }
 
   /**

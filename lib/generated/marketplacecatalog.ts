@@ -155,14 +155,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onEntity(catalog: string, entityType: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:aws-marketplace:${Region}:${Account}:${Catalog}/${EntityType}/${ResourceId}';
-    arn = arn.replace('${Catalog}', catalog);
-    arn = arn.replace('${EntityType}', entityType);
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:aws-marketplace:${ region || '*' }:${ account || '*' }:${ catalog }/${ entityType }/${ resourceId }`);
   }
 
   /**
@@ -177,13 +170,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onChangeSet(catalog: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:aws-marketplace:${Region}:${Account}:${Catalog}/ChangeSet/${ResourceId}';
-    arn = arn.replace('${Catalog}', catalog);
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:aws-marketplace:${ region || '*' }:${ account || '*' }:${ catalog }/ChangeSet/${ resourceId }`);
   }
 
   /**

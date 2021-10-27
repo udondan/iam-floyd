@@ -478,12 +478,7 @@ export class Athena extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatacatalog(dataCatalogName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:athena:${Region}:${Account}:datacatalog/${DataCatalogName}';
-    arn = arn.replace('${DataCatalogName}', dataCatalogName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:athena:${ region || '*' }:${ account || '*' }:datacatalog/${ dataCatalogName }`);
   }
 
   /**
@@ -500,11 +495,6 @@ export class Athena extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkgroup(workGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:athena:${Region}:${Account}:workgroup/${WorkGroupName}';
-    arn = arn.replace('${WorkGroupName}', workGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:athena:${ region || '*' }:${ account || '*' }:workgroup/${ workGroupName }`);
   }
 }

@@ -402,12 +402,7 @@ export class Mediaconvert extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:jobs/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediaconvert:${ region || '*' }:${ account || '*' }:jobs/${ jobId }`);
   }
 
   /**
@@ -424,12 +419,7 @@ export class Mediaconvert extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQueue(queueName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:queues/${QueueName}';
-    arn = arn.replace('${QueueName}', queueName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediaconvert:${ region || '*' }:${ account || '*' }:queues/${ queueName }`);
   }
 
   /**
@@ -446,12 +436,7 @@ export class Mediaconvert extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPreset(presetName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:presets/${PresetName}';
-    arn = arn.replace('${PresetName}', presetName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediaconvert:${ region || '*' }:${ account || '*' }:presets/${ presetName }`);
   }
 
   /**
@@ -468,12 +453,7 @@ export class Mediaconvert extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobTemplate(jobTemplateName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:jobTemplates/${JobTemplateName}';
-    arn = arn.replace('${JobTemplateName}', jobTemplateName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediaconvert:${ region || '*' }:${ account || '*' }:jobTemplates/${ jobTemplateName }`);
   }
 
   /**
@@ -487,11 +467,6 @@ export class Mediaconvert extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCertificateAssociation(certificateArn: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:certificates/${CertificateArn}';
-    arn = arn.replace('${CertificateArn}', certificateArn);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediaconvert:${ region || '*' }:${ account || '*' }:certificates/${ certificateArn }`);
   }
 }

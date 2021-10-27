@@ -518,12 +518,7 @@ export class Iotevents extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDetectorModel(detectorModelName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotevents:${Region}:${Account}:detectorModel/${DetectorModelName}';
-    arn = arn.replace('${DetectorModelName}', detectorModelName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotevents:${ region || '*' }:${ account || '*' }:detectorModel/${ detectorModelName }`);
   }
 
   /**
@@ -540,12 +535,7 @@ export class Iotevents extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAlarmModel(alarmModelName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotevents:${Region}:${Account}:alarmModel/${AlarmModelName}';
-    arn = arn.replace('${AlarmModelName}', alarmModelName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotevents:${ region || '*' }:${ account || '*' }:alarmModel/${ alarmModelName }`);
   }
 
   /**
@@ -562,12 +552,7 @@ export class Iotevents extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInput(inputName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotevents:${Region}:${Account}:input/${InputName}';
-    arn = arn.replace('${InputName}', inputName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotevents:${ region || '*' }:${ account || '*' }:input/${ inputName }`);
   }
 
   /**

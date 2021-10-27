@@ -842,12 +842,7 @@ export class Panorama extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevice(deviceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:panorama:${Region}:${Account}:device/${DeviceId}';
-    arn = arn.replace('${DeviceId}', deviceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:panorama:${ region || '*' }:${ account || '*' }:device/${ deviceId }`);
   }
 
   /**
@@ -864,12 +859,7 @@ export class Panorama extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPackage(packageId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:panorama:${Region}:${Account}:package/${PackageId}';
-    arn = arn.replace('${PackageId}', packageId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:panorama:${ region || '*' }:${ account || '*' }:package/${ packageId }`);
   }
 
   /**
@@ -886,12 +876,7 @@ export class Panorama extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplicationInstance(applicationInstanceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:panorama:${Region}:${Account}:applicationInstance/${ApplicationInstanceId}';
-    arn = arn.replace('${ApplicationInstanceId}', applicationInstanceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:panorama:${ region || '*' }:${ account || '*' }:applicationInstance/${ applicationInstanceId }`);
   }
 
   /**
@@ -909,13 +894,7 @@ export class Panorama extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataSource(deviceId: string, dataSourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:panorama:${Region}:${Account}:dataSource/${DeviceId}/${DataSourceName}';
-    arn = arn.replace('${DeviceId}', deviceId);
-    arn = arn.replace('${DataSourceName}', dataSourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:panorama:${ region || '*' }:${ account || '*' }:dataSource/${ deviceId }/${ dataSourceName }`);
   }
 
   /**
@@ -932,12 +911,7 @@ export class Panorama extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModel(modelName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:panorama:${Region}:${Account}:model/${ModelName}';
-    arn = arn.replace('${ModelName}', modelName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:panorama:${ region || '*' }:${ account || '*' }:model/${ modelName }`);
   }
 
   /**
@@ -954,12 +928,7 @@ export class Panorama extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApp(appName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:panorama:${Region}:${Account}:app/${AppName}';
-    arn = arn.replace('${AppName}', appName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:panorama:${ region || '*' }:${ account || '*' }:app/${ appName }`);
   }
 
   /**
@@ -974,12 +943,6 @@ export class Panorama extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAppVersion(appName: string, appVersion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:panorama:${Region}:${Account}:app/${AppName}:${AppVersion}';
-    arn = arn.replace('${AppName}', appName);
-    arn = arn.replace('${AppVersion}', appVersion);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:panorama:${ region || '*' }:${ account || '*' }:app/${ appName }:${ appVersion }`);
   }
 }

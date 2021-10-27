@@ -328,6 +328,7 @@ export class Cloudwatch extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifRequestInsightRuleLogGroups()
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutInsightRule.html
    */
@@ -499,12 +500,7 @@ export class Cloudwatch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAlarm(alarmName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudwatch:${Region}:${Account}:alarm:${AlarmName}';
-    arn = arn.replace('${AlarmName}', alarmName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudwatch:${ region || '*' }:${ account || '*' }:alarm:${ alarmName }`);
   }
 
   /**
@@ -517,11 +513,7 @@ export class Cloudwatch extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDashboard(dashboardName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudwatch::${Account}:dashboard/${DashboardName}';
-    arn = arn.replace('${DashboardName}', dashboardName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudwatch::${ account || '*' }:dashboard/${ dashboardName }`);
   }
 
   /**
@@ -538,12 +530,7 @@ export class Cloudwatch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInsightRule(insightRuleName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudwatch:${Region}:${Account}:insight-rule/${InsightRuleName}';
-    arn = arn.replace('${InsightRuleName}', insightRuleName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudwatch:${ region || '*' }:${ account || '*' }:insight-rule/${ insightRuleName }`);
   }
 
   /**
@@ -560,12 +547,7 @@ export class Cloudwatch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMetricStream(metricStreamName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudwatch:${Region}:${Account}:metric-stream/${MetricStreamName}';
-    arn = arn.replace('${MetricStreamName}', metricStreamName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudwatch:${ region || '*' }:${ account || '*' }:metric-stream/${ metricStreamName }`);
   }
 
   /**
@@ -597,5 +579,20 @@ export class Cloudwatch extends PolicyStatement {
    */
   public ifNamespace(value: string | string[], operator?: Operator | string) {
     return this.if(`namespace`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the Log Groups specified in an Insight Rule.
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-contributor.html
+   *
+   * Applies to actions:
+   * - .toPutInsightRule()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestInsightRuleLogGroups(value: string | string[], operator?: Operator | string) {
+    return this.if(`requestInsightRuleLogGroups`, value, operator || 'StringLike');
   }
 }

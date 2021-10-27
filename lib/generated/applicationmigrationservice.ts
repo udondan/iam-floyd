@@ -770,12 +770,7 @@ export class Mgn extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobResource(jobID: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mgn:${Region}:${Account}:job/${JobID}';
-    arn = arn.replace('${JobID}', jobID);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mgn:${ region || '*' }:${ account || '*' }:job/${ jobID }`);
   }
 
   /**
@@ -792,12 +787,7 @@ export class Mgn extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReplicationConfigurationTemplateResource(replicationConfigurationTemplateID: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mgn:${Region}:${Account}:replication-configuration-template/${ReplicationConfigurationTemplateID}';
-    arn = arn.replace('${ReplicationConfigurationTemplateID}', replicationConfigurationTemplateID);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mgn:${ region || '*' }:${ account || '*' }:replication-configuration-template/${ replicationConfigurationTemplateID }`);
   }
 
   /**
@@ -814,11 +804,6 @@ export class Mgn extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSourceServerResource(sourceServerID: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mgn:${Region}:${Account}:source-server/${SourceServerID}';
-    arn = arn.replace('${SourceServerID}', sourceServerID);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mgn:${ region || '*' }:${ account || '*' }:source-server/${ sourceServerID }`);
   }
 }

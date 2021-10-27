@@ -1864,11 +1864,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCatalog(account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:catalog';
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:catalog`);
   }
 
   /**
@@ -1882,12 +1878,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDatabase(databaseName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:database/${DatabaseName}';
-    arn = arn.replace('${DatabaseName}', databaseName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:database/${ databaseName }`);
   }
 
   /**
@@ -1902,13 +1893,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTable(databaseName: string, tableName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:table/${DatabaseName}/${TableName}';
-    arn = arn.replace('${DatabaseName}', databaseName);
-    arn = arn.replace('${TableName}', tableName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:table/${ databaseName }/${ tableName }`);
   }
 
   /**
@@ -1924,14 +1909,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTableversion(databaseName: string, tableName: string, tableVersionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:tableVersion/${DatabaseName}/${TableName}/${TableVersionName}';
-    arn = arn.replace('${DatabaseName}', databaseName);
-    arn = arn.replace('${TableName}', tableName);
-    arn = arn.replace('${TableVersionName}', tableVersionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:tableVersion/${ databaseName }/${ tableName }/${ tableVersionName }`);
   }
 
   /**
@@ -1945,12 +1923,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onConnection(connectionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:connection/${ConnectionName}';
-    arn = arn.replace('${ConnectionName}', connectionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:connection/${ connectionName }`);
   }
 
   /**
@@ -1965,13 +1938,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onUserdefinedfunction(databaseName: string, userDefinedFunctionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:userDefinedFunction/${DatabaseName}/${UserDefinedFunctionName}';
-    arn = arn.replace('${DatabaseName}', databaseName);
-    arn = arn.replace('${UserDefinedFunctionName}', userDefinedFunctionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:userDefinedFunction/${ databaseName }/${ userDefinedFunctionName }`);
   }
 
   /**
@@ -1988,12 +1955,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevendpoint(devEndpointName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:devEndpoint/${DevEndpointName}';
-    arn = arn.replace('${DevEndpointName}', devEndpointName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:devEndpoint/${ devEndpointName }`);
   }
 
   /**
@@ -2010,12 +1972,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(jobName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:job/${JobName}';
-    arn = arn.replace('${JobName}', jobName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:job/${ jobName }`);
   }
 
   /**
@@ -2032,12 +1989,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTrigger(triggerName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:trigger/${TriggerName}';
-    arn = arn.replace('${TriggerName}', triggerName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:trigger/${ triggerName }`);
   }
 
   /**
@@ -2054,12 +2006,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCrawler(crawlerName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:crawler/${CrawlerName}';
-    arn = arn.replace('${CrawlerName}', crawlerName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:crawler/${ crawlerName }`);
   }
 
   /**
@@ -2076,12 +2023,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkflow(workflowName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:workflow/${WorkflowName}';
-    arn = arn.replace('${WorkflowName}', workflowName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:workflow/${ workflowName }`);
   }
 
   /**
@@ -2098,12 +2040,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMlTransform(transformId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:mlTransform/${TransformId}';
-    arn = arn.replace('${TransformId}', transformId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:mlTransform/${ transformId }`);
   }
 
   /**
@@ -2120,12 +2057,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRegistry(registryName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:registry/${RegistryName}';
-    arn = arn.replace('${RegistryName}', registryName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:registry/${ registryName }`);
   }
 
   /**
@@ -2142,12 +2074,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSchema(schemaName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:schema/${SchemaName}';
-    arn = arn.replace('${SchemaName}', schemaName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:schema/${ schemaName }`);
   }
 
   /**

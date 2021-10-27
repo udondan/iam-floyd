@@ -195,13 +195,7 @@ export class Kafkaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onConnector(connectorName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kafkaconnect:${Region}:${Account}:connector/${ConnectorName}/${UUID}';
-    arn = arn.replace('${ConnectorName}', connectorName);
-    arn = arn.replace('${UUID}', uUID);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kafkaconnect:${ region || '*' }:${ account || '*' }:connector/${ connectorName }/${ uUID }`);
   }
 
   /**
@@ -216,13 +210,7 @@ export class Kafkaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCustomPlugin(customPluginName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kafkaconnect:${Region}:${Account}:custom-plugin/${CustomPluginName}/${UUID}';
-    arn = arn.replace('${CustomPluginName}', customPluginName);
-    arn = arn.replace('${UUID}', uUID);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kafkaconnect:${ region || '*' }:${ account || '*' }:custom-plugin/${ customPluginName }/${ uUID }`);
   }
 
   /**
@@ -237,12 +225,6 @@ export class Kafkaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onWorkerConfiguration(workerConfigurationName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kafkaconnect:${Region}:${Account}:worker-configuration/${WorkerConfigurationName}/${UUID}';
-    arn = arn.replace('${WorkerConfigurationName}', workerConfigurationName);
-    arn = arn.replace('${UUID}', uUID);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kafkaconnect:${ region || '*' }:${ account || '*' }:worker-configuration/${ workerConfigurationName }/${ uUID }`);
   }
 }

@@ -636,12 +636,7 @@ export class SesPinpoint extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}';
-    arn = arn.replace('${ConfigurationSetName}', configurationSetName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:configuration-set/${ configurationSetName }`);
   }
 
   /**
@@ -658,12 +653,7 @@ export class SesPinpoint extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDedicatedIpPool(dedicatedIPPool: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:dedicated-ip-pool/${DedicatedIPPool}';
-    arn = arn.replace('${DedicatedIPPool}', dedicatedIPPool);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:dedicated-ip-pool/${ dedicatedIPPool }`);
   }
 
   /**
@@ -680,12 +670,7 @@ export class SesPinpoint extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeliverabilityTestReport(reportId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:deliverability-test-report/${ReportId}';
-    arn = arn.replace('${ReportId}', reportId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:deliverability-test-report/${ reportId }`);
   }
 
   /**
@@ -702,12 +687,7 @@ export class SesPinpoint extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ses:${Region}:${Account}:identity/${IdentityName}';
-    arn = arn.replace('${IdentityName}', identityName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ses:${ region || '*' }:${ account || '*' }:identity/${ identityName }`);
   }
 
   /**

@@ -798,12 +798,7 @@ export class Directconnect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDxcon(connectionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:directconnect:${Region}:${Account}:dxcon/${ConnectionId}';
-    arn = arn.replace('${ConnectionId}', connectionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:directconnect:${ region || '*' }:${ account || '*' }:dxcon/${ connectionId }`);
   }
 
   /**
@@ -820,12 +815,7 @@ export class Directconnect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDxlag(lagId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:directconnect:${Region}:${Account}:dxlag/${LagId}';
-    arn = arn.replace('${LagId}', lagId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:directconnect:${ region || '*' }:${ account || '*' }:dxlag/${ lagId }`);
   }
 
   /**
@@ -842,12 +832,7 @@ export class Directconnect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDxvif(virtualInterfaceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:directconnect:${Region}:${Account}:dxvif/${VirtualInterfaceId}';
-    arn = arn.replace('${VirtualInterfaceId}', virtualInterfaceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:directconnect:${ region || '*' }:${ account || '*' }:dxvif/${ virtualInterfaceId }`);
   }
 
   /**
@@ -860,10 +845,6 @@ export class Directconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDxGateway(directConnectGatewayId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:directconnect::${Account}:dx-gateway/${DirectConnectGatewayId}';
-    arn = arn.replace('${DirectConnectGatewayId}', directConnectGatewayId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:directconnect::${ account || '*' }:dx-gateway/${ directConnectGatewayId }`);
   }
 }

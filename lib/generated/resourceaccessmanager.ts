@@ -392,12 +392,7 @@ export class Ram extends PolicyStatement {
    * - .ifResourceShareName()
    */
   public onResourceShare(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ram:${Region}:${Account}:resource-share/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ram:${ region || '*' }:${ account || '*' }:resource-share/${ resourcePath }`);
   }
 
   /**
@@ -414,12 +409,7 @@ export class Ram extends PolicyStatement {
    * - .ifShareOwnerAccountId()
    */
   public onResourceShareInvitation(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ram:${Region}:${Account}:resource-share-invitation/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ram:${ region || '*' }:${ account || '*' }:resource-share-invitation/${ resourcePath }`);
   }
 
   /**
@@ -436,11 +426,7 @@ export class Ram extends PolicyStatement {
    * - .ifPermissionResourceType()
    */
   public onPermission(resourcePath: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ram::${Account}:permission/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ram::${ account || '*' }:permission/${ resourcePath }`);
   }
 
   /**

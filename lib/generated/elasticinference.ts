@@ -108,11 +108,6 @@ export class ElasticInference extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAccelerator(acceleratorId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elastic-inference:${Region}:${Account}:elastic-inference-accelerator/${AcceleratorId}';
-    arn = arn.replace('${AcceleratorId}', acceleratorId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elastic-inference:${ region || '*' }:${ account || '*' }:elastic-inference-accelerator/${ acceleratorId }`);
   }
 }

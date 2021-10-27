@@ -1164,13 +1164,7 @@ export class Storagegateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDevice(gatewayId: string, vtldevice: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/device/${Vtldevice}';
-    arn = arn.replace('${GatewayId}', gatewayId);
-    arn = arn.replace('${Vtldevice}', vtldevice);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }/device/${ vtldevice }`);
   }
 
   /**
@@ -1187,12 +1181,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFsAssociation(fsaId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:fs-association/${FsaId}';
-    arn = arn.replace('${FsaId}', fsaId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:storagegateway:${ region || '*' }:${ account || '*' }:fs-association/${ fsaId }`);
   }
 
   /**
@@ -1209,12 +1198,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}';
-    arn = arn.replace('${GatewayId}', gatewayId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }`);
   }
 
   /**
@@ -1231,12 +1215,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onShare(shareId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:share/${ShareId}';
-    arn = arn.replace('${ShareId}', shareId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:storagegateway:${ region || '*' }:${ account || '*' }:share/${ shareId }`);
   }
 
   /**
@@ -1253,12 +1232,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTape(tapeBarcode: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:tape/${TapeBarcode}';
-    arn = arn.replace('${TapeBarcode}', tapeBarcode);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:storagegateway:${ region || '*' }:${ account || '*' }:tape/${ tapeBarcode }`);
   }
 
   /**
@@ -1275,12 +1249,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTapepool(poolId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:tapepool/${PoolId}';
-    arn = arn.replace('${PoolId}', poolId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:storagegateway:${ region || '*' }:${ account || '*' }:tapepool/${ poolId }`);
   }
 
   /**
@@ -1295,13 +1264,7 @@ export class Storagegateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTarget(gatewayId: string, iscsiTarget: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/target/${IscsiTarget}';
-    arn = arn.replace('${GatewayId}', gatewayId);
-    arn = arn.replace('${IscsiTarget}', iscsiTarget);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }/target/${ iscsiTarget }`);
   }
 
   /**
@@ -1319,12 +1282,6 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVolume(gatewayId: string, volumeId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/volume/${VolumeId}';
-    arn = arn.replace('${GatewayId}', gatewayId);
-    arn = arn.replace('${VolumeId}', volumeId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:storagegateway:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }/volume/${ volumeId }`);
   }
 }

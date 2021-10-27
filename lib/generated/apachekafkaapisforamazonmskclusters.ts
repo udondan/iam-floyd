@@ -337,13 +337,7 @@ export class KafkaCluster extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, clusterUuid: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kafka:${Region}:${Account}:cluster/${ClusterName}/${ClusterUuid}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${ClusterUuid}', clusterUuid);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }/${ clusterUuid }`);
   }
 
   /**
@@ -359,14 +353,7 @@ export class KafkaCluster extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTopic(clusterName: string, clusterUuid: string, topicName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kafka:${Region}:${Account}:topic/${ClusterName}/${ClusterUuid}/${TopicName}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${ClusterUuid}', clusterUuid);
-    arn = arn.replace('${TopicName}', topicName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:topic/${ clusterName }/${ clusterUuid }/${ topicName }`);
   }
 
   /**
@@ -382,14 +369,7 @@ export class KafkaCluster extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onGroup(clusterName: string, clusterUuid: string, groupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kafka:${Region}:${Account}:group/${ClusterName}/${ClusterUuid}/${GroupName}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${ClusterUuid}', clusterUuid);
-    arn = arn.replace('${GroupName}', groupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:group/${ clusterName }/${ clusterUuid }/${ groupName }`);
   }
 
   /**
@@ -405,13 +385,6 @@ export class KafkaCluster extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTransactionalId(clusterName: string, clusterUuid: string, transactionalId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kafka:${Region}:${Account}:transactional-id/${ClusterName}/${ClusterUuid}/${TransactionalId}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${ClusterUuid}', clusterUuid);
-    arn = arn.replace('${TransactionalId}', transactionalId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:transactional-id/${ clusterName }/${ clusterUuid }/${ transactionalId }`);
   }
 }

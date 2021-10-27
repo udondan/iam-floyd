@@ -343,12 +343,7 @@ export class Appflow extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onConnectorprofile(profileName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appflow:${Region}:${Account}:connectorprofile/${ProfileName}';
-    arn = arn.replace('${ProfileName}', profileName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appflow:${ region || '*' }:${ account || '*' }:connectorprofile/${ profileName }`);
   }
 
   /**
@@ -365,11 +360,6 @@ export class Appflow extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFlow(flowName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appflow:${Region}:${Account}:flow/${FlowName}';
-    arn = arn.replace('${FlowName}', flowName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appflow:${ region || '*' }:${ account || '*' }:flow/${ flowName }`);
   }
 }

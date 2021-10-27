@@ -327,13 +327,7 @@ export class Lookoutequipment extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataset(datasetName: string, datasetId: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lookoutequipment:${Region}:${AccountId}:dataset/${DatasetName}/${DatasetId}';
-    arn = arn.replace('${DatasetName}', datasetName);
-    arn = arn.replace('${DatasetId}', datasetId);
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lookoutequipment:${ region || '*' }:${ accountId || '*' }:dataset/${ datasetName }/${ datasetId }`);
   }
 
   /**
@@ -351,13 +345,7 @@ export class Lookoutequipment extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModel(modelName: string, modelId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lookoutequipment:${Region}:${Account}:model/${ModelName}/${ModelId}';
-    arn = arn.replace('${ModelName}', modelName);
-    arn = arn.replace('${ModelId}', modelId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lookoutequipment:${ region || '*' }:${ account || '*' }:model/${ modelName }/${ modelId }`);
   }
 
   /**
@@ -375,12 +363,6 @@ export class Lookoutequipment extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInferenceScheduler(inferenceSchedulerName: string, inferenceSchedulerId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lookoutequipment:${Region}:${Account}:inference-scheduler/${InferenceSchedulerName}/${InferenceSchedulerId}';
-    arn = arn.replace('${InferenceSchedulerName}', inferenceSchedulerName);
-    arn = arn.replace('${InferenceSchedulerId}', inferenceSchedulerId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lookoutequipment:${ region || '*' }:${ account || '*' }:inference-scheduler/${ inferenceSchedulerName }/${ inferenceSchedulerId }`);
   }
 }

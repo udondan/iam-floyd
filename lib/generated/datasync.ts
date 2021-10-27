@@ -502,12 +502,7 @@ export class Datasync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAgent(agentId: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:agent/${AgentId}';
-    arn = arn.replace('${AgentId}', agentId);
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:datasync:${ region || '*' }:${ accountId || '*' }:agent/${ agentId }`);
   }
 
   /**
@@ -524,12 +519,7 @@ export class Datasync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLocation(locationId: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:location/${LocationId}';
-    arn = arn.replace('${LocationId}', locationId);
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:datasync:${ region || '*' }:${ accountId || '*' }:location/${ locationId }`);
   }
 
   /**
@@ -546,12 +536,7 @@ export class Datasync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTask(taskId: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:task/${TaskId}';
-    arn = arn.replace('${TaskId}', taskId);
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:datasync:${ region || '*' }:${ accountId || '*' }:task/${ taskId }`);
   }
 
   /**
@@ -566,12 +551,6 @@ export class Datasync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTaskexecution(taskId: string, executionId: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:task/${TaskId}/execution/${ExecutionId}';
-    arn = arn.replace('${TaskId}', taskId);
-    arn = arn.replace('${ExecutionId}', executionId);
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:datasync:${ region || '*' }:${ accountId || '*' }:task/${ taskId }/execution/${ executionId }`);
   }
 }

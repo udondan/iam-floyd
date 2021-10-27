@@ -635,12 +635,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGeofenceCollection(geofenceCollectionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:geo:${Region}:${Account}:geofence-collection/${GeofenceCollectionName}';
-    arn = arn.replace('${GeofenceCollectionName}', geofenceCollectionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:geo:${ region || '*' }:${ account || '*' }:geofence-collection/${ geofenceCollectionName }`);
   }
 
   /**
@@ -657,12 +652,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMap(mapName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:geo:${Region}:${Account}:map/${MapName}';
-    arn = arn.replace('${MapName}', mapName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:geo:${ region || '*' }:${ account || '*' }:map/${ mapName }`);
   }
 
   /**
@@ -679,12 +669,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPlaceIndex(indexName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:geo:${Region}:${Account}:place-index/${IndexName}';
-    arn = arn.replace('${IndexName}', indexName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:geo:${ region || '*' }:${ account || '*' }:place-index/${ indexName }`);
   }
 
   /**
@@ -701,12 +686,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRouteCalculator(calculatorName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:geo:${Region}:${Account}:route-calculator/${CalculatorName}';
-    arn = arn.replace('${CalculatorName}', calculatorName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:geo:${ region || '*' }:${ account || '*' }:route-calculator/${ calculatorName }`);
   }
 
   /**
@@ -723,11 +703,6 @@ export class Geo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTracker(trackerName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:geo:${Region}:${Account}:tracker/${TrackerName}';
-    arn = arn.replace('${TrackerName}', trackerName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:geo:${ region || '*' }:${ account || '*' }:tracker/${ trackerName }`);
   }
 }

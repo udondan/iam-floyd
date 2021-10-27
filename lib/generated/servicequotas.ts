@@ -273,13 +273,7 @@ export class Servicequotas extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onQuota(serviceCode: string, quotaCode: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:servicequotas:${Region}:${Account}:${ServiceCode}/${QuotaCode}';
-    arn = arn.replace('${ServiceCode}', serviceCode);
-    arn = arn.replace('${QuotaCode}', quotaCode);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:servicequotas:${ region || '*' }:${ account || '*' }:${ serviceCode }/${ quotaCode }`);
   }
 
   /**

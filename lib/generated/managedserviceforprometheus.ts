@@ -542,12 +542,7 @@ export class Aps extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onWorkspace(workspaceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:aps:${Region}:${Account}:workspace/${WorkspaceId}';
-    arn = arn.replace('${WorkspaceId}', workspaceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:aps:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }`);
   }
 
   /**
@@ -567,12 +562,6 @@ export class Aps extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onRulegroupsnamespace(workspaceId: string, namespace: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:aps:${Region}:${Account}:rulegroupsnamespace/${WorkspaceId}/${Namespace}';
-    arn = arn.replace('${WorkspaceId}', workspaceId);
-    arn = arn.replace('${Namespace}', namespace);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:aps:${ region || '*' }:${ account || '*' }:rulegroupsnamespace/${ workspaceId }/${ namespace }`);
   }
 }

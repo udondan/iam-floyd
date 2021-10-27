@@ -720,11 +720,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onEventSource(eventSourceName: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:events:${Region}::event-source/${EventSourceName}';
-    arn = arn.replace('${EventSourceName}', eventSourceName);
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:events:${ region || '*' }::event-source/${ eventSourceName }`);
   }
 
   /**
@@ -741,12 +737,7 @@ export class Events extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventBus(eventBusName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:events:${Region}:${Account}:event-bus/${EventBusName}';
-    arn = arn.replace('${EventBusName}', eventBusName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:events:${ region || '*' }:${ account || '*' }:event-bus/${ eventBusName }`);
   }
 
   /**
@@ -763,12 +754,7 @@ export class Events extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:events:${Region}:${Account}:rule/${RuleName}';
-    arn = arn.replace('${RuleName}', ruleName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:events:${ region || '*' }:${ account || '*' }:rule/${ ruleName }`);
   }
 
   /**
@@ -782,12 +768,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onArchive(archiveName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:events:${Region}:${Account}:archive/${ArchiveName}';
-    arn = arn.replace('${ArchiveName}', archiveName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:events:${ region || '*' }:${ account || '*' }:archive/${ archiveName }`);
   }
 
   /**
@@ -801,12 +782,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onReplay(replayName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:events:${Region}:${Account}:replay/${ReplayName}';
-    arn = arn.replace('${ReplayName}', replayName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:events:${ region || '*' }:${ account || '*' }:replay/${ replayName }`);
   }
 
   /**
@@ -820,12 +796,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onConnection(connectionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:events:${Region}:${Account}:connection/${ConnectionName}';
-    arn = arn.replace('${ConnectionName}', connectionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:events:${ region || '*' }:${ account || '*' }:connection/${ connectionName }`);
   }
 
   /**
@@ -839,12 +810,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onApiDestination(apiDestinationName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:events:${Region}:${Account}:api-destination/${ApiDestinationName}';
-    arn = arn.replace('${ApiDestinationName}', apiDestinationName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:events:${ region || '*' }:${ account || '*' }:api-destination/${ apiDestinationName }`);
   }
 
   /**

@@ -314,11 +314,6 @@ export class Mobilehub extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onProject(projectId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mobilehub:${Region}:${Account}:project/${ProjectId}';
-    arn = arn.replace('${ProjectId}', projectId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mobilehub:${ region || '*' }:${ account || '*' }:project/${ projectId }`);
   }
 }

@@ -376,12 +376,7 @@ export class Machinelearning extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onBatchprediction(batchPredictionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:machinelearning:${Region}:${Account}:batchprediction/${BatchPredictionId}';
-    arn = arn.replace('${BatchPredictionId}', batchPredictionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:machinelearning:${ region || '*' }:${ account || '*' }:batchprediction/${ batchPredictionId }`);
   }
 
   /**
@@ -395,12 +390,7 @@ export class Machinelearning extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDatasource(datasourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:machinelearning:${Region}:${Account}:datasource/${DatasourceId}';
-    arn = arn.replace('${DatasourceId}', datasourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:machinelearning:${ region || '*' }:${ account || '*' }:datasource/${ datasourceId }`);
   }
 
   /**
@@ -414,12 +404,7 @@ export class Machinelearning extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onEvaluation(evaluationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:machinelearning:${Region}:${Account}:evaluation/${EvaluationId}';
-    arn = arn.replace('${EvaluationId}', evaluationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:machinelearning:${ region || '*' }:${ account || '*' }:evaluation/${ evaluationId }`);
   }
 
   /**
@@ -433,11 +418,6 @@ export class Machinelearning extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onMlmodel(mlModelId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:machinelearning:${Region}:${Account}:mlmodel/${MlModelId}';
-    arn = arn.replace('${MlModelId}', mlModelId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:machinelearning:${ region || '*' }:${ account || '*' }:mlmodel/${ mlModelId }`);
   }
 }

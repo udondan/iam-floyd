@@ -1192,12 +1192,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onProfile(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:profile/${Resource_id}';
-    arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:profile/${ resourceId }`);
   }
 
   /**
@@ -1214,12 +1209,7 @@ export class A4b extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRoom(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:room/${Resource_id}';
-    arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:room/${ resourceId }`);
   }
 
   /**
@@ -1236,12 +1226,7 @@ export class A4b extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevice(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:device/${Resource_id}';
-    arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:device/${ resourceId }`);
   }
 
   /**
@@ -1255,12 +1240,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSkillgroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:skill-group/${Resource_id}';
-    arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:skill-group/${ resourceId }`);
   }
 
   /**
@@ -1277,12 +1257,7 @@ export class A4b extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:user/${Resource_id}';
-    arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:user/${ resourceId }`);
   }
 
   /**
@@ -1296,12 +1271,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAddressbook(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:address-book/${Resource_id}';
-    arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:address-book/${ resourceId }`);
   }
 
   /**
@@ -1315,12 +1285,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onConferenceprovider(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:conference-provider/${Resource_id}';
-    arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:conference-provider/${ resourceId }`);
   }
 
   /**
@@ -1334,12 +1299,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onContact(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:contact/${Resource_id}';
-    arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:contact/${ resourceId }`);
   }
 
   /**
@@ -1353,12 +1313,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSchedule(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:schedule/${Resource_id}';
-    arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:schedule/${ resourceId }`);
   }
 
   /**
@@ -1372,12 +1327,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:network-profile/${Resource_id}';
-    arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:network-profile/${ resourceId }`);
   }
 
   /**
@@ -1391,12 +1341,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onGateway(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:gateway/${Resource_id}';
-    arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:gateway/${ resourceId }`);
   }
 
   /**
@@ -1410,12 +1355,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onGatewaygroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:gateway-group/${Resource_id}';
-    arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:a4b:${ region || '*' }:${ account || '*' }:gateway-group/${ resourceId }`);
   }
 
   /**

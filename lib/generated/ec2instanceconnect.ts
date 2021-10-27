@@ -65,12 +65,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * - .ifEc2ResourceTag()
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
   }
 
   /**

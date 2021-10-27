@@ -161,11 +161,7 @@ export class Budgets extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onBudget(budgetName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:budgets::${Account}:budget/${BudgetName}';
-    arn = arn.replace('${BudgetName}', budgetName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:budgets::${ account || '*' }:budget/${ budgetName }`);
   }
 
   /**
@@ -179,11 +175,6 @@ export class Budgets extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onBudgetAction(budgetName: string, actionId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:budgets::${Account}:budget/${BudgetName}/action/${ActionId}';
-    arn = arn.replace('${BudgetName}', budgetName);
-    arn = arn.replace('${ActionId}', actionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:budgets::${ account || '*' }:budget/${ budgetName }/action/${ actionId }`);
   }
 }

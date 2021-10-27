@@ -71,12 +71,6 @@ export class Pi extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onMetricResource(serviceType: string, identifier: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:pi:${Region}:${Account}:metrics/${ServiceType}/${Identifier}';
-    arn = arn.replace('${ServiceType}', serviceType);
-    arn = arn.replace('${Identifier}', identifier);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:pi:${ region || '*' }:${ account || '*' }:metrics/${ serviceType }/${ identifier }`);
   }
 }

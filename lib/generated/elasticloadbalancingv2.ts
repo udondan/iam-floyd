@@ -486,14 +486,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerApp(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/app/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}';
-    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
-    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
-    arn = arn.replace('${ListenerId}', listenerId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener/app/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
   }
 
   /**
@@ -514,15 +507,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerRuleApp(loadBalancerName: string, loadBalancerId: string, listenerId: string, listenerRuleId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener-rule/app/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}/${ListenerRuleId}';
-    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
-    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
-    arn = arn.replace('${ListenerId}', listenerId);
-    arn = arn.replace('${ListenerRuleId}', listenerRuleId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener-rule/app/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
   }
 
   /**
@@ -542,14 +527,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerNet(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/net/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}';
-    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
-    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
-    arn = arn.replace('${ListenerId}', listenerId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
   }
 
   /**
@@ -570,15 +548,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerRuleNet(loadBalancerName: string, loadBalancerId: string, listenerId: string, listenerRuleId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener-rule/net/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}/${ListenerRuleId}';
-    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
-    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
-    arn = arn.replace('${ListenerId}', listenerId);
-    arn = arn.replace('${ListenerRuleId}', listenerRuleId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:listener-rule/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
   }
 
   /**
@@ -597,13 +567,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}';
-    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
-    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -622,13 +586,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLoadbalancerNet(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/net/${LoadBalancerName}/${LoadBalancerId}';
-    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
-    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/net/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -647,13 +605,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTargetgroup(targetGroupName: string, targetGroupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:targetgroup/${TargetGroupName}/${TargetGroupId}';
-    arn = arn.replace('${TargetGroupName}', targetGroupName);
-    arn = arn.replace('${TargetGroupId}', targetGroupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:targetgroup/${ targetGroupName }/${ targetGroupId }`);
   }
 
   /**

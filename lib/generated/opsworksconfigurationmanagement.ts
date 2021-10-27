@@ -266,12 +266,7 @@ export class OpsworksCm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onServer(serverName: string, uniqueId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:opsworks-cm::${Account}:server/${ServerName}/${UniqueId}';
-    arn = arn.replace('${ServerName}', serverName);
-    arn = arn.replace('${UniqueId}', uniqueId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:opsworks-cm::${ account || '*' }:server/${ serverName }/${ uniqueId }`);
   }
 
   /**
@@ -282,10 +277,6 @@ export class OpsworksCm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onBackup(serverName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:opsworks-cm::${Account}:backup/${ServerName}-{Date-and-Time-Stamp-of-Backup}';
-    arn = arn.replace('${ServerName}', serverName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:opsworks-cm::${ account || '*' }:backup/${ serverName }-{Date-and-Time-Stamp-of-Backup}`);
   }
 }

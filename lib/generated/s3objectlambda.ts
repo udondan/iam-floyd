@@ -491,12 +491,7 @@ export class S3ObjectLambda extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onObjectlambdaaccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3-object-lambda:${Region}:${Account}:accesspoint/${AccessPointName}';
-    arn = arn.replace('${AccessPointName}', accessPointName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:s3-object-lambda:${ region || '*' }:${ account || '*' }:accesspoint/${ accessPointName }`);
   }
 
   /**

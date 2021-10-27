@@ -948,12 +948,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCluster(clusterId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticmapreduce:${Region}:${Account}:cluster/${ClusterId}';
-    arn = arn.replace('${ClusterId}', clusterId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticmapreduce:${ region || '*' }:${ account || '*' }:cluster/${ clusterId }`);
   }
 
   /**
@@ -971,12 +966,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEditor(editorId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticmapreduce:${Region}:${Account}:editor/${EditorId}';
-    arn = arn.replace('${EditorId}', editorId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticmapreduce:${ region || '*' }:${ account || '*' }:editor/${ editorId }`);
   }
 
   /**
@@ -994,12 +984,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNotebookExecution(notebookExecutionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticmapreduce:${Region}:${Account}:notebook-execution/${NotebookExecutionId}';
-    arn = arn.replace('${NotebookExecutionId}', notebookExecutionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticmapreduce:${ region || '*' }:${ account || '*' }:notebook-execution/${ notebookExecutionId }`);
   }
 
   /**
@@ -1017,12 +1002,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onStudio(studioId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticmapreduce:${Region}:${Account}:studio/${StudioId}';
-    arn = arn.replace('${StudioId}', studioId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticmapreduce:${ region || '*' }:${ account || '*' }:studio/${ studioId }`);
   }
 
   /**

@@ -170,10 +170,6 @@ export class Savingsplans extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSavingsplan(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:savingsplans::${Account}:savingsplan/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:savingsplans::${ account || '*' }:savingsplan/${ resourceId }`);
   }
 }

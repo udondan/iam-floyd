@@ -671,12 +671,7 @@ export class Rekognition extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCollection(collectionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rekognition:${Region}:${Account}:collection/${CollectionId}';
-    arn = arn.replace('${CollectionId}', collectionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rekognition:${ region || '*' }:${ account || '*' }:collection/${ collectionId }`);
   }
 
   /**
@@ -688,12 +683,7 @@ export class Rekognition extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onStreamprocessor(streamprocessorId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rekognition:${Region}:${Account}:streamprocessor/${StreamprocessorId}';
-    arn = arn.replace('${StreamprocessorId}', streamprocessorId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rekognition:${ region || '*' }:${ account || '*' }:streamprocessor/${ streamprocessorId }`);
   }
 
   /**
@@ -706,13 +696,7 @@ export class Rekognition extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onProject(projectName: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rekognition:${Region}:${Account}:project/${ProjectName}/${CreationTimestamp}';
-    arn = arn.replace('${ProjectName}', projectName);
-    arn = arn.replace('${CreationTimestamp}', creationTimestamp);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/${ creationTimestamp }`);
   }
 
   /**
@@ -726,13 +710,6 @@ export class Rekognition extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onProjectversion(projectName: string, versionName: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rekognition:${Region}:${Account}:project/${ProjectName}/version/${VersionName}/${CreationTimestamp}';
-    arn = arn.replace('${ProjectName}', projectName);
-    arn = arn.replace('${VersionName}', versionName);
-    arn = arn.replace('${CreationTimestamp}', creationTimestamp);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/version/${ versionName }/${ creationTimestamp }`);
   }
 }

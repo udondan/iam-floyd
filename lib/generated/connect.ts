@@ -1885,12 +1885,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
   }
 
   /**
@@ -1905,13 +1900,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onContact(instanceId: string, contactId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/contact/${ContactId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${ContactId}', contactId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/contact/${ contactId }`);
   }
 
   /**
@@ -1929,13 +1918,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUser(instanceId: string, userId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/agent/${UserId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${UserId}', userId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/agent/${ userId }`);
   }
 
   /**
@@ -1953,13 +1936,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRoutingProfile(instanceId: string, routingProfileId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/routing-profile/${RoutingProfileId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${RoutingProfileId}', routingProfileId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/routing-profile/${ routingProfileId }`);
   }
 
   /**
@@ -1974,13 +1951,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSecurityProfile(instanceId: string, securityProfileId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/security-profile/${SecurityProfileId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${SecurityProfileId}', securityProfileId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/security-profile/${ securityProfileId }`);
   }
 
   /**
@@ -1995,13 +1966,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onHierarchyGroup(instanceId: string, hierarchyGroupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/agent-group/${HierarchyGroupId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${HierarchyGroupId}', hierarchyGroupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/agent-group/${ hierarchyGroupId }`);
   }
 
   /**
@@ -2019,13 +1984,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQueue(instanceId: string, queueId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/queue/${QueueId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${QueueId}', queueId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/queue/${ queueId }`);
   }
 
   /**
@@ -2043,13 +2002,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQuickConnect(instanceId: string, quickConnectId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/transfer-destination/${QuickConnectId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${QuickConnectId}', quickConnectId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/transfer-destination/${ quickConnectId }`);
   }
 
   /**
@@ -2067,13 +2020,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContactFlow(instanceId: string, contactFlowId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/contact-flow/${ContactFlowId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${ContactFlowId}', contactFlowId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/contact-flow/${ contactFlowId }`);
   }
 
   /**
@@ -2091,13 +2038,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHoursOfOperation(instanceId: string, hoursOfOperationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/operating-hours/${HoursOfOperationId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${HoursOfOperationId}', hoursOfOperationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/operating-hours/${ hoursOfOperationId }`);
   }
 
   /**
@@ -2115,13 +2056,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAgentStatus(instanceId: string, agentStatusId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/agent-status/${AgentStatusId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${AgentStatusId}', agentStatusId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/agent-status/${ agentStatusId }`);
   }
 
   /**
@@ -2136,13 +2071,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onPhoneNumber(instanceId: string, phoneNumberId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/phone-numbers/${PhoneNumberId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${PhoneNumberId}', phoneNumberId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/phone-numbers/${ phoneNumberId }`);
   }
 
   /**
@@ -2160,13 +2089,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIntegrationAssociation(instanceId: string, integrationAssociationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/integration-association/${IntegrationAssociationId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${IntegrationAssociationId}', integrationAssociationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/integration-association/${ integrationAssociationId }`);
   }
 
   /**
@@ -2184,13 +2107,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUseCase(instanceId: string, useCaseId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/use-case/${UseCaseId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${UseCaseId}', useCaseId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/use-case/${ useCaseId }`);
   }
 
   /**

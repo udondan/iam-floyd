@@ -1101,13 +1101,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAggregationAuthorization(aggregatorAccount: string, aggregatorRegion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:config:${Region}:${Account}:aggregation-authorization/${AggregatorAccount}/${AggregatorRegion}';
-    arn = arn.replace('${AggregatorAccount}', aggregatorAccount);
-    arn = arn.replace('${AggregatorRegion}', aggregatorRegion);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:aggregation-authorization/${ aggregatorAccount }/${ aggregatorRegion }`);
   }
 
   /**
@@ -1124,12 +1118,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigurationAggregator(aggregatorId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:config:${Region}:${Account}:config-aggregator/${AggregatorId}';
-    arn = arn.replace('${AggregatorId}', aggregatorId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:config-aggregator/${ aggregatorId }`);
   }
 
   /**
@@ -1146,12 +1135,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigRule(configRuleId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:config:${Region}:${Account}:config-rule/${ConfigRuleId}';
-    arn = arn.replace('${ConfigRuleId}', configRuleId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:config-rule/${ configRuleId }`);
   }
 
   /**
@@ -1169,13 +1153,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConformancePack(conformancePackName: string, conformancePackId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:config:${Region}:${Account}:conformance-pack/${ConformancePackName}/${ConformancePackId}';
-    arn = arn.replace('${ConformancePackName}', conformancePackName);
-    arn = arn.replace('${ConformancePackId}', conformancePackId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:conformance-pack/${ conformancePackName }/${ conformancePackId }`);
   }
 
   /**
@@ -1189,12 +1167,7 @@ export class Config extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onOrganizationConfigRule(organizationConfigRuleId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:config:${Region}:${Account}:organization-config-rule/${OrganizationConfigRuleId}';
-    arn = arn.replace('${OrganizationConfigRuleId}', organizationConfigRuleId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:organization-config-rule/${ organizationConfigRuleId }`);
   }
 
   /**
@@ -1208,12 +1181,7 @@ export class Config extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onOrganizationConformancePack(organizationConformancePackId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:config:${Region}:${Account}:organization-conformance-pack/${OrganizationConformancePackId}';
-    arn = arn.replace('${OrganizationConformancePackId}', organizationConformancePackId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:organization-conformance-pack/${ organizationConformancePackId }`);
   }
 
   /**
@@ -1227,12 +1195,7 @@ export class Config extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onRemediationConfiguration(remediationConfigurationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:config:${Region}:${Account}:remediation-configuration/${RemediationConfigurationId}';
-    arn = arn.replace('${RemediationConfigurationId}', remediationConfigurationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:remediation-configuration/${ remediationConfigurationId }`);
   }
 
   /**
@@ -1247,12 +1210,6 @@ export class Config extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onStoredQuery(storedQueryName: string, storedQueryId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:config:${Region}:${Account}:stored-query/${StoredQueryName}/${StoredQueryId}';
-    arn = arn.replace('${StoredQueryName}', storedQueryName);
-    arn = arn.replace('${StoredQueryId}', storedQueryId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:config:${ region || '*' }:${ account || '*' }:stored-query/${ storedQueryName }/${ storedQueryId }`);
   }
 }

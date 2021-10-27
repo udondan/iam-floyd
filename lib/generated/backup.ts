@@ -907,12 +907,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBackupVault(backupVaultName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:backup:${Region}:${Account}:backup-vault:${BackupVaultName}';
-    arn = arn.replace('${BackupVaultName}', backupVaultName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:backup:${ region || '*' }:${ account || '*' }:backup-vault:${ backupVaultName }`);
   }
 
   /**
@@ -929,12 +924,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBackupPlan(backupPlanId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:backup:${Region}:${Account}:backup-plan:${BackupPlanId}';
-    arn = arn.replace('${BackupPlanId}', backupPlanId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:backup:${ region || '*' }:${ account || '*' }:backup-plan:${ backupPlanId }`);
   }
 
   /**
@@ -951,12 +941,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecoveryPoint(recoveryPointId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:backup:${Region}:${Account}:recovery-point:${RecoveryPointId}';
-    arn = arn.replace('${RecoveryPointId}', recoveryPointId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:backup:${ region || '*' }:${ account || '*' }:recovery-point:${ recoveryPointId }`);
   }
 
   /**
@@ -974,13 +959,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFramework(frameworkName: string, frameworkId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:backup:${Region}:${Account}:framework:${FrameworkName}-${FrameworkId}';
-    arn = arn.replace('${FrameworkName}', frameworkName);
-    arn = arn.replace('${FrameworkId}', frameworkId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:backup:${ region || '*' }:${ account || '*' }:framework:${ frameworkName }-${ frameworkId }`);
   }
 
   /**
@@ -998,13 +977,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReportPlan(reportPlanName: string, reportPlanId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:backup:${Region}:${Account}:report-plan:${ReportPlanName}-${ReportPlanId}';
-    arn = arn.replace('${ReportPlanName}', reportPlanName);
-    arn = arn.replace('${ReportPlanId}', reportPlanId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:backup:${ region || '*' }:${ account || '*' }:report-plan:${ reportPlanName }-${ reportPlanId }`);
   }
 
   /**

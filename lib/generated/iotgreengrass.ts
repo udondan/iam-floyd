@@ -1201,12 +1201,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onConnectivityInfo(thingName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/things/${ThingName}/connectivityInfo';
-    arn = arn.replace('${ThingName}', thingName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/things/${ thingName }/connectivityInfo`);
   }
 
   /**
@@ -1221,13 +1216,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCertificateAuthority(groupId: string, certificateAuthorityId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/certificateauthorities/${CertificateAuthorityId}';
-    arn = arn.replace('${GroupId}', groupId);
-    arn = arn.replace('${CertificateAuthorityId}', certificateAuthorityId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/groups/${ groupId }/certificateauthorities/${ certificateAuthorityId }`);
   }
 
   /**
@@ -1242,13 +1231,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDeployment(groupId: string, deploymentId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/deployments/${DeploymentId}';
-    arn = arn.replace('${GroupId}', groupId);
-    arn = arn.replace('${DeploymentId}', deploymentId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/groups/${ groupId }/deployments/${ deploymentId }`);
   }
 
   /**
@@ -1265,12 +1248,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBulkDeployment(bulkDeploymentId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/bulk/deployments/${BulkDeploymentId}';
-    arn = arn.replace('${BulkDeploymentId}', bulkDeploymentId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/bulk/deployments/${ bulkDeploymentId }`);
   }
 
   /**
@@ -1287,12 +1265,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGroup(groupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}';
-    arn = arn.replace('${GroupId}', groupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/groups/${ groupId }`);
   }
 
   /**
@@ -1307,13 +1280,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onGroupVersion(groupId: string, versionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/versions/${VersionId}';
-    arn = arn.replace('${GroupId}', groupId);
-    arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/groups/${ groupId }/versions/${ versionId }`);
   }
 
   /**
@@ -1330,12 +1297,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCoreDefinition(coreDefinitionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/cores/${CoreDefinitionId}';
-    arn = arn.replace('${CoreDefinitionId}', coreDefinitionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/definition/cores/${ coreDefinitionId }`);
   }
 
   /**
@@ -1350,13 +1312,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCoreDefinitionVersion(coreDefinitionId: string, versionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/cores/${CoreDefinitionId}/versions/${VersionId}';
-    arn = arn.replace('${CoreDefinitionId}', coreDefinitionId);
-    arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/definition/cores/${ coreDefinitionId }/versions/${ versionId }`);
   }
 
   /**
@@ -1373,12 +1329,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeviceDefinition(deviceDefinitionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/devices/${DeviceDefinitionId}';
-    arn = arn.replace('${DeviceDefinitionId}', deviceDefinitionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/definition/devices/${ deviceDefinitionId }`);
   }
 
   /**
@@ -1393,13 +1344,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDeviceDefinitionVersion(deviceDefinitionId: string, versionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/devices/${DeviceDefinitionId}/versions/${VersionId}';
-    arn = arn.replace('${DeviceDefinitionId}', deviceDefinitionId);
-    arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/definition/devices/${ deviceDefinitionId }/versions/${ versionId }`);
   }
 
   /**
@@ -1416,12 +1361,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFunctionDefinition(functionDefinitionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/functions/${FunctionDefinitionId}';
-    arn = arn.replace('${FunctionDefinitionId}', functionDefinitionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/definition/functions/${ functionDefinitionId }`);
   }
 
   /**
@@ -1436,13 +1376,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onFunctionDefinitionVersion(functionDefinitionId: string, versionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/functions/${FunctionDefinitionId}/versions/${VersionId}';
-    arn = arn.replace('${FunctionDefinitionId}', functionDefinitionId);
-    arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/definition/functions/${ functionDefinitionId }/versions/${ versionId }`);
   }
 
   /**
@@ -1459,12 +1393,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSubscriptionDefinition(subscriptionDefinitionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/subscriptions/${SubscriptionDefinitionId}';
-    arn = arn.replace('${SubscriptionDefinitionId}', subscriptionDefinitionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/definition/subscriptions/${ subscriptionDefinitionId }`);
   }
 
   /**
@@ -1479,13 +1408,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSubscriptionDefinitionVersion(subscriptionDefinitionId: string, versionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/subscriptions/${SubscriptionDefinitionId}/versions/${VersionId}';
-    arn = arn.replace('${SubscriptionDefinitionId}', subscriptionDefinitionId);
-    arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/definition/subscriptions/${ subscriptionDefinitionId }/versions/${ versionId }`);
   }
 
   /**
@@ -1502,12 +1425,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLoggerDefinition(loggerDefinitionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/loggers/${LoggerDefinitionId}';
-    arn = arn.replace('${LoggerDefinitionId}', loggerDefinitionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/definition/loggers/${ loggerDefinitionId }`);
   }
 
   /**
@@ -1522,13 +1440,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onLoggerDefinitionVersion(loggerDefinitionId: string, versionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/loggers/${LoggerDefinitionId}/versions/${VersionId}';
-    arn = arn.replace('${LoggerDefinitionId}', loggerDefinitionId);
-    arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/definition/loggers/${ loggerDefinitionId }/versions/${ versionId }`);
   }
 
   /**
@@ -1545,12 +1457,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResourceDefinition(resourceDefinitionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/resources/${ResourceDefinitionId}';
-    arn = arn.replace('${ResourceDefinitionId}', resourceDefinitionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/definition/resources/${ resourceDefinitionId }`);
   }
 
   /**
@@ -1565,13 +1472,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onResourceDefinitionVersion(resourceDefinitionId: string, versionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/resources/${ResourceDefinitionId}/versions/${VersionId}';
-    arn = arn.replace('${ResourceDefinitionId}', resourceDefinitionId);
-    arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/definition/resources/${ resourceDefinitionId }/versions/${ versionId }`);
   }
 
   /**
@@ -1588,12 +1489,7 @@ export class Greengrass extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnectorDefinition(connectorDefinitionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/connectors/${ConnectorDefinitionId}';
-    arn = arn.replace('${ConnectorDefinitionId}', connectorDefinitionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/definition/connectors/${ connectorDefinitionId }`);
   }
 
   /**
@@ -1608,13 +1504,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onConnectorDefinitionVersion(connectorDefinitionId: string, versionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/connectors/${ConnectorDefinitionId}/versions/${VersionId}';
-    arn = arn.replace('${ConnectorDefinitionId}', connectorDefinitionId);
-    arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/definition/connectors/${ connectorDefinitionId }/versions/${ versionId }`);
   }
 
   /**
@@ -1628,12 +1518,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onThing(thingName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:thing/${ThingName}';
-    arn = arn.replace('${ThingName}', thingName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:thing/${ thingName }`);
   }
 
   /**
@@ -1647,11 +1532,6 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onThingRuntimeConfig(thingName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/things/${ThingName}/runtimeconfig';
-    arn = arn.replace('${ThingName}', thingName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:greengrass:${ region || '*' }:${ account || '*' }:/greengrass/things/${ thingName }/runtimeconfig`);
   }
 }

@@ -330,11 +330,6 @@ export class CognitoIdentity extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIdentitypool(identityPoolId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cognito-identity:${Region}:${Account}:identitypool/${IdentityPoolId}';
-    arn = arn.replace('${IdentityPoolId}', identityPoolId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cognito-identity:${ region || '*' }:${ account || '*' }:identitypool/${ identityPoolId }`);
   }
 }

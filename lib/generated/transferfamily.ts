@@ -465,13 +465,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUser(serverId: string, username: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:transfer:${Region}:${Account}:user/${ServerId}/${Username}';
-    arn = arn.replace('${ServerId}', serverId);
-    arn = arn.replace('${Username}', username);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:transfer:${ region || '*' }:${ account || '*' }:user/${ serverId }/${ username }`);
   }
 
   /**
@@ -488,12 +482,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServer(serverId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:transfer:${Region}:${Account}:server/${ServerId}';
-    arn = arn.replace('${ServerId}', serverId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:transfer:${ region || '*' }:${ account || '*' }:server/${ serverId }`);
   }
 
   /**
@@ -510,11 +499,6 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkflow(workflowId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:transfer:${Region}:${Account}:workflow/${WorkflowId}';
-    arn = arn.replace('${WorkflowId}', workflowId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:transfer:${ region || '*' }:${ account || '*' }:workflow/${ workflowId }`);
   }
 }

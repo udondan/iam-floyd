@@ -264,14 +264,7 @@ export class CognitoSync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDataset(identityPoolId: string, identityId: string, datasetName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}/identity/${IdentityId}/dataset/${DatasetName}';
-    arn = arn.replace('${IdentityPoolId}', identityPoolId);
-    arn = arn.replace('${IdentityId}', identityId);
-    arn = arn.replace('${DatasetName}', datasetName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cognito-sync:${ region || '*' }:${ account || '*' }:identitypool/${ identityPoolId }/identity/${ identityId }/dataset/${ datasetName }`);
   }
 
   /**
@@ -286,13 +279,7 @@ export class CognitoSync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onIdentity(identityPoolId: string, identityId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}/identity/${IdentityId}';
-    arn = arn.replace('${IdentityPoolId}', identityPoolId);
-    arn = arn.replace('${IdentityId}', identityId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cognito-sync:${ region || '*' }:${ account || '*' }:identitypool/${ identityPoolId }/identity/${ identityId }`);
   }
 
   /**
@@ -306,11 +293,6 @@ export class CognitoSync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onIdentitypool(identityPoolId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}';
-    arn = arn.replace('${IdentityPoolId}', identityPoolId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cognito-sync:${ region || '*' }:${ account || '*' }:identitypool/${ identityPoolId }`);
   }
 }

@@ -330,11 +330,6 @@ export class Voiceid extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomain(domainId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:voiceid:${Region}:${Account}:domain/${DomainId}';
-    arn = arn.replace('${DomainId}', domainId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:voiceid:${ region || '*' }:${ account || '*' }:domain/${ domainId }`);
   }
 }

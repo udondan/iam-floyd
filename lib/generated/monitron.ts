@@ -241,11 +241,6 @@ export class Monitron extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:monitron:${Region}:${Account}:project/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:monitron:${ region || '*' }:${ account || '*' }:project/${ resourceId }`);
   }
 }

@@ -731,12 +731,7 @@ export class Workspaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDirectoryid(directoryId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:workspaces:${Region}:${Account}:directory/${DirectoryId}';
-    arn = arn.replace('${DirectoryId}', directoryId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:workspaces:${ region || '*' }:${ account || '*' }:directory/${ directoryId }`);
   }
 
   /**
@@ -753,12 +748,7 @@ export class Workspaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkspacebundle(bundleId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:workspaces:${Region}:${Account}:workspacebundle/${BundleId}';
-    arn = arn.replace('${BundleId}', bundleId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:workspaces:${ region || '*' }:${ account || '*' }:workspacebundle/${ bundleId }`);
   }
 
   /**
@@ -775,12 +765,7 @@ export class Workspaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkspaceid(workspaceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:workspaces:${Region}:${Account}:workspace/${WorkspaceId}';
-    arn = arn.replace('${WorkspaceId}', workspaceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:workspaces:${ region || '*' }:${ account || '*' }:workspace/${ workspaceId }`);
   }
 
   /**
@@ -797,12 +782,7 @@ export class Workspaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkspaceimage(imageId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:workspaces:${Region}:${Account}:workspaceimage/${ImageId}';
-    arn = arn.replace('${ImageId}', imageId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:workspaces:${ region || '*' }:${ account || '*' }:workspaceimage/${ imageId }`);
   }
 
   /**
@@ -819,12 +799,7 @@ export class Workspaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkspaceipgroup(groupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:workspaces:${Region}:${Account}:workspaceipgroup/${GroupId}';
-    arn = arn.replace('${GroupId}', groupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:workspaces:${ region || '*' }:${ account || '*' }:workspaceipgroup/${ groupId }`);
   }
 
   /**
@@ -841,11 +816,6 @@ export class Workspaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnectionalias(connectionAliasId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:workspaces:${Region}:${Account}:connectionalias/${ConnectionAliasId}';
-    arn = arn.replace('${ConnectionAliasId}', connectionAliasId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:workspaces:${ region || '*' }:${ account || '*' }:connectionalias/${ connectionAliasId }`);
   }
 }

@@ -413,12 +413,7 @@ export class NetworkFirewall extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFirewall(name: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:network-firewall:${Region}:${Account}:firewall/${Name}';
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:network-firewall:${ region || '*' }:${ account || '*' }:firewall/${ name }`);
   }
 
   /**
@@ -435,12 +430,7 @@ export class NetworkFirewall extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFirewallPolicy(name: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:network-firewall:${Region}:${Account}:firewall-policy/${Name}';
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:network-firewall:${ region || '*' }:${ account || '*' }:firewall-policy/${ name }`);
   }
 
   /**
@@ -457,12 +447,7 @@ export class NetworkFirewall extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStatefulRuleGroup(name: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:network-firewall:${Region}:${Account}:stateful-rulegroup/${Name}';
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:network-firewall:${ region || '*' }:${ account || '*' }:stateful-rulegroup/${ name }`);
   }
 
   /**
@@ -479,11 +464,6 @@ export class NetworkFirewall extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStatelessRuleGroup(name: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:network-firewall:${Region}:${Account}:stateless-rulegroup/${Name}';
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:network-firewall:${ region || '*' }:${ account || '*' }:stateless-rulegroup/${ name }`);
   }
 }

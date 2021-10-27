@@ -1221,11 +1221,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAlias(aliasId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:gamelift:${Region}::alias/${AliasId}';
-    arn = arn.replace('${AliasId}', aliasId);
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:gamelift:${ region || '*' }::alias/${ aliasId }`);
   }
 
   /**
@@ -1242,12 +1238,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBuild(buildId: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:gamelift:${Region}:${AccountId}:build/${BuildId}';
-    arn = arn.replace('${BuildId}', buildId);
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:gamelift:${ region || '*' }:${ accountId || '*' }:build/${ buildId }`);
   }
 
   /**
@@ -1264,12 +1255,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onScript(scriptId: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:gamelift:${Region}:${AccountId}:script/${ScriptId}';
-    arn = arn.replace('${ScriptId}', scriptId);
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:gamelift:${ region || '*' }:${ accountId || '*' }:script/${ scriptId }`);
   }
 
   /**
@@ -1286,12 +1272,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFleet(fleetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:gamelift:${Region}:${Account}:fleet/${FleetId}';
-    arn = arn.replace('${FleetId}', fleetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:gamelift:${ region || '*' }:${ account || '*' }:fleet/${ fleetId }`);
   }
 
   /**
@@ -1308,12 +1289,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGameSessionQueue(gameSessionQueueName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:gamelift:${Region}:${Account}:gamesessionqueue/${GameSessionQueueName}';
-    arn = arn.replace('${GameSessionQueueName}', gameSessionQueueName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:gamelift:${ region || '*' }:${ account || '*' }:gamesessionqueue/${ gameSessionQueueName }`);
   }
 
   /**
@@ -1330,12 +1306,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMatchmakingConfiguration(matchmakingConfigurationName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:gamelift:${Region}:${Account}:matchmakingconfiguration/${MatchmakingConfigurationName}';
-    arn = arn.replace('${MatchmakingConfigurationName}', matchmakingConfigurationName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:gamelift:${ region || '*' }:${ account || '*' }:matchmakingconfiguration/${ matchmakingConfigurationName }`);
   }
 
   /**
@@ -1352,12 +1323,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMatchmakingRuleSet(matchmakingRuleSetName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:gamelift:${Region}:${Account}:matchmakingruleset/${MatchmakingRuleSetName}';
-    arn = arn.replace('${MatchmakingRuleSetName}', matchmakingRuleSetName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:gamelift:${ region || '*' }:${ account || '*' }:matchmakingruleset/${ matchmakingRuleSetName }`);
   }
 
   /**
@@ -1374,11 +1340,6 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGameServerGroup(gameServerGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:gamelift:${Region}:${Account}:gameservergroup/${GameServerGroupName}';
-    arn = arn.replace('${GameServerGroupName}', gameServerGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:gamelift:${ region || '*' }:${ account || '*' }:gameservergroup/${ gameServerGroupName }`);
   }
 }

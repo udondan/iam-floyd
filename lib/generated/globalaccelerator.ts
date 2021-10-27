@@ -621,11 +621,7 @@ export class Globalaccelerator extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAccelerator(acceleratorId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}';
-    arn = arn.replace('${AcceleratorId}', acceleratorId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }`);
   }
 
   /**
@@ -642,12 +638,7 @@ export class Globalaccelerator extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onListener(acceleratorId: string, listenerId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}';
-    arn = arn.replace('${AcceleratorId}', acceleratorId);
-    arn = arn.replace('${ListenerId}', listenerId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }/listener/${ listenerId }`);
   }
 
   /**
@@ -665,12 +656,6 @@ export class Globalaccelerator extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEndpointgroup(acceleratorId: string, listenerId: string, endpointGroupId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}/endpoint-group/${EndpointGroupId}';
-    arn = arn.replace('${AcceleratorId}', acceleratorId);
-    arn = arn.replace('${ListenerId}', listenerId);
-    arn = arn.replace('${EndpointGroupId}', endpointGroupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:globalaccelerator::${ account || '*' }:accelerator/${ acceleratorId }/listener/${ listenerId }/endpoint-group/${ endpointGroupId }`);
   }
 }

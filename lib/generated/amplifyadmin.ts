@@ -338,12 +338,7 @@ export class Amplifybackend extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onBackend(appId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:amplifybackend:${Region}:${Account}:backend/${AppId}';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:amplifybackend:${ region || '*' }:${ account || '*' }:backend/${ appId }`);
   }
 
   /**
@@ -357,12 +352,7 @@ export class Amplifybackend extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onEnvironment(appId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:amplifybackend:${Region}:${Account}:backend/${AppId}/environments';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:amplifybackend:${ region || '*' }:${ account || '*' }:backend/${ appId }/environments`);
   }
 
   /**
@@ -376,12 +366,7 @@ export class Amplifybackend extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onApi(appId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:amplifybackend:${Region}:${Account}:backend/${AppId}/api';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:amplifybackend:${ region || '*' }:${ account || '*' }:backend/${ appId }/api`);
   }
 
   /**
@@ -395,12 +380,7 @@ export class Amplifybackend extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAuth(appId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:amplifybackend:${Region}:${Account}:backend/${AppId}/auth';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:amplifybackend:${ region || '*' }:${ account || '*' }:backend/${ appId }/auth`);
   }
 
   /**
@@ -414,12 +394,7 @@ export class Amplifybackend extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onJob(appId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:amplifybackend:${Region}:${Account}:backend/${AppId}/job';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:amplifybackend:${ region || '*' }:${ account || '*' }:backend/${ appId }/job`);
   }
 
   /**
@@ -433,12 +408,7 @@ export class Amplifybackend extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onConfig(appId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:amplifybackend:${Region}:${Account}:backend/${AppId}/config';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:amplifybackend:${ region || '*' }:${ account || '*' }:backend/${ appId }/config`);
   }
 
   /**
@@ -452,11 +422,6 @@ export class Amplifybackend extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onToken(appId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:amplifybackend:${Region}:${Account}:backend/${AppId}/token';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:amplifybackend:${ region || '*' }:${ account || '*' }:backend/${ appId }/token`);
   }
 }

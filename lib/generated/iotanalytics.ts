@@ -477,12 +477,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onChannel(channelName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:channel/${ChannelName}';
-    arn = arn.replace('${ChannelName}', channelName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotanalytics:${ region || '*' }:${ account || '*' }:channel/${ channelName }`);
   }
 
   /**
@@ -501,12 +496,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDataset(datasetName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:dataset/${DatasetName}';
-    arn = arn.replace('${DatasetName}', datasetName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotanalytics:${ region || '*' }:${ account || '*' }:dataset/${ datasetName }`);
   }
 
   /**
@@ -525,12 +515,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDatastore(datastoreName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:datastore/${DatastoreName}';
-    arn = arn.replace('${DatastoreName}', datastoreName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotanalytics:${ region || '*' }:${ account || '*' }:datastore/${ datastoreName }`);
   }
 
   /**
@@ -549,12 +534,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:pipeline/${PipelineName}';
-    arn = arn.replace('${PipelineName}', pipelineName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotanalytics:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }`);
   }
 
   /**

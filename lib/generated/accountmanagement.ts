@@ -106,10 +106,7 @@ export class Account extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAccount(account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:account::${Account}:account';
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:account::${ account || '*' }:account`);
   }
 
   /**
@@ -121,12 +118,7 @@ export class Account extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAccountInOrganization(managementAccountId: string, organizationId: string, memberAccountId: string, partition?: string) {
-    var arn = 'arn:${Partition}:account::${ManagementAccountId}:account/o-${OrganizationId}/${MemberAccountId}';
-    arn = arn.replace('${ManagementAccountId}', managementAccountId);
-    arn = arn.replace('${OrganizationId}', organizationId);
-    arn = arn.replace('${MemberAccountId}', memberAccountId);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:account::${ managementAccountId }:account/o-${ organizationId }/${ memberAccountId }`);
   }
 
   /**

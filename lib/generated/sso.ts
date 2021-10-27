@@ -1074,11 +1074,7 @@ export class Sso extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPermissionSet(instanceId: string, permissionSetId: string, partition?: string) {
-    var arn = 'arn:${Partition}:sso:::permissionSet/${InstanceId}/${PermissionSetId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${PermissionSetId}', permissionSetId);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sso:::permissionSet/${ instanceId }/${ permissionSetId }`);
   }
 
   /**
@@ -1090,10 +1086,7 @@ export class Sso extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAccount(accountId?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sso:::account/${AccountId}';
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sso:::account/${ accountId || '*' }`);
   }
 
   /**
@@ -1105,9 +1098,6 @@ export class Sso extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onInstance(instanceId: string, partition?: string) {
-    var arn = 'arn:${Partition}:sso:::instance/${InstanceId}';
-    arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sso:::instance/${ instanceId }`);
   }
 }

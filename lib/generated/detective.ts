@@ -288,11 +288,6 @@ export class Detective extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGraph(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:detective:${Region}:${Account}:graph:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:detective:${ region || '*' }:${ account || '*' }:graph:${ resourceId }`);
   }
 }

@@ -881,12 +881,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDocumentClassifier(documentClassifierName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:document-classifier/${DocumentClassifierName}';
-    arn = arn.replace('${DocumentClassifierName}', documentClassifierName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:document-classifier/${ documentClassifierName }`);
   }
 
   /**
@@ -901,12 +896,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDocumentClassifierEndpoint(documentClassifierEndpointName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:document-classifier-endpoint/${DocumentClassifierEndpointName}';
-    arn = arn.replace('${DocumentClassifierEndpointName}', documentClassifierEndpointName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:document-classifier-endpoint/${ documentClassifierEndpointName }`);
   }
 
   /**
@@ -921,12 +911,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEntityRecognizer(entityRecognizerName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:entity-recognizer/${EntityRecognizerName}';
-    arn = arn.replace('${EntityRecognizerName}', entityRecognizerName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:entity-recognizer/${ entityRecognizerName }`);
   }
 
   /**
@@ -941,12 +926,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEntityRecognizerEndpoint(entityRecognizerEndpointName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:entity-recognizer-endpoint/${EntityRecognizerEndpointName}';
-    arn = arn.replace('${EntityRecognizerEndpointName}', entityRecognizerEndpointName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:entity-recognizer-endpoint/${ entityRecognizerEndpointName }`);
   }
 
   /**
@@ -961,12 +941,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDominantLanguageDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:dominant-language-detection-job/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:dominant-language-detection-job/${ jobId }`);
   }
 
   /**
@@ -981,12 +956,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEntitiesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:entities-detection-job/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:entities-detection-job/${ jobId }`);
   }
 
   /**
@@ -1001,12 +971,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPiiEntitiesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:pii-entities-detection-job/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:pii-entities-detection-job/${ jobId }`);
   }
 
   /**
@@ -1021,12 +986,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventsDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:events-detection-job/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:events-detection-job/${ jobId }`);
   }
 
   /**
@@ -1041,12 +1001,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKeyPhrasesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:key-phrases-detection-job/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:key-phrases-detection-job/${ jobId }`);
   }
 
   /**
@@ -1061,12 +1016,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSentimentDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:sentiment-detection-job/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:sentiment-detection-job/${ jobId }`);
   }
 
   /**
@@ -1081,12 +1031,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTopicsDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:topics-detection-job/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:topics-detection-job/${ jobId }`);
   }
 
   /**
@@ -1101,12 +1046,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDocumentClassificationJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:document-classification-job/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:document-classification-job/${ jobId }`);
   }
 
   /**

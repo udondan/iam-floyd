@@ -1477,12 +1477,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApps(appId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }`);
   }
 
   /**
@@ -1500,13 +1495,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCampaigns(appId: string, campaignId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/campaigns/${CampaignId}';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${CampaignId}', campaignId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/campaigns/${ campaignId }`);
   }
 
   /**
@@ -1524,13 +1513,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJourneys(appId: string, journeyId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/journeys/${JourneyId}';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${JourneyId}', journeyId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/journeys/${ journeyId }`);
   }
 
   /**
@@ -1548,13 +1531,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSegments(appId: string, segmentId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/segments/${SegmentId}';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${SegmentId}', segmentId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mobiletargeting:${ region || '*' }:${ account || '*' }:apps/${ appId }/segments/${ segmentId }`);
   }
 
   /**
@@ -1572,13 +1549,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTemplates(templateName: string, channelType: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:templates/${TemplateName}/${ChannelType}';
-    arn = arn.replace('${TemplateName}', templateName);
-    arn = arn.replace('${ChannelType}', channelType);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mobiletargeting:${ region || '*' }:${ account || '*' }:templates/${ templateName }/${ channelType }`);
   }
 
   /**
@@ -1592,12 +1563,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onRecommenders(recommenderId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:recommenders/${RecommenderId}';
-    arn = arn.replace('${RecommenderId}', recommenderId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mobiletargeting:${ region || '*' }:${ account || '*' }:recommenders/${ recommenderId }`);
   }
 
   /**
@@ -1610,10 +1576,6 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onPhoneNumberValidate(account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:phone/number/validate';
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mobiletargeting:${ region || '*' }:${ account || '*' }:phone/number/validate`);
   }
 }

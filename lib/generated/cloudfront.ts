@@ -1089,11 +1089,7 @@ export class Cloudfront extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDistribution(distributionId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudfront::${Account}:distribution/${DistributionId}';
-    arn = arn.replace('${DistributionId}', distributionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:distribution/${ distributionId }`);
   }
 
   /**
@@ -1109,11 +1105,7 @@ export class Cloudfront extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStreamingDistribution(distributionId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudfront::${Account}:streaming-distribution/${DistributionId}';
-    arn = arn.replace('${DistributionId}', distributionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:streaming-distribution/${ distributionId }`);
   }
 
   /**
@@ -1126,11 +1118,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onOriginAccessIdentity(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudfront::${Account}:origin-access-identity/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:origin-access-identity/${ id }`);
   }
 
   /**
@@ -1143,11 +1131,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onFieldLevelEncryption(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudfront::${Account}:field-level-encryption/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:field-level-encryption/${ id }`);
   }
 
   /**
@@ -1160,11 +1144,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onFieldLevelEncryptionProfile(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudfront::${Account}:field-level-encryption-profile/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:field-level-encryption-profile/${ id }`);
   }
 
   /**
@@ -1177,11 +1157,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCachePolicy(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudfront::${Account}:cache-policy/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:cache-policy/${ id }`);
   }
 
   /**
@@ -1194,11 +1170,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onOriginRequestPolicy(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudfront::${Account}:origin-request-policy/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:origin-request-policy/${ id }`);
   }
 
   /**
@@ -1211,11 +1183,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onRealtimeLogConfig(name: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudfront::${Account}:realtime-log-config/${Name}';
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:realtime-log-config/${ name }`);
   }
 
   /**
@@ -1228,10 +1196,6 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onFunction(name: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudfront::${Account}:function/${Name}';
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:function/${ name }`);
   }
 }

@@ -489,11 +489,7 @@ export class Shield extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAttack(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:shield::${Account}:attack/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:shield::${ account || '*' }:attack/${ id }`);
   }
 
   /**
@@ -509,11 +505,7 @@ export class Shield extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProtection(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:shield::${Account}:protection/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:shield::${ account || '*' }:protection/${ id }`);
   }
 
   /**
@@ -529,10 +521,6 @@ export class Shield extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProtectionGroup(id: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:shield::${Account}:protection-group/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:shield::${ account || '*' }:protection-group/${ id }`);
   }
 }

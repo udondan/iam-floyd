@@ -3448,13 +3448,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDevice(deviceFleetName: string, deviceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:device-fleet/${DeviceFleetName}/device/${DeviceName}';
-    arn = arn.replace('${DeviceFleetName}', deviceFleetName);
-    arn = arn.replace('${DeviceName}', deviceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:device-fleet/${ deviceFleetName }/device/${ deviceName }`);
   }
 
   /**
@@ -3470,12 +3464,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDeviceFleet(deviceFleetName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:device-fleet/${DeviceFleetName}';
-    arn = arn.replace('${DeviceFleetName}', deviceFleetName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:device-fleet/${ deviceFleetName }`);
   }
 
   /**
@@ -3491,12 +3480,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEdgePackagingJob(edgePackagingJobName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:edge-packaging-job/${EdgePackagingJobName}';
-    arn = arn.replace('${EdgePackagingJobName}', edgePackagingJobName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:edge-packaging-job/${ edgePackagingJobName }`);
   }
 
   /**
@@ -3508,12 +3492,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onHumanLoop(humanLoopName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:human-loop/${HumanLoopName}';
-    arn = arn.replace('${HumanLoopName}', humanLoopName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:human-loop/${ humanLoopName }`);
   }
 
   /**
@@ -3529,12 +3508,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onFlowDefinition(flowDefinitionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:flow-definition/${FlowDefinitionName}';
-    arn = arn.replace('${FlowDefinitionName}', flowDefinitionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:flow-definition/${ flowDefinitionName }`);
   }
 
   /**
@@ -3550,12 +3524,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onHumanTaskUi(humanTaskUiName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:human-task-ui/${HumanTaskUiName}';
-    arn = arn.replace('${HumanTaskUiName}', humanTaskUiName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:human-task-ui/${ humanTaskUiName }`);
   }
 
   /**
@@ -3571,12 +3540,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLabelingJob(labelingJobName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:labeling-job/${LabelingJobName}';
-    arn = arn.replace('${LabelingJobName}', labelingJobName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:labeling-job/${ labelingJobName }`);
   }
 
   /**
@@ -3592,12 +3556,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onWorkteam(workteamName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:workteam/${WorkteamName}';
-    arn = arn.replace('${WorkteamName}', workteamName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:workteam/${ workteamName }`);
   }
 
   /**
@@ -3613,12 +3572,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onWorkforce(workforceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:workforce/${WorkforceName}';
-    arn = arn.replace('${WorkforceName}', workforceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:workforce/${ workforceName }`);
   }
 
   /**
@@ -3634,12 +3588,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDomain(domainId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:domain/${DomainId}';
-    arn = arn.replace('${DomainId}', domainId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:domain/${ domainId }`);
   }
 
   /**
@@ -3656,13 +3605,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onUserProfile(domainId: string, userProfileName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:user-profile/${DomainId}/${UserProfileName}';
-    arn = arn.replace('${DomainId}', domainId);
-    arn = arn.replace('${UserProfileName}', userProfileName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:user-profile/${ domainId }/${ userProfileName }`);
   }
 
   /**
@@ -3681,15 +3624,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onApp(domainId: string, userProfileName: string, appType: string, appName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:app/${DomainId}/${UserProfileName}/${AppType}/${AppName}';
-    arn = arn.replace('${DomainId}', domainId);
-    arn = arn.replace('${UserProfileName}', userProfileName);
-    arn = arn.replace('${AppType}', appType);
-    arn = arn.replace('${AppName}', appName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:app/${ domainId }/${ userProfileName }/${ appType }/${ appName }`);
   }
 
   /**
@@ -3705,12 +3640,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAppImageConfig(appImageConfigName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:app-image-config/${AppImageConfigName}';
-    arn = arn.replace('${AppImageConfigName}', appImageConfigName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:app-image-config/${ appImageConfigName }`);
   }
 
   /**
@@ -3726,12 +3656,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNotebookInstance(notebookInstanceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance/${NotebookInstanceName}';
-    arn = arn.replace('${NotebookInstanceName}', notebookInstanceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:notebook-instance/${ notebookInstanceName }`);
   }
 
   /**
@@ -3743,12 +3668,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onNotebookInstanceLifecycleConfig(notebookInstanceLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance-lifecycle-config/${NotebookInstanceLifecycleConfigName}';
-    arn = arn.replace('${NotebookInstanceLifecycleConfigName}', notebookInstanceLifecycleConfigName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:notebook-instance-lifecycle-config/${ notebookInstanceLifecycleConfigName }`);
   }
 
   /**
@@ -3764,12 +3684,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCodeRepository(codeRepositoryName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:code-repository/${CodeRepositoryName}';
-    arn = arn.replace('${CodeRepositoryName}', codeRepositoryName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:code-repository/${ codeRepositoryName }`);
   }
 
   /**
@@ -3785,12 +3700,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onImage(imageName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:image/${ImageName}';
-    arn = arn.replace('${ImageName}', imageName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:image/${ imageName }`);
   }
 
   /**
@@ -3803,13 +3713,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onImageVersion(imageName: string, version: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:image-version/${ImageName}/${Version}';
-    arn = arn.replace('${ImageName}', imageName);
-    arn = arn.replace('${Version}', version);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:image-version/${ imageName }/${ version }`);
   }
 
   /**
@@ -3825,12 +3729,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAlgorithm(algorithmName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:algorithm/${AlgorithmName}';
-    arn = arn.replace('${AlgorithmName}', algorithmName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:algorithm/${ algorithmName }`);
   }
 
   /**
@@ -3846,12 +3745,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTrainingJob(trainingJobName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:training-job/${TrainingJobName}';
-    arn = arn.replace('${TrainingJobName}', trainingJobName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:training-job/${ trainingJobName }`);
   }
 
   /**
@@ -3867,12 +3761,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onProcessingJob(processingJobName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:processing-job/${ProcessingJobName}';
-    arn = arn.replace('${ProcessingJobName}', processingJobName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:processing-job/${ processingJobName }`);
   }
 
   /**
@@ -3888,12 +3777,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onHyperParameterTuningJob(hyperParameterTuningJobName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:hyper-parameter-tuning-job/${HyperParameterTuningJobName}';
-    arn = arn.replace('${HyperParameterTuningJobName}', hyperParameterTuningJobName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:hyper-parameter-tuning-job/${ hyperParameterTuningJobName }`);
   }
 
   /**
@@ -3909,12 +3793,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:project/${ProjectName}';
-    arn = arn.replace('${ProjectName}', projectName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
   }
 
   /**
@@ -3930,12 +3809,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelPackage(modelPackageName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:model-package/${ModelPackageName}';
-    arn = arn.replace('${ModelPackageName}', modelPackageName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:model-package/${ modelPackageName }`);
   }
 
   /**
@@ -3951,12 +3825,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelPackageGroup(modelPackageGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:model-package-group/${ModelPackageGroupName}';
-    arn = arn.replace('${ModelPackageGroupName}', modelPackageGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:model-package-group/${ modelPackageGroupName }`);
   }
 
   /**
@@ -3972,12 +3841,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModel(modelName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:model/${ModelName}';
-    arn = arn.replace('${ModelName}', modelName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:model/${ modelName }`);
   }
 
   /**
@@ -3993,12 +3857,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEndpointConfig(endpointConfigName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:endpoint-config/${EndpointConfigName}';
-    arn = arn.replace('${EndpointConfigName}', endpointConfigName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:endpoint-config/${ endpointConfigName }`);
   }
 
   /**
@@ -4014,12 +3873,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEndpoint(endpointName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:endpoint/${EndpointName}';
-    arn = arn.replace('${EndpointName}', endpointName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:endpoint/${ endpointName }`);
   }
 
   /**
@@ -4035,12 +3889,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransformJob(transformJobName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:transform-job/${TransformJobName}';
-    arn = arn.replace('${TransformJobName}', transformJobName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:transform-job/${ transformJobName }`);
   }
 
   /**
@@ -4052,12 +3901,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCompilationJob(compilationJobName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:compilation-job/${CompilationJobName}';
-    arn = arn.replace('${CompilationJobName}', compilationJobName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:compilation-job/${ compilationJobName }`);
   }
 
   /**
@@ -4073,12 +3917,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAutomlJob(autoMLJobJobName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:automl-job/${AutoMLJobJobName}';
-    arn = arn.replace('${AutoMLJobJobName}', autoMLJobJobName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:automl-job/${ autoMLJobJobName }`);
   }
 
   /**
@@ -4094,12 +3933,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onMonitoringSchedule(monitoringScheduleName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:monitoring-schedule/${MonitoringScheduleName}';
-    arn = arn.replace('${MonitoringScheduleName}', monitoringScheduleName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:monitoring-schedule/${ monitoringScheduleName }`);
   }
 
   /**
@@ -4115,12 +3949,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDataQualityJobDefinition(dataQualityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:data-quality-job-definition/${DataQualityJobDefinitionName}';
-    arn = arn.replace('${DataQualityJobDefinitionName}', dataQualityJobDefinitionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:data-quality-job-definition/${ dataQualityJobDefinitionName }`);
   }
 
   /**
@@ -4136,12 +3965,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelQualityJobDefinition(modelQualityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:model-quality-job-definition/${ModelQualityJobDefinitionName}';
-    arn = arn.replace('${ModelQualityJobDefinitionName}', modelQualityJobDefinitionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:model-quality-job-definition/${ modelQualityJobDefinitionName }`);
   }
 
   /**
@@ -4157,12 +3981,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelBiasJobDefinition(modelBiasJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:model-bias-job-definition/${ModelBiasJobDefinitionName}';
-    arn = arn.replace('${ModelBiasJobDefinitionName}', modelBiasJobDefinitionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:model-bias-job-definition/${ modelBiasJobDefinitionName }`);
   }
 
   /**
@@ -4178,12 +3997,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelExplainabilityJobDefinition(modelExplainabilityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:model-explainability-job-definition/${ModelExplainabilityJobDefinitionName}';
-    arn = arn.replace('${ModelExplainabilityJobDefinitionName}', modelExplainabilityJobDefinitionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:model-explainability-job-definition/${ modelExplainabilityJobDefinitionName }`);
   }
 
   /**
@@ -4199,12 +4013,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExperiment(experimentName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:experiment/${ExperimentName}';
-    arn = arn.replace('${ExperimentName}', experimentName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:experiment/${ experimentName }`);
   }
 
   /**
@@ -4220,12 +4029,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExperimentTrial(trialName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:experiment-trial/${TrialName}';
-    arn = arn.replace('${TrialName}', trialName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:experiment-trial/${ trialName }`);
   }
 
   /**
@@ -4241,12 +4045,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExperimentTrialComponent(trialComponentName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:experiment-trial-component/${TrialComponentName}';
-    arn = arn.replace('${TrialComponentName}', trialComponentName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:experiment-trial-component/${ trialComponentName }`);
   }
 
   /**
@@ -4262,12 +4061,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onFeatureGroup(featureGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:feature-group/${FeatureGroupName}';
-    arn = arn.replace('${FeatureGroupName}', featureGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:feature-group/${ featureGroupName }`);
   }
 
   /**
@@ -4283,12 +4077,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:pipeline/${PipelineName}';
-    arn = arn.replace('${PipelineName}', pipelineName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }`);
   }
 
   /**
@@ -4301,13 +4090,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onPipelineExecution(pipelineName: string, randomString: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:pipeline/${PipelineName}/execution/${RandomString}';
-    arn = arn.replace('${PipelineName}', pipelineName);
-    arn = arn.replace('${RandomString}', randomString);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineName }/execution/${ randomString }`);
   }
 
   /**
@@ -4323,12 +4106,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onArtifact(hashOfArtifactSource: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:artifact/${HashOfArtifactSource}';
-    arn = arn.replace('${HashOfArtifactSource}', hashOfArtifactSource);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:artifact/${ hashOfArtifactSource }`);
   }
 
   /**
@@ -4344,12 +4122,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onContext(contextName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:context/${ContextName}';
-    arn = arn.replace('${ContextName}', contextName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:context/${ contextName }`);
   }
 
   /**
@@ -4365,12 +4138,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAction(actionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:action/${ActionName}';
-    arn = arn.replace('${ActionName}', actionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:action/${ actionName }`);
   }
 
   /**

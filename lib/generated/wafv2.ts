@@ -611,14 +611,7 @@ export class Wafv2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/webacl/${Name}/${Id}';
-    arn = arn.replace('${Scope}', scope);
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/webacl/${ name }/${ id }`);
   }
 
   /**
@@ -637,14 +630,7 @@ export class Wafv2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIpset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/ipset/${Name}/${Id}';
-    arn = arn.replace('${Scope}', scope);
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/ipset/${ name }/${ id }`);
   }
 
   /**
@@ -663,14 +649,7 @@ export class Wafv2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRulegroup(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/rulegroup/${Name}/${Id}';
-    arn = arn.replace('${Scope}', scope);
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/rulegroup/${ name }/${ id }`);
   }
 
   /**
@@ -689,14 +668,7 @@ export class Wafv2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRegexpatternset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/regexpatternset/${Name}/${Id}';
-    arn = arn.replace('${Scope}', scope);
-    arn = arn.replace('${Name}', name);
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/regexpatternset/${ name }/${ id }`);
   }
 
   /**
@@ -711,13 +683,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}';
-    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
-    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticloadbalancing:${ region || '*' }:${ account || '*' }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -732,13 +698,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onApigateway(apiId: string, stageName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}:${Account}:/restapis/${ApiId}/stages/${StageName}';
-    arn = arn.replace('${ApiId}', apiId);
-    arn = arn.replace('${StageName}', stageName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:apigateway:${ region || '*' }:${ account || '*' }:/restapis/${ apiId }/stages/${ stageName }`);
   }
 
   /**
@@ -752,11 +712,6 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAppsync(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}';
-    arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }`);
   }
 }

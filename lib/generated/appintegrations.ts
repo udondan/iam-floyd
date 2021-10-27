@@ -318,12 +318,7 @@ export class AppIntegrations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventIntegration(eventIntegrationName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:app-integrations:${Region}:${Account}:event-integration/${EventIntegrationName}';
-    arn = arn.replace('${EventIntegrationName}', eventIntegrationName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:app-integrations:${ region || '*' }:${ account || '*' }:event-integration/${ eventIntegrationName }`);
   }
 
   /**
@@ -341,13 +336,7 @@ export class AppIntegrations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventIntegrationAssociation(eventIntegrationName: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:app-integrations:${Region}:${Account}:event-integration-association/${EventIntegrationName}/${ResourceId}';
-    arn = arn.replace('${EventIntegrationName}', eventIntegrationName);
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:app-integrations:${ region || '*' }:${ account || '*' }:event-integration-association/${ eventIntegrationName }/${ resourceId }`);
   }
 
   /**
@@ -364,12 +353,7 @@ export class AppIntegrations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataIntegration(dataIntegrationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:app-integrations:${Region}:${Account}:data-integration/${DataIntegrationId}';
-    arn = arn.replace('${DataIntegrationId}', dataIntegrationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:app-integrations:${ region || '*' }:${ account || '*' }:data-integration/${ dataIntegrationId }`);
   }
 
   /**
@@ -387,12 +371,6 @@ export class AppIntegrations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataIntegrationAssociation(dataIntegrationId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:app-integrations:${Region}:${Account}:data-integration-association/${DataIntegrationId}/${ResourceId}';
-    arn = arn.replace('${DataIntegrationId}', dataIntegrationId);
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:app-integrations:${ region || '*' }:${ account || '*' }:data-integration-association/${ dataIntegrationId }/${ resourceId }`);
   }
 }

@@ -3173,12 +3173,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onClient(clientId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:client/${ClientId}';
-    arn = arn.replace('${ClientId}', clientId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:client/${ clientId }`);
   }
 
   /**
@@ -3192,12 +3187,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onIndex(indexName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:index/${IndexName}';
-    arn = arn.replace('${IndexName}', indexName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:index/${ indexName }`);
   }
 
   /**
@@ -3214,12 +3204,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFleetmetric(fleetMetricName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:fleetmetric/${FleetMetricName}';
-    arn = arn.replace('${FleetMetricName}', fleetMetricName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:fleetmetric/${ fleetMetricName }`);
   }
 
   /**
@@ -3236,12 +3221,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:job/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
   }
 
   /**
@@ -3258,12 +3238,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobtemplate(jobTemplateId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:jobtemplate/${JobTemplateId}';
-    arn = arn.replace('${JobTemplateId}', jobTemplateId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:jobtemplate/${ jobTemplateId }`);
   }
 
   /**
@@ -3280,12 +3255,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTunnel(tunnelId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:tunnel/${TunnelId}';
-    arn = arn.replace('${TunnelId}', tunnelId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:tunnel/${ tunnelId }`);
   }
 
   /**
@@ -3299,12 +3269,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onThing(thingName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:thing/${ThingName}';
-    arn = arn.replace('${ThingName}', thingName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:thing/${ thingName }`);
   }
 
   /**
@@ -3321,12 +3286,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:thinggroup/${ThingGroupName}';
-    arn = arn.replace('${ThingGroupName}', thingGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:thinggroup/${ thingGroupName }`);
   }
 
   /**
@@ -3343,12 +3303,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBillinggroup(billingGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:billinggroup/${BillingGroupName}';
-    arn = arn.replace('${BillingGroupName}', billingGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:billinggroup/${ billingGroupName }`);
   }
 
   /**
@@ -3365,12 +3320,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDynamicthinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:thinggroup/${ThingGroupName}';
-    arn = arn.replace('${ThingGroupName}', thingGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:thinggroup/${ thingGroupName }`);
   }
 
   /**
@@ -3387,12 +3337,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThingtype(thingTypeName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:thingtype/${ThingTypeName}';
-    arn = arn.replace('${ThingTypeName}', thingTypeName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:thingtype/${ thingTypeName }`);
   }
 
   /**
@@ -3406,12 +3351,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTopic(topicName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:topic/${TopicName}';
-    arn = arn.replace('${TopicName}', topicName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:topic/${ topicName }`);
   }
 
   /**
@@ -3425,12 +3365,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTopicfilter(topicFilter: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:topicfilter/${TopicFilter}';
-    arn = arn.replace('${TopicFilter}', topicFilter);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:topicfilter/${ topicFilter }`);
   }
 
   /**
@@ -3447,12 +3382,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRolealias(roleAlias: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:rolealias/${RoleAlias}';
-    arn = arn.replace('${RoleAlias}', roleAlias);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:rolealias/${ roleAlias }`);
   }
 
   /**
@@ -3469,12 +3399,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAuthorizer(authorizerName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:authorizer/${AuthorizerName}';
-    arn = arn.replace('${AuthorizerName}', authorizerName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:authorizer/${ authorizerName }`);
   }
 
   /**
@@ -3491,12 +3416,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPolicy(policyName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:policy/${PolicyName}';
-    arn = arn.replace('${PolicyName}', policyName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:policy/${ policyName }`);
   }
 
   /**
@@ -3510,12 +3430,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCert(certificate: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:cert/${Certificate}';
-    arn = arn.replace('${Certificate}', certificate);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:cert/${ certificate }`);
   }
 
   /**
@@ -3532,12 +3447,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCacert(cACertificate: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:cacert/${CACertificate}';
-    arn = arn.replace('${CACertificate}', cACertificate);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:cacert/${ cACertificate }`);
   }
 
   /**
@@ -3554,12 +3464,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStream(streamId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:stream/${StreamId}';
-    arn = arn.replace('${StreamId}', streamId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:stream/${ streamId }`);
   }
 
   /**
@@ -3576,12 +3481,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOtaupdate(otaUpdateId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:otaupdate/${OtaUpdateId}';
-    arn = arn.replace('${OtaUpdateId}', otaUpdateId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:otaupdate/${ otaUpdateId }`);
   }
 
   /**
@@ -3598,12 +3498,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onScheduledaudit(scheduleName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:scheduledaudit/${ScheduleName}';
-    arn = arn.replace('${ScheduleName}', scheduleName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:scheduledaudit/${ scheduleName }`);
   }
 
   /**
@@ -3620,12 +3515,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMitigationaction(mitigationActionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:mitigationaction/${MitigationActionName}';
-    arn = arn.replace('${MitigationActionName}', mitigationActionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:mitigationaction/${ mitigationActionName }`);
   }
 
   /**
@@ -3642,12 +3532,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSecurityprofile(securityProfileName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:securityprofile/${SecurityProfileName}';
-    arn = arn.replace('${SecurityProfileName}', securityProfileName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:securityprofile/${ securityProfileName }`);
   }
 
   /**
@@ -3664,12 +3549,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCustommetric(metricName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:custommetric/${MetricName}';
-    arn = arn.replace('${MetricName}', metricName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:custommetric/${ metricName }`);
   }
 
   /**
@@ -3686,12 +3566,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDimension(dimensionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:dimension/${DimensionName}';
-    arn = arn.replace('${DimensionName}', dimensionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:dimension/${ dimensionName }`);
   }
 
   /**
@@ -3708,12 +3583,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:rule/${RuleName}';
-    arn = arn.replace('${RuleName}', ruleName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:rule/${ ruleName }`);
   }
 
   /**
@@ -3728,13 +3598,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDestination(destinationType: string, uuid: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:destination/${DestinationType}/${Uuid}';
-    arn = arn.replace('${DestinationType}', destinationType);
-    arn = arn.replace('${Uuid}', uuid);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:destination/${ destinationType }/${ uuid }`);
   }
 
   /**
@@ -3751,12 +3615,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProvisioningtemplate(provisioningTemplate: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:provisioningtemplate/${ProvisioningTemplate}';
-    arn = arn.replace('${ProvisioningTemplate}', provisioningTemplate);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:provisioningtemplate/${ provisioningTemplate }`);
   }
 
   /**
@@ -3774,13 +3633,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomainconfiguration(domainConfigurationName: string, id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:domainconfiguration/${DomainConfigurationName}/${Id}';
-    arn = arn.replace('${DomainConfigurationName}', domainConfigurationName);
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:domainconfiguration/${ domainConfigurationName }/${ id }`);
   }
 
   /**

@@ -479,12 +479,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onWorkflow(namespacePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotthingsgraph:${Region}:${Account}:Workflow/${NamespacePath}';
-    arn = arn.replace('${NamespacePath}', namespacePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotthingsgraph:${ region || '*' }:${ account || '*' }:Workflow/${ namespacePath }`);
   }
 
   /**
@@ -498,12 +493,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSystem(namespacePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotthingsgraph:${Region}:${Account}:System/${NamespacePath}';
-    arn = arn.replace('${NamespacePath}', namespacePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotthingsgraph:${ region || '*' }:${ account || '*' }:System/${ namespacePath }`);
   }
 
   /**
@@ -520,11 +510,6 @@ export class Iotthingsgraph extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSystemInstance(namespacePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotthingsgraph:${Region}:${Account}:Deployment/${NamespacePath}';
-    arn = arn.replace('${NamespacePath}', namespacePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotthingsgraph:${ region || '*' }:${ account || '*' }:Deployment/${ namespacePath }`);
   }
 }

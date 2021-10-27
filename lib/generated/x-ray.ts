@@ -400,13 +400,7 @@ export class Xray extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGroup(groupName: string, id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:xray:${Region}:${Account}:group/${GroupName}/${Id}';
-    arn = arn.replace('${GroupName}', groupName);
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:xray:${ region || '*' }:${ account || '*' }:group/${ groupName }/${ id }`);
   }
 
   /**
@@ -423,11 +417,6 @@ export class Xray extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSamplingRule(samplingRuleName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:xray:${Region}:${Account}:sampling-rule/${SamplingRuleName}';
-    arn = arn.replace('${SamplingRuleName}', samplingRuleName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:xray:${ region || '*' }:${ account || '*' }:sampling-rule/${ samplingRuleName }`);
   }
 }
