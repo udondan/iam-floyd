@@ -19,7 +19,7 @@ export class Mediaconvert extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental MediaConvert.
+   * Grants permission to associate an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental MediaConvert
    *
    * Access Level: Write
    *
@@ -44,6 +44,10 @@ export class Mediaconvert extends PolicyStatement {
    * Grants permission to create and submit an AWS Elemental MediaConvert job
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html
    */
@@ -108,6 +112,17 @@ export class Mediaconvert extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an AWS Elemental MediaConvert policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/policy.html
+   */
+  public toDeletePolicy() {
+    return this.to('DeletePolicy');
+  }
+
+  /**
    * Grants permission to delete an AWS Elemental MediaConvert custom output preset
    *
    * Access Level: Write
@@ -130,7 +145,7 @@ export class Mediaconvert extends PolicyStatement {
   }
 
   /**
-   * Grants permission to subscribe to the AWS Elemental MediaConvert service, by sending a request for an account-specific endpoint. All transcoding requests must be sent to the endpoint that the service returns.
+   * Grants permission to subscribe to the AWS Elemental MediaConvert service, by sending a request for an account-specific endpoint. All transcoding requests must be sent to the endpoint that the service returns
    *
    * Access Level: List
    *
@@ -141,7 +156,7 @@ export class Mediaconvert extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove an association between the Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate and an AWS Elemental MediaConvert resource.
+   * Grants permission to remove an association between the Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate and an AWS Elemental MediaConvert resource
    *
    * Access Level: Write
    *
@@ -171,6 +186,17 @@ export class Mediaconvert extends PolicyStatement {
    */
   public toGetJobTemplate() {
     return this.to('GetJobTemplate');
+  }
+
+  /**
+   * Grants permission to get an AWS Elemental MediaConvert policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/policy.html
+   */
+  public toGetPolicy() {
+    return this.to('GetPolicy');
   }
 
   /**
@@ -251,6 +277,17 @@ export class Mediaconvert extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put an AWS Elemental MediaConvert policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/policy.html
+   */
+  public toPutPolicy() {
+    return this.to('PutPolicy');
+  }
+
+  /**
    * Grants permission to add tags to a MediaConvert queue, preset, or job template
    *
    * Access Level: Tagging
@@ -321,9 +358,11 @@ export class Mediaconvert extends PolicyStatement {
       "CreatePreset",
       "CreateQueue",
       "DeleteJobTemplate",
+      "DeletePolicy",
       "DeletePreset",
       "DeleteQueue",
       "DisassociateCertificate",
+      "PutPolicy",
       "UpdateJobTemplate",
       "UpdatePreset",
       "UpdateQueue"
@@ -338,6 +377,7 @@ export class Mediaconvert extends PolicyStatement {
     "Read": [
       "GetJob",
       "GetJobTemplate",
+      "GetPolicy",
       "GetPreset",
       "GetQueue",
       "ListTagsForResource"
@@ -357,6 +397,9 @@ export class Mediaconvert extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:jobs/${JobId}';

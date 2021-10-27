@@ -5,12 +5,14 @@ mediaconvert:CreateJobTemplate;Write
 mediaconvert:CreatePreset;Write
 mediaconvert:CreateQueue;Write
 mediaconvert:DeleteJobTemplate;Write
+mediaconvert:DeletePolicy;Write
 mediaconvert:DeletePreset;Write
 mediaconvert:DeleteQueue;Write
 mediaconvert:DescribeEndpoints;List
 mediaconvert:DisassociateCertificate;Write
 mediaconvert:GetJob;Read
 mediaconvert:GetJobTemplate;Read
+mediaconvert:GetPolicy;Read
 mediaconvert:GetPreset;Read
 mediaconvert:GetQueue;Read
 mediaconvert:ListJobTemplates;List
@@ -18,6 +20,7 @@ mediaconvert:ListJobs;List
 mediaconvert:ListPresets;List
 mediaconvert:ListQueues;List
 mediaconvert:ListTagsForResource;Read
+mediaconvert:PutPolicy;Write
 mediaconvert:TagResource;Tagging
 mediaconvert:UntagResource;Tagging
 mediaconvert:UpdateJobTemplate;Write

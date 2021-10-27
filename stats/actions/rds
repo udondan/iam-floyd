@@ -12,6 +12,7 @@ rds:CopyDBParameterGroup;Write
 rds:CopyDBSnapshot;Write
 rds:CopyOptionGroup;Write
 rds:CreateCustomAvailabilityZone;Write
+rds:CreateCustomDBEngineVersion;Write
 rds:CreateDBCluster;Write
 rds:CreateDBClusterEndpoint;Write
 rds:CreateDBClusterParameterGroup;Write
@@ -29,6 +30,7 @@ rds:CreateGlobalCluster;Write
 rds:CreateOptionGroup;Write
 rds:CrossRegionCommunication;Write
 rds:DeleteCustomAvailabilityZone;Write
+rds:DeleteCustomDBEngineVersion;Write
 rds:DeleteDBCluster;Write
 rds:DeleteDBClusterEndpoint;Write
 rds:DeleteDBClusterParameterGroup;Write
@@ -96,6 +98,7 @@ rds:ImportInstallationMedia;Write
 rds:ListTagsForResource;Read
 rds:ModifyCertificates;Write
 rds:ModifyCurrentDBClusterCapacity;Write
+rds:ModifyCustomDBEngineVersion;Write
 rds:ModifyDBCluster;Write
 rds:ModifyDBClusterEndpoint;Write
 rds:ModifyDBClusterParameterGroup;Write

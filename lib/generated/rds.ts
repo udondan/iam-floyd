@@ -219,6 +219,26 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a custom engine version
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - mediaimport:CreateDatabaseBinarySnapshot
+   * - rds:AddTagsToResource
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateCustomDBEngineVersion.html
+   */
+  public toCreateCustomDBEngineVersion() {
+    return this.to('CreateCustomDBEngineVersion');
+  }
+
+  /**
    * Grants permission to create a new Amazon Aurora DB cluster
    *
    * Access Level: Write
@@ -519,6 +539,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an existing custom engine version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteCustomDBEngineVersion.html
+   */
+  public toDeleteCustomDBEngineVersion() {
+    return this.to('DeleteCustomDBEngineVersion');
+  }
+
+  /**
    * Grants permission to delete a previously provisioned DB cluster
    *
    * Access Level: Write
@@ -717,7 +748,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Lists the set of CA certificates provided by Amazon RDS for this AWS account
+   * Grants permission to list the set of CA certificates provided by Amazon RDS for this AWS account
    *
    * Access Level: List
    *
@@ -1256,6 +1287,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify an existing custom engine version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyCustomDBEngineVersion.html
+   */
+  public toModifyCustomDBEngineVersion() {
+    return this.to('ModifyCustomDBEngineVersion');
+  }
+
+  /**
    * Grants permission to modify a setting for an Amazon Aurora DB cluster
    *
    * Access Level: Write
@@ -1736,7 +1778,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Starts the DB cluster
+   * Grants permission to start the DB cluster
    *
    * Access Level: Write
    *
@@ -1840,6 +1882,7 @@ export class Rds extends PolicyStatement {
       "CopyDBSnapshot",
       "CopyOptionGroup",
       "CreateCustomAvailabilityZone",
+      "CreateCustomDBEngineVersion",
       "CreateDBCluster",
       "CreateDBClusterEndpoint",
       "CreateDBClusterParameterGroup",
@@ -1857,6 +1900,7 @@ export class Rds extends PolicyStatement {
       "CreateOptionGroup",
       "CrossRegionCommunication",
       "DeleteCustomAvailabilityZone",
+      "DeleteCustomDBEngineVersion",
       "DeleteDBCluster",
       "DeleteDBClusterEndpoint",
       "DeleteDBClusterParameterGroup",
@@ -1879,6 +1923,7 @@ export class Rds extends PolicyStatement {
       "ImportInstallationMedia",
       "ModifyCertificates",
       "ModifyCurrentDBClusterCapacity",
+      "ModifyCustomDBEngineVersion",
       "ModifyDBCluster",
       "ModifyDBClusterEndpoint",
       "ModifyDBClusterParameterGroup",
@@ -2360,6 +2405,32 @@ export class Rds extends PolicyStatement {
   public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:target-group:${TargetGroupId}';
     arn = arn.replace('${TargetGroupId}', targetGroupId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type cev to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html
+   *
+   * @param engine - Identifier for the engine.
+   * @param engineVersion - Identifier for the engineVersion.
+   * @param customDbEngineVersionId - Identifier for the customDbEngineVersionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCev(engine: string, engineVersion: string, customDbEngineVersionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:cev:${Engine}/${EngineVersion}/${CustomDbEngineVersionId}';
+    arn = arn.replace('${Engine}', engine);
+    arn = arn.replace('${EngineVersion}', engineVersion);
+    arn = arn.replace('${CustomDbEngineVersionId}', customDbEngineVersionId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

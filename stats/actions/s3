@@ -10,7 +10,6 @@ s3:DeleteAccessPointForObjectLambda;Write
 s3:DeleteAccessPointPolicy;Permissions management
 s3:DeleteAccessPointPolicyForObjectLambda;Permissions management
 s3:DeleteBucket;Write
-s3:DeleteBucketOwnershipControls;Write
 s3:DeleteBucketPolicy;Permissions management
 s3:DeleteBucketWebsite;Write
 s3:DeleteJobTagging;Tagging

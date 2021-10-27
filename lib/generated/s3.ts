@@ -309,25 +309,6 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete ownership controls on a bucket
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAuthType()
-   * - .ifResourceAccount()
-   * - .ifSignatureAge()
-   * - .ifSignatureversion()
-   * - .ifTlsVersion()
-   * - .ifXAmzContentSha256()
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketOwnershipControls.html
-   */
-  public toDeleteBucketOwnershipControls() {
-    return this.to('DeleteBucketOwnershipControls');
-  }
-
-  /**
    * Grants permission to delete the policy on a specified bucket
    *
    * Access Level: Permissions management
@@ -1995,7 +1976,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add or replace ownership controls on a bucket
+   * Grants permission to add, replace or delete ownership controls on a bucket
    *
    * Access Level: Write
    *
@@ -2309,7 +2290,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set the access control list (ACL) permissions for new or existing objects in an S3 bucket.
+   * Grants permission to set the access control list (ACL) permissions for new or existing objects in an S3 bucket
    *
    * Access Level: Permissions management
    *
@@ -2669,7 +2650,6 @@ export class S3 extends PolicyStatement {
       "DeleteAccessPoint",
       "DeleteAccessPointForObjectLambda",
       "DeleteBucket",
-      "DeleteBucketOwnershipControls",
       "DeleteBucketWebsite",
       "DeleteMultiRegionAccessPoint",
       "DeleteObject",
@@ -3130,7 +3110,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters access to updating the job priority by operation
+   * Filters access by operation to updating the job priority
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
    *
@@ -3148,7 +3128,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters access to cancelling existing jobs by priority range
+   * Filters access by priority range to cancelling existing jobs
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
    *
@@ -3193,7 +3173,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters access to cancelling suspended jobs by a specific job suspended cause (for example, AWAITING_CONFIRMATION)
+   * Filters access by a specific job suspended cause (for example, AWAITING_CONFIRMATION) to cancelling suspended jobs
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
    *
@@ -3220,7 +3200,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters access to creating jobs by operation
+   * Filters access by operation to creating jobs
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
    *
@@ -3235,7 +3215,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters access to creating new jobs by priority range
+   * Filters access by priority range to creating new jobs
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
    *
@@ -3305,7 +3285,6 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
-   * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -3443,7 +3422,6 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
-   * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -3593,7 +3571,6 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
-   * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -3863,7 +3840,6 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
-   * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -4001,7 +3977,6 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
-   * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -4165,7 +4140,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters access to unsigned content in your bucket
+   * Filters access by unsigned content in your bucket
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html
    *
@@ -4181,7 +4156,6 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
-   * - .toDeleteBucketOwnershipControls()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -4293,7 +4267,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters access to requests with a specific bucket, prefix, or object as the copy source
+   * Filters access by copy source bucket, prefix, or object in the copy object requests
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#putobject-limit-copy-source-3
    *
@@ -4309,7 +4283,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters access to requests with the x-amz-grant-full-control (full control) header
+   * Filters access by x-amz-grant-full-control (full control) header
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
    *
@@ -4329,7 +4303,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters access to requests with the x-amz-grant-read (read access) header
+   * Filters access by x-amz-grant-read (read access) header
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
    *
@@ -4349,7 +4323,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters access to requests with the x-amz-grant-read-acp (read permissions for the ACL) header
+   * Filters access by the x-amz-grant-read-acp (read permissions for the ACL) header
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
    *
@@ -4369,7 +4343,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters access to requests with the x-amz-grant-write (write access) header
+   * Filters access by the x-amz-grant-write (write access) header
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
    *
@@ -4389,7 +4363,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters access to requests with the x-amz-grant-write-acp (write permissions for the ACL) header
+   * Filters access by the x-amz-grant-write-acp (write permissions for the ACL) header
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
    *

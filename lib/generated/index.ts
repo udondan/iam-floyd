@@ -85,6 +85,7 @@ export { Kafka } from "./managedstreamingforapachekafka";
 export { Kafkaconnect } from "./managedstreamingforkafkaconnect";
 export { Airflow } from "./managedworkflowsforapacheairflow";
 export { Mechanicalturk } from "./mechanicalturk";
+export { Mediaimport } from "./mediaimport";
 export { Memorydb } from "./memorydb";
 export { Ec2messages } from "./messagedeliveryservice";
 export { Mobileanalytics } from "./mobileanalytics";
