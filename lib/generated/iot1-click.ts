@@ -370,12 +370,7 @@ export class Iot1click extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevice(deviceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot1click:${Region}:${Account}:devices/${DeviceId}';
-    arn = arn.replace('${DeviceId}', deviceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot1click:${ region || '*' }:${ account || '*' }:devices/${ deviceId }`);
   }
 
   /**
@@ -392,11 +387,6 @@ export class Iot1click extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot1click:${Region}:${Account}:projects/${ProjectName}';
-    arn = arn.replace('${ProjectName}', projectName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot1click:${ region || '*' }:${ account || '*' }:projects/${ projectName }`);
   }
 }

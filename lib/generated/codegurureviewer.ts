@@ -292,12 +292,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAssociation(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codeguru-reviewer:${Region}:${Account}:association:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codeguru-reviewer:${ region || '*' }:${ account || '*' }:association:${ resourceId }`);
   }
 
   /**
@@ -309,12 +304,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCodereview(codeReviewUuid: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codeguru-reviewer:${Region}:${Account}:code-review:${CodeReviewUuid}';
-    arn = arn.replace('${CodeReviewUuid}', codeReviewUuid);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codeguru-reviewer:${ region || '*' }:${ account || '*' }:code-review:${ codeReviewUuid }`);
   }
 
   /**
@@ -331,12 +321,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codecommit:${Region}:${Account}:${RepositoryName}';
-    arn = arn.replace('${RepositoryName}', repositoryName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codecommit:${ region || '*' }:${ account || '*' }:${ repositoryName }`);
   }
 
   /**
@@ -348,11 +333,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onConnection(connectionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codestar-connections:${Region}:${Account}:connection/${ConnectionId}';
-    arn = arn.replace('${ConnectionId}', connectionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codestar-connections:${ region || '*' }:${ account || '*' }:connection/${ connectionId }`);
   }
 }

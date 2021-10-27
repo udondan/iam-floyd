@@ -812,12 +812,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:cluster/${ClusterName}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
   }
 
   /**
@@ -835,12 +830,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onContainerInstance(containerInstanceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:container-instance/${ContainerInstanceId}';
-    arn = arn.replace('${ContainerInstanceId}', containerInstanceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:container-instance/${ containerInstanceId }`);
   }
 
   /**
@@ -858,12 +848,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onService(serviceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:service/${ServiceName}';
-    arn = arn.replace('${ServiceName}', serviceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:service/${ serviceName }`);
   }
 
   /**
@@ -881,12 +866,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task/${TaskId}';
-    arn = arn.replace('${TaskId}', taskId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:task/${ taskId }`);
   }
 
   /**
@@ -905,13 +885,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTaskDefinition(taskDefinitionFamilyName: string, taskDefinitionRevisionNumber: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task-definition/${TaskDefinitionFamilyName}:${TaskDefinitionRevisionNumber}';
-    arn = arn.replace('${TaskDefinitionFamilyName}', taskDefinitionFamilyName);
-    arn = arn.replace('${TaskDefinitionRevisionNumber}', taskDefinitionRevisionNumber);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:task-definition/${ taskDefinitionFamilyName }:${ taskDefinitionRevisionNumber }`);
   }
 
   /**
@@ -929,12 +903,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCapacityProvider(capacityProviderName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:capacity-provider/${CapacityProviderName}';
-    arn = arn.replace('${CapacityProviderName}', capacityProviderName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:capacity-provider/${ capacityProviderName }`);
   }
 
   /**
@@ -954,14 +923,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTaskSet(clusterName: string, serviceName: string, taskSetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task-set/${ClusterName}/${ServiceName}/${TaskSetId}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${ServiceName}', serviceName);
-    arn = arn.replace('${TaskSetId}', taskSetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:task-set/${ clusterName }/${ serviceName }/${ taskSetId }`);
   }
 
   /**

@@ -759,14 +759,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponent(componentName: string, componentVersion: string, componentBuildVersion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:component/${ComponentName}/${ComponentVersion}/${ComponentBuildVersion}';
-    arn = arn.replace('${ComponentName}', componentName);
-    arn = arn.replace('${ComponentVersion}', componentVersion);
-    arn = arn.replace('${ComponentBuildVersion}', componentBuildVersion);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:imagebuilder:${ region || '*' }:${ account || '*' }:component/${ componentName }/${ componentVersion }/${ componentBuildVersion }`);
   }
 
   /**
@@ -784,13 +777,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponentVersion(componentName: string, componentVersion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:component/${ComponentName}/${ComponentVersion}';
-    arn = arn.replace('${ComponentName}', componentName);
-    arn = arn.replace('${ComponentVersion}', componentVersion);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:imagebuilder:${ region || '*' }:${ account || '*' }:component/${ componentName }/${ componentVersion }`);
   }
 
   /**
@@ -807,12 +794,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDistributionConfiguration(distributionConfigurationName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:distribution-configuration/${DistributionConfigurationName}';
-    arn = arn.replace('${DistributionConfigurationName}', distributionConfigurationName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:imagebuilder:${ region || '*' }:${ account || '*' }:distribution-configuration/${ distributionConfigurationName }`);
   }
 
   /**
@@ -831,14 +813,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImage(imageName: string, imageVersion: string, imageBuildVersion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image/${ImageName}/${ImageVersion}/${ImageBuildVersion}';
-    arn = arn.replace('${ImageName}', imageName);
-    arn = arn.replace('${ImageVersion}', imageVersion);
-    arn = arn.replace('${ImageBuildVersion}', imageBuildVersion);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:imagebuilder:${ region || '*' }:${ account || '*' }:image/${ imageName }/${ imageVersion }/${ imageBuildVersion }`);
   }
 
   /**
@@ -856,13 +831,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImageVersion(imageName: string, imageVersion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image/${ImageName}/${ImageVersion}';
-    arn = arn.replace('${ImageName}', imageName);
-    arn = arn.replace('${ImageVersion}', imageVersion);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:imagebuilder:${ region || '*' }:${ account || '*' }:image/${ imageName }/${ imageVersion }`);
   }
 
   /**
@@ -880,13 +849,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImageRecipe(imageRecipeName: string, imageRecipeVersion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image-recipe/${ImageRecipeName}/${ImageRecipeVersion}';
-    arn = arn.replace('${ImageRecipeName}', imageRecipeName);
-    arn = arn.replace('${ImageRecipeVersion}', imageRecipeVersion);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:imagebuilder:${ region || '*' }:${ account || '*' }:image-recipe/${ imageRecipeName }/${ imageRecipeVersion }`);
   }
 
   /**
@@ -904,13 +867,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContainerRecipe(containerRecipeName: string, containerRecipeVersion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:container-recipe/${ContainerRecipeName}/${ContainerRecipeVersion}';
-    arn = arn.replace('${ContainerRecipeName}', containerRecipeName);
-    arn = arn.replace('${ContainerRecipeVersion}', containerRecipeVersion);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:imagebuilder:${ region || '*' }:${ account || '*' }:container-recipe/${ containerRecipeName }/${ containerRecipeVersion }`);
   }
 
   /**
@@ -927,12 +884,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImagePipeline(imagePipelineName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image-pipeline/${ImagePipelineName}';
-    arn = arn.replace('${ImagePipelineName}', imagePipelineName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:imagebuilder:${ region || '*' }:${ account || '*' }:image-pipeline/${ imagePipelineName }`);
   }
 
   /**
@@ -949,12 +901,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInfrastructureConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:infrastructure-configuration/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:imagebuilder:${ region || '*' }:${ account || '*' }:infrastructure-configuration/${ resourceId }`);
   }
 
   /**
@@ -968,12 +915,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onKmsKey(keyId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}';
-    arn = arn.replace('${KeyId}', keyId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
   }
 
   /**

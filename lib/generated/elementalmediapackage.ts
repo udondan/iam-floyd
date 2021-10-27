@@ -291,12 +291,7 @@ export class Mediapackage extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannels(channelIdentifier: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediapackage:${Region}:${Account}:channels/${ChannelIdentifier}';
-    arn = arn.replace('${ChannelIdentifier}', channelIdentifier);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediapackage:${ region || '*' }:${ account || '*' }:channels/${ channelIdentifier }`);
   }
 
   /**
@@ -313,12 +308,7 @@ export class Mediapackage extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOriginEndpoints(originEndpointIdentifier: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediapackage:${Region}:${Account}:origin_endpoints/${OriginEndpointIdentifier}';
-    arn = arn.replace('${OriginEndpointIdentifier}', originEndpointIdentifier);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediapackage:${ region || '*' }:${ account || '*' }:origin_endpoints/${ originEndpointIdentifier }`);
   }
 
   /**
@@ -335,11 +325,6 @@ export class Mediapackage extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHarvestJobs(harvestJobIdentifier: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediapackage:${Region}:${Account}:harvest_jobs/${HarvestJobIdentifier}';
-    arn = arn.replace('${HarvestJobIdentifier}', harvestJobIdentifier);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediapackage:${ region || '*' }:${ account || '*' }:harvest_jobs/${ harvestJobIdentifier }`);
   }
 }

@@ -468,12 +468,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:eks:${Region}:${Account}:cluster/${ClusterName}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:eks:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }`);
   }
 
   /**
@@ -492,14 +487,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNodegroup(clusterName: string, nodegroupName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:eks:${Region}:${Account}:nodegroup/${ClusterName}/${NodegroupName}/${UUID}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${NodegroupName}', nodegroupName);
-    arn = arn.replace('${UUID}', uUID);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:eks:${ region || '*' }:${ account || '*' }:nodegroup/${ clusterName }/${ nodegroupName }/${ uUID }`);
   }
 
   /**
@@ -518,14 +506,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAddon(clusterName: string, addonName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:eks:${Region}:${Account}:addon/${ClusterName}/${AddonName}/${UUID}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${AddonName}', addonName);
-    arn = arn.replace('${UUID}', uUID);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:eks:${ region || '*' }:${ account || '*' }:addon/${ clusterName }/${ addonName }/${ uUID }`);
   }
 
   /**
@@ -544,14 +525,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFargateprofile(clusterName: string, fargateProfileName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:eks:${Region}:${Account}:fargateprofile/${ClusterName}/${FargateProfileName}/${UUID}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${FargateProfileName}', fargateProfileName);
-    arn = arn.replace('${UUID}', uUID);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:eks:${ region || '*' }:${ account || '*' }:fargateprofile/${ clusterName }/${ fargateProfileName }/${ uUID }`);
   }
 
   /**
@@ -571,15 +545,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIdentityproviderconfig(clusterName: string, identityProviderType: string, identityProviderConfigName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:eks:${Region}:${Account}:identityproviderconfig/${ClusterName}/${IdentityProviderType}/${IdentityProviderConfigName}/${UUID}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${IdentityProviderType}', identityProviderType);
-    arn = arn.replace('${IdentityProviderConfigName}', identityProviderConfigName);
-    arn = arn.replace('${UUID}', uUID);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:eks:${ region || '*' }:${ account || '*' }:identityproviderconfig/${ clusterName }/${ identityProviderType }/${ identityProviderConfigName }/${ uUID }`);
   }
 
   /**

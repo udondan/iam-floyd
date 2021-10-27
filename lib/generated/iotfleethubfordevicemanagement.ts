@@ -156,10 +156,6 @@ export class Iotfleethub extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotfleethub::${Account}:application/${ApplicationId}';
-    arn = arn.replace('${ApplicationId}', applicationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotfleethub::${ account || '*' }:application/${ applicationId }`);
   }
 }

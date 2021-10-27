@@ -514,11 +514,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGlobalNetwork(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:networkmanager::${Account}:global-network/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:networkmanager::${ account || '*' }:global-network/${ resourceId }`);
   }
 
   /**
@@ -535,12 +531,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSite(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:networkmanager::${Account}:site/${GlobalNetworkId}/${ResourceId}';
-    arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:networkmanager::${ account || '*' }:site/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -557,12 +548,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLink(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:networkmanager::${Account}:link/${GlobalNetworkId}/${ResourceId}';
-    arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:networkmanager::${ account || '*' }:link/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -579,12 +565,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevice(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:networkmanager::${Account}:device/${GlobalNetworkId}/${ResourceId}';
-    arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:networkmanager::${ account || '*' }:device/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**
@@ -601,12 +582,7 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnection(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:networkmanager::${Account}:connection/${GlobalNetworkId}/${ResourceId}';
-    arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:networkmanager::${ account || '*' }:connection/${ globalNetworkId }/${ resourceId }`);
   }
 
   /**

@@ -211,12 +211,7 @@ export class Finspace extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:finspace:${Region}:${Account}:environment/${EnvironmentId}';
-    arn = arn.replace('${EnvironmentId}', environmentId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:finspace:${ region || '*' }:${ account || '*' }:environment/${ environmentId }`);
   }
 
   /**
@@ -233,11 +228,6 @@ export class Finspace extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUser(userId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:finspace:${Region}:${Account}:user/${UserId}';
-    arn = arn.replace('${UserId}', userId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:finspace:${ region || '*' }:${ account || '*' }:user/${ userId }`);
   }
 }

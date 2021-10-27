@@ -398,12 +398,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAnalyzer(analyzerName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}';
-    arn = arn.replace('${AnalyzerName}', analyzerName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:access-analyzer:${ region || '*' }:${ account || '*' }:analyzer/${ analyzerName }`);
   }
 
   /**
@@ -418,12 +413,6 @@ export class AccessAnalyzer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onArchiveRule(analyzerName: string, ruleName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}/archive-rule/${RuleName}';
-    arn = arn.replace('${AnalyzerName}', analyzerName);
-    arn = arn.replace('${RuleName}', ruleName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:access-analyzer:${ region || '*' }:${ account || '*' }:analyzer/${ analyzerName }/archive-rule/${ ruleName }`);
   }
 }

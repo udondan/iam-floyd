@@ -471,12 +471,7 @@ export class Qldb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLedger(ledgerName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:qldb:${Region}:${Account}:ledger/${LedgerName}';
-    arn = arn.replace('${LedgerName}', ledgerName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }`);
   }
 
   /**
@@ -494,13 +489,7 @@ export class Qldb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStream(ledgerName: string, streamId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:qldb:${Region}:${Account}:stream/${LedgerName}/${StreamId}';
-    arn = arn.replace('${LedgerName}', ledgerName);
-    arn = arn.replace('${StreamId}', streamId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:qldb:${ region || '*' }:${ account || '*' }:stream/${ ledgerName }/${ streamId }`);
   }
 
   /**
@@ -518,13 +507,7 @@ export class Qldb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTable(ledgerName: string, tableId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:qldb:${Region}:${Account}:ledger/${LedgerName}/table/${TableId}';
-    arn = arn.replace('${LedgerName}', ledgerName);
-    arn = arn.replace('${TableId}', tableId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }/table/${ tableId }`);
   }
 
   /**
@@ -541,12 +524,7 @@ export class Qldb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCatalog(ledgerName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:qldb:${Region}:${Account}:ledger/${LedgerName}/information_schema/user_tables';
-    arn = arn.replace('${LedgerName}', ledgerName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:qldb:${ region || '*' }:${ account || '*' }:ledger/${ ledgerName }/information_schema/user_tables`);
   }
 
   /**

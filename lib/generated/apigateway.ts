@@ -71,14 +71,6 @@ export class ExecuteApi extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onExecuteApiGeneral(apiId: string, stage: string, method: string, apiSpecificResourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:execute-api:${Region}:${Account}:${ApiId}/${Stage}/${Method}/${ApiSpecificResourcePath}';
-    arn = arn.replace('${ApiId}', apiId);
-    arn = arn.replace('${Stage}', stage);
-    arn = arn.replace('${Method}', method);
-    arn = arn.replace('${ApiSpecificResourcePath}', apiSpecificResourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:execute-api:${ region || '*' }:${ account || '*' }:${ apiId }/${ stage }/${ method }/${ apiSpecificResourcePath }`);
   }
 }

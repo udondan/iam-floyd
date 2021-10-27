@@ -286,12 +286,7 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModel(modelId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:model/${ModelId}';
-    arn = arn.replace('${ModelId}', modelId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:deepcomposer:${ region || '*' }:${ account || '*' }:model/${ modelId }`);
   }
 
   /**
@@ -308,12 +303,7 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComposition(compositionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:composition/${CompositionId}';
-    arn = arn.replace('${CompositionId}', compositionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:deepcomposer:${ region || '*' }:${ account || '*' }:composition/${ compositionId }`);
   }
 
   /**
@@ -327,11 +317,6 @@ export class Deepcomposer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAudio(audioId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:audio/${AudioId}';
-    arn = arn.replace('${AudioId}', audioId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:deepcomposer:${ region || '*' }:${ account || '*' }:audio/${ audioId }`);
   }
 }

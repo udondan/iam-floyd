@@ -502,12 +502,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:file-system/${FileSystemId}';
-    arn = arn.replace('${FileSystemId}', fileSystemId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:file-system/${ fileSystemId }`);
   }
 
   /**
@@ -524,12 +519,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBackup(backupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:backup/${BackupId}';
-    arn = arn.replace('${BackupId}', backupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:backup/${ backupId }`);
   }
 
   /**
@@ -547,13 +537,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStorageVirtualMachine(fileSystemId: string, storageVirtualMachineId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:storage-virtual-machine/${FileSystemId}/${StorageVirtualMachineId}';
-    arn = arn.replace('${FileSystemId}', fileSystemId);
-    arn = arn.replace('${StorageVirtualMachineId}', storageVirtualMachineId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:storage-virtual-machine/${ fileSystemId }/${ storageVirtualMachineId }`);
   }
 
   /**
@@ -570,12 +554,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:task/${TaskId}';
-    arn = arn.replace('${TaskId}', taskId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:task/${ taskId }`);
   }
 
   /**
@@ -593,13 +572,7 @@ export class Fsx extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVolume(fileSystemId: string, volumeId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:volume/${FileSystemId}/${VolumeId}';
-    arn = arn.replace('${FileSystemId}', fileSystemId);
-    arn = arn.replace('${VolumeId}', volumeId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:volume/${ fileSystemId }/${ volumeId }`);
   }
 
   /**

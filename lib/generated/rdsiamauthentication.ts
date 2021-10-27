@@ -47,12 +47,6 @@ export class RdsDb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDbUser(dbiResourceId: string, dbUserName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds-db:${Region}:${Account}:dbuser:${DbiResourceId}/${DbUserName}';
-    arn = arn.replace('${DbiResourceId}', dbiResourceId);
-    arn = arn.replace('${DbUserName}', dbUserName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds-db:${ region || '*' }:${ account || '*' }:dbuser:${ dbiResourceId }/${ dbUserName }`);
   }
 }

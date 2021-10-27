@@ -268,11 +268,6 @@ export class ResourceGroups extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGroup(groupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:resource-groups:${Region}:${Account}:group/${GroupName}';
-    arn = arn.replace('${GroupName}', groupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:resource-groups:${ region || '*' }:${ account || '*' }:group/${ groupName }`);
   }
 }

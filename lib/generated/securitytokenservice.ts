@@ -256,11 +256,7 @@ export class Sts extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}';
-    arn = arn.replace('${RoleNameWithPath}', roleNameWithPath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:role/${ roleNameWithPath }`);
   }
 
   /**
@@ -273,11 +269,7 @@ export class Sts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onUser(userNameWithPath: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:user/${UserNameWithPath}';
-    arn = arn.replace('${UserNameWithPath}', userNameWithPath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:user/${ userNameWithPath }`);
   }
 
   /**

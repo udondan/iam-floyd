@@ -1534,12 +1534,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:cluster:${ClusterName}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:cluster:${ clusterName }`);
   }
 
   /**
@@ -1556,12 +1551,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatashare(producerClusterNamespace: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:datashare:${ProducerClusterNamespace}/{DataShareName}';
-    arn = arn.replace('${ProducerClusterNamespace}', producerClusterNamespace);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:datashare:${ producerClusterNamespace }/{DataShareName}`);
   }
 
   /**
@@ -1579,13 +1569,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDbgroup(clusterName: string, dbGroup: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:dbgroup:${ClusterName}/${DbGroup}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${DbGroup}', dbGroup);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:dbgroup:${ clusterName }/${ dbGroup }`);
   }
 
   /**
@@ -1603,13 +1587,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDbname(clusterName: string, dbName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:dbname:${ClusterName}/${DbName}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${DbName}', dbName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:dbname:${ clusterName }/${ dbName }`);
   }
 
   /**
@@ -1627,13 +1605,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDbuser(clusterName: string, dbUser: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:dbuser:${ClusterName}/${DbUser}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${DbUser}', dbUser);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:dbuser:${ clusterName }/${ dbUser }`);
   }
 
   /**
@@ -1650,12 +1622,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventsubscription(eventSubscriptionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:eventsubscription:${EventSubscriptionName}';
-    arn = arn.replace('${EventSubscriptionName}', eventSubscriptionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:eventsubscription:${ eventSubscriptionName }`);
   }
 
   /**
@@ -1672,12 +1639,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHsmclientcertificate(hSMClientCertificateId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:hsmclientcertificate:${HSMClientCertificateId}';
-    arn = arn.replace('${HSMClientCertificateId}', hSMClientCertificateId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:hsmclientcertificate:${ hSMClientCertificateId }`);
   }
 
   /**
@@ -1694,12 +1656,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHsmconfiguration(hSMConfigurationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:hsmconfiguration:${HSMConfigurationId}';
-    arn = arn.replace('${HSMConfigurationId}', hSMConfigurationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:hsmconfiguration:${ hSMConfigurationId }`);
   }
 
   /**
@@ -1716,12 +1673,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onParametergroup(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:parametergroup:${ParameterGroupName}';
-    arn = arn.replace('${ParameterGroupName}', parameterGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:parametergroup:${ parameterGroupName }`);
   }
 
   /**
@@ -1740,14 +1692,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSecuritygroup(securityGroupName: string, owner: string, ec2SecurityGroupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:securitygroup:${SecurityGroupName}/ec2securitygroup/${Owner}/${Ec2SecurityGroupId}';
-    arn = arn.replace('${SecurityGroupName}', securityGroupName);
-    arn = arn.replace('${Owner}', owner);
-    arn = arn.replace('${Ec2SecurityGroupId}', ec2SecurityGroupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:securitygroup:${ securityGroupName }/ec2securitygroup/${ owner }/${ ec2SecurityGroupId }`);
   }
 
   /**
@@ -1765,13 +1710,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSecuritygroupingressCidr(securityGroupName: string, ipRange: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:securitygroupingress:${SecurityGroupName}/cidrip/${IpRange}';
-    arn = arn.replace('${SecurityGroupName}', securityGroupName);
-    arn = arn.replace('${IpRange}', ipRange);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:securitygroupingress:${ securityGroupName }/cidrip/${ ipRange }`);
   }
 
   /**
@@ -1790,14 +1729,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSecuritygroupingressEc2securitygroup(securityGroupName: string, owner: string, ece2SecuritygroupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:securitygroupingress:${SecurityGroupName}/ec2securitygroup/${Owner}/${Ece2SecuritygroupId}';
-    arn = arn.replace('${SecurityGroupName}', securityGroupName);
-    arn = arn.replace('${Owner}', owner);
-    arn = arn.replace('${Ece2SecuritygroupId}', ece2SecuritygroupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:securitygroupingress:${ securityGroupName }/ec2securitygroup/${ owner }/${ ece2SecuritygroupId }`);
   }
 
   /**
@@ -1815,13 +1747,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshot(clusterName: string, snapshotName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:snapshot:${ClusterName}/${SnapshotName}';
-    arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${SnapshotName}', snapshotName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:snapshot:${ clusterName }/${ snapshotName }`);
   }
 
   /**
@@ -1838,12 +1764,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshotcopygrant(snapshotCopyGrantName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:snapshotcopygrant:${SnapshotCopyGrantName}';
-    arn = arn.replace('${SnapshotCopyGrantName}', snapshotCopyGrantName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:snapshotcopygrant:${ snapshotCopyGrantName }`);
   }
 
   /**
@@ -1860,12 +1781,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshotschedule(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:snapshotschedule:${ParameterGroupName}';
-    arn = arn.replace('${ParameterGroupName}', parameterGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:snapshotschedule:${ parameterGroupName }`);
   }
 
   /**
@@ -1882,12 +1798,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSubnetgroup(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:subnetgroup:${SubnetGroupName}';
-    arn = arn.replace('${SubnetGroupName}', subnetGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:subnetgroup:${ subnetGroupName }`);
   }
 
   /**
@@ -1904,12 +1815,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUsagelimit(usageLimitId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:redshift:${Region}:${Account}:usagelimit:${UsageLimitId}';
-    arn = arn.replace('${UsageLimitId}', usageLimitId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:usagelimit:${ usageLimitId }`);
   }
 
   /**

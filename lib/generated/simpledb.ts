@@ -158,11 +158,6 @@ export class Sdb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sdb:${Region}:${Account}:domain/${DomainName}';
-    arn = arn.replace('${DomainName}', domainName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sdb:${ region || '*' }:${ account || '*' }:domain/${ domainName }`);
   }
 }

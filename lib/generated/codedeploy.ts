@@ -629,12 +629,7 @@ export class Codedeploy extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codedeploy:${Region}:${Account}:application:${ApplicationName}';
-    arn = arn.replace('${ApplicationName}', applicationName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codedeploy:${ region || '*' }:${ account || '*' }:application:${ applicationName }`);
   }
 
   /**
@@ -648,12 +643,7 @@ export class Codedeploy extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDeploymentconfig(deploymentConfigurationName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codedeploy:${Region}:${Account}:deploymentconfig:${DeploymentConfigurationName}';
-    arn = arn.replace('${DeploymentConfigurationName}', deploymentConfigurationName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codedeploy:${ region || '*' }:${ account || '*' }:deploymentconfig:${ deploymentConfigurationName }`);
   }
 
   /**
@@ -668,13 +658,7 @@ export class Codedeploy extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDeploymentgroup(applicationName: string, deploymentGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codedeploy:${Region}:${Account}:deploymentgroup:${ApplicationName}/${DeploymentGroupName}';
-    arn = arn.replace('${ApplicationName}', applicationName);
-    arn = arn.replace('${DeploymentGroupName}', deploymentGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codedeploy:${ region || '*' }:${ account || '*' }:deploymentgroup:${ applicationName }/${ deploymentGroupName }`);
   }
 
   /**
@@ -688,11 +672,6 @@ export class Codedeploy extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onInstance(instanceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codedeploy:${Region}:${Account}:instance:${InstanceName}';
-    arn = arn.replace('${InstanceName}', instanceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codedeploy:${ region || '*' }:${ account || '*' }:instance:${ instanceName }`);
   }
 }

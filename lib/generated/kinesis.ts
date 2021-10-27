@@ -376,12 +376,7 @@ export class Kinesis extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onStream(streamName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kinesis:${Region}:${Account}:stream/${StreamName}';
-    arn = arn.replace('${StreamName}', streamName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kinesis:${ region || '*' }:${ account || '*' }:stream/${ streamName }`);
   }
 
   /**
@@ -398,15 +393,7 @@ export class Kinesis extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onConsumer(streamType: string, streamName: string, consumerName: string, consumerCreationTimpstamp: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kinesis:${Region}:${Account}:${StreamType}/${StreamName}/consumer/${ConsumerName}:${ConsumerCreationTimpstamp}';
-    arn = arn.replace('${StreamType}', streamType);
-    arn = arn.replace('${StreamName}', streamName);
-    arn = arn.replace('${ConsumerName}', consumerName);
-    arn = arn.replace('${ConsumerCreationTimpstamp}', consumerCreationTimpstamp);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kinesis:${ region || '*' }:${ account || '*' }:${ streamType }/${ streamName }/consumer/${ consumerName }:${ consumerCreationTimpstamp }`);
   }
 
   /**
@@ -420,11 +407,6 @@ export class Kinesis extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onKmsKey(keyId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}';
-    arn = arn.replace('${KeyId}', keyId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
   }
 }

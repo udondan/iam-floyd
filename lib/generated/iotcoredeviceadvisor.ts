@@ -214,12 +214,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSuitedefinition(suiteDefinitionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotdeviceadvisor:${Region}:${Account}:suitedefinition/${SuiteDefinitionId}';
-    arn = arn.replace('${SuiteDefinitionId}', suiteDefinitionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotdeviceadvisor:${ region || '*' }:${ account || '*' }:suitedefinition/${ suiteDefinitionId }`);
   }
 
   /**
@@ -237,12 +232,6 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSuiterun(suiteDefinitionId: string, suiteRunId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotdeviceadvisor:${Region}:${Account}:suiterun/${SuiteDefinitionId}/${SuiteRunId}';
-    arn = arn.replace('${SuiteDefinitionId}', suiteDefinitionId);
-    arn = arn.replace('${SuiteRunId}', suiteRunId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotdeviceadvisor:${ region || '*' }:${ account || '*' }:suiterun/${ suiteDefinitionId }/${ suiteRunId }`);
   }
 }

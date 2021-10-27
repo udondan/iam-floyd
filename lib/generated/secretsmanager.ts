@@ -427,12 +427,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResource()
    */
   public onSecret(secretId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:secretsmanager:${Region}:${Account}:secret:${SecretId}';
-    arn = arn.replace('${SecretId}', secretId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:secretsmanager:${ region || '*' }:${ account || '*' }:secret:${ secretId }`);
   }
 
   /**

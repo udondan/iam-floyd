@@ -369,13 +369,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifConfigType()
    */
   public onConfig(configType: string, configId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:config/${ConfigType}/${ConfigId}';
-    arn = arn.replace('${ConfigType}', configType);
-    arn = arn.replace('${ConfigId}', configId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:groundstation:${ region || '*' }:${ account || '*' }:config/${ configType }/${ configId }`);
   }
 
   /**
@@ -393,12 +387,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifContactId()
    */
   public onContact(contactId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:contact/${ContactId}';
-    arn = arn.replace('${ContactId}', contactId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:groundstation:${ region || '*' }:${ account || '*' }:contact/${ contactId }`);
   }
 
   /**
@@ -416,12 +405,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifDataflowEndpointGroupId()
    */
   public onDataflowEndpointGroup(dataflowEndpointGroupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:dataflow-endpoint-group/${DataflowEndpointGroupId}';
-    arn = arn.replace('${DataflowEndpointGroupId}', dataflowEndpointGroupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:groundstation:${ region || '*' }:${ account || '*' }:dataflow-endpoint-group/${ dataflowEndpointGroupId }`);
   }
 
   /**
@@ -438,12 +422,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifGroundStationId()
    */
   public onGroundStationResource(groundStationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:groundstation:${GroundStationId}';
-    arn = arn.replace('${GroundStationId}', groundStationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:groundstation:${ region || '*' }:${ account || '*' }:groundstation:${ groundStationId }`);
   }
 
   /**
@@ -461,12 +440,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifMissionProfileId()
    */
   public onMissionProfile(missionProfileId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:mission-profile/${MissionProfileId}';
-    arn = arn.replace('${MissionProfileId}', missionProfileId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:groundstation:${ region || '*' }:${ account || '*' }:mission-profile/${ missionProfileId }`);
   }
 
   /**
@@ -483,12 +457,7 @@ export class Groundstation extends PolicyStatement {
    * - .ifSatelliteId()
    */
   public onSatellite(satelliteId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:satellite/${SatelliteId}';
-    arn = arn.replace('${SatelliteId}', satelliteId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:groundstation:${ region || '*' }:${ account || '*' }:satellite/${ satelliteId }`);
   }
 
   /**

@@ -804,13 +804,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRobotApplication(applicationName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:robot-application/${ApplicationName}/${CreatedOnEpoch}';
-    arn = arn.replace('${ApplicationName}', applicationName);
-    arn = arn.replace('${CreatedOnEpoch}', createdOnEpoch);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:robomaker:${ region || '*' }:${ account || '*' }:robot-application/${ applicationName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -828,13 +822,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSimulationApplication(applicationName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:simulation-application/${ApplicationName}/${CreatedOnEpoch}';
-    arn = arn.replace('${ApplicationName}', applicationName);
-    arn = arn.replace('${CreatedOnEpoch}', createdOnEpoch);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:robomaker:${ region || '*' }:${ account || '*' }:simulation-application/${ applicationName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -851,12 +839,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSimulationJob(simulationJobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:simulation-job/${SimulationJobId}';
-    arn = arn.replace('${SimulationJobId}', simulationJobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:robomaker:${ region || '*' }:${ account || '*' }:simulation-job/${ simulationJobId }`);
   }
 
   /**
@@ -873,12 +856,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSimulationJobBatch(simulationJobBatchId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:simulation-job-batch/${SimulationJobBatchId}';
-    arn = arn.replace('${SimulationJobBatchId}', simulationJobBatchId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:robomaker:${ region || '*' }:${ account || '*' }:simulation-job-batch/${ simulationJobBatchId }`);
   }
 
   /**
@@ -895,12 +873,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeploymentJob(deploymentJobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:deployment-job/${DeploymentJobId}';
-    arn = arn.replace('${DeploymentJobId}', deploymentJobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:robomaker:${ region || '*' }:${ account || '*' }:deployment-job/${ deploymentJobId }`);
   }
 
   /**
@@ -918,13 +891,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRobot(robotName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:robot/${RobotName}/${CreatedOnEpoch}';
-    arn = arn.replace('${RobotName}', robotName);
-    arn = arn.replace('${CreatedOnEpoch}', createdOnEpoch);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:robomaker:${ region || '*' }:${ account || '*' }:robot/${ robotName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -942,13 +909,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeploymentFleet(fleetName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:deployment-fleet/${FleetName}/${CreatedOnEpoch}';
-    arn = arn.replace('${FleetName}', fleetName);
-    arn = arn.replace('${CreatedOnEpoch}', createdOnEpoch);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:robomaker:${ region || '*' }:${ account || '*' }:deployment-fleet/${ fleetName }/${ createdOnEpoch }`);
   }
 
   /**
@@ -965,12 +926,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorldGenerationJob(worldGenerationJobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:world-generation-job/${WorldGenerationJobId}';
-    arn = arn.replace('${WorldGenerationJobId}', worldGenerationJobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:robomaker:${ region || '*' }:${ account || '*' }:world-generation-job/${ worldGenerationJobId }`);
   }
 
   /**
@@ -987,12 +943,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorldExportJob(worldExportJobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:world-export-job/${WorldExportJobId}';
-    arn = arn.replace('${WorldExportJobId}', worldExportJobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:robomaker:${ region || '*' }:${ account || '*' }:world-export-job/${ worldExportJobId }`);
   }
 
   /**
@@ -1009,12 +960,7 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorldTemplate(worldTemplateJobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:world-template/${WorldTemplateJobId}';
-    arn = arn.replace('${WorldTemplateJobId}', worldTemplateJobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:robomaker:${ region || '*' }:${ account || '*' }:world-template/${ worldTemplateJobId }`);
   }
 
   /**
@@ -1031,11 +977,6 @@ export class Robomaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorld(worldId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:world/${WorldId}';
-    arn = arn.replace('${WorldId}', worldId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:robomaker:${ region || '*' }:${ account || '*' }:world/${ worldId }`);
   }
 }

@@ -915,12 +915,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBatchPrediction(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:batch-prediction/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:batch-prediction/${ resourcePath }`);
   }
 
   /**
@@ -937,12 +932,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDetector(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:detector/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:detector/${ resourcePath }`);
   }
 
   /**
@@ -959,12 +949,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDetectorVersion(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:detector-version/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:detector-version/${ resourcePath }`);
   }
 
   /**
@@ -981,12 +966,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEntityType(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:entity-type/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:entity-type/${ resourcePath }`);
   }
 
   /**
@@ -1003,12 +983,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExternalModel(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:external-model/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:external-model/${ resourcePath }`);
   }
 
   /**
@@ -1025,12 +1000,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventType(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:event-type/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:event-type/${ resourcePath }`);
   }
 
   /**
@@ -1047,12 +1017,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLabel(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:label/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:label/${ resourcePath }`);
   }
 
   /**
@@ -1069,12 +1034,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModel(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:model/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:model/${ resourcePath }`);
   }
 
   /**
@@ -1091,12 +1051,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModelVersion(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:model-version/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:model-version/${ resourcePath }`);
   }
 
   /**
@@ -1113,12 +1068,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOutcome(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:outcome/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:outcome/${ resourcePath }`);
   }
 
   /**
@@ -1135,12 +1085,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRule(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:rule/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:rule/${ resourcePath }`);
   }
 
   /**
@@ -1157,12 +1102,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVariable(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:variable/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:variable/${ resourcePath }`);
   }
 
   /**
@@ -1179,11 +1119,6 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBatchImport(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:batch-import/${ResourcePath}';
-    arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:frauddetector:${ region || '*' }:${ account || '*' }:batch-import/${ resourcePath }`);
   }
 }

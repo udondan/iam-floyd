@@ -798,14 +798,7 @@ export class Clouddirectory extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAppliedSchema(directoryId: string, schemaName: string, version: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:clouddirectory:${Region}:${Account}:directory/${DirectoryId}/schema/${SchemaName}/${Version}';
-    arn = arn.replace('${DirectoryId}', directoryId);
-    arn = arn.replace('${SchemaName}', schemaName);
-    arn = arn.replace('${Version}', version);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:clouddirectory:${ region || '*' }:${ account || '*' }:directory/${ directoryId }/schema/${ schemaName }/${ version }`);
   }
 
   /**
@@ -819,12 +812,7 @@ export class Clouddirectory extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDevelopmentSchema(schemaName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:clouddirectory:${Region}:${Account}:schema/development/${SchemaName}';
-    arn = arn.replace('${SchemaName}', schemaName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:clouddirectory:${ region || '*' }:${ account || '*' }:schema/development/${ schemaName }`);
   }
 
   /**
@@ -838,12 +826,7 @@ export class Clouddirectory extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDirectory(directoryId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:clouddirectory:${Region}:${Account}:directory/${DirectoryId}';
-    arn = arn.replace('${DirectoryId}', directoryId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:clouddirectory:${ region || '*' }:${ account || '*' }:directory/${ directoryId }`);
   }
 
   /**
@@ -858,12 +841,6 @@ export class Clouddirectory extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onPublishedSchema(schemaName: string, version: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:clouddirectory:${Region}:${Account}:schema/published/${SchemaName}/${Version}';
-    arn = arn.replace('${SchemaName}', schemaName);
-    arn = arn.replace('${Version}', version);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:clouddirectory:${ region || '*' }:${ account || '*' }:schema/published/${ schemaName }/${ version }`);
   }
 }

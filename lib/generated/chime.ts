@@ -3118,11 +3118,7 @@ export class Chime extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMeeting(meetingId: string, accountId?: string, partition?: string) {
-    var arn = 'arn:${Partition}:chime::${AccountId}:meeting/${MeetingId}';
-    arn = arn.replace('${MeetingId}', meetingId);
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:chime::${ accountId || '*' }:meeting/${ meetingId }`);
   }
 
   /**
@@ -3139,12 +3135,7 @@ export class Chime extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAppInstance(appInstanceId: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:chime:${Region}:${AccountId}:app-instance/${AppInstanceId}';
-    arn = arn.replace('${AppInstanceId}', appInstanceId);
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }`);
   }
 
   /**
@@ -3162,13 +3153,7 @@ export class Chime extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAppInstanceUser(appInstanceId: string, appInstanceUserId: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:chime:${Region}:${AccountId}:app-instance/${AppInstanceId}/user/${AppInstanceUserId}';
-    arn = arn.replace('${AppInstanceId}', appInstanceId);
-    arn = arn.replace('${AppInstanceUserId}', appInstanceUserId);
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/user/${ appInstanceUserId }`);
   }
 
   /**
@@ -3186,13 +3171,7 @@ export class Chime extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(appInstanceId: string, channelId: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:chime:${Region}:${AccountId}:app-instance/${AppInstanceId}/channel/${ChannelId}';
-    arn = arn.replace('${AppInstanceId}', appInstanceId);
-    arn = arn.replace('${ChannelId}', channelId);
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/channel/${ channelId }`);
   }
 
   /**
@@ -3210,12 +3189,6 @@ export class Chime extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannelFlow(appInstanceId: string, channelFlowId: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:chime:${Region}:${AccountId}:app-instance/${AppInstanceId}/channel-flow/${ChannelFlowId}';
-    arn = arn.replace('${AppInstanceId}', appInstanceId);
-    arn = arn.replace('${ChannelFlowId}', channelFlowId);
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:chime:${ region || '*' }:${ accountId || '*' }:app-instance/${ appInstanceId }/channel-flow/${ channelFlowId }`);
   }
 }

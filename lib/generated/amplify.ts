@@ -506,12 +506,7 @@ export class Amplify extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApps(appId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }`);
   }
 
   /**
@@ -529,13 +524,7 @@ export class Amplify extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBranches(appId: string, branchName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/branches/${BranchName}';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${BranchName}', branchName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/branches/${ branchName }`);
   }
 
   /**
@@ -551,14 +540,7 @@ export class Amplify extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onJobs(appId: string, branchName: string, jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/branches/${BranchName}/jobs/${JobId}';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${BranchName}', branchName);
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/branches/${ branchName }/jobs/${ jobId }`);
   }
 
   /**
@@ -576,12 +558,6 @@ export class Amplify extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomains(appId: string, domainName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/domains/${DomainName}';
-    arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${DomainName}', domainName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:amplify:${ region || '*' }:${ account || '*' }:apps/${ appId }/domains/${ domainName }`);
   }
 }

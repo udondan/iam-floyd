@@ -579,12 +579,7 @@ export class Sqlworkbench extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnection(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sqlworkbench:${Region}:${Account}:connection/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sqlworkbench:${ region || '*' }:${ account || '*' }:connection/${ resourceId }`);
   }
 
   /**
@@ -601,12 +596,7 @@ export class Sqlworkbench extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQuery(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sqlworkbench:${Region}:${Account}:query/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sqlworkbench:${ region || '*' }:${ account || '*' }:query/${ resourceId }`);
   }
 
   /**
@@ -623,11 +613,6 @@ export class Sqlworkbench extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChart(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sqlworkbench:${Region}:${Account}:chart/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sqlworkbench:${ region || '*' }:${ account || '*' }:chart/${ resourceId }`);
   }
 }

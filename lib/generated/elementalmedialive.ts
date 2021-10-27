@@ -746,12 +746,7 @@ export class Medialive extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:medialive:${Region}:${Account}:channel:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:medialive:${ region || '*' }:${ account || '*' }:channel:${ resourceName }`);
   }
 
   /**
@@ -768,12 +763,7 @@ export class Medialive extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInput(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:medialive:${Region}:${Account}:input:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:medialive:${ region || '*' }:${ account || '*' }:input:${ resourceName }`);
   }
 
   /**
@@ -787,12 +777,7 @@ export class Medialive extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onInputDevice(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:medialive:${Region}:${Account}:inputDevice:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:medialive:${ region || '*' }:${ account || '*' }:inputDevice:${ resourceName }`);
   }
 
   /**
@@ -809,12 +794,7 @@ export class Medialive extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInputSecurityGroup(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:medialive:${Region}:${Account}:inputSecurityGroup:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:medialive:${ region || '*' }:${ account || '*' }:inputSecurityGroup:${ resourceName }`);
   }
 
   /**
@@ -831,12 +811,7 @@ export class Medialive extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMultiplex(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:medialive:${Region}:${Account}:multiplex:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:medialive:${ region || '*' }:${ account || '*' }:multiplex:${ resourceName }`);
   }
 
   /**
@@ -853,12 +828,7 @@ export class Medialive extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReservation(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:medialive:${Region}:${Account}:reservation:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:medialive:${ region || '*' }:${ account || '*' }:reservation:${ resourceName }`);
   }
 
   /**
@@ -872,11 +842,6 @@ export class Medialive extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onOffering(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:medialive:${Region}:${Account}:offering:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:medialive:${ region || '*' }:${ account || '*' }:offering:${ resourceName }`);
   }
 }

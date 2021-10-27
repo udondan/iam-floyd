@@ -423,12 +423,7 @@ export class Profile extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomains(domainName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}';
-    arn = arn.replace('${DomainName}', domainName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }`);
   }
 
   /**
@@ -446,13 +441,7 @@ export class Profile extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onObjectTypes(domainName: string, objectTypeName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}/object-types/${ObjectTypeName}';
-    arn = arn.replace('${DomainName}', domainName);
-    arn = arn.replace('${ObjectTypeName}', objectTypeName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }/object-types/${ objectTypeName }`);
   }
 
   /**
@@ -470,12 +459,6 @@ export class Profile extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIntegrations(domainName: string, uri: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:profile:${Region}:${Account}:domains/${DomainName}/integrations/${Uri}';
-    arn = arn.replace('${DomainName}', domainName);
-    arn = arn.replace('${Uri}', uri);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:profile:${ region || '*' }:${ account || '*' }:domains/${ domainName }/integrations/${ uri }`);
   }
 }

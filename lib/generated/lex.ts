@@ -623,12 +623,7 @@ export class Lex extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBot(botName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}';
-    arn = arn.replace('${BotName}', botName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }`);
   }
 
   /**
@@ -646,13 +641,7 @@ export class Lex extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBotVersion(botName: string, botVersion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotVersion}';
-    arn = arn.replace('${BotName}', botName);
-    arn = arn.replace('${BotVersion}', botVersion);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }:${ botVersion }`);
   }
 
   /**
@@ -670,13 +659,7 @@ export class Lex extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBotAlias(botName: string, botAlias: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotAlias}';
-    arn = arn.replace('${BotName}', botName);
-    arn = arn.replace('${BotAlias}', botAlias);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lex:${ region || '*' }:${ account || '*' }:bot:${ botName }:${ botAlias }`);
   }
 
   /**
@@ -695,14 +678,7 @@ export class Lex extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(botName: string, botAlias: string, channelName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot-channel:${BotName}:${BotAlias}:${ChannelName}';
-    arn = arn.replace('${BotName}', botName);
-    arn = arn.replace('${BotAlias}', botAlias);
-    arn = arn.replace('${ChannelName}', channelName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lex:${ region || '*' }:${ account || '*' }:bot-channel:${ botName }:${ botAlias }:${ channelName }`);
   }
 
   /**
@@ -717,13 +693,7 @@ export class Lex extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onIntentVersion(intentName: string, intentVersion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lex:${Region}:${Account}:intent:${IntentName}:${IntentVersion}';
-    arn = arn.replace('${IntentName}', intentName);
-    arn = arn.replace('${IntentVersion}', intentVersion);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lex:${ region || '*' }:${ account || '*' }:intent:${ intentName }:${ intentVersion }`);
   }
 
   /**
@@ -738,13 +708,7 @@ export class Lex extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSlottypeVersion(slotName: string, slotVersion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lex:${Region}:${Account}:slottype:${SlotName}:${SlotVersion}';
-    arn = arn.replace('${SlotName}', slotName);
-    arn = arn.replace('${SlotVersion}', slotVersion);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lex:${ region || '*' }:${ account || '*' }:slottype:${ slotName }:${ slotVersion }`);
   }
 
   /**

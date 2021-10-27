@@ -824,12 +824,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCar(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:car/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:deepracer:${ region || '*' }:${ account || '*' }:car/${ resourceId }`);
   }
 
   /**
@@ -846,12 +841,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:evaluation_job/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:deepracer:${ region || '*' }:${ account || '*' }:evaluation_job/${ resourceId }`);
   }
 
   /**
@@ -867,11 +857,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLeaderboard(resourceId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deepracer:${Region}::leaderboard/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:deepracer:${ region || '*' }::leaderboard/${ resourceId }`);
   }
 
   /**
@@ -888,12 +874,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLeaderboardEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:leaderboard_evaluation_job/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:deepracer:${ region || '*' }:${ account || '*' }:leaderboard_evaluation_job/${ resourceId }`);
   }
 
   /**
@@ -910,12 +891,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReinforcementLearningModel(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:model/reinforcement_learning/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:deepracer:${ region || '*' }:${ account || '*' }:model/reinforcement_learning/${ resourceId }`);
   }
 
   /**
@@ -928,11 +904,7 @@ export class Deepracer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTrack(resourceId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deepracer:${Region}::track/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:deepracer:${ region || '*' }::track/${ resourceId }`);
   }
 
   /**
@@ -949,12 +921,7 @@ export class Deepracer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTrainingJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:training_job/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:deepracer:${ region || '*' }:${ account || '*' }:training_job/${ resourceId }`);
   }
 
   /**

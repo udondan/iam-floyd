@@ -295,11 +295,6 @@ export class Healthlake extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatastore(datastoreId: string, accountId?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:healthlake:${Region}:${AccountId}:datastore/fhir/${DatastoreId}';
-    arn = arn.replace('${DatastoreId}', datastoreId);
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:healthlake:${ region || '*' }:${ accountId || '*' }:datastore/fhir/${ datastoreId }`);
   }
 }

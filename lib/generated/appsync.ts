@@ -587,13 +587,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDatasource(graphQLAPIId: string, datasourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/datasources/${DatasourceName}';
-    arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
-    arn = arn.replace('${DatasourceName}', datasourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }/datasources/${ datasourceName }`);
   }
 
   /**
@@ -610,12 +604,7 @@ export class Appsync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGraphqlapi(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}';
-    arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }`);
   }
 
   /**
@@ -631,14 +620,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onField(graphQLAPIId: string, typeName: string, fieldName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}/fields/${FieldName}';
-    arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
-    arn = arn.replace('${TypeName}', typeName);
-    arn = arn.replace('${FieldName}', fieldName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }/types/${ typeName }/fields/${ fieldName }`);
   }
 
   /**
@@ -653,13 +635,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onType(graphQLAPIId: string, typeName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}';
-    arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
-    arn = arn.replace('${TypeName}', typeName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }/types/${ typeName }`);
   }
 
   /**
@@ -674,12 +650,6 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onFunction(graphQLAPIId: string, functionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/functions/${FunctionId}';
-    arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
-    arn = arn.replace('${FunctionId}', functionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }/functions/${ functionId }`);
   }
 }

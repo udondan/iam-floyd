@@ -701,12 +701,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:application/${ApplicationName}';
-    arn = arn.replace('${ApplicationName}', applicationName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:application/${ applicationName }`);
   }
 
   /**
@@ -725,13 +720,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifInApplication()
    */
   public onApplicationversion(applicationName: string, versionLabel: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:applicationversion/${ApplicationName}/${VersionLabel}';
-    arn = arn.replace('${ApplicationName}', applicationName);
-    arn = arn.replace('${VersionLabel}', versionLabel);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:applicationversion/${ applicationName }/${ versionLabel }`);
   }
 
   /**
@@ -750,13 +739,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifInApplication()
    */
   public onConfigurationtemplate(applicationName: string, templateName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:configurationtemplate/${ApplicationName}/${TemplateName}';
-    arn = arn.replace('${ApplicationName}', applicationName);
-    arn = arn.replace('${TemplateName}', templateName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:configurationtemplate/${ applicationName }/${ templateName }`);
   }
 
   /**
@@ -775,13 +758,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * - .ifInApplication()
    */
   public onEnvironment(applicationName: string, environmentName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:environment/${ApplicationName}/${EnvironmentName}';
-    arn = arn.replace('${ApplicationName}', applicationName);
-    arn = arn.replace('${EnvironmentName}', environmentName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticbeanstalk:${ region || '*' }:${ account || '*' }:environment/${ applicationName }/${ environmentName }`);
   }
 
   /**
@@ -794,11 +771,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSolutionstack(solutionStackName: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}::solutionstack/${SolutionStackName}';
-    arn = arn.replace('${SolutionStackName}', solutionStackName);
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticbeanstalk:${ region || '*' }::solutionstack/${ solutionStackName }`);
   }
 
   /**
@@ -811,11 +784,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onPlatform(platformNameWithVersion: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}::platform/${PlatformNameWithVersion}';
-    arn = arn.replace('${PlatformNameWithVersion}', platformNameWithVersion);
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticbeanstalk:${ region || '*' }::platform/${ platformNameWithVersion }`);
   }
 
   /**

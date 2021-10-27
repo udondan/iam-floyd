@@ -454,12 +454,7 @@ export class Cloudhsm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBackup(cloudHsmBackupInstanceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudhsm:${Region}:${Account}:backup/${CloudHsmBackupInstanceName}';
-    arn = arn.replace('${CloudHsmBackupInstanceName}', cloudHsmBackupInstanceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudhsm:${ region || '*' }:${ account || '*' }:backup/${ cloudHsmBackupInstanceName }`);
   }
 
   /**
@@ -476,11 +471,6 @@ export class Cloudhsm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(cloudHsmClusterInstanceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudhsm:${Region}:${Account}:cluster/${CloudHsmClusterInstanceName}';
-    arn = arn.replace('${CloudHsmClusterInstanceName}', cloudHsmClusterInstanceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudhsm:${ region || '*' }:${ account || '*' }:cluster/${ cloudHsmClusterInstanceName }`);
   }
 }

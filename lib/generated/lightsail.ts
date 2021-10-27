@@ -1937,12 +1937,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomain(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Domain/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:Domain/${ id }`);
   }
 
   /**
@@ -1959,12 +1954,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInstance(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Instance/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:Instance/${ id }`);
   }
 
   /**
@@ -1981,12 +1971,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInstanceSnapshot(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:InstanceSnapshot/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:InstanceSnapshot/${ id }`);
   }
 
   /**
@@ -2003,12 +1988,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKeyPair(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:KeyPair/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:KeyPair/${ id }`);
   }
 
   /**
@@ -2025,12 +2005,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStaticIp(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:StaticIp/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:StaticIp/${ id }`);
   }
 
   /**
@@ -2047,12 +2022,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDisk(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Disk/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:Disk/${ id }`);
   }
 
   /**
@@ -2069,12 +2039,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDiskSnapshot(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:DiskSnapshot/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:DiskSnapshot/${ id }`);
   }
 
   /**
@@ -2091,12 +2056,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLoadBalancer(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancer/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:LoadBalancer/${ id }`);
   }
 
   /**
@@ -2110,12 +2070,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onLoadBalancerTlsCertificate(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancerTlsCertificate/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:LoadBalancerTlsCertificate/${ id }`);
   }
 
   /**
@@ -2129,12 +2084,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onExportSnapshotRecord(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:ExportSnapshotRecord/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:ExportSnapshotRecord/${ id }`);
   }
 
   /**
@@ -2148,12 +2098,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCloudFormationStackRecord(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:CloudFormationStackRecord/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:CloudFormationStackRecord/${ id }`);
   }
 
   /**
@@ -2170,12 +2115,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRelationalDatabase(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabase/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:RelationalDatabase/${ id }`);
   }
 
   /**
@@ -2192,12 +2132,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRelationalDatabaseSnapshot(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabaseSnapshot/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:RelationalDatabaseSnapshot/${ id }`);
   }
 
   /**
@@ -2211,12 +2146,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAlarm(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Alarm/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:Alarm/${ id }`);
   }
 
   /**
@@ -2230,12 +2160,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCertificate(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Certificate/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:Certificate/${ id }`);
   }
 
   /**
@@ -2249,12 +2174,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onContactMethod(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:ContactMethod/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:ContactMethod/${ id }`);
   }
 
   /**
@@ -2268,12 +2188,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onContainerService(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:ContainerService/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:ContainerService/${ id }`);
   }
 
   /**
@@ -2287,12 +2202,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDistribution(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Distribution/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:Distribution/${ id }`);
   }
 
   /**
@@ -2309,11 +2219,6 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBucket(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Bucket/${Id}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lightsail:${ region || '*' }:${ account || '*' }:Bucket/${ id }`);
   }
 }

@@ -546,12 +546,7 @@ export class Appmesh extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMesh(meshName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}';
-    arn = arn.replace('${MeshName}', meshName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }`);
   }
 
   /**
@@ -569,13 +564,7 @@ export class Appmesh extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVirtualService(meshName: string, virtualServiceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualService/${VirtualServiceName}';
-    arn = arn.replace('${MeshName}', meshName);
-    arn = arn.replace('${VirtualServiceName}', virtualServiceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualService/${ virtualServiceName }`);
   }
 
   /**
@@ -593,13 +582,7 @@ export class Appmesh extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVirtualNode(meshName: string, virtualNodeName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualNode/${VirtualNodeName}';
-    arn = arn.replace('${MeshName}', meshName);
-    arn = arn.replace('${VirtualNodeName}', virtualNodeName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualNode/${ virtualNodeName }`);
   }
 
   /**
@@ -617,13 +600,7 @@ export class Appmesh extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVirtualRouter(meshName: string, virtualRouterName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}';
-    arn = arn.replace('${MeshName}', meshName);
-    arn = arn.replace('${VirtualRouterName}', virtualRouterName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }`);
   }
 
   /**
@@ -642,14 +619,7 @@ export class Appmesh extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRoute(meshName: string, virtualRouterName: string, routeName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}/route/${RouteName}';
-    arn = arn.replace('${MeshName}', meshName);
-    arn = arn.replace('${VirtualRouterName}', virtualRouterName);
-    arn = arn.replace('${RouteName}', routeName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualRouter/${ virtualRouterName }/route/${ routeName }`);
   }
 
   /**
@@ -667,13 +637,7 @@ export class Appmesh extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVirtualGateway(meshName: string, virtualGatewayName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualGateway/${VirtualGatewayName}';
-    arn = arn.replace('${MeshName}', meshName);
-    arn = arn.replace('${VirtualGatewayName}', virtualGatewayName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }`);
   }
 
   /**
@@ -692,13 +656,6 @@ export class Appmesh extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGatewayRoute(meshName: string, virtualGatewayName: string, gatewayRouteName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualGateway/${VirtualGatewayName}/gatewayRoute/${GatewayRouteName}';
-    arn = arn.replace('${MeshName}', meshName);
-    arn = arn.replace('${VirtualGatewayName}', virtualGatewayName);
-    arn = arn.replace('${GatewayRouteName}', gatewayRouteName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appmesh:${ region || '*' }:${ account || '*' }:mesh/${ meshName }/virtualGateway/${ virtualGatewayName }/gatewayRoute/${ gatewayRouteName }`);
   }
 }

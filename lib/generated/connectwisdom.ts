@@ -442,12 +442,7 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssistant(assistantId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:wisdom:${Region}:${Account}:assistant/${AssistantId}';
-    arn = arn.replace('${AssistantId}', assistantId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:wisdom:${ region || '*' }:${ account || '*' }:assistant/${ assistantId }`);
   }
 
   /**
@@ -465,13 +460,7 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssistantAssociation(assistantId: string, assistantAssociationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:wisdom:${Region}:${Account}:association/${AssistantId}/${AssistantAssociationId}';
-    arn = arn.replace('${AssistantId}', assistantId);
-    arn = arn.replace('${AssistantAssociationId}', assistantAssociationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:wisdom:${ region || '*' }:${ account || '*' }:association/${ assistantId }/${ assistantAssociationId }`);
   }
 
   /**
@@ -489,13 +478,7 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContent(knowledgeBaseId: string, contentId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:wisdom:${Region}:${Account}:content/${KnowledgeBaseId}/${ContentId}';
-    arn = arn.replace('${KnowledgeBaseId}', knowledgeBaseId);
-    arn = arn.replace('${ContentId}', contentId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:wisdom:${ region || '*' }:${ account || '*' }:content/${ knowledgeBaseId }/${ contentId }`);
   }
 
   /**
@@ -512,12 +495,7 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKnowledgeBase(knowledgeBaseId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:wisdom:${Region}:${Account}:knowledge-base/${KnowledgeBaseId}';
-    arn = arn.replace('${KnowledgeBaseId}', knowledgeBaseId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:wisdom:${ region || '*' }:${ account || '*' }:knowledge-base/${ knowledgeBaseId }`);
   }
 
   /**
@@ -535,12 +513,6 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSession(assistantId: string, sessionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:wisdom:${Region}:${Account}:session/${AssistantId}/${SessionId}';
-    arn = arn.replace('${AssistantId}', assistantId);
-    arn = arn.replace('${SessionId}', sessionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:wisdom:${ region || '*' }:${ account || '*' }:session/${ assistantId }/${ sessionId }`);
   }
 }

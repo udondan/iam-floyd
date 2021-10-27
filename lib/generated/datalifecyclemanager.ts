@@ -143,11 +143,6 @@ export class Dlm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPolicy(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dlm:${Region}:${Account}:policy/${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dlm:${ region || '*' }:${ account || '*' }:policy/${ resourceName }`);
   }
 }

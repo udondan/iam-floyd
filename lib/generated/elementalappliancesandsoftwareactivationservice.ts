@@ -166,11 +166,6 @@ export class ElementalActivations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onActivation(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elemental-activations:${Region}:${Account}:activation/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elemental-activations:${ region || '*' }:${ account || '*' }:activation/${ resourceId }`);
   }
 }

@@ -333,11 +333,7 @@ export class EcrPublic extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onRepository(repositoryName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ecr-public::${Account}:repository/${RepositoryName}';
-    arn = arn.replace('${RepositoryName}', repositoryName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ecr-public::${ account || '*' }:repository/${ repositoryName }`);
   }
 
   /**
@@ -350,11 +346,7 @@ export class EcrPublic extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onRegistry(registryId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ecr-public::${Account}:registry/${RegistryId}';
-    arn = arn.replace('${RegistryId}', registryId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ecr-public::${ account || '*' }:registry/${ registryId }`);
   }
 
   /**

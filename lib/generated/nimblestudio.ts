@@ -690,12 +690,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onStudio(studioId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:nimble:${Region}:${Account}:studio/${StudioId}';
-    arn = arn.replace('${StudioId}', studioId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:nimble:${ region || '*' }:${ account || '*' }:studio/${ studioId }`);
   }
 
   /**
@@ -715,12 +710,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onStreamingImage(streamingImageId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:nimble:${Region}:${Account}:streaming-image/${StreamingImageId}';
-    arn = arn.replace('${StreamingImageId}', streamingImageId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:nimble:${ region || '*' }:${ account || '*' }:streaming-image/${ streamingImageId }`);
   }
 
   /**
@@ -740,12 +730,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onStudioComponent(studioComponentId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:nimble:${Region}:${Account}:studio-component/${StudioComponentId}';
-    arn = arn.replace('${StudioComponentId}', studioComponentId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:nimble:${ region || '*' }:${ account || '*' }:studio-component/${ studioComponentId }`);
   }
 
   /**
@@ -765,12 +750,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onLaunchProfile(launchProfileId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:nimble:${Region}:${Account}:launch-profile/${LaunchProfileId}';
-    arn = arn.replace('${LaunchProfileId}', launchProfileId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:nimble:${ region || '*' }:${ account || '*' }:launch-profile/${ launchProfileId }`);
   }
 
   /**
@@ -791,12 +771,7 @@ export class Nimble extends PolicyStatement {
    * - .ifOwnedBy()
    */
   public onStreamingSession(streamingSessionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:nimble:${Region}:${Account}:streaming-session/${StreamingSessionId}';
-    arn = arn.replace('${StreamingSessionId}', streamingSessionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:nimble:${ region || '*' }:${ account || '*' }:streaming-session/${ streamingSessionId }`);
   }
 
   /**
@@ -816,12 +791,7 @@ export class Nimble extends PolicyStatement {
    * - .ifRequesterPrincipalId()
    */
   public onEula(eulaId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:nimble:${Region}:${Account}:eula/${EulaId}';
-    arn = arn.replace('${EulaId}', eulaId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:nimble:${ region || '*' }:${ account || '*' }:eula/${ eulaId }`);
   }
 
   /**
@@ -841,12 +811,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onEulaAcceptance(eulaAcceptanceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:nimble:${Region}:${Account}:eula-acceptance/${EulaAcceptanceId}';
-    arn = arn.replace('${EulaAcceptanceId}', eulaAcceptanceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:nimble:${ region || '*' }:${ account || '*' }:eula-acceptance/${ eulaAcceptanceId }`);
   }
 
   /**

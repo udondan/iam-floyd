@@ -460,11 +460,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReadinesscheck(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53-recovery-readiness::${Account}:readiness-check/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53-recovery-readiness::${ account || '*' }:readiness-check/${ resourceId }`);
   }
 
   /**
@@ -480,11 +476,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResourceset(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53-recovery-readiness::${Account}:resource-set/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53-recovery-readiness::${ account || '*' }:resource-set/${ resourceId }`);
   }
 
   /**
@@ -500,11 +492,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCell(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53-recovery-readiness::${Account}:cell/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53-recovery-readiness::${ account || '*' }:cell/${ resourceId }`);
   }
 
   /**
@@ -520,10 +508,6 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecoverygroup(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53-recovery-readiness::${Account}:recovery-group/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53-recovery-readiness::${ account || '*' }:recovery-group/${ resourceId }`);
   }
 }

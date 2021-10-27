@@ -1166,12 +1166,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onParametergroup(cacheParameterGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:parametergroup:${CacheParameterGroupName}';
-    arn = arn.replace('${CacheParameterGroupName}', cacheParameterGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:parametergroup:${ cacheParameterGroupName }`);
   }
 
   /**
@@ -1188,12 +1183,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSecuritygroup(cacheSecurityGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:securitygroup:${CacheSecurityGroupName}';
-    arn = arn.replace('${CacheSecurityGroupName}', cacheSecurityGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:securitygroup:${ cacheSecurityGroupName }`);
   }
 
   /**
@@ -1210,12 +1200,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSubnetgroup(cacheSubnetGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:subnetgroup:${CacheSubnetGroupName}';
-    arn = arn.replace('${CacheSubnetGroupName}', cacheSubnetGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:subnetgroup:${ cacheSubnetGroupName }`);
   }
 
   /**
@@ -1232,12 +1217,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReplicationgroup(replicationGroupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:replicationgroup:${ReplicationGroupId}';
-    arn = arn.replace('${ReplicationGroupId}', replicationGroupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:replicationgroup:${ replicationGroupId }`);
   }
 
   /**
@@ -1254,12 +1234,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(cacheClusterId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:cluster:${CacheClusterId}';
-    arn = arn.replace('${CacheClusterId}', cacheClusterId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:cluster:${ cacheClusterId }`);
   }
 
   /**
@@ -1276,12 +1251,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReservedInstance(reservedCacheNodeId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:reserved-instance:${ReservedCacheNodeId}';
-    arn = arn.replace('${ReservedCacheNodeId}', reservedCacheNodeId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:reserved-instance:${ reservedCacheNodeId }`);
   }
 
   /**
@@ -1298,12 +1268,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:snapshot:${SnapshotName}';
-    arn = arn.replace('${SnapshotName}', snapshotName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:snapshot:${ snapshotName }`);
   }
 
   /**
@@ -1316,11 +1281,7 @@ export class Elasticache extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onGlobalreplicationgroup(globalReplicationGroupId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticache::${Account}:globalreplicationgroup:${GlobalReplicationGroupId}';
-    arn = arn.replace('${GlobalReplicationGroupId}', globalReplicationGroupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticache::${ account || '*' }:globalreplicationgroup:${ globalReplicationGroupId }`);
   }
 
   /**
@@ -1337,12 +1298,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUser(userId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:user:${UserId}';
-    arn = arn.replace('${UserId}', userId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:user:${ userId }`);
   }
 
   /**
@@ -1359,12 +1315,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUsergroup(userGroupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticache:${Region}:${Account}:usergroup:${UserGroupId}';
-    arn = arn.replace('${UserGroupId}', userGroupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elasticache:${ region || '*' }:${ account || '*' }:usergroup:${ userGroupId }`);
   }
 
   /**

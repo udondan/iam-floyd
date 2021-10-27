@@ -312,12 +312,7 @@ export class Codestar extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(projectId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codestar:${Region}:${Account}:project/${ProjectId}';
-    arn = arn.replace('${ProjectId}', projectId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codestar:${ region || '*' }:${ account || '*' }:project/${ projectId }`);
   }
 
   /**
@@ -332,12 +327,7 @@ export class Codestar extends PolicyStatement {
    * - .ifIamResourceTag()
    */
   public onUser(userNameWithPath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}';
-    arn = arn.replace('${UserNameWithPath}', userNameWithPath);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iam:${ region || '*' }:${ account || '*' }:user/${ userNameWithPath }`);
   }
 
   /**

@@ -333,11 +333,6 @@ export class CodeguruProfiler extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProfilingGroup(profilingGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codeguru-profiler:${Region}:${Account}:profilingGroup/${ProfilingGroupName}';
-    arn = arn.replace('${ProfilingGroupName}', profilingGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codeguru-profiler:${ region || '*' }:${ account || '*' }:profilingGroup/${ profilingGroupName }`);
   }
 }

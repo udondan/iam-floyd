@@ -2787,12 +2787,7 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3:${Region}:${Account}:accesspoint/${AccessPointName}';
-    arn = arn.replace('${AccessPointName}', accessPointName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:s3:${ region || '*' }:${ account || '*' }:accesspoint/${ accessPointName }`);
   }
 
   /**
@@ -2804,10 +2799,7 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onBucket(bucketName: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3:::${BucketName}';
-    arn = arn.replace('${BucketName}', bucketName);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:s3:::${ bucketName }`);
   }
 
   /**
@@ -2820,11 +2812,7 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onObject(bucketName: string, objectName: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3:::${BucketName}/${ObjectName}';
-    arn = arn.replace('${BucketName}', bucketName);
-    arn = arn.replace('${ObjectName}', objectName);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:s3:::${ bucketName }/${ objectName }`);
   }
 
   /**
@@ -2838,12 +2826,7 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3:${Region}:${Account}:job/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:s3:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
   }
 
   /**
@@ -2860,12 +2843,7 @@ export class S3 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStoragelensconfiguration(configId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3:${Region}:${Account}:storage-lens/${ConfigId}';
-    arn = arn.replace('${ConfigId}', configId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:s3:${ region || '*' }:${ account || '*' }:storage-lens/${ configId }`);
   }
 
   /**
@@ -2879,12 +2857,7 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onObjectlambdaaccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3-object-lambda:${Region}:${Account}:accesspoint/${AccessPointName}';
-    arn = arn.replace('${AccessPointName}', accessPointName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:s3-object-lambda:${ region || '*' }:${ account || '*' }:accesspoint/${ accessPointName }`);
   }
 
   /**
@@ -2897,11 +2870,7 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onMultiregionaccesspoint(accessPointAlias: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3::${Account}:accesspoint/${AccessPointAlias}';
-    arn = arn.replace('${AccessPointAlias}', accessPointAlias);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:s3::${ account || '*' }:accesspoint/${ accessPointAlias }`);
   }
 
   /**
@@ -2915,12 +2884,7 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onMultiregionaccesspointrequestarn(operation: string, token: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3:us-west-2:${Account}:async-request/mrap/${Operation}/${Token}';
-    arn = arn.replace('${Operation}', operation);
-    arn = arn.replace('${Token}', token);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:s3:us-west-2:${ account || '*' }:async-request/mrap/${ operation }/${ token }`);
   }
 
   /**

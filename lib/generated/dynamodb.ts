@@ -813,13 +813,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onIndex(tableName: string, indexName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/index/${IndexName}';
-    arn = arn.replace('${TableName}', tableName);
-    arn = arn.replace('${IndexName}', indexName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/index/${ indexName }`);
   }
 
   /**
@@ -834,13 +828,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onStream(tableName: string, streamLabel: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/stream/${StreamLabel}';
-    arn = arn.replace('${TableName}', tableName);
-    arn = arn.replace('${StreamLabel}', streamLabel);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/stream/${ streamLabel }`);
   }
 
   /**
@@ -854,12 +842,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTable(tableName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}';
-    arn = arn.replace('${TableName}', tableName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }`);
   }
 
   /**
@@ -874,13 +857,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onBackup(tableName: string, backupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/backup/${BackupName}';
-    arn = arn.replace('${TableName}', tableName);
-    arn = arn.replace('${BackupName}', backupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/backup/${ backupName }`);
   }
 
   /**
@@ -895,13 +872,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onExport(tableName: string, exportName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/export/${ExportName}';
-    arn = arn.replace('${TableName}', tableName);
-    arn = arn.replace('${ExportName}', exportName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dynamodb:${ region || '*' }:${ account || '*' }:table/${ tableName }/export/${ exportName }`);
   }
 
   /**
@@ -914,11 +885,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onGlobalTable(globalTableName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dynamodb::${Account}:global-table/${GlobalTableName}';
-    arn = arn.replace('${GlobalTableName}', globalTableName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dynamodb::${ account || '*' }:global-table/${ globalTableName }`);
   }
 
   /**

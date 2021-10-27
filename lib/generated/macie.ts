@@ -758,12 +758,7 @@ export class Macie2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onClassificationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:classification-job/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:macie2:${ region || '*' }:${ account || '*' }:classification-job/${ resourceId }`);
   }
 
   /**
@@ -780,12 +775,7 @@ export class Macie2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCustomDataIdentifier(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:custom-data-identifier/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:macie2:${ region || '*' }:${ account || '*' }:custom-data-identifier/${ resourceId }`);
   }
 
   /**
@@ -802,12 +792,7 @@ export class Macie2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFindingsFilter(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:findings-filter/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:macie2:${ region || '*' }:${ account || '*' }:findings-filter/${ resourceId }`);
   }
 
   /**
@@ -824,11 +809,6 @@ export class Macie2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMember(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:member/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:macie2:${ region || '*' }:${ account || '*' }:member/${ resourceId }`);
   }
 }

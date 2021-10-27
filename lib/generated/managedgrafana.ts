@@ -184,11 +184,6 @@ export class Grafana extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onWorkspace(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:grafana:${Region}:${Account}:/workspaces/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:grafana:${ region || '*' }:${ account || '*' }:/workspaces/${ resourceId }`);
   }
 }

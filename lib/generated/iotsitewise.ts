@@ -806,12 +806,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAsset(assetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}';
-    arn = arn.replace('${AssetId}', assetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:asset/${ assetId }`);
   }
 
   /**
@@ -828,12 +823,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssetModel(assetModelId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}';
-    arn = arn.replace('${AssetModelId}', assetModelId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:asset-model/${ assetModelId }`);
   }
 
   /**
@@ -850,12 +840,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}';
-    arn = arn.replace('${GatewayId}', gatewayId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:gateway/${ gatewayId }`);
   }
 
   /**
@@ -872,12 +857,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPortal(portalId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}';
-    arn = arn.replace('${PortalId}', portalId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:portal/${ portalId }`);
   }
 
   /**
@@ -894,12 +874,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(projectId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}';
-    arn = arn.replace('${ProjectId}', projectId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:project/${ projectId }`);
   }
 
   /**
@@ -916,12 +891,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDashboard(dashboardId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}';
-    arn = arn.replace('${DashboardId}', dashboardId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:dashboard/${ dashboardId }`);
   }
 
   /**
@@ -938,12 +908,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAccessPolicy(accessPolicyId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}';
-    arn = arn.replace('${AccessPolicyId}', accessPolicyId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:access-policy/${ accessPolicyId }`);
   }
 
   /**

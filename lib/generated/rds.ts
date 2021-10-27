@@ -2041,12 +2041,7 @@ export class Rds extends PolicyStatement {
    * - .ifClusterTag()
    */
   public onCluster(dbClusterInstanceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster:${DbClusterInstanceName}';
-    arn = arn.replace('${DbClusterInstanceName}', dbClusterInstanceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:cluster:${ dbClusterInstanceName }`);
   }
 
   /**
@@ -2063,12 +2058,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onClusterEndpoint(dbClusterEndpoint: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-endpoint:${DbClusterEndpoint}';
-    arn = arn.replace('${DbClusterEndpoint}', dbClusterEndpoint);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:cluster-endpoint:${ dbClusterEndpoint }`);
   }
 
   /**
@@ -2086,12 +2076,7 @@ export class Rds extends PolicyStatement {
    * - .ifClusterPgTag()
    */
   public onClusterPg(clusterParameterGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-pg:${ClusterParameterGroupName}';
-    arn = arn.replace('${ClusterParameterGroupName}', clusterParameterGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:cluster-pg:${ clusterParameterGroupName }`);
   }
 
   /**
@@ -2109,12 +2094,7 @@ export class Rds extends PolicyStatement {
    * - .ifClusterSnapshotTag()
    */
   public onClusterSnapshot(clusterSnapshotName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-snapshot:${ClusterSnapshotName}';
-    arn = arn.replace('${ClusterSnapshotName}', clusterSnapshotName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:cluster-snapshot:${ clusterSnapshotName }`);
   }
 
   /**
@@ -2140,12 +2120,7 @@ export class Rds extends PolicyStatement {
    * - .ifDbTag()
    */
   public onDb(dbInstanceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:db:${DbInstanceName}';
-    arn = arn.replace('${DbInstanceName}', dbInstanceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:db:${ dbInstanceName }`);
   }
 
   /**
@@ -2163,12 +2138,7 @@ export class Rds extends PolicyStatement {
    * - .ifEsTag()
    */
   public onEs(subscriptionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:es:${SubscriptionName}';
-    arn = arn.replace('${SubscriptionName}', subscriptionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:es:${ subscriptionName }`);
   }
 
   /**
@@ -2181,11 +2151,7 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onGlobalCluster(globalCluster: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds::${Account}:global-cluster:${GlobalCluster}';
-    arn = arn.replace('${GlobalCluster}', globalCluster);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds::${ account || '*' }:global-cluster:${ globalCluster }`);
   }
 
   /**
@@ -2203,12 +2169,7 @@ export class Rds extends PolicyStatement {
    * - .ifOgTag()
    */
   public onOg(optionGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:og:${OptionGroupName}';
-    arn = arn.replace('${OptionGroupName}', optionGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:og:${ optionGroupName }`);
   }
 
   /**
@@ -2226,12 +2187,7 @@ export class Rds extends PolicyStatement {
    * - .ifPgTag()
    */
   public onPg(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:pg:${ParameterGroupName}';
-    arn = arn.replace('${ParameterGroupName}', parameterGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:pg:${ parameterGroupName }`);
   }
 
   /**
@@ -2248,12 +2204,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProxy(dbProxyId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:db-proxy:${DbProxyId}';
-    arn = arn.replace('${DbProxyId}', dbProxyId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:db-proxy:${ dbProxyId }`);
   }
 
   /**
@@ -2270,12 +2221,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProxyEndpoint(dbProxyEndpointId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:db-proxy-endpoint:${DbProxyEndpointId}';
-    arn = arn.replace('${DbProxyEndpointId}', dbProxyEndpointId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:db-proxy-endpoint:${ dbProxyEndpointId }`);
   }
 
   /**
@@ -2293,12 +2239,7 @@ export class Rds extends PolicyStatement {
    * - .ifRiTag()
    */
   public onRi(reservedDbInstanceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:ri:${ReservedDbInstanceName}';
-    arn = arn.replace('${ReservedDbInstanceName}', reservedDbInstanceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:ri:${ reservedDbInstanceName }`);
   }
 
   /**
@@ -2316,12 +2257,7 @@ export class Rds extends PolicyStatement {
    * - .ifSecgrpTag()
    */
   public onSecgrp(securityGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:secgrp:${SecurityGroupName}';
-    arn = arn.replace('${SecurityGroupName}', securityGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:secgrp:${ securityGroupName }`);
   }
 
   /**
@@ -2339,12 +2275,7 @@ export class Rds extends PolicyStatement {
    * - .ifSnapshotTag()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:snapshot:${SnapshotName}';
-    arn = arn.replace('${SnapshotName}', snapshotName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:snapshot:${ snapshotName }`);
   }
 
   /**
@@ -2362,12 +2293,7 @@ export class Rds extends PolicyStatement {
    * - .ifSubgrpTag()
    */
   public onSubgrp(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:subgrp:${SubnetGroupName}';
-    arn = arn.replace('${SubnetGroupName}', subnetGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:subgrp:${ subnetGroupName }`);
   }
 
   /**
@@ -2381,12 +2307,7 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTarget(targetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:target:${TargetId}';
-    arn = arn.replace('${TargetId}', targetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:target:${ targetId }`);
   }
 
   /**
@@ -2403,12 +2324,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:target-group:${TargetGroupId}';
-    arn = arn.replace('${TargetGroupId}', targetGroupId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:target-group:${ targetGroupId }`);
   }
 
   /**
@@ -2427,14 +2343,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCev(engine: string, engineVersion: string, customDbEngineVersionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:cev:${Engine}/${EngineVersion}/${CustomDbEngineVersionId}';
-    arn = arn.replace('${Engine}', engine);
-    arn = arn.replace('${EngineVersion}', engineVersion);
-    arn = arn.replace('${CustomDbEngineVersionId}', customDbEngineVersionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:rds:${ region || '*' }:${ account || '*' }:cev:${ engine }/${ engineVersion }/${ customDbEngineVersionId }`);
   }
 
   /**

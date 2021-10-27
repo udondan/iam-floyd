@@ -486,12 +486,7 @@ export class Ecr extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ecr:${Region}:${Account}:repository/${RepositoryName}';
-    arn = arn.replace('${RepositoryName}', repositoryName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ecr:${ region || '*' }:${ account || '*' }:repository/${ repositoryName }`);
   }
 
   /**

@@ -444,12 +444,7 @@ export class Glacier extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onVault(vaultName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glacier:${Region}:${Account}:vaults/${VaultName}';
-    arn = arn.replace('${VaultName}', vaultName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:glacier:${ region || '*' }:${ account || '*' }:vaults/${ vaultName }`);
   }
 
   /**

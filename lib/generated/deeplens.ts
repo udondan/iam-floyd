@@ -278,12 +278,7 @@ export class Deeplens extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDevice(deviceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deeplens:${Region}:${Account}:device/${DeviceName}';
-    arn = arn.replace('${DeviceName}', deviceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:deeplens:${ region || '*' }:${ account || '*' }:device/${ deviceName }`);
   }
 
   /**
@@ -295,12 +290,7 @@ export class Deeplens extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deeplens:${Region}:${Account}:project/${ProjectName}';
-    arn = arn.replace('${ProjectName}', projectName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:deeplens:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
   }
 
   /**
@@ -312,11 +302,6 @@ export class Deeplens extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onModel(modelName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deeplens:${Region}:${Account}:model/${ModelName}';
-    arn = arn.replace('${ModelName}', modelName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:deeplens:${ region || '*' }:${ account || '*' }:model/${ modelName }`);
   }
 }

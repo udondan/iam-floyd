@@ -1807,12 +1807,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:user/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:quicksight:${ region || '*' }:${ account || '*' }:user/${ resourceId }`);
   }
 
   /**
@@ -1826,12 +1821,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:group/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:quicksight:${ region || '*' }:${ account || '*' }:group/${ resourceId }`);
   }
 
   /**
@@ -1848,12 +1838,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAnalysis(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:analysis/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:quicksight:${ region || '*' }:${ account || '*' }:analysis/${ resourceId }`);
   }
 
   /**
@@ -1870,12 +1855,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDashboard(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:dashboard/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:quicksight:${ region || '*' }:${ account || '*' }:dashboard/${ resourceId }`);
   }
 
   /**
@@ -1892,12 +1872,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:template/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:quicksight:${ region || '*' }:${ account || '*' }:template/${ resourceId }`);
   }
 
   /**
@@ -1914,12 +1889,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatasource(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:datasource/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:quicksight:${ region || '*' }:${ account || '*' }:datasource/${ resourceId }`);
   }
 
   /**
@@ -1936,12 +1906,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:dataset/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:quicksight:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
   }
 
   /**
@@ -1959,13 +1924,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIngestion(datasetId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:dataset/${DatasetId}/ingestion/${ResourceId}';
-    arn = arn.replace('${DatasetId}', datasetId);
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:quicksight:${ region || '*' }:${ account || '*' }:dataset/${ datasetId }/ingestion/${ resourceId }`);
   }
 
   /**
@@ -1982,12 +1941,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTheme(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:theme/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:quicksight:${ region || '*' }:${ account || '*' }:theme/${ resourceId }`);
   }
 
   /**
@@ -2000,11 +1954,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAssignment(resourceId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight::${Account}:assignment/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:quicksight::${ account || '*' }:assignment/${ resourceId }`);
   }
 
   /**
@@ -2021,12 +1971,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCustomization(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:customization/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:quicksight:${ region || '*' }:${ account || '*' }:customization/${ resourceId }`);
   }
 
   /**
@@ -2040,12 +1985,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onNamespace(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:namespace/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:quicksight:${ region || '*' }:${ account || '*' }:namespace/${ resourceId }`);
   }
 
   /**
@@ -2062,12 +2002,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFolder(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:folder/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:quicksight:${ region || '*' }:${ account || '*' }:folder/${ resourceId }`);
   }
 
   /**

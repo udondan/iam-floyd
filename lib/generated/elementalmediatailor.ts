@@ -453,12 +453,7 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPlaybackConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediatailor:${Region}:${Account}:playbackConfiguration/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediatailor:${ region || '*' }:${ account || '*' }:playbackConfiguration/${ resourceId }`);
   }
 
   /**
@@ -475,12 +470,7 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediatailor:${Region}:${Account}:channel/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediatailor:${ region || '*' }:${ account || '*' }:channel/${ resourceId }`);
   }
 
   /**
@@ -497,12 +487,7 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProgram(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediatailor:${Region}:${Account}:program/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediatailor:${ region || '*' }:${ account || '*' }:program/${ resourceId }`);
   }
 
   /**
@@ -519,12 +504,7 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSourceLocation(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediatailor:${Region}:${Account}:sourceLocation/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediatailor:${ region || '*' }:${ account || '*' }:sourceLocation/${ resourceId }`);
   }
 
   /**
@@ -541,11 +521,6 @@ export class Mediatailor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVodSource(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediatailor:${Region}:${Account}:vodSource/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediatailor:${ region || '*' }:${ account || '*' }:vodSource/${ resourceId }`);
   }
 }

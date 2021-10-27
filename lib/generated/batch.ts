@@ -302,12 +302,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComputeEnvironment(computeEnvironmentName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:batch:${Region}:${Account}:compute-environment/${ComputeEnvironmentName}';
-    arn = arn.replace('${ComputeEnvironmentName}', computeEnvironmentName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:batch:${ region || '*' }:${ account || '*' }:compute-environment/${ computeEnvironmentName }`);
   }
 
   /**
@@ -324,12 +319,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobQueue(jobQueueName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:batch:${Region}:${Account}:job-queue/${JobQueueName}';
-    arn = arn.replace('${JobQueueName}', jobQueueName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:batch:${ region || '*' }:${ account || '*' }:job-queue/${ jobQueueName }`);
   }
 
   /**
@@ -347,13 +337,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobDefinition(jobDefinitionName: string, revision: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}';
-    arn = arn.replace('${JobDefinitionName}', jobDefinitionName);
-    arn = arn.replace('${Revision}', revision);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:batch:${ region || '*' }:${ account || '*' }:job-definition/${ jobDefinitionName }:${ revision }`);
   }
 
   /**
@@ -370,12 +354,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:batch:${Region}:${Account}:job/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:batch:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
   }
 
   /**

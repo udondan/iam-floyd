@@ -282,12 +282,7 @@ export class Signer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSigningProfile(profileName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:signer:${Region}:${Account}:/signing-profiles/${ProfileName}';
-    arn = arn.replace('${ProfileName}', profileName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:signer:${ region || '*' }:${ account || '*' }:/signing-profiles/${ profileName }`);
   }
 
   /**
@@ -301,12 +296,7 @@ export class Signer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSigningJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:signer:${Region}:${Account}:/signing-jobs/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:signer:${ region || '*' }:${ account || '*' }:/signing-jobs/${ jobId }`);
   }
 
   /**

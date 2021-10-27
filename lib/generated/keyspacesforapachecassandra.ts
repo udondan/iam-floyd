@@ -141,12 +141,7 @@ export class Cassandra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKeyspace(keyspaceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}';
-    arn = arn.replace('${KeyspaceName}', keyspaceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cassandra:${ region || '*' }:${ account || '*' }:/keyspace/${ keyspaceName }`);
   }
 
   /**
@@ -164,12 +159,6 @@ export class Cassandra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTable(keyspaceName: string, tableName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${TableName}';
-    arn = arn.replace('${KeyspaceName}', keyspaceName);
-    arn = arn.replace('${TableName}', tableName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cassandra:${ region || '*' }:${ account || '*' }:/keyspace/${ keyspaceName }/table/${ tableName }`);
   }
 }

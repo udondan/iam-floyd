@@ -401,13 +401,7 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onEntitlement(flowId: string, entitlementName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediaconnect:${Region}:${Account}:entitlement:${FlowId}:${EntitlementName}';
-    arn = arn.replace('${FlowId}', flowId);
-    arn = arn.replace('${EntitlementName}', entitlementName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediaconnect:${ region || '*' }:${ account || '*' }:entitlement:${ flowId }:${ entitlementName }`);
   }
 
   /**
@@ -422,13 +416,7 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onFlow(flowId: string, flowName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediaconnect:${Region}:${Account}:flow:${FlowId}:${FlowName}';
-    arn = arn.replace('${FlowId}', flowId);
-    arn = arn.replace('${FlowName}', flowName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediaconnect:${ region || '*' }:${ account || '*' }:flow:${ flowId }:${ flowName }`);
   }
 
   /**
@@ -443,13 +431,7 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onOutput(outputId: string, outputName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediaconnect:${Region}:${Account}:output:${OutputId}:${OutputName}';
-    arn = arn.replace('${OutputId}', outputId);
-    arn = arn.replace('${OutputName}', outputName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediaconnect:${ region || '*' }:${ account || '*' }:output:${ outputId }:${ outputName }`);
   }
 
   /**
@@ -464,12 +446,6 @@ export class Mediaconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSource(sourceId: string, sourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mediaconnect:${Region}:${Account}:source:${SourceId}:${SourceName}';
-    arn = arn.replace('${SourceId}', sourceId);
-    arn = arn.replace('${SourceName}', sourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:mediaconnect:${ region || '*' }:${ account || '*' }:source:${ sourceId }:${ sourceName }`);
   }
 }

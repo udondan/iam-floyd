@@ -534,12 +534,7 @@ export class Sns extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onTopic(topicName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:sns:${Region}:${Account}:${TopicName}';
-    arn = arn.replace('${TopicName}', topicName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:sns:${ region || '*' }:${ account || '*' }:${ topicName }`);
   }
 
   /**

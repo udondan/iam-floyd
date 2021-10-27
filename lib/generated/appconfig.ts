@@ -496,12 +496,7 @@ export class Appconfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}';
-    arn = arn.replace('${ApplicationId}', applicationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }`);
   }
 
   /**
@@ -519,13 +514,7 @@ export class Appconfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironment(applicationId: string, environmentId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}';
-    arn = arn.replace('${ApplicationId}', applicationId);
-    arn = arn.replace('${EnvironmentId}', environmentId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/environment/${ environmentId }`);
   }
 
   /**
@@ -543,13 +532,7 @@ export class Appconfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigurationprofile(applicationId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/configurationprofile/${ConfigurationProfileId}';
-    arn = arn.replace('${ApplicationId}', applicationId);
-    arn = arn.replace('${ConfigurationProfileId}', configurationProfileId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/configurationprofile/${ configurationProfileId }`);
   }
 
   /**
@@ -566,12 +549,7 @@ export class Appconfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeploymentstrategy(deploymentStrategyId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:deploymentstrategy/${DeploymentStrategyId}';
-    arn = arn.replace('${DeploymentStrategyId}', deploymentStrategyId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appconfig:${ region || '*' }:${ account || '*' }:deploymentstrategy/${ deploymentStrategyId }`);
   }
 
   /**
@@ -590,14 +568,7 @@ export class Appconfig extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeployment(applicationId: string, environmentId: string, deploymentNumber: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}/deployment/${DeploymentNumber}';
-    arn = arn.replace('${ApplicationId}', applicationId);
-    arn = arn.replace('${EnvironmentId}', environmentId);
-    arn = arn.replace('${DeploymentNumber}', deploymentNumber);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/environment/${ environmentId }/deployment/${ deploymentNumber }`);
   }
 
   /**
@@ -613,13 +584,6 @@ export class Appconfig extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onHostedconfigurationversion(applicationId: string, configurationProfileId: string, versionNumber: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/configurationprofile/${ConfigurationProfileId}/hostedconfigurationversion/${VersionNumber}';
-    arn = arn.replace('${ApplicationId}', applicationId);
-    arn = arn.replace('${ConfigurationProfileId}', configurationProfileId);
-    arn = arn.replace('${VersionNumber}', versionNumber);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/configurationprofile/${ configurationProfileId }/hostedconfigurationversion/${ versionNumber }`);
   }
 }

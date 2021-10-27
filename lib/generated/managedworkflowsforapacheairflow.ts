@@ -198,12 +198,7 @@ export class Airflow extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onEnvironment(environmentName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:airflow:${Region}:${Account}:environment/${EnvironmentName}';
-    arn = arn.replace('${EnvironmentName}', environmentName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:airflow:${ region || '*' }:${ account || '*' }:environment/${ environmentName }`);
   }
 
   /**
@@ -218,12 +213,6 @@ export class Airflow extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onRbacRole(environmentName: string, roleName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:airflow:${Region}:${Account}:role/${EnvironmentName}/${RoleName}';
-    arn = arn.replace('${EnvironmentName}', environmentName);
-    arn = arn.replace('${RoleName}', roleName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:airflow:${ region || '*' }:${ account || '*' }:role/${ environmentName }/${ roleName }`);
   }
 }

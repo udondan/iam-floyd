@@ -204,12 +204,7 @@ export class Serverlessrepo extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onApplications(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:serverlessrepo:${Region}:${Account}:applications/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:serverlessrepo:${ region || '*' }:${ account || '*' }:applications/${ resourceId }`);
   }
 
   /**

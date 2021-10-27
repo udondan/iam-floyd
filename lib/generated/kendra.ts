@@ -586,12 +586,7 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIndex(indexId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}';
-    arn = arn.replace('${IndexId}', indexId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }`);
   }
 
   /**
@@ -609,13 +604,7 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataSource(indexId: string, dataSourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/data-source/${DataSourceId}';
-    arn = arn.replace('${IndexId}', indexId);
-    arn = arn.replace('${DataSourceId}', dataSourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/data-source/${ dataSourceId }`);
   }
 
   /**
@@ -633,13 +622,7 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFaq(indexId: string, faqId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/faq/${FaqId}';
-    arn = arn.replace('${IndexId}', indexId);
-    arn = arn.replace('${FaqId}', faqId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/faq/${ faqId }`);
   }
 
   /**
@@ -657,13 +640,7 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThesaurus(indexId: string, thesaurusId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/thesaurus/${ThesaurusId}';
-    arn = arn.replace('${IndexId}', indexId);
-    arn = arn.replace('${ThesaurusId}', thesaurusId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/thesaurus/${ thesaurusId }`);
   }
 
   /**
@@ -681,12 +658,6 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQuerySuggestionsBlockList(indexId: string, querySuggestionsBlockListId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/query-suggestions-block-list/${QuerySuggestionsBlockListId}';
-    arn = arn.replace('${IndexId}', indexId);
-    arn = arn.replace('${QuerySuggestionsBlockListId}', querySuggestionsBlockListId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/query-suggestions-block-list/${ querySuggestionsBlockListId }`);
   }
 }

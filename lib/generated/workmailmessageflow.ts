@@ -62,13 +62,6 @@ export class Workmailmessageflow extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onRawMessage(organizationId: string, context: string, messageId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:workmailmessageflow:${Region}:${Account}:message/${OrganizationId}/${Context}/${MessageId}';
-    arn = arn.replace('${OrganizationId}', organizationId);
-    arn = arn.replace('${Context}', context);
-    arn = arn.replace('${MessageId}', messageId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:workmailmessageflow:${ region || '*' }:${ account || '*' }:message/${ organizationId }/${ context }/${ messageId }`);
   }
 }

@@ -671,13 +671,7 @@ export class S3Outposts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAccesspoint(outpostId: string, accessPointName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3-outposts:${Region}:${Account}:outpost/${OutpostId}/accesspoint/${AccessPointName}';
-    arn = arn.replace('${OutpostId}', outpostId);
-    arn = arn.replace('${AccessPointName}', accessPointName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:s3-outposts:${ region || '*' }:${ account || '*' }:outpost/${ outpostId }/accesspoint/${ accessPointName }`);
   }
 
   /**
@@ -692,13 +686,7 @@ export class S3Outposts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onBucket(outpostId: string, bucketName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3-outposts:${Region}:${Account}:outpost/${OutpostId}/bucket/${BucketName}';
-    arn = arn.replace('${OutpostId}', outpostId);
-    arn = arn.replace('${BucketName}', bucketName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:s3-outposts:${ region || '*' }:${ account || '*' }:outpost/${ outpostId }/bucket/${ bucketName }`);
   }
 
   /**
@@ -713,13 +701,7 @@ export class S3Outposts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onEndpoint(outpostId: string, endpointId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3-outposts:${Region}:${Account}:outpost/${OutpostId}/endpoint/${EndpointId}';
-    arn = arn.replace('${OutpostId}', outpostId);
-    arn = arn.replace('${EndpointId}', endpointId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:s3-outposts:${ region || '*' }:${ account || '*' }:outpost/${ outpostId }/endpoint/${ endpointId }`);
   }
 
   /**
@@ -735,14 +717,7 @@ export class S3Outposts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onObject(outpostId: string, bucketName: string, objectName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3-outposts:${Region}:${Account}:outpost/${OutpostId}/bucket/${BucketName}/object/${ObjectName}';
-    arn = arn.replace('${OutpostId}', outpostId);
-    arn = arn.replace('${BucketName}', bucketName);
-    arn = arn.replace('${ObjectName}', objectName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:s3-outposts:${ region || '*' }:${ account || '*' }:outpost/${ outpostId }/bucket/${ bucketName }/object/${ objectName }`);
   }
 
   /**

@@ -356,11 +356,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetwork(networkId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:managedblockchain:${Region}::networks/${NetworkId}';
-    arn = arn.replace('${NetworkId}', networkId);
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:managedblockchain:${ region || '*' }::networks/${ networkId }`);
   }
 
   /**
@@ -377,12 +373,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMember(memberId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:members/${MemberId}';
-    arn = arn.replace('${MemberId}', memberId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:managedblockchain:${ region || '*' }:${ account || '*' }:members/${ memberId }`);
   }
 
   /**
@@ -399,12 +390,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNode(nodeId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:nodes/${NodeId}';
-    arn = arn.replace('${NodeId}', nodeId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:managedblockchain:${ region || '*' }:${ account || '*' }:nodes/${ nodeId }`);
   }
 
   /**
@@ -420,11 +406,7 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProposal(proposalId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:managedblockchain:${Region}::proposals/${ProposalId}';
-    arn = arn.replace('${ProposalId}', proposalId);
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:managedblockchain:${ region || '*' }::proposals/${ proposalId }`);
   }
 
   /**
@@ -441,11 +423,6 @@ export class Managedblockchain extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInvitation(invitationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:invitations/${InvitationId}';
-    arn = arn.replace('${InvitationId}', invitationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:managedblockchain:${ region || '*' }:${ account || '*' }:invitations/${ invitationId }`);
   }
 }

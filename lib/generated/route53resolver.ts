@@ -777,12 +777,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResolverDnssecConfig(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:resolver-dnssec-config/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-dnssec-config/${ resourceId }`);
   }
 
   /**
@@ -799,12 +794,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResolverQueryLogConfig(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:resolver-query-log-config/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-query-log-config/${ resourceId }`);
   }
 
   /**
@@ -821,12 +811,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResolverRule(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:resolver-rule/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-rule/${ resourceId }`);
   }
 
   /**
@@ -843,12 +828,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResolverEndpoint(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:resolver-endpoint/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-endpoint/${ resourceId }`);
   }
 
   /**
@@ -865,12 +845,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFirewallRuleGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:firewall-rule-group/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-rule-group/${ resourceId }`);
   }
 
   /**
@@ -887,12 +862,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFirewallRuleGroupAssociation(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:firewall-rule-group-association/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-rule-group-association/${ resourceId }`);
   }
 
   /**
@@ -909,12 +879,7 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFirewallDomainList(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:firewall-domain-list/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-domain-list/${ resourceId }`);
   }
 
   /**
@@ -931,11 +896,6 @@ export class Route53resolver extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFirewallConfig(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:firewall-config/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-config/${ resourceId }`);
   }
 }

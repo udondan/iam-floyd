@@ -540,12 +540,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:databrew:${Region}:${Account}:project/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:databrew:${ region || '*' }:${ account || '*' }:project/${ resourceId }`);
   }
 
   /**
@@ -562,12 +557,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:databrew:${Region}:${Account}:dataset/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:databrew:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
   }
 
   /**
@@ -584,12 +574,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecipe(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:databrew:${Region}:${Account}:recipe/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:databrew:${ region || '*' }:${ account || '*' }:recipe/${ resourceId }`);
   }
 
   /**
@@ -606,12 +591,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:databrew:${Region}:${Account}:job/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:databrew:${ region || '*' }:${ account || '*' }:job/${ resourceId }`);
   }
 
   /**
@@ -628,11 +608,6 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSchedule(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:databrew:${Region}:${Account}:schedule/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:databrew:${ region || '*' }:${ account || '*' }:schedule/${ resourceId }`);
   }
 }

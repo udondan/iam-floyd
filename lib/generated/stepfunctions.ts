@@ -338,12 +338,7 @@ export class States extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onActivity(activityName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:states:${Region}:${Account}:activity:${ActivityName}';
-    arn = arn.replace('${ActivityName}', activityName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:states:${ region || '*' }:${ account || '*' }:activity:${ activityName }`);
   }
 
   /**
@@ -358,13 +353,7 @@ export class States extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onExecution(stateMachineName: string, executionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:states:${Region}:${Account}:execution:${StateMachineName}:${ExecutionId}';
-    arn = arn.replace('${StateMachineName}', stateMachineName);
-    arn = arn.replace('${ExecutionId}', executionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:states:${ region || '*' }:${ account || '*' }:execution:${ stateMachineName }:${ executionId }`);
   }
 
   /**
@@ -381,11 +370,6 @@ export class States extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStatemachine(stateMachineName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:states:${Region}:${Account}:stateMachine:${StateMachineName}';
-    arn = arn.replace('${StateMachineName}', stateMachineName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:states:${ region || '*' }:${ account || '*' }:stateMachine:${ stateMachineName }`);
   }
 }

@@ -242,12 +242,7 @@ export class Elastictranscoder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elastictranscoder:${Region}:${Account}:job/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elastictranscoder:${ region || '*' }:${ account || '*' }:job/${ jobId }`);
   }
 
   /**
@@ -261,12 +256,7 @@ export class Elastictranscoder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onPipeline(pipelineId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elastictranscoder:${Region}:${Account}:pipeline/${PipelineId}';
-    arn = arn.replace('${PipelineId}', pipelineId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elastictranscoder:${ region || '*' }:${ account || '*' }:pipeline/${ pipelineId }`);
   }
 
   /**
@@ -280,11 +270,6 @@ export class Elastictranscoder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onPreset(presetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elastictranscoder:${Region}:${Account}:preset/${PresetId}';
-    arn = arn.replace('${PresetId}', presetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:elastictranscoder:${ region || '*' }:${ account || '*' }:preset/${ presetId }`);
   }
 }

@@ -226,14 +226,7 @@ export class Health extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onEvent(service: string, eventTypeCode: string, eventTypePlusId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:health:${Region}:${Account}:event/${Service}/${EventTypeCode}/${EventTypePlusId}';
-    arn = arn.replace('${Service}', service);
-    arn = arn.replace('${EventTypeCode}', eventTypeCode);
-    arn = arn.replace('${EventTypePlusId}', eventTypePlusId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:health:${ region || '*' }:${ account || '*' }:event/${ service }/${ eventTypeCode }/${ eventTypePlusId }`);
   }
 
   /**

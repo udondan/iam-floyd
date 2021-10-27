@@ -783,11 +783,7 @@ export class Securityhub extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHub(account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:securityhub:${Region}:${Account}:hub/default';
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:securityhub:${ region || '*' }:${ account || '*' }:hub/default`);
   }
 
   /**
@@ -802,13 +798,7 @@ export class Securityhub extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onProduct(company: string, productId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:securityhub:${Region}:${Account}:product/${Company}/${ProductId}';
-    arn = arn.replace('${Company}', company);
-    arn = arn.replace('${ProductId}', productId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:securityhub:${ region || '*' }:${ account || '*' }:product/${ company }/${ productId }`);
   }
 
   /**

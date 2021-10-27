@@ -532,14 +532,7 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAction(pipelineName: string, stageName: string, actionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}/${StageName}/${ActionName}';
-    arn = arn.replace('${PipelineName}', pipelineName);
-    arn = arn.replace('${StageName}', stageName);
-    arn = arn.replace('${ActionName}', actionName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codepipeline:${ region || '*' }:${ account || '*' }:${ pipelineName }/${ stageName }/${ actionName }`);
   }
 
   /**
@@ -559,15 +552,7 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onActiontype(owner: string, category: string, provider: string, version: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:actiontype:${Owner}/${Category}/${Provider}/${Version}';
-    arn = arn.replace('${Owner}', owner);
-    arn = arn.replace('${Category}', category);
-    arn = arn.replace('${Provider}', provider);
-    arn = arn.replace('${Version}', version);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codepipeline:${ region || '*' }:${ account || '*' }:actiontype:${ owner }/${ category }/${ provider }/${ version }`);
   }
 
   /**
@@ -584,12 +569,7 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}';
-    arn = arn.replace('${PipelineName}', pipelineName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codepipeline:${ region || '*' }:${ account || '*' }:${ pipelineName }`);
   }
 
   /**
@@ -607,13 +587,7 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStage(pipelineName: string, stageName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}/${StageName}';
-    arn = arn.replace('${PipelineName}', pipelineName);
-    arn = arn.replace('${StageName}', stageName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codepipeline:${ region || '*' }:${ account || '*' }:${ pipelineName }/${ stageName }`);
   }
 
   /**
@@ -630,11 +604,6 @@ export class Codepipeline extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWebhook(webhookName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:webhook:${WebhookName}';
-    arn = arn.replace('${WebhookName}', webhookName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codepipeline:${ region || '*' }:${ account || '*' }:webhook:${ webhookName }`);
   }
 }

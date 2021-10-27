@@ -286,11 +286,6 @@ export class ConnectCampaigns extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCampaign(campaignId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:connect-campaigns:${Region}:${Account}:campaign/${CampaignId}';
-    arn = arn.replace('${CampaignId}', campaignId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:connect-campaigns:${ region || '*' }:${ account || '*' }:campaign/${ campaignId }`);
   }
 }

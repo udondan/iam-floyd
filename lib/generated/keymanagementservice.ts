@@ -875,12 +875,7 @@ export class Kms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAlias(alias: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kms:${Region}:${Account}:alias/${Alias}';
-    arn = arn.replace('${Alias}', alias);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kms:${ region || '*' }:${ account || '*' }:alias/${ alias }`);
   }
 
   /**
@@ -894,12 +889,7 @@ export class Kms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onKey(keyId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}';
-    arn = arn.replace('${KeyId}', keyId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
   }
 
   /**

@@ -411,12 +411,7 @@ export class Dataexchange extends PolicyStatement {
    * - .ifJobType()
    */
   public onJobs(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dataexchange:${Region}:${Account}:jobs/${JobId}';
-    arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dataexchange:${ region || '*' }:${ account || '*' }:jobs/${ jobId }`);
   }
 
   /**
@@ -430,12 +425,7 @@ export class Dataexchange extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onDataSets(dataSetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}';
-    arn = arn.replace('${DataSetId}', dataSetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dataexchange:${ region || '*' }:${ account || '*' }:data-sets/${ dataSetId }`);
   }
 
   /**
@@ -450,13 +440,7 @@ export class Dataexchange extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onRevisions(dataSetId: string, revisionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}/revisions/${RevisionId}';
-    arn = arn.replace('${DataSetId}', dataSetId);
-    arn = arn.replace('${RevisionId}', revisionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dataexchange:${ region || '*' }:${ account || '*' }:data-sets/${ dataSetId }/revisions/${ revisionId }`);
   }
 
   /**
@@ -472,14 +456,7 @@ export class Dataexchange extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAssets(dataSetId: string, revisionId: string, assetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}/revisions/${RevisionId}/assets/${AssetId}';
-    arn = arn.replace('${DataSetId}', dataSetId);
-    arn = arn.replace('${RevisionId}', revisionId);
-    arn = arn.replace('${AssetId}', assetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dataexchange:${ region || '*' }:${ account || '*' }:data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
   }
 
   /**
@@ -493,12 +470,7 @@ export class Dataexchange extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onEventActions(eventActionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dataexchange:${Region}:${Account}:event-actions/${EventActionId}';
-    arn = arn.replace('${EventActionId}', eventActionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dataexchange:${ region || '*' }:${ account || '*' }:event-actions/${ eventActionId }`);
   }
 
   /**

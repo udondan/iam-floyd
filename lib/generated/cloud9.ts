@@ -432,12 +432,7 @@ export class Cloud9 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironment(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloud9:${Region}:${Account}:environment:${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloud9:${ region || '*' }:${ account || '*' }:environment:${ resourceId }`);
   }
 
   /**

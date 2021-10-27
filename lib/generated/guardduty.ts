@@ -770,12 +770,7 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDetector(detectorId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}';
-    arn = arn.replace('${DetectorId}', detectorId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }`);
   }
 
   /**
@@ -793,13 +788,7 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFilter(detectorId: string, filterName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/filter/${FilterName}';
-    arn = arn.replace('${DetectorId}', detectorId);
-    arn = arn.replace('${FilterName}', filterName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/filter/${ filterName }`);
   }
 
   /**
@@ -817,13 +806,7 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIpset(detectorId: string, iPSetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/ipset/${IPSetId}';
-    arn = arn.replace('${DetectorId}', detectorId);
-    arn = arn.replace('${IPSetId}', iPSetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/ipset/${ iPSetId }`);
   }
 
   /**
@@ -841,13 +824,7 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThreatintelset(detectorId: string, threatIntelSetId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/threatintelset/${ThreatIntelSetId}';
-    arn = arn.replace('${DetectorId}', detectorId);
-    arn = arn.replace('${ThreatIntelSetId}', threatIntelSetId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/threatintelset/${ threatIntelSetId }`);
   }
 
   /**
@@ -862,12 +839,6 @@ export class Guardduty extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onPublishingDestination(detectorId: string, publishingDestinationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/publishingDestination/${PublishingDestinationId}';
-    arn = arn.replace('${DetectorId}', detectorId);
-    arn = arn.replace('${PublishingDestinationId}', publishingDestinationId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:guardduty:${ region || '*' }:${ account || '*' }:detector/${ detectorId }/publishingDestination/${ publishingDestinationId }`);
   }
 }

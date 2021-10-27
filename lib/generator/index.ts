@@ -45,26 +45,22 @@ const conditionTypeDefaults: {
   };
 } = {
   string: {
-    url:
-      'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String',
+    url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String',
     default: new Operator().stringLike(),
     type: ['string'],
   },
   arn: {
-    url:
-      'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN',
+    url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN',
     default: new Operator().arnLike(),
     type: ['string'],
   },
   numeric: {
-    url:
-      'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric',
+    url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric',
     default: new Operator().numericEquals(),
     type: ['number'],
   },
   date: {
-    url:
-      'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date',
+    url: 'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date',
     default: new Operator().dateEquals(),
     type: ['Date', 'string'],
   },
@@ -393,11 +389,12 @@ export function createModule(module: Module): Promise<void> {
       });
     });
 
-    const methodBody: string[] = [`var arn = '${resourceType.arn}';`];
-    var paramDocs = '';
+    let arn = resourceType.arn;
+    const methodBody: string[] = [];
+    let paramDocs = '';
     params.forEach((param) => {
       const paramName = lowerFirst(camelCase(param));
-      var orDefault = '';
+      let orDefault = '';
       if (param == 'Partition') {
         orDefault = " || 'aws'";
         paramDocs += `\n@param ${paramName} - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to \`aws\`.`;
@@ -410,12 +407,14 @@ export function createModule(module: Module): Promise<void> {
       } else {
         paramDocs += `\n@param ${paramName} - Identifier for the ${paramName}.`;
       }
-      methodBody.push(
-        `arn = arn.replace('\${${param}}', ${paramName}${orDefault});`
-      );
+      if (orDefault) {
+        arn = arn.replace(`\$\{${param}\}`, `\$\{${paramName}${orDefault}\}`);
+      } else {
+        arn = arn.replace(`\$\{${param}\}`, `\$\{${paramName}\}`);
+      }
     });
 
-    var desc = `\nAdds a resource of type ${resourceType.name} to the statement`;
+    let desc = `\nAdds a resource of type ${resourceType.name} to the statement`;
     if (
       resourceType.url.length &&
       resourceType.url != 'https://docs.aws.amazon.com/'
@@ -436,7 +435,7 @@ export function createModule(module: Module): Promise<void> {
       description: desc,
     });
 
-    methodBody.push('return this.on(arn);');
+    methodBody.push(`return this.on(\`${arn}\`);`);
     method.setBodyText(methodBody.join('\n'));
   }
 

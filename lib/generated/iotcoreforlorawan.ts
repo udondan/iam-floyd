@@ -772,12 +772,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWirelessDevice(wirelessDeviceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotwireless:${Region}:${Account}:WirelessDevice/${WirelessDeviceId}';
-    arn = arn.replace('${WirelessDeviceId}', wirelessDeviceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessDevice/${ wirelessDeviceId }`);
   }
 
   /**
@@ -794,12 +789,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWirelessGateway(wirelessGatewayId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotwireless:${Region}:${Account}:WirelessGateway/${WirelessGatewayId}';
-    arn = arn.replace('${WirelessGatewayId}', wirelessGatewayId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessGateway/${ wirelessGatewayId }`);
   }
 
   /**
@@ -816,12 +806,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeviceProfile(deviceProfileId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotwireless:${Region}:${Account}:DeviceProfile/${DeviceProfileId}';
-    arn = arn.replace('${DeviceProfileId}', deviceProfileId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:DeviceProfile/${ deviceProfileId }`);
   }
 
   /**
@@ -838,12 +823,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServiceProfile(serviceProfileId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotwireless:${Region}:${Account}:ServiceProfile/${ServiceProfileId}';
-    arn = arn.replace('${ServiceProfileId}', serviceProfileId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:ServiceProfile/${ serviceProfileId }`);
   }
 
   /**
@@ -860,12 +840,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotwireless:${Region}:${Account}:Destination/${DestinationName}';
-    arn = arn.replace('${DestinationName}', destinationName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:Destination/${ destinationName }`);
   }
 
   /**
@@ -882,12 +857,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSidewalkAccount(sidewalkAccountId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotwireless:${Region}:${Account}:SidewalkAccount/${SidewalkAccountId}';
-    arn = arn.replace('${SidewalkAccountId}', sidewalkAccountId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:SidewalkAccount/${ sidewalkAccountId }`);
   }
 
   /**
@@ -904,12 +874,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWirelessGatewayTaskDefinition(wirelessGatewayTaskDefinitionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotwireless:${Region}:${Account}:WirelessGatewayTaskDefinition/${WirelessGatewayTaskDefinitionId}';
-    arn = arn.replace('${WirelessGatewayTaskDefinitionId}', wirelessGatewayTaskDefinitionId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessGatewayTaskDefinition/${ wirelessGatewayTaskDefinitionId }`);
   }
 
   /**
@@ -923,12 +888,7 @@ export class Iotwireless extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onThing(thingName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:thing/${ThingName}';
-    arn = arn.replace('${ThingName}', thingName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:thing/${ thingName }`);
   }
 
   /**
@@ -942,11 +902,6 @@ export class Iotwireless extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onCert(certificate: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:cert/${Certificate}';
-    arn = arn.replace('${Certificate}', certificate);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:iot:${ region || '*' }:${ account || '*' }:cert/${ certificate }`);
   }
 }

@@ -696,12 +696,7 @@ export class Codebuild extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onBuild(buildId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codebuild:${Region}:${Account}:build/${BuildId}';
-    arn = arn.replace('${BuildId}', buildId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codebuild:${ region || '*' }:${ account || '*' }:build/${ buildId }`);
   }
 
   /**
@@ -715,12 +710,7 @@ export class Codebuild extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onBuildBatch(buildBatchId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codebuild:${Region}:${Account}:build-batch/${BuildBatchId}';
-    arn = arn.replace('${BuildBatchId}', buildBatchId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codebuild:${ region || '*' }:${ account || '*' }:build-batch/${ buildBatchId }`);
   }
 
   /**
@@ -737,12 +727,7 @@ export class Codebuild extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codebuild:${Region}:${Account}:project/${ProjectName}';
-    arn = arn.replace('${ProjectName}', projectName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codebuild:${ region || '*' }:${ account || '*' }:project/${ projectName }`);
   }
 
   /**
@@ -759,12 +744,7 @@ export class Codebuild extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReportGroup(reportGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codebuild:${Region}:${Account}:report-group/${ReportGroupName}';
-    arn = arn.replace('${ReportGroupName}', reportGroupName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codebuild:${ region || '*' }:${ account || '*' }:report-group/${ reportGroupName }`);
   }
 
   /**
@@ -779,12 +759,6 @@ export class Codebuild extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onReport(reportGroupName: string, reportId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codebuild:${Region}:${Account}:report/${ReportGroupName}:${ReportId}';
-    arn = arn.replace('${ReportGroupName}', reportGroupName);
-    arn = arn.replace('${ReportId}', reportId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:codebuild:${ region || '*' }:${ account || '*' }:report/${ reportGroupName }:${ reportId }`);
   }
 }

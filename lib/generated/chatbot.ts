@@ -163,10 +163,6 @@ export class Chatbot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onChatbotConfiguration(chatbotConfigurationName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:chatbot::${Account}:chat-configuration/${ChatbotConfigurationName}';
-    arn = arn.replace('${ChatbotConfigurationName}', chatbotConfigurationName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:chatbot::${ account || '*' }:chat-configuration/${ chatbotConfigurationName }`);
   }
 }

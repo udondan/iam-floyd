@@ -398,11 +398,7 @@ export class SsmIncidents extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onResponsePlan(responsePlan: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm-incidents::${Account}:response-plan/${ResponsePlan}';
-    arn = arn.replace('${ResponsePlan}', responsePlan);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm-incidents::${ account || '*' }:response-plan/${ responsePlan }`);
   }
 
   /**
@@ -416,12 +412,7 @@ export class SsmIncidents extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onIncidentRecord(responsePlan: string, incidentRecord: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm-incidents::${Account}:incident-record/${ResponsePlan}/${IncidentRecord}';
-    arn = arn.replace('${ResponsePlan}', responsePlan);
-    arn = arn.replace('${IncidentRecord}', incidentRecord);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm-incidents::${ account || '*' }:incident-record/${ responsePlan }/${ incidentRecord }`);
   }
 
   /**
@@ -434,10 +425,6 @@ export class SsmIncidents extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onReplicationSet(replicationSet: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ssm-incidents::${Account}:replication-set/${ReplicationSet}';
-    arn = arn.replace('${ReplicationSet}', replicationSet);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:ssm-incidents::${ account || '*' }:replication-set/${ replicationSet }`);
   }
 }

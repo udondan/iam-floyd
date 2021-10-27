@@ -426,13 +426,7 @@ export class Kinesisvideo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStream(streamName: string, creationTime: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kinesisvideo:${Region}:${Account}:stream/${StreamName}/${CreationTime}';
-    arn = arn.replace('${StreamName}', streamName);
-    arn = arn.replace('${CreationTime}', creationTime);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kinesisvideo:${ region || '*' }:${ account || '*' }:stream/${ streamName }/${ creationTime }`);
   }
 
   /**
@@ -450,12 +444,6 @@ export class Kinesisvideo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(channelName: string, creationTime: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:kinesisvideo:${Region}:${Account}:channel/${ChannelName}/${CreationTime}';
-    arn = arn.replace('${ChannelName}', channelName);
-    arn = arn.replace('${CreationTime}', creationTime);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:kinesisvideo:${ region || '*' }:${ account || '*' }:channel/${ channelName }/${ creationTime }`);
   }
 }

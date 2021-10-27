@@ -731,12 +731,7 @@ export class Dms extends PolicyStatement {
    * - .ifCertTag()
    */
   public onCertificate(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dms:${Region}:${Account}:cert:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:cert:${ resourceName }`);
   }
 
   /**
@@ -754,12 +749,7 @@ export class Dms extends PolicyStatement {
    * - .ifEndpointTag()
    */
   public onEndpoint(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dms:${Region}:${Account}:endpoint:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:endpoint:${ resourceName }`);
   }
 
   /**
@@ -777,12 +767,7 @@ export class Dms extends PolicyStatement {
    * - .ifEsTag()
    */
   public onEventSubscription(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dms:${Region}:${Account}:es:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:es:${ resourceName }`);
   }
 
   /**
@@ -800,12 +785,7 @@ export class Dms extends PolicyStatement {
    * - .ifRepTag()
    */
   public onReplicationInstance(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dms:${Region}:${Account}:rep:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:rep:${ resourceName }`);
   }
 
   /**
@@ -823,12 +803,7 @@ export class Dms extends PolicyStatement {
    * - .ifSubgrpTag()
    */
   public onReplicationSubnetGroup(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dms:${Region}:${Account}:subgrp:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:subgrp:${ resourceName }`);
   }
 
   /**
@@ -846,12 +821,7 @@ export class Dms extends PolicyStatement {
    * - .ifTaskTag()
    */
   public onReplicationTask(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dms:${Region}:${Account}:task:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:task:${ resourceName }`);
   }
 
   /**
@@ -865,12 +835,7 @@ export class Dms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onReplicationTaskAssessmentRun(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dms:${Region}:${Account}:assessment-run:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:assessment-run:${ resourceName }`);
   }
 
   /**
@@ -884,12 +849,7 @@ export class Dms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onReplicationTaskIndividualAssessment(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:dms:${Region}:${Account}:individual-assessment:${ResourceName}';
-    arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:dms:${ region || '*' }:${ account || '*' }:individual-assessment:${ resourceName }`);
   }
 
   /**

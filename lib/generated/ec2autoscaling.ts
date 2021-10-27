@@ -829,13 +829,7 @@ export class Autoscaling extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAutoScalingGroup(groupId: string, groupFriendlyName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:autoscaling:${Region}:${Account}:autoScalingGroup:${GroupId}:autoScalingGroupName/${GroupFriendlyName}';
-    arn = arn.replace('${GroupId}', groupId);
-    arn = arn.replace('${GroupFriendlyName}', groupFriendlyName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:autoscaling:${ region || '*' }:${ account || '*' }:autoScalingGroup:${ groupId }:autoScalingGroupName/${ groupFriendlyName }`);
   }
 
   /**
@@ -850,13 +844,7 @@ export class Autoscaling extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onLaunchConfiguration(id: string, launchConfigurationName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:autoscaling:${Region}:${Account}:launchConfiguration:${Id}:launchConfigurationName/${LaunchConfigurationName}';
-    arn = arn.replace('${Id}', id);
-    arn = arn.replace('${LaunchConfigurationName}', launchConfigurationName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:autoscaling:${ region || '*' }:${ account || '*' }:launchConfiguration:${ id }:launchConfigurationName/${ launchConfigurationName }`);
   }
 
   /**

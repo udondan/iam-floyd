@@ -402,12 +402,7 @@ export class Servicediscovery extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNamespace(namespaceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:servicediscovery:${Region}:${Account}:namespace/${NamespaceId}';
-    arn = arn.replace('${NamespaceId}', namespaceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:servicediscovery:${ region || '*' }:${ account || '*' }:namespace/${ namespaceId }`);
   }
 
   /**
@@ -424,12 +419,7 @@ export class Servicediscovery extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onService(serviceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:servicediscovery:${Region}:${Account}:service/${ServiceId}';
-    arn = arn.replace('${ServiceId}', serviceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:servicediscovery:${ region || '*' }:${ account || '*' }:service/${ serviceId }`);
   }
 
   /**

@@ -215,12 +215,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onManagedDevice(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:snow-device-management:${Region}:${Account}:managed-device/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:snow-device-management:${ region || '*' }:${ account || '*' }:managed-device/${ resourceId }`);
   }
 
   /**
@@ -237,11 +232,6 @@ export class SnowDeviceManagement extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTask(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:snow-device-management:${Region}:${Account}:task/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:snow-device-management:${ region || '*' }:${ account || '*' }:task/${ resourceId }`);
   }
 }

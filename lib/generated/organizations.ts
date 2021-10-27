@@ -731,12 +731,7 @@ export class Organizations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAccount(masterAccountId: string, organizationId: string, accountId?: string, partition?: string) {
-    var arn = 'arn:${Partition}:organizations::${MasterAccountId}:account/o-${OrganizationId}/${AccountId}';
-    arn = arn.replace('${MasterAccountId}', masterAccountId);
-    arn = arn.replace('${OrganizationId}', organizationId);
-    arn = arn.replace('${AccountId}', accountId || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:organizations::${ masterAccountId }:account/o-${ organizationId }/${ accountId || '*' }`);
   }
 
   /**
@@ -751,13 +746,7 @@ export class Organizations extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onHandshake(masterAccountId: string, organizationId: string, handshakeType: string, handshakeId: string, partition?: string) {
-    var arn = 'arn:${Partition}:organizations::${MasterAccountId}:handshake/o-${OrganizationId}/${HandshakeType}/h-${HandshakeId}';
-    arn = arn.replace('${MasterAccountId}', masterAccountId);
-    arn = arn.replace('${OrganizationId}', organizationId);
-    arn = arn.replace('${HandshakeType}', handshakeType);
-    arn = arn.replace('${HandshakeId}', handshakeId);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:organizations::${ masterAccountId }:handshake/o-${ organizationId }/${ handshakeType }/h-${ handshakeId }`);
   }
 
   /**
@@ -770,11 +759,7 @@ export class Organizations extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onOrganization(masterAccountId: string, organizationId: string, partition?: string) {
-    var arn = 'arn:${Partition}:organizations::${MasterAccountId}:organization/o-${OrganizationId}';
-    arn = arn.replace('${MasterAccountId}', masterAccountId);
-    arn = arn.replace('${OrganizationId}', organizationId);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:organizations::${ masterAccountId }:organization/o-${ organizationId }`);
   }
 
   /**
@@ -791,12 +776,7 @@ export class Organizations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOrganizationalunit(masterAccountId: string, organizationId: string, organizationalUnitId: string, partition?: string) {
-    var arn = 'arn:${Partition}:organizations::${MasterAccountId}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}';
-    arn = arn.replace('${MasterAccountId}', masterAccountId);
-    arn = arn.replace('${OrganizationId}', organizationId);
-    arn = arn.replace('${OrganizationalUnitId}', organizationalUnitId);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:organizations::${ masterAccountId }:ou/o-${ organizationId }/ou-${ organizationalUnitId }`);
   }
 
   /**
@@ -814,13 +794,7 @@ export class Organizations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPolicy(masterAccountId: string, organizationId: string, policyType: string, policyId: string, partition?: string) {
-    var arn = 'arn:${Partition}:organizations::${MasterAccountId}:policy/o-${OrganizationId}/${PolicyType}/p-${PolicyId}';
-    arn = arn.replace('${MasterAccountId}', masterAccountId);
-    arn = arn.replace('${OrganizationId}', organizationId);
-    arn = arn.replace('${PolicyType}', policyType);
-    arn = arn.replace('${PolicyId}', policyId);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:organizations::${ masterAccountId }:policy/o-${ organizationId }/${ policyType }/p-${ policyId }`);
   }
 
   /**
@@ -833,11 +807,7 @@ export class Organizations extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onAwspolicy(policyType: string, policyId: string, partition?: string) {
-    var arn = 'arn:${Partition}:organizations::aws:policy/${PolicyType}/p-${PolicyId}';
-    arn = arn.replace('${PolicyType}', policyType);
-    arn = arn.replace('${PolicyId}', policyId);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:organizations::aws:policy/${ policyType }/p-${ policyId }`);
   }
 
   /**
@@ -854,12 +824,7 @@ export class Organizations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRoot(masterAccountId: string, organizationId: string, rootId: string, partition?: string) {
-    var arn = 'arn:${Partition}:organizations::${MasterAccountId}:root/o-${OrganizationId}/r-${RootId}';
-    arn = arn.replace('${MasterAccountId}', masterAccountId);
-    arn = arn.replace('${OrganizationId}', organizationId);
-    arn = arn.replace('${RootId}', rootId);
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:organizations::${ masterAccountId }:root/o-${ organizationId }/r-${ rootId }`);
   }
 
   /**

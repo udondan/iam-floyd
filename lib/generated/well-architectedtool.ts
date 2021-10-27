@@ -432,11 +432,6 @@ export class Wellarchitected extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkload(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:wellarchitected:${Region}:${Account}:workload/${ResourceId}';
-    arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:wellarchitected:${ region || '*' }:${ account || '*' }:workload/${ resourceId }`);
   }
 }

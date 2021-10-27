@@ -144,11 +144,6 @@ export class Cloudshell extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudshell:${Region}:${Account}:environment/${EnvironmentId}';
-    arn = arn.replace('${EnvironmentId}', environmentId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:cloudshell:${ region || '*' }:${ account || '*' }:environment/${ environmentId }`);
   }
 }

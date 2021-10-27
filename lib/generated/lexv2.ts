@@ -872,12 +872,7 @@ export class LexV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBot(botId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot/${BotId}';
-    arn = arn.replace('${BotId}', botId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lex:${ region || '*' }:${ account || '*' }:bot/${ botId }`);
   }
 
   /**
@@ -895,12 +890,6 @@ export class LexV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBotAlias(botId: string, botAliasId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot-alias/${BotId}/${BotAliasId}';
-    arn = arn.replace('${BotId}', botId);
-    arn = arn.replace('${BotAliasId}', botAliasId);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+    return this.on(`arn:${ partition || 'aws' }:lex:${ region || '*' }:${ account || '*' }:bot-alias/${ botId }/${ botAliasId }`);
   }
 }
