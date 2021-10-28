@@ -14,7 +14,7 @@ export class BackupStorage extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -30,8 +30,8 @@ export class BackupStorage extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "MountCapsule"
+    Write: [
+      'MountCapsule'
     ]
   };
 }

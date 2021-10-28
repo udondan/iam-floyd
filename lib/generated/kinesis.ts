@@ -14,7 +14,7 @@ export class Kinesis extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -327,41 +327,41 @@ export class Kinesis extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Tagging": [
-      "AddTagsToStream",
-      "RemoveTagsFromStream"
+    Tagging: [
+      'AddTagsToStream',
+      'RemoveTagsFromStream'
     ],
-    "Write": [
-      "CreateStream",
-      "DecreaseStreamRetentionPeriod",
-      "DeleteStream",
-      "DeregisterStreamConsumer",
-      "DisableEnhancedMonitoring",
-      "EnableEnhancedMonitoring",
-      "IncreaseStreamRetentionPeriod",
-      "MergeShards",
-      "PutRecord",
-      "PutRecords",
-      "RegisterStreamConsumer",
-      "SplitShard",
-      "StartStreamEncryption",
-      "StopStreamEncryption",
-      "UpdateShardCount"
+    Write: [
+      'CreateStream',
+      'DecreaseStreamRetentionPeriod',
+      'DeleteStream',
+      'DeregisterStreamConsumer',
+      'DisableEnhancedMonitoring',
+      'EnableEnhancedMonitoring',
+      'IncreaseStreamRetentionPeriod',
+      'MergeShards',
+      'PutRecord',
+      'PutRecords',
+      'RegisterStreamConsumer',
+      'SplitShard',
+      'StartStreamEncryption',
+      'StopStreamEncryption',
+      'UpdateShardCount'
     ],
-    "Read": [
-      "DescribeLimits",
-      "DescribeStream",
-      "DescribeStreamConsumer",
-      "DescribeStreamSummary",
-      "GetRecords",
-      "GetShardIterator",
-      "ListTagsForStream",
-      "SubscribeToShard"
+    Read: [
+      'DescribeLimits',
+      'DescribeStream',
+      'DescribeStreamConsumer',
+      'DescribeStreamSummary',
+      'GetRecords',
+      'GetShardIterator',
+      'ListTagsForStream',
+      'SubscribeToShard'
     ],
-    "List": [
-      "ListShards",
-      "ListStreamConsumers",
-      "ListStreams"
+    List: [
+      'ListShards',
+      'ListStreamConsumers',
+      'ListStreams'
     ]
   };
 

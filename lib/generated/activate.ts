@@ -14,7 +14,7 @@ export class Activate extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -91,17 +91,17 @@ export class Activate extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateForm",
-      "PutMemberInfo"
+    Write: [
+      'CreateForm',
+      'PutMemberInfo'
     ],
-    "Read": [
-      "GetAccountContact",
-      "GetContentInfo",
-      "GetCosts",
-      "GetCredits",
-      "GetMemberInfo",
-      "GetProgram"
+    Read: [
+      'GetAccountContact',
+      'GetContentInfo',
+      'GetCosts',
+      'GetCredits',
+      'GetMemberInfo',
+      'GetProgram'
     ]
   };
 }

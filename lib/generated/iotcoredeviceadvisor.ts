@@ -14,7 +14,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -177,26 +177,26 @@ export class Iotdeviceadvisor extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateSuiteDefinition",
-      "DeleteSuiteDefinition",
-      "StartSuiteRun",
-      "StopSuiteRun",
-      "UpdateSuiteDefinition"
+    Write: [
+      'CreateSuiteDefinition',
+      'DeleteSuiteDefinition',
+      'StartSuiteRun',
+      'StopSuiteRun',
+      'UpdateSuiteDefinition'
     ],
-    "Read": [
-      "GetSuiteDefinition",
-      "GetSuiteRun",
-      "GetSuiteRunReport",
-      "ListTagsForResource"
+    Read: [
+      'GetSuiteDefinition',
+      'GetSuiteRun',
+      'GetSuiteRunReport',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListSuiteDefinitions",
-      "ListSuiteRuns"
+    List: [
+      'ListSuiteDefinitions',
+      'ListSuiteRuns'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -14,7 +14,7 @@ export class Ecr extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -423,51 +423,51 @@ export class Ecr extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "BatchCheckLayerAvailability",
-      "BatchGetImage",
-      "DescribeImageReplicationStatus",
-      "DescribeImageScanFindings",
-      "DescribeRegistry",
-      "DescribeRepositories",
-      "GetAuthorizationToken",
-      "GetDownloadUrlForLayer",
-      "GetLifecyclePolicy",
-      "GetLifecyclePolicyPreview",
-      "GetRegistryPolicy",
-      "GetRepositoryPolicy",
-      "ListTagsForResource"
+    Read: [
+      'BatchCheckLayerAvailability',
+      'BatchGetImage',
+      'DescribeImageReplicationStatus',
+      'DescribeImageScanFindings',
+      'DescribeRegistry',
+      'DescribeRepositories',
+      'GetAuthorizationToken',
+      'GetDownloadUrlForLayer',
+      'GetLifecyclePolicy',
+      'GetLifecyclePolicyPreview',
+      'GetRegistryPolicy',
+      'GetRepositoryPolicy',
+      'ListTagsForResource'
     ],
-    "Write": [
-      "BatchDeleteImage",
-      "CompleteLayerUpload",
-      "CreateRepository",
-      "DeleteLifecyclePolicy",
-      "DeleteRepository",
-      "InitiateLayerUpload",
-      "PutImage",
-      "PutImageScanningConfiguration",
-      "PutImageTagMutability",
-      "PutLifecyclePolicy",
-      "PutReplicationConfiguration",
-      "ReplicateImage",
-      "StartImageScan",
-      "StartLifecyclePolicyPreview",
-      "UploadLayerPart"
+    Write: [
+      'BatchDeleteImage',
+      'CompleteLayerUpload',
+      'CreateRepository',
+      'DeleteLifecyclePolicy',
+      'DeleteRepository',
+      'InitiateLayerUpload',
+      'PutImage',
+      'PutImageScanningConfiguration',
+      'PutImageTagMutability',
+      'PutLifecyclePolicy',
+      'PutReplicationConfiguration',
+      'ReplicateImage',
+      'StartImageScan',
+      'StartLifecyclePolicyPreview',
+      'UploadLayerPart'
     ],
-    "Permissions management": [
-      "DeleteRegistryPolicy",
-      "DeleteRepositoryPolicy",
-      "PutRegistryPolicy",
-      "SetRepositoryPolicy"
+    'Permissions management': [
+      'DeleteRegistryPolicy',
+      'DeleteRepositoryPolicy',
+      'PutRegistryPolicy',
+      'SetRepositoryPolicy'
     ],
-    "List": [
-      "DescribeImages",
-      "ListImages"
+    List: [
+      'DescribeImages',
+      'ListImages'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

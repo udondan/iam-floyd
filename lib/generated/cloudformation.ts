@@ -14,7 +14,7 @@ export class Cloudformation extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -820,82 +820,82 @@ export class Cloudformation extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "ActivateType",
-      "CancelUpdateStack",
-      "ContinueUpdateRollback",
-      "CreateChangeSet",
-      "CreateStack",
-      "CreateStackInstances",
-      "CreateStackSet",
-      "CreateUploadBucket",
-      "DeactivateType",
-      "DeleteChangeSet",
-      "DeleteStack",
-      "DeleteStackInstances",
-      "DeleteStackSet",
-      "DeregisterType",
-      "ExecuteChangeSet",
-      "ImportStacksToStackSet",
-      "PublishType",
-      "RecordHandlerProgress",
-      "RegisterPublisher",
-      "RegisterType",
-      "SetTypeConfiguration",
-      "SetTypeDefaultVersion",
-      "SignalResource",
-      "StopStackSetOperation",
-      "TestType",
-      "UpdateStack",
-      "UpdateStackInstances",
-      "UpdateStackSet",
-      "UpdateTerminationProtection"
+    Write: [
+      'ActivateType',
+      'CancelUpdateStack',
+      'ContinueUpdateRollback',
+      'CreateChangeSet',
+      'CreateStack',
+      'CreateStackInstances',
+      'CreateStackSet',
+      'CreateUploadBucket',
+      'DeactivateType',
+      'DeleteChangeSet',
+      'DeleteStack',
+      'DeleteStackInstances',
+      'DeleteStackSet',
+      'DeregisterType',
+      'ExecuteChangeSet',
+      'ImportStacksToStackSet',
+      'PublishType',
+      'RecordHandlerProgress',
+      'RegisterPublisher',
+      'RegisterType',
+      'SetTypeConfiguration',
+      'SetTypeDefaultVersion',
+      'SignalResource',
+      'StopStackSetOperation',
+      'TestType',
+      'UpdateStack',
+      'UpdateStackInstances',
+      'UpdateStackSet',
+      'UpdateTerminationProtection'
     ],
-    "Read": [
-      "BatchDescribeTypeConfigurations",
-      "DescribeAccountLimits",
-      "DescribeChangeSet",
-      "DescribePublisher",
-      "DescribeStackDriftDetectionStatus",
-      "DescribeStackEvents",
-      "DescribeStackInstance",
-      "DescribeStackResource",
-      "DescribeStackResourceDrifts",
-      "DescribeStackResources",
-      "DescribeStackSet",
-      "DescribeStackSetOperation",
-      "DescribeType",
-      "DescribeTypeRegistration",
-      "DetectStackDrift",
-      "DetectStackResourceDrift",
-      "DetectStackSetDrift",
-      "EstimateTemplateCost",
-      "GetStackPolicy",
-      "GetTemplate",
-      "GetTemplateSummary",
-      "ValidateTemplate"
+    Read: [
+      'BatchDescribeTypeConfigurations',
+      'DescribeAccountLimits',
+      'DescribeChangeSet',
+      'DescribePublisher',
+      'DescribeStackDriftDetectionStatus',
+      'DescribeStackEvents',
+      'DescribeStackInstance',
+      'DescribeStackResource',
+      'DescribeStackResourceDrifts',
+      'DescribeStackResources',
+      'DescribeStackSet',
+      'DescribeStackSetOperation',
+      'DescribeType',
+      'DescribeTypeRegistration',
+      'DetectStackDrift',
+      'DetectStackResourceDrift',
+      'DetectStackSetDrift',
+      'EstimateTemplateCost',
+      'GetStackPolicy',
+      'GetTemplate',
+      'GetTemplateSummary',
+      'ValidateTemplate'
     ],
-    "List": [
-      "DescribeStacks",
-      "ListChangeSets",
-      "ListExports",
-      "ListImports",
-      "ListStackInstances",
-      "ListStackResources",
-      "ListStackSetOperationResults",
-      "ListStackSetOperations",
-      "ListStackSets",
-      "ListStacks",
-      "ListTypeRegistrations",
-      "ListTypeVersions",
-      "ListTypes"
+    List: [
+      'DescribeStacks',
+      'ListChangeSets',
+      'ListExports',
+      'ListImports',
+      'ListStackInstances',
+      'ListStackResources',
+      'ListStackSetOperationResults',
+      'ListStackSetOperations',
+      'ListStackSets',
+      'ListStacks',
+      'ListTypeRegistrations',
+      'ListTypeVersions',
+      'ListTypes'
     ],
-    "Permissions management": [
-      "SetStackPolicy"
+    'Permissions management': [
+      'SetStackPolicy'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

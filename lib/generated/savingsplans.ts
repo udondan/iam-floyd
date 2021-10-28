@@ -14,7 +14,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -138,22 +138,22 @@ export class Savingsplans extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateSavingsPlan",
-      "DeleteQueuedSavingsPlan"
+    Write: [
+      'CreateSavingsPlan',
+      'DeleteQueuedSavingsPlan'
     ],
-    "Read": [
-      "DescribeSavingsPlanRates",
-      "DescribeSavingsPlans",
-      "DescribeSavingsPlansOfferingRates",
-      "DescribeSavingsPlansOfferings"
+    Read: [
+      'DescribeSavingsPlanRates',
+      'DescribeSavingsPlans',
+      'DescribeSavingsPlansOfferingRates',
+      'DescribeSavingsPlansOfferings'
     ],
-    "List": [
-      "ListTagsForResource"
+    List: [
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

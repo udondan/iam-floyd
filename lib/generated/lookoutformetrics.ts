@@ -14,7 +14,7 @@ export class Lookoutmetrics extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -325,39 +325,39 @@ export class Lookoutmetrics extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "ActivateAnomalyDetector",
-      "BackTestAnomalyDetector",
-      "CreateAlert",
-      "CreateAnomalyDetector",
-      "CreateMetricSet",
-      "DeleteAlert",
-      "DeleteAnomalyDetector",
-      "PutFeedback",
-      "UpdateAnomalyDetector",
-      "UpdateMetricSet"
+    Write: [
+      'ActivateAnomalyDetector',
+      'BackTestAnomalyDetector',
+      'CreateAlert',
+      'CreateAnomalyDetector',
+      'CreateMetricSet',
+      'DeleteAlert',
+      'DeleteAnomalyDetector',
+      'PutFeedback',
+      'UpdateAnomalyDetector',
+      'UpdateMetricSet'
     ],
-    "Read": [
-      "DescribeAlert",
-      "DescribeAnomalyDetectionExecutions",
-      "DescribeAnomalyDetector",
-      "DescribeMetricSet",
-      "GetAnomalyGroup",
-      "GetDataQualityMetrics",
-      "GetFeedback",
-      "GetSampleData",
-      "ListTagsForResource"
+    Read: [
+      'DescribeAlert',
+      'DescribeAnomalyDetectionExecutions',
+      'DescribeAnomalyDetector',
+      'DescribeMetricSet',
+      'GetAnomalyGroup',
+      'GetDataQualityMetrics',
+      'GetFeedback',
+      'GetSampleData',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListAlerts",
-      "ListAnomalyDetectors",
-      "ListAnomalyGroupSummaries",
-      "ListAnomalyGroupTimeSeries",
-      "ListMetricSets"
+    List: [
+      'ListAlerts',
+      'ListAnomalyDetectors',
+      'ListAnomalyGroupSummaries',
+      'ListAnomalyGroupTimeSeries',
+      'ListMetricSets'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

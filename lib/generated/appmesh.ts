@@ -14,7 +14,7 @@ export class Appmesh extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -483,52 +483,52 @@ export class Appmesh extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateGatewayRoute",
-      "CreateMesh",
-      "CreateRoute",
-      "CreateVirtualGateway",
-      "CreateVirtualNode",
-      "CreateVirtualRouter",
-      "CreateVirtualService",
-      "DeleteGatewayRoute",
-      "DeleteMesh",
-      "DeleteRoute",
-      "DeleteVirtualGateway",
-      "DeleteVirtualNode",
-      "DeleteVirtualRouter",
-      "DeleteVirtualService",
-      "UpdateGatewayRoute",
-      "UpdateMesh",
-      "UpdateRoute",
-      "UpdateVirtualGateway",
-      "UpdateVirtualNode",
-      "UpdateVirtualRouter",
-      "UpdateVirtualService"
+    Write: [
+      'CreateGatewayRoute',
+      'CreateMesh',
+      'CreateRoute',
+      'CreateVirtualGateway',
+      'CreateVirtualNode',
+      'CreateVirtualRouter',
+      'CreateVirtualService',
+      'DeleteGatewayRoute',
+      'DeleteMesh',
+      'DeleteRoute',
+      'DeleteVirtualGateway',
+      'DeleteVirtualNode',
+      'DeleteVirtualRouter',
+      'DeleteVirtualService',
+      'UpdateGatewayRoute',
+      'UpdateMesh',
+      'UpdateRoute',
+      'UpdateVirtualGateway',
+      'UpdateVirtualNode',
+      'UpdateVirtualRouter',
+      'UpdateVirtualService'
     ],
-    "Read": [
-      "DescribeGatewayRoute",
-      "DescribeMesh",
-      "DescribeRoute",
-      "DescribeVirtualGateway",
-      "DescribeVirtualNode",
-      "DescribeVirtualRouter",
-      "DescribeVirtualService",
-      "StreamAggregatedResources"
+    Read: [
+      'DescribeGatewayRoute',
+      'DescribeMesh',
+      'DescribeRoute',
+      'DescribeVirtualGateway',
+      'DescribeVirtualNode',
+      'DescribeVirtualRouter',
+      'DescribeVirtualService',
+      'StreamAggregatedResources'
     ],
-    "List": [
-      "ListGatewayRoutes",
-      "ListMeshes",
-      "ListRoutes",
-      "ListTagsForResource",
-      "ListVirtualGateways",
-      "ListVirtualNodes",
-      "ListVirtualRouters",
-      "ListVirtualServices"
+    List: [
+      'ListGatewayRoutes',
+      'ListMeshes',
+      'ListRoutes',
+      'ListTagsForResource',
+      'ListVirtualGateways',
+      'ListVirtualNodes',
+      'ListVirtualRouters',
+      'ListVirtualServices'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

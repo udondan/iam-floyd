@@ -14,7 +14,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -244,31 +244,31 @@ export class Deepcomposer extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateCoupon",
-      "CreateAudio",
-      "CreateComposition",
-      "CreateModel",
-      "DeleteComposition",
-      "DeleteModel",
-      "UpdateComposition",
-      "UpdateModel"
+    Write: [
+      'AssociateCoupon',
+      'CreateAudio',
+      'CreateComposition',
+      'CreateModel',
+      'DeleteComposition',
+      'DeleteModel',
+      'UpdateComposition',
+      'UpdateModel'
     ],
-    "Read": [
-      "GetComposition",
-      "GetModel",
-      "GetSampleModel"
+    Read: [
+      'GetComposition',
+      'GetModel',
+      'GetSampleModel'
     ],
-    "List": [
-      "ListCompositions",
-      "ListModels",
-      "ListSampleModels",
-      "ListTagsForResource",
-      "ListTrainingTopics"
+    List: [
+      'ListCompositions',
+      'ListModels',
+      'ListSampleModels',
+      'ListTagsForResource',
+      'ListTrainingTopics'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

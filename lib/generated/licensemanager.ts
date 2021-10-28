@@ -14,7 +14,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -555,63 +555,63 @@ export class LicenseManager extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AcceptGrant",
-      "CheckInLicense",
-      "CheckoutBorrowLicense",
-      "CheckoutLicense",
-      "CreateGrant",
-      "CreateGrantVersion",
-      "CreateLicense",
-      "CreateLicenseConfiguration",
-      "CreateLicenseConversionTaskForResource",
-      "CreateLicenseManagerReportGenerator",
-      "CreateLicenseVersion",
-      "CreateToken",
-      "DeleteGrant",
-      "DeleteLicense",
-      "DeleteLicenseConfiguration",
-      "DeleteLicenseManagerReportGenerator",
-      "DeleteToken",
-      "ExtendLicenseConsumption",
-      "RejectGrant",
-      "UpdateLicenseConfiguration",
-      "UpdateLicenseManagerReportGenerator",
-      "UpdateLicenseSpecificationsForResource"
+    Write: [
+      'AcceptGrant',
+      'CheckInLicense',
+      'CheckoutBorrowLicense',
+      'CheckoutLicense',
+      'CreateGrant',
+      'CreateGrantVersion',
+      'CreateLicense',
+      'CreateLicenseConfiguration',
+      'CreateLicenseConversionTaskForResource',
+      'CreateLicenseManagerReportGenerator',
+      'CreateLicenseVersion',
+      'CreateToken',
+      'DeleteGrant',
+      'DeleteLicense',
+      'DeleteLicenseConfiguration',
+      'DeleteLicenseManagerReportGenerator',
+      'DeleteToken',
+      'ExtendLicenseConsumption',
+      'RejectGrant',
+      'UpdateLicenseConfiguration',
+      'UpdateLicenseManagerReportGenerator',
+      'UpdateLicenseSpecificationsForResource'
     ],
-    "Read": [
-      "GetAccessToken",
-      "GetGrant",
-      "GetLicense",
-      "GetLicenseConfiguration",
-      "GetLicenseConversionTask",
-      "GetLicenseManagerReportGenerator",
-      "GetLicenseUsage",
-      "ListLicenseConfigurations",
-      "ListLicenses",
-      "ListTagsForResource"
+    Read: [
+      'GetAccessToken',
+      'GetGrant',
+      'GetLicense',
+      'GetLicenseConfiguration',
+      'GetLicenseConversionTask',
+      'GetLicenseManagerReportGenerator',
+      'GetLicenseUsage',
+      'ListLicenseConfigurations',
+      'ListLicenses',
+      'ListTagsForResource'
     ],
-    "List": [
-      "GetServiceSettings",
-      "ListAssociationsForLicenseConfiguration",
-      "ListDistributedGrants",
-      "ListFailuresForLicenseConfigurationOperations",
-      "ListLicenseConversionTasks",
-      "ListLicenseManagerReportGenerators",
-      "ListLicenseSpecificationsForResource",
-      "ListLicenseVersions",
-      "ListReceivedGrants",
-      "ListReceivedLicenses",
-      "ListResourceInventory",
-      "ListTokens",
-      "ListUsageForLicenseConfiguration"
+    List: [
+      'GetServiceSettings',
+      'ListAssociationsForLicenseConfiguration',
+      'ListDistributedGrants',
+      'ListFailuresForLicenseConfigurationOperations',
+      'ListLicenseConversionTasks',
+      'ListLicenseManagerReportGenerators',
+      'ListLicenseSpecificationsForResource',
+      'ListLicenseVersions',
+      'ListReceivedGrants',
+      'ListReceivedLicenses',
+      'ListResourceInventory',
+      'ListTokens',
+      'ListUsageForLicenseConfiguration'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ],
-    "Permissions management": [
-      "UpdateServiceSettings"
+    'Permissions management': [
+      'UpdateServiceSettings'
     ]
   };
 

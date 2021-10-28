@@ -14,7 +14,7 @@ export class Dlm extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -111,21 +111,21 @@ export class Dlm extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateLifecyclePolicy",
-      "DeleteLifecyclePolicy",
-      "UpdateLifecyclePolicy"
+    Write: [
+      'CreateLifecyclePolicy',
+      'DeleteLifecyclePolicy',
+      'UpdateLifecyclePolicy'
     ],
-    "List": [
-      "GetLifecyclePolicies"
+    List: [
+      'GetLifecyclePolicies'
     ],
-    "Read": [
-      "GetLifecyclePolicy",
-      "ListTagsForResource"
+    Read: [
+      'GetLifecyclePolicy',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

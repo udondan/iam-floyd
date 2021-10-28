@@ -14,7 +14,7 @@ export class Outposts extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -129,23 +129,23 @@ export class Outposts extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateOutpost",
-      "DeleteOutpost",
-      "DeleteSite"
+    Write: [
+      'CreateOutpost',
+      'DeleteOutpost',
+      'DeleteSite'
     ],
-    "Read": [
-      "GetOutpost",
-      "GetOutpostInstanceTypes",
-      "ListTagsForResource"
+    Read: [
+      'GetOutpost',
+      'GetOutpostInstanceTypes',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListOutposts",
-      "ListSites"
+    List: [
+      'ListOutposts',
+      'ListSites'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 }

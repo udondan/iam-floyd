@@ -14,7 +14,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -627,63 +627,63 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AbortEnvironmentUpdate",
-      "ApplyEnvironmentManagedAction",
-      "AssociateEnvironmentOperationsRole",
-      "ComposeEnvironments",
-      "CreateApplication",
-      "CreateApplicationVersion",
-      "CreateConfigurationTemplate",
-      "CreateEnvironment",
-      "CreatePlatformVersion",
-      "CreateStorageLocation",
-      "DeleteApplication",
-      "DeleteApplicationVersion",
-      "DeleteConfigurationTemplate",
-      "DeleteEnvironmentConfiguration",
-      "DeletePlatformVersion",
-      "DisassociateEnvironmentOperationsRole",
-      "PutInstanceStatistics",
-      "RebuildEnvironment",
-      "RestartAppServer",
-      "SwapEnvironmentCNAMEs",
-      "TerminateEnvironment",
-      "UpdateApplication",
-      "UpdateApplicationResourceLifecycle",
-      "UpdateApplicationVersion",
-      "UpdateConfigurationTemplate",
-      "UpdateEnvironment"
+    Write: [
+      'AbortEnvironmentUpdate',
+      'ApplyEnvironmentManagedAction',
+      'AssociateEnvironmentOperationsRole',
+      'ComposeEnvironments',
+      'CreateApplication',
+      'CreateApplicationVersion',
+      'CreateConfigurationTemplate',
+      'CreateEnvironment',
+      'CreatePlatformVersion',
+      'CreateStorageLocation',
+      'DeleteApplication',
+      'DeleteApplicationVersion',
+      'DeleteConfigurationTemplate',
+      'DeleteEnvironmentConfiguration',
+      'DeletePlatformVersion',
+      'DisassociateEnvironmentOperationsRole',
+      'PutInstanceStatistics',
+      'RebuildEnvironment',
+      'RestartAppServer',
+      'SwapEnvironmentCNAMEs',
+      'TerminateEnvironment',
+      'UpdateApplication',
+      'UpdateApplicationResourceLifecycle',
+      'UpdateApplicationVersion',
+      'UpdateConfigurationTemplate',
+      'UpdateEnvironment'
     ],
-    "Tagging": [
-      "AddTags",
-      "RemoveTags",
-      "UpdateTagsForResource"
+    Tagging: [
+      'AddTags',
+      'RemoveTags',
+      'UpdateTagsForResource'
     ],
-    "Read": [
-      "CheckDNSAvailability",
-      "DescribeAccountAttributes",
-      "DescribeConfigurationOptions",
-      "DescribeConfigurationSettings",
-      "DescribeEnvironmentHealth",
-      "DescribeEnvironmentManagedActionHistory",
-      "DescribeEnvironmentManagedActions",
-      "DescribeEnvironmentResources",
-      "DescribeEvents",
-      "DescribeInstancesHealth",
-      "DescribePlatformVersion",
-      "ListTagsForResource",
-      "RequestEnvironmentInfo",
-      "RetrieveEnvironmentInfo",
-      "ValidateConfigurationSettings"
+    Read: [
+      'CheckDNSAvailability',
+      'DescribeAccountAttributes',
+      'DescribeConfigurationOptions',
+      'DescribeConfigurationSettings',
+      'DescribeEnvironmentHealth',
+      'DescribeEnvironmentManagedActionHistory',
+      'DescribeEnvironmentManagedActions',
+      'DescribeEnvironmentResources',
+      'DescribeEvents',
+      'DescribeInstancesHealth',
+      'DescribePlatformVersion',
+      'ListTagsForResource',
+      'RequestEnvironmentInfo',
+      'RetrieveEnvironmentInfo',
+      'ValidateConfigurationSettings'
     ],
-    "List": [
-      "DescribeApplicationVersions",
-      "DescribeApplications",
-      "DescribeEnvironments",
-      "ListAvailableSolutionStacks",
-      "ListPlatformBranches",
-      "ListPlatformVersions"
+    List: [
+      'DescribeApplicationVersions',
+      'DescribeApplications',
+      'DescribeEnvironments',
+      'ListAvailableSolutionStacks',
+      'ListPlatformBranches',
+      'ListPlatformVersions'
     ]
   };
 

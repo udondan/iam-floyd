@@ -14,7 +14,7 @@ export class Inspector extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -426,50 +426,50 @@ export class Inspector extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AddAttributesToFindings",
-      "CreateAssessmentTarget",
-      "CreateAssessmentTemplate",
-      "CreateExclusionsPreview",
-      "CreateResourceGroup",
-      "DeleteAssessmentRun",
-      "DeleteAssessmentTarget",
-      "DeleteAssessmentTemplate",
-      "RegisterCrossAccountAccessRole",
-      "RemoveAttributesFromFindings",
-      "StartAssessmentRun",
-      "StopAssessmentRun",
-      "SubscribeToEvent",
-      "UnsubscribeFromEvent",
-      "UpdateAssessmentTarget"
+    Write: [
+      'AddAttributesToFindings',
+      'CreateAssessmentTarget',
+      'CreateAssessmentTemplate',
+      'CreateExclusionsPreview',
+      'CreateResourceGroup',
+      'DeleteAssessmentRun',
+      'DeleteAssessmentTarget',
+      'DeleteAssessmentTemplate',
+      'RegisterCrossAccountAccessRole',
+      'RemoveAttributesFromFindings',
+      'StartAssessmentRun',
+      'StopAssessmentRun',
+      'SubscribeToEvent',
+      'UnsubscribeFromEvent',
+      'UpdateAssessmentTarget'
     ],
-    "Read": [
-      "DescribeAssessmentRuns",
-      "DescribeAssessmentTargets",
-      "DescribeAssessmentTemplates",
-      "DescribeCrossAccountAccessRole",
-      "DescribeExclusions",
-      "DescribeFindings",
-      "DescribeResourceGroups",
-      "DescribeRulesPackages",
-      "GetAssessmentReport",
-      "GetExclusionsPreview",
-      "GetTelemetryMetadata",
-      "ListTagsForResource",
-      "PreviewAgents"
+    Read: [
+      'DescribeAssessmentRuns',
+      'DescribeAssessmentTargets',
+      'DescribeAssessmentTemplates',
+      'DescribeCrossAccountAccessRole',
+      'DescribeExclusions',
+      'DescribeFindings',
+      'DescribeResourceGroups',
+      'DescribeRulesPackages',
+      'GetAssessmentReport',
+      'GetExclusionsPreview',
+      'GetTelemetryMetadata',
+      'ListTagsForResource',
+      'PreviewAgents'
     ],
-    "List": [
-      "ListAssessmentRunAgents",
-      "ListAssessmentRuns",
-      "ListAssessmentTargets",
-      "ListAssessmentTemplates",
-      "ListEventSubscriptions",
-      "ListExclusions",
-      "ListFindings",
-      "ListRulesPackages"
+    List: [
+      'ListAssessmentRunAgents',
+      'ListAssessmentRuns',
+      'ListAssessmentTargets',
+      'ListAssessmentTemplates',
+      'ListEventSubscriptions',
+      'ListExclusions',
+      'ListFindings',
+      'ListRulesPackages'
     ],
-    "Tagging": [
-      "SetTagsForResource"
+    Tagging: [
+      'SetTagsForResource'
     ]
   };
 }

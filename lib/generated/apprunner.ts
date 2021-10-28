@@ -14,7 +14,7 @@ export class Apprunner extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -297,36 +297,36 @@ export class Apprunner extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateCustomDomain",
-      "CreateAutoScalingConfiguration",
-      "CreateConnection",
-      "CreateService",
-      "DeleteAutoScalingConfiguration",
-      "DeleteConnection",
-      "DeleteService",
-      "DisassociateCustomDomain",
-      "PauseService",
-      "ResumeService",
-      "StartDeployment",
-      "UpdateService"
+    Write: [
+      'AssociateCustomDomain',
+      'CreateAutoScalingConfiguration',
+      'CreateConnection',
+      'CreateService',
+      'DeleteAutoScalingConfiguration',
+      'DeleteConnection',
+      'DeleteService',
+      'DisassociateCustomDomain',
+      'PauseService',
+      'ResumeService',
+      'StartDeployment',
+      'UpdateService'
     ],
-    "Read": [
-      "DescribeAutoScalingConfiguration",
-      "DescribeCustomDomains",
-      "DescribeOperation",
-      "DescribeService",
-      "ListTagsForResource"
+    Read: [
+      'DescribeAutoScalingConfiguration',
+      'DescribeCustomDomains',
+      'DescribeOperation',
+      'DescribeService',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListAutoScalingConfigurations",
-      "ListConnections",
-      "ListOperations",
-      "ListServices"
+    List: [
+      'ListAutoScalingConfigurations',
+      'ListConnections',
+      'ListOperations',
+      'ListServices'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -14,7 +14,7 @@ export class Swf extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -657,62 +657,62 @@ export class Swf extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CancelTimer",
-      "CancelWorkflowExecution",
-      "CompleteWorkflowExecution",
-      "ContinueAsNewWorkflowExecution",
-      "DeprecateActivityType",
-      "DeprecateDomain",
-      "DeprecateWorkflowType",
-      "FailWorkflowExecution",
-      "PollForActivityTask",
-      "PollForDecisionTask",
-      "RecordActivityTaskHeartbeat",
-      "RecordMarker",
-      "RegisterActivityType",
-      "RegisterDomain",
-      "RegisterWorkflowType",
-      "RequestCancelActivityTask",
-      "RequestCancelExternalWorkflowExecution",
-      "RequestCancelWorkflowExecution",
-      "RespondActivityTaskCanceled",
-      "RespondActivityTaskCompleted",
-      "RespondActivityTaskFailed",
-      "RespondDecisionTaskCompleted",
-      "ScheduleActivityTask",
-      "SignalExternalWorkflowExecution",
-      "SignalWorkflowExecution",
-      "StartChildWorkflowExecution",
-      "StartTimer",
-      "StartWorkflowExecution",
-      "TerminateWorkflowExecution",
-      "UndeprecateActivityType",
-      "UndeprecateDomain",
-      "UndeprecateWorkflowType"
+    Write: [
+      'CancelTimer',
+      'CancelWorkflowExecution',
+      'CompleteWorkflowExecution',
+      'ContinueAsNewWorkflowExecution',
+      'DeprecateActivityType',
+      'DeprecateDomain',
+      'DeprecateWorkflowType',
+      'FailWorkflowExecution',
+      'PollForActivityTask',
+      'PollForDecisionTask',
+      'RecordActivityTaskHeartbeat',
+      'RecordMarker',
+      'RegisterActivityType',
+      'RegisterDomain',
+      'RegisterWorkflowType',
+      'RequestCancelActivityTask',
+      'RequestCancelExternalWorkflowExecution',
+      'RequestCancelWorkflowExecution',
+      'RespondActivityTaskCanceled',
+      'RespondActivityTaskCompleted',
+      'RespondActivityTaskFailed',
+      'RespondDecisionTaskCompleted',
+      'ScheduleActivityTask',
+      'SignalExternalWorkflowExecution',
+      'SignalWorkflowExecution',
+      'StartChildWorkflowExecution',
+      'StartTimer',
+      'StartWorkflowExecution',
+      'TerminateWorkflowExecution',
+      'UndeprecateActivityType',
+      'UndeprecateDomain',
+      'UndeprecateWorkflowType'
     ],
-    "Read": [
-      "CountClosedWorkflowExecutions",
-      "CountOpenWorkflowExecutions",
-      "CountPendingActivityTasks",
-      "CountPendingDecisionTasks",
-      "DescribeActivityType",
-      "DescribeDomain",
-      "DescribeWorkflowExecution",
-      "DescribeWorkflowType",
-      "GetWorkflowExecutionHistory"
+    Read: [
+      'CountClosedWorkflowExecutions',
+      'CountOpenWorkflowExecutions',
+      'CountPendingActivityTasks',
+      'CountPendingDecisionTasks',
+      'DescribeActivityType',
+      'DescribeDomain',
+      'DescribeWorkflowExecution',
+      'DescribeWorkflowType',
+      'GetWorkflowExecutionHistory'
     ],
-    "List": [
-      "ListActivityTypes",
-      "ListClosedWorkflowExecutions",
-      "ListDomains",
-      "ListOpenWorkflowExecutions",
-      "ListTagsForResource",
-      "ListWorkflowTypes"
+    List: [
+      'ListActivityTypes',
+      'ListClosedWorkflowExecutions',
+      'ListDomains',
+      'ListOpenWorkflowExecutions',
+      'ListTagsForResource',
+      'ListWorkflowTypes'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

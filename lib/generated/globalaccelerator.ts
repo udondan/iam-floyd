@@ -14,7 +14,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -551,60 +551,60 @@ export class Globalaccelerator extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AddCustomRoutingEndpoints",
-      "AdvertiseByoipCidr",
-      "AllowCustomRoutingTraffic",
-      "CreateAccelerator",
-      "CreateCustomRoutingAccelerator",
-      "CreateCustomRoutingEndpointGroup",
-      "CreateCustomRoutingListener",
-      "CreateEndpointGroup",
-      "CreateListener",
-      "DeleteAccelerator",
-      "DeleteCustomRoutingAccelerator",
-      "DeleteCustomRoutingEndpointGroup",
-      "DeleteCustomRoutingListener",
-      "DeleteEndpointGroup",
-      "DeleteListener",
-      "DenyCustomRoutingTraffic",
-      "DeprovisionByoipCidr",
-      "ProvisionByoipCidr",
-      "RemoveCustomRoutingEndpoints",
-      "UpdateAccelerator",
-      "UpdateAcceleratorAttributes",
-      "UpdateCustomRoutingAccelerator",
-      "UpdateCustomRoutingAcceleratorAttributes",
-      "UpdateCustomRoutingListener",
-      "UpdateEndpointGroup",
-      "UpdateListener",
-      "WithdrawByoipCidr"
+    Write: [
+      'AddCustomRoutingEndpoints',
+      'AdvertiseByoipCidr',
+      'AllowCustomRoutingTraffic',
+      'CreateAccelerator',
+      'CreateCustomRoutingAccelerator',
+      'CreateCustomRoutingEndpointGroup',
+      'CreateCustomRoutingListener',
+      'CreateEndpointGroup',
+      'CreateListener',
+      'DeleteAccelerator',
+      'DeleteCustomRoutingAccelerator',
+      'DeleteCustomRoutingEndpointGroup',
+      'DeleteCustomRoutingListener',
+      'DeleteEndpointGroup',
+      'DeleteListener',
+      'DenyCustomRoutingTraffic',
+      'DeprovisionByoipCidr',
+      'ProvisionByoipCidr',
+      'RemoveCustomRoutingEndpoints',
+      'UpdateAccelerator',
+      'UpdateAcceleratorAttributes',
+      'UpdateCustomRoutingAccelerator',
+      'UpdateCustomRoutingAcceleratorAttributes',
+      'UpdateCustomRoutingListener',
+      'UpdateEndpointGroup',
+      'UpdateListener',
+      'WithdrawByoipCidr'
     ],
-    "Read": [
-      "DescribeAccelerator",
-      "DescribeAcceleratorAttributes",
-      "DescribeCustomRoutingAccelerator",
-      "DescribeCustomRoutingAcceleratorAttributes",
-      "DescribeCustomRoutingEndpointGroup",
-      "DescribeCustomRoutingListener",
-      "DescribeEndpointGroup",
-      "DescribeListener",
-      "ListTagsForResource"
+    Read: [
+      'DescribeAccelerator',
+      'DescribeAcceleratorAttributes',
+      'DescribeCustomRoutingAccelerator',
+      'DescribeCustomRoutingAcceleratorAttributes',
+      'DescribeCustomRoutingEndpointGroup',
+      'DescribeCustomRoutingListener',
+      'DescribeEndpointGroup',
+      'DescribeListener',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListAccelerators",
-      "ListByoipCidrs",
-      "ListCustomRoutingAccelerators",
-      "ListCustomRoutingEndpointGroups",
-      "ListCustomRoutingListeners",
-      "ListCustomRoutingPortMappings",
-      "ListCustomRoutingPortMappingsByDestination",
-      "ListEndpointGroups",
-      "ListListeners"
+    List: [
+      'ListAccelerators',
+      'ListByoipCidrs',
+      'ListCustomRoutingAccelerators',
+      'ListCustomRoutingEndpointGroups',
+      'ListCustomRoutingListeners',
+      'ListCustomRoutingPortMappings',
+      'ListCustomRoutingPortMappingsByDestination',
+      'ListEndpointGroups',
+      'ListListeners'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

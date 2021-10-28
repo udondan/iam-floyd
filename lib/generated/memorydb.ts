@@ -14,7 +14,7 @@ export class Memorydb extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -583,46 +583,46 @@ export class Memorydb extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "BatchUpdateClusters",
-      "CopySnapshot",
-      "CreateAcl",
-      "CreateCluster",
-      "CreateParameterGroup",
-      "CreateSnapshot",
-      "CreateSubnetGroup",
-      "CreateUser",
-      "DeleteAcl",
-      "DeleteCluster",
-      "DeleteParameterGroup",
-      "DeleteSnapshot",
-      "DeleteSubnetGroup",
-      "DeleteUser",
-      "FailoverShard",
-      "ResetParameterGroup",
-      "UpdateAcl",
-      "UpdateCluster",
-      "UpdateParameterGroup",
-      "UpdateSubnetGroup",
-      "UpdateUser"
+    Write: [
+      'BatchUpdateClusters',
+      'CopySnapshot',
+      'CreateAcl',
+      'CreateCluster',
+      'CreateParameterGroup',
+      'CreateSnapshot',
+      'CreateSubnetGroup',
+      'CreateUser',
+      'DeleteAcl',
+      'DeleteCluster',
+      'DeleteParameterGroup',
+      'DeleteSnapshot',
+      'DeleteSubnetGroup',
+      'DeleteUser',
+      'FailoverShard',
+      'ResetParameterGroup',
+      'UpdateAcl',
+      'UpdateCluster',
+      'UpdateParameterGroup',
+      'UpdateSubnetGroup',
+      'UpdateUser'
     ],
-    "Read": [
-      "DescribeAcls",
-      "DescribeClusters",
-      "DescribeEngineVersions",
-      "DescribeEvents",
-      "DescribeParameterGroups",
-      "DescribeParameters",
-      "DescribeServiceUpdates",
-      "DescribeSnapshots",
-      "DescribeSubnetGroups",
-      "DescribeUsers",
-      "ListNodeTypeUpdates",
-      "ListTags"
+    Read: [
+      'DescribeAcls',
+      'DescribeClusters',
+      'DescribeEngineVersions',
+      'DescribeEvents',
+      'DescribeParameterGroups',
+      'DescribeParameters',
+      'DescribeServiceUpdates',
+      'DescribeSnapshots',
+      'DescribeSubnetGroups',
+      'DescribeUsers',
+      'ListNodeTypeUpdates',
+      'ListTags'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

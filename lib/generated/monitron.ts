@@ -14,7 +14,7 @@ export class Monitron extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -203,27 +203,27 @@ export class Monitron extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Permissions management": [
-      "AssociateProjectAdminUser",
-      "DisassociateProjectAdminUser",
-      "ListProjectAdminUsers"
+    'Permissions management': [
+      'AssociateProjectAdminUser',
+      'DisassociateProjectAdminUser',
+      'ListProjectAdminUsers'
     ],
-    "Write": [
-      "CreateProject",
-      "DeleteProject",
-      "UpdateProject"
+    Write: [
+      'CreateProject',
+      'DeleteProject',
+      'UpdateProject'
     ],
-    "Read": [
-      "GetProject",
-      "GetProjectAdminUser",
-      "ListTagsForResource"
+    Read: [
+      'GetProject',
+      'GetProjectAdminUser',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListProjects"
+    List: [
+      'ListProjects'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -14,7 +14,7 @@ export class Shield extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -436,46 +436,46 @@ export class Shield extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateDRTLogBucket",
-      "AssociateDRTRole",
-      "AssociateHealthCheck",
-      "AssociateProactiveEngagementDetails",
-      "CreateProtection",
-      "CreateProtectionGroup",
-      "CreateSubscription",
-      "DeleteProtection",
-      "DeleteProtectionGroup",
-      "DeleteSubscription",
-      "DisableProactiveEngagement",
-      "DisassociateDRTLogBucket",
-      "DisassociateDRTRole",
-      "DisassociateHealthCheck",
-      "EnableProactiveEngagement",
-      "UpdateEmergencyContactSettings",
-      "UpdateProtectionGroup",
-      "UpdateSubscription"
+    Write: [
+      'AssociateDRTLogBucket',
+      'AssociateDRTRole',
+      'AssociateHealthCheck',
+      'AssociateProactiveEngagementDetails',
+      'CreateProtection',
+      'CreateProtectionGroup',
+      'CreateSubscription',
+      'DeleteProtection',
+      'DeleteProtectionGroup',
+      'DeleteSubscription',
+      'DisableProactiveEngagement',
+      'DisassociateDRTLogBucket',
+      'DisassociateDRTRole',
+      'DisassociateHealthCheck',
+      'EnableProactiveEngagement',
+      'UpdateEmergencyContactSettings',
+      'UpdateProtectionGroup',
+      'UpdateSubscription'
     ],
-    "Read": [
-      "DescribeAttack",
-      "DescribeAttackStatistics",
-      "DescribeDRTAccess",
-      "DescribeEmergencyContactSettings",
-      "DescribeProtection",
-      "DescribeProtectionGroup",
-      "DescribeSubscription",
-      "GetSubscriptionState",
-      "ListTagsForResource"
+    Read: [
+      'DescribeAttack',
+      'DescribeAttackStatistics',
+      'DescribeDRTAccess',
+      'DescribeEmergencyContactSettings',
+      'DescribeProtection',
+      'DescribeProtectionGroup',
+      'DescribeSubscription',
+      'GetSubscriptionState',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListAttacks",
-      "ListProtectionGroups",
-      "ListProtections",
-      "ListResourcesInProtectionGroup"
+    List: [
+      'ListAttacks',
+      'ListProtectionGroups',
+      'ListProtections',
+      'ListResourcesInProtectionGroup'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

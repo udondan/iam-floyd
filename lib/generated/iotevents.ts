@@ -14,7 +14,7 @@ export class Iotevents extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -456,51 +456,51 @@ export class Iotevents extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "BatchAcknowledgeAlarm",
-      "BatchDisableAlarm",
-      "BatchEnableAlarm",
-      "BatchPutMessage",
-      "BatchResetAlarm",
-      "BatchSnoozeAlarm",
-      "BatchUpdateDetector",
-      "CreateAlarmModel",
-      "CreateDetectorModel",
-      "CreateInput",
-      "DeleteAlarmModel",
-      "DeleteDetectorModel",
-      "DeleteInput",
-      "PutLoggingOptions",
-      "StartDetectorModelAnalysis",
-      "UpdateAlarmModel",
-      "UpdateDetectorModel",
-      "UpdateInput",
-      "UpdateInputRouting"
+    Write: [
+      'BatchAcknowledgeAlarm',
+      'BatchDisableAlarm',
+      'BatchEnableAlarm',
+      'BatchPutMessage',
+      'BatchResetAlarm',
+      'BatchSnoozeAlarm',
+      'BatchUpdateDetector',
+      'CreateAlarmModel',
+      'CreateDetectorModel',
+      'CreateInput',
+      'DeleteAlarmModel',
+      'DeleteDetectorModel',
+      'DeleteInput',
+      'PutLoggingOptions',
+      'StartDetectorModelAnalysis',
+      'UpdateAlarmModel',
+      'UpdateDetectorModel',
+      'UpdateInput',
+      'UpdateInputRouting'
     ],
-    "Read": [
-      "DescribeAlarm",
-      "DescribeAlarmModel",
-      "DescribeDetector",
-      "DescribeDetectorModel",
-      "DescribeDetectorModelAnalysis",
-      "DescribeInput",
-      "DescribeLoggingOptions",
-      "GetDetectorModelAnalysisResults",
-      "ListTagsForResource"
+    Read: [
+      'DescribeAlarm',
+      'DescribeAlarmModel',
+      'DescribeDetector',
+      'DescribeDetectorModel',
+      'DescribeDetectorModelAnalysis',
+      'DescribeInput',
+      'DescribeLoggingOptions',
+      'GetDetectorModelAnalysisResults',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListAlarmModelVersions",
-      "ListAlarmModels",
-      "ListAlarms",
-      "ListDetectorModelVersions",
-      "ListDetectorModels",
-      "ListDetectors",
-      "ListInputRoutings",
-      "ListInputs"
+    List: [
+      'ListAlarmModelVersions',
+      'ListAlarmModels',
+      'ListAlarms',
+      'ListDetectorModelVersions',
+      'ListDetectorModels',
+      'ListDetectors',
+      'ListInputRoutings',
+      'ListInputs'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -14,7 +14,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -426,46 +426,46 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AddListenerCertificates",
-      "CreateListener",
-      "CreateLoadBalancer",
-      "CreateRule",
-      "CreateTargetGroup",
-      "DeleteListener",
-      "DeleteLoadBalancer",
-      "DeleteRule",
-      "DeleteTargetGroup",
-      "DeregisterTargets",
-      "ModifyListener",
-      "ModifyLoadBalancerAttributes",
-      "ModifyRule",
-      "ModifyTargetGroup",
-      "ModifyTargetGroupAttributes",
-      "RegisterTargets",
-      "RemoveListenerCertificates",
-      "SetIpAddressType",
-      "SetRulePriorities",
-      "SetSecurityGroups",
-      "SetSubnets",
-      "SetWebAcl"
+    Write: [
+      'AddListenerCertificates',
+      'CreateListener',
+      'CreateLoadBalancer',
+      'CreateRule',
+      'CreateTargetGroup',
+      'DeleteListener',
+      'DeleteLoadBalancer',
+      'DeleteRule',
+      'DeleteTargetGroup',
+      'DeregisterTargets',
+      'ModifyListener',
+      'ModifyLoadBalancerAttributes',
+      'ModifyRule',
+      'ModifyTargetGroup',
+      'ModifyTargetGroupAttributes',
+      'RegisterTargets',
+      'RemoveListenerCertificates',
+      'SetIpAddressType',
+      'SetRulePriorities',
+      'SetSecurityGroups',
+      'SetSubnets',
+      'SetWebAcl'
     ],
-    "Tagging": [
-      "AddTags",
-      "RemoveTags"
+    Tagging: [
+      'AddTags',
+      'RemoveTags'
     ],
-    "Read": [
-      "DescribeAccountLimits",
-      "DescribeListenerCertificates",
-      "DescribeListeners",
-      "DescribeLoadBalancerAttributes",
-      "DescribeLoadBalancers",
-      "DescribeRules",
-      "DescribeSSLPolicies",
-      "DescribeTags",
-      "DescribeTargetGroupAttributes",
-      "DescribeTargetGroups",
-      "DescribeTargetHealth"
+    Read: [
+      'DescribeAccountLimits',
+      'DescribeListenerCertificates',
+      'DescribeListeners',
+      'DescribeLoadBalancerAttributes',
+      'DescribeLoadBalancers',
+      'DescribeRules',
+      'DescribeSSLPolicies',
+      'DescribeTags',
+      'DescribeTargetGroupAttributes',
+      'DescribeTargetGroups',
+      'DescribeTargetHealth'
     ]
   };
 

@@ -14,7 +14,7 @@ export class Deeplens extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -235,37 +235,37 @@ export class Deeplens extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Permissions management": [
-      "AssociateServiceRoleToAccount"
+    'Permissions management': [
+      'AssociateServiceRoleToAccount'
     ],
-    "Read": [
-      "BatchGetDevice",
-      "BatchGetModel",
-      "BatchGetProject",
-      "GetAssociatedResources",
-      "GetDeploymentStatus",
-      "GetDevice",
-      "GetModel",
-      "GetProject"
+    Read: [
+      'BatchGetDevice',
+      'BatchGetModel',
+      'BatchGetProject',
+      'GetAssociatedResources',
+      'GetDeploymentStatus',
+      'GetDevice',
+      'GetModel',
+      'GetProject'
     ],
-    "Write": [
-      "CreateDeviceCertificates",
-      "CreateModel",
-      "CreateProject",
-      "DeleteModel",
-      "DeleteProject",
-      "DeployProject",
-      "DeregisterDevice",
-      "ImportProjectFromTemplate",
-      "RegisterDevice",
-      "RemoveProject",
-      "UpdateProject"
+    Write: [
+      'CreateDeviceCertificates',
+      'CreateModel',
+      'CreateProject',
+      'DeleteModel',
+      'DeleteProject',
+      'DeployProject',
+      'DeregisterDevice',
+      'ImportProjectFromTemplate',
+      'RegisterDevice',
+      'RemoveProject',
+      'UpdateProject'
     ],
-    "List": [
-      "ListDeployments",
-      "ListDevices",
-      "ListModels",
-      "ListProjects"
+    List: [
+      'ListDeployments',
+      'ListDevices',
+      'ListModels',
+      'ListProjects'
     ]
   };
 

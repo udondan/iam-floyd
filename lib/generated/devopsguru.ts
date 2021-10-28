@@ -14,7 +14,7 @@ export class DevopsGuru extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -258,32 +258,32 @@ export class DevopsGuru extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AddNotificationChannel",
-      "PutFeedback",
-      "RemoveNotificationChannel",
-      "UpdateResourceCollection",
-      "UpdateServiceIntegration"
+    Write: [
+      'AddNotificationChannel',
+      'PutFeedback',
+      'RemoveNotificationChannel',
+      'UpdateResourceCollection',
+      'UpdateServiceIntegration'
     ],
-    "Read": [
-      "DescribeAccountHealth",
-      "DescribeAccountOverview",
-      "DescribeAnomaly",
-      "DescribeFeedback",
-      "DescribeInsight",
-      "DescribeResourceCollectionHealth",
-      "DescribeServiceIntegration",
-      "GetCostEstimation",
-      "GetResourceCollection",
-      "StartCostEstimation"
+    Read: [
+      'DescribeAccountHealth',
+      'DescribeAccountOverview',
+      'DescribeAnomaly',
+      'DescribeFeedback',
+      'DescribeInsight',
+      'DescribeResourceCollectionHealth',
+      'DescribeServiceIntegration',
+      'GetCostEstimation',
+      'GetResourceCollection',
+      'StartCostEstimation'
     ],
-    "List": [
-      "ListAnomaliesForInsight",
-      "ListEvents",
-      "ListInsights",
-      "ListNotificationChannels",
-      "ListRecommendations",
-      "SearchInsights"
+    List: [
+      'ListAnomaliesForInsight',
+      'ListEvents',
+      'ListInsights',
+      'ListNotificationChannels',
+      'ListRecommendations',
+      'SearchInsights'
     ]
   };
 

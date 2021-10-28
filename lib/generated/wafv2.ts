@@ -14,7 +14,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -541,57 +541,57 @@ export class Wafv2 extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateWebACL",
-      "CreateIPSet",
-      "CreateRegexPatternSet",
-      "CreateRuleGroup",
-      "DeleteFirewallManagerRuleGroups",
-      "DeleteIPSet",
-      "DeleteLoggingConfiguration",
-      "DeleteRegexPatternSet",
-      "DeleteRuleGroup",
-      "DisassociateFirewallManager",
-      "DisassociateWebACL",
-      "PutFirewallManagerRuleGroups",
-      "PutLoggingConfiguration",
-      "UpdateIPSet",
-      "UpdateRegexPatternSet",
-      "UpdateRuleGroup"
+    Write: [
+      'AssociateWebACL',
+      'CreateIPSet',
+      'CreateRegexPatternSet',
+      'CreateRuleGroup',
+      'DeleteFirewallManagerRuleGroups',
+      'DeleteIPSet',
+      'DeleteLoggingConfiguration',
+      'DeleteRegexPatternSet',
+      'DeleteRuleGroup',
+      'DisassociateFirewallManager',
+      'DisassociateWebACL',
+      'PutFirewallManagerRuleGroups',
+      'PutLoggingConfiguration',
+      'UpdateIPSet',
+      'UpdateRegexPatternSet',
+      'UpdateRuleGroup'
     ],
-    "Read": [
-      "CheckCapacity",
-      "GetIPSet",
-      "GetLoggingConfiguration",
-      "GetPermissionPolicy",
-      "GetRateBasedStatementManagedKeys",
-      "GetRegexPatternSet",
-      "GetRuleGroup",
-      "GetSampledRequests",
-      "GetWebACL",
-      "GetWebACLForResource",
-      "ListTagsForResource"
+    Read: [
+      'CheckCapacity',
+      'GetIPSet',
+      'GetLoggingConfiguration',
+      'GetPermissionPolicy',
+      'GetRateBasedStatementManagedKeys',
+      'GetRegexPatternSet',
+      'GetRuleGroup',
+      'GetSampledRequests',
+      'GetWebACL',
+      'GetWebACLForResource',
+      'ListTagsForResource'
     ],
-    "Permissions management": [
-      "CreateWebACL",
-      "DeletePermissionPolicy",
-      "DeleteWebACL",
-      "PutPermissionPolicy",
-      "UpdateWebACL"
+    'Permissions management': [
+      'CreateWebACL',
+      'DeletePermissionPolicy',
+      'DeleteWebACL',
+      'PutPermissionPolicy',
+      'UpdateWebACL'
     ],
-    "List": [
-      "DescribeManagedRuleGroup",
-      "ListAvailableManagedRuleGroups",
-      "ListIPSets",
-      "ListLoggingConfigurations",
-      "ListRegexPatternSets",
-      "ListResourcesForWebACL",
-      "ListRuleGroups",
-      "ListWebACLs"
+    List: [
+      'DescribeManagedRuleGroup',
+      'ListAvailableManagedRuleGroups',
+      'ListIPSets',
+      'ListLoggingConfigurations',
+      'ListRegexPatternSets',
+      'ListResourcesForWebACL',
+      'ListRuleGroups',
+      'ListWebACLs'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

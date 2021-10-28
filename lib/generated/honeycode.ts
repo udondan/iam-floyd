@@ -14,7 +14,7 @@ export class Honeycode extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -305,37 +305,37 @@ export class Honeycode extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "ApproveTeamAssociation",
-      "BatchCreateTableRows",
-      "BatchDeleteTableRows",
-      "BatchUpdateTableRows",
-      "BatchUpsertTableRows",
-      "CreateTeam",
-      "CreateTenant",
-      "DeregisterGroups",
-      "InvokeScreenAutomation",
-      "RegisterDomainForVerification",
-      "RegisterGroups",
-      "RejectTeamAssociation",
-      "RestartDomainVerification",
-      "StartTableDataImportJob",
-      "UpdateTeam"
+    Write: [
+      'ApproveTeamAssociation',
+      'BatchCreateTableRows',
+      'BatchDeleteTableRows',
+      'BatchUpdateTableRows',
+      'BatchUpsertTableRows',
+      'CreateTeam',
+      'CreateTenant',
+      'DeregisterGroups',
+      'InvokeScreenAutomation',
+      'RegisterDomainForVerification',
+      'RegisterGroups',
+      'RejectTeamAssociation',
+      'RestartDomainVerification',
+      'StartTableDataImportJob',
+      'UpdateTeam'
     ],
-    "Read": [
-      "DescribeTableDataImportJob",
-      "DescribeTeam",
-      "GetScreenData",
-      "QueryTableRows"
+    Read: [
+      'DescribeTableDataImportJob',
+      'DescribeTeam',
+      'GetScreenData',
+      'QueryTableRows'
     ],
-    "List": [
-      "ListDomains",
-      "ListGroups",
-      "ListTableColumns",
-      "ListTableRows",
-      "ListTables",
-      "ListTeamAssociations",
-      "ListTenants"
+    List: [
+      'ListDomains',
+      'ListGroups',
+      'ListTableColumns',
+      'ListTableRows',
+      'ListTables',
+      'ListTeamAssociations',
+      'ListTenants'
     ]
   };
 

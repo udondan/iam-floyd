@@ -14,7 +14,7 @@ export class EcrPublic extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -284,38 +284,38 @@ export class EcrPublic extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "BatchCheckLayerAvailability",
-      "DescribeImages",
-      "GetAuthorizationToken",
-      "GetRegistryCatalogData",
-      "GetRepositoryCatalogData",
-      "GetRepositoryPolicy",
-      "ListTagsForResource"
+    Read: [
+      'BatchCheckLayerAvailability',
+      'DescribeImages',
+      'GetAuthorizationToken',
+      'GetRegistryCatalogData',
+      'GetRepositoryCatalogData',
+      'GetRepositoryPolicy',
+      'ListTagsForResource'
     ],
-    "Write": [
-      "BatchDeleteImage",
-      "CompleteLayerUpload",
-      "CreateRepository",
-      "DeleteRepository",
-      "DeleteRepositoryPolicy",
-      "InitiateLayerUpload",
-      "PutImage",
-      "PutRegistryCatalogData",
-      "PutRepositoryCatalogData",
-      "UploadLayerPart"
+    Write: [
+      'BatchDeleteImage',
+      'CompleteLayerUpload',
+      'CreateRepository',
+      'DeleteRepository',
+      'DeleteRepositoryPolicy',
+      'InitiateLayerUpload',
+      'PutImage',
+      'PutRegistryCatalogData',
+      'PutRepositoryCatalogData',
+      'UploadLayerPart'
     ],
-    "List": [
-      "DescribeImageTags",
-      "DescribeRegistries",
-      "DescribeRepositories"
+    List: [
+      'DescribeImageTags',
+      'DescribeRegistries',
+      'DescribeRepositories'
     ],
-    "Permissions management": [
-      "SetRepositoryPolicy"
+    'Permissions management': [
+      'SetRepositoryPolicy'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

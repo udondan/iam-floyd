@@ -14,7 +14,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -570,55 +570,55 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateConfigurationSet",
-      "CreateConfigurationSetEventDestination",
-      "CreateDedicatedIpPool",
-      "CreateDeliverabilityTestReport",
-      "CreateEmailIdentity",
-      "DeleteConfigurationSet",
-      "DeleteConfigurationSetEventDestination",
-      "DeleteDedicatedIpPool",
-      "DeleteEmailIdentity",
-      "PutAccountDedicatedIpWarmupAttributes",
-      "PutAccountSendingAttributes",
-      "PutConfigurationSetDeliveryOptions",
-      "PutConfigurationSetReputationOptions",
-      "PutConfigurationSetSendingOptions",
-      "PutConfigurationSetTrackingOptions",
-      "PutDedicatedIpInPool",
-      "PutDedicatedIpWarmupAttributes",
-      "PutDeliverabilityDashboardOption",
-      "PutEmailIdentityDkimAttributes",
-      "PutEmailIdentityFeedbackAttributes",
-      "PutEmailIdentityMailFromAttributes",
-      "SendEmail",
-      "UpdateConfigurationSetEventDestination"
+    Write: [
+      'CreateConfigurationSet',
+      'CreateConfigurationSetEventDestination',
+      'CreateDedicatedIpPool',
+      'CreateDeliverabilityTestReport',
+      'CreateEmailIdentity',
+      'DeleteConfigurationSet',
+      'DeleteConfigurationSetEventDestination',
+      'DeleteDedicatedIpPool',
+      'DeleteEmailIdentity',
+      'PutAccountDedicatedIpWarmupAttributes',
+      'PutAccountSendingAttributes',
+      'PutConfigurationSetDeliveryOptions',
+      'PutConfigurationSetReputationOptions',
+      'PutConfigurationSetSendingOptions',
+      'PutConfigurationSetTrackingOptions',
+      'PutDedicatedIpInPool',
+      'PutDedicatedIpWarmupAttributes',
+      'PutDeliverabilityDashboardOption',
+      'PutEmailIdentityDkimAttributes',
+      'PutEmailIdentityFeedbackAttributes',
+      'PutEmailIdentityMailFromAttributes',
+      'SendEmail',
+      'UpdateConfigurationSetEventDestination'
     ],
-    "Read": [
-      "GetAccount",
-      "GetBlacklistReports",
-      "GetConfigurationSet",
-      "GetConfigurationSetEventDestinations",
-      "GetDedicatedIp",
-      "GetDedicatedIps",
-      "GetDeliverabilityDashboardOptions",
-      "GetDeliverabilityTestReport",
-      "GetDomainDeliverabilityCampaign",
-      "GetDomainStatisticsReport",
-      "GetEmailIdentity",
-      "ListDomainDeliverabilityCampaigns",
-      "ListTagsForResource"
+    Read: [
+      'GetAccount',
+      'GetBlacklistReports',
+      'GetConfigurationSet',
+      'GetConfigurationSetEventDestinations',
+      'GetDedicatedIp',
+      'GetDedicatedIps',
+      'GetDeliverabilityDashboardOptions',
+      'GetDeliverabilityTestReport',
+      'GetDomainDeliverabilityCampaign',
+      'GetDomainStatisticsReport',
+      'GetEmailIdentity',
+      'ListDomainDeliverabilityCampaigns',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListConfigurationSets",
-      "ListDedicatedIpPools",
-      "ListDeliverabilityTestReports",
-      "ListEmailIdentities"
+    List: [
+      'ListConfigurationSets',
+      'ListDedicatedIpPools',
+      'ListDeliverabilityTestReports',
+      'ListEmailIdentities'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

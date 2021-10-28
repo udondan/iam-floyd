@@ -14,7 +14,7 @@ export class Securityhub extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -700,73 +700,73 @@ export class Securityhub extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AcceptAdministratorInvitation",
-      "AcceptInvitation",
-      "BatchDisableStandards",
-      "BatchEnableStandards",
-      "BatchImportFindings",
-      "BatchUpdateFindings",
-      "CreateActionTarget",
-      "CreateInsight",
-      "CreateMembers",
-      "DeclineInvitations",
-      "DeleteActionTarget",
-      "DeleteInsight",
-      "DeleteInvitations",
-      "DeleteMembers",
-      "DisableImportFindingsForProduct",
-      "DisableOrganizationAdminAccount",
-      "DisableSecurityHub",
-      "DisassociateFromAdministratorAccount",
-      "DisassociateFromMasterAccount",
-      "DisassociateMembers",
-      "EnableImportFindingsForProduct",
-      "EnableOrganizationAdminAccount",
-      "EnableSecurityHub",
-      "InviteMembers",
-      "UpdateActionTarget",
-      "UpdateFindings",
-      "UpdateInsight",
-      "UpdateOrganizationConfiguration",
-      "UpdateSecurityHubConfiguration",
-      "UpdateStandardsControl"
+    Write: [
+      'AcceptAdministratorInvitation',
+      'AcceptInvitation',
+      'BatchDisableStandards',
+      'BatchEnableStandards',
+      'BatchImportFindings',
+      'BatchUpdateFindings',
+      'CreateActionTarget',
+      'CreateInsight',
+      'CreateMembers',
+      'DeclineInvitations',
+      'DeleteActionTarget',
+      'DeleteInsight',
+      'DeleteInvitations',
+      'DeleteMembers',
+      'DisableImportFindingsForProduct',
+      'DisableOrganizationAdminAccount',
+      'DisableSecurityHub',
+      'DisassociateFromAdministratorAccount',
+      'DisassociateFromMasterAccount',
+      'DisassociateMembers',
+      'EnableImportFindingsForProduct',
+      'EnableOrganizationAdminAccount',
+      'EnableSecurityHub',
+      'InviteMembers',
+      'UpdateActionTarget',
+      'UpdateFindings',
+      'UpdateInsight',
+      'UpdateOrganizationConfiguration',
+      'UpdateSecurityHubConfiguration',
+      'UpdateStandardsControl'
     ],
-    "Read": [
-      "DescribeActionTargets",
-      "DescribeHub",
-      "DescribeOrganizationConfiguration",
-      "DescribeProducts",
-      "DescribeStandards",
-      "DescribeStandardsControls",
-      "GetAdhocInsightResults",
-      "GetAdministratorAccount",
-      "GetControlFindingSummary",
-      "GetFindings",
-      "GetFreeTrialEndDate",
-      "GetFreeTrialUsage",
-      "GetInsightFindingTrend",
-      "GetInsightResults",
-      "GetInvitationsCount",
-      "GetMasterAccount",
-      "GetMembers",
-      "GetUsage",
-      "ListControlEvaluationSummaries",
-      "ListTagsForResource",
-      "SendFindingEvents",
-      "SendInsightEvents"
+    Read: [
+      'DescribeActionTargets',
+      'DescribeHub',
+      'DescribeOrganizationConfiguration',
+      'DescribeProducts',
+      'DescribeStandards',
+      'DescribeStandardsControls',
+      'GetAdhocInsightResults',
+      'GetAdministratorAccount',
+      'GetControlFindingSummary',
+      'GetFindings',
+      'GetFreeTrialEndDate',
+      'GetFreeTrialUsage',
+      'GetInsightFindingTrend',
+      'GetInsightResults',
+      'GetInvitationsCount',
+      'GetMasterAccount',
+      'GetMembers',
+      'GetUsage',
+      'ListControlEvaluationSummaries',
+      'ListTagsForResource',
+      'SendFindingEvents',
+      'SendInsightEvents'
     ],
-    "List": [
-      "GetEnabledStandards",
-      "GetInsights",
-      "ListEnabledProductsForImport",
-      "ListInvitations",
-      "ListMembers",
-      "ListOrganizationAdminAccounts"
+    List: [
+      'GetEnabledStandards',
+      'GetInsights',
+      'ListEnabledProductsForImport',
+      'ListInvitations',
+      'ListMembers',
+      'ListOrganizationAdminAccounts'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

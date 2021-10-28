@@ -14,7 +14,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -228,30 +228,30 @@ export class MediapackageVod extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "ConfigureLogs",
-      "CreateAsset",
-      "CreatePackagingConfiguration",
-      "CreatePackagingGroup",
-      "DeleteAsset",
-      "DeletePackagingConfiguration",
-      "DeletePackagingGroup",
-      "UpdatePackagingGroup"
+    Write: [
+      'ConfigureLogs',
+      'CreateAsset',
+      'CreatePackagingConfiguration',
+      'CreatePackagingGroup',
+      'DeleteAsset',
+      'DeletePackagingConfiguration',
+      'DeletePackagingGroup',
+      'UpdatePackagingGroup'
     ],
-    "Read": [
-      "DescribeAsset",
-      "DescribePackagingConfiguration",
-      "DescribePackagingGroup",
-      "ListTagsForResource"
+    Read: [
+      'DescribeAsset',
+      'DescribePackagingConfiguration',
+      'DescribePackagingGroup',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListAssets",
-      "ListPackagingConfigurations",
-      "ListPackagingGroups"
+    List: [
+      'ListAssets',
+      'ListPackagingConfigurations',
+      'ListPackagingGroups'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -14,7 +14,7 @@ export class Rekognition extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -599,64 +599,64 @@ export class Rekognition extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "CompareFaces",
-      "DescribeCollection",
-      "DescribeProjectVersions",
-      "DescribeProjects",
-      "DescribeStreamProcessor",
-      "DetectCustomLabels",
-      "DetectFaces",
-      "DetectLabels",
-      "DetectModerationLabels",
-      "DetectProtectiveEquipment",
-      "DetectText",
-      "GetCelebrityInfo",
-      "GetCelebrityRecognition",
-      "GetContentModeration",
-      "GetFaceDetection",
-      "GetFaceSearch",
-      "GetLabelDetection",
-      "GetPersonTracking",
-      "GetSegmentDetection",
-      "GetTextDetection",
-      "ListCollections",
-      "ListFaces",
-      "ListTagsForResource",
-      "RecognizeCelebrities",
-      "SearchFaces",
-      "SearchFacesByImage"
+    Read: [
+      'CompareFaces',
+      'DescribeCollection',
+      'DescribeProjectVersions',
+      'DescribeProjects',
+      'DescribeStreamProcessor',
+      'DetectCustomLabels',
+      'DetectFaces',
+      'DetectLabels',
+      'DetectModerationLabels',
+      'DetectProtectiveEquipment',
+      'DetectText',
+      'GetCelebrityInfo',
+      'GetCelebrityRecognition',
+      'GetContentModeration',
+      'GetFaceDetection',
+      'GetFaceSearch',
+      'GetLabelDetection',
+      'GetPersonTracking',
+      'GetSegmentDetection',
+      'GetTextDetection',
+      'ListCollections',
+      'ListFaces',
+      'ListTagsForResource',
+      'RecognizeCelebrities',
+      'SearchFaces',
+      'SearchFacesByImage'
     ],
-    "Write": [
-      "CreateCollection",
-      "CreateProject",
-      "CreateProjectVersion",
-      "CreateStreamProcessor",
-      "DeleteCollection",
-      "DeleteFaces",
-      "DeleteProject",
-      "DeleteProjectVersion",
-      "DeleteStreamProcessor",
-      "IndexFaces",
-      "StartCelebrityRecognition",
-      "StartContentModeration",
-      "StartFaceDetection",
-      "StartFaceSearch",
-      "StartLabelDetection",
-      "StartPersonTracking",
-      "StartProjectVersion",
-      "StartSegmentDetection",
-      "StartStreamProcessor",
-      "StartTextDetection",
-      "StopProjectVersion",
-      "StopStreamProcessor"
+    Write: [
+      'CreateCollection',
+      'CreateProject',
+      'CreateProjectVersion',
+      'CreateStreamProcessor',
+      'DeleteCollection',
+      'DeleteFaces',
+      'DeleteProject',
+      'DeleteProjectVersion',
+      'DeleteStreamProcessor',
+      'IndexFaces',
+      'StartCelebrityRecognition',
+      'StartContentModeration',
+      'StartFaceDetection',
+      'StartFaceSearch',
+      'StartLabelDetection',
+      'StartPersonTracking',
+      'StartProjectVersion',
+      'StartSegmentDetection',
+      'StartStreamProcessor',
+      'StartTextDetection',
+      'StopProjectVersion',
+      'StopStreamProcessor'
     ],
-    "List": [
-      "ListStreamProcessors"
+    List: [
+      'ListStreamProcessors'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

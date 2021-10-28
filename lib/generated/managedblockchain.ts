@@ -14,7 +14,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -310,36 +310,36 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateMember",
-      "CreateNetwork",
-      "CreateNode",
-      "CreateProposal",
-      "DeleteMember",
-      "DeleteNode",
-      "RejectInvitation",
-      "UpdateMember",
-      "UpdateNode",
-      "VoteOnProposal"
+    Write: [
+      'CreateMember',
+      'CreateNetwork',
+      'CreateNode',
+      'CreateProposal',
+      'DeleteMember',
+      'DeleteNode',
+      'RejectInvitation',
+      'UpdateMember',
+      'UpdateNode',
+      'VoteOnProposal'
     ],
-    "Read": [
-      "GetMember",
-      "GetNetwork",
-      "GetNode",
-      "GetProposal",
-      "ListProposalVotes",
-      "ListTagsForResource"
+    Read: [
+      'GetMember',
+      'GetNetwork',
+      'GetNode',
+      'GetProposal',
+      'ListProposalVotes',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListInvitations",
-      "ListMembers",
-      "ListNetworks",
-      "ListNodes",
-      "ListProposals"
+    List: [
+      'ListInvitations',
+      'ListMembers',
+      'ListNetworks',
+      'ListNodes',
+      'ListProposals'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

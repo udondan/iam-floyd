@@ -14,7 +14,7 @@ export class Personalize extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -591,63 +591,63 @@ export class Personalize extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateBatchInferenceJob",
-      "CreateCampaign",
-      "CreateDataset",
-      "CreateDatasetExportJob",
-      "CreateDatasetGroup",
-      "CreateDatasetImportJob",
-      "CreateEventTracker",
-      "CreateFilter",
-      "CreateSchema",
-      "CreateSolution",
-      "CreateSolutionVersion",
-      "DeleteCampaign",
-      "DeleteDataset",
-      "DeleteDatasetGroup",
-      "DeleteEventTracker",
-      "DeleteFilter",
-      "DeleteSchema",
-      "DeleteSolution",
-      "PutEvents",
-      "PutItems",
-      "PutUsers",
-      "StopSolutionVersionCreation",
-      "UpdateCampaign"
+    Write: [
+      'CreateBatchInferenceJob',
+      'CreateCampaign',
+      'CreateDataset',
+      'CreateDatasetExportJob',
+      'CreateDatasetGroup',
+      'CreateDatasetImportJob',
+      'CreateEventTracker',
+      'CreateFilter',
+      'CreateSchema',
+      'CreateSolution',
+      'CreateSolutionVersion',
+      'DeleteCampaign',
+      'DeleteDataset',
+      'DeleteDatasetGroup',
+      'DeleteEventTracker',
+      'DeleteFilter',
+      'DeleteSchema',
+      'DeleteSolution',
+      'PutEvents',
+      'PutItems',
+      'PutUsers',
+      'StopSolutionVersionCreation',
+      'UpdateCampaign'
     ],
-    "Read": [
-      "DescribeAlgorithm",
-      "DescribeBatchInferenceJob",
-      "DescribeCampaign",
-      "DescribeDataset",
-      "DescribeDatasetExportJob",
-      "DescribeDatasetGroup",
-      "DescribeDatasetImportJob",
-      "DescribeEventTracker",
-      "DescribeFeatureTransformation",
-      "DescribeFilter",
-      "DescribeRecipe",
-      "DescribeSchema",
-      "DescribeSolution",
-      "DescribeSolutionVersion",
-      "GetPersonalizedRanking",
-      "GetRecommendations",
-      "GetSolutionMetrics"
+    Read: [
+      'DescribeAlgorithm',
+      'DescribeBatchInferenceJob',
+      'DescribeCampaign',
+      'DescribeDataset',
+      'DescribeDatasetExportJob',
+      'DescribeDatasetGroup',
+      'DescribeDatasetImportJob',
+      'DescribeEventTracker',
+      'DescribeFeatureTransformation',
+      'DescribeFilter',
+      'DescribeRecipe',
+      'DescribeSchema',
+      'DescribeSolution',
+      'DescribeSolutionVersion',
+      'GetPersonalizedRanking',
+      'GetRecommendations',
+      'GetSolutionMetrics'
     ],
-    "List": [
-      "ListBatchInferenceJobs",
-      "ListCampaigns",
-      "ListDatasetExportJobs",
-      "ListDatasetGroups",
-      "ListDatasetImportJobs",
-      "ListDatasets",
-      "ListEventTrackers",
-      "ListFilters",
-      "ListRecipes",
-      "ListSchemas",
-      "ListSolutionVersions",
-      "ListSolutions"
+    List: [
+      'ListBatchInferenceJobs',
+      'ListCampaigns',
+      'ListDatasetExportJobs',
+      'ListDatasetGroups',
+      'ListDatasetImportJobs',
+      'ListDatasets',
+      'ListEventTrackers',
+      'ListFilters',
+      'ListRecipes',
+      'ListSchemas',
+      'ListSolutionVersions',
+      'ListSolutions'
     ]
   };
 

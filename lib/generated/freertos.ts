@@ -14,7 +14,7 @@ export class Freertos extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -144,22 +144,22 @@ export class Freertos extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateSoftwareConfiguration",
-      "DeleteSoftwareConfiguration",
-      "UpdateSoftwareConfiguration"
+    Write: [
+      'CreateSoftwareConfiguration',
+      'DeleteSoftwareConfiguration',
+      'UpdateSoftwareConfiguration'
     ],
-    "Read": [
-      "DescribeHardwarePlatform",
-      "DescribeSoftwareConfiguration",
-      "GetSoftwareURL",
-      "GetSoftwareURLForConfiguration"
+    Read: [
+      'DescribeHardwarePlatform',
+      'DescribeSoftwareConfiguration',
+      'GetSoftwareURL',
+      'GetSoftwareURLForConfiguration'
     ],
-    "List": [
-      "ListFreeRTOSVersions",
-      "ListHardwarePlatforms",
-      "ListHardwareVendors",
-      "ListSoftwareConfigurations"
+    List: [
+      'ListFreeRTOSVersions',
+      'ListHardwarePlatforms',
+      'ListHardwareVendors',
+      'ListSoftwareConfigurations'
     ]
   };
 

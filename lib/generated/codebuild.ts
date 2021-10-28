@@ -14,7 +14,7 @@ export class Codebuild extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -622,66 +622,66 @@ export class Codebuild extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "BatchDeleteBuilds",
-      "BatchPutCodeCoverages",
-      "BatchPutTestCases",
-      "CreateProject",
-      "CreateReport",
-      "CreateReportGroup",
-      "CreateWebhook",
-      "DeleteBuildBatch",
-      "DeleteOAuthToken",
-      "DeleteProject",
-      "DeleteReport",
-      "DeleteReportGroup",
-      "DeleteSourceCredentials",
-      "DeleteWebhook",
-      "ImportSourceCredentials",
-      "InvalidateProjectCache",
-      "PersistOAuthToken",
-      "RetryBuild",
-      "RetryBuildBatch",
-      "StartBuild",
-      "StartBuildBatch",
-      "StopBuild",
-      "StopBuildBatch",
-      "UpdateProject",
-      "UpdateProjectVisibility",
-      "UpdateReport",
-      "UpdateReportGroup",
-      "UpdateWebhook"
+    Write: [
+      'BatchDeleteBuilds',
+      'BatchPutCodeCoverages',
+      'BatchPutTestCases',
+      'CreateProject',
+      'CreateReport',
+      'CreateReportGroup',
+      'CreateWebhook',
+      'DeleteBuildBatch',
+      'DeleteOAuthToken',
+      'DeleteProject',
+      'DeleteReport',
+      'DeleteReportGroup',
+      'DeleteSourceCredentials',
+      'DeleteWebhook',
+      'ImportSourceCredentials',
+      'InvalidateProjectCache',
+      'PersistOAuthToken',
+      'RetryBuild',
+      'RetryBuildBatch',
+      'StartBuild',
+      'StartBuildBatch',
+      'StopBuild',
+      'StopBuildBatch',
+      'UpdateProject',
+      'UpdateProjectVisibility',
+      'UpdateReport',
+      'UpdateReportGroup',
+      'UpdateWebhook'
     ],
-    "Read": [
-      "BatchGetBuildBatches",
-      "BatchGetBuilds",
-      "BatchGetProjects",
-      "BatchGetReportGroups",
-      "BatchGetReports",
-      "DescribeCodeCoverages",
-      "DescribeTestCases",
-      "GetReportGroupTrend",
-      "GetResourcePolicy"
+    Read: [
+      'BatchGetBuildBatches',
+      'BatchGetBuilds',
+      'BatchGetProjects',
+      'BatchGetReportGroups',
+      'BatchGetReports',
+      'DescribeCodeCoverages',
+      'DescribeTestCases',
+      'GetReportGroupTrend',
+      'GetResourcePolicy'
     ],
-    "Permissions management": [
-      "DeleteResourcePolicy",
-      "PutResourcePolicy"
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'PutResourcePolicy'
     ],
-    "List": [
-      "ListBuildBatches",
-      "ListBuildBatchesForProject",
-      "ListBuilds",
-      "ListBuildsForProject",
-      "ListConnectedOAuthAccounts",
-      "ListCuratedEnvironmentImages",
-      "ListProjects",
-      "ListReportGroups",
-      "ListReports",
-      "ListReportsForReportGroup",
-      "ListRepositories",
-      "ListSharedProjects",
-      "ListSharedReportGroups",
-      "ListSourceCredentials"
+    List: [
+      'ListBuildBatches',
+      'ListBuildBatchesForProject',
+      'ListBuilds',
+      'ListBuildsForProject',
+      'ListConnectedOAuthAccounts',
+      'ListCuratedEnvironmentImages',
+      'ListProjects',
+      'ListReportGroups',
+      'ListReports',
+      'ListReportsForReportGroup',
+      'ListRepositories',
+      'ListSharedProjects',
+      'ListSharedReportGroups',
+      'ListSourceCredentials'
     ]
   };
 

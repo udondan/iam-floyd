@@ -14,7 +14,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -693,68 +693,68 @@ export class Iotwireless extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateAwsAccountWithPartnerAccount",
-      "AssociateWirelessDeviceWithThing",
-      "AssociateWirelessGatewayWithCertificate",
-      "AssociateWirelessGatewayWithThing",
-      "CreateDestination",
-      "CreateDeviceProfile",
-      "CreateServiceProfile",
-      "CreateWirelessDevice",
-      "CreateWirelessGateway",
-      "CreateWirelessGatewayTask",
-      "CreateWirelessGatewayTaskDefinition",
-      "DeleteDestination",
-      "DeleteDeviceProfile",
-      "DeleteServiceProfile",
-      "DeleteWirelessDevice",
-      "DeleteWirelessGateway",
-      "DeleteWirelessGatewayTask",
-      "DeleteWirelessGatewayTaskDefinition",
-      "DisassociateAwsAccountFromPartnerAccount",
-      "DisassociateWirelessDeviceFromThing",
-      "DisassociateWirelessGatewayFromCertificate",
-      "DisassociateWirelessGatewayFromThing",
-      "PutResourceLogLevel",
-      "ResetAllResourceLogLevels",
-      "ResetResourceLogLevel",
-      "SendDataToWirelessDevice",
-      "TestWirelessDevice",
-      "UpdateDestination",
-      "UpdateLogLevelsByResourceTypes",
-      "UpdatePartnerAccount",
-      "UpdateWirelessDevice",
-      "UpdateWirelessGateway"
+    Write: [
+      'AssociateAwsAccountWithPartnerAccount',
+      'AssociateWirelessDeviceWithThing',
+      'AssociateWirelessGatewayWithCertificate',
+      'AssociateWirelessGatewayWithThing',
+      'CreateDestination',
+      'CreateDeviceProfile',
+      'CreateServiceProfile',
+      'CreateWirelessDevice',
+      'CreateWirelessGateway',
+      'CreateWirelessGatewayTask',
+      'CreateWirelessGatewayTaskDefinition',
+      'DeleteDestination',
+      'DeleteDeviceProfile',
+      'DeleteServiceProfile',
+      'DeleteWirelessDevice',
+      'DeleteWirelessGateway',
+      'DeleteWirelessGatewayTask',
+      'DeleteWirelessGatewayTaskDefinition',
+      'DisassociateAwsAccountFromPartnerAccount',
+      'DisassociateWirelessDeviceFromThing',
+      'DisassociateWirelessGatewayFromCertificate',
+      'DisassociateWirelessGatewayFromThing',
+      'PutResourceLogLevel',
+      'ResetAllResourceLogLevels',
+      'ResetResourceLogLevel',
+      'SendDataToWirelessDevice',
+      'TestWirelessDevice',
+      'UpdateDestination',
+      'UpdateLogLevelsByResourceTypes',
+      'UpdatePartnerAccount',
+      'UpdateWirelessDevice',
+      'UpdateWirelessGateway'
     ],
-    "Read": [
-      "GetDestination",
-      "GetDeviceProfile",
-      "GetLogLevelsByResourceTypes",
-      "GetPartnerAccount",
-      "GetResourceLogLevel",
-      "GetServiceEndpoint",
-      "GetServiceProfile",
-      "GetWirelessDevice",
-      "GetWirelessDeviceStatistics",
-      "GetWirelessGateway",
-      "GetWirelessGatewayCertificate",
-      "GetWirelessGatewayFirmwareInformation",
-      "GetWirelessGatewayStatistics",
-      "GetWirelessGatewayTask",
-      "GetWirelessGatewayTaskDefinition",
-      "ListDestinations",
-      "ListDeviceProfiles",
-      "ListPartnerAccounts",
-      "ListServiceProfiles",
-      "ListTagsForResource",
-      "ListWirelessDevices",
-      "ListWirelessGatewayTaskDefinitions",
-      "ListWirelessGateways"
+    Read: [
+      'GetDestination',
+      'GetDeviceProfile',
+      'GetLogLevelsByResourceTypes',
+      'GetPartnerAccount',
+      'GetResourceLogLevel',
+      'GetServiceEndpoint',
+      'GetServiceProfile',
+      'GetWirelessDevice',
+      'GetWirelessDeviceStatistics',
+      'GetWirelessGateway',
+      'GetWirelessGatewayCertificate',
+      'GetWirelessGatewayFirmwareInformation',
+      'GetWirelessGatewayStatistics',
+      'GetWirelessGatewayTask',
+      'GetWirelessGatewayTaskDefinition',
+      'ListDestinations',
+      'ListDeviceProfiles',
+      'ListPartnerAccounts',
+      'ListServiceProfiles',
+      'ListTagsForResource',
+      'ListWirelessDevices',
+      'ListWirelessGatewayTaskDefinitions',
+      'ListWirelessGateways'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

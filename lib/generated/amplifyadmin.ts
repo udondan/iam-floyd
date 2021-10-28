@@ -14,7 +14,7 @@ export class Amplifybackend extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -294,36 +294,36 @@ export class Amplifybackend extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CloneBackend",
-      "CreateBackend",
-      "CreateBackendAPI",
-      "CreateBackendAuth",
-      "CreateBackendConfig",
-      "CreateToken",
-      "DeleteBackend",
-      "DeleteBackendAPI",
-      "DeleteBackendAuth",
-      "DeleteToken",
-      "GenerateBackendAPIModels",
-      "ImportBackendAuth",
-      "RemoveAllBackends",
-      "RemoveBackendConfig",
-      "UpdateBackendAPI",
-      "UpdateBackendAuth",
-      "UpdateBackendConfig",
-      "UpdateBackendJob"
+    Write: [
+      'CloneBackend',
+      'CreateBackend',
+      'CreateBackendAPI',
+      'CreateBackendAuth',
+      'CreateBackendConfig',
+      'CreateToken',
+      'DeleteBackend',
+      'DeleteBackendAPI',
+      'DeleteBackendAuth',
+      'DeleteToken',
+      'GenerateBackendAPIModels',
+      'ImportBackendAuth',
+      'RemoveAllBackends',
+      'RemoveBackendConfig',
+      'UpdateBackendAPI',
+      'UpdateBackendAuth',
+      'UpdateBackendConfig',
+      'UpdateBackendJob'
     ],
-    "Read": [
-      "GetBackend",
-      "GetBackendAPI",
-      "GetBackendAPIModels",
-      "GetBackendAuth",
-      "GetBackendJob",
-      "GetToken"
+    Read: [
+      'GetBackend',
+      'GetBackendAPI',
+      'GetBackendAPIModels',
+      'GetBackendAuth',
+      'GetBackendJob',
+      'GetToken'
     ],
-    "List": [
-      "ListBackendJobs"
+    List: [
+      'ListBackendJobs'
     ]
   };
 

@@ -14,7 +14,7 @@ export class Mq extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -298,35 +298,35 @@ export class Mq extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateBroker",
-      "CreateConfiguration",
-      "CreateUser",
-      "DeleteBroker",
-      "DeleteUser",
-      "RebootBroker",
-      "UpdateBroker",
-      "UpdateConfiguration",
-      "UpdateUser"
+    Write: [
+      'CreateBroker',
+      'CreateConfiguration',
+      'CreateUser',
+      'DeleteBroker',
+      'DeleteUser',
+      'RebootBroker',
+      'UpdateBroker',
+      'UpdateConfiguration',
+      'UpdateUser'
     ],
-    "Tagging": [
-      "CreateTags",
-      "DeleteTags"
+    Tagging: [
+      'CreateTags',
+      'DeleteTags'
     ],
-    "Read": [
-      "DescribeBroker",
-      "DescribeBrokerEngineTypes",
-      "DescribeBrokerInstanceOptions",
-      "DescribeConfiguration",
-      "DescribeConfigurationRevision",
-      "DescribeUser"
+    Read: [
+      'DescribeBroker',
+      'DescribeBrokerEngineTypes',
+      'DescribeBrokerInstanceOptions',
+      'DescribeConfiguration',
+      'DescribeConfigurationRevision',
+      'DescribeUser'
     ],
-    "List": [
-      "ListBrokers",
-      "ListConfigurationRevisions",
-      "ListConfigurations",
-      "ListTags",
-      "ListUsers"
+    List: [
+      'ListBrokers',
+      'ListConfigurationRevisions',
+      'ListConfigurations',
+      'ListTags',
+      'ListUsers'
     ]
   };
 

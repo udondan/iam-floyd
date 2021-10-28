@@ -14,7 +14,7 @@ export class Detective extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -244,33 +244,33 @@ export class Detective extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AcceptInvitation",
-      "CreateGraph",
-      "CreateMembers",
-      "DeleteGraph",
-      "DeleteMembers",
-      "DisassociateMembership",
-      "RejectInvitation",
-      "StartMonitoringMember"
+    Write: [
+      'AcceptInvitation',
+      'CreateGraph',
+      'CreateMembers',
+      'DeleteGraph',
+      'DeleteMembers',
+      'DisassociateMembership',
+      'RejectInvitation',
+      'StartMonitoringMember'
     ],
-    "Read": [
-      "GetFreeTrialEligibility",
-      "GetGraphIngestState",
-      "GetMembers",
-      "GetPricingInformation",
-      "GetUsageInformation",
-      "ListTagsForResource",
-      "SearchGraph"
+    Read: [
+      'GetFreeTrialEligibility',
+      'GetGraphIngestState',
+      'GetMembers',
+      'GetPricingInformation',
+      'GetUsageInformation',
+      'ListTagsForResource',
+      'SearchGraph'
     ],
-    "List": [
-      "ListGraphs",
-      "ListInvitations",
-      "ListMembers"
+    List: [
+      'ListGraphs',
+      'ListInvitations',
+      'ListMembers'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

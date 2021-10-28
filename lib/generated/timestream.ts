@@ -14,7 +14,7 @@ export class Timestream extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -243,32 +243,32 @@ export class Timestream extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CancelQuery",
-      "CreateDatabase",
-      "CreateTable",
-      "DeleteDatabase",
-      "DeleteTable",
-      "UpdateDatabase",
-      "UpdateTable",
-      "WriteRecords"
+    Write: [
+      'CancelQuery',
+      'CreateDatabase',
+      'CreateTable',
+      'DeleteDatabase',
+      'DeleteTable',
+      'UpdateDatabase',
+      'UpdateTable',
+      'WriteRecords'
     ],
-    "Read": [
-      "DescribeDatabase",
-      "DescribeTable",
-      "Select",
-      "SelectValues"
+    Read: [
+      'DescribeDatabase',
+      'DescribeTable',
+      'Select',
+      'SelectValues'
     ],
-    "List": [
-      "DescribeEndpoints",
-      "ListDatabases",
-      "ListMeasures",
-      "ListTables",
-      "ListTagsForResource"
+    List: [
+      'DescribeEndpoints',
+      'ListDatabases',
+      'ListMeasures',
+      'ListTables',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

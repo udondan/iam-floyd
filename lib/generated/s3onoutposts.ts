@@ -14,7 +14,7 @@ export class S3Outposts extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -615,47 +615,47 @@ export class S3Outposts extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AbortMultipartUpload",
-      "CreateAccessPoint",
-      "CreateBucket",
-      "CreateEndpoint",
-      "DeleteAccessPoint",
-      "DeleteBucket",
-      "DeleteEndpoint",
-      "DeleteObject",
-      "PutLifecycleConfiguration",
-      "PutObject"
+    Write: [
+      'AbortMultipartUpload',
+      'CreateAccessPoint',
+      'CreateBucket',
+      'CreateEndpoint',
+      'DeleteAccessPoint',
+      'DeleteBucket',
+      'DeleteEndpoint',
+      'DeleteObject',
+      'PutLifecycleConfiguration',
+      'PutObject'
     ],
-    "Permissions management": [
-      "DeleteAccessPointPolicy",
-      "DeleteBucketPolicy",
-      "PutAccessPointPolicy",
-      "PutBucketPolicy",
-      "PutObjectAcl"
+    'Permissions management': [
+      'DeleteAccessPointPolicy',
+      'DeleteBucketPolicy',
+      'PutAccessPointPolicy',
+      'PutBucketPolicy',
+      'PutObjectAcl'
     ],
-    "Tagging": [
-      "DeleteObjectTagging",
-      "PutBucketTagging",
-      "PutObjectTagging"
+    Tagging: [
+      'DeleteObjectTagging',
+      'PutBucketTagging',
+      'PutObjectTagging'
     ],
-    "Read": [
-      "GetAccessPoint",
-      "GetAccessPointPolicy",
-      "GetBucket",
-      "GetBucketPolicy",
-      "GetBucketTagging",
-      "GetLifecycleConfiguration",
-      "GetObject",
-      "GetObjectTagging"
+    Read: [
+      'GetAccessPoint',
+      'GetAccessPointPolicy',
+      'GetBucket',
+      'GetBucketPolicy',
+      'GetBucketTagging',
+      'GetLifecycleConfiguration',
+      'GetObject',
+      'GetObjectTagging'
     ],
-    "List": [
-      "ListAccessPoints",
-      "ListBucket",
-      "ListBucketMultipartUploads",
-      "ListEndpoints",
-      "ListMultipartUploadParts",
-      "ListRegionalBuckets"
+    List: [
+      'ListAccessPoints',
+      'ListBucket',
+      'ListBucketMultipartUploads',
+      'ListEndpoints',
+      'ListMultipartUploadParts',
+      'ListRegionalBuckets'
     ]
   };
 

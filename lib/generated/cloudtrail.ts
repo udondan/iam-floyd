@@ -14,7 +14,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -220,31 +220,31 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Tagging": [
-      "AddTags",
-      "RemoveTags"
+    Tagging: [
+      'AddTags',
+      'RemoveTags'
     ],
-    "Write": [
-      "CreateTrail",
-      "DeleteTrail",
-      "PutEventSelectors",
-      "PutInsightSelectors",
-      "StartLogging",
-      "StopLogging",
-      "UpdateTrail"
+    Write: [
+      'CreateTrail',
+      'DeleteTrail',
+      'PutEventSelectors',
+      'PutInsightSelectors',
+      'StartLogging',
+      'StopLogging',
+      'UpdateTrail'
     ],
-    "Read": [
-      "DescribeTrails",
-      "GetEventSelectors",
-      "GetInsightSelectors",
-      "GetTrail",
-      "GetTrailStatus",
-      "ListPublicKeys",
-      "ListTags",
-      "LookupEvents"
+    Read: [
+      'DescribeTrails',
+      'GetEventSelectors',
+      'GetInsightSelectors',
+      'GetTrail',
+      'GetTrailStatus',
+      'ListPublicKeys',
+      'ListTags',
+      'LookupEvents'
     ],
-    "List": [
-      "ListTrails"
+    List: [
+      'ListTrails'
     ]
   };
 

@@ -14,7 +14,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -250,32 +250,32 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateCluster",
-      "CreateControlPanel",
-      "CreateRoutingControl",
-      "CreateSafetyRule",
-      "DeleteCluster",
-      "DeleteControlPanel",
-      "DeleteRoutingControl",
-      "DeleteSafetyRule",
-      "UpdateControlPanel",
-      "UpdateRoutingControl",
-      "UpdateSafetyRule"
+    Write: [
+      'CreateCluster',
+      'CreateControlPanel',
+      'CreateRoutingControl',
+      'CreateSafetyRule',
+      'DeleteCluster',
+      'DeleteControlPanel',
+      'DeleteRoutingControl',
+      'DeleteSafetyRule',
+      'UpdateControlPanel',
+      'UpdateRoutingControl',
+      'UpdateSafetyRule'
     ],
-    "Read": [
-      "DescribeCluster",
-      "DescribeControlPanel",
-      "DescribeRoutingControl",
-      "DescribeRoutingControlByName",
-      "DescribeSafetyRule",
-      "ListClusters",
-      "ListControlPanels",
-      "ListRoutingControls",
-      "ListSafetyRules"
+    Read: [
+      'DescribeCluster',
+      'DescribeControlPanel',
+      'DescribeRoutingControl',
+      'DescribeRoutingControlByName',
+      'DescribeSafetyRule',
+      'ListClusters',
+      'ListControlPanels',
+      'ListRoutingControls',
+      'ListSafetyRules'
     ],
-    "List": [
-      "ListAssociatedRoute53HealthChecks"
+    List: [
+      'ListAssociatedRoute53HealthChecks'
     ]
   };
 

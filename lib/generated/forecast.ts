@@ -14,7 +14,7 @@ export class Forecast extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -454,49 +454,49 @@ export class Forecast extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateDataset",
-      "CreateDatasetGroup",
-      "CreateDatasetImportJob",
-      "CreateForecast",
-      "CreateForecastExportJob",
-      "CreatePredictor",
-      "CreatePredictorBacktestExportJob",
-      "DeleteDataset",
-      "DeleteDatasetGroup",
-      "DeleteDatasetImportJob",
-      "DeleteForecast",
-      "DeleteForecastExportJob",
-      "DeletePredictor",
-      "DeletePredictorBacktestExportJob",
-      "DeleteResourceTree",
-      "StopResource",
-      "UpdateDatasetGroup"
+    Write: [
+      'CreateDataset',
+      'CreateDatasetGroup',
+      'CreateDatasetImportJob',
+      'CreateForecast',
+      'CreateForecastExportJob',
+      'CreatePredictor',
+      'CreatePredictorBacktestExportJob',
+      'DeleteDataset',
+      'DeleteDatasetGroup',
+      'DeleteDatasetImportJob',
+      'DeleteForecast',
+      'DeleteForecastExportJob',
+      'DeletePredictor',
+      'DeletePredictorBacktestExportJob',
+      'DeleteResourceTree',
+      'StopResource',
+      'UpdateDatasetGroup'
     ],
-    "Read": [
-      "DescribeDataset",
-      "DescribeDatasetGroup",
-      "DescribeDatasetImportJob",
-      "DescribeForecast",
-      "DescribeForecastExportJob",
-      "DescribePredictor",
-      "DescribePredictorBacktestExportJob",
-      "GetAccuracyMetrics",
-      "ListTagsForResource",
-      "QueryForecast"
+    Read: [
+      'DescribeDataset',
+      'DescribeDatasetGroup',
+      'DescribeDatasetImportJob',
+      'DescribeForecast',
+      'DescribeForecastExportJob',
+      'DescribePredictor',
+      'DescribePredictorBacktestExportJob',
+      'GetAccuracyMetrics',
+      'ListTagsForResource',
+      'QueryForecast'
     ],
-    "List": [
-      "ListDatasetGroups",
-      "ListDatasetImportJobs",
-      "ListDatasets",
-      "ListForecastExportJobs",
-      "ListForecasts",
-      "ListPredictorBacktestExportJobs",
-      "ListPredictors"
+    List: [
+      'ListDatasetGroups',
+      'ListDatasetImportJobs',
+      'ListDatasets',
+      'ListForecastExportJobs',
+      'ListForecasts',
+      'ListPredictorBacktestExportJobs',
+      'ListPredictors'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

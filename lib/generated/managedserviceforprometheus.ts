@@ -14,7 +14,7 @@ export class Aps extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -483,46 +483,46 @@ export class Aps extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateAlertManagerAlerts",
-      "CreateAlertManagerDefinition",
-      "CreateRuleGroupsNamespace",
-      "CreateWorkspace",
-      "DeleteAlertManagerDefinition",
-      "DeleteAlertManagerSilence",
-      "DeleteRuleGroupsNamespace",
-      "DeleteWorkspace",
-      "PutAlertManagerDefinition",
-      "PutAlertManagerSilences",
-      "PutRuleGroupsNamespace",
-      "RemoteWrite",
-      "UpdateWorkspaceAlias"
+    Write: [
+      'CreateAlertManagerAlerts',
+      'CreateAlertManagerDefinition',
+      'CreateRuleGroupsNamespace',
+      'CreateWorkspace',
+      'DeleteAlertManagerDefinition',
+      'DeleteAlertManagerSilence',
+      'DeleteRuleGroupsNamespace',
+      'DeleteWorkspace',
+      'PutAlertManagerDefinition',
+      'PutAlertManagerSilences',
+      'PutRuleGroupsNamespace',
+      'RemoteWrite',
+      'UpdateWorkspaceAlias'
     ],
-    "Read": [
-      "DescribeAlertManagerDefinition",
-      "DescribeRuleGroupsNamespace",
-      "DescribeWorkspace",
-      "GetAlertManagerSilence",
-      "GetAlertManagerStatus",
-      "GetLabels",
-      "GetMetricMetadata",
-      "GetSeries",
-      "ListAlertManagerAlertGroups",
-      "ListAlertManagerAlerts",
-      "ListAlertManagerReceivers",
-      "ListAlertManagerSilences",
-      "ListAlerts",
-      "ListRules",
-      "ListTagsForResource",
-      "QueryMetrics"
+    Read: [
+      'DescribeAlertManagerDefinition',
+      'DescribeRuleGroupsNamespace',
+      'DescribeWorkspace',
+      'GetAlertManagerSilence',
+      'GetAlertManagerStatus',
+      'GetLabels',
+      'GetMetricMetadata',
+      'GetSeries',
+      'ListAlertManagerAlertGroups',
+      'ListAlertManagerAlerts',
+      'ListAlertManagerReceivers',
+      'ListAlertManagerSilences',
+      'ListAlerts',
+      'ListRules',
+      'ListTagsForResource',
+      'QueryMetrics'
     ],
-    "List": [
-      "ListRuleGroupsNamespaces",
-      "ListWorkspaces"
+    List: [
+      'ListRuleGroupsNamespaces',
+      'ListWorkspaces'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

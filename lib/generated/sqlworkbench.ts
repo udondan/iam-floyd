@@ -14,7 +14,7 @@ export class Sqlworkbench extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -513,55 +513,55 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateConnectionWithChart",
-      "AssociateConnectionWithTab",
-      "AssociateQueryWithTab",
-      "BatchDeleteFolder",
-      "CreateAccount",
-      "CreateChart",
-      "CreateConnection",
-      "CreateFolder",
-      "CreateSavedQuery",
-      "DeleteChart",
-      "DeleteConnection",
-      "DeleteSavedQuery",
-      "DeleteTab",
-      "DriverExecute",
-      "GenerateSession",
-      "PutTab",
-      "PutUserWorkspaceSettings",
-      "UpdateChart",
-      "UpdateConnection",
-      "UpdateFileFolder",
-      "UpdateFolder",
-      "UpdateSavedQuery"
+    Write: [
+      'AssociateConnectionWithChart',
+      'AssociateConnectionWithTab',
+      'AssociateQueryWithTab',
+      'BatchDeleteFolder',
+      'CreateAccount',
+      'CreateChart',
+      'CreateConnection',
+      'CreateFolder',
+      'CreateSavedQuery',
+      'DeleteChart',
+      'DeleteConnection',
+      'DeleteSavedQuery',
+      'DeleteTab',
+      'DriverExecute',
+      'GenerateSession',
+      'PutTab',
+      'PutUserWorkspaceSettings',
+      'UpdateChart',
+      'UpdateConnection',
+      'UpdateFileFolder',
+      'UpdateFolder',
+      'UpdateSavedQuery'
     ],
-    "Read": [
-      "GetAccountInfo",
-      "GetChart",
-      "GetConnection",
-      "GetKMSKey",
-      "GetSavedQuery",
-      "GetUserInfo",
-      "GetUserWorkspaceSettings",
-      "ListBuckets",
-      "ListSampleDatabases",
-      "ListTagsForResource"
+    Read: [
+      'GetAccountInfo',
+      'GetChart',
+      'GetConnection',
+      'GetKMSKey',
+      'GetSavedQuery',
+      'GetUserInfo',
+      'GetUserWorkspaceSettings',
+      'ListBuckets',
+      'ListSampleDatabases',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListConnections",
-      "ListDatabases",
-      "ListFiles",
-      "ListKMSKeyAliases",
-      "ListKMSKeys",
-      "ListRedshiftClusters",
-      "ListSavedQueryVersions",
-      "ListTabs"
+    List: [
+      'ListConnections',
+      'ListDatabases',
+      'ListFiles',
+      'ListKMSKeyAliases',
+      'ListKMSKeys',
+      'ListRedshiftClusters',
+      'ListSavedQueryVersions',
+      'ListTabs'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

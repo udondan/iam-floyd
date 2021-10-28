@@ -14,7 +14,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -316,40 +316,40 @@ export class Applicationinsights extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateApplication",
-      "CreateComponent",
-      "CreateLogPattern",
-      "DeleteApplication",
-      "DeleteComponent",
-      "DeleteLogPattern",
-      "UpdateApplication",
-      "UpdateComponent",
-      "UpdateComponentConfiguration",
-      "UpdateLogPattern"
+    Write: [
+      'CreateApplication',
+      'CreateComponent',
+      'CreateLogPattern',
+      'DeleteApplication',
+      'DeleteComponent',
+      'DeleteLogPattern',
+      'UpdateApplication',
+      'UpdateComponent',
+      'UpdateComponentConfiguration',
+      'UpdateLogPattern'
     ],
-    "Read": [
-      "DescribeApplication",
-      "DescribeComponent",
-      "DescribeComponentConfiguration",
-      "DescribeComponentConfigurationRecommendation",
-      "DescribeLogPattern",
-      "DescribeObservation",
-      "DescribeProblem",
-      "DescribeProblemObservations",
-      "ListTagsForResource"
+    Read: [
+      'DescribeApplication',
+      'DescribeComponent',
+      'DescribeComponentConfiguration',
+      'DescribeComponentConfigurationRecommendation',
+      'DescribeLogPattern',
+      'DescribeObservation',
+      'DescribeProblem',
+      'DescribeProblemObservations',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListApplications",
-      "ListComponents",
-      "ListConfigurationHistory",
-      "ListLogPatternSets",
-      "ListLogPatterns",
-      "ListProblems"
+    List: [
+      'ListApplications',
+      'ListComponents',
+      'ListConfigurationHistory',
+      'ListLogPatternSets',
+      'ListLogPatterns',
+      'ListProblems'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 }

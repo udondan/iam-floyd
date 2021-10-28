@@ -14,7 +14,7 @@ export class AcmPca extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -286,38 +286,38 @@ export class AcmPca extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateCertificateAuthority",
-      "CreateCertificateAuthorityAuditReport",
-      "DeleteCertificateAuthority",
-      "ImportCertificateAuthorityCertificate",
-      "IssueCertificate",
-      "RestoreCertificateAuthority",
-      "RevokeCertificate",
-      "UpdateCertificateAuthority"
+    Write: [
+      'CreateCertificateAuthority',
+      'CreateCertificateAuthorityAuditReport',
+      'DeleteCertificateAuthority',
+      'ImportCertificateAuthorityCertificate',
+      'IssueCertificate',
+      'RestoreCertificateAuthority',
+      'RevokeCertificate',
+      'UpdateCertificateAuthority'
     ],
-    "Permissions management": [
-      "CreatePermission",
-      "DeletePermission",
-      "DeletePolicy",
-      "PutPolicy"
+    'Permissions management': [
+      'CreatePermission',
+      'DeletePermission',
+      'DeletePolicy',
+      'PutPolicy'
     ],
-    "Read": [
-      "DescribeCertificateAuthority",
-      "DescribeCertificateAuthorityAuditReport",
-      "GetCertificate",
-      "GetCertificateAuthorityCertificate",
-      "GetCertificateAuthorityCsr",
-      "GetPolicy",
-      "ListPermissions",
-      "ListTags"
+    Read: [
+      'DescribeCertificateAuthority',
+      'DescribeCertificateAuthorityAuditReport',
+      'GetCertificate',
+      'GetCertificateAuthorityCertificate',
+      'GetCertificateAuthorityCsr',
+      'GetPolicy',
+      'ListPermissions',
+      'ListTags'
     ],
-    "List": [
-      "ListCertificateAuthorities"
+    List: [
+      'ListCertificateAuthorities'
     ],
-    "Tagging": [
-      "TagCertificateAuthority",
-      "UntagCertificateAuthority"
+    Tagging: [
+      'TagCertificateAuthority',
+      'UntagCertificateAuthority'
     ]
   };
 

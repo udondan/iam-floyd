@@ -14,7 +14,7 @@ export class Appsync extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -522,56 +522,56 @@ export class Appsync extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateApiCache",
-      "CreateApiKey",
-      "CreateDataSource",
-      "CreateFunction",
-      "CreateGraphqlApi",
-      "CreateResolver",
-      "CreateType",
-      "DeleteApiCache",
-      "DeleteApiKey",
-      "DeleteDataSource",
-      "DeleteFunction",
-      "DeleteGraphqlApi",
-      "DeleteResolver",
-      "DeleteType",
-      "FlushApiCache",
-      "GraphQL",
-      "SetWebACL",
-      "StartSchemaCreation",
-      "UpdateApiCache",
-      "UpdateApiKey",
-      "UpdateDataSource",
-      "UpdateFunction",
-      "UpdateGraphqlApi",
-      "UpdateResolver",
-      "UpdateType"
+    Write: [
+      'CreateApiCache',
+      'CreateApiKey',
+      'CreateDataSource',
+      'CreateFunction',
+      'CreateGraphqlApi',
+      'CreateResolver',
+      'CreateType',
+      'DeleteApiCache',
+      'DeleteApiKey',
+      'DeleteDataSource',
+      'DeleteFunction',
+      'DeleteGraphqlApi',
+      'DeleteResolver',
+      'DeleteType',
+      'FlushApiCache',
+      'GraphQL',
+      'SetWebACL',
+      'StartSchemaCreation',
+      'UpdateApiCache',
+      'UpdateApiKey',
+      'UpdateDataSource',
+      'UpdateFunction',
+      'UpdateGraphqlApi',
+      'UpdateResolver',
+      'UpdateType'
     ],
-    "Read": [
-      "GetApiCache",
-      "GetDataSource",
-      "GetFunction",
-      "GetGraphqlApi",
-      "GetIntrospectionSchema",
-      "GetResolver",
-      "GetSchemaCreationStatus",
-      "GetType",
-      "ListTagsForResource"
+    Read: [
+      'GetApiCache',
+      'GetDataSource',
+      'GetFunction',
+      'GetGraphqlApi',
+      'GetIntrospectionSchema',
+      'GetResolver',
+      'GetSchemaCreationStatus',
+      'GetType',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListApiKeys",
-      "ListDataSources",
-      "ListFunctions",
-      "ListGraphqlApis",
-      "ListResolvers",
-      "ListResolversByFunction",
-      "ListTypes"
+    List: [
+      'ListApiKeys',
+      'ListDataSources',
+      'ListFunctions',
+      'ListGraphqlApis',
+      'ListResolvers',
+      'ListResolversByFunction',
+      'ListTypes'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

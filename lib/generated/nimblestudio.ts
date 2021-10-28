@@ -14,7 +14,7 @@ export class Nimble extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -618,58 +618,58 @@ export class Nimble extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AcceptEulas",
-      "CreateLaunchProfile",
-      "CreateStreamingImage",
-      "CreateStreamingSession",
-      "CreateStreamingSessionStream",
-      "CreateStudio",
-      "CreateStudioComponent",
-      "DeleteLaunchProfile",
-      "DeleteLaunchProfileMember",
-      "DeleteStreamingImage",
-      "DeleteStreamingSession",
-      "DeleteStudio",
-      "DeleteStudioComponent",
-      "DeleteStudioMember",
-      "PutLaunchProfileMembers",
-      "PutStudioLogEvents",
-      "PutStudioMembers",
-      "StartStudioSSOConfigurationRepair",
-      "UpdateLaunchProfile",
-      "UpdateLaunchProfileMember",
-      "UpdateStreamingImage",
-      "UpdateStudio",
-      "UpdateStudioComponent"
+    Write: [
+      'AcceptEulas',
+      'CreateLaunchProfile',
+      'CreateStreamingImage',
+      'CreateStreamingSession',
+      'CreateStreamingSessionStream',
+      'CreateStudio',
+      'CreateStudioComponent',
+      'DeleteLaunchProfile',
+      'DeleteLaunchProfileMember',
+      'DeleteStreamingImage',
+      'DeleteStreamingSession',
+      'DeleteStudio',
+      'DeleteStudioComponent',
+      'DeleteStudioMember',
+      'PutLaunchProfileMembers',
+      'PutStudioLogEvents',
+      'PutStudioMembers',
+      'StartStudioSSOConfigurationRepair',
+      'UpdateLaunchProfile',
+      'UpdateLaunchProfileMember',
+      'UpdateStreamingImage',
+      'UpdateStudio',
+      'UpdateStudioComponent'
     ],
-    "Read": [
-      "GetEula",
-      "GetFeatureMap",
-      "GetLaunchProfile",
-      "GetLaunchProfileDetails",
-      "GetLaunchProfileInitialization",
-      "GetLaunchProfileMember",
-      "GetStreamingImage",
-      "GetStreamingSession",
-      "GetStreamingSessionStream",
-      "GetStudio",
-      "GetStudioComponent",
-      "GetStudioMember",
-      "ListEulaAcceptances",
-      "ListEulas",
-      "ListLaunchProfileMembers",
-      "ListLaunchProfiles",
-      "ListStreamingImages",
-      "ListStreamingSessions",
-      "ListStudioComponents",
-      "ListStudioMembers",
-      "ListStudios",
-      "ListTagsForResource"
+    Read: [
+      'GetEula',
+      'GetFeatureMap',
+      'GetLaunchProfile',
+      'GetLaunchProfileDetails',
+      'GetLaunchProfileInitialization',
+      'GetLaunchProfileMember',
+      'GetStreamingImage',
+      'GetStreamingSession',
+      'GetStreamingSessionStream',
+      'GetStudio',
+      'GetStudioComponent',
+      'GetStudioMember',
+      'ListEulaAcceptances',
+      'ListEulas',
+      'ListLaunchProfileMembers',
+      'ListLaunchProfiles',
+      'ListStreamingImages',
+      'ListStreamingSessions',
+      'ListStudioComponents',
+      'ListStudioMembers',
+      'ListStudios',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

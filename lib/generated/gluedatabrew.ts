@@ -14,7 +14,7 @@ export class Databrew extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -479,50 +479,50 @@ export class Databrew extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "BatchDeleteRecipeVersion",
-      "CreateDataset",
-      "CreateProfileJob",
-      "CreateProject",
-      "CreateRecipe",
-      "CreateRecipeJob",
-      "CreateSchedule",
-      "DeleteDataset",
-      "DeleteJob",
-      "DeleteProject",
-      "DeleteRecipeVersion",
-      "DeleteSchedule",
-      "PublishRecipe",
-      "SendProjectSessionAction",
-      "StartJobRun",
-      "StartProjectSession",
-      "StopJobRun",
-      "UpdateDataset",
-      "UpdateProfileJob",
-      "UpdateProject",
-      "UpdateRecipe",
-      "UpdateRecipeJob",
-      "UpdateSchedule"
+    Write: [
+      'BatchDeleteRecipeVersion',
+      'CreateDataset',
+      'CreateProfileJob',
+      'CreateProject',
+      'CreateRecipe',
+      'CreateRecipeJob',
+      'CreateSchedule',
+      'DeleteDataset',
+      'DeleteJob',
+      'DeleteProject',
+      'DeleteRecipeVersion',
+      'DeleteSchedule',
+      'PublishRecipe',
+      'SendProjectSessionAction',
+      'StartJobRun',
+      'StartProjectSession',
+      'StopJobRun',
+      'UpdateDataset',
+      'UpdateProfileJob',
+      'UpdateProject',
+      'UpdateRecipe',
+      'UpdateRecipeJob',
+      'UpdateSchedule'
     ],
-    "Read": [
-      "DescribeDataset",
-      "DescribeJob",
-      "DescribeJobRun",
-      "DescribeProject",
-      "DescribeRecipe",
-      "DescribeSchedule",
-      "ListDatasets",
-      "ListJobRuns",
-      "ListJobs",
-      "ListProjects",
-      "ListRecipeVersions",
-      "ListRecipes",
-      "ListSchedules",
-      "ListTagsForResource"
+    Read: [
+      'DescribeDataset',
+      'DescribeJob',
+      'DescribeJobRun',
+      'DescribeProject',
+      'DescribeRecipe',
+      'DescribeSchedule',
+      'ListDatasets',
+      'ListJobRuns',
+      'ListJobs',
+      'ListProjects',
+      'ListRecipeVersions',
+      'ListRecipes',
+      'ListSchedules',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

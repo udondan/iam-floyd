@@ -14,7 +14,7 @@ export class Sms extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -422,48 +422,48 @@ export class Sms extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateApp",
-      "CreateReplicationJob",
-      "DeleteApp",
-      "DeleteAppLaunchConfiguration",
-      "DeleteAppReplicationConfiguration",
-      "DeleteAppValidationConfiguration",
-      "DeleteReplicationJob",
-      "DeleteServerCatalog",
-      "DisassociateConnector",
-      "GenerateChangeSet",
-      "GenerateTemplate",
-      "ImportAppCatalog",
-      "ImportServerCatalog",
-      "LaunchApp",
-      "NotifyAppValidationOutput",
-      "PutAppLaunchConfiguration",
-      "PutAppReplicationConfiguration",
-      "PutAppValidationConfiguration",
-      "SendMessage",
-      "StartAppReplication",
-      "StartOnDemandAppReplication",
-      "StartOnDemandReplicationRun",
-      "StopAppReplication",
-      "TerminateApp",
-      "UpdateApp",
-      "UpdateReplicationJob"
+    Write: [
+      'CreateApp',
+      'CreateReplicationJob',
+      'DeleteApp',
+      'DeleteAppLaunchConfiguration',
+      'DeleteAppReplicationConfiguration',
+      'DeleteAppValidationConfiguration',
+      'DeleteReplicationJob',
+      'DeleteServerCatalog',
+      'DisassociateConnector',
+      'GenerateChangeSet',
+      'GenerateTemplate',
+      'ImportAppCatalog',
+      'ImportServerCatalog',
+      'LaunchApp',
+      'NotifyAppValidationOutput',
+      'PutAppLaunchConfiguration',
+      'PutAppReplicationConfiguration',
+      'PutAppValidationConfiguration',
+      'SendMessage',
+      'StartAppReplication',
+      'StartOnDemandAppReplication',
+      'StartOnDemandReplicationRun',
+      'StopAppReplication',
+      'TerminateApp',
+      'UpdateApp',
+      'UpdateReplicationJob'
     ],
-    "Read": [
-      "GetApp",
-      "GetAppLaunchConfiguration",
-      "GetAppReplicationConfiguration",
-      "GetAppValidationConfiguration",
-      "GetAppValidationOutput",
-      "GetConnectors",
-      "GetMessages",
-      "GetReplicationJobs",
-      "GetReplicationRuns",
-      "GetServers"
+    Read: [
+      'GetApp',
+      'GetAppLaunchConfiguration',
+      'GetAppReplicationConfiguration',
+      'GetAppValidationConfiguration',
+      'GetAppValidationOutput',
+      'GetConnectors',
+      'GetMessages',
+      'GetReplicationJobs',
+      'GetReplicationRuns',
+      'GetServers'
     ],
-    "List": [
-      "ListApps"
+    List: [
+      'ListApps'
     ]
   };
 }

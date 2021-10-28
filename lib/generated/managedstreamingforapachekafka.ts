@@ -14,7 +14,7 @@ export class Kafka extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -391,44 +391,44 @@ export class Kafka extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "BatchAssociateScramSecret",
-      "BatchDisassociateScramSecret",
-      "CreateCluster",
-      "CreateConfiguration",
-      "DeleteCluster",
-      "DeleteConfiguration",
-      "RebootBroker",
-      "UpdateBrokerCount",
-      "UpdateBrokerStorage",
-      "UpdateBrokerType",
-      "UpdateClusterConfiguration",
-      "UpdateClusterKafkaVersion",
-      "UpdateConfiguration",
-      "UpdateMonitoring",
-      "UpdateSecurity"
+    Write: [
+      'BatchAssociateScramSecret',
+      'BatchDisassociateScramSecret',
+      'CreateCluster',
+      'CreateConfiguration',
+      'DeleteCluster',
+      'DeleteConfiguration',
+      'RebootBroker',
+      'UpdateBrokerCount',
+      'UpdateBrokerStorage',
+      'UpdateBrokerType',
+      'UpdateClusterConfiguration',
+      'UpdateClusterKafkaVersion',
+      'UpdateConfiguration',
+      'UpdateMonitoring',
+      'UpdateSecurity'
     ],
-    "Read": [
-      "DescribeCluster",
-      "DescribeClusterOperation",
-      "DescribeConfiguration",
-      "DescribeConfigurationRevision",
-      "GetBootstrapBrokers"
+    Read: [
+      'DescribeCluster',
+      'DescribeClusterOperation',
+      'DescribeConfiguration',
+      'DescribeConfigurationRevision',
+      'GetBootstrapBrokers'
     ],
-    "List": [
-      "GetCompatibleKafkaVersions",
-      "ListClusterOperations",
-      "ListClusters",
-      "ListConfigurationRevisions",
-      "ListConfigurations",
-      "ListKafkaVersions",
-      "ListNodes",
-      "ListScramSecrets",
-      "ListTagsForResource"
+    List: [
+      'GetCompatibleKafkaVersions',
+      'ListClusterOperations',
+      'ListClusters',
+      'ListConfigurationRevisions',
+      'ListConfigurations',
+      'ListKafkaVersions',
+      'ListNodes',
+      'ListScramSecrets',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

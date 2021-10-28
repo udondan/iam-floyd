@@ -14,7 +14,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -381,40 +381,40 @@ export class Cloud9 extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "ActivateEC2Remote",
-      "CreateEnvironmentEC2",
-      "CreateEnvironmentMembership",
-      "CreateEnvironmentSSH",
-      "DeleteEnvironment",
-      "DeleteEnvironmentMembership",
-      "ModifyTemporaryCredentialsOnEnvironmentEC2",
-      "UpdateEnvironment",
-      "UpdateEnvironmentMembership",
-      "UpdateEnvironmentSettings",
-      "UpdateMembershipSettings",
-      "UpdateSSHRemote",
-      "UpdateUserSettings"
+    Write: [
+      'ActivateEC2Remote',
+      'CreateEnvironmentEC2',
+      'CreateEnvironmentMembership',
+      'CreateEnvironmentSSH',
+      'DeleteEnvironment',
+      'DeleteEnvironmentMembership',
+      'ModifyTemporaryCredentialsOnEnvironmentEC2',
+      'UpdateEnvironment',
+      'UpdateEnvironmentMembership',
+      'UpdateEnvironmentSettings',
+      'UpdateMembershipSettings',
+      'UpdateSSHRemote',
+      'UpdateUserSettings'
     ],
-    "Read": [
-      "CreateEnvironmentToken",
-      "DescribeEC2Remote",
-      "DescribeEnvironmentMemberships",
-      "DescribeEnvironmentStatus",
-      "DescribeEnvironments",
-      "DescribeSSHRemote",
-      "GetEnvironmentConfig",
-      "GetEnvironmentSettings",
-      "GetMembershipSettings",
-      "GetUserPublicKey",
-      "GetUserSettings",
-      "ListEnvironments",
-      "ListTagsForResource",
-      "ValidateEnvironmentName"
+    Read: [
+      'CreateEnvironmentToken',
+      'DescribeEC2Remote',
+      'DescribeEnvironmentMemberships',
+      'DescribeEnvironmentStatus',
+      'DescribeEnvironments',
+      'DescribeSSHRemote',
+      'GetEnvironmentConfig',
+      'GetEnvironmentSettings',
+      'GetMembershipSettings',
+      'GetUserPublicKey',
+      'GetUserSettings',
+      'ListEnvironments',
+      'ListTagsForResource',
+      'ValidateEnvironmentName'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

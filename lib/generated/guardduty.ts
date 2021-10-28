@@ -14,7 +14,7 @@ export class Guardduty extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -688,71 +688,71 @@ export class Guardduty extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AcceptInvitation",
-      "ArchiveFindings",
-      "CreateDetector",
-      "CreateFilter",
-      "CreateIPSet",
-      "CreateMembers",
-      "CreatePublishingDestination",
-      "CreateSampleFindings",
-      "CreateThreatIntelSet",
-      "DeclineInvitations",
-      "DeleteDetector",
-      "DeleteFilter",
-      "DeleteIPSet",
-      "DeleteInvitations",
-      "DeleteMembers",
-      "DeletePublishingDestination",
-      "DeleteThreatIntelSet",
-      "DisableOrganizationAdminAccount",
-      "DisassociateFromMasterAccount",
-      "DisassociateMembers",
-      "EnableOrganizationAdminAccount",
-      "InviteMembers",
-      "StartMonitoringMembers",
-      "StopMonitoringMembers",
-      "UnarchiveFindings",
-      "UpdateDetector",
-      "UpdateFilter",
-      "UpdateFindingsFeedback",
-      "UpdateIPSet",
-      "UpdateMemberDetectors",
-      "UpdateOrganizationConfiguration",
-      "UpdatePublishingDestination",
-      "UpdateThreatIntelSet"
+    Write: [
+      'AcceptInvitation',
+      'ArchiveFindings',
+      'CreateDetector',
+      'CreateFilter',
+      'CreateIPSet',
+      'CreateMembers',
+      'CreatePublishingDestination',
+      'CreateSampleFindings',
+      'CreateThreatIntelSet',
+      'DeclineInvitations',
+      'DeleteDetector',
+      'DeleteFilter',
+      'DeleteIPSet',
+      'DeleteInvitations',
+      'DeleteMembers',
+      'DeletePublishingDestination',
+      'DeleteThreatIntelSet',
+      'DisableOrganizationAdminAccount',
+      'DisassociateFromMasterAccount',
+      'DisassociateMembers',
+      'EnableOrganizationAdminAccount',
+      'InviteMembers',
+      'StartMonitoringMembers',
+      'StopMonitoringMembers',
+      'UnarchiveFindings',
+      'UpdateDetector',
+      'UpdateFilter',
+      'UpdateFindingsFeedback',
+      'UpdateIPSet',
+      'UpdateMemberDetectors',
+      'UpdateOrganizationConfiguration',
+      'UpdatePublishingDestination',
+      'UpdateThreatIntelSet'
     ],
-    "Read": [
-      "DescribeOrganizationConfiguration",
-      "DescribePublishingDestination",
-      "GetDetector",
-      "GetFilter",
-      "GetFindings",
-      "GetFindingsStatistics",
-      "GetIPSet",
-      "GetInvitationsCount",
-      "GetMasterAccount",
-      "GetMemberDetectors",
-      "GetMembers",
-      "GetThreatIntelSet",
-      "GetUsageStatistics",
-      "ListTagsForResource"
+    Read: [
+      'DescribeOrganizationConfiguration',
+      'DescribePublishingDestination',
+      'GetDetector',
+      'GetFilter',
+      'GetFindings',
+      'GetFindingsStatistics',
+      'GetIPSet',
+      'GetInvitationsCount',
+      'GetMasterAccount',
+      'GetMemberDetectors',
+      'GetMembers',
+      'GetThreatIntelSet',
+      'GetUsageStatistics',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListDetectors",
-      "ListFilters",
-      "ListFindings",
-      "ListIPSets",
-      "ListInvitations",
-      "ListMembers",
-      "ListOrganizationAdminAccounts",
-      "ListPublishingDestinations",
-      "ListThreatIntelSets"
+    List: [
+      'ListDetectors',
+      'ListFilters',
+      'ListFindings',
+      'ListIPSets',
+      'ListInvitations',
+      'ListMembers',
+      'ListOrganizationAdminAccounts',
+      'ListPublishingDestinations',
+      'ListThreatIntelSets'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

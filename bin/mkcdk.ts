@@ -4,6 +4,8 @@ import fs = require('fs');
 import path = require('path');
 import { Project, SourceFile } from 'ts-morph';
 
+import { formatCode } from '../lib/generator';
+
 const lib = path.join(__dirname, '../lib');
 
 interface Packages {
@@ -40,33 +42,6 @@ try {
   run();
 } catch (e) {
   throw e;
-}
-
-function formatCode(file: SourceFile) {
-  file.formatText({
-    ensureNewLineAtEndOfFile: true,
-    insertSpaceAfterCommaDelimiter: true,
-    insertSpaceAfterSemicolonInForStatements: true,
-    insertSpaceBeforeAndAfterBinaryOperators: true,
-    insertSpaceAfterConstructor: true,
-    insertSpaceAfterKeywordsInControlFlowStatements: true,
-    insertSpaceAfterFunctionKeywordForAnonymousFunctions: true,
-    insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis: false,
-    insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets: false,
-    insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces: true,
-    insertSpaceAfterOpeningAndBeforeClosingEmptyBraces: false,
-    insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces: true,
-    insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces: true,
-    insertSpaceAfterTypeAssertion: true,
-    insertSpaceBeforeFunctionParenthesis: false,
-    placeOpenBraceOnNewLineForFunctions: false,
-    placeOpenBraceOnNewLineForControlBlocks: false,
-    insertSpaceBeforeTypeAnnotation: false,
-    indentMultiLineObjectLiteralBeginningOnBlankLine: true,
-    semicolons: ts.SemicolonPreference.Insert,
-    indentSize: 2,
-    trimTrailingWhitespace: true,
-  });
 }
 
 function fixIndex(project: Project) {

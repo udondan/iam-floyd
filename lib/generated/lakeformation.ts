@@ -14,7 +14,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -283,39 +283,39 @@ export class Lakeformation extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Tagging": [
-      "AddLFTagsToResource",
-      "RemoveLFTagsFromResource"
+    Tagging: [
+      'AddLFTagsToResource',
+      'RemoveLFTagsFromResource'
     ],
-    "Permissions management": [
-      "BatchGrantPermissions",
-      "BatchRevokePermissions",
-      "GrantPermissions",
-      "PutDataLakeSettings",
-      "RevokePermissions"
+    'Permissions management': [
+      'BatchGrantPermissions',
+      'BatchRevokePermissions',
+      'GrantPermissions',
+      'PutDataLakeSettings',
+      'RevokePermissions'
     ],
-    "Write": [
-      "CreateLFTag",
-      "DeleteLFTag",
-      "DeregisterResource",
-      "GetDataAccess",
-      "RegisterResource",
-      "UpdateLFTag",
-      "UpdateResource"
+    Write: [
+      'CreateLFTag',
+      'DeleteLFTag',
+      'DeregisterResource',
+      'GetDataAccess',
+      'RegisterResource',
+      'UpdateLFTag',
+      'UpdateResource'
     ],
-    "Read": [
-      "DescribeResource",
-      "GetDataLakeSettings",
-      "GetEffectivePermissionsForPath",
-      "GetLFTag",
-      "GetResourceLFTags",
-      "ListLFTags",
-      "SearchDatabasesByLFTags",
-      "SearchTablesByLFTags"
+    Read: [
+      'DescribeResource',
+      'GetDataLakeSettings',
+      'GetEffectivePermissionsForPath',
+      'GetLFTag',
+      'GetResourceLFTags',
+      'ListLFTags',
+      'SearchDatabasesByLFTags',
+      'SearchTablesByLFTags'
     ],
-    "List": [
-      "ListPermissions",
-      "ListResources"
+    List: [
+      'ListPermissions',
+      'ListResources'
     ]
   };
 }

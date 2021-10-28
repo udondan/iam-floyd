@@ -14,7 +14,7 @@ export class Opsworks extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -833,89 +833,89 @@ export class Opsworks extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssignInstance",
-      "AssignVolume",
-      "AssociateElasticIp",
-      "AttachElasticLoadBalancer",
-      "CloneStack",
-      "CreateApp",
-      "CreateDeployment",
-      "CreateInstance",
-      "CreateLayer",
-      "CreateStack",
-      "CreateUserProfile",
-      "DeleteApp",
-      "DeleteInstance",
-      "DeleteLayer",
-      "DeleteStack",
-      "DeleteUserProfile",
-      "DeregisterEcsCluster",
-      "DeregisterElasticIp",
-      "DeregisterInstance",
-      "DeregisterRdsDbInstance",
-      "DeregisterVolume",
-      "DetachElasticLoadBalancer",
-      "DisassociateElasticIp",
-      "GrantAccess",
-      "RebootInstance",
-      "RegisterEcsCluster",
-      "RegisterElasticIp",
-      "RegisterInstance",
-      "RegisterRdsDbInstance",
-      "RegisterVolume",
-      "SetLoadBasedAutoScaling",
-      "SetTimeBasedAutoScaling",
-      "StartInstance",
-      "StartStack",
-      "StopInstance",
-      "StopStack",
-      "UnassignInstance",
-      "UnassignVolume",
-      "UpdateApp",
-      "UpdateElasticIp",
-      "UpdateInstance",
-      "UpdateLayer",
-      "UpdateMyUserProfile",
-      "UpdateRdsDbInstance",
-      "UpdateStack",
-      "UpdateVolume"
+    Write: [
+      'AssignInstance',
+      'AssignVolume',
+      'AssociateElasticIp',
+      'AttachElasticLoadBalancer',
+      'CloneStack',
+      'CreateApp',
+      'CreateDeployment',
+      'CreateInstance',
+      'CreateLayer',
+      'CreateStack',
+      'CreateUserProfile',
+      'DeleteApp',
+      'DeleteInstance',
+      'DeleteLayer',
+      'DeleteStack',
+      'DeleteUserProfile',
+      'DeregisterEcsCluster',
+      'DeregisterElasticIp',
+      'DeregisterInstance',
+      'DeregisterRdsDbInstance',
+      'DeregisterVolume',
+      'DetachElasticLoadBalancer',
+      'DisassociateElasticIp',
+      'GrantAccess',
+      'RebootInstance',
+      'RegisterEcsCluster',
+      'RegisterElasticIp',
+      'RegisterInstance',
+      'RegisterRdsDbInstance',
+      'RegisterVolume',
+      'SetLoadBasedAutoScaling',
+      'SetTimeBasedAutoScaling',
+      'StartInstance',
+      'StartStack',
+      'StopInstance',
+      'StopStack',
+      'UnassignInstance',
+      'UnassignVolume',
+      'UpdateApp',
+      'UpdateElasticIp',
+      'UpdateInstance',
+      'UpdateLayer',
+      'UpdateMyUserProfile',
+      'UpdateRdsDbInstance',
+      'UpdateStack',
+      'UpdateVolume'
     ],
-    "List": [
-      "DescribeAgentVersions",
-      "DescribeApps",
-      "DescribeCommands",
-      "DescribeDeployments",
-      "DescribeEcsClusters",
-      "DescribeElasticIps",
-      "DescribeElasticLoadBalancers",
-      "DescribeInstances",
-      "DescribeLayers",
-      "DescribeLoadBasedAutoScaling",
-      "DescribeMyUserProfile",
-      "DescribeOperatingSystems",
-      "DescribePermissions",
-      "DescribeRaidArrays",
-      "DescribeRdsDbInstances",
-      "DescribeServiceErrors",
-      "DescribeStackProvisioningParameters",
-      "DescribeStackSummary",
-      "DescribeStacks",
-      "DescribeTimeBasedAutoScaling",
-      "DescribeUserProfiles",
-      "DescribeVolumes",
-      "ListTags"
+    List: [
+      'DescribeAgentVersions',
+      'DescribeApps',
+      'DescribeCommands',
+      'DescribeDeployments',
+      'DescribeEcsClusters',
+      'DescribeElasticIps',
+      'DescribeElasticLoadBalancers',
+      'DescribeInstances',
+      'DescribeLayers',
+      'DescribeLoadBasedAutoScaling',
+      'DescribeMyUserProfile',
+      'DescribeOperatingSystems',
+      'DescribePermissions',
+      'DescribeRaidArrays',
+      'DescribeRdsDbInstances',
+      'DescribeServiceErrors',
+      'DescribeStackProvisioningParameters',
+      'DescribeStackSummary',
+      'DescribeStacks',
+      'DescribeTimeBasedAutoScaling',
+      'DescribeUserProfiles',
+      'DescribeVolumes',
+      'ListTags'
     ],
-    "Read": [
-      "GetHostnameSuggestion"
+    Read: [
+      'GetHostnameSuggestion'
     ],
-    "Permissions management": [
-      "SetPermission",
-      "UpdateUserProfile"
+    'Permissions management': [
+      'SetPermission',
+      'UpdateUserProfile'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -14,7 +14,7 @@ export class Appflow extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -298,37 +298,37 @@ export class Appflow extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateConnectorProfile",
-      "CreateFlow",
-      "DeleteConnectorProfile",
-      "DeleteFlow",
-      "RunFlow",
-      "StartFlow",
-      "StopFlow",
-      "UpdateConnectorProfile",
-      "UpdateFlow",
-      "UseConnectorProfile"
+    Write: [
+      'CreateConnectorProfile',
+      'CreateFlow',
+      'DeleteConnectorProfile',
+      'DeleteFlow',
+      'RunFlow',
+      'StartFlow',
+      'StopFlow',
+      'UpdateConnectorProfile',
+      'UpdateFlow',
+      'UseConnectorProfile'
     ],
-    "Read": [
-      "DescribeConnectorEntity",
-      "DescribeConnectorFields",
-      "DescribeConnectorProfiles",
-      "DescribeConnectors",
-      "DescribeFlow",
-      "DescribeFlowExecution",
-      "DescribeFlowExecutionRecords",
-      "DescribeFlows",
-      "ListConnectorFields",
-      "ListTagsForResource"
+    Read: [
+      'DescribeConnectorEntity',
+      'DescribeConnectorFields',
+      'DescribeConnectorProfiles',
+      'DescribeConnectors',
+      'DescribeFlow',
+      'DescribeFlowExecution',
+      'DescribeFlowExecutionRecords',
+      'DescribeFlows',
+      'ListConnectorFields',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListConnectorEntities",
-      "ListFlows"
+    List: [
+      'ListConnectorEntities',
+      'ListFlows'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

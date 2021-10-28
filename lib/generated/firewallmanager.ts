@@ -14,7 +14,7 @@ export class Fms extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -327,39 +327,39 @@ export class Fms extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateAdminAccount",
-      "DeleteAppsList",
-      "DeleteNotificationChannel",
-      "DeletePolicy",
-      "DeleteProtocolsList",
-      "DisassociateAdminAccount",
-      "PutAppsList",
-      "PutNotificationChannel",
-      "PutPolicy",
-      "PutProtocolsList"
+    Write: [
+      'AssociateAdminAccount',
+      'DeleteAppsList',
+      'DeleteNotificationChannel',
+      'DeletePolicy',
+      'DeleteProtocolsList',
+      'DisassociateAdminAccount',
+      'PutAppsList',
+      'PutNotificationChannel',
+      'PutPolicy',
+      'PutProtocolsList'
     ],
-    "Read": [
-      "GetAdminAccount",
-      "GetAppsList",
-      "GetComplianceDetail",
-      "GetNotificationChannel",
-      "GetPolicy",
-      "GetProtectionStatus",
-      "GetProtocolsList",
-      "GetViolationDetails",
-      "ListTagsForResource"
+    Read: [
+      'GetAdminAccount',
+      'GetAppsList',
+      'GetComplianceDetail',
+      'GetNotificationChannel',
+      'GetPolicy',
+      'GetProtectionStatus',
+      'GetProtocolsList',
+      'GetViolationDetails',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListAppsLists",
-      "ListComplianceStatus",
-      "ListMemberAccounts",
-      "ListPolicies",
-      "ListProtocolsLists"
+    List: [
+      'ListAppsLists',
+      'ListComplianceStatus',
+      'ListMemberAccounts',
+      'ListPolicies',
+      'ListProtocolsLists'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -369,7 +369,10 @@ export function createModule(module: Module): Promise<void> {
     name: 'accessLevelList',
     scope: Scope.Protected,
     type: 'AccessLevelList',
-    initializer: JSON.stringify(accessLevelList, null, 2),
+    initializer: JSON.stringify(accessLevelList, null, 2)
+      .split('"') // ensure we use single quotes
+      .join("'")
+      .replace(/^  '([^' ]+)'/gm, '$1'), // remove quotes from single word keys
   });
 
   for (const [name, resourceType] of Object.entries(module.resourceTypes!)) {
@@ -690,13 +693,12 @@ export function camelCase(str: string) {
     .join('');
 }
 
-function formatCode(file: SourceFile) {
+export function formatCode(file: SourceFile) {
   file.formatText({
     ensureNewLineAtEndOfFile: true,
     insertSpaceAfterCommaDelimiter: true,
     insertSpaceAfterSemicolonInForStatements: true,
     insertSpaceBeforeAndAfterBinaryOperators: true,
-    insertSpaceAfterConstructor: true,
     insertSpaceAfterKeywordsInControlFlowStatements: true,
     insertSpaceAfterFunctionKeywordForAnonymousFunctions: true,
     insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis: false,

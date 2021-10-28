@@ -14,7 +14,7 @@ export class Cassandra extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -111,19 +111,19 @@ export class Cassandra extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "Alter",
-      "Create",
-      "Drop",
-      "Modify",
-      "Restore"
+    Write: [
+      'Alter',
+      'Create',
+      'Drop',
+      'Modify',
+      'Restore'
     ],
-    "Read": [
-      "Select"
+    Read: [
+      'Select'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -14,7 +14,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -352,39 +352,39 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateHttpNamespace",
-      "CreatePrivateDnsNamespace",
-      "CreatePublicDnsNamespace",
-      "CreateService",
-      "DeleteNamespace",
-      "DeleteService",
-      "DeregisterInstance",
-      "RegisterInstance",
-      "UpdateHttpNamespace",
-      "UpdateInstanceCustomHealthStatus",
-      "UpdatePrivateDnsNamespace",
-      "UpdatePublicDnsNamespace",
-      "UpdateService"
+    Write: [
+      'CreateHttpNamespace',
+      'CreatePrivateDnsNamespace',
+      'CreatePublicDnsNamespace',
+      'CreateService',
+      'DeleteNamespace',
+      'DeleteService',
+      'DeregisterInstance',
+      'RegisterInstance',
+      'UpdateHttpNamespace',
+      'UpdateInstanceCustomHealthStatus',
+      'UpdatePrivateDnsNamespace',
+      'UpdatePublicDnsNamespace',
+      'UpdateService'
     ],
-    "Read": [
-      "DiscoverInstances",
-      "GetInstance",
-      "GetInstancesHealthStatus",
-      "GetNamespace",
-      "GetOperation",
-      "GetService"
+    Read: [
+      'DiscoverInstances',
+      'GetInstance',
+      'GetInstancesHealthStatus',
+      'GetNamespace',
+      'GetOperation',
+      'GetService'
     ],
-    "List": [
-      "ListInstances",
-      "ListNamespaces",
-      "ListOperations",
-      "ListServices",
-      "ListTagsForResource"
+    List: [
+      'ListInstances',
+      'ListNamespaces',
+      'ListOperations',
+      'ListServices',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

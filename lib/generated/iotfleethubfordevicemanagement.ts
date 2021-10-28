@@ -14,7 +14,7 @@ export class Iotfleethub extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -125,21 +125,21 @@ export class Iotfleethub extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateApplication",
-      "DeleteApplication",
-      "UpdateApplication"
+    Write: [
+      'CreateApplication',
+      'DeleteApplication',
+      'UpdateApplication'
     ],
-    "Read": [
-      "DescribeApplication",
-      "ListTagsForResource"
+    Read: [
+      'DescribeApplication',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListApplications"
+    List: [
+      'ListApplications'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

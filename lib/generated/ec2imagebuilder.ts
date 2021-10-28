@@ -14,7 +14,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -682,64 +682,64 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CancelImageCreation",
-      "CreateComponent",
-      "CreateContainerRecipe",
-      "CreateDistributionConfiguration",
-      "CreateImage",
-      "CreateImagePipeline",
-      "CreateImageRecipe",
-      "CreateInfrastructureConfiguration",
-      "DeleteComponent",
-      "DeleteContainerRecipe",
-      "DeleteDistributionConfiguration",
-      "DeleteImage",
-      "DeleteImagePipeline",
-      "DeleteImageRecipe",
-      "DeleteInfrastructureConfiguration",
-      "ImportComponent",
-      "StartImagePipelineExecution",
-      "UpdateDistributionConfiguration",
-      "UpdateImagePipeline",
-      "UpdateInfrastructureConfiguration"
+    Write: [
+      'CancelImageCreation',
+      'CreateComponent',
+      'CreateContainerRecipe',
+      'CreateDistributionConfiguration',
+      'CreateImage',
+      'CreateImagePipeline',
+      'CreateImageRecipe',
+      'CreateInfrastructureConfiguration',
+      'DeleteComponent',
+      'DeleteContainerRecipe',
+      'DeleteDistributionConfiguration',
+      'DeleteImage',
+      'DeleteImagePipeline',
+      'DeleteImageRecipe',
+      'DeleteInfrastructureConfiguration',
+      'ImportComponent',
+      'StartImagePipelineExecution',
+      'UpdateDistributionConfiguration',
+      'UpdateImagePipeline',
+      'UpdateInfrastructureConfiguration'
     ],
-    "Read": [
-      "GetComponent",
-      "GetComponentPolicy",
-      "GetContainerRecipe",
-      "GetContainerRecipePolicy",
-      "GetDistributionConfiguration",
-      "GetImage",
-      "GetImagePipeline",
-      "GetImagePolicy",
-      "GetImageRecipe",
-      "GetImageRecipePolicy",
-      "GetInfrastructureConfiguration",
-      "ListTagsForResource"
+    Read: [
+      'GetComponent',
+      'GetComponentPolicy',
+      'GetContainerRecipe',
+      'GetContainerRecipePolicy',
+      'GetDistributionConfiguration',
+      'GetImage',
+      'GetImagePipeline',
+      'GetImagePolicy',
+      'GetImageRecipe',
+      'GetImageRecipePolicy',
+      'GetInfrastructureConfiguration',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListComponentBuildVersions",
-      "ListComponents",
-      "ListContainerRecipes",
-      "ListDistributionConfigurations",
-      "ListImageBuildVersions",
-      "ListImagePackages",
-      "ListImagePipelineImages",
-      "ListImagePipelines",
-      "ListImageRecipes",
-      "ListImages",
-      "ListInfrastructureConfigurations"
+    List: [
+      'ListComponentBuildVersions',
+      'ListComponents',
+      'ListContainerRecipes',
+      'ListDistributionConfigurations',
+      'ListImageBuildVersions',
+      'ListImagePackages',
+      'ListImagePipelineImages',
+      'ListImagePipelines',
+      'ListImageRecipes',
+      'ListImages',
+      'ListInfrastructureConfigurations'
     ],
-    "Permissions management": [
-      "PutComponentPolicy",
-      "PutContainerRecipePolicy",
-      "PutImagePolicy",
-      "PutImageRecipePolicy"
+    'Permissions management': [
+      'PutComponentPolicy',
+      'PutContainerRecipePolicy',
+      'PutImagePolicy',
+      'PutImageRecipePolicy'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

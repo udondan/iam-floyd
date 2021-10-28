@@ -14,7 +14,7 @@ export class Sts extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -224,22 +224,22 @@ export class Sts extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssumeRole",
-      "AssumeRoleWithSAML",
-      "AssumeRoleWithWebIdentity",
-      "DecodeAuthorizationMessage",
-      "SetSourceIdentity"
+    Write: [
+      'AssumeRole',
+      'AssumeRoleWithSAML',
+      'AssumeRoleWithWebIdentity',
+      'DecodeAuthorizationMessage',
+      'SetSourceIdentity'
     ],
-    "Read": [
-      "GetAccessKeyInfo",
-      "GetCallerIdentity",
-      "GetFederationToken",
-      "GetServiceBearerToken",
-      "GetSessionToken"
+    Read: [
+      'GetAccessKeyInfo',
+      'GetCallerIdentity',
+      'GetFederationToken',
+      'GetServiceBearerToken',
+      'GetSessionToken'
     ],
-    "Tagging": [
-      "TagSession"
+    Tagging: [
+      'TagSession'
     ]
   };
 

@@ -14,7 +14,7 @@ export class Dax extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -373,43 +373,43 @@ export class Dax extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "BatchGetItem",
-      "ConditionCheckItem",
-      "DescribeParameters",
-      "GetItem",
-      "ListTags",
-      "Query",
-      "Scan"
+    Read: [
+      'BatchGetItem',
+      'ConditionCheckItem',
+      'DescribeParameters',
+      'GetItem',
+      'ListTags',
+      'Query',
+      'Scan'
     ],
-    "Write": [
-      "BatchWriteItem",
-      "CreateCluster",
-      "CreateParameterGroup",
-      "CreateSubnetGroup",
-      "DecreaseReplicationFactor",
-      "DeleteCluster",
-      "DeleteItem",
-      "DeleteParameterGroup",
-      "DeleteSubnetGroup",
-      "IncreaseReplicationFactor",
-      "PutItem",
-      "RebootNode",
-      "UpdateCluster",
-      "UpdateItem",
-      "UpdateParameterGroup",
-      "UpdateSubnetGroup"
+    Write: [
+      'BatchWriteItem',
+      'CreateCluster',
+      'CreateParameterGroup',
+      'CreateSubnetGroup',
+      'DecreaseReplicationFactor',
+      'DeleteCluster',
+      'DeleteItem',
+      'DeleteParameterGroup',
+      'DeleteSubnetGroup',
+      'IncreaseReplicationFactor',
+      'PutItem',
+      'RebootNode',
+      'UpdateCluster',
+      'UpdateItem',
+      'UpdateParameterGroup',
+      'UpdateSubnetGroup'
     ],
-    "List": [
-      "DescribeClusters",
-      "DescribeDefaultParameters",
-      "DescribeEvents",
-      "DescribeParameterGroups",
-      "DescribeSubnetGroups"
+    List: [
+      'DescribeClusters',
+      'DescribeDefaultParameters',
+      'DescribeEvents',
+      'DescribeParameterGroups',
+      'DescribeSubnetGroups'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

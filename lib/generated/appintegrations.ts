@@ -14,7 +14,7 @@ export class AppIntegrations extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -275,32 +275,32 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateDataIntegration",
-      "CreateDataIntegrationAssociation",
-      "CreateEventIntegration",
-      "CreateEventIntegrationAssociation",
-      "DeleteDataIntegration",
-      "DeleteDataIntegrationAssociation",
-      "DeleteEventIntegration",
-      "DeleteEventIntegrationAssociation",
-      "UpdateDataIntegration",
-      "UpdateEventIntegration"
+    Write: [
+      'CreateDataIntegration',
+      'CreateDataIntegrationAssociation',
+      'CreateEventIntegration',
+      'CreateEventIntegrationAssociation',
+      'DeleteDataIntegration',
+      'DeleteDataIntegrationAssociation',
+      'DeleteEventIntegration',
+      'DeleteEventIntegrationAssociation',
+      'UpdateDataIntegration',
+      'UpdateEventIntegration'
     ],
-    "Read": [
-      "GetDataIntegration",
-      "GetEventIntegration",
-      "ListEventIntegrationAssociations",
-      "ListTagsForResource"
+    Read: [
+      'GetDataIntegration',
+      'GetEventIntegration',
+      'ListEventIntegrationAssociations',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListDataIntegrationAssociations",
-      "ListDataIntegrations",
-      "ListEventIntegrations"
+    List: [
+      'ListDataIntegrationAssociations',
+      'ListDataIntegrations',
+      'ListEventIntegrations'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

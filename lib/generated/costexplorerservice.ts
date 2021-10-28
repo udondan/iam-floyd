@@ -14,7 +14,7 @@ export class Ce extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -459,51 +459,51 @@ export class Ce extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateAnomalyMonitor",
-      "CreateAnomalySubscription",
-      "CreateCostCategoryDefinition",
-      "CreateNotificationSubscription",
-      "CreateReport",
-      "DeleteAnomalyMonitor",
-      "DeleteAnomalySubscription",
-      "DeleteCostCategoryDefinition",
-      "DeleteNotificationSubscription",
-      "DeleteReport",
-      "ProvideAnomalyFeedback",
-      "UpdateAnomalyMonitor",
-      "UpdateAnomalySubscription",
-      "UpdateCostCategoryDefinition",
-      "UpdateNotificationSubscription",
-      "UpdatePreferences",
-      "UpdateReport"
+    Write: [
+      'CreateAnomalyMonitor',
+      'CreateAnomalySubscription',
+      'CreateCostCategoryDefinition',
+      'CreateNotificationSubscription',
+      'CreateReport',
+      'DeleteAnomalyMonitor',
+      'DeleteAnomalySubscription',
+      'DeleteCostCategoryDefinition',
+      'DeleteNotificationSubscription',
+      'DeleteReport',
+      'ProvideAnomalyFeedback',
+      'UpdateAnomalyMonitor',
+      'UpdateAnomalySubscription',
+      'UpdateCostCategoryDefinition',
+      'UpdateNotificationSubscription',
+      'UpdatePreferences',
+      'UpdateReport'
     ],
-    "Read": [
-      "DescribeCostCategoryDefinition",
-      "DescribeNotificationSubscription",
-      "DescribeReport",
-      "GetAnomalies",
-      "GetAnomalyMonitors",
-      "GetAnomalySubscriptions",
-      "GetCostAndUsage",
-      "GetCostAndUsageWithResources",
-      "GetCostCategories",
-      "GetCostForecast",
-      "GetDimensionValues",
-      "GetPreferences",
-      "GetReservationCoverage",
-      "GetReservationPurchaseRecommendation",
-      "GetReservationUtilization",
-      "GetRightsizingRecommendation",
-      "GetSavingsPlansCoverage",
-      "GetSavingsPlansPurchaseRecommendation",
-      "GetSavingsPlansUtilization",
-      "GetSavingsPlansUtilizationDetails",
-      "GetTags",
-      "GetUsageForecast"
+    Read: [
+      'DescribeCostCategoryDefinition',
+      'DescribeNotificationSubscription',
+      'DescribeReport',
+      'GetAnomalies',
+      'GetAnomalyMonitors',
+      'GetAnomalySubscriptions',
+      'GetCostAndUsage',
+      'GetCostAndUsageWithResources',
+      'GetCostCategories',
+      'GetCostForecast',
+      'GetDimensionValues',
+      'GetPreferences',
+      'GetReservationCoverage',
+      'GetReservationPurchaseRecommendation',
+      'GetReservationUtilization',
+      'GetRightsizingRecommendation',
+      'GetSavingsPlansCoverage',
+      'GetSavingsPlansPurchaseRecommendation',
+      'GetSavingsPlansUtilization',
+      'GetSavingsPlansUtilizationDetails',
+      'GetTags',
+      'GetUsageForecast'
     ],
-    "List": [
-      "ListCostCategoryDefinitions"
+    List: [
+      'ListCostCategoryDefinitions'
     ]
   };
 }

@@ -14,7 +14,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -129,19 +129,19 @@ export class ApplicationAutoscaling extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "DeleteScalingPolicy",
-      "DeleteScheduledAction",
-      "DeregisterScalableTarget",
-      "PutScalingPolicy",
-      "PutScheduledAction",
-      "RegisterScalableTarget"
+    Write: [
+      'DeleteScalingPolicy',
+      'DeleteScheduledAction',
+      'DeregisterScalableTarget',
+      'PutScalingPolicy',
+      'PutScheduledAction',
+      'RegisterScalableTarget'
     ],
-    "Read": [
-      "DescribeScalableTargets",
-      "DescribeScalingActivities",
-      "DescribeScalingPolicies",
-      "DescribeScheduledActions"
+    Read: [
+      'DescribeScalableTargets',
+      'DescribeScalingActivities',
+      'DescribeScalingPolicies',
+      'DescribeScheduledActions'
     ]
   };
 }

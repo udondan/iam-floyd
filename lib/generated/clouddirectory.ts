@@ -14,7 +14,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -712,76 +712,76 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AddFacetToObject",
-      "ApplySchema",
-      "AttachObject",
-      "AttachPolicy",
-      "AttachToIndex",
-      "AttachTypedLink",
-      "BatchWrite",
-      "CreateDirectory",
-      "CreateFacet",
-      "CreateIndex",
-      "CreateObject",
-      "CreateSchema",
-      "CreateTypedLinkFacet",
-      "DeleteDirectory",
-      "DeleteFacet",
-      "DeleteObject",
-      "DeleteSchema",
-      "DeleteTypedLinkFacet",
-      "DetachFromIndex",
-      "DetachObject",
-      "DetachPolicy",
-      "DetachTypedLink",
-      "DisableDirectory",
-      "EnableDirectory",
-      "PublishSchema",
-      "PutSchemaFromJson",
-      "RemoveFacetFromObject",
-      "UpdateFacet",
-      "UpdateLinkAttributes",
-      "UpdateObjectAttributes",
-      "UpdateSchema",
-      "UpdateTypedLinkFacet"
+    Write: [
+      'AddFacetToObject',
+      'ApplySchema',
+      'AttachObject',
+      'AttachPolicy',
+      'AttachToIndex',
+      'AttachTypedLink',
+      'BatchWrite',
+      'CreateDirectory',
+      'CreateFacet',
+      'CreateIndex',
+      'CreateObject',
+      'CreateSchema',
+      'CreateTypedLinkFacet',
+      'DeleteDirectory',
+      'DeleteFacet',
+      'DeleteObject',
+      'DeleteSchema',
+      'DeleteTypedLinkFacet',
+      'DetachFromIndex',
+      'DetachObject',
+      'DetachPolicy',
+      'DetachTypedLink',
+      'DisableDirectory',
+      'EnableDirectory',
+      'PublishSchema',
+      'PutSchemaFromJson',
+      'RemoveFacetFromObject',
+      'UpdateFacet',
+      'UpdateLinkAttributes',
+      'UpdateObjectAttributes',
+      'UpdateSchema',
+      'UpdateTypedLinkFacet'
     ],
-    "Read": [
-      "BatchRead",
-      "GetDirectory",
-      "GetFacet",
-      "GetLinkAttributes",
-      "GetObjectAttributes",
-      "GetObjectInformation",
-      "GetSchemaAsJson",
-      "GetTypedLinkFacetInformation",
-      "ListAttachedIndices",
-      "ListFacetAttributes",
-      "ListFacetNames",
-      "ListIncomingTypedLinks",
-      "ListIndex",
-      "ListObjectAttributes",
-      "ListObjectChildren",
-      "ListObjectParentPaths",
-      "ListObjectParents",
-      "ListObjectPolicies",
-      "ListOutgoingTypedLinks",
-      "ListPolicyAttachments",
-      "ListTagsForResource",
-      "ListTypedLinkFacetAttributes",
-      "ListTypedLinkFacetNames",
-      "LookupPolicy"
+    Read: [
+      'BatchRead',
+      'GetDirectory',
+      'GetFacet',
+      'GetLinkAttributes',
+      'GetObjectAttributes',
+      'GetObjectInformation',
+      'GetSchemaAsJson',
+      'GetTypedLinkFacetInformation',
+      'ListAttachedIndices',
+      'ListFacetAttributes',
+      'ListFacetNames',
+      'ListIncomingTypedLinks',
+      'ListIndex',
+      'ListObjectAttributes',
+      'ListObjectChildren',
+      'ListObjectParentPaths',
+      'ListObjectParents',
+      'ListObjectPolicies',
+      'ListOutgoingTypedLinks',
+      'ListPolicyAttachments',
+      'ListTagsForResource',
+      'ListTypedLinkFacetAttributes',
+      'ListTypedLinkFacetNames',
+      'LookupPolicy'
     ],
-    "List": [
-      "ListAppliedSchemaArns",
-      "ListDevelopmentSchemaArns",
-      "ListDirectories",
-      "ListManagedSchemaArns",
-      "ListPublishedSchemaArns"
+    List: [
+      'ListAppliedSchemaArns',
+      'ListDevelopmentSchemaArns',
+      'ListDirectories',
+      'ListManagedSchemaArns',
+      'ListPublishedSchemaArns'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

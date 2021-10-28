@@ -14,7 +14,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -371,43 +371,43 @@ export class Kinesisvideo extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "ConnectAsMaster",
-      "ConnectAsViewer",
-      "CreateSignalingChannel",
-      "CreateStream",
-      "DeleteSignalingChannel",
-      "DeleteStream",
-      "PutMedia",
-      "SendAlexaOfferToMaster",
-      "UpdateDataRetention",
-      "UpdateSignalingChannel",
-      "UpdateStream"
+    Write: [
+      'ConnectAsMaster',
+      'ConnectAsViewer',
+      'CreateSignalingChannel',
+      'CreateStream',
+      'DeleteSignalingChannel',
+      'DeleteStream',
+      'PutMedia',
+      'SendAlexaOfferToMaster',
+      'UpdateDataRetention',
+      'UpdateSignalingChannel',
+      'UpdateStream'
     ],
-    "List": [
-      "DescribeSignalingChannel",
-      "DescribeStream",
-      "ListFragments",
-      "ListSignalingChannels",
-      "ListStreams"
+    List: [
+      'DescribeSignalingChannel',
+      'DescribeStream',
+      'ListFragments',
+      'ListSignalingChannels',
+      'ListStreams'
     ],
-    "Read": [
-      "GetClip",
-      "GetDASHStreamingSessionURL",
-      "GetDataEndpoint",
-      "GetHLSStreamingSessionURL",
-      "GetIceServerConfig",
-      "GetMedia",
-      "GetMediaForFragmentList",
-      "GetSignalingChannelEndpoint",
-      "ListTagsForResource",
-      "ListTagsForStream"
+    Read: [
+      'GetClip',
+      'GetDASHStreamingSessionURL',
+      'GetDataEndpoint',
+      'GetHLSStreamingSessionURL',
+      'GetIceServerConfig',
+      'GetMedia',
+      'GetMediaForFragmentList',
+      'GetSignalingChannelEndpoint',
+      'ListTagsForResource',
+      'ListTagsForStream'
     ],
-    "Tagging": [
-      "TagResource",
-      "TagStream",
-      "UntagResource",
-      "UntagStream"
+    Tagging: [
+      'TagResource',
+      'TagStream',
+      'UntagResource',
+      'UntagStream'
     ]
   };
 

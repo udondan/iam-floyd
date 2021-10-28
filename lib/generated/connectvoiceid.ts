@@ -14,7 +14,7 @@ export class Voiceid extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -283,36 +283,36 @@ export class Voiceid extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateDomain",
-      "DeleteDomain",
-      "DeleteFraudster",
-      "DeleteSpeaker",
-      "EvaluateSession",
-      "OptOutSpeaker",
-      "RegisterComplianceConsent",
-      "StartFraudsterRegistrationJob",
-      "StartSpeakerEnrollmentJob",
-      "UpdateDomain"
+    Write: [
+      'CreateDomain',
+      'DeleteDomain',
+      'DeleteFraudster',
+      'DeleteSpeaker',
+      'EvaluateSession',
+      'OptOutSpeaker',
+      'RegisterComplianceConsent',
+      'StartFraudsterRegistrationJob',
+      'StartSpeakerEnrollmentJob',
+      'UpdateDomain'
     ],
-    "Read": [
-      "DescribeComplianceConsent",
-      "DescribeDomain",
-      "DescribeFraudster",
-      "DescribeFraudsterRegistrationJob",
-      "DescribeSpeaker",
-      "DescribeSpeakerEnrollmentJob",
-      "ListTagsForResource"
+    Read: [
+      'DescribeComplianceConsent',
+      'DescribeDomain',
+      'DescribeFraudster',
+      'DescribeFraudsterRegistrationJob',
+      'DescribeSpeaker',
+      'DescribeSpeakerEnrollmentJob',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListDomains",
-      "ListFraudsterRegistrationJobs",
-      "ListSpeakerEnrollmentJobs",
-      "ListSpeakers"
+    List: [
+      'ListDomains',
+      'ListFraudsterRegistrationJobs',
+      'ListSpeakerEnrollmentJobs',
+      'ListSpeakers'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

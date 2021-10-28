@@ -14,7 +14,7 @@ export class Lookoutvision extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -272,35 +272,35 @@ export class Lookoutvision extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateDataset",
-      "CreateModel",
-      "CreateProject",
-      "DeleteDataset",
-      "DeleteModel",
-      "DeleteProject",
-      "DetectAnomalies",
-      "StartModel",
-      "StartTrialDetection",
-      "StopModel",
-      "UpdateDatasetEntries"
+    Write: [
+      'CreateDataset',
+      'CreateModel',
+      'CreateProject',
+      'DeleteDataset',
+      'DeleteModel',
+      'DeleteProject',
+      'DetectAnomalies',
+      'StartModel',
+      'StartTrialDetection',
+      'StopModel',
+      'UpdateDatasetEntries'
     ],
-    "Read": [
-      "DescribeDataset",
-      "DescribeModel",
-      "DescribeProject",
-      "DescribeTrialDetection",
-      "ListDatasetEntries",
-      "ListTagsForResource"
+    Read: [
+      'DescribeDataset',
+      'DescribeModel',
+      'DescribeProject',
+      'DescribeTrialDetection',
+      'ListDatasetEntries',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListModels",
-      "ListProjects",
-      "ListTrialDetections"
+    List: [
+      'ListModels',
+      'ListProjects',
+      'ListTrialDetections'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

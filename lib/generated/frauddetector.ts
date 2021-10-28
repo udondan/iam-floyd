@@ -14,7 +14,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -825,79 +825,79 @@ export class Frauddetector extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "BatchCreateVariable",
-      "CancelBatchImportJob",
-      "CancelBatchPredictionJob",
-      "CreateBatchImportJob",
-      "CreateBatchPredictionJob",
-      "CreateDetectorVersion",
-      "CreateModel",
-      "CreateModelVersion",
-      "CreateRule",
-      "CreateVariable",
-      "DeleteBatchImportJob",
-      "DeleteBatchPredictionJob",
-      "DeleteDetector",
-      "DeleteDetectorVersion",
-      "DeleteEntityType",
-      "DeleteEvent",
-      "DeleteEventType",
-      "DeleteEventsByEventType",
-      "DeleteExternalModel",
-      "DeleteLabel",
-      "DeleteModel",
-      "DeleteModelVersion",
-      "DeleteOutcome",
-      "DeleteRule",
-      "DeleteVariable",
-      "PutDetector",
-      "PutEntityType",
-      "PutEventType",
-      "PutExternalModel",
-      "PutKMSEncryptionKey",
-      "PutLabel",
-      "PutOutcome",
-      "SendEvent",
-      "UpdateDetectorVersion",
-      "UpdateDetectorVersionMetadata",
-      "UpdateDetectorVersionStatus",
-      "UpdateEventLabel",
-      "UpdateModel",
-      "UpdateModelVersion",
-      "UpdateModelVersionStatus",
-      "UpdateRuleMetadata",
-      "UpdateRuleVersion",
-      "UpdateVariable"
+    Write: [
+      'BatchCreateVariable',
+      'CancelBatchImportJob',
+      'CancelBatchPredictionJob',
+      'CreateBatchImportJob',
+      'CreateBatchPredictionJob',
+      'CreateDetectorVersion',
+      'CreateModel',
+      'CreateModelVersion',
+      'CreateRule',
+      'CreateVariable',
+      'DeleteBatchImportJob',
+      'DeleteBatchPredictionJob',
+      'DeleteDetector',
+      'DeleteDetectorVersion',
+      'DeleteEntityType',
+      'DeleteEvent',
+      'DeleteEventType',
+      'DeleteEventsByEventType',
+      'DeleteExternalModel',
+      'DeleteLabel',
+      'DeleteModel',
+      'DeleteModelVersion',
+      'DeleteOutcome',
+      'DeleteRule',
+      'DeleteVariable',
+      'PutDetector',
+      'PutEntityType',
+      'PutEventType',
+      'PutExternalModel',
+      'PutKMSEncryptionKey',
+      'PutLabel',
+      'PutOutcome',
+      'SendEvent',
+      'UpdateDetectorVersion',
+      'UpdateDetectorVersionMetadata',
+      'UpdateDetectorVersionStatus',
+      'UpdateEventLabel',
+      'UpdateModel',
+      'UpdateModelVersion',
+      'UpdateModelVersionStatus',
+      'UpdateRuleMetadata',
+      'UpdateRuleVersion',
+      'UpdateVariable'
     ],
-    "List": [
-      "BatchGetVariable",
-      "GetBatchImportJobs",
-      "GetBatchPredictionJobs",
-      "GetDetectors",
-      "GetEntityTypes",
-      "GetEventTypes",
-      "GetExternalModels",
-      "GetLabels",
-      "GetModels",
-      "GetOutcomes",
-      "GetRules",
-      "GetVariables"
+    List: [
+      'BatchGetVariable',
+      'GetBatchImportJobs',
+      'GetBatchPredictionJobs',
+      'GetDetectors',
+      'GetEntityTypes',
+      'GetEventTypes',
+      'GetExternalModels',
+      'GetLabels',
+      'GetModels',
+      'GetOutcomes',
+      'GetRules',
+      'GetVariables'
     ],
-    "Read": [
-      "DescribeDetector",
-      "DescribeModelVersions",
-      "GetDeleteEventsByEventTypeStatus",
-      "GetDetectorVersion",
-      "GetEvent",
-      "GetEventPrediction",
-      "GetKMSEncryptionKey",
-      "GetModelVersion",
-      "ListTagsForResource"
+    Read: [
+      'DescribeDetector',
+      'DescribeModelVersions',
+      'GetDeleteEventsByEventTypeStatus',
+      'GetDetectorVersion',
+      'GetEvent',
+      'GetEventPrediction',
+      'GetKMSEncryptionKey',
+      'GetModelVersion',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

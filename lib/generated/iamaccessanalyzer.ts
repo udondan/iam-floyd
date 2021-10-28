@@ -14,7 +14,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -346,41 +346,41 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "ApplyArchiveRule",
-      "CancelPolicyGeneration",
-      "CreateAccessPreview",
-      "CreateAnalyzer",
-      "CreateArchiveRule",
-      "DeleteAnalyzer",
-      "DeleteArchiveRule",
-      "StartPolicyGeneration",
-      "StartResourceScan",
-      "UpdateArchiveRule",
-      "UpdateFindings"
+    Write: [
+      'ApplyArchiveRule',
+      'CancelPolicyGeneration',
+      'CreateAccessPreview',
+      'CreateAnalyzer',
+      'CreateArchiveRule',
+      'DeleteAnalyzer',
+      'DeleteArchiveRule',
+      'StartPolicyGeneration',
+      'StartResourceScan',
+      'UpdateArchiveRule',
+      'UpdateFindings'
     ],
-    "Read": [
-      "GetAccessPreview",
-      "GetAnalyzedResource",
-      "GetAnalyzer",
-      "GetArchiveRule",
-      "GetFinding",
-      "GetGeneratedPolicy",
-      "ListAccessPreviewFindings",
-      "ListAnalyzedResources",
-      "ListFindings",
-      "ListPolicyGenerations",
-      "ListTagsForResource",
-      "ValidatePolicy"
+    Read: [
+      'GetAccessPreview',
+      'GetAnalyzedResource',
+      'GetAnalyzer',
+      'GetArchiveRule',
+      'GetFinding',
+      'GetGeneratedPolicy',
+      'ListAccessPreviewFindings',
+      'ListAnalyzedResources',
+      'ListFindings',
+      'ListPolicyGenerations',
+      'ListTagsForResource',
+      'ValidatePolicy'
     ],
-    "List": [
-      "ListAccessPreviews",
-      "ListAnalyzers",
-      "ListArchiveRules"
+    List: [
+      'ListAccessPreviews',
+      'ListAnalyzers',
+      'ListArchiveRules'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

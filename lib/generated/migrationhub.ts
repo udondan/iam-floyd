@@ -14,7 +14,7 @@ export class Mgh extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -239,31 +239,31 @@ export class Mgh extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateCreatedArtifact",
-      "AssociateDiscoveredResource",
-      "CreateHomeRegionControl",
-      "CreateProgressUpdateStream",
-      "DeleteProgressUpdateStream",
-      "DisassociateCreatedArtifact",
-      "DisassociateDiscoveredResource",
-      "ImportMigrationTask",
-      "NotifyApplicationState",
-      "NotifyMigrationTaskState",
-      "PutResourceAttributes"
+    Write: [
+      'AssociateCreatedArtifact',
+      'AssociateDiscoveredResource',
+      'CreateHomeRegionControl',
+      'CreateProgressUpdateStream',
+      'DeleteProgressUpdateStream',
+      'DisassociateCreatedArtifact',
+      'DisassociateDiscoveredResource',
+      'ImportMigrationTask',
+      'NotifyApplicationState',
+      'NotifyMigrationTaskState',
+      'PutResourceAttributes'
     ],
-    "Read": [
-      "DescribeApplicationState",
-      "DescribeMigrationTask",
-      "GetHomeRegion"
+    Read: [
+      'DescribeApplicationState',
+      'DescribeMigrationTask',
+      'GetHomeRegion'
     ],
-    "List": [
-      "DescribeHomeRegionControls",
-      "ListApplicationStates",
-      "ListCreatedArtifacts",
-      "ListDiscoveredResources",
-      "ListMigrationTasks",
-      "ListProgressUpdateStreams"
+    List: [
+      'DescribeHomeRegionControls',
+      'ListApplicationStates',
+      'ListCreatedArtifacts',
+      'ListDiscoveredResources',
+      'ListMigrationTasks',
+      'ListProgressUpdateStreams'
     ]
   };
 

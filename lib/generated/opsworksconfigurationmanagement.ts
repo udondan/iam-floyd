@@ -14,7 +14,7 @@ export class OpsworksCm extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -228,32 +228,32 @@ export class OpsworksCm extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateNode",
-      "CreateBackup",
-      "CreateServer",
-      "DeleteBackup",
-      "DeleteServer",
-      "DisassociateNode",
-      "RestoreServer",
-      "StartMaintenance",
-      "UpdateServer",
-      "UpdateServerEngineAttributes"
+    Write: [
+      'AssociateNode',
+      'CreateBackup',
+      'CreateServer',
+      'DeleteBackup',
+      'DeleteServer',
+      'DisassociateNode',
+      'RestoreServer',
+      'StartMaintenance',
+      'UpdateServer',
+      'UpdateServerEngineAttributes'
     ],
-    "List": [
-      "DescribeAccountAttributes",
-      "DescribeBackups",
-      "DescribeEvents",
-      "DescribeNodeAssociationStatus",
-      "DescribeServers"
+    List: [
+      'DescribeAccountAttributes',
+      'DescribeBackups',
+      'DescribeEvents',
+      'DescribeNodeAssociationStatus',
+      'DescribeServers'
     ],
-    "Read": [
-      "ExportServerEngineAttribute",
-      "ListTagsForResource"
+    Read: [
+      'ExportServerEngineAttribute',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -14,7 +14,7 @@ export class Iot1click extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -320,39 +320,39 @@ export class Iot1click extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateDeviceWithPlacement",
-      "CreatePlacement",
-      "CreateProject",
-      "DeletePlacement",
-      "DeleteProject",
-      "DisassociateDeviceFromPlacement",
-      "InvokeDeviceMethod",
-      "UpdateDeviceState",
-      "UpdatePlacement",
-      "UpdateProject"
+    Write: [
+      'AssociateDeviceWithPlacement',
+      'CreatePlacement',
+      'CreateProject',
+      'DeletePlacement',
+      'DeleteProject',
+      'DisassociateDeviceFromPlacement',
+      'InvokeDeviceMethod',
+      'UpdateDeviceState',
+      'UpdatePlacement',
+      'UpdateProject'
     ],
-    "Read": [
-      "ClaimDevicesByClaimCode",
-      "DescribeDevice",
-      "DescribePlacement",
-      "DescribeProject",
-      "FinalizeDeviceClaim",
-      "GetDeviceMethods",
-      "GetDevicesInPlacement",
-      "InitiateDeviceClaim",
-      "ListDeviceEvents",
-      "ListPlacements",
-      "ListTagsForResource",
-      "UnclaimDevice"
+    Read: [
+      'ClaimDevicesByClaimCode',
+      'DescribeDevice',
+      'DescribePlacement',
+      'DescribeProject',
+      'FinalizeDeviceClaim',
+      'GetDeviceMethods',
+      'GetDevicesInPlacement',
+      'InitiateDeviceClaim',
+      'ListDeviceEvents',
+      'ListPlacements',
+      'ListTagsForResource',
+      'UnclaimDevice'
     ],
-    "List": [
-      "ListDevices",
-      "ListProjects"
+    List: [
+      'ListDevices',
+      'ListProjects'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

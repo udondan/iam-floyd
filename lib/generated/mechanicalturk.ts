@@ -14,7 +14,7 @@ export class Mechanicalturk extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -448,50 +448,50 @@ export class Mechanicalturk extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AcceptQualificationRequest",
-      "ApproveAssignment",
-      "AssociateQualificationWithWorker",
-      "CreateAdditionalAssignmentsForHIT",
-      "CreateHIT",
-      "CreateHITType",
-      "CreateHITWithHITType",
-      "CreateQualificationType",
-      "CreateWorkerBlock",
-      "DeleteHIT",
-      "DeleteQualificationType",
-      "DeleteWorkerBlock",
-      "DisassociateQualificationFromWorker",
-      "NotifyWorkers",
-      "RejectAssignment",
-      "RejectQualificationRequest",
-      "SendBonus",
-      "SendTestEventNotification",
-      "UpdateExpirationForHIT",
-      "UpdateHITReviewStatus",
-      "UpdateHITTypeOfHIT",
-      "UpdateNotificationSettings",
-      "UpdateQualificationType"
+    Write: [
+      'AcceptQualificationRequest',
+      'ApproveAssignment',
+      'AssociateQualificationWithWorker',
+      'CreateAdditionalAssignmentsForHIT',
+      'CreateHIT',
+      'CreateHITType',
+      'CreateHITWithHITType',
+      'CreateQualificationType',
+      'CreateWorkerBlock',
+      'DeleteHIT',
+      'DeleteQualificationType',
+      'DeleteWorkerBlock',
+      'DisassociateQualificationFromWorker',
+      'NotifyWorkers',
+      'RejectAssignment',
+      'RejectQualificationRequest',
+      'SendBonus',
+      'SendTestEventNotification',
+      'UpdateExpirationForHIT',
+      'UpdateHITReviewStatus',
+      'UpdateHITTypeOfHIT',
+      'UpdateNotificationSettings',
+      'UpdateQualificationType'
     ],
-    "Read": [
-      "GetAccountBalance",
-      "GetAssignment",
-      "GetFileUploadURL",
-      "GetHIT",
-      "GetQualificationScore",
-      "GetQualificationType"
+    Read: [
+      'GetAccountBalance',
+      'GetAssignment',
+      'GetFileUploadURL',
+      'GetHIT',
+      'GetQualificationScore',
+      'GetQualificationType'
     ],
-    "List": [
-      "ListAssignmentsForHIT",
-      "ListBonusPayments",
-      "ListHITs",
-      "ListHITsForQualificationType",
-      "ListQualificationRequests",
-      "ListQualificationTypes",
-      "ListReviewPolicyResultsForHIT",
-      "ListReviewableHITs",
-      "ListWorkerBlocks",
-      "ListWorkersWithQualificationType"
+    List: [
+      'ListAssignmentsForHIT',
+      'ListBonusPayments',
+      'ListHITs',
+      'ListHITsForQualificationType',
+      'ListQualificationRequests',
+      'ListQualificationTypes',
+      'ListReviewPolicyResultsForHIT',
+      'ListReviewableHITs',
+      'ListWorkerBlocks',
+      'ListWorkersWithQualificationType'
     ]
   };
 }

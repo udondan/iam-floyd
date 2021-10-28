@@ -14,7 +14,7 @@ export class LexV2 extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -784,77 +784,77 @@ export class LexV2 extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "BuildBotLocale",
-      "CreateBot",
-      "CreateBotAlias",
-      "CreateBotChannel",
-      "CreateBotLocale",
-      "CreateBotVersion",
-      "CreateExport",
-      "CreateIntent",
-      "CreateResourcePolicy",
-      "CreateSlot",
-      "CreateSlotType",
-      "CreateUploadUrl",
-      "DeleteBot",
-      "DeleteBotAlias",
-      "DeleteBotChannel",
-      "DeleteBotLocale",
-      "DeleteBotVersion",
-      "DeleteExport",
-      "DeleteImport",
-      "DeleteIntent",
-      "DeleteResourcePolicy",
-      "DeleteSession",
-      "DeleteSlot",
-      "DeleteSlotType",
-      "PutSession",
-      "RecognizeText",
-      "RecognizeUtterance",
-      "StartConversation",
-      "StartImport",
-      "UpdateBot",
-      "UpdateBotAlias",
-      "UpdateBotLocale",
-      "UpdateExport",
-      "UpdateIntent",
-      "UpdateResourcePolicy",
-      "UpdateSlot",
-      "UpdateSlotType"
+    Write: [
+      'BuildBotLocale',
+      'CreateBot',
+      'CreateBotAlias',
+      'CreateBotChannel',
+      'CreateBotLocale',
+      'CreateBotVersion',
+      'CreateExport',
+      'CreateIntent',
+      'CreateResourcePolicy',
+      'CreateSlot',
+      'CreateSlotType',
+      'CreateUploadUrl',
+      'DeleteBot',
+      'DeleteBotAlias',
+      'DeleteBotChannel',
+      'DeleteBotLocale',
+      'DeleteBotVersion',
+      'DeleteExport',
+      'DeleteImport',
+      'DeleteIntent',
+      'DeleteResourcePolicy',
+      'DeleteSession',
+      'DeleteSlot',
+      'DeleteSlotType',
+      'PutSession',
+      'RecognizeText',
+      'RecognizeUtterance',
+      'StartConversation',
+      'StartImport',
+      'UpdateBot',
+      'UpdateBotAlias',
+      'UpdateBotLocale',
+      'UpdateExport',
+      'UpdateIntent',
+      'UpdateResourcePolicy',
+      'UpdateSlot',
+      'UpdateSlotType'
     ],
-    "Read": [
-      "DescribeBot",
-      "DescribeBotAlias",
-      "DescribeBotChannel",
-      "DescribeBotLocale",
-      "DescribeBotVersion",
-      "DescribeExport",
-      "DescribeImport",
-      "DescribeIntent",
-      "DescribeResourcePolicy",
-      "DescribeSlot",
-      "DescribeSlotType",
-      "GetSession",
-      "ListTagsForResource"
+    Read: [
+      'DescribeBot',
+      'DescribeBotAlias',
+      'DescribeBotChannel',
+      'DescribeBotLocale',
+      'DescribeBotVersion',
+      'DescribeExport',
+      'DescribeImport',
+      'DescribeIntent',
+      'DescribeResourcePolicy',
+      'DescribeSlot',
+      'DescribeSlotType',
+      'GetSession',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListBotAliases",
-      "ListBotChannels",
-      "ListBotLocales",
-      "ListBotVersions",
-      "ListBots",
-      "ListBuiltInIntents",
-      "ListBuiltInSlotTypes",
-      "ListExports",
-      "ListImports",
-      "ListIntents",
-      "ListSlotTypes",
-      "ListSlots"
+    List: [
+      'ListBotAliases',
+      'ListBotChannels',
+      'ListBotLocales',
+      'ListBotVersions',
+      'ListBots',
+      'ListBuiltInIntents',
+      'ListBuiltInSlotTypes',
+      'ListExports',
+      'ListImports',
+      'ListIntents',
+      'ListSlotTypes',
+      'ListSlots'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -14,7 +14,7 @@ export class Geo extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -564,60 +564,60 @@ export class Geo extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateTrackerConsumer",
-      "BatchDeleteDevicePositionHistory",
-      "BatchDeleteGeofence",
-      "BatchEvaluateGeofences",
-      "BatchPutGeofence",
-      "BatchUpdateDevicePosition",
-      "CreateGeofenceCollection",
-      "CreateMap",
-      "CreatePlaceIndex",
-      "CreateRouteCalculator",
-      "CreateTracker",
-      "DeleteGeofenceCollection",
-      "DeleteMap",
-      "DeletePlaceIndex",
-      "DeleteRouteCalculator",
-      "DeleteTracker",
-      "DisassociateTrackerConsumer",
-      "PutGeofence",
-      "UpdateGeofenceCollection",
-      "UpdateTracker"
+    Write: [
+      'AssociateTrackerConsumer',
+      'BatchDeleteDevicePositionHistory',
+      'BatchDeleteGeofence',
+      'BatchEvaluateGeofences',
+      'BatchPutGeofence',
+      'BatchUpdateDevicePosition',
+      'CreateGeofenceCollection',
+      'CreateMap',
+      'CreatePlaceIndex',
+      'CreateRouteCalculator',
+      'CreateTracker',
+      'DeleteGeofenceCollection',
+      'DeleteMap',
+      'DeletePlaceIndex',
+      'DeleteRouteCalculator',
+      'DeleteTracker',
+      'DisassociateTrackerConsumer',
+      'PutGeofence',
+      'UpdateGeofenceCollection',
+      'UpdateTracker'
     ],
-    "Read": [
-      "BatchGetDevicePosition",
-      "CalculateRoute",
-      "DescribeGeofenceCollection",
-      "DescribeMap",
-      "DescribePlaceIndex",
-      "DescribeRouteCalculator",
-      "DescribeTracker",
-      "GetDevicePosition",
-      "GetDevicePositionHistory",
-      "GetGeofence",
-      "GetMapGlyphs",
-      "GetMapSprites",
-      "GetMapStyleDescriptor",
-      "GetMapTile",
-      "ListGeofences",
-      "ListTagsForResource",
-      "ListTrackerConsumers",
-      "SearchPlaceIndexForPosition",
-      "SearchPlaceIndexForText"
+    Read: [
+      'BatchGetDevicePosition',
+      'CalculateRoute',
+      'DescribeGeofenceCollection',
+      'DescribeMap',
+      'DescribePlaceIndex',
+      'DescribeRouteCalculator',
+      'DescribeTracker',
+      'GetDevicePosition',
+      'GetDevicePositionHistory',
+      'GetGeofence',
+      'GetMapGlyphs',
+      'GetMapSprites',
+      'GetMapStyleDescriptor',
+      'GetMapTile',
+      'ListGeofences',
+      'ListTagsForResource',
+      'ListTrackerConsumers',
+      'SearchPlaceIndexForPosition',
+      'SearchPlaceIndexForText'
     ],
-    "List": [
-      "ListDevicePositions",
-      "ListGeofenceCollections",
-      "ListMaps",
-      "ListPlaceIndexes",
-      "ListRouteCalculators",
-      "ListTrackers"
+    List: [
+      'ListDevicePositions',
+      'ListGeofenceCollections',
+      'ListMaps',
+      'ListPlaceIndexes',
+      'ListRouteCalculators',
+      'ListTrackers'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

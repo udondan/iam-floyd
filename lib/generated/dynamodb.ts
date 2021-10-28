@@ -14,7 +14,7 @@ export class Dynamodb extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -733,71 +733,71 @@ export class Dynamodb extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "BatchGetItem",
-      "ConditionCheckItem",
-      "DescribeBackup",
-      "DescribeContinuousBackups",
-      "DescribeContributorInsights",
-      "DescribeExport",
-      "DescribeGlobalTable",
-      "DescribeGlobalTableSettings",
-      "DescribeKinesisStreamingDestination",
-      "DescribeLimits",
-      "DescribeReservedCapacity",
-      "DescribeReservedCapacityOfferings",
-      "DescribeStream",
-      "DescribeTable",
-      "DescribeTableReplicaAutoScaling",
-      "DescribeTimeToLive",
-      "GetItem",
-      "GetRecords",
-      "GetShardIterator",
-      "ListStreams",
-      "ListTagsOfResource",
-      "PartiQLSelect",
-      "Query",
-      "Scan"
+    Read: [
+      'BatchGetItem',
+      'ConditionCheckItem',
+      'DescribeBackup',
+      'DescribeContinuousBackups',
+      'DescribeContributorInsights',
+      'DescribeExport',
+      'DescribeGlobalTable',
+      'DescribeGlobalTableSettings',
+      'DescribeKinesisStreamingDestination',
+      'DescribeLimits',
+      'DescribeReservedCapacity',
+      'DescribeReservedCapacityOfferings',
+      'DescribeStream',
+      'DescribeTable',
+      'DescribeTableReplicaAutoScaling',
+      'DescribeTimeToLive',
+      'GetItem',
+      'GetRecords',
+      'GetShardIterator',
+      'ListStreams',
+      'ListTagsOfResource',
+      'PartiQLSelect',
+      'Query',
+      'Scan'
     ],
-    "Write": [
-      "BatchWriteItem",
-      "CreateBackup",
-      "CreateGlobalTable",
-      "CreateTable",
-      "CreateTableReplica",
-      "DeleteBackup",
-      "DeleteItem",
-      "DeleteTable",
-      "DeleteTableReplica",
-      "DisableKinesisStreamingDestination",
-      "EnableKinesisStreamingDestination",
-      "ExportTableToPointInTime",
-      "PartiQLDelete",
-      "PartiQLInsert",
-      "PartiQLUpdate",
-      "PurchaseReservedCapacityOfferings",
-      "PutItem",
-      "RestoreTableFromBackup",
-      "RestoreTableToPointInTime",
-      "UpdateContinuousBackups",
-      "UpdateContributorInsights",
-      "UpdateGlobalTable",
-      "UpdateGlobalTableSettings",
-      "UpdateItem",
-      "UpdateTable",
-      "UpdateTableReplicaAutoScaling",
-      "UpdateTimeToLive"
+    Write: [
+      'BatchWriteItem',
+      'CreateBackup',
+      'CreateGlobalTable',
+      'CreateTable',
+      'CreateTableReplica',
+      'DeleteBackup',
+      'DeleteItem',
+      'DeleteTable',
+      'DeleteTableReplica',
+      'DisableKinesisStreamingDestination',
+      'EnableKinesisStreamingDestination',
+      'ExportTableToPointInTime',
+      'PartiQLDelete',
+      'PartiQLInsert',
+      'PartiQLUpdate',
+      'PurchaseReservedCapacityOfferings',
+      'PutItem',
+      'RestoreTableFromBackup',
+      'RestoreTableToPointInTime',
+      'UpdateContinuousBackups',
+      'UpdateContributorInsights',
+      'UpdateGlobalTable',
+      'UpdateGlobalTableSettings',
+      'UpdateItem',
+      'UpdateTable',
+      'UpdateTableReplicaAutoScaling',
+      'UpdateTimeToLive'
     ],
-    "List": [
-      "ListBackups",
-      "ListContributorInsights",
-      "ListExports",
-      "ListGlobalTables",
-      "ListTables"
+    List: [
+      'ListBackups',
+      'ListContributorInsights',
+      'ListExports',
+      'ListGlobalTables',
+      'ListTables'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

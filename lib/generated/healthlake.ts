@@ -14,7 +14,7 @@ export class Healthlake extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -251,33 +251,33 @@ export class Healthlake extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateFHIRDatastore",
-      "CreateResource",
-      "DeleteFHIRDatastore",
-      "DeleteResource",
-      "StartFHIRExportJob",
-      "StartFHIRImportJob",
-      "UpdateResource"
+    Write: [
+      'CreateFHIRDatastore',
+      'CreateResource',
+      'DeleteFHIRDatastore',
+      'DeleteResource',
+      'StartFHIRExportJob',
+      'StartFHIRImportJob',
+      'UpdateResource'
     ],
-    "Read": [
-      "DescribeFHIRDatastore",
-      "DescribeFHIRExportJob",
-      "DescribeFHIRImportJob",
-      "GetCapabilities",
-      "ListTagsForResource",
-      "ReadResource",
-      "SearchWithGet",
-      "SearchWithPost"
+    Read: [
+      'DescribeFHIRDatastore',
+      'DescribeFHIRExportJob',
+      'DescribeFHIRImportJob',
+      'GetCapabilities',
+      'ListTagsForResource',
+      'ReadResource',
+      'SearchWithGet',
+      'SearchWithPost'
     ],
-    "List": [
-      "ListFHIRDatastores",
-      "ListFHIRExportJobs",
-      "ListFHIRImportJobs"
+    List: [
+      'ListFHIRDatastores',
+      'ListFHIRExportJobs',
+      'ListFHIRImportJobs'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

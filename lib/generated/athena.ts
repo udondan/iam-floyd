@@ -14,7 +14,7 @@ export class Athena extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -419,48 +419,48 @@ export class Athena extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "BatchGetNamedQuery",
-      "BatchGetQueryExecution",
-      "GetDataCatalog",
-      "GetDatabase",
-      "GetNamedQuery",
-      "GetPreparedStatement",
-      "GetQueryExecution",
-      "GetQueryResults",
-      "GetQueryResultsStream",
-      "GetTableMetadata",
-      "GetWorkGroup",
-      "ListEngineVersions",
-      "ListQueryExecutions",
-      "ListTableMetadata",
-      "ListTagsForResource"
+    Read: [
+      'BatchGetNamedQuery',
+      'BatchGetQueryExecution',
+      'GetDataCatalog',
+      'GetDatabase',
+      'GetNamedQuery',
+      'GetPreparedStatement',
+      'GetQueryExecution',
+      'GetQueryResults',
+      'GetQueryResultsStream',
+      'GetTableMetadata',
+      'GetWorkGroup',
+      'ListEngineVersions',
+      'ListQueryExecutions',
+      'ListTableMetadata',
+      'ListTagsForResource'
     ],
-    "Write": [
-      "CreateDataCatalog",
-      "CreateNamedQuery",
-      "CreatePreparedStatement",
-      "CreateWorkGroup",
-      "DeleteDataCatalog",
-      "DeleteNamedQuery",
-      "DeletePreparedStatement",
-      "DeleteWorkGroup",
-      "StartQueryExecution",
-      "StopQueryExecution",
-      "UpdateDataCatalog",
-      "UpdatePreparedStatement",
-      "UpdateWorkGroup"
+    Write: [
+      'CreateDataCatalog',
+      'CreateNamedQuery',
+      'CreatePreparedStatement',
+      'CreateWorkGroup',
+      'DeleteDataCatalog',
+      'DeleteNamedQuery',
+      'DeletePreparedStatement',
+      'DeleteWorkGroup',
+      'StartQueryExecution',
+      'StopQueryExecution',
+      'UpdateDataCatalog',
+      'UpdatePreparedStatement',
+      'UpdateWorkGroup'
     ],
-    "List": [
-      "ListDataCatalogs",
-      "ListDatabases",
-      "ListNamedQueries",
-      "ListPreparedStatements",
-      "ListWorkGroups"
+    List: [
+      'ListDataCatalogs',
+      'ListDatabases',
+      'ListNamedQueries',
+      'ListPreparedStatements',
+      'ListWorkGroups'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

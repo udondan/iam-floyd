@@ -14,7 +14,7 @@ export class Codestar extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -264,37 +264,37 @@ export class Codestar extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Permissions management": [
-      "AssociateTeamMember",
-      "CreateProject",
-      "DeleteProject",
-      "DisassociateTeamMember",
-      "UpdateTeamMember"
+    'Permissions management': [
+      'AssociateTeamMember',
+      'CreateProject',
+      'DeleteProject',
+      'DisassociateTeamMember',
+      'UpdateTeamMember'
     ],
-    "Write": [
-      "CreateUserProfile",
-      "DeleteExtendedAccess",
-      "DeleteUserProfile",
-      "PutExtendedAccess",
-      "UpdateProject",
-      "UpdateUserProfile"
+    Write: [
+      'CreateUserProfile',
+      'DeleteExtendedAccess',
+      'DeleteUserProfile',
+      'PutExtendedAccess',
+      'UpdateProject',
+      'UpdateUserProfile'
     ],
-    "Read": [
-      "DescribeProject",
-      "DescribeUserProfile",
-      "GetExtendedAccess"
+    Read: [
+      'DescribeProject',
+      'DescribeUserProfile',
+      'GetExtendedAccess'
     ],
-    "List": [
-      "ListProjects",
-      "ListResources",
-      "ListTagsForProject",
-      "ListTeamMembers",
-      "ListUserProfiles",
-      "VerifyServiceRole"
+    List: [
+      'ListProjects',
+      'ListResources',
+      'ListTagsForProject',
+      'ListTeamMembers',
+      'ListUserProfiles',
+      'VerifyServiceRole'
     ],
-    "Tagging": [
-      "TagProject",
-      "UntagProject"
+    Tagging: [
+      'TagProject',
+      'UntagProject'
     ]
   };
 

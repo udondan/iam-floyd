@@ -14,7 +14,7 @@ export class Macie2 extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -677,70 +677,70 @@ export class Macie2 extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AcceptInvitation",
-      "CreateClassificationJob",
-      "CreateCustomDataIdentifier",
-      "CreateFindingsFilter",
-      "CreateInvitations",
-      "CreateMember",
-      "CreateSampleFindings",
-      "DeclineInvitations",
-      "DeleteCustomDataIdentifier",
-      "DeleteFindingsFilter",
-      "DeleteInvitations",
-      "DeleteMember",
-      "DisableMacie",
-      "DisableOrganizationAdminAccount",
-      "DisassociateFromAdministratorAccount",
-      "DisassociateFromMasterAccount",
-      "DisassociateMember",
-      "EnableMacie",
-      "EnableOrganizationAdminAccount",
-      "PutClassificationExportConfiguration",
-      "PutFindingsPublicationConfiguration",
-      "TestCustomDataIdentifier",
-      "UpdateClassificationJob",
-      "UpdateFindingsFilter",
-      "UpdateMacieSession",
-      "UpdateMemberSession",
-      "UpdateOrganizationConfiguration"
+    Write: [
+      'AcceptInvitation',
+      'CreateClassificationJob',
+      'CreateCustomDataIdentifier',
+      'CreateFindingsFilter',
+      'CreateInvitations',
+      'CreateMember',
+      'CreateSampleFindings',
+      'DeclineInvitations',
+      'DeleteCustomDataIdentifier',
+      'DeleteFindingsFilter',
+      'DeleteInvitations',
+      'DeleteMember',
+      'DisableMacie',
+      'DisableOrganizationAdminAccount',
+      'DisassociateFromAdministratorAccount',
+      'DisassociateFromMasterAccount',
+      'DisassociateMember',
+      'EnableMacie',
+      'EnableOrganizationAdminAccount',
+      'PutClassificationExportConfiguration',
+      'PutFindingsPublicationConfiguration',
+      'TestCustomDataIdentifier',
+      'UpdateClassificationJob',
+      'UpdateFindingsFilter',
+      'UpdateMacieSession',
+      'UpdateMemberSession',
+      'UpdateOrganizationConfiguration'
     ],
-    "Read": [
-      "BatchGetCustomDataIdentifiers",
-      "DescribeBuckets",
-      "DescribeClassificationJob",
-      "DescribeOrganizationConfiguration",
-      "GetAdministratorAccount",
-      "GetBucketStatistics",
-      "GetClassificationExportConfiguration",
-      "GetCustomDataIdentifier",
-      "GetFindingStatistics",
-      "GetFindings",
-      "GetFindingsFilter",
-      "GetFindingsPublicationConfiguration",
-      "GetInvitationsCount",
-      "GetMacieSession",
-      "GetMasterAccount",
-      "GetMember",
-      "GetUsageStatistics",
-      "GetUsageTotals",
-      "ListTagsForResource",
-      "SearchResources"
+    Read: [
+      'BatchGetCustomDataIdentifiers',
+      'DescribeBuckets',
+      'DescribeClassificationJob',
+      'DescribeOrganizationConfiguration',
+      'GetAdministratorAccount',
+      'GetBucketStatistics',
+      'GetClassificationExportConfiguration',
+      'GetCustomDataIdentifier',
+      'GetFindingStatistics',
+      'GetFindings',
+      'GetFindingsFilter',
+      'GetFindingsPublicationConfiguration',
+      'GetInvitationsCount',
+      'GetMacieSession',
+      'GetMasterAccount',
+      'GetMember',
+      'GetUsageStatistics',
+      'GetUsageTotals',
+      'ListTagsForResource',
+      'SearchResources'
     ],
-    "List": [
-      "ListClassificationJobs",
-      "ListCustomDataIdentifiers",
-      "ListFindings",
-      "ListFindingsFilters",
-      "ListInvitations",
-      "ListManagedDataIdentifiers",
-      "ListMembers",
-      "ListOrganizationAdminAccounts"
+    List: [
+      'ListClassificationJobs',
+      'ListCustomDataIdentifiers',
+      'ListFindings',
+      'ListFindingsFilters',
+      'ListInvitations',
+      'ListManagedDataIdentifiers',
+      'ListMembers',
+      'ListOrganizationAdminAccounts'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

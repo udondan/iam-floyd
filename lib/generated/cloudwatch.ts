@@ -14,7 +14,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -440,49 +440,49 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "DeleteAlarms",
-      "DeleteAnomalyDetector",
-      "DeleteDashboards",
-      "DeleteInsightRules",
-      "DeleteMetricStream",
-      "DisableAlarmActions",
-      "DisableInsightRules",
-      "EnableAlarmActions",
-      "EnableInsightRules",
-      "PutAnomalyDetector",
-      "PutCompositeAlarm",
-      "PutDashboard",
-      "PutInsightRule",
-      "PutMetricAlarm",
-      "PutMetricData",
-      "PutMetricStream",
-      "SetAlarmState",
-      "StartMetricStreams",
-      "StopMetricStreams"
+    Write: [
+      'DeleteAlarms',
+      'DeleteAnomalyDetector',
+      'DeleteDashboards',
+      'DeleteInsightRules',
+      'DeleteMetricStream',
+      'DisableAlarmActions',
+      'DisableInsightRules',
+      'EnableAlarmActions',
+      'EnableInsightRules',
+      'PutAnomalyDetector',
+      'PutCompositeAlarm',
+      'PutDashboard',
+      'PutInsightRule',
+      'PutMetricAlarm',
+      'PutMetricData',
+      'PutMetricStream',
+      'SetAlarmState',
+      'StartMetricStreams',
+      'StopMetricStreams'
     ],
-    "Read": [
-      "DescribeAlarmHistory",
-      "DescribeAlarms",
-      "DescribeAlarmsForMetric",
-      "DescribeAnomalyDetectors",
-      "DescribeInsightRules",
-      "GetDashboard",
-      "GetInsightRuleReport",
-      "GetMetricData",
-      "GetMetricStatistics",
-      "GetMetricStream",
-      "GetMetricWidgetImage"
+    Read: [
+      'DescribeAlarmHistory',
+      'DescribeAlarms',
+      'DescribeAlarmsForMetric',
+      'DescribeAnomalyDetectors',
+      'DescribeInsightRules',
+      'GetDashboard',
+      'GetInsightRuleReport',
+      'GetMetricData',
+      'GetMetricStatistics',
+      'GetMetricStream',
+      'GetMetricWidgetImage'
     ],
-    "List": [
-      "ListDashboards",
-      "ListMetricStreams",
-      "ListMetrics",
-      "ListTagsForResource"
+    List: [
+      'ListDashboards',
+      'ListMetricStreams',
+      'ListMetrics',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

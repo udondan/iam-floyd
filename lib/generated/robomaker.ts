@@ -14,7 +14,7 @@ export class Robomaker extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -720,72 +720,72 @@ export class Robomaker extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "BatchDeleteWorlds",
-      "CancelDeploymentJob",
-      "CancelSimulationJob",
-      "CancelSimulationJobBatch",
-      "CancelWorldExportJob",
-      "CancelWorldGenerationJob",
-      "CreateDeploymentJob",
-      "CreateFleet",
-      "CreateRobot",
-      "CreateRobotApplication",
-      "CreateRobotApplicationVersion",
-      "CreateSimulationApplication",
-      "CreateSimulationApplicationVersion",
-      "CreateSimulationJob",
-      "CreateWorldExportJob",
-      "CreateWorldGenerationJob",
-      "CreateWorldTemplate",
-      "DeleteFleet",
-      "DeleteRobot",
-      "DeleteRobotApplication",
-      "DeleteSimulationApplication",
-      "DeleteWorldTemplate",
-      "DeregisterRobot",
-      "RegisterRobot",
-      "RestartSimulationJob",
-      "StartSimulationJobBatch",
-      "SyncDeploymentJob",
-      "UpdateRobotApplication",
-      "UpdateRobotDeployment",
-      "UpdateSimulationApplication",
-      "UpdateWorldTemplate"
+    Write: [
+      'BatchDeleteWorlds',
+      'CancelDeploymentJob',
+      'CancelSimulationJob',
+      'CancelSimulationJobBatch',
+      'CancelWorldExportJob',
+      'CancelWorldGenerationJob',
+      'CreateDeploymentJob',
+      'CreateFleet',
+      'CreateRobot',
+      'CreateRobotApplication',
+      'CreateRobotApplicationVersion',
+      'CreateSimulationApplication',
+      'CreateSimulationApplicationVersion',
+      'CreateSimulationJob',
+      'CreateWorldExportJob',
+      'CreateWorldGenerationJob',
+      'CreateWorldTemplate',
+      'DeleteFleet',
+      'DeleteRobot',
+      'DeleteRobotApplication',
+      'DeleteSimulationApplication',
+      'DeleteWorldTemplate',
+      'DeregisterRobot',
+      'RegisterRobot',
+      'RestartSimulationJob',
+      'StartSimulationJobBatch',
+      'SyncDeploymentJob',
+      'UpdateRobotApplication',
+      'UpdateRobotDeployment',
+      'UpdateSimulationApplication',
+      'UpdateWorldTemplate'
     ],
-    "Read": [
-      "BatchDescribeSimulationJob",
-      "DescribeDeploymentJob",
-      "DescribeFleet",
-      "DescribeRobot",
-      "DescribeRobotApplication",
-      "DescribeSimulationApplication",
-      "DescribeSimulationJob",
-      "DescribeSimulationJobBatch",
-      "DescribeWorld",
-      "DescribeWorldExportJob",
-      "DescribeWorldGenerationJob",
-      "DescribeWorldTemplate",
-      "GetWorldTemplateBody"
+    Read: [
+      'BatchDescribeSimulationJob',
+      'DescribeDeploymentJob',
+      'DescribeFleet',
+      'DescribeRobot',
+      'DescribeRobotApplication',
+      'DescribeSimulationApplication',
+      'DescribeSimulationJob',
+      'DescribeSimulationJobBatch',
+      'DescribeWorld',
+      'DescribeWorldExportJob',
+      'DescribeWorldGenerationJob',
+      'DescribeWorldTemplate',
+      'GetWorldTemplateBody'
     ],
-    "List": [
-      "ListDeploymentJobs",
-      "ListFleets",
-      "ListRobotApplications",
-      "ListRobots",
-      "ListSimulationApplications",
-      "ListSimulationJobBatches",
-      "ListSimulationJobs",
-      "ListSupportedAvailabilityZones",
-      "ListTagsForResource",
-      "ListWorldExportJobs",
-      "ListWorldGenerationJobs",
-      "ListWorldTemplates",
-      "ListWorlds"
+    List: [
+      'ListDeploymentJobs',
+      'ListFleets',
+      'ListRobotApplications',
+      'ListRobots',
+      'ListSimulationApplications',
+      'ListSimulationJobBatches',
+      'ListSimulationJobs',
+      'ListSupportedAvailabilityZones',
+      'ListTagsForResource',
+      'ListWorldExportJobs',
+      'ListWorldGenerationJobs',
+      'ListWorldTemplates',
+      'ListWorlds'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

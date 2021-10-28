@@ -14,7 +14,7 @@ export class Eks extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -411,46 +411,46 @@ export class Eks extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "AccessKubernetesApi",
-      "DescribeAddon",
-      "DescribeAddonVersions",
-      "DescribeCluster",
-      "DescribeFargateProfile",
-      "DescribeIdentityProviderConfig",
-      "DescribeNodegroup",
-      "DescribeUpdate",
-      "ListTagsForResource"
+    Read: [
+      'AccessKubernetesApi',
+      'DescribeAddon',
+      'DescribeAddonVersions',
+      'DescribeCluster',
+      'DescribeFargateProfile',
+      'DescribeIdentityProviderConfig',
+      'DescribeNodegroup',
+      'DescribeUpdate',
+      'ListTagsForResource'
     ],
-    "Write": [
-      "AssociateEncryptionConfig",
-      "AssociateIdentityProviderConfig",
-      "CreateAddon",
-      "CreateCluster",
-      "CreateFargateProfile",
-      "CreateNodegroup",
-      "DeleteAddon",
-      "DeleteCluster",
-      "DeleteFargateProfile",
-      "DeleteNodegroup",
-      "DisassociateIdentityProviderConfig",
-      "UpdateAddon",
-      "UpdateClusterConfig",
-      "UpdateClusterVersion",
-      "UpdateNodegroupConfig",
-      "UpdateNodegroupVersion"
+    Write: [
+      'AssociateEncryptionConfig',
+      'AssociateIdentityProviderConfig',
+      'CreateAddon',
+      'CreateCluster',
+      'CreateFargateProfile',
+      'CreateNodegroup',
+      'DeleteAddon',
+      'DeleteCluster',
+      'DeleteFargateProfile',
+      'DeleteNodegroup',
+      'DisassociateIdentityProviderConfig',
+      'UpdateAddon',
+      'UpdateClusterConfig',
+      'UpdateClusterVersion',
+      'UpdateNodegroupConfig',
+      'UpdateNodegroupVersion'
     ],
-    "List": [
-      "ListAddons",
-      "ListClusters",
-      "ListFargateProfiles",
-      "ListIdentityProviderConfigs",
-      "ListNodegroups",
-      "ListUpdates"
+    List: [
+      'ListAddons',
+      'ListClusters',
+      'ListFargateProfiles',
+      'ListIdentityProviderConfigs',
+      'ListNodegroups',
+      'ListUpdates'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -14,7 +14,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -227,30 +227,30 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateGroup",
-      "DeleteGroup",
-      "GroupResources",
-      "PutGroupConfiguration",
-      "PutGroupPolicy",
-      "UngroupResources",
-      "UpdateGroup",
-      "UpdateGroupQuery"
+    Write: [
+      'CreateGroup',
+      'DeleteGroup',
+      'GroupResources',
+      'PutGroupConfiguration',
+      'PutGroupPolicy',
+      'UngroupResources',
+      'UpdateGroup',
+      'UpdateGroupQuery'
     ],
-    "Read": [
-      "GetGroup",
-      "GetGroupConfiguration",
-      "GetGroupQuery",
-      "GetTags"
+    Read: [
+      'GetGroup',
+      'GetGroupConfiguration',
+      'GetGroupQuery',
+      'GetTags'
     ],
-    "List": [
-      "ListGroupResources",
-      "ListGroups",
-      "SearchResources"
+    List: [
+      'ListGroupResources',
+      'ListGroups',
+      'SearchResources'
     ],
-    "Tagging": [
-      "Tag",
-      "Untag"
+    Tagging: [
+      'Tag',
+      'Untag'
     ]
   };
 

@@ -14,7 +14,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -124,21 +124,21 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CancelChangeSet",
-      "CompleteTask",
-      "StartChangeSet",
-      "UpdateTask"
+    Write: [
+      'CancelChangeSet',
+      'CompleteTask',
+      'StartChangeSet',
+      'UpdateTask'
     ],
-    "Read": [
-      "DescribeChangeSet",
-      "DescribeEntity",
-      "DescribeTask",
-      "ListChangeSets",
-      "ListEntities"
+    Read: [
+      'DescribeChangeSet',
+      'DescribeEntity',
+      'DescribeTask',
+      'ListChangeSets',
+      'ListEntities'
     ],
-    "List": [
-      "ListTasks"
+    List: [
+      'ListTasks'
     ]
   };
 

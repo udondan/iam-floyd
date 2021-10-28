@@ -14,7 +14,7 @@ export class Dbqms extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -160,24 +160,24 @@ export class Dbqms extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateFavoriteQuery",
-      "CreateQueryHistory",
-      "CreateTab",
-      "DeleteFavoriteQueries",
-      "DeleteQueryHistory",
-      "DeleteTab",
-      "UpdateFavoriteQuery",
-      "UpdateQueryHistory",
-      "UpdateTab"
+    Write: [
+      'CreateFavoriteQuery',
+      'CreateQueryHistory',
+      'CreateTab',
+      'DeleteFavoriteQueries',
+      'DeleteQueryHistory',
+      'DeleteTab',
+      'UpdateFavoriteQuery',
+      'UpdateQueryHistory',
+      'UpdateTab'
     ],
-    "List": [
-      "DescribeFavoriteQueries",
-      "DescribeQueryHistory",
-      "DescribeTabs"
+    List: [
+      'DescribeFavoriteQueries',
+      'DescribeQueryHistory',
+      'DescribeTabs'
     ],
-    "Read": [
-      "GetQueryString"
+    Read: [
+      'GetQueryString'
     ]
   };
 }

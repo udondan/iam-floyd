@@ -14,7 +14,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -239,29 +239,29 @@ export class Comprehendmedical extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "DescribeEntitiesDetectionV2Job",
-      "DescribeICD10CMInferenceJob",
-      "DescribePHIDetectionJob",
-      "DescribeRxNormInferenceJob",
-      "DetectEntitiesV2",
-      "DetectPHI",
-      "InferICD10CM",
-      "InferRxNorm",
-      "ListEntitiesDetectionV2Jobs",
-      "ListICD10CMInferenceJobs",
-      "ListPHIDetectionJobs",
-      "ListRxNormInferenceJobs"
+    Read: [
+      'DescribeEntitiesDetectionV2Job',
+      'DescribeICD10CMInferenceJob',
+      'DescribePHIDetectionJob',
+      'DescribeRxNormInferenceJob',
+      'DetectEntitiesV2',
+      'DetectPHI',
+      'InferICD10CM',
+      'InferRxNorm',
+      'ListEntitiesDetectionV2Jobs',
+      'ListICD10CMInferenceJobs',
+      'ListPHIDetectionJobs',
+      'ListRxNormInferenceJobs'
     ],
-    "Write": [
-      "StartEntitiesDetectionV2Job",
-      "StartICD10CMInferenceJob",
-      "StartPHIDetectionJob",
-      "StartRxNormInferenceJob",
-      "StopEntitiesDetectionV2Job",
-      "StopICD10CMInferenceJob",
-      "StopPHIDetectionJob",
-      "StopRxNormInferenceJob"
+    Write: [
+      'StartEntitiesDetectionV2Job',
+      'StartICD10CMInferenceJob',
+      'StartPHIDetectionJob',
+      'StartRxNormInferenceJob',
+      'StopEntitiesDetectionV2Job',
+      'StopICD10CMInferenceJob',
+      'StopPHIDetectionJob',
+      'StopRxNormInferenceJob'
     ]
   };
 }
