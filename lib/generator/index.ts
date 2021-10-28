@@ -5,7 +5,7 @@ import cheerio = require('cheerio');
 import fs = require('fs');
 import glob = require('glob');
 import request = require('request');
-import { Project, Scope, SourceFile } from 'ts-morph';
+import { Project, QuoteKind, Scope, SourceFile } from 'ts-morph';
 
 import { Operator, ResourceTypes } from '../shared';
 import { AccessLevelList } from '../shared/access-level';
@@ -19,6 +19,10 @@ type CheerioStatic = any;
 type CheerioElement = any;
 
 const project = new Project();
+project.manipulationSettings.set({
+  quoteKind: QuoteKind.Single,
+});
+
 const modules: Module[] = [];
 const timeThreshold = new Date();
 
@@ -249,7 +253,13 @@ export function createModule(module: Module): Promise<void> {
     //it was skipped, restore from cache
     const moduleFilePath = `lib/generated/${module.filename}.ts`;
     restoreFileFromCache(moduleFilePath);
-    const moduleFile = new Project().addSourceFileAtPath(moduleFilePath);
+
+    const moduleProject = new Project();
+    moduleProject.manipulationSettings.set({
+      quoteKind: QuoteKind.Single,
+    });
+
+    const moduleFile = moduleProject.addSourceFileAtPath(moduleFilePath);
 
     module.servicePrefix = moduleFile
       .getClasses()[0]
@@ -286,6 +296,7 @@ export function createModule(module: Module): Promise<void> {
   const sourceFile = project.createSourceFile(
     `./lib/generated/${module.filename}.ts`
   );
+
   const description = `\nStatement provider for service [${module.name}](${module.url}).\n\n@param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement`;
 
   sourceFile.addImportDeclaration({

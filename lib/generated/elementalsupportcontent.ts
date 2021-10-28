@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [elemental-support-content](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalsupportcontent.html).
