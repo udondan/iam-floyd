@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [purchase-orders](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspurchaseordersconsole.html).
@@ -14,7 +14,7 @@ export class PurchaseOrders extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -41,11 +41,11 @@ export class PurchaseOrders extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "ModifyPurchaseOrders"
+    Write: [
+      'ModifyPurchaseOrders'
     ],
-    "Read": [
-      "ViewPurchaseOrders"
+    Read: [
+      'ViewPurchaseOrders'
     ]
   };
 }

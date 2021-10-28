@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [fis](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsfaultinjectionsimulator.html).
@@ -14,7 +14,7 @@ export class Fis extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -256,30 +256,30 @@ export class Fis extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateExperimentTemplate",
-      "DeleteExperimentTemplate",
-      "InjectApiInternalError",
-      "InjectApiThrottleError",
-      "InjectApiUnavailableError",
-      "StartExperiment",
-      "StopExperiment",
-      "UpdateExperimentTemplate"
+    Write: [
+      'CreateExperimentTemplate',
+      'DeleteExperimentTemplate',
+      'InjectApiInternalError',
+      'InjectApiThrottleError',
+      'InjectApiUnavailableError',
+      'StartExperiment',
+      'StopExperiment',
+      'UpdateExperimentTemplate'
     ],
-    "Read": [
-      "GetAction",
-      "GetExperiment",
-      "GetExperimentTemplate",
-      "ListTagsForResource"
+    Read: [
+      'GetAction',
+      'GetExperiment',
+      'GetExperimentTemplate',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListActions",
-      "ListExperimentTemplates",
-      "ListExperiments"
+    List: [
+      'ListActions',
+      'ListExperimentTemplates',
+      'ListExperiments'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

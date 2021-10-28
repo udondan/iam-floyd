@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [waf-regional](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswafregional.html).
@@ -14,7 +14,7 @@ export class WafRegional extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -939,96 +939,96 @@ export class WafRegional extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateWebACL",
-      "CreateByteMatchSet",
-      "CreateGeoMatchSet",
-      "CreateIPSet",
-      "CreateRateBasedRule",
-      "CreateRegexMatchSet",
-      "CreateRegexPatternSet",
-      "CreateRule",
-      "CreateRuleGroup",
-      "CreateSizeConstraintSet",
-      "CreateSqlInjectionMatchSet",
-      "CreateWebACLMigrationStack",
-      "CreateXssMatchSet",
-      "DeleteByteMatchSet",
-      "DeleteGeoMatchSet",
-      "DeleteIPSet",
-      "DeleteLoggingConfiguration",
-      "DeleteRateBasedRule",
-      "DeleteRegexMatchSet",
-      "DeleteRegexPatternSet",
-      "DeleteRule",
-      "DeleteRuleGroup",
-      "DeleteSizeConstraintSet",
-      "DeleteSqlInjectionMatchSet",
-      "DeleteXssMatchSet",
-      "DisassociateWebACL",
-      "PutLoggingConfiguration",
-      "UpdateByteMatchSet",
-      "UpdateGeoMatchSet",
-      "UpdateIPSet",
-      "UpdateRateBasedRule",
-      "UpdateRegexMatchSet",
-      "UpdateRegexPatternSet",
-      "UpdateRule",
-      "UpdateRuleGroup",
-      "UpdateSizeConstraintSet",
-      "UpdateSqlInjectionMatchSet",
-      "UpdateXssMatchSet"
+    Write: [
+      'AssociateWebACL',
+      'CreateByteMatchSet',
+      'CreateGeoMatchSet',
+      'CreateIPSet',
+      'CreateRateBasedRule',
+      'CreateRegexMatchSet',
+      'CreateRegexPatternSet',
+      'CreateRule',
+      'CreateRuleGroup',
+      'CreateSizeConstraintSet',
+      'CreateSqlInjectionMatchSet',
+      'CreateWebACLMigrationStack',
+      'CreateXssMatchSet',
+      'DeleteByteMatchSet',
+      'DeleteGeoMatchSet',
+      'DeleteIPSet',
+      'DeleteLoggingConfiguration',
+      'DeleteRateBasedRule',
+      'DeleteRegexMatchSet',
+      'DeleteRegexPatternSet',
+      'DeleteRule',
+      'DeleteRuleGroup',
+      'DeleteSizeConstraintSet',
+      'DeleteSqlInjectionMatchSet',
+      'DeleteXssMatchSet',
+      'DisassociateWebACL',
+      'PutLoggingConfiguration',
+      'UpdateByteMatchSet',
+      'UpdateGeoMatchSet',
+      'UpdateIPSet',
+      'UpdateRateBasedRule',
+      'UpdateRegexMatchSet',
+      'UpdateRegexPatternSet',
+      'UpdateRule',
+      'UpdateRuleGroup',
+      'UpdateSizeConstraintSet',
+      'UpdateSqlInjectionMatchSet',
+      'UpdateXssMatchSet'
     ],
-    "Permissions management": [
-      "CreateWebACL",
-      "DeletePermissionPolicy",
-      "DeleteWebACL",
-      "PutPermissionPolicy",
-      "UpdateWebACL"
+    'Permissions management': [
+      'CreateWebACL',
+      'DeletePermissionPolicy',
+      'DeleteWebACL',
+      'PutPermissionPolicy',
+      'UpdateWebACL'
     ],
-    "Read": [
-      "GetByteMatchSet",
-      "GetChangeToken",
-      "GetChangeTokenStatus",
-      "GetGeoMatchSet",
-      "GetIPSet",
-      "GetLoggingConfiguration",
-      "GetPermissionPolicy",
-      "GetRateBasedRule",
-      "GetRateBasedRuleManagedKeys",
-      "GetRegexMatchSet",
-      "GetRegexPatternSet",
-      "GetRule",
-      "GetRuleGroup",
-      "GetSampledRequests",
-      "GetSizeConstraintSet",
-      "GetSqlInjectionMatchSet",
-      "GetWebACL",
-      "GetWebACLForResource",
-      "GetXssMatchSet",
-      "ListTagsForResource"
+    Read: [
+      'GetByteMatchSet',
+      'GetChangeToken',
+      'GetChangeTokenStatus',
+      'GetGeoMatchSet',
+      'GetIPSet',
+      'GetLoggingConfiguration',
+      'GetPermissionPolicy',
+      'GetRateBasedRule',
+      'GetRateBasedRuleManagedKeys',
+      'GetRegexMatchSet',
+      'GetRegexPatternSet',
+      'GetRule',
+      'GetRuleGroup',
+      'GetSampledRequests',
+      'GetSizeConstraintSet',
+      'GetSqlInjectionMatchSet',
+      'GetWebACL',
+      'GetWebACLForResource',
+      'GetXssMatchSet',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListActivatedRulesInRuleGroup",
-      "ListByteMatchSets",
-      "ListGeoMatchSets",
-      "ListIPSets",
-      "ListLoggingConfigurations",
-      "ListRateBasedRules",
-      "ListRegexMatchSets",
-      "ListRegexPatternSets",
-      "ListResourcesForWebACL",
-      "ListRuleGroups",
-      "ListRules",
-      "ListSizeConstraintSets",
-      "ListSqlInjectionMatchSets",
-      "ListSubscribedRuleGroups",
-      "ListWebACLs",
-      "ListXssMatchSets"
+    List: [
+      'ListActivatedRulesInRuleGroup',
+      'ListByteMatchSets',
+      'ListGeoMatchSets',
+      'ListIPSets',
+      'ListLoggingConfigurations',
+      'ListRateBasedRules',
+      'ListRegexMatchSets',
+      'ListRegexPatternSets',
+      'ListResourcesForWebACL',
+      'ListRuleGroups',
+      'ListRules',
+      'ListSizeConstraintSets',
+      'ListSqlInjectionMatchSets',
+      'ListSubscribedRuleGroups',
+      'ListWebACLs',
+      'ListXssMatchSets'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

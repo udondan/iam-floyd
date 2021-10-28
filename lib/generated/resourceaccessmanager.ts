@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [ram](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceaccessmanager.html).
@@ -14,7 +14,7 @@ export class Ram extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -340,39 +340,39 @@ export class Ram extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AcceptResourceShareInvitation",
-      "AssociateResourceShare",
-      "AssociateResourceSharePermission",
-      "CreateResourceShare",
-      "DeleteResourceShare",
-      "DisassociateResourceShare",
-      "DisassociateResourceSharePermission",
-      "PromoteResourceShareCreatedFromPolicy",
-      "RejectResourceShareInvitation",
-      "UpdateResourceShare"
+    Write: [
+      'AcceptResourceShareInvitation',
+      'AssociateResourceShare',
+      'AssociateResourceSharePermission',
+      'CreateResourceShare',
+      'DeleteResourceShare',
+      'DisassociateResourceShare',
+      'DisassociateResourceSharePermission',
+      'PromoteResourceShareCreatedFromPolicy',
+      'RejectResourceShareInvitation',
+      'UpdateResourceShare'
     ],
-    "Permissions management": [
-      "EnableSharingWithAwsOrganization"
+    'Permissions management': [
+      'EnableSharingWithAwsOrganization'
     ],
-    "Read": [
-      "GetPermission",
-      "GetResourcePolicies",
-      "GetResourceShareAssociations",
-      "GetResourceShareInvitations",
-      "GetResourceShares",
-      "ListPendingInvitationResources"
+    Read: [
+      'GetPermission',
+      'GetResourcePolicies',
+      'GetResourceShareAssociations',
+      'GetResourceShareInvitations',
+      'GetResourceShares',
+      'ListPendingInvitationResources'
     ],
-    "List": [
-      "ListPermissions",
-      "ListPrincipals",
-      "ListResourceSharePermissions",
-      "ListResourceTypes",
-      "ListResources"
+    List: [
+      'ListPermissions',
+      'ListPrincipals',
+      'ListResourceSharePermissions',
+      'ListResourceTypes',
+      'ListResources'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

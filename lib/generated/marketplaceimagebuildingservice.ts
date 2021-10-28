@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [aws-marketplace-image-building-service](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplaceimagebuildingservice.html).
@@ -14,7 +14,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -52,12 +52,12 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "DescribeBuilds",
-      "ListBuilds"
+    Read: [
+      'DescribeBuilds',
+      'ListBuilds'
     ],
-    "Write": [
-      "StartBuild"
+    Write: [
+      'StartBuild'
     ]
   };
 }

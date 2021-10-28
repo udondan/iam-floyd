@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [chatbot](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html).
@@ -14,7 +14,7 @@ export class Chatbot extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -136,22 +136,22 @@ export class Chatbot extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateChimeWebhookConfiguration",
-      "CreateSlackChannelConfiguration",
-      "DeleteChimeWebhookConfiguration",
-      "DeleteSlackChannelConfiguration",
-      "DeleteSlackWorkspaceAuthorization",
-      "RedeemSlackOauthCode",
-      "UpdateChimeWebhookConfiguration",
-      "UpdateSlackChannelConfiguration"
+    Write: [
+      'CreateChimeWebhookConfiguration',
+      'CreateSlackChannelConfiguration',
+      'DeleteChimeWebhookConfiguration',
+      'DeleteSlackChannelConfiguration',
+      'DeleteSlackWorkspaceAuthorization',
+      'RedeemSlackOauthCode',
+      'UpdateChimeWebhookConfiguration',
+      'UpdateSlackChannelConfiguration'
     ],
-    "Read": [
-      "DescribeChimeWebhookConfigurations",
-      "DescribeSlackChannelConfigurations",
-      "DescribeSlackChannels",
-      "DescribeSlackWorkspaces",
-      "GetSlackOauthParameters"
+    Read: [
+      'DescribeChimeWebhookConfigurations',
+      'DescribeSlackChannelConfigurations',
+      'DescribeSlackChannels',
+      'DescribeSlackWorkspaces',
+      'GetSlackOauthParameters'
     ]
   };
 

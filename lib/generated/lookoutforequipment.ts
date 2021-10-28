@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [lookoutequipment](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlookoutforequipment.html).
@@ -14,7 +14,7 @@ export class Lookoutequipment extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -280,35 +280,35 @@ export class Lookoutequipment extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateDataset",
-      "CreateInferenceScheduler",
-      "CreateModel",
-      "DeleteDataset",
-      "DeleteInferenceScheduler",
-      "DeleteModel",
-      "StartDataIngestionJob",
-      "StartInferenceScheduler",
-      "StopInferenceScheduler",
-      "UpdateInferenceScheduler"
+    Write: [
+      'CreateDataset',
+      'CreateInferenceScheduler',
+      'CreateModel',
+      'DeleteDataset',
+      'DeleteInferenceScheduler',
+      'DeleteModel',
+      'StartDataIngestionJob',
+      'StartInferenceScheduler',
+      'StopInferenceScheduler',
+      'UpdateInferenceScheduler'
     ],
-    "Read": [
-      "DescribeDataIngestionJob",
-      "DescribeDataset",
-      "DescribeInferenceScheduler",
-      "DescribeModel",
-      "ListInferenceExecutions",
-      "ListTagsForResource"
+    Read: [
+      'DescribeDataIngestionJob',
+      'DescribeDataset',
+      'DescribeInferenceScheduler',
+      'DescribeModel',
+      'ListInferenceExecutions',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListDataIngestionJobs",
-      "ListDatasets",
-      "ListInferenceSchedulers",
-      "ListModels"
+    List: [
+      'ListDataIngestionJobs',
+      'ListDatasets',
+      'ListInferenceSchedulers',
+      'ListModels'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [servicequotas](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicequotas.html).
@@ -14,7 +14,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -234,30 +234,30 @@ export class Servicequotas extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateServiceQuotaTemplate",
-      "DeleteServiceQuotaIncreaseRequestFromTemplate",
-      "DisassociateServiceQuotaTemplate",
-      "PutServiceQuotaIncreaseRequestIntoTemplate",
-      "RequestServiceQuotaIncrease"
+    Write: [
+      'AssociateServiceQuotaTemplate',
+      'DeleteServiceQuotaIncreaseRequestFromTemplate',
+      'DisassociateServiceQuotaTemplate',
+      'PutServiceQuotaIncreaseRequestIntoTemplate',
+      'RequestServiceQuotaIncrease'
     ],
-    "Read": [
-      "GetAWSDefaultServiceQuota",
-      "GetAssociationForServiceQuotaTemplate",
-      "GetRequestedServiceQuotaChange",
-      "GetServiceQuota",
-      "GetServiceQuotaIncreaseRequestFromTemplate",
-      "ListAWSDefaultServiceQuotas",
-      "ListRequestedServiceQuotaChangeHistory",
-      "ListRequestedServiceQuotaChangeHistoryByQuota",
-      "ListServiceQuotaIncreaseRequestsInTemplate",
-      "ListServiceQuotas",
-      "ListServices",
-      "ListTagsForResource"
+    Read: [
+      'GetAWSDefaultServiceQuota',
+      'GetAssociationForServiceQuotaTemplate',
+      'GetRequestedServiceQuotaChange',
+      'GetServiceQuota',
+      'GetServiceQuotaIncreaseRequestFromTemplate',
+      'ListAWSDefaultServiceQuotas',
+      'ListRequestedServiceQuotaChangeHistory',
+      'ListRequestedServiceQuotaChangeHistoryByQuota',
+      'ListServiceQuotaIncreaseRequestsInTemplate',
+      'ListServiceQuotas',
+      'ListServices',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

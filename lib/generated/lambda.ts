@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [lambda](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html).
@@ -14,7 +14,7 @@ export class Lambda extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -709,75 +709,75 @@ export class Lambda extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Permissions management": [
-      "AddLayerVersionPermission",
-      "AddPermission",
-      "DisableReplication",
-      "EnableReplication",
-      "RemoveLayerVersionPermission",
-      "RemovePermission"
+    'Permissions management': [
+      'AddLayerVersionPermission',
+      'AddPermission',
+      'DisableReplication',
+      'EnableReplication',
+      'RemoveLayerVersionPermission',
+      'RemovePermission'
     ],
-    "Write": [
-      "CreateAlias",
-      "CreateCodeSigningConfig",
-      "CreateEventSourceMapping",
-      "CreateFunction",
-      "DeleteAlias",
-      "DeleteCodeSigningConfig",
-      "DeleteEventSourceMapping",
-      "DeleteFunction",
-      "DeleteFunctionCodeSigningConfig",
-      "DeleteFunctionConcurrency",
-      "DeleteFunctionEventInvokeConfig",
-      "DeleteLayerVersion",
-      "DeleteProvisionedConcurrencyConfig",
-      "InvokeAsync",
-      "InvokeFunction",
-      "PublishLayerVersion",
-      "PublishVersion",
-      "PutFunctionCodeSigningConfig",
-      "PutFunctionConcurrency",
-      "PutFunctionEventInvokeConfig",
-      "PutProvisionedConcurrencyConfig",
-      "UpdateAlias",
-      "UpdateCodeSigningConfig",
-      "UpdateEventSourceMapping",
-      "UpdateFunctionCode",
-      "UpdateFunctionCodeSigningConfig",
-      "UpdateFunctionConfiguration",
-      "UpdateFunctionEventInvokeConfig"
+    Write: [
+      'CreateAlias',
+      'CreateCodeSigningConfig',
+      'CreateEventSourceMapping',
+      'CreateFunction',
+      'DeleteAlias',
+      'DeleteCodeSigningConfig',
+      'DeleteEventSourceMapping',
+      'DeleteFunction',
+      'DeleteFunctionCodeSigningConfig',
+      'DeleteFunctionConcurrency',
+      'DeleteFunctionEventInvokeConfig',
+      'DeleteLayerVersion',
+      'DeleteProvisionedConcurrencyConfig',
+      'InvokeAsync',
+      'InvokeFunction',
+      'PublishLayerVersion',
+      'PublishVersion',
+      'PutFunctionCodeSigningConfig',
+      'PutFunctionConcurrency',
+      'PutFunctionEventInvokeConfig',
+      'PutProvisionedConcurrencyConfig',
+      'UpdateAlias',
+      'UpdateCodeSigningConfig',
+      'UpdateEventSourceMapping',
+      'UpdateFunctionCode',
+      'UpdateFunctionCodeSigningConfig',
+      'UpdateFunctionConfiguration',
+      'UpdateFunctionEventInvokeConfig'
     ],
-    "Read": [
-      "GetAccountSettings",
-      "GetAlias",
-      "GetCodeSigningConfig",
-      "GetEventSourceMapping",
-      "GetFunction",
-      "GetFunctionCodeSigningConfig",
-      "GetFunctionConcurrency",
-      "GetFunctionConfiguration",
-      "GetFunctionEventInvokeConfig",
-      "GetLayerVersion",
-      "GetLayerVersionPolicy",
-      "GetPolicy",
-      "GetProvisionedConcurrencyConfig",
-      "ListTags"
+    Read: [
+      'GetAccountSettings',
+      'GetAlias',
+      'GetCodeSigningConfig',
+      'GetEventSourceMapping',
+      'GetFunction',
+      'GetFunctionCodeSigningConfig',
+      'GetFunctionConcurrency',
+      'GetFunctionConfiguration',
+      'GetFunctionEventInvokeConfig',
+      'GetLayerVersion',
+      'GetLayerVersionPolicy',
+      'GetPolicy',
+      'GetProvisionedConcurrencyConfig',
+      'ListTags'
     ],
-    "List": [
-      "ListAliases",
-      "ListCodeSigningConfigs",
-      "ListEventSourceMappings",
-      "ListFunctionEventInvokeConfigs",
-      "ListFunctions",
-      "ListFunctionsByCodeSigningConfig",
-      "ListLayerVersions",
-      "ListLayers",
-      "ListProvisionedConcurrencyConfigs",
-      "ListVersionsByFunction"
+    List: [
+      'ListAliases',
+      'ListCodeSigningConfigs',
+      'ListEventSourceMappings',
+      'ListFunctionEventInvokeConfigs',
+      'ListFunctions',
+      'ListFunctionsByCodeSigningConfig',
+      'ListLayerVersions',
+      'ListLayers',
+      'ListProvisionedConcurrencyConfigs',
+      'ListVersionsByFunction'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

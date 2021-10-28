@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [dms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html).
@@ -14,7 +14,7 @@ export class Dms extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -654,65 +654,65 @@ export class Dms extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Tagging": [
-      "AddTagsToResource",
-      "RemoveTagsFromResource"
+    Tagging: [
+      'AddTagsToResource',
+      'RemoveTagsFromResource'
     ],
-    "Write": [
-      "ApplyPendingMaintenanceAction",
-      "CancelReplicationTaskAssessmentRun",
-      "CreateEndpoint",
-      "CreateEventSubscription",
-      "CreateReplicationInstance",
-      "CreateReplicationSubnetGroup",
-      "CreateReplicationTask",
-      "DeleteCertificate",
-      "DeleteConnection",
-      "DeleteEndpoint",
-      "DeleteEventSubscription",
-      "DeleteReplicationInstance",
-      "DeleteReplicationSubnetGroup",
-      "DeleteReplicationTask",
-      "DeleteReplicationTaskAssessmentRun",
-      "ImportCertificate",
-      "ModifyEndpoint",
-      "ModifyEventSubscription",
-      "ModifyReplicationInstance",
-      "ModifyReplicationSubnetGroup",
-      "ModifyReplicationTask",
-      "MoveReplicationTask",
-      "RebootReplicationInstance",
-      "RefreshSchemas",
-      "ReloadTables",
-      "StartReplicationTask",
-      "StartReplicationTaskAssessment",
-      "StartReplicationTaskAssessmentRun",
-      "StopReplicationTask"
+    Write: [
+      'ApplyPendingMaintenanceAction',
+      'CancelReplicationTaskAssessmentRun',
+      'CreateEndpoint',
+      'CreateEventSubscription',
+      'CreateReplicationInstance',
+      'CreateReplicationSubnetGroup',
+      'CreateReplicationTask',
+      'DeleteCertificate',
+      'DeleteConnection',
+      'DeleteEndpoint',
+      'DeleteEventSubscription',
+      'DeleteReplicationInstance',
+      'DeleteReplicationSubnetGroup',
+      'DeleteReplicationTask',
+      'DeleteReplicationTaskAssessmentRun',
+      'ImportCertificate',
+      'ModifyEndpoint',
+      'ModifyEventSubscription',
+      'ModifyReplicationInstance',
+      'ModifyReplicationSubnetGroup',
+      'ModifyReplicationTask',
+      'MoveReplicationTask',
+      'RebootReplicationInstance',
+      'RefreshSchemas',
+      'ReloadTables',
+      'StartReplicationTask',
+      'StartReplicationTaskAssessment',
+      'StartReplicationTaskAssessmentRun',
+      'StopReplicationTask'
     ],
-    "Read": [
-      "DescribeAccountAttributes",
-      "DescribeApplicableIndividualAssessments",
-      "DescribeCertificates",
-      "DescribeConnections",
-      "DescribeEndpointSettings",
-      "DescribeEndpointTypes",
-      "DescribeEndpoints",
-      "DescribeEventCategories",
-      "DescribeEventSubscriptions",
-      "DescribeEvents",
-      "DescribeOrderableReplicationInstances",
-      "DescribeRefreshSchemasStatus",
-      "DescribeReplicationInstanceTaskLogs",
-      "DescribeReplicationInstances",
-      "DescribeReplicationSubnetGroups",
-      "DescribeReplicationTaskAssessmentResults",
-      "DescribeReplicationTaskAssessmentRuns",
-      "DescribeReplicationTaskIndividualAssessments",
-      "DescribeReplicationTasks",
-      "DescribeSchemas",
-      "DescribeTableStatistics",
-      "ListTagsForResource",
-      "TestConnection"
+    Read: [
+      'DescribeAccountAttributes',
+      'DescribeApplicableIndividualAssessments',
+      'DescribeCertificates',
+      'DescribeConnections',
+      'DescribeEndpointSettings',
+      'DescribeEndpointTypes',
+      'DescribeEndpoints',
+      'DescribeEventCategories',
+      'DescribeEventSubscriptions',
+      'DescribeEvents',
+      'DescribeOrderableReplicationInstances',
+      'DescribeRefreshSchemasStatus',
+      'DescribeReplicationInstanceTaskLogs',
+      'DescribeReplicationInstances',
+      'DescribeReplicationSubnetGroups',
+      'DescribeReplicationTaskAssessmentResults',
+      'DescribeReplicationTaskAssessmentRuns',
+      'DescribeReplicationTaskIndividualAssessments',
+      'DescribeReplicationTasks',
+      'DescribeSchemas',
+      'DescribeTableStatistics',
+      'ListTagsForResource',
+      'TestConnection'
     ]
   };
 

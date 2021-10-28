@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [directconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdirectconnect.html).
@@ -14,7 +14,7 @@ export class Directconnect extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -715,72 +715,72 @@ export class Directconnect extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AcceptDirectConnectGatewayAssociationProposal",
-      "AllocateConnectionOnInterconnect",
-      "AllocateHostedConnection",
-      "AllocatePrivateVirtualInterface",
-      "AllocatePublicVirtualInterface",
-      "AllocateTransitVirtualInterface",
-      "AssociateConnectionWithLag",
-      "AssociateHostedConnection",
-      "AssociateMacSecKey",
-      "AssociateVirtualInterface",
-      "ConfirmConnection",
-      "ConfirmPrivateVirtualInterface",
-      "ConfirmPublicVirtualInterface",
-      "ConfirmTransitVirtualInterface",
-      "CreateBGPPeer",
-      "CreateConnection",
-      "CreateDirectConnectGateway",
-      "CreateDirectConnectGatewayAssociation",
-      "CreateDirectConnectGatewayAssociationProposal",
-      "CreateInterconnect",
-      "CreateLag",
-      "CreatePrivateVirtualInterface",
-      "CreatePublicVirtualInterface",
-      "CreateTransitVirtualInterface",
-      "DeleteBGPPeer",
-      "DeleteConnection",
-      "DeleteDirectConnectGateway",
-      "DeleteDirectConnectGatewayAssociation",
-      "DeleteDirectConnectGatewayAssociationProposal",
-      "DeleteInterconnect",
-      "DeleteLag",
-      "DeleteVirtualInterface",
-      "DisassociateConnectionFromLag",
-      "DisassociateMacSecKey",
-      "StartBgpFailoverTest",
-      "StopBgpFailoverTest",
-      "UpdateConnection",
-      "UpdateDirectConnectGatewayAssociation",
-      "UpdateLag",
-      "UpdateVirtualInterfaceAttributes"
+    Write: [
+      'AcceptDirectConnectGatewayAssociationProposal',
+      'AllocateConnectionOnInterconnect',
+      'AllocateHostedConnection',
+      'AllocatePrivateVirtualInterface',
+      'AllocatePublicVirtualInterface',
+      'AllocateTransitVirtualInterface',
+      'AssociateConnectionWithLag',
+      'AssociateHostedConnection',
+      'AssociateMacSecKey',
+      'AssociateVirtualInterface',
+      'ConfirmConnection',
+      'ConfirmPrivateVirtualInterface',
+      'ConfirmPublicVirtualInterface',
+      'ConfirmTransitVirtualInterface',
+      'CreateBGPPeer',
+      'CreateConnection',
+      'CreateDirectConnectGateway',
+      'CreateDirectConnectGatewayAssociation',
+      'CreateDirectConnectGatewayAssociationProposal',
+      'CreateInterconnect',
+      'CreateLag',
+      'CreatePrivateVirtualInterface',
+      'CreatePublicVirtualInterface',
+      'CreateTransitVirtualInterface',
+      'DeleteBGPPeer',
+      'DeleteConnection',
+      'DeleteDirectConnectGateway',
+      'DeleteDirectConnectGatewayAssociation',
+      'DeleteDirectConnectGatewayAssociationProposal',
+      'DeleteInterconnect',
+      'DeleteLag',
+      'DeleteVirtualInterface',
+      'DisassociateConnectionFromLag',
+      'DisassociateMacSecKey',
+      'StartBgpFailoverTest',
+      'StopBgpFailoverTest',
+      'UpdateConnection',
+      'UpdateDirectConnectGatewayAssociation',
+      'UpdateLag',
+      'UpdateVirtualInterfaceAttributes'
     ],
-    "Read": [
-      "DescribeConnectionLoa",
-      "DescribeConnections",
-      "DescribeConnectionsOnInterconnect",
-      "DescribeDirectConnectGatewayAssociationProposals",
-      "DescribeDirectConnectGatewayAssociations",
-      "DescribeDirectConnectGatewayAttachments",
-      "DescribeDirectConnectGateways",
-      "DescribeHostedConnections",
-      "DescribeInterconnectLoa",
-      "DescribeInterconnects",
-      "DescribeLags",
-      "DescribeLoa",
-      "DescribeTags",
-      "DescribeVirtualGateways",
-      "DescribeVirtualInterfaces"
+    Read: [
+      'DescribeConnectionLoa',
+      'DescribeConnections',
+      'DescribeConnectionsOnInterconnect',
+      'DescribeDirectConnectGatewayAssociationProposals',
+      'DescribeDirectConnectGatewayAssociations',
+      'DescribeDirectConnectGatewayAttachments',
+      'DescribeDirectConnectGateways',
+      'DescribeHostedConnections',
+      'DescribeInterconnectLoa',
+      'DescribeInterconnects',
+      'DescribeLags',
+      'DescribeLoa',
+      'DescribeTags',
+      'DescribeVirtualGateways',
+      'DescribeVirtualInterfaces'
     ],
-    "List": [
-      "DescribeLocations",
-      "ListVirtualInterfaceTestHistory"
+    List: [
+      'DescribeLocations',
+      'ListVirtualInterfaceTestHistory'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

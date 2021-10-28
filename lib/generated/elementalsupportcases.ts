@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [elemental-support-cases](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalsupportcases.html).
@@ -14,7 +14,7 @@ export class ElementalSupportCases extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -74,14 +74,14 @@ export class ElementalSupportCases extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CheckCasePermission",
-      "CreateCase",
-      "UpdateCase"
+    Write: [
+      'CheckCasePermission',
+      'CreateCase',
+      'UpdateCase'
     ],
-    "Read": [
-      "GetCase",
-      "GetCases"
+    Read: [
+      'GetCase',
+      'GetCases'
     ]
   };
 }

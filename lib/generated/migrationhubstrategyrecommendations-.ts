@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [migrationhub-strategy](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmigrationhubstrategyrecommendations..html).
@@ -14,7 +14,7 @@ export class MigrationhubStrategy extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -305,37 +305,37 @@ export class MigrationhubStrategy extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "GetAntiPattern",
-      "GetApplicationComponentDetails",
-      "GetApplicationComponentStrategies",
-      "GetAssessment",
-      "GetImportFileTask",
-      "GetMessage",
-      "GetPortfolioPreferences",
-      "GetPortfolioSummary",
-      "GetRecommendationReportDetails",
-      "GetServerDetails",
-      "GetServerStrategies"
+    Read: [
+      'GetAntiPattern',
+      'GetApplicationComponentDetails',
+      'GetApplicationComponentStrategies',
+      'GetAssessment',
+      'GetImportFileTask',
+      'GetMessage',
+      'GetPortfolioPreferences',
+      'GetPortfolioSummary',
+      'GetRecommendationReportDetails',
+      'GetServerDetails',
+      'GetServerStrategies'
     ],
-    "List": [
-      "ListAntiPatterns",
-      "ListApplicationComponents",
-      "ListCollectors",
-      "ListImportFileTask",
-      "ListJarArtifacts",
-      "ListServers"
+    List: [
+      'ListAntiPatterns',
+      'ListApplicationComponents',
+      'ListCollectors',
+      'ListImportFileTask',
+      'ListJarArtifacts',
+      'ListServers'
     ],
-    "Write": [
-      "PutPortfolioPreferences",
-      "RegisterCollector",
-      "SendMessage",
-      "StartAssessment",
-      "StartImportFileTask",
-      "StartRecommendationReportGeneration",
-      "StopAssessment",
-      "UpdateApplicationComponentConfig",
-      "UpdateServerConfig"
+    Write: [
+      'PutPortfolioPreferences',
+      'RegisterCollector',
+      'SendMessage',
+      'StartAssessment',
+      'StartImportFileTask',
+      'StartRecommendationReportGeneration',
+      'StopAssessment',
+      'UpdateApplicationComponentConfig',
+      'UpdateServerConfig'
     ]
   };
 }

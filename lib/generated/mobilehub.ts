@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [mobilehub](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmobilehub.html).
@@ -14,7 +14,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -272,34 +272,34 @@ export class Mobilehub extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateProject",
-      "CreateServiceRole",
-      "DeleteProject",
-      "DeleteProjectSnapshot",
-      "DeployToStage",
-      "ImportProject",
-      "InstallBundle",
-      "SynchronizeProject",
-      "UpdateProject"
+    Write: [
+      'CreateProject',
+      'CreateServiceRole',
+      'DeleteProject',
+      'DeleteProjectSnapshot',
+      'DeployToStage',
+      'ImportProject',
+      'InstallBundle',
+      'SynchronizeProject',
+      'UpdateProject'
     ],
-    "Read": [
-      "DescribeBundle",
-      "ExportBundle",
-      "ExportProject",
-      "GenerateProjectParameters",
-      "GetProject",
-      "GetProjectSnapshot",
-      "ValidateProject",
-      "VerifyServiceRole"
+    Read: [
+      'DescribeBundle',
+      'ExportBundle',
+      'ExportProject',
+      'GenerateProjectParameters',
+      'GetProject',
+      'GetProjectSnapshot',
+      'ValidateProject',
+      'VerifyServiceRole'
     ],
-    "List": [
-      "ListAvailableConnectors",
-      "ListAvailableFeatures",
-      "ListAvailableRegions",
-      "ListBundles",
-      "ListProjectSnapshots",
-      "ListProjects"
+    List: [
+      'ListAvailableConnectors',
+      'ListAvailableFeatures',
+      'ListAvailableRegions',
+      'ListBundles',
+      'ListProjectSnapshots',
+      'ListProjects'
     ]
   };
 

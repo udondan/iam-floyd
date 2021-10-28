@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [aws-cloud-control-api](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudcontrolapi.html).
@@ -14,7 +14,7 @@ export class AwsCloudControlApi extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -107,17 +107,17 @@ export class AwsCloudControlApi extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CancelResourceRequest",
-      "CreateResource",
-      "DeleteResource",
-      "UpdateResource"
+    Write: [
+      'CancelResourceRequest',
+      'CreateResource',
+      'DeleteResource',
+      'UpdateResource'
     ],
-    "Read": [
-      "GetResource",
-      "GetResourceRequestStatus",
-      "ListResourceRequests",
-      "ListResources"
+    Read: [
+      'GetResource',
+      'GetResourceRequestStatus',
+      'ListResourceRequests',
+      'ListResources'
     ]
   };
 }

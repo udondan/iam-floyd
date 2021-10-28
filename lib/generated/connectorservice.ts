@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [awsconnector](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsconnectorservice.html).
@@ -14,7 +14,7 @@ export class Awsconnector extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -52,12 +52,12 @@ export class Awsconnector extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "GetConnectorHealth",
-      "ValidateConnectorId"
+    Read: [
+      'GetConnectorHealth',
+      'ValidateConnectorId'
     ],
-    "Write": [
-      "RegisterConnector"
+    Write: [
+      'RegisterConnector'
     ]
   };
 }

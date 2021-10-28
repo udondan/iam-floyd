@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [elasticache](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticache.html).
@@ -14,7 +14,7 @@ export class Elasticache extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -1077,78 +1077,78 @@ export class Elasticache extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Tagging": [
-      "AddTagsToResource",
-      "RemoveTagsFromResource"
+    Tagging: [
+      'AddTagsToResource',
+      'RemoveTagsFromResource'
     ],
-    "Write": [
-      "AuthorizeCacheSecurityGroupIngress",
-      "BatchApplyUpdateAction",
-      "BatchStopUpdateAction",
-      "CompleteMigration",
-      "CopySnapshot",
-      "CreateCacheCluster",
-      "CreateCacheParameterGroup",
-      "CreateCacheSecurityGroup",
-      "CreateCacheSubnetGroup",
-      "CreateGlobalReplicationGroup",
-      "CreateReplicationGroup",
-      "CreateSnapshot",
-      "CreateUser",
-      "CreateUserGroup",
-      "DecreaseNodeGroupsInGlobalReplicationGroup",
-      "DecreaseReplicaCount",
-      "DeleteCacheCluster",
-      "DeleteCacheParameterGroup",
-      "DeleteCacheSecurityGroup",
-      "DeleteCacheSubnetGroup",
-      "DeleteGlobalReplicationGroup",
-      "DeleteReplicationGroup",
-      "DeleteSnapshot",
-      "DeleteUser",
-      "DeleteUserGroup",
-      "DisassociateGlobalReplicationGroup",
-      "FailoverGlobalReplicationGroup",
-      "IncreaseNodeGroupsInGlobalReplicationGroup",
-      "IncreaseReplicaCount",
-      "ModifyCacheCluster",
-      "ModifyCacheParameterGroup",
-      "ModifyCacheSubnetGroup",
-      "ModifyGlobalReplicationGroup",
-      "ModifyReplicationGroup",
-      "ModifyReplicationGroupShardConfiguration",
-      "ModifyUser",
-      "ModifyUserGroup",
-      "PurchaseReservedCacheNodesOffering",
-      "RebalanceSlotsInGlobalReplicationGroup",
-      "RebootCacheCluster",
-      "ResetCacheParameterGroup",
-      "RevokeCacheSecurityGroupIngress",
-      "StartMigration",
-      "TestFailover"
+    Write: [
+      'AuthorizeCacheSecurityGroupIngress',
+      'BatchApplyUpdateAction',
+      'BatchStopUpdateAction',
+      'CompleteMigration',
+      'CopySnapshot',
+      'CreateCacheCluster',
+      'CreateCacheParameterGroup',
+      'CreateCacheSecurityGroup',
+      'CreateCacheSubnetGroup',
+      'CreateGlobalReplicationGroup',
+      'CreateReplicationGroup',
+      'CreateSnapshot',
+      'CreateUser',
+      'CreateUserGroup',
+      'DecreaseNodeGroupsInGlobalReplicationGroup',
+      'DecreaseReplicaCount',
+      'DeleteCacheCluster',
+      'DeleteCacheParameterGroup',
+      'DeleteCacheSecurityGroup',
+      'DeleteCacheSubnetGroup',
+      'DeleteGlobalReplicationGroup',
+      'DeleteReplicationGroup',
+      'DeleteSnapshot',
+      'DeleteUser',
+      'DeleteUserGroup',
+      'DisassociateGlobalReplicationGroup',
+      'FailoverGlobalReplicationGroup',
+      'IncreaseNodeGroupsInGlobalReplicationGroup',
+      'IncreaseReplicaCount',
+      'ModifyCacheCluster',
+      'ModifyCacheParameterGroup',
+      'ModifyCacheSubnetGroup',
+      'ModifyGlobalReplicationGroup',
+      'ModifyReplicationGroup',
+      'ModifyReplicationGroupShardConfiguration',
+      'ModifyUser',
+      'ModifyUserGroup',
+      'PurchaseReservedCacheNodesOffering',
+      'RebalanceSlotsInGlobalReplicationGroup',
+      'RebootCacheCluster',
+      'ResetCacheParameterGroup',
+      'RevokeCacheSecurityGroupIngress',
+      'StartMigration',
+      'TestFailover'
     ],
-    "List": [
-      "DescribeCacheClusters",
-      "DescribeCacheEngineVersions",
-      "DescribeCacheParameterGroups",
-      "DescribeCacheParameters",
-      "DescribeCacheSecurityGroups",
-      "DescribeCacheSubnetGroups",
-      "DescribeEngineDefaultParameters",
-      "DescribeEvents",
-      "DescribeGlobalReplicationGroups",
-      "DescribeReplicationGroups",
-      "DescribeReservedCacheNodes",
-      "DescribeReservedCacheNodesOfferings",
-      "DescribeServiceUpdates",
-      "DescribeSnapshots",
-      "DescribeUpdateActions",
-      "DescribeUserGroups",
-      "DescribeUsers",
-      "ListAllowedNodeTypeModifications"
+    List: [
+      'DescribeCacheClusters',
+      'DescribeCacheEngineVersions',
+      'DescribeCacheParameterGroups',
+      'DescribeCacheParameters',
+      'DescribeCacheSecurityGroups',
+      'DescribeCacheSubnetGroups',
+      'DescribeEngineDefaultParameters',
+      'DescribeEvents',
+      'DescribeGlobalReplicationGroups',
+      'DescribeReplicationGroups',
+      'DescribeReservedCacheNodes',
+      'DescribeReservedCacheNodesOfferings',
+      'DescribeServiceUpdates',
+      'DescribeSnapshots',
+      'DescribeUpdateActions',
+      'DescribeUserGroups',
+      'DescribeUsers',
+      'ListAllowedNodeTypeModifications'
     ],
-    "Read": [
-      "ListTagsForResource"
+    Read: [
+      'ListTagsForResource'
     ]
   };
 

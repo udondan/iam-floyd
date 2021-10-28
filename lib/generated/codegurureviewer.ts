@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [codeguru-reviewer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncodegurureviewer.html).
@@ -14,7 +14,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -256,30 +256,30 @@ export class CodeguruReviewer extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateRepository",
-      "CreateCodeReview",
-      "DisassociateRepository",
-      "PutRecommendationFeedback"
+    Write: [
+      'AssociateRepository',
+      'CreateCodeReview',
+      'DisassociateRepository',
+      'PutRecommendationFeedback'
     ],
-    "Read": [
-      "CreateConnectionToken",
-      "DescribeCodeReview",
-      "DescribeRecommendationFeedback",
-      "DescribeRepositoryAssociation",
-      "GetMetricsData",
-      "ListThirdPartyRepositories"
+    Read: [
+      'CreateConnectionToken',
+      'DescribeCodeReview',
+      'DescribeRecommendationFeedback',
+      'DescribeRepositoryAssociation',
+      'GetMetricsData',
+      'ListThirdPartyRepositories'
     ],
-    "List": [
-      "ListCodeReviews",
-      "ListRecommendationFeedback",
-      "ListRecommendations",
-      "ListRepositoryAssociations",
-      "ListTagsForResource"
+    List: [
+      'ListCodeReviews',
+      'ListRecommendationFeedback',
+      'ListRecommendations',
+      'ListRepositoryAssociations',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UnTagResource"
+    Tagging: [
+      'TagResource',
+      'UnTagResource'
     ]
   };
 

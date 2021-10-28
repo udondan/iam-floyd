@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [workspaces](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkspaces.html).
@@ -14,7 +14,7 @@ export class Workspaces extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -651,69 +651,69 @@ export class Workspaces extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateConnectionAlias",
-      "AssociateIpGroups",
-      "AuthorizeIpRules",
-      "CopyWorkspaceImage",
-      "CreateConnectionAlias",
-      "CreateIpGroup",
-      "CreateUpdatedWorkspaceImage",
-      "CreateWorkspaceBundle",
-      "CreateWorkspaces",
-      "DeleteConnectionAlias",
-      "DeleteIpGroup",
-      "DeleteWorkspaceBundle",
-      "DeleteWorkspaceImage",
-      "DeregisterWorkspaceDirectory",
-      "DisassociateConnectionAlias",
-      "DisassociateIpGroups",
-      "ImportWorkspaceImage",
-      "MigrateWorkspace",
-      "ModifyAccount",
-      "ModifyClientProperties",
-      "ModifyWorkspaceAccessProperties",
-      "ModifyWorkspaceCreationProperties",
-      "ModifyWorkspaceProperties",
-      "ModifyWorkspaceState",
-      "RebootWorkspaces",
-      "RebuildWorkspaces",
-      "RegisterWorkspaceDirectory",
-      "RestoreWorkspace",
-      "RevokeIpRules",
-      "StartWorkspaces",
-      "StopWorkspaces",
-      "TerminateWorkspaces",
-      "UpdateRulesOfIpGroup",
-      "UpdateWorkspaceBundle"
+    Write: [
+      'AssociateConnectionAlias',
+      'AssociateIpGroups',
+      'AuthorizeIpRules',
+      'CopyWorkspaceImage',
+      'CreateConnectionAlias',
+      'CreateIpGroup',
+      'CreateUpdatedWorkspaceImage',
+      'CreateWorkspaceBundle',
+      'CreateWorkspaces',
+      'DeleteConnectionAlias',
+      'DeleteIpGroup',
+      'DeleteWorkspaceBundle',
+      'DeleteWorkspaceImage',
+      'DeregisterWorkspaceDirectory',
+      'DisassociateConnectionAlias',
+      'DisassociateIpGroups',
+      'ImportWorkspaceImage',
+      'MigrateWorkspace',
+      'ModifyAccount',
+      'ModifyClientProperties',
+      'ModifyWorkspaceAccessProperties',
+      'ModifyWorkspaceCreationProperties',
+      'ModifyWorkspaceProperties',
+      'ModifyWorkspaceState',
+      'RebootWorkspaces',
+      'RebuildWorkspaces',
+      'RegisterWorkspaceDirectory',
+      'RestoreWorkspace',
+      'RevokeIpRules',
+      'StartWorkspaces',
+      'StopWorkspaces',
+      'TerminateWorkspaces',
+      'UpdateRulesOfIpGroup',
+      'UpdateWorkspaceBundle'
     ],
-    "Tagging": [
-      "CreateTags",
-      "DeleteTags"
+    Tagging: [
+      'CreateTags',
+      'DeleteTags'
     ],
-    "Read": [
-      "DescribeAccount",
-      "DescribeAccountModifications",
-      "DescribeConnectionAliasPermissions",
-      "DescribeConnectionAliases",
-      "DescribeIpGroups",
-      "DescribeWorkspaceDirectories",
-      "DescribeWorkspaceImagePermissions",
-      "DescribeWorkspacesConnectionStatus"
+    Read: [
+      'DescribeAccount',
+      'DescribeAccountModifications',
+      'DescribeConnectionAliasPermissions',
+      'DescribeConnectionAliases',
+      'DescribeIpGroups',
+      'DescribeWorkspaceDirectories',
+      'DescribeWorkspaceImagePermissions',
+      'DescribeWorkspacesConnectionStatus'
     ],
-    "List": [
-      "DescribeClientProperties",
-      "DescribeTags",
-      "DescribeWorkspaceBundles",
-      "DescribeWorkspaceImages",
-      "DescribeWorkspaceSnapshots",
-      "DescribeWorkspaces",
-      "ListAvailableManagementCidrRanges"
+    List: [
+      'DescribeClientProperties',
+      'DescribeTags',
+      'DescribeWorkspaceBundles',
+      'DescribeWorkspaceImages',
+      'DescribeWorkspaceSnapshots',
+      'DescribeWorkspaces',
+      'ListAvailableManagementCidrRanges'
     ],
-    "Permissions management": [
-      "ModifySelfservicePermissions",
-      "UpdateConnectionAliasPermission",
-      "UpdateWorkspaceImagePermission"
+    'Permissions management': [
+      'ModifySelfservicePermissions',
+      'UpdateConnectionAliasPermission',
+      'UpdateWorkspaceImagePermission'
     ]
   };
 

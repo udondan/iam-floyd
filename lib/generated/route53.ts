@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [route53](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53.html).
@@ -14,7 +14,7 @@ export class Route53 extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -735,77 +735,77 @@ export class Route53 extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "ActivateKeySigningKey",
-      "AssociateVPCWithHostedZone",
-      "ChangeResourceRecordSets",
-      "CreateHealthCheck",
-      "CreateHostedZone",
-      "CreateKeySigningKey",
-      "CreateQueryLoggingConfig",
-      "CreateReusableDelegationSet",
-      "CreateTrafficPolicy",
-      "CreateTrafficPolicyInstance",
-      "CreateTrafficPolicyVersion",
-      "CreateVPCAssociationAuthorization",
-      "DeactivateKeySigningKey",
-      "DeleteHealthCheck",
-      "DeleteHostedZone",
-      "DeleteKeySigningKey",
-      "DeleteQueryLoggingConfig",
-      "DeleteReusableDelegationSet",
-      "DeleteTrafficPolicy",
-      "DeleteTrafficPolicyInstance",
-      "DeleteVPCAssociationAuthorization",
-      "DisableHostedZoneDNSSEC",
-      "DisassociateVPCFromHostedZone",
-      "EnableHostedZoneDNSSEC",
-      "UpdateHealthCheck",
-      "UpdateHostedZoneComment",
-      "UpdateTrafficPolicyComment",
-      "UpdateTrafficPolicyInstance"
+    Write: [
+      'ActivateKeySigningKey',
+      'AssociateVPCWithHostedZone',
+      'ChangeResourceRecordSets',
+      'CreateHealthCheck',
+      'CreateHostedZone',
+      'CreateKeySigningKey',
+      'CreateQueryLoggingConfig',
+      'CreateReusableDelegationSet',
+      'CreateTrafficPolicy',
+      'CreateTrafficPolicyInstance',
+      'CreateTrafficPolicyVersion',
+      'CreateVPCAssociationAuthorization',
+      'DeactivateKeySigningKey',
+      'DeleteHealthCheck',
+      'DeleteHostedZone',
+      'DeleteKeySigningKey',
+      'DeleteQueryLoggingConfig',
+      'DeleteReusableDelegationSet',
+      'DeleteTrafficPolicy',
+      'DeleteTrafficPolicyInstance',
+      'DeleteVPCAssociationAuthorization',
+      'DisableHostedZoneDNSSEC',
+      'DisassociateVPCFromHostedZone',
+      'EnableHostedZoneDNSSEC',
+      'UpdateHealthCheck',
+      'UpdateHostedZoneComment',
+      'UpdateTrafficPolicyComment',
+      'UpdateTrafficPolicyInstance'
     ],
-    "Tagging": [
-      "ChangeTagsForResource"
+    Tagging: [
+      'ChangeTagsForResource'
     ],
-    "Read": [
-      "GetAccountLimit",
-      "GetDNSSEC",
-      "GetHealthCheck",
-      "GetHostedZoneLimit",
-      "GetQueryLoggingConfig",
-      "GetReusableDelegationSetLimit",
-      "GetTrafficPolicy",
-      "GetTrafficPolicyInstance",
-      "GetTrafficPolicyInstanceCount",
-      "TestDNSAnswer"
+    Read: [
+      'GetAccountLimit',
+      'GetDNSSEC',
+      'GetHealthCheck',
+      'GetHostedZoneLimit',
+      'GetQueryLoggingConfig',
+      'GetReusableDelegationSetLimit',
+      'GetTrafficPolicy',
+      'GetTrafficPolicyInstance',
+      'GetTrafficPolicyInstanceCount',
+      'TestDNSAnswer'
     ],
-    "List": [
-      "GetChange",
-      "GetCheckerIpRanges",
-      "GetGeoLocation",
-      "GetHealthCheckCount",
-      "GetHealthCheckLastFailureReason",
-      "GetHealthCheckStatus",
-      "GetHostedZone",
-      "GetHostedZoneCount",
-      "GetReusableDelegationSet",
-      "ListGeoLocations",
-      "ListHealthChecks",
-      "ListHostedZones",
-      "ListHostedZonesByName",
-      "ListHostedZonesByVPC",
-      "ListQueryLoggingConfigs",
-      "ListResourceRecordSets",
-      "ListReusableDelegationSets",
-      "ListTagsForResource",
-      "ListTagsForResources",
-      "ListTrafficPolicies",
-      "ListTrafficPolicyInstances",
-      "ListTrafficPolicyInstancesByHostedZone",
-      "ListTrafficPolicyInstancesByPolicy",
-      "ListTrafficPolicyVersions",
-      "ListVPCAssociationAuthorizations"
+    List: [
+      'GetChange',
+      'GetCheckerIpRanges',
+      'GetGeoLocation',
+      'GetHealthCheckCount',
+      'GetHealthCheckLastFailureReason',
+      'GetHealthCheckStatus',
+      'GetHostedZone',
+      'GetHostedZoneCount',
+      'GetReusableDelegationSet',
+      'ListGeoLocations',
+      'ListHealthChecks',
+      'ListHostedZones',
+      'ListHostedZonesByName',
+      'ListHostedZonesByVPC',
+      'ListQueryLoggingConfigs',
+      'ListResourceRecordSets',
+      'ListReusableDelegationSets',
+      'ListTagsForResource',
+      'ListTagsForResources',
+      'ListTrafficPolicies',
+      'ListTrafficPolicyInstances',
+      'ListTrafficPolicyInstancesByHostedZone',
+      'ListTrafficPolicyInstancesByPolicy',
+      'ListTrafficPolicyVersions',
+      'ListVPCAssociationAuthorizations'
     ]
   };
 

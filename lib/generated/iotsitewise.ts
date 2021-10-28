@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [iotsitewise](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html).
@@ -14,7 +14,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -722,73 +722,73 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateAssets",
-      "BatchAssociateProjectAssets",
-      "BatchDisassociateProjectAssets",
-      "BatchPutAssetPropertyValue",
-      "CreateAccessPolicy",
-      "CreateAsset",
-      "CreateAssetModel",
-      "CreateDashboard",
-      "CreateGateway",
-      "CreatePortal",
-      "CreateProject",
-      "DeleteAccessPolicy",
-      "DeleteAsset",
-      "DeleteAssetModel",
-      "DeleteDashboard",
-      "DeleteGateway",
-      "DeletePortal",
-      "DeleteProject",
-      "DisassociateAssets",
-      "PutDefaultEncryptionConfiguration",
-      "PutLoggingOptions",
-      "PutStorageConfiguration",
-      "UpdateAccessPolicy",
-      "UpdateAsset",
-      "UpdateAssetModel",
-      "UpdateAssetModelPropertyRouting",
-      "UpdateAssetProperty",
-      "UpdateDashboard",
-      "UpdateGateway",
-      "UpdateGatewayCapabilityConfiguration",
-      "UpdatePortal",
-      "UpdateProject"
+    Write: [
+      'AssociateAssets',
+      'BatchAssociateProjectAssets',
+      'BatchDisassociateProjectAssets',
+      'BatchPutAssetPropertyValue',
+      'CreateAccessPolicy',
+      'CreateAsset',
+      'CreateAssetModel',
+      'CreateDashboard',
+      'CreateGateway',
+      'CreatePortal',
+      'CreateProject',
+      'DeleteAccessPolicy',
+      'DeleteAsset',
+      'DeleteAssetModel',
+      'DeleteDashboard',
+      'DeleteGateway',
+      'DeletePortal',
+      'DeleteProject',
+      'DisassociateAssets',
+      'PutDefaultEncryptionConfiguration',
+      'PutLoggingOptions',
+      'PutStorageConfiguration',
+      'UpdateAccessPolicy',
+      'UpdateAsset',
+      'UpdateAssetModel',
+      'UpdateAssetModelPropertyRouting',
+      'UpdateAssetProperty',
+      'UpdateDashboard',
+      'UpdateGateway',
+      'UpdateGatewayCapabilityConfiguration',
+      'UpdatePortal',
+      'UpdateProject'
     ],
-    "Read": [
-      "DescribeAccessPolicy",
-      "DescribeAsset",
-      "DescribeAssetModel",
-      "DescribeAssetProperty",
-      "DescribeDashboard",
-      "DescribeDefaultEncryptionConfiguration",
-      "DescribeGateway",
-      "DescribeGatewayCapabilityConfiguration",
-      "DescribeLoggingOptions",
-      "DescribePortal",
-      "DescribeProject",
-      "DescribeStorageConfiguration",
-      "GetAssetPropertyAggregates",
-      "GetAssetPropertyValue",
-      "GetAssetPropertyValueHistory",
-      "ListTagsForResource"
+    Read: [
+      'DescribeAccessPolicy',
+      'DescribeAsset',
+      'DescribeAssetModel',
+      'DescribeAssetProperty',
+      'DescribeDashboard',
+      'DescribeDefaultEncryptionConfiguration',
+      'DescribeGateway',
+      'DescribeGatewayCapabilityConfiguration',
+      'DescribeLoggingOptions',
+      'DescribePortal',
+      'DescribeProject',
+      'DescribeStorageConfiguration',
+      'GetAssetPropertyAggregates',
+      'GetAssetPropertyValue',
+      'GetAssetPropertyValueHistory',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListAccessPolicies",
-      "ListAssetModels",
-      "ListAssetRelationships",
-      "ListAssets",
-      "ListAssociatedAssets",
-      "ListDashboards",
-      "ListGateways",
-      "ListPortals",
-      "ListProjectAssets",
-      "ListProjects"
+    List: [
+      'ListAccessPolicies',
+      'ListAssetModels',
+      'ListAssetRelationships',
+      'ListAssets',
+      'ListAssociatedAssets',
+      'ListDashboards',
+      'ListGateways',
+      'ListPortals',
+      'ListProjectAssets',
+      'ListProjects'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

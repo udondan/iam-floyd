@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [kendra](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkendra.html).
@@ -14,7 +14,7 @@ export class Kendra extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -519,56 +519,56 @@ export class Kendra extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "BatchDeleteDocument",
-      "BatchPutDocument",
-      "ClearQuerySuggestions",
-      "CreateDataSource",
-      "CreateFaq",
-      "CreateIndex",
-      "CreateQuerySuggestionsBlockList",
-      "CreateThesaurus",
-      "DeleteDataSource",
-      "DeleteFaq",
-      "DeleteIndex",
-      "DeletePrincipalMapping",
-      "DeleteQuerySuggestionsBlockList",
-      "DeleteThesaurus",
-      "PutPrincipalMapping",
-      "StartDataSourceSyncJob",
-      "StopDataSourceSyncJob",
-      "SubmitFeedback",
-      "UpdateDataSource",
-      "UpdateIndex",
-      "UpdateQuerySuggestionsBlockList",
-      "UpdateQuerySuggestionsConfig",
-      "UpdateThesaurus"
+    Write: [
+      'BatchDeleteDocument',
+      'BatchPutDocument',
+      'ClearQuerySuggestions',
+      'CreateDataSource',
+      'CreateFaq',
+      'CreateIndex',
+      'CreateQuerySuggestionsBlockList',
+      'CreateThesaurus',
+      'DeleteDataSource',
+      'DeleteFaq',
+      'DeleteIndex',
+      'DeletePrincipalMapping',
+      'DeleteQuerySuggestionsBlockList',
+      'DeleteThesaurus',
+      'PutPrincipalMapping',
+      'StartDataSourceSyncJob',
+      'StopDataSourceSyncJob',
+      'SubmitFeedback',
+      'UpdateDataSource',
+      'UpdateIndex',
+      'UpdateQuerySuggestionsBlockList',
+      'UpdateQuerySuggestionsConfig',
+      'UpdateThesaurus'
     ],
-    "Read": [
-      "BatchGetDocumentStatus",
-      "DescribeDataSource",
-      "DescribeFaq",
-      "DescribeIndex",
-      "DescribePrincipalMapping",
-      "DescribeQuerySuggestionsBlockList",
-      "DescribeQuerySuggestionsConfig",
-      "DescribeThesaurus",
-      "GetQuerySuggestions",
-      "ListTagsForResource",
-      "Query"
+    Read: [
+      'BatchGetDocumentStatus',
+      'DescribeDataSource',
+      'DescribeFaq',
+      'DescribeIndex',
+      'DescribePrincipalMapping',
+      'DescribeQuerySuggestionsBlockList',
+      'DescribeQuerySuggestionsConfig',
+      'DescribeThesaurus',
+      'GetQuerySuggestions',
+      'ListTagsForResource',
+      'Query'
     ],
-    "List": [
-      "ListDataSourceSyncJobs",
-      "ListDataSources",
-      "ListFaqs",
-      "ListGroupsOlderThanOrderingId",
-      "ListIndices",
-      "ListQuerySuggestionsBlockLists",
-      "ListThesauri"
+    List: [
+      'ListDataSourceSyncJobs',
+      'ListDataSources',
+      'ListFaqs',
+      'ListGroupsOlderThanOrderingId',
+      'ListIndices',
+      'ListQuerySuggestionsBlockLists',
+      'ListThesauri'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

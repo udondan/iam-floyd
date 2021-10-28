@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [ds](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdirectoryservice.html).
@@ -14,7 +14,7 @@ export class Ds extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -832,81 +832,81 @@ export class Ds extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AcceptSharedDirectory",
-      "AddIpRoutes",
-      "AddRegion",
-      "AuthorizeApplication",
-      "CancelSchemaExtension",
-      "CreateAlias",
-      "CreateComputer",
-      "CreateConditionalForwarder",
-      "CreateLogSubscription",
-      "CreateSnapshot",
-      "CreateTrust",
-      "DeleteConditionalForwarder",
-      "DeleteDirectory",
-      "DeleteLogSubscription",
-      "DeleteSnapshot",
-      "DeleteTrust",
-      "DeregisterCertificate",
-      "DeregisterEventTopic",
-      "DisableClientAuthentication",
-      "DisableLDAPS",
-      "DisableRadius",
-      "DisableSso",
-      "EnableClientAuthentication",
-      "EnableLDAPS",
-      "EnableRadius",
-      "EnableSso",
-      "RegisterCertificate",
-      "RegisterEventTopic",
-      "RejectSharedDirectory",
-      "RemoveIpRoutes",
-      "RemoveRegion",
-      "ResetUserPassword",
-      "RestoreFromSnapshot",
-      "ShareDirectory",
-      "StartSchemaExtension",
-      "UnauthorizeApplication",
-      "UnshareDirectory",
-      "UpdateConditionalForwarder",
-      "UpdateNumberOfDomainControllers",
-      "UpdateRadius",
-      "UpdateTrust"
+    Write: [
+      'AcceptSharedDirectory',
+      'AddIpRoutes',
+      'AddRegion',
+      'AuthorizeApplication',
+      'CancelSchemaExtension',
+      'CreateAlias',
+      'CreateComputer',
+      'CreateConditionalForwarder',
+      'CreateLogSubscription',
+      'CreateSnapshot',
+      'CreateTrust',
+      'DeleteConditionalForwarder',
+      'DeleteDirectory',
+      'DeleteLogSubscription',
+      'DeleteSnapshot',
+      'DeleteTrust',
+      'DeregisterCertificate',
+      'DeregisterEventTopic',
+      'DisableClientAuthentication',
+      'DisableLDAPS',
+      'DisableRadius',
+      'DisableSso',
+      'EnableClientAuthentication',
+      'EnableLDAPS',
+      'EnableRadius',
+      'EnableSso',
+      'RegisterCertificate',
+      'RegisterEventTopic',
+      'RejectSharedDirectory',
+      'RemoveIpRoutes',
+      'RemoveRegion',
+      'ResetUserPassword',
+      'RestoreFromSnapshot',
+      'ShareDirectory',
+      'StartSchemaExtension',
+      'UnauthorizeApplication',
+      'UnshareDirectory',
+      'UpdateConditionalForwarder',
+      'UpdateNumberOfDomainControllers',
+      'UpdateRadius',
+      'UpdateTrust'
     ],
-    "Tagging": [
-      "AddTagsToResource",
-      "ConnectDirectory",
-      "CreateDirectory",
-      "CreateIdentityPoolDirectory",
-      "CreateMicrosoftAD",
-      "RemoveTagsFromResource"
+    Tagging: [
+      'AddTagsToResource',
+      'ConnectDirectory',
+      'CreateDirectory',
+      'CreateIdentityPoolDirectory',
+      'CreateMicrosoftAD',
+      'RemoveTagsFromResource'
     ],
-    "Read": [
-      "CheckAlias",
-      "DescribeCertificate",
-      "DescribeConditionalForwarders",
-      "DescribeDomainControllers",
-      "DescribeEventTopics",
-      "DescribeLDAPSSettings",
-      "DescribeRegions",
-      "DescribeSharedDirectories",
-      "DescribeSnapshots",
-      "DescribeTrusts",
-      "GetAuthorizedApplicationDetails",
-      "GetDirectoryLimits",
-      "GetSnapshotLimits",
-      "ListAuthorizedApplications",
-      "ListIpRoutes",
-      "ListLogSubscriptions",
-      "ListTagsForResource",
-      "VerifyTrust"
+    Read: [
+      'CheckAlias',
+      'DescribeCertificate',
+      'DescribeConditionalForwarders',
+      'DescribeDomainControllers',
+      'DescribeEventTopics',
+      'DescribeLDAPSSettings',
+      'DescribeRegions',
+      'DescribeSharedDirectories',
+      'DescribeSnapshots',
+      'DescribeTrusts',
+      'GetAuthorizedApplicationDetails',
+      'GetDirectoryLimits',
+      'GetSnapshotLimits',
+      'ListAuthorizedApplications',
+      'ListIpRoutes',
+      'ListLogSubscriptions',
+      'ListTagsForResource',
+      'VerifyTrust'
     ],
-    "List": [
-      "DescribeDirectories",
-      "ListCertificates",
-      "ListSchemaExtensions"
+    List: [
+      'DescribeDirectories',
+      'ListCertificates',
+      'ListSchemaExtensions'
     ]
   };
 

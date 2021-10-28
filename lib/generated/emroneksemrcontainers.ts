@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [emr-containers](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonemroneksemrcontainers.html).
@@ -14,7 +14,7 @@ export class EmrContainers extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -205,28 +205,28 @@ export class EmrContainers extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CancelJobRun",
-      "CreateManagedEndpoint",
-      "CreateVirtualCluster",
-      "DeleteManagedEndpoint",
-      "DeleteVirtualCluster",
-      "StartJobRun"
+    Write: [
+      'CancelJobRun',
+      'CreateManagedEndpoint',
+      'CreateVirtualCluster',
+      'DeleteManagedEndpoint',
+      'DeleteVirtualCluster',
+      'StartJobRun'
     ],
-    "Read": [
-      "DescribeJobRun",
-      "DescribeManagedEndpoint",
-      "DescribeVirtualCluster"
+    Read: [
+      'DescribeJobRun',
+      'DescribeManagedEndpoint',
+      'DescribeVirtualCluster'
     ],
-    "List": [
-      "ListJobRuns",
-      "ListManagedEndpoints",
-      "ListTagsForResource",
-      "ListVirtualClusters"
+    List: [
+      'ListJobRuns',
+      'ListManagedEndpoints',
+      'ListTagsForResource',
+      'ListVirtualClusters'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

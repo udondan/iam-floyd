@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [workdocs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworkdocs.html).
@@ -14,7 +14,7 @@ export class Workdocs extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -591,63 +591,63 @@ export class Workdocs extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AbortDocumentVersionUpload",
-      "ActivateUser",
-      "AddResourcePermissions",
-      "AddUserToGroup",
-      "CreateComment",
-      "CreateCustomMetadata",
-      "CreateFolder",
-      "CreateInstance",
-      "CreateLabels",
-      "CreateNotificationSubscription",
-      "CreateUser",
-      "DeactivateUser",
-      "DeleteComment",
-      "DeleteCustomMetadata",
-      "DeleteDocument",
-      "DeleteFolder",
-      "DeleteFolderContents",
-      "DeleteInstance",
-      "DeleteLabels",
-      "DeleteNotificationSubscription",
-      "DeleteUser",
-      "DeregisterDirectory",
-      "InitiateDocumentVersionUpload",
-      "RegisterDirectory",
-      "RemoveAllResourcePermissions",
-      "RemoveResourcePermission",
-      "UpdateDocument",
-      "UpdateDocumentVersion",
-      "UpdateFolder",
-      "UpdateInstanceAlias",
-      "UpdateUser"
+    Write: [
+      'AbortDocumentVersionUpload',
+      'ActivateUser',
+      'AddResourcePermissions',
+      'AddUserToGroup',
+      'CreateComment',
+      'CreateCustomMetadata',
+      'CreateFolder',
+      'CreateInstance',
+      'CreateLabels',
+      'CreateNotificationSubscription',
+      'CreateUser',
+      'DeactivateUser',
+      'DeleteComment',
+      'DeleteCustomMetadata',
+      'DeleteDocument',
+      'DeleteFolder',
+      'DeleteFolderContents',
+      'DeleteInstance',
+      'DeleteLabels',
+      'DeleteNotificationSubscription',
+      'DeleteUser',
+      'DeregisterDirectory',
+      'InitiateDocumentVersionUpload',
+      'RegisterDirectory',
+      'RemoveAllResourcePermissions',
+      'RemoveResourcePermission',
+      'UpdateDocument',
+      'UpdateDocumentVersion',
+      'UpdateFolder',
+      'UpdateInstanceAlias',
+      'UpdateUser'
     ],
-    "Read": [
-      "CheckAlias",
-      "DownloadDocumentVersion",
-      "GetCurrentUser",
-      "GetDocument",
-      "GetDocumentPath",
-      "GetDocumentVersion",
-      "GetFolder",
-      "GetFolderPath",
-      "GetGroup",
-      "GetResources"
+    Read: [
+      'CheckAlias',
+      'DownloadDocumentVersion',
+      'GetCurrentUser',
+      'GetDocument',
+      'GetDocumentPath',
+      'GetDocumentVersion',
+      'GetFolder',
+      'GetFolderPath',
+      'GetGroup',
+      'GetResources'
     ],
-    "List": [
-      "DescribeActivities",
-      "DescribeAvailableDirectories",
-      "DescribeComments",
-      "DescribeDocumentVersions",
-      "DescribeFolderContents",
-      "DescribeGroups",
-      "DescribeInstances",
-      "DescribeNotificationSubscriptions",
-      "DescribeResourcePermissions",
-      "DescribeRootFolders",
-      "DescribeUsers"
+    List: [
+      'DescribeActivities',
+      'DescribeAvailableDirectories',
+      'DescribeComments',
+      'DescribeDocumentVersions',
+      'DescribeFolderContents',
+      'DescribeGroups',
+      'DescribeInstances',
+      'DescribeNotificationSubscriptions',
+      'DescribeResourcePermissions',
+      'DescribeRootFolders',
+      'DescribeUsers'
     ]
   };
 }

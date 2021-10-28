@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [codestar-connections](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodestarconnections.html).
@@ -14,7 +14,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -311,34 +311,34 @@ export class CodestarConnections extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateConnection",
-      "CreateHost",
-      "DeleteConnection",
-      "DeleteHost",
-      "UpdateConnectionInstallation",
-      "UpdateHost"
+    Write: [
+      'CreateConnection',
+      'CreateHost',
+      'DeleteConnection',
+      'DeleteHost',
+      'UpdateConnectionInstallation',
+      'UpdateHost'
     ],
-    "Read": [
-      "GetConnection",
-      "GetHost",
-      "GetIndividualAccessToken",
-      "GetInstallationUrl",
-      "PassConnection",
-      "RegisterAppCode",
-      "StartAppRegistrationHandshake",
-      "StartOAuthHandshake",
-      "UseConnection"
+    Read: [
+      'GetConnection',
+      'GetHost',
+      'GetIndividualAccessToken',
+      'GetInstallationUrl',
+      'PassConnection',
+      'RegisterAppCode',
+      'StartAppRegistrationHandshake',
+      'StartOAuthHandshake',
+      'UseConnection'
     ],
-    "List": [
-      "ListConnections",
-      "ListHosts",
-      "ListInstallationTargets",
-      "ListTagsForResource"
+    List: [
+      'ListConnections',
+      'ListHosts',
+      'ListInstallationTargets',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

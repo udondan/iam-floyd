@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [ses](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonses.html).
@@ -14,7 +14,7 @@ export class Ses extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -833,84 +833,84 @@ export class Ses extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CloneReceiptRuleSet",
-      "CreateConfigurationSet",
-      "CreateConfigurationSetEventDestination",
-      "CreateConfigurationSetTrackingOptions",
-      "CreateCustomVerificationEmailTemplate",
-      "CreateReceiptFilter",
-      "CreateReceiptRule",
-      "CreateReceiptRuleSet",
-      "CreateTemplate",
-      "DeleteConfigurationSet",
-      "DeleteConfigurationSetEventDestination",
-      "DeleteConfigurationSetTrackingOptions",
-      "DeleteCustomVerificationEmailTemplate",
-      "DeleteIdentity",
-      "DeleteReceiptFilter",
-      "DeleteReceiptRule",
-      "DeleteReceiptRuleSet",
-      "DeleteTemplate",
-      "DeleteVerifiedEmailAddress",
-      "PutConfigurationSetDeliveryOptions",
-      "ReorderReceiptRuleSet",
-      "SendBounce",
-      "SendBulkTemplatedEmail",
-      "SendCustomVerificationEmail",
-      "SendEmail",
-      "SendRawEmail",
-      "SendTemplatedEmail",
-      "SetActiveReceiptRuleSet",
-      "SetIdentityDkimEnabled",
-      "SetIdentityFeedbackForwardingEnabled",
-      "SetIdentityHeadersInNotificationsEnabled",
-      "SetIdentityMailFromDomain",
-      "SetIdentityNotificationTopic",
-      "SetReceiptRulePosition",
-      "TestRenderTemplate",
-      "UpdateAccountSendingEnabled",
-      "UpdateConfigurationSetEventDestination",
-      "UpdateConfigurationSetReputationMetricsEnabled",
-      "UpdateConfigurationSetSendingEnabled",
-      "UpdateConfigurationSetTrackingOptions",
-      "UpdateCustomVerificationEmailTemplate",
-      "UpdateReceiptRule",
-      "UpdateTemplate",
-      "VerifyDomainDkim",
-      "VerifyDomainIdentity",
-      "VerifyEmailAddress",
-      "VerifyEmailIdentity"
+    Write: [
+      'CloneReceiptRuleSet',
+      'CreateConfigurationSet',
+      'CreateConfigurationSetEventDestination',
+      'CreateConfigurationSetTrackingOptions',
+      'CreateCustomVerificationEmailTemplate',
+      'CreateReceiptFilter',
+      'CreateReceiptRule',
+      'CreateReceiptRuleSet',
+      'CreateTemplate',
+      'DeleteConfigurationSet',
+      'DeleteConfigurationSetEventDestination',
+      'DeleteConfigurationSetTrackingOptions',
+      'DeleteCustomVerificationEmailTemplate',
+      'DeleteIdentity',
+      'DeleteReceiptFilter',
+      'DeleteReceiptRule',
+      'DeleteReceiptRuleSet',
+      'DeleteTemplate',
+      'DeleteVerifiedEmailAddress',
+      'PutConfigurationSetDeliveryOptions',
+      'ReorderReceiptRuleSet',
+      'SendBounce',
+      'SendBulkTemplatedEmail',
+      'SendCustomVerificationEmail',
+      'SendEmail',
+      'SendRawEmail',
+      'SendTemplatedEmail',
+      'SetActiveReceiptRuleSet',
+      'SetIdentityDkimEnabled',
+      'SetIdentityFeedbackForwardingEnabled',
+      'SetIdentityHeadersInNotificationsEnabled',
+      'SetIdentityMailFromDomain',
+      'SetIdentityNotificationTopic',
+      'SetReceiptRulePosition',
+      'TestRenderTemplate',
+      'UpdateAccountSendingEnabled',
+      'UpdateConfigurationSetEventDestination',
+      'UpdateConfigurationSetReputationMetricsEnabled',
+      'UpdateConfigurationSetSendingEnabled',
+      'UpdateConfigurationSetTrackingOptions',
+      'UpdateCustomVerificationEmailTemplate',
+      'UpdateReceiptRule',
+      'UpdateTemplate',
+      'VerifyDomainDkim',
+      'VerifyDomainIdentity',
+      'VerifyEmailAddress',
+      'VerifyEmailIdentity'
     ],
-    "Permissions management": [
-      "DeleteIdentityPolicy",
-      "PutIdentityPolicy"
+    'Permissions management': [
+      'DeleteIdentityPolicy',
+      'PutIdentityPolicy'
     ],
-    "Read": [
-      "DescribeActiveReceiptRuleSet",
-      "DescribeConfigurationSet",
-      "DescribeReceiptRule",
-      "DescribeReceiptRuleSet",
-      "GetAccountSendingEnabled",
-      "GetCustomVerificationEmailTemplate",
-      "GetIdentityDkimAttributes",
-      "GetIdentityMailFromDomainAttributes",
-      "GetIdentityNotificationAttributes",
-      "GetIdentityPolicies",
-      "GetIdentityVerificationAttributes",
-      "GetSendQuota",
-      "GetSendStatistics",
-      "GetTemplate",
-      "ListReceiptFilters",
-      "ListReceiptRuleSets",
-      "ListVerifiedEmailAddresses"
+    Read: [
+      'DescribeActiveReceiptRuleSet',
+      'DescribeConfigurationSet',
+      'DescribeReceiptRule',
+      'DescribeReceiptRuleSet',
+      'GetAccountSendingEnabled',
+      'GetCustomVerificationEmailTemplate',
+      'GetIdentityDkimAttributes',
+      'GetIdentityMailFromDomainAttributes',
+      'GetIdentityNotificationAttributes',
+      'GetIdentityPolicies',
+      'GetIdentityVerificationAttributes',
+      'GetSendQuota',
+      'GetSendStatistics',
+      'GetTemplate',
+      'ListReceiptFilters',
+      'ListReceiptRuleSets',
+      'ListVerifiedEmailAddresses'
     ],
-    "List": [
-      "ListConfigurationSets",
-      "ListCustomVerificationEmailTemplates",
-      "ListIdentities",
-      "ListIdentityPolicies",
-      "ListTemplates"
+    List: [
+      'ListConfigurationSets',
+      'ListCustomVerificationEmailTemplates',
+      'ListIdentities',
+      'ListIdentityPolicies',
+      'ListTemplates'
     ]
   };
 

@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [elasticloadbalancing](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticloadbalancing.html).
@@ -14,7 +14,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -339,41 +339,41 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Tagging": [
-      "AddTags",
-      "RemoveTags"
+    Tagging: [
+      'AddTags',
+      'RemoveTags'
     ],
-    "Write": [
-      "ApplySecurityGroupsToLoadBalancer",
-      "AttachLoadBalancerToSubnets",
-      "ConfigureHealthCheck",
-      "CreateAppCookieStickinessPolicy",
-      "CreateLBCookieStickinessPolicy",
-      "CreateLoadBalancer",
-      "CreateLoadBalancerListeners",
-      "CreateLoadBalancerPolicy",
-      "DeleteLoadBalancer",
-      "DeleteLoadBalancerListeners",
-      "DeleteLoadBalancerPolicy",
-      "DeregisterInstancesFromLoadBalancer",
-      "DetachLoadBalancerFromSubnets",
-      "DisableAvailabilityZonesForLoadBalancer",
-      "EnableAvailabilityZonesForLoadBalancer",
-      "ModifyLoadBalancerAttributes",
-      "RegisterInstancesWithLoadBalancer",
-      "SetLoadBalancerListenerSSLCertificate",
-      "SetLoadBalancerPoliciesForBackendServer",
-      "SetLoadBalancerPoliciesOfListener"
+    Write: [
+      'ApplySecurityGroupsToLoadBalancer',
+      'AttachLoadBalancerToSubnets',
+      'ConfigureHealthCheck',
+      'CreateAppCookieStickinessPolicy',
+      'CreateLBCookieStickinessPolicy',
+      'CreateLoadBalancer',
+      'CreateLoadBalancerListeners',
+      'CreateLoadBalancerPolicy',
+      'DeleteLoadBalancer',
+      'DeleteLoadBalancerListeners',
+      'DeleteLoadBalancerPolicy',
+      'DeregisterInstancesFromLoadBalancer',
+      'DetachLoadBalancerFromSubnets',
+      'DisableAvailabilityZonesForLoadBalancer',
+      'EnableAvailabilityZonesForLoadBalancer',
+      'ModifyLoadBalancerAttributes',
+      'RegisterInstancesWithLoadBalancer',
+      'SetLoadBalancerListenerSSLCertificate',
+      'SetLoadBalancerPoliciesForBackendServer',
+      'SetLoadBalancerPoliciesOfListener'
     ],
-    "Read": [
-      "DescribeInstanceHealth",
-      "DescribeLoadBalancerAttributes",
-      "DescribeLoadBalancerPolicies",
-      "DescribeLoadBalancerPolicyTypes",
-      "DescribeTags"
+    Read: [
+      'DescribeInstanceHealth',
+      'DescribeLoadBalancerAttributes',
+      'DescribeLoadBalancerPolicies',
+      'DescribeLoadBalancerPolicyTypes',
+      'DescribeTags'
     ],
-    "List": [
-      "DescribeLoadBalancers"
+    List: [
+      'DescribeLoadBalancers'
     ]
   };
 

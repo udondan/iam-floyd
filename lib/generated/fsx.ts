@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [fsx](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonfsx.html).
@@ -14,7 +14,7 @@ export class Fsx extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -447,44 +447,44 @@ export class Fsx extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateFileGateway",
-      "AssociateFileSystemAliases",
-      "CancelDataRepositoryTask",
-      "CopyBackup",
-      "CreateBackup",
-      "CreateDataRepositoryTask",
-      "CreateFileSystem",
-      "CreateFileSystemFromBackup",
-      "CreateStorageVirtualMachine",
-      "CreateVolume",
-      "CreateVolumeFromBackup",
-      "DeleteBackup",
-      "DeleteFileSystem",
-      "DeleteStorageVirtualMachine",
-      "DeleteVolume",
-      "DisassociateFileGateway",
-      "DisassociateFileSystemAliases",
-      "UpdateFileSystem",
-      "UpdateStorageVirtualMachine",
-      "UpdateVolume"
+    Write: [
+      'AssociateFileGateway',
+      'AssociateFileSystemAliases',
+      'CancelDataRepositoryTask',
+      'CopyBackup',
+      'CreateBackup',
+      'CreateDataRepositoryTask',
+      'CreateFileSystem',
+      'CreateFileSystemFromBackup',
+      'CreateStorageVirtualMachine',
+      'CreateVolume',
+      'CreateVolumeFromBackup',
+      'DeleteBackup',
+      'DeleteFileSystem',
+      'DeleteStorageVirtualMachine',
+      'DeleteVolume',
+      'DisassociateFileGateway',
+      'DisassociateFileSystemAliases',
+      'UpdateFileSystem',
+      'UpdateStorageVirtualMachine',
+      'UpdateVolume'
     ],
-    "Read": [
-      "DescribeAssociatedFileGateways",
-      "DescribeBackups",
-      "DescribeDataRepositoryTasks",
-      "DescribeFileSystemAliases",
-      "DescribeFileSystems",
-      "DescribeStorageVirtualMachines",
-      "DescribeVolumes",
-      "ListTagsForResource"
+    Read: [
+      'DescribeAssociatedFileGateways',
+      'DescribeBackups',
+      'DescribeDataRepositoryTasks',
+      'DescribeFileSystemAliases',
+      'DescribeFileSystems',
+      'DescribeStorageVirtualMachines',
+      'DescribeVolumes',
+      'ListTagsForResource'
     ],
-    "Permissions management": [
-      "ManageBackupPrincipalAssociations"
+    'Permissions management': [
+      'ManageBackupPrincipalAssociations'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

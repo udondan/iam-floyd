@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [wisdom](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectwisdom.html).
@@ -14,7 +14,7 @@ export class Wisdom extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -387,44 +387,44 @@ export class Wisdom extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateAssistant",
-      "CreateAssistantAssociation",
-      "CreateContent",
-      "CreateKnowledgeBase",
-      "CreateSession",
-      "DeleteAssistant",
-      "DeleteAssistantAssociation",
-      "DeleteContent",
-      "DeleteKnowledgeBase",
-      "NotifyRecommendationsReceived",
-      "RemoveKnowledgeBaseTemplateUri",
-      "StartContentUpload",
-      "UpdateContent",
-      "UpdateKnowledgeBaseTemplateUri"
+    Write: [
+      'CreateAssistant',
+      'CreateAssistantAssociation',
+      'CreateContent',
+      'CreateKnowledgeBase',
+      'CreateSession',
+      'DeleteAssistant',
+      'DeleteAssistantAssociation',
+      'DeleteContent',
+      'DeleteKnowledgeBase',
+      'NotifyRecommendationsReceived',
+      'RemoveKnowledgeBaseTemplateUri',
+      'StartContentUpload',
+      'UpdateContent',
+      'UpdateKnowledgeBaseTemplateUri'
     ],
-    "Read": [
-      "GetAssistant",
-      "GetAssistantAssociation",
-      "GetContent",
-      "GetContentSummary",
-      "GetKnowledgeBase",
-      "GetRecommendations",
-      "GetSession",
-      "ListTagsForResource",
-      "QueryAssistant",
-      "SearchContent",
-      "SearchSessions"
+    Read: [
+      'GetAssistant',
+      'GetAssistantAssociation',
+      'GetContent',
+      'GetContentSummary',
+      'GetKnowledgeBase',
+      'GetRecommendations',
+      'GetSession',
+      'ListTagsForResource',
+      'QueryAssistant',
+      'SearchContent',
+      'SearchSessions'
     ],
-    "List": [
-      "ListAssistantAssociations",
-      "ListAssistants",
-      "ListContents",
-      "ListKnowledgeBases"
+    List: [
+      'ListAssistantAssociations',
+      'ListAssistants',
+      'ListContents',
+      'ListKnowledgeBases'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [sns](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsns.html).
@@ -14,7 +14,7 @@ export class Sns extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -472,54 +472,54 @@ export class Sns extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Permissions management": [
-      "AddPermission",
-      "RemovePermission"
+    'Permissions management': [
+      'AddPermission',
+      'RemovePermission'
     ],
-    "Read": [
-      "CheckIfPhoneNumberIsOptedOut",
-      "GetEndpointAttributes",
-      "GetPlatformApplicationAttributes",
-      "GetSMSAttributes",
-      "GetSMSSandboxAccountStatus",
-      "GetSubscriptionAttributes",
-      "GetTopicAttributes",
-      "ListPhoneNumbersOptedOut",
-      "ListTagsForResource"
+    Read: [
+      'CheckIfPhoneNumberIsOptedOut',
+      'GetEndpointAttributes',
+      'GetPlatformApplicationAttributes',
+      'GetSMSAttributes',
+      'GetSMSSandboxAccountStatus',
+      'GetSubscriptionAttributes',
+      'GetTopicAttributes',
+      'ListPhoneNumbersOptedOut',
+      'ListTagsForResource'
     ],
-    "Write": [
-      "ConfirmSubscription",
-      "CreatePlatformApplication",
-      "CreatePlatformEndpoint",
-      "CreateSMSSandboxPhoneNumber",
-      "CreateTopic",
-      "DeleteEndpoint",
-      "DeletePlatformApplication",
-      "DeleteSMSSandboxPhoneNumber",
-      "DeleteTopic",
-      "OptInPhoneNumber",
-      "Publish",
-      "SetEndpointAttributes",
-      "SetPlatformApplicationAttributes",
-      "SetSMSAttributes",
-      "SetSubscriptionAttributes",
-      "SetTopicAttributes",
-      "Subscribe",
-      "Unsubscribe",
-      "VerifySMSSandboxPhoneNumber"
+    Write: [
+      'ConfirmSubscription',
+      'CreatePlatformApplication',
+      'CreatePlatformEndpoint',
+      'CreateSMSSandboxPhoneNumber',
+      'CreateTopic',
+      'DeleteEndpoint',
+      'DeletePlatformApplication',
+      'DeleteSMSSandboxPhoneNumber',
+      'DeleteTopic',
+      'OptInPhoneNumber',
+      'Publish',
+      'SetEndpointAttributes',
+      'SetPlatformApplicationAttributes',
+      'SetSMSAttributes',
+      'SetSubscriptionAttributes',
+      'SetTopicAttributes',
+      'Subscribe',
+      'Unsubscribe',
+      'VerifySMSSandboxPhoneNumber'
     ],
-    "List": [
-      "ListEndpointsByPlatformApplication",
-      "ListOriginationNumbers",
-      "ListPlatformApplications",
-      "ListSMSSandboxPhoneNumbers",
-      "ListSubscriptions",
-      "ListSubscriptionsByTopic",
-      "ListTopics"
+    List: [
+      'ListEndpointsByPlatformApplication',
+      'ListOriginationNumbers',
+      'ListPlatformApplications',
+      'ListSMSSandboxPhoneNumbers',
+      'ListSubscriptions',
+      'ListSubscriptionsByTopic',
+      'ListTopics'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

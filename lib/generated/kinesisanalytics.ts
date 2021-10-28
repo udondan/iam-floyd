@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [kinesisanalytics](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisanalytics.html).
@@ -14,7 +14,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -217,30 +217,30 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AddApplicationInput",
-      "AddApplicationOutput",
-      "AddApplicationReferenceDataSource",
-      "CreateApplication",
-      "DeleteApplication",
-      "DeleteApplicationOutput",
-      "DeleteApplicationReferenceDataSource",
-      "StartApplication",
-      "StopApplication",
-      "UpdateApplication"
+    Write: [
+      'AddApplicationInput',
+      'AddApplicationOutput',
+      'AddApplicationReferenceDataSource',
+      'CreateApplication',
+      'DeleteApplication',
+      'DeleteApplicationOutput',
+      'DeleteApplicationReferenceDataSource',
+      'StartApplication',
+      'StopApplication',
+      'UpdateApplication'
     ],
-    "Read": [
-      "DescribeApplication",
-      "DiscoverInputSchema",
-      "GetApplicationState",
-      "ListTagsForResource"
+    Read: [
+      'DescribeApplication',
+      'DiscoverInputSchema',
+      'GetApplicationState',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListApplications"
+    List: [
+      'ListApplications'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

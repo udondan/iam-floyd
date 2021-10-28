@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [worklink](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonworklink.html).
@@ -14,7 +14,7 @@ export class Worklink extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -412,47 +412,47 @@ export class Worklink extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateDomain",
-      "AssociateWebsiteAuthorizationProvider",
-      "AssociateWebsiteCertificateAuthority",
-      "CreateFleet",
-      "DeleteFleet",
-      "DisassociateDomain",
-      "DisassociateWebsiteAuthorizationProvider",
-      "DisassociateWebsiteCertificateAuthority",
-      "RestoreDomainAccess",
-      "RevokeDomainAccess",
-      "SignOutUser",
-      "UpdateAuditStreamConfiguration",
-      "UpdateCompanyNetworkConfiguration",
-      "UpdateDevicePolicyConfiguration",
-      "UpdateDomainMetadata",
-      "UpdateFleetMetadata",
-      "UpdateIdentityProviderConfiguration"
+    Write: [
+      'AssociateDomain',
+      'AssociateWebsiteAuthorizationProvider',
+      'AssociateWebsiteCertificateAuthority',
+      'CreateFleet',
+      'DeleteFleet',
+      'DisassociateDomain',
+      'DisassociateWebsiteAuthorizationProvider',
+      'DisassociateWebsiteCertificateAuthority',
+      'RestoreDomainAccess',
+      'RevokeDomainAccess',
+      'SignOutUser',
+      'UpdateAuditStreamConfiguration',
+      'UpdateCompanyNetworkConfiguration',
+      'UpdateDevicePolicyConfiguration',
+      'UpdateDomainMetadata',
+      'UpdateFleetMetadata',
+      'UpdateIdentityProviderConfiguration'
     ],
-    "Read": [
-      "DescribeAuditStreamConfiguration",
-      "DescribeCompanyNetworkConfiguration",
-      "DescribeDevice",
-      "DescribeDevicePolicyConfiguration",
-      "DescribeDomain",
-      "DescribeFleetMetadata",
-      "DescribeIdentityProviderConfiguration",
-      "DescribeWebsiteCertificateAuthority",
-      "ListTagsForResource"
+    Read: [
+      'DescribeAuditStreamConfiguration',
+      'DescribeCompanyNetworkConfiguration',
+      'DescribeDevice',
+      'DescribeDevicePolicyConfiguration',
+      'DescribeDomain',
+      'DescribeFleetMetadata',
+      'DescribeIdentityProviderConfiguration',
+      'DescribeWebsiteCertificateAuthority',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListDevices",
-      "ListDomains",
-      "ListFleets",
-      "ListWebsiteAuthorizationProviders",
-      "ListWebsiteCertificateAuthorities",
-      "SearchEntity"
+    List: [
+      'ListDevices',
+      'ListDomains',
+      'ListFleets',
+      'ListWebsiteAuthorizationProviders',
+      'ListWebsiteCertificateAuthorities',
+      'SearchEntity'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

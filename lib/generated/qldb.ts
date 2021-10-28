@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [qldb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqldb.html).
@@ -14,7 +14,7 @@ export class Qldb extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -413,47 +413,47 @@ export class Qldb extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CancelJournalKinesisStream",
-      "CreateLedger",
-      "DeleteLedger",
-      "ExecuteStatement",
-      "ExportJournalToS3",
-      "InsertSampleData",
-      "PartiQLCreateIndex",
-      "PartiQLCreateTable",
-      "PartiQLDelete",
-      "PartiQLDropIndex",
-      "PartiQLDropTable",
-      "PartiQLInsert",
-      "PartiQLUndropTable",
-      "PartiQLUpdate",
-      "SendCommand",
-      "ShowCatalog",
-      "StreamJournalToKinesis",
-      "UpdateLedger",
-      "UpdateLedgerPermissionsMode"
+    Write: [
+      'CancelJournalKinesisStream',
+      'CreateLedger',
+      'DeleteLedger',
+      'ExecuteStatement',
+      'ExportJournalToS3',
+      'InsertSampleData',
+      'PartiQLCreateIndex',
+      'PartiQLCreateTable',
+      'PartiQLDelete',
+      'PartiQLDropIndex',
+      'PartiQLDropTable',
+      'PartiQLInsert',
+      'PartiQLUndropTable',
+      'PartiQLUpdate',
+      'SendCommand',
+      'ShowCatalog',
+      'StreamJournalToKinesis',
+      'UpdateLedger',
+      'UpdateLedgerPermissionsMode'
     ],
-    "Read": [
-      "DescribeJournalKinesisStream",
-      "DescribeJournalS3Export",
-      "DescribeLedger",
-      "GetBlock",
-      "GetDigest",
-      "GetRevision",
-      "ListTagsForResource",
-      "PartiQLHistoryFunction",
-      "PartiQLSelect"
+    Read: [
+      'DescribeJournalKinesisStream',
+      'DescribeJournalS3Export',
+      'DescribeLedger',
+      'GetBlock',
+      'GetDigest',
+      'GetRevision',
+      'ListTagsForResource',
+      'PartiQLHistoryFunction',
+      'PartiQLSelect'
     ],
-    "List": [
-      "ListJournalKinesisStreamsForLedger",
-      "ListJournalS3Exports",
-      "ListJournalS3ExportsForLedger",
-      "ListLedgers"
+    List: [
+      'ListJournalKinesisStreamsForLedger',
+      'ListJournalS3Exports',
+      'ListJournalS3ExportsForLedger',
+      'ListLedgers'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

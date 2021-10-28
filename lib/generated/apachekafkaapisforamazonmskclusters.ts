@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [kafka-cluster](https://docs.aws.amazon.com/service-authorization/latest/reference/list_apachekafkaapisforamazonmskclusters.html).
@@ -14,7 +14,7 @@ export class KafkaCluster extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -295,30 +295,30 @@ export class KafkaCluster extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AlterCluster",
-      "AlterClusterDynamicConfiguration",
-      "AlterGroup",
-      "AlterTopic",
-      "AlterTopicDynamicConfiguration",
-      "AlterTransactionalId",
-      "Connect",
-      "CreateTopic",
-      "DeleteGroup",
-      "DeleteTopic",
-      "WriteData",
-      "WriteDataIdempotently"
+    Write: [
+      'AlterCluster',
+      'AlterClusterDynamicConfiguration',
+      'AlterGroup',
+      'AlterTopic',
+      'AlterTopicDynamicConfiguration',
+      'AlterTransactionalId',
+      'Connect',
+      'CreateTopic',
+      'DeleteGroup',
+      'DeleteTopic',
+      'WriteData',
+      'WriteDataIdempotently'
     ],
-    "List": [
-      "DescribeCluster",
-      "DescribeClusterDynamicConfiguration",
-      "DescribeGroup",
-      "DescribeTopic",
-      "DescribeTopicDynamicConfiguration",
-      "DescribeTransactionalId"
+    List: [
+      'DescribeCluster',
+      'DescribeClusterDynamicConfiguration',
+      'DescribeGroup',
+      'DescribeTopic',
+      'DescribeTopicDynamicConfiguration',
+      'DescribeTransactionalId'
     ],
-    "Read": [
-      "ReadData"
+    Read: [
+      'ReadData'
     ]
   };
 

@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [snowball](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssnowball.html).
@@ -14,7 +14,7 @@ export class Snowball extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -294,36 +294,36 @@ export class Snowball extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CancelCluster",
-      "CancelJob",
-      "CreateAddress",
-      "CreateCluster",
-      "CreateJob",
-      "CreateLongTermPricing",
-      "CreateReturnShippingLabel",
-      "UpdateCluster",
-      "UpdateJob",
-      "UpdateJobShipmentState",
-      "UpdateLongTermPricing"
+    Write: [
+      'CancelCluster',
+      'CancelJob',
+      'CreateAddress',
+      'CreateCluster',
+      'CreateJob',
+      'CreateLongTermPricing',
+      'CreateReturnShippingLabel',
+      'UpdateCluster',
+      'UpdateJob',
+      'UpdateJobShipmentState',
+      'UpdateLongTermPricing'
     ],
-    "Read": [
-      "DescribeAddress",
-      "DescribeCluster",
-      "DescribeJob",
-      "DescribeReturnShippingLabel",
-      "GetJobManifest",
-      "GetJobUnlockCode",
-      "GetSnowballUsage",
-      "GetSoftwareUpdates",
-      "ListLongTermPricing"
+    Read: [
+      'DescribeAddress',
+      'DescribeCluster',
+      'DescribeJob',
+      'DescribeReturnShippingLabel',
+      'GetJobManifest',
+      'GetJobUnlockCode',
+      'GetSnowballUsage',
+      'GetSoftwareUpdates',
+      'ListLongTermPricing'
     ],
-    "List": [
-      "DescribeAddresses",
-      "ListClusterJobs",
-      "ListClusters",
-      "ListCompatibleImages",
-      "ListJobs"
+    List: [
+      'DescribeAddresses',
+      'ListClusterJobs',
+      'ListClusters',
+      'ListCompatibleImages',
+      'ListJobs'
     ]
   };
 }

@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [elasticmapreduce](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticmapreduce.html).
@@ -14,7 +14,7 @@ export class Elasticmapreduce extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -848,88 +848,88 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AddInstanceFleet",
-      "AddInstanceGroups",
-      "AddJobFlowSteps",
-      "AttachEditor",
-      "CancelSteps",
-      "CreateEditor",
-      "CreatePersistentAppUI",
-      "CreateRepository",
-      "CreateSecurityConfiguration",
-      "CreateStudio",
-      "CreateStudioPresignedUrl",
-      "CreateStudioSessionMapping",
-      "DeleteEditor",
-      "DeleteRepository",
-      "DeleteSecurityConfiguration",
-      "DeleteStudio",
-      "DeleteStudioSessionMapping",
-      "DetachEditor",
-      "GetOnClusterAppUIPresignedURL",
-      "GetPersistentAppUIPresignedURL",
-      "LinkRepository",
-      "ModifyCluster",
-      "ModifyInstanceFleet",
-      "ModifyInstanceGroups",
-      "OpenEditorInConsole",
-      "PutAutoScalingPolicy",
-      "PutAutoTerminationPolicy",
-      "PutManagedScalingPolicy",
-      "RemoveAutoScalingPolicy",
-      "RemoveAutoTerminationPolicy",
-      "RemoveManagedScalingPolicy",
-      "RunJobFlow",
-      "SetTerminationProtection",
-      "StartEditor",
-      "StartNotebookExecution",
-      "StopEditor",
-      "StopNotebookExecution",
-      "TerminateJobFlows",
-      "UnlinkRepository",
-      "UpdateRepository",
-      "UpdateStudio",
-      "UpdateStudioSessionMapping"
+    Write: [
+      'AddInstanceFleet',
+      'AddInstanceGroups',
+      'AddJobFlowSteps',
+      'AttachEditor',
+      'CancelSteps',
+      'CreateEditor',
+      'CreatePersistentAppUI',
+      'CreateRepository',
+      'CreateSecurityConfiguration',
+      'CreateStudio',
+      'CreateStudioPresignedUrl',
+      'CreateStudioSessionMapping',
+      'DeleteEditor',
+      'DeleteRepository',
+      'DeleteSecurityConfiguration',
+      'DeleteStudio',
+      'DeleteStudioSessionMapping',
+      'DetachEditor',
+      'GetOnClusterAppUIPresignedURL',
+      'GetPersistentAppUIPresignedURL',
+      'LinkRepository',
+      'ModifyCluster',
+      'ModifyInstanceFleet',
+      'ModifyInstanceGroups',
+      'OpenEditorInConsole',
+      'PutAutoScalingPolicy',
+      'PutAutoTerminationPolicy',
+      'PutManagedScalingPolicy',
+      'RemoveAutoScalingPolicy',
+      'RemoveAutoTerminationPolicy',
+      'RemoveManagedScalingPolicy',
+      'RunJobFlow',
+      'SetTerminationProtection',
+      'StartEditor',
+      'StartNotebookExecution',
+      'StopEditor',
+      'StopNotebookExecution',
+      'TerminateJobFlows',
+      'UnlinkRepository',
+      'UpdateRepository',
+      'UpdateStudio',
+      'UpdateStudioSessionMapping'
     ],
-    "Tagging": [
-      "AddTags",
-      "RemoveTags"
+    Tagging: [
+      'AddTags',
+      'RemoveTags'
     ],
-    "Read": [
-      "DescribeCluster",
-      "DescribeEditor",
-      "DescribeJobFlows",
-      "DescribeNotebookExecution",
-      "DescribePersistentAppUI",
-      "DescribeReleaseLabel",
-      "DescribeRepository",
-      "DescribeSecurityConfiguration",
-      "DescribeStep",
-      "DescribeStudio",
-      "GetAutoTerminationPolicy",
-      "GetBlockPublicAccessConfiguration",
-      "GetManagedScalingPolicy",
-      "GetStudioSessionMapping",
-      "ListBootstrapActions",
-      "ListInstanceFleets",
-      "ListInstanceGroups",
-      "ListInstances",
-      "ListSteps"
+    Read: [
+      'DescribeCluster',
+      'DescribeEditor',
+      'DescribeJobFlows',
+      'DescribeNotebookExecution',
+      'DescribePersistentAppUI',
+      'DescribeReleaseLabel',
+      'DescribeRepository',
+      'DescribeSecurityConfiguration',
+      'DescribeStep',
+      'DescribeStudio',
+      'GetAutoTerminationPolicy',
+      'GetBlockPublicAccessConfiguration',
+      'GetManagedScalingPolicy',
+      'GetStudioSessionMapping',
+      'ListBootstrapActions',
+      'ListInstanceFleets',
+      'ListInstanceGroups',
+      'ListInstances',
+      'ListSteps'
     ],
-    "List": [
-      "ListClusters",
-      "ListEditors",
-      "ListNotebookExecutions",
-      "ListReleaseLabels",
-      "ListRepositories",
-      "ListSecurityConfigurations",
-      "ListStudioSessionMappings",
-      "ListStudios",
-      "ViewEventsFromAllClustersInConsole"
+    List: [
+      'ListClusters',
+      'ListEditors',
+      'ListNotebookExecutions',
+      'ListReleaseLabels',
+      'ListRepositories',
+      'ListSecurityConfigurations',
+      'ListStudioSessionMappings',
+      'ListStudios',
+      'ViewEventsFromAllClustersInConsole'
     ],
-    "Permissions management": [
-      "PutBlockPublicAccessConfiguration"
+    'Permissions management': [
+      'PutBlockPublicAccessConfiguration'
     ]
   };
 

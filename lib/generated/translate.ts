@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [translate](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontranslate.html).
@@ -14,7 +14,7 @@ export class Translate extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -173,25 +173,25 @@ export class Translate extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateParallelData",
-      "DeleteParallelData",
-      "DeleteTerminology",
-      "ImportTerminology",
-      "StartTextTranslationJob",
-      "StopTextTranslationJob",
-      "UpdateParallelData"
+    Write: [
+      'CreateParallelData',
+      'DeleteParallelData',
+      'DeleteTerminology',
+      'ImportTerminology',
+      'StartTextTranslationJob',
+      'StopTextTranslationJob',
+      'UpdateParallelData'
     ],
-    "Read": [
-      "DescribeTextTranslationJob",
-      "GetParallelData",
-      "GetTerminology",
-      "TranslateText"
+    Read: [
+      'DescribeTextTranslationJob',
+      'GetParallelData',
+      'GetTerminology',
+      'TranslateText'
     ],
-    "List": [
-      "ListParallelData",
-      "ListTerminologies",
-      "ListTextTranslationJobs"
+    List: [
+      'ListParallelData',
+      'ListTerminologies',
+      'ListTextTranslationJobs'
     ]
   };
 }

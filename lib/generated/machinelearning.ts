@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [machinelearning](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmachinelearning.html).
@@ -14,7 +14,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -327,41 +327,41 @@ export class Machinelearning extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Tagging": [
-      "AddTags",
-      "DeleteTags"
+    Tagging: [
+      'AddTags',
+      'DeleteTags'
     ],
-    "Write": [
-      "CreateBatchPrediction",
-      "CreateDataSourceFromRDS",
-      "CreateDataSourceFromRedshift",
-      "CreateDataSourceFromS3",
-      "CreateEvaluation",
-      "CreateMLModel",
-      "CreateRealtimeEndpoint",
-      "DeleteBatchPrediction",
-      "DeleteDataSource",
-      "DeleteEvaluation",
-      "DeleteMLModel",
-      "DeleteRealtimeEndpoint",
-      "Predict",
-      "UpdateBatchPrediction",
-      "UpdateDataSource",
-      "UpdateEvaluation",
-      "UpdateMLModel"
+    Write: [
+      'CreateBatchPrediction',
+      'CreateDataSourceFromRDS',
+      'CreateDataSourceFromRedshift',
+      'CreateDataSourceFromS3',
+      'CreateEvaluation',
+      'CreateMLModel',
+      'CreateRealtimeEndpoint',
+      'DeleteBatchPrediction',
+      'DeleteDataSource',
+      'DeleteEvaluation',
+      'DeleteMLModel',
+      'DeleteRealtimeEndpoint',
+      'Predict',
+      'UpdateBatchPrediction',
+      'UpdateDataSource',
+      'UpdateEvaluation',
+      'UpdateMLModel'
     ],
-    "List": [
-      "DescribeBatchPredictions",
-      "DescribeDataSources",
-      "DescribeEvaluations",
-      "DescribeMLModels",
-      "DescribeTags"
+    List: [
+      'DescribeBatchPredictions',
+      'DescribeDataSources',
+      'DescribeEvaluations',
+      'DescribeMLModels',
+      'DescribeTags'
     ],
-    "Read": [
-      "GetBatchPrediction",
-      "GetDataSource",
-      "GetEvaluation",
-      "GetMLModel"
+    Read: [
+      'GetBatchPrediction',
+      'GetDataSource',
+      'GetEvaluation',
+      'GetMLModel'
     ]
   };
 

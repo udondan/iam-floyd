@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [lex](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlex.html).
@@ -14,7 +14,7 @@ export class Lex extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -552,60 +552,60 @@ export class Lex extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateBotVersion",
-      "CreateIntentVersion",
-      "CreateSlotTypeVersion",
-      "DeleteBot",
-      "DeleteBotAlias",
-      "DeleteBotChannelAssociation",
-      "DeleteBotVersion",
-      "DeleteIntent",
-      "DeleteIntentVersion",
-      "DeleteSession",
-      "DeleteSlotType",
-      "DeleteSlotTypeVersion",
-      "DeleteUtterances",
-      "PostContent",
-      "PostText",
-      "PutBot",
-      "PutBotAlias",
-      "PutIntent",
-      "PutSession",
-      "PutSlotType",
-      "StartImport",
-      "StartMigration"
+    Write: [
+      'CreateBotVersion',
+      'CreateIntentVersion',
+      'CreateSlotTypeVersion',
+      'DeleteBot',
+      'DeleteBotAlias',
+      'DeleteBotChannelAssociation',
+      'DeleteBotVersion',
+      'DeleteIntent',
+      'DeleteIntentVersion',
+      'DeleteSession',
+      'DeleteSlotType',
+      'DeleteSlotTypeVersion',
+      'DeleteUtterances',
+      'PostContent',
+      'PostText',
+      'PutBot',
+      'PutBotAlias',
+      'PutIntent',
+      'PutSession',
+      'PutSlotType',
+      'StartImport',
+      'StartMigration'
     ],
-    "Read": [
-      "GetBot",
-      "GetBotAlias",
-      "GetBotChannelAssociation",
-      "GetBuiltinIntent",
-      "GetBuiltinIntents",
-      "GetBuiltinSlotTypes",
-      "GetExport",
-      "GetImport",
-      "GetIntent",
-      "GetMigration",
-      "GetSession",
-      "GetSlotType",
-      "ListTagsForResource"
+    Read: [
+      'GetBot',
+      'GetBotAlias',
+      'GetBotChannelAssociation',
+      'GetBuiltinIntent',
+      'GetBuiltinIntents',
+      'GetBuiltinSlotTypes',
+      'GetExport',
+      'GetImport',
+      'GetIntent',
+      'GetMigration',
+      'GetSession',
+      'GetSlotType',
+      'ListTagsForResource'
     ],
-    "List": [
-      "GetBotAliases",
-      "GetBotChannelAssociations",
-      "GetBotVersions",
-      "GetBots",
-      "GetIntentVersions",
-      "GetIntents",
-      "GetMigrations",
-      "GetSlotTypeVersions",
-      "GetSlotTypes",
-      "GetUtterancesView"
+    List: [
+      'GetBotAliases',
+      'GetBotChannelAssociations',
+      'GetBotVersions',
+      'GetBots',
+      'GetIntentVersions',
+      'GetIntents',
+      'GetMigrations',
+      'GetSlotTypeVersions',
+      'GetSlotTypes',
+      'GetUtterancesView'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

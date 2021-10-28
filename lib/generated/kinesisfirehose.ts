@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [firehose](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisfirehose.html).
@@ -14,7 +14,7 @@ export class Firehose extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -162,25 +162,25 @@ export class Firehose extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateDeliveryStream",
-      "DeleteDeliveryStream",
-      "PutRecord",
-      "PutRecordBatch",
-      "StartDeliveryStreamEncryption",
-      "StopDeliveryStreamEncryption",
-      "UpdateDestination"
+    Write: [
+      'CreateDeliveryStream',
+      'DeleteDeliveryStream',
+      'PutRecord',
+      'PutRecordBatch',
+      'StartDeliveryStreamEncryption',
+      'StopDeliveryStreamEncryption',
+      'UpdateDestination'
     ],
-    "Read": [
-      "DescribeDeliveryStream"
+    Read: [
+      'DescribeDeliveryStream'
     ],
-    "List": [
-      "ListDeliveryStreams",
-      "ListTagsForDeliveryStream"
+    List: [
+      'ListDeliveryStreams',
+      'ListTagsForDeliveryStream'
     ],
-    "Tagging": [
-      "TagDeliveryStream",
-      "UntagDeliveryStream"
+    Tagging: [
+      'TagDeliveryStream',
+      'UntagDeliveryStream'
     ]
   };
 

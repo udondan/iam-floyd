@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [logs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchlogs.html).
@@ -14,7 +14,7 @@ export class Logs extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -542,62 +542,62 @@ export class Logs extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateKmsKey",
-      "CancelExportTask",
-      "CreateExportTask",
-      "CreateLogDelivery",
-      "CreateLogGroup",
-      "CreateLogStream",
-      "DeleteDestination",
-      "DeleteLogDelivery",
-      "DeleteLogGroup",
-      "DeleteLogStream",
-      "DeleteMetricFilter",
-      "DeleteQueryDefinition",
-      "DeleteRetentionPolicy",
-      "DeleteSubscriptionFilter",
-      "DisassociateKmsKey",
-      "PutDestination",
-      "PutDestinationPolicy",
-      "PutLogEvents",
-      "PutMetricFilter",
-      "PutQueryDefinition",
-      "PutRetentionPolicy",
-      "PutSubscriptionFilter",
-      "UpdateLogDelivery"
+    Write: [
+      'AssociateKmsKey',
+      'CancelExportTask',
+      'CreateExportTask',
+      'CreateLogDelivery',
+      'CreateLogGroup',
+      'CreateLogStream',
+      'DeleteDestination',
+      'DeleteLogDelivery',
+      'DeleteLogGroup',
+      'DeleteLogStream',
+      'DeleteMetricFilter',
+      'DeleteQueryDefinition',
+      'DeleteRetentionPolicy',
+      'DeleteSubscriptionFilter',
+      'DisassociateKmsKey',
+      'PutDestination',
+      'PutDestinationPolicy',
+      'PutLogEvents',
+      'PutMetricFilter',
+      'PutQueryDefinition',
+      'PutRetentionPolicy',
+      'PutSubscriptionFilter',
+      'UpdateLogDelivery'
     ],
-    "Permissions management": [
-      "DeleteResourcePolicy",
-      "PutResourcePolicy"
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'PutResourcePolicy'
     ],
-    "List": [
-      "DescribeDestinations",
-      "DescribeExportTasks",
-      "DescribeLogGroups",
-      "DescribeLogStreams",
-      "DescribeMetricFilters",
-      "DescribeQueries",
-      "DescribeQueryDefinitions",
-      "DescribeResourcePolicies",
-      "DescribeSubscriptionFilters",
-      "ListLogDeliveries",
-      "ListTagsLogGroup"
+    List: [
+      'DescribeDestinations',
+      'DescribeExportTasks',
+      'DescribeLogGroups',
+      'DescribeLogStreams',
+      'DescribeMetricFilters',
+      'DescribeQueries',
+      'DescribeQueryDefinitions',
+      'DescribeResourcePolicies',
+      'DescribeSubscriptionFilters',
+      'ListLogDeliveries',
+      'ListTagsLogGroup'
     ],
-    "Read": [
-      "FilterLogEvents",
-      "GetLogDelivery",
-      "GetLogEvents",
-      "GetLogGroupFields",
-      "GetLogRecord",
-      "GetQueryResults",
-      "StartQuery",
-      "StopQuery",
-      "TestMetricFilter"
+    Read: [
+      'FilterLogEvents',
+      'GetLogDelivery',
+      'GetLogEvents',
+      'GetLogGroupFields',
+      'GetLogRecord',
+      'GetQueryResults',
+      'StartQuery',
+      'StopQuery',
+      'TestMetricFilter'
     ],
-    "Tagging": [
-      "TagLogGroup",
-      "UntagLogGroup"
+    Tagging: [
+      'TagLogGroup',
+      'UntagLogGroup'
     ]
   };
 

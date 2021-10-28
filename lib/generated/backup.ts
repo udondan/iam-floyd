@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [backup](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbackup.html).
@@ -14,7 +14,7 @@ export class Backup extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -813,83 +813,83 @@ export class Backup extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CopyFromBackupVault",
-      "CopyIntoBackupVault",
-      "CreateBackupPlan",
-      "CreateBackupSelection",
-      "CreateBackupVault",
-      "CreateFramework",
-      "CreateReportPlan",
-      "DeleteBackupPlan",
-      "DeleteBackupSelection",
-      "DeleteBackupVault",
-      "DeleteBackupVaultLockConfiguration",
-      "DeleteBackupVaultNotifications",
-      "DeleteFramework",
-      "DeleteRecoveryPoint",
-      "DeleteReportPlan",
-      "DisassociateRecoveryPoint",
-      "PutBackupVaultLockConfiguration",
-      "PutBackupVaultNotifications",
-      "StartBackupJob",
-      "StartCopyJob",
-      "StartReportJob",
-      "StartRestoreJob",
-      "StopBackupJob",
-      "UpdateBackupPlan",
-      "UpdateFramework",
-      "UpdateGlobalSettings",
-      "UpdateRecoveryPointLifecycle",
-      "UpdateRegionSettings",
-      "UpdateReportPlan"
+    Write: [
+      'CopyFromBackupVault',
+      'CopyIntoBackupVault',
+      'CreateBackupPlan',
+      'CreateBackupSelection',
+      'CreateBackupVault',
+      'CreateFramework',
+      'CreateReportPlan',
+      'DeleteBackupPlan',
+      'DeleteBackupSelection',
+      'DeleteBackupVault',
+      'DeleteBackupVaultLockConfiguration',
+      'DeleteBackupVaultNotifications',
+      'DeleteFramework',
+      'DeleteRecoveryPoint',
+      'DeleteReportPlan',
+      'DisassociateRecoveryPoint',
+      'PutBackupVaultLockConfiguration',
+      'PutBackupVaultNotifications',
+      'StartBackupJob',
+      'StartCopyJob',
+      'StartReportJob',
+      'StartRestoreJob',
+      'StopBackupJob',
+      'UpdateBackupPlan',
+      'UpdateFramework',
+      'UpdateGlobalSettings',
+      'UpdateRecoveryPointLifecycle',
+      'UpdateRegionSettings',
+      'UpdateReportPlan'
     ],
-    "Permissions management": [
-      "DeleteBackupVaultAccessPolicy",
-      "PutBackupVaultAccessPolicy"
+    'Permissions management': [
+      'DeleteBackupVaultAccessPolicy',
+      'PutBackupVaultAccessPolicy'
     ],
-    "Read": [
-      "DescribeBackupJob",
-      "DescribeBackupVault",
-      "DescribeCopyJob",
-      "DescribeFramework",
-      "DescribeGlobalSettings",
-      "DescribeProtectedResource",
-      "DescribeRecoveryPoint",
-      "DescribeRegionSettings",
-      "DescribeReportJob",
-      "DescribeReportPlan",
-      "DescribeRestoreJob",
-      "ExportBackupPlanTemplate",
-      "GetBackupPlan",
-      "GetBackupPlanFromJSON",
-      "GetBackupPlanFromTemplate",
-      "GetBackupSelection",
-      "GetBackupVaultAccessPolicy",
-      "GetBackupVaultNotifications",
-      "GetRecoveryPointRestoreMetadata",
-      "GetSupportedResourceTypes",
-      "ListTags"
+    Read: [
+      'DescribeBackupJob',
+      'DescribeBackupVault',
+      'DescribeCopyJob',
+      'DescribeFramework',
+      'DescribeGlobalSettings',
+      'DescribeProtectedResource',
+      'DescribeRecoveryPoint',
+      'DescribeRegionSettings',
+      'DescribeReportJob',
+      'DescribeReportPlan',
+      'DescribeRestoreJob',
+      'ExportBackupPlanTemplate',
+      'GetBackupPlan',
+      'GetBackupPlanFromJSON',
+      'GetBackupPlanFromTemplate',
+      'GetBackupSelection',
+      'GetBackupVaultAccessPolicy',
+      'GetBackupVaultNotifications',
+      'GetRecoveryPointRestoreMetadata',
+      'GetSupportedResourceTypes',
+      'ListTags'
     ],
-    "List": [
-      "ListBackupJobs",
-      "ListBackupPlanTemplates",
-      "ListBackupPlanVersions",
-      "ListBackupPlans",
-      "ListBackupSelections",
-      "ListBackupVaults",
-      "ListCopyJobs",
-      "ListFrameworks",
-      "ListProtectedResources",
-      "ListRecoveryPointsByBackupVault",
-      "ListRecoveryPointsByResource",
-      "ListReportJobs",
-      "ListReportPlans",
-      "ListRestoreJobs"
+    List: [
+      'ListBackupJobs',
+      'ListBackupPlanTemplates',
+      'ListBackupPlanVersions',
+      'ListBackupPlans',
+      'ListBackupSelections',
+      'ListBackupVaults',
+      'ListCopyJobs',
+      'ListFrameworks',
+      'ListProtectedResources',
+      'ListRecoveryPointsByBackupVault',
+      'ListRecoveryPointsByResource',
+      'ListReportJobs',
+      'ListReportPlans',
+      'ListRestoreJobs'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

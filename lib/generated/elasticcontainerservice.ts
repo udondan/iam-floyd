@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [ecs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticcontainerservice.html).
@@ -14,7 +14,7 @@ export class Ecs extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -733,67 +733,67 @@ export class Ecs extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateCapacityProvider",
-      "CreateCluster",
-      "CreateService",
-      "CreateTaskSet",
-      "DeleteAccountSetting",
-      "DeleteAttributes",
-      "DeleteCapacityProvider",
-      "DeleteCluster",
-      "DeleteService",
-      "DeleteTaskSet",
-      "DeregisterContainerInstance",
-      "DeregisterTaskDefinition",
-      "DiscoverPollEndpoint",
-      "ExecuteCommand",
-      "Poll",
-      "PutAccountSetting",
-      "PutAccountSettingDefault",
-      "PutAttributes",
-      "PutClusterCapacityProviders",
-      "RegisterContainerInstance",
-      "RegisterTaskDefinition",
-      "RunTask",
-      "StartTask",
-      "StartTelemetrySession",
-      "StopTask",
-      "SubmitAttachmentStateChanges",
-      "SubmitContainerStateChange",
-      "SubmitTaskStateChange",
-      "UpdateCapacityProvider",
-      "UpdateCluster",
-      "UpdateClusterSettings",
-      "UpdateContainerAgent",
-      "UpdateContainerInstancesState",
-      "UpdateService",
-      "UpdateServicePrimaryTaskSet",
-      "UpdateTaskSet"
+    Write: [
+      'CreateCapacityProvider',
+      'CreateCluster',
+      'CreateService',
+      'CreateTaskSet',
+      'DeleteAccountSetting',
+      'DeleteAttributes',
+      'DeleteCapacityProvider',
+      'DeleteCluster',
+      'DeleteService',
+      'DeleteTaskSet',
+      'DeregisterContainerInstance',
+      'DeregisterTaskDefinition',
+      'DiscoverPollEndpoint',
+      'ExecuteCommand',
+      'Poll',
+      'PutAccountSetting',
+      'PutAccountSettingDefault',
+      'PutAttributes',
+      'PutClusterCapacityProviders',
+      'RegisterContainerInstance',
+      'RegisterTaskDefinition',
+      'RunTask',
+      'StartTask',
+      'StartTelemetrySession',
+      'StopTask',
+      'SubmitAttachmentStateChanges',
+      'SubmitContainerStateChange',
+      'SubmitTaskStateChange',
+      'UpdateCapacityProvider',
+      'UpdateCluster',
+      'UpdateClusterSettings',
+      'UpdateContainerAgent',
+      'UpdateContainerInstancesState',
+      'UpdateService',
+      'UpdateServicePrimaryTaskSet',
+      'UpdateTaskSet'
     ],
-    "Read": [
-      "DescribeCapacityProviders",
-      "DescribeClusters",
-      "DescribeContainerInstances",
-      "DescribeServices",
-      "DescribeTaskDefinition",
-      "DescribeTaskSets",
-      "DescribeTasks",
-      "ListAccountSettings",
-      "ListTagsForResource"
+    Read: [
+      'DescribeCapacityProviders',
+      'DescribeClusters',
+      'DescribeContainerInstances',
+      'DescribeServices',
+      'DescribeTaskDefinition',
+      'DescribeTaskSets',
+      'DescribeTasks',
+      'ListAccountSettings',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListAttributes",
-      "ListClusters",
-      "ListContainerInstances",
-      "ListServices",
-      "ListTaskDefinitionFamilies",
-      "ListTaskDefinitions",
-      "ListTasks"
+    List: [
+      'ListAttributes',
+      'ListClusters',
+      'ListContainerInstances',
+      'ListServices',
+      'ListTaskDefinitionFamilies',
+      'ListTaskDefinitions',
+      'ListTasks'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [xray](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsx-ray.html).
@@ -14,7 +14,7 @@ export class Xray extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -346,42 +346,42 @@ export class Xray extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "List": [
-      "BatchGetTraces",
-      "ListTagsForResource"
+    List: [
+      'BatchGetTraces',
+      'ListTagsForResource'
     ],
-    "Write": [
-      "CreateGroup",
-      "CreateSamplingRule",
-      "DeleteGroup",
-      "DeleteSamplingRule",
-      "PutTelemetryRecords",
-      "PutTraceSegments",
-      "UpdateGroup",
-      "UpdateSamplingRule"
+    Write: [
+      'CreateGroup',
+      'CreateSamplingRule',
+      'DeleteGroup',
+      'DeleteSamplingRule',
+      'PutTelemetryRecords',
+      'PutTraceSegments',
+      'UpdateGroup',
+      'UpdateSamplingRule'
     ],
-    "Read": [
-      "GetEncryptionConfig",
-      "GetGroup",
-      "GetGroups",
-      "GetInsight",
-      "GetInsightEvents",
-      "GetInsightImpactGraph",
-      "GetInsightSummaries",
-      "GetSamplingRules",
-      "GetSamplingStatisticSummaries",
-      "GetSamplingTargets",
-      "GetServiceGraph",
-      "GetTimeSeriesServiceStatistics",
-      "GetTraceGraph",
-      "GetTraceSummaries"
+    Read: [
+      'GetEncryptionConfig',
+      'GetGroup',
+      'GetGroups',
+      'GetInsight',
+      'GetInsightEvents',
+      'GetInsightImpactGraph',
+      'GetInsightSummaries',
+      'GetSamplingRules',
+      'GetSamplingStatisticSummaries',
+      'GetSamplingTargets',
+      'GetServiceGraph',
+      'GetTimeSeriesServiceStatistics',
+      'GetTraceGraph',
+      'GetTraceSummaries'
     ],
-    "Permissions management": [
-      "PutEncryptionConfig"
+    'Permissions management': [
+      'PutEncryptionConfig'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

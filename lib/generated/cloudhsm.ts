@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [cloudhsm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudhsm.html).
@@ -14,7 +14,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -397,46 +397,46 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Tagging": [
-      "AddTagsToResource",
-      "RemoveTagsFromResource",
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'AddTagsToResource',
+      'RemoveTagsFromResource',
+      'TagResource',
+      'UntagResource'
     ],
-    "Write": [
-      "CopyBackupToRegion",
-      "CreateCluster",
-      "CreateHapg",
-      "CreateHsm",
-      "CreateLunaClient",
-      "DeleteBackup",
-      "DeleteCluster",
-      "DeleteHapg",
-      "DeleteHsm",
-      "DeleteLunaClient",
-      "InitializeCluster",
-      "ModifyBackupAttributes",
-      "ModifyCluster",
-      "ModifyHapg",
-      "ModifyHsm",
-      "ModifyLunaClient",
-      "RestoreBackup"
+    Write: [
+      'CopyBackupToRegion',
+      'CreateCluster',
+      'CreateHapg',
+      'CreateHsm',
+      'CreateLunaClient',
+      'DeleteBackup',
+      'DeleteCluster',
+      'DeleteHapg',
+      'DeleteHsm',
+      'DeleteLunaClient',
+      'InitializeCluster',
+      'ModifyBackupAttributes',
+      'ModifyCluster',
+      'ModifyHapg',
+      'ModifyHsm',
+      'ModifyLunaClient',
+      'RestoreBackup'
     ],
-    "Read": [
-      "DescribeBackups",
-      "DescribeClusters",
-      "DescribeHapg",
-      "DescribeHsm",
-      "DescribeLunaClient",
-      "GetConfig",
-      "ListTags",
-      "ListTagsForResource"
+    Read: [
+      'DescribeBackups',
+      'DescribeClusters',
+      'DescribeHapg',
+      'DescribeHsm',
+      'DescribeLunaClient',
+      'GetConfig',
+      'ListTags',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListAvailableZones",
-      "ListHapgs",
-      "ListHsms",
-      "ListLunaClients"
+    List: [
+      'ListAvailableZones',
+      'ListHapgs',
+      'ListHsms',
+      'ListLunaClients'
     ]
   };
 

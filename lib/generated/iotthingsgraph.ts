@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [iotthingsgraph](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotthingsgraph.html).
@@ -14,7 +14,7 @@ export class Iotthingsgraph extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -423,48 +423,48 @@ export class Iotthingsgraph extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateEntityToThing",
-      "CreateFlowTemplate",
-      "CreateSystemInstance",
-      "CreateSystemTemplate",
-      "DeleteFlowTemplate",
-      "DeleteNamespace",
-      "DeleteSystemInstance",
-      "DeleteSystemTemplate",
-      "DeploySystemInstance",
-      "DeprecateFlowTemplate",
-      "DeprecateSystemTemplate",
-      "DissociateEntityFromThing",
-      "UndeploySystemInstance",
-      "UpdateFlowTemplate",
-      "UpdateSystemTemplate",
-      "UploadEntityDefinitions"
+    Write: [
+      'AssociateEntityToThing',
+      'CreateFlowTemplate',
+      'CreateSystemInstance',
+      'CreateSystemTemplate',
+      'DeleteFlowTemplate',
+      'DeleteNamespace',
+      'DeleteSystemInstance',
+      'DeleteSystemTemplate',
+      'DeploySystemInstance',
+      'DeprecateFlowTemplate',
+      'DeprecateSystemTemplate',
+      'DissociateEntityFromThing',
+      'UndeploySystemInstance',
+      'UpdateFlowTemplate',
+      'UpdateSystemTemplate',
+      'UploadEntityDefinitions'
     ],
-    "Read": [
-      "DescribeNamespace",
-      "GetEntities",
-      "GetFlowTemplate",
-      "GetFlowTemplateRevisions",
-      "GetNamespaceDeletionStatus",
-      "GetSystemInstance",
-      "GetSystemTemplate",
-      "GetSystemTemplateRevisions",
-      "GetUploadStatus",
-      "SearchEntities",
-      "SearchFlowExecutions",
-      "SearchFlowTemplates",
-      "SearchSystemInstances",
-      "SearchSystemTemplates",
-      "SearchThings"
+    Read: [
+      'DescribeNamespace',
+      'GetEntities',
+      'GetFlowTemplate',
+      'GetFlowTemplateRevisions',
+      'GetNamespaceDeletionStatus',
+      'GetSystemInstance',
+      'GetSystemTemplate',
+      'GetSystemTemplateRevisions',
+      'GetUploadStatus',
+      'SearchEntities',
+      'SearchFlowExecutions',
+      'SearchFlowTemplates',
+      'SearchSystemInstances',
+      'SearchSystemTemplates',
+      'SearchThings'
     ],
-    "List": [
-      "ListFlowExecutionMessages",
-      "ListTagsForResource"
+    List: [
+      'ListFlowExecutionMessages',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

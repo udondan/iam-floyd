@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [proton](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsproton.html).
@@ -14,7 +14,7 @@ export class Proton extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -902,85 +902,85 @@ export class Proton extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AcceptEnvironmentAccountConnection",
-      "CancelEnvironmentDeployment",
-      "CancelServiceInstanceDeployment",
-      "CancelServicePipelineDeployment",
-      "CreateEnvironment",
-      "CreateEnvironmentAccountConnection",
-      "CreateEnvironmentTemplate",
-      "CreateEnvironmentTemplateMajorVersion",
-      "CreateEnvironmentTemplateMinorVersion",
-      "CreateEnvironmentTemplateVersion",
-      "CreateService",
-      "CreateServiceTemplate",
-      "CreateServiceTemplateMajorVersion",
-      "CreateServiceTemplateMinorVersion",
-      "CreateServiceTemplateVersion",
-      "DeleteAccountRoles",
-      "DeleteEnvironment",
-      "DeleteEnvironmentAccountConnection",
-      "DeleteEnvironmentTemplate",
-      "DeleteEnvironmentTemplateMajorVersion",
-      "DeleteEnvironmentTemplateMinorVersion",
-      "DeleteEnvironmentTemplateVersion",
-      "DeleteService",
-      "DeleteServiceTemplate",
-      "DeleteServiceTemplateMajorVersion",
-      "DeleteServiceTemplateMinorVersion",
-      "DeleteServiceTemplateVersion",
-      "RejectEnvironmentAccountConnection",
-      "UpdateAccountRoles",
-      "UpdateAccountSettings",
-      "UpdateEnvironment",
-      "UpdateEnvironmentAccountConnection",
-      "UpdateEnvironmentTemplate",
-      "UpdateEnvironmentTemplateMajorVersion",
-      "UpdateEnvironmentTemplateMinorVersion",
-      "UpdateEnvironmentTemplateVersion",
-      "UpdateService",
-      "UpdateServiceInstance",
-      "UpdateServicePipeline",
-      "UpdateServiceTemplate",
-      "UpdateServiceTemplateMajorVersion",
-      "UpdateServiceTemplateMinorVersion",
-      "UpdateServiceTemplateVersion"
+    Write: [
+      'AcceptEnvironmentAccountConnection',
+      'CancelEnvironmentDeployment',
+      'CancelServiceInstanceDeployment',
+      'CancelServicePipelineDeployment',
+      'CreateEnvironment',
+      'CreateEnvironmentAccountConnection',
+      'CreateEnvironmentTemplate',
+      'CreateEnvironmentTemplateMajorVersion',
+      'CreateEnvironmentTemplateMinorVersion',
+      'CreateEnvironmentTemplateVersion',
+      'CreateService',
+      'CreateServiceTemplate',
+      'CreateServiceTemplateMajorVersion',
+      'CreateServiceTemplateMinorVersion',
+      'CreateServiceTemplateVersion',
+      'DeleteAccountRoles',
+      'DeleteEnvironment',
+      'DeleteEnvironmentAccountConnection',
+      'DeleteEnvironmentTemplate',
+      'DeleteEnvironmentTemplateMajorVersion',
+      'DeleteEnvironmentTemplateMinorVersion',
+      'DeleteEnvironmentTemplateVersion',
+      'DeleteService',
+      'DeleteServiceTemplate',
+      'DeleteServiceTemplateMajorVersion',
+      'DeleteServiceTemplateMinorVersion',
+      'DeleteServiceTemplateVersion',
+      'RejectEnvironmentAccountConnection',
+      'UpdateAccountRoles',
+      'UpdateAccountSettings',
+      'UpdateEnvironment',
+      'UpdateEnvironmentAccountConnection',
+      'UpdateEnvironmentTemplate',
+      'UpdateEnvironmentTemplateMajorVersion',
+      'UpdateEnvironmentTemplateMinorVersion',
+      'UpdateEnvironmentTemplateVersion',
+      'UpdateService',
+      'UpdateServiceInstance',
+      'UpdateServicePipeline',
+      'UpdateServiceTemplate',
+      'UpdateServiceTemplateMajorVersion',
+      'UpdateServiceTemplateMinorVersion',
+      'UpdateServiceTemplateVersion'
     ],
-    "Read": [
-      "GetAccountRoles",
-      "GetAccountSettings",
-      "GetEnvironment",
-      "GetEnvironmentAccountConnection",
-      "GetEnvironmentTemplate",
-      "GetEnvironmentTemplateMajorVersion",
-      "GetEnvironmentTemplateMinorVersion",
-      "GetEnvironmentTemplateVersion",
-      "GetService",
-      "GetServiceInstance",
-      "GetServiceTemplate",
-      "GetServiceTemplateMajorVersion",
-      "GetServiceTemplateMinorVersion",
-      "GetServiceTemplateVersion",
-      "ListTagsForResource"
+    Read: [
+      'GetAccountRoles',
+      'GetAccountSettings',
+      'GetEnvironment',
+      'GetEnvironmentAccountConnection',
+      'GetEnvironmentTemplate',
+      'GetEnvironmentTemplateMajorVersion',
+      'GetEnvironmentTemplateMinorVersion',
+      'GetEnvironmentTemplateVersion',
+      'GetService',
+      'GetServiceInstance',
+      'GetServiceTemplate',
+      'GetServiceTemplateMajorVersion',
+      'GetServiceTemplateMinorVersion',
+      'GetServiceTemplateVersion',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListEnvironmentAccountConnections",
-      "ListEnvironmentTemplateMajorVersions",
-      "ListEnvironmentTemplateMinorVersions",
-      "ListEnvironmentTemplateVersions",
-      "ListEnvironmentTemplates",
-      "ListEnvironments",
-      "ListServiceInstances",
-      "ListServiceTemplateMajorVersions",
-      "ListServiceTemplateMinorVersions",
-      "ListServiceTemplateVersions",
-      "ListServiceTemplates",
-      "ListServices"
+    List: [
+      'ListEnvironmentAccountConnections',
+      'ListEnvironmentTemplateMajorVersions',
+      'ListEnvironmentTemplateMinorVersions',
+      'ListEnvironmentTemplateVersions',
+      'ListEnvironmentTemplates',
+      'ListEnvironments',
+      'ListServiceInstances',
+      'ListServiceTemplateMajorVersions',
+      'ListServiceTemplateMinorVersions',
+      'ListServiceTemplateVersions',
+      'ListServiceTemplates',
+      'ListServices'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

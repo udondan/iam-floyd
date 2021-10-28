@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [mgn](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsapplicationmigrationservice.html).
@@ -14,7 +14,7 @@ export class Mgn extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -695,64 +695,64 @@ export class Mgn extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "BatchCreateVolumeSnapshotGroupForMgn",
-      "BatchDeleteSnapshotRequestForMgn",
-      "ChangeServerLifeCycleState",
-      "CreateReplicationConfigurationTemplate",
-      "DeleteJob",
-      "DeleteReplicationConfigurationTemplate",
-      "DeleteSourceServer",
-      "DisconnectFromService",
-      "FinalizeCutover",
-      "InitializeService",
-      "MarkAsArchived",
-      "NotifyAgentAuthenticationForMgn",
-      "NotifyAgentConnectedForMgn",
-      "NotifyAgentDisconnectedForMgn",
-      "NotifyAgentReplicationProgressForMgn",
-      "RegisterAgentForMgn",
-      "RetryDataReplication",
-      "SendAgentLogsForMgn",
-      "SendAgentMetricsForMgn",
-      "SendChannelCommandResultForMgn",
-      "SendClientLogsForMgn",
-      "SendClientMetricsForMgn",
-      "StartCutover",
-      "StartTest",
-      "TerminateTargetInstances",
-      "UpdateAgentBacklogForMgn",
-      "UpdateAgentConversionInfoForMgn",
-      "UpdateAgentReplicationInfoForMgn",
-      "UpdateAgentReplicationProcessStateForMgn",
-      "UpdateAgentSourcePropertiesForMgn",
-      "UpdateLaunchConfiguration",
-      "UpdateReplicationConfiguration",
-      "UpdateReplicationConfigurationTemplate"
+    Write: [
+      'BatchCreateVolumeSnapshotGroupForMgn',
+      'BatchDeleteSnapshotRequestForMgn',
+      'ChangeServerLifeCycleState',
+      'CreateReplicationConfigurationTemplate',
+      'DeleteJob',
+      'DeleteReplicationConfigurationTemplate',
+      'DeleteSourceServer',
+      'DisconnectFromService',
+      'FinalizeCutover',
+      'InitializeService',
+      'MarkAsArchived',
+      'NotifyAgentAuthenticationForMgn',
+      'NotifyAgentConnectedForMgn',
+      'NotifyAgentDisconnectedForMgn',
+      'NotifyAgentReplicationProgressForMgn',
+      'RegisterAgentForMgn',
+      'RetryDataReplication',
+      'SendAgentLogsForMgn',
+      'SendAgentMetricsForMgn',
+      'SendChannelCommandResultForMgn',
+      'SendClientLogsForMgn',
+      'SendClientMetricsForMgn',
+      'StartCutover',
+      'StartTest',
+      'TerminateTargetInstances',
+      'UpdateAgentBacklogForMgn',
+      'UpdateAgentConversionInfoForMgn',
+      'UpdateAgentReplicationInfoForMgn',
+      'UpdateAgentReplicationProcessStateForMgn',
+      'UpdateAgentSourcePropertiesForMgn',
+      'UpdateLaunchConfiguration',
+      'UpdateReplicationConfiguration',
+      'UpdateReplicationConfigurationTemplate'
     ],
-    "Read": [
-      "DescribeJobLogItems",
-      "DescribeReplicationServerAssociationsForMgn",
-      "DescribeSnapshotRequestsForMgn",
-      "GetAgentCommandForMgn",
-      "GetAgentConfirmedResumeInfoForMgn",
-      "GetAgentInstallationAssetsForMgn",
-      "GetAgentReplicationInfoForMgn",
-      "GetAgentRuntimeConfigurationForMgn",
-      "GetAgentSnapshotCreditsForMgn",
-      "GetChannelCommandsForMgn",
-      "GetLaunchConfiguration",
-      "GetReplicationConfiguration",
-      "ListTagsForResource"
+    Read: [
+      'DescribeJobLogItems',
+      'DescribeReplicationServerAssociationsForMgn',
+      'DescribeSnapshotRequestsForMgn',
+      'GetAgentCommandForMgn',
+      'GetAgentConfirmedResumeInfoForMgn',
+      'GetAgentInstallationAssetsForMgn',
+      'GetAgentReplicationInfoForMgn',
+      'GetAgentRuntimeConfigurationForMgn',
+      'GetAgentSnapshotCreditsForMgn',
+      'GetChannelCommandsForMgn',
+      'GetLaunchConfiguration',
+      'GetReplicationConfiguration',
+      'ListTagsForResource'
     ],
-    "List": [
-      "DescribeJobs",
-      "DescribeReplicationConfigurationTemplates",
-      "DescribeSourceServers"
+    List: [
+      'DescribeJobs',
+      'DescribeReplicationConfigurationTemplates',
+      'DescribeSourceServers'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

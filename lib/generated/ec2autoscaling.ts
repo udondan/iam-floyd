@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [autoscaling](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2autoscaling.html).
@@ -14,7 +14,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -742,74 +742,74 @@ export class Autoscaling extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AttachInstances",
-      "AttachLoadBalancerTargetGroups",
-      "AttachLoadBalancers",
-      "BatchDeleteScheduledAction",
-      "BatchPutScheduledUpdateGroupAction",
-      "CancelInstanceRefresh",
-      "CompleteLifecycleAction",
-      "CreateAutoScalingGroup",
-      "CreateLaunchConfiguration",
-      "DeleteAutoScalingGroup",
-      "DeleteLaunchConfiguration",
-      "DeleteLifecycleHook",
-      "DeleteNotificationConfiguration",
-      "DeletePolicy",
-      "DeleteScheduledAction",
-      "DeleteWarmPool",
-      "DetachInstances",
-      "DetachLoadBalancerTargetGroups",
-      "DetachLoadBalancers",
-      "DisableMetricsCollection",
-      "EnableMetricsCollection",
-      "EnterStandby",
-      "ExecutePolicy",
-      "ExitStandby",
-      "PutLifecycleHook",
-      "PutNotificationConfiguration",
-      "PutScalingPolicy",
-      "PutScheduledUpdateGroupAction",
-      "PutWarmPool",
-      "RecordLifecycleActionHeartbeat",
-      "ResumeProcesses",
-      "SetDesiredCapacity",
-      "SetInstanceHealth",
-      "SetInstanceProtection",
-      "StartInstanceRefresh",
-      "SuspendProcesses",
-      "TerminateInstanceInAutoScalingGroup",
-      "UpdateAutoScalingGroup"
+    Write: [
+      'AttachInstances',
+      'AttachLoadBalancerTargetGroups',
+      'AttachLoadBalancers',
+      'BatchDeleteScheduledAction',
+      'BatchPutScheduledUpdateGroupAction',
+      'CancelInstanceRefresh',
+      'CompleteLifecycleAction',
+      'CreateAutoScalingGroup',
+      'CreateLaunchConfiguration',
+      'DeleteAutoScalingGroup',
+      'DeleteLaunchConfiguration',
+      'DeleteLifecycleHook',
+      'DeleteNotificationConfiguration',
+      'DeletePolicy',
+      'DeleteScheduledAction',
+      'DeleteWarmPool',
+      'DetachInstances',
+      'DetachLoadBalancerTargetGroups',
+      'DetachLoadBalancers',
+      'DisableMetricsCollection',
+      'EnableMetricsCollection',
+      'EnterStandby',
+      'ExecutePolicy',
+      'ExitStandby',
+      'PutLifecycleHook',
+      'PutNotificationConfiguration',
+      'PutScalingPolicy',
+      'PutScheduledUpdateGroupAction',
+      'PutWarmPool',
+      'RecordLifecycleActionHeartbeat',
+      'ResumeProcesses',
+      'SetDesiredCapacity',
+      'SetInstanceHealth',
+      'SetInstanceProtection',
+      'StartInstanceRefresh',
+      'SuspendProcesses',
+      'TerminateInstanceInAutoScalingGroup',
+      'UpdateAutoScalingGroup'
     ],
-    "Tagging": [
-      "CreateOrUpdateTags",
-      "DeleteTags"
+    Tagging: [
+      'CreateOrUpdateTags',
+      'DeleteTags'
     ],
-    "List": [
-      "DescribeAccountLimits",
-      "DescribeAdjustmentTypes",
-      "DescribeAutoScalingGroups",
-      "DescribeAutoScalingInstances",
-      "DescribeAutoScalingNotificationTypes",
-      "DescribeInstanceRefreshes",
-      "DescribeLaunchConfigurations",
-      "DescribeLifecycleHookTypes",
-      "DescribeLifecycleHooks",
-      "DescribeLoadBalancerTargetGroups",
-      "DescribeLoadBalancers",
-      "DescribeMetricCollectionTypes",
-      "DescribeNotificationConfigurations",
-      "DescribePolicies",
-      "DescribeScalingActivities",
-      "DescribeScalingProcessTypes",
-      "DescribeScheduledActions",
-      "DescribeTerminationPolicyTypes",
-      "DescribeWarmPool",
-      "GetPredictiveScalingForecast"
+    List: [
+      'DescribeAccountLimits',
+      'DescribeAdjustmentTypes',
+      'DescribeAutoScalingGroups',
+      'DescribeAutoScalingInstances',
+      'DescribeAutoScalingNotificationTypes',
+      'DescribeInstanceRefreshes',
+      'DescribeLaunchConfigurations',
+      'DescribeLifecycleHookTypes',
+      'DescribeLifecycleHooks',
+      'DescribeLoadBalancerTargetGroups',
+      'DescribeLoadBalancers',
+      'DescribeMetricCollectionTypes',
+      'DescribeNotificationConfigurations',
+      'DescribePolicies',
+      'DescribeScalingActivities',
+      'DescribeScalingProcessTypes',
+      'DescribeScheduledActions',
+      'DescribeTerminationPolicyTypes',
+      'DescribeWarmPool',
+      'GetPredictiveScalingForecast'
     ],
-    "Read": [
-      "DescribeTags"
+    Read: [
+      'DescribeTags'
     ]
   };
 

@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [schemas](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoneventbridgeschemas.html).
@@ -14,7 +14,7 @@ export class Schemas extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -367,44 +367,44 @@ export class Schemas extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateDiscoverer",
-      "CreateRegistry",
-      "CreateSchema",
-      "DeleteDiscoverer",
-      "DeleteRegistry",
-      "DeleteResourcePolicy",
-      "DeleteSchema",
-      "DeleteSchemaVersion",
-      "PutCodeBinding",
-      "PutResourcePolicy",
-      "StartDiscoverer",
-      "StopDiscoverer",
-      "UpdateDiscoverer",
-      "UpdateRegistry",
-      "UpdateSchema"
+    Write: [
+      'CreateDiscoverer',
+      'CreateRegistry',
+      'CreateSchema',
+      'DeleteDiscoverer',
+      'DeleteRegistry',
+      'DeleteResourcePolicy',
+      'DeleteSchema',
+      'DeleteSchemaVersion',
+      'PutCodeBinding',
+      'PutResourcePolicy',
+      'StartDiscoverer',
+      'StopDiscoverer',
+      'UpdateDiscoverer',
+      'UpdateRegistry',
+      'UpdateSchema'
     ],
-    "Read": [
-      "DescribeCodeBinding",
-      "DescribeDiscoverer",
-      "DescribeRegistry",
-      "DescribeSchema",
-      "ExportSchema",
-      "GetCodeBindingSource",
-      "GetDiscoveredSchema",
-      "GetResourcePolicy"
+    Read: [
+      'DescribeCodeBinding',
+      'DescribeDiscoverer',
+      'DescribeRegistry',
+      'DescribeSchema',
+      'ExportSchema',
+      'GetCodeBindingSource',
+      'GetDiscoveredSchema',
+      'GetResourcePolicy'
     ],
-    "List": [
-      "ListDiscoverers",
-      "ListRegistries",
-      "ListSchemaVersions",
-      "ListSchemas",
-      "ListTagsForResource",
-      "SearchSchemas"
+    List: [
+      'ListDiscoverers',
+      'ListRegistries',
+      'ListSchemaVersions',
+      'ListSchemas',
+      'ListTagsForResource',
+      'SearchSchemas'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

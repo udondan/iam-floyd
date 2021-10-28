@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [sqs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsqs.html).
@@ -14,7 +14,7 @@ export class Sqs extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -206,30 +206,30 @@ export class Sqs extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Permissions management": [
-      "AddPermission",
-      "RemovePermission"
+    'Permissions management': [
+      'AddPermission',
+      'RemovePermission'
     ],
-    "Write": [
-      "ChangeMessageVisibility",
-      "CreateQueue",
-      "DeleteMessage",
-      "DeleteQueue",
-      "PurgeQueue",
-      "SendMessage",
-      "SetQueueAttributes"
+    Write: [
+      'ChangeMessageVisibility',
+      'CreateQueue',
+      'DeleteMessage',
+      'DeleteQueue',
+      'PurgeQueue',
+      'SendMessage',
+      'SetQueueAttributes'
     ],
-    "Read": [
-      "GetQueueAttributes",
-      "GetQueueUrl",
-      "ListDeadLetterSourceQueues",
-      "ListQueueTags",
-      "ListQueues",
-      "ReceiveMessage"
+    Read: [
+      'GetQueueAttributes',
+      'GetQueueUrl',
+      'ListDeadLetterSourceQueues',
+      'ListQueueTags',
+      'ListQueues',
+      'ReceiveMessage'
     ],
-    "Tagging": [
-      "TagQueue",
-      "UntagQueue"
+    Tagging: [
+      'TagQueue',
+      'UntagQueue'
     ]
   };
 

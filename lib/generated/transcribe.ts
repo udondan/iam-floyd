@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [transcribe](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontranscribe.html).
@@ -14,7 +14,7 @@ export class Transcribe extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -495,51 +495,51 @@ export class Transcribe extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateCallAnalyticsCategory",
-      "CreateLanguageModel",
-      "CreateMedicalVocabulary",
-      "CreateVocabulary",
-      "CreateVocabularyFilter",
-      "DeleteCallAnalyticsCategory",
-      "DeleteCallAnalyticsJob",
-      "DeleteLanguageModel",
-      "DeleteMedicalTranscriptionJob",
-      "DeleteMedicalVocabulary",
-      "DeleteTranscriptionJob",
-      "DeleteVocabulary",
-      "DeleteVocabularyFilter",
-      "StartCallAnalyticsJob",
-      "StartMedicalStreamTranscription",
-      "StartMedicalStreamTranscriptionWebSocket",
-      "StartMedicalTranscriptionJob",
-      "StartStreamTranscription",
-      "StartStreamTranscriptionWebSocket",
-      "StartTranscriptionJob",
-      "UpdateCallAnalyticsCategory",
-      "UpdateMedicalVocabulary",
-      "UpdateVocabulary",
-      "UpdateVocabularyFilter"
+    Write: [
+      'CreateCallAnalyticsCategory',
+      'CreateLanguageModel',
+      'CreateMedicalVocabulary',
+      'CreateVocabulary',
+      'CreateVocabularyFilter',
+      'DeleteCallAnalyticsCategory',
+      'DeleteCallAnalyticsJob',
+      'DeleteLanguageModel',
+      'DeleteMedicalTranscriptionJob',
+      'DeleteMedicalVocabulary',
+      'DeleteTranscriptionJob',
+      'DeleteVocabulary',
+      'DeleteVocabularyFilter',
+      'StartCallAnalyticsJob',
+      'StartMedicalStreamTranscription',
+      'StartMedicalStreamTranscriptionWebSocket',
+      'StartMedicalTranscriptionJob',
+      'StartStreamTranscription',
+      'StartStreamTranscriptionWebSocket',
+      'StartTranscriptionJob',
+      'UpdateCallAnalyticsCategory',
+      'UpdateMedicalVocabulary',
+      'UpdateVocabulary',
+      'UpdateVocabularyFilter'
     ],
-    "Read": [
-      "DescribeLanguageModel",
-      "GetCallAnalyticsCategory",
-      "GetCallAnalyticsJob",
-      "GetMedicalTranscriptionJob",
-      "GetMedicalVocabulary",
-      "GetTranscriptionJob",
-      "GetVocabulary",
-      "GetVocabularyFilter"
+    Read: [
+      'DescribeLanguageModel',
+      'GetCallAnalyticsCategory',
+      'GetCallAnalyticsJob',
+      'GetMedicalTranscriptionJob',
+      'GetMedicalVocabulary',
+      'GetTranscriptionJob',
+      'GetVocabulary',
+      'GetVocabularyFilter'
     ],
-    "List": [
-      "ListCallAnalyticsCategories",
-      "ListCallAnalyticsJobs",
-      "ListLanguageModels",
-      "ListMedicalTranscriptionJobs",
-      "ListMedicalVocabularies",
-      "ListTranscriptionJobs",
-      "ListVocabularies",
-      "ListVocabularyFilters"
+    List: [
+      'ListCallAnalyticsCategories',
+      'ListCallAnalyticsJobs',
+      'ListLanguageModels',
+      'ListMedicalTranscriptionJobs',
+      'ListMedicalVocabularies',
+      'ListTranscriptionJobs',
+      'ListVocabularies',
+      'ListVocabularyFilters'
     ]
   };
 

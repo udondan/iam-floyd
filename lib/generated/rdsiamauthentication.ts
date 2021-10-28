@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [rds-db](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrdsiamauthentication.html).
@@ -14,7 +14,7 @@ export class RdsDb extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -30,8 +30,8 @@ export class RdsDb extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Permissions management": [
-      "connect"
+    'Permissions management': [
+      'connect'
     ]
   };
 

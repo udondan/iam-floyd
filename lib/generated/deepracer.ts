@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [deepracer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeepracer.html).
@@ -14,7 +14,7 @@ export class Deepracer extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -752,61 +752,61 @@ export class Deepracer extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AddLeaderboardAccessPermission",
-      "AdminManageUser",
-      "AdminSetAccountConfig",
-      "CloneReinforcementLearningModel",
-      "CreateCar",
-      "CreateLeaderboard",
-      "CreateLeaderboardAccessToken",
-      "CreateLeaderboardSubmission",
-      "CreateReinforcementLearningModel",
-      "DeleteLeaderboard",
-      "DeleteModel",
-      "EditLeaderboard",
-      "ImportModel",
-      "MigrateModels",
-      "PerformLeaderboardOperation",
-      "RemoveLeaderboardAccessPermission",
-      "SetAlias",
-      "StartEvaluation",
-      "StopEvaluation",
-      "StopTrainingReinforcementLearningModel",
-      "TestRewardFunction",
-      "UpdateCar"
+    Write: [
+      'AddLeaderboardAccessPermission',
+      'AdminManageUser',
+      'AdminSetAccountConfig',
+      'CloneReinforcementLearningModel',
+      'CreateCar',
+      'CreateLeaderboard',
+      'CreateLeaderboardAccessToken',
+      'CreateLeaderboardSubmission',
+      'CreateReinforcementLearningModel',
+      'DeleteLeaderboard',
+      'DeleteModel',
+      'EditLeaderboard',
+      'ImportModel',
+      'MigrateModels',
+      'PerformLeaderboardOperation',
+      'RemoveLeaderboardAccessPermission',
+      'SetAlias',
+      'StartEvaluation',
+      'StopEvaluation',
+      'StopTrainingReinforcementLearningModel',
+      'TestRewardFunction',
+      'UpdateCar'
     ],
-    "Read": [
-      "AdminGetAccountConfig",
-      "AdminListAssociatedResources",
-      "AdminListAssociatedUsers",
-      "GetAccountConfig",
-      "GetAlias",
-      "GetAssetUrl",
-      "GetCar",
-      "GetCars",
-      "GetEvaluation",
-      "GetLatestUserSubmission",
-      "GetLeaderboard",
-      "GetModel",
-      "GetPrivateLeaderboard",
-      "GetRankedUserSubmission",
-      "GetTrack",
-      "GetTrainingJob",
-      "ListEvaluations",
-      "ListLeaderboardSubmissions",
-      "ListLeaderboards",
-      "ListModels",
-      "ListPrivateLeaderboardParticipants",
-      "ListPrivateLeaderboards",
-      "ListSubscribedPrivateLeaderboards",
-      "ListTagsForResource",
-      "ListTracks",
-      "ListTrainingJobs"
+    Read: [
+      'AdminGetAccountConfig',
+      'AdminListAssociatedResources',
+      'AdminListAssociatedUsers',
+      'GetAccountConfig',
+      'GetAlias',
+      'GetAssetUrl',
+      'GetCar',
+      'GetCars',
+      'GetEvaluation',
+      'GetLatestUserSubmission',
+      'GetLeaderboard',
+      'GetModel',
+      'GetPrivateLeaderboard',
+      'GetRankedUserSubmission',
+      'GetTrack',
+      'GetTrainingJob',
+      'ListEvaluations',
+      'ListLeaderboardSubmissions',
+      'ListLeaderboards',
+      'ListModels',
+      'ListPrivateLeaderboardParticipants',
+      'ListPrivateLeaderboards',
+      'ListSubscribedPrivateLeaderboards',
+      'ListTagsForResource',
+      'ListTracks',
+      'ListTrainingJobs'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [devicefarm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdevicefarm.html).
@@ -14,7 +14,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -891,90 +891,90 @@ export class Devicefarm extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateDevicePool",
-      "CreateInstanceProfile",
-      "CreateNetworkProfile",
-      "CreateProject",
-      "CreateRemoteAccessSession",
-      "CreateTestGridProject",
-      "CreateTestGridUrl",
-      "CreateUpload",
-      "CreateVPCEConfiguration",
-      "DeleteDevicePool",
-      "DeleteInstanceProfile",
-      "DeleteNetworkProfile",
-      "DeleteProject",
-      "DeleteRemoteAccessSession",
-      "DeleteRun",
-      "DeleteTestGridProject",
-      "DeleteUpload",
-      "DeleteVPCEConfiguration",
-      "InstallToRemoteAccessSession",
-      "PurchaseOffering",
-      "RenewOffering",
-      "ScheduleRun",
-      "StopJob",
-      "StopRemoteAccessSession",
-      "StopRun",
-      "UpdateDeviceInstance",
-      "UpdateDevicePool",
-      "UpdateInstanceProfile",
-      "UpdateNetworkProfile",
-      "UpdateProject",
-      "UpdateTestGridProject",
-      "UpdateUpload",
-      "UpdateVPCEConfiguration"
+    Write: [
+      'CreateDevicePool',
+      'CreateInstanceProfile',
+      'CreateNetworkProfile',
+      'CreateProject',
+      'CreateRemoteAccessSession',
+      'CreateTestGridProject',
+      'CreateTestGridUrl',
+      'CreateUpload',
+      'CreateVPCEConfiguration',
+      'DeleteDevicePool',
+      'DeleteInstanceProfile',
+      'DeleteNetworkProfile',
+      'DeleteProject',
+      'DeleteRemoteAccessSession',
+      'DeleteRun',
+      'DeleteTestGridProject',
+      'DeleteUpload',
+      'DeleteVPCEConfiguration',
+      'InstallToRemoteAccessSession',
+      'PurchaseOffering',
+      'RenewOffering',
+      'ScheduleRun',
+      'StopJob',
+      'StopRemoteAccessSession',
+      'StopRun',
+      'UpdateDeviceInstance',
+      'UpdateDevicePool',
+      'UpdateInstanceProfile',
+      'UpdateNetworkProfile',
+      'UpdateProject',
+      'UpdateTestGridProject',
+      'UpdateUpload',
+      'UpdateVPCEConfiguration'
     ],
-    "Read": [
-      "GetAccountSettings",
-      "GetDevice",
-      "GetDeviceInstance",
-      "GetDevicePool",
-      "GetDevicePoolCompatibility",
-      "GetInstanceProfile",
-      "GetJob",
-      "GetNetworkProfile",
-      "GetOfferingStatus",
-      "GetProject",
-      "GetRemoteAccessSession",
-      "GetRun",
-      "GetSuite",
-      "GetTest",
-      "GetTestGridProject",
-      "GetTestGridSession",
-      "GetUpload",
-      "GetVPCEConfiguration"
+    Read: [
+      'GetAccountSettings',
+      'GetDevice',
+      'GetDeviceInstance',
+      'GetDevicePool',
+      'GetDevicePoolCompatibility',
+      'GetInstanceProfile',
+      'GetJob',
+      'GetNetworkProfile',
+      'GetOfferingStatus',
+      'GetProject',
+      'GetRemoteAccessSession',
+      'GetRun',
+      'GetSuite',
+      'GetTest',
+      'GetTestGridProject',
+      'GetTestGridSession',
+      'GetUpload',
+      'GetVPCEConfiguration'
     ],
-    "List": [
-      "ListArtifacts",
-      "ListDeviceInstances",
-      "ListDevicePools",
-      "ListDevices",
-      "ListInstanceProfiles",
-      "ListJobs",
-      "ListNetworkProfiles",
-      "ListOfferingPromotions",
-      "ListOfferingTransactions",
-      "ListOfferings",
-      "ListProjects",
-      "ListRemoteAccessSessions",
-      "ListRuns",
-      "ListSamples",
-      "ListSuites",
-      "ListTagsForResource",
-      "ListTestGridProjects",
-      "ListTestGridSessionActions",
-      "ListTestGridSessionArtifacts",
-      "ListTestGridSessions",
-      "ListTests",
-      "ListUniqueProblems",
-      "ListUploads",
-      "ListVPCEConfigurations"
+    List: [
+      'ListArtifacts',
+      'ListDeviceInstances',
+      'ListDevicePools',
+      'ListDevices',
+      'ListInstanceProfiles',
+      'ListJobs',
+      'ListNetworkProfiles',
+      'ListOfferingPromotions',
+      'ListOfferingTransactions',
+      'ListOfferings',
+      'ListProjects',
+      'ListRemoteAccessSessions',
+      'ListRuns',
+      'ListSamples',
+      'ListSuites',
+      'ListTagsForResource',
+      'ListTestGridProjects',
+      'ListTestGridSessionActions',
+      'ListTestGridSessionArtifacts',
+      'ListTestGridSessions',
+      'ListTests',
+      'ListUniqueProblems',
+      'ListUploads',
+      'ListVPCEConfigurations'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [amplify](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsamplify.html).
@@ -14,7 +14,7 @@ export class Amplify extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -445,50 +445,50 @@ export class Amplify extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateApp",
-      "CreateBackendEnvironment",
-      "CreateBranch",
-      "CreateDeployment",
-      "CreateDomainAssociation",
-      "CreateWebHook",
-      "DeleteApp",
-      "DeleteBackendEnvironment",
-      "DeleteBranch",
-      "DeleteDomainAssociation",
-      "DeleteJob",
-      "DeleteWebHook",
-      "GenerateAccessLogs",
-      "StartDeployment",
-      "StartJob",
-      "StopJob",
-      "UpdateApp",
-      "UpdateBranch",
-      "UpdateDomainAssociation",
-      "UpdateWebHook"
+    Write: [
+      'CreateApp',
+      'CreateBackendEnvironment',
+      'CreateBranch',
+      'CreateDeployment',
+      'CreateDomainAssociation',
+      'CreateWebHook',
+      'DeleteApp',
+      'DeleteBackendEnvironment',
+      'DeleteBranch',
+      'DeleteDomainAssociation',
+      'DeleteJob',
+      'DeleteWebHook',
+      'GenerateAccessLogs',
+      'StartDeployment',
+      'StartJob',
+      'StopJob',
+      'UpdateApp',
+      'UpdateBranch',
+      'UpdateDomainAssociation',
+      'UpdateWebHook'
     ],
-    "Read": [
-      "GetApp",
-      "GetArtifactUrl",
-      "GetBackendEnvironment",
-      "GetBranch",
-      "GetDomainAssociation",
-      "GetJob",
-      "GetWebHook",
-      "ListTagsForResource"
+    Read: [
+      'GetApp',
+      'GetArtifactUrl',
+      'GetBackendEnvironment',
+      'GetBranch',
+      'GetDomainAssociation',
+      'GetJob',
+      'GetWebHook',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListApps",
-      "ListArtifacts",
-      "ListBackendEnvironments",
-      "ListBranches",
-      "ListDomainAssociations",
-      "ListJobs",
-      "ListWebHooks"
+    List: [
+      'ListApps',
+      'ListArtifacts',
+      'ListBackendEnvironments',
+      'ListBranches',
+      'ListDomainAssociations',
+      'ListJobs',
+      'ListWebHooks'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

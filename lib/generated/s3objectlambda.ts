@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [s3-object-lambda](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3objectlambda.html).
@@ -14,7 +14,7 @@ export class S3ObjectLambda extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -442,41 +442,41 @@ export class S3ObjectLambda extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AbortMultipartUpload",
-      "DeleteObject",
-      "DeleteObjectVersion",
-      "PutObject",
-      "PutObjectLegalHold",
-      "PutObjectRetention",
-      "RestoreObject",
-      "WriteGetObjectResponse"
+    Write: [
+      'AbortMultipartUpload',
+      'DeleteObject',
+      'DeleteObjectVersion',
+      'PutObject',
+      'PutObjectLegalHold',
+      'PutObjectRetention',
+      'RestoreObject',
+      'WriteGetObjectResponse'
     ],
-    "Tagging": [
-      "DeleteObjectTagging",
-      "DeleteObjectVersionTagging",
-      "PutObjectTagging",
-      "PutObjectVersionTagging"
+    Tagging: [
+      'DeleteObjectTagging',
+      'DeleteObjectVersionTagging',
+      'PutObjectTagging',
+      'PutObjectVersionTagging'
     ],
-    "Read": [
-      "GetObject",
-      "GetObjectAcl",
-      "GetObjectLegalHold",
-      "GetObjectRetention",
-      "GetObjectTagging",
-      "GetObjectVersion",
-      "GetObjectVersionAcl",
-      "GetObjectVersionTagging"
+    Read: [
+      'GetObject',
+      'GetObjectAcl',
+      'GetObjectLegalHold',
+      'GetObjectRetention',
+      'GetObjectTagging',
+      'GetObjectVersion',
+      'GetObjectVersionAcl',
+      'GetObjectVersionTagging'
     ],
-    "List": [
-      "ListBucket",
-      "ListBucketMultipartUploads",
-      "ListBucketVersions",
-      "ListMultipartUploadParts"
+    List: [
+      'ListBucket',
+      'ListBucketMultipartUploads',
+      'ListBucketVersions',
+      'ListMultipartUploadParts'
     ],
-    "Permissions management": [
-      "PutObjectAcl",
-      "PutObjectVersionAcl"
+    'Permissions management': [
+      'PutObjectAcl',
+      'PutObjectVersionAcl'
     ]
   };
 

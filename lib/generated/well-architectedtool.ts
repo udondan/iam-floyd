@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [wellarchitected](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswell-architectedtool.html).
@@ -14,7 +14,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -377,44 +377,44 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateLenses",
-      "CreateMilestone",
-      "CreateWorkload",
-      "CreateWorkloadShare",
-      "DeleteWorkload",
-      "DeleteWorkloadShare",
-      "DisassociateLenses",
-      "UpdateAnswer",
-      "UpdateLensReview",
-      "UpdateShareInvitation",
-      "UpdateWorkload",
-      "UpdateWorkloadShare",
-      "UpgradeLensReview"
+    Write: [
+      'AssociateLenses',
+      'CreateMilestone',
+      'CreateWorkload',
+      'CreateWorkloadShare',
+      'DeleteWorkload',
+      'DeleteWorkloadShare',
+      'DisassociateLenses',
+      'UpdateAnswer',
+      'UpdateLensReview',
+      'UpdateShareInvitation',
+      'UpdateWorkload',
+      'UpdateWorkloadShare',
+      'UpgradeLensReview'
     ],
-    "Read": [
-      "GetAnswer",
-      "GetLensReview",
-      "GetLensReviewReport",
-      "GetLensVersionDifference",
-      "GetMilestone",
-      "GetWorkload",
-      "ListTagsForResource"
+    Read: [
+      'GetAnswer',
+      'GetLensReview',
+      'GetLensReviewReport',
+      'GetLensVersionDifference',
+      'GetMilestone',
+      'GetWorkload',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListAnswers",
-      "ListLensReviewImprovements",
-      "ListLensReviews",
-      "ListLenses",
-      "ListMilestones",
-      "ListNotifications",
-      "ListShareInvitations",
-      "ListWorkloadShares",
-      "ListWorkloads"
+    List: [
+      'ListAnswers',
+      'ListLensReviewImprovements',
+      'ListLensReviews',
+      'ListLenses',
+      'ListMilestones',
+      'ListNotifications',
+      'ListShareInvitations',
+      'ListWorkloadShares',
+      'ListWorkloads'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

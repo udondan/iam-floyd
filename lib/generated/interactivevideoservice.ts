@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [ivs](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninteractivevideoservice.html).
@@ -14,7 +14,7 @@ export class Ivs extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -332,39 +332,39 @@ export class Ivs extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "BatchGetChannel",
-      "BatchGetStreamKey",
-      "GetChannel",
-      "GetPlaybackKeyPair",
-      "GetRecordingConfiguration",
-      "GetStream",
-      "GetStreamKey",
-      "ListTagsForResource"
+    Read: [
+      'BatchGetChannel',
+      'BatchGetStreamKey',
+      'GetChannel',
+      'GetPlaybackKeyPair',
+      'GetRecordingConfiguration',
+      'GetStream',
+      'GetStreamKey',
+      'ListTagsForResource'
     ],
-    "Write": [
-      "CreateChannel",
-      "CreateRecordingConfiguration",
-      "CreateStreamKey",
-      "DeleteChannel",
-      "DeletePlaybackKeyPair",
-      "DeleteRecordingConfiguration",
-      "DeleteStreamKey",
-      "ImportPlaybackKeyPair",
-      "PutMetadata",
-      "StopStream",
-      "UpdateChannel"
+    Write: [
+      'CreateChannel',
+      'CreateRecordingConfiguration',
+      'CreateStreamKey',
+      'DeleteChannel',
+      'DeletePlaybackKeyPair',
+      'DeleteRecordingConfiguration',
+      'DeleteStreamKey',
+      'ImportPlaybackKeyPair',
+      'PutMetadata',
+      'StopStream',
+      'UpdateChannel'
     ],
-    "List": [
-      "ListChannels",
-      "ListPlaybackKeyPairs",
-      "ListRecordingConfigurations",
-      "ListStreamKeys",
-      "ListStreams"
+    List: [
+      'ListChannels',
+      'ListPlaybackKeyPairs',
+      'ListRecordingConfigurations',
+      'ListStreamKeys',
+      'ListStreams'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

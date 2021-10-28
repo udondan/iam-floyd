@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [importexport](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsimportexportdiskservice.html).
@@ -14,7 +14,7 @@ export class Importexport extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -85,17 +85,17 @@ export class Importexport extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CancelJob",
-      "CreateJob",
-      "UpdateJob"
+    Write: [
+      'CancelJob',
+      'CreateJob',
+      'UpdateJob'
     ],
-    "Read": [
-      "GetShippingLabel",
-      "GetStatus"
+    Read: [
+      'GetShippingLabel',
+      'GetStatus'
     ],
-    "List": [
-      "ListJobs"
+    List: [
+      'ListJobs'
     ]
   };
 }

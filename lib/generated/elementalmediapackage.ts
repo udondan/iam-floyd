@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [mediapackage](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediapackage.html).
@@ -14,7 +14,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -250,30 +250,30 @@ export class Mediapackage extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "ConfigureLogs",
-      "CreateChannel",
-      "CreateHarvestJob",
-      "CreateOriginEndpoint",
-      "DeleteChannel",
-      "DeleteOriginEndpoint",
-      "RotateChannelCredentials",
-      "RotateIngestEndpointCredentials",
-      "UpdateChannel",
-      "UpdateOriginEndpoint"
+    Write: [
+      'ConfigureLogs',
+      'CreateChannel',
+      'CreateHarvestJob',
+      'CreateOriginEndpoint',
+      'DeleteChannel',
+      'DeleteOriginEndpoint',
+      'RotateChannelCredentials',
+      'RotateIngestEndpointCredentials',
+      'UpdateChannel',
+      'UpdateOriginEndpoint'
     ],
-    "Read": [
-      "DescribeChannel",
-      "DescribeHarvestJob",
-      "DescribeOriginEndpoint",
-      "ListChannels",
-      "ListHarvestJobs",
-      "ListOriginEndpoints",
-      "ListTagsForResource"
+    Read: [
+      'DescribeChannel',
+      'DescribeHarvestJob',
+      'DescribeOriginEndpoint',
+      'ListChannels',
+      'ListHarvestJobs',
+      'ListOriginEndpoints',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

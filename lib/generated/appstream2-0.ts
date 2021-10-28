@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [appstream](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonappstream2.0.html).
@@ -14,7 +14,7 @@ export class Appstream extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -642,60 +642,60 @@ export class Appstream extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateFleet",
-      "BatchAssociateUserStack",
-      "BatchDisassociateUserStack",
-      "CopyImage",
-      "CreateDirectoryConfig",
-      "CreateFleet",
-      "CreateImageBuilder",
-      "CreateImageBuilderStreamingURL",
-      "CreateStack",
-      "CreateStreamingURL",
-      "CreateUpdatedImage",
-      "CreateUsageReportSubscription",
-      "CreateUser",
-      "DeleteDirectoryConfig",
-      "DeleteFleet",
-      "DeleteImage",
-      "DeleteImageBuilder",
-      "DeleteImagePermissions",
-      "DeleteStack",
-      "DeleteUsageReportSubscription",
-      "DeleteUser",
-      "DisableUser",
-      "DisassociateFleet",
-      "EnableUser",
-      "ExpireSession",
-      "StartFleet",
-      "StartImageBuilder",
-      "StopFleet",
-      "StopImageBuilder",
-      "Stream",
-      "UpdateDirectoryConfig",
-      "UpdateFleet",
-      "UpdateImagePermissions",
-      "UpdateStack"
+    Write: [
+      'AssociateFleet',
+      'BatchAssociateUserStack',
+      'BatchDisassociateUserStack',
+      'CopyImage',
+      'CreateDirectoryConfig',
+      'CreateFleet',
+      'CreateImageBuilder',
+      'CreateImageBuilderStreamingURL',
+      'CreateStack',
+      'CreateStreamingURL',
+      'CreateUpdatedImage',
+      'CreateUsageReportSubscription',
+      'CreateUser',
+      'DeleteDirectoryConfig',
+      'DeleteFleet',
+      'DeleteImage',
+      'DeleteImageBuilder',
+      'DeleteImagePermissions',
+      'DeleteStack',
+      'DeleteUsageReportSubscription',
+      'DeleteUser',
+      'DisableUser',
+      'DisassociateFleet',
+      'EnableUser',
+      'ExpireSession',
+      'StartFleet',
+      'StartImageBuilder',
+      'StopFleet',
+      'StopImageBuilder',
+      'Stream',
+      'UpdateDirectoryConfig',
+      'UpdateFleet',
+      'UpdateImagePermissions',
+      'UpdateStack'
     ],
-    "Read": [
-      "DescribeDirectoryConfigs",
-      "DescribeFleets",
-      "DescribeImageBuilders",
-      "DescribeImagePermissions",
-      "DescribeImages",
-      "DescribeSessions",
-      "DescribeStacks",
-      "DescribeUsageReportSubscriptions",
-      "DescribeUserStackAssociations",
-      "DescribeUsers",
-      "ListAssociatedFleets",
-      "ListAssociatedStacks",
-      "ListTagsForResource"
+    Read: [
+      'DescribeDirectoryConfigs',
+      'DescribeFleets',
+      'DescribeImageBuilders',
+      'DescribeImagePermissions',
+      'DescribeImages',
+      'DescribeSessions',
+      'DescribeStacks',
+      'DescribeUsageReportSubscriptions',
+      'DescribeUserStackAssociations',
+      'DescribeUsers',
+      'ListAssociatedFleets',
+      'ListAssociatedStacks',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

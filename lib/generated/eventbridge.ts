@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [events](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoneventbridge.html).
@@ -14,7 +14,7 @@ export class Events extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -646,67 +646,67 @@ export class Events extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "ActivateEventSource",
-      "CancelReplay",
-      "CreateApiDestination",
-      "CreateArchive",
-      "CreateConnection",
-      "CreateEventBus",
-      "CreatePartnerEventSource",
-      "DeactivateEventSource",
-      "DeauthorizeConnection",
-      "DeleteApiDestination",
-      "DeleteArchive",
-      "DeleteConnection",
-      "DeleteEventBus",
-      "DeletePartnerEventSource",
-      "DeleteRule",
-      "DisableRule",
-      "EnableRule",
-      "InvokeApiDestination",
-      "PutEvents",
-      "PutPartnerEvents",
-      "PutRule",
-      "PutTargets",
-      "RemoveTargets",
-      "StartReplay",
-      "UpdateApiDestination",
-      "UpdateArchive",
-      "UpdateConnection"
+    Write: [
+      'ActivateEventSource',
+      'CancelReplay',
+      'CreateApiDestination',
+      'CreateArchive',
+      'CreateConnection',
+      'CreateEventBus',
+      'CreatePartnerEventSource',
+      'DeactivateEventSource',
+      'DeauthorizeConnection',
+      'DeleteApiDestination',
+      'DeleteArchive',
+      'DeleteConnection',
+      'DeleteEventBus',
+      'DeletePartnerEventSource',
+      'DeleteRule',
+      'DisableRule',
+      'EnableRule',
+      'InvokeApiDestination',
+      'PutEvents',
+      'PutPartnerEvents',
+      'PutRule',
+      'PutTargets',
+      'RemoveTargets',
+      'StartReplay',
+      'UpdateApiDestination',
+      'UpdateArchive',
+      'UpdateConnection'
     ],
-    "Read": [
-      "DescribeApiDestination",
-      "DescribeArchive",
-      "DescribeConnection",
-      "DescribeEventBus",
-      "DescribeEventSource",
-      "DescribePartnerEventSource",
-      "DescribeReplay",
-      "DescribeRule",
-      "TestEventPattern"
+    Read: [
+      'DescribeApiDestination',
+      'DescribeArchive',
+      'DescribeConnection',
+      'DescribeEventBus',
+      'DescribeEventSource',
+      'DescribePartnerEventSource',
+      'DescribeReplay',
+      'DescribeRule',
+      'TestEventPattern'
     ],
-    "List": [
-      "ListApiDestinations",
-      "ListArchives",
-      "ListConnections",
-      "ListEventBuses",
-      "ListEventSources",
-      "ListPartnerEventSourceAccounts",
-      "ListPartnerEventSources",
-      "ListReplays",
-      "ListRuleNamesByTarget",
-      "ListRules",
-      "ListTagsForResource",
-      "ListTargetsByRule"
+    List: [
+      'ListApiDestinations',
+      'ListArchives',
+      'ListConnections',
+      'ListEventBuses',
+      'ListEventSources',
+      'ListPartnerEventSourceAccounts',
+      'ListPartnerEventSources',
+      'ListReplays',
+      'ListRuleNamesByTarget',
+      'ListRules',
+      'ListTagsForResource',
+      'ListTargetsByRule'
     ],
-    "Permissions management": [
-      "PutPermission",
-      "RemovePermission"
+    'Permissions management': [
+      'PutPermission',
+      'RemovePermission'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

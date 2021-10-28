@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [route53resolver](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53resolver.html).
@@ -14,7 +14,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -691,75 +691,75 @@ export class Route53resolver extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateFirewallRuleGroup",
-      "AssociateResolverEndpointIpAddress",
-      "AssociateResolverQueryLogConfig",
-      "AssociateResolverRule",
-      "CreateFirewallDomainList",
-      "CreateFirewallRule",
-      "CreateFirewallRuleGroup",
-      "CreateResolverEndpoint",
-      "CreateResolverQueryLogConfig",
-      "CreateResolverRule",
-      "DeleteFirewallDomainList",
-      "DeleteFirewallRule",
-      "DeleteFirewallRuleGroup",
-      "DeleteResolverEndpoint",
-      "DeleteResolverQueryLogConfig",
-      "DeleteResolverRule",
-      "DisassociateFirewallRuleGroup",
-      "DisassociateResolverEndpointIpAddress",
-      "DisassociateResolverQueryLogConfig",
-      "DisassociateResolverRule",
-      "ImportFirewallDomains",
-      "UpdateFirewallConfig",
-      "UpdateFirewallDomains",
-      "UpdateFirewallRule",
-      "UpdateFirewallRuleGroupAssociation",
-      "UpdateResolverDnssecConfig",
-      "UpdateResolverEndpoint",
-      "UpdateResolverRule"
+    Write: [
+      'AssociateFirewallRuleGroup',
+      'AssociateResolverEndpointIpAddress',
+      'AssociateResolverQueryLogConfig',
+      'AssociateResolverRule',
+      'CreateFirewallDomainList',
+      'CreateFirewallRule',
+      'CreateFirewallRuleGroup',
+      'CreateResolverEndpoint',
+      'CreateResolverQueryLogConfig',
+      'CreateResolverRule',
+      'DeleteFirewallDomainList',
+      'DeleteFirewallRule',
+      'DeleteFirewallRuleGroup',
+      'DeleteResolverEndpoint',
+      'DeleteResolverQueryLogConfig',
+      'DeleteResolverRule',
+      'DisassociateFirewallRuleGroup',
+      'DisassociateResolverEndpointIpAddress',
+      'DisassociateResolverQueryLogConfig',
+      'DisassociateResolverRule',
+      'ImportFirewallDomains',
+      'UpdateFirewallConfig',
+      'UpdateFirewallDomains',
+      'UpdateFirewallRule',
+      'UpdateFirewallRuleGroupAssociation',
+      'UpdateResolverDnssecConfig',
+      'UpdateResolverEndpoint',
+      'UpdateResolverRule'
     ],
-    "Read": [
-      "GetFirewallConfig",
-      "GetFirewallDomainList",
-      "GetFirewallRuleGroup",
-      "GetFirewallRuleGroupAssociation",
-      "GetFirewallRuleGroupPolicy",
-      "GetResolverDnssecConfig",
-      "GetResolverEndpoint",
-      "GetResolverQueryLogConfig",
-      "GetResolverQueryLogConfigAssociation",
-      "GetResolverQueryLogConfigPolicy",
-      "GetResolverRule",
-      "GetResolverRuleAssociation",
-      "GetResolverRulePolicy",
-      "ListTagsForResource"
+    Read: [
+      'GetFirewallConfig',
+      'GetFirewallDomainList',
+      'GetFirewallRuleGroup',
+      'GetFirewallRuleGroupAssociation',
+      'GetFirewallRuleGroupPolicy',
+      'GetResolverDnssecConfig',
+      'GetResolverEndpoint',
+      'GetResolverQueryLogConfig',
+      'GetResolverQueryLogConfigAssociation',
+      'GetResolverQueryLogConfigPolicy',
+      'GetResolverRule',
+      'GetResolverRuleAssociation',
+      'GetResolverRulePolicy',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListFirewallConfigs",
-      "ListFirewallDomainLists",
-      "ListFirewallDomains",
-      "ListFirewallRuleGroupAssociations",
-      "ListFirewallRuleGroups",
-      "ListFirewallRules",
-      "ListResolverDnssecConfigs",
-      "ListResolverEndpointIpAddresses",
-      "ListResolverEndpoints",
-      "ListResolverQueryLogConfigAssociations",
-      "ListResolverQueryLogConfigs",
-      "ListResolverRuleAssociations",
-      "ListResolverRules"
+    List: [
+      'ListFirewallConfigs',
+      'ListFirewallDomainLists',
+      'ListFirewallDomains',
+      'ListFirewallRuleGroupAssociations',
+      'ListFirewallRuleGroups',
+      'ListFirewallRules',
+      'ListResolverDnssecConfigs',
+      'ListResolverEndpointIpAddresses',
+      'ListResolverEndpoints',
+      'ListResolverQueryLogConfigAssociations',
+      'ListResolverQueryLogConfigs',
+      'ListResolverRuleAssociations',
+      'ListResolverRules'
     ],
-    "Permissions management": [
-      "PutFirewallRuleGroupPolicy",
-      "PutResolverQueryLogConfigPolicy",
-      "PutResolverRulePolicy"
+    'Permissions management': [
+      'PutFirewallRuleGroupPolicy',
+      'PutResolverQueryLogConfigPolicy',
+      'PutResolverRulePolicy'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [appmesh-preview](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappmeshpreview.html).
@@ -14,7 +14,7 @@ export class AppmeshPreview extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -415,47 +415,47 @@ export class AppmeshPreview extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateGatewayRoute",
-      "CreateMesh",
-      "CreateRoute",
-      "CreateVirtualGateway",
-      "CreateVirtualNode",
-      "CreateVirtualRouter",
-      "CreateVirtualService",
-      "DeleteGatewayRoute",
-      "DeleteMesh",
-      "DeleteRoute",
-      "DeleteVirtualGateway",
-      "DeleteVirtualNode",
-      "DeleteVirtualRouter",
-      "DeleteVirtualService",
-      "UpdateGatewayRoute",
-      "UpdateMesh",
-      "UpdateRoute",
-      "UpdateVirtualGateway",
-      "UpdateVirtualNode",
-      "UpdateVirtualRouter",
-      "UpdateVirtualService"
+    Write: [
+      'CreateGatewayRoute',
+      'CreateMesh',
+      'CreateRoute',
+      'CreateVirtualGateway',
+      'CreateVirtualNode',
+      'CreateVirtualRouter',
+      'CreateVirtualService',
+      'DeleteGatewayRoute',
+      'DeleteMesh',
+      'DeleteRoute',
+      'DeleteVirtualGateway',
+      'DeleteVirtualNode',
+      'DeleteVirtualRouter',
+      'DeleteVirtualService',
+      'UpdateGatewayRoute',
+      'UpdateMesh',
+      'UpdateRoute',
+      'UpdateVirtualGateway',
+      'UpdateVirtualNode',
+      'UpdateVirtualRouter',
+      'UpdateVirtualService'
     ],
-    "Read": [
-      "DescribeGatewayRoute",
-      "DescribeMesh",
-      "DescribeRoute",
-      "DescribeVirtualGateway",
-      "DescribeVirtualNode",
-      "DescribeVirtualRouter",
-      "DescribeVirtualService",
-      "StreamAggregatedResources"
+    Read: [
+      'DescribeGatewayRoute',
+      'DescribeMesh',
+      'DescribeRoute',
+      'DescribeVirtualGateway',
+      'DescribeVirtualNode',
+      'DescribeVirtualRouter',
+      'DescribeVirtualService',
+      'StreamAggregatedResources'
     ],
-    "List": [
-      "ListGatewayRoutes",
-      "ListMeshes",
-      "ListRoutes",
-      "ListVirtualGateways",
-      "ListVirtualNodes",
-      "ListVirtualRouters",
-      "ListVirtualServices"
+    List: [
+      'ListGatewayRoutes',
+      'ListMeshes',
+      'ListRoutes',
+      'ListVirtualGateways',
+      'ListVirtualNodes',
+      'ListVirtualRouters',
+      'ListVirtualServices'
     ]
   };
 

@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [glacier](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonglacier.html).
@@ -14,7 +14,7 @@ export class Glacier extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -388,48 +388,48 @@ export class Glacier extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AbortMultipartUpload",
-      "CompleteMultipartUpload",
-      "CreateVault",
-      "DeleteArchive",
-      "DeleteVault",
-      "DeleteVaultNotifications",
-      "InitiateJob",
-      "InitiateMultipartUpload",
-      "PurchaseProvisionedCapacity",
-      "SetVaultNotifications",
-      "UploadArchive",
-      "UploadMultipartPart"
+    Write: [
+      'AbortMultipartUpload',
+      'CompleteMultipartUpload',
+      'CreateVault',
+      'DeleteArchive',
+      'DeleteVault',
+      'DeleteVaultNotifications',
+      'InitiateJob',
+      'InitiateMultipartUpload',
+      'PurchaseProvisionedCapacity',
+      'SetVaultNotifications',
+      'UploadArchive',
+      'UploadMultipartPart'
     ],
-    "Permissions management": [
-      "AbortVaultLock",
-      "CompleteVaultLock",
-      "DeleteVaultAccessPolicy",
-      "InitiateVaultLock",
-      "SetDataRetrievalPolicy",
-      "SetVaultAccessPolicy"
+    'Permissions management': [
+      'AbortVaultLock',
+      'CompleteVaultLock',
+      'DeleteVaultAccessPolicy',
+      'InitiateVaultLock',
+      'SetDataRetrievalPolicy',
+      'SetVaultAccessPolicy'
     ],
-    "Tagging": [
-      "AddTagsToVault",
-      "RemoveTagsFromVault"
+    Tagging: [
+      'AddTagsToVault',
+      'RemoveTagsFromVault'
     ],
-    "Read": [
-      "DescribeJob",
-      "DescribeVault",
-      "GetDataRetrievalPolicy",
-      "GetJobOutput",
-      "GetVaultAccessPolicy",
-      "GetVaultLock",
-      "GetVaultNotifications"
+    Read: [
+      'DescribeJob',
+      'DescribeVault',
+      'GetDataRetrievalPolicy',
+      'GetJobOutput',
+      'GetVaultAccessPolicy',
+      'GetVaultLock',
+      'GetVaultNotifications'
     ],
-    "List": [
-      "ListJobs",
-      "ListMultipartUploads",
-      "ListParts",
-      "ListProvisionedCapacity",
-      "ListTagsForVault",
-      "ListVaults"
+    List: [
+      'ListJobs',
+      'ListMultipartUploads',
+      'ListParts',
+      'ListProvisionedCapacity',
+      'ListTagsForVault',
+      'ListVaults'
     ]
   };
 

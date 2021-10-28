@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [auditmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsauditmanager.html).
@@ -14,7 +14,7 @@ export class Auditmanager extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -651,68 +651,68 @@ export class Auditmanager extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateAssessmentReportEvidenceFolder",
-      "BatchAssociateAssessmentReportEvidence",
-      "BatchCreateDelegationByAssessment",
-      "BatchDeleteDelegationByAssessment",
-      "BatchDisassociateAssessmentReportEvidence",
-      "BatchImportEvidenceToAssessmentControl",
-      "CreateAssessment",
-      "CreateAssessmentFramework",
-      "CreateAssessmentReport",
-      "CreateControl",
-      "DeleteAssessment",
-      "DeleteAssessmentFramework",
-      "DeleteAssessmentFrameworkShare",
-      "DeleteAssessmentReport",
-      "DeleteControl",
-      "DeregisterAccount",
-      "DeregisterOrganizationAdminAccount",
-      "DisassociateAssessmentReportEvidenceFolder",
-      "RegisterAccount",
-      "RegisterOrganizationAdminAccount",
-      "StartAssessmentFrameworkShare",
-      "UpdateAssessment",
-      "UpdateAssessmentControl",
-      "UpdateAssessmentControlSetStatus",
-      "UpdateAssessmentFramework",
-      "UpdateAssessmentFrameworkShare",
-      "UpdateAssessmentStatus",
-      "UpdateControl",
-      "UpdateSettings"
+    Write: [
+      'AssociateAssessmentReportEvidenceFolder',
+      'BatchAssociateAssessmentReportEvidence',
+      'BatchCreateDelegationByAssessment',
+      'BatchDeleteDelegationByAssessment',
+      'BatchDisassociateAssessmentReportEvidence',
+      'BatchImportEvidenceToAssessmentControl',
+      'CreateAssessment',
+      'CreateAssessmentFramework',
+      'CreateAssessmentReport',
+      'CreateControl',
+      'DeleteAssessment',
+      'DeleteAssessmentFramework',
+      'DeleteAssessmentFrameworkShare',
+      'DeleteAssessmentReport',
+      'DeleteControl',
+      'DeregisterAccount',
+      'DeregisterOrganizationAdminAccount',
+      'DisassociateAssessmentReportEvidenceFolder',
+      'RegisterAccount',
+      'RegisterOrganizationAdminAccount',
+      'StartAssessmentFrameworkShare',
+      'UpdateAssessment',
+      'UpdateAssessmentControl',
+      'UpdateAssessmentControlSetStatus',
+      'UpdateAssessmentFramework',
+      'UpdateAssessmentFrameworkShare',
+      'UpdateAssessmentStatus',
+      'UpdateControl',
+      'UpdateSettings'
     ],
-    "Read": [
-      "GetAccountStatus",
-      "GetAssessment",
-      "GetAssessmentFramework",
-      "GetAssessmentReportUrl",
-      "GetChangeLogs",
-      "GetControl",
-      "GetEvidence",
-      "GetEvidenceByEvidenceFolder",
-      "GetEvidenceFolder",
-      "GetEvidenceFoldersByAssessment",
-      "GetEvidenceFoldersByAssessmentControl",
-      "GetOrganizationAdminAccount",
-      "GetServicesInScope",
-      "GetSettings",
-      "ListTagsForResource",
-      "ValidateAssessmentReportIntegrity"
+    Read: [
+      'GetAccountStatus',
+      'GetAssessment',
+      'GetAssessmentFramework',
+      'GetAssessmentReportUrl',
+      'GetChangeLogs',
+      'GetControl',
+      'GetEvidence',
+      'GetEvidenceByEvidenceFolder',
+      'GetEvidenceFolder',
+      'GetEvidenceFoldersByAssessment',
+      'GetEvidenceFoldersByAssessmentControl',
+      'GetOrganizationAdminAccount',
+      'GetServicesInScope',
+      'GetSettings',
+      'ListTagsForResource',
+      'ValidateAssessmentReportIntegrity'
     ],
-    "List": [
-      "GetDelegations",
-      "ListAssessmentFrameworkShareRequests",
-      "ListAssessmentFrameworks",
-      "ListAssessmentReports",
-      "ListAssessments",
-      "ListControls",
-      "ListKeywordsForDataSource",
-      "ListNotifications"
+    List: [
+      'GetDelegations',
+      'ListAssessmentFrameworkShareRequests',
+      'ListAssessmentFrameworks',
+      'ListAssessmentReports',
+      'ListAssessments',
+      'ListControls',
+      'ListKeywordsForDataSource',
+      'ListNotifications'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

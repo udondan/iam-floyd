@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [ses-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpleemailservicev2.html).
@@ -14,7 +14,7 @@ export class SesV2 extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -1042,96 +1042,96 @@ export class SesV2 extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateConfigurationSet",
-      "CreateConfigurationSetEventDestination",
-      "CreateContact",
-      "CreateContactList",
-      "CreateCustomVerificationEmailTemplate",
-      "CreateDedicatedIpPool",
-      "CreateDeliverabilityTestReport",
-      "CreateEmailIdentity",
-      "CreateEmailTemplate",
-      "CreateImportJob",
-      "DeleteConfigurationSet",
-      "DeleteConfigurationSetEventDestination",
-      "DeleteContact",
-      "DeleteContactList",
-      "DeleteCustomVerificationEmailTemplate",
-      "DeleteDedicatedIpPool",
-      "DeleteEmailIdentity",
-      "DeleteEmailTemplate",
-      "DeleteSuppressedDestination",
-      "PutAccountDedicatedIpWarmupAttributes",
-      "PutAccountDetails",
-      "PutAccountSendingAttributes",
-      "PutAccountSuppressionAttributes",
-      "PutConfigurationSetDeliveryOptions",
-      "PutConfigurationSetReputationOptions",
-      "PutConfigurationSetSendingOptions",
-      "PutConfigurationSetSuppressionOptions",
-      "PutConfigurationSetTrackingOptions",
-      "PutDedicatedIpInPool",
-      "PutDedicatedIpWarmupAttributes",
-      "PutDeliverabilityDashboardOption",
-      "PutEmailIdentityConfigurationSetAttributes",
-      "PutEmailIdentityDkimAttributes",
-      "PutEmailIdentityDkimSigningAttributes",
-      "PutEmailIdentityFeedbackAttributes",
-      "PutEmailIdentityMailFromAttributes",
-      "PutSuppressedDestination",
-      "SendBulkEmail",
-      "SendCustomVerificationEmail",
-      "SendEmail",
-      "TestRenderEmailTemplate",
-      "UpdateConfigurationSetEventDestination",
-      "UpdateContact",
-      "UpdateContactList",
-      "UpdateCustomVerificationEmailTemplate",
-      "UpdateEmailTemplate"
+    Write: [
+      'CreateConfigurationSet',
+      'CreateConfigurationSetEventDestination',
+      'CreateContact',
+      'CreateContactList',
+      'CreateCustomVerificationEmailTemplate',
+      'CreateDedicatedIpPool',
+      'CreateDeliverabilityTestReport',
+      'CreateEmailIdentity',
+      'CreateEmailTemplate',
+      'CreateImportJob',
+      'DeleteConfigurationSet',
+      'DeleteConfigurationSetEventDestination',
+      'DeleteContact',
+      'DeleteContactList',
+      'DeleteCustomVerificationEmailTemplate',
+      'DeleteDedicatedIpPool',
+      'DeleteEmailIdentity',
+      'DeleteEmailTemplate',
+      'DeleteSuppressedDestination',
+      'PutAccountDedicatedIpWarmupAttributes',
+      'PutAccountDetails',
+      'PutAccountSendingAttributes',
+      'PutAccountSuppressionAttributes',
+      'PutConfigurationSetDeliveryOptions',
+      'PutConfigurationSetReputationOptions',
+      'PutConfigurationSetSendingOptions',
+      'PutConfigurationSetSuppressionOptions',
+      'PutConfigurationSetTrackingOptions',
+      'PutDedicatedIpInPool',
+      'PutDedicatedIpWarmupAttributes',
+      'PutDeliverabilityDashboardOption',
+      'PutEmailIdentityConfigurationSetAttributes',
+      'PutEmailIdentityDkimAttributes',
+      'PutEmailIdentityDkimSigningAttributes',
+      'PutEmailIdentityFeedbackAttributes',
+      'PutEmailIdentityMailFromAttributes',
+      'PutSuppressedDestination',
+      'SendBulkEmail',
+      'SendCustomVerificationEmail',
+      'SendEmail',
+      'TestRenderEmailTemplate',
+      'UpdateConfigurationSetEventDestination',
+      'UpdateContact',
+      'UpdateContactList',
+      'UpdateCustomVerificationEmailTemplate',
+      'UpdateEmailTemplate'
     ],
-    "Permissions management": [
-      "CreateEmailIdentityPolicy",
-      "DeleteEmailIdentityPolicy",
-      "UpdateEmailIdentityPolicy"
+    'Permissions management': [
+      'CreateEmailIdentityPolicy',
+      'DeleteEmailIdentityPolicy',
+      'UpdateEmailIdentityPolicy'
     ],
-    "Read": [
-      "GetAccount",
-      "GetBlacklistReports",
-      "GetConfigurationSet",
-      "GetConfigurationSetEventDestinations",
-      "GetContact",
-      "GetContactList",
-      "GetCustomVerificationEmailTemplate",
-      "GetDedicatedIp",
-      "GetDedicatedIps",
-      "GetDeliverabilityDashboardOptions",
-      "GetDeliverabilityTestReport",
-      "GetDomainDeliverabilityCampaign",
-      "GetDomainStatisticsReport",
-      "GetEmailIdentity",
-      "GetEmailIdentityPolicies",
-      "GetEmailTemplate",
-      "GetImportJob",
-      "GetSuppressedDestination",
-      "ListDomainDeliverabilityCampaigns",
-      "ListSuppressedDestinations",
-      "ListTagsForResource"
+    Read: [
+      'GetAccount',
+      'GetBlacklistReports',
+      'GetConfigurationSet',
+      'GetConfigurationSetEventDestinations',
+      'GetContact',
+      'GetContactList',
+      'GetCustomVerificationEmailTemplate',
+      'GetDedicatedIp',
+      'GetDedicatedIps',
+      'GetDeliverabilityDashboardOptions',
+      'GetDeliverabilityTestReport',
+      'GetDomainDeliverabilityCampaign',
+      'GetDomainStatisticsReport',
+      'GetEmailIdentity',
+      'GetEmailIdentityPolicies',
+      'GetEmailTemplate',
+      'GetImportJob',
+      'GetSuppressedDestination',
+      'ListDomainDeliverabilityCampaigns',
+      'ListSuppressedDestinations',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListConfigurationSets",
-      "ListContactLists",
-      "ListContacts",
-      "ListCustomVerificationEmailTemplates",
-      "ListDedicatedIpPools",
-      "ListDeliverabilityTestReports",
-      "ListEmailIdentities",
-      "ListEmailTemplates",
-      "ListImportJobs"
+    List: [
+      'ListConfigurationSets',
+      'ListContactLists',
+      'ListContacts',
+      'ListCustomVerificationEmailTemplates',
+      'ListDedicatedIpPools',
+      'ListDeliverabilityTestReports',
+      'ListEmailIdentities',
+      'ListEmailTemplates',
+      'ListImportJobs'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

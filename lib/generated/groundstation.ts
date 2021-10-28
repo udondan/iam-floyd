@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [groundstation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsgroundstation.html).
@@ -14,7 +14,7 @@ export class Groundstation extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -317,38 +317,38 @@ export class Groundstation extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CancelContact",
-      "CreateConfig",
-      "CreateDataflowEndpointGroup",
-      "CreateMissionProfile",
-      "DeleteConfig",
-      "DeleteDataflowEndpointGroup",
-      "DeleteMissionProfile",
-      "ReserveContact",
-      "UpdateConfig",
-      "UpdateMissionProfile"
+    Write: [
+      'CancelContact',
+      'CreateConfig',
+      'CreateDataflowEndpointGroup',
+      'CreateMissionProfile',
+      'DeleteConfig',
+      'DeleteDataflowEndpointGroup',
+      'DeleteMissionProfile',
+      'ReserveContact',
+      'UpdateConfig',
+      'UpdateMissionProfile'
     ],
-    "Read": [
-      "DescribeContact",
-      "GetConfig",
-      "GetDataflowEndpointGroup",
-      "GetMinuteUsage",
-      "GetMissionProfile",
-      "GetSatellite",
-      "ListTagsForResource"
+    Read: [
+      'DescribeContact',
+      'GetConfig',
+      'GetDataflowEndpointGroup',
+      'GetMinuteUsage',
+      'GetMissionProfile',
+      'GetSatellite',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListConfigs",
-      "ListContacts",
-      "ListDataflowEndpointGroups",
-      "ListGroundStations",
-      "ListMissionProfiles",
-      "ListSatellites"
+    List: [
+      'ListConfigs',
+      'ListContacts',
+      'ListDataflowEndpointGroups',
+      'ListGroundStations',
+      'ListMissionProfiles',
+      'ListSatellites'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

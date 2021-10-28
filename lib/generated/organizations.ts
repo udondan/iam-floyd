@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [organizations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html).
@@ -14,7 +14,7 @@ export class Organizations extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -656,64 +656,64 @@ export class Organizations extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AcceptHandshake",
-      "AttachPolicy",
-      "CancelHandshake",
-      "CreateAccount",
-      "CreateGovCloudAccount",
-      "CreateOrganization",
-      "CreateOrganizationalUnit",
-      "CreatePolicy",
-      "DeclineHandshake",
-      "DeleteOrganization",
-      "DeleteOrganizationalUnit",
-      "DeletePolicy",
-      "DeregisterDelegatedAdministrator",
-      "DetachPolicy",
-      "DisableAWSServiceAccess",
-      "DisablePolicyType",
-      "EnableAWSServiceAccess",
-      "EnableAllFeatures",
-      "EnablePolicyType",
-      "InviteAccountToOrganization",
-      "LeaveOrganization",
-      "MoveAccount",
-      "RegisterDelegatedAdministrator",
-      "RemoveAccountFromOrganization",
-      "UpdateOrganizationalUnit",
-      "UpdatePolicy"
+    Write: [
+      'AcceptHandshake',
+      'AttachPolicy',
+      'CancelHandshake',
+      'CreateAccount',
+      'CreateGovCloudAccount',
+      'CreateOrganization',
+      'CreateOrganizationalUnit',
+      'CreatePolicy',
+      'DeclineHandshake',
+      'DeleteOrganization',
+      'DeleteOrganizationalUnit',
+      'DeletePolicy',
+      'DeregisterDelegatedAdministrator',
+      'DetachPolicy',
+      'DisableAWSServiceAccess',
+      'DisablePolicyType',
+      'EnableAWSServiceAccess',
+      'EnableAllFeatures',
+      'EnablePolicyType',
+      'InviteAccountToOrganization',
+      'LeaveOrganization',
+      'MoveAccount',
+      'RegisterDelegatedAdministrator',
+      'RemoveAccountFromOrganization',
+      'UpdateOrganizationalUnit',
+      'UpdatePolicy'
     ],
-    "Read": [
-      "DescribeAccount",
-      "DescribeCreateAccountStatus",
-      "DescribeEffectivePolicy",
-      "DescribeHandshake",
-      "DescribeOrganization",
-      "DescribeOrganizationalUnit",
-      "DescribePolicy"
+    Read: [
+      'DescribeAccount',
+      'DescribeCreateAccountStatus',
+      'DescribeEffectivePolicy',
+      'DescribeHandshake',
+      'DescribeOrganization',
+      'DescribeOrganizationalUnit',
+      'DescribePolicy'
     ],
-    "List": [
-      "ListAWSServiceAccessForOrganization",
-      "ListAccounts",
-      "ListAccountsForParent",
-      "ListChildren",
-      "ListCreateAccountStatus",
-      "ListDelegatedAdministrators",
-      "ListDelegatedServicesForAccount",
-      "ListHandshakesForAccount",
-      "ListHandshakesForOrganization",
-      "ListOrganizationalUnitsForParent",
-      "ListParents",
-      "ListPolicies",
-      "ListPoliciesForTarget",
-      "ListRoots",
-      "ListTagsForResource",
-      "ListTargetsForPolicy"
+    List: [
+      'ListAWSServiceAccessForOrganization',
+      'ListAccounts',
+      'ListAccountsForParent',
+      'ListChildren',
+      'ListCreateAccountStatus',
+      'ListDelegatedAdministrators',
+      'ListDelegatedServicesForAccount',
+      'ListHandshakesForAccount',
+      'ListHandshakesForOrganization',
+      'ListOrganizationalUnitsForParent',
+      'ListParents',
+      'ListPolicies',
+      'ListPoliciesForTarget',
+      'ListRoots',
+      'ListTagsForResource',
+      'ListTargetsForPolicy'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

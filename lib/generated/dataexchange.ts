@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [dataexchange](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdataexchange.html).
@@ -14,7 +14,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -360,40 +360,40 @@ export class Dataexchange extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CancelJob",
-      "CreateAsset",
-      "CreateDataSet",
-      "CreateEventAction",
-      "CreateJob",
-      "CreateRevision",
-      "DeleteAsset",
-      "DeleteDataSet",
-      "DeleteEventAction",
-      "DeleteRevision",
-      "PublishDataSet",
-      "StartJob",
-      "UpdateAsset",
-      "UpdateDataSet",
-      "UpdateEventAction",
-      "UpdateRevision"
+    Write: [
+      'CancelJob',
+      'CreateAsset',
+      'CreateDataSet',
+      'CreateEventAction',
+      'CreateJob',
+      'CreateRevision',
+      'DeleteAsset',
+      'DeleteDataSet',
+      'DeleteEventAction',
+      'DeleteRevision',
+      'PublishDataSet',
+      'StartJob',
+      'UpdateAsset',
+      'UpdateDataSet',
+      'UpdateEventAction',
+      'UpdateRevision'
     ],
-    "Read": [
-      "GetAsset",
-      "GetDataSet",
-      "GetEventAction",
-      "GetJob",
-      "GetRevision",
-      "ListDataSetRevisions",
-      "ListDataSets",
-      "ListEventActions",
-      "ListJobs",
-      "ListRevisionAssets",
-      "ListTagsForResource"
+    Read: [
+      'GetAsset',
+      'GetDataSet',
+      'GetEventAction',
+      'GetJob',
+      'GetRevision',
+      'ListDataSetRevisions',
+      'ListDataSets',
+      'ListEventActions',
+      'ListJobs',
+      'ListRevisionAssets',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

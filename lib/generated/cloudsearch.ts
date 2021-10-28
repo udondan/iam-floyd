@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [cloudsearch](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudsearch.html).
@@ -14,7 +14,7 @@ export class Cloudsearch extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -371,47 +371,47 @@ export class Cloudsearch extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Tagging": [
-      "AddTags",
-      "RemoveTags"
+    Tagging: [
+      'AddTags',
+      'RemoveTags'
     ],
-    "Write": [
-      "BuildSuggesters",
-      "CreateDomain",
-      "DefineAnalysisScheme",
-      "DefineExpression",
-      "DefineIndexField",
-      "DefineSuggester",
-      "DeleteAnalysisScheme",
-      "DeleteDomain",
-      "DeleteExpression",
-      "DeleteIndexField",
-      "DeleteSuggester",
-      "IndexDocuments",
-      "UpdateAvailabilityOptions",
-      "UpdateDomainEndpointOptions",
-      "UpdateScalingParameters",
-      "document"
+    Write: [
+      'BuildSuggesters',
+      'CreateDomain',
+      'DefineAnalysisScheme',
+      'DefineExpression',
+      'DefineIndexField',
+      'DefineSuggester',
+      'DeleteAnalysisScheme',
+      'DeleteDomain',
+      'DeleteExpression',
+      'DeleteIndexField',
+      'DeleteSuggester',
+      'IndexDocuments',
+      'UpdateAvailabilityOptions',
+      'UpdateDomainEndpointOptions',
+      'UpdateScalingParameters',
+      'document'
     ],
-    "Read": [
-      "DescribeAnalysisSchemes",
-      "DescribeAvailabilityOptions",
-      "DescribeDomainEndpointOptions",
-      "DescribeExpressions",
-      "DescribeIndexFields",
-      "DescribeScalingParameters",
-      "DescribeServiceAccessPolicies",
-      "DescribeSuggesters",
-      "ListTags",
-      "search",
-      "suggest"
+    Read: [
+      'DescribeAnalysisSchemes',
+      'DescribeAvailabilityOptions',
+      'DescribeDomainEndpointOptions',
+      'DescribeExpressions',
+      'DescribeIndexFields',
+      'DescribeScalingParameters',
+      'DescribeServiceAccessPolicies',
+      'DescribeSuggesters',
+      'ListTags',
+      'search',
+      'suggest'
     ],
-    "List": [
-      "DescribeDomains",
-      "ListDomainNames"
+    List: [
+      'DescribeDomains',
+      'ListDomainNames'
     ],
-    "Permissions management": [
-      "UpdateServiceAccessPolicies"
+    'Permissions management': [
+      'UpdateServiceAccessPolicies'
     ]
   };
 

@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [kinesisanalytics-v2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisanalyticsv2.html).
@@ -14,7 +14,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -371,44 +371,44 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AddApplicationCloudWatchLoggingOption",
-      "AddApplicationInput",
-      "AddApplicationInputProcessingConfiguration",
-      "AddApplicationOutput",
-      "AddApplicationReferenceDataSource",
-      "AddApplicationVpcConfiguration",
-      "CreateApplication",
-      "CreateApplicationSnapshot",
-      "DeleteApplication",
-      "DeleteApplicationCloudWatchLoggingOption",
-      "DeleteApplicationInputProcessingConfiguration",
-      "DeleteApplicationOutput",
-      "DeleteApplicationReferenceDataSource",
-      "DeleteApplicationSnapshot",
-      "DeleteApplicationVpcConfiguration",
-      "RollbackApplication",
-      "StartApplication",
-      "StopApplication",
-      "UpdateApplication",
-      "UpdateApplicationMaintenanceConfiguration"
+    Write: [
+      'AddApplicationCloudWatchLoggingOption',
+      'AddApplicationInput',
+      'AddApplicationInputProcessingConfiguration',
+      'AddApplicationOutput',
+      'AddApplicationReferenceDataSource',
+      'AddApplicationVpcConfiguration',
+      'CreateApplication',
+      'CreateApplicationSnapshot',
+      'DeleteApplication',
+      'DeleteApplicationCloudWatchLoggingOption',
+      'DeleteApplicationInputProcessingConfiguration',
+      'DeleteApplicationOutput',
+      'DeleteApplicationReferenceDataSource',
+      'DeleteApplicationSnapshot',
+      'DeleteApplicationVpcConfiguration',
+      'RollbackApplication',
+      'StartApplication',
+      'StopApplication',
+      'UpdateApplication',
+      'UpdateApplicationMaintenanceConfiguration'
     ],
-    "Read": [
-      "CreateApplicationPresignedUrl",
-      "DescribeApplication",
-      "DescribeApplicationSnapshot",
-      "DescribeApplicationVersion",
-      "DiscoverInputSchema",
-      "ListApplicationSnapshots",
-      "ListApplicationVersions",
-      "ListTagsForResource"
+    Read: [
+      'CreateApplicationPresignedUrl',
+      'DescribeApplication',
+      'DescribeApplicationSnapshot',
+      'DescribeApplicationVersion',
+      'DiscoverInputSchema',
+      'ListApplicationSnapshots',
+      'ListApplicationVersions',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListApplications"
+    List: [
+      'ListApplications'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

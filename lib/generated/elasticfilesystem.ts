@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [elasticfilesystem](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticfilesystem.html).
@@ -14,7 +14,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -395,47 +395,47 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "Backup",
-      "ClientRootAccess",
-      "ClientWrite",
-      "CreateAccessPoint",
-      "CreateFileSystem",
-      "CreateMountTarget",
-      "DeleteAccessPoint",
-      "DeleteFileSystem",
-      "DeleteMountTarget",
-      "ModifyMountTargetSecurityGroups",
-      "PutAccountPreferences",
-      "PutBackupPolicy",
-      "PutLifecycleConfiguration",
-      "Restore",
-      "UpdateFileSystem"
+    Write: [
+      'Backup',
+      'ClientRootAccess',
+      'ClientWrite',
+      'CreateAccessPoint',
+      'CreateFileSystem',
+      'CreateMountTarget',
+      'DeleteAccessPoint',
+      'DeleteFileSystem',
+      'DeleteMountTarget',
+      'ModifyMountTargetSecurityGroups',
+      'PutAccountPreferences',
+      'PutBackupPolicy',
+      'PutLifecycleConfiguration',
+      'Restore',
+      'UpdateFileSystem'
     ],
-    "Read": [
-      "ClientMount",
-      "DescribeBackupPolicy",
-      "DescribeFileSystemPolicy",
-      "DescribeLifecycleConfiguration",
-      "DescribeMountTargetSecurityGroups",
-      "DescribeMountTargets",
-      "DescribeTags",
-      "ListTagsForResource"
+    Read: [
+      'ClientMount',
+      'DescribeBackupPolicy',
+      'DescribeFileSystemPolicy',
+      'DescribeLifecycleConfiguration',
+      'DescribeMountTargetSecurityGroups',
+      'DescribeMountTargets',
+      'DescribeTags',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "CreateTags",
-      "DeleteTags",
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'CreateTags',
+      'DeleteTags',
+      'TagResource',
+      'UntagResource'
     ],
-    "Permissions management": [
-      "DeleteFileSystemPolicy",
-      "PutFileSystemPolicy"
+    'Permissions management': [
+      'DeleteFileSystemPolicy',
+      'PutFileSystemPolicy'
     ],
-    "List": [
-      "DescribeAccessPoints",
-      "DescribeAccountPreferences",
-      "DescribeFileSystems"
+    List: [
+      'DescribeAccessPoints',
+      'DescribeAccountPreferences',
+      'DescribeFileSystems'
     ]
   };
 

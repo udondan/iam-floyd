@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [kms](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awskeymanagementservice.html).
@@ -14,7 +14,7 @@ export class Kms extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -802,65 +802,65 @@ export class Kms extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CancelKeyDeletion",
-      "ConnectCustomKeyStore",
-      "CreateAlias",
-      "CreateCustomKeyStore",
-      "CreateKey",
-      "Decrypt",
-      "DeleteAlias",
-      "DeleteCustomKeyStore",
-      "DeleteImportedKeyMaterial",
-      "DisableKey",
-      "DisableKeyRotation",
-      "DisconnectCustomKeyStore",
-      "EnableKey",
-      "EnableKeyRotation",
-      "Encrypt",
-      "GenerateDataKey",
-      "GenerateDataKeyPair",
-      "GenerateDataKeyPairWithoutPlaintext",
-      "GenerateDataKeyWithoutPlaintext",
-      "GenerateRandom",
-      "ImportKeyMaterial",
-      "ReEncryptFrom",
-      "ReEncryptTo",
-      "ReplicateKey",
-      "ScheduleKeyDeletion",
-      "Sign",
-      "SynchronizeMultiRegionKey",
-      "UpdateAlias",
-      "UpdateCustomKeyStore",
-      "UpdateKeyDescription",
-      "UpdatePrimaryRegion",
-      "Verify"
+    Write: [
+      'CancelKeyDeletion',
+      'ConnectCustomKeyStore',
+      'CreateAlias',
+      'CreateCustomKeyStore',
+      'CreateKey',
+      'Decrypt',
+      'DeleteAlias',
+      'DeleteCustomKeyStore',
+      'DeleteImportedKeyMaterial',
+      'DisableKey',
+      'DisableKeyRotation',
+      'DisconnectCustomKeyStore',
+      'EnableKey',
+      'EnableKeyRotation',
+      'Encrypt',
+      'GenerateDataKey',
+      'GenerateDataKeyPair',
+      'GenerateDataKeyPairWithoutPlaintext',
+      'GenerateDataKeyWithoutPlaintext',
+      'GenerateRandom',
+      'ImportKeyMaterial',
+      'ReEncryptFrom',
+      'ReEncryptTo',
+      'ReplicateKey',
+      'ScheduleKeyDeletion',
+      'Sign',
+      'SynchronizeMultiRegionKey',
+      'UpdateAlias',
+      'UpdateCustomKeyStore',
+      'UpdateKeyDescription',
+      'UpdatePrimaryRegion',
+      'Verify'
     ],
-    "Permissions management": [
-      "CreateGrant",
-      "PutKeyPolicy",
-      "RetireGrant",
-      "RevokeGrant"
+    'Permissions management': [
+      'CreateGrant',
+      'PutKeyPolicy',
+      'RetireGrant',
+      'RevokeGrant'
     ],
-    "Read": [
-      "DescribeCustomKeyStores",
-      "DescribeKey",
-      "GetKeyPolicy",
-      "GetKeyRotationStatus",
-      "GetParametersForImport",
-      "GetPublicKey"
+    Read: [
+      'DescribeCustomKeyStores',
+      'DescribeKey',
+      'GetKeyPolicy',
+      'GetKeyRotationStatus',
+      'GetParametersForImport',
+      'GetPublicKey'
     ],
-    "List": [
-      "ListAliases",
-      "ListGrants",
-      "ListKeyPolicies",
-      "ListKeys",
-      "ListResourceTags",
-      "ListRetirableGrants"
+    List: [
+      'ListAliases',
+      'ListGrants',
+      'ListKeyPolicies',
+      'ListKeys',
+      'ListResourceTags',
+      'ListRetirableGrants'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

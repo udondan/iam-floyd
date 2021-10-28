@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [ec2-instance-connect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2instanceconnect.html).
@@ -14,7 +14,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -44,9 +44,9 @@ export class Ec2InstanceConnect extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "SendSSHPublicKey",
-      "SendSerialConsoleSSHPublicKey"
+    Write: [
+      'SendSSHPublicKey',
+      'SendSerialConsoleSSHPublicKey'
     ]
   };
 

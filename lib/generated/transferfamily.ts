@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [transfer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransferfamily.html).
@@ -14,7 +14,7 @@ export class Transfer extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -408,45 +408,45 @@ export class Transfer extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateAccess",
-      "CreateServer",
-      "CreateUser",
-      "CreateWorkflow",
-      "DeleteAccess",
-      "DeleteServer",
-      "DeleteSshPublicKey",
-      "DeleteUser",
-      "DeleteWorkflow",
-      "ImportSshPublicKey",
-      "SendWorkflowStepState",
-      "StartServer",
-      "StopServer",
-      "UpdateAccess",
-      "UpdateServer",
-      "UpdateUser"
+    Write: [
+      'CreateAccess',
+      'CreateServer',
+      'CreateUser',
+      'CreateWorkflow',
+      'DeleteAccess',
+      'DeleteServer',
+      'DeleteSshPublicKey',
+      'DeleteUser',
+      'DeleteWorkflow',
+      'ImportSshPublicKey',
+      'SendWorkflowStepState',
+      'StartServer',
+      'StopServer',
+      'UpdateAccess',
+      'UpdateServer',
+      'UpdateUser'
     ],
-    "Read": [
-      "DescribeAccess",
-      "DescribeExecution",
-      "DescribeSecurityPolicy",
-      "DescribeServer",
-      "DescribeUser",
-      "DescribeWorkflow",
-      "ListAccesses",
-      "ListExecutions",
-      "ListTagsForResource",
-      "TestIdentityProvider"
+    Read: [
+      'DescribeAccess',
+      'DescribeExecution',
+      'DescribeSecurityPolicy',
+      'DescribeServer',
+      'DescribeUser',
+      'DescribeWorkflow',
+      'ListAccesses',
+      'ListExecutions',
+      'ListTagsForResource',
+      'TestIdentityProvider'
     ],
-    "List": [
-      "ListSecurityPolicies",
-      "ListServers",
-      "ListUsers",
-      "ListWorkflows"
+    List: [
+      'ListSecurityPolicies',
+      'ListServers',
+      'ListUsers',
+      'ListWorkflows'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

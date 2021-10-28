@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [mediaconvert](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconvert.html).
@@ -14,7 +14,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -350,41 +350,41 @@ export class Mediaconvert extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateCertificate",
-      "CancelJob",
-      "CreateJob",
-      "CreateJobTemplate",
-      "CreatePreset",
-      "CreateQueue",
-      "DeleteJobTemplate",
-      "DeletePolicy",
-      "DeletePreset",
-      "DeleteQueue",
-      "DisassociateCertificate",
-      "PutPolicy",
-      "UpdateJobTemplate",
-      "UpdatePreset",
-      "UpdateQueue"
+    Write: [
+      'AssociateCertificate',
+      'CancelJob',
+      'CreateJob',
+      'CreateJobTemplate',
+      'CreatePreset',
+      'CreateQueue',
+      'DeleteJobTemplate',
+      'DeletePolicy',
+      'DeletePreset',
+      'DeleteQueue',
+      'DisassociateCertificate',
+      'PutPolicy',
+      'UpdateJobTemplate',
+      'UpdatePreset',
+      'UpdateQueue'
     ],
-    "List": [
-      "DescribeEndpoints",
-      "ListJobTemplates",
-      "ListJobs",
-      "ListPresets",
-      "ListQueues"
+    List: [
+      'DescribeEndpoints',
+      'ListJobTemplates',
+      'ListJobs',
+      'ListPresets',
+      'ListQueues'
     ],
-    "Read": [
-      "GetJob",
-      "GetJobTemplate",
-      "GetPolicy",
-      "GetPreset",
-      "GetQueue",
-      "ListTagsForResource"
+    Read: [
+      'GetJob',
+      'GetJobTemplate',
+      'GetPolicy',
+      'GetPreset',
+      'GetQueue',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [mediaconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html).
@@ -14,7 +14,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -349,43 +349,43 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AddFlowMediaStreams",
-      "AddFlowOutputs",
-      "AddFlowSources",
-      "AddFlowVpcInterfaces",
-      "CreateFlow",
-      "DeleteFlow",
-      "GrantFlowEntitlements",
-      "PurchaseOffering",
-      "RemoveFlowMediaStream",
-      "RemoveFlowOutput",
-      "RemoveFlowSource",
-      "RemoveFlowVpcInterface",
-      "RevokeFlowEntitlement",
-      "StartFlow",
-      "StopFlow",
-      "UpdateFlow",
-      "UpdateFlowEntitlement",
-      "UpdateFlowMediaStream",
-      "UpdateFlowOutput",
-      "UpdateFlowSource"
+    Write: [
+      'AddFlowMediaStreams',
+      'AddFlowOutputs',
+      'AddFlowSources',
+      'AddFlowVpcInterfaces',
+      'CreateFlow',
+      'DeleteFlow',
+      'GrantFlowEntitlements',
+      'PurchaseOffering',
+      'RemoveFlowMediaStream',
+      'RemoveFlowOutput',
+      'RemoveFlowSource',
+      'RemoveFlowVpcInterface',
+      'RevokeFlowEntitlement',
+      'StartFlow',
+      'StopFlow',
+      'UpdateFlow',
+      'UpdateFlowEntitlement',
+      'UpdateFlowMediaStream',
+      'UpdateFlowOutput',
+      'UpdateFlowSource'
     ],
-    "Read": [
-      "DescribeFlow",
-      "DescribeOffering",
-      "DescribeReservation",
-      "ListTagsForResource"
+    Read: [
+      'DescribeFlow',
+      'DescribeOffering',
+      'DescribeReservation',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListEntitlements",
-      "ListFlows",
-      "ListOfferings",
-      "ListReservations"
+    List: [
+      'ListEntitlements',
+      'ListFlows',
+      'ListOfferings',
+      'ListReservations'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

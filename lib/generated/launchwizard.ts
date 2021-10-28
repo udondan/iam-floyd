@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [launchwizard](https://docs.aws.amazon.com/service-authorization/latest/reference/list_launchwizard.html).
@@ -14,7 +14,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -107,19 +107,19 @@ export class Launchwizard extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "DeleteApp",
-      "StartProvisioning"
+    Write: [
+      'DeleteApp',
+      'StartProvisioning'
     ],
-    "Read": [
-      "DescribeProvisionedApp",
-      "DescribeProvisioningEvents",
-      "GetInfrastructureSuggestion",
-      "GetIpAddress",
-      "GetResourceCostEstimate"
+    Read: [
+      'DescribeProvisionedApp',
+      'DescribeProvisioningEvents',
+      'GetInfrastructureSuggestion',
+      'GetIpAddress',
+      'GetResourceCostEstimate'
     ],
-    "List": [
-      "ListProvisionedApps"
+    List: [
+      'ListProvisionedApps'
     ]
   };
 }

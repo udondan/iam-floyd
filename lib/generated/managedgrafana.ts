@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [grafana](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedgrafana.html).
@@ -14,7 +14,7 @@ export class Grafana extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -152,24 +152,24 @@ export class Grafana extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateLicense",
-      "CreateWorkspace",
-      "DeleteWorkspace",
-      "DisassociateLicense",
-      "UpdateWorkspace",
-      "UpdateWorkspaceAuthentication"
+    Write: [
+      'AssociateLicense',
+      'CreateWorkspace',
+      'DeleteWorkspace',
+      'DisassociateLicense',
+      'UpdateWorkspace',
+      'UpdateWorkspaceAuthentication'
     ],
-    "Read": [
-      "DescribeWorkspace",
-      "DescribeWorkspaceAuthentication",
-      "ListWorkspaces"
+    Read: [
+      'DescribeWorkspace',
+      'DescribeWorkspaceAuthentication',
+      'ListWorkspaces'
     ],
-    "List": [
-      "ListPermissions"
+    List: [
+      'ListPermissions'
     ],
-    "Permissions management": [
-      "UpdatePermissions"
+    'Permissions management': [
+      'UpdatePermissions'
     ]
   };
 

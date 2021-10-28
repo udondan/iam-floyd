@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [health](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthapisandnotifications.html).
@@ -14,7 +14,7 @@ export class Health extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -194,22 +194,22 @@ export class Health extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "DescribeAffectedAccountsForOrganization",
-      "DescribeAffectedEntities",
-      "DescribeAffectedEntitiesForOrganization",
-      "DescribeEntityAggregates",
-      "DescribeEventAggregates",
-      "DescribeEventDetails",
-      "DescribeEventDetailsForOrganization",
-      "DescribeEventTypes",
-      "DescribeEvents",
-      "DescribeEventsForOrganization",
-      "DescribeHealthServiceStatusForOrganization"
+    Read: [
+      'DescribeAffectedAccountsForOrganization',
+      'DescribeAffectedEntities',
+      'DescribeAffectedEntitiesForOrganization',
+      'DescribeEntityAggregates',
+      'DescribeEventAggregates',
+      'DescribeEventDetails',
+      'DescribeEventDetailsForOrganization',
+      'DescribeEventTypes',
+      'DescribeEvents',
+      'DescribeEventsForOrganization',
+      'DescribeHealthServiceStatusForOrganization'
     ],
-    "Permissions management": [
-      "DisableHealthServiceAccessForOrganization",
-      "EnableHealthServiceAccessForOrganization"
+    'Permissions management': [
+      'DisableHealthServiceAccessForOrganization',
+      'EnableHealthServiceAccessForOrganization'
     ]
   };
 

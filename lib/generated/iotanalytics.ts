@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement, Operator } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [iotanalytics](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotanalytics.html).
@@ -14,7 +14,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -417,47 +417,47 @@ export class Iotanalytics extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "BatchPutMessage",
-      "CancelPipelineReprocessing",
-      "CreateChannel",
-      "CreateDataset",
-      "CreateDatasetContent",
-      "CreateDatastore",
-      "CreatePipeline",
-      "DeleteChannel",
-      "DeleteDataset",
-      "DeleteDatasetContent",
-      "DeleteDatastore",
-      "DeletePipeline",
-      "PutLoggingOptions",
-      "StartPipelineReprocessing",
-      "UpdateChannel",
-      "UpdateDataset",
-      "UpdateDatastore",
-      "UpdatePipeline"
+    Write: [
+      'BatchPutMessage',
+      'CancelPipelineReprocessing',
+      'CreateChannel',
+      'CreateDataset',
+      'CreateDatasetContent',
+      'CreateDatastore',
+      'CreatePipeline',
+      'DeleteChannel',
+      'DeleteDataset',
+      'DeleteDatasetContent',
+      'DeleteDatastore',
+      'DeletePipeline',
+      'PutLoggingOptions',
+      'StartPipelineReprocessing',
+      'UpdateChannel',
+      'UpdateDataset',
+      'UpdateDatastore',
+      'UpdatePipeline'
     ],
-    "Read": [
-      "DescribeChannel",
-      "DescribeDataset",
-      "DescribeDatastore",
-      "DescribeLoggingOptions",
-      "DescribePipeline",
-      "GetDatasetContent",
-      "ListTagsForResource",
-      "RunPipelineActivity",
-      "SampleChannelData"
+    Read: [
+      'DescribeChannel',
+      'DescribeDataset',
+      'DescribeDatastore',
+      'DescribeLoggingOptions',
+      'DescribePipeline',
+      'GetDatasetContent',
+      'ListTagsForResource',
+      'RunPipelineActivity',
+      'SampleChannelData'
     ],
-    "List": [
-      "ListChannels",
-      "ListDatasetContents",
-      "ListDatasets",
-      "ListDatastores",
-      "ListPipelines"
+    List: [
+      'ListChannels',
+      'ListDatasetContents',
+      'ListDatasets',
+      'ListDatastores',
+      'ListPipelines'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

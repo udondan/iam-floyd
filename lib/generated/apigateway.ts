@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [execute-api](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigateway.html).
@@ -14,7 +14,7 @@ export class ExecuteApi extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -52,10 +52,10 @@ export class ExecuteApi extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "InvalidateCache",
-      "Invoke",
-      "ManageConnections"
+    Write: [
+      'InvalidateCache',
+      'Invoke',
+      'ManageConnections'
     ]
   };
 

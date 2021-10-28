@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [compute-optimizer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscomputeoptimizer.html).
@@ -14,7 +14,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -206,23 +206,23 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "List": [
-      "DescribeRecommendationExportJobs",
-      "GetAutoScalingGroupRecommendations",
-      "GetEBSVolumeRecommendations",
-      "GetEC2InstanceRecommendations",
-      "GetEC2RecommendationProjectedMetrics",
-      "GetEnrollmentStatus",
-      "GetEnrollmentStatusesForOrganization",
-      "GetLambdaFunctionRecommendations",
-      "GetRecommendationSummaries"
+    List: [
+      'DescribeRecommendationExportJobs',
+      'GetAutoScalingGroupRecommendations',
+      'GetEBSVolumeRecommendations',
+      'GetEC2InstanceRecommendations',
+      'GetEC2RecommendationProjectedMetrics',
+      'GetEnrollmentStatus',
+      'GetEnrollmentStatusesForOrganization',
+      'GetLambdaFunctionRecommendations',
+      'GetRecommendationSummaries'
     ],
-    "Write": [
-      "ExportAutoScalingGroupRecommendations",
-      "ExportEBSVolumeRecommendations",
-      "ExportEC2InstanceRecommendations",
-      "ExportLambdaFunctionRecommendations",
-      "UpdateEnrollmentStatus"
+    Write: [
+      'ExportAutoScalingGroupRecommendations',
+      'ExportEBSVolumeRecommendations',
+      'ExportEC2InstanceRecommendations',
+      'ExportLambdaFunctionRecommendations',
+      'UpdateEnrollmentStatus'
     ]
   };
 }

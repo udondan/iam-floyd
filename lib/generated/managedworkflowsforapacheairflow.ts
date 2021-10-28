@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [airflow](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedworkflowsforapacheairflow.html).
@@ -14,7 +14,7 @@ export class Airflow extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -166,24 +166,24 @@ export class Airflow extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateCliToken",
-      "CreateEnvironment",
-      "CreateWebLoginToken",
-      "DeleteEnvironment",
-      "PublishMetrics",
-      "UpdateEnvironment"
+    Write: [
+      'CreateCliToken',
+      'CreateEnvironment',
+      'CreateWebLoginToken',
+      'DeleteEnvironment',
+      'PublishMetrics',
+      'UpdateEnvironment'
     ],
-    "Read": [
-      "GetEnvironment",
-      "ListTagsForResource"
+    Read: [
+      'GetEnvironment',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListEnvironments"
+    List: [
+      'ListEnvironments'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [acm](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscertificatemanager.html).
@@ -14,7 +14,7 @@ export class Acm extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -200,28 +200,28 @@ export class Acm extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Tagging": [
-      "AddTagsToCertificate",
-      "RemoveTagsFromCertificate"
+    Tagging: [
+      'AddTagsToCertificate',
+      'RemoveTagsFromCertificate'
     ],
-    "Write": [
-      "DeleteCertificate",
-      "ImportCertificate",
-      "PutAccountConfiguration",
-      "RenewCertificate",
-      "RequestCertificate",
-      "ResendValidationEmail",
-      "UpdateCertificateOptions"
+    Write: [
+      'DeleteCertificate',
+      'ImportCertificate',
+      'PutAccountConfiguration',
+      'RenewCertificate',
+      'RequestCertificate',
+      'ResendValidationEmail',
+      'UpdateCertificateOptions'
     ],
-    "Read": [
-      "DescribeCertificate",
-      "ExportCertificate",
-      "GetAccountConfiguration",
-      "GetCertificate",
-      "ListTagsForCertificate"
+    Read: [
+      'DescribeCertificate',
+      'ExportCertificate',
+      'GetAccountConfiguration',
+      'GetCertificate',
+      'ListTagsForCertificate'
     ],
-    "List": [
-      "ListCertificates"
+    List: [
+      'ListCertificates'
     ]
   };
 

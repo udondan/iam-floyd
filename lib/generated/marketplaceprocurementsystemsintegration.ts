@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [aws-marketplace-procurement-systems-integration](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplaceprocurementsystemsintegration.html).
@@ -14,7 +14,7 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -41,11 +41,11 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Read": [
-      "DescribeProcurementSystemConfiguration"
+    Read: [
+      'DescribeProcurementSystemConfiguration'
     ],
-    "Write": [
-      "PutProcurementSystemConfiguration"
+    Write: [
+      'PutProcurementSystemConfiguration'
     ]
   };
 }

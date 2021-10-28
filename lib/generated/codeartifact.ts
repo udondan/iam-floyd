@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [codeartifact](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodeartifact.html).
@@ -14,7 +14,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -452,53 +452,53 @@ export class Codeartifact extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateExternalConnection",
-      "AssociateWithDownstreamRepository",
-      "CopyPackageVersions",
-      "CreateDomain",
-      "CreateRepository",
-      "DeleteDomain",
-      "DeletePackageVersions",
-      "DeleteRepository",
-      "DisassociateExternalConnection",
-      "DisposePackageVersions",
-      "PublishPackageVersion",
-      "PutDomainPermissionsPolicy",
-      "PutPackageMetadata",
-      "PutRepositoryPermissionsPolicy",
-      "UpdatePackageVersionsStatus",
-      "UpdateRepository"
+    Write: [
+      'AssociateExternalConnection',
+      'AssociateWithDownstreamRepository',
+      'CopyPackageVersions',
+      'CreateDomain',
+      'CreateRepository',
+      'DeleteDomain',
+      'DeletePackageVersions',
+      'DeleteRepository',
+      'DisassociateExternalConnection',
+      'DisposePackageVersions',
+      'PublishPackageVersion',
+      'PutDomainPermissionsPolicy',
+      'PutPackageMetadata',
+      'PutRepositoryPermissionsPolicy',
+      'UpdatePackageVersionsStatus',
+      'UpdateRepository'
     ],
-    "Permissions management": [
-      "DeleteDomainPermissionsPolicy",
-      "DeleteRepositoryPermissionsPolicy"
+    'Permissions management': [
+      'DeleteDomainPermissionsPolicy',
+      'DeleteRepositoryPermissionsPolicy'
     ],
-    "Read": [
-      "DescribeDomain",
-      "DescribePackageVersion",
-      "DescribeRepository",
-      "GetAuthorizationToken",
-      "GetDomainPermissionsPolicy",
-      "GetPackageVersionAsset",
-      "GetPackageVersionReadme",
-      "GetRepositoryEndpoint",
-      "GetRepositoryPermissionsPolicy",
-      "ReadFromRepository"
+    Read: [
+      'DescribeDomain',
+      'DescribePackageVersion',
+      'DescribeRepository',
+      'GetAuthorizationToken',
+      'GetDomainPermissionsPolicy',
+      'GetPackageVersionAsset',
+      'GetPackageVersionReadme',
+      'GetRepositoryEndpoint',
+      'GetRepositoryPermissionsPolicy',
+      'ReadFromRepository'
     ],
-    "List": [
-      "ListDomains",
-      "ListPackageVersionAssets",
-      "ListPackageVersionDependencies",
-      "ListPackageVersions",
-      "ListPackages",
-      "ListRepositories",
-      "ListRepositoriesInDomain",
-      "ListTagsForResource"
+    List: [
+      'ListDomains',
+      'ListPackageVersionAssets',
+      'ListPackageVersionDependencies',
+      'ListPackageVersions',
+      'ListPackages',
+      'ListRepositories',
+      'ListRepositoriesInDomain',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

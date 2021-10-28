@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [ssm-incidents](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanagerincidentmanager.html).
@@ -14,7 +14,7 @@ export class SsmIncidents extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -347,44 +347,44 @@ export class SsmIncidents extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateReplicationSet",
-      "CreateResponsePlan",
-      "CreateTimelineEvent",
-      "DeleteIncidentRecord",
-      "DeleteReplicationSet",
-      "DeleteResponsePlan",
-      "DeleteTimelineEvent",
-      "StartIncident",
-      "UpdateDeletionProtection",
-      "UpdateIncidentRecord",
-      "UpdateRelatedItems",
-      "UpdateReplicationSet",
-      "UpdateResponsePlan",
-      "UpdateTimelineEvent"
+    Write: [
+      'CreateReplicationSet',
+      'CreateResponsePlan',
+      'CreateTimelineEvent',
+      'DeleteIncidentRecord',
+      'DeleteReplicationSet',
+      'DeleteResponsePlan',
+      'DeleteTimelineEvent',
+      'StartIncident',
+      'UpdateDeletionProtection',
+      'UpdateIncidentRecord',
+      'UpdateRelatedItems',
+      'UpdateReplicationSet',
+      'UpdateResponsePlan',
+      'UpdateTimelineEvent'
     ],
-    "Permissions management": [
-      "DeleteResourcePolicy",
-      "PutResourcePolicy"
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'PutResourcePolicy'
     ],
-    "Read": [
-      "GetIncidentRecord",
-      "GetReplicationSet",
-      "GetResourcePolicies",
-      "GetResponsePlan",
-      "GetTimelineEvent",
-      "ListTagsForResource"
+    Read: [
+      'GetIncidentRecord',
+      'GetReplicationSet',
+      'GetResourcePolicies',
+      'GetResponsePlan',
+      'GetTimelineEvent',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListIncidentRecords",
-      "ListRelatedItems",
-      "ListReplicationSets",
-      "ListResponsePlans",
-      "ListTimelineEvents"
+    List: [
+      'ListIncidentRecords',
+      'ListRelatedItems',
+      'ListReplicationSets',
+      'ListResponsePlans',
+      'ListTimelineEvents'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

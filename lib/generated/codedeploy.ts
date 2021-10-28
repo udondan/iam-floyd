@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [codedeploy](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodedeploy.html).
@@ -14,7 +14,7 @@ export class Codedeploy extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -560,61 +560,61 @@ export class Codedeploy extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Tagging": [
-      "AddTagsToOnPremisesInstances",
-      "RemoveTagsFromOnPremisesInstances",
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'AddTagsToOnPremisesInstances',
+      'RemoveTagsFromOnPremisesInstances',
+      'TagResource',
+      'UntagResource'
     ],
-    "Read": [
-      "BatchGetApplicationRevisions",
-      "BatchGetApplications",
-      "BatchGetDeploymentGroups",
-      "BatchGetDeploymentInstances",
-      "BatchGetDeploymentTargets",
-      "BatchGetDeployments",
-      "BatchGetOnPremisesInstances",
-      "GetDeploymentTarget"
+    Read: [
+      'BatchGetApplicationRevisions',
+      'BatchGetApplications',
+      'BatchGetDeploymentGroups',
+      'BatchGetDeploymentInstances',
+      'BatchGetDeploymentTargets',
+      'BatchGetDeployments',
+      'BatchGetOnPremisesInstances',
+      'GetDeploymentTarget'
     ],
-    "Write": [
-      "ContinueDeployment",
-      "CreateApplication",
-      "CreateCloudFormationDeployment",
-      "CreateDeployment",
-      "CreateDeploymentConfig",
-      "CreateDeploymentGroup",
-      "DeleteApplication",
-      "DeleteDeploymentConfig",
-      "DeleteDeploymentGroup",
-      "DeleteGitHubAccountToken",
-      "DeleteResourcesByExternalId",
-      "DeregisterOnPremisesInstance",
-      "PutLifecycleEventHookExecutionStatus",
-      "RegisterApplicationRevision",
-      "RegisterOnPremisesInstance",
-      "SkipWaitTimeForInstanceTermination",
-      "StopDeployment",
-      "UpdateApplication",
-      "UpdateDeploymentGroup"
+    Write: [
+      'ContinueDeployment',
+      'CreateApplication',
+      'CreateCloudFormationDeployment',
+      'CreateDeployment',
+      'CreateDeploymentConfig',
+      'CreateDeploymentGroup',
+      'DeleteApplication',
+      'DeleteDeploymentConfig',
+      'DeleteDeploymentGroup',
+      'DeleteGitHubAccountToken',
+      'DeleteResourcesByExternalId',
+      'DeregisterOnPremisesInstance',
+      'PutLifecycleEventHookExecutionStatus',
+      'RegisterApplicationRevision',
+      'RegisterOnPremisesInstance',
+      'SkipWaitTimeForInstanceTermination',
+      'StopDeployment',
+      'UpdateApplication',
+      'UpdateDeploymentGroup'
     ],
-    "List": [
-      "GetApplication",
-      "GetApplicationRevision",
-      "GetDeployment",
-      "GetDeploymentConfig",
-      "GetDeploymentGroup",
-      "GetDeploymentInstance",
-      "GetOnPremisesInstance",
-      "ListApplicationRevisions",
-      "ListApplications",
-      "ListDeploymentConfigs",
-      "ListDeploymentGroups",
-      "ListDeploymentInstances",
-      "ListDeploymentTargets",
-      "ListDeployments",
-      "ListGitHubAccountTokenNames",
-      "ListOnPremisesInstances",
-      "ListTagsForResource"
+    List: [
+      'GetApplication',
+      'GetApplicationRevision',
+      'GetDeployment',
+      'GetDeploymentConfig',
+      'GetDeploymentGroup',
+      'GetDeploymentInstance',
+      'GetOnPremisesInstance',
+      'ListApplicationRevisions',
+      'ListApplications',
+      'ListDeploymentConfigs',
+      'ListDeploymentGroups',
+      'ListDeploymentInstances',
+      'ListDeploymentTargets',
+      'ListDeployments',
+      'ListGitHubAccountTokenNames',
+      'ListOnPremisesInstances',
+      'ListTagsForResource'
     ]
   };
 

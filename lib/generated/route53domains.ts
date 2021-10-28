@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [route53domains](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53domains.html).
@@ -14,7 +14,7 @@ export class Route53domains extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -327,41 +327,41 @@ export class Route53domains extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AcceptDomainTransferFromAnotherAwsAccount",
-      "CancelDomainTransferToAnotherAwsAccount",
-      "DisableDomainAutoRenew",
-      "DisableDomainTransferLock",
-      "EnableDomainAutoRenew",
-      "EnableDomainTransferLock",
-      "RegisterDomain",
-      "RejectDomainTransferFromAnotherAwsAccount",
-      "RenewDomain",
-      "ResendContactReachabilityEmail",
-      "RetrieveDomainAuthCode",
-      "TransferDomain",
-      "TransferDomainToAnotherAwsAccount",
-      "UpdateDomainContact",
-      "UpdateDomainContactPrivacy",
-      "UpdateDomainNameservers"
+    Write: [
+      'AcceptDomainTransferFromAnotherAwsAccount',
+      'CancelDomainTransferToAnotherAwsAccount',
+      'DisableDomainAutoRenew',
+      'DisableDomainTransferLock',
+      'EnableDomainAutoRenew',
+      'EnableDomainTransferLock',
+      'RegisterDomain',
+      'RejectDomainTransferFromAnotherAwsAccount',
+      'RenewDomain',
+      'ResendContactReachabilityEmail',
+      'RetrieveDomainAuthCode',
+      'TransferDomain',
+      'TransferDomainToAnotherAwsAccount',
+      'UpdateDomainContact',
+      'UpdateDomainContactPrivacy',
+      'UpdateDomainNameservers'
     ],
-    "Read": [
-      "CheckDomainAvailability",
-      "CheckDomainTransferability",
-      "GetContactReachabilityStatus",
-      "GetDomainDetail",
-      "GetDomainSuggestions",
-      "GetOperationDetail",
-      "ViewBilling"
+    Read: [
+      'CheckDomainAvailability',
+      'CheckDomainTransferability',
+      'GetContactReachabilityStatus',
+      'GetDomainDetail',
+      'GetDomainSuggestions',
+      'GetOperationDetail',
+      'ViewBilling'
     ],
-    "Tagging": [
-      "DeleteTagsForDomain",
-      "UpdateTagsForDomain"
+    Tagging: [
+      'DeleteTagsForDomain',
+      'UpdateTagsForDomain'
     ],
-    "List": [
-      "ListDomains",
-      "ListOperations",
-      "ListTagsForDomain"
+    List: [
+      'ListDomains',
+      'ListOperations',
+      'ListTagsForDomain'
     ]
   };
 }

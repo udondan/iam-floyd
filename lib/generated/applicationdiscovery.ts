@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [discovery](https://docs.aws.amazon.com/service-authorization/latest/reference/list_applicationdiscovery.html).
@@ -14,7 +14,7 @@ export class Discovery extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -294,38 +294,38 @@ export class Discovery extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AssociateConfigurationItemsToApplication",
-      "BatchDeleteImportData",
-      "CreateApplication",
-      "DeleteApplications",
-      "DisassociateConfigurationItemsFromApplication",
-      "ExportConfigurations",
-      "StartContinuousExport",
-      "StartDataCollectionByAgentIds",
-      "StartExportTask",
-      "StartImportTask",
-      "StopContinuousExport",
-      "StopDataCollectionByAgentIds",
-      "UpdateApplication"
+    Write: [
+      'AssociateConfigurationItemsToApplication',
+      'BatchDeleteImportData',
+      'CreateApplication',
+      'DeleteApplications',
+      'DisassociateConfigurationItemsFromApplication',
+      'ExportConfigurations',
+      'StartContinuousExport',
+      'StartDataCollectionByAgentIds',
+      'StartExportTask',
+      'StartImportTask',
+      'StopContinuousExport',
+      'StopDataCollectionByAgentIds',
+      'UpdateApplication'
     ],
-    "Tagging": [
-      "CreateTags",
-      "DeleteTags"
+    Tagging: [
+      'CreateTags',
+      'DeleteTags'
     ],
-    "Read": [
-      "DescribeAgents",
-      "DescribeConfigurations",
-      "DescribeContinuousExports",
-      "DescribeExportConfigurations",
-      "DescribeExportTasks",
-      "DescribeTags",
-      "GetDiscoverySummary"
+    Read: [
+      'DescribeAgents',
+      'DescribeConfigurations',
+      'DescribeContinuousExports',
+      'DescribeExportConfigurations',
+      'DescribeExportTasks',
+      'DescribeTags',
+      'GetDiscoverySummary'
     ],
-    "List": [
-      "DescribeImportTasks",
-      "ListConfigurations",
-      "ListServerNeighbors"
+    List: [
+      'DescribeImportTasks',
+      'ListConfigurations',
+      'ListServerNeighbors'
     ]
   };
 }

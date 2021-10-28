@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [bugbust](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbugbust.html).
@@ -14,7 +14,7 @@ export class Bugbust extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -276,30 +276,30 @@ export class Bugbust extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateEvent",
-      "EvaluateProfilingGroups",
-      "JoinEvent",
-      "UpdateEvent",
-      "UpdateWorkItem",
-      "UpdateWorkItemAdmin"
+    Write: [
+      'CreateEvent',
+      'EvaluateProfilingGroups',
+      'JoinEvent',
+      'UpdateEvent',
+      'UpdateWorkItem',
+      'UpdateWorkItemAdmin'
     ],
-    "Read": [
-      "GetEvent",
-      "GetJoinEventStatus",
-      "ListBugs",
-      "ListEventParticipants",
-      "ListEventScores",
-      "ListProfilingGroups",
-      "ListPullRequests",
-      "ListTagsForResource"
+    Read: [
+      'GetEvent',
+      'GetJoinEventStatus',
+      'ListBugs',
+      'ListEventParticipants',
+      'ListEventScores',
+      'ListProfilingGroups',
+      'ListPullRequests',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListEvents"
+    List: [
+      'ListEvents'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

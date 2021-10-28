@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [datasync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatasync.html).
@@ -14,7 +14,7 @@ export class Datasync extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -443,48 +443,48 @@ export class Datasync extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CancelTaskExecution",
-      "CreateAgent",
-      "CreateLocationEfs",
-      "CreateLocationFsxWindows",
-      "CreateLocationNfs",
-      "CreateLocationObjectStorage",
-      "CreateLocationS3",
-      "CreateLocationSmb",
-      "CreateTask",
-      "DeleteAgent",
-      "DeleteLocation",
-      "DeleteTask",
-      "StartTaskExecution",
-      "UpdateAgent",
-      "UpdateLocationNfs",
-      "UpdateLocationObjectStorage",
-      "UpdateLocationSmb",
-      "UpdateTask",
-      "UpdateTaskExecution"
+    Write: [
+      'CancelTaskExecution',
+      'CreateAgent',
+      'CreateLocationEfs',
+      'CreateLocationFsxWindows',
+      'CreateLocationNfs',
+      'CreateLocationObjectStorage',
+      'CreateLocationS3',
+      'CreateLocationSmb',
+      'CreateTask',
+      'DeleteAgent',
+      'DeleteLocation',
+      'DeleteTask',
+      'StartTaskExecution',
+      'UpdateAgent',
+      'UpdateLocationNfs',
+      'UpdateLocationObjectStorage',
+      'UpdateLocationSmb',
+      'UpdateTask',
+      'UpdateTaskExecution'
     ],
-    "Read": [
-      "DescribeAgent",
-      "DescribeLocationEfs",
-      "DescribeLocationFsxWindows",
-      "DescribeLocationNfs",
-      "DescribeLocationObjectStorage",
-      "DescribeLocationS3",
-      "DescribeLocationSmb",
-      "DescribeTask",
-      "DescribeTaskExecution",
-      "ListTagsForResource"
+    Read: [
+      'DescribeAgent',
+      'DescribeLocationEfs',
+      'DescribeLocationFsxWindows',
+      'DescribeLocationNfs',
+      'DescribeLocationObjectStorage',
+      'DescribeLocationS3',
+      'DescribeLocationSmb',
+      'DescribeTask',
+      'DescribeTaskExecution',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListAgents",
-      "ListLocations",
-      "ListTaskExecutions",
-      "ListTasks"
+    List: [
+      'ListAgents',
+      'ListLocations',
+      'ListTaskExecutions',
+      'ListTasks'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

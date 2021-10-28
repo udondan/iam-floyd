@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [ssm-contacts](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssystemsmanagerincidentmanagercontacts.html).
@@ -14,7 +14,7 @@ export class SsmContacts extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -355,45 +355,45 @@ export class SsmContacts extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AcceptPage",
-      "ActivateContactChannel",
-      "CreateContact",
-      "CreateContactChannel",
-      "DeactivateContactChannel",
-      "DeleteContact",
-      "DeleteContactChannel",
-      "DeleteContactPolicy",
-      "PutContactPolicy",
-      "SendActivationCode",
-      "StartEngagement",
-      "StopEngagement",
-      "UpdateContact",
-      "UpdateContactChannel",
-      "UpdateContactPolicy"
+    Write: [
+      'AcceptPage',
+      'ActivateContactChannel',
+      'CreateContact',
+      'CreateContactChannel',
+      'DeactivateContactChannel',
+      'DeleteContact',
+      'DeleteContactChannel',
+      'DeleteContactPolicy',
+      'PutContactPolicy',
+      'SendActivationCode',
+      'StartEngagement',
+      'StopEngagement',
+      'UpdateContact',
+      'UpdateContactChannel',
+      'UpdateContactPolicy'
     ],
-    "Permissions management": [
-      "AssociateContact"
+    'Permissions management': [
+      'AssociateContact'
     ],
-    "Read": [
-      "DescribeEngagement",
-      "DescribePage",
-      "GetContact",
-      "GetContactChannel",
-      "GetContactPolicy",
-      "ListTagsForResource"
+    Read: [
+      'DescribeEngagement',
+      'DescribePage',
+      'GetContact',
+      'GetContactChannel',
+      'GetContactPolicy',
+      'ListTagsForResource'
     ],
-    "List": [
-      "ListContactChannels",
-      "ListContacts",
-      "ListEngagements",
-      "ListPageReceipts",
-      "ListPagesByContact",
-      "ListPagesByEngagement"
+    List: [
+      'ListContactChannels',
+      'ListContacts',
+      'ListEngagements',
+      'ListPageReceipts',
+      'ListPagesByContact',
+      'ListPagesByEngagement'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

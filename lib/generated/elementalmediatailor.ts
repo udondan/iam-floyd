@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [mediatailor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediatailor.html).
@@ -14,7 +14,7 @@ export class Mediatailor extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -395,47 +395,47 @@ export class Mediatailor extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateChannel",
-      "CreateProgram",
-      "CreateSourceLocation",
-      "CreateVodSource",
-      "DeleteChannel",
-      "DeletePlaybackConfiguration",
-      "DeleteProgram",
-      "DeleteSourceLocation",
-      "DeleteVodSource",
-      "PutPlaybackConfiguration",
-      "StartChannel",
-      "StopChannel",
-      "UpdateChannel",
-      "UpdateSourceLocation",
-      "UpdateVodSource"
+    Write: [
+      'CreateChannel',
+      'CreateProgram',
+      'CreateSourceLocation',
+      'CreateVodSource',
+      'DeleteChannel',
+      'DeletePlaybackConfiguration',
+      'DeleteProgram',
+      'DeleteSourceLocation',
+      'DeleteVodSource',
+      'PutPlaybackConfiguration',
+      'StartChannel',
+      'StopChannel',
+      'UpdateChannel',
+      'UpdateSourceLocation',
+      'UpdateVodSource'
     ],
-    "Permissions management": [
-      "DeleteChannelPolicy",
-      "PutChannelPolicy"
+    'Permissions management': [
+      'DeleteChannelPolicy',
+      'PutChannelPolicy'
     ],
-    "Read": [
-      "DescribeChannel",
-      "DescribeProgram",
-      "DescribeSourceLocation",
-      "DescribeVodSource",
-      "GetChannelPolicy",
-      "GetChannelSchedule",
-      "GetPlaybackConfiguration",
-      "ListAlerts",
-      "ListChannels",
-      "ListSourceLocations",
-      "ListTagsForResource",
-      "ListVodSources"
+    Read: [
+      'DescribeChannel',
+      'DescribeProgram',
+      'DescribeSourceLocation',
+      'DescribeVodSource',
+      'GetChannelPolicy',
+      'GetChannelSchedule',
+      'GetPlaybackConfiguration',
+      'ListAlerts',
+      'ListChannels',
+      'ListSourceLocations',
+      'ListTagsForResource',
+      'ListVodSources'
     ],
-    "List": [
-      "ListPlaybackConfigurations"
+    List: [
+      'ListPlaybackConfigurations'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

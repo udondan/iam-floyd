@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [cognito-identity](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncognitoidentity.html).
@@ -14,7 +14,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -283,36 +283,36 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateIdentityPool",
-      "DeleteIdentities",
-      "DeleteIdentityPool",
-      "GetId",
-      "MergeDeveloperIdentities",
-      "SetIdentityPoolRoles",
-      "SetPrincipalTagAttributeMap",
-      "UnlinkDeveloperIdentity",
-      "UnlinkIdentity",
-      "UpdateIdentityPool"
+    Write: [
+      'CreateIdentityPool',
+      'DeleteIdentities',
+      'DeleteIdentityPool',
+      'GetId',
+      'MergeDeveloperIdentities',
+      'SetIdentityPoolRoles',
+      'SetPrincipalTagAttributeMap',
+      'UnlinkDeveloperIdentity',
+      'UnlinkIdentity',
+      'UpdateIdentityPool'
     ],
-    "Read": [
-      "DescribeIdentity",
-      "DescribeIdentityPool",
-      "GetCredentialsForIdentity",
-      "GetIdentityPoolRoles",
-      "GetOpenIdToken",
-      "GetOpenIdTokenForDeveloperIdentity",
-      "GetPrincipalTagAttributeMap",
-      "ListTagsForResource",
-      "LookupDeveloperIdentity"
+    Read: [
+      'DescribeIdentity',
+      'DescribeIdentityPool',
+      'GetCredentialsForIdentity',
+      'GetIdentityPoolRoles',
+      'GetOpenIdToken',
+      'GetOpenIdTokenForDeveloperIdentity',
+      'GetPrincipalTagAttributeMap',
+      'ListTagsForResource',
+      'LookupDeveloperIdentity'
     ],
-    "List": [
-      "ListIdentities",
-      "ListIdentityPools"
+    List: [
+      'ListIdentities',
+      'ListIdentityPools'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

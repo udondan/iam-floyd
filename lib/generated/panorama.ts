@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [panorama](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspanorama.html).
@@ -14,7 +14,7 @@ export class Panorama extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -754,77 +754,77 @@ export class Panorama extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "CreateApp",
-      "CreateAppDeployment",
-      "CreateAppVersion",
-      "CreateApplicationInstance",
-      "CreateDataSource",
-      "CreateDeploymentConfiguration",
-      "CreateInputs",
-      "CreateJobForDevices",
-      "CreateModel",
-      "CreateNodeFromTemplateJob",
-      "CreatePackage",
-      "CreatePackageImportJob",
-      "CreateStreams",
-      "DeleteApp",
-      "DeleteAppVersion",
-      "DeleteDataSource",
-      "DeleteDevice",
-      "DeleteModel",
-      "DeletePackage",
-      "DeregisterPackageVersion",
-      "ProvisionDevice",
-      "RegisterPackageVersion",
-      "RemoveApplicationInstance",
-      "UpdateApp",
-      "UpdateAppConfiguration",
-      "UpdateDataSource",
-      "UpdateDeviceMetadata"
+    Write: [
+      'CreateApp',
+      'CreateAppDeployment',
+      'CreateAppVersion',
+      'CreateApplicationInstance',
+      'CreateDataSource',
+      'CreateDeploymentConfiguration',
+      'CreateInputs',
+      'CreateJobForDevices',
+      'CreateModel',
+      'CreateNodeFromTemplateJob',
+      'CreatePackage',
+      'CreatePackageImportJob',
+      'CreateStreams',
+      'DeleteApp',
+      'DeleteAppVersion',
+      'DeleteDataSource',
+      'DeleteDevice',
+      'DeleteModel',
+      'DeletePackage',
+      'DeregisterPackageVersion',
+      'ProvisionDevice',
+      'RegisterPackageVersion',
+      'RemoveApplicationInstance',
+      'UpdateApp',
+      'UpdateAppConfiguration',
+      'UpdateDataSource',
+      'UpdateDeviceMetadata'
     ],
-    "Read": [
-      "DescribeApp",
-      "DescribeAppDeployment",
-      "DescribeAppVersion",
-      "DescribeApplicationInstance",
-      "DescribeApplicationInstanceDetails",
-      "DescribeDataSource",
-      "DescribeDevice",
-      "DescribeDeviceJob",
-      "DescribeModel",
-      "DescribeNode",
-      "DescribeNodeFromTemplateJob",
-      "DescribePackage",
-      "DescribePackageImportJob",
-      "DescribePackageVersion",
-      "DescribeSoftware",
-      "GetDeploymentConfiguration",
-      "GetInputs",
-      "GetStreams",
-      "GetWebSocketURL"
+    Read: [
+      'DescribeApp',
+      'DescribeAppDeployment',
+      'DescribeAppVersion',
+      'DescribeApplicationInstance',
+      'DescribeApplicationInstanceDetails',
+      'DescribeDataSource',
+      'DescribeDevice',
+      'DescribeDeviceJob',
+      'DescribeModel',
+      'DescribeNode',
+      'DescribeNodeFromTemplateJob',
+      'DescribePackage',
+      'DescribePackageImportJob',
+      'DescribePackageVersion',
+      'DescribeSoftware',
+      'GetDeploymentConfiguration',
+      'GetInputs',
+      'GetStreams',
+      'GetWebSocketURL'
     ],
-    "List": [
-      "ListAppDeploymentOperations",
-      "ListAppVersions",
-      "ListApplicationInstanceDependencies",
-      "ListApplicationInstanceNodeInstances",
-      "ListApplicationInstances",
-      "ListApps",
-      "ListDataSources",
-      "ListDeploymentConfigurations",
-      "ListDevices",
-      "ListDevicesJobs",
-      "ListModels",
-      "ListNodeFromTemplateJobs",
-      "ListNodes",
-      "ListPackageImportJobs",
-      "ListPackages",
-      "ListTagsForResource"
+    List: [
+      'ListAppDeploymentOperations',
+      'ListAppVersions',
+      'ListApplicationInstanceDependencies',
+      'ListApplicationInstanceNodeInstances',
+      'ListApplicationInstances',
+      'ListApps',
+      'ListDataSources',
+      'ListDeploymentConfigurations',
+      'ListDevices',
+      'ListDevicesJobs',
+      'ListModels',
+      'ListNodeFromTemplateJobs',
+      'ListNodes',
+      'ListPackageImportJobs',
+      'ListPackages',
+      'ListTagsForResource'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

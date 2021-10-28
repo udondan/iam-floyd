@@ -1,5 +1,5 @@
-import { AccessLevelList } from "../shared/access-level";
-import { PolicyStatement } from "../shared";
+import { AccessLevelList } from '../shared/access-level';
+import { PolicyStatement } from '../shared';
 
 /**
  * Statement provider for service [profile](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnectcustomerprofiles.html).
@@ -14,7 +14,7 @@ export class Profile extends PolicyStatement {
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (sid?: string) {
+  constructor(sid?: string) {
     super(sid);
   }
 
@@ -369,43 +369,43 @@ export class Profile extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    "Write": [
-      "AddProfileKey",
-      "CreateDomain",
-      "CreateProfile",
-      "DeleteDomain",
-      "DeleteIntegration",
-      "DeleteProfile",
-      "DeleteProfileKey",
-      "DeleteProfileObject",
-      "DeleteProfileObjectType",
-      "MergeProfiles",
-      "PutIntegration",
-      "PutProfileObject",
-      "PutProfileObjectType",
-      "UpdateDomain",
-      "UpdateProfile"
+    Write: [
+      'AddProfileKey',
+      'CreateDomain',
+      'CreateProfile',
+      'DeleteDomain',
+      'DeleteIntegration',
+      'DeleteProfile',
+      'DeleteProfileKey',
+      'DeleteProfileObject',
+      'DeleteProfileObjectType',
+      'MergeProfiles',
+      'PutIntegration',
+      'PutProfileObject',
+      'PutProfileObjectType',
+      'UpdateDomain',
+      'UpdateProfile'
     ],
-    "Read": [
-      "GetDomain",
-      "GetIntegration",
-      "GetProfileObjectType",
-      "GetProfileObjectTypeTemplate",
-      "ListTagsForResource",
-      "SearchProfiles"
+    Read: [
+      'GetDomain',
+      'GetIntegration',
+      'GetProfileObjectType',
+      'GetProfileObjectTypeTemplate',
+      'ListTagsForResource',
+      'SearchProfiles'
     ],
-    "List": [
-      "GetMatches",
-      "ListAccountIntegrations",
-      "ListDomains",
-      "ListIntegrations",
-      "ListProfileObjectTypeTemplates",
-      "ListProfileObjectTypes",
-      "ListProfileObjects"
+    List: [
+      'GetMatches',
+      'ListAccountIntegrations',
+      'ListDomains',
+      'ListIntegrations',
+      'ListProfileObjectTypeTemplates',
+      'ListProfileObjectTypes',
+      'ListProfileObjects'
     ],
-    "Tagging": [
-      "TagResource",
-      "UntagResource"
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
