@@ -20,7 +20,7 @@
 			"Resource": "*",
 			"Condition": {
 				"StringLike": {
-					"s3:DataAccessPointArn": "arn:aws:s3:*:*:accesspoint/panorama-*"
+					"s3:DataAccessPointArn": "arn:aws:s3:*:*:accesspoint/panorama*"
 				}
 			}
 		},
