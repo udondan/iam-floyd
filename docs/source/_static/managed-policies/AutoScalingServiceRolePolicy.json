@@ -92,6 +92,14 @@
 					"events:ManagedBy": "autoscaling.amazonaws.com"
 				}
 			}
-		}
+		},
+        {
+            "Sid": "SystemsManagerParameterManagement",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:GetParameters"
+            ],
+            "Resource": "*"
+        }
 	]
 }

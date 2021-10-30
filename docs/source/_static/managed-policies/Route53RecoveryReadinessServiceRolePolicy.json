@@ -29,17 +29,17 @@
 				}
 			}
 		},
-		{            
-		    "Effect": "Allow",
-		    "Action": [
-                "lambda:GetFunctionConcurrency",
-                "lambda:GetFunctionConfiguration",
-                "lambda:GetProvisionedConcurrencyConfig",
-                "lambda:ListAliases",
-                "lambda:ListVersionsByFunction"
-            ],
-            "Resource": "arn:aws:lambda:*:*:function:*"
-        },
+		{
+			"Effect": "Allow",
+			"Action": [
+				"lambda:GetFunctionConcurrency",
+				"lambda:GetFunctionConfiguration",
+				"lambda:GetProvisionedConcurrencyConfig",
+				"lambda:ListAliases",
+				"lambda:ListVersionsByFunction"
+			],
+			"Resource": "arn:aws:lambda:*:*:function:*"
+		},
 		{
 			"Effect": "Allow",
 			"Action": [
@@ -95,6 +95,7 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"apigateway:GET",
 				"application-autoscaling:DescribeScalableTargets",
 				"application-autoscaling:DescribeScalingPolicies",
 				"autoscaling:DescribeAccountLimits",
