@@ -3,5 +3,7 @@ textract:AnalyzeExpense;Read
 textract:DetectDocumentText;Read
 textract:GetDocumentAnalysis;Read
 textract:GetDocumentTextDetection;Read
+textract:GetExpenseAnalysis;Read
 textract:StartDocumentAnalysis;Write
 textract:StartDocumentTextDetection;Write
+textract:StartExpenseAnalysis;Write

@@ -83,6 +83,17 @@ export class Textract extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about an expense analysis job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/textract/latest/dg/API_GetExpenseAnalysis.html
+   */
+  public toGetExpenseAnalysis() {
+    return this.to('GetExpenseAnalysis');
+  }
+
+  /**
    * Grants permission to start an asynchronous job to detect instances of real-world document entities within an image or pdf provided as input
    *
    * Access Level: Write
@@ -110,17 +121,33 @@ export class Textract extends PolicyStatement {
     return this.to('StartDocumentTextDetection');
   }
 
+  /**
+   * Grants permission to start an asynchronous job to detect instances of invoices or receipts within an image or pdf provided as input
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:GetObject
+   *
+   * https://docs.aws.amazon.com/textract/latest/dg/API_StartExpenseAnalysis.html
+   */
+  public toStartExpenseAnalysis() {
+    return this.to('StartExpenseAnalysis');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'AnalyzeDocument',
       'AnalyzeExpense',
       'DetectDocumentText',
       'GetDocumentAnalysis',
-      'GetDocumentTextDetection'
+      'GetDocumentTextDetection',
+      'GetExpenseAnalysis'
     ],
     Write: [
       'StartDocumentAnalysis',
-      'StartDocumentTextDetection'
+      'StartDocumentTextDetection',
+      'StartExpenseAnalysis'
     ]
   };
 }
