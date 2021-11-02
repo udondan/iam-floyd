@@ -1,10 +1,9 @@
 #!/usr/bin/env node
-import { ts } from '@ts-morph/common';
 import fs = require('fs');
 import path = require('path');
-import { Project, SourceFile } from 'ts-morph';
+import { Project } from 'ts-morph';
 
-import { formatCode } from '../lib/generator';
+import { formatCode } from '../lib/generator/format';
 
 const lib = path.join(__dirname, '../lib');
 

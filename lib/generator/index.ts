@@ -1,16 +1,16 @@
 import 'colors';
 
-import { ts } from '@ts-morph/common';
 import cheerio = require('cheerio');
 import fs = require('fs');
 import glob = require('glob');
 import request = require('request');
-import { Project, QuoteKind, Scope, SourceFile } from 'ts-morph';
+import { Project, QuoteKind, Scope } from 'ts-morph';
 
 import { Operator, ResourceTypes } from '../shared';
 import { AccessLevelList } from '../shared/access-level';
 import { Conditions } from './condition';
 import { arnFixer, conditionFixer, fixes, serviceFixer } from './fixes';
+import { formatCode } from './format';
 
 export { indexManagedPolicies } from './managed-policies';
 
@@ -702,32 +702,6 @@ export function camelCase(str: string) {
       return upperFirst(str);
     })
     .join('');
-}
-
-export function formatCode(file: SourceFile) {
-  file.formatText({
-    ensureNewLineAtEndOfFile: true,
-    insertSpaceAfterCommaDelimiter: true,
-    insertSpaceAfterSemicolonInForStatements: true,
-    insertSpaceBeforeAndAfterBinaryOperators: true,
-    insertSpaceAfterKeywordsInControlFlowStatements: true,
-    insertSpaceAfterFunctionKeywordForAnonymousFunctions: true,
-    insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis: false,
-    insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets: false,
-    insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces: true,
-    insertSpaceAfterOpeningAndBeforeClosingEmptyBraces: false,
-    insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces: true,
-    insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces: true,
-    insertSpaceAfterTypeAssertion: true,
-    insertSpaceBeforeFunctionParenthesis: false,
-    placeOpenBraceOnNewLineForFunctions: false,
-    placeOpenBraceOnNewLineForControlBlocks: false,
-    insertSpaceBeforeTypeAnnotation: false,
-    indentMultiLineObjectLiteralBeginningOnBlankLine: true,
-    semicolons: ts.SemicolonPreference.Insert,
-    indentSize: 2,
-    trimTrailingWhitespace: true,
-  });
 }
 
 function createCache() {
