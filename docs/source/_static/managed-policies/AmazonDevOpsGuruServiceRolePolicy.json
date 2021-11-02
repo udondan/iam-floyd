@@ -23,7 +23,10 @@
 				"config:DescribeConfigurationRecorderStatus",
 				"config:GetResourceConfigHistory",
 				"events:ListRuleNamesByTarget",
-				"xray:GetServiceGraph"
+				"xray:GetServiceGraph",
+                "organizations:ListRoots",
+                "organizations:ListChildren",
+                "organizations:ListDelegatedAdministrators"
 			],
 			"Resource": "*"
 		},

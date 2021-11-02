@@ -33,7 +33,8 @@
 						"IMPORT_ASSETS_FROM_S3",
 						"IMPORT_ASSET_FROM_SIGNED_URL",
 						"EXPORT_ASSETS_TO_S3",
-						"EXPORT_ASSET_TO_SIGNED_URL"
+						"EXPORT_ASSET_TO_SIGNED_URL",
+						"IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES"
 					]
 				}
 			}
@@ -114,6 +115,26 @@
 				"kms:DescribeKey",
 				"kms:ListAliases",
 				"kms:ListKeys"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"redshift:AuthorizeDataShare"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringEqualsIgnoreCase": {
+					"redshift:ConsumerIdentifier": "ADX"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"redshift:DescribeDataSharesForProducer",
+				"redshift:DescribeDataShares"
 			],
 			"Resource": "*"
 		}
