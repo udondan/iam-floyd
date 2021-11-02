@@ -188,7 +188,7 @@ export class CognitoIdp extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListGroupsForUser.html
    */
   public toAdminListGroupsForUser() {
     return this.to('AdminListGroupsForUser');
