@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement, Operator } from '../shared';
 
 /**
- * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_networkmanager.html).
+ * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Networkmanager extends PolicyStatement {
   public servicePrefix = 'networkmanager';
 
   /**
-   * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_networkmanager.html).
+   * Statement provider for service [networkmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsnetworkmanager.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -310,6 +310,72 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the number of resources for a global network grouped by type
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetNetworkResourceCounts.html
+   */
+  public toGetNetworkResourceCounts() {
+    return this.to('GetNetworkResourceCounts');
+  }
+
+  /**
+   * Grants permission to retrieve related resources for a resource within the global network
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetNetworkResourceRelationships.html
+   */
+  public toGetNetworkResourceRelationships() {
+    return this.to('GetNetworkResourceRelationships');
+  }
+
+  /**
+   * Grants permission to retrieve a global network resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetNetworkResources.html
+   */
+  public toGetNetworkResources() {
+    return this.to('GetNetworkResources');
+  }
+
+  /**
+   * Grants permission to retrieve routes for a route table within the global network
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetNetworkRoutes.html
+   */
+  public toGetNetworkRoutes() {
+    return this.to('GetNetworkRoutes');
+  }
+
+  /**
+   * Grants permission to retrieve network telemetry objects for the global network
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetNetworkTelemetry.html
+   */
+  public toGetNetworkTelemetry() {
+    return this.to('GetNetworkTelemetry');
+  }
+
+  /**
+   * Grants permission to retrieve a route analysis configuration and result
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetRouteAnalysis.html
+   */
+  public toGetRouteAnalysis() {
+    return this.to('GetRouteAnalysis');
+  }
+
+  /**
    * Grants permission to describe global networks
    *
    * Access Level: List
@@ -368,6 +434,17 @@ export class Networkmanager extends PolicyStatement {
    */
   public toRegisterTransitGateway() {
     return this.to('RegisterTransitGateway');
+  }
+
+  /**
+   * Grants permission to start a route analysis and stores analysis configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_StartRouteAnalysis.html
+   */
+  public toStartRouteAnalysis() {
+    return this.to('StartRouteAnalysis');
   }
 
   /**
@@ -445,6 +522,17 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add or update metadata key/value pairs on network resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateNetworkResourceMetadata.html
+   */
+  public toUpdateNetworkResourceMetadata() {
+    return this.to('UpdateNetworkResourceMetadata');
+  }
+
+  /**
    * Grants permission to update a site
    *
    * Access Level: Write
@@ -475,10 +563,12 @@ export class Networkmanager extends PolicyStatement {
       'DisassociateLink',
       'DisassociateTransitGatewayConnectPeer',
       'RegisterTransitGateway',
+      'StartRouteAnalysis',
       'UpdateConnection',
       'UpdateDevice',
       'UpdateGlobalNetwork',
       'UpdateLink',
+      'UpdateNetworkResourceMetadata',
       'UpdateSite'
     ],
     List: [
@@ -493,6 +583,12 @@ export class Networkmanager extends PolicyStatement {
       'GetTransitGatewayRegistrations'
     ],
     Read: [
+      'GetNetworkResourceCounts',
+      'GetNetworkResourceRelationships',
+      'GetNetworkResources',
+      'GetNetworkRoutes',
+      'GetNetworkTelemetry',
+      'GetRouteAnalysis',
       'ListTagsForResource'
     ],
     Tagging: [
@@ -586,7 +682,7 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
-   * Controls which customer gateways can be associated or disassociated
+   * Filters access by which customer gateways can be associated or disassociated
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
    *
@@ -602,7 +698,7 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
-   * Controls which transit gateways can be registered or deregistered
+   * Filters access by which transit gateways can be registered or deregistered
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
    *
@@ -618,7 +714,7 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
-   * Controls which connect peers can be associated or disassociated
+   * Filters access by which transit gateway connect peers can be associated or disassociated
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
    *

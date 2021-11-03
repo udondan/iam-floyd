@@ -23,7 +23,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-eula-acceptances.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_AcceptEulas.html
    */
   public toAcceptEulas() {
     return this.to('AcceptEulas');
@@ -34,11 +34,15 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
    * - ec2:RunInstances
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-launch-profiles.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateLaunchProfile.html
    */
   public toCreateLaunchProfile() {
     return this.to('CreateLaunchProfile');
@@ -49,6 +53,10 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * Dependent actions:
    * - ec2:DescribeImages
    * - ec2:DescribeSnapshots
@@ -56,7 +64,7 @@ export class Nimble extends PolicyStatement {
    * - ec2:ModifySnapshotAttribute
    * - ec2:RegisterImage
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-streaming-images.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateStreamingImage.html
    */
   public toCreateStreamingImage() {
     return this.to('CreateStreamingImage');
@@ -67,6 +75,10 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
    * - ec2:CreateNetworkInterfacePermission
@@ -74,7 +86,7 @@ export class Nimble extends PolicyStatement {
    * - nimble:GetLaunchProfileInitialization
    * - nimble:ListEulaAcceptances
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-streaming-sessions.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateStreamingSession.html
    */
   public toCreateStreamingSession() {
     return this.to('CreateStreamingSession');
@@ -85,7 +97,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-streaming-sessions-sessionid-streams.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateStreamingSessionStream.html
    */
   public toCreateStreamingSessionStream() {
     return this.to('CreateStreamingSessionStream');
@@ -96,11 +108,15 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * Dependent actions:
    * - iam:PassRole
    * - sso:CreateManagedApplicationInstance
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateStudio.html
    */
   public toCreateStudio() {
     return this.to('CreateStudio');
@@ -111,13 +127,17 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * Dependent actions:
    * - ds:AuthorizeApplication
    * - ds:DescribeDirectories
    * - ec2:DescribeSecurityGroups
    * - fsx:DescribeFileSystems
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-studio-components.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateStudioComponent.html
    */
   public toCreateStudioComponent() {
     return this.to('CreateStudioComponent');
@@ -128,7 +148,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-launch-profiles-launchprofileid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_DeleteLaunchProfile.html
    */
   public toDeleteLaunchProfile() {
     return this.to('DeleteLaunchProfile');
@@ -139,7 +159,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-launch-profiles-launchprofileid-membership-principalid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_DeleteLaunchProfileMember.html
    */
   public toDeleteLaunchProfileMember() {
     return this.to('DeleteLaunchProfileMember');
@@ -156,7 +176,7 @@ export class Nimble extends PolicyStatement {
    * - ec2:ModifyInstanceAttribute
    * - ec2:ModifySnapshotAttribute
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-streaming-images-streamingimageid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_DeleteStreamingImage.html
    */
   public toDeleteStreamingImage() {
     return this.to('DeleteStreamingImage');
@@ -170,7 +190,7 @@ export class Nimble extends PolicyStatement {
    * Dependent actions:
    * - ec2:DeleteNetworkInterface
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-streaming-sessions-sessionid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_DeleteStreamingSession.html
    */
   public toDeleteStreamingSession() {
     return this.to('DeleteStreamingSession');
@@ -184,7 +204,7 @@ export class Nimble extends PolicyStatement {
    * Dependent actions:
    * - sso:DeleteManagedApplicationInstance
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_DeleteStudio.html
    */
   public toDeleteStudio() {
     return this.to('DeleteStudio');
@@ -198,7 +218,7 @@ export class Nimble extends PolicyStatement {
    * Dependent actions:
    * - ds:UnauthorizeApplication
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-studio-components-studiocomponentid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_DeleteStudioComponent.html
    */
   public toDeleteStudioComponent() {
     return this.to('DeleteStudioComponent');
@@ -209,7 +229,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-membership-principalid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_DeleteStudioMember.html
    */
   public toDeleteStudioMember() {
     return this.to('DeleteStudioMember');
@@ -220,7 +240,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/eulas-eulaid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetEula.html
    */
   public toGetEula() {
     return this.to('GetEula');
@@ -242,7 +262,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-launch-profiles-launchprofileid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetLaunchProfile.html
    */
   public toGetLaunchProfile() {
     return this.to('GetLaunchProfile');
@@ -253,7 +273,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-launch-profiles-launchprofileid-details.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetLaunchProfileDetails.html
    */
   public toGetLaunchProfileDetails() {
     return this.to('GetLaunchProfileDetails');
@@ -269,7 +289,7 @@ export class Nimble extends PolicyStatement {
    * - ec2:DescribeSecurityGroups
    * - fsx:DescribeFileSystems
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-launch-profiles-launchprofileid-init.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetLaunchProfileInitialization.html
    */
   public toGetLaunchProfileInitialization() {
     return this.to('GetLaunchProfileInitialization');
@@ -280,7 +300,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-launch-profiles-launchprofileid-init.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetLaunchProfileMember.html
    */
   public toGetLaunchProfileMember() {
     return this.to('GetLaunchProfileMember');
@@ -291,7 +311,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-streaming-images-streamingimageid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStreamingImage.html
    */
   public toGetStreamingImage() {
     return this.to('GetStreamingImage');
@@ -302,7 +322,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-streaming-sessions-sessionid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStreamingSession.html
    */
   public toGetStreamingSession() {
     return this.to('GetStreamingSession');
@@ -313,7 +333,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-streaming-sessions-sessionid-streams-streamid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStreamingSessionStream.html
    */
   public toGetStreamingSessionStream() {
     return this.to('GetStreamingSessionStream');
@@ -324,7 +344,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStudio.html
    */
   public toGetStudio() {
     return this.to('GetStudio');
@@ -335,7 +355,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-studio-components-studiocomponentid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStudioComponent.html
    */
   public toGetStudioComponent() {
     return this.to('GetStudioComponent');
@@ -346,7 +366,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-membership-principalid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStudioMember.html
    */
   public toGetStudioMember() {
     return this.to('GetStudioMember');
@@ -357,7 +377,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-eula-acceptances.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListEulaAcceptances.html
    */
   public toListEulaAcceptances() {
     return this.to('ListEulaAcceptances');
@@ -368,7 +388,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/eulas.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListEulas.html
    */
   public toListEulas() {
     return this.to('ListEulas');
@@ -379,7 +399,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-launch-profiles-launchprofileid-membership.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListLaunchProfileMembers.html
    */
   public toListLaunchProfileMembers() {
     return this.to('ListLaunchProfileMembers');
@@ -393,7 +413,7 @@ export class Nimble extends PolicyStatement {
    * Possible conditions:
    * - .ifPrincipalId()
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-launch-profiles.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListLaunchProfiles.html
    */
   public toListLaunchProfiles() {
     return this.to('ListLaunchProfiles');
@@ -404,7 +424,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-streaming-images.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListStreamingImages.html
    */
   public toListStreamingImages() {
     return this.to('ListStreamingImages');
@@ -419,7 +439,7 @@ export class Nimble extends PolicyStatement {
    * - .ifCreatedBy()
    * - .ifOwnedBy()
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-streaming-sessions.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListStreamingSessions.html
    */
   public toListStreamingSessions() {
     return this.to('ListStreamingSessions');
@@ -430,7 +450,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-studio-components.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListStudioComponents.html
    */
   public toListStudioComponents() {
     return this.to('ListStudioComponents');
@@ -441,7 +461,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-membership.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListStudioMembers.html
    */
   public toListStudioMembers() {
     return this.to('ListStudioMembers');
@@ -452,7 +472,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListStudios.html
    */
   public toListStudios() {
     return this.to('ListStudios');
@@ -463,7 +483,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-sso-configuration.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -477,7 +497,7 @@ export class Nimble extends PolicyStatement {
    * Dependent actions:
    * - sso-directory:DescribeUsers
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-launch-profiles-launchprofileid-membership.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_PutLaunchProfileMembers.html
    */
   public toPutLaunchProfileMembers() {
     return this.to('PutLaunchProfileMembers');
@@ -502,10 +522,25 @@ export class Nimble extends PolicyStatement {
    * Dependent actions:
    * - sso-directory:DescribeUsers
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-membership.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_PutStudioMembers.html
    */
   public toPutStudioMembers() {
     return this.to('PutStudioMembers');
+  }
+
+  /**
+   * Grants permission to start a streaming session
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - nimble:GetLaunchProfile
+   * - nimble:GetLaunchProfileMember
+   *
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StartStreamingSession.html
+   */
+  public toStartStreamingSession() {
+    return this.to('StartStreamingSession');
   }
 
   /**
@@ -517,10 +552,24 @@ export class Nimble extends PolicyStatement {
    * - sso:CreateManagedApplicationInstance
    * - sso:GetManagedApplicationInstance
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/tags-resourcearn.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StartStudioSSOConfigurationRepair.html
    */
   public toStartStudioSSOConfigurationRepair() {
     return this.to('StartStudioSSOConfigurationRepair');
+  }
+
+  /**
+   * Grants permission to stop a streaming session
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - nimble:GetLaunchProfile
+   *
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StopStreamingSession.html
+   */
+  public toStopStreamingSession() {
+    return this.to('StopStreamingSession');
   }
 
   /**
@@ -533,7 +582,7 @@ export class Nimble extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/tags-resourcearn.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -547,7 +596,7 @@ export class Nimble extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/tags-resourcearn.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -558,7 +607,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-launch-profiles-launchprofileid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_UpdateLaunchProfile.html
    */
   public toUpdateLaunchProfile() {
     return this.to('UpdateLaunchProfile');
@@ -569,7 +618,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-launch-profiles-launchprofileid-membership-principalid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_UpdateLaunchProfileMember.html
    */
   public toUpdateLaunchProfileMember() {
     return this.to('UpdateLaunchProfileMember');
@@ -580,7 +629,7 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-streaming-images-streamingimageid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_UpdateStreamingImage.html
    */
   public toUpdateStreamingImage() {
     return this.to('UpdateStreamingImage');
@@ -594,7 +643,7 @@ export class Nimble extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_UpdateStudio.html
    */
   public toUpdateStudio() {
     return this.to('UpdateStudio');
@@ -611,7 +660,7 @@ export class Nimble extends PolicyStatement {
    * - ec2:DescribeSecurityGroups
    * - fsx:DescribeFileSystems
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-studio-components-studiocomponentid.html
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_UpdateStudioComponent.html
    */
   public toUpdateStudioComponent() {
     return this.to('UpdateStudioComponent');
@@ -636,7 +685,9 @@ export class Nimble extends PolicyStatement {
       'PutLaunchProfileMembers',
       'PutStudioLogEvents',
       'PutStudioMembers',
+      'StartStreamingSession',
       'StartStudioSSOConfigurationRepair',
+      'StopStreamingSession',
       'UpdateLaunchProfile',
       'UpdateLaunchProfileMember',
       'UpdateStreamingImage',
@@ -676,7 +727,7 @@ export class Nimble extends PolicyStatement {
   /**
    * Adds a resource of type studio to the statement
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid.html#studios-studioid-model-studio
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_Studio.html
    *
    * @param studioId - Identifier for the studioId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -696,7 +747,7 @@ export class Nimble extends PolicyStatement {
   /**
    * Adds a resource of type streaming-image to the statement
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-streaming-images-streamingimageid.html#studios-studioid-streaming-images-streamingimageid-model-streamingimage
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StreamingImage.html
    *
    * @param streamingImageId - Identifier for the streamingImageId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -716,7 +767,7 @@ export class Nimble extends PolicyStatement {
   /**
    * Adds a resource of type studio-component to the statement
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-studio-components-studiocomponentid.html#studios-studioid-studio-components-studiocomponentid-model-studiocomponent
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StudioComponent.html
    *
    * @param studioComponentId - Identifier for the studioComponentId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -736,7 +787,7 @@ export class Nimble extends PolicyStatement {
   /**
    * Adds a resource of type launch-profile to the statement
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-launch-profiles-launchprofileid.html#studios-studioid-launch-profiles-launchprofileid-model-launchprofile
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_LaunchProfile.html
    *
    * @param launchProfileId - Identifier for the launchProfileId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -756,7 +807,7 @@ export class Nimble extends PolicyStatement {
   /**
    * Adds a resource of type streaming-session to the statement
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-streaming-sessions-sessionid.html#studios-studioid-streaming-sessions-sessionid-model-streamingsession
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_StreamingSession.html
    *
    * @param streamingSessionId - Identifier for the streamingSessionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -777,7 +828,7 @@ export class Nimble extends PolicyStatement {
   /**
    * Adds a resource of type eula to the statement
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/eulas-eulaid.html#eulas-eulaid-model-eula
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_Eula.html
    *
    * @param eulaId - Identifier for the eulaId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -797,7 +848,7 @@ export class Nimble extends PolicyStatement {
   /**
    * Adds a resource of type eula-acceptance to the statement
    *
-   * https://docs.aws.amazon.com/nimble-studio/latest/api/studios-studioid-eula-acceptances.html#studios-studioid-eula-acceptances-prop-listeulaacceptancesoutput-eulaacceptances
+   * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_EulaAcceptance.html
    *
    * @param eulaAcceptanceId - Identifier for the eulaAcceptanceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -815,7 +866,7 @@ export class Nimble extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the createdBy request parameter or the ID of the creator of the resource
+   * Filters access by the createdBy request parameter or the ID of the creator of the resource
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html
    *
@@ -833,7 +884,7 @@ export class Nimble extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the ownedBy request parameter or the ID of the owner of the resource
+   * Filters access by the ownedBy request parameter or the ID of the owner of the resource
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html
    *
@@ -851,7 +902,7 @@ export class Nimble extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the principalId request parameter
+   * Filters access by the principalId request parameter
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html
    *
@@ -866,7 +917,7 @@ export class Nimble extends PolicyStatement {
   }
 
   /**
-   * Filters access to Nimble Studio portal using the ID of the logged in user
+   * Filters access by the ID of the logged in user
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html
    *
@@ -881,7 +932,7 @@ export class Nimble extends PolicyStatement {
   }
 
   /**
-   * Filters access to resources in a specific studio
+   * Filters access by a specific studio
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html
    *
