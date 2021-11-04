@@ -56,6 +56,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe one or more ModelPackages
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_BatchDescribeModelPackage.html
+   */
+  public toBatchDescribeModelPackage() {
+    return this.to('BatchDescribeModelPackage');
+  }
+
+  /**
    * Grants permission to retrieve metrics associated with SageMaker Resources such as Training Jobs. This API is not publicly exposed at this point, however admins can control this action
    *
    * Access Level: Read
@@ -65,7 +76,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Get a batch of records from one or more feature groups.
+   * Grants permission to get a batch of records from one or more feature groups
    *
    * Access Level: Read
    *
@@ -454,7 +465,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a SageMaker Image
+   * Grants permission to create a SageMaker Image
    *
    * Access Level: Write
    *
@@ -472,7 +483,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a SageMaker ImageVersion
+   * Grants permission to create a SageMaker ImageVersion
    *
    * Access Level: Write
    *
@@ -585,6 +596,7 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifModelApprovalStatus()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModelPackage.html
    */
@@ -1115,7 +1127,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a SageMaker Image
+   * Grants permission to delete a SageMaker Image
    *
    * Access Level: Write
    *
@@ -1126,7 +1138,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a SageMaker ImageVersion
+   * Grants permission to delete a SageMaker ImageVersion
    *
    * Access Level: Write
    *
@@ -1580,7 +1592,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Returns detailed information about the specified human review workflow user interface
+   * Grants permission to return detailed information about the specified human review workflow user interface
    *
    * Access Level: Read
    *
@@ -1602,7 +1614,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return information about a SageMaker Image
+   * Grants permission to return information about a SageMaker Image
    *
    * Access Level: Read
    *
@@ -1613,7 +1625,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return information about a SageMaker ImageVersion
+   * Grants permission to return information about a SageMaker ImageVersion
    *
    * Access Level: Read
    *
@@ -2265,7 +2277,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list ImageVersions that belong to a SageMaker Image
+   * Grants permission to list ImageVersions that belong to a SageMaker Image
    *
    * Access Level: List
    *
@@ -2276,7 +2288,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list SageMaker Images in your account
+   * Grants permission to list SageMaker Images in your account
    *
    * Access Level: List
    *
@@ -2646,7 +2658,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Search for SageMaker objects
+   * Grants permission to search for SageMaker objects
    *
    * Access Level: Read
    *
@@ -2994,7 +3006,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update the properties of a SageMaker Image
+   * Grants permission to update the properties of a SageMaker Image
    *
    * Access Level: Write
    *
@@ -3316,6 +3328,7 @@ export class Sagemaker extends PolicyStatement {
       'DeleteTags'
     ],
     Read: [
+      'BatchDescribeModelPackage',
       'BatchGetMetrics',
       'BatchGetRecord',
       'DescribeAction',
@@ -3486,6 +3499,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type human-loop to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-start-human-loop.html
+   *
    * @param humanLoopName - Identifier for the humanLoopName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3497,6 +3512,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type flow-definition to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-create-flow-definition.html
    *
    * @param flowDefinitionName - Identifier for the flowDefinitionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3514,6 +3531,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type human-task-ui to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-instructions-overview.html
+   *
    * @param humanTaskUiName - Identifier for the humanTaskUiName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3529,6 +3548,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type labeling-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html
    *
    * @param labelingJobName - Identifier for the labelingJobName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3546,6 +3567,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type workteam to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html
+   *
    * @param workteamName - Identifier for the workteamName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3561,6 +3584,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type workforce to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html
    *
    * @param workforceName - Identifier for the workforceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3646,6 +3671,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type notebook-instance to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/nbi.html
+   *
    * @param notebookInstanceName - Identifier for the notebookInstanceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3661,6 +3688,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type notebook-instance-lifecycle-config to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html
    *
    * @param notebookInstanceLifecycleConfigName - Identifier for the notebookInstanceLifecycleConfigName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3735,6 +3764,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type training-job to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-training.html
+   *
    * @param trainingJobName - Identifier for the trainingJobName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3751,6 +3782,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type processing-job to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html
+   *
    * @param processingJobName - Identifier for the processingJobName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3766,6 +3799,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type hyper-parameter-tuning-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html
    *
    * @param hyperParameterTuningJobName - Identifier for the hyperParameterTuningJobName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3798,6 +3833,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type model-package to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ModelPackage.html
    *
    * @param modelPackageName - Identifier for the modelPackageName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3879,6 +3916,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type transform-job to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TransformJob.html.html
+   *
    * @param transformJobName - Identifier for the transformJobName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3895,6 +3934,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type compilation-job to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html
+   *
    * @param compilationJobName - Identifier for the compilationJobName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3906,6 +3947,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type automl-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html
    *
    * @param autoMLJobJobName - Identifier for the autoMLJobJobName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -4050,6 +4093,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type feature-group to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html
    *
    * @param featureGroupName - Identifier for the featureGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -4442,6 +4487,21 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifMaxRuntimeInSeconds(value: number | number[], operator?: Operator | string) {
     return this.if(`MaxRuntimeInSeconds`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the model approval status with the model-package in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateModelPackage()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifModelApprovalStatus(value: string | string[], operator?: Operator | string) {
+    return this.if(`ModelApprovalStatus`, value, operator || 'StringLike');
   }
 
   /**

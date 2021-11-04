@@ -1,14 +1,17 @@
 rekognition:CompareFaces;Read
 rekognition:CreateCollection;Write
+rekognition:CreateDataset;Write
 rekognition:CreateProject;Write
 rekognition:CreateProjectVersion;Write
 rekognition:CreateStreamProcessor;Write
 rekognition:DeleteCollection;Write
+rekognition:DeleteDataset;Write
 rekognition:DeleteFaces;Write
 rekognition:DeleteProject;Write
 rekognition:DeleteProjectVersion;Write
 rekognition:DeleteStreamProcessor;Write
 rekognition:DescribeCollection;Read
+rekognition:DescribeDataset;Read
 rekognition:DescribeProjectVersions;Read
 rekognition:DescribeProjects;Read
 rekognition:DescribeStreamProcessor;Read
@@ -18,6 +21,7 @@ rekognition:DetectLabels;Read
 rekognition:DetectModerationLabels;Read
 rekognition:DetectProtectiveEquipment;Read
 rekognition:DetectText;Read
+rekognition:DistributeDatasetEntries;Write
 rekognition:GetCelebrityInfo;Read
 rekognition:GetCelebrityRecognition;Read
 rekognition:GetContentModeration;Read
@@ -29,6 +33,8 @@ rekognition:GetSegmentDetection;Read
 rekognition:GetTextDetection;Read
 rekognition:IndexFaces;Write
 rekognition:ListCollections;Read
+rekognition:ListDatasetEntries;Read
+rekognition:ListDatasetLabels;Read
 rekognition:ListFaces;Read
 rekognition:ListStreamProcessors;List
 rekognition:ListTagsForResource;Read
@@ -49,3 +55,4 @@ rekognition:StopProjectVersion;Write
 rekognition:StopStreamProcessor;Write
 rekognition:TagResource;Tagging
 rekognition:UntagResource;Tagging
+rekognition:UpdateDatasetEntries;Write

@@ -15,6 +15,7 @@ sagemaker:ImageVersionArns
 sagemaker:InstanceTypes
 sagemaker:InterContainerTrafficEncryption
 sagemaker:MaxRuntimeInSeconds
+sagemaker:ModelApprovalStatus
 sagemaker:ModelArn
 sagemaker:NetworkIsolation
 sagemaker:OutputKmsKey

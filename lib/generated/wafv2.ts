@@ -88,7 +88,7 @@ export class Wafv2 extends PolicyStatement {
   /**
    * Grants permission to create a WebACL
    *
-   * Access Level: Permissions management
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -169,7 +169,7 @@ export class Wafv2 extends PolicyStatement {
   /**
    * Grants permission to delete a WebACL
    *
-   * Access Level: Permissions management
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteWebACL.html
    */
@@ -180,7 +180,7 @@ export class Wafv2 extends PolicyStatement {
   /**
    * Grants permission to retrieve high-level information for a managed rule group
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DescribeManagedRuleGroup.html
    */
@@ -200,7 +200,7 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission disassociate a WebACL from an application resource
+   * Grants permission to disassociate a WebACL from an application resource
    *
    * Access Level: Write
    *
@@ -236,6 +236,17 @@ export class Wafv2 extends PolicyStatement {
    */
   public toGetLoggingConfiguration() {
     return this.to('GetLoggingConfiguration');
+  }
+
+  /**
+   * Grants permission to retrieve details about a ManagedRuleSet
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetManagedRuleSet.html
+   */
+  public toGetManagedRuleSet() {
+    return this.to('GetManagedRuleSet');
   }
 
   /**
@@ -361,6 +372,17 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an array of your ManagedRuleSet objects
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListManagedRuleSets.html
+   */
+  public toListManagedRuleSets() {
+    return this.to('ListManagedRuleSets');
+  }
+
+  /**
    * Grants permission to retrieve an array of RegexPatternSetSummary objects for the regex pattern sets that you manage
    *
    * Access Level: List
@@ -444,6 +466,17 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable create a new or update an existing version of a ManagedRuleSet
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutManagedRuleSetVersions.html
+   */
+  public toPutManagedRuleSetVersions() {
+    return this.to('PutManagedRuleSetVersions');
+  }
+
+  /**
    * Grants permission to attach an IAM policy to a resource, used to share rule groups between accounts
    *
    * Access Level: Permissions management
@@ -499,6 +532,17 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the expiry date of a version in ManagedRuleSet
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateManagedRuleSetVersionExpiryDate.html
+   */
+  public toUpdateManagedRuleSetVersionExpiryDate() {
+    return this.to('UpdateManagedRuleSetVersionExpiryDate');
+  }
+
+  /**
    * Grants permission to update a RegexPatternSet
    *
    * Access Level: Write
@@ -529,7 +573,7 @@ export class Wafv2 extends PolicyStatement {
   /**
    * Grants permission to update a WebACL
    *
-   * Access Level: Permissions management
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
@@ -546,23 +590,30 @@ export class Wafv2 extends PolicyStatement {
       'CreateIPSet',
       'CreateRegexPatternSet',
       'CreateRuleGroup',
+      'CreateWebACL',
       'DeleteFirewallManagerRuleGroups',
       'DeleteIPSet',
       'DeleteLoggingConfiguration',
       'DeleteRegexPatternSet',
       'DeleteRuleGroup',
+      'DeleteWebACL',
       'DisassociateFirewallManager',
       'DisassociateWebACL',
       'PutFirewallManagerRuleGroups',
       'PutLoggingConfiguration',
+      'PutManagedRuleSetVersions',
       'UpdateIPSet',
+      'UpdateManagedRuleSetVersionExpiryDate',
       'UpdateRegexPatternSet',
-      'UpdateRuleGroup'
+      'UpdateRuleGroup',
+      'UpdateWebACL'
     ],
     Read: [
       'CheckCapacity',
+      'DescribeManagedRuleGroup',
       'GetIPSet',
       'GetLoggingConfiguration',
+      'GetManagedRuleSet',
       'GetPermissionPolicy',
       'GetRateBasedStatementManagedKeys',
       'GetRegexPatternSet',
@@ -573,17 +624,14 @@ export class Wafv2 extends PolicyStatement {
       'ListTagsForResource'
     ],
     'Permissions management': [
-      'CreateWebACL',
       'DeletePermissionPolicy',
-      'DeleteWebACL',
-      'PutPermissionPolicy',
-      'UpdateWebACL'
+      'PutPermissionPolicy'
     ],
     List: [
-      'DescribeManagedRuleGroup',
       'ListAvailableManagedRuleGroups',
       'ListIPSets',
       'ListLoggingConfigurations',
+      'ListManagedRuleSets',
       'ListRegexPatternSets',
       'ListResourcesForWebACL',
       'ListRuleGroups',
@@ -631,6 +679,22 @@ export class Wafv2 extends PolicyStatement {
    */
   public onIpset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/ipset/${ name }/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type managedruleset to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_ManagedRuleSet.html
+   *
+   * @param scope - Identifier for the scope.
+   * @param name - Identifier for the name.
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onManagedruleset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:wafv2:${ region || '*' }:${ account || '*' }:${ scope }/managedruleset/${ name }/${ id }`);
   }
 
   /**

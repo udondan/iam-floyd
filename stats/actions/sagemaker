@@ -1,6 +1,7 @@
 sagemaker:AddAssociation;Write
 sagemaker:AddTags;Tagging
 sagemaker:AssociateTrialComponent;Write
+sagemaker:BatchDescribeModelPackage;Read
 sagemaker:BatchGetMetrics;Read
 sagemaker:BatchGetRecord;Read
 sagemaker:BatchPutMetrics;Write

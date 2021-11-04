@@ -19,7 +19,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Compares a face in source input image with each face detected in the target input image.
+   * Grants permission to compare faces in the source input image with each face detected in the target input image
    *
    * Access Level: Read
    *
@@ -30,7 +30,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Creates a collection in an AWS region. You can then add faces to the collection using the IndexFaces API.
+   * Grants permission to create a collection in an AWS Region
    *
    * Access Level: Write
    *
@@ -45,7 +45,18 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Creates a new Amazon Rekognition Custom Labels project.
+   * Grants permission to create a new Amazon Rekognition Custom Labels dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateDataset.html
+   */
+  public toCreateDataset() {
+    return this.to('CreateDataset');
+  }
+
+  /**
+   * Grants permission to create an Amazon Rekognition Custom Labels project
    *
    * Access Level: Write
    *
@@ -56,7 +67,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Creates a new version of a model and begins training.
+   * Grants permission to begin training a new version of a model
    *
    * Access Level: Write
    *
@@ -71,7 +82,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces in a streaming video.
+   * Grants permission to create an Amazon Rekognition stream processor
    *
    * Access Level: Write
    *
@@ -86,7 +97,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified collection. Note that this operation removes all faces in the collection.
+   * Grants permission to delete the specified collection
    *
    * Access Level: Write
    *
@@ -97,7 +108,18 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Deletes faces from a collection.
+   * Grants permission to delete an existing Amazon Rekognition Custom Labels dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteDataset.html
+   */
+  public toDeleteDataset() {
+    return this.to('DeleteDataset');
+  }
+
+  /**
+   * Grants permission to delete faces from a collection
    *
    * Access Level: Write
    *
@@ -108,7 +130,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Deletes a project.
+   * Grants permission to delete a project
    *
    * Access Level: Write
    *
@@ -119,7 +141,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Deletes a model.
+   * Grants permission to delete a model
    *
    * Access Level: Write
    *
@@ -130,7 +152,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Deletes the stream processor identified by Name.
+   * Grants permission to delete the specified stream processor
    *
    * Access Level: Write
    *
@@ -141,7 +163,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Describes the specified collection.
+   * Grants permission to read details about a collection
    *
    * Access Level: Read
    *
@@ -152,7 +174,18 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Lists and describes the model versions in an Amazon Rekognition Custom Labels project.
+   * Grants permission to describe an Amazon Rekognition Custom Labels dataset
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeDataset.html
+   */
+  public toDescribeDataset() {
+    return this.to('DescribeDataset');
+  }
+
+  /**
+   * Grants permission to list the versions of a model in an Amazon Rekognition Custom Labels project
    *
    * Access Level: Read
    *
@@ -163,7 +196,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Lists and gets information about your Amazon Rekognition Custom Labels projects.
+   * Grants permission to list Amazon Rekognition Custom Labels projects
    *
    * Access Level: Read
    *
@@ -174,7 +207,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Provides information about a stream processor created by CreateStreamProcessor.
+   * Grants permission to get information about the specified stream processor
    *
    * Access Level: Read
    *
@@ -185,7 +218,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels model version.
+   * Grants permission to detect custom labels in a supplied image
    *
    * Access Level: Read
    *
@@ -196,7 +229,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Detects human faces within an image (JPEG or PNG) provided as input.
+   * Grants permission to detect human faces within an image provided as input
    *
    * Access Level: Read
    *
@@ -207,7 +240,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Detects instances of real-world labels within an image (JPEG or PNG) provided as input.
+   * Grants permission to detect instances of real-world labels within an image provided as input
    *
    * Access Level: Read
    *
@@ -218,7 +251,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Detects moderation labels within input image.
+   * Grants permission to detect moderation labels within the input image
    *
    * Access Level: Read
    *
@@ -229,7 +262,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Detects Protective Equipment in the input image.
+   * Grants permission to detect Personal Protective Equipment in the input image
    *
    * Access Level: Read
    *
@@ -240,7 +273,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Detects text in the input image and converts it into machine-readable text.
+   * Grants permission to detect text in the input image and convert it into machine-readable text
    *
    * Access Level: Read
    *
@@ -251,7 +284,18 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Gets the name and additional information about a celebrity based on his or her Rekognition ID.
+   * Grants permission to distribute the entries in a training dataset across the training dataset and the test dataset for a project
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_DistributeDatasetEntries.html
+   */
+  public toDistributeDatasetEntries() {
+    return this.to('DistributeDatasetEntries');
+  }
+
+  /**
+   * Grants permission to read the name, and additional information, of a celebrity
    *
    * Access Level: Read
    *
@@ -262,7 +306,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Gets the celebrity recognition results for a Rekognition Video analysis started by StartCelebrityRecognition.
+   * Grants permission to read the celebrity recognition results found in a stored video by an asynchronous celebrity recognition job
    *
    * Access Level: Read
    *
@@ -273,7 +317,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Gets the content moderation analysis results for a Rekognition Video analysis started by StartContentModeration.
+   * Grants permission to read the content moderation analysis results found in a stored video by an asynchronous content moderation job
    *
    * Access Level: Read
    *
@@ -284,7 +328,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Gets face detection results for a Rekognition Video analysis started by StartFaceDetection.
+   * Grants permission to read the faces detection results found in a stored video by an asynchronous face detection job
    *
    * Access Level: Read
    *
@@ -295,7 +339,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Gets the face search results for Rekognition Video face search started by StartFaceSearch.
+   * Grants permission to read the matching collection faces found in a stored video by an asynchronous face search job
    *
    * Access Level: Read
    *
@@ -306,7 +350,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Gets the label detection results of a Rekognition Video analysis started by StartLabelDetection.
+   * Grants permission to read the label detected resuls found in a stored video by an asynchronous label detection job
    *
    * Access Level: Read
    *
@@ -317,7 +361,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Gets information about people detected within a video.
+   * Grants permission to read the list of persons detected in a stored video by an asynchronous person tracking job
    *
    * Access Level: Read
    *
@@ -328,7 +372,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Gets segment detection results for a Rekognition Video analysis started by StartSegmentDetection.
+   * Grants permission to get the vdeo segments found in a stored video by an asynchronous segment detection job
    *
    * Access Level: Read
    *
@@ -339,7 +383,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Gets text detection results for a Rekognition Video analysis started by StartTextDetection.
+   * Grants permission to get the text found in a stored video by an asynchronous text detection job
    *
    * Access Level: Read
    *
@@ -350,7 +394,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Detects faces in the input image and adds them to the specified collection.
+   * Grants permission to update an existing collection with faces detected in the input image
    *
    * Access Level: Write
    *
@@ -361,7 +405,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Returns a list of collection IDs in your account.
+   * Grants permission to read the collection Id's in your account
    *
    * Access Level: Read
    *
@@ -372,7 +416,29 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Returns metadata for faces in the specified collection.
+   * Grants permission to list the dataset entries in an existing Amazon Rekognition Custom Labels dataset
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListDatasetEntries.html
+   */
+  public toListDatasetEntries() {
+    return this.to('ListDatasetEntries');
+  }
+
+  /**
+   * Grants permission to list the labels in a dataset
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListDatasetLabels.html
+   */
+  public toListDatasetLabels() {
+    return this.to('ListDatasetLabels');
+  }
+
+  /**
+   * Grants permission to read metadata for faces in the specificed collection
    *
    * Access Level: Read
    *
@@ -383,7 +449,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Gets a list of stream processors that you have created with CreateStreamProcessor.
+   * Grants permission to get a list of your stream processors
    *
    * Access Level: List
    *
@@ -394,7 +460,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Returns a list of tags associated with a resource.
+   * Grants permission to return a list of tags associated with a resource
    *
    * Access Level: Read
    *
@@ -405,7 +471,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Returns an array of celebrities recognized in the input image.
+   * Grants permission to detect celebrities in the input image
    *
    * Access Level: Read
    *
@@ -416,7 +482,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * For a given input face ID, searches the specified collection for matching faces.
+   * Grants permission to search the specificed collection for the supplied face ID
    *
    * Access Level: Read
    *
@@ -427,7 +493,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * For a given input image, first detects the largest face in the image, and then searches the specified collection for matching faces.
+   * Grants permission to search the specificed collection for the largest face in the input image
    *
    * Access Level: Read
    *
@@ -438,7 +504,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Starts asynchronous recognition of celebrities in a video.
+   * Grants permission to start the asynchronous recognition of celebrities in a stored video
    *
    * Access Level: Write
    *
@@ -449,7 +515,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Starts asynchronous detection of explicit or suggestive adult content in a video.
+   * Grants permission to start asynchronous detection of explicit or suggestive adult content in a stored video
    *
    * Access Level: Write
    *
@@ -460,7 +526,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Starts asynchronous detection of faces in a video.
+   * Grants permission to start asynchronous detection of faces in a stored video
    *
    * Access Level: Write
    *
@@ -471,7 +537,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Starts the asynchronous search for faces in a collection that match the faces of persons detected in a video.
+   * Grants permission to start an asynchronous search for faces in a collection that match the faces of persons detected in a stored video
    *
    * Access Level: Write
    *
@@ -482,7 +548,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Starts asynchronous detection of labels in a video.
+   * Grants permission to start asynchronous detection of labels in a stored video
    *
    * Access Level: Write
    *
@@ -493,7 +559,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Starts the asynchronous tracking of persons in a video.
+   * Grants permission to start the asynchronous tracking of persons in a stored video
    *
    * Access Level: Write
    *
@@ -504,7 +570,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Starts the deployment of a model version.
+   * Grants permission to start running a model version
    *
    * Access Level: Write
    *
@@ -515,7 +581,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Starts asynchronous detection of segments in a video.
+   * Grants permission to start the asynchronous detection of segments in a stored video
    *
    * Access Level: Write
    *
@@ -526,7 +592,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Starts processing a stream processor.
+   * Grants permission to start running a stream processor
    *
    * Access Level: Write
    *
@@ -537,7 +603,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Starts asynchronous detection of text in a video.
+   * Grants permission to start the asynchronous detection of text in a stored video
    *
    * Access Level: Write
    *
@@ -548,7 +614,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Stops a deployed model version.
+   * Grants permission to stop a running model version
    *
    * Access Level: Write
    *
@@ -559,7 +625,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Stops a running stream processor that was created by CreateStreamProcessor.
+   * Grants permission to stop a running stream processor
    *
    * Access Level: Write
    *
@@ -570,7 +636,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Adds one or more tags to a resource.
+   * Grants permission to add one or more tags to a resource
    *
    * Access Level: Tagging
    *
@@ -585,7 +651,7 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
-   * Removes one or more tags from a resource.
+   * Grants permission to remove one or more tags from a resource
    *
    * Access Level: Tagging
    *
@@ -598,10 +664,22 @@ export class Rekognition extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to add or update one or more JSON Lines (entries) in a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_UpdateDatasetEntries.html
+   */
+  public toUpdateDatasetEntries() {
+    return this.to('UpdateDatasetEntries');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'CompareFaces',
       'DescribeCollection',
+      'DescribeDataset',
       'DescribeProjectVersions',
       'DescribeProjects',
       'DescribeStreamProcessor',
@@ -621,6 +699,8 @@ export class Rekognition extends PolicyStatement {
       'GetSegmentDetection',
       'GetTextDetection',
       'ListCollections',
+      'ListDatasetEntries',
+      'ListDatasetLabels',
       'ListFaces',
       'ListTagsForResource',
       'RecognizeCelebrities',
@@ -629,14 +709,17 @@ export class Rekognition extends PolicyStatement {
     ],
     Write: [
       'CreateCollection',
+      'CreateDataset',
       'CreateProject',
       'CreateProjectVersion',
       'CreateStreamProcessor',
       'DeleteCollection',
+      'DeleteDataset',
       'DeleteFaces',
       'DeleteProject',
       'DeleteProjectVersion',
       'DeleteStreamProcessor',
+      'DistributeDatasetEntries',
       'IndexFaces',
       'StartCelebrityRecognition',
       'StartContentModeration',
@@ -649,7 +732,8 @@ export class Rekognition extends PolicyStatement {
       'StartStreamProcessor',
       'StartTextDetection',
       'StopProjectVersion',
-      'StopStreamProcessor'
+      'StopStreamProcessor',
+      'UpdateDatasetEntries'
     ],
     List: [
       'ListStreamProcessors'
@@ -677,6 +761,8 @@ export class Rekognition extends PolicyStatement {
   /**
    * Adds a resource of type streamprocessor to the statement
    *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/using-rekognition-video-stream-processor.html
+   *
    * @param streamprocessorId - Identifier for the streamprocessorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -688,6 +774,8 @@ export class Rekognition extends PolicyStatement {
 
   /**
    * Adds a resource of type project to the statement
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/cp-create-project.html
    *
    * @param projectName - Identifier for the projectName.
    * @param creationTimestamp - Identifier for the creationTimestamp.
@@ -702,6 +790,8 @@ export class Rekognition extends PolicyStatement {
   /**
    * Adds a resource of type projectversion to the statement
    *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProjectVersion.html
+   *
    * @param projectName - Identifier for the projectName.
    * @param versionName - Identifier for the versionName.
    * @param creationTimestamp - Identifier for the creationTimestamp.
@@ -711,5 +801,22 @@ export class Rekognition extends PolicyStatement {
    */
   public onProjectversion(projectName: string, versionName: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/version/${ versionName }/${ creationTimestamp }`);
+  }
+
+  /**
+   * Adds a resource of type dataset to the statement
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/cd-create-dataset.html
+   *
+   * @param projectName - Identifier for the projectName.
+   * @param creationTimestamp - Identifier for the creationTimestamp.
+   * @param datasetType - Identifier for the datasetType.
+   * @param creationTimestamp2 - Identifier for the creationTimestamp2.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDataset(projectName: string, creationTimestamp: string, datasetType: string, creationTimestamp2: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:rekognition:${ region || '*' }:${ account || '*' }:project/${ projectName }/${ creationTimestamp }/dataset/${ datasetType }/${ creationTimestamp2 }`);
   }
 }
