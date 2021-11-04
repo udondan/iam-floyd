@@ -210,8 +210,23 @@ export function arnFixer(
   // fix ARNs that have wildcards instead of identifiers
   if (arn.match(/(:|\/)[a-zA-Z-]+(:|\/)\*$/)) {
     arn = arn.slice(0, -1) + '${ResourceName}';
-    var fixed = 2;
+    fixed = 2;
   }
+
+  // Rekognition has a duplicate parameter in the ARN. here we append a number to duplicate parameter names
+  const duplicates: { [key: string]: number } = {};
+  arn = arn.replace(/\$\{([A-Za-z]+)\}/g, (_, param): string => {
+    if (!duplicates[param]) {
+      duplicates[param] = 1;
+    } else {
+      duplicates[param]++;
+    }
+    if (duplicates[param] > 1) {
+      param += duplicates[param];
+      fixed = 2;
+    }
+    return '${' + param + '}';
+  });
 
   // fix ARNs specified in the global fixes object above
   const value = get(fixes, `${service}.resourceTypes.${resource}.arn`);
