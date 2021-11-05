@@ -97,6 +97,9 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifRequesterPrincipalId()
+   *
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_CreateStreamingSessionStream.html
    */
   public toCreateStreamingSessionStream() {
@@ -186,6 +189,9 @@ export class Nimble extends PolicyStatement {
    * Grants permission to delete a streaming session
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequesterPrincipalId()
    *
    * Dependent actions:
    * - ec2:DeleteNetworkInterface
@@ -322,6 +328,9 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifRequesterPrincipalId()
+   *
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStreamingSession.html
    */
   public toGetStreamingSession() {
@@ -332,6 +341,9 @@ export class Nimble extends PolicyStatement {
    * Grants permission to get a streaming session stream
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRequesterPrincipalId()
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_GetStreamingSessionStream.html
    */
@@ -412,6 +424,7 @@ export class Nimble extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifPrincipalId()
+   * - .ifRequesterPrincipalId()
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListLaunchProfiles.html
    */
@@ -438,6 +451,7 @@ export class Nimble extends PolicyStatement {
    * Possible conditions:
    * - .ifCreatedBy()
    * - .ifOwnedBy()
+   * - .ifRequesterPrincipalId()
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/APIReference/API_ListStreamingSessions.html
    */
@@ -533,6 +547,9 @@ export class Nimble extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifRequesterPrincipalId()
+   *
    * Dependent actions:
    * - nimble:GetLaunchProfile
    * - nimble:GetLaunchProfileMember
@@ -562,6 +579,9 @@ export class Nimble extends PolicyStatement {
    * Grants permission to stop a streaming session
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequesterPrincipalId()
    *
    * Dependent actions:
    * - nimble:GetLaunchProfile
@@ -839,7 +859,6 @@ export class Nimble extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifRequesterPrincipalId()
    */
   public onEula(eulaId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:nimble:${ region || '*' }:${ account || '*' }:eula/${ eulaId }`);
@@ -921,8 +940,15 @@ export class Nimble extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/nimble-studio/latest/userguide/security-iam-service-with-iam.html
    *
-   * Applies to resource types:
-   * - eula
+   * Applies to actions:
+   * - .toCreateStreamingSessionStream()
+   * - .toDeleteStreamingSession()
+   * - .toGetStreamingSession()
+   * - .toGetStreamingSessionStream()
+   * - .toListLaunchProfiles()
+   * - .toListStreamingSessions()
+   * - .toStartStreamingSession()
+   * - .toStopStreamingSession()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

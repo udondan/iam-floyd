@@ -19,6 +19,17 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an order
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateOrder.html
+   */
+  public toCreateOrder() {
+    return this.to('CreateOrder');
+  }
+
+  /**
    * Grants permission to create an Outpost
    *
    * Access Level: Write
@@ -130,6 +141,7 @@ export class Outposts extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CreateOrder',
       'CreateOutpost',
       'DeleteOutpost',
       'DeleteSite'

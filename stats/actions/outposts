@@ -1,3 +1,4 @@
+outposts:CreateOrder;Write
 outposts:CreateOutpost;Write
 outposts:DeleteOutpost;Write
 outposts:DeleteSite;Write

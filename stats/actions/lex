@@ -61,6 +61,7 @@ lex:GetSlotType;Read
 lex:GetSlotTypeVersions;List
 lex:GetSlotTypes;List
 lex:GetUtterancesView;List
+lex:ListAggregatedUtterances;List
 lex:ListBotAliases;List
 lex:ListBotChannels;List
 lex:ListBotLocales;List

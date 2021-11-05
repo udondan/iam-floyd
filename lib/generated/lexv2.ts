@@ -305,6 +305,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete utterance data for a bot
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteUtterances.html
+   */
+  public toDeleteUtterances() {
+    return this.to('DeleteUtterances');
+  }
+
+  /**
    * Grants permission to retrieve an existing bot
    *
    * Access Level: Read
@@ -349,7 +360,7 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve an existing bot version.
+   * Grants permission to retrieve an existing bot version
    *
    * Access Level: Read
    *
@@ -445,6 +456,17 @@ export class LexV2 extends PolicyStatement {
    */
   public toGetSession() {
     return this.to('GetSession');
+  }
+
+  /**
+   * Grants permission to list utterances and statistics for a bot
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html
+   */
+  public toListAggregatedUtterances() {
+    return this.to('ListAggregatedUtterances');
   }
 
   /**
@@ -809,6 +831,7 @@ export class LexV2 extends PolicyStatement {
       'DeleteSession',
       'DeleteSlot',
       'DeleteSlotType',
+      'DeleteUtterances',
       'PutSession',
       'RecognizeText',
       'RecognizeUtterance',
@@ -839,6 +862,7 @@ export class LexV2 extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListAggregatedUtterances',
       'ListBotAliases',
       'ListBotChannels',
       'ListBotLocales',

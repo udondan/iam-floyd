@@ -261,6 +261,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a mobile device access override
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteMobileDeviceAccessOverride.html
+   */
+  public toDeleteMobileDeviceAccessOverride() {
+    return this.to('DeleteMobileDeviceAccessOverride');
+  }
+
+  /**
    * Grants permission to delete a mobile device access rule
    *
    * Access Level: Write
@@ -346,6 +357,17 @@ export class Workmail extends PolicyStatement {
    */
   public toDeregisterFromWorkMail() {
     return this.to('DeregisterFromWorkMail');
+  }
+
+  /**
+   * Grants permission to deregister a mail domain from an organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeregisterMailDomain.html
+   */
+  public toDeregisterMailDomain() {
+    return this.to('DeregisterMailDomain');
   }
 
   /**
@@ -624,6 +646,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details of a given mail domain in an organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetMailDomain.html
+   */
+  public toGetMailDomain() {
+    return this.to('GetMailDomain');
+  }
+
+  /**
    * Grants permission to get the details of the mail domain
    *
    * Access Level: Read
@@ -679,6 +712,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a mobile device access override
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetMobileDeviceAccessOverride.html
+   */
+  public toGetMobileDeviceAccessOverride() {
+    return this.to('GetMobileDeviceAccessOverride');
+  }
+
+  /**
    * Grants permission to get the details of the mobile device
    *
    * Access Level: Read
@@ -714,7 +758,7 @@ export class Workmail extends PolicyStatement {
   /**
    * Grants permission to list the access control rules
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListAccessControlRules.html
    */
@@ -767,6 +811,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the mail domains for a given organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListMailDomains.html
+   */
+  public toListMailDomains() {
+    return this.to('ListMailDomains');
+  }
+
+  /**
    * Grants permission to list mailbox export jobs
    *
    * Access Level: List
@@ -800,9 +855,20 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the mobile device access overrides
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListMobileDeviceAccessOverrides.html
+   */
+  public toListMobileDeviceAccessOverrides() {
+    return this.to('ListMobileDeviceAccessOverrides');
+  }
+
+  /**
    * Grants permission to list the mobile device access rules
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListMobileDeviceAccessRules.html
    */
@@ -921,6 +987,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add or update a mobile device access override
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutMobileDeviceAccessOverride.html
+   */
+  public toPutMobileDeviceAccessOverride() {
+    return this.to('PutMobileDeviceAccessOverride');
+  }
+
+  /**
    * Grants permission to add or update the retention policy
    *
    * Access Level: Write
@@ -929,6 +1006,17 @@ export class Workmail extends PolicyStatement {
    */
   public toPutRetentionPolicy() {
     return this.to('PutRetentionPolicy');
+  }
+
+  /**
+   * Grants permission to register a new mail domain in an organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_RegisterMailDomain.html
+   */
+  public toRegisterMailDomain() {
+    return this.to('RegisterMailDomain');
   }
 
   /**
@@ -1108,6 +1196,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update which domain is the default domain for an organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateDefaultMailDomain.html
+   */
+  public toUpdateDefaultMailDomain() {
+    return this.to('UpdateDefaultMailDomain');
+  }
+
+  /**
    * Grants permission to update the details of an inbound email flow rule which will apply to all email sent to an organization
    *
    * Access Level: Write
@@ -1130,7 +1229,7 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an mobile device access rule
+   * Grants permission to update a mobile device access rule
    *
    * Access Level: Write
    *
@@ -1219,6 +1318,7 @@ export class Workmail extends PolicyStatement {
       'DeleteMailDomain',
       'DeleteMailboxPermissions',
       'DeleteMobileDevice',
+      'DeleteMobileDeviceAccessOverride',
       'DeleteMobileDeviceAccessRule',
       'DeleteOrganization',
       'DeleteOutboundMailFlowRule',
@@ -1227,6 +1327,7 @@ export class Workmail extends PolicyStatement {
       'DeleteSmtpGateway',
       'DeleteUser',
       'DeregisterFromWorkMail',
+      'DeregisterMailDomain',
       'DisableMailGroups',
       'DisableMailUsers',
       'DisassociateDelegateFromResource',
@@ -1237,7 +1338,9 @@ export class Workmail extends PolicyStatement {
       'PutAccessControlRule',
       'PutInboundDmarcSettings',
       'PutMailboxPermissions',
+      'PutMobileDeviceAccessOverride',
       'PutRetentionPolicy',
+      'RegisterMailDomain',
       'RegisterToWorkMail',
       'RemoveMembersFromGroup',
       'ResetPassword',
@@ -1251,6 +1354,7 @@ export class Workmail extends PolicyStatement {
       'StartMailboxExportJob',
       'TestInboundMailFlowRules',
       'TestOutboundMailFlowRules',
+      'UpdateDefaultMailDomain',
       'UpdateInboundMailFlowRule',
       'UpdateMailboxQuota',
       'UpdateMobileDeviceAccessRule',
@@ -1271,14 +1375,13 @@ export class Workmail extends PolicyStatement {
       'DescribeOrganizations',
       'DescribeResource',
       'DescribeUser',
-      'ListAccessControlRules',
       'ListAliases',
       'ListGroupMembers',
       'ListGroups',
       'ListInboundMailFlowRules',
+      'ListMailDomains',
       'ListMailboxExportJobs',
       'ListMailboxPermissions',
-      'ListMobileDeviceAccessRules',
       'ListOrganizations',
       'ListOutboundMailFlowRules',
       'ListResourceDelegates',
@@ -1296,15 +1399,20 @@ export class Workmail extends PolicyStatement {
       'GetAccessControlEffect',
       'GetDefaultRetentionPolicy',
       'GetJournalingRules',
+      'GetMailDomain',
       'GetMailDomainDetails',
       'GetMailGroupDetails',
       'GetMailUserDetails',
       'GetMailboxDetails',
       'GetMobileDeviceAccessEffect',
+      'GetMobileDeviceAccessOverride',
       'GetMobileDeviceDetails',
       'GetMobileDevicesForUser',
       'GetMobilePolicyDetails',
+      'ListAccessControlRules',
       'ListMembersInMailGroup',
+      'ListMobileDeviceAccessOverrides',
+      'ListMobileDeviceAccessRules',
       'SearchMembers'
     ],
     Tagging: [
