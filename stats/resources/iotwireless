@@ -1,5 +1,7 @@
 iotwireless:Destination
 iotwireless:DeviceProfile
+iotwireless:FuotaTask
+iotwireless:MulticastGroup
 iotwireless:ServiceProfile
 iotwireless:SidewalkAccount
 iotwireless:WirelessDevice

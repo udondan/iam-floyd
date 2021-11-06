@@ -102,6 +102,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a finding aggregator, which contains the cross-Region finding aggregation configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateFindingAggregator.html
+   */
+  public toCreateFindingAggregator() {
+    return this.to('CreateFindingAggregator');
+  }
+
+  /**
    * Grants permission to create insights in Security Hub. Insights are collections of related findings
    *
    * Access Level: Write
@@ -143,6 +154,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toDeleteActionTarget() {
     return this.to('DeleteActionTarget');
+  }
+
+  /**
+   * Grants permission to delete a finding aggregator, which disables finding aggregation across Regions
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteFindingAggregator.html
+   */
+  public toDeleteFindingAggregator() {
+    return this.to('DeleteFindingAggregator');
   }
 
   /**
@@ -400,6 +422,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details for a finding aggregator, which configures finding aggregation across Regions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingAggregator.html
+   */
+  public toGetFindingAggregator() {
+    return this.to('GetFindingAggregator');
+  }
+
+  /**
    * Grants permission to retrieve a list of findings from Security Hub
    *
    * Access Level: Read
@@ -543,6 +576,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of finding aggregators, which contain the cross-Region finding aggregation configuration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateFindingAggregator.html
+   */
+  public toListFindingAggregators() {
+    return this.to('ListFindingAggregators');
+  }
+
+  /**
    * Grants permission to retrieve the Security Hub invitations sent to the account
    *
    * Access Level: List
@@ -645,6 +689,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a finding aggregator, which contains the cross-Region finding aggregation configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateFindingAggregator.html
+   */
+  public toUpdateFindingAggregator() {
+    return this.to('UpdateFindingAggregator');
+  }
+
+  /**
    * Grants permission to update Security Hub findings
    *
    * Access Level: Write
@@ -708,10 +763,12 @@ export class Securityhub extends PolicyStatement {
       'BatchImportFindings',
       'BatchUpdateFindings',
       'CreateActionTarget',
+      'CreateFindingAggregator',
       'CreateInsight',
       'CreateMembers',
       'DeclineInvitations',
       'DeleteActionTarget',
+      'DeleteFindingAggregator',
       'DeleteInsight',
       'DeleteInvitations',
       'DeleteMembers',
@@ -726,6 +783,7 @@ export class Securityhub extends PolicyStatement {
       'EnableSecurityHub',
       'InviteMembers',
       'UpdateActionTarget',
+      'UpdateFindingAggregator',
       'UpdateFindings',
       'UpdateInsight',
       'UpdateOrganizationConfiguration',
@@ -742,6 +800,7 @@ export class Securityhub extends PolicyStatement {
       'GetAdhocInsightResults',
       'GetAdministratorAccount',
       'GetControlFindingSummary',
+      'GetFindingAggregator',
       'GetFindings',
       'GetFreeTrialEndDate',
       'GetFreeTrialUsage',
@@ -760,6 +819,7 @@ export class Securityhub extends PolicyStatement {
       'GetEnabledStandards',
       'GetInsights',
       'ListEnabledProductsForImport',
+      'ListFindingAggregators',
       'ListInvitations',
       'ListMembers',
       'ListOrganizationAdminAccounts'
@@ -802,7 +862,21 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the presence of specific fields and values in the request
+   * Adds a resource of type finding-aggregator to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   *
+   * @param findingAggregatorId - Identifier for the findingAggregatorId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onFindingAggregator(findingAggregatorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:securityhub:${ region || '*' }:${ account || '*' }:finding-aggregator/${ findingAggregatorId }`);
+  }
+
+  /**
+   * Filters access by the specified fields and values in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-asffsyntaxpath
    *
@@ -818,7 +892,7 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the presence of AwsAccountId field in the requests
+   * Filters access by the AwsAccountId field that is specified in the request
    *
    * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#conditions
    *

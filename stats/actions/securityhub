@@ -5,10 +5,12 @@ securityhub:BatchEnableStandards;Write
 securityhub:BatchImportFindings;Write
 securityhub:BatchUpdateFindings;Write
 securityhub:CreateActionTarget;Write
+securityhub:CreateFindingAggregator;Write
 securityhub:CreateInsight;Write
 securityhub:CreateMembers;Write
 securityhub:DeclineInvitations;Write
 securityhub:DeleteActionTarget;Write
+securityhub:DeleteFindingAggregator;Write
 securityhub:DeleteInsight;Write
 securityhub:DeleteInvitations;Write
 securityhub:DeleteMembers;Write
@@ -31,6 +33,7 @@ securityhub:GetAdhocInsightResults;Read
 securityhub:GetAdministratorAccount;Read
 securityhub:GetControlFindingSummary;Read
 securityhub:GetEnabledStandards;List
+securityhub:GetFindingAggregator;Read
 securityhub:GetFindings;Read
 securityhub:GetFreeTrialEndDate;Read
 securityhub:GetFreeTrialUsage;Read
@@ -44,6 +47,7 @@ securityhub:GetUsage;Read
 securityhub:InviteMembers;Write
 securityhub:ListControlEvaluationSummaries;Read
 securityhub:ListEnabledProductsForImport;List
+securityhub:ListFindingAggregators;List
 securityhub:ListInvitations;List
 securityhub:ListMembers;List
 securityhub:ListOrganizationAdminAccounts;List
@@ -53,6 +57,7 @@ securityhub:SendInsightEvents;Read
 securityhub:TagResource;Tagging
 securityhub:UntagResource;Tagging
 securityhub:UpdateActionTarget;Write
+securityhub:UpdateFindingAggregator;Write
 securityhub:UpdateFindings;Write
 securityhub:UpdateInsight;Write
 securityhub:UpdateOrganizationConfiguration;Write

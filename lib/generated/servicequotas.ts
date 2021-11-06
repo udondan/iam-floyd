@@ -2,7 +2,7 @@ import { AccessLevelList } from '../shared/access-level';
 import { PolicyStatement, Operator } from '../shared';
 
 /**
- * Statement provider for service [servicequotas](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicequotas.html).
+ * Statement provider for service [servicequotas](https://docs.aws.amazon.com/service-authorization/latest/reference/list_servicequotas.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Servicequotas extends PolicyStatement {
   public servicePrefix = 'servicequotas';
 
   /**
-   * Statement provider for service [servicequotas](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsservicequotas.html).
+   * Statement provider for service [servicequotas](https://docs.aws.amazon.com/service-authorization/latest/reference/list_servicequotas.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -264,7 +264,7 @@ export class Servicequotas extends PolicyStatement {
   /**
    * Adds a resource of type quota to the statement
    *
-   * https://docs.aws.amazon.com/servicequotas/latest/userguide/quota-as-resource.html
+   * https://docs.aws.amazon.com/servicequotas/latest/userguide/identity-access-management.html#resources
    *
    * @param serviceCode - Identifier for the serviceCode.
    * @param quotaCode - Identifier for the quotaCode.
@@ -277,9 +277,9 @@ export class Servicequotas extends PolicyStatement {
   }
 
   /**
-   * Filters or restricts access to a specified AWS service
+   * Filters access by the specified AWS service
    *
-   * https://docs.aws.amazon.com/servicequotas/latest/userguide/servicequotas/latest/userguide/identity-access-management.htmlck_service
+   * https://docs.aws.amazon.com/servicequotas/latest/userguide/identity-access-management.html#condition-keys
    *
    * Applies to actions:
    * - .toPutServiceQuotaIncreaseRequestIntoTemplate()

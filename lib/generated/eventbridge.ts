@@ -183,6 +183,7 @@ export class Events extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifCreatorAccount()
+   * - .ifManagedBy()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteRule.html
    */
@@ -288,6 +289,7 @@ export class Events extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifCreatorAccount()
+   * - .ifManagedBy()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DisableRule.html
    */
@@ -296,12 +298,13 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to enable rules
+   * Grants permission to enable rules
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifCreatorAccount()
+   * - .ifManagedBy()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_EnableRule.html
    */
@@ -512,6 +515,7 @@ export class Events extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifCreatorAccount()
+   * - .ifManagedBy()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutRule.html
    */
@@ -527,6 +531,7 @@ export class Events extends PolicyStatement {
    * Possible conditions:
    * - .ifTargetArn()
    * - .ifCreatorAccount()
+   * - .ifManagedBy()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html
    */
@@ -552,6 +557,7 @@ export class Events extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifCreatorAccount()
+   * - .ifManagedBy()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemoveTargets.html
    */
@@ -587,7 +593,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to test whether an event pattern matches the provided event
+   * Grants permission to test whether an event pattern matches the provided event
    *
    * Access Level: Read
    *
@@ -814,9 +820,17 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Used internally by AWS services. If a rule is created by an AWS service on your behalf, the value is the principal name of the service that created the rule
+   * Filters access by AWS services. If a rule is created by an AWS service on your behalf, the value is the principal name of the service that created the rule
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html
+   *
+   * Applies to actions:
+   * - .toDeleteRule()
+   * - .toDisableRule()
+   * - .toEnableRule()
+   * - .toPutRule()
+   * - .toPutTargets()
+   * - .toRemoveTargets()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -826,7 +840,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Filters access to PutTargets actions based on the ARN of a target that can be put to a rule
+   * Filters access by the ARN of a target that can be put to a rule to PutTargets actions
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limiting-access-to-targets
    *
@@ -841,7 +855,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Filters access to rule actions based on the account the rule was created in
+   * Filters access by the account the rule was created in to rule actions
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-creator-account
    *
@@ -866,7 +880,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Filters access to PutEvents and PutRule actions based on the literal string of the detail-type of the event
+   * Filters access by the literal string of the detail-type of the event to PutEvents and PutRule actions
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-pattern-detail-type
    *
@@ -882,7 +896,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Filters access to PutRule actions based on the literal string for the detail.eventTypeCode field of the event
+   * Filters access by the literal string for the detail.eventTypeCode field of the event to PutRule actions
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limit-rule-by-type-code
    *
@@ -897,7 +911,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Filters access to PutRule actions based on the literal string for the detail.service field of the event
+   * Filters access by the literal string for the detail.service field of the event to PutRule actions
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limit-rule-by-service
    *
@@ -912,7 +926,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Filters access to PutRule actions based on the literal string for the detail.useridentity.principalid field of the event
+   * Filters access by the literal string for the detail.useridentity.principalid field of the event to PutRule actions
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#consume-specific-events
    *
@@ -927,7 +941,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Filters access to PutEvents actions based on whether the event was generated via API or cross-account bus invocation
+   * Filters access by whether the event was generated via API or cross-account bus invocation to PutEvents actions
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-bus-invocation
    *
@@ -942,7 +956,7 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Filters access to PutEvents and PutRule actions based on the AWS service or AWS partner event source that generated the event. Matches the literal string of the source field of the event
+   * Filters access by the AWS service or AWS partner event source that generated the event to PutEvents and PutRule actions. Matches the literal string of the source field of the event
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-limit-access-control
    *

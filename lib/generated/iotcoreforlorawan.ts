@@ -34,6 +34,39 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate the MulticastGroup with FuotaTask
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateMulticastGroupWithFuotaTask.html
+   */
+  public toAssociateMulticastGroupWithFuotaTask() {
+    return this.to('AssociateMulticastGroupWithFuotaTask');
+  }
+
+  /**
+   * Grants permission to associate the wireless device with FuotaTask
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessDeviceWithFuotaTask.html
+   */
+  public toAssociateWirelessDeviceWithFuotaTask() {
+    return this.to('AssociateWirelessDeviceWithFuotaTask');
+  }
+
+  /**
+   * Grants permission to associate the WirelessDevice with MulticastGroup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessDeviceWithMulticastGroup.html
+   */
+  public toAssociateWirelessDeviceWithMulticastGroup() {
+    return this.to('AssociateWirelessDeviceWithMulticastGroup');
+  }
+
+  /**
    * Grants permission to associate the wireless device with AWS IoT thing for a given wirelessDeviceId
    *
    * Access Level: Write
@@ -73,6 +106,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel the MulticastGroup session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CancelMulticastGroupSession.html
+   */
+  public toCancelMulticastGroupSession() {
+    return this.to('CancelMulticastGroupSession');
+  }
+
+  /**
    * Grants permission to create a Destination resource
    *
    * Access Level: Write
@@ -100,6 +144,36 @@ export class Iotwireless extends PolicyStatement {
    */
   public toCreateDeviceProfile() {
     return this.to('CreateDeviceProfile');
+  }
+
+  /**
+   * Grants permission to create a FuotaTask resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateFuotaTask.html
+   */
+  public toCreateFuotaTask() {
+    return this.to('CreateFuotaTask');
+  }
+
+  /**
+   * Grants permission to create a MulticastGroup resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateMulticastGroup.html
+   */
+  public toCreateMulticastGroup() {
+    return this.to('CreateMulticastGroup');
   }
 
   /**
@@ -196,6 +270,28 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the FuotaTask
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteFuotaTask.html
+   */
+  public toDeleteFuotaTask() {
+    return this.to('DeleteFuotaTask');
+  }
+
+  /**
+   * Grants permission to delete the MulticastGroup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteMulticastGroup.html
+   */
+  public toDeleteMulticastGroup() {
+    return this.to('DeleteMulticastGroup');
+  }
+
+  /**
    * Grants permission to delete a ServiceProfile
    *
    * Access Level: Write
@@ -262,6 +358,39 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate the MulticastGroup from FuotaTask
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateMulticastGroupFromFuotaTask.html
+   */
+  public toDisassociateMulticastGroupFromFuotaTask() {
+    return this.to('DisassociateMulticastGroupFromFuotaTask');
+  }
+
+  /**
+   * Grants permission to disassociate the wireless device from FuotaTask
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessDeviceFromFuotaTask.html
+   */
+  public toDisassociateWirelessDeviceFromFuotaTask() {
+    return this.to('DisassociateWirelessDeviceFromFuotaTask');
+  }
+
+  /**
+   * Grants permission to disassociate the wireless device from MulticastGroup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessDeviceFromMulticastGroup.html
+   */
+  public toDisassociateWirelessDeviceFromMulticastGroup() {
+    return this.to('DisassociateWirelessDeviceFromMulticastGroup');
+  }
+
+  /**
    * Grants permission to disassociate a wireless device from a AWS IoT thing
    *
    * Access Level: Write
@@ -323,6 +452,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the FuotaTask
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetFuotaTask.html
+   */
+  public toGetFuotaTask() {
+    return this.to('GetFuotaTask');
+  }
+
+  /**
    * Grants permission to get log levels by resource types
    *
    * Access Level: Read
@@ -334,6 +474,28 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the MulticastGroup
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetMulticastGroup.html
+   */
+  public toGetMulticastGroup() {
+    return this.to('GetMulticastGroup');
+  }
+
+  /**
+   * Grants permission to get the MulticastGroup session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetMulticastGroupSession.html
+   */
+  public toGetMulticastGroupSession() {
+    return this.to('GetMulticastGroupSession');
+  }
+
+  /**
    * Grants permission to get the associated PartnerAccount
    *
    * Access Level: Read
@@ -342,6 +504,17 @@ export class Iotwireless extends PolicyStatement {
    */
   public toGetPartnerAccount() {
     return this.to('GetPartnerAccount');
+  }
+
+  /**
+   * Grants permission to get an event configuration for an identifier
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourceEventConfiguration.html
+   */
+  public toGetResourceEventConfiguration() {
+    return this.to('GetResourceEventConfiguration');
   }
 
   /**
@@ -466,7 +639,7 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
-   * List information of available Destinations based on the AWS account.
+   * Grants permission to list information of available Destinations based on the AWS account
    *
    * Access Level: Read
    *
@@ -485,6 +658,39 @@ export class Iotwireless extends PolicyStatement {
    */
   public toListDeviceProfiles() {
     return this.to('ListDeviceProfiles');
+  }
+
+  /**
+   * Grants permission to list information of available FuotaTasks based on the AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListFuotaTasks.html
+   */
+  public toListFuotaTasks() {
+    return this.to('ListFuotaTasks');
+  }
+
+  /**
+   * Grants permission to list information of available MulticastGroups based on the AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListMulticastGroups.html
+   */
+  public toListMulticastGroups() {
+    return this.to('ListMulticastGroups');
+  }
+
+  /**
+   * Grants permission to list information of available MulticastGroups by FuotaTask based on the AWS account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListMulticastGroupsByFuotaTask.html
+   */
+  public toListMulticastGroupsByFuotaTask() {
+    return this.to('ListMulticastGroupsByFuotaTask');
   }
 
   /**
@@ -587,6 +793,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send data to the MulticastGroup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_SendDataToMulticastGroup.html
+   */
+  public toSendDataToMulticastGroup() {
+    return this.to('SendDataToMulticastGroup');
+  }
+
+  /**
    * Grants permission to send the decrypted application data frame to the target device
    *
    * Access Level: Write
@@ -595,6 +812,50 @@ export class Iotwireless extends PolicyStatement {
    */
   public toSendDataToWirelessDevice() {
     return this.to('SendDataToWirelessDevice');
+  }
+
+  /**
+   * Grants permission to associate the WirelessDevices with MulticastGroup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartBulkAssociateWirelessDeviceWithMulticastGroup.html
+   */
+  public toStartBulkAssociateWirelessDeviceWithMulticastGroup() {
+    return this.to('StartBulkAssociateWirelessDeviceWithMulticastGroup');
+  }
+
+  /**
+   * Grants permission to bulk disassociate the WirelessDevices from MulticastGroup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartBulkDisassociateWirelessDeviceFromMulticastGroup.html
+   */
+  public toStartBulkDisassociateWirelessDeviceFromMulticastGroup() {
+    return this.to('StartBulkDisassociateWirelessDeviceFromMulticastGroup');
+  }
+
+  /**
+   * Grants permission to start the FuotaTask
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartFuotaTask.html
+   */
+  public toStartFuotaTask() {
+    return this.to('StartFuotaTask');
+  }
+
+  /**
+   * Grants permission to start the MulticastGroup session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartMulticastGroupSession.html
+   */
+  public toStartMulticastGroupSession() {
+    return this.to('StartMulticastGroupSession');
   }
 
   /**
@@ -649,6 +910,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the FuotaTask
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateFuotaTask.html
+   */
+  public toUpdateFuotaTask() {
+    return this.to('UpdateFuotaTask');
+  }
+
+  /**
    * Grants permission to update log levels by resource types
    *
    * Access Level: Write
@@ -660,6 +932,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the MulticastGroup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateMulticastGroup.html
+   */
+  public toUpdateMulticastGroup() {
+    return this.to('UpdateMulticastGroup');
+  }
+
+  /**
    * Grants permission to update a partner account
    *
    * Access Level: Write
@@ -668,6 +951,17 @@ export class Iotwireless extends PolicyStatement {
    */
   public toUpdatePartnerAccount() {
     return this.to('UpdatePartnerAccount');
+  }
+
+  /**
+   * Grants permission to update an event configuration for an identifier
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourceEventConfiguration.html
+   */
+  public toUpdateResourceEventConfiguration() {
+    return this.to('UpdateResourceEventConfiguration');
   }
 
   /**
@@ -695,11 +989,17 @@ export class Iotwireless extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateAwsAccountWithPartnerAccount',
+      'AssociateMulticastGroupWithFuotaTask',
+      'AssociateWirelessDeviceWithFuotaTask',
+      'AssociateWirelessDeviceWithMulticastGroup',
       'AssociateWirelessDeviceWithThing',
       'AssociateWirelessGatewayWithCertificate',
       'AssociateWirelessGatewayWithThing',
+      'CancelMulticastGroupSession',
       'CreateDestination',
       'CreateDeviceProfile',
+      'CreateFuotaTask',
+      'CreateMulticastGroup',
       'CreateServiceProfile',
       'CreateWirelessDevice',
       'CreateWirelessGateway',
@@ -707,31 +1007,48 @@ export class Iotwireless extends PolicyStatement {
       'CreateWirelessGatewayTaskDefinition',
       'DeleteDestination',
       'DeleteDeviceProfile',
+      'DeleteFuotaTask',
+      'DeleteMulticastGroup',
       'DeleteServiceProfile',
       'DeleteWirelessDevice',
       'DeleteWirelessGateway',
       'DeleteWirelessGatewayTask',
       'DeleteWirelessGatewayTaskDefinition',
       'DisassociateAwsAccountFromPartnerAccount',
+      'DisassociateMulticastGroupFromFuotaTask',
+      'DisassociateWirelessDeviceFromFuotaTask',
+      'DisassociateWirelessDeviceFromMulticastGroup',
       'DisassociateWirelessDeviceFromThing',
       'DisassociateWirelessGatewayFromCertificate',
       'DisassociateWirelessGatewayFromThing',
       'PutResourceLogLevel',
       'ResetAllResourceLogLevels',
       'ResetResourceLogLevel',
+      'SendDataToMulticastGroup',
       'SendDataToWirelessDevice',
+      'StartBulkAssociateWirelessDeviceWithMulticastGroup',
+      'StartBulkDisassociateWirelessDeviceFromMulticastGroup',
+      'StartFuotaTask',
+      'StartMulticastGroupSession',
       'TestWirelessDevice',
       'UpdateDestination',
+      'UpdateFuotaTask',
       'UpdateLogLevelsByResourceTypes',
+      'UpdateMulticastGroup',
       'UpdatePartnerAccount',
+      'UpdateResourceEventConfiguration',
       'UpdateWirelessDevice',
       'UpdateWirelessGateway'
     ],
     Read: [
       'GetDestination',
       'GetDeviceProfile',
+      'GetFuotaTask',
       'GetLogLevelsByResourceTypes',
+      'GetMulticastGroup',
+      'GetMulticastGroupSession',
       'GetPartnerAccount',
+      'GetResourceEventConfiguration',
       'GetResourceLogLevel',
       'GetServiceEndpoint',
       'GetServiceProfile',
@@ -745,6 +1062,9 @@ export class Iotwireless extends PolicyStatement {
       'GetWirelessGatewayTaskDefinition',
       'ListDestinations',
       'ListDeviceProfiles',
+      'ListFuotaTasks',
+      'ListMulticastGroups',
+      'ListMulticastGroupsByFuotaTask',
       'ListPartnerAccounts',
       'ListServiceProfiles',
       'ListTagsForResource',
@@ -875,6 +1195,40 @@ export class Iotwireless extends PolicyStatement {
    */
   public onWirelessGatewayTaskDefinition(wirelessGatewayTaskDefinitionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:WirelessGatewayTaskDefinition/${ wirelessGatewayTaskDefinitionId }`);
+  }
+
+  /**
+   * Adds a resource of type FuotaTask to the statement
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateFuotaTask.html
+   *
+   * @param fuotaTaskId - Identifier for the fuotaTaskId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFuotaTask(fuotaTaskId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:FuotaTask/${ fuotaTaskId }`);
+  }
+
+  /**
+   * Adds a resource of type MulticastGroup to the statement
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateMulticastGroup.html
+   *
+   * @param multicastGroupId - Identifier for the multicastGroupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMulticastGroup(multicastGroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:iotwireless:${ region || '*' }:${ account || '*' }:MulticastGroup/${ multicastGroupId }`);
   }
 
   /**
