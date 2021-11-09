@@ -9,6 +9,7 @@
 				"mgn:DescribeSourceServers",
 				"mgn:DescribeReplicationConfigurationTemplates",
 				"mgn:GetLaunchConfiguration",
+				"mgn:DescribeVcenterClients",
 				"mgn:GetReplicationConfiguration"
 			],
 			"Resource": "*"
