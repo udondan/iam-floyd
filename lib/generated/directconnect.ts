@@ -19,7 +19,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Accepts a proposal request to attach a virtual private gateway to a Direct Connect gateway.
+   * Grants permission to accept a proposal request to attach a virtual private gateway to a Direct Connect gateway
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Creates a hosted connection on an interconnect.
+   * Grants permission to create a hosted connection on an interconnect
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Creates a new hosted connection between a AWS Direct Connect partner's network and a specific AWS Direct Connect location.
+   * Grants permission to create a new hosted connection between a AWS Direct Connect partner's network and a specific AWS Direct Connect location
    *
    * Access Level: Write
    *
@@ -56,7 +56,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Provisions a private virtual interface to be owned by a different customer.
+   * Grants permission to provision a private virtual interface to be owned by a different customer
    *
    * Access Level: Write
    *
@@ -71,7 +71,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Provisions a public virtual interface to be owned by a different customer.
+   * Grants permission to provision a public virtual interface to be owned by a different customer
    *
    * Access Level: Write
    *
@@ -86,7 +86,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Provisions a transit virtual interface to be owned by a different customer.
+   * Grants permission to provision a transit virtual interface to be owned by a different customer
    *
    * Access Level: Write
    *
@@ -101,7 +101,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Associates a connection with a LAG.
+   * Grants permission to associate a connection with a LAG
    *
    * Access Level: Write
    *
@@ -112,7 +112,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Associates a hosted connection and its virtual interfaces with a link aggregation group (LAG) or interconnect.
+   * Grants permission to associate a hosted connection and its virtual interfaces with a link aggregation group (LAG) or interconnect
    *
    * Access Level: Write
    *
@@ -134,7 +134,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Associates a virtual interface with a specified link aggregation group (LAG) or connection.
+   * Grants permission to associate a virtual interface with a specified link aggregation group (LAG) or connection
    *
    * Access Level: Write
    *
@@ -145,7 +145,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Confirm the creation of a hosted connection on an interconnect.
+   * Grants permission to confirm the creation of a hosted connection on an interconnect
    *
    * Access Level: Write
    *
@@ -156,7 +156,18 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Accept ownership of a private virtual interface created by another customer.
+   * Grants permission to confirm the the terms of agreement when creating the connection or link aggregation group (LAG)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmCustomerAgreement.html
+   */
+  public toConfirmCustomerAgreement() {
+    return this.to('ConfirmCustomerAgreement');
+  }
+
+  /**
+   * Grants permission to accept ownership of a private virtual interface created by another customer
    *
    * Access Level: Write
    *
@@ -167,7 +178,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Accept ownership of a public virtual interface created by another customer
+   * Grants permission to accept ownership of a public virtual interface created by another customer
    *
    * Access Level: Write
    *
@@ -178,7 +189,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Accept ownership of a transit virtual interface created by another customer
+   * Grants permission to accept ownership of a transit virtual interface created by another customer
    *
    * Access Level: Write
    *
@@ -189,7 +200,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Creates a BGP peer on the specified virtual interface.
+   * Grants permission to create a BGP peer on the specified virtual interface
    *
    * Access Level: Write
    *
@@ -200,7 +211,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Creates a new connection between the customer network and a specific AWS Direct Connect location.
+   * Grants permission to create a new connection between the customer network and a specific AWS Direct Connect location
    *
    * Access Level: Write
    *
@@ -215,7 +226,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Creates a Direct Connect gateway, which is an intermediate object that enables you to connect a set of virtual interfaces and virtual private gateways.
+   * Grants permission to create a Direct Connect gateway, which is an intermediate object that enables you to connect a set of virtual interfaces and virtual private gateways
    *
    * Access Level: Write
    *
@@ -226,7 +237,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Creates an association between a Direct Connect gateway and a virtual private gateway.
+   * Grants permission to create an association between a Direct Connect gateway and a virtual private gateway
    *
    * Access Level: Write
    *
@@ -237,7 +248,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Creates a proposal to associate the specified virtual private gateway with the specified Direct Connect gateway.
+   * Grants permission to create a proposal to associate the specified virtual private gateway with the specified Direct Connect gateway
    *
    * Access Level: Write
    *
@@ -248,7 +259,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Creates a new interconnect between a AWS Direct Connect partner's network and a specific AWS Direct Connect location.
+   * Grants permission to create a new interconnect between a AWS Direct Connect partner's network and a specific AWS Direct Connect location
    *
    * Access Level: Write
    *
@@ -263,7 +274,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Creates a link aggregation group (LAG) with the specified number of bundled physical connections between the customer network and a specific AWS Direct Connect location.
+   * Grants permission to create a link aggregation group (LAG) with the specified number of bundled physical connections between the customer network and a specific AWS Direct Connect location
    *
    * Access Level: Write
    *
@@ -278,7 +289,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Creates a new private virtual interface.
+   * Grants permission to create a new private virtual interface
    *
    * Access Level: Write
    *
@@ -293,7 +304,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Creates a new public virtual interface.
+   * Grants permission to create a new public virtual interface
    *
    * Access Level: Write
    *
@@ -308,7 +319,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Creates a new transit virtual interface.
+   * Grants permission to create a new transit virtual interface
    *
    * Access Level: Write
    *
@@ -323,7 +334,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified BGP peer on the specified virtual interface with the specified customer address and ASN.
+   * Grants permission to delete the specified BGP peer on the specified virtual interface with the specified customer address and ASN
    *
    * Access Level: Write
    *
@@ -334,7 +345,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Deletes the connection.
+   * Grants permission to delete the connection
    *
    * Access Level: Write
    *
@@ -345,7 +356,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified Direct Connect gateway.
+   * Grants permission to delete the specified Direct Connect gateway
    *
    * Access Level: Write
    *
@@ -356,7 +367,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Deletes the association between the specified Direct Connect gateway and virtual private gateway.
+   * Grants permission to delete the association between the specified Direct Connect gateway and virtual private gateway
    *
    * Access Level: Write
    *
@@ -367,7 +378,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Deletes the association proposal request between the specified Direct Connect gateway and virtual private gateway.
+   * Grants permission to delete the association proposal request between the specified Direct Connect gateway and virtual private gateway
    *
    * Access Level: Write
    *
@@ -378,7 +389,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified interconnect.
+   * Grants permission to delete the specified interconnect
    *
    * Access Level: Write
    *
@@ -389,7 +400,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified link aggregation group (LAG).
+   * Grants permission to delete the specified link aggregation group (LAG)
    *
    * Access Level: Write
    *
@@ -400,7 +411,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Deletes a virtual interface.
+   * Grants permission to delete a virtual interface
    *
    * Access Level: Write
    *
@@ -411,7 +422,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Returns the LOA-CFA for a Connection.
+   * Grants permission to describe the LOA-CFA for a Connection
    *
    * Access Level: Read
    *
@@ -422,7 +433,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Displays all connections in this region.
+   * Grants permission to describe all connections in this region
    *
    * Access Level: Read
    *
@@ -433,7 +444,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Return a list of connections that have been provisioned on the given interconnect.
+   * Grants permission to describe a list of connections that have been provisioned on the given interconnect
    *
    * Access Level: Read
    *
@@ -444,7 +455,18 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Describes one or more association proposals for connection between a virtual private gateway and a Direct Connect gateway.
+   * Grants permission to view a list of customer agreements, along with their signed status and whether the customer is an NNIPartner, NNIPartnerV2, or a nonPartner
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeCustomerMetadata.html
+   */
+  public toDescribeCustomerMetadata() {
+    return this.to('DescribeCustomerMetadata');
+  }
+
+  /**
+   * Grants permission to describe one or more association proposals for connection between a virtual private gateway and a Direct Connect gateway
    *
    * Access Level: Read
    *
@@ -455,7 +477,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Lists the associations between your Direct Connect gateways and virtual private gateways.
+   * Grants permission to describe the associations between your Direct Connect gateways and virtual private gateways
    *
    * Access Level: Read
    *
@@ -466,7 +488,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Lists the attachments between your Direct Connect gateways and virtual interfaces.
+   * Grants permission to describe the attachments between your Direct Connect gateways and virtual interfaces
    *
    * Access Level: Read
    *
@@ -477,7 +499,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Lists all your Direct Connect gateways or only the specified Direct Connect gateway.
+   * Grants permission to describe all your Direct Connect gateways or only the specified Direct Connect gateway
    *
    * Access Level: Read
    *
@@ -488,7 +510,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Lists the hosted connections that have been provisioned on the specified interconnect or link aggregation group (LAG).
+   * Grants permission to describe the hosted connections that have been provisioned on the specified interconnect or link aggregation group (LAG)
    *
    * Access Level: Read
    *
@@ -499,7 +521,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Returns the LOA-CFA for an Interconnect.
+   * Grants permission to describe the LOA-CFA for an Interconnect
    *
    * Access Level: Read
    *
@@ -510,7 +532,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Returns a list of interconnects owned by the AWS account.
+   * Grants permission to describe a list of interconnects owned by the AWS account
    *
    * Access Level: Read
    *
@@ -521,7 +543,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Describes all your link aggregation groups (LAG) or the specified LAG.
+   * Grants permission to describe all your link aggregation groups (LAG) or the specified LAG
    *
    * Access Level: Read
    *
@@ -532,7 +554,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Gets the LOA-CFA for a connection, interconnect, or link aggregation group (LAG).
+   * Grants permission to describe the LOA-CFA for a connection, interconnect, or link aggregation group (LAG)
    *
    * Access Level: Read
    *
@@ -543,9 +565,9 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Returns the list of AWS Direct Connect locations in the current AWS region.
+   * Grants permission to describe the list of AWS Direct Connect locations in the current AWS region
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeLocations.html
    */
@@ -554,7 +576,18 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Describes the tags associated with the specified AWS Direct Connect resources.
+   * Grants permission to describe Details about the router for a virtual interface
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeRouterConfiguration.html
+   */
+  public toDescribeRouterConfiguration() {
+    return this.to('DescribeRouterConfiguration');
+  }
+
+  /**
+   * Grants permission to describe the tags associated with the specified AWS Direct Connect resources
    *
    * Access Level: Read
    *
@@ -565,7 +598,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Returns a list of virtual private gateways owned by the AWS account.
+   * Grants permission to describe a list of virtual private gateways owned by the AWS account
    *
    * Access Level: Read
    *
@@ -576,7 +609,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Displays all virtual interfaces for an AWS account.
+   * Grants permission to describe all virtual interfaces for an AWS account
    *
    * Access Level: Read
    *
@@ -587,7 +620,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Disassociates a connection from a link aggregation group (LAG).
+   * Grants permission to disassociate a connection from a link aggregation group (LAG)
    *
    * Access Level: Write
    *
@@ -609,7 +642,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Lists the virtual interface failover test history.
+   * Grants permission to list the virtual interface failover test history
    *
    * Access Level: List
    *
@@ -620,7 +653,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Starts the virtual interface failover test that verifies your configuration meets your resiliency requirements by placing the BGP peering session in the DOWN state. You can then send traffic to verify that there are no outages.
+   * Grants permission to start the virtual interface failover test that verifies your configuration meets your resiliency requirements by placing the BGP peering session in the DOWN state. You can then send traffic to verify that there are no outages
    *
    * Access Level: Write
    *
@@ -631,7 +664,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Stops the virtual interface failover test.
+   * Grants permission to stop the virtual interface failover test
    *
    * Access Level: Write
    *
@@ -642,7 +675,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Adds the specified tags to the specified AWS Direct Connect resource. Each resource can have a maximum of 50 tags.
+   * Grants permission to add the specified tags to the specified AWS Direct Connect resource. Each resource can have a maximum of 50 tags
    *
    * Access Level: Tagging
    *
@@ -657,7 +690,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Removes one or more tags from the specified AWS Direct Connect resource.
+   * Grants permission to remove one or more tags from the specified AWS Direct Connect resource
    *
    * Access Level: Tagging
    *
@@ -682,7 +715,18 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Updates the specified attributes of the Direct Connect gateway association.
+   * Grants permission to update the name of a Direct Connect gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateDirectConnectGateway.html
+   */
+  public toUpdateDirectConnectGateway() {
+    return this.to('UpdateDirectConnectGateway');
+  }
+
+  /**
+   * Grants permission to update the specified attributes of the Direct Connect gateway association
    *
    * Access Level: Write
    *
@@ -693,7 +737,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Updates the attributes of the specified link aggregation group (LAG).
+   * Grants permission to update the attributes of the specified link aggregation group (LAG)
    *
    * Access Level: Write
    *
@@ -704,7 +748,7 @@ export class Directconnect extends PolicyStatement {
   }
 
   /**
-   * Updates the specified attributes of the specified virtual private interface.
+   * Grants permission to update the specified attributes of the specified virtual private interface
    *
    * Access Level: Write
    *
@@ -727,6 +771,7 @@ export class Directconnect extends PolicyStatement {
       'AssociateMacSecKey',
       'AssociateVirtualInterface',
       'ConfirmConnection',
+      'ConfirmCustomerAgreement',
       'ConfirmPrivateVirtualInterface',
       'ConfirmPublicVirtualInterface',
       'ConfirmTransitVirtualInterface',
@@ -753,6 +798,7 @@ export class Directconnect extends PolicyStatement {
       'StartBgpFailoverTest',
       'StopBgpFailoverTest',
       'UpdateConnection',
+      'UpdateDirectConnectGateway',
       'UpdateDirectConnectGatewayAssociation',
       'UpdateLag',
       'UpdateVirtualInterfaceAttributes'
@@ -761,6 +807,7 @@ export class Directconnect extends PolicyStatement {
       'DescribeConnectionLoa',
       'DescribeConnections',
       'DescribeConnectionsOnInterconnect',
+      'DescribeCustomerMetadata',
       'DescribeDirectConnectGatewayAssociationProposals',
       'DescribeDirectConnectGatewayAssociations',
       'DescribeDirectConnectGatewayAttachments',
@@ -770,12 +817,13 @@ export class Directconnect extends PolicyStatement {
       'DescribeInterconnects',
       'DescribeLags',
       'DescribeLoa',
+      'DescribeLocations',
+      'DescribeRouterConfiguration',
       'DescribeTags',
       'DescribeVirtualGateways',
       'DescribeVirtualInterfaces'
     ],
     List: [
-      'DescribeLocations',
       'ListVirtualInterfaceTestHistory'
     ],
     Tagging: [

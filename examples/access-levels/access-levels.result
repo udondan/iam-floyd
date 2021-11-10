@@ -18,6 +18,7 @@
         "ec2:DescribeAvailabilityZones",
         "ec2:DescribeBundleTasks",
         "ec2:DescribeByoipCidrs",
+        "ec2:DescribeCapacityReservationFleets",
         "ec2:DescribeCapacityReservations",
         "ec2:DescribeCarrierGateways",
         "ec2:DescribeClassicLinkInstances",

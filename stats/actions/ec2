@@ -177,6 +177,7 @@ ec2:DescribeAggregateIdFormat;List
 ec2:DescribeAvailabilityZones;List
 ec2:DescribeBundleTasks;List
 ec2:DescribeByoipCidrs;List
+ec2:DescribeCapacityReservationFleets;List
 ec2:DescribeCapacityReservations;List
 ec2:DescribeCarrierGateways;List
 ec2:DescribeClassicLinkInstances;List

@@ -19,7 +19,7 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Enables the user to cancel an in-progress secret rotation.
+   * Grants permission to cancel an in-progress secret rotation
    *
    * Access Level: Write
    *
@@ -27,15 +27,17 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretId()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CancelRotateSecret.html
    */
   public toCancelRotateSecret() {
     return this.to('CancelRotateSecret');
   }
 
   /**
-   * Enables the user to create a secret that stores encrypted data that can be queried and rotated.
+   * Grants permission to create a secret that stores encrypted data that can be queried and rotated
    *
    * Access Level: Write
    *
@@ -44,17 +46,20 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifDescription()
    * - .ifKmsKeyId()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifResourceTag()
+   * - .ifAddReplicaRegions()
+   * - .ifForceOverwriteReplicaSecret()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html
    */
   public toCreateSecret() {
     return this.to('CreateSecret');
   }
 
   /**
-   * Enables the user to delete the resource policy attached to a secret.
+   * Grants permission to delete the resource policy attached to a secret
    *
    * Access Level: Permissions management
    *
@@ -62,15 +67,17 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretId()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteResourcePolicy.html
    */
   public toDeleteResourcePolicy() {
     return this.to('DeleteResourcePolicy');
   }
 
   /**
-   * Enables the user to delete a secret.
+   * Grants permission to delete a secret
    *
    * Access Level: Write
    *
@@ -80,15 +87,17 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifRecoveryWindowInDays()
    * - .ifForceDeleteWithoutRecovery()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html
    */
   public toDeleteSecret() {
     return this.to('DeleteSecret');
   }
 
   /**
-   * Enables the user to retrieve the metadata about a secret, but not the encrypted data.
+   * Grants permission to retrieve the metadata about a secret, but not the encrypted data
    *
    * Access Level: Read
    *
@@ -96,26 +105,28 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretId()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DescribeSecret.html
    */
   public toDescribeSecret() {
     return this.to('DescribeSecret');
   }
 
   /**
-   * Enables the user to generate a random string for use in password creation.
+   * Grants permission to generate a random string for use in password creation
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetRandomPassword.html
    */
   public toGetRandomPassword() {
     return this.to('GetRandomPassword');
   }
 
   /**
-   * Enables the user to get the resource policy attached to a secret.
+   * Grants permission to get the resource policy attached to a secret
    *
    * Access Level: Read
    *
@@ -123,15 +134,17 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretId()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetResourcePolicy.html
    */
   public toGetResourcePolicy() {
     return this.to('GetResourcePolicy');
   }
 
   /**
-   * Enables the user to retrieve and decrypt the encrypted data.
+   * Grants permission to retrieve and decrypt the encrypted data
    *
    * Access Level: Read
    *
@@ -141,15 +154,17 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifVersionStage()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
    */
   public toGetSecretValue() {
     return this.to('GetSecretValue');
   }
 
   /**
-   * Enables the user to list the available versions of a secret.
+   * Grants permission to list the available versions of a secret
    *
    * Access Level: Read
    *
@@ -157,26 +172,28 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretId()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_ListSecretVersionIds.html
    */
   public toListSecretVersionIds() {
     return this.to('ListSecretVersionIds');
   }
 
   /**
-   * Enables the user to list the available secrets.
+   * Grants permission to list the available secrets
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_ListSecrets.html
    */
   public toListSecrets() {
     return this.to('ListSecrets');
   }
 
   /**
-   * Enables the user to attach a resource policy to a secret.
+   * Grants permission to attach a resource policy to a secret
    *
    * Access Level: Permissions management
    *
@@ -184,16 +201,18 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretId()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
    * - .ifBlockPublicPolicy()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_PutResourcePolicy.html
    */
   public toPutResourcePolicy() {
     return this.to('PutResourcePolicy');
   }
 
   /**
-   * Enables the user to create a new version of the secret with new encrypted data.
+   * Grants permission to create a new version of the secret with new encrypted data
    *
    * Access Level: Write
    *
@@ -201,15 +220,17 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretId()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_PutSecretValue.html
    */
   public toPutSecretValue() {
     return this.to('PutSecretValue');
   }
 
   /**
-   * Remove regions from replication.
+   * Grants permission to remove regions from replication
    *
    * Access Level: Write
    *
@@ -217,15 +238,17 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretId()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RemoveRegionsFromReplication.html
    */
   public toRemoveRegionsFromReplication() {
     return this.to('RemoveRegionsFromReplication');
   }
 
   /**
-   * Converts an existing secret to a multi-Region secret and begins replicating the secret to a list of new regions.
+   * Grants permission to convert an existing secret to a multi-Region secret and begin replicating the secret to a list of new regions
    *
    * Access Level: Write
    *
@@ -233,15 +256,19 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretId()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
+   * - .ifAddReplicaRegions()
+   * - .ifForceOverwriteReplicaSecret()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_ReplicateSecretToRegions.html
    */
   public toReplicateSecretToRegions() {
     return this.to('ReplicateSecretToRegions');
   }
 
   /**
-   * Enables the user to cancel deletion of a secret.
+   * Grants permission to cancel deletion of a secret
    *
    * Access Level: Write
    *
@@ -249,15 +276,17 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretId()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RestoreSecret.html
    */
   public toRestoreSecret() {
     return this.to('RestoreSecret');
   }
 
   /**
-   * Enables the user to start rotation of a secret.
+   * Grants permission to start rotation of a secret
    *
    * Access Level: Write
    *
@@ -266,15 +295,17 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifRotationLambdaARN()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html
    */
   public toRotateSecret() {
     return this.to('RotateSecret');
   }
 
   /**
-   * Removes the secret from replication and promotes the secret to a regional secret in the replica Region.
+   * Grants permission to remove the secret from replication and promote the secret to a regional secret in the replica Region
    *
    * Access Level: Write
    *
@@ -282,15 +313,17 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretId()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_StopReplicationToReplica.html
    */
   public toStopReplicationToReplica() {
     return this.to('StopReplicationToReplica');
   }
 
   /**
-   * Enables the user to add tags to a secret.
+   * Grants permission to add tags to a secret
    *
    * Access Level: Tagging
    *
@@ -300,15 +333,17 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
   }
 
   /**
-   * Enables the user to remove tags from a secret.
+   * Grants permission to remove tags from a secret
    *
    * Access Level: Tagging
    *
@@ -317,15 +352,17 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
   }
 
   /**
-   * Enables the user to update a secret with new metadata or with a new version of the encrypted data.
+   * Grants permission to update a secret with new metadata or with a new version of the encrypted data
    *
    * Access Level: Write
    *
@@ -335,15 +372,17 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifKmsKeyId()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UpdateSecret.html
    */
   public toUpdateSecret() {
     return this.to('UpdateSecret');
   }
 
   /**
-   * Enables the user to move a stage from one secret to another.
+   * Grants permission to move a stage from one secret to another
    *
    * Access Level: Write
    *
@@ -352,15 +391,17 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifVersionStage()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UpdateSecretVersionStage.html
    */
   public toUpdateSecretVersionStage() {
     return this.to('UpdateSecretVersionStage');
   }
 
   /**
-   * Enables the user to validate a resource policy before attaching policy.
+   * Grants permission to validate a resource policy before attaching policy
    *
    * Access Level: Permissions management
    *
@@ -368,8 +409,10 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretId()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifAwsResourceTag()
+   * - .ifSecretPrimaryRegion()
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_ValidateResourcePolicy.html
    */
   public toValidateResourcePolicy() {
     return this.to('ValidateResourcePolicy');
@@ -422,6 +465,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifResourceTag()
    * - .ifResource()
@@ -431,7 +475,23 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by whether the resource policy blocks broad AWS account access.
+   * Filters access by the list of Regions in which to replicate the secret
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .toCreateSecret()
+   * - .toReplicateSecretToRegions()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAddReplicaRegions(value: string | string[], operator?: Operator | string) {
+    return this.if(`AddReplicaRegions`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by whether the resource policy blocks broad AWS account access
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
@@ -445,7 +505,7 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by the description text in the request.
+   * Filters access by the description text in the request
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
@@ -461,7 +521,7 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by whether the secret is to be deleted immediately without any recovery window.
+   * Filters access by whether the secret is to be deleted immediately without any recovery window
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
@@ -475,7 +535,22 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by the ARN of the KMS key in the request.
+   * Filters access by whether to overwrite a secret with the same name in the destination Region
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .toCreateSecret()
+   * - .toReplicateSecretToRegions()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifForceOverwriteReplicaSecret(value?: boolean) {
+    return this.if(`ForceOverwriteReplicaSecret`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the ARN of the KMS key in the request
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
@@ -491,7 +566,7 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by the friendly name of the secret in the request.
+   * Filters access by the friendly name of the secret in the request
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
@@ -506,7 +581,7 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by the number of days that Secrets Manager waits before it can delete the secret.
+   * Filters access by the number of days that Secrets Manager waits before it can delete the secret
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
@@ -521,7 +596,7 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by a tag key and value pair.
+   * Filters access by a tag key and value pair
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
@@ -559,7 +634,7 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by the ARN of the rotation Lambda function in the request.
+   * Filters access by the ARN of the rotation Lambda function in the request
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
@@ -574,7 +649,7 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by the SecretID value in the request.
+   * Filters access by the SecretID value in the request
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
@@ -607,9 +682,30 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Primary region in which the secret is created.
+   * Filters access by primary region in which the secret is created
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .toCancelRotateSecret()
+   * - .toDeleteResourcePolicy()
+   * - .toDeleteSecret()
+   * - .toDescribeSecret()
+   * - .toGetResourcePolicy()
+   * - .toGetSecretValue()
+   * - .toListSecretVersionIds()
+   * - .toPutResourcePolicy()
+   * - .toPutSecretValue()
+   * - .toRemoveRegionsFromReplication()
+   * - .toReplicateSecretToRegions()
+   * - .toRestoreSecret()
+   * - .toRotateSecret()
+   * - .toStopReplicationToReplica()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateSecret()
+   * - .toUpdateSecretVersionStage()
+   * - .toValidateResourcePolicy()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -619,7 +715,7 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by the unique identifier of the version of the secret in the request.
+   * Filters access by the unique identifier of the version of the secret in the request
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
@@ -634,7 +730,7 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by the list of version stages in the request.
+   * Filters access by the list of version stages in the request
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
@@ -650,7 +746,7 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by the ARN of the rotation Lambda function associated with the secret.
+   * Filters access by the ARN of the rotation Lambda function associated with the secret
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *

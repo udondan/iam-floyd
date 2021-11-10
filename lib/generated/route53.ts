@@ -503,7 +503,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to get a list of geographic locations that Route 53 supports for geolocation
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html
    */
@@ -514,7 +514,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to get a list of the health checks that are associated with the current AWS account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHealthChecks.html
    */
@@ -583,7 +583,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to list the reusable delegation sets that are associated with the current AWS account.
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListReusableDelegationSets.html
    */
@@ -594,7 +594,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to list tags for one health check or hosted zone
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTagsForResource.html
    */
@@ -605,7 +605,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to list tags for up to 10 health checks or hosted zones
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTagsForResources.html
    */
@@ -627,7 +627,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Grants permission to get information about the traffic policy instances that you created by using the current AWS account
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicyInstances.html
    */
@@ -778,6 +778,12 @@ export class Route53 extends PolicyStatement {
       'GetTrafficPolicy',
       'GetTrafficPolicyInstance',
       'GetTrafficPolicyInstanceCount',
+      'ListGeoLocations',
+      'ListHealthChecks',
+      'ListReusableDelegationSets',
+      'ListTagsForResource',
+      'ListTagsForResources',
+      'ListTrafficPolicyInstances',
       'TestDNSAnswer'
     ],
     List: [
@@ -790,18 +796,12 @@ export class Route53 extends PolicyStatement {
       'GetHostedZone',
       'GetHostedZoneCount',
       'GetReusableDelegationSet',
-      'ListGeoLocations',
-      'ListHealthChecks',
       'ListHostedZones',
       'ListHostedZonesByName',
       'ListHostedZonesByVPC',
       'ListQueryLoggingConfigs',
       'ListResourceRecordSets',
-      'ListReusableDelegationSets',
-      'ListTagsForResource',
-      'ListTagsForResources',
       'ListTrafficPolicies',
-      'ListTrafficPolicyInstances',
       'ListTrafficPolicyInstancesByHostedZone',
       'ListTrafficPolicyInstancesByPolicy',
       'ListTrafficPolicyVersions',

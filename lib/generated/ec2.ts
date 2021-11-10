@@ -2152,6 +2152,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe one or more Capacity Reservation Fleets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityReservationFleets.html
+   */
+  public toDescribeCapacityReservationFleets() {
+    return this.to('DescribeCapacityReservationFleets');
+  }
+
+  /**
    * Grants permission to describe one or more Capacity Reservations
    *
    * Access Level: List
@@ -5720,6 +5731,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeAvailabilityZones',
       'DescribeBundleTasks',
       'DescribeByoipCidrs',
+      'DescribeCapacityReservationFleets',
       'DescribeCapacityReservations',
       'DescribeCarrierGateways',
       'DescribeClassicLinkInstances',
@@ -7476,6 +7488,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toDescribeFpgaImageAttribute()
+   * - .toModifyAddressAttribute()
    * - .toModifyCapacityReservation()
    * - .toModifyCapacityReservationFleet()
    * - .toModifyClientVpnEndpoint()
@@ -8380,6 +8393,9 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .toRunInstances()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifIsLaunchTemplateResource(value?: boolean) {
@@ -8458,6 +8474,9 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the ARN of a launch template
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toRunInstances()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`

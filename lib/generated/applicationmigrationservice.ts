@@ -67,6 +67,21 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create vcenter client
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toCreateVcenterClientForMgn() {
+    return this.to('CreateVcenterClientForMgn');
+  }
+
+  /**
    * Grants permission to delete job
    *
    * Access Level: Write
@@ -97,6 +112,17 @@ export class Mgn extends PolicyStatement {
    */
   public toDeleteSourceServer() {
     return this.to('DeleteSourceServer');
+  }
+
+  /**
+   * Grants permission to delete vcenter client
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteVcenterClient.html
+   */
+  public toDeleteVcenterClient() {
+    return this.to('DeleteVcenterClient');
   }
 
   /**
@@ -163,6 +189,17 @@ export class Mgn extends PolicyStatement {
    */
   public toDescribeSourceServers() {
     return this.to('DescribeSourceServers');
+  }
+
+  /**
+   * Grants permission to describe vcenter clients
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_DescribeVcenterClients.html
+   */
+  public toDescribeVcenterClients() {
+    return this.to('DescribeVcenterClients');
   }
 
   /**
@@ -287,6 +324,17 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get vcenter client commands
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toGetVcenterClientCommandsForMgn() {
+    return this.to('GetVcenterClientCommandsForMgn');
+  }
+
+  /**
    * Grants permission to initialize service
    *
    * Access Level: Write
@@ -367,6 +415,17 @@ export class Mgn extends PolicyStatement {
    */
   public toNotifyAgentReplicationProgressForMgn() {
     return this.to('NotifyAgentReplicationProgressForMgn');
+  }
+
+  /**
+   * Grants permission to notify vcenter client started
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toNotifyVcenterClientStartedForMgn() {
+    return this.to('NotifyVcenterClientStartedForMgn');
   }
 
   /**
@@ -451,6 +510,39 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send vcenter client command result
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toSendVcenterClientCommandResultForMgn() {
+    return this.to('SendVcenterClientCommandResultForMgn');
+  }
+
+  /**
+   * Grants permission to send vcenter client logs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toSendVcenterClientLogsForMgn() {
+    return this.to('SendVcenterClientLogsForMgn');
+  }
+
+  /**
+   * Grants permission to send vcenter client metrics
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toSendVcenterClientMetricsForMgn() {
+    return this.to('SendVcenterClientMetricsForMgn');
+  }
+
+  /**
    * Grants permission to start cutover
    *
    * Access Level: Write
@@ -501,6 +593,17 @@ export class Mgn extends PolicyStatement {
    */
   public toStartCutover() {
     return this.to('StartCutover');
+  }
+
+  /**
+   * Grants permission to start replication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartReplication.html
+   */
+  public toStartReplication() {
+    return this.to('StartReplication');
   }
 
   /**
@@ -694,15 +797,28 @@ export class Mgn extends PolicyStatement {
     return this.to('UpdateReplicationConfigurationTemplate');
   }
 
+  /**
+   * Grants permission to update source server replication type
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateSourceServerReplicationType.html
+   */
+  public toUpdateSourceServerReplicationType() {
+    return this.to('UpdateSourceServerReplicationType');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchCreateVolumeSnapshotGroupForMgn',
       'BatchDeleteSnapshotRequestForMgn',
       'ChangeServerLifeCycleState',
       'CreateReplicationConfigurationTemplate',
+      'CreateVcenterClientForMgn',
       'DeleteJob',
       'DeleteReplicationConfigurationTemplate',
       'DeleteSourceServer',
+      'DeleteVcenterClient',
       'DisconnectFromService',
       'FinalizeCutover',
       'InitializeService',
@@ -711,6 +827,7 @@ export class Mgn extends PolicyStatement {
       'NotifyAgentConnectedForMgn',
       'NotifyAgentDisconnectedForMgn',
       'NotifyAgentReplicationProgressForMgn',
+      'NotifyVcenterClientStartedForMgn',
       'RegisterAgentForMgn',
       'RetryDataReplication',
       'SendAgentLogsForMgn',
@@ -718,7 +835,11 @@ export class Mgn extends PolicyStatement {
       'SendChannelCommandResultForMgn',
       'SendClientLogsForMgn',
       'SendClientMetricsForMgn',
+      'SendVcenterClientCommandResultForMgn',
+      'SendVcenterClientLogsForMgn',
+      'SendVcenterClientMetricsForMgn',
       'StartCutover',
+      'StartReplication',
       'StartTest',
       'TerminateTargetInstances',
       'UpdateAgentBacklogForMgn',
@@ -728,7 +849,8 @@ export class Mgn extends PolicyStatement {
       'UpdateAgentSourcePropertiesForMgn',
       'UpdateLaunchConfiguration',
       'UpdateReplicationConfiguration',
-      'UpdateReplicationConfigurationTemplate'
+      'UpdateReplicationConfigurationTemplate',
+      'UpdateSourceServerReplicationType'
     ],
     Read: [
       'DescribeJobLogItems',
@@ -743,12 +865,14 @@ export class Mgn extends PolicyStatement {
       'GetChannelCommandsForMgn',
       'GetLaunchConfiguration',
       'GetReplicationConfiguration',
+      'GetVcenterClientCommandsForMgn',
       'ListTagsForResource'
     ],
     List: [
       'DescribeJobs',
       'DescribeReplicationConfigurationTemplates',
-      'DescribeSourceServers'
+      'DescribeSourceServers',
+      'DescribeVcenterClients'
     ],
     Tagging: [
       'TagResource',
@@ -788,6 +912,23 @@ export class Mgn extends PolicyStatement {
    */
   public onReplicationConfigurationTemplateResource(replicationConfigurationTemplateID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:mgn:${ region || '*' }:${ account || '*' }:replication-configuration-template/${ replicationConfigurationTemplateID }`);
+  }
+
+  /**
+   * Adds a resource of type VcenterClientResource to the statement
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/vcenter-client.html
+   *
+   * @param vcenterClientID - Identifier for the vcenterClientID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVcenterClientResource(vcenterClientID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:mgn:${ region || '*' }:${ account || '*' }:vcenter-client/${ vcenterClientID }`);
   }
 
   /**

@@ -189,7 +189,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-deleteelasticsearchdomain
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-deletedomain
    */
   public toDeleteElasticsearchDomain() {
     return this.to('DeleteElasticsearchDomain');
@@ -317,7 +317,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view a description of the configuration and status of an OpenSearch Service domain. This permission is deprecated. Use DescribeDomainConfig instead.s
+   * Grants permission to view a description of the configuration and status of an OpenSearch Service domain. This permission is deprecated. Use DescribeDomainConfig instead
    *
    * Access Level: Read
    *
@@ -420,7 +420,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describereservedinstanceofferings.
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describereservedinstanceofferings
    */
   public toDescribeReservedElasticsearchInstanceOfferings() {
     return this.to('DescribeReservedElasticsearchInstanceOfferings');
@@ -497,7 +497,7 @@ export class Es extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/es-ac.html#es-ac-reference
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html#ac-reference
    */
   public toESHttpGet() {
     return this.to('ESHttpGet');
