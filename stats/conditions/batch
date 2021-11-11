@@ -7,5 +7,6 @@ batch:LogDriver
 batch:Privileged
 batch:RequestTag/${TagKey}
 batch:ResourceTag/${TagKey}
+batch:ShareIdentifier
 batch:TagKeys
 batch:User

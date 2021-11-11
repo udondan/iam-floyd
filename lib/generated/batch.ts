@@ -60,6 +60,21 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an AWS Batch scheduling policy in your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateSchedulingPolicy.html
+   */
+  public toCreateSchedulingPolicy() {
+    return this.to('CreateSchedulingPolicy');
+  }
+
+  /**
    * Grants permission to delete an AWS Batch compute environment in your account
    *
    * Access Level: Write
@@ -79,6 +94,17 @@ export class Batch extends PolicyStatement {
    */
   public toDeleteJobQueue() {
     return this.to('DeleteJobQueue');
+  }
+
+  /**
+   * Grants permission to delete an AWS Batch scheduling policy in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteSchedulingPolicy.html
+   */
+  public toDeleteSchedulingPolicy() {
+    return this.to('DeleteSchedulingPolicy');
   }
 
   /**
@@ -137,6 +163,17 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe one or more AWS Batch scheduling policies in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeSchedulingPolicies.html
+   */
+  public toDescribeSchedulingPolicies() {
+    return this.to('DescribeSchedulingPolicies');
+  }
+
+  /**
    * Grants permission to list jobs for a specified AWS Batch job queue in your account
    *
    * Access Level: List
@@ -145,6 +182,17 @@ export class Batch extends PolicyStatement {
    */
   public toListJobs() {
     return this.to('ListJobs');
+  }
+
+  /**
+   * Grants permission to list AWS Batch scheduling policies in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_ListSchedulingPolicies.html
+   */
+  public toListSchedulingPolicies() {
+    return this.to('ListSchedulingPolicies');
   }
 
   /**
@@ -189,6 +237,7 @@ export class Batch extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifShareIdentifier()
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html
    */
@@ -258,25 +307,41 @@ export class Batch extends PolicyStatement {
     return this.to('UpdateJobQueue');
   }
 
+  /**
+   * Grants permission to update an AWS Batch scheduling policy in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateSchedulingPolicy.html
+   */
+  public toUpdateSchedulingPolicy() {
+    return this.to('UpdateSchedulingPolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelJob',
       'CreateComputeEnvironment',
       'CreateJobQueue',
+      'CreateSchedulingPolicy',
       'DeleteComputeEnvironment',
       'DeleteJobQueue',
+      'DeleteSchedulingPolicy',
       'DeregisterJobDefinition',
       'RegisterJobDefinition',
       'SubmitJob',
       'TerminateJob',
       'UpdateComputeEnvironment',
-      'UpdateJobQueue'
+      'UpdateJobQueue',
+      'UpdateSchedulingPolicy'
     ],
     Read: [
       'DescribeComputeEnvironments',
       'DescribeJobDefinitions',
       'DescribeJobQueues',
       'DescribeJobs',
+      'DescribeSchedulingPolicies',
+      'ListSchedulingPolicies',
       'ListTagsForResource'
     ],
     List: [
@@ -358,9 +423,26 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the specified logging driver to determine whether awslogs group will be created for the logs
+   * Adds a resource of type scheduling-policy to the statement
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   * https://docs.aws.amazon.com/batch/latest/userguide/scheduling-policy.html
+   *
+   * @param schedulingPolicyName - Identifier for the schedulingPolicyName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSchedulingPolicy(schedulingPolicyName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:batch:${ region || '*' }:${ account || '*' }:scheduling-policy/${ schedulingPolicyName }`);
+  }
+
+  /**
+   * Filters access by the specified logging driver to determine whether awslogs group will be created for the logs
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
    *
    * Applies to actions:
    * - .toRegisterJobDefinition()
@@ -372,9 +454,9 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the awslogs group where the logs are located
+   * Filters access by the awslogs group where the logs are located
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
    *
    * Applies to actions:
    * - .toRegisterJobDefinition()
@@ -387,9 +469,9 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the region where the logs are sent to
+   * Filters access by the region where the logs are sent to
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
    *
    * Applies to actions:
    * - .toRegisterJobDefinition()
@@ -402,9 +484,9 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the awslogs log stream prefix
+   * Filters access by the awslogs log stream prefix
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
    *
    * Applies to actions:
    * - .toRegisterJobDefinition()
@@ -417,9 +499,9 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the image used to start a container
+   * Filters access by on the image used to start a container
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
    *
    * Applies to actions:
    * - .toRegisterJobDefinition()
@@ -432,9 +514,9 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the log driver used for the container
+   * Filters access by the log driver used for the container
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
    *
    * Applies to actions:
    * - .toRegisterJobDefinition()
@@ -447,9 +529,9 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Filter access based on the specified privileged parameter value that determines whether the container is given elevated privileges on the host container instance (similar to the root user)
+   * Filters access by the specified privileged parameter value that determines whether the container is given elevated privileges on the host container instance (similar to the root user)
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
    *
    * Applies to actions:
    * - .toRegisterJobDefinition()
@@ -461,9 +543,24 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the user name or numeric uid used inside the container
+   * Filters access by the shareIdentifier used inside submit job
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toSubmitJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifShareIdentifier(value: string | string[], operator?: Operator | string) {
+    return this.if(`ShareIdentifier`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by user name or numeric uid used inside the container
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
    *
    * Applies to actions:
    * - .toRegisterJobDefinition()

@@ -19,6 +19,28 @@ export class GreengrassV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a list of client devices with a core device
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchAssociateClientDeviceWithCoreDevice.html
+   */
+  public toBatchAssociateClientDeviceWithCoreDevice() {
+    return this.to('BatchAssociateClientDeviceWithCoreDevice');
+  }
+
+  /**
+   * Grants permission to disassociate a list of client devices from a core device
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchDisassociateClientDeviceFromCoreDevice.html
+   */
+  public toBatchDisassociateClientDeviceFromCoreDevice() {
+    return this.to('BatchDisassociateClientDeviceFromCoreDevice');
+  }
+
+  /**
    * Grants permission to cancel a deployment
    *
    * Access Level: Write
@@ -167,6 +189,17 @@ export class GreengrassV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a paginated list of client devices associated to a AWS IoT Greengrass core device
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/greengrass/v2/APIReference/API_ListClientDevicesAssociatedWithCoreDevice.html
+   */
+  public toListClientDevicesAssociatedWithCoreDevice() {
+    return this.to('ListClientDevicesAssociatedWithCoreDevice');
+  }
+
+  /**
    * Grants permission to retrieve a paginated list of all versions for a component
    *
    * Access Level: List
@@ -248,7 +281,7 @@ export class GreengrassV2 extends PolicyStatement {
   /**
    * Grants permission to list the tags for a resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -303,6 +336,8 @@ export class GreengrassV2 extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'BatchAssociateClientDeviceWithCoreDevice',
+      'BatchDisassociateClientDeviceFromCoreDevice',
       'CancelDeployment',
       'CreateComponentVersion',
       'CreateDeployment',
@@ -314,16 +349,17 @@ export class GreengrassV2 extends PolicyStatement {
       'GetComponent',
       'GetComponentVersionArtifact',
       'GetCoreDevice',
-      'GetDeployment'
+      'GetDeployment',
+      'ListTagsForResource'
     ],
     List: [
+      'ListClientDevicesAssociatedWithCoreDevice',
       'ListComponentVersions',
       'ListComponents',
       'ListCoreDevices',
       'ListDeployments',
       'ListEffectiveDeployments',
       'ListInstalledComponents',
-      'ListTagsForResource',
       'ResolveComponentCandidates'
     ],
     Tagging: [

@@ -1,14 +1,18 @@
 batch:CancelJob;Write
 batch:CreateComputeEnvironment;Write
 batch:CreateJobQueue;Write
+batch:CreateSchedulingPolicy;Write
 batch:DeleteComputeEnvironment;Write
 batch:DeleteJobQueue;Write
+batch:DeleteSchedulingPolicy;Write
 batch:DeregisterJobDefinition;Write
 batch:DescribeComputeEnvironments;Read
 batch:DescribeJobDefinitions;Read
 batch:DescribeJobQueues;Read
 batch:DescribeJobs;Read
+batch:DescribeSchedulingPolicies;Read
 batch:ListJobs;List
+batch:ListSchedulingPolicies;Read
 batch:ListTagsForResource;Read
 batch:RegisterJobDefinition;Write
 batch:SubmitJob;Write
@@ -17,3 +21,4 @@ batch:TerminateJob;Write
 batch:UntagResource;Tagging
 batch:UpdateComputeEnvironment;Write
 batch:UpdateJobQueue;Write
+batch:UpdateSchedulingPolicy;Write

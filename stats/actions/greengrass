@@ -1,5 +1,7 @@
 greengrass:AssociateRoleToGroup;Write
 greengrass:AssociateServiceRoleToAccount;Permissions management
+greengrass:BatchAssociateClientDeviceWithCoreDevice;Write
+greengrass:BatchDisassociateClientDeviceFromCoreDevice;Write
 greengrass:CancelDeployment;Write
 greengrass:CreateComponentVersion;Write
 greengrass:CreateConnectorDefinition;Write
@@ -65,6 +67,7 @@ greengrass:GetSubscriptionDefinitionVersion;Read
 greengrass:GetThingRuntimeConfiguration;Read
 greengrass:ListBulkDeploymentDetailedReports;Read
 greengrass:ListBulkDeployments;List
+greengrass:ListClientDevicesAssociatedWithCoreDevice;List
 greengrass:ListComponentVersions;List
 greengrass:ListComponents;List
 greengrass:ListConnectorDefinitionVersions;List
@@ -88,7 +91,6 @@ greengrass:ListResourceDefinitionVersions;List
 greengrass:ListResourceDefinitions;List
 greengrass:ListSubscriptionDefinitionVersions;List
 greengrass:ListSubscriptionDefinitions;List
-greengrass:ListTagsForResource;List
 greengrass:ListTagsForResource;Read
 greengrass:ResetDeployments;Write
 greengrass:ResolveComponentCandidates;List

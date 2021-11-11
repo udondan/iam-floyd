@@ -5949,6 +5949,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAttribute()
    * - .ifCapacityReservationFleet()
+   * - .ifIsLaunchTemplateResource()
+   * - .ifLaunchTemplate()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -6061,6 +6063,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifAvailabilityZone()
    * - .ifHostRecovery()
    * - .ifInstanceType()
+   * - .ifIsLaunchTemplateResource()
+   * - .ifLaunchTemplate()
    * - .ifQuantity()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -6126,6 +6130,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifElasticGpuType()
+   * - .ifIsLaunchTemplateResource()
+   * - .ifLaunchTemplate()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -6270,6 +6276,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAttribute()
    * - .ifImageType()
+   * - .ifIsLaunchTemplateResource()
+   * - .ifLaunchTemplate()
    * - .ifOwner()
    * - .ifPublic()
    * - .ifRegion()
@@ -6363,6 +6371,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifInstanceMarketType()
    * - .ifInstanceProfile()
    * - .ifInstanceType()
+   * - .ifIsLaunchTemplateResource()
+   * - .ifLaunchTemplate()
    * - .ifMetadataHttpEndpoint()
    * - .ifMetadataHttpPutResponseHopLimit()
    * - .ifMetadataHttpTokens()
@@ -6454,8 +6464,10 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifIsLaunchTemplateResource()
    * - .ifKeyPairName()
    * - .ifKeyPairType()
+   * - .ifLaunchTemplate()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -6478,6 +6490,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
+   * - .ifIsLaunchTemplateResource()
+   * - .ifLaunchTemplate()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -6715,6 +6729,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifAuthorizedService()
    * - .ifAuthorizedUser()
    * - .ifAvailabilityZone()
+   * - .ifIsLaunchTemplateResource()
+   * - .ifLaunchTemplate()
    * - .ifPermission()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -6739,6 +6755,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifIsLaunchTemplateResource()
+   * - .ifLaunchTemplate()
    * - .ifPlacementGroupStrategy()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -6865,6 +6883,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifIsLaunchTemplateResource()
+   * - .ifLaunchTemplate()
    * - .ifRegion()
    * - .ifResourceTag()
    * - .ifVpc()
@@ -6910,6 +6930,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifAttribute()
    * - .ifAvailabilityZone()
    * - .ifEncrypted()
+   * - .ifIsLaunchTemplateResource()
+   * - .ifLaunchTemplate()
    * - .ifOutpostArn()
    * - .ifOwner()
    * - .ifParentVolume()
@@ -6982,6 +7004,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAttribute()
    * - .ifAvailabilityZone()
+   * - .ifIsLaunchTemplateResource()
+   * - .ifLaunchTemplate()
    * - .ifRegion()
    * - .ifResourceTag()
    * - .ifVpc()
@@ -7198,7 +7222,9 @@ export class Ec2 extends PolicyStatement {
    * - .ifAttribute()
    * - .ifAvailabilityZone()
    * - .ifEncrypted()
+   * - .ifIsLaunchTemplateResource()
    * - .ifKmsKeyId()
+   * - .ifLaunchTemplate()
    * - .ifParentSnapshot()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -7338,6 +7364,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -8396,6 +8423,21 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toRunInstances()
    *
+   * Applies to resource types:
+   * - capacity-reservation
+   * - dedicated-host
+   * - elastic-gpu
+   * - image
+   * - instance
+   * - key-pair
+   * - launch-template
+   * - network-interface
+   * - placement-group
+   * - security-group
+   * - snapshot
+   * - subnet
+   * - volume
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifIsLaunchTemplateResource(value?: boolean) {
@@ -8477,6 +8519,21 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toRunInstances()
+   *
+   * Applies to resource types:
+   * - capacity-reservation
+   * - dedicated-host
+   * - elastic-gpu
+   * - image
+   * - instance
+   * - key-pair
+   * - launch-template
+   * - network-interface
+   * - placement-group
+   * - security-group
+   * - snapshot
+   * - subnet
+   * - volume
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`

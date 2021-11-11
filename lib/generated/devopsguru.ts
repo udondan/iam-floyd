@@ -89,6 +89,39 @@ export class DevopsGuru extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view the health of operations in your organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeOrganizationAccountHealth.html
+   */
+  public toDescribeOrganizationHealth() {
+    return this.to('DescribeOrganizationHealth');
+  }
+
+  /**
+   * Grants permission to view the health of operations within a time range in your organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeOrganizationOverview.html
+   */
+  public toDescribeOrganizationOverview() {
+    return this.to('DescribeOrganizationOverview');
+  }
+
+  /**
+   * Grants permission to view the health of operations for each AWS CloudFormation stack or AWS Services or accounts specified in DevOps Guru in your organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeOrganizationResourceCollectionHealth.html
+   */
+  public toDescribeOrganizationResourceCollectionHealth() {
+    return this.to('DescribeOrganizationResourceCollectionHealth');
+  }
+
+  /**
    * Grants permission to view the health of operations for each AWS CloudFormation stack specified in DevOps Guru
    *
    * Access Level: Read
@@ -177,6 +210,17 @@ export class DevopsGuru extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list insights in your organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_ListOrganizationInsights.html
+   */
+  public toListOrganizationInsights() {
+    return this.to('ListOrganizationInsights');
+  }
+
+  /**
    * Grants permission to list a specified insight's recommendations
    *
    * Access Level: List
@@ -225,6 +269,17 @@ export class DevopsGuru extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search insights in your organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_SearchOrganizationInsights.html
+   */
+  public toSearchOrganizationInsights() {
+    return this.to('SearchOrganizationInsights');
+  }
+
+  /**
    * Grants permission to start the creation of an estimate of the monthly cost
    *
    * Access Level: Read
@@ -247,7 +302,7 @@ export class DevopsGuru extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to enable or disable a service that integrates with DevOps Guru
+   * Grants permission to enable or disable a service that integrates with DevOps Guru
    *
    * Access Level: Write
    *
@@ -271,6 +326,9 @@ export class DevopsGuru extends PolicyStatement {
       'DescribeAnomaly',
       'DescribeFeedback',
       'DescribeInsight',
+      'DescribeOrganizationHealth',
+      'DescribeOrganizationOverview',
+      'DescribeOrganizationResourceCollectionHealth',
       'DescribeResourceCollectionHealth',
       'DescribeServiceIntegration',
       'GetCostEstimation',
@@ -282,8 +340,10 @@ export class DevopsGuru extends PolicyStatement {
       'ListEvents',
       'ListInsights',
       'ListNotificationChannels',
+      'ListOrganizationInsights',
       'ListRecommendations',
-      'SearchInsights'
+      'SearchInsights',
+      'SearchOrganizationInsights'
     ]
   };
 
