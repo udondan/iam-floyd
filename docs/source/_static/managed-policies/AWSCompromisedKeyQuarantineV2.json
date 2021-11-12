@@ -53,7 +53,7 @@
 				"s3:DeleteObjectVersion",
 				"s3:PutLifecycleConfiguration",
 				"s3:PutBucketAcl",
-				"s3:DeleteBucketOwnershipControls",
+				"s3:PutBucketOwnershipControls",
 				"s3:DeleteBucketPolicy",
 				"s3:ObjectOwnerOverrideToBucketOwner",
 				"s3:PutAccountPublicAccessBlock",

@@ -309,6 +309,15 @@
         {
             "Effect": "Allow",
             "Action": [
+                "ecs:UpdateClusterSettings"
+            ],
+            "Resource": [
+                "arn:aws:ecs:*:*:cluster/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
                 "eks:DescribeCluster",
                 "eks:DescribeFargateProfile",
                 "eks:DescribeNodegroup",
