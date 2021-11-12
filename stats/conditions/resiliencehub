@@ -1,0 +1,3 @@
+resiliencehub:RequestTag/${TagKey}
+resiliencehub:ResourceTag/${TagKey}
+resiliencehub:TagKeys

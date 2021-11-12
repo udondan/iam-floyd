@@ -229,6 +229,11 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAccountLevel()
+   * - .ifRoleLevel()
+   * - .ifUserLevel()
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProvisionedProductPlan.html
    */
   public toCreateProvisionedProductPlan() {
@@ -338,6 +343,11 @@ export class Servicecatalog extends PolicyStatement {
    * Grants permission to delete a provisioned product plan
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAccountLevel()
+   * - .ifRoleLevel()
+   * - .ifUserLevel()
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProvisionedProductPlan.html
    */
@@ -471,6 +481,11 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAccountLevel()
+   * - .ifRoleLevel()
+   * - .ifUserLevel()
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisionedProduct.html
    */
   public toDescribeProvisionedProduct() {
@@ -481,6 +496,11 @@ export class Servicecatalog extends PolicyStatement {
    * Grants permission to describe a provisioned product plan
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAccountLevel()
+   * - .ifRoleLevel()
+   * - .ifUserLevel()
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisionedProductPlan.html
    */
@@ -541,6 +561,11 @@ export class Servicecatalog extends PolicyStatement {
    * Grants permission to get the default parameters if you executed the specified Service Action on the specified Provisioned Product
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAccountLevel()
+   * - .ifRoleLevel()
+   * - .ifUserLevel()
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeServiceActionExecutionParameters.html
    */
@@ -663,6 +688,11 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAccountLevel()
+   * - .ifRoleLevel()
+   * - .ifUserLevel()
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ExecuteProvisionedProductPlan.html
    */
   public toExecuteProvisionedProductPlan() {
@@ -673,6 +703,11 @@ export class Servicecatalog extends PolicyStatement {
    * Grants permission to executes a provisioned product plan
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAccountLevel()
+   * - .ifRoleLevel()
+   * - .ifUserLevel()
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ExecuteProvisionedProductServiceAction.html
    */
@@ -894,6 +929,11 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAccountLevel()
+   * - .ifRoleLevel()
+   * - .ifUserLevel()
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisionedProductPlans.html
    */
   public toListProvisionedProductPlans() {
@@ -965,6 +1005,11 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAccountLevel()
+   * - .ifRoleLevel()
+   * - .ifUserLevel()
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListServiceActionsForProvisioningArtifact.html
    */
   public toListServiceActionsForProvisioningArtifact() {
@@ -975,6 +1020,11 @@ export class Servicecatalog extends PolicyStatement {
    * Grants permission to list account, region and status of each stack instances that are associated with a CFN_STACKSET type provisioned product
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAccountLevel()
+   * - .ifRoleLevel()
+   * - .ifUserLevel()
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListStackInstancesForProvisionedProduct.html
    */
@@ -1464,13 +1514,23 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Filters users to see and perform actions on resources created by anyone in the account
+   * Filters access by user to see and perform actions on resources created by anyone in the account
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html
    *
    * Applies to actions:
+   * - .toCreateProvisionedProductPlan()
+   * - .toDeleteProvisionedProductPlan()
+   * - .toDescribeProvisionedProduct()
+   * - .toDescribeProvisionedProductPlan()
    * - .toDescribeRecord()
+   * - .toDescribeServiceActionExecutionParameters()
+   * - .toExecuteProvisionedProductPlan()
+   * - .toExecuteProvisionedProductServiceAction()
+   * - .toListProvisionedProductPlans()
    * - .toListRecordHistory()
+   * - .toListServiceActionsForProvisioningArtifact()
+   * - .toListStackInstancesForProvisionedProduct()
    * - .toScanProvisionedProducts()
    * - .toSearchProvisionedProducts()
    * - .toTerminateProvisionedProduct()
@@ -1484,13 +1544,23 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Filters users to see and perform actions on resources created either by them or by anyone federating into the same role as them
+   * Filters access by user to see and perform actions on resources created either by them or by anyone federating into the same role as them
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html
    *
    * Applies to actions:
+   * - .toCreateProvisionedProductPlan()
+   * - .toDeleteProvisionedProductPlan()
+   * - .toDescribeProvisionedProduct()
+   * - .toDescribeProvisionedProductPlan()
    * - .toDescribeRecord()
+   * - .toDescribeServiceActionExecutionParameters()
+   * - .toExecuteProvisionedProductPlan()
+   * - .toExecuteProvisionedProductServiceAction()
+   * - .toListProvisionedProductPlans()
    * - .toListRecordHistory()
+   * - .toListServiceActionsForProvisioningArtifact()
+   * - .toListStackInstancesForProvisionedProduct()
    * - .toScanProvisionedProducts()
    * - .toSearchProvisionedProducts()
    * - .toTerminateProvisionedProduct()
@@ -1504,13 +1574,23 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Filters users to see and perform actions on only resources that they created
+   * Filters access by user to see and perform actions on only resources that they created
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html
    *
    * Applies to actions:
+   * - .toCreateProvisionedProductPlan()
+   * - .toDeleteProvisionedProductPlan()
+   * - .toDescribeProvisionedProduct()
+   * - .toDescribeProvisionedProductPlan()
    * - .toDescribeRecord()
+   * - .toDescribeServiceActionExecutionParameters()
+   * - .toExecuteProvisionedProductPlan()
+   * - .toExecuteProvisionedProductServiceAction()
+   * - .toListProvisionedProductPlans()
    * - .toListRecordHistory()
+   * - .toListServiceActionsForProvisioningArtifact()
+   * - .toListStackInstancesForProvisionedProduct()
    * - .toScanProvisionedProducts()
    * - .toSearchProvisionedProducts()
    * - .toTerminateProvisionedProduct()

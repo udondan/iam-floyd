@@ -23,6 +23,7 @@ route53resolver:GetFirewallDomainList;Read
 route53resolver:GetFirewallRuleGroup;Read
 route53resolver:GetFirewallRuleGroupAssociation;Read
 route53resolver:GetFirewallRuleGroupPolicy;Read
+route53resolver:GetResolverConfig;Read
 route53resolver:GetResolverDnssecConfig;Read
 route53resolver:GetResolverEndpoint;Read
 route53resolver:GetResolverQueryLogConfig;Read
@@ -38,6 +39,7 @@ route53resolver:ListFirewallDomains;List
 route53resolver:ListFirewallRuleGroupAssociations;List
 route53resolver:ListFirewallRuleGroups;List
 route53resolver:ListFirewallRules;List
+route53resolver:ListResolverConfigs;List
 route53resolver:ListResolverDnssecConfigs;List
 route53resolver:ListResolverEndpointIpAddresses;List
 route53resolver:ListResolverEndpoints;List
@@ -55,6 +57,7 @@ route53resolver:UpdateFirewallConfig;Write
 route53resolver:UpdateFirewallDomains;Write
 route53resolver:UpdateFirewallRule;Write
 route53resolver:UpdateFirewallRuleGroupAssociation;Write
+route53resolver:UpdateResolverConfig;Write
 route53resolver:UpdateResolverDnssecConfig;Write
 route53resolver:UpdateResolverEndpoint;Write
 route53resolver:UpdateResolverRule;Write

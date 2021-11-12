@@ -23,6 +23,10 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
    * - ec2:DescribeVpcs
    *
@@ -70,6 +74,10 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateFirewallDomainList.html
    */
   public toCreateFirewallDomainList() {
@@ -92,6 +100,10 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateFirewallRuleGroup.html
    */
   public toCreateFirewallRuleGroup() {
@@ -102,6 +114,10 @@ export class Route53resolver extends PolicyStatement {
    * Grants permission to create a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html
    */
@@ -114,6 +130,10 @@ export class Route53resolver extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverQueryLogConfig.html
    */
   public toCreateResolverQueryLogConfig() {
@@ -121,9 +141,13 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * For DNS queries that originate in your VPC, grants permission to define how to route the queries out of the VPC
+   * Grants permission to define how to route queries originating from your VPC out of the VPC
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html
    */
@@ -300,6 +324,20 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the Resolver Config status within the specified resource
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverConfig.html
+   */
+  public toGetResolverConfig() {
+    return this.to('GetResolverConfig');
+  }
+
+  /**
    * Grants permission to get the DNSSEC validation support status for DNS queries within the specified resource
    *
    * Access Level: Read
@@ -468,6 +506,20 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list Resolver Config statuses
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverConfigs.html
+   */
+  public toListResolverConfigs() {
+    return this.to('ListResolverConfigs');
+  }
+
+  /**
    * Grants permission to list the DNSSEC validation support status for DNS queries
    *
    * Access Level: List
@@ -479,7 +531,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * For a specified Resolver endpoint, grants permission to list the IP addresses that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound)
+   * Grants permission to list the IP addresses that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound) for a specified Resolver endpoint
    *
    * Access Level: List
    *
@@ -658,6 +710,20 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the Resolver Config status within the specified resource
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcs
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverConfig.html
+   */
+  public toUpdateResolverConfig() {
+    return this.to('UpdateResolverConfig');
+  }
+
+  /**
    * Grants permission to update the DNSSEC validation support status for DNS queries within the specified resource
    *
    * Access Level: Write
@@ -717,6 +783,7 @@ export class Route53resolver extends PolicyStatement {
       'UpdateFirewallDomains',
       'UpdateFirewallRule',
       'UpdateFirewallRuleGroupAssociation',
+      'UpdateResolverConfig',
       'UpdateResolverDnssecConfig',
       'UpdateResolverEndpoint',
       'UpdateResolverRule'
@@ -727,6 +794,7 @@ export class Route53resolver extends PolicyStatement {
       'GetFirewallRuleGroup',
       'GetFirewallRuleGroupAssociation',
       'GetFirewallRuleGroupPolicy',
+      'GetResolverConfig',
       'GetResolverDnssecConfig',
       'GetResolverEndpoint',
       'GetResolverQueryLogConfig',
@@ -744,6 +812,7 @@ export class Route53resolver extends PolicyStatement {
       'ListFirewallRuleGroupAssociations',
       'ListFirewallRuleGroups',
       'ListFirewallRules',
+      'ListResolverConfigs',
       'ListResolverDnssecConfigs',
       'ListResolverEndpointIpAddresses',
       'ListResolverEndpoints',
@@ -897,5 +966,19 @@ export class Route53resolver extends PolicyStatement {
    */
   public onFirewallConfig(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:firewall-config/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type resolver-config to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html/#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onResolverConfig(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:route53resolver:${ region || '*' }:${ account || '*' }:resolver-config/${ resourceId }`);
   }
 }

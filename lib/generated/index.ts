@@ -255,6 +255,7 @@ export { Pi } from './performanceinsights';
 export { Pricing } from './pricelist';
 export { Proton } from './proton';
 export { PurchaseOrders } from './purchaseordersconsole';
+export { Resiliencehub } from './resiliencehubservice';
 export { Ram } from './resourceaccessmanager';
 export { ResourceGroups } from './resourcegroups';
 export { Robomaker } from './robomaker';
