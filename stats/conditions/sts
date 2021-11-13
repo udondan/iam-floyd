@@ -1,3 +1,4 @@
+sts:AWSServiceName
 sts:ExternalId
 sts:FederatedProvider
 sts:PrincipalTag/${TagKey}

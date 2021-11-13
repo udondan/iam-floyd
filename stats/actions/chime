@@ -82,9 +82,11 @@ chime:DeleteVoiceConnectorProxy;Write
 chime:DeleteVoiceConnectorStreamingConfiguration;Write
 chime:DeleteVoiceConnectorTermination;Write
 chime:DeleteVoiceConnectorTerminationCredentials;Write
+chime:DeregisterAppInstanceUserEndpoint;Write
 chime:DescribeAppInstance;Read
 chime:DescribeAppInstanceAdmin;Read
 chime:DescribeAppInstanceUser;Read
+chime:DescribeAppInstanceUserEndpoint;Read
 chime:DescribeChannel;Read
 chime:DescribeChannelBan;Read
 chime:DescribeChannelFlow;Read
@@ -107,6 +109,7 @@ chime:GetAppInstanceStreamingConfigurations;Read
 chime:GetAttendee;Read
 chime:GetBot;Read
 chime:GetCDRBucket;Read
+chime:GetChannelMembershipPreferences;Read
 chime:GetChannelMessage;Read
 chime:GetChannelMessageStatus;Read
 chime:GetDomain;Read
@@ -146,6 +149,7 @@ chime:ListAccountUsageReportData;List
 chime:ListAccounts;List
 chime:ListApiKeys;List
 chime:ListAppInstanceAdmins;List
+chime:ListAppInstanceUserEndpoints;List
 chime:ListAppInstanceUsers;List
 chime:ListAppInstances;List
 chime:ListAttendeeTags;List
@@ -187,6 +191,7 @@ chime:ListVoiceConnectors;List
 chime:LogoutUser;Write
 chime:PutAppInstanceRetentionSettings;Write
 chime:PutAppInstanceStreamingConfigurations;Write
+chime:PutChannelMembershipPreferences;Write
 chime:PutEventsConfiguration;Write
 chime:PutRetentionSettings;Write
 chime:PutSipMediaApplicationLoggingConfiguration;Write
@@ -201,6 +206,7 @@ chime:RedactChannelMessage;Write
 chime:RedactConversationMessage;Write
 chime:RedactRoomMessage;Write
 chime:RegenerateSecurityToken;Write
+chime:RegisterAppInstanceUserEndpoint;Write
 chime:RenameAccount;Write
 chime:RenewDelegate;Write
 chime:ResetAccountResource;Write
@@ -227,6 +233,7 @@ chime:UpdateAccountResource;Write
 chime:UpdateAccountSettings;Write
 chime:UpdateAppInstance;Write
 chime:UpdateAppInstanceUser;Write
+chime:UpdateAppInstanceUserEndpoint;Write
 chime:UpdateBot;Write
 chime:UpdateCDRSettings;Write
 chime:UpdateChannel;Write

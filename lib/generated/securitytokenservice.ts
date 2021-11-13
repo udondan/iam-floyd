@@ -19,7 +19,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Returns a set of temporary security credentials that you can use to access AWS resources that you might not normally have access to
+   * Grants permission to obtain a set of temporary security credentials that you can use to access AWS resources that you might not normally have access to
    *
    * Access Level: Write
    *
@@ -41,7 +41,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Returns a set of temporary security credentials for users who have been authenticated via a SAML authentication response
+   * Grants permission to obtain a set of temporary security credentials for users who have been authenticated via a SAML authentication response
    *
    * Access Level: Write
    *
@@ -92,7 +92,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Returns a set of temporary security credentials for users who have been authenticated in a mobile or web application with a web identity provider
+   * Grants permission to obtain a set of temporary security credentials for users who have been authenticated in a mobile or web application with a web identity provider
    *
    * Access Level: Write
    *
@@ -121,7 +121,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Decodes additional information about the authorization status of a request from an encoded message returned in response to an AWS request
+   * Grants permission to decode additional information about the authorization status of a request from an encoded message returned in response to an AWS request
    *
    * Access Level: Write
    *
@@ -132,7 +132,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Returns details about the access key id passed as a parameter to the request.
+   * Grants permission to obtain details about the access key id passed as a parameter to the request
    *
    * Access Level: Read
    *
@@ -143,7 +143,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Returns details about the IAM identity whose credentials are used to call the API
+   * Grants permission to obtain details about the IAM identity whose credentials are used to call the API
    *
    * Access Level: Read
    *
@@ -154,7 +154,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for a federated user
+   * Grants permission to obtain a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for a federated user
    *
    * Access Level: Read
    *
@@ -170,9 +170,12 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Returns a STS bearer token for an AWS root user, IAM role, or an IAM user
+   * Grants permission to obtain a STS bearer token for an AWS root user, IAM role, or an IAM user
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAWSServiceName()
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_bearer.html
    */
@@ -181,7 +184,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for an AWS account or IAM user
+   * Grants permission to obtain a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for an AWS account or IAM user
    *
    * Access Level: Read
    *
@@ -273,7 +276,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the Google application ID
+   * Filters access by the Google application ID
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
    *
@@ -288,7 +291,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the Google audience
+   * Filters access by the Google audience
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_oaud
    *
@@ -303,7 +306,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the subject of the claim (the Google user ID)
+   * Filters access by the subject of the claim (the Google user ID)
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub
    *
@@ -318,7 +321,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the IdP that was used to authenticate the user
+   * Filters access by the IdP that was used to authenticate the user
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_federatedprovider
    *
@@ -330,7 +333,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the login information for Amazon Cognito
+   * Filters access by the login information for Amazon Cognito
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_amr
    *
@@ -345,7 +348,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the Amazon Cognito identity pool ID
+   * Filters access by the Amazon Cognito identity pool ID
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
    *
@@ -360,7 +363,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the subject of the claim (the Amazon Cognito user ID)
+   * Filters access by the subject of the claim (the Amazon Cognito user ID)
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub
    *
@@ -375,7 +378,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the Facebook application ID
+   * Filters access by the Facebook application ID
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
    *
@@ -390,7 +393,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the Facebook user ID
+   * Filters access by the Facebook user ID
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
    *
@@ -405,7 +408,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the tags that are attached to the role that is being assumed
+   * Filters access by the tags that are attached to the role that is being assumed
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceTag
    *
@@ -421,7 +424,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the endpoint URL to which SAML assertions are presented
+   * Filters access by the endpoint URL to which SAML assertions are presented
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
    *
@@ -436,7 +439,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduOrg attribute
+   * Filters access by the eduOrg attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_cn
    *
@@ -451,7 +454,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the commonName attribute
+   * Filters access by the commonName attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_commonname
    *
@@ -466,7 +469,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the principal that was used to assume the role
+   * Filters access by on the principal that was used to assume the role
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_doc
    *
@@ -481,7 +484,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduOrg attribute
+   * Filters access by the eduOrg attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorghomepageuri
    *
@@ -496,7 +499,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduOrg attribute
+   * Filters access by the eduOrg attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
    *
@@ -511,7 +514,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduOrg attribute
+   * Filters access by the eduOrg attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorglegalname
    *
@@ -526,7 +529,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduOrg attribute
+   * Filters access by the eduOrg attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorgsuperioruri
    *
@@ -541,7 +544,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduOrg attribute
+   * Filters access by the eduOrg attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorgwhitepagesuri
    *
@@ -556,7 +559,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduPerson attribute
+   * Filters access by the eduPerson attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonaffiliation
    *
@@ -571,7 +574,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduPerson attribute
+   * Filters access by the eduPerson attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonassurance
    *
@@ -586,7 +589,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduPerson attribute
+   * Filters access by the eduPerson attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonentitlement
    *
@@ -601,7 +604,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduPerson attribute
+   * Filters access by the eduPerson attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonnickname
    *
@@ -616,7 +619,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduPerson attribute
+   * Filters access by the eduPerson attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonorgdn
    *
@@ -631,7 +634,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduPerson attribute
+   * Filters access by the eduPerson attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonorgunitdn
    *
@@ -646,7 +649,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduPerson attribute
+   * Filters access by the eduPerson attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprimaryaffiliation
    *
@@ -661,7 +664,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduPerson attribute
+   * Filters access by the eduPerson attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprimaryorgunitdn
    *
@@ -676,7 +679,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduPerson attribute
+   * Filters access by the eduPerson attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprincipalname
    *
@@ -691,7 +694,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduPerson attribute
+   * Filters access by the eduPerson attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonscopedaffiliation
    *
@@ -706,7 +709,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the eduPerson attribute
+   * Filters access by the eduPerson attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersontargetedid
    *
@@ -721,7 +724,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the givenName attribute
+   * Filters access by the givenName attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_givenname
    *
@@ -736,7 +739,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the issuer, which is represented by a URN
+   * Filters access by on the issuer, which is represented by a URN
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_iss
    *
@@ -751,7 +754,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the mail attribute
+   * Filters access by the mail attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_mail
    *
@@ -766,7 +769,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the name attribute
+   * Filters access by the name attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_name
    *
@@ -781,7 +784,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the hash value of the issuer, account ID, and friendly name
+   * Filters access by the hash value of the issuer, account ID, and friendly name
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_namequalifier
    *
@@ -796,7 +799,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the organizationStatus attribute
+   * Filters access by the organizationStatus attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_organizationstatus
    *
@@ -811,7 +814,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the primaryGroupSID attribute
+   * Filters access by the primaryGroupSID attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_primarygroupsid
    *
@@ -826,7 +829,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the subject of the claim (the SAML user ID)
+   * Filters access by the subject of the claim (the SAML user ID)
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub
    *
@@ -841,7 +844,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the value persistent, transient, or the full Format URI
+   * Filters access by the value persistent, transient, or the full Format URI
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_subtype
    *
@@ -856,7 +859,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the surname attribute
+   * Filters access by the surname attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_surname
    *
@@ -871,7 +874,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the uid attribute
+   * Filters access by the uid attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_uid
    *
@@ -886,7 +889,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the uid attribute
+   * Filters access by the uid attribute
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_x500uniqueidentifier
    *
@@ -901,7 +904,22 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the unique identifier required when you assume a role in another account
+   * Filters access by the service that is obtaining a bearer token
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_awsservicename
+   *
+   * Applies to actions:
+   * - .toGetServiceBearerToken()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAWSServiceName(value: string | string[], operator?: Operator | string) {
+    return this.if(`AWSServiceName`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the unique identifier required when you assume a role in another account
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_externalid
    *
@@ -916,7 +934,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the role session name required when you assume a role
+   * Filters access by the role session name required when you assume a role
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_rolesessionname
    *
@@ -933,7 +951,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the source identity that is passed in the request
+   * Filters access by the source identity that is passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sourceidentity
    *
@@ -951,7 +969,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the transitive tag keys that are passed in the request
+   * Filters access by the transitive tag keys that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_TransitiveTagKeys
    *
@@ -969,7 +987,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the Login with Amazon application ID
+   * Filters access by the Login with Amazon application ID
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
    *
@@ -984,7 +1002,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the Login with Amazon user ID
+   * Filters access by the Login with Amazon user ID
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
    *
