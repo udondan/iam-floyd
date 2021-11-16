@@ -4,7 +4,7 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-			    "autoscaling:DescribeAutoScalingGroups",
+				"autoscaling:DescribeAutoScalingGroups",
 				"cloudtrail:LookupEvents",
 				"cloudwatch:GetMetricData",
 				"cloudwatch:ListMetrics",
@@ -24,9 +24,11 @@
 				"config:GetResourceConfigHistory",
 				"events:ListRuleNamesByTarget",
 				"xray:GetServiceGraph",
-                "organizations:ListRoots",
-                "organizations:ListChildren",
-                "organizations:ListDelegatedAdministrators"
+				"organizations:ListRoots",
+				"organizations:ListChildren",
+				"organizations:ListDelegatedAdministrators",
+				"rds:DescribeDBInstances",
+				"pi:GetResourceMetrics"
 			],
 			"Resource": "*"
 		},
