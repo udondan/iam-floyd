@@ -15,6 +15,7 @@ connect:CreateIntegrationAssociation;Write
 connect:CreateQueue;Write
 connect:CreateQuickConnect;Write
 connect:CreateRoutingProfile;Write
+connect:CreateSecurityProfile;Write
 connect:CreateUseCase;Write
 connect:CreateUser;Write
 connect:CreateUserHierarchyGroup;Write
@@ -22,10 +23,12 @@ connect:DeleteHoursOfOperation;Write
 connect:DeleteInstance;Write
 connect:DeleteIntegrationAssociation;Write
 connect:DeleteQuickConnect;Write
+connect:DeleteSecurityProfile;Write
 connect:DeleteUseCase;Write
 connect:DeleteUser;Write
 connect:DeleteUserHierarchyGroup;Write
 connect:DescribeAgentStatus;Read
+connect:DescribeContact;Read
 connect:DescribeContactFlow;Read
 connect:DescribeHoursOfOperation;Read
 connect:DescribeInstance;Read
@@ -34,6 +37,7 @@ connect:DescribeInstanceStorageConfig;Read
 connect:DescribeQueue;Read
 connect:DescribeQuickConnect;Read
 connect:DescribeRoutingProfile;Read
+connect:DescribeSecurityProfile;Read
 connect:DescribeUser;Read
 connect:DescribeUserHierarchyGroup;Read
 connect:DescribeUserHierarchyStructure;Read
@@ -55,6 +59,7 @@ connect:ListAgentStatuses;List
 connect:ListApprovedOrigins;List
 connect:ListBots;List
 connect:ListContactFlows;List
+connect:ListContactReferences;List
 connect:ListHoursOfOperations;List
 connect:ListInstanceAttributes;List
 connect:ListInstanceStorageConfigs;List
@@ -71,6 +76,7 @@ connect:ListRealtimeContactAnalysisSegments;Read
 connect:ListRoutingProfileQueues;List
 connect:ListRoutingProfiles;List
 connect:ListSecurityKeys;List
+connect:ListSecurityProfilePermissions;List
 connect:ListSecurityProfiles;List
 connect:ListTagsForResource;Read
 connect:ListUseCases;List
@@ -87,9 +93,11 @@ connect:SuspendContactRecording;Write
 connect:TagResource;Tagging
 connect:UntagResource;Tagging
 connect:UpdateAgentStatus;Write
+connect:UpdateContact;Write
 connect:UpdateContactAttributes;Write
 connect:UpdateContactFlowContent;Write
 connect:UpdateContactFlowName;Write
+connect:UpdateContactSchedule;Write
 connect:UpdateHoursOfOperation;Write
 connect:UpdateInstanceAttribute;Write
 connect:UpdateInstanceStorageConfig;Write
@@ -104,6 +112,7 @@ connect:UpdateRoutingProfileConcurrency;Write
 connect:UpdateRoutingProfileDefaultOutboundQueue;Write
 connect:UpdateRoutingProfileName;Write
 connect:UpdateRoutingProfileQueues;Write
+connect:UpdateSecurityProfile;Write
 connect:UpdateUserHierarchy;Write
 connect:UpdateUserHierarchyGroupName;Write
 connect:UpdateUserHierarchyStructure;Write
