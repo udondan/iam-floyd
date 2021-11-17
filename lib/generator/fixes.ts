@@ -148,11 +148,13 @@ export function conditionFixer(
   condition: Condition
 ): Condition {
   let fixed = 0;
-
   const type = condition.type.toLowerCase();
   if (type == 'arrayofstring') {
     fixed = 1;
     condition.type = 'string';
+  } else if (type == 'arrayofarn') {
+    fixed = 1;
+    condition.type = 'ARN';
   } else if (type == 'arrayofbool' || type == 'bool') {
     fixed = 1;
     condition.type = 'boolean';
