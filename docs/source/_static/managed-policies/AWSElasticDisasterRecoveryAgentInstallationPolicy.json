@@ -1,0 +1,31 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"drs:GetAgentInstallationAssetsForDrs",
+				"drs:SendClientLogsForDrs",
+				"drs:CreateSourceServerForDrs",
+				"drs:CreateRecoveryInstanceForDrs",
+				"drs:DescribeRecoveryInstances"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"drs:TagResource",
+				"drs:IssueAgentCertificateForDrs"
+			],
+			"Resource": "arn:aws:drs:*:*:source-server/*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"drs:TagResource"
+			],
+			"Resource": "arn:aws:drs:*:*:recovery-instance/*"
+		}
+	]
+}
