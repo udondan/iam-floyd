@@ -1004,10 +1004,10 @@ export class Backup extends PolicyStatement {
    * - .toCopyFromBackupVault()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifCopyTargets(value: string | string[], operator?: Operator | string) {
-    return this.if(`CopyTargets`, value, operator || 'StringLike');
+    return this.if(`CopyTargets`, value, operator || 'ArnLike');
   }
 
   /**
@@ -1020,9 +1020,9 @@ export class Backup extends PolicyStatement {
    * - .toUpdateReportPlan()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFrameworkArns(value: string | string[], operator?: Operator | string) {
-    return this.if(`FrameworkArns`, value, operator || 'StringLike');
+    return this.if(`FrameworkArns`, value, operator || 'ArnLike');
   }
 }

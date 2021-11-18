@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [codebuild](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodebuild.html).
@@ -19,7 +19,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Deletes one or more builds.
+   * Deletes one or more builds
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Gets information about one or more build batches.
+   * Gets information about one or more build batches
    *
    * Access Level: Read
    *
@@ -41,7 +41,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Gets information about one or more builds.
+   * Gets information about one or more builds
    *
    * Access Level: Read
    *
@@ -52,7 +52,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Gets information about one or more build projects.
+   * Gets information about one or more build projects
    *
    * Access Level: Read
    *
@@ -63,7 +63,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Returns an array of ReportGroup objects that are specified by the input reportGroupArns parameter.
+   * Returns an array of ReportGroup objects that are specified by the input reportGroupArns parameter
    *
    * Access Level: Read
    *
@@ -74,7 +74,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Returns an array of the Report objects specified by the input reportArns parameter.
+   * Returns an array of the Report objects specified by the input reportArns parameter
    *
    * Access Level: Read
    *
@@ -85,7 +85,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Adds or updates information about a report.
+   * Adds or updates information about a report
    *
    * Access Level: Write
    *
@@ -96,7 +96,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Adds or updates information about a report.
+   * Adds or updates information about a report
    *
    * Access Level: Write
    *
@@ -107,7 +107,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Creates a build project.
+   * Creates a build project
    *
    * Access Level: Write
    *
@@ -122,7 +122,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Creates a report. A report is created when tests specified in the buildspec file for a report groups run during the build of a project.
+   * Creates a report. A report is created when tests specified in the buildspec file for a report groups run during the build of a project
    *
    * Access Level: Write
    *
@@ -133,7 +133,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Creates a report group.
+   * Creates a report group
    *
    * Access Level: Write
    *
@@ -148,7 +148,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.
+   * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed to the repository
    *
    * Access Level: Write
    *
@@ -159,7 +159,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Deletes a build batch.
+   * Deletes a build batch
    *
    * Access Level: Write
    *
@@ -170,7 +170,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Deletes an OAuth token from a connected third-party OAuth provider. Only used in the AWS CodeBuild console.
+   * Deletes an OAuth token from a connected third-party OAuth provider. Only used in the AWS CodeBuild console
    *
    * Access Level: Write
    *
@@ -181,7 +181,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Deletes a build project.
+   * Deletes a build project
    *
    * Access Level: Write
    *
@@ -192,7 +192,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Deletes a report.
+   * Deletes a report
    *
    * Access Level: Write
    *
@@ -203,7 +203,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Deletes a report group.
+   * Deletes a report group
    *
    * Access Level: Write
    *
@@ -214,7 +214,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Deletes a resource policy for the associated project or report group.
+   * Deletes a resource policy for the associated project or report group
    *
    * Access Level: Permissions management
    *
@@ -225,7 +225,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
+   * Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials
    *
    * Access Level: Write
    *
@@ -236,7 +236,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to the repository.
+   * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to the repository
    *
    * Access Level: Write
    *
@@ -247,7 +247,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Returns an array of CodeCoverage objects.
+   * Returns an array of CodeCoverage objects
    *
    * Access Level: Read
    *
@@ -258,7 +258,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Returns an array of TestCase objects.
+   * Returns an array of TestCase objects
    *
    * Access Level: Read
    *
@@ -269,7 +269,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Analyzes and accumulates test report values for the test reports in the specified report group.
+   * Analyzes and accumulates test report values for the test reports in the specified report group
    *
    * Access Level: Read
    *
@@ -280,7 +280,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Returns a resource policy for the specified project or report group.
+   * Returns a resource policy for the specified project or report group
    *
    * Access Level: Read
    *
@@ -291,7 +291,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Imports the source repository credentials for an AWS CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
+   * Imports the source repository credentials for an AWS CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository
    *
    * Access Level: Write
    *
@@ -302,7 +302,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Resets the cache for a project.
+   * Resets the cache for a project
    *
    * Access Level: Write
    *
@@ -313,7 +313,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Gets a list of build batch IDs, with each build batch ID representing a single build batch.
+   * Gets a list of build batch IDs, with each build batch ID representing a single build batch
    *
    * Access Level: List
    *
@@ -324,7 +324,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Gets a list of build batch IDs for the specified build project, with each build batch ID representing a single build batch.
+   * Gets a list of build batch IDs for the specified build project, with each build batch ID representing a single build batch
    *
    * Access Level: List
    *
@@ -335,7 +335,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Gets a list of build IDs, with each build ID representing a single build.
+   * Gets a list of build IDs, with each build ID representing a single build
    *
    * Access Level: List
    *
@@ -346,7 +346,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Gets a list of build IDs for the specified build project, with each build ID representing a single build.
+   * Gets a list of build IDs for the specified build project, with each build ID representing a single build
    *
    * Access Level: List
    *
@@ -357,7 +357,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Lists connected third-party OAuth providers. Only used in the AWS CodeBuild console.
+   * Lists connected third-party OAuth providers. Only used in the AWS CodeBuild console
    *
    * Access Level: List
    *
@@ -368,7 +368,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Gets information about Docker images that are managed by AWS CodeBuild.
+   * Gets information about Docker images that are managed by AWS CodeBuild
    *
    * Access Level: List
    *
@@ -379,7 +379,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Gets a list of build project names, with each build project name representing a single build project.
+   * Gets a list of build project names, with each build project name representing a single build project
    *
    * Access Level: List
    *
@@ -390,7 +390,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Returns a list of report group ARNs. Each report group ARN represents one report group.
+   * Returns a list of report group ARNs. Each report group ARN represents one report group
    *
    * Access Level: List
    *
@@ -401,7 +401,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Returns a list of report ARNs. Each report ARN representing one report.
+   * Returns a list of report ARNs. Each report ARN representing one report
    *
    * Access Level: List
    *
@@ -412,7 +412,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Returns a list of report ARNs that belong to the specified report group. Each report ARN represents one report.
+   * Returns a list of report ARNs that belong to the specified report group. Each report ARN represents one report
    *
    * Access Level: List
    *
@@ -423,7 +423,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Lists source code repositories from a connected third-party OAuth provider. Only used in the AWS CodeBuild console.
+   * Lists source code repositories from a connected third-party OAuth provider. Only used in the AWS CodeBuild console
    *
    * Access Level: List
    *
@@ -434,7 +434,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Returns a list of project ARNs that have been shared with the requester. Each project ARN represents one project.
+   * Returns a list of project ARNs that have been shared with the requester. Each project ARN represents one project
    *
    * Access Level: List
    *
@@ -445,7 +445,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Returns a list of report group ARNs that have been shared with the requester. Each report group ARN represents one report group.
+   * Returns a list of report group ARNs that have been shared with the requester. Each report group ARN represents one report group
    *
    * Access Level: List
    *
@@ -456,7 +456,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Returns a list of SourceCredentialsInfo objects.
+   * Returns a list of SourceCredentialsInfo objects
    *
    * Access Level: List
    *
@@ -467,7 +467,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Saves an OAuth token from a connected third-party OAuth provider. Only used in the AWS CodeBuild console.
+   * Saves an OAuth token from a connected third-party OAuth provider. Only used in the AWS CodeBuild console
    *
    * Access Level: Write
    *
@@ -478,7 +478,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Creates a resource policy for the associated project or report group.
+   * Creates a resource policy for the associated project or report group
    *
    * Access Level: Permissions management
    *
@@ -489,7 +489,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Retries a build.
+   * Retries a build
    *
    * Access Level: Write
    *
@@ -500,7 +500,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Retries a build batch.
+   * Retries a build batch
    *
    * Access Level: Write
    *
@@ -511,9 +511,13 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Starts running a build.
+   * Starts running a build
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestTag()
+   * - .ifTagKeys()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuild.html
    */
@@ -522,7 +526,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Starts running a build batch.
+   * Starts running a build batch
    *
    * Access Level: Write
    *
@@ -533,7 +537,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Attempts to stop running a build.
+   * Attempts to stop running a build
    *
    * Access Level: Write
    *
@@ -544,7 +548,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Attempts to stop running a build batch.
+   * Attempts to stop running a build batch
    *
    * Access Level: Write
    *
@@ -555,7 +559,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Changes the settings of an existing build project.
+   * Changes the settings of an existing build project
    *
    * Access Level: Write
    *
@@ -570,7 +574,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Changes the public visibility of a project and its builds.
+   * Changes the public visibility of a project and its builds
    *
    * Access Level: Write
    *
@@ -585,7 +589,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Updates information about a report.
+   * Updates information about a report
    *
    * Access Level: Write
    *
@@ -596,7 +600,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Changes the settings of an existing report group.
+   * Changes the settings of an existing report group
    *
    * Access Level: Write
    *
@@ -611,7 +615,7 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
-   * Updates the webhook associated with an AWS CodeBuild build project.
+   * Updates the webhook associated with an AWS CodeBuild build project
    *
    * Access Level: Write
    *
@@ -760,5 +764,36 @@ export class Codebuild extends PolicyStatement {
    */
   public onReport(reportGroupName: string, reportId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:codebuild:${ region || '*' }:${ account || '*' }:report/${ reportGroupName }:${ reportId }`);
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toStartBuild()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toStartBuild()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -2123,7 +2123,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list contexts.
+   * Grants permission to list contexts
    *
    * Access Level: List
    *
@@ -3024,6 +3024,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifModelApprovalStatus()
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateModelPackage.html
    */
   public toUpdateModelPackage() {
@@ -3106,6 +3109,21 @@ export class Sagemaker extends PolicyStatement {
    */
   public toUpdatePipelineExecution() {
     return this.to('UpdatePipelineExecution');
+  }
+
+  /**
+   * Grants permission to update a Project
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateProject.html
+   */
+  public toUpdateProject() {
+    return this.to('UpdateProject');
   }
 
   /**
@@ -3316,6 +3334,7 @@ export class Sagemaker extends PolicyStatement {
       'UpdateNotebookInstanceLifecycleConfig',
       'UpdatePipeline',
       'UpdatePipelineExecution',
+      'UpdateProject',
       'UpdateTrainingJob',
       'UpdateTrial',
       'UpdateTrialComponent',
@@ -3450,6 +3469,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type device to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/neo-edge-devices.html
+   *
    * @param deviceFleetName - Identifier for the deviceFleetName.
    * @param deviceName - Identifier for the deviceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3467,6 +3488,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type device-fleet to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/edge-device-fleet.html
+   *
    * @param deviceFleetName - Identifier for the deviceFleetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3482,6 +3505,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type edge-packaging-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/edge-packaging-job.html
    *
    * @param edgePackagingJobName - Identifier for the edgePackagingJobName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3603,6 +3628,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type domain to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-entity-status.html
+   *
    * @param domainId - Identifier for the domainId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3618,6 +3645,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type user-profile to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-entity-status.html
    *
    * @param domainId - Identifier for the domainId.
    * @param userProfileName - Identifier for the userProfileName.
@@ -3635,6 +3664,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type app to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-entity-status.html
    *
    * @param domainId - Identifier for the domainId.
    * @param userProfileName - Identifier for the userProfileName.
@@ -3654,6 +3685,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type app-image-config to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi-sdk-create-image.html
    *
    * @param appImageConfigName - Identifier for the appImageConfigName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3703,6 +3736,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type code-repository to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html
+   *
    * @param codeRepositoryName - Identifier for the codeRepositoryName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3718,6 +3753,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type image to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html
    *
    * @param imageName - Identifier for the imageName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3735,6 +3772,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type image-version to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html
+   *
    * @param imageName - Identifier for the imageName.
    * @param version - Identifier for the version.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3747,6 +3786,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type algorithm to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html
    *
    * @param algorithmName - Identifier for the algorithmName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3818,6 +3859,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type project to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-projects-whatis.html
+   *
    * @param projectName - Identifier for the projectName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3852,6 +3895,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type model-package-group to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-model-group.html
+   *
    * @param modelPackageGroupName - Identifier for the modelPackageGroupName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3867,6 +3912,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type model to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
    *
    * @param modelName - Identifier for the modelName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3884,6 +3931,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type endpoint-config to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
+   *
    * @param endpointConfigName - Identifier for the endpointConfigName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3899,6 +3948,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
    *
    * @param endpointName - Identifier for the endpointName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3966,6 +4017,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type monitoring-schedule to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-scheduling.html
+   *
    * @param monitoringScheduleName - Identifier for the monitoringScheduleName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -3981,6 +4034,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type data-quality-job-definition to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-quality.html
    *
    * @param dataQualityJobDefinitionName - Identifier for the dataQualityJobDefinitionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -3998,6 +4053,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type model-quality-job-definition to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality.html
+   *
    * @param modelQualityJobDefinitionName - Identifier for the modelQualityJobDefinitionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -4013,6 +4070,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type model-bias-job-definition to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-post-training-bias.html
    *
    * @param modelBiasJobDefinitionName - Identifier for the modelBiasJobDefinitionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -4030,6 +4089,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type model-explainability-job-definition to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-explainability.html
+   *
    * @param modelExplainabilityJobDefinitionName - Identifier for the modelExplainabilityJobDefinitionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -4045,6 +4106,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type experiment to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Experiment.html
    *
    * @param experimentName - Identifier for the experimentName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -4062,6 +4125,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type experiment-trial to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Trial.html
+   *
    * @param trialName - Identifier for the trialName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -4077,6 +4142,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type experiment-trial-component to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrialComponent.html
    *
    * @param trialComponentName - Identifier for the trialComponentName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -4112,6 +4179,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type pipeline to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Pipeline.html
+   *
    * @param pipelineName - Identifier for the pipelineName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -4128,6 +4197,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type pipeline-execution to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PipelineExecution.html
+   *
    * @param pipelineName - Identifier for the pipelineName.
    * @param randomString - Identifier for the randomString.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -4140,6 +4211,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type artifact to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ArtifactSummary.html
    *
    * @param hashOfArtifactSource - Identifier for the hashOfArtifactSource.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -4157,6 +4230,8 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type context to the statement
    *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContextSummary.html
+   *
    * @param contextName - Identifier for the contextName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -4172,6 +4247,8 @@ export class Sagemaker extends PolicyStatement {
 
   /**
    * Adds a resource of type action to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ActionSummary.html
    *
    * @param actionName - Identifier for the actionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -4361,7 +4438,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * This key is deprecated. It has been replaced by sagemaker:VolumeKmsKey
+   * Filters access by a key that is present in the request the user makes to the SageMaker service. This key is deprecated. It has been replaced by sagemaker:VolumeKmsKey
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -4496,6 +4573,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateModelPackage()
+   * - .toUpdateModelPackage()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

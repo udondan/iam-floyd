@@ -243,6 +243,7 @@ sagemaker:UpdateNotebookInstance;Write
 sagemaker:UpdateNotebookInstanceLifecycleConfig;Write
 sagemaker:UpdatePipeline;Write
 sagemaker:UpdatePipelineExecution;Write
+sagemaker:UpdateProject;Write
 sagemaker:UpdateTrainingJob;Write
 sagemaker:UpdateTrial;Write
 sagemaker:UpdateTrialComponent;Write

@@ -1,0 +1,4 @@
+drs:JobResource
+drs:RecoveryInstanceResource
+drs:ReplicationConfigurationTemplateResource
+drs:SourceServerResource

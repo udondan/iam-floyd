@@ -87,6 +87,7 @@ directconnect
 discovery
 dlm
 dms
+drs
 ds
 dynamodb
 ebs
@@ -138,6 +139,7 @@ identitystore
 imagebuilder
 importexport
 inspector
+inspector2
 iot
 iot-device-tester
 iot1click

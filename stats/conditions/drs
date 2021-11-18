@@ -1,0 +1,4 @@
+drs:EC2InstanceARN
+drs:RequestTag/${TagKey}
+drs:ResourceTag/${TagKey}
+drs:TagKeys
