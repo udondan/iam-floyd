@@ -369,6 +369,28 @@ export class Auditmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get analytics data for all active assessments
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetInsights.html
+   */
+  public toGetInsights() {
+    return this.to('GetInsights');
+  }
+
+  /**
+   * Grants permission to get analytics data for a specific active assessment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetInsightsByAssessment.html
+   */
+  public toGetInsightsByAssessment() {
+    return this.to('GetInsightsByAssessment');
+  }
+
+  /**
    * Grants permission to get the delegated administrator account in AWS Audit Manager
    *
    * Access Level: Read
@@ -399,6 +421,17 @@ export class Auditmanager extends PolicyStatement {
    */
   public toGetSettings() {
     return this.to('GetSettings');
+  }
+
+  /**
+   * Grants permission to list analytics data for controls in a specific control domain and active assessment
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListAssessmentControlInsightsByControlDomain.html
+   */
+  public toListAssessmentControlInsightsByControlDomain() {
+    return this.to('ListAssessmentControlInsightsByControlDomain');
   }
 
   /**
@@ -443,6 +476,39 @@ export class Auditmanager extends PolicyStatement {
    */
   public toListAssessments() {
     return this.to('ListAssessments');
+  }
+
+  /**
+   * Grants permission to list analytics data for control domains across all active assessments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListControlDomainInsights.html
+   */
+  public toListControlDomainInsights() {
+    return this.to('ListControlDomainInsights');
+  }
+
+  /**
+   * Grants permission to list analytics data for control domains in a specific active assessment
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListControlDomainInsightsByAssessment.html
+   */
+  public toListControlDomainInsightsByAssessment() {
+    return this.to('ListControlDomainInsightsByAssessment');
+  }
+
+  /**
+   * Grants permission to list analytics data for controls in a specific control domain across all active assessments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ListControlInsightsByControlDomain.html
+   */
+  public toListControlInsightsByControlDomain() {
+    return this.to('ListControlInsightsByControlDomain');
   }
 
   /**
@@ -694,6 +760,8 @@ export class Auditmanager extends PolicyStatement {
       'GetEvidenceFolder',
       'GetEvidenceFoldersByAssessment',
       'GetEvidenceFoldersByAssessmentControl',
+      'GetInsights',
+      'GetInsightsByAssessment',
       'GetOrganizationAdminAccount',
       'GetServicesInScope',
       'GetSettings',
@@ -702,10 +770,14 @@ export class Auditmanager extends PolicyStatement {
     ],
     List: [
       'GetDelegations',
+      'ListAssessmentControlInsightsByControlDomain',
       'ListAssessmentFrameworkShareRequests',
       'ListAssessmentFrameworks',
       'ListAssessmentReports',
       'ListAssessments',
+      'ListControlDomainInsights',
+      'ListControlDomainInsightsByAssessment',
+      'ListControlInsightsByControlDomain',
       'ListControls',
       'ListKeywordsForDataSource',
       'ListNotifications'
