@@ -59,7 +59,8 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"elasticloadbalancing:ApplySecurityGroupsToLoadBalancer"
+				"elasticloadbalancing:ApplySecurityGroupsToLoadBalancer",
+				"elasticloadbalancing:DescribeTags"
 			],
 			"Resource": "*"
 		},

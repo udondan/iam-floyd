@@ -86,6 +86,13 @@
 				"lakeformation:GetDataAccess"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"secretsmanager:GetSecretValue"
+			],
+			"Resource": "arn:aws:secretsmanager:*:*:secret:databrew!default-*"
 		}
 	]
 }
