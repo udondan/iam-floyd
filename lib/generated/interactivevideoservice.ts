@@ -185,6 +185,17 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about the stream session on a specified channel
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStreamSession.html
+   */
+  public toGetStreamSession() {
+    return this.to('GetStreamSession');
+  }
+
+  /**
    * Grants permission to import the public key
    *
    * Access Level: Write
@@ -241,6 +252,17 @@ export class Ivs extends PolicyStatement {
    */
   public toListStreamKeys() {
     return this.to('ListStreamKeys');
+  }
+
+  /**
+   * Grants permission to get summary information about streams sessions on a specified channel
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreamSessions.html
+   */
+  public toListStreamSessions() {
+    return this.to('ListStreamSessions');
   }
 
   /**
@@ -340,6 +362,7 @@ export class Ivs extends PolicyStatement {
       'GetRecordingConfiguration',
       'GetStream',
       'GetStreamKey',
+      'GetStreamSession',
       'ListTagsForResource'
     ],
     Write: [
@@ -360,6 +383,7 @@ export class Ivs extends PolicyStatement {
       'ListPlaybackKeyPairs',
       'ListRecordingConfigurations',
       'ListStreamKeys',
+      'ListStreamSessions',
       'ListStreams'
     ],
     Tagging: [

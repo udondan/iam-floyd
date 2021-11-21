@@ -67,7 +67,6 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzMetadataDirective()
    * - .ifXAmzServerSideEncryption()
    * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
-   * - .ifXAmzServerSideEncryptionCustomerAlgorithm()
    * - .ifXAmzStorageClass()
    * - .ifXAmzWebsiteRedirectLocation()
    * - .ifObjectLockMode()
@@ -2275,7 +2274,6 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzMetadataDirective()
    * - .ifXAmzServerSideEncryption()
    * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
-   * - .ifXAmzServerSideEncryptionCustomerAlgorithm()
    * - .ifXAmzStorageClass()
    * - .ifXAmzWebsiteRedirectLocation()
    * - .ifObjectLockMode()
@@ -2546,7 +2544,6 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzContentSha256()
    * - .ifXAmzServerSideEncryption()
    * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
-   * - .ifXAmzServerSideEncryptionCustomerAlgorithm()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
    */
@@ -4394,23 +4391,6 @@ export class S3 extends PolicyStatement {
    */
   public ifXAmzServerSideEncryptionAwsKmsKeyId(value: string | string[], operator?: Operator | string) {
     return this.if(`x-amz-server-side-encryption-aws-kms-key-id`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters access by customer-provided algorithm (SSE-C) for server-side encryption
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html
-   *
-   * Applies to actions:
-   * - .toBypassGovernanceRetention()
-   * - .toPutObject()
-   * - .toReplicateObject()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifXAmzServerSideEncryptionCustomerAlgorithm(value: string | string[], operator?: Operator | string) {
-    return this.if(`x-amz-server-side-encryption-customer-algorithm`, value, operator || 'StringLike');
   }
 
   /**

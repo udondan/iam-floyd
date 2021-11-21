@@ -40,6 +40,5 @@ s3:x-amz-grant-write-acp
 s3:x-amz-metadata-directive
 s3:x-amz-server-side-encryption
 s3:x-amz-server-side-encryption-aws-kms-key-id
-s3:x-amz-server-side-encryption-customer-algorithm
 s3:x-amz-storage-class
 s3:x-amz-website-redirect-location

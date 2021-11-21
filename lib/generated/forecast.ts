@@ -19,6 +19,21 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an auto predictor
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateAutoPredictor.html
+   */
+  public toCreateAutoPredictor() {
+    return this.to('CreateAutoPredictor');
+  }
+
+  /**
    * Grants permission to create a dataset
    *
    * Access Level: Write
@@ -61,6 +76,36 @@ export class Forecast extends PolicyStatement {
    */
   public toCreateDatasetImportJob() {
     return this.to('CreateDatasetImportJob');
+  }
+
+  /**
+   * Grants permission to create an explainability
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateExplainability.html
+   */
+  public toCreateExplainability() {
+    return this.to('CreateExplainability');
+  }
+
+  /**
+   * Grants permission to create an explainability export using an explainability resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateExplainabilityExport.html
+   */
+  public toCreateExplainabilityExport() {
+    return this.to('CreateExplainabilityExport');
   }
 
   /**
@@ -157,6 +202,28 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an explainability
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteExplainability.html
+   */
+  public toDeleteExplainability() {
+    return this.to('DeleteExplainability');
+  }
+
+  /**
+   * Grants permission to delete an explainability export
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DeleteExplainabilityExport.html
+   */
+  public toDeleteExplainabilityExport() {
+    return this.to('DeleteExplainabilityExport');
+  }
+
+  /**
    * Grants permission to delete a forecast
    *
    * Access Level: Write
@@ -212,6 +279,17 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an auto predictor
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeAutoPredictor.html
+   */
+  public toDescribeAutoPredictor() {
+    return this.to('DescribeAutoPredictor');
+  }
+
+  /**
    * Grants permission to describe a dataset
    *
    * Access Level: Read
@@ -242,6 +320,28 @@ export class Forecast extends PolicyStatement {
    */
   public toDescribeDatasetImportJob() {
     return this.to('DescribeDatasetImportJob');
+  }
+
+  /**
+   * Grants permission to describe an explainability export
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeExplainabilityExport.html
+   */
+  public toDescribeExplainabilityExport() {
+    return this.to('DescribeExplainabilityExport');
+  }
+
+  /**
+   * Grants permission to describe an explainability
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeExplainability.html
+   */
+  public toDescribeExplainablity() {
+    return this.to('DescribeExplainablity');
   }
 
   /**
@@ -302,7 +402,7 @@ export class Forecast extends PolicyStatement {
   /**
    * Grants permission to list all the dataset groups
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetGroups.html
    */
@@ -313,7 +413,7 @@ export class Forecast extends PolicyStatement {
   /**
    * Grants permission to list all the dataset import jobs
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html
    */
@@ -324,7 +424,7 @@ export class Forecast extends PolicyStatement {
   /**
    * Grants permission to list all the datasets
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html
    */
@@ -333,9 +433,31 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all the explainabilities
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListExplainabilities.html
+   */
+  public toListExplainabilities() {
+    return this.to('ListExplainabilities');
+  }
+
+  /**
+   * Grants permission to list all the explainability exports
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_ListExplainabilityExports.html
+   */
+  public toListExplainabilityExports() {
+    return this.to('ListExplainabilityExports');
+  }
+
+  /**
    * Grants permission to list all the forecast export jobs
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_ListForecastExportJobs.html
    */
@@ -346,7 +468,7 @@ export class Forecast extends PolicyStatement {
   /**
    * Grants permission to list all the forecasts
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_ListForecasts.html
    */
@@ -357,7 +479,7 @@ export class Forecast extends PolicyStatement {
   /**
    * Grants permission to list all the predictor backtest export jobs
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_ListPredictorBacktestExportJobs.html
    */
@@ -368,7 +490,7 @@ export class Forecast extends PolicyStatement {
   /**
    * Grants permission to list all the predictors
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_ListPredictors.html
    */
@@ -455,9 +577,12 @@ export class Forecast extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CreateAutoPredictor',
       'CreateDataset',
       'CreateDatasetGroup',
       'CreateDatasetImportJob',
+      'CreateExplainability',
+      'CreateExplainabilityExport',
       'CreateForecast',
       'CreateForecastExportJob',
       'CreatePredictor',
@@ -465,6 +590,8 @@ export class Forecast extends PolicyStatement {
       'DeleteDataset',
       'DeleteDatasetGroup',
       'DeleteDatasetImportJob',
+      'DeleteExplainability',
+      'DeleteExplainabilityExport',
       'DeleteForecast',
       'DeleteForecastExportJob',
       'DeletePredictor',
@@ -474,25 +601,28 @@ export class Forecast extends PolicyStatement {
       'UpdateDatasetGroup'
     ],
     Read: [
+      'DescribeAutoPredictor',
       'DescribeDataset',
       'DescribeDatasetGroup',
       'DescribeDatasetImportJob',
+      'DescribeExplainabilityExport',
+      'DescribeExplainablity',
       'DescribeForecast',
       'DescribeForecastExportJob',
       'DescribePredictor',
       'DescribePredictorBacktestExportJob',
       'GetAccuracyMetrics',
-      'ListTagsForResource',
-      'QueryForecast'
-    ],
-    List: [
       'ListDatasetGroups',
       'ListDatasetImportJobs',
       'ListDatasets',
+      'ListExplainabilities',
+      'ListExplainabilityExports',
       'ListForecastExportJobs',
       'ListForecasts',
       'ListPredictorBacktestExportJobs',
-      'ListPredictors'
+      'ListPredictors',
+      'ListTagsForResource',
+      'QueryForecast'
     ],
     Tagging: [
       'TagResource',
@@ -629,5 +759,39 @@ export class Forecast extends PolicyStatement {
    */
   public onForecastExport(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:forecast:${ region || '*' }:${ account || '*' }:forecast-export-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type explainability to the statement
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateExplainability.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onExplainability(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:forecast:${ region || '*' }:${ account || '*' }:explainability/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type explainabilityExport to the statement
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_CreateExplainabilityExport.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onExplainabilityExport(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:forecast:${ region || '*' }:${ account || '*' }:explainability-export/${ resourceId }`);
   }
 }

@@ -12,11 +12,13 @@ ivs:GetPlaybackKeyPair;Read
 ivs:GetRecordingConfiguration;Read
 ivs:GetStream;Read
 ivs:GetStreamKey;Read
+ivs:GetStreamSession;Read
 ivs:ImportPlaybackKeyPair;Write
 ivs:ListChannels;List
 ivs:ListPlaybackKeyPairs;List
 ivs:ListRecordingConfigurations;List
 ivs:ListStreamKeys;List
+ivs:ListStreamSessions;List
 ivs:ListStreams;List
 ivs:ListTagsForResource;Read
 ivs:PutMetadata;Write

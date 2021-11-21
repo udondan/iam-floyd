@@ -105,6 +105,21 @@ export class Databrew extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a ruleset
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/databrew/latest/dg/API_CreateRuleset.html
+   */
+  public toCreateRuleset() {
+    return this.to('CreateRuleset');
+  }
+
+  /**
    * Grants permission to create a schedule
    *
    * Access Level: Write
@@ -161,6 +176,17 @@ export class Databrew extends PolicyStatement {
    */
   public toDeleteRecipeVersion() {
     return this.to('DeleteRecipeVersion');
+  }
+
+  /**
+   * Grants permission to delete a ruleset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/databrew/latest/dg/API_DeleteRuleset.html
+   */
+  public toDeleteRuleset() {
+    return this.to('DeleteRuleset');
   }
 
   /**
@@ -227,6 +253,17 @@ export class Databrew extends PolicyStatement {
    */
   public toDescribeRecipe() {
     return this.to('DescribeRecipe');
+  }
+
+  /**
+   * Grants permission to view details about a ruleset
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/databrew/latest/dg/API_DescribeRuleset.html
+   */
+  public toDescribeRuleset() {
+    return this.to('DescribeRuleset');
   }
 
   /**
@@ -304,6 +341,17 @@ export class Databrew extends PolicyStatement {
    */
   public toListRecipes() {
     return this.to('ListRecipes');
+  }
+
+  /**
+   * Grants permission to list rulesets in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/databrew/latest/dg/API_ListRulesets.html
+   */
+  public toListRulesets() {
+    return this.to('ListRulesets');
   }
 
   /**
@@ -468,6 +516,17 @@ export class Databrew extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify a ruleset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/databrew/latest/dg/API_UpdateRuleset.html
+   */
+  public toUpdateRuleset() {
+    return this.to('UpdateRuleset');
+  }
+
+  /**
    * Grants permission to modify a schedule
    *
    * Access Level: Write
@@ -486,11 +545,13 @@ export class Databrew extends PolicyStatement {
       'CreateProject',
       'CreateRecipe',
       'CreateRecipeJob',
+      'CreateRuleset',
       'CreateSchedule',
       'DeleteDataset',
       'DeleteJob',
       'DeleteProject',
       'DeleteRecipeVersion',
+      'DeleteRuleset',
       'DeleteSchedule',
       'PublishRecipe',
       'SendProjectSessionAction',
@@ -502,6 +563,7 @@ export class Databrew extends PolicyStatement {
       'UpdateProject',
       'UpdateRecipe',
       'UpdateRecipeJob',
+      'UpdateRuleset',
       'UpdateSchedule'
     ],
     Read: [
@@ -510,6 +572,7 @@ export class Databrew extends PolicyStatement {
       'DescribeJobRun',
       'DescribeProject',
       'DescribeRecipe',
+      'DescribeRuleset',
       'DescribeSchedule',
       'ListDatasets',
       'ListJobRuns',
@@ -517,6 +580,7 @@ export class Databrew extends PolicyStatement {
       'ListProjects',
       'ListRecipeVersions',
       'ListRecipes',
+      'ListRulesets',
       'ListSchedules',
       'ListTagsForResource'
     ],
@@ -558,6 +622,23 @@ export class Databrew extends PolicyStatement {
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:databrew:${ region || '*' }:${ account || '*' }:dataset/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type Ruleset to the statement
+   *
+   * https://docs.aws.amazon.com/databrew/latest/dg/rulesets.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRuleset(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:databrew:${ region || '*' }:${ account || '*' }:ruleset/${ resourceId }`);
   }
 
   /**
