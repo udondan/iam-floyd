@@ -19,6 +19,20 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate the specified application with the fleet
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateApplicationFleet.html
+   */
+  public toAssociateApplicationFleet() {
+    return this.to('AssociateApplicationFleet');
+  }
+
+  /**
    * Grants permission to associate the specified fleet with the specified stack
    *
    * Access Level: Write
@@ -72,6 +86,36 @@ export class Appstream extends PolicyStatement {
    */
   public toCopyImage() {
     return this.to('CopyImage');
+  }
+
+  /**
+   * Grants permission to create an app block. App blocks store details about the virtual hard disk that contains the files for the application in an S3 bucket. It also stores the setup script with details about how to mount the virtual hard disk. App blocks are only supported for Elastic fleets
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateAppBlock.html
+   */
+  public toCreateAppBlock() {
+    return this.to('CreateAppBlock');
+  }
+
+  /**
+   * Grants permission to create an application within customer account. Applications store the details about how to launch applications on streaming instances. This is only supported for Elastic fleets
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateApplication.html
+   */
+  public toCreateApplication() {
+    return this.to('CreateApplication');
   }
 
   /**
@@ -196,6 +240,34 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the specified app block
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteAppBlock.html
+   */
+  public toDeleteAppBlock() {
+    return this.to('DeleteAppBlock');
+  }
+
+  /**
+   * Grants permission to delete the specified application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteApplication.html
+   */
+  public toDeleteApplication() {
+    return this.to('DeleteApplication');
+  }
+
+  /**
    * Grants permission to delete the specified Directory Config object from AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains
    *
    * Access Level: Write
@@ -296,6 +368,39 @@ export class Appstream extends PolicyStatement {
    */
   public toDeleteUser() {
     return this.to('DeleteUser');
+  }
+
+  /**
+   * Grants permission to retrieve a list that describes one or more specified app blocks, if the app block arns are provided. Otherwise, all app blocks in the account are described
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlocks.html
+   */
+  public toDescribeAppBlocks() {
+    return this.to('DescribeAppBlocks');
+  }
+
+  /**
+   * Grants permission to retrieve the associations that are associated with the specified application or fleet
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeApplicationFleetAssociations.html
+   */
+  public toDescribeApplicationFleetAssociations() {
+    return this.to('DescribeApplicationFleetAssociations');
+  }
+
+  /**
+   * Grants permission to retrieve a list that describes one or more specified applications, if the application arns are provided. Otherwise, all applications in the account are described
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeApplications.html
+   */
+  public toDescribeApplications() {
+    return this.to('DescribeApplications');
   }
 
   /**
@@ -417,6 +522,20 @@ export class Appstream extends PolicyStatement {
    */
   public toDisableUser() {
     return this.to('DisableUser');
+  }
+
+  /**
+   * Grants permission to disassociate the specified application from the specified fleet
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisassociateApplicationFleet.html
+   */
+  public toDisassociateApplicationFleet() {
+    return this.to('DisassociateApplicationFleet');
   }
 
   /**
@@ -559,7 +678,7 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add or overwrite one or more tags for the specified AppStream 2.0 resource. The following resources can be tagged: Image builders, images, fleets, and stacks
+   * Grants permission to add or overwrite one or more tags for the specified AppStream 2.0 resource. The following resources can be tagged: Image builders, images, fleets, stacks, app blocks and applications
    *
    * Access Level: Tagging
    *
@@ -586,6 +705,20 @@ export class Appstream extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update the specified fields for the specified application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateApplication.html
+   */
+  public toUpdateApplication() {
+    return this.to('UpdateApplication');
   }
 
   /**
@@ -643,10 +776,13 @@ export class Appstream extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AssociateApplicationFleet',
       'AssociateFleet',
       'BatchAssociateUserStack',
       'BatchDisassociateUserStack',
       'CopyImage',
+      'CreateAppBlock',
+      'CreateApplication',
       'CreateDirectoryConfig',
       'CreateFleet',
       'CreateImageBuilder',
@@ -656,6 +792,8 @@ export class Appstream extends PolicyStatement {
       'CreateUpdatedImage',
       'CreateUsageReportSubscription',
       'CreateUser',
+      'DeleteAppBlock',
+      'DeleteApplication',
       'DeleteDirectoryConfig',
       'DeleteFleet',
       'DeleteImage',
@@ -665,6 +803,7 @@ export class Appstream extends PolicyStatement {
       'DeleteUsageReportSubscription',
       'DeleteUser',
       'DisableUser',
+      'DisassociateApplicationFleet',
       'DisassociateFleet',
       'EnableUser',
       'ExpireSession',
@@ -673,12 +812,16 @@ export class Appstream extends PolicyStatement {
       'StopFleet',
       'StopImageBuilder',
       'Stream',
+      'UpdateApplication',
       'UpdateDirectoryConfig',
       'UpdateFleet',
       'UpdateImagePermissions',
       'UpdateStack'
     ],
     Read: [
+      'DescribeAppBlocks',
+      'DescribeApplicationFleetAssociations',
+      'DescribeApplications',
       'DescribeDirectoryConfigs',
       'DescribeFleets',
       'DescribeImageBuilders',
@@ -765,6 +908,40 @@ export class Appstream extends PolicyStatement {
    */
   public onStack(stackName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:appstream:${ region || '*' }:${ account || '*' }:stack/${ stackName }`);
+  }
+
+  /**
+   * Adds a resource of type app-block to the statement
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts
+   *
+   * @param appBlockName - Identifier for the appBlockName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAppBlock(appBlockName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:appstream:${ region || '*' }:${ account || '*' }:app-block/${ appBlockName }`);
+  }
+
+  /**
+   * Adds a resource of type application to the statement
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts
+   *
+   * @param applicationName - Identifier for the applicationName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:appstream:${ region || '*' }:${ account || '*' }:application/${ applicationName }`);
   }
 
   /**

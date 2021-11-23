@@ -364,7 +364,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * (Deprecated) Grants permission to invoke a function asynchronously
+   * Grants permission to invoke a function asynchronously (Deprecated)
    *
    * Access Level: Write
    *

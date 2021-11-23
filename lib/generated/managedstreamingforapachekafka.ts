@@ -251,7 +251,7 @@ export class Kafka extends PolicyStatement {
   /**
    * Grants permission to list tags of an MSK resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#ListTagsForResource
    */
@@ -366,6 +366,21 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the connectivity settings for the MSK cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeRouteTables
+   * - ec2:DescribeSubnets
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-connectivity.html#UpdateConnectivity
+   */
+  public toUpdateConnectivity() {
+    return this.to('UpdateConnectivity');
+  }
+
+  /**
    * Grants permission to update the monitoring settings for the MSK cluster
    *
    * Access Level: Write
@@ -405,6 +420,7 @@ export class Kafka extends PolicyStatement {
       'UpdateClusterConfiguration',
       'UpdateClusterKafkaVersion',
       'UpdateConfiguration',
+      'UpdateConnectivity',
       'UpdateMonitoring',
       'UpdateSecurity'
     ],
@@ -413,7 +429,8 @@ export class Kafka extends PolicyStatement {
       'DescribeClusterOperation',
       'DescribeConfiguration',
       'DescribeConfigurationRevision',
-      'GetBootstrapBrokers'
+      'GetBootstrapBrokers',
+      'ListTagsForResource'
     ],
     List: [
       'GetCompatibleKafkaVersions',
@@ -423,8 +440,7 @@ export class Kafka extends PolicyStatement {
       'ListConfigurations',
       'ListKafkaVersions',
       'ListNodes',
-      'ListScramSecrets',
-      'ListTagsForResource'
+      'ListScramSecrets'
     ],
     Tagging: [
       'TagResource',

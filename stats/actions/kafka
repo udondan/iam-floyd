@@ -17,7 +17,7 @@ kafka:ListConfigurations;List
 kafka:ListKafkaVersions;List
 kafka:ListNodes;List
 kafka:ListScramSecrets;List
-kafka:ListTagsForResource;List
+kafka:ListTagsForResource;Read
 kafka:RebootBroker;Write
 kafka:TagResource;Tagging
 kafka:UntagResource;Tagging
@@ -27,5 +27,6 @@ kafka:UpdateBrokerType;Write
 kafka:UpdateClusterConfiguration;Write
 kafka:UpdateClusterKafkaVersion;Write
 kafka:UpdateConfiguration;Write
+kafka:UpdateConnectivity;Write
 kafka:UpdateMonitoring;Write
 kafka:UpdateSecurity;Write

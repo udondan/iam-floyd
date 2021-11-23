@@ -39,6 +39,7 @@ export class Cloud9 extends PolicyStatement {
    * - .ifInstanceType()
    * - .ifSubnetId()
    * - .ifUserArn()
+   * - .ifOwnerArn()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -76,6 +77,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifEnvironmentName()
+   * - .ifOwnerArn()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -217,6 +219,9 @@ export class Cloud9 extends PolicyStatement {
    * Grants permission to get the user's public SSH key, which is used by AWS Cloud9 to connect to SSH development environments
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
    */
@@ -484,6 +489,22 @@ export class Cloud9 extends PolicyStatement {
   }
 
   /**
+   * Filters access by the owner ARN specified
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html##awscloud9-cloud9_OwnerArn
+   *
+   * Applies to actions:
+   * - .toCreateEnvironmentEC2()
+   * - .toCreateEnvironmentSSH()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifOwnerArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`OwnerArn`, value, operator || 'ArnLike');
+  }
+
+  /**
    * Filters access by the type of AWS Cloud9 permissions
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html##awscloud9-cloud9_Permissions
@@ -523,6 +544,7 @@ export class Cloud9 extends PolicyStatement {
    * - .toCreateEnvironmentEC2()
    * - .toCreateEnvironmentMembership()
    * - .toDescribeEnvironmentMemberships()
+   * - .toGetUserPublicKey()
    * - .toUpdateEnvironmentMembership()
    *
    * @param value The value(s) to check
