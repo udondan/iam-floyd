@@ -19,7 +19,8 @@
 				"ec2:SearchTransitGatewayRoutes",
 				"ec2:DescribeTransitGatewayPeeringAttachments",
 				"ec2:DescribeTransitGatewayConnects",
-				"ec2:DescribeTransitGatewayConnectPeers"
+				"ec2:DescribeTransitGatewayConnectPeers",
+                "ec2:DescribeRegions"
 			],
 			"Resource": "*"
 		}

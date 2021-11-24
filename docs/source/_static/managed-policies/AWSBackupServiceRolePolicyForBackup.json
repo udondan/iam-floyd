@@ -41,7 +41,7 @@
 			"Resource": [
 				"arn:aws:rds:*:*:db:*"
 			]
-        },
+		},
 		{
 			"Effect": "Allow",
 			"Action": [
@@ -142,8 +142,8 @@
 				"backup:CopyIntoBackupVault"
 			],
 			"Resource": "arn:aws:backup:*:*:backup-vault:*"
-        },
-        {
+		},
+		{
 			"Effect": "Allow",
 			"Action": [
 				"backup:CopyFromBackupVault"
@@ -171,21 +171,21 @@
 				"arn:aws:ec2:*:*:volume/*"
 			]
 		},
-		{           
-            "Action": [
-                "kms:Decrypt",
-                "kms:GenerateDataKey"
-                ],
-            "Effect": "Allow",
-            "Resource": "*",
-            "Condition": {
-                "StringLike": {
-                    "kms:ViaService": [
-                        "dynamodb.*.amazonaws.com"
-                    ]
-                }
-            }
-        },
+		{
+			"Action": [
+				"kms:Decrypt",
+				"kms:GenerateDataKey"
+			],
+			"Effect": "Allow",
+			"Resource": "*",
+			"Condition": {
+				"StringLike": {
+					"kms:ViaService": [
+						"dynamodb.*.amazonaws.com"
+					]
+				}
+			}
+		},
 		{
 			"Action": "kms:DescribeKey",
 			"Effect": "Allow",
@@ -267,14 +267,32 @@
 			"Resource": "arn:aws:fsx:*:*:backup/*"
 		},
 		{
-            "Effect": "Allow",
-            "Action": [
-                "fsx:ListTagsForResource",
-                "fsx:ManageBackupPrincipalAssociations",
-                "fsx:CopyBackup",
-                "fsx:TagResource"
-            ],
-            "Resource": "arn:aws:fsx:*:*:backup/*"
-        }
+			"Effect": "Allow",
+			"Action": [
+				"fsx:ListTagsForResource",
+				"fsx:ManageBackupPrincipalAssociations",
+				"fsx:CopyBackup",
+				"fsx:TagResource"
+			],
+			"Resource": "arn:aws:fsx:*:*:backup/*"
+		},
+		{
+			"Sid": "DynamodbBackupPermissions",
+			"Effect": "Allow",
+			"Action": [
+				"dynamodb:StartAwsBackupJob",
+				"dynamodb:ListTagsOfResource"
+			],
+			"Resource": "arn:aws:dynamodb:*:*:table/*"
+		},
+		{
+			"Sid": "BackupGatewayBackupPermissions",
+			"Effect": "Allow",
+			"Action": [
+				"backup-gateway:Backup",
+				"backup-gateway:ListTagsForResource"
+			],
+			"Resource": "arn:aws:backup-gateway:*:*:vm/*"
+		}
 	]
 }

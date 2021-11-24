@@ -23,8 +23,8 @@
 				"rds:describeDBClusterSnapshots",
 				"rds:describeDBClusters",
 				"rds:describeDBParameterGroups",
-                "rds:DescribeDBClusterParameterGroups",
-                "rds:DescribeDBInstanceAutomatedBackups"
+				"rds:DescribeDBClusterParameterGroups",
+				"rds:DescribeDBInstanceAutomatedBackups"
 			],
 			"Effect": "Allow",
 			"Resource": "*"
@@ -236,14 +236,36 @@
 			"Resource": "*"
 		},
 		{
-            "Effect": "Allow",
-            "Action": "iam:CreateServiceLinkedRole",
-            "Resource": "*",
-            "Condition": {
-                "StringEquals": {
-                    "iam:AWSServiceName": "backup.amazonaws.com"
-                }
-            }
-        }
+			"Effect": "Allow",
+			"Action": "iam:CreateServiceLinkedRole",
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"iam:AWSServiceName": "backup.amazonaws.com"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"backup-gateway:AssociateGatewayToServer",
+				"backup-gateway:CreateGateway",
+				"backup-gateway:DeleteGateway",
+				"backup-gateway:DeleteHypervisor",
+				"backup-gateway:DisassociateGatewayFromServer",
+				"backup-gateway:ImportHypervisorConfiguration",
+				"backup-gateway:ListGateways",
+				"backup-gateway:ListHypervisors",
+				"backup-gateway:ListTagsForResource",
+				"backup-gateway:ListVirtualMachines",
+				"backup-gateway:PutMaintenanceStartTime",
+				"backup-gateway:TagResource",
+				"backup-gateway:TestHypervisorConfiguration",
+				"backup-gateway:UntagResource",
+				"backup-gateway:UpdateGatewayInformation",
+				"backup-gateway:UpdateHypervisor"
+			],
+			"Resource": "*"
+		}
 	]
 }
