@@ -57,6 +57,7 @@ mobiletargeting:GetExportJobs;List
 mobiletargeting:GetGcmChannel;Read
 mobiletargeting:GetImportJob;Read
 mobiletargeting:GetImportJobs;List
+mobiletargeting:GetInAppMessages;Read
 mobiletargeting:GetJourney;Read
 mobiletargeting:GetJourneyDateRangeKpi;Read
 mobiletargeting:GetJourneyExecutionActivityMetrics;Read

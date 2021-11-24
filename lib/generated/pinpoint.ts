@@ -19,7 +19,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Create an app.
+   * Grants permission to create an app
    *
    * Access Level: Write
    *
@@ -35,7 +35,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Create a campaign for an app.
+   * Grants permission to create a campaign for an app
    *
    * Access Level: Write
    *
@@ -51,7 +51,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Create an email template.
+   * Grants permission to create an email template
    *
    * Access Level: Write
    *
@@ -67,7 +67,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Create an export job that exports endpoint definitions to Amazon S3.
+   * Grants permission to create an export job that exports endpoint definitions to Amazon S3
    *
    * Access Level: Write
    *
@@ -78,7 +78,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Import endpoint definitions from to create a segment.
+   * Grants permission to import endpoint definitions from to create a segment
    *
    * Access Level: Write
    *
@@ -89,7 +89,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Create a Journey for an app.
+   * Grants permission to create a Journey for an app
    *
    * Access Level: Write
    *
@@ -105,7 +105,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Create a push notification template.
+   * Grants permission to create a push notification template
    *
    * Access Level: Write
    *
@@ -121,7 +121,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Create an Amazon Pinpoint configuration for a recommender model.
+   * Grants permission to create an Amazon Pinpoint configuration for a recommender model
    *
    * Access Level: Write
    *
@@ -132,7 +132,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Create a segment that is based on endpoint data reported to Pinpoint by your app. To allow a user to create a segment by importing endpoint data from outside of Pinpoint, allow the mobiletargeting:CreateImportJob action.
+   * Grants permission to create a segment that is based on endpoint data reported to Pinpoint by your app. To allow a user to create a segment by importing endpoint data from outside of Pinpoint, allow the mobiletargeting:CreateImportJob action
    *
    * Access Level: Write
    *
@@ -148,7 +148,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Create an sms message template.
+   * Grants permission to create an sms message template
    *
    * Access Level: Write
    *
@@ -164,7 +164,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Create a voice message template.
+   * Grants permission to create a voice message template
    *
    * Access Level: Write
    *
@@ -180,7 +180,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete the ADM channel for an app.
+   * Grants permission to delete the ADM channel for an app
    *
    * Access Level: Write
    *
@@ -191,7 +191,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete the APNs channel for an app.
+   * Grants permission to delete the APNs channel for an app
    *
    * Access Level: Write
    *
@@ -202,7 +202,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete the APNs sandbox channel for an app.
+   * Grants permission to delete the APNs sandbox channel for an app
    *
    * Access Level: Write
    *
@@ -213,7 +213,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete the APNs VoIP channel for an app.
+   * Grants permission to delete the APNs VoIP channel for an app
    *
    * Access Level: Write
    *
@@ -224,7 +224,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete the APNs VoIP sandbox channel for an app.
+   * Grants permission to delete the APNs VoIP sandbox channel for an app
    *
    * Access Level: Write
    *
@@ -235,7 +235,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete a specific campaign.
+   * Grants permission to delete a specific campaign
    *
    * Access Level: Write
    *
@@ -246,7 +246,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete the Baidu channel for an app.
+   * Grants permission to delete the Baidu channel for an app
    *
    * Access Level: Write
    *
@@ -257,7 +257,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete a specific campaign.
+   * Grants permission to delete a specific campaign
    *
    * Access Level: Write
    *
@@ -268,7 +268,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete the email channel for an app.
+   * Grants permission to delete the email channel for an app
    *
    * Access Level: Write
    *
@@ -279,7 +279,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete an email template or an email template version.
+   * Grants permission to delete an email template or an email template version
    *
    * Access Level: Write
    *
@@ -290,7 +290,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete an endpoint.
+   * Grants permission to delete an endpoint
    *
    * Access Level: Write
    *
@@ -301,7 +301,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete the event stream for an app.
+   * Grants permission to delete the event stream for an app
    *
    * Access Level: Write
    *
@@ -312,7 +312,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete the GCM channel for an app.
+   * Grants permission to delete the GCM channel for an app
    *
    * Access Level: Write
    *
@@ -323,7 +323,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete a specific journey.
+   * Grants permission to delete a specific journey
    *
    * Access Level: Write
    *
@@ -334,7 +334,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete a push notification template or a push notification template version.
+   * Grants permission to delete a push notification template or a push notification template version
    *
    * Access Level: Write
    *
@@ -345,7 +345,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete an Amazon Pinpoint configuration for a recommender model.
+   * Grants permission to delete an Amazon Pinpoint configuration for a recommender model
    *
    * Access Level: Write
    *
@@ -356,7 +356,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete a specific segment.
+   * Grants permission to delete a specific segment
    *
    * Access Level: Write
    *
@@ -367,7 +367,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete the SMS channel for an app.
+   * Grants permission to delete the SMS channel for an app
    *
    * Access Level: Write
    *
@@ -378,7 +378,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete an sms message template or an sms message template version.
+   * Grants permission to delete an sms message template or an sms message template version
    *
    * Access Level: Write
    *
@@ -389,7 +389,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete all of the endpoints that are associated with a user ID.
+   * Grants permission to delete all of the endpoints that are associated with a user ID
    *
    * Access Level: Write
    *
@@ -400,7 +400,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete the Voice channel for an app.
+   * Grants permission to delete the Voice channel for an app
    *
    * Access Level: Write
    *
@@ -411,7 +411,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Delete a voice message template or a voice message template version.
+   * Grants permission to delete a voice message template or a voice message template version
    *
    * Access Level: Write
    *
@@ -422,7 +422,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about the Amazon Device Messaging (ADM) channel for an app.
+   * Grants permission to retrieve information about the Amazon Device Messaging (ADM) channel for an app
    *
    * Access Level: Read
    *
@@ -433,7 +433,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about the APNs channel for an app.
+   * Grants permission to retrieve information about the APNs channel for an app
    *
    * Access Level: Read
    *
@@ -444,7 +444,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about the APNs sandbox channel for an app.
+   * Grants permission to retrieve information about the APNs sandbox channel for an app
    *
    * Access Level: Read
    *
@@ -455,7 +455,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about the APNs VoIP channel for an app.
+   * Grants permission to retrieve information about the APNs VoIP channel for an app
    *
    * Access Level: Read
    *
@@ -466,7 +466,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about the APNs VoIP sandbox channel for an app.
+   * Grants permission to retrieve information about the APNs VoIP sandbox channel for an app
    *
    * Access Level: Read
    *
@@ -477,7 +477,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about a specific app in your Amazon Pinpoint account.
+   * Grants permission to retrieve information about a specific app in your Amazon Pinpoint account
    *
    * Access Level: Read
    *
@@ -488,7 +488,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieves (queries) pre-aggregated data for a standard metric that applies to an application.
+   * Grants permission to retrieve (queries) pre-aggregated data for a standard metric that applies to an application
    *
    * Access Level: Read
    *
@@ -499,7 +499,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve the default settings for an app.
+   * Grants permission to retrieve the default settings for an app
    *
    * Access Level: List
    *
@@ -510,7 +510,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve a list of apps in your Amazon Pinpoint account.
+   * Grants permission to retrieve a list of apps in your Amazon Pinpoint account
    *
    * Access Level: Read
    *
@@ -521,7 +521,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about the Baidu channel for an app.
+   * Grants permission to retrieve information about the Baidu channel for an app
    *
    * Access Level: Read
    *
@@ -532,7 +532,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about a specific campaign.
+   * Grants permission to retrieve information about a specific campaign
    *
    * Access Level: Read
    *
@@ -543,7 +543,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about the activities performed by a campaign.
+   * Grants permission to retrieve information about the activities performed by a campaign
    *
    * Access Level: List
    *
@@ -554,7 +554,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieves (queries) pre-aggregated data for a standard metric that applies to a campaign.
+   * Grants permission to retrieve (queries) pre-aggregated data for a standard metric that applies to a campaign
    *
    * Access Level: Read
    *
@@ -565,7 +565,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about a specific campaign version.
+   * Grants permission to retrieve information about a specific campaign version
    *
    * Access Level: Read
    *
@@ -576,7 +576,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about the current and prior versions of a campaign.
+   * Grants permission to retrieve information about the current and prior versions of a campaign
    *
    * Access Level: List
    *
@@ -587,7 +587,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about all campaigns for an app.
+   * Grants permission to retrieve information about all campaigns for an app
    *
    * Access Level: List
    *
@@ -598,7 +598,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Get all channels information for your app.
+   * Grants permission to get all channels information for your app
    *
    * Access Level: List
    *
@@ -609,7 +609,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Obtain information about the email channel in an app.
+   * Grants permission to obtain information about the email channel in an app
    *
    * Access Level: Read
    *
@@ -620,7 +620,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about a specific or the active version of an email template.
+   * Grants permission to retrieve information about a specific or the active version of an email template
    *
    * Access Level: Read
    *
@@ -631,7 +631,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about a specific endpoint.
+   * Grants permission to retrieve information about a specific endpoint
    *
    * Access Level: Read
    *
@@ -642,7 +642,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about the event stream for an app.
+   * Grants permission to retrieve information about the event stream for an app
    *
    * Access Level: Read
    *
@@ -653,7 +653,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Obtain information about a specific export job.
+   * Grants permission to obtain information about a specific export job
    *
    * Access Level: Read
    *
@@ -664,7 +664,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve a list of all of the export jobs for an app.
+   * Grants permission to retrieve a list of all of the export jobs for an app
    *
    * Access Level: List
    *
@@ -675,7 +675,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about the GCM channel for an app.
+   * Grants permission to retrieve information about the GCM channel for an app
    *
    * Access Level: Read
    *
@@ -686,7 +686,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about a specific import job.
+   * Grants permission to retrieve information about a specific import job
    *
    * Access Level: Read
    *
@@ -697,7 +697,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about all import jobs for an app.
+   * Grants permission to retrieve information about all import jobs for an app
    *
    * Access Level: List
    *
@@ -708,7 +708,18 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about a specific journey.
+   * Grants permission to retrive in-app messages for the given endpoint id
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id-inappmessages.html
+   */
+  public toGetInAppMessages() {
+    return this.to('GetInAppMessages');
+  }
+
+  /**
+   * Grants permission to retrieve information about a specific journey
    *
    * Access Level: Read
    *
@@ -719,7 +730,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieves (queries) pre-aggregated data for a standard engagement metric that applies to a journey.
+   * Grants permission to retrieve (queries) pre-aggregated data for a standard engagement metric that applies to a journey
    *
    * Access Level: Read
    *
@@ -730,7 +741,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey activity.
+   * Grants permission to retrieve (queries) pre-aggregated data for a standard execution metric that applies to a journey activity
    *
    * Access Level: Read
    *
@@ -741,7 +752,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey.
+   * Grants permission to retrieve (queries) pre-aggregated data for a standard execution metric that applies to a journey
    *
    * Access Level: Read
    *
@@ -752,7 +763,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about a specific or the active version of an push notification template.
+   * Grants permission to retrieve information about a specific or the active version of an push notification template
    *
    * Access Level: Read
    *
@@ -763,7 +774,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about an Amazon Pinpoint configuration for a recommender model.
+   * Grants permission to retrieve information about an Amazon Pinpoint configuration for a recommender model
    *
    * Access Level: Read
    *
@@ -774,7 +785,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about all the recommender model configurations that are associated with an Amazon Pinpoint account.
+   * Grants permission to retrieve information about all the recommender model configurations that are associated with an Amazon Pinpoint account
    *
    * Access Level: List
    *
@@ -794,7 +805,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about a specific segment.
+   * Grants permission to retrieve information about a specific segment
    *
    * Access Level: Read
    *
@@ -805,7 +816,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about jobs that export endpoint definitions from segments to Amazon S3.
+   * Grants permission to retrieve information about jobs that export endpoint definitions from segments to Amazon S3
    *
    * Access Level: List
    *
@@ -816,7 +827,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about jobs that create segments by importing endpoint definitions from .
+   * Grants permission to retrieve information about jobs that create segments by importing endpoint definitions from
    *
    * Access Level: List
    *
@@ -827,7 +838,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about a specific segment version.
+   * Grants permission to retrieve information about a specific segment version
    *
    * Access Level: Read
    *
@@ -838,7 +849,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about the current and prior versions of a segment.
+   * Grants permission to retrieve information about the current and prior versions of a segment
    *
    * Access Level: List
    *
@@ -849,7 +860,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about the segments for an app.
+   * Grants permission to retrieve information about the segments for an app
    *
    * Access Level: List
    *
@@ -860,7 +871,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Obtain information about the SMS channel in an app.
+   * Grants permission to obtain information about the SMS channel in an app
    *
    * Access Level: Read
    *
@@ -871,7 +882,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about a specific or the active version of an sms message template.
+   * Grants permission to retrieve information about a specific or the active version of an sms message template
    *
    * Access Level: Read
    *
@@ -882,7 +893,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about the endpoints that are associated with a user ID.
+   * Grants permission to retrieve information about the endpoints that are associated with a user ID
    *
    * Access Level: Read
    *
@@ -893,7 +904,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Obtain information about the Voice channel in an app.
+   * Grants permission to obtain information about the Voice channel in an app
    *
    * Access Level: Read
    *
@@ -904,7 +915,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about a specific or the active version of a voice message template.
+   * Grants permission to retrieve information about a specific or the active version of a voice message template
    *
    * Access Level: Read
    *
@@ -915,7 +926,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve information about all journeys for an app.
+   * Grants permission to retrieve information about all journeys for an app
    *
    * Access Level: List
    *
@@ -926,7 +937,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * List tags for a resource.
+   * Grants permission to list tags for a resource
    *
    * Access Level: Read
    *
@@ -937,7 +948,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve all versions about a specific template.
+   * Grants permission to retrieve all versions about a specific template
    *
    * Access Level: List
    *
@@ -948,7 +959,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Retrieve metadata about the queried templates.
+   * Grants permission to retrieve metadata about the queried templates
    *
    * Access Level: List
    *
@@ -959,7 +970,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Obtain metadata for a phone number, such as the number type (mobile, landline, or VoIP), location, and provider.
+   * Grants permission to obtain metadata for a phone number, such as the number type (mobile, landline, or VoIP), location, and provider
    *
    * Access Level: Read
    *
@@ -970,7 +981,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Create or update an event stream for an app.
+   * Grants permission to create or update an event stream for an app
    *
    * Access Level: Write
    *
@@ -981,7 +992,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Create or update events for an app.
+   * Grants permission to create or update events for an app
    *
    * Access Level: Write
    *
@@ -992,7 +1003,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Used to remove the attributes for an app.
+   * Grants permission to remove the attributes for an app
    *
    * Access Level: Write
    *
@@ -1003,7 +1014,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Send an SMS message or push notification to specific endpoints.
+   * Grants permission to send an SMS message or push notification to specific endpoints
    *
    * Access Level: Write
    *
@@ -1014,7 +1025,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Send an SMS message or push notification to all endpoints that are associated with a specific user ID.
+   * Grants permission to send an SMS message or push notification to all endpoints that are associated with a specific user ID
    *
    * Access Level: Write
    *
@@ -1025,7 +1036,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Adds tags to a resource.
+   * Grants permission to add tags to a resource
    *
    * Access Level: Tagging
    *
@@ -1040,7 +1051,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Removes tags from a resource.
+   * Grants permission to remove tags from a resource
    *
    * Access Level: Tagging
    *
@@ -1055,7 +1066,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update the Amazon Device Messaging (ADM) channel for an app.
+   * Grants permission to update the Amazon Device Messaging (ADM) channel for an app
    *
    * Access Level: Write
    *
@@ -1066,7 +1077,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update the Apple Push Notification service (APNs) channel for an app.
+   * Grants permission to update the Apple Push Notification service (APNs) channel for an app
    *
    * Access Level: Write
    *
@@ -1077,7 +1088,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update the Apple Push Notification service (APNs) sandbox channel for an app.
+   * Grants permission to update the Apple Push Notification service (APNs) sandbox channel for an app
    *
    * Access Level: Write
    *
@@ -1088,7 +1099,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update the Apple Push Notification service (APNs) VoIP channel for an app.
+   * Grants permission to update the Apple Push Notification service (APNs) VoIP channel for an app
    *
    * Access Level: Write
    *
@@ -1099,7 +1110,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update the Apple Push Notification service (APNs) VoIP sandbox channel for an app.
+   * Grants permission to update the Apple Push Notification service (APNs) VoIP sandbox channel for an app
    *
    * Access Level: Write
    *
@@ -1110,7 +1121,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update the default settings for an app.
+   * Grants permission to update the default settings for an app
    *
    * Access Level: Write
    *
@@ -1121,7 +1132,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update the Baidu channel for an app.
+   * Grants permission to update the Baidu channel for an app
    *
    * Access Level: Write
    *
@@ -1132,7 +1143,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update a specific campaign.
+   * Grants permission to update a specific campaign
    *
    * Access Level: Write
    *
@@ -1147,7 +1158,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update the email channel for an app.
+   * Grants permission to update the email channel for an app
    *
    * Access Level: Write
    *
@@ -1158,7 +1169,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update a specific email template under the same version or generate a new version.
+   * Grants permission to update a specific email template under the same version or generate a new version
    *
    * Access Level: Write
    *
@@ -1173,7 +1184,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Create an endpoint or update the information for an endpoint.
+   * Grants permission to create an endpoint or update the information for an endpoint
    *
    * Access Level: Write
    *
@@ -1184,7 +1195,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Create or update endpoints as a batch operation.
+   * Grants permission to create or update endpoints as a batch operation
    *
    * Access Level: Write
    *
@@ -1195,7 +1206,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update the Firebase Cloud Messaging (FCM) or Google Cloud Messaging (GCM) API key that allows to send push notifications to your Android app.
+   * Grants permission to update the Firebase Cloud Messaging (FCM) or Google Cloud Messaging (GCM) API key that allows to send push notifications to your Android app
    *
    * Access Level: Write
    *
@@ -1206,7 +1217,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update a specific journey.
+   * Grants permission to update a specific journey
    *
    * Access Level: Write
    *
@@ -1221,7 +1232,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update a specific journey state.
+   * Grants permission to update a specific journey state
    *
    * Access Level: Write
    *
@@ -1236,7 +1247,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update a specific push notification template under the same version or generate a new version.
+   * Grants permission to update a specific push notification template under the same version or generate a new version
    *
    * Access Level: Write
    *
@@ -1251,7 +1262,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update an Amazon Pinpoint configuration for a recommender model.
+   * Grants permission to update an Amazon Pinpoint configuration for a recommender model
    *
    * Access Level: Write
    *
@@ -1262,7 +1273,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update a specific segment.
+   * Grants permission to update a specific segment
    *
    * Access Level: Write
    *
@@ -1277,7 +1288,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update the SMS channel for an app.
+   * Grants permission to update the SMS channel for an app
    *
    * Access Level: Write
    *
@@ -1288,7 +1299,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update a specific sms message template under the same version or generate a new version.
+   * Grants permission to update a specific sms message template under the same version or generate a new version
    *
    * Access Level: Write
    *
@@ -1303,7 +1314,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Upate the active version parameter of a specific template.
+   * Grants permission to update the active version parameter of a specific template
    *
    * Access Level: Write
    *
@@ -1314,7 +1325,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update the Voice channel for an app.
+   * Grants permission to update the Voice channel for an app
    *
    * Access Level: Write
    *
@@ -1325,7 +1336,7 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
-   * Update a specific voice message template under the same version or generate a new version.
+   * Grants permission to update a specific voice message template under the same version or generate a new version
    *
    * Access Level: Write
    *
@@ -1423,6 +1434,7 @@ export class Mobiletargeting extends PolicyStatement {
       'GetExportJob',
       'GetGcmChannel',
       'GetImportJob',
+      'GetInAppMessages',
       'GetJourney',
       'GetJourneyDateRangeKpi',
       'GetJourneyExecutionActivityMetrics',

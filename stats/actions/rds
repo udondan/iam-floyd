@@ -118,6 +118,7 @@ rds:ModifyRecommendation;Write
 rds:PromoteReadReplica;Write
 rds:PromoteReadReplicaDBCluster;Write
 rds:PurchaseReservedDBInstancesOffering;Write
+rds:RebootDBCluster;Write
 rds:RebootDBInstance;Write
 rds:RegisterDBProxyTargets;Write
 rds:RemoveFromGlobalCluster;Write

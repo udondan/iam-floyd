@@ -23,7 +23,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toAssociateFailbackClientToRecoveryInstanceForDrs() {
     return this.to('AssociateFailbackClientToRecoveryInstanceForDrs');
@@ -34,7 +34,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toBatchCreateVolumeSnapshotGroupForDrs() {
     return this.to('BatchCreateVolumeSnapshotGroupForDrs');
@@ -45,7 +45,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toBatchDeleteSnapshotRequestForDrs() {
     return this.to('BatchDeleteSnapshotRequestForDrs');
@@ -60,7 +60,7 @@ export class Drs extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toCreateRecoveryInstanceForDrs() {
     return this.to('CreateRecoveryInstanceForDrs');
@@ -75,7 +75,7 @@ export class Drs extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_CreateReplicationConfigurationTemplate.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_CreateReplicationConfigurationTemplate.html
    */
   public toCreateReplicationConfigurationTemplate() {
     return this.to('CreateReplicationConfigurationTemplate');
@@ -86,7 +86,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toCreateSessionForDrs() {
     return this.to('CreateSessionForDrs');
@@ -101,7 +101,7 @@ export class Drs extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toCreateSourceServerForDrs() {
     return this.to('CreateSourceServerForDrs');
@@ -112,7 +112,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_DeleteJob.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DeleteJob.html
    */
   public toDeleteJob() {
     return this.to('DeleteJob');
@@ -123,7 +123,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_DeleteRecoveryInstance.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DeleteRecoveryInstance.html
    */
   public toDeleteRecoveryInstance() {
     return this.to('DeleteRecoveryInstance');
@@ -134,7 +134,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_DeleteReplicationConfigurationTemplate.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DeleteReplicationConfigurationTemplate.html
    */
   public toDeleteReplicationConfigurationTemplate() {
     return this.to('DeleteReplicationConfigurationTemplate');
@@ -145,7 +145,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_DeleteSourceServer.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DeleteSourceServer.html
    */
   public toDeleteSourceServer() {
     return this.to('DeleteSourceServer');
@@ -156,7 +156,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_DescribeJobLogItems.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DescribeJobLogItems.html
    */
   public toDescribeJobLogItems() {
     return this.to('DescribeJobLogItems');
@@ -167,7 +167,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_DescribeJobs.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DescribeJobs.html
    */
   public toDescribeJobs() {
     return this.to('DescribeJobs');
@@ -181,7 +181,7 @@ export class Drs extends PolicyStatement {
    * Dependent actions:
    * - ec2:DescribeInstances
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_DescribeRecoveryInstances.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DescribeRecoveryInstances.html
    */
   public toDescribeRecoveryInstances() {
     return this.to('DescribeRecoveryInstances');
@@ -192,7 +192,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_DescribeRecoverySnapshots.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DescribeRecoverySnapshots.html
    */
   public toDescribeRecoverySnapshots() {
     return this.to('DescribeRecoverySnapshots');
@@ -203,7 +203,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_DescribeReplicationConfigurationTemplates.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DescribeReplicationConfigurationTemplates.html
    */
   public toDescribeReplicationConfigurationTemplates() {
     return this.to('DescribeReplicationConfigurationTemplates');
@@ -214,7 +214,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toDescribeReplicationServerAssociationsForDrs() {
     return this.to('DescribeReplicationServerAssociationsForDrs');
@@ -225,7 +225,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toDescribeSnapshotRequestsForDrs() {
     return this.to('DescribeSnapshotRequestsForDrs');
@@ -236,7 +236,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_DescribeSourceServers.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DescribeSourceServers.html
    */
   public toDescribeSourceServers() {
     return this.to('DescribeSourceServers');
@@ -247,7 +247,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_DisconnectRecoveryInstance.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DisconnectRecoveryInstance.html
    */
   public toDisconnectRecoveryInstance() {
     return this.to('DisconnectRecoveryInstance');
@@ -258,7 +258,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_DisconnectSourceServer.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_DisconnectSourceServer.html
    */
   public toDisconnectSourceServer() {
     return this.to('DisconnectSourceServer');
@@ -269,7 +269,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toGetAgentCommandForDrs() {
     return this.to('GetAgentCommandForDrs');
@@ -280,7 +280,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toGetAgentConfirmedResumeInfoForDrs() {
     return this.to('GetAgentConfirmedResumeInfoForDrs');
@@ -291,7 +291,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toGetAgentInstallationAssetsForDrs() {
     return this.to('GetAgentInstallationAssetsForDrs');
@@ -302,7 +302,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toGetAgentReplicationInfoForDrs() {
     return this.to('GetAgentReplicationInfoForDrs');
@@ -313,7 +313,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toGetAgentRuntimeConfigurationForDrs() {
     return this.to('GetAgentRuntimeConfigurationForDrs');
@@ -324,7 +324,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toGetAgentSnapshotCreditsForDrs() {
     return this.to('GetAgentSnapshotCreditsForDrs');
@@ -335,7 +335,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toGetChannelCommandsForDrs() {
     return this.to('GetChannelCommandsForDrs');
@@ -346,7 +346,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toGetFailbackCommandForDrs() {
     return this.to('GetFailbackCommandForDrs');
@@ -357,7 +357,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toGetFailbackLaunchRequestedForDrs() {
     return this.to('GetFailbackLaunchRequestedForDrs');
@@ -368,7 +368,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_GetFailbackReplicationConfiguration.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_GetFailbackReplicationConfiguration.html
    */
   public toGetFailbackReplicationConfiguration() {
     return this.to('GetFailbackReplicationConfiguration');
@@ -379,7 +379,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_GetLaunchConfiguration.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_GetLaunchConfiguration.html
    */
   public toGetLaunchConfiguration() {
     return this.to('GetLaunchConfiguration');
@@ -390,7 +390,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_GetReplicationConfiguration.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_GetReplicationConfiguration.html
    */
   public toGetReplicationConfiguration() {
     return this.to('GetReplicationConfiguration');
@@ -401,7 +401,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toGetSuggestedFailbackClientDeviceMappingForDrs() {
     return this.to('GetSuggestedFailbackClientDeviceMappingForDrs');
@@ -418,7 +418,7 @@ export class Drs extends PolicyStatement {
    * - iam:CreateServiceLinkedRole
    * - iam:GetInstanceProfile
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_InitializeService.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_InitializeService.html
    */
   public toInitializeService() {
     return this.to('InitializeService');
@@ -429,7 +429,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toIssueAgentCertificateForDrs() {
     return this.to('IssueAgentCertificateForDrs');
@@ -440,7 +440,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -451,7 +451,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toNotifyAgentAuthenticationForDrs() {
     return this.to('NotifyAgentAuthenticationForDrs');
@@ -462,7 +462,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toNotifyAgentConnectedForDrs() {
     return this.to('NotifyAgentConnectedForDrs');
@@ -473,7 +473,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toNotifyAgentDisconnectedForDrs() {
     return this.to('NotifyAgentDisconnectedForDrs');
@@ -484,7 +484,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toNotifyAgentReplicationProgressForDrs() {
     return this.to('NotifyAgentReplicationProgressForDrs');
@@ -495,7 +495,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toNotifyConsistencyAttainedForDrs() {
     return this.to('NotifyConsistencyAttainedForDrs');
@@ -506,7 +506,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toNotifyReplicationServerAuthenticationForDrs() {
     return this.to('NotifyReplicationServerAuthenticationForDrs');
@@ -517,7 +517,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_RetryDataReplication.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_RetryDataReplication.html
    */
   public toRetryDataReplication() {
     return this.to('RetryDataReplication');
@@ -528,7 +528,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toSendAgentLogsForDrs() {
     return this.to('SendAgentLogsForDrs');
@@ -539,7 +539,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toSendAgentMetricsForDrs() {
     return this.to('SendAgentMetricsForDrs');
@@ -550,7 +550,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toSendChannelCommandResultForDrs() {
     return this.to('SendChannelCommandResultForDrs');
@@ -561,7 +561,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toSendClientLogsForDrs() {
     return this.to('SendClientLogsForDrs');
@@ -572,7 +572,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toSendClientMetricsForDrs() {
     return this.to('SendClientMetricsForDrs');
@@ -587,7 +587,7 @@ export class Drs extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_StartFailbackLaunch.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_StartFailbackLaunch.html
    */
   public toStartFailbackLaunch() {
     return this.to('StartFailbackLaunch');
@@ -639,7 +639,7 @@ export class Drs extends PolicyStatement {
    * - ec2:TerminateInstances
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_StartRecovery.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_StartRecovery.html
    */
   public toStartRecovery() {
     return this.to('StartRecovery');
@@ -650,7 +650,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_StopFailback.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_StopFailback.html
    */
   public toStopFailback() {
     return this.to('StopFailback');
@@ -665,7 +665,7 @@ export class Drs extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_TagResource.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -686,7 +686,7 @@ export class Drs extends PolicyStatement {
    * - ec2:DescribeVolumes
    * - ec2:TerminateInstances
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_TerminateRecoveryInstances.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_TerminateRecoveryInstances.html
    */
   public toTerminateRecoveryInstances() {
     return this.to('TerminateRecoveryInstances');
@@ -700,7 +700,7 @@ export class Drs extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_UntagResource.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -711,7 +711,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toUpdateAgentBacklogForDrs() {
     return this.to('UpdateAgentBacklogForDrs');
@@ -722,7 +722,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toUpdateAgentConversionInfoForDrs() {
     return this.to('UpdateAgentConversionInfoForDrs');
@@ -733,7 +733,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toUpdateAgentReplicationInfoForDrs() {
     return this.to('UpdateAgentReplicationInfoForDrs');
@@ -744,7 +744,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toUpdateAgentReplicationProcessStateForDrs() {
     return this.to('UpdateAgentReplicationProcessStateForDrs');
@@ -755,7 +755,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toUpdateAgentSourcePropertiesForDrs() {
     return this.to('UpdateAgentSourcePropertiesForDrs');
@@ -766,7 +766,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toUpdateFailbackClientDeviceMappingForDrs() {
     return this.to('UpdateFailbackClientDeviceMappingForDrs');
@@ -777,7 +777,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toUpdateFailbackClientLastSeenForDrs() {
     return this.to('UpdateFailbackClientLastSeenForDrs');
@@ -788,7 +788,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_UpdateFailbackReplicationConfiguration.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_UpdateFailbackReplicationConfiguration.html
    */
   public toUpdateFailbackReplicationConfiguration() {
     return this.to('UpdateFailbackReplicationConfiguration');
@@ -799,7 +799,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_UpdateLaunchConfiguration.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_UpdateLaunchConfiguration.html
    */
   public toUpdateLaunchConfiguration() {
     return this.to('UpdateLaunchConfiguration');
@@ -810,7 +810,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/drs-apis.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/drs-apis.html
    */
   public toUpdateReplicationCertificateForDrs() {
     return this.to('UpdateReplicationCertificateForDrs');
@@ -821,7 +821,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_UpdateReplicationConfiguration.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_UpdateReplicationConfiguration.html
    */
   public toUpdateReplicationConfiguration() {
     return this.to('UpdateReplicationConfiguration');
@@ -832,7 +832,7 @@ export class Drs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/drs/latest/api-reference/API_UpdateReplicationConfigurationTemplate.html
+   * https://docs.aws.amazon.com/drs/latest/APIReference/API_UpdateReplicationConfigurationTemplate.html
    */
   public toUpdateReplicationConfigurationTemplate() {
     return this.to('UpdateReplicationConfigurationTemplate');
@@ -917,7 +917,7 @@ export class Drs extends PolicyStatement {
   /**
    * Adds a resource of type JobResource to the statement
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/failback-overview.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/failback-overview.html
    *
    * @param jobID - Identifier for the jobID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -934,7 +934,7 @@ export class Drs extends PolicyStatement {
   /**
    * Adds a resource of type RecoveryInstanceResource to the statement
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/recovery-instances.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/recovery-instances.html
    *
    * @param recoveryInstanceID - Identifier for the recoveryInstanceID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -952,7 +952,7 @@ export class Drs extends PolicyStatement {
   /**
    * Adds a resource of type ReplicationConfigurationTemplateResource to the statement
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/replication-settings-template.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/replication-settings-template.html
    *
    * @param replicationConfigurationTemplateID - Identifier for the replicationConfigurationTemplateID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -969,7 +969,7 @@ export class Drs extends PolicyStatement {
   /**
    * Adds a resource of type SourceServerResource to the statement
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/source-servers.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/source-servers.html
    *
    * @param sourceServerID - Identifier for the sourceServerID.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -986,7 +986,7 @@ export class Drs extends PolicyStatement {
   /**
    * Filters access by the EC2 instance the request originated from
    *
-   * https://docs.aws.amazon.com/drs/latest/ug/security_iam_authentication.html
+   * https://docs.aws.amazon.com/drs/latest/userguide/security_iam_authentication.html
    *
    * Applies to resource types:
    * - RecoveryInstanceResource

@@ -250,10 +250,14 @@ export class Rds extends PolicyStatement {
    * - .ifDatabaseEngine()
    * - .ifDatabaseName()
    * - .ifStorageEncrypted()
+   * - .ifDatabaseClass()
+   * - .ifStorageSize()
+   * - .ifPiops()
    *
    * Dependent actions:
    * - iam:PassRole
    * - rds:AddTagsToResource
+   * - rds:CreateDBInstance
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html
    */
@@ -324,6 +328,7 @@ export class Rds extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifBackupTarget()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
@@ -435,6 +440,7 @@ export class Rds extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifBackupTarget()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
@@ -553,6 +559,9 @@ export class Rds extends PolicyStatement {
    * Grants permission to delete a previously provisioned DB cluster
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - rds:DeleteDBInstance
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBCluster.html
    */
@@ -1302,8 +1311,14 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifDatabaseClass()
+   * - .ifStorageSize()
+   * - .ifPiops()
+   *
    * Dependent actions:
    * - iam:PassRole
+   * - rds:ModifyDBInstance
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html
    */
@@ -1523,6 +1538,20 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reboot a previously provisioned DB cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - rds:RebootDBInstance
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RebootDBCluster.html
+   */
+  public toRebootDBCluster() {
+    return this.to('RebootDBCluster');
+  }
+
+  /**
    * Grants permission to restart the database engine service
    *
    * Access Level: Write
@@ -1664,10 +1693,14 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   * - .ifDatabaseClass()
+   * - .ifStorageSize()
+   * - .ifPiops()
    *
    * Dependent actions:
    * - iam:PassRole
    * - rds:AddTagsToResource
+   * - rds:CreateDBInstance
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromSnapshot.html
    */
@@ -1684,10 +1717,14 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   * - .ifDatabaseClass()
+   * - .ifStorageSize()
+   * - .ifPiops()
    *
    * Dependent actions:
    * - iam:PassRole
    * - rds:AddTagsToResource
+   * - rds:CreateDBInstance
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterToPointInTime.html
    */
@@ -1701,6 +1738,7 @@ export class Rds extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifBackupTarget()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
@@ -1741,6 +1779,7 @@ export class Rds extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifBackupTarget()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
@@ -1943,6 +1982,7 @@ export class Rds extends PolicyStatement {
       'PromoteReadReplica',
       'PromoteReadReplicaDBCluster',
       'PurchaseReservedDBInstancesOffering',
+      'RebootDBCluster',
       'RebootDBInstance',
       'RegisterDBProxyTargets',
       'RemoveFromGlobalCluster',
@@ -2347,9 +2387,33 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Filters access by the type of backup target. One of: REGION, OUTPOSTS
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toCreateDBInstance()
+   * - .toCreateDBSnapshot()
+   * - .toRestoreDBInstanceFromDBSnapshot()
+   * - .toRestoreDBInstanceToPointInTime()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifBackupTarget(value: string | string[], operator?: Operator | string) {
+    return this.if(`BackupTarget`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the type of DB instance class
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toCreateDBCluster()
+   * - .toModifyDBCluster()
+   * - .toRestoreDBClusterFromSnapshot()
+   * - .toRestoreDBClusterToPointInTime()
    *
    * Applies to resource types:
    * - db
@@ -2433,6 +2497,12 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to actions:
+   * - .toCreateDBCluster()
+   * - .toModifyDBCluster()
+   * - .toRestoreDBClusterFromSnapshot()
+   * - .toRestoreDBClusterToPointInTime()
+   *
    * Applies to resource types:
    * - db
    *
@@ -2465,6 +2535,12 @@ export class Rds extends PolicyStatement {
    * Filters access by the storage volume size (in GB)
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toCreateDBCluster()
+   * - .toModifyDBCluster()
+   * - .toRestoreDBClusterFromSnapshot()
+   * - .toRestoreDBClusterToPointInTime()
    *
    * Applies to resource types:
    * - db

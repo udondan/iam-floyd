@@ -1,3 +1,4 @@
+rds:BackupTarget
 rds:DatabaseClass
 rds:DatabaseEngine
 rds:DatabaseName
