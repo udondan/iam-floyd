@@ -9,6 +9,7 @@ connect:AssociateRoutingProfileQueues;Write
 connect:AssociateSecurityKey;Write
 connect:CreateAgentStatus;Write
 connect:CreateContactFlow;Write
+connect:CreateContactFlowModule;Write
 connect:CreateHoursOfOperation;Write
 connect:CreateInstance;Write
 connect:CreateIntegrationAssociation;Write
@@ -19,6 +20,8 @@ connect:CreateSecurityProfile;Write
 connect:CreateUseCase;Write
 connect:CreateUser;Write
 connect:CreateUserHierarchyGroup;Write
+connect:DeleteContactFlow;Write
+connect:DeleteContactFlowModule;Write
 connect:DeleteHoursOfOperation;Write
 connect:DeleteInstance;Write
 connect:DeleteIntegrationAssociation;Write
@@ -30,6 +33,7 @@ connect:DeleteUserHierarchyGroup;Write
 connect:DescribeAgentStatus;Read
 connect:DescribeContact;Read
 connect:DescribeContactFlow;Read
+connect:DescribeContactFlowModule;Read
 connect:DescribeHoursOfOperation;Read
 connect:DescribeInstance;Read
 connect:DescribeInstanceAttribute;Read
@@ -58,6 +62,7 @@ connect:GetMetricData;Read
 connect:ListAgentStatuses;List
 connect:ListApprovedOrigins;List
 connect:ListBots;List
+connect:ListContactFlowModules;List
 connect:ListContactFlows;List
 connect:ListContactReferences;List
 connect:ListHoursOfOperations;List
@@ -96,6 +101,8 @@ connect:UpdateAgentStatus;Write
 connect:UpdateContact;Write
 connect:UpdateContactAttributes;Write
 connect:UpdateContactFlowContent;Write
+connect:UpdateContactFlowMetadata;Write
+connect:UpdateContactFlowModuleMetadata;Write
 connect:UpdateContactFlowName;Write
 connect:UpdateContactSchedule;Write
 connect:UpdateHoursOfOperation;Write
@@ -120,3 +127,4 @@ connect:UpdateUserIdentityInfo;Write
 connect:UpdateUserPhoneConfig;Write
 connect:UpdateUserRoutingProfile;Write
 connect:UpdateUserSecurityProfiles;Write
+connect:UpdatedescribeContent;Write

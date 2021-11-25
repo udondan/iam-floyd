@@ -213,6 +213,22 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a contact flow module in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlowModule.html
+   */
+  public toCreateContactFlowModule() {
+    return this.to('CreateContactFlowModule');
+  }
+
+  /**
    * Grants permission to create hours of operation in an Amazon Connect instance
    *
    * Access Level: Write
@@ -398,6 +414,36 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a contact flow in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteContactFlow.html
+   */
+  public toDeleteContactFlow() {
+    return this.to('DeleteContactFlow');
+  }
+
+  /**
+   * Grants permission to delete a contact flow module in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteContactFlowModule.html
+   */
+  public toDeleteContactFlowModule() {
+    return this.to('DeleteContactFlowModule');
+  }
+
+  /**
    * Grants permission to delete hours of operation in an Amazon Connect instance
    *
    * Access Level: Write
@@ -573,6 +619,21 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeContactFlow() {
     return this.to('DescribeContactFlow');
+  }
+
+  /**
+   * Grants permission to describe a contact flow module in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContactFlowModule.html
+   */
+  public toDescribeContactFlowModule() {
+    return this.to('DescribeContactFlowModule');
   }
 
   /**
@@ -999,6 +1060,17 @@ export class Connect extends PolicyStatement {
    */
   public toListBots() {
     return this.to('ListBots');
+  }
+
+  /**
+   * Grants permission to list contact flow module resources in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactFlowModules.html
+   */
+  public toListContactFlowModules() {
+    return this.to('ListContactFlowModules');
   }
 
   /**
@@ -1517,6 +1589,36 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the metadata of a contact flow in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowMetadata.html
+   */
+  public toUpdateContactFlowMetadata() {
+    return this.to('UpdateContactFlowMetadata');
+  }
+
+  /**
+   * Grants permission to update the metadata of a contact flow module in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowModuleMetadata.html
+   */
+  public toUpdateContactFlowModuleMetadata() {
+    return this.to('UpdateContactFlowModuleMetadata');
+  }
+
+  /**
    * Grants permission to update the name and description of a contact flow in an Amazon Connect instance
    *
    * Access Level: Write
@@ -1892,6 +1994,21 @@ export class Connect extends PolicyStatement {
     return this.to('UpdateUserSecurityProfiles');
   }
 
+  /**
+   * Grants permission to update contact flow module content in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatedescribeContent.html
+   */
+  public toUpdatedescribeContent() {
+    return this.to('UpdatedescribeContent');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateApprovedOrigin',
@@ -1905,6 +2022,7 @@ export class Connect extends PolicyStatement {
       'AssociateSecurityKey',
       'CreateAgentStatus',
       'CreateContactFlow',
+      'CreateContactFlowModule',
       'CreateHoursOfOperation',
       'CreateInstance',
       'CreateIntegrationAssociation',
@@ -1915,6 +2033,8 @@ export class Connect extends PolicyStatement {
       'CreateUseCase',
       'CreateUser',
       'CreateUserHierarchyGroup',
+      'DeleteContactFlow',
+      'DeleteContactFlowModule',
       'DeleteHoursOfOperation',
       'DeleteInstance',
       'DeleteIntegrationAssociation',
@@ -1945,6 +2065,8 @@ export class Connect extends PolicyStatement {
       'UpdateContact',
       'UpdateContactAttributes',
       'UpdateContactFlowContent',
+      'UpdateContactFlowMetadata',
+      'UpdateContactFlowModuleMetadata',
       'UpdateContactFlowName',
       'UpdateContactSchedule',
       'UpdateHoursOfOperation',
@@ -1968,12 +2090,14 @@ export class Connect extends PolicyStatement {
       'UpdateUserIdentityInfo',
       'UpdateUserPhoneConfig',
       'UpdateUserRoutingProfile',
-      'UpdateUserSecurityProfiles'
+      'UpdateUserSecurityProfiles',
+      'UpdatedescribeContent'
     ],
     Read: [
       'DescribeAgentStatus',
       'DescribeContact',
       'DescribeContactFlow',
+      'DescribeContactFlowModule',
       'DescribeHoursOfOperation',
       'DescribeInstance',
       'DescribeInstanceAttribute',
@@ -1996,6 +2120,7 @@ export class Connect extends PolicyStatement {
       'ListAgentStatuses',
       'ListApprovedOrigins',
       'ListBots',
+      'ListContactFlowModules',
       'ListContactFlows',
       'ListContactReferences',
       'ListHoursOfOperations',
@@ -2145,6 +2270,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type wildcard-queue to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/API_Queue.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onWildcardQueue(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/queue/${ resourceName }`);
+  }
+
+  /**
    * Adds a resource of type quick-connect to the statement
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html
@@ -2163,6 +2303,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type wildcard-quick-connect to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onWildcardQuickConnect(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/transfer-destination/${ resourceName }`);
+  }
+
+  /**
    * Adds a resource of type contact-flow to the statement
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/connect-contact-flows.html
@@ -2178,6 +2333,39 @@ export class Connect extends PolicyStatement {
    */
   public onContactFlow(instanceId: string, contactFlowId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/contact-flow/${ contactFlowId }`);
+  }
+
+  /**
+   * Adds a resource of type contact-flow-module to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/contact-flow-modules.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param contactFlowModuleId - Identifier for the contactFlowModuleId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onContactFlowModule(instanceId: string, contactFlowModuleId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/flow-module/${ contactFlowModuleId }`);
+  }
+
+  /**
+   * Adds a resource of type wildcard-contact-flow to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-contact-flows.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onWildcardContactFlow(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/contact-flow/${ resourceName }`);
   }
 
   /**
@@ -2217,6 +2405,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type wildcard-agent-status to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/agent-status.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onWildcardAgentStatus(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/agent-status/${ resourceName }`);
+  }
+
+  /**
    * Adds a resource of type phone-number to the statement
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html
@@ -2229,6 +2432,21 @@ export class Connect extends PolicyStatement {
    */
   public onPhoneNumber(instanceId: string, phoneNumberId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/phone-numbers/${ phoneNumberId }`);
+  }
+
+  /**
+   * Adds a resource of type wildcard-phone-number to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onWildcardPhoneNumber(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/phone-numbers/${ resourceName }`);
   }
 
   /**
@@ -2299,6 +2517,7 @@ export class Connect extends PolicyStatement {
    * - .toAssociateSecurityKey()
    * - .toCreateAgentStatus()
    * - .toCreateContactFlow()
+   * - .toCreateContactFlowModule()
    * - .toCreateHoursOfOperation()
    * - .toCreateIntegrationAssociation()
    * - .toCreateQueue()
@@ -2308,6 +2527,8 @@ export class Connect extends PolicyStatement {
    * - .toCreateUseCase()
    * - .toCreateUser()
    * - .toCreateUserHierarchyGroup()
+   * - .toDeleteContactFlow()
+   * - .toDeleteContactFlowModule()
    * - .toDeleteHoursOfOperation()
    * - .toDeleteInstance()
    * - .toDeleteIntegrationAssociation()
@@ -2319,6 +2540,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeAgentStatus()
    * - .toDescribeContact()
    * - .toDescribeContactFlow()
+   * - .toDescribeContactFlowModule()
    * - .toDescribeHoursOfOperation()
    * - .toDescribeInstance()
    * - .toDescribeInstanceAttribute()
@@ -2367,6 +2589,8 @@ export class Connect extends PolicyStatement {
    * - .toUpdateContact()
    * - .toUpdateContactAttributes()
    * - .toUpdateContactFlowContent()
+   * - .toUpdateContactFlowMetadata()
+   * - .toUpdateContactFlowModuleMetadata()
    * - .toUpdateContactFlowName()
    * - .toUpdateContactSchedule()
    * - .toUpdateHoursOfOperation()
@@ -2391,6 +2615,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateUserPhoneConfig()
    * - .toUpdateUserRoutingProfile()
    * - .toUpdateUserSecurityProfiles()
+   * - .toUpdatedescribeContent()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -37,6 +37,7 @@ iotwireless:GetFuotaTask;Read
 iotwireless:GetLogLevelsByResourceTypes;Read
 iotwireless:GetMulticastGroup;Read
 iotwireless:GetMulticastGroupSession;Read
+iotwireless:GetNetworkAnalyzerConfiguration;Read
 iotwireless:GetPartnerAccount;Read
 iotwireless:GetResourceEventConfiguration;Read
 iotwireless:GetResourceLogLevel;Read
@@ -70,6 +71,7 @@ iotwireless:StartBulkAssociateWirelessDeviceWithMulticastGroup;Write
 iotwireless:StartBulkDisassociateWirelessDeviceFromMulticastGroup;Write
 iotwireless:StartFuotaTask;Write
 iotwireless:StartMulticastGroupSession;Write
+iotwireless:StartNetworkAnalyzerStream;Write
 iotwireless:TagResource;Tagging
 iotwireless:TestWirelessDevice;Write
 iotwireless:UntagResource;Tagging
@@ -77,6 +79,7 @@ iotwireless:UpdateDestination;Write
 iotwireless:UpdateFuotaTask;Write
 iotwireless:UpdateLogLevelsByResourceTypes;Write
 iotwireless:UpdateMulticastGroup;Write
+iotwireless:UpdateNetworkAnalyzerConfiguration;Write
 iotwireless:UpdatePartnerAccount;Write
 iotwireless:UpdateResourceEventConfiguration;Write
 iotwireless:UpdateWirelessDevice;Write

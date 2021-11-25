@@ -31,6 +31,7 @@ aws-marketplace-management
 aws-portal
 awsconnector
 backup
+backup-gateway
 backup-storage
 batch
 braket
@@ -254,6 +255,7 @@ sqlworkbench
 sqs
 ssm
 ssm-contacts
+ssm-guiconnect
 ssm-incidents
 ssmmessages
 sso

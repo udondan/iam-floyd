@@ -43,9 +43,11 @@ dynamodb:PartiQLUpdate;Write
 dynamodb:PurchaseReservedCapacityOfferings;Write
 dynamodb:PutItem;Write
 dynamodb:Query;Read
+dynamodb:RestoreTableFromAwsBackup;Write
 dynamodb:RestoreTableFromBackup;Write
 dynamodb:RestoreTableToPointInTime;Write
 dynamodb:Scan;Read
+dynamodb:StartAwsBackupJob;Write
 dynamodb:TagResource;Tagging
 dynamodb:UntagResource;Tagging
 dynamodb:UpdateContinuousBackups;Write

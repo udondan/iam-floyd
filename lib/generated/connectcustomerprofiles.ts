@@ -122,6 +122,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a preview of auto merging in a domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetAutoMergingPreview.html
+   */
+  public toGetAutoMergingPreview() {
+    return this.to('GetAutoMergingPreview');
+  }
+
+  /**
    * Grants permission to get a specific domain in an account
    *
    * Access Level: Read
@@ -130,6 +141,17 @@ export class Profile extends PolicyStatement {
    */
   public toGetDomain() {
     return this.to('GetDomain');
+  }
+
+  /**
+   * Grants permission to get an identity resolution job in a domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetIdentityResolutionJob.html
+   */
+  public toGetIdentityResolutionJob() {
+    return this.to('GetIdentityResolutionJob');
   }
 
   /**
@@ -144,7 +166,7 @@ export class Profile extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get profile matches
+   * Grants permission to get profile matches in a domain
    *
    * Access Level: List
    *
@@ -196,6 +218,17 @@ export class Profile extends PolicyStatement {
    */
   public toListDomains() {
     return this.to('ListDomains');
+  }
+
+  /**
+   * Grants permission to list identity resolution jobs in a domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListIdentityResolutionJobs.html
+   */
+  public toListIdentityResolutionJobs() {
+    return this.to('ListIdentityResolutionJobs');
   }
 
   /**
@@ -254,7 +287,7 @@ export class Profile extends PolicyStatement {
   }
 
   /**
-   * Grants permission to merge profiles
+   * Grants permission to merge profiles in a domain
    *
    * Access Level: Write
    *
@@ -387,7 +420,9 @@ export class Profile extends PolicyStatement {
       'UpdateProfile'
     ],
     Read: [
+      'GetAutoMergingPreview',
       'GetDomain',
+      'GetIdentityResolutionJob',
       'GetIntegration',
       'GetProfileObjectType',
       'GetProfileObjectTypeTemplate',
@@ -398,6 +433,7 @@ export class Profile extends PolicyStatement {
       'GetMatches',
       'ListAccountIntegrations',
       'ListDomains',
+      'ListIdentityResolutionJobs',
       'ListIntegrations',
       'ListProfileObjectTypeTemplates',
       'ListProfileObjectTypes',

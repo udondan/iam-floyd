@@ -496,6 +496,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the NetworkAnalyzerConfiguration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetNetworkAnalyzerConfiguration.html
+   */
+  public toGetNetworkAnalyzerConfiguration() {
+    return this.to('GetNetworkAnalyzerConfiguration');
+  }
+
+  /**
    * Grants permission to get the associated PartnerAccount
    *
    * Access Level: Read
@@ -859,6 +870,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start NetworkAnalyzer stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/connect-iot-lorawan-network-analyzer-api.html
+   */
+  public toStartNetworkAnalyzerStream() {
+    return this.to('StartNetworkAnalyzerStream');
+  }
+
+  /**
    * Grants permission to tag a given resource
    *
    * Access Level: Tagging
@@ -940,6 +962,17 @@ export class Iotwireless extends PolicyStatement {
    */
   public toUpdateMulticastGroup() {
     return this.to('UpdateMulticastGroup');
+  }
+
+  /**
+   * Grants permission to update the NetworkAnalyzerConfiguration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateNetworkAnalyzerConfiguration.html
+   */
+  public toUpdateNetworkAnalyzerConfiguration() {
+    return this.to('UpdateNetworkAnalyzerConfiguration');
   }
 
   /**
@@ -1030,11 +1063,13 @@ export class Iotwireless extends PolicyStatement {
       'StartBulkDisassociateWirelessDeviceFromMulticastGroup',
       'StartFuotaTask',
       'StartMulticastGroupSession',
+      'StartNetworkAnalyzerStream',
       'TestWirelessDevice',
       'UpdateDestination',
       'UpdateFuotaTask',
       'UpdateLogLevelsByResourceTypes',
       'UpdateMulticastGroup',
+      'UpdateNetworkAnalyzerConfiguration',
       'UpdatePartnerAccount',
       'UpdateResourceEventConfiguration',
       'UpdateWirelessDevice',
@@ -1047,6 +1082,7 @@ export class Iotwireless extends PolicyStatement {
       'GetLogLevelsByResourceTypes',
       'GetMulticastGroup',
       'GetMulticastGroupSession',
+      'GetNetworkAnalyzerConfiguration',
       'GetPartnerAccount',
       'GetResourceEventConfiguration',
       'GetResourceLogLevel',

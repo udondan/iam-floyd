@@ -19,7 +19,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Returns the attributes of one or more items from one or more tables
+   * Grants permission to return the attributes of one or more items from one or more tables
    *
    * Access Level: Read
    *
@@ -36,7 +36,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Puts or deletes multiple items in one or more tables
+   * Grants permission to put or delete multiple items in one or more tables
    *
    * Access Level: Write
    *
@@ -52,7 +52,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * The ConditionCheckItem operation checks the existence of a set of attributes for the item with the given primary key
+   * Grants permission to the ConditionCheckItem operation checks the existence of a set of attributes for the item with the given primary key
    *
    * Access Level: Read
    *
@@ -69,7 +69,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Creates a backup for an existing table
+   * Grants permission to create a backup for an existing table
    *
    * Access Level: Write
    *
@@ -80,7 +80,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Enables the user to create a global table from an existing table
+   * Grants permission to create a global table from an existing table
    *
    * Access Level: Write
    *
@@ -91,7 +91,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * The CreateTable operation adds a new table to your account
+   * Grants permission to the CreateTable operation adds a new table to your account
    *
    * Access Level: Write
    *
@@ -102,7 +102,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Adds a new replica table
+   * Grants permission to add a new replica table
    *
    * Access Level: Write
    *
@@ -113,7 +113,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing backup of a table
+   * Grants permission to delete an existing backup of a table
    *
    * Access Level: Write
    *
@@ -124,7 +124,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Deletes a single item in a table by primary key
+   * Grants permission to deletes a single item in a table by primary key
    *
    * Access Level: Write
    *
@@ -142,7 +142,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * The DeleteTable operation deletes a table and all of its items
+   * Grants permission to the DeleteTable operation which deletes a table and all of its items
    *
    * Access Level: Write
    *
@@ -153,7 +153,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Deletes a replica table and all of its items
+   * Grants permission to delete a replica table and all of its items
    *
    * Access Level: Write
    *
@@ -164,7 +164,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Describes an existing backup of a table
+   * Grants permission to describe an existing backup of a table
    *
    * Access Level: Read
    *
@@ -175,7 +175,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Checks the status of the backup restore settings on the specified table
+   * Grants permission to check the status of the backup restore settings on the specified table
    *
    * Access Level: Read
    *
@@ -186,7 +186,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Describes the contributor insights status and related details for a given table or global secondary index
+   * Grants permission to describe the contributor insights status and related details for a given table or global secondary index
    *
    * Access Level: Read
    *
@@ -197,7 +197,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Describes an existing Export of a table
+   * Grants permission to describe an existing Export of a table
    *
    * Access Level: Read
    *
@@ -208,7 +208,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Returns information about the specified global table
+   * Grants permission to return information about the specified global table
    *
    * Access Level: Read
    *
@@ -219,7 +219,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Returns settings information about the specified global table
+   * Grants permission to return settings information about the specified global table
    *
    * Access Level: Read
    *
@@ -230,7 +230,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the status of Kinesis streaming and related details for a given table
+   * Grants permission to grant permission to describe the status of Kinesis streaming and related details for a given table
    *
    * Access Level: Read
    *
@@ -241,7 +241,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Returns the current provisioned-capacity limits for your AWS account in a region, both for the region as a whole and for any one DynamoDB table that you create there
+   * Grants permission to return the current provisioned-capacity limits for your AWS account in a region, both for the region as a whole and for any one DynamoDB table that you create there
    *
    * Access Level: Read
    *
@@ -252,7 +252,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Describes one or more of the Reserved Capacity purchased
+   * Grants permission to describe one or more of the Reserved Capacity purchased
    *
    * Access Level: Read
    */
@@ -261,7 +261,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Describes Reserved Capacity offerings that are available for purchase
+   * Grants permission to describe Reserved Capacity offerings that are available for purchase
    *
    * Access Level: Read
    */
@@ -270,7 +270,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Returns information about a stream, including the current status of the stream, its Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table
+   * Grants permission to return information about a stream, including the current status of the stream, its Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table
    *
    * Access Level: Read
    *
@@ -281,7 +281,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Returns information about the table
+   * Grants permission to return information about the table
    *
    * Access Level: Read
    *
@@ -292,7 +292,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Describes the auto scaling settings across all replicas of the global table
+   * Grants permission to describe the auto scaling settings across all replicas of the global table
    *
    * Access Level: Read
    *
@@ -303,7 +303,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Gives a description of the Time to Live (TTL) status on the specified table.
+   * Grants permission to give a description of the Time to Live (TTL) status on the specified table
    *
    * Access Level: Read
    *
@@ -314,7 +314,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to stop replication from the DynamoDB table to the Kinesis data stream
+   * Grants permission to grant permission to stop replication from the DynamoDB table to the Kinesis data stream
    *
    * Access Level: Write
    *
@@ -325,7 +325,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start table data replication to the specified Kinesis data stream at a timestamp chosen during the enable workflow
+   * Grants permission to grant permission to start table data replication to the specified Kinesis data stream at a timestamp chosen during the enable workflow
    *
    * Access Level: Write
    *
@@ -336,7 +336,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Initiates an Export of a DynamoDB table to S3
+   * Grants permission to initiate an Export of a DynamoDB table to S3
    *
    * Access Level: Write
    *
@@ -347,7 +347,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * The GetItem operation returns a set of attributes for the item with the given primary key
+   * Grants permission to the GetItem operation that returns a set of attributes for the item with the given primary key
    *
    * Access Level: Read
    *
@@ -365,7 +365,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Retrieves the stream records from a given shard
+   * Grants permission to retrieve the stream records from a given shard
    *
    * Access Level: Read
    *
@@ -376,7 +376,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Returns a shard iterator
+   * Grants permission to return a shard iterator
    *
    * Access Level: Read
    *
@@ -387,7 +387,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * List backups associated with the account and endpoint
+   * Grants permission to list backups associated with the account and endpoint
    *
    * Access Level: List
    *
@@ -398,7 +398,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Lists the ContributorInsightsSummary for all tables and global secondary indexes associated with the current account and endpoint
+   * Grants permission to list the ContributorInsightsSummary for all tables and global secondary indexes associated with the current account and endpoint
    *
    * Access Level: List
    *
@@ -409,7 +409,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * List exports associated with the account and endpoint
+   * Grants permission to list exports associated with the account and endpoint
    *
    * Access Level: List
    *
@@ -420,7 +420,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Lists all global tables that have a replica in the specified region
+   * Grants permission to list all global tables that have a replica in the specified region
    *
    * Access Level: List
    *
@@ -431,7 +431,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Returns an array of stream ARNs associated with the current account and endpoint
+   * Grants permission to return an array of stream ARNs associated with the current account and endpoint
    *
    * Access Level: Read
    *
@@ -442,7 +442,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Returns an array of table names associated with the current account and endpoint
+   * Grants permission to return an array of table names associated with the current account and endpoint
    *
    * Access Level: List
    *
@@ -453,7 +453,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * List all tags on an Amazon DynamoDB resource
+   * Grants permission to list all tags on an Amazon DynamoDB resource
    *
    * Access Level: Read
    *
@@ -532,7 +532,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Purchases Reserved Capacity for use with your account
+   * Grants permission to purchases reserved capacity for use with your account
    *
    * Access Level: Write
    */
@@ -541,7 +541,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Creates a new item, or replaces an old item with a new item
+   * Grants permission to create a new item, or replace an old item with a new item
    *
    * Access Level: Write
    *
@@ -559,7 +559,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Uses the primary key of a table or a secondary index to directly access items from that table or index
+   * Grants permission to use the primary key of a table or a secondary index to directly access items from that table or index
    *
    * Access Level: Read
    *
@@ -577,7 +577,18 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Creates a new table from an existing backup
+   * Grants permission to create a new table from recovery point on AWS Backup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableFromAwsBackup.html
+   */
+  public toRestoreTableFromAwsBackup() {
+    return this.to('RestoreTableFromAwsBackup');
+  }
+
+  /**
+   * Grants permission to create a new table from an existing backup
    *
    * Access Level: Write
    *
@@ -588,7 +599,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Restores a table to a point in time
+   * Grants permission to restore a table to a point in time
    *
    * Access Level: Write
    *
@@ -599,7 +610,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Returns one or more items and item attributes by accessing every item in a table or a secondary index
+   * Grants permission to return one or more items and item attributes by accessing every item in a table or a secondary index
    *
    * Access Level: Read
    *
@@ -616,7 +627,18 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Associate a set of tags with an Amazon DynamoDB resource
+   * Grants permission to create a backup on AWS Backup with advanced features enabled
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_StartAwsBackupJob.html
+   */
+  public toStartAwsBackupJob() {
+    return this.to('StartAwsBackupJob');
+  }
+
+  /**
+   * Grants permission to associate a set of tags with an Amazon DynamoDB resource
    *
    * Access Level: Tagging
    *
@@ -627,7 +649,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Removes the association of tags from an Amazon DynamoDB resource.
+   * Grants permission to remove the association of tags from an Amazon DynamoDB resource
    *
    * Access Level: Tagging
    *
@@ -638,7 +660,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Enables or disables continuous backups
+   * Grants permission to enable or disable continuous backups
    *
    * Access Level: Write
    *
@@ -649,7 +671,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Updates the status for contributor insights for a specific table or global secondary index
+   * Grants permission to update the status for contributor insights for a specific table or global secondary index
    *
    * Access Level: Write
    *
@@ -660,7 +682,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Enables the user to add or remove replicas in the specified global table
+   * Grants permission to add or remove replicas in the specified global table
    *
    * Access Level: Write
    *
@@ -671,7 +693,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Enables the user to update settings of the specified global table
+   * Grants permission to update settings of the specified global table
    *
    * Access Level: Write
    *
@@ -682,7 +704,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Edits an existing item's attributes, or adds a new item to the table if it does not already exist
+   * Grants permission to edit an existing item's attributes, or adds a new item to the table if it does not already exist
    *
    * Access Level: Write
    *
@@ -700,7 +722,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table
+   * Grants permission to modify the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table
    *
    * Access Level: Write
    *
@@ -711,7 +733,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Updates auto scaling settings on your replica table
+   * Grants permission to update auto scaling settings on your replica table
    *
    * Access Level: Write
    *
@@ -722,7 +744,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Enables or disables TTL for the specified table
+   * Grants permission to enable or disable TTL for the specified table
    *
    * Access Level: Write
    *
@@ -777,8 +799,10 @@ export class Dynamodb extends PolicyStatement {
       'PartiQLUpdate',
       'PurchaseReservedCapacityOfferings',
       'PutItem',
+      'RestoreTableFromAwsBackup',
       'RestoreTableFromBackup',
       'RestoreTableToPointInTime',
+      'StartAwsBackupJob',
       'UpdateContinuousBackups',
       'UpdateContributorInsights',
       'UpdateGlobalTable',
@@ -889,7 +913,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Filter based on the attribute (field or column) names of the table.
+   * Filter based on the attribute (field or column) names of the table
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
@@ -916,7 +940,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Used to block Transactions APIs calls and allow the non-Transaction APIs calls and vice-versa.
+   * Used to block Transactions APIs calls and allow the non-Transaction APIs calls and vice-versa
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
@@ -938,7 +962,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Used to block full table scan.
+   * Used to block full table scan
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-iam.html
    *
@@ -952,7 +976,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Filters based on the partition key of the table.
+   * Filters based on the partition key of the table
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
@@ -978,7 +1002,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Filter based on the ReturnConsumedCapacity parameter of a request. Contains either "TOTAL" or "NONE".
+   * Filter based on the ReturnConsumedCapacity parameter of a request. Contains either "TOTAL" or "NONE"
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
@@ -1001,7 +1025,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Filter based on the ReturnValues parameter of request. Contains one of the following: "ALL_OLD", "UPDATED_OLD","ALL_NEW","UPDATED_NEW", or "NONE".
+   * Filter based on the ReturnValues parameter of request. Contains one of the following: "ALL_OLD", "UPDATED_OLD","ALL_NEW","UPDATED_NEW", or "NONE"
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
@@ -1023,7 +1047,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Filter based on the Select parameter of a Query or Scan request.
+   * Filter based on the Select parameter of a Query or Scan request
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *

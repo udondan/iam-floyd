@@ -1,6 +1,7 @@
 connect:agent-status
 connect:contact
 connect:contact-flow
+connect:contact-flow-module
 connect:hierarchy-group
 connect:hours-of-operation
 connect:instance
@@ -12,3 +13,8 @@ connect:routing-profile
 connect:security-profile
 connect:use-case
 connect:user
+connect:wildcard-agent-status
+connect:wildcard-contact-flow
+connect:wildcard-phone-number
+connect:wildcard-queue
+connect:wildcard-quick-connect
