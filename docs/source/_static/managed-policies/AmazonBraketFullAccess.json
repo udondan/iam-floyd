@@ -1,101 +1,162 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:GetObject",
-                "s3:PutObject",
-                "s3:ListBucket"
-            ],
-            "Resource": "arn:aws:s3:::amazon-braket-*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "logs:Describe*",
-                "logs:Get*",
-                "logs:List*",
-                "logs:StartQuery",
-                "logs:StopQuery",
-                "logs:TestMetricFilter",
-                "logs:FilterLogEvents"
-            ],
-            "Resource": "arn:aws:logs:*:*:log-group:/aws/braket:*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "iam:ListRoles",
-                "iam:ListRolePolicies",
-                "iam:GetRole",
-                "iam:GetRolePolicy",
-                "iam:ListAttachedRolePolicies"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "sagemaker:ListNotebookInstances"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "sagemaker:CreatePresignedNotebookInstanceUrl",
-                "sagemaker:CreateNotebookInstance",
-                "sagemaker:DeleteNotebookInstance",
-                "sagemaker:DescribeNotebookInstance",
-                "sagemaker:StartNotebookInstance",
-                "sagemaker:StopNotebookInstance",
-                "sagemaker:UpdateNotebookInstance",
-                "sagemaker:ListTags",
-                "sagemaker:AddTags",
-                "sagemaker:DeleteTags"
-            ],
-            "Resource": "arn:aws:sagemaker:*:*:notebook-instance/amazon-braket-*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "sagemaker:DescribeNotebookInstanceLifecycleConfig",
-                "sagemaker:CreateNotebookInstanceLifecycleConfig",
-                "sagemaker:DeleteNotebookInstanceLifecycleConfig",
-                "sagemaker:ListNotebookInstanceLifecycleConfigs",
-                "sagemaker:UpdateNotebookInstanceLifecycleConfig"
-            ],
-            "Resource": "arn:aws:sagemaker:*:*:notebook-instance-lifecycle-config/amazon-braket-*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": "braket:*",
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": "iam:CreateServiceLinkedRole",
-            "Resource": "arn:aws:iam::*:role/aws-service-role/braket.amazonaws.com/AWSServiceRoleForAmazonBraket*",
-            "Condition": {
-                "StringEquals": {
-                    "iam:AWSServiceName": "braket.amazonaws.com"
-                }
-            }
-        },
-        {
-            "Action": [
-                "iam:PassRole"
-            ],
-            "Effect": "Allow",
-            "Resource": "arn:aws:iam::*:role/service-role/AmazonBraketServiceSageMakerNotebookRole*",
-            "Condition": {
-                "StringLike": {
-                    "iam:PassedToService": [
-                        "sagemaker.amazonaws.com"
-                    ]
-                }
-            }
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:ListBucket",
+				"s3:CreateBucket",
+				"s3:PutBucketPublicAccessBlock",
+				"s3:PutBucketPolicy"
+			],
+			"Resource": "arn:aws:s3:::amazon-braket-*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ecr:GetDownloadUrlForLayer",
+				"ecr:BatchGetImage",
+				"ecr:BatchCheckLayerAvailability"
+			],
+			"Resource": "arn:aws:ecr:*:*:repository/amazon-braket*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ecr:GetAuthorizationToken"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"logs:Describe*",
+				"logs:Get*",
+				"logs:List*",
+				"logs:StartQuery",
+				"logs:StopQuery",
+				"logs:TestMetricFilter",
+				"logs:FilterLogEvents"
+			],
+			"Resource": "arn:aws:logs:*:*:log-group:/aws/braket*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"iam:ListRoles",
+				"iam:ListRolePolicies",
+				"iam:GetRole",
+				"iam:GetRolePolicy",
+				"iam:ListAttachedRolePolicies"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"sagemaker:ListNotebookInstances"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"sagemaker:CreatePresignedNotebookInstanceUrl",
+				"sagemaker:CreateNotebookInstance",
+				"sagemaker:DeleteNotebookInstance",
+				"sagemaker:DescribeNotebookInstance",
+				"sagemaker:StartNotebookInstance",
+				"sagemaker:StopNotebookInstance",
+				"sagemaker:UpdateNotebookInstance",
+				"sagemaker:ListTags",
+				"sagemaker:AddTags",
+				"sagemaker:DeleteTags"
+			],
+			"Resource": "arn:aws:sagemaker:*:*:notebook-instance/amazon-braket-*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"sagemaker:DescribeNotebookInstanceLifecycleConfig",
+				"sagemaker:CreateNotebookInstanceLifecycleConfig",
+				"sagemaker:DeleteNotebookInstanceLifecycleConfig",
+				"sagemaker:ListNotebookInstanceLifecycleConfigs",
+				"sagemaker:UpdateNotebookInstanceLifecycleConfig"
+			],
+			"Resource": "arn:aws:sagemaker:*:*:notebook-instance-lifecycle-config/amazon-braket-*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "braket:*",
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "iam:CreateServiceLinkedRole",
+			"Resource": "arn:aws:iam::*:role/aws-service-role/braket.amazonaws.com/AWSServiceRoleForAmazonBraket*",
+			"Condition": {
+				"StringEquals": {
+					"iam:AWSServiceName": "braket.amazonaws.com"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"iam:PassRole"
+			],
+			"Resource": "arn:aws:iam::*:role/service-role/AmazonBraketServiceSageMakerNotebookRole*",
+			"Condition": {
+				"StringLike": {
+					"iam:PassedToService": [
+						"sagemaker.amazonaws.com"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"iam:PassRole"
+			],
+			"Resource": "arn:aws:iam::*:role/AmazonBraketJobsExecutionRole*",
+			"Condition": {
+				"StringLike": {
+					"iam:PassedToService": [
+						"braket.amazonaws.com"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"logs:GetQueryResults"
+			],
+			"Resource": [
+				"arn:aws:logs:*:*:log-group:*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"logs:PutLogEvents",
+				"logs:CreateLogStream",
+				"logs:CreateLogGroup"
+			],
+			"Resource": "arn:aws:logs:*:*:log-group:/aws/braket*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "cloudwatch:PutMetricData",
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"cloudwatch:namespace": "/aws/braket"
+				}
+			}
+		}
+	]
 }

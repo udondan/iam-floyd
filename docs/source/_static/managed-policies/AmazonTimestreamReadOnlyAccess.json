@@ -13,7 +13,9 @@
 				"timestream:ListTables",
 				"timestream:ListTagsForResource",
 				"timestream:Select",
-				"timestream:SelectValues"
+				"timestream:SelectValues",
+				"timestream:DescribeScheduledQuery",
+				"timestream:ListScheduledQueries"
 			],
 			"Resource": "*"
 		}

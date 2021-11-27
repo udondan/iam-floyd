@@ -47,6 +47,14 @@
 				"cloudwatch:GetMetricData"
 			],
 			"Resource": "*"
+		},
+		{
+			"Sid": "RDSDescribeDBInstancesAccess",
+			"Effect": "Allow",
+			"Action": [
+				"rds:DescribeDBInstances"
+			],
+			"Resource": "*"
 		}
 	]
 }

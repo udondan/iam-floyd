@@ -64,6 +64,14 @@
 				"iam:GetServiceLinkedRoleDeletionStatus"
 			],
 			"Resource": "arn:aws:iam::*:role/aws-service-role/devops-guru.amazonaws.com/AWSServiceRoleForDevOpsGuru"
+		},
+		{
+			"Sid": "RDSDescribeDBInstancesAccess",
+			"Effect": "Allow",
+			"Action": [
+				"rds:DescribeDBInstances"
+			],
+			"Resource": "*"
 		}
 	]
 }

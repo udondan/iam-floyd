@@ -24,7 +24,13 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"iam:GetRole",
+				"iam:GetRole"
+			],
+			"Resource": "arn:aws:iam::*:role/*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
 				"iam:PassRole"
 			],
 			"Resource": "arn:aws:iam::*:role/*",

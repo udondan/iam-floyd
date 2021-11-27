@@ -49,6 +49,13 @@
 				"dbqms:DeleteQueryHistory"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:ListAllMyBuckets"
+			],
+			"Resource": "*"
 		}
 	]
 }

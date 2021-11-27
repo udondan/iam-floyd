@@ -32,6 +32,13 @@
 					"kms:ViaService": "timestream.*.amazonaws.com"
 				}
 			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:ListAllMyBuckets"
+			],
+			"Resource": "*"
 		}
 	]
 }
