@@ -1,4 +1,5 @@
 iotsitewise:AssociateAssets;Write
+iotsitewise:AssociateTimeSeriesToAssetProperty;Write
 iotsitewise:BatchAssociateProjectAssets;Write
 iotsitewise:BatchDisassociateProjectAssets;Write
 iotsitewise:BatchPutAssetPropertyValue;Write
@@ -16,6 +17,7 @@ iotsitewise:DeleteDashboard;Write
 iotsitewise:DeleteGateway;Write
 iotsitewise:DeletePortal;Write
 iotsitewise:DeleteProject;Write
+iotsitewise:DeleteTimeSeries;Write
 iotsitewise:DescribeAccessPolicy;Read
 iotsitewise:DescribeAsset;Read
 iotsitewise:DescribeAssetModel;Read
@@ -28,10 +30,13 @@ iotsitewise:DescribeLoggingOptions;Read
 iotsitewise:DescribePortal;Read
 iotsitewise:DescribeProject;Read
 iotsitewise:DescribeStorageConfiguration;Read
+iotsitewise:DescribeTimeSeries;Read
 iotsitewise:DisassociateAssets;Write
+iotsitewise:DisassociateTimeSeriesFromAssetProperty;Write
 iotsitewise:GetAssetPropertyAggregates;Read
 iotsitewise:GetAssetPropertyValue;Read
 iotsitewise:GetAssetPropertyValueHistory;Read
+iotsitewise:GetInterpolatedAssetPropertyValues;Read
 iotsitewise:ListAccessPolicies;List
 iotsitewise:ListAssetModels;List
 iotsitewise:ListAssetRelationships;List
@@ -43,6 +48,7 @@ iotsitewise:ListPortals;List
 iotsitewise:ListProjectAssets;List
 iotsitewise:ListProjects;List
 iotsitewise:ListTagsForResource;Read
+iotsitewise:ListTimeSeries;List
 iotsitewise:PutDefaultEncryptionConfiguration;Write
 iotsitewise:PutLoggingOptions;Write
 iotsitewise:PutStorageConfiguration;Write

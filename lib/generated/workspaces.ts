@@ -104,6 +104,10 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateTags.html
    */
   public toCreateTags() {
@@ -184,6 +188,10 @@ export class Workspaces extends PolicyStatement {
    * Grants permission to delete tags from WorkSpaces resources
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteTags.html
    */
@@ -293,7 +301,7 @@ export class Workspaces extends PolicyStatement {
   /**
    * Grants permission to describe the tags for WorkSpaces resources
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeTags.html
    */
@@ -697,13 +705,13 @@ export class Workspaces extends PolicyStatement {
       'DescribeConnectionAliasPermissions',
       'DescribeConnectionAliases',
       'DescribeIpGroups',
+      'DescribeTags',
       'DescribeWorkspaceDirectories',
       'DescribeWorkspaceImagePermissions',
       'DescribeWorkspacesConnectionStatus'
     ],
     List: [
       'DescribeClientProperties',
-      'DescribeTags',
       'DescribeWorkspaceBundles',
       'DescribeWorkspaceImages',
       'DescribeWorkspaceSnapshots',

@@ -98,6 +98,7 @@ iot:DescribeIndex;Read
 iot:DescribeJob;Read
 iot:DescribeJobExecution;Read
 iot:DescribeJobTemplate;Read
+iot:DescribeManagedJobTemplate;Read
 iot:DescribeMitigationAction;Read
 iot:DescribeProvisioningTemplate;Read
 iot:DescribeProvisioningTemplateVersion;Read
@@ -158,6 +159,7 @@ iot:ListJobExecutionsForJob;List
 iot:ListJobExecutionsForThing;List
 iot:ListJobTemplates;List
 iot:ListJobs;List
+iot:ListManagedJobTemplates;List
 iot:ListMitigationActions;List
 iot:ListNamedShadowsForThing;List
 iot:ListOTAUpdates;List

@@ -1209,6 +1209,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a managed job template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeManagedJobTemplate.html
+   */
+  public toDescribeManagedJobTemplate() {
+    return this.to('DescribeManagedJobTemplate');
+  }
+
+  /**
    * Grants permission to get information about a mitigation action
    *
    * Access Level: Read
@@ -1866,6 +1877,17 @@ export class Iot extends PolicyStatement {
    */
   public toListJobs() {
     return this.to('ListJobs');
+  }
+
+  /**
+   * Grants permission to list managed job templates
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListManagedJobTemplates.html
+   */
+  public toListManagedJobTemplates() {
+    return this.to('ListManagedJobTemplates');
   }
 
   /**
@@ -3061,6 +3083,7 @@ export class Iot extends PolicyStatement {
       'DescribeJob',
       'DescribeJobExecution',
       'DescribeJobTemplate',
+      'DescribeManagedJobTemplate',
       'DescribeMitigationAction',
       'DescribeProvisioningTemplate',
       'DescribeProvisioningTemplateVersion',
@@ -3122,6 +3145,7 @@ export class Iot extends PolicyStatement {
       'ListJobExecutionsForThing',
       'ListJobTemplates',
       'ListJobs',
+      'ListManagedJobTemplates',
       'ListMitigationActions',
       'ListNamedShadowsForThing',
       'ListOTAUpdates',

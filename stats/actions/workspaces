@@ -20,7 +20,7 @@ workspaces:DescribeClientProperties;List
 workspaces:DescribeConnectionAliasPermissions;Read
 workspaces:DescribeConnectionAliases;Read
 workspaces:DescribeIpGroups;Read
-workspaces:DescribeTags;List
+workspaces:DescribeTags;Read
 workspaces:DescribeWorkspaceBundles;List
 workspaces:DescribeWorkspaceDirectories;Read
 workspaces:DescribeWorkspaceImagePermissions;Read

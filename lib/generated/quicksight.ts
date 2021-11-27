@@ -142,6 +142,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a QuickSight email customization template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
+   */
+  public toCreateEmailCustomizationTemplate() {
+    return this.to('CreateEmailCustomizationTemplate');
+  }
+
+  /**
    * Grants permission to create a QuickSight folder
    *
    * Access Level: Write
@@ -284,7 +295,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grant permission to create a theme
+   * Grants permission to create a theme
    *
    * Access Level: Write
    *
@@ -351,7 +362,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete an analysis
+   * Grants permission to delete an analysis
    *
    * Access Level: Write
    *
@@ -411,6 +422,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDeleteDataSource() {
     return this.to('DeleteDataSource');
+  }
+
+  /**
+   * Grants permission to delete a QuickSight email customization template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
+   */
+  public toDeleteEmailCustomizationTemplate() {
+    return this.to('DeleteEmailCustomizationTemplate');
   }
 
   /**
@@ -691,6 +713,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeDataSourcePermissions() {
     return this.to('DescribeDataSourcePermissions');
+  }
+
+  /**
+   * Grants permission to describe a QuickSight email customization template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
+   */
+  public toDescribeEmailCustomizationTemplate() {
+    return this.to('DescribeEmailCustomizationTemplate');
   }
 
   /**
@@ -1518,6 +1551,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a QuickSight email customization template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
+   */
+  public toUpdateEmailCustomizationTemplate() {
+    return this.to('UpdateEmailCustomizationTemplate');
+  }
+
+  /**
    * Grants permission to update a QuickSight Folder
    *
    * Access Level: Write
@@ -1658,6 +1702,7 @@ export class Quicksight extends PolicyStatement {
       'CreateDashboard',
       'CreateDataSet',
       'CreateDataSource',
+      'CreateEmailCustomizationTemplate',
       'CreateFolder',
       'CreateFolderMembership',
       'CreateGroup',
@@ -1677,6 +1722,7 @@ export class Quicksight extends PolicyStatement {
       'DeleteDashboard',
       'DeleteDataSet',
       'DeleteDataSource',
+      'DeleteEmailCustomizationTemplate',
       'DeleteFolder',
       'DeleteFolderMembership',
       'DeleteGroup',
@@ -1706,6 +1752,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateDashboardPublishedVersion',
       'UpdateDataSet',
       'UpdateDataSource',
+      'UpdateEmailCustomizationTemplate',
       'UpdateFolder',
       'UpdateGroup',
       'UpdateIAMPolicyAssignment',
@@ -1739,6 +1786,7 @@ export class Quicksight extends PolicyStatement {
       'DescribeDashboardPermissions',
       'DescribeDataSet',
       'DescribeDataSource',
+      'DescribeEmailCustomizationTemplate',
       'DescribeFolder',
       'DescribeFolderPermissions',
       'DescribeFolderResolvedPermissions',
@@ -2006,7 +2054,21 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the user management options
+   * Adds a resource of type emailCustomizationTemplate to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onEmailCustomizationTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:quicksight:${ region || '*' }:${ account || '*' }:email-customization-template/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by the user management options
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/security-scp.html
    *
@@ -2021,7 +2083,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the edition of QuickSight
+   * Filters access by the edition of QuickSight
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/security-scp.html
    *

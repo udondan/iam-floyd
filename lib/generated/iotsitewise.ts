@@ -19,7 +19,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate a child asset to a parent asset by a hierarchy
+   * Grants permission to associate a child asset with a parent asset through a hierarchy
    *
    * Access Level: Write
    *
@@ -27,6 +27,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toAssociateAssets() {
     return this.to('AssociateAssets');
+  }
+
+  /**
+   * Grants permission to associate a time series with an asset property
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssociateTimeSeriesToAssetProperty.html
+   */
+  public toAssociateTimeSeriesToAssetProperty() {
+    return this.to('AssociateTimeSeriesToAssetProperty');
   }
 
   /**
@@ -252,6 +263,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a time series
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteTimeSeries.html
+   */
+  public toDeleteTimeSeries() {
+    return this.to('DeleteTimeSeries');
+  }
+
+  /**
    * Grants permission to describe an access policy
    *
    * Access Level: Read
@@ -384,6 +406,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a time series
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeTimeSeries.html
+   */
+  public toDescribeTimeSeries() {
+    return this.to('DescribeTimeSeries');
+  }
+
+  /**
    * Grants permission to disassociate a child asset from a parent asset by a hierarchy
    *
    * Access Level: Write
@@ -392,6 +425,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toDisassociateAssets() {
     return this.to('DisassociateAssets');
+  }
+
+  /**
+   * Grants permission to disassociate a time series from an asset property
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateTimeSeriesFromAssetProperty.html
+   */
+  public toDisassociateTimeSeriesFromAssetProperty() {
+    return this.to('DisassociateTimeSeriesFromAssetProperty');
   }
 
   /**
@@ -425,6 +469,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toGetAssetPropertyValueHistory() {
     return this.to('GetAssetPropertyValueHistory');
+  }
+
+  /**
+   * Grants permission to retrieve interpolated values for an asset property
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetInterpolatedAssetPropertyValues.html
+   */
+  public toGetInterpolatedAssetPropertyValues() {
+    return this.to('GetInterpolatedAssetPropertyValues');
   }
 
   /**
@@ -472,7 +527,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all assets associated to an asset by a hierarchy
+   * Grants permission to list all assets associated with an asset through a hierarchy
    *
    * Access Level: List
    *
@@ -552,6 +607,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list time series
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListTimeSeries.html
+   */
+  public toListTimeSeries() {
+    return this.to('ListTimeSeries');
+  }
+
+  /**
    * Grants permission to set the default encryption configuration for the AWS account
    *
    * Access Level: Write
@@ -574,7 +640,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set storage configuration for the AWS account
+   * Grants permission to configure storage settings for the AWS account
    *
    * Access Level: Write
    *
@@ -724,6 +790,7 @@ export class Iotsitewise extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateAssets',
+      'AssociateTimeSeriesToAssetProperty',
       'BatchAssociateProjectAssets',
       'BatchDisassociateProjectAssets',
       'BatchPutAssetPropertyValue',
@@ -741,7 +808,9 @@ export class Iotsitewise extends PolicyStatement {
       'DeleteGateway',
       'DeletePortal',
       'DeleteProject',
+      'DeleteTimeSeries',
       'DisassociateAssets',
+      'DisassociateTimeSeriesFromAssetProperty',
       'PutDefaultEncryptionConfiguration',
       'PutLoggingOptions',
       'PutStorageConfiguration',
@@ -769,9 +838,11 @@ export class Iotsitewise extends PolicyStatement {
       'DescribePortal',
       'DescribeProject',
       'DescribeStorageConfiguration',
+      'DescribeTimeSeries',
       'GetAssetPropertyAggregates',
       'GetAssetPropertyValue',
       'GetAssetPropertyValueHistory',
+      'GetInterpolatedAssetPropertyValues',
       'ListTagsForResource'
     ],
     List: [
@@ -784,7 +855,8 @@ export class Iotsitewise extends PolicyStatement {
       'ListGateways',
       'ListPortals',
       'ListProjectAssets',
-      'ListProjects'
+      'ListProjects',
+      'ListTimeSeries'
     ],
     Tagging: [
       'TagResource',
@@ -824,6 +896,20 @@ export class Iotsitewise extends PolicyStatement {
    */
   public onAssetModel(assetModelId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:asset-model/${ assetModelId }`);
+  }
+
+  /**
+   * Adds a resource of type time-series to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeTimeSeries.html
+   *
+   * @param timeSeriesId - Identifier for the timeSeriesId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onTimeSeries(timeSeriesId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:iotsitewise:${ region || '*' }:${ account || '*' }:time-series/${ timeSeriesId }`);
   }
 
   /**
@@ -924,7 +1010,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Filters access by the ID of a child asset being associated to a parent asset
+   * Filters access by the ID of a child asset being associated whith a parent asset
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
@@ -960,6 +1046,18 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Filters access by data streams associated with or not associated with asset properties
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifIsAssociatedWithAssetProperty(value: string | string[], operator?: Operator | string) {
+    return this.if(`isAssociatedWithAssetProperty`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the ID of a portal
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
@@ -981,6 +1079,18 @@ export class Iotsitewise extends PolicyStatement {
    */
   public ifProject(value: string | string[], operator?: Operator | string) {
     return this.if(`project`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the property alias
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPropertyAlias(value: string | string[], operator?: Operator | string) {
+    return this.if(`propertyAlias`, value, operator || 'StringLike');
   }
 
   /**

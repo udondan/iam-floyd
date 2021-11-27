@@ -6,6 +6,7 @@ quicksight:CreateCustomPermissions;Permissions management
 quicksight:CreateDashboard;Write
 quicksight:CreateDataSet;Write
 quicksight:CreateDataSource;Write
+quicksight:CreateEmailCustomizationTemplate;Write
 quicksight:CreateFolder;Write
 quicksight:CreateFolderMembership;Write
 quicksight:CreateGroup;Write
@@ -26,6 +27,7 @@ quicksight:DeleteCustomPermissions;Permissions management
 quicksight:DeleteDashboard;Write
 quicksight:DeleteDataSet;Write
 quicksight:DeleteDataSource;Write
+quicksight:DeleteEmailCustomizationTemplate;Write
 quicksight:DeleteFolder;Write
 quicksight:DeleteFolderMembership;Write
 quicksight:DeleteGroup;Write
@@ -50,6 +52,7 @@ quicksight:DescribeDataSet;Read
 quicksight:DescribeDataSetPermissions;Permissions management
 quicksight:DescribeDataSource;Read
 quicksight:DescribeDataSourcePermissions;Permissions management
+quicksight:DescribeEmailCustomizationTemplate;Read
 quicksight:DescribeFolder;Read
 quicksight:DescribeFolderPermissions;Read
 quicksight:DescribeFolderResolvedPermissions;Read
@@ -120,6 +123,7 @@ quicksight:UpdateDataSet;Write
 quicksight:UpdateDataSetPermissions;Permissions management
 quicksight:UpdateDataSource;Write
 quicksight:UpdateDataSourcePermissions;Permissions management
+quicksight:UpdateEmailCustomizationTemplate;Write
 quicksight:UpdateFolder;Write
 quicksight:UpdateFolderPermissions;Permissions management
 quicksight:UpdateGroup;Write

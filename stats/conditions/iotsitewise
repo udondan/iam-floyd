@@ -5,7 +5,9 @@ iotsitewise:assetHierarchyPath
 iotsitewise:childAssetId
 iotsitewise:group
 iotsitewise:iam
+iotsitewise:isAssociatedWithAssetProperty
 iotsitewise:portal
 iotsitewise:project
+iotsitewise:propertyAlias
 iotsitewise:propertyId
 iotsitewise:user
