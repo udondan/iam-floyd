@@ -121,7 +121,7 @@
 			"Action": [
 				"iam:PassRole"
 			],
-			"Resource": "arn:aws:iam::*:role/AmazonBraketJobsExecutionRole*",
+			"Resource": "arn:aws:iam::*:role/service-role/AmazonBraketJobsExecutionRole*",
 			"Condition": {
 				"StringLike": {
 					"iam:PassedToService": [
