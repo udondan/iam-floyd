@@ -14,6 +14,7 @@
 				"dataexchange:TagResource",
 				"dataexchange:UntagResource",
 				"dataexchange:PublishDataSet",
+				"dataexchange:SendApiAsset",
 				"tag:GetTagKeys",
 				"tag:GetTagValues"
 			],
@@ -34,6 +35,7 @@
 						"IMPORT_ASSET_FROM_SIGNED_URL",
 						"EXPORT_ASSETS_TO_S3",
 						"EXPORT_ASSET_TO_SIGNED_URL",
+						"IMPORT_ASSET_FROM_API_GATEWAY_API",
 						"IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES"
 					]
 				}
