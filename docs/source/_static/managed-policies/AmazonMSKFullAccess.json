@@ -9,6 +9,8 @@
 				"ec2:DescribeVpcs",
 				"ec2:DescribeSecurityGroups",
 				"ec2:DescribeRouteTables",
+				"ec2:DescribeVpcEndpoints",
+				"ec2:DescribeVpcAttribute",
 				"kms:DescribeKey",
 				"kms:CreateGrant",
 				"logs:CreateLogDelivery",
@@ -23,6 +25,61 @@
 				"firehose:TagDeliveryStream"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateVpcEndpoint"
+			],
+			"Resource": [
+				"arn:*:ec2:*:*:vpc/*",
+				"arn:*:ec2:*:*:subnet/*",
+				"arn:*:ec2:*:*:security-group/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateVpcEndpoint"
+			],
+			"Resource": [
+				"arn:*:ec2:*:*:vpc-endpoint/*"
+			],
+			"Condition": {
+				"StringEquals": {
+					"aws:RequestTag/AWSMSKManaged": "true"
+				},
+				"StringLike": {
+					"aws:RequestTag/ClusterArn": "*"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CreateTags"
+			],
+			"Resource": "arn:*:ec2:*:*:vpc-endpoint/*",
+			"Condition": {
+				"StringEquals": {
+					"ec2:CreateAction": "CreateVpcEndpoint"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DeleteVpcEndpoints"
+			],
+			"Resource": "arn:*:ec2:*:*:vpc-endpoint/*",
+			"Condition": {
+				"StringEquals": {
+					"ec2:ResourceTag/AWSMSKManaged": "true"
+				},
+				"StringLike": {
+					"ec2:ResourceTag/ClusterArn": "*"
+				}
+			}
 		},
 		{
 			"Effect": "Allow",
