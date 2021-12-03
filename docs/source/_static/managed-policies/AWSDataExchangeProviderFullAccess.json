@@ -139,6 +139,13 @@
 				"redshift:DescribeDataShares"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"apigateway:GET"
+			],
+			"Resource": "*"
 		}
 	]
 }
