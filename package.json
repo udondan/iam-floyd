@@ -8,8 +8,8 @@
     "package": "jsii-pacmak",
     "test": "npx ts-node test/main.ts"
   },
-  "name": "cdk-iam-floyd",
-  "description": "AWS IAM policy statement generator with fluent interface for AWS CDK",
+  "name": "iam-floyd",
+  "description": "AWS IAM policy statement generator with fluent interface",
   "version": "0.0.0",
   "license": "Apache-2.0",
   "author": {
@@ -32,9 +32,7 @@
     "aws",
     "iam",
     "policy",
-    "iam-floyd",
-    "cdk",
-    "aws-cdk"
+    "iam-floyd"
   ],
   "stability": "experimental",
   "main": "lib/index.js",
@@ -45,6 +43,7 @@
       "bin/*",
       "lib/generator/*",
       "test/*",
+      "**/*CDK*",
       "examples/*",
       "twitter/*"
     ],
@@ -74,9 +73,7 @@
     "ts-morph": "^12.0.0",
     "ts-node": "^10.0.0",
     "twit": "^2.2.11",
-    "typescript": "~4.3.2",
-    "aws-cdk-lib": "^2.0.0",
-    "constructs": "^10.0.0"
+    "typescript": "~4.3.2"
   },
   "dependencies": {
     "@udondan/common-substrings": "^3.0.2",
@@ -85,9 +82,5 @@
   "bundleDependencies": [
     "@udondan/common-substrings",
     "regex-parser"
-  ],
-  "peerDependencies": {
-    "aws-cdk-lib": "^2.0.0",
-    "constructs": "^10.0.0"
-  }
+  ]
 }
