@@ -1,7 +1,7 @@
 .PHONY: test test-cdk
 
 install-cdk:
-	npm i aws-cdk-lib
+	npm i aws-cdk-lib constructs@^10.0.0
 
 test:
 	@find examples/** -type f \( -iname "*.ts" ! -iname "*.cdk.ts" \) > /tmp/ts.result
