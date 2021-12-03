@@ -1,4 +1,4 @@
-import iam = require('@aws-cdk/aws-iam');
+import { aws_iam as iam } from 'aws-cdk-lib';
 
 import { deploy, out } from '../../helper/typescript/typescript_test';
 import * as statement from '../../lib';

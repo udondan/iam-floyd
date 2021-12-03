@@ -15,6 +15,12 @@
 .. _cdk-iam-floyd-pypi: https://pypi.org/project/cdk-iam-floyd/
 .. |cdk-iam-floyd-pypi| image:: https://img.shields.io/pypi/dm/cdk-iam-floyd?label=pypi&color=orange
 
+.. _cdk-iam-floyd-npm-v1: https://www.npmjs.com/package/cdk-iam-floyd/v/0.285.0
+.. |cdk-iam-floyd-npm-v1| image:: https://img.shields.io/badge/npm-0.285.0-yellow
+
+.. _cdk-iam-floyd-pypi-v1: https://pypi.org/project/cdk-iam-floyd/0.285.0/
+.. |cdk-iam-floyd-pypi-v1| image:: https://img.shields.io/badge/pypi-0.285.0-yellow
+
 ..
    External documentation links
 

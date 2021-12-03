@@ -1,28 +1,29 @@
-import * as events from '@aws-cdk/aws-events';
-import * as targets from '@aws-cdk/aws-events-targets';
-import * as iam from '@aws-cdk/aws-iam';
-import * as kms from '@aws-cdk/aws-kms';
-import * as lambda from '@aws-cdk/aws-lambda-nodejs';
-import * as logs from '@aws-cdk/aws-logs';
-import * as secretsmanager from '@aws-cdk/aws-secretsmanager';
-import * as sqs from '@aws-cdk/aws-sqs';
-import * as cdk from '@aws-cdk/core';
+import { Duration, RemovalPolicy, Stack as CdkStack, StackProps, Tags } from 'aws-cdk-lib';
+import { aws_sqs as sqs } from 'aws-cdk-lib';
+import { aws_secretsmanager as secretsmanager } from 'aws-cdk-lib';
+import { aws_logs as logs } from 'aws-cdk-lib';
+import { aws_lambda_nodejs as lambda } from 'aws-cdk-lib';
+import { aws_kms as kms } from 'aws-cdk-lib';
+import { aws_events as events } from 'aws-cdk-lib';
+import { aws_events_targets as targets } from 'aws-cdk-lib';
+import { aws_iam as iam } from 'aws-cdk-lib';
+import { Construct } from 'constructs';
 import path = require('path');
 
 const project = 'Floyd Tweeter';
 const project_id = 'floyd-tweeter';
 
-export class Stack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+export class Stack extends CdkStack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    cdk.Tags.of(scope).add('Project', project);
+    Tags.of(scope).add('Project', project);
 
     const kmsKey = new kms.Key(this, 'KmsKey', {
       enableKeyRotation: false,
       description: `Encryption key for ${project}`,
       alias: `alias/${project_id}`,
-      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      removalPolicy: RemovalPolicy.DESTROY,
     });
 
     const twitterCredentials = new secretsmanager.Secret(this, 'Credentials', {
@@ -42,7 +43,7 @@ export class Stack extends cdk.Stack {
       queueName: `${project_id}-tweets.fifo`,
       fifo: true,
       contentBasedDeduplication: true,
-      retentionPeriod: cdk.Duration.days(14),
+      retentionPeriod: Duration.days(14),
       encryption: sqs.QueueEncryption.KMS,
       encryptionMasterKey: kmsKey,
     });
@@ -50,7 +51,7 @@ export class Stack extends cdk.Stack {
     const schedule = new events.Rule(this, 'Schedule', {
       ruleName: `${project_id}-tweet`,
       description: `${project}: Trigger Tweeter function`,
-      schedule: events.Schedule.rate(cdk.Duration.minutes(30)),
+      schedule: events.Schedule.rate(Duration.minutes(30)),
     });
 
     const role = new iam.Role(this, 'Role', {
@@ -77,7 +78,7 @@ export class Stack extends cdk.Stack {
         queue: queue.queueUrl,
         credentials: twitterCredentials.secretArn,
       },
-      timeout: cdk.Duration.seconds(10),
+      timeout: Duration.seconds(10),
       role: role,
       logRetention: logs.RetentionDays.ONE_WEEK,
     });

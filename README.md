@@ -39,9 +39,9 @@ There are two different package variants available:
 - **cdk-iam-floyd**: Integrates into [AWS CDK] and extends [`iam.PolicyStatement`](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.PolicyStatement.html)<br>[![npm](https://img.shields.io/npm/dt/cdk-iam-floyd?label=npm&color=orange)](https://www.npmjs.com/package/cdk-iam-floyd)
 [![PyPI](https://img.shields.io/pypi/dm/cdk-iam-floyd?label=pypi&color=orange)](https://pypi.org/project/cdk-iam-floyd/)
 
-  If you need compatibility with CDK v2, you can use:<br>
-  [![npm CDK v2](https://img.shields.io/badge/npm-0.207.1--pre.0-yellow)](https://www.npmjs.com/package/cdk-iam-floyd/v/0.207.1-pre.0)
-  [![PyPI CDK v2](https://img.shields.io/badge/pypi-0.207.1.dev0-yellow)](https://pypi.org/project/cdk-iam-floyd/0.207.1.dev0/)
+  **Starting with version 0.300.0, the packages are compatible with CDK v2.** For CDK v1 you can use any version up to:<br>
+  [![npm CDK v1](https://img.shields.io/badge/npm-0.285.0-yellow)](https://www.npmjs.com/package/cdk-iam-floyd/v/0.285.0)
+  [![PyPI CDK v1](https://img.shields.io/badge/pypi-0.285.0-yellow)](https://pypi.org/project/cdk-iam-floyd/0.285.0/)
 
 Find them all on [libraries.io].
 

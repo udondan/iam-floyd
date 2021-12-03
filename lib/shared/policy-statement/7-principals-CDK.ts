@@ -1,5 +1,5 @@
 // @ts-ignore only available after swapping 1-base
-import iam = require('@aws-cdk/aws-iam');
+import { aws_iam as iam } from 'aws-cdk-lib';
 
 import { PolicyStatementWithPrincipal, PrincipalType } from './6-principals';
 
