@@ -12,6 +12,31 @@
 				"elasticloadbalancing:DescribeLoadBalancers"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"acm:ImportCertificate",
+				"acm:AddTagsToCertificate"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"aws:RequestTag/emr-container:endpoint:managed-certificate": "true"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"acm:DeleteCertificate"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"aws:ResourceTag/emr-container:endpoint:managed-certificate": "true"
+				}
+			}
 		}
 	]
 }
