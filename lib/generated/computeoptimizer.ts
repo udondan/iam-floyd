@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [compute-optimizer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscomputeoptimizer.html).
@@ -19,6 +19,24 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete recommendation preferences
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifResourceType()
+   *
+   * Dependent actions:
+   * - autoscaling:DescribeAutoScalingGroups
+   * - ec2:DescribeInstances
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_DeleteRecommendationPreferences.html
+   */
+  public toDeleteRecommendationPreferences() {
+    return this.to('DeleteRecommendationPreferences');
+  }
+
+  /**
    * Grants permission to view the status of recommendation export jobs
    *
    * Access Level: List
@@ -30,7 +48,7 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to export autoscaling group recommendations to S3 for the provided accounts
+   * Grants permission to export AutoScaling group recommendations to S3 for the provided accounts
    *
    * Access Level: Write
    *
@@ -91,7 +109,7 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get recommendations for the provided autoscaling groups
+   * Grants permission to get recommendations for the provided AutoScaling groups
    *
    * Access Level: List
    *
@@ -105,7 +123,7 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get recommendations for the provided ebs volumes
+   * Grants permission to get recommendations for the provided EBS volumes
    *
    * Access Level: List
    *
@@ -147,6 +165,25 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get recommendation preferences that are in effect
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifResourceType()
+   *
+   * Dependent actions:
+   * - autoscaling:DescribeAutoScalingGroups
+   * - autoscaling:DescribeAutoScalingInstances
+   * - ec2:DescribeInstances
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEffectiveRecommendationPreferences.html
+   */
+  public toGetEffectiveRecommendationPreferences() {
+    return this.to('GetEffectiveRecommendationPreferences');
+  }
+
+  /**
    * Grants permission to get the enrollment status for the specified account
    *
    * Access Level: List
@@ -169,7 +206,7 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get recommendations for the provided lambda functions
+   * Grants permission to get recommendations for the provided Lambda functions
    *
    * Access Level: List
    *
@@ -184,6 +221,20 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get recommendation preferences
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifResourceType()
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetRecommendationPreferences.html
+   */
+  public toGetRecommendationPreferences() {
+    return this.to('GetRecommendationPreferences');
+  }
+
+  /**
    * Grants permission to get the recommendation summaries for the specified account(s)
    *
    * Access Level: List
@@ -192,6 +243,25 @@ export class ComputeOptimizer extends PolicyStatement {
    */
   public toGetRecommendationSummaries() {
     return this.to('GetRecommendationSummaries');
+  }
+
+  /**
+   * Grants permission to put recommendation preferences
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifResourceType()
+   *
+   * Dependent actions:
+   * - autoscaling:DescribeAutoScalingGroups
+   * - autoscaling:DescribeAutoScalingInstances
+   * - ec2:DescribeInstances
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_PutRecommendationPreferences.html
+   */
+  public toPutRecommendationPreferences() {
+    return this.to('PutRecommendationPreferences');
   }
 
   /**
@@ -206,6 +276,15 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    Write: [
+      'DeleteRecommendationPreferences',
+      'ExportAutoScalingGroupRecommendations',
+      'ExportEBSVolumeRecommendations',
+      'ExportEC2InstanceRecommendations',
+      'ExportLambdaFunctionRecommendations',
+      'PutRecommendationPreferences',
+      'UpdateEnrollmentStatus'
+    ],
     List: [
       'DescribeRecommendationExportJobs',
       'GetAutoScalingGroupRecommendations',
@@ -217,12 +296,27 @@ export class ComputeOptimizer extends PolicyStatement {
       'GetLambdaFunctionRecommendations',
       'GetRecommendationSummaries'
     ],
-    Write: [
-      'ExportAutoScalingGroupRecommendations',
-      'ExportEBSVolumeRecommendations',
-      'ExportEC2InstanceRecommendations',
-      'ExportLambdaFunctionRecommendations',
-      'UpdateEnrollmentStatus'
+    Read: [
+      'GetEffectiveRecommendationPreferences',
+      'GetRecommendationPreferences'
     ]
   };
+
+  /**
+   * Filters access by the resource type
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html
+   *
+   * Applies to actions:
+   * - .toDeleteRecommendationPreferences()
+   * - .toGetEffectiveRecommendationPreferences()
+   * - .toGetRecommendationPreferences()
+   * - .toPutRecommendationPreferences()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceType(value: string | string[], operator?: Operator | string) {
+    return this.if(`ResourceType`, value, operator || 'StringLike');
+  }
 }

@@ -7,6 +7,7 @@ activate
 airflow
 amplify
 amplifybackend
+amplifyuibuilder
 apigateway
 app-integrations
 appconfig
@@ -113,6 +114,7 @@ elemental-support-content
 emr-containers
 es
 events
+evidently
 execute-api
 finspace
 firehose
@@ -148,8 +150,11 @@ iotanalytics
 iotdeviceadvisor
 iotevents
 iotfleethub
+iotfleetwise
+iotroborunner
 iotsitewise
 iotthingsgraph
+iottwinmaker
 iotwireless
 iq
 iq-permission
@@ -214,11 +219,13 @@ purchase-orders
 qldb
 quicksight
 ram
+rbin
 rds
 rds-data
 rds-db
 redshift
 redshift-data
+refactor-spaces
 rekognition
 resiliencehub
 resource-explorer
@@ -230,6 +237,7 @@ route53-recovery-control-config
 route53-recovery-readiness
 route53domains
 route53resolver
+rum
 s3
 s3-object-lambda
 s3-outposts
@@ -242,6 +250,7 @@ securityhub
 serverlessrepo
 servicecatalog
 servicediscovery
+serviceextract
 servicequotas
 ses
 shield
@@ -287,4 +296,5 @@ worklink
 workmail
 workmailmessageflow
 workspaces
+workspaces-web
 xray

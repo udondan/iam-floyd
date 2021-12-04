@@ -32,6 +32,7 @@ lex:DescribeBot;Read
 lex:DescribeBotAlias;Read
 lex:DescribeBotChannel;Read
 lex:DescribeBotLocale;Read
+lex:DescribeBotRecommendation;Read
 lex:DescribeBotVersion;Read
 lex:DescribeExport;Read
 lex:DescribeImport;Read
@@ -65,6 +66,7 @@ lex:ListAggregatedUtterances;List
 lex:ListBotAliases;List
 lex:ListBotChannels;List
 lex:ListBotLocales;List
+lex:ListBotRecommendations;List
 lex:ListBotVersions;List
 lex:ListBots;List
 lex:ListBuiltInIntents;List
@@ -72,6 +74,7 @@ lex:ListBuiltInSlotTypes;List
 lex:ListExports;List
 lex:ListImports;List
 lex:ListIntents;List
+lex:ListRecommendedIntents;List
 lex:ListSlotTypes;List
 lex:ListSlots;List
 lex:ListTagsForResource;Read
@@ -84,6 +87,8 @@ lex:PutSession;Write
 lex:PutSlotType;Write
 lex:RecognizeText;Write
 lex:RecognizeUtterance;Write
+lex:SearchAssociatedTranscripts;List
+lex:StartBotRecommendation;Write
 lex:StartConversation;Write
 lex:StartImport;Write
 lex:StartMigration;Write
@@ -92,6 +97,7 @@ lex:UntagResource;Tagging
 lex:UpdateBot;Write
 lex:UpdateBotAlias;Write
 lex:UpdateBotLocale;Write
+lex:UpdateBotRecommendation;Write
 lex:UpdateExport;Write
 lex:UpdateIntent;Write
 lex:UpdateResourcePolicy;Write

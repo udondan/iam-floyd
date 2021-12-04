@@ -145,6 +145,7 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzGrantReadAcp()
    * - .ifXAmzGrantWrite()
    * - .ifXAmzGrantWriteAcp()
+   * - .ifXAmzObjectOwnership()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html
    */
@@ -4357,6 +4358,21 @@ export class S3 extends PolicyStatement {
    */
   public ifXAmzMetadataDirective(value: string | string[], operator?: Operator | string) {
     return this.if(`x-amz-metadata-directive`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by Object Ownership
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/ensure-object-ownership.html#object-ownership-requiring-bucket-owner-enforced
+   *
+   * Applies to actions:
+   * - .toCreateBucket()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifXAmzObjectOwnership(value: string | string[], operator?: Operator | string) {
+    return this.if(`x-amz-object-ownership`, value, operator || 'StringLike');
   }
 
   /**

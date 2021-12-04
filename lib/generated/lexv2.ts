@@ -360,6 +360,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve metadata information about a bot recommendation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotRecommendation.html
+   */
+  public toDescribeBotRecommendation() {
+    return this.to('DescribeBotRecommendation');
+  }
+
+  /**
    * Grants permission to retrieve an existing bot version
    *
    * Access Level: Read
@@ -503,6 +514,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of bot recommendations that meet the specified criteria
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotRecommendations.html
+   */
+  public toListBotRecommendations() {
+    return this.to('ListBotRecommendations');
+  }
+
+  /**
    * Grants permission to list existing bot versions
    *
    * Access Level: List
@@ -580,6 +602,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of recommended intents provided by the bot recommendation
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_ListRecommendedIntents.html
+   */
+  public toListRecommendedIntents() {
+    return this.to('ListRecommendedIntents');
+  }
+
+  /**
    * Grants permission to list slot types in a bot
    *
    * Access Level: List
@@ -643,6 +676,28 @@ export class LexV2 extends PolicyStatement {
    */
   public toRecognizeUtterance() {
     return this.to('RecognizeUtterance');
+  }
+
+  /**
+   * Grants permission to search for associated transcripts that meet the specified criteria
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_SearchAssociatedTranscripts.html
+   */
+  public toSearchAssociatedTranscripts() {
+    return this.to('SearchAssociatedTranscripts');
+  }
+
+  /**
+   * Grants permission to start a bot recommendation for an existing bot locale
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_StartBotRecommendation.html
+   */
+  public toStartBotRecommendation() {
+    return this.to('StartBotRecommendation');
   }
 
   /**
@@ -751,6 +806,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an existing bot recommendation request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotRecommendation.html
+   */
+  public toUpdateBotRecommendation() {
+    return this.to('UpdateBotRecommendation');
+  }
+
+  /**
    * Grants permission to update an existing export
    *
    * Access Level: Write
@@ -835,11 +901,13 @@ export class LexV2 extends PolicyStatement {
       'PutSession',
       'RecognizeText',
       'RecognizeUtterance',
+      'StartBotRecommendation',
       'StartConversation',
       'StartImport',
       'UpdateBot',
       'UpdateBotAlias',
       'UpdateBotLocale',
+      'UpdateBotRecommendation',
       'UpdateExport',
       'UpdateIntent',
       'UpdateResourcePolicy',
@@ -851,6 +919,7 @@ export class LexV2 extends PolicyStatement {
       'DescribeBotAlias',
       'DescribeBotChannel',
       'DescribeBotLocale',
+      'DescribeBotRecommendation',
       'DescribeBotVersion',
       'DescribeExport',
       'DescribeImport',
@@ -866,6 +935,7 @@ export class LexV2 extends PolicyStatement {
       'ListBotAliases',
       'ListBotChannels',
       'ListBotLocales',
+      'ListBotRecommendations',
       'ListBotVersions',
       'ListBots',
       'ListBuiltInIntents',
@@ -873,8 +943,10 @@ export class LexV2 extends PolicyStatement {
       'ListExports',
       'ListImports',
       'ListIntents',
+      'ListRecommendedIntents',
       'ListSlotTypes',
-      'ListSlots'
+      'ListSlots',
+      'SearchAssociatedTranscripts'
     ],
     Tagging: [
       'TagResource',

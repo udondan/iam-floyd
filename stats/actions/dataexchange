@@ -20,6 +20,7 @@ dataexchange:ListJobs;Read
 dataexchange:ListRevisionAssets;Read
 dataexchange:ListTagsForResource;Read
 dataexchange:PublishDataSet;Write
+dataexchange:SendApiAsset;Write
 dataexchange:StartJob;Write
 dataexchange:TagResource;Tagging
 dataexchange:UntagResource;Tagging

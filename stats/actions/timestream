@@ -1,13 +1,18 @@
 timestream:CancelQuery;Write
 timestream:CreateDatabase;Write
+timestream:CreateScheduledQuery;Write
 timestream:CreateTable;Write
 timestream:DeleteDatabase;Write
+timestream:DeleteScheduledQuery;Write
 timestream:DeleteTable;Write
 timestream:DescribeDatabase;Read
 timestream:DescribeEndpoints;List
+timestream:DescribeScheduledQuery;Read
 timestream:DescribeTable;Read
+timestream:ExecuteScheduledQuery;Write
 timestream:ListDatabases;List
 timestream:ListMeasures;List
+timestream:ListScheduledQueries;Read
 timestream:ListTables;List
 timestream:ListTagsForResource;List
 timestream:Select;Read
@@ -15,5 +20,6 @@ timestream:SelectValues;Read
 timestream:TagResource;Tagging
 timestream:UntagResource;Tagging
 timestream:UpdateDatabase;Write
+timestream:UpdateScheduledQuery;Write
 timestream:UpdateTable;Write
 timestream:WriteRecords;Write
