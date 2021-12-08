@@ -6,6 +6,7 @@
 			"Action": [
 				"ec2:DescribeAccountAttributes",
 				"ec2:DescribeInstances",
+				"ec2:DescribeInstanceStatus",
 				"ec2:DescribeInstanceAttribute",
 				"ec2:DescribeSubnets",
 				"ec2:DescribeSecurityGroups",
@@ -42,20 +43,20 @@
 			"Resource": "*"
 		},
 		{
-            "Effect": "Allow",
-            "Action": [
-                "logs:CreateLogGroup",
-                "logs:CreateLogStream"
-            ],
-            "Resource": "arn:aws:logs:*:*:log-group:/aws/batch/job*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "logs:PutLogEvents"
-            ],
-            "Resource": "arn:aws:logs:*:*:log-group:/aws/batch/job*:log-stream:*"
-        },
+			"Effect": "Allow",
+			"Action": [
+				"logs:CreateLogGroup",
+				"logs:CreateLogStream"
+			],
+			"Resource": "arn:aws:logs:*:*:log-group:/aws/batch/job*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"logs:PutLogEvents"
+			],
+			"Resource": "arn:aws:logs:*:*:log-group:/aws/batch/job*:log-stream:*"
+		},
 		{
 			"Effect": "Allow",
 			"Action": [
@@ -200,9 +201,9 @@
 				"arn:aws:ec2:*:*:key-pair/*",
 				"arn:aws:ec2:*:*:launch-template/*",
 				"arn:aws:ec2:*:*:placement-group/*",
-                "arn:aws:ec2:*:*:capacity-reservation/*",
-                "arn:aws:ec2:*:*:elastic-gpu/*",
-                "arn:aws:elastic-inference:*:*:elastic-inference-accelerator/*"
+				"arn:aws:ec2:*:*:capacity-reservation/*",
+				"arn:aws:ec2:*:*:elastic-gpu/*",
+				"arn:aws:elastic-inference:*:*:elastic-inference-accelerator/*"
 			]
 		},
 		{
