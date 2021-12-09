@@ -1,4 +1,5 @@
 appconfig:application
+appconfig:configuration
 appconfig:configurationprofile
 appconfig:deployment
 appconfig:deploymentstrategy

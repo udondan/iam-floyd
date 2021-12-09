@@ -465,4 +465,52 @@ export class Kafka extends PolicyStatement {
   public onCluster(clusterName: string, uUID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }/${ uUID }`);
   }
+
+  /**
+   * Adds a resource of type topic to the statement
+   *
+   * https://docs.aws.amazon.com/msk/latest/developerguide/topics
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param clusterUuid - Identifier for the clusterUuid.
+   * @param topicName - Identifier for the topicName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onTopic(clusterName: string, clusterUuid: string, topicName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:topic/${ clusterName }/${ clusterUuid }/${ topicName }`);
+  }
+
+  /**
+   * Adds a resource of type group to the statement
+   *
+   * https://docs.aws.amazon.com/msk/latest/developerguide/groups
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param clusterUuid - Identifier for the clusterUuid.
+   * @param groupName - Identifier for the groupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onGroup(clusterName: string, clusterUuid: string, groupName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:group/${ clusterName }/${ clusterUuid }/${ groupName }`);
+  }
+
+  /**
+   * Adds a resource of type transactional-id to the statement
+   *
+   * https://docs.aws.amazon.com/msk/latest/developerguide/transactional_ids
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param clusterUuid - Identifier for the clusterUuid.
+   * @param transactionalId - Identifier for the transactionalId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onTransactionalId(clusterName: string, clusterUuid: string, transactionalId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:transactional-id/${ clusterName }/${ clusterUuid }/${ transactionalId }`);
+  }
 }

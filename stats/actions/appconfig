@@ -15,6 +15,7 @@ appconfig:GetDeployment;Read
 appconfig:GetDeploymentStrategy;Read
 appconfig:GetEnvironment;Read
 appconfig:GetHostedConfigurationVersion;Read
+appconfig:GetLatestConfiguration;Read
 appconfig:ListApplications;List
 appconfig:ListConfigurationProfiles;List
 appconfig:ListDeploymentStrategies;List
@@ -22,6 +23,7 @@ appconfig:ListDeployments;List
 appconfig:ListEnvironments;List
 appconfig:ListHostedConfigurationVersions;List
 appconfig:ListTagsForResource;Read
+appconfig:StartConfigurationSession;Write
 appconfig:StartDeployment;Write
 appconfig:StopDeployment;Write
 appconfig:TagResource;Tagging

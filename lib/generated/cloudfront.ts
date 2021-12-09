@@ -177,6 +177,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a new response headers policy to CloudFront
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateResponseHeadersPolicy.html
+   */
+  public toCreateResponseHeadersPolicy() {
+    return this.to('CreateResponseHeadersPolicy');
+  }
+
+  /**
    * Grants permission to create a new RTMP distribution
    *
    * Access Level: Write
@@ -321,6 +332,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toDeleteRealtimeLogConfig() {
     return this.to('DeleteRealtimeLogConfig');
+  }
+
+  /**
+   * Grants permission to delete a response headers policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteResponseHeadersPolicy.html
+   */
+  public toDeleteResponseHeadersPolicy() {
+    return this.to('DeleteResponseHeadersPolicy');
   }
 
   /**
@@ -566,6 +588,28 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the response headers policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetResponseHeadersPolicy.html
+   */
+  public toGetResponseHeadersPolicy() {
+    return this.to('GetResponseHeadersPolicy');
+  }
+
+  /**
+   * Grants permission to get the response headers policy configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetResponseHeadersPolicyConfig.html
+   */
+  public toGetResponseHeadersPolicyConfig() {
+    return this.to('GetResponseHeadersPolicyConfig');
+  }
+
+  /**
    * Grants permission to get the information about an RTMP distribution
    *
    * Access Level: Read
@@ -687,6 +731,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list distribution IDs for distributions that have a cache behavior that's associated with the specified response headers policy
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByResponseHeadersPolicyId.html
+   */
+  public toListDistributionsByResponseHeadersPolicyId() {
+    return this.to('ListDistributionsByResponseHeadersPolicyId');
+  }
+
+  /**
    * Grants permission to list the distributions associated with your AWS account with given AWS WAF web ACL
    *
    * Access Level: List
@@ -783,6 +838,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListRealtimeLogConfigs() {
     return this.to('ListRealtimeLogConfigs');
+  }
+
+  /**
+   * Grants permission to list all response headers policies that have been created in CloudFront for this account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListResponseHeadersPolicies.html
+   */
+  public toListResponseHeadersPolicies() {
+    return this.to('ListResponseHeadersPolicies');
   }
 
   /**
@@ -969,6 +1035,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a response headers policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateResponseHeadersPolicy.html
+   */
+  public toUpdateResponseHeadersPolicy() {
+    return this.to('UpdateResponseHeadersPolicy');
+  }
+
+  /**
    * Grants permission to update the configuration for an RTMP distribution
    *
    * Access Level: Write
@@ -995,6 +1072,7 @@ export class Cloudfront extends PolicyStatement {
       'CreateOriginRequestPolicy',
       'CreatePublicKey',
       'CreateRealtimeLogConfig',
+      'CreateResponseHeadersPolicy',
       'CreateStreamingDistribution',
       'CreateStreamingDistributionWithTags',
       'DeleteCachePolicy',
@@ -1008,6 +1086,7 @@ export class Cloudfront extends PolicyStatement {
       'DeleteOriginRequestPolicy',
       'DeletePublicKey',
       'DeleteRealtimeLogConfig',
+      'DeleteResponseHeadersPolicy',
       'DeleteStreamingDistribution',
       'PublishFunction',
       'TestFunction',
@@ -1021,6 +1100,7 @@ export class Cloudfront extends PolicyStatement {
       'UpdateOriginRequestPolicy',
       'UpdatePublicKey',
       'UpdateRealtimeLogConfig',
+      'UpdateResponseHeadersPolicy',
       'UpdateStreamingDistribution'
     ],
     Read: [
@@ -1045,6 +1125,8 @@ export class Cloudfront extends PolicyStatement {
       'GetPublicKey',
       'GetPublicKeyConfig',
       'GetRealtimeLogConfig',
+      'GetResponseHeadersPolicy',
+      'GetResponseHeadersPolicyConfig',
       'GetStreamingDistribution',
       'GetStreamingDistributionConfig',
       'ListTagsForResource'
@@ -1059,6 +1141,7 @@ export class Cloudfront extends PolicyStatement {
       'ListDistributionsByLambdaFunction',
       'ListDistributionsByOriginRequestPolicyId',
       'ListDistributionsByRealtimeLogConfig',
+      'ListDistributionsByResponseHeadersPolicyId',
       'ListDistributionsByWebACLId',
       'ListFieldLevelEncryptionConfigs',
       'ListFieldLevelEncryptionProfiles',
@@ -1068,6 +1151,7 @@ export class Cloudfront extends PolicyStatement {
       'ListOriginRequestPolicies',
       'ListPublicKeys',
       'ListRealtimeLogConfigs',
+      'ListResponseHeadersPolicies',
       'ListStreamingDistributions'
     ],
     Tagging: [
@@ -1197,5 +1281,18 @@ export class Cloudfront extends PolicyStatement {
    */
   public onFunction(name: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:function/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type response-headers-policy to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onResponseHeadersPolicy(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:cloudfront::${ account || '*' }:response-headers-policy/${ id }`);
   }
 }

@@ -240,6 +240,20 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a deployed configuration
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html
+   */
+  public toGetLatestConfiguration() {
+    return this.to('GetLatestConfiguration');
+  }
+
+  /**
    * Grants permission to list the applications in your account
    *
    * Access Level: List
@@ -320,6 +334,20 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a configuration session
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html
+   */
+  public toStartConfigurationSession() {
+    return this.to('StartConfigurationSession');
+  }
+
+  /**
    * Grants permission to initiate a deployment
    *
    * Access Level: Write
@@ -342,7 +370,7 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to tag an appconfig resource.
+   * Grants permission to tag an appconfig resource
    *
    * Access Level: Tagging
    *
@@ -358,7 +386,7 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag an appconfig resource.
+   * Grants permission to untag an appconfig resource
    *
    * Access Level: Tagging
    *
@@ -450,6 +478,7 @@ export class Appconfig extends PolicyStatement {
       'DeleteDeploymentStrategy',
       'DeleteEnvironment',
       'DeleteHostedConfigurationVersion',
+      'StartConfigurationSession',
       'StartDeployment',
       'StopDeployment',
       'UpdateApplication',
@@ -466,6 +495,7 @@ export class Appconfig extends PolicyStatement {
       'GetDeploymentStrategy',
       'GetEnvironment',
       'GetHostedConfigurationVersion',
+      'GetLatestConfiguration',
       'ListTagsForResource'
     ],
     List: [
@@ -585,5 +615,24 @@ export class Appconfig extends PolicyStatement {
    */
   public onHostedconfigurationversion(applicationId: string, configurationProfileId: string, versionNumber: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/configurationprofile/${ configurationProfileId }/hostedconfigurationversion/${ versionNumber }`);
+  }
+
+  /**
+   * Adds a resource of type configuration to the statement
+   *
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param environmentId - Identifier for the environmentId.
+   * @param configurationProfileId - Identifier for the configurationProfileId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConfiguration(applicationId: string, environmentId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:appconfig:${ region || '*' }:${ account || '*' }:application/${ applicationId }/environment/${ environmentId }/configuration/${ configurationProfileId }`);
   }
 }

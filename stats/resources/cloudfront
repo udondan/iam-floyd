@@ -6,4 +6,5 @@ cloudfront:function
 cloudfront:origin-access-identity
 cloudfront:origin-request-policy
 cloudfront:realtime-log-config
+cloudfront:response-headers-policy
 cloudfront:streaming-distribution

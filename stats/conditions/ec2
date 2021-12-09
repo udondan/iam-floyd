@@ -26,6 +26,8 @@ ec2:InsideTunnelCidr
 ec2:InstanceMarketType
 ec2:InstanceProfile
 ec2:InstanceType
+ec2:Ipv4IpamPoolId
+ec2:Ipv6IpamPoolId
 ec2:IsLaunchTemplateResource
 ec2:KeyPairName
 ec2:KeyPairType

@@ -1,1 +1,4 @@
 kafka:cluster
+kafka:group
+kafka:topic
+kafka:transactional-id

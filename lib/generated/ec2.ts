@@ -124,6 +124,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to allocate a CIDR from an Amazon VPC IP Address Manager (IPAM) pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateIpamPoolCidr.html
+   */
+  public toAllocateIpamPoolCidr() {
+    return this.to('AllocateIpamPoolCidr');
+  }
+
+  /**
    * Grants permission to apply a security group to the association between a Client VPN endpoint and a target network
    *
    * Access Level: Write
@@ -773,6 +784,48 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an Amazon VPC IP Address Manager (IPAM)
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpam.html
+   */
+  public toCreateIpam() {
+    return this.to('CreateIpam');
+  }
+
+  /**
+   * Grants permission to create an IP address pool for Amazon VPC IP Address Manager (IPAM), which is a collection of contiguous IP address CIDRs
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamPool.html
+   */
+  public toCreateIpamPool() {
+    return this.to('CreateIpamPool');
+  }
+
+  /**
+   * Grants permission to create an Amazon VPC IP Address Manager (IPAM) scope, which is the highest-level container within IPAM
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamScope.html
+   */
+  public toCreateIpamScope() {
+    return this.to('CreateIpamScope');
+  }
+
+  /**
    * Grants permission to create a 2048-bit RSA key pair
    *
    * Access Level: Write
@@ -890,6 +943,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Network Access Scope
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInsightsAccessScope.html
+   */
+  public toCreateNetworkInsightsAccessScope() {
+    return this.to('CreateNetworkInsightsAccessScope');
+  }
+
+  /**
    * Grants permission to create a path to analyze for reachability
    *
    * Access Level: Write
@@ -940,6 +1007,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreatePlacementGroup() {
     return this.to('CreatePlacementGroup');
+  }
+
+  /**
+   * Grants permission to create a public IPv4 address pool for public IPv4 CIDRs that you own and bring to Amazon to manage with Amazon VPC IP Address Manager (IPAM)
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreatePublicIpv4Pool.html
+   */
+  public toCreatePublicIpv4Pool() {
+    return this.to('CreatePublicIpv4Pool');
   }
 
   /**
@@ -1525,6 +1606,39 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an Amazon VPC IP Address Manager (IPAM) and remove all monitored data associated with the IPAM including the historical data for CIDRs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpam.html
+   */
+  public toDeleteIpam() {
+    return this.to('DeleteIpam');
+  }
+
+  /**
+   * Grants permission to delete an Amazon VPC IP Address Manager (IPAM) pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamPool.html
+   */
+  public toDeleteIpamPool() {
+    return this.to('DeleteIpamPool');
+  }
+
+  /**
+   * Grants permission to delete the scope for an Amazon VPC IP Address Manager (IPAM)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamScope.html
+   */
+  public toDeleteIpamScope() {
+    return this.to('DeleteIpamScope');
+  }
+
+  /**
    * Grants permission to delete a key pair by removing the public key from Amazon EC2
    *
    * Access Level: Write
@@ -1624,6 +1738,28 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a Network Access Scope
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkInsightsAccessScope.html
+   */
+  public toDeleteNetworkInsightsAccessScope() {
+    return this.to('DeleteNetworkInsightsAccessScope');
+  }
+
+  /**
+   * Grants permission to delete a Network Access Scope analysis
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkInsightsAccessScopeAnalysis.html
+   */
+  public toDeleteNetworkInsightsAccessScopeAnalysis() {
+    return this.to('DeleteNetworkInsightsAccessScopeAnalysis');
+  }
+
+  /**
    * Grants permission to delete a network insights analysis
    *
    * Access Level: Write
@@ -1676,6 +1812,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toDeletePlacementGroup() {
     return this.to('DeletePlacementGroup');
+  }
+
+  /**
+   * Grants permission to delete a public IPv4 address pool for public IPv4 CIDRs that you own and brought to Amazon to manage with Amazon VPC IP Address Manager (IPAM)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeletePublicIpv4Pool.html
+   */
+  public toDeletePublicIpv4Pool() {
+    return this.to('DeletePublicIpv4Pool');
   }
 
   /**
@@ -2028,6 +2175,28 @@ export class Ec2 extends PolicyStatement {
    */
   public toDeprovisionByoipCidr() {
     return this.to('DeprovisionByoipCidr');
+  }
+
+  /**
+   * Grants permission to deprovision a CIDR provisioned from an Amazon VPC IP Address Manager (IPAM) pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html
+   */
+  public toDeprovisionIpamPoolCidr() {
+    return this.to('DeprovisionIpamPoolCidr');
+  }
+
+  /**
+   * Grants permission to deprovision a CIDR from a public IPv4 pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionPublicIpv4PoolCidr.html
+   */
+  public toDeprovisionPublicIpv4PoolCidr() {
+    return this.to('DeprovisionPublicIpv4PoolCidr');
   }
 
   /**
@@ -2625,6 +2794,39 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe Amazon VPC IP Address Manager (IPAM) pools
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamPools.html
+   */
+  public toDescribeIpamPools() {
+    return this.to('DescribeIpamPools');
+  }
+
+  /**
+   * Grants permission to describe Amazon VPC IP Address Manager (IPAM) scopes
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamScopes.html
+   */
+  public toDescribeIpamScopes() {
+    return this.to('DescribeIpamScopes');
+  }
+
+  /**
+   * Grants permission to describe an Amazon VPC IP Address Manager (IPAM)
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpams.html
+   */
+  public toDescribeIpams() {
+    return this.to('DescribeIpams');
+  }
+
+  /**
    * Grants permission to describe one or more IPv6 address pools
    *
    * Access Level: List
@@ -2776,6 +2978,28 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeNetworkAcls() {
     return this.to('DescribeNetworkAcls');
+  }
+
+  /**
+   * Grants permission to describe one or more Network Access Scope analyses
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInsightsAccessScopeAnalyses.html
+   */
+  public toDescribeNetworkInsightsAccessScopeAnalyses() {
+    return this.to('DescribeNetworkInsightsAccessScopeAnalyses');
+  }
+
+  /**
+   * Grants permission to describe the Network Access Scopes
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInsightsAccessScopes.html
+   */
+  public toDescribeNetworkInsightsAccessScopes() {
+    return this.to('DescribeNetworkInsightsAccessScopes');
   }
 
   /**
@@ -3018,6 +3242,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeSnapshotAttribute() {
     return this.to('DescribeSnapshotAttribute');
+  }
+
+  /**
+   * Grants permission to describe the storage tier status for Amazon EBS snapshots
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshotTierStatus.html
+   */
+  public toDescribeSnapshotTierStatus() {
+    return this.to('DescribeSnapshotTierStatus');
   }
 
   /**
@@ -3549,6 +3784,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable an AWS Organizations member account as an Amazon VPC IP Address Manager (IPAM) admin account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableIpamOrganizationAdminAccount.html
+   */
+  public toDisableIpamOrganizationAdminAccount() {
+    return this.to('DisableIpamOrganizationAdminAccount');
+  }
+
+  /**
    * Grants permission to disable access to the EC2 serial console of all instances for your account
    *
    * Access Level: Write
@@ -3755,6 +4001,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toEnableImageDeprecation() {
     return this.to('EnableImageDeprecation');
+  }
+
+  /**
+   * Grants permission to enable an AWS Organizations member account as an Amazon VPC IP Address Manager (IPAM) admin account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableIpamOrganizationAdminAccount.html
+   */
+  public toEnableIpamOrganizationAdminAccount() {
+    return this.to('EnableIpamOrganizationAdminAccount');
   }
 
   /**
@@ -4003,6 +4260,61 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view a list of instance types with specified instance attributes
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html
+   */
+  public toGetInstanceTypesFromInstanceRequirements() {
+    return this.to('GetInstanceTypesFromInstanceRequirements');
+  }
+
+  /**
+   * Grants permission to retrieve historical information about a CIDR within an Amazon VPC IP Address Manager (IPAM) scope
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamAddressHistory.html
+   */
+  public toGetIpamAddressHistory() {
+    return this.to('GetIpamAddressHistory');
+  }
+
+  /**
+   * Grants permission to get a list of all the CIDR allocations in an Amazon VPC IP Address Manager (IPAM) pool
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPoolAllocations.html
+   */
+  public toGetIpamPoolAllocations() {
+    return this.to('GetIpamPoolAllocations');
+  }
+
+  /**
+   * Grants permission to get the CIDRs provisioned to an Amazon VPC IP Address Manager (IPAM) pool
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPoolCidrs.html
+   */
+  public toGetIpamPoolCidrs() {
+    return this.to('GetIpamPoolCidrs');
+  }
+
+  /**
+   * Grants permission to get information about the resources in an Amazon VPC IP Address Manager (IPAM) scope
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamResourceCidrs.html
+   */
+  public toGetIpamResourceCidrs() {
+    return this.to('GetIpamResourceCidrs');
+  }
+
+  /**
    * Grants permission to get the configuration data of the specified instance for use with a new launch template or launch template version
    *
    * Access Level: Read
@@ -4036,6 +4348,28 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the findings for one or more Network Access Scope analyses
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetNetworkInsightsAccessScopeAnalysisFindings.html
+   */
+  public toGetNetworkInsightsAccessScopeAnalysisFindings() {
+    return this.to('GetNetworkInsightsAccessScopeAnalysisFindings');
+  }
+
+  /**
+   * Grants permission to get the content for a specified Network Access Scope
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetNetworkInsightsAccessScopeContent.html
+   */
+  public toGetNetworkInsightsAccessScopeContent() {
+    return this.to('GetNetworkInsightsAccessScopeContent');
+  }
+
+  /**
    * Grants permission to retrieve the encrypted administrator password for a running Windows instance
    *
    * Access Level: Read
@@ -4066,6 +4400,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetSerialConsoleAccessStatus() {
     return this.to('GetSerialConsoleAccessStatus');
+  }
+
+  /**
+   * Grants permission to calculate the Spot placement score for a Region or Availability Zone based on the specified target capacity and compute requirements
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html
+   */
+  public toGetSpotPlacementScores() {
+    return this.to('GetSpotPlacementScores');
   }
 
   /**
@@ -4229,6 +4574,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toImportVolume() {
     return this.to('ImportVolume');
+  }
+
+  /**
+   * Grants permission to list the Amazon EBS snapshots that are currently in the Recycle Bin
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ListSnapshotsInRecycleBin.html
+   */
+  public toListSnapshotsInRecycleBin() {
+    return this.to('ListSnapshotsInRecycleBin');
   }
 
   /**
@@ -4452,6 +4808,50 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the configurations of an Amazon VPC IP Address Manager (IPAM)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpam.html
+   */
+  public toModifyIpam() {
+    return this.to('ModifyIpam');
+  }
+
+  /**
+   * Grants permission to modify the configurations of an Amazon VPC IP Address Manager (IPAM) pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamPool.html
+   */
+  public toModifyIpamPool() {
+    return this.to('ModifyIpamPool');
+  }
+
+  /**
+   * Grants permission to modify the configurations of an Amazon VPC IP Address Manager (IPAM) resource CIDR
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html
+   */
+  public toModifyIpamResourceCidr() {
+    return this.to('ModifyIpamResourceCidr');
+  }
+
+  /**
+   * Grants permission to modify the configurations of an Amazon VPC IP Address Manager (IPAM) scope
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamScope.html
+   */
+  public toModifyIpamScope() {
+    return this.to('ModifyIpamScope');
+  }
+
+  /**
    * Grants permission to modify a launch template
    *
    * Access Level: Write
@@ -4515,6 +4915,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifySnapshotAttribute() {
     return this.to('ModifySnapshotAttribute');
+  }
+
+  /**
+   * Grants permission to archive Amazon EBS snapshots
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySnapshotTier.html
+   */
+  public toModifySnapshotTier() {
+    return this.to('ModifySnapshotTier');
   }
 
   /**
@@ -4771,6 +5182,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to move a BYOIP IPv4 CIDR to Amazon VPC IP Address Manager (IPAM) from a public IPv4 pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_MoveByoipCidrToIpam.html
+   */
+  public toMoveByoipCidrToIpam() {
+    return this.to('MoveByoipCidrToIpam');
+  }
+
+  /**
    * Grants permission to provision an address range for use in AWS through bring your own IP addresses (BYOIP), and to create a corresponding address pool
    *
    * Access Level: Write
@@ -4779,6 +5201,28 @@ export class Ec2 extends PolicyStatement {
    */
   public toProvisionByoipCidr() {
     return this.to('ProvisionByoipCidr');
+  }
+
+  /**
+   * Grants permission to provision a CIDR to an Amazon VPC IP Address Manager (IPAM) pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ProvisionIpamPoolCidr.html
+   */
+  public toProvisionIpamPoolCidr() {
+    return this.to('ProvisionIpamPoolCidr');
+  }
+
+  /**
+   * Grants permission to provision a CIDR to a public IPv4 pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ProvisionPublicIpv4PoolCidr.html
+   */
+  public toProvisionPublicIpv4PoolCidr() {
+    return this.to('ProvisionPublicIpv4PoolCidr');
   }
 
   /**
@@ -4947,6 +5391,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toReleaseHosts() {
     return this.to('ReleaseHosts');
+  }
+
+  /**
+   * Grants permission to release an allocation within an Amazon VPC IP Address Manager (IPAM) pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html
+   */
+  public toReleaseIpamPoolAllocation() {
+    return this.to('ReleaseIpamPoolAllocation');
   }
 
   /**
@@ -5154,6 +5609,28 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to restore an Amazon EBS snapshot from the Recycle Bin
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RestoreSnapshotFromRecycleBin.html
+   */
+  public toRestoreSnapshotFromRecycleBin() {
+    return this.to('RestoreSnapshotFromRecycleBin');
+  }
+
+  /**
+   * Grants permission to restore an archived Amazon EBS snapshot for use temporarily or permanently, or modify the restore period or restore type for a snapshot that was previously temporarily restored
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RestoreSnapshotTier.html
+   */
+  public toRestoreSnapshotTier() {
+    return this.to('RestoreSnapshotTier');
+  }
+
+  /**
    * Grants permission to remove an inbound authorization rule from a Client VPN endpoint
    *
    * Access Level: Write
@@ -5275,6 +5752,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toStartInstances() {
     return this.to('StartInstances');
+  }
+
+  /**
+   * Grants permission to start a Network Access Scope analysis
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartNetworkInsightsAccessScopeAnalysis.html
+   */
+  public toStartNetworkInsightsAccessScopeAnalysis() {
+    return this.to('StartNetworkInsightsAccessScopeAnalysis');
   }
 
   /**
@@ -5412,6 +5903,7 @@ export class Ec2 extends PolicyStatement {
       'AdvertiseByoipCidr',
       'AllocateAddress',
       'AllocateHosts',
+      'AllocateIpamPoolCidr',
       'ApplySecurityGroupsToClientVpnTargetNetwork',
       'AssignIpv6Addresses',
       'AssignPrivateIpAddresses',
@@ -5466,6 +5958,9 @@ export class Ec2 extends PolicyStatement {
       'CreateInstanceEventWindow',
       'CreateInstanceExportTask',
       'CreateInternetGateway',
+      'CreateIpam',
+      'CreateIpamPool',
+      'CreateIpamScope',
       'CreateKeyPair',
       'CreateLaunchTemplate',
       'CreateLaunchTemplateVersion',
@@ -5475,9 +5970,11 @@ export class Ec2 extends PolicyStatement {
       'CreateNatGateway',
       'CreateNetworkAcl',
       'CreateNetworkAclEntry',
+      'CreateNetworkInsightsAccessScope',
       'CreateNetworkInsightsPath',
       'CreateNetworkInterface',
       'CreatePlacementGroup',
+      'CreatePublicIpv4Pool',
       'CreateReplaceRootVolumeTask',
       'CreateReservedInstancesListing',
       'CreateRestoreImageTask',
@@ -5523,6 +6020,9 @@ export class Ec2 extends PolicyStatement {
       'DeleteFpgaImage',
       'DeleteInstanceEventWindow',
       'DeleteInternetGateway',
+      'DeleteIpam',
+      'DeleteIpamPool',
+      'DeleteIpamScope',
       'DeleteKeyPair',
       'DeleteLaunchTemplate',
       'DeleteLaunchTemplateVersions',
@@ -5532,10 +6032,13 @@ export class Ec2 extends PolicyStatement {
       'DeleteNatGateway',
       'DeleteNetworkAcl',
       'DeleteNetworkAclEntry',
+      'DeleteNetworkInsightsAccessScope',
+      'DeleteNetworkInsightsAccessScopeAnalysis',
       'DeleteNetworkInsightsAnalysis',
       'DeleteNetworkInsightsPath',
       'DeleteNetworkInterface',
       'DeletePlacementGroup',
+      'DeletePublicIpv4Pool',
       'DeleteQueuedReservedInstances',
       'DeleteRoute',
       'DeleteRouteTable',
@@ -5567,6 +6070,8 @@ export class Ec2 extends PolicyStatement {
       'DeleteVpnConnectionRoute',
       'DeleteVpnGateway',
       'DeprovisionByoipCidr',
+      'DeprovisionIpamPoolCidr',
+      'DeprovisionPublicIpv4PoolCidr',
       'DeregisterImage',
       'DeregisterInstanceEventNotificationAttributes',
       'DeregisterTransitGatewayMulticastGroupMembers',
@@ -5579,6 +6084,7 @@ export class Ec2 extends PolicyStatement {
       'DisableEbsEncryptionByDefault',
       'DisableFastSnapshotRestores',
       'DisableImageDeprecation',
+      'DisableIpamOrganizationAdminAccount',
       'DisableSerialConsoleAccess',
       'DisableTransitGatewayRouteTablePropagation',
       'DisableVgwRoutePropagation',
@@ -5598,6 +6104,7 @@ export class Ec2 extends PolicyStatement {
       'EnableEbsEncryptionByDefault',
       'EnableFastSnapshotRestores',
       'EnableImageDeprecation',
+      'EnableIpamOrganizationAdminAccount',
       'EnableSerialConsoleAccess',
       'EnableTransitGatewayRouteTablePropagation',
       'EnableVgwRoutePropagation',
@@ -5632,11 +6139,16 @@ export class Ec2 extends PolicyStatement {
       'ModifyInstanceEventWindow',
       'ModifyInstanceMetadataOptions',
       'ModifyInstancePlacement',
+      'ModifyIpam',
+      'ModifyIpamPool',
+      'ModifyIpamResourceCidr',
+      'ModifyIpamScope',
       'ModifyLaunchTemplate',
       'ModifyManagedPrefixList',
       'ModifyNetworkInterfaceAttribute',
       'ModifyReservedInstances',
       'ModifySecurityGroupRules',
+      'ModifySnapshotTier',
       'ModifySpotFleetRequest',
       'ModifySubnetAttribute',
       'ModifyTrafficMirrorFilterNetworkServices',
@@ -5659,7 +6171,10 @@ export class Ec2 extends PolicyStatement {
       'ModifyVpnTunnelOptions',
       'MonitorInstances',
       'MoveAddressToVpc',
+      'MoveByoipCidrToIpam',
       'ProvisionByoipCidr',
+      'ProvisionIpamPoolCidr',
+      'ProvisionPublicIpv4PoolCidr',
       'PurchaseHostReservation',
       'PurchaseReservedInstancesOffering',
       'PurchaseScheduledInstances',
@@ -5675,6 +6190,7 @@ export class Ec2 extends PolicyStatement {
       'RejectVpcPeeringConnection',
       'ReleaseAddress',
       'ReleaseHosts',
+      'ReleaseIpamPoolAllocation',
       'ReplaceIamInstanceProfileAssociation',
       'ReplaceNetworkAclAssociation',
       'ReplaceNetworkAclEntry',
@@ -5692,6 +6208,8 @@ export class Ec2 extends PolicyStatement {
       'ResetNetworkInterfaceAttribute',
       'RestoreAddressToClassic',
       'RestoreManagedPrefixListVersion',
+      'RestoreSnapshotFromRecycleBin',
+      'RestoreSnapshotTier',
       'RevokeClientVpnIngress',
       'RevokeSecurityGroupEgress',
       'RevokeSecurityGroupIngress',
@@ -5700,6 +6218,7 @@ export class Ec2 extends PolicyStatement {
       'SendDiagnosticInterrupt',
       'SendSpotInstanceInterruptions',
       'StartInstances',
+      'StartNetworkInsightsAccessScopeAnalysis',
       'StartNetworkInsightsAnalysis',
       'StartVpcEndpointServicePrivateDnsVerification',
       'StopInstances',
@@ -5772,6 +6291,9 @@ export class Ec2 extends PolicyStatement {
       'DescribeInstanceTypes',
       'DescribeInstances',
       'DescribeInternetGateways',
+      'DescribeIpamPools',
+      'DescribeIpamScopes',
+      'DescribeIpams',
       'DescribeIpv6Pools',
       'DescribeKeyPairs',
       'DescribeLaunchTemplateVersions',
@@ -5786,6 +6308,8 @@ export class Ec2 extends PolicyStatement {
       'DescribeMovingAddresses',
       'DescribeNatGateways',
       'DescribeNetworkAcls',
+      'DescribeNetworkInsightsAccessScopeAnalyses',
+      'DescribeNetworkInsightsAccessScopes',
       'DescribeNetworkInsightsAnalyses',
       'DescribeNetworkInsightsPaths',
       'DescribeNetworkInterfaceAttribute',
@@ -5806,6 +6330,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeSecurityGroupRules',
       'DescribeSecurityGroups',
       'DescribeSnapshotAttribute',
+      'DescribeSnapshotTierStatus',
       'DescribeSnapshots',
       'DescribeSpotDatafeedSubscription',
       'DescribeSpotFleetInstances',
@@ -5851,6 +6376,7 @@ export class Ec2 extends PolicyStatement {
       'GetTransitGatewayRouteTablePropagations',
       'GetVpnConnectionDeviceSampleConfiguration',
       'GetVpnConnectionDeviceTypes',
+      'ListSnapshotsInRecycleBin',
       'SearchLocalGatewayRoutes',
       'SearchTransitGatewayMulticastGroups',
       'SearchTransitGatewayRoutes'
@@ -5876,12 +6402,20 @@ export class Ec2 extends PolicyStatement {
       'GetEbsEncryptionByDefault',
       'GetFlowLogsIntegrationTemplate',
       'GetHostReservationPurchasePreview',
+      'GetInstanceTypesFromInstanceRequirements',
+      'GetIpamAddressHistory',
+      'GetIpamPoolAllocations',
+      'GetIpamPoolCidrs',
+      'GetIpamResourceCidrs',
       'GetLaunchTemplateData',
       'GetManagedPrefixListAssociations',
       'GetManagedPrefixListEntries',
+      'GetNetworkInsightsAccessScopeAnalysisFindings',
+      'GetNetworkInsightsAccessScopeContent',
       'GetPasswordData',
       'GetReservedInstancesExchangeQuote',
       'GetSerialConsoleAccessStatus',
+      'GetSpotPlacementScores',
       'GetSubnetCidrReservations'
     ]
   };
@@ -6409,6 +6943,63 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type ipam to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param ipamId - Identifier for the ipamId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onIpam(ipamId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:ec2::${ account || '*' }:ipam/${ ipamId }`);
+  }
+
+  /**
+   * Adds a resource of type ipam-pool to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param ipamPoolId - Identifier for the ipamPoolId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onIpamPool(ipamPoolId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:ec2::${ account || '*' }:ipam-pool/${ ipamPoolId }`);
+  }
+
+  /**
+   * Adds a resource of type ipam-scope to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param ipamScopeId - Identifier for the ipamScopeId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onIpamScope(ipamScopeId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:ec2::${ account || '*' }:ipam-scope/${ ipamScopeId }`);
+  }
+
+  /**
    * Adds a resource of type ipv4pool-ec2 to the statement
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#ip-addressing-eips
@@ -6666,6 +7257,46 @@ export class Ec2 extends PolicyStatement {
    */
   public onNetworkAcl(naclId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:network-acl/${ naclId }`);
+  }
+
+  /**
+   * Adds a resource of type network-insights-access-scope-analysis to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param networkInsightsAccessScopeAnalysisId - Identifier for the networkInsightsAccessScopeAnalysisId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onNetworkInsightsAccessScopeAnalysis(networkInsightsAccessScopeAnalysisId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:network-insights-access-scope-analysis/${ networkInsightsAccessScopeAnalysisId }`);
+  }
+
+  /**
+   * Adds a resource of type network-insights-access-scope to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   *
+   * @param networkInsightsAccessScopeId - Identifier for the networkInsightsAccessScopeId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onNetworkInsightsAccessScope(networkInsightsAccessScopeId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:network-insights-access-scope/${ networkInsightsAccessScopeId }`);
   }
 
   /**
@@ -7320,6 +7951,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
+   * - .ifIpv4IpamPoolId()
+   * - .ifIpv6IpamPoolId()
    * - .ifRegion()
    * - .ifResourceTag()
    * - .ifTenancy()
@@ -7534,6 +8167,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyReservedInstances()
    * - .toModifySnapshotAttribute()
+   * - .toModifySnapshotTier()
    * - .toModifySpotFleetRequest()
    * - .toModifySubnetAttribute()
    * - .toModifyTrafficMirrorFilterNetworkServices()
@@ -7740,6 +8374,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetPasswordData()
    * - .toImportInstance()
    * - .toImportVolume()
+   * - .toListSnapshotsInRecycleBin()
    * - .toModifyFleet()
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
@@ -7748,6 +8383,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyReservedInstances()
+   * - .toModifySnapshotTier()
    * - .toModifySpotFleetRequest()
    * - .toModifySubnetAttribute()
    * - .toModifyVolume()
@@ -7764,6 +8400,8 @@ export class Ec2 extends PolicyStatement {
    * - .toRequestSpotInstances()
    * - .toResetInstanceAttribute()
    * - .toResetNetworkInterfaceAttribute()
+   * - .toRestoreSnapshotFromRecycleBin()
+   * - .toRestoreSnapshotTier()
    * - .toRunInstances()
    * - .toRunScheduledInstances()
    * - .toSendDiagnosticInterrupt()
@@ -8113,9 +8751,13 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableVolumeIO()
    * - .toImportInstance()
    * - .toImportVolume()
+   * - .toListSnapshotsInRecycleBin()
    * - .toModifyInstanceAttribute()
+   * - .toModifySnapshotTier()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
+   * - .toRestoreSnapshotFromRecycleBin()
+   * - .toRestoreSnapshotTier()
    * - .toRunInstances()
    *
    * Applies to resource types:
@@ -8413,6 +9055,40 @@ export class Ec2 extends PolicyStatement {
    */
   public ifInstanceType(value: string | string[], operator?: Operator | string) {
     return this.if(`InstanceType`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of an IPAM pool provided for IPv4 CIDR block allocation
+   *
+   * Applies to actions:
+   * - .toAssociateVpcCidrBlock()
+   * - .toCreateVpc()
+   *
+   * Applies to resource types:
+   * - vpc
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifIpv4IpamPoolId(value: string | string[], operator?: Operator | string) {
+    return this.if(`Ipv4IpamPoolId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of an IPAM pool provided for IPv6 CIDR block allocation
+   *
+   * Applies to actions:
+   * - .toAssociateVpcCidrBlock()
+   * - .toCreateVpc()
+   *
+   * Applies to resource types:
+   * - vpc
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifIpv6IpamPoolId(value: string | string[], operator?: Operator | string) {
+    return this.if(`Ipv6IpamPoolId`, value, operator || 'StringLike');
   }
 
   /**
@@ -8764,16 +9440,20 @@ export class Ec2 extends PolicyStatement {
    * - .toExportImage()
    * - .toImportImage()
    * - .toImportSnapshot()
+   * - .toListSnapshotsInRecycleBin()
    * - .toModifyFleet()
    * - .toModifyFpgaImageAttribute()
    * - .toModifyImageAttribute()
    * - .toModifySnapshotAttribute()
+   * - .toModifySnapshotTier()
    * - .toRegisterImage()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toResetFpgaImageAttribute()
    * - .toResetImageAttribute()
    * - .toResetSnapshotAttribute()
+   * - .toRestoreSnapshotFromRecycleBin()
+   * - .toRestoreSnapshotTier()
    * - .toRunInstances()
    * - .toRunScheduledInstances()
    *
@@ -8835,12 +9515,16 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableFastSnapshotRestores()
    * - .toImportImage()
    * - .toImportSnapshot()
+   * - .toListSnapshotsInRecycleBin()
    * - .toModifyFleet()
    * - .toModifySnapshotAttribute()
+   * - .toModifySnapshotTier()
    * - .toRegisterImage()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toResetSnapshotAttribute()
+   * - .toRestoreSnapshotFromRecycleBin()
+   * - .toRestoreSnapshotTier()
    * - .toRunInstances()
    * - .toRunScheduledInstances()
    *
@@ -9260,6 +9944,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAcceptVpcPeeringConnection()
    * - .toAllocateAddress()
    * - .toAllocateHosts()
+   * - .toAllocateIpamPoolCidr()
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()
    * - .toAssignIpv6Addresses()
    * - .toAssignPrivateIpAddresses()
@@ -9305,6 +9990,9 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInstanceEventWindow()
    * - .toCreateInstanceExportTask()
    * - .toCreateInternetGateway()
+   * - .toCreateIpam()
+   * - .toCreateIpamPool()
+   * - .toCreateIpamScope()
    * - .toCreateKeyPair()
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
@@ -9314,10 +10002,12 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNatGateway()
    * - .toCreateNetworkAcl()
    * - .toCreateNetworkAclEntry()
+   * - .toCreateNetworkInsightsAccessScope()
    * - .toCreateNetworkInsightsPath()
    * - .toCreateNetworkInterface()
    * - .toCreateNetworkInterfacePermission()
    * - .toCreatePlacementGroup()
+   * - .toCreatePublicIpv4Pool()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateRestoreImageTask()
    * - .toCreateRoute()
@@ -9361,6 +10051,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteFpgaImage()
    * - .toDeleteInstanceEventWindow()
    * - .toDeleteInternetGateway()
+   * - .toDeleteIpam()
+   * - .toDeleteIpamPool()
+   * - .toDeleteIpamScope()
    * - .toDeleteKeyPair()
    * - .toDeleteLaunchTemplate()
    * - .toDeleteLaunchTemplateVersions()
@@ -9370,11 +10063,14 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteNatGateway()
    * - .toDeleteNetworkAcl()
    * - .toDeleteNetworkAclEntry()
+   * - .toDeleteNetworkInsightsAccessScope()
+   * - .toDeleteNetworkInsightsAccessScopeAnalysis()
    * - .toDeleteNetworkInsightsAnalysis()
    * - .toDeleteNetworkInsightsPath()
    * - .toDeleteNetworkInterface()
    * - .toDeleteNetworkInterfacePermission()
    * - .toDeletePlacementGroup()
+   * - .toDeletePublicIpv4Pool()
    * - .toDeleteRoute()
    * - .toDeleteRouteTable()
    * - .toDeleteSecurityGroup()
@@ -9403,6 +10099,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteVpnConnection()
    * - .toDeleteVpnConnectionRoute()
    * - .toDeleteVpnGateway()
+   * - .toDeprovisionIpamPoolCidr()
+   * - .toDeprovisionPublicIpv4PoolCidr()
    * - .toDeregisterImage()
    * - .toDeregisterTransitGatewayMulticastGroupMembers()
    * - .toDeregisterTransitGatewayMulticastGroupSources()
@@ -9453,6 +10151,10 @@ export class Ec2 extends PolicyStatement {
    * - .toGetConsoleOutput()
    * - .toGetFlowLogsIntegrationTemplate()
    * - .toGetGroupsForCapacityReservation()
+   * - .toGetIpamAddressHistory()
+   * - .toGetIpamPoolAllocations()
+   * - .toGetIpamPoolCidrs()
+   * - .toGetIpamResourceCidrs()
    * - .toGetLaunchTemplateData()
    * - .toGetManagedPrefixListAssociations()
    * - .toGetManagedPrefixListEntries()
@@ -9464,6 +10166,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportKeyPair()
    * - .toImportSnapshot()
    * - .toImportVolume()
+   * - .toListSnapshotsInRecycleBin()
    * - .toModifyAddressAttribute()
    * - .toModifyCapacityReservation()
    * - .toModifyCapacityReservationFleet()
@@ -9479,12 +10182,17 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventWindow()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
+   * - .toModifyIpam()
+   * - .toModifyIpamPool()
+   * - .toModifyIpamResourceCidr()
+   * - .toModifyIpamScope()
    * - .toModifyLaunchTemplate()
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyReservedInstances()
    * - .toModifySecurityGroupRules()
    * - .toModifySnapshotAttribute()
+   * - .toModifySnapshotTier()
    * - .toModifySpotFleetRequest()
    * - .toModifySubnetAttribute()
    * - .toModifyTrafficMirrorFilterNetworkServices()
@@ -9507,6 +10215,9 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVpnTunnelCertificate()
    * - .toModifyVpnTunnelOptions()
    * - .toMonitorInstances()
+   * - .toMoveByoipCidrToIpam()
+   * - .toProvisionIpamPoolCidr()
+   * - .toProvisionPublicIpv4PoolCidr()
    * - .toPurchaseHostReservation()
    * - .toRebootInstances()
    * - .toRegisterImage()
@@ -9519,6 +10230,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRejectVpcPeeringConnection()
    * - .toReleaseAddress()
    * - .toReleaseHosts()
+   * - .toReleaseIpamPoolAllocation()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toReplaceNetworkAclAssociation()
    * - .toReplaceNetworkAclEntry()
@@ -9534,6 +10246,8 @@ export class Ec2 extends PolicyStatement {
    * - .toResetNetworkInterfaceAttribute()
    * - .toResetSnapshotAttribute()
    * - .toRestoreManagedPrefixListVersion()
+   * - .toRestoreSnapshotFromRecycleBin()
+   * - .toRestoreSnapshotTier()
    * - .toRevokeClientVpnIngress()
    * - .toRevokeSecurityGroupEgress()
    * - .toRevokeSecurityGroupIngress()
@@ -9543,6 +10257,7 @@ export class Ec2 extends PolicyStatement {
    * - .toSendDiagnosticInterrupt()
    * - .toSendSpotInstanceInterruptions()
    * - .toStartInstances()
+   * - .toStartNetworkInsightsAccessScopeAnalysis()
    * - .toStartNetworkInsightsAnalysis()
    * - .toStartVpcEndpointServicePrivateDnsVerification()
    * - .toStopInstances()
@@ -9576,6 +10291,9 @@ export class Ec2 extends PolicyStatement {
    * - instance-event-window
    * - instance
    * - internet-gateway
+   * - ipam
+   * - ipam-pool
+   * - ipam-scope
    * - ipv4pool-ec2
    * - ipv6pool-ec2
    * - key-pair
@@ -9588,6 +10306,8 @@ export class Ec2 extends PolicyStatement {
    * - local-gateway-virtual-interface
    * - natgateway
    * - network-acl
+   * - network-insights-access-scope-analysis
+   * - network-insights-access-scope
    * - network-insights-analysis
    * - network-insights-path
    * - network-interface
@@ -9740,6 +10460,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAcceptVpcEndpointConnections()
    * - .toAcceptVpcPeeringConnection()
    * - .toAllocateAddress()
+   * - .toAllocateIpamPoolCidr()
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()
    * - .toAssignIpv6Addresses()
    * - .toAssignPrivateIpAddresses()
@@ -9775,6 +10496,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateFlowLogs()
    * - .toCreateImage()
    * - .toCreateInstanceExportTask()
+   * - .toCreateIpamPool()
+   * - .toCreateIpamScope()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateLocalGatewayRoute()
    * - .toCreateLocalGatewayRouteTableVpcAssociation()
@@ -9820,6 +10543,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteFpgaImage()
    * - .toDeleteInstanceEventWindow()
    * - .toDeleteInternetGateway()
+   * - .toDeleteIpam()
+   * - .toDeleteIpamPool()
+   * - .toDeleteIpamScope()
    * - .toDeleteKeyPair()
    * - .toDeleteLaunchTemplate()
    * - .toDeleteLaunchTemplateVersions()
@@ -9829,11 +10555,14 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteNatGateway()
    * - .toDeleteNetworkAcl()
    * - .toDeleteNetworkAclEntry()
+   * - .toDeleteNetworkInsightsAccessScope()
+   * - .toDeleteNetworkInsightsAccessScopeAnalysis()
    * - .toDeleteNetworkInsightsAnalysis()
    * - .toDeleteNetworkInsightsPath()
    * - .toDeleteNetworkInterface()
    * - .toDeleteNetworkInterfacePermission()
    * - .toDeletePlacementGroup()
+   * - .toDeletePublicIpv4Pool()
    * - .toDeleteRoute()
    * - .toDeleteRouteTable()
    * - .toDeleteSecurityGroup()
@@ -9862,6 +10591,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteVpnConnection()
    * - .toDeleteVpnConnectionRoute()
    * - .toDeleteVpnGateway()
+   * - .toDeprovisionIpamPoolCidr()
+   * - .toDeprovisionPublicIpv4PoolCidr()
    * - .toDeregisterImage()
    * - .toDeregisterTransitGatewayMulticastGroupMembers()
    * - .toDeregisterTransitGatewayMulticastGroupSources()
@@ -9912,6 +10643,10 @@ export class Ec2 extends PolicyStatement {
    * - .toGetConsoleOutput()
    * - .toGetFlowLogsIntegrationTemplate()
    * - .toGetGroupsForCapacityReservation()
+   * - .toGetIpamAddressHistory()
+   * - .toGetIpamPoolAllocations()
+   * - .toGetIpamPoolCidrs()
+   * - .toGetIpamResourceCidrs()
    * - .toGetLaunchTemplateData()
    * - .toGetManagedPrefixListAssociations()
    * - .toGetManagedPrefixListEntries()
@@ -9921,6 +10656,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportImage()
    * - .toImportInstance()
    * - .toImportVolume()
+   * - .toListSnapshotsInRecycleBin()
    * - .toModifyAddressAttribute()
    * - .toModifyCapacityReservation()
    * - .toModifyCapacityReservationFleet()
@@ -9936,12 +10672,17 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventWindow()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
+   * - .toModifyIpam()
+   * - .toModifyIpamPool()
+   * - .toModifyIpamResourceCidr()
+   * - .toModifyIpamScope()
    * - .toModifyLaunchTemplate()
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyReservedInstances()
    * - .toModifySecurityGroupRules()
    * - .toModifySnapshotAttribute()
+   * - .toModifySnapshotTier()
    * - .toModifySpotFleetRequest()
    * - .toModifySubnetAttribute()
    * - .toModifyTrafficMirrorFilterNetworkServices()
@@ -9964,6 +10705,9 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVpnTunnelCertificate()
    * - .toModifyVpnTunnelOptions()
    * - .toMonitorInstances()
+   * - .toMoveByoipCidrToIpam()
+   * - .toProvisionIpamPoolCidr()
+   * - .toProvisionPublicIpv4PoolCidr()
    * - .toPurchaseHostReservation()
    * - .toRebootInstances()
    * - .toRegisterImage()
@@ -9976,6 +10720,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRejectVpcPeeringConnection()
    * - .toReleaseAddress()
    * - .toReleaseHosts()
+   * - .toReleaseIpamPoolAllocation()
    * - .toReplaceIamInstanceProfileAssociation()
    * - .toReplaceNetworkAclAssociation()
    * - .toReplaceNetworkAclEntry()
@@ -9991,6 +10736,8 @@ export class Ec2 extends PolicyStatement {
    * - .toResetNetworkInterfaceAttribute()
    * - .toResetSnapshotAttribute()
    * - .toRestoreManagedPrefixListVersion()
+   * - .toRestoreSnapshotFromRecycleBin()
+   * - .toRestoreSnapshotTier()
    * - .toRevokeClientVpnIngress()
    * - .toRevokeSecurityGroupEgress()
    * - .toRevokeSecurityGroupIngress()
@@ -10000,6 +10747,7 @@ export class Ec2 extends PolicyStatement {
    * - .toSendDiagnosticInterrupt()
    * - .toSendSpotInstanceInterruptions()
    * - .toStartInstances()
+   * - .toStartNetworkInsightsAccessScopeAnalysis()
    * - .toStartNetworkInsightsAnalysis()
    * - .toStartVpcEndpointServicePrivateDnsVerification()
    * - .toStopInstances()
@@ -10033,6 +10781,9 @@ export class Ec2 extends PolicyStatement {
    * - instance-event-window
    * - instance
    * - internet-gateway
+   * - ipam
+   * - ipam-pool
+   * - ipam-scope
    * - ipv4pool-ec2
    * - ipv6pool-ec2
    * - key-pair
@@ -10045,6 +10796,8 @@ export class Ec2 extends PolicyStatement {
    * - local-gateway-virtual-interface
    * - natgateway
    * - network-acl
+   * - network-insights-access-scope-analysis
+   * - network-insights-access-scope
    * - network-insights-analysis
    * - network-insights-path
    * - network-interface
@@ -10279,12 +11032,16 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableFastSnapshotRestores()
    * - .toImportImage()
    * - .toImportSnapshot()
+   * - .toListSnapshotsInRecycleBin()
    * - .toModifyFleet()
    * - .toModifySnapshotAttribute()
+   * - .toModifySnapshotTier()
    * - .toRegisterImage()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toResetSnapshotAttribute()
+   * - .toRestoreSnapshotFromRecycleBin()
+   * - .toRestoreSnapshotTier()
    * - .toRunInstances()
    * - .toRunScheduledInstances()
    *
@@ -10525,15 +11282,19 @@ export class Ec2 extends PolicyStatement {
    * - .toImportInstance()
    * - .toImportSnapshot()
    * - .toImportVolume()
+   * - .toListSnapshotsInRecycleBin()
    * - .toModifyFleet()
    * - .toModifyInstanceAttribute()
    * - .toModifySnapshotAttribute()
+   * - .toModifySnapshotTier()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
    * - .toRegisterImage()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toResetSnapshotAttribute()
+   * - .toRestoreSnapshotFromRecycleBin()
+   * - .toRestoreSnapshotTier()
    * - .toRunInstances()
    * - .toRunScheduledInstances()
    *
