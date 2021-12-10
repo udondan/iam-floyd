@@ -9,11 +9,13 @@
 				"lookoutvision:DescribeModel",
 				"lookoutvision:DescribeProject",
 				"lookoutvision:DescribeTrialDetection",
+				"lookoutvision:DescribeModelPackagingJob",
 				"lookoutvision:ListDatasetEntries",
 				"lookoutvision:ListModels",
 				"lookoutvision:ListProjects",
 				"lookoutvision:ListTagsForResource",
-				"lookoutvision:ListTrialDetections"
+				"lookoutvision:ListTrialDetections",
+				"lookoutvision:ListModelPackagingJobs"
 			],
 			"Resource": "*"
 		},
