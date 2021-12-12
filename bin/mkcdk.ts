@@ -39,8 +39,8 @@ async function run() {
 }
 try {
   run();
-} catch (e) {
-  throw e;
+} catch (error: any) {
+  throw error;
 }
 
 function fixIndex(project: Project) {
@@ -66,8 +66,8 @@ function fixIndex(project: Project) {
     });
 
     formatCode(sourceFile);
-  } catch (e) {
-    throw e;
+  } catch (error: any) {
+    throw error;
   }
 }
 
@@ -94,8 +94,8 @@ function fixModule(project: Project, file: string) {
       description: desc,
     });
     formatCode(sourceFile);
-  } catch (e) {
-    throw e;
+  } catch (error: any) {
+    throw error;
   }
 }
 
@@ -149,7 +149,7 @@ function swapFile(src: string, dest: string) {
 function deleteFile(path: string) {
   try {
     fs.unlinkSync(path);
-  } catch (err) {
+  } catch (err: any) {
     exit(err);
   }
 }
@@ -157,7 +157,7 @@ function deleteFile(path: string) {
 function renameFile(src: string, dest: string) {
   try {
     fs.renameSync(src, dest);
-  } catch (err) {
+  } catch (err: any) {
     exit(err);
   }
 }

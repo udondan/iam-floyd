@@ -65,7 +65,7 @@ function storePolicyDocument(name: string, document: string) {
   document = decodeURIComponent(document);
   try {
     fs.writeFileSync(path, document);
-  } catch (err) {
+  } catch (err: any) {
     console.error(err);
   }
 }
@@ -74,7 +74,7 @@ function storePolicyIndex(names: string[]) {
   const path = `${__dirname}/../../docs/source/_static/managed-policies/index.json`;
   try {
     fs.writeFileSync(path, JSON.stringify(names));
-  } catch (err) {
+  } catch (err: any) {
     console.error(err);
   }
 }

@@ -7,7 +7,7 @@ getAwsServices()
   .then(() => {
     console.log('ALL DONE');
   })
-  .catch((err) => {
+  .catch((err: any) => {
     console.error(err);
     process.exit(1);
   });

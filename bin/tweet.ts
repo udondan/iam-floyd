@@ -70,7 +70,7 @@ async function main() {
   for (let content of tweets) {
     console.log('tweeting:');
     console.log(content);
-    await enqueueTweet(content).catch((err) => {
+    await enqueueTweet(content).catch((err: any) => {
       console.error(err);
       process.exit(1);
     });

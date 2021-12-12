@@ -138,7 +138,7 @@ function getAwsServicesFromIamDocs(): Promise<string[]> {
 
         resolve(unique.sort());
       })
-      .catch((err) => {
+      .catch((err: any) => {
         reject(err);
       });
   });
@@ -194,11 +194,11 @@ export function getContent(service: string): Promise<Module> {
 
           resolve(module);
         })
-        .catch((err) => {
+        .catch((err: any) => {
           reject(err);
         });
-    } catch (e) {
-      reject(e);
+    } catch (error: any) {
+      reject(error);
     }
   });
 }
@@ -754,7 +754,7 @@ function getLastModified(url: string): Promise<Date> {
         }
         resolve(mod);
       })
-      .catch((err) => {
+      .catch((err: any) => {
         reject(err);
       });
   });
@@ -950,7 +950,7 @@ function validateUrl(url: string) {
 
   try {
     new URL(url);
-  } catch (_) {
+  } catch (_: any) {
     console.warn(`Removed invalid URL ${url}`.red);
     return '';
   }
