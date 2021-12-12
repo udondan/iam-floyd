@@ -16,11 +16,11 @@ deploy = getattr(test, 'deploy')
 
 def statements():
     # doc-start
-    s1 = statement.Ec2() \
+    s1 = statement.S3() \
                 .deny() \
                 .all_permission_management_actions()
 
-    s2 = statement.Ec2() \
+    s2 = statement.S3() \
                 .allow() \
                 .all_list_actions() \
                 .all_read_actions()
