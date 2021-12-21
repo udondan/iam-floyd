@@ -7,13 +7,13 @@
 				"cognito-idp:DescribeUserPool",
 				"cognito-idp:CreateUserPoolClient",
 				"cognito-idp:DeleteUserPoolClient",
+				"cognito-idp:UpdateUserPoolClient",
 				"cognito-idp:DescribeUserPoolClient",
 				"cognito-idp:AdminInitiateAuth",
 				"cognito-idp:AdminUserGlobalSignOut",
 				"cognito-idp:ListUserPoolClients",
 				"cognito-identity:DescribeIdentityPool",
 				"cognito-identity:UpdateIdentityPool",
-				"cognito-identity:SetIdentityPoolRoles",
 				"cognito-identity:GetIdentityPoolRoles"
 			],
 			"Resource": [
@@ -27,9 +27,17 @@
 			"Resource": "arn:aws:iam::*:role/*",
 			"Condition": {
 				"StringLike": {
-					"iam:PassedToService": "cognito-identity.amazonaws.com"
+					"iam:PassedToService": [
+						"cognito-identity.amazonaws.com",
+						"cognito-identity-us-gov.amazonaws.com"
+					]
 				}
 			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": "cognito-identity:SetIdentityPoolRoles",
+			"Resource": "*"
 		}
 	]
 }
