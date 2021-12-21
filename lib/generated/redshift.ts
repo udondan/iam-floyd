@@ -136,10 +136,25 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CopyClusterSnapshot.html
    */
   public toCopyClusterSnapshot() {
     return this.to('CopyClusterSnapshot');
+  }
+
+  /**
+   * Grants permission to create an Amazon Redshift authentication profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateAuthenticationProfile.html
+   */
+  public toCreateAuthenticationProfile() {
+    return this.to('CreateAuthenticationProfile');
   }
 
   /**
@@ -359,7 +374,7 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
-   * Remove permission from the specified datashare consumer to consume a datashare
+   * Grants permission to remove permission from the specified datashare consumer to consume a datashare
    *
    * Access Level: Permissions management
    *
@@ -370,6 +385,15 @@ export class Redshift extends PolicyStatement {
    */
   public toDeauthorizeDataShare() {
     return this.to('DeauthorizeDataShare');
+  }
+
+  /**
+   * Grants permission to delete an Amazon Redshift authentication profile
+   *
+   * Access Level: Write
+   */
+  public toDeleteAuthenticationProfile() {
+    return this.to('DeleteAuthenticationProfile');
   }
 
   /**
@@ -536,6 +560,15 @@ export class Redshift extends PolicyStatement {
    */
   public toDescribeAccountAttributes() {
     return this.to('DescribeAccountAttributes');
+  }
+
+  /**
+   * Grants permission to describe created Amazon Redshift authentication profiles
+   *
+   * Access Level: Read
+   */
+  public toDescribeAuthenticationProfiles() {
+    return this.to('DescribeAuthenticationProfiles');
   }
 
   /**
@@ -1081,6 +1114,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify an existing Amazon Redshift authentication profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyAuthenticationProfile.html
+   */
+  public toModifyAuthenticationProfile() {
+    return this.to('ModifyAuthenticationProfile');
+  }
+
+  /**
    * Grants permission to modify the settings of a cluster
    *
    * Access Level: Write
@@ -1305,6 +1349,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RestoreFromClusterSnapshot.html
    */
   public toRestoreFromClusterSnapshot() {
@@ -1398,6 +1446,7 @@ export class Redshift extends PolicyStatement {
       'CancelQuerySession',
       'CancelResize',
       'CopyClusterSnapshot',
+      'CreateAuthenticationProfile',
       'CreateCluster',
       'CreateClusterParameterGroup',
       'CreateClusterSecurityGroup',
@@ -1410,6 +1459,7 @@ export class Redshift extends PolicyStatement {
       'CreateScheduledAction',
       'CreateSnapshotSchedule',
       'CreateUsageLimit',
+      'DeleteAuthenticationProfile',
       'DeleteCluster',
       'DeleteClusterParameterGroup',
       'DeleteClusterSecurityGroup',
@@ -1431,6 +1481,7 @@ export class Redshift extends PolicyStatement {
       'ExecuteQuery',
       'GetClusterCredentials',
       'ModifyAquaConfiguration',
+      'ModifyAuthenticationProfile',
       'ModifyCluster',
       'ModifyClusterDbRevision',
       'ModifyClusterMaintenance',
@@ -1473,6 +1524,7 @@ export class Redshift extends PolicyStatement {
     ],
     Read: [
       'DescribeAccountAttributes',
+      'DescribeAuthenticationProfiles',
       'DescribeClusterParameterGroups',
       'DescribeClusterParameters',
       'DescribeClusterSecurityGroups',
@@ -1543,6 +1595,7 @@ export class Redshift extends PolicyStatement {
    * https://docs.aws.amazon.com/redshift/latest/dg/datashare-overview.html
    *
    * @param producerClusterNamespace - Identifier for the producerClusterNamespace.
+   * @param dataShareName - Identifier for the dataShareName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -1550,8 +1603,8 @@ export class Redshift extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDatashare(producerClusterNamespace: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:datashare:${ producerClusterNamespace }/{DataShareName}`);
+  public onDatashare(producerClusterNamespace: string, dataShareName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:redshift:${ region || '*' }:${ account || '*' }:datashare:${ producerClusterNamespace }/${ dataShareName }`);
   }
 
   /**

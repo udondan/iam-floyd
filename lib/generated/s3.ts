@@ -3232,7 +3232,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by the resource owner AWS account ID
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#condition-key-bucket-ops-2
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#example-object-resource-account
    *
    * Applies to actions:
    * - .toAbortMultipartUpload()
@@ -3368,8 +3368,6 @@ export class S3 extends PolicyStatement {
 
   /**
    * Filters access by the TLS version used by the client
-   *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html
    *
    * Applies to actions:
    * - .toAbortMultipartUpload()

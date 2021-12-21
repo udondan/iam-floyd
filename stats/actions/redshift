@@ -9,6 +9,7 @@ redshift:CancelQuery;Write
 redshift:CancelQuerySession;Write
 redshift:CancelResize;Write
 redshift:CopyClusterSnapshot;Write
+redshift:CreateAuthenticationProfile;Write
 redshift:CreateCluster;Write
 redshift:CreateClusterParameterGroup;Write
 redshift:CreateClusterSecurityGroup;Write
@@ -25,6 +26,7 @@ redshift:CreateSnapshotSchedule;Write
 redshift:CreateTags;Tagging
 redshift:CreateUsageLimit;Write
 redshift:DeauthorizeDataShare;Permissions management
+redshift:DeleteAuthenticationProfile;Write
 redshift:DeleteCluster;Write
 redshift:DeleteClusterParameterGroup;Write
 redshift:DeleteClusterSecurityGroup;Write
@@ -40,6 +42,7 @@ redshift:DeleteSnapshotSchedule;Write
 redshift:DeleteTags;Tagging
 redshift:DeleteUsageLimit;Write
 redshift:DescribeAccountAttributes;Read
+redshift:DescribeAuthenticationProfiles;Read
 redshift:DescribeClusterDbRevisions;List
 redshift:DescribeClusterParameterGroups;Read
 redshift:DescribeClusterParameters;Read
@@ -89,6 +92,7 @@ redshift:ListSavedQueries;List
 redshift:ListSchemas;List
 redshift:ListTables;List
 redshift:ModifyAquaConfiguration;Write
+redshift:ModifyAuthenticationProfile;Write
 redshift:ModifyCluster;Write
 redshift:ModifyClusterDbRevision;Write
 redshift:ModifyClusterIamRoles;Permissions management

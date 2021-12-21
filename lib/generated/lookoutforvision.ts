@@ -111,6 +111,17 @@ export class Lookoutvision extends PolicyStatement {
   }
 
   /**
+   * Grants permission to show detailed information about a model packaging job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_DescribeModelPackagingJob.html
+   */
+  public toDescribeModelPackagingJob() {
+    return this.to('DescribeModelPackagingJob');
+  }
+
+  /**
    * Grants permission to show detailed information about a project
    *
    * Access Level: Read
@@ -152,6 +163,17 @@ export class Lookoutvision extends PolicyStatement {
    */
   public toListDatasetEntries() {
     return this.to('ListDatasetEntries');
+  }
+
+  /**
+   * Grants permission to list all model packaging jobs associated with a project
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_ListModelPackagingJobs.html
+   */
+  public toListModelPackagingJobs() {
+    return this.to('ListModelPackagingJobs');
   }
 
   /**
@@ -207,6 +229,17 @@ export class Lookoutvision extends PolicyStatement {
    */
   public toStartModel() {
     return this.to('StartModel');
+  }
+
+  /**
+   * Grants permission to start a model packaging job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookout-for-vision/latest/APIReference/API_StartModelPackagingJob.html
+   */
+  public toStartModelPackagingJob() {
+    return this.to('StartModelPackagingJob');
   }
 
   /**
@@ -281,6 +314,7 @@ export class Lookoutvision extends PolicyStatement {
       'DeleteProject',
       'DetectAnomalies',
       'StartModel',
+      'StartModelPackagingJob',
       'StartTrialDetection',
       'StopModel',
       'UpdateDatasetEntries'
@@ -288,12 +322,14 @@ export class Lookoutvision extends PolicyStatement {
     Read: [
       'DescribeDataset',
       'DescribeModel',
+      'DescribeModelPackagingJob',
       'DescribeProject',
       'DescribeTrialDetection',
       'ListDatasetEntries',
       'ListTagsForResource'
     ],
     List: [
+      'ListModelPackagingJobs',
       'ListModels',
       'ListProjects',
       'ListTrialDetections'
