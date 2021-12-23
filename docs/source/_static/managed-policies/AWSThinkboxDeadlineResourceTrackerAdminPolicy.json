@@ -189,6 +189,7 @@
 			"Action": [
 				"lambda:CreateFunction",
 				"lambda:DeleteFunction",
+				"lambda:DeleteFunctionConcurrency",
 				"lambda:GetFunction",
 				"lambda:GetFunctionConfiguration",
 				"lambda:ListTags",
