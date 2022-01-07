@@ -86,25 +86,17 @@
 			"Action": "iam:CreateServiceLinkedRole",
 			"Resource": "arn:aws:iam::*:role/aws-service-role/kafka.amazonaws.com/AWSServiceRoleForKafka*",
 			"Condition": {
-				"StringLike": {
+				"StringEquals": {
 					"iam:AWSServiceName": "kafka.amazonaws.com"
 				}
 			}
 		},
 		{
 			"Effect": "Allow",
-			"Action": [
-				"iam:AttachRolePolicy",
-				"iam:PutRolePolicy"
-			],
-			"Resource": "arn:aws:iam::*:role/aws-service-role/kafka.amazonaws.com/AWSServiceRoleForKafka*"
-		},
-		{
-			"Effect": "Allow",
 			"Action": "iam:CreateServiceLinkedRole",
 			"Resource": "arn:aws:iam::*:role/aws-service-role/delivery.logs.amazonaws.com/AWSServiceRoleForLogDelivery*",
 			"Condition": {
-				"StringLike": {
+				"StringEquals": {
 					"iam:AWSServiceName": "delivery.logs.amazonaws.com"
 				}
 			}

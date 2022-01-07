@@ -19,7 +19,9 @@
 				"waf-regional:DisassociateWebACL",
 				"elasticloadbalancing:SetWebACL",
 				"apigateway:SetWebACL",
-				"elasticloadbalancing:SetSecurityGroups"
+				"elasticloadbalancing:SetSecurityGroups",
+				"waf:ListTagsForResource",
+				"waf-regional:ListTagsForResource"
 			],
 			"Resource": [
 				"arn:aws:waf:*:*:webacl/*",
@@ -49,7 +51,8 @@
 				"waf:CreateWebACL",
 				"waf-regional:CreateWebACL",
 				"waf:GetChangeToken",
-				"waf-regional:GetChangeToken"
+				"waf-regional:GetChangeToken",
+				"waf-regional:GetWebACLForResource"
 			],
 			"Resource": [
 				"arn:aws:waf:*:*:*",
@@ -163,7 +166,10 @@
 				"shield:DescribeEmergencyContactSettings",
 				"shield:UpdateEmergencyContactSettings",
 				"elasticloadbalancing:DescribeLoadBalancers",
-				"ec2:DescribeAddresses"
+				"ec2:DescribeAddresses",
+				"shield:EnableApplicationLayerAutomaticResponse",
+				"shield:DisableApplicationLayerAutomaticResponse",
+				"shield:UpdateApplicationLayerAutomaticResponse"
 			],
 			"Resource": "*"
 		},
@@ -407,7 +413,8 @@
 			"Condition": {
 				"StringEquals": {
 					"iam:AWSServiceName": [
-						"network-firewall.amazonaws.com"
+						"network-firewall.amazonaws.com",
+						"shield.amazonaws.com"
 					]
 				}
 			}
