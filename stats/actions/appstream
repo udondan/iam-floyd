@@ -1,4 +1,5 @@
 appstream:AssociateApplicationFleet;Write
+appstream:AssociateApplicatonToEntitlement;Write
 appstream:AssociateFleet;Write
 appstream:BatchAssociateUserStack;Write
 appstream:BatchDisassociateUserStack;Write
@@ -6,6 +7,7 @@ appstream:CopyImage;Write
 appstream:CreateAppBlock;Write
 appstream:CreateApplication;Write
 appstream:CreateDirectoryConfig;Write
+appstream:CreateEntitlement;Write
 appstream:CreateFleet;Write
 appstream:CreateImageBuilder;Write
 appstream:CreateImageBuilderStreamingURL;Write
@@ -17,6 +19,7 @@ appstream:CreateUser;Write
 appstream:DeleteAppBlock;Write
 appstream:DeleteApplication;Write
 appstream:DeleteDirectoryConfig;Write
+appstream:DeleteEntitlement;Write
 appstream:DeleteFleet;Write
 appstream:DeleteImage;Write
 appstream:DeleteImageBuilder;Write
@@ -28,6 +31,7 @@ appstream:DescribeAppBlocks;Read
 appstream:DescribeApplicationFleetAssociations;Read
 appstream:DescribeApplications;Read
 appstream:DescribeDirectoryConfigs;Read
+appstream:DescribeEntitlements;Read
 appstream:DescribeFleets;Read
 appstream:DescribeImageBuilders;Read
 appstream:DescribeImagePermissions;Read
@@ -39,11 +43,13 @@ appstream:DescribeUserStackAssociations;Read
 appstream:DescribeUsers;Read
 appstream:DisableUser;Write
 appstream:DisassociateApplicationFleet;Write
+appstream:DisassociateApplicatonFromEntitlement;Write
 appstream:DisassociateFleet;Write
 appstream:EnableUser;Write
 appstream:ExpireSession;Write
 appstream:ListAssociatedFleets;Read
 appstream:ListAssociatedStacks;Read
+appstream:ListEntitledApplications;List
 appstream:ListTagsForResource;Read
 appstream:StartFleet;Write
 appstream:StartImageBuilder;Write
@@ -54,6 +60,7 @@ appstream:TagResource;Tagging
 appstream:UntagResource;Tagging
 appstream:UpdateApplication;Write
 appstream:UpdateDirectoryConfig;Write
+appstream:UpdateEntitlement;Write
 appstream:UpdateFleet;Write
 appstream:UpdateImagePermissions;Write
 appstream:UpdateStack;Write

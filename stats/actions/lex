@@ -4,6 +4,7 @@ lex:CreateBotAlias;Write
 lex:CreateBotChannel;Write
 lex:CreateBotLocale;Write
 lex:CreateBotVersion;Write
+lex:CreateCustomVocabulary;Write
 lex:CreateExport;Write
 lex:CreateIntent;Write
 lex:CreateIntentVersion;Write
@@ -18,6 +19,7 @@ lex:DeleteBotChannel;Write
 lex:DeleteBotChannelAssociation;Write
 lex:DeleteBotLocale;Write
 lex:DeleteBotVersion;Write
+lex:DeleteCustomVocabulary;Write
 lex:DeleteExport;Write
 lex:DeleteImport;Write
 lex:DeleteIntent;Write
@@ -34,6 +36,8 @@ lex:DescribeBotChannel;Read
 lex:DescribeBotLocale;Read
 lex:DescribeBotRecommendation;Read
 lex:DescribeBotVersion;Read
+lex:DescribeCustomVocabulary;Read
+lex:DescribeCustomVocabularyMetadata;Read
 lex:DescribeExport;Read
 lex:DescribeImport;Read
 lex:DescribeIntent;Read
@@ -98,6 +102,7 @@ lex:UpdateBot;Write
 lex:UpdateBotAlias;Write
 lex:UpdateBotLocale;Write
 lex:UpdateBotRecommendation;Write
+lex:UpdateCustomVocabulary;Write
 lex:UpdateExport;Write
 lex:UpdateIntent;Write
 lex:UpdateResourcePolicy;Write

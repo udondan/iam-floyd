@@ -19,7 +19,7 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
-   * Grants permission to attach lakeformation tags to catalog resources
+   * Grants permission to attach Lake Formation tags to catalog resources
    *
    * Access Level: Tagging
    *
@@ -52,7 +52,40 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Lakeformation tag
+   * Grants permission to cancel the given transaction
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-transactions-api.html#aws-lake-formation-api-transactions-api-CancelTransaction
+   */
+  public toCancelTransaction() {
+    return this.to('CancelTransaction');
+  }
+
+  /**
+   * Grants permission to commit the given transaction
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-transactions-api.html#aws-lake-formation-api-transactions-api-CommitTransaction
+   */
+  public toCommitTransaction() {
+    return this.to('CommitTransaction');
+  }
+
+  /**
+   * Grants permission to create a Lake Formation data cell filter
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-data-filter.html#aws-lake-formation-api-data-filter-CreateDataCellsFilter
+   */
+  public toCreateDataCellsFilter() {
+    return this.to('CreateDataCellsFilter');
+  }
+
+  /**
+   * Grants permission to create a Lake Formation tag
    *
    * Access Level: Write
    *
@@ -63,7 +96,18 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a Lakeformation tag
+   * Grants permission to delete a Lake Formation data cell filter
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-data-filter.html#aws-lake-formation-api-data-filter-DeleteDataCellsFilter
+   */
+  public toDeleteDataCellsFilter() {
+    return this.to('DeleteDataCellsFilter');
+  }
+
+  /**
+   * Grants permission to delete a Lake Formation tag
    *
    * Access Level: Write
    *
@@ -71,6 +115,17 @@ export class Lakeformation extends PolicyStatement {
    */
   public toDeleteLFTag() {
     return this.to('DeleteLFTag');
+  }
+
+  /**
+   * Grants permission to delete the specified objects if the transaction is canceled
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-transactions-api.html#aws-lake-formation-api-transactions-api-DeleteObjectsOnCancel
+   */
+  public toDeleteObjectsOnCancel() {
+    return this.to('DeleteObjectsOnCancel');
   }
 
   /**
@@ -96,6 +151,28 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get status of the given transaction
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-transactions-api.html#aws-lake-formation-api-transactions-api-DescribeTransaction
+   */
+  public toDescribeTransaction() {
+    return this.to('DescribeTransaction');
+  }
+
+  /**
+   * Grants permission to extend the timeout of the given transaction
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-transactions-api.html#aws-lake-formation-api-transactions-api-ExtendTransaction
+   */
+  public toExtendTransaction() {
+    return this.to('ExtendTransaction');
+  }
+
+  /**
    * Grants permission to virtual data lake access
    *
    * Access Level: Write
@@ -118,7 +195,7 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrive permissions attached to resources in the given path
+   * Grants permission to retrieve permissions attached to resources in the given path
    *
    * Access Level: Read
    *
@@ -129,7 +206,7 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrive a Lakeformation tag
+   * Grants permission to retrieve a Lake Formation tag
    *
    * Access Level: Read
    *
@@ -137,6 +214,34 @@ export class Lakeformation extends PolicyStatement {
    */
   public toGetLFTag() {
     return this.to('GetLFTag');
+  }
+
+  /**
+   * Grants permission to retrieve the state of the given query
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - lakeformation:StartQueryPlanning
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-querying.html#aws-lake-formation-api-querying-GetQueryState
+   */
+  public toGetQueryState() {
+    return this.to('GetQueryState');
+  }
+
+  /**
+   * Grants permission to retrieve the statistics for the given query
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - lakeformation:StartQueryPlanning
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-querying.html#aws-lake-formation-api-querying-GetQueryStatistics
+   */
+  public toGetQueryStatistics() {
+    return this.to('GetQueryStatistics');
   }
 
   /**
@@ -151,6 +256,46 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve objects from a table
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-objects.html#aws-lake-formation-api-objects-GetTableObjects
+   */
+  public toGetTableObjects() {
+    return this.to('GetTableObjects');
+  }
+
+  /**
+   * Grants permission to retrieve the results for the given work units
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - lakeformation:GetWorkUnits
+   * - lakeformation:StartQueryPlanning
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-querying.html#aws-lake-formation-api-querying-GetWorkUnitResults
+   */
+  public toGetWorkUnitResults() {
+    return this.to('GetWorkUnitResults');
+  }
+
+  /**
+   * Grants permission to retrieve the work units for the given query
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - lakeaformation:StartQueryPlanning
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-querying.html#aws-lake-formation-api-querying-GetWorkUnits
+   */
+  public toGetWorkUnits() {
+    return this.to('GetWorkUnits');
+  }
+
+  /**
    * Grants permission to data lake permissions to a principal
    *
    * Access Level: Permissions management
@@ -162,7 +307,18 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list Lakeformation tags
+   * Grants permission to list cell filters
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-data-filter.html#aws-lake-formation-api-data-filter-ListDataCellsFilter
+   */
+  public toListDataCellsFilter() {
+    return this.to('ListDataCellsFilter');
+  }
+
+  /**
+   * Grants permission to list Lake Formation tags
    *
    * Access Level: Read
    *
@@ -192,6 +348,28 @@ export class Lakeformation extends PolicyStatement {
    */
   public toListResources() {
     return this.to('ListResources');
+  }
+
+  /**
+   * Grants permission to list all the storage optimizers for the Governed table
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-optimizers.html#aws-lake-formation-api-optimizers-ListTableStorageOptimizers
+   */
+  public toListTableStorageOptimizers() {
+    return this.to('ListTableStorageOptimizers');
+  }
+
+  /**
+   * Grants permission to list all transactions in the system
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-transactions-api.html#aws-lake-formation-api-transactions-api-ListTransactions
+   */
+  public toListTransactions() {
+    return this.to('ListTransactions');
   }
 
   /**
@@ -239,7 +417,7 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list catalog databases with lakeformation tags
+   * Grants permission to list catalog databases with Lake Formation tags
    *
    * Access Level: Read
    *
@@ -250,7 +428,7 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list catalog tables with lakeformation tags
+   * Grants permission to list catalog tables with Lake Formation tags
    *
    * Access Level: Read
    *
@@ -261,7 +439,29 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a Lakeformation tag
+   * Grants permission to initiate the planning of the given query
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-querying.html#aws-lake-formation-api-querying-StartQueryPlanning
+   */
+  public toStartQueryPlanning() {
+    return this.to('StartQueryPlanning');
+  }
+
+  /**
+   * Grants permission to start a new transaction
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-transactions-api.html#aws-lake-formation-api-transactions-api-StartTransaction
+   */
+  public toStartTransaction() {
+    return this.to('StartTransaction');
+  }
+
+  /**
+   * Grants permission to update a Lake Formation tag
    *
    * Access Level: Write
    *
@@ -282,6 +482,28 @@ export class Lakeformation extends PolicyStatement {
     return this.to('UpdateResource');
   }
 
+  /**
+   * Grants permission to add or delete the specified objects to or from a table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-objects.html#aws-lake-formation-api-objects-UpdateTableObjects
+   */
+  public toUpdateTableObjects() {
+    return this.to('UpdateTableObjects');
+  }
+
+  /**
+   * Grants permission to update the configuration of the storage optimizer for the Governed table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-optimizers.html#aws-lake-formation-api-optimizers-UpdateTableStorageOptimizer
+   */
+  public toUpdateTableStorageOptimizer() {
+    return this.to('UpdateTableStorageOptimizer');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddLFTagsToResource',
@@ -295,27 +517,46 @@ export class Lakeformation extends PolicyStatement {
       'RevokePermissions'
     ],
     Write: [
+      'CancelTransaction',
+      'CommitTransaction',
+      'CreateDataCellsFilter',
       'CreateLFTag',
+      'DeleteDataCellsFilter',
       'DeleteLFTag',
+      'DeleteObjectsOnCancel',
       'DeregisterResource',
+      'ExtendTransaction',
       'GetDataAccess',
       'RegisterResource',
+      'StartQueryPlanning',
+      'StartTransaction',
       'UpdateLFTag',
-      'UpdateResource'
+      'UpdateResource',
+      'UpdateTableObjects',
+      'UpdateTableStorageOptimizer'
     ],
     Read: [
       'DescribeResource',
+      'DescribeTransaction',
       'GetDataLakeSettings',
       'GetEffectivePermissionsForPath',
       'GetLFTag',
+      'GetQueryState',
+      'GetQueryStatistics',
       'GetResourceLFTags',
+      'GetTableObjects',
+      'GetWorkUnitResults',
+      'GetWorkUnits',
       'ListLFTags',
       'SearchDatabasesByLFTags',
       'SearchTablesByLFTags'
     ],
     List: [
+      'ListDataCellsFilter',
       'ListPermissions',
-      'ListResources'
+      'ListResources',
+      'ListTableStorageOptimizers',
+      'ListTransactions'
     ]
   };
 }

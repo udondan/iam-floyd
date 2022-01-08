@@ -5,11 +5,13 @@ elasticfilesystem:ClientWrite;Write
 elasticfilesystem:CreateAccessPoint;Write
 elasticfilesystem:CreateFileSystem;Write
 elasticfilesystem:CreateMountTarget;Write
+elasticfilesystem:CreateReplicationConfiguration;Write
 elasticfilesystem:CreateTags;Tagging
 elasticfilesystem:DeleteAccessPoint;Write
 elasticfilesystem:DeleteFileSystem;Write
 elasticfilesystem:DeleteFileSystemPolicy;Permissions management
 elasticfilesystem:DeleteMountTarget;Write
+elasticfilesystem:DeleteReplicationConfiguration;Write
 elasticfilesystem:DeleteTags;Tagging
 elasticfilesystem:DescribeAccessPoints;List
 elasticfilesystem:DescribeAccountPreferences;List
@@ -19,6 +21,7 @@ elasticfilesystem:DescribeFileSystems;List
 elasticfilesystem:DescribeLifecycleConfiguration;Read
 elasticfilesystem:DescribeMountTargetSecurityGroups;Read
 elasticfilesystem:DescribeMountTargets;Read
+elasticfilesystem:DescribeReplicationConfigurations;List
 elasticfilesystem:DescribeTags;Read
 elasticfilesystem:ListTagsForResource;Read
 elasticfilesystem:ModifyMountTargetSecurityGroups;Write

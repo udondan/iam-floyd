@@ -241,6 +241,17 @@ export class Shield extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable application layer automatic response for Shield Advanced protection for a resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DisableApplicationLayerAutomaticResponse.html
+   */
+  public toDisableApplicationLayerAutomaticResponse() {
+    return this.to('DisableApplicationLayerAutomaticResponse');
+  }
+
+  /**
    * Grants permission to remove authorization from the DDoS Response Team (DRT) to notify contacts about escalations
    *
    * Access Level: Write
@@ -290,6 +301,22 @@ export class Shield extends PolicyStatement {
    */
   public toDisassociateHealthCheck() {
     return this.to('DisassociateHealthCheck');
+  }
+
+  /**
+   * Grants permission to enable application layer automatic response for Shield Advanced protection for a resource
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - cloudfront:GetDistribution
+   * - iam:CreateServiceLinkedRole
+   * - iam:GetRole
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_EnableApplicationLayerAutomaticResponse.html
+   */
+  public toEnableApplicationLayerAutomaticResponse() {
+    return this.to('EnableApplicationLayerAutomaticResponse');
   }
 
   /**
@@ -400,6 +427,17 @@ export class Shield extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update application layer automatic response for Shield Advanced protection for a resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UpdateApplicationLayerAutomaticResponse.html
+   */
+  public toUpdateApplicationLayerAutomaticResponse() {
+    return this.to('UpdateApplicationLayerAutomaticResponse');
+  }
+
+  /**
    * Grants permission to update the details of the list of email addresses that the DRT can use to contact you during a suspected attack
    *
    * Access Level: Write
@@ -447,11 +485,14 @@ export class Shield extends PolicyStatement {
       'DeleteProtection',
       'DeleteProtectionGroup',
       'DeleteSubscription',
+      'DisableApplicationLayerAutomaticResponse',
       'DisableProactiveEngagement',
       'DisassociateDRTLogBucket',
       'DisassociateDRTRole',
       'DisassociateHealthCheck',
+      'EnableApplicationLayerAutomaticResponse',
       'EnableProactiveEngagement',
+      'UpdateApplicationLayerAutomaticResponse',
       'UpdateEmergencyContactSettings',
       'UpdateProtectionGroup',
       'UpdateSubscription'

@@ -1838,6 +1838,15 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate public access block configurations with a specified access point, while creating a access point
+   *
+   * Access Level: Permissions management
+   */
+  public toPutAccessPointPublicAccessBlock() {
+    return this.to('PutAccessPointPublicAccessBlock');
+  }
+
+  /**
    * Grants permission to create or modify the PublicAccessBlock configuration for an AWS account
    *
    * Access Level: Permissions management
@@ -2688,6 +2697,7 @@ export class S3 extends PolicyStatement {
       'ObjectOwnerOverrideToBucketOwner',
       'PutAccessPointPolicy',
       'PutAccessPointPolicyForObjectLambda',
+      'PutAccessPointPublicAccessBlock',
       'PutAccountPublicAccessBlock',
       'PutBucketAcl',
       'PutBucketPolicy',

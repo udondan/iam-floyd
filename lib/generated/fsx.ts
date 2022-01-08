@@ -643,7 +643,7 @@ export class Fsx extends PolicyStatement {
   /**
    * Adds a resource of type storage-virtual-machine to the statement
    *
-   * https://docs.aws.amazon.com/fsx/latest/OntapGuide/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security-iam.html
    *
    * @param fileSystemId - Identifier for the fileSystemId.
    * @param storageVirtualMachineId - Identifier for the storageVirtualMachineId.
@@ -695,7 +695,7 @@ export class Fsx extends PolicyStatement {
   /**
    * Adds a resource of type volume to the statement
    *
-   * https://docs.aws.amazon.com/fsx/latest/OntapGuide/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security-iam.html
    *
    * @param fileSystemId - Identifier for the fileSystemId.
    * @param volumeId - Identifier for the volumeId.

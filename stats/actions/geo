@@ -40,8 +40,12 @@ geo:ListTrackerConsumers;Read
 geo:ListTrackers;List
 geo:PutGeofence;Write
 geo:SearchPlaceIndexForPosition;Read
+geo:SearchPlaceIndexForSuggestions;Read
 geo:SearchPlaceIndexForText;Read
 geo:TagResource;Tagging
 geo:UntagResource;Tagging
 geo:UpdateGeofenceCollection;Write
+geo:UpdateMap;Write
+geo:UpdatePlaceIndex;Write
+geo:UpdateRouteCalculator;Write
 geo:UpdateTracker;Write

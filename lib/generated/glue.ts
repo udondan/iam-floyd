@@ -151,6 +151,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update one or more partitions
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchUpdatePartition
+   */
+  public toBatchUpdatePartition() {
+    return this.to('BatchUpdatePartition');
+  }
+
+  /**
    * Grants permission to stop a running ML Task Run
    *
    * Access Level: Write
@@ -159,6 +170,17 @@ export class Glue extends PolicyStatement {
    */
   public toCancelMLTaskRun() {
     return this.to('CancelMLTaskRun');
+  }
+
+  /**
+   * Grants permission to cancel a statement in an interactive session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-CancelStatement
+   */
+  public toCancelStatement() {
+    return this.to('CancelStatement');
   }
 
   /**
@@ -187,6 +209,10 @@ export class Glue extends PolicyStatement {
    * Grants permission to create a connection
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-CreateConnection
    */
@@ -258,6 +284,10 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-CreateMLTransform
    */
   public toCreateMLTransform() {
@@ -273,6 +303,17 @@ export class Glue extends PolicyStatement {
    */
   public toCreatePartition() {
     return this.to('CreatePartition');
+  }
+
+  /**
+   * Grants permission to create a specified partition index in an existing table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-CreatePartitionIndex
+   */
+  public toCreatePartitionIndex() {
+    return this.to('CreatePartitionIndex');
   }
 
   /**
@@ -317,6 +358,21 @@ export class Glue extends PolicyStatement {
    */
   public toCreateSecurityConfiguration() {
     return this.to('CreateSecurityConfiguration');
+  }
+
+  /**
+   * Grants permission to create an interactive session
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-api-session-CreateSession
+   */
+  public toCreateSession() {
+    return this.to('CreateSession');
   }
 
   /**
@@ -380,6 +436,28 @@ export class Glue extends PolicyStatement {
    */
   public toDeleteClassifier() {
     return this.to('DeleteClassifier');
+  }
+
+  /**
+   * Grants permission to delete the partition column statistics of a column
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-DeleteColumnStatisticsForPartition
+   */
+  public toDeleteColumnStatisticsForPartition() {
+    return this.to('DeleteColumnStatisticsForPartition');
+  }
+
+  /**
+   * Grants permission to delete the table statistics of columns
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteColumnStatisticsForTable
+   */
+  public toDeleteColumnStatisticsForTable() {
+    return this.to('DeleteColumnStatisticsForTable');
   }
 
   /**
@@ -460,6 +538,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a specified partition index from an existing table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeletePartitionIndex
+   */
+  public toDeletePartitionIndex() {
+    return this.to('DeletePartitionIndex');
+  }
+
+  /**
    * Grants permission to delete a schema registry
    *
    * Access Level: Write
@@ -512,6 +601,17 @@ export class Glue extends PolicyStatement {
    */
   public toDeleteSecurityConfiguration() {
     return this.to('DeleteSecurityConfiguration');
+  }
+
+  /**
+   * Grants permission to delete an interactive session after stopping the session if not already stopped
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-DeleteSession
+   */
+  public toDeleteSession() {
+    return this.to('DeleteSession');
   }
 
   /**
@@ -600,6 +700,28 @@ export class Glue extends PolicyStatement {
    */
   public toGetClassifiers() {
     return this.to('GetClassifiers');
+  }
+
+  /**
+   * Grants permission to retrieve partition statistics of columns
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetColumnStatisticsForPartition
+   */
+  public toGetColumnStatisticsForPartition() {
+    return this.to('GetColumnStatisticsForPartition');
+  }
+
+  /**
+   * Grants permission to retrieve table statistics of columns
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetColumnStatisticsForTable
+   */
+  public toGetColumnStatisticsForTable() {
+    return this.to('GetColumnStatisticsForTable');
   }
 
   /**
@@ -966,6 +1088,28 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an interactive session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-GetSession
+   */
+  public toGetSession() {
+    return this.to('GetSession');
+  }
+
+  /**
+   * Grants permission to retrieve result and information about a statement in an interactive session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-GetStatement
+   */
+  public toGetStatement() {
+    return this.to('GetStatement');
+  }
+
+  /**
    * Grants permission to retrieve a table
    *
    * Access Level: Read
@@ -1043,7 +1187,7 @@ export class Glue extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a function definition.
+   * Grants permission to retrieve a function definition
    *
    * Access Level: Read
    *
@@ -1197,6 +1341,28 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of interactive session
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-ListSessions
+   */
+  public toListSessions() {
+    return this.to('ListSessions');
+  }
+
+  /**
+   * Grants permission to retrieve a list of statements in an interactive session
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-ListStatements
+   */
+  public toListStatements() {
+    return this.to('ListStatements');
+  }
+
+  /**
    * Grants permission to retrieve all triggers
    *
    * Access Level: List
@@ -1326,6 +1492,17 @@ export class Glue extends PolicyStatement {
    */
   public toResumeWorkflowRun() {
     return this.to('ResumeWorkflowRun');
+  }
+
+  /**
+   * Grants permission to run a code or statement in an interactive session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-RunStatement
+   */
+  public toRunStatement() {
+    return this.to('RunStatement');
   }
 
   /**
@@ -1461,6 +1638,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop an interactive session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-session.html#aws-glue-session-StopSession
+   */
+  public toStopSession() {
+    return this.to('StopSession');
+  }
+
+  /**
    * Grants permission to stop a trigger
    *
    * Access Level: Write
@@ -1504,6 +1692,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-UntagResource
    */
@@ -1520,6 +1709,28 @@ export class Glue extends PolicyStatement {
    */
   public toUpdateClassifier() {
     return this.to('UpdateClassifier');
+  }
+
+  /**
+   * Grants permission to update partition statistics of columns
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-UpdateColumnStatisticsForPartition
+   */
+  public toUpdateColumnStatisticsForPartition() {
+    return this.to('UpdateColumnStatisticsForPartition');
+  }
+
+  /**
+   * Grants permission to update table statistics of columns
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-UpdateColumnStatisticsForTable
+   */
+  public toUpdateColumnStatisticsForTable() {
+    return this.to('UpdateColumnStatisticsForTable');
   }
 
   /**
@@ -1700,7 +1911,9 @@ export class Glue extends PolicyStatement {
       'BatchDeleteTable',
       'BatchDeleteTableVersion',
       'BatchStopJobRun',
+      'BatchUpdatePartition',
       'CancelMLTaskRun',
+      'CancelStatement',
       'CreateClassifier',
       'CreateConnection',
       'CreateCrawler',
@@ -1709,15 +1922,19 @@ export class Glue extends PolicyStatement {
       'CreateJob',
       'CreateMLTransform',
       'CreatePartition',
+      'CreatePartitionIndex',
       'CreateRegistry',
       'CreateSchema',
       'CreateScript',
       'CreateSecurityConfiguration',
+      'CreateSession',
       'CreateTable',
       'CreateTrigger',
       'CreateUserDefinedFunction',
       'CreateWorkflow',
       'DeleteClassifier',
+      'DeleteColumnStatisticsForPartition',
+      'DeleteColumnStatisticsForTable',
       'DeleteConnection',
       'DeleteCrawler',
       'DeleteDatabase',
@@ -1725,10 +1942,12 @@ export class Glue extends PolicyStatement {
       'DeleteJob',
       'DeleteMLTransform',
       'DeletePartition',
+      'DeletePartitionIndex',
       'DeleteRegistry',
       'DeleteSchema',
       'DeleteSchemaVersions',
       'DeleteSecurityConfiguration',
+      'DeleteSession',
       'DeleteTable',
       'DeleteTableVersion',
       'DeleteTrigger',
@@ -1743,6 +1962,7 @@ export class Glue extends PolicyStatement {
       'RemoveSchemaVersionMetadata',
       'ResetJobBookmark',
       'ResumeWorkflowRun',
+      'RunStatement',
       'StartCrawler',
       'StartCrawlerSchedule',
       'StartExportLabelsTaskRun',
@@ -1754,9 +1974,12 @@ export class Glue extends PolicyStatement {
       'StartWorkflowRun',
       'StopCrawler',
       'StopCrawlerSchedule',
+      'StopSession',
       'StopTrigger',
       'StopWorkflowRun',
       'UpdateClassifier',
+      'UpdateColumnStatisticsForPartition',
+      'UpdateColumnStatisticsForTable',
       'UpdateConnection',
       'UpdateCrawler',
       'UpdateCrawlerSchedule',
@@ -1784,6 +2007,8 @@ export class Glue extends PolicyStatement {
       'GetCatalogImportStatus',
       'GetClassifier',
       'GetClassifiers',
+      'GetColumnStatisticsForPartition',
+      'GetColumnStatisticsForTable',
       'GetConnection',
       'GetConnections',
       'GetCrawler',
@@ -1815,6 +2040,8 @@ export class Glue extends PolicyStatement {
       'GetSchemaVersionsDiff',
       'GetSecurityConfiguration',
       'GetSecurityConfigurations',
+      'GetSession',
+      'GetStatement',
       'GetTable',
       'GetTableVersion',
       'GetTableVersions',
@@ -1844,6 +2071,8 @@ export class Glue extends PolicyStatement {
       'ListRegistries',
       'ListSchemaVersions',
       'ListSchemas',
+      'ListSessions',
+      'ListStatements',
       'ListTriggers',
       'ListWorkflows',
       'QuerySchemaVersionMetadata'
@@ -2075,6 +2304,23 @@ export class Glue extends PolicyStatement {
    */
   public onSchema(schemaName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:schema/${ schemaName }`);
+  }
+
+  /**
+   * Adds a resource of type session to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param sessionId - Identifier for the sessionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:session/${ sessionId }`);
   }
 
   /**

@@ -113,6 +113,17 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new replication configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/API_CreateReplicationConfiguration.html
+   */
+  public toCreateReplicationConfiguration() {
+    return this.to('CreateReplicationConfiguration');
+  }
+
+  /**
    * Grants permission to create or overwrite tags associated with a file system; deprecated, see TagResource
    *
    * Access Level: Tagging
@@ -169,6 +180,17 @@ export class Elasticfilesystem extends PolicyStatement {
    */
   public toDeleteMountTarget() {
     return this.to('DeleteMountTarget');
+  }
+
+  /**
+   * Grants permission to delete a replication configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteReplicationConfiguration.html
+   */
+  public toDeleteReplicationConfiguration() {
+    return this.to('DeleteReplicationConfiguration');
   }
 
   /**
@@ -271,6 +293,17 @@ export class Elasticfilesystem extends PolicyStatement {
    */
   public toDescribeMountTargets() {
     return this.to('DescribeMountTargets');
+  }
+
+  /**
+   * Grants permission to view the description of an Amazon EFS replication configuration specified by FileSystemId; or to view the description of all replication configurations owned by the caller's AWS account in the AWS region of the endpoint that is being called
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeReplicationConfigurations.html
+   */
+  public toDescribeReplicationConfigurations() {
+    return this.to('DescribeReplicationConfigurations');
   }
 
   /**
@@ -402,9 +435,11 @@ export class Elasticfilesystem extends PolicyStatement {
       'CreateAccessPoint',
       'CreateFileSystem',
       'CreateMountTarget',
+      'CreateReplicationConfiguration',
       'DeleteAccessPoint',
       'DeleteFileSystem',
       'DeleteMountTarget',
+      'DeleteReplicationConfiguration',
       'ModifyMountTargetSecurityGroups',
       'PutAccountPreferences',
       'PutBackupPolicy',
@@ -435,7 +470,8 @@ export class Elasticfilesystem extends PolicyStatement {
     List: [
       'DescribeAccessPoints',
       'DescribeAccountPreferences',
-      'DescribeFileSystems'
+      'DescribeFileSystems',
+      'DescribeReplicationConfigurations'
     ]
   };
 

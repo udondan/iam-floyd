@@ -19,105 +19,113 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
-   * Cancels a running change set.
+   * Grants permission to cancel a running change set
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_CancelChangeSet.html
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_CancelChangeSet.html
    */
   public toCancelChangeSet() {
     return this.to('CancelChangeSet');
   }
 
   /**
-   * Complete an existing task and submit the content to the associated change.
+   * Grants permission to complete an existing task and submit the content to the associated change
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/
    */
   public toCompleteTask() {
     return this.to('CompleteTask');
   }
 
   /**
-   * Returns the details of an existing change set.
+   * Grants permission to return the details of an existing change set
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeChangeSet.html
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DescribeChangeSet.html
    */
   public toDescribeChangeSet() {
     return this.to('DescribeChangeSet');
   }
 
   /**
-   * Returns the details of an existing entity.
+   * Grants permission to return the details of an existing entity
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeEntity.html
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DescribeEntity.html
    */
   public toDescribeEntity() {
     return this.to('DescribeEntity');
   }
 
   /**
-   * Returns the details of an existing task.
+   * Grants permission to return the details of an existing task
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/
    */
   public toDescribeTask() {
     return this.to('DescribeTask');
   }
 
   /**
-   * Lists existing change sets.
+   * Grants permission to list existing change sets
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListChangeSets.html
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListChangeSets.html
    */
   public toListChangeSets() {
     return this.to('ListChangeSets');
   }
 
   /**
-   * Lists existing entities.
+   * Grants permission to list existing entities
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListEntities.html
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html
    */
   public toListEntities() {
     return this.to('ListEntities');
   }
 
   /**
-   * Lists existing tasks.
+   * Grants permission to list existing tasks
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/
    */
   public toListTasks() {
     return this.to('ListTasks');
   }
 
   /**
-   * Requests a new change set.
+   * Grants permission to request a new change set. (Note: resource-level permissions for this action and condition context keys for this action are only supported when used with Catalog API and are not supported when used with AWS Marketplace Management Portal)
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifCatalogChangeType()
    *
-   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_StartChangeSet.html
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html
    */
   public toStartChangeSet() {
     return this.to('StartChangeSet');
   }
 
   /**
-   * Update the content of an existing task.
+   * Grants permission to update the contents of an existing task
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/
    */
   public toUpdateTask() {
     return this.to('UpdateTask');
@@ -133,11 +141,11 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
     Read: [
       'DescribeChangeSet',
       'DescribeEntity',
-      'DescribeTask',
-      'ListChangeSets',
-      'ListEntities'
+      'DescribeTask'
     ],
     List: [
+      'ListChangeSets',
+      'ListEntities',
       'ListTasks'
     ]
   };
@@ -174,7 +182,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
-   * Enables you to verify change type in the StartChangeSet request.
+   * Filters access by the change type in the StartChangeSet request
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html
    *

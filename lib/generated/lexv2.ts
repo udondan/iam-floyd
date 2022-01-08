@@ -93,6 +93,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new custom vocabulary in an existing bot locale
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/vocab.html
+   */
+  public toCreateCustomVocabulary() {
+    return this.to('CreateCustomVocabulary');
+  }
+
+  /**
    * Grants permission to create an export for an existing resource
    *
    * Access Level: Write
@@ -225,6 +236,17 @@ export class LexV2 extends PolicyStatement {
    */
   public toDeleteBotVersion() {
     return this.to('DeleteBotVersion');
+  }
+
+  /**
+   * Grants permission to delete an existing custom vocabulary in a bot locale
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteCustomVocabulary.html
+   */
+  public toDeleteCustomVocabulary() {
+    return this.to('DeleteCustomVocabulary');
   }
 
   /**
@@ -379,6 +401,28 @@ export class LexV2 extends PolicyStatement {
    */
   public toDescribeBotVersion() {
     return this.to('DescribeBotVersion');
+  }
+
+  /**
+   * Grants permission to retrieve an existing custom vocabulary
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/vocab.html
+   */
+  public toDescribeCustomVocabulary() {
+    return this.to('DescribeCustomVocabulary');
+  }
+
+  /**
+   * Grants permission to retrieve metadata of an existing custom vocabulary
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeCustomVocabularyMetadata.html
+   */
+  public toDescribeCustomVocabularyMetadata() {
+    return this.to('DescribeCustomVocabularyMetadata');
   }
 
   /**
@@ -817,6 +861,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an existing custom vocabulary
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/dg/vocab.html
+   */
+  public toUpdateCustomVocabulary() {
+    return this.to('UpdateCustomVocabulary');
+  }
+
+  /**
    * Grants permission to update an existing export
    *
    * Access Level: Write
@@ -879,6 +934,7 @@ export class LexV2 extends PolicyStatement {
       'CreateBotChannel',
       'CreateBotLocale',
       'CreateBotVersion',
+      'CreateCustomVocabulary',
       'CreateExport',
       'CreateIntent',
       'CreateResourcePolicy',
@@ -890,6 +946,7 @@ export class LexV2 extends PolicyStatement {
       'DeleteBotChannel',
       'DeleteBotLocale',
       'DeleteBotVersion',
+      'DeleteCustomVocabulary',
       'DeleteExport',
       'DeleteImport',
       'DeleteIntent',
@@ -908,6 +965,7 @@ export class LexV2 extends PolicyStatement {
       'UpdateBotAlias',
       'UpdateBotLocale',
       'UpdateBotRecommendation',
+      'UpdateCustomVocabulary',
       'UpdateExport',
       'UpdateIntent',
       'UpdateResourcePolicy',
@@ -921,6 +979,8 @@ export class LexV2 extends PolicyStatement {
       'DescribeBotLocale',
       'DescribeBotRecommendation',
       'DescribeBotVersion',
+      'DescribeCustomVocabulary',
+      'DescribeCustomVocabularyMetadata',
       'DescribeExport',
       'DescribeImport',
       'DescribeIntent',

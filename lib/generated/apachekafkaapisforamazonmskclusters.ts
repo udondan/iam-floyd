@@ -325,7 +325,7 @@ export class KafkaCluster extends PolicyStatement {
   /**
    * Adds a resource of type cluster to the statement
    *
-   * https://docs.aws.amazon.com/msk/latest/developerguide/resources.htmlclusters
+   * https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html#msk-iam-resources
    *
    * @param clusterName - Identifier for the clusterName.
    * @param clusterUuid - Identifier for the clusterUuid.
@@ -343,7 +343,7 @@ export class KafkaCluster extends PolicyStatement {
   /**
    * Adds a resource of type topic to the statement
    *
-   * https://docs.aws.amazon.com/msk/latest/developerguide/resources.htmltopics
+   * https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html#msk-iam-resources
    *
    * @param clusterName - Identifier for the clusterName.
    * @param clusterUuid - Identifier for the clusterUuid.
@@ -359,7 +359,7 @@ export class KafkaCluster extends PolicyStatement {
   /**
    * Adds a resource of type group to the statement
    *
-   * https://docs.aws.amazon.com/msk/latest/developerguide/resources.htmlgroups
+   * https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html#msk-iam-resources
    *
    * @param clusterName - Identifier for the clusterName.
    * @param clusterUuid - Identifier for the clusterUuid.
@@ -375,7 +375,7 @@ export class KafkaCluster extends PolicyStatement {
   /**
    * Adds a resource of type transactional-id to the statement
    *
-   * https://docs.aws.amazon.com/msk/latest/developerguide/resources.htmltransactional_ids
+   * https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html#msk-iam-resources
    *
    * @param clusterName - Identifier for the clusterName.
    * @param clusterUuid - Identifier for the clusterUuid.

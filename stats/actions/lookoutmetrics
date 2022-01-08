@@ -15,6 +15,7 @@ lookoutmetrics:GetFeedback;Read
 lookoutmetrics:GetSampleData;Read
 lookoutmetrics:ListAlerts;List
 lookoutmetrics:ListAnomalyDetectors;List
+lookoutmetrics:ListAnomalyGroupRelatedMetrics;List
 lookoutmetrics:ListAnomalyGroupSummaries;List
 lookoutmetrics:ListAnomalyGroupTimeSeries;List
 lookoutmetrics:ListMetricSets;List

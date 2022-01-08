@@ -85,6 +85,7 @@ s3:PutAccelerateConfiguration;Write
 s3:PutAccessPointConfigurationForObjectLambda;Write
 s3:PutAccessPointPolicy;Permissions management
 s3:PutAccessPointPolicyForObjectLambda;Permissions management
+s3:PutAccessPointPublicAccessBlock;Permissions management
 s3:PutAccountPublicAccessBlock;Permissions management
 s3:PutAnalyticsConfiguration;Write
 s3:PutBucketAcl;Permissions management
