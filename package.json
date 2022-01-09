@@ -64,7 +64,7 @@
     "@types/twit": "^2.2.28",
     "aws-sdk": "^2.814.0",
     "cheerio": "^1.0.0-rc.3",
-    "colors": "^1.4.0",
+    "colors": "1.4.0",
     "glob": "^7.1.6",
     "jsii": "^1.16.0",
     "jsii-pacmak": "^1.16.0",
@@ -82,5 +82,8 @@
   "bundleDependencies": [
     "@udondan/common-substrings",
     "regex-parser"
-  ]
+  ],
+  "overrides": {
+    "colors": "1.4.0"
+  }
 }
