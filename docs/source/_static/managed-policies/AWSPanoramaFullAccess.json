@@ -69,6 +69,15 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"logs:DescribeLogGroups"
+			],
+			"Resource": [
+				"arn:aws:logs:*:*:log-group:*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
 				"cloudwatch:ListMetrics",
 				"cloudwatch:GetMetricData",
 				"cloudwatch:GetMetricStatistics"
