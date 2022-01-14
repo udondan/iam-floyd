@@ -19,6 +19,17 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach a GraphQL API to a custom domain name in AppSync
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_AssociateApi.html
+   */
+  public toAssociateApi() {
+    return this.to('AssociateApi');
+  }
+
+  /**
    * Grants permission to create an API cache in AppSync
    *
    * Access Level: Write
@@ -49,6 +60,17 @@ export class Appsync extends PolicyStatement {
    */
   public toCreateDataSource() {
     return this.to('CreateDataSource');
+  }
+
+  /**
+   * Grants permission to create a custom domain name in AppSync
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateDomainName.html
+   */
+  public toCreateDomainName() {
+    return this.to('CreateDomainName');
   }
 
   /**
@@ -136,6 +158,17 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a custom domain name in AppSync
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteDomainName.html
+   */
+  public toDeleteDomainName() {
+    return this.to('DeleteDomainName');
+  }
+
+  /**
    * Grants permission to delete a function
    *
    * Access Level: Write
@@ -183,6 +216,17 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to dettach a GraphQL API to a custom domain name in AppSync
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DisassociateApi.html
+   */
+  public toDisassociateApi() {
+    return this.to('DisassociateApi');
+  }
+
+  /**
    * Grants permission to flush an API cache in AppSync
    *
    * Access Level: Write
@@ -191,6 +235,17 @@ export class Appsync extends PolicyStatement {
    */
   public toFlushApiCache() {
     return this.to('FlushApiCache');
+  }
+
+  /**
+   * Grants permission to read custom domain name - GraphQL API association details in AppSync
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetApiAssociation.html
+   */
+  public toGetApiAssociation() {
+    return this.to('GetApiAssociation');
   }
 
   /**
@@ -213,6 +268,17 @@ export class Appsync extends PolicyStatement {
    */
   public toGetDataSource() {
     return this.to('GetDataSource');
+  }
+
+  /**
+   * Grants permission to read information about a custom domain name in AppSync
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetDomainName.html
+   */
+  public toGetDomainName() {
+    return this.to('GetDomainName');
   }
 
   /**
@@ -315,6 +381,17 @@ export class Appsync extends PolicyStatement {
    */
   public toListDataSources() {
     return this.to('ListDataSources');
+  }
+
+  /**
+   * Grants permission to enumerate custom domain names in AppSync
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListDomainNames.html
+   */
+  public toListDomainNames() {
+    return this.to('ListDomainNames');
   }
 
   /**
@@ -472,6 +549,17 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a custom domain name in AppSync
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateDomainName.html
+   */
+  public toUpdateDomainName() {
+    return this.to('UpdateDomainName');
+  }
+
+  /**
    * Grants permission to update an existing function
    *
    * Access Level: Write
@@ -523,9 +611,11 @@ export class Appsync extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AssociateApi',
       'CreateApiCache',
       'CreateApiKey',
       'CreateDataSource',
+      'CreateDomainName',
       'CreateFunction',
       'CreateGraphqlApi',
       'CreateResolver',
@@ -533,10 +623,12 @@ export class Appsync extends PolicyStatement {
       'DeleteApiCache',
       'DeleteApiKey',
       'DeleteDataSource',
+      'DeleteDomainName',
       'DeleteFunction',
       'DeleteGraphqlApi',
       'DeleteResolver',
       'DeleteType',
+      'DisassociateApi',
       'FlushApiCache',
       'GraphQL',
       'SetWebACL',
@@ -544,14 +636,17 @@ export class Appsync extends PolicyStatement {
       'UpdateApiCache',
       'UpdateApiKey',
       'UpdateDataSource',
+      'UpdateDomainName',
       'UpdateFunction',
       'UpdateGraphqlApi',
       'UpdateResolver',
       'UpdateType'
     ],
     Read: [
+      'GetApiAssociation',
       'GetApiCache',
       'GetDataSource',
+      'GetDomainName',
       'GetFunction',
       'GetGraphqlApi',
       'GetIntrospectionSchema',
@@ -563,6 +658,7 @@ export class Appsync extends PolicyStatement {
     List: [
       'ListApiKeys',
       'ListDataSources',
+      'ListDomainNames',
       'ListFunctions',
       'ListGraphqlApis',
       'ListResolvers',
@@ -588,6 +684,20 @@ export class Appsync extends PolicyStatement {
    */
   public onDatasource(graphQLAPIId: string, datasourceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:appsync:${ region || '*' }:${ account || '*' }:apis/${ graphQLAPIId }/datasources/${ datasourceName }`);
+  }
+
+  /**
+   * Adds a resource of type domain to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/custom-domain-name.html
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:appsync:${ region || '*' }:${ account || '*' }:domainnames/${ domainName }`);
   }
 
   /**

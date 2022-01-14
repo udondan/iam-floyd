@@ -188,11 +188,22 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the high-level information about a rule group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html
+   */
+  public toDescribeRuleGroupMetadata() {
+    return this.to('DescribeRuleGroupMetadata');
+  }
+
+  /**
    * Grants permission to disassociate VPC subnets from a firewall
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/APIReference/API_DisassociateSubnets.html
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DisassociateSubnets.html
    */
   public toDisassociateSubnets() {
     return this.to('DisassociateSubnets');
@@ -385,7 +396,8 @@ export class NetworkFirewall extends PolicyStatement {
       'DescribeFirewallPolicy',
       'DescribeLoggingConfiguration',
       'DescribeResourcePolicy',
-      'DescribeRuleGroup'
+      'DescribeRuleGroup',
+      'DescribeRuleGroupMetadata'
     ],
     List: [
       'ListFirewallPolicies',

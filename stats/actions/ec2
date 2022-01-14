@@ -208,6 +208,7 @@ ec2:DescribeEgressOnlyInternetGateways;List
 ec2:DescribeElasticGpus;Read
 ec2:DescribeExportImageTasks;List
 ec2:DescribeExportTasks;List
+ec2:DescribeFastLaunchImages;Read
 ec2:DescribeFastSnapshotRestores;Read
 ec2:DescribeFleetHistory;List
 ec2:DescribeFleetInstances;List
@@ -322,6 +323,7 @@ ec2:DetachNetworkInterface;Write
 ec2:DetachVolume;Write
 ec2:DetachVpnGateway;Write
 ec2:DisableEbsEncryptionByDefault;Write
+ec2:DisableFastLaunch;Write
 ec2:DisableFastSnapshotRestores;Write
 ec2:DisableImageDeprecation;Write
 ec2:DisableIpamOrganizationAdminAccount;Write
@@ -342,6 +344,7 @@ ec2:DisassociateTransitGatewayRouteTable;Write
 ec2:DisassociateTrunkInterface;Write
 ec2:DisassociateVpcCidrBlock;Write
 ec2:EnableEbsEncryptionByDefault;Write
+ec2:EnableFastLaunch;Write
 ec2:EnableFastSnapshotRestores;Write
 ec2:EnableImageDeprecation;Write
 ec2:EnableIpamOrganizationAdminAccount;Write
@@ -423,6 +426,7 @@ ec2:ModifyIpamScope;Write
 ec2:ModifyLaunchTemplate;Write
 ec2:ModifyManagedPrefixList;Write
 ec2:ModifyNetworkInterfaceAttribute;Write
+ec2:ModifyPrivateDnsNameOptions;Write
 ec2:ModifyReservedInstances;Write
 ec2:ModifySecurityGroupRules;Write
 ec2:ModifySnapshotAttribute;Permissions management
@@ -441,6 +445,7 @@ ec2:ModifyVpcAttribute;Write
 ec2:ModifyVpcEndpoint;Write
 ec2:ModifyVpcEndpointConnectionNotification;Write
 ec2:ModifyVpcEndpointServiceConfiguration;Write
+ec2:ModifyVpcEndpointServicePayerResponsibility;Write
 ec2:ModifyVpcEndpointServicePermissions;Permissions management
 ec2:ModifyVpcPeeringConnectionOptions;Write
 ec2:ModifyVpcTenancy;Write

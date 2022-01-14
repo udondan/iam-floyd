@@ -19,9 +19,13 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create containers.
+   * Grants permission to create a container
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_CreateContainer.html
    */
@@ -30,7 +34,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete any container in the current account.
+   * Grants permission to delete a container
    *
    * Access Level: Write
    *
@@ -41,7 +45,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the access policy of any container in the current account.
+   * Grants permission to delete the access policy of a container
    *
    * Access Level: Permissions management
    *
@@ -52,7 +56,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the CORS policy from any container in the current account.
+   * Grants permission to delete the CORS policy from a container
    *
    * Access Level: Write
    *
@@ -63,7 +67,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the lifecycle policy from any container in the current account.
+   * Grants permission to delete the lifecycle policy from a container
    *
    * Access Level: Write
    *
@@ -74,7 +78,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the metric policy from any container in the current account.
+   * Grants permission to delete the metric policy from a container
    *
    * Access Level: Write
    *
@@ -85,7 +89,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete objects.
+   * Grants permission to delete an object
    *
    * Access Level: Write
    *
@@ -96,7 +100,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve details on any container in the current account.
+   * Grants permission to retrieve details on a container
    *
    * Access Level: List
    *
@@ -107,7 +111,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve object metadata.
+   * Grants permission to retrieve metadata for an object
    *
    * Access Level: List
    *
@@ -118,7 +122,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the access policy of any container in the current account.
+   * Grants permission to retrieve the access policy of a container
    *
    * Access Level: Read
    *
@@ -129,7 +133,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the CORS policy of any container in the current account.
+   * Grants permission to retrieve the CORS policy of a container
    *
    * Access Level: Read
    *
@@ -140,7 +144,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the lifecycle policy that is assigned to any container in the current account.
+   * Grants permission to retrieve the lifecycle policy that is assigned to a container
    *
    * Access Level: Read
    *
@@ -151,7 +155,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the metric policy that is assigned to any container in the current account.
+   * Grants permission to retrieve the metric policy that is assigned to a container
    *
    * Access Level: Read
    *
@@ -162,7 +166,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve objects.
+   * Grants permission to retrieve an object
    *
    * Access Level: Read
    *
@@ -173,7 +177,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of containers in the current account.
+   * Grants permission to retrieve a list of containers in the current account
    *
    * Access Level: List
    *
@@ -184,7 +188,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of objects and folders in the current account.
+   * Grants permission to retrieve a list of objects and subfolders that are stored in a folder
    *
    * Access Level: List
    *
@@ -195,7 +199,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tags on any container in the current account.
+   * Grants permission to list tags on a container
    *
    * Access Level: Read
    *
@@ -206,7 +210,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create or replace the access policy of any container in the current account.
+   * Grants permission to create or replace the access policy of a container
    *
    * Access Level: Permissions management
    *
@@ -217,7 +221,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add or modify the CORS policy of any container in the current account.
+   * Grants permission to add or modify the CORS policy of a container
    *
    * Access Level: Write
    *
@@ -228,7 +232,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add or modify the lifecycle policy that is assigned to any container in the current account.
+   * Grants permission to add or modify the lifecycle policy that is assigned to a container
    *
    * Access Level: Write
    *
@@ -239,7 +243,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add or modify the metric policy that is assigned to any container in the current account.
+   * Grants permission to add or modify the metric policy that is assigned to a container
    *
    * Access Level: Write
    *
@@ -250,7 +254,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to upload objects.
+   * Grants permission to upload an object
    *
    * Access Level: Write
    *
@@ -261,9 +265,12 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable access logging on any container in the current account.
+   * Grants permission to start access logging on a container
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_StartAccessLogging.html
    */
@@ -272,7 +279,7 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disable access logging on any container in the current account.
+   * Grants permission to stop access logging on a container
    *
    * Access Level: Write
    *
@@ -283,9 +290,13 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to any container in the current account.
+   * Grants permission to add tags to a container
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_TagResource.html
    */
@@ -294,9 +305,13 @@ export class Mediastore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from any container in the current account.
+   * Grants permission to remove tags from a container
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_UntagResource.html
    */
@@ -352,8 +367,41 @@ export class Mediastore extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onContainer(containerName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:mediastore:${ region || '*' }:${ account || '*' }:container/${ containerName }`);
+  }
+
+  /**
+   * Adds a resource of type object to the statement
+   *
+   * https://docs.aws.amazon.com/mediastore/latest/ug/objects.html
+   *
+   * @param containerName - Identifier for the containerName.
+   * @param objectPath - Identifier for the objectPath.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onObject(containerName: string, objectPath: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:mediastore:${ region || '*' }:${ account || '*' }:container/${ containerName }/${ objectPath }`);
+  }
+
+  /**
+   * Adds a resource of type folder to the statement
+   *
+   * https://docs.aws.amazon.com/mediastore/latest/ug/folders.html
+   *
+   * @param containerName - Identifier for the containerName.
+   * @param folderPath - Identifier for the folderPath.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onFolder(containerName: string, folderPath: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:mediastore:${ region || '*' }:${ account || '*' }:container/${ containerName }/${ folderPath }`);
   }
 }

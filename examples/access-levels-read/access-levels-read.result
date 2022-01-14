@@ -1,6 +1,7 @@
 {
     "Action": [
         "ec2:DescribeElasticGpus",
+        "ec2:DescribeFastLaunchImages",
         "ec2:DescribeFastSnapshotRestores",
         "ec2:DescribeScheduledInstanceAvailability",
         "ec2:DescribeScheduledInstances",

@@ -4,6 +4,7 @@ kms:CustomerMasterKeySpec
 kms:CustomerMasterKeyUsage
 kms:DataKeyPairSpec
 kms:EncryptionAlgorithm
+kms:EncryptionContext
 kms:EncryptionContextKeys
 kms:ExpirationModel
 kms:GrantConstraintType
@@ -18,6 +19,7 @@ kms:MultiRegion
 kms:MultiRegionKeyType
 kms:PrimaryRegion
 kms:ReEncryptOnSameKey
+kms:RecipientAttestation
 kms:ReplicaRegion
 kms:RequestAlias
 kms:ResourceAliases

@@ -47,6 +47,7 @@
                 "ec2:DescribeElasticGpus",
                 "ec2:DescribeExportImageTasks",
                 "ec2:DescribeExportTasks",
+                "ec2:DescribeFastLaunchImages",
                 "ec2:DescribeFastSnapshotRestores",
                 "ec2:DescribeFleetHistory",
                 "ec2:DescribeFleetInstances",

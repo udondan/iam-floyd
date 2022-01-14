@@ -3,6 +3,7 @@ glue:BatchDeleteConnection;Write
 glue:BatchDeletePartition;Write
 glue:BatchDeleteTable;Write
 glue:BatchDeleteTableVersion;Write
+glue:BatchGetBlueprints;Read
 glue:BatchGetCrawlers;Read
 glue:BatchGetDevEndpoints;Read
 glue:BatchGetJobs;Read
@@ -14,6 +15,7 @@ glue:BatchUpdatePartition;Write
 glue:CancelMLTaskRun;Write
 glue:CancelStatement;Write
 glue:CheckSchemaVersionValidity;Read
+glue:CreateBlueprint;Write
 glue:CreateClassifier;Write
 glue:CreateConnection;Write
 glue:CreateCrawler;Write
@@ -32,6 +34,7 @@ glue:CreateTable;Write
 glue:CreateTrigger;Write
 glue:CreateUserDefinedFunction;Write
 glue:CreateWorkflow;Write
+glue:DeleteBlueprint;Write
 glue:DeleteClassifier;Write
 glue:DeleteColumnStatisticsForPartition;Write
 glue:DeleteColumnStatisticsForTable;Write
@@ -54,6 +57,9 @@ glue:DeleteTableVersion;Write
 glue:DeleteTrigger;Write
 glue:DeleteUserDefinedFunction;Write
 glue:DeleteWorkflow;Write
+glue:GetBlueprint;Read
+glue:GetBlueprintRun;Read
+glue:GetBlueprintRuns;Read
 glue:GetCatalogImportStatus;Read
 glue:GetClassifier;Read
 glue:GetClassifiers;Read
@@ -108,6 +114,7 @@ glue:GetWorkflowRun;Read
 glue:GetWorkflowRunProperties;Read
 glue:GetWorkflowRuns;Read
 glue:ImportCatalogToGlue;Write
+glue:ListBlueprints;List
 glue:ListCrawlers;List
 glue:ListDevEndpoints;List
 glue:ListJobs;List
@@ -131,6 +138,7 @@ glue:ResetJobBookmark;Write
 glue:ResumeWorkflowRun;Write
 glue:RunStatement;Write
 glue:SearchTables;Read
+glue:StartBlueprintRun;Write
 glue:StartCrawler;Write
 glue:StartCrawlerSchedule;Write
 glue:StartExportLabelsTaskRun;Write
@@ -147,6 +155,7 @@ glue:StopTrigger;Write
 glue:StopWorkflowRun;Write
 glue:TagResource;Tagging
 glue:UntagResource;Tagging
+glue:UpdateBlueprint;Write
 glue:UpdateClassifier;Write
 glue:UpdateColumnStatisticsForPartition;Write
 glue:UpdateColumnStatisticsForTable;Write

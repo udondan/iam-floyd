@@ -2508,6 +2508,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe fast-launch enabled Windows AMIs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFastLaunchImages.html
+   */
+  public toDescribeFastLaunchImages() {
+    return this.to('DescribeFastLaunchImages');
+  }
+
+  /**
    * Grants permission to describe the state of fast snapshot restores for snapshots
    *
    * Access Level: Read
@@ -3762,6 +3773,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable faster launching for Windows AMIs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableFastLaunch.html
+   */
+  public toDisableFastLaunch() {
+    return this.to('DisableFastLaunch');
+  }
+
+  /**
    * Grants permission to disable fast snapshot restores for one or more snapshots in specified Availability Zones
    *
    * Access Level: Write
@@ -3787,6 +3809,9 @@ export class Ec2 extends PolicyStatement {
    * Grants permission to disable an AWS Organizations member account as an Amazon VPC IP Address Manager (IPAM) admin account
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - organizations:DeregisterDelegatedAdministrator
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableIpamOrganizationAdminAccount.html
    */
@@ -3982,6 +4007,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable faster launching for Windows AMIs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableFastLaunch.html
+   */
+  public toEnableFastLaunch() {
+    return this.to('EnableFastLaunch');
+  }
+
+  /**
    * Grants permission to enable fast snapshot restores for one or more snapshots in specified Availability Zones
    *
    * Access Level: Write
@@ -4007,6 +4043,11 @@ export class Ec2 extends PolicyStatement {
    * Grants permission to enable an AWS Organizations member account as an Amazon VPC IP Address Manager (IPAM) admin account
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - organizations:EnableAWSServiceAccess
+   * - organizations:RegisterDelegatedAdministrator
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableIpamOrganizationAdminAccount.html
    */
@@ -4885,6 +4926,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the options for instance hostnames for the specified instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyPrivateDnsNameOptions.html
+   */
+  public toModifyPrivateDnsNameOptions() {
+    return this.to('ModifyPrivateDnsNameOptions');
+  }
+
+  /**
    * Grants permission to modify attributes of one or more Reserved Instances
    *
    * Access Level: Write
@@ -5080,6 +5132,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyVpcEndpointServiceConfiguration() {
     return this.to('ModifyVpcEndpointServiceConfiguration');
+  }
+
+  /**
+   * Grants permission to modify the payer responsibility for a VPC endpoint service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpointServicePayerResponsibility.html
+   */
+  public toModifyVpcEndpointServicePayerResponsibility() {
+    return this.to('ModifyVpcEndpointServicePayerResponsibility');
   }
 
   /**
@@ -6082,6 +6145,7 @@ export class Ec2 extends PolicyStatement {
       'DetachVolume',
       'DetachVpnGateway',
       'DisableEbsEncryptionByDefault',
+      'DisableFastLaunch',
       'DisableFastSnapshotRestores',
       'DisableImageDeprecation',
       'DisableIpamOrganizationAdminAccount',
@@ -6102,6 +6166,7 @@ export class Ec2 extends PolicyStatement {
       'DisassociateTrunkInterface',
       'DisassociateVpcCidrBlock',
       'EnableEbsEncryptionByDefault',
+      'EnableFastLaunch',
       'EnableFastSnapshotRestores',
       'EnableImageDeprecation',
       'EnableIpamOrganizationAdminAccount',
@@ -6146,6 +6211,7 @@ export class Ec2 extends PolicyStatement {
       'ModifyLaunchTemplate',
       'ModifyManagedPrefixList',
       'ModifyNetworkInterfaceAttribute',
+      'ModifyPrivateDnsNameOptions',
       'ModifyReservedInstances',
       'ModifySecurityGroupRules',
       'ModifySnapshotTier',
@@ -6163,6 +6229,7 @@ export class Ec2 extends PolicyStatement {
       'ModifyVpcEndpoint',
       'ModifyVpcEndpointConnectionNotification',
       'ModifyVpcEndpointServiceConfiguration',
+      'ModifyVpcEndpointServicePayerResponsibility',
       'ModifyVpcPeeringConnectionOptions',
       'ModifyVpcTenancy',
       'ModifyVpnConnection',
@@ -6383,6 +6450,7 @@ export class Ec2 extends PolicyStatement {
     ],
     Read: [
       'DescribeElasticGpus',
+      'DescribeFastLaunchImages',
       'DescribeFastSnapshotRestores',
       'DescribeScheduledInstanceAvailability',
       'DescribeScheduledInstances',
@@ -8092,7 +8160,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access by the Allocation Id of the Elastic Ip
+   * Filters access by the allocation ID of the Elastic IP address
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
@@ -8165,6 +8233,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyLaunchTemplate()
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toModifyReservedInstances()
    * - .toModifySnapshotAttribute()
    * - .toModifySnapshotTier()
@@ -8182,6 +8251,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVpcEndpoint()
    * - .toModifyVpcEndpointConnectionNotification()
    * - .toModifyVpcEndpointServiceConfiguration()
+   * - .toModifyVpcEndpointServicePayerResponsibility()
    * - .toModifyVpcEndpointServicePermissions()
    * - .toModifyVpcPeeringConnectionOptions()
    * - .toModifyVpcTenancy()
@@ -8382,6 +8452,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toModifyReservedInstances()
    * - .toModifySnapshotTier()
    * - .toModifySpotFleetRequest()
@@ -8635,7 +8706,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access by the domain of the Elastic Ip Address
+   * Filters access by the domain of the Elastic IP address
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
@@ -8692,6 +8763,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
@@ -8843,9 +8915,12 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateStoreImageTask()
    * - .toCreateTags()
    * - .toDeregisterImage()
+   * - .toDescribeFastLaunchImages()
    * - .toDescribeImageAttribute()
    * - .toDescribeStoreImageTasks()
+   * - .toDisableFastLaunch()
    * - .toDisableImageDeprecation()
+   * - .toEnableFastLaunch()
    * - .toEnableImageDeprecation()
    * - .toExportImage()
    * - .toImportImage()
@@ -8918,6 +8993,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
@@ -8974,6 +9050,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
@@ -9031,6 +9108,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toModifyReservedInstances()
    * - .toMonitorInstances()
    * - .toRebootInstances()
@@ -9121,7 +9199,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access by a key pair name
+   * Filters access by the name of a key pair
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
@@ -9146,7 +9224,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access by a key pair type
+   * Filters access by the type of a key pair
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
@@ -9171,7 +9249,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access by an Id of your AWS Key Management Service
+   * Filters access by the ID of an AWS KMS key
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
@@ -9247,6 +9325,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
@@ -9297,6 +9376,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
@@ -9347,6 +9427,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
@@ -9375,6 +9456,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateIamInstanceProfile()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toReplaceIamInstanceProfileAssociation()
    *
    * Applies to resource types:
@@ -9430,11 +9512,14 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteFpgaImage()
    * - .toDeleteSnapshot()
    * - .toDeregisterImage()
+   * - .toDescribeFastLaunchImages()
    * - .toDescribeFpgaImageAttribute()
    * - .toDescribeImageAttribute()
    * - .toDescribeStoreImageTasks()
+   * - .toDisableFastLaunch()
    * - .toDisableFastSnapshotRestores()
    * - .toDisableImageDeprecation()
+   * - .toEnableFastLaunch()
    * - .toEnableFastSnapshotRestores()
    * - .toEnableImageDeprecation()
    * - .toExportImage()
@@ -9766,6 +9851,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
@@ -9859,10 +9945,13 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeleteFpgaImage()
    * - .toDeregisterImage()
+   * - .toDescribeFastLaunchImages()
    * - .toDescribeFpgaImageAttribute()
    * - .toDescribeImageAttribute()
    * - .toDescribeStoreImageTasks()
+   * - .toDisableFastLaunch()
    * - .toDisableImageDeprecation()
+   * - .toEnableFastLaunch()
    * - .toEnableImageDeprecation()
    * - .toExportImage()
    * - .toImportImage()
@@ -9888,7 +9977,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access by the Public Ip
+   * Filters access by a public IP address
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
@@ -10110,6 +10199,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
    * - .toDescribeClientVpnTargetNetworks()
+   * - .toDescribeFastLaunchImages()
    * - .toDescribeFleetHistory()
    * - .toDescribeFleetInstances()
    * - .toDescribeFleets()
@@ -10122,6 +10212,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
+   * - .toDisableFastLaunch()
    * - .toDisableFastSnapshotRestores()
    * - .toDisableImageDeprecation()
    * - .toDisableTransitGatewayRouteTablePropagation()
@@ -10137,6 +10228,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateTransitGatewayMulticastDomain()
    * - .toDisassociateTransitGatewayRouteTable()
    * - .toDisassociateVpcCidrBlock()
+   * - .toEnableFastLaunch()
    * - .toEnableFastSnapshotRestores()
    * - .toEnableImageDeprecation()
    * - .toEnableTransitGatewayRouteTablePropagation()
@@ -10189,6 +10281,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyLaunchTemplate()
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toModifyReservedInstances()
    * - .toModifySecurityGroupRules()
    * - .toModifySnapshotAttribute()
@@ -10207,6 +10300,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVpcEndpoint()
    * - .toModifyVpcEndpointConnectionNotification()
    * - .toModifyVpcEndpointServiceConfiguration()
+   * - .toModifyVpcEndpointServicePayerResponsibility()
    * - .toModifyVpcEndpointServicePermissions()
    * - .toModifyVpcPeeringConnectionOptions()
    * - .toModifyVpcTenancy()
@@ -10602,6 +10696,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
    * - .toDescribeClientVpnTargetNetworks()
+   * - .toDescribeFastLaunchImages()
    * - .toDescribeFleetHistory()
    * - .toDescribeFleetInstances()
    * - .toDescribeFleets()
@@ -10614,6 +10709,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
+   * - .toDisableFastLaunch()
    * - .toDisableFastSnapshotRestores()
    * - .toDisableImageDeprecation()
    * - .toDisableTransitGatewayRouteTablePropagation()
@@ -10629,6 +10725,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateTransitGatewayMulticastDomain()
    * - .toDisassociateTransitGatewayRouteTable()
    * - .toDisassociateVpcCidrBlock()
+   * - .toEnableFastLaunch()
    * - .toEnableFastSnapshotRestores()
    * - .toEnableImageDeprecation()
    * - .toEnableTransitGatewayRouteTablePropagation()
@@ -10679,6 +10776,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyLaunchTemplate()
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toModifyReservedInstances()
    * - .toModifySecurityGroupRules()
    * - .toModifySnapshotAttribute()
@@ -10697,6 +10795,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVpcEndpoint()
    * - .toModifyVpcEndpointConnectionNotification()
    * - .toModifyVpcEndpointServiceConfiguration()
+   * - .toModifyVpcEndpointServicePayerResponsibility()
    * - .toModifyVpcEndpointServicePermissions()
    * - .toModifyVpcPeeringConnectionOptions()
    * - .toModifyVpcTenancy()
@@ -10870,14 +10969,17 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateStoreImageTask()
    * - .toCreateTags()
    * - .toDeregisterImage()
+   * - .toDescribeFastLaunchImages()
    * - .toDescribeImageAttribute()
    * - .toDescribeInstanceAttribute()
    * - .toDescribeStoreImageTasks()
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableFastLaunch()
    * - .toDisableImageDeprecation()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableFastLaunch()
    * - .toEnableImageDeprecation()
    * - .toExportImage()
    * - .toGetConsoleOutput()
@@ -10893,6 +10995,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toMonitorInstances()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
@@ -11201,6 +11304,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
    * - .toModifyReservedInstances()
    * - .toModifyVpcAttribute()
    * - .toModifyVpcTenancy()

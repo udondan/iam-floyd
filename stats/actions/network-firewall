@@ -12,6 +12,7 @@ network-firewall:DescribeFirewallPolicy;Read
 network-firewall:DescribeLoggingConfiguration;Read
 network-firewall:DescribeResourcePolicy;Read
 network-firewall:DescribeRuleGroup;Read
+network-firewall:DescribeRuleGroupMetadata;Read
 network-firewall:DisassociateSubnets;Write
 network-firewall:ListFirewallPolicies;List
 network-firewall:ListFirewalls;List

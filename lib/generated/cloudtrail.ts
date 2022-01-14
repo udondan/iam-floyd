@@ -30,6 +30,32 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a running query
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CancelQuery.html
+   */
+  public toCancelQuery() {
+    return this.to('CancelQuery');
+  }
+
+  /**
+   * Grants permission to create an event data store
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateEventDataStore.html
+   */
+  public toCreateEventDataStore() {
+    return this.to('CreateEventDataStore');
+  }
+
+  /**
    * Grants permission to create a trail that specifies the settings for delivery of log data to an Amazon S3 bucket
    *
    * Access Level: Write
@@ -44,6 +70,17 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an event data store
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DeleteEventDataStore.html
+   */
+  public toDeleteEventDataStore() {
+    return this.to('DeleteEventDataStore');
+  }
+
+  /**
    * Grants permission to delete a trail
    *
    * Access Level: Write
@@ -55,6 +92,17 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list details for the query
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DescribeQuery.html
+   */
+  public toDescribeQuery() {
+    return this.to('DescribeQuery');
+  }
+
+  /**
    * Grants permission to list settings for the trails associated with the current region for your account
    *
    * Access Level: Read
@@ -63,6 +111,17 @@ export class Cloudtrail extends PolicyStatement {
    */
   public toDescribeTrails() {
     return this.to('DescribeTrails');
+  }
+
+  /**
+   * Grants permission to list settings for the event data store
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetEventDataStore.html
+   */
+  public toGetEventDataStore() {
+    return this.to('GetEventDataStore');
   }
 
   /**
@@ -88,6 +147,17 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to fetch results of a complete query
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetQueryResults.html
+   */
+  public toGetQueryResults() {
+    return this.to('GetQueryResults');
+  }
+
+  /**
    * Grants permission to list settings for the trail
    *
    * Access Level: Read
@@ -110,6 +180,17 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list event data stores associated with the current region for your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListEventDataStores.html
+   */
+  public toListEventDataStores() {
+    return this.to('ListEventDataStores');
+  }
+
+  /**
    * Grants permission to list the public keys whose private keys were used to sign trail digest files within a specified time range
    *
    * Access Level: Read
@@ -121,7 +202,18 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags for trails in the current region
+   * Grants permission to list queries associated with an event data store
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListQueries.html
+   */
+  public toListQueries() {
+    return this.to('ListQueries');
+  }
+
+  /**
+   * Grants permission to list the tags for trails or event data stores in the current region
    *
    * Access Level: Read
    *
@@ -187,6 +279,17 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to restore an event data store
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_RestoreEventDataStore.html
+   */
+  public toRestoreEventDataStore() {
+    return this.to('RestoreEventDataStore');
+  }
+
+  /**
    * Grants permission to start the recording of AWS API calls and log file delivery for a trail
    *
    * Access Level: Write
@@ -198,6 +301,17 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a new query on a specified event data store
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StartQuery.html
+   */
+  public toStartQuery() {
+    return this.to('StartQuery');
+  }
+
+  /**
    * Grants permission to stop the recording of AWS API calls and log file delivery for a trail
    *
    * Access Level: Write
@@ -206,6 +320,17 @@ export class Cloudtrail extends PolicyStatement {
    */
   public toStopLogging() {
     return this.to('StopLogging');
+  }
+
+  /**
+   * Grants permission to update an event data store
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateEventDataStore.html
+   */
+  public toUpdateEventDataStore() {
+    return this.to('UpdateEventDataStore');
   }
 
   /**
@@ -225,18 +350,27 @@ export class Cloudtrail extends PolicyStatement {
       'RemoveTags'
     ],
     Write: [
+      'CancelQuery',
+      'CreateEventDataStore',
       'CreateTrail',
+      'DeleteEventDataStore',
       'DeleteTrail',
       'PutEventSelectors',
       'PutInsightSelectors',
+      'RestoreEventDataStore',
       'StartLogging',
+      'StartQuery',
       'StopLogging',
+      'UpdateEventDataStore',
       'UpdateTrail'
     ],
     Read: [
+      'DescribeQuery',
       'DescribeTrails',
+      'GetEventDataStore',
       'GetEventSelectors',
       'GetInsightSelectors',
+      'GetQueryResults',
       'GetTrail',
       'GetTrailStatus',
       'ListPublicKeys',
@@ -244,6 +378,8 @@ export class Cloudtrail extends PolicyStatement {
       'LookupEvents'
     ],
     List: [
+      'ListEventDataStores',
+      'ListQueries',
       'ListTrails'
     ]
   };
@@ -260,5 +396,22 @@ export class Cloudtrail extends PolicyStatement {
    */
   public onTrail(trailName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:cloudtrail:${ region || '*' }:${ account || '*' }:trail/${ trailName }`);
+  }
+
+  /**
+   * Adds a resource of type eventdatastore to the statement
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/how-cloudtrail-works.html
+   *
+   * @param eventDataStoreId - Identifier for the eventDataStoreId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEventdatastore(eventDataStoreId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:cloudtrail:${ region || '*' }:${ account || '*' }:eventdatastore/${ eventDataStoreId }`);
   }
 }

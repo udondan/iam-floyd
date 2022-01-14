@@ -74,6 +74,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve one or more blueprints
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-BatchGetBlueprints
+   */
+  public toBatchGetBlueprints() {
+    return this.to('BatchGetBlueprints');
+  }
+
+  /**
    * Grants permission to retrieve one or more crawlers
    *
    * Access Level: Read
@@ -192,6 +203,21 @@ export class Glue extends PolicyStatement {
    */
   public toCheckSchemaVersionValidity() {
     return this.to('CheckSchemaVersionValidity');
+  }
+
+  /**
+   * Grants permission to create a blueprint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-CreateBlueprint
+   */
+  public toCreateBlueprint() {
+    return this.to('CreateBlueprint');
   }
 
   /**
@@ -425,6 +451,17 @@ export class Glue extends PolicyStatement {
    */
   public toCreateWorkflow() {
     return this.to('CreateWorkflow');
+  }
+
+  /**
+   * Grants permission to delete a blueprint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-DeleteBlueprint
+   */
+  public toDeleteBlueprint() {
+    return this.to('DeleteBlueprint');
   }
 
   /**
@@ -667,6 +704,39 @@ export class Glue extends PolicyStatement {
    */
   public toDeleteWorkflow() {
     return this.to('DeleteWorkflow');
+  }
+
+  /**
+   * Grants permission to retrieve a blueprint
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetBlueprint
+   */
+  public toGetBlueprint() {
+    return this.to('GetBlueprint');
+  }
+
+  /**
+   * Grants permission to retrieve a blueprint run
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetBlueprintRun
+   */
+  public toGetBlueprintRun() {
+    return this.to('GetBlueprintRun');
+  }
+
+  /**
+   * Grants permission to retrieve all runs of a blueprint
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetBlueprintRuns
+   */
+  public toGetBlueprintRuns() {
+    return this.to('GetBlueprintRuns');
   }
 
   /**
@@ -1264,6 +1334,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve all blueprints
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-ListBlueprints
+   */
+  public toListBlueprints() {
+    return this.to('ListBlueprints');
+  }
+
+  /**
    * Grants permission to retrieve all crawlers
    *
    * Access Level: List
@@ -1517,6 +1598,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start running a blueprint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-StartBlueprintRun
+   */
+  public toStartBlueprintRun() {
+    return this.to('StartBlueprintRun');
+  }
+
+  /**
    * Grants permission to start a crawler
    *
    * Access Level: Write
@@ -1698,6 +1790,17 @@ export class Glue extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update a blueprint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-UpdateBlueprint
+   */
+  public toUpdateBlueprint() {
+    return this.to('UpdateBlueprint');
   }
 
   /**
@@ -1914,6 +2017,7 @@ export class Glue extends PolicyStatement {
       'BatchUpdatePartition',
       'CancelMLTaskRun',
       'CancelStatement',
+      'CreateBlueprint',
       'CreateClassifier',
       'CreateConnection',
       'CreateCrawler',
@@ -1932,6 +2036,7 @@ export class Glue extends PolicyStatement {
       'CreateTrigger',
       'CreateUserDefinedFunction',
       'CreateWorkflow',
+      'DeleteBlueprint',
       'DeleteClassifier',
       'DeleteColumnStatisticsForPartition',
       'DeleteColumnStatisticsForTable',
@@ -1963,6 +2068,7 @@ export class Glue extends PolicyStatement {
       'ResetJobBookmark',
       'ResumeWorkflowRun',
       'RunStatement',
+      'StartBlueprintRun',
       'StartCrawler',
       'StartCrawlerSchedule',
       'StartExportLabelsTaskRun',
@@ -1977,6 +2083,7 @@ export class Glue extends PolicyStatement {
       'StopSession',
       'StopTrigger',
       'StopWorkflowRun',
+      'UpdateBlueprint',
       'UpdateClassifier',
       'UpdateColumnStatisticsForPartition',
       'UpdateColumnStatisticsForTable',
@@ -1997,6 +2104,7 @@ export class Glue extends PolicyStatement {
       'UseMLTransforms'
     ],
     Read: [
+      'BatchGetBlueprints',
       'BatchGetCrawlers',
       'BatchGetDevEndpoints',
       'BatchGetJobs',
@@ -2004,6 +2112,9 @@ export class Glue extends PolicyStatement {
       'BatchGetTriggers',
       'BatchGetWorkflows',
       'CheckSchemaVersionValidity',
+      'GetBlueprint',
+      'GetBlueprintRun',
+      'GetBlueprintRuns',
       'GetCatalogImportStatus',
       'GetClassifier',
       'GetClassifiers',
@@ -2064,6 +2175,7 @@ export class Glue extends PolicyStatement {
     List: [
       'GetMLTaskRuns',
       'GetMLTransforms',
+      'ListBlueprints',
       'ListCrawlers',
       'ListDevEndpoints',
       'ListJobs',
@@ -2253,6 +2365,23 @@ export class Glue extends PolicyStatement {
    */
   public onWorkflow(workflowName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:workflow/${ workflowName }`);
+  }
+
+  /**
+   * Adds a resource of type blueprint to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param blueprintName - Identifier for the blueprintName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBlueprint(blueprintName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:glue:${ region || '*' }:${ account || '*' }:blueprint/${ blueprintName }`);
   }
 
   /**

@@ -22,6 +22,8 @@ export class Account extends PolicyStatement {
    * Grants permission to delete the alternate contacts for an account
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_DeleteAlternateContact.html
    */
   public toDeleteAlternateContact() {
     return this.to('DeleteAlternateContact');
@@ -59,6 +61,8 @@ export class Account extends PolicyStatement {
    * Grants permission to retrieve the alternate contacts for an account
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_GetAlternateContact.html
    */
   public toGetAlternateContact() {
     return this.to('GetAlternateContact');
@@ -79,6 +83,8 @@ export class Account extends PolicyStatement {
    * Grants permission to modify the alternate contacts for an account
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_PutAlternateContact.html
    */
   public toPutAlternateContact() {
     return this.to('PutAlternateContact');
@@ -102,6 +108,8 @@ export class Account extends PolicyStatement {
   /**
    * Adds a resource of type account to the statement
    *
+   * https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources
+   *
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
@@ -111,6 +119,8 @@ export class Account extends PolicyStatement {
 
   /**
    * Adds a resource of type accountInOrganization to the statement
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources
    *
    * @param managementAccountId - Identifier for the managementAccountId.
    * @param organizationId - Identifier for the organizationId.
@@ -124,6 +134,8 @@ export class Account extends PolicyStatement {
   /**
    * Filters access by the resource path for an account in an organization
    *
+   * https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -133,6 +145,8 @@ export class Account extends PolicyStatement {
 
   /**
    * Filters access by resource tags for an account in an organization
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -145,6 +159,8 @@ export class Account extends PolicyStatement {
   /**
    * Filters access by alternate contact types
    *
+   * https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -154,6 +170,8 @@ export class Account extends PolicyStatement {
 
   /**
    * Filters access by a list of Regions. Enables or disables all the Regions specified here
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
    * - .toDisableRegion()
