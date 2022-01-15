@@ -190,12 +190,20 @@
 			"Resource": "arn:aws:backup-gateway:*:*:vm/*"
 		},
 		{
-			"Sid": "ListTagsForDynamoDBTable",
 			"Effect": "Allow",
 			"Action": [
-				"dynamodb:ListTagsOfResource"
+				"dynamodb:ListTagsOfResource",
+				"dynamodb:DescribeTable"
 			],
 			"Resource": "arn:aws:dynamodb:*:*:table/*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"storagegateway:DescribeCachediSCSIVolumes",
+				"storagegateway:DescribeStorediSCSIVolumes"
+			],
+			"Resource": "arn:aws:storagegateway:*:*:gateway/*/volume/*"
 		}
 	]
 }
