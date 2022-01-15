@@ -3,6 +3,7 @@ lookoutmetrics:BackTestAnomalyDetector;Write
 lookoutmetrics:CreateAlert;Write
 lookoutmetrics:CreateAnomalyDetector;Write
 lookoutmetrics:CreateMetricSet;Write
+lookoutmetrics:DeactivateAnomalyDetector;Write
 lookoutmetrics:DeleteAlert;Write
 lookoutmetrics:DeleteAnomalyDetector;Write
 lookoutmetrics:DescribeAlert;Read

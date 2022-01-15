@@ -800,6 +800,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifDocumentCategories()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDocument.html
    */
   public toGetDocument() {
@@ -2070,6 +2073,21 @@ export class Ssm extends PolicyStatement {
    */
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:task/${ taskId }`);
+  }
+
+  /**
+   * Filters access by verifying that a user has permission to access a document belonging to a specific category
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toGetDocument()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDocumentCategories(value: string | string[], operator?: Operator | string) {
+    return this.if(`DocumentCategories`, value, operator || 'StringLike');
   }
 
   /**

@@ -9,6 +9,7 @@ eks:DeleteAddon;Write
 eks:DeleteCluster;Write
 eks:DeleteFargateProfile;Write
 eks:DeleteNodegroup;Write
+eks:DeregisterCluster;Write
 eks:DescribeAddon;Read
 eks:DescribeAddonVersions;Read
 eks:DescribeCluster;Read
@@ -24,6 +25,7 @@ eks:ListIdentityProviderConfigs;List
 eks:ListNodegroups;List
 eks:ListTagsForResource;Read
 eks:ListUpdates;List
+eks:RegisterCluster;Write
 eks:TagResource;Tagging
 eks:UntagResource;Tagging
 eks:UpdateAddon;Write

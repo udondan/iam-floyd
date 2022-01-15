@@ -86,6 +86,17 @@ export class Lookoutmetrics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deactivate an anomaly detector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lookoutmetrics/latest/api/API_DeactivateAnomalyDetector.html
+   */
+  public toDeactivateAnomalyDetector() {
+    return this.to('DeactivateAnomalyDetector');
+  }
+
+  /**
    * Grants permission to delete an alert
    *
    * Access Level: Write
@@ -342,6 +353,7 @@ export class Lookoutmetrics extends PolicyStatement {
       'CreateAlert',
       'CreateAnomalyDetector',
       'CreateMetricSet',
+      'DeactivateAnomalyDetector',
       'DeleteAlert',
       'DeleteAnomalyDetector',
       'PutFeedback',

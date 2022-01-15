@@ -45,6 +45,17 @@ export class Iotdeviceadvisor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a Device Advisor endpoint
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iotdeviceadvisor_GetEndpoint.html
+   */
+  public toGetEndpoint() {
+    return this.to('GetEndpoint');
+  }
+
+  /**
    * Grants permission to get a suite definition
    *
    * Access Level: Read
@@ -185,6 +196,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
       'UpdateSuiteDefinition'
     ],
     Read: [
+      'GetEndpoint',
       'GetSuiteDefinition',
       'GetSuiteRun',
       'GetSuiteRunReport',
@@ -201,7 +213,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type suitedefinition to the statement
+   * Adds a resource of type Suitedefinition to the statement
    *
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-workflow.html#device-advisor-workflow-create-suite-definition
    *
@@ -218,7 +230,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type suiterun to the statement
+   * Adds a resource of type Suiterun to the statement
    *
    * https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor-workflow.html#device-advisor-workflow-start-suite-run
    *

@@ -1,3 +1,4 @@
+ssm:DocumentCategories
 ssm:Overwrite
 ssm:Recursive
 ssm:RequestTag/${TagKey}
