@@ -22,6 +22,8 @@ export class Serviceextract extends PolicyStatement {
    * Grants permission to get required configuration for the AWS Microservice Extractor for .NET desktop client
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/microservice-extractor/latest/userguide/what-is-microservice-extractor.html
    */
   public toGetConfig() {
     return this.to('GetConfig');
