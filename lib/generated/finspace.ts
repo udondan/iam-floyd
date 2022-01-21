@@ -19,9 +19,13 @@ export class Finspace extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a FinSpace environment
+   * Grants permission to create a FinSpace environment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateEnvironment.html
    */
@@ -30,18 +34,22 @@ export class Finspace extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to create a FinSpace user.
+   * Grants permission to create a FinSpace user
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/finspace/latest/management-api/API_CreateUser.html
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html
    */
   public toCreateUser() {
     return this.to('CreateUser');
   }
 
   /**
-   * Grants permissions to delete a FinSpace environment.
+   * Grants permission to delete a FinSpace environment
    *
    * Access Level: Write
    *
@@ -52,18 +60,7 @@ export class Finspace extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to delete a FinSpace user.
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/finspace/latest/management-api/API_DeleteUser.html
-   */
-  public toDeleteUser() {
-    return this.to('DeleteUser');
-  }
-
-  /**
-   * Grants permissions to describe a FinSpace environment.
+   * Grants permission to describe a FinSpace environment
    *
    * Access Level: Read
    *
@@ -74,29 +71,29 @@ export class Finspace extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to request status of the loading of sample data bundle.
+   * Grants permission to request status of the loading of sample data bundle
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/finspace/latest/management-api/API_GetLoadSampleDataSetGroupIntoEnvironmentStatus.html
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html
    */
   public toGetLoadSampleDataSetGroupIntoEnvironmentStatus() {
     return this.to('GetLoadSampleDataSetGroupIntoEnvironmentStatus');
   }
 
   /**
-   * Grants permissions to describe a FinSpace user.
+   * Grants permission to describe a FinSpace user
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/finspace/latest/management-api/API_GetUser.html
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html
    */
   public toGetUser() {
     return this.to('GetUser');
   }
 
   /**
-   * Grants permissions to list FinSpace environments in the AWS account.
+   * Grants permission to list FinSpace environments in the AWS account
    *
    * Access Level: List
    *
@@ -107,7 +104,7 @@ export class Finspace extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to return a list of tags for a resource.
+   * Grants permission to return a list of tags for a resource
    *
    * Access Level: Read
    *
@@ -118,29 +115,40 @@ export class Finspace extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list FinSpace users in an environment.
+   * Grants permission to list FinSpace users in an environment
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/finspace/latest/management-api/API_ListUsers.html
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html
    */
   public toListUsers() {
     return this.to('ListUsers');
   }
 
   /**
-   * Grants permissions to load sample data bundle into your FinSpace environment.
+   * Grants permission to load sample data bundle into your FinSpace environment
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/finspace/latest/management-api/API_LoadSampleDataSetGroupIntoEnvironment.html
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html
    */
   public toLoadSampleDataSetGroupIntoEnvironment() {
     return this.to('LoadSampleDataSetGroupIntoEnvironment');
   }
 
   /**
-   * Grants permissions to tag a resource.
+   * Grants permission to reset the password for a FinSpace user
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html
+   */
+  public toResetUserPassword() {
+    return this.to('ResetUserPassword');
+  }
+
+  /**
+   * Grants permission to tag a resource
    *
    * Access Level: Tagging
    *
@@ -151,7 +159,7 @@ export class Finspace extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to untag a resource.
+   * Grants permission to untag a resource
    *
    * Access Level: Tagging
    *
@@ -162,7 +170,7 @@ export class Finspace extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update a FinSpace environment
+   * Grants permission to update a FinSpace environment
    *
    * Access Level: Write
    *
@@ -172,14 +180,26 @@ export class Finspace extends PolicyStatement {
     return this.to('UpdateEnvironment');
   }
 
+  /**
+   * Grants permission to update a FinSpace user
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html
+   */
+  public toUpdateUser() {
+    return this.to('UpdateUser');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateEnvironment',
       'CreateUser',
       'DeleteEnvironment',
-      'DeleteUser',
       'LoadSampleDataSetGroupIntoEnvironment',
-      'UpdateEnvironment'
+      'ResetUserPassword',
+      'UpdateEnvironment',
+      'UpdateUser'
     ],
     Read: [
       'GetEnvironment',
