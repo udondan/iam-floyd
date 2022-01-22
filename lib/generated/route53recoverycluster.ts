@@ -34,6 +34,9 @@ export class Route53RecoveryCluster extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAllowSafetyRulesOverrides()
+   *
    * https://docs.aws.amazon.com/routing-control/latest/APIReference/API_UpdateRoutingControlState.html
    */
   public toUpdateRoutingControlState() {
@@ -44,6 +47,9 @@ export class Route53RecoveryCluster extends PolicyStatement {
    * Grants permission to update a batch of routing control states
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAllowSafetyRulesOverrides()
    *
    * https://docs.aws.amazon.com/routing-control/latest/APIReference/API_UpdateRoutingControlStates.html
    */
@@ -73,5 +79,20 @@ export class Route53RecoveryCluster extends PolicyStatement {
    */
   public onRoutingcontrol(controlPanelId: string, routingControlId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:route53-recovery-control::${ account || '*' }:controlpanel/${ controlPanelId }/routingcontrol/${ routingControlId }`);
+  }
+
+  /**
+   * Override safety rules to allow routing control state updates
+   *
+   * https://docs.aws.amazon.com/routing-control/latest/APIReference/API_UpdateRoutingControlState.html
+   *
+   * Applies to actions:
+   * - .toUpdateRoutingControlState()
+   * - .toUpdateRoutingControlStates()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifAllowSafetyRulesOverrides(value?: boolean) {
+    return this.if(`AllowSafetyRulesOverrides`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 }

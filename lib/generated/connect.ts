@@ -405,6 +405,8 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUserHierarchyGroup.html
@@ -1507,7 +1509,6 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_TagResource.html
    */
@@ -1522,7 +1523,7 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UntagResource.html
    */
@@ -2246,6 +2247,9 @@ export class Connect extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onHierarchyGroup(instanceId: string, hierarchyGroupId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/agent-group/${ hierarchyGroupId }`);
