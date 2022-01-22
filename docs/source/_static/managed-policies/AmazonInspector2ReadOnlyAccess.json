@@ -1,0 +1,32 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"organizations:ListDelegatedAdministrators",
+				"organizations:ListAWSServiceAccessForOrganization",
+				"organizations:DescribeOrganizationalUnit",
+				"organizations:DescribeAccount",
+				"organizations:DescribeOrganization",
+				"inspector2:ListAccountPermissions",
+				"inspector2:ListMembers",
+				"inspector2:ListFilters",
+				"inspector2:DescribeOrganizationConfiguration",
+				"inspector2:GetMember",
+				"inspector2:BatchGetFreeTrialInfo",
+				"inspector2:ListUsageTotals",
+				"inspector2:ListCoverageStatistics",
+				"inspector2:BatchGetAccountStatus",
+				"inspector2:ListFindings",
+				"inspector2:ListFindingAggregations",
+				"inspector2:ListCoverage",
+				"inspector2:GetDelegatedAdminAccount",
+				"inspector2:GetFindingsReportStatus",
+				"inspector2:ListDelegatedAdminAccounts",
+				"inspector2:ListTagsForResource"
+			],
+			"Resource": "*"
+		}
+	]
+}
