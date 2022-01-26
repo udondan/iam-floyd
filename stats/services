@@ -55,6 +55,7 @@ codeartifact
 codebuild
 codecommit
 codedeploy
+codedeploy-commands-secure
 codeguru
 codeguru-profiler
 codeguru-reviewer

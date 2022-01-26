@@ -181,6 +181,7 @@ export { Codeartifact } from './codeartifact';
 export { Codebuild } from './codebuild';
 export { Codecommit } from './codecommit';
 export { Codedeploy } from './codedeploy';
+export { CodedeployCommandsSecure } from './codedeploysecurehostcommandsservice';
 export { Codepipeline } from './codepipeline';
 export { Codestar } from './codestar';
 export { CodestarConnections } from './codestarconnections';
