@@ -82,15 +82,15 @@
 			]
 		},
 		{
-            "Effect": "Allow",
-            "Action": [
-                "resource-groups:CreateGroup",
-                "resource-groups:DeleteGroup"
-            ],
-            "Resource": [
-                "arn:aws:resource-groups:*:*:group/ApplicationInsights-*"
-            ]
-        },
+			"Effect": "Allow",
+			"Action": [
+				"resource-groups:CreateGroup",
+				"resource-groups:DeleteGroup"
+			],
+			"Resource": [
+				"arn:aws:resource-groups:*:*:group/ApplicationInsights-*"
+			]
+		},
 		{
 			"Effect": "Allow",
 			"Action": [
@@ -203,7 +203,7 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-			    "lambda:ListFunctions",
+				"lambda:ListFunctions",
 				"lambda:GetFunctionConfiguration",
 				"lambda:ListEventSourceMappings"
 			],
@@ -238,7 +238,7 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-			    "dynamodb:ListTables",
+				"dynamodb:ListTables",
 				"dynamodb:DescribeTable",
 				"dynamodb:DescribeContributorInsights",
 				"dynamodb:DescribeTimeToLive"
@@ -259,7 +259,7 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-			    "s3:ListAllMyBuckets",
+				"s3:ListAllMyBuckets",
 				"s3:GetMetricsConfiguration",
 				"s3:GetReplicationConfiguration"
 			],
@@ -270,7 +270,7 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-			    "states:ListStateMachines",
+				"states:ListStateMachines",
 				"states:DescribeExecution",
 				"states:DescribeStateMachine",
 				"states:GetExecutionHistory"
@@ -289,66 +289,85 @@
 			]
 		},
 		{
-            "Effect": "Allow",
-            "Action": [
-                "ecs:DescribeClusters",
-                "ecs:DescribeContainerInstances",
-                "ecs:DescribeServices",
-                "ecs:DescribeTaskDefinition",
-                "ecs:DescribeTasks",
-                "ecs:DescribeTaskSets",
-                "ecs:ListClusters",
-                "ecs:ListContainerInstances",
-                "ecs:ListServices",
-                "ecs:ListTasks"
-            ],
-            "Resource": [
-                "*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ecs:UpdateClusterSettings"
-            ],
-            "Resource": [
-                "arn:aws:ecs:*:*:cluster/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "eks:DescribeCluster",
-                "eks:DescribeFargateProfile",
-                "eks:DescribeNodegroup",
-                "eks:ListClusters",
-                "eks:ListFargateProfiles",
-                "eks:ListNodegroups",
-                "fsx:DescribeFileSystems"
-            ],
-            "Resource": [
-                "*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "sns:GetSubscriptionAttributes",
-                "sns:GetTopicAttributes",
-                "sns:GetSMSAttributes",
-                "sns:ListSubscriptionsByTopic",
-                "sns:ListTopics"
-            ],
-            "Resource": [
-                "*"
-            ]
-        },
-        {
-           "Effect": "Allow",
-           "Action": [
-               "sqs:ListQueues"
-           ],
-           "Resource": "*"
-        }
+			"Effect": "Allow",
+			"Action": [
+				"ecs:DescribeClusters",
+				"ecs:DescribeContainerInstances",
+				"ecs:DescribeServices",
+				"ecs:DescribeTaskDefinition",
+				"ecs:DescribeTasks",
+				"ecs:DescribeTaskSets",
+				"ecs:ListClusters",
+				"ecs:ListContainerInstances",
+				"ecs:ListServices",
+				"ecs:ListTasks"
+			],
+			"Resource": [
+				"*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ecs:UpdateClusterSettings"
+			],
+			"Resource": [
+				"arn:aws:ecs:*:*:cluster/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"eks:DescribeCluster",
+				"eks:DescribeFargateProfile",
+				"eks:DescribeNodegroup",
+				"eks:ListClusters",
+				"eks:ListFargateProfiles",
+				"eks:ListNodegroups",
+				"fsx:DescribeFileSystems"
+			],
+			"Resource": [
+				"*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"sns:GetSubscriptionAttributes",
+				"sns:GetTopicAttributes",
+				"sns:GetSMSAttributes",
+				"sns:ListSubscriptionsByTopic",
+				"sns:ListTopics"
+			],
+			"Resource": [
+				"*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"sqs:ListQueues"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"logs:DeleteSubscriptionFilter"
+			],
+			"Resource": [
+				"arn:aws:logs:*:*:log-group:*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"logs:PutSubscriptionFilter"
+			],
+			"Resource": [
+				"arn:aws:logs:*:*:log-group:*",
+				"arn:aws:logs:*:*:destination:AmazonCloudWatch-ApplicationInsights-LogIngestionDestination*"
+			]
+		}
 	]
 }
