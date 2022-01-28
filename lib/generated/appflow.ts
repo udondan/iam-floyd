@@ -71,6 +71,17 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a connector registered in Amazon AppFlow
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeConnector.html
+   */
+  public toDescribeConnector() {
+    return this.to('DescribeConnector');
+  }
+
+  /**
    * Grants permission to describe all fields for an object in a login profile configured in Amazon AppFlow
    *
    * Access Level: Read
@@ -181,6 +192,17 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all connectors supported in Amazon AppFlow
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ListConnectors.html
+   */
+  public toListConnectors() {
+    return this.to('ListConnectors');
+  }
+
+  /**
    * Grants permission to list all flows configured in Amazon AppFlow
    *
    * Access Level: List
@@ -200,6 +222,21 @@ export class Appflow extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to register an Amazon AppFlow connector
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_RegisterConnector.html
+   */
+  public toRegisterConnector() {
+    return this.to('RegisterConnector');
   }
 
   /**
@@ -248,6 +285,21 @@ export class Appflow extends PolicyStatement {
    */
   public toTagResource() {
     return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to un-register a connector in Amazon AppFlow
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UnRegisterConnector.html
+   */
+  public toUnRegisterConnector() {
+    return this.to('UnRegisterConnector');
   }
 
   /**
@@ -303,14 +355,17 @@ export class Appflow extends PolicyStatement {
       'CreateFlow',
       'DeleteConnectorProfile',
       'DeleteFlow',
+      'RegisterConnector',
       'RunFlow',
       'StartFlow',
       'StopFlow',
+      'UnRegisterConnector',
       'UpdateConnectorProfile',
       'UpdateFlow',
       'UseConnectorProfile'
     ],
     Read: [
+      'DescribeConnector',
       'DescribeConnectorEntity',
       'DescribeConnectorFields',
       'DescribeConnectorProfiles',
@@ -324,6 +379,7 @@ export class Appflow extends PolicyStatement {
     ],
     List: [
       'ListConnectorEntities',
+      'ListConnectors',
       'ListFlows'
     ],
     Tagging: [
@@ -361,5 +417,22 @@ export class Appflow extends PolicyStatement {
    */
   public onFlow(flowName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:appflow:${ region || '*' }:${ account || '*' }:flow/${ flowName }`);
+  }
+
+  /**
+   * Adds a resource of type connector to the statement
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ConnectorDefinition.html
+   *
+   * @param connectorLabel - Identifier for the connectorLabel.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnector(connectorLabel: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:appflow:${ region || '*' }:${ account || '*' }:connector/${ connectorLabel }`);
   }
 }

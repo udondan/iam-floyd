@@ -680,6 +680,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/LustreGuide/access-control-overview.html#access-control-resources
    *
+   * @param fileSystemId - Identifier for the fileSystemId.
    * @param dataRepositoryAssociationId - Identifier for the dataRepositoryAssociationId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -688,8 +689,8 @@ export class Fsx extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onAssociation(dataRepositoryAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:association/${ dataRepositoryAssociationId }`);
+  public onAssociation(fileSystemId: string, dataRepositoryAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:fsx:${ region || '*' }:${ account || '*' }:association/${ fileSystemId }/${ dataRepositoryAssociationId }`);
   }
 
   /**

@@ -1,5 +1,5 @@
 appstream:AssociateApplicationFleet;Write
-appstream:AssociateApplicatonToEntitlement;Write
+appstream:AssociateApplicationToEntitlement;Write
 appstream:AssociateFleet;Write
 appstream:BatchAssociateUserStack;Write
 appstream:BatchDisassociateUserStack;Write
@@ -43,7 +43,7 @@ appstream:DescribeUserStackAssociations;Read
 appstream:DescribeUsers;Read
 appstream:DisableUser;Write
 appstream:DisassociateApplicationFleet;Write
-appstream:DisassociateApplicatonFromEntitlement;Write
+appstream:DisassociateApplicationFromEntitlement;Write
 appstream:DisassociateFleet;Write
 appstream:EnableUser;Write
 appstream:ExpireSession;Write

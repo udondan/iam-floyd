@@ -1421,6 +1421,8 @@ export class Ssm extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifSessionDocumentAccessCheck()
+   * - .ifResourceTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartSession.html
    */
@@ -2153,6 +2155,7 @@ export class Ssm extends PolicyStatement {
    *
    * Applies to actions:
    * - .toSendCommand()
+   * - .toStartSession()
    *
    * Applies to resource types:
    * - document

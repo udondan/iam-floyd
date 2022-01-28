@@ -37,10 +37,10 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateApplicatonToEntitlement.html
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateApplicationToEntitlement.html
    */
-  public toAssociateApplicatonToEntitlement() {
-    return this.to('AssociateApplicatonToEntitlement');
+  public toAssociateApplicationToEntitlement() {
+    return this.to('AssociateApplicationToEntitlement');
   }
 
   /**
@@ -587,10 +587,10 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisassociateApplicatonFromEntitlement.html
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisassociateApplicationFromEntitlement.html
    */
-  public toDisassociateApplicatonFromEntitlement() {
-    return this.to('DisassociateApplicatonFromEntitlement');
+  public toDisassociateApplicationFromEntitlement() {
+    return this.to('DisassociateApplicationFromEntitlement');
   }
 
   /**
@@ -854,7 +854,7 @@ export class Appstream extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateApplicationFleet',
-      'AssociateApplicatonToEntitlement',
+      'AssociateApplicationToEntitlement',
       'AssociateFleet',
       'BatchAssociateUserStack',
       'BatchDisassociateUserStack',
@@ -884,7 +884,7 @@ export class Appstream extends PolicyStatement {
       'DeleteUser',
       'DisableUser',
       'DisassociateApplicationFleet',
-      'DisassociateApplicatonFromEntitlement',
+      'DisassociateApplicationFromEntitlement',
       'DisassociateFleet',
       'EnableUser',
       'ExpireSession',

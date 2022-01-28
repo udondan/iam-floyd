@@ -2,6 +2,7 @@ appflow:CreateConnectorProfile;Write
 appflow:CreateFlow;Write
 appflow:DeleteConnectorProfile;Write
 appflow:DeleteFlow;Write
+appflow:DescribeConnector;Read
 appflow:DescribeConnectorEntity;Read
 appflow:DescribeConnectorFields;Read
 appflow:DescribeConnectorProfiles;Read
@@ -12,12 +13,15 @@ appflow:DescribeFlowExecutionRecords;Read
 appflow:DescribeFlows;Read
 appflow:ListConnectorEntities;List
 appflow:ListConnectorFields;Read
+appflow:ListConnectors;List
 appflow:ListFlows;List
 appflow:ListTagsForResource;Read
+appflow:RegisterConnector;Write
 appflow:RunFlow;Write
 appflow:StartFlow;Write
 appflow:StopFlow;Write
 appflow:TagResource;Tagging
+appflow:UnRegisterConnector;Write
 appflow:UntagResource;Tagging
 appflow:UpdateConnectorProfile;Write
 appflow:UpdateFlow;Write
