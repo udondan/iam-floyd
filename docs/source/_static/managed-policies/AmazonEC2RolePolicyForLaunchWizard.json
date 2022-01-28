@@ -54,7 +54,7 @@
 				"ec2:CreateTags",
 				"ec2:CreateVolume"
 			],
-			"Resource": "*",
+			"Resource": "arn:aws:ec2:*:*:volume/*",
 			"Condition": {
 				"ForAllValues:StringEquals": {
 					"aws:TagKeys": [
@@ -148,17 +148,17 @@
 			]
 		},
 		{
-            "Effect": "Allow",
-            "Action": [
-                "fsx:DescribeFileSystems",
-                "fsx:ListTagsForResource"
-            ],
-            "Resource": "*",
-            "Condition": {
-                "ForAllValues:StringLike": {
-                    "aws:TagKeys": "LaunchWizard*"
-                }
-            }
-        }
+			"Effect": "Allow",
+			"Action": [
+				"fsx:DescribeFileSystems",
+				"fsx:ListTagsForResource"
+			],
+			"Resource": "*",
+			"Condition": {
+				"ForAllValues:StringLike": {
+					"aws:TagKeys": "LaunchWizard*"
+				}
+			}
+		}
 	]
 }
