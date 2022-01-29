@@ -73,6 +73,36 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an MSK cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   * - ec2:CreateVpcEndpoint
+   * - ec2:DeleteVpcEndpoints
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcAttribute
+   * - ec2:DescribeVpcEndpoints
+   * - ec2:DescribeVpcs
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   * - kms:CreateGrant
+   * - kms:DescribeKey
+   *
+   * https://docs.aws.amazon.com/MSK/2.0/APIReference/v2-clusters.html#CreateClusterV2
+   */
+  public toCreateClusterV2() {
+    return this.to('CreateClusterV2');
+  }
+
+  /**
    * Grants permission to create an MSK configuration
    *
    * Access Level: Write
@@ -87,6 +117,11 @@ export class Kafka extends PolicyStatement {
    * Grants permission to delete an MSK cluster
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DeleteVpcEndpoints
+   * - ec2:DescribeVpcAttribute
+   * - ec2:DescribeVpcEndpoints
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DeleteCluster
    */
@@ -125,6 +160,17 @@ export class Kafka extends PolicyStatement {
    */
   public toDescribeClusterOperation() {
     return this.to('DescribeClusterOperation');
+  }
+
+  /**
+   * Grants permission to describe an MSK cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/MSK/2.0/APIReference/v2-clusters-clusterarn.html#DescribeClusterV2
+   */
+  public toDescribeClusterV2() {
+    return this.to('DescribeClusterV2');
   }
 
   /**
@@ -191,6 +237,17 @@ export class Kafka extends PolicyStatement {
    */
   public toListClusters() {
     return this.to('ListClusters');
+  }
+
+  /**
+   * Grants permission to list all MSK clusters in this account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/MSK/2.0/APIReference/v2-clusters.html#ListClustersV2
+   */
+  public toListClustersV2() {
+    return this.to('ListClustersV2');
   }
 
   /**
@@ -410,6 +467,7 @@ export class Kafka extends PolicyStatement {
       'BatchAssociateScramSecret',
       'BatchDisassociateScramSecret',
       'CreateCluster',
+      'CreateClusterV2',
       'CreateConfiguration',
       'DeleteCluster',
       'DeleteConfiguration',
@@ -427,6 +485,7 @@ export class Kafka extends PolicyStatement {
     Read: [
       'DescribeCluster',
       'DescribeClusterOperation',
+      'DescribeClusterV2',
       'DescribeConfiguration',
       'DescribeConfigurationRevision',
       'GetBootstrapBrokers',
@@ -436,6 +495,7 @@ export class Kafka extends PolicyStatement {
       'GetCompatibleKafkaVersions',
       'ListClusterOperations',
       'ListClusters',
+      'ListClustersV2',
       'ListConfigurationRevisions',
       'ListConfigurations',
       'ListKafkaVersions',

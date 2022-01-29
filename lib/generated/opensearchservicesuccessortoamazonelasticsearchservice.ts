@@ -284,6 +284,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view detail stage progress of an OpenSearch Service domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-api.html#configuration-api-actions-describedomainchangeprogress
+   */
+  public toDescribeDomainChangeProgress() {
+    return this.to('DescribeDomainChangeProgress');
+  }
+
+  /**
    * Grants permission to view a description of the configuration options and status of an OpenSearch Service domain
    *
    * Access Level: Read
@@ -882,6 +893,7 @@ export class Es extends PolicyStatement {
     Read: [
       'DescribeDomain',
       'DescribeDomainAutoTunes',
+      'DescribeDomainChangeProgress',
       'DescribeDomainConfig',
       'DescribeElasticsearchDomain',
       'DescribeElasticsearchDomainConfig',

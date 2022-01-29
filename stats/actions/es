@@ -21,6 +21,7 @@ es:DeleteOutboundCrossClusterSearchConnection;Write
 es:DeletePackage;Write
 es:DescribeDomain;Read
 es:DescribeDomainAutoTunes;Read
+es:DescribeDomainChangeProgress;Read
 es:DescribeDomainConfig;Read
 es:DescribeDomains;List
 es:DescribeElasticsearchDomain;Read
