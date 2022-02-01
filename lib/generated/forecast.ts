@@ -323,6 +323,17 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an explainability
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeExplainability.html
+   */
+  public toDescribeExplainability() {
+    return this.to('DescribeExplainability');
+  }
+
+  /**
    * Grants permission to describe an explainability export
    *
    * Access Level: Read
@@ -331,17 +342,6 @@ export class Forecast extends PolicyStatement {
    */
   public toDescribeExplainabilityExport() {
     return this.to('DescribeExplainabilityExport');
-  }
-
-  /**
-   * Grants permission to describe an explainability
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeExplainability.html
-   */
-  public toDescribeExplainablity() {
-    return this.to('DescribeExplainablity');
   }
 
   /**
@@ -605,8 +605,8 @@ export class Forecast extends PolicyStatement {
       'DescribeDataset',
       'DescribeDatasetGroup',
       'DescribeDatasetImportJob',
+      'DescribeExplainability',
       'DescribeExplainabilityExport',
-      'DescribeExplainablity',
       'DescribeForecast',
       'DescribeForecastExportJob',
       'DescribePredictor',

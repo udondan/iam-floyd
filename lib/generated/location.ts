@@ -107,6 +107,17 @@ export class Geo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to calculate a route matrix using a given route calculator resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/API_CalculateRouteMatrix.html
+   */
+  public toCalculateRouteMatrix() {
+    return this.to('CalculateRouteMatrix');
+  }
+
+  /**
    * Grants permission to create a geofence-collection
    *
    * Access Level: Write
@@ -314,7 +325,7 @@ export class Geo extends PolicyStatement {
   }
 
   /**
-   * Grant permission to retrieve the device position history
+   * Grants permission to retrieve the device position history
    *
    * Access Level: Read
    *
@@ -382,7 +393,7 @@ export class Geo extends PolicyStatement {
   /**
    * Grants permission to retrieve a list of devices and their latest positions from the given tracker resource
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/location/latest/developerguide/API_ListDevicePositions.html
    */
@@ -636,6 +647,7 @@ export class Geo extends PolicyStatement {
     Read: [
       'BatchGetDevicePosition',
       'CalculateRoute',
+      'CalculateRouteMatrix',
       'DescribeGeofenceCollection',
       'DescribeMap',
       'DescribePlaceIndex',
@@ -648,6 +660,7 @@ export class Geo extends PolicyStatement {
       'GetMapSprites',
       'GetMapStyleDescriptor',
       'GetMapTile',
+      'ListDevicePositions',
       'ListGeofences',
       'ListTagsForResource',
       'ListTrackerConsumers',
@@ -656,7 +669,6 @@ export class Geo extends PolicyStatement {
       'SearchPlaceIndexForText'
     ],
     List: [
-      'ListDevicePositions',
       'ListGeofenceCollections',
       'ListMaps',
       'ListPlaceIndexes',

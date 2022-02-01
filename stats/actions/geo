@@ -6,6 +6,7 @@ geo:BatchGetDevicePosition;Read
 geo:BatchPutGeofence;Write
 geo:BatchUpdateDevicePosition;Write
 geo:CalculateRoute;Read
+geo:CalculateRouteMatrix;Read
 geo:CreateGeofenceCollection;Write
 geo:CreateMap;Write
 geo:CreatePlaceIndex;Write
@@ -29,7 +30,7 @@ geo:GetMapGlyphs;Read
 geo:GetMapSprites;Read
 geo:GetMapStyleDescriptor;Read
 geo:GetMapTile;Read
-geo:ListDevicePositions;List
+geo:ListDevicePositions;Read
 geo:ListGeofenceCollections;List
 geo:ListGeofences;Read
 geo:ListMaps;List
