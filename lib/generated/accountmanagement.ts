@@ -23,6 +23,9 @@ export class Account extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAlternateContactTypes()
+   *
    * https://docs.aws.amazon.com/accounts/latest/reference/API_DeleteAlternateContact.html
    */
   public toDeleteAlternateContact() {
@@ -62,6 +65,9 @@ export class Account extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAlternateContactTypes()
+   *
    * https://docs.aws.amazon.com/accounts/latest/reference/API_GetAlternateContact.html
    */
   public toGetAlternateContact() {
@@ -83,6 +89,9 @@ export class Account extends PolicyStatement {
    * Grants permission to modify the alternate contacts for an account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAlternateContactTypes()
    *
    * https://docs.aws.amazon.com/accounts/latest/reference/API_PutAlternateContact.html
    */
@@ -160,6 +169,11 @@ export class Account extends PolicyStatement {
    * Filters access by alternate contact types
    *
    * https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toDeleteAlternateContact()
+   * - .toGetAlternateContact()
+   * - .toPutAlternateContact()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

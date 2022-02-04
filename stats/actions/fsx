@@ -30,6 +30,7 @@ fsx:DisassociateFileGateway;Write
 fsx:DisassociateFileSystemAliases;Write
 fsx:ListTagsForResource;Read
 fsx:ManageBackupPrincipalAssociations;Permissions management
+fsx:ReleaseFileSystemNfsV3Locks;Write
 fsx:RestoreVolumeFromSnapshot;Write
 fsx:TagResource;Tagging
 fsx:UntagResource;Tagging

@@ -183,6 +183,17 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove policy on resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to get the properties associated with a document classification job
    *
    * Access Level: Read
@@ -282,6 +293,17 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read attached policy on resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeResourcePolicy.html
+   */
+  public toDescribeResourcePolicy() {
+    return this.to('DescribeResourcePolicy');
+  }
+
+  /**
    * Grants permission to get the properties associated with a sentiment detection job
    *
    * Access Level: Read
@@ -367,6 +389,22 @@ export class Comprehend extends PolicyStatement {
    */
   public toDetectSyntax() {
     return this.to('DetectSyntax');
+  }
+
+  /**
+   * Grants permission to import a trained Comprehend model
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifModelKmsKey()
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ImportModel.html
+   */
+  public toImportModel() {
+    return this.to('ImportModel');
   }
 
   /**
@@ -521,6 +559,17 @@ export class Comprehend extends PolicyStatement {
    */
   public toListTopicsDetectionJobs() {
     return this.to('ListTopicsDetectionJobs');
+  }
+
+  /**
+   * Grants permission to attach policy to resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -815,6 +864,7 @@ export class Comprehend extends PolicyStatement {
       'DescribeEventsDetectionJob',
       'DescribeKeyPhrasesDetectionJob',
       'DescribePiiEntitiesDetectionJob',
+      'DescribeResourcePolicy',
       'DescribeSentimentDetectionJob',
       'DescribeTopicsDetectionJob',
       'DetectDominantLanguage',
@@ -845,6 +895,9 @@ export class Comprehend extends PolicyStatement {
       'DeleteDocumentClassifier',
       'DeleteEndpoint',
       'DeleteEntityRecognizer',
+      'DeleteResourcePolicy',
+      'ImportModel',
+      'PutResourcePolicy',
       'StartDocumentClassificationJob',
       'StartDominantLanguageDetectionJob',
       'StartEntitiesDetectionJob',
@@ -1057,6 +1110,7 @@ export class Comprehend extends PolicyStatement {
    * Applies to actions:
    * - .toCreateDocumentClassifier()
    * - .toCreateEntityRecognizer()
+   * - .toImportModel()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`

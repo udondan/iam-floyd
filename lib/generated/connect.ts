@@ -73,6 +73,18 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to default vocabulary for an existing Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   */
+  public toAssociateDefaultVocabulary() {
+    return this.to('AssociateDefaultVocabulary');
+  }
+
+  /**
    * Grants permission to associate instance storage for an existing Amazon Connect instance
    *
    * Access Level: Write
@@ -416,6 +428,22 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a vocabulary in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateVocabulary.html
+   */
+  public toCreateVocabulary() {
+    return this.to('CreateVocabulary');
+  }
+
+  /**
    * Grants permission to delete a contact flow in an Amazon Connect instance
    *
    * Access Level: Write
@@ -577,6 +605,21 @@ export class Connect extends PolicyStatement {
    */
   public toDeleteUserHierarchyGroup() {
     return this.to('DeleteUserHierarchyGroup');
+  }
+
+  /**
+   * Grants permission to delete a vocabulary in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteVocabulary.html
+   */
+  public toDeleteVocabulary() {
+    return this.to('DeleteVocabulary');
   }
 
   /**
@@ -802,6 +845,21 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeUserHierarchyStructure() {
     return this.to('DescribeUserHierarchyStructure');
+  }
+
+  /**
+   * Grants permission to describe a vocabulary in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeVocabulary.html
+   */
+  public toDescribeVocabulary() {
+    return this.to('DescribeVocabulary');
   }
 
   /**
@@ -1098,6 +1156,20 @@ export class Connect extends PolicyStatement {
    */
   public toListContactReferences() {
     return this.to('ListContactReferences');
+  }
+
+  /**
+   * Grants permission to list default vocabularies associated with a Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListDefaultVocabularies.html
+   */
+  public toListDefaultVocabularies() {
+    return this.to('ListDefaultVocabularies');
   }
 
   /**
@@ -1416,6 +1488,20 @@ export class Connect extends PolicyStatement {
    */
   public toResumeContactRecording() {
     return this.to('ResumeContactRecording');
+  }
+
+  /**
+   * Grants permission to search vocabularies in a Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchVocabularies.html
+   */
+  public toSearchVocabularies() {
+    return this.to('SearchVocabularies');
   }
 
   /**
@@ -2015,6 +2101,7 @@ export class Connect extends PolicyStatement {
       'AssociateApprovedOrigin',
       'AssociateBot',
       'AssociateCustomerProfilesDomain',
+      'AssociateDefaultVocabulary',
       'AssociateInstanceStorageConfig',
       'AssociateLambdaFunction',
       'AssociateLexBot',
@@ -2034,6 +2121,7 @@ export class Connect extends PolicyStatement {
       'CreateUseCase',
       'CreateUser',
       'CreateUserHierarchyGroup',
+      'CreateVocabulary',
       'DeleteContactFlow',
       'DeleteContactFlowModule',
       'DeleteHoursOfOperation',
@@ -2044,6 +2132,7 @@ export class Connect extends PolicyStatement {
       'DeleteUseCase',
       'DeleteUser',
       'DeleteUserHierarchyGroup',
+      'DeleteVocabulary',
       'DisassociateApprovedOrigin',
       'DisassociateBot',
       'DisassociateCustomerProfilesDomain',
@@ -2110,6 +2199,7 @@ export class Connect extends PolicyStatement {
       'DescribeUser',
       'DescribeUserHierarchyGroup',
       'DescribeUserHierarchyStructure',
+      'DescribeVocabulary',
       'GetContactAttributes',
       'GetCurrentMetricData',
       'GetFederationToken',
@@ -2124,6 +2214,7 @@ export class Connect extends PolicyStatement {
       'ListContactFlowModules',
       'ListContactFlows',
       'ListContactReferences',
+      'ListDefaultVocabularies',
       'ListHoursOfOperations',
       'ListInstanceAttributes',
       'ListInstanceStorageConfigs',
@@ -2143,7 +2234,8 @@ export class Connect extends PolicyStatement {
       'ListSecurityProfiles',
       'ListUseCases',
       'ListUserHierarchyGroups',
-      'ListUsers'
+      'ListUsers',
+      'SearchVocabularies'
     ],
     Tagging: [
       'TagResource',
@@ -2490,6 +2582,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type vocabulary to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/API_Vocabulary.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param vocabularyId - Identifier for the vocabularyId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVocabulary(instanceId: string, vocabularyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:connect:${ region || '*' }:${ account || '*' }:instance/${ instanceId }/vocabulary/${ vocabularyId }`);
+  }
+
+  /**
    * Filters access by the attribute type of the Amazon Connect instance
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
@@ -2513,6 +2623,7 @@ export class Connect extends PolicyStatement {
    * Applies to actions:
    * - .toAssociateApprovedOrigin()
    * - .toAssociateBot()
+   * - .toAssociateDefaultVocabulary()
    * - .toAssociateInstanceStorageConfig()
    * - .toAssociateLambdaFunction()
    * - .toAssociateLexBot()
@@ -2531,6 +2642,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateUseCase()
    * - .toCreateUser()
    * - .toCreateUserHierarchyGroup()
+   * - .toCreateVocabulary()
    * - .toDeleteContactFlow()
    * - .toDeleteContactFlowModule()
    * - .toDeleteHoursOfOperation()
@@ -2541,6 +2653,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteUseCase()
    * - .toDeleteUser()
    * - .toDeleteUserHierarchyGroup()
+   * - .toDeleteVocabulary()
    * - .toDescribeAgentStatus()
    * - .toDescribeContact()
    * - .toDescribeContactFlow()
@@ -2556,6 +2669,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeUser()
    * - .toDescribeUserHierarchyGroup()
    * - .toDescribeUserHierarchyStructure()
+   * - .toDescribeVocabulary()
    * - .toDisassociateApprovedOrigin()
    * - .toDisassociateBot()
    * - .toDisassociateInstanceStorageConfig()
@@ -2571,6 +2685,7 @@ export class Connect extends PolicyStatement {
    * - .toListApprovedOrigins()
    * - .toListBots()
    * - .toListContactReferences()
+   * - .toListDefaultVocabularies()
    * - .toListHoursOfOperations()
    * - .toListInstanceAttributes()
    * - .toListInstanceStorageConfigs()
@@ -2587,6 +2702,7 @@ export class Connect extends PolicyStatement {
    * - .toListUseCases()
    * - .toListUserHierarchyGroups()
    * - .toListUsers()
+   * - .toSearchVocabularies()
    * - .toStartTaskContact()
    * - .toStopContact()
    * - .toUpdateAgentStatus()

@@ -13,6 +13,7 @@ connect:routing-profile
 connect:security-profile
 connect:use-case
 connect:user
+connect:vocabulary
 connect:wildcard-agent-status
 connect:wildcard-contact-flow
 connect:wildcard-phone-number

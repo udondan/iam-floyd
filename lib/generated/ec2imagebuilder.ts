@@ -412,6 +412,25 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to import an image
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:DescribeImportImageTasks
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ImportVmImage.html
+   */
+  public toImportVmImage() {
+    return this.to('ImportVmImage');
+  }
+
+  /**
    * Grants permission to list the component build versions in your account
    *
    * Access Level: List
@@ -699,6 +718,7 @@ export class Imagebuilder extends PolicyStatement {
       'DeleteImageRecipe',
       'DeleteInfrastructureConfiguration',
       'ImportComponent',
+      'ImportVmImage',
       'StartImagePipelineExecution',
       'UpdateDistributionConfiguration',
       'UpdateImagePipeline',

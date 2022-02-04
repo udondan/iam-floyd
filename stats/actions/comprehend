@@ -11,6 +11,7 @@ comprehend:CreateEntityRecognizer;Write
 comprehend:DeleteDocumentClassifier;Write
 comprehend:DeleteEndpoint;Write
 comprehend:DeleteEntityRecognizer;Write
+comprehend:DeleteResourcePolicy;Write
 comprehend:DescribeDocumentClassificationJob;Read
 comprehend:DescribeDocumentClassifier;Read
 comprehend:DescribeDominantLanguageDetectionJob;Read
@@ -20,6 +21,7 @@ comprehend:DescribeEntityRecognizer;Read
 comprehend:DescribeEventsDetectionJob;Read
 comprehend:DescribeKeyPhrasesDetectionJob;Read
 comprehend:DescribePiiEntitiesDetectionJob;Read
+comprehend:DescribeResourcePolicy;Read
 comprehend:DescribeSentimentDetectionJob;Read
 comprehend:DescribeTopicsDetectionJob;Read
 comprehend:DetectDominantLanguage;Read
@@ -28,6 +30,7 @@ comprehend:DetectKeyPhrases;Read
 comprehend:DetectPiiEntities;Read
 comprehend:DetectSentiment;Read
 comprehend:DetectSyntax;Read
+comprehend:ImportModel;Write
 comprehend:ListDocumentClassificationJobs;Read
 comprehend:ListDocumentClassifierSummaries;Read
 comprehend:ListDocumentClassifiers;Read
@@ -42,6 +45,7 @@ comprehend:ListPiiEntitiesDetectionJobs;Read
 comprehend:ListSentimentDetectionJobs;Read
 comprehend:ListTagsForResource;Read
 comprehend:ListTopicsDetectionJobs;Read
+comprehend:PutResourcePolicy;Write
 comprehend:StartDocumentClassificationJob;Write
 comprehend:StartDominantLanguageDetectionJob;Write
 comprehend:StartEntitiesDetectionJob;Write

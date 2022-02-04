@@ -457,6 +457,17 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to release file system NFS V3 locks
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_ReleaseFileSystemNfsV3Locks.html
+   */
+  public toReleaseFileSystemNfsV3Locks() {
+    return this.to('ReleaseFileSystemNfsV3Locks');
+  }
+
+  /**
    * Grants permission to restore volume state from a snapshot
    *
    * Access Level: Write
@@ -578,6 +589,7 @@ export class Fsx extends PolicyStatement {
       'DeleteVolume',
       'DisassociateFileGateway',
       'DisassociateFileSystemAliases',
+      'ReleaseFileSystemNfsV3Locks',
       'RestoreVolumeFromSnapshot',
       'UpdateDataRepositoryAssociation',
       'UpdateFileSystem',

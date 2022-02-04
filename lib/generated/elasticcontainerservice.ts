@@ -618,6 +618,7 @@ export class Ecs extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UntagResource.html
    */
@@ -820,6 +821,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_instances.html
    *
+   * @param clusterName - Identifier for the clusterName.
    * @param containerInstanceId - Identifier for the containerInstanceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -829,8 +831,8 @@ export class Ecs extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onContainerInstance(containerInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:container-instance/${ containerInstanceId }`);
+  public onContainerInstance(clusterName: string, containerInstanceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:container-instance/${ clusterName }/${ containerInstanceId }`);
   }
 
   /**
@@ -838,6 +840,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html
    *
+   * @param clusterName - Identifier for the clusterName.
    * @param serviceName - Identifier for the serviceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -847,8 +850,8 @@ export class Ecs extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onService(serviceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:service/${ serviceName }`);
+  public onService(clusterName: string, serviceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:service/${ clusterName }/${ serviceName }`);
   }
 
   /**
@@ -856,6 +859,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html
    *
+   * @param clusterName - Identifier for the clusterName.
    * @param taskId - Identifier for the taskId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -865,8 +869,8 @@ export class Ecs extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onTask(taskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:task/${ taskId }`);
+  public onTask(clusterName: string, taskId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:ecs:${ region || '*' }:${ account || '*' }:task/${ clusterName }/${ taskId }`);
   }
 
   /**
@@ -927,9 +931,9 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Filters access based on tag key-value pairs attached to the resource
+   * Filters access by the tag key-value pairs attached to the resource
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
    *
    * Applies to resource types:
    * - cluster
@@ -949,9 +953,9 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the ARN of an Amazon ECS capacity provider
+   * Filters access by the ARN of an Amazon ECS capacity provider
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
    * - .toCreateCluster()
@@ -969,9 +973,9 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the ARN of an Amazon ECS cluster
+   * Filters access by the ARN of an Amazon ECS cluster
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
    * - .toCreateService()
@@ -1006,9 +1010,9 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the ARN of an Amazon ECS container instance
+   * Filters access by the ARN of an Amazon ECS container instance
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
    * - .toStartTask()
@@ -1021,9 +1025,9 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the name of an Amazon ECS container which is defined in the ECS task definition
+   * Filters access by the name of an Amazon ECS container which is defined in the ECS task definition
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
    * - .toExecuteCommand()
@@ -1036,9 +1040,9 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Filters access based on execute-command capability of your Amazon ECS task or Amazon ECS service
+   * Filters access by the execute-command capability of your Amazon ECS task or Amazon ECS service
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
    * - .toCreateService()
@@ -1054,9 +1058,9 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the ARN of an Amazon ECS service
+   * Filters access by the ARN of an Amazon ECS service
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
    * - .toCreateTaskSet()
@@ -1072,9 +1076,9 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the ARN of an Amazon ECS task
+   * Filters access by the ARN of an Amazon ECS task
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
    * - .toExecuteCommand()
@@ -1087,9 +1091,9 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the ARN of an Amazon ECS task definition
+   * Filters access by the ARN of an Amazon ECS task definition
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
    * - .toCreateService()
