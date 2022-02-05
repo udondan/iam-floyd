@@ -3,6 +3,7 @@ fis:DeleteExperimentTemplate;Write
 fis:GetAction;Read
 fis:GetExperiment;Read
 fis:GetExperimentTemplate;Read
+fis:GetTargetResourceType;Read
 fis:InjectApiInternalError;Write
 fis:InjectApiThrottleError;Write
 fis:InjectApiUnavailableError;Write
@@ -10,6 +11,7 @@ fis:ListActions;List
 fis:ListExperimentTemplates;List
 fis:ListExperiments;List
 fis:ListTagsForResource;Read
+fis:ListTargetResourceTypes;List
 fis:StartExperiment;Write
 fis:StopExperiment;Write
 fis:TagResource;Tagging

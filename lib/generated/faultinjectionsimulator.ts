@@ -87,6 +87,17 @@ export class Fis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about the specified resource type
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fis/latest/APIReference/API_GetTargetResourceType.html
+   */
+  public toGetTargetResourceType() {
+    return this.to('GetTargetResourceType');
+  }
+
+  /**
    * Grants permission to inject an API internal error on the provided AWS service from an FIS Experiment
    *
    * Access Level: Write
@@ -171,7 +182,7 @@ export class Fis extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags for an AWS FIS resource.
+   * Grants permission to list the tags for an AWS FIS resource
    *
    * Access Level: Read
    *
@@ -179,6 +190,17 @@ export class Fis extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list the resource types
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/fis/latest/APIReference/API_ListTargetResourceTypes.html
+   */
+  public toListTargetResourceTypes() {
+    return this.to('ListTargetResourceTypes');
   }
 
   /**
@@ -270,12 +292,14 @@ export class Fis extends PolicyStatement {
       'GetAction',
       'GetExperiment',
       'GetExperimentTemplate',
+      'GetTargetResourceType',
       'ListTagsForResource'
     ],
     List: [
       'ListActions',
       'ListExperimentTemplates',
-      'ListExperiments'
+      'ListExperiments',
+      'ListTargetResourceTypes'
     ],
     Tagging: [
       'TagResource',
