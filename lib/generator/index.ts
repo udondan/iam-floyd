@@ -516,6 +516,9 @@ export function createModule(module: Module): Promise<void> {
     if (name.length > 1 && !name[1].length) {
       // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
       methodName += 'Exists';
+    } else if (name.length == 1 && name[0] == 'Attribute') {
+      // special case for ec2:Attribute
+      methodName += 'Exists';
     }
     const method = classDeclaration.addMethod({
       name: methodName,
