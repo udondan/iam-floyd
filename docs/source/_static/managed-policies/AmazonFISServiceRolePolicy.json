@@ -54,6 +54,8 @@
 				"rds:DescribeDBClusters",
 				"rds:DescribeDBInstances",
 				"ecs:DescribeClusters",
+				"ecs:DescribeTasks",
+				"ecs:ListTasks",
 				"eks:DescribeNodegroup"
 			],
 			"Resource": "*"
