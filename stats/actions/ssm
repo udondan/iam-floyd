@@ -103,7 +103,7 @@ ssm:ListOpsMetadata;List
 ssm:ListResourceComplianceSummaries;List
 ssm:ListResourceDataSync;List
 ssm:ListTagsForResource;Read
-ssm:ModifyDocumentPermission;Write
+ssm:ModifyDocumentPermission;Permissions management
 ssm:PutComplianceItems;Write
 ssm:PutConfigurePackageResult;Read
 ssm:PutInventory;Write

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { PolicyStatement, Operator } from '../shared';
 
 /**
  * Statement provider for service [synthetics](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchsynthetics.html).
@@ -23,6 +23,10 @@ export class Synthetics extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CreateCanary.html
    */
   public toCreateCanary() {
@@ -45,6 +49,9 @@ export class Synthetics extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifNames()
+   *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html
    */
   public toDescribeCanaries() {
@@ -55,6 +62,9 @@ export class Synthetics extends PolicyStatement {
    * Grants permission to list information about the last test run associated with all canaries
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifNames()
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanariesLastRun.html
    */
@@ -198,5 +208,21 @@ export class Synthetics extends PolicyStatement {
    */
   public onCanary(canaryName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:synthetics:${ region || '*' }:${ account || '*' }:canary:${ canaryName }`);
+  }
+
+  /**
+   * Filters access based on the name of the canary
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html
+   *
+   * Applies to actions:
+   * - .toDescribeCanaries()
+   * - .toDescribeCanariesLastRun()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifNames(value: string | string[], operator?: Operator | string) {
+    return this.if(`Names`, value, operator || 'StringLike');
   }
 }

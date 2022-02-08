@@ -1,6 +1,9 @@
 ec2:AccepterVpc
+ec2:Add/group
+ec2:Add/userId
 ec2:AllocationId
 ec2:AssociatePublicIpAddress
+ec2:Attribute
 ec2:Attribute/${AttributeName}
 ec2:AuthenticationType
 ec2:AuthorizedService
@@ -23,7 +26,10 @@ ec2:HostRecovery
 ec2:IKEVersions
 ec2:ImageType
 ec2:InsideTunnelCidr
+ec2:InsideTunnelIpv6Cidr
+ec2:InstanceAutoRecovery
 ec2:InstanceMarketType
+ec2:InstanceMetadataTags
 ec2:InstanceProfile
 ec2:InstanceType
 ec2:Ipv4IpamPoolId
@@ -60,6 +66,9 @@ ec2:Quantity
 ec2:Region
 ec2:RekeyFuzzPercentage
 ec2:RekeyMarginTimeSeconds
+ec2:Remove/group
+ec2:Remove/userId
+ec2:ReplayWindowSizePackets
 ec2:RequestTag/${TagKey}
 ec2:RequesterVpc
 ec2:ReservedInstancesOfferingType

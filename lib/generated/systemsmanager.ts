@@ -1209,7 +1209,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Grants permission to share a custom SSM document publicly or privately with specified AWS accounts
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ModifyDocumentPermission.html
    */
@@ -1663,7 +1663,6 @@ export class Ssm extends PolicyStatement {
       'DeregisterTaskFromMaintenanceWindow',
       'DisassociateOpsItemRelatedItem',
       'LabelParameterVersion',
-      'ModifyDocumentPermission',
       'PutComplianceItems',
       'PutInventory',
       'PutParameter',
@@ -1779,6 +1778,9 @@ export class Ssm extends PolicyStatement {
       'ListOpsMetadata',
       'ListResourceComplianceSummaries',
       'ListResourceDataSync'
+    ],
+    'Permissions management': [
+      'ModifyDocumentPermission'
     ]
   };
 

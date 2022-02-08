@@ -621,6 +621,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to allow a service to access a customer owned IP (CoIP) pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
+   */
+  public toCreateCoipPoolPermission() {
+    return this.to('CreateCoipPoolPermission');
+  }
+
+  /**
    * Grants permission to create a customer gateway, which provides information to AWS about your customer gateway device
    *
    * Access Level: Write
@@ -873,6 +884,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateLocalGatewayRoute() {
     return this.to('CreateLocalGatewayRoute');
+  }
+
+  /**
+   * Grants permission to allow a service to access a local gateway route table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
+   */
+  public toCreateLocalGatewayRouteTablePermission() {
+    return this.to('CreateLocalGatewayRouteTablePermission');
   }
 
   /**
@@ -1518,6 +1540,17 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deny a service from accessing a customer owned IP (CoIP) pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
+   */
+  public toDeleteCoipPoolPermission() {
+    return this.to('DeleteCoipPoolPermission');
+  }
+
+  /**
    * Grants permission to delete a customer gateway
    *
    * Access Level: Write
@@ -1680,6 +1713,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toDeleteLocalGatewayRoute() {
     return this.to('DeleteLocalGatewayRoute');
+  }
+
+  /**
+   * Grants permission to deny a service from accessing a local gateway route table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
+   */
+  public toDeleteLocalGatewayRouteTablePermission() {
+    return this.to('DeleteLocalGatewayRouteTablePermission');
   }
 
   /**
@@ -2879,6 +2923,17 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeLaunchTemplates() {
     return this.to('DescribeLaunchTemplates');
+  }
+
+  /**
+   * Grants permission to allow a service to describe a local gateway route table
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
+   */
+  public toDescribeLocalGatewayRouteTablePermissions() {
+    return this.to('DescribeLocalGatewayRouteTablePermissions');
   }
 
   /**
@@ -6009,6 +6064,7 @@ export class Ec2 extends PolicyStatement {
       'CreateCarrierGateway',
       'CreateClientVpnEndpoint',
       'CreateClientVpnRoute',
+      'CreateCoipPoolPermission',
       'CreateCustomerGateway',
       'CreateDefaultSubnet',
       'CreateDefaultVpc',
@@ -6028,6 +6084,7 @@ export class Ec2 extends PolicyStatement {
       'CreateLaunchTemplate',
       'CreateLaunchTemplateVersion',
       'CreateLocalGatewayRoute',
+      'CreateLocalGatewayRouteTablePermission',
       'CreateLocalGatewayRouteTableVpcAssociation',
       'CreateManagedPrefixList',
       'CreateNatGateway',
@@ -6075,6 +6132,7 @@ export class Ec2 extends PolicyStatement {
       'DeleteCarrierGateway',
       'DeleteClientVpnEndpoint',
       'DeleteClientVpnRoute',
+      'DeleteCoipPoolPermission',
       'DeleteCustomerGateway',
       'DeleteDhcpOptions',
       'DeleteEgressOnlyInternetGateway',
@@ -6090,6 +6148,7 @@ export class Ec2 extends PolicyStatement {
       'DeleteLaunchTemplate',
       'DeleteLaunchTemplateVersions',
       'DeleteLocalGatewayRoute',
+      'DeleteLocalGatewayRouteTablePermission',
       'DeleteLocalGatewayRouteTableVpcAssociation',
       'DeleteManagedPrefixList',
       'DeleteNatGateway',
@@ -6365,6 +6424,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeKeyPairs',
       'DescribeLaunchTemplateVersions',
       'DescribeLaunchTemplates',
+      'DescribeLocalGatewayRouteTablePermissions',
       'DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations',
       'DescribeLocalGatewayRouteTableVpcAssociations',
       'DescribeLocalGatewayRouteTables',
@@ -6504,6 +6564,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAllocationId()
    * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifDomain()
    * - .ifPublicIpAddress()
    * - .ifRegion()
@@ -6528,6 +6589,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -6549,6 +6611,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
    * - .ifAttribute()
    * - .ifCapacityReservationFleet()
    * - .ifIsLaunchTemplateResource()
@@ -6612,6 +6675,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifClientRootCertificateChainArn()
    * - .ifCloudwatchLogGroupArn()
    * - .ifCloudwatchLogStreamArn()
@@ -6660,6 +6724,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
    * - .ifAttribute()
    * - .ifAutoPlacement()
    * - .ifAvailabilityZone()
@@ -6812,6 +6877,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -6832,6 +6898,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
    * - .ifAttribute()
    * - .ifOwner()
    * - .ifPublic()
@@ -6876,6 +6943,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
    * - .ifAttribute()
    * - .ifImageType()
    * - .ifIsLaunchTemplateResource()
@@ -6968,9 +7036,12 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifAvailabilityZone()
    * - .ifEbsOptimized()
+   * - .ifInstanceAutoRecovery()
    * - .ifInstanceMarketType()
+   * - .ifInstanceMetadataTags()
    * - .ifInstanceProfile()
    * - .ifInstanceType()
    * - .ifIsLaunchTemplateResource()
@@ -7022,6 +7093,8 @@ export class Ec2 extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -7041,6 +7114,8 @@ export class Ec2 extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -7060,6 +7135,8 @@ export class Ec2 extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -7148,6 +7225,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
    * - .ifAttribute()
    * - .ifIsLaunchTemplateResource()
    * - .ifLaunchTemplate()
@@ -7425,6 +7503,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAssociatePublicIpAddress()
    * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifAuthorizedService()
    * - .ifAuthorizedUser()
    * - .ifAvailabilityZone()
@@ -7479,6 +7558,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -7521,6 +7601,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
    * - .ifAttribute()
    * - .ifAvailabilityZone()
    * - .ifInstanceType()
@@ -7582,6 +7663,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifIsLaunchTemplateResource()
    * - .ifLaunchTemplate()
    * - .ifRegion()
@@ -7626,6 +7709,9 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAddGroup()
+   * - .ifAddUserId()
+   * - .ifAttribute()
    * - .ifAttribute()
    * - .ifAvailabilityZone()
    * - .ifEncrypted()
@@ -7635,6 +7721,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifOwner()
    * - .ifParentVolume()
    * - .ifRegion()
+   * - .ifRemoveGroup()
+   * - .ifRemoveUserId()
    * - .ifResourceTag()
    * - .ifSnapshotTime()
    * - .ifSourceOutpostArn()
@@ -7658,6 +7746,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
    * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -7702,6 +7791,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifAvailabilityZone()
    * - .ifIsLaunchTemplateResource()
    * - .ifLaunchTemplate()
@@ -7728,6 +7818,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -7746,6 +7837,7 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
+   * - .ifAttribute()
    * - .ifAttribute()
    * - .ifRegion()
    */
@@ -7767,6 +7859,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
    * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -7811,6 +7904,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -7853,6 +7947,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
    * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -7897,6 +7992,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -7918,6 +8014,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
    * - .ifAttribute()
    * - .ifAvailabilityZone()
    * - .ifEncrypted()
@@ -7951,6 +8048,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
    * - .ifVpceServiceName()
@@ -7974,6 +8072,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAttribute()
    * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -8019,6 +8118,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifIpv4IpamPoolId()
    * - .ifIpv6IpamPoolId()
    * - .ifRegion()
@@ -8044,6 +8144,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAccepterVpc()
+   * - .ifAttribute()
    * - .ifAttribute()
    * - .ifRegion()
    * - .ifRequesterVpc()
@@ -8089,11 +8190,13 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAttribute()
+   * - .ifAttribute()
    * - .ifAuthenticationType()
    * - .ifDPDTimeoutSeconds()
    * - .ifGatewayType()
    * - .ifIKEVersions()
    * - .ifInsideTunnelCidr()
+   * - .ifInsideTunnelIpv6Cidr()
    * - .ifPhase1DHGroup()
    * - .ifPhase1EncryptionAlgorithms()
    * - .ifPhase1IntegrityAlgorithms()
@@ -8106,6 +8209,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifRekeyFuzzPercentage()
    * - .ifRekeyMarginTimeSeconds()
+   * - .ifReplayWindowSizePackets()
    * - .ifResourceTag()
    * - .ifRoutingType()
    */
@@ -8160,6 +8264,42 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by the group being added to a snapshot
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toModifySnapshotAttribute()
+   *
+   * Applies to resource types:
+   * - snapshot
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAddGroup(value: string | string[], operator?: Operator | string) {
+    return this.if(`Add/group`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the account id being added to a snapshot
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toModifySnapshotAttribute()
+   *
+   * Applies to resource types:
+   * - snapshot
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAddUserId(value: string | string[], operator?: Operator | string) {
+    return this.if(`Add/userId`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the allocation ID of the Elastic IP address
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
@@ -8210,12 +8350,11 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access by an attribute being set on a resource
+   * Filters access by an attribute of a resource
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
-   * - .toDescribeFpgaImageAttribute()
    * - .toModifyAddressAttribute()
    * - .toModifyCapacityReservation()
    * - .toModifyCapacityReservationFleet()
@@ -8227,14 +8366,18 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
-   * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
+   * - .toModifyIpam()
+   * - .toModifyIpamPool()
+   * - .toModifyIpamResourceCidr()
+   * - .toModifyIpamScope()
    * - .toModifyLaunchTemplate()
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toModifyReservedInstances()
+   * - .toModifySecurityGroupRules()
    * - .toModifySnapshotAttribute()
    * - .toModifySnapshotTier()
    * - .toModifySpotFleetRequest()
@@ -8274,10 +8417,115 @@ export class Ec2 extends PolicyStatement {
    * - fpga-image
    * - image
    * - instance
+   * - ipam
+   * - ipam-pool
+   * - ipam-scope
    * - launch-template
    * - network-interface
    * - prefix-list
    * - reserved-instances
+   * - security-group
+   * - snapshot
+   * - spot-fleet-request
+   * - subnet
+   * - traffic-mirror-filter
+   * - traffic-mirror-filter-rule
+   * - traffic-mirror-session
+   * - transit-gateway-attachment
+   * - transit-gateway
+   * - transit-gateway-route-table
+   * - volume
+   * - vpc-endpoint
+   * - vpc-endpoint-service
+   * - vpc
+   * - vpc-peering-connection
+   * - vpn-connection
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAttributeExists(value: string | string[], operator?: Operator | string) {
+    return this.if(`Attribute`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by an attribute being set on a resource
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toDescribeFpgaImageAttribute()
+   * - .toModifyAddressAttribute()
+   * - .toModifyCapacityReservation()
+   * - .toModifyCapacityReservationFleet()
+   * - .toModifyClientVpnEndpoint()
+   * - .toModifyFleet()
+   * - .toModifyFpgaImageAttribute()
+   * - .toModifyHosts()
+   * - .toModifyImageAttribute()
+   * - .toModifyInstanceAttribute()
+   * - .toModifyInstanceCapacityReservationAttributes()
+   * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceEventStartTime()
+   * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstancePlacement()
+   * - .toModifyIpam()
+   * - .toModifyIpamPool()
+   * - .toModifyIpamResourceCidr()
+   * - .toModifyIpamScope()
+   * - .toModifyLaunchTemplate()
+   * - .toModifyManagedPrefixList()
+   * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
+   * - .toModifyReservedInstances()
+   * - .toModifySecurityGroupRules()
+   * - .toModifySnapshotAttribute()
+   * - .toModifySnapshotTier()
+   * - .toModifySpotFleetRequest()
+   * - .toModifySubnetAttribute()
+   * - .toModifyTrafficMirrorFilterNetworkServices()
+   * - .toModifyTrafficMirrorFilterRule()
+   * - .toModifyTrafficMirrorSession()
+   * - .toModifyTransitGateway()
+   * - .toModifyTransitGatewayPrefixListReference()
+   * - .toModifyTransitGatewayVpcAttachment()
+   * - .toModifyVolume()
+   * - .toModifyVolumeAttribute()
+   * - .toModifyVpcAttribute()
+   * - .toModifyVpcEndpoint()
+   * - .toModifyVpcEndpointConnectionNotification()
+   * - .toModifyVpcEndpointServiceConfiguration()
+   * - .toModifyVpcEndpointServicePayerResponsibility()
+   * - .toModifyVpcEndpointServicePermissions()
+   * - .toModifyVpcPeeringConnectionOptions()
+   * - .toModifyVpcTenancy()
+   * - .toModifyVpnConnection()
+   * - .toModifyVpnConnectionOptions()
+   * - .toModifyVpnTunnelCertificate()
+   * - .toModifyVpnTunnelOptions()
+   * - .toResetAddressAttribute()
+   * - .toResetFpgaImageAttribute()
+   * - .toResetImageAttribute()
+   * - .toResetSnapshotAttribute()
+   *
+   * Applies to resource types:
+   * - elastic-ip
+   * - capacity-reservation-fleet
+   * - capacity-reservation
+   * - client-vpn-endpoint
+   * - dedicated-host
+   * - fleet
+   * - fpga-image
+   * - image
+   * - instance
+   * - ipam
+   * - ipam-pool
+   * - ipam-scope
+   * - launch-template
+   * - network-interface
+   * - prefix-list
+   * - reserved-instances
+   * - security-group
    * - snapshot
    * - spot-fleet-request
    * - subnet
@@ -8310,7 +8558,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -8428,6 +8675,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeregisterTransitGatewayMulticastGroupMembers()
    * - .toDeregisterTransitGatewayMulticastGroupSources()
    * - .toDescribeInstanceAttribute()
+   * - .toDescribeSnapshotAttribute()
+   * - .toDescribeVolumeAttribute()
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
@@ -8440,6 +8689,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableFastSnapshotRestores()
    * - .toEnableVolumeIO()
    * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toImportInstance()
@@ -8508,6 +8758,8 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCancelCapacityReservation()
    * - .toCreateCapacityReservation()
+   * - .toGetCapacityReservationUsage()
+   * - .toGetGroupsForCapacityReservation()
    * - .toModifyCapacityReservation()
    *
    * Applies to resource types:
@@ -8654,7 +8906,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -8754,9 +9005,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
-   * - .toImportInstance()
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
@@ -8817,6 +9068,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toCreateVolume()
    * - .toDeleteVolume()
+   * - .toDescribeSnapshotAttribute()
+   * - .toDescribeVolumeAttribute()
    * - .toDetachVolume()
    * - .toDisableFastSnapshotRestores()
    * - .toEnableFastSnapshotRestores()
@@ -8850,7 +9103,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -8891,7 +9143,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -8950,7 +9201,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -8962,6 +9212,72 @@ export class Ec2 extends PolicyStatement {
    */
   public ifInsideTunnelCidr(value: string | string[], operator?: Operator | string) {
     return this.if(`InsideTunnelCidr`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a range of inside IPv6 addresses for a VPN tunnel
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * Applies to actions:
+   * - .toCreateTags()
+   * - .toCreateVpnConnection()
+   * - .toModifyVpnConnection()
+   * - .toModifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInsideTunnelIpv6Cidr(value: string | string[], operator?: Operator | string) {
+    return this.if(`InsideTunnelIpv6Cidr`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by whether the instance type supports auto recovery
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toAssociateAddress()
+   * - .toAssociateIamInstanceProfile()
+   * - .toAttachNetworkInterface()
+   * - .toCreateImage()
+   * - .toCreateInstanceExportTask()
+   * - .toCreateReplaceRootVolumeTask()
+   * - .toCreateTags()
+   * - .toDescribeInstanceAttribute()
+   * - .toDetachNetworkInterface()
+   * - .toDisassociateIamInstanceProfile()
+   * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
+   * - .toGetLaunchTemplateData()
+   * - .toGetPasswordData()
+   * - .toModifyInstanceAttribute()
+   * - .toModifyInstanceCapacityReservationAttributes()
+   * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstancePlacement()
+   * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
+   * - .toMonitorInstances()
+   * - .toRebootInstances()
+   * - .toReplaceIamInstanceProfileAssociation()
+   * - .toRunInstances()
+   * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
+   * - .toUnmonitorInstances()
+   *
+   * Applies to resource types:
+   * - instance
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInstanceAutoRecovery(value: string | string[], operator?: Operator | string) {
+    return this.if(`InstanceAutoRecovery`, value, operator || 'StringLike');
   }
 
   /**
@@ -8985,6 +9301,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -9018,6 +9335,51 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by whether the instance allows access to instance tags from the instance metadata
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toAssociateAddress()
+   * - .toAssociateIamInstanceProfile()
+   * - .toAttachNetworkInterface()
+   * - .toCreateImage()
+   * - .toCreateInstanceExportTask()
+   * - .toCreateReplaceRootVolumeTask()
+   * - .toCreateTags()
+   * - .toDescribeInstanceAttribute()
+   * - .toDetachNetworkInterface()
+   * - .toDisassociateIamInstanceProfile()
+   * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
+   * - .toGetLaunchTemplateData()
+   * - .toGetPasswordData()
+   * - .toModifyInstanceAttribute()
+   * - .toModifyInstanceCapacityReservationAttributes()
+   * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstancePlacement()
+   * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
+   * - .toMonitorInstances()
+   * - .toRebootInstances()
+   * - .toReplaceIamInstanceProfileAssociation()
+   * - .toRunInstances()
+   * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
+   * - .toUnmonitorInstances()
+   *
+   * Applies to resource types:
+   * - instance
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInstanceMetadataTags(value: string | string[], operator?: Operator | string) {
+    return this.if(`InstanceMetadataTags`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the ARN of an instance profile
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
@@ -9041,9 +9403,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
-   * - .toImportInstance()
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
@@ -9099,9 +9461,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
-   * - .toImportInstance()
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
@@ -9255,6 +9617,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateVolume()
+   * - .toDescribeVolumeAttribute()
    *
    * Applies to resource types:
    * - volume
@@ -9317,6 +9680,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -9368,6 +9732,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -9419,6 +9784,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toModifyInstanceAttribute()
@@ -9456,6 +9822,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateIamInstanceProfile()
+   * - .toGetConsoleScreenshot()
    * - .toModifyPrivateDnsNameOptions()
    * - .toReplaceIamInstanceProfileAssociation()
    *
@@ -9480,6 +9847,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toDeleteSnapshot()
+   * - .toDescribeSnapshotAttribute()
    * - .toRegisterImage()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
@@ -9515,6 +9883,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeFastLaunchImages()
    * - .toDescribeFpgaImageAttribute()
    * - .toDescribeImageAttribute()
+   * - .toDescribeSnapshotAttribute()
    * - .toDescribeStoreImageTasks()
    * - .toDisableFastLaunch()
    * - .toDisableFastSnapshotRestores()
@@ -9564,6 +9933,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toCreateVolume()
    * - .toDeleteVolume()
+   * - .toDescribeVolumeAttribute()
    * - .toDetachVolume()
    * - .toEnableVolumeIO()
    * - .toImportInstance()
@@ -9596,6 +9966,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateSnapshots()
    * - .toCreateTags()
    * - .toDeleteSnapshot()
+   * - .toDescribeSnapshotAttribute()
    * - .toDisableFastSnapshotRestores()
    * - .toEnableFastSnapshotRestores()
    * - .toImportImage()
@@ -9651,7 +10022,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9673,7 +10043,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9695,7 +10064,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9717,7 +10085,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9739,7 +10106,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9761,7 +10127,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9783,7 +10148,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9805,7 +10169,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9842,9 +10205,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVolume()
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
-   * - .toImportInstance()
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
@@ -9906,7 +10269,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -9940,7 +10302,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateFleet()
    * - .toCreateFpgaImage()
-   * - .toCreateImage()
    * - .toCreateStoreImageTask()
    * - .toCreateTags()
    * - .toDeleteFpgaImage()
@@ -9958,7 +10319,6 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyFleet()
    * - .toModifyFpgaImageAttribute()
    * - .toModifyImageAttribute()
-   * - .toRegisterImage()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toResetFpgaImageAttribute()
@@ -10086,6 +10446,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateLaunchTemplate()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateLocalGatewayRoute()
+   * - .toCreateLocalGatewayRouteTablePermission()
    * - .toCreateLocalGatewayRouteTableVpcAssociation()
    * - .toCreateManagedPrefixList()
    * - .toCreateNatGateway()
@@ -10147,6 +10508,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteLaunchTemplate()
    * - .toDeleteLaunchTemplateVersions()
    * - .toDeleteLocalGatewayRoute()
+   * - .toDeleteLocalGatewayRouteTablePermission()
    * - .toDeleteLocalGatewayRouteTableVpcAssociation()
    * - .toDeleteManagedPrefixList()
    * - .toDeleteNatGateway()
@@ -10206,7 +10568,12 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeFpgaImageAttribute()
    * - .toDescribeImageAttribute()
    * - .toDescribeInstanceAttribute()
+   * - .toDescribeSecurityGroupReferences()
+   * - .toDescribeSnapshotAttribute()
+   * - .toDescribeStaleSecurityGroups()
    * - .toDescribeStoreImageTasks()
+   * - .toDescribeVolumeAttribute()
+   * - .toDescribeVpcAttribute()
    * - .toDetachClassicLinkVpc()
    * - .toDetachInternetGateway()
    * - .toDetachNetworkInterface()
@@ -10241,6 +10608,7 @@ export class Ec2 extends PolicyStatement {
    * - .toExportImage()
    * - .toGetCapacityReservationUsage()
    * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
    * - .toGetFlowLogsIntegrationTemplate()
    * - .toGetGroupsForCapacityReservation()
    * - .toGetIpamAddressHistory()
@@ -10450,7 +10818,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -10472,7 +10839,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -10484,6 +10850,61 @@ export class Ec2 extends PolicyStatement {
    */
   public ifRekeyMarginTimeSeconds(value: number | number[], operator?: Operator | string) {
     return this.if(`RekeyMarginTimeSeconds`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the group being removed from a snapshot
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toModifySnapshotAttribute()
+   *
+   * Applies to resource types:
+   * - snapshot
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRemoveGroup(value: string | string[], operator?: Operator | string) {
+    return this.if(`Remove/group`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the account id being removed from a snapshot
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toModifySnapshotAttribute()
+   *
+   * Applies to resource types:
+   * - snapshot
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRemoveUserId(value: string | string[], operator?: Operator | string) {
+    return this.if(`Remove/userId`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the number of packets in an IKE replay window
+   *
+   * Applies to actions:
+   * - .toCreateTags()
+   * - .toCreateVpnConnection()
+   * - .toModifyVpnConnection()
+   * - .toModifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifReplayWindowSizePackets(value: string | string[], operator?: Operator | string) {
+    return this.if(`ReplayWindowSizePackets`, value, operator || 'StringLike');
   }
 
   /**
@@ -10594,6 +11015,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateIpamScope()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateLocalGatewayRoute()
+   * - .toCreateLocalGatewayRouteTablePermission()
    * - .toCreateLocalGatewayRouteTableVpcAssociation()
    * - .toCreateNatGateway()
    * - .toCreateNetworkAcl()
@@ -10644,6 +11066,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteLaunchTemplate()
    * - .toDeleteLaunchTemplateVersions()
    * - .toDeleteLocalGatewayRoute()
+   * - .toDeleteLocalGatewayRouteTablePermission()
    * - .toDeleteLocalGatewayRouteTableVpcAssociation()
    * - .toDeleteManagedPrefixList()
    * - .toDeleteNatGateway()
@@ -10703,7 +11126,12 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeFpgaImageAttribute()
    * - .toDescribeImageAttribute()
    * - .toDescribeInstanceAttribute()
+   * - .toDescribeSecurityGroupReferences()
+   * - .toDescribeSnapshotAttribute()
+   * - .toDescribeStaleSecurityGroups()
    * - .toDescribeStoreImageTasks()
+   * - .toDescribeVolumeAttribute()
+   * - .toDescribeVpcAttribute()
    * - .toDetachClassicLinkVpc()
    * - .toDetachInternetGateway()
    * - .toDetachNetworkInterface()
@@ -10738,6 +11166,7 @@ export class Ec2 extends PolicyStatement {
    * - .toExportImage()
    * - .toGetCapacityReservationUsage()
    * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
    * - .toGetFlowLogsIntegrationTemplate()
    * - .toGetGroupsForCapacityReservation()
    * - .toGetIpamAddressHistory()
@@ -10983,10 +11412,10 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImageDeprecation()
    * - .toExportImage()
    * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toImportImage()
-   * - .toImportInstance()
    * - .toModifyFleet()
    * - .toModifyImageAttribute()
    * - .toModifyInstanceAttribute()
@@ -11032,7 +11461,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTags()
    * - .toCreateVpnConnection()
-   * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toModifyVpnConnection()
    * - .toModifyVpnTunnelOptions()
    *
@@ -11131,6 +11559,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateTags()
    * - .toDeleteSnapshot()
+   * - .toDescribeSnapshotAttribute()
    * - .toDisableFastSnapshotRestores()
    * - .toEnableFastSnapshotRestores()
    * - .toImportImage()
@@ -11191,6 +11620,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toDeleteSnapshot()
+   * - .toDescribeSnapshotAttribute()
    * - .toRegisterImage()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
@@ -11283,6 +11713,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVpcPeeringConnection()
    * - .toDeleteVpc()
    * - .toDescribeInstanceAttribute()
+   * - .toDescribeStaleSecurityGroups()
+   * - .toDescribeVpcAttribute()
    * - .toDetachClassicLinkVpc()
    * - .toDetachInternetGateway()
    * - .toDetachNetworkInterface()
@@ -11295,9 +11727,9 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableVpcClassicLink()
    * - .toEnableVpcClassicLinkDnsSupport()
    * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
-   * - .toImportInstance()
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
@@ -11341,8 +11773,12 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAttachVolume()
+   * - .toCreateSnapshot()
+   * - .toCreateSnapshots()
    * - .toCreateTags()
+   * - .toCreateVolume()
    * - .toDeleteVolume()
+   * - .toDescribeVolumeAttribute()
    * - .toDetachVolume()
    * - .toEnableVolumeIO()
    * - .toImportInstance()
@@ -11378,6 +11814,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVolume()
    * - .toDeleteSnapshot()
    * - .toDeleteVolume()
+   * - .toDescribeSnapshotAttribute()
+   * - .toDescribeVolumeAttribute()
    * - .toDetachVolume()
    * - .toDisableFastSnapshotRestores()
    * - .toEnableFastSnapshotRestores()
@@ -11425,6 +11863,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toCreateVolume()
    * - .toDeleteVolume()
+   * - .toDescribeVolumeAttribute()
    * - .toDetachVolume()
    * - .toEnableVolumeIO()
    * - .toImportInstance()
@@ -11456,6 +11895,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toCreateVolume()
    * - .toDeleteVolume()
+   * - .toDescribeVolumeAttribute()
    * - .toDetachVolume()
    * - .toEnableVolumeIO()
    * - .toImportInstance()
@@ -11512,6 +11952,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteSubnet()
    * - .toDeregisterTransitGatewayMulticastGroupMembers()
    * - .toDeregisterTransitGatewayMulticastGroupSources()
+   * - .toDescribeSecurityGroupReferences()
    * - .toDetachNetworkInterface()
    * - .toDisableVgwRoutePropagation()
    * - .toDisassociateAddress()

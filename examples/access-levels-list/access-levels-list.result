@@ -55,6 +55,7 @@
         "ec2:DescribeKeyPairs",
         "ec2:DescribeLaunchTemplateVersions",
         "ec2:DescribeLaunchTemplates",
+        "ec2:DescribeLocalGatewayRouteTablePermissions",
         "ec2:DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations",
         "ec2:DescribeLocalGatewayRouteTableVpcAssociations",
         "ec2:DescribeLocalGatewayRouteTables",
