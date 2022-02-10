@@ -124,6 +124,7 @@ ssm:StartChangeRequestExecution;Write
 ssm:StartSession;Write
 ssm:StopAutomationExecution;Write
 ssm:TerminateSession;Write
+ssm:UnlabelParameterVersion;Write
 ssm:UpdateAssociation;Write
 ssm:UpdateAssociationStatus;Write
 ssm:UpdateDocument;Write

@@ -208,6 +208,17 @@ export class Ram extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the versions of an AWS RAM permission
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPermissionVersions.html
+   */
+  public toListPermissionVersions() {
+    return this.to('ListPermissionVersions');
+  }
+
+  /**
    * Grants permission to list the AWS RAM permissions
    *
    * Access Level: List
@@ -364,6 +375,7 @@ export class Ram extends PolicyStatement {
       'ListPendingInvitationResources'
     ],
     List: [
+      'ListPermissionVersions',
       'ListPermissions',
       'ListPrincipals',
       'ListResourceSharePermissions',
@@ -572,7 +584,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Filters access based on resource shares owned by a specific account. For example, you can use this condition key to specify which resource share invitations can be accepted or rejected based on the resource share owner’s account ID
+   * Filters access based on resource shares owned by a specific account. For example, you can use this condition key to specify which resource share invitations can be accepted or rejected based on the resource share owner's account ID
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *

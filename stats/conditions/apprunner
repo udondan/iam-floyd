@@ -3,3 +3,4 @@ apprunner:ConnectionArn
 apprunner:RequestTag/${TagKey}
 apprunner:ResourceTag/${TagKey}
 apprunner:TagKeys
+apprunner:VpcConnectorArn

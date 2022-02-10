@@ -70,6 +70,7 @@ s3:GetReplicationConfiguration;Read
 s3:GetStorageLensConfiguration;Read
 s3:GetStorageLensConfigurationTagging;Read
 s3:GetStorageLensDashboard;Read
+s3:InitiateReplication;Write
 s3:ListAccessPoints;List
 s3:ListAccessPointsForObjectLambda;List
 s3:ListAllMyBuckets;List

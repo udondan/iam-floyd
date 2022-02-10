@@ -811,6 +811,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLocation.html
    */
   public toGetBucketLocation() {
@@ -1523,6 +1531,20 @@ export class S3 extends PolicyStatement {
    */
   public toGetStorageLensDashboard() {
     return this.to('GetStorageLensDashboard');
+  }
+
+  /**
+   * Grants permission to initiate the replication process by setting replication status of an object to pending
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifResourceAccount()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
+   */
+  public toInitiateReplication() {
+    return this.to('InitiateReplication');
   }
 
   /**
@@ -2662,6 +2684,7 @@ export class S3 extends PolicyStatement {
       'DeleteObject',
       'DeleteObjectVersion',
       'DeleteStorageLensConfiguration',
+      'InitiateReplication',
       'PutAccelerateConfiguration',
       'PutAccessPointConfigurationForObjectLambda',
       'PutAnalyticsConfiguration',
@@ -3281,6 +3304,7 @@ export class S3 extends PolicyStatement {
    * - .toGetAnalyticsConfiguration()
    * - .toGetBucketAcl()
    * - .toGetBucketCORS()
+   * - .toGetBucketLocation()
    * - .toGetBucketLogging()
    * - .toGetBucketNotification()
    * - .toGetBucketObjectLockConfiguration()
@@ -3316,6 +3340,7 @@ export class S3 extends PolicyStatement {
    * - .toGetStorageLensConfiguration()
    * - .toGetStorageLensConfigurationTagging()
    * - .toGetStorageLensDashboard()
+   * - .toInitiateReplication()
    * - .toListAccessPoints()
    * - .toListAccessPointsForObjectLambda()
    * - .toListAllMyBuckets()
@@ -3416,6 +3441,7 @@ export class S3 extends PolicyStatement {
    * - .toGetAnalyticsConfiguration()
    * - .toGetBucketAcl()
    * - .toGetBucketCORS()
+   * - .toGetBucketLocation()
    * - .toGetBucketLogging()
    * - .toGetBucketNotification()
    * - .toGetBucketObjectLockConfiguration()
@@ -3565,6 +3591,7 @@ export class S3 extends PolicyStatement {
    * - .toGetAnalyticsConfiguration()
    * - .toGetBucketAcl()
    * - .toGetBucketCORS()
+   * - .toGetBucketLocation()
    * - .toGetBucketLogging()
    * - .toGetBucketNotification()
    * - .toGetBucketObjectLockConfiguration()
@@ -3834,6 +3861,7 @@ export class S3 extends PolicyStatement {
    * - .toGetAnalyticsConfiguration()
    * - .toGetBucketAcl()
    * - .toGetBucketCORS()
+   * - .toGetBucketLocation()
    * - .toGetBucketLogging()
    * - .toGetBucketNotification()
    * - .toGetBucketObjectLockConfiguration()
@@ -3971,6 +3999,7 @@ export class S3 extends PolicyStatement {
    * - .toGetAnalyticsConfiguration()
    * - .toGetBucketAcl()
    * - .toGetBucketCORS()
+   * - .toGetBucketLocation()
    * - .toGetBucketLogging()
    * - .toGetBucketNotification()
    * - .toGetBucketObjectLockConfiguration()
@@ -4148,6 +4177,7 @@ export class S3 extends PolicyStatement {
    * - .toGetAnalyticsConfiguration()
    * - .toGetBucketAcl()
    * - .toGetBucketCORS()
+   * - .toGetBucketLocation()
    * - .toGetBucketLogging()
    * - .toGetBucketNotification()
    * - .toGetBucketOwnershipControls()

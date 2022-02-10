@@ -1453,6 +1453,17 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove an identifying label from a specified version of a parameter
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UnlabelParameterVersion.html
+   */
+  public toUnlabelParameterVersion() {
+    return this.to('UnlabelParameterVersion');
+  }
+
+  /**
    * Grants permission to update an association and immediately run the association on the specified targets
    *
    * Access Level: Write
@@ -1681,6 +1692,7 @@ export class Ssm extends PolicyStatement {
       'StartSession',
       'StopAutomationExecution',
       'TerminateSession',
+      'UnlabelParameterVersion',
       'UpdateAssociation',
       'UpdateAssociationStatus',
       'UpdateDocument',

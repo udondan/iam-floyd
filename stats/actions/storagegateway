@@ -85,6 +85,7 @@ storagegateway:UpdateMaintenanceStartTime;Write
 storagegateway:UpdateNFSFileShare;Write
 storagegateway:UpdateSMBFileShare;Write
 storagegateway:UpdateSMBFileShareVisibility;Write
+storagegateway:UpdateSMBLocalGroups;Write
 storagegateway:UpdateSMBSecurityStrategy;Write
 storagegateway:UpdateSnapshotSchedule;Write
 storagegateway:UpdateVTLDeviceType;Write
