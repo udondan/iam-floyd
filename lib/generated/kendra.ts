@@ -19,6 +19,28 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put principal mapping in index
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html
+   */
+  public toAssociateEntitiesToExperience() {
+    return this.to('AssociateEntitiesToExperience');
+  }
+
+  /**
+   * Defines the specific permissions of users or groups in your AWS SSO identity source with access to your Amazon Kendra experience
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_AssociatePersonasToEntities.html
+   */
+  public toAssociatePersonasToEntities() {
+    return this.to('AssociatePersonasToEntities');
+  }
+
+  /**
    * Grants permission to batch delete document
    *
    * Access Level: Write
@@ -75,6 +97,17 @@ export class Kendra extends PolicyStatement {
    */
   public toCreateDataSource() {
     return this.to('CreateDataSource');
+  }
+
+  /**
+   * Creates an Amazon Kendra experience such as a search application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateExperience.html
+   */
+  public toCreateExperience() {
+    return this.to('CreateExperience');
   }
 
   /**
@@ -149,6 +182,17 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
+   * Deletes your Amazon Kendra experience such as a search application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteExperience.html
+   */
+  public toDeleteExperience() {
+    return this.to('DeleteExperience');
+  }
+
+  /**
    * Grants permission to delete an Faq
    *
    * Access Level: Write
@@ -212,6 +256,17 @@ export class Kendra extends PolicyStatement {
    */
   public toDescribeDataSource() {
     return this.to('DescribeDataSource');
+  }
+
+  /**
+   * Gets information about your Amazon Kendra experience such as a search application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeExperience.html
+   */
+  public toDescribeExperience() {
+    return this.to('DescribeExperience');
   }
 
   /**
@@ -281,6 +336,28 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
+   * Prevents users or groups in your AWS SSO identity source from accessing your Amazon Kendra experience
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DisassociateEntitiesFromExperience.html
+   */
+  public toDisassociateEntitiesFromExperience() {
+    return this.to('DisassociateEntitiesFromExperience');
+  }
+
+  /**
+   * Removes the specific permissions of users or groups in your AWS SSO identity source with access to your Amazon Kendra experience
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_DisassociatePersonasFromEntities.html
+   */
+  public toDisassociatePersonasFromEntities() {
+    return this.to('DisassociatePersonasFromEntities');
+  }
+
+  /**
    * Grants permission to get suggestions for a query prefix
    *
    * Access Level: Read
@@ -289,6 +366,17 @@ export class Kendra extends PolicyStatement {
    */
   public toGetQuerySuggestions() {
     return this.to('GetQuerySuggestions');
+  }
+
+  /**
+   * Retrieves search metrics data
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_GetSnapshots.html
+   */
+  public toGetSnapshots() {
+    return this.to('GetSnapshots');
   }
 
   /**
@@ -311,6 +399,39 @@ export class Kendra extends PolicyStatement {
    */
   public toListDataSources() {
     return this.to('ListDataSources');
+  }
+
+  /**
+   * Lists specific permissions of users and groups with access to your Amazon Kendra experience
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_ListEntityPersonas.html
+   */
+  public toListEntityPersonas() {
+    return this.to('ListEntityPersonas');
+  }
+
+  /**
+   * Lists users or groups in your AWS SSO identity source that are granted access to your Amazon Kendra experience
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_ListExperienceEntities.html
+   */
+  public toListExperienceEntities() {
+    return this.to('ListExperienceEntities');
+  }
+
+  /**
+   * Lists one or more Amazon Kendra experiences. You can create an Amazon Kendra experience such as a search application
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_ListExperiences.html
+   */
+  public toListExperiences() {
+    return this.to('ListExperiences');
   }
 
   /**
@@ -475,6 +596,17 @@ export class Kendra extends PolicyStatement {
   }
 
   /**
+   * Updates your Amazon Kendra experience such as a search application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateExperience.html
+   */
+  public toUpdateExperience() {
+    return this.to('UpdateExperience');
+  }
+
+  /**
    * Grants permission to update an Index
    *
    * Access Level: Write
@@ -520,25 +652,32 @@ export class Kendra extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AssociateEntitiesToExperience',
+      'AssociatePersonasToEntities',
       'BatchDeleteDocument',
       'BatchPutDocument',
       'ClearQuerySuggestions',
       'CreateDataSource',
+      'CreateExperience',
       'CreateFaq',
       'CreateIndex',
       'CreateQuerySuggestionsBlockList',
       'CreateThesaurus',
       'DeleteDataSource',
+      'DeleteExperience',
       'DeleteFaq',
       'DeleteIndex',
       'DeletePrincipalMapping',
       'DeleteQuerySuggestionsBlockList',
       'DeleteThesaurus',
+      'DisassociateEntitiesFromExperience',
+      'DisassociatePersonasFromEntities',
       'PutPrincipalMapping',
       'StartDataSourceSyncJob',
       'StopDataSourceSyncJob',
       'SubmitFeedback',
       'UpdateDataSource',
+      'UpdateExperience',
       'UpdateIndex',
       'UpdateQuerySuggestionsBlockList',
       'UpdateQuerySuggestionsConfig',
@@ -547,6 +686,7 @@ export class Kendra extends PolicyStatement {
     Read: [
       'BatchGetDocumentStatus',
       'DescribeDataSource',
+      'DescribeExperience',
       'DescribeFaq',
       'DescribeIndex',
       'DescribePrincipalMapping',
@@ -554,12 +694,16 @@ export class Kendra extends PolicyStatement {
       'DescribeQuerySuggestionsConfig',
       'DescribeThesaurus',
       'GetQuerySuggestions',
+      'GetSnapshots',
       'ListTagsForResource',
       'Query'
     ],
     List: [
       'ListDataSourceSyncJobs',
       'ListDataSources',
+      'ListEntityPersonas',
+      'ListExperienceEntities',
+      'ListExperiences',
       'ListFaqs',
       'ListGroupsOlderThanOrderingId',
       'ListIndices',
@@ -623,6 +767,21 @@ export class Kendra extends PolicyStatement {
    */
   public onFaq(indexId: string, faqId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/faq/${ faqId }`);
+  }
+
+  /**
+   * Adds a resource of type experience to the statement
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html
+   *
+   * @param indexId - Identifier for the indexId.
+   * @param experienceId - Identifier for the experienceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onExperience(indexId: string, experienceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:kendra:${ region || '*' }:${ account || '*' }:index/${ indexId }/experience/${ experienceId }`);
   }
 
   /**

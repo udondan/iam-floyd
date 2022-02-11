@@ -636,6 +636,28 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list environment outputs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListEnvironmentOutputs.html
+   */
+  public toListEnvironmentOutputs() {
+    return this.to('ListEnvironmentOutputs');
+  }
+
+  /**
+   * Grants permission to list environment provisioned resources
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListEnvironmentProvisionedResources.html
+   */
+  public toListEnvironmentProvisionedResources() {
+    return this.to('ListEnvironmentProvisionedResources');
+  }
+
+  /**
    * Grants permission to list environment template major versions. DEPRECATED - use ListEnvironmentTemplateVersions instead
    *
    * Access Level: List
@@ -713,6 +735,28 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list service instance outputs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListServiceInstanceOutputs.html
+   */
+  public toListServiceInstanceOutputs() {
+    return this.to('ListServiceInstanceOutputs');
+  }
+
+  /**
+   * Grants permission to list service instance provisioned resources
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListServiceInstanceProvisionedResources.html
+   */
+  public toListServiceInstanceProvisionedResources() {
+    return this.to('ListServiceInstanceProvisionedResources');
+  }
+
+  /**
    * Grants permission to list service instances
    *
    * Access Level: List
@@ -721,6 +765,28 @@ export class Proton extends PolicyStatement {
    */
   public toListServiceInstances() {
     return this.to('ListServiceInstances');
+  }
+
+  /**
+   * Grants permission to list service pipeline outputs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListServicePipelineOutputs.html
+   */
+  public toListServicePipelineOutputs() {
+    return this.to('ListServicePipelineOutputs');
+  }
+
+  /**
+   * Grants permission to list service pipeline provisioned resources
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_ListServicePipelineProvisionedResources.html
+   */
+  public toListServicePipelineProvisionedResources() {
+    return this.to('ListServicePipelineProvisionedResources');
   }
 
   /**
@@ -1112,6 +1178,8 @@ export class Proton extends PolicyStatement {
     ],
     List: [
       'ListEnvironmentAccountConnections',
+      'ListEnvironmentOutputs',
+      'ListEnvironmentProvisionedResources',
       'ListEnvironmentTemplateMajorVersions',
       'ListEnvironmentTemplateMinorVersions',
       'ListEnvironmentTemplateVersions',
@@ -1119,7 +1187,11 @@ export class Proton extends PolicyStatement {
       'ListEnvironments',
       'ListRepositories',
       'ListRepositorySyncDefinitions',
+      'ListServiceInstanceOutputs',
+      'ListServiceInstanceProvisionedResources',
       'ListServiceInstances',
+      'ListServicePipelineOutputs',
+      'ListServicePipelineProvisionedResources',
       'ListServiceTemplateMajorVersions',
       'ListServiceTemplateMinorVersions',
       'ListServiceTemplateVersions',

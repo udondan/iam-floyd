@@ -48,6 +48,8 @@ proton:GetServiceTemplateVersion;Read
 proton:GetTemplateSyncConfig;Read
 proton:GetTemplateSyncStatus;Read
 proton:ListEnvironmentAccountConnections;List
+proton:ListEnvironmentOutputs;List
+proton:ListEnvironmentProvisionedResources;List
 proton:ListEnvironmentTemplateMajorVersions;List
 proton:ListEnvironmentTemplateMinorVersions;List
 proton:ListEnvironmentTemplateVersions;List
@@ -55,7 +57,11 @@ proton:ListEnvironmentTemplates;List
 proton:ListEnvironments;List
 proton:ListRepositories;List
 proton:ListRepositorySyncDefinitions;List
+proton:ListServiceInstanceOutputs;List
+proton:ListServiceInstanceProvisionedResources;List
 proton:ListServiceInstances;List
+proton:ListServicePipelineOutputs;List
+proton:ListServicePipelineProvisionedResources;List
 proton:ListServiceTemplateMajorVersions;List
 proton:ListServiceTemplateMinorVersions;List
 proton:ListServiceTemplateVersions;List

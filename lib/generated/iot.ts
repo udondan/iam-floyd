@@ -2293,6 +2293,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put verification state on a violation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_PutVerificationStateOnViolation.html
+   */
+  public toPutVerificationStateOnViolation() {
+    return this.to('PutVerificationStateOnViolation');
+  }
+
+  /**
    * Grants permission to receive from the specified topic
    *
    * Access Level: Write
@@ -3005,6 +3016,7 @@ export class Iot extends PolicyStatement {
       'EnableTopicRule',
       'OpenTunnel',
       'Publish',
+      'PutVerificationStateOnViolation',
       'Receive',
       'RegisterCACertificate',
       'RegisterCertificate',

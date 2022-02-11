@@ -196,6 +196,7 @@ iot:ListV2LoggingLevels;List
 iot:ListViolationEvents;List
 iot:OpenTunnel;Write
 iot:Publish;Write
+iot:PutVerificationStateOnViolation;Write
 iot:Receive;Write
 iot:RegisterCACertificate;Write
 iot:RegisterCertificate;Write
