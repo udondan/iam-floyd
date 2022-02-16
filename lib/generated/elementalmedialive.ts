@@ -85,6 +85,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to claim an input device
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/eml-devices.html
+   */
+  public toClaimDevice() {
+    return this.to('ClaimDevice');
+  }
+
+  /**
    * Grants permission to create a channel
    *
    * Access Level: Write
@@ -673,6 +684,7 @@ export class Medialive extends PolicyStatement {
       'BatchStop',
       'BatchUpdateSchedule',
       'CancelInputDeviceTransfer',
+      'ClaimDevice',
       'CreateChannel',
       'CreateInput',
       'CreateInputSecurityGroup',

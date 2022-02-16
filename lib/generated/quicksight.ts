@@ -19,6 +19,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * To enable setting default access to AWS resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/accessing-data-sources.html
+   */
+  public toAccountConfigurations() {
+    return this.to('AccountConfigurations');
+  }
+
+  /**
    * Grants permission to cancel a SPICE ingestions on a dataset
    *
    * Access Level: Write
@@ -1290,6 +1301,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Scoping policies for permissions to AWS resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/accessing-data-sources.html
+   */
+  public toScopeDownPolicy() {
+    return this.to('ScopeDownPolicy');
+  }
+
+  /**
    * Grants permission to search for a sub-set of analyses
    *
    * Access Level: List
@@ -1695,6 +1717,7 @@ export class Quicksight extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AccountConfigurations',
       'CancelIngestion',
       'CreateAccountCustomization',
       'CreateAdmin',
@@ -1742,6 +1765,7 @@ export class Quicksight extends PolicyStatement {
       'ListCustomPermissions',
       'RegisterUser',
       'RestoreAnalysis',
+      'ScopeDownPolicy',
       'SetGroupMapping',
       'Subscribe',
       'Unsubscribe',

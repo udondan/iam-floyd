@@ -246,6 +246,20 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the Hook invocation information for the specified change set
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifChangeSetName()
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSetHook.html
+   */
+  public toDescribeChangeSetHook() {
+    return this.to('DescribeChangeSetHook');
+  }
+
+  /**
    * Grants permission to return information about a CloudFormation extension publisher
    *
    * Access Level: Read
@@ -855,6 +869,7 @@ export class Cloudformation extends PolicyStatement {
       'BatchDescribeTypeConfigurations',
       'DescribeAccountLimits',
       'DescribeChangeSet',
+      'DescribeChangeSetHook',
       'DescribePublisher',
       'DescribeStackDriftDetectionStatus',
       'DescribeStackEvents',
@@ -987,6 +1002,7 @@ export class Cloudformation extends PolicyStatement {
    * - .toCreateChangeSet()
    * - .toDeleteChangeSet()
    * - .toDescribeChangeSet()
+   * - .toDescribeChangeSetHook()
    * - .toExecuteChangeSet()
    *
    * @param value The value(s) to check

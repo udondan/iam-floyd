@@ -5,6 +5,7 @@ outposts:CreateSite;Write
 outposts:DeleteOutpost;Write
 outposts:DeleteSite;Write
 outposts:GetCatalogItem;Read
+outposts:GetOrder;Read
 outposts:GetOutpost;Read
 outposts:GetOutpostInstanceTypes;Read
 outposts:GetSite;Read

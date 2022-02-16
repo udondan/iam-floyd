@@ -24,6 +24,7 @@ wafv2:GetRuleGroup;Read
 wafv2:GetSampledRequests;Read
 wafv2:GetWebACL;Read
 wafv2:GetWebACLForResource;Read
+wafv2:ListAvailableManagedRuleGroupVersions;List
 wafv2:ListAvailableManagedRuleGroups;List
 wafv2:ListIPSets;List
 wafv2:ListLoggingConfigurations;List

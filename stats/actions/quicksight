@@ -1,3 +1,4 @@
+quicksight:AccountConfigurations;Write
 quicksight:CancelIngestion;Write
 quicksight:CreateAccountCustomization;Write
 quicksight:CreateAdmin;Write
@@ -102,6 +103,7 @@ quicksight:PassDataSet;Read
 quicksight:PassDataSource;Read
 quicksight:RegisterUser;Write
 quicksight:RestoreAnalysis;Write
+quicksight:ScopeDownPolicy;Write
 quicksight:SearchAnalyses;List
 quicksight:SearchDashboards;List
 quicksight:SearchDirectoryGroups;List

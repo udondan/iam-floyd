@@ -339,6 +339,17 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an array of managed rule group versions that are available for you to use
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListAvailableManagedRuleGroupVersions.html
+   */
+  public toListAvailableManagedRuleGroupVersions() {
+    return this.to('ListAvailableManagedRuleGroupVersions');
+  }
+
+  /**
    * Grants permission to retrieve an array of managed rule groups that are available for you to use
    *
    * Access Level: List
@@ -628,6 +639,7 @@ export class Wafv2 extends PolicyStatement {
       'PutPermissionPolicy'
     ],
     List: [
+      'ListAvailableManagedRuleGroupVersions',
       'ListAvailableManagedRuleGroups',
       'ListIPSets',
       'ListLoggingConfigurations',

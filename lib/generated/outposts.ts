@@ -96,6 +96,17 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about an order
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOrder.html
+   */
+  public toGetOrder() {
+    return this.to('GetOrder');
+  }
+
+  /**
    * Grants permission to get information about the specified Outpost
    *
    * Access Level: Read
@@ -275,6 +286,7 @@ export class Outposts extends PolicyStatement {
     ],
     Read: [
       'GetCatalogItem',
+      'GetOrder',
       'GetOutpost',
       'GetOutpostInstanceTypes',
       'GetSite',

@@ -89,6 +89,22 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an in-app message template
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-inapp.html#templates-template-name-inapp-http-methods
+   */
+  public toCreateInAppTemplate() {
+    return this.to('CreateInAppTemplate');
+  }
+
+  /**
    * Grants permission to create a Journey for an app
    *
    * Access Level: Write
@@ -320,6 +336,17 @@ export class Mobiletargeting extends PolicyStatement {
    */
   public toDeleteGcmChannel() {
     return this.to('DeleteGcmChannel');
+  }
+
+  /**
+   * Grants permission to delete an in-app message template or an in-app message template version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-inapp.html#templates-template-name-inapp-http-methods
+   */
+  public toDeleteInAppTemplate() {
+    return this.to('DeleteInAppTemplate');
   }
 
   /**
@@ -716,6 +743,17 @@ export class Mobiletargeting extends PolicyStatement {
    */
   public toGetInAppMessages() {
     return this.to('GetInAppMessages');
+  }
+
+  /**
+   * Grants permission to retrieve information about a specific or the active version of an in-app message template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-inapp.html#templates-template-name-inapp-http-methods
+   */
+  public toGetInAppTemplate() {
+    return this.to('GetInAppTemplate');
   }
 
   /**
@@ -1217,6 +1255,21 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a specific in-app message template under the same version or generate a new version
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-inapp.html#templates-template-name-inapp-http-methods
+   */
+  public toUpdateInAppTemplate() {
+    return this.to('UpdateInAppTemplate');
+  }
+
+  /**
    * Grants permission to update a specific journey
    *
    * Access Level: Write
@@ -1350,6 +1403,17 @@ export class Mobiletargeting extends PolicyStatement {
     return this.to('UpdateVoiceTemplate');
   }
 
+  /**
+   * Grants permission to check the validity of One-Time Passwords (OTPs)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-verify-otp.html
+   */
+  public toVerifyOTPMessage() {
+    return this.to('VerifyOTPMessage');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateApp',
@@ -1357,6 +1421,7 @@ export class Mobiletargeting extends PolicyStatement {
       'CreateEmailTemplate',
       'CreateExportJob',
       'CreateImportJob',
+      'CreateInAppTemplate',
       'CreateJourney',
       'CreatePushTemplate',
       'CreateRecommenderConfiguration',
@@ -1376,6 +1441,7 @@ export class Mobiletargeting extends PolicyStatement {
       'DeleteEndpoint',
       'DeleteEventStream',
       'DeleteGcmChannel',
+      'DeleteInAppTemplate',
       'DeleteJourney',
       'DeletePushTemplate',
       'DeleteRecommenderConfiguration',
@@ -1403,6 +1469,7 @@ export class Mobiletargeting extends PolicyStatement {
       'UpdateEndpoint',
       'UpdateEndpointsBatch',
       'UpdateGcmChannel',
+      'UpdateInAppTemplate',
       'UpdateJourney',
       'UpdateJourneyState',
       'UpdatePushTemplate',
@@ -1435,6 +1502,7 @@ export class Mobiletargeting extends PolicyStatement {
       'GetGcmChannel',
       'GetImportJob',
       'GetInAppMessages',
+      'GetInAppTemplate',
       'GetJourney',
       'GetJourneyDateRangeKpi',
       'GetJourneyExecutionActivityMetrics',
@@ -1450,7 +1518,8 @@ export class Mobiletargeting extends PolicyStatement {
       'GetVoiceChannel',
       'GetVoiceTemplate',
       'ListTagsForResource',
-      'PhoneNumberValidate'
+      'PhoneNumberValidate',
+      'VerifyOTPMessage'
     ],
     List: [
       'GetApplicationSettings',
