@@ -344,7 +344,8 @@
 				"ec2:DescribeRouteTables",
 				"ec2:DescribeSubnets",
 				"ec2:DescribeTags",
-				"ec2:DescribeVpcEndpoints"
+				"ec2:DescribeVpcEndpoints",
+				"ec2:DescribeAvailabilityZones"
 			],
 			"Resource": "*"
 		},

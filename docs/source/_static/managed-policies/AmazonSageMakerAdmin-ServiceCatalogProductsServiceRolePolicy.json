@@ -121,7 +121,8 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"cognito-idp:CreateUserPool"
+				"cognito-idp:CreateUserPool",
+				"cognito-idp:TagResource"
 			],
 			"Resource": "*",
 			"Condition": {
@@ -327,6 +328,7 @@
 				"s3:PutBucketPublicAccessBlock",
 				"s3:PutBucketLogging",
 				"s3:PutEncryptionConfiguration",
+				"s3:PutBucketCORS",
 				"s3:PutBucketTagging",
 				"s3:PutObjectTagging"
 			],
