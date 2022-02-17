@@ -1037,6 +1037,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve partition indexes for a table
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetPartitionIndexes
+   */
+  public toGetPartitionIndexes() {
+    return this.to('GetPartitionIndexes');
+  }
+
+  /**
    * Grants permission to retrieve the partitions of a table
    *
    * Access Level: Read
@@ -2140,6 +2151,7 @@ export class Glue extends PolicyStatement {
       'GetMLTransform',
       'GetMapping',
       'GetPartition',
+      'GetPartitionIndexes',
       'GetPartitions',
       'GetPlan',
       'GetRegistry',

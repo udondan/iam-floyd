@@ -87,6 +87,7 @@ glue:GetMLTransform;Read
 glue:GetMLTransforms;List
 glue:GetMapping;Read
 glue:GetPartition;Read
+glue:GetPartitionIndexes;Read
 glue:GetPartitions;Read
 glue:GetPlan;Read
 glue:GetRegistry;Read
