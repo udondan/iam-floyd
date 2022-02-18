@@ -222,6 +222,17 @@ export class Evidently extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tags for resources
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/evidently/latest/dg/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to start an experiment
    *
    * Access Level: Write
@@ -263,6 +274,28 @@ export class Evidently extends PolicyStatement {
    */
   public toStopLaunch() {
     return this.to('StopLaunch');
+  }
+
+  /**
+   * Grants permission to tag resources
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/evidently/latest/dg/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag resources
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/evidently/latest/dg/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -349,7 +382,12 @@ export class Evidently extends PolicyStatement {
       'ListExperiments',
       'ListFeatures',
       'ListLaunches',
-      'ListProjects'
+      'ListProjects',
+      'ListTagsForResource'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -1527,6 +1527,17 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start chat streaming using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html
+   */
+  public toStartContactStreaming() {
+    return this.to('StartContactStreaming');
+  }
+
+  /**
    * Grants permission to initiate outbound calls using the Amazon Connect API
    *
    * Access Level: Write
@@ -1574,6 +1585,17 @@ export class Connect extends PolicyStatement {
    */
   public toStopContactRecording() {
     return this.to('StopContactRecording');
+  }
+
+  /**
+   * Grants permission to stop chat streaming using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactStreaming.html
+   */
+  public toStopContactStreaming() {
+    return this.to('StopContactStreaming');
   }
 
   /**
@@ -2146,10 +2168,12 @@ export class Connect extends PolicyStatement {
       'ResumeContactRecording',
       'StartChatContact',
       'StartContactRecording',
+      'StartContactStreaming',
       'StartOutboundVoiceContact',
       'StartTaskContact',
       'StopContact',
       'StopContactRecording',
+      'StopContactStreaming',
       'SuspendContactRecording',
       'UpdateAgentStatus',
       'UpdateContact',

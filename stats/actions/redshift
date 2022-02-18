@@ -1,7 +1,9 @@
 redshift:AcceptReservedNodeExchange;Write
+redshift:AddPartner;Write
 redshift:AssociateDataShareConsumer;Write
-redshift:AuthorizeClusterSecurityGroupIngress;Permissions management
+redshift:AuthorizeClusterSecurityGroupIngress;Write
 redshift:AuthorizeDataShare;Permissions management
+redshift:AuthorizeEndpointAccess;Permissions management
 redshift:AuthorizeSnapshotAccess;Permissions management
 redshift:BatchDeleteClusterSnapshots;Write
 redshift:BatchModifyClusterSnapshots;Write
@@ -16,6 +18,7 @@ redshift:CreateClusterSecurityGroup;Write
 redshift:CreateClusterSnapshot;Write
 redshift:CreateClusterSubnetGroup;Write
 redshift:CreateClusterUser;Permissions management
+redshift:CreateEndpointAccess;Write
 redshift:CreateEventSubscription;Write
 redshift:CreateHsmClientCertificate;Write
 redshift:CreateHsmConfiguration;Write
@@ -32,9 +35,11 @@ redshift:DeleteClusterParameterGroup;Write
 redshift:DeleteClusterSecurityGroup;Write
 redshift:DeleteClusterSnapshot;Write
 redshift:DeleteClusterSubnetGroup;Write
+redshift:DeleteEndpointAccess;Write
 redshift:DeleteEventSubscription;Write
 redshift:DeleteHsmClientCertificate;Write
 redshift:DeleteHsmConfiguration;Write
+redshift:DeletePartner;Write
 redshift:DeleteSavedQueries;Write
 redshift:DeleteScheduledAction;Write
 redshift:DeleteSnapshotCopyGrant;Write
@@ -56,6 +61,8 @@ redshift:DescribeDataShares;Read
 redshift:DescribeDataSharesForConsumer;Read
 redshift:DescribeDataSharesForProducer;Read
 redshift:DescribeDefaultClusterParameters;Read
+redshift:DescribeEndpointAccess;Read
+redshift:DescribeEndpointAuthorization;Permissions management
 redshift:DescribeEventCategories;Read
 redshift:DescribeEventSubscriptions;Read
 redshift:DescribeEvents;List
@@ -64,6 +71,7 @@ redshift:DescribeHsmConfigurations;Read
 redshift:DescribeLoggingStatus;Read
 redshift:DescribeNodeConfigurationOptions;List
 redshift:DescribeOrderableClusterOptions;Read
+redshift:DescribePartners;Read
 redshift:DescribeQuery;Read
 redshift:DescribeReservedNodeOfferings;Read
 redshift:DescribeReservedNodes;Read
@@ -101,6 +109,7 @@ redshift:ModifyClusterParameterGroup;Write
 redshift:ModifyClusterSnapshot;Write
 redshift:ModifyClusterSnapshotSchedule;Write
 redshift:ModifyClusterSubnetGroup;Write
+redshift:ModifyEndpointAccess;Write
 redshift:ModifyEventSubscription;Write
 redshift:ModifySavedQuery;Write
 redshift:ModifyScheduledAction;Write
@@ -116,8 +125,10 @@ redshift:ResizeCluster;Write
 redshift:RestoreFromClusterSnapshot;Write
 redshift:RestoreTableFromClusterSnapshot;Write
 redshift:ResumeCluster;Write
-redshift:RevokeClusterSecurityGroupIngress;Permissions management
+redshift:RevokeClusterSecurityGroupIngress;Write
+redshift:RevokeEndpointAccess;Permissions management
 redshift:RevokeSnapshotAccess;Permissions management
-redshift:RotateEncryptionKey;Permissions management
+redshift:RotateEncryptionKey;Write
+redshift:UpdatePartnerStatus;Write
 redshift:ViewQueriesFromConsole;List
 redshift:ViewQueriesInConsole;List

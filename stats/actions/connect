@@ -96,10 +96,12 @@ connect:ResumeContactRecording;Write
 connect:SearchVocabularies;List
 connect:StartChatContact;Write
 connect:StartContactRecording;Write
+connect:StartContactStreaming;Write
 connect:StartOutboundVoiceContact;Write
 connect:StartTaskContact;Write
 connect:StopContact;Write
 connect:StopContactRecording;Write
+connect:StopContactStreaming;Write
 connect:SuspendContactRecording;Write
 connect:TagResource;Tagging
 connect:UntagResource;Tagging

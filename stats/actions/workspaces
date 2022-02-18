@@ -2,12 +2,14 @@ workspaces:AssociateConnectionAlias;Write
 workspaces:AssociateIpGroups;Write
 workspaces:AuthorizeIpRules;Write
 workspaces:CopyWorkspaceImage;Write
+workspaces:CreateConnectClientAddIn;Write
 workspaces:CreateConnectionAlias;Write
 workspaces:CreateIpGroup;Write
 workspaces:CreateTags;Tagging
 workspaces:CreateUpdatedWorkspaceImage;Write
 workspaces:CreateWorkspaceBundle;Write
 workspaces:CreateWorkspaces;Write
+workspaces:DeleteConnectClientAddIn;Write
 workspaces:DeleteConnectionAlias;Write
 workspaces:DeleteIpGroup;Write
 workspaces:DeleteTags;Tagging
@@ -17,6 +19,7 @@ workspaces:DeregisterWorkspaceDirectory;Write
 workspaces:DescribeAccount;Read
 workspaces:DescribeAccountModifications;Read
 workspaces:DescribeClientProperties;List
+workspaces:DescribeConnectClientAddIns;List
 workspaces:DescribeConnectionAliasPermissions;Read
 workspaces:DescribeConnectionAliases;Read
 workspaces:DescribeIpGroups;Read
@@ -48,6 +51,7 @@ workspaces:RevokeIpRules;Write
 workspaces:StartWorkspaces;Write
 workspaces:StopWorkspaces;Write
 workspaces:TerminateWorkspaces;Write
+workspaces:UpdateConnectClientAddIn;Write
 workspaces:UpdateConnectionAliasPermission;Permissions management
 workspaces:UpdateRulesOfIpGroup;Write
 workspaces:UpdateWorkspaceBundle;Write

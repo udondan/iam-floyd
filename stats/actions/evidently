@@ -15,10 +15,13 @@ evidently:ListExperiments;Read
 evidently:ListFeatures;Read
 evidently:ListLaunches;Read
 evidently:ListProjects;Read
+evidently:ListTagsForResource;Read
 evidently:StartExperiment;Write
 evidently:StartLaunch;Write
 evidently:StopExperiment;Write
 evidently:StopLaunch;Write
+evidently:TagResource;Tagging
+evidently:UntagResource;Tagging
 evidently:UpdateExperiment;Write
 evidently:UpdateFeature;Write
 evidently:UpdateLaunch;Write

@@ -70,6 +70,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an Amazon Connect client add-in within a directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateConnectClientAddIn.html
+   */
+  public toCreateConnectClientAddIn() {
+    return this.to('CreateConnectClientAddIn');
+  }
+
+  /**
    * Grants permission to create connection aliases for use with cross-Region redirection
    *
    * Access Level: Write
@@ -160,6 +171,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toCreateWorkspaces() {
     return this.to('CreateWorkspaces');
+  }
+
+  /**
+   * Grants permission to delete an Amazon Connect client add-in that is configured within a directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteConnectClientAddIn.html
+   */
+  public toDeleteConnectClientAddIn() {
+    return this.to('DeleteConnectClientAddIn');
   }
 
   /**
@@ -263,6 +285,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toDescribeClientProperties() {
     return this.to('DescribeClientProperties');
+  }
+
+  /**
+   * Grants permission to retrieve a list of Amazon Connect client add-ins that have been created
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectClientAddIns.html
+   */
+  public toDescribeConnectClientAddIns() {
+    return this.to('DescribeConnectClientAddIns');
   }
 
   /**
@@ -615,6 +648,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an Amazon Connect client add-in. Use this action to update the name and endpoint URL of an Amazon Connect client add-in
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateConnectClientAddIn.html
+   */
+  public toUpdateConnectClientAddIn() {
+    return this.to('UpdateConnectClientAddIn');
+  }
+
+  /**
    * Grants permission to share or unshare connection aliases with other accounts
    *
    * Access Level: Permissions management
@@ -664,11 +708,13 @@ export class Workspaces extends PolicyStatement {
       'AssociateIpGroups',
       'AuthorizeIpRules',
       'CopyWorkspaceImage',
+      'CreateConnectClientAddIn',
       'CreateConnectionAlias',
       'CreateIpGroup',
       'CreateUpdatedWorkspaceImage',
       'CreateWorkspaceBundle',
       'CreateWorkspaces',
+      'DeleteConnectClientAddIn',
       'DeleteConnectionAlias',
       'DeleteIpGroup',
       'DeleteWorkspaceBundle',
@@ -692,6 +738,7 @@ export class Workspaces extends PolicyStatement {
       'StartWorkspaces',
       'StopWorkspaces',
       'TerminateWorkspaces',
+      'UpdateConnectClientAddIn',
       'UpdateRulesOfIpGroup',
       'UpdateWorkspaceBundle'
     ],
@@ -712,6 +759,7 @@ export class Workspaces extends PolicyStatement {
     ],
     List: [
       'DescribeClientProperties',
+      'DescribeConnectClientAddIns',
       'DescribeWorkspaceBundles',
       'DescribeWorkspaceImages',
       'DescribeWorkspaceSnapshots',

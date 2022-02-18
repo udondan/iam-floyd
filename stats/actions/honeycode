@@ -5,6 +5,7 @@ honeycode:BatchUpdateTableRows;Write
 honeycode:BatchUpsertTableRows;Write
 honeycode:CreateTeam;Write
 honeycode:CreateTenant;Write
+honeycode:DeleteDomains;Write
 honeycode:DeregisterGroups;Write
 honeycode:DescribeTableDataImportJob;Read
 honeycode:DescribeTeam;Read
@@ -15,6 +16,7 @@ honeycode:ListGroups;List
 honeycode:ListTableColumns;List
 honeycode:ListTableRows;List
 honeycode:ListTables;List
+honeycode:ListTagsForResource;Tagging
 honeycode:ListTeamAssociations;List
 honeycode:ListTenants;List
 honeycode:QueryTableRows;Read
@@ -23,4 +25,6 @@ honeycode:RegisterGroups;Write
 honeycode:RejectTeamAssociation;Write
 honeycode:RestartDomainVerification;Write
 honeycode:StartTableDataImportJob;Write
+honeycode:TagResource;Tagging
+honeycode:UntagResource;Tagging
 honeycode:UpdateTeam;Write

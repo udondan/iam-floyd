@@ -30,6 +30,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a partner integration to a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_AddPartner.html
+   */
+  public toAddPartner() {
+    return this.to('AddPartner');
+  }
+
+  /**
    * Grants permission to associate a consumer to a datashare
    *
    * Access Level: Write
@@ -43,7 +54,7 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to add an inbound (ingress) rule to an Amazon Redshift security group
    *
-   * Access Level: Permissions management
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_AuthorizeClusterSecurityGroupIngress.html
    */
@@ -63,6 +74,17 @@ export class Redshift extends PolicyStatement {
    */
   public toAuthorizeDataShare() {
     return this.to('AuthorizeDataShare');
+  }
+
+  /**
+   * Grants permission to authorize endpoint related activities for redshift-managed vpc endpoint
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_AuthorizeEndpointAccess.html
+   */
+  public toAuthorizeEndpointAccess() {
+    return this.to('AuthorizeEndpointAccess');
   }
 
   /**
@@ -244,6 +266,17 @@ export class Redshift extends PolicyStatement {
    */
   public toCreateClusterUser() {
     return this.to('CreateClusterUser');
+  }
+
+  /**
+   * Grants permission to create a redshift-managed vpc endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateEndpointAccess.html
+   */
+  public toCreateEndpointAccess() {
+    return this.to('CreateEndpointAccess');
   }
 
   /**
@@ -452,6 +485,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a redshift-managed vpc endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteEndpointAccess.html
+   */
+  public toDeleteEndpointAccess() {
+    return this.to('DeleteEndpointAccess');
+  }
+
+  /**
    * Grants permission to delete an Amazon Redshift event notification subscription
    *
    * Access Level: Write
@@ -482,6 +526,17 @@ export class Redshift extends PolicyStatement {
    */
   public toDeleteHsmConfiguration() {
     return this.to('DeleteHsmConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a partner integration from a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeletePartner.html
+   */
+  public toDeletePartner() {
+    return this.to('DeletePartner');
   }
 
   /**
@@ -715,6 +770,28 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe redshift-managed vpc endpoints
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeEndpointAccess.html
+   */
+  public toDescribeEndpointAccess() {
+    return this.to('DescribeEndpointAccess');
+  }
+
+  /**
+   * Grants permission to authorize describe activity for redshift-managed vpc endpoint
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeEndpointAuthorization.html
+   */
+  public toDescribeEndpointAuthorization() {
+    return this.to('DescribeEndpointAuthorization');
+  }
+
+  /**
    * Grants permission to describe event categories for all event source types, or for a specified source type
    *
    * Access Level: Read
@@ -800,6 +877,17 @@ export class Redshift extends PolicyStatement {
    */
   public toDescribeOrderableClusterOptions() {
     return this.to('DescribeOrderableClusterOptions');
+  }
+
+  /**
+   * Grants permission to retrieve information about the partner integrations defined for a cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribePartners.html
+   */
+  public toDescribePartners() {
+    return this.to('DescribePartners');
   }
 
   /**
@@ -1213,6 +1301,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify a redshift-managed vpc endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyEndpointAccess.html
+   */
+  public toModifyEndpointAccess() {
+    return this.to('ModifyEndpointAccess');
+  }
+
+  /**
    * Grants permission to modify an existing Amazon Redshift event notification subscription
    *
    * Access Level: Write
@@ -1384,12 +1483,23 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to revoke an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2 security group
    *
-   * Access Level: Permissions management
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RevokeClusterSecurityGroupIngress.html
    */
   public toRevokeClusterSecurityGroupIngress() {
     return this.to('RevokeClusterSecurityGroupIngress');
+  }
+
+  /**
+   * Grants permission to revoke access for endpoint related activities for redshift-managed vpc endpoint
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RevokeEndpointAccess.html
+   */
+  public toRevokeEndpointAccess() {
+    return this.to('RevokeEndpointAccess');
   }
 
   /**
@@ -1406,12 +1516,23 @@ export class Redshift extends PolicyStatement {
   /**
    * Grants permission to rotate an encryption key for a cluster
    *
-   * Access Level: Permissions management
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RotateEncryptionKey.html
    */
   public toRotateEncryptionKey() {
     return this.to('RotateEncryptionKey');
+  }
+
+  /**
+   * Grants permission to update the status of a partner integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_UpdatePartnerStatus.html
+   */
+  public toUpdatePartnerStatus() {
+    return this.to('UpdatePartnerStatus');
   }
 
   /**
@@ -1439,7 +1560,9 @@ export class Redshift extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptReservedNodeExchange',
+      'AddPartner',
       'AssociateDataShareConsumer',
+      'AuthorizeClusterSecurityGroupIngress',
       'BatchDeleteClusterSnapshots',
       'BatchModifyClusterSnapshots',
       'CancelQuery',
@@ -1452,6 +1575,7 @@ export class Redshift extends PolicyStatement {
       'CreateClusterSecurityGroup',
       'CreateClusterSnapshot',
       'CreateClusterSubnetGroup',
+      'CreateEndpointAccess',
       'CreateEventSubscription',
       'CreateHsmClientCertificate',
       'CreateHsmConfiguration',
@@ -1465,9 +1589,11 @@ export class Redshift extends PolicyStatement {
       'DeleteClusterSecurityGroup',
       'DeleteClusterSnapshot',
       'DeleteClusterSubnetGroup',
+      'DeleteEndpointAccess',
       'DeleteEventSubscription',
       'DeleteHsmClientCertificate',
       'DeleteHsmConfiguration',
+      'DeletePartner',
       'DeleteSavedQueries',
       'DeleteScheduledAction',
       'DeleteSnapshotCopyGrant',
@@ -1489,6 +1615,7 @@ export class Redshift extends PolicyStatement {
       'ModifyClusterSnapshot',
       'ModifyClusterSnapshotSchedule',
       'ModifyClusterSubnetGroup',
+      'ModifyEndpointAccess',
       'ModifyEventSubscription',
       'ModifySavedQuery',
       'ModifyScheduledAction',
@@ -1502,21 +1629,24 @@ export class Redshift extends PolicyStatement {
       'ResizeCluster',
       'RestoreFromClusterSnapshot',
       'RestoreTableFromClusterSnapshot',
-      'ResumeCluster'
+      'ResumeCluster',
+      'RevokeClusterSecurityGroupIngress',
+      'RotateEncryptionKey',
+      'UpdatePartnerStatus'
     ],
     'Permissions management': [
-      'AuthorizeClusterSecurityGroupIngress',
       'AuthorizeDataShare',
+      'AuthorizeEndpointAccess',
       'AuthorizeSnapshotAccess',
       'CreateClusterUser',
       'CreateSnapshotCopyGrant',
       'DeauthorizeDataShare',
+      'DescribeEndpointAuthorization',
       'JoinGroup',
       'ModifyClusterIamRoles',
       'RejectDataShare',
-      'RevokeClusterSecurityGroupIngress',
-      'RevokeSnapshotAccess',
-      'RotateEncryptionKey'
+      'RevokeEndpointAccess',
+      'RevokeSnapshotAccess'
     ],
     Tagging: [
       'CreateTags',
@@ -1535,12 +1665,14 @@ export class Redshift extends PolicyStatement {
       'DescribeDataSharesForConsumer',
       'DescribeDataSharesForProducer',
       'DescribeDefaultClusterParameters',
+      'DescribeEndpointAccess',
       'DescribeEventCategories',
       'DescribeEventSubscriptions',
       'DescribeHsmClientCertificates',
       'DescribeHsmConfigurations',
       'DescribeLoggingStatus',
       'DescribeOrderableClusterOptions',
+      'DescribePartners',
       'DescribeQuery',
       'DescribeReservedNodeOfferings',
       'DescribeReservedNodes',
