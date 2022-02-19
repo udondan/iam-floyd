@@ -856,6 +856,17 @@ export class Proton extends PolicyStatement {
   }
 
   /**
+   * Grants permission to notify Proton of resource deployment status changes
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/proton/latest/APIReference/API_NotifyResourceDeploymentStatusChange.html
+   */
+  public toNotifyResourceDeploymentStatusChange() {
+    return this.to('NotifyResourceDeploymentStatusChange');
+  }
+
+  /**
    * Grants permission to reject an environment account connection request from another environment account
    *
    * Access Level: Write
@@ -1136,6 +1147,7 @@ export class Proton extends PolicyStatement {
       'DeleteServiceTemplateMinorVersion',
       'DeleteServiceTemplateVersion',
       'DeleteTemplateSyncConfig',
+      'NotifyResourceDeploymentStatusChange',
       'RejectEnvironmentAccountConnection',
       'UpdateAccountRoles',
       'UpdateAccountSettings',
