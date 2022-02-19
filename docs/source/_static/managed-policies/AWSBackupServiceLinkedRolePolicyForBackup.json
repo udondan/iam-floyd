@@ -2,12 +2,12 @@
 	"Version": "2012-10-17",
 	"Statement": [
 		{
+			"Effect": "Allow",
 			"Action": [
 				"elasticfilesystem:Backup",
 				"elasticfilesystem:DescribeTags"
 			],
 			"Resource": "arn:aws:elasticfilesystem:*:*:file-system/*",
-			"Effect": "Allow",
 			"Condition": {
 				"StringLike": {
 					"aws:ResourceTag/aws:elasticfilesystem:default-backup": "enabled"
@@ -15,6 +15,7 @@
 			}
 		},
 		{
+			"Effect": "Allow",
 			"Action": [
 				"tag:GetResources",
 				"elasticfilesystem:DescribeFileSystems",
@@ -24,10 +25,10 @@
 				"ec2:DescribeInstances",
 				"rds:DescribeDBInstances",
 				"rds:DescribeDBClusters",
-				"fsx:DescribeFileSystems"
+				"fsx:DescribeFileSystems",
+				"s3:ListAllMyBuckets"
 			],
-			"Resource": "*",
-			"Effect": "Allow"
+			"Resource": "*"
 		},
 		{
 			"Effect": "Allow",
@@ -159,14 +160,14 @@
 			}
 		},
 		{
+			"Effect": "Allow",
 			"Action": [
 				"fsx:CopyBackup",
 				"fsx:TagResource",
 				"fsx:DescribeBackups",
 				"fsx:DeleteBackup"
 			],
-			"Resource": "arn:aws:fsx:*:*:backup/*",
-			"Effect": "Allow"
+			"Resource": "arn:aws:fsx:*:*:backup/*"
 		},
 		{
 			"Effect": "Allow",
