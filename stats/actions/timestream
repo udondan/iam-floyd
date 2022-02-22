@@ -15,6 +15,7 @@ timestream:ListMeasures;List
 timestream:ListScheduledQueries;Read
 timestream:ListTables;List
 timestream:ListTagsForResource;List
+timestream:PrepareQuery;Write
 timestream:Select;Read
 timestream:SelectValues;Read
 timestream:TagResource;Tagging

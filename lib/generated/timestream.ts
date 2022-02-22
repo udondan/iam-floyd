@@ -221,6 +221,17 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to issue prepare queries
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_PrepareQuery.html
+   */
+  public toPrepareQuery() {
+    return this.to('PrepareQuery');
+  }
+
+  /**
    * Grants permission to issue 'select from table' queries
    *
    * Access Level: Read
@@ -325,6 +336,7 @@ export class Timestream extends PolicyStatement {
       'DeleteScheduledQuery',
       'DeleteTable',
       'ExecuteScheduledQuery',
+      'PrepareQuery',
       'UpdateDatabase',
       'UpdateScheduledQuery',
       'UpdateTable',
