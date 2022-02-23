@@ -19,6 +19,10 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"ec2:DescribeKeyPairs",
+				"ec2:DescribeTags",
+				"ec2:DescribeNetworkInterfaces",
+				"ec2:DescribePlacementGroups",
 				"ec2:DescribeAccountAttributes",
 				"ec2:DescribeAvailabilityZones",
 				"ec2:DescribeImages",
@@ -36,6 +40,21 @@
 				"ec2:GetEbsEncryptionByDefault",
 				"ec2:GetEbsDefaultKmsKeyId"
 			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "license-manager:ListLicenseConfigurations",
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "elasticloadbalancing:DescribeLoadBalancers",
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "iam:ListInstanceProfiles",
 			"Resource": "*"
 		}
 	]
