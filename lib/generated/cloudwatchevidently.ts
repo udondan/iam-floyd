@@ -27,7 +27,7 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_CreateExperiment.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateExperiment.html
    */
   public toCreateExperiment() {
     return this.to('CreateExperiment');
@@ -42,7 +42,7 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_CreateFeature.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateFeature.html
    */
   public toCreateFeature() {
     return this.to('CreateFeature');
@@ -57,7 +57,7 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_CreateLaunch.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateLaunch.html
    */
   public toCreateLaunch() {
     return this.to('CreateLaunch');
@@ -72,7 +72,7 @@ export class Evidently extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_CreateProject.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html
    */
   public toCreateProject() {
     return this.to('CreateProject');
@@ -83,7 +83,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_DeleteExperiment.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_DeleteExperiment.html
    */
   public toDeleteExperiment() {
     return this.to('DeleteExperiment');
@@ -94,7 +94,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_DeleteFeature.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_DeleteFeature.html
    */
   public toDeleteFeature() {
     return this.to('DeleteFeature');
@@ -105,7 +105,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_DeleteLaunch.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_DeleteLaunch.html
    */
   public toDeleteLaunch() {
     return this.to('DeleteLaunch');
@@ -116,7 +116,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_DeleteProject.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_DeleteProject.html
    */
   public toDeleteProject() {
     return this.to('DeleteProject');
@@ -127,7 +127,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_GetExperiment.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_GetExperiment.html
    */
   public toGetExperiment() {
     return this.to('GetExperiment');
@@ -138,7 +138,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_GetExperimentResults.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_GetExperimentResults.html
    */
   public toGetExperimentResults() {
     return this.to('GetExperimentResults');
@@ -149,7 +149,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_GetFeature.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_GetFeature.html
    */
   public toGetFeature() {
     return this.to('GetFeature');
@@ -160,7 +160,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_GetLaunch.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_GetLaunch.html
    */
   public toGetLaunch() {
     return this.to('GetLaunch');
@@ -171,7 +171,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_GetProject.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_GetProject.html
    */
   public toGetProject() {
     return this.to('GetProject');
@@ -182,7 +182,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_ListExperiments.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListExperiments.html
    */
   public toListExperiments() {
     return this.to('ListExperiments');
@@ -193,7 +193,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_ListFeatures.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListFeatures.html
    */
   public toListFeatures() {
     return this.to('ListFeatures');
@@ -204,7 +204,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_ListLaunches.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListLaunches.html
    */
   public toListLaunches() {
     return this.to('ListLaunches');
@@ -215,7 +215,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_ListProjects.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListProjects.html
    */
   public toListProjects() {
     return this.to('ListProjects');
@@ -226,7 +226,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -237,7 +237,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_StartExperiment.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StartExperiment.html
    */
   public toStartExperiment() {
     return this.to('StartExperiment');
@@ -248,7 +248,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_StartLaunch.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StartLaunch.html
    */
   public toStartLaunch() {
     return this.to('StartLaunch');
@@ -259,7 +259,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_StopExperiment.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopExperiment.html
    */
   public toStopExperiment() {
     return this.to('StopExperiment');
@@ -270,7 +270,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_StopLaunch.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopLaunch.html
    */
   public toStopLaunch() {
     return this.to('StopLaunch');
@@ -281,7 +281,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_TagResource.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -292,7 +292,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_UntagResource.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -303,7 +303,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_UpdateExperiment.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html
    */
   public toUpdateExperiment() {
     return this.to('UpdateExperiment');
@@ -314,7 +314,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_UpdateFeature.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateFeature.html
    */
   public toUpdateFeature() {
     return this.to('UpdateFeature');
@@ -325,7 +325,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_UpdateLaunch.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateLaunch.html
    */
   public toUpdateLaunch() {
     return this.to('UpdateLaunch');
@@ -336,7 +336,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_UpdateProject.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateProject.html
    */
   public toUpdateProject() {
     return this.to('UpdateProject');
@@ -347,7 +347,7 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/API_UpdateProjectDataDelivery.html
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateProjectDataDelivery.html
    */
   public toUpdateProjectDataDelivery() {
     return this.to('UpdateProjectDataDelivery');
@@ -394,7 +394,7 @@ export class Evidently extends PolicyStatement {
   /**
    * Adds a resource of type Project to the statement
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/projects.html
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/projects.html
    *
    * @param ownerAccountId - Identifier for the ownerAccountId.
    * @param projectName - Identifier for the projectName.
@@ -411,7 +411,7 @@ export class Evidently extends PolicyStatement {
   /**
    * Adds a resource of type Feature to the statement
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/features.html
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/features.html
    *
    * @param ownerAccountId - Identifier for the ownerAccountId.
    * @param projectName - Identifier for the projectName.
@@ -429,7 +429,7 @@ export class Evidently extends PolicyStatement {
   /**
    * Adds a resource of type Experiment to the statement
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/experiments.html
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/experiments.html
    *
    * @param ownerAccountId - Identifier for the ownerAccountId.
    * @param projectName - Identifier for the projectName.
@@ -447,7 +447,7 @@ export class Evidently extends PolicyStatement {
   /**
    * Adds a resource of type Launch to the statement
    *
-   * https://docs.aws.amazon.com/evidently/latest/dg/launches.html
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/launches.html
    *
    * @param ownerAccountId - Identifier for the ownerAccountId.
    * @param projectName - Identifier for the projectName.

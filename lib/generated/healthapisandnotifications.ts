@@ -19,7 +19,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * Gets a list of accounts that have been affected by the specified events in organization.
+   * Grants permission to retrieve a list of accounts that have been affected by the specified events in organization
    *
    * Access Level: Read
    *
@@ -33,7 +33,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * Gets a list of entities that have been affected by the specified events.
+   * Grants permission to retrieve a list of entities that have been affected by the specified events
    *
    * Access Level: Read
    *
@@ -48,7 +48,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * Gets a list of entities that have been affected by the specified events and accounts in organization.
+   * Grants permission to retrieve a list of entities that have been affected by the specified events and accounts in organization
    *
    * Access Level: Read
    *
@@ -62,7 +62,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * Returns the number of entities that are affected by each of the specified events.
+   * Grants permission to retrieve the number of entities that are affected by each of the specified events
    *
    * Access Level: Read
    *
@@ -73,7 +73,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * Returns the number of events of each event type (issue, scheduled change, and account notification).
+   * Grants permission to retrieve the number of events of each event type (issue, scheduled change, and account notification)
    *
    * Access Level: Read
    *
@@ -84,7 +84,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * Returns detailed information about one or more specified events.
+   * Grants permission to retrieve detailed information about one or more specified events
    *
    * Access Level: Read
    *
@@ -99,7 +99,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * Returns detailed information about one or more specified events for provided accounts in organization.
+   * Grants permission to retrieve detailed information about one or more specified events for provided accounts in organization
    *
    * Access Level: Read
    *
@@ -113,7 +113,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * Returns the event types that meet the specified filter criteria.
+   * Grants permission to retrieve the event types that meet the specified filter criteria
    *
    * Access Level: Read
    *
@@ -124,7 +124,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * Returns information about events that meet the specified filter criteria.
+   * Grants permission to retrieve information about events that meet the specified filter criteria
    *
    * Access Level: Read
    *
@@ -135,7 +135,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * Returns information about events that meet the specified filter criteria in organization.
+   * Grants permission to retrieve information about events that meet the specified filter criteria in organization
    *
    * Access Level: Read
    *
@@ -149,7 +149,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * Returns the status of enabling or disabling the Organizational View feature
+   * Grants permission to retrieve the status of enabling or disabling the Organizational View feature
    *
    * Access Level: Read
    *
@@ -163,7 +163,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * Disables the Organizational View feature.
+   * Grants permission to disable the Organizational View feature
    *
    * Access Level: Permissions management
    *
@@ -178,7 +178,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * Enables the Organizational View feature.
+   * Grants permission to enable the Organizational View feature
    *
    * Access Level: Permissions management
    *
@@ -230,7 +230,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * The type of event.
+   * Filters access by event type
    *
    * https://docs.aws.amazon.com/health/latest/ug/controlling-access.html
    *
@@ -246,7 +246,7 @@ export class Health extends PolicyStatement {
   }
 
   /**
-   * The service of the event.
+   * Filters access by impacted service
    *
    * https://docs.aws.amazon.com/health/latest/ug/controlling-access.html
    *
