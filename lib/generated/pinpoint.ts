@@ -1063,6 +1063,17 @@ export class Mobiletargeting extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send an OTP code to a user of your application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-otp.html
+   */
+  public toSendOTPMessage() {
+    return this.to('SendOTPMessage');
+  }
+
+  /**
    * Grants permission to send an SMS message or push notification to all endpoints that are associated with a specific user ID
    *
    * Access Level: Write
@@ -1406,7 +1417,7 @@ export class Mobiletargeting extends PolicyStatement {
   /**
    * Grants permission to check the validity of One-Time Passwords (OTPs)
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-verify-otp.html
    */
@@ -1455,6 +1466,7 @@ export class Mobiletargeting extends PolicyStatement {
       'PutEvents',
       'RemoveAttributes',
       'SendMessages',
+      'SendOTPMessage',
       'SendUsersMessages',
       'UpdateAdmChannel',
       'UpdateApnsChannel',
@@ -1479,7 +1491,8 @@ export class Mobiletargeting extends PolicyStatement {
       'UpdateSmsTemplate',
       'UpdateTemplateActiveVersion',
       'UpdateVoiceChannel',
-      'UpdateVoiceTemplate'
+      'UpdateVoiceTemplate',
+      'VerifyOTPMessage'
     ],
     Read: [
       'GetAdmChannel',
@@ -1518,8 +1531,7 @@ export class Mobiletargeting extends PolicyStatement {
       'GetVoiceChannel',
       'GetVoiceTemplate',
       'ListTagsForResource',
-      'PhoneNumberValidate',
-      'VerifyOTPMessage'
+      'PhoneNumberValidate'
     ],
     List: [
       'GetApplicationSettings',

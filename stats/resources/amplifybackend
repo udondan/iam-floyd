@@ -4,4 +4,5 @@ amplifybackend:backend
 amplifybackend:config
 amplifybackend:environment
 amplifybackend:job
+amplifybackend:storage
 amplifybackend:token

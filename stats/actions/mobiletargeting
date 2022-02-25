@@ -89,6 +89,7 @@ mobiletargeting:PutEventStream;Write
 mobiletargeting:PutEvents;Write
 mobiletargeting:RemoveAttributes;Write
 mobiletargeting:SendMessages;Write
+mobiletargeting:SendOTPMessage;Write
 mobiletargeting:SendUsersMessages;Write
 mobiletargeting:TagResource;Tagging
 mobiletargeting:UntagResource;Tagging
@@ -116,4 +117,4 @@ mobiletargeting:UpdateSmsTemplate;Write
 mobiletargeting:UpdateTemplateActiveVersion;Write
 mobiletargeting:UpdateVoiceChannel;Write
 mobiletargeting:UpdateVoiceTemplate;Write
-mobiletargeting:VerifyOTPMessage;Read
+mobiletargeting:VerifyOTPMessage;Write
