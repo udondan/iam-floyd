@@ -1,6 +1,7 @@
 outposts:CancelOrder;Write
 outposts:CreateOrder;Write
 outposts:CreateOutpost;Write
+outposts:CreatePrivateConnectivityConfig;Write
 outposts:CreateSite;Write
 outposts:DeleteOutpost;Write
 outposts:DeleteSite;Write
@@ -8,6 +9,7 @@ outposts:GetCatalogItem;Read
 outposts:GetOrder;Read
 outposts:GetOutpost;Read
 outposts:GetOutpostInstanceTypes;Read
+outposts:GetPrivateConnectivityConfig;Read
 outposts:GetSite;Read
 outposts:GetSiteAddress;Read
 outposts:ListCatalogItems;List

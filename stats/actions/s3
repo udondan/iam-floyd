@@ -57,12 +57,14 @@ s3:GetMultiRegionAccessPointPolicy;Read
 s3:GetMultiRegionAccessPointPolicyStatus;Read
 s3:GetObject;Read
 s3:GetObjectAcl;Read
+s3:GetObjectAttributes;Read
 s3:GetObjectLegalHold;Read
 s3:GetObjectRetention;Read
 s3:GetObjectTagging;Read
 s3:GetObjectTorrent;Read
 s3:GetObjectVersion;Read
 s3:GetObjectVersionAcl;Read
+s3:GetObjectVersionAttributes;Read
 s3:GetObjectVersionForReplication;Read
 s3:GetObjectVersionTagging;Read
 s3:GetObjectVersionTorrent;Read

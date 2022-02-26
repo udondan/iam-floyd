@@ -1261,6 +1261,29 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve attributes related to a specific object
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html
+   */
+  public toGetObjectAttributes() {
+    return this.to('GetObjectAttributes');
+  }
+
+  /**
    * Grants permission to get an object's current Legal Hold status
    *
    * Access Level: Read
@@ -1392,6 +1415,30 @@ export class S3 extends PolicyStatement {
    */
   public toGetObjectVersionAcl() {
     return this.to('GetObjectVersionAcl');
+  }
+
+  /**
+   * Grants permission to retrieve attributes related to a specific version of an object
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifExistingObjectTag()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifVersionid()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html
+   */
+  public toGetObjectVersionAttributes() {
+    return this.to('GetObjectVersionAttributes');
   }
 
   /**
@@ -2779,12 +2826,14 @@ export class S3 extends PolicyStatement {
       'GetMultiRegionAccessPointPolicyStatus',
       'GetObject',
       'GetObjectAcl',
+      'GetObjectAttributes',
       'GetObjectLegalHold',
       'GetObjectRetention',
       'GetObjectTagging',
       'GetObjectTorrent',
       'GetObjectVersion',
       'GetObjectVersionAcl',
+      'GetObjectVersionAttributes',
       'GetObjectVersionForReplication',
       'GetObjectVersionTagging',
       'GetObjectVersionTorrent',
@@ -2950,11 +2999,13 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
    * - .toGetObjectTagging()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionTagging()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
@@ -3012,11 +3063,13 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
    * - .toGetObjectTagging()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionTagging()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
@@ -3074,11 +3127,13 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
    * - .toGetObjectTagging()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionTagging()
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
@@ -3150,9 +3205,11 @@ export class S3 extends PolicyStatement {
    * - .toDeleteObjectVersionTagging()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAttributes()
    * - .toGetObjectTagging()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionTagging()
    * - .toPutObjectAcl()
    * - .toPutObjectTagging()
@@ -3327,12 +3384,14 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
    * - .toGetObjectTagging()
    * - .toGetObjectTorrent()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
    * - .toGetObjectVersionTorrent()
@@ -3464,12 +3523,14 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
    * - .toGetObjectTagging()
    * - .toGetObjectTorrent()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
    * - .toGetObjectVersionTorrent()
@@ -3614,12 +3675,14 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
    * - .toGetObjectTagging()
    * - .toGetObjectTorrent()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
    * - .toGetObjectVersionTorrent()
@@ -3884,12 +3947,14 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
    * - .toGetObjectTagging()
    * - .toGetObjectTorrent()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
    * - .toGetObjectVersionTorrent()
@@ -4022,12 +4087,14 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPointPolicyStatus()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
    * - .toGetObjectTagging()
    * - .toGetObjectTorrent()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
    * - .toGetObjectVersionTorrent()
@@ -4105,6 +4172,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteObjectVersionTagging()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionTagging()
    * - .toGetObjectVersionTorrent()
    * - .toPutObjectVersionAcl()
@@ -4196,12 +4264,14 @@ export class S3 extends PolicyStatement {
    * - .toGetMetricsConfiguration()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
    * - .toGetObjectTagging()
    * - .toGetObjectTorrent()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
    * - .toGetObjectVersionTorrent()

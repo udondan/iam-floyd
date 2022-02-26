@@ -52,6 +52,17 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a private connectivity configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/how-outposts-works.html#private-connectivity
+   */
+  public toCreatePrivateConnectivityConfig() {
+    return this.to('CreatePrivateConnectivityConfig');
+  }
+
+  /**
    * Grants permission to create a site
    *
    * Access Level: Write
@@ -126,6 +137,17 @@ export class Outposts extends PolicyStatement {
    */
   public toGetOutpostInstanceTypes() {
     return this.to('GetOutpostInstanceTypes');
+  }
+
+  /**
+   * Grants permission to get a private connectivity configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/outposts/latest/userguide/how-outposts-works.html#private-connectivity
+   */
+  public toGetPrivateConnectivityConfig() {
+    return this.to('GetPrivateConnectivityConfig');
   }
 
   /**
@@ -276,6 +298,7 @@ export class Outposts extends PolicyStatement {
       'CancelOrder',
       'CreateOrder',
       'CreateOutpost',
+      'CreatePrivateConnectivityConfig',
       'CreateSite',
       'DeleteOutpost',
       'DeleteSite',
@@ -289,6 +312,7 @@ export class Outposts extends PolicyStatement {
       'GetOrder',
       'GetOutpost',
       'GetOutpostInstanceTypes',
+      'GetPrivateConnectivityConfig',
       'GetSite',
       'GetSiteAddress',
       'ListTagsForResource'
