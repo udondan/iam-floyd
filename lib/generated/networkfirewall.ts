@@ -192,7 +192,7 @@ export class NetworkFirewall extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroupMetadata.html
    */
   public toDescribeRuleGroupMetadata() {
     return this.to('DescribeRuleGroupMetadata');
