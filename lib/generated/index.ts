@@ -287,6 +287,7 @@ export { Sso } from './sso';
 export { SsoDirectory } from './ssodirectory';
 export { States } from './stepfunctions';
 export { Support } from './support';
+export { Sustainability } from './sustainability';
 export { Ssm } from './systemsmanager';
 export { SsmGuiconnect } from './systemsmanagerguiconnect';
 export { SsmIncidents } from './systemsmanagerincidentmanager';

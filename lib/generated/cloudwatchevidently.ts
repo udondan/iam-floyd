@@ -19,6 +19,17 @@ export class Evidently extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send a batched evaluate feature request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_BatchEvaluateFeature.html
+   */
+  public toBatchEvaluateFeature() {
+    return this.to('BatchEvaluateFeature');
+  }
+
+  /**
    * Grants permission to create an experiment
    *
    * Access Level: Write
@@ -120,6 +131,17 @@ export class Evidently extends PolicyStatement {
    */
   public toDeleteProject() {
     return this.to('DeleteProject');
+  }
+
+  /**
+   * Grants permission to send an evaluate feature request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html
+   */
+  public toEvaluateFeature() {
+    return this.to('EvaluateFeature');
   }
 
   /**
@@ -233,6 +255,17 @@ export class Evidently extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send performance events
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_PutProjectEvents.html
+   */
+  public toPutProjectEvents() {
+    return this.to('PutProjectEvents');
+  }
+
+  /**
    * Grants permission to start an experiment
    *
    * Access Level: Write
@@ -281,6 +314,10 @@ export class Evidently extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
@@ -291,6 +328,10 @@ export class Evidently extends PolicyStatement {
    * Grants permission to untag resources
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UntagResource.html
    */
@@ -355,6 +396,7 @@ export class Evidently extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'BatchEvaluateFeature',
       'CreateExperiment',
       'CreateFeature',
       'CreateLaunch',
@@ -363,6 +405,8 @@ export class Evidently extends PolicyStatement {
       'DeleteFeature',
       'DeleteLaunch',
       'DeleteProject',
+      'EvaluateFeature',
+      'PutProjectEvents',
       'StartExperiment',
       'StartLaunch',
       'StopExperiment',

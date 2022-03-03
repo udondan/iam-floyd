@@ -1,3 +1,4 @@
+evidently:BatchEvaluateFeature;Write
 evidently:CreateExperiment;Write
 evidently:CreateFeature;Write
 evidently:CreateLaunch;Write
@@ -6,6 +7,7 @@ evidently:DeleteExperiment;Write
 evidently:DeleteFeature;Write
 evidently:DeleteLaunch;Write
 evidently:DeleteProject;Write
+evidently:EvaluateFeature;Write
 evidently:GetExperiment;Read
 evidently:GetExperimentResults;Read
 evidently:GetFeature;Read
@@ -16,6 +18,7 @@ evidently:ListFeatures;Read
 evidently:ListLaunches;Read
 evidently:ListProjects;Read
 evidently:ListTagsForResource;Read
+evidently:PutProjectEvents;Write
 evidently:StartExperiment;Write
 evidently:StartLaunch;Write
 evidently:StopExperiment;Write
