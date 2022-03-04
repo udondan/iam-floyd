@@ -403,6 +403,7 @@ ec2:ImportInstance;Write
 ec2:ImportKeyPair;Write
 ec2:ImportSnapshot;Write
 ec2:ImportVolume;Write
+ec2:ListImagesInRecycleBin;List
 ec2:ListSnapshotsInRecycleBin;List
 ec2:ModifyAddressAttribute;Write
 ec2:ModifyAvailabilityZoneGroup;Write
@@ -497,6 +498,7 @@ ec2:ResetInstanceAttribute;Write
 ec2:ResetNetworkInterfaceAttribute;Write
 ec2:ResetSnapshotAttribute;Permissions management
 ec2:RestoreAddressToClassic;Write
+ec2:RestoreImageFromRecycleBin;Write
 ec2:RestoreManagedPrefixListVersion;Write
 ec2:RestoreSnapshotFromRecycleBin;Write
 ec2:RestoreSnapshotTier;Write

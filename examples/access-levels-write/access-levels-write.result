@@ -321,6 +321,7 @@
         "ec2:ResetInstanceAttribute",
         "ec2:ResetNetworkInterfaceAttribute",
         "ec2:RestoreAddressToClassic",
+        "ec2:RestoreImageFromRecycleBin",
         "ec2:RestoreManagedPrefixListVersion",
         "ec2:RestoreSnapshotFromRecycleBin",
         "ec2:RestoreSnapshotTier",

@@ -87,8 +87,13 @@ export class Kms extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifCallerAccount()
+   * - .ifEncryptionContext()
+   * - .ifEncryptionContextKeys()
    * - .ifGrantConstraintType()
+   * - .ifGranteePrincipal()
    * - .ifGrantIsForAWSResource()
+   * - .ifGrantOperations()
+   * - .ifRetiringPrincipal()
    * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html
@@ -103,8 +108,16 @@ export class Kms extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifBypassPolicyLockoutSafetyCheck()
    * - .ifCallerAccount()
+   * - .ifKeySpec()
+   * - .ifKeyUsage()
+   * - .ifKeyOrigin()
+   * - .ifMultiRegion()
+   * - .ifMultiRegionKeyType()
    * - .ifViaService()
    *
    * Dependent actions:
@@ -712,6 +725,8 @@ export class Kms extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifCallerAccount()
    * - .ifViaService()
    *
@@ -727,6 +742,7 @@ export class Kms extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
+   * - .ifAwsTagKeys()
    * - .ifCallerAccount()
    * - .ifViaService()
    *
@@ -900,6 +916,15 @@ export class Kms extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifKeyOrigin()
+   * - .ifKeySpec()
+   * - .ifKeyUsage()
+   * - .ifMultiRegion()
+   * - .ifMultiRegionKeyType()
+   * - .ifResourceAliases()
    */
   public onKey(keyId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:kms:${ region || '*' }:${ account || '*' }:key/${ keyId }`);
@@ -1046,6 +1071,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context
    *
    * Applies to actions:
+   * - .toCreateGrant()
    * - .toDecrypt()
    * - .toEncrypt()
    * - .toGenerateDataKey()
@@ -1068,6 +1094,7 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context-keys
    *
    * Applies to actions:
+   * - .toCreateGrant()
    * - .toDecrypt()
    * - .toEncrypt()
    * - .toGenerateDataKey()
@@ -1135,6 +1162,9 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-operations
    *
+   * Applies to actions:
+   * - .toCreateGrant()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1146,6 +1176,9 @@ export class Kms extends PolicyStatement {
    * Filters access to the CreateGrant operation based on the grantee principal in the grant
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grantee-principal
+   *
+   * Applies to actions:
+   * - .toCreateGrant()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1159,6 +1192,12 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-origin
    *
+   * Applies to actions:
+   * - .toCreateKey()
+   *
+   * Applies to resource types:
+   * - key
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1171,6 +1210,12 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-spec
    *
+   * Applies to actions:
+   * - .toCreateKey()
+   *
+   * Applies to resource types:
+   * - key
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1182,6 +1227,12 @@ export class Kms extends PolicyStatement {
    * Filters access to an API operation based on the KeyUsage property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key resource
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-usage
+   *
+   * Applies to actions:
+   * - .toCreateKey()
+   *
+   * Applies to resource types:
+   * - key
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1211,6 +1262,12 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-multi-region
    *
+   * Applies to actions:
+   * - .toCreateKey()
+   *
+   * Applies to resource types:
+   * - key
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifMultiRegion(value?: boolean) {
@@ -1221,6 +1278,12 @@ export class Kms extends PolicyStatement {
    * Filters access to an API operation based on the MultiRegionKeyType property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key resource
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-multi-region-key-type
+   *
+   * Applies to actions:
+   * - .toCreateKey()
+   *
+   * Applies to resource types:
+   * - key
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1322,6 +1385,9 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-resource-aliases
    *
+   * Applies to resource types:
+   * - key
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1333,6 +1399,9 @@ export class Kms extends PolicyStatement {
    * Filters access to the CreateGrant operation based on the retiring principal in the grant
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-retiring-principal
+   *
+   * Applies to actions:
+   * - .toCreateGrant()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

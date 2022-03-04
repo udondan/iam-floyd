@@ -22,10 +22,12 @@ kms:ReEncryptOnSameKey
 kms:RecipientAttestation
 kms:ReplicaRegion
 kms:RequestAlias
+kms:RequestTag/${TagKey}
 kms:ResourceAliases
 kms:ResourceTag/${TagKey}
 kms:RetiringPrincipal
 kms:SigningAlgorithm
+kms:TagKeys
 kms:ValidTo
 kms:ViaService
 kms:WrappingAlgorithm

@@ -193,6 +193,7 @@
                 "ec2:GetTransitGatewayRouteTablePropagations",
                 "ec2:GetVpnConnectionDeviceSampleConfiguration",
                 "ec2:GetVpnConnectionDeviceTypes",
+                "ec2:ListImagesInRecycleBin",
                 "ec2:ListSnapshotsInRecycleBin",
                 "ec2:SearchLocalGatewayRoutes",
                 "ec2:SearchTransitGatewayMulticastGroups",

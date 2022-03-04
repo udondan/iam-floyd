@@ -28,6 +28,7 @@ ec2:ipv4pool-ec2
 ec2:ipv6pool-ec2
 ec2:key-pair
 ec2:launch-template
+ec2:license-configuration
 ec2:local-gateway
 ec2:local-gateway-route-table
 ec2:local-gateway-route-table-virtual-interface-group-association
@@ -53,6 +54,7 @@ ec2:snapshot
 ec2:spot-fleet-request
 ec2:spot-instances-request
 ec2:subnet
+ec2:subnet-cidr-reservation
 ec2:traffic-mirror-filter
 ec2:traffic-mirror-filter-rule
 ec2:traffic-mirror-session
