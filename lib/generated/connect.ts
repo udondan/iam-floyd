@@ -1713,6 +1713,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update contact flow module content in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowModuleContent.html
+   */
+  public toUpdateContactFlowModuleContent() {
+    return this.to('UpdateContactFlowModuleContent');
+  }
+
+  /**
    * Grants permission to update the metadata of a contact flow module in an Amazon Connect instance
    *
    * Access Level: Write
@@ -2180,6 +2195,7 @@ export class Connect extends PolicyStatement {
       'UpdateContactAttributes',
       'UpdateContactFlowContent',
       'UpdateContactFlowMetadata',
+      'UpdateContactFlowModuleContent',
       'UpdateContactFlowModuleMetadata',
       'UpdateContactFlowName',
       'UpdateContactSchedule',
@@ -2734,6 +2750,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateContactAttributes()
    * - .toUpdateContactFlowContent()
    * - .toUpdateContactFlowMetadata()
+   * - .toUpdateContactFlowModuleContent()
    * - .toUpdateContactFlowModuleMetadata()
    * - .toUpdateContactFlowName()
    * - .toUpdateContactSchedule()

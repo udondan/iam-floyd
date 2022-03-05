@@ -110,6 +110,7 @@ connect:UpdateContact;Write
 connect:UpdateContactAttributes;Write
 connect:UpdateContactFlowContent;Write
 connect:UpdateContactFlowMetadata;Write
+connect:UpdateContactFlowModuleContent;Write
 connect:UpdateContactFlowModuleMetadata;Write
 connect:UpdateContactFlowName;Write
 connect:UpdateContactSchedule;Write

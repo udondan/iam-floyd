@@ -902,6 +902,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe exchange status details and associated metadata for a reserved-node exchange. Statuses include such values as in progress and requested
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeReservedNodeExchangeStatus.html
+   */
+  public toDescribeReservedNodeExchangeStatus() {
+    return this.to('DescribeReservedNodeExchangeStatus');
+  }
+
+  /**
    * Grants permission to describe available reserved node offerings by Amazon Redshift
    *
    * Access Level: Read
@@ -1122,6 +1133,17 @@ export class Redshift extends PolicyStatement {
    */
   public toGetClusterCredentials() {
     return this.to('GetClusterCredentials');
+  }
+
+  /**
+   * Grants permission to get the configuration options for the reserved-node exchange
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetReservedNodeExchangeConfigurationOptions.html
+   */
+  public toGetReservedNodeExchangeConfigurationOptions() {
+    return this.to('GetReservedNodeExchangeConfigurationOptions');
   }
 
   /**
@@ -1674,6 +1696,7 @@ export class Redshift extends PolicyStatement {
       'DescribeOrderableClusterOptions',
       'DescribePartners',
       'DescribeQuery',
+      'DescribeReservedNodeExchangeStatus',
       'DescribeReservedNodeOfferings',
       'DescribeReservedNodes',
       'DescribeResize',
@@ -1687,6 +1710,7 @@ export class Redshift extends PolicyStatement {
       'DescribeTags',
       'DescribeUsageLimits',
       'FetchResults',
+      'GetReservedNodeExchangeConfigurationOptions',
       'GetReservedNodeExchangeOfferings'
     ],
     List: [

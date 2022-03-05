@@ -823,6 +823,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Studio Lifecycle Configuration that can be deployed using Amazon SageMaker
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateStudioLifecycleConfig.html
+   */
+  public toCreateStudioLifecycleConfig() {
+    return this.to('CreateStudioLifecycleConfig');
+  }
+
+  /**
    * Grants permission to start a model training job. After training completes, Amazon SageMaker saves the resulting model artifacts and other optional output to an Amazon S3 location that you specify
    *
    * Access Level: Write
@@ -1329,6 +1340,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteRecord() {
     return this.to('DeleteRecord');
+  }
+
+  /**
+   * Grants permission to delete a Studio Lifecycle Configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteStudioLifecycleConfig.html
+   */
+  public toDeleteStudioLifecycleConfig() {
+    return this.to('DeleteStudioLifecycleConfig');
   }
 
   /**
@@ -1860,6 +1882,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeProject() {
     return this.to('DescribeProject');
+  }
+
+  /**
+   * Grants permission to describe a Studio Lifecycle Configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeStudioLifecycleConfig.html
+   */
+  public toDescribeStudioLifecycleConfig() {
+    return this.to('DescribeStudioLifecycleConfig');
   }
 
   /**
@@ -2603,6 +2636,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the Studio Lifecycle Configurations that can be deployed using Amazon SageMaker
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListStudioLifecycleConfigs.html
+   */
+  public toListStudioLifecycleConfigs() {
+    return this.to('ListStudioLifecycleConfigs');
+  }
+
+  /**
    * Grants permission to list subscribed workteams
    *
    * Access Level: List
@@ -2783,6 +2827,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toRenderUiTemplate() {
     return this.to('RenderUiTemplate');
+  }
+
+  /**
+   * Grants permission to retry a pipeline execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_RetryPipelineExecution.html
+   */
+  public toRetryPipelineExecution() {
+    return this.to('RetryPipelineExecution');
   }
 
   /**
@@ -3386,6 +3441,7 @@ export class Sagemaker extends PolicyStatement {
       'CreatePresignedNotebookInstanceUrl',
       'CreateProcessingJob',
       'CreateProject',
+      'CreateStudioLifecycleConfig',
       'CreateTrainingJob',
       'CreateTransformJob',
       'CreateTrial',
@@ -3427,6 +3483,7 @@ export class Sagemaker extends PolicyStatement {
       'DeletePipeline',
       'DeleteProject',
       'DeleteRecord',
+      'DeleteStudioLifecycleConfig',
       'DeleteTrial',
       'DeleteTrialComponent',
       'DeleteUserProfile',
@@ -3440,6 +3497,7 @@ export class Sagemaker extends PolicyStatement {
       'PutModelPackageGroupPolicy',
       'PutRecord',
       'RegisterDevices',
+      'RetryPipelineExecution',
       'SendHeartbeat',
       'SendPipelineExecutionStepFailure',
       'SendPipelineExecutionStepSuccess',
@@ -3535,6 +3593,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribePipelineExecution',
       'DescribeProcessingJob',
       'DescribeProject',
+      'DescribeStudioLifecycleConfig',
       'DescribeSubscribedWorkteam',
       'DescribeTrainingJob',
       'DescribeTransformJob',
@@ -3603,6 +3662,7 @@ export class Sagemaker extends PolicyStatement {
       'ListPipelines',
       'ListProcessingJobs',
       'ListProjects',
+      'ListStudioLifecycleConfigs',
       'ListSubscribedWorkteams',
       'ListTags',
       'ListTrainingJobs',
@@ -3868,6 +3928,24 @@ export class Sagemaker extends PolicyStatement {
    */
   public onAppImageConfig(appImageConfigName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:app-image-config/${ appImageConfigName }`);
+  }
+
+  /**
+   * Adds a resource of type studio-lifecycle-config to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-lcc.html
+   *
+   * @param studioLifecycleConfigName - Identifier for the studioLifecycleConfigName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onStudioLifecycleConfig(studioLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:sagemaker:${ region || '*' }:${ account || '*' }:studio-lifecycle-config/${ studioLifecycleConfigName }`);
   }
 
   /**
@@ -4865,6 +4943,7 @@ export class Sagemaker extends PolicyStatement {
    * - user-profile
    * - app
    * - app-image-config
+   * - studio-lifecycle-config
    * - notebook-instance
    * - code-repository
    * - image

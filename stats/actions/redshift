@@ -73,6 +73,7 @@ redshift:DescribeNodeConfigurationOptions;List
 redshift:DescribeOrderableClusterOptions;Read
 redshift:DescribePartners;Read
 redshift:DescribeQuery;Read
+redshift:DescribeReservedNodeExchangeStatus;Read
 redshift:DescribeReservedNodeOfferings;Read
 redshift:DescribeReservedNodes;Read
 redshift:DescribeResize;Read
@@ -93,6 +94,7 @@ redshift:EnableSnapshotCopy;Write
 redshift:ExecuteQuery;Write
 redshift:FetchResults;Read
 redshift:GetClusterCredentials;Write
+redshift:GetReservedNodeExchangeConfigurationOptions;Read
 redshift:GetReservedNodeExchangeOfferings;Read
 redshift:JoinGroup;Permissions management
 redshift:ListDatabases;List

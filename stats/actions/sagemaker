@@ -44,6 +44,7 @@ sagemaker:CreatePresignedDomainUrl;Write
 sagemaker:CreatePresignedNotebookInstanceUrl;Write
 sagemaker:CreateProcessingJob;Write
 sagemaker:CreateProject;Write
+sagemaker:CreateStudioLifecycleConfig;Write
 sagemaker:CreateTrainingJob;Write
 sagemaker:CreateTransformJob;Write
 sagemaker:CreateTrial;Write
@@ -85,6 +86,7 @@ sagemaker:DeleteNotebookInstanceLifecycleConfig;Write
 sagemaker:DeletePipeline;Write
 sagemaker:DeleteProject;Write
 sagemaker:DeleteRecord;Write
+sagemaker:DeleteStudioLifecycleConfig;Write
 sagemaker:DeleteTags;Tagging
 sagemaker:DeleteTrial;Write
 sagemaker:DeleteTrialComponent;Write
@@ -133,6 +135,7 @@ sagemaker:DescribePipelineDefinitionForExecution;Read
 sagemaker:DescribePipelineExecution;Read
 sagemaker:DescribeProcessingJob;Read
 sagemaker:DescribeProject;Read
+sagemaker:DescribeStudioLifecycleConfig;Read
 sagemaker:DescribeSubscribedWorkteam;Read
 sagemaker:DescribeTrainingJob;Read
 sagemaker:DescribeTransformJob;Read
@@ -200,6 +203,7 @@ sagemaker:ListPipelineParametersForExecution;List
 sagemaker:ListPipelines;List
 sagemaker:ListProcessingJobs;List
 sagemaker:ListProjects;List
+sagemaker:ListStudioLifecycleConfigs;List
 sagemaker:ListSubscribedWorkteams;List
 sagemaker:ListTags;List
 sagemaker:ListTrainingJobs;List
@@ -216,6 +220,7 @@ sagemaker:PutRecord;Write
 sagemaker:QueryLineage;List
 sagemaker:RegisterDevices;Write
 sagemaker:RenderUiTemplate;Read
+sagemaker:RetryPipelineExecution;Write
 sagemaker:Search;Read
 sagemaker:SendHeartbeat;Write
 sagemaker:SendPipelineExecutionStepFailure;Write

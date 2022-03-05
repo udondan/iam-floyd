@@ -67,6 +67,17 @@ export class DevopsGuru extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details about event sources for DevOps Guru
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_DescribeEventSourcesConfig.html
+   */
+  public toDescribeEventSourcesConfig() {
+    return this.to('DescribeEventSourcesConfig');
+  }
+
+  /**
    * Grants permission to view the feedback details of a specified insight
    *
    * Access Level: Read
@@ -291,6 +302,17 @@ export class DevopsGuru extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an event source for DevOps Guru
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_UpdateEventSourcesConfig.html
+   */
+  public toUpdateEventSourcesConfig() {
+    return this.to('UpdateEventSourcesConfig');
+  }
+
+  /**
    * Grants permission to update the list of AWS CloudFormation stacks that are used to specify which AWS resources in your account are analyzed by DevOps Guru
    *
    * Access Level: Write
@@ -317,6 +339,7 @@ export class DevopsGuru extends PolicyStatement {
       'AddNotificationChannel',
       'PutFeedback',
       'RemoveNotificationChannel',
+      'UpdateEventSourcesConfig',
       'UpdateResourceCollection',
       'UpdateServiceIntegration'
     ],
@@ -324,6 +347,7 @@ export class DevopsGuru extends PolicyStatement {
       'DescribeAccountHealth',
       'DescribeAccountOverview',
       'DescribeAnomaly',
+      'DescribeEventSourcesConfig',
       'DescribeFeedback',
       'DescribeInsight',
       'DescribeOrganizationHealth',

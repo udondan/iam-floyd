@@ -140,6 +140,8 @@ export class Cloudformation extends PolicyStatement {
    * Grants permission to upload templates to Amazon S3 buckets. Used only by the AWS CloudFormation console and is not documented in the API reference
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html
    */
   public toCreateUploadBucket() {
     return this.to('CreateUploadBucket');
