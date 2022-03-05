@@ -9,9 +9,9 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-                "resource-groups:CreateGroup",
-                "resource-groups:Tag"
-            ],
+				"resource-groups:CreateGroup",
+				"resource-groups:Tag"
+			],
 			"Resource": "*",
 			"Condition": {
 				"StringEquals": {
@@ -27,7 +27,8 @@
 				"resource-groups:GetGroup",
 				"resource-groups:GetTags",
 				"resource-groups:Tag",
-				"resource-groups:Untag"
+				"resource-groups:Untag",
+				"resource-groups:GetGroupConfiguration"
 			],
 			"Resource": "*",
 			"Condition": {

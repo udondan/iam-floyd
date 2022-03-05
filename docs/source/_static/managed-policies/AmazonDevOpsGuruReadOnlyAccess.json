@@ -8,6 +8,7 @@
 				"devops-guru:DescribeAccountHealth",
 				"devops-guru:DescribeAccountOverview",
 				"devops-guru:DescribeAnomaly",
+				"devops-guru:DescribeEventSourcesConfig",
 				"devops-guru:DescribeFeedback",
 				"devops-guru:DescribeInsight",
 				"devops-guru:DescribeResourceCollectionHealth",
