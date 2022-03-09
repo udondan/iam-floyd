@@ -19,7 +19,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Add tags to one or more on-premises instances.
+   * Grants permission to add tags to one or more on-premises instances
    *
    * Access Level: Tagging
    *
@@ -30,7 +30,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Gets information about one or more application revisions.
+   * Grants permission to get information about one or more application revisions
    *
    * Access Level: Read
    *
@@ -41,7 +41,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about multiple applications associated with the IAM user.
+   * Grants permission to get information about multiple applications associated with the IAM user
    *
    * Access Level: Read
    *
@@ -52,7 +52,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about one or more deployment groups.
+   * Grants permission to get information about one or more deployment groups
    *
    * Access Level: Read
    *
@@ -63,7 +63,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Gets information about one or more instance that are part of a deployment group.
+   * Grants permission to get information about one or more instance that are part of a deployment group
    *
    * Access Level: Read
    *
@@ -74,7 +74,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Returns an array of one or more targets associated with a deployment. This method works with all compute types and should be used instead of the deprecated BatchGetDeploymentInstances. The maximum number of targets that can be returned is 25.
+   * Grants permission to return an array of one or more targets associated with a deployment. This method works with all compute types and should be used instead of the deprecated BatchGetDeploymentInstances. The maximum number of targets that can be returned is 25
    *
    * Access Level: Read
    *
@@ -85,7 +85,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about multiple deployments associated with the IAM user.
+   * Grants permission to get information about multiple deployments associated with the IAM user
    *
    * Access Level: Read
    *
@@ -96,7 +96,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about one or more on-premises instances.
+   * Grants permission to get information about one or more on-premises instances
    *
    * Access Level: Read
    *
@@ -107,7 +107,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Starts the process of rerouting traffic from instances in the original environment to instances in thereplacement environment without waiting for a specified wait time to elapse.
+   * Grants permission to start the process of rerouting traffic from instances in the original environment to instances in thereplacement environment without waiting for a specified wait time to elapse
    *
    * Access Level: Write
    *
@@ -118,7 +118,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Create an application associated with the IAM user.
+   * Grants permission to create an application associated with the IAM user
    *
    * Access Level: Write
    *
@@ -133,7 +133,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Create CloudFormation deployment to cooperate ochestration for a CloudFormation stack update.
+   * Grants permission to create CloudFormation deployment to cooperate ochestration for a CloudFormation stack update
    *
    * Access Level: Write
    */
@@ -142,7 +142,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Create a deployment for an application associated with the IAM user.
+   * Grants permission to create a deployment for an application associated with the IAM user
    *
    * Access Level: Write
    *
@@ -153,7 +153,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Create a custom deployment configuration associated with the IAM user.
+   * Grants permission to create a custom deployment configuration associated with the IAM user
    *
    * Access Level: Write
    *
@@ -164,7 +164,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Create a deployment group for an application associated with the IAM user.
+   * Grants permission to create a deployment group for an application associated with the IAM user
    *
    * Access Level: Write
    *
@@ -179,7 +179,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Delete an application associated with the IAM user.
+   * Grants permission to delete an application associated with the IAM user
    *
    * Access Level: Write
    *
@@ -190,7 +190,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Delete a custom deployment configuration associated with the IAM user.
+   * Grants permission to delete a custom deployment configuration associated with the IAM user
    *
    * Access Level: Write
    *
@@ -201,7 +201,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Delete a deployment group for an application associated with the IAM user.
+   * Grants permission to delete a deployment group for an application associated with the IAM user
    *
    * Access Level: Write
    *
@@ -212,7 +212,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Deletes a GitHub account connection.
+   * Grants permission to delete a GitHub account connection
    *
    * Access Level: Write
    *
@@ -223,7 +223,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Delete resources associated with the given external Id.
+   * Grants permission to delete resources associated with the given external Id
    *
    * Access Level: Write
    *
@@ -234,7 +234,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Deregister an on-premises instance.
+   * Grants permission to deregister an on-premises instance
    *
    * Access Level: Write
    *
@@ -245,7 +245,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about a single application associated with the IAM user.
+   * Grants permission to get information about a single application associated with the IAM user
    *
    * Access Level: List
    *
@@ -256,7 +256,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about a single application revision for an application associated with the IAM user.
+   * Grants permission to get information about a single application revision for an application associated with the IAM user
    *
    * Access Level: List
    *
@@ -267,7 +267,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about a single deployment to a deployment group for an application associated with the IAM user.
+   * Grants permission to get information about a single deployment to a deployment group for an application associated with the IAM user
    *
    * Access Level: List
    *
@@ -278,7 +278,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about a single deployment configuration associated with the IAM user.
+   * Grants permission to get information about a single deployment configuration associated with the IAM user
    *
    * Access Level: List
    *
@@ -289,7 +289,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about a single deployment group for an application associated with the IAM user.
+   * Grants permission to get information about a single deployment group for an application associated with the IAM user
    *
    * Access Level: List
    *
@@ -300,7 +300,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about a single instance in a deployment associated with the IAM user.
+   * Grants permission to get information about a single instance in a deployment associated with the IAM user
    *
    * Access Level: List
    *
@@ -311,7 +311,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Returns information about a deployment target.
+   * Grants permission to return information about a deployment target
    *
    * Access Level: Read
    *
@@ -322,7 +322,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about a single on-premises instance.
+   * Grants permission to get information about a single on-premises instance
    *
    * Access Level: List
    *
@@ -333,7 +333,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about all application revisions for an application associated with the IAM user.
+   * Grants permission to get information about all application revisions for an application associated with the IAM user
    *
    * Access Level: List
    *
@@ -344,7 +344,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about all applications associated with the IAM user.
+   * Grants permission to get information about all applications associated with the IAM user
    *
    * Access Level: List
    *
@@ -355,7 +355,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about all deployment configurations associated with the IAM user.
+   * Grants permission to get information about all deployment configurations associated with the IAM user
    *
    * Access Level: List
    *
@@ -366,7 +366,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about all deployment groups for an application associated with the IAM user.
+   * Grants permission to get information about all deployment groups for an application associated with the IAM user
    *
    * Access Level: List
    *
@@ -377,7 +377,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about all instances in a deployment associated with the IAM user.
+   * Grants permission to get information about all instances in a deployment associated with the IAM user
    *
    * Access Level: List
    *
@@ -388,7 +388,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Returns an array of target IDs that are associated a deployment.
+   * Grants permission to return an array of target IDs that are associated a deployment
    *
    * Access Level: List
    *
@@ -399,7 +399,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Get information about all deployments to a deployment group associated with the IAM user, or to get all deployments associated with the IAM user.
+   * Grants permission to get information about all deployments to a deployment group associated with the IAM user, or to get all deployments associated with the IAM user
    *
    * Access Level: List
    *
@@ -410,18 +410,18 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Lists the names of stored connections to GitHub accounts.
+   * Grants permission to list the names of stored connections to GitHub accounts
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ ListGitHubAccountTokenNames.html
+   * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListGitHubAccountTokenNames.html
    */
   public toListGitHubAccountTokenNames() {
     return this.to('ListGitHubAccountTokenNames');
   }
 
   /**
-   * Get a list of one or more on-premises instance names.
+   * Grants permission to get a list of one or more on-premises instance names
    *
    * Access Level: List
    *
@@ -432,18 +432,18 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Returns a list of tags for the resource identified by a specified ARN. Tags are used to organize and categorize your CodeDeploy resources.
+   * Grants permission to return a list of tags for the resource identified by a specified ARN. Tags are used to organize and categorize your CodeDeploy resources
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ ListTagsForResource.html
+   * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
   }
 
   /**
-   * Notify a lifecycle event hook execution status for associated deployment with the IAM user.
+   * Grants permission to notify a lifecycle event hook execution status for associated deployment with the IAM user
    *
    * Access Level: Write
    *
@@ -454,7 +454,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Register information about an application revision for an application associated with the IAM user.
+   * Grants permission to register information about an application revision for an application associated with the IAM user
    *
    * Access Level: Write
    *
@@ -465,7 +465,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Register an on-premises instance.
+   * Grants permission to register an on-premises instance
    *
    * Access Level: Write
    *
@@ -476,7 +476,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Remove tags from one or more on-premises instances.
+   * Grants permission to remove tags from one or more on-premises instances
    *
    * Access Level: Tagging
    *
@@ -487,18 +487,18 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after the traffic routing is complete.
+   * Grants permission to override any specified wait time and starts terminating instances immediately after the traffic routing is complete. This action applies to blue-green deployments only
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ SkipWaitTimeForInstanceTermination.html
+   * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_SkipWaitTimeForInstanceTermination.html
    */
   public toSkipWaitTimeForInstanceTermination() {
     return this.to('SkipWaitTimeForInstanceTermination');
   }
 
   /**
-   * Description for StopDeployment
+   * Grants permission to stop a deployment
    *
    * Access Level: Write
    *
@@ -509,7 +509,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Associates the list of tags in the input Tags parameter with the resource identified by the ResourceArn input parameter.
+   * Grants permission to associate the list of tags in the input Tags parameter with the resource identified by the ResourceArn input parameter
    *
    * Access Level: Tagging
    *
@@ -524,7 +524,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Disassociates a resource from a list of tags. The resource is identified by the ResourceArn input parameter. The tags are identfied by the list of keys in the TagKeys input parameter.
+   * Grants permission to disassociate a resource from a list of tags. The resource is identified by the ResourceArn input parameter. The tags are identfied by the list of keys in the TagKeys input parameter
    *
    * Access Level: Tagging
    *
@@ -538,7 +538,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Description for UpdateApplication
+   * Grants permission to update an application
    *
    * Access Level: Write
    *
@@ -549,7 +549,7 @@ export class Codedeploy extends PolicyStatement {
   }
 
   /**
-   * Change information about a single deployment group for an application associated with the IAM user.
+   * Grants permission to change information about a single deployment group for an application associated with the IAM user
    *
    * Access Level: Write
    *

@@ -14,9 +14,11 @@ wafv2:DeleteWebACL;Write
 wafv2:DescribeManagedRuleGroup;Read
 wafv2:DisassociateFirewallManager;Write
 wafv2:DisassociateWebACL;Write
+wafv2:GenerateMobileSdkReleaseUrl;Read
 wafv2:GetIPSet;Read
 wafv2:GetLoggingConfiguration;Read
 wafv2:GetManagedRuleSet;Read
+wafv2:GetMobileSdkRelease;Read
 wafv2:GetPermissionPolicy;Read
 wafv2:GetRateBasedStatementManagedKeys;Read
 wafv2:GetRegexPatternSet;Read
@@ -29,6 +31,7 @@ wafv2:ListAvailableManagedRuleGroups;List
 wafv2:ListIPSets;List
 wafv2:ListLoggingConfigurations;List
 wafv2:ListManagedRuleSets;List
+wafv2:ListMobileSdkReleases;List
 wafv2:ListRegexPatternSets;List
 wafv2:ListResourcesForWebACL;List
 wafv2:ListRuleGroups;List
