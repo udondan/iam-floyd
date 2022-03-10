@@ -110,6 +110,7 @@ export { Redshift } from './redshift';
 export { RedshiftData } from './redshiftdataapi';
 export { Rekognition } from './rekognition';
 export { Tag } from './resourcegrouptaggingapi';
+export { Rhelkb } from './rhelknowledgebaseportal';
 export { Route53 } from './route53';
 export { Route53domains } from './route53domains';
 export { Route53RecoveryCluster } from './route53recoverycluster';
