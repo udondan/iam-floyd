@@ -16,7 +16,7 @@ deploy = getattr(test, 'deploy')
 s = (
     # doc-start
     statement.S3() \
-        .allow() \
+        .deny() \
         .all_actions() \
         .not_principals() \
         .for_user('1234567890', 'Bob')

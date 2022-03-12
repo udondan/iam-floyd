@@ -5,7 +5,7 @@ function getStatement() {
   return (
     // doc-start
     new statement.S3()
-      .allow()
+      .deny()
       .allActions()
       .notPrincipals()
       .forUser('1234567890', 'Bob')
