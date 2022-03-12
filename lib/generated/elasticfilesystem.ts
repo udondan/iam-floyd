@@ -79,6 +79,10 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateAccessPoint.html
    */
   public toCreateAccessPoint() {
@@ -200,6 +204,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteTags.html
    */
@@ -399,6 +404,10 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/efs/latest/ug/API_TagResource.html
    */
   public toTagResource() {
@@ -409,6 +418,10 @@ export class Elasticfilesystem extends PolicyStatement {
    * Grants permission to delete the specified tags from an Amazon EFS resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_UntagResource.html
    */
