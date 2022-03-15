@@ -89,6 +89,17 @@ export class Kafkaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an MSK Connect custom plugin
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/MSKC/latest/mskc/API_DeleteCustomPlugin.html
+   */
+  public toDeleteCustomPlugin() {
+    return this.to('DeleteCustomPlugin');
+  }
+
+  /**
    * Grants permission to describe an MSK Connect connector
    *
    * Access Level: Read
@@ -171,6 +182,7 @@ export class Kafkaconnect extends PolicyStatement {
       'CreateCustomPlugin',
       'CreateWorkerConfiguration',
       'DeleteConnector',
+      'DeleteCustomPlugin',
       'UpdateConnector'
     ],
     Read: [
