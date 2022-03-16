@@ -15,6 +15,7 @@
 				"dataexchange:UntagResource",
 				"dataexchange:PublishDataSet",
 				"dataexchange:SendApiAsset",
+				"dataexchange:RevokeRevision",
 				"tag:GetTagKeys",
 				"tag:GetTagValues"
 			],
