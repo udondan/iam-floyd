@@ -1,0 +1,2 @@
+tax:GetExemptions;Read
+tax:UpdateExemptions;Write

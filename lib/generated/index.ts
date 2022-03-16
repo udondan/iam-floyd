@@ -294,6 +294,7 @@ export { SsmGuiconnect } from './systemsmanagerguiconnect';
 export { SsmIncidents } from './systemsmanagerincidentmanager';
 export { SsmContacts } from './systemsmanagerincidentmanagercontacts';
 export { ResourceExplorer } from './tageditor';
+export { Tax } from './taxsettings';
 export { Tiros } from './tiros';
 export { Transfer } from './transferfamily';
 export { Trustedadvisor } from './trustedadvisor';
