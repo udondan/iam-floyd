@@ -18,7 +18,7 @@ cloudformation:DeleteStackSet;Write
 cloudformation:DeregisterType;Write
 cloudformation:DescribeAccountLimits;Read
 cloudformation:DescribeChangeSet;Read
-cloudformation:DescribeChangeSetHook;Read
+cloudformation:DescribeChangeSetHooks;Read
 cloudformation:DescribePublisher;Read
 cloudformation:DescribeStackDriftDetectionStatus;Read
 cloudformation:DescribeStackEvents;Read
@@ -60,6 +60,7 @@ cloudformation:PublishType;Write
 cloudformation:RecordHandlerProgress;Write
 cloudformation:RegisterPublisher;Write
 cloudformation:RegisterType;Write
+cloudformation:RollbackStack;Write
 cloudformation:SetStackPolicy;Permissions management
 cloudformation:SetTypeConfiguration;Write
 cloudformation:SetTypeDefaultVersion;Write

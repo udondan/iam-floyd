@@ -178,7 +178,7 @@ export class Kafka extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn.html#DescribeConfiguration
+   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#DescribeConfiguration
    */
   public toDescribeConfiguration() {
     return this.to('DescribeConfiguration');
@@ -189,7 +189,7 @@ export class Kafka extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn-revision.html#DescribeConfigurationRevision
+   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn-revisions-revision.html#DescribeConfigurationRevision
    */
   public toDescribeConfigurationRevision() {
     return this.to('DescribeConfigurationRevision');
@@ -266,7 +266,7 @@ export class Kafka extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration
+   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#ListConfigurations
    */
   public toListConfigurations() {
     return this.to('ListConfigurations');
@@ -416,7 +416,7 @@ export class Kafka extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#updateconfiguration
+   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#UpdateConfiguration
    */
   public toUpdateConfiguration() {
     return this.to('UpdateConfiguration');
@@ -514,7 +514,7 @@ export class Kafka extends PolicyStatement {
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html
    *
    * @param clusterName - Identifier for the clusterName.
-   * @param uUID - Identifier for the uUID.
+   * @param uuid - Identifier for the uuid.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
@@ -522,8 +522,23 @@ export class Kafka extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onCluster(clusterName: string, uUID: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }/${ uUID }`);
+  public onCluster(clusterName: string, uuid: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:cluster/${ clusterName }/${ uuid }`);
+  }
+
+  /**
+   * Adds a resource of type configuration to the statement
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html
+   *
+   * @param configurationName - Identifier for the configurationName.
+   * @param uuid - Identifier for the uuid.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onConfiguration(configurationName: string, uuid: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:kafka:${ region || '*' }:${ account || '*' }:configuration/${ configurationName }/${ uuid }`);
   }
 
   /**

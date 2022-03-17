@@ -276,6 +276,17 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
+   * Grants permission to revoke subscriber access to a revision
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/v1-data-sets-datasetid-revisions-revisionid.html#DeleteRevision
+   */
+  public toRevokeRevision() {
+    return this.to('RevokeRevision');
+  }
+
+  /**
    * Grants permission to send a request to an API asset
    *
    * Access Level: Write
@@ -383,6 +394,7 @@ export class Dataexchange extends PolicyStatement {
       'DeleteEventAction',
       'DeleteRevision',
       'PublishDataSet',
+      'RevokeRevision',
       'SendApiAsset',
       'StartJob',
       'UpdateAsset',

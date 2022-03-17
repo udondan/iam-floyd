@@ -255,10 +255,10 @@ export class Cloudformation extends PolicyStatement {
    * Possible conditions:
    * - .ifChangeSetName()
    *
-   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSetHook.html
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSetHooks.html
    */
-  public toDescribeChangeSetHook() {
-    return this.to('DescribeChangeSetHook');
+  public toDescribeChangeSetHooks() {
+    return this.to('DescribeChangeSetHooks');
   }
 
   /**
@@ -672,6 +672,20 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to rollback the stack to the last stable state
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRoleArn()
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RollbackStack.html
+   */
+  public toRollbackStack() {
+    return this.to('RollbackStack');
+  }
+
+  /**
    * Grants permission to set a stack policy for a specified stack
    *
    * Access Level: Permissions management
@@ -857,6 +871,7 @@ export class Cloudformation extends PolicyStatement {
       'RecordHandlerProgress',
       'RegisterPublisher',
       'RegisterType',
+      'RollbackStack',
       'SetTypeConfiguration',
       'SetTypeDefaultVersion',
       'SignalResource',
@@ -871,7 +886,7 @@ export class Cloudformation extends PolicyStatement {
       'BatchDescribeTypeConfigurations',
       'DescribeAccountLimits',
       'DescribeChangeSet',
-      'DescribeChangeSetHook',
+      'DescribeChangeSetHooks',
       'DescribePublisher',
       'DescribeStackDriftDetectionStatus',
       'DescribeStackEvents',
@@ -926,6 +941,9 @@ export class Cloudformation extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onChangeset(changeSetName: string, id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:cloudformation:${ region || '*' }:${ account || '*' }:changeSet/${ changeSetName }/${ id }`);
@@ -1004,7 +1022,7 @@ export class Cloudformation extends PolicyStatement {
    * - .toCreateChangeSet()
    * - .toDeleteChangeSet()
    * - .toDescribeChangeSet()
-   * - .toDescribeChangeSetHook()
+   * - .toDescribeChangeSetHooks()
    * - .toExecuteChangeSet()
    *
    * @param value The value(s) to check
@@ -1057,6 +1075,7 @@ export class Cloudformation extends PolicyStatement {
    * - .toCreateStack()
    * - .toCreateStackSet()
    * - .toDeleteStack()
+   * - .toRollbackStack()
    * - .toUpdateStack()
    * - .toUpdateStackSet()
    *
