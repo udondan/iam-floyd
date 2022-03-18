@@ -49,6 +49,15 @@
 			"Resource": [
 				"arn:aws:sqs:*:*:ChimeVoiceConnector-Streaming*"
 			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"polly:SynthesizeSpeech"
+			],
+			"Resource": [
+				"*"
+			]
 		}
 	]
 }
