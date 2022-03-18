@@ -165,6 +165,7 @@ export { BackupGateway } from './backupgateway';
 export { BackupStorage } from './backupstorage';
 export { Batch } from './batch';
 export { AwsPortal } from './billing';
+export { Billingconductor } from './billingconductor';
 export { Budgets } from './budgetservice';
 export { Bugbust } from './bugbust';
 export { Acm } from './certificatemanager';
