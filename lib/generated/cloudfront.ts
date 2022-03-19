@@ -63,21 +63,6 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new web distribution with tags
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistributionWithTags.html
-   */
-  public toCreateDistributionWithTags() {
-    return this.to('CreateDistributionWithTags');
-  }
-
-  /**
    * Grants permission to create a new field-level encryption configuration
    *
    * Access Level: Write
@@ -1062,7 +1047,6 @@ export class Cloudfront extends PolicyStatement {
       'CreateCachePolicy',
       'CreateCloudFrontOriginAccessIdentity',
       'CreateDistribution',
-      'CreateDistributionWithTags',
       'CreateFieldLevelEncryptionConfig',
       'CreateFieldLevelEncryptionProfile',
       'CreateFunction',

@@ -2,7 +2,6 @@ cloudfront:AssociateAlias;Write
 cloudfront:CreateCachePolicy;Write
 cloudfront:CreateCloudFrontOriginAccessIdentity;Write
 cloudfront:CreateDistribution;Write
-cloudfront:CreateDistributionWithTags;Write
 cloudfront:CreateFieldLevelEncryptionConfig;Write
 cloudfront:CreateFieldLevelEncryptionProfile;Write
 cloudfront:CreateFunction;Write
