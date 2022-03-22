@@ -105,7 +105,8 @@
 					"cloudwatch:namespace": [
 						"AWS/DocDB",
 						"AWS/Neptune",
-						"AWS/RDS"
+						"AWS/RDS",
+						"AWS/Usage"
 					]
 				}
 			}

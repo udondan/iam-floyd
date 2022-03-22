@@ -159,7 +159,8 @@
 			"Effect": "Allow",
 			"Action": [
 				"ecr:CreateRepository",
-				"ecr:DeleteRepository"
+				"ecr:DeleteRepository",
+				"ecr:TagResource"
 			],
 			"Resource": [
 				"arn:aws:ecr:*:*:repository/sagemaker-*"
@@ -359,6 +360,7 @@
 			]
 		},
 		{
+			"Effect": "Allow",
 			"Action": [
 				"sagemaker:CreateImage",
 				"sagemaker:DeleteImage",
@@ -368,8 +370,7 @@
 			],
 			"Resource": [
 				"arn:aws:sagemaker:*:*:image/*"
-			],
-			"Effect": "Allow"
+			]
 		},
 		{
 			"Effect": "Allow",

@@ -83,13 +83,6 @@
 		},
 		{
 			"Effect": "Allow",
-			"Action": [
-				"ec2:CreateTags"
-			],
-			"Resource": "*"
-		},
-		{
-			"Effect": "Allow",
 			"Action": "ec2:DeleteVpcEndpointServiceConfigurations",
 			"Resource": "*",
 			"Condition": {
