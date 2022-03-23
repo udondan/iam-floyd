@@ -69,6 +69,10 @@ Or ``deny()``:
 
 .. example:: deny
 
+To set an SID you can pass it as argument in the statement provider:
+
+.. example:: sid
+
 You can work with `access levels <access-levels_>`_. For every access level there are distinct methods available to add all related actions to the statement:
 
 .. tabs::
