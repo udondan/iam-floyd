@@ -92,7 +92,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   }
 
   /**
-   * Adds one or more account principal to the statement
+   * Adds one or more account principals to the statement
    *
    * @param accounts ID of the AWS account
    */
