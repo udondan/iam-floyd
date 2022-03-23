@@ -64,6 +64,14 @@ Automatic releases triggered by changes in the IAM documentation will always res
 
 It has been observed that IAM actions have been `deleted <https://github.com/udondan/iam-floyd/releases/tag/v0.37.0>`_ or `renamed <https://github.com/udondan/iam-floyd/releases/tag/v0.19.0>`_. This case will not be reflected by a major update! If you had been using such a method your code will break. On the other hand, your code probably already is broken, since it creates a policy with invalid actions until you update to the latest release.
 
+How can I set a statement SID?
+------------------------------
+
+The SID can be passed as parameter to the constructor:
+
+.. example:: sid
+
+
 I don't like method chaining!
 -----------------------------
 
