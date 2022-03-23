@@ -1,0 +1,20 @@
+{
+    "Action": "sts:AssumeRole",
+    "Effect": "Allow",
+    "Principal": {
+        "AWS": [
+            "arn:aws:iam::1234567890:root",
+            "arn:aws:iam::0987654321:root"
+        ]
+    }
+}
+{
+    "Action": "sts:AssumeRole",
+    "Effect": "Allow",
+    "Principal": {
+        "AWS": [
+            "arn:aws:iam::1234567890:user/Bob",
+            "arn:aws:iam::1234567890:user/John"
+        ]
+    }
+}

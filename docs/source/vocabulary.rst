@@ -158,6 +158,10 @@ Every possible `principal <https://docs.aws.amazon.com/IAM/latest/UserGuide/refe
 
 .. example:: principal
 
+Some of the ``for*`` methods accept multiple values at once:
+
+.. example:: principal-multiple
+
 The CDK variant of the package has an additional method ``forCdkPrincipal``, which takes any number of `iam.IPrincipal <https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.IPrincipal.html>`_ objects:
 
 .. example:: principal.cdk

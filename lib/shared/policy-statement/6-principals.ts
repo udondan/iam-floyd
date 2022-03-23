@@ -92,21 +92,27 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   }
 
   /**
-   * Adds an account principal to the statement
+   * Adds one or more account principals to the statement
    *
-   * @param account ID of the AWS account
+   * @param accounts ID of the AWS account
    */
-  public forAccount(account: string) {
-    return this.addPrincipal(PrincipalType.AWS, `arn:aws:iam::${account}:root`);
+  public forAccount(...accounts: string[]) {
+    accounts.forEach((account) =>
+      this.addPrincipal(PrincipalType.AWS, `arn:aws:iam::${account}:root`)
+    );
+    return this;
   }
 
   /**
-   * Adds a [federated](https://aws.amazon.com/identity/federation/) (web identity) principal to the statement
+   * Adds one or more [federated](https://aws.amazon.com/identity/federation/) (web identity) principals to the statement
    *
-   * @param provider ID of the AWS account
+   * @param providers ID of the AWS account
    */
-  public forFederated(provider: string) {
-    return this.addPrincipal(PrincipalType.FEDERATED, provider);
+  public forFederated(...providers: string[]) {
+    providers.forEach((provider) =>
+      this.addPrincipal(PrincipalType.FEDERATED, provider)
+    );
+    return this;
   }
 
   /**
@@ -139,82 +145,98 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   }
 
   /**
-   * Adds a canonical user principal to the statement
+   * Adds one or more canonical user principals to the statement
    *
-   * @param userID The user ID
+   * @param userIDs The user ID
    *
    * You can [find the canonical user ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId) for your AWS account in the AWS Management Console. The canonical user ID for an AWS account is specific to the account. You can retrieve the canonical user ID for your AWS account as either the root user or an IAM user.
    */
-  public forCanonicalUser(userID: string) {
-    return this.addPrincipal(PrincipalType.CANONICAL_USER, userID);
+  public forCanonicalUser(...userIDs: string[]) {
+    userIDs.forEach((userID) =>
+      this.addPrincipal(PrincipalType.CANONICAL_USER, userID)
+    );
+    return this;
   }
 
   /**
-   * Adds federated SAML principal to the statement
+   * Adds one or more federated SAML principals to the statement
    *
    * @param account ID of the AWS account
-   * @param providerName Name of the SAML provider
+   * @param providerNames Name of the SAML provider
    */
-  public forSaml(account: string, providerName: string) {
-    return this.forFederated(
-      `arn:aws:iam::${account}:saml-provider/${providerName}`
+  public forSaml(account: string, ...providerNames: string[]) {
+    providerNames.forEach((providerName) =>
+      this.forFederated(`arn:aws:iam::${account}:saml-provider/${providerName}`)
     );
+    return this;
   }
 
   /**
-   * Adds an IAM user principal to the statement
+   * Adds one or more IAM user principals to the statement
    *
    * @param account ID of the AWS account
-   * @param user Name of the IAM user
+   * @param users Name of the IAM user
    */
-  public forUser(account: string, user: string) {
-    return this.addPrincipal(
-      PrincipalType.AWS,
-      `arn:aws:iam::${account}:user/${user}`
+  public forUser(account: string, ...users: string[]) {
+    users.forEach((user) =>
+      this.addPrincipal(
+        PrincipalType.AWS,
+        `arn:aws:iam::${account}:user/${user}`
+      )
     );
+    return this;
   }
 
   /**
-   * Adds an IAM role principal to the statement
+   * Adds one or more IAM role principals to the statement
    *
    * @param account ID of the AWS account
-   * @param role Name of the IAM role
+   * @param roles Name of the IAM role
    */
-  public forRole(account: string, role: string) {
-    return this.addPrincipal(
-      PrincipalType.AWS,
-      `arn:aws:iam::${account}:role/${role}`
+  public forRole(account: string, ...roles: string[]) {
+    roles.forEach((role) =>
+      this.addPrincipal(
+        PrincipalType.AWS,
+        `arn:aws:iam::${account}:role/${role}`
+      )
     );
+    return this;
   }
 
   /**
-   * Adds a specific assumed role session principal to the statement
+   * Adds one or more specific assumed role session principals to the statement
    *
    * @param account ID of the AWS account
    * @param roleName Name of the IAM role
-   * @param sessionName Name of the session. You cannot use a wildcard (`*`) to mean *all sessions*. Principals must always name a specific session
+   * @param sessionNames Name of the session. You cannot use a wildcard (`*`) to mean *all sessions*. Principals must always name a specific session
    */
   public forAssumedRoleSession(
     account: string,
     roleName: string,
-    sessionName: string
+    ...sessionNames: string[]
   ) {
-    return this.addPrincipal(
-      PrincipalType.AWS,
-      `arn:aws:sts::${account}:assumed-role/${roleName}/${sessionName}`
-    );
+    sessionNames.forEach((sessionName) => {
+      this.addPrincipal(
+        PrincipalType.AWS,
+        `arn:aws:sts::${account}:assumed-role/${roleName}/${sessionName}`
+      );
+    });
+    return this;
   }
 
   /**
-   * Adds a service principal to the statement
+   * Adds one or more service principals to the statement
    *
-   * @param service Long version of the service name. Usually in the format: `long_service-name.amazonaws.com`
+   * @param services Long version of the service name. Usually in the format: `long_service-name.amazonaws.com`
    *
    * The service principal is defined by the service. To learn the service principal for a service, see the documentation for that service. For some services, see [AWS Services That Work with IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html) and look for the services that have **Yes** in the **Service-Linked Role** column. Choose a **Yes** with a link to view the service-linked role documentation for that service. View the **Service-Linked Role Permissions** section for that service to view the service principal.
    */
 
-  public forService(service: string) {
-    return this.addPrincipal(PrincipalType.SERVICE, service);
+  public forService(...services: string[]) {
+    services.forEach((service) =>
+      this.addPrincipal(PrincipalType.SERVICE, service)
+    );
+    return this;
   }
 
   /**
