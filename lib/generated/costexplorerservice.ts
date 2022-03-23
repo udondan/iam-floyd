@@ -23,6 +23,10 @@ export class Ce extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateAnomalyMonitor.html
    */
   public toCreateAnomalyMonitor() {
@@ -34,6 +38,10 @@ export class Ce extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateAnomalySubscription.html
    */
   public toCreateAnomalySubscription() {
@@ -44,6 +52,10 @@ export class Ce extends PolicyStatement {
    * Grants permission to create a new Cost Category with the requested name and rules
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateCostCategoryDefinition.html
    */
@@ -78,6 +90,9 @@ export class Ce extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteAnomalyMonitor.html
    */
   public toDeleteAnomalyMonitor() {
@@ -89,6 +104,9 @@ export class Ce extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteAnomalySubscription.html
    */
   public toDeleteAnomalySubscription() {
@@ -99,6 +117,9 @@ export class Ce extends PolicyStatement {
    * Grants permission to delete a Cost Category
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteCostCategoryDefinition.html
    */
@@ -133,6 +154,9 @@ export class Ce extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeCostCategoryDefinition.html
    */
   public toDescribeCostCategoryDefinition() {
@@ -166,6 +190,9 @@ export class Ce extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalies.html
    */
   public toGetAnomalies() {
@@ -177,6 +204,9 @@ export class Ce extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalyMonitors.html
    */
   public toGetAnomalyMonitors() {
@@ -187,6 +217,9 @@ export class Ce extends PolicyStatement {
    * Grants permission to query Anomaly Subscriptions
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalySubscriptions.html
    */
@@ -382,6 +415,20 @@ export class Ce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tags for a Cost Explorer resource
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to provide feedback on detected anomalies
    *
    * Access Level: Write
@@ -393,9 +440,43 @@ export class Ce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to tag a Cost Explorer resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from a Cost Explorer resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to update an existing Anomaly Monitor
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalyMonitor.html
    */
@@ -408,6 +489,9 @@ export class Ce extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html
    */
   public toUpdateAnomalySubscription() {
@@ -418,6 +502,9 @@ export class Ce extends PolicyStatement {
    * Grants permission to update an existing Cost Category
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateCostCategoryDefinition.html
    */
@@ -500,10 +587,63 @@ export class Ce extends PolicyStatement {
       'GetSavingsPlansUtilization',
       'GetSavingsPlansUtilizationDetails',
       'GetTags',
-      'GetUsageForecast'
+      'GetUsageForecast',
+      'ListTagsForResource'
     ],
     List: [
       'ListCostCategoryDefinitions'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type anomalysubscription to the statement
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html
+   *
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAnomalysubscription(identifier: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:ce::${ account || '*' }:anomalysubscription/${ identifier }`);
+  }
+
+  /**
+   * Adds a resource of type anomalymonitor to the statement
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html
+   *
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAnomalymonitor(identifier: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:ce::${ account || '*' }:anomalymonitor/${ identifier }`);
+  }
+
+  /**
+   * Adds a resource of type costcategory to the statement
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html
+   *
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCostcategory(identifier: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:ce::${ account || '*' }:costcategory/${ identifier }`);
+  }
 }
