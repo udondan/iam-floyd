@@ -4,7 +4,7 @@ import * as statement from '../../lib';
 function getStatements() {
   function wrap() {
     // doc-start
-    const s1 = new statement.Sts() //
+    const s1 = new statement.Sts()
       .allow()
       .toAssumeRole()
       .forAccount('1234567890');
@@ -14,32 +14,32 @@ function getStatements() {
       .toAssumeRoleWithSAML()
       .forService('lambda.amazonaws.com');
 
-    const s3 = new statement.Sts() //
+    const s3 = new statement.Sts()
       .allow()
       .toAssumeRole()
       .forUser('1234567890', 'Bob');
 
-    const s4 = new statement.Sts() //
+    const s4 = new statement.Sts()
       .allow()
       .toAssumeRole()
       .forRole('1234567890', 'role-name');
 
-    const s5 = new statement.Sts() //
+    const s5 = new statement.Sts()
       .allow()
       .toAssumeRoleWithSAML()
       .forFederatedCognito();
 
-    const s6 = new statement.Sts() //
+    const s6 = new statement.Sts()
       .allow()
       .toAssumeRoleWithSAML()
       .forFederatedAmazon();
 
-    const s7 = new statement.Sts() //
+    const s7 = new statement.Sts()
       .allow()
       .toAssumeRoleWithSAML()
       .forFederatedGoogle();
 
-    const s8 = new statement.Sts() //
+    const s8 = new statement.Sts()
       .allow()
       .toAssumeRoleWithSAML()
       .forFederatedFacebook();
@@ -59,7 +59,7 @@ function getStatements() {
       .toAssumeRole()
       .forAssumedRoleSession('123456789', 'role-name', 'session-name');
 
-    const s12 = new statement.Sts() //
+    const s12 = new statement.Sts()
       .allow()
       .toAssumeRole()
       .forCanonicalUser('userID');

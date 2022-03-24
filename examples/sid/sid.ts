@@ -4,7 +4,7 @@ import * as statement from '../../lib';
 function getStatement() {
   return (
     // doc-start
-    new statement.Ec2('MY-SID') //
+    new statement.Ec2('MYSID') //
       .allow()
       .toStartInstances()
       .toStopInstances()

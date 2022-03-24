@@ -1,5 +1,5 @@
 {
-    "Sid": "MY-SID",
+    "Sid": "MYSID",
     "Action": [
         "ec2:StartInstances",
         "ec2:StopInstances"

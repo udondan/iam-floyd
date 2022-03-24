@@ -15,7 +15,7 @@ deploy = getattr(test, 'deploy')
 
 s = (
     # doc-start
-    statement.Ec2('MY-SID') \
+    statement.Ec2('MYSID') \
         .allow() \
         .to_start_instances() \
         .to_stop_instances()
