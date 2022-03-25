@@ -471,6 +471,17 @@ export class S3Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list shared endpoints
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListSharedEndpoints.html
+   */
+  public toListSharedEndpoints() {
+    return this.to('ListSharedEndpoints');
+  }
+
+  /**
    * Grants permission to associate an access policy with a specified access point
    *
    * Access Level: Permissions management
@@ -655,7 +666,8 @@ export class S3Outposts extends PolicyStatement {
       'ListBucketMultipartUploads',
       'ListEndpoints',
       'ListMultipartUploadParts',
-      'ListRegionalBuckets'
+      'ListRegionalBuckets',
+      'ListSharedEndpoints'
     ]
   };
 

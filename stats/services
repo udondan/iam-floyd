@@ -127,6 +127,7 @@ frauddetector
 freertos
 fsx
 gamelift
+gamesparks
 geo
 glacier
 globalaccelerator
@@ -140,6 +141,7 @@ health
 healthlake
 honeycode
 iam
+identity-sync
 identitystore
 imagebuilder
 importexport

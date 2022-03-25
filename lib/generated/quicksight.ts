@@ -19,7 +19,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * To enable setting default access to AWS resources
+   * Grants permission to enable setting default access to AWS resources
    *
    * Access Level: Write
    *
@@ -782,6 +782,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a QuickSight group member
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeGroupMembership.html
+   */
+  public toDescribeGroupMembership() {
+    return this.to('DescribeGroupMembership');
+  }
+
+  /**
    * Grants permission to describe an existing assignment
    *
    * Access Level: Read
@@ -1301,7 +1312,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Scoping policies for permissions to AWS resources
+   * Grants permission to manage scoping policies for permissions to AWS resources
    *
    * Access Level: Write
    *
@@ -1353,6 +1364,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toSearchFolders() {
     return this.to('SearchFolders');
+  }
+
+  /**
+   * Grants permission to search for a sub-set of QuickSight groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchGroups.html
+   */
+  public toSearchGroups() {
+    return this.to('SearchGroups');
   }
 
   /**
@@ -1815,6 +1837,7 @@ export class Quicksight extends PolicyStatement {
       'DescribeFolderPermissions',
       'DescribeFolderResolvedPermissions',
       'DescribeGroup',
+      'DescribeGroupMembership',
       'DescribeIAMPolicyAssignment',
       'DescribeIngestion',
       'DescribeIpRestriction',
@@ -1860,7 +1883,8 @@ export class Quicksight extends PolicyStatement {
       'ListUsers',
       'SearchAnalyses',
       'SearchDashboards',
-      'SearchDirectoryGroups'
+      'SearchDirectoryGroups',
+      'SearchGroups'
     ],
     Tagging: [
       'TagResource',
@@ -2159,6 +2183,7 @@ export class Quicksight extends PolicyStatement {
    * Applies to actions:
    * - .toCreateGroupMembership()
    * - .toDeleteGroupMembership()
+   * - .toDescribeGroupMembership()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
