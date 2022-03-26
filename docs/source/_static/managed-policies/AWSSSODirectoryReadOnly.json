@@ -1,16 +1,18 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AWSSSODirectoryReadOnly",
-            "Effect": "Allow",
-            "Action": [
-                "sso-directory:Search*",
-                "sso-directory:Describe*",
-                "sso-directory:List*",
-                "sso-directory:Get*"
-            ],
-            "Resource": "*"
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "AWSSSODirectoryReadOnly",
+			"Effect": "Allow",
+			"Action": [
+				"sso-directory:Search*",
+				"sso-directory:Describe*",
+				"sso-directory:List*",
+				"sso-directory:Get*",
+				"identitystore:Describe*",
+				"identitystore:List*"
+			],
+			"Resource": "*"
+		}
+	]
 }
