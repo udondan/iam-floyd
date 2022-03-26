@@ -151,6 +151,7 @@ ec2:DeleteNetworkInterfacePermission;Permissions management
 ec2:DeletePlacementGroup;Write
 ec2:DeletePublicIpv4Pool;Write
 ec2:DeleteQueuedReservedInstances;Write
+ec2:DeleteResourcePolicy;Write
 ec2:DeleteRoute;Write
 ec2:DeleteRouteTable;Write
 ec2:DeleteSecurityGroup;Write
@@ -387,6 +388,7 @@ ec2:GetNetworkInsightsAccessScopeAnalysisFindings;Read
 ec2:GetNetworkInsightsAccessScopeContent;Read
 ec2:GetPasswordData;Read
 ec2:GetReservedInstancesExchangeQuote;Read
+ec2:GetResourcePolicy;Read
 ec2:GetSerialConsoleAccessStatus;Read
 ec2:GetSpotPlacementScores;Read
 ec2:GetSubnetCidrReservations;Read
@@ -468,6 +470,7 @@ ec2:ProvisionPublicIpv4PoolCidr;Write
 ec2:PurchaseHostReservation;Write
 ec2:PurchaseReservedInstancesOffering;Write
 ec2:PurchaseScheduledInstances;Write
+ec2:PutResourcePolicy;Write
 ec2:RebootInstances;Write
 ec2:RegisterImage;Write
 ec2:RegisterInstanceEventNotificationAttributes;Write

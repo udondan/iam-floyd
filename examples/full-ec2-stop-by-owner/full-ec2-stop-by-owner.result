@@ -183,6 +183,7 @@
                 "ec2:GetNetworkInsightsAccessScopeContent",
                 "ec2:GetPasswordData",
                 "ec2:GetReservedInstancesExchangeQuote",
+                "ec2:GetResourcePolicy",
                 "ec2:GetSerialConsoleAccessStatus",
                 "ec2:GetSpotPlacementScores",
                 "ec2:GetSubnetCidrReservations",

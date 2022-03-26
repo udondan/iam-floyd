@@ -2339,6 +2339,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove an IAM policy that enables cross-account sharing from a resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/vpc/latest/ipam/share-pool-ipam.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete a route from a route table
    *
    * Access Level: Write
@@ -5654,6 +5668,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an IAM policy that enables cross-account sharing
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/vpc/latest/ipam/share-pool-ipam.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
    * Grants permission to retrieve the access status of your account to the EC2 serial console of all instances
    *
    * Access Level: Read
@@ -6800,6 +6828,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach an IAM policy that enables cross-account sharing to a resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/vpc/latest/ipam/share-pool-ipam.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to request a reboot of one or more instances
    *
    * Access Level: Write
@@ -7764,6 +7806,7 @@ export class Ec2 extends PolicyStatement {
       'DeletePlacementGroup',
       'DeletePublicIpv4Pool',
       'DeleteQueuedReservedInstances',
+      'DeleteResourcePolicy',
       'DeleteRoute',
       'DeleteRouteTable',
       'DeleteSecurityGroup',
@@ -7906,6 +7949,7 @@ export class Ec2 extends PolicyStatement {
       'PurchaseHostReservation',
       'PurchaseReservedInstancesOffering',
       'PurchaseScheduledInstances',
+      'PutResourcePolicy',
       'RebootInstances',
       'RegisterImage',
       'RegisterInstanceEventNotificationAttributes',
@@ -8146,6 +8190,7 @@ export class Ec2 extends PolicyStatement {
       'GetNetworkInsightsAccessScopeContent',
       'GetPasswordData',
       'GetReservedInstancesExchangeQuote',
+      'GetResourcePolicy',
       'GetSerialConsoleAccessStatus',
       'GetSpotPlacementScores',
       'GetSubnetCidrReservations'
@@ -9237,6 +9282,20 @@ export class Ec2 extends PolicyStatement {
    */
   public onReservedInstances(reservationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:reserved-instances/${ reservationId }`);
+  }
+
+  /**
+   * Adds a resource of type group to the statement
+   *
+   * https://docs.aws.amazon.com/ARG/latest/userguide/resource-groups.html
+   *
+   * @param groupName - Identifier for the groupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onGroup(groupName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:resource-groups:${ region || '*' }:${ account || '*' }:group/${ groupName }`);
   }
 
   /**
@@ -12431,6 +12490,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeletePlacementGroup()
    * - .toDeletePublicIpv4Pool()
    * - .toDeleteQueuedReservedInstances()
+   * - .toDeleteResourcePolicy()
    * - .toDeleteRoute()
    * - .toDeleteRouteTable()
    * - .toDeleteSecurityGroup()
@@ -12667,6 +12727,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetNetworkInsightsAccessScopeContent()
    * - .toGetPasswordData()
    * - .toGetReservedInstancesExchangeQuote()
+   * - .toGetResourcePolicy()
    * - .toGetSerialConsoleAccessStatus()
    * - .toGetSpotPlacementScores()
    * - .toGetSubnetCidrReservations()
@@ -12748,6 +12809,7 @@ export class Ec2 extends PolicyStatement {
    * - .toPurchaseHostReservation()
    * - .toPurchaseReservedInstancesOffering()
    * - .toPurchaseScheduledInstances()
+   * - .toPutResourcePolicy()
    * - .toRebootInstances()
    * - .toRegisterImage()
    * - .toRegisterInstanceEventNotificationAttributes()
@@ -13156,6 +13218,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteNetworkInterfacePermission()
    * - .toDeletePlacementGroup()
    * - .toDeletePublicIpv4Pool()
+   * - .toDeleteResourcePolicy()
    * - .toDeleteRoute()
    * - .toDeleteRouteTable()
    * - .toDeleteSecurityGroup()
@@ -13253,6 +13316,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetManagedPrefixListAssociations()
    * - .toGetManagedPrefixListEntries()
    * - .toGetPasswordData()
+   * - .toGetResourcePolicy()
    * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toImportClientVpnClientCertificateRevocationList()
    * - .toImportImage()
@@ -13314,6 +13378,7 @@ export class Ec2 extends PolicyStatement {
    * - .toProvisionIpamPoolCidr()
    * - .toProvisionPublicIpv4PoolCidr()
    * - .toPurchaseHostReservation()
+   * - .toPutResourcePolicy()
    * - .toRebootInstances()
    * - .toRegisterImage()
    * - .toRegisterTransitGatewayMulticastGroupMembers()

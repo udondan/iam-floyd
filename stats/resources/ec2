@@ -14,6 +14,7 @@ ec2:export-image-task
 ec2:export-instance-task
 ec2:fleet
 ec2:fpga-image
+ec2:group
 ec2:host-reservation
 ec2:image
 ec2:import-image-task
