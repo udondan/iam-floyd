@@ -317,6 +317,24 @@
 		},
 		{
 			"Effect": "Allow",
+			"Action": "ec2:CreateTags",
+			"Resource": [
+				"arn:aws:ec2:*:*:vpc-endpoint/*"
+			],
+			"Condition": {
+				"StringEquals": {
+					"ec2:CreateAction": "CreateVpcEndpoint"
+				},
+				"ForAllValues:StringEquals": {
+					"aws:TagKeys": [
+						"Name",
+						"FMManaged"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
 			"Action": "ec2:DeleteRouteTable",
 			"Resource": "arn:aws:ec2:*:*:route-table/*",
 			"Condition": {
@@ -348,6 +366,40 @@
 				"ec2:DescribeAvailabilityZones"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "ec2:CreateVpcEndpoint",
+			"Resource": [
+				"arn:aws:ec2:*:*:vpc-endpoint/*"
+			],
+			"Condition": {
+				"StringEquals": {
+					"aws:RequestTag/FMManaged": [
+						"true"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": "ec2:CreateVpcEndpoint",
+			"Resource": [
+				"arn:aws:ec2:*:*:subnet/*",
+				"arn:aws:ec2:*:*:vpc/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DeleteVpcEndpoints"
+			],
+			"Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+			"Condition": {
+				"StringEquals": {
+					"ec2:ResourceTag/FMManaged": "true"
+				}
+			}
 		},
 		{
 			"Effect": "Allow",
