@@ -410,8 +410,8 @@ export function createModule(module: Module): Promise<void> {
       const paramName = lowerFirst(camelCase(param));
       let orDefault = '';
       if (param == 'Partition') {
-        orDefault = " || 'aws'";
-        paramDocs += `\n@param ${paramName} - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to \`aws\`.`;
+        orDefault = ` || ${classDeclaration.getName()}.defaultPartition`;
+        paramDocs += `\n@param ${paramName} - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to \`aws\`, unless using the CDK, where the default is the current Stack's partition.`;
       } else if (param == 'Region') {
         orDefault = " || '*'";
         paramDocs += `\n@param ${paramName} - Region of the resource; defaults to empty string: all regions.`;
