@@ -1,6 +1,7 @@
 organizations:AcceptHandshake;Write
 organizations:AttachPolicy;Write
 organizations:CancelHandshake;Write
+organizations:CloseAccount;Write
 organizations:CreateAccount;Write
 organizations:CreateGovCloudAccount;Write
 organizations:CreateOrganization;Write

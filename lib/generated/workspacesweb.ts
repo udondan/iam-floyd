@@ -111,6 +111,9 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateNetworkSettings.html
    */
   public toCreateNetworkSettings() {

@@ -336,7 +336,7 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
-   * Grants permsission to retrieve GuardDuty IPSets
+   * Grants permission to retrieve GuardDuty IPSets
    *
    * Access Level: Read
    *

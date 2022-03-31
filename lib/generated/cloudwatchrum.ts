@@ -108,6 +108,10 @@ export class Rum extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/rum/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
@@ -118,6 +122,10 @@ export class Rum extends PolicyStatement {
    * Grants permission to untag resources
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/rum/latest/APIReference/API_UntagResource.html
    */

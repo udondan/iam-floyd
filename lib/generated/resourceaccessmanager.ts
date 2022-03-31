@@ -190,6 +190,10 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShares.html
    */
   public toGetResourceShares() {

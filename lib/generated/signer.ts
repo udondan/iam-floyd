@@ -300,7 +300,7 @@ export class Signer extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the version of the Signing Profile
+   * Filters access by version of the Signing Profile
    *
    * https://docs.aws.amazon.com/signer/latest/developerguide/authen-apipermissions.html
    *
