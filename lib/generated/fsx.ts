@@ -303,6 +303,7 @@ export class Fsx extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifStorageVirtualMachineId()
    * - .ifParentVolumeId()

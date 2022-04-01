@@ -23,6 +23,7 @@ comprehend:DescribeKeyPhrasesDetectionJob;Read
 comprehend:DescribePiiEntitiesDetectionJob;Read
 comprehend:DescribeResourcePolicy;Read
 comprehend:DescribeSentimentDetectionJob;Read
+comprehend:DescribeTargetedSentimentDetectionJob;Read
 comprehend:DescribeTopicsDetectionJob;Read
 comprehend:DetectDominantLanguage;Read
 comprehend:DetectEntities;Read
@@ -44,6 +45,7 @@ comprehend:ListKeyPhrasesDetectionJobs;Read
 comprehend:ListPiiEntitiesDetectionJobs;Read
 comprehend:ListSentimentDetectionJobs;Read
 comprehend:ListTagsForResource;Read
+comprehend:ListTargetedSentimentDetectionJobs;Read
 comprehend:ListTopicsDetectionJobs;Read
 comprehend:PutResourcePolicy;Write
 comprehend:StartDocumentClassificationJob;Write
@@ -53,6 +55,7 @@ comprehend:StartEventsDetectionJob;Write
 comprehend:StartKeyPhrasesDetectionJob;Write
 comprehend:StartPiiEntitiesDetectionJob;Write
 comprehend:StartSentimentDetectionJob;Write
+comprehend:StartTargetedSentimentDetectionJob;Write
 comprehend:StartTopicsDetectionJob;Write
 comprehend:StopDominantLanguageDetectionJob;Write
 comprehend:StopEntitiesDetectionJob;Write
@@ -60,6 +63,7 @@ comprehend:StopEventsDetectionJob;Write
 comprehend:StopKeyPhrasesDetectionJob;Write
 comprehend:StopPiiEntitiesDetectionJob;Write
 comprehend:StopSentimentDetectionJob;Write
+comprehend:StopTargetedSentimentDetectionJob;Write
 comprehend:StopTrainingDocumentClassifier;Write
 comprehend:StopTrainingEntityRecognizer;Write
 comprehend:TagResource;Tagging

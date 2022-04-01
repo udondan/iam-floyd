@@ -11,11 +11,11 @@ servicediscovery:GetInstancesHealthStatus;Read
 servicediscovery:GetNamespace;Read
 servicediscovery:GetOperation;Read
 servicediscovery:GetService;Read
-servicediscovery:ListInstances;List
-servicediscovery:ListNamespaces;List
+servicediscovery:ListInstances;Read
+servicediscovery:ListNamespaces;Read
 servicediscovery:ListOperations;List
-servicediscovery:ListServices;List
-servicediscovery:ListTagsForResource;List
+servicediscovery:ListServices;Read
+servicediscovery:ListTagsForResource;Read
 servicediscovery:RegisterInstance;Write
 servicediscovery:TagResource;Tagging
 servicediscovery:UntagResource;Tagging

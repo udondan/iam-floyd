@@ -371,6 +371,10 @@ export class Cloudwatch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricStream.html
    */
   public toPutMetricStream() {
@@ -582,7 +586,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the Log Groups specified in an Insight Rule.
+   * Filters actions based on the Log Groups specified in an Insight Rule
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-contributor.html
    *

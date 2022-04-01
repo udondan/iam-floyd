@@ -9,4 +9,5 @@ comprehend:events-detection-job
 comprehend:key-phrases-detection-job
 comprehend:pii-entities-detection-job
 comprehend:sentiment-detection-job
+comprehend:targeted-sentiment-detection-job
 comprehend:topics-detection-job

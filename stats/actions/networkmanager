@@ -50,13 +50,13 @@ networkmanager:GetResourcePolicy;Read
 networkmanager:GetRouteAnalysis;Read
 networkmanager:GetSiteToSiteVpnAttachment;Read
 networkmanager:GetSites;List
-networkmanager:GetTransitGatewayConnectPeerAssociations;Read
+networkmanager:GetTransitGatewayConnectPeerAssociations;List
 networkmanager:GetTransitGatewayRegistrations;List
 networkmanager:GetVpcAttachment;Read
-networkmanager:ListAttachments;Read
-networkmanager:ListConnectPeers;Read
+networkmanager:ListAttachments;List
+networkmanager:ListConnectPeers;List
 networkmanager:ListCoreNetworkPolicyVersions;List
-networkmanager:ListCoreNetworks;Read
+networkmanager:ListCoreNetworks;List
 networkmanager:ListTagsForResource;Read
 networkmanager:PutCoreNetworkPolicy;Write
 networkmanager:PutResourcePolicy;Write

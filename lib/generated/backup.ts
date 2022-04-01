@@ -655,6 +655,10 @@ export class Backup extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
    * - iam:PassRole
    *
@@ -748,6 +752,10 @@ export class Backup extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html
    */
   public toUpdateBackupPlan() {
@@ -758,6 +766,10 @@ export class Backup extends PolicyStatement {
    * Grants permission to update a framework
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateFramework.html
    */

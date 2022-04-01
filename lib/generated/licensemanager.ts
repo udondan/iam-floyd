@@ -126,6 +126,10 @@ export class LicenseManager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseManagerReportGenerator.html
    */
   public toCreateLicenseManagerReportGenerator() {
@@ -133,7 +137,7 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create new version of license.
+   * Grants permission to create new version of license
    *
    * Access Level: Write
    *
@@ -155,7 +159,7 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Deletes a grant
+   * Grants permission to delete a grant
    *
    * Access Level: Write
    *
@@ -676,7 +680,7 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Filters access based on tag key-value pairs attached to the resource
+   * Filters access by the tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/license-manager/latest/userguide/identity-access-management.html
    *

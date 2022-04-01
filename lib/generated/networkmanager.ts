@@ -654,7 +654,7 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Grants permission to describe transit gateway connect peer associations
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetTransitGatewayConnectPeerAssociations.html
    */
@@ -687,7 +687,7 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Grants permission to describe attachments
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListAttachments.html
    */
@@ -698,7 +698,7 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Grants permission to describe Connect Peers
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListConnectPeers.html
    */
@@ -720,7 +720,7 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Grants permission to list core networks
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworks.html
    */
@@ -990,8 +990,12 @@ export class Networkmanager extends PolicyStatement {
       'GetLinkAssociations',
       'GetLinks',
       'GetSites',
+      'GetTransitGatewayConnectPeerAssociations',
       'GetTransitGatewayRegistrations',
-      'ListCoreNetworkPolicyVersions'
+      'ListAttachments',
+      'ListConnectPeers',
+      'ListCoreNetworkPolicyVersions',
+      'ListCoreNetworks'
     ],
     Read: [
       'GetConnectAttachment',
@@ -1008,11 +1012,7 @@ export class Networkmanager extends PolicyStatement {
       'GetResourcePolicy',
       'GetRouteAnalysis',
       'GetSiteToSiteVpnAttachment',
-      'GetTransitGatewayConnectPeerAssociations',
       'GetVpcAttachment',
-      'ListAttachments',
-      'ListConnectPeers',
-      'ListCoreNetworks',
       'ListTagsForResource'
     ],
     Tagging: [

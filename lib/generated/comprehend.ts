@@ -85,7 +85,7 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
-   * Grants permission to classify the personally identifiable information within given documents at realtime
+   * Grants permission to classify the personally identifiable information within given documents in real-time
    *
    * Access Level: Read
    *
@@ -312,6 +312,17 @@ export class Comprehend extends PolicyStatement {
    */
   public toDescribeSentimentDetectionJob() {
     return this.to('DescribeSentimentDetectionJob');
+  }
+
+  /**
+   * Grants permission to get the properties associated with a targeted sentiment detection job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeTargetedSentimentDetectionJob.html
+   */
+  public toDescribeTargetedSentimentDetectionJob() {
+    return this.to('DescribeTargetedSentimentDetectionJob');
   }
 
   /**
@@ -551,6 +562,17 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of targeted sentiment detection jobs that you have submitted
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListTargetedSentimentDetectionJobs.html
+   */
+  public toListTargetedSentimentDetectionJobs() {
+    return this.to('ListTargetedSentimentDetectionJobs');
+  }
+
+  /**
    * Grants permission to get a list of the topic detection jobs that you have submitted
    *
    * Access Level: Read
@@ -700,6 +722,25 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an asynchronous targeted sentiment detection job for a collection of documents
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKey()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartTargetedSentimentDetectionJob.html
+   */
+  public toStartTargetedSentimentDetectionJob() {
+    return this.to('StartTargetedSentimentDetectionJob');
+  }
+
+  /**
    * Grants permission to start an asynchronous job to detect the most common topics in the collection of documents and the phrases associated with each topic
    *
    * Access Level: Write
@@ -785,6 +826,17 @@ export class Comprehend extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop a targeted sentiment detection job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopTargetedSentimentDetectionJob.html
+   */
+  public toStopTargetedSentimentDetectionJob() {
+    return this.to('StopTargetedSentimentDetectionJob');
+  }
+
+  /**
    * Grants permission to stop a previously created document classifier training job
    *
    * Access Level: Write
@@ -866,6 +918,7 @@ export class Comprehend extends PolicyStatement {
       'DescribePiiEntitiesDetectionJob',
       'DescribeResourcePolicy',
       'DescribeSentimentDetectionJob',
+      'DescribeTargetedSentimentDetectionJob',
       'DescribeTopicsDetectionJob',
       'DetectDominantLanguage',
       'DetectEntities',
@@ -886,6 +939,7 @@ export class Comprehend extends PolicyStatement {
       'ListPiiEntitiesDetectionJobs',
       'ListSentimentDetectionJobs',
       'ListTagsForResource',
+      'ListTargetedSentimentDetectionJobs',
       'ListTopicsDetectionJobs'
     ],
     Write: [
@@ -905,6 +959,7 @@ export class Comprehend extends PolicyStatement {
       'StartKeyPhrasesDetectionJob',
       'StartPiiEntitiesDetectionJob',
       'StartSentimentDetectionJob',
+      'StartTargetedSentimentDetectionJob',
       'StartTopicsDetectionJob',
       'StopDominantLanguageDetectionJob',
       'StopEntitiesDetectionJob',
@@ -912,6 +967,7 @@ export class Comprehend extends PolicyStatement {
       'StopKeyPhrasesDetectionJob',
       'StopPiiEntitiesDetectionJob',
       'StopSentimentDetectionJob',
+      'StopTargetedSentimentDetectionJob',
       'StopTrainingDocumentClassifier',
       'StopTrainingEntityRecognizer',
       'UpdateEndpoint'
@@ -921,6 +977,21 @@ export class Comprehend extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type targeted-sentiment-detection-job to the statement
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTargetedSentimentDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition || 'aws' }:comprehend:${ region || '*' }:${ account || '*' }:targeted-sentiment-detection-job/${ jobId }`);
+  }
 
   /**
    * Adds a resource of type document-classifier to the statement
@@ -1133,6 +1204,7 @@ export class Comprehend extends PolicyStatement {
    * - .toStartKeyPhrasesDetectionJob()
    * - .toStartPiiEntitiesDetectionJob()
    * - .toStartSentimentDetectionJob()
+   * - .toStartTargetedSentimentDetectionJob()
    * - .toStartTopicsDetectionJob()
    *
    * @param value The value(s) to check
@@ -1155,6 +1227,7 @@ export class Comprehend extends PolicyStatement {
    * - .toStartEntitiesDetectionJob()
    * - .toStartKeyPhrasesDetectionJob()
    * - .toStartSentimentDetectionJob()
+   * - .toStartTargetedSentimentDetectionJob()
    * - .toStartTopicsDetectionJob()
    *
    * @param value The value(s) to check
@@ -1177,6 +1250,7 @@ export class Comprehend extends PolicyStatement {
    * - .toStartEntitiesDetectionJob()
    * - .toStartKeyPhrasesDetectionJob()
    * - .toStartSentimentDetectionJob()
+   * - .toStartTargetedSentimentDetectionJob()
    * - .toStartTopicsDetectionJob()
    *
    * @param value The value(s) to check
@@ -1199,6 +1273,7 @@ export class Comprehend extends PolicyStatement {
    * - .toStartEntitiesDetectionJob()
    * - .toStartKeyPhrasesDetectionJob()
    * - .toStartSentimentDetectionJob()
+   * - .toStartTargetedSentimentDetectionJob()
    * - .toStartTopicsDetectionJob()
    *
    * @param value The value(s) to check
