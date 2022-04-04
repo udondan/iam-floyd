@@ -37,6 +37,10 @@ export class Grafana extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * Dependent actions:
    * - organizations:DescribeOrganization
    * - sso:CreateManagedApplicationInstance
@@ -75,7 +79,7 @@ export class Grafana extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe authetication providers on a workspace
+   * Grants permission to describe authentication providers on a workspace
    *
    * Access Level: Read
    *
@@ -108,6 +112,17 @@ export class Grafana extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tags associated with a workspace
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to list workspaces
    *
    * Access Level: Read
@@ -116,6 +131,36 @@ export class Grafana extends PolicyStatement {
    */
   public toListWorkspaces() {
     return this.to('ListWorkspaces');
+  }
+
+  /**
+   * Grants permission to add tags to, or update tag values of, a workspace
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/grafana/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from a workspace
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/grafana/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -141,7 +186,7 @@ export class Grafana extends PolicyStatement {
   }
 
   /**
-   * Grants permission to modify authetication providers on a workspace
+   * Grants permission to modify authentication providers on a workspace
    *
    * Access Level: Write
    *
@@ -163,10 +208,15 @@ export class Grafana extends PolicyStatement {
     Read: [
       'DescribeWorkspace',
       'DescribeWorkspaceAuthentication',
+      'ListTagsForResource',
       'ListWorkspaces'
     ],
     List: [
       'ListPermissions'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ],
     'Permissions management': [
       'UpdatePermissions'
@@ -182,6 +232,9 @@ export class Grafana extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onWorkspace(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition || 'aws' }:grafana:${ region || '*' }:${ account || '*' }:/workspaces/${ resourceId }`);

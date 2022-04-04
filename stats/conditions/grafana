@@ -1,1 +1,3 @@
-
+grafana:RequestTag/${TagKey}
+grafana:ResourceTag/${TagKey}
+grafana:TagKeys

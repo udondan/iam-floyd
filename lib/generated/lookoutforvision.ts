@@ -199,7 +199,7 @@ export class Lookoutvision extends PolicyStatement {
   }
 
   /**
-   * Grant permission to list tags for a resource
+   * Grants permission to list tags for a resource
    *
    * Access Level: Read
    *
@@ -265,7 +265,7 @@ export class Lookoutvision extends PolicyStatement {
   }
 
   /**
-   * Grant permission to tag a resource with given key value pairs
+   * Grants permission to tag a resource with given key value pairs
    *
    * Access Level: Tagging
    *
@@ -280,7 +280,7 @@ export class Lookoutvision extends PolicyStatement {
   }
 
   /**
-   * Grant permission to remove the tag with the given key from a resource
+   * Grants permission to remove the tag with the given key from a resource
    *
    * Access Level: Tagging
    *

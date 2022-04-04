@@ -30,6 +30,17 @@ export class Route53RecoveryCluster extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list routing controls
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/routing-control/latest/APIReference/API_ListRoutingControls.html
+   */
+  public toListRoutingControls() {
+    return this.to('ListRoutingControls');
+  }
+
+  /**
    * Grants permission to update a routing control state
    *
    * Access Level: Write
@@ -59,7 +70,8 @@ export class Route53RecoveryCluster extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Read: [
-      'GetRoutingControlState'
+      'GetRoutingControlState',
+      'ListRoutingControls'
     ],
     Write: [
       'UpdateRoutingControlState',

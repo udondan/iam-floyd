@@ -216,6 +216,10 @@ export class Servicequotas extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_TagResource
    */
   public toTagResource() {
@@ -226,6 +230,10 @@ export class Servicequotas extends PolicyStatement {
    * Grants permission to remove a set of tags from a SQ resource, where tags to be removed match a set of customer-supplied tag keys
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_UntagResource
    */

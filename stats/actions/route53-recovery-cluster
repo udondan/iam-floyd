@@ -1,3 +1,4 @@
 route53-recovery-cluster:GetRoutingControlState;Read
+route53-recovery-cluster:ListRoutingControls;Read
 route53-recovery-cluster:UpdateRoutingControlState;Write
 route53-recovery-cluster:UpdateRoutingControlStates;Write

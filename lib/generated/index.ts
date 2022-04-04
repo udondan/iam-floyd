@@ -101,6 +101,7 @@ export { Personalize } from './personalize';
 export { Mobiletargeting } from './pinpoint';
 export { SesPinpoint } from './pinpointemailservice';
 export { SmsVoice } from './pinpointsmsandvoiceservice';
+export { SmsVoiceV2 } from './pinpointsmsvoicev2';
 export { Polly } from './polly';
 export { Qldb } from './qldb';
 export { Quicksight } from './quicksight';
