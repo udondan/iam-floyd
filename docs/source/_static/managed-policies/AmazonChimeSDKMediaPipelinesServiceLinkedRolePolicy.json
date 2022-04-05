@@ -4,10 +4,9 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"securityhub:Get*",
-				"securityhub:List*",
-				"securityhub:BatchGet*",
-				"securityhub:Describe*"
+				"chime:GetMeeting",
+				"chime:CreateAttendee",
+				"chime:DeleteAttendee"
 			],
 			"Resource": "*"
 		}
