@@ -193,6 +193,34 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to grant access and to associate the datasets with the specified AWS account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
+   */
+  public toBatchAssociateAnalyticsDataSet() {
+    return this.to('BatchAssociateAnalyticsDataSet');
+  }
+
+  /**
+   * Grants permission to revoke access and to disassociate the datasets with the specified AWS account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
+   */
+  public toBatchDisassociateAnalyticsDataSet() {
+    return this.to('BatchDisassociateAnalyticsDataSet');
+  }
+
+  /**
    * Grants permission to create agent status in an Amazon Connect instance
    *
    * Access Level: Write
@@ -2145,6 +2173,8 @@ export class Connect extends PolicyStatement {
       'AssociateQueueQuickConnects',
       'AssociateRoutingProfileQueues',
       'AssociateSecurityKey',
+      'BatchAssociateAnalyticsDataSet',
+      'BatchDisassociateAnalyticsDataSet',
       'CreateAgentStatus',
       'CreateContactFlow',
       'CreateContactFlowModule',
@@ -2670,6 +2700,8 @@ export class Connect extends PolicyStatement {
    * - .toAssociateQueueQuickConnects()
    * - .toAssociateRoutingProfileQueues()
    * - .toAssociateSecurityKey()
+   * - .toBatchAssociateAnalyticsDataSet()
+   * - .toBatchDisassociateAnalyticsDataSet()
    * - .toCreateAgentStatus()
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()

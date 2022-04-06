@@ -174,6 +174,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete AWS WorkSpaces Client branding data within a directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteClientBranding.html
+   */
+  public toDeleteClientBranding() {
+    return this.to('DeleteClientBranding');
+  }
+
+  /**
    * Grants permission to delete an Amazon Connect client add-in that is configured within a directory
    *
    * Access Level: Write
@@ -274,6 +285,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toDescribeAccountModifications() {
     return this.to('DescribeAccountModifications');
+  }
+
+  /**
+   * Grants permission to retrieve AWS WorkSpaces Client branding data within a directory
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeClientBranding.html
+   */
+  public toDescribeClientBranding() {
+    return this.to('DescribeClientBranding');
   }
 
   /**
@@ -439,6 +461,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toDisassociateIpGroups() {
     return this.to('DisassociateIpGroups');
+  }
+
+  /**
+   * Grants permission to import AWS WorkSpaces Client branding data within a directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_ImportClientBranding.html
+   */
+  public toImportClientBranding() {
+    return this.to('ImportClientBranding');
   }
 
   /**
@@ -714,6 +747,7 @@ export class Workspaces extends PolicyStatement {
       'CreateUpdatedWorkspaceImage',
       'CreateWorkspaceBundle',
       'CreateWorkspaces',
+      'DeleteClientBranding',
       'DeleteConnectClientAddIn',
       'DeleteConnectionAlias',
       'DeleteIpGroup',
@@ -722,6 +756,7 @@ export class Workspaces extends PolicyStatement {
       'DeregisterWorkspaceDirectory',
       'DisassociateConnectionAlias',
       'DisassociateIpGroups',
+      'ImportClientBranding',
       'ImportWorkspaceImage',
       'MigrateWorkspace',
       'ModifyAccount',
@@ -749,6 +784,7 @@ export class Workspaces extends PolicyStatement {
     Read: [
       'DescribeAccount',
       'DescribeAccountModifications',
+      'DescribeClientBranding',
       'DescribeConnectionAliasPermissions',
       'DescribeConnectionAliases',
       'DescribeIpGroups',

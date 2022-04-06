@@ -8,6 +8,8 @@ connect:AssociateLexBot;Write
 connect:AssociateQueueQuickConnects;Write
 connect:AssociateRoutingProfileQueues;Write
 connect:AssociateSecurityKey;Write
+connect:BatchAssociateAnalyticsDataSet;Write
+connect:BatchDisassociateAnalyticsDataSet;Write
 connect:CreateAgentStatus;Write
 connect:CreateContactFlow;Write
 connect:CreateContactFlowModule;Write

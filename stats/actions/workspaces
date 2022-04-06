@@ -9,6 +9,7 @@ workspaces:CreateTags;Tagging
 workspaces:CreateUpdatedWorkspaceImage;Write
 workspaces:CreateWorkspaceBundle;Write
 workspaces:CreateWorkspaces;Write
+workspaces:DeleteClientBranding;Write
 workspaces:DeleteConnectClientAddIn;Write
 workspaces:DeleteConnectionAlias;Write
 workspaces:DeleteIpGroup;Write
@@ -18,6 +19,7 @@ workspaces:DeleteWorkspaceImage;Write
 workspaces:DeregisterWorkspaceDirectory;Write
 workspaces:DescribeAccount;Read
 workspaces:DescribeAccountModifications;Read
+workspaces:DescribeClientBranding;Read
 workspaces:DescribeClientProperties;List
 workspaces:DescribeConnectClientAddIns;List
 workspaces:DescribeConnectionAliasPermissions;Read
@@ -33,6 +35,7 @@ workspaces:DescribeWorkspaces;List
 workspaces:DescribeWorkspacesConnectionStatus;Read
 workspaces:DisassociateConnectionAlias;Write
 workspaces:DisassociateIpGroups;Write
+workspaces:ImportClientBranding;Write
 workspaces:ImportWorkspaceImage;Write
 workspaces:ListAvailableManagementCidrRanges;List
 workspaces:MigrateWorkspace;Write
