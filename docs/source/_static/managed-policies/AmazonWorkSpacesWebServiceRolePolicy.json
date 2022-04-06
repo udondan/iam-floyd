@@ -26,7 +26,10 @@
 			"Resource": "*",
 			"Condition": {
 				"StringEquals": {
-					"cloudwatch:namespace": "AWS/WorkSpacesWeb"
+					"cloudwatch:namespace": [
+						"AWS/WorkSpacesWeb",
+						"AWS/Usage"
+					]
 				}
 			}
 		}
