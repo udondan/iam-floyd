@@ -254,6 +254,9 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - ds:CreateIdentityPoolDirectory
+   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateNamespace.html
    */
   public toCreateNamespace() {
@@ -505,6 +508,9 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to delete a QuickSight namespace
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ds:DeleteDirectory
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteNamespace.html
    */
@@ -921,6 +927,10 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to generate a URL used to embed a QuickSight Dashboard for a user not registered with QuickSight
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html
    */

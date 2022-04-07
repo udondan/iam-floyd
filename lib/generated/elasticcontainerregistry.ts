@@ -63,6 +63,17 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the image from the upstream registry and import it to your private registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchImportUpstreamImage.html
+   */
+  public toBatchImportUpstreamImage() {
+    return this.to('BatchImportUpstreamImage');
+  }
+
+  /**
    * Grants permission to inform Amazon ECR that the image layer upload for a specified registry, repository name, and upload ID, has completed
    *
    * Access Level: Write
@@ -324,6 +335,10 @@ export class Ecr extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -471,6 +486,10 @@ export class Ecr extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
@@ -508,6 +527,7 @@ export class Ecr extends PolicyStatement {
     ],
     Write: [
       'BatchDeleteImage',
+      'BatchImportUpstreamImage',
       'CompleteLayerUpload',
       'CreatePullThroughCacheRule',
       'CreateRepository',

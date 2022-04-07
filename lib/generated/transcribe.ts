@@ -382,6 +382,10 @@ export class Transcribe extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifOutputEncryptionKMSKeyId()
+   * - .ifOutputLocation()
+   *
    * Dependent actions:
    * - s3:GetObject
    *
@@ -419,6 +423,9 @@ export class Transcribe extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifOutputBucketName()
+   * - .ifOutputEncryptionKMSKeyId()
+   * - .ifOutputKey()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -746,6 +753,7 @@ export class Transcribe extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html#amazontranscribe-policy-keys
    *
    * Applies to actions:
+   * - .toStartMedicalTranscriptionJob()
    * - .toStartTranscriptionJob()
    *
    * @param value The value(s) to check
@@ -761,6 +769,8 @@ export class Transcribe extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html#amazontranscribe-policy-keys
    *
    * Applies to actions:
+   * - .toStartCallAnalyticsJob()
+   * - .toStartMedicalTranscriptionJob()
    * - .toStartTranscriptionJob()
    *
    * @param value The value(s) to check
@@ -776,6 +786,7 @@ export class Transcribe extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html#amazontranscribe-policy-keys
    *
    * Applies to actions:
+   * - .toStartMedicalTranscriptionJob()
    * - .toStartTranscriptionJob()
    *
    * @param value The value(s) to check
@@ -783,5 +794,20 @@ export class Transcribe extends PolicyStatement {
    */
   public ifOutputKey(value: string | string[], operator?: Operator | string) {
     return this.if(`OutputKey`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the output location included in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html#amazontranscribe-policy-keys
+   *
+   * Applies to actions:
+   * - .toStartCallAnalyticsJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifOutputLocation(value: string | string[], operator?: Operator | string) {
+    return this.if(`OutputLocation`, value, operator || 'StringLike');
   }
 }

@@ -2,6 +2,7 @@ ecr:BatchCheckLayerAvailability;Read
 ecr:BatchDeleteImage;Write
 ecr:BatchGetImage;Read
 ecr:BatchGetRepositoryScanningConfiguration;Read
+ecr:BatchImportUpstreamImage;Write
 ecr:CompleteLayerUpload;Write
 ecr:CreatePullThroughCacheRule;Write
 ecr:CreateRepository;Write
