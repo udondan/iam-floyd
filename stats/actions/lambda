@@ -4,6 +4,7 @@ lambda:CreateAlias;Write
 lambda:CreateCodeSigningConfig;Write
 lambda:CreateEventSourceMapping;Write
 lambda:CreateFunction;Write
+lambda:CreateFunctionUrlConfig;Write
 lambda:DeleteAlias;Write
 lambda:DeleteCodeSigningConfig;Write
 lambda:DeleteEventSourceMapping;Write
@@ -11,6 +12,7 @@ lambda:DeleteFunction;Write
 lambda:DeleteFunctionCodeSigningConfig;Write
 lambda:DeleteFunctionConcurrency;Write
 lambda:DeleteFunctionEventInvokeConfig;Write
+lambda:DeleteFunctionUrlConfig;Write
 lambda:DeleteLayerVersion;Write
 lambda:DeleteProvisionedConcurrencyConfig;Write
 lambda:DisableReplication;Permissions management
@@ -24,16 +26,19 @@ lambda:GetFunctionCodeSigningConfig;Read
 lambda:GetFunctionConcurrency;Read
 lambda:GetFunctionConfiguration;Read
 lambda:GetFunctionEventInvokeConfig;Read
+lambda:GetFunctionUrlConfig;Read
 lambda:GetLayerVersion;Read
 lambda:GetLayerVersionPolicy;Read
 lambda:GetPolicy;Read
 lambda:GetProvisionedConcurrencyConfig;Read
 lambda:InvokeAsync;Write
 lambda:InvokeFunction;Write
+lambda:InvokeFunctionUrl;Write
 lambda:ListAliases;List
 lambda:ListCodeSigningConfigs;List
 lambda:ListEventSourceMappings;List
 lambda:ListFunctionEventInvokeConfigs;List
+lambda:ListFunctionUrlConfigs;List
 lambda:ListFunctions;List
 lambda:ListFunctionsByCodeSigningConfig;List
 lambda:ListLayerVersions;List
@@ -58,3 +63,4 @@ lambda:UpdateFunctionCode;Write
 lambda:UpdateFunctionCodeSigningConfig;Write
 lambda:UpdateFunctionConfiguration;Write
 lambda:UpdateFunctionEventInvokeConfig;Write
+lambda:UpdateFunctionUrlConfig;Write

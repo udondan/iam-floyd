@@ -19,7 +19,7 @@ export class Sumerian extends PolicyStatement {
   }
 
   /**
-   * Grant login access to the Sumerian console.
+   * Grants permission to log into the Sumerian console
    *
    * Access Level: Write
    *
@@ -30,7 +30,7 @@ export class Sumerian extends PolicyStatement {
   }
 
   /**
-   * Grant access to view a project release.
+   * Grants permission to view a project release
    *
    * Access Level: Read
    *
@@ -51,6 +51,8 @@ export class Sumerian extends PolicyStatement {
 
   /**
    * Adds a resource of type project to the statement
+   *
+   * https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-concepts.html
    *
    * @param projectName - Identifier for the projectName.
    * @param account - Account of the resource; defaults to empty string: all accounts.

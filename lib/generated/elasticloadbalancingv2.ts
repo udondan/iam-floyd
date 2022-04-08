@@ -90,7 +90,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Creates a target group.
+   * Creates a target group
    *
    * Access Level: Write
    *
@@ -610,6 +610,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
 
   /**
    * A tag key and value pair
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to resource types:
    * - listener/app
