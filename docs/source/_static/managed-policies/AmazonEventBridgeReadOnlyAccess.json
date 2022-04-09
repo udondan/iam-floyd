@@ -17,10 +17,12 @@
 				"events:ListArchives",
 				"events:DescribeReplay",
 				"events:ListReplays",
-                "events:DescribeConnection",
-                "events:ListConnections",
-                "events:DescribeApiDestination",
-                "events:ListApiDestinations"
+				"events:DescribeConnection",
+				"events:ListConnections",
+				"events:DescribeApiDestination",
+				"events:ListApiDestinations",
+				"events:DescribeEndpoint",
+				"events:ListEndpoints"
 			],
 			"Resource": "*"
 		}
