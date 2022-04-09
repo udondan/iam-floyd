@@ -425,6 +425,7 @@ ec2:ModifyInstanceCapacityReservationAttributes;Write
 ec2:ModifyInstanceCreditSpecification;Write
 ec2:ModifyInstanceEventStartTime;Write
 ec2:ModifyInstanceEventWindow;Write
+ec2:ModifyInstanceMaintenanceOptions;Write
 ec2:ModifyInstanceMetadataOptions;Write
 ec2:ModifyInstancePlacement;Write
 ec2:ModifyIpam;Write

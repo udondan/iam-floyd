@@ -6195,6 +6195,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the recovery behaviour for an instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceMaintenanceOptions.html
+   */
+  public toModifyInstanceMaintenanceOptions() {
+    return this.to('ModifyInstanceMaintenanceOptions');
+  }
+
+  /**
    * Grants permission to modify the metadata options for an instance
    *
    * Access Level: Write
@@ -7906,6 +7920,7 @@ export class Ec2 extends PolicyStatement {
       'ModifyInstanceCreditSpecification',
       'ModifyInstanceEventStartTime',
       'ModifyInstanceEventWindow',
+      'ModifyInstanceMaintenanceOptions',
       'ModifyInstanceMetadataOptions',
       'ModifyInstancePlacement',
       'ModifyIpam',
@@ -10078,6 +10093,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
@@ -10179,6 +10195,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
    * - .toModifyInstanceEventStartTime()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
@@ -10411,6 +10428,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
@@ -10742,6 +10760,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
@@ -11033,6 +11052,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
@@ -11085,6 +11105,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
    * - .toModifyInstanceEventStartTime()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
@@ -11139,6 +11160,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
@@ -11189,6 +11211,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
@@ -11241,6 +11264,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
@@ -11299,6 +11323,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
@@ -11542,6 +11567,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
@@ -11594,6 +11620,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
@@ -11646,6 +11673,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
@@ -12136,6 +12164,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
@@ -12764,6 +12793,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceCreditSpecification()
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceEventWindow()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
@@ -13337,6 +13367,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceCreditSpecification()
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceEventWindow()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
@@ -13566,6 +13597,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
@@ -14032,6 +14064,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
    * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()

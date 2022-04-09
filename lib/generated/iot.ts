@@ -1891,6 +1891,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Adds support to list metric datapoints collected for IoT devices
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListMetricValues.html
+   */
+  public toListMetricValues() {
+    return this.to('ListMetricValues');
+  }
+
+  /**
    * Grants permission to get a list of all mitigation actions that match the specified filter criteria
    *
    * Access Level: List
@@ -3158,6 +3169,7 @@ export class Iot extends PolicyStatement {
       'ListJobTemplates',
       'ListJobs',
       'ListManagedJobTemplates',
+      'ListMetricValues',
       'ListMitigationActions',
       'ListNamedShadowsForThing',
       'ListOTAUpdates',

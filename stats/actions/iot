@@ -160,6 +160,7 @@ iot:ListJobExecutionsForThing;List
 iot:ListJobTemplates;List
 iot:ListJobs;List
 iot:ListManagedJobTemplates;List
+iot:ListMetricValues;List
 iot:ListMitigationActions;List
 iot:ListNamedShadowsForThing;List
 iot:ListOTAUpdates;List
