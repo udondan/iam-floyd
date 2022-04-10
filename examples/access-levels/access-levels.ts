@@ -4,11 +4,11 @@ import * as statement from '../../lib';
 function getStatements() {
   function wrap() {
     // doc-start
-    const s1 = new statement.Ec2() //
+    const s1 = new statement.S3() //
       .deny()
       .allPermissionManagementActions();
 
-    const s2 = new statement.Ec2() //
+    const s2 = new statement.S3() //
       .allow()
       .allListActions()
       .allReadActions();
