@@ -40,9 +40,10 @@ There are two different package variants available:
 [![PyPI](https://img.shields.io/pypi/dm/cdk-iam-floyd?label=pypi&color=orange)](https://pypi.org/project/cdk-iam-floyd/)
 
   **Starting with version 0.300.0, the packages are compatible with CDK v2.** For CDK v1 you can use any version up to:<br>
-  [![npm CDK v1](https://img.shields.io/badge/npm-0.285.0-yellow)](https://www.npmjs.com/package/cdk-iam-floyd/v/0.285.0)
-  [![PyPI CDK v1](https://img.shields.io/badge/pypi-0.285.0-yellow)](https://pypi.org/project/cdk-iam-floyd/0.285.0/)
+  [![npm CDK v1](https://img.shields.io/badge/npm-0.286.0-yellow)](https://www.npmjs.com/package/cdk-iam-floyd/v/0.286.0)
+  [![PyPI CDK v1](https://img.shields.io/badge/pypi-0.286.0-yellow)](https://pypi.org/project/cdk-iam-floyd/0.286.0/)
 
+  Starting with CDK v1.152.0 you have to use cdk-iam-floyd v0.286.0.
   Starting with CDK v2.20.0 you have to use cdk-iam-floyd >= v0.351.0.
 
 Find them all on [libraries.io].
