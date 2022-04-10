@@ -3707,7 +3707,9 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations.html
    */
   public toDescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations() {
-    return this.to('DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations');
+    return this.to(
+      'DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations'
+    );
   }
 
   /**
@@ -8017,19 +8019,16 @@ export class Ec2 extends PolicyStatement {
       'UnmonitorInstances',
       'UpdateSecurityGroupRuleDescriptionsEgress',
       'UpdateSecurityGroupRuleDescriptionsIngress',
-      'WithdrawByoipCidr'
+      'WithdrawByoipCidr',
     ],
     'Permissions management': [
       'CreateNetworkInterfacePermission',
       'DeleteNetworkInterfacePermission',
       'ModifySnapshotAttribute',
       'ModifyVpcEndpointServicePermissions',
-      'ResetSnapshotAttribute'
+      'ResetSnapshotAttribute',
     ],
-    Tagging: [
-      'CreateTags',
-      'DeleteTags'
-    ],
+    Tagging: ['CreateTags', 'DeleteTags'],
     List: [
       'DescribeAccountAttributes',
       'DescribeAddresses',
@@ -8169,7 +8168,7 @@ export class Ec2 extends PolicyStatement {
       'ListSnapshotsInRecycleBin',
       'SearchLocalGatewayRoutes',
       'SearchTransitGatewayMulticastGroups',
-      'SearchTransitGatewayRoutes'
+      'SearchTransitGatewayRoutes',
     ],
     Read: [
       'DescribeElasticGpus',
@@ -8208,8 +8207,8 @@ export class Ec2 extends PolicyStatement {
       'GetResourcePolicy',
       'GetSerialConsoleAccessStatus',
       'GetSpotPlacementScores',
-      'GetSubnetCidrReservations'
-    ]
+      'GetSubnetCidrReservations',
+    ],
   };
 
   /**
@@ -8234,8 +8233,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onElasticIp(allocationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:elastic-ip/${ allocationId }`);
+  public onElasticIp(
+    allocationId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:elastic-ip/${allocationId}`
+    );
   }
 
   /**
@@ -8257,8 +8265,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onCapacityReservationFleet(capacityReservationFleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:capacity-reservation-fleet/${ capacityReservationFleetId }`);
+  public onCapacityReservationFleet(
+    capacityReservationFleetId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:capacity-reservation-fleet/${capacityReservationFleetId}`
+    );
   }
 
   /**
@@ -8283,8 +8300,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onCapacityReservation(capacityReservationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:capacity-reservation/${ capacityReservationId }`);
+  public onCapacityReservation(
+    capacityReservationId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:capacity-reservation/${capacityReservationId}`
+    );
   }
 
   /**
@@ -8306,8 +8332,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifTenancy()
    * - .ifVpc()
    */
-  public onCarrierGateway(carrierGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:carrier-gateway/${ carrierGatewayId }`);
+  public onCarrierGateway(
+    carrierGatewayId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:carrier-gateway/${carrierGatewayId}`
+    );
   }
 
   /**
@@ -8320,8 +8355,17 @@ export class Ec2 extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:acm:${ region || '*' }:${ account || '*' }:certificate/${ certificateId }`);
+  public onCertificate(
+    certificateId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:acm:${region || '*'}:${
+        account || '*'
+      }:certificate/${certificateId}`
+    );
   }
 
   /**
@@ -8349,8 +8393,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifSamlProviderArn()
    * - .ifServerCertificateArn()
    */
-  public onClientVpnEndpoint(clientVpnEndpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:client-vpn-endpoint/${ clientVpnEndpointId }`);
+  public onClientVpnEndpoint(
+    clientVpnEndpointId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:client-vpn-endpoint/${clientVpnEndpointId}`
+    );
   }
 
   /**
@@ -8370,8 +8423,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onCustomerGateway(customerGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:customer-gateway/${ customerGatewayId }`);
+  public onCustomerGateway(
+    customerGatewayId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:customer-gateway/${customerGatewayId}`
+    );
   }
 
   /**
@@ -8400,8 +8462,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onDedicatedHost(dedicatedHostId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:dedicated-host/${ dedicatedHostId }`);
+  public onDedicatedHost(
+    dedicatedHostId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:dedicated-host/${dedicatedHostId}`
+    );
   }
 
   /**
@@ -8422,8 +8493,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onDhcpOptions(dhcpOptionsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:dhcp-options/${ dhcpOptionsId }`);
+  public onDhcpOptions(
+    dhcpOptionsId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:dhcp-options/${dhcpOptionsId}`
+    );
   }
 
   /**
@@ -8443,8 +8523,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onEgressOnlyInternetGateway(egressOnlyInternetGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:egress-only-internet-gateway/${ egressOnlyInternetGatewayId }`);
+  public onEgressOnlyInternetGateway(
+    egressOnlyInternetGatewayId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:egress-only-internet-gateway/${egressOnlyInternetGatewayId}`
+    );
   }
 
   /**
@@ -8467,8 +8556,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onElasticGpu(elasticGpuId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:elastic-gpu/${ elasticGpuId }`);
+  public onElasticGpu(
+    elasticGpuId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:elastic-gpu/${elasticGpuId}`
+    );
   }
 
   /**
@@ -8481,8 +8579,17 @@ export class Ec2 extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onElasticInference(elasticInferenceAcceleratorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:elastic-inference:${ region || '*' }:${ account || '*' }:elastic-inference-accelerator/${ elasticInferenceAcceleratorId }`);
+  public onElasticInference(
+    elasticInferenceAcceleratorId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:elastic-inference:${region || '*'}:${
+        account || '*'
+      }:elastic-inference-accelerator/${elasticInferenceAcceleratorId}`
+    );
   }
 
   /**
@@ -8502,8 +8609,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onExportImageTask(exportImageTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:export-image-task/${ exportImageTaskId }`);
+  public onExportImageTask(
+    exportImageTaskId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:export-image-task/${exportImageTaskId}`
+    );
   }
 
   /**
@@ -8523,8 +8639,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onExportInstanceTask(exportTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:export-instance-task/${ exportTaskId }`);
+  public onExportInstanceTask(
+    exportTaskId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:export-instance-task/${exportTaskId}`
+    );
   }
 
   /**
@@ -8546,8 +8671,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onFleet(fleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:fleet/${ fleetId }`);
+  public onFleet(
+    fleetId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:fleet/${fleetId}`
+    );
   }
 
   /**
@@ -8571,7 +8705,11 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onFpgaImage(fpgaImageId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }::fpga-image/${ fpgaImageId }`);
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${
+        region || '*'
+      }::fpga-image/${fpgaImageId}`
+    );
   }
 
   /**
@@ -8591,8 +8729,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onHostReservation(hostReservationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:host-reservation/${ hostReservationId }`);
+  public onHostReservation(
+    hostReservationId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:host-reservation/${hostReservationId}`
+    );
   }
 
   /**
@@ -8621,7 +8768,9 @@ export class Ec2 extends PolicyStatement {
    * - .ifRootDeviceType()
    */
   public onImage(imageId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }::image/${ imageId }`);
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}::image/${imageId}`
+    );
   }
 
   /**
@@ -8641,8 +8790,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onImportImageTask(importImageTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:import-image-task/${ importImageTaskId }`);
+  public onImportImageTask(
+    importImageTaskId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:import-image-task/${importImageTaskId}`
+    );
   }
 
   /**
@@ -8662,8 +8820,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onImportSnapshotTask(importSnapshotTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:import-snapshot-task/${ importSnapshotTaskId }`);
+  public onImportSnapshotTask(
+    importSnapshotTaskId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:import-snapshot-task/${importSnapshotTaskId}`
+    );
   }
 
   /**
@@ -8683,8 +8850,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onInstanceEventWindow(instanceEventWindowId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:instance-event-window/${ instanceEventWindowId }`);
+  public onInstanceEventWindow(
+    instanceEventWindowId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:instance-event-window/${instanceEventWindowId}`
+    );
   }
 
   /**
@@ -8723,8 +8899,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRootDeviceType()
    * - .ifTenancy()
    */
-  public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:instance/${ instanceId }`);
+  public onInstance(
+    instanceId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:instance/${instanceId}`
+    );
   }
 
   /**
@@ -8745,8 +8930,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onInternetGateway(internetGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:internet-gateway/${ internetGatewayId }`);
+  public onInternetGateway(
+    internetGatewayId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:internet-gateway/${internetGatewayId}`
+    );
   }
 
   /**
@@ -8767,7 +8961,9 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onIpam(ipamId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2::${ account || '*' }:ipam/${ ipamId }`);
+    return this.on(
+      `arn:${partition || 'aws'}:ec2::${account || '*'}:ipam/${ipamId}`
+    );
   }
 
   /**
@@ -8788,7 +8984,9 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onIpamPool(ipamPoolId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2::${ account || '*' }:ipam-pool/${ ipamPoolId }`);
+    return this.on(
+      `arn:${partition || 'aws'}:ec2::${account || '*'}:ipam-pool/${ipamPoolId}`
+    );
   }
 
   /**
@@ -8808,8 +9006,16 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onIpamScope(ipamScopeId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2::${ account || '*' }:ipam-scope/${ ipamScopeId }`);
+  public onIpamScope(
+    ipamScopeId: string,
+    account?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2::${
+        account || '*'
+      }:ipam-scope/${ipamScopeId}`
+    );
   }
 
   /**
@@ -8829,8 +9035,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onIpv4poolEc2(ipv4PoolEc2Id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:ipv4pool-ec2/${ ipv4PoolEc2Id }`);
+  public onIpv4poolEc2(
+    ipv4PoolEc2Id: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:ipv4pool-ec2/${ipv4PoolEc2Id}`
+    );
   }
 
   /**
@@ -8850,8 +9065,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onIpv6poolEc2(ipv6PoolEc2Id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:ipv6pool-ec2/${ ipv6PoolEc2Id }`);
+  public onIpv6poolEc2(
+    ipv6PoolEc2Id: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:ipv6pool-ec2/${ipv6PoolEc2Id}`
+    );
   }
 
   /**
@@ -8875,8 +9099,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onKeyPair(keyPairName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:key-pair/${ keyPairName }`);
+  public onKeyPair(
+    keyPairName: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:key-pair/${keyPairName}`
+    );
   }
 
   /**
@@ -8900,8 +9133,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onLaunchTemplate(launchTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:launch-template/${ launchTemplateId }`);
+  public onLaunchTemplate(
+    launchTemplateId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:launch-template/${launchTemplateId}`
+    );
   }
 
   /**
@@ -8914,8 +9156,17 @@ export class Ec2 extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onLicenseConfiguration(licenseConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:license-manager:${ region || '*' }:${ account || '*' }:license-configuration/${ licenseConfigurationId }`);
+  public onLicenseConfiguration(
+    licenseConfigurationId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:license-manager:${region || '*'}:${
+        account || '*'
+      }:license-configuration/${licenseConfigurationId}`
+    );
   }
 
   /**
@@ -8935,8 +9186,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onLocalGateway(localGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:local-gateway/${ localGatewayId }`);
+  public onLocalGateway(
+    localGatewayId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:local-gateway/${localGatewayId}`
+    );
   }
 
   /**
@@ -8956,8 +9216,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onLocalGatewayRouteTableVirtualInterfaceGroupAssociation(localGatewayRouteTableVirtualInterfaceGroupAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-route-table-virtual-interface-group-association/${ localGatewayRouteTableVirtualInterfaceGroupAssociationId }`);
+  public onLocalGatewayRouteTableVirtualInterfaceGroupAssociation(
+    localGatewayRouteTableVirtualInterfaceGroupAssociationId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:local-gateway-route-table-virtual-interface-group-association/${localGatewayRouteTableVirtualInterfaceGroupAssociationId}`
+    );
   }
 
   /**
@@ -8977,8 +9246,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onLocalGatewayRouteTableVpcAssociation(localGatewayRouteTableVpcAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-route-table-vpc-association/${ localGatewayRouteTableVpcAssociationId }`);
+  public onLocalGatewayRouteTableVpcAssociation(
+    localGatewayRouteTableVpcAssociationId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:local-gateway-route-table-vpc-association/${localGatewayRouteTableVpcAssociationId}`
+    );
   }
 
   /**
@@ -8998,8 +9276,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onLocalGatewayRouteTable(localGatewayRoutetableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-route-table/${ localGatewayRoutetableId }`);
+  public onLocalGatewayRouteTable(
+    localGatewayRoutetableId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:local-gateway-route-table/${localGatewayRoutetableId}`
+    );
   }
 
   /**
@@ -9019,8 +9306,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onLocalGatewayVirtualInterfaceGroup(localGatewayVirtualInterfaceGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-virtual-interface-group/${ localGatewayVirtualInterfaceGroupId }`);
+  public onLocalGatewayVirtualInterfaceGroup(
+    localGatewayVirtualInterfaceGroupId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:local-gateway-virtual-interface-group/${localGatewayVirtualInterfaceGroupId}`
+    );
   }
 
   /**
@@ -9040,8 +9336,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onLocalGatewayVirtualInterface(localGatewayVirtualInterfaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:local-gateway-virtual-interface/${ localGatewayVirtualInterfaceId }`);
+  public onLocalGatewayVirtualInterface(
+    localGatewayVirtualInterfaceId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:local-gateway-virtual-interface/${localGatewayVirtualInterfaceId}`
+    );
   }
 
   /**
@@ -9061,8 +9366,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onNatgateway(natGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:natgateway/${ natGatewayId }`);
+  public onNatgateway(
+    natGatewayId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:natgateway/${natGatewayId}`
+    );
   }
 
   /**
@@ -9084,8 +9398,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifVpc()
    */
-  public onNetworkAcl(naclId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:network-acl/${ naclId }`);
+  public onNetworkAcl(
+    naclId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:network-acl/${naclId}`
+    );
   }
 
   /**
@@ -9104,8 +9427,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onNetworkInsightsAccessScopeAnalysis(networkInsightsAccessScopeAnalysisId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:network-insights-access-scope-analysis/${ networkInsightsAccessScopeAnalysisId }`);
+  public onNetworkInsightsAccessScopeAnalysis(
+    networkInsightsAccessScopeAnalysisId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:network-insights-access-scope-analysis/${networkInsightsAccessScopeAnalysisId}`
+    );
   }
 
   /**
@@ -9124,8 +9456,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onNetworkInsightsAccessScope(networkInsightsAccessScopeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:network-insights-access-scope/${ networkInsightsAccessScopeId }`);
+  public onNetworkInsightsAccessScope(
+    networkInsightsAccessScopeId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:network-insights-access-scope/${networkInsightsAccessScopeId}`
+    );
   }
 
   /**
@@ -9145,8 +9486,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onNetworkInsightsAnalysis(networkInsightsAnalysisId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:network-insights-analysis/${ networkInsightsAnalysisId }`);
+  public onNetworkInsightsAnalysis(
+    networkInsightsAnalysisId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:network-insights-analysis/${networkInsightsAnalysisId}`
+    );
   }
 
   /**
@@ -9166,8 +9516,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onNetworkInsightsPath(networkInsightsPathId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:network-insights-path/${ networkInsightsPathId }`);
+  public onNetworkInsightsPath(
+    networkInsightsPathId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:network-insights-path/${networkInsightsPathId}`
+    );
   }
 
   /**
@@ -9199,8 +9558,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifSubnet()
    * - .ifVpc()
    */
-  public onNetworkInterface(networkInterfaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:network-interface/${ networkInterfaceId }`);
+  public onNetworkInterface(
+    networkInterfaceId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:network-interface/${networkInterfaceId}`
+    );
   }
 
   /**
@@ -9224,8 +9592,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onPlacementGroup(placementGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:placement-group/${ placementGroupName }`);
+  public onPlacementGroup(
+    placementGroupName: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:placement-group/${placementGroupName}`
+    );
   }
 
   /**
@@ -9247,8 +9624,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onPrefixList(prefixListId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:prefix-list/${ prefixListId }`);
+  public onPrefixList(
+    prefixListId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:prefix-list/${prefixListId}`
+    );
   }
 
   /**
@@ -9268,8 +9654,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onReplaceRootVolumeTask(replaceRootVolumeTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:replace-root-volume-task/${ replaceRootVolumeTaskId }`);
+  public onReplaceRootVolumeTask(
+    replaceRootVolumeTaskId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:replace-root-volume-task/${replaceRootVolumeTaskId}`
+    );
   }
 
   /**
@@ -9295,8 +9690,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifTenancy()
    */
-  public onReservedInstances(reservationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:reserved-instances/${ reservationId }`);
+  public onReservedInstances(
+    reservationId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:reserved-instances/${reservationId}`
+    );
   }
 
   /**
@@ -9309,8 +9713,17 @@ export class Ec2 extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onGroup(groupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:resource-groups:${ region || '*' }:${ account || '*' }:group/${ groupName }`);
+  public onGroup(
+    groupName: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:resource-groups:${region || '*'}:${
+        account || '*'
+      }:group/${groupName}`
+    );
   }
 
   /**
@@ -9322,8 +9735,16 @@ export class Ec2 extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onRole(roleNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:iam::${ account || '*' }:role/${ roleNameWithPath }`);
+  public onRole(
+    roleNameWithPath: string,
+    account?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:iam::${
+        account || '*'
+      }:role/${roleNameWithPath}`
+    );
   }
 
   /**
@@ -9345,8 +9766,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRouteTableID()
    * - .ifVpc()
    */
-  public onRouteTable(routeTableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:route-table/${ routeTableId }`);
+  public onRouteTable(
+    routeTableId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:route-table/${routeTableId}`
+    );
   }
 
   /**
@@ -9372,8 +9802,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifSecurityGroupID()
    * - .ifVpc()
    */
-  public onSecurityGroup(securityGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:security-group/${ securityGroupId }`);
+  public onSecurityGroup(
+    securityGroupId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:security-group/${securityGroupId}`
+    );
   }
 
   /**
@@ -9393,8 +9832,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onSecurityGroupRule(securityGroupRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:security-group-rule/${ securityGroupRuleId }`);
+  public onSecurityGroupRule(
+    securityGroupRuleId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:security-group-rule/${securityGroupRuleId}`
+    );
   }
 
   /**
@@ -9431,7 +9879,9 @@ export class Ec2 extends PolicyStatement {
    * - .ifVolumeSize()
    */
   public onSnapshot(snapshotId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }::snapshot/${ snapshotId }`);
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}::snapshot/${snapshotId}`
+    );
   }
 
   /**
@@ -9453,8 +9903,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onSpotFleetRequest(spotFleetRequestId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:spot-fleet-request/${ spotFleetRequestId }`);
+  public onSpotFleetRequest(
+    spotFleetRequestId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:spot-fleet-request/${spotFleetRequestId}`
+    );
   }
 
   /**
@@ -9474,8 +9933,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onSpotInstancesRequest(spotInstanceRequestId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:spot-instances-request/${ spotInstanceRequestId }`);
+  public onSpotInstancesRequest(
+    spotInstanceRequestId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:spot-instances-request/${spotInstanceRequestId}`
+    );
   }
 
   /**
@@ -9495,8 +9963,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onSubnetCidrReservation(subnetCidrReservationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:subnet-cidr-reservation/${ subnetCidrReservationId }`);
+  public onSubnetCidrReservation(
+    subnetCidrReservationId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:subnet-cidr-reservation/${subnetCidrReservationId}`
+    );
   }
 
   /**
@@ -9523,8 +10000,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifSubnetID()
    * - .ifVpc()
    */
-  public onSubnet(subnetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:subnet/${ subnetId }`);
+  public onSubnet(
+    subnetId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:subnet/${subnetId}`
+    );
   }
 
   /**
@@ -9546,8 +10032,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onTrafficMirrorFilter(trafficMirrorFilterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:traffic-mirror-filter/${ trafficMirrorFilterId }`);
+  public onTrafficMirrorFilter(
+    trafficMirrorFilterId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:traffic-mirror-filter/${trafficMirrorFilterId}`
+    );
   }
 
   /**
@@ -9565,8 +10060,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifAttribute()
    * - .ifRegion()
    */
-  public onTrafficMirrorFilterRule(trafficMirrorFilterRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:traffic-mirror-filter-rule/${ trafficMirrorFilterRuleId }`);
+  public onTrafficMirrorFilterRule(
+    trafficMirrorFilterRuleId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:traffic-mirror-filter-rule/${trafficMirrorFilterRuleId}`
+    );
   }
 
   /**
@@ -9588,8 +10092,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onTrafficMirrorSession(trafficMirrorSessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:traffic-mirror-session/${ trafficMirrorSessionId }`);
+  public onTrafficMirrorSession(
+    trafficMirrorSessionId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:traffic-mirror-session/${trafficMirrorSessionId}`
+    );
   }
 
   /**
@@ -9609,8 +10122,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onTrafficMirrorTarget(trafficMirrorTargetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:traffic-mirror-target/${ trafficMirrorTargetId }`);
+  public onTrafficMirrorTarget(
+    trafficMirrorTargetId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:traffic-mirror-target/${trafficMirrorTargetId}`
+    );
   }
 
   /**
@@ -9632,8 +10154,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onTransitGatewayAttachment(transitGatewayAttachmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-attachment/${ transitGatewayAttachmentId }`);
+  public onTransitGatewayAttachment(
+    transitGatewayAttachmentId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:transit-gateway-attachment/${transitGatewayAttachmentId}`
+    );
   }
 
   /**
@@ -9653,8 +10184,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onTransitGatewayConnectPeer(transitGatewayConnectPeerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-connect-peer/${ transitGatewayConnectPeerId }`);
+  public onTransitGatewayConnectPeer(
+    transitGatewayConnectPeerId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:transit-gateway-connect-peer/${transitGatewayConnectPeerId}`
+    );
   }
 
   /**
@@ -9676,8 +10216,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onTransitGateway(transitGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway/${ transitGatewayId }`);
+  public onTransitGateway(
+    transitGatewayId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:transit-gateway/${transitGatewayId}`
+    );
   }
 
   /**
@@ -9697,8 +10246,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onTransitGatewayMulticastDomain(transitGatewayMulticastDomainId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-multicast-domain/${ transitGatewayMulticastDomainId }`);
+  public onTransitGatewayMulticastDomain(
+    transitGatewayMulticastDomainId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:transit-gateway-multicast-domain/${transitGatewayMulticastDomainId}`
+    );
   }
 
   /**
@@ -9720,8 +10278,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onTransitGatewayRouteTable(transitGatewayRouteTableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:transit-gateway-route-table/${ transitGatewayRouteTableId }`);
+  public onTransitGatewayRouteTable(
+    transitGatewayRouteTableId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:transit-gateway-route-table/${transitGatewayRouteTableId}`
+    );
   }
 
   /**
@@ -9754,8 +10321,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifVolumeThroughput()
    * - .ifVolumeType()
    */
-  public onVolume(volumeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:volume/${ volumeId }`);
+  public onVolume(
+    volumeId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:volume/${volumeId}`
+    );
   }
 
   /**
@@ -9779,8 +10355,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifVpceServiceName()
    * - .ifVpceServiceOwner()
    */
-  public onVpcEndpoint(vpcEndpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpc-endpoint/${ vpcEndpointId }`);
+  public onVpcEndpoint(
+    vpcEndpointId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:vpc-endpoint/${vpcEndpointId}`
+    );
   }
 
   /**
@@ -9803,8 +10388,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifVpceServicePrivateDnsName()
    */
-  public onVpcEndpointService(vpcEndpointServiceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpc-endpoint-service/${ vpcEndpointServiceId }`);
+  public onVpcEndpointService(
+    vpcEndpointServiceId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:vpc-endpoint-service/${vpcEndpointServiceId}`
+    );
   }
 
   /**
@@ -9824,8 +10418,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onVpcFlowLog(vpcFlowLogId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpc-flow-log/${ vpcFlowLogId }`);
+  public onVpcFlowLog(
+    vpcFlowLogId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:vpc-flow-log/${vpcFlowLogId}`
+    );
   }
 
   /**
@@ -9851,8 +10454,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifTenancy()
    * - .ifVpcID()
    */
-  public onVpc(vpcId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpc/${ vpcId }`);
+  public onVpc(
+    vpcId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:vpc/${vpcId}`
+    );
   }
 
   /**
@@ -9877,8 +10489,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifVpcPeeringConnectionID()
    */
-  public onVpcPeeringConnection(vpcPeeringConnectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpc-peering-connection/${ vpcPeeringConnectionId }`);
+  public onVpcPeeringConnection(
+    vpcPeeringConnectionId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:vpc-peering-connection/${vpcPeeringConnectionId}`
+    );
   }
 
   /**
@@ -9898,8 +10519,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onVpnConnectionDeviceType(vpnConnectionDeviceTypeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpn-connection-device-type/${ vpnConnectionDeviceTypeId }`);
+  public onVpnConnectionDeviceType(
+    vpnConnectionDeviceTypeId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:vpn-connection-device-type/${vpnConnectionDeviceTypeId}`
+    );
   }
 
   /**
@@ -9940,8 +10570,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifRoutingType()
    */
-  public onVpnConnection(vpnConnectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpn-connection/${ vpnConnectionId }`);
+  public onVpnConnection(
+    vpnConnectionId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:vpn-connection/${vpnConnectionId}`
+    );
   }
 
   /**
@@ -9961,8 +10600,17 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    */
-  public onVpnGateway(vpnGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || 'aws' }:ec2:${ region || '*' }:${ account || '*' }:vpn-gateway/${ vpnGatewayId }`);
+  public onVpnGateway(
+    vpnGatewayId: string,
+    account?: string,
+    region?: string,
+    partition?: string
+  ) {
+    return this.on(
+      `arn:${partition || 'aws'}:ec2:${region || '*'}:${
+        account || '*'
+      }:vpn-gateway/${vpnGatewayId}`
+    );
   }
 
   /**
@@ -10047,7 +10695,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAllocationId(value: string | string[], operator?: Operator | string) {
+  public ifAllocationId(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`AllocationId`, value, operator || 'StringLike');
   }
 
@@ -10073,7 +10724,11 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifAssociatePublicIpAddress(value?: boolean) {
-    return this.if(`AssociatePublicIpAddress`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(
+      `AssociatePublicIpAddress`,
+      typeof value !== 'undefined' ? value : true,
+      'Bool'
+    );
   }
 
   /**
@@ -10172,7 +10827,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAttribute(value: string | string[], operator?: Operator | string) {
+  public ifAttributeExists(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`Attribute`, value, operator || 'StringLike');
   }
 
@@ -10275,8 +10933,16 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAttribute(attributeName: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`Attribute/${ attributeName }`, value, operator || 'StringLike');
+  public ifAttribute(
+    attributeName: string,
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      `Attribute/${attributeName}`,
+      value,
+      operator || 'StringLike'
+    );
   }
 
   /**
@@ -10296,7 +10962,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAuthenticationType(value: string | string[], operator?: Operator | string) {
+  public ifAuthenticationType(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`AuthenticationType`, value, operator || 'StringLike');
   }
 
@@ -10323,7 +10992,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAuthorizedService(value: string | string[], operator?: Operator | string) {
+  public ifAuthorizedService(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`AuthorizedService`, value, operator || 'StringLike');
   }
 
@@ -10343,7 +11015,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAuthorizedUser(value: string | string[], operator?: Operator | string) {
+  public ifAuthorizedUser(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`AuthorizedUser`, value, operator || 'StringLike');
   }
 
@@ -10362,7 +11037,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAutoPlacement(value: string | string[], operator?: Operator | string) {
+  public ifAutoPlacement(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`AutoPlacement`, value, operator || 'StringLike');
   }
 
@@ -10476,7 +11154,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAvailabilityZone(value: string | string[], operator?: Operator | string) {
+  public ifAvailabilityZone(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`AvailabilityZone`, value, operator || 'StringLike');
   }
 
@@ -10498,7 +11179,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifCapacityReservationFleet(value: string | string[], operator?: Operator | string) {
+  public ifCapacityReservationFleet(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`CapacityReservationFleet`, value, operator || 'ArnLike');
   }
 
@@ -10535,8 +11219,15 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifClientRootCertificateChainArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ClientRootCertificateChainArn`, value, operator || 'ArnLike');
+  public ifClientRootCertificateChainArn(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      `ClientRootCertificateChainArn`,
+      value,
+      operator || 'ArnLike'
+    );
   }
 
   /**
@@ -10572,7 +11263,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifCloudwatchLogGroupArn(value: string | string[], operator?: Operator | string) {
+  public ifCloudwatchLogGroupArn(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`CloudwatchLogGroupArn`, value, operator || 'ArnLike');
   }
 
@@ -10609,7 +11303,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifCloudwatchLogStreamArn(value: string | string[], operator?: Operator | string) {
+  public ifCloudwatchLogStreamArn(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`CloudwatchLogStreamArn`, value, operator || 'ArnLike');
   }
 
@@ -10624,7 +11321,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCreateAction(value: string | string[], operator?: Operator | string) {
+  public ifCreateAction(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`CreateAction`, value, operator || 'StringLike');
   }
 
@@ -10645,7 +11345,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifDPDTimeoutSeconds(value: number | number[], operator?: Operator | string) {
+  public ifDPDTimeoutSeconds(
+    value: number | number[],
+    operator?: Operator | string
+  ) {
     return this.if(`DPDTimeoutSeconds`, value, operator || 'NumericEquals');
   }
 
@@ -10664,7 +11367,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDhcpOptionsID(value: string | string[], operator?: Operator | string) {
+  public ifDhcpOptionsID(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`DhcpOptionsID`, value, operator || 'StringLike');
   }
 
@@ -10701,7 +11407,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifDirectoryArn(value: string | string[], operator?: Operator | string) {
+  public ifDirectoryArn(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`DirectoryArn`, value, operator || 'ArnLike');
   }
 
@@ -10784,7 +11493,11 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifEbsOptimized(value?: boolean) {
-    return this.if(`EbsOptimized`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(
+      `EbsOptimized`,
+      typeof value !== 'undefined' ? value : true,
+      'Bool'
+    );
   }
 
   /**
@@ -10802,7 +11515,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifElasticGpuType(value: string | string[], operator?: Operator | string) {
+  public ifElasticGpuType(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`ElasticGpuType`, value, operator || 'StringLike');
   }
 
@@ -10843,7 +11559,11 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifEncrypted(value?: boolean) {
-    return this.if(`Encrypted`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(
+      `Encrypted`,
+      typeof value !== 'undefined' ? value : true,
+      'Bool'
+    );
   }
 
   /**
@@ -10882,7 +11602,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifHostRecovery(value: string | string[], operator?: Operator | string) {
+  public ifHostRecovery(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`HostRecovery`, value, operator || 'StringLike');
   }
 
@@ -11004,7 +11727,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInsideTunnelCidr(value: string | string[], operator?: Operator | string) {
+  public ifInsideTunnelCidr(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`InsideTunnelCidr`, value, operator || 'StringLike');
   }
 
@@ -11025,7 +11751,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInsideTunnelIpv6Cidr(value: string | string[], operator?: Operator | string) {
+  public ifInsideTunnelIpv6Cidr(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`InsideTunnelIpv6Cidr`, value, operator || 'StringLike');
   }
 
@@ -11071,7 +11800,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInstanceAutoRecovery(value: string | string[], operator?: Operator | string) {
+  public ifInstanceAutoRecovery(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`InstanceAutoRecovery`, value, operator || 'StringLike');
   }
 
@@ -11184,7 +11916,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInstanceMarketType(value: string | string[], operator?: Operator | string) {
+  public ifInstanceMarketType(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`InstanceMarketType`, value, operator || 'StringLike');
   }
 
@@ -11230,7 +11965,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInstanceMetadataTags(value: string | string[], operator?: Operator | string) {
+  public ifInstanceMetadataTags(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`InstanceMetadataTags`, value, operator || 'StringLike');
   }
 
@@ -11288,7 +12026,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifInstanceProfile(value: string | string[], operator?: Operator | string) {
+  public ifInstanceProfile(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`InstanceProfile`, value, operator || 'ArnLike');
   }
 
@@ -11350,7 +12091,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInstanceType(value: string | string[], operator?: Operator | string) {
+  public ifInstanceType(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`InstanceType`, value, operator || 'StringLike');
   }
 
@@ -11373,7 +12117,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInternetGatewayID(value: string | string[], operator?: Operator | string) {
+  public ifInternetGatewayID(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`InternetGatewayID`, value, operator || 'StringLike');
   }
 
@@ -11390,7 +12137,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifIpv4IpamPoolId(value: string | string[], operator?: Operator | string) {
+  public ifIpv4IpamPoolId(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`Ipv4IpamPoolId`, value, operator || 'StringLike');
   }
 
@@ -11407,7 +12157,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifIpv6IpamPoolId(value: string | string[], operator?: Operator | string) {
+  public ifIpv6IpamPoolId(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`Ipv6IpamPoolId`, value, operator || 'StringLike');
   }
 
@@ -11437,7 +12190,11 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifIsLaunchTemplateResource(value?: boolean) {
-    return this.if(`IsLaunchTemplateResource`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(
+      `IsLaunchTemplateResource`,
+      typeof value !== 'undefined' ? value : true,
+      'Bool'
+    );
   }
 
   /**
@@ -11536,7 +12293,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifLaunchTemplate(value: string | string[], operator?: Operator | string) {
+  public ifLaunchTemplate(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`LaunchTemplate`, value, operator || 'ArnLike');
   }
 
@@ -11589,7 +12349,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifMetadataHttpEndpoint(value: string | string[], operator?: Operator | string) {
+  public ifMetadataHttpEndpoint(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`MetadataHttpEndpoint`, value, operator || 'StringLike');
   }
 
@@ -11642,8 +12405,15 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifMetadataHttpPutResponseHopLimit(value: number | number[], operator?: Operator | string) {
-    return this.if(`MetadataHttpPutResponseHopLimit`, value, operator || 'NumericEquals');
+  public ifMetadataHttpPutResponseHopLimit(
+    value: number | number[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      `MetadataHttpPutResponseHopLimit`,
+      value,
+      operator || 'NumericEquals'
+    );
   }
 
   /**
@@ -11695,7 +12465,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifMetadataHttpTokens(value: string | string[], operator?: Operator | string) {
+  public ifMetadataHttpTokens(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`MetadataHttpTokens`, value, operator || 'StringLike');
   }
 
@@ -11717,7 +12490,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifNetworkAclID(value: string | string[], operator?: Operator | string) {
+  public ifNetworkAclID(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`NetworkAclID`, value, operator || 'StringLike');
   }
 
@@ -11761,7 +12537,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifNetworkInterfaceID(value: string | string[], operator?: Operator | string) {
+  public ifNetworkInterfaceID(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`NetworkInterfaceID`, value, operator || 'StringLike');
   }
 
@@ -11782,7 +12561,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifNewInstanceProfile(value: string | string[], operator?: Operator | string) {
+  public ifNewInstanceProfile(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`NewInstanceProfile`, value, operator || 'ArnLike');
   }
 
@@ -11902,7 +12684,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifParentSnapshot(value: string | string[], operator?: Operator | string) {
+  public ifParentSnapshot(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`ParentSnapshot`, value, operator || 'ArnLike');
   }
 
@@ -11943,7 +12728,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifParentVolume(value: string | string[], operator?: Operator | string) {
+  public ifParentVolume(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`ParentVolume`, value, operator || 'ArnLike');
   }
 
@@ -11984,7 +12772,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifPhase1DHGroup(value: number | number[], operator?: Operator | string) {
+  public ifPhase1DHGroup(
+    value: number | number[],
+    operator?: Operator | string
+  ) {
     return this.if(`Phase1DHGroup`, value, operator || 'NumericEquals');
   }
 
@@ -12005,8 +12796,15 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPhase1EncryptionAlgorithms(value: string | string[], operator?: Operator | string) {
-    return this.if(`Phase1EncryptionAlgorithms`, value, operator || 'StringLike');
+  public ifPhase1EncryptionAlgorithms(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      `Phase1EncryptionAlgorithms`,
+      value,
+      operator || 'StringLike'
+    );
   }
 
   /**
@@ -12026,8 +12824,15 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPhase1IntegrityAlgorithms(value: string | string[], operator?: Operator | string) {
-    return this.if(`Phase1IntegrityAlgorithms`, value, operator || 'StringLike');
+  public ifPhase1IntegrityAlgorithms(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      `Phase1IntegrityAlgorithms`,
+      value,
+      operator || 'StringLike'
+    );
   }
 
   /**
@@ -12047,7 +12852,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifPhase1LifetimeSeconds(value: number | number[], operator?: Operator | string) {
+  public ifPhase1LifetimeSeconds(
+    value: number | number[],
+    operator?: Operator | string
+  ) {
     return this.if(`Phase1LifetimeSeconds`, value, operator || 'NumericEquals');
   }
 
@@ -12068,7 +12876,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifPhase2DHGroup(value: number | number[], operator?: Operator | string) {
+  public ifPhase2DHGroup(
+    value: number | number[],
+    operator?: Operator | string
+  ) {
     return this.if(`Phase2DHGroup`, value, operator || 'NumericEquals');
   }
 
@@ -12089,8 +12900,15 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPhase2EncryptionAlgorithms(value: string | string[], operator?: Operator | string) {
-    return this.if(`Phase2EncryptionAlgorithms`, value, operator || 'StringLike');
+  public ifPhase2EncryptionAlgorithms(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      `Phase2EncryptionAlgorithms`,
+      value,
+      operator || 'StringLike'
+    );
   }
 
   /**
@@ -12110,8 +12928,15 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPhase2IntegrityAlgorithms(value: string | string[], operator?: Operator | string) {
-    return this.if(`Phase2IntegrityAlgorithms`, value, operator || 'StringLike');
+  public ifPhase2IntegrityAlgorithms(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      `Phase2IntegrityAlgorithms`,
+      value,
+      operator || 'StringLike'
+    );
   }
 
   /**
@@ -12131,7 +12956,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifPhase2LifetimeSeconds(value: number | number[], operator?: Operator | string) {
+  public ifPhase2LifetimeSeconds(
+    value: number | number[],
+    operator?: Operator | string
+  ) {
     return this.if(`Phase2LifetimeSeconds`, value, operator || 'NumericEquals');
   }
 
@@ -12185,7 +13013,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifPlacementGroup(value: string | string[], operator?: Operator | string) {
+  public ifPlacementGroup(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`PlacementGroup`, value, operator || 'ArnLike');
   }
 
@@ -12209,7 +13040,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPlacementGroupName(value: string | string[], operator?: Operator | string) {
+  public ifPlacementGroupName(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`PlacementGroupName`, value, operator || 'StringLike');
   }
 
@@ -12235,7 +13069,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPlacementGroupStrategy(value: string | string[], operator?: Operator | string) {
+  public ifPlacementGroupStrategy(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`PlacementGroupStrategy`, value, operator || 'StringLike');
   }
 
@@ -12256,7 +13093,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPreSharedKeys(value: string | string[], operator?: Operator | string) {
+  public ifPreSharedKeys(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`PreSharedKeys`, value, operator || 'StringLike');
   }
 
@@ -12313,7 +13153,11 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifPublic(value?: boolean) {
-    return this.if(`Public`, (typeof value !== 'undefined' ? value : true), 'Bool');
+    return this.if(
+      `Public`,
+      typeof value !== 'undefined' ? value : true,
+      'Bool'
+    );
   }
 
   /**
@@ -12337,7 +13181,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPublicIpAddress(value: string | string[], operator?: Operator | string) {
+  public ifPublicIpAddress(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`PublicIpAddress`, value, operator || 'StringLike');
   }
 
@@ -12995,7 +13842,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifRekeyFuzzPercentage(value: number | number[], operator?: Operator | string) {
+  public ifRekeyFuzzPercentage(
+    value: number | number[],
+    operator?: Operator | string
+  ) {
     return this.if(`RekeyFuzzPercentage`, value, operator || 'NumericEquals');
   }
 
@@ -13016,8 +13866,15 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifRekeyMarginTimeSeconds(value: number | number[], operator?: Operator | string) {
-    return this.if(`RekeyMarginTimeSeconds`, value, operator || 'NumericEquals');
+  public ifRekeyMarginTimeSeconds(
+    value: number | number[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      `RekeyMarginTimeSeconds`,
+      value,
+      operator || 'NumericEquals'
+    );
   }
 
   /**
@@ -13052,7 +13909,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRemoveUserId(value: string | string[], operator?: Operator | string) {
+  public ifRemoveUserId(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`Remove/userId`, value, operator || 'StringLike');
   }
 
@@ -13071,7 +13931,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifReplayWindowSizePackets(value: string | string[], operator?: Operator | string) {
+  public ifReplayWindowSizePackets(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`ReplayWindowSizePackets`, value, operator || 'StringLike');
   }
 
@@ -13096,7 +13959,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifRequesterVpc(value: string | string[], operator?: Operator | string) {
+  public ifRequesterVpc(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`RequesterVpc`, value, operator || 'ArnLike');
   }
 
@@ -13115,8 +13981,15 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifReservedInstancesOfferingType(value: string | string[], operator?: Operator | string) {
-    return this.if(`ReservedInstancesOfferingType`, value, operator || 'StringLike');
+  public ifReservedInstancesOfferingType(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      `ReservedInstancesOfferingType`,
+      value,
+      operator || 'StringLike'
+    );
   }
 
   /**
@@ -13127,7 +14000,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTagExists(value: string | string[], operator?: Operator | string) {
+  public ifResourceTagExists(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`ResourceTag/`, value, operator || 'StringLike');
   }
 
@@ -13537,8 +14413,12 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifResourceTag(
+    tagKey: string,
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if(`ResourceTag/${tagKey}`, value, operator || 'StringLike');
   }
 
   /**
@@ -13549,7 +14429,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifRoleDelivery(value: number | number[], operator?: Operator | string) {
+  public ifRoleDelivery(
+    value: number | number[],
+    operator?: Operator | string
+  ) {
     return this.if(`RoleDelivery`, value, operator || 'NumericEquals');
   }
 
@@ -13627,7 +14510,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRootDeviceType(value: string | string[], operator?: Operator | string) {
+  public ifRootDeviceType(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`RootDeviceType`, value, operator || 'StringLike');
   }
 
@@ -13655,7 +14541,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRouteTableID(value: string | string[], operator?: Operator | string) {
+  public ifRouteTableID(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`RouteTableID`, value, operator || 'StringLike');
   }
 
@@ -13713,7 +14602,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifSamlProviderArn(value: string | string[], operator?: Operator | string) {
+  public ifSamlProviderArn(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`SamlProviderArn`, value, operator || 'ArnLike');
   }
 
@@ -13754,7 +14646,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSecurityGroupID(value: string | string[], operator?: Operator | string) {
+  public ifSecurityGroupID(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`SecurityGroupID`, value, operator || 'StringLike');
   }
 
@@ -13791,7 +14686,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifServerCertificateArn(value: string | string[], operator?: Operator | string) {
+  public ifServerCertificateArn(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`ServerCertificateArn`, value, operator || 'ArnLike');
   }
 
@@ -13870,12 +14768,15 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateEquals`
    */
-  public ifSnapshotTime(value: Date | string | (Date | string)[], operator?: Operator | string) {
-    if (typeof (value as Date).getMonth === "function") {
+  public ifSnapshotTime(
+    value: Date | string | (Date | string)[],
+    operator?: Operator | string
+  ) {
+    if (typeof (value as Date).getMonth === 'function') {
       value = (value as Date).toISOString();
     } else if (Array.isArray(value)) {
       value = value.map((item) => {
-        if (typeof (item as Date).getMonth === "function") {
+        if (typeof (item as Date).getMonth === 'function') {
           item = (item as Date).toISOString();
         }
         return item;
@@ -13892,7 +14793,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifSourceInstanceARN(value: string | string[], operator?: Operator | string) {
+  public ifSourceInstanceARN(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`SourceInstanceARN`, value, operator || 'ArnLike');
   }
 
@@ -13918,7 +14822,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifSourceOutpostArn(value: string | string[], operator?: Operator | string) {
+  public ifSourceOutpostArn(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`SourceOutpostArn`, value, operator || 'ArnLike');
   }
 
@@ -14245,7 +15152,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifVolumeThroughput(value: number | number[], operator?: Operator | string) {
+  public ifVolumeThroughput(
+    value: number | number[],
+    operator?: Operator | string
+  ) {
     return this.if(`VolumeThroughput`, value, operator || 'NumericEquals');
   }
 
@@ -14434,7 +15344,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVpcPeeringConnectionID(value: string | string[], operator?: Operator | string) {
+  public ifVpcPeeringConnectionID(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`VpcPeeringConnectionID`, value, operator || 'StringLike');
   }
 
@@ -14453,7 +15366,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVpceServiceName(value: string | string[], operator?: Operator | string) {
+  public ifVpceServiceName(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`VpceServiceName`, value, operator || 'StringLike');
   }
 
@@ -14471,7 +15387,10 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVpceServiceOwner(value: string | string[], operator?: Operator | string) {
+  public ifVpceServiceOwner(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
     return this.if(`VpceServiceOwner`, value, operator || 'StringLike');
   }
 
@@ -14491,7 +15410,14 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVpceServicePrivateDnsName(value: string | string[], operator?: Operator | string) {
-    return this.if(`VpceServicePrivateDnsName`, value, operator || 'StringLike');
+  public ifVpceServicePrivateDnsName(
+    value: string | string[],
+    operator?: Operator | string
+  ) {
+    return this.if(
+      `VpceServicePrivateDnsName`,
+      value,
+      operator || 'StringLike'
+    );
   }
 }
