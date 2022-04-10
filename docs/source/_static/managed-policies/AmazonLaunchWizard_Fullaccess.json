@@ -237,11 +237,25 @@
 		},
 		{
 			"Effect": "Allow",
-			"Action": "ssm:SendCommand",
-			"Resource": "*",
+			"Action": [
+				"ssm:GetDocument",
+				"ssm:SendCommand"
+			],
+			"Resource": [
+				"arn:aws:ssm:*::document/AWS-RunShellScript"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ssm:SendCommand"
+			],
+			"Resource": [
+				"arn:aws:ec2:*:*:instance/*"
+			],
 			"Condition": {
-				"ForAllValues:StringLike": {
-					"aws:TagKeys": "LaunchWizard*"
+				"StringLike": {
+					"aws:ResourceTag/aws:cloudformation:stack-id": "arn:aws:cloudformation:*:*:stack/LaunchWizard-*/*"
 				}
 			}
 		},

@@ -14,6 +14,7 @@
 				"lookoutmetrics:ListTagsForResource",
 				"lookoutmetrics:ListAnomalyGroupSummaries",
 				"lookoutmetrics:ListAnomalyGroupTimeSeries",
+				"lookoutmetrics:ListAnomalyGroupRelatedMetrics",
 				"lookoutmetrics:GetAnomalyGroup",
 				"lookoutmetrics:GetDataQualityMetrics",
 				"lookoutmetrics:GetSampleData",

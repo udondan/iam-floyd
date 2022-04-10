@@ -1,0 +1,37 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeVpcs",
+				"ec2:DescribeSubnets",
+				"ec2:DescribeAvailabilityZones",
+				"ec2:CreateNetworkInterface",
+				"ec2:DescribeNetworkInterfaces",
+				"ec2:DeleteNetworkInterface",
+				"ec2:AssociateAddress",
+				"ec2:DisassociateAddress",
+				"ec2:DescribeRouteTables",
+				"ec2:DescribeSecurityGroups",
+				"ec2:DescribeVpcEndpoints"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"cloudwatch:PutMetricData"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"cloudwatch:namespace": [
+						"AWS/WorkSpacesWeb",
+						"AWS/Usage"
+					]
+				}
+			}
+		}
+	]
+}

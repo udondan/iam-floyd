@@ -1,0 +1,29 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"iotroborunner:GetTask",
+				"iotroborunner:ListActivities",
+				"iotroborunner:GetSite",
+				"iotroborunner:GetDestinationRelationship",
+				"iotroborunner:GetWorker",
+				"iotroborunner:ListTasks",
+				"iotroborunner:GetAction",
+				"iotroborunner:GetActivity",
+				"iotroborunner:ListDestinationRelationships",
+				"iotroborunner:ListActionTemplates",
+				"iotroborunner:ListWorkerFleets",
+				"iotroborunner:ListSites",
+				"iotroborunner:ListActions",
+				"iotroborunner:ListWorkers",
+				"iotroborunner:GetDestination",
+				"iotroborunner:GetActionTemplate",
+				"iotroborunner:GetWorkerFleet",
+				"iotroborunner:ListDestinations"
+			],
+			"Resource": "*"
+		}
+	]
+}

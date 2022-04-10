@@ -27,7 +27,6 @@
 				"organizations:ListRoots",
 				"organizations:ListChildren",
 				"organizations:ListDelegatedAdministrators",
-				"rds:DescribeDBInstances",
 				"pi:GetResourceMetrics",
 				"tag:GetResources",
 				"lambda:GetFunction",
@@ -49,7 +48,13 @@
 				"dynamodb:DescribeStream",
 				"dynamodb:ListStreams",
 				"elasticloadbalancing:DescribeLoadBalancers",
-				"elasticloadbalancing:DescribeLoadBalancerAttributes"
+				"elasticloadbalancing:DescribeLoadBalancerAttributes",
+				"rds:DescribeDBInstances",
+				"rds:DescribeDBClusters",
+				"rds:DescribeOptionGroups",
+				"rds:DescribeDBClusterParameters",
+				"rds:DescribeDBInstanceAutomatedBackups",
+				"rds:DescribeAccountAttributes"
 			],
 			"Resource": "*"
 		},
@@ -89,6 +94,38 @@
 			"Condition": {
 				"StringEquals": {
 					"aws:ResourceTag/DevOps-GuruInsightSsmOpsItemRelated": "true"
+				}
+			}
+		},
+		{
+			"Sid": "AllowCreateManagedRule",
+			"Effect": "Allow",
+			"Action": "events:PutRule",
+			"Resource": "arn:aws:events:*:*:rule/DevOpsGuruManagedRule*"
+		},
+		{
+			"Sid": "AllowAccessManagedRule",
+			"Effect": "Allow",
+			"Action": [
+				"events:DescribeRule",
+				"events:ListTargetsByRule"
+			],
+			"Resource": "arn:aws:events:*:*:rule/DevOpsGuruManagedRule*"
+		},
+		{
+			"Sid": "AllowOtherOperationsOnManagedRule",
+			"Effect": "Allow",
+			"Action": [
+				"events:DeleteRule",
+				"events:EnableRule",
+				"events:DisableRule",
+				"events:PutTargets",
+				"events:RemoveTargets"
+			],
+			"Resource": "arn:aws:events:*:*:rule/DevOpsGuruManagedRule*",
+			"Condition": {
+				"StringEquals": {
+					"events:ManagedBy": "devops-guru.amazonaws.com"
 				}
 			}
 		}

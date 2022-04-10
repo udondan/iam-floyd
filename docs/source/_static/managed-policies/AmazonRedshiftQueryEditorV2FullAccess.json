@@ -28,6 +28,19 @@
 			"Resource": "arn:aws:secretsmanager:*:*:sqlworkbench!*"
 		},
 		{
+			"Sid": "ResourceGroupsTaggingPermissions",
+			"Effect": "Allow",
+			"Action": [
+				"tag:GetResources"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"aws:CalledViaLast": "sqlworkbench.amazonaws.com"
+				}
+			}
+		},
+		{
 			"Sid": "AmazonRedshiftQueryEditorV2Permissions",
 			"Effect": "Allow",
 			"Action": "sqlworkbench:*",

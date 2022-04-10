@@ -85,6 +85,16 @@
 				"profile:ListAccountIntegrations"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "cloudwatch:PutMetricData",
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"cloudwatch:namespace": "AWS/Connect"
+				}
+			}
 		}
 	]
 }

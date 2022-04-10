@@ -176,6 +176,7 @@
 				"ec2:DescribeAccountAttributes",
 				"ec2:DescribeCapacityReservations",
 				"ec2:DescribeDhcpOptions",
+				"ec2:DescribeImages",
 				"ec2:DescribeInstances",
 				"ec2:DescribeLaunchTemplates",
 				"ec2:DescribeNetworkAcls",

@@ -19,7 +19,9 @@
 				"waf-regional:DisassociateWebACL",
 				"elasticloadbalancing:SetWebACL",
 				"apigateway:SetWebACL",
-				"elasticloadbalancing:SetSecurityGroups"
+				"elasticloadbalancing:SetSecurityGroups",
+				"waf:ListTagsForResource",
+				"waf-regional:ListTagsForResource"
 			],
 			"Resource": [
 				"arn:aws:waf:*:*:webacl/*",
@@ -49,7 +51,8 @@
 				"waf:CreateWebACL",
 				"waf-regional:CreateWebACL",
 				"waf:GetChangeToken",
-				"waf-regional:GetChangeToken"
+				"waf-regional:GetChangeToken",
+				"waf-regional:GetWebACLForResource"
 			],
 			"Resource": [
 				"arn:aws:waf:*:*:*",
@@ -163,7 +166,10 @@
 				"shield:DescribeEmergencyContactSettings",
 				"shield:UpdateEmergencyContactSettings",
 				"elasticloadbalancing:DescribeLoadBalancers",
-				"ec2:DescribeAddresses"
+				"ec2:DescribeAddresses",
+				"shield:EnableApplicationLayerAutomaticResponse",
+				"shield:DisableApplicationLayerAutomaticResponse",
+				"shield:UpdateApplicationLayerAutomaticResponse"
 			],
 			"Resource": "*"
 		},
@@ -311,6 +317,24 @@
 		},
 		{
 			"Effect": "Allow",
+			"Action": "ec2:CreateTags",
+			"Resource": [
+				"arn:aws:ec2:*:*:vpc-endpoint/*"
+			],
+			"Condition": {
+				"StringEquals": {
+					"ec2:CreateAction": "CreateVpcEndpoint"
+				},
+				"ForAllValues:StringEquals": {
+					"aws:TagKeys": [
+						"Name",
+						"FMManaged"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
 			"Action": "ec2:DeleteRouteTable",
 			"Resource": "arn:aws:ec2:*:*:route-table/*",
 			"Condition": {
@@ -338,9 +362,44 @@
 				"ec2:DescribeRouteTables",
 				"ec2:DescribeSubnets",
 				"ec2:DescribeTags",
-				"ec2:DescribeVpcEndpoints"
+				"ec2:DescribeVpcEndpoints",
+				"ec2:DescribeAvailabilityZones"
 			],
 			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "ec2:CreateVpcEndpoint",
+			"Resource": [
+				"arn:aws:ec2:*:*:vpc-endpoint/*"
+			],
+			"Condition": {
+				"StringEquals": {
+					"aws:RequestTag/FMManaged": [
+						"true"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": "ec2:CreateVpcEndpoint",
+			"Resource": [
+				"arn:aws:ec2:*:*:subnet/*",
+				"arn:aws:ec2:*:*:vpc/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DeleteVpcEndpoints"
+			],
+			"Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+			"Condition": {
+				"StringEquals": {
+					"ec2:ResourceTag/FMManaged": "true"
+				}
+			}
 		},
 		{
 			"Effect": "Allow",
@@ -407,7 +466,8 @@
 			"Condition": {
 				"StringEquals": {
 					"iam:AWSServiceName": [
-						"network-firewall.amazonaws.com"
+						"network-firewall.amazonaws.com",
+						"shield.amazonaws.com"
 					]
 				}
 			}

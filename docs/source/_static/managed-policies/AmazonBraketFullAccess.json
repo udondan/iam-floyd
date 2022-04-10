@@ -16,6 +16,13 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"s3:ListAllMyBuckets"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
 				"ecr:GetDownloadUrlForLayer",
 				"ecr:BatchGetImage",
 				"ecr:BatchCheckLayerAvailability"
@@ -121,7 +128,7 @@
 			"Action": [
 				"iam:PassRole"
 			],
-			"Resource": "arn:aws:iam::*:role/AmazonBraketJobsExecutionRole*",
+			"Resource": "arn:aws:iam::*:role/service-role/AmazonBraketJobsExecutionRole*",
 			"Condition": {
 				"StringLike": {
 					"iam:PassedToService": [

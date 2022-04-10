@@ -1,14 +1,15 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [        
-        {
-            "Effect": "Allow",
-            "Action": [
-                "securityhub:Get*",
-                "securityhub:List*",
-                "securityhub:Describe*"
-            ],
-            "Resource": "*"
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"securityhub:Get*",
+				"securityhub:List*",
+				"securityhub:BatchGet*",
+				"securityhub:Describe*"
+			],
+			"Resource": "*"
+		}
+	]
 }

@@ -4,7 +4,8 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"route53-recovery-cluster:GetRoutingControlState"
+				"route53-recovery-cluster:GetRoutingControlState",
+				"route53-recovery-cluster:ListRoutingControls"
 			],
 			"Resource": "*"
 		}

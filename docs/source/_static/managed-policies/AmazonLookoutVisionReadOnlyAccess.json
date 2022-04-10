@@ -8,10 +8,12 @@
 				"lookoutvision:DescribeDataset",
 				"lookoutvision:DescribeModel",
 				"lookoutvision:DescribeProject",
+				"lookoutvision:DescribeModelPackagingJob",
 				"lookoutvision:ListDatasetEntries",
 				"lookoutvision:ListModels",
 				"lookoutvision:ListProjects",
-				"lookoutvision:ListTagsForResource"
+				"lookoutvision:ListTagsForResource",
+				"lookoutvision:ListModelPackagingJobs"
 			],
 			"Resource": "*"
 		}

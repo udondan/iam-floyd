@@ -21,7 +21,7 @@
 			"Action": [
 				"grafana:*"
 			],
-			"Resource": "arn:aws:grafana:*:*:/workspaces*"
+			"Resource": "*"
 		},
 		{
 			"Sid": "GrafanaIAMPassRolePermission",

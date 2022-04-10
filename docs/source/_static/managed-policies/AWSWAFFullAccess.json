@@ -10,7 +10,9 @@
 				"wafv2:*",
 				"elasticloadbalancing:SetWebACL",
 				"apigateway:SetWebACL",
-				"appsync:SetWebACL"
+				"appsync:SetWebACL",
+				"logs:DescribeResourcePolicies",
+				"logs:DescribeLogGroups"
 			],
 			"Resource": "*"
 		},
@@ -21,10 +23,7 @@
 				"logs:CreateLogDelivery",
 				"logs:DeleteLogDelivery"
 			],
-			"Resource": [
-				"arn:aws:s3:::aws-waf-logs-*",
-				"arn:aws:logs:*:*:aws-waf-logs-*"
-			]
+			"Resource": "*"
 		},
 		{
 			"Sid": "GrantLogDeliveryPermissionForS3Bucket",
@@ -41,13 +40,16 @@
 			"Sid": "GrantLogDeliveryPermissionForCloudWatchLogGroup",
 			"Effect": "Allow",
 			"Action": [
-				"logs:PutResourcePolicy",
-				"logs:DescribeResourcePolicies",
-				"logs:DescribeLogGroups"
+				"logs:PutResourcePolicy"
 			],
-			"Resource": [
-				"arn:aws:logs:*:*:aws-waf-logs-*"
-			]
+			"Resource": "*",
+			"Condition": {
+				"ForAnyValue:StringEquals": {
+					"aws:CalledVia": [
+						"wafv2.amazonaws.com"
+					]
+				}
+			}
 		}
 	]
 }

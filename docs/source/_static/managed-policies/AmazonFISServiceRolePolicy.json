@@ -7,7 +7,6 @@
 			"Action": [
 				"events:PutRule",
 				"events:DeleteRule",
-				"events:DescribeRule",
 				"events:PutTargets",
 				"events:RemoveTargets"
 			],
@@ -17,6 +16,14 @@
 					"events:ManagedBy": "fis.amazonaws.com"
 				}
 			}
+		},
+		{
+			"Sid": "EventBridgeDescribe",
+			"Effect": "Allow",
+			"Action": [
+				"events:DescribeRule"
+			],
+			"Resource": "*"
 		},
 		{
 			"Sid": "Tagging",
@@ -47,8 +54,9 @@
 				"rds:DescribeDBClusters",
 				"rds:DescribeDBInstances",
 				"ecs:DescribeClusters",
+				"ecs:DescribeTasks",
+				"ecs:ListTasks",
 				"eks:DescribeNodegroup"
-
 			],
 			"Resource": "*"
 		}

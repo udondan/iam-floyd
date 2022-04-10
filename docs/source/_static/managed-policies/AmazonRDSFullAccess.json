@@ -19,6 +19,7 @@
 				"ec2:DescribeAvailabilityZones",
 				"ec2:DescribeCoipPools",
 				"ec2:DescribeInternetGateways",
+				"ec2:DescribeLocalGatewayRouteTablePermissions",
 				"ec2:DescribeLocalGatewayRouteTables",
 				"ec2:DescribeLocalGatewayRouteTableVpcAssociations",
 				"ec2:DescribeLocalGateways",

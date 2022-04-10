@@ -121,7 +121,8 @@
 		{
 			"Effect": "Allow",
 			"Action": [
-				"cognito-idp:CreateUserPool"
+				"cognito-idp:CreateUserPool",
+				"cognito-idp:TagResource"
 			],
 			"Resource": "*",
 			"Condition": {
@@ -158,7 +159,8 @@
 			"Effect": "Allow",
 			"Action": [
 				"ecr:CreateRepository",
-				"ecr:DeleteRepository"
+				"ecr:DeleteRepository",
+				"ecr:TagResource"
 			],
 			"Resource": [
 				"arn:aws:ecr:*:*:repository/sagemaker-*"
@@ -327,6 +329,7 @@
 				"s3:PutBucketPublicAccessBlock",
 				"s3:PutBucketLogging",
 				"s3:PutEncryptionConfiguration",
+				"s3:PutBucketCORS",
 				"s3:PutBucketTagging",
 				"s3:PutObjectTagging"
 			],
@@ -357,6 +360,7 @@
 			]
 		},
 		{
+			"Effect": "Allow",
 			"Action": [
 				"sagemaker:CreateImage",
 				"sagemaker:DeleteImage",
@@ -366,8 +370,7 @@
 			],
 			"Resource": [
 				"arn:aws:sagemaker:*:*:image/*"
-			],
-			"Effect": "Allow"
+			]
 		},
 		{
 			"Effect": "Allow",

@@ -209,6 +209,7 @@
 				"appsync:ListApiKeys",
 				"amplify:*",
 				"amplifybackend:*",
+				"amplifyuibuilder:*",
 				"sts:AssumeRole",
 				"mobiletargeting:*",
 				"cognito-idp:AdminAddUserToGroup",

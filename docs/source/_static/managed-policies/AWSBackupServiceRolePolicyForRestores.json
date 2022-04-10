@@ -133,6 +133,40 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"ebs:CompleteSnapshot",
+				"ebs:StartSnapshot",
+				"ebs:PutSnapshotBlock"
+			],
+			"Resource": "arn:aws:ec2:*::snapshot/*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DeleteSnapshot",
+				"ec2:DeleteTags"
+			],
+			"Resource": "arn:aws:ec2:*::snapshot/*",
+			"Condition": {
+				"Null": {
+					"aws:ResourceTag/aws:backup:source-resource": "false"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": "ec2:CreateTags",
+			"Resource": "arn:aws:ec2:*::snapshot/*",
+			"Condition": {
+				"ForAllValues:StringEquals": {
+					"aws:TagKeys": [
+						"aws:backup:source-resource"
+					]
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
 				"ec2:RunInstances"
 			],
 			"Resource": "*"

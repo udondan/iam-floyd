@@ -30,7 +30,8 @@
 				"ecs:ListTasks",
 				"eks:ListClusters",
 				"eks:ListNodegroups",
-				"fsx:DescribeFileSystems"
+				"fsx:DescribeFileSystems",
+				"logs:DescribeLogGroups"
 			],
 			"Resource": "*"
 		},

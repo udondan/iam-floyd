@@ -8,7 +8,7 @@
 				"grafana:Describe*",
 				"grafana:List*"
 			],
-			"Resource": "arn:aws:grafana:*:*:/workspaces*"
+			"Resource": "*"
 		}
 	]
 }

@@ -24,6 +24,19 @@
 			}
 		},
 		{
+			"Sid": "ResourceGroupsTaggingPermissions",
+			"Effect": "Allow",
+			"Action": [
+				"tag:GetResources"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"aws:CalledViaLast": "sqlworkbench.amazonaws.com"
+				}
+			}
+		},
+		{
 			"Sid": "AmazonRedshiftQueryEditorV2NonResourceLevelPermissions",
 			"Effect": "Allow",
 			"Action": [
@@ -41,7 +54,8 @@
 				"sqlworkbench:ListTabs",
 				"sqlworkbench:UpdateFolder",
 				"sqlworkbench:ListRedshiftClusters",
-				"sqlworkbench:DriverExecute"
+				"sqlworkbench:DriverExecute",
+				"sqlworkbench:ListTaggedResources"
 			],
 			"Resource": "*"
 		},

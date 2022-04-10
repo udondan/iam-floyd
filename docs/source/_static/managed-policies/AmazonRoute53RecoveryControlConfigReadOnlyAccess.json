@@ -13,7 +13,8 @@
 				"route53-recovery-control-config:ListClusters",
 				"route53-recovery-control-config:ListControlPanels",
 				"route53-recovery-control-config:ListRoutingControls",
-				"route53-recovery-control-config:ListSafetyRules"
+				"route53-recovery-control-config:ListSafetyRules",
+				"route53-recovery-control-config:ListTagsForResource"
 			],
 			"Resource": "*"
 		}

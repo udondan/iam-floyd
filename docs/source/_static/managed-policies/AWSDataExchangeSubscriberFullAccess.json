@@ -32,7 +32,8 @@
 			"Action": [
 				"dataexchange:CreateEventAction",
 				"dataexchange:UpdateEventAction",
-				"dataexchange:DeleteEventAction"
+				"dataexchange:DeleteEventAction",
+				"dataexchange:SendApiAsset"
 			],
 			"Resource": "*"
 		},
