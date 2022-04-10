@@ -36,6 +36,7 @@
                 "organizations:AcceptHandshake",
                 "organizations:AttachPolicy",
                 "organizations:CancelHandshake",
+                "organizations:CloseAccount",
                 "organizations:CreateAccount",
                 "organizations:CreateGovCloudAccount",
                 "organizations:CreateOrganization",
