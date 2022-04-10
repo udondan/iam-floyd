@@ -43,6 +43,8 @@ There are two different package variants available:
   [![npm CDK v1](https://img.shields.io/badge/npm-0.285.0-yellow)](https://www.npmjs.com/package/cdk-iam-floyd/v/0.285.0)
   [![PyPI CDK v1](https://img.shields.io/badge/pypi-0.285.0-yellow)](https://pypi.org/project/cdk-iam-floyd/0.285.0/)
 
+  Starting with CDK v2.20.0 you have to use cdk-iam-floyd >= v0.351.0.
+
 Find them all on [libraries.io].
 
 ---
